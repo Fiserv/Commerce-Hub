@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, apple-pay]
+---
+
 ## Apple-Pay
 
 The beginning of an awesome article...
