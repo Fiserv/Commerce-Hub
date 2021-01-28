@@ -2,7 +2,7 @@
 tags: [currency-code, carat, commerce-hub]
 ---
 
-# Currency Code (ISO 4217)
+## Currency Code (ISO 4217)
 
 The amount in transactions submitted has a currency associate with it. 
 Currency code helps to figure out in which currency the transaction is performed.
