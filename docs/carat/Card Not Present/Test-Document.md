@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present]
+tags: [carat, commerce-hub, card-not-present, card-present, capture, settle]
 ---
 
 ## Capture Charges
