@@ -2,6 +2,124 @@
 tags: [carat, commerce-hub, card-not-present]
 ---
 
-# Test-Document
+## Capture Charges
+Use this payload to capture a previous [pre-authorized](url) transaction (aka post-authorization). This will settle (withdrawl) funds from the customer.
 
-The beginning of an awesome article...
+<!-- theme: warning -->
+
+> ##### Authorization Hold Times
+>
+> Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a new charge.
+
+---
+
+### Endpoint
+**POST** `/payments/v1/charges/{transactionId}/capture`
+
+---
+
+### Minimum Requirements
+
+| Variable | Type | Length | Description/Values |
+| -------- | :--: | :------------: | ------------------ |
+| `total` | *number* |  | Sub component values must add up to total amount.<br/>0.00 expected format. |
+| `currency` | *string* | 3 | ISO 3 Currency Format. |
+| `captureFlag` | *string* | 5 | Designates if the transaction should be captured.<br/>TRUE = Capture. |
+
+---
+
+### Payload Examples
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a Capture Payload Request.
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  }
+}
+```
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a Capture (200: Success) Response.
+<!-- theme: info -->
+
+> See [Error Responses](url) for additional examples.
+
+```json
+{
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "charge",
+    "transactionState": "authorized",
+    "transactionOrigin": "ecom",
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "amount": {
+    "total": "1.50",
+    "currency": "USD"
+  },
+  "paymentSource": {
+    "sourceType": "PaymentCard"
+  },
+  "transactionDetails": {
+    "captureFlag": "TRUE",
+    "accountVerification": "FALSE",
+    "processingCode": "000000",
+    "merchantTransactionId": "1343678765",
+    "merchantOrderId": "845366457890-TODO",
+    "receiptEmail": "abc@gmail.com",
+    "paymentDescription": ""
+  },
+  "transactionProcessingDetails": {
+    "transactionDate": "2016-04-16",
+    "transactionTime": "2016-04-16T16:06:05Z",
+    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+    "transactionId": "838916029301"
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "1.50",
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "",
+      "processor": "fiserv",
+      "responseCode": "00",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "54022",
+      "hostResponseMessage": "",
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2016-04-16T16:06:05Z"
+      }
+    }
+  }
+}
+```
+
+<!-- type: tab-end -->
