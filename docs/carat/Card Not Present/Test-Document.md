@@ -3,6 +3,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cha
 ---
 
 ## Capture Charges
+
 Use this payload to capture a previous [pre-authorized](url) transaction (aka post-authorization). This will settle (withdrawl) funds from the customer.
 
 <!-- theme: warning -->
@@ -13,8 +14,11 @@ Use this payload to capture a previous [pre-authorized](url) transaction (aka po
 
 ---
 
-### Endpoint
+### Endpoints
+
 **POST** `/payments/v1/charges/{transactionId}/capture`
+
+**POST** `/payments/v1/charges/orders/{orderId}/capture`
 
 ---
 
@@ -29,6 +33,7 @@ Use this payload to capture a previous [pre-authorized](url) transaction (aka po
 ---
 
 ### Payload Examples
+
 <!--
 type: tab
 title: Request
@@ -54,6 +59,7 @@ title: Response
 -->
 
 ##### Example of a Capture (200: Success) Response.
+
 <!-- theme: info -->
 
 > See [Error Responses](url) for additional examples.
