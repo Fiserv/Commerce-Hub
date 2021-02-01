@@ -4,16 +4,20 @@ Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distin
 
 ---
 
-### add Authorization definition
+### Authorization
+Authorization is necessary to check whether a card holder's credit card holds sufficient funds and is approved to purchase from a merchant. An authorization request first emerges whenever a cardholder attempts to purchase a good or service through a debit or credit card.
+
+---
 
 ### Sale
-A sale is a customer transaction where the purchase amount is authorized and settled at the same time. 
-If a sale is not voided (Cancel) before batching, the merchant funding process begins for this charge. At this point,the merchant can still return funds (Refund) the customer.
+A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided (Cancel) before batching, the merchant funding process begins for this charge. At this point,the merchant can still return funds (Refund) the customer.
 
 <!-- theme: warning -->
 > 
 >🚧
 >Settlement time is based on processing network, contact your account manager for more details.
+
+---
 
 ### Pre-auth
 
@@ -21,30 +25,38 @@ A pre-auth is a customer transaction where the merchant can validate a given amo
 
 Once the merchant initiates a capture transaction, the held amount is then setled with the merchant batch.
 
+----
+
+### Endpoints
+
+**POST** `/payments/v1/charges`
+
+
+---
 ### Minimum Field Requirement
 
 ##### Component : amount
 
 |Field    | Data Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| total | Number | 12 | Sub component values must add up to total amount. 0.00 expected format|
-| currency | String | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+| `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
+| `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
 ##### Component : paymentSource
 
 Field    | Data Type| Maximum Length | Description
 ---------|----------|----------------|---------
-sourceType | String | 15 | Payment Source (Example PaymentCard)
-cardData | String | 19 | Card Number 
-expirationMonth| String | 2 | Card Expiration date Month (Example 12)
-expirationYear| String | 4 | Card Expiration date Month (Example 2035)
-securityCode | String | 3| A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC)
+`sourceType` | *string* | 15 | Payment Source (Example PaymentCard)
+`cardData`| *string* | 19 | Card Number 
+`expirationMonth`| *string* | 2 | Card Expiration date Month (Example 12)
+`expirationYear`| *string* | 4 | Card Expiration date Month (Example 2035)
+`securityCode` | *string* | 3| A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC)
 
 ##### Component : transactionDetails
 
 Field    | Data Type| Maximum Length | Description
 ---------|----------|----------------|---------
-captureFlag | String | 5 | Designates if the transaction should be captured ( TRUE for Sale and FALSE for Pre-Auth)
+`captureFlag` | *string* | 5 | Designates if the transaction should be captured ( *TRUE* for Sale and *FALSE* for Pre-Auth)
 
 
 **OR**
@@ -54,6 +66,7 @@ captureFlag | String | 5 | Designates if the transaction should be captured ( TR
 - `card` : Used to sent the card details. Contains card number, expiry date, CVV etc. Clink on Link to know more about Card Component.
 - `transactionDatils` : Used to send transaction data.
 
+---
 
 ### Payload Examples
 
