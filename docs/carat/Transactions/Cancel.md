@@ -4,21 +4,23 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 ## Cancel Charges
 
-If your customer has canceled the order or you detect suspicious order details, and you want to return the funds back to the shopper, you can Cancel (aka void) the transaction referencing the original Transaction ID or Order ID. 
+If the customer has canceled the order or if fraud is suspected, the merchant would need to release the original authorization by issuing a void (Cancel) request to the original Transaction ID or Order ID. 
 
 <!-- theme: warning -->
 
 > ##### Cancel Pre-Requisite
 >
->Cancel Request can be initiated against [Charges](Charges.md) in case it has not yet been [captured](Capture.md).
+>A Cancel request can be initiated against a [Charge](Charges.md) that has not been [Captured](Capture.md).
 
 ---
 
 ### Endpoints
 
 **POST** `/payments/v1/charges/{transactionId}/cancel`
+- Use this endpoint to submit a Cancel request by `transactionId`.
 
-**POST** `/payments/v1/charges/orders/{orderId}/cancel`
+**POST** `/payments/v1/charges/orders/{orderId}/cancel` 
+- Use this endpoint to submit a Cancel request by `orderId`.
 
 ---
 
@@ -40,7 +42,7 @@ Variable | Type| Maximum Length | Description/Values|
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`transactionDate` | *string* |  | Date the transaction occured |
+|`transactionDate` | *string* | 10 | Date the transaction occured |
 |`transactionTime`| *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ | 
 |`apiTraceId`| *string* |  | Request identifier in API, can be used to request logs from the support team|
 |`clientRequestId`| *string* |  | Echoes back the value in the request header for tracking |

@@ -4,21 +4,31 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 ## Refund Charges
 
-If you want to return funds to a customer's card against an existing order, you can use the Order ID as a reference so that you do not need to submit card details for this activity. You can return the full amount of the order or a partial amount.
+If the customer wish to cancel the transaction after the batch has been settled, the merchant would need to release the original authorization by issuing a Refund request to the original Transaction ID or Order ID. Refund can be initiated either for full amount or partial amount of the order.
+
+
+
+<!-- theme: danger -->
+
+> ##### Refund Requirement
+>
+>Refund Request can be initiated against [Charges](Charges.md) if it is already been [captured](Capture.md) else [Cancel](Cancel.md) can be initiated.
 
 <!-- theme: warning -->
 
-> ##### Refund Pre-Requisite
+> ##### Refund Timeframe
 >
->Refund Request can be initiated against [Charges](Charges.md) if it is already been [captured](Capture.md) else [Cancel](Cancel.md) can be initiated.
+>Refund timeframe is based on card holder issuing bank and may take 3-5 days to process and reflact on account.
 
 ---
 
 ### Endpoints
 
 **POST** `/payments/v1/charges/{transactionId}/refund`
+- Use this endpoint to submit a Refund request by `transactionId`.
 
 **POST** `/payments/v1/charges/orders/{orderId}/refund`
+- Use this endpoint to submit a Refund request by `orderId`.
 
 ---
 
