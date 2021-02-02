@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges]
+---
+
 ## Charges
 
 Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distinguished as per the `captureFlag` sent in the request. If the value for `captureFlag` is sent as *TRUE*, the transaction will be considered as sale, where the customer will be charged with the transaction amount whereas if the value of `captureFlag` in charge request is sent as *FALSE*, the request would be considered as Pre-Auth Request, where the funds on the customer account would be kept reserved and the followup transaction (Capture) would be needed in order to charge the fund to the customer.
@@ -19,7 +23,7 @@ A sale is a customer transaction where the purchase amount is authorized and set
 
 ---
 
-### Pre-auth
+### Pre-Auth
 
 A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and then also place a hold for that amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant.
 
@@ -33,30 +37,30 @@ Once the merchant initiates a capture transaction, the held amount is then setle
 
 
 ---
-### Minimum Field Requirement
+### Minimum Requirements
 
 ##### Component : amount
 
-|Field    | Data Type| Maximum Length | Description|
+|Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
 | `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
 ##### Component : paymentSource
 
-Field    | Data Type| Maximum Length | Description
----------|----------|----------------|---------
-`sourceType` | *string* | 15 | Payment Source (Example PaymentCard)
-`cardData`| *string* | 19 | Card Number 
-`expirationMonth`| *string* | 2 | Card Expiration date Month (Example 12)
-`expirationYear`| *string* | 4 | Card Expiration date Month (Example 2035)
-`securityCode` | *string* | 3| A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC)
+Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+|`sourceType` | *string* | 15 | Payment Source (Example PaymentCard)|
+|`cardData`| *string* | 19 | Card Number| 
+|`expirationMonth`| *string* | 2 | Card Expiration date Month (Example 12)|
+|`expirationYear`| *string* | 4 | Card Expiration date Month (Example 2035)|
+|`securityCode` | *string* | 3| A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC)|
 
 ##### Component : transactionDetails
 
-Field    | Data Type| Maximum Length | Description
----------|----------|----------------|---------
-`captureFlag` | *string* | 5 | Designates if the transaction should be captured ( *TRUE* for Sale and *FALSE* for Pre-Auth)
+|Variable | Data Type| Maximum Length | Description/Values |
+|---------|----------|----------------|---------|
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured ( *TRUE* for Sale and *FALSE* for Pre-Auth)|
 
 
 **OR**

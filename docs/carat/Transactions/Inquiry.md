@@ -1,34 +1,29 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges]
+tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cancel, refund]
 ---
 
-## Capture Charges
+## Transaction Inquiry
 
-Use this payload to capture a previous [pre-authorized](url) transaction (aka post-authorization). This will settle (withdrawl) funds from the customer.
-
-<!-- theme: warning -->
-
-> ##### Authorization Hold Times
->
-> Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a new charge.
+If you want to get the current state of previous transaction, you can use Inquiry to retrive information of the previous transaction using either transactionId or orderId.
 
 ---
 
 ### Endpoints
 
-**POST** `/payments/v1/charges/{transactionId}/capture`
+**POST** `/payments/v1/charges/{transactionId}/inquiry`
 
-**POST** `/payments/v1/charges/orders/{orderId}/capture`
+**POST** `/payments/v1/charges/orders/{orderId}/inquiry`
 
 ---
 
 ### Minimum Requirements
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `total` | *number* |  | Sub component values must add up to total amount.<br/>0.00 expected format. |
-| `currency` | *string* | 3 | ISO 3 Currency Format. |
-| `captureFlag` | *string* | 5 | Designates if the transaction should be captured.<br/>TRUE = Capture. |
+##### Component : amount
+
+|Variable    |  Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
+| `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
 ---
 
@@ -39,16 +34,13 @@ type: tab
 title: Request
 -->
 
-##### Example of a Capture Payload Request.
+##### Example of a Cancel Payload Request.
 
 ```json
 {
   "amount": {
     "total": "12.04",
     "currency": "USD"
-  },
-  "transactionDetails": {
-    "captureFlag": true
   }
 }
 ```
@@ -58,7 +50,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Capture (200: Success) Response.
+##### Example of a Cancel (200: Success) Response.
 
 <!-- theme: info -->
 
@@ -68,7 +60,7 @@ title: Response
 {
   "gatewayResponse": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
+    "transactionType": "refund",
     "transactionState": "authorized",
     "transactionOrigin": "ecom",
     "transactionProcessingDetails": {
@@ -84,7 +76,7 @@ title: Response
     "currency": "USD"
   },
   "paymentSource": {
-    "sourceType": "PaymentCard"
+    "sourceType": "PaymentToken"
   },
   "transactionDetails": {
     "captureFlag": "TRUE",
