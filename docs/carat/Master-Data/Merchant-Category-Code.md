@@ -1,14 +1,17 @@
-## Merchant-Category-Code (ISO 18245)
+## Merchant Category Codes
 
-Each business is assigned with Merchant Category Code (MCC), which is classified as per the goods or services they provide. Merchants with similar type of business would be assigned with same Merchant Category Code. For example, al 'Inbound telemarketing merchants' will be assigned with MCC 5967 and all Hotels and Resorts will have 7011. These codes are often used for calculating interchange fees, authorizing payments, and preventing fraud, so it’s important that your connected accounts have MCCs that match their businesses.
+Each business is assigned a Merchant Category Code (MCC), which is determined by the goods or services they provide. Merchants with similar types of businesses would be assigned with the same Merchant Category Code. These codes are often used for calculating interchange fees, authorizing payments, and preventing fraud, so it’s important that your connected accounts have MCCs that match their businesses.
 
----
+<!-- theme: example -->
+>
+>##### Example
+> All 'Inbound telemarketing merchants' will be assigned with MCC 5967 and all 'Hotels and Resorts' will have 7011. 
 
-### Setting MCC Automatically
 
----
+- **Static MCC** : The MCC is automatically set based on the merchant processing account. If incorrect this would need to be updated by the account representative.
 
-### Setting MCC Manually
+- **Dynamic MCC** : The MCC is passed in the `dynamicDescriptors` object. [Dynamic Descriptors](url) have limited platform availability. For more information, please contact your account representative.
+
 
 ---
 

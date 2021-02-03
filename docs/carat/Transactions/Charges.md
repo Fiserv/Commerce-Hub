@@ -51,7 +51,7 @@ Once the merchant initiates a capture transaction, the held amount is then setle
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment Source (Example PaymentCard). Check this [link](../Master-Data/Source-Type.md) for valid `sourceType`|
+|`sourceType` | *string* | 15 | [Payment Source](../Master-Data/Source-Type.md)|
 |`cardData`| *string* | 19 | Card Number| 
 |`expirationMonth`| *string* | 2 | Card Expiration date Month (Example 12)|
 |`expirationYear`| *string* | 4 | Card Expiration date Month (Example 2035)|

@@ -2,9 +2,19 @@
 tags: [Source-Type, carat, commerce-hub]
 ---
 
-## Source-Type
+## Payment Source-Type
 
-`sourceType` is used to determine what is the source of the transaction. Depending on the source from where the transaction is getting initiated, the value in the field changes. Please refer below table for details..
+The variable `sourceType` is used to determine the source of the transaction. Depending on the source the required variables change.
+
+Put the below in tab
+
+The `sourceType` *PaymentCard* is used to submit .......
+
+The `sourceType` *PaymentToken* is used to submit .......
+
+The `sourceType` *ApplePay* is used to submit .......
+
+The `sourceType` *GooglePay* is used to submit .......
 
 ---
 
