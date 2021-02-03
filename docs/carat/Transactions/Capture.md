@@ -17,8 +17,10 @@ Use this payload to capture a previous [pre-authorized](url) transaction (aka po
 ### Endpoints
 
 **POST** `/payments/v1/charges/{transactionId}/capture`
+- Use this endpoint to submit a Capture request by `transactionId`
 
 **POST** `/payments/v1/charges/orders/{orderId}/capture`
+- Use this endpoint to submit a Capture request by `orderId`
 
 ---
 

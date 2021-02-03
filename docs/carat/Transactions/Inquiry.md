@@ -4,15 +4,17 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 ## Transaction Inquiry
 
-If you want to get the current state of previous transaction, you can use Inquiry to retrive information of the previous transaction using either transactionId or orderId.
+If the merchant wish to get the current state of any previous [Charge](Charges.md), merchant may need to issue a Inquiry request against the original Transaction ID or Order ID.
 
 ---
 
 ### Endpoints
 
 **POST** `/payments/v1/charges/{transactionId}/inquiry`
+- Use this endpoint to submit a Inquiry request by `transactionId`
 
 **POST** `/payments/v1/charges/orders/{orderId}/inquiry`
+- Use this endpoint to submit a Inquiry request by `orderId`
 
 ---
 

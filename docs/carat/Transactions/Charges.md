@@ -34,6 +34,7 @@ Once the merchant initiates a capture transaction, the held amount is then setle
 ### Endpoints
 
 **POST** `/payments/v1/charges`
+- Use this endpoint to submit a Charge request.
 
 
 ---
