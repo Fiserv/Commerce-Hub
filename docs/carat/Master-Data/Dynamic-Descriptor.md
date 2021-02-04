@@ -21,7 +21,7 @@ A custom descriptor you configure and pass with each transaction via the API. So
 
 > ##### Note
 >
-> This field has limited platform availability. For more information, please contact your Account Representative.
+> This field has limited platform availability. For more information, please contact your account representative.
 
 ---
 
