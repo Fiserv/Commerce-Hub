@@ -6,22 +6,9 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cha
 
 Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distinguished as per the `captureFlag` sent in the request. If the value for `captureFlag` is sent as *TRUE*, the transaction will be considered as sale, where the customer will be charged with the transaction amount whereas if the value of `captureFlag` in charge request is sent as *FALSE*, the request would be considered as Pre-Auth Request, where the funds on the customer account would be kept reserved and the followup transaction (Capture) would be needed in order to charge the fund to the customer.
 
-#### Authorization
-Authorization is necessary to check whether a card holder's credit card holds sufficient funds and is approved to purchase from a merchant. An authorization request first emerges whenever a cardholder attempts to purchase a good or service through a debit or credit card.
-
-#### Sale
-A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided (Cancel) before batching, the merchant funding process begins for this charge. At this point,the merchant can still return funds (Refund) the customer.
-
-<!-- theme: warning -->
-> 
->🚧
->Settlement time is based on processing network, contact your account manager for more details.
-
-#### Pre-Auth
-
-A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and then also place a hold for that amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant.
-
-Once the merchant initiates a capture transaction, the held amount is then setled with the merchant batch.
+- **[Authorization](../FAQs-Glossary/Glossary.md#Authorization)** : Inniated by a merchant to verify a cardholders account.
+- **[Pre-Auth](../FAQs-Glossary/Glossary.md#Pre-Auth)** : An authorization where the amount approved by the cardholder is placed on hold to be captured later.
+- **[Sale](../FAQs-Glossary/Glossary.md#Sale)** : An authorization where the amount approved by the cardholder is placed on hold and will be settled at the end of the day.
 
 ----
 
@@ -56,14 +43,6 @@ Variable | Type| Maximum Length | Description/Values|
 |Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured ( *TRUE* for Sale and *FALSE* for Pre-Auth)|
-
-
-**OR**
-
-- `amount` : Amount object to support the request for payment.
-- `paymentSource` : Model for Payment source. This is sent as a part of the request to determine wht is the source of the payment.
-- `card` : Used to sent the card details. Contains card number, expiry date, CVV etc. Clink on Link to know more about Card Component.
-- `transactionDatils` : Used to send transaction data.
 
 ---
 
