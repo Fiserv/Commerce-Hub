@@ -6,14 +6,10 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cha
 
 Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distinguished as per the `captureFlag` sent in the request. If the value for `captureFlag` is sent as *TRUE*, the transaction will be considered as sale, where the customer will be charged with the transaction amount whereas if the value of `captureFlag` in charge request is sent as *FALSE*, the request would be considered as Pre-Auth Request, where the funds on the customer account would be kept reserved and the followup transaction (Capture) would be needed in order to charge the fund to the customer.
 
----
-
-### Authorization
+#### Authorization
 Authorization is necessary to check whether a card holder's credit card holds sufficient funds and is approved to purchase from a merchant. An authorization request first emerges whenever a cardholder attempts to purchase a good or service through a debit or credit card.
 
----
-
-### Sale
+#### Sale
 A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided (Cancel) before batching, the merchant funding process begins for this charge. At this point,the merchant can still return funds (Refund) the customer.
 
 <!-- theme: warning -->
@@ -21,9 +17,7 @@ A sale is a customer transaction where the purchase amount is authorized and set
 >🚧
 >Settlement time is based on processing network, contact your account manager for more details.
 
----
-
-### Pre-Auth
+#### Pre-Auth
 
 A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and then also place a hold for that amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant.
 
