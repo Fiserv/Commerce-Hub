@@ -8,10 +8,10 @@ tags: [carat, commerce-hub, glossary]
 Authorization is necessary to check whether a card holder's credit card holds sufficient funds and is approved to purchase from a merchant. An authorization request first emerges whenever a cardholder attempts to purchase a good or service through a debit or credit card.
 
 ### Dynamic Descriptor
-A custom descriptor you configure and pass with each transaction via the API. Some processors only support soft dynamic descriptors, while others support both hard and soft dynamic descriptors.
+A custom descriptor you configure and pass with each transaction via the API. This includes both [Soft Descriptors](#soft-descriptor) and [Hard Descriptors](#hard-descriptor). Contact your account manager for more information on using Dynamic Descriptors.
 
 ### Hard Descriptor
-The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement. See also [Soft Descriptor](#soft-descriptor)
+The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement.
 
 ### Pre-Auth
 
