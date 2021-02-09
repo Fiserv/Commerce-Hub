@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, Dynamic-Descriptor, Statement-Descriptor, Merchant-Data, Merchant-Details]
 ---
 
-## Dynamic-Descriptor
+## Dynamic Descriptor
 
 Some of the time customers challenge the transaction received in the statement because of the incomplete merchant information, resulting in incorrect chargebacks. Banks and Payment Schemes require inclusion of certain clear and accurate merchant information, which comes in statement helping in reducing such incidents.
 

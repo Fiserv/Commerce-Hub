@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, Country-Code]
 ---
 
-# Country-Code
+# Country Code
 
 The country codes can be represented either as a two-letter code (alpha-2) which is recommended as the general-purpose code, a three-letter code (alpha-3) which is more closely related to the country name and a three-digit numeric code (numeric-3) which can be useful if you need to avoid using Latin script.
 
