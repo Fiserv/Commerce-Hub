@@ -6,6 +6,8 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cha
 
 Use this payload to capture a previous [pre-authorized](url) transaction (aka post-authorization). This will settle (withdrawl) funds from the customer.
 
+TESTING 123
+
 <!-- theme: warning -->
 
 > ##### Authorization Hold Times
