@@ -11,7 +11,7 @@ Authorization is necessary to check whether a card holder's credit card holds su
 A custom descriptor you configure and pass with each transaction via the API. Some processors only support soft dynamic descriptors, while others support both hard and soft dynamic descriptors.
 
 ### Hard Descriptors
-The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement. See also [Soft Descriptor](#Soft Descriptors)
+The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement. See also [Soft Descriptor](#soft-descriptors)
 
 ### Pre-Auth
 
