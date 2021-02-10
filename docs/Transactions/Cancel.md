@@ -16,11 +16,12 @@ If the customer has canceled the order or if fraud is suspected, the merchant wo
 
 ### Endpoints
 
-**POST** `/payments/v1/charges/{transactionId}/cancel`
-- Use this endpoint to submit a Cancel request by `transactionId`.
-
-**POST** `/payments/v1/charges/orders/{orderId}/cancel` 
-- Use this endpoint to submit a Cancel request by `orderId`.
+<!-- theme: success -->
+>**POST** `/payments/v1/charges/{transactionId}/cancel`
+>- Use this endpoint to submit a Cancel request by `transactionId`.
+>
+>**POST** `/payments/v1/charges/orders/{orderId}/cancel` 
+>- Use this endpoint to submit a Cancel request by `orderId`.
 
 ---
 
