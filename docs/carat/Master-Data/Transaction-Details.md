@@ -20,14 +20,14 @@ The beginning of an awesome article...
 | `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void).</br>Accepted Request Types:</br>VOIDED</br>TIMEOUT</br>EDIT_ERROR</br>MAC_VERIFICATION_ERROR</br>MAC_SYNCH_ERROR</br>ENCRYPTION_ERROR</br>SYSTEM_ERROR</br>SUSPECTED_FRAUD|
 | `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain multiple shipments. Can be set during pre-auth or the first post-auth.|
 | `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
-| [deviceFingerprint {...}](#Device-Finger-Print) | *component* |  | An array containing the device fingerprint details.|
+| [deviceFingerprint {...}](#device-finger-print) | *component* |  | An array containing the device fingerprint details.|
 
 ### Device Finger Print
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`transactionDate` | *string* | 10 | Date the transaction occured |
-|`transactionTime`| *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ | 
-|`apiTraceId`| *string* |  | Request identifier in API, can be used to request logs from the support team|
-|`clientRequestId`| *string* |  | Echoes back the value in the request header for tracking |
-|`transactionId`| *string* | 12 | Unique identifier for each transaction on the Gateway|
+|`provider` | *string* |  |  |
+|[dataCapture {...}](#data-capture)| *string* |  | An array containing data Capture details. | 
+|[dataStatic {...}](#data-static)| *string* |  | An array containing data Static details.|
+|[dataDynamic {...}](#data-dynamic)| *string* |  | An array containing data Dynamic details. |
+
