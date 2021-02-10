@@ -31,3 +31,31 @@ Variable | Type| Maximum Length | Description/Values|
 |[dataStatic {...}](#data-static)| *string* |  | An array containing data Static details.|
 |[dataDynamic {...}](#data-dynamic)| *string* |  | An array containing data Dynamic details. |
 
+
+#### Data Capture
+
+| Variable | Type | Length | Description/Values |
+| -------- | :--: | :------------: | ------------------ |
+| `rawData` | *string* |  | Raw data from the data capture. |
+| `dataEventId` | *string* |  | Unique ID for the data capture. |
+| `captureTime` | *string* |  | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
+
+
+#### Data Static
+
+| Variable | Type | Length | Description/Values |
+| -------- | :--: | :------------: | ------------------ |
+| `operatingSystem` | *string* |  | Device operating system (OS). |
+| `operatingSystemVersion` | *string* |  | Device operating system (OS) version. |
+| `model` | *string* |  | Device Model. |
+| `type` | *string* |  | Device type/name. |
+
+
+#### Data Dynamic
+
+| Variable | Type | Length | Description/Values |
+| -------- | :--: | :------------: | ------------------ |
+| `latitude` | *string* |  | Cardholder current latitude GPS position. |
+| `longitude` | *string* |  | Cardholder current longitude GPS position. |
+| `ipAddress` | *string* |  | Customer IP Address. |
+| `captureTime` | *string* |  | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
