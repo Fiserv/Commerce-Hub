@@ -12,11 +12,8 @@ If the customer has canceled the order or if fraud is suspected, the merchant wo
 >
 >A Cancel request can be initiated against a [Charge](Charges.md) that has not been [Captured](Capture.md).
 
----
-
-### Endpoints
-
 <!-- theme: success -->
+>### Endpoints
 >**POST** `/payments/v1/charges/{transactionId}/cancel`
 >- Use this endpoint to submit a Cancel request by `transactionId`.
 >

@@ -4,17 +4,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 ## Transaction Inquiry
 
-If the merchant wish to get the current state of any previous [Charge](Charges.md), merchant may need to issue a Inquiry request against the original Transaction ID or Order ID.
-
----
-
-### Endpoints
-
-**POST** `/payments/v1/charges/{transactionId}/inquiry`
-- Use this endpoint to submit a Inquiry request by `transactionId`
-
-**POST** `/payments/v1/charges/orders/{orderId}/inquiry`
-- Use this endpoint to submit a Inquiry request by `orderId`
+To retrieve the current state of any previous [Charge](Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
 
 ---
 
@@ -26,6 +16,14 @@ If the merchant wish to get the current state of any previous [Charge](Charges.m
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
 | `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+
+<!-- theme: success -->
+>##### Endpoints
+>**POST** `/payments/v1/charges/{transactionId}/inquiry`
+>- Use this endpoint to submit a Inquiry request by `transactionId`
+>
+>**POST** `/payments/v1/charges/orders/{orderId}/inquiry`
+>- Use this endpoint to submit a Inquiry request by `orderId`
 
 ---
 

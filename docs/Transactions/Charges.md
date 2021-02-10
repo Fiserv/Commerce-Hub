@@ -10,14 +10,6 @@ Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distin
 - **[Pre-Auth](../FAQs-Glossary/Glossary.md#Pre-Auth)** : An authorization where the amount approved by the cardholder is placed on hold to be captured later.
 - **[Sale](../FAQs-Glossary/Glossary.md#Sale)** : An authorization where the amount approved by the cardholder is placed on hold and will be settled at the end of the day.
 
-----
-
-### Endpoints
-
-**POST** `/payments/v1/charges`
-- Use this endpoint to submit a Charge request.
-
-
 ---
 ### Minimum Requirements
 
@@ -43,6 +35,11 @@ Variable | Type| Maximum Length | Description/Values|
 |Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured ( *TRUE* for Sale and *FALSE* for Pre-Auth)|
+
+<!-- theme: success -->
+>##### Endpoint
+>**POST** `/payments/v1/charges`
+>- Use this endpoint to submit a Charge request.
 
 ---
 

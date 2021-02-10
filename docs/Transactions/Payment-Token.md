@@ -1,15 +1,18 @@
-## Payment-Token
+## Create a Payment Token
 
-Tokenization is a process of replacing sensitive data with non-sensitive data. In the payments industry, it is used to safeguard a card's PAN by replacing it with a unique string of numbers. `Payment Token` request creates a single-use token that represents card details. This token can be used to make a payment.
+Tokenization is a process of replacing sensitive data with non-sensitive data. In the payments industry, it is used to safeguard a card's PAN by replacing it with a unique string of numbers. A Payment Token request creates a single-use or multi-use token that represents card details.
 
----
-
-### Endpoints
-
-**POST** `/payments-vas/v1/tokens`
-- Use this endpoint to submit a `Payment Token` request.
+- **Single Use Token** :
+- **Multi Use Token** : 
 
 ---
 
 ### Minimum Requirements
 
+|Variable | Data Type| Maximum Length | Description/Values |
+|---------|----------|----------------|---------|
+| | | | |
+<!-- theme: success -->
+>##### Endpoints
+>**POST** `/payments-vas/v1/tokens`
+>- Use this endpoint to submit a Payment Token request.

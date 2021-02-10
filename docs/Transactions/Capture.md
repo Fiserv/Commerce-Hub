@@ -12,22 +12,12 @@ Use this payload to capture a previous pre-authorized [Charge](Charges.md). This
 >
 > Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a new charge.
 
-#### Capture Types
+##### Capture Types
 
 - **Automatic Capture** : A charge is automatically captured when a [Sale](../FAQs-Glossary/Glossary.md#Sale) or [Deferred Payment](Deferred-Payment.md) request is made.
 - **Manual Capture** : A manual capture can be processed for the full amount or a partial amount.
   - **Full** : A full capture request will settle the full amount of the held funds. This amount can be for more than the amount for certain industries (e.g., tips).
   - **Partial** : A partial capture request is used when the full pre-auth amount is not needed or when submitting a [Split Shipment](Split-Shipment.md). When the full amount is not captured the remaining balance is released to the customer (e.g., the price of a pre-order item decreases before shipping).
-
----
-
-### Endpoints
-
-**POST** `/payments/v1/charges/{transactionId}/capture`
-- Use this endpoint to submit a Capture request by `transactionId`
-
-**POST** `/payments/v1/charges/orders/{orderId}/capture`
-- Use this endpoint to submit a Capture request by `orderId`
 
 ---
 
@@ -38,6 +28,14 @@ Use this payload to capture a previous pre-authorized [Charge](Charges.md). This
 | `total` | *number* |  | Sub component values must add up to total amount.<br/>0.00 expected format. |
 | `currency` | *string* | 3 | ISO 3 Currency Format. |
 | `captureFlag` | *string* | 5 | Designates if the transaction should be captured.<br/>TRUE = Capture. |
+
+<!-- theme: success -->
+>##### Endpoints
+>**POST** `/payments/v1/charges/{transactionId}/capture`
+>- Use this endpoint to submit a Capture request by `transactionId`
+>
+>**POST** `/payments/v1/charges/orders/{orderId}/capture`
+>- Use this endpoint to submit a Capture request by `orderId`
 
 ---
 

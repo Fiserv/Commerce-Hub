@@ -17,18 +17,7 @@ If the customer wish to cancel the transaction after the batch has been settled,
 <!-- theme: warning -->
 
 > ##### Refund Timeframe
->
 >Refund timeframe is based on card holder issuing bank and may take 3-5 days to process and reflact on account.
-
----
-
-### Endpoints
-
-**POST** `/payments/v1/charges/{transactionId}/refund`
-- Use this endpoint to submit a Refund request by `transactionId`.
-
-**POST** `/payments/v1/charges/orders/{orderId}/refund`
-- Use this endpoint to submit a Refund request by `orderId`.
 
 ---
 
@@ -40,6 +29,15 @@ If the customer wish to cancel the transaction after the batch has been settled,
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
 | `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+
+<!-- theme: success -->
+
+>##### Endpoints
+>**POST** `/payments/v1/charges/{transactionId}/refund`
+>- Use this endpoint to submit a Refund request by `transactionId`.
+>
+>**POST** `/payments/v1/charges/orders/{orderId}/refund`
+>- Use this endpoint to submit a Refund request by `orderId`.
 
 ---
 
