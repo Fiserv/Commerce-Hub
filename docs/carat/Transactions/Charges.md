@@ -32,13 +32,13 @@ Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distin
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | [Payment Source](../Master-Data/Source-Type.md)|
+|`sourceType` | *string* | 15 | [Source Type](../Master-Data/Source-Type.md)|
 |`cardData`| *string* | 19 | Card Number| 
 |`expirationMonth`| *string* | 2 | Card Expiration date Month (Example 12)|
 |`expirationYear`| *string* | 4 | Card Expiration date Month (Example 2035)|
 |`securityCode` | *string* | 3| A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC)|
 
-##### Component : transactionDetails
+##### Component : [transactionDetails](../Master-Data/Transaction-Details.md)
 
 |Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
