@@ -1,6 +1,6 @@
 ## Transaction Details
 
-The beginning of an awesome article...
+The transaction request initiated by merchant contains various transaction related data which is captured in transactionDetails component.
 
 |Variable    | Type| Maximum Length | Description/Values|
 |---------|-----------|----------------|---------|
