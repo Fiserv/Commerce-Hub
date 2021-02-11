@@ -25,6 +25,6 @@ Use this component whento pass card holder phone details
 | -------- | -- | ------------ | ------------------ |
 | `countryCode` | *string* |  | ISO Country code. |
 | `phoneNumber` | *string* |  | Card Holder phone number. |
-| `type` | *string* |  | Type of phone number.</br>Available Values:</br>BILLING - Billing account phone number</br>SHIPPING - Shipping contact phone number</br>CUSTOMER - Customer phone number |
+| `type` | *string* |  | Type of phone number.</br>Available Values:</br>*BILLING* - Billing account phone number</br>*SHIPPING* - Shipping contact phone number</br>*CUSTOMER* - Customer phone number |
 
 

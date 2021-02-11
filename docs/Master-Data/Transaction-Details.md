@@ -14,10 +14,10 @@ The transaction request initiated by merchant contains various transaction relat
 | `receiptEmail` | *string* |  | Email id to send the digital receipt.|
 | `paymentDescription` | *string* |  | Payment Description|
 | `cardVerificationAmount` | *string* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
-| `deferredAuthorizationIndicator` | *string* |  | This tag indicates a transaction that occurs when a merchant captures transaction information while the connectivity is interrupted or unavailable. This tag must be sent in the authorization/ purchase/ refund transaction once the connectivity is restored.</br>Accepted Request Types:</br>INCREMENTAL_AUTH</br>RESUBMIT_AUTH</br>DELAYED_CHARGE</br>REAUTH</br>NO_SHOW - Auto Rental & Lodging</br>TOP_UP</br>DEFERRED_AUTH|
+| `deferredAuthorizationIndicator` | *string* |  | This tag indicates a transaction that occurs when a merchant captures transaction information while the connectivity is interrupted or unavailable. This tag must be sent in the authorization/ purchase/ refund transaction once the connectivity is restored.</br>Accepted Request Types:</br>*INCREMENTAL_AUTH*</br>*RESUBMIT_AUTH*</br>*DELAYED_CHARGE*</br>*REAUTH*</br>*NO_SHOW* - Auto Rental & Lodging</br>*TOP_UP*</br>*DEFERRED_AUTH*|
 | `duplicateTransactionCheckingIndicator` | *boolean* | 5 | Determines if duplicate transactions should be checked.|
-| `primaryTransactionType` | *string* |  | Identifies the primary transaction type.</br>Accepted Request Types :</br>AUTH_ONLY</br>CHARGE_PREAUTH</br>CHARGE_SALE</br>CANCEL</br>REFUND|
-| `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void).</br>Accepted Request Types:</br>VOIDED</br>TIMEOUT</br>EDIT_ERROR</br>MAC_VERIFICATION_ERROR</br>MAC_SYNCH_ERROR</br>ENCRYPTION_ERROR</br>SYSTEM_ERROR</br>SUSPECTED_FRAUD|
+| `primaryTransactionType` | *string* |  | Identifies the primary transaction type.</br>Accepted Request Types :</br>*AUTH_ONLY*</br>*CHARGE_PREAUTH*</br>*CHARGE_SALE*</br>*CANCEL*</br>*REFUND*|
+| `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void).</br>Accepted Request Types:</br>*VOIDED*</br>*TIMEOUT*</br>*EDIT_ERROR*</br>*MAC_VERIFICATION_ERROR*</br>MAC_SYNCH_ERROR</br>*ENCRYPTION_ERROR*</br>*SYSTEM_ERROR*</br>*SUSPECTED_FRAUD*|
 | `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain multiple shipments. Can be set during pre-auth or the first post-auth.|
 | `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
 | [deviceFingerprint {...}](#device-finger-print) | *component* |  | An array containing the device fingerprint details.|

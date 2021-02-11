@@ -12,12 +12,12 @@ The available payment method options are
 
 |Payment Method | Value|
 |-------|-------|
-|Visa | VISA |
-|MasterCard | MC |
-|American Express | AMEX |
-|Discover | DISCOVER |
-|Diners | DINERS |
-|Maestro | MEASTRO |
-|JCB | JCB |
-|Union Pay | CUP |
+|Visa | *VISA* |
+|MasterCard | *MASTERCARD* |
+|American Express | *AMERICAN_EXPRESS* |
+|Discover | *DISCOVER* |
+|Diners | *DINERS* |
+|Maestro | *MEASTRO* |
+|JCB | *JCB* |
+|Union Pay | *UNION_PAY* |
 
