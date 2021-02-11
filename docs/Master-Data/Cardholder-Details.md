@@ -1,6 +1,6 @@
-## Card Holder Details
+## Cardholder Details
 
-The transaction request may contain the card holder details. The details consists of customer id, name, date of birth etc.
+The transaction request may contain the cardholder details. The details consists of customer id, name, date of birth etc.
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -14,17 +14,17 @@ The transaction request may contain the card holder details. The details consist
 | `locale` | *string* |  | The language of the receipt.|
 | `driverLicenseNumber` | *string* |  | Customer Driver License Number.|
 | `ssn` | *string* |  | Customer SSN or Tax ID.|
-| [phone {...}](#card-holder-phone-details) | *component* |  | Card Holder Phone Number|
+| `phone` | *component* |  | Cardholder [Phone Number](#phone-details)|
 
 
-### Card Holder Phone Details
+### Phone Details
 
-Use this component whento pass card holder phone details
+Use this component to pass cardholder phone details.
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `countryCode` | *string* |  | ISO Country code. |
-| `phoneNumber` | *string* |  | Card Holder phone number. |
+| `phoneNumber` | *string* |  | Cardholder phone number. |
 | `type` | *string* |  | Type of phone number.</br>Available Values:</br>*BILLING* - Billing account phone number</br>*SHIPPING* - Shipping contact phone number</br>*CUSTOMER* - Customer phone number |
 
 

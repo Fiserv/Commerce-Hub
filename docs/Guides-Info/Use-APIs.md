@@ -1,3 +1,3 @@
 # Use-APIs
 
-The beginning of an awesome article...
+https://docs.fiserv.com/docs/payments/docs/1.%20Introduction%20to%20Fiserv%20Payments/How-to-use-our-payments-APIs.md

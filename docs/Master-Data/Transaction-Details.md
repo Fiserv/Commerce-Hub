@@ -4,7 +4,7 @@ The transaction request initiated by merchant contains various transaction relat
 
 |Variable    | Type| Maximum Length | Description/Values|
 |---------|-----------|----------------|---------|
-| `captureFlag*` | *boolean* | 5 | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
+| `captureFlag` | *boolean* | 5 | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
 | `processingCode` | *string* | 6 | A required code is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.</br>Code Format:</br>Position 1-2 : [Transaction Type](url)</br>Position 3–4 : From [Account Type](url)</br>Position 5–6 : To Account Type </br> |

@@ -1,9 +1,9 @@
-## Transaction-Interaction
+## Transaction Interaction
 
 The trasnaction request may contain the data regarding where the transaction is been acquired and what are the capabilities of the terminal.
 
 | Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
+| -------- | -- | ------------ | ------------------ |
 | `origin` | *string* |  | The source of the transaction.</br>Accepted Request Types:</br>*ECOM* - Card Not Present email or nternet</br>*MOTO* - Mail order or telephone order</br>*POS* - Card Present retail face to face |
 | `posEntryMode` | *string* |  | An identifier used to indicate how the account number was entered on the transaction. [Available Values](#pos-entry-mode) are |
 | `posConditionCode` | *string* |  | An identifier used to indicate the transaction condition at the Point-of-Sale (POS). [Available Values](#pos-condition-code) are|
