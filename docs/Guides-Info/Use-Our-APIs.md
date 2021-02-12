@@ -1,10 +1,8 @@
 ## How to use our Payment API
 
----
+### Constructing the API Call
 
-### Constructing the API call
-
-Commerce-HUB API's request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
+Commerce Hub's API request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
 
 ### Request Header
 
@@ -57,11 +55,9 @@ The body of the transaction Request differs as per the transaction which is gett
 },
 ```
 
+### Sample API Call
 
 A standard API call to execute a Primary Transaction might look like this:
-</br>
-
-##### Sample API Call
 
 ```json
 

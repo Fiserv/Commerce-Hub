@@ -4,15 +4,24 @@ The trasnaction request may contain the data regarding where the transaction is 
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The source of the transaction.</br>Accepted Request Types:</br>*ECOM* - Card Not Present email or nternet</br>*MOTO* - Mail order or telephone order</br>*POS* - Card Present retail face to face |
-| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was entered on the transaction. [Available Values](#pos-entry-mode) are |
-| `posConditionCode` | *string* |  | An identifier used to indicate the transaction condition at the Point-of-Sale (POS). [Available Values](#pos-condition-code) are|
-| `mobileInteraction` | *string* |  | Mobile method of interaction.</br>Accepted Request Types:</br>*PHONE_NUMBER* - Invoice eceived by phone number</br>*QR_CODE* - Invoice paid by scanning QR Code|
+| `origin` | *string* |  | The source of the transaction. [Available Values](#pos-entry-mode) |
+| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was entered on the transaction. [Available Values](#pos-entry-mode)|
+| `posConditionCode` | *string* |  | An identifier used to indicate the transaction condition at the Point-of-Sale *(POS)*. [Available Values](#pos-condition-code)|
+| `mobileInteraction` | *string* |  | Mobile method of interaction. [Available Values](#mobile-interaction)|
 
+### Transaction Origin
+
+The available values for `origin` are :
+
+| Value | Description |
+|-------|-------------|
+| *ECOM* | Card Not Present email or internet. |
+| *MOTO* | Mail order or telephone order. |
+| *POS* | Card Present retail face to face. |
 
 ### POS Entry Mode
 
-Available values for POS Condition code are :
+The available values for `posEntryMode` are :
 
 | Value | Description |
 |-------|-------------|
@@ -36,6 +45,8 @@ Available values for POS Condition code are :
 
 ### POS Condition Code
 
+The available values for `posConditionCode` are :
+
 | Value | Description |
 |-------|-------------|
 | *CARD_PRESENT* | Cardholder Present, Card Present |
@@ -49,5 +60,11 @@ Available values for POS Condition code are :
 | *CARD_NOT_PRESENT_MOTO* | Cardholder Not Present, Mail Order/Telephone Order |
 | *CARD_NOT_PRESENT_ECOM* | Cardholder Not Present, Ecommerce |
 
+### Mobile Interaction
 
+The available values for `mobileInteraction` are :
 
+| Value | Description |
+|-------|-------------|
+| *PHONE_NUMBER* | Invoice received by phone number |
+| *QR_CODE* | Invoice paid by scanning QR Code |
