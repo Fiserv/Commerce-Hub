@@ -12,172 +12,143 @@ Currency code helps to figure out in which currency the transaction is performed
 and some have 3 decimals, such as BHD. For example, 10 GBP is submitted as 1000, 
 whereas 10 JPY is submitted as 10.
 
-Currency | Code | Decimals
-------- | ------- | -------
-Afghani | AFN | 2
-Algerian Dinar | DZD | 2
-Argentine Peso | ARS | 2
-Armenian Dram | AMD | 2
-Aruban Florin | AWG | 2
-Australian Dollar | AUD | 2
-Azerbaijan Manat | AZN | 2
-Bahamian Dollar | BSD | 2
-Bahraini Dinar | BHD | 3
-Baht | THB | 2
-Balboa | PAB | 2
-Barbados Dollar | BBD | 2
-Belarusian Ruble | BYN | 2
-Belize Dollar | BZD | 2
-Bermudian Dollar | BMD | 2
-Bolívar Soberano | VES | 2
-Boliviano | BOB | 2
-Brazilian Real | BRL | 2
-Brunei Dollar | BND | 2
-Bulgarian Lev | BGN | 2
-Burundi Franc | BIF | 0
-Cabo Verde Escudo | CVE | 2
-Canadian Dollar | CAD | 2
-Cayman Islands Dollar | KYD | 2
-CFA Franc BCEAO | XOF | 0
-CFA Franc BEAC | XAF | 0
-CFP Franc | XPF | 0
-Chilean Peso | CLP | 0
-Colombian Peso | COP | 2
-Comorian Franc  | KMF | 0
-Congolese Franc | CDF | 2
-Convertible Mark | BAM | 2
-Cordoba Oro | NIO | 2
-Costa Rican Colon | CRC | 2
-Cuban Peso | CUP | 2
-Czech Koruna | CZK | 2
-Dalasi | GMD | 2
-Danish Krone | DKK | 2
-Denar | MKD | 2
-Djibouti Franc | DJF | 0
-Dobra | STN | 2
-Dominican Peso | DOP | 2
-Dong | VND | 0
-East Caribbean Dollar | XCD | 2
-Egyptian Pound | EGP | 2
-El Salvador Colon | SVC | 2
-Ethiopian Birr | ETB | 2
-Euro | EUR | 2
-Falkland Islands Pound | FKP | 2
-Fiji Dollar | FJD | 2
-Forint | HUF | 2
-Ghana Cedi | GHS | 2
-Gibraltar Pound | GIP | 2
-Gourde | HTG | 2
-Guarani | PYG | 0
-Guinean Franc | GNF | 0
-Guyana Dollar | GYD | 2
-Hong Kong Dollar | HKD | 2
-Hryvnia | UAH | 2
-Iceland Krona | ISK | 0
-Indian Rupee | INR | 2
-Iranian Rial | IRR | 2
-Iraqi Dinar | IQD | 3
-Jamaican Dollar | JMD | 2
-Jordanian Dinar | JOD | 3
-Kenyan Shilling | KES | 2
-Kina | PGK | 2
-Kuna | HRK | 2
-Kuwaiti Dinar | KWD | 3
-Kwanza | AOA | 2
-Kyat | MMK | 2
-Lao Kip | LAK | 2
-Lari | GEL | 2
-Lebanese Pound | LBP | 2
-Lek | ALL | 2
-Lempira | HNL | 2
-Leone | SLL | 2
-Liberian Dollar | LRD | 2
-Libyan Dinar | LYD | 3
-Lilangeni | SZL | 2
-Loti | LSL | 2
-Malagasy Ariary | MGA | 2
-Malawi Kwacha | MWK | 2
-Malaysian Ringgit | MYR | 2
-Mauritius Rupee | MUR | 2
-Mexican Peso | MXN | 2
-Mexican Unidad de Inversion (UDI) | MXV | 2
-Moldovan Leu | MDL | 2
-Moroccan Dirham | MAD | 2
-Mozambique Metical | MZN | 2
-Mvdol | BOV | 2
-Naira | NGN | 2
-Nakfa | ERN | 2
-Namibia Dollar | NAD | 2
-Nepalese Rupee | NPR | 2
-Netherlands Antillean Guilder | ANG | 2
-New Israeli Sheqel | ILS | 2
-New Taiwan Dollar | TWD | 2
-New Zealand Dollar | NZD | 2
-Ngultrum | BTN | 2
-No universal currency |  | 
-North Korean Won | KPW | 2
-Norwegian Krone | NOK | 2
-Ouguiya | MRU | 2
-Pa’anga | TOP | 2
-Pakistan Rupee | PKR | 2
-Pataca | MOP | 2
-Peso Convertible | CUC | 2
-Peso Uruguayo | UYU | 2
-Philippine Peso | PHP | 2
-Pound Sterling | GBP | 2
-Pula | BWP | 2
-Qatari Rial | QAR | 2
-Quetzal | GTQ | 2
-Rand | ZAR | 2
-Rial Omani | OMR | 3
-Riel | KHR | 2
-Romanian Leu | RON | 2
-Rufiyaa | MVR | 2
-Rupiah | IDR | 2
-Russian Ruble | RUB | 2
-Rwanda Franc | RWF | 0
-Saint Helena Pound | SHP | 2
-Saudi Riyal | SAR | 2
-Serbian Dinar | RSD | 2
-Seychelles Rupee | SCR | 2
-Singapore Dollar | SGD | 2
-Sol | PEN | 2
-Solomon Islands Dollar | SBD | 2
-Som | KGS | 2
-Somali Shilling | SOS | 2
-Somoni | TJS | 2
-South Sudanese Pound | SSP | 2
-Sri Lanka Rupee | LKR | 2
-Sudanese Pound | SDG | 2
-Surinam Dollar | SRD | 2
-Swedish Krona | SEK | 2
-Swiss Franc | CHF | 2
-Syrian Pound | SYP | 2
-Taka | BDT | 2
-Tala | WST | 2
-Tanzanian Shilling | TZS | 2
-Tenge | KZT | 2
-Trinidad and Tobago Dollar | TTD | 2
-Tugrik | MNT | 2
-Tunisian Dinar | TND | 3
-Turkish Lira | TRY | 2
-Turkmenistan New Manat | TMT | 2
-UAE Dirham | AED | 2
-Uganda Shilling | UGX | 0
-Unidad de Fomento | CLF | 4
-Unidad de Valor Real | COU | 2
-Unidad Previsional | UYW | 4
-Uruguay Peso en Unidades Indexadas (UI) | UYI | 0
-US Dollar | USD | 2
-US Dollar (Next day) | USN | 2
-Uzbekistan Sum | UZS | 2
-Vatu | VUV | 0
-WIR Euro | CHE | 2
-WIR Franc | CHW | 2
-Won | KRW | 0
-Yemeni Rial | YER | 2
-Yen | JPY | 0
-Yuan Renminbi | CNY | 2
-Zambian Kwacha | ZMW | 2
-Zimbabwe Dollar | ZWL | 2
-Zloty | PLN | 2
+Currency Code | Currency Name | Currency Number | Decimal |
+------- | ------- | -------| -------- |
+Afghan Afghani | AFN | 971 | 2 |
+Algerian Dinar | DZD | 012 | 2 |
+Argentine Peso | ARS | 032 | 2 |
+Armenian Dram | AMD | 051 | 2 |
+Aruban Guilder | AWG | 533 | 2 |
+Australian Dollar | AUD | 036 | 2 |
+Azerbaijan Manat | AZN | 944 | 2 |
+Bahamian Dollar | BSD | 044 | 2 |
+Bahrain Dinar | BHD | 048 | 3 |
+Bangladeshi Taka | BDT | 050 | 2 |
+Barbados Dollar | BBD | 052 | 2 |
+Belarusian Ruble | BYN | 933 | 2 |
+Belizean Dollar | BZD | 084 | 2 |
+Bermudian Dollar | BMD | 060 | 2 |
+Venezuelan Bolívar | VEF | 862 | 2 |
+Bolivian Boliviano | BOB | 068 | 2 |
+Bolivian Soberano | VES | 928 | 2 |
+Bosnian Convertible Marka | BAM | 977 | 2 |
+Botswana Pula | BWP | 072 | 2 |
+Brazilian Real | BRL | 986 | 2 |
+British Pound | GBP | 826 | 2 |
+Bruneian Dollar | BND | 096 | 2 |
+Bulgarian Lev | BGN | 975 | 2 |
+Burundian Franc | BIF | 108 | 2 |
+Cambodian Riel | KHR | 116 | 2 |
+Canadian Dollar | CAD | 124 | 2 |
+Cape Verdean Escudo | CVE | 132 | 2 |
+Caymanian Dollar | KYD | 136 | 2 |
+Central African CFA Franc BEAC |  XAF | 950 | 2 |
+CFA Franc BCEAO | XOF | 952 | 0 |
+CFP Franc | XPF | 953 | 0 |
+Chilean Peso | CLP | 152 | 0 |
+China Yuan Renminbi | CNY | 156 | 2 |
+Colombian Peso | COP | 170 | 2 |
+Congolese Franc | CDF | 976 | 2 |
+Costa Rican Colon | CRC | 188 | 2 |
+Croatian Kuna | HRK | 191 | 2 |
+Cuban Peso | CUP | 192 | 2 |
+Czech Krona | CZK | 203 | 2 |
+Danish Krone | DKK | 208 | 2 |
+Djiboutian Franc | DJF | 262 | 0 |
+Dominican Peso | DOP | 214 | 2 |
+Dutch Guilder | ANG | 532 | 2 |
+East Caribbean Dollar | XCD | 951 | 2 |
+Egyptian Pound | EGP | 818 | 2 |
+Ethiopian Birr | ETB | 230 | 2 |
+European Euro | EUR | 978 | 2 |
+Fijian Dollar | FJD | 242 | 2 |
+Gambian Dalasi | GMD | 270 | 2 |
+Georgian Lari | GEL | 981 | 2 |
+Ghanaian Cedi | GHS | 288 | 2 |
+Gibraltar Pound | GIP | 292 | 2 |
+Guatemalan Quetzal | GTQ | 320 | 2 |
+Guyanese Dollar | GYD | 328 | 2 |
+Honduran Lempira | HNL | 340 | 2 |
+Hongkong Dollar | HKD | 344 | 2 |
+Hungarian Forint | HUF | 348 | 2 |
+Iceland Krona | ISK | 352 | 0 |
+India Rupee | INR | 356 | 2 |
+Indonesian Rupiah | IDR | 360 | 2 |
+Iranian Rial | IRR | 364 | 2 |
+Iraqi Dinar | IQD | 368 | 3 |
+Israel Shekel | ILS | 376 | 2 |
+Jamaican Dollar | JMD | 388 | 2 |
+Japanese Yen | JPY | 392 | 0 |
+Jordanian Dinar | JOD | 400 | 3 |
+Kazakhstani Tenge | KZT | 398 | 2 |
+Kenyan Shilling | KES | 404 | 2 |
+Kuwait Dinar | KWD | 414 | 3 |
+Laotian Kip | LAK | 418 | 2 |
+Lebanese Pound | LBP | 422 | 2 |
+Libyan Dinar | LYD | 434 | 3 |
+Macau Pataca | MOP | 446 | 2 |
+Macedonian Denar | MKD | 807 | 2 |
+Malagasy Ariary | MGA | 969 | 2 |
+Malawian Kwacha | MWK | 454 | 2 |
+Malaysian Ringgit | MYR | 458 | 2 |
+Maldivian Rufiyaa | MVR | 462 | 2 |
+Mauritian Rupee | MUR | 480 | 2 |
+Mexico Peso | MXN | 484 | 2 |
+Moldovan Leu | MDL | 498 | 2 |
+Mongolian Tughrik | MNT | 496 | 2 |
+Moroccan Dirham | MAD | 504 | 2 |
+Myanmar Kyat | MMK | 104 | 2 |
+Namibia Dollar | NAD | 516 | 2 |
+Nepalese Rupee | NPR | 524 | 2 |
+New Zealand Dollar | NZD | 554 | 2 |
+Nicaraguan Cordoba | NIO | 558 | 2 |
+Nigerian Naira | NGN | 566 | 2 |
+Ni-Vanuatu Vatu | VUV | 548 | 0 |
+Norway Krona | NOK | 578 | 2 |
+Omani Rial | OMR | 512 | 3 |
+Pakistani Rupee | PKR | 586 | 2 |
+Panamanian Balboa | PAB | 590 | 2 |
+Papua New Guinean | PGK | 598 | 2 |
+Paraguayan Guarani | PYG | 600 | 0 |
+Peruvian Sol | PEN | 604 | 2 |
+Philippine Peso | PHP | 608 | 2 |
+Polish Zloty  | PLN | 985 | 2 |
+Qatari Riyal | QAR | 634 | 2 |
+Romania Leu | RON | 946 | 2 |
+Russia Ruble | RUB | 643 | 2 |
+Rwandan Franc | RWF | 646 | 0 |
+Saint Helenian Pound | SHP | 654 | 2 |
+Salvadoran Colon | SVC | 222 | 2 |
+Samoan Tala | WST | 882 | 2 |
+Sao Tomean Dobra | STD | 678 | 2 |
+Saudi Arabia Rial | SAR | 682 | 2 |
+Serbian Dinar | RSD | 941 | 2 |
+Seychellois Rupee | SCR | 690 | 2 |
+Sierra Leonean Leone | SLL | 694 | 2 |
+Singapore Dollar | SGD | 702 | 2 |
+Solomon Islander Dollar | SBD | 090 | 2 |
+Somali Shilling | SOS | 706 | 2 |
+South African Rand | ZAR | 710 | 2 |
+South Korea Won | KRW | 410 | 0 |
+Sri Lankan Rupee | LKR | 144 | 2 |
+Surinamese Dollar | SRD | 968 | 2 |
+Swedish Krona | SEK | 752 | 2 |
+Swiss Franc | CHF | 756 | 2 |
+Syrian Pound | SYP | 760 | 2 |
+Taiwan New Dollar | TWD | 901 | 2 |
+Tajikistani Somoni | TJS | 972 | 2 |
+Tanzanian Shilling | TZS | 834 | 2 |
+Thai Baht | THB | 764 | 2 |
+Tongan Pa'anga | TOP | 776 | 2 |
+Trinidadian Dollar | TTD | 780 | 2 |
+Tunisian Dinar | TND | 788 | 3 |
+Turkey Lira | TRY | 949 | 2 |
+Ugandan Shilling | UGX | 800 | 0 |
+Ukrainian Hryvnia | UAH | 980 | 2 |
+United Arab Emirates Dirham | AED | 784 | 2 |
+United States Dollar | USD | 840 | 2 |
+Uruguayan Peso | UYU | 858 | 2 |
+Uzbekistani Som | UZS | 860 | 2 |
+Vietnamese Dong | VND | 704 | 0 |
+Yemeni Rial | YER | 886 | 2 |
+Zambian Kwacha | ZMW | 894 | 2 |

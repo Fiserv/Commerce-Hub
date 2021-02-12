@@ -1,6 +1,6 @@
 ## Welcome to Commerce-HUB
 
-Thank You for visiting commerce-HUB website. Our gateway provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. We Offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
+Thank you for visiting commerce-HUB website. Our gateway provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. We Offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
 
 See below for the most popular options
 
@@ -15,6 +15,26 @@ Beyond accepting customer payments, our services include Tokenisation, 3DSecure,
 You can also request a Payment URL via our REST APIs, then send that to your customer. You customer then clicks the link you've sent them, which takes them to our Hosted Payment Page to complete the payment.
 
 
+## Excited to Learn and Use our API's??
+
+Follow the below steps to get an access to our development portal and use our APi's
+
+### 1. Sign up on our Developer Platform
+
+Head over to [Commerce-HUB](url) Developer platform and create an account.
+
+<!-- theme: info -->
+
+> ### Instant Access
+>
+> You won't need to apply for an account and you'll have instant access to our sanbox APIs. If you'd like something more then get in contact with us via the contact form and we will get in touch!
+
 https://docs.fiserv.com/docs/payments/docs/Welcome%20to%20Fiserv%20Payments.md
 +
-https://docs.fiserv.com/docs/payments/docs/1.%20Introduction%20to%20Fiserv%20Payments/Get%20started.md
+https://docs.fiserv.com/docs/payments/docs/1.%20Introduction
+%20to%20Fiserv%20Payments/Get%20started.md
+
+
+
+
+
