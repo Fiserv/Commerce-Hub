@@ -25,9 +25,9 @@ Our API allows developers to quickly enable secure and convenient payments in th
 
 To accept Apple Pay, you'll need us to generate a Certificate Signing Request. Please reach out to your Account Representative for getting your account enabled. Our Integration team will generate the CSR and share it with you along with the Merchant Identifier.
 
-### Steps to accept Apple Pay Transactions
+### Steps to Accept Apple Pay Transactions
 
-#### 1. Generate Payment Processing Certificate from Apple Portal
+#### 1. Generate Payment Processing Certificate
 
 - Login to apple 'Account' in developer.apple.com
 - In-order to generate certificate you must have a paid apple developer account or an organization account. New users must follow the prompts to set up a developer account
@@ -41,9 +41,9 @@ To accept Apple Pay, you'll need us to generate a Certificate Signing Request. P
 - Download payment processing certificate and install in your computer by double clicking it.
 - The certificate should show up in the 'Key chain access' of your Macbook.
 
-#### 2. Upload and register the apple development certificate for your machine
+#### 2. Upload and Register a Certificate
 
-- Request a new certificate from your keychain access
+- Request a new certificate from the keychain access
 - Request certificate
 - Follow the prompt and request the certificate to be saved on file
 - In the 'Certificate' section in the apple portal, click on the '+' and follow the prompt to request apple developer certificate for 'IOS' development
@@ -51,7 +51,7 @@ To accept Apple Pay, you'll need us to generate a Certificate Signing Request. P
 - Download and install the apple pay developer certificate
 - Your machine is now setup for programming IOS app using Xcode
 
-#### 3. Set-up Provision Profile for the application
+#### 3. Set-up Provision Profile
 
 - In the 'Certificate, Identifier and Profile' section in the apple portal navigate to profile.
 - Click the '+' sign to create a new profile.
@@ -70,8 +70,9 @@ To accept Apple Pay, you'll need us to generate a Certificate Signing Request. P
 - Under 'Apple Pay' click '+' and add the merchant id's registered in the portal, which in turn will be added to the entitlements file.
 - Now the Xcode is set-up for coding.
 
-#### 5. In the SDK enter the URL, api key and api secret and build the app:
+#### 5. Build the App:
 
+-In the SDK enter the URL, api key and api secret
 - Merchant id: Enter any valid merchant id registered in the apple portal. This gives the capability for a single user to use multiple merchant id's
 - Amount: Enter the amount of the transaction
 - Transaction type: Select PreAuth or Sale.

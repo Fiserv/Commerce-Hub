@@ -12,7 +12,7 @@ Merchants may want to build their own UI and manage cardholder checkout within t
 
 <!-- theme: warning -->
 >
-> For this, merchants need to have the relevant PCI Compliance capabilities to process raw card data
+> Merchants are required to have the relevant PCI Compliance capabilities to process and store card data.
 
 ### Hosted Payment Page
 
@@ -28,6 +28,6 @@ Merchants can also request a Payment URL via commerce Hub REST APIs, then send t
 
 ### Payment.js
 
-Use Payment.js to easily embed a payment form into your website.
+Use Payment.js to easily embed a payment form into a website.
 
-Fiserv's Payment.js makes it simple to tokenize payment credentials for later transactions without collecting, processing, or otherwise being able to view those payment credentials in their untokenized form, thus lowering your PCI compliance requirements.
+Payment.js makes it simple to tokenize payment credentials for later transactions without collecting, processing, or otherwise being able to view those payment credentials in their untokenized form, thus lowering the PCI compliance requirements.
