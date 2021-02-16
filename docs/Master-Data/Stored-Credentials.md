@@ -1,6 +1,6 @@
 ## Stored Credentials
 
-If you have set up an agreement with your customer to initiate recurring transactions on their behalf (e.g. for subscription payments) and have created a token for their card details, the API request type PaymentTokenSaleTransaction allows you to process the regular charges.
+If you have set up an agreement with your customer to initiate recurring transactions on their behalf (e.g. for subscription payments) and have created a token for their card details, the API request type PaymentToken allows you to process the regular charges.
 
 
 | Variable | Type | Length | Description/Values |
