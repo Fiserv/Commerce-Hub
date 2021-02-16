@@ -18,11 +18,12 @@ Secondary Transaction reference value can be either
 
 - `transactionID` : Gateway transaction identifier returned in the parameter gatewayTransactionId from a charge transaction. Capture, Void or Refund can be initiated by using the `transactionID` of the previous primary transaction as a reference
 
-**Sample Endpoint :** `/payments/v1/charges/{transactionId}/capture`
+  **Sample Endpoint :** `/payments/v1/charges/{transactionId}/capture`
+  </br>
 
 - `orderID`: Gateway transaction identifier returned in the parameter gatewayOrderId from a charge transaction. Capture, Void or Refund can be initiated by using the `orderID` of the previous primary transaction as a reference.
 
-**Sample Endpoint :** `/payments/v1/charges/orders/{orderId}/capture`
+  **Sample Endpoint :** `/payments/v1/charges/orders/{orderId}/capture`
 
 
 
