@@ -22,7 +22,7 @@ Head over to [Commerce-HUB](url) Developer platform and create an account.
 
 > ### Instant Access
 >
-> You won't need to apply for an account and you'll have instant access to our sanbox APIs. If you'd like something more then get in contact with us via the contact form and we will get in touch!
+> After registration the developer will have an instant access to the Commerce Hub APIs.
 
 ### 2. Generate an API key
 
