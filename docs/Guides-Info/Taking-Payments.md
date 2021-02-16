@@ -18,14 +18,19 @@ Secondary Transactions can be used to initiate [refund](../Transactions/Refund.m
 
 Secondary Transaction reference value can be either
 
-- **transactionID :** Capture, Void or Refund can be initiated by using the `transactionID` of the previous primary transaction as a reference or
+- **transactionID :** Capture, Void or Refund can be initiated by using the `transactionID` of the previous primary transaction as a reference
+
+`transactionID` : Gateway transaction identifier returned in the parameter gatewayTransactionId from a charge transaction.
+
+**Sample Endpoint :** `/payments/v1/charges/{transactionId}/capture`
+
+
 
 - **orderID :** Capture, Void or Refund can be initiated by using the `orderID` of the previous primary transaction as a reference.
 
+`orderId` : Gateway transaction identifier returned in the parameter gatewayOrderId from a charge transaction.
 
-
-
-
+**Sample Endpoint :** `/payments/v1/charges/orders/{orderId}/capture`
 
 
 https://docs.fiserv.com/docs/payments/docs/2.%20Payment%20APIs/2.1.%20Taking%20Payments/ii.%20Taking%20Customer%20Payments/1.%20The-Payments-API.md
