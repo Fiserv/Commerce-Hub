@@ -4,9 +4,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, hash, primary-transa
 
 ## Taking Payments
 
-The /payments API allows to create, inquire about, and finalize payment transactions.
-
-Our Payments API has two main uses - 
+The /payments API allows to create, inquire about, and finalize payment transactions. Our Payments API has two main uses - 
 
 ### Primary Transactions
 
@@ -18,21 +16,22 @@ Secondary Transactions can be used to initiate [refund](../Transactions/Refund.m
 
 Secondary Transaction reference value can be either
 
-- **transactionID :** Capture, Void or Refund can be initiated by using the `transactionID` of the previous primary transaction as a reference
-
-`transactionID` : Gateway transaction identifier returned in the parameter gatewayTransactionId from a charge transaction.
+- `transactionID` : Gateway transaction identifier returned in the parameter gatewayTransactionId from a charge transaction. Capture, Void or Refund can be initiated by using the `transactionID` of the previous primary transaction as a reference
 
 **Sample Endpoint :** `/payments/v1/charges/{transactionId}/capture`
 
-
-
-- **orderID :** Capture, Void or Refund can be initiated by using the `orderID` of the previous primary transaction as a reference.
-
-`orderId` : Gateway transaction identifier returned in the parameter gatewayOrderId from a charge transaction.
+- `orderID`: Gateway transaction identifier returned in the parameter gatewayOrderId from a charge transaction. Capture, Void or Refund can be initiated by using the `orderID` of the previous primary transaction as a reference.
 
 **Sample Endpoint :** `/payments/v1/charges/orders/{orderId}/capture`
+
+
+
+<!--
 
 
 https://docs.fiserv.com/docs/payments/docs/2.%20Payment%20APIs/2.1.%20Taking%20Payments/ii.%20Taking%20Customer%20Payments/1.%20The-Payments-API.md
 +
 https://docs.fiserv.com/docs/payments/docs/2.%20Payment%20APIs/2.1.%20Taking%20Payments/viii.Using%20orderId/Using-orderId.md
+
+
+>
