@@ -23,19 +23,19 @@ Our API allows developers to quickly enable secure and convenient payments in th
 
 To accept apple pay on the web perform the following:
 
-- [Create Merchant Identifier](#create-merchant-identifier)
-- [Create Payment Processing Certificate](#create-payment-processing-certificate)
-- [Register and Validate Merchant Account](#register-and-validate-merchant-account)
-- [Create Merchant Identity Certificate](#create-merchant-identity-certificate)
+- [ ] [Create Merchant Identifier](#create-merchant-identifier)
+- [ ] [Create Payment Processing Certificate](#create-payment-processing-certificate)
+- [ ] [Register and Validate Merchant Account](#register-and-validate-merchant-account)
+- [ ] [Create Merchant Identity Certificate](#create-merchant-identity-certificate)
 
 
 #### Apple Pay on the App
 
 To accept apple pay in app perform the following:
 
-- [Create a Merchant Identifier](#create-merchant-identifier)
-- [Enable Apple Pay in the App](#enable-apple-pay-in-the-app)
-- [Create Payment Processing Certificate](#create-payment-processing-certificate)
+- [ ] [Create a Merchant Identifier](#create-merchant-identifier)
+- [ ] [Enable Apple Pay in the App](#enable-apple-pay-in-the-app)
+- [ ] [Create Payment Processing Certificate](#create-payment-processing-certificate)
 
 ---
 
