@@ -16,3 +16,21 @@ Situations in which this could be implemented include:
 | `totalCount` | *integer* |  | Shall be present in the capture transaction indicating how many shipments the transaction is devided into. Can be sent in pre-authorization or the first capture.|
 | `finalShipment` | *boolean* |  | Used to identify the final capture (*TRUE* or *FALSE*)|
 
+
+### Payload Example
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "splitShipment": {
+    "totalCount": 5
+    "finalShipment": true
+  }
+}
+```

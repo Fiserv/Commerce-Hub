@@ -45,7 +45,7 @@ A *merchant identifier* uniquely identifies you to Apple Pay as a merchant who i
 ### Step 2: Enable Apple Pay in your app
 
 <!-- theme: warning -->
->This step is required if you are integrating Apple Pay into your iOS app. If you are only integrating Apple Pay into your website, you can move to Step 3: [Create a payment processing certificate](#step-3-create-payment-processing-sertificate).
+>This step is required if you are integrating Apple Pay into your iOS app. If you are only integrating Apple Pay into your website, you can move to Step 3: [Create a payment processing certificate](#step-3-create-payment-processing-certificate).
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), [enable the Apple Pay capability](https://help.apple.com/developer-account/#/dev4cb6dfbdb?sub=dev1d9758eca), then click Edit.
 - In the Merchant ID table, select the merchant identifiers you want to assign to the App ID, then click Continue.
