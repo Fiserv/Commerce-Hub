@@ -78,6 +78,8 @@ A *payment processing certificate* is associated with your merchant identifier a
 
 ### Step 4. Register and Validate Merchant Account
 
+Then register the merchant domains in your organization that will process the Apple Pay transactions and create a merchant identity certificate that you’ll use to authenticate communication with the Apple Pay servers.
+
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then select Merchant IDs from the pop-up menu on the top right.
 - On the right, select your merchant identifier.
 - Under Merchant Domains, click Add Domain.
