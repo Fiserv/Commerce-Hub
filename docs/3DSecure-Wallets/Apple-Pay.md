@@ -4,14 +4,8 @@ tags: [carat, commerce-hub, apple-pay]
 
 # Apple Pay
 
-**Apple Pay enables secure, simple checkouts in your app or on your website. **
-
 ## Overview
 Our API allows developers to quickly enable secure and convenient payments in their payment applications. The API handles all of the tokenization needed to protect customers’ transactions.
-
-<p>&nbsp;</p>
-
-<hr>
 
 **User Action:** The Buyer taps the Apple Pay button in the app or on the website, selects the payment card and uses the Touch-ID to complete the transaction.
 1. The Merchant App communicates with the merchant server and creates a transaction ID
@@ -25,9 +19,29 @@ Our API allows developers to quickly enable secure and convenient payments in th
 
 ## Steps to Accept Apple Pay Transactions
 
-### Step 1: Create Your Merchant Identifier
+#### Apple Pay on the Web
 
-A *merchant identifier* uniquely identifies you to Apple Pay as a merchant who is able to accept payments. You can use the same merchant identifier for multiple native and web apps. It never expires.
+To accept apple pay on the web perform the following:
+
+- [Create Merchant Identifier](#create-merchant-identifier)
+- [Create Payment Processing Certificate](#create-payment-processing-certificate)
+- [Register and Validate Merchant Account](#register-and-validate-merchant-account)
+- [Create Merchant Identity Certificate](#create-merchant-identity-certificate)
+
+
+#### Apple Pay on the App
+
+To accept apple pay in app perform the following:
+
+- [Create a Merchant Identifier](#create-merchant-identifier)
+- [Enable Apple Pay in the App](#enable-apple-pay-in-the-app)
+- [Create Payment Processing Certificate](#create-payment-processing-certificate)
+
+---
+
+### Create Merchant Identifier
+
+First create a merchant identifier in your developer account that uniquely identifies you to Apple Pay as a merchant who is able to accept payments. You can use the same merchant identifier for multiple native and web apps. The merchant identifier never expires.
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then click the Add button (+) in the upper-left corner.
 - Select Merchant IDs, then click Continue.
@@ -41,10 +55,9 @@ A *merchant identifier* uniquely identifies you to Apple Pay as a merchant who i
 >
 > After Merchant Identifier is created, you will need us to generate the certificate for you using the Merchant Identifier. Please contact our Account Representative in order to get the certificate.
 
-### Step 2: Enable Apple Pay in your app
+---
 
-<!-- theme: warning -->
->This step is required if you are integrating Apple Pay into your iOS app. If you are only integrating Apple Pay into your website, you can move to Step 3: [Create a payment processing certificate](#step-3-create-payment-processing-certificate).
+### Enable Apple Pay in the App
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), [enable the Apple Pay capability](https://help.apple.com/developer-account/#/dev4cb6dfbdb?sub=dev1d9758eca), then click Edit.
 - In the Merchant ID table, select the merchant identifiers you want to assign to the App ID, then click Continue.
@@ -54,10 +67,11 @@ A *merchant identifier* uniquely identifies you to Apple Pay as a merchant who i
 
 Alternatively, [enable Apple Pay](https://help.apple.com/xcode/mac/current/#/deva43983eb7) in Xcode.
 
+---
 
-### Step 3: Create Payment Processing Certificate
+### Create Payment Processing Certificate
 
-A *payment processing certificate* is associated with your merchant identifier and used to encrypt payment information. The payment processing certificate expires every 25 months. If the certificate is revoked, you can recreate it.
+Next create a payment processing certificate that is associated with your merchant identifier and used to encrypt payment information. The payment processing certificate expires every 25 months and can be revoked. When that happens, just re-create the payment process certificate.
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar.
 - Under Identifiers, select Merchant IDs using the filter in the top-right.
@@ -72,12 +86,12 @@ A *payment processing certificate* is associated with your merchant identifier a
 - Once the certificate is downloaded on your system, install it by double clicking it.
 - The certificate should show up in the 'Key chain access' of your Macbook.
 
-<!-- theme : warning-->
->You can now start processing Apple Pay payments in your iOS app. For Apple Pay on the web, you need to do the additional steps described below.
+---
 
-### Step 4. Register and Validate Merchant Account
+### Register and Validate Merchant Account
 
 Then register the merchant domains in your organization that will process the Apple Pay transactions and create a merchant identity certificate that you’ll use to authenticate communication with the Apple Pay servers.
+
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then select Merchant IDs from the pop-up menu on the top right.
 - On the right, select your merchant identifier.
@@ -86,7 +100,9 @@ Then register the merchant domains in your organization that will process the Ap
 - Click Download, place the downloaded file in the specified location, then click Verify.
 - Click Done.
 
-### Step 5. Create Merchant Identity Certificate
+---
+
+### Create Merchant Identity Certificate
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then select Merchant IDs from the pop-up menu on the top right.
 - On the right, select your merchant identifier.
