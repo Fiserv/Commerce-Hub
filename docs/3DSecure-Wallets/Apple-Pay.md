@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, apple-pay]
 ---
 
-## Apple-Pay
+## Apple Pay
 <p>&nbsp;</p>
 
 **Apple Pay enables secure, simple checkouts in your app or on your website. **
@@ -22,81 +22,82 @@ Our API allows developers to quickly enable secure and convenient payments in th
 5. Processor API responds back to the Merchant App (through the SDK) with either an approval or decline
 6. Check out the Apple Pay participant [Banks and Countries](https://support.apple.com/en-us/HT204916).
 
-
-To accept Apple Pay, you'll need us to generate a Certificate Signing Request. Please reach out to your Account Representative for getting your account enabled. Our Integration team will generate the CSR and share it with you along with the Merchant Identifier.
+---
 
 ### Steps to Accept Apple Pay Transactions
 
-#### 1. Generate Payment Processing Certificate
+### Step 1: Create Your Merchant Identifier
 
-- Login to apple 'Account' in developer.apple.com
-- In-order to generate certificate you must have a paid apple developer account or an organization account. New users must follow the prompts to set up a developer account
+A *merchant identifier* uniquely identifies you to Apple Pay as a merchant who is able to accept payments. You can use the same merchant identifier for multiple native and web apps. It never expires.
 
-  - Select Certificates, Identifiers and Profile :
-    - Certificates, Identifiers and Profile
-      - Select Identifier's and in the dropdown in the upper-right corner select merchant id
-        - Enter a unique merchant id, and upload a valid CSR in .pem format
+- In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then click the Add button (+) in the upper-left corner.
+- Select Merchant IDs, then click Continue.
+- Enter the merchant description and identifier name, then click Continue.
+  - Adyen has more instruction
+    -In the step to enter the merchant description and identifier name, make sure that the identifier includes the prefix merchant.com.adyen. For example: merchant.com.adyen.merchantAccount
+- Review the settings, then click Register.
+- Alternatively, you can create a merchant identifier in Xcode.
 
-- Once successfully uploaded, apple provides the payment processing certificate and the merchant id will come up in the certificate section.
-- Download payment processing certificate and install in your computer by double clicking it.
+<!-- theme: warning -->
+>
+> After Merchant Identifier is created, you will need us to generate the certificate for you using the Merchant Identifier. Please contact our Account Representative in order to get the certificate.
+
+### Step 2: Enable Apple Pay in your app
+
+<!-- theme: warning -->
+>This step is required if you are integrating Apple Pay into your iOS app. If you are only integrating Apple Pay into your website, you can move to Step 3: [Create a payment processing certificate](#step-3-create-payment-processing-sertificate).
+
+- In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), [enable the Apple Pay capability](https://help.apple.com/developer-account/#/dev4cb6dfbdb?sub=dev1d9758eca), then click Edit.
+- In the Merchant ID table, select the merchant identifiers you want to assign to the App ID, then click Continue.
+- If there are no merchant identifiers, click Create Merchant ID or go to [Create a merchant identifier](https://help.apple.com/developer-account/#/devb2e62b839?sub=dev103e030bb). Then repeat these steps.
+- Review the changes, then click Save.
+- If a warning dialog appears, click Confirm to finalize your changes.
+
+Alternatively, [enable Apple Pay](https://help.apple.com/xcode/mac/current/#/deva43983eb7) in Xcode.
+
+
+### Step 3: Create Payment Processing Certificate
+
+A *payment processing certificate* is associated with your merchant identifier and used to encrypt payment information. The payment processing certificate expires every 25 months. If the certificate is revoked, you can recreate it.
+
+- In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar.
+- Under Identifiers, select Merchant IDs using the filter in the top-right.
+- On the right, select your merchant identifier.
+>Note: If a banner appears at the top of the page saying that you need to accept an agreement, click the Review Agreement button and follow the instructions before continuing.
+- Under Apple Pay Payment Processing Certificate, click Create Certificate.
+- [Create a certificate signing request](https://help.apple.com/developer-account/#/devbfa00fef7?sub=dev103e030bb) on your Mac, and click Continue.
+- Click Choose File.
+- In the dialog that appears, select the certificate request file (a file with a .`certSigningRequest` file extension), then click Choose.
+- Click Continue to continue.
+- Click Download to download the certificate.
+- Once the certificate is downloaded on your system, install it by double clicking it.
 - The certificate should show up in the 'Key chain access' of your Macbook.
 
-#### 2. Upload and Register a Certificate
+<!-- theme : warning-->
+>You can now start processing Apple Pay payments in your iOS app. For Apple Pay on the web, you need to do the additional steps described below.
 
-- Request a new certificate from the keychain access
-- Request certificate
-- Follow the prompt and request the certificate to be saved on file
-- In the 'Certificate' section in the apple portal, click on the '+' and follow the prompt to request apple developer certificate for 'IOS' development
-- Upload the requested certificate
-- Download and install the apple pay developer certificate
-- Your machine is now setup for programming IOS app using Xcode
+### Step 4. Register and Validate Merchant Account
 
-#### 3. Set-up Provision Profile
+- In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then select Merchant IDs from the pop-up menu on the top right.
+- On the right, select your merchant identifier.
+- Under Merchant Domains, click Add Domain.
+- Enter the fully qualified domain name, then click Save.
+- Click Download, place the downloaded file in the specified location, then click Verify.
+- Click Done.
 
-- In the 'Certificate, Identifier and Profile' section in the apple portal navigate to profile.
-- Click the '+' sign to create a new profile.
-- Choose, 'IOS' development and follow the prompts
-- In the capabilities select 'Apple Pay' and 'In-App Purchases'
-- You can also register the test devices here using, uuid. (Xcode also does this when the app is built on the phone)
-- Download the provision profile on to your mac
+### Step 5. Create Merchant Identity Certificate
 
-#### 4. Set-up Project in Xcode
-
-- Select new xcode project with a single view or import an existing project.
-- Register the app using the app-id in the apple portal under Identifier->appId
-- Go to Xcode->Preferences,->accounts and install the downloaded provision profile, your profile is now linked to your Xcode.
-- Click on your project, go to Signing & Capabilities select 'Automatically manage signing'.
-- '+ capabilities' add apple pay.
-- Under 'Apple Pay' click '+' and add the merchant id's registered in the portal, which in turn will be added to the entitlements file.
-- Now the Xcode is set-up for coding.
-
-#### 5. Build the App:
-
--In the SDK enter the URL, api key and api secret
-- Merchant id: Enter any valid merchant id registered in the apple portal. This gives the capability for a single user to use multiple merchant id's
-- Amount: Enter the amount of the transaction
-- Transaction type: Select PreAuth or Sale.
-- Apple Pay Button: Click this to produce payment sheet and fingerprint authentication for the transaction.
-
-#### 6. Example Payload
-
-Once the user authenticates the transaction the apple returns the payment token, then the SDK generates the following payload. 
-
-```json
-{
-  "paymentSource": {
-    "sourceType": "ApplePay",
-    "data": "hbreWcQg980mUoUCfuCoripnHO210lvtizOFLV6PTw1DjooSwik778bH/qgK2pKelDTiiC8eXeiSwSIfrTPp6tq9x8Xo2H0KYAHCjLaJtoDdnjXm8QtC3m8MlcKAyYKp4hOW6tcPmy5rKVCKr1RFCDwjWd9zfVmp/au8hzZQtTYvnlje9t36xNy057eKmA1Bl1r9MFPxicTudVesSYMoAPS4IS+IlYiZzCPHzSLYLvFNiLFzP77qq7B6HSZ3dAZm244v8ep9EQdZVb1xzYdr6U+F5n1W+prS/fnL4+PVdiJK1Gn2qhiveyQX1XopLEQSbMDaW0wYhfDP9XM/+EDMLaXIKRiCtFry9nkbQZDjr2ti91KOAvzQf7XFbV+O8i60BSlI4/QRmLdKHmk/m0rDgQAoYLgUZ5xjKzXpJR9iW6RWuNYyaf9XdD8s2eB9aBQ=",
-    "header": {
-      "applicationDataHash": "94ee059335e587e501cc4bf90613e0814f00a7b08bc7c648fd865a2af6a22cc2",
-      "ephemeralPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvR+anQg6pElOsCnC3HIeNoEs2XMHQwxuy9plV1MfRRtIiHnQ6MyOS+1FQ7WZR2bVAnHFhPFaM9RYe7/bynvVvg==",
-      "publicKeyHash": "KRsyW0NauLpN8OwKr+yeu4jl6APbgW05/TYo5eGW0bQ=",
-      "transactionId": "31323334353637"
-    },
-    "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCAMIIB0zCCAXkCAQEwCQYHKoZIzj0EATB2MQswCQYDVQQGEwJVUzELMAkGA1UECAwCTkoxFDASBgNVBAcMC0plcnNleSBDaXR5MRMwEQYDVQQKDApGaXJzdCBEYXRhMRIwEAYDVQQLDAlGaXJzdCBBUEkxGzAZBgNVBAMMEmQxZHZ0bDEwMDAuMWRjLmNvbTAeFw0xNTA3MjMxNjQxMDNaFw0xOTA3MjIxNjQxMDNaMHYxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOSjEUMBIGA1UEBwwLSmVyc2V5IENpdHkxEzARBgNVBAoMCkZpcnN0IERhdGExEjAQBgNVBAsMCUZpcnN0IEFQSTEbMBkGA1UEAwwSZDFkdnRsMTAwMC4xZGMuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErnHhPM18HFbOomJMUiLiPL7nrJuWvfPy0Gg3xsX3m8q0oWhTs1QcQDTT+TR3yh4sDRPqXnsTUwcvbrCOzdUEeTAJBgcqhkjOPQQBA0kAMEYCIQDrC1z2JTx1jZPvllpnkxPEzBGk9BhTCkEB58j/Cv+sXQIhAKGongoz++3tJroo1GxnwvzK/Qmc4P1K2lHoh9biZeNhAAAxggFSMIIBTgIBATB7MHYxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOSjEUMBIGA1UEBwwLSmVyc2V5IENpdHkxEzARBgNVBAoMCkZpcnN0IERhdGExEjAQBgNVBAsMCUZpcnN0IEFQSTEbMBkGA1UEAwwSZDFkdnRsMTAwMC4xZGMuY29tAgEBMA0GCWCGSAFlAwQCAQUAoGkwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkwNjA3MTg0MTIxWjAvBgkqhkiG9w0BCQQxIgQg0PLaZU4YWZqtP9t/ygv9XIS/5ngU6FlGjpvyK6VFXVMwCgYIKoZIzj0EAwIERjBEAiBTNmQEPyc3aMm4Mwa0riD3dNdSc9aAhslj65Us8b3aKwIgNSc/y+CWpsr8qDln0fZK6ZD/LWPMxofQedlPy7Q6gY8AAAAAAAA=",
-    "version": "EC_v1",
-    "applicationData": "VEVTVA==",
-    "merchantId": "merchant.com.fapi.tcoe.applepay"
-  }
-}
-```
+- In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then select Merchant IDs from the pop-up menu on the top right.
+- On the right, select your merchant identifier.
+- Under Apple Pay Merchant Identity Certificate, click Create Certificate.
+- Create a [certificate signing request](https://help.apple.com/developer-account/#/devbfa00fef7) on your Mac, and click Continue.
+- Click Choose File.
+- In the dialog that appears, select the certificate request file (a file with a .certSigningRequest file extension), then click Choose.
+- Click Continue to continue.
+- Click Download to download the certificate.
+- Once the certificate is downloaded on your system, install it by double clicking it.
+- The certificate should show up in the 'Key chain access' of your Macbook.
+- Export the certificate from your keychain as a p12 file.
+- Convert the p12 file to a PEM file using the following command:
+> Command here
+- Upload the apple-pay-cert.pem file to your server.
