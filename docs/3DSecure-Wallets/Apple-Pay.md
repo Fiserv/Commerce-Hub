@@ -2,12 +2,11 @@
 tags: [carat, commerce-hub, apple-pay]
 ---
 
-## Apple Pay
-<p>&nbsp;</p>
+# Apple Pay
 
 **Apple Pay enables secure, simple checkouts in your app or on your website. **
 
-### Overview
+## Overview
 Our API allows developers to quickly enable secure and convenient payments in their payment applications. The API handles all of the tokenization needed to protect customers’ transactions.
 
 <p>&nbsp;</p>
@@ -24,7 +23,7 @@ Our API allows developers to quickly enable secure and convenient payments in th
 
 ---
 
-### Steps to Accept Apple Pay Transactions
+## Steps to Accept Apple Pay Transactions
 
 ### Step 1: Create Your Merchant Identifier
 
