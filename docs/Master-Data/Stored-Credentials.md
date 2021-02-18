@@ -2,7 +2,7 @@
 
 For recurring transactions if merchant is allowed to initiate a transactions on behalf of customers (e.g. for subscription payments), and have created a token for their card details, the API request type PaymentToken allows you to process the regular charges. 
 
-### Technical Requirements
+## Technical Requirements
 
 ##### Component : storedCredentials
 
@@ -13,4 +13,31 @@ For recurring transactions if merchant is allowed to initiate a transactions on 
 | `sequence` | *string* |  | Indicates if the transaction is first or subsequent.</br>Accepted Request Types:</br>*FIRST*</br>*SUBSEQUENT* |
 | `schemeReferencedTransactionId` | *string* |  | The transaction ID received from schemes for the initial transaction. May be required if sequence is subsequent. |
 
-### Payload Example
+## Payload Example
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "paymentSource": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "storedCredentials": {
+    "scheduled": true,
+    "initiator": "merchant",
+    "sequence": "first",
+    "schemeReferenceTransactionId": "54231235467"
+  }
+}
+```
