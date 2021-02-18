@@ -1,4 +1,4 @@
-## Welcome to Commerce Hub
+# Welcome to Commerce Hub
 
 Thank you for visiting commerce-HUB website. Our gateway provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. We Offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
 

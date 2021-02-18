@@ -1,4 +1,4 @@
-## Transaction Interaction
+# Transaction Interaction
 
 The trasnaction request may contain the data regarding where the transaction is been acquired and what are the capabilities of the terminal.
 
@@ -10,7 +10,7 @@ The trasnaction request may contain the data regarding where the transaction is 
 | `mobileInteraction` | *string* |  | Mobile method of interaction. [Available Values](#mobile-interaction)|
 | `eciIndicator` | *string* |  | Electronic Commerce Indicator (ECI). [Available Values](#electronic-commerce-indicator)|
 
-### Transaction Origin
+## Transaction Origin
 
 The available values for `origin` are :
 
@@ -20,7 +20,7 @@ The available values for `origin` are :
 | *MOTO* | Mail order or telephone order. |
 | *POS* | Card Present retail face to face. |
 
-### POS Entry Mode
+## POS Entry Mode
 
 The available values for `posEntryMode` are :
 
@@ -44,7 +44,7 @@ The available values for `posEntryMode` are :
 | *MAG_STRIPE* | Magnetic Stripe - Track Read |
 
 
-### POS Condition Code
+## POS Condition Code
 
 The available values for `posConditionCode` are :
 
@@ -63,7 +63,7 @@ The available values for `posConditionCode` are :
 | *CARD_NOT_PRESENT_MOTO* | Cardholder Not Present, Mail Order/Telephone Order. Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
 | *CARD_NOT_PRESENT_ECOM* | Cardholder Not Present, Ecommerce. Designates a transaction initiated from the merchant's website or email. |
 
-### Mobile Interaction
+## Mobile Interaction
 
 The available values for `mobileInteraction` are :
 
@@ -72,7 +72,7 @@ The available values for `mobileInteraction` are :
 | *PHONE_NUMBER* | Invoice received by phone number |
 | *QR_CODE* | Invoice paid by scanning QR Code |
 
-### Electronic Commerce Indicator
+## Electronic Commerce Indicator
 
 The available values for `eciIndicator` are :
 

@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges]
 ---
 
-## Capture Charges
+# Capture Charges
 
 Use this payload to capture a previous pre-authorized [Charge](Charges.md). This is known known as a post-authorization. This will settle (withdrawl) funds from the customer.
 
@@ -12,7 +12,7 @@ Use this payload to capture a previous pre-authorized [Charge](Charges.md). This
 >
 > Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a new charge.
 
-##### Capture Types
+## Capture Types
 
 - **Automatic Capture** : A charge is automatically captured when a [Sale](../FAQs-Glossary/Glossary.md#Sale) or [Deferred Payment](Deferred-Payment.md) request is made.
 - **Manual Capture** : A manual capture can be processed for the full amount or a partial amount.

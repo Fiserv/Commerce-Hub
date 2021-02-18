@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, Dynamic-Descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor]
 ---
 
-## Merchant Descriptor
+# Merchant Descriptor
 
 Some of the time customers challenge the transaction received in the statement because of the incomplete merchant information, resulting in incorrect chargebacks. Banks and Payment Schemes require inclusion of certain clear and accurate merchant information, which comes in statement helping in reducing such incidents.
 
@@ -18,7 +18,7 @@ A descriptor is a piece of identifying information about a merchant, e.g. busine
 
 ---
 
-### Minimum Requirements
+## Minimum Requirements
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |

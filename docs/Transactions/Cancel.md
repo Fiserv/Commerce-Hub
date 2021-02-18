@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cancel]
 ---
 
-## Cancel Charges
+# Cancel Charges
 
 If the customer has canceled the order or if fraud is suspected, the merchant would need to release the original authorization by issuing a void (Cancel) request to the original Transaction ID or Order ID. 
 
@@ -22,7 +22,7 @@ If the customer has canceled the order or if fraud is suspected, the merchant wo
 
 ---
 
-### Minimum Requirements
+## Minimum Requirements
 
 
 ##### Component : transactionBatch

@@ -2,15 +2,15 @@
 tags: [carat, commerce-hub, card-not-present, card-present, hash, primary-transactions, secondary-transactions]
 ---
 
-## Transaction Types
+# Transaction Types
 
 The Commerce Hub API allows a merchant to create, inquire, and finalize payment transactions. Our API has two transaction types, primary and secondary.
 
-### Primary Transactions
+## Primary Transactions
 
 Primary transactions are typical [sale](../Transactions/Charges.md) transactions and [pre-authorizations](../Transactions/Charges.md) and are used to execute a customer payment or pre-authorization transaction without reference to a prior transaction.
 
-### Secondary Transactions
+## Secondary Transactions
 
 Secondary Transactions can be used to initiate [refund](../Transactions/Refund.md) transaction, [void](../Transactions/Cancel.md) a transaction or [complete a pre-authorization](../Transactions/Capture.md) using a reference to a prior transaction.
 

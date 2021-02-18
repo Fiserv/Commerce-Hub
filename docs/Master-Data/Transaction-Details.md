@@ -1,4 +1,4 @@
-## Transaction Details
+# Transaction Details
 
 The transaction request initiated by merchant contains various transaction related data which is captured in transactionDetails component.
 
@@ -22,7 +22,7 @@ The transaction request initiated by merchant contains various transaction relat
 | `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
 | [deviceFingerprint {...}](#device-finger-print) | *component* |  | An array containing the device fingerprint details.|
 
-### Device Finger Print
+## Device Finger Print
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -32,7 +32,7 @@ Variable | Type| Maximum Length | Description/Values|
 |[dataDynamic {...}](#data-dynamic)| *string* |  | An array containing data Dynamic details. |
 
 
-#### Data Capture
+### Data Capture
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -41,7 +41,7 @@ Variable | Type| Maximum Length | Description/Values|
 | `captureTime` | *string* |  | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 
 
-#### Data Static
+### Data Static
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -51,7 +51,7 @@ Variable | Type| Maximum Length | Description/Values|
 | `type` | *string* |  | Device type/name. |
 
 
-#### Data Dynamic
+### Data Dynamic
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |

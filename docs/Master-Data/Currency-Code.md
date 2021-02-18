@@ -2,7 +2,7 @@
 tags: [currency-code, carat, commerce-hub]
 ---
 
-## Currency Codes
+# Currency Codes
 
 The `currency` variable in the `amount` array determines what currency the transaction well be submitted in.
 

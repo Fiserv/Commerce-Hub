@@ -1,8 +1,8 @@
-## Customer Address
+# Customer Address
 
 Address is categorized in to 2 types...
 
-### Billing Address
+## Billing Address
 
 Is an address connected to the customer's [payment method](Source-Type.md).
 
@@ -17,7 +17,7 @@ Is an address connected to the customer's [payment method](Source-Type.md).
 | `country` | *string* |  | [Country Code](Country-Code.md)|
 
 
-### Shipping Address
+## Shipping Address
 
 Is an address where merchant will send the order. 
 

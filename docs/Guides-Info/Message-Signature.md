@@ -2,11 +2,11 @@
 tags: [carat, commerce-hub, card-not-present, card-present, hash, message-signature]
 ---
 
-## How to Generate a Message Signature
+# How to Generate a Message Signature
 
 To ensure data integrity, prevent replay attacks, and eliminate stale requests a Message Signature is required as part of the [Header](Use-Our-APIs.md).
 
-### Details
+## Details
 
 - **Signature Algorithm** : SHA256 HMAC
 - **Signature Encoding** : Base64
@@ -16,7 +16,7 @@ The message data for the signature is the following items concatenated: `REQUEST
 
 The `Client-Request-Id` is a randomly generated number that is unique for each request. It is used as nonce and validated against all Client-Request-Ids received by Commerce Hub within a predetermined timeframe *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.
 
-### Code Examples
+## Code Examples
 
 <!--
 type: tab

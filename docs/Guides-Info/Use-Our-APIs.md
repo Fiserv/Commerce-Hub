@@ -1,10 +1,10 @@
-## How to use our Payment API
+# How to use our Payment API
 
-### Constructing the API Call
+## Constructing the API Call
 
 Commerce Hub's API request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
 
-### Request Header
+## Request Header
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -14,7 +14,7 @@ Commerce Hub's API request consists of the [Header](#request-header) followed by
 | `Timestamp` | *integer* |  | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
 | `Message-Signature` | *string* |  | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the [Developer Portal](url). |
 
-##### Sample Header
+#### Sample Header
 
 ```json
 header: {
@@ -27,12 +27,12 @@ header: {
 ```
 
 
-### Request Body
+## Request Body
 
 The body of the transaction Request differs as per the transaction which is getting initiated. Below is the sample body for [charge](../Transactions/Charges.md) request.
 </br>
 
-##### Sample Request Body
+#### Sample Request Body
 
 ```json
 {
@@ -55,7 +55,7 @@ The body of the transaction Request differs as per the transaction which is gett
 },
 ```
 
-### Sample API Call
+## Sample API Call
 
 A standard API call to execute a Primary Transaction might look like this:
 

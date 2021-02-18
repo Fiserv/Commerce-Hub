@@ -1,4 +1,4 @@
-## Cardholder Details
+# Cardholder Details
 
 The transaction request may contain the cardholder details. The details consists of customer id, name, date of birth etc.
 
@@ -17,7 +17,7 @@ The transaction request may contain the cardholder details. The details consists
 | `phone` | *component* |  | Cardholder [Phone Number](#phone-details)|
 
 
-### Phone Details
+## Phone Details
 
 Use this component to pass cardholder phone details.
 

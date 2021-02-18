@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cancel, refund]
 ---
 
-## Refund Charges
+# Refund Charges
 
 If the customer wish to cancel the transaction after the batch has been settled, the merchant would need to release the original authorization by issuing a Refund request to the original Transaction ID or Order ID. Refund can be initiated either for full amount or partial amount of the order.
 
@@ -21,7 +21,7 @@ If the customer wish to cancel the transaction after the batch has been settled,
 
 ---
 
-### Minimum Requirements
+## Minimum Requirements
 
 ##### Component : amount
 
