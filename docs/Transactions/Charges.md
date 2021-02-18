@@ -8,9 +8,11 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cha
 
 Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distinguished as per the `captureFlag` sent in the request. If the value for `captureFlag` is sent as *TRUE*, the transaction will be considered as sale, where the customer will be charged with the transaction amount whereas if the value of `captureFlag` in charge request is sent as *FALSE*, the request would be considered as Pre-Auth Request, where the funds on the customer account would be kept reserved and the followup transaction (Capture) would be needed in order to charge the fund to the customer.
 
-- **[Authorization](../FAQs-Glossary/Glossary.md#Authorization)** : Inniated by a merchant to verify a cardholders account.
-- **[Pre-Auth](../FAQs-Glossary/Glossary.md#Pre-Auth)** : An authorization where the amount approved by the cardholder is placed on hold to be captured later.
-- **[Sale](../FAQs-Glossary/Glossary.md#Sale)** : An authorization where the amount approved by the cardholder is placed on hold and will be settled at the end of the day.
+#### Charge Types
+
+- **[Auth-Only:](../FAQs-Glossary/Glossary.md#Authorization)** Inniated by a merchant to [verify](Verification.md) a cardholders account, also known as a $0 auth.
+- **[Pre-Auth:](../FAQs-Glossary/Glossary.md#Pre-Auth)** An authorization where the amount approved by the cardholder is placed on hold to be captured later.
+- **[Sale:](../FAQs-Glossary/Glossary.md#Sale)** An authorization where the amount approved by the cardholder is placed on hold and will be settled at the end of the day.
 
 ---
 

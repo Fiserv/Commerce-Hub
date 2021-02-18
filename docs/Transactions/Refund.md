@@ -4,26 +4,31 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 # Refund Charges
 
+## Overview
+
 If the customer wish to cancel the transaction after the batch has been settled, the merchant would need to release the original authorization by issuing a Refund request to the original Transaction ID or Order ID. Refund can be initiated either for full amount or partial amount of the order.
 
+#### Refund Types
 
+- **Partial Refund:** 
+- **Full Refund:** 
 
 <!-- theme: danger -->
 
 > ##### Refund Requirement
 >
->Refund Request can be initiated against [Charges](Charges.md) if it is already been [captured](Capture.md) else [Cancel](Cancel.md) can be initiated.
+>Refund Request can be initiated against a [charge](Charges.md) if it is already been [captured](Capture.md), else a [cancel](Cancel.md) should be initiated.
 
 <!-- theme: warning -->
 
 > ##### Refund Timeframe
->Refund timeframe is based on card holder issuing bank and may take 3-5 days to process and reflact on account.
+> The refund timeframe is based on the issuing bank and may take 3-5 days to process and reflect on the account.
 
 ---
 
 ## Minimum Requirements
 
-##### Component : amount
+#### Component : amount
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -32,16 +37,20 @@ If the customer wish to cancel the transaction after the batch has been settled,
 
 <!-- theme: success -->
 
->##### Endpoints
->**POST** `/payments/v1/charges/{transactionId}/refund`
->- Use this endpoint to submit a Refund request by `transactionId`.
+---
+
+## Endpoints
+
+Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
+
+<!-- theme: success -->
+>**POST** `/payments/v1/charges/{transactionId}/capture`
 >
->**POST** `/payments/v1/charges/orders/{orderId}/refund`
->- Use this endpoint to submit a Refund request by `orderId`.
+>**POST** `/payments/v1/charges/orders/{orderId}/capture`
 
 ---
 
-### Payload Examples
+## Payload Examples
 
 <!--
 type: tab
