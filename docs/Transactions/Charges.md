@@ -16,37 +16,38 @@ Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distin
 
 ## Minimum Requirements
 
-##### Component : amount
+### Component: amount
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
-| `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
-##### Component : paymentSource
+### Component: paymentSource
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | [Source Type](../Master-Data/Source-Type.md)|
-|`cardData`| *string* | 19 | Card Number| 
-|`expirationMonth`| *string* | 2 | Card Expiration date Month (Example 12)|
-|`expirationYear`| *string* | 4 | Card Expiration date Month (Example 2035)|
-|`securityCode` | *string* | 3| A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC)|
+|`sourceType` | *string* | 15 | Payment [source type](../Master-Data/Source-Type.md). |
+|`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
+|`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
+|`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
+|`securityCode` | *string* | 3| The card [security code](../FAQs-Glossary/Glossary.md#security-code).|
 
-##### Component : [transactionDetails](../Master-Data/Transaction-Details.md)
+### Component: transactionDetails
 
 |Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured ( *TRUE* for Sale and *FALSE* for Pre-Auth)|
-
-<!-- theme: success -->
->##### Endpoint
->**POST** `/payments/v1/charges`
->- Use this endpoint to submit a Charge request.
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 
 ---
 
-### Payload Examples
+## Endpoint
+<!-- theme: success -->
+>**POST** `/payments/v1/charges`
+
+---
+
+## Payload Examples
 
 <!--
 type: tab
