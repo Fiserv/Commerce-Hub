@@ -10,11 +10,11 @@ The Commerce Hub API allows a merchant to create, inquire, and finalize payment 
 
 ### Primary Transactions
 
-Primary transactions include; [charge](../Transactions/Charges.md), [verification](../Transactions/Verification.md) and [inquiry](../Transactions/Inquiry.md) requests that are submitted without reference to a prior transaction.
+Primary transactions include; [charge](../Transactions/Charges.md), [verification](../Transactions/Verification.md) and [information lookup](../Transactions/Information-Lookup.md) requests that are submitted without reference to a prior transaction.
 
 ### Secondary Transactions
 
-Secondary Transactions can be used to initiate a [refund](../Transactions/Refund.md), a [void](../Transactions/Cancel.md), or [capture](../Transactions/Capture.md) using the `transactionId` or `orderId` from a prior transaction.
+Secondary Transactions include; [refund](../Transactions/Refund.md), [void](../Transactions/Cancel.md), [capture](../Transactions/Capture.md), and [inquiry](../Transactions/Inquiry.md) using the `transactionId` or `orderId` from a prior request.
 
 - 'transactionID`: Transaction identifier returned in the *transactionProcessingDetails* of the *gatewayResponse*.
 
