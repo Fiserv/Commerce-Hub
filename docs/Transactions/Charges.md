@@ -16,14 +16,14 @@ Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distin
 
 ## Minimum Requirements
 
-### Component: amount
+#### Component: amount
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
-### Component: paymentSource
+#### Component: paymentSource
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -33,7 +33,7 @@ Variable | Type| Maximum Length | Description/Values|
 |`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
 |`securityCode` | *string* | 3| The card [security code](../FAQs-Glossary/Glossary.md#security-code).|
 
-### Component: transactionDetails
+#### Component: transactionDetails
 
 |Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
