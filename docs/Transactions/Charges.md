@@ -6,13 +6,17 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cha
 
 ## Overview
 
-Charges can be initiated in 2 ways. either as Sale or Pre-Auth and can be distinguished as per the `captureFlag` sent in the request. If the value for `captureFlag` is sent as *TRUE*, the transaction will be considered as sale, where the customer will be charged with the transaction amount whereas if the value of `captureFlag` in charge request is sent as *FALSE*, the request would be considered as Pre-Auth Request, where the funds on the customer account would be kept reserved and the followup transaction (Capture) would be needed in order to charge the fund to the customer.
+Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the `captureFlag` sent in the request.
+
+- *true* : the transaction will be considered as sale, where the customer will be charged with the transaction amount.
+
+- *false* : the request will be considered a pre-auth request, where the funds on the customer's account will be reserved and a [capture](Capture.md) will be required to withdrawal the funds from the customer.
 
 #### Charge Types
 
-- **[Auth-Only:](../FAQs-Glossary/Glossary.md#Authorization)** Inniated by a merchant to [verify](Verification.md) a cardholders account, also known as a $0 auth.
-- **[Pre-Auth:](../FAQs-Glossary/Glossary.md#Pre-Auth)** An authorization where the amount approved by the cardholder is placed on hold to be captured later.
-- **[Sale:](../FAQs-Glossary/Glossary.md#Sale)** An authorization where the amount approved by the cardholder is placed on hold and will be settled at the end of the day.
+- [**Auth-Only:**](../FAQs-Glossary/Glossary.md#Authorization) Inniated by a merchant to [verify](Verification.md) a customer's account, also known as a $0 auth.
+- [**Pre-Auth:**](../FAQs-Glossary/Glossary.md#Pre-Auth) An authorization where the amount approved by the customer is placed on hold to be captured later.
+- [**Sale:**](../FAQs-Glossary/Glossary.md#Sale) An authorization where the amount approved by the customer is placed on hold and will be settled at the end of the day.
 
 ---
 
