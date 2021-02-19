@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, card-not-present, card-present, hash, message-signature]
 ---
 
-# How to Generate the Authentication Header
+# Generate Authentication Header
 
 ## Overview
 
