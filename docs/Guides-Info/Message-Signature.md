@@ -12,7 +12,7 @@ To ensure data integrity, prevent replay attacks, and eliminate stale requests a
 - **Signature Encoding** : Base64
 - **Signed With** : Developer App Secret Key; provided to merchant when boarded
 
-The message data for the signature is the following items concatenated: `REQUEST_UUID`, `Client-Request-Id`, `Timestamp`, `Payload`.
+The message data for the signature is the following items concatenated: `Api-Key`, `Client-Request-Id`, `Timestamp`, `Payload`.
 
 The `Client-Request-Id` is a randomly generated number that is unique for each request. It is used as nonce and validated against all Client-Request-Ids received by Commerce Hub within a predetermined timeframe *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.
 
@@ -26,7 +26,7 @@ title: Javascript
 ##### Example of a Javascript Request.
 
 ```javascript
-let msg = REQUEST_UUID + CLIENT_REQUEST_ID + TIMESTAMP + JSON.stringify(PAYLOAD);
+let msg = API_KEY + CLIENT_REQUEST_ID + TIMESTAMP + JSON.stringify(PAYLOAD);
 
 const hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, API_SECRET);
 hmac.update(msg);
