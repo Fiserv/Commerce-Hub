@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, hash, message-signature]
+tags: [carat, commerce-hub, card-not-present, card-present, hash, header, authentication]
 ---
 
 # Generate Authentication Header
