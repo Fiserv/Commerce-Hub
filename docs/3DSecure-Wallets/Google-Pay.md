@@ -29,13 +29,13 @@ Check out the Google Pay participant [Banks and Countries](https://support.googl
 
 ## Start Accepting Google Pay Transactions
 
-### 1. Merchant Boarding
+### Merchant Boarding
 
 Please reach out to your local Integration Support team for getting your account enabled. 
 
 >**Note:** The Integration team will share a Sample Application to generate Google Encrypted payloads.
 
-### 2. Pre-requisites for sample Application
+### Pre-requisites for sample Application
 
 Developers wishing to use the Commerce Hub Google Pay sample application will need the following software and hardware:
 
@@ -50,7 +50,7 @@ Merchant project should be able to compile against Android 4.4 (KITKAT) or highe
 
 For more details, please refer https://developers.google.com/pay/api/android/guides/setup
 
-### 3. Application Chanages
+### Application Chanages
 
 The following parameters need to be defined
 
@@ -81,10 +81,10 @@ envMap.put("CERT", new EnvPropertiesImpl( "CERT","https://cert.api.firstdata.com
 
 gatewayMerchantId and the APIGEE credentials will be provided by the Integration Team
 
-### 4. Credit Card for Testing
+### Credit Card for Testing
 Note that for testing purposes; the credit card information used in the app must be attached to an active account. The standard test cards will not be validated by Google and will fail in processing, our integration team will provide google pay-specific test cards.
 
-### 5. Execute Authorize and Purchase Request
+### Execute Authorize and Purchase Request
 The Authorization parameter, required as part of the Header for a Fiserv API transaction, needs to be created. Construct the data param by appending the following parameters in the order shown:
 
   - apikey – the developer’s API key
@@ -93,7 +93,7 @@ The Authorization parameter, required as part of the Header for a Fiserv API tra
   - token – the Merchant Token
   - payload – The actual body content passed as the POST request
 
-### 6. Google Pay APK Installation to Device
+### Google Pay APK Installation to Device
 
 - Once the downloaded code for the sample app is built successfully in Android Studio, build the APK and install it on your device.
 - Once the APK is installed, select the Open option to access the application.
