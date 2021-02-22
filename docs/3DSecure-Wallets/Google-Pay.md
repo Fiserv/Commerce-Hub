@@ -99,7 +99,9 @@ The Authorization parameter, required as part of the Header for a Fiserv API tra
 - Once the APK is installed, select the Open option to access the application.
 - The sample application should now be installed on the test device (nonPROD environment), and the response from a payment processed in the First Data nonPROD environment/Google test environment available
 
-### 7. Example Payload
+---
+
+## Example Payload
 Sample Google Pay Request within the walletPaymentMethod object for a WalletPreAuthTransaction:
 
 <!--
