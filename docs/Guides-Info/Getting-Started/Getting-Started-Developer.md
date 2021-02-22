@@ -4,7 +4,7 @@ Thank you for visiting commerce-HUB website. Our gateway provides a simple way t
 
 See below for the most popular options
 
-![Payment Methods](../../assets/images/card-types.png)
+![Payment Methods](../../assets/images/card-types.png "")
 
 Beyond accepting customer payments, our services include Tokenisation, 3DSecure, Pre-Authorisation functionality, capturing Charges, Refund, Canceling (void) charge, creating and managing Recurring Payments, Installments, Deferred Payments, Split Shipment, AVS and Payment URLs.
 
