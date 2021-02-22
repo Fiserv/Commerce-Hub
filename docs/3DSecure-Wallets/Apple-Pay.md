@@ -19,7 +19,7 @@ Check out the Apple Pay participant [Banks and Countries](https://support.apple.
 
 ---
 
-## Steps to Accept Apple Pay Transactions
+## Start Accepting Apple Pay Transactions
 
 #### Apple Pay on the Web
 
