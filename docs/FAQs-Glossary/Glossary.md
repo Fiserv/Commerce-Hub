@@ -23,8 +23,7 @@ A sale is a customer transaction where the purchase amount is authorized and set
 
 <!-- theme: warning -->
 > 
->🚧
->Settlement time is based on processing network, contact your account manager for more details.
+>>Settlement time is based on processing network, contact your account manager for more details.
 
 ## Security Code
 
