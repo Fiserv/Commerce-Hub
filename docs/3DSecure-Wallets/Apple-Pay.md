@@ -13,7 +13,9 @@ Our API allows developers to quickly enable secure and convenient payments in th
 3. The Merchant App sends the encrypted transaction payload to processor API using the Apple Pay SDK
 4. Processor API decrypts the encrypted transaction payload and processes the transaction
 5. Processor API responds back to the Merchant App (through the SDK) with either an approval or decline
-6. Check out the Apple Pay participant [Banks and Countries](https://support.apple.com/en-us/HT204916).
+
+
+Check out the Apple Pay participant [Banks and Countries](https://support.apple.com/en-us/HT204916).
 
 ---
 

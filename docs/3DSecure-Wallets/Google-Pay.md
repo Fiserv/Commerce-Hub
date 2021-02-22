@@ -1,6 +1,32 @@
-## Google Pay
+# Google Pay
+
+## Overview
 
 Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. 
+
+
+**User Action:** The buyer taps the "Google Pay" button, and then selects a payment method and shipping address.
+
+#### If the purchase originates from a third-party site
+
+1. The merchant/client server issues a credential request with the Merchant ID and Processor Name as Commerce Hub to Google.
+2. Google returns response with encrypted payment credentials signed with the Commerce Hub key to the merchant server.
+3. The Merchant sends the encrypted payload to Commerce Hub.
+4. Commerce Hub decrypts and validates the payload, and then processes the transaction and responds back to merchant with either an approval or decline response.
+
+
+#### If the purchase originates from a Google site:
+
+1. Google initiates a purchase request to the merchant after the consumer confirms order.
+2. The merchant/client server issues a request with the Merchant ID and Processor Name as Commerce Hub to Google.
+3. Google returns response with encrypted payment credentials signed with the Commerce Hub key to merchant server.
+4. The merchant sends the encrypted payload to Commerce Hub.
+5. Commerce Hub decrypts and validates the payload and process the transaction and respond back to merchant with either an approval or decline response.
+ 
+Check out the Google Pay participant [Banks and Countries](https://support.google.com/pay/answer/7454247?hl=en)
+
+
+
 
 ### Steps to accept Apple Pay Transactions
 
