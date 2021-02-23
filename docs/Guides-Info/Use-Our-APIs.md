@@ -14,7 +14,7 @@ Commerce Hub's API request consists of the [Header](#request-header) followed by
 | `Timestamp` | *integer* |  | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
 | `Accept-Language` | *string* |  | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. en-US or fr-CA. |
 | `Auth-Token-Type`| *string* |  | Indicates Authorization type HMAC, JWT, or AccessToken.|
-| `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the supporting documentation on the [Developer Portal](url). |
+| `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the supporting documentation on the [Developer Portal](Authentication-Header.md). |
 | `Message-Digest` | *string* |  | Needed only from customer browser app to API in hosted page requests. |
 
 #### Sample Header
