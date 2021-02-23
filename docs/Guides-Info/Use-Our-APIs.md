@@ -10,9 +10,12 @@ Commerce Hub's API request consists of the [Header](#request-header) followed by
 | -------- | :--: | :------------: | ------------------ |
 | `Content-Type` | *string* |  | The content type. Valid Value (application/json) |
 | `Client-Request-Id` | *string* |  | A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. We recommend 128-bit UUID format. |
-| `REQUEST_UUID` | *string* |  | Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
+| `Api-Key` | *string* |  | Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
 | `Timestamp` | *integer* |  | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
-| `Message-Signature` | *string* |  | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the [Developer Portal](url). |
+| `Accept-Language` | *string* |  | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. en-US or fr-CA. |
+| `Auth-Token-Type`| *string* |  | Indicates Authorization type HMAC, JWT, or AccessToken.|
+| `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the supporting documentation on the [Developer Portal](Authentication-Header.md). |
+| `Message-Digest` | *string* |  | Needed only from customer browser app to API in hosted page requests. |
 
 #### Sample Header
 

@@ -1,6 +1,9 @@
 # Customer Address
 
-Address is categorized in to 2 types...
+
+## Overview
+
+In some cases merchant may need to send the cardholder address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. They can include billing and shipping information in the request by using the following fields. Address is categorized in to 2 types
 
 ## Billing Address
 

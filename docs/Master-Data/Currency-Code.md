@@ -4,11 +4,15 @@ tags: [currency-code, carat, commerce-hub]
 
 # Currency Codes
 
+## Overview
+
 The `currency` variable in the `amount` array determines what currency the transaction well be submitted in.
 
 <!-- theme: warning -->
 > ##### Decimals
 > While most currencies have 2 decimals, some currencies do not have decimals *(JPY)*, and some have 3 decimals *(BHD)*. When submitting the `total` ensure the correct decimal usage; e.g. 10 GBP is submitted as 10.00, and 10 JPY is submitted as 10.
+
+## Currency List
 
 Currency Code | Currency Name | Currency Number | Decimal |
 ------- | ------- | -------| -------- |

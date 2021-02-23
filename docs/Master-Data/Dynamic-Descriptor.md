@@ -4,6 +4,8 @@ tags: [carat, commerce-hub, Dynamic-Descriptor, Statement-Descriptor, Merchant-D
 
 # Merchant Descriptor
 
+## Overview
+
 Some of the time customers challenge the transaction received in the statement because of the incomplete merchant information, resulting in incorrect chargebacks. Banks and Payment Schemes require inclusion of certain clear and accurate merchant information, which comes in statement helping in reducing such incidents.
 
 A descriptor is a piece of identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on buyers’ credit/debit card statements. These descriptors remind cardholders of the details of the purchase and give them a way to contact the merchant. The standard descriptor information that gets passed through to the cardholder’s statement is the DBA (Doing Business As) name and customer service phone number that you provide with your merchant account application.

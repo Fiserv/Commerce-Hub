@@ -1,12 +1,14 @@
 # Create a Payment Token
 
+## Overview
+
 **[Tokenization](../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. Merchant either can submit a request to tokenize a payment card as part of a charge by using `createToken`, or can tokenize the card separately bu sending a request to the tokens endpoints.
 
 
 
 ## Create a Token with a Charge Request
 
-### Required Field
+#### Required Field
 
 - `createToken`: *boolean* : *true*
 
@@ -14,7 +16,7 @@
 >##### Endpoint
 >**POST** `/payments/v1/charges`
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab
@@ -107,7 +109,7 @@ title: Response
 >**POST** `/payments-vas/v1/tokens`
 >- Use this endpoint to submit a Payment Token request.
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab
@@ -198,7 +200,7 @@ title: Response
 >##### Endpoint
 >**POST** `/payments/v1/charges`
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab

@@ -17,7 +17,7 @@ Situations in which this could be implemented include:
 | `finalShipment` | *boolean* |  | Used to identify the final capture (*TRUE* or *FALSE*)|
 
 
-### Payload Example
+## Payload Example
 
 ```json
 {
