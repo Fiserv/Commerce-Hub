@@ -1,10 +1,10 @@
 # Merchant Details
 
-
 ## Overview
 
 Used to pass the merchant data during the transaction to determine the merchant from where the transaction is originated. It contains data like, merchantid, storeid, mcc etc.
 
+## Merchant Details
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- |------------| ------------------ |
@@ -16,10 +16,9 @@ Used to pass the merchant data during the transaction to determine the merchant 
 | `promotionCode` | *string* |  | This field contains the Promotion Code. |
 | `mcc` | *string* |  | [Merchant Category Code](Merchant-Category-Code.md) |
 
-
 ---
 
-### See Also
+## See Also
 
 - Dynamic Descriptors
 - Payment Facilitators

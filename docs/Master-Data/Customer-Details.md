@@ -1,6 +1,10 @@
-# Cardholder Details
+# Customer Details
 
-The transaction request may contain the cardholder details. The details consists of customer id, name, date of birth etc.
+## Overview
+
+The transaction request may contain the customer details. The details consists of customer id, name, date of birth etc.
+
+## Customer Details
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -27,4 +31,8 @@ Use this component to pass cardholder phone details.
 | `phoneNumber` | *string* |  | Cardholder phone number. |
 | `type` | *string* |  | Type of phone number.</br>Available Values:</br>*BILLING* - Billing account phone number</br>*SHIPPING* - Shipping contact phone number</br>*CUSTOMER* - Customer phone number |
 
+---
 
+## See Also
+
+- Customer Address
