@@ -4,6 +4,8 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 # Transaction Inquiry
 
+## Overview
+
 To retrieve the current state of any previous [Charge](Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
 
 ---
@@ -27,7 +29,7 @@ To retrieve the current state of any previous [Charge](Charges.md), an Inquiry r
 
 ---
 
-### Payload Examples
+## Payload Examples
 
 <!--
 type: tab
