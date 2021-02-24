@@ -45,9 +45,9 @@ Card Present (CP) transactions are initiated when a customer physically presents
 
 ### Transaction Origin
 
-- [Card Not Present Getting Started Guide](Getting-Started/Getting-Started-CNP.md)
-- [Card Present Getting Started Guide](Getting-Started/Getting-Started-CP.md)
-- [Wallets Getting Started Guide](Getting-Started/Getting-Started-Wallets.md)
+- [Card Not Present](Getting-Started/Getting-Started-CNP.md)
+- [Card Present](Getting-Started/Getting-Started-CP.md)
+- [Wallets](Getting-Started/Getting-Started-Wallets.md)
 
 ### Transaction Type
 
@@ -62,6 +62,7 @@ Card Present (CP) transactions are initiated when a customer physically presents
 
 - Airline
 - Lodging
+- Mobile/Wallet
 - Online/Website
 - Petro
 - Rental Car
