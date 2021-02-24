@@ -4,32 +4,31 @@ tags: [Source-Type, carat, commerce-hub]
 
 # Payment Source Types
 
+## Overview
+
 The variable `sourceType` is used to determine the source of the transaction. Depending on the source the required variables change. 
 
 Add minimum required fields and (for additional please refer api explorer). Add for other pages as well
 
-
+## SourceType
 <!--
 type: tab
 title: PaymentCard
 -->
 
-##### PaymentCard
+### PaymentCard
 
-Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online or in person. The `sourceType` *PaymentCard* is used to submit a [Card](link to card types) transaction to our application.
-</br>
+Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online or in person. The `sourceType` *PaymentCard* is used to submit a [card](Card-Type.md) transaction to our application.
 
-##### Minimum Requirement
+#### Minimum Requirements
 
-</br>
-
-###### Component : paymentSource
+##### Component : paymentSource
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Use Value *PaymentCard* for card transactions |
 
-###### Component : Card
+##### Component : Card
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -38,14 +37,14 @@ Financial Institutions such as banks issue the **Payment Card** to the customers
 | `expirationYear` | *string* | 4 | 4-digit card expiration year Example (2025) |
 | `securityCode` | *string* |  | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
 
-Example :
+#### Payload Example
 
 ```json
 {
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentCard",
 	}
-  "Card": {
+  "card": {
 	  "cardData": "4005550000000019",
     "expirationMonth": "02",
     "expirationYear": "2035",
@@ -59,22 +58,19 @@ type: tab
 title: PaymentToken
 -->
 
-##### PaymentToken
+### PaymentToken
 
 **PaymentToken** is a created by submitting a [token request](../Transactions/Payment-Token.md) using a payment card. The `sourceType` *PaymentToken* is used to submit a [Network Token](link to network token) or [TransArmor] (link to transormor token) transaction to our application.
-</br>
 
-##### Minimum Requirement
+#### Minimum Requirements
 
-</br>
-
-###### Component : paymentSource
+##### Component : paymentSource
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Use Value *PaymentToken* for Payment Token transactions |
 
-###### Component : Card
+##### Component : Card
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -83,15 +79,14 @@ title: PaymentToken
 | `expirationYear` | *string* | 4 | 4-digit card expiration year Example (2025) |
 | `securityCode` | *string* |  | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
 
-Example :
-
+#### Payload Example
 
 ```json
 {
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentToken",
 	}
-  "Card": {
+  "card": {
 	"cardData": "4005550000000019",
     "expirationMonth": "02",
     "expirationYear": "2035",
@@ -105,22 +100,19 @@ type: tab
 title: ApplePay
 -->
 
-##### ApplePay
+### ApplePay
 
 **Apple Pay** is a mobile payment and digital wallet service by Apple Inc. that allows users to make payments in person, in iOS apps, and on the web using Safari. It is supported on the iPhone, Apple Watch, iPad, and Mac. The `sourceType` *ApplePay* is used to submit [Apple Pay](../Wallets/Apple-Pay.md) transaction to our application. 
-</br>
 
-##### Minimum Requirement
+#### Minimum Requirements
 
-</br>
-
-###### Component : paymentSource
+##### Component : paymentSource
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Use Value *ApplePay* for Apple Pay transactions |
 
-###### Component : data - AppleHeader
+##### Component : data - AppleHeader
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -136,11 +128,11 @@ title: ApplePay
 | `applicationData` | *string* |  | Hash of the applicationData property of the original PKPaymentRequest object. If the value of that property is nil, this key is omitted. SHA–256 hash, hex encoded as a string. |
 | `merchantID` | *string* |  | Enter any valid Merchant ID registered in the Apple portal. |
 
-Example :
+#### Payload Examples
 
 ```json
 {
-  "paymentSource": {
+  "source": {
     "sourceType": "ApplePay",
     "data": "hbreWcQg980mUoUCfuCoripnHO210lvtizOFLV6PTw1DjooSwik778bH/qgK2pKelDTiiC8eXeiSwSIfrTPp6tq9x8Xo2H0KYAHCjLaJtoDdnjXm8QtC3m8MlcKAyYKp4hOW6tcPmy5rKVCKr1RFCDwjWd9zfVmp/au8hzZQtTYvnlje9t36xNy057eKmA1Bl1r9MFPxicTudVesSYMoAPS4IS+IlYiZzCPHzSLYLvFNiLFzP77qq7B6HSZ3dAZm244v8ep9EQdZVb1xzYdr6U+F5n1W+prS/fnL4+PVdiJK1Gn2qhiveyQX1XopLEQSbMDaW0wYhfDP9XM/+EDMLaXIKRiCtFry9nkbQZDjr2ti91KOAvzQf7XFbV+O8i60BSlI4/QRmLdKHmk/m0rDgQAoYLgUZ5xjKzXpJR9iW6RWuNYyaf9XdD8s2eB9aBQ=",
     "header": {
@@ -162,22 +154,20 @@ type: tab
 title: GooglePay
 -->
 
-##### GooglePay
+### GooglePay
 
 **Google Pay** is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. The `sourceType` *GooglePay* is used to submit [Google Pay]() transaction to our application.
 </br>
 
-##### Minimum Requirement
+#### Minimum Requirements
 
-</br>
-
-###### Component : paymentSource
+##### Component : paymentSource
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Use Value *ApplePay* for Apple Pay transactions |
 
-###### Component : data - GoogleHeader
+##### Component : data - GoogleHeader
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -190,13 +180,11 @@ title: GooglePay
 | `signature` | *string* |  | Verifies that the message came from Google, base64-encoded, and created with ECDSA by the intermediate signing key. |
 | `version` | *string* |  | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 
-
-Example :
-
+#### Payload Examples
 
 ```json
 {
-  "paymentSource": {
+  "source": {
     "sourceType": "GooglePay",
     "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\\u003d\\u003d\",\"ephemeralPublicKey\":\"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\\u003d\",\"tag\":\"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\\u003d\"}",
     "merchantPrivateKey": "DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A",
@@ -219,16 +207,13 @@ type: tab
 title: Payment3DS
 -->
 
-##### Payment3DS
+### Payment3DS
 
 **3-D Secure** authentication provides an additional security layer for online card transactions. If  the merchant account is enabled for 3-D Secure, all [charge](../Transactions/Charges.md) transactions merchant initiate by posting an HTML form will by default go through the 3-D Secure process i.e. cardholders with an enrolled card will see a page from the card issuer to enter the password unless the card issuer decides not to check it. The `sourceType` *Payment3DS* is used to submit [3-D Secure]() transaction to our application.
-</br>
 
-##### Minimum Requirement
+#### Minimum Requirements
 
-</br>
-
-###### Component : paymentSource
+##### Component : paymentSource
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -252,9 +237,11 @@ title: Payment3DS
 | `eciIndicator` | *string* | 4 | Electronic Commerce Indicator (ECI) </br> Accepted Request Types: </br> SECURE_ECOM - Secure Electronic Transaction NON_AUTH_ECOM - Non-Authenticated Electronic Commerce Transaction CHANNEL_ENCRYPTED - Channel Encrypted Transaction NON_SECURE_ECOM - Non-Secure Electronic Commerce Transaction |
 | `xid` | *string* | 32 | 3-D Secure/Verified by Visa value returned by Cardinal Commerce. |
 
+#### Payload Example
+
 ```json
 {
-  "paymentSource": {
+  "source": {
       "sourceType": "Payment3DS",
   },
     "card": {
@@ -263,13 +250,14 @@ title: Payment3DS
       "expirationYear": "2035",
       "securityCode": "123"
     },
-    "walletType": "GOOGLE",
+    "channel": "ANDROID",
     "merchantIdentifier": "1234567890123456",
     "version": "3DS2",
     "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
-    "eciIndicator": "SECURE_ECOM",
     "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695"
-  
+    "transactionInteraction": {
+      "eciIndicator": "SECURE_ECOM",
+    }
 }
 ```
 
