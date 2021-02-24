@@ -2,7 +2,7 @@
 
 ## Overview
 
-Commerce Hub's API request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
+Commerce Hub's RESTful API request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
 
 ---
 
