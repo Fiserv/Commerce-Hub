@@ -1,60 +1,77 @@
 # Welcome to Commerce Hub
 
+## Overview
+
 Thank you for visiting commerce-HUB website. Our gateway provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. We Offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
 
-See below for the most popular options
+See below for the most popular options;
 
 ![Payment Methods](../../assets/images/card-types.png)
 
-Beyond accepting customer payments, our services include Tokenisation, 3DSecure, Pre-Authorisation functionality, capturing Charges, Refund, Canceling (void) charge, creating and managing Recurring Payments, Installments, Deferred Payments, Split Shipment, AVS and Payment URLs.
+Beyond accepting customer payments, our services include Tokenization, 3-D Secure, Pre-Authorization functionality, capturing Charges, Refund, Canceling (void) charge, creating and managing Recurring Payments, Installments, Deferred Payments, Split Shipment, AVS and Payment URLs.
 
 ---
 
-## Access Commerce Hub APIs
+## Card Not Present
 
-Follow the below steps to get an access to our development portal and use our APi's
+Card Not Present (CNP) transactions are initiated when a customer does not physically present their payment source at the time of the transaction. Examples of CNP transactions include; online payments, in-app payments, and MOTO transactions.
 
-### 1. Sign up on our Developer Platform
+<!-- theme: warning -->
+> CNP transactions are at a higher risk for fraud, due to the inability to verify the account holder is making the purchase. To reduce the risk of card fraud it is recommended to use 3D Secure along with AVS and Security Code verification.
 
-Head over to [Commerce-HUB](url) Developer platform and create an account.
+#### RESTful API
 
-<!-- theme: info -->
+Allows a merchants to build their own UI and manage cardholder checkout within their own website, software, or terminal using the Commerce Hub [RESTful APIs](https://docs.firstdata.com/org/Commerce-Hub/docs/api).
 
-> ### Instant Access
->
-> After registration the developer will have an instant access to the Commerce Hub APIs.
+#### Hosted Payment Page
 
-### 2. Generate an API key
+Commerce Hub Hosted Payment Page allows merchants to redirect their customer to our payment page when they are checking out.
 
-Go to the Apps page and create a Sandbox app.
+#### Payment URL
 
-Once you're on the Apps page copy your API key and Secret Key.
+#### Payment.js
 
-For most of our APIs you can just put the API Key into the header under the API-Key parameter. However, when you use our Payment APIs you'll need to add them to a [Message-Signature](Message-Signature.md) you an find out more about that in the next page.
+---
 
-### 3. Constructing the API call
+## Card Present
 
-Please refer our [API page](Use-Our-APIs.md) to know about how to use Commerce Hub APIs.
+Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Examples of CP transactions include; manual entry, track data and EMV.
 
-### 4. Integrate to Commerce Hub
+### Feature Details
 
-- [Card Present](Getting-Started/Getting-Started-CP.md)
-- [Card Not Present](Getting-Started/Getting-Started-CNP.md)
-- [Wallets](Getting-Started/Getting-Started-Wallets.md)
+---
 
-#### Transaction Types
+## Integrate to Commerce Hub
+
+### Transaction Origin
+
+- [Card Not Present Getting Started Guide](Getting-Started/Getting-Started-CNP.md)
+- [Card Present Getting Started Guide](Getting-Started/Getting-Started-CP.md)
+- [Wallets Getting Started Guide](Getting-Started/Getting-Started-Wallets.md)
+
+### Transaction Type
 
 - [Charge](../Transactions/Charges.md)
 - [Capture](../Transactions/Capture.md)
 - [Cancel](../Transactions/Cancel.md)
 - [Refund](../Transactions/Refund.md)
+- [Credit](../Transactions/Credit.md)
 - [Inquiry](../Transactions/Inquiry.md)
 
-#### Value Added Services
+### Vertical/Industry Type
 
-- Acount Verification
-- Authentication
-- Payment Token
+- Airline
+- Lodging
+- Online/Website
+- Petro
+- Rental Car
+- Quick Service Restaurant
+
+### Value Added Services
+
+- [Acount Verification](../Transactions/Verification.md)
+- [Payment Token](../Transactions/Payment-Token.md)
+- [Stored Credentials](../Transactions/Stored-Credentials.md)
 
 
 <!--

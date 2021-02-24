@@ -1,21 +1,23 @@
-# How to use our Payment API
+# Constructing the API Call
 
-## Constructing the API Call
+## Overview
 
 Commerce Hub's API request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
+
+---
 
 ## Request Header
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `Content-Type` | *string* |  | The content type. Valid Value (application/json) |
-| `Client-Request-Id` | *string* |  | A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. We recommend 128-bit UUID format. |
-| `Api-Key` | *string* |  | Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
+| `Client-Request-Id` | *string* |  | A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format. |
+| `Api-Key` | *string* |  | API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal. |
 | `Timestamp` | *integer* |  | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
-| `Accept-Language` | *string* |  | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. en-US or fr-CA. |
+| `Accept-Language` | *string* |  | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
 | `Auth-Token-Type`| *string* |  | Indicates Authorization type HMAC, JWT, or AccessToken.|
-| `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the supporting documentation on the [Developer Portal](Authentication-Header.md). |
-| `Message-Digest` | *string* |  | Needed only from customer browser app to API in hosted page requests. |
+| `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the [Authentication Header](Authentication-Header.md) article. |
+| `Message-Digest` | *string* |  | Needed only from customer browser or app to the API in Hosted Payment Page requests. |
 
 #### Sample Header
 
@@ -29,13 +31,14 @@ header: {
     },
 ```
 
+---
 
 ## Request Body
 
-The body of the transaction Request differs as per the transaction which is getting initiated. Below is the sample body for [charge](../Transactions/Charges.md) request.
+The body of the transaction request differs based on the transaction being initiated. Below is the sample body for a [charge](../Transactions/Charges.md) request.
 </br>
 
-#### Sample Request Body
+#### Request Body Example
 
 ```json
 {
@@ -58,9 +61,11 @@ The body of the transaction Request differs as per the transaction which is gett
 },
 ```
 
-## Sample API Call
+---
 
-A standard API call to execute a Primary Transaction might look like this:
+## API Call Example
+
+A standard API call to execute a charge transaction might look like this:
 
 ```json
 
@@ -98,5 +103,4 @@ A standard API call to execute a Primary Transaction might look like this:
 
 ```
 
----
-https://docs.fiserv.com/docs/payments/docs/1.%20Introduction%20to%20Fiserv%20Payments/How-to-use-our-payments-APIs.md
+<!-- https://docs.fiserv.com/docs/payments/docs/1.%20Introduction%20to%20Fiserv%20Payments/How-to-use-our-payments-APIs.md -->
