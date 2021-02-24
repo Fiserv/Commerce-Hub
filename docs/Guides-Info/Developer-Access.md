@@ -1,3 +1,0 @@
-# Developer-Access
-
-The beginning of an awesome article...
