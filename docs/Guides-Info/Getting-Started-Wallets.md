@@ -1,4 +1,4 @@
-## Getting Started: Wallet Payment Methods
+## Getting Started: Wallet Integrations
 
 This section provides a step-by-step for implementing Apple Pay and Google Pay.
 

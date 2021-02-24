@@ -2,7 +2,9 @@
 tags: [carat, commerce-hub, card-not-present, getting-started, hosted-payment-page]
 ---
 
-# Online Payments Integration
+# Getting Started: Card Not Present Integrations
+
+## Overview
 
 The integration of merchant with Commerce Hub in order to process the Online Payments can be implemented with one of our APIs below.
 
