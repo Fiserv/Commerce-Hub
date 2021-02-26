@@ -75,9 +75,10 @@ A standard API call to execute a charge transaction might look like this:
     headers: {
       "Content-Type": "application/json",
       "Client-Request-Id": "Client request ID goes here",
-      "REQUEST_UUID": "REQUEST_UUID goes here",
+      "Api-Key": "Api-Key goes here",
       "Timestamp": "Date().getTime() goes here",
-      "Message-Signature": "Message Signature goes here"
+      "Auth-Token-Type" :" HMAC",
+      "Authorization": "Authetication Header goes here"
     },
     body: JSON.stringify({
       {
