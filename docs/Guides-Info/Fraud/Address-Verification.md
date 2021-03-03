@@ -1,5 +1,4 @@
-# Address-Verification
-
+# Address Verification Services
 
 ## Overview
 
@@ -7,108 +6,295 @@
 
 ## Perform AVS Check
 
-by submitting the verification request or during a  charge request
+The Merchant can get the cardholder's address verification done by either submitting the verification request or sending the billing address information in during a charge request.
 
 
-#### Payload Example
+## Address Verification using Charge Request
 
+<!-- theme: success -->
+>##### Endpoint
+>**POST** `/payments/v1/charges`
+
+## Payload Example
+
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of Address Verification Using Charge Request
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  }
+  "billingAddress": {
+    "name": "Jane Smith",
+    "address": {
+      "street": "Main Street",
+      "houseNumberOrName": "123",
+      "city": "Sandy Springs",
+      "stateOrProvince": "GA",
+      "postalCode": "30303",
+      "country": "US"
+    }
+  }
+}
+
+```
+<!--
+type: tab
+title: Response
+-->
+
+##### Charge Response having AVS Response Fields
+
+```json
+{
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "token",
+    "transactionState": "authorized",
+    "transactionOrigin": "ecom",
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "paymentSource": {
+    "sourceType": "PaymentCard",
+    "tokenData": "1234123412340019",
+    "PARId": "string",
+    "declineDuplicates": "FALSE",
+    "tokenSource": "string",
+    "card": {
+      "nameOnCard": "Jane Smith",
+      "expirationMonth": "05",
+      "expirationYear": "2025",
+      "bin": "400555",
+      "last4": "0019",
+      "scheme": "VISA"
+    }
+  },
+  "processorResponseDetails": {
+    "approvalStatus": "APPROVED",
+    "approvalCode": "OK3483",
+    "referenceNumber": "845366457890-TODO",
+    "schemeTransactionId": "019078743804756",
+    "feeProgramIndicator": "string",
+    "processor": "fiserv",
+    "responseCode": "00",
+    "responseMessage": "APPROVAL",
+    "hostResponseCode": "54022",
+    "hostResponseMessage": "",
+    "localTimestamp": "2016-04-16T16:06:05Z",
+    "bankAssociationDetails": {
+      "associationResponseCode": "000",
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
+      "avsSecurityCodeResponse": {
+        "streetMatch": "MATCH",
+        "postalCodeMatch": "MATCH",
+        "securityCodeMatch": "MATCH",
+          "association": {
+            "avsCode": "BOTH_MATCH",
+            "securityCodeResponse": "MATCH",
+            "cardHolderNameResponse": "NAME_MATCH",
+          }
+      }
+    }
+  },
+}
+```
+<!-- type: tab-end -->
+
+## Address Verification using Verification Request
+
+<!-- theme: success -->
+>##### Endpoint
+>**POST** `/payments-vas/v1/accounts/verification`
+
+## Payload Example
+
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of Account Verification Request
+
+```json
+{
+  "source": {
+    "sourceType": "PaymentCard",
+    "cardData": "4005550000000019",
+    "expirationMonth": "02",
+    "expirationYear": "2035",
+    "securityCode": "123"
+  },
+  "billingAddress": {
+    "name": "Jane Smith",
+    "address": {
+      "street": "Main Street",
+      "houseNumberOrName": "123",
+      "city": "Sandy Springs",
+      "stateOrProvince": "GA",
+      "postalCode": "30303",
+      "country": "US"
+    }
+  }
+}
+
+```
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a Account Verification Response
+
+```json
+{
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "token",
+    "transactionState": "authorized",
+    "transactionOrigin": "ecom",
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "paymentSource": {
+    "sourceType": "PaymentCard",
+    "tokenData": "1234123412340019",
+    "PARId": "string",
+    "declineDuplicates": "FALSE",
+    "tokenSource": "string",
+    "card": {
+      "nameOnCard": "Jane Smith",
+      "expirationMonth": "05",
+      "expirationYear": "2025",
+      "bin": "400555",
+      "last4": "0019",
+      "scheme": "VISA"
+    }
+  },
+  "processorResponseDetails": {
+    "approvalStatus": "APPROVED",
+    "approvalCode": "OK3483",
+    "referenceNumber": "845366457890-TODO",
+    "schemeTransactionId": "019078743804756",
+    "feeProgramIndicator": "string",
+    "processor": "fiserv",
+    "responseCode": "00",
+    "responseMessage": "APPROVAL",
+    "hostResponseCode": "54022",
+    "hostResponseMessage": "",
+    "localTimestamp": "2016-04-16T16:06:05Z",
+    "bankAssociationDetails": {
+      "associationResponseCode": "000",
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
+      "avsSecurityCodeResponse": {
+        "streetMatch": "MATCH",
+        "postalCodeMatch": "MATCH",
+        "securityCodeMatch": "MATCH",
+          "association": {
+            "avsCode": "BOTH_MATCH",
+            "securityCodeResponse": "MATCH",
+            "cardHolderNameResponse": "NAME_MATCH",
+          }
+      }
+    }
+  },
+}
+```
+<!-- type: tab-end -->
 
 ## AVS Result Codes
 
-The result of checking the cardholder’s postal code and any additional address information provided against the Issuer’s system of record is termed as AVS Result code. The value of result varies as per the card type.
+The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The object `avsSecurityCodeResponse` contains both the response received by the association as well as response mapped by gateway.
 
 
 <!--
 type: tab
-title: VISA
+title: Gateway Response
 -->
 
-##### AVS Result Code - VISA
+##### Component : avsSecurityCodeResponse
 
-| Value | Description |
-| ------- | ------- |
-| A | Street address matches, postal code does not match |
-| B | Street addresses match; postal code not verified due to incompatible formats |
-| C | Street address and postal code not verified |
-| D | Street addresses and postal codes match (International only) |
-| F | Street address and postal code match (UK) |
-| G | Address information not verified for international transaction. Issuer is not an AVS Participant, or, AVS data was present in the request but the issuer did not return an AVS result, or no address on file (International only) |
-| I | Address verification service not performed (International only) |
-| M | Street address and postal code match (International only) |
-| N | No match; neither the street addresses nor the postal codes match |
-| P | Postal code matches; street address not verified |
-| R | Retry, system unavailable to process |
-| S | Service not supported |
-| U | Address information is unavailable |
-| Y | Both postal code and address match |
-| Z | Postal code matches, Street address does not match or Street address not included in request |
-
+Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `streetMatch` | *string* |  | Contains the Response of Street Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
+| `postalCodeMatch` | *string* |  |Contains the Response of Postal Code Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
 
 <!--
 type: tab
-title: MASTERCARD
+title: Association Response
 -->
 
-##### AVS Result Code - MASTERCARD
+##### AVS Result Code - association
+
+Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `avsCode` | *string* |  | Contains the Response of AVS Checking received from the association. The [Valid Values](#avscode-valid-values) are |
+| `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. The [Valid Values](#cardHolderNameResponse-valid-values) are|
+
+
+
+#### avsCode Valid Values
 
 | Value | Description |
 | ------- | ------- |
-| A | Street address matches, postal code does not match |
-| N | No match; neither the street addresses nor the postal codes match |
-| R | Retry, system unavailable to process |
-| S | Service not supported |
-| U | Address information is unavailable |
-| W | U.S. - Street Address does not match, nine digit postal code matches; For address outside the U.S., postal code matches, address does not |
-| X | Exact: U.S. - Address and 9-digit postal code match; For address outside the U.S., postal code matches, address matches |
-| Y | Yes: Address and 5-digit postal code match for US address |
-| Z | Five digit postal code matches, address does not match |
+| BOTH_MATCH | Both Street and Zip Code Match |
+| STREET_ONLY | Street Address matches, ZIP Code does not |
+| ZIP_ONLY | ZIP Code matches, Street Address does not |
+| 5_DIGIT_ZIP_ONLY | 5 digit ZIP Code match only |
+| NO_MATCH | No Address or ZIP Code match |
+| UNAVAILABLE | Address information is unavailable for that account number, or the card issuer does not support |
+| NON_US | Service Not supported, non-US Issuer does not participate |
+| RETRY | Issuer system unavailable, retry later |
+| NOT_MOTO | Not a mail or phone order | 
+| NOT_SUPPORTED | Service not supported
+| INTERNATIONAL_BOTH_MATCH | International street address and postal code match |
+| INTERNATIONAL_STREET_ONLY |  International street address match, postal code not verified due to incompatible formats |
+| INTERNATIONAL_POSTAL_ONLY | International street address and postal code not verified due to incompatible formats |
+| INTERNATIONAL_NO_MATCH | International postal code match, street address not verified due to incompatible format |
 
 
-<!--
-type: tab
-title: AMEX
--->
-
-##### AVS Result Code - AMEX
-
-| Value | Description |
-| ------- | ------- |
-| A | Street address matches, postal code does not match |
-| N | No match; neither the street addresses nor the postal code matches |
-| R | Retry, system unavailable to process |
-| S | Service not supported |
-| U | Address information is unavailable |
-| Y | Both postal code and address match |
-| Z | Nine or five digit postal code matches, address does not match |
-| L | Card member Name and Billing Postal Code match |
-| M | Card member Name, Billing Address and Postal Code match |
-| O | Card member Name and Billing Address match |
-| K | Card member Name matches |
-| D | Card member Name incorrect, Billing Postal Code matches |
-| E | Card member Name incorrect, Billing Address and Postal Code match |
-| F | Card member Name incorrect, Billing Address matches |
-| W | No, Card member Name, Billing Address and Postal Code are all incorrect |
- 
-
-<!--
-type: tab
-title: DISCOVER/JCB
--->
-
-##### AVS Result Code - DISCOVER/JCB
+#### cardHolderNameResponse Valid Values
 
 | Value | Description |
 | ------- | ------- |
-| A | Street address matches, postal code does not match |
-| G | Address information not verified for international transaction |
-| N | No match; neither the street addresses nor the postal code matches |
-| R | Retry, system unable to process |
-| S | Service not supported |
-| U | No data received from Issuer |
-| W | Nine digit postal code matches, address does not match |
-| X | All digits match (nine digit zip code) |
-| Y | Both address and five digit postal code match |
-| Z | Five digit postal code matches, address does not match
+| NAME_MATCH | Cardholder name matches |
+| ALL_MATCH | Cardholder name, billing address, and postal code match |
+| NAME_POSTAL_MATCH | Cardholder name and billing postal code match |
+| NAME_ADDRESS_MATCH | Cardholder name and billing address match |
+| ADDRESS_POSTAL_ONLY | Cardholder name incorrect, billing address and postal code match |
+| POSTAL_ONLY | Cardholder name incorrect, billing postal code matches |
+| ADDRESS_ONLY | Cardholder name incorrect, billing address matches |
+| NO_MATCH | Cardholder name, billing address, and postal code are all incorrect |
 
 
 <!-- type: tab-end -->
