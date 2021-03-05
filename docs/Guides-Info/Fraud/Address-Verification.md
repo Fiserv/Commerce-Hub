@@ -40,9 +40,7 @@ title: Request
       "securityCode": "123"
     }
   },
-  "transactionDetails": {
-    "captureFlag": true
-  }
+  
   "billingAddress": {
     "name": "Jane Smith",
     "address": {
@@ -112,10 +110,8 @@ title: Response
       "avsSecurityCodeResponse": {
         "streetMatch": "MATCH",
         "postalCodeMatch": "MATCH",
-        "securityCodeMatch": "MATCH",
           "association": {
             "avsCode": "BOTH_MATCH",
-            "securityCodeResponse": "MATCH",
             "cardHolderNameResponse": "NAME_MATCH",
           }
       }
@@ -219,11 +215,9 @@ title: Response
       "avsSecurityCodeResponse": {
         "streetMatch": "MATCH",
         "postalCodeMatch": "MATCH",
-        "securityCodeMatch": "MATCH",
           "association": {
             "avsCode": "BOTH_MATCH",
-            "securityCodeResponse": "MATCH",
-            "cardHolderNameResponse": "NAME_MATCH",
+             "cardHolderNameResponse": "NAME_MATCH",
           }
       }
     }

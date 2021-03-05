@@ -43,17 +43,6 @@ title: Request
   "transactionDetails": {
     "captureFlag": true
   }
-  "billingAddress": {
-    "name": "Jane Smith",
-    "address": {
-      "street": "Main Street",
-      "houseNumberOrName": "123",
-      "city": "Sandy Springs",
-      "stateOrProvince": "GA",
-      "postalCode": "30303",
-      "country": "US"
-    }
-  }
 }
 
 ```
@@ -110,13 +99,9 @@ title: Response
       "associationResponseCode": "000",
       "transactionTimestamp": "2016-04-16T16:06:05Z",
       "avsSecurityCodeResponse": {
-        "streetMatch": "MATCH",
-        "postalCodeMatch": "MATCH",
         "securityCodeMatch": "MATCH",
           "association": {
-            "avsCode": "BOTH_MATCH",
             "securityCodeResponse": "MATCH",
-            "cardHolderNameResponse": "NAME_MATCH",
           }
       }
     }
@@ -151,17 +136,6 @@ title: Request
     "securityCode": "123",
     "securityCodeIndicator": "PROVIDED"
   },
-  "billingAddress": {
-    "name": "Jane Smith",
-    "address": {
-      "street": "Main Street",
-      "houseNumberOrName": "123",
-      "city": "Sandy Springs",
-      "stateOrProvince": "GA",
-      "postalCode": "30303",
-      "country": "US"
-    }
-  }
 }
 
 ```
@@ -218,14 +192,10 @@ title: Response
       "associationResponseCode": "000",
       "transactionTimestamp": "2016-04-16T16:06:05Z",
       "avsSecurityCodeResponse": {
-        "streetMatch": "MATCH",
-        "postalCodeMatch": "MATCH",
         "securityCodeMatch": "MATCH",
           "association": {
-            "avsCode": "BOTH_MATCH",
             "securityCodeResponse": "MATCH",
-            "cardHolderNameResponse": "NAME_MATCH",
-          }
+         }
       }
     }
   },
