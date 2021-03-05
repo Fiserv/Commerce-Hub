@@ -33,13 +33,13 @@ The unique number associated with a payment card. The entire number is known as 
 
 
 ##  Card Security Code
-A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC) is a security feature for card not present payment card transactions instituted to reduce credit card fraud.
+A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC) is a security feature for [card not present](#card-not-present) payment card transactions instituted to reduce credit card fraud.
 
 ## Chargeback
 A process by which a customer disputes the payment and often results in the money being refunded to the customer by the issuing bank unless the merchant can show the transaction is valid.
 
 ## Dynamic Descriptor
-A custom descriptor you configure and pass with each transaction via the API. This includes both [soft Descriptors](#soft-descriptor) and [hard Descriptors](#hard-descriptor). Contact your account manager for more information on using Dynamic Descriptors.
+A custom descriptor you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
 
 ## Hard Descriptor
 The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement.
