@@ -2,21 +2,24 @@
 tags: [carat, commerce-hub, Dynamic-Descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor]
 ---
 
-# Merchant Descriptor
+# Dynamic Descriptor
 
 ## Overview
 
-[Dynamic descriptors](../FAQs-Glossary/Glossary.md#dynamic-descriptor), allow merchants to associate a distinct description and phone number with different products or services. Many companies offer a variety of products or services and if a company name appears as the descriptor on customer's card statement rather than the name of the product or service, the customer may not recognize the charge as a result, customer disputes/[chargebacks](../FAQs-Glossary/Glossary.md#chargeback) occur.
+A descriptors contains identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on customer's credit/debit card statement, along with industry information based on the [MCC](../FAQs-Glossary/Glossary.md#merchant-categroy-code-(mcc)). These descriptors inform customers of the merchant details and contact information.
 
-A descriptor is a piece of identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on buyers’ credit/debit card statements. These descriptors remind cardholders of the details of the purchase and give them a way to contact the merchant. The standard descriptor information that gets passed through to the cardholder’s statement is the DBA (Doing Business As) name and customer service phone number that you provide with your merchant account application.
+The standard descriptor information that gets passed through to the cardholder’s statement is the DBA (Doing Business As) name and customer service phone number that you provide with your merchant account application. See [hard descriptor](../FAQs-Glossary/Glossary.md#hard-descriptor) and [soft descriptor](../FAQs-Glossary/Glossary.md#soft-descriptor) for more information.
+
+A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a merchant to associate a distinct description and phone number with different products or services. Many companies offer a variety of products or services and if a company name appears as the descriptor on customer's card statement rather than the name of the product or service, the customer may not recognize the charge as a result, customer disputes/[chargebacks](../FAQs-Glossary/Glossary.md#chargeback) occur.
 
 ---
 
 <!-- theme: warning -->
 
 > ##### Note
+> Dynamic Descriptors should not be utilized to correct an incorrect descriptor on the merchant account, please contact your account representative to correct an incorrect descriptor.
 >
-> This field has limited platform availability. For more information, please contact your account representative.
+> Dynamic Descriptors have limited availability. For more information, please contact your account representative.
 
 ---
 
