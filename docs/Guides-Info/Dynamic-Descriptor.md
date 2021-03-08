@@ -30,15 +30,18 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `merchantName` | *string* |  | Daynamic Merchant Name or DBA </br>(Example MyWebsite.com) |
-| `merchantStreet` | *string* |  | Merchant street address </br>(Example 456 Street)|
-| `city` | *string* |  | Merchant City </br>(Example Atlanta)|
-| `state` | *string* |  | Merchant state or province </br>(Example GA)|
-| `country` | *string* |  | [ISO-3166-1](url) ALPHA-2, ALPHA-3, numeric or full country name </br>(Example US) |
-| `postalCode` | *string* |  | ZIP code or postal code </br>(Example 30303)|
-| `customerServiceNumber` | *string* | | Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. </br>Example (9898989898) |
-| `serviceEntitlement` | *string* | | Merchant Service Entitlement number </br>Example (67893827513) |
+| `mcc` | *string* |  | [Merchant Category Code](Merchant-Category-Code.md) |
+| `merchantName` | *string* |  | Daynamic Merchant Name or DBA |
+| `merchantStreet` | *string* |  | Merchant street address |
+| `city` | *string* |  | Merchant City |
+| `state` | *string* |  | Merchant state or province |
+| `country` | *string* |  | [ISO-3166-1](url) ALPHA-2, ALPHA-3, numeric or full country name |
+| `postalCode` | *string* |  | ZIP code or postal code |
+| `customerServiceNumber` | *string* | | Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
+| `serviceEntitlement` | *string* | | Merchant Service Entitlement number |
 
 ---
 
 ## Payload Examples
+
+
