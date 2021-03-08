@@ -12,8 +12,8 @@ A bank or financial institution that processes credit or debit card transactions
 Authorization is necessary to check whether a card holder's credit card holds sufficient funds and is approved to purchase from a merchant. An authorization request first emerges whenever a cardholder attempts to purchase a good or service through a debit or credit card.
 
 
-## AVS
-The Address Verification Service verifies customer-supplied billing address information against the billing address on file at the issuer for Card Not Present transactions.
+## Address Verification Service 
+The Address Verification Service (AVS) verifies customer-supplied billing address information against the billing address on file at the issuer for Card Not Present transactions.
 
 
 ## Capture
@@ -24,11 +24,11 @@ The process of charging the customer's account for a previously authorized trans
 Payment networks that determine where a card can be used and facilitate the payment process between merchants and customers. Common card networks include Visa, MasterCard, American Express and Discover. Note that American Express and Discover are also card issuers as well.
 
 
-## Card Not Present (CNP)
-A transaction made when the card cannot be physically used, e.g. in an online store.
+## Card Not Present
+A Card Not Present (CNP) transaction made when the card cannot be physically used, e.g. in an online store.
 
 
-## Card Number/PAN
+## Card Number
 The unique number associated with a payment card. The entire number is known as the Primary Account Number (PAN). The first 4-6 digits are the Bank Identification Number (BIN).
 
 
@@ -44,8 +44,8 @@ A custom descriptor you configure and pass with each transaction via the API. Th
 ## Hard Descriptor
 The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement.
 
-## Merchant Category Code (MCC)
-The MCC is an industry standard [four-digit number](../Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides.
+## Merchant Category Code
+The Merchant Category Code (MCC) is an industry standard [four-digit number](../Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides.
 
 ## Payment Token
 A cryptographically secure representation of payment instrument details for use with subsequent payment transactions. This token may be generated for a single use or for multiple uses. By making use of a payment token, the merchant does not need to store sensitive payment details on their servers.
