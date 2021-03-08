@@ -15,9 +15,11 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 ---
 
 <!-- theme: warning -->
-> ##### NOTE
+> ##### WARNING
 > Dynamic Descriptors should not be utilized to correct an incorrect descriptor on the merchant account, please contact your account representative to correct an incorrect descriptor.
->
+
+<!-- theme: info -->
+> ##### INFO
 > Dynamic Descriptors have limited availability. For more information, please contact your account representative.
 
 ---

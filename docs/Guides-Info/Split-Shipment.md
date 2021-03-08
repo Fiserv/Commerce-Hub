@@ -8,10 +8,11 @@ Situations in which this could be implemented include:
 - Occurs when the goods are not available for shipment at the time of the consumer’s purchase.
 
 <!-- theme: info -->
+> ##### INFO
+> If the customer cancels their order before the last shipment, the `finalShipment` indicator is required to be sent with the [refund](../Transactions/Refund.md) request.
 
-> ##### Note
-> If the customer cancels their order before the last shipment, the finalShipment indicator is required to be sent with the [refund](../Transactions/Refund.md) request.
-
+<!-- theme: warning -->
+> ##### WARNING
 > If the authorization timeframe has expired, a [reauthorization](../Transactions/Re-Auth.md) is required.
 
 ## Technical Requirements

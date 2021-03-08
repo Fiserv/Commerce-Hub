@@ -9,4 +9,8 @@ An incremental authorization is typically found in hotel and rental environments
 Field requirement Authorization Characteristics Indicator (ACI)
 
 <!-- theme: warning -->
+> ##### WARNING
 > Not all MCCs support Incremental Authorization, please contact your account representative for more information.
+
+## See Also
+ - Reauthorization
