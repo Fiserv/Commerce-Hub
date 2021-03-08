@@ -20,5 +20,4 @@ Used to pass the merchant data during the transaction to determine the merchant 
 
 ## See Also
 
-- Dynamic Descriptors
 - Payment Facilitators
