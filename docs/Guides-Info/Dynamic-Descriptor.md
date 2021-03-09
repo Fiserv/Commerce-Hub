@@ -34,16 +34,46 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* |  | [Merchant Category Code](Merchant-Category-Code.md) |
 | `merchantName` | *string* |  | Daynamic Merchant Name or DBA |
-| `merchantStreet` | *string* |  | Merchant street address |
-| `city` | *string* |  | Merchant City |
-| `state` | *string* |  | Merchant state or province |
-| `country` | *string* |  | [ISO-3166-1](url) ALPHA-2, ALPHA-3, numeric or full country name |
-| `postalCode` | *string* |  | ZIP code or postal code |
 | `customerServiceNumber` | *string* | | Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
 | `serviceEntitlement` | *string* | | Merchant Service Entitlement number |
+| `address` | *component* |  | Merchant [Address](../Master-Data/Address.md#address) details |
 
 ---
 
 ## Payload Examples
 
 
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "dynamicDescriptors": {
+	  "mcc": "4457",
+	  "merchantName": "Mywebsite.com",
+	  "customerServiceNumber": "1231231234",
+	  "serviceEntitlement": "67893827513",
+	  "address": {
+	  	"street": "Main Street",
+	  	"houseNumberOrName": "123",
+	  	"city": "Main Street",
+	  	"stateOrProvince": "GA",
+	  	"postalCode": "30303",
+	  	"country": "US"
+  	}
+  }
+}
+```
