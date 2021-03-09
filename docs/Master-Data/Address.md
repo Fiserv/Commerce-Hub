@@ -7,6 +7,8 @@ In some cases merchant may need to send the cardholder address in the transactio
 
 ## Address 
 
+#### Component: address
+
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `street` | *string* |  | Street name |
@@ -22,21 +24,27 @@ In some cases merchant may need to send the cardholder address in the transactio
 
 Is an address connected to the customer's [payment method](../Guides-Info/Payment-Source/Source-Type.md).
 
+#### Component: billingAddress
+
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer First name |
-| `lastName` | *string* |  | Customer Last name |
-| `address` | *component* |  | Cardholder [Address](#address) details |
+| `firstName` | *string* |  | Customer first name. |
+| `lastName` | *string* |  | Customer last name. |
+| `address` | *component* |  | Billing [address](#address) details. |
+| `phone` | *component* |  | Customer [phone](Customer-Details.md#phone-details) details. |
 
 ## Shipping Address
 
 Is an address where merchant will send the order. 
 
+#### Component: shippingAddress
+
 | Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer First name |
-| `lastName` | *string* |  | Customer Last name |
-| `shippingMethod` | *string* |  | Shipping and delivery method Example (*SAME_DAY, OVERNIGHT*) |
-| `address` | *component* |  | Cardholder [Address](#address) details |
-| `phone` | *component* |  | Cardholder [Phone](#Customer-Details.md#phone-details) details |
+| -------- | -- | ------------ | ------------------ |
+| `firstName` | *string* |  | Shipping contact first name. |
+| `lastName` | *string* |  | Shipping contact last name. |
+| `shippingMethod` | *string* |  | Shipping and delivery method. |
+| `address` | *component* |  | Shipping [address](#address) details. |
+| `phone` | *component* |  | Shipping contact [phone](Customer-Details.md#phone-details) details. |
+
 
