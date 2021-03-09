@@ -40,8 +40,9 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 
 ---
 
-## Payload Examples
+## Payload Example
 
+#### Sample chargeRequest with Dynamic Descriptor details
 
 ```json
 {
