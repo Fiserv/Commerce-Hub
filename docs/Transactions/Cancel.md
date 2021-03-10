@@ -18,6 +18,9 @@ If the customer has canceled the order or if fraud is suspected, the merchant wo
 
 ## Minimum Requirements
 
+Cancel Request can be initiated by sending the request at the appopriate endpoint by providing valid transaction id or order id and there is no minimum field requirement for initiating the request. However the request may contain few fields from the 
+
+## Optional Fields
 
 ##### Component : transactionBatch
 
