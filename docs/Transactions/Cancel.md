@@ -12,15 +12,7 @@ If the customer has canceled the order or if fraud is suspected, the merchant wo
 
 > ##### Cancel Pre-Requisite
 >
->A Cancel request can be initiated against a [Charge](Charges.md) that has not been [Captured](Capture.md).
-
-<!-- theme: success -->
->### Endpoints
->**POST** `/payments/v1/charges/{transactionId}/cancel`
->- Use this endpoint to submit a Cancel request by `transactionId`.
->
->**POST** `/payments/v1/charges/orders/{orderId}/cancel` 
->- Use this endpoint to submit a Cancel request by `orderId`.
+>A cancel request can be initiated against a [charge](Charges.md) that may or may not have been [captured](Capture.md).
 
 ---
 
@@ -48,6 +40,16 @@ Variable | Type| Maximum Length | Description/Values|
 |`clientRequestId`| *string* |  | Echoes back the value in the request header for tracking |
 |`transactionId`| *string* | 12 | Unique identifier for each transaction on the Gateway|
 
+
+---
+
+## Endpoints
+Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
+
+<!-- theme: success -->
+>**POST** `/payments/v1/charges/{transactionId}/cancel`
+>
+>**POST** `/payments/v1/charges/orders/{orderId}/cancel`
 
 ---
 
