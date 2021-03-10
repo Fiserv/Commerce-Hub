@@ -47,7 +47,7 @@ Is an address where merchant will send the order.
 | `address` | *component* |  | Shipping [address](#address) details. |
 | `phone` | *component* |  | Shipping contact [phone](Customer-Details.md#phone-details) details. |
 
-##### Shipping Method: Valid Values
+#### Shipping Method: Valid Values
 
 | Value | Description |
 | ----- | ----------- |
