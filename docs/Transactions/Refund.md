@@ -1,12 +1,12 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cancel, refund]
+tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel, refund]
 ---
 
-# Refund
+# Refund Charges
 
 ## Overview
 
-If the customer wish to cancel the transaction after the batch has been settled, the merchant would need to release the original authorization by issuing a Refund request to the original Transaction ID or Order ID. Refund can be initiated either for full amount or partial amount of the order.
+If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId` or `orderId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
 #### Refund Types
 
@@ -14,13 +14,10 @@ If the customer wish to cancel the transaction after the batch has been settled,
 - **Full Refund:** 
 
 <!-- theme: danger -->
-
 > ##### Refund Requirement
->
->Refund Request can be initiated against a [charge](Charges.md) if it is already been [captured](Capture.md), else a [cancel](Cancel.md) should be initiated.
+>Refund Request can be initiated against a [charge](Charges.md) only if it is already been [captured](Capture.md) and settled, otherwise submit a [cancel](Cancel.md) request.
 
 <!-- theme: warning -->
-
 > ##### Refund Timeframe
 > The refund timeframe is based on the issuing bank and may take 3-5 days to process and reflect on the account.
 
@@ -146,10 +143,7 @@ title: Response
 <!-- type: tab-end -->
 
 ## See Also
-
-- API Explorer -
-- Notifications API
+- API Explorer
 - Capture
-- Cancel or refund
-- Payments lifecycle
-- Payment methods
+- Cancel
+- Payment Source
