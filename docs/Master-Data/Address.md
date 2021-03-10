@@ -42,9 +42,18 @@ Is an address where merchant will send the order.
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* |  | Shipping contact first name. |
-| `lastName` | *string* |  | Shipping contact last name. |
-| `shippingMethod` | *string* |  | Shipping and delivery method. |
+| `lastName` | *string* |  | Shipping contact last name.|
+| `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method-valid-values).<details><summary> Click </summary>      Your content here...</br>      (markup only where supported)</br>      more content here...</br>    </details>|
 | `address` | *component* |  | Shipping [address](#address) details. |
 | `phone` | *component* |  | Shipping contact [phone](Customer-Details.md#phone-details) details. |
 
+##### Shipping Method: Valid Values
 
+| Value | Description |
+| ----- | ----------- |
+| SAME_DAY | Same day shipping |
+| OVERNIGHT | Next day shipping |
+| PRIORITY | Shipping within 2-3 days |
+| GROUND | Shipping within 4 days |
+| ELECTRONIC | Email or digital goods |
+| SHIP_TO_STORE | Ship to store |
