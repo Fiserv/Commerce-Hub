@@ -1,4 +1,4 @@
-# Incremental-Auth
+# Incremental Authorization
 
 ## Overview
 
