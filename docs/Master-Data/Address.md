@@ -43,7 +43,7 @@ Is an address where merchant will send the order.
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* |  | Shipping contact first name. |
 | `lastName` | *string* |  | Shipping contact last name.|
-| `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method-valid-values).<details><summary> Click </summary>      Your content here...</br>      (markup only where supported)</br>      more content here...</br>    </details>|
+| `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method-valid-values).|
 | `address` | *component* |  | Shipping [address](#address) details. |
 | `phone` | *component* |  | Shipping contact [phone](Customer-Details.md#phone-details) details. |
 
