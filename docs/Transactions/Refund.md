@@ -14,11 +14,9 @@ If the customer returns product or requests to cancel the transaction after the 
 - **Full Refund:** 
 
 <!-- theme: danger -->
-> ##### Refund Requirement
 >Refund Request can be initiated against a [charge](Charges.md) only if it is already been [captured](Capture.md) and settled, otherwise submit a [cancel](Cancel.md) request.
 
 <!-- theme: warning -->
-> ##### Refund Timeframe
 > The refund timeframe is based on the issuing bank and may take 3-5 days to process and reflect on the account.
 
 ---
