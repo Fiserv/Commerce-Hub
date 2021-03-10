@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges]
 ---
 
-# Capture Charges
+# Capture
 
 ## Overview
 
