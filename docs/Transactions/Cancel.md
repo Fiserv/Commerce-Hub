@@ -12,13 +12,13 @@ If the customer has canceled the order or if fraud is suspected, the merchant wo
 
 > ##### Cancel Pre-Requisite
 >
->A cancel request can be initiated against a [charge](Charges.md) that may or may not have been [captured](Capture.md).
+>A cancel request can be initiated against a [charge](Charges.md) (sale or pre-auth) which is not been settled. 
 
 ---
 
 ## Minimum Requirements
 
-Cancel Request can be initiated by sending the request at the appopriate endpoint by providing valid transaction id or order id and there is no minimum field requirement for initiating the request. However the request may contain some fields from the original charge request which are optional and described below.
+Cancel Request can be initiated by sending the request at the appopriate endpoint by providing valid transaction id or order id and there is no minimum field requirement for initiating the request. However the request may contain some fields from the original charge request which are optional and are described below.
 
 ## Optional Fields
 
