@@ -6,9 +6,9 @@ A set of numbers that describe the type of the transaction as well as the accoun
 
 The Processing code has 3 subdivisions 
 
-- Positions 1 – 2, Transaction Type
-- Positions 3 – 4, Account Type (From)
-- Positions 5 – 6, Account Type (To)
+- Positions 1 – 2, [Transaction Type](#transaction-type)
+- Positions 3 – 4, [Account Type (From)](#from-account-type)
+- Positions 5 – 6, [Account Type (To)](#to-account-type)
 
 ---
 
@@ -39,6 +39,7 @@ Describes the transaction being performed. Valid values are
 | 90 | Signature Capture Data Present or Debit Key Exchange |
 | 99 | Test transaction (0800 — Network Admin) |
 
+---
 
 ## From Account Type
 
@@ -52,6 +53,8 @@ Describes the cardholder account type affected for cardholder account debits and
 | 90 | Default Account (Debit only) |
 | 96 | Cash Benefits Account (EBT Only) |
 | 98 | Food Stamps Account (EBT Only) |
+
+---
 
 ## To Account Type
 
