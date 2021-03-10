@@ -4,19 +4,16 @@
 
 **Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](../../Master-Data/Address.md#billing-address). [AVS](../../FAQs-Glossary/Glossary.md#avs) is widely used Fraud Prevention measure for the transaction where the card holder is not present.
 
-## Perform AVS Check
+#### Perform AVS Check
 
 The Merchant can get the cardholder's address verification done by either submitting the verification request or sending the billing address information in during a charge request.
 
 
-## Address Verification using Charge Request
+## Charge Request Payload Example
 
 <!-- theme: success -->
 >##### Endpoint
 >**POST** `/payments/v1/charges`
-
-## Payload Example
-
 
 <!--
 type: tab
@@ -121,13 +118,11 @@ title: Response
 ```
 <!-- type: tab-end -->
 
-## Address Verification using Verification Request
+## Verification Request Payload Example
 
 <!-- theme: success -->
 >##### Endpoint
 >**POST** `/payments-vas/v1/accounts/verification`
-
-## Payload Example
 
 
 <!--

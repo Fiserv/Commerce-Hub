@@ -3,18 +3,16 @@
 ## Overview
 **Security Code Check** - A service where cardholder is prompt to enter the 3-digit Card Verification Value(CVV) manually in order to get the card verify by the issuing system. Security code check is used as a Fraud Prevention measure for the transaction where card holder is not present.
 
-## Perform Security Check
+#### Perform Security Check
 
 For the transactions where security check id required, merchant needs to pass the appropriate values for securityCode and  securityCodeIndicator in card object.
 
 
-## Security Check using Charge Request
+## Charge Request Payload Example
 
 <!-- theme: success -->
 >##### Endpoint
 >**POST** `/payments/v1/charges`
-
-## Payload Example
 
 
 <!--
@@ -110,14 +108,11 @@ title: Response
 ```
 <!-- type: tab-end -->
 
-## Security Check using Verification Request
+## Verification Request Payload Example
 
 <!-- theme: success -->
 >##### Endpoint
 >**POST** `/payments-vas/v1/accounts/verification`
-
-## Payload Example
-
 
 <!--
 type: tab
