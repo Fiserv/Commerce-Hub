@@ -15,11 +15,9 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 ---
 
 <!-- theme: warning -->
-> ##### WARNING
 > Dynamic Descriptors should not be utilized to correct an incorrect descriptor on the merchant account, please contact your account representative to correct an incorrect descriptor.
 
 <!-- theme: info -->
-> ##### INFO
 > Dynamic Descriptors have limited availability. For more information, please contact your account representative.
 
 ---
@@ -27,7 +25,6 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 ## Minimum Requirements
 
 <!-- theme: danger -->
-> ##### CAUTION
 > Any information entered in the dynamic descriptor fields will overwrite the master descriptor information on the merchant account, it is very important to use the fields correctly.
 
 | Variable | Type | Length | Description/Values |

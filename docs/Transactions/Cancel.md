@@ -1,26 +1,23 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cancel]
+tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel]
 ---
 
 # Cancel
 
 ## Overview
 
-If the customer has canceled the order or if fraud is suspected, the merchant would need to release the original authorization by issuing a void (Cancel) request to the original Transaction ID or Order ID. 
+If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` or `orderId`.
 
 <!-- theme: warning -->
-
-> ##### Cancel Pre-Requisite
->
->A cancel request can be initiated against a [charge](Charges.md) (sale or pre-auth) which is not been settled. 
+> A cancel request can be initiated against an [authorization](Charges.md) that has not been [captured](Capture.md), or a [sale](Charges.md) that has not been settled (batched), otherwise submit a [refund](refund.md) request.
 
 ---
 
-## Minimum Requirements
+## Requirements
 
-Cancel Request can be initiated by sending the request at the appopriate endpoint by providing valid transaction id or order id and there is no minimum field requirement for initiating the request. However the request may contain some fields from the original charge request which are optional and are described below.
+Cancel Request can be initiated by sending the request to the appopriate endpoint by providing valid `transactionId` or `orderId` with no minimum field requirement. The request may contain optional fields from the original charge request described below.
 
-## Optional Fields
+#### Optional Fields
 
 ##### Component : transactionBatch
 
