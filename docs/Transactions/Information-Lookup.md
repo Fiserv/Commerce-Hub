@@ -70,17 +70,14 @@ title: Response
     }
   },
   
-  "card": {
-    "cardData": "4005550000000019",
-    "nameOnCard": "Jane Smith",
-    "expirationMonth": "05",
-    "expirationYear": "2025",
-    "securityCode": "111",
-    "securityCodeIndicator": "true",
-    "bin": "400555",
-    "last4": "0019",
-    "scheme": "VISA"
-  
+  "CardDetails": {
+    "brand": "VISA",
+    "brandProductId": "VISA_BUSINESS",
+    "cardFunction": "CREDIT",
+    "commercialCard": "CORPORATE",
+    "issuerCountry": "US",
+    "issuerName": "First National Bank of Omaha"
+    
   },
 }
 ```
