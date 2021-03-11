@@ -7,6 +7,33 @@
 
 For the transactions where security check id required, merchant needs to pass the appropriate values for securityCode and  securityCodeIndicator in card object.
 
+---
+
+## Minimum Requirement
+
+#### Component: amount
+
+<!--theme:info-->
+>**Note:** amount component is needed for CVV check only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
+
+|Variable    |  Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+
+
+#### Component: Source
+
+Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+|`sourceType` | *string* | 15 | Payment [source type](../Payment-Source/Source-Type.md). |
+|`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
+|`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
+|`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
+|`securityCode` | *string* | 3| The card [security code](../../FAQs-Glossary/Glossary.md.md#security-code).|
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed.|
+
+---
 
 ## Charge Request Payload Example
 
