@@ -7,7 +7,7 @@ The transaction request initiated by merchant contains various transaction relat
 | `captureFlag` | *boolean* | 5 | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
-| `processingCode` | *string* | 6 | A required code is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.</br>Code Format:</br>Position 1-2 : [Transaction Type](../Guides-Info/Processing-Code.md#transaction-type)</br>Position 3–4 : [From Account Type](../Guides-Info/Processing-Code.md#from-account-type)</br>Position 5–6 : [To Account Type](../Guides-Info/Processing-Code.md#to-account-type) </br> |
+| `processingCode` | *string* | 6 | A [required code](../Guides-Info/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
 | `merchantTransactionId` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantOrderId` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantInvoiceNumber` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|

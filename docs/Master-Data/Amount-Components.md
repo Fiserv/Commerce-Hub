@@ -2,9 +2,12 @@
 
 ## Overview
 
-AmountComponents is used for the transactions where additional amount such as tax, surcharge, fees has to be the part of request which of the particular transactions.
+The `amountComponents` array is used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
 
 ## Amount Components
+
+<!-- theme:info -->
+> The `amountComponents` is the sub array of `additionDataCommon`.
 
 | Variable | Type | Length | Description/Values |
 | --------- | --- | ------ | -------------- |

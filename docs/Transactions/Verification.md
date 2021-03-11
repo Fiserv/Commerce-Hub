@@ -2,14 +2,14 @@
 
 ## Overview
 
-Bank account verification is performed when the merchant wants to confirms that the cardholder account which is used for the transaction is a valid bank account. 
+Account verification is performed when the merchant wants to confirm that the cardholder account is valid for a transaction. 
 
 <!--theme:info-->
->**Note:** Merchant can also get Address Verification ([AVS check](../Guides-Info/Fraud/Address-Verification.md)) and Security Code ([CVV check](../Guides-Info/Fraud/Security-Code.md)) along with Account verification request.
+> The merchant can also perform an [address](../Guides-Info/Fraud/Address-Verification.md)) and/or [security code](../Guides-Info/Fraud/Security-Code.md) verification with the request.
 
 ---
 
-## Minimum Requirement
+## Payment Card Requirement
 
 #### Component: source
 
@@ -19,15 +19,6 @@ Variable | Type| Maximum Length | Description/Values|
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 |`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
 |`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
-|`securityCode` | *string* | 3| The card [security code](../FAQs-Glossary/Glossary.md#security-code).|
-
-#### Component: billingAddress
-
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer first name. |
-| `lastName` | *string* |  | Customer last name. |
-| `address` | *component* |  | Billing [address](../../Master-Data/Address.md#address) details. |
 
 ---
 

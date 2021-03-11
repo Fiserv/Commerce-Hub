@@ -14,8 +14,8 @@ The `currency` variable in the `amount` array determines what currency the trans
 
 ## Currency List
 
-Currency Code | Currency Name | Currency Number | Decimal |
-------- | ------- | -------| -------- |
+|Currency Code | Currency Name | Currency Number | Decimal |
+|------- | ------- | -------| -------- |
 Afghan Afghani | AFN | 971 | 2 |
 Algerian Dinar | DZD | 012 | 2 |
 Argentine Peso | ARS | 032 | 2 |
