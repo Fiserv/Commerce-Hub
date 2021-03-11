@@ -8,7 +8,7 @@ tags: [Source-Type, carat, commerce-hub]
 
 The variable `sourceType` is used to determine the source of the transaction. Depending on the source the required variables change. 
 
-Add minimum required fields and (for additional please refer api explorer). Add for other pages as well
+Add minimum required fields and (for additional please refer api explorer). Add for other pages as well.
 
 ## SourceType
 <!--
