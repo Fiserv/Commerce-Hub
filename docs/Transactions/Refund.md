@@ -143,6 +143,6 @@ title: Response
 ## See Also
 - [API Explorer](url)
 - [Charge](Charges.md)
-- [Capture](Capture.md)
 - [Cancel](Cancel.md)
+- [Credit]
 - [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)

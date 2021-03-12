@@ -5,7 +5,7 @@
 Account verification is performed when the merchant wants to confirm that the cardholder account is valid for a transaction. Merchant can initiate the verifiation request using card as well as token details.
 
 <!--theme:info-->
-> The merchant can also perform an [address](../Guides-Info/Fraud/Address-Verification.md)) and/or [security code](../Guides-Info/Fraud/Security-Code.md) verification with the request.
+> The merchant can also perform an [address](../Guides-Info/Fraud/Address-Verification.md) and/or [security code](../Guides-Info/Fraud/Security-Code.md) verification with the request.
 
 ---
 
@@ -154,3 +154,11 @@ title: Response
 <!-- type: tab-end -->
 
 ---
+
+## See Also
+
+Payment Source
+CVV
+AVC
+API Explorer
+Charge

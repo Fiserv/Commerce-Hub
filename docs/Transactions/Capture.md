@@ -146,6 +146,6 @@ title: Response
 ## See Also
 - [API Explorer](url)
 - [Charge](Charges.md)
-- [Refund](Refund.md)
-- [Cancel](Cancel.md)
 - [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Split Shipment]
+- [Reauthorization]

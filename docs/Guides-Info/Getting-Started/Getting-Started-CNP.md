@@ -52,4 +52,6 @@ For more information, refer to the [constructing a Payment.js request](url) arti
 
 - Pay By Link
 - Use your Own UI
-- Integrate with our API
+- Use our Hosted Checkout
+- Use our Secure Tokenization
+

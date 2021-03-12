@@ -158,7 +158,8 @@ title: Response
 - [Cancel](Cancel.md)
 - [Transaction Details](../Master-Data/Transaction-Details.md)
 - [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
-
+- [Reauthorization]
+- [Incremental Auth]
 
 
 

@@ -78,6 +78,6 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 
 ## See Also
 
-- [Merchant Details](../Master-Data/Merchant-Details.md)
-- [Charge](../Transactions/Charges.md)
 - [Capture](../Transactions/Capture.md)
+- [Charge](../Transactions/Charges.md)
+- [Refund](../Transactions/Refund.md)

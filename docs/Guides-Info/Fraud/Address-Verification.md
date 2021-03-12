@@ -310,8 +310,11 @@ Variable | Type| Maximum Length | Description/Values|
 
 <!-- type: tab-end -->
 
+---
 
 ## See Also
+
 - [API Explorer](url)
-- [Charge](Charges.md)
-- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Address](../../Master-Data/Address.md)
+- [Charge](../../Transactions/Charges.md.md)
+- [Verification](../../Transactions/Verification.md)

@@ -47,5 +47,8 @@ For recurring transactions if merchant is allowed to initiate a transactions on 
 ## See Also
 
 - [API Explorer](url)
-- [Charge](../../Transactions/Charges.md)
 - [Capture](../../Transactions/Capture.md)
+- [Charge](../../Transactions/Charges.md)
+- [Incremental Auth]
+- [Reauthorization]
+- [Recurring Payment]

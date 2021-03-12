@@ -62,7 +62,7 @@ Is an address where merchant will send the order.
 
 ## See Also
 
-- [Charge](../Transactions/Charges.md)
-- [Capture](../Transactions/Capture.md)
 - [Address Verification](../Guides-Info/Fraud/Address-Verification.md)
+- [Capture](../Transactions/Capture.md)
+- [Charge](../Transactions/Charges.md)
 
