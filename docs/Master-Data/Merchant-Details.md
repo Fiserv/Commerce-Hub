@@ -20,4 +20,5 @@ Used to pass the merchant data during the transaction to determine the merchant 
 
 ## See Also
 
-- Payment Facilitators
+- [Payment Facilitators](../Guides-Info/Industry-Verticals/Payment-Faciliator.md)
+- [Dynamic Descriptors](../Guides-Info/Dynamic-Descriptor.md)

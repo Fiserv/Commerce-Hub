@@ -57,3 +57,12 @@ Is an address where merchant will send the order.
 | GROUND | Shipping within 4 days |
 | ELECTRONIC | Email or digital goods |
 | SHIP_TO_STORE | Ship to store |
+
+---
+
+## See Also
+
+- [Charge](../Transactions/Charges.md)
+- [Capture](../Transactions/Capture.md)
+- [Address Verification](../Guides-Info/Fraud/Address-Verification.md)
+
