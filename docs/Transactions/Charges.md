@@ -74,6 +74,7 @@ title: Request
     "expirationMonth": "02",
     "expirationYear": "2035",
     "securityCode": "123"
+    "securityCodeIndicator": "PROVIDED"
   },
   "transactionDetails": {
     "captureFlag": true
