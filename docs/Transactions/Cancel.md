@@ -147,7 +147,8 @@ title: Response
 
 ## See Also
 - [API Explorer](url)
-- [Charge](Charges.md)
 - [Capture](Capture.md)
-- [Refund](Refund.md)
+- [Charge](Charges.md)
 - [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Refund](Refund.md)
+

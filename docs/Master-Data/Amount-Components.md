@@ -18,3 +18,9 @@ The `amountComponents` array is used in transactions where additional amount fie
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Note: Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
 | `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount. |
 | `convenienceFee` | *number* | 12 | Optional convenience fee for payments made through an alternative channel, rather than by cash, check, or ACH. Note: Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+
+---
+
+## See Also
+
+- [API Explorer](url)

@@ -147,5 +147,5 @@ title: Response
 - [API Explorer](url)
 - [Charge](Charges.md)
 - [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
-- [Split Shipment]
-- [Reauthorization]
+- [Reauthorization](url)
+- [Split Shipment](url)

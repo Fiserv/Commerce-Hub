@@ -59,3 +59,7 @@ Variable | Type| Maximum Length | Description/Values|
 | `longitude` | *string* |  | Cardholder current longitude GPS position. |
 | `ipAddress` | *string* |  | Customer IP Address. |
 | `captureTime` | *string* |  | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
+
+## See Also
+
+- [Dynamic Descriptors](../Guides-Info/Dynamic-Descriptor.md)

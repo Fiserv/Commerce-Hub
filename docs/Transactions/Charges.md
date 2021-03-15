@@ -159,13 +159,13 @@ title: Response
 
 ## See Also
 - [API Explorer](url)
-- [Refund](Refund.md)
 - [Capture](Capture.md)
 - [Cancel](Cancel.md)
-- [Transaction Details](../Master-Data/Transaction-Details.md)
+- [Incremental Auth](url)
 - [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
-- [Reauthorization]
-- [Incremental Auth]
+- [Reauthorization](url)
+- [Refund](Refund.md)
+- [Transaction Details](../Master-Data/Transaction-Details.md)
 
 
 
