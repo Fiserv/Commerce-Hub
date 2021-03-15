@@ -8,7 +8,7 @@ If the merchant wants to verify card related information of the cardholder such 
 
 ####  Response Component: cardDetails
 
-cardDetails is used by Gateway to return the details about the card in the response of information lookup request. the structure of the component is as below..
+The `cardDetails` are returned in the account information lookup response. The structure of the component is as below.
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -31,7 +31,7 @@ Variable | Type| Maximum Length | Description/Values|
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 
 #### Payload Example
@@ -99,7 +99,7 @@ title: Response
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 
 
 #### Payload Example

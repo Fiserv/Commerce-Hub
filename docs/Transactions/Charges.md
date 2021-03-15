@@ -35,13 +35,6 @@ Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](../Master-Data/Source-Type.md). |
 
-#### Component: card
-
-|`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
-|`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
-|`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
-|`securityCode` | *string* | 3| The card [security code](../FAQs-Glossary/Glossary.md#security-code).|
-
 #### Component: transactionDetails
 
 |Variable | Data Type| Maximum Length | Description/Values |
@@ -158,6 +151,7 @@ title: Response
 ---
 
 ## See Also
+
 - [API Explorer](url)
 - [Capture](Capture.md)
 - [Cancel](Cancel.md)
