@@ -6,6 +6,19 @@ If the merchant wants to verify card related information of the cardholder such 
 
 ---
 
+####  Response Component: cardDetails
+
+cardDetails is used by Gateway to return the details about the card in the response of information lookup request. the structure of the component is as below..
+
+Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `brand` | *string* |  | Card Brand. |
+| `brandProductId` | *string* |  | Category within the card brand. |
+| `cardFunction` | *string* |  | Identifies the type of card as CREDIT or DEBIT. |
+| `commercialCard` | *string* |  | Identifies if the card is a CORPORATE, COMMERCIAL or NON_CORPORATE card. |
+| `issuerCountry` | *string* |  | Card Issuer Country Two-letter [Country Code](../Master-Data/Country-Code.md). |
+| `issuerName` | *string* |  | Issuing bank name. |
+
 ## Endpoint
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/information`
