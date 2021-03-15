@@ -106,7 +106,7 @@ title: Response
       "transactionId": "838916029301"
     }
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentToken"
   },
   "transactionProcessingDetails": {

@@ -29,8 +29,10 @@ title: Request
     "total": "1.00",
     "currency": "USD"
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentCard",
+  }
+  "card": {  
     "cardData": "4005550000000019",
     "expirationMonth": "02",
     "expirationYear": "2035",

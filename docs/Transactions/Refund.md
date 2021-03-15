@@ -93,7 +93,7 @@ title: Response
     "total": "1.50",
     "currency": "USD"
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentToken"
   },
   "transactionDetails": {

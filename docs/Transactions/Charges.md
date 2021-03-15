@@ -29,11 +29,14 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
-#### Component: paymentSource
+#### Component: source
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](../Master-Data/Source-Type.md). |
+
+#### Component: card
+
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 |`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
 |`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
@@ -68,8 +71,10 @@ title: Request
     "total": "12.04",
     "currency": "USD"
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentCard",
+  }
+  "card": {
     "cardData": "4005550000000019",
     "expirationMonth": "02",
     "expirationYear": "2035",
@@ -105,7 +110,7 @@ title: Response
     "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
     "transactionId": "838916029301"
   },
-  "paymentSource": "PaymentCard",
+  "source": "PaymentCard",
   "card": {
     "bin": "400555",
     "last4": "0019",
