@@ -1,3 +1,3 @@
-# Payment-JS
+# Payment.JS Integration
 
 The beginning of an awesome article...

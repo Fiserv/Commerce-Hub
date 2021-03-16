@@ -1,4 +1,4 @@
-# Hosted Payment Page
+# Hosted Payment Page Integration
 
 ## Overview
 
