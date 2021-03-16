@@ -28,11 +28,9 @@ Variable | Type| Maximum Length | Description/Values|
 |`transactionClass`| *string* | 1 | Code that indicates the Transaction that was logged under, ranges from 1 through 4. Captured approved, Captured Authorised Only, Declinced, Batch Control.|
 |`sequenceNumber`| *string* | 6 | Sequence Number of this transaction within the current batch,ranges from 000001 through 000999|
 
-
-
 ##### Component : processorReservedDetails
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`transactionDate` | *string* | 10 | Date the transaction occured |
 |`transactionTime`| *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ | 
@@ -40,6 +38,28 @@ Variable | Type| Maximum Length | Description/Values|
 |`clientRequestId`| *string* |  | Echoes back the value in the request header for tracking |
 |`transactionId`| *string* | 12 | Unique identifier for each transaction on the Gateway|
 
+##### Component : transactionDetails
+
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+|`merchantTransactionId` | *string* | | Client transaction ID if supplied by client mapped from `transactionID` in the request. |
+|`reversalReasonCode`| *string* | 20 | Reason the merchant/customer requests for cancel (void). |
+
+###### Valid Values: reversalReasonCode
+
+| Value | Description|
+|---------|---------|
+|VOID | A transaction that is used to cancel or fully reverse a previous transaction. |
+|SUSPECTED_FRAUD | A transaction that is voided for suspected fraud. |
+|TIMEOUT | This transaction is used when the merchant does not receive a response to a transaction. At that point it is unknown whether the host received the transaction or not; therefore a timeout reversal request must be submitted. Upon the successful completion of the timeout reversal, the original transaction may be sent again. |
+|TIMEOUT_REVERSAL| A Timeout Reversal of a Void/Full Reversal. |
+|PARTIAL| A reversal transaction where the amount is less than the original authorization amount. |
+|**Canadian Debit Only**| |
+|EDIT_ERROR | Edit Error Parse error at the terminal. |
+|MAC_VERIFICATION_ERROR | MAC Verification Error terminal MAC is invalid or data used to verify the MAC is incorrect. |
+|MAC_SYNCH_ERROR | MAC Synch Error terminal MAC is out of synch with host MAC. |
+|ENCRYPTION_ERROR | Message Encryption Error terminal message encryption key is out of synch with host message encryption key or there is an error with the input data. |
+|SYSTEM_ERROR | System Error all other errors except for timeout (no response received) such as communication errors between the terminal and the PIN pad. |
 
 ---
 
@@ -77,6 +97,9 @@ title: Request
     "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
     "transactionId": 838916029301
   }
+  "transactionDetails": {
+    "reversalReasonCode": "VOID"
+  }
 }
 ```
 
@@ -106,7 +129,7 @@ title: Response
       "transactionId": "838916029301"
     }
   },
-  "source": {
+  "paymentSource": {
     "sourceType": "PaymentToken"
   },
   "transactionProcessingDetails": {
@@ -147,8 +170,7 @@ title: Response
 
 ## See Also
 - [API Explorer](url)
-- [Capture](Capture.md)
 - [Charge](Charges.md)
-- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Capture](Capture.md)
 - [Refund](Refund.md)
-
+- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
