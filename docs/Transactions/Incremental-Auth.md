@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, card-not-present, card-present, incremental-auth, authorization]
+---
+
 # Incremental Authorization
 
 ## Overview
@@ -11,5 +15,6 @@ Field requirement Authorization Characteristics Indicator (ACI)
 > Not all MCCs support Incremental Authorization, please contact your account representative for more information.
 
 ## See Also
- - [Reauthorization](Re-Auth.md)
+- [API Explorer](url)
+- [Reauthorization](Re-Auth.md)
 
