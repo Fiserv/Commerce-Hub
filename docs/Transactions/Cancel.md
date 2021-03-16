@@ -84,7 +84,7 @@ title: Request
 
 ```json
 {
-  "TransactionBatch": {
+  "transactionBatch": {
     "julianDay": "001",
     "batchNumber": "000001",
     "transactionClass": 1,
@@ -96,7 +96,7 @@ title: Request
     "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
     "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
     "transactionId": 838916029301
-  }
+  },
   "transactionDetails": {
     "reversalReasonCode": "VOID"
   }
