@@ -1,4 +1,4 @@
-# Account Information Lookup
+# Information Lookup
 
 ## Overview
 

@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel, refund]
 ---
 
-# Refund Charges
+# Refund
 
 ## Overview
 

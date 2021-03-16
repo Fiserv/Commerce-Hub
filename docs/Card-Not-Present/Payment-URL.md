@@ -4,6 +4,8 @@
 
 Merchant can use the Payment URL integration method to generate a invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
 
+---
+
 ## Generate a Payment URL
 
 Commerce Hub provides an API that allows merchant to send transaction type, amount and currency as well as the language that shall be used on the hosted payment page that will be shown to the customer after accessing the link.
@@ -99,15 +101,17 @@ title: Response
 ```
 <!-- type: tab-end -->
 
-## Get Payment URL Detail
+---
 
-Merchant may need to get the status of the payment Url so that if required they may contact shopper and request them to complete the transaction if they have not done. It may also be helpful while solving the customer queries if any on the status of the payment.
+## Get a Payment URL Status
+
+Merchant may need to get the status of the Payment URL so that if required they may contact shopper and request them to complete the transaction if they have not done. It may also be helpful while solving the customer queries if any on the status of the payment.
 
 #### Endpoint
-<!-- theme: success -->
+<!-- theme: info -->
 >**GET** `/payment-vas/payment-url/{payment-url-id}`
 
-### Response Example
+#### Response Example
 
 we need a table with the response detail come back - copy from IPG (paymenturldetail)
 
@@ -117,19 +121,19 @@ if the status is used then the merchant needs to submit a transaction inquiry
 
 there will be another field known as paymentUrlId
 
+---
 
-## Delete Payment URL
+## Delete a Payment URL
 
 In some scenarios, merchant may want to force the expiry of a payment link. For example, if a shopper updates their order after payment link is sent, so merchant may want to create a new payment link with the updated amount. To avoid confusion with two payment links, set the status of the previous payment link to expired. Changing the status to expired also changes the payment link's expiry date to the current date and time.
 
 #### Endpoint
-<!-- theme: success -->
+<!-- theme: danger -->
 >**DELETE** `/payment-vas/payment-url/{payment-url-id}`
 
 #### Response Example
 
-
-##### Example of Payment Url (200: Success) Response.
+Example of Payment URL (200: Success) Response.
 
 {
   "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
@@ -140,8 +144,8 @@ In some scenarios, merchant may want to force the expiry of a payment link. For 
   "transactionId": "2381723322"
 }
 
+---
 
-
-## Error Response
+## Error Responses
 
 requestStatus [ SUCCESS, VALIDATION_FAILED, PROCESSING_FAILED, FAILURE ] - Create a table and an example. take from IPG

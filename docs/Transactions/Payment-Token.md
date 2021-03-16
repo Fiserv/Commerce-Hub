@@ -1,4 +1,4 @@
-# Create a Payment Token
+# Payment Token
 
 ## Overview
 

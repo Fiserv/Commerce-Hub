@@ -1,4 +1,4 @@
-# Account Verification
+# Verification
 
 ## Overview
 

@@ -1,4 +1,4 @@
-# Reauthorize a Transaction
+# Reauthorize
 
 ## Overview
 

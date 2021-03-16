@@ -41,7 +41,7 @@ TransactionIdParam:
 
 Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
 
-<!-- theme: success -->
+<!-- theme: info -->
 >**GET** `/payments/v1/charges/{transactionId}/inquiry`
 >
 >**GET** `/payments/v1/charges/orders/{orderId}/inquiry`
