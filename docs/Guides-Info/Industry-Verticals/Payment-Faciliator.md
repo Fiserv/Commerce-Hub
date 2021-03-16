@@ -4,10 +4,11 @@
 
 A payment facilitator is a merchant service provider that simplifies the merchant account enrollment process. Small merchants that don't have enough infrastructure to start accepting card payments, gets onboarded under payment facilitator as a sub-merchant. Payment facilitator have removed the friction in the application and onboarding process by simplifying it and tailoring it to the businesses they serve, enabling those businesses to begin accepting card payments more quickly.
 
+## Requirements
 
 For the transaction acquired at sub-merchant, the transaction request from payment facilitator should have the merchant information as in below format.
 
-##### Component : subMerchant
+#### Component : subMerchant
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|

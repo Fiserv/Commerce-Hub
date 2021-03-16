@@ -2,7 +2,7 @@
 
 ## Overview
 
-Merchant can use the /payment-url integration method to generate a URL that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method, whenever convenient for them.
+Merchant can use the Payment URL integration method to generate a invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
 
 ## Generate a Payment URL
 
@@ -105,73 +105,17 @@ Merchant may need to get the status of the payment Url so that if required they 
 
 #### Endpoint
 <!-- theme: success -->
->**POST** `/payment-vas/payment-url/{payment-url-id}`
+>**GET** `/payment-vas/payment-url/{payment-url-id}`
 
-#### Payload Example
+### Response Example
 
-<!--
-type: tab
-title: Request
--->
+we need a table with the response detail come back - copy from IPG (paymenturldetail)
 
-##### Example of Payment Url Request.
+create a bullet list for - Created, Used, Expired, Cancelled
 
-```json
-???
-```
+if the status is used then the merchant needs to submit a transaction inquiry
 
-<!--
-type: tab
-title: Response
--->
-
-##### Example of Payment Url (200: Success) Response.
-
-<!-- theme: info -->
-
-> See [Error Responses](url) for additional examples.
-
-```json
-{
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom",
-    "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
-      "transactionTime": "2016-04-16T16:06:05Z",
-      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
-    }
-  },
-  "amount": {
-    "total": "1.50",
-    "currency": "USD"
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard"
-  },
-  "transactionDetails": {
-    "captureFlag": "TRUE",
-    "merchantTransactionId": "1343678765",
-    "merchantOrderId": "845366457890-TODO",
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2016-04-16",
-    "transactionTime": "2016-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "paymentUrl": "https://hyperlink-to-payment.com",
-  "orderId": "9723846",
-  "requestTime": "1518811817",
-  "status": "Created"
-}
-```
-<!-- type: tab-end -->
+there will be another field known as paymentUrlId
 
 
 ## Delete Payment URL
@@ -180,72 +124,24 @@ In some scenarios, merchant may want to force the expiry of a payment link. For 
 
 #### Endpoint
 <!-- theme: success -->
->**POST** `/payment-vas/payment-url/{payment-url-id}`
+>**DELETE** `/payment-vas/payment-url/{payment-url-id}`
 
-#### Payload Example
+#### Response Example
 
-<!--
-type: tab
-title: Request
--->
-
-##### Example of Payment Url Request.
-
-```json
-???
-```
-
-<!--
-type: tab
-title: Response
--->
 
 ##### Example of Payment Url (200: Success) Response.
 
-<!-- theme: info -->
-
-> See [Error Responses](url) for additional examples.
-
-```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom",
-    "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
-      "transactionTime": "2016-04-16T16:06:05Z",
-      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
-    }
-  },
-  "amount": {
-    "total": "1.50",
-    "currency": "USD"
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard"
-  },
-  "transactionDetails": {
-    "captureFlag": "TRUE",
-    "merchantTransactionId": "1343678765",
-    "merchantOrderId": "845366457890-TODO",
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2016-04-16",
-    "transactionTime": "2016-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "paymentUrl": "https://hyperlink-to-payment.com",
+  "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+  "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+  "requestStatus": "SUCCESS",
   "orderId": "9723846",
-  "requestTime": "1518811817",
-  "status": "Created"
+  "paymentUrl": "https://hyperlink-to-payment.com",
+  "transactionId": "2381723322"
 }
-```
-<!-- type: tab-end -->
 
 
+
+## Error Response
+
+requestStatus [ SUCCESS, VALIDATION_FAILED, PROCESSING_FAILED, FAILURE ] - Create a table and an example. take from IPG
