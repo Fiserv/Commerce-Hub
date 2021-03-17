@@ -10,8 +10,8 @@ If the customer returns product or requests to cancel the transaction after the 
 
 #### Refund Types
 
-- **Partial Refund:** 
-- **Full Refund:** 
+- **Partial Refund:** A refund containing a portion of the original charge.
+- **Full Refund:** A refund containing the full amount of the original charge.
 
 <!-- theme: danger -->
 >Refund Request can be initiated against a [charge](Charges.md) only if it is already been [captured](Capture.md) and settled, otherwise submit a [cancel](Cancel.md) request.

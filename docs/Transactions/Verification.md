@@ -24,7 +24,7 @@ Variable | Type| Maximum Length | Description/Values|
 |`sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 
-#### Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -92,7 +92,7 @@ Variable | Type| Maximum Length | Description/Values|
 |`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 
 
-#### Payload Example
+### Payload Example
 
 <!--
 type: tab
