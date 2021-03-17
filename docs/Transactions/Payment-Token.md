@@ -2,9 +2,11 @@
 
 ## Overview
 
-**[Tokenization](../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. Merchant either can submit a request to tokenize a payment card as part of a charge by using `createToken`, or can tokenize the card separately bu sending a request to the tokens endpoints.
+**[Tokenization](../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. Merchant either can submit a request to tokenize a payment card as part of a [charge](#charge-request) by using `createToken`, or can tokenize the card separately bu sending a request to the [tokens](#token-request) endpoints.
 
-## Create a Token with a Charge Request
+---
+
+## Charge Request
 
 #### Required Field
 
@@ -102,7 +104,9 @@ title: Response
 ```
 <!-- type: tab-end -->
 
-## Create a Token without a Charge Request
+---
+
+## Token Request
 
 ### Endpoint
 <!-- theme: success -->
@@ -193,7 +197,7 @@ title: Response
 ```
 <!-- type: tab-end -->
 
-## Submit a Charge with a PaymentToken
+## Submit a Charge
 
 ### Endpoint
 <!-- theme: success -->
@@ -216,7 +220,7 @@ title: Request
   },
   "paymentSource": {
     "sourceType": "PaymentToken",
-    "cardData": "1234567890120019",
+    "tokenData": "1234567890120019",
     "expirationMonth": "02",
     "expirationYear": "2035",
     "securityCode": "123"
