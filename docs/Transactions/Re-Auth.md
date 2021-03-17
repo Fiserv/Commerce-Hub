@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, card-not-present, card-present, reauthorization, reauth, reauthorize, authorization]
+---
+
 # Reauthorize
 
 ## Overview
