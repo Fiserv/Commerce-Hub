@@ -10,11 +10,11 @@
 
 - `createToken`: *boolean* : *true*
 
+### Endpoint
 <!-- theme: success -->
->##### Endpoint
 >**POST** `/payments/v1/charges`
 
-## Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -104,12 +104,11 @@ title: Response
 
 ## Create a Token without a Charge Request
 
+### Endpoint
 <!-- theme: success -->
->##### Endpoints
 >**POST** `/payments-vas/v1/tokens`
->- Use this endpoint to submit a Payment Token request.
 
-## Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -196,11 +195,11 @@ title: Response
 
 ## Submit a Charge with a PaymentToken
 
+### Endpoint
 <!-- theme: success -->
->##### Endpoint
 >**POST** `/payments/v1/charges`
 
-## Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -290,5 +289,4 @@ title: Response
   }
 }
 ```
-
 <!-- type: tab-end -->
