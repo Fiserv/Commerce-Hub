@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, reauthorization, reauth, reauthorize, authorization]
+tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthorize, authorization]
 ---
 
 # Reauthorize
