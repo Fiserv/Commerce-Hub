@@ -34,7 +34,7 @@ For more information, refer to the [constructing a Hosted Payment Page](url) art
 
 ## Payment URL
 
-Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and is taken to a Commerce Hub [Hosted Payment Page](#hosted-payment-page) to complete the payment.
+Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a [Payment URL](../../Card-Not-Present/Payment-URL.md) to their customer. The customer accesses the URL received, and is taken to a Commerce Hub [Hosted Payment Page](#hosted-payment-page) to complete the payment.
 
 For more information, refer to the [requesting a Payment URL](url) article for information on how to use our Payment URL for invoicing.
 
