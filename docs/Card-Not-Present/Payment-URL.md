@@ -19,7 +19,7 @@ type: tab
 title: Request
 -->
 
-##### Example of Payment Url Request.
+##### Example of Payment URL Request.
 
 ```json
 {
@@ -53,49 +53,26 @@ title: Response
 ##### Example of Payment Url (200: Success) Response.
 
 <!-- theme: info -->
-
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](#error-responses) for additional status.
 
 ```json
+
 {
   "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom",
     "transactionProcessingDetails": {
       "transactionDate": "2016-04-16",
       "transactionTime": "2016-04-16T16:06:05Z",
       "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
       "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
+      "transactionId": "838916029301",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16"
     }
   },
-  "amount": {
-    "total": "1.50",
-    "currency": "USD"
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard"
-  },
-  "transactionDetails": {
-    "captureFlag": "TRUE",
-    "merchantTransactionId": "1343678765",
-    "merchantOrderId": "845366457890-TODO",
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2016-04-16",
-    "transactionTime": "2016-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
   "requestStatus": "SUCCESS",
-  "orderId": "9723846",
-  "paymentUrl": "https://hyperlink-to-payment.com",
-  "transactionId": "2381723322",
-  "paymentUrlId": "1234567890"
+  "paymentUrl": "https://api.fiservapps.com/ch/payment-vas/payment-url?storename=123456789&oid=R-96cdbaa4-c22e-4598-a2f1-c2b5fed79ef1&paymentUrlId=d3eb74fe-cf63-47e1-b89f-52ba0cc7965c",
+  "paymentUrlId": "d3eb74fe-cf63-47e1-b89f-52ba0cc7965c"
 }
+
 ```
 <!-- type: tab-end -->
 
@@ -111,10 +88,17 @@ Get Payment URL request can be initiated by sending the request to the appopriat
 <!-- theme: info -->
 >**GET** `/payment-vas/payment-url/{payment-url-id}`
 
-#### Response Example
+#### Payload Example
 
-The status of the Payment URL will be recieved in component `paymentUrlDetail` of the response. 
 
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of Payment URL Detail (200: Success) Response.
+
+The [status](#payment-url-status) of the Payment URL will be recieved in component `paymentUrlDetail` of the response. 
 
 ```json
 {
@@ -134,7 +118,7 @@ The status of the Payment URL will be recieved in component `paymentUrlDetail` o
 }
 
 ```
-
+<!-- type: tab-end -->
 
 #### Component: paymentUrlDetail
 
@@ -166,32 +150,46 @@ Delete Payment URL request can be initiated by sending the request to the appopr
 <!-- theme: danger -->
 >**DELETE** `/payment-vas/payment-url/{payment-url-id}`
 
-#### Response Example
+#### Payload Example
 
+<!--
+type: tab
+title: Response
+-->
 
-##### Example of Payment Url (200: Success) Response.
+##### Example of Payment URL Delete (200: Success) Response.
+<!-- theme: info -->
+> See [Error Responses](#error-responses) for additional status.
 
 ```json
+
 {
-  "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-  "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+  "gatewayResponse": {
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16"
+    }
+  },
   "requestStatus": "SUCCESS",
-  "orderId": "9723846",
-  "paymentUrl": "https://hyperlink-to-payment.com",
-  "transactionId": "2381723322"
+  "paymentUrl": "https://api.fiservapps.com/ch/payment-vas/payment-url?storename=123456789&oid=R-96cdbaa4-c22e-4598-a2f1-c2b5fed79ef1&paymentUrlId=d3eb74fe-cf63-47e1-b89f-52ba0cc7965c",
+  "paymentUrlId": "d3eb74fe-cf63-47e1-b89f-52ba0cc7965c"
 }
 
 ```
+<!-- type: tab-end -->
 
+---
 
-## Error Response
-
-requestStatus [ SUCCESS, VALIDATION_FAILED, PROCESSING_FAILED, FAILURE ] - Create a table and an example. take from IPG
+## Error Responses
 
 | Value | Description |
 | ---- | ---------- |
-| SUCCESS |  |
-| VALIDATION_FAILED |  |
-| PROCESSING_FAILED |  |
-| FAILURE |  |
+| SUCCESS | The Payment URL is successfully deleted or created. |
+| VALIDATION_FAILED | Failed to validate the Payment URL. |
+| PROCESSING_FAILED | Failed to process the Payment URL. |
+| FAILURE | Generic failure message. |
 
