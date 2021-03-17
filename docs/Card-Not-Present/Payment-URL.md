@@ -37,7 +37,7 @@ title: Request
     "merchantOrderId": "845366457890"
   },
   "transactionNotificationURL": "https://showmethepaymentresult.com",
-  "URLexpiration": "4102358400",
+  "expiration": "4102358400",
   "authenticateTransaction": "TRUE",
   "dynamicDescriptor": {
 	  "merchantName": "MyWebsite.com"
@@ -99,6 +99,8 @@ title: Response
 ```
 <!-- type: tab-end -->
 
+---
+
 ## Get a Payment URL Status
 
 Merchant may need to get the status of the payment URL so that if required they may contact shopper and request them to complete the transaction if they have not done. It may also be helpful while solving the customer queries if any on the status of the payment.
@@ -111,9 +113,30 @@ Get Payment URL request can be initiated by sending the request to the appopriat
 
 #### Response Example
 
-The status of the URL will be recieved in component `paymenturldetail` of the response. 
+The status of the Payment URL will be recieved in component `paymentUrlDetail` of the response. 
 
-#### Component: paymenturldetail
+
+```json
+{
+  "gatewayResponse": {
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16"
+    }
+  },
+  "status": "Created",
+  "paymentUrl": "https://api.fiservapps.com/ch/payment-vas/payment-url?storename=123456789&oid=R-96cdbaa4-c22e-4598-a2f1-c2b5fed79ef1&paymentUrlId=d3eb74fe-cf63-47e1-b89f-52ba0cc7965c",
+  "paymentUrlId": "d3eb74fe-cf63-47e1-b89f-52ba0cc7965c"
+}
+
+```
+
+
+#### Component: paymentUrlDetail
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -125,12 +148,12 @@ Variable | Type| Maximum Length | Description/Values|
 
 #### Payment URL Status
 
-- Created - The payment URL is created and is ready for use by the shopper.
-- Used - The Payment URL is used by the shopper. If the status is used then the merchant needs to submit a transaction inquiry
-- Expired - The Payment URL is not used by the shopper and is expired.
-- Cancelled - The Payment URL is cancelled by the merchant. 
+- **Created:** The payment URL is created and is ready for use by the shopper.
+- **Used:** The Payment URL is used by the shopper. If the status is used, then the merchant needs to submit a [transaction inquiry](../Transactions/Inquiry.md) to determine the final state of the transaction.
+- **Expired:** The Payment URL is not used by the shopper and is expired. New Payment URL needs to be created if required.
+- **Cancelled:** The Payment URL is deleted by the merchant. 
 
-
+---
 
 ## Delete a Payment URL
 
