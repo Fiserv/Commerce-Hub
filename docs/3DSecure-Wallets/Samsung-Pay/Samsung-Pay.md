@@ -1,0 +1,3 @@
+# Samsung-Pay
+
+The beginning of an awesome article...
