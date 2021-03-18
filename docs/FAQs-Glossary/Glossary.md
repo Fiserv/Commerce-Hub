@@ -7,6 +7,8 @@ tags: [carat, commerce-hub, glossary]
 ## Acquirer/Acquiring Bank
 A bank or financial institution that processes credit or debit card transactions on behalf of a merchant. The acquirer sends the merchant's transactions to the customer's issuing bank through the card network.
 
+## Aggregator
+Aggregators are defined as third party billers that bill for services/goods rendered by another entity. The terms Payment Facilitator, Payment Service Provider, and Aggregator are interchangeable terms for the same functionality.
 
 ## Authorization
 Authorization is necessary to check whether a card holder's credit card holds sufficient funds and is approved to purchase from a merchant. An authorization request first emerges whenever a cardholder attempts to purchase a good or service through a debit or credit card.
@@ -32,8 +34,20 @@ A Card Not Present (CNP) transaction made when the card cannot be physically use
 The unique number associated with a payment card. The entire number is known as the Primary Account Number (PAN). The first 4-6 digits are the Bank Identification Number (BIN).
 
 
-##  Card Security Code
+## Card Security Code
 A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC) is a security feature for [card not present](#card-not-present) payment card transactions instituted to reduce credit card fraud.
+
+## Cardholder
+A person to whom a card has been issued or a person authorized to use a card by the person to whom it was issued.
+
+## Cardholder Account
+Actual Cardholder Account Number or Checking Account Number (encoded on bottom of check) for Check Verification / Guarantee request.
+
+## Cardholder Bank
+The bank that has issued a bank card to an individual. The term is frequently used in conjunction with interchange arrangements to identify the card-issuing bank.
+
+## Cash Advance
+A transaction in which a cardholder obtains cash in person at a branch of a member financial institution and which is posted against the cardholder's bank card account.
 
 ## Chargeback
 A process by which a customer disputes the payment and often results in the money being refunded to the customer by the issuing bank unless the merchant can show the transaction is valid.
@@ -41,8 +55,14 @@ A process by which a customer disputes the payment and often results in the mone
 ## Dynamic Descriptor
 A custom descriptor you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
 
+## Expiration Date
+The date embossed on the card beyond which the card must not be honored. Month and Year that the card expires.
+
 ## Hard Descriptor
 The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement.
+
+## Interchange Fees
+Compensation paid by the acquiring member to an issuing member for particular expenses incurred in the process of interchange transactions.
 
 ## Merchant Category Code
 The Merchant Category Code (MCC) is an industry standard [four-digit number](../Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides.
