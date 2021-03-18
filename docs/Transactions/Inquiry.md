@@ -12,28 +12,7 @@ To retrieve the current state of any previous [Charge](Charges.md), an Inquiry r
 
 ## Minimum Requirements
 
-TransactionIdParam:
-      name: transactionId
-      schema:
-        type: string
-      in: path
-      required: true
-      description: 'Gateway transaction identifier returned in the parameter transactionId from a charge transaction.'
-
-    OrderIdParam:
-      name: orderId
-      schema:
-        type: string
-      in: path
-      required: true
-      description: 'Use this to perform secondary transaction, received from a primary auth or sale.'
-
-##### Component : amount
-
-|Variable    |  Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
-| `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+Get transaction inquiry request can be initiated by sending the request to the appopriate endpoint by providing valid `transactionId` or `orderId` with no minimum field requirement.
 
 ---
 

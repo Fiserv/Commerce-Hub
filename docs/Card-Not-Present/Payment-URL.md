@@ -4,6 +4,14 @@
 
 Merchant can use the Payment URL integration method to generate a invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
 
+**User Action:** The shopper selects the goods they wants to purchase and places an order
+1. Merchant provides payment information such as amount, currency to Commerce Hub to create a link for the payment.
+2. Commerce Hub generates a Payment URL by processing the information received by merchant and send it back to merchant.
+3. Merchant shares the URL with the shopper through email or chat.
+4. Once shopper selects the URL, they can complete the payment on Commerce Hub secure hosted page by selecting their suitable mode of payment.
+5. Merchant can check the status of URL by initiating the get URL details request to commerce Hub.
+
+
 ## Generate a Payment URL
 
 Commerce Hub provides an API that allows merchant to send transaction type, amount and currency as well as the language that shall be used on the hosted payment page that will be shown to the customer after accessing the link.
