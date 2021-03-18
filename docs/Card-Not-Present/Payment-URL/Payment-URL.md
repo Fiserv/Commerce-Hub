@@ -2,25 +2,35 @@
 
 ## Overview
 
-Merchant can use the Payment URL integration method to generate a invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
+Merchant can use the Payment URL integration method to generate a invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the Payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
 
-**User Action:** The shopper selects the goods they wants to purchase and places an order
-1. Merchant provides payment information such as amount, currency to Commerce Hub to create a link for the payment.
-2. Commerce Hub generates a Payment URL by processing the information received by merchant and send it back to merchant.
-3. Merchant shares the URL with the shopper through email or chat.
-4. Once shopper selects the URL, they can complete the payment on Commerce Hub secure hosted page by selecting their suitable mode of payment.
-5. Merchant can check the status of URL by initiating the get URL details request to commerce Hub.
+**User Action:** The merchant needs to invoice a customer's purchase 
 
+1. The merchant provides payment information such as amount, currency to Commerce Hub to create a Payment URL.
+2. Commerce Hub generates a Payment URL by processing the information received by merchant and sends it back.
+3. The merchant shares the URL with the customer.
+4. Once the customer accesses the URL, they can complete the payment on Commerce Hub's secure hosted page.
+5. The merchant can verify the status of URL by initiating a Payment URL status request to Commerce Hub.
+6. The merchant would receive a response to their designated `transactionNotificationURL`.
+
+---
 
 ## Generate a Payment URL
 
 Commerce Hub provides an API that allows merchant to send transaction type, amount and currency as well as the language that shall be used on the hosted payment page that will be shown to the customer after accessing the link.
 
-#### Endpoint
+<!--theme: info-->
+> The default `expiration` for the Payment URL is 182 days.
+
+### Endpoint
 <!-- theme: success -->
 >**POST** `/payment-vas/payment-url`
 
-#### Payload Example
+### Minimum Requirements
+
+add here
+
+### Payload Example
 
 <!--
 type: tab
@@ -37,8 +47,7 @@ title: Request
   },
   "customer": {
 	  "locale": "ENGLISH",
-  	"ipAddress": "10.10.10.10"
-  },
+   },
   "transactionDetails": {
     "captureFlag": "true",
 	  "merchantInvoiceNumber": "123890",
@@ -46,6 +55,7 @@ title: Request
   },
   "transactionNotificationURL": "https://showmethepaymentresult.com",
   "expiration": "4102358400",
+  "merchantIpAddress": "10.10.10.10",
   "authenticateTransaction": "TRUE",
   "dynamicDescriptor": {
 	  "merchantName": "MyWebsite.com"
@@ -92,11 +102,11 @@ Merchant may need to get the status of the payment URL so that if required they 
 
 Get Payment URL request can be initiated by sending the request to the appopriate endpoint by providing valid `paymentUrlId` with no minimum field requirement.
 
-#### Endpoint
+### Endpoint
 <!-- theme: info -->
 >**GET** `/payment-vas/payment-url/{payment-url-id}`
 
-#### Payload Example
+### Payload Example
 
 
 <!--
@@ -154,11 +164,11 @@ In some scenarios, merchant may want to force the expiry of a payment link. For 
 Delete Payment URL request can be initiated by sending the request to the appopriate endpoint by providing valid `paymentUrlId` with no minimum field requirement.
 
 
-#### Endpoint
+### Endpoint
 <!-- theme: danger -->
 >**DELETE** `/payment-vas/payment-url/{payment-url-id}`
 
-#### Payload Example
+### Payload Example
 
 <!--
 type: tab

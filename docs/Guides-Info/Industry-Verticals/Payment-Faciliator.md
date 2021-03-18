@@ -54,7 +54,7 @@ title: Request
     "captureFlag": true
   },
   "additionalDataCommon": {
-    "submerchant": {
+    "subMerchant": {
       "id": "99998888",
       "name": "ABC Pharmacy",
       "street": "123 Main Street",
@@ -100,7 +100,7 @@ title: Response
     "expirationYear": "2035"
   },
   "additionalDataCommon": {
-    "submerchant": {
+    "subMerchant": {
       "id": "99998888",
       "name": "ABC Pharmacy",
       "street": "123 Main Street",
