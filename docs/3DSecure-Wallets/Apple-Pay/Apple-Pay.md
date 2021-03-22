@@ -19,6 +19,11 @@ Check out the Apple Pay participant [Banks and Countries](https://support.apple.
 
 ---
 
+devide below stuff in 2 pages (different article for web and app)
+tip: to store applepay for subsequent transactions see payment token (link) article
+add payload
+
+
 ## Start Accepting Apple Pay Transactions
 
 #### Apple Pay on the Web
@@ -29,6 +34,15 @@ To accept apple pay on the web perform the following:
 2. [Create Payment Processing Certificate](#create-payment-processing-certificate)
 3. [Register and Validate Merchant Account](#register-and-validate-merchant-account)
 4. [Create Merchant Identity Certificate](#create-merchant-identity-certificate)
+5. RESTful API: Make a APple Pay JS request  https://developer.apple.com/documentation/apple_pay_on_the_web
+5. Hosted Paayment Page: configure your apple pay settings in Commerce Hub
+6. RESTful API: Submit the apple pay payload
+6. Hosted Payment Page: Created a Hosted Payment Page
+
+
+to customize the payment sheet use this 
+https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/checkout-and-payment/#customize-the-payment-sheet
+
 
 
 #### Apple Pay on the App
@@ -38,7 +52,9 @@ To accept apple pay in app perform the following:
 1. [Create a Merchant Identifier](#create-merchant-identifier)
 2. [Enable Apple Pay in the App](#enable-apple-pay-in-the-app)
 3. [Create Payment Processing Certificate](#create-payment-processing-certificate)
-
+4. Setup the Xcode - EMEU
+5. Configure the Apple Pay SDK - EMEU
+6. RESTful API: Submit the apple pay payload
 ---
 
 ### Create Merchant Identifier
