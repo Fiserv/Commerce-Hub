@@ -52,22 +52,107 @@ Next create a payment processing certificate that is associated with your mercha
 
 ---
 
-
 ## Step 4: Set-up Project in Xcode
 
-- Select new xcode project with a single view or import an existing project.
-- Register the app using the app-id in the apple portal under Identifier->appId
-- Go to Xcode->Preferences,->accounts and install the downloaded provision profile, your profile is now linked to your Xcode.
-- Click on your project, go to Signing & Capabilities select 'Automatically manage signing'.
-- '+ capabilities' add apple pay.
-- Under 'Apple Pay' click '+' and add the merchant id's registered in the portal, which in turn will be added to the entitlements file.
-- Now the Xcode is set-up for coding.
+A merchant will need to create a project in Xcode to start supporting Apple Pay in their app. Refer to Apple's website on how to [create the project in Xcode](https://developer.apple.com/documentation/xcode/creating_an_xcode_project_for_an_app) and [enable Apple Pay in Xcode](https://help.apple.com/xcode/mac/9.3/#/deva43983eb7?sub=dev44ce8ef13).
 
-## Step 5: Test the Integration
+---
 
-From the Apple Pay SDK test the merchant account integration
+## Step 5: Submit a Payment Request
 
-- Merchant id: Enter any valid merchant id registered in the apple portal. This gives the capability for a single user to use multiple merchant id's
-- Amount: Enter the amount of the transaction
-- Transaction type: Select PreAuth or Sale.
-- Apple Pay Button: Click this to produce payment sheet and fingerprint authentication for the transaction.
+A payment request consists of a list of summary items that describe to the user what is being paid for, a list of available shipping methods, a description of what shipping information the user needs to provide, and information about the merchant and the payment processor. Refer to Apple Pay's [Creating Payment Request](https://developer.apple.com/library/archive/ApplePay_Guide/CreateRequest.html#//apple_ref/doc/uid/TP40014764-CH3-SW2) for more detail.
+
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a Charge Payload Request.
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "ApplePay",
+    "data": "hbreWcQg980mUoUCfuCoripnHO210lvtizOFLV6PTw1DjooSwik778bH....",
+    "header": {
+      "applicationDataHash": "94ee059335e587e501cc4bf90613e0814f00a7b08bc7c648fd865a2af6a22cc2",
+      "ephemeralPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvR....",
+      "publicKeyHash": "KRsyW0NauLpN8OwKr+yeu4jl6APbgW05/TYo5eGW0bQ=",
+      "transactionId": "31323334353637"
+    },
+    "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhki.....",
+    "version": "EC_v1",
+    "applicationData": "VEVTVA==",
+    "merchantId": "merchant.com.fapi.tcoe.applepay",
+    "merchantPrivateKey": "MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
+  }
+  "transactionDetails": {
+    "captureFlag": true,
+    "createToken": true,
+    "tokenProvider": "RSA"
+  }
+}
+
+```
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a Charge (201: Created) Response.
+
+<!-- theme: info -->
+> See [Error Responses](url) for additional examples.
+```json
+{
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "charge",
+    "transactionState": "authorized",
+    "transactionOrigin": "ecom"
+  },
+  "transactionProcessingDetails": {
+    "transactionDate": "2021-04-16",
+    "transactionTime": "2021-04-16T16:06:05Z",
+    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+    "transactionId": "838916029301"
+  },
+  "source": "ApplePay",
+  "tokenData": "1234123412340019",
+  "PARId": "string",
+  "declineDuplicates": false,
+  "tokenSource": "string",
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "1.00",
+      "currency": "USD"
+    },
+    "processorResponseDetails": null,
+    "approvalStatus": "APPROVED",
+    "approvalCode": "OK7118",
+    "referenceNumber": "845366457890-TODO",
+    "schemeTransactionID": "019078743804756",
+    "processor": "fiserv",
+    "responseCode": "00",
+    "responseMessage": "APPROVAL",
+    "hostResponseCode": "54022",
+    "hostResponseMessage": "Approved",
+    "localTimestamp": "2021-04-16T16:06:05Z",
+    "bankAssociationDetails": {
+      "associationResponseCode": "000",
+      "transactionTimestamp": "2021-04-16T16:06:05Z",
+      "transactionReferenceInformation": null,
+    }
+  }
+}
+```
+
+
+<!-- type: tab-end -->
+

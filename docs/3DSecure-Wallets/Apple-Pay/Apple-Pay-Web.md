@@ -86,9 +86,9 @@ A merchant can enhance the purchase experience from their website by creating a 
 
 ---
 
-## Step 7: Submit the Apple Pay Request
+## Step 7: Submit a Payment Request
 
-<!--theme:warning-->
+<!--theme: warning-->
 > This step is only required when utilizing Commerce Hub's RESTful API and Apple Pay JS.
 
 <!--
