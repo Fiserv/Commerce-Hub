@@ -118,6 +118,11 @@ title: Request
     "merchantId": "merchant.com.fapi.tcoe.applepay",
     "merchantPrivateKey": "MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
   }
+  "transactionDetails": {
+    "captureFlag": true,
+    "createToken": true,
+    "tokenProvider": "RSA"
+  }
 }
 
 ```
@@ -126,5 +131,55 @@ title: Request
 type: tab
 title: Response
 -->
+
+##### Example of a Charge (201: Created) Response.
+
+<!-- theme: info -->
+> See [Error Responses](url) for additional examples.
+```json
+{
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "charge",
+    "transactionState": "authorized",
+    "transactionOrigin": "ecom"
+  },
+  "transactionProcessingDetails": {
+    "transactionDate": "2021-04-16",
+    "transactionTime": "2021-04-16T16:06:05Z",
+    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+    "transactionId": "838916029301"
+  },
+  "source": "ApplePay",
+  "tokenData": "1234123412340019",
+  "PARId": "string",
+  "declineDuplicates": false,
+  "tokenSource": "string",
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "1.00",
+      "currency": "USD"
+    },
+    "processorResponseDetails": null,
+    "approvalStatus": "APPROVED",
+    "approvalCode": "OK7118",
+    "referenceNumber": "845366457890-TODO",
+    "schemeTransactionID": "019078743804756",
+    "processor": "fiserv",
+    "responseCode": "00",
+    "responseMessage": "APPROVAL",
+    "hostResponseCode": "54022",
+    "hostResponseMessage": "Approved",
+    "localTimestamp": "2021-04-16T16:06:05Z",
+    "bankAssociationDetails": {
+      "associationResponseCode": "000",
+      "transactionTimestamp": "2021-04-16T16:06:05Z",
+      "transactionReferenceInformation": null,
+    }
+  }
+}
+```
+
 
 <!-- type: tab-end -->

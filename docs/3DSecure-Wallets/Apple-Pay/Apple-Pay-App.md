@@ -1,8 +1,6 @@
-# Apple-Pay-App
+# Apple Pay: In-App Integration
 
 #### Apple Pay on the App
-
-
 
 ## Step1: Create Merchant Identifier
 
@@ -65,7 +63,9 @@ Next create a payment processing certificate that is associated with your mercha
 - Under 'Apple Pay' click '+' and add the merchant id's registered in the portal, which in turn will be added to the entitlements file.
 - Now the Xcode is set-up for coding.
 
-## Step 5: Configuring Apple Pay SDK
+## Step 5: Test the Integration
+
+From the Apple Pay SDK test the merchant account integration
 
 - Merchant id: Enter any valid merchant id registered in the apple portal. This gives the capability for a single user to use multiple merchant id's
 - Amount: Enter the amount of the transaction
