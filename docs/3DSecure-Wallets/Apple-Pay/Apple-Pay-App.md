@@ -9,8 +9,6 @@ First create a merchant identifier in your developer account that uniquely ident
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then click the Add button (+) in the upper-left corner.
 - Select Merchant IDs, then click Continue.
 - Enter the merchant description and identifier name, then click Continue.
-  - Adyen has more instruction
-    -In the step to enter the merchant description and identifier name, make sure that the identifier includes the prefix merchant.com.adyen. For example: merchant.com.adyen.merchantAccount
 - Review the settings, then click Register.
 - Alternatively, you can create a merchant identifier in Xcode.
 
