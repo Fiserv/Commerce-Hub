@@ -1,3 +1,3 @@
-# Fraud Best Practices
+# Idempotency
 
 The beginning of an awesome article...
