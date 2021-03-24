@@ -18,7 +18,6 @@ First create a merchant identifier in your developer account that uniquely ident
 
 ---
 
-
 ## Step 2:  Enable Apple Pay in the App
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), [enable the Apple Pay capability](https://help.apple.com/developer-account/#/dev4cb6dfbdb?sub=dev1d9758eca), then click Edit.
