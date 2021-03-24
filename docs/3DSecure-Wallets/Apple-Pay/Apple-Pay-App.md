@@ -60,12 +60,17 @@ A merchant will need to create a project in Xcode to start supporting Apple Pay 
 
 ## Step 5: Submit a Payment Request
 
-A payment request consists of a list of summary items that describe to the user what is being paid for, a list of available shipping methods, a description of what shipping information the user needs to provide, and information about the merchant and the payment processor. Refer to Apple Pay's [Creating Payment Request](https://developer.apple.com/library/archive/ApplePay_Guide/CreateRequest.html#//apple_ref/doc/uid/TP40014764-CH3-SW2) for more detail.
+The merchant can submit a payment request to Apple to verify if apple pay is supported and to receive the encrypted wallet data. Refer to Apple Pay's [Creating Payment Request](https://developer.apple.com/library/archive/ApplePay_Guide/CreateRequest.html#//apple_ref/doc/uid/TP40014764-CH3-SW2) for more detail.
 
+
+## Step 6: Submit a Charge Request
+
+Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
+Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
 
 <!--
 type: tab
-title: Request
+title: ApplePay
 -->
 
 ##### Example of a Charge Payload Request.
@@ -98,6 +103,13 @@ title: Request
 }
 
 ```
+
+<!--
+type: tab
+title: DecryptedWallet
+-->
+
+Add payload here (PaymentCard) add extra data like cryptogram and stuff
 
 <!--
 type: tab
