@@ -8,11 +8,6 @@ tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel, refu
 
 If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId` or `orderId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
-#### Refund Types
-
-- **Partial Refund:** A refund containing a portion of the original charge.
-- **Full Refund:** A refund containing the full amount of the original charge.
-
 <!-- theme: danger -->
 >Refund Request can be initiated against a [charge](Charges.md) only if it is already been [captured](Capture.md) and settled, otherwise submit a [cancel](Cancel.md) request.
 
@@ -21,7 +16,14 @@ If the customer returns product or requests to cancel the transaction after the 
 
 ---
 
-## Minimum Requirements
+## Requirements
+
+A refund request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId`. The request may contain the `amount` object based on the refund type.
+
+#### Refund Types
+
+- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
+- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
 #### Component : amount
 
@@ -30,9 +32,9 @@ If the customer returns product or requests to cancel the transaction after the 
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
 | `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
-<!-- theme: success -->
-
 ---
+
+<!-- theme: success -->
 
 ## Endpoints
 
@@ -45,14 +47,14 @@ Use the below endpoints based on the [transaction type](../Guides-Info/Transacti
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab
 title: Request
 -->
 
-##### Example of a Cancel Payload Request.
+##### Example of a Parital Refund Payload Request.
 
 ```json
 {
@@ -68,7 +70,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Cancel (200: Success) Response.
+##### Example of a Partial Refund (200: Success) Response.
 
 <!-- theme: info -->
 
@@ -140,9 +142,11 @@ title: Response
 
 <!-- type: tab-end -->
 
+---
+
 ## See Also
 - [API Explorer](url)
 - [Charge](Charges.md)
 - [Cancel](Cancel.md)
-- [Credit]
+- [Credit](Credit.md)
 - [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
