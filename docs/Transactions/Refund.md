@@ -30,7 +30,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
-| `currency` | *string* | 3 | [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | [ISO 3 currency format](../Master-Data/Currency-Code.md).|
 
 ---
 
