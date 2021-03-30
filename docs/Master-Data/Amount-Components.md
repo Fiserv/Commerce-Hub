@@ -7,7 +7,7 @@ The `amountComponents` array is used in transactions where additional amount fie
 ## Amount Components
 
 <!-- theme:info -->
-> The `amountComponents` is the sub array of `additionDataCommon`.
+> The `amountComponents` is the sub array of `additionalDataCommon`.
 
 | Variable | Type | Length | Description/Values |
 | --------- | --- | ------ | -------------- |
