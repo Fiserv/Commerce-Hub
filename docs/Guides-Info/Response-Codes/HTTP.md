@@ -22,9 +22,9 @@ title: 2xx
 
 ##### Success Status code and Description
 
-| Status Code |  | Description |
+| Code | Message | Description |
 | --------- | --- | ------- |
-| 200 | Ok | Indicates that request has succeeded. |
+| 200 | Success | Indicates that request has succeeded. |
 | 201 | Created | Indicates that request has succeeded and a new resource has been created as a result. |
 
 
@@ -35,7 +35,7 @@ title: 4xx
 
 ##### Client Error Status code, Description and Resolution
 
-| Status Code |   | Description | Resolution |
+| Code | Message  | Description | Resolution |
 | --------- | --- | ------- | --------- |
 | 400 | Bad Request | The request could not be understood due to incorrect syntax. | The merchant should do the modifications and repeat the request. |
 | 401 | Unauthorized | Indicates that the request requires user authentication information. | The merchant may repeat the request with a suitable Authorization header field. |
@@ -49,13 +49,45 @@ title: 5xx
 
 ##### Server Error Status code, Description and Resolution
 
-| Status Code |  | Description | Resolution |
+| Code | Message | Description | Resolution |
 | --------- | ---- | ------ | ------- |
 | 500 | Internal Server Error | Commerce Hub encountered an unexpected condition which prevented it from fulfilling the request. | Report the error to Commerce Hub support team. |
 | 503 | Service Unavailable | The application server is not ready to handle the request. | Please try after sometime. |
 
 
 <!-- type: tab-end -->
+
+---
+
+## Response Example
+
+<!--
+type: tab
+title: Error Response
+-->
+
+##### Example of a Charge (400: Bad Request) Response.
+
+```json
+{
+  "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+  "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+  "responseType": "BadRequest",
+  "error": {
+    "code": "INVALID_INPUT",
+    "message": "Invalid request input. Please see details below.",
+    "details": [
+      {
+        "field": "payloadObjectType",
+        "message": "Payload object type missing."
+      }
+    ]
+  }
+}
+```
+<!-- type: tab-end -->
+
+---
 
 ## See Also
 
