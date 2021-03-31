@@ -64,8 +64,8 @@ title: Request
   "transactionDetails": {
     "captureFlag": true
   },
-  "additionalDataCommon"{
-    "amountComponents"{
+  "additionalDataCommon": {
+    "amountComponents": {
       "convenienceFees": "1.00"
     }
   }
@@ -135,8 +135,8 @@ title: Response
       }
     }
   },
-  "additionalDataCommon"{
-    "amountComponents"{
+  "additionalDataCommon": {
+    "amountComponents": {
       "convenienceFees": "1.00"
     }
   }
