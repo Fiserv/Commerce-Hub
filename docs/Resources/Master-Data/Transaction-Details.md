@@ -33,9 +33,9 @@ The transaction request initiated by merchant contains various transaction relat
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`provider` | *string* |  |  |
-|`dataCapture`| *string* |  | An array containing [data capture](#sub-component-dataCapture) details. | 
-|`dataStatic`| *string* |  | An array containing [data static](#sub-component-dataStatic) details.|
-|`dataDynamic`| *string* |  | An array containing [data dynamic](#sub-component-dataDynamic) details. |
+|`dataCapture`| *string* |  | An array containing [data capture](#sub-component-datacapture) details. | 
+|`dataStatic`| *string* |  | An array containing [data static](#sub-component-datastatic) details.|
+|`dataDynamic`| *string* |  | An array containing [data dynamic](#sub-component-datadynamic) details. |
 
 #### Sub-Component: dataCapture
 
