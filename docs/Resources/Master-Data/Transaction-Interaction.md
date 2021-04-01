@@ -25,6 +25,8 @@ The `transactionInteraction` may contain the data regarding where the transactio
 | *MOTO* | Mail order or telephone order. |
 | *POS* | Card Present retail face to face. |
 
+---
+
 ### POS Entry Modes
 
 #### Object: posEntryMode
@@ -48,6 +50,7 @@ The `transactionInteraction` may contain the data regarding where the transactio
 | *EMV_SWITCHED* | EMV Transaction switched from Contactless to Contact entry |
 | *MAG_STRIPE* | Magnetic Stripe - Track Read |
 
+---
 
 ### POS Condition Codes
 
@@ -68,6 +71,8 @@ The `transactionInteraction` may contain the data regarding where the transactio
 | *CARD_NOT_PRESENT_MOTO* | Cardholder Not Present, Mail Order/Telephone Order. Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
 | *CARD_NOT_PRESENT_ECOM* | Cardholder Not Present, Ecommerce. Designates a transaction initiated from the merchant's website or email. |
 
+---
+
 ### Mobile Interactions
 
 #### Object: mobileInteraction
@@ -76,6 +81,8 @@ The `transactionInteraction` may contain the data regarding where the transactio
 |-------|-------------|
 | *PHONE_NUMBER* | Invoice received by phone number |
 | *QR_CODE* | Invoice paid by scanning QR Code |
+
+---
 
 ### Electronic Commerce Indicators
 

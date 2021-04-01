@@ -2,11 +2,9 @@
 
 ## Overview
 
-The transaction request may contain the customer details. The details consists of customer id, name, date of birth etc.
+The transaction request may contain the `customerDetails` consisting of customer specific data like; customer id, name, date of birth, phone number, etc.
 
----
-
-## Customer Details
+#### Component customerDetails
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -20,13 +18,10 @@ The transaction request may contain the customer details. The details consists o
 | `locale` | *string* |  | The language of the receipt.|
 | `driverLicenseNumber` | *string* |  | Customer Driver License Number.|
 | `ssn` | *string* |  | Customer SSN or Tax ID.|
-| `phone` | *component* |  | Cardholder [Phone Number](#phone-details)|
+| `phone` | *array* |  | Cardholder [Phone Number](#subcomponent-phone)|
 
----
 
-## Phone Details
-
-Use this component to pass cardholder phone details.
+#### Subcomponent: phone
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |

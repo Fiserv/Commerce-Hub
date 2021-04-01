@@ -2,7 +2,7 @@
 
 ## Overview
 
-A merchant may need to send the cardholder address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. They can include billing and shipping information in the request by using the following fields.
+A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and `shippingAddress` information in the request by using the following fields.
 
 ---
 
@@ -16,8 +16,10 @@ Is an address connected to the customer's [payment method](../Guides-Info/Paymen
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* |  | Customer first name. |
 | `lastName` | *string* |  | Customer last name. |
-| `address` | *component* |  | Billing [address](#address) details. |
-| `phone` | *component* |  | Customer [phone](Customer-Details.md#phone-details) details. |
+| `address` | *array* |  | Billing [address](#subcomponent-address) details. |
+| `phone` | *array* |  | Customer [phone](Customer-Details.md#subcomponent-phone) details. |
+
+---
 
 ## Shipping Address
 
@@ -30,10 +32,10 @@ Is an address where merchant will send the order.
 | `firstName` | *string* |  | Shipping contact first name. |
 | `lastName` | *string* |  | Shipping contact last name.|
 | `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method-valid-values).|
-| `address` | *component* |  | Shipping [address](#address) details. |
-| `phone` | *component* |  | Shipping contact [phone](Customer-Details.md#phone-details) details. |
+| `address` | *array* |  | Shipping [address](#subcomponent-address) details. |
+| `phone` | *array* |  | Shipping contact [phone](Customer-Details.md#subcomponent-phone) details. |
 
-#### Shipping Method: Valid Values
+##### Shipping Method
 
 | Value | Description |
 | ----- | ----------- |
@@ -46,9 +48,9 @@ Is an address where merchant will send the order.
 
 ---
 
-## Address 
+## Address
 
-#### Component: address
+#### Subcomponent: address
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |

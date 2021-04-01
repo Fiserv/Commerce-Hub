@@ -24,20 +24,26 @@ The transaction request initiated by merchant contains various transaction relat
 | `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void). **Valid Values:** *VOIDED*, *TIMEOUT*, *EDIT_ERROR*, *MAC_VERIFICATION_ERROR*, MAC_SYNCH_ERROR, *ENCRYPTION_ERROR*, *SYSTEM_ERROR*, *SUSPECTED_FRAUD*|
 | `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain multiple shipments. Can be set during pre-auth or the first post-auth.|
 | `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
-| `deviceFingerprint` | *component* |  | An array containing the [device fingerprint](#device-finger-print) details.|
+| `deviceFingerprint` | *component* |  | An array containing the [device fingerprint](#subcomponent-devicefingerprint) details.|
 
-### Device Finger Print
+---
 
-#### Component: deviceFingerprint
+### Device Fingerprint
+
+#### Subcomponent: deviceFingerprint
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`provider` | *string* |  |  |
-|`dataCapture`| *string* |  | An array containing [data capture](#sub-component-datacapture) details. | 
-|`dataStatic`| *string* |  | An array containing [data static](#sub-component-datastatic) details.|
-|`dataDynamic`| *string* |  | An array containing [data dynamic](#sub-component-datadynamic) details. |
+|`dataCapture`| *string* |  | An array containing [data capture](#subcomponent-datacapture) details. | 
+|`dataStatic`| *string* |  | An array containing [data static](#subcomponent-datastatic) details.|
+|`dataDynamic`| *string* |  | An array containing [data dynamic](#subcomponent-datadynamic) details. |
 
-#### Sub-Component: dataCapture
+---
+
+### Device Fingerprint Data
+
+#### Subcomponent: dataCapture
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -45,7 +51,7 @@ Variable | Type| Maximum Length | Description/Values|
 | `dataEventId` | *string* |  | Unique ID for the data capture. |
 | `captureTime` | *string* |  | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ. |
 
-#### Sub-Component: dataStatic
+#### Subcomponent: dataStatic
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -54,7 +60,7 @@ Variable | Type| Maximum Length | Description/Values|
 | `model` | *string* |  | Device Model. |
 | `type` | *string* |  | Device type/name. |
 
-#### Sub-Component: dataDynamic
+#### Subcomponent: dataDynamic
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
