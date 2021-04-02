@@ -1,4 +1,4 @@
-# Getting Started: In-Person Integrations
+# In-Person Payments
 
 ## Overview
 

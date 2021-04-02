@@ -1,4 +1,4 @@
-# Getting Started: Wallet Integrations
+# Wallet Payments
 
 ## Overview
 

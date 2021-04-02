@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, card-not-present, getting-started, hosted-payment-page]
 ---
 
-# Getting Started: Online/Mobile/Digital Integrations
+# Online/Mobile/Digital Payments
 
 ## Overview
 
@@ -11,7 +11,7 @@ Commerce Hub offers multiple methods of accepting online, mobile and digital pay
 <!-- theme: warning -->
 > These transactions are at a higher risk for fraud, due to the inability to verify the account holder is making the purchase. To reduce the risk of card fraud it is recommended to use 3D Secure along with AVS and Security Code verification.
 
-## [RESTful APIs](../Resources/API Documents/Use-Our-APIs.md)
+## [RESTful APIs](../Resources/API-Documents/Use-Our-APIs.md)
 
 Allows a merchants to build their own UI and manage customer transactions within their own website, software, or terminal using Commerce Hub's RESTful APIs.
 
