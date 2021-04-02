@@ -12,30 +12,32 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 
 Online, mobile, and digital transactions are considered Card Not Present (CNP) where the  customer does not physically present their payment source at the time of the transaction. Examples of CNP transactions include; online payments, in-app payments, and MOTO transactions.
 
-- Integration
-- API Explorer
+- [Integration](Getting-Started-Online.md)
+- [API Explorer](url)
 
 #### In-Person
 
 In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Examples of In-person transactions include; manual entry, track data and EMV.
 
-- Integration
-- API Explorer
+- [Integration](Getting-Started-InPerson.md)
+- [API Explorer](url)
 
 ---
 
-## Features/Use Cases
-
-- [Apple Pay](../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Tokenization](../Resources/API Documents/Payments_VAS/Payment-Token.md)
-- [3-D Secure](../Online-Mobile-Digital/3D-Secure/3DSecure.md)
-- [Fraud Prevention](../Resources/Guides/Fraud/Fraud-Settings.md)
-
-### Latest Features
+## Benefits
 
 - [Acount Verification](../Resources/API Documents/Payments_VAS/Verification.md)
 - [Information Lookup](../Resources/API Documents/Payments_VAS/Information-Lookup.md)
+- [Fraud Prevention](../Resources/Guides/Fraud/Fraud-Settings.md)
+- [Tokenization](../Resources/API Documents/Payments_VAS/Payment-Token.md)
+
+---
+
+## Use Cases
+
+- [Apple Pay](../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [3-D Secure](../Online-Mobile-Digital/3D-Secure/3DSecure.md)
 - [Split Shipment](../Resources/Guides/Split-Shipment.md)
 - [Stored Credentials](../Resources/Guides/Stored-Credentials.md)
 
-
+---
