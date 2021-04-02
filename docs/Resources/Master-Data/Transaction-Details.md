@@ -34,7 +34,7 @@ The transaction request initiated by merchant contains various transaction relat
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`provider` | *string* |  |  |
+|`provider` | *string* |  | Device provider e.g. InAuth. |
 |`dataCapture`| *string* |  | An array containing [data capture](#subcomponent-datacapture) details. | 
 |`dataStatic`| *string* |  | An array containing [data static](#subcomponent-datastatic) details.|
 |`dataDynamic`| *string* |  | An array containing [data dynamic](#subcomponent-datadynamic) details. |
