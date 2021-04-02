@@ -4,10 +4,6 @@
 
 Commerce Hub allows integration with most popular wallet providers including Apple Pay, Google Pay, Samsung Pay and PayPal.
 
----
-
-## Wallets
-
 Wallet transactions originate from a digital wallet from either a website or on a device (e.g. Apple/iOS or Google/Android).
 
 Merchants can submit this data as either a encrypted or decrypted request. 
@@ -18,6 +14,6 @@ Merchants can submit this data as either a encrypted or decrypted request.
 ---
 
 ## See Also
-- API Explorer
+- [API Explorer](url)
 - [Apple Pay](../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Google Pay](../Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
