@@ -1,3 +1,0 @@
-# Hosted-Payment-Page
-
-The beginning of an awesome article...

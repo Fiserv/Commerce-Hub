@@ -1,0 +1,152 @@
+---
+tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel, refund]
+---
+
+# Refund
+
+## Overview
+
+If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId` or `orderId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
+
+<!-- theme: danger -->
+>Refund Request can be initiated against a [charge](Charges.md) only if it is already been [captured](Capture.md) and settled, otherwise submit a [cancel](Cancel.md) request.
+
+<!-- theme: warning -->
+> The refund timeframe is based on the issuing bank and may take 3-5 days to process and reflect on the account.
+
+---
+
+## Requirements
+
+A refund request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId`. The request may contain the `amount` object based on the refund type.
+
+#### Refund Types
+
+- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
+- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+
+#### Component : amount
+
+|Variable    |  Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
+| `currency` | *string* | 3 | [ISO 3 currency format](../Master-Data/Currency-Code.md).|
+
+---
+
+<!-- theme: success -->
+
+## Endpoints
+
+Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
+
+<!-- theme: success -->
+>**POST** `/payments/v1/charges/{transactionId}/capture`
+>
+>**POST** `/payments/v1/charges/orders/{orderId}/capture`
+
+---
+
+## Payload Example
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a Parital Refund Payload Request.
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  }
+}
+```
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a Partial Refund (200: Success) Response.
+
+<!-- theme: info -->
+
+> See [Error Responses](url) for additional examples.
+
+```json
+{
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "refund",
+    "transactionState": "authorized",
+    "transactionOrigin": "ecom",
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "amount": {
+    "total": "1.50",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentToken"
+  },
+  "transactionDetails": {
+    "captureFlag": "TRUE",
+    "accountVerification": "FALSE",
+    "processingCode": "000000",
+    "merchantTransactionId": "1343678765",
+    "merchantOrderId": "845366457890-TODO",
+    "receiptEmail": "abc@gmail.com",
+    "paymentDescription": ""
+  },
+  "transactionProcessingDetails": {
+    "transactionDate": "2016-04-16",
+    "transactionTime": "2016-04-16T16:06:05Z",
+    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+    "transactionId": "838916029301"
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "1.50",
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "",
+      "processor": "fiserv",
+      "responseCode": "00",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "54022",
+      "hostResponseMessage": "",
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2016-04-16T16:06:05Z"
+      }
+    }
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+## See Also
+- [API Explorer](url)
+- [Charge](Charges.md)
+- [Cancel](Cancel.md)
+- [Credit](Credit.md)
+- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)

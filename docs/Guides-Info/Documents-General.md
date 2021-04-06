@@ -1,3 +1,0 @@
-# Documents-LP
-
-The beginning of an awesome article...

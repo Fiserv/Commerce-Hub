@@ -1,3 +1,0 @@
-# Fraud-Settings-Velocity
-
-The beginning of an awesome article...
