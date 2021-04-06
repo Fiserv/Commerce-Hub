@@ -1,29 +1,46 @@
 - sections:
   - title: Getting Started
-    link: docs/getting-started.md
+    link: docs/Getting-Started/Getting-Started-General.md
     open: true
     sections:
-    - title: Setup a tenant
-      link: docs/getting-started/setup-tenant/setup-tenant.md
+- sections:
+  - title: In-Person
+    link: docs/Getting-Started/Getting-Started-InPerson.md
+    open: true
+    sections:
+- sections:
+  - title: Online/Digital/Mobile
+    link: docs/Getting-Started/Getting-Started-Online.md
+    open: true
+    sections:
+    - title: RESTful API
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
+    - title: Hosted Payment Page
+      link: docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md
+    - title: Payment JS
+      link: docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md
+    - title: Payment URL
+      link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
+    - title: Wallets and Alt Payments
+      link: docs/Getting-Started/Getting-Started-Wallets.md
       open: true
-      articles:
-      - title: Setup tenant
-        link: docs/getting-started/setup-tenant/setup-tenant.md
-      - title: Deploy tenant
-        link: docs/getting-started/setup-tenant/deploy-tenant.md
-      - title: Register tenant
-        link: docs/getting-started/setup-tenant/register-tenant.md
-    - title: Create a tenant
-      link: docs/getting-started/create-a-tenant/create-tenant.md
-      articles:
-      - title: Code tenant
-        link: docs/getting-started/code-a-tenant/code-tenant.md
-      - title: Deploy tenant
-        link: docs/getting-started/setup-tenant/deploy-tenant.md
-      - title: Register tenant
-        link: docs/getting-started/setup-tenant/register-tenant.md
-    - title: Preview & Publish
-      link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
+      sections:
+        - title: Apple Pay
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+          articles:
+            - title: In-App Payments
+              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
+            - title: Web Payments
+              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web.md
+        - title: Google Pay
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+          articles:
+            - title: In-App Payments
+              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
+            - title: Web Payments
+              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web.md
 - sections:
   - title: Resources
     link:
