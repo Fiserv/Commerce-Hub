@@ -10,7 +10,7 @@ The following code sample shows declared API versions:
 
 ```json
 const baseRequest = {
-  apiVersion: 2,
+  apiVersion: 2, 
   apiVersionMinor: 0
 };
 ```
