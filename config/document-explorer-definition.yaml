@@ -125,8 +125,30 @@
       link:
       open: false
       article:
-      - title: 
-        link: 
+      - title: Additional Data
+        link: docs/Resources/Master-Data/Additional-Data.md
+      - title: Address
+        link: docs/Resources/Master-Data/Address.md
+      - title: Amount Components
+        link: docs/Resources/Master-Data/Amount-Components.md
+      - title: Card Types
+        link: docs/Resources/Master-Data/Card-Type.md
+      - title: Card Object
+        link: docs/Resources/Master-Data/Card.md
+      - title: Country Codes
+        link: docs/Resources/Master-Data/Country-Code.md
+      - title: Currency Codes
+        link: docs/Resources/Master-Data/Currency-Code.md
+      - title: Customer Details
+        link: docs/Resources/Master-Data/Customer-Details.md
+      - title: Merchant Category Code
+        link: docs/Resources/Master-Data/Merchant-Category-Code.md
+      - title: Processing Codes
+        link: docs/Resources/Master-Data/Processing-Code.md
+      - title: Transaction Details
+        link: docs/Resources/Master-Data/Transaction-Details.md
+      - title: Transaction Interaction
+        link: docs/Resources/Master-Data/Transaction-Interaction.md
     - title: FAQ and Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
       open: false
