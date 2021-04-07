@@ -153,7 +153,7 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [Capture](Capture.md)
+- [Capture](docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel](Cancel.md)
 - [Incremental Auth](url)
 - [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
