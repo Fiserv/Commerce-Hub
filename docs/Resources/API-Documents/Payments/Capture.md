@@ -14,10 +14,10 @@ Use this payload to capture a previous pre-authorized [Charge](Charges.md). This
 
 #### Capture Types
 
-- **Automatic Capture:** A charge is automatically captured when a [Sale](../FAQs-Glossary/Glossary.md#Sale) or [Deferred Payment](Deferred-Payment.md) request is made.
+- **Automatic Capture:** A charge is automatically captured when a [Sale](../../FAQs-Glossary/Glossary.md#Sale) or [Deferred Payment](../../Guides/Recurring-Installments/Deferred-Payment.md) request is made.
 - **Manual Capture:** A manual capture can be processed for the full amount or a partial amount.
   - **Full:** A full capture request will settle the full amount of the held funds. This amount can be for more than the amount for certain industries (e.g., tips).
-  - **Partial:** A partial capture request is used when the full pre-auth amount is not needed or when submitting a [Split Shipment](Split-Shipment.md). When the full amount is not captured the remaining balance is released to the customer (e.g., the price of a pre-order item decreases before shipping).
+  - **Partial:** A partial capture request is used when the full pre-auth amount is not needed or when submitting a [Split Shipment](../../Guides/Payment-Sources/Split-Tender.md). When the full amount is not captured the remaining balance is released to the customer (e.g., the price of a pre-order item decreases before shipping).
 
 ---
 
@@ -28,12 +28,12 @@ Use this payload to capture a previous pre-authorized [Charge](Charges.md). This
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `total` | *number* |  | Sub component values must add up to total amount.<br/>0.00 expected format. |
-| `currency` | *string* | 3 | ISO 3 Currency Format. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](../../Master-Data/Currency-Code.md) |
 
 ---
 
 ## Endpoints
-Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
+Use the below endpoints based on the [transaction type](../../Guides/Transaction-Types.md).
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/capture`
 >
@@ -71,7 +71,7 @@ title: Response
 
 <!-- theme: info -->
 
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
@@ -144,6 +144,6 @@ title: Response
 ## See Also
 - [API Explorer](url)
 - [Charge](Charges.md)
-- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
 - [Reauthorization](url)
-- [Split Shipment](url)
+- [Split Shipment](../../Guides/Payment-Sources/Split-Tender.md)
