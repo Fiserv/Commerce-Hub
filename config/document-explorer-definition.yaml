@@ -124,7 +124,7 @@
     - title: Master Data
       link:
       open: false
-      article:
+      articles:
       - title: Additional Data
         link: docs/Resources/Master-Data/Additional-Data.md
       - title: Address
