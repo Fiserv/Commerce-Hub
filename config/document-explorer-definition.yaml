@@ -127,18 +127,18 @@
       articles:
       - title: Additional Data
         link: docs/Resources/Master-Data/Additional-Data.md
-      - title: Address
-        link: docs/Resources/Master-Data/Address.md
-      - title: Amount Components
+      - title: Amount Component
         link: docs/Resources/Master-Data/Amount-Components.md
       - title: Card Types
         link: docs/Resources/Master-Data/Card-Type.md
-      - title: Card Object
+      - title: Card Component
         link: docs/Resources/Master-Data/Card.md
       - title: Country Codes
         link: docs/Resources/Master-Data/Country-Code.md
       - title: Currency Codes
         link: docs/Resources/Master-Data/Currency-Code.md
+      - title: Customer Address
+        link: docs/Resources/Master-Data/Address.md
       - title: Customer Details
         link: docs/Resources/Master-Data/Customer-Details.md
       - title: Merchant Category Code

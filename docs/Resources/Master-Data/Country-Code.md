@@ -14,8 +14,8 @@ The country codes can be represented either as a two-letter code *(Alpha-2)* whi
 
 The table below contains all the countries and their Alpha 2, Alpha 3 and Numberic values. 
 
-Country | Alpha 2 | Alpha 3 | Numeric |
-------- | ------- | ------- | -------|
+| Country | Alpha 2 | Alpha 3 | Numeric |
+| ------- | ------- | ------- | -------|
 |Afghanistan | AF | AFG | 004|
 |Aland Islands | AX | ALA | 248|
 |Albania | AL | ALB | 008|
