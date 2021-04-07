@@ -24,20 +24,20 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 #### Component: amount
 
-|Variable    |  Type| Maximum Length | Description/Values|
+| Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](../../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../../Master-Data/Currency-Code.md).|
 
 #### Component: source
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](../../Guides/Payment-Sources/Source-Type.md). |
 
 #### Component: transactionDetails
 
-|Variable | Data Type| Maximum Length | Description/Values |
+| Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 
@@ -153,7 +153,7 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [Capture 1](docs/Resources/API-Documents/Payments/Capture.md)
+- [Capture 1](Resources/API-Documents/Payments/Capture.md)
 - [Cancel](Cancel.md)
 - [Incremental Auth](url)
 - [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
