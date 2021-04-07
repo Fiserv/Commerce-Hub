@@ -56,11 +56,6 @@
     - title: API Documents
       link: docs/Resources/API-Documents/Use-Our-APIs.md
       open: true
-      articles:
-      - title: Authentication Header
-        link: docs/Resources/API-Documents/Authentication-Header.md
-      - title: Environments
-        link: docs/Resources/API-Documents/Environments.md
       sections:
       - title: Payments
         open: false
@@ -86,6 +81,11 @@
           link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
         - title: Tokenization
           link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+      articles:
+      - title: Authentication Header
+        link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Environments
+        link: docs/Resources/API-Documents/Environments.md
     - title: Guides
       open: false
       sections:
