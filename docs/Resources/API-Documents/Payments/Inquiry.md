@@ -18,7 +18,7 @@ Get transaction inquiry request can be initiated by sending the request to the a
 
 ## Endpoints
 
-Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
+Use the below endpoints based on the [transaction type](../../Guides/Transaction-Types.md).
 
 <!-- theme: info -->
 >**GET** `/payments/v1/charges/{transactionId}/inquiry`
@@ -33,7 +33,7 @@ Use the below endpoints based on the [transaction type](../Guides-Info/Transacti
 
 <!-- theme: info -->
 
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
@@ -96,5 +96,10 @@ Use the below endpoints based on the [transaction type](../Guides-Info/Transacti
 }
 ```
 
+## See Also
+
+- [API Explorer](url)
+- [Charge](Charges.md)
+- [Transaction Details](.../../Master-Data/Transaction-Details.md)
 
 

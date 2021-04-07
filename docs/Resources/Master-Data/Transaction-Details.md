@@ -11,7 +11,7 @@ The transaction request initiated by merchant contains various transaction relat
 | `captureFlag` | *boolean* | 5 | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
-| `processingCode` | *string* | 6 | A [required code](../Guides-Info/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
+| `processingCode` | *string* | 6 | A [required code](Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
 | `merchantTransactionId` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantOrderId` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantInvoiceNumber` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
@@ -32,7 +32,7 @@ The transaction request initiated by merchant contains various transaction relat
 
 #### Subcomponent: deviceFingerprint
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`provider` | *string* |  | Device provider e.g. InAuth. |
 |`dataCapture`| *string* |  | An array containing [data capture](#subcomponent-datacapture) details. | 
@@ -74,5 +74,6 @@ Variable | Type| Maximum Length | Description/Values|
 ## See Also
 
 - [API Explorer](URL)
-- [Dynamic Descriptors](../Guides-Info/Dynamic-Descriptor.md)
-- [Wallet Integrations](../../Getting-Started/Getting-Started-Wallets.md)
+- [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md)
+- [Apple Pay](../../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Google Pay](../../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)

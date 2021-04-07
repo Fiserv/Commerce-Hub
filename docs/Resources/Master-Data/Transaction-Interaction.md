@@ -100,6 +100,6 @@ The `transactionInteraction` may contain the data regarding where the transactio
 ## See Also
 
 - [API Explorer](url)
-- [Dynamic Descriptors](../Guides-Info/Dynamic-Descriptor.md)
+- [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md)
 
 ---

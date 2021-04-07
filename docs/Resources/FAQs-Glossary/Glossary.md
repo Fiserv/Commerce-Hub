@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, glossary]
+tags: [carat, commerce-hub, glossary, acquiring-bank, aggregator, authorization, AVS, capture, card-network, card-not-present, pre-auth, sale, surcharge, soft-descriptor, tokenization, ]
 ---
 
 # Glossary

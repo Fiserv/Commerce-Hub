@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+---
+
 # Address Verification Services
 
 ## Overview
@@ -316,5 +320,5 @@ Variable | Type| Maximum Length | Description/Values|
 
 - [API Explorer](url)
 - [Address](../../Master-Data/Address.md)
-- [Charge](../../Transactions/Charges.md.md)
-- [Verification](../../Transactions/Verification.md)
+- [Charge](../../API-Documents/Payments/Charges.md)
+- [Verification](../../API-Documents/Payments_VAS/Verification.md)
