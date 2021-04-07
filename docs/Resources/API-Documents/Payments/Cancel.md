@@ -80,7 +80,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a Cancel Payload Request.
+##### Example of a cancel payload request.
 
 ```json
 {
@@ -108,7 +108,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Cancel (200: Success) Response.
+##### Example of a cancel (200: Success) response.
 
 <!-- theme: info -->
 

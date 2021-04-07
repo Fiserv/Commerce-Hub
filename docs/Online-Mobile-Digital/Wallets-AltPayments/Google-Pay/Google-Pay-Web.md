@@ -20,7 +20,7 @@ const baseRequest = {
 };
 ```
 
-## Step 2: Request a payment token
+## Step 2: Request a Payment Token
 
 Google encrypts information about a payer's selected card for secure processing by a payment provider.
 
@@ -38,7 +38,7 @@ const tokenizationSpecification = {
 <!--theme : warning-->
 > The data in above example is as per Payeezy as found in Google website, need to reconfirm about the Commerce Hub
 
-## Step 3: Define Payment card Networks
+## Step 3: Define Payment Card Networks
 
 The merchant need to define the card networks which will be allowed for the transactions. Please check Commerce Hub [supported card types](../../../Resources/Master-Data/Card-Type.md). See the following code sample:
 
@@ -131,7 +131,19 @@ paymentsClient.isReadyToPay(isReadyToPayRequest)
     });
 ```
 
-## Step 8: Add Google Pay Button
+---
+
+## Step 8: Support Google Pay on Website
+
+Merchant can start supporting Google Pay on their website either by using Google Pay API Framework or by using Commerce Hub Hosted Payment Page.
+
+**Integrate Using Google Pay API:** For more details refer [Google Pay API](url) documentation.
+
+**Integrate Using Commerce Hub Hosted Page:** configure your apple pay settings in Commerce Hub Hosted Page.
+
+---
+
+## Step 9: Add Google Pay Button
 
 The merchant needs to add a Google Pay payment button to the page to encourage shoppers to check out with payment methods that are supported by the Google Pay API and their website. For more information about available button types, colors, and display requirements, see the [Brand guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines). See the following payment button code sample:
 
@@ -141,7 +153,93 @@ const button =
 document.getElementById('container').appendChild(button);
 ```
 
-## Step 9: Create Payload Request
+## Step 10: Create Payload Request
 
+<!--theme: warning-->
+> This step is only required when utilizing Commerce Hub's RESTful API and Google Pay API. Hosted Checkout will manage the payment information automatically.
 
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a Charge Payload Request.
+```json
+{
+   "amount":{
+      "total":"12.04",
+      "currency":"USD"
+   },
+   "source":{
+      "sourceType":"GooglePay",
+
+   }
+}
+
+```
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a Charge (201: Created) Response.
+
+<!-- theme: info -->
+> See [Error Responses](url) for additional examples.
+```json
+{
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"charge",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom"
+   },
+   "transactionProcessingDetails":{
+      "transactionDate":"2021-04-16",
+      "transactionTime":"2021-04-16T16:06:05Z",
+      "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId":"838916029301"
+   },
+   "source":"GooglePay",
+   "paymentToken":{
+      "tokenData":"1234123412340019",
+      "PARId":"string",
+      "declineDuplicates":false,
+      "tokenSource":"RSA"
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total":"1.00",
+         "currency":"USD"
+      },
+      "processorResponseDetails":null,
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK7118",
+      "referenceNumber":"845366457890-TODO",
+      "schemeTransactionID":"019078743804756",
+      "processor":"fiserv",
+      "responseCode":"00",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"54022",
+      "hostResponseMessage":"Approved",
+      "localTimestamp":"2021-04-16T16:06:05Z",
+      "bankAssociationDetails":{
+         "associationResponseCode":"000",
+         "transactionTimestamp":"2021-04-16T16:06:05Z",
+         "transactionReferenceInformation":null
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+## See Also
+
+- [API Explorer](url)
+- [Google Pay App Integration](Google-Pay-App.md)
+- [Charges](../../../Resources/API-Documents/Payments/Charges.md)
+- [Apple Pay](../Apple-Pay/Apple-Pay.md)
 

@@ -34,28 +34,28 @@ type: tab
 title: Request
 -->
 
-##### Example of a Charge Payload Request with tokenization.
+##### Example of a charge payload request with `createToken`.
 
 ```json
 {
-  "amount": {
-    "total": "1.00",
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "PaymentCard",
-  }
-  "card": {  
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
-  },
-  "transactionDetails": {
-    "captureFlag": false,
-    "createToken": true
-    "tokenProvider": "RSA"
-  }
+   "amount":{
+      "total":"1.00",
+      "currency":"USD"
+   },
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123"
+      }
+   },
+   "transactionDetails":{
+      "captureFlag":false,
+      "createToken":true,
+      "tokenProvider":"RSA"
+   }
 }
 ```
 <!--
@@ -63,55 +63,57 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge Payload Response with tokenization.
+##### Example of a charge (201: Created) tokenization response.
 
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "token",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom",
-    "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
-      "transactionTime": "2016-04-16T16:06:05Z",
-      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
-    }
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard",
-    "tokenData": "1234123412340019",
-    "PARId": "string",
-    "declineDuplicates": "FALSE",
-    "tokenSource": "string",
-    "card": {
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "05",
-      "expirationYear": "2025",
-      "bin": "400555",
-      "last4": "0019",
-      "scheme": "VISA"
-    }
-  },
-  "processorResponseDetails": {
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK3483",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionId": "019078743804756",
-    "feeProgramIndicator": "string",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "",
-    "localTimestamp": "2016-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2016-04-16T16:06:05Z",
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"token",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "transactionDate":"2016-04-16",
+         "transactionTime":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
       }
-  },
+   },
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"05",
+         "expirationYear":"2025",
+         "bin":"400555",
+         "last4":"0019",
+         "scheme":"VISA"
+      }
+   },
+   "paymentToken":{
+      "tokenData":"1234123412340019",
+      "PARId":"1234567895461303321654",
+      "declineDuplicates":"FALSE",
+      "tokenSource":"RSA"
+   },
+   "processorResponseDetails":{
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK3483",
+      "referenceNumber":"845366457890-TODO",
+      "schemeTransactionId":"019078743804756",
+      "feeProgramIndicator":"string",
+      "processor":"fiserv",
+      "responseCode":"00",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"54022",
+      "hostResponseMessage":"",
+      "localTimestamp":"2016-04-16T16:06:05Z",
+      "bankAssociationDetails":{
+         "associationResponseCode":"000",
+         "transactionTimestamp":"2016-04-16T16:06:05Z"
+      }
+   }
 }
 ```
 <!-- type: tab-end -->
@@ -136,7 +138,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a Token only Payload Request.
+##### Example of a token only payload request.
 
 ```json
 {
@@ -162,7 +164,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Token only Payload Request.
+##### Example of a tokenization (201: Created) response.
 
 ```json
 {
