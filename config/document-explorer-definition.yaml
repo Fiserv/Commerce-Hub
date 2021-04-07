@@ -1,17 +1,17 @@
 - sections:
   - title: Getting Started
     link: docs/Getting-Started/Getting-Started-General.md
-    open: true
+    open: false
     sections:
 - sections:
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
-    open: true
+    open: false
     sections:
 - sections:
   - title: Online/Digital/Mobile
     link: docs/Getting-Started/Getting-Started-Online.md
-    open: true
+    open: false
     sections:
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
@@ -23,44 +23,114 @@
       link: docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md
     - title: Payment URL
       link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
+    - title: Virtual Terminal
+      link: docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md
     - title: Wallets and Alt Payments
       link: docs/Getting-Started/Getting-Started-Wallets.md
-      open: true
+      open: false
       sections:
         - title: Apple Pay
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+          open: true
           articles:
-            - title: In-App Payments
-              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
-            - title: Web Payments
-              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web.md
+          - title: In-App Payments
+            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
+          - title: Web Payments
+            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web.md
         - title: Google Pay
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+          open: true
           articles:
-            - title: In-App Payments
-              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
-            - title: Web Payments
-              link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web.md
+          - title: In-App Payments
+            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
+          - title: Web Payments
+            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web.md
 - sections:
   - title: Resources
     link:
-    open: true
+    open: false
     sections:
-    - title: Guides
-      link: docs/resources/api-guide.md
+    - title: API Documents
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
       open: true
       articles:
-      - title: How it works
-        link: docs/resources/guides/how-it-works.md
-      - title: How to use Stoplight
-        link: docs/resources/guides/using-stoplight.md
-      - title: How to use GitLab
-        link: docs/resources/guides/using-gitlab.md
-      - title: Register tenant
-        link: docs/getting-started/setup-tenant/register-tenant.md
-      - title: Markdown Support
-        link: docs/resources/markdown-support.md
-      - title: Tutorials
-        link: docs/tutorials/tutorials.md
-    - title: FAQ
-      link: docs/faq/faq.md
+      - title: Authentication Header
+        link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Environments
+        link: docs/Resources/API-Documents/Environments.md
+      sections:
+      - title: Payments
+        open: false
+        articles:
+        - title: Charges
+          link: docs/Resources/API-Documents/Payments/Charges.md
+        - title: Capture
+          link: docs/Resources/API-Documents/Payments/Capture.md
+        - title: Cancel
+          link: docs/Resources/API-Documents/Payments/Cancel.md
+        - title: Refund
+          link: docs/Resources/API-Documents/Payments/Refund.md
+        - title: Credit
+          link: docs/Resources/API-Documents/Payments/Credit.md
+        - title: Inquiry
+          link: docs/Resources/API-Documents/Payments/Inquiry.md
+      - title: Payments VAS
+        open: false
+        articles:
+        - title: Account Verification
+          link: docs/Resources/API-Documents/Payments_VAS/Verification.md
+        - title: Information Lookup
+          link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+        - title: Tokenization
+          link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+    - title: Guides
+      open: false
+      sections:
+      - title: Fraud Controls
+        link: docs/Resources/Guides/Fraud/Fraud-Settings.md
+        open: false
+        articles:
+        - title: Address Verification
+          link: docs/Resources/Guides/Fraud/Address-Verification.md
+        - title: Security Code
+          link: docs/Resources/Guides/Fraud/Security-Code.md
+        - title: AVS and CVV Filters
+          link: docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
+        - title: Restrictions
+          link: docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
+        - title: Velocity Controls
+          link: docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
+        - title: Fraud Detect
+          link: docs/Resources/Guides/Fraud/Fraud-Detect.md
+      - title: Industry and Verticals
+        open: false
+      - title: Payment Sources
+        link: docs/Resources/Guides/Payment-Sources/Source-Type.md
+        open: false
+        articles:
+        - title: Gift Card
+          link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
+        - title: Network Token
+          link: docs/Resources/Guides/Payment-Sources/Network-Token.md
+        - title: Private Label
+          link: docs/Resources/Guides/Payment-Sources/Private-Label.md
+        - title: TeleCheck
+          link: docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
+        - title: Split Tender
+          link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
+    - title: FAQ and Glossary
+      articles:
+      - title: Glossary
+        link: docs/Resources/FAQs-Glossary/Glossary.md
+      sections:
+      - title: FAQs
+        open: false
+        articles:
+        - title: How do I create an Authentication Header?
+          link: docs/Resources/API-Documents/Authentication-Header.md
+        
+
+
+
+
+
