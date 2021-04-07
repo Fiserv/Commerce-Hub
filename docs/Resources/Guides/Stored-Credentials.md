@@ -51,8 +51,8 @@ For recurring transactions if merchant is allowed to initiate a transactions on 
 ## See Also
 
 - [API Explorer](url)
-- [Capture](../../Transactions/Capture.md)
-- [Charge](../../Transactions/Charges.md)
-- [Incremental Auth]
-- [Reauthorization]
-- [Recurring Payment]
+- [Capture](../API-Documents/Payments/Capture.md)
+- [Charge](../API-Documents/Payments/Charges.md)
+- [Incremental Auth](Incremental-Auth.md)
+- [Reauthorization](Re-Auth.md)
+- [Recurring Payment](Recurring-Installments/Recurring-Installments.md)

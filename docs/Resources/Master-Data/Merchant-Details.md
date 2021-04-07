@@ -21,6 +21,6 @@ Used to pass the merchant data during the transaction to determine the merchant 
 ## See Also
 
 - [API Explorer](url)
-- [Dynamic Descriptors](../Guides-Info/Dynamic-Descriptor.md)
+- [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md)
 - [Merchant Category Codes](Merchant-Category-Code.md)
-- [Payment Facilitators](../Guides-Info/Industry-Verticals/Payment-Faciliator.md)
+- [Payment Facilitators](../Guides/Industry-Verticals/Payment-Faciliator.md)

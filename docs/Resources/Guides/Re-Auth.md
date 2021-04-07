@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 ## Overview
 
-A reauthorization with a [token](Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. Unavailable product due to a pre-order or [split shipment](../Guides-Info/Split-Shipment.md) is the most common reason for a reauthorization.
+A reauthorization with a [token](../API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. Unavailable product due to a pre-order or [split shipment](Split-Shipment.md) is the most common reason for a reauthorization.
 
 <!-- theme: info -->
 >See an account representative for more information on issuer hold times.

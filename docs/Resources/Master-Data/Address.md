@@ -8,7 +8,7 @@ A merchant may need to send the customer's address in the transaction request fo
 
 ## Billing Address
 
-Is an address connected to the customer's [payment method](../Guides-Info/Payment-Source/Source-Type.md).
+Is an address connected to the customer's [payment method](../Guides/Payment-Sources/Source-Type.md).
 
 #### Component: billingAddress
 
@@ -66,8 +66,8 @@ Is an address where merchant will send the order.
 ## See Also
 
 - [API Explorer](url)
-- [Address Verification](../Guides-Info/Fraud/Address-Verification.md)
-- [Capture](../Transactions/Capture.md)
-- [Charge](../Transactions/Charges.md)
+- [Address Verification](../Guides/Fraud/Address-Verification.md)
+- [Capture](../API-Documents/Payments/Capture.md)
+- [Charge](../API-Documents/Payments/Charges.md)
 
 ---

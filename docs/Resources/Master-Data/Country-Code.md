@@ -270,6 +270,6 @@ Country | Alpha 2 | Alpha 3 | Numeric |
 
 - [API Explorer](url)
 - [Amount Components](Amount-Components.md)
-- [Currency Conversion](../Guides/Currency-Conversion.md)
+- [Currency Conversion](../Guides/Currency-Conversion.mdd)
 
 ---

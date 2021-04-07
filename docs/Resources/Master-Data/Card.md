@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `card` component is an array which is used for all card types, including debit, credit, prepaid (gift), HSA, EBT, etc. and is a sub-component of `source` for a [PaymentCard](../Guides-Info/Payment-Source/Source-Type.md) and [PrepaidCard](../Guides-Info/Payment-Source/Gift-Card.md).
+The `card` component is an array which is used for all card types, including debit, credit, prepaid (gift), HSA, EBT, etc. and is a sub-component of `source` for a [PaymentCard](../Guides/Payment-Sources/Source-Type.md) and [PrepaidCard](../Guides/Payment-Sources/Gift-Card.md).
 
 #### Component: card
 
