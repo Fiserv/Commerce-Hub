@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, account-verification, card-verification]
+---
+
 # Verification
 
 ## Overview
@@ -5,7 +9,7 @@
 Account verification is performed when the merchant wants to confirm that the cardholder account is valid for a transaction. Merchant can initiate the verifiation request using card as well as token details.
 
 <!--theme:info-->
-> The merchant can also perform an [address](../Guides-Info/Fraud/Address-Verification.md) and/or [security code](../Guides-Info/Fraud/Security-Code.md) verification with the request.
+> The merchant can also perform an [address](../../Guides/Fraud/Address-Verification.md) and/or [security code](../../Guides/Fraud/Security-Code.md) verification with the request.
 
 ---
 
@@ -21,7 +25,7 @@ Account verification is performed when the merchant wants to confirm that the ca
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](../../Guides/Payment-Sources/Source-Type.md) for more details. |
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 
 ### Payload Example
@@ -89,7 +93,7 @@ title: Response
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](../Master-Data/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](../../Guides/Payment-Sources/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 
 
 ### Payload Example
@@ -157,8 +161,8 @@ title: Response
 
 ## See Also
 
-[API Explorer](url)
-[AVS](../Guides-Info/Fraud/Address-Verification.md)
-[Charge](Charges.md)
-[CVV](../Guides-Info/Fraud/Security-Code.md)
-[Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [API Explorer](url)
+- [AVS](../../Guides/Fraud/Address-Verification.md)
+- [Charge](../Payments/Charges.md)
+- [CVV](../../Guides/Fraud/Security-Code.md)
+- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
