@@ -121,10 +121,15 @@
           link: docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
         - title: Split Tender
           link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
+    - title: Master Data
+      link:
+      open: false
+      article:
+      - title: 
+        link: 
     - title: FAQ and Glossary
-      articles:
-      - title: Glossary
-        link: docs/Resources/FAQs-Glossary/Glossary.md
+      link: docs/Resources/FAQs-Glossary/Glossary.md
+      open: false
       sections:
       - title: FAQs
         open: false
