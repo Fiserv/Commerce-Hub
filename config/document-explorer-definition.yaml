@@ -2,12 +2,10 @@
   - title: Getting Started
     link: docs/Getting-Started/Getting-Started-General.md
     open: false
-    sections:
 - sections:
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
     open: false
-    sections:
 - sections:
   - title: Online/Digital/Mobile
     link: docs/Getting-Started/Getting-Started-Online.md
@@ -15,16 +13,22 @@
     sections:
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
+      open: false
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
+      open: false
     - title: Hosted Payment Page
       link: docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md
+      open: false
     - title: Payment JS
       link: docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md
+      open: false
     - title: Payment URL
       link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
+      open: false
     - title: Virtual Terminal
       link: docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md
+      open: false
     - title: Wallets and Alt Payments
       link: docs/Getting-Started/Getting-Started-Wallets.md
       open: false
@@ -47,7 +51,6 @@
             link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web.md
 - sections:
   - title: Resources
-    link:
     open: false
     sections:
     - title: API Documents
@@ -128,7 +131,15 @@
         articles:
         - title: How do I create an Authentication Header?
           link: docs/Resources/API-Documents/Authentication-Header.md
-        
+- sections:
+  - title: API Releases
+    link: docs/Release-Notes-Alerts/Release-Notes.md
+    open: false
+    articles:
+    - title: Alerts
+      link: docs/Release-Notes-Alerts/Alerts.md
+    - title: Updates
+      link: 
 
 
 
