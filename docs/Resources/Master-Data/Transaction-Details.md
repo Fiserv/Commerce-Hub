@@ -32,7 +32,7 @@ The transaction request initiated by merchant contains various transaction relat
 
 #### Subcomponent: deviceFingerprint
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`provider` | *string* |  | Device provider e.g. InAuth. |
 |`dataCapture`| *string* |  | An array containing [data capture](#subcomponent-datacapture) details. | 
