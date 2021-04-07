@@ -33,22 +33,22 @@
       link: docs/Getting-Started/Getting-Started-Wallets.md
       open: false
       sections:
-        - title: Apple Pay
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
-          open: true
-          articles:
-          - title: In-App Payments
-            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
-          - title: Web Payments
-            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web.md
-        - title: Google Pay
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
-          open: true
-          articles:
-          - title: In-App Payments
-            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
-          - title: Web Payments
-            link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web.md
+      - title: Apple Pay
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+        open: true
+        articles:
+        - title: In-App Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
+        - title: Web Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web.md
+      - title: Google Pay
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+        open: true
+        articles:
+        - title: In-App Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
+        - title: Web Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web.md
 - sections:
   - title: Resources
     open: false
@@ -140,8 +140,3 @@
       link: docs/Release-Notes-Alerts/Alerts.md
     - title: Updates
       link: 
-
-
-
-
-
