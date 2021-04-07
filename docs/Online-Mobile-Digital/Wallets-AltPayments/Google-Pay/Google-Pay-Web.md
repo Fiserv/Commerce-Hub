@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, google-pay, wallet, google-pay-web-integration]
+---
+
+
 # Google Pay: Web Integration
 
 Merchants need to follow the below steps in order to integrate Apple Pay with their website.

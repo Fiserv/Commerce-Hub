@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, google-pay, wallet]
+---
+
 # Google Pay
 
 ## Overview
@@ -35,3 +39,10 @@ Select an option below to see the integration steps
 - [Google Pay Integration on Web](Google-Pay-Web.md)
 
 - [Google Pay Integration in App](Google-Pay-App.md)
+
+## See Also
+
+- [API Explorer](url)
+- [Google Pay App Integration](Google-Pay-App.md)
+- [Google Pay Web Integration](Google-Pay-Web.md)
+- [Apple Pay](../Apple-Pay/Apple-Pay.md)
