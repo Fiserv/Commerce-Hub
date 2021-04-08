@@ -10,13 +10,13 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 - *true* : the transaction will be considered as sale, where the customer will be charged with the transaction amount.
 
-- *false* : the request will be considered a pre-auth request, where the funds on the customer's account will be reserved and a [capture](Capture.md) will be required to withdrawal the funds from the customer.
+- *false* : the request will be considered a pre-auth request, where the funds on the customer's account will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdrawal the funds from the customer.
 
 #### Charge Types
 
-- [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Authorization) Inniated by a merchant to [verify](../Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
-- [**Pre-Auth:**](../../FAQs-Glossary/Glossary.md#Pre-Auth) An authorization where the amount approved by the customer is placed on hold to be captured later.
-- [**Sale:**](../../FAQs-Glossary/Glossary.md#Sale) An authorization where the amount approved by the customer is placed on hold and will be settled at the end of the day.
+- [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Authorization) Inniated by a merchant to [verify](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
+- [**Pre-Auth:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Pre-Auth) An authorization where the amount approved by the customer is placed on hold to be captured later.
+- [**Sale:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Sale) An authorization where the amount approved by the customer is placed on hold and will be settled at the end of the day.
 
 ---
 
@@ -26,14 +26,14 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 | Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](../../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../../Master-Data/Currency-Code.md).|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 #### Component: source
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](../../Guides/Payment-Sources/Source-Type.md). |
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 
 #### Component: transactionDetails
 
@@ -87,7 +87,7 @@ title: Response
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
+> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
    "gatewayResponse":{
@@ -147,9 +147,9 @@ title: Response
 
 - [API Explorer](url)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Cancel](Cancel.md)
-- [Incremental Auth](url)
-- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
-- [Reauthorization](url)
-- [Refund](Refund.md)
-- [Transaction Details](.../../Master-Data/Transaction-Details.md)
+- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Incremental Auth](?path=docs/Resources/Guides/Incremental-Auth.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Reauthorization](?path=docs/Resources/Guides/Re-Auth.md)
+- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
