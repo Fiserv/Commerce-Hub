@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-web-integration]
 ---
 
-# Apple Pay: Web Integration
+# Apple Pay on the Web: RESTful API Integration
 
 
 ## Step 1: Configure Apple Pay on the Web
@@ -16,7 +16,7 @@ The Apple developer account will need to be configured with the merchant informa
 
 ## Step 2: Support Apple Pay on the Web
 
-The merchant can start supporting Apple Pay on their website either by using Commerce Hub's RESTful API with [Apple Pay's JS API Framework](https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api) or by using Commerce Hub Hosted Payment Page.
+The merchant can start supporting Apple Pay on their website by using the Commerce Hub's [RESTful API](docs/Resources/API-Documents/Use-Our-APIs.md) with [Apple Pay's JS API Framework](https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api).
 
 ---
 
@@ -27,9 +27,6 @@ The merchant can enhance the purchase experience from their website by creating 
 ---
 
 ## Step 4: Submit a Payment Request
-
-<!--theme: warning-->
-> This step is only required when utilizing Commerce Hub's RESTful API and Apple Pay JS. Hosted Checkout will manage the payment information automatically.
 
 <!--
 type: tab

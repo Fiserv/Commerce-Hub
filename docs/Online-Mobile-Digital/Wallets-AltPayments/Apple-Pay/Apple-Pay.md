@@ -22,9 +22,17 @@ Apple Pay is available to cardholders at participating banks in supported countr
 
 Select an option below to see the integration steps
 
-- [Apple Pay Integration on Web](Apple-Pay-Web.md)
+### [Apple Pay on the Web: RESTful API](Apple-Pay-Web.md)
 
-- [Apple Pay Integration in App](Apple-Pay-App.md)
+description stuffs
+
+### [Apple Pay on the Web: Hosted Payment Page](Apple-Pay-Web.md)
+
+description stuffs
+
+### [Apple Pay Integration in App](Apple-Pay-App.md)
+
+description stuffs
 
 ## See Also
 
