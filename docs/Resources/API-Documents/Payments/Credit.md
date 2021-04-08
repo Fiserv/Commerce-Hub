@@ -111,8 +111,7 @@ title: Response
       "bankAssociationDetails":{
          "associationResponseCode":"000",
          "transactionTimestamp":"2021-04-16T16:06:05Z",
-         "transactionReferenceInformation":null,
-         }
+         "transactionReferenceInformation":null
       }
    }
 }
