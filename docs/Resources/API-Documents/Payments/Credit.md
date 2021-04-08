@@ -66,7 +66,7 @@ title: Response
 ##### Example of a credit (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
+> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
    "gatewayResponse":{
