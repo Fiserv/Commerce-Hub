@@ -26,10 +26,10 @@ In-person or Card Present (CP) transactions are initiated when a customer physic
 
 ## Benefits
 
-- [Acount Verification](../Resources/API Documents/Payments_VAS/Verification.md)
-- [Information Lookup](../Resources/API Documents/Payments_VAS/Information-Lookup.md)
+- [Acount Verification](../Resources/API-Documents/Payments_VAS/Verification.md)
+- [Information Lookup](../Resources/API-Documents/Payments_VAS/Information-Lookup.md)
 - [Fraud Prevention](../Resources/Guides/Fraud/Fraud-Settings.md)
-- [Tokenization](../Resources/API Documents/Payments_VAS/Payment-Token.md)
+- [Tokenization](../Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---
 

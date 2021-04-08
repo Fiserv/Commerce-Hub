@@ -1,0 +1,169 @@
+- sections:
+  - title: Getting Started
+    link: docs/Getting-Started/Getting-Started-General.md
+    open: false
+- sections:
+  - title: In-Person
+    link: docs/Getting-Started/Getting-Started-InPerson.md
+    open: false
+- sections:
+  - title: Online/Digital/Mobile
+    link: docs/Getting-Started/Getting-Started-Online.md
+    open: false
+    sections:
+    - title: RESTful API
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
+      open: false
+    - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
+      open: false
+    - title: Hosted Payment Page
+      link: docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md
+      open: false
+    - title: Payment JS
+      link: docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md
+      open: false
+    - title: Payment URL
+      link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
+      open: false
+    - title: Virtual Terminal
+      link: docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md
+      open: false
+    - title: Wallets and Alt Payments
+      link: docs/Getting-Started/Getting-Started-Wallets.md
+      open: false
+      sections:
+      - title: Apple Pay
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+        open: true
+        articles:
+        - title: In-App Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
+        - title: Web Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web.md
+      - title: Google Pay
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+        open: true
+        articles:
+        - title: In-App Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
+        - title: Web Payments
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web.md
+- sections:
+  - title: Resources
+    open: false
+    sections:
+    - title: API Documents
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
+      open: true
+      sections:
+      - title: Payments
+        open: false
+        articles:
+        - title: Charges
+          link: docs/Resources/API-Documents/Payments/Charges.md
+        - title: Capture
+          link: docs/Resources/API-Documents/Payments/Capture.md
+        - title: Cancel
+          link: docs/Resources/API-Documents/Payments/Cancel.md
+        - title: Refund
+          link: docs/Resources/API-Documents/Payments/Refund.md
+        - title: Credit
+          link: docs/Resources/API-Documents/Payments/Credit.md
+        - title: Inquiry
+          link: docs/Resources/API-Documents/Payments/Inquiry.md
+      - title: Payments VAS
+        open: false
+        articles:
+        - title: Account Verification
+          link: docs/Resources/API-Documents/Payments_VAS/Verification.md
+        - title: Information Lookup
+          link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+        - title: Tokenization
+          link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+      articles:
+      - title: Authentication Header
+        link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Environments
+        link: docs/Resources/API-Documents/Environments.md
+    - title: Guides
+      open: false
+      sections:
+      - title: Fraud Controls
+        link: docs/Resources/Guides/Fraud/Fraud-Settings.md
+        open: false
+        articles:
+        - title: Address Verification
+          link: docs/Resources/Guides/Fraud/Address-Verification.md
+        - title: Security Code
+          link: docs/Resources/Guides/Fraud/Security-Code.md
+        - title: AVS and CVV Filters
+          link: docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
+        - title: Restrictions
+          link: docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
+        - title: Velocity Controls
+          link: docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
+        - title: Fraud Detect
+          link: docs/Resources/Guides/Fraud/Fraud-Detect.md
+      - title: Industry and Verticals
+        open: false
+      - title: Payment Sources
+        link: docs/Resources/Guides/Payment-Sources/Source-Type.md
+        open: false
+        articles:
+        - title: Gift Card
+          link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
+        - title: Network Token
+          link: docs/Resources/Guides/Payment-Sources/Network-Token.md
+        - title: Private Label
+          link: docs/Resources/Guides/Payment-Sources/Private-Label.md
+        - title: TeleCheck
+          link: docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
+        - title: Split Tender
+          link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
+    - title: Master Data
+      link:
+      open: false
+      articles:
+      - title: Additional Data
+        link: docs/Resources/Master-Data/Additional-Data.md
+      - title: Amount Component
+        link: docs/Resources/Master-Data/Amount-Components.md
+      - title: Card Types
+        link: docs/Resources/Master-Data/Card-Type.md
+      - title: Card Component
+        link: docs/Resources/Master-Data/Card.md
+      - title: Country Codes
+        link: docs/Resources/Master-Data/Country-Code.md
+      - title: Currency Codes
+        link: docs/Resources/Master-Data/Currency-Code.md
+      - title: Customer Address
+        link: docs/Resources/Master-Data/Address.md
+      - title: Customer Details
+        link: docs/Resources/Master-Data/Customer-Details.md
+      - title: Merchant Category Code
+        link: docs/Resources/Master-Data/Merchant-Category-Code.md
+      - title: Processing Codes
+        link: docs/Resources/Master-Data/Processing-Code.md
+      - title: Transaction Details
+        link: docs/Resources/Master-Data/Transaction-Details.md
+      - title: Transaction Interaction
+        link: docs/Resources/Master-Data/Transaction-Interaction.md
+    - title: FAQ and Glossary
+      link: docs/Resources/FAQs-Glossary/Glossary.md
+      open: false
+      sections:
+      - title: FAQs
+        open: false
+        articles:
+        - title: How do I create an Authentication Header?
+          link: docs/Resources/API-Documents/Authentication-Header.md
+- sections:
+  - title: API Releases
+    link: docs/Release-Notes-Alerts/Release-Notes.md
+    open: false
+    articles:
+    - title: Alerts
+      link: docs/Release-Notes-Alerts/Alerts.md
+    - title: Updates
+      link: 

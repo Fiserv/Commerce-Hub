@@ -30,7 +30,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
-| `currency` | *string* | 3 | [ISO 3 currency format](../Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | [ISO 3 currency format](../../Master-Data/Currency-Code.md).|
 
 ---
 
@@ -38,7 +38,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 
 ## Endpoints
 
-Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
+Use the below endpoints based on the [transaction type](../../Guides/Transaction-Types.md).
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/capture`
@@ -74,7 +74,7 @@ title: Response
 
 <!-- theme: info -->
 
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
@@ -149,4 +149,4 @@ title: Response
 - [Charge](Charges.md)
 - [Cancel](Cancel.md)
 - [Credit](Credit.md)
-- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)

@@ -64,7 +64,7 @@ Variable | Type| Maximum Length | Description/Values|
 ---
 
 ## Endpoints
-Use the below endpoints based on the [transaction type](../Guides-Info/Transaction-Types.md).
+Use the below endpoints based on the [transaction type](../../Guides/Transaction-Types.md).
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/cancel`
@@ -112,7 +112,7 @@ title: Response
 
 <!-- theme: info -->
 
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
@@ -173,4 +173,4 @@ title: Response
 - [Charge](Charges.md)
 - [Capture](Capture.md)
 - [Refund](Refund.md)
-- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)

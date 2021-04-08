@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-inapp-integration]
+---
+
 # Apple Pay: In-App Integration
 
 #### Apple Pay on the App
@@ -164,4 +168,11 @@ title: Response
 
 
 <!-- type: tab-end -->
+
+## See Also
+
+- [API Explorer](url)
+- [Apple Pay Web Integration](Apple-Pay-Web.md)
+- [Charges](../../../Resources/API-Documents/Payments/Charges.md)
+- [Google Pay](../Google-Pay/Google-Pay.md)
 

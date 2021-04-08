@@ -1,0 +1,67 @@
+{
+  "title": "Commerce Hub",
+  "name": "CommerceHub",
+  "brand": "Carat",
+  "brandLogoURL": "https://raw.githubusercontent.com/tomeck/transactionenrichmentstoplight/main/docs/carat_logo.png",
+  "solution": "Payments",
+  "brandDescription": "Our powerful omnichannel commerce solutions help companies reach untapped markets and expand globally without being limited by borders, currencies or old ways of thinking.\n      Carat's single-source commerce engine makes the process seamless, effortless, and secure. We've unified our suite of solutions into a powerful tech ecosystem so you can create commerce.\n      Carat's single-source commerce engine makes the process seamless, effortless, and secure. We've unified our suite of solutions into a powerful tech ecosystem so you can create commerce. Carat's single-source commerce engine makes the process seamless, effortless, and secure. We've unified our suite of solutions into a powerful tech ecosystem so you can create commerce.",
+  "categories": [
+    {
+      "name": "businessTypes",
+      "value": "Business Types",
+      "subcategories": [
+        {
+          "name": "enterprise",
+          "value": "Enterprise"
+        }
+      ]
+    },
+    {
+      "name": "integrationTypes",
+      "value": "Integration Types",
+      "subcategories": [
+        {
+          "name": "cardPresent",
+          "value": "Card Present"
+        },
+        {
+          "name": "cardNotPresent",
+          "value": "Card Not Present"
+        }
+      ]
+    },
+    {
+      "name": "industryTypes",
+      "value": "Industry Types",
+      "subcategories": [
+        {
+          "name": "Airline",
+          "value": "Airline"
+        },
+        {
+          "name": "CAR_RENTAL",
+          "value": "Car Rental"
+        },
+        {
+          "name": "eCommerce",
+          "value": "eCommerce"
+        },
+        {
+          "name": "Restuarant",
+          "value": "Restuarant"
+        }
+      ]
+    }
+  ],
+  "product": {
+    "featured": true,
+    "logoURL": "https://raw.githubusercontent.com/tomeck/transactionenrichmentstoplight/main/docs/carat_logo.png",
+    "description": "Commerce hub makes it easier for merchants to access omnichannel services from a single point of connection. That includes access to solutions for global acquiring, payment methods, commerce channels, payouts, prepaid payments, B2B payments, payments optimization, security and fraud, and data insights.",
+    "apiSpecification": "/v1/apis",
+    "layout": "/v1/layouts",
+    "documentation": "/v1/docs",
+    "documenttree": "/v1/docs",
+    "documenttreeV2": "/v2/docs",
+    "sandbox": "/v1/sandboxrun"
+  }
+}

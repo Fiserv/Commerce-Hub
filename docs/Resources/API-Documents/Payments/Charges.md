@@ -10,11 +10,11 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 - *true* : the transaction will be considered as sale, where the customer will be charged with the transaction amount.
 
-- *false* : the request will be considered a pre-auth request, where the funds on the customer's account will be reserved and a [capture](Capture.md) will be required to withdrawal the funds from the customer.
+- *false* : the request will be considered a pre-auth request, where the funds on the customer's account will be reserved and a [capture](Capture.md) will be required to withdrawal the funds from the customer [anchorlink test](#see-also).
 
 #### Charge Types
 
-- [**Auth-Only:**](../../FAQs-Glossary/Glossary.md#Authorization) Inniated by a merchant to [verify](../Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
+- [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Authorization) Inniated by a merchant to [verify](../Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
 - [**Pre-Auth:**](../../FAQs-Glossary/Glossary.md#Pre-Auth) An authorization where the amount approved by the customer is placed on hold to be captured later.
 - [**Sale:**](../../FAQs-Glossary/Glossary.md#Sale) An authorization where the amount approved by the customer is placed on hold and will be settled at the end of the day.
 
@@ -24,20 +24,20 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 #### Component: amount
 
-|Variable    |  Type| Maximum Length | Description/Values|
+| Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](../../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../../Master-Data/Currency-Code.md).|
 
 #### Component: source
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](../../Guides/Payment-Sources/Source-Type.md). |
 
 #### Component: transactionDetails
 
-|Variable | Data Type| Maximum Length | Description/Values |
+| Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 
@@ -153,10 +153,10 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [Capture](Capture.md)
+- [Capture 2](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel](Cancel.md)
 - [Incremental Auth](url)
-- [Payment Source](../Guides-Info/Payment-Source/Source-Type.md)
+- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
 - [Reauthorization](url)
 - [Refund](Refund.md)
-- [Transaction Details](../Master-Data/Transaction-Details.md)
+- [Transaction Details](.../../Master-Data/Transaction-Details.md)

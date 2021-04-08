@@ -29,7 +29,7 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `mcc` | *string* |  | [Merchant Category Code](Merchant-Category-Code.md) |
+| `mcc` | *string* |  | [Merchant Category Code](../Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* |  | Daynamic Merchant Name or DBA |
 | `customerServiceNumber` | *string* | | Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
 | `serviceEntitlement` | *string* | | Merchant Service Entitlement number |
@@ -79,6 +79,6 @@ A [dynamic descriptor](../FAQs-Glossary/Glossary.md#dynamic-descriptor) allows a
 ## See Also
 
 - [API Explorer](url)
-- [Capture](../Transactions/Capture.md)
-- [Charge](../Transactions/Charges.md)
-- [Refund](../Transactions/Refund.md)
+- [Capture](../API-Documents/Payments/Capture.md)
+- [Charge](../API-Documents/Payments/Charges.md)
+- [Refund](../API-Documents/Payments/Refund.md)
