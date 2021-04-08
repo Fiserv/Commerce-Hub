@@ -6,10 +6,10 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 ## Overview
 
-A reauthorization with a [token](../API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. Unavailable product due to a pre-order or [split shipment](Split-Shipment.md) is the most common reason for a reauthorization.
+A reauthorization with a [token](../API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](Split-Shipment.md).
 
 <!-- theme: info -->
->See an account representative for more information on issuer hold times.
+> See an account representative for more information on issuer hold times.
 
 ---
 
@@ -19,7 +19,7 @@ A reauthorization with a [token](../API-Documents/Payments_VAS/Payment-Token.md)
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
 
 #### Component: transactionDetails
@@ -28,8 +28,7 @@ A reauthorization with a [token](../API-Documents/Payments_VAS/Payment-Token.md)
 |---------|----------|----------------|---------|
 | `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
 | `primaryTransactionId` | *string* |  | The `transactionId` from the original transaction passed for a reauthorization.|
-| `reauthorizationFlag` | *boolean* | 5 | Identifies the transaction as a reauthorization.|
-| `authorizationTypeIndicator` | *string* |  | This tag indicates a transaction that occurs when a merchant captures transaction information while the connectivity is interrupted or unavailable. This tag must be sent in the authorization/purchase/refund transaction once the connectivity is restored.|
+| `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 
 ---
 
@@ -58,7 +57,6 @@ title: Request
   "transactionDetails": {
     "captureFlag": false,
     "primaryTransactionId": "838916029300",
-    "reauthorizationFlag": true,
     "authorizationTypeIndicator": "REAUTH"
   },
   "splitShipment": {
@@ -143,6 +141,7 @@ title: Response
 - [API Explorer](url)
 - [Capture](Capture.md)
 - [Cancel](Cancel.md)
+- [Deferred Auth](docs/Resources/Guides/Authorizations/Deferred-Auth.md)
 - [Incremental Auth](Incremental-Auth.md)
 - [Refund](Refund.md)
 - [Split Shipment](../Guides-Info/Split-Shipment.md)

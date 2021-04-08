@@ -18,7 +18,7 @@ The transaction request initiated by merchant contains various transaction relat
 | `receiptEmail` | *string* |  | Email id to send the digital receipt.|
 | `paymentDescription` | *string* |  | Payment Description|
 | `cardVerificationAmount` | *string* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
-| `authorizationTypeIndicator` | *string* |  | This tag indicates a transaction that occurs when a merchant captures transaction information while the connectivity is interrupted or unavailable. This tag must be sent in the authorization/ purchase/ refund transaction once the connectivity is restored. **Valid Values:** *INCREMENTAL_AUTH*, *RESUBMIT_AUTH*, *DELAYED_CHARGE*, *REAUTH*, *NO_SHOW*, *TOP_UP*, *DEFERRED_AUTH*|
+| `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Valid Values:** *INCREMENTAL*, *RESUBMIT*, *DELAYED_CHARGE*, *REAUTH*, *NO_SHOW*, *TOP_UP*, *DEFERRED*|
 | `duplicateTransactionCheckingIndicator` | *boolean* | 5 | Determines if duplicate transactions should be checked.|
 | `primaryTransactionType` | *string* |  | Identifies the primary transaction type. **Valid Values:** *AUTH_ONLY*, *CHARGE_PREAUTH*, *CHARGE_SALE*, *CANCEL*, *REFUND*|
 | `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void). **Valid Values:** *VOIDED*, *TIMEOUT*, *EDIT_ERROR*, *MAC_VERIFICATION_ERROR*, MAC_SYNCH_ERROR, *ENCRYPTION_ERROR*, *SYSTEM_ERROR*, *SUSPECTED_FRAUD*|
