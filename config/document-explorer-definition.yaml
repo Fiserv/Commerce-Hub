@@ -37,10 +37,12 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
         open: true
         articles:
-        - title: In-App Payments
+        - title: In-App
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
-        - title: Web Payments
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web.md
+        - title: Web - RESTful API
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md
+        - title: Web - Hosted Payment Page
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
         open: true
@@ -57,6 +59,10 @@
       link: docs/Resources/API-Documents/Use-Our-APIs.md
       open: true
       sections:
+      - title: Authentication Header
+        link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Environments
+        link: docs/Resources/API-Documents/Environments.md
       - title: Payments
         open: false
         articles:
@@ -81,11 +87,6 @@
           link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
         - title: Tokenization
           link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-      articles:
-      - title: Authentication Header
-        link: docs/Resources/API-Documents/Authentication-Header.md
-      - title: Environments
-        link: docs/Resources/API-Documents/Environments.md
     - title: Guides
       open: false
       sections:
