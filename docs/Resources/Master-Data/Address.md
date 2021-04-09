@@ -35,7 +35,9 @@ Is an address where merchant will send the order.
 | `address` | *array* |  | Shipping [address](#subcomponent-address) details. |
 | `phone` | *array* |  | Shipping contact [phone](Customer-Details.md#subcomponent-phone) details. |
 
-##### Shipping Method
+### Shipping Method
+
+#### Object: shippingMethod
 
 | Value | Description |
 | ----- | ----------- |

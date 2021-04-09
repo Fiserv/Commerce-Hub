@@ -22,17 +22,19 @@ Apple Pay is available to cardholders at participating banks in supported countr
 
 Select an option below to see the integration steps
 
-### [Apple Pay on the Web: RESTful API](Apple-Pay-Web.md)
+### Apple Pay on the Web: RESTful API
 
-description stuffs
+If the merchant chooses to integrate Apple Pay on their website using [Commerce Hub RESTful API's](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md), then the merchant would need to setup their own server for secure communication with Apple Pay, which includes, creating a merchant identifier, creating a processing certificate, registering the merchant and creating a merchant identity certificate.
 
-### [Apple Pay on the Web: Hosted Payment Page](Apple-Pay-Web.md)
+### Apple Pay on the Web: Hosted Payment Page
 
-description stuffs
+If the merchant integrates Apple Pay on their website using [Commerce Hub Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md) then whenever the customers selects Apple Pay as a payment method on merchant’s website, they will be redirected to the Commerce Hub secured hosted payment page from where the transaction will be securely processed and merchant will get the final status of the transaction.
 
-### [Apple Pay Integration in App](Apple-Pay-App.md)
+### Apple Pay Integration in App
 
-description stuffs
+The merchants who wants to integrate Apple Pay in their App using [Commerce Hub RESTful API’s](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md) need to enable the Apple Pay capabilities in Xcode. Merchant also need to register a merchant ID and create a Payment Processing certificate, which is a cryptographic key that is used to securely send payment data to your server.
+
+---
 
 ## See Also
 

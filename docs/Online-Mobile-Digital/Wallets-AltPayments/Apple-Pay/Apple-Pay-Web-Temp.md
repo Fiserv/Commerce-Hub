@@ -11,7 +11,6 @@ First [create a merchant identifier](https://help.apple.com/developer-account/#/
 
 
 <!-- theme: warning -->
->
 > After Merchant Identifier is created, you will need us to generate the certificate for you using the Merchant Identifier. Please contact our Account Representative in order to get the certificate.
 
 ---
