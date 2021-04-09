@@ -4,7 +4,6 @@ tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-web-integration]
 
 # Apple Pay on the Web: Hosted Payment Page
 
-
 ## Step 1: Configure Apple Pay on the Web
 
 The Apple developer account will need to be configured with the merchant information to accept [Apple Pay on the web](https://help.apple.com/developer-account/#/dev1731126fb). This includes creating a merchant identifier, creating a processing certificate, registering the merchant and creating a merchant identity certificate.
@@ -27,8 +26,6 @@ The merchant can enhance the purchase experience from their website by creating 
 
 ---
 
-<!-- type: tab-end -->
-
 ## See Also
 
 - [API Explorer](url)
@@ -36,3 +33,5 @@ The merchant can enhance the purchase experience from their website by creating 
 - [Apple Pay Web RESTful Integration](Apple-Pay-App.md)
 - [Charges](../../../Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](../Google-Pay/Google-Pay.md)
+
+---
