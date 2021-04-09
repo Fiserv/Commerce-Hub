@@ -4,8 +4,6 @@
 
 The variable `sourceType` is used to determine the source of the transaction. Depending on the source the required variables change. 
 
-Add minimum required fields and (for additional please refer api explorer). Add for other pages as well.
-
 | sourceType | Description |
 | ----- | ----- |
 | PaymentCard | **Payment Cards** are issued by financial institutions and banks to the customers. Customers use the card to pay online or in person. *PaymentCard* is used to submit a [Payment Card](docs/Resources/Guides/Payment-Sources/Payment-Card.md), Gift Card, EMV and Track Data transaction to our application. |
