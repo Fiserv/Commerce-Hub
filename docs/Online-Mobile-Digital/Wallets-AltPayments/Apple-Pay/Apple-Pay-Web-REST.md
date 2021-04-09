@@ -59,6 +59,9 @@ title: Request
       "createToken":true,
       "tokenProvider":"RSA"
    }
+   "transactionInteraction":{
+      "eciIndicator": "SECURE_ECOM",
+   }
 }
 
 ```
