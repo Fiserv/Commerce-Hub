@@ -36,9 +36,17 @@ Google Pay is available to cardholders in supported countries. Refer to Google's
 
 Select an option below to see the integration steps
 
-- [Google Pay Integration on Web](Google-Pay-Web.md)
+### Google Pay on the Web: RESTful API
 
-- [Google Pay Integration in App](Google-Pay-App.md)
+If the merchant chooses to integrate Google Pay on their website using [Commerce Hub RESTful API's](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md), then the merchant would need to setup their own server for secure communication with Google Pay, which includes, define Google Pay API Version, request a payment token, define payment card networks & auth methods, describe allowed payment methods, add payment tag, determine readniness to pay, dd google pay button etc.
+
+### Apple Pay on the Web: Hosted Payment Page
+
+If the merchant integrates Google Pay on their website using [Commerce Hub Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md) then whenever the customers selects Google Pay as a payment method on merchant’s website, they will be redirected to the Commerce Hub secured hosted payment page from where the transaction will be securely processed and merchant will get the final status of the transaction.
+
+### Google Pay Integration in App
+
+The merchants who wants to [integrate Google Pay in their](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md) App using Commerce Hub RESTful API’s need to enable the Apple Pay capabilities in Xcode. Merchant also need to define Google Pay API Version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler etc.
 
 ## See Also
 

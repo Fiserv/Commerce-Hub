@@ -32,7 +32,7 @@ If the merchant integrates Apple Pay on their website using [Commerce Hub Hosted
 
 ### Apple Pay Integration in App
 
-The merchants who wants to integrate Apple Pay in their App using [Commerce Hub RESTful API’s](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md) need to enable the Apple Pay capabilities in Xcode. Merchant also need to register a merchant ID and create a Payment Processing certificate, which is a cryptographic key that is used to securely send payment data to your server.
+The merchants who wants to [integrate Apple Pay in their](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md) App using Commerce Hub RESTful API’s need to enable the Apple Pay capabilities in Xcode. Merchant also need to register a merchant ID and create a Payment Processing certificate, which is a cryptographic key that is used to securely send payment data to your server.
 
 ---
 
