@@ -76,6 +76,8 @@
           link: docs/Resources/API-Documents/Payments/Refund.md
         - title: Credit
           link: docs/Resources/API-Documents/Payments/Credit.md
+        - title: Forced Post
+          link: docs/Resources/API-Documents/Payments/Forced.md
         - title: Inquiry
           link: docs/Resources/API-Documents/Payments/Inquiry.md
       - title: Payments VAS
@@ -116,12 +118,33 @@
           link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
         - title: Network Token
           link: docs/Resources/Guides/Payment-Sources/Network-Token.md
+        - title: Payment Card
+          link: docs/Resources/Guides/Payment-Sources/Payment-Card.md
         - title: Private Label
           link: docs/Resources/Guides/Payment-Sources/Private-Label.md
         - title: TeleCheck
           link: docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
         - title: Split Tender
           link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
+      - title: Response Codes
+        open: false
+        articles:
+        - title: Bank/Issuer
+          link: docs/Resources/Guides/Response-Codes/Bank-Issuer.md
+        - title: Gateway
+          link: docs/Resources/Guides/Response-Codes/Gateway.md
+        - title: HTTP
+          link: docs/Resources/Guides/Response-Codes/HTTP.md
+      - title: Subsequent Authorization
+        link: docs/Resources/Guides/Authorizations/Authorization-Types.md
+        open: false
+        articles:
+        - title: Deferred
+          link: docs/Resources/Guides/Authorizations/Deferred-Auth.md
+        - title: Incremental
+          link: docs/Resources/Guides/Authorizations/Incremental-Auth.md
+        - title: Reauthorization
+          link: docs/Resources/Guides/Authorizations/Re-Auth.md
     - title: Master Data
       link:
       open: false
