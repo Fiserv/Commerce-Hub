@@ -1,122 +1,148 @@
-productPage:
-  - hero:
-    - image: /assests/image/hero.png #???
-    - descrption: Hero description
-  - journey Cards:
-      - journeyCard:
-        - title: Learn # => learn 
-        - description: 'Use our AI-powered portal to quickly discover the right integration for your next app project.
-        
-        Experiment with our API’s in our intelligent API Explorer. 
-        
-        Browse sample code and follow our guided tutorials to learn best practices for integration.'
-        - link: 
-          - type: markdown
-          - uri: /docs/learn.md
-        - contextualNavigationCards: #cnav card
-          - contextualNavigationCard:
-            - title: Getting Started
-            - description: Get Started with Developer Portal.
-            - link: 
-              - type: markdown
-              - uri: /docs/getting-started.md
-          - contextualNavigationCard:
-            - title: Tutorials
-            - description: Learn how to integrate with Developer Portal.
-            - link: 
-              - type: markdown
-              - uri: /docs/tutorials.md
-          - contextualNavigationCard:
-            - title: Video
-            - description: Watch how to create more unified commerce
-            - link: 
-              - type: externalLink # [externalLink | internalLink | markdown]
-              - uri: https://www.youtube.com/watch?v=X8jKx8pPjrU
-      - journeyCard:
-        - title: Build
-        - description: 'Build on top of our sample code to get your app coded in minutes.
-        
-        Our lightweight SDK’s and plug-in’s might be the fastest path to completing your app.'
-        - link: 
-          - type: markdown
-          - uri: /docs/build.md
-        - contextualNavigationCards:
-          - contextualNavigationCard:
-            - title: API Reference
-            - description: Explore all our APIs
-            - link: 
-              - type: internalLink
-              - uri: /docs/apis
-          - contextualNavigationCard:
-            - title: SDKs
-            - description: Use SDKs to accelarate your development
-            - cardType: reference | page
-            - link: 
-              - type: markdown
-              - uri: /docs/sdks.md # => http://dev.fiserv.com/docs/api
-          - contextualNavigationCard:
-            - title: Sample Code
-            - description: Free just like Costco samples & no limit
-            - cardType: reference | page
-            - link: 
-              - type: markdown
-              - uri: /docs/samples.md # => http://dev.fiserv.com/docs/api
-      - journeyCard:
-        - title: Test
-        - description: 'Flex your app end-to-end in our full-featured Sandbox.
-        
-        Incorporate Sandbox testing into your CI pipeline.
-        
-        Use our intelligent Test Tracker to discover parts of your app that need more attention. 
-        
-        *Requires registration'
-        - link: 
-          - type: markdown
-          - uri: /docs/test.md
-        - contextualNavigationCards: #cnav card
-          - contextualNavigationCard:
-            - title: Sandbox
-            - description: Use our sandbox to test your app end-to-end
-            - link: 
-              - type: internalLink
-              - uri: /sandbox
-          - contextualNavigationCard:
-            - title: Score Card
-            - description: See how your app is doing
-            - link: 
-              - type: internalLink
-              - uri: /scorecard
-          - contextualNavigationCard:
-            - title: Unit Testing
-            - description: Test with confidence
-            - link: 
-              - type: internalLink # [externalLink | internalLink | markdown]
-              - uri: /testing
-      - journeyCard:
-        - title: Deploy
-        - description: 'When your app is ready for prime time, submit it for automated certification. 
-        Your certified app is now ready to be deployed to Production. 
-        Congratulations!! 
-        *Requires registration'
-        - link: 
-          - type: markdown
-          - uri: /docs/deploy.md
-        - contextualNavigationCards:
-          - contextualNavigationCard:
-            - title: Certify
-            - description: Get your stamp of approval from us
-            - link: 
-              - type: markdown
-              - uri: /docs/certify.md
-          - contextualNavigationCard:
-            - title: Deploy
-            - description: Ready, set, Deploy!
-            - link: 
-              - type: internalLink
-              - uri: /docs/api # => http://dev.fiserv.com/docs/api
-          - contextualNavigationCard:
-            - title: Operate
-            - description: Setup montioring and alerting
-            - link: 
-              - type: internalLink
-              - uri: /docs/api # => http://dev.fiserv.com/docs/api
+header:
+  productName: Commerce Hub
+  productionDescription: >
+        Built to deliver innovation through simple, fast integrations, the Commerce Hub is 
+        the most powerful omnichannel platform. With developer-friendly, flexible 
+        communication standards, unified APIs, and pre-certified integrations the Commerce 
+        Hub reduces development time and accelerates speed to market.
+
+        A true single entry point and intelligent orchestration layer means you now have 
+        access to the latest, most popular commerce experiences through your existing 
+        infrastructure. With less ongoing maintenance and fewer operational costs, you can 
+        focus on creating new ways for consumers to discover and interact with you.
+  image: 
+    link: "/assets/images/commercehub.jpg"
+    altText: CommerceHub
+steps:  
+  learnSteps:
+    - title: Learn
+      description: >
+        Quickly find the right integration, experiment with our APIs, and discover guided 
+        tutorials for your next project.
+    - title:
+      description:
+      link:
+    - title:
+      description:
+      link:
+  buildSteps:
+    - title: Build
+      description: >
+        Leverage sample code, comprehensive SDKs, plug-ins, and sandbox testing to 
+        complete your project fast.
+      link:
+    - title:
+      description:
+      link:
+    - title:
+      description:
+      link:
+  validateSteps:
+    - title: Validate
+      description: >
+        Identify parts of your project that need attention and solutions end-to-end in 
+        our advanced Sandbox.
+      link:
+    - title:
+      description:
+      link:
+    - title:
+      description:
+      link:
+  deploySteps:
+    - title: deploy
+      description: >
+        Submit your project for automated certification and deploy to Production.
+      link:
+    - title:
+      description:
+      link:
+    - title:
+      description:
+      link:
+featuredFeatures:
+  - title: Tokenization
+    description: >
+      Remove sensitive customer data from your environment and reduce PCI compliance 
+      scope. Transaction data is protected by a randomly-generated identifier known as a 
+      "token".
+    tags: ["", ""]
+    bullets:
+      bullet1: Increase payment security and reduce risk
+      bullet2: No need to store personal customer information
+      bullet3: Less operational costs
+      bullet4: Improved customer experience
+    links:
+      link1: "***insert links***"
+  - title: Apple Pay
+    description: >
+      One of the most popular mobile payment and digital wallets. Customers can make 
+      payments in-store, mobile or online. To leverage, customers use an Apple devices 
+      - iPhone, Apple Watch, iPad, Mac, etc.
+    tags: ["", ""]
+    bullets:
+      bullet1: Faster acceptance than credit or debit
+      bullet2: Biometric security
+      bullet3: Global offering and acceptance
+    links:
+      link1: "***insert links***"
+  - title: API Integration
+    description: >
+      Leverage your existing infastructure and UI to accept payments online, in-store or on 
+      mobile devices.
+    tags: ["", ""]
+    bullets:
+      bullet1: Modern technology stack
+      bullet2: Automated backoffice
+      bullet3: Fast testing, certification and implementation
+    links:
+      link1: "***insert links***"
+benefits:
+  - title: Transform Customer Experiences
+    description: >
+      Pre-certified integrations to value added solutions and third-party providers 
+      that power next-generation commerce experiences.
+  - title: Accelerate Revenue
+    description: Intellegent orchestration layer that reduces code complexity and operational costs.
+  - title: Optimize Commerce
+    description: Backoffice automation with a modern set of tools and APIs.   
+featuredAPIs:
+  - name: API name1
+    description: 1 description
+    type: POST
+    route: /payments
+    language: Curl
+    link: link to API Explorer
+  - name: API name2
+    description: 1 description
+    type: POST
+    route: /orders
+    language: Curl
+    link: link to API Explorer 
+  - name: API name3
+    description: 1 description
+    type: POST
+    route: /cancel
+    language: Curl
+    link: link to API Explorer  
+useCases:
+  - title: Contactless Payments
+    subtitle: Apple Pay
+    description: >
+      Accept contactless, touchless payments Customers can One of the most popular 
+      mobile payment and digital wallets. Customers can make payments in-store, mobile 
+      or online. To leverage, customers use an Apple devices - iPhone, Apple Watch, iPad, 
+      Mac, etc.
+    bullets:
+      bullet1: Faster acceptance than credit or debit
+      bullet2: Biometric security
+      bullet3: Global offering and acceptance
+    link:
+  - title:
+    subtitle:
+    description:
+    bullets:
+    bullet1: 
+    bullet2: 
+    bullet3: 
+    link:
