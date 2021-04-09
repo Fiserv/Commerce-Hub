@@ -17,6 +17,6 @@ Field requirement authorizationTypeIndicator
 
 ## See Also
 - [API Explorer](url)
-- [Reauthorization](Re-Auth.md)
+- [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 
 ---

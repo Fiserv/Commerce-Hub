@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, address-verifficatio
 
 ## Overview
 
-**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](../../Master-Data/Address.md#billing-address). [AVS](../../FAQs-Glossary/Glossary.md#avs) is widely used Fraud Prevention measure for the transaction where the card holder is not present.
+**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address). [AVS](?path=docs/Resources/FAQs-Glossary/Glossary.md#avs) is widely used Fraud Prevention measure for the transaction where the card holder is not present.
 
 #### Perform AVS Check
 
@@ -27,7 +27,7 @@ The Merchant can get the cardholder's address verification done by either submit
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* |  | Customer first name. |
 | `lastName` | *string* |  | Customer last name. |
-| `address` | *component* |  | Billing [address](../../Master-Data/Address.md#address) details. |
+| `address` | *component* |  | Billing [address](?path=docs/Resources/Master-Data/Address.md#address) details. |
 
 ---
 
@@ -319,6 +319,6 @@ Variable | Type| Maximum Length | Description/Values|
 ## See Also
 
 - [API Explorer](url)
-- [Address](../../Master-Data/Address.md)
-- [Charge](../../API-Documents/Payments/Charges.md)
-- [Verification](../../API-Documents/Payments_VAS/Verification.md)
+- [Address](?path=docs/Resources/Master-Data/Address.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

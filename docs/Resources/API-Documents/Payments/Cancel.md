@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel]
 If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` or `orderId`.
 
 <!-- theme: warning -->
-> A cancel request can be initiated against an [authorization](Charges.md) that has not been [captured](Capture.md), or a [sale](Charges.md) that has not been settled (batched), otherwise submit a [refund](refund.md) request.
+> A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
 
 ---
 
@@ -64,7 +64,7 @@ Variable | Type| Maximum Length | Description/Values|
 ---
 
 ## Endpoints
-Use the below endpoints based on the [transaction type](../../Guides/Transaction-Types.md).
+Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/cancel`
@@ -112,7 +112,7 @@ title: Response
 
 <!-- theme: info -->
 
-> See [Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
@@ -170,7 +170,7 @@ title: Response
 
 ## See Also
 - [API Explorer](url)
-- [Charge](Charges.md)
-- [Capture](Capture.md)
-- [Refund](Refund.md)
-- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)

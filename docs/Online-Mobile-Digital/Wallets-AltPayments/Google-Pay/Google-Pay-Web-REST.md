@@ -43,8 +43,6 @@ title: Response
 
 ##### Example of a Charge (201: Created) Response.
 
-<!-- theme: info -->
-> See [Error Responses](url) for additional examples.
 ```json
 {
    "gatewayResponse":{
@@ -97,7 +95,7 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [Google Pay App Integration](Google-Pay-App.md)
-- [Charges](../../../Resources/API-Documents/Payments/Charges.md)
-- [Apple Pay](../Apple-Pay/Apple-Pay.md)
+- [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 

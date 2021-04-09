@@ -39,6 +39,4 @@ The merchants who wants to [integrate Apple Pay in their](?path=docs/Online-Mobi
 ## See Also
 
 - [API Explorer](url)
-- [Apple Pay App Integration](Apple-Pay-App.md)
-- [Apple Pay Web Integration](Apple-Pay-Web.md)
-- [Google Pay](../Google-Pay/Google-Pay.md)
+- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)

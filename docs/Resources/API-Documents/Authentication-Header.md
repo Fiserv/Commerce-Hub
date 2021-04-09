@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, hash, header, authen
 
 ## Overview
 
-To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [Header](Use-Our-APIs.md).
+To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [Header](?path=docs/Resources/API-Documents/Use-Our-APIs.md).
 
 #### Details
 
@@ -92,5 +92,5 @@ function b64encode (input) {
 ## See Also
 
 - [API Explorer](url)
-- [Environments](Environments.md)
-- [Use Our API](Use-Our-APIs.md)
+- [Environments](?path=docs/Resources/API-Documents/Environments.md)
+- [Use Our API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)

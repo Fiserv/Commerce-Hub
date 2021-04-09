@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 ## Overview
 
-To retrieve the current state of any previous [Charge](Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
+To retrieve the current state of any previous [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
 
 ---
 
@@ -18,7 +18,7 @@ Get transaction inquiry request can be initiated by sending the request to the a
 
 ## Endpoints
 
-Use the below endpoints based on the [transaction type](../../Guides/Transaction-Types.md).
+Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: info -->
 >**GET** `/payments/v1/charges/{transactionId}/inquiry`
@@ -33,7 +33,7 @@ Use the below endpoints based on the [transaction type](../../Guides/Transaction
 
 <!-- theme: info -->
 
-> See [Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
@@ -99,7 +99,7 @@ Use the below endpoints based on the [transaction type](../../Guides/Transaction
 ## See Also
 
 - [API Explorer](url)
-- [Charge](Charges.md)
-- [Transaction Details](.../../Master-Data/Transaction-Details.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 

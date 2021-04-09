@@ -4,7 +4,7 @@
 A Credit or Open Credit is a refund to a card without an original authorization on the Commerce Hub APIs. The Credit payload can be used to perform a partial or full credit without a transactionID or orderID.
 
 <!-- theme: danger -->
->**Note:** This should only be performed if a prior authorization was performed on a different API, merchant account, or device; otherwise utilize [refund](Refund.md).
+>**Note:** This should only be performed if a prior authorization was performed on a different API, merchant account, or device; otherwise utilize [refund](?path=docs/Resources/API-Documents/Payments/Refund.md).
 
 ---
 
@@ -14,7 +14,7 @@ A Credit or Open Credit is a refund to a card without an original authorization 
 
 | Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Master-Data/Currency-Code.md).|
 
 #### Component: source

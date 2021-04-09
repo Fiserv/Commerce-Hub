@@ -317,4 +317,4 @@ title: Response
 
 ## See Also
 - [API Explorer](url)
-- [Charges](../Payments/Charges.md)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)

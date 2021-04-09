@@ -95,7 +95,7 @@ title: Response
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](../../Guides/Payment-Sources/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 
 
 ### Payload Example
@@ -164,7 +164,7 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [AVS](../../Guides/Fraud/Address-Verification.md)
-- [Charge](../Payments/Charges.md)
-- [CVV](../../Guides/Fraud/Security-Code.md)
-- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
+- [Address Verification Service](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Security Code](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)

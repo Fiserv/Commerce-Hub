@@ -20,7 +20,7 @@ Variable | Type| Maximum Length | Description/Values|
 | `brandProductId` | *string* |  | Category within the card brand. |
 | `cardFunction` | *string* |  | Identifies the type of card as CREDIT or DEBIT. |
 | `commercialCard` | *string* |  | Identifies if the card is a CORPORATE, COMMERCIAL or NON_CORPORATE card. |
-| `issuerCountry` | *string* |  | Card Issuer Country Two-letter [Country Code](../../Master-Data/Country-Code.md). |
+| `issuerCountry` | *string* |  | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md). |
 | `issuerName` | *string* |  | Issuing bank name. |
 
 ## Endpoint
@@ -35,7 +35,7 @@ Variable | Type| Maximum Length | Description/Values|
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer Payment [source type](../../Guides/Payment-Sources/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 
 #### Payload Example
@@ -100,7 +100,7 @@ title: Response
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer Payment [source type](../../Guides/Payment-Sources/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 
 
 #### Payload Example
@@ -159,4 +159,4 @@ title: Response
 
 ## See Also
 - [API Explorer](url)
-- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)

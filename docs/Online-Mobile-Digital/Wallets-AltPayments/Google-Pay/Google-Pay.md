@@ -51,6 +51,7 @@ The merchants who wants to [integrate Google Pay in their](?path=docs/Online-Mob
 ## See Also
 
 - [API Explorer](url)
-- [Google Pay App Integration](Google-Pay-App.md)
-- [Google Pay Web Integration](Google-Pay-Web.md)
-- [Apple Pay](../Apple-Pay/Apple-Pay.md)
+- [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
+- [Google Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
+- [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)

@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 ## Overview
 
-A reauthorization with a [token](../API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](Split-Shipment.md).
+A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md).
 
 <!-- theme: info -->
 > See an account representative for more information on issuer hold times.
@@ -19,14 +19,14 @@ A reauthorization with a [token](../API-Documents/Payments_VAS/Payment-Token.md)
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../Master-Data/Currency-Code.md).|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 #### Component: transactionDetails
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
 | `primaryTransactionId` | *string* |  | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 
@@ -73,7 +73,7 @@ title: Response
 ##### Example of a Reauthorization (201: Created) Response.
 
 <!-- theme: info -->
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
   "gatewayResponse": {
@@ -139,10 +139,10 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [Capture](Capture.md)
-- [Cancel](Cancel.md)
-- [Deferred Auth](docs/Resources/Guides/Authorizations/Deferred-Auth.md)
-- [Incremental Auth](Incremental-Auth.md)
-- [Refund](Refund.md)
-- [Split Shipment](../Guides-Info/Split-Shipment.md)
-- [Transaction Details](../Master-Data/Transaction-Details.md)
+- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Deferred Auth](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md)
+- [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
+- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)

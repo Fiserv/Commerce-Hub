@@ -28,7 +28,7 @@ Commerce Hub RESTful API has a consistent Header structure based on a set of Par
 | `Timestamp` | *integer* |  | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
 | `Accept-Language` | *string* |  | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
 | `Auth-Token-Type`| *string* |  | Indicates Authorization type HMAC, JWT, or AccessToken.|
-| `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the [Authentication Header](Authentication-Header.md) article. |
+| `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md) article. |
 | `Message-Digest` | *string* |  | Needed only from customer browser or app to the API in Hosted Payment Page requests. |
 
 #### Sample Header
@@ -47,7 +47,7 @@ header: {
 
 ## Request Body
 
-The body of the transaction request differs based on the transaction being initiated. Below is the sample body for a [charge](../Transactions/Charges.md) request.
+The body of the transaction request differs based on the transaction being initiated. Below is the sample body for a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) request.
 
 #### Request Body Example
 
@@ -118,5 +118,5 @@ A standard API call to execute a charge transaction might look like this:
 ## See Also
 
 - [API Explorer](url)
-- [Authentication Header](Authentication-Header.md)
-- [Enviroments](Environments.md)
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+- [Enviroments](?path=docs/Resources/API-Documents/Environments.md)
