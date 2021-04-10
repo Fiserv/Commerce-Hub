@@ -1,0 +1,37 @@
+{
+    "topLevel": {
+        "topLevelType": "TopLevelCustom",
+        "info": {
+            "title": "This is the title",
+            "description": "This is the description.",
+            "version": "1.0.0"
+        },
+        "servers": [
+            {
+                "url": "https://api.fiservapps.com",
+                "description": "Endpoint for APIs."
+            }
+        ],
+        "paths": [
+            "payments-charges-cancel.yaml",
+            "payments-charges-capture.yaml",
+            "payments-charges-refund.yaml",
+            "payments-charges.yaml",
+            "payments-credits.yaml",
+            "payments-orders-cancel.yaml",
+            "payments-orders-capture.yaml",
+            "payments-orders-refund.yaml",
+            "transaction-inquiry.yaml",
+            "order-inquiry.yaml",
+            "payments-vas-accounts-verification.yaml",
+            "payments-vas-security-credentials.yaml",
+            "payments-vas-tokenize.yaml",
+            "payments-vas-accounts-information.yaml"
+        ]
+    },
+    "yamlVersion": "v1",
+    "featureSet": {
+        "yamlType": "ExternalYaml", 
+        "additionalFeatures": [ %v ]
+    }
+}
