@@ -43,36 +43,36 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamic-de
 
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123"
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true
-  },
-  "dynamicDescriptors": {
-	  "mcc": "4457",
-	  "merchantName": "Mywebsite.com",
-	  "customerServiceNumber": "1231231234",
-	  "serviceEntitlement": "67893827513",
-	  "address": {
-	  	"street": "Main Street",
-	  	"houseNumberOrName": "123",
-	  	"city": "Main Street",
-	  	"stateOrProvince": "GA",
-	  	"postalCode": "30303",
-	  	"country": "US"
-  	}
-  }
+   "amount":{
+      "total":"12.04",
+      "currency":"USD"
+   },
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123"
+      }
+   },
+   "transactionDetails":{
+      "captureFlag":true
+   },
+   "dynamicDescriptors":{
+      "mcc":"4457",
+      "merchantName":"Mywebsite.com",
+      "customerServiceNumber":"1231231234",
+      "serviceEntitlement":"67893827513",
+      "address":{
+         "street":"Main Street",
+         "houseNumberOrName":"123",
+         "city":"Main Street",
+         "stateOrProvince":"GA",
+         "postalCode":"30303",
+         "country":"US"
+      }
+   }
 }
 ```
 
