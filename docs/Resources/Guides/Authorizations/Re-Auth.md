@@ -145,3 +145,5 @@ title: Response
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+
+---

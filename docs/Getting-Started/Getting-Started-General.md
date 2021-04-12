@@ -12,32 +12,32 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 
 Online, mobile, and digital transactions are considered Card Not Present (CNP) where the  customer does not physically present their payment source at the time of the transaction. Examples of CNP transactions include; online payments, in-app payments, and MOTO transactions.
 
-- [Integration](Getting-Started-Online.md)
+- [Integration](?path=docs/Getting-Started/Getting-Started-Online.md)
 - [API Explorer](url)
 
 #### In-Person
 
 In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Examples of In-person transactions include; manual entry, track data and EMV.
 
-- [Integration](Getting-Started-InPerson.md)
+- [Integration](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 - [API Explorer](url)
 
 ---
 
 ## Benefits
 
-- [Acount Verification](../Resources/API-Documents/Payments_VAS/Verification.md)
-- [Information Lookup](../Resources/API-Documents/Payments_VAS/Information-Lookup.md)
-- [Fraud Prevention](../Resources/Guides/Fraud/Fraud-Settings.md)
-- [Tokenization](../Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Acount Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
+- [Fraud Prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---
 
 ## Use Cases
 
-- [Apple Pay](../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [3-D Secure](../Online-Mobile-Digital/3D-Secure/3DSecure.md)
-- [Split Shipment](../Resources/Guides/Split-Shipment.md)
-- [Stored Credentials](../Resources/Guides/Stored-Credentials.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
+- [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 
 ---

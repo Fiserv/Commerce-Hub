@@ -69,7 +69,7 @@ The body of the transaction request differs based on the transaction being initi
   "transactionDetails": {
     "captureFlag": true
   }
-},
+}
 ```
 
 ---
@@ -109,7 +109,7 @@ A standard API call to execute a charge transaction might look like this:
       "captureFlag": true
     }
   }
-},
+}
 
 ```
 
