@@ -27,17 +27,17 @@ Situations in which this could be implemented include:
 
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "transactionDetails": {
-    "captureFlag": true
-  },
-  "splitShipment": {
-    "totalCount": 5
-    "finalShipment": true
-  }
+   "amount":{
+      "total":"12.04",
+      "currency":"USD"
+   },
+   "transactionDetails":{
+      "captureFlag":true
+   },
+   "splitShipment":{
+      "totalCount":5,
+      "finalShipment":true
+   }
 }
 ```
 

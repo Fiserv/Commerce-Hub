@@ -21,28 +21,28 @@ For recurring transactions if merchant is allowed to initiate a transactions on 
 
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123"
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true
-  },
-  "storedCredentials": {
-    "scheduled": true,
-    "initiator": "merchant",
-    "sequence": "first",
-    "schemeReferenceTransactionId": "54231235467"
-  }
+   "amount":{
+      "total":"12.04",
+      "currency":"USD"
+   },
+   "paymentSource":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123"
+      }
+   },
+   "transactionDetails":{
+      "captureFlag":true
+   },
+   "storedCredentials":{
+      "scheduled":true,
+      "initiator":"merchant",
+      "sequence":"first",
+      "schemeReferenceTransactionId":"54231235467"
+   }
 }
 ```
 

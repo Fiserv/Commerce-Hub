@@ -70,20 +70,21 @@ title: Error Response
 
 ```json
 {
-  "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-  "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-  "responseType": "BadRequest",
-  "error": {
-    "code": "INVALID_INPUT",
-    "message": "Invalid request input. Please see details below.",
-    "details": [
-      {
-        "field": "payloadObjectType",
-        "message": "Payload object type missing."
-      }
-    ]
-  }
+   "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+   "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+   "responseType":"BadRequest",
+   "error":{
+      "code":"INVALID_INPUT",
+      "message":"Invalid request input. Please see details below.",
+      "details":[
+         {
+            "field":"payloadObjectType",
+            "message":"Payload object type missing."
+         }
+      ]
+   }
 }
+
 ```
 <!-- type: tab-end -->
 
