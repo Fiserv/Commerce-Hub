@@ -21,7 +21,7 @@ The following response codes indicate invalid data in the transaction. In these 
 
 | Response Code | Description |
 | ----- | -------------- |
-| 07 | Terminal Restriction: Try again later 
+| 07 | Terminal Restriction: Try again later |
 | 22 | Invalid Credit Card Number |
 | 25 | Invalid Expiry Date |
 | 26 | Invalid Amount |
