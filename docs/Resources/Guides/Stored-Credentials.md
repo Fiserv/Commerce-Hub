@@ -30,26 +30,29 @@ The following variables are required in the initial `PaymentToken` request and s
 ```json
 {
    "amount":{
-      "total":"12.04",
-      "currency":"USD"
+      "total": "12.04",
+      "currency": "USD"
    },
    "paymentSource":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123"
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "securityCode": "123"
       }
    },
    "transactionDetails":{
-      "captureFlag":true
+      "captureFlag": false,
+      "createToken": true,
+      "tokenProvider": "RSA",
+      "authorizationTypeIndicator": "INITIAL"
    },
    "storedCredentials":{
-      "scheduled":true,
-      "initiator":"merchant",
-      "sequence":"first",
-      "schemeReferenceTransactionId":"54231235467"
+      "scheduled": true,
+      "initiator": "CARD_HOLDER",
+      "sequence": "FIRST",
+      "schemeReferenceTransactionId": "54231235467"
    }
 }
 ```
