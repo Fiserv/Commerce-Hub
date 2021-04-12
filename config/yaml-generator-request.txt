@@ -2,7 +2,7 @@
     "topLevel": {
         "topLevelType": "TopLevelCustom",
         "info": {
-            "title": "This is the title",
+            "title": "API Explorer",
             "description": "This is the description.",
             "version": "1.0.0"
         },
