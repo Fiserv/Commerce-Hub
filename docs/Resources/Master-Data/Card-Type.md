@@ -20,6 +20,6 @@ Our payments solutions enable you to integrate them into a seamless customer exp
 ## See Also
 
 - [API Explorer](url)
-- [Source Type](../Guides/Payment-Sources/Source-Type.md)
+- [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

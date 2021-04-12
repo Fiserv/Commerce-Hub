@@ -144,5 +144,5 @@ The following response codes indicate that a certain threshold is exceeded withi
 ## See Also
 
 - [API Explorer](url)
-- [Gateway Response Code](Gateway.md)
-- [HTTP Response Code](HTTP.md)
+- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)

@@ -10,11 +10,11 @@ The Commerce Hub API allows a merchant to create, inquire, and finalize payment 
 
 ### Primary Transactions
 
-Primary transactions include; [charge](../API-Documents/Payments/Charges.md), [verification](../API-Documents/Payments_VAS/Verification.md) and [information lookup](../API-Documents/Payments_VAS/Information-Lookup.md) requests that are submitted without reference to a prior transaction.
+Primary transactions include; [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) and [information lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) requests that are submitted without reference to a prior transaction.
 
 ### Secondary Transactions
 
-Secondary Transactions include; [refund](../API-Documents/Payments/Refund.md), [void](../API-Documents/Payments/Cancel.md), [capture](../API-Documents/Payments/Capture.md), and [inquiry](../API-Documents/Payments/Inquiry.md) using the `transactionId` or `orderId` from a prior request.
+Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [void](?path=docs/Resources/API-Documents/Payments/Cancel.md), [capture](?path=docs/Resources/API-Documents/Payments/Capture.md), and [inquiry](?path=ocs/Resources/API-Documents/Payments/Inquiry.md) using the `transactionId` or `orderId` from a prior request.
 
 - 'transactionID`: Transaction identifier returned in the *transactionProcessingDetails* of the *gatewayResponse*.
 

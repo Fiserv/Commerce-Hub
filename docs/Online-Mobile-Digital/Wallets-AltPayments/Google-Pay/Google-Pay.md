@@ -8,7 +8,7 @@ tags: [carat, commerce-hub, google-pay, wallet]
 
 Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. 
 
-
+<!--
 **User Action:** The buyer taps the "Google Pay" button, and then selects a payment method and shipping address.
 
 #### If the purchase originates from a third-party site:
@@ -26,7 +26,7 @@ Google Pay is a digital wallet platform and online payment system developed by G
 3. Google returns response with encrypted payment credentials signed with the Commerce Hub key to merchant server.
 4. The merchant sends the encrypted payload to Commerce Hub.
 5. Commerce Hub decrypts and validates the payload and process the transaction and respond back to merchant with either an approval or decline response.
-
+-->
 
 Google Pay is available to cardholders in supported countries. Refer to Google's documentation to learn about [supported countries](https://support.google.com/pay/answer/9023773).
 
@@ -36,17 +36,50 @@ Google Pay is available to cardholders in supported countries. Refer to Google's
 
 Select an option below to see the integration steps
 
-### Google Pay on the Web: RESTful API
+### [Google Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
 
-If the merchant chooses to integrate Google Pay on their website using [Commerce Hub RESTful API's](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md), then the merchant would need to setup their own server for secure communication with Google Pay, which includes, define Google Pay API Version, request a payment token, define payment card networks & auth methods, describe allowed payment methods, add payment tag, determine readniness to pay, dd google pay button etc.
+Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Google Pay. The merchants would need to setup their own server for secure communication with Google Pay. The merchant will host the payment processing on their server and has full control over the look and feel.
 
-### Apple Pay on the Web: Hosted Payment Page
+<!-- theme: warning -->
+> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
-If the merchant integrates Google Pay on their website using [Commerce Hub Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md) then whenever the customers selects Google Pay as a payment method on merchant’s website, they will be redirected to the Commerce Hub secured hosted payment page from where the transaction will be securely processed and merchant will get the final status of the transaction.
+#### Transaction Flow
 
-### Google Pay Integration in App
+1. Customer selects checkout from the merchant's website.
+2. Customer is presented with the merchant's payment form.
+3. Customer selects Google Pay and is redirected to the Google Pay payment form.
+4. Customer completes the google pay form and is redirected to the merchant's website.
+5. Customer selects to complete the transaction.
+6. Merchant submits the encrypted google Pay payload to Commerce Hub.
+7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
-The merchants who wants to [integrate Google Pay in their](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md) App using Commerce Hub RESTful API’s need to enable the Apple Pay capabilities in Xcode. Merchant also need to define Google Pay API Version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler etc.
+### [Google Pay on the Web: Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
+
+Commerce Hub's Hosted Payment Page integration removes the PCI Complaince requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
+
+#### Transaction Flow
+
+1. Customer selects checkout from the merchant's website.
+2. Customer is presented with the Commerce Hub's secure Hosted Payment Page.
+3. Customer selects Google Pay and is redirected to the Google Pay payment form.
+4. Customer completes the Google pay form and is redirected to the Hosted Payment Page.
+5. Customer selects to complete the transaction.
+6. Hosted Payment Page submits the encrypted Google Pay payload to Commerce Hub.
+7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
+
+### [Google Pay Integration in App](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
+
+Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Google Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
+
+#### Transaction Flow
+
+1. Customer selects checkout from the merchant's App.
+2. Customer is presented with the merchant's payment form.
+3. The App calls the Google Pay framework to obtain the encrypted wallet data.
+4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
+5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+
+---
 
 ## See Also
 

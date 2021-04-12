@@ -12,7 +12,7 @@ Amount is broken into two arrays, `amount` and `amountComponents`.
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#component-amountComponents) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](Currency-Code.md).|
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 #### Component: amountComponents
 
@@ -27,13 +27,13 @@ Amount is broken into two arrays, `amount` and `amountComponents`.
 | `shippingAmount` | *number* | 12 | Shipping amount included in a transaction. |
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
 | `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount. |
-| `convenienceFee` | *number* | 12 | Optional [convenience fee](../Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
+| `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 
 ---
 
 ## See Also
 
 - [API Explorer](url)
-- [Currency Codes](Currency-Code.md)
+- [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
 
 ---

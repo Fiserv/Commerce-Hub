@@ -10,11 +10,11 @@ A merchant that charges a convenience fee must ensure that the fee is:
 - The requirement for an alternative payment channel means that MOTO and e-commerce merchants whose payment channels are exclusively non face-to-face may not impose a convenience fee.
 - Disclosed prior to the completion of the transaction and the cardholder is given the opportunity to cancel out the transaction.
 - A flat percentage rate or a fixed amount, regardless of the value of the payment due.
-- Applicable to all [payment sources](Payment-Sources/Source-Type.md) accepted in the alternative payment channel.
+- Applicable to all [payment sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) accepted in the alternative payment channel.
 - Included as a part of the total amount of the transaction.
 
 <!-- theme : warning -->
-> A convenience fee is different than a [surcharge](../FAQs-Glossary/Glossary.md#surcharge). A surcharge is the ability to charge extra just for the benefit of using a credit card while a convenience fee is for a specific use, such as taxes or tuitions, or payment through alternative channels, such as by phone or online.
+> A convenience fee is different than a [surcharge](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge). A surcharge is the ability to charge extra just for the benefit of using a credit card while a convenience fee is for a specific use, such as taxes or tuitions, or payment through alternative channels, such as by phone or online.
 
 ---
 
@@ -31,7 +31,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ## Minimum Requirement
 
-The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](../Master-Data/Amount-Components.md) for more details.
+The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
 
 ---
 
@@ -148,6 +148,6 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [Amount Components](../Master-Data/Amount-Components.md)
-- [Charges](../API-Documents/Payments/Charges.md)
+- [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 

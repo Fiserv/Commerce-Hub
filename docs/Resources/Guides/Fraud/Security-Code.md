@@ -23,19 +23,19 @@ For the transactions where security check id required, merchant needs to pass th
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](../../Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](../../Master-Data/Currency-Code.md).|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 
 #### Component: Source
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](../Payment-Sources/Source-Type.md). |
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 |`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
 |`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
-|`securityCode` | *string* | 3| The card [security code](../../FAQs-Glossary/Glossary.md#security-code).|
+|`securityCode` | *string* | 3| The card [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code).|
 |`securityCodeIndicator` | *string* | | Indicates how the security code is passed.|
 
 ---
@@ -249,8 +249,7 @@ The result of checking the cardholder’s entered security code against the Issu
 
 
 - [API Explorer](url)
-- [Address](../../Master-Data/Address.md)
-- [Charge](../../API-Documents/Payments/Charges.md)
-- [Payment Card](../Payment-Sources/Source-Type.md)
-- [Verification](../../API-Documents/Payments_VAS/Verification.md)
-
+- [Address](?path=docs/Resources/Master-Data/Address.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+- [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

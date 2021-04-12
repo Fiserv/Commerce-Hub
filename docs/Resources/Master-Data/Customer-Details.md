@@ -34,4 +34,4 @@ The transaction request may contain the `customerDetails` consisting of customer
 ## See Also
 
 - [API Explorer](url)
-- [Customer Address](Address.md)
+- [Customer Address](?path=docs/Resources/Master-Data/Address.md)
