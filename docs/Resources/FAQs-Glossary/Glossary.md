@@ -4,8 +4,8 @@ tags: [carat, commerce-hub, glossary, acquiring-bank, aggregator, authorization,
 
 # Glossary
 
-## Acquirer/Acquiring Bank
-A bank or financial institution that processes credit or debit card transactions on behalf of a merchant. The acquirer sends the merchant's transactions to the customer's issuing bank through the card network.
+## Acquirer
+The acquirer or acquiring bank is the bank or financial institution that processes credit or debit card transactions on behalf of a merchant. The acquirer sends the merchant's transactions to the customer's issuing bank through the card network.
 
 ## Aggregator
 Aggregators are defined as third party billers that bill for services/goods rendered by another entity. The terms Payment Facilitator, Payment Service Provider, and Aggregator are interchangeable terms for the same functionality.
@@ -26,13 +26,12 @@ The process of charging the customer's account for a previously authorized trans
 Payment networks that determine where a card can be used and facilitate the payment process between merchants and customers. Common card networks include Visa, MasterCard, American Express and Discover. Note that American Express and Discover are also card issuers as well.
 
 
-## Card Not Present
+## <a name="card-not-present">Card Not Present</a>
 A Card Not Present (CNP) transaction made when the card cannot be physically used, e.g. in an online store.
 
 
 ## Card Number
 The unique number associated with a payment card. The entire number is known as the Primary Account Number (PAN). The first 4-6 digits are the Bank Identification Number (BIN).
-
 
 ## Card Security Code
 A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC) is a security feature for [card not present](#card-not-present) payment card transactions instituted to reduce credit card fraud.
