@@ -43,7 +43,7 @@ The following variables are required in the initial `PaymentToken` request and s
       }
    },
    "transactionDetails":{
-      "captureFlag": false,
+      "captureFlag": true,
       "createToken": true,
       "tokenProvider": "RSA",
       "authorizationTypeIndicator": "INITIAL"
