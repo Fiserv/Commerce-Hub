@@ -62,6 +62,19 @@
     "documentation": "/v1/docs",
     "documenttree": "/v1/docs",
     "documenttreeV2": "/v2/docs",
-    "sandbox": "/v1/sandboxrun"
+    "sandbox": "/v1/sandboxrun",
+    "feature":[
+      {
+        "name": "sandBox",
+        "value": false
+      },
+      {
+        "name": "plugins",
+        "value": false
+      },
+      {
+        "name": "industryOptionsAPIExplorer",
+        "value": false
+      }
   }
 }
