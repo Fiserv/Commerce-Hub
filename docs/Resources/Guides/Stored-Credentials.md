@@ -20,10 +20,11 @@ The following variables are required in the initial `PaymentToken` request and s
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `scheduled` | *boolean* |  | Indicator if this is a scheduled transaction. |
 | `initiator` | *string* |  | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
-| `sequence` | *string* |  | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
+| `originalAmount` | *string* |  | Indicates the original amount of the initial transaction. |
+| `scheduled` | *boolean* |  | Indicator if this is a scheduled transaction. |
 | `schemeReferencedTransactionId` | *string* |  | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
+| `sequence` | *string* |  | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
 
 ## Payload Example
 
