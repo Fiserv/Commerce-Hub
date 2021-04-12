@@ -129,8 +129,8 @@ title: Response
 ## See Also
 
 - [API Explorer](url)
-- [Apple Pay App Integration](Apple-Pay-App.md)
-- [Charges](../../../Resources/API-Documents/Payments/Charges.md)
-- [Google Pay](../Google-Pay/Google-Pay.md)
+- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---
