@@ -108,7 +108,7 @@ featuredAPIs:
     description: Used to submit a charge transaction.
     type: POST
     route: /payments/v1/charges
-    codeSample: ```json
+    codeSample: '[json
                   {
                      "amount":{
                         "total":"12.04",
@@ -127,15 +127,14 @@ featuredAPIs:
                      "transactionDetails":{
                         "captureFlag":true
                      }
-                  }
-                  ```
+                  }]'
     language: Curl
     link: link to API Explorer
   - name: Tokenization
     description: Transaction data is protected by a randomly-generated identifier known as a "token".
     type: POST
     route: /payments-vas/v1/tokens
-    codeSample: ```json
+    codeSample: '[json
                   {
                      "amount":{
                         "total":"1.00",
@@ -155,15 +154,14 @@ featuredAPIs:
                         "createToken":true,
                         "tokenProvider":"RSA"
                      }
-                  }
-                  ```
+                  }]'
     language: Curl
     link: link to API Explorer 
   - name: Verifications
     description: Confirm account validity and provide notification.
     type: POST
     route: /payments-vas/v1/accounts/verification
-    codeSample: ```json
+    codeSample: '[json
                   {
                      "source":{
                         "sourceType":"PaymentCard",
@@ -173,15 +171,14 @@ featuredAPIs:
                            "expirationYear":"2035"
                         }
                      }
-                  }
-                  ```
+                  }]'
     language: Curl
     link: link to API Explorer  
   - name: Capture
     description: Capture pending authorization for settlement post authorization.
     type: POST
     route: /payments/v1/charges/{transactionId}/capture
-    codeSample: ```json
+    codeSample: '[json
                   {
                     "amount": {
                       "total": "12.04",
@@ -190,14 +187,14 @@ featuredAPIs:
                     "transactionDetails": {
                       "captureFlag": true
                     }
-                  }
-                  ```
+                  }]'
     language: Curl
     link: link to API Explorer   
 useCases:
   - title: In-App Payments
     subtitle: Apple Pay
-    description: > Create touchless, faster payment experiences leveraging biometric security.
+    description: > 
+      Create touchless, faster payment experiences leveraging biometric security.
 
       Accept contactless, touchless payments Customers can One of the most popular 
       mobile payment and digital wallets. Customers can make payments in-store, mobile 
@@ -209,13 +206,15 @@ useCases:
       bullet3: Global offering and acceptance
     link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
   - title: Secure Transactions
-     subtitle: Tokenization
-     description: > Remove sensitive customer data from your environment and reduce PCI compliance scope. 
-     Transaction data is protected by a randomly-generated identifier known as a "token".
-    bullets: Increase payment security and reduce risk
-     bullet1: No need to store personal customer information
-     bullet2: Less operational costs
-     bullet3: Improved customer experience
+    subtitle: Tokenization
+    description: > 
+      Remove sensitive customer data from your environment and reduce PCI compliance scope. 
+      Transaction data is protected by a randomly-generated identifier known as a "token".
+    bullets:
+     bullet1: Increase payment security and reduce risk
+     bullet2: No need to store personal customer information
+     bullet3: Less operational costs
+     bullet4: Improved customer experience
     link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
   - title: Ensure Compliance
     subtitle: Split Shipment
