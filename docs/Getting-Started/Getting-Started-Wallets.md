@@ -23,5 +23,7 @@ PayPal, AmazonPay, etc. Info goes here....
 
 ## See Also
 - [API Explorer](url)
-- [Apple Pay](../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Google Pay](../Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+
+---

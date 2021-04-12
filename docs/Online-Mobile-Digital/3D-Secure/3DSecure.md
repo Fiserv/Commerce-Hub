@@ -23,9 +23,9 @@ At the end of the authentication process, the original transaction is updated wi
 | `merchantIdentifier` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer |
 | `version` | *string* | 4 | Specific Protocol version supported by 3DS |
 | `cavv` | *string* |  | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
-| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](docs/Resources/Master-Data/Transaction-Interaction.md). |
+| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md). |
 | `xid` | *string* | 32 | 3-D Secure/Verified by Visa value returned by Cardinal Commerce. |
-| `card` | *array* | | [Card](docs/Resources/Master-Data/Card.md) sub component objects. |
+| `card` | *array* | | [Card](?path=docs/Resources/Master-Data/Card.md) sub component objects. |
 
 ---
 

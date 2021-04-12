@@ -16,10 +16,10 @@ Request and create a developer account in the Developer Portal.
 Go to the Apps page and create a Sandbox app to obtain your and API-Key and API-Secret.
 
 <!-- theme: info -->
-> These are required in the [Authentication Header](../Resources/API-Documents/Authentication-Header.md).
+> These are required in the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md).
 
 ### 3. Constructing the API call
 
-Construct an [API request](Use-Our-APIs.md) to use the Commerce Hub APIs.
+Construct an [API request](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to use the Commerce Hub APIs.
 
 ---

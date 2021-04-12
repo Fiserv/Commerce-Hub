@@ -70,9 +70,11 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Enable Re-Captcha
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
-- Follow [fraud best practices](../../Guides-Info/Fraud/Fraud-Settings.md) for the business type or payment flow
+- Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
 ## See Also
 - Available Fields
 - Customize Payment Page
-- [Online Wallets](../../Getting-Started/Getting-Started-Wallets.md)
+- [Online Wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md)
+
+---
