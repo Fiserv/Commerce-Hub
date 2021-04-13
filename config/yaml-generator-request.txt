@@ -26,11 +26,11 @@
          "payments-charges-cancel.yaml",
          "payments-charges-refund.yaml",
          "payments-credits.yaml",
-         "transaction-inquiry.yaml",
-         "payments-vas-accounts-verification.yaml",
-         "payments-vas-security-credentials.yaml",
          "payments-vas-tokenize.yaml",
-         "payments-vas-accounts-information.yaml"
+         "transaction-inquiry.yaml",
+         "payments-vas-accounts-information.yaml",
+         "payments-vas-accounts-verification.yaml",
+         "payments-vas-security-credentials.yaml"
       ]
    },
    "yamlVersion":"v1",
