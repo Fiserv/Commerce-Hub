@@ -14,7 +14,7 @@
         ],
         "paths": [
             "payments-charges.yaml",
-            "payments-forcedpoast.yaml",
+            "payments-forcedpost.yaml",
             "payments-charges-capture.yaml",
 			      "payments-charges-cancel.yaml",
             "payments-charges-refund.yaml",
