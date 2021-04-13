@@ -1,40 +1,37 @@
 {
-   "topLevel":{
-      "topLevelType":"TopLevelCustom",
-      "info":{
-         "title":"API Explorer",
-         "description":"This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing in Card Not Present environments.",
-         "version":"1.0.0"
-      },
-      "servers":[
-         {
-            "url":"https://api.fiservapps.com",
-            "description":"Endpoint for APIs."
-         }
-      ],
-      "paths":[
-         "payments-charges.yaml",
-         "payments-charges-capture.yaml",
-         "payments-charges-cancel.yaml",
-         "payments-charges-refund.yaml",
-         "payments-credits.yaml",
-         "payments-forcedpost.yaml",
-         "transaction-inquiry.yaml",
-         "payments-vas-accounts-verification.yaml",
-         "payments-vas-security-credentials.yaml",
-         "payments-vas-tokenize.yaml",
-         "payments-vas-accounts-information.yaml",
-         "payments-orders-capture.yaml",
-         "payments-orders-cancel.yaml",
-         "payments-orders-refund.yaml",
-         "order-inquiry.yaml"
-      ]
-   },
-   "yamlVersion":"v1",
-   "featureSet":{
-      "yamlType":"ExternalYaml",
-      "additionalFeatures":[
-         "%v"
-      ]
-   }
+    "topLevel": {
+        "topLevelType": "TopLevelCustom",
+        "info": {
+            "title": "API Explorer",
+            "description": "This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing in Card Not Present environments.",
+            "version": "1.0.0"
+        },
+        "servers": [
+            {
+                "url": "https://api.fiservapps.com",
+                "description": "Endpoint for APIs."
+            }
+        ],
+        "paths": [
+            "payments-charges.yaml",
+            "payments-charges-capture.yaml",
+			      "payments-charges-cancel.yaml",
+            "payments-charges-refund.yaml",
+            "payments-credits.yaml",
+            "transaction-inquiry.yaml",	
+            "payments-vas-accounts-verification.yaml",
+            "payments-vas-security-credentials.yaml",
+            "payments-vas-tokenize.yaml",
+            "payments-vas-accounts-information.yaml",
+            "payments-orders-capture.yaml",
+            "payments-orders-cancel.yaml",
+            "payments-orders-refund.yaml",
+            "order-inquiry.yaml"
+        ]
+    },
+    "yamlVersion": "v1",
+    "featureSet": {
+        "yamlType": "ExternalYaml", 
+        "additionalFeatures": [ %v ]
+    }
 }
