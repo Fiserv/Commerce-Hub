@@ -23,10 +23,10 @@
             "payments-vas-security-credentials.yaml",
             "payments-vas-tokenize.yaml",
             "payments-vas-accounts-information.yaml",
-#            "payments-orders-capture.yaml",
-#            "payments-orders-cancel.yaml",
-#            "payments-orders-refund.yaml",
-#            "order-inquiry.yaml"
+            "payments-orders-capture.yaml",
+            "payments-orders-cancel.yaml",
+            "payments-orders-refund.yaml",
+            "order-inquiry.yaml"
         ]
     },
     "yamlVersion": "v1",
