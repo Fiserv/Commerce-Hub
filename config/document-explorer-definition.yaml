@@ -35,7 +35,7 @@
       sections:
       - title: Apple Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
-        open: true
+        open: false
         articles:
         - title: In-App
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
@@ -45,7 +45,7 @@
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
-        open: true
+        open: false
         articles:
         - title: In-App Payments
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
