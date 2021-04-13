@@ -55,8 +55,8 @@
   ],
   "product": {
     "featured": true,
-    "logoURL": "https://raw.githubusercontent.com/tomeck/transactionenrichmentstoplight/main/docs/carat_logo.png",
-    "description": "Commerce hub makes it easier for merchants to access omnichannel services from a single point of connection. That includes access to solutions for global acquiring, payment methods, commerce channels, payouts, prepaid payments, B2B payments, payments optimization, security and fraud, and data insights.",
+    "logoURL": "/assets/images/carat_logo.png",
+    "description": "Built to deliver innovation through simple, fast integrations, the Commerce Hub is \n the most powerful omnichannel platform. With developer-friendly, flexible \n communication standards, unified APIs, and pre-certified integrations the Commerce \n Hub reduces development time and accelerates speed to market. \n\n A true single entry point and intelligent orchestration layer means you now have \n access to the latest, most popular commerce experiences through your existing \n infrastructure. With less ongoing maintenance and fewer operational costs, you can \n focus on creating new ways for consumers to discover and interact with you.",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
     "documentation": "/v1/docs",
