@@ -18,6 +18,7 @@
 			      "payments-charges-cancel.yaml",
             "payments-charges-refund.yaml",
             "payments-credits.yaml",
+            "payments-forcedpost.yaml",
             "transaction-inquiry.yaml",	
             "payments-vas-accounts-verification.yaml",
             "payments-vas-security-credentials.yaml",
