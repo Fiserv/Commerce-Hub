@@ -16,7 +16,7 @@
             "payments-charges.yaml",
             "payments-forcedpost.yaml",
             "payments-charges-capture.yaml",
-			      "payments-charges-cancel.yaml",
+            "payments-charges-cancel.yaml",
             "payments-charges-refund.yaml",
             "payments-credits.yaml",
             "transaction-inquiry.yaml",	
