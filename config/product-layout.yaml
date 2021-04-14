@@ -4,11 +4,6 @@ steps:
       description: >
         Quickly find the right integration, experiment with our APIs, and discover guided 
         tutorials for your next project.
-    - title:
-      description:
-      link:
-    - title:
-      description:
       link:
   buildSteps:
     - title: Build
@@ -16,34 +11,16 @@ steps:
         Leverage sample code, comprehensive SDKs, plug-ins, and sandbox testing to 
         complete your project fast.
       link:
-    - title:
-      description:
-      link:
-    - title:
-      description:
-      link:
   validateSteps:
     - title: Validate
       description: >
         Identify parts of your project that need attention and solutions end-to-end in 
         our advanced Sandbox.
       link:
-    - title:
-      description:
-      link:
-    - title:
-      description:
-      link:
   deploySteps:
     - title: deploy
       description: >
         Submit your project for automated certification and deploy to Production.
-      link:
-    - title:
-      description:
-      link:
-    - title:
-      description:
       link:
 featuredFeatures:
   - title: Tokenization
@@ -52,11 +29,7 @@ featuredFeatures:
       scope. Transaction data is protected by a randomly-generated identifier known as a 
       "token".
     tags: ["tag1", "tag2"]
-    bullets:
-      bullet1: Increase payment security and reduce risk
-      bullet2: No need to store personal customer information
-      bullet3: Less operational costs
-      bullet4: Improved customer experience
+    bullets: ["Increase payment security and reduce risk", "No need to store personal customer information", "Less operational costs", "Improved customer experience"]
     links: ["docs/Resources/API-Documents/Payments_VAS/Payment-Token.md"]
   - title: Apple Pay
     description: >
@@ -64,20 +37,14 @@ featuredFeatures:
       payments in-store, mobile or online. To leverage, customers use an Apple devices 
       - iPhone, Apple Watch, iPad, Mac, etc.
     tags: ["tag1", "tag2"]
-    bullets:
-      bullet1: Faster acceptance than credit or debit
-      bullet2: Biometric security
-      bullet3: Global offering and acceptance
+    bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]
   - title: API Integration
     description: >
       Leverage your existing infastructure and UI to accept payments online, in-store or on 
       mobile devices.
     tags: ["tag1", "tag2"]
-    bullets:
-      bullet1: Modern technology stack
-      bullet2: Automated backoffice
-      bullet3: Fast testing, certification and implementation
+    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
     links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
 benefits:
   - title: Transform Customer Experiences
@@ -185,27 +152,17 @@ useCases:
       mobile payment and digital wallets. Customers can make payments in-store, mobile 
       or online. To leverage, customers use an Apple devices - iPhone, Apple Watch, iPad, 
       Mac, etc.
-    bullets:
-      bullet1: Faster acceptance than credit or debit
-      bullet2: Biometric security
-      bullet3: Global offering and acceptance
+    bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
   - title: Secure Transactions
     subtitle: Tokenization
     description: > 
       Remove sensitive customer data from your environment and reduce PCI compliance scope. 
       Transaction data is protected by a randomly-generated identifier known as a "token".
-    bullets:
-     bullet1: Increase payment security and reduce risk
-     bullet2: No need to store personal customer information
-     bullet3: Less operational costs
-     bullet4: Improved customer experience
+    bullets: ["Increase payment security and reduce risk", "No need to store personal customer information", "Less operational costs", "Improved customer experience"]
     link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
   - title: Ensure Compliance
     subtitle: Split Shipment
     description: Allow multiple post-authorizations for each shipment to meet card brand compliance.
-    bullets:
-     bullet1: maintain compliance standards 
-     bullet2: Reduce chargebacks
-     bullet3: Enhances authorization optimization
+    bullets: ["maintain compliance standards", "Reduce chargebacks", "Enhances authorization optimization"]
     link: docs/Resources/Guides/Split-Shipment.md
