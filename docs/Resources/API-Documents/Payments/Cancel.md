@@ -21,7 +21,7 @@ Cancel Request can be initiated by sending the request to the appropriate endpoi
 
 ##### Component : transactionBatch
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`julianDay` | *string* | 3 | The day the current batch was opened, 001-366.|
 |`batchNumber`| *string* | 6 | The batch number within the Julian day for this transaction. values range from 000001 through 000999.| 
