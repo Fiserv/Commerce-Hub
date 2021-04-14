@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, can
 
 ## Overview
 
-To retrieve the current state of any previous [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
+To retrieve the current state of any previous [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
 
 ---
 
@@ -27,9 +27,14 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 ---
 
-## Payload Examples
+## Payload Example
 
-##### Example of a Inquiry (200: Success) Response.
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of an inquiry (200: Success) response.
 
 <!-- theme: info -->
 
@@ -95,6 +100,8 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
    }
 }
 ```
+
+<!-- type: tab-end -->
 
 ## See Also
 
