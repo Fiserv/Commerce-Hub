@@ -113,7 +113,27 @@
         - title: Fraud Detect
           link: docs/Resources/Guides/Fraud/Fraud-Detect.md
       - title: Industry and Verticals
+        link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
         open: false
+        articles:
+        - title: Airline
+          link: docs/Resources/Guides/Industry-Verticals/Airline.md
+        - title: Car Rental
+          link: docs/Resources/Guides/Industry-Verticals/Car-Rental.md
+        - title: Lodging
+          link: docs/Resources/Guides/Industry-Verticals/Lodging.md
+        - title: Multi Acquiring
+          link: docs/Resources/Guides/Industry-Verticals/Multi-Acquiring.md
+        - title: Payment Faciliator
+          link: docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md
+        - title: Petro
+          link: docs/Resources/Guides/Industry-Verticals/Petro.md
+        - title: QSR
+          link: docs/Resources/Guides/Industry-Verticals/QSR.md
+        - title: Retail
+          link: docs/Resources/Guides/Industry-Verticals/Retail.md
+        - title: eCommerce
+          link: docs/Resources/Guides/Industry-Verticals/eCommerce.md
       - title: Payment Sources
         link: docs/Resources/Guides/Payment-Sources/Source-Type.md
         open: false
