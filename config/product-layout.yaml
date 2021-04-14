@@ -41,7 +41,7 @@ featuredFeatures:
     links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]
   - title: API Integration
     description: >
-      Leverage your existing infastructure and UI to accept payments online, in-store or on 
+      Leverage your existing infrastructure and UI to accept payments online, in-store or on
       mobile devices.
     tags: ["tag1", "tag2"]
     bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
