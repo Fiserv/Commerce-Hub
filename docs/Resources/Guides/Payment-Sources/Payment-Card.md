@@ -53,9 +53,9 @@ title: Request
 
 ## See Also
 
-- [API Explorer](url)
-- [Apple Pay](../../../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Charge](../../API-Documents/Payments/Charges.md)
-- [Google Pay](../../../Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---

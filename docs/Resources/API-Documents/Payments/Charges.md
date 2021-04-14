@@ -145,7 +145,6 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [API Explorer](?path=api/?type=post&path=/payments/v1/charges)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Incremental Auth](?path=docs/Resources/Guides/Incremental-Auth.md)

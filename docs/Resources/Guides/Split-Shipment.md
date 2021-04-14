@@ -45,7 +45,7 @@ Situations in which this could be implemented include:
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 

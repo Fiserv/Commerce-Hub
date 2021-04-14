@@ -31,7 +31,7 @@ The `card` component is an array which is used for all card types, including deb
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

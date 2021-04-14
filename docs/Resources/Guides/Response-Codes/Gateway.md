@@ -143,7 +143,7 @@ The following response codes indicate that a certain threshold is exceeded withi
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 

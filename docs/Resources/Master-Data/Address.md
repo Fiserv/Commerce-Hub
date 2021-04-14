@@ -67,7 +67,7 @@ Is an address where merchant will send the order.
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)

@@ -16,7 +16,7 @@ Field requirement authorizationTypeIndicator
 ---
 
 ## See Also
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 
 ---

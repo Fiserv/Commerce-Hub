@@ -134,7 +134,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay Web Integration RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md)
 - [Apple Pay Web Integration Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)

@@ -92,7 +92,7 @@ title: Error Response
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
 

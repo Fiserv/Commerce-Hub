@@ -33,5 +33,7 @@ The transaction request may contain the `customerDetails` consisting of customer
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Customer Address](?path=docs/Resources/Master-Data/Address.md)
+
+---

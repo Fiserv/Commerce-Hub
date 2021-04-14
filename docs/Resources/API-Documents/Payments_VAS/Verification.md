@@ -163,7 +163,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification Service](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Security Code](?path=docs/Resources/Guides/Fraud/Security-Code.md)

@@ -98,7 +98,7 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 

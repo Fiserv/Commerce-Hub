@@ -84,7 +84,7 @@ Issuer Response Codes are two digit codes, which Commerce Hub receives from the 
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 

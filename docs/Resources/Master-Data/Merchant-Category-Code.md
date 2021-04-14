@@ -314,7 +314,7 @@ Each business is assigned a Merchant Category Code (MCC), which is determined by
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 
 ---

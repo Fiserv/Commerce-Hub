@@ -152,5 +152,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge](../../Transactions/Charges.md)
+
+---

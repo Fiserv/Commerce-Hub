@@ -30,4 +30,6 @@ Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Paym
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---

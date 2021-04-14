@@ -317,7 +317,7 @@ Variable | Type| Maximum Length | Description/Values|
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address](?path=docs/Resources/Master-Data/Address.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

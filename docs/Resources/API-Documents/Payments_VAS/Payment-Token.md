@@ -316,7 +316,7 @@ title: Response
 <!-- type: tab-end -->
 
 ## See Also
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

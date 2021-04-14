@@ -123,7 +123,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 

@@ -169,7 +169,7 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)

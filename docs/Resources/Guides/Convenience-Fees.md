@@ -147,7 +147,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 

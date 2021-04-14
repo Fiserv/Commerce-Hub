@@ -19,7 +19,7 @@ Our payments solutions enable you to integrate them into a seamless customer exp
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

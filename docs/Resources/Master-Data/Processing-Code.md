@@ -71,6 +71,6 @@ Describes the cardholder account type affected for cardholder account credits an
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 
 ---

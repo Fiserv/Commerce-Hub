@@ -62,7 +62,7 @@ The following variables are required in the initial `PaymentToken` request and s
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)

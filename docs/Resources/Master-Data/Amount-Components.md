@@ -33,7 +33,7 @@ Amount is broken into two arrays, `amount` and `amountComponents`.
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
 
 ---

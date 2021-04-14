@@ -117,7 +117,7 @@ A standard API call to execute a charge transaction might look like this:
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Enviroments](?path=docs/Resources/API-Documents/Environments.md)
 

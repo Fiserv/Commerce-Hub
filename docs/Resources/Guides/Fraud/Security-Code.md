@@ -250,7 +250,7 @@ The result of checking the cardholder’s entered security code against the Issu
 ## See Also
 
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address](?path=docs/Resources/Master-Data/Address.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)

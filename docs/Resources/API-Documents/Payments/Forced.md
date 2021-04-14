@@ -24,7 +24,7 @@ A forced post is used when an issuer (bank) provides a referral also known as ca
 ---
 
 ## See Also
-- API Explorer
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - Deferred Authorization
 
 ---
