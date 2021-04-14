@@ -57,7 +57,7 @@
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Commerce-Hub/develop/assets/images/Commerce-Hub-Circle.png",
     "description": "Fast developmet time and speed to market with the omnichannel engine built for large businesses. Deliver commerce innovaions and transform customer experiences via simple integrations.",
-    "longDescription":"Fast developmet time and speed to market with the omnichannel engine built for large businesses. Deliver commerce innovaions and transform customer experiences via simple integrations.<ul><li>Configurable boarding experience</li><li> Orchestration layer and workflow customizations</li><li> API translator and flexible communication standards</li><li> Business logic microservices</li><li> Pre-certified Fiserv and third-party integrations</li></ul>"
+    "longDescription":"Fast developmet time and speed to market with the omnichannel engine built for large businesses. Deliver commerce innovaions and transform customer experiences via simple integrations.<ul><li>Configurable boarding experience</li><li> Orchestration layer and workflow customizations</li><li> API translator and flexible communication standards</li><li> Business logic microservices</li><li> Pre-certified Fiserv and third-party integrations</li></ul>",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
     "documentation": "/v1/docs",
