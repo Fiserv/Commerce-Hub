@@ -14,7 +14,7 @@ If the merchant wants to verify card related information of the cardholder such 
 
 The `cardDetails` are returned in the account information lookup response. The structure of the component is as below.
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `brand` | *string* |  | Card Brand. |
 | `brandProductId` | *string* |  | Category within the card brand. |
@@ -33,8 +33,8 @@ Variable | Type| Maximum Length | Description/Values|
 
 #### Component: source
 
-Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
+| Variable | Type | Maximum Length | Description/Values|
+| --------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 
