@@ -55,8 +55,8 @@
   ],
   "product": {
     "featured": true,
-    "logoURL": "/assets/images/carat_logo.png",
-    "description": "Built to deliver innovation through simple, fast integrations, the Commerce Hub is \n the most powerful omnichannel platform. With developer-friendly, flexible \n communication standards, unified APIs, and pre-certified integrations the Commerce \n Hub reduces development time and accelerates speed to market. \n\n A true single entry point and intelligent orchestration layer means you now have \n access to the latest, most popular commerce experiences through your existing \n infrastructure. With less ongoing maintenance and fewer operational costs, you can \n focus on creating new ways for consumers to discover and interact with you.",
+    "logoURL": "https://raw.githubusercontent.com/Fiserv/Commerce-Hub/develop/assets/images/Commerce-Hub-Circle.png",
+    "description": "Fast developmet time and speed to market with the omnichannel engine built for large businesses. Deliver commerce innovaions and transform customer experiences via simple integrations.",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
     "documentation": "/v1/docs",
