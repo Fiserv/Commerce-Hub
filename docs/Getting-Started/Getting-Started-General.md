@@ -10,7 +10,7 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 
 #### Online/Mobile/Digital
 
-Online, mobile, and digital transactions are considered Card Not Present (CNP) where the  customer does not physically present their payment source at the time of the transaction. Examples of CNP transactions include; online payments, in-app payments, and MOTO transactions.
+The Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Examples of CNP transactions include; online payments, in-app payments, and MOTO transactions.
 
 - [Integration](?path=docs/Getting-Started/Getting-Started-Online.md)
 - [API Explorer](url)
