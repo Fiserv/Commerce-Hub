@@ -12,7 +12,7 @@ To retrieve the current state of any previous [Charge](?path=docs/Resources/API-
 
 ## Minimum Requirements
 
-Get transaction inquiry request can be initiated by sending the request to the appopriate endpoint by providing valid `transactionId` or `orderId` with no minimum field requirement.
+Get transaction inquiry request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` with no minimum field requirement.
 
 ---
 
@@ -102,4 +102,4 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
-
+---

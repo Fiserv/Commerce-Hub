@@ -23,7 +23,7 @@ A merchant that charges a convenience fee must ensure that the fee is:
 Every credit card provider has different rules on convenience fees. Below are the rules of some of the major credit card providers:
 
 - **Mastercard:** Allows for convenience fees as long as they are for government, education, and tax-related payments.
-- **Visa:** Allows for convenience fees only if the payment is through an alternative channel, such a by phone or online, and the business first notifies the consumer, and that the fee is a flat rate, not a percentage of the sale.
+- **Visa:** Allows for convenience fees only if the payment is through an alternative channel, such as by phone or online, and the business first notifies the consumer, and that the fee is a flat rate, not a percentage of the sale.
 - **American Express:** Allows convenience fees on a variety of items as long as the fee imposed is on similar transactions.
 - **Discover:** Allows convenience fees and should be treated with the same policy of other credit cards.
 
@@ -151,3 +151,4 @@ title: Response
 - [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
+---

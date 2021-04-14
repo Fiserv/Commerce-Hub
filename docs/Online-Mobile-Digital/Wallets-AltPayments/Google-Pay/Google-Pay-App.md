@@ -103,3 +103,4 @@ title: Response
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 
+---

@@ -146,3 +146,5 @@ The following response codes indicate that a certain threshold is exceeded withi
 - [API Explorer](url)
 - [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
+
+---

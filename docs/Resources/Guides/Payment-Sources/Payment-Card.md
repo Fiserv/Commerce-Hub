@@ -58,4 +58,4 @@ title: Request
 - [Charge](../../API-Documents/Payments/Charges.md)
 - [Google Pay](../../../Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
-
+---

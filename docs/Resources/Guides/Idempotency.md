@@ -22,7 +22,7 @@ When the below scenarios occur, the merchant can initiate a idempotency on the t
 
 ## Submit a Idempotency Request
 
-The merchant can submit the API request using the same `Client-Request-Id` from the original request. The gateway will verify the current status of the original request and if the response is received from the host. The gateway will send the response back to the merchant else gateway will forward the request to host again for authorization.
+The merchant can submit the API request using the same `Client-Request-Id` from the original request. The gateway will verify the status of the original request and if the response received from the host, the gateway will send the response back to the merchant else, gateway will forward the request to host again for authorization.
 
 <!-- theme : info -->
 >The merchant can also verify the status of the transaction by initiating an [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) request using `transactionId` or `orderId`.
@@ -37,3 +37,5 @@ The merchant can submit the API request using the same `Client-Request-Id` from 
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+
+---

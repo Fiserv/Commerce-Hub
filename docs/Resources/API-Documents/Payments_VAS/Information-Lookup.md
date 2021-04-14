@@ -158,5 +158,7 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+---

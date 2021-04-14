@@ -95,3 +95,5 @@ title: Error Response
 - [API Explorer](url)
 - [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+
+---

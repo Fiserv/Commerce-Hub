@@ -6,11 +6,11 @@ tags: [carat, commerce-hub, card-not-present, security-code, fraud, security-cod
 # Security Code
 
 ## Overview
-**Security Code Check** - A service where cardholder is prompt to enter the 3-digit Card Verification Value(CVV) manually in order to get the card verify by the issuing system. Security code check is used as a Fraud Prevention measure for the transaction where card holder is not present.
+**Security Code Check** - A service where cardholder is prompt to enter the 3-digit Card Verification Value(CVV) manually in order to get the card verify by the issuing system. Security code check is used as a Fraud Prevention measure for the transaction where cardholder is not present.
 
 #### Perform Security Check
 
-For the transactions where security check id required, merchant needs to pass the appropriate values for securityCode and  securityCodeIndicator in card object.
+For the transactions where security check id required, merchant needs to pass the appropriate values for `securityCode` and `securityCodeIndicator` in card object.
 
 ---
 
@@ -19,7 +19,7 @@ For the transactions where security check id required, merchant needs to pass th
 #### Component: amount
 
 <!--theme:info-->
->**Note:** amount component is needed for CVV check only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
+>CVV check required amount component only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -255,3 +255,5 @@ The result of checking the cardholder’s entered security code against the Issu
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+
+---

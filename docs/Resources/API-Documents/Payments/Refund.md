@@ -12,7 +12,7 @@ If the customer returns product or requests to cancel the transaction after the 
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 <!-- theme: warning -->
-> The refund timeframe is based on the issuing bank and may take 3-5 days to process and reflect on the account.
+> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the account.
 
 ---
 
@@ -24,6 +24,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 
 - **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
 - **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+
 
 #### Component : amount
 
@@ -150,3 +151,5 @@ title: Response
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+---

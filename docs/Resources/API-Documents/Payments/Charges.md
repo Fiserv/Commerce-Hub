@@ -153,3 +153,5 @@ title: Response
 - [Reauthorization](?path=docs/Resources/Guides/Re-Auth.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+
+---

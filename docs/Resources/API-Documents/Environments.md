@@ -31,3 +31,5 @@ Description goes here
 - [API Explorer](url)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Use Our API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+
+---

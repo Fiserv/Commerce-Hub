@@ -48,3 +48,5 @@ Situations in which this could be implemented include:
 - [API Explorer](url)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
+
+---

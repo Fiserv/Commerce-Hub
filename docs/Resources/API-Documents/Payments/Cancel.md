@@ -174,3 +174,5 @@ title: Response
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+---

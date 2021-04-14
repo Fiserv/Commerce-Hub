@@ -91,6 +91,8 @@ function b64encode (input) {
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Environments](?path=docs/Resources/API-Documents/Environments.md)
 - [Use Our API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+
+---

@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, s
 
 ## Overview
 
-Account verification is performed when the merchant wants to confirm that the cardholder account is valid for a transaction. Merchant can initiate the verifiation request using card as well as token details.
+The merchant can perform account verification transaction, if they want to confirm that the cardholder account is valid for a transaction. Merchant can initiate the verification request using card as well as token details.
 
 ---
 
@@ -168,3 +168,5 @@ title: Response
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Security Code](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+---

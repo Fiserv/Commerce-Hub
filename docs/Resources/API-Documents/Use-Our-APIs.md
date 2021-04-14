@@ -120,3 +120,5 @@ A standard API call to execute a charge transaction might look like this:
 - [API Explorer](url)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Enviroments](?path=docs/Resources/API-Documents/Environments.md)
+
+---

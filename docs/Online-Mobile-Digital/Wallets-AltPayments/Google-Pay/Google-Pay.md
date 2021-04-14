@@ -46,9 +46,9 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 #### Transaction Flow
 
 1. Customer selects checkout from the merchant's website.
-2. Customer is presented with the merchant's payment form.
-3. Customer selects Google Pay and is redirected to the Google Pay payment form.
-4. Customer completes the google pay form and is redirected to the merchant's website.
+2. Customer then presented with the merchant's payment form.
+3. Customer selects Google Pay and then redirected to the Google Pay payment form.
+4. Customer completes the google pay form and then redirected to the merchant's website.
 5. Customer selects to complete the transaction.
 6. Merchant submits the encrypted google Pay payload to Commerce Hub.
 7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
@@ -60,9 +60,9 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Complaince requir
 #### Transaction Flow
 
 1. Customer selects checkout from the merchant's website.
-2. Customer is presented with the Commerce Hub's secure Hosted Payment Page.
-3. Customer selects Google Pay and is redirected to the Google Pay payment form.
-4. Customer completes the Google pay form and is redirected to the Hosted Payment Page.
+2. Customer then presented with the Commerce Hub's secure Hosted Payment Page.
+3. Customer selects Google Pay and then redirected to the Google Pay payment form.
+4. Customer completes the Google pay form and then redirected to the Hosted Payment Page.
 5. Customer selects to complete the transaction.
 6. Hosted Payment Page submits the encrypted Google Pay payload to Commerce Hub.
 7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
@@ -74,7 +74,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 #### Transaction Flow
 
 1. Customer selects checkout from the merchant's App.
-2. Customer is presented with the merchant's payment form.
+2. Customer then presented with the merchant's payment form.
 3. The App calls the Google Pay framework to obtain the encrypted wallet data.
 4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
 5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
