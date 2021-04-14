@@ -8,15 +8,15 @@ tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cha
 
 Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the `captureFlag` sent in the request.
 
-- *true* : the transaction will be considered as sale, where the customer will be charged with the transaction amount.
+- *true:* A sale transaction where the customer will be changed the total amount.
+- *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdrawal the funds.
 
-- *false* : the request will be considered a pre-auth request, where the funds on the customer's account will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdrawal the funds from the customer.
 
 #### Charge Types
 
-- [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Authorization) Inniated by a merchant to [verify](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
-- [**Pre-Auth:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Pre-Auth) An authorization where the amount approved by the customer is placed on hold to be captured later.
-- [**Sale:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Sale) An authorization where the amount approved by the customer is placed on hold and will be settled at the end of the day.
+- [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Authorization) A transaction where the merchant [verifies](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
+- [**Pre-Auth:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Pre-Auth) A transaction where the customer authorizes to have funds withdrawn from their account on a future date.
+- [**Sale:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#Sale) A transaction where the customer authorizes to have funds withdrawn from their account at the end of the day.
 
 ---
 

@@ -34,13 +34,12 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 
 #### Transaction Flow
 
-1. Customer selects checkout from the merchant's website.
-2. Customer then presented with the merchant's payment form.
-3. Customer selects Apple Pay and then redirected to the Apple Pay payment form.
-4. Customer completes the apple pay form and then redirected to the merchant's website.
-5. Customer selects to complete the transaction.
-6. Merchant submits the encrypted Apple Pay payload to Commerce Hub.
-7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
+1. The customer selects checkout from the merchant's website and the merchant’s payment form displays.
+2. The customer selects Apple Pay and the Apple Pay payment form displays.
+3. The customer completes the Apple Pay form and returns to the merchant's website.
+4. The customer selects to complete the transaction.
+5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
+6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
 ### [Apple Pay on the Web: Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)
 
