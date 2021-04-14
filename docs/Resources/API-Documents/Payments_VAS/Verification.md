@@ -20,7 +20,7 @@ The merchant can perform account verification transaction, if they want to confi
 
 #### Component: source
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](?path=docs/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`cardData`| *string* | 19 | Encrypted or unencrypted [card data](?path=docs/Resources/Master-Data/Card.md) (e.g. PAN, EMV, Track, etc.). |
