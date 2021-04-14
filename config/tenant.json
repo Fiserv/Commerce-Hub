@@ -63,7 +63,7 @@
     "documenttree": "/v1/docs",
     "documenttreeV2": "/v2/docs",
     "sandbox": "/v1/sandboxrun",
-    "feature":[
+    "features":[
       {
         "name": "sandBox",
         "value": false
