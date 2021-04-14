@@ -1,6 +1,4 @@
----
 tags: [carat, commerce-hub, card-not-present, card-present, carat-api, request-header, request-body]
----
 
 
 # Constructing an API Call
