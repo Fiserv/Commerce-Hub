@@ -66,6 +66,7 @@
 - sections:
   - title: Omnicommerce
     link: docs/Getting-Started/Getting-Started-UCOM.md
+    open: false
 - sections:
   - title: Resources
     open: false
