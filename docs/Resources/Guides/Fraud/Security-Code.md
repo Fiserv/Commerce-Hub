@@ -21,15 +21,15 @@ For the transactions where security check id required, merchant needs to pass th
 <!--theme:info-->
 >CVV check required amount component only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
 
-|Variable    |  Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
+| Variable |  Type| Maximum Length | Description/Values|
+| --------- |----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 
 #### Component: Source
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
