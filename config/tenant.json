@@ -17,38 +17,16 @@
       ]
     },
     {
-      "name": "integrationTypes",
-      "value": "Integration Types",
+      "name": "features",
+      "value": "Features",
       "subcategories": [
-        {
-          "name": "cardPresent",
-          "value": "Card Present"
-        },
         {
           "name": "cardNotPresent",
           "value": "Card Not Present"
-        }
-      ]
-    },
-    {
-      "name": "industryTypes",
-      "value": "Industry Types",
-      "subcategories": [
-        {
-          "name": "Airline",
-          "value": "Airline"
         },
         {
-          "name": "CAR_RENTAL",
-          "value": "Car Rental"
-        },
-        {
-          "name": "eCommerce",
-          "value": "eCommerce"
-        },
-        {
-          "name": "Restuarant",
-          "value": "Restuarant"
+          "name": "applePay",
+          "value": "Apple Pay"
         }
       ]
     }
