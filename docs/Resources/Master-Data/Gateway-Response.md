@@ -24,10 +24,11 @@ The Gateway Response contains the response parameters from the Commerce Hub for 
 | *AUTHORIZED* | Transaction has been [authorized](?path=docs/Resources/API-Documents/Payments/Charges.md). |
 | *CAPTURED* | Authorization has been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md). |
 | *CHECKED* | Applicable to [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) and [information lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md). |
+| *COMPLETED_GET* | Applicable to [transaction inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md). |
 | *DECLINED* | Transaction has been [declined](?path=docs/Resources/Guides/Response-Codes/Gateway.md). |
 | *VOIDED* | Transaction has been [voided](?path=docs/Resources/API-Documents/Payments/Cancel.md). |
 
-<!-- COMPLETED_GET, INITIALIZED, PENDING, READY, TEMPLATE, SETTLED, WAITING -->
+<!-- INITIALIZED, PENDING, READY, TEMPLATE, SETTLED, WAITING -->
 
 ---
 
