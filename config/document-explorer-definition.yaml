@@ -42,9 +42,10 @@
       open: false
       sections:
       - title: Apple Pay
-        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
         open: false
         articles:
+        - title: Integrations
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
         - title: In-App
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
         - title: Web - RESTful API
@@ -52,9 +53,10 @@
         - title: Web - Hosted Payment Page
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md
       - title: Google Pay
-        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
         open: false
         articles:
+        - title: Integrations
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
         - title: In-App Payments
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
         - title: Web - RESTful API
