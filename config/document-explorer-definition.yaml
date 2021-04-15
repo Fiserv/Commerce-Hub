@@ -4,31 +4,39 @@
     open: false
 - sections:
   - title: In-Person
-    link: docs/Getting-Started/Getting-Started-InPerson.md
-    open: false
-- sections:
-  - title: Online/Digital/Mobile
-    link: docs/Getting-Started/Getting-Started-Online.md
     open: false
     sections:
+    - title: Integrations
+      link: docs/Getting-Started/Getting-Started-InPerson.md
+    - title: Debit
+      sections:
+      - title: Least Cost Debit
+        link: docs/In-Person/Debit/Least-Cost-Debit.md
+      - title: Smart Routing
+        link: docs/In-Person/Debit/Smart-Routing.md
+    - title: EMV and Track Readers
+      link: docs/In-Person/EMV-Track/EMV.md
+    - title: Contactless (NFC)
+      link: docs/In-Person/NFC/Contactless-QR.md
+- sections:
+  - title: Online/Digital/Mobile
+    open: false
+    sections:
+    - title: Integrations
+      link: docs/Getting-Started/Getting-Started-Online.md
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-      open: false
-    - title: 3-D Secure
-      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
-      open: false
     - title: Hosted Payment Page
       link: docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md
-      open: false
     - title: Payment JS
       link: docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md
-      open: false
     - title: Payment URL
       link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
-      open: false
     - title: Virtual Terminal
       link: docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md
       open: false
+    - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
       link: docs/Getting-Started/Getting-Started-Wallets.md
       open: false
@@ -60,9 +68,10 @@
     open: false
     sections:
     - title: API Documents
-      link: docs/Resources/API-Documents/Use-Our-APIs.md
-      open: true
+      open: false
       sections:
+      - title: User Our APIs
+        link: docs/Resources/API-Documents/Use-Our-APIs.md
       - title: Authentication Header
         link: docs/Resources/API-Documents/Authentication-Header.md
       - title: Environments
@@ -82,8 +91,6 @@
           link: docs/Resources/API-Documents/Payments/Credit.md
         - title: Forced Post
           link: docs/Resources/API-Documents/Payments/Forced.md
-        - title: Inquiry
-          link: docs/Resources/API-Documents/Payments/Inquiry.md
       - title: Payments VAS
         open: false
         articles:
@@ -93,13 +100,16 @@
           link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
         - title: Tokenization
           link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+        - title: Transaction Inquiry
+          link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Guides
       open: false
       sections:
       - title: Fraud Controls
-        link: docs/Resources/Guides/Fraud/Fraud-Settings.md
         open: false
         articles:
+        - title: Fraud Settings
+          link: docs/Resources/Guides/Fraud/Fraud-Settings.md
         - title: Address Verification
           link: docs/Resources/Guides/Fraud/Address-Verification.md
         - title: Security Code
@@ -126,18 +136,19 @@
           link: docs/Resources/Guides/Industry-Verticals/Multi-Acquiring.md
         - title: Payment Faciliator
           link: docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md
-        - title: Petro
+        - title: Petroleum
           link: docs/Resources/Guides/Industry-Verticals/Petro.md
-        - title: QSR
+        - title: Quick Service Restaurant
           link: docs/Resources/Guides/Industry-Verticals/QSR.md
         - title: Retail
           link: docs/Resources/Guides/Industry-Verticals/Retail.md
         - title: eCommerce
           link: docs/Resources/Guides/Industry-Verticals/eCommerce.md
       - title: Payment Sources
-        link: docs/Resources/Guides/Payment-Sources/Source-Type.md
         open: false
         articles:
+        - title: Source Types
+          link: docs/Resources/Guides/Payment-Sources/Source-Type.md
         - title: Gift Card
           link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
         - title: Network Token
@@ -160,9 +171,10 @@
         - title: HTTP
           link: docs/Resources/Guides/Response-Codes/HTTP.md
       - title: Subsequent Authorization
-        link: docs/Resources/Guides/Authorizations/Authorization-Types.md
         open: false
         articles:
+        - title: Authorization Types
+          link: docs/Resources/Guides/Authorizations/Authorization-Types.md
         - title: Deferred
           link: docs/Resources/Guides/Authorizations/Deferred-Auth.md
         - title: Incremental
@@ -198,9 +210,10 @@
       - title: Transaction Interaction
         link: docs/Resources/Master-Data/Transaction-Interaction.md
     - title: FAQ and Glossary
-      link: docs/Resources/FAQs-Glossary/Glossary.md
       open: false
       sections:
+      - title: Glossary
+        link: docs/Resources/FAQs-Glossary/Glossary.md
       - title: FAQs
         open: false
         articles:
@@ -208,9 +221,10 @@
           link: docs/Resources/API-Documents/Authentication-Header.md
 - sections:
   - title: API Releases
-    link: docs/Release-Notes-Alerts/Release-Notes.md
     open: false
     articles:
+    - title: Release Notes
+      link: docs/Release-Notes-Alerts/Release-Notes.md
     - title: Alerts
       link: docs/Release-Notes-Alerts/Alerts.md
     - title: Updates
