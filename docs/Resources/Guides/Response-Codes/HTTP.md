@@ -20,7 +20,7 @@ type: tab
 title: 2xx
 -->
 
-##### Success Status code and Description
+##### Success Status code and description
 
 | Code | Message | Description |
 | --------- | --- | ------- |
@@ -33,7 +33,7 @@ type: tab
 title: 4xx
 -->
 
-##### Client Error Status code, Description and Resolution
+##### Client Error Status code, description and resolution
 
 | Code | Message  | Description | Resolution |
 | --------- | --- | ------- | --------- |
@@ -47,7 +47,7 @@ type: tab
 title: 5xx
 -->
 
-##### Server Error Status code, Description and Resolution
+##### Server Error Status code, description and resolution
 
 | Code | Message | Description | Resolution |
 | --------- | ---- | ------ | ------- |
@@ -66,7 +66,7 @@ type: tab
 title: Error Response
 -->
 
-##### Example of a Charge (400: Bad Request) Response.
+##### Example of a charge (400: Bad Request) response.
 
 ```json
 {
