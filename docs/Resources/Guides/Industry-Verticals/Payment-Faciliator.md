@@ -12,7 +12,7 @@ For the transaction acquired at sub-merchant, the transaction request from payme
 
 #### Component : subMerchant
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`id` | *string* |  | This field contains a sub-merchant ID used by Payment Facilitators. |
 |`name` | *string* |  | This field contains the merchant name/product/service to be used in lieu of the Payment Facilitator name. |
