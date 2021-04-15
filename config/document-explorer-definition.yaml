@@ -45,8 +45,6 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
         open: false
         articles:
-        - title: Apple Pay Test
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-All-Test.md
         - title: In-App
           link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
         - title: Web - RESTful API
