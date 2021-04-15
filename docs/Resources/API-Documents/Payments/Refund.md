@@ -9,10 +9,10 @@ tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel, refu
 If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId` or `orderId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
 <!-- theme: danger -->
->Refund Request can be initiated against a [charge](Charges.md) only if it is already been [captured](Capture.md) and settled, otherwise submit a [cancel](Cancel.md) request.
+>Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 <!-- theme: warning -->
-> The refund timeframe is based on the issuing bank and may take 3-5 days to process and reflect on the account.
+> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the account.
 
 ---
 
@@ -25,12 +25,13 @@ A refund request can be initiated by sending the request to the appropriate endp
 - **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
 - **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
+
 #### Component : amount
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
-| `currency` | *string* | 3 | [ISO 3 currency format](../../Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 ---
 
@@ -38,7 +39,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 
 ## Endpoints
 
-Use the below endpoints based on the [transaction type](../../Guides/Transaction-Types.md).
+Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/capture`
@@ -74,7 +75,7 @@ title: Response
 
 <!-- theme: info -->
 
-> See [Error Responses](../../Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
@@ -145,8 +146,10 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](url)
-- [Charge](Charges.md)
-- [Cancel](Cancel.md)
-- [Credit](Credit.md)
-- [Payment Source](../../Guides/Payment-Sources/Source-Type.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+---

@@ -14,13 +14,15 @@ Used to pass the merchant data during the transaction to determine the merchant 
 | `merchantId` | *string* |  | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer. |
 | `alternateMerchantId` | *string* |  | An Alternate ID assigned to a merchant based on a Value Added Service (Prepaid Cards, TeleCheck, etc.). For additional information regarding the Alternate Merchant ID, please contact your Account Representative. |
 | `promotionCode` | *string* |  | This field contains the Promotion Code. |
-| `mcc` | *string* |  | [Merchant Category Code](Merchant-Category-Code.md) |
+| `mcc` | *string* |  | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 
 ---
 
 ## See Also
 
-- [API Explorer](url)
-- [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md)
-- [Merchant Category Codes](Merchant-Category-Code.md)
-- [Payment Facilitators](../Guides/Industry-Verticals/Payment-Faciliator.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Merchant Category Codes](?path=docs/Resources/Master-Data/Merchant-Category-Code.md)
+- [Payment Facilitators](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md)
+
+---

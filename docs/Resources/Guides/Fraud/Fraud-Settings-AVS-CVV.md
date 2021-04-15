@@ -1,11 +1,20 @@
-# Fraud-Settings-AVS-CVV
+# AVS CVV Filters
 
 ## Overview
 
-AVS and CVV2 filters can be set at the Outlet level (terminal). AVS and CVV2 filters for your account can be accessed in RPM by clicking "Terminals" on the "Home" tab. From here, click the desired terminal (outlet). Navigate to the "AVS Filters" or "CVV2 Filters" tab - here you'll be able to enable various transaction filters using the AVS and CVV2 fraud prevention systems. If the conditions for one of these filters are met when a transaction is submitted, the transaction will be declined.
+These filters give merchants the ability to enable various transaction filters using the AVS and CVV2 fraud prevention systems. Commerce Hub declines the submitted transaction if the conditions for any of these filters met.
 
-Notes:
+We are enhancing Commerce Hub to include AVS and CVV filters support and the documents related to the features will be released soon.
 
-- Only Merchant Administrator accounts will have access to these settings
-- The customer will not be prompted for billing address information unless one of the AVS filters is enabled
-- An AVS or CVV2 response code will not be returned for a transaction unless one of these filters is enabled
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [AVS Check](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [CVV Check](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Fraud Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
+- [Velocity Control](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
+
+---
+

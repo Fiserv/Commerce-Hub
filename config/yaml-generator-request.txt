@@ -1,0 +1,40 @@
+{
+   "topLevel":{
+      "topLevelType":"TopLevelCustom",
+      "info":{
+         "title":"API Explorer",
+         "description":"This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing in Card Not Present environments.",
+         "version":"1.0.0"
+      },
+      "servers":[
+         {
+            "url":"https://api.fiservapps.com/ch/{resource}",
+            "description":"Production"
+         },
+         {
+            "url":"https:// cert.api.fiservapps.com/ch/{resource}",
+            "description":"Cert Sandbox"
+         },
+         {
+            "url":"https:// qa.api.fiservapps.com/ch/{resource}",
+            "description":"QA Sandbox"
+         }
+      ],
+      "paths":[
+         "payments-charges.yaml",
+         "payments-charges-capture.yaml",
+         "payments-charges-cancel.yaml",
+         "payments-charges-refund.yaml",
+         "payments-credits.yaml",
+         "payments-vas-tokenize.yaml",
+         "transaction-inquiry.yaml",
+         "payments-vas-accounts-information.yaml",
+         "payments-vas-accounts-verification.yaml",
+         "payments-vas-security-credentials.yaml"
+      ]
+   },
+   "yamlVersion":"v1",
+   "featureSet":{
+      "yamlType":"ExternalYaml"
+   }
+}

@@ -2,8 +2,15 @@
 
 ## Overview
 
-The beginning of an awesome article...
+#### Welcome to Commerce Hub card present transactions Overview Page.
 
-## Terminal
+We are enhancing Commerce Hub to include card present transactions support and the documents related to the features will be released soon.
 
-## Software
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Online Payments Integration](?path=docs/Getting-Started/Getting-Started-Online.md)
+
+---

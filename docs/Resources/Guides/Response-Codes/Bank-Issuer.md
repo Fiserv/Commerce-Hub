@@ -81,3 +81,11 @@ Issuer Response Codes are two digit codes, which Commerce Hub receives from the 
 | NS | Dbtsw Pin Xl Err | The authorizing network has a problem decrypting the cryptogram in the request |
 | NU | Declined | Insufficient funds </br>MasterCard or Check transactions may override standard display for responses. |
 | RW | Rev Outside Win | Reversal Outside Window </br> Reversal transaction was received, but the original matching authorization request was processed more than 25 minutes ago and is no longer eligible to be reversed. ( Applicable to Credit Host Capture only ) </br> If the POS has received a RW response (25 minutes after the original Authorization), the transaction cannot be reversed (voided). The Merchant must issue a refund/credit, or refund the amount authorized by other means. |
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
+
+---

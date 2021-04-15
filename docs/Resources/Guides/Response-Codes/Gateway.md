@@ -21,7 +21,7 @@ The following response codes indicate invalid data in the transaction. In these 
 
 | Response Code | Description |
 | ----- | -------------- |
-| 07 | Terminal Restriction: Try again later 
+| 07 | Terminal Restriction: Try again later |
 | 22 | Invalid Credit Card Number |
 | 25 | Invalid Expiry Date |
 | 26 | Invalid Amount |
@@ -143,6 +143,8 @@ The following response codes indicate that a certain threshold is exceeded withi
 
 ## See Also
 
-- [API Explorer](url)
-- [Gateway Response Code](Gateway.md)
-- [HTTP Response Code](HTTP.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
+
+---

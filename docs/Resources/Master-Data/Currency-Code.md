@@ -160,4 +160,4 @@ The `currency` variable in the `amount` array determines what currency the trans
 
 ## See Also
 
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)

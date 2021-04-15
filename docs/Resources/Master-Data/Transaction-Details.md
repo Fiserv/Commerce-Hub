@@ -11,14 +11,14 @@ The transaction request initiated by merchant contains various transaction relat
 | `captureFlag` | *boolean* | 5 | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
-| `processingCode` | *string* | 6 | A [required code](Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
+| `processingCode` | *string* | 6 | A [required code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
 | `merchantTransactionId` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantOrderId` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantInvoiceNumber` | *string* |  | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `receiptEmail` | *string* |  | Email id to send the digital receipt.|
 | `paymentDescription` | *string* |  | Payment Description|
 | `cardVerificationAmount` | *string* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
-| `authorizationTypeIndicator` | *string* |  | This tag indicates a transaction that occurs when a merchant captures transaction information while the connectivity is interrupted or unavailable. This tag must be sent in the authorization/ purchase/ refund transaction once the connectivity is restored. **Valid Values:** *INCREMENTAL_AUTH*, *RESUBMIT_AUTH*, *DELAYED_CHARGE*, *REAUTH*, *NO_SHOW*, *TOP_UP*, *DEFERRED_AUTH*|
+| `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Valid Values:** *INCREMENTAL*, *RESUBMIT*, *DELAYED_CHARGE*, *REAUTH*, *NO_SHOW*, *TOP_UP*, *DEFERRED*|
 | `duplicateTransactionCheckingIndicator` | *boolean* | 5 | Determines if duplicate transactions should be checked.|
 | `primaryTransactionType` | *string* |  | Identifies the primary transaction type. **Valid Values:** *AUTH_ONLY*, *CHARGE_PREAUTH*, *CHARGE_SALE*, *CANCEL*, *REFUND*|
 | `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void). **Valid Values:** *VOIDED*, *TIMEOUT*, *EDIT_ERROR*, *MAC_VERIFICATION_ERROR*, MAC_SYNCH_ERROR, *ENCRYPTION_ERROR*, *SYSTEM_ERROR*, *SUSPECTED_FRAUD*|
@@ -73,7 +73,9 @@ The transaction request initiated by merchant contains various transaction relat
 
 ## See Also
 
-- [API Explorer](URL)
-- [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md)
-- [Apple Pay](../../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Google Pay](../../Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+
+---

@@ -1,14 +1,20 @@
-# Fraud-Settings-Velocity
+# Velocity Controls
 
 ## Overview
 
-Velocity controls are settings that determine transaction thresholds for a particular merchant. This allows a merchant to monitor transaction flow, transactions by IP address, by card number, and amount right down to the hour, per transaction type and can be used to avoid repeat transactions that might seem suspicious to the merchant and determine which transactions Commerce Hub gateway should allow to proceed to the authorization. 
+Velocity settings determine which transactions Commerce Hub allows to proceed to authorization.  A single transaction can be controlled by maximum or minimum sale amount. Groups of transactions can be evaluated by time period or total dollar amount thresholds that, when exceeded, Commerce Hub will prevent all future transactions from processing. These controls allow a merchant to monitor / restrict transaction flow by IP address, by card number, and amount right down to the hour, per transaction type.
 
-A single transaction can be controlled by maximum or minimum sale amount. Groups of transactions can be evaluated by time period or total dollar amount thresholds that, when exceeded, gateway will prevent all future transactions from processing. 
+We are enhancing Commerce Hub to include Velocity Control support and the documents related to the features will be released soon.
 
-Fraud Controls are available to all merchants and it is strongly recommended that to be set. To access these settings, log into the Realtime Payment Manager (RPM) settings and navigate to Terminals and Velocity Controls. 
+---
 
-**If the setting is same as Payeezy then more data can be added.**
+## See Also
 
-<!-- Theme: info-->
-> Velocity Control is performed before a transaction is sent for authorization and the comparison threshold is based on “Approved” transactions (default) or “All Transactions.” 
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [AVS Check](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [AVS CVV Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
+- [CVV Check](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Fraud Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
+
+
+---
