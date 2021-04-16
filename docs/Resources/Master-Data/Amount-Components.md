@@ -11,7 +11,7 @@ Amount is broken into two arrays, `amount` and `amountComponents`.
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#componentamountComponents) values must add up to total amount. |
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#componentamountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 #### Component: amountComponents
