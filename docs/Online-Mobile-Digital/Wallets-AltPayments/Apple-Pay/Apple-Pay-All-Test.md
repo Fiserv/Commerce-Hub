@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-inapp-integration]
+tags: [carat, commerce-hub, apple-pay, wallet, app, web]
 ---
 
 # Apple Pay
