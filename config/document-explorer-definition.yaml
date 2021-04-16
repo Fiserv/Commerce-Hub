@@ -40,31 +40,15 @@
     - title: Wallets and Alt Payments
       link: docs/Getting-Started/Getting-Started-Wallets.md
       open: false
-      sections:
+      articles:
       - title: Integrations
         link: docs/Getting-Started/Getting-Started-Wallets.md
-      - title: Apple Pay
-        open: false
-        articles:
-        - title: Integrations
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
-        - title: In-App
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
-        - title: Web - RESTful API
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md
-        - title: Web - Hosted Payment Page
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md
+      - title: Apple Pay (Option A)
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+      - title: Apple Pay (Option B)
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-All-Test.md
       - title: Google Pay
-        open: false
-        articles:
-        - title: Integrations
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
-        - title: In-App Payments
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
-        - title: Web - RESTful API
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md
-        - title: Web - Hosted Payment Page
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
 - sections:
   - title: Omnicommerce
     link: docs/Getting-Started/Getting-Started-UCOM.md
