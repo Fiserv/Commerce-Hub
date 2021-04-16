@@ -7,11 +7,11 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#transaction-origins) of the transaction. |
-| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-modes) on the transaction.|
-| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-codes) at the Point-of-Sale *(POS)*. |
-| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interactions).|
-| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicators).|
+| `origin` | *string* |  | The [origin](#transactionorigins) of the transaction. |
+| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#posentrymodes) on the transaction.|
+| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#posconditioncodes) at the Point-of-Sale *(POS)*. |
+| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobileinteractions).|
+| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electroniccommerceindicators).|
 
 ---
 

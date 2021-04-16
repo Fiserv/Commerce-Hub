@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, carat-api, request-h
 
 Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, or terminal.
 
-Commerce Hub's RESTful API request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
+Commerce Hub's RESTful API request consists of the [Header](#requestheader) followed by the [Request Body](#requestbody).
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.

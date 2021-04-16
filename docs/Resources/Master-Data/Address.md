@@ -17,7 +17,7 @@ Is an address connected to the customer's [payment method](../Guides/Payment-Sou
 | `firstName` | *string* |  | Customer first name. |
 | `lastName` | *string* |  | Customer last name. |
 | `address` | *array* |  | Billing [address](#subcomponent-address) details. |
-| `phone` | *array* |  | Customer [phone](Customer-Details.md#subcomponent-phone) details. |
+| `phone` | *array* |  | Customer [phone](Customer-Details.md#subcomponentphone) details. |
 
 ---
 
@@ -31,9 +31,9 @@ Is an address where merchant will send the order.
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* |  | Shipping contact first name. |
 | `lastName` | *string* |  | Shipping contact last name.|
-| `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method-valid-values).|
-| `address` | *array* |  | Shipping [address](#subcomponent-address) details. |
-| `phone` | *array* |  | Shipping contact [phone](Customer-Details.md#subcomponent-phone) details. |
+| `shippingMethod` | *string* |  | [Shipping and delivery method](#shippingmethodvalidvalues).|
+| `address` | *array* |  | Shipping [address](#subcomponentaddress) details. |
+| `phone` | *array* |  | Shipping contact [phone](Customer-Details.md#subcomponentphone) details. |
 
 ### Shipping Method
 

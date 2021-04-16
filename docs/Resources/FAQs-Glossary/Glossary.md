@@ -34,7 +34,7 @@ A Card Not Present (CNP) transaction made when the card cannot be physically use
 The unique number associated with a payment card. The entire number is known as the Primary Account Number (PAN). The first 4-6 digits are the Bank Identification Number (BIN).
 
 ## Card Security Code
-A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC) is a security feature for [card not present](#card-not-present) payment card transactions instituted to reduce credit card fraud.
+A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC) is a security feature for [card not present](#cardnotpresent) payment card transactions instituted to reduce credit card fraud.
 
 ## Cardholder
 A person to whom a card has been issued or a person authorized to use a card by the person to whom it was issued.
@@ -52,7 +52,7 @@ A transaction in which a cardholder obtains cash in person at a branch of a memb
 A process by which a customer disputes the payment and often results in the money being refunded to the customer by the issuing bank unless the merchant can show the transaction is valid.
 
 ## Dynamic Descriptor
-A custom descriptor you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
+A custom descriptor you configure and pass with each transaction via the API. This includes both [soft descriptors](#softdescriptor) and [hard descriptors](#harddescriptor). Contact your account representative for more information on using dynamic descriptors.
 
 ## Expiration Date
 The date embossed on the card beyond which the card must not be honored. Month and Year that the card expires.
