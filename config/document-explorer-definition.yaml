@@ -41,6 +41,8 @@
       link: docs/Getting-Started/Getting-Started-Wallets.md
       open: false
       sections:
+      - titles: Integrations
+        link: docs/Getting-Started/Getting-Started-Wallets.md
       - title: Apple Pay
         open: false
         articles:
