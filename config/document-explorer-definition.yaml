@@ -193,6 +193,8 @@
       articles:
       - title: Additional Data
         link: docs/Resources/Master-Data/Additional-Data.md
+      - title: Address
+        link: docs/Resources/Master-Data/Address.md
       - title: Amount Component
         link: docs/Resources/Master-Data/Amount-Components.md
       - title: Card Types
