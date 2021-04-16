@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, payment-token, tokenization]
 ---
 
 
-# Payment Token
+# Tokenization
 
 ## Overview
 
@@ -230,7 +230,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a Charge Payload Request with tokenization.
+##### Example of a charge payload request with tokenization.
 
 ```json
 {
@@ -255,7 +255,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge Payload Response with tokenization.
+##### Example of a charge (200: Success) response with tokenization.
 
 ```json
 {
