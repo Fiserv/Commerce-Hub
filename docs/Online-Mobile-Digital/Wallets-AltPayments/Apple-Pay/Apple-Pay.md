@@ -6,17 +6,18 @@ tags: [carat, commerce-hub, apple-pay, wallet,]
 
 ## Overview
 
-Our API allows developers to quickly enable secure and convenient payments in their payment applications. The API handles all of the tokenization needed to protect customers’ transactions.
+Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
 
-Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
+<!-- theme: info -->
+>Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
 
 ---
 
-## Apple Pay Integration Methods
+## Integration Methods
 
 Select an option below to see the integration steps.
 
-### Apple Pay on the Web: RESTful API
+### Web: RESTful API
 
 Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Apple Pay. The merchant will host the payment processing on their server and has full control over the look and feel. 
 
@@ -34,7 +35,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 
 **Begin integration with [Apple Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.mdn).**
 
-### Apple Pay on the Web: Hosted Payment Page
+### Web: Hosted Payment Page
 
 Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
 
@@ -49,7 +50,7 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requir
 
 **Begin integration with [Apple Pay on the Web: Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md).**
 
-### Apple Pay Integration In-App
+### In-App Integration
 
 Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Apple Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
 
