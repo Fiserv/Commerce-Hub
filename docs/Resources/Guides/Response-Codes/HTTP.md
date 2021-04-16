@@ -33,6 +33,8 @@ type: tab
 title: 4xx
 -->
 
+<!-- Add new responses and edit the payload example as well -->
+
 ##### Client Error Status code, description and resolution
 
 | Code | Message  | Description | Resolution |

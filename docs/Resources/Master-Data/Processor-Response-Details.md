@@ -2,7 +2,7 @@
 
 ## Overview
 
- ```json
+ 
  approvalStatus:
           type: string
           description: 'Final status of the transaction.'
@@ -53,7 +53,7 @@
           example: '2021.02.25 14:14:38 (EST)'
         bankAssociationDetails:
           $ref: '#/components/schemas/BankAssociationDetails'
-```
+
 
 ---
 

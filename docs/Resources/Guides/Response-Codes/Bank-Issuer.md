@@ -14,7 +14,7 @@ Commerce Hub receives Host Response Codes from the processing network or bank. C
 
 <!-- https://docs.firstdata.com/org/gateway/node/473 -->
 
-| `hostResponseCode` | `hostResponseMessage` |
+| Code| Message |
 | ---- | ------------ |
 | 00 | Transaction has been approved. |
 
