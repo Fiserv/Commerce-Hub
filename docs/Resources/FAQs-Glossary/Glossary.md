@@ -26,7 +26,7 @@ The process of charging the customer's account for a previously authorized trans
 Payment networks that determine where a card can be used and facilitate the payment process between merchants and customers. Common card networks include Visa, MasterCard, American Express and Discover. Note that American Express and Discover are also card issuers as well.
 
 
-## <a name="card-not-present">Card Not Present</a>
+## Card Not Present
 A Card Not Present (CNP) transaction made when the card cannot be physically used, e.g. in an online store.
 
 
