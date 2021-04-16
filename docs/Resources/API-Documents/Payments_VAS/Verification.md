@@ -26,7 +26,7 @@ The merchant can perform account verification transaction, if they want to confi
 |`cardData`| *string* | 19 | Encrypted or unencrypted [card data](?path=docs/Resources/Master-Data/Card.md) (e.g. PAN, EMV, Track, etc.). |
 
 <!--theme:info-->
-> The merchant can also perform an [address](?path=docs/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Guides/Fraud/Security-Code.md) verification with the request.
+> The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
 
 ### Payload Example
 
