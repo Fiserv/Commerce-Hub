@@ -9,9 +9,6 @@ tags: [carat, commerce-hub, payment-token, tokenization]
 
 **[Tokenization](../../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. Merchant either can submit a request to tokenize a payment card as part of a [charge](#chargerequest) by using `createToken`, or can tokenize the card separately by sending a request to the [tokens](#tokenrequest) endpoints.
 
-<!-- theme: info -->
-> Merchants utilizing multiple tokenization services `tokenProvider` is required.
-
 ---
 
 ## Charge Request
@@ -230,7 +227,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a charge payload request with tokenization.
+##### Example of a charge payload request with PaymentToken.
 
 ```json
 {
@@ -255,7 +252,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a charge (200: Success) response with tokenization.
+##### Example of a charge (200: Success) response.
 
 ```json
 {
