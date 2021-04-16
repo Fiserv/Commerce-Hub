@@ -40,13 +40,12 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requir
 
 #### Transaction Flow
 
-1. Customer selects checkout from the merchant's website.
-2. Customer then presented with the Commerce Hub's secure Hosted Payment Page.
-3. Customer selects Apple Pay and then redirected to the Apple Pay payment form.
-4. Customer completes the apple pay form and then redirected to the Hosted Payment Page.
-5. Customer selects to complete the transaction.
-6. Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
-7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
+1. The customer selects checkout from the merchant's website and Commerce Hub's secure Hosted Payment Page displays.
+2. The customer selects Apple Pay and the Apple Pay payment form displays.
+3. The customer completes the Apple Pay form and returns to the Hosted Payment Page.
+4. The customer selects to complete the transaction.
+5. The Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
+6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
 **Begin integration with [Apple Pay on the Web: Hosted Payment Page](#WebHostedPaymentPage).**
 
@@ -56,11 +55,10 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 #### Transaction Flow
 
-1. Customer selects checkout from the merchant's App.
-2. Customer then presented with the merchant's payment form.
-3. The App calls the Apple Pay framework to obtain the encrypted wallet data.
-4. Merchant's App submits the encrypted Apple Pay payload to Commerce Hub.
-5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+1. The customer selects checkout from the merchant's app and the merchant’s payment form displays.
+2. The app calls the Apple Pay framework to obtain the encrypted wallet data.
+3. The merchant’s app submits the encrypted Apple Pay payload to Commerce Hub.
+4. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
 
 **Begin integration with [Apple Pay Integration In-App](#InAppIntegration).**
 
