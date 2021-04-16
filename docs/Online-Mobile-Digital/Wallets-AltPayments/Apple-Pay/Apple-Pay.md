@@ -6,9 +6,10 @@ tags: [carat, commerce-hub, apple-pay, wallet,]
 
 ## Overview
 
-Our API allows developers to quickly enable secure and convenient payments in their payment applications. The API handles all of the tokenization needed to protect customers’ transactions.
+Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
 
-Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
+<!-- theme: info -->
+>Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
 
 ---
 
