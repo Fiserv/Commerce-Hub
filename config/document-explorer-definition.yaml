@@ -41,6 +41,8 @@
       link: docs/Getting-Started/Getting-Started-Wallets.md
       open: false
       articles:
+      - title: Integrations
+        link: docs/Getting-Started/Getting-Started-Wallets.md
       - title: Apple Pay (Option A)
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Apple Pay (Option B)
