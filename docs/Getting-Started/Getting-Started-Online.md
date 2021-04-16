@@ -33,7 +33,7 @@ Using Commerce Hub's secure hosted pages can reduce the burden of compliance wit
 
 ## [Payment URL](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
 
-Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub [Hosted Payment Page](#hosted-payment-page) to complete the payment.
+Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub [Hosted Payment Page](#hostedpaymentpage) to complete the payment.
 
 ---
 
