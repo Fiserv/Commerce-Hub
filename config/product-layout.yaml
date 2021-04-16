@@ -1,3 +1,14 @@
+header:
+  productionDescription: > 
+                    Built to deliver innovation through simple, fast integrations, the Commerce Hub is the most 
+                    powerful omnichannel platform. With developer-friendly, flexible communication standards, 
+                    unified APIs, and pre-certified integrations the Commerce Hub reduces development time 
+                    and accelerates speed to market.
+
+                    A true single entry point and intelligent orchestration layer means you now have access to the 
+                    latest, most popular commerce experiences through your existing infrastructure. 
+                    With less ongoing maintenance and fewer operational costs, you can focus on creating new ways 
+                    for consumers to discover and interact with you.
 steps:  
   learnSteps:
     - title: Learn
@@ -25,24 +36,23 @@ steps:
 featuredFeatures:
   - title: Tokenization
     description: >
-      Remove sensitive customer data from your environment and reduce PCI compliance 
-      scope. Transaction data is protected by a randomly-generated identifier known as a 
-      "token".
+      Remove sensitive customer data from your environment and reduce PCI compliance scope. 
+      Transaction data is protected by a randomly-generated identifier known as a "token".
     tags: ["tag1", "tag2"]
     bullets: ["Increase payment security and reduce risk", "No need to store personal customer information", "Less operational costs", "Improved customer experience"]
     links: ["docs/Resources/API-Documents/Payments_VAS/Payment-Token.md"]
   - title: Apple Pay
     description: >
-      One of the most popular mobile payment and digital wallets. Customers can make 
-      payments in-store, mobile or online. To leverage, customers use an Apple devices 
-      - iPhone, Apple Watch, iPad, Mac, etc.
+      One of the most popular mobile payment and digital wallets. Customers can make payments 
+      in-store, mobile or online. To leverage, customers use an Apple devices - iPhone, Apple Watch, 
+      iPad, Mac, etc.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]
   - title: API Integration
     description: >
-      Leverage your existing infrastructure and UI to accept payments online, in-store or on
-      mobile devices.
+      Leverage your existing infrastructure and UI to accept payments online, in-store or on mobile 
+      devices.
     tags: ["tag1", "tag2"]
     bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
     links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
@@ -143,15 +153,14 @@ featuredAPIs:
     language: Curl
     link: link to API Explorer   
 useCases:
-  - title: In-App Payments
+  - title: Wallet Payments
     subtitle: Apple Pay
     description: > 
       Create touchless, faster payment experiences leveraging biometric security.
 
-      Accept contactless, touchless payments Customers can One of the most popular 
-      mobile payment and digital wallets. Customers can make payments in-store, mobile 
-      or online. To leverage, customers use an Apple devices - iPhone, Apple Watch, iPad, 
-      Mac, etc.
+      Accept contactless, touchless payments Customers can One of the most popular mobile payment and 
+      digital wallets. Customers can make payments in-store, mobile or online. To leverage, 
+      customers use an Apple devices - iPhone, Apple Watch, iPad, Mac, etc.
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
   - title: Secure Transactions
