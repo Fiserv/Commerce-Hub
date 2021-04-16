@@ -6,7 +6,9 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-code, ca
 
 ## Overview
 
-The Gateway Response code indicates the status of a transaction after Commerce Hub gateway processed the transaction. The Response Code "00" (Transaction Normal) indicates that the transaction was processed normally. Any response other than "00" indicates that it was not normal.
+The Gateway Response code indicates the status of a transaction after Commerce Hub gateway processed the transaction. Commerce Hub includes the value in the `responseCode` along with the corresponding text in `responseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
+
+<!-- https://escmconfluence.1dc.com/display/CARAT/CARAT+Response+Codes+to+Nashville+Response+Codes+%28from+Spec+Version+2020-2%29+Mapping -->
 
 ---
 
@@ -146,5 +148,5 @@ The following response codes indicate that a certain threshold is exceeded withi
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
-
+- [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 ---
