@@ -35,7 +35,7 @@ For the transactions where security check id required, merchant needs to pass th
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 |`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
 |`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
-|`securityCode` | *string* | 3| The card [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#securitycode).|
+|`securityCode` | *string* | 3| The card security code.|
 |`securityCodeIndicator` | *string* | | Indicates how the security code is passed.|
 
 ---
