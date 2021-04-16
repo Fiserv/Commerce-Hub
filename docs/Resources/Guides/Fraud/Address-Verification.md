@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, address-verifficatio
 
 ## Overview
 
-**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress). [AVS](?path=docs/Resources/FAQs-Glossary/Glossary.md#avs) is widely used Fraud Prevention measure for the transaction where the cardholder is not present.
+**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress). [AVS](?path=docs/Resources/FAQs-Glossary/Glossary.md#addressverificationservice) is widely used Fraud Prevention measure for the transaction where the cardholder is not present.
 
 #### Perform AVS Check
 
