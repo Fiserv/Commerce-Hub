@@ -14,17 +14,17 @@ The following variables are required in the initial `PaymentToken` request and s
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `authorizationTypeIndicator` | *string* |  | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
+| `authorizationTypeIndicator` | *string* | 11 | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
 
 #### Component : storedCredentials
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `initiator` | *string* |  | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
-| `originalAmount` | *string* |  | Indicates the original amount of the initial transaction. |
+| `initiator` | *string* | 11 | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* |  | Indicator if this is a scheduled transaction. |
-| `schemeReferencedTransactionId` | *string* |  | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
-| `sequence` | *string* |  | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
+| `schemeReferencedTransactionId` | *string* | 256 | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
+| `sequence` | *string* | 10 | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
+| `networkOriginalAmount` | *number* | 999999999999999999.999 | Original transaction amount, required for Discover Card on File transactions. |
 
 ## Payload Example
 

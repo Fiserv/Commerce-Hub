@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, address-verifficatio
 
 ## Overview
 
-**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address). [AVS](?path=docs/Resources/FAQs-Glossary/Glossary.md#avs) is widely used Fraud Prevention measure for the transaction where the cardholder is not present.
+**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress). [AVS](?path=docs/Resources/FAQs-Glossary/Glossary.md#addressverificationservice) is widely used Fraud Prevention measure for the transaction where the cardholder is not present.
 
 #### Perform AVS Check
 
@@ -19,7 +19,7 @@ The Merchant can get the cardholder's address verification done by either submit
 #### Component: amount
 
 <!--theme:info-->
-> AVS check requires amount component only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
+> AVS check requires amount component only if it is initiated with charge request. See [Payload](#chargerequestpayloadexample) examples for more details.
 
 #### Component: billingAddress
 
@@ -272,8 +272,8 @@ title: Association Response
 
 Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `avsCode` | *string* |  | Contains the Response of AVS Checking received from the association. The [Valid Values](#avscode-valid-values) are |
-| `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. The [Valid Values](#cardHolderNameResponse-valid-values) are|
+| `avsCode` | *string* |  | Contains the Response of AVS Checking received from the association. The [Valid Values](#avscodevalidvalues) are |
+| `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. The [Valid Values](#cardHolderNameResponsevalidvalues) are|
 
 
 

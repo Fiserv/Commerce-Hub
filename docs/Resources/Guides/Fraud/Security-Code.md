@@ -19,7 +19,7 @@ For the transactions where security check id required, merchant needs to pass th
 #### Component: amount
 
 <!--theme:info-->
->CVV check required amount component only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
+>CVV check required amount component only if it is initiated with charge request. See [Payload](#chargerequestpayloadexample) examples for more details.
 
 | Variable |  Type| Maximum Length | Description/Values|
 | --------- |----------|----------------|---------|
@@ -35,7 +35,7 @@ For the transactions where security check id required, merchant needs to pass th
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 |`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
 |`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
-|`securityCode` | *string* | 3| The card [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code).|
+|`securityCode` | *string* | 3| The card security code.|
 |`securityCodeIndicator` | *string* | | Indicates how the security code is passed.|
 
 ---

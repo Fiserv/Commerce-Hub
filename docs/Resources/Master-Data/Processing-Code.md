@@ -6,9 +6,9 @@ A set of numbers that describe the type of the transaction as well as the accoun
 
 The Processing code has 3 subdivisions 
 
-- Positions 1 – 2, [Transaction Type](#transaction-type)
-- Positions 3 – 4, [Account Type (From)](#from-account-type)
-- Positions 5 – 6, [Account Type (To)](#to-account-type)
+- Positions 1 – 2, [Transaction Type](#transactiontype)
+- Positions 3 – 4, [Account Type (From)](#fromaccounttype)
+- Positions 5 – 6, [Account Type (To)](#toaccounttype)
 
 ---
 

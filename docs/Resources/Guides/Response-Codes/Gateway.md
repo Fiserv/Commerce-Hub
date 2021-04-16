@@ -6,9 +6,12 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-code, ca
 
 ## Overview
 
-The Gateway Response code indicates the status of a transaction after Commerce Hub gateway processed the transaction. Commerce Hub includes the value in the `responseCode` along with the corresponding text in `responseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
+The Gateway Response code indicates the status of a transaction after Commerce Hub receives the transaction. Commerce Hub includes the value in the `responseCode` along with the corresponding text in `responseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
-<!-- https://escmconfluence.1dc.com/display/CARAT/CARAT+Response+Codes+to+Nashville+Response+Codes+%28from+Spec+Version+2020-2%29+Mapping -->
+<!-- https://escmconfluence.1dc.com/display/CARAT/CARAT+Response+Codes+to+Nashville+Response+Codes+%28from+Spec+Version+2020-2%29+Mapping 
+
+https://support.payeezy.com/hc/en-us/articles/203730509-First-Data-Payeezy-Gateway-Bank-Response-Codes - for action
+-->
 
 ---
 
@@ -16,10 +19,15 @@ The Gateway Response code indicates the status of a transaction after Commerce H
 
 <!--
 type: tab
-title: Invalid Data
+title: 0xx
 -->
 
 The following response codes indicate invalid data in the transaction. In these cases, the data should be changed before attempting to resend the transaction.
+
+| Code| Message | Type (S/R/D)| Action (use payeezy and add resolution) |
+| ---- | ------------ |
+
+
 
 | Response Code | Description |
 | ----- | -------------- |
@@ -46,7 +54,7 @@ The following response codes indicate invalid data in the transaction. In these 
 
 <!--
 type: tab
-title: Merchant Configuration
+title: 1xx
 -->
 
 The following response codes indicate a problem with the merchant configuration at the financial institution. Please contact Account Representative for further investigation.

@@ -13,14 +13,14 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 The Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Examples of CNP transactions include; online payments, in-app payments, and MOTO transactions.
 
 - [Integration](?path=docs/Getting-Started/Getting-Started-Online.md)
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 
 #### In-Person
 
 In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Examples of In-person transactions include; manual entry, track data and EMV.
 
 - [Integration](?path=docs/Getting-Started/Getting-Started-InPerson.md)
-- [API Explorer](url)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 
 ---
 

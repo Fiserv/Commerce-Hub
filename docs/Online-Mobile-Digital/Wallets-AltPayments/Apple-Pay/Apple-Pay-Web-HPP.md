@@ -12,7 +12,7 @@ The Apple developer account will need to be configured with the merchant informa
 
 ## Step 2: Support Apple Pay on the Web
 
-The merchant can start supporting Apple Pay on their [Hosted Payment Page](docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md) by configuring the settings in the Virtual Terminal.
+The merchant can start supporting Apple Pay on their [Hosted Payment Page](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md) by configuring the settings in the Virtual Terminal.
 
 1. Login
 2. Click Customize
@@ -29,9 +29,9 @@ The merchant can enhance the purchase experience from their website by creating 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay App Integration](Apple-Pay-App.md)
-- [Apple Pay Web RESTful Integration](Apple-Pay-App.md)
-- [Charges](../../../Resources/API-Documents/Payments/Charges.md)
-- [Google Pay](../Google-Pay/Google-Pay.md)
+- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
+- [Apple Pay Web RESTful Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---

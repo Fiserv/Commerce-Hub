@@ -13,7 +13,7 @@ The `card` component is an array which is used for all card types, including deb
 | `expirationMonth` | *string* |  | 2-digit card expiration month. |
 | `expirationyear` | *string* |  | 4-digit card expiration year. |
 | `securityCode` | *string* |  | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
-| `securityCodeIndicator` | *string* |  | Indicates how the [security code](#security-code-indicator) is passed. |
+| `securityCodeIndicator` | *string* |  | Indicates how the [security code](#securitycodeindicator) is passed. |
 
 
 ### Security Code Indicator

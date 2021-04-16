@@ -24,7 +24,7 @@ The transaction request initiated by merchant contains various transaction relat
 | `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void). **Valid Values:** *VOIDED*, *TIMEOUT*, *EDIT_ERROR*, *MAC_VERIFICATION_ERROR*, MAC_SYNCH_ERROR, *ENCRYPTION_ERROR*, *SYSTEM_ERROR*, *SUSPECTED_FRAUD*|
 | `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain multiple shipments. Can be set during pre-auth or the first post-auth.|
 | `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
-| `deviceFingerprint` | *array* |  | An array containing the [device fingerprint](#subcomponent-devicefingerprint) details.|
+| `deviceFingerprint` | *array* |  | An array containing the [device fingerprint](#subcomponentdevicefingerprint) details.|
 
 ---
 
@@ -35,9 +35,9 @@ The transaction request initiated by merchant contains various transaction relat
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`provider` | *string* |  | Device provider e.g. InAuth. |
-|`dataCapture`| *array* |  | An array containing [data capture](#subcomponent-datacapture) details. | 
-|`dataStatic`| *array* |  | An array containing [data static](#subcomponent-datastatic) details.|
-|`dataDynamic`| *array* |  | An array containing [data dynamic](#subcomponent-datadynamic) details. |
+|`dataCapture`| *array* |  | An array containing [data capture](#subcomponentdatacapture) details. | 
+|`dataStatic`| *array* |  | An array containing [data static](#subcomponentdatastatic) details.|
+|`dataDynamic`| *array* |  | An array containing [data dynamic](#subcomponentdatadynamic) details. |
 
 ---
 

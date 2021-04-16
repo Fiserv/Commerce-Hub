@@ -8,9 +8,9 @@ The Gateway Response contains the response parameters from the Commerce Hub for 
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `transactionOrigin` | *string* | | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origins). |
-| `transactionProcessingDetails` | *array* | | Array containing the [transaction processing details](#transaction-processing-details). |
-| `transactionState` | *string* | | Final [state](#transaction-state) of the transaction. |
+| `transactionOrigin` | *string* | | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
+| `transactionProcessingDetails` | *array* | | Array containing the [transaction processing details](#transactionprocessingdetails). |
+| `transactionState` | *string* | | Final [state](#transactionstate) of the transaction. |
 | `transactionType` | *string* | | Type of transaction submitted. |
 
 ---
