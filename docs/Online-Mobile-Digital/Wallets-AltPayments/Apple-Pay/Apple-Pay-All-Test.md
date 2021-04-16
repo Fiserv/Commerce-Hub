@@ -32,7 +32,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
-#### Begin integration with [Apple Pay on the Web: RESTful API](#WebRESTfulAPIIntegration).
+**Begin integration with [Apple Pay on the Web: RESTful API](#WebRESTfulAPIIntegration).**
 
 ### Apple Pay on the Web: Hosted Payment Page
 
@@ -48,7 +48,7 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requir
 6. Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
 7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
-#### Begin integration with [Apple Pay on the Web: Hosted Payment Page](#WebHostedPaymentPage).
+**Begin integration with [Apple Pay on the Web: Hosted Payment Page](#WebHostedPaymentPage).**
 
 ### Apple Pay Integration In-App
 
@@ -62,7 +62,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 4. Merchant's App submits the encrypted Apple Pay payload to Commerce Hub.
 5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
 
-#### Begin integration with [Apple Pay Integration In-App](#InAppIntegration).
+**Begin integration with [Apple Pay Integration In-App](#InAppIntegration).**
 
 ---
 
