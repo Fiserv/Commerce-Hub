@@ -268,8 +268,8 @@ The table below contains all the countries and their Alpha 2, Alpha 3 and Number
 
 ## See Also
 
-- [API Explorer](url)
-- [Amount Components](Amount-Components.md)
-- [Currency Conversion](../Guides/Currency-Conversion.mdd)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
+- [Currency Conversion](?path=docs/Resources/Master-Data/Currency-Code.md)
 
 ---

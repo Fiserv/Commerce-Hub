@@ -35,7 +35,9 @@ Is an address where merchant will send the order.
 | `address` | *array* |  | Shipping [address](#subcomponent-address) details. |
 | `phone` | *array* |  | Shipping contact [phone](Customer-Details.md#subcomponent-phone) details. |
 
-##### Shipping Method
+### Shipping Method
+
+#### Object: shippingMethod
 
 | Value | Description |
 | ----- | ----------- |
@@ -59,15 +61,15 @@ Is an address where merchant will send the order.
 | `city` | *string* |  | City or locality |
 | `stateOrProvince` | *string* |  | State or Province name |
 | `postalCode` | *string* |  | Postal code |
-| `country` | *string* |  | [Country Code](Country-Code.md)|
+| `country` | *string* |  | [Country Code](?path=docs/Resources/Master-Data/Country-Code.md)|
 
 ---
 
 ## See Also
 
-- [API Explorer](url)
-- [Address Verification](../Guides/Fraud/Address-Verification.md)
-- [Capture](../API-Documents/Payments/Capture.md)
-- [Charge](../API-Documents/Payments/Charges.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

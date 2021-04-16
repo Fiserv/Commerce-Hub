@@ -12,9 +12,9 @@ Each business is assigned a Merchant Category Code (MCC), which is determined by
 > Example: All 'Inbound telemarketing merchants' will be assigned with MCC 5967 and all 'Hotels and Resorts' will have 7011. 
 
 
-- **Static MCC** : The MCC is automatically set based on the merchant processing account. If incorrect this would need to be updated by the account representative.
+- **Static MCC** : The MCC is automatically set based on the merchant processing account. If incorrect, this would need to be updated by the account representative.
 
-- **Dynamic MCC** : The MCC is passed in the `dynamicDescriptors` object. [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md) have limited platform availability. For more information, please contact your account representative.
+- **Dynamic MCC** : The MCC is passed in the `dynamicDescriptors` object. [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md) have limited platform availability. For more information, please contact your account representative.
 
 ---
 
@@ -314,5 +314,7 @@ Each business is assigned a Merchant Category Code (MCC), which is determined by
 
 ## See Also
 
-- [API Explorer](url)
-- [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+
+---

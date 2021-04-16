@@ -20,7 +20,7 @@ type: tab
 title: 2xx
 -->
 
-##### Success Status code and Description
+##### Success Status code and description
 
 | Code | Message | Description |
 | --------- | --- | ------- |
@@ -33,7 +33,7 @@ type: tab
 title: 4xx
 -->
 
-##### Client Error Status code, Description and Resolution
+##### Client Error Status code, description and resolution
 
 | Code | Message  | Description | Resolution |
 | --------- | --- | ------- | --------- |
@@ -47,7 +47,7 @@ type: tab
 title: 5xx
 -->
 
-##### Server Error Status code, Description and Resolution
+##### Server Error Status code, description and resolution
 
 | Code | Message | Description | Resolution |
 | --------- | ---- | ------ | ------- |
@@ -66,24 +66,25 @@ type: tab
 title: Error Response
 -->
 
-##### Example of a Charge (400: Bad Request) Response.
+##### Example of a charge (400: Bad Request) response.
 
 ```json
 {
-  "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-  "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-  "responseType": "BadRequest",
-  "error": {
-    "code": "INVALID_INPUT",
-    "message": "Invalid request input. Please see details below.",
-    "details": [
-      {
-        "field": "payloadObjectType",
-        "message": "Payload object type missing."
-      }
-    ]
-  }
+   "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+   "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+   "responseType":"BadRequest",
+   "error":{
+      "code":"INVALID_INPUT",
+      "message":"Invalid request input. Please see details below.",
+      "details":[
+         {
+            "field":"payloadObjectType",
+            "message":"Payload object type missing."
+         }
+      ]
+   }
 }
+
 ```
 <!-- type: tab-end -->
 
@@ -91,6 +92,8 @@ title: Error Response
 
 ## See Also
 
-- [API Explorer](url)
-- [Bank Response Code](Bank-Issuer.md)
-- [Gateway Response Code](Gateway.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+
+---

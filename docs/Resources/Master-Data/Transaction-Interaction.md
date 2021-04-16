@@ -7,7 +7,7 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#pos-entry-modes) of the transaction. |
+| `origin` | *string* |  | The [origin](#transaction-origins) of the transaction. |
 | `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-modes) on the transaction.|
 | `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-codes) at the Point-of-Sale *(POS)*. |
 | `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interactions).|
@@ -99,7 +99,7 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ## See Also
 
-- [API Explorer](url)
-- [Dynamic Descriptors](../Guides/Dynamic-Descriptor.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 
 ---

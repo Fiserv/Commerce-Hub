@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, card-present, address-verifficatio
 
 ## Overview
 
-**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](../../Master-Data/Address.md#billing-address). [AVS](../../FAQs-Glossary/Glossary.md#avs) is widely used Fraud Prevention measure for the transaction where the card holder is not present.
+**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address). [AVS](?path=docs/Resources/FAQs-Glossary/Glossary.md#avs) is widely used Fraud Prevention measure for the transaction where the cardholder is not present.
 
 #### Perform AVS Check
 
@@ -19,7 +19,7 @@ The Merchant can get the cardholder's address verification done by either submit
 #### Component: amount
 
 <!--theme:info-->
-> Amount component is needed for AVS check only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
+> AVS check requires amount component only if it is initiated with charge request. See [Payload](#charge-request-payload-example) examples for more details.
 
 #### Component: billingAddress
 
@@ -27,7 +27,7 @@ The Merchant can get the cardholder's address verification done by either submit
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* |  | Customer first name. |
 | `lastName` | *string* |  | Customer last name. |
-| `address` | *component* |  | Billing [address](../../Master-Data/Address.md#address) details. |
+| `address` | *component* |  | Billing [address](?path=docs/Resources/Master-Data/Address.md#address) details. |
 
 ---
 
@@ -46,34 +46,33 @@ title: Request
 
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123"
-    }
-  },
-  
-  "billingAddress": {
-    "name": "Jane Smith",
-    "address": {
-      "street": "Main Street",
-      "houseNumberOrName": "123",
-      "city": "Sandy Springs",
-      "stateOrProvince": "GA",
-      "postalCode": "30303",
-      "country": "US"
-    }
-  }
+   "amount":{
+      "total":"12.04",
+      "currency":"USD"
+   },
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123"
+      }
+   },
+   "billingAddress":{
+      "name":"Jane Smith",
+      "address":{
+         "street":"Main Street",
+         "houseNumberOrName":"123",
+         "city":"Sandy Springs",
+         "stateOrProvince":"GA",
+         "postalCode":"30303",
+         "country":"US"
+      }
+   }
 }
-
 ```
+
 <!--
 type: tab
 title: Response
@@ -83,59 +82,59 @@ title: Response
 
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "token",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom",
-    "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
-      "transactionTime": "2016-04-16T16:06:05Z",
-      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
-    }
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard",
-    "tokenData": "1234123412340019",
-    "PARId": "string",
-    "declineDuplicates": "FALSE",
-    "tokenSource": "string",
-    "card": {
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "05",
-      "expirationYear": "2025",
-      "bin": "400555",
-      "last4": "0019",
-      "scheme": "VISA"
-    }
-  },
-  "processorResponseDetails": {
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK3483",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionId": "019078743804756",
-    "feeProgramIndicator": "string",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "",
-    "localTimestamp": "2016-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2016-04-16T16:06:05Z",
-      "avsSecurityCodeResponse": {
-        "streetMatch": "MATCH",
-        "postalCodeMatch": "MATCH",
-          "association": {
-            "avsCode": "BOTH_MATCH",
-            "cardHolderNameResponse": "NAME_MATCH",
-          }
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"token",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "transactionDate":"2016-04-16",
+         "transactionTime":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
       }
-    }
-  },
+   },
+   "paymentSource":{
+      "sourceType":"PaymentCard",
+      "tokenData":"1234123412340019",
+      "PARId":"string",
+      "declineDuplicates":"FALSE",
+      "tokenSource":"string",
+      "card":{
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"05",
+         "expirationYear":"2025",
+         "bin":"400555",
+         "last4":"0019",
+         "scheme":"VISA"
+      }
+   },
+   "processorResponseDetails":{
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK3483",
+      "referenceNumber":"845366457890-TODO",
+      "schemeTransactionId":"019078743804756",
+      "feeProgramIndicator":"string",
+      "processor":"fiserv",
+      "responseCode":"00",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"54022",
+      "hostResponseMessage":"",
+      "localTimestamp":"2016-04-16T16:06:05Z",
+      "bankAssociationDetails":{
+         "associationResponseCode":"000",
+         "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "avsSecurityCodeResponse":{
+            "streetMatch":"MATCH",
+            "postalCodeMatch":"MATCH",
+            "association":{
+               "avsCode":"BOTH_MATCH",
+               "cardHolderNameResponse":"NAME_MATCH"
+            }
+         }
+      }
+   }
 }
 ```
 <!-- type: tab-end -->
@@ -188,59 +187,59 @@ title: Response
 
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "token",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom",
-    "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
-      "transactionTime": "2016-04-16T16:06:05Z",
-      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
-    }
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard",
-    "tokenData": "1234123412340019",
-    "PARId": "string",
-    "declineDuplicates": "FALSE",
-    "tokenSource": "string",
-    "card": {
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "05",
-      "expirationYear": "2025",
-      "bin": "400555",
-      "last4": "0019",
-      "scheme": "VISA"
-    }
-  },
-  "processorResponseDetails": {
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK3483",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionId": "019078743804756",
-    "feeProgramIndicator": "string",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "",
-    "localTimestamp": "2016-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2016-04-16T16:06:05Z",
-      "avsSecurityCodeResponse": {
-        "streetMatch": "MATCH",
-        "postalCodeMatch": "MATCH",
-          "association": {
-            "avsCode": "BOTH_MATCH",
-             "cardHolderNameResponse": "NAME_MATCH",
-          }
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"token",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "transactionDate":"2016-04-16",
+         "transactionTime":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
       }
-    }
-  },
+   },
+   "paymentSource":{
+      "sourceType":"PaymentCard",
+      "tokenData":"1234123412340019",
+      "PARId":"string",
+      "declineDuplicates":"FALSE",
+      "tokenSource":"string",
+      "card":{
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"05",
+         "expirationYear":"2025",
+         "bin":"400555",
+         "last4":"0019",
+         "scheme":"VISA"
+      }
+   },
+   "processorResponseDetails":{
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK3483",
+      "referenceNumber":"845366457890-TODO",
+      "schemeTransactionId":"019078743804756",
+      "feeProgramIndicator":"string",
+      "processor":"fiserv",
+      "responseCode":"00",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"54022",
+      "hostResponseMessage":"",
+      "localTimestamp":"2016-04-16T16:06:05Z",
+      "bankAssociationDetails":{
+         "associationResponseCode":"000",
+         "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "avsSecurityCodeResponse":{
+            "streetMatch":"MATCH",
+            "postalCodeMatch":"MATCH",
+            "association":{
+               "avsCode":"BOTH_MATCH",
+               "cardHolderNameResponse":"NAME_MATCH"
+            }
+         }
+      }
+   }
 }
 ```
 <!-- type: tab-end -->
@@ -318,7 +317,9 @@ Variable | Type| Maximum Length | Description/Values|
 
 ## See Also
 
-- [API Explorer](url)
-- [Address](../../Master-Data/Address.md)
-- [Charge](../../API-Documents/Payments/Charges.md)
-- [Verification](../../API-Documents/Payments_VAS/Verification.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Address](?path=docs/Resources/Master-Data/Address.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+
+---

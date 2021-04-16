@@ -1,7 +1,9 @@
-# Universal Commerce Payments
+# Omnicommerce Payments
 
 ## Overview
 
-The beginning of an awesome article...
+Omnicommerce also known as Universal Commerce is Commerce Hub's unified commerce solution that consolidates sales channels, and allows for a more consistent and personalized customer experience.
 
-https://docs.adyen.com/unified-commerce
+Omnicommerce is based around the concept of recognizing your customers when they purchase online, in-app, or in-person with any Commerce Hub integration.
+
+<!-- https://docs.adyen.com/unified-commerce -->

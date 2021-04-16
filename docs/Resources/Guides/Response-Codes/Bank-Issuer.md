@@ -2,17 +2,23 @@
 tags: [carat, card-not-present, commerce-hub, error, response, response-code, card-present]
 ---
 
-# Issuer Response Codes
+# Host Response Codes
 
 ## Overview
 
-Issuer Response Codes are two digit codes, which Commerce Hub receives from the cardholder issuing bank. Commerce Hub includes that value in `hostResponseCode` along with the corresponding text in `approvalStatus` field in `processorResponseDetails` component in the response which is been sent back to the merchant.
+Commerce Hub receives Host Response Codes from the processing network or bank. Commerce Hub includes the value in the `hostResponseCode` along with the corresponding text in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
-## Issuer Response Codes
+---
 
-| Code | Corresponding | Displayed Text Meaning |
-| ---- | ------------ | ------------ |
-| 00 | Approval | Approved |
+## Nashville Response Codes
+
+<!-- https://docs.firstdata.com/org/gateway/node/473 -->
+
+| `hostResponseCode` | `hostResponseMessage` |
+| ---- | ------------ |
+| 00 | Transaction has been approved. |
+
+
 | 00 | New Account Information | Applies to recurring authorizations only. These are examples of what may have occurred: Card has expired, Account was upgraded, Portfolio sale, Conversion |
 | 01 | Referral | Referral |
 | 03 | Invld Mer ID | Invalid Merchant number or Subscriber doesn't exist or is inactive |
@@ -81,3 +87,11 @@ Issuer Response Codes are two digit codes, which Commerce Hub receives from the 
 | NS | Dbtsw Pin Xl Err | The authorizing network has a problem decrypting the cryptogram in the request |
 | NU | Declined | Insufficient funds </br>MasterCard or Check transactions may override standard display for responses. |
 | RW | Rev Outside Win | Reversal Outside Window </br> Reversal transaction was received, but the original matching authorization request was processed more than 25 minutes ago and is no longer eligible to be reversed. ( Applicable to Credit Host Capture only ) </br> If the POS has received a RW response (25 minutes after the original Authorization), the transaction cannot be reversed (voided). The Merchant must issue a refund/credit, or refund the amount authorized by other means. |
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
+- [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+---

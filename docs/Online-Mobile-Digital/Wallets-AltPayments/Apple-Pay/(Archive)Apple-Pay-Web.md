@@ -28,7 +28,7 @@ Next create a payment processing certificate that is associated with your mercha
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar.
 - Under Identifiers, select Merchant IDs using the filter in the top-right.
 - On the right, select your merchant identifier.
->Note: If a banner appears at the top of the page saying that you need to accept an agreement, click the Review Agreement button and follow the instructions before continuing.
+> If a banner appears at the top of the page saying that you need to accept an agreement, click the Review Agreement button and follow the instructions before continuing.
 - Under Apple Pay Payment Processing Certificate, click Create Certificate.
 - [Create a certificate signing request](https://help.apple.com/developer-account/#/devbfa00fef7?sub=dev103e030bb) on your Mac, and click Continue.
 - Click Choose File.
@@ -79,8 +79,7 @@ Merchant can start supporting Apple Pay on their website either by using Apple P
 
 **Integrate Using Apple Pay JS API:** For more details refer [Apple Pay JS API](https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api) documentation.
 
-**Integrate Using Commerce Hub Hosted Page:** configure your apple pay settings in Commerce Hub
-Hosted Page.
+**Integrate Using Commerce Hub Hosted Page:** configure your apple pay settings in Commerce Hub Hosted Page.
 
 ---
 
@@ -103,30 +102,30 @@ title: Request
 ##### Example of a Charge Payload Request.
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "ApplePay",
-    "data": "hbreWcQg980mUoUCfuCoripnHO210lvtizOFLV6PTw1DjooSwik778bH....",
-    "header": {
-      "applicationDataHash": "94ee059335e587e501cc4bf90613e0814f00a7b08bc7c648fd865a2af6a22cc2",
-      "ephemeralPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvR....",
-      "publicKeyHash": "KRsyW0NauLpN8OwKr+yeu4jl6APbgW05/TYo5eGW0bQ=",
-      "transactionId": "31323334353637"
-    },
-    "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhki.....",
-    "version": "EC_v1",
-    "applicationData": "VEVTVA==",
-    "merchantId": "merchant.com.fapi.tcoe.applepay",
-    "merchantPrivateKey": "MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
-  }
-  "transactionDetails": {
-    "captureFlag": true,
-    "createToken": true,
-    "tokenProvider": "RSA"
-  }
+   "amount":{
+      "total":"12.04",
+      "currency":"USD"
+   },
+   "source":{
+      "sourceType":"ApplePay",
+      "data":"hbreWcQg980mUoUCfuCoripnHO210lvtizOFLV6PTw1DjooSwik778bH....",
+      "header":{
+        "applicationDataHash":"94ee059335e587e501cc4bf90613e0814f00a7b08bc7c648fd865a2af6a22cc2",
+        "ephemeralPublicKey":"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvR....",
+        "publicKeyHash":"KRsyW0NauLpN8OwKr+yeu4jl6APbgW05/TYo5eGW0bQ=",
+        "transactionId":"31323334353637"
+      },
+      "signature":"MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhki.....",
+      "version":"EC_v1",
+      "applicationData":"VEVTVA==",
+      "merchantId":"merchant.com.fapi.tcoe.applepay",
+      "merchantPrivateKey":"MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
+   },
+   "transactionDetails":{
+      "captureFlag":true,
+      "createToken":true,
+      "tokenProvider":"RSA"
+   }
 }
 
 ```
@@ -142,46 +141,48 @@ title: Response
 > See [Error Responses](url) for additional examples.
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom"
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2021-04-16",
-    "transactionTime": "2021-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "source": "ApplePay",
-  "tokenData": "1234123412340019",
-  "PARId": "string",
-  "declineDuplicates": false,
-  "tokenSource": "string",
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": "1.00",
-      "currency": "USD"
-    },
-    "processorResponseDetails": null,
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK7118",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionID": "019078743804756",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "Approved",
-    "localTimestamp": "2021-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2021-04-16T16:06:05Z",
-      "transactionReferenceInformation": null,
-    }
-  }
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"charge",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom"
+   },
+   "transactionProcessingDetails":{
+      "transactionDate":"2021-04-16",
+      "transactionTime":"2021-04-16T16:06:05Z",
+      "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId":"838916029301"
+   },
+   "source":"ApplePay",
+   "paymentToken":{
+      "tokenData":"1234123412340019",
+      "PARId":"string",
+      "declineDuplicates":false,
+      "tokenSource":"RSA"
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total":"1.00",
+         "currency":"USD"
+      },
+      "processorResponseDetails":null,
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK7118",
+      "referenceNumber":"845366457890-TODO",
+      "schemeTransactionID":"019078743804756",
+      "processor":"fiserv",
+      "responseCode":"00",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"54022",
+      "hostResponseMessage":"Approved",
+      "localTimestamp":"2021-04-16T16:06:05Z",
+      "bankAssociationDetails":{
+         "associationResponseCode":"000",
+         "transactionTimestamp":"2021-04-16T16:06:05Z",
+         "transactionReferenceInformation":null
+      }
+   }
 }
 ```
 

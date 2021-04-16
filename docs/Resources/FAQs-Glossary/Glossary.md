@@ -4,8 +4,8 @@ tags: [carat, commerce-hub, glossary, acquiring-bank, aggregator, authorization,
 
 # Glossary
 
-## Acquirer/Acquiring Bank
-A bank or financial institution that processes credit or debit card transactions on behalf of a merchant. The acquirer sends the merchant's transactions to the customer's issuing bank through the card network.
+## Acquirer
+The acquirer or acquiring bank is the bank or financial institution that processes credit or debit card transactions on behalf of a merchant. The acquirer sends the merchant's transactions to the customer's issuing bank through the card network.
 
 ## Aggregator
 Aggregators are defined as third party billers that bill for services/goods rendered by another entity. The terms Payment Facilitator, Payment Service Provider, and Aggregator are interchangeable terms for the same functionality.
@@ -26,13 +26,12 @@ The process of charging the customer's account for a previously authorized trans
 Payment networks that determine where a card can be used and facilitate the payment process between merchants and customers. Common card networks include Visa, MasterCard, American Express and Discover. Note that American Express and Discover are also card issuers as well.
 
 
-## Card Not Present
+## <a name="card-not-present">Card Not Present</a>
 A Card Not Present (CNP) transaction made when the card cannot be physically used, e.g. in an online store.
 
 
 ## Card Number
 The unique number associated with a payment card. The entire number is known as the Primary Account Number (PAN). The first 4-6 digits are the Bank Identification Number (BIN).
-
 
 ## Card Security Code
 A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC) is a security feature for [card not present](#card-not-present) payment card transactions instituted to reduce credit card fraud.
@@ -65,17 +64,17 @@ The descriptor that shows up after a transaction has settled. As soon as the cus
 Compensation paid by the acquiring member to an issuing member for particular expenses incurred in the process of interchange transactions.
 
 ## Merchant Category Code
-The Merchant Category Code (MCC) is an industry standard [four-digit number](../Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides.
+The Merchant Category Code (MCC) is an industry standard [four-digit number](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides.
 
 ## Payment Token
 A cryptographically secure representation of payment instrument details for use with subsequent payment transactions. This token may be generated for a single use or for multiple uses. By making use of a payment token, the merchant does not need to store sensitive payment details on their servers.
 
 
 ## Pre-Auth
-A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and then also place a hold for that amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](../Transactions/Capture.md) transaction, the held amount is then setled with the merchant batch.
+A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and then also place a hold for that amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) transaction, the held amount is then setled with the merchant batch.
 
 ## Sale
-A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided [(cancel)](../Transactions/Cancel.md) before batching, the merchant funding process begins for this charge. At this point,the merchant can still return funds [(refund)](../Transactions/Refund.md) the customer.
+A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided [(cancel)](?path=docs/Resources/API-Documents/Payments/Cancel.md) before batching, the merchant funding process begins for this charge. At this point,the merchant can still return funds [(refund)](?path=docs/Resources/API-Documents/Payments/Refund.md) the customer.
 
 <!-- theme: warning -->
 > 
