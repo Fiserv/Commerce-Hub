@@ -61,7 +61,7 @@ title: 5xx
 | --------- | ---- | ------ | ------- |
 | 500 | Internal Server Error | Commerce Hub encountered an unexpected condition which prevented it from fulfilling the request. | Report the error to Commerce Hub support team. |
 | 503 | Service Unavailable | The application server is not ready to handle the request. | Please try after sometime. |
-
+| 504 | Gateway Timeout | Commerce Hub did not received response from upstream application.. | Please try after sometime. |
 
 <!-- type: tab-end -->
 
