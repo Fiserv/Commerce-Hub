@@ -43,6 +43,12 @@ title: 4xx
 | 401 | Unauthorized | Indicates that the request requires user authentication information. | The merchant may repeat the request with a suitable Authorization header field. |
 | 403 | Forbidden | Unauthorized request. The merchant does not have access rights to the content. | Please contact Account Representative for an access. |
 | 404 | Not Found | Commerce Hub can not find the requested resource. | Please check API Explorer for more information. |
+| 408 | Request Time Out | The response to the request did not received till set period time. | Please try after some time. |
+| 415 | Unsupported Media Type | Commerce Hub not able to process the supplied media type, as indicated by the Content-Type request header. | Merchant to correct the data and resend. |
+| 425 | Too Early | The request was sent too early | Merchant to wait for sometime and send request. |
+| 429 | Too Many Requests | Merchant had sent too many requests in a given amount of time. | Merchant to wait for sometime and send request. |
+
+
 
 <!--
 type: tab
@@ -68,26 +74,32 @@ type: tab
 title: Error Response
 -->
 
-##### Example of a charge (400: Bad Request) response.
+##### Example of a charge (425: Too Early) response.
 
 ```json
 {
-   "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-   "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-   "responseType":"BadRequest",
+   "gatewayResponse":{
+      "transactionType":"charge",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+         "transactionDate":"2021-04-16",
+         "transactionTime":"2021-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
+      }
+   },
    "error":{
-      "code":"INVALID_INPUT",
-      "message":"Invalid request input. Please see details below.",
-      "details":[
-         {
-            "field":"payloadObjectType",
-            "message":"Payload object type missing."
-         }
-      ]
+      "type":"GATEWAY",
+      "code":"",
+      "field":"",
+      "message":"The request was sent too early."
    }
 }
-
 ```
+
 <!-- type: tab-end -->
 
 ---
