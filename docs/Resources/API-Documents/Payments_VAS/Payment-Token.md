@@ -55,7 +55,7 @@ title: Request
    "transactionDetails":{
       "captureFlag":false,
       "createToken":true,
-      "tokenProvider":"RSA"
+      "tokenProvider":"TRANSARMOR"
    }
 }
 ```
@@ -156,7 +156,7 @@ title: Request
   },
   "transactionDetails": {
     "captureFlag": false
-    "tokenProvider": "RSA"
+    "tokenProvider": "TRANSARMOR"
   }
 }
 ```
