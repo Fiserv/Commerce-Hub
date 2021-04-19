@@ -8,6 +8,8 @@
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-InPerson.md
+    - title: RESTful API
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Debit
       sections:
       - title: Least Cost Debit
