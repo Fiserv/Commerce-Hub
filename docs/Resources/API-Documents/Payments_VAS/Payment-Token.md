@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, payment-token, tokenization]
 ---
 
-
 # Tokenization
 
 ## Overview
@@ -17,7 +16,7 @@ tags: [carat, commerce-hub, payment-token, tokenization]
 
 ## Charge Request
 
-#### Required Field
+### Required Field
 
 - `createToken`: *boolean* : *true*
 
@@ -123,8 +122,6 @@ title: Response
 
 ## Token Request
 
-#### Required Field
-
 <!-- theme: warning -->
 > For merchants using multiple tokenization services, `tokenProvider` is a required field.
 
@@ -220,6 +217,15 @@ title: Response
 
 ## Submit a Charge
 
+### Minimum Requirements
+
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `tokenData` | *string* | 2048 | Token created from the payment source. |
+| `PARId` | *string* | 256 | |
+| `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
+| `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
@@ -242,9 +248,9 @@ title: Request
   "paymentSource": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
+    "PARId": "",
+    "declineDuplicates": true,
+    "tokenSource": "TRANSARMOR"
   },
   "transactionDetails": {
     "captureFlag": true
@@ -277,8 +283,6 @@ title: Response
   "card": {
     "last4": "0019",
     "brand": "VISA",
-    "expirationMonth": "02",
-    "expirationYear": "2035"
   },
   "paymentReceipt": {
     "approvedAmount": {
@@ -300,14 +304,6 @@ title: Response
       "associationResponseCode": "000",
       "transactionTimestamp": "2021-04-16T16:06:05Z",
       "transactionReferenceInformation": null,
-      "avsSecurityCodeResponse": {
-        "streetMatch": "EXACT_MATCH",
-        "postalCodeMatch": "EXACT_MATCH",
-        "securityCodeMatch": "MATCHED",
-        "association": {
-          "avsCode": "Z",
-          "securityCodeResponse": "S",
-          "cardHolderNameResponse": "M"
         }
       }
     }
@@ -317,6 +313,10 @@ title: Response
 <!-- type: tab-end -->
 
 ## See Also
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+---
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
