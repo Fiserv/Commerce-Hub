@@ -10,7 +10,13 @@ The authorization is then placed into a WAITING status until the authentication 
 
 At the end of the authentication process, the original transaction is updated with the authentication results and the authorization is completed.
 
+#### Transaction Types
+
+3DS transactions originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a passthrough or a authentication request.
+
 ---
+
+## Passthrough
 
 ### Minimum Requirements
 
@@ -59,3 +65,7 @@ title: Request
 ```
 
 <!-- type: tab-end -->
+
+## Authentication
+
+### Minimum Requirements
