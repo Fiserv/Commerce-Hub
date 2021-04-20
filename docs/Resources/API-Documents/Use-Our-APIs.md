@@ -16,6 +16,31 @@ Commerce Hub's RESTful API request consists of the [Header](#requestheader) foll
 
 ---
 
+## Environments
+
+### Production
+
+Description goes here
+
+<!--theme: success -->
+> https://api.fiservapps.com/ch/{resource}
+
+### Cert Sandbox
+
+Description goes here
+
+<!--theme: success -->
+> https:// cert.api.fiservapps.com/ch/{resource}
+
+<!-- ## QA Sandbox
+
+Description goes here -->
+
+<!--theme: success -->
+<!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
+
+---
+
 ## Request Header
 
 Commerce Hub RESTful API has a consistent Header structure based on a set of Parameters. To create the header, provide the following values:
@@ -119,6 +144,5 @@ A standard API call to execute a charge transaction might look like this:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Enviroments](?path=docs/Resources/API-Documents/Environments.md)
 
 ---

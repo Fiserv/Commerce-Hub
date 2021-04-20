@@ -64,8 +64,6 @@
         link: docs/Resources/API-Documents/Use-Our-APIs.md
       - title: Authentication Header
         link: docs/Resources/API-Documents/Authentication-Header.md
-      - title: Environments
-        link: docs/Resources/API-Documents/Environments.md
       - title: Payments
         open: false
         articles:
