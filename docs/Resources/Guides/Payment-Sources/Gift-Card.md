@@ -13,7 +13,7 @@ We are enhancing Commerce Hub to support the Gift cards and the documents relate
 - [Decrypted Wallet](docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
-- [Split Tender](?path=docs/Resources/Guides/Payment-Sources/Split-Tender.md)
+- [Split Tender](?path=docs/Resources/Guides/Split-Tender.md)
 - [Telecheck ACH](?path=docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md)
 
 ---

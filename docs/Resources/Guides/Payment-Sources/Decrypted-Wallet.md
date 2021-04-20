@@ -12,8 +12,7 @@ We are enhancing Commerce Hub and the documents related to the features will be 
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
-- [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
-- [Split Tender](?path=docs/Resources/Guides/Payment-Sources/Split-Tender.md)
-- [Telecheck ACH](?path=docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---
