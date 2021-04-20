@@ -147,17 +147,17 @@
           link: docs/Resources/Guides/Payment-Sources/Private-Label.md
         - title: TeleCheck
           link: docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
-        - title: Split Tender
-          link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
       - title: Response Codes
         open: false
         articles:
-        - title: Bank/Issuer
+        - title: Host
           link: docs/Resources/Guides/Response-Codes/Bank-Issuer.md
         - title: Gateway
           link: docs/Resources/Guides/Response-Codes/Gateway.md
         - title: HTTP
           link: docs/Resources/Guides/Response-Codes/HTTP.md
+      - title: Split Tender
+        link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
       - title: Subsequent Authorization
         open: false
         articles:
@@ -199,16 +199,9 @@
         link: docs/Resources/Master-Data/Transaction-Details.md
       - title: Transaction Interaction
         link: docs/Resources/Master-Data/Transaction-Interaction.md
-    - title: FAQ and Glossary
+    - title: Glossary
       open: false
-      sections:
-      - title: Glossary
-        link: docs/Resources/FAQs-Glossary/Glossary.md
-      - title: FAQs
-        open: false
-        articles:
-        - title: How do I create an Authentication Header?
-          link: docs/Resources/API-Documents/Authentication-Header.md
+      link: docs/Resources/FAQs-Glossary/Glossary.md
 - sections:
   - title: API Releases
     open: false
