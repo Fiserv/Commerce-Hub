@@ -173,7 +173,7 @@
       link:
       open: false
       articles:
-      - title: Additional Data
+      - title: Additional Data 
         link: docs/Resources/Master-Data/Additional-Data.md
       - title: Address
         link: docs/Resources/Master-Data/Address.md
