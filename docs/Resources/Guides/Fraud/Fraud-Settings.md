@@ -6,6 +6,8 @@ Commerce Hub implements various fraud controls that allows merchant to monitor p
 
 We are enhancing Commerce Hub to include fraud best practices support and the documents related to the features will be released soon.
 
+<!-- https://escmconfluence.1dc.com/display/CARAT/HLR+%3A+Market+Place+-+Merchant+Fraud+Setting -->
+
 ---
 
 ## See Also
