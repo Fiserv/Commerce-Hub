@@ -4,7 +4,8 @@
 
 These filters give merchants the ability to enable various transaction filters using the AVS and CVV2 fraud prevention systems. Commerce Hub declines the submitted transaction if the conditions for any of these filters met.
 
-We are enhancing Commerce Hub to include AVS and CVV filters support and the documents related to the features will be released soon.
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include AVS and CVV filters support and the documents related to the features will be released soon.
 
 ---
 

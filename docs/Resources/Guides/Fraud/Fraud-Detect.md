@@ -4,7 +4,8 @@
 
 Commerce Hub offers an advance fraud detection service to help reduce fraudulent transactions, which in turn can help reduce chargebacks.
 
-We are enhancing Commerce Hub to include Fraud Detect support and the documents related to the features will be released soon.
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Fraud Detect support and the documents related to the features will be released soon.
 
 <!-- http://www.linkpointsource.com/fraud-flex-detect -->
 

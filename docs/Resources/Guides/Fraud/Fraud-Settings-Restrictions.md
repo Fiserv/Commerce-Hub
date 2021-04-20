@@ -1,15 +1,11 @@
-# Fraud Settings Restrictions
+# Transaction Restrictions
 
 ## Overview
 
-We are enhancing Commerce Hub to support Fraud Settings Restrictions and the documents related to the features will be released soon.
+The Transaction Restriction settings can be enabled for duplicate transaction detection and restricting refund transactions.
 
-- IP Adress
-- Credit Card Number (that is not tokenized)
-- Email Address or Domain
-- Reference Number
-- Billing Address
-- Country
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support Transaction Restrictions and the documents related to the features will be released soon.
 
 ---
 
