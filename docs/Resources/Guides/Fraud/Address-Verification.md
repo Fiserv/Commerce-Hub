@@ -258,7 +258,7 @@ title: Gateway Response
 
 ##### Component : avsSecurityCodeResponse
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `streetMatch` | *string* |  | Contains the Response of Street Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
 | `postalCodeMatch` | *string* |  |Contains the Response of Postal Code Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
@@ -270,7 +270,7 @@ title: Association Response
 
 ##### AVS Result Code - association
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `avsCode` | *string* |  | Contains the Response of AVS Checking received from the association. The [Valid Values](#avscodevalidvalues) are |
 | `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. The [Valid Values](#cardHolderNameResponsevalidvalues) are|
