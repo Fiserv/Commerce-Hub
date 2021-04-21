@@ -111,7 +111,7 @@ title: Response
 
 ---
 
-## Charge Request
+## Tokens as Part of Charge Request
 
 ### Required Field
 
@@ -217,7 +217,7 @@ title: Response
 
 ---
 
-## Submit a Charge
+## Submit a Charge with Tokens
 
 ### Minimum Requirements
 
