@@ -19,7 +19,7 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 > Positive filters will override negative filters
 
 | Filter | Variable | Case Sensitive |
-| ----- | ------ | :-----: |
+| ----- | ------ | ----- |
 | Card Number | `cardData` | N/A |
 | Customer Reference | `customerId` | NO |
 
@@ -30,7 +30,7 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
 
 | Filter | Variable | Case Sensitive |
-| ----- | ------ | :-----: |
+| ----- | ------ | ----- |
 | Card Number | `cardData` | N/A |
 | Customer Reference | `customerId` | NO |
 | Billing Address | `billingAddress` | NO |
