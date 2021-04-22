@@ -58,18 +58,18 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 | Value | Description |
 |-------|-------------|
-| *CARD_PRESENT* | Cardholder Present, Card Present. Designates a transaction where the cardholder was present at a merchant location. |
-| *CARD_PRESENT_UNSPECIFIED* | Cardholder Present, Unspecified |
-| *CARD_PRESENT_UNATTENDED* | Cardholder Present, Unattended Device. Designates a transaction where the cardholder was present at a merchant location and processed through an unattended device *(e.g. kiosk, gas pump)*. |
-| *CARD_PRESENT_FRAUD* | Cardholder Present, Suspect Fraud. Designates a transaction where the cardholder was present at a merchant location, but the merchant suspects fraud. |
-| *CARD_PRESENT_MAG_NOT_READ* | Cardholder Present, Magnetic Stripe Could Not Be Read. Designates a transaction where the cardholder was present at a merchant location but the MAG Stripe could not be read *(i.e. manual transaction)*. |
-| *CARD_PRESENT_IDENTIFIED* | Cardholder Present, Identity Verified. Designates a transaction where the cardholder was present at a merchant location and their identity was verified. |
-| *CARD_NOT_PRESENT_RECURRING* | Cardholder Not Present – Recurring. Designates a transaction that represents an arrangement between a cardholder and the merchant where transactions are going to occur on a periodic basis. |
-| *CARD_NOT_PRESENT_INSTALLMENT* | Cardholder Not Present – Installment. Designates a group of transactions that originated from a single purchase where the merchant agrees to bill the cardholder in installments. |
-| *CARD_NOT_PRESENT_DEFERRED* | Cardholder Not Present – Deferred. Designates a transaction that represents an order with a delayed payment for a specified amount of time. |
-| *CARD_NOT_PRESENT_F2F* | Cardholder Present, Card Not Present, Face 2 Face. Designates a transaction where the cardholder was present at a merchant location but did not have a card to swipe. |
-| *CARD_NOT_PRESENT_MOTO* | Cardholder Not Present, Mail Order/Telephone Order. Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
-| *CARD_NOT_PRESENT_ECOM* | Cardholder Not Present, Ecommerce. Designates a transaction initiated from the merchant's website or email. |
+| *CARD_PRESENT* | **Cardholder Present - Card Present:** Designates a transaction where the cardholder was present at a merchant location. |
+| *CARD_PRESENT_UNSPECIFIED* | **Cardholder Present - Unspecified:** Designates a transaction where the cardholder was present at a merchant location but the method is unspecified.|
+| *CARD_PRESENT_UNATTENDED* | **Cardholder Present - Unattended Device:** Designates a transaction where the cardholder was present at a merchant location and processed through an unattended device *(e.g. kiosk, gas pump)*. |
+| *CARD_PRESENT_FRAUD* | **Cardholder Present - Suspect Fraud:** Designates a transaction where the cardholder was present at a merchant location, but the merchant suspects fraud. |
+| *CARD_PRESENT_MAG_NOT_READ* | **Cardholder Present - Magnetic Stripe Could Not Be Read:** Designates a transaction where the cardholder was present at a merchant location but the MAG Stripe could not be read *(i.e. manual transaction)*. |
+| *CARD_PRESENT_IDENTIFIED* | **Cardholder Present - Identity Verified:** Designates a transaction where the cardholder was present at a merchant location and their identity was verified. |
+| *CARD_NOT_PRESENT_RECURRING* | **Cardholder Not Present – Recurring:** Designates a transaction that represents an arrangement between a cardholder and the merchant where transactions are going to occur on a periodic basis. |
+| *CARD_NOT_PRESENT_INSTALLMENT* | **Cardholder Not Present – Installment:** Designates a group of transactions that originated from a single purchase where the merchant agrees to bill the cardholder in installments. |
+| *CARD_NOT_PRESENT_DEFERRED* | **Cardholder Not Present – Deferred:** Designates a transaction that represents an order with a delayed payment for a specified amount of time. |
+| *CARD_NOT_PRESENT_F2F* | **Cardholder Present - Card Not Present - Face 2 Face.** Designates a transaction where the cardholder was present at a merchant location but did not have a card to swipe *(i.e. manual transaction)*. |
+| *CARD_NOT_PRESENT_MOTO* | **Cardholder Not Present - Mail Order/Telephone Order:** Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
+| *CARD_NOT_PRESENT_ECOM* | **Cardholder Not Present - E-commerce.** Designates a transaction initiated from the merchant's website, email, or app. |
 
 ---
 
@@ -90,10 +90,10 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 | Value | Description |
 |-------|-------------|
-| *SECURE_ECOM* | **Secure Electronic Transaction:** Designates a transaction between a cardholder and a merchant consummated via eCommerce where the transaction was successfully authenticated and includes the management of a cardholder certificate. |
-| *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via the eCommerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
-| *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via eCommerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
-| *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via eCommerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
+| *SECURE_ECOM* | **Secure Electronic Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction was successfully authenticated and includes the management of a cardholder certificate. |
+| *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via the E-commerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
+| *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
+| *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
 
 ---
 
