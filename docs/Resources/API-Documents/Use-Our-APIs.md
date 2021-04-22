@@ -25,11 +25,12 @@ Learn about the multiple multiple environments for consuming Commerce Hub APIs f
 <!--theme: success -->
 > https://api.fiservapps.com/ch/{resource}
 
-
+- Submit and complete transactions
+- Access Value Added Services
+- Conduct a complete beta test of your application
+- Run reports
 
 ### Cert Sandbox
-
-Description goes here
 
 <!--theme: success -->
 > https:// cert.api.fiservapps.com/ch/{resource}
