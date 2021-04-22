@@ -28,7 +28,7 @@ Learn about the multiple multiple environments for consuming Commerce Hub APIs f
 <!--theme: success -->
 > https:// cert.api.fiservapps.com/ch/{resource}
 
-- Test APIs before you deploy your application to production
+- Test APIs before you deploy to production
 - View the response format of a specific API
 - Experiment, develop code and fix bugs
 - Send and cancel "test" transactions
@@ -38,7 +38,7 @@ Learn about the multiple multiple environments for consuming Commerce Hub APIs f
 <!--theme: success -->
 > https://api.fiservapps.com/ch/{resource}
 
-- Submit and complete transactions
+- Send and cancel "live" transactions
 - Access Value Added Services
 - Conduct a complete beta test of your application
 - Run reports
