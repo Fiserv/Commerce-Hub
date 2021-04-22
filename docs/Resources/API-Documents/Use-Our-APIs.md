@@ -20,15 +20,8 @@ Commerce Hub's RESTful API request consists of the [Header](#requestheader) foll
 
 Learn about the multiple multiple environments for consuming Commerce Hub APIs for client development, customer acceptance testing, and production.
 
-### Production
-
-<!--theme: success -->
-> https://api.fiservapps.com/ch/{resource}
-
-- Submit and complete transactions
-- Access Value Added Services
-- Conduct a complete beta test of your application
-- Run reports
+<!-- theme: info -->
+>Commerce Hub highly recommend testing against our cert environment before using our production environment.
 
 ### Cert Sandbox
 
@@ -39,6 +32,16 @@ Learn about the multiple multiple environments for consuming Commerce Hub APIs f
 - View the response format of a specific API
 - Experiment, develop code and fix bugs
 - Send and cancel "test" transactions
+
+### Production
+
+<!--theme: success -->
+> https://api.fiservapps.com/ch/{resource}
+
+- Submit and complete transactions
+- Access Value Added Services
+- Conduct a complete beta test of your application
+- Run reports
 
 <!-- ## QA Sandbox
 
