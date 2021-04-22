@@ -24,7 +24,7 @@ title: 0xx
 
 The following response codes indicate invalid data in the transaction. In these cases, the data should be changed before attempting to resend the transaction.
 
-| Code| Message | Type (S/R/D)| Action (use payeezy and add resolution) |
+| Code| Message | Type | Description/Action |
 | ---- | ------------ |
 
 
