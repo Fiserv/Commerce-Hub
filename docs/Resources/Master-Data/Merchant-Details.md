@@ -2,7 +2,7 @@
 
 ## Overview
 
-Used to pass merchant data during the transaction and contains data like the Merchant ID, Store ID, MCC etc.
+Used to pass merchant data during the transaction and contains data like the merchant ID (MID), store ID, terminal ID (TID), MCC etc.
 
 #### Component: merchantDetails
 
