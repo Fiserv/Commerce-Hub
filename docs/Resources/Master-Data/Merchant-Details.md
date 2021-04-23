@@ -2,7 +2,7 @@
 
 ## Overview
 
-Used to pass the merchant data during the transaction to determine the merchant from where the transaction is originated. It contains data like the Merchant ID, Store ID, MCC etc.
+Used to pass the merchant data during the transaction and contains data like the Merchant ID, Store ID, MCC etc.
 
 #### Component: merchantDetails
 
