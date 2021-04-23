@@ -8,7 +8,7 @@ Used to pass the merchant data during the transaction to determine the merchant 
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- |------------| ------------------ |
-| `tokenType` | *string* |  | Specific Token Type is assigned to each merchant; uCom or TransArmor |
+| `tokenType` | *string* |  | Specific Token Type is assigned to each merchant; example; TRANSARMOR. |
 | `storeId` | *string* |  | An optional outlet ID for clients that support multiple stores in the same app. |
 | `siteId` | *string* |  | The location ID or number used to identify the unique site and merchant. |
 | `merchantId` | *string* |  | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer when submitting a [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md). |
