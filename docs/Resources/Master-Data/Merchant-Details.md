@@ -13,9 +13,9 @@ Used to pass the merchant data during the transaction and contains data like the
 | `siteId` | *string* |  | The location ID or number used to identify the unique site and merchant. |
 | `merchantId` | *string* |  | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer when submitting a [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md). |
 | `terminalId` | *string* |  | Identifies the specific device or point of entry where the transaction originated. For example, pump number, lane number, terminal number, etc. |
-| `alternateMerchantId` | *string* |  | An Alternate ID assigned to a merchant based on a Value Added Service (Prepaid Cards, TeleCheck, etc.). For additional information regarding the Alternate Merchant ID, please contact your Account Representative. |
+| `alternateMerchantId` | *string* |  | An Alternate ID assigned to a merchant based on a Value Added Service (Prepaid Cards, TeleCheck, etc.). For additional information regarding the Alternate Merchant ID, please contact your account representative. |
 | `promotionCode` | *string* |  | This field contains the Promotion Code. |
-| `mcc` | *string* |  | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
+| `mcc` | *string* |  | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md). |
 
 ---
 
