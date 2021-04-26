@@ -99,7 +99,7 @@
         link: docs/Resources/Guides/Fraud/Address-Verification.md
       - title: Security Code
         link: docs/Resources/Guides/Fraud/Security-Code.md
-      - title: AVS and CVV Filters
+      - title: Address and Security Code Filters
         link: docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
       - title: Restrictions
         link: docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
