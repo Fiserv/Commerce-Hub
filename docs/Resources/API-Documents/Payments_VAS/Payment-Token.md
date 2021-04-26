@@ -12,12 +12,14 @@ tags: [carat, commerce-hub, payment-token, tokenization]
   - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
 - **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
 
----
-
-## Token Request
+### Required Field
 
 <!-- theme: warning -->
-> For merchants using multiple tokenization services, `tokenProvider` is a required field.
+> Merchants using multiple tokenization services, `tokenProvider` is a required field.
+
+---
+
+## Tokens Request
 
 ### Endpoint
 <!-- theme: success -->
@@ -34,19 +36,13 @@ title: Request
 
 ```json
 {
-  "amount": {
-    "total": "0.02",
-    "currency": "USD"
-  },
   "paymentSource": {
     "sourceType": "PaymentCard",
     "cardData": "4005550000000019",
     "expirationMonth": "02",
     "expirationYear": "2035",
-    "securityCode": "123"
   },
   "transactionDetails": {
-    "captureFlag": false
     "tokenProvider": "TRANSARMOR"
   }
 }
@@ -111,14 +107,11 @@ title: Response
 
 ---
 
-## Tokens as Part of Charge Request
+## Tokenization with Charges Request
 
 ### Required Field
 
 - `createToken`: *boolean* : *true*
-
-<!-- theme: warning -->
-> For merchants using multiple tokenization services, `tokenProvider` is a required field.
 
 ### Endpoint
 <!-- theme: success -->
@@ -217,9 +210,9 @@ title: Response
 
 ---
 
-## Submit a Charge with Tokens
+## PaymentToken Charges Request
 
-### Minimum Requirements
+### Requirements
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|

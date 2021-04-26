@@ -10,45 +10,124 @@ Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossar
 
 ---
 
-## Minimum Requirement
+## Requirements
 
-For the transactions where security verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` in card array.
+For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
 
-#### Component: amount
-
-<!--theme:info-->
->CVV check required amount component only if it is initiated with charge request. See [Payload](#chargerequestpayloadexample) examples for more details.
-
-| Variable |  Type| Maximum Length | Description/Values|
-| --------- |----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
-
-#### Component: source
+#### Component: card
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
-
-#### Subcomponent: card
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
-|`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
-|`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
 |`securityCode` | *string* | 3| The card security code.|
 |`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE.|
 
 ---
 
-## Charges Request Payload Example
+## Verification Request
+
+### Endpoint
 
 <!-- theme: success -->
->##### Endpoint
+>**POST** `/payments-vas/v1/accounts/verification`
+
+### Payload Example
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a security code verification request.
+
+```json
+{
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123",
+         "securityCodeIndicator":"PROVIDED"
+      }
+}
+
+```
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a security code verification response.
+
+```json
+{
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"token",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "transactionDate":"2016-04-16",
+         "transactionTime":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
+      }
+   },
+   "paymentSource":{
+      "sourceType":"PaymentCard",
+      "tokenData":"1234123412340019",
+      "PARId":"string",
+      "declineDuplicates":"FALSE",
+      "tokenSource":"string",
+      "card":{
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"05",
+         "expirationYear":"2025",
+         "bin":"400555",
+         "last4":"0019",
+         "scheme":"VISA"
+      }
+   },
+   "processorResponseDetails":{
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK3483",
+      "referenceNumber":"845366457890-TODO",
+      "schemeTransactionId":"019078743804756",
+      "feeProgramIndicator":"string",
+      "processor":"fiserv",
+      "responseCode":"00",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"54022",
+      "hostResponseMessage":"",
+      "localTimestamp":"2016-04-16T16:06:05Z",
+      "bankAssociationDetails":{
+         "associationResponseCode":"000",
+         "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "avsSecurityCodeResponse":{
+            "securityCodeMatch":"MATCH",
+            "association":{
+               "securityCodeResponse":"MATCH"
+            }
+         }
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+## Verification with Charges Request
+
+### Endpoint
+
+<!-- theme: success -->
 >**POST** `/payments/v1/charges`
 
+### Payload Example
 
 <!--
 type: tab
@@ -144,96 +223,7 @@ title: Response
 
 <!-- type: tab-end -->
 
-## Verification Request Payload Example
-
-<!-- theme: success -->
->##### Endpoint
->**POST** `/payments-vas/v1/accounts/verification`
-
-<!--
-type: tab
-title: Request
--->
-
-##### Example of an account verification request.
-
-```json
-{
-   "source":{
-      "sourceType":"PaymentCard",
-      "cardData":"4005550000000019",
-      "expirationMonth":"02",
-      "expirationYear":"2035",
-      "securityCode":"123",
-      "securityCodeIndicator":"PROVIDED"
-   }
-}
-
-```
-<!--
-type: tab
-title: Response
--->
-
-##### Example of an account verification response.
-
-```json
-{
-   "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
-      "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
-      }
-   },
-   "paymentSource":{
-      "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
-      "card":{
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
-      }
-   },
-   "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
-      "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z",
-         "avsSecurityCodeResponse":{
-            "securityCodeMatch":"MATCH",
-            "association":{
-               "securityCodeResponse":"MATCH"
-            }
-         }
-      }
-   }
-}
-```
-
-<!-- type: tab-end -->
+---
 
 ## Response Values
 
@@ -252,11 +242,12 @@ The result of checking the cardholder’s entered security code against the Issu
 
 ## See Also
 
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Address](?path=docs/Resources/Master-Data/Address.md)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
+- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
-- [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Prepaid Gift Card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+
 ---
