@@ -42,7 +42,7 @@ type: tab
 title: Request
 -->
 
-##### Example of Address Verification Using Charge Request
+##### Example of an address verification during a charge request.
 
 ```json
 {
@@ -69,7 +69,8 @@ title: Request
          "postalCode":"30303",
          "country":"US"
       }
-   }
+   },
+   "captureFlag":false
 }
 ```
 
@@ -78,14 +79,14 @@ type: tab
 title: Response
 -->
 
-##### Charge Response having AVS Response Fields
+##### Charge response containing AVS details.
 
 ```json
 {
    "gatewayResponse":{
       "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
+      "transactionType":"CHARGES",
+      "transactionState":"AUTHORIZED",
       "transactionOrigin":"ecom",
       "transactionProcessingDetails":{
          "transactionDate":"2016-04-16",
@@ -153,7 +154,7 @@ type: tab
 title: Request
 -->
 
-##### Example of Account Verification Request
+##### Example of an account verification request.
 
 ```json
 {
@@ -183,21 +184,21 @@ type: tab
 title: Response
 -->
 
-##### Example of a Account Verification Response
+##### Example of an account verification response.
 
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
+      "transactionType":"VERIFICATION",
+      "transactionState":"CHECKED",
+      "transactionOrigin":"ECOM",
       "transactionProcessingDetails":{
          "transactionDate":"2016-04-16",
          "transactionTime":"2016-04-16T16:06:05Z",
          "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId":"838916029301"
+         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
       }
    },
    "paymentSource":{
@@ -248,34 +249,7 @@ title: Response
 
 ## AVS Result Codes
 
-The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The object `avsSecurityCodeResponse` contains both the response received by the association as well as response mapped by gateway.
-
-
-<!--
-type: tab
-title: Gateway Response
--->
-
-##### Component : avsSecurityCodeResponse
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-| `streetMatch` | *string* |  | Contains the Response of Street Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
-| `postalCodeMatch` | *string* |  |Contains the Response of Postal Code Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
-
-<!--
-type: tab
-title: Association Response
--->
-
-##### AVS Result Code - association
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-| `avsCode` | *string* |  | Contains the Response of AVS Checking received from the association. The [Valid Values](#avscodevalidvalues) are |
-| `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. The [Valid Values](#cardHolderNameResponsevalidvalues) are|
-
-
+The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the AVS response from the bank.
 
 #### avsCode Valid Values
 

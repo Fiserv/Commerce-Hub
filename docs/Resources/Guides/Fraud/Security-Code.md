@@ -234,7 +234,7 @@ title: Response
 
 ## Security Check Result Codes
 
-The result of checking the cardholder’s entered security code against the Issuer’s system of record is is received in the response. The object `avsSecurityCodeResponse` contains `securityCodeResponse` field which contains the result of the security code check. The Valid Values are
+The result of checking the cardholder’s entered security code against the Issuer’s system of record is is received in the response. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the security code response from the bank.
 
 | Value | Description |
 | ------- | ------- |

@@ -2,57 +2,134 @@
 
 ## Overview
 
-  approvalStatus:
+The Processor Response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
+
+#### Component: processorResponseDetails
+
+| Variable | Type | Length | Description/Values |
+| ----- | ----- | ----- | ----- |
+| `approvalStatus` | *string* | | Final status of the transaction. | 
+| `approvalCode` |*string* | | Approval code from the processor. |
+| `authenticationResponseCode` | string | | Response code from authentication. |
+| `referenceNumber` | *string* | | Transaction reference number. |
+| `schemeTransactionId` | *string* | | Brand (card issuer) transaction ID. |
+| `feeProgramIndicator` | *string* | | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.
+| `processor` | *string* | 256 | Card processor. |
+| `responseCode` | *string* | | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
+| `responseMessage` | *string* | | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
+| `hostResponseCode` | *string* | | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).| 
+| `hostResponseMessage` | *string* | | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).|
+| `localTimestamp` | *string* | | Transaction timestamp in local time.| 
+| `bankAssociationDetails` | *array* | | Bank Association Details.|
+
+---
+
+### Approval Status
+
+#### Object: approvalStatus
+
+| Value | Description |
+|-------|-------------|
+| APPROVED | The transaction was approved. |
+| DECLINED | The transaction was declined by the issuing bank. |
+| PROCESSING_FAILED | Transaction failed to process, try again later. |
+| VALIDATION_FAILED | Validation failed. |
+| WAITING | Transaction has been placed in queue. Wait 24 hours before retrying the transaction. |
+
+---
+
+## Bank Association Details
+
+#### Subcomponent: bankAssociationDetails
+
+| Variable | Type | Length | Description/Values |
+| ----- | ----- | ----- | ----- |
+
+    BankAssociationDetails:
+      description: 'Bank response details.'
+      properties:
+        associationResponseCode:
           type: string
-          description: 'Final status of the transaction.'
-          example: APPROVED, WAITING, VALIDATION_FAILED, PROCESSING_FAILED, DECLINED
-        approvalCode:
+          maxLength: 32
+          description: 'Bank response code.'
+          example: '000'
+        transactionTimestamp:
           type: string
-          description: 'Approval code from the processor.'
-          example: 'OK3483'
-        authenticationResponseCode:
-          type: string
-          description: 'Response code from authentication.'
-        referenceNumber:
-          type: string
-          description: 'Transaction reference number.'
-          example: '845366457890-TODO'
-        schemeTransactionId:
-          type: string
-          description: 'Brand transaction ID.'
-          example: '019078743804756'
-        feeProgramIndicator:
-          type: string
-          description: 'Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.'
-          example: '123'
-        processor:
+          maxLength: 64
+          description: 'Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ'
+          example: '2016-04-16T16:06:05Z'
+        transactionReferenceInformation:
           type: string
           maxLength: 256
-          description: 'Card processor.'
-          example: 'fiserv'
-        responseCode:
-          type: string
-          description: 'Normalized transaction response code from the gateway (Commerce Hub Response).'
-          example: '00000'
-        responseMessage:
-          type: string
-          description: 'Normalized transaction message from the gateway (Commerce Hub Response).'
-          example: 'APPROVAL'
-        hostResponseCode:
-          type: string
-          description: 'Endpoint or issuer response code.'
-          example: '00'
-        hostResponseMessage:
-          type: string
-          description: 'Endpoint or issuer response message.'
-          example: 'APPROVAL'
-        localTimestamp:
-          type: string
-          description: 'Transaction timestamp in local time.'
-          example: '2021.02.25 14:14:38 (EST)'
-        bankAssociationDetails:
-          $ref: '#/components/schemas/BankAssociationDetails'
+          description: 'Transaction reference information.'
+          example: ''
+        avsSecurityCodeResponse:
+          $ref: '#/components/schemas/AvsSecurityCodeResponse'
 
+    AvsSecurityCodeResponse:
+      description: 'Address Verification System (AVS) response object.'
+      properties:
+        streetMatch:
+          type: string
+          maxLength: 8
+          description: 'AVS street address result message.'
+          example: 'MATCH'
+        postalCodeMatch:
+          type: string
+          maxLength: 8
+          description: 'AVS postal code result message.'
+          example: 'MATCH'
+        securityCodeMatch:
+          type: string
+          maxLength: 8
+          description: 'Security code result message.'
+          example: 'MATCH'
+        association:
+          $ref: '#/components/schemas/Association'
+         
+    Association:
+      description: 'Bank association security response.'
+      properties:
+        avsCode:
+          type: string
+          maxLength: 32
+          description: 'Bank AVS Response Code.'
+          example: 'BOTH_MATCH'
+        securityCodeResponse:
+          type: string
+          maxLength: 32
+          description: 'Bank Security Code Response.'
+          example: 'MATCH'
+        cardholderNameResponse:
+          type: string
+          maxLength: 32
+          description: 'Cardholder Name Response if supported by card type.'
+          example: 'NAME_MATCH'
+
+
+<!--
+type: tab
+title: Gateway Response
+-->
+
+##### Component : avsSecurityCodeResponse
+
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `streetMatch` | *string* |  | Contains the Response of Street Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
+| `postalCodeMatch` | *string* |  |Contains the Response of Postal Code Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
+
+<!--
+type: tab
+title: Association Response
+-->
+
+##### AVS Result Code - association
+
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `avsCode` | *string* |  | Contains the Response of AVS Checking received from the association. The [Valid Values](#avscodevalidvalues) are |
+| `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. The [Valid Values](#cardHolderNameResponsevalidvalues) are|
 ---
 
 ## See Also
