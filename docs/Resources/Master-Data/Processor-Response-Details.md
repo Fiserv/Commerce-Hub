@@ -66,6 +66,13 @@ The Processor Response contains the response parameters from the Commerce Hub fo
         avsSecurityCodeResponse:
           $ref: '#/components/schemas/AvsSecurityCodeResponse'
 
+#### Subcomponent: avsSecurityCodeResponse
+
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `streetMatch` | *string* |  | Contains the Response of Street Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
+| `postalCodeMatch` | *string* |  |Contains the Response of Postal Code Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
+
     AvsSecurityCodeResponse:
       description: 'Address Verification System (AVS) response object.'
       properties:
@@ -86,50 +93,15 @@ The Processor Response contains the response parameters from the Commerce Hub fo
           example: 'MATCH'
         association:
           $ref: '#/components/schemas/Association'
-         
-    Association:
-      description: 'Bank association security response.'
-      properties:
-        avsCode:
-          type: string
-          maxLength: 32
-          description: 'Bank AVS Response Code.'
-          example: 'BOTH_MATCH'
-        securityCodeResponse:
-          type: string
-          maxLength: 32
-          description: 'Bank Security Code Response.'
-          example: 'MATCH'
-        cardholderNameResponse:
-          type: string
-          maxLength: 32
-          description: 'Cardholder Name Response if supported by card type.'
-          example: 'NAME_MATCH'
 
-
-<!--
-type: tab
-title: Gateway Response
--->
-
-##### Component : avsSecurityCodeResponse
+#### Subcomponent: association
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `streetMatch` | *string* |  | Contains the Response of Street Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
-| `postalCodeMatch` | *string* |  |Contains the Response of Postal Code Matching. Valid Values are MATCH, NO_MATCH, NOT_PROVIDED |
+| `avsCode` | *string* |  | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md) response received from the association bank. |
+| securityCodeResponse | string | 32 | Contains the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) response received from the association bank.
+| `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. |
 
-<!--
-type: tab
-title: Association Response
--->
-
-##### AVS Result Code - association
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-| `avsCode` | *string* |  | Contains the Response of AVS Checking received from the association. The [Valid Values](#avscodevalidvalues) are |
-| `cardHolderNameResponse` | *string* |  |Contains the Response cardholder name matching. Only applicable for AMEX card type. The [Valid Values](#cardHolderNameResponsevalidvalues) are|
 ---
 
 ## See Also

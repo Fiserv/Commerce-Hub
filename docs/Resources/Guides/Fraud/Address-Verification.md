@@ -247,11 +247,11 @@ title: Response
 
 ---
 
-## AVS Result Codes
+## Response Values
 
 The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the AVS response from the bank.
 
-#### avsCode Valid Values
+#### avsCode
 
 | Value | Description |
 | ------- | ------- |
@@ -271,7 +271,10 @@ The result of checking the cardholder’s postal code and address information pr
 | INTERNATIONAL_NO_MATCH | International postal code match, street address not verified due to incompatible format |
 
 
-#### cardHolderNameResponse Valid Values
+#### cardHolderNameResponse
+
+<!-- theme: info -->
+> Cardholder name response is only valid on American Express (AMEX) transactions.
 
 | Value | Description |
 | ------- | ------- |
@@ -283,9 +286,6 @@ The result of checking the cardholder’s postal code and address information pr
 | POSTAL_ONLY | Cardholder name incorrect, billing postal code matches |
 | ADDRESS_ONLY | Cardholder name incorrect, billing address matches |
 | NO_MATCH | Cardholder name, billing address, and postal code are all incorrect |
-
-
-<!-- type: tab-end -->
 
 ---
 
