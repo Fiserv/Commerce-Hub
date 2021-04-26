@@ -79,6 +79,8 @@
           link: docs/Resources/API-Documents/Payments/Credit.md
         - title: Forced Post
           link: docs/Resources/API-Documents/Payments/Forced.md
+        - title: Transaction Inquiry
+          link: docs/Resources/API-Documents/Payments/Inquiry.md
       - title: Payments VAS
         open: false
         articles:
@@ -88,8 +90,6 @@
           link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
         - title: Tokenization
           link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-        - title: Transaction Inquiry
-          link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Fraud Controls
       open: false
       articles:
