@@ -6,15 +6,13 @@ tags: [carat, commerce-hub, card-not-present, security-code, fraud, security-cod
 # Security Code
 
 ## Overview
-**Security Code Check** - A service where cardholder is prompt to enter the 3-digit Card Verification Value(CVV) manually in order to get the card verify by the issuing system. Security code check is used as a Fraud Prevention measure for the transaction where cardholder is not present.
-
-#### Perform Security Check
-
-For the transactions where security check id required, merchant needs to pass the appropriate values for `securityCode` and `securityCodeIndicator` in card object.
+Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
 ## Minimum Requirement
+
+For the transactions where security verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` in card array.
 
 #### Component: amount
 
@@ -27,20 +25,25 @@ For the transactions where security check id required, merchant needs to pass th
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 
-#### Component: Source
+#### Component: source
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+
+#### Subcomponent: card
+
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
 |`cardData`| *string* | 19 | Encrypted or unencrypted card data (e.g. PAN, EMV, Track, etc.). | 
 |`expirationMonth`| *string* | 2 | 2-digit card expiration date month. |
 |`expirationYear`| *string* | 4 | 4-digit card expiration date year. |
 |`securityCode` | *string* | 3| The card security code.|
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed.|
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE.|
 
 ---
 
-## Charge Request Payload Example
+## Charges Request Payload Example
 
 <!-- theme: success -->
 >##### Endpoint
@@ -52,7 +55,7 @@ type: tab
 title: Request
 -->
 
-##### Example of Security Check Using Charge Request
+##### Example of a security code verification during a charges request.
 
 ```json
 {
@@ -81,7 +84,7 @@ type: tab
 title: Response
 -->
 
-##### Charge Response having Security Check Response Fields
+##### Charges response containing security code response details.
 
 ```json
 {
@@ -152,7 +155,7 @@ type: tab
 title: Request
 -->
 
-##### Example of Account Verification Request
+##### Example of an account verification request.
 
 ```json
 {
@@ -172,7 +175,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Account Verification Response
+##### Example of an account verification response.
 
 ```json
 {
@@ -238,12 +241,12 @@ The result of checking the cardholder’s entered security code against the Issu
 
 | Value | Description |
 | ------- | ------- |
-| MATCH | Security Code Value matched |
-| NO_MATCH | Security Code Value not matched |
-| NOT_PROVIDED | Security Code Value not provided |
-| NOT_PROCESSED | Security Code check not processed |
-| NO_PARTICIPANT | Issuer not participate in Security Check |
-| UNKNOWN | Unknown |
+| MATCH | Security code matched. |
+| NO_MATCH | Security code did not matched. |
+| NOT_PROVIDED | Security code value was not provided. |
+| NOT_PROCESSED | Security code verification was not processed. |
+| NO_PARTICIPANT | Bank Associatino does not participate in security verification. |
+| UNKNOWN | Unknown status. |
 
 ---
 
@@ -255,5 +258,5 @@ The result of checking the cardholder’s entered security code against the Issu
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-
+- [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 ---

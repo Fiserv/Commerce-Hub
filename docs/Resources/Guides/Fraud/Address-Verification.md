@@ -6,15 +6,13 @@ tags: [carat, commerce-hub, card-not-present, card-present, address-verifficatio
 
 ## Overview
 
-**Address Verification Services (AVS)** - A service in which the merchant verifies the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress). [AVS](?path=docs/Resources/FAQs-Glossary/Glossary.md#addressverificationservice) is widely used Fraud Prevention measure for the transaction where the cardholder is not present.
-
-#### Perform AVS Check
-
-The Merchant can get the cardholder's address verification done by either submitting the verification request or sending the billing address information in during a charge request.
+Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#addressverificationservice) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
 ## Minimum Requirement
+
+For the transactions where address verification is required, the merchant's API is required to pass the billing address as part of the request.
 
 #### Component: amount
 
@@ -27,11 +25,11 @@ The Merchant can get the cardholder's address verification done by either submit
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* |  | Customer first name. |
 | `lastName` | *string* |  | Customer last name. |
-| `address` | *component* |  | Billing [address](?path=docs/Resources/Master-Data/Address.md#address) details. |
+| `address` | *array* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
 
 ---
 
-## Charge Request Payload Example
+## Charges Request Payload Example
 
 <!-- theme: success -->
 >##### Endpoint
@@ -42,7 +40,7 @@ type: tab
 title: Request
 -->
 
-##### Example of an address verification during a charge request.
+##### Example of an address verification during a charges request.
 
 ```json
 {
@@ -79,7 +77,7 @@ type: tab
 title: Response
 -->
 
-##### Charge response containing AVS details.
+##### Charges response containing AVS details.
 
 ```json
 {
@@ -251,7 +249,7 @@ title: Response
 
 The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the AVS response from the bank.
 
-#### avsCode
+#### Object: avsCode
 
 | Value | Description |
 | ------- | ------- |
@@ -271,7 +269,7 @@ The result of checking the cardholder’s postal code and address information pr
 | INTERNATIONAL_NO_MATCH | International postal code match, street address not verified due to incompatible format |
 
 
-#### cardHolderNameResponse
+#### Object: cardHolderNameResponse
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) transactions.
@@ -295,5 +293,5 @@ The result of checking the cardholder’s postal code and address information pr
 - [Address](?path=docs/Resources/Master-Data/Address.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-
+- [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 ---
