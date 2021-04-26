@@ -13,7 +13,7 @@ The Processor Response contains the response parameters from the Commerce Hub fo
 | `authenticationResponseCode` | string | | Response code from authentication. |
 | `referenceNumber` | *string* | | Transaction reference number. |
 | `schemeTransactionId` | *string* | | Brand (card issuer) transaction ID. |
-| `feeProgramIndicator` | *string* | | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.
+| `feeProgramIndicator` | *string* | | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.|
 | `processor` | *string* | 256 | Card processor. |
 | `responseCode` | *string* | | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
 | `responseMessage` | *string* | | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
