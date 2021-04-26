@@ -97,15 +97,17 @@
         link: docs/Resources/Guides/Fraud/Fraud-Settings.md
       - title: Address Verification
         link: docs/Resources/Guides/Fraud/Address-Verification.md
-      - title: Security Code
+      - title: Security Code Verification
         link: docs/Resources/Guides/Fraud/Security-Code.md
-      - title: Address and Security Code Filters
+      - title: Address/Security Code Filters
         link: docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
-      - title: Restrictions
+      - title: Positive/Negative Filters
+        link: docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md
+      - title: Transaction Restrictions
         link: docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
       - title: Velocity Controls
         link: docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
-      - title: Fraud Detect
+      - title: Fraud Detect Service
         link: docs/Resources/Guides/Fraud/Fraud-Detect.md
     - title: Industry and Verticals
       link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
