@@ -1,8 +1,8 @@
-# AVS CVV Filters
+# Address and Security Code Filters
 
 ## Overview
 
-These filters give merchants the ability to enable various transaction filters using the AVS and CVV2 fraud prevention systems. Commerce Hub declines the submitted transaction if the conditions for any of these filters met.
+These filters give merchants the ability to enable various transaction filters using the [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#addressverificationservice) and [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) fraud prevention systems. Commerce Hub rejects and automatically reverses the submitted transaction if the conditions for any of these filters are met.
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include AVS and CVV filters support and the documents related to the features will be released soon.
