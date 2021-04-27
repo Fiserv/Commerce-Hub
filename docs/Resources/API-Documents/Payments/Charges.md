@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges]
+tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges, sale, pre-auth]
 ---
 
 # Charges
@@ -26,7 +26,7 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 | Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 #### Component: source

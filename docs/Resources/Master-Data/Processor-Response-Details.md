@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Processor Response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
+The processor response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
 
 #### Component: processorResponseDetails
 
