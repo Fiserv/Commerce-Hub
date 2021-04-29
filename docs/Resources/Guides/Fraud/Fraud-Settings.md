@@ -13,12 +13,14 @@ Commerce Hub implements various fraud controls that allows merchant to monitor p
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [AVS Check](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [AVS CVV Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [CVV Check](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
+- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
+- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
+- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
+- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
+- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---
-
-

@@ -11,13 +11,14 @@ Velocity settings determine which transactions Commerce Hub allows to proceed to
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [AVS/CVV Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+- [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
+- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
+- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 
 ---
