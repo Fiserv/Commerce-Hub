@@ -28,14 +28,18 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 | 02 | Merchant order ID also known as customer reference number or purchase order number (PO Number). | 20 |
 | 03 | Merchant transaction ID also known as transaction reference ID. | 30 |
 | 04 | Cardholder's first and last name. | 30 |
-| 05 | Transaction type. **Valid Values:** CHARGES, FORCED, REFUND, CREDIT, CANCEL. | 7 |
+| 05 | Transaction type. **Valid Values:** CHARGES, CAPTURE, FORCED, REFUND, CREDIT, CANCEL. | 7 |
 | 06 | Capture flag, true = sale and false = pre-auth. | 5 |
+| 07 | Transaction ID used for REFUND, CANCEL, CAPTURE. | 7 |
 | 07 | Card number. | 19 |
 | 08 | Transaction amount. | |
 | 09 | Card expiration date. | 6 |
 | 10 | Authorization number obtained from the Voice Authorization Center for a FORCED. | 7 |
 | 11 | Recurring indicator. **Valid Values:** RECURRING, DEFERRED, SCHEDULED. | |
-| 12 | Billing address including the house number, street, city, state/province. | |
+| 12 | Billing house number. | |
+| 13 | Billing street address. | |
+| 14 | Billing city. | |
+| 15 | Billing state/province. | | 
 | 13 | Postal code. | 9 |
 
 ## Examples
