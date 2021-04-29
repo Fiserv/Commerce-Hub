@@ -39,7 +39,7 @@ title: 1xx
 -->
 
 
-| Code| Message | Type | Description/Action |
+ Code| Message | Type | Description/Action |
 | ---- | ----- | ------- | ------- |
 | 100 | Do not honor  | Decline | Advise customer to contact issuing bank |
 | 101 | Expired card  | Decline | Card is expired |
