@@ -90,7 +90,9 @@
           link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
         - title: Tokenization
           link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-    - title: Fraud Controls
+    - title: Fraud Controls/Risk Management (Option A)
+      link: docs/Resources/Guides/Fraud/Fraud-Settings.md
+    - title: Fraud Controls/Risk Management (Option B)
       open: false
       articles:
       - title: Fraud Settings
