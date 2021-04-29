@@ -27,8 +27,7 @@
          "payments-charges-refund.yaml",
          "payments-credits.yaml",
          "payments-vas-tokenize.yaml",
-         "transaction-inquiry.yaml",
-         "payments-vas-accounts-information.yaml",
+         "transaction-inquints-information.yaml",
          "payments-vas-accounts-verification.yaml",
          "payments-vas-security-credentials.yaml"
       ]
