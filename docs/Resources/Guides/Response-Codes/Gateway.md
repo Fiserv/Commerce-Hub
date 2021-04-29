@@ -39,7 +39,7 @@ title: 1xx
 -->
 
 
- Code| Message | Type | Description/Action |
+| Code| Message | Type | Description/Action |
 | ---- | ----- | ------- | ------- |
 | 100 | Do not honor  | Decline | Advise customer to contact issuing bank |
 | 101 | Expired card  | Decline | Card is expired |
@@ -241,7 +241,7 @@ title: 5xx
 | 525 | Debit/EBT network gateway cannot get through to the ISSUER.  | Reject | Resend the request after some time. |
 | 526 | Undefined Card – Debit/EBT network gateway cannot route card based on Merchant Entitlement  | Reject | Call your Account Representative to seek assistance. |
 | 527 | Network Response indicates that Merchant ID / SE is invalid  | Reject | Call your Account Representative to seek assistance. |
-| 528 | Debit/EBT transaction count exceeds pre-determined limit in specified time/ Withdrawal limit exceeded.  | Reject | Retry after some tome or call your Account Representative to seek assistance. |
+| 528 | Debit/EBT transaction count exceeds pre-determined limit in specified time/ Withdrawal limit exceeded. | Reject | Retry after some tome or call your Account Representative to seek assistance. |
 | 529 | Resubmission of transaction violates debit/EBT network frequency  | Reject | Call your Account Representative to seek assistance. |
 | 530 | The authorizing network has a problem decrypting the cryptogram in the request  | Reject | Call your Account Representative to seek assistance. |
 | 532 | The DUKPT Base Derivation key is missing or incorrect in the PIN pad, PIN key synchronization error, or Master session PIN key is missing.  | Reject | Verify the keys configured. If configured correctly, call your Account Representative to seek assistance. |
