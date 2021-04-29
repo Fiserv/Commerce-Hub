@@ -24,18 +24,18 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 
 | Column | Value | Length |
 | ----- | ----- | ----- |
-| 01 | Merchant invoice number *(reference number)*. | 20 |
-| 02 | Merchant order ID *(customer reference or purchase order)*. | 20 |
-| 03 | Merchant transaction ID *(transaction reference ID)*. | 30 |
+| 01 | Merchant invoice number also known as reference number. | 20 |
+| 02 | Merchant order ID also known as customer reference number or purchase order number (PO Number). | 20 |
+| 03 | Merchant transaction ID also known as transaction reference ID. | 30 |
 | 04 | Cardholder's first and last name. | 30 |
-| 05 | Transaction type *(CHARGES, FORCED, REFUND, CREDIT)*. | 7 |
-| 06 | Capture flag *(true, false)*. | 5 |
+| 05 | Transaction type. **Valid Values:** CHARGES, FORCED, REFUND, CREDIT, CANCEL. | 7 |
+| 06 | Capture flag, true = sale and false = pre-auth. | 5 |
 | 07 | Card number. | 19 |
 | 08 | Transaction amount. | |
 | 09 | Card expiration date. | 6 |
 | 10 | Authorization number obtained from the Voice Authorization Center for a FORCED. | 7 |
-| 11 | Recurring indicator *(RECURRING, DEFERRED, SCHEDULED)*. | |
-| 12 | Billing address *(house number, street, city, state/province)*. | |
+| 11 | Recurring indicator. **Valid Values:** RECURRING, DEFERRED, SCHEDULED. | |
+| 12 | Billing address including the house number, street, city, state/province. | |
 | 13 | Postal code. | 9 |
 
 ## Examples
