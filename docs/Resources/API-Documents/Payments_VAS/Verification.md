@@ -2,11 +2,11 @@
 tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, security-code, address-verification]
 ---
 
-# Verification
+# Account Verification
 
 ## Overview
 
-The merchant can perform account verification transaction, if they want to confirm that the cardholder account is valid for a transaction. Merchant can initiate the verification request using card as well as token details.
+The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#paymentcard-requirements) or [token](#paymenttoken-requirements).
 
 ---
 
@@ -16,7 +16,7 @@ The merchant can perform account verification transaction, if they want to confi
 
 ---
 
-## PaymentCard Requirement
+## PaymentCard Requirements
 
 #### Component: source
 
@@ -89,7 +89,7 @@ title: Response
 
 ---
 
-## PaymentToken Requirement
+## PaymentToken Requirements
 
 #### Component: source
 
@@ -153,7 +153,7 @@ title: Response
       "tokenData":"1234123412340019",
       "PARId":"string",
       "declineDuplicates":"FALSE",
-      "tokenSource":"RSA"
+      "tokenSource":"TRANSARMOR"
    }
 }
 ```
@@ -164,9 +164,9 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Address Verification Service](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Security Code](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

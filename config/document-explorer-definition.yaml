@@ -79,6 +79,8 @@
           link: docs/Resources/API-Documents/Payments/Credit.md
         - title: Forced Post
           link: docs/Resources/API-Documents/Payments/Forced.md
+        - title: Transaction Inquiry
+          link: docs/Resources/API-Documents/Payments/Inquiry.md
       - title: Payments VAS
         open: false
         articles:
@@ -88,8 +90,6 @@
           link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
         - title: Tokenization
           link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-        - title: Transaction Inquiry
-          link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Fraud Controls
       open: false
       articles:
@@ -97,15 +97,17 @@
         link: docs/Resources/Guides/Fraud/Fraud-Settings.md
       - title: Address Verification
         link: docs/Resources/Guides/Fraud/Address-Verification.md
-      - title: Security Code
+      - title: Security Code Verification
         link: docs/Resources/Guides/Fraud/Security-Code.md
-      - title: AVS and CVV Filters
+      - title: Address/Security Code Filters
         link: docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
-      - title: Restrictions
+      - title: Positive/Negative Filters
+        link: docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md
+      - title: Transaction Restrictions
         link: docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
       - title: Velocity Controls
         link: docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
-      - title: Fraud Detect
+      - title: Fraud Detect Service
         link: docs/Resources/Guides/Fraud/Fraud-Detect.md
     - title: Industry and Verticals
       link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md

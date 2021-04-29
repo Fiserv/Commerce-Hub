@@ -1,17 +1,21 @@
 # Split Shipment
 
+## Overview
+
 A split shipment is an ability to [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) an authorization for the full order amount by performing a capture for each item shipped.
 
 Situations in which this could be implemented include:
 
 - Shipment of goods will be split, the cardholder can be charged for each individual shipment.
-- Occurs when the goods are not available for shipment at the time of the consumer’s purchase.
+- Occurs when the goods url are not available for shipment at the time of the consumer’s purchase.
 
 <!-- theme: info -->
-> If the customer cancels their order before the last shipment, the `finalShipment` indicator is required to be sent with a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+> If the customer cancels or refunds their order before the last shipment, the `finalShipment` indicator is required to be sent during the [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 <!-- theme: warning -->
 > If the authorization timeframe has expired, a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) is required.
+
+---
 
 ## Technical Requirements
 

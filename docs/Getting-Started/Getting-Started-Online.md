@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, card-not-present, getting-started, hosted-payment-pa
 
 ## Overview
 
-Commerce Hub offers multiple methods of accepting online, mobile and digital payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, or virtual terminal.
+Commerce Hub offers multiple methods of accepting online, mobile, and digital payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, or virtual terminal.
 
 <!-- theme: warning -->
 > These transactions are at a higher risk for fraud, due to the inability to verify the account holder is making the purchase. Recommendation is to use 3D secure along with AVS and Security Code verification to reduce risk of card fraud.
