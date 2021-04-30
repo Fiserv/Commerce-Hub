@@ -35,7 +35,7 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 | 09 | Transaction amount. | 21 |
 | 10 | Card expiration date. | 6 |
 | 11 | Authorization number obtained from the Voice Authorization Center for a FORCED. | 7 |
-| 12 | Recurring indicator. **Valid Values:** RECURRING, DEFERRED, SCHEDULED. | 9 |
+| 12 | Recurring indicator. **Valid Values:** SINGLE, RECURRING, DEFERRED, SCHEDULED. | 9 |
 | 13 | Billing house number or name. | 256 |
 | 14 | Billing street address. | 256 |
 | 15 | Billing city. | 256 |
