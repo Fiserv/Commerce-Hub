@@ -32,15 +32,15 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 | 06 | Capture flag, true = sale and false = pre-auth. | 5 |
 | 07 | Transaction ID used for REFUND, CANCEL, CAPTURE. | 7 |
 | 08 | Card number. | 19 |
-| 09 | Transaction amount. | |
+| 09 | Transaction amount. | 21 |
 | 10 | Card expiration date. | 6 |
 | 11 | Authorization number obtained from the Voice Authorization Center for a FORCED. | 7 |
-| 12 | Recurring indicator. **Valid Values:** RECURRING, DEFERRED, SCHEDULED. | |
-| 13 | Billing house number or name. | |
-| 14 | Billing street address. | |
-| 15 | Billing city. | |
-| 16 | Billing state/province. | | 
-| 17 | Postal code. | 9 |
+| 12 | Recurring indicator. **Valid Values:** RECURRING, DEFERRED, SCHEDULED. | 9 |
+| 13 | Billing house number or name. | 256 |
+| 14 | Billing street address. | 256 |
+| 15 | Billing city. | 256 |
+| 16 | Billing state/province. | 256 | 
+| 17 | Postal code. | 10 |
 
 ## Examples
 
