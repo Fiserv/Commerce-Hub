@@ -57,6 +57,8 @@
   - title: Resources & Guides
     open: false
     sections:
+    - title: Featured Guides
+      link: docs/Resources/Resources-Guide.md
     - title: API Documents
       open: false
       sections:
@@ -112,9 +114,10 @@
       - title: Fraud Detect Service
         link: docs/Resources/Guides/Fraud/Fraud-Detect.md
     - title: Industry and Verticals
-      link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
       open: false
       articles:
+      - title: Industry/Vertical Types
+        link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
       - title: Airline
         link: docs/Resources/Guides/Industry-Verticals/Airline.md
       - title: Car Rental
@@ -151,6 +154,8 @@
     - title: Response Codes
       open: false
       articles:
+      - title: Response Code Types
+        link: docs/Resources/Guides/Response-Codes/Response-Codes.md
       - title: Host
         link: docs/Resources/Guides/Response-Codes/Bank-Issuer.md
       - title: Gateway
