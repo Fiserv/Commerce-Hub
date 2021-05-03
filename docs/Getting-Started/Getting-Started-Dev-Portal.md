@@ -2,7 +2,7 @@
 
 ## Access Commerce Hub APIs
 
-Follow the below steps to get an access to our development portal and use our APis.
+123 Follow the below steps to get an access to our development portal and use our APis.
 
 ### 1. Sign up on our Developer Platform
 
