@@ -1,7 +1,6 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, carat-api, request-header, request-body]
+tags: [carat, commerce-hub, card-not-present, card-present, restful-api, request-header, request-body, api, header, request-body, environments]
 ---
-
 
 # Constructing a RESTful API Request
 
@@ -16,7 +15,7 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 
 ## Environments
 
-Learn about the multiple multiple environments for consuming Commerce Hub APIs for client development, customer acceptance testing, and production.
+Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: info -->
 >Commerce Hub highly recommend testing against our cert environment before using our production environment.
@@ -24,7 +23,7 @@ Learn about the multiple multiple environments for consuming Commerce Hub APIs f
 ### Cert Sandbox
 
 <!--theme: success -->
-> https:// cert.api.fiservapps.com/ch/{resource}
+> https://cert.api.fiservapps.com/ch/{resource}
 
 - Test APIs before you deploy to production
 - View the response format of a specific API
