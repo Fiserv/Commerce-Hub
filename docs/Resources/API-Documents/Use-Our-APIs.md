@@ -3,13 +3,11 @@ tags: [carat, commerce-hub, card-not-present, card-present, carat-api, request-h
 ---
 
 
-# Constructing an API Call
+# Constructing a RESTful API Request
 
 ## Overview
 
-Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, or terminal.
-
-Commerce Hub's RESTful API request consists of the [Header](#requestheader) followed by the [Request Body](#requestbody).
+Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, or terminal. Each request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
@@ -151,9 +149,14 @@ A standard API call to execute a charge transaction might look like this:
 
 ---
 
-## See Also
-
+## Next Steps
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+- [Account Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---

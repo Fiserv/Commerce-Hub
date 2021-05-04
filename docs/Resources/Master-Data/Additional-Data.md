@@ -2,19 +2,20 @@
 
 ## Overview
 
-Additional Data Common features common objects used for most transaction types.
+Additional Data Common features common objects used for all request types.
 
 #### Component: additionalDataCommon
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *array* | | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *array* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `directedRouting` | *array* | | Used for Directed Routing transactions. |
-| `subMerchant` | *array* | | Used in Payment Facilitator transactions to identify the sub-merchant information. |
-| `billPaymentIndicator` | *string* | 12 | Indicates the type of [Bill Payment].#bill-payment-indicator | 
-| `installments` | *array* | | Used in Installment Bill Pay transactions. |
-| `deferredPayments` | *array* | | Used in Defferred Bill Payments. |
-| `privateLabel` | *array* | | Used to process Private Label payment cards. |
+| `directedRouting` | *array* | | Required in Directed Routing transactions. |
+| `subMerchant` | *array* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
+| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
+| `installments` | *array* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md). |
+| `deferredPayments` | *array* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md). |
+| `recurringPayments` | *array* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md). |
+| `privateLabel` | *array* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customfields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
 ---
@@ -26,9 +27,9 @@ Additional Data Common features common objects used for most transaction types.
 | Value | Description |
 | ----- | ----- |
 | SINGLE | Single charge not for recurring services or installment plan. |
-| RECURRING | Agreement where charges will occur on a periodic basis. |
-| INSTALLMENT | Single purchase where the cardholder is billed (charged) in installments. |
 | DEFERRED | A charge for an order with a delayed payment for a specified amount of time. |
+| INSTALLMENT | Single purchase where the cardholder is billed (charged) in installments. |
+| RECURRING | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
 
 ---
 
@@ -41,7 +42,7 @@ Additional Data identifies various elments based on the specific transaction typ
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier). This identifies the intended use of a push payment. It determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. |
-| `billPayment` | *boolean* | | Identifies a bill payment transaction. |
+| `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
 | `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
 | `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. |
@@ -67,7 +68,16 @@ Additional Data identifies various elments based on the specific transaction typ
 | GAMBLING_PAYOUT | Gambling payout non-online. |
 | GAMBLING_PAYOUT_ONLINE | Online gambling payout. |
 
+---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
+- [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
+
+---
