@@ -12,13 +12,10 @@ tags: [carat, commerce-hub, payment-token, tokenization]
   - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
 - **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
 
-- **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
-  - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
-- **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
-
 ### Required Field
 
-### Required Field
+<!-- theme: warning -->
+> Merchants using multiple tokenization services, `tokenProvider` is a required field.
 
 ---
 
@@ -39,24 +36,15 @@ title: Request
 
 ```json
 {
-   "amount":{
-      "total":"1.00",
-      "currency":"USD"
-   },
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag":false,
-      "createToken":true,
-      "tokenProvider":"TRANSARMOR"
-   }
+  "paymentSource": {
+    "sourceType": "PaymentCard",
+    "cardData": "4005550000000019",
+    "expirationMonth": "02",
+    "expirationYear": "2035",
+  },
+  "transactionDetails": {
+    "tokenProvider": "TRANSARMOR"
+  }
 }
 ```
 <!--
@@ -121,8 +109,9 @@ title: Response
 
 ## Tokenization with Charges Request
 
-<!-- theme: warning -->
-> For merchants using multiple tokenization services, `tokenProvider` is a required field.
+### Required Field
+
+- `createToken`: *boolean* : *true*
 
 ### Endpoint
 <!-- theme: success -->
@@ -139,21 +128,24 @@ title: Request
 
 ```json
 {
-  "amount": {
-    "total": "0.02",
-    "currency": "USD"
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard",
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
-  },
-  "transactionDetails": {
-    "captureFlag": false
-    "tokenProvider": "TRANSARMOR"
-  }
+   "amount":{
+      "total":"1.00",
+      "currency":"USD"
+   },
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123"
+      }
+   },
+   "transactionDetails":{
+      "captureFlag":false,
+      "createToken":true,
+      "tokenProvider":"TRANSARMOR"
+   }
 }
 ```
 <!--
@@ -221,15 +213,6 @@ title: Response
 ## PaymentToken Charges Request
 
 ### Requirements
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-| `tokenData` | *string* | 2048 | Token created from the payment source. |
-| `PARId` | *string* | 256 | |
-| `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
-| `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
-
-### Minimum Requirements
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -325,10 +308,6 @@ title: Response
 <!-- type: tab-end -->
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
-
----
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
