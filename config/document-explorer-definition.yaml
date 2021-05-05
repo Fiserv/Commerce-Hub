@@ -50,7 +50,7 @@
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
 - sections:
-  - title: Omnicommerce
+  - title: Connected Commerce
     link: docs/Getting-Started/Getting-Started-UCOM.md
     open: false
 - sections:
