@@ -262,7 +262,7 @@ The result of checking the cardholder’s postal code and address information pr
 | NON_US | Service Not supported, non-US Issuer does not participate |
 | RETRY | Issuer system unavailable, retry later |
 | NOT_MOTO | Not a mail or phone order | 
-| NOT_SUPPORTED | Service not supported
+| NOT_SUPPORTED | Service not supported |
 | INTERNATIONAL_BOTH_MATCH | International street address and postal code match |
 | INTERNATIONAL_STREET_ONLY |  International street address match, postal code not verified due to incompatible formats |
 | INTERNATIONAL_POSTAL_ONLY | International street address and postal code not verified due to incompatible formats |
