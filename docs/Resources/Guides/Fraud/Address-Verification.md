@@ -256,7 +256,7 @@ The result of checking the cardholder’s postal code and address information pr
 | BOTH_MATCH | Both Street and Zip Code Match |
 | STREET_ONLY | Street Address matches, ZIP Code does not |
 | ZIP_ONLY | ZIP Code matches, Street Address does not |
-| 5_DIGIT_ZIP_ONLY | 5 digit ZIP Code match only |
+| 5DIGIT_ZIP_ONLY | 5 digit ZIP Code match only |
 | NO_MATCH | No Address or ZIP Code match |
 | UNAVAILABLE | Address information is unavailable for that account number, or the card issuer does not support |
 | NON_US | Service Not supported, non-US Issuer does not participate |
