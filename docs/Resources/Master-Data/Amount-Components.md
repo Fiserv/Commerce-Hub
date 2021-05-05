@@ -14,10 +14,10 @@ Amount is broken into two arrays, `amount` and `amountComponents`.
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#componentamountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-#### Component: amountComponents
+#### Subcomponent: amountComponents
 
 <!-- theme:info -->
-> The `amountComponents` is the subcomponent of `additionalDataCommon`.
+> Subcomponent of [Additional Data Common](?path=docs/Resources/Master-Data/Additional-Data.md).
 
 | Variable | Type | Length | Description/Values |
 | --------- | --- | ------ | -------------- |

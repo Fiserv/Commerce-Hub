@@ -17,7 +17,8 @@ Wallet transactions originate from a digital wallet either from a website or on 
 
 ### Digital Wallets (eWallets)
 
-PayPal, AmazonPay, etc. Info goes here....
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for digital wallets (eWallets) including PayPal and AmazonPay. The documents related to the features will be released soon. 
 
 ---
 
