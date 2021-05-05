@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-web-integration]
 
 ## Step 1: Create Merchant Identifier
 
-First create a merchant identifier in your developer account that uniquely identifies you to Apple Pay as a merchant who is able to accept payments. You can use the same merchant identifier for multiple native and web apps. The merchant identifier never expires.
+First, create a merchant identifier in your developer account that uniquely identifies you to Apple Pay as a merchant who is able to accept payments. You can use the same merchant identifier for multiple native and web apps. The merchant identifier never expires.
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar, then click the Add button (+) in the upper-left corner.
 - Select Merchant IDs, then click Continue.
@@ -23,7 +23,7 @@ First create a merchant identifier in your developer account that uniquely ident
 
 ## Step 2: Create Payment Processing Certificate
 
-Next create a payment processing certificate that is associated with your merchant identifier and used to encrypt payment information. The payment processing certificate expires every 25 months and can be revoked. When that happens, just re-create the payment process certificate.
+Next, create a payment processing certificate that is associated with your merchant identifier and used to encrypt payment information. The payment processing certificate expires every 25 months and can be revoked. When that happens, just re-create the payment process certificate.
 
 - In [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources), select Identifiers from the sidebar.
 - Under Identifiers, select Merchant IDs using the filter in the top-right.

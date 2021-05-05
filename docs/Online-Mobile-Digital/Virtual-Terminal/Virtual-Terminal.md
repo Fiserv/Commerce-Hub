@@ -2,7 +2,7 @@
 
 ## Overview
 
-A merchant may be required to process and offline transaction or may need to manually process a secondary transactions, e.g. to take orders via phone or process a cancel, refund, caputure, etc.
+A merchant may be required to process an offline transaction or may need to manually process a secondary transactions, e.g. to take orders via phone or process a cancel, refund, caputure, etc.
 
 - Create [Payment URLs](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md) that allow consumers to make the payment at a later point.
 - Batch uploads via [Quick Key](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Quick-Key.md) to enter multiple transactions quickly into the Virtual Terminal.
