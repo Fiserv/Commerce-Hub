@@ -2,9 +2,10 @@
 
 ## Overview
 
-#### Welcome to Commerce Hub card present transactions Overview Page.
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include card present transactions support and the documents related to the features will be released soon.
 
-We are enhancing Commerce Hub to include card present transactions support and the documents related to the features will be released soon.
+
 
 ---
 

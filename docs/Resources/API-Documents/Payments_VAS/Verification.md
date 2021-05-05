@@ -152,7 +152,7 @@ title: Response
    "paymentToken":{
       "tokenData":"1234123412340019",
       "PARId":"string",
-      "declineDuplicates":"FALSE",
+      "declineDuplicates":"false",
       "tokenSource":"TRANSARMOR"
    }
 }

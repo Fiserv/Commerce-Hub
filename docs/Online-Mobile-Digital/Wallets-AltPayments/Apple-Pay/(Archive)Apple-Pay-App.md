@@ -18,7 +18,7 @@ First create a merchant identifier in your developer account that uniquely ident
 
 <!-- theme: warning -->
 >
-> After Merchant Identifier is created, you will need us to generate the certificate for you using the Merchant Identifier. Please contact our Account Representative in order to get the certificate.
+> After the Merchant Identifier is created, you will need us to generate the certificate for you using the Merchant Identifier. Please contact our Account Representative in order to get the certificate.
 
 ---
 

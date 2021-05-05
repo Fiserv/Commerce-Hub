@@ -1,12 +1,11 @@
 # Least Cost Debit
 
-#### Welcome to Commerce Hub Least Cost Debit Routing Page.
-
 ## Overview
 
 When a customer makes a contactless ('tap-and-go') payment with their dual-network debit card, the merchant may choose to send the transaction via the debit network that costs them the least to accept.
 
-We are enhancing Commerce Hub to include least cost debit routing support and the documents related to the features will be released soon.
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include least cost debit routing support and the documents related to the features will be released soon.
 
 ---
 
