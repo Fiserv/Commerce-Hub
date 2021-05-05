@@ -1,6 +1,11 @@
 # EMV
 
-We are enhancing Commerce Hub to include EMV support and the documents related to the features will be released soon.
+## Overview
+
+EMV is a secure payment method for payment terminals and automated teller machines.
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include EMV support and the documents related to this feature will be released soon.
 
 ---
 
