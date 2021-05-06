@@ -5,7 +5,7 @@
 Amount is broken into two arrays, `amount` and `amountComponents`.
 
 - `amount`: Used to support the request for payment.
-- `amountComponents`: Used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
+- `amountComponents`: Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
 
 #### Component: amount
 
