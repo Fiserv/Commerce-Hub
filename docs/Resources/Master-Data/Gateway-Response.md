@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Gateway Response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
+The Gateway Response contains the response parameters from Commerce Hub for any successful or unsuccessful transaction.
 
 #### Component: gatewayResponse
 
