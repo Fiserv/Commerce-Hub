@@ -86,6 +86,9 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ### Electronic Commerce Indicators
 
+<!-- theme: warning -->
+> ECI is required on all online, mobile, and digital E-Commerce transactions.
+
 #### Object: eciIndicator
 
 | Value | Description |
