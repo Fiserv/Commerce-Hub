@@ -1,7 +1,7 @@
 # Transaction Interaction
 
 ## Overview
-The  transaction interaction may contain the data regarding where the transaction was acquired and what are the capabilities of the terminal or software.
+The  transaction interaction may contain the data regarding where the transaction is acquired and the capabilities of the terminal or software.
 
 #### Component: transactionInteraction
 
