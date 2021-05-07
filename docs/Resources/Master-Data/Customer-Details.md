@@ -8,7 +8,7 @@ The transaction request may contain the `customerDetails` consisting of customer
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `merchantCustomerId` | *string* |  | Unique Customer Identifier. |
+| `merchantCustomerId` | *string* |  | Unique customer identifier. |
 | `processorCustomerId` | *string* |  | UUID in Fiserv EV. |
 | `name` | *string* |  | Customer first and last name. |
 | `dob` | *string* |  | Customer date of birth in mmddyyyy format. |
@@ -18,16 +18,16 @@ The transaction request may contain the `customerDetails` consisting of customer
 | `locale` | *string* |  | The language of the receipt.|
 | `driverLicenseNumber` | *string* |  | Customer Driver License Number.|
 | `ssn` | *string* |  | Customer SSN or Tax ID.|
-| `phone` | *array* |  | Customer [Phone Number](#subcomponentphone)|
+| `phone` | *array* |  | Customer [phone number](#subcomponent-phone).|
 
 
 #### Subcomponent: phone
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `countryCode` | *string* |  | ISO Country code. |
+| `countryCode` | *string* |  | ISO country code. |
 | `phoneNumber` | *string* |  | Cardholder phone number. |
-| `type` | *string* |  | This field indicates the type of phone number given. Valid Values: *DAY*, *HOME*, *NIGHT*, WORK |
+| `type` | *string* |  | This field indicates the type of phone number given. **Valid Values:** DAY, HOME, NIGHT, WORK |
 
 ---
 
