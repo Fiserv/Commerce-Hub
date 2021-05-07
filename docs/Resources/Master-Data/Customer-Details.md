@@ -18,7 +18,7 @@ The transaction request may contain the `customerDetails` consisting of customer
 | `locale` | *string* |  | The language of the receipt.|
 | `driverLicenseNumber` | *string* |  | Customer Driver License Number.|
 | `ssn` | *string* |  | Customer SSN or Tax ID.|
-| `phone` | *array* |  | Cardholder [Phone Number](#subcomponentphone)|
+| `phone` | *array* |  | Customer [Phone Number](#subcomponentphone)|
 
 
 #### Subcomponent: phone
