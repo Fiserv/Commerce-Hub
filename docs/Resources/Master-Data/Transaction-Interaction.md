@@ -3,21 +3,19 @@
 ## Overview
 The `transactionInteraction` may contain the data regarding where the transaction is been acquired and what are the capabilities of the terminal.
 
-#### Component: transactionInteraction
+#### transactionInteraction
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#transactionorigins) of the transaction. |
-| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#posentrymodes) on the transaction.|
-| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#posconditioncodes) at the Point-of-Sale *(POS)*. |
-| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobileinteractions).|
-| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electroniccommerceindicators).|
+| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction. |
+| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
+| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction).|
+| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator).|
 
 ---
 
-### Transaction Origins
-
-#### Object: origin
+### Transaction Origin
 
 | Value | Description |
 |-------|-------------|
@@ -27,9 +25,7 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### POS Entry Modes
-
-#### Object: posEntryMode
+### POS Entry Mode
 
 | Value | Description |
 |-------|-------------|
@@ -52,9 +48,7 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### POS Condition Codes
-
-#### Object: posConditionCode
+### POS Condition Code
 
 | Value | Description |
 |-------|-------------|
@@ -75,8 +69,6 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ### Mobile Interactions
 
-#### Object: mobileInteraction
-
 | Value | Description |
 |-------|-------------|
 | *PHONE_NUMBER* | Invoice received by phone number |
@@ -84,12 +76,10 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### Electronic Commerce Indicators
+### Electronic Commerce Indicator
 
 <!-- theme: warning -->
 > ECI is required on all online, mobile, and digital E-Commerce transactions.
-
-#### Object: eciIndicator
 
 | Value | Description |
 |-------|-------------|

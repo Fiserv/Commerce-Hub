@@ -2,7 +2,7 @@
 
 ## Overview
 
-A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and `shippingAddress` information in the request by using the following fields.
+A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and `shippingAddress` objects in the request.
 
 ---
 
@@ -10,34 +10,89 @@ A merchant may need to send the customer's address in the transaction request fo
 
 Is an address connected to the customer's [payment method](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md).
 
-#### Component: billingAddress
-
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* |  | Customer first name. |
 | `lastName` | *string* |  | Customer last name. |
-| `address` | *array* |  | Billing [address](#subcomponentaddress) details. |
-| `phone` | *array* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `address` | *object* |  | Billing [address](#subcomponentaddress) details. |
+| `phone` | *object* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "billingAddress":{
+      "firstName":"John",
+      "lastName":"Doe",
+   },
+   "address":{
+      "houseNumberOrName":"112",
+      "street":"Main St.",
+      "city":"Atlanta",
+      "stateOrProvince":"GA",
+      "postalCode":"30301",
+      "country":"US"
+   },
+   "phone":{
+      "countryCode":"1",
+      "phoneNumber":"123-123-1234",
+      "type":"DAY"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
 
 ---
 
 ## Shipping Address
 
-Is an address where merchant will send the order. 
-
-#### Component: shippingAddress
+Is an address where the merchant will ship or deliver the order. 
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* |  | Shipping contact first name. |
 | `lastName` | *string* |  | Shipping contact last name.|
 | `shippingMethod` | *string* |  | [Shipping and delivery method](#shippingmethodvalidvalues).|
-| `address` | *array* |  | Shipping [address](#subcomponentaddress) details. |
-| `phone` | *array* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `address` | *object* |  | Shipping [address](#subcomponentaddress) details. |
+| `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "shippingAddress":{
+      "firstName":"Jane",
+      "lastName":"Doe",
+      "shippingMethod":"SAME_DAY"
+   },
+   "address":{
+      "houseNumberOrName":"112",
+      "street":"Main St.",
+      "city":"Atlanta",
+      "stateOrProvince":"GA",
+      "postalCode":"30301",
+      "country":"US"
+   },
+   "phone":{
+      "countryCode":"1",
+      "phoneNumber":"123-123-1234",
+      "type":"DAY"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
 
 ### Shipping Method
-
-#### Object: shippingMethod
 
 | Value | Description |
 | ----- | ----------- |
@@ -52,16 +107,35 @@ Is an address where merchant will send the order.
 
 ## Address
 
-#### Subcomponent: address
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `street` | *string* |  | Street name |
-| `houseNumberOrName` | *string* |  | House number or name |
-| `city` | *string* |  | City or locality |
-| `stateOrProvince` | *string* |  | State or Province name |
-| `postalCode` | *string* |  | Postal code |
-| `country` | *string* |  | [Country Code](?path=docs/Resources/Master-Data/Country-Code.md)|
+| `houseNumberOrName` | *string* |  | House number or name. |
+| `street` | *string* |  | Street name. |
+| `city` | *string* |  | City or locality. |
+| `stateOrProvince` | *string* |  | State or province name. |
+| `postalCode` | *string* |  | Postal code. |
+| `country` | *string* |  | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "address":{
+      "houseNumberOrName":"112",
+      "street":"Main St.",
+      "city":"Atlanta",
+      "stateOrProvince":"GA",
+      "postalCode":"30301",
+      "country":"US"
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 

@@ -2,27 +2,25 @@
 
 ## Overview
 
-Additional Data Common features common objects used for all request types.
+Additional Data Common contains common objects used for all request types.
 
-#### Component: additionalDataCommon
+#### additionalDataCommon
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `additionalData` | *array* | | Used to identify specific data based on transaction requirements. |
-| `amountComponents` | *array* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `directedRouting` | *array* | | Required in Directed Routing transactions. |
-| `subMerchant` | *array* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
+| `additionalData` | *object* | | Used to identify specific data based on transaction requirements. |
+| `amountComponents` | *object* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
+| `directedRouting` | *object* | | Required in Directed Routing transactions. |
+| `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 | `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
-| `installments` | *array* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md). |
-| `deferredPayments` | *array* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md). |
-| `recurringPayments` | *array* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md). |
-| `privateLabel` | *array* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
+| `installments` | *object* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md). |
+| `deferredPayments` | *object* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md). |
+| `recurringPayments` | *object* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md). |
+| `privateLabel` | *object* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customfields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
 ---
 
 ### Bill Payment Indicator
-
-#### Object: billPaymentIndicator
 
 | Value | Description |
 | ----- | ----- |
@@ -36,8 +34,6 @@ Additional Data Common features common objects used for all request types.
 ## Additional Data
 
 Additional Data identifies various elments based on the specific transaction type.
-
-#### Subcomponent: additionalData
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
@@ -53,7 +49,6 @@ Additional Data identifies various elments based on the specific transaction typ
 
 ### Business Application Identifier
 
-#### Object: baiFlag
 | Value | Description |
 | ----- | ----- |
 | PERSON_TO_PERSON | Person to person initiated. |
@@ -62,7 +57,7 @@ Additional Data identifies various elments based on the specific transaction typ
 | DIGITAL_WALLET | Digital Wallet transfer. |
 | ACCOUNT_TO_ACCOUNT | Account to account transfer. |
 | TOP_OFF | Account top off or reload. |
-| ACCOUNT_VERIFICATION | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) (also known as $0.00 auth). |
+| ACCOUNT_VERIFICATION | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
 | FUNDS_TRANSFER | Funds Transfer. |
 | DISBURSEMENT | Funds disbursement or payout. |
 | GAMBLING_PAYOUT | Gambling payout non-online. |

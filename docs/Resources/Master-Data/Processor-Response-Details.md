@@ -4,11 +4,11 @@
 
 The processor response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
 
-#### Component: processorResponseDetails
+#### processorResponseDetails
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `approvalStatus` | *string* | | Final status of the transaction. | 
+| `approvalStatus` | *string* | | Final [status](#approval-status) of the transaction. | 
 | `approvalCode` |*string* | | Approval code from the processor. |
 | `authenticationResponseCode` | string | | Response code from authentication. |
 | `referenceNumber` | *string* | | Transaction reference number. |
@@ -20,13 +20,11 @@ The processor response contains the response parameters from the Commerce Hub fo
 | `hostResponseCode` | *string* | | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).| 
 | `hostResponseMessage` | *string* | | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).|
 | `localTimestamp` | *string* | | Transaction timestamp in local time.| 
-| `bankAssociationDetails` | *array* | | [Bank association](#subcomponent-bankassociatindetails) response details.|
+| `bankAssociationDetails` | *object* | | [Bank association](#bank-association-details) response details.|
 
 ---
 
 ### Approval Status
-
-#### Object: approvalStatus
 
 | Value | Description |
 |-------|-------------|
@@ -40,33 +38,27 @@ The processor response contains the response parameters from the Commerce Hub fo
 
 ## Bank Association Details
 
-#### Subcomponent: bankAssociationDetails
-
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | associationResponseCode | string | 32 | Bank response code. |
 | transactionTimestamp | string | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ.|
 | transactionReferenceInformation| string | 256 | Transaction reference information.|
-|avsSecurityCodeResponse | array | | [Address and security code](#subcomponent-avssecuritycoderesponse) response details. |
+|avsSecurityCodeResponse | array | | [Address and security code response](#address-and-security-code-response) details. |
 
 ---
 
 ### Address and Security Code Response
-
-#### Subcomponent: avsSecurityCodeResponse
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `streetMatch` | *string* | 8 | Contains the normalized gateway response of [street number](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match.|
 | `postalCodeMatch` | *string* | 8 |Contains the noramlized gateway response of [postal code](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match. |
 | `securityCodeMatch` | *string* | 8 |  Contains the noramlized gateway response of [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) match. |
-| `association` | *array* | | Bank [association](#subcomponent-association) address and security code responses. |
+| `association` | *array* | | Bank [association](#association-response) address and security code responses. |
 
 ---
 
 ### Association Response
-
-#### Subcomponent: association
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
