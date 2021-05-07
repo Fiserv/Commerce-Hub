@@ -30,6 +30,10 @@ Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Paym
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/capture)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md) 
 
+- [Transaction Inquiry](?path=ocs/Resources/API-Documents/Payments/Inquiry.md) 
 ---
