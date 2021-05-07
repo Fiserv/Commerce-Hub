@@ -39,7 +39,7 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 | Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth).|
 
 ---
 
