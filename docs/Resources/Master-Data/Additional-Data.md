@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `additionalDataCommon` object contains common elements used for all request types.
+The `additionalDataCommon` object contains common data objects used for request types based on business requirements.
 
 <!--
 type: tab
@@ -99,7 +99,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-#### Bill Payment Indicator
+### Bill Payment Indicator
 
 | Value | Description |
 | ----- | ----- |
@@ -151,7 +151,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-#### Business Application Identifier
+### Business Application Identifier
 
 | Value | Description |
 | ----- | ----- |
