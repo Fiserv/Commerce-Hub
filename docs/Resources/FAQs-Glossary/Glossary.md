@@ -35,10 +35,10 @@ A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Numb
 A person to whom a card has been issued or a person authorized to use a card.
 
 ## Customer Account
-Account connected to the financial institution where they issued a payment card or checks.
+Account connected to the financial institution that issued a payment card or checks.
 
 ## Cash Advance
-A transaction in which a customer obtains cash in-person which is posted against the customer's account.
+A transaction in which a customer receives cash in-person which is posted against the customer's account.
 
 ## Chargeback
 A process by which a customer disputes the payment and often results in the money being refunded to the customer by the issuing bank unless the merchant can show the transaction is valid.
@@ -47,7 +47,7 @@ A process by which a customer disputes the payment and often results in the mone
 A [custom descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md) you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
 
 ## Expiration Date
-The date embossed on the card beyond which the card must not be honored. Month and Year that the card expires.
+The date embossed on the card beyond which the card is not valid to be used. Generally mentions the Month and Year that the card expires.
 
 ## Hard Descriptor
 The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement.
