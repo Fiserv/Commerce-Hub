@@ -121,7 +121,7 @@ title: additionalData
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI). This identifies the intended use of a push payment. It determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. |
+| `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI). This identifies the intended use of a [disbursements](?path=docs/Resources/Guides/Disbursement.md). |
 | `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
 | `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
@@ -152,6 +152,8 @@ title: JSON Example
 <!-- type: tab-end -->
 
 ### Business Application Identifier
+
+The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision.
 
 | Value | Description |
 | ----- | ----- |
