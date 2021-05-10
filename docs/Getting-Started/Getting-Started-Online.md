@@ -11,6 +11,8 @@ Commerce Hub offers multiple methods of accepting online, mobile, and digital pa
 <!-- theme: warning -->
 > These transactions are at a higher risk for fraud, due to the inability to verify the account holder is making the purchase. Recommendation is to use 3D secure along with AVS and Security Code verification to reduce risk of card fraud.
 
+---
+
 ## RESTful APIs
 
 Allows the merchants to build their own UI and manage customer transactions within their own website, software, or terminal using Commerce Hub's RESTful APIs.

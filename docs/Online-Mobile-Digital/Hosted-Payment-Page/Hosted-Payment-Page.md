@@ -10,7 +10,7 @@ This gives you the option to use our secure hosted pages or an embeddable form w
 
 With the transaction type Pre-Authorization (preauth) you can reserve funds on a customer's card account. This transaction does not charge the card until you perform a completion transaction. In order to complete a transaction and initiate the settlement process, you will need to send a Post-Authorization (postauth) via our API or initiate the completion manually using our Virtual Terminal.
 
-Alternatively you can use the transaction type Sale which immediately charges a customer’s card or bank account over night with no further action required from you.
+Alternatively, you can use the transaction type Sale which immediately charges a customer’s card or bank account over night with no further action required from you.
 
 ## Getting started
 

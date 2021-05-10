@@ -3,21 +3,19 @@
 ## Overview
 The `transactionInteraction` may contain the data regarding where the transaction is been acquired and what are the capabilities of the terminal.
 
-#### Component: transactionInteraction
+#### transactionInteraction
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#transactionorigins) of the transaction. |
-| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#posentrymodes) on the transaction.|
-| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#posconditioncodes) at the Point-of-Sale *(POS)*. |
-| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobileinteractions).|
-| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electroniccommerceindicators).|
+| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction. |
+| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
+| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction).|
+| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator).|
 
 ---
 
-### Transaction Origins
-
-#### Object: origin
+### Transaction Origin
 
 | Value | Description |
 |-------|-------------|
@@ -27,9 +25,7 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### POS Entry Modes
-
-#### Object: posEntryMode
+### POS Entry Mode
 
 | Value | Description |
 |-------|-------------|
@@ -52,9 +48,7 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### POS Condition Codes
-
-#### Object: posConditionCode
+### POS Condition Code
 
 | Value | Description |
 |-------|-------------|
@@ -75,8 +69,6 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ### Mobile Interactions
 
-#### Object: mobileInteraction
-
 | Value | Description |
 |-------|-------------|
 | *PHONE_NUMBER* | Invoice received by phone number |
@@ -84,14 +76,15 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### Electronic Commerce Indicators
+### Electronic Commerce Indicator
 
-#### Object: eciIndicator
+<!-- theme: warning -->
+> ECI is required on all online, mobile, and digital E-Commerce transactions.
 
 | Value | Description |
 |-------|-------------|
 | *SECURE_ECOM* | **Secure Electronic Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction was successfully authenticated and includes the management of a cardholder certificate. |
-| *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via the E-commerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
+| *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via E-commerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
 | *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
 | *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
 

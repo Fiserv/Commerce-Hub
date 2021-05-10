@@ -2,22 +2,22 @@
 
 ## Overview
 
-Amount is broken into two arrays, `amount` and `amountComponents`.
+Transaction amount information is contained into two objects, `amount` and `amountComponents`.
 
-- `amount`: Used to support the request for payment.
-- `amountComponents`: Used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
+- [**amount:**](#amount) Used to support the request for payment.
+- [**amountComponents:**](#amountcomponents) Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
 
-#### Component: amount
+#### amount
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#componentamountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-#### Component: amountComponents
+#### amountComponents
 
 <!-- theme:info -->
-> The `amountComponents` is the subcomponent of `additionalDataCommon`.
+> Nested object in [`additionalDataCommon`](?path=docs/Resources/Master-Data/Additional-Data.md).
 
 | Variable | Type | Length | Description/Values |
 | --------- | --- | ------ | -------------- |
