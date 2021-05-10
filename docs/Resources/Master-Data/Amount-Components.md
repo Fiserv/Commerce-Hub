@@ -11,8 +11,24 @@ Transaction amount information is contained into two objects, `amount` and `amou
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#componentamountcomponents) values must add up to total amount. |
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "amount":{
+      "total": 12.00,
+      "currency": "USD"
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 #### amountComponents
 
@@ -28,6 +44,27 @@ Transaction amount information is contained into two objects, `amount` and `amou
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
 | `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount. |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "amountComponents":{
+      "subTotal": 12.00,
+      "convenienceFee": 1.00,
+      "ITBISTaxAmount": 0.50,
+      "localTax": 1.00,
+      "shippingAmount": 5.00,
+      "surcharge": 1.20,
+      "vatAmount": 1.00
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
