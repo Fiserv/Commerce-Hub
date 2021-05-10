@@ -2,7 +2,7 @@
 
 ## Overview
 
-Commerce Hub allows integration with most popular wallet providers including Apple Pay, Google Pay, Samsung Pay and PayPal.
+Commerce Hub allows integration with most popular mobile and digital wallet providers including Apple Pay, Google Pay, Samsung Pay and PayPal.
 
 ---
 
