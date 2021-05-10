@@ -22,7 +22,7 @@ Wallet transactions originate from a digital wallet either from a website or on 
 
 ---
 
-## See Also
+## Next Steps
 - [API Explorer](url)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
