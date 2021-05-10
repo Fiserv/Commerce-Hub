@@ -45,6 +45,13 @@
     "developers": "/v1/credentials/developers",
     "merchants": "/v1/credentials/merchants",
     "applications": "/v1/credentials/applications",
+    "apiVersions": [
+    {
+      "version": "1.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-1.0.0.md"
+    }
+  ],
     "feature":[
       {
         "name": "sandBox",
