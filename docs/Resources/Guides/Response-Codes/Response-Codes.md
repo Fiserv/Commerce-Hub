@@ -1,4 +1,4 @@
-# Response-Codes
+# Response Codes
 
 ## Overview
 
