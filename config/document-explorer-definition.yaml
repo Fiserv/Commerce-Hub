@@ -47,6 +47,8 @@
 - sections:
   - title: Resources and Guides
     sections:
+    - title: Featured Guides
+      link: docs/Resources/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Fraud Controls
