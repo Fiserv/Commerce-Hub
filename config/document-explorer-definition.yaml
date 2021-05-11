@@ -58,13 +58,7 @@
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
     - title: Response Codes
-      articles:
-      - title: Host
-        link: docs/Resources/Guides/Response-Codes/Bank-Issuer.md
-      - title: Gateway
-        link: docs/Resources/Guides/Response-Codes/Gateway.md
-      - title: HTTP
-        link: docs/Resources/Guides/Response-Codes/HTTP.md
+      link: docs/Resources/Guides/Response-Codes/Response-Codes.md
     - title: Split Tender
       link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
     - title: Split Shipment
