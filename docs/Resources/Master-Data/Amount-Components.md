@@ -7,7 +7,10 @@ Transaction amount information is contained into two objects, `amount` and `amou
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amountcomponents) Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
 
-#### amount
+<!--
+type: tab
+title: amount
+-->
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
@@ -30,10 +33,15 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-#### amountComponents
+### Amount Components
 
 <!-- theme:info -->
 > Nested object in [`additionalDataCommon`](?path=docs/Resources/Master-Data/Additional-Data.md).
+
+<!--
+type: tab
+title: amountComponents
+-->
 
 | Variable | Type | Length | Description/Values |
 | --------- | --- | ------ | -------------- |
