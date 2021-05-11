@@ -78,10 +78,10 @@ The processor response contains the response parameters from the Commerce Hub fo
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
 - [Gateway Response](?path=docs/Resources/Master-Data/Gateway-Response.md)
-- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 
 ---

@@ -66,8 +66,7 @@ The following variables are required in the initial `PaymentToken` request and s
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
-- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Recurring Payment](?path=docs/Resources/Guides/Bill-Payments/Recurring-Installments.md)
-
+- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 ---

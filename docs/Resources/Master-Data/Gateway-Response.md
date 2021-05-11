@@ -48,9 +48,9 @@ The Gateway Response contains the response parameters from the Commerce Hub for 
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
-- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 
 ---
