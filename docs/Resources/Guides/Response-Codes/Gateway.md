@@ -429,7 +429,7 @@ title: 9xx
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 

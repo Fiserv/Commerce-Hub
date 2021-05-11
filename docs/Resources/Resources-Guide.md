@@ -12,6 +12,12 @@ Commerce Hub implements various fraud controls that allows merchant to monitor p
 
 **Begin learning about Commerce Hub's [Fraud and Risk Management Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md).**
 
+### Featured Guides
+
+- [AVS](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [CVV](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+
 ---
 
 ## Transaction Processing
@@ -30,19 +36,13 @@ Commerce Hub offers multiple transactions related guides to assist merchants wit
 
 ## Merchant Accounting
 
-Commerce Hub offers multiple transactions related guides to assist with managing merchant accounts, customer accounts and business finances
+Commerce Hub offers multiple transactions related guides to assist with managing merchant accounts, customer accounts and business finances.
 
-### Reporting
+### Featured Guides
 
-The [Commerce Hub reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md) API allows users to search the transaction records and to generate standard reports (Activity, Closed Batches, Pending Batches, Declined) . The data is returned in CSV format.
-
-### Dynamic Descriptor
-
-A descriptor contains identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on customer's credit/debit card statement and identifies specific industry information based on the [Merchant Category Code (MCC)](?path=docs/Resources/FAQs-Glossary/Glossary.md#merchantcategroycode).
-
-### Vault
-
-When a payment method is stored in the [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md), the information is encrypted by the gateway and associated with a unique payment method token. This token can be used to create transactions without the [PCI compliance](https://www.pcisecuritystandards.org/) burden that comes with handling unencrypted data.
+- [Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md) 
+- [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md)
 
 ---
 
