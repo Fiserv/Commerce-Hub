@@ -17,6 +17,7 @@ Commerce Hub implements various fraud controls that allows merchant to monitor p
 - [AVS](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [CVV](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+
 ---
 
 ## Transaction Processing
@@ -42,7 +43,6 @@ Commerce Hub offers multiple transactions related guides to assist with managing
 - [Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md) 
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md)
-
 
 ---
 
