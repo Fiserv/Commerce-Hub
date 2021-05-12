@@ -1,6 +1,8 @@
-# Additional Data
+# Additional Transaction Data
 
-## Overview
+A paragraph will go here.
+
+## Additional Data Common
 
 The `additionalDataCommon` object contains common data objects used for request types based on business requirements.
 

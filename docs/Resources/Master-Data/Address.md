@@ -10,6 +10,7 @@ A merchant may need to send the customer's address in the transaction request fo
 
 Is the address connected to the customer's [payment method](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) and can be used for [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md).
 
+
 <!--
 type: tab
 title: billingAddress
