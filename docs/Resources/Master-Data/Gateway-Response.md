@@ -2,22 +2,20 @@
 
 ## Overview
 
-The Gateway Response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
+The Gateway Response contains the response parameters from Commerce Hub for any successful or unsuccessful transaction.
 
-#### Component: gatewayResponse
+#### gatewayResponse
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `transactionOrigin` | *string* | | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
-| `transactionProcessingDetails` | *array* | | Array containing the [transaction processing details](#transactionprocessingdetails). |
+| `transactionProcessingDetails` | *object* | | Array containing the [transaction processing details](#transaction-processing-details). |
 | `transactionState` | *string* | | Final [state](#transactionstate) of the transaction. |
 | `transactionType` | *string* | | Type of transaction submitted. |
 
 ---
 
 ### Transaction State
-
-#### Object: transactionState
 
 | Value | Description |
 |-------|-------------|
@@ -31,9 +29,7 @@ The Gateway Response contains the response parameters from the Commerce Hub for 
 
 ---
 
-## Transaction Processing Details
-
-#### Subcomponent: transactionProcessingDetails
+### Transaction Processing Details
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |

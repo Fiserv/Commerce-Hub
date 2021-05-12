@@ -4,7 +4,7 @@
 
 The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
 
-#### Component: transactionDetails
+#### transactionDetails
 
 |Variable    | Type| Maximum Length | Description/Values|
 |---------|-----------|----------------|---------|
@@ -24,26 +24,24 @@ The transaction request initiated by merchant contains various transaction relat
 | `reversalReasonCode` | *string* |  | Reason the merchant/ customer requests for cancel (void). **Valid Values:** *VOIDED*, *TIMEOUT*, *EDIT_ERROR*, *MAC_VERIFICATION_ERROR*, MAC_SYNCH_ERROR, *ENCRYPTION_ERROR*, *SYSTEM_ERROR*, *SUSPECTED_FRAUD*|
 | `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain multiple shipments. Can be set during pre-auth or the first post-auth.|
 | `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
-| `deviceFingerprint` | *array* |  | An array containing the [device fingerprint](#subcomponent-devicefingerprint) details.|
+| `deviceFingerprint` | *array* |  | An array containing the [device fingerprint](#device-fingerprint) details.|
 
 ---
 
 ### Device Fingerprint
 
-#### Subcomponent: deviceFingerprint
-
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`provider` | *string* |  | Device provider e.g. InAuth. |
-|`dataCapture`| *array* |  | An array containing [data capture](#subcomponent-datacapture) details. | 
-|`dataStatic`| *array* |  | An array containing [data static](#subcomponent-datastatic) details.|
-|`dataDynamic`| *array* |  | An array containing [data dynamic](#subcomponent-datadynamic) details. |
+|`dataCapture`| *object* |  | [Data capture](#data-capture) details. | 
+|`dataStatic`| *object* |  | [Data static](#data-static) details.|
+|`dataDynamic`| *object* |  | [Data dynamic](#data-dynamic) details. |
 
 ---
 
 ### Device Fingerprint Data
 
-#### Subcomponent: dataCapture
+#### Data Capture
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -51,7 +49,7 @@ The transaction request initiated by merchant contains various transaction relat
 | `dataEventId` | *string* |  | Unique ID for the data capture. |
 | `captureTime` | *string* |  | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ. |
 
-#### Subcomponent: dataStatic
+#### Data Static
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -60,7 +58,7 @@ The transaction request initiated by merchant contains various transaction relat
 | `model` | *string* |  | Device Model. |
 | `type` | *string* |  | Device type/name. |
 
-#### Subcomponent: dataDynamic
+#### Data Dynamic
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |

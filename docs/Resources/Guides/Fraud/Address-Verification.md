@@ -253,20 +253,20 @@ The result of checking the cardholder’s postal code and address information pr
 
 | Value | Description |
 | ------- | ------- |
-| BOTH_MATCH | Both Street and Zip Code Match |
-| STREET_ONLY | Street Address matches, ZIP Code does not |
-| ZIP_ONLY | ZIP Code matches, Street Address does not |
-| 5_DIGIT_ZIP_ONLY | 5 digit ZIP Code match only |
-| NO_MATCH | No Address or ZIP Code match |
-| UNAVAILABLE | Address information is unavailable for that account number, or the card issuer does not support |
-| NON_US | Service Not supported, non-US Issuer does not participate |
-| RETRY | Issuer system unavailable, retry later |
-| NOT_MOTO | Not a mail or phone order | 
-| NOT_SUPPORTED | Service not supported
-| INTERNATIONAL_BOTH_MATCH | International street address and postal code match |
-| INTERNATIONAL_STREET_ONLY |  International street address match, postal code not verified due to incompatible formats |
-| INTERNATIONAL_POSTAL_ONLY | International street address and postal code not verified due to incompatible formats |
-| INTERNATIONAL_NO_MATCH | International postal code match, street address not verified due to incompatible format |
+| BOTH_MATCH | Both Street and Zip Code Match. |
+| STREET_ONLY | Street Address matches, ZIP Code does not. |
+| ZIP_ONLY | ZIP Code matches, Street Address does not. |
+| 5_DIGIT_ZIP_ONLY | 5 digit ZIP Code match only. |
+| NO_MATCH | No Address or ZIP Code match. |
+| UNAVAILABLE | Address information is unavailable for that account number, or the card issuer does not support. |
+| NON_US | Service Not supported, non-US Issuer does not participate. |
+| RETRY | Issuer system unavailable, retry later. |
+| NOT_MOTO | Not a mail or phone order. | 
+| NOT_SUPPORTED | Service not supported. |
+| INTERNATIONAL_BOTH_MATCH | International street address and postal code match. |
+| INTERNATIONAL_STREET_ONLY |  International street address match, postal code not verified due to incompatible formats. |
+| INTERNATIONAL_POSTAL_ONLY | International street address and postal code not verified due to incompatible formats. |
+| INTERNATIONAL_NO_MATCH | International postal code match, street address not verified due to incompatible format. |
 
 
 #### Object: cardHolderNameResponse
@@ -276,14 +276,14 @@ The result of checking the cardholder’s postal code and address information pr
 
 | Value | Description |
 | ------- | ------- |
-| NAME_MATCH | Cardholder name matches |
-| ALL_MATCH | Cardholder name, billing address, and postal code match |
-| NAME_POSTAL_MATCH | Cardholder name and billing postal code match |
-| NAME_ADDRESS_MATCH | Cardholder name and billing address match |
-| ADDRESS_POSTAL_ONLY | Cardholder name incorrect, billing address and postal code match |
-| POSTAL_ONLY | Cardholder name incorrect, billing postal code matches |
-| ADDRESS_ONLY | Cardholder name incorrect, billing address matches |
-| NO_MATCH | Cardholder name, billing address, and postal code are all incorrect |
+| NAME_MATCH | Cardholder name matches. |
+| ALL_MATCH | Cardholder name, billing address, and postal code match. |
+| NAME_POSTAL_MATCH | Cardholder name and billing postal code match. |
+| NAME_ADDRESS_MATCH | Cardholder name and billing address match. |
+| ADDRESS_POSTAL_ONLY | Cardholder name incorrect, billing address and postal code match. |
+| POSTAL_ONLY | Cardholder name incorrect, billing postal code matches. |
+| ADDRESS_ONLY | Cardholder name incorrect, billing address matches. |
+| NO_MATCH | Cardholder name, billing address, and postal code are all incorrect. |
 
 ---
 

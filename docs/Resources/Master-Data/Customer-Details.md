@@ -4,7 +4,7 @@
 
 The transaction request may contain the `customerDetails` consisting of customer specific data like; customer id, name, date of birth, phone number, etc.
 
-#### Component customerDetails
+#### customerDetails
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -18,16 +18,17 @@ The transaction request may contain the `customerDetails` consisting of customer
 | `locale` | *string* |  | The language of the receipt.|
 | `driverLicenseNumber` | *string* |  | Customer Driver License Number.|
 | `ssn` | *string* |  | Customer SSN or Tax ID.|
-| `phone` | *array* |  | Customer [phone number](#subcomponent-phone).|
+| `phone` | *object* |  | Customer [phone number](#phone-number).|
 
+---
 
-#### Subcomponent: phone
+### Phone Number
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `countryCode` | *string* |  | ISO country code. |
-| `phoneNumber` | *string* |  | Cardholder phone number. |
-| `type` | *string* |  | This field indicates the type of phone number given. **Valid Values:** DAY, HOME, NIGHT, WORK |
+| `countryCode` | *string* |  | Country's area code. |
+| `phoneNumber` | *string* |  | Customer phone number. |
+| `type` | *string* |  | This field indicates the type of phone number provided. Valid Values: *DAY*, *HOME*, *NIGHT*, WORK |
 
 ---
 
