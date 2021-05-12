@@ -72,8 +72,8 @@ The transaction request initiated by merchant contains various transaction relat
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---

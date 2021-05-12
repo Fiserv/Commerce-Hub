@@ -6,4 +6,7 @@
 - [Recurring payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) are a series of fixed charges paid at set intervals.
 - [Installment payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) are fixed or variable charges paid over a period of time.
 
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 ---
