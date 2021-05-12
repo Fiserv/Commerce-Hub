@@ -6,11 +6,11 @@ Explore and learn about things that a merchant needs to start accepting transact
 
 ---
 
-## Fraud and Risk Management
+## Fraud Controls
 
 Commerce Hub implements various fraud controls that allows merchant to monitor potentially fraudulent transactions including; postitive and negative filters, velocity controls, transaction restrictions, address verfication and security code verification that will automatically accept or reject transactions.
 
-**Begin learning about Commerce Hub's [Fraud and Risk Management Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md).**
+**Begin learning about Commerce Hub's [Fraud Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md).**
 
 ### Featured Guides
 
