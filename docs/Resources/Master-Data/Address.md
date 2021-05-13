@@ -1,7 +1,5 @@
 # Customer Address
 
-## Overview
-
 A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
 
 ---
@@ -104,7 +102,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-#### Shipping Method
+### Shipping Method
 
 | Value | Description |
 | ----- | ----------- |

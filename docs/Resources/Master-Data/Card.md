@@ -1,8 +1,8 @@
-# Card
-
-## Overview
+# Card Details
 
 Card is a required object in `source` for all card payment types including; debit, credit, prepaid (gift), HSA, and WIC/EBT. 
+
+## Card
 
 <!--
 type: tab

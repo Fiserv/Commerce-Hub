@@ -1,10 +1,9 @@
-# Gateway Response
+# Commerce Hub Response
 
-## Overview
+The Commerce Hub Response contains the response parameters for any successful or unsuccessful transaction.
 
-The Gateway Response contains the response parameters from Commerce Hub for any successful or unsuccessful transaction.
 
-#### gatewayResponse
+## Gateway Response
 
 <!--
 type: tab

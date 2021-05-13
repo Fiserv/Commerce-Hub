@@ -24,7 +24,7 @@ The following variables are required in the initial `PaymentToken` request and s
 | `scheduled` | *boolean* |  | Indicator if this is a scheduled transaction. |
 | `schemeReferencedTransactionId` | *string* | 256 | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
 | `sequence` | *string* | 10 | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
-| `networkOriginalAmount` | *number* | 999999999999999999.999 | Original transaction amount, required for Discover Card on File transactions. |
+| `networkOriginalAmount` | *number* | 18,3 | Original transaction amount, required for Discover Card on File transactions. |
 | `networkTransactionReference` | *string* | 64 | Allows linking of the transaction to the original or previous one in a subscription/card-on-file chain. |
 
 ## Payload Example

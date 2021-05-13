@@ -1,6 +1,6 @@
 # Additional Transaction Data
 
-A paragraph will go here.
+Additional transaction data is used for specific condition like installments, deffered payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.  
 
 ## Additional Data Common
 
