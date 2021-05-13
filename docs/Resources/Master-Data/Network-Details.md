@@ -1,19 +1,24 @@
-# Network Details
+# Authorization Network Response
+
+Authorization network response contains the `networkDetails` object.
+
+## Network Details
 
 
 
 <!--
 type: tab
-title: networkdetails
+title: networkDetails
 -->
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `partialauthdetails` | *string* | | Processing card network. |
+| `partialAuthDetails` | *object* | | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) details. |
 | `debitNetworkId` | *string* | | Network ID for the debit component. |
 | `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
 | `systemTrace`| *string* | | This field contains the original trace number that was returned in an authorization response. |
 | `authorizationCharacteristicsIndicator` | *string* | | Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Upon evaluation, the code may be changed in the response message if provided by Visa. |
+|`
 
 <!--
 type: tab
@@ -44,7 +49,7 @@ title: JSON Example
     "VISAAUR": "12345AD89012",
     "networkResponseCode": "00"
   }
-
+```
 ---
 
 <!-- type: tab-end -->
