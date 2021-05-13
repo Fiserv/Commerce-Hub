@@ -20,7 +20,8 @@ title: networkDetails
 | `authorizationCharacteristicsIndicator` | *string* | | Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Upon evaluation, the code may be changed in the response message if provided by Visa. |
 | `VisaBID` | *string* | | The Business Identifier (BID) provided by Visa to Third Party Servicers (TPS). |
 | `VIsaAUR` | *string* | | Agent Unique Account Result (AUAR) provided by Visa to Third Party Servicers (TPS). |
-| `networkResponseCode ` | *string* | | Debit network response code. |
+| `networkResponseCode ` | *string* | | Debit network response
+
 # Valid Values
 | `CARD_NOT_PRESENT` | – |Card not present trasaction (preferred customer only e.g. Lodging or Auto Rental)
 | `INCREMENT` |– Incremental Authorization 
