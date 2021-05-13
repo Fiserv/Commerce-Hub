@@ -18,7 +18,14 @@ title: networkDetails
 | `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
 | `systemTrace`| *string* | | This field contains the original trace number that was returned in an authorization response. |
 | `authorizationCharacteristicsIndicator` | *string* | | Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Upon evaluation, the code may be changed in the response message if provided by Visa. |
-|`
+| `VisaBID` | *string* | | The Business Identifier (BID) provided by Visa to Third Party Servicers (TPS). |
+| `VIsaAUR` | *string* | | Agent Unique Account Result (AUAR) provided by Visa to Third Party Servicers (TPS). |
+| `networkResponseCode ` | *string* | | Debit network response code. |
+# Valid Values
+| `CARD_NOT_PRESENT` | – |Card not present trasaction (preferred customer only e.g. Lodging or Auto Rental)
+| `INCREMENT` |– Incremental Authorization 
+| `REQUEST_PARTICIPATION` | – Transaction requests participation
+| `CARD_NOT_PRESENT_NO_AVS` | – Card not present, AVS not required
 
 <!--
 type: tab
@@ -53,3 +60,7 @@ title: JSON Example
 ---
 
 <!-- type: tab-end -->
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
