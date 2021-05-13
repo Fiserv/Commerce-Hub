@@ -24,7 +24,7 @@ title: paymentReceipt
 
 <!--
 type: tab
-title: JSON Example
+title: JSON Example 
 -->
 
 ```json
