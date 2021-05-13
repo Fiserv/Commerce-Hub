@@ -1,6 +1,6 @@
 # Getting Started with Commerce Hub
 
-The Commerce Hub provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. We Offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
+The Commerce Hub provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. We Offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay. 
 
 Beyond accepting customer payments, Commerce Hub's services include; tokenization, account verification, fraud prevention, 3-D Secure, AVS/CVV filtering, creating and managing recurring payments, installments and deferred payments, split shipment, EMV and contactless payments, secure Hosted Payment Pages and Payment URLs, and more.
 
