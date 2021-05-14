@@ -25,6 +25,7 @@ The following variables are required in the initial `PaymentToken` request and s
 | `schemeReferencedTransactionId` | *string* | 256 | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
 | `sequence` | *string* | 10 | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
 | `networkOriginalAmount` | *number* | 999999999999999999.999 | Original transaction amount, required for Discover Card on File transactions. |
+| `networkTransactionReference` | *string* | 64 | Allows linking of the transaction to the original or previous one in a subscription/card-on-file chain. |
 
 ## Payload Example
 
@@ -63,11 +64,10 @@ The following variables are required in the initial `PaymentToken` request and s
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
-- [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Recurring Payment](?path=docs/Resources/Guides/Bill-Payments/Recurring-Installments.md)
-
+- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 ---

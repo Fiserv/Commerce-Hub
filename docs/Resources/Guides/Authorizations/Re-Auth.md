@@ -139,8 +139,8 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)

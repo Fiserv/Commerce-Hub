@@ -1,6 +1,6 @@
 # Contactless-QR
 
-We are enhancing Commerce Hub to include Contactless transaction support support and the documents related to the features will be released soon.
+We are enhancing Commerce Hub to include Contactless transaction support and the documents related to the features will be released soon.
 
 ---
 

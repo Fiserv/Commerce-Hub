@@ -2,22 +2,20 @@
 
 ## Overview
 
-The Gateway Response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
+The Gateway Response contains the response parameters from Commerce Hub for any successful or unsuccessful transaction.
 
-#### Component: gatewayResponse
+#### gatewayResponse
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `transactionOrigin` | *string* | | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
-| `transactionProcessingDetails` | *array* | | Array containing the [transaction processing details](#transactionprocessingdetails). |
+| `transactionProcessingDetails` | *object* | | Array containing the [transaction processing details](#transaction-processing-details). |
 | `transactionState` | *string* | | Final [state](#transactionstate) of the transaction. |
 | `transactionType` | *string* | | Type of transaction submitted. |
 
 ---
 
 ### Transaction State
-
-#### Object: transactionState
 
 | Value | Description |
 |-------|-------------|
@@ -31,9 +29,7 @@ The Gateway Response contains the response parameters from the Commerce Hub for 
 
 ---
 
-## Transaction Processing Details
-
-#### Subcomponent: transactionProcessingDetails
+### Transaction Processing Details
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
@@ -48,9 +44,9 @@ The Gateway Response contains the response parameters from the Commerce Hub for 
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
-- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 
 ---

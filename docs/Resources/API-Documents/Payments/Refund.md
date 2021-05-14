@@ -147,8 +147,8 @@ title: Response
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 

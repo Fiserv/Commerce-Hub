@@ -2,7 +2,7 @@
 
 ## Overview
 
-Commerce Hub allows integration with most popular wallet providers including Apple Pay, Google Pay, Samsung Pay and PayPal.
+Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
 
 ---
 
@@ -17,11 +17,12 @@ Wallet transactions originate from a digital wallet either from a website or on 
 
 ### Digital Wallets (eWallets)
 
-PayPal, AmazonPay, etc. Info goes here....
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for digital wallets (eWallets) including PayPal and AmazonPay. The documents related to the features will be released soon. 
 
 ---
 
-## See Also
+## Next Steps
 - [API Explorer](url)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
