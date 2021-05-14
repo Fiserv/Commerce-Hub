@@ -31,6 +31,13 @@
       ]
     }
   ],
+  "apiVersions": [
+    {
+      "version": "1.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-1.0.0.md"
+    }
+  ],
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Commerce-Hub/develop/assets/images/Commerce-Hub-Circle.png",
