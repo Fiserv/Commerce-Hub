@@ -29,10 +29,11 @@ title: JSON Example
 
 ```json
 {
-   "approvedAmount": {
+  "paymentReceipt": {
+      "approvedAmount": {
       "total": 1,
       "currency": "USD"
-    },
+      },
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
       "approvalCode": "OK3483",
@@ -62,13 +63,14 @@ title: JSON Example
         }
       }
     },
-    "merchantName": "string",
-    "merchantAddress": "string",
-    "merchantCity": "string",
-    "merchantStateOrProvince": "string",
-    "merchantCountry": "string",
-    "merchantURL": "string",
-    "merchantPostalCode": "string"
+      "merchantName": "Mac Donald",
+      "merchantAddress": "30 Memorial Drive",
+      "merchantCity": "Avon",
+      "merchantStateOrProvince": "MA",
+      "merchantCountry": "Albama",
+      "merchantURL": "www.macdonald",
+      "merchantPostalCode": "2322"
+    }
   }
   
 ```
