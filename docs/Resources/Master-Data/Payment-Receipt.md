@@ -29,49 +29,49 @@ title: JSON Example
 
 ```json
 {
-  "paymentReceipt": {
-      "approvedAmount": {
-      "total": 1,
-      "currency": "USD"
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": 12.32,
+         "currency": "USD"
       },
-    "processorResponseDetails": {
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
-      "processor": "fiserv",
-      "responseCode": "00000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
-      "bankAssociationDetails": {
-        "associationResponseCode": "000",
-        "transactionTimestamp": "2016-04-16T16:06:05Z",
-        "transactionReferenceInformation": "string",
-        "avsSecurityCodeResponse": {
-          "streetMatch": "MATCH",
-          "postalCodeMatch": "MATCH",
-          "securityCodeMatch": "MATCH",
-          "association": {
-            "avsCode": "BOTH_MATCH",
-            "securityCodeResponse": "MATCH",
-            "cardholderNameResponse": "NAME_MATCH"
-          }
-        }
-      }
-    },
-      "merchantName": "Mac Donald",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK3483",
+         "authenticationResponseCode": "string",
+         "referenceNumber": "845366457890-TODO",
+         "schemeTransactionId": "019078743804756",
+         "feeProgramIndicator": "123",
+         "processor": "fiserv",
+         "responseCode": "00000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021.02.25 14:14:38 (EST)",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2016-04-16T16:06:05Z",
+            "transactionReferenceInformation": "string",
+            "avsSecurityCodeResponse":{
+               "streetMatch": "MATCH",
+               "postalCodeMatch": "MATCH",
+               "securityCodeMatch": "MATCH",
+               "association":{
+                  "avsCode": "BOTH_MATCH",
+                  "securityCodeResponse": "MATCH",
+                  "cardholderNameResponse": "NAME_MATCH"
+               }
+            }
+         }
+      },
+      "merchantName": "Merchant Business",
       "merchantAddress": "30 Memorial Drive",
       "merchantCity": "Avon",
       "merchantStateOrProvince": "MA",
       "merchantCountry": "Albama",
-      "merchantURL": "www.macdonald",
+      "merchantURL": "www.business.com",
       "merchantPostalCode": "2322"
-    }
-  }
+   }
+}
   
 ```
 
