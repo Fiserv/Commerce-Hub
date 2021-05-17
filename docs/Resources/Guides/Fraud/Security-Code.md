@@ -94,15 +94,16 @@ title: Response
    "processorResponseDetails":{
       "approvalStatus":"APPROVED",
       "approvalCode":"OK3483",
+      "authenticationResponseCode":"string",
       "referenceNumber":"845366457890-TODO",
       "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
+      "feeProgramIndicator":"123",
       "processor":"fiserv",
-      "responseCode":"00",
+      "responseCode":"00000",
       "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
+      "hostResponseCode":"00",
+      "hostResponseMessage":"APPROVAL",
+      "localTimestamp":"2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
          "associationResponseCode":"000",
          "transactionTimestamp":"2016-04-16T16:06:05Z",
@@ -139,6 +140,9 @@ title: Request
 
 ```json
 {
+  "transactionDetails":{
+      "captureFlag":true
+   },
    "amount":{
       "total":"12.04",
       "currency":"USD"
@@ -153,10 +157,7 @@ title: Request
          "securityCodeIndicator":"PROVIDED"
       }
    },
-   "transactionDetails":{
-      "captureFlag":true
    }
-}
 
 ```
 <!--
@@ -197,17 +198,18 @@ title: Response
       }
    },
    "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
+     "approvalStatus":"APPROVED",
       "approvalCode":"OK3483",
+      "authenticationResponseCode":"string",
       "referenceNumber":"845366457890-TODO",
       "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
+      "feeProgramIndicator":"123",
       "processor":"fiserv",
-      "responseCode":"00",
+      "responseCode":"00000",
       "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
+      "hostResponseCode":"00",
+      "hostResponseMessage":"APPROVAL",
+      "localTimestamp":"2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
          "associationResponseCode":"000",
          "transactionTimestamp":"2016-04-16T16:06:05Z",
