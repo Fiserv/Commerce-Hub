@@ -12,4 +12,5 @@ Split Tender allows a customer to pay a partial amount using one method of payme
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
