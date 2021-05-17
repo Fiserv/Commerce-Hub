@@ -1,6 +1,8 @@
 # Customer Transaction Record 
 
-A Customer Transaction Record (CTR), also known as a payment receipt is returned upon the completion of a transaction. It contains the approved amount, [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md), business information, and other transaction details.
+A Customer Transaction Record (CTR), also known as a payment receipt is returned upon the completion of a transaction. The CTR contains the approved amount, [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md), business information, and other transaction details.
+
+---
 
 ## Payment Receipt
 
@@ -80,9 +82,16 @@ title: JSON Example
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Amount](?path=docs/Resources/Master-Data/Amount-Components.md)
-- [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+- [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
+- [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 
 ---
