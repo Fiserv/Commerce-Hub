@@ -33,7 +33,7 @@ title: JSON Example
 {
    "additionalDataCommon":{
       "additionalData":{
-         "baiFlag":"PERSON_TO_PERSON",
+         "baiFlag": "PERSON_TO_PERSON",
          "networkTransactionReference":"123456788",
          "billPayment":false,
          "ecomURL":"https://www.somedomain.com",

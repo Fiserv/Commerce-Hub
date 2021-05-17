@@ -141,7 +141,7 @@ title: Response
    },
    "additionalDataCommon":{
       "amountComponents":{
-         "convenienceFees":"1.00"
+         "convenienceFees": 1.00
       }
    }
 }
