@@ -55,6 +55,7 @@ title: Request
       "sourceType":"PaymentCard",
       "card":{
          "cardData":"4005550000000019",
+         "nameOnCard":"Jane Smith",
          "expirationMonth":"02",
          "expirationYear":"2035",
          "securityCode":"123",
@@ -93,13 +94,14 @@ title: Response
          "transactionId":"838916029301"
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentCard",
       "tokenData":"1234123412340019",
       "PARId":"string",
       "declineDuplicates":"FALSE",
       "tokenSource":"string",
       "card":{
+         "cardData":"4005550000000019",
          "nameOnCard":"Jane Smith",
          "expirationMonth":"05",
          "expirationYear":"2025",
