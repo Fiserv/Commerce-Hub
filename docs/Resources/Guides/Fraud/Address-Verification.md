@@ -42,24 +42,26 @@ title: Request
 
 ```json
 {
-  "source": {
-    "sourceType": "PaymentCard",
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
-  },
-  "billingAddress": {
-    "name": "Jane Smith",
-    "address": {
-      "street": "Main Street",
-      "houseNumberOrName": "123",
-      "city": "Sandy Springs",
-      "stateOrProvince": "GA",
-      "postalCode": "30303",
-      "country": "US"
-    }
-  }
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035"
+      }
+   },
+   "billingAddress":{
+      "firstName":"John",
+      "lastName":"Doe",
+      "address":{
+         "houseNumberOrName":"112",
+         "street":"Main St.",
+         "city":"Atlanta",
+         "stateOrProvince":"GA",
+         "postalCode":"30301",
+         "country":"US"
+      }
+   }
 }
 
 ```
@@ -77,50 +79,48 @@ title: Response
       "transactionState":"CHECKED",
       "transactionOrigin":"ECOM",
       "transactionProcessingDetails":{
+         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
          "transactionDate":"2016-04-16",
          "transactionTime":"2016-04-16T16:06:05Z",
          "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId":"838916029301"
-         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
       "card":{
+         "cardData":"4005550000000019",
          "nameOnCard":"Jane Smith",
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
+         "last4":"0019"
       }
    },
    "processorResponseDetails":{
       "approvalStatus":"APPROVED",
       "approvalCode":"OK3483",
+      "authenticationResponseCode":"string",
       "referenceNumber":"845366457890-TODO",
       "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
+      "feeProgramIndicator":"123",
       "processor":"fiserv",
-      "responseCode":"00",
+      "responseCode":"00000",
       "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
+      "hostResponseCode":"00",
+      "hostResponseMessage":"APPROVAL",
+      "localTimestamp":"2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
          "associationResponseCode":"000",
          "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "transactionReferenceInformation":"string",
          "avsSecurityCodeResponse":{
             "streetMatch":"MATCH",
             "postalCodeMatch":"MATCH",
             "association":{
                "avsCode":"BOTH_MATCH",
-               "cardHolderNameResponse":"NAME_MATCH"
+               "cardholderNameResponse":"NAME_MATCH"
             }
          }
       }
@@ -149,6 +149,9 @@ title: Request
 
 ```json
 {
+   "transactionDetails":{
+      "captureFlag":true
+   },
    "amount":{
       "total":"12.04",
       "currency":"USD"
@@ -163,17 +166,17 @@ title: Request
       }
    },
    "billingAddress":{
-      "name":"Jane Smith",
+      "firstName":"John",
+      "lastName":"Doe",
       "address":{
-         "street":"Main Street",
-         "houseNumberOrName":"123",
-         "city":"Sandy Springs",
+         "houseNumberOrName":"112",
+         "street":"Main St.",
+         "city":"Atlanta",
          "stateOrProvince":"GA",
-         "postalCode":"30303",
+         "postalCode":"30301",
          "country":"US"
       }
-   },
-   "captureFlag":false
+   }
 }
 ```
 
@@ -187,11 +190,11 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"CHARGES",
-      "transactionState":"AUTHORIZED",
-      "transactionOrigin":"ecom",
+      "transactionType":"VERIFICATION",
+      "transactionState":"CHECKED",
+      "transactionOrigin":"ECOM",
       "transactionProcessingDetails":{
+         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
          "transactionDate":"2016-04-16",
          "transactionTime":"2016-04-16T16:06:05Z",
          "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
@@ -199,42 +202,40 @@ title: Response
          "transactionId":"838916029301"
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
       "card":{
+         "cardData":"4005550000000019",
          "nameOnCard":"Jane Smith",
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
+         "last4":"0019"
       }
    },
    "processorResponseDetails":{
       "approvalStatus":"APPROVED",
       "approvalCode":"OK3483",
+      "authenticationResponseCode":"string",
       "referenceNumber":"845366457890-TODO",
       "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
+      "feeProgramIndicator":"123",
       "processor":"fiserv",
-      "responseCode":"00",
+      "responseCode":"00000",
       "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
+      "hostResponseCode":"00",
+      "hostResponseMessage":"APPROVAL",
+      "localTimestamp":"2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
          "associationResponseCode":"000",
          "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "transactionReferenceInformation":"string",
          "avsSecurityCodeResponse":{
             "streetMatch":"MATCH",
             "postalCodeMatch":"MATCH",
             "association":{
                "avsCode":"BOTH_MATCH",
-               "cardHolderNameResponse":"NAME_MATCH"
+               "cardholderNameResponse":"NAME_MATCH"
             }
          }
       }
