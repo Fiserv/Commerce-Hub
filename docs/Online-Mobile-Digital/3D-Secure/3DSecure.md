@@ -2,9 +2,11 @@
 
 ## Overview
 
-3-D Secure (3DS) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the "three domains" which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
+3-D Secure (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the "three domains" which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
 
-Transactions can originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a passthrough or a authentication request.
+3-D Secure technologies include Visa Secure (previously Verified by Visa), Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
+
+Transactions can originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a passthrough or an authentication request.
 
 ---
 
@@ -14,7 +16,7 @@ When using our payments API with passthrough, the authentication is performed wi
 
 ### Minimum Requirements
 
-#### Component: paymentSource
+#### Object: paymentSource
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -25,7 +27,7 @@ When using our payments API with passthrough, the authentication is performed wi
 | `version` | *string* | 4 | Specific Protocol version supported by 3DS |
 | `cavv` | *string* |  | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
 
-#### Component: transactionDetails
+#### Object: transactionDetails
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md). |
