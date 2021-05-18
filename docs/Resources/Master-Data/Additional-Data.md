@@ -103,10 +103,10 @@ title: JSON Example
 
 | Value | Description |
 | ----- | ----- |
-| SINGLE | Single charge not for recurring services or installment plan. |
-| DEFERRED | A charge for an order with a delayed payment for a specified amount of time. |
-| INSTALLMENT | Single purchase where the cardholder is billed (charged) in installments. |
-| RECURRING | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
+| *SINGLE* | Single charge not for recurring services or installment plan. |
+| *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
+| *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
+| *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
 
 ---
 
@@ -158,7 +158,7 @@ The BAI determines the data carried in the message, the limits and economics tha
 | Value | Description |
 | ----- | ----- |
 | PERSON_TO_PERSON | Person to person initiated. |
-| PERSON_TO_PERSON_BANK_INITIATED | Person to person bank initiated. |
+| *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
 | BUSINESS_TO_BUSINESS | Business to business initiated. |
 | DIGITAL_WALLET | Digital Wallet transfer. |
 | ACCOUNT_TO_ACCOUNT | Account to account transfer. |
