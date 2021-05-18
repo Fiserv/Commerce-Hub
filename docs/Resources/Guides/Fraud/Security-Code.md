@@ -42,13 +42,13 @@ title: Request
 ```json
 {
    "source":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123",
-         "securityCodeIndicator":"PROVIDED"
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "securityCode": "123",
+         "securityCodeIndicator": "PROVIDED"
       }
     }
 }
@@ -64,53 +64,52 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType": "token",
+      "transactionState": "authorized",
+      "transactionOrigin": "ecom",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+         "transactionDate": "2016-04-16",
+         "transactionTime": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
       }
    },
-   "paymentSource":{
-      "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
+   "source":{
+      "sourceType": "PaymentCard",
+      "tokenData": "1234123412340019",
+      "PARId": "string",
+      "declineDuplicates": "FALSE",
+      "tokenSource": "string",
       "card":{
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "05",
+         "expirationYear": "2025",
+         "bin": "400555",
+         "last4": "0019"
       }
    },
    "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "authenticationResponseCode":"string",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"123",
-      "processor":"fiserv",
-      "responseCode":"00000",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"00",
-      "hostResponseMessage":"APPROVAL",
-      "localTimestamp":"2021.02.25 14:14:38 (EST)",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "authenticationResponseCode": "string",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "123",
+      "processor": "fiserv",
+      "responseCode": "00000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "associationResponseCode": "000",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
          "avsSecurityCodeResponse":{
-            "securityCodeMatch":"MATCH",
+            "securityCodeMatch": "MATCH",
             "association":{
-               "securityCodeResponse":"MATCH"
+               "securityCodeResponse": "MATCH"
             }
          }
       }
@@ -140,25 +139,24 @@ title: Request
 
 ```json
 {
-  "transactionDetails":{
+   "transactionDetails":{
       "captureFlag":true
    },
    "amount":{
-      "total":"12.04",
-      "currency":"USD"
+      "total": "12.04",
+      "currency": "USD"
    },
    "source":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123",
-         "securityCodeIndicator":"PROVIDED"
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "securityCode": "123",
+         "securityCodeIndicator": "PROVIDED"
       }
-   },
    }
-
+}
 ```
 <!--
 type: tab
@@ -182,7 +180,7 @@ title: Response
          "transactionId":"838916029301"
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentCard",
       "tokenData":"1234123412340019",
       "PARId":"string",
@@ -193,12 +191,11 @@ title: Response
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
+         "last4":"0019"
       }
    },
    "processorResponseDetails":{
-     "approvalStatus":"APPROVED",
+      "approvalStatus":"APPROVED",
       "approvalCode":"OK3483",
       "authenticationResponseCode":"string",
       "referenceNumber":"845366457890-TODO",
@@ -234,12 +231,12 @@ The result of checking the cardholder’s entered security code against the Issu
 
 | Value | Description |
 | ------- | ------- |
-| MATCH | Security code matched. |
-| NO_MATCH | Security code did not matched. |
-| NOT_PROVIDED | Security code value was not provided. |
-| NOT_PROCESSED | Security code verification was not processed. |
-| NO_PARTICIPANT | Bank Associatino does not participate in security verification. |
-| UNKNOWN | Unknown status. |
+| *MATCH* | Security code matched. |
+| *NO_MATCH* | Security code did not matched. |
+| *NOT_PROVIDED* | Security code value was not provided. |
+| *NOT_PROCESSED* | Security code verification was not processed. |
+| *NO_PARTICIPANT* | Bank Associatino does not participate in security verification. |
+| *UNKNOWN* | Unknown status. |
 
 ---
 

@@ -33,30 +33,30 @@ title: JSON Example
 ```json
 {
    "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "authenticationResponseCode":"string",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"123",
-      "processor":"fiserv",
-      "responseCode":"00000",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"00",
-      "hostResponseMessage":"APPROVAL",
-      "localTimestamp":"2021.02.25 14:14:38 (EST)",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "authenticationResponseCode": "string",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "123",
+      "processor": "fiserv",
+      "responseCode": "00000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z",
-         "transactionReferenceInformation":"string",
+         "associationResponseCode": "000",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
+         "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch":"MATCH",
-            "postalCodeMatch":"MATCH",
-            "securityCodeMatch":"MATCH",
+            "streetMatch": "MATCH",
+            "postalCodeMatch": "MATCH",
+            "securityCodeMatch": "MATCH",
             "association":{
-               "avsCode":"BOTH_MATCH",
-               "securityCodeResponse":"MATCH",
-               "cardholderNameResponse":"NAME_MATCH"
+               "avsCode": "BOTH_MATCH",
+               "securityCodeResponse": "MATCH",
+               "cardholderNameResponse": "NAME_MATCH"
             }
          }
       }
@@ -72,11 +72,11 @@ title: JSON Example
 
 | Value | Description |
 |-------|-------------|
-| APPROVED | The transaction was approved. |
-| DECLINED | The transaction was declined by the issuing bank. |
-| PROCESSING_FAILED | Transaction failed to process, try again later. |
-| VALIDATION_FAILED | Validation failed. |
-| WAITING | Transaction has been placed in queue. Wait 24 hours before retrying the transaction. |
+| *APPROVED* | The transaction was approved. |
+| *DECLINED* | The transaction was declined by the issuing bank. |
+| *PROCESSING_FAILED* | Transaction failed to process, try again later. |
+| *VALIDATION_FAILED* | Validation failed. |
+| *WAITING* | Transaction has been placed in queue. Wait 24 hours before retrying the transaction. |
 
 ---
 
@@ -102,17 +102,17 @@ title: JSON Example
 ```json
 {
    "bankAssociationDetails":{
-      "associationResponseCode":"000",
-      "transactionTimestamp":"2016-04-16T16:06:05Z",
-      "transactionReferenceInformation":"string",
+      "associationResponseCode": "000",
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
+      "transactionReferenceInformation": "string",
       "avsSecurityCodeResponse":{
-         "streetMatch":"MATCH",
-         "postalCodeMatch":"MATCH",
-         "securityCodeMatch":"MATCH",
+         "streetMatch": "MATCH",
+         "postalCodeMatch": "MATCH",
+         "securityCodeMatch": "MATCH",
          "association":{
-            "avsCode":"BOTH_MATCH",
-            "securityCodeResponse":"MATCH",
-            "cardholderNameResponse":"NAME_MATCH"
+            "avsCode": "BOTH_MATCH",
+            "securityCodeResponse": "MATCH",
+            "cardholderNameResponse": "NAME_MATCH"
          }
       }
    }
@@ -145,13 +145,13 @@ title: JSON Example
 ```json
 {
    "avsSecurityCodeResponse":{
-      "streetMatch":"MATCH",
-      "postalCodeMatch":"MATCH",
-      "securityCodeMatch":"MATCH",
+      "streetMatch": "MATCH",
+      "postalCodeMatch": "MATCH",
+      "securityCodeMatch": "MATCH",
       "association":{
-         "avsCode":"BOTH_MATCH",
-         "securityCodeResponse":"MATCH",
-         "cardholderNameResponse":"NAME_MATCH"
+         "avsCode": "BOTH_MATCH",
+         "securityCodeResponse": "MATCH",
+         "cardholderNameResponse": "NAME_MATCH"
       }
    }
 }
@@ -182,9 +182,9 @@ title: JSON Example
 ```json
 {
    "association":{
-      "avsCode":"BOTH_MATCH",
-      "securityCodeResponse":"MATCH",
-      "cardholderNameResponse":"NAME_MATCH"
+      "avsCode": "BOTH_MATCH",
+      "securityCodeResponse": "MATCH",
+      "cardholderNameResponse": "NAME_MATCH"
    }
 }
 ```

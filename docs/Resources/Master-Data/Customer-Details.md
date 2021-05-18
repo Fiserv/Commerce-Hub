@@ -33,21 +33,21 @@ title: JSON Example
 ```json
 {
    "customer":{
-      "merchantCustomerId":"234567",
-      "processorCustomerId":"1122334",
-      "firstName":"Joe",
-      "lastName":"Smith",
-      "dob":"01-01-1990",
-      "email":"def@gmail.com",
-      "ipAddress":"170.165.02.26",
-      "hostName":"dreamwave.com",
-      "locale":"ENGLISH",
-      "driverLicenseNumber":"GA456183789",
-      "ssn":"123456789",
+      "merchantCustomerId": "234567",
+      "processorCustomerId": "1122334",
+      "firstName": "Joe",
+      "lastName": "Smith",
+      "dob": "01-01-1990",
+      "email": "def@gmail.com",
+      "ipAddress": "170.165.02.26",
+      "hostName": "dreamwave.com",
+      "locale": "ENGLISH",
+      "driverLicenseNumber": "GA456183789",
+      "ssn": "123456789",
       "phone":{
-         "countryCode":"91",
-         "phoneNumber":"123-123-1234",
-         "type":"DAY"
+         "countryCode": "91",
+         "phoneNumber": "123-123-1234",
+         "type": "DAY"
       }
    }
 }
@@ -78,9 +78,9 @@ title: JSON Example
 ```json
 {
    "phone":{
-      "countryCode":"91",
-      "phoneNumber":"123-123-1234",
-      "type":"DAY"
+      "countryCode": "91",
+      "phoneNumber": "123-123-1234",
+      "type": "DAY"
    }
 }
 ```

@@ -22,7 +22,18 @@ type: tab
 title: JSON Example
 -->
 
+```json
+{
+   "transactionInteraction":{
+      "origin": "ECOM",
+      "posEntryMode": "MANUAL",
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
+      "mobileInteraction": "PHONE_NUMBER",
+      "eciIndicator": "SECURE_ECOM"
+   }
+}
 
+```
 
 
 ---

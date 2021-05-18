@@ -28,14 +28,14 @@ title: JSON Example
 ```json
 {
    "merchantDetails":{
-      "tokenType":"TRANSARMOR",
-      "storeId":"12345",
-      "siteId":"CA123456",
-      "terminalId":"12",
-      "merchantId":"1234567890123456",
-      "alternateMerchantId":"12345678",
-      "promotionCode":"ABCD1234",
-      "mcc":"4457"
+      "tokenType": "TRANSARMOR",
+      "storeId": "12345",
+      "siteId": "CA123456",
+      "terminalId": "12",
+      "merchantId": "1234567890123456",
+      "alternateMerchantId": "12345678",
+      "promotionCode": "ABCD1234",
+      "mcc": "4457"
    }
 }
 ```

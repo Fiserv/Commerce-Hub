@@ -44,44 +44,44 @@ title: JSON Example
 ```json
 {
    "transactionDetails":{
-      "approvalCode":"string",
-      "primaryTransactionId":"838916029301",
+      "approvalCode": "string",
+      "primaryTransactionId": "838916029301",
       "captureFlag":false,
-      "transactionCaptureType":"TCS",
+      "transactionCaptureType": "TCS",
       "accountVerification":false,
-      "partialApproval":"string",
-      "processingCode":"000000",
-      "merchantTransactionId":"1343678765",
-      "merchantOrderId":"845366457890-TODO",
-      "merchantInvoiceNumber":"123890",
-      "receiptEmail":"abc@gmail.com",
-      "paymentDescription":"string",
+      "partialApproval": "string",
+      "processingCode": "000000",
+      "merchantTransactionId": "1343678765",
+      "merchantOrderId": "845366457890-TODO",
+      "merchantInvoiceNumber": "123890",
+      "receiptEmail": "abc@gmail.com",
+      "paymentDescription": "string",
       "cardVerificationAmount":0.02,
       "partiallyApprovedTransactionAmount":10.55,
-      "splitTenderId":"12423434",
-      "authorizationTypeIndicator":"REAUTH",
+      "splitTenderId": "12423434",
+      "authorizationTypeIndicator": "REAUTH",
       "duplicateTransactionCheckingIndicator":true,
-      "primaryTransactionType":"CHARGE_SALE",
+      "primaryTransactionType": "CHARGE_SALE",
       "vaultFundingSource":true,
       "deviceFingerprint":[
          {
-            "provider":"InAuth",
+            "provider": "InAuth",
             "dataCapture":{
-               "rawData":"aaaaaXREUVZGRlFY...aMV",
-               "dataEventId":"BB8E4E92...Fz1E063113",
-               "captureTime":"2016-04-16T16:06:05Z"
+               "rawData": "aaaaaXREUVZGRlFY...aMV",
+               "dataEventId": "BB8E4E92...Fz1E063113",
+               "captureTime": "2016-04-16T16:06:05Z"
             },
             "dataStatic":{
-               "operatingSystem":"ANDROID",
-               "operatingSystemVersion":"5.1.1 Lollipop",
-               "model":"XYX-1",
-               "type":"Moto G"
+               "operatingSystem": "ANDROID",
+               "operatingSystemVersion": "5.1.1 Lollipop",
+               "model": "XYX-1",
+               "type": "Moto G"
             },
             "dataDynamic":{
-               "latitude":"13.0827 N",
-               "longitude":"80.2707 E",
-               "ipAddress":"172.27.37.221",
-               "captureTime":"2016-04-16T16:06:05Z"
+               "latitude": "13.0827 N",
+               "longitude": "80.2707 E",
+               "ipAddress": "172.27.37.221",
+               "captureTime": "2016-04-16T16:06:05Z"
             }
          }
       ],
@@ -89,9 +89,9 @@ title: JSON Example
          "totalCount":5,
          "finalShipment":true
       },
-      "reversalReasonCode":"VOID",
+      "reversalReasonCode": "VOID",
       "physicalGoodsIndicator":true,
-      "authorizationSequence":"CANCEL_BEFORE_AUTHORIZATION"
+      "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION"
    }
 }
 ```
@@ -104,41 +104,41 @@ title: JSON Example
 
 | Value | Description |
 | ----- | ----- |
-| INITIAL | Initial authorization. |
-| REAUTH | [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)|
-| DEFERRED | [Deferred Auth](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) |
-| INCREMENTAL | [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) |
+| *INITIAL* | Initial authorization. |
+| *REAUTH* | [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)|
+| *DEFERRED* | [Deferred Auth](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) |
+| *INCREMENTAL* | [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) |
 
 ### Primary Transaction Type
 
 | Value | Description |
 | ----- | ----- |
-| AUTH_ONLY | Authorization |
-| CHARGE_PREAUTH | Pre-authorization |
-| CHARGE_SALE | Sale |
-| CANCEL | Cancel/Void |
-| REFUND | Refund |
+| *AUTH_ONLY* | Authorization |
+| *CHARGE_PREAUTH* | Pre-authorization |
+| *CHARGE_SALE* | Sale |
+| *CANCEL* | Cancel/Void |
+| *REFUND* | Refund |
 
 ### Reversal Reason Code
 
 | Value | Description |
 | ----- | ----- |
-| VOID | Cancel/Void |
-| TIMEOUT | Transaction timeout |
-| EDIT_ERROR |
-| MAC_VERIFICATION_ERROR | Mac Verification error |
-| MAC_SYNCH_ERROR | Mac sync error |
-| ENCRYPTION_ERROR | Encryption error |
-| SYSTEM_ERROR | System error |
-| SUSPECTED_FRAUD | Suspect fraud |
+| *VOID* | Cancel/Void |
+| *TIMEOUT* | Transaction timeout |
+| *EDIT_ERROR* |
+| *MAC_VERIFICATION_ERROR* | Mac Verification error |
+| *MAC_SYNCH_ERROR* | Mac sync error |
+| *ENCRYPTION_ERROR* | Encryption error |
+| *SYSTEM_ERROR* | System error |
+| *SUSPECTED_FRAUD* | Suspect fraud |
 
 ### Authorization Sequence
 
 | Value | Description |
 | ----- | ----- |
-| AUTHORIZATION_ONLY | Only authorization |
-| AUTHORIZATION_BEFORE_CANCEL | Authorization before cancel |
-| CANCEL_BEFORE_AUTHORIZATION | Cancel before authorization |
+| *AUTHORIZATION_ONLY* | Only authorization |
+| *AUTHORIZATION_BEFORE_CANCEL* | Authorization before cancel |
+| *CANCEL_BEFORE_AUTHORIZATION* | Cancel before authorization |
 
 ## Device Fingerprint Data
 
@@ -163,23 +163,23 @@ title: JSON Example
 {
    "deviceFingerprint":[
       {
-         "provider":"InAuth",
+         "provider": "InAuth",
          "dataCapture":{
-            "rawData":"aaaaaXREUVZGRlFY...aMV",
-            "dataEventId":"BB8E4E92...Fz1E063113",
-            "captureTime":"2016-04-16T16:06:05Z"
+            "rawData": "aaaaaXREUVZGRlFY...aMV",
+            "dataEventId": "BB8E4E92...Fz1E063113",
+            "captureTime": "2016-04-16T16:06:05Z"
          },
          "dataStatic":{
-            "operatingSystem":"ANDROID",
-            "operatingSystemVersion":"5.1.1 Lollipop",
-            "model":"XYX-1",
-            "type":"Moto G"
+            "operatingSystem": "ANDROID",
+            "operatingSystemVersion": "5.1.1 Lollipop",
+            "model": "XYX-1",
+            "type": "Moto G"
          },
          "dataDynamic":{
-            "latitude":"13.0827 N",
-            "longitude":"80.2707 E",
-            "ipAddress":"172.27.37.221",
-            "captureTime":"2016-04-16T16:06:05Z"
+            "latitude": "13.0827 N",
+            "longitude": "80.2707 E",
+            "ipAddress": "172.27.37.221",
+            "captureTime": "2016-04-16T16:06:05Z"
          }
       }
    ]
@@ -211,9 +211,9 @@ title: JSON Example
 ```json
 {
    "dataCapture":{
-      "rawData":"aaaaaXREUVZGRlFY...aMV",
-      "dataEventId":"BB8E4E92...Fz1E063113",
-      "captureTime":"2016-04-16T16:06:05Z"
+      "rawData": "aaaaaXREUVZGRlFY...aMV",
+      "dataEventId": "BB8E4E92...Fz1E063113",
+      "captureTime": "2016-04-16T16:06:05Z"
    }
 }
 ```
@@ -242,10 +242,10 @@ title: JSON Example
 ```json
 {
    "dataStatic":{
-      "operatingSystem":"ANDROID",
-      "operatingSystemVersion":"5.1.1 Lollipop",
-      "model":"XYX-1",
-      "type":"Moto G"
+      "operatingSystem": "ANDROID",
+      "operatingSystemVersion": "5.1.1 Lollipop",
+      "model": "XYX-1",
+      "type": "Moto G"
    }
 }
 ```
@@ -275,10 +275,10 @@ title: JSON Example
 ```json
 {
    "dataDynamic":{
-      "latitude":"13.0827 N",
-      "longitude":"80.2707 E",
-      "ipAddress":"172.27.37.221",
-      "captureTime":"2016-04-16T16:06:05Z"
+      "latitude": "13.0827 N",
+      "longitude": "80.2707 E",
+      "ipAddress": "172.27.37.221",
+      "captureTime": "2016-04-16T16:06:05Z"
    }
 }
 

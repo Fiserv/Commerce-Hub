@@ -29,14 +29,14 @@ title: JSON Example
 ```json
 {
    "card":{
-      "cardData":"4005550000000019",
-      "nameOnCard":"Jane Smith",
-      "expirationMonth":"02",
-      "expirationYear":"2035",
-      "securityCode":"111",
-      "securityCodeIndicator":"PROVIDED",
-      "bin":"400555",
-      "last4":"0019"
+      "cardData": "4005550000000019",
+      "nameOnCard": "Jane Smith",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "111",
+      "securityCodeIndicator": "PROVIDED",
+      "bin": "400555",
+      "last4": "0019"
    }
 }
 ```
@@ -50,10 +50,10 @@ title: JSON Example
 
 | Value | Description |
 | ----- | --------- |
-| NOT_SUPPORTED | Not supported (Default). |
-| PROVIDED | Security code provided in the transaction request. |
-| VALUE_ILLEGIBLE | Security code value missing or illegible. |
-| NOT_AVAILABLE | Security code not available. |
+| *NOT_SUPPORTED* | Not supported (Default). |
+| *PROVIDED* | Security code provided in the transaction request. |
+| *VALUE_ILLEGIBLE* | Security code value missing or illegible. |
+| *NOT_AVAILABLE* | Security code not available. |
 
 ---
 
