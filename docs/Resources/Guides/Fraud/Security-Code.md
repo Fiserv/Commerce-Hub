@@ -14,7 +14,7 @@ Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossar
 
 For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
 
-#### Component: card
+#### Object: card
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
