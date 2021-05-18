@@ -90,9 +90,10 @@ The beginning of an awesome article...
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- Charges
-- Debit
+- [Debit](?path=docs/In-Person/Debit/Smart-Routing.md)
 - In Person
 - Prepaid
-- Network Details
-- Split Tender
+- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Network Details](?path=docs/Resources/Master-Data/Network-Details.md)
