@@ -36,7 +36,7 @@ title: Request
 
 ```json
 {
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentCard",
     "cardData": "4005550000000019",
     "expirationMonth": "02",

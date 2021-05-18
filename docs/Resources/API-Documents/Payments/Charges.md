@@ -22,20 +22,20 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 ## Minimum Requirements
 
-#### Component: amount
+#### Object: amount
 
 | Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-#### Component: source
+#### Object: source
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 
-#### Component: transactionDetails
+#### Object: transactionDetails
 
 | Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|

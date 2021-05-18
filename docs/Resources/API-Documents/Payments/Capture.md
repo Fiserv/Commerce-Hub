@@ -22,7 +22,9 @@ Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resour
 
 ## Minimum Requirements
 
-#### Component: amount
+The [example](#payload-example) below contains the mandatory fields required for a successful capture request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/capture).
+
+#### Object: amount
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -40,7 +42,7 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab

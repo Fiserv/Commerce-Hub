@@ -13,39 +13,13 @@ If the customer cancels the order or if fraud is suspected, the merchant will ne
 
 ---
 
-## Requirements
+## Minimum Requirements
 
-Cancel Request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` with no minimum field requirement. The request may contain optional fields from the original charge request described below.
+Cancel Request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` along with the `reversalReasonCode` in `transactionDetails` object. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel)
 
-#### Optional Fields
+### Reversal Reason Code
 
-##### Component : transactionBatch
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`julianDay` | *string* | 3 | The day the current batch was opened, 001-366.|
-|`batchNumber`| *string* | 6 | The batch number within the Julian day for this transaction. values range from 000001 through 000999.| 
-|`transactionClass`| *string* | 1 | Code that indicates the Transaction that was logged under, ranges from 1 through 4. Captured approved, Captured Authorised Only, Declinced, Batch Control.|
-|`sequenceNumber`| *string* | 6 | Sequence Number of this transaction within the current batch,ranges from 000001 through 000999|
-
-##### Component : processorReservedDetails
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`transactionDate` | *string* | 10 | Date the transaction occured |
-|`transactionTime`| *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ | 
-|`apiTraceId`| *string* |  | Request identifier in API, can be used to request logs from the support team|
-|`clientRequestId`| *string* |  | Echoes back the value in the request header for tracking |
-|`transactionId`| *string* | 12 | Unique identifier for each transaction on the Gateway|
-
-##### Component : transactionDetails
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`merchantTransactionId` | *string* | | Client transaction ID if supplied by client mapped from `transactionID` in the request. |
-|`reversalReasonCode`| *string* | 20 | Reason the merchant/customer requests for cancel (void). |
-
-###### Valid Values: reversalReasonCode
+Reason the merchant/customer requests for cancel (void).
 
 | Value | Description|
 |---------|---------|
@@ -84,19 +58,6 @@ title: Request
 
 ```json
 {
-  "transactionBatch": {
-    "julianDay": "001",
-    "batchNumber": "000001",
-    "transactionClass": 1,
-    "sequenceNumber": "000001"
-  },
-  "processorReservedDetails": {
-    "transactionDate": "2016-04-16",
-    "transactionTime": "2016-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": 838916029301
-  },
   "transactionDetails": {
     "reversalReasonCode": "VOID"
   }

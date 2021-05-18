@@ -10,7 +10,7 @@ To retrieve the current state of any previous [charge](?path=docs/Resources/API-
 
 ---
 
-## Minimum Requirements
+## Minimum Requirement
 
 Get transaction inquiry request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` with no minimum field requirement.
 
