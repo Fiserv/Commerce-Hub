@@ -6,7 +6,7 @@
 
 3-D Secure technologies include Visa Secure (previously Verified by Visa), Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
 
-Transactions can originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a passthrough or an authentication request.
+Transactions can originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a [passthrough](#passthrough) or an [authentication](#authentication) request.
 
 ---
 
