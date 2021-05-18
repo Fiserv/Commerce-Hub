@@ -22,6 +22,8 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 ## Minimum Requirements
 
+The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charge).
+
 #### Object: amount
 
 | Variable    |  Type| Maximum Length | Description/Values|
@@ -49,7 +51,7 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab
@@ -86,49 +88,50 @@ title: Response
 
 <!-- theme: info -->
 > See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+
 ```json
 {
    "gatewayResponse":{
-      "transactionType": "CHARGE",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "SECURE_ECOM"
+      "transactionType":"CHARGE",
+      "transactionState":"AUTHORIZED",
+      "transactionOrigin":"SECURE_ECOM"
    },
-   "paymentSource":{
-      "sourceType": "PaymentCard",
+   "source":{
+      "sourceType":"PaymentCard",
       "card":{
-         "bin": "400555",
-         "last4": "0019",
-         "scheme": "VISA"
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035"
       }
    },
    "transactionProcessingDetails":{
-      "orderId": "RKOrdID-525133851837",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
+      "orderId":"RKOrdID-525133851837",
+      "apiTraceId":"362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId":"4345791",
+      "transactionId":"84356531338"
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total": "12.04",
-         "currency": "USD"
+         "total":"12.04",
+         "currency":"USD"
       }
    },
    "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK5882",
-      "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "000000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (CET)",
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK5882",
+      "schemeTransactionId":"0225MCC625628",
+      "processor":"fiserv",
+      "responseCode":"000000",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"00",
+      "hostResponseMessage":"APPROVAL",
+      "localTimestamp":"2021.02.25 14:14:38 (CET)",
       "bankAssociationDetails":{
-         "transactionTimestamp": "2021.02.25 14:14:38 (CET)"
+         "transactionTimestamp":"2021.02.25 14:14:38 (CET)"
       }
    },
    "transactionDetails":{
-      "merchantTransactionId": "RKTransID-768086381518"
+      "merchantTransactionId":"RKTransID-768086381518"
    }
 }
 ```

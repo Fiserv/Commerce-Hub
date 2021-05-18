@@ -78,7 +78,7 @@ title: Response
 {
   "gatewayResponse": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
+    "transactionType": "capture",
     "transactionState": "authorized",
     "transactionOrigin": "ecom",
     "transactionProcessingDetails": {
@@ -90,10 +90,10 @@ title: Response
     }
   },
   "amount": {
-    "total": "1.50",
+    "total": "12.04",
     "currency": "USD"
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentCard"
   },
   "transactionDetails": {
@@ -114,7 +114,7 @@ title: Response
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "1.50",
+      "total": "12.04",
       "currency": "USD"
     },
     "processorResponseDetails": {
