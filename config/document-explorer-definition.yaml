@@ -60,7 +60,7 @@
     - title: Response Codes
       link: docs/Resources/Guides/Response-Codes/Response-Codes.md
     - title: Split Tender
-      link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
+      link: docs/Resources/Guides/Split-Tender.md
     - title: Split Shipment
       link: docs/Resources/Guides/Split-Shipment.md
     - title: Subsequent Authorization
