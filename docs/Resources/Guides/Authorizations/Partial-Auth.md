@@ -95,5 +95,5 @@ The beginning of an awesome article...
 - Prepaid
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Network Details](?path=docs/Resources/Master-Data/Network-Details.md)
+- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
