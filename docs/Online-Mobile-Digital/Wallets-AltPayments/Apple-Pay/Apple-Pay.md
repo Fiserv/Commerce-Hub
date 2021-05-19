@@ -33,7 +33,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
-**Begin integration with [Apple Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.mdn).**
+**Begin integration with [Apple Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md).**
 
 ### Web: Hosted Payment Page
 
