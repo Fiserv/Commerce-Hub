@@ -32,8 +32,8 @@ title: JSON Example
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "123 Main St.",
+         "houseNumberOrName": "Apt 1",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -84,8 +84,8 @@ title: JSON Example
       "shippingMethod": "SAME_DAY",
       "shipToEmail": "customer@domain.com",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
+         "houseNumberOrName": "Apt 112",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -125,8 +125,8 @@ title: address
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `houseNumberOrName` | *string* |  | House number or name. |
-| `street` | *string* |  | Street name. |
+| `street` | *string* |  | Street address. |
+| `houseNumberOrName` | *string* |  | Secondary address information e.g. house number or name. |
 | `city` | *string* |  | City or locality. |
 | `stateOrProvince` | *string* |  | State or province name. |
 | `postalCode` | *string* |  | Postal code. |
@@ -140,8 +140,8 @@ title: JSON Example
 ```json
 {
    "address":{
-      "houseNumberOrName": "112",
-      "street": "Main St.",
+      "street": "112 Main St.",
+      "houseNumberOrName": "Apt 213",
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30301",
