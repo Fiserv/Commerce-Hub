@@ -28,6 +28,7 @@ Commerce Hub supports partial authorizations (approvals), authorization reversal
 | authScore | *string* | | The auth score returned for the transaction. |
  
 
+
 ---
 
 
@@ -35,9 +36,9 @@ Commerce Hub supports partial authorizations (approvals), authorization reversal
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Debit](?path=docs/In-Person/Debit/Smart-Routing.md)
-- [In-Person](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [In-Person](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 - [Network Details](?path=docs/Resources/Master-Data/Network-Details.md)
 - [Prepaid](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
