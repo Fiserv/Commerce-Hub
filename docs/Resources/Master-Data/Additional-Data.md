@@ -1,10 +1,10 @@
 # Additional Transaction Data
 
-Additional transaction data is used for specific condition like installments, deffered payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.  
+Additional transaction data is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.  
 
 ## Additional Data Common
 
-The `additionalDataCommon` object contains common data objects used for request types based on business requirements.
+The `additionalDataCommon` object contains common data elements used in requests based on business requirements.
 
 <!--
 type: tab
@@ -159,17 +159,17 @@ The BAI determines the data carried in the message, the limits and economics tha
 
 | Value | Description |
 | ----- | ----- |
-| PERSON_TO_PERSON | Person to person initiated. |
+| *PERSON_TO_PERSON* | Person to person initiated. |
 | *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
-| BUSINESS_TO_BUSINESS | Business to business initiated. |
-| DIGITAL_WALLET | Digital Wallet transfer. |
-| ACCOUNT_TO_ACCOUNT | Account to account transfer. |
-| TOP_OFF | Account top off or reload. |
-| ACCOUNT_VERIFICATION | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
-| FUNDS_TRANSFER | Funds Transfer. |
-| DISBURSEMENT | Funds disbursement or payout. |
-| GAMBLING_PAYOUT | Gambling payout non-online. |
-| GAMBLING_PAYOUT_ONLINE | Online gambling payout. |
+| *BUSINESS_TO_BUSINESS* | Business to business initiated. |
+| *DIGITAL_WALLET* | Digital Wallet transfer. |
+| *ACCOUNT_TO_ACCOUNT* | Account to account transfer. |
+| *TOP_OFF* | Account top off or reload. |
+| *ACCOUNT_VERIFICATION* | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
+| *FUNDS_TRANSFER* | Funds Transfer. |
+| *DISBURSEMENT* | Funds disbursement or payout. |
+| *GAMBLING_PAYOUT* | Gambling payout non-online. |
+| *GAMBLING_PAYOUT_ONLINE* | Online gambling payout. |
 
 ---
 
