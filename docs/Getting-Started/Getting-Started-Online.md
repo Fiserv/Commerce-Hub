@@ -15,7 +15,7 @@ Commerce Hub offers multiple methods of accepting online, mobile, and digital pa
 
 ## RESTful APIs
 
-Commerce Hub's RESTful APIs allows the merchants to build their own UI and manage customer transactions within their own website, software, or terminal using Commerce Hub's RESTful APIs.
+Allows the merchants to build their own UI and manage customer transactions within their own website, software, or terminal using Commerce Hub's RESTful APIs.
 
 <!-- theme: warning -->
 > The merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
@@ -26,7 +26,7 @@ Commerce Hub's RESTful APIs allows the merchants to build their own UI and manag
 
 ## Hosted Payment Page
 
-Commerce Hub's Hosted Payment Pages allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction. The Commerce Hub Hosted Payment Page manages the customer interactions that are required in the checkout process based on payment method, or authentication mechanisms (3-D Secure).
+Allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction. The Commerce Hub Hosted Payment Page manages the customer interactions that are required in the checkout process based on payment method, or authentication mechanisms (3-D Secure).
 
 Using Commerce Hub's secure hosted pages can reduce the burden of compliance with the Data Security Standard of the Payment Card Industry (PCI DSS).
 
@@ -39,7 +39,7 @@ Using Commerce Hub's secure hosted pages can reduce the burden of compliance wit
 
 ## Payment URL
 
-Commerce Hub's Payment URL allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub [Hosted Payment Page](#hostedpaymentpage) to complete the payment.
+Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub [Hosted Payment Page](#hostedpaymentpage) to complete the payment.
 
 **Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md).**
 
@@ -47,7 +47,7 @@ Commerce Hub's Payment URL allows a merchant to request an invoice via the Comme
 
 ## Payment.js
 
-Commerce Hub's Payment JS allows a merchant an easy and secure way to embed a payment form into a website. Payment.js makes it simple to [tokenize](../../Transactions/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Payment.js makes it simple to [tokenize](../../Transactions/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The form fields can be customized by the merchant.
 
@@ -57,7 +57,7 @@ Payment.js accomplishes this by injecting an iframe into a parent form where cus
 
 ## Virtual Terminal
 
-Commerce Hub's Virtual Terminal allows a merchant an easy way to process offline transactions, transaction corrections, and provides enchanced reporting capabilities.
+Commerce Hub's Virtual Terminal allows a merchant an easy way to process offline transactions, transaction corrections, setup fraud controls and provides enchanced reporting capabilities.
 
 **Begin processing with Commerce Hub's [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md).**
 
