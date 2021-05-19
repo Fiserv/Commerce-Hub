@@ -161,7 +161,7 @@ The BAI determines the data carried in the message, the limits and economics tha
 
 | Value | Description |
 | ----- | ----- |
-| *PERSON_TO_PERSON* | Person to person initiated. |
+| `PERSON_TO_PERSON` | Person to person initiated. |
 | *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
 | *BUSINESS_TO_BUSINESS* | Business to business initiated. |
 | *DIGITAL_WALLET* | Digital Wallet transfer. |
