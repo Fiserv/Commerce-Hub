@@ -52,14 +52,15 @@ title: Request
       "currency":"USD"
    },
    "source":{
-      "sourceType":"PaymentCard"
-   },
-   "card":{
-      "cardData":"4005550000000019",
-      "expirationMonth":"02",
-      "expirationYear":"2035",
-      "securityCode":"123",
-      "securityCodeIndicator":"PROVIDED"
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123",
+         "securityCodeIndicator":"PROVIDED"
+      }
    },
    "transactionDetails":{
       "captureFlag":true
@@ -82,60 +83,65 @@ title: Response
 {
    "gatewayResponse":{
       "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"charge",
+      "transactionType":"token",
       "transactionState":"authorized",
-      "transactionOrigin":"ecom"
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "transactionDate":"2016-04-16",
+         "transactionTime":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
+      }
    },
-   "transactionProcessingDetails":{
-      "transactionDate":"2021-04-16",
-      "transactionTime":"2021-04-16T16:06:05Z",
-      "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId":"838916029301"
-   },
-   "source":"PaymentCard",
-   "card":{
-      "bin":"400555",
-      "last4":"0019",
-      "brand":"VISA",
-      "expirationMonth":"02",
-      "expirationYear":"2035"
+   "source":{
+      "sourceType":"PaymentCard",
+      "tokenData":"1234123412340019",
+      "PARId":"string",
+      "declineDuplicates":"FALSE",
+      "tokenSource":"string",
+      "card":{
+         "cardData":"4005550000000019",
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"05",
+         "expirationYear":"2025",
+         "bin":"400555",
+         "last4":"0019"
+      }
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":"1.00",
+         "total":1,
          "currency":"USD"
       },
-      "processorResponseDetails":null,
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK7118",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionID":"019078743804756",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"Approved",
-      "localTimestamp":"2021-04-16T16:06:05Z",
-      "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2021-04-16T16:06:05Z",
-         "transactionReferenceInformation":null,
-         "avsSecurityCodeResponse":{
-            "streetMatch":"EXACT_MATCH",
-            "postalCodeMatch":"EXACT_MATCH",
-            "securityCodeMatch":"MATCHED",
-            "association":{
-               "avsCode":"Z",
-               "securityCodeResponse":"S",
-               "cardHolderNameResponse":"M"
+      "processorResponseDetails":{
+         "approvalStatus":"APPROVED",
+         "approvalCode":"OK3483",
+         "authenticationResponseCode":"string",
+         "referenceNumber":"845366457890-TODO",
+         "schemeTransactionId":"019078743804756",
+         "feeProgramIndicator":"123",
+         "processor":"fiserv",
+         "responseCode":"00000",
+         "responseMessage":"APPROVAL",
+         "hostResponseCode":"00",
+         "hostResponseMessage":"APPROVAL",
+         "localTimestamp":"2021.02.25 14:14:38 (EST)",
+         "bankAssociationDetails":{
+            "associationResponseCode":"000",
+            "transactionTimestamp":"2016-04-16T16:06:05Z",
+            "avsSecurityCodeResponse":{
+               "securityCodeMatch":"MATCH",
+               "association":{
+                  "securityCodeResponse":"MATCH"
+               }
             }
          }
       }
    },
    "additionalDataCommon":{
       "amountComponents":{
-         "convenienceFees":"1.00"
+         "convenienceFees": 1.00
       }
    }
 }

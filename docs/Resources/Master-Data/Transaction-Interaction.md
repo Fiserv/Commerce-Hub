@@ -1,9 +1,13 @@
-# Transaction Interaction
+# Transaction Origin and Entry Modes
 
-## Overview
-The `transactionInteraction` may contain the data regarding where the transaction is been acquired and what are the capabilities of the terminal.
+The `transactionInteraction` object contains the data indicating where the transaction is acquired and the capabilities of the website, software, app, or terminal.
 
-#### transactionInteraction
+## Transaction Interaction
+
+<!--
+type: tab
+title: transactionInteraction
+-->
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -12,6 +16,25 @@ The `transactionInteraction` may contain the data regarding where the transactio
 | `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
 | `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction).|
 | `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator).|
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "transactionInteraction":{
+      "origin": "ECOM",
+      "posEntryMode": "MANUAL",
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
+      "mobileInteraction": "PHONE_NUMBER",
+      "eciIndicator": "SECURE_ECOM"
+   }
+}
+
+```
+
 
 ---
 

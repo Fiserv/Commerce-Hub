@@ -22,20 +22,22 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 ## Minimum Requirements
 
-#### Component: amount
+The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charge).
+
+#### Object: amount
 
 | Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-#### Component: source
+#### Object: source
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 
-#### Component: transactionDetails
+#### Object: transactionDetails
 
 | Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
@@ -49,7 +51,7 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab
@@ -61,21 +63,19 @@ title: Request
 ```json
 {
    "amount":{
-      "total":"12.04",
-      "currency":"USD"
+      "total": "12.04",
+      "currency": "USD"
    },
    "source":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123",
-         "securityCodeIndicator":"PROVIDED"
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
       }
    },
    "transactionDetails":{
-      "captureFlag":true
+      "captureFlag": true
    }
 }
 ```
@@ -88,52 +88,50 @@ title: Response
 
 <!-- theme: info -->
 > See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"charge",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom"
-   },
-   "transactionProcessingDetails":{
-      "transactionDate":"2021-04-16",
-      "transactionTime":"2021-04-16T16:06:05Z",
-      "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId":"838916029301"
+      "transactionType":"CHARGE",
+      "transactionState":"AUTHORIZED",
+      "transactionOrigin":"SECURE_ECOM"
    },
    "source":{
       "sourceType":"PaymentCard",
       "card":{
-         "bin":"400555",
-         "last4":"0019",
-         "brand":"VISA",
+         "cardData":"4005550000000019",
          "expirationMonth":"02",
          "expirationYear":"2035"
       }
    },
+   "transactionProcessingDetails":{
+      "orderId":"RKOrdID-525133851837",
+      "apiTraceId":"362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId":"4345791",
+      "transactionId":"84356531338"
+   },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":"1.00",
+         "total":"12.04",
          "currency":"USD"
-      },
-      "processorResponseDetails":null,
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK7118",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionID":"019078743804756",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"Approved",
-      "localTimestamp":"2021-04-16T16:06:05Z",
-      "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2021-04-16T16:06:05Z",
-         "transactionReferenceInformation":null
       }
+   },
+   "processorResponseDetails":{
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK5882",
+      "schemeTransactionId":"0225MCC625628",
+      "processor":"fiserv",
+      "responseCode":"000000",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"00",
+      "hostResponseMessage":"APPROVAL",
+      "localTimestamp":"2021.02.25 14:14:38 (CET)",
+      "bankAssociationDetails":{
+         "transactionTimestamp":"2021.02.25 14:14:38 (CET)"
+      }
+   },
+   "transactionDetails":{
+      "merchantTransactionId":"RKTransID-768086381518"
    }
 }
 ```

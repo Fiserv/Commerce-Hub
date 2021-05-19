@@ -18,7 +18,7 @@ The merchant can perform account verification transaction to confirm that the ca
 
 ## PaymentCard Requirements
 
-#### Component: source
+#### Object: source
 
 | Variable | Type | Maximum Length | Description/Values |
 | --------- | ---------- | ---------------- | --------- |
@@ -43,6 +43,7 @@ title: Request
       "sourceType":"PaymentCard",
       "card":{
          "cardData":"4005550000000019",
+         "nameOnCard":"Jane Smith",
          "expirationMonth":"02",
          "expirationYear":"2035"
       }
@@ -72,15 +73,15 @@ title: Response
          "transactionId":"838916029301"
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentCard",
       "card":{
+         "cardData":"4005550000000019",
          "nameOnCard":"Jane Smith",
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
          "last4":"0019",
-         "scheme":"VISA"
       }
    }
 }
@@ -91,7 +92,7 @@ title: Response
 
 ## PaymentToken Requirements
 
-#### Component: source
+#### Object: source
 
 | Variable | Type | Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
@@ -110,8 +111,16 @@ title: Request
 ```json
 {
    "source":{
-      "sourceType":"PaymentToken",
-      "tokenData":"1234123412340019"
+      "sourceType": "PaymentToken",
+      "tokenData": "1234123412340019",
+      "tokenSource": "TRANSARMOR",
+      "card":{
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "05",
+         "expirationYear": "2025",
+         "bin": "400555",
+         "last4": "0019"
+      }
    }
 }
 ```
@@ -138,7 +147,7 @@ title: Response
          "transactionId":"838916029301"
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentToken",
       "card":{
          "nameOnCard":"Jane Smith",

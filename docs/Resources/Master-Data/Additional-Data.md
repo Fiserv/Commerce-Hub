@@ -1,6 +1,8 @@
-# Additional Data
+# Additional Transaction Data
 
-## Overview
+Additional transaction data is used for specific condition like installments, deffered payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.  
+
+## Additional Data Common
 
 The `additionalDataCommon` object contains common data objects used for request types based on business requirements.
 
@@ -31,7 +33,7 @@ title: JSON Example
 {
    "additionalDataCommon":{
       "additionalData":{
-         "baiFlag":"PERSON_TO_PERSON",
+         "baiFlag": "PERSON_TO_PERSON",
          "networkTransactionReference":"123456788",
          "billPayment":false,
          "ecomURL":"https://www.somedomain.com",
