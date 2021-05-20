@@ -85,26 +85,20 @@ A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Numb
 ## Cardholder
 A person to whom a card has been issued or a person authorized to use a card.
 
-## Cardholder Bank
-The bank that has issued a bank card to an individual. The term is frequently used in conjunction with interchange arrangements to identify the card-issuing bank.
+## Customer Account
+The customer account associated with a customer account number or checking account number used in a payment request.
 
-## Cardholder Account
-Actual Cardholder Account Number or Checking Account Number (encoded on bottom of check) for Check Verification / Guarantee request.
+## Customer Street Address
+The customer street address includes the street number and name. The [`street`](?path=docs/Resources/Master-Data/Address.md) field is part of the shipping address or billing address object.  
 
-## Cardholder Street Address
-At least twenty characters of the cardholder's billing address that was used in the Address Verification request. The merchant must convert spelled numbers to numeric values (e.g., Fourth Street becomes 4TH Street prior to sending the address verification request).
+## Customer Zip/Postal Code
+Five or nine digit zip code of the customer's billing or shipping address. When the customer is international, this field contains the alphanumeric postal code. The [`postalCode`](?path=docs/Resources/Master-Data/Address.md) is part of the shipping address or billing address object.  
 
-## Cardholder Zip/Postal Code
-Five or nine digit zip code of the cardholder's billing address that was used in the Address Verification request. When the cardholder is from out of the U.S., this field contains any alphanumeric postal code.
+## Security Code Indicator
+The `securityCodeIndicator` used to indicate the presence of a [card security code](#card-security-code) during a [verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) request.
 
-## Card Code Value Presence Indicator
-A code used to indicate the presence of a Card Verification Value (Visa), a Card Validation Code (MasterCard), a Card Identifier (Discover), and another identically named Card Identifier (American Express) printed on the front or back of a credit card; used to reduce fraud losses.
-
-## Card Code Response Value
-A Card Verification Value (Visa), Card Validation Code (MasterCard), Card Identifier (Discover), and another identically named Card Identifier (American Express) returned on the Authorization Response Message in response to the Card Code Value information entered on the request. For example, the Card Code Response Value “M” indicates that there is a Card Code Value Match, whereas the Card Code Response Value “U” indicates that the Card Code Value is unknown or that the Issuer does not participate.
-
-## Card Code Value
-A 3- or 4-digit Card Value printed on the back of a credit card.
+## Security Code Response
+The [value](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) returned as `securityCodeMatch` or `securityCodeResponse` from the issuing bank.
 
 ## Cash Advance
 A transaction in which a customer receives cash in-person which is posted against the customer's account.
@@ -113,10 +107,7 @@ A transaction in which a customer receives cash in-person which is posted agains
 The last digit of an account number that is calculated according to a predetermined formula and used to validate an account number.
 
 ## "Code 10" Authorization
-A merchant's or member's request for a "code 10" authorization is the merchant's or member's means of alerting its Authorizing Member that a suspicious transaction is occurring.
-
-## Common Carrier
-Government regulated organization that provides telecommunications services for public use such as ATandT, GTandE, ITT, MCI, SBS and Western Union.
+A merchant's request for a "code 10" authorization is used to alert the authorization network (processor) that a suspicious transaction is occurring.
 
 ## Conditioning
 The "tuning" or addition of equipment to improve the transmission characteristics or quality of a leased voice-grade line so that it meets specifications for data transmission.
@@ -127,12 +118,6 @@ A process by which a customer disputes the payment and often results in the mone
 ## Customer Account
 Account connected to the financial institution that issued a payment card or checks.
 
-## Card Code Value
-The card code value (CCV) is a 3 or 4-digit card value printed on the front or back of a payment card. This is the Card Verification Value (Visa), Card Validation Code (Mastercard, Maestro International), Card Identifier (Discover) or CID/4DBC (American Express).
-
-## CCV Result Code
-The CCV result code is the response to the Card Verification Value. It is returned on the Authorization Response Message in response to the Card Code Value information entered on the request. For example, the Card Code Response Value “Match” indicates that there is a Card Code Value Match, whereas the Card Code Response Value “NotPrt” indicates that the Card Code Value is unknown or that the Issuer does not participate.
-
 ## Card Expiration Date
 The date beyond which the card may not be honored.
 
@@ -142,47 +127,25 @@ A transaction in which a cardholder obtains cash as part of the transaction.
 ## Closed Loop Prepaid Card
 Closed loop prepaid solutions are designed to be used only at the issuer’s locations. Examples of closed loop issuers include retail stores, casinos, oil companies, e-commerce businesses, telecommunications companies, and restaurants.
 
-## Contactless
-Contactless Payment Cards are similar to traditional cards except that they have a contactless chip and radio frequency (RF) antenna configuration embedded within the plastic. After you tap or wave your Contactless Payment Card at a merchant terminal equipped with an RFID (Radio Frequency Identification) reader, the card wirelessly transmits Track 1 and / or Track 2 payment details to the terminal.
+## Contactless Payments
+Contactless payments use radio frequency (RF), also known as Near Field Communication (NFC). The technology is used in payment cards and mobile devices. Contactless Payment Cards are similar to traditional cards except that they have a contactless chip. 
 
-## County Code
-Three digit number identifying the U.S. county where the transaction occurred.
+When a customer taps or waves a payment instrument at a merchant terminal equipped with an RFID (Radio Frequency Identification) reader, the instrument wirelessly transmits payment details to the terminal.
 
 ## Credit Card
 A plastic card used to purchase goods and services and to obtain cash advances on credit for which the cardholder is subsequently billed by the issuing member for repayment of credit extended.
 
 ## Credit Line
-The monetary amount of credit extended to a cardholder.
-
-## Cardholder Identification Data
-Cardholder Identification Data (CID) is the American Express term for the 4-digit security code on the front of the credit card. For Visa and MasterCard, it is 3-digits and located on the back.
+The monetary amount of credit extended to a customer.
 
 ## Clearing
-The process whereby financial institutions collect or pay out for items drawn on, or paid into, accounts in their institution. First Data Payeezy Gateway settles according to the credit card companies' agreements with banking institutions.
+The process where the merchant's processor withdraws or deposits funds from the customer's bank account.
 
 ## Component Object Model
 Component Object Model (COM) makes it easier to create components (pieces of code) or use preexisting components that can interact with other components and applications (using the object model). A big advantage is that these components can be written using a variety of computer languages.
 
-## CTR
-Customer Transaction Record. With the First Data Payeezy Gateway Transaction Processing Solution, the CTR is issued upon completion of a transaction. It states the business name, has an authorization number, and lists all important transaction details.
-
-## Card Validation Code 2
-Card Validation Code 2 (CVC2) is the MasterCard term for the 3-digit security code on the back of the credit card (Visa and MasterCard). For American Express, it is 4-digits and located on the front.
-
-## Cardholder Verification Value
-Cardholder Verification Value (CVV) a 3 or 4 digit security code on the back of the credit card (Visa and MasterCard). For American Express, it is 4-digits and located on the front.
-
-## Cardholder Verification Value2
-Cardholder Verification Value2 (CVV2) is the Visa term for the a 3-digit security code on the back of the credit card (Visa and MasterCard). For American Express, it is 4-digits and located on the front.
-
-## Cardholder Verification Data
-Cardholder Verification Data (CVD) is a 3-digit security code on the back of the credit card (Visa and MasterCard). For American Express, it is 4-digits and located on the front. Also known as CVV, CVV2 (Visa), CID (American Express), and CVC2 (Mastercard).
-
 ## Cryptogram
-A limited- or single-use key that links the payment token to the actual payment account number. Required by the token service provider to match the actual account number to the token and continue processing the payment.
-
-## CSR
-A Certificate Signing Request used with Apple Pay.
+A limited or single-use key (cipher) that encrypts the payment data. It is required to de-encrypt the payment data by the processor to continue processing the payment.
 
 ## Customer
 A person or company that buys goods or services from a merchant.
@@ -199,6 +162,36 @@ Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via th
 ## DBA (Doing business as)
 Doing business as (DBA) refers to the specific name and location of the merchant's store where a bank card purchase is made.
 
+## Debit Function Code
+Indicates the specific purpose of the message within its message class.
+
+## Debit Network Response Code
+The code that specifies the actual result provided by the debit network in response to the request message.
+
+## Debit Network Routing ID
+A 6-digit value identifying the specific debit network providing the response to the request message.
+
+## Debt Indicator
+Identifies the transaction as payment of an existing debt obligation, such as a car loan payment.
+
+## Deferred Billing Indicator
+Identifies transactions where the merchandise billing occurred after the merchandise was delivered to the cardholder. Available for Visa only.
+
+## Derived Unique Key Per Transaction
+Allows the encryption of a PIN via the use of a unique key for each transaction.
+
+## Discover PayButton
+The Discover PayButton is a digital wallet that stores cardholder payment information to be used at the time of checkout on-line or through a mobile device.
+
+## Discretionary Data
+Any valid information that the issuer uses for “on-us” transactions and wishes to have transmitted through the authorization process for inquiries on interchange transactions.
+
+## Driver's License Number
+Driver's license number of consumer, for Check Verification / Guarantee requests. When requesting verification with Driver's License Number, you must use the State Code field to indicate the state in which the driver's license was issued.
+
+## Duration
+Duration field is the anticipated length of the hotel stay or auto rental and is required in hotel and auto rental custom payment service transactions.
+
 ## Dynamic Descriptor
 A [custom descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md) you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
 
@@ -212,7 +205,7 @@ The descriptor that shows up after a transaction has settled. As soon as the cus
 Compensation paid by the acquiring member to an issuing member for particular expenses incurred in the process of interchange transactions.
 
 ## Issuing Bank
-The bank that has issued a payment card or checks to an individual. 
+The issuing bank also known as the customer's bank, issues a payment card or checks to an individual.  
 
 ## Merchant Category Code
 The Merchant Category Code (MCC) is an industry standard [four-digit number](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides.
