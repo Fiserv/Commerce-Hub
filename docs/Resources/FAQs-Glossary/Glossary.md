@@ -151,16 +151,19 @@ A limited or single-use key (cipher) that encrypts the payment data. It is requi
 A person or company that buys goods or services from a merchant.
 
 ## Decline
-A response to a request for authorization in which approval is refused. A merchant receiving a decline should not complete the transaction.
+A response to a request for authorization in which approval is refused. A merchant receiving a decline should not complete the transaction
 
-## Deferred Billing
-Identifies transactions where the billing occurred after the merchandise was delivered to the cardholder. Available for Visa only.
+## Deferred Authorization
+Identifies transactions where the billing occurred after the merchandise was delivered to the customer. This normally occures because of offline payment transaction.
+
+## Deferred Bill Payment
+Identifies a bill pay transaction where a recurring or incremental payment is delayed and charged at a future date.
 
 ## Derived Unique Key Per Transaction
 Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction.
 
-## DBA (Doing business as)
-Doing business as (DBA) refers to the specific name and location of the merchant's store where a bank card purchase is made.
+## Doing Business As
+Doing business as (DBA) refers to the specific name and location of the merchant's store where a transaction is made.
 
 ## Debit Function Code
 Indicates the specific purpose of the message within its message class.
@@ -171,14 +174,23 @@ The code that specifies the actual result provided by the debit network in respo
 ## Debit Network Routing ID
 A 6-digit value identifying the specific debit network providing the response to the request message.
 
-## Debt Indicator
-Identifies the transaction as payment of an existing debt obligation, such as a car loan payment.
+## Authorization Type Indicator
+Identifies if the authorization requested is an initial, reauthorization, deferred or incremental.
 
-## Deferred Billing Indicator
-Identifies transactions where the merchandise billing occurred after the merchandise was delivered to the cardholder. Available for Visa only.
+## Bill Payment Indicator
+Identifies if the bill payment requested is a recurring, instalment, or deferred.
 
-## Derived Unique Key Per Transaction
-Allows the encryption of a PIN via the use of a unique key for each transaction.
+## Sandbox
+This environment is completely separate from the production environment. The sandbox will enable you to test apps prior to deploying them on the production server. 
+
+## Developer Dashboard
+A web portal for managing your developer account, apps, and API credentials. 
+
+## Device-Specific Primary Account Number
+Device-Specific Primary Account Number (DPAN) ia an encrypted, tokenized value of payment account information tied to a mobile device. Used by Apple Pay.
+
+## Digital Certificate
+Digital certificates are password protected files issued from a Certificate Authority (CA). The CA validates information on a company or person then issues a certificate that identifies and provides information so that people can be more certain that the information provided on a website is genuine.
 
 ## Discover PayButton
 The Discover PayButton is a digital wallet that stores cardholder payment information to be used at the time of checkout on-line or through a mobile device.
@@ -186,11 +198,17 @@ The Discover PayButton is a digital wallet that stores cardholder payment inform
 ## Discretionary Data
 Any valid information that the issuer uses for “on-us” transactions and wishes to have transmitted through the authorization process for inquiries on interchange transactions.
 
+## Dynamic Currency Conversion
+Dynamic Currency Conversion (DCC) gives foreign customers the choice to pay for goods and services purchased in their home currency.
+
 ## Driver's License Number
 Driver's license number of consumer, for Check Verification / Guarantee requests. When requesting verification with Driver's License Number, you must use the State Code field to indicate the state in which the driver's license was issued.
 
-## Duration
-Duration field is the anticipated length of the hotel stay or auto rental and is required in hotel and auto rental custom payment service transactions.
+## Days Rented
+The `daysRented` field is the length of the [car rental](?path=docs/Resources/Guides/Industry-Verticals/Car-Rental.md) and is required in car and auto rental custom payment service transactions.
+
+## Number of Nights
+The `numberOfNights` field is the length of the [lodging stay](?path=docs/Resources/Guides/Industry-Verticals/Lodging.md) and is required in hotel and lodging custom payment service transactions.
 
 ## Dynamic Descriptor
 A [custom descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md) you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
