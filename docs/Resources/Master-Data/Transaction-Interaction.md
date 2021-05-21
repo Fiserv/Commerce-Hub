@@ -35,6 +35,7 @@ title: JSON Example
 
 ```
 
+<!--type: tab-end -->
 
 ---
 
