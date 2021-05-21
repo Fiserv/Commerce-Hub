@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+---
+
+
 # Payment.JS Integration
 
 ## Overview

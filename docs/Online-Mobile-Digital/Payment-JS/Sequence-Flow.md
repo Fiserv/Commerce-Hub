@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+---
+
 # Sequence-flow
 
 ![image](../../../assets/images/PaymentJS_sequence_diagram.png)
