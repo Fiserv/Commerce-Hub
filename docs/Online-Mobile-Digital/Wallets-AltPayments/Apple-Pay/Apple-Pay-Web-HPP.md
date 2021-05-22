@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-web-integration]
+tags: [carat, commerce-hub, enterprise, apple-pay, hosted-payment-page, configure-apple-pay-on-the-web, support-apple-pay-on-the-web, presenting-the-payment-sheet, wallet, apple-pay-web-integration]
 ---
 
 # Apple Pay on the Web: Hosted Payment Page
