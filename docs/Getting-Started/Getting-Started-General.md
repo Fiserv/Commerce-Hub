@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, getting-started, in-person, online, mobile, digital, integration, features, use-cases,]
 ---
 
 # Getting Started with Commerce Hub

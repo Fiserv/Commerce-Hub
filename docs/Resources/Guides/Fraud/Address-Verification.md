@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, in-person, online, mobile, digital, address-verification, fraud, AVS]
 ---
 
 # Address Verification Services
