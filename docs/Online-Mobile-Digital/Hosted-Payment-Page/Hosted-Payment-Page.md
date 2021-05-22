@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+tags: [carat, commerce-hub, enterprise, getting-started, additional-security-settings, create-a-payment-form]
 ---
 
 # Create a payment form

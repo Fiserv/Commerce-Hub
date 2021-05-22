@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+tags: [carat, commerce-hub, enterprise, generate-a-payment-url, payment-url-integration, payload-example, url, error-responses]
 ---
 
 # Payment URL Integration
