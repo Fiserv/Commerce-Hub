@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, cancel, refund]
+tags: [carat, commerce-hub, enterprise, endpoints, minimum-requirement, payload-example,]
 ---
 
 # Transaction Inquiry
