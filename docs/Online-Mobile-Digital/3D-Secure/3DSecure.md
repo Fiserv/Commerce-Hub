@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, 3-d-secure, pass-through, auth]
+tags: [carat, commerce-hub, enterprise, 3-d-secure, pass-through, 3-d-secure-authentication, visa-secure, verified-by-visa, securecode, protectbuy, jsecure, safekey]
 ---
 
 # 3-D Secure

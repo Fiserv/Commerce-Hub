@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, generate-a-payment-url, payment-url-integration, payload-example, url, error-responses]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, invoice, secured-payment-form, payment-url]
 ---
 
 # Payment URL Integration

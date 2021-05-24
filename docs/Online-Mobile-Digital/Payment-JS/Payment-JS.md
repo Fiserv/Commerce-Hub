@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, additional-security-settings, payment-js-integration]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
 ---
 
 

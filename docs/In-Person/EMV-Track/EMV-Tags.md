@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, emv-tags]
+tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
 ---
 
 # EMV-Tags

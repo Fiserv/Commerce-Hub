@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, smart-routing]
+tags: [carat, commerce-hub, enterprise, debit, in-person, card-present, smart-routing]
 ---
 
 # Smart Routing
