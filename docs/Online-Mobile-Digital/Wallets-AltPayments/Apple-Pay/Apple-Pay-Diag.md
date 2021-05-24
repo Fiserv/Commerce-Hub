@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, apple-pay, wallet,]
 ---
 
-# Apple Pay
+# Apple Pay Updated
 
 ## Overview
 
