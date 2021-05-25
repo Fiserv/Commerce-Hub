@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, fraud, detect-fraud]
+---
+
+
 # Detect Fraud
 
 ## Overview

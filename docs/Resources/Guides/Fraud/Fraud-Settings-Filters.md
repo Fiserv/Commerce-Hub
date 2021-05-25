@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, fraud, fraud-filters]
+---
+
+
 # Fraud Filters
 
 ## Overview

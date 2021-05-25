@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, decrypted-wallet, apple-pay, google-pay]
+---
+
+
 # Decrypted Wallet
 
 ## Overview
