@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, updates]
+tags: [carat, commerce-hub, enterprise, getting-started, release-notes, updates]
 ---
 
 

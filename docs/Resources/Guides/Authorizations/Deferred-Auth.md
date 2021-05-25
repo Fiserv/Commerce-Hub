@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, deferred-authorization, payload-example]
+---
+
+
 # Deferred Authorization
 
 ## Overview

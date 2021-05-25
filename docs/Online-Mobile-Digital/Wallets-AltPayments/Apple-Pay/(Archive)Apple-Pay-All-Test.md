@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, in-app-integration, transaction-flow, restful-api-integration, presenting-the-payment-sheet, set-up-project-in-xcode, support-apple-pay-on-the-web, apple-pay, wallet, app, web]
+tags: [carat, commerce-hub, enterprise, card-not-present, configure, in-app-integration, transaction-flow, restful-api-integration, presenting-the-payment-sheet, set-up-project-in-xcode, support-apple-pay-on-the-web, apple-pay, wallet, app, web]
 ---
 
 # Apple Pay

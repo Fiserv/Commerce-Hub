@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, card-present, settle, cancel]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, payments, settle, cancel]
 ---
 
 # Cancel
