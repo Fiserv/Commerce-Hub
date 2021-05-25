@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, authorizations, bill-payments, installment-payments]
+---
+
+
 # Installment Bill Payments
 
 <!-- theme: danger -->

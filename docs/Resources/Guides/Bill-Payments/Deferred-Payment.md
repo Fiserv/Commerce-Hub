@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, deferred-bill-payments]
+---
+
 # Deferred Bill Payments
 
 <!-- theme: danger -->
