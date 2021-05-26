@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, Dynamic-Descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor]
+tags: [carat, commerce-hub, dynamic-descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor, vault]
 ---
 
 # Dynamic Descriptor

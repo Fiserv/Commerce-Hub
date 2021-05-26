@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount, ]
+---
+
+
 # Transaction Amount
 
 Transaction amount information is contained into two objects, `amount` and `amountComponents`.
