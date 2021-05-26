@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, response-codes-and-messages, host, gateway, http]
+---
+
+
 # Response Codes and Messages
 
 ## Overview
