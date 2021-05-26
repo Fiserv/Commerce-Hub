@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, authorizations, bill-payments, installment-payments]
+tags: [carat, commerce-hub, enterprise, bill-payments, installment-bill-payments]
 ---
 
 

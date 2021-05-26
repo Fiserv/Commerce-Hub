@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, authorizations, fraud, velocity-controls]
+tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud, velocity-controls, velocity-settings]
 ---
 
 
