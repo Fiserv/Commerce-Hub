@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, customer-transaction-record, master-data]
+---
+
 # Customer Transaction Record 
 
 A Customer Transaction Record (CTR), also known as a payment receipt is returned upon the completion of a transaction. The CTR contains the approved amount, [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md), business information, and other transaction details.

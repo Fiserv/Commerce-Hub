@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, master-data, transaction-origin-and-entry-modes, transaction-interaction]
+---
+
+
 # Transaction Origin and Entry Modes
 
 The `transactionInteraction` object contains the data indicating where the transaction is acquired and the capabilities of the website, software, app, or terminal.

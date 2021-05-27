@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, master-data, processor-response-parameters]
+---
+
 # Processor Response Parameters
 
 The processor response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
