@@ -80,7 +80,7 @@ title: Request
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges))
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
