@@ -65,14 +65,34 @@
       link: docs/Resources/Guides/Split-Shipment.md
     - title: Subsequent Authorization
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
+    - title: Tokenization
+      link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
 - sections:
-  - title: API Releases
-    articles:
+  - title: API Reference
+    sections:
     - title: Release Notes
       link: docs/Release-Notes-Alerts/Release-Notes.md
-    - title: Alerts
-      link: docs/Release-Notes-Alerts/Alerts.md
-    - title: Updates
-      link: docs/Release-Notes-Alerts/Updates.md
+    - title: Payments
+      sections:
+      - title: Charges
+        link: docs/Resources/API-Documents/Payments/Charges.md
+      - title: Capture
+        link: docs/Resources/API-Documents/Payments/Capture.md
+      - title: Cancel
+        link: docs/Resources/API-Documents/Payments/Cancel.md
+      - title: Refund
+        link: docs/Resources/API-Documents/Payments/Refund.md
+      - title: Inquiry
+        link: docs/Resources/API-Documents/Payments/Inquiry.md
+      - title: Credit
+        link: docs/Resources/API-Documents/Payments/Credit.md
+      - title: Forced
+        link: docs/Resources/API-Documents/Payments/Forced.md
+    - title: Payments VAS
+      sections:
+      - title: Tokens
+        link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+      - title: Verification
+        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
