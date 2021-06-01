@@ -1,8 +1,12 @@
-# Additional Data
+# Additional Transaction Data
 
-## Overview
+Additional transaction data is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
 
-The `additionalDataCommon` object contains common data objects used for request types based on business requirements.
+---
+
+## Additional Data Common
+
+The `additionalDataCommon` object contains common data elements used in requests based on business requirements.
 
 <!--
 type: tab
@@ -31,7 +35,7 @@ title: JSON Example
 {
    "additionalDataCommon":{
       "additionalData":{
-         "baiFlag":"PERSON_TO_PERSON",
+         "baiFlag": "PERSON_TO_PERSON",
          "networkTransactionReference":"123456788",
          "billPayment":false,
          "ecomURL":"https://www.somedomain.com",
@@ -103,10 +107,10 @@ title: JSON Example
 
 | Value | Description |
 | ----- | ----- |
-| SINGLE | Single charge not for recurring services or installment plan. |
-| DEFERRED | A charge for an order with a delayed payment for a specified amount of time. |
-| INSTALLMENT | Single purchase where the cardholder is billed (charged) in installments. |
-| RECURRING | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
+| *SINGLE* | Single charge not for recurring services or installment plan. |
+| *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
+| *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
+| *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
 
 ---
 
@@ -157,28 +161,28 @@ The BAI determines the data carried in the message, the limits and economics tha
 
 | Value | Description |
 | ----- | ----- |
-| PERSON_TO_PERSON | Person to person initiated. |
-| PERSON_TO_PERSON_BANK_INITIATED | Person to person bank initiated. |
-| BUSINESS_TO_BUSINESS | Business to business initiated. |
-| DIGITAL_WALLET | Digital Wallet transfer. |
-| ACCOUNT_TO_ACCOUNT | Account to account transfer. |
-| TOP_OFF | Account top off or reload. |
-| ACCOUNT_VERIFICATION | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
-| FUNDS_TRANSFER | Funds Transfer. |
-| DISBURSEMENT | Funds disbursement or payout. |
-| GAMBLING_PAYOUT | Gambling payout non-online. |
-| GAMBLING_PAYOUT_ONLINE | Online gambling payout. |
+| `PERSON_TO_PERSON` | Person to person initiated. |
+| *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
+| *BUSINESS_TO_BUSINESS* | Business to business initiated. |
+| *DIGITAL_WALLET* | Digital Wallet transfer. |
+| *ACCOUNT_TO_ACCOUNT* | Account to account transfer. |
+| *TOP_OFF* | Account top off or reload. |
+| *ACCOUNT_VERIFICATION* | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
+| *FUNDS_TRANSFER* | Funds Transfer. |
+| *DISBURSEMENT* | Funds disbursement or payout. |
+| *GAMBLING_PAYOUT* | Gambling payout non-online. |
+| *GAMBLING_PAYOUT_ONLINE* | Online gambling payout. |
 
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
-- [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 
 ---

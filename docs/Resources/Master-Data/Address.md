@@ -1,7 +1,5 @@
 # Customer Address
 
-## Overview
-
 A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
 
 ---
@@ -9,6 +7,7 @@ A merchant may need to send the customer's address in the transaction request fo
 ## Billing Address
 
 Is the address connected to the customer's [payment method](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) and can be used for [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md).
+
 
 <!--
 type: tab
@@ -30,20 +29,20 @@ title: JSON Example
 ```json
 {
    "billingAddress":{
-      "firstName":"John",
-      "lastName":"Doe",
+      "firstName": "John",
+      "lastName": "Doe",
       "address":{
-         "houseNumberOrName":"112",
-         "street":"Main St.",
-         "city":"Atlanta",
-         "stateOrProvince":"GA",
-         "postalCode":"30301",
-         "country":"US"
+         "street": "123 Main St.",
+         "houseNumberOrName": "Apt 1",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
       },
       "phone":{
-         "countryCode":"1",
-         "phoneNumber":"123-123-1234",
-         "type":"DAY"
+         "countryCode": "1",
+         "phoneNumber": "123-123-1234",
+         "type": "DAY"
       }
    }
 }
@@ -80,22 +79,22 @@ title: JSON Example
 ```json
 {
    "shippingAddress":{
-      "firstName":"Jane",
-      "lastName":"Doe",
-      "shippingMethod":"SAME_DAY",
-      "shipToEmail":"customer@domain.com",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "shippingMethod": "SAME_DAY",
+      "shipToEmail": "customer@domain.com",
       "address":{
-         "houseNumberOrName":"112",
-         "street":"Main St.",
-         "city":"Atlanta",
-         "stateOrProvince":"GA",
-         "postalCode":"30301",
-         "country":"US"
+         "street": "112 Main St.",
+         "houseNumberOrName": "Apt 112",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
       },
       "phone":{
-         "countryCode":"1",
-         "phoneNumber":"123-123-1234",
-         "type":"DAY"
+         "countryCode": "1",
+         "phoneNumber": "123-123-1234",
+         "type": "DAY"
       }
    }
 }
@@ -103,16 +102,16 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-#### Shipping Method
+### Shipping Method
 
 | Value | Description |
 | ----- | ----------- |
-| SAME_DAY | Same day shipping |
-| OVERNIGHT | Next day shipping |
-| PRIORITY | Shipping within 2-3 days |
-| GROUND | Shipping within 4 days |
-| ELECTRONIC | Email or digital goods |
-| SHIP_TO_STORE | Ship to store |
+| *SAME_DAY* | Same day shipping |
+| *OVERNIGHT* | Next day shipping |
+| *PRIORITY* | Shipping within 2-3 days |
+| *GROUND* | Shipping within 4 days |
+| *ELECTRONIC* | Email or digital goods |
+| *SHIP_TO_STORE* | Ship to store |
 
 ---
 
@@ -126,8 +125,8 @@ title: address
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `houseNumberOrName` | *string* |  | House number or name. |
-| `street` | *string* |  | Street name. |
+| `street` | *string* |  | Street address. |
+| `houseNumberOrName` | *string* |  | Secondary address information e.g. house number or name. |
 | `city` | *string* |  | City or locality. |
 | `stateOrProvince` | *string* |  | State or province name. |
 | `postalCode` | *string* |  | Postal code. |
@@ -141,12 +140,12 @@ title: JSON Example
 ```json
 {
    "address":{
-      "houseNumberOrName":"112",
-      "street":"Main St.",
-      "city":"Atlanta",
-      "stateOrProvince":"GA",
-      "postalCode":"30301",
-      "country":"US"
+      "street": "112 Main St.",
+      "houseNumberOrName": "Apt 213",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US"
    }
 }
 ```

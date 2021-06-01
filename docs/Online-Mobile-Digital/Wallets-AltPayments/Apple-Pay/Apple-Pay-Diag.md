@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, apple-pay, wallet,]
 ---
 
-# Apple Pay
+# Apple Pay Updated
 
 ## Overview
 
@@ -33,6 +33,8 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
+![Apple Pay RESTFul Integration](../../../../assets/images/apple-pay-restful.png)
+
 **Begin integration with [Apple Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md).**
 
 ### Web: Hosted Payment Page
@@ -48,6 +50,8 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requir
 5. The Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
+![Apple Pay Hosted Page Integration](../../../../assets/images/apple-pay-hpp.png)
+
 **Begin integration with [Apple Pay on the Web: Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md).**
 
 ### In-App Integration
@@ -60,6 +64,8 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 2. The app calls the Apple Pay framework to obtain the encrypted wallet data.
 3. The merchant’s app submits the encrypted Apple Pay payload to Commerce Hub.
 4. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
+
+![Apple Pay In App Integration](../../../../assets/images/apple-pay-inapp.png)
 
 **Begin integration with [Apple Pay Integration In-App](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md).**
 

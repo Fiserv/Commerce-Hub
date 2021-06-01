@@ -60,7 +60,7 @@ title: Request
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": "1.50",
     "currency": "USD"
   }
 }

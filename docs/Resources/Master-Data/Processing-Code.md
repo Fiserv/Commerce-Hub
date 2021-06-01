@@ -1,7 +1,5 @@
 # Processing Codes
 
-## Overview
-
 A set of numbers that describe the type of the transaction as well as the account type being used. Required on all transaction requests and upload detail records.
 
 The Processing code has 3 subdivisions 
