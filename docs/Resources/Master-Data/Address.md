@@ -64,10 +64,10 @@ title: shippingAddress
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `firstName` | *string* |  | Shipping contact first name. |
-| `lastName` | *string* |  | Shipping contact last name.|
-| `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method).|
-| `shipToEmail` | *string* | | Email on a digital delivery transaction. |
+| `firstName` | *string* | 256  | Shipping contact first name. |
+| `lastName` | *string* | 256 | Shipping contact last name.|
+| `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method).|
+| `shipToEmail` | *string* | 13 | Email on a digital delivery transaction. |
 | `address` | *object* |  | Shipping [address](#address) details. |
 | `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
@@ -125,12 +125,12 @@ title: address
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `street` | *string* |  | Street address. |
-| `houseNumberOrName` | *string* |  | Secondary address information e.g. house number or name. |
-| `city` | *string* |  | City or locality. |
-| `stateOrProvince` | *string* |  | State or province name. |
-| `postalCode` | *string* |  | Postal code. |
-| `country` | *string* |  | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
+| `street` | *string* | 256 | Street address. |
+| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name. |
+| `city` | *string* | 256 | City or locality. |
+| `stateOrProvince` | *string* | 256 | State or province name. |
+| `postalCode` | *string* | 10 | Postal code. |
+| `country` | *string* | 256 | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
 
 <!--
 type: tab
