@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, enterprise, access, developer-studio, sandbox, developer-portal, enroll, enrollment, api, getting-started]
 ---
 
-# Getting Started
+# Getting Started with Developer Studio
 
 ## Access Commerce Hub APIs
 
