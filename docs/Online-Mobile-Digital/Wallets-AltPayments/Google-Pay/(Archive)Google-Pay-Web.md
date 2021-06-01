@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, google-pay, wallet, google-pay-web-integration]
+tags: [carat, commerce-hub, enterprise, define-google-pay-api-version,request-a-payment-token, define-payment-card-networks, define-auth-methods, describe-allowed-payment-methods,add-payment-tag, determine-readiness-to-pay, support-google-pay-on-website, add-google-pay-button, create-payload-request, google-pay, wallet, google-pay-web-integration]
 ---
 
 

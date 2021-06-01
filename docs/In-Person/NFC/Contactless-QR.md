@@ -1,6 +1,11 @@
-# Contactless-QR
+---
+tags: [carat, commerce-hub, enterprise, card-present, in-person, nfc, contactless, qr]
+---
 
-We are enhancing Commerce Hub to include Contactless transaction support and the documents related to the features will be released soon.
+# Contactless and QR Payments
+
+<!-- theme: danger -->
+>We are enhancing Commerce Hub to include Contactless transaction support and the documents related to the features will be released soon.
 
 ---
 

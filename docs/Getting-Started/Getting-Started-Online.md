@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, getting-started, hosted-payment-page]
+tags: [carat, commerce-hub, enterprise, restful, apis, card present, online, mobile, digital-payments, card-not-present, getting-started, hosted-payment-page, virtual-terminal]
 ---
 
 # Online/Mobile/Digital Payments

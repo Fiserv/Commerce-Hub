@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, card-present, contactless, in-person, least-cost-debit, debit,]
+---
+
 # Least Cost Debit
 
 ## Overview

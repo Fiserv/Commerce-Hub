@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, card-not-present, mobile-wallets, encrypted-wallet, decrypted-wallet, e-wallets, amazon-pay, apple-pay, google-pay, paypal, samsung-pay]
+---
+
 # Wallet Payments
 
 ## Overview

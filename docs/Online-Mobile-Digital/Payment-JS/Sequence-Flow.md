@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, payment-js, sequence-flow]
+---
+
 # Sequence-flow
 
 ![image](../../../assets/images/PaymentJS_sequence_diagram.png)

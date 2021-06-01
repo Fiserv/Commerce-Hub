@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-web-integration]
+tags: [carat, commerce-hub, enterprise, apple-pay, wallet, apple-pay-web-integration, create-merchant-identifier, register-and-validate-merchant-account, create-merchant-identity-certificate, support-apple-pay-on-website, presenting-the-payment-sheet, submit-a-payment-request]
 ---
 
 # Apple Pay: Web Integration

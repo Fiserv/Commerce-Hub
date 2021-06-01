@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, getting-started, in-person, online, mobile, digital, integration, features, use-cases]
+---
+
 # Getting Started with Commerce Hub
 
 Commerce Hub provides a [simple way](?path=docs/Getting-Started/Getting-Started-Dev-Portal.md) to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. Commerce Hub offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.

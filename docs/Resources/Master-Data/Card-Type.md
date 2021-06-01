@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data]
+---
+
+
 # Supported Card Types
 
 Our payments solutions enable you to integrate them into a seamless customer experience, and enable you to accept your customers' preferred payment methods.

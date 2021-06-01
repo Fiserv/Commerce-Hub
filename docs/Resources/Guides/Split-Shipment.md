@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, split-shipment, vault]
+---
+
+
 # Split Shipment
 
 ## Overview

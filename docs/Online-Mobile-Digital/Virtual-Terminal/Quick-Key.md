@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, batch-upload card-not-present,  csv-format, virtual-terminal, online]
+---
+
 # Quick Key
 
 ## Overview

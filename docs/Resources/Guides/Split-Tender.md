@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, split-tender, vault]
+---
+
+
 # Split Tender
 
 ## Overview

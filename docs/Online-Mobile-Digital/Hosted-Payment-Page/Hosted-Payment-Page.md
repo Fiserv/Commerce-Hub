@@ -1,4 +1,8 @@
-# Create a payment form
+---
+tags: [carat, commerce-hub, enterprise, getting-started, card-not-present, online, hosted-payment-page, secure-payment-form]
+---
+
+# Create a Payment Form
 
 ## Overview
 

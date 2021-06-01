@@ -1,10 +1,10 @@
+---
+tags: [carat, commerce-hub, enterprise, network-details, master-data]
+---
+
 # Authorization Network Response
 
 Authorization network response contains the `networkDetails` object.
-
-## Network Details
-
-
 
 <!--
 type: tab
@@ -75,3 +75,5 @@ title: JSON Example
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
+
+---

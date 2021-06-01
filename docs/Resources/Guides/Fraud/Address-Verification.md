@@ -1,12 +1,12 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, in-person, online, mobile, digital, address-verification, fraud]
 ---
 
 # Address Verification Services
 
 ## Overview
 
-Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#addressverificationservice) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
+Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#address-verification-service) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
