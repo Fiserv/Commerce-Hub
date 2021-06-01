@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started with Developer Studio
 
 ## Access Commerce Hub APIs
 
