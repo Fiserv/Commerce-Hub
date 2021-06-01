@@ -16,8 +16,8 @@ title: billingAddress
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer first name. |
-| `lastName` | *string* |  | Customer last name. |
+| `firstName` | *string* | 256 | Customer first name. |
+| `lastName` | *string* | 256 | Customer last name. |
 | `address` | *object* |  | Billing [address](#address) details. |
 | `phone` | *object* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
@@ -67,7 +67,7 @@ title: shippingAddress
 | `firstName` | *string* |  | Shipping contact first name. |
 | `lastName` | *string* |  | Shipping contact last name.|
 | `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method).|
-| `shipToEmail` | *string* | Email on a digital delivery transaction. |
+| `shipToEmail` | *string* | | Email on a digital delivery transaction. |
 | `address` | *object* |  | Shipping [address](#address) details. |
 | `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
