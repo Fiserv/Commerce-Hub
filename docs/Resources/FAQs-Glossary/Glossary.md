@@ -289,16 +289,16 @@ Hash-based Message Authentication Code, used to ensure secure transmission of tr
 The host is generally the central or controlling computer in a distributed system.
 
 ## Host Capture
-Process where Rapid Connect closes and settles batches on behalf of the merchant.
+Process where the host (e.g. Commerce Hub) closes and settles batches on behalf of the merchant. 
 
-## Host Security Module (HSM)
-A Host Security Module (HSM) is a hardware security module (HSM) is a physical computing device that safeguards and manages digital keys for strong authentication and provides cryptoprocessing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Rapid Connect.
+## Host Security Module
+A Host Security Module (HSM) is a hardware device that safeguards and manages digital keys for strong authentication and provides cryptoprocessing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
 
 ## Idempotency
 A property of an operation that states that clients can make that same call repeatedly while producing the same result. Our REST API uses the client_request_id element to ensure idempotency on transaction requests.
 
 ## Installation Root
-The file system directory where the shopping cart is installed, e.g. /var/www/html/zencart or /var/www/html/oscommerce.
+The file system directory where the shopping cart is installed, e.g. /var/www/html/cart or /var/www/html/commerce.
 
 ## Interchange
 The exchange of transaction data between the merchant bank and customer card issuing bank.
@@ -306,11 +306,11 @@ The exchange of transaction data between the merchant bank and customer card iss
 ## Interchange Fees
 Compensation paid by the acquiring member to an issuing member for particular expenses incurred in the process of interchange transactions.
 
-## Invalid Transaction Tag
-Response usually displayed when the tag sent does not match the transaction previously sent - for example, Tag A was returned from First Data Payeezy Gateway with Purchase #1 but Tag B was sent by the merchant with Tagged Refund #1. This can also occur if the transaction that is being refunded or completed is too old (customers have up to one year to refund charges and around 5 days to complete pre-authorization type transactions).
+## Invalid Transaction ID
+Response displayed when the `transactionID` sent does not match the transaction previously sent. This can also occur if the transaction ID cannot be found in the database.
 
-## IP
-Internet Protocol. The Internet protocol defines how information gets passed between systems across the Internet.
+## Internet Protocol
+Internet Protocol (IP) defines how information gets passed between systems across the Internet.
 
 ## Internet Service Provider
 Internet Service Provider (ISP) is a company that provides individuals and businesses with access to the Internet. Many ISPs also provide website hosting services.
@@ -318,11 +318,11 @@ Internet Service Provider (ISP) is a company that provides individuals and busin
 ## Issuing Bank
 The issuing bank also known as the customer's bank, issues a payment card or checks to an individual.
 
-## Independent software vendor
-Independent software vendor (ISV) term may also refer to the vendor’s software developer.
+## Independent Software Vendor
+Independent Software Vendor (ISV) term may also refer to the vendor’s software developer.
 
-## IVR Telephony
-Integrated Voice Response Telephony technology creates automatic message selections through phone systems. First Data Payeezy Gateway software can be used in IVR telephony.
+## Integrated Voice Response
+Integrated Voice Response (IVR) technology creates automatic message selections through phone systems.
 
 ## Leased Line
 Dedicated communications channel leased from a common carrier; leased lines usually can handle greater transmission speeds than the dial-up telephone system. Leased lines from the telephone company can be "conditioned" (electronically fine-tuned), which can reduce transmission error rates.
@@ -331,31 +331,28 @@ Dedicated communications channel leased from a common carrier; leased lines usua
 Notification to an issuer of an amount to be loaded to a prepaid account’s available balance.
 
 ## Local Area Network
-Communications network within an organization; local area networks connect various hardware devices together within a building or plant via a continuous cable or through the use of an in-house voice/data telephone system. Local networks do not rely on external public or private communications services, although they may connect to them in order to transfer information across long distances.
+Communications network within an organization; local area networks (LAN) connect various hardware devices together via a network cable or wi-fi. Local networks do not rely on external public or private communications services, although they may connect to them in order to transfer information across long distances.
 
 ## Local Totals
 Summary Data accumulated at the merchant’s device.
 
-## Longitudinal Redundancy Check (LRC)
-A verification value that ensures that no data have been lost in the stripe reading process. The LRC is equivalent to a check digit of the entire track, including the control characters.
+## Longitudinal Redundancy Check
+A Longitudinal Redundancy Check (LRC) is a verification value that ensures that no data have been lost in the stripe reading process. The LRC is equivalent to a check digit of the entire track, including the control characters.
 
 ## Lost Card
 A bank card that has been reported to the credit issuer as lost or misplaced by the cardholder of record.
-
-## Longitudinal Redundancy Check
-Longitudinal Redundancy Check (LRC) is a verification value that ensures that no data have been lost in the stripe reading process. The LRC is equivalent to a check digit of the entire track, including the control characters.
 
 ## Luhn Check
 The Luhn algorithm or Luhn formula, also known as the "modulus 10" or "mod 10" algorithm, is a simple checksum formula used to validate credit card numbers.
 
 ## Magnetic Stripe
-A stripe of magnetic information affixed to the back of a plastic credit (or debit/EBT) card. The magnetic stripe contains essential customer and account information.
+A stripe of magnetic information affixed to the back of a plastic credit (or debit/EBT) card. The magnetic stripe contains essential customer and account information. See also [Track I/II](#).
 
-## Magnetic stripe payment
+## Magnetic Stripe Payment
 A payment made with a traditional card that has a magnetic stripe on the back. Also referred to as a swipe payment.
 
-## MAID
-MasterCard Assigned ID - An identifier assigned by MasterCard to identify a specific merchant who is registered with MasterCard for specific fees, special interchange treatment, or participation in select acceptance programs.
+## Mastercard Assigned ID
+Mastercard Assigned ID (MAID) is an identifier assigned by Mastercard to identify a specific merchant who is registered with Mastercard for specific fees, special interchange treatment, or participation in select acceptance programs.
 
 ## Mail/Telephone Order Transaction
 The Mail/Telephone Order Transaction (MOTO) is a purchase of goods or services where the cardholder is not present at the point of sale.
@@ -366,13 +363,11 @@ This entry is used to indicate that market-specific authorization data was prese
 ## Market-Specific Authorization Data
 Information supplied in the authorization request to assist the issuer in making better authorization decisions.
 
-## Manual refund
-A refund or credit that is not associated with a previous payment. Because it is an independent transaction, it can be for any amount; a manual refund is not limited to the total of a previous sale. Also referred to as a naked refund.
+## Manual Refund
+A [credit](?path=docs/Resources/API-Documents/Payments/Credit.md) that is not associated with a previous payment. Because it is an independent transaction, it can be for any amount; a manual refund is not limited to the total of a previous sale. Also referred to as a open refund.
 
-## MasterPass
-Initially introduced in Fall 2012, MasterCard introduced MasterCard PayPass Online, now referred to as MasterPass, a secure and convenient method for consumers to conduct e-commerce wallet transactions. MasterPass enables e-commerce merchants to convert browsing customers into buyers by providing a fast, convenient, and secure checkout experience. High Level Flow: 1. Consumer clicks on the MasterPass button on the merchant web site, and is taken to the MasterPass sign-in page. 2. Consumer chooses the integrated digital wallet they want to use and the authentication is completed. 3. Consumer selects the desired payment card and shipping address. 4. MasterPass securely transfers the payment and shipping information to the merchant’s web site confirmation page, where the checkout process is completed. 5. Consumer’s payment information is submitted to the merchant’s acquirer for processing.
-
-First Data will add support for the MasterPass transaction identification as well as the new MasterPass security level indicators with the Fall 2014 Release.
+## Masterpass
+Masterpass is a digital wallet service that makes online shopping safe and easy by storing the customer's payment and shipping information securely.
 
 ## Merchant
 A person or company that sells goods or services to a customer.
@@ -380,23 +375,17 @@ A person or company that sells goods or services to a customer.
 ## Merchant Advice Code
 A code associated with the reason a recurring payment transaction has been declined.
 
-## Merchant Category Code(MCC)
-A code associated with the reason a recurring payment transaction has been declined.
-
 ## Merchant Category Code
 The Merchant Category Code (MCC) is an industry standard [four-digit number](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides.
 
-## Merchant Country
-Three-digit code identifying the country (outlet location) where the transaction occurred.
-
-## Merchant group
+## Merchant Group
 A feature used to associate all of the merchants belonging to a single enterprise, so you can manage and report on them in bulk. A merchant can belong to multiple merchant groups. You can create merchant groups in the Developer Dashboard.
 
 ## Merchant ID
-An auto-generated ID for an individual merchant consisting of thirteen alphanumeric characters (for example, TA72R18N3RAV4).
+A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. Utilized for clients that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app.
 
 ## Merchandise Return
-A “credit” to the cardholder’s account for merchandise previously purchased. Returns are typically processed a day (or days) after the cardholder performed the original purchase.
+A refund to the cardholder’s account for merchandise previously purchased. Returns are typically processed a day (or days) after the cardholder performed the original purchase.
 
 ## Merchant Bank
 The bank that has entered into an agreement with a merchant to accept deposits generated by bank card transactions.
@@ -413,17 +402,13 @@ A modulation/demodulation device that provides compatibility between input/outpu
 ## mPOS
 A mobile acceptance solution (mPOS) uses a mobile telecommunications device that is not solely dedicated to POS functions and has the ability to wirelessly communicate across open networks as a means to accept a card payment. The solution will typically include a hardware attachment for the purpose of card reading and /or pin entry.
 
-An mPOS solution that operates over an open network is one that is operated by a solution provider, and is available to many different users, as opposed to a solution that operates over a closed network that is dedicated only to a specific merchant or to a chain of merchant locations.
-mPOS devices that operate within a proprietary POS solution, or closed network, must not populate field Terminal Type with the new mPOS indicator, but must continue to identify transactions as having originated from either a regular terminal or an electronic cash register.
-MasterCard Mobile POS are always attended devices and not cardholder activated.
-
 ## Multiple Authorizations
-In the hotel and auto rental industries, multiple or incremental authorizations and a single partial reversal are often obtained after the initial authorization.
+In the hotel and auto rental industries, multiple or [incremental authorizations](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) and a single partial reversal are often obtained after the initial authorization.
 
 ## Multi-Dropped
 A communication line system having more than one terminal connected to the same line.
 
-## Merchant Verification Valu
+## Merchant Verification Value
 Merchant Verification Value (MVV) is an identifier assigned by Visa to identify a merchant who is registered with Visa for specific fees, special interchange treatment, or participation in select acceptance programs.
 
 ## National Association
@@ -438,44 +423,56 @@ A reference number supplied by the debit network providing the response. It is u
 ## Network Response
 Ancillary data, obtained in the authorization process, which is used internally by First Data.
 
-## Near Field Communication
-Near Fietlkd Communication (NFC) is a transaction in which a customer uses an Apple Pay, Samsung Pay, or Android Pay mobile wallet by tapping their mobile device to the card reader.
-
 ## On-Us Transaction
 A transaction in which both the cardholder and the merchant are signed by the same member.
 
-## Partial authorization
-The payment gateway may return a partial authorization if the transaction amount exceeds the customer’s credit or debit card limit. 
+## Partial Authorization
+Commerce Hub can return a [partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) if the transaction amount exceeds the customer’s payment source limit. 
 
 ## Payment Token
-A cryptographically secure representation of payment instrument details for use with subsequent payment transactions. This token may be generated for a single or multiple use. Through a payment token, the merchant does not need to store sensitive payment details on their servers.
-
-## Payment Token
-A cryptographically secure representation of payment instrument details for use with subsequent payment transactions. This token may be generated for a single use or for multiple uses. By making use of a payment token, the merchant does not need to store sensitive payment details on their servers.
+A cryptographically secure representation of payment instrument details for use with subsequent payment transactions. This token may be generated for a single or multiple use. Through a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), the merchant does not need to store sensitive payment details on their servers.
 
 ## Payment Card Industry Data Security Standard
 Payment Card Industry Data Security Standard (PCI DSS) is the published security standards for the handling of payment card data.
 
-## Payment Processing
-Another phrase for transaction processing.
+## Practical Extraction and Report Language
+Practical Extraction and Report Language (Perl) is a popular programming language used for web server applications. It can be used for creating interactive forms and CGI programs.
 
-## Perl
-Practical Extraction and Report Language. A popular programming language used for web server applications. It can be used for creating interactive forms and CGI programs. First Data Payeezy Gateway has a Perl Module Transaction Component for Unix/Linux systems.
-
-## Point-of-sale
-Point-of-sale (POS) is the point at which a product is paid for. Merchant Sales are conducted by credit card swipe terminal. On the Internet, this is the software that enables the merchant to accept transactions on their online store.
+## Point-of-Sale
+Point-of-Sale (POS) is the point at which a product is paid for. [In-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions are conducted by a terminal or software. [Online](?path=docs/Getting-Started/Getting-Started-Online.md) transactions are conducted by a software on their online store or mobile app.
 
 ## Post-Auth
-A secondary transaction that completes a pre-auth transaction and charges the customer's account.
+A secondary transaction that [captures](?path=docs/Resources/API-Documents/Payments/Capture.md) a pre-auth transaction and charges the customer's account.
 
 ## Pre-Auth
 A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and places a hold on a project sale amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) transaction, the held amount is then setled with the merchant batch.
 
 ## Primary Transaction
-The main independent transactions between a customer and a merchant. See Credit, Pre-Auth, Sale, and Forced Ticket.
+The main independent transactions between a customer and a merchant. Commerce Hub supports [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md), and [Forced](?path=docs/Resources/API-Documents/Payments/Forced.md) transactions.
 
-## Prepaid Closed Loop (PrePaid CL)
-Prepaid Closed Loop is a First Data product that is designed to only be used at the issuer's locations. Closed Loop payment schemes allow companies to reward loyalty and increase customer intimacy. Prepaid Closed Loop was formally known as Valuelink. Prepaid Closed Loop is commonly referred to as "gift card" as well.
+## Prepaid Closed Loop
+Prepaid Closed Loop is a [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) product that is designed to only be used at the merchant's locations. Closed Loop payment schemes allow companies to reward loyalty and increase customer intimacy. 
+
+## Recurring Transaction
+A transaction where the merchant charges for goods or services at a defined frequency (for example, a monthly subscription.)
+
+## Real-time
+Events and actions are taking place as it happens and the time frame is now.
+
+## Receipt Link
+[Hosted Payment Pages'](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md) simplest method of displaying customer receipts.
+
+## Refund
+A secondary transaction used to [return](?path=docs/Resources/API-Documents/Payments/Refund.md) funds to the customer of the total charge or a portion of that charge.
+
+## Reporting
+Commerce Hub provides extensive [reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md) with our virtual terminal. Detailed deposit totals and online activity can be tracked daily.
+
+## Ruby
+A dynamic, reflective, general purpose object-oriented programming language. Ruby combines syntax inspired by Perl with Smalltalk-like object-oriented features.
+
+## Ruby on Rails
+An open source web application framework for the Ruby programming language. It is often referred to as 'Rails' or 'RoR'. It is intended to be used with an Agile development methodology, which is often utilized by web developers for its suitability for short, client-driven projects.
 
 ## Sale
 A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided [(cancel)](?path=docs/Resources/API-Documents/Payments/Cancel.md) before batching, the merchant funding process begins for this charge. At this point, the merchant can still return funds [(refund)](?path=docs/Resources/API-Documents/Payments/Refund.md) the customer.
@@ -484,11 +481,17 @@ A sale is a customer transaction where the purchase amount is authorized and set
 > 
 >Settlement time is based on processing network, contact your account manager for more details.
 
+## Secondary Transaction
+The subsequent transactions between a customer and a merchant. Commerce Hub supports [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), and [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md) transactions.
+
 ## Soft Descriptor
 The descriptor that shows up after a transaction has been authorized. As long as the charge is in a pending state, the soft descriptor will be displayed on the customer's statement.
 
 ## Surcharge Fees
 A surcharge, also known as checkout fee, is an extra fee charged by a merchant when receiving a payment by check or payment card. The surcharge covers the cost to the merchant for processing the payment, such as the merchant service fee imposed by a processor.
+
+<!-- theme : warning -->
+> Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative.
 
 ## Triple DES
 Triple DES (3DES or TDES) is the Triple Data Encryption Algorithm (TDEA or Triple DEA) block cipher, which applies the Data Encryption Standard (DES) cipher algorithm three times to each data block.
