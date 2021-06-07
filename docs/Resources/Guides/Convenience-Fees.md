@@ -101,10 +101,6 @@ title: Response
    },
    "source":{
       "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
       "card":{
          "cardData":"4005550000000019",
          "nameOnCard":"Jane Smith",
@@ -135,13 +131,7 @@ title: Response
          "bankAssociationDetails":{
             "associationResponseCode":"000",
             "transactionTimestamp":"2016-04-16T16:06:05Z",
-            "avsSecurityCodeResponse":{
-               "securityCodeMatch":"MATCH",
-               "association":{
-                  "securityCodeResponse":"MATCH"
-               }
-            }
-         }
+          }
       }
    },
    "additionalDataCommon":{
