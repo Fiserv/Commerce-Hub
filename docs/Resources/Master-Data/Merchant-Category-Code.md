@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, Merchant-Category-Code, MCC]
+tags: [carat, commerce-hub, enterprise, master-data, merchant-category-code]
 ---
 
 # Merchant Category Codes

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, Dynamic-Descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor]
+tags: [carat, commerce-hub, dynamic-descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor, vault]
 ---
 
 # Dynamic Descriptor
@@ -44,7 +44,7 @@ type: tab
 title: Request
 -->
 
-#### Sample chargeRequest with Dynamic Descriptor details
+#### Charge example with Dynamic Descriptor
 
 ```json
 {
@@ -106,10 +106,6 @@ title: Response
    },
    "source":{
       "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
       "card":{
          "cardData":"4005550000000019",
          "nameOnCard":"Jane Smith",
@@ -140,13 +136,7 @@ title: Response
          "bankAssociationDetails":{
             "associationResponseCode":"000",
             "transactionTimestamp":"2016-04-16T16:06:05Z",
-            "avsSecurityCodeResponse":{
-               "securityCodeMatch":"MATCH",
-               "association":{
-                  "securityCodeResponse":"MATCH"
-               }
-            }
-         }
+          }
       }
    },
    "dynamicDescriptors":{

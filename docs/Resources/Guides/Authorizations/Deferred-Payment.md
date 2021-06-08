@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, deferred-payment]
+---
+
 # Deferred-Payment
 
 ## Overview

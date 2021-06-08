@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, commerce-hub-response, master-data]
+---
+
 # Commerce Hub Response
 
 The Commerce Hub Response contains the response parameters for any successful or unsuccessful transaction.

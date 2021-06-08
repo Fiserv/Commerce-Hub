@@ -1,3 +1,6 @@
+---
+tags: [carat, commerce-hub, enterprise, getting-started, in-person, payments, card-not-present, card-present, emv, debit, software, terminal, point-of-sale, pos]
+---
 
 # In-Person Payments
 

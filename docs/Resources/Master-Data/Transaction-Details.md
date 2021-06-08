@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-transaction-type, reversal-reason-code, authorization-sequence, device-fingerprint-data, data-capture, data-dynamic, master-data, transactional-data, transaction-details,]
+---
+
+
 # Transactional Data
 
 The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
@@ -35,6 +40,7 @@ title: transaction
 | `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void).|
 | `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested.|
+| `createToken` | *boolean* | | Used to create a token on a charge transaction. |
 
 <!--
 type: tab
@@ -91,7 +97,8 @@ title: JSON Example
       },
       "reversalReasonCode": "VOID",
       "physicalGoodsIndicator":true,
-      "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION"
+      "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
+      "createToken": false
    }
 }
 ```

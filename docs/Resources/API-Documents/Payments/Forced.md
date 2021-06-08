@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, forced-post, minimum-requirements, payload-example, payments, api-documents, api-reference, authorization, sale, pre-auth]
+---
+
+
 # Forced Post
 
 ## Overview

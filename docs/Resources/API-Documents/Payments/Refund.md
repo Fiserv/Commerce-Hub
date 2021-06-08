@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel, refund]
+tags: [carat, commerce-hub, enterprise, endpoints, full-refund, payments, partial-refund, refund]
 ---
 
 # Refund

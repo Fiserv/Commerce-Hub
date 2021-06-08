@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, merchant-business-details, master-data]
+---
+
+
 # Merchant Business Details
 
 Used to pass merchant business data during the transaction and contains data like the merchant ID (MID), store ID, terminal ID (TID), MCC etc.

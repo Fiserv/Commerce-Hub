@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges, sale, pre-auth]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, charges, payments, api-documents, api-reference, authorization, sale, pre-auth]
 ---
 
 # Charges
@@ -23,6 +23,9 @@ Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined 
 ## Minimum Requirements
 
 The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charge).
+
+<!--theme:info-->
+> A charge request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
 
 #### Object: amount
 

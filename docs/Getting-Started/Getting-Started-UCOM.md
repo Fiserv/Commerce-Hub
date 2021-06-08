@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, connected-commerce]
+---
+
 # Connected Commerce
 
 ## Overview

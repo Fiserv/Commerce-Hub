@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, subsequent-authorization-types]
+---
+
+
 # Subsequent Authorization Types
 
 ## Overview

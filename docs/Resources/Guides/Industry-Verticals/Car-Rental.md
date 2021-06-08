@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, car-rental]
+---
+
+
 # Car Rental
 
 ## Overview

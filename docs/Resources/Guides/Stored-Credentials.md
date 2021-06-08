@@ -1,3 +1,9 @@
+---
+tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
+---
+
+
+
 # Stored Credentials
 
 ## Overview

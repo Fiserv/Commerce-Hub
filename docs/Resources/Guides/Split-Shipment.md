@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, split-shipment, vault]
+---
+
+
 # Split Shipment
 
 ## Overview
@@ -41,7 +46,8 @@ title: Request
       "currency":"USD"
    },
    "transactionDetails":{
-      "captureFlag":true
+      "captureFlag":true,
+      "createToken": true
    },
    "transactionDetails":{
       "splitShipment":{

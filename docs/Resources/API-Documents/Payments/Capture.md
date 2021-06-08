@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, capture, settle, charges]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, capture, settle, payments, api-documents, post-auth, completion, api-reference,]
 ---
 
 # Capture
