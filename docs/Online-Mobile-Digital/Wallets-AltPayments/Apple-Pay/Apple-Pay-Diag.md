@@ -35,6 +35,10 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 
 ![Apple Pay RESTFul Integration](../../../../assets/images/apple-pay-restful.png)
 
+
+![Apple Pay RESTFul Integration](../../../../assets/images/19-March-Final-animation.gif)
+
+
 **Begin integration with [Apple Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md).**
 
 ### Web: Hosted Payment Page
