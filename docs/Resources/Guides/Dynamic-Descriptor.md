@@ -29,10 +29,10 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `mcc` | *string* |  | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
-| `merchantName` | *string* |  | Daynamic Merchant Name or DBA |
-| `customerServiceNumber` | *string* | | Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
-| `serviceEntitlement` | *string* | | Merchant Service Entitlement number |
+| `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
+| `merchantName` | *string* | 1024 | Daynamic Merchant Name or DBA |
+| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
+| `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
 | `address` | *component* |  | Merchant [Address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
 ---
