@@ -1,8 +1,10 @@
 ---
-tags: [carat, commerce-hub, glossary, acquiring-bank, aggregator, authorization, AVS, capture, card-network, card-not-present, pre-auth, sale, surcharge, soft-descriptor, tokenization]
+tags: [carat, enterprise, definition, commerce-hub, glossary, faq]
 ---
 
 # Glossary
+
+| A | B | C |
 
 ## 3-D Secure
 3-D Secure (3DS) is a technical standard that adds [security](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
@@ -491,7 +493,7 @@ A [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) transaction ch
 The process by which a merchant will receive or return funds for a transaction.
 
 ## Shopping Cart
-An API software that allows a customer to purchase goods and services and connects to Commerce Hub for transaction processing.
+An API software that allows a customer to purchase goods and services and connects to Commerce Hub for transaction processing. Also known as Web Storefront. 
 
 ## Silent Post
 A Payment Pages process where Commerce Hub transmits results to the merchant server but does not receive a response back.
@@ -514,9 +516,6 @@ The character that indicates the initial data position on the track of the card'
 ## Stock Keeping Unit
 Stock Keeping Unit (SKU) is a number used to uniquely identify a product.
 
-## Transport Layer Security
-Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL) is a cryptographic protocol designed to provide communications security over a computer network. Commerce Hub requires that integrations using our RESTful API have TLS to meet PCI compliance requirements.
-
 ## Surcharge Fees
 A surcharge, also known as checkout fee, is an extra fee charged by a merchant when receiving a payment by check or payment card. The surcharge covers the cost to the merchant for processing the payment, such as the merchant service fee imposed by a processor.
 
@@ -526,60 +525,42 @@ High-speed transmission; synchronous communications is the transmission and reco
 <!-- theme : warning -->
 > Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative.
 
-## Tagged Transaction
-A transaction that can be processed without sending the credit or debit card details (i.e. number, expiry, cardholder name).
-
 ## TeleCheck ECA
 The TeleCheck Electronic Check Acceptance® (ECA®) is a service that converts a paper check into an electronic item at the point of sale.
 
-## TKME
-Terminal Message Encryption working key is a Message Encryption Key used to encrypt and decrypt selected message elements, excluding PINs.
-
-## TKEK
-Terminal Key Encryption Key is used to encrypt and decrypt the working keys that are exchanged between the Host and the terminal.
-
-## TKPE
-Terminal PIN Encryption working key is a PIN Encryption Key used to protect PINs as they are transmitted.
-
-## TMAC
-Terminal Message Authentication Code (MAC) working key is a MAC Key used to authenticate selected data elements in messages.
+## Transport Layer Security
+Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL) is a cryptographic protocol designed to provide communications security over a computer network. Commerce Hub requires that integrations using our RESTful API have TLS to meet PCI compliance requirements.
 
 ## Transponder
 A transponder is a wireless communications device that picks up and automatically responds to an incoming signal. For payment systems it is used to communicate cardholder account information to a POS device.
 
-## Transaction Currency
-The three-digit code to designate the currency used in the transaction.
-
-## Transaction Processing
-The process enabling the clearing of purchases in an electronic environment such as the Internet. In the case of First Data Payeezy Gateway, we provide a means to process credit and debit card transactions.
-
-## Transaction Tag
-A unique numeric identifier generated for each transaction by the First Data Payeezy Gateway system.
-
 ## Triple DES
 Triple DES (3DES or TDES) is the Triple Data Encryption Algorithm (TDEA or Triple DEA) block cipher, which applies the Data Encryption Standard (DES) cipher algorithm three times to each data block.
 
-## Token
-A randomly generated number used to represent a card number for TransArmor transactions.
+## Payment Token
+A randomly generated number used to represent a payment source for [token transactions](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 ## Token Cryptogram
-A cryptogram generated using the Payment Token and additional transaction data to create a transaction-unique value.
+A cryptogram generated using the [Payment Token](#payment-token) and additional transaction data to create a transaction-unique value.
 
 ## Tokenization
 [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token, that has no extrinsic or exploitable meaning or value. In the payments industry, it is used to safeguard a card's PAN by replacing it with a unique string of numbers.
 
-## UNIX
-A general-purpose operating system that has become popular again since much of the Internet is hosted on UNIX systems. UNIX platforms can implement the First Data Payeezy Gateway Perl Module or Ruby Client Library.
+# U
 
-## UPC
-UPC is the barcode mainly used for scanning of trade items at the point of sale.
+## UNIX
+A general-purpose operating system that can implement a Perl Module or Ruby Client Library.
+
+## Universal Product Code
+Universal Product Code (UPC) is the barcode used for scanning of trade items at the point of sale.
+
+# V
 
 ## Voice Authorization
-The authorization procedure in which a merchant uses a standard telephone to request authorization from an acquirer center.
+The authorization procedure in which a merchant uses a standard telephone to request authorization from an acquirer center. This is used when the bank provides a call or referal response message or for offline processing. Once apprpoved, a [forced post](?path=docs/Resources/API-Documents/Payments/Forced.md) of transaction is required. 
 
 ## Void
-A type of transaction meant to correct an error or to accommodate a customer’s change of mind after the approval of the original transaction.
-Note: Voids are currently supported for debit transactions only.
+A void or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) is a type of transaction used to correct an error or to accommodate a customer’s change of mind after the approval of the original transaction. 
 
-## VPOS
-Virtual Point of Sale. A Point of Sale device where people can ring through sales online. RPM supplies all their merchants with a VPOS.
+## Virtual Point of Sale
+Virtual Point of Sale (VPOS) or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
