@@ -4,19 +4,21 @@ tags: [carat, enterprise, definition, commerce-hub, glossary, faq]
 
 # Glossary
 
-| A | B | C |
+| A | B | C | D | E \ F | G | H | I |J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
 
 ## 3-D Secure
 3-D Secure (3DS) is a technical standard that adds [security](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
 
+# A
+
 ## Access Token	
 A cryptographically secure credential that allows merchants to access the API.
 
-## Activation
-Notification to an issuer that a Prepaid card has been purchased and should be activated for cardholder usage.
-
 ## Access Control Server
 An Access Control Server (ACS) is a card issuer component in the 3-D Secure process.
+
+## Activation
+Notification to an issuer that a Prepaid card has been purchased and should be activated for cardholder usage.
 
 ## Acquirer
 The acquirer or acquiring bank is the bank or financial institution that processes credit or debit card transactions on behalf of a merchant. The acquirer sends the merchant's transactions to the customer's issuing bank through the card network.
@@ -48,14 +50,10 @@ Authorization is necessary to verify whether a customer's payment source has suf
 ## Auto-Substantiation
 The process of verifying that purchase transactions are for expenses permitted and eligible under Internal Revenue Service regulations for Flexible Spending Accounts (FSAs) and Healthcare Reimbursement Arrangements (HRAs).
 
-## Base URL	
-The Base URL is used to reach the installed shopping cart, e.g. https://mydomain.com/cart/ or https://shop.mydomain.com/.
+# B
 
 ## Bank Indentification Number
 The Bank Indentification Number (BIN) is the first 8 digits of the unique card number [Primary Account Number](#card-number) (PAN). Identifies the card network and the issuer. Sometimes referred to as the Issuer Identification Number (IIN).
-
-## B2B Invoice Payment
-B2B invoice payments are payments made between two merchants for goods or services. Digital B2B invoice payments solutions make it faster to issue, receive, and process payments.
 
 ## Bank Card Association
 A group of institutions formed for the purpose of sponsoring a bank card program and/or using a common processing and administrative center.
@@ -66,8 +64,16 @@ A 13 digit field that identifies the date in which the authorization record was 
 ## Banknet Reference Number
 Unique data element, assigned by Mastercard, which identifies an authorization transaction.
 
+## Base URL	
+The Base URL is used to reach the installed shopping cart, e.g. https://mydomain.com/cart/ or https://shop.mydomain.com/.
+
+## B2B Invoice Payment
+B2B invoice payments are payments made between two merchants for goods or services. Digital B2B invoice payments solutions make it faster to issue, receive, and process payments.
+
 ## Binary Synchronous
 Binary Synchronous (BISYNC) is a category of synchronous communications protocols.
+
+# C
 
 ## Capture
 The process of [charging](?path=docs/Resources/API-Documents/Payments/Capture.md) the customer's account for a previously authorized transaction. The issuer does this once the merchant sends a capture request, indicating that the purchased goods or services are ready for shipment to the customer.
@@ -87,6 +93,15 @@ A Card Security Code (CSC), Card Verification Data (CVD), Card Verification Numb
 ## Cardholder
 A person to whom a card has been issued or a person authorized to use a card.
 
+## Card Expiration Date
+The date beyond which the card may not be honored.
+
+## CashBack
+A transaction in which a cardholder obtains cash as part of the transaction.
+
+## Cash Advance
+A transaction in which a customer receives cash in-person which is posted against the customer's account.
+
 ## Customer Account
 The customer account associated with a customer account number or checking account number used in a payment request.
 
@@ -94,25 +109,10 @@ The customer account associated with a customer account number or checking accou
 The customer street address includes the street number and name. The [`street`](?path=docs/Resources/Master-Data/Address.md) field is part of the shipping address or billing address object.  
 
 ## Customer Zip/Postal Code
-Five or nine digit zip code of the customer's billing or shipping address. When the customer is international, this field contains the alphanumeric postal code. The [`postalCode`](?path=docs/Resources/Master-Data/Address.md) is part of the shipping address or billing address object.  
-
-## Security Code Indicator
-The `securityCodeIndicator` used to indicate the presence of a [card security code](#card-security-code) during a [verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) request.
-
-## Security Code Response
-The [value](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) returned as `securityCodeMatch` or `securityCodeResponse` from the issuing bank.
-
-## Cash Advance
-A transaction in which a customer receives cash in-person which is posted against the customer's account.
+Five or nine digit zip code of the customer's billing or shipping address. When the customer is international, this field contains the alphanumeric postal code. The [`postalCode`](?path=docs/Resources/Master-Data/Address.md) is part of the shipping address or billing address object.
 
 ## Check Digit
 The last digit of an account number that is calculated according to a predetermined formula and used to validate an account number.
-
-## "Code 10" Authorization
-A merchant's request for a "code 10" authorization is used to alert the authorization network (processor) that a suspicious transaction is occurring.
-
-## Conditioning
-The "tuning" or addition of equipment to improve the transmission characteristics or quality of a leased voice-grade line so that it meets specifications for data transmission.
 
 ## Chargeback
 A process by which a customer disputes the payment and often results in the money being refunded to the customer by the issuing bank unless the merchant can show the transaction is valid.
@@ -120,14 +120,14 @@ A process by which a customer disputes the payment and often results in the mone
 ## Customer Account
 Account connected to the financial institution that issued a payment card or checks.
 
-## Card Expiration Date
-The date beyond which the card may not be honored.
-
-## CashBack
-A transaction in which a cardholder obtains cash as part of the transaction.
-
 ## Closed Loop Prepaid Card
 Closed loop prepaid solutions are designed to be used only at the issuer’s locations. Examples of closed loop issuers include retail stores, casinos, oil companies, e-commerce businesses, telecommunications companies, and restaurants.
+
+## "Code 10" Authorization
+A merchant's request for a "code 10" authorization is used to alert the authorization network (processor) that a suspicious transaction is occurring.
+
+## Conditioning
+The "tuning" or addition of equipment to improve the transmission characteristics or quality of a leased voice-grade line so that it meets specifications for data transmission.
 
 ## Contactless Payments
 Contactless payments use radio frequency (RF), also known as Near Field Communication (NFC). The technology is used in payment cards and mobile devices. Contactless Payment Cards are similar to traditional cards except that they have a contactless chip. 
@@ -137,20 +137,21 @@ When a customer taps or waves a payment instrument at a merchant terminal equipp
 ## Credit Card
 A plastic card used to purchase goods and services and to obtain cash advances on credit for which the cardholder is subsequently billed by the issuing member for repayment of credit extended.
 
+## Component Object Model
+Component Object Model (COM) makes it easier to create components (pieces of code) or use preexisting components that can interact with other components and applications (using the object model). A big advantage is that these components can be written using a variety of computer languages.
+
 ## Credit Line
 The monetary amount of credit extended to a customer.
 
 ## Clearing
 The process where the merchant's processor withdraws or deposits funds from the customer's bank account.
-
-## Component Object Model
-Component Object Model (COM) makes it easier to create components (pieces of code) or use preexisting components that can interact with other components and applications (using the object model). A big advantage is that these components can be written using a variety of computer languages.
-
 ## Cryptogram
 A limited or single-use key (cipher) that encrypts the payment data. It is required to de-encrypt the payment data by the processor to continue processing the payment.
 
 ## Customer
 A person or company that buys goods or services from a merchant.
+
+# D
 
 ## Decline
 A response to a request for authorization in which approval is refused. A merchant receiving a decline should not complete the transaction
@@ -182,9 +183,6 @@ Identifies if the authorization requested is an initial, reauthorization, deferr
 ## Bill Payment Indicator
 Identifies if the bill payment requested is a recurring, instalment, or deferred.
 
-## Sandbox
-This environment is completely separate from the production environment. The sandbox will enable you to test apps prior to deploying them on the production server. 
-
 ## Developer Dashboard
 A web portal for managing your developer account, apps, and API credentials. 
 
@@ -209,11 +207,10 @@ Driver's license number of consumer, for Check Verification / Guarantee requests
 ## Days Rented
 The `daysRented` field is the length of the [car rental](?path=docs/Resources/Guides/Industry-Verticals/Car-Rental.md) and is required in car and auto rental custom payment service transactions.
 
-## Number of Nights
-The `numberOfNights` field is the length of the [lodging stay](?path=docs/Resources/Guides/Industry-Verticals/Lodging.md) and is required in hotel and lodging custom payment service transactions.
-
 ## Dynamic Descriptor
 A [custom descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md) you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
+
+# E
 
 ## Echo
 The return of transmitted data.
@@ -245,6 +242,8 @@ The date embossed on the card beyond which the card is not valid to be used. Gen
 ## Existing Debt Indicator
 Identifies the transaction as payment of an existing debt obligation, such as a car loan payment.
 
+# F
+
 ## Firewall
 A system between networks that filters data passing through it and removes unauthorized traffic, thus enhancing the network's security.
 
@@ -275,8 +274,12 @@ A communications channel that transmits in both directions at the same time.
 ## Floor Limit
 A maximum monetary amount above which a particular transaction requires authorization.
 
+# G
+
 ## Gateway
 A gateway is a program or piece of hardware that passes data between networks.
+
+# H
 
 ## Hard Descriptor
 The descriptor that shows up after a transaction has settled. As soon as the customer's bank has finalized the transaction status, the hard descriptor will be permanently displayed as the description of the charge on the customer’s statement.
@@ -295,6 +298,8 @@ Process where the host (e.g. Commerce Hub) closes and settles batches on behalf 
 
 ## Host Security Module
 A Host Security Module (HSM) is a hardware device that safeguards and manages digital keys for strong authentication and provides cryptoprocessing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
+
+# I
 
 ## Idempotency
 A property of an operation that states that clients can make that same call repeatedly while producing the same result. Our REST API uses the client_request_id element to ensure idempotency on transaction requests.
@@ -317,14 +322,16 @@ Internet Protocol (IP) defines how information gets passed between systems acros
 ## Internet Service Provider
 Internet Service Provider (ISP) is a company that provides individuals and businesses with access to the Internet. Many ISPs also provide website hosting services.
 
-## Issuing Bank
-The issuing bank also known as the customer's bank, issues a payment card or checks to an individual.
-
 ## Independent Software Vendor
 Independent Software Vendor (ISV) term may also refer to the vendor’s software developer.
 
 ## Integrated Voice Response
 Integrated Voice Response (IVR) technology creates automatic message selections through phone systems.
+
+## Issuing Bank
+The issuing bank also known as the customer's bank, issues a payment card or checks to an individual.
+
+# L
 
 ## Leased Line
 Dedicated communications channel leased from a common carrier; leased lines usually can handle greater transmission speeds than the dial-up telephone system. Leased lines from the telephone company can be "conditioned" (electronically fine-tuned), which can reduce transmission error rates.
@@ -346,6 +353,8 @@ A bank card that has been reported to the credit issuer as lost or misplaced by 
 
 ## Luhn Check
 The Luhn algorithm or Luhn formula, also known as the "modulus 10" or "mod 10" algorithm, is a simple checksum formula used to validate credit card numbers.
+
+# M
 
 ## Magnetic Stripe
 A stripe of magnetic information affixed to the back of a plastic credit (or debit/EBT) card. The magnetic stripe contains essential customer and account information. See also [Track I/II](#).
@@ -413,6 +422,8 @@ A communication line system having more than one terminal connected to the same 
 ## Merchant Verification Value
 Merchant Verification Value (MVV) is an identifier assigned by Visa to identify a merchant who is registered with Visa for specific fees, special interchange treatment, or participation in select acceptance programs.
 
+# N
+
 ## National Association
 MasterCard International or Visa International, which are licensing and regulatory agencies for bank card activities.
 
@@ -425,14 +436,23 @@ A reference number supplied by the debit network providing the response. It is u
 ## Network Response
 Ancillary data, obtained in the authorization process, which is used internally by First Data.
 
+## Number of Nights
+The `numberOfNights` field is the length of the [lodging stay](?path=docs/Resources/Guides/Industry-Verticals/Lodging.md) and is required in hotel and lodging custom payment service transactions.
+
+# O
+
 ## On-Us Transaction
 A transaction in which both the cardholder and the merchant are signed by the same member.
+
+# P
 
 ## Partial Authorization
 Commerce Hub can return a [partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) if the transaction amount exceeds the customer’s payment source limit. 
 
 ## Payment Token
 A cryptographically secure representation of payment instrument details for use with subsequent payment transactions. This token may be generated for a single or multiple use. Through a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), the merchant does not need to store sensitive payment details on their servers.
+## Payment Token
+A randomly generated number used to represent a payment source for [token transactions](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 ## Payment Card Industry Data Security Standard
 Payment Card Industry Data Security Standard (PCI DSS) is the published security standards for the handling of payment card data.
@@ -455,6 +475,8 @@ The main independent transactions between a customer and a merchant. Commerce Hu
 ## Prepaid Closed Loop
 Prepaid Closed Loop is a [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) product that is designed to only be used at the merchant's locations. Closed Loop payment schemes allow companies to reward loyalty and increase customer intimacy. 
 
+# R
+
 ## Recurring Transaction
 A transaction where the merchant charges for goods or services at a defined frequency (for example, a monthly subscription.)
 
@@ -475,6 +497,17 @@ A dynamic, reflective, general purpose object-oriented programming language. Rub
 
 ## Ruby on Rails
 An open source web application framework for the Ruby programming language. It is often referred to as 'Rails' or 'RoR'. It is intended to be used with an Agile development methodology, which is often utilized by web developers for its suitability for short, client-driven projects.
+
+# S
+
+## Sandbox
+This environment is completely separate from the production environment. The sandbox will enable you to test apps prior to deploying them on the production server. 
+
+## Security Code Indicator
+The `securityCodeIndicator` used to indicate the presence of a [card security code](#card-security-code) during a [verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) request.
+
+## Security Code Response
+The [value](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) returned as `securityCodeMatch` or `securityCodeResponse` from the issuing bank.
 
 ## Sale
 A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided [(cancel)](?path=docs/Resources/API-Documents/Payments/Cancel.md) before batching, the merchant funding process begins for this charge. At this point, the merchant can still return funds [(refund)](?path=docs/Resources/API-Documents/Payments/Refund.md) the customer.
@@ -525,6 +558,8 @@ High-speed transmission; synchronous communications is the transmission and reco
 <!-- theme : warning -->
 > Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative.
 
+# T
+
 ## TeleCheck ECA
 The TeleCheck Electronic Check Acceptance® (ECA®) is a service that converts a paper check into an electronic item at the point of sale.
 
@@ -536,9 +571,6 @@ A transponder is a wireless communications device that picks up and automaticall
 
 ## Triple DES
 Triple DES (3DES or TDES) is the Triple Data Encryption Algorithm (TDEA or Triple DEA) block cipher, which applies the Data Encryption Standard (DES) cipher algorithm three times to each data block.
-
-## Payment Token
-A randomly generated number used to represent a payment source for [token transactions](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 ## Token Cryptogram
 A cryptogram generated using the [Payment Token](#payment-token) and additional transaction data to create a transaction-unique value.
