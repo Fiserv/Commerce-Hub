@@ -4,7 +4,9 @@ tags: [carat, enterprise, definition, commerce-hub, glossary, faq]
 
 # Glossary
 
-| A | B | C | D | E \ F | G | H | I |J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+| [#](#0-9) | [A](#a)| [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [J](#j) | [K](#k) | [L](#l) | [M](#m) | [N](#n) | [O](#o) | [P](#p) | [Q](#q) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w) | X | [Y](#y) | Z |
+
+# 0-9
 
 ## 3-D Secure
 3-D Secure (3DS) is a technical standard that adds [security](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
