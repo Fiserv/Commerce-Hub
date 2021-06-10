@@ -1,6 +1,4 @@
----
-tags: [carat, commerce-hub, apple-pay, wallet,]
----
+<link href="test.css" rel="stylesheet"></link> 
 
 # Apple Pay Updated
 
@@ -34,6 +32,8 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
 ![Apple Pay RESTFul Integration](../../../../assets/images/apple-pay-restful.png)
+
+![Apple Pay RESTFul Integration](../../../../assets/images/apple-pay-restful.png#thumbnail)
 
 ![Apple Pay RESTFul Integration](../../../../assets/images/19-March-Final-animation.gif)
 
