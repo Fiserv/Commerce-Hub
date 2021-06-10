@@ -1,4 +1,4 @@
-<link href="docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/test.css" rel="stylesheet"></link> 
+<link href="test.css" rel="stylesheet"></link> 
 
 # Apple Pay Updated
 
@@ -32,6 +32,8 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
 ![Apple Pay RESTFul Integration](../../../../assets/images/apple-pay-restful.png)
+
+another way
 
 ![Apple Pay RESTFul Integration](../../../../assets/images/apple-pay-restful.png#thumbnail)
 
