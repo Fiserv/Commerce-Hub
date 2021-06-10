@@ -1,4 +1,4 @@
-<link href="test.css" rel="stylesheet"></link> 
+<link href="docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/test.css" rel="stylesheet"></link> 
 
 # Apple Pay Updated
 
