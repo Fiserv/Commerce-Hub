@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud, transaction-restrictions]
+---
+
+
 # Transaction Restrictions
 
 ## Overview

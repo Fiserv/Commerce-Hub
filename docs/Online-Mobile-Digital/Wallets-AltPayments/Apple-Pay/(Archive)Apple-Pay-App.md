@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-inapp-integration]
+tags: [carat, commerce-hub, enterprise, apple-pay-in-app-integration, digital wallet, create-merchant-identifier, enable-apple-pay-in-the-app, create-payment-processing-certificate, set-up-project-in-xcode, submit-a-payment-request, submit-a-charge-request]
 ---
 
 # Apple Pay: In-App Integration
@@ -18,7 +18,7 @@ First create a merchant identifier in your developer account that uniquely ident
 
 <!-- theme: warning -->
 >
-> After Merchant Identifier is created, you will need us to generate the certificate for you using the Merchant Identifier. Please contact our Account Representative in order to get the certificate.
+> After the Merchant Identifier is created, you will need us to generate the certificate for you using the Merchant Identifier. Please contact our Account Representative in order to get the certificate.
 
 ---
 

@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, airline, card-rental, ecommerce, lodging, payment-facilitator, petro, quick-service-restaurants, retail]
+---
+
+
 # Industry Verticals
 
 ## Overview

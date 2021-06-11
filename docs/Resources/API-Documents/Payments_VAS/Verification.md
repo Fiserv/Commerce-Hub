@@ -18,12 +18,12 @@ The merchant can perform account verification transaction to confirm that the ca
 
 ## PaymentCard Requirements
 
-#### Component: source
+#### Object: source
 
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](?path=docs/Guides/Payment-Sources/Source-Type.md) for more details. |
-|`cardData`| *string* | 19 | Encrypted or unencrypted [card data](?path=docs/Resources/Master-Data/Card.md) (e.g. PAN, EMV, Track, etc.). |
+| Variable | Type | Maximum Length | Description/Values |
+| --------- | ---------- | ---------------- | --------- |
+| `sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](?path=docs/Guides/Payment-Sources/Source-Type.md) for more details. |
+| `cardData` | *string* | 19 | Encrypted or unencrypted [card data](?path=docs/Resources/Master-Data/Card.md) (e.g. PAN, EMV, Track, etc.). |
 
 <!--theme:info-->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
@@ -43,6 +43,7 @@ title: Request
       "sourceType":"PaymentCard",
       "card":{
          "cardData":"4005550000000019",
+         "nameOnCard":"Jane Smith",
          "expirationMonth":"02",
          "expirationYear":"2035"
       }
@@ -72,15 +73,15 @@ title: Response
          "transactionId":"838916029301"
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentCard",
       "card":{
+         "cardData":"4005550000000019",
          "nameOnCard":"Jane Smith",
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
          "last4":"0019",
-         "scheme":"VISA"
       }
    }
 }
@@ -91,9 +92,9 @@ title: Response
 
 ## PaymentToken Requirements
 
-#### Component: source
+#### Object: source
 
-Variable | Type| Maximum Length | Description/Values|
+| Variable | Type | Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 
@@ -110,8 +111,16 @@ title: Request
 ```json
 {
    "source":{
-      "sourceType":"PaymentToken",
-      "tokenData":"1234123412340019"
+      "sourceType": "PaymentToken",
+      "tokenData": "1234123412340019",
+      "tokenSource": "TRANSARMOR",
+      "card":{
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "05",
+         "expirationYear": "2025",
+         "bin": "400555",
+         "last4": "0019"
+      }
    }
 }
 ```
@@ -138,7 +147,7 @@ title: Response
          "transactionId":"838916029301"
       }
    },
-   "paymentSource":{
+   "source":{
       "sourceType":"PaymentToken",
       "card":{
          "nameOnCard":"Jane Smith",
@@ -152,7 +161,7 @@ title: Response
    "paymentToken":{
       "tokenData":"1234123412340019",
       "PARId":"string",
-      "declineDuplicates":"FALSE",
+      "declineDuplicates":"false",
       "tokenSource":"TRANSARMOR"
    }
 }
@@ -166,7 +175,8 @@ title: Response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+
 
 ---

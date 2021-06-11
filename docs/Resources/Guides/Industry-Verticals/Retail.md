@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, retail]
+---
+
+
 # Retail
 
 ## Overview

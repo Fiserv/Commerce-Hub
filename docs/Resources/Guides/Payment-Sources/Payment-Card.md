@@ -1,6 +1,7 @@
 ---
-tags: [Source-Type, carat, commerce-hub]
+tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 ---
+
 
 # PaymentCard
 
