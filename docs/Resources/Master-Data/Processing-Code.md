@@ -1,6 +1,9 @@
-# Processing Codes
+---
+tags: [carat, commerce-hub, enterprise, master-data, processing-codes]
+---
 
-## Overview
+
+# Processing Codes
 
 A set of numbers that describe the type of the transaction as well as the account type being used. Required on all transaction requests and upload detail records.
 

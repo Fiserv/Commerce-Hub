@@ -1,29 +1,26 @@
 ---
-tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-inapp-integration]
+tags: [carat, commerce-hub, enterprise, card-not-present, configure, in-app-integration, transaction-flow, restful-api-integration, presenting-the-payment-sheet, set-up-project-in-xcode, support-apple-pay-on-the-web, apple-pay, wallet, app, web]
 ---
 
 # Apple Pay
 
 ## Overview
 
-Our API allows developers to quickly enable secure and convenient payments in their payment applications. The API handles all of the tokenization needed to protect customers’ transactions.
+Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
 
-Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
+<!-- theme: info -->
+>Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
 
 ---
 
-## Apple Pay Integration Methods
-
-Select an option below to see the integration steps.
-
-### Apple Pay on the Web: RESTful API
+## Web: RESTful API Integration
 
 Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Apple Pay. The merchant will host the payment processing on their server and has full control over the look and feel. 
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
-#### Transaction Flow
+### Transaction Flow
 
 1. The customer selects checkout from the merchant's website and the merchant’s payment form displays.
 2. The customer selects Apple Pay and the Apple Pay payment form displays.
@@ -31,42 +28,6 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 4. The customer selects to complete the transaction.
 5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
-
-#### Begin integration with [Apple Pay on the Web: RESTful API](#WebRESTfulAPIIntegration).
-
-### Apple Pay on the Web: Hosted Payment Page
-
-Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
-
-#### Transaction Flow
-
-1. Customer selects checkout from the merchant's website.
-2. Customer then presented with the Commerce Hub's secure Hosted Payment Page.
-3. Customer selects Apple Pay and then redirected to the Apple Pay payment form.
-4. Customer completes the apple pay form and then redirected to the Hosted Payment Page.
-5. Customer selects to complete the transaction.
-6. Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
-7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
-
-#### Begin integration with [Apple Pay on the Web: Hosted Payment Page](#WebHostedPaymentPage).
-
-### Apple Pay Integration In-App
-
-Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Apple Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
-
-#### Transaction Flow
-
-1. Customer selects checkout from the merchant's App.
-2. Customer then presented with the merchant's payment form.
-3. The App calls the Apple Pay framework to obtain the encrypted wallet data.
-4. Merchant's App submits the encrypted Apple Pay payload to Commerce Hub.
-5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
-
-#### Begin integration with [Apple Pay Integration In-App](#InAppIntegration).
-
----
-
-## Web: RESTful API Integration
 
 ### Step 1: Configure Apple Pay on the Web
 
@@ -186,6 +147,17 @@ title: Response
 
 ## Web: Hosted Payment Page
 
+Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
+
+### Transaction Flow
+
+1. The customer selects checkout from the merchant's website and Commerce Hub's secure Hosted Payment Page displays.
+2. The customer selects Apple Pay and the Apple Pay payment form displays.
+3. The customer completes the Apple Pay form and returns to the Hosted Payment Page.
+4. The customer selects to complete the transaction.
+5. The Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
+6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
+
 ### Step 1: Configure Apple Pay on the Web
 
 The Apple developer account will need to be configured with the merchant information to accept [Apple Pay on the web](https://help.apple.com/developer-account/#/dev1731126fb). This includes creating a merchant identifier, creating a processing certificate, registering the merchant and creating a merchant identity certificate.
@@ -206,7 +178,16 @@ The merchant can enhance the purchase experience from their website by creating 
 
 ## In-App Integration
 
-### Step1: Configure Apple Pay in App
+Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Apple Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
+
+### Transaction Flow
+
+1. The customer selects checkout from the merchant's app and the merchant’s payment form displays.
+2. The app calls the Apple Pay framework to obtain the encrypted wallet data.
+3. The merchant’s app submits the encrypted Apple Pay payload to Commerce Hub.
+4. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
+
+### Step 1: Configure Apple Pay in App
 
 Configure Apple developer account with merchant information to accept [Apple Pay in the App](https://help.apple.com/developer-account/#/devb2e62b839). This includes creating a merchant identifier, enabling Apple Pay in App and creating a processing certificate.
 

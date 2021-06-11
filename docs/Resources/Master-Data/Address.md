@@ -1,67 +1,161 @@
+---
+tags: [carat, commerce-hub, enterprise, customer-address, billing-address, master-data, shipping-address, shipping-method]
+---
+
+
 # Customer Address
 
-## Overview
-
-A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and `shippingAddress` information in the request by using the following fields.
+A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
 
 ---
 
 ## Billing Address
 
-Is an address connected to the customer's [payment method](../Guides/Payment-Sources/Source-Type.md).
+Is the address connected to the customer's [payment method](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) and can be used for [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md).
 
-#### Component: billingAddress
+
+<!--
+type: tab
+title: billingAddress
+-->
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer first name. |
-| `lastName` | *string* |  | Customer last name. |
-| `address` | *array* |  | Billing [address](#subcomponent-address) details. |
-| `phone` | *array* |  | Customer [phone](Customer-Details.md#subcomponent-phone) details. |
+| `firstName` | *string* | 256 | Customer first name. |
+| `lastName` | *string* | 256 | Customer last name. |
+| `address` | *object* |  | Billing [address](#address) details. |
+| `phone` | *object* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "billingAddress":{
+      "firstName": "John",
+      "lastName": "Doe",
+      "address":{
+         "street": "123 Main St.",
+         "houseNumberOrName": "Apt 1",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
+      },
+      "phone":{
+         "countryCode": "1",
+         "phoneNumber": "123-123-1234",
+         "type": "DAY"
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
+
 
 ---
 
 ## Shipping Address
 
-Is an address where merchant will send the order. 
+Is the address or email where the merchant will deliver the goods or services.
 
-#### Component: shippingAddress
+<!--
+type: tab
+title: shippingAddress
+-->
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `firstName` | *string* |  | Shipping contact first name. |
-| `lastName` | *string* |  | Shipping contact last name.|
-| `shippingMethod` | *string* |  | [Shipping and delivery method](#shipping-method-valid-values).|
-| `address` | *array* |  | Shipping [address](#subcomponent-address) details. |
-| `phone` | *array* |  | Shipping contact [phone](Customer-Details.md#subcomponent-phone) details. |
+| `firstName` | *string* | 256  | Shipping contact first name. |
+| `lastName` | *string* | 256 | Shipping contact last name.|
+| `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method).|
+| `shipToEmail` | *string* | 13 | Email on a digital delivery transaction. |
+| `address` | *object* |  | Shipping [address](#address) details. |
+| `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "shippingAddress":{
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "shippingMethod": "SAME_DAY",
+      "shipToEmail": "customer@domain.com",
+      "address":{
+         "street": "112 Main St.",
+         "houseNumberOrName": "Apt 112",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
+      },
+      "phone":{
+         "countryCode": "1",
+         "phoneNumber": "123-123-1234",
+         "type": "DAY"
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ### Shipping Method
 
-#### Object: shippingMethod
-
 | Value | Description |
 | ----- | ----------- |
-| SAME_DAY | Same day shipping |
-| OVERNIGHT | Next day shipping |
-| PRIORITY | Shipping within 2-3 days |
-| GROUND | Shipping within 4 days |
-| ELECTRONIC | Email or digital goods |
-| SHIP_TO_STORE | Ship to store |
+| *SAME_DAY* | Same day shipping |
+| *OVERNIGHT* | Next day shipping |
+| *PRIORITY* | Shipping within 2-3 days |
+| *GROUND* | Shipping within 4 days |
+| *ELECTRONIC* | Email or digital goods |
+| *SHIP_TO_STORE* | Ship to store |
 
 ---
 
 ## Address
 
-#### Subcomponent: address
+Common `address` object used in both the billing address and shipping address.
+<!--
+type: tab
+title: address
+-->
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `street` | *string* |  | Street name |
-| `houseNumberOrName` | *string* |  | House number or name |
-| `city` | *string* |  | City or locality |
-| `stateOrProvince` | *string* |  | State or Province name |
-| `postalCode` | *string* |  | Postal code |
-| `country` | *string* |  | [Country Code](?path=docs/Resources/Master-Data/Country-Code.md)|
+| `street` | *string* | 256 | Street address. |
+| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name. |
+| `city` | *string* | 256 | City or locality. |
+| `stateOrProvince` | *string* | 256 | State or province name. |
+| `postalCode` | *string* | 10 | Postal code. |
+| `country` | *string* | 256 | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "address":{
+      "street": "112 Main St.",
+      "houseNumberOrName": "Apt 213",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US"
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 

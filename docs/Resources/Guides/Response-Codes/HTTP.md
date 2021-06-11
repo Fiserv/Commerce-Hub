@@ -1,15 +1,18 @@
 ---
-tags: [carat, card-not-present, commerce-hub, error, http-response-code, response-code, card-present]
+tags: [carat, card-not-present, commerce-hub, error, http-response-code, response-codes, card-present]
 ---
 
 # HTTP Status Codes
 
 ## Overview
-Commerce Hub responds back to the merchant request with a three-digit HTTP status code grouped in to three different classes. Its first digit can quickly identify the class of a status code:
+Commerce Hub responds back to the merchant request with a three-digit HTTP status code grouped in to three different classes. The first digit can be used to quickly identify the class of a status code:
 
 - **2xx: Success** – Indicates that the request was accepted successfully.
 - **4xx: Client Error** – Indicates that incorrect data in request.
 - **5xx: Server Error** – Indicates that the server was unable to process the request.
+
+<!-- theme: info -->
+> Commerce Hub includes an HTTP error status in the `errorResponse` along with the corresponding text in `type`, `code`, `field` and `message` in the `error` array.
 
 ---
 
@@ -33,6 +36,8 @@ type: tab
 title: 4xx
 -->
 
+<!-- Add new responses and edit the payload example as well -->
+
 ##### Client Error Status code, description and resolution
 
 | Code | Message  | Description | Resolution |
@@ -41,6 +46,12 @@ title: 4xx
 | 401 | Unauthorized | Indicates that the request requires user authentication information. | The merchant may repeat the request with a suitable Authorization header field. |
 | 403 | Forbidden | Unauthorized request. The merchant does not have access rights to the content. | Please contact Account Representative for an access. |
 | 404 | Not Found | Commerce Hub can not find the requested resource. | Please check API Explorer for more information. |
+| 408 | Request Time Out | The response to the request did not received till set period time. | Please try after some time. |
+| 415 | Unsupported Media Type | Commerce Hub not able to process the supplied media type, as indicated by the Content-Type request header. | Merchant to correct the data and resend. |
+| 425 | Too Early | The request was sent too early | Merchant to wait for sometime and send request. |
+| 429 | Too Many Requests | Merchant had sent too many requests in a given amount of time. | Merchant to wait for sometime and send request. |
+
+
 
 <!--
 type: tab
@@ -53,7 +64,7 @@ title: 5xx
 | --------- | ---- | ------ | ------- |
 | 500 | Internal Server Error | Commerce Hub encountered an unexpected condition which prevented it from fulfilling the request. | Report the error to Commerce Hub support team. |
 | 503 | Service Unavailable | The application server is not ready to handle the request. | Please try after sometime. |
-
+| 504 | Gateway Timeout | Commerce Hub did not received response from upstream application.. | Please try after sometime. |
 
 <!-- type: tab-end -->
 
@@ -70,22 +81,23 @@ title: Error Response
 
 ```json
 {
-   "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-   "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-   "responseType":"BadRequest",
-   "error":{
-      "code":"INVALID_INPUT",
-      "message":"Invalid request input. Please see details below.",
-      "details":[
-         {
-            "field":"payloadObjectType",
-            "message":"Payload object type missing."
+   "errorResponse":{
+      "gatewayResponse":{
+         "transactionProcessingDetails":{
+            "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+            "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
          }
-      ]
+      },
+      "error":{
+         "type": "GATEWAY",
+         "code": "400",
+         "field": "sourceType",
+         "message": "Missing type ID property."
+      }
    }
 }
-
 ```
+
 <!-- type: tab-end -->
 
 ---

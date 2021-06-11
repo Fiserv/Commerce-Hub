@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+---
+
+
 # Payment.JS Integration
 
 ## Overview
@@ -20,8 +25,8 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Enable Re-Captcha
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
-- Follow [fraud best practices](../../Guides-Info/Fraud/Fraud-Settings.md) for the business type or payment flow
+- Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
 ## Next Steps
 
-- [Sequence Flow](Sequence-Flow.md)
+- [Sequence Flow](?path=docs/Online-Mobile-Digital/Payment-JS/Sequence-Flow.md)

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, google-pay, wallet]
+tags: [carat, commerce-hub, enterprise, start-accepting-google-pay-transactions, google-pay-on-the web-restful-api, google-pay-on-the-web-hosted-payment-page, transaction-flow google-pay, wallet]
 ---
 
 # Google Pay

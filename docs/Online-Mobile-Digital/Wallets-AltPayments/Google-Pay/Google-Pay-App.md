@@ -1,12 +1,12 @@
 ---
-tags: [carat, commerce-hub, google-pay, wallet, google-pay-inapp-integration]
+tags: [carat, commerce-hub, enterprise, congigure-google-pay-in-app, submit-a payment-request, google-pay, wallet, google-pay-inapp-integration]
 ---
 
 # Google Pay: In-App Integration
 
 #### Google Pay on the App
 
-## Step1: Configure Google Pay in App
+## Step 1: Configure Google Pay in App
 
 The merchant will need to be do the changes in their [App to integrate with Google Pay](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API Version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler etc.
 
@@ -45,7 +45,7 @@ title: Response
 ##### Example of a Charge (201: Created) Response.
 
 <!-- theme: info -->
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
    "gatewayResponse":{

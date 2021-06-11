@@ -1,23 +1,54 @@
-# Gateway Response
+---
+tags: [carat, commerce-hub, enterprise, commerce-hub-response, master-data]
+---
 
-## Overview
+# Commerce Hub Response
 
-The Gateway Response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
+The Commerce Hub Response contains the response parameters for any successful or unsuccessful transaction.
 
-#### Component: gatewayResponse
 
-| Variable | Type | Length | Description/Values |
+## Gateway Response
+
+<!--
+type: tab
+title: gatewayResponse
+-->
+
+| Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `transactionOrigin` | *string* | | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origins). |
-| `transactionProcessingDetails` | *array* | | Array containing the [transaction processing details](#transaction-processing-details). |
-| `transactionState` | *string* | | Final [state](#transaction-state) of the transaction. |
-| `transactionType` | *string* | | Type of transaction submitted. |
+| `transactionType` | *string* | 256 | Type of transaction submitted. |
+| `transactionState` | *string* | 256 | Final [state](#transactionstate) of the transaction. |
+| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
+| `transactionProcessingDetails` | *object* | | Array containing the [transaction processing details](#transaction-processing-details). |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "gatewayResponse":{
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZE",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+         "transactionDate": "2016-04-16",
+         "transactionTime": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
+      }
+   }
+}
+```
+
+<!--type: tab-end -->
 
 ---
 
 ### Transaction State
-
-#### Object: transactionState
 
 | Value | Description |
 |-------|-------------|
@@ -31,26 +62,49 @@ The Gateway Response contains the response parameters from the Commerce Hub for 
 
 ---
 
-## Transaction Processing Details
+### Transaction Processing Details
 
-#### Subcomponent: transactionProcessingDetails
+<!--
+type: tab
+title: transactionProcessingDetails
+-->
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `apiTraceId` | *string* | 64 | Request identifier in API, can be used to request logs from the support team. |
-| `clientRequestId` | *string* | 64 | Echoes back the value in the request header for tracking. |
 | `orderId` | *string* | 64 | Order identifier returned in the parameter orderId from a Charge trasaction. |
 | `transactionDate` | *string* | 64 | Date the transaction occured. |
-| `transactionId` | *string* | 64 | Unique identifier for each transaction on the Gateway. This value will be populated for the secondary transaction from the path. |
 | `transactionTime` | *string* | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ.
+| `apiTraceId` | *string* | 64 | Request identifier in API, can be used to request logs from the support team. |
+| `clientRequestId` | *string* | 64 | Echoes back the value in the request header for tracking. |
+| `transactionId` | *string* | 64 | Unique identifier for each transaction on the Gateway. This value will be populated for the secondary transaction from the path. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+   "transactionProcessingDetails":{
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionDate": "2016-04-16'",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7'",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+   }
+}
+```
+
+<!--type: tab-end -->
 
 ---
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
-- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 
 ---

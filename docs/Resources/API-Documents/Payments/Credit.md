@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, credit, payments, api-documents, api-reference, authorization, sale, pre-auth]
+---
+
+
 # Credit
 
 ## Overview
@@ -123,7 +128,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/credit)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 

@@ -1,10 +1,8 @@
 - sections:
   - title: Getting Started
     link: docs/Getting-Started/Getting-Started-General.md
-    open: false
 - sections:
   - title: In-Person
-    open: false
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-InPerson.md
@@ -20,7 +18,6 @@
       link: docs/In-Person/NFC/Contactless-QR.md
 - sections:
   - title: Online/Digital/Mobile
-    open: false
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-Online.md
@@ -34,202 +31,68 @@
       link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
     - title: Virtual Terminal
       link: docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md
-      open: false
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
-      link: docs/Getting-Started/Getting-Started-Wallets.md
-      open: false
-      sections:
-      - title: Apple Pay
-        open: false
-        articles:
-        - title: Integrations
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
-        - title: In-App
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md
-        - title: Web - RESTful API
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md
-        - title: Web - Hosted Payment Page
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md
-      - title: Google Pay
-        open: false
-        articles:
-        - title: Integrations
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
-        - title: In-App Payments
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md
-        - title: Web - RESTful API
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md
-        - title: Web - Hosted Payment Page
-          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md
-- sections:
-  - title: Omnicommerce
-    link: docs/Getting-Started/Getting-Started-UCOM.md
-    open: false
-- sections:
-  - title: Resources
-    open: false
-    sections:
-    - title: API Documents
-      open: false
-      sections:
-      - title: User Our APIs
-        link: docs/Resources/API-Documents/Use-Our-APIs.md
-      - title: Authentication Header
-        link: docs/Resources/API-Documents/Authentication-Header.md
-      - title: Environments
-        link: docs/Resources/API-Documents/Environments.md
-      - title: Payments
-        open: false
-        articles:
-        - title: Charges
-          link: docs/Resources/API-Documents/Payments/Charges.md
-        - title: Capture
-          link: docs/Resources/API-Documents/Payments/Capture.md
-        - title: Cancel
-          link: docs/Resources/API-Documents/Payments/Cancel.md
-        - title: Refund
-          link: docs/Resources/API-Documents/Payments/Refund.md
-        - title: Credit
-          link: docs/Resources/API-Documents/Payments/Credit.md
-        - title: Forced Post
-          link: docs/Resources/API-Documents/Payments/Forced.md
-      - title: Payments VAS
-        open: false
-        articles:
-        - title: Account Verification
-          link: docs/Resources/API-Documents/Payments_VAS/Verification.md
-        - title: Information Lookup
-          link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
-        - title: Tokenization
-          link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-        - title: Transaction Inquiry
-          link: docs/Resources/API-Documents/Payments/Inquiry.md
-    - title: Guides
-      open: false
-      sections:
-      - title: Fraud Controls
-        open: false
-        articles:
-        - title: Fraud Settings
-          link: docs/Resources/Guides/Fraud/Fraud-Settings.md
-        - title: Address Verification
-          link: docs/Resources/Guides/Fraud/Address-Verification.md
-        - title: Security Code
-          link: docs/Resources/Guides/Fraud/Security-Code.md
-        - title: AVS and CVV Filters
-          link: docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
-        - title: Restrictions
-          link: docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
-        - title: Velocity Controls
-          link: docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
-        - title: Fraud Detect
-          link: docs/Resources/Guides/Fraud/Fraud-Detect.md
-      - title: Industry and Verticals
-        link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
-        open: false
-        articles:
-        - title: Airline
-          link: docs/Resources/Guides/Industry-Verticals/Airline.md
-        - title: Car Rental
-          link: docs/Resources/Guides/Industry-Verticals/Car-Rental.md
-        - title: Lodging
-          link: docs/Resources/Guides/Industry-Verticals/Lodging.md
-        - title: Multi Acquiring
-          link: docs/Resources/Guides/Industry-Verticals/Multi-Acquiring.md
-        - title: Payment Faciliator
-          link: docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md
-        - title: Petroleum
-          link: docs/Resources/Guides/Industry-Verticals/Petro.md
-        - title: Quick Service Restaurant
-          link: docs/Resources/Guides/Industry-Verticals/QSR.md
-        - title: Retail
-          link: docs/Resources/Guides/Industry-Verticals/Retail.md
-        - title: eCommerce
-          link: docs/Resources/Guides/Industry-Verticals/eCommerce.md
-      - title: Payment Sources
-        open: false
-        articles:
-        - title: Source Types
-          link: docs/Resources/Guides/Payment-Sources/Source-Type.md
-        - title: Gift Card
-          link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
-        - title: Network Token
-          link: docs/Resources/Guides/Payment-Sources/Network-Token.md
-        - title: Payment Card
-          link: docs/Resources/Guides/Payment-Sources/Payment-Card.md
-        - title: Private Label
-          link: docs/Resources/Guides/Payment-Sources/Private-Label.md
-        - title: TeleCheck
-          link: docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
-        - title: Split Tender
-          link: docs/Resources/Guides/Payment-Sources/Split-Tender.md
-      - title: Response Codes
-        open: false
-        articles:
-        - title: Bank/Issuer
-          link: docs/Resources/Guides/Response-Codes/Bank-Issuer.md
-        - title: Gateway
-          link: docs/Resources/Guides/Response-Codes/Gateway.md
-        - title: HTTP
-          link: docs/Resources/Guides/Response-Codes/HTTP.md
-      - title: Subsequent Authorization
-        open: false
-        articles:
-        - title: Authorization Types
-          link: docs/Resources/Guides/Authorizations/Authorization-Types.md
-        - title: Deferred
-          link: docs/Resources/Guides/Authorizations/Deferred-Auth.md
-        - title: Incremental
-          link: docs/Resources/Guides/Authorizations/Incremental-Auth.md
-        - title: Reauthorization
-          link: docs/Resources/Guides/Authorizations/Re-Auth.md
-    - title: Master Data
-      link:
-      open: false
       articles:
-      - title: Additional Data
-        link: docs/Resources/Master-Data/Additional-Data.md
-      - title: Amount Component
-        link: docs/Resources/Master-Data/Amount-Components.md
-      - title: Card Types
-        link: docs/Resources/Master-Data/Card-Type.md
-      - title: Card Component
-        link: docs/Resources/Master-Data/Card.md
-      - title: Country Codes
-        link: docs/Resources/Master-Data/Country-Code.md
-      - title: Currency Codes
-        link: docs/Resources/Master-Data/Currency-Code.md
-      - title: Customer Address
-        link: docs/Resources/Master-Data/Address.md
-      - title: Customer Details
-        link: docs/Resources/Master-Data/Customer-Details.md
-      - title: Merchant Category Code
-        link: docs/Resources/Master-Data/Merchant-Category-Code.md
-      - title: Processing Codes
-        link: docs/Resources/Master-Data/Processing-Code.md
-      - title: Transaction Details
-        link: docs/Resources/Master-Data/Transaction-Details.md
-      - title: Transaction Interaction
-        link: docs/Resources/Master-Data/Transaction-Interaction.md
-    - title: FAQ and Glossary
-      open: false
-      sections:
-      - title: Glossary
-        link: docs/Resources/FAQs-Glossary/Glossary.md
-      - title: FAQs
-        open: false
-        articles:
-        - title: How do I create an Authentication Header?
-          link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Integrations
+        link: docs/Getting-Started/Getting-Started-Wallets.md
+      - title: Apple Pay
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+      - title: Google Pay
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
 - sections:
-  - title: API Releases
-    open: false
-    articles:
+  - title: Connected Commerce
+    link: docs/Getting-Started/Getting-Started-UCOM.md
+- sections:
+  - title: Resources and Guides
+    sections:
+    - title: Featured Guides
+      link: docs/Resources/Resources-Guide.md
+    - title: Use Our APIs
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: Fraud Controls
+      link: docs/Resources/Guides/Fraud/Fraud-Settings.md
+    - title: Industry and Verticals
+      link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
+    - title: Payment Sources
+      link: docs/Resources/Guides/Payment-Sources/Source-Type.md
+    - title: Response Codes
+      link: docs/Resources/Guides/Response-Codes/Response-Codes.md
+    - title: Split Tender
+      link: docs/Resources/Guides/Split-Tender.md
+    - title: Split Shipment
+      link: docs/Resources/Guides/Split-Shipment.md
+    - title: Subsequent Authorization
+      link: docs/Resources/Guides/Authorizations/Authorization-Types.md
+    - title: Tokenization
+      link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+    - title: Glossary
+      link: docs/Resources/FAQs-Glossary/Glossary.md
+- sections:
+  - title: API Reference
+    sections:
     - title: Release Notes
       link: docs/Release-Notes-Alerts/Release-Notes.md
-    - title: Alerts
-      link: docs/Release-Notes-Alerts/Alerts.md
-    - title: Updates
-      link: docs/Release-Notes-Alerts/Updates.md
+    - title: Payments
+      sections:
+      - title: Charges
+        link: docs/Resources/API-Documents/Payments/Charges.md
+      - title: Capture
+        link: docs/Resources/API-Documents/Payments/Capture.md
+      - title: Cancel
+        link: docs/Resources/API-Documents/Payments/Cancel.md
+      - title: Refund
+        link: docs/Resources/API-Documents/Payments/Refund.md
+      - title: Inquiry
+        link: docs/Resources/API-Documents/Payments/Inquiry.md
+      - title: Credit
+        link: docs/Resources/API-Documents/Payments/Credit.md
+      - title: Forced
+        link: docs/Resources/API-Documents/Payments/Forced.md
+    - title: Payments VAS
+      sections:
+      - title: Tokens
+        link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+      - title: Verification
+        link: docs/Resources/API-Documents/Payments_VAS/Verification.md

@@ -1,27 +1,118 @@
 ---
-tags: [carat, commerce-hub, payment-token, tokenization]
+tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, tokens-request, tokenization-with-charges-request, payment-token-charges-request, payload-example, payment-token, tokenization]
 ---
 
-
-# Payment Token
+# Tokenization
 
 ## Overview
 
-**[Tokenization](../../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. Merchant either can submit a request to tokenize a payment card as part of a [charge](#charge-request) by using `createToken`, or can tokenize the card separately by sending a request to the [tokens](#token-request) endpoints.
+**[Tokenization](../../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#chargerequest) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokenrequest) endpoint.
 
-<!-- theme: info -->
-> Merchants utilizing multiple tokenization services `tokenProvider` is required.
+- **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
+  - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
+- **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
+
+### Required Field
+
+<!-- theme: warning -->
+> Merchants using multiple tokenization services, `tokenProvider` is a required field.
 
 ---
 
-## Charge Request
+## Tokens Request
 
-#### Required Field
+### Endpoint
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/tokens`
+
+### Payload Example
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a token only payload request.
+
+```json
+{
+  "source": {
+    "sourceType": "PaymentCard",
+    "cardData": "4005550000000019",
+    "expirationMonth": "02",
+    "expirationYear": "2035",
+  },
+  "transactionDetails": {
+    "tokenProvider": "TRANSARMOR",
+    "createToken": true
+  }
+}
+```
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a tokenization (201: Created) response.
+
+```json
+{
+   "gatewayResponse":{
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType": "token",
+      "transactionState": "authorized",
+      "transactionOrigin": "ecom",
+      "transactionProcessingDetails":{
+         "transactionDate": "2016-04-16",
+         "transactionTime": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
+      }
+   },
+   "paymentSource":{
+      "sourceType": "PaymentCard",
+      "tokenData": "1234123412340019",
+      "PARId": "string",
+      "declineDuplicates": "FALSE",
+      "tokenSource": "string",
+      "card":{
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "05",
+         "expirationYear": "2025",
+         "bin": "400555",
+         "last4": "0019",
+         "scheme": "VISA"
+      }
+   },
+   "processorResponseDetails":{
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "string",
+      "processor": "fiserv",
+      "responseCode": "00",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "54022",
+      "hostResponseMessage": "",
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "bankAssociationDetails":{
+         "associationResponseCode": "000",
+         "transactionTimestamp": "2016-04-16T16:06:05Z"
+      }
+   }
+}
+```
+<!-- type: tab-end -->
+
+---
+
+## Tokenization with Charges Request
+
+### Required Field
 
 - `createToken`: *boolean* : *true*
-
-<!-- theme: warning -->
-> For merchants using multiple tokenization services, `tokenProvider` is a required field.
 
 ### Endpoint
 <!-- theme: success -->
@@ -39,22 +130,22 @@ title: Request
 ```json
 {
    "amount":{
-      "total":"1.00",
-      "currency":"USD"
+      "total": "1.00",
+      "currency": "USD"
    },
    "source":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123"
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "securityCode": "123"
       }
    },
    "transactionDetails":{
-      "captureFlag":false,
-      "createToken":true,
-      "tokenProvider":"RSA"
+      "captureFlag": false,
+      "createToken": true,
+      "tokenProvider": "TRANSARMOR"
    }
 }
 ```
@@ -68,50 +159,50 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType": "token",
+      "transactionState": "authorized",
+      "transactionOrigin": "ecom",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+         "transactionDate": "2016-04-16",
+         "transactionTime": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
       }
    },
    "source":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "05",
+         "expirationYear": "2025",
+         "bin": "400555",
+         "last4": "0019",
+         "scheme": "VISA"
       }
    },
    "paymentToken":{
-      "tokenData":"1234123412340019",
-      "PARId":"1234567895461303321654",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"RSA"
+      "tokenData": "1234123412340019",
+      "PARId": "1234567895461303321654",
+      "declineDuplicates": "FALSE",
+      "tokenSource": "RSA"
    },
    "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "string",
+      "processor": "fiserv",
+      "responseCode": "00",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "54022",
+      "hostResponseMessage": "",
+      "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z"
+         "associationResponseCode": "000",
+         "transactionTimestamp": "2016-04-16T16:06:05Z"
       }
    }
 }
@@ -120,104 +211,16 @@ title: Response
 
 ---
 
-## Token Request
+## PaymentToken Charges Request
 
-#### Required Field
+### Requirements
 
-<!-- theme: warning -->
-> For merchants using multiple tokenization services, `tokenProvider` is a required field.
-
-### Endpoint
-<!-- theme: success -->
->**POST** `/payments-vas/v1/tokens`
-
-### Payload Example
-
-<!--
-type: tab
-title: Request
--->
-
-##### Example of a token only payload request.
-
-```json
-{
-  "amount": {
-    "total": "0.02",
-    "currency": "USD"
-  },
-  "paymentSource": {
-    "sourceType": "PaymentCard",
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
-  },
-  "transactionDetails": {
-    "captureFlag": false
-    "tokenProvider": "RSA"
-  }
-}
-```
-<!--
-type: tab
-title: Response
--->
-
-##### Example of a tokenization (201: Created) response.
-
-```json
-{
-   "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
-      "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
-      }
-   },
-   "paymentSource":{
-      "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
-      "card":{
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
-      }
-   },
-   "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
-      "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z"
-      }
-   }
-}
-```
-<!-- type: tab-end -->
-
-## Submit a Charge
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `tokenData` | *string* | 2048 | Token created from the payment source. |
+| `PARId` | *string* | 256 | |
+| `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
+| `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 
 ### Endpoint
 <!-- theme: success -->
@@ -230,7 +233,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a Charge Payload Request with tokenization.
+##### Example of a charge payload request with PaymentToken.
 
 ```json
 {
@@ -241,9 +244,9 @@ title: Request
   "paymentSource": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
+    "PARId": "",
+    "declineDuplicates": true,
+    "tokenSource": "TRANSARMOR"
   },
   "transactionDetails": {
     "captureFlag": true
@@ -255,7 +258,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge Payload Response with tokenization.
+##### Example of a charge (200: Success) response.
 
 ```json
 {
@@ -276,8 +279,6 @@ title: Response
   "card": {
     "last4": "0019",
     "brand": "VISA",
-    "expirationMonth": "02",
-    "expirationYear": "2035"
   },
   "paymentReceipt": {
     "approvedAmount": {
@@ -299,14 +300,6 @@ title: Response
       "associationResponseCode": "000",
       "transactionTimestamp": "2021-04-16T16:06:05Z",
       "transactionReferenceInformation": null,
-      "avsSecurityCodeResponse": {
-        "streetMatch": "EXACT_MATCH",
-        "postalCodeMatch": "EXACT_MATCH",
-        "securityCodeMatch": "MATCHED",
-        "association": {
-          "avsCode": "Z",
-          "securityCodeResponse": "S",
-          "cardHolderNameResponse": "M"
         }
       }
     }

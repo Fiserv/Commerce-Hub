@@ -1,10 +1,11 @@
 ---
-tags: [Source-Type, carat, commerce-hub]
+tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 ---
+
 
 # PaymentCard
 
-Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online or in person. The `sourceType` *PaymentCard* is used to submit a [card](../../Master-Data/Card-Type.md) transaction to our application.
+Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online or in person. The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
 
 ---
 

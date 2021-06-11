@@ -1,12 +1,12 @@
 ---
-tags: [carat, commerce-hub, apple-pay, wallet, apple-pay-inapp-integration]
+tags: [carat, commerce-hub, enterprise, apple-pay, wallet, apple-pay-inapp-integration, configure-apple-pay-in-app, set-up-project-in-xcode, submit-a-payment-request, submit-a-charge-request]
 ---
 
 # Apple Pay: In-App Integration
 
 #### Apple Pay on the App
 
-## Step1: Configure Apple Pay in App
+## Step 1: Configure Apple Pay in App
 
 Configure Apple developer account with merchant information to accept [Apple Pay in the App](https://help.apple.com/developer-account/#/devb2e62b839). This includes creating a merchant identifier, enabling Apple Pay in App and creating a processing certificate.
 

@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, quick-service-restaurant]
+---
+
+
 # Quick Service Restaurant (QSR)
 
 ## Overview

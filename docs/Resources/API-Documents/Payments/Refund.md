@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel, refund]
+tags: [carat, commerce-hub, enterprise, endpoints, full-refund, payments, partial-refund, refund]
 ---
 
 # Refund
@@ -60,7 +60,7 @@ title: Request
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": "1.50",
     "currency": "USD"
   }
 }
@@ -147,8 +147,8 @@ title: Response
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 

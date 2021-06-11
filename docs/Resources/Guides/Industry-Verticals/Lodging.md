@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, lodging]
+---
+
+
 # Lodging
 
 ## Overview

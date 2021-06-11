@@ -1,17 +1,26 @@
+---
+tags: [carat, commerce-hub, enterprise, split-shipment, vault]
+---
+
+
 # Split Shipment
+
+## Overview
 
 A split shipment is an ability to [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) an authorization for the full order amount by performing a capture for each item shipped.
 
 Situations in which this could be implemented include:
 
 - Shipment of goods will be split, the cardholder can be charged for each individual shipment.
-- Occurs when the goods are not available for shipment at the time of the consumer’s purchase.
+- Occurs when the goods url are not available for shipment at the time of the consumer’s purchase.
 
 <!-- theme: info -->
-> If the customer cancels their order before the last shipment, the `finalShipment` indicator is required to be sent with the [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
+> If the customer cancels or refunds their order before the last shipment, the `finalShipment` indicator is required to be sent during the [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 <!-- theme: warning -->
 > If the authorization timeframe has expired, a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) is required.
+
+---
 
 ## Technical Requirements
 
@@ -19,11 +28,16 @@ Situations in which this could be implemented include:
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `totalCount` | *integer* |  | Required in the capture transaction indicating how many shipments the transaction is devided into. Can be sent in pre-authorization or the first capture.|
+| `totalCount` | *integer* | 99 | Required in the capture transaction indicating how many shipments the transaction is devided into. Can be sent in pre-authorization or the first capture.|
 | `finalShipment` | *boolean* |  | Used to identify the final capture (*TRUE* or *FALSE*).|
 
 
 ## Payload Example
+
+<!--
+type: tab
+title: Request
+-->
 
 ```json
 {
@@ -32,14 +46,80 @@ Situations in which this could be implemented include:
       "currency":"USD"
    },
    "transactionDetails":{
-      "captureFlag":true
+      "captureFlag":true,
+      "createToken": true
    },
-   "splitShipment":{
-      "totalCount":5,
-      "finalShipment":true
-   }
+   "transactionDetails":{
+      "splitShipment":{
+       "totalCount":5,
+       "finalShipment":true
+      }
+   }  
 }
 ```
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a Charge (201: Created) Response.
+
+```json
+{
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"token",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "transactionDate":"2016-04-16",
+         "transactionTime":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
+      }
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total":12.04,
+         "currency":"USD"
+      },
+      "processorResponseDetails":{
+         "approvalStatus":"APPROVED",
+         "approvalCode":"OK3483",
+         "authenticationResponseCode":"string",
+         "referenceNumber":"845366457890-TODO",
+         "schemeTransactionId":"019078743804756",
+         "feeProgramIndicator":"123",
+         "processor":"fiserv",
+         "responseCode":"00000",
+         "responseMessage":"APPROVAL",
+         "hostResponseCode":"00",
+         "hostResponseMessage":"APPROVAL",
+         "localTimestamp":"2021.02.25 14:14:38 (EST)",
+         "bankAssociationDetails":{
+            "associationResponseCode":"000",
+            "transactionTimestamp":"2016-04-16T16:06:05Z",
+            "avsSecurityCodeResponse":{
+               "securityCodeMatch":"MATCH",
+               "association":{
+                  "securityCodeResponse":"MATCH"
+               }
+            }
+         }
+      }
+   },
+   "transactionDetails":{
+      "splitShipment":{
+       "totalCount":5,
+       "finalShipment":true
+      }
+   }  
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 

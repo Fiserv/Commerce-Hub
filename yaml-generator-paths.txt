@@ -1,4 +1,11 @@
+Beta
+            "payments-charges.yaml",
+            "payments-charges-capture.yaml",
+            "payments-charges-cancel.yaml",
+            "payments-charges-refund.yaml",
+            "payments-vas-tokenize.yaml"
 
+Release 1
             "payments-charges.yaml",
             "payments-forcedpost.yaml",
             "payments-charges-capture.yaml",
@@ -9,7 +16,9 @@
             "payments-vas-accounts-verification.yaml",
             "payments-vas-security-credentials.yaml",
             "payments-vas-tokenize.yaml",
-            "payments-vas-accounts-information.yaml",
+            "payments-vas-accounts-information.yaml"
+
+May be Removed
             "payments-orders-capture.yaml",
             "payments-orders-cancel.yaml",
             "payments-orders-refund.yaml",

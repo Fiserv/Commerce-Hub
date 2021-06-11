@@ -1,18 +1,51 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, carat-api, request-header, request-body]
+tags: [carat, commerce-hub, card-not-present, card-present, restful-api, request-header, request-body, api, header, request-body, environments]
 ---
 
-
-# Constructing an API Call
+# Constructing a RESTful API Request
 
 ## Overview
 
-Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, or terminal.
-
-Commerce Hub's RESTful API request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
+Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, app, or terminal. Each request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+
+---
+
+## Environments
+
+Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
+
+<!-- theme: info -->
+>Commerce Hub highly recommend testing against our cert environment before using our production environment.
+
+### Cert Sandbox
+
+<!--theme: success -->
+> https://cert.api.fiservapps.com/ch/{resource}
+
+- Test APIs before you deploy to production
+- View the response format of a specific API
+- Experiment, develop code and fix bugs
+- Send and cancel "test" transactions
+
+### Production
+
+<!--theme: success -->
+> https://api.fiservapps.com/ch/{resource}
+
+- Send and cancel "live" transactions
+- Access Value Added Services
+- Conduct a complete beta test of your application
+- Run reports
+
+<!-- ## QA Sandbox
+
+Description goes here -->
+
+<!--theme: success -->
+<!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
 
 ---
 
@@ -115,10 +148,14 @@ A standard API call to execute a charge transaction might look like this:
 
 ---
 
-## See Also
-
+## Next Steps
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Enviroments](?path=docs/Resources/API-Documents/Environments.md)
+- [Account Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---

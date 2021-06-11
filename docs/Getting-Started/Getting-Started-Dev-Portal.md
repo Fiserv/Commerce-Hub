@@ -1,12 +1,16 @@
-# Getting Started
+---
+tags: [carat, commerce-hub, enterprise, access, developer-studio, sandbox, developer-portal, enroll, enrollment, api, getting-started]
+---
+
+# Getting Started with Developer Studio 
 
 ## Access Commerce Hub APIs
 
-Follow the below steps to get an access to our development portal and use our APis.
+Follow the below steps to get an access to the Developer Studio and use Commerce Hub's APIs.
 
-### 1. Sign up on our Developer Platform
+### 1. Sign up for  Developer Studio
 
-Request and create a developer account in the Developer Portal.
+Request and create a developer account in the Developer Studio.
 
 <!-- theme: info -->
 > After registration the developer will have an instant access to the Commerce Hub APIs.

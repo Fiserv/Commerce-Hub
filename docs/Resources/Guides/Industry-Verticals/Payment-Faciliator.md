@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, payment-faciliator]
+---
+
+
 # Payment-Faciliator
 
 ## Overview
@@ -75,7 +80,7 @@ title: Response
 ##### Example of a Charge (201: Created) Response.
 
 <!-- theme: info -->
-> See [Error Responses](url) for additional examples.
+> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
   "gatewayResponse": {
@@ -153,6 +158,6 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge](../../Transactions/Charges.md)
+- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

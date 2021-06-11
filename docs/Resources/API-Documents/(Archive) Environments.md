@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, environments]
+tags: [carat, commerce-hub, enterprise, environments, no-search]
 ---
 
 
@@ -19,12 +19,12 @@ Description goes here
 <!--theme: success -->
 > https:// cert.api.fiservapps.com/ch/{resource}
 
-## QA Sandbox
+<!-- ## QA Sandbox
 
-Description goes here
+Description goes here -->
 
 <!--theme: success -->
-> https:// qa.api.fiservapps.com/ch/{resource}
+<!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
 
 ## See Also
 

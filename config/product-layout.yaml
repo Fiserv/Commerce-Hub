@@ -1,14 +1,8 @@
 header:
   productionDescription: > 
-                    Built to deliver innovation through simple, fast integrations, the Commerce Hub is the most 
-                    powerful omnichannel platform. With developer-friendly, flexible communication standards, 
-                    unified APIs, and pre-certified integrations the Commerce Hub reduces development time 
-                    and accelerates speed to market.
+                    Built to deliver innovation through simple, fast integrations, the Commerce Hub is the most powerful omnichannel platform. With developer-friendly, flexible communication standards, unified APIs, and pre-certified integrations the Commerce Hub reduces development time and accelerates speed to market. </br></br>
 
-                    A true single entry point and intelligent orchestration layer means you now have access to the 
-                    latest, most popular commerce experiences through your existing infrastructure. 
-                    With less ongoing maintenance and fewer operational costs, you can focus on creating new ways 
-                    for consumers to discover and interact with you.
+                    A true single entry point and intelligent orchestration layer means you now have access to the latest, most popular commerce experiences through your existing infrastructure. With less ongoing maintenance and fewer operational costs, you can focus on creating new ways for consumers to discover and interact with you.
 steps:  
   learnSteps:
     - title: Learn
@@ -68,8 +62,8 @@ benefits:
 featuredAPIs:
   - name: Charges
     description: Used to submit a charge transaction.
-    type: POST
-    route: /payments/v1/charges
+    type: post
+    path: /payments/v1/charges
     codeSample: '[json
                   {
                      "amount":{
@@ -94,8 +88,8 @@ featuredAPIs:
     link: link to API Explorer
   - name: Tokenization
     description: Transaction data is protected by a randomly-generated identifier known as a "token".
-    type: POST
-    route: /payments-vas/v1/tokens
+    type: post
+    path: /payments-vas/v1/tokens
     codeSample: '[json
                   {
                      "amount":{
@@ -121,8 +115,8 @@ featuredAPIs:
     link: link to API Explorer 
   - name: Verifications
     description: Confirm account validity and provide notification.
-    type: POST
-    route: /payments-vas/v1/accounts/verification
+    type: post
+    path: /payments-vas/v1/accounts/verification
     codeSample: '[json
                   {
                      "source":{
@@ -138,8 +132,8 @@ featuredAPIs:
     link: link to API Explorer  
   - name: Capture
     description: Capture pending authorization for settlement post authorization.
-    type: POST
-    route: /payments/v1/charges/{transactionId}/capture
+    type: post
+    path: /payments/v1/charges/{transactionId}/capture
     codeSample: '[json
                   {
                     "amount": {
