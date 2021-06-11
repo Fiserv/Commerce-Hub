@@ -52,6 +52,9 @@ Authorization is necessary to verify whether a customer's payment source has suf
 ## Auto-Substantiation
 The process of verifying that purchase transactions are for expenses permitted and eligible under Internal Revenue Service regulations for Flexible Spending Accounts (FSAs) and Healthcare Reimbursement Arrangements (HRAs).
 
+## Authorization Type Indicator
+Identifies if the authorization requested is an initial, reauthorization, deferred or incremental.
+
 # B
 
 ## Bank Indentification Number
@@ -74,6 +77,9 @@ B2B invoice payments are payments made between two merchants for goods or servic
 
 ## Binary Synchronous
 Binary Synchronous (BISYNC) is a category of synchronous communications protocols.
+
+## Bill Payment Indicator
+Identifies if the bill payment requested is a recurring, instalment, or deferred.
 
 # C
 
@@ -147,6 +153,7 @@ The monetary amount of credit extended to a customer.
 
 ## Clearing
 The process where the merchant's processor withdraws or deposits funds from the customer's bank account.
+
 ## Cryptogram
 A limited or single-use key (cipher) that encrypts the payment data. It is required to de-encrypt the payment data by the processor to continue processing the payment.
 
@@ -165,7 +172,7 @@ Identifies transactions where the billing occurred after the merchandise was del
 Identifies a bill pay transaction where a recurring or incremental payment is delayed and charged at a future date.
 
 ## Derived Unique Key Per Transaction
-Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction.
+Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction. See also [Key Management](#key-management).
 
 ## Doing Business As
 Doing business as (DBA) refers to the specific name and location of the merchant's store where a transaction is made.
@@ -178,12 +185,6 @@ The code that specifies the actual result provided by the debit network in respo
 
 ## Debit Network Routing ID
 A 6-digit value identifying the specific debit network providing the response to the request message.
-
-## Authorization Type Indicator
-Identifies if the authorization requested is an initial, reauthorization, deferred or incremental.
-
-## Bill Payment Indicator
-Identifies if the bill payment requested is a recurring, instalment, or deferred.
 
 ## Developer Dashboard
 A web portal for managing your developer account, apps, and API credentials. 
@@ -332,6 +333,19 @@ Integrated Voice Response (IVR) technology creates automatic message selections 
 
 ## Issuing Bank
 The issuing bank also known as the customer's bank, issues a payment card or checks to an individual.
+
+# J
+
+## JavaScript
+JavaScript (JS) is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Payment.JS](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).
+
+## JSON
+JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. Commerce Hub requests and responses are written in JSON format.
+
+# K
+
+## Key Management
+Key management refers to management of cryptographic keys in a cryptosystem. This includes dealing with the generation, exchange, storage, use, crypto-shredding (destruction) and replacement of keys. It includes cryptographic protocol design, key servers, user procedures, and other relevant protocols. See also [Derived Unique Key Per Transaction (DUKPT)](#derived-unique-key-per-transaction).
 
 # L
 
