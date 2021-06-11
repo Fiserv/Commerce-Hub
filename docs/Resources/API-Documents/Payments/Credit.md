@@ -128,7 +128,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/credit)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
