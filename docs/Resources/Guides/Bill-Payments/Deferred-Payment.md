@@ -1,13 +1,8 @@
-# Deferred-Payment
-
-## Overview
-
-We are enhancing Commerce Hub to include Deferred Payment support and the documents related to the features will be released soon.
-
+---
+tags: [carat, commerce-hub, enterprise, bill-payments, deferred-bill-payments]
 ---
 
-## See Also
+# Deferred Bill Payments
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-
----
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to bill payment support and the documents related to this feature will be released soon.

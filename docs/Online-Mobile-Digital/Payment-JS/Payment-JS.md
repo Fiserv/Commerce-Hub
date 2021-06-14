@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+---
+
+
 # Payment.JS Integration
 
 ## Overview

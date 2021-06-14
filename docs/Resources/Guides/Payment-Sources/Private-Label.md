@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, private-label, payment-sources]
+---
+
+
 # Private Label
 
 ## Overview

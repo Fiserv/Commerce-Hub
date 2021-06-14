@@ -1,3 +1,8 @@
+---
+tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud, velocity-controls, velocity-settings]
+---
+
+
 # Velocity Controls
 
 ## Overview

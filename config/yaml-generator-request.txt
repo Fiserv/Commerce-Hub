@@ -21,15 +21,17 @@
          }
       ],
       "paths":[
-         "payments-charges.yaml",
-         "payments-charges-capture.yaml",
-         "payments-charges-cancel.yaml",
-         "payments-charges-refund.yaml",
-         "payments-credits.yaml",
-         "payments-vas-tokenize.yaml",
-         "transaction-inquints-information.yaml",
-         "payments-vas-accounts-verification.yaml",
-         "payments-vas-security-credentials.yaml"
+            "payments-charges.yaml",
+            "payments-forcedpost.yaml",
+            "payments-charges-capture.yaml",
+            "payments-charges-cancel.yaml",
+            "payments-charges-refund.yaml",
+            "payments-credits.yaml",
+            "transaction-inquiry.yaml",	
+            "payments-vas-accounts-verification.yaml",
+            "payments-vas-security-credentials.yaml",
+            "payments-vas-tokenize.yaml",
+            "payments-vas-accounts-information.yaml"
       ]
    },
    "yamlVersion":"v1",

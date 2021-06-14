@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, settle, cancel]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, payments, settle, cancel]
 ---
 
 # Cancel
@@ -13,53 +13,27 @@ If the customer cancels the order or if fraud is suspected, the merchant will ne
 
 ---
 
-## Requirements
+## Minimum Requirements
 
-Cancel Request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` with no minimum field requirement. The request may contain optional fields from the original charge request described below.
+Cancel Request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` along with the `reversalReasonCode` in `transactionDetails` object. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel).
 
-#### Optional Fields
+### Reversal Reason Code
 
-##### Component : transactionBatch
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`julianDay` | *string* | 3 | The day the current batch was opened, 001-366.|
-|`batchNumber`| *string* | 6 | The batch number within the Julian day for this transaction. values range from 000001 through 000999.| 
-|`transactionClass`| *string* | 1 | Code that indicates the Transaction that was logged under, ranges from 1 through 4. Captured approved, Captured Authorised Only, Declinced, Batch Control.|
-|`sequenceNumber`| *string* | 6 | Sequence Number of this transaction within the current batch,ranges from 000001 through 000999|
-
-##### Component : processorReservedDetails
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`transactionDate` | *string* | 10 | Date the transaction occured |
-|`transactionTime`| *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ | 
-|`apiTraceId`| *string* |  | Request identifier in API, can be used to request logs from the support team|
-|`clientRequestId`| *string* |  | Echoes back the value in the request header for tracking |
-|`transactionId`| *string* | 12 | Unique identifier for each transaction on the Gateway|
-
-##### Component : transactionDetails
-
-| Variable | Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-|`merchantTransactionId` | *string* | | Client transaction ID if supplied by client mapped from `transactionID` in the request. |
-|`reversalReasonCode`| *string* | 20 | Reason the merchant/customer requests for cancel (void). |
-
-###### Valid Values: reversalReasonCode
+Reason the merchant/customer requests for cancel (void).
 
 | Value | Description|
 |---------|---------|
-|VOID | A transaction that is used to cancel or fully reverse a previous transaction. |
-|SUSPECTED_FRAUD | A transaction that is voided for suspected fraud. |
-|TIMEOUT | This transaction is used when the merchant does not receive a response to a transaction. At that point it is unknown whether the host received the transaction or not; therefore a timeout reversal request must be submitted. Upon the successful completion of the timeout reversal, the original transaction may be sent again. |
-|TIMEOUT_REVERSAL| A Timeout Reversal of a Void/Full Reversal. |
-|PARTIAL| A reversal transaction where the amount is less than the original authorization amount. |
+|*VOID* | A transaction that is used to cancel or fully reverse a previous transaction. |
+|*SUSPECTED_FRAUD* | A transaction that is voided for suspected fraud. |
+|*TIMEOUT* | This transaction is used when the merchant does not receive a response to a transaction. At that point it is unknown whether the host received the transaction or not; therefore a timeout reversal request must be submitted. Upon the successful completion of the timeout reversal, the original transaction may be sent again. |
+|*TIMEOUT_REVERSAL*| A Timeout Reversal of a Void/Full Reversal. |
+|*PARTIAL*| A reversal transaction where the amount is less than the original authorization amount. |
 |**Canadian Debit Only**| |
-|EDIT_ERROR | Edit Error Parse error at the terminal. |
-|MAC_VERIFICATION_ERROR | MAC Verification Error terminal MAC is invalid or data used to verify the MAC is incorrect. |
-|MAC_SYNCH_ERROR | MAC Synch Error terminal MAC is out of synch with host MAC. |
-|ENCRYPTION_ERROR | Message Encryption Error terminal message encryption key is out of synch with host message encryption key or there is an error with the input data. |
-|SYSTEM_ERROR | System Error all other errors except for timeout (no response received) such as communication errors between the terminal and the PIN pad. |
+|*EDIT_ERROR* | Edit Error Parse error at the terminal. |
+|*MAC_VERIFICATION_ERROR* | MAC Verification Error terminal MAC is invalid or data used to verify the MAC is incorrect. |
+|*MAC_SYNCH_ERROR* | MAC Synch Error terminal MAC is out of synch with host MAC. |
+|*ENCRYPTION_ERROR* | Message Encryption Error terminal message encryption key is out of synch with host message encryption key or there is an error with the input data. |
+|*SYSTEM_ERROR* | System Error all other errors except for timeout (no response received) such as communication errors between the terminal and the PIN pad. |
 
 ---
 
@@ -84,19 +58,6 @@ title: Request
 
 ```json
 {
-  "transactionBatch": {
-    "julianDay": "001",
-    "batchNumber": "000001",
-    "transactionClass": 1,
-    "sequenceNumber": "000001"
-  },
-  "processorReservedDetails": {
-    "transactionDate": "2016-04-16",
-    "transactionTime": "2016-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": 838916029301
-  },
   "transactionDetails": {
     "reversalReasonCode": "VOID"
   }
@@ -129,7 +90,7 @@ title: Response
       "transactionId": "838916029301"
     }
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentToken"
   },
   "transactionProcessingDetails": {
