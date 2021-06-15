@@ -220,6 +220,9 @@ title: Response
 | `PARId` | *string* | 256 | |
 | `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
 | `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | | Contains card specific information. |
+| `expirationMonth` | *string* | 2 | Card expiration month. |
+| `expirationYear` | *string* | 2 | Card expiration year. |
 
 ### Endpoint
 <!-- theme: success -->
@@ -246,6 +249,10 @@ title: Request
     "PARId": "",
     "declineDuplicates": true,
     "tokenSource": "TRANSARMOR"
+    "card": {
+      "expirationMonth": "03",
+      "expirationYear": "30"
+    }
   },
   "transactionDetails": {
     "captureFlag": true
@@ -278,6 +285,8 @@ title: Response
   "card": {
     "last4": "0019",
     "brand": "VISA",
+    "expirationMonth": "03",
+    "expirationYear": "30"
   },
   "paymentReceipt": {
     "approvedAmount": {
