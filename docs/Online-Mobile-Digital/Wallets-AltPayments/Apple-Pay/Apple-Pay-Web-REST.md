@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, restful-api-integration, configure-apple-pay-on-the-web, support-apple-pay-on-the-web, presenting-the-payment-sheet, submit-a-payment-request, apple-pay, wallet, apple-pay-web-integration]
+tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, apple-pay, wallet]
 ---
 
 # Apple Pay on the Web: RESTful API Integration
