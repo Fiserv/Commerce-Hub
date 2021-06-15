@@ -35,3 +35,11 @@ tags: [carat, commerce-hub, enterprise, payment-js, sequence-flow]
 14. Merchant webform should be updated to notify user that the tokenization request was successful or failed.
 
 15. At this point, the payment.js flow has completed. Merchant would save token generated from the payment.js request in a database on their end and/or then do a subsequent auth or sale transactions using the token to charge the consumer.
+
+
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---

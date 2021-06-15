@@ -215,3 +215,9 @@ title: Response
 | PROCESSING_FAILED | Failed to process the Payment URL. |
 | FAILURE | Generic failure message. |
 
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---

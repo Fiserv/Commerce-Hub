@@ -30,3 +30,4 @@ The following recommendations are to limit potential for fraudulent activity on 
 ## Next Steps
 
 - [Sequence Flow](?path=docs/Online-Mobile-Digital/Payment-JS/Sequence-Flow.md)
+

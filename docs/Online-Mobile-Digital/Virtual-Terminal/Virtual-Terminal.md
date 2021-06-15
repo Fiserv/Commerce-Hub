@@ -17,8 +17,9 @@ A merchant may be required to process an offline transaction or may need to manu
 ---
 
 ## See Also
-
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment URL](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
 - [Quick Key](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Quick-Key.md)
 
 ---
+

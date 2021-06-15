@@ -77,8 +77,10 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
 ## See Also
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - Available Fields
 - Customize Payment Page
 - [Online Wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md)
+
 
 ---
