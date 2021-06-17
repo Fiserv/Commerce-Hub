@@ -26,9 +26,9 @@ A refund request can be initiated by sending the request to the appropriate endp
 - **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
 
-#### Component : amount
+#### amount
 
-|Variable    |  Type| Maximum Length | Description/Values|
+|Variable |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
 | `currency` | *string* | 3 | [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -42,9 +42,9 @@ A refund request can be initiated by sending the request to the appropriate endp
 Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: success -->
->**POST** `/payments/v1/charges/{transactionId}/capture`
+>**POST** `/payments/v1/charges/{transactionId}/refund`
 >
->**POST** `/payments/v1/charges/orders/{orderId}/capture`
+>**POST** `/payments/v1/charges/orders/{orderId}/refund`
 
 ---
 
@@ -65,6 +65,9 @@ title: Request
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/refund)
+
 
 <!--
 type: tab

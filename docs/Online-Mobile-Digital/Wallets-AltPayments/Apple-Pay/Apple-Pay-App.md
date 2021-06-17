@@ -29,8 +29,21 @@ The merchant can submit a payment request to Apple to verify if apple pay is sup
 
 ## Step 4: Submit a Charge Request
 
-Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
-Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
+- Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
+- Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
+
+## Minimum Requirements
+
+### Apple Header
+
+| Variable | Type | Length | Description/Values |
+| -------- | -- | ------------ | ------------------ |
+| `applicationDataHash` | *string* | 256 | Encrypted app data. |
+| `applicationDataHash` | *string* | 256 | Encrypted app data. |
+| `applicationDataHash` | *string* | 256 | Encrypted app data. |
+| `applicationDataHash` | *string* | 256 | Encrypted app data. |
+| `applicationDataHash` | *string* | 256 | Encrypted app data. |
+
 
 <!--
 type: tab

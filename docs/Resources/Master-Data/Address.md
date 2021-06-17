@@ -18,6 +18,7 @@ Is the address connected to the customer's [payment method](?path=docs/Resources
 type: tab
 title: billingAddress
 -->
+##### billingAddress
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |

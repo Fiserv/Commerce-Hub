@@ -63,6 +63,9 @@ title: Request
    }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/credits)
+
 <!--
 type: tab
 title: Response
