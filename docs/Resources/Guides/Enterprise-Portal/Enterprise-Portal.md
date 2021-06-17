@@ -1,4 +1,8 @@
-# Enterprise-Portal
+---
+tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtual-terminal, reporting, settings]
+---
+
+# Enterprise Portal
 
 ## Overview
 
