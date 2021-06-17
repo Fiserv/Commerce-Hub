@@ -19,7 +19,7 @@ type: tab
 title: billingAddress
 -->
 
-##### billingAddress object details
+Billing address fields are included in the `billingAddress` object.
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -62,7 +62,7 @@ title: JSON Example
 
 ## Shipping Address
 
-Is the address or email where the merchant will deliver the goods or services.
+Is the address or email where the merchant will deliver the goods or services. Shipping address fields are included in the `shippingAddress` object.
 
 <!--
 type: tab
