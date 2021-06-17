@@ -33,6 +33,8 @@ type: tab
 title: JSON Example
 -->
 
+JSON string format for `billingAddress`.
+
 ```json
 {
    "billingAddress":{
