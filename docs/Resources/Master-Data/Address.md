@@ -19,6 +19,8 @@ type: tab
 title: billingAddress
 -->
 
+##### billingAddress object details
+
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Customer first name. |
