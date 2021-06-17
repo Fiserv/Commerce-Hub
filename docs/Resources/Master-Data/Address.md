@@ -19,7 +19,7 @@ type: tab
 title: billingAddress
 -->
 
-Billing address fields are included in the `billingAddress` object.
+Parameters included in the `billingAddress` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -33,7 +33,7 @@ type: tab
 title: JSON Example
 -->
 
-JSON string format for `billingAddress`.
+JSON string format for `billingAddress`:
 
 ```json
 {
@@ -64,12 +64,14 @@ JSON string format for `billingAddress`.
 
 ## Shipping Address
 
-Is the address or email where the merchant will deliver the goods or services. Shipping address fields are included in the `shippingAddress` object.
+Is the address or email where the merchant will deliver the goods or services.
 
 <!--
 type: tab
 title: shippingAddress
 -->
+
+Parameters included in the `shippingAddress` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -84,6 +86,8 @@ title: shippingAddress
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `shippingAddress`:
 
 ```json
 {
@@ -111,7 +115,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-### Shipping Method
+#### Shipping Method
 
 | Value | Description |
 | ----- | ----------- |
@@ -132,6 +136,8 @@ type: tab
 title: address
 -->
 
+Parameters included in the `address` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `street` | *string* | 256 | Street address. |
@@ -145,6 +151,8 @@ title: address
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `address`:
 
 ```json
 {
