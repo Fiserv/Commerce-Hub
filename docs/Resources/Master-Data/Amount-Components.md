@@ -12,7 +12,7 @@ Transaction amount information is contained into two objects, `amount` and `amou
 
 ## Amount
 
-Parameters included in the `billingAddress` object:
+Parameters included in the `amount` object:
 
 <!--
 type: tab
@@ -28,6 +28,8 @@ title: amount
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `amount`:
 
 ```json
 {
@@ -50,6 +52,8 @@ type: tab
 title: amountComponents
 -->
 
+Parameters included in the `amountComponents` object:
+
 | Variable | Type | Length | Description/Values |
 | --------- | --- | ------ | -------------- |
 | `subTotal` | *number* | 12 | Subtotal amount. |
@@ -64,6 +68,8 @@ title: amountComponents
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `amountComponents`:
 
 ```json
 {

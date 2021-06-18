@@ -14,6 +14,8 @@ type: tab
 title: transaction
 -->
 
+Parameters included in the `transactionDetails` object:
+
 |Variable    | Type| Maximum Length | Description/Values|
 |---------|-----------|----------------|---------|
 | `approvalCode` | *string* |  | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
@@ -46,6 +48,8 @@ title: transaction
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `transactionDetails`:
 
 ```json
 {
@@ -154,6 +158,8 @@ type: tab
 title: deviceFingerprintData
 -->
 
+Parameters included in the `deviceFingerprint` object:
+
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`provider` | *string* |  | Device provider e.g. InAuth. |
@@ -165,6 +171,8 @@ title: deviceFingerprintData
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `deviceFingerprint`:
 
 ```json
 {
@@ -203,6 +211,7 @@ type: tab
 title: dataCapture
 -->
 
+Parameters included in the `dataCapture` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------: | ------------------ |
@@ -214,6 +223,8 @@ title: dataCapture
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `dataCapture`:
 
 ```json
 {
@@ -234,6 +245,8 @@ type: tab
 title: dataStatic
 -->
 
+Parameters included in the `dataStatic` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `operatingSystem` | *string* | 256 | Device operating system (OS). |
@@ -245,6 +258,8 @@ title: dataStatic
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `dataStatic`:
 
 ```json
 {
@@ -266,6 +281,8 @@ type: tab
 title: dataDynamic
 -->
 
+Parameters included in the `dataDynamic` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `latitude` | *string* | 256 | Cardholder current latitude GPS position. |
@@ -278,6 +295,8 @@ title: dataDynamic
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `dataDynamic`:
 
 ```json
 {

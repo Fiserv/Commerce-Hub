@@ -13,6 +13,8 @@ type: tab
 title: processorResponseDetails
 -->
 
+Parameters included in the `processorResponseDetails` object:
+
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `approvalStatus` | *string* | | Final [status](#approval-status) of the transaction. | 
@@ -33,6 +35,8 @@ title: processorResponseDetails
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `processorResponseDetails`:
 
 ```json
 {

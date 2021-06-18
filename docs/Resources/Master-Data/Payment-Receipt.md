@@ -10,6 +10,8 @@ A Customer Transaction Record (CTR), also known as a payment receipt is returned
 
 ## Payment Receipt
 
+Parameters included in the `paymentReceipt` object:
+
 <!--
 type: tab
 title: paymentReceipt
@@ -32,6 +34,8 @@ title: paymentReceipt
 type: tab
 title: JSON Example 
 -->
+
+JSON string format for `paymentReceipt`:
 
 ```json
 {

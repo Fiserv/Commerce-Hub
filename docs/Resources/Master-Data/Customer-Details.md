@@ -8,6 +8,8 @@ The transaction request may contain the `customerDetails` consisting of customer
 
 ## Customer
 
+Parameters included in the `customer` object:
+
 <!--
 type: tab
 title: customer
@@ -33,6 +35,8 @@ title: customer
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `customer`:
 
 ```json
 {
@@ -63,6 +67,8 @@ title: JSON Example
 
 ## Phone Number
 
+Parameters included in the `phoneNumber` object:
+
 <!--
 type: tab
 title: phone
@@ -78,6 +84,8 @@ title: phone
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `phoneNumber`:
 
 ```json
 {

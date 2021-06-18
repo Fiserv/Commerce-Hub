@@ -12,7 +12,7 @@ type: tab
 title: card
 -->
 
-Card detail fields are included in the `card` object.
+Parameters included in the `card` object:
 
 | Variable | Type | Maximum Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -31,6 +31,8 @@ type: tab
 title: JSON Example
 -->
 
+JSON string format for `card`:
+
 ```json
 {
    "card":{
@@ -47,7 +49,6 @@ title: JSON Example
 ```
 
 <!-- type: tab-end -->
-
 
 ---
 

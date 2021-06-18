@@ -9,6 +9,8 @@ The Commerce Hub Response contains the response parameters for any successful or
 
 ## Gateway Response
 
+Parameters included in the `gatewayResponse` object:
+
 <!--
 type: tab
 title: gatewayResponse
@@ -25,6 +27,8 @@ title: gatewayResponse
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `gatewayResponse`:
 
 ```json
 {
@@ -62,7 +66,9 @@ title: JSON Example
 
 ---
 
-### Transaction Processing Details
+## Transaction Processing Details
+
+Parameters included in the `transactionProcessingDetails` object:
 
 <!--
 type: tab
@@ -82,6 +88,8 @@ title: transactionProcessingDetails
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `transactionProcessingDetails`:
 
 ```json
 {

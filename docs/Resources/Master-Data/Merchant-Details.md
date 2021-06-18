@@ -9,9 +9,11 @@ Used to pass merchant business data during the transaction and contains data lik
 
 ## Merchant Details
 
+Parameters included in the `merchantDetails` object:
+
 <!--
 type: tab
-title: gatewayResponse
+title: merchantDetails
 -->
 
 | Variable | Type | Length | Description/Values |
@@ -29,6 +31,8 @@ title: gatewayResponse
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `merchantDetails`:
 
 ```json
 {

@@ -11,9 +11,12 @@ type: tab
 title: networkDetails
 -->
 
+Parameters included in the `networkDetails` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `partialAuthDetails` | *object* | | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) details. |
+| `network` | *string* | 64 | Processing card network e.g. VISA |
 | `debitNetworkId` | *string* | | Network ID for the debit component. |
 | `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
 | `systemTrace`| *string* | | This field contains the original trace number that was returned in an authorization response. |
@@ -21,6 +24,41 @@ title: networkDetails
 | `VisaBID` | *string* | | The Business Identifier (BID) provided by Visa to Third Party Servicers (TPS). |
 | `VisaAUR` | *string* | | Agent Unique Account Result (AUAR) provided by Visa to Third Party Servicers (TPS). |
 | `networkResponseCode ` | *string* | | Debit network response. |
+
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `networkDetails`:
+
+```json
+{
+   "partialAuthDetails":{
+      "interchangeComplianceIndicator":"A",
+      "bankNetRefNumber":"string",
+      "bankNetDate":"0310",
+      "cvcIndicator":"Y",
+      "partialAuthTransactionId":"string",
+      "validationCode":"string",
+      "totalAuthAmount":"1.00",
+      "downgradeReason":"ACCOUNT_NUMBER_MISSING",
+      "creditAuthType":"DISCOVER",
+      "authScore":"string"
+   },
+   "network":"VISA",
+   "debitNetworkId":"123456",
+   "transactionSequence":"1123456",
+   "systemTrace":"123456789",
+   "authorizationCharacteristicsIndicator":"CARD_NOT_PRESENT",
+   "VISABID":"string",
+   "VISAAUR":"12345AD89012",
+   "networkResponseCode":"00"
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
@@ -32,39 +70,6 @@ title: networkDetails
 | *REQUEST_PARTICIPATION* |  Transaction requests participation. |
 | *CARD_NOT_PRESENT_NO_AVS* |  Card not present, AVS not required. |
 
-<!--
-type: tab
-title: JSON Example
--->
-
-```json
-
-
-    "partialAuthDetails": {
-      "interchangeComplianceIndicator": "A",
-      "bankNetRefNumber": "string",
-      "bankNetDate": "0310",
-      "cvcIndicator": "Y",
-      "partialAuthTransactionId": "string",
-      "validationCode": "string",
-      "totalAuthAmount": "1.00",
-      "downgradeReason": "ACCOUNT_NUMBER_MISSING",
-      "creditAuthType": "DISCOVER",
-      "authScore": "string"
-    },
-    "network": "VISA",
-    "debitNetworkId": "123456",
-    "transactionSequence": "1123456",
-    "systemTrace": "123456789",
-    "authorizationCharacteristicsIndicator": "CARD_NOT_PRESENT",
-    "VISABID": "string",
-    "VISAAUR": "12345AD89012",
-    "networkResponseCode": "00"
-  }
-```
----
-
-<!-- type: tab-end -->
 
 ## See Also
 
