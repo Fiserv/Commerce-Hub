@@ -7,12 +7,12 @@ tags: [carat, commerce-hub, enterprise, master-data, card-details]
 
 Card is a required object in `source` for all card payment types including; debit, credit, prepaid (gift), HSA, and WIC/EBT. 
 
-## Card
-
 <!--
 type: tab
 title: card
 -->
+
+Card detail fields are included in the `card` object.
 
 | Variable | Type | Maximum Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |

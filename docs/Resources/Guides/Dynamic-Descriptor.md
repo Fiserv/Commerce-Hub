@@ -22,10 +22,15 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 
 ---
 
-## Minimum Requirements
+## Request Variables
 
 <!-- theme: danger -->
 > Any information entered in the dynamic descriptor fields will overwrite the master descriptor information on the merchant account, it is very important to use the fields correctly.
+
+<!--
+type: tab
+title: dynamicDescriptor
+-->
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -35,7 +40,32 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 | `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
 | `address` | *component* |  | Merchant [Address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+ "dynamicDescriptors":{
+      "mcc":"4457",
+      "merchantName":"Mywebsite.com",
+      "customerServiceNumber":"1231231234",
+      "serviceEntitlement":"67893827513",
+      "address":{
+         "street":"Main Street",
+         "houseNumberOrName":"123",
+         "city":"Main Street",
+         "stateOrProvince":"GA",
+         "postalCode":"30303",
+         "country":"US"
+      }
+   }
+}
+```
 ---
+
+<!-- type: tab-end -->
 
 ## Payload Example
 
