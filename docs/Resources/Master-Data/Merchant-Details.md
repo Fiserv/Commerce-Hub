@@ -3,18 +3,16 @@ tags: [carat, commerce-hub, enterprise, merchant-business-details, master-data]
 ---
 
 
-# Merchant Business Details
+# Merchant Details
 
 Used to pass merchant business data during the transaction and contains data like the merchant ID (MID), store ID, terminal ID (TID), MCC etc.
-
-## Merchant Details
-
-Parameters included in the `merchantDetails` object:
 
 <!--
 type: tab
 title: merchantDetails
 -->
+
+Parameters included in the `merchantDetails` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- |------------| ------------------ |
