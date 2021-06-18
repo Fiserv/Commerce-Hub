@@ -12,6 +12,8 @@ Transaction amount information is contained into two objects, `amount` and `amou
 
 ## Amount
 
+Parameters included in the `billingAddress` object:
+
 <!--
 type: tab
 title: amount

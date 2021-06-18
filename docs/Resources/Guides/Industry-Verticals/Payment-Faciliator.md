@@ -15,7 +15,7 @@ A payment facilitator is a merchant service provider that simplifies the merchan
 
 For the transaction acquired at sub-merchant, the transaction request from payment facilitator should have the merchant information as in below format.
 
-#### Component : subMerchant
+### Sub Merchant
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|

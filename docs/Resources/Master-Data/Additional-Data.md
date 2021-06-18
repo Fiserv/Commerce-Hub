@@ -18,6 +18,8 @@ type: tab
 title: additionalDataCommon
 -->
 
+Parameters included in the `additionalDataCommon` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | | Used to identify specific data based on transaction requirements. |
@@ -35,6 +37,8 @@ title: additionalDataCommon
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `additionalDataCommon`:
 
 ```json
 {
@@ -128,6 +132,8 @@ type: tab
 title: additionalData
 -->
 
+Parameters included in the `additionalData` object:
+
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
@@ -142,6 +148,8 @@ title: additionalData
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `additionalData`:
 
 ```json
 {
