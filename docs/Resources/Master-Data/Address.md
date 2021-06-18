@@ -18,7 +18,8 @@ Is the address connected to the customer's [payment method](?path=docs/Resources
 type: tab
 title: billingAddress
 -->
-##### billingAddress
+
+Parameters included in the `billingAddress` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -31,6 +32,8 @@ title: billingAddress
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `billingAddress`:
 
 ```json
 {
@@ -68,6 +71,8 @@ type: tab
 title: shippingAddress
 -->
 
+Parameters included in the `shippingAddress` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* | 256  | Shipping contact first name. |
@@ -81,6 +86,8 @@ title: shippingAddress
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `shippingAddress`:
 
 ```json
 {
@@ -108,7 +115,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-### Shipping Method
+#### Shipping Method
 
 | Value | Description |
 | ----- | ----------- |
@@ -129,6 +136,8 @@ type: tab
 title: address
 -->
 
+Parameters included in the `address` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `street` | *string* | 256 | Street address. |
@@ -142,6 +151,8 @@ title: address
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `address`:
 
 ```json
 {
