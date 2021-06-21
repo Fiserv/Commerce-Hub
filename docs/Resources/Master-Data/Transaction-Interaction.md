@@ -44,7 +44,7 @@ title: JSON Example
 
 ---
 
-### Transaction Origin
+#### Transaction Origin
 
 | Value | Description |
 |-------|-------------|
@@ -54,7 +54,7 @@ title: JSON Example
 
 ---
 
-### POS Entry Mode
+#### POS Entry Mode
 
 | Value | Description |
 |-------|-------------|
@@ -77,7 +77,7 @@ title: JSON Example
 
 ---
 
-### POS Condition Code
+#### POS Condition Code
 
 | Value | Description |
 |-------|-------------|
@@ -96,7 +96,7 @@ title: JSON Example
 
 ---
 
-### Mobile Interactions
+#### Mobile Interactions
 
 | Value | Description |
 |-------|-------------|
@@ -105,7 +105,7 @@ title: JSON Example
 
 ---
 
-### Electronic Commerce Indicator
+#### Electronic Commerce Indicator
 
 <!-- theme: warning -->
 > ECI is required on all online, mobile, and digital E-Commerce transactions.

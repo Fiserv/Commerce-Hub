@@ -112,7 +112,7 @@ JSON string format for `additionalDataCommon`:
 
 <!-- type: tab-end -->
 
-### Bill Payment Indicator
+#### Bill Payment Indicator
 
 | Value | Description |
 | ----- | ----- |
@@ -168,7 +168,7 @@ JSON string format for `additionalData`:
 
 <!-- type: tab-end -->
 
-### Business Application Identifier
+#### Business Application Identifier
 
 The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision.
 

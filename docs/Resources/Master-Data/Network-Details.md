@@ -62,7 +62,7 @@ JSON string format for `networkDetails`:
 
 ---
 
-### Authorization Characteristics Indicator
+#### Authorization Characteristics Indicator
 | Value | Description |
 |-------|-------------|
 | *CARD_NOT_PRESENT* |  Card not present trasaction (preferred customer only e.g. Lodging or Auto Rental). |

@@ -52,7 +52,7 @@ JSON string format for `gatewayResponse`:
 
 ---
 
-### Transaction State
+#### Transaction State
 
 | Value | Description |
 |-------|-------------|

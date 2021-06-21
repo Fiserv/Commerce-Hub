@@ -76,7 +76,7 @@ JSON string format for `processorResponseDetails`:
 
 ---
 
-### Approval Status
+#### Approval Status
 
 | Value | Description |
 |-------|-------------|

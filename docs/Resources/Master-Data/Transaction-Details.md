@@ -111,7 +111,7 @@ JSON string format for `transactionDetails`:
 
 ---
 
-### Authorization Type Indicator
+#### Authorization Type Indicator
 
 | Value | Description |
 | ----- | ----- |
@@ -120,7 +120,7 @@ JSON string format for `transactionDetails`:
 | *DEFERRED* | [Deferred Auth](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) |
 | *INCREMENTAL* | [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) |
 
-### Primary Transaction Type
+#### Primary Transaction Type
 
 | Value | Description |
 | ----- | ----- |
@@ -130,7 +130,7 @@ JSON string format for `transactionDetails`:
 | *CANCEL* | Cancel/Void |
 | *REFUND* | Refund |
 
-### Reversal Reason Code
+#### Reversal Reason Code
 
 | Value | Description |
 | ----- | ----- |
@@ -143,7 +143,7 @@ JSON string format for `transactionDetails`:
 | *SYSTEM_ERROR* | System error |
 | *SUSPECTED_FRAUD* | Suspect fraud |
 
-### Authorization Sequence
+#### Authorization Sequence
 
 | Value | Description |
 | ----- | ----- |
