@@ -22,17 +22,41 @@ Situations in which this could be implemented include:
 
 ---
 
-## Technical Requirements
+## Request Variables
 
-##### Component : splitShipment
+<!--
+type: tab
+title: splitShipment
+-->
+
+Parameters required in the `splitShipment` object:
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `totalCount` | *integer* | 99 | Required in the capture transaction indicating how many shipments the transaction is devided into. Can be sent in pre-authorization or the first capture.|
 | `finalShipment` | *boolean* |  | Used to identify the final capture (*TRUE* or *FALSE*).|
 
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `splitShipment`:
+
+```json
+{
+   "splitShipment":{
+      "totalCount":5,
+      "finalShipment":true
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ## Payload Example
+
+##### Example of a charge payload request using `splitShipment`.
 
 <!--
 type: tab

@@ -2,8 +2,6 @@
 tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
 ---
 
-
-
 # Stored Credentials
 
 ## Overview
@@ -12,17 +10,27 @@ Stored Credentials also known as Credentials on File, allows the merchant to ini
 
 ---
 
-## Technical Requirements
+## Request Variables
 
 The following variables are required in the initial `PaymentToken` request and subsequent transactions.
 
-#### Transaction Details
+<!--
+type: tab
+title: transactionDetails
+-->
+
+Parameters required in the `transactionDetails` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `authorizationTypeIndicator` | *string* | 11 | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
 
-#### Stored Credentials
+<!--
+type: tab
+title: storedCredentials
+-->
+
+Parameters required in the `storedCredentials` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -32,6 +40,32 @@ The following variables are required in the initial `PaymentToken` request and s
 | `sequence` | *string* | 10 | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
 | `networkOriginalAmount` | *number* | 18,3 | Original transaction amount, required for Discover Card on File transactions. |
 
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `storedCredentails`:
+
+```json
+{
+   "transactionDetails":{
+      "authorizationTypeIndicator":"INITIAL"
+   },
+   "storedCredentials":{
+      "scheduled":false,
+      "initiator":"MERCHANT",
+      "sequence":"FIRST",
+      "schemeReferenceTransactionId":"54231235467",
+      "networkOriginalAmount":9.66
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
 ## Payload Example
 
 <!--
@@ -39,7 +73,7 @@ type: tab
 title: Request
 -->
 
-#### Sample chargeRequest with Stored Credentials details
+##### Example of a charge payload request using `storedCredentials`.
 
 ```json
 {

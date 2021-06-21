@@ -34,7 +34,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ---
 
-## Minimum Requirement
+## Request Variables
 
 The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
 
@@ -42,13 +42,12 @@ The `convenienceFee` is part of the `amountComponents` and the `additionalDataCo
 
 ## Payload Example
 
-
 <!--
 type: tab
 title: Request
 -->
 
-##### Example of a Charge Payload Request.
+##### Example of a charge payload request using `convenienceFee`.
 
 ```json
 {

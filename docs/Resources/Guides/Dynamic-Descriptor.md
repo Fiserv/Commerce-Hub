@@ -32,6 +32,8 @@ type: tab
 title: dynamicDescriptor
 -->
 
+Parameters required in the `dynamicDescriptor` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
@@ -44,6 +46,8 @@ title: dynamicDescriptor
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `dynamicDescriptor`:
 
 ```json
 {
@@ -63,9 +67,10 @@ title: JSON Example
    }
 }
 ```
----
 
 <!-- type: tab-end -->
+
+---
 
 ## Payload Example
 
@@ -74,7 +79,7 @@ type: tab
 title: Request
 -->
 
-#### Charge example with Dynamic Descriptor
+##### Example of a charge payload request using `dynamicDescriptors`.
 
 ```json
 {
