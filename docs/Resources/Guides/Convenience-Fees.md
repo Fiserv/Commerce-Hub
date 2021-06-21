@@ -23,7 +23,7 @@ A merchant that charges a convenience fee must ensure that the fee is:
 
 ---
 
-## Policies on Convenience Fees
+## Policies and Usage
 
 Every credit card provider has different rules on convenience fees. Below are the rules of some of the major credit card providers:
 

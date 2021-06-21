@@ -95,6 +95,8 @@ type: tab
 title: bankAssociationDetails
 -->
 
+Parameters included in the `bankAssociationDetails` object:
+
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | associationResponseCode | string | 32 | Bank response code. |
@@ -106,6 +108,8 @@ title: bankAssociationDetails
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `bankAssociationDetails`:
 
 ```json
 {
@@ -138,6 +142,8 @@ type: tab
 title: avsSecurityCodeResponse
 -->
 
+Parameters included in the `avsSecurityCodeResponse` object:
+
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `streetMatch` | *string* | 8 | Contains the normalized gateway response of [street number](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match.|
@@ -149,6 +155,8 @@ title: avsSecurityCodeResponse
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `avsSecurityCodeResponse`:
 
 ```json
 {
@@ -176,6 +184,8 @@ type: tab
 title: association
 -->
 
+Parameters included in the `association` object:
+
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `avsCode` | *string* | 32 | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md) response received from the association bank. |
@@ -186,6 +196,8 @@ title: association
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `association`:
 
 ```json
 {
