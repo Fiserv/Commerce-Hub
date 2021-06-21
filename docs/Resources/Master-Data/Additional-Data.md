@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data
 ---
 
 
-# Additional Transaction Data
+## Additional Transaction Data
 
 Additional transaction data is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
 
