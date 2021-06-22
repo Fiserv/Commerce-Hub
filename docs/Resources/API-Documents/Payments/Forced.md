@@ -30,24 +30,41 @@ The [example](#payload-example) below contains the mandatory fields required for
 |---------|----------|----------------|---------|
 |`approvalCode`|  *string* | 6 | Approval code obtained from calling the Voice Authorization Center.|
 
-#### Object: amount
+<!--
+type: tab
+title: amount
+-->
 
-| Variable    |  Type| Maximum Length | Description/Values|
+Parameters required in the `amount` object:
+
+|Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-#### Object: source
+<!--
+type: tab
+title: source
+-->
+
+Parameters required in the `source` object:
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 
-#### Object: transactionDetails
+<!--
+type: tab
+title: transactionDetails
+-->
+
+Parameters required in the `transactionDetails` object:
 
 | Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth).|
+
+<!-- type: tab-end -->
 
 ---
 
