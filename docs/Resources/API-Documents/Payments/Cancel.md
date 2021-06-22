@@ -17,7 +17,7 @@ If the customer cancels the order or if fraud is suspected, the merchant will ne
 
 Cancel Request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` along with the `reversalReasonCode` in `transactionDetails` object. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel).
 
-### Reversal Reason Code
+#### Reversal Reason Code
 
 Reason the merchant/customer requests for cancel (void).
 
@@ -47,7 +47,7 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab

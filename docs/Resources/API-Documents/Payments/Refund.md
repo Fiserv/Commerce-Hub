@@ -16,7 +16,7 @@ If the customer returns product or requests to cancel the transaction after the 
 
 ---
 
-## Requirements
+## Minimum Requirements
 
 A refund request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId`. The request may contain the `amount` object based on the refund type.
 

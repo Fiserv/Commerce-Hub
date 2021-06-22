@@ -36,7 +36,7 @@ A Credit or Open Credit is a refund to a card without an original authorization 
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab
