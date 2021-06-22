@@ -46,6 +46,8 @@ title: JSON Example
 
 #### Transaction Origin
 
+Indicates the origin of the transaction. Valid values are:
+
 | Value | Description |
 |-------|-------------|
 | *ECOM* | Card Not Present email or internet. |
@@ -55,6 +57,8 @@ title: JSON Example
 ---
 
 #### POS Entry Mode
+
+Indicates how the account number was entered on the transaction. Valid values are:
 
 | Value | Description |
 |-------|-------------|
@@ -79,6 +83,8 @@ title: JSON Example
 
 #### POS Condition Code
 
+Indicates the transaction condition at the Point-of-Sale. Valid values are:
+
 | Value | Description |
 |-------|-------------|
 | *CARD_PRESENT* | **Cardholder Present - Card Present:** Designates a transaction where the cardholder was present at a merchant location. |
@@ -96,7 +102,9 @@ title: JSON Example
 
 ---
 
-#### Mobile Interactions
+#### Mobile Interaction
+
+Indicates mobile method of interaction. Valid values are:
 
 | Value | Description |
 |-------|-------------|
