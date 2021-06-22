@@ -13,7 +13,7 @@ Request and create a developer account in the Developer Portal.
 
 ### 2. Generate an API key
 
-Go to the Apps page and create a Sandbox app to obtain your and API-Key and API-Secret.
+Go to the Apps page and create a Sandbox app to obtain your API-Key and API-Secret.
 
 <!-- theme: info -->
 > These are required in the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md).

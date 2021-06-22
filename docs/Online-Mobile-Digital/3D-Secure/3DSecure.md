@@ -18,7 +18,7 @@ When using our payments API with passthrough, the authentication is performed wi
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use Value *Payment3dsPassthrough* for 3-D Secure passthrough transactions. |
+| `sourceType` | *string* | 15 | Use value *Payment3dsPassthrough* for 3-D Secure passthrough transactions. |
 | `xid` | *string* | 32 | 3-D Secure/Verified by Visa value returned by Cardinal Commerce. |
 | `card` | *array* | | [Card](?path=docs/Resources/Master-Data/Card.md) sub component objects. |
 | `merchantIdentifier` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer |
