@@ -63,6 +63,9 @@ JSON string format for `networkDetails`:
 ---
 
 #### Authorization Characteristics Indicator
+
+Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Valid values are:
+
 | Value | Description |
 |-------|-------------|
 | *CARD_NOT_PRESENT* |  Card not present trasaction (preferred customer only e.g. Lodging or Auto Rental). |

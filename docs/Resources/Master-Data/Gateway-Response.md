@@ -54,6 +54,8 @@ JSON string format for `gatewayResponse`:
 
 #### Transaction State
 
+Indicates the final state of the transaction. Valid values are:
+
 | Value | Description |
 |-------|-------------|
 | *AUTHORIZED* | Transaction has been [authorized](?path=docs/Resources/API-Documents/Payments/Charges.md). |

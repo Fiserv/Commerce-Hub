@@ -113,6 +113,8 @@ JSON string format for `transactionDetails`:
 
 #### Authorization Type Indicator
 
+Identifies the authorization type of subsequent transactions. Valid values are:
+
 | Value | Description |
 | ----- | ----- |
 | *INITIAL* | Initial authorization. |
@@ -121,6 +123,8 @@ JSON string format for `transactionDetails`:
 | *INCREMENTAL* | [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) |
 
 #### Primary Transaction Type
+
+Identifies the primary transaction type. Valid values are:
 
 | Value | Description |
 | ----- | ----- |
@@ -131,6 +135,8 @@ JSON string format for `transactionDetails`:
 | *REFUND* | Refund |
 
 #### Reversal Reason Code
+
+Indicates the reason the merchant/customer requests for cancel (void). Valid values are:
 
 | Value | Description |
 | ----- | ----- |
@@ -145,6 +151,8 @@ JSON string format for `transactionDetails`:
 
 #### Authorization Sequence
 
+Indicates type of authorization sequence requested. Valid values are:
+
 | Value | Description |
 | ----- | ----- |
 | *AUTHORIZATION_ONLY* | Only authorization |
@@ -152,6 +160,8 @@ JSON string format for `transactionDetails`:
 | *CANCEL_BEFORE_AUTHORIZATION* | Cancel before authorization |
 
 ## Device Fingerprint Data
+
+Array that contains the device finger print data.
 
 <!--
 type: tab
@@ -206,6 +216,8 @@ JSON string format for `deviceFingerprint`:
 
 ## Data Capture
 
+Contains the finger print data and time it is captured.
+
 <!--
 type: tab
 title: dataCapture
@@ -239,6 +251,8 @@ JSON string format for `dataCapture`:
 <!--type: tab-end -->
 
 ## Data Static
+
+Contains the static data such as operating system details and device type/model.
 
 <!--
 type: tab
@@ -275,6 +289,8 @@ JSON string format for `dataStatic`:
 <!--type: tab-end -->
 
 ## Data Dynamic
+
+Contains the dayamic data like device location and ipaddress. 
 
 <!--
 type: tab

@@ -114,6 +114,8 @@ JSON string format for `additionalDataCommon`:
 
 #### Bill Payment Indicator
 
+Indicates the type of bill payment. Valid values are:
+
 | Value | Description |
 | ----- | ----- |
 | *SINGLE* | Single charge not for recurring services or installment plan. |

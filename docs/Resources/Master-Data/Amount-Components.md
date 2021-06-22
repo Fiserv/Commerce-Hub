@@ -44,8 +44,7 @@ JSON string format for `amount`:
 
 ## Amount Components
 
-<!-- theme:info -->
-> Nested object in [`additionalDataCommon`](?path=docs/Resources/Master-Data/Additional-Data.md).
+Used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
 
 <!--
 type: tab

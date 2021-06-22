@@ -117,6 +117,8 @@ JSON string format for `shippingAddress`:
 
 #### Shipping Method
 
+Indicates the shipping method. Vaalid values are:
+
 | Value | Description |
 | ----- | ----------- |
 | *SAME_DAY* | Same day shipping |

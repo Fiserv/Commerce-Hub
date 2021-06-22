@@ -78,6 +78,8 @@ JSON string format for `processorResponseDetails`:
 
 #### Approval Status
 
+Indicates final status of the transaction. Valid values are:
+
 | Value | Description |
 |-------|-------------|
 | *APPROVED* | The transaction was approved. |
@@ -89,6 +91,8 @@ JSON string format for `processorResponseDetails`:
 ---
 
 ## Bank Association Details
+
+Indicates the bank association response details. Valid values are:
 
 <!--
 type: tab
@@ -137,6 +141,8 @@ JSON string format for `bankAssociationDetails`:
 
 ## Address and Security Code Response
 
+Indicates the AVS and Security code gateway response details. Valid values are: 
+
 <!--
 type: tab
 title: avsSecurityCodeResponse
@@ -178,6 +184,8 @@ JSON string format for `avsSecurityCodeResponse`:
 ---
 
 ## Association
+
+Indicates the AVS and Security code association response details. Valid values are: 
 
 <!--
 type: tab
