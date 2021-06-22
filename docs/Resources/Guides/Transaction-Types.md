@@ -10,7 +10,7 @@ The Commerce Hub API allows a merchant to create, inquire, and finalize payment 
 
 ### Primary Transactions
 
-Primary transactions include; [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) and [information lookup](?path=docs/Resources/API-Documents/Payments/Information-Lookup.md) requests that are submitted without reference to a prior transaction.
+Primary transactions include; [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) and [information lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) requests that are submitted without reference to a prior transaction.
 
 ### Secondary Transactions
 
