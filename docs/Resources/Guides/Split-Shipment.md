@@ -87,7 +87,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge (201: Created) Response.
+##### Example of a charge (201: Created) response.
 
 ```json
 {
