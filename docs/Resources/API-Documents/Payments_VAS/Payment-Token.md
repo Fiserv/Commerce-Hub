@@ -16,6 +16,7 @@ Merchants using multiple tokenization services, `tokenProvider` is a required fi
 
 ## Tokens Request
 
+The merchant can initiate token request in order to generate the token for the cardnumber on the first transaction and save it in the database to use for future transactions.
 
 ### Minimum Requirements
 
@@ -136,7 +137,9 @@ title: Response
 
 ## Tokenization with Charges Request
 
-### Required Field
+The merchant can initiate create token request as a part of charge request in order to generate the token for the cardnumber. The token is saved in the database and used for future transactions.  
+
+### Minimum Requirements
 
 - `createToken`: *boolean* : *true*
 
@@ -175,6 +178,9 @@ title: Request
    }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
 <!--
 type: tab
 title: Response
@@ -239,10 +245,22 @@ title: Response
 
 ## PaymentToken Charges Request
 
-### Requirements
+The merchant can use the saved tokenized data in order to initate the charge request. 
+
+### Minimum Requirements
+
+
+<!--
+type: tab
+title: paymentToken
+-->
+
+Parameters required in the `paymentToken` object:
+
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 | `tokenData` | *string* | 2048 | Token created from the payment source. |
 | `PARId` | *string* | 256 | |
 | `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
@@ -270,7 +288,7 @@ title: Request
     "total": "1.00",
     "currency": "USD"
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
     "PARId": "",
@@ -286,6 +304,9 @@ title: Request
   },
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
 <!--
 type: tab
 title: Response
