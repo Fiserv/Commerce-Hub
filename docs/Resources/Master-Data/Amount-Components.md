@@ -12,12 +12,14 @@ Transaction amount information is contained into two objects, `amount` and `amou
 
 ## Amount
 
-Parameters included in the `amount` object:
+Used to present the transaction amount and transaction currency for particular transaction.
 
 <!--
 type: tab
 title: amount
 -->
+
+Parameters included in the `amount` object:
 
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|

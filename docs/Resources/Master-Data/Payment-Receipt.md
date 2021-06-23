@@ -10,12 +10,14 @@ A Customer Transaction Record (CTR), also known as a payment receipt is returned
 
 ## Payment Receipt
 
-Parameters included in the `paymentReceipt` object:
+Object contains payment receipt response details.
 
 <!--
 type: tab
 title: paymentReceipt
 -->
+
+Parameters included in the `paymentReceipt` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | ---- | ------- | -------------------------------|

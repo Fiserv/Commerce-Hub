@@ -9,7 +9,7 @@ The Commerce Hub Response contains the response parameters for any successful or
 
 ## Gateway Response
 
-
+Object containing the Commerce Hub response parameters.
 
 <!--
 type: tab
@@ -21,9 +21,9 @@ Parameters included in the `gatewayResponse` object:
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `transactionType` | *string* | 256 | Type of transaction submitted. |
-| `transactionState` | *string* | 256 | Final [state](#transactionstate) of the transaction. |
-| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
-| `transactionProcessingDetails` | *object* | | Array containing the [transaction processing details](#transaction-processing-details). |
+| `transactionState` | *string* | 256 | Final [state](#transaction-state) of the transaction. |
+| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origin). |
+| `transactionProcessingDetails` | *object* | | Object containing the [transaction processing details](#transaction-processing-details). |
 
 <!--
 type: tab
@@ -71,6 +71,8 @@ Indicates the final state of the transaction. Valid values are:
 ---
 
 ## Transaction Processing Details
+
+Object contains the transaction processing details.
 
 <!--
 type: tab

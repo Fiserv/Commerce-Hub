@@ -29,6 +29,8 @@ type: tab
 title: JSON Example
 -->
 
+JSON string format for `transactionInteraction`:
+
 ```json
 {
    "transactionInteraction":{
