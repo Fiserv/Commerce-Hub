@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, congigure-google-pay-in-app, submit-a payment-request, google-pay, wallet, google-pay-inapp-integration]
+tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app, online, google-pay, wallet, mobile]
 ---
 
 # Google Pay: In-App Integration

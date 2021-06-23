@@ -119,8 +119,8 @@ title: Response
             "streetMatch": "MATCH",
             "postalCodeMatch": "MATCH",
             "association":{
-               "avsCode": "BOTH_MATCH",
-               "cardholderNameResponse": "NAME_MATCH"
+               "avsCode": "YY",
+               "cardholderNameResponse": "1"
             }
          }
       }
@@ -234,8 +234,8 @@ title: Response
             "streetMatch": "MATCH",
             "postalCodeMatch": "MATCH",
             "association":{
-               "avsCode": "BOTH_MATCH",
-               "cardholderNameResponse": "NAME_MATCH"
+               "avsCode": "YY",
+               "cardholderNameResponse": "1"
             }
          }
       }
@@ -277,14 +277,14 @@ The result of checking the cardholder’s postal code and address information pr
 
 | Value | Description |
 | ------- | ------- |
-| *NAME_MATCH* | Cardholder name matches. |
-| *ALL_MATCH* | Cardholder name, billing address, and postal code match. |
-| *NAME_POSTAL_MATCH* | Cardholder name and billing postal code match. |
-| *NAME_ADDRESS_MATCH* | Cardholder name and billing address match. |
-| *ADDRESS_POSTAL_ONLY* | Cardholder name incorrect, billing address and postal code match. |
-| *POSTAL_ONLY* | Cardholder name incorrect, billing postal code matches. |
-| *ADDRESS_ONLY* | Cardholder name incorrect, billing address matches. |
-| *NO_MATCH* | Cardholder name, billing address, and postal code are all incorrect. |
+| *1* | Cardholder name matches. |
+| *2* | Cardholder name, billing address, and postal code match. |
+| *3* | Cardholder name and billing postal code match. |
+| *4* | Cardholder name and billing address match. |
+| *5* | Cardholder name incorrect, billing address and postal code match. |
+| *6* | Cardholder name incorrect, billing postal code matches. |
+| *7* | Cardholder name incorrect, billing address matches. |
+| *8* | Cardholder name, billing address, and postal code are all incorrect. |
 
 ---
 

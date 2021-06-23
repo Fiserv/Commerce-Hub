@@ -109,7 +109,7 @@ title: Response
          "avsSecurityCodeResponse":{
             "securityCodeMatch": "MATCH",
             "association":{
-               "securityCodeResponse": "MATCH"
+               "securityCodeResponse": "M"
             }
          }
       }
@@ -213,7 +213,7 @@ title: Response
          "avsSecurityCodeResponse":{
             "securityCodeMatch":"MATCH",
             "association":{
-               "securityCodeResponse":"MATCH"
+               "securityCodeResponse":"M"
             }
          }
       }

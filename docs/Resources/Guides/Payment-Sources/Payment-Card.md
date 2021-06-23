@@ -11,29 +11,40 @@ Financial Institutions such as banks issue the **Payment Card** to the customers
 
 ### Minimum Requirements
 
-#### Component : paymentSource
+<!--
+type: tab
+title: source
+-->
+
+Parameters required in the `source` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use Value *PaymentCard* for card transactions |
+| `sourceType` | *string* | 15 | Use Value *PaymentCard* for card transactions. |
+| `card` | *object* | | Contains the payment card details. |
 
-#### Component : Card
+<!--
+type: tab
+title: card
+-->
+
+Parameters required in the `card` object:
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
 | `cardData` | *string* | 15 | Credit Card Number or Encrypted Data |
 | `expirationMonth` | *string* | 2 | 2-digit card expiration month Example (05) |
 | `expirationYear` | *string* | 4 | 4-digit card expiration year Example (2025) |
-| `securityCode` | *string* |  | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
 
----
-
-### Payload Example
+<!-- theme: info -->
+> Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
 
 <!--
 type: tab
-title: Request
+title: JSON Example
 -->
+
+JSON string format for PaymentCard:
 
 ```json
 {
@@ -43,11 +54,112 @@ title: Request
       "cardData": "4005550000000019",
       "expirationMonth": "02",
       "expirationYear": "2035",
-      "securityCode": "123"
       }
    }
 }
 ```
+
+<!-- type: tab-end -->
+
+---
+
+### Charges Payload Example
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a charge payload request using PaymentCard.
+
+```json
+{
+   "amount": {
+      "total": "12.04",
+      "currency": "USD"
+   },
+   "source": {
+      "sourceType": "PaymentCard",
+      "card": {
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
+      }
+   },
+   "transactionDetails": {
+      "captureFlag": true
+   }
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+
+```json
+{
+   "gatewayResponse": {
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
+      }
+   },
+   "source": {
+      "sourceType": "PaymentCard",
+      "card": {
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "bin": "400555",
+         "last4": "0019",
+         "scheme": "VISA"
+      }
+   },
+   "transactionProcessingDetails": {
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+   },
+   "paymentReceipt": {
+      "approvedAmount": {
+         "total": "12.04",
+         "currency":"USD"
+      },
+      "processorResponseDetails": {
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021.02.25 14:14:38 (CET)",
+         "bankAssociationDetails": {
+            "transactionTimestamp": "2021.02.25 14:14:38 (CET)"
+         }
+      }
+   },
+   "transactionDetails": {
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
+   }
+}
+```
+
 <!-- type: tab-end -->
 
 ---

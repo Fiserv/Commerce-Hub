@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted-payment-page, in-app-integration, apple-pay, wallet,]
+tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted-payment-page, in-app, web, online, apple-pay, wallet, mobile, getting-started]
 ---
 
 # Apple Pay

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, card-present, charges, payments, api-documents, api-reference, authorization, sale, pre-auth]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, charges, payments, api-reference, authorization, sale, pre-auth]
 ---
 
 # Charges

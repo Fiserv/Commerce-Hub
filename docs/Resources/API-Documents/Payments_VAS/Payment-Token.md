@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, tokens-request, tokenization-with-charges-request, payment-token-charges-request, payload-example, payment-token, tokenization]
+tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, tokens-request, payment-token, tokenization, api-reference,]
 ---
 
 # Tokenization
@@ -10,7 +10,7 @@ tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, to
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
   - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
-- **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
+- **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching. &#10004;
 
 ### Required Field
 
@@ -221,6 +221,9 @@ title: Response
 | `PARId` | *string* | 256 | |
 | `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
 | `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | | Contains card specific information. |
+| `expirationMonth` | *string* | 2 | Card expiration month. |
+| `expirationYear` | *string* | 2 | Card expiration year. |
 
 ### Endpoint
 <!-- theme: success -->
@@ -247,6 +250,10 @@ title: Request
     "PARId": "",
     "declineDuplicates": true,
     "tokenSource": "TRANSARMOR"
+    "card": {
+      "expirationMonth": "03",
+      "expirationYear": "30"
+    }
   },
   "transactionDetails": {
     "captureFlag": true
@@ -279,6 +286,8 @@ title: Response
   "card": {
     "last4": "0019",
     "brand": "VISA",
+    "expirationMonth": "03",
+    "expirationYear": "30"
   },
   "paymentReceipt": {
     "approvedAmount": {

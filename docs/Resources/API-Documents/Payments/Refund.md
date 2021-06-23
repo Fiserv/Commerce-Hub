@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, endpoints, full-refund, payments, partial-refund, refund]
+tags: [carat, commerce-hub, enterprise, full-refund, payments, partial-refund, refund,api-reference,]
 ---
 
 # Refund

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, configure-google-pay-on-the-web, submit-a-payment-request, google-pay, wallet, google-pay-web-integration]
+tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, google-pay, wallet]
 ---
 
 # Google Pay on the Web: RESTful API Integration

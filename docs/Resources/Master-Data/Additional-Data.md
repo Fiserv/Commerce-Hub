@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data
 ---
 
 
-# Additional Transaction Data
+## Additional Transaction Data
 
 Additional transaction data is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
 
@@ -108,7 +108,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-### Bill Payment Indicator
+#### Bill Payment Indicator
 
 | Value | Description |
 | ----- | ----- |
@@ -160,7 +160,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-### Business Application Identifier
+#### Business Application Identifier
 
 The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision.
 

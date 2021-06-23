@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, apple-pay, wallet, apple-pay-inapp-integration, configure-apple-pay-in-app, set-up-project-in-xcode, submit-a-payment-request, submit-a-charge-request]
+tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app, online, apple-pay, wallet, mobile]
 ---
 
 # Apple Pay: In-App Integration
