@@ -111,7 +111,7 @@ JSON string format for `transactionDetails`:
 
 #### Authorization Type Indicator
 
-Identifies the authorization type of subsequent transactions. Valid values are:
+The below table identifies the valid values of the authorization type in subsequent transactions.
 
 | Value | Description |
 | ----- | ----- |
