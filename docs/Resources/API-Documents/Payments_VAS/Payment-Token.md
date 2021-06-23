@@ -18,6 +18,8 @@ Merchants using multiple tokenization services, `tokenProvider` is a required fi
 
 The merchant can initiate token request in order to generate the token for the cardnumber on the first transaction and save it in the database to use for future transactions.
 
+---
+
 ### Minimum Requirements
 
 <!--
@@ -44,10 +46,13 @@ Parameters required in the `transactionDetails` object:
 
 <!-- type: tab-end -->
 
+---
 
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/tokens`
+
+---
 
 ### Payload Example
 
@@ -139,13 +144,19 @@ title: Response
 
 The merchant can initiate create token request as a part of charge request in order to generate the token for the cardnumber. The token is saved in the database and used for future transactions.  
 
+---
+
 ### Minimum Requirements
 
 - `createToken`: *boolean* : *true*
 
+---
+
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
+
+---
 
 ### Payload Example
 
@@ -247,8 +258,21 @@ title: Response
 
 The merchant can use the saved tokenized data in order to initate the charge request. 
 
+---
+
 ### Minimum Requirements
 
+<!--
+type: tab
+title: amount
+-->
+
+Parameters required in the `amount` object:
+
+|Variable    |  Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -260,7 +284,7 @@ Parameters required in the `paymentToken` object:
 
 | Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+| `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 | `tokenData` | *string* | 2048 | Token created from the payment source. |
 | `PARId` | *string* | 256 | |
 | `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
@@ -269,9 +293,15 @@ Parameters required in the `paymentToken` object:
 | `expirationMonth` | *string* | 2 | Card expiration month. |
 | `expirationYear` | *string* | 2 | Card expiration year. |
 
+<!-- type: tab-end -->
+
+---
+
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
+
+---
 
 ### Payload Example
 
@@ -363,6 +393,8 @@ title: Response
 }
 ```
 <!-- type: tab-end -->
+
+---
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
