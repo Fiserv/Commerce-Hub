@@ -10,7 +10,7 @@ tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, to
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
   - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
-- **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
+- **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching. &#10004;
 
 ### Required Field
 
