@@ -56,12 +56,12 @@ JSON string format for `splitShipment`:
 
 ## Payload Example
 
-##### Example of a charge payload request using `splitShipment`.
-
 <!--
 type: tab
 title: Request
 -->
+
+##### Example of a charge payload request using `splitShipment`.
 
 ```json
 {
