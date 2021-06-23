@@ -5,7 +5,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, credit, 
 
 # Credit
 
-## Overview
 A Credit or Open Credit is a refund to a card without an original authorization on the Commerce Hub APIs. Use credit payload to perform a partial or full credit without a `transactionID` or `orderID`.
 
 <!-- theme: danger -->

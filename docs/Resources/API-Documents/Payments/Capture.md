@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, capture,
 
 # Capture
 
-## Overview
-
 Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md). This is known as a post-authorization. This will settle (withdrawl) funds from the customer.
 
 <!-- theme: warning -->

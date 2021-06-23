@@ -14,6 +14,8 @@ type: tab
 title: transactionInteraction
 -->
 
+Parameters included in the `transactionInteraction` object:
+
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `origin` | *string* |  | The [origin](#transaction-origin) of the transaction. |

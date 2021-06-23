@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card
 
 # Information Lookup
 
-## Overview
-
 If the merchant wants to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token, then the merchant can initiate the account information lookup request.
 
 ---

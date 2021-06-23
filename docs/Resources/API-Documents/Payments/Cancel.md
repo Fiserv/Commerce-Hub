@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, cancel,a
 
 # Cancel
 
-## Overview
-
 If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` or `orderId`.
 
 <!-- theme: warning -->

@@ -8,12 +8,12 @@ The transaction request may contain the `customerDetails` consisting of customer
 
 ## Customer
 
-Parameters included in the `customer` object:
-
 <!--
 type: tab
 title: customer
 -->
+
+Parameters included in the `customer` object:
 
 | Variable | Type | Maximum Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -67,12 +67,12 @@ JSON string format for `customer`:
 
 ## Phone Number
 
-Parameters included in the `phoneNumber` object:
-
 <!--
 type: tab
 title: phone
 -->
+
+Parameters included in the `phoneNumber` object:
 
 | Variable | Type |Maximum Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |

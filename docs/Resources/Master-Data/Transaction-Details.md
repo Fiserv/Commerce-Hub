@@ -7,11 +7,9 @@ tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-tra
 
 The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
 
-## Transaction Details
-
 <!--
 type: tab
-title: transaction
+title: transactionDetails
 -->
 
 Parameters included in the `transactionDetails` object:

@@ -18,7 +18,7 @@ The merchant can perform account verification transaction to confirm that the ca
 
 ## PaymentCard Requirements
 
-#### Object: source
+#### source
 
 | Variable | Type | Maximum Length | Description/Values |
 | --------- | ---------- | ---------------- | --------- |

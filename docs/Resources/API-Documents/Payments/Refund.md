@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, full-refund, payments, partial-refund, r
 
 # Refund
 
-## Overview
-
 If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId` or `orderId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
 <!-- theme: danger -->

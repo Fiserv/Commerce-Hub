@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, forced-p
 
 # Forced Post
 
-## Overview
-
 <!-- theme: danger -->
 > Due to higher instances of fraud, it is highly recommended that the forced post be limited to certain personnel. An administrator in the Virtual Terminal can manage forced Post.
 
@@ -25,10 +23,6 @@ The [example](#payload-example) below contains the mandatory fields required for
 
 <!--theme:info-->
 > A charge request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
-
-| Variable | Data Type| Maximum Length | Description/Values |
-|---------|----------|----------------|---------|
-|`approvalCode`|  *string* | 6 | Approval code obtained from calling the Voice Authorization Center.|
 
 <!--
 type: tab
@@ -63,6 +57,7 @@ Parameters required in the `transactionDetails` object:
 | Variable | Data Type| Maximum Length | Description/Values |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth).|
+|`approvalCode`|  *string* | 6 | Approval code obtained from calling the Voice Authorization Center.|
 
 <!-- type: tab-end -->
 
@@ -98,9 +93,9 @@ title: Request
       }
    },
    "transactionDetails": {
-      "captureFlag": true
-   },
-   "approvalCode": "OK5882"
+      "captureFlag": true,
+      "approvalCode": "OK5882"
+   } 
 }
 ```
 

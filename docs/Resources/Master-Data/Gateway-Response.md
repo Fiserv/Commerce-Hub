@@ -9,12 +9,14 @@ The Commerce Hub Response contains the response parameters for any successful or
 
 ## Gateway Response
 
-Parameters included in the `gatewayResponse` object:
+
 
 <!--
 type: tab
 title: gatewayResponse
 -->
+
+Parameters included in the `gatewayResponse` object:
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
@@ -70,12 +72,12 @@ Indicates the final state of the transaction. Valid values are:
 
 ## Transaction Processing Details
 
-Parameters included in the `transactionProcessingDetails` object:
-
 <!--
 type: tab
 title: transactionProcessingDetails
 -->
+
+Parameters included in the `transactionProcessingDetails` object:
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |

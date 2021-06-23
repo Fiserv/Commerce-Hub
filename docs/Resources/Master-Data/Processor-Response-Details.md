@@ -141,7 +141,7 @@ JSON string format for `bankAssociationDetails`:
 
 ## Address and Security Code Response
 
-Indicates the AVS and Security code gateway response details. Valid values are: 
+Indicates the AVS and Security code gateway response details.
 
 <!--
 type: tab
@@ -185,7 +185,7 @@ JSON string format for `avsSecurityCodeResponse`:
 
 ## Association
 
-Indicates the AVS and Security code association response details. Valid values are: 
+Indicates the AVS and Security code association response details.
 
 <!--
 type: tab

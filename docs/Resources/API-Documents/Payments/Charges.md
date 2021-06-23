@@ -4,13 +4,10 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, charges,
 
 # Charges
 
-## Overview
-
 Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the `captureFlag` sent in the request.
 
 - *true:* A sale transaction where the customer will be changed the total amount.
 - *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdrawal the funds.
-
 
 #### Charge Types
 
