@@ -57,11 +57,9 @@ title: Request
     "total": "12.04",
     "currency": "USD"
   },
-  "transactionDetails": {
-    "captureFlag": true
-  }
 }
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/capture)
 
 <!--

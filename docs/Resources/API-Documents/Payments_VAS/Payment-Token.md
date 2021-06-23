@@ -10,17 +10,15 @@ tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, to
   - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
 - **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
 
-Merchants using multiple tokenization services, `tokenProvider` is a required field.
-
 ---
 
 ## Tokens Request
 
-The merchant can initiate token request in order to generate the token for the cardnumber on the first transaction and save it in the database to use for future transactions.
+The merchant can initiate token request in order to generate a token for the payment source without authorization.
 
 ---
 
-### Minimum Requirements
+### Requirements
 
 <!--
 type: tab
@@ -72,7 +70,6 @@ title: Request
     "expirationYear": "2035",
   },
   "transactionDetails": {
-    "tokenProvider": "TRANSARMOR",
     "createToken": true
   }
 }
@@ -142,13 +139,13 @@ title: Response
 
 ## Tokenization with Charges Request
 
-The merchant can initiate create token request as a part of charge request in order to generate the token for the cardnumber. The token is saved in the database and used for future transactions.  
+The merchant can initiate token request in order to generate a token for the payment source during the initial charge transaction. 
 
 ---
 
-### Minimum Requirements
+### Requirements
 
-- `createToken`: *boolean* : *true*
+In additional to the minimum requirement for a charge request, `createToken` *true* needs to be sent in the `transactionDetails` object.
 
 ---
 
@@ -184,8 +181,7 @@ title: Request
    },
    "transactionDetails":{
       "captureFlag": false,
-      "createToken": true,
-      "tokenProvider": "TRANSARMOR"
+      "createToken": true
    }
 }
 ```
@@ -256,11 +252,11 @@ title: Response
 
 ## PaymentToken Charges Request
 
-The merchant can use the saved tokenized data in order to initate the charge request. 
+The merchant can use the saved tokenized data in order to initate a charge request. 
 
 ---
 
-### Minimum Requirements
+### Requirements
 
 <!--
 type: tab
@@ -282,16 +278,16 @@ title: paymentToken
 Parameters required in the `paymentToken` object:
 
 
-| Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Required | Description/Values|
 |---------|----------|----------------|---------|
-| `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
-| `tokenData` | *string* | 2048 | Token created from the payment source. |
-| `PARId` | *string* | 256 | |
-| `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
-| `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
-| `card` | *object* | | Contains card specific information. |
-| `expirationMonth` | *string* | 2 | Card expiration month. |
-| `expirationYear` | *string* | 2 | Card expiration year. |
+| `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+| `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
+| `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
+| `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
+| `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | | &#10004; |Contains card specific information. |
+| `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
+| `expirationYear` | *string* | 2 | &#10004; |Card expiration year. |
 
 <!-- type: tab-end -->
 
