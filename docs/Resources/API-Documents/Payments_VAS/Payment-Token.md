@@ -10,14 +10,38 @@ tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, to
   - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
 - **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
 
-### Required Field
-
-<!-- theme: warning -->
-> Merchants using multiple tokenization services, `tokenProvider` is a required field.
+Merchants using multiple tokenization services, `tokenProvider` is a required field.
 
 ---
 
 ## Tokens Request
+
+<!--
+type: tab
+title: source
+-->
+
+Parameters required in the `source` object:
+
+| Variable | Type| Maximum Length | Description/Values|
+|---------|----------|----------------|---------|
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+
+<!--
+type: tab
+title: transactionDetails
+-->
+
+Parameters required in the `transactionDetails` object:
+
+| Variable | Data Type| Maximum Length | Description/Values |
+|---------|----------|----------------|---------|
+|`createToken` | *boolean* |  | Used to create a token on a charge transaction. |
+
+<!-- type: tab-end -->
+
+### Minimum Requirements
+
 
 ### Endpoint
 <!-- theme: success -->
