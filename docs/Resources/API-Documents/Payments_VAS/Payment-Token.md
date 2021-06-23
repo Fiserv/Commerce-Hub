@@ -16,6 +16,9 @@ Merchants using multiple tokenization services, `tokenProvider` is a required fi
 
 ## Tokens Request
 
+
+### Minimum Requirements
+
 <!--
 type: tab
 title: source
@@ -39,8 +42,6 @@ Parameters required in the `transactionDetails` object:
 |`createToken` | *boolean* |  | Used to create a token on a charge transaction. |
 
 <!-- type: tab-end -->
-
-### Minimum Requirements
 
 
 ### Endpoint
