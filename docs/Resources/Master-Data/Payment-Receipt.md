@@ -17,8 +17,8 @@ title: paymentReceipt
 
 | Variable | Type | Length | Description/Values |
 | -------- | ---- | ------- | -------------------------------|
-| `approvedAmount` | *object* |  | Contains the approved [amount](?path=docs/Resources/Master-Data/Amount-Components.md) and currency code. |
-| `processorResponseDetails` | *object* | | Contains the [response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) parameters from the Commerce Hub for any successful or unsuccessful transaction. |
+| `approvedAmount` | *object* | N/A | Contains the approved [amount](?path=docs/Resources/Master-Data/Amount-Components.md) and currency code. |
+| `processorResponseDetails` | *object* | N/A | Contains the [response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) parameters from the Commerce Hub for any successful or unsuccessful transaction. |
 | `merchantName` | *string* | 1024 |  Name of the merchant returned from boarded account or dyanamic descriptor. |
 | `merchantAddress` | *string* | 1024 | Street address of the merchant returned from boarded account or dyanamic descriptor. |
 | `merchantCity` | *string* | 256 | City of the merchant returned from boarded account or dyanamic descriptor. |
