@@ -22,6 +22,9 @@ title: additionalDataCommon
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
+
+<!--
+
 | `directedRouting` | *object* | | Required in Directed Routing transactions. |
 | `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 | `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
@@ -31,10 +34,14 @@ title: additionalDataCommon
 | `privateLabel` | *object* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
+-->
+
 <!--
 type: tab
 title: JSON Example
 -->
+
+<!--
 
 ```json
 {
@@ -105,6 +112,7 @@ title: JSON Example
    }
 }
 ```
+-->
 
 <!-- type: tab-end -->
 
