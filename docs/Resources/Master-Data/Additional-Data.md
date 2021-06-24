@@ -33,7 +33,7 @@ title: additionalDataCommon
 | `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 -->
 
-#
+^
 
 <!--
 type: tab
@@ -149,7 +149,7 @@ title: additionalData
 | `emvParameterDownloadIndicator` | *string* | | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
 -->
 
-#
+^
 
 <!--
 type: tab
@@ -159,14 +159,14 @@ title: JSON Example
 ```json
 {
    "additionalData":{
-//      "baiFlag": "PERSON_TO_PERSON",
+      "baiFlag": "PERSON_TO_PERSON", // Future Release
       "networkTransactionReference": "123456788",
-//      "billPayment": false,
+      "billPayment": false, // Future Release
       "ecomURL": "https://www.somedomain.com",
-//      "goodsSoldCode": "GIFT_CARD",
-//      "terminalLaneNumber": "001",
+      "goodsSoldCode": "GIFT_CARD", // Future Release
+      "terminalLaneNumber": "001", // Future Release
       "requestedTestErrorResponseCode": "NO_CONNECTION_AVAILABLE",
-//      "emvParameterDownloadIndicator": true
+      "emvParameterDownloadIndicator": true // Future Release
    }
 }
 ```
@@ -175,8 +175,7 @@ title: JSON Example
 
 ---
 
-<!---
-#### Business Application Identifier
+<!--- #### Business Application Identifier
 
 The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision.
 
@@ -209,12 +208,5 @@ The BAI determines the data carried in the message, the limits and economics tha
 
 ---
 
-[]: # (This is a comment)
-
-[]: # "And this is a comment"
-
-[]: # 'Also this is a comment'
-
 [//]: # (Yet another comment)
-
 [comment]: # (Still another comment)
