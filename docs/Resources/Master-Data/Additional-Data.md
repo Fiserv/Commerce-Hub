@@ -110,16 +110,6 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-[]: # (This is a comment)
-
-[]: # "And this is a comment"
-
-[]: # 'Also this is a comment'
-
-[//]: # (Yet another comment)
-
-[comment]: # (Still another comment)
-
 <!---
 #### Bill Payment Indicator
 
@@ -177,7 +167,7 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-<!--
+<!---
 #### Business Application Identifier
 
 The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision.
@@ -210,3 +200,13 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 
 ---
+
+[]: # (This is a comment)
+
+[]: # "And this is a comment"
+
+[]: # 'Also this is a comment'
+
+[//]: # (Yet another comment)
+
+[comment]: # (Still another comment)
