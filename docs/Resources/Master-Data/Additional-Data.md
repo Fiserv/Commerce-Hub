@@ -41,20 +41,18 @@ type: tab
 title: JSON Example
 -->
 
-<!--
-
 ```json
 {
    "additionalDataCommon":{
       "additionalData":{
-         "baiFlag": "PERSON_TO_PERSON",
+//         "baiFlag": "PERSON_TO_PERSON",
          "networkTransactionReference":"123456788",
-         "billPayment":false,
+//         "billPayment":false,
          "ecomURL":"https://www.somedomain.com",
          "goodsSoldCode":"GIFT_CARD",
-         "terminalLaneNumber":"001",
+//         "terminalLaneNumber":"001",
          "requestedTestErrorResponseCode":"NO_CONNECTION_AVAILABLE",
-         "emvParameterDownloadIndicator":true
+//         "emvParameterDownloadIndicator":true
       },
       "amountComponents":{
          "subTotal": 12.00,
@@ -65,55 +63,53 @@ title: JSON Example
          "surcharge": 1.20,
          "vatAmount": 1.00
       },
-      "directedRouting":{
-         "network": "VISA",
-         "cardFunction": "CREDIT",
-         "processor": "fiserv"
-      },
-      "subMerchant":{
-         "id": "9999",
-         "name": "Some Business",
-         "street": "123 Main Street",
-         "city": "Atlanta",
-         "state": "GA",
-         "postalCode": "30303-001",
-         "country": "US",
-         "taxId": "123456789"
-      },
-      "billPaymentIndicator": "RECURRING",
-      "installments":{
-         "installmentAmount": 20.00,
-         "lastInstallmentAmount": 20.00,
-         "interestRate": 10,
-         "paymentFirstDay": 10.00,
-         "invoiceId": "534242",
-         "invoiceDate": "05-01-2020",
-         "deliveryDate": "05-01-2020",
-         "dueDate": "05-01-2030"
-      },
-      "deferredPayments":{
-         "numberOfPayments": "5",
-         "paymentPlan": "PAY_LATER",
-         "timePeriod": "12"
-      },
-      "recurringPayments":{    
-      },
-      "privateLabel":{
-         "paymentSource": "SHELL",
-         "paymentType": "REFUND",
-         "specialFinanceIndicator": "24/0"
-      },
-      "customFields":{
-         "keyValuePair":{
-            "key": "",
-            "value": ""
-         }
-      }
+//      "directedRouting":{
+//         "network": "VISA",
+//         "cardFunction": "CREDIT",
+//         "processor": "fiserv"
+//      },
+//      "subMerchant":{
+//         "id": "9999",
+//         "name": "Some Business",
+//         "street": "123 Main Street",
+//         "city": "Atlanta",
+//         "state": "GA",
+//         "postalCode": "30303-001",
+//         "country": "US",
+//         "taxId": "123456789"
+//      },
+//      "billPaymentIndicator": "RECURRING",
+//      "installments":{
+//         "installmentAmount": 20.00,
+//         "lastInstallmentAmount": 20.00,
+//         "interestRate": 10,
+//         "paymentFirstDay": 10.00,
+//         "invoiceId": "534242",
+//         "invoiceDate": "05-01-2020",
+//         "deliveryDate": "05-01-2020",
+//         "dueDate": "05-01-2030"
+//      },
+//      "deferredPayments":{
+//         "numberOfPayments": "5",
+//         "paymentPlan": "PAY_LATER",
+//         "timePeriod": "12"
+//      },
+//      "recurringPayments":{    
+//      },
+//      "privateLabel":{
+//         "paymentSource": "SHELL",
+//         "paymentType": "REFUND",
+//         "specialFinanceIndicator": "24/0"
+//      },
+//      "customFields":{
+//         "keyValuePair":{
+//            "key": "",
+//            "value": ""
+//         }
+//      }
    }
 }
 ```
-
--->
 
 <!-- type: tab-end -->
 
@@ -154,23 +150,20 @@ type: tab
 title: JSON Example
 -->
 
-<!--
-
 ```json
 {
    "additionalData":{
-      "baiFlag": "PERSON_TO_PERSON",
+//      "baiFlag": "PERSON_TO_PERSON",
       "networkTransactionReference": "123456788",
-      "billPayment": false,
+//      "billPayment": false,
       "ecomURL": "https://www.somedomain.com",
-      "goodsSoldCode": "GIFT_CARD",
-      "terminalLaneNumber": "001",
+//      "goodsSoldCode": "GIFT_CARD",
+//      "terminalLaneNumber": "001",
       "requestedTestErrorResponseCode": "NO_CONNECTION_AVAILABLE",
-      "emvParameterDownloadIndicator": true
+//      "emvParameterDownloadIndicator": true
    }
 }
 ```
---> 
 
 <!-- type: tab-end -->
 
