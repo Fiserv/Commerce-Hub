@@ -17,19 +17,19 @@ type: tab
 title: paymentReceipt
 -->
 
-Parameters included in the `paymentReceipt` object:
+The below table identifies the required parameters in the `paymentReceipt` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Length | Description |
 | -------- | ---- | ------- | -------------------------------|
-| `approvedAmount` | *object* |  | Contains the approved [amount](?path=docs/Resources/Master-Data/Amount-Components.md) and currency code. |
-| `processorResponseDetails` | *object* | | Contains the [response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) parameters from the Commerce Hub for any successful or unsuccessful transaction. |
-| `merchantName` | *string* | 1024 |  Name of the merchant returned from boarded account or dyanamic descriptor. |
-| `merchantAddress` | *string* | 1024 | Street address of the merchant returned from boarded account or dyanamic descriptor. |
-| `merchantCity` | *string* | 256 | City of the merchant returned from boarded account or dyanamic descriptor. |
-| `merchantStateOrProvince` | *string* | 256 | State or Province of the merchant returned from boarded account or dyanamic descriptor. |
-| `merchantCountry` | *string* | 256 | Country of the merchant returned from boarded account or dyanamic descriptor. |
-| `merchantURL` | *string* | 256 | Merchant URL returned from boarded account. |
-| `merchantPostalCode`| *string* | 10 | Postal code of the merchant returned from boarded account or dyanamic descriptor. |
+| `approvedAmount` | *object* |  | Contains the approved [amount](?path=docs/Resources/Master-Data/Amount-Components.md) and currency code |
+| `processorResponseDetails` | *object* | | Contains the [response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) parameters from the Commerce Hub for any successful or unsuccessful transaction |
+| `merchantName` | *string* | 1024 |  Name of the merchant returned from boarded account or dyanamic descriptor |
+| `merchantAddress` | *string* | 1024 | Street address of the merchant returned from boarded account or dyanamic descriptor |
+| `merchantCity` | *string* | 256 | City of the merchant returned from boarded account or dyanamic descriptor |
+| `merchantStateOrProvince` | *string* | 256 | State or Province of the merchant returned from boarded account or dyanamic descriptor |
+| `merchantCountry` | *string* | 256 | Country of the merchant returned from boarded account or dyanamic descriptor |
+| `merchantURL` | *string* | 256 | Merchant URL returned from boarded account |
+| `merchantPostalCode`| *string* | 10 | Postal code of the merchant returned from boarded account or dyanamic descriptor |
 
 
 <!--

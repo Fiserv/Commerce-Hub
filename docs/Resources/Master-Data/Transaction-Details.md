@@ -12,12 +12,12 @@ type: tab
 title: transactionDetails
 -->
 
-Parameters included in the `transactionDetails` object:
+The below table identifies the required parameters in the `transactionDetails` object.
 
-|Variable    | Type| Maximum Length | Description/Values|
+|Variable    | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `approvalCode` | *string* |  | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
-| `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
+| `approvalCode` | *string* |  | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization |
+| `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization |
 | `captureFlag` | *boolean* |  | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `transactionCaptureType` | *string* |  |  |
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
@@ -27,19 +27,19 @@ Parameters included in the `transactionDetails` object:
 | `merchantOrderId` | *string* | 128 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantInvoiceNumber` | *string* | 1024 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `receiptEmail` | *string* | 256 | Email id to send the digital receipt.|
-| `paymentDescription` | *string* | 1024 | Payment Description|
+| `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
 | `partiallyApprovedTransactionAmount` | *number* |  |  The partially approved transaction amount from the original request. |
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
-| `authorizationTypeIndicator` | *string* |  | Identifies the [authorization type](#authorization-type-indicator) of subsequent transactions. |
-| `duplicateTransactionCheckingIndicator` | *boolean* |  | Determines if duplicate transactions should be checked.|
-| `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
-| `vaultFundingSource` | *boolean* |  | Identifies if the customer information was from the Vault. |
-| `deviceFingerprint` | *array* |  | An array containing the [device fingerprint](#device-fingerprint) details.|
-| `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
-| `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void).|
-| `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold.|
-| `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested.|
+| `authorizationTypeIndicator` | *string* |  | Identifies the [authorization type](#authorization-type-indicator) of subsequent transactions |
+| `duplicateTransactionCheckingIndicator` | *boolean* |  | Determines if duplicate transactions should be checked |
+| `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type) |
+| `vaultFundingSource` | *boolean* |  | Identifies if the customer information was from the Vault |
+| `deviceFingerprint` | *array* |  | An array containing the [device fingerprint](#device-fingerprint) details|
+| `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth |
+| `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void) |
+| `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold |
+| `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested |
 | `createToken` | *boolean* | | Used to create a token on a charge transaction. |
 
 <!--
@@ -122,7 +122,7 @@ The below table identifies the valid values of the authorization type in subsequ
 
 #### Primary Transaction Type
 
-Identifies the primary transaction type. Valid values are:
+The below table identifies the valid values of the primary transaction type in subsequent transactions.
 
 | Value | Description |
 | ----- | ----- |
@@ -166,14 +166,14 @@ type: tab
 title: deviceFingerprintData
 -->
 
-Parameters included in the `deviceFingerprint` object:
+The below table identifies the required parameters in the `deviceFingerprintData` object.
 
-| Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-|`provider` | *string* |  | Device provider e.g. InAuth. |
-|`dataCapture`| *object* |  | [Data capture](#data-capture) details. | 
-|`dataStatic`| *object* |  | [Data static](#data-static) details.|
-|`dataDynamic`| *object* |  | [Data dynamic](#data-dynamic) details. |
+|`provider` | *string* |  | Device provider e.g. InAuth |
+|`dataCapture`| *object* |  | [Data capture](#data-capture) details | 
+|`dataStatic`| *object* |  | [Data static](#data-static) details|
+|`dataDynamic`| *object* |  | [Data dynamic](#data-dynamic) details |
 
 <!--
 type: tab
@@ -221,13 +221,13 @@ type: tab
 title: dataCapture
 -->
 
-Parameters included in the `dataCapture` object:
+The below table identifies the required parameters in the `dataCapture` object.
 
-| Variable | Type | Length | Description/Values |
-| -------- | -- | ------------: | ------------------ |
-| `rawData` | *string* | 256 | Raw data from the data capture. |
-| `dataEventId` | *string* | 256 | Unique ID for the data capture. |
-| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ. |
+| Variable | Type | Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `rawData` | *string* | 256 | Raw data from the data capture |
+| `dataEventId` | *string* | 256 | Unique ID for the data capture |
+| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 
 <!--
 type: tab
@@ -257,14 +257,14 @@ type: tab
 title: dataStatic
 -->
 
-Parameters included in the `dataStatic` object:
+The below table identifies the required parameters in the `dataStatic` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `operatingSystem` | *string* | 256 | Device operating system (OS). |
-| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version. |
-| `model` | *string* | 256 | Device Model. |
-| `type` | *string* | 256 | Device type/name. |
+| `operatingSystem` | *string* | 256 | Device operating system (OS) |
+| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
+| `model` | *string* | 256 | Device Model |
+| `type` | *string* | 256 | Device type/name |
 
 <!--
 type: tab
@@ -295,14 +295,14 @@ type: tab
 title: dataDynamic
 -->
 
-Parameters included in the `dataDynamic` object:
+The below table identifies the required parameters in the `dataDynamic` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `latitude` | *string* | 256 | Cardholder current latitude GPS position. |
-| `longitude` | *string* | 256 | Cardholder current longitude GPS position. |
-| `ipAddress` | *string* | 39 | Customer IP Address. |
-| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ. |
+| `latitude` | *string* | 256 | Cardholder current latitude GPS position |
+| `longitude` | *string* | 256 | Cardholder current longitude GPS position |
+| `ipAddress` | *string* | 39 | Customer IP Address |
+| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 
 
 <!--

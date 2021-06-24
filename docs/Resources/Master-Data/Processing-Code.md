@@ -17,7 +17,7 @@ The Processing code has 3 subdivisions
 
 ## Transaction Type
 
-Describes the transaction being performed. Valid values are
+The below table identifies the valid values of the transaction type.
 
 | Transaction Type | Description |
 | ------ | ------ |
@@ -46,7 +46,7 @@ Describes the transaction being performed. Valid values are
 
 ## From Account Type
 
-Describes the cardholder account type affected for cardholder account debits and inquiries and the "from" account type for cardholder account transfer transaction.
+Describes the cardholder account type affected for cardholder account debits and inquiries and the "from" account type for cardholder account transfer transaction. The below table identifies the valid values for from account type in processing code.
 
 | Account Type | Description |
 | ------ | ------ |
@@ -61,7 +61,7 @@ Describes the cardholder account type affected for cardholder account debits and
 
 ## To Account Type
 
-Describes the cardholder account type affected for cardholder account credits and the "to" account type for cardholder account transfer transaction.
+Describes the cardholder account type affected for cardholder account credits and the "to" account type for cardholder account transfer transaction. The below table identifies the valid values for to account type in processing code.
 
 | Account Type | Description |
 | ------ | ------ |
