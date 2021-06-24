@@ -24,14 +24,16 @@ title: additionalDataCommon
 | `directedRouting` | *object* | | Required in Directed Routing transactions. |
 | `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 
-<!-- | `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). |
+<!---
+| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). |
 | `installments` | *object* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md). |
 | `deferredPayments` | *object* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md). |
 | `recurringPayments` | *object* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md). |
 | `privateLabel` | *object* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
-| `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. | -->
+| `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
+-->
 
-#####
+#
 
 <!--
 type: tab
@@ -147,7 +149,7 @@ title: additionalData
 | `emvParameterDownloadIndicator` | *string* | | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
 -->
 
-#####
+#
 
 <!--
 type: tab
