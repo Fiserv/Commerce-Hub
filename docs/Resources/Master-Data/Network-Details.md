@@ -13,14 +13,14 @@ title: networkDetails
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `partialAuthDetails` | *object* | | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) details. |
-| `debitNetworkId` | *string* | | Network ID for the debit component. |
-| `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
-| `systemTrace`| *string* | | This field contains the original trace number that was returned in an authorization response. |
-| `authorizationCharacteristicsIndicator` | *string* | | Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Upon evaluation, the code may be changed in the response message if provided by Visa. |
-| `VisaBID` | *string* | | The Business Identifier (BID) provided by Visa to Third Party Servicers (TPS). |
-| `VisaAUR` | *string* | | Agent Unique Account Result (AUAR) provided by Visa to Third Party Servicers (TPS). |
-| `networkResponseCode ` | *string* | | Debit network response. |
+| `partialAuthDetails` | *object* | 64 | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) details. |
+| `debitNetworkId` | *string* |64 | Network ID for the debit component. |
+| `transactionSequence`| *string* | 64 | This field contains transaction specific data that may be returned in response messages. |
+| `systemTrace`| *string* | 64 | This field contains the original trace number that was returned in an authorization response. |
+| `authorizationCharacteristicsIndicator` | *string* | 23 | Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Upon evaluation, the code may be changed in the response message if provided by Visa. |
+| `VisaBID` | *string* | 128 | The Business Identifier (BID) provided by Visa to Third Party Servicers (TPS). |
+| `VisaAUR` | *string* | 128 | Agent Unique Account Result (AUAR) provided by Visa to Third Party Servicers (TPS). |
+| `networkResponseCode ` | *string* |16 | Debit network response. |
 
 ---
 
