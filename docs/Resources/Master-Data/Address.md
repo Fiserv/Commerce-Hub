@@ -19,7 +19,7 @@ type: tab
 title: billingAddress
 -->
 
-Parameters included in the `billingAddress` object:
+The below table identifies the required parameters in the `billingAddress` object.
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -71,16 +71,16 @@ type: tab
 title: shippingAddress
 -->
 
-Parameters included in the `shippingAddress` object:
+The below table identifies the required parameters in the `shippingAddress` object.
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `firstName` | *string* | 256  | Shipping contact first name. |
-| `lastName` | *string* | 256 | Shipping contact last name.|
-| `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method).|
-| `shipToEmail` | *string* | 13 | Email on a digital delivery transaction. |
-| `address` | *object* |  | Shipping [address](#address) details. |
-| `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `firstName` | *string* | 256  | Shipping contact first name |
+| `lastName` | *string* | 256 | Shipping contact last name |
+| `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method) |
+| `shipToEmail` | *string* | 13 | Email on a digital delivery transaction |
+| `address` | *object* |  | Shipping [address](#address) details |
+| `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details |
 
 <!--
 type: tab
@@ -117,7 +117,7 @@ JSON string format for `shippingAddress`:
 
 #### Shipping Method
 
-Indicates the shipping method. Vaalid values are:
+The below table identifies the valid values of the shipping method.
 
 | Value | Description |
 | ----- | ----------- |
@@ -138,15 +138,15 @@ type: tab
 title: address
 -->
 
-Parameters included in the `address` object:
+The below table identifies the required parameters in the `address` object.
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `street` | *string* | 256 | Street address. |
-| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name. |
-| `city` | *string* | 256 | City or locality. |
-| `stateOrProvince` | *string* | 256 | State or province name. |
-| `postalCode` | *string* | 10 | Postal code. |
+| Variable | Type | Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `street` | *string* | 256 | Street address |
+| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
+| `city` | *string* | 256 | City or locality |
+| `stateOrProvince` | *string* | 256 | State or province name |
+| `postalCode` | *string* | 10 | Postal code |
 | `country` | *string* | 256 | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
 
 <!--

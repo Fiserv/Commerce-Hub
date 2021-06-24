@@ -19,9 +19,9 @@ type: tab
 title: amount
 -->
 
-Parameters included in the `amount` object:
+The below table identifies the required parameters in the `amount` object.
 
-|Variable |Type| Maximum Length | Description/Values|
+|Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 | `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -53,16 +53,16 @@ type: tab
 title: amountComponents
 -->
 
-Parameters included in the `amountComponents` object:
+The below table identifies the required parameters in the `amountComponents` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Length | Description |
 | --------- | --- | ------ | -------------- |
-| `subTotal` | *number* | 12 | Subtotal amount. |
+| `subTotal` | *number* | 12 | Subtotal amount |
 | `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
-| `localTax` | *number* | 12 | Local sales tax amount included in a transaction. |
-| `shippingAmount` | *number* | 12 | Shipping amount included in a transaction. |
+| `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
+| `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
-| `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount. |
+| `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 
 <!--

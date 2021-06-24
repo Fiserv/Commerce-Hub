@@ -11,22 +11,22 @@ type: tab
 title: customer
 -->
 
-Parameters included in the `customer` object:
+The below table identifies the required parameters in the `customer` object.
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `merchantCustomerId` | *string* | 1024 | Unique customer identifier. |
-| `processorCustomerId` | *string* | 1024 | UUID in Fiserv EV. |
-| `firstName` | *string* | 256 | Customer first name. |
-| `lastName` | *string* | 256 | Customer last name. |
-| `dob` | *string* | 10 | Customer date of birth in mmddyyyy format. |
-| `email` | *string* | 256 | Customer email address. |
+| `merchantCustomerId` | *string* | 1024 | Unique customer identifier |
+| `processorCustomerId` | *string* | 1024 | UUID in Fiserv EV |
+| `firstName` | *string* | 256 | Customer first name |
+| `lastName` | *string* | 256 | Customer last name |
+| `dob` | *string* | 10 | Customer date of birth in mmddyyyy format |
+| `email` | *string* | 256 | Customer email address |
 | `ipaddress` | *string* | 39 | This field should contain the IP Address of the customer. |
 | `hostName` | *string* | 1024 | This field should contain the name of the server the customer is connected to.|
-| `locale` | *string* | 256 | The language of the receipt.|
-| `driverLicenseNumber` | *string* | 256 | Customer Driver License Number.|
-| `ssn` | *string* | 9 | Customer SSN or Tax ID.|
-| `phone` | *object* |  | Customer [phone number](#phone-number).|
+| `locale` | *string* | 256 | The language of the receipt|
+| `driverLicenseNumber` | *string* | 256 | Customer Driver License Number |
+| `ssn` | *string* | 9 | Customer SSN or Tax ID |
+| `phone` | *object* |  | Customer [phone number](#phone-number) |
 
 
 <!--
@@ -72,13 +72,13 @@ type: tab
 title: phone
 -->
 
-Parameters included in the `phoneNumber` object:
+The below table identifies the required parameters in the `phoneNumber` object.
 
 | Variable | Type |Maximum Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `countryCode` | *string* | 4 | Country's area code. |
-| `phoneNumber` | *string* | 15 | Customer phone number. |
-| `type` | *string* | 5 | This field indicates the type of phone number provided. Valid Values: *DAY*, *HOME*, *NIGHT*, WORK |
+| `countryCode` | *string* | 4 | Country's area code |
+| `phoneNumber` | *string* | 15 | Customer phone number |
+| `type` | *string* | 5 | This field indicates the type of phone number provided. Valid Values: *DAY*, *HOME*, *NIGHT*, *WORK*. |
 
 <!--
 type: tab

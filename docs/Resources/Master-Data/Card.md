@@ -12,18 +12,18 @@ type: tab
 title: card
 -->
 
-Parameters included in the `card` object:
+The below table identifies the required parameters in the `card` object.
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `cardData` | *string* | 256 | Credit Card Number or Encrypted Data. |
-| `nameOnCard` | *string* | 256 | Cardholder name. |
-| `expirationMonth` | *string* | 2 | 2-digit card expiration month. |
-| `expirationyear` | *string* | 4 | 4-digit card expiration year. |
+| `cardData` | *string* | 256 | Credit Card Number or Encrypted Data |
+| `nameOnCard` | *string* | 256 | Cardholder name |
+| `expirationMonth` | *string* | 2 | 2-digit card expiration month |
+| `expirationyear` | *string* | 4 | 4-digit card expiration year |
 | `securityCode` | *string* | 4 | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
-| `securityCodeIndicator` | *string* | 15 | Indicates how the [security code](#security-code-indicator) is passed.|
+| `securityCodeIndicator` | *string* | 15 | Indicates how the [security code](#security-code-indicator) is passed|
 | `bin` | *String* | 8 | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN). The BIN identifies the issuer and Level 2/3 qualifications. |
-| `last4` | *String* | 4 | Contains the last four digits of the Primary Account Number (PAN). |
+| `last4` | *String* | 4 | Last four digits of the Primary Account Number (PAN) |
 
 
 <!--
@@ -54,11 +54,13 @@ JSON string format for `card`:
 
 #### Security Code Indicator
 
+The below table identifies the valid values of the security code indicator.
+
 | Value | Description |
 | ----- | --------- |
-| *NOT_SUPPORTED* | Not supported (Default). |
-| *PROVIDED* | Security code provided in the transaction request. |
-| *VALUE_ILLEGIBLE* | Security code value missing or illegible. |
+| *NOT_SUPPORTED* | Not supported (Default) |
+| *PROVIDED* | Security code provided in the transaction request |
+| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
 | *NOT_AVAILABLE* | Security code not available. |
 
 ---
