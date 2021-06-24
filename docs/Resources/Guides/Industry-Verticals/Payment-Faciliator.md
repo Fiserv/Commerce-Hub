@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, payment-faciliator]
 ---
 
-
 # Payment-Faciliator
 
 ## Overview
