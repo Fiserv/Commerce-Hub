@@ -20,16 +20,16 @@ title: partialAuthDetails
 
 | Variable | Type | Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
-| `interchangeComplianceIndicator` | *string* | | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
-| `bankNetRefNumber` | *string* | | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message.|
-| `bankNetDate` | *string* | | A Mastercard generated date for this transaction. MMDD format. |
-| `cvcIndicator` | *string* | | Indicates the CVC response data. |
-| `partialAuthTransactionId` | *string* | | Generated identifier unique for each original authorization request. |
-| `validationCode` | *string* | | A code calculated by Visa to ensure that the fields present in the authorization are also present in the clearing record. |
-| `totalAuthAmount` | *string* | | Total amount authorized. |
-| `downgradeReason` | *string* | | Downgrade reason as supplied by Visa. |
-| `creditAuthType` | *string* | | Indicates the type of authorization required. |
-| `authScore` | *string* | | The auth score returned for the transaction. |
+| `interchangeComplianceIndicator` | *string* | N/A | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
+| `bankNetRefNumber` | *string* | N/A | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message.|
+| `bankNetDate` | *string* | N/A | A Mastercard generated date for this transaction. MMDD format. |
+| `cvcIndicator` | *string* | N/A | Indicates the CVC response data. |
+| `partialAuthTransactionId` | *string* | N/A | Generated identifier unique for each original authorization request. |
+| `validationCode` | *string* | N/A | A code calculated by Visa to ensure that the fields present in the authorization are also present in the clearing record. |
+| `totalAuthAmount` | *string* | N/A | Total amount authorized. |
+| `downgradeReason` | *string* | N/A | Downgrade reason as supplied by Visa. |
+| `creditAuthType` | *string* | N/A | Indicates the type of authorization required. |
+| `authScore` | *string* | N/A | The auth score returned for the transaction. |
  
 <!--
 type: tab

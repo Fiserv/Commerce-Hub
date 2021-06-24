@@ -18,9 +18,9 @@ For the transactions where address verification is required, the merchant's API 
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer first name. |
-| `lastName` | *string* |  | Customer last name. |
-| `address` | *array* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+| `firstName` | *string* | N/A | Customer first name. |
+| `lastName` | *string* | N/A | Customer last name. |
+| `address` | *array* | N/A | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
 
 ---
 

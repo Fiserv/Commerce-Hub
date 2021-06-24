@@ -27,8 +27,8 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 |Variable    |  Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
-| `primaryTransactionId` | *string* |  | The `transactionId` from the original transaction passed for a reauthorization.|
-| `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
+| `primaryTransactionId` | *string* | N/A | The `transactionId` from the original transaction passed for a reauthorization.|
+| `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 
 ---
 
