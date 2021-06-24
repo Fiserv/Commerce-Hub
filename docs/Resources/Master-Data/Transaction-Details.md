@@ -16,8 +16,8 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 |Variable    | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `approvalCode` | *string* |  | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization |
-| `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization |
+| `approvalCode` | *string* |  | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
+| `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `captureFlag` | *boolean* |  | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `transactionCaptureType` | *string* |  |  |
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
@@ -122,7 +122,7 @@ The below table identifies the valid values of the authorization type in subsequ
 
 #### Primary Transaction Type
 
-The below table identifies the valid values of the primary transaction type in subsequent transactions.
+The below table identifies the valid values of the primary transaction type.
 
 | Value | Description |
 | ----- | ----- |
@@ -134,7 +134,7 @@ The below table identifies the valid values of the primary transaction type in s
 
 #### Reversal Reason Code
 
-Indicates the reason the merchant/customer requests for cancel (void). Valid values are:
+The below table identifies the valid values of the reason merchant/customer requests for cancel (void).
 
 | Value | Description |
 | ----- | ----- |
@@ -149,7 +149,7 @@ Indicates the reason the merchant/customer requests for cancel (void). Valid val
 
 #### Authorization Sequence
 
-Indicates type of authorization sequence requested. Valid values are:
+The below table identifies the valid values of type of authorization sequence requested.
 
 | Value | Description |
 | ----- | ----- |
