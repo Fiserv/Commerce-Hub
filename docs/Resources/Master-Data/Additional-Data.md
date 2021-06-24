@@ -112,9 +112,12 @@ title: JSON Example
    }
 }
 ```
+
 -->
 
 <!-- type: tab-end -->
+
+<!--
 
 #### Bill Payment Indicator
 
@@ -124,7 +127,7 @@ title: JSON Example
 | *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
 | *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
 | *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
-
+ -->
 ---
 
 ## Additional Data
@@ -138,18 +141,20 @@ title: additionalData
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
-| `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
+<!-- | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
+| `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. | -->
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
 | `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
-| `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. |
+<!-- | `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. | -->
 | `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
-| `emvParameterDownloadIndicator` | *string* | | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
+<!-- | `emvParameterDownloadIndicator` | *string* | | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.| -->
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+<!--
 
 ```json
 {
@@ -165,8 +170,11 @@ title: JSON Example
    }
 }
 ```
+--> 
 
 <!-- type: tab-end -->
+
+<!--
 
 #### Business Application Identifier
 
@@ -174,7 +182,7 @@ The BAI determines the data carried in the message, the limits and economics tha
 
 | Value | Description |
 | ----- | ----- |
-| `PERSON_TO_PERSON` | Person to person initiated. |
+| *PERSON_TO_PERSON* | Person to person initiated. |
 | *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
 | *BUSINESS_TO_BUSINESS* | Business to business initiated. |
 | *DIGITAL_WALLET* | Digital Wallet transfer. |
@@ -185,6 +193,8 @@ The BAI determines the data carried in the message, the limits and economics tha
 | *DISBURSEMENT* | Funds disbursement or payout. |
 | *GAMBLING_PAYOUT* | Gambling payout non-online. |
 | *GAMBLING_PAYOUT_ONLINE* | Online gambling payout. |
+
+-->
 
 ---
 
