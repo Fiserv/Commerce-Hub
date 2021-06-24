@@ -16,7 +16,7 @@ type: tab
 title: gatewayResponse
 -->
 
-The below table identifies the required parameters in the source object.
+The below table identifies the required parameters in the `gatewayResponse` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
