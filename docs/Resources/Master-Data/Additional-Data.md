@@ -133,17 +133,14 @@ title: additionalData
 
 | Variable | Type | Length | Description/Values |
 | ----- | ----- | ----- | ----- |
+| `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
+| `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
+| `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
+
 <!--
 | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
 | `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
--->
-| `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
-| `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
-<!--
 | `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. |
--->
-| `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
-<!--
 | `emvParameterDownloadIndicator` | *string* | | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
 -->
 
