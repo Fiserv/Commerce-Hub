@@ -22,7 +22,7 @@ title: additionalDataCommon
 | `additionalData` | *object* | | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
 
-<!--
+<!---
 | `directedRouting` | *object* | | Required in Directed Routing transactions. |
 | `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 | `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
@@ -42,7 +42,7 @@ title: JSON Example
 {
    "additionalDataCommon":{
       "additionalData":{
-<!--         "baiFlag": "PERSON_TO_PERSON", -->
+//         "baiFlag": "PERSON_TO_PERSON",
          "networkTransactionReference":"123456788",
 //         "billPayment":false,
          "ecomURL":"https://www.somedomain.com",
@@ -110,7 +110,17 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
-<!--
+[]: # (This is a comment)
+
+[]: # "And this is a comment"
+
+[]: # 'Also this is a comment'
+
+[//]: # (Yet another comment)
+
+[comment]: # (Still another comment)
+
+<!---
 #### Bill Payment Indicator
 
 | Value | Description |
@@ -120,6 +130,7 @@ title: JSON Example
 | *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
 | *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
 -->
+
 ---
 
 ## Additional Data
@@ -137,7 +148,7 @@ title: additionalData
 | `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
 | `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
 
-<!--
+<!---
 | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
 | `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
 | `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. |
