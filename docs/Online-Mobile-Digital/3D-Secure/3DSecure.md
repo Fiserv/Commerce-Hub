@@ -26,10 +26,10 @@ When using our payments API with passthrough, the authentication is performed wi
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Use Value *Payment3dsPassthrough* for 3-D Secure passthrough transactions. |
 | `xid` | *string* | 32 | 3-D Secure/Verified by Visa value returned by Cardinal Commerce. |
-| `card` | *object* | | [Card](?path=docs/Resources/Master-Data/Card.md) sub component objects. |
+| `card` | *object* | N/A | [Card](?path=docs/Resources/Master-Data/Card.md) sub component objects. |
 | `merchantIdentifier` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer |
 | `version` | *string* | 4 | Specific Protocol version supported by 3DS |
-| `cavv` | *string* |  | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
+| `cavv` | *string* | N/A | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
 
 #### Object: transactionDetails
 | Variable | Type | Length | Description/Values |

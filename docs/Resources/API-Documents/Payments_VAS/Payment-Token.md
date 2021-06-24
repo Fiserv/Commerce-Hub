@@ -219,9 +219,9 @@ title: Response
 |---------|----------|----------------|---------|
 | `tokenData` | *string* | 2048 | Token created from the payment source. |
 | `PARId` | *string* | 256 | |
-| `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
-| `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
-| `card` | *object* | | Contains card specific information. |
+| `declineDuplicates` | *boolean* | N/A | Identifies if a duplicate transaction should automatically be declined. |
+| `tokenSource` | *string* | 256 | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | N/A | Contains card specific information. |
 | `expirationMonth` | *string* | 2 | Card expiration month. |
 | `expirationYear` | *string* | 2 | Card expiration year. |
 
