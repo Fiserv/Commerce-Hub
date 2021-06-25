@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, s
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#paymentcard-requirements) or [token](#paymenttoken-requirements).
+The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#account-information-using-paymentcard) or [token](#account-information-using-paymenttoken).
 
 ---
 
@@ -14,11 +14,13 @@ The merchant can perform account verification transaction to confirm that the ca
 
 ---
 
-## PaymentCard Requirements
+## Account Verification using PaymentCard
+
+### Minimum Requirements
 
 #### source
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | --------- | ---------- | ---------------- | --------- |
 | `sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](?path=docs/Guides/Payment-Sources/Source-Type.md) for more details. |
 | `cardData` | *string* | 19 | Encrypted or unencrypted [card data](?path=docs/Resources/Master-Data/Card.md) (e.g. PAN, EMV, Track, etc.). |
@@ -89,11 +91,13 @@ title: Response
 
 ---
 
-## PaymentToken Requirements
+## Account Verification using PaymentToken
+
+### Minimum Requirements
 
 #### Object: source
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 
