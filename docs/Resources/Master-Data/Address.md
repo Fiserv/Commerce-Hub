@@ -21,7 +21,7 @@ title: billingAddress
 
 The below table identifies the required parameters in the `billingAddress` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
@@ -73,7 +73,7 @@ title: shippingAddress
 
 The below table identifies the required parameters in the `shippingAddress` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* | 256  | Shipping contact first name |
 | `lastName` | *string* | 256 | Shipping contact last name |
@@ -140,7 +140,7 @@ title: address
 
 The below table identifies the required parameters in the `address` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `street` | *string* | 256 | Street address |
 | `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
