@@ -5,7 +5,6 @@ tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, 
 
 # Security Code
 
-## Overview
 Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---

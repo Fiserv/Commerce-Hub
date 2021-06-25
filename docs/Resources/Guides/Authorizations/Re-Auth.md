@@ -4,7 +4,6 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 # Reauthorize
 
-## Overview
 
 A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md).
 

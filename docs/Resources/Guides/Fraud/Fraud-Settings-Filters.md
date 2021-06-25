@@ -5,7 +5,6 @@ tags: [carat, commerce-hub, enterprise, fraud, card-not-present, fraud-filters]
 
 # Fraud Filters
 
-## Overview
 
 Fraud filters enables the merchants to configure filters to control the fraudulent transactions from different channels and across multiple payment methods. Each charge request will run through the configured [positive](#positivefilters) and [negative](#negativefilters) rules to determine whether the payment should be accepted or rejected.
 

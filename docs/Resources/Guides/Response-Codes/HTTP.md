@@ -4,7 +4,6 @@ tags: [carat, card-not-present, commerce-hub, error, http-response-code, respons
 
 # HTTP Status Codes
 
-## Overview
 Commerce Hub responds back to the merchant request with a three-digit HTTP status code grouped in to three different classes. The first digit can be used to quickly identify the class of a status code:
 
 - **2xx: Success** – Indicates that the request was accepted successfully.
