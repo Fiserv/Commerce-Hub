@@ -11,15 +11,15 @@ type: tab
 title: transactionInteraction
 -->
 
-Parameters included in the `transactionInteraction` object:
+The below table identifies the required parameters in the `transactionInteraction` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction. |
+| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction |
 | `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
 | `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
-| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction).|
-| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator).|
+| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction)|
+| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator)|
 
 <!--
 type: tab
@@ -47,19 +47,19 @@ JSON string format for `transactionInteraction`:
 
 #### Transaction Origin
 
-Indicates the origin of the transaction. Valid values are:
+The below table identifies the valid values of the origin of the transaction.
 
 | Value | Description |
 |-------|-------------|
-| *ECOM* | Card Not Present email or internet. |
-| *MOTO* | Mail order or telephone order. |
-| *POS* | Card Present retail face to face. |
+| *ECOM* | Card Not Present email or internet |
+| *MOTO* | Mail order or telephone order |
+| *POS* | Card Present retail face to face |
 
 ---
 
 #### POS Entry Mode
 
-Indicates how the account number was entered on the transaction. Valid values are:
+The below table identifies the valid values of how account number was entered on the transaction.
 
 | Value | Description |
 |-------|-------------|
@@ -84,7 +84,7 @@ Indicates how the account number was entered on the transaction. Valid values ar
 
 #### POS Condition Code
 
-Indicates the transaction condition at the Point-of-Sale. Valid values are:
+The below table identifies the valid values of the transaction condition at the Point-of-Sale
 
 | Value | Description |
 |-------|-------------|
@@ -105,7 +105,7 @@ Indicates the transaction condition at the Point-of-Sale. Valid values are:
 
 #### Mobile Interaction
 
-Indicates mobile method of interaction. Valid values are:
+The below table identifies the valid values of mobile method of interaction.
 
 | Value | Description |
 |-------|-------------|
@@ -118,6 +118,8 @@ Indicates mobile method of interaction. Valid values are:
 
 <!-- theme: warning -->
 > ECI is required on all online, mobile, and digital E-Commerce transactions.
+
+The below table identifies the valid values of ecommerce indicator.
 
 | Value | Description |
 |-------|-------------|
