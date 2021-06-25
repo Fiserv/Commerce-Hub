@@ -28,7 +28,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 
 The below table identifies the required parameters in the `amount` object.
 
-|Variable    |  Type| Maximum Length | Description|
+|Variable |  Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
