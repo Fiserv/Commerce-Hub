@@ -19,7 +19,7 @@ title: gatewayResponse
 | `transactionType` | *string* | 256 | Type of transaction submitted. |
 | `transactionState` | *string* | 256 | Final [state](#transactionstate) of the transaction. |
 | `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
-| `transactionProcessingDetails` | *object* | | Array containing the [transaction processing details](#transaction-processing-details). |
+| `transactionProcessingDetails` | *object* | N/A | Array containing the [transaction processing details](#transaction-processing-details). |
 
 <!--
 type: tab

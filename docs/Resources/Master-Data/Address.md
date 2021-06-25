@@ -25,8 +25,8 @@ Parameters included in the `billingAddress` object:
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
-| `address` | *object* |  | Billing [address](#address) details. |
-| `phone` | *object* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `address` | *object* | N/A  | Billing [address](#address) details. |
+| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
 <!--
 type: tab
@@ -79,8 +79,8 @@ Parameters included in the `shippingAddress` object:
 | `lastName` | *string* | 256 | Shipping contact last name.|
 | `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method).|
 | `shipToEmail` | *string* | 13 | Email on a digital delivery transaction. |
-| `address` | *object* |  | Shipping [address](#address) details. |
-| `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `address` | *object* | N/A | Shipping [address](#address) details. |
+| `phone` | *object* | N/A | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
 <!--
 type: tab
