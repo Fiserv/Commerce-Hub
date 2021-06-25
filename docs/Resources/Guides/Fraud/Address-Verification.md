@@ -9,21 +9,52 @@ Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/
 
 ---
 
-## Requirements
+## Request Variables
 
 For the transactions where address verification is required, the merchant's API is required to pass the billing information as part of the request.
 
-#### Object: billingAddress
+<!--
+type: tab
+title: billingAddress
+-->
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer first name. |
-| `lastName` | *string* |  | Customer last name. |
-| `address` | *array* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+The below table identifies the required parameters in the `billingAddress` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `firstName` | *string* |  | Customer first name |
+| `lastName` | *string* |  | Customer last name |
+| `address` | *object* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `billingAddress`:
+
+```json
+{
+   "billingAddress":{
+      "firstName": "John",
+      "lastName": "Doe",
+      "address":{
+         "houseNumberOrName": "112",
+         "street": "Main St.",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
-## Verification Request
+## AVS Verification Request
 
 ### Endpoint
 
@@ -37,7 +68,7 @@ type: tab
 title: Request
 -->
 
-##### Example of an account verification request.
+##### Example of an address verification request.
 
 ```json
 {
@@ -69,7 +100,7 @@ type: tab
 title: Response
 -->
 
-##### Example of an account verification response.
+##### Example of an address verification response.
 
 ```json
 {
@@ -130,7 +161,7 @@ title: Response
 
 ---
 
-## Verification With Charges Request
+## AVS Verification with Charges Request
 
 ### Endpoint
 
@@ -253,20 +284,20 @@ The result of checking the cardholder’s postal code and address information pr
 
 | Value | Description |
 | ------- | ------- |
-| *BOTH_MATCH* | Both Street and Zip Code Match. |
-| *STREET_ONLY* | Street Address matches, ZIP Code does not. |
-| *ZIP_ONLY* | ZIP Code matches, Street Address does not. |
-| *5_DIGIT_ZIP_ONLY* | 5 digit ZIP Code match only. |
-| *NO_MATCH* | No Address or ZIP Code match. |
-| *UNAVAILABLE* | Address information is unavailable for that account number, or the card issuer does not support. |
-| *NON_US* | Service Not supported, non-US Issuer does not participate. |
-| *RETRY* | Issuer system unavailable, retry later. |
-| *NOT_MOTO* | Not a mail or phone order. | 
-| *NOT_SUPPORTED* | Service not supported. |
-| *INTERNATIONAL_BOTH_MATCH* | International street address and postal code match. |
-| *INTERNATIONAL_STREET_ONLY* |  International street address match, postal code not verified due to incompatible formats. |
-| *INTERNATIONAL_POSTAL_ONLY* | International street address and postal code not verified due to incompatible formats. |
-| *INTERNATIONAL_NO_MATCH* | International postal code match, street address not verified due to incompatible format. |
+| *BOTH_MATCH* | Both Street and Zip Code Match |
+| *STREET_ONLY* | Street Address matches, ZIP Code does not |
+| *ZIP_ONLY* | ZIP Code matches, Street Address does not |
+| *5_DIGIT_ZIP_ONLY* | 5 digit ZIP Code match only |
+| *NO_MATCH* | No Address or ZIP Code match |
+| *UNAVAILABLE* | Address information is unavailable for that account number, or the card issuer does not support |
+| *NON_US* | Service Not supported, non-US Issuer does not participat. |
+| *RETRY* | Issuer system unavailable, retry late. |
+| *NOT_MOTO* | Not a mail or phone order | 
+| *NOT_SUPPORTED* | Service not supported |
+| *INTERNATIONAL_BOTH_MATCH* | International street address and postal code match |
+| *INTERNATIONAL_STREET_ONLY* |  International street address match, postal code not verified due to incompatible formats |
+| *INTERNATIONAL_POSTAL_ONLY* | International street address and postal code not verified due to incompatible formats |
+| *INTERNATIONAL_NO_MATCH* | International postal code match, street address not verified due to incompatible format |
 
 
 #### Object: cardHolderNameResponse
@@ -276,14 +307,14 @@ The result of checking the cardholder’s postal code and address information pr
 
 | Value | Description |
 | ------- | ------- |
-| *1* | Cardholder name matches. |
-| *2* | Cardholder name, billing address, and postal code match. |
-| *3* | Cardholder name and billing postal code match. |
-| *4* | Cardholder name and billing address match. |
-| *5* | Cardholder name incorrect, billing address and postal code match. |
-| *6* | Cardholder name incorrect, billing postal code matches. |
-| *7* | Cardholder name incorrect, billing address matches. |
-| *8* | Cardholder name, billing address, and postal code are all incorrect. |
+| *1* | Cardholder name matches |
+| *2* | Cardholder name, billing address, and postal code match |
+| *3* | Cardholder name and billing postal code match |
+| *4* | Cardholder name and billing address match |
+| *5* | Cardholder name incorrect, billing address and postal code match |
+| *6* | Cardholder name incorrect, billing postal code matches |
+| *7* | Cardholder name incorrect, billing address matches |
+| *8* | Cardholder name, billing address, and postal code are all incorrect |
 
 ---
 

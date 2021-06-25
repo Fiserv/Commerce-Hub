@@ -9,20 +9,46 @@ Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossar
 
 ---
 
-## Requirements
+## Request Variables
 
 For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
 
-#### Object: card
+<!--
+type: tab
+title: card
+-->
 
-| Variable | Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`securityCode` | *string* | 3| The card security code.|
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE.|
+|`securityCode` | *string* | 3| The card security code |
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `card`:
+
+```json
+{
+   "card":{
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123",
+      "securityCodeIndicator": "PROVIDED"
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
-## Verification Request
+## Security Code Verification Request
 
 ### Endpoint
 
@@ -120,7 +146,7 @@ title: Response
 
 ---
 
-## Verification with Charges Request
+## Security Code Verification with Charges Request
 
 ### Endpoint
 
