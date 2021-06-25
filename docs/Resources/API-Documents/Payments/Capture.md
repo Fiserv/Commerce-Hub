@@ -24,11 +24,11 @@ The [example](#payload-example) below contains the mandatory fields required for
 
 #### amount
 
-Parameters required in the `amount` object:
+The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `total` | *number* |  | Sub component values must add up to total amount.<br/>0.00 expected format. |
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 ---
@@ -67,7 +67,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Capture (200: Success) Response.
+##### Example of a capture (200: Success) response.
 
 <!-- theme: info -->
 

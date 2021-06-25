@@ -29,9 +29,9 @@ type: tab
 title: amount
 -->
 
-Parameters required in the `amount` object:
+The below table identifies the required parameters in the `amount` object.
 
-|Variable    |  Type| Maximum Length | Description/Values|
+|Variable    |  Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -41,22 +41,22 @@ type: tab
 title: source
 -->
 
-Parameters required in the `source` object:
+The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
 <!--
 type: tab
 title: transactionDetails
 -->
 
-Parameters required in the `transactionDetails` object:
+The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type| Maximum Length | Description/Values |
+| Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth).|
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 
 <!-- type: tab-end -->
 
