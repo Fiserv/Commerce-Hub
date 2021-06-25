@@ -18,10 +18,10 @@ title: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `sourceType` | *string* | 15 | Use Value *PaymentCard* for card transactions |
-| `card` | *object* | | Contains the payment card details |
+| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
+| `card` | *object* | |  &#10004; | Contains the payment card details |
 
 <!--
 type: tab
@@ -30,11 +30,11 @@ title: card
 
 The below table identifies the required parameters in the `card` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `cardData` | *string* | 15 | Credit Card Number or Encrypted Data |
-| `expirationMonth` | *string* | 2 | 2-digit card expiration month Example (05) |
-| `expirationYear` | *string* | 4 | 4-digit card expiration year Example (2025) |
+| `cardData` | *string* | 15 |  &#10004; | Credit Card Number or Encrypted Data |
+| `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month Example (05) |
+| `expirationYear` | *string* | 4 |  &#10004; |4-digit card expiration year Example (2025) |
 
 <!-- theme: info -->
 > Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
