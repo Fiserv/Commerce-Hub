@@ -14,7 +14,7 @@ Commerce Hub receives host response codes from the processing network or bank. C
 
 | Code| Message |
 | ---- | ------------ |
-| 00 | Transaction has been approved. |
+| 00 | Transaction has been approved |
 | 01 | Refer to issuer |  
 | 03 | Invalid merchant |
 | 05 | The credit card being used for the transaction has been rejected by the issuer. |

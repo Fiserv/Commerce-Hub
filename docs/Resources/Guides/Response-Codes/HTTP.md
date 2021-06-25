@@ -26,7 +26,7 @@ title: 2xx
 
 | Code | Message | Description |
 | --------- | --- | ------- |
-| 200 | Success | Indicates that request has succeeded. |
+| 200 | Success | Indicates that request has succeeded |
 | 201 | Created | Indicates that request has succeeded and a new resource has been created as a result. |
 
 

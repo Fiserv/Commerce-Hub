@@ -16,22 +16,22 @@ type: tab
 title: source
 -->
 
-Parameters required in the `source` object:
+The below table identifies the required parameters in the `source` object.
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use Value *PaymentCard* for card transactions. |
-| `card` | *object* | | Contains the payment card details. |
+| Variable | Type | Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `sourceType` | *string* | 15 | Use Value *PaymentCard* for card transactions |
+| `card` | *object* | | Contains the payment card details |
 
 <!--
 type: tab
 title: card
 -->
 
-Parameters required in the `card` object:
+The below table identifies the required parameters in the `card` object.
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
+| Variable | Type | Length | Description |
+| -------- | -- | ------------ | ------------------ |
 | `cardData` | *string* | 15 | Credit Card Number or Encrypted Data |
 | `expirationMonth` | *string* | 2 | 2-digit card expiration month Example (05) |
 | `expirationYear` | *string* | 4 | 4-digit card expiration year Example (2025) |
