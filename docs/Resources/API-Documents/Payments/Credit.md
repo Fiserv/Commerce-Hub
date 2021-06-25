@@ -43,7 +43,7 @@ The below table identifies the required parameters in the `source` object.
 
 ## Endpoint
 <!-- theme: success -->
->**POST** `/payments/v1/charges`
+>**POST** `/payments/v1/credits`
 
 ---
 
