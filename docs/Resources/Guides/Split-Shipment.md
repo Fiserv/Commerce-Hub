@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, enterprise, split-shipment, vault]
 
 # Split Shipment
 
-## Overview
-
 A split shipment is an ability to [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) an authorization for the full order amount by performing a capture for each item shipped.
 
 Situations in which this could be implemented include:
@@ -29,9 +27,9 @@ type: tab
 title: splitShipment
 -->
 
-Parameters required in the `splitShipment` object:
+The below table identifies the required parameters in the `splitShipment` object.
 
-|Variable    |  Type| Maximum Length | Description/Values|
+|Variable    |  Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `totalCount` | *integer* | 99 | Required in the capture transaction indicating how many shipments the transaction is devided into. Can be sent in pre-authorization or the first capture.|
 | `finalShipment` | *boolean* |  | Used to identify the final capture (*TRUE* or *FALSE*).|

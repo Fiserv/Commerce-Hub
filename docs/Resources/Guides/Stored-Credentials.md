@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
 
 # Stored Credentials
 
-## Overview
-
 Stored Credentials also known as Credentials on File, allows the merchant to initiate a transactions on behalf of customers (e.g. for subscription payments), using the [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) created from the customer's card details.
 
 ---
@@ -19,9 +17,9 @@ type: tab
 title: transactionDetails
 -->
 
-Parameters required in the `transactionDetails` object:
+The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `authorizationTypeIndicator` | *string* | 11 | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
 
@@ -30,9 +28,9 @@ type: tab
 title: storedCredentials
 -->
 
-Parameters required in the `storedCredentials` object:
+The below table identifies the required parameters in the `storedCredentials` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `initiator` | *string* | 11 | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* |  | Indicator if this is a scheduled transaction. |

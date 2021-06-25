@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, dynamic-descriptor, Statement-Descriptor, Merchant-D
 
 # Dynamic Descriptor
 
-## Overview
-
 A descriptor contains identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on customer's credit/debit card statement and identifies specific industry information based on the [Merchant Category Code (MCC)](?path=docs/Resources/FAQs-Glossary/Glossary.md#merchantcategroycode). The descriptor informs a customer of the merchant details and contact information.
 
 The standard descriptor information that is passed through to the customer’s statement is the Doing Business As (DBA) name, customer service phone number and MCC that you provide with your merchant account application. See [hard descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#harddescriptor) and [soft descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#softdescriptor) for more information.
@@ -32,9 +30,9 @@ type: tab
 title: dynamicDescriptor
 -->
 
-Parameters required in the `dynamicDescriptor` object:
+The below table identifies the required parameters in the `dynamicDescriptor` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* | 1024 | Daynamic Merchant Name or DBA |
