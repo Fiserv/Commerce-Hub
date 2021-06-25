@@ -3,15 +3,9 @@ tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data
 ---
 
 
-# Additional Transaction Data
+# Additional Data Common
 
-Additional transaction data is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
-
----
-
-## Additional Data Common
-
-The `additionalDataCommon` object contains common data elements used in requests based on business requirements.
+Additional data common is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
 
 <!--
 type: tab
@@ -20,7 +14,7 @@ title: additionalDataCommon
 
 The below table identifies the required parameters in the `additionalDataCommon` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
@@ -114,7 +108,7 @@ JSON string format for `additionalDataCommon`:
 
 #### Bill Payment Indicator
 
-The below table identifies the valid values of the Bill Payment Indicator.
+The below table identifies the valid values of the `billPaymentIndicator`.
 
 | Value | Description |
 | ----- | ----- |
@@ -172,7 +166,7 @@ JSON string format for `additionalData`:
 
 #### Business Application Identifier
 
-The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of Business Application Identifier.
+The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
 
 | Value | Description |
 | ----- | ----- |

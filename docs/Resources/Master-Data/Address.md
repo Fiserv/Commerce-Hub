@@ -21,7 +21,7 @@ title: billingAddress
 
 The below table identifies the required parameters in the `billingAddress` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
@@ -73,7 +73,7 @@ title: shippingAddress
 
 The below table identifies the required parameters in the `shippingAddress` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* | 256  | Shipping contact first name |
 | `lastName` | *string* | 256 | Shipping contact last name |
