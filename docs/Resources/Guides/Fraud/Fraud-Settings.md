@@ -1,4 +1,4 @@
-# Fraud Settings
+# Fraud Controls
 
 ## Overview
 

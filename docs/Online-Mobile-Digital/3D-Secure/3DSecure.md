@@ -28,8 +28,8 @@ When using our payments API with passthrough, the authentication is performed wi
 #### Component: transactionDetails
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md). |
-
+| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md)(#electroniccommerceindicators). |
+  
 
 ---
 
