@@ -276,31 +276,38 @@ title: Response
 
 ---
 
-## Response Values
+## AVS Security Code Response Values
 
-The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the AVS response from the bank.
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `streetMatch` and `postalCodeMatch` value.
 
-#### Object: avsCode
+
+The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| EXACT_MATCHED|
+| MATCHED |
+| NOT_MATCHED |
+| NOT_CHECKED |
+| NO_INPUT_DATA |
+
+## Association Response Code
+
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`.
+
+The below table identifies the valid values of `avsCode`.
 
 | Value | Description |
 | ------- | ------- |
-| *BOTH_MATCH* | Both Street and Zip Code Match |
-| *STREET_ONLY* | Street Address matches, ZIP Code does not |
-| *ZIP_ONLY* | ZIP Code matches, Street Address does not |
-| *5_DIGIT_ZIP_ONLY* | 5 digit ZIP Code match only |
-| *NO_MATCH* | No Address or ZIP Code match |
-| *UNAVAILABLE* | Address information is unavailable for that account number, or the card issuer does not support |
-| *NON_US* | Service Not supported, non-US Issuer does not participat. |
-| *RETRY* | Issuer system unavailable, retry late. |
-| *NOT_MOTO* | Not a mail or phone order | 
-| *NOT_SUPPORTED* | Service not supported |
-| *INTERNATIONAL_BOTH_MATCH* | International street address and postal code match |
-| *INTERNATIONAL_STREET_ONLY* |  International street address match, postal code not verified due to incompatible formats |
-| *INTERNATIONAL_POSTAL_ONLY* | International street address and postal code not verified due to incompatible formats |
-| *INTERNATIONAL_NO_MATCH* | International postal code match, street address not verified due to incompatible format |
+| *Y* | Both Street and Zip Code Match |
+| *N* | Street Address matches, ZIP Code does not |
+| *X* | ZIP Code matches, Street Address does not |
+| *U* | 5 digit ZIP Code match only |
+| *Z* | No Address or ZIP Code match |
+| *A* | Address information is unavailable for that account number, or the card issuer does not support |
 
 
-#### Object: cardHolderNameResponse
+The below table identifies the valid values of `cardHolderNameResponse`.
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) transactions.

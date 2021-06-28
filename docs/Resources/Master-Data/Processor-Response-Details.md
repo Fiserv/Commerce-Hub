@@ -181,27 +181,7 @@ JSON string format for `avsSecurityCodeResponse`:
 
 <!--type: tab-end -->
 
-#### Street Match
 
-The `streetMatch` variable contains the result for street address verification from the card issuer. The below table identifies the valid values of `streetMatch`.
-
-| Value | Descrption |
-| ---- | ------------|
-| *Y* | MATCHED |
-| *N* | NOT_MATCHED |
-| *X* | NOT_CHECKED |
-| *P* | NO_INPUT_DATA |
-
-#### Postal Code Match
-
-The `postalCodeMatch` variable contains the result for postal code verification from the card issuer. The below table identifies the valid values of `postalCodeMatch`.
-
-| Value | Descrption |
-| ---- | ------------|
-| *Y* | MATCHED |
-| *N* | NOT_MATCHED |
-| *X* | NOT_CHECKED |
-| *P* | NO_INPUT_DATA |
 
 #### Security Code Match
 
