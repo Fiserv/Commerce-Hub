@@ -14,7 +14,7 @@ title: transactionDetails
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-|Variable    | Type| Maximum Length | Description|
+| Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
 | `approvalCode` | *string* |  | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
@@ -111,7 +111,7 @@ JSON string format for `transactionDetails`:
 
 #### Authorization Type Indicator
 
-The below table identifies the valid values of the authorization type in subsequent transactions.
+The below table identifies the valid values of `authorizationTypeIndicator` in subsequent transactions.
 
 | Value | Description |
 | ----- | ----- |
@@ -122,7 +122,7 @@ The below table identifies the valid values of the authorization type in subsequ
 
 #### Primary Transaction Type
 
-The below table identifies the valid values of the primary transaction type.
+The below table identifies the valid values of `primaryTransactionType`.
 
 | Value | Description |
 | ----- | ----- |
@@ -134,7 +134,7 @@ The below table identifies the valid values of the primary transaction type.
 
 #### Reversal Reason Code
 
-The below table identifies the valid values of the reason merchant/customer requests for cancel (void).
+The below table identifies the valid values of `reversalReasonCode` the reason merchant/customer requests for cancel (void).
 
 | Value | Description |
 | ----- | ----- |
@@ -149,7 +149,7 @@ The below table identifies the valid values of the reason merchant/customer requ
 
 #### Authorization Sequence
 
-The below table identifies the valid values of type of authorization sequence requested.
+The below table identifies the valid values of type of `authorizationSequence`.
 
 | Value | Description |
 | ----- | ----- |
@@ -223,7 +223,7 @@ title: dataCapture
 
 The below table identifies the required parameters in the `dataCapture` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `rawData` | *string* | 256 | Raw data from the data capture |
 | `dataEventId` | *string* | 256 | Unique ID for the data capture |
@@ -259,7 +259,7 @@ title: dataStatic
 
 The below table identifies the required parameters in the `dataStatic` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `operatingSystem` | *string* | 256 | Device operating system (OS) |
 | `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
@@ -297,7 +297,7 @@ title: dataDynamic
 
 The below table identifies the required parameters in the `dataDynamic` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `latitude` | *string* | 256 | Cardholder current latitude GPS position |
 | `longitude` | *string* | 256 | Cardholder current longitude GPS position |

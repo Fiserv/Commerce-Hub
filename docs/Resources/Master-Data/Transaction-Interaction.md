@@ -47,7 +47,7 @@ JSON string format for `transactionInteraction`:
 
 #### Transaction Origin
 
-The below table identifies the valid values of the origin of the transaction.
+The below table identifies the valid values of `origin`.
 
 | Value | Description |
 |-------|-------------|
@@ -59,7 +59,7 @@ The below table identifies the valid values of the origin of the transaction.
 
 #### POS Entry Mode
 
-The below table identifies the valid values of how account number was entered on the transaction.
+Pos entry mode value identifies how account number was entered on the transaction.  The below table identifies the valid values of `posEntryMode`.
 
 | Value | Description |
 |-------|-------------|
@@ -84,7 +84,7 @@ The below table identifies the valid values of how account number was entered on
 
 #### POS Condition Code
 
-The below table identifies the valid values of the transaction condition at the Point-of-Sale
+The below table identifies the valid values of `posConditionCode`.
 
 | Value | Description |
 |-------|-------------|
@@ -105,7 +105,7 @@ The below table identifies the valid values of the transaction condition at the 
 
 #### Mobile Interaction
 
-The below table identifies the valid values of mobile method of interaction.
+The below table identifies the valid values of `mobileInteraction`.
 
 | Value | Description |
 |-------|-------------|
@@ -119,7 +119,7 @@ The below table identifies the valid values of mobile method of interaction.
 <!-- theme: warning -->
 > ECI is required on all online, mobile, and digital E-Commerce transactions.
 
-The below table identifies the valid values of ecommerce indicator.
+The below table identifies the valid values of `eciIndicator`.
 
 | Value | Description |
 |-------|-------------|
