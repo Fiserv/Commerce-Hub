@@ -56,7 +56,7 @@ JSON string format for `gatewayResponse`:
 
 #### Transaction State
 
-The below table identifies the valid values of the transaction state in the gateway response.
+The below table identifies the valid values of `transactionState` in the gateway response.
 
 | Value | Description |
 |-------|-------------|

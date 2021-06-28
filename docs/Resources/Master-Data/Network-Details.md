@@ -13,7 +13,7 @@ title: networkDetails
 
 The below table identifies the required parameters in the `networkDetails` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `partialAuthDetails` | *object* | | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) details |
 | `network` | *string* | 64 | Processing card network e.g. VISA |
@@ -64,7 +64,7 @@ JSON string format for `networkDetails`:
 
 #### Authorization Characteristics Indicator
 
-Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. The below table identifies the valid values of Authorization Characteristics Indicator.
+Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. The below table identifies the valid values of `authorizationCharacteristicsIndicator`.
 
 | Value | Description |
 |-------|-------------|

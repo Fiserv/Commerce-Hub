@@ -54,7 +54,7 @@ JSON string format for `card`:
 
 #### Security Code Indicator
 
-The below table identifies the valid values of the security code indicator.
+The below table identifies the valid values of `securityCodeIndicator`.
 
 | Value | Description |
 | ----- | --------- |

@@ -55,7 +55,7 @@ title: amountComponents
 
 The below table identifies the required parameters in the `amountComponents` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
 | `subTotal` | *number* | 12 | Subtotal amount |
 | `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |

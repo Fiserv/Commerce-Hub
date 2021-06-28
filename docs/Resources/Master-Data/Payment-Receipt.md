@@ -19,7 +19,7 @@ title: paymentReceipt
 
 The below table identifies the required parameters in the `paymentReceipt` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `approvedAmount` | *object* |  | Contains the approved [amount](?path=docs/Resources/Master-Data/Amount-Components.md) and currency code |
 | `processorResponseDetails` | *object* | | Contains the [response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) parameters from the Commerce Hub for any successful or unsuccessful transaction |

@@ -15,7 +15,7 @@ title: processorResponseDetails
 
 The below table identifies the required parameters in the `processorResponseDetails` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
 | `approvalStatus` | *string* | | Final [status](#approval-status) of the transaction | 
 | `approvalCode` |*string* | | Approval code from the processor |
@@ -78,7 +78,7 @@ JSON string format for `processorResponseDetails`:
 
 #### Approval Status
 
-The below table identifies the valid values of the approval status.
+The below table identifies the valid values of `approvalStatus`.
 
 | Value | Description |
 |-------|-------------|
@@ -101,7 +101,7 @@ title: bankAssociationDetails
 
 The below table identifies the required parameters in the `bankAssociationDetails` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
 |` associationResponseCode` | string | 32 | Bank response code |
 | `transactionTimestamp` | string | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ|
