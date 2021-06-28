@@ -117,7 +117,7 @@ JSON string format for `shippingAddress`:
 
 #### Shipping Method
 
-The below table identifies the valid values of the shipping method.
+The below table identifies the valid values of `shippingMethod`.
 
 | Value | Description |
 | ----- | ----------- |
