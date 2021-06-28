@@ -152,9 +152,9 @@ The below table identifies the required parameters in the `avsSecurityCodeRespon
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `streetMatch` | *string* | 8 | Contains the normalized gateway response of [street number](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match.|
-| `postalCodeMatch` | *string* | 8 |Contains the noramlized gateway response of [postal code](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match. |
-| `securityCodeMatch` | *string* | 8 |  Contains the noramlized gateway response of [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) match. |
+| `streetMatch` | *string* | 1 | Contains the normalized gateway response of [street number](#street-match) match.|
+| `postalCodeMatch` | *string* | 1 |Contains the noramlized gateway response of [postal code](#postal-code-match) match. |
+| `securityCodeMatch` | *string* | 8 |  Contains the noramlized gateway response of [security code](#security-code-match) match. |
 | `association` | *object* | | Bank [association](#association-response) address and security code responses |
 
 <!--
@@ -180,6 +180,41 @@ JSON string format for `avsSecurityCodeResponse`:
 ```
 
 <!--type: tab-end -->
+
+#### Street Match
+
+The `streetMatch` variable contains the result for street address verification from the card issuer. The below table identifies the valid values of `streetMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *Y* | MATCHED |
+| *N* | NOT_MATCHED |
+| *X* | NOT_CHECKED |
+| *P* | NO_INPUT_DATA |
+
+#### Postal Code Match
+
+The `postalCodeMatch` variable contains the result for postal code verification from the card issuer. The below table identifies the valid values of `postalCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *Y* | MATCHED |
+| *N* | NOT_MATCHED |
+| *X* | NOT_CHECKED |
+| *P* | NO_INPUT_DATA |
+
+#### Security Code Match
+
+The `securityCodeMatch` variable contains the result for security code verification from the card issuer. The below table identifies the valid values of `securityCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *M* | Card security code matched |
+| *N* | Card security code does not matched |
+| *P* | Not processed |
+| *S* | Merchant has indicated that the card security code is not present on the card. |
+| *U* | Issuer is not certified and/or not provides encryption keys. |
+| *X* | No response from the credit card association was received. |
 
 ---
 
