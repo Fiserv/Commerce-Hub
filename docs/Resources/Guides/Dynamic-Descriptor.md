@@ -32,7 +32,7 @@ title: dynamicDescriptor
 
 The below table identifies the required parameters in the `dynamicDescriptor` object.
 
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* | 1024 | Daynamic Merchant Name or DBA |

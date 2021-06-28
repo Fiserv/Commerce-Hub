@@ -12,7 +12,7 @@ If the merchant wants to verify card related information of the cardholder such 
 
 The `cardDetails` are returned in the account information lookup response. The below table identifies the required parameters in the `cardDetails` object.
 
-| Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `brand` | *string* |  | Card Brand |
 | `brandProductId` | *string* |  | Category within the card brand |
@@ -124,7 +124,7 @@ The merchant can initiate information lookup transaction by passing the card det
 
 #### source
 
-| Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. | 

@@ -22,7 +22,10 @@ Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resour
 
 The [example](#payload-example) below contains the mandatory fields required for a successful capture request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/capture).
 
-#### amount
+<!--
+type: tab
+title: amount
+-->
 
 The below table identifies the required parameters in the `amount` object.
 
@@ -30,6 +33,8 @@ The below table identifies the required parameters in the `amount` object.
 | -------- | -- | ------------ | ------------------ |
 | `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!-- type: tab-end -->
 
 ---
 

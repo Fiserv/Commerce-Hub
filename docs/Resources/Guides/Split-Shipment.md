@@ -29,7 +29,7 @@ title: splitShipment
 
 The below table identifies the required parameters in the `splitShipment` object.
 
-|Variable    |  Type| Maximum Length | Description |
+|Variable |  Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `totalCount` | *integer* | 99 | Required in the capture transaction indicating how many shipments the transaction is devided into. Can be sent in pre-authorization or the first capture.|
 | `finalShipment` | *boolean* |  | Used to identify the final capture (*TRUE* or *FALSE*).|
