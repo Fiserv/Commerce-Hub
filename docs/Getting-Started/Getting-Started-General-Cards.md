@@ -12,13 +12,16 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 
 ## Integration Options
 
-[![Online Digital Mobile](../../assets/images/online_mobile_digital_card.png)](?path=docs/Getting-Started/Getting-Started-Online.md) [![In-Person](../../assets/images/in-person_card.png)](?path=docs/Getting-Started/Getting-Started-InPerson.md)
+[![Online Digital Mobile](../../assets/images/online_mobile_digital_card.png)](?path=docs/Getting-Started/Getting-Started-Online.md)
+[![In-Person](../../assets/images/in-person_card.png)](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 
 ---
 
 ## Features
 
-[![Account Verification](../../assets/images/feature_card.png)](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) [![Fraud Prevention](../../assets/images/feature_card_2.png)](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) [![Tokenization](../../assets/images/feature_card_3.png)](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+[![Account Verification](../../assets/images/feature_card.png)](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[![Fraud Prevention](../../assets/images/feature_card_2.png)](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+[![Tokenization](../../assets/images/feature_card_3.png)](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 [![Account Verification](../../assets/images/feature_card.png)](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) [![Fraud Prevention](../../assets/images/feature_card_2.png)](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) [![Tokenization](../../assets/images/feature_card_3.png)](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
