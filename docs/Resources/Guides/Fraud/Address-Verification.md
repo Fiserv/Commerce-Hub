@@ -285,11 +285,11 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 | Value | Descrption |
 | ---- | ------------|
-| EXACT_MATCHED|
-| MATCHED |
-| NOT_MATCHED |
-| NOT_CHECKED |
-| NO_INPUT_DATA |
+| EXACT_MATCHED | Data exactly matches with issuer system |
+| MATCHED | Data matches with issuer system with some mismatch |
+| NOT_MATCHED | Data does not match with issuer system |
+| NOT_CHECKED | Street address or postal code verification not done |
+| NO_INPUT_DATA | Street address or postal code mot present in the input |
 
 ## Association Response Code
 
@@ -299,12 +299,12 @@ The below table identifies the valid values of `avsCode`.
 
 | Value | Description |
 | ------- | ------- |
-| *Y* | Both Street and Zip Code Match |
-| *N* | Street Address matches, ZIP Code does not |
-| *X* | ZIP Code matches, Street Address does not |
-| *U* | 5 digit ZIP Code match only |
-| *Z* | No Address or ZIP Code match |
-| *A* | Address information is unavailable for that account number, or the card issuer does not support |
+| *Y* | Both street and postal code matched |
+| *N* | Both street and postal code does not matched |
+| *X* | Either street or postal code matched, issuer did not checked other. |
+| *U* | Card issuer did not check the AVS information |
+| *Z* | Postal code matched but street does not |
+| *A* | Street matched but postal code does not |
 
 
 The below table identifies the valid values of `cardHolderNameResponse`.
