@@ -69,6 +69,8 @@
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
+    - title: Processor Response Parameters
+      links: docs/Resources/Master-Data/Processor-Response-Details.md
 - sections:
   - title: API Reference
     sections:
