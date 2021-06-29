@@ -20,12 +20,18 @@ The below table identifies the required parameters in the `additionalDataCommon`
 | `amountComponents` | *object* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
 | `directedRouting` | *object* | | Required in Directed Routing transactions. |
 | `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
+
+
+<!---
 | `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
 | `installments` | *object* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `deferredPayments` | *object* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md) |
 | `recurringPayments` | *object* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
 | `privateLabel` | *object* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
+-->
+
+^
 
 <!--
 type: tab
@@ -106,6 +112,9 @@ JSON string format for `additionalDataCommon`:
 
 <!-- type: tab-end -->
 
+---
+
+<!---
 #### Bill Payment Indicator
 
 The below table identifies the valid values of the `billPaymentIndicator`.
@@ -116,6 +125,7 @@ The below table identifies the valid values of the `billPaymentIndicator`.
 | *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
 | *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
 | *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
+-->
 
 ---
 
@@ -128,17 +138,20 @@ type: tab
 title: additionalData
 -->
 
-The below table identifies the required parameters in the `additionalData` object.
-
-| Variable | Type | Length | Description |
+| Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
-| `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
 | `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
-| `terminalLaneNumber` | *string* | 16 | Terminal Lane Number |
 | `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
+
+<!---
+| `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
+| `billPayment` | *boolean* | | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
+| `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. |
 | `emvParameterDownloadIndicator` | *string* | | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
+-->
+
+^
 
 <!--
 type: tab
@@ -150,37 +163,40 @@ JSON string format for `additionalData`:
 ```json
 {
    "additionalData":{
-      "baiFlag": "PERSON_TO_PERSON",
+      "baiFlag": "PERSON_TO_PERSON", // Future Release
       "networkTransactionReference": "123456788",
-      "billPayment": false,
+      "billPayment": false, // Future Release
       "ecomURL": "https://www.somedomain.com",
-      "goodsSoldCode": "GIFT_CARD",
-      "terminalLaneNumber": "001",
+      "goodsSoldCode": "GIFT_CARD", // Future Release
+      "terminalLaneNumber": "001", // Future Release
       "requestedTestErrorResponseCode": "NO_CONNECTION_AVAILABLE",
-      "emvParameterDownloadIndicator": true
+      "emvParameterDownloadIndicator": true // Future Release
    }
 }
 ```
 
 <!-- type: tab-end -->
 
-#### Business Application Identifier
+---
+
+<!--- #### Business Application Identifier
 
 The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
 
 | Value | Description |
 | ----- | ----- |
-| *PERSON_TO_PERSON* | Person to person initiated |
-| *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated |
-| *BUSINESS_TO_BUSINESS* | Business to business initiated |
-| *DIGITAL_WALLET* | Digital Wallet transfer |
-| *ACCOUNT_TO_ACCOUNT* | Account to account transfer |
-| *TOP_OFF* | Account top off or reload |
-| *ACCOUNT_VERIFICATION* | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth |
-| *FUNDS_TRANSFER* | Funds Transfer |
-| *DISBURSEMENT* | Funds disbursement or payout |
-| *GAMBLING_PAYOUT* | Gambling payout non-online |
-| *GAMBLING_PAYOUT_ONLINE* | Online gambling payout |
+| *PERSON_TO_PERSON* | Person to person initiated. |
+| *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
+| *BUSINESS_TO_BUSINESS* | Business to business initiated. |
+| *DIGITAL_WALLET* | Digital Wallet transfer. |
+| *ACCOUNT_TO_ACCOUNT* | Account to account transfer. |
+| *TOP_OFF* | Account top off or reload. |
+| *ACCOUNT_VERIFICATION* | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
+| *FUNDS_TRANSFER* | Funds Transfer. |
+| *DISBURSEMENT* | Funds disbursement or payout. |
+| *GAMBLING_PAYOUT* | Gambling payout non-online. |
+| *GAMBLING_PAYOUT_ONLINE* | Online gambling payout. |
+-->
 
 ---
 
