@@ -182,20 +182,6 @@ JSON string format for `avsSecurityCodeResponse`:
 <!--type: tab-end -->
 
 
-
-#### Security Code Match
-
-The `securityCodeMatch` variable contains the result for security code verification from the card issuer. The below table identifies the valid values of `securityCodeMatch`.
-
-| Value | Descrption |
-| ---- | ------------|
-| *M* | Card security code matched |
-| *N* | Card security code does not matched |
-| *P* | Not processed |
-| *S* | Merchant has indicated that the card security code is not present on the card. |
-| *U* | Issuer is not certified and/or not provides encryption keys. |
-| *X* | No response from the credit card association was received. |
-
 ---
 
 ## Association Response

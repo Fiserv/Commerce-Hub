@@ -250,18 +250,21 @@ title: Response
 
 ---
 
-## Response Values
+## AVS Security Code Response Values
 
-The result of checking the cardholder’s entered security code against the Issuer’s system of record is is received in the response. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the security code response from the bank.
+The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
-| Value | Description |
-| ------- | ------- |
-| *MATCH* | Security code matched. |
-| *NO_MATCH* | Security code did not matched. |
-| *NOT_PROVIDED* | Security code value was not provided. |
-| *NOT_PROCESSED* | Security code verification was not processed. |
-| *NO_PARTICIPANT* | Bank Associatino does not participate in security verification. |
-| *UNKNOWN* | Unknown status. |
+The below table identifies the valid values of `securityCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *M* | Card security code matched |
+| *N* | Card security code does not matched |
+| *P* | Not processed |
+| *S* | Merchant has indicated that the card security code is not present on the card. |
+| *U* | Issuer is not certified and/or not provides encryption keys. |
+| *X* | No response from the credit card association was received. |
+| | A blank code should indicate that no code was sent and that there was no indication that the code was present on the card. |
 
 ---
 

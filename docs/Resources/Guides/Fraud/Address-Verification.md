@@ -285,11 +285,11 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 | Value | Descrption |
 | ---- | ------------|
-| EXACT_MATCHED | Data exactly matches with issuer system |
-| MATCHED | Data matches with issuer system with some mismatch |
-| NOT_MATCHED | Data does not match with issuer system |
-| NOT_CHECKED | Street address or postal code verification not done |
-| NO_INPUT_DATA | Street address or postal code mot present in the input |
+| *EXACT_MATCHED* | Data exactly matches with issuer system |
+| *MATCHED* | Data matches with issuer system with some mismatch |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_CHECKED* | Street address or postal code verification not done |
+| *NO_INPUT_DATA* | Street address or postal code mot present in the input |
 
 ## Association Response Code
 
