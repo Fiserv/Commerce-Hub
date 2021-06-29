@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, customer-details, master-data]
 
 # Customer Details
 
-The transaction request may contain the `customerDetails` consisting of customer specific data like; customer id, name, date of birth, phone number, etc.
+The transaction request may contain the `customerDetails` consisting of customer specific data like; customer id, name, date of birth, phone number, etc.  
 
 <!--
 type: tab

@@ -71,6 +71,7 @@ type: tab
 title: shippingAddress
 -->
 
+
 The below table identifies the required parameters in the `shippingAddress` object.
 
 | Variable | Type | Maximum Length | Description |
@@ -137,6 +138,7 @@ Common `address` object used in both the billing address and shipping address.
 type: tab
 title: address
 -->
+
 
 The below table identifies the required parameters in the `address` object.
 
