@@ -2,33 +2,31 @@
 tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data]
 ---
 
-## Additional Transaction Data
 
-Additional transaction data is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
+# Additional Data Common
 
----
-
-## Additional Data Common
-
-The `additionalDataCommon` object contains common data elements used in requests based on business requirements.
+Additional data common is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
 
 <!--
 type: tab
 title: additionalDataCommon
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the required parameters in the `additionalDataCommon` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
 | `directedRouting` | *object* | | Required in Directed Routing transactions. |
 | `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 
+
 <!---
-| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). |
-| `installments` | *object* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md). |
-| `deferredPayments` | *object* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md). |
-| `recurringPayments` | *object* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md). |
+| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
+| `installments` | *object* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
+| `deferredPayments` | *object* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md) |
+| `recurringPayments` | *object* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
 | `privateLabel` | *object* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 -->
@@ -40,18 +38,20 @@ type: tab
 title: JSON Example
 -->
 
+JSON string format for `additionalDataCommon`:
+
 ```json
 {
    "additionalDataCommon":{
       "additionalData":{
-//         "baiFlag": "PERSON_TO_PERSON",
+         "baiFlag": "PERSON_TO_PERSON",
          "networkTransactionReference":"123456788",
-//         "billPayment":false,
+         "billPayment":false,
          "ecomURL":"https://www.somedomain.com",
          "goodsSoldCode":"GIFT_CARD",
-//         "terminalLaneNumber":"001",
+         "terminalLaneNumber":"001",
          "requestedTestErrorResponseCode":"NO_CONNECTION_AVAILABLE",
-//         "emvParameterDownloadIndicator":true
+         "emvParameterDownloadIndicator":true
       },
       "amountComponents":{
          "subTotal": 12.00,
@@ -62,50 +62,50 @@ title: JSON Example
          "surcharge": 1.20,
          "vatAmount": 1.00
       },
-//      "directedRouting":{
-//         "network": "VISA",
-//         "cardFunction": "CREDIT",
-//         "processor": "fiserv"
-//      },
-//      "subMerchant":{
-//         "id": "9999",
-//         "name": "Some Business",
-//         "street": "123 Main Street",
-//         "city": "Atlanta",
-//         "state": "GA",
-//         "postalCode": "30303-001",
-//         "country": "US",
-//         "taxId": "123456789"
-//      },
-//      "billPaymentIndicator": "RECURRING",
-//      "installments":{
-//         "installmentAmount": 20.00,
-//         "lastInstallmentAmount": 20.00,
-//         "interestRate": 10,
-//         "paymentFirstDay": 10.00,
-//         "invoiceId": "534242",
-//         "invoiceDate": "05-01-2020",
-//         "deliveryDate": "05-01-2020",
-//         "dueDate": "05-01-2030"
-//      },
-//      "deferredPayments":{
-//         "numberOfPayments": "5",
-//         "paymentPlan": "PAY_LATER",
-//         "timePeriod": "12"
-//      },
-//      "recurringPayments":{    
-//      },
-//      "privateLabel":{
-//         "paymentSource": "SHELL",
-//         "paymentType": "REFUND",
-//         "specialFinanceIndicator": "24/0"
-//      },
-//      "customFields":{
-//         "keyValuePair":{
-//            "key": "",
-//            "value": ""
-//         }
-//      }
+      "directedRouting":{
+         "network": "VISA",
+         "cardFunction": "CREDIT",
+         "processor": "fiserv"
+      },
+      "subMerchant":{
+         "id": "9999",
+         "name": "Some Business",
+         "street": "123 Main Street",
+         "city": "Atlanta",
+         "state": "GA",
+         "postalCode": "30303-001",
+         "country": "US",
+         "taxId": "123456789"
+      },
+      "billPaymentIndicator": "RECURRING",
+      "installments":{
+         "installmentAmount": 20.00,
+         "lastInstallmentAmount": 20.00,
+         "interestRate": 10,
+         "paymentFirstDay": 10.00,
+         "invoiceId": "534242",
+         "invoiceDate": "05-01-2020",
+         "deliveryDate": "05-01-2020",
+         "dueDate": "05-01-2030"
+      },
+      "deferredPayments":{
+         "numberOfPayments": "5",
+         "paymentPlan": "PAY_LATER",
+         "timePeriod": "12"
+      },
+      "recurringPayments":{    
+      },
+      "privateLabel":{
+         "paymentSource": "SHELL",
+         "paymentType": "REFUND",
+         "specialFinanceIndicator": "24/0"
+      },
+      "customFields":{
+         "keyValuePair":{
+            "key": "",
+            "value": ""
+         }
+      }
    }
 }
 ```
@@ -116,6 +116,8 @@ title: JSON Example
 
 <!---
 #### Bill Payment Indicator
+
+The below table identifies the valid values of the `billPaymentIndicator`.
 
 | Value | Description |
 | ----- | ----- |
@@ -136,7 +138,7 @@ type: tab
 title: additionalData
 -->
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
 | `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
@@ -155,6 +157,8 @@ title: additionalData
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `additionalData`:
 
 ```json
 {
@@ -177,7 +181,7 @@ title: JSON Example
 
 <!--- #### Business Application Identifier
 
-The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision.
+The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
 
 | Value | Description |
 | ----- | ----- |
@@ -207,6 +211,3 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 
 ---
-
-[//]: # (Yet another comment)
-[comment]: # (Still another comment)
