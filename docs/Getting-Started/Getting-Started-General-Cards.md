@@ -13,6 +13,7 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 ## Integration Options
 
 [![Online Digital Mobile](../../assets/images/online_mobile_digital_card.png)](?path=docs/Getting-Started/Getting-Started-Online.md)
+
 [![In-Person](../../assets/images/in-person_card.png)](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 
 ---
