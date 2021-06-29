@@ -180,7 +180,6 @@ JSON string format for `additionalData`:
 ---
 
 <!--- #### Business Application Identifier
-
 The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
 
 | Value | Description |

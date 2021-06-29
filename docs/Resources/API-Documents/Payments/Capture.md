@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, capture,
 
 # Capture
 
-## Overview
-
 Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md). This is known as a post-authorization. This will settle (withdrawl) funds from the customer.
 
 <!-- theme: warning -->
@@ -24,12 +22,19 @@ Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resour
 
 The [example](#payload-example) below contains the mandatory fields required for a successful capture request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/capture).
 
-#### Object: amount
+<!--
+type: tab
+title: amount
+-->
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `total` | *number* |  | Sub component values must add up to total amount.<br/>0.00 expected format. |
+The below table identifies the required parameters in the `amount` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -57,18 +62,17 @@ title: Request
     "total": "12.04",
     "currency": "USD"
   },
-  "transactionDetails": {
-    "captureFlag": true
-  }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/capture)
 
 <!--
 type: tab
 title: Response
 -->
 
-##### Example of a Capture (200: Success) Response.
+##### Example of a capture (200: Success) response.
 
 <!-- theme: info -->
 

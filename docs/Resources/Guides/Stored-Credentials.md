@@ -2,35 +2,67 @@
 tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
 ---
 
-
-
 # Stored Credentials
-
-## Overview
 
 Stored Credentials also known as Credentials on File, allows the merchant to initiate a transactions on behalf of customers (e.g. for subscription payments), using the [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) created from the customer's card details.
 
 ---
 
-## Technical Requirements
+## Request Variables
 
 The following variables are required in the initial `PaymentToken` request and subsequent transactions.
 
-#### Transaction Details
+<!--
+type: tab
+title: transactionDetails
+-->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `authorizationTypeIndicator` | *string* | 11 | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
 
-#### Stored Credentials
+<!--
+type: tab
+title: storedCredentials
+-->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the required parameters in the `storedCredentials` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `initiator` | *string* | 11 | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* |  | Indicator if this is a scheduled transaction. |
 | `schemeReferencedTransactionId` | *string* | 256 | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
 | `sequence` | *string* | 10 | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
 | `networkOriginalAmount` | *number* | 18,3 | Original transaction amount, required for Discover Card on File transactions. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `storedCredentails`:
+
+```json
+{
+   "transactionDetails":{
+      "authorizationTypeIndicator":"INITIAL"
+   },
+   "storedCredentials":{
+      "scheduled":false,
+      "initiator":"MERCHANT",
+      "sequence":"FIRST",
+      "schemeReferenceTransactionId":"54231235467",
+      "networkOriginalAmount":9.66
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
 
 ## Payload Example
 
@@ -39,7 +71,7 @@ type: tab
 title: Request
 -->
 
-#### Sample chargeRequest with Stored Credentials details
+##### Example of a charge payload request using `storedCredentials`.
 
 ```json
 {
@@ -78,7 +110,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge (201: Created) Response.
+##### Example of a charge (201: Created) response.
 
 ```json
 {

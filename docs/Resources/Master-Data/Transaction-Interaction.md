@@ -2,30 +2,31 @@
 tags: [carat, commerce-hub, enterprise, master-data, transaction-origin-and-entry-modes, transaction-interaction]
 ---
 
-
-# Transaction Origin and Entry Modes
+# Transaction Interaction
 
 The `transactionInteraction` object contains the data indicating where the transaction is acquired and the capabilities of the website, software, app, or terminal.
-
-## Transaction Interaction
 
 <!--
 type: tab
 title: transactionInteraction
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the required parameters in the `transactionInteraction` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction. |
+| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction |
 | `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
 | `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
-| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction).|
-| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator).|
+| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction)|
+| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator)|
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `transactionInteraction`:
 
 ```json
 {
@@ -44,17 +45,21 @@ title: JSON Example
 
 ---
 
-### Transaction Origin
+#### Transaction Origin
+
+The below table identifies the valid values of `origin`.
 
 | Value | Description |
 |-------|-------------|
-| *ECOM* | Card Not Present email or internet. |
-| *MOTO* | Mail order or telephone order. |
-| *POS* | Card Present retail face to face. |
+| *ECOM* | Card Not Present email or internet |
+| *MOTO* | Mail order or telephone order |
+| *POS* | Card Present retail face to face |
 
 ---
 
-### POS Entry Mode
+#### POS Entry Mode
+
+Pos entry mode value identifies how account number was entered on the transaction.  The below table identifies the valid values of `posEntryMode`.
 
 | Value | Description |
 |-------|-------------|
@@ -77,7 +82,9 @@ title: JSON Example
 
 ---
 
-### POS Condition Code
+#### POS Condition Code
+
+The below table identifies the valid values of `posConditionCode`.
 
 | Value | Description |
 |-------|-------------|
@@ -96,7 +103,9 @@ title: JSON Example
 
 ---
 
-### Mobile Interactions
+#### Mobile Interaction
+
+The below table identifies the valid values of `mobileInteraction`.
 
 | Value | Description |
 |-------|-------------|
@@ -105,10 +114,12 @@ title: JSON Example
 
 ---
 
-### Electronic Commerce Indicator
+#### Electronic Commerce Indicator
 
 <!-- theme: warning -->
 > ECI is required on all online, mobile, and digital E-Commerce transactions.
+
+The below table identifies the valid values of `eciIndicator`.
 
 | Value | Description |
 |-------|-------------|

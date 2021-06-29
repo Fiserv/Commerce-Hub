@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, dynamic-descriptor, Statement-Descriptor, Merchant-D
 
 # Dynamic Descriptor
 
-## Overview
-
 A descriptor contains identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on customer's credit/debit card statement and identifies specific industry information based on the [Merchant Category Code (MCC)](?path=docs/Resources/FAQs-Glossary/Glossary.md#merchantcategroycode). The descriptor informs a customer of the merchant details and contact information.
 
 The standard descriptor information that is passed through to the customer’s statement is the Doing Business As (DBA) name, customer service phone number and MCC that you provide with your merchant account application. See [hard descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#harddescriptor) and [soft descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#softdescriptor) for more information.
@@ -22,18 +20,53 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 
 ---
 
-## Minimum Requirements
+## Request Variables
 
 <!-- theme: danger -->
 > Any information entered in the dynamic descriptor fields will overwrite the master descriptor information on the merchant account, it is very important to use the fields correctly.
 
-| Variable | Type | Length | Description/Values |
+<!--
+type: tab
+title: dynamicDescriptor
+-->
+
+The below table identifies the required parameters in the `dynamicDescriptor` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* | 1024 | Daynamic Merchant Name or DBA |
 | `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
 | `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
 | `address` | *component* |  | Merchant [Address](?path=docs/Resources/Master-Data/Address.md#address) details |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `dynamicDescriptor`:
+
+```json
+{
+ "dynamicDescriptors":{
+      "mcc":"4457",
+      "merchantName":"Mywebsite.com",
+      "customerServiceNumber":"1231231234",
+      "serviceEntitlement":"67893827513",
+      "address":{
+         "street":"Main Street",
+         "houseNumberOrName":"123",
+         "city":"Main Street",
+         "stateOrProvince":"GA",
+         "postalCode":"30303",
+         "country":"US"
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
@@ -44,7 +77,7 @@ type: tab
 title: Request
 -->
 
-#### Charge example with Dynamic Descriptor
+##### Example of a charge payload request using `dynamicDescriptors`.
 
 ```json
 {
@@ -87,7 +120,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge (201: Created) Response.
+##### Example of a charge (201: Created) response.
 
 ```json
 {

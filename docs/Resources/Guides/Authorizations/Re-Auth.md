@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 # Reauthorize
 
-## Overview
-
 A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md).
 
 <!-- theme: info -->
@@ -13,22 +11,56 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 ---
 
-## Minimum Requirements
+## Request Variables
 
-#### Component: amount
+<!--
+type: tab
+title: amount
+-->
 
-|Variable    |  Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `amount` object.
+
+|Variable | Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-#### Component: transactionDetails
+<!--
+type: tab
+title: transactionDetails
+-->
 
-|Variable    |  Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `transactionDetails` object.
+
+|Variable | Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
-| `primaryTransactionId` | *string* |  | The `transactionId` from the original transaction passed for a reauthorization.|
-| `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
+| `captureFlag` | *boolean* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth) |
+| `primaryTransactionId` | *string* |  | The `transactionId` from the original transaction passed for a reauthorization |
+| `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Value:** REAUTH|
+ 
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for re-authorization:
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "captureFlag": false,
+    "primaryTransactionId": "838916029300",
+    "authorizationTypeIndicator": "REAUTH"
+  }
+}
+```
+
+
+<!-- type: tab-end -->
 
 ---
 
@@ -38,17 +70,16 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab
 title: Request
 -->
 
-##### Example of a Reauthorization Payload Request.
+##### Example of a re-authorization payload request.
 
 ```json
-
 {
   "amount": {
     "total": "12.04",
@@ -70,7 +101,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Reauthorization (201: Created) Response.
+##### Example of a re-authorization (201: Created) response.
 
 <!-- theme: info -->
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.

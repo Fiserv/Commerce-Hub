@@ -4,27 +4,57 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, in-perso
 
 # Address Verification Services
 
-## Overview
 
 Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#address-verification-service) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
-## Requirements
+## Request Variables
 
 For the transactions where address verification is required, the merchant's API is required to pass the billing information as part of the request.
 
-#### Object: billingAddress
+<!--
+type: tab
+title: billingAddress
+-->
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* |  | Customer first name. |
-| `lastName` | *string* |  | Customer last name. |
-| `address` | *array* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+The below table identifies the required parameters in the `billingAddress` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `firstName` | *string* |  | Customer first name |
+| `lastName` | *string* |  | Customer last name |
+| `address` | *object* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `billingAddress`:
+
+```json
+{
+   "billingAddress":{
+      "firstName": "John",
+      "lastName": "Doe",
+      "address":{
+         "houseNumberOrName": "112",
+         "street": "Main St.",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
-## Verification Request
+## AVS Verification Request
 
 ### Endpoint
 
@@ -38,7 +68,7 @@ type: tab
 title: Request
 -->
 
-##### Example of an account verification request.
+##### Example of an address verification request.
 
 ```json
 {
@@ -70,7 +100,7 @@ type: tab
 title: Response
 -->
 
-##### Example of an account verification response.
+##### Example of an address verification response.
 
 ```json
 {
@@ -131,7 +161,7 @@ title: Response
 
 ---
 
-## Verification With Charges Request
+## AVS Verification with Charges Request
 
 ### Endpoint
 
@@ -246,45 +276,52 @@ title: Response
 
 ---
 
-## Response Values
+## AVS Security Code Response Values
 
-The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the AVS response from the bank.
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `streetMatch` and `postalCodeMatch` value.
 
-#### Object: avsCode
+
+The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *EXACT_MATCHED* | Data exactly matches with issuer system |
+| *MATCHED* | Data matches with issuer system with some mismatch |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_CHECKED* | Street address or postal code verification not done |
+| *NO_INPUT_DATA* | Street address or postal code mot present in the input |
+
+## Association Response Code
+
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`.
+
+The below table identifies the valid values of `avsCode`.
 
 | Value | Description |
 | ------- | ------- |
-| *BOTH_MATCH* | Both Street and Zip Code Match. |
-| *STREET_ONLY* | Street Address matches, ZIP Code does not. |
-| *ZIP_ONLY* | ZIP Code matches, Street Address does not. |
-| *5_DIGIT_ZIP_ONLY* | 5 digit ZIP Code match only. |
-| *NO_MATCH* | No Address or ZIP Code match. |
-| *UNAVAILABLE* | Address information is unavailable for that account number, or the card issuer does not support. |
-| *NON_US* | Service Not supported, non-US Issuer does not participate. |
-| *RETRY* | Issuer system unavailable, retry later. |
-| *NOT_MOTO* | Not a mail or phone order. | 
-| *NOT_SUPPORTED* | Service not supported. |
-| *INTERNATIONAL_BOTH_MATCH* | International street address and postal code match. |
-| *INTERNATIONAL_STREET_ONLY* |  International street address match, postal code not verified due to incompatible formats. |
-| *INTERNATIONAL_POSTAL_ONLY* | International street address and postal code not verified due to incompatible formats. |
-| *INTERNATIONAL_NO_MATCH* | International postal code match, street address not verified due to incompatible format. |
+| *Y* | Both street and postal code matched |
+| *N* | Both street and postal code does not matched |
+| *X* | Either street or postal code matched, issuer did not checked other. |
+| *U* | Card issuer did not check the AVS information |
+| *Z* | Postal code matched but street does not |
+| *A* | Street matched but postal code does not |
 
 
-#### Object: cardHolderNameResponse
+The below table identifies the valid values of `cardHolderNameResponse`.
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) transactions.
 
 | Value | Description |
 | ------- | ------- |
-| *1* | Cardholder name matches. |
-| *2* | Cardholder name, billing address, and postal code match. |
-| *3* | Cardholder name and billing postal code match. |
-| *4* | Cardholder name and billing address match. |
-| *5* | Cardholder name incorrect, billing address and postal code match. |
-| *6* | Cardholder name incorrect, billing postal code matches. |
-| *7* | Cardholder name incorrect, billing address matches. |
-| *8* | Cardholder name, billing address, and postal code are all incorrect. |
+| *1* | Cardholder name matches |
+| *2* | Cardholder name, billing address, and postal code match |
+| *3* | Cardholder name and billing postal code match |
+| *4* | Cardholder name and billing address match |
+| *5* | Cardholder name incorrect, billing address and postal code match |
+| *6* | Cardholder name incorrect, billing postal code matches |
+| *7* | Cardholder name incorrect, billing address matches |
+| *8* | Cardholder name, billing address, and postal code are all incorrect |
 
 ---
 

@@ -4,13 +4,10 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, charges,
 
 # Charges
 
-## Overview
-
 Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the `captureFlag` sent in the request.
 
 - *true:* A sale transaction where the customer will be changed the total amount.
 - *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdrawal the funds.
-
 
 #### Charge Types
 
@@ -27,24 +24,41 @@ The [example](#payload-example) below contains the mandatory fields required for
 <!--theme:info-->
 > A charge request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
 
-#### Object: amount
+<!--
+type: tab
+title: amount
+-->
 
-| Variable    |  Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `amount` object.
+
+|Variable |  Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-#### Object: source
+<!--
+type: tab
+title: source
+-->
 
-| Variable | Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
-#### Object: transactionDetails
+<!--
+type: tab
+title: transactionDetails
+-->
 
-| Variable | Data Type| Maximum Length | Description/Values |
+The below table identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth).|
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
+
+<!-- type: tab-end -->
 
 ---
 
