@@ -13,7 +13,6 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 ## Integration Options
 
 [![Online Digital Mobile](../../assets/images/online_mobile_digital_card.png)](?path=docs/Getting-Started/Getting-Started-Online.md)
-
 [![In-Person](../../assets/images/in-person_card.png)](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 
 ---
@@ -24,7 +23,9 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 [![Fraud Prevention](../../assets/images/feature_card_2.png)](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 [![Tokenization](../../assets/images/feature_card_3.png)](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
-[![Account Verification](../../assets/images/feature_card.png)](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) [![Fraud Prevention](../../assets/images/feature_card_2.png)](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) [![Tokenization](../../assets/images/feature_card_3.png)](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+[![Account Verification](../../assets/images/feature_card.png)](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[![Fraud Prevention](../../assets/images/feature_card_2.png)](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+[![Tokenization](../../assets/images/feature_card_3.png)](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
