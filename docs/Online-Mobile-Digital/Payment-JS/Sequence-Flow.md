@@ -1,6 +1,6 @@
-# Sequence-flow
+# Payment.JS Sequence Flow
 
-![image](../../../assets/images/PaymentJS_sequence_diagram.png)
+![PaymentJS Sequence](../../../assets/images/PaymentJS_sequence_diagram.png)
 
 1. Consumer visits merchant’s payment page; merchant will return payment page back to consumer’s web browser including the payment.js javascript library (referenced within merchant’s payment page script tag).
 

@@ -147,9 +147,9 @@ title: Response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Incremental Auth](?path=docs/Resources/Guides/Incremental-Auth.md)
+- [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Reauthorization](?path=docs/Resources/Guides/Re-Auth.md)
+- [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
