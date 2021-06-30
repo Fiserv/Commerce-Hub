@@ -4,8 +4,6 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-codes, c
 
 # Gateway Response Codes
 
-## Overview
-
 The gateway response code indicates the status of a transaction after Commerce Hub receives the transaction. Commerce Hub includes the value in the `responseCode` along with the corresponding text in `responseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
 <!-- https://escmconfluence.1dc.com/display/CARAT/CARAT+Response+Codes+to+Nashville+Response+Codes+%28from+Spec+Version+2020-2%29+Mapping - CARAT Mapping

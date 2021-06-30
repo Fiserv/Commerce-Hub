@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, card-not-present, card-present, hash, primary-transa
 
 # Transaction Types
 
-## Overview
-
 The Commerce Hub API allows a merchant to create, inquire, and finalize payment transactions. Our API has two transaction types; primary and secondary.
 
 ### Primary Transactions

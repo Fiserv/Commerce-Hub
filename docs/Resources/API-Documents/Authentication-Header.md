@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, card-not-present, card-present, hash, header, authen
 
 # Generate Authentication Header
 
-## Overview
-
 To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [Header](?path=docs/Resources/API-Documents/Use-Our-APIs.md).
 
 #### Details

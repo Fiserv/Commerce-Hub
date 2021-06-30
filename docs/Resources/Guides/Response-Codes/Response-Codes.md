@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, enterprise, response-codes-and-messages, host, gatew
 
 # Response Codes and Messages
 
-## Overview
-
 Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and rejects. 
 
 - [**Host:**](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md) are the response which is received by the processing network or the bank.

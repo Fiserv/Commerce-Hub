@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, cancel,a
 
 # Cancel
 
-## Overview
-
 If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` or `orderId`.
 
 <!-- theme: warning -->
@@ -15,23 +13,23 @@ If the customer cancels the order or if fraud is suspected, the merchant will ne
 
 ## Minimum Requirements
 
-Cancel Request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` along with the `reversalReasonCode` in `transactionDetails` object. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel).
+Cancel request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` along with the `reversalReasonCode` in `transactionDetails` object. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel).
 
-### Reversal Reason Code
+#### Reversal Reason Code
 
-Reason the merchant/customer requests for cancel (void).
+The below table identifies the valid values of the reason the merchant/customer requests for cancel(void).
 
-| Value | Description|
+| Value | Description |
 |---------|---------|
 |*VOID* | A transaction that is used to cancel or fully reverse a previous transaction. |
 |*SUSPECTED_FRAUD* | A transaction that is voided for suspected fraud. |
 |*TIMEOUT* | This transaction is used when the merchant does not receive a response to a transaction. At that point it is unknown whether the host received the transaction or not; therefore a timeout reversal request must be submitted. Upon the successful completion of the timeout reversal, the original transaction may be sent again. |
-|*TIMEOUT_REVERSAL*| A Timeout Reversal of a Void/Full Reversal. |
+|*TIMEOUT_REVERSAL*| A Timeout Reversal of a Void/Full Reversal |
 |*PARTIAL*| A reversal transaction where the amount is less than the original authorization amount. |
 |**Canadian Debit Only**| |
-|*EDIT_ERROR* | Edit Error Parse error at the terminal. |
+|*EDIT_ERROR* | Edit Error Parse error at the terminal |
 |*MAC_VERIFICATION_ERROR* | MAC Verification Error terminal MAC is invalid or data used to verify the MAC is incorrect. |
-|*MAC_SYNCH_ERROR* | MAC Synch Error terminal MAC is out of synch with host MAC. |
+|*MAC_SYNCH_ERROR* | MAC Synch Error terminal MAC is out of synch with host MAC |
 |*ENCRYPTION_ERROR* | Message Encryption Error terminal message encryption key is out of synch with host message encryption key or there is an error with the input data. |
 |*SYSTEM_ERROR* | System Error all other errors except for timeout (no response received) such as communication errors between the terminal and the PIN pad. |
 
@@ -47,7 +45,7 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 ---
 
-## Payload Examples
+## Payload Example
 
 <!--
 type: tab
@@ -63,6 +61,7 @@ title: Request
   }
 }
 ```
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/cancel)
 
 <!--
 type: tab

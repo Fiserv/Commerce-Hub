@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, amer
 
 # Convenience Fees
 
-## Overview
-
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
 A merchant that charges a convenience fee must ensure that the fee is:
@@ -23,7 +21,7 @@ A merchant that charges a convenience fee must ensure that the fee is:
 
 ---
 
-## Policies on Convenience Fees
+## Policies and Usage
 
 Every credit card provider has different rules on convenience fees. Below are the rules of some of the major credit card providers:
 
@@ -34,7 +32,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ---
 
-## Minimum Requirement
+## Request Variables
 
 The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
 
@@ -42,13 +40,12 @@ The `convenienceFee` is part of the `amountComponents` and the `additionalDataCo
 
 ## Payload Example
 
-
 <!--
 type: tab
 title: Request
 -->
 
-##### Example of a Charge Payload Request.
+##### Example of a charge payload request using `convenienceFee`.
 
 ```json
 {
@@ -82,7 +79,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge (201: Created) Response.
+##### Example of a charge (201: Created) response.
 
 ```json
 {

@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, enterprise, payment-sources, telecheck-ach]
 
 # TeleCheck ACH
 
-## Overview
-
 We are enhancing Commerce Hub to support the Telecheck and the documents related to the features will be released soon.
 
 ---
