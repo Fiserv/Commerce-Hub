@@ -198,7 +198,7 @@ title: JSON Example
 ---
 
 ## See Also
-- [API Explorer](../CommerceHub/api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
 - [Gateway Response](?path=docs/Resources/Master-Data/Gateway-Response.md)
