@@ -20,6 +20,6 @@ The variable `sourceType` is used to determine the source of the transaction. De
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 
 ---
