@@ -1,30 +1,60 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, address-veriffication, fraud, AVS]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, in-person, online, mobile, digital, address-verification, fraud]
 ---
 
 # Address Verification Services
 
-## Overview
 
-Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#addressverificationservice) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
+Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#address-verification-service) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
-## Requirements
+## Request Variables
 
 For the transactions where address verification is required, the merchant's API is required to pass the billing information as part of the request.
 
-#### Component: billingAddress
+<!--
+type: tab
+title: billingAddress
+-->
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
+The below table identifies the required parameters in the `billingAddress` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* |  | Customer first name |
 | `lastName` | *string* |  | Customer last name |
-| `address` | *array* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details |
+| `address` | *object* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `billingAddress`:
+
+```json
+{
+   "billingAddress":{
+      "firstName": "John",
+      "lastName": "Doe",
+      "address":{
+         "houseNumberOrName": "112",
+         "street": "Main St.",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
-## Verification Request
+## AVS Verification Request
 
 ### Endpoint
 
@@ -38,28 +68,30 @@ type: tab
 title: Request
 -->
 
-##### Example of an account verification request.
+##### Example of an address verification request.
 
 ```json
 {
-  "source": {
-    "sourceType": "PaymentCard",
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
-  },
-  "billingAddress": {
-    "name": "Jane Smith",
-    "address": {
-      "street": "Main Street",
-      "houseNumberOrName": "123",
-      "city": "Sandy Springs",
-      "stateOrProvince": "GA",
-      "postalCode": "30303",
-      "country": "US"
-    }
-  }
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
+      }
+   },
+   "billingAddress":{
+      "firstName": "John",
+      "lastName": "Doe",
+      "address":{
+         "houseNumberOrName": "112",
+         "street": "Main St.",
+         "city": "Atlanta",
+         "stateOrProvince":"GA",
+         "postalCode": "30301",
+         "country": "US"
+      }
+   }
 }
 
 ```
@@ -68,59 +100,57 @@ type: tab
 title: Response
 -->
 
-##### Example of an account verification response.
+##### Example of an address verification response.
 
 ```json
 {
    "gatewayResponse":{
-      "transactionType":"VERIFICATION",
-      "transactionState":"CHECKED",
-      "transactionOrigin":"ECOM",
+      "transactionType": "VERIFICATION",
+      "transactionState": "CHECKED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
-         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+         "transactionDate": "2016-04-16",
+         "transactionTime": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
       }
    },
-   "paymentSource":{
-      "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
+   "source":{
+      "sourceType": "PaymentCard",
       "card":{
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
+         "cardData": "4005550000000019",
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "05",
+         "expirationYear": "2025",
+         "bin": "400555",
+         "last4": "0019"
       }
    },
    "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "authenticationResponseCode": "string",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "123",
+      "processor": "fiserv",
+      "responseCode": "00000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "associationResponseCode": "000",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
+         "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch":"MATCH",
-            "postalCodeMatch":"MATCH",
+            "streetMatch": "MATCH",
+            "postalCodeMatch": "MATCH",
             "association":{
-               "avsCode":"BOTH_MATCH",
-               "cardHolderNameResponse":"NAME_MATCH"
+               "avsCode": "YY",
+               "cardholderNameResponse": "1"
             }
          }
       }
@@ -131,7 +161,7 @@ title: Response
 
 ---
 
-## Verification With Charges Request
+## AVS Verification with Charges Request
 
 ### Endpoint
 
@@ -149,31 +179,34 @@ title: Request
 
 ```json
 {
+   "transactionDetails":{
+      "captureFlag": true
+   },
    "amount":{
-      "total":"12.04",
-      "currency":"USD"
+      "total": "12.04",
+      "currency": "USD"
    },
    "source":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123"
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "securityCode": "123"
       }
    },
    "billingAddress":{
-      "name":"Jane Smith",
+      "firstName": "John",
+      "lastName": "Doe",
       "address":{
-         "street":"Main Street",
-         "houseNumberOrName":"123",
-         "city":"Sandy Springs",
-         "stateOrProvince":"GA",
-         "postalCode":"30303",
-         "country":"US"
+         "houseNumberOrName": "112",
+         "street": "Main St.",
+         "city": "Atlanta",
+         "stateOrProvince": "GA",
+         "postalCode": "30301",
+         "country": "US"
       }
-   },
-   "captureFlag":false
+   }
 }
 ```
 
@@ -187,54 +220,52 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"CHARGES",
-      "transactionState":"AUTHORIZED",
-      "transactionOrigin":"ecom",
+      "transactionType": "VERIFICATION",
+      "transactionState": "CHECKED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+         "transactionDate": "2016-04-16",
+         "transactionTime": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
       }
    },
-   "paymentSource":{
-      "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
+   "source":{
+      "sourceType": "PaymentCard",
       "card":{
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019",
-         "scheme":"VISA"
+         "cardData": "4005550000000019",
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "05",
+         "expirationYear": "2025",
+         "bin": "400555",
+         "last4": "0019"
       }
    },
    "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"string",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"",
-      "localTimestamp":"2016-04-16T16:06:05Z",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "authenticationResponseCode": "string",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "123",
+      "processor": "fiserv",
+      "responseCode": "00000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021.02.25 14:14:38 (EST)",
       "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "associationResponseCode": "000",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
+         "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch":"MATCH",
-            "postalCodeMatch":"MATCH",
+            "streetMatch": "MATCH",
+            "postalCodeMatch": "MATCH",
             "association":{
-               "avsCode":"BOTH_MATCH",
-               "cardHolderNameResponse":"NAME_MATCH"
+               "avsCode": "YY",
+               "cardholderNameResponse": "1"
             }
          }
       }
@@ -245,53 +276,67 @@ title: Response
 
 ---
 
-## Response Values
+## AVS Security Code Response Values
 
-The result of checking the cardholder’s postal code and address information provided against the Issuer’s system of record is termed as AVS Result code. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the AVS response from the bank.
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `streetMatch` and `postalCodeMatch` value.
 
-#### Object: avsCode
+
+The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *EXACT_MATCHED* | Data exactly matches with issuer system |
+| *MATCHED* | Data matches with issuer system with some mismatch |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_CHECKED* | Street address or postal code verification not done |
+| *NO_INPUT_DATA* | Street address or postal code mot present in the input |
+
+## Association Response Code
+
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`.
+
+The below table identifies the valid values of `avsCode`.
 
 | Value | Description |
 | ------- | ------- |
-| BOTH_MATCH | Both Street and Zip Code Match |
-| STREET_ONLY | Street Address matches, ZIP Code does not |
-| ZIP_ONLY | ZIP Code matches, Street Address does not |
-| 5_DIGIT_ZIP_ONLY | 5 digit ZIP Code match only |
-| NO_MATCH | No Address or ZIP Code match |
-| UNAVAILABLE | Address information is unavailable for that account number, or the card issuer does not support |
-| NON_US | Service Not supported, non-US Issuer does not participate |
-| RETRY | Issuer system unavailable, retry later |
-| NOT_MOTO | Not a mail or phone order | 
-| NOT_SUPPORTED | Service not supported
-| INTERNATIONAL_BOTH_MATCH | International street address and postal code match |
-| INTERNATIONAL_STREET_ONLY |  International street address match, postal code not verified due to incompatible formats |
-| INTERNATIONAL_POSTAL_ONLY | International street address and postal code not verified due to incompatible formats |
-| INTERNATIONAL_NO_MATCH | International postal code match, street address not verified due to incompatible format |
+| *Y* | Both street and postal code matched |
+| *N* | Both street and postal code does not matched |
+| *X* | Either street or postal code matched, issuer did not checked other. |
+| *U* | Card issuer did not check the AVS information |
+| *Z* | Postal code matched but street does not |
+| *A* | Street matched but postal code does not |
 
 
-#### Object: cardHolderNameResponse
+The below table identifies the valid values of `cardHolderNameResponse`.
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) transactions.
 
 | Value | Description |
 | ------- | ------- |
-| NAME_MATCH | Cardholder name matches |
-| ALL_MATCH | Cardholder name, billing address, and postal code match |
-| NAME_POSTAL_MATCH | Cardholder name and billing postal code match |
-| NAME_ADDRESS_MATCH | Cardholder name and billing address match |
-| ADDRESS_POSTAL_ONLY | Cardholder name incorrect, billing address and postal code match |
-| POSTAL_ONLY | Cardholder name incorrect, billing postal code matches |
-| ADDRESS_ONLY | Cardholder name incorrect, billing address matches |
-| NO_MATCH | Cardholder name, billing address, and postal code are all incorrect |
+| *1* | Cardholder name matches |
+| *2* | Cardholder name, billing address, and postal code match |
+| *3* | Cardholder name and billing postal code match |
+| *4* | Cardholder name and billing address match |
+| *5* | Cardholder name incorrect, billing address and postal code match |
+| *6* | Cardholder name incorrect, billing postal code matches |
+| *7* | Cardholder name incorrect, billing address matches |
+| *8* | Cardholder name, billing address, and postal code are all incorrect |
 
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
-- [Address](?path=docs/Resources/Master-Data/Address.md)
+- [Address Component](?path=docs/Resources/Master-Data/Address.md)
+- [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
+- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
+- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
+- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+
 ---

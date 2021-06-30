@@ -1,6 +1,9 @@
-# Car Rental
+---
+tags: [carat, commerce-hub, enterprise, car-rental]
+---
 
-## Overview
+
+# Car Rental
 
 We are enhancing Commerce Hub to support the Car rental vertical and the documents related to the features will be released soon.
 

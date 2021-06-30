@@ -1,6 +1,9 @@
-# Multi Acquiring
+---
+tags: [carat, commerce-hub, enterprise, multi-acquiring]
+---
 
-## Overview
+
+# Multi Acquiring
 
 We are enhancing Commerce Hub to support the Multi Acquiring vertical and the documents related to the features will be released soon.
 

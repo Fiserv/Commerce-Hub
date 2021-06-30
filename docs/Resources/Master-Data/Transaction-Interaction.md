@@ -1,35 +1,65 @@
+---
+tags: [carat, commerce-hub, enterprise, master-data, transaction-origin-and-entry-modes, transaction-interaction]
+---
+
 # Transaction Interaction
 
-## Overview
-The `transactionInteraction` may contain the data regarding where the transaction is been acquired and what are the capabilities of the terminal.
+The `transactionInteraction` object contains the data indicating where the transaction is acquired and the capabilities of the website, software, app, or terminal.
 
-#### Component: transactionInteraction
+<!--
+type: tab
+title: transactionInteraction
+-->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the required parameters in the `transactionInteraction` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#transactionorigins) of the transaction. |
-| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#posentrymodes) on the transaction.|
-| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#posconditioncodes) at the Point-of-Sale *(POS)*. |
-| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobileinteractions).|
-| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electroniccommerceindicators).|
+| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction |
+| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
+| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction)|
+| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator)|
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `transactionInteraction`:
+
+```json
+{
+   "transactionInteraction":{
+      "origin": "ECOM",
+      "posEntryMode": "MANUAL",
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
+      "mobileInteraction": "PHONE_NUMBER",
+      "eciIndicator": "SECURE_ECOM"
+   }
+}
+
+```
+
+<!--type: tab-end -->
 
 ---
 
-### Transaction Origins
+#### Transaction Origin
 
-#### Object: origin
+The below table identifies the valid values of `origin`.
 
 | Value | Description |
 |-------|-------------|
-| *ECOM* | Card Not Present email or internet. |
-| *MOTO* | Mail order or telephone order. |
-| *POS* | Card Present retail face to face. |
+| *ECOM* | Card Not Present email or internet |
+| *MOTO* | Mail order or telephone order |
+| *POS* | Card Present retail face to face |
 
 ---
 
-### POS Entry Modes
+#### POS Entry Mode
 
-#### Object: posEntryMode
+Pos entry mode value identifies how account number was entered on the transaction.  The below table identifies the valid values of `posEntryMode`.
 
 | Value | Description |
 |-------|-------------|
@@ -52,9 +82,9 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### POS Condition Codes
+#### POS Condition Code
 
-#### Object: posConditionCode
+The below table identifies the valid values of `posConditionCode`.
 
 | Value | Description |
 |-------|-------------|
@@ -73,9 +103,9 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### Mobile Interactions
+#### Mobile Interaction
 
-#### Object: mobileInteraction
+The below table identifies the valid values of `mobileInteraction`.
 
 | Value | Description |
 |-------|-------------|
@@ -84,14 +114,17 @@ The `transactionInteraction` may contain the data regarding where the transactio
 
 ---
 
-### Electronic Commerce Indicators
+#### Electronic Commerce Indicator
 
-#### Object: eciIndicator
+<!-- theme: warning -->
+> ECI is required on all online, mobile, and digital E-Commerce transactions.
+
+The below table identifies the valid values of `eciIndicator`.
 
 | Value | Description |
 |-------|-------------|
 | *SECURE_ECOM* | **Secure Electronic Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction was successfully authenticated and includes the management of a cardholder certificate. |
-| *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via the E-commerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
+| *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via E-commerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
 | *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
 | *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
 

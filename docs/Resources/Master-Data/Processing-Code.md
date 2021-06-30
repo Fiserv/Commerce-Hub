@@ -1,20 +1,23 @@
-# Processing Codes
+---
+tags: [carat, commerce-hub, enterprise, master-data, processing-codes]
+---
 
-## Overview
+
+# Processing Codes
 
 A set of numbers that describe the type of the transaction as well as the account type being used. Required on all transaction requests and upload detail records.
 
 The Processing code has 3 subdivisions 
 
-- Positions 1 – 2, [Transaction Type](#transactiontype)
-- Positions 3 – 4, [Account Type (From)](#fromaccounttype)
-- Positions 5 – 6, [Account Type (To)](#toaccounttype)
+- Positions 1 – 2, [Transaction Type](#transaction-type)
+- Positions 3 – 4, [Account Type (From)](#from-account-type)
+- Positions 5 – 6, [Account Type (To)](#to-account-type)
 
 ---
 
 ## Transaction Type
 
-Describes the transaction being performed. Valid values are
+The below table identifies the valid values of the transaction type.
 
 | Transaction Type | Description |
 | ------ | ------ |
@@ -43,7 +46,7 @@ Describes the transaction being performed. Valid values are
 
 ## From Account Type
 
-Describes the cardholder account type affected for cardholder account debits and inquiries and the "from" account type for cardholder account transfer transaction.
+Describes the cardholder account type affected for cardholder account debits and inquiries and the "from" account type for cardholder account transfer transaction. The below table identifies the valid values for from account type in processing code.
 
 | Account Type | Description |
 | ------ | ------ |
@@ -58,7 +61,7 @@ Describes the cardholder account type affected for cardholder account debits and
 
 ## To Account Type
 
-Describes the cardholder account type affected for cardholder account credits and the "to" account type for cardholder account transfer transaction.
+Describes the cardholder account type affected for cardholder account credits and the "to" account type for cardholder account transfer transaction. The below table identifies the valid values for to account type in processing code.
 
 | Account Type | Description |
 | ------ | ------ |

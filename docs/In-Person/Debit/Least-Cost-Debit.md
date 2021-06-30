@@ -1,12 +1,15 @@
-# Least Cost Debit
+---
+tags: [carat, commerce-hub, enterprise, card-present, contactless, in-person, least-cost-debit, debit,]
+---
 
-#### Welcome to Commerce Hub Least Cost Debit Routing Page.
+# Least Cost Debit
 
 ## Overview
 
 When a customer makes a contactless ('tap-and-go') payment with their dual-network debit card, the merchant may choose to send the transaction via the debit network that costs them the least to accept.
 
-We are enhancing Commerce Hub to include least cost debit routing support and the documents related to the features will be released soon.
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include least cost debit routing support and the documents related to the features will be released soon.
 
 ---
 

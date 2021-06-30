@@ -1,10 +1,9 @@
 ---
-tags: [currency-code, carat, commerce-hub]
+tags: [carat, commerce-hub, enterprise, iso-country-code, master-data]
 ---
 
-# Currency Codes
 
-## Overview
+# ISO Currency Codes
 
 The `currency` variable in the `amount` array determines what currency the transaction well be submitted in.
 
@@ -15,7 +14,9 @@ The `currency` variable in the `amount` array determines what currency the trans
 
 ## Currency List
 
-| Currency Code | Currency Name | Currency Number | Decimal |
+The table below contains all valid values of currency name, code, number and decimal values. 
+
+| Currency Name | Currency Code | Currency Number | Decimal |
 | ------- | ------- | -------| -------- |
 | Afghan Afghani | AFN | 971 | 2 |
 | Algerian Dinar | DZD | 012 | 2 |

@@ -1,6 +1,9 @@
-# Gift-Card
+---
+tags: [carat, commerce-hub, enterprise, gift-card, payment-sources]
+---
 
-## Overview
+
+# Gift Card
 
 We are enhancing Commerce Hub to support the Gift cards and the documents related to the features will be released soon.
 

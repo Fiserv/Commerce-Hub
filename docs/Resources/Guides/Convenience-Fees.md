@@ -1,6 +1,9 @@
-# Convenience Fees
+---
+tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, american-express, discover, vault]
+---
 
-## Overview
+
+# Convenience Fees
 
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
@@ -18,7 +21,7 @@ A merchant that charges a convenience fee must ensure that the fee is:
 
 ---
 
-## Policies on Convenience Fees
+## Policies and Usage
 
 Every credit card provider has different rules on convenience fees. Below are the rules of some of the major credit card providers:
 
@@ -29,7 +32,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ---
 
-## Minimum Requirement
+## Request Variables
 
 The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
 
@@ -37,13 +40,12 @@ The `convenienceFee` is part of the `amountComponents` and the `additionalDataCo
 
 ## Payload Example
 
-
 <!--
 type: tab
 title: Request
 -->
 
-##### Example of a Charge Payload Request.
+##### Example of a charge payload request using `convenienceFee`.
 
 ```json
 {
@@ -52,14 +54,15 @@ title: Request
       "currency":"USD"
    },
    "source":{
-      "sourceType":"PaymentCard"
-   },
-   "card":{
-      "cardData":"4005550000000019",
-      "expirationMonth":"02",
-      "expirationYear":"2035",
-      "securityCode":"123",
-      "securityCodeIndicator":"PROVIDED"
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"02",
+         "expirationYear":"2035",
+         "securityCode":"123",
+         "securityCodeIndicator":"PROVIDED"
+      }
    },
    "transactionDetails":{
       "captureFlag":true
@@ -76,66 +79,61 @@ type: tab
 title: Response
 -->
 
-##### Example of a Charge (201: Created) Response.
+##### Example of a charge (201: Created) response.
 
 ```json
 {
    "gatewayResponse":{
       "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"charge",
+      "transactionType":"token",
       "transactionState":"authorized",
-      "transactionOrigin":"ecom"
+      "transactionOrigin":"ecom",
+      "transactionProcessingDetails":{
+         "transactionDate":"2016-04-16",
+         "transactionTime":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
+      }
    },
-   "transactionProcessingDetails":{
-      "transactionDate":"2021-04-16",
-      "transactionTime":"2021-04-16T16:06:05Z",
-      "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId":"838916029301"
-   },
-   "source":"PaymentCard",
-   "card":{
-      "bin":"400555",
-      "last4":"0019",
-      "brand":"VISA",
-      "expirationMonth":"02",
-      "expirationYear":"2035"
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "cardData":"4005550000000019",
+         "nameOnCard":"Jane Smith",
+         "expirationMonth":"05",
+         "expirationYear":"2025",
+         "bin":"400555",
+         "last4":"0019"
+      }
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":"1.00",
+         "total":1,
          "currency":"USD"
       },
-      "processorResponseDetails":null,
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK7118",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionID":"019078743804756",
-      "processor":"fiserv",
-      "responseCode":"00",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"54022",
-      "hostResponseMessage":"Approved",
-      "localTimestamp":"2021-04-16T16:06:05Z",
-      "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2021-04-16T16:06:05Z",
-         "transactionReferenceInformation":null,
-         "avsSecurityCodeResponse":{
-            "streetMatch":"EXACT_MATCH",
-            "postalCodeMatch":"EXACT_MATCH",
-            "securityCodeMatch":"MATCHED",
-            "association":{
-               "avsCode":"Z",
-               "securityCodeResponse":"S",
-               "cardHolderNameResponse":"M"
-            }
-         }
+      "processorResponseDetails":{
+         "approvalStatus":"APPROVED",
+         "approvalCode":"OK3483",
+         "authenticationResponseCode":"string",
+         "referenceNumber":"845366457890-TODO",
+         "schemeTransactionId":"019078743804756",
+         "feeProgramIndicator":"123",
+         "processor":"fiserv",
+         "responseCode":"00000",
+         "responseMessage":"APPROVAL",
+         "hostResponseCode":"00",
+         "hostResponseMessage":"APPROVAL",
+         "localTimestamp":"2021.02.25 14:14:38 (EST)",
+         "bankAssociationDetails":{
+            "associationResponseCode":"000",
+            "transactionTimestamp":"2016-04-16T16:06:05Z",
+          }
       }
    },
    "additionalDataCommon":{
       "amountComponents":{
-         "convenienceFees":"1.00"
+         "convenienceFees": 1.00
       }
    }
 }

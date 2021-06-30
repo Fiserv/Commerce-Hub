@@ -1,15 +1,17 @@
 ---
-tags: [carat, card-not-present, commerce-hub, error, http-response-code, response-code, card-present]
+tags: [carat, card-not-present, commerce-hub, error, http-response-code, response-codes, card-present]
 ---
 
 # HTTP Status Codes
 
-## Overview
-Commerce Hub responds back to the merchant request with a three-digit HTTP status code grouped in to three different classes. Its first digit can quickly identify the class of a status code:
+Commerce Hub responds back to the merchant request with a three-digit HTTP status code grouped in to three different classes. The first digit can be used to quickly identify the class of a status code:
 
 - **2xx: Success** – Indicates that the request was accepted successfully.
 - **4xx: Client Error** – Indicates that incorrect data in request.
 - **5xx: Server Error** – Indicates that the server was unable to process the request.
+
+<!-- theme: info -->
+> Commerce Hub includes an HTTP error status in the `errorResponse` along with the corresponding text in `type`, `code`, `field` and `message` in the `error` array.
 
 ---
 
@@ -24,7 +26,7 @@ title: 2xx
 
 | Code | Message | Description |
 | --------- | --- | ------- |
-| 200 | Success | Indicates that request has succeeded. |
+| 200 | Success | Indicates that request has succeeded |
 | 201 | Created | Indicates that request has succeeded and a new resource has been created as a result. |
 
 
@@ -74,28 +76,23 @@ type: tab
 title: Error Response
 -->
 
-##### Example of a charge (425: Too Early) response.
+##### Example of a charge (400: Bad Request) response.
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType":"charge",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
-      "transactionProcessingDetails":{
-         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionDate":"2021-04-16",
-         "transactionTime":"2021-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+   "errorResponse":{
+      "gatewayResponse":{
+         "transactionProcessingDetails":{
+            "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+            "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         }
+      },
+      "error":{
+         "type": "GATEWAY",
+         "code": "400",
+         "field": "sourceType",
+         "message": "Missing type ID property."
       }
-   },
-   "error":{
-      "type":"GATEWAY",
-      "code":"",
-      "field":"",
-      "message":"The request was sent too early."
    }
 }
 ```

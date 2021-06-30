@@ -1,10 +1,8 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, hash, primary-transactions, secondary-transactions]
+tags: [carat, commerce-hub, card-not-present, card-present, hash, primary-transactions, secondary-transactions, vault]
 ---
 
 # Transaction Types
-
-## Overview
 
 The Commerce Hub API allows a merchant to create, inquire, and finalize payment transactions. Our API has two transaction types; primary and secondary.
 
@@ -30,6 +28,10 @@ Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Paym
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/capture)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md) 
 
+- [Transaction Inquiry](?path=ocs/Resources/API-Documents/Payments/Inquiry.md) 
 ---

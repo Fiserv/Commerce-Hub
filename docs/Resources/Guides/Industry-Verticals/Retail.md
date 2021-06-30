@@ -1,6 +1,9 @@
-# Retail
+---
+tags: [carat, commerce-hub, enterprise, retail]
+---
 
-## Overview
+
+# Retail
 
 We are enhancing Commerce Hub to support the Retail vertical and the documents related to the features will be released soon.
 

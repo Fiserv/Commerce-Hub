@@ -1,10 +1,8 @@
 ---
-tags: [carat, commerce-hub, Merchant-Category-Code, MCC]
+tags: [carat, commerce-hub, enterprise, master-data, merchant-category-code]
 ---
 
 # Merchant Category Codes
-
-## Overview
 
 Each business is assigned a Merchant Category Code (MCC), which is determined by the goods or services they provide. Merchants with similar types of businesses would be assigned with the same Merchant Category Code. These codes are often used for calculating interchange fees, authorizing payments, and preventing fraud, so it’s important that your connected accounts have MCCs that match their businesses.
 
@@ -19,6 +17,8 @@ Each business is assigned a Merchant Category Code (MCC), which is determined by
 ---
 
 ## MCC List
+
+The below table identifies the valid values merchant category codes and description.
 
 | Code | Description |
 | ------- | ------- |
