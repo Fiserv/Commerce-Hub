@@ -28,7 +28,7 @@ The [example](#payload-example) below contains the mandatory fields required for
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `total` | *number* | N/A  | Sub component values must add up to total amount.<br/>0.00 expected format. |
+| `total` | *number* | 18,3  | Sub component values must add up to total amount.<br/>0.00 expected format. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 ---
