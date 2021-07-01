@@ -37,7 +37,7 @@ The CyberSource decryption option enables you to simplify your payment processin
 ---
 
 ## Next Steps
-- [API Explorer](url)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
