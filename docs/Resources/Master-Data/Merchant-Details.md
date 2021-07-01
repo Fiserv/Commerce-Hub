@@ -51,7 +51,7 @@ JSON string format for `merchantDetails`:
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Merchant Category Codes](?path=docs/Resources/Master-Data/Merchant-Category-Code.md)
 - [Payment Facilitators](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md)
