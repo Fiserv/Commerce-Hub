@@ -161,7 +161,7 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
