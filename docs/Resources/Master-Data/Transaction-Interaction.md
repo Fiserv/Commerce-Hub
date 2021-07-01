@@ -121,7 +121,7 @@ title: JSON Example
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 
 ---
