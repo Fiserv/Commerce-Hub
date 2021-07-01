@@ -19,7 +19,7 @@ The below table identifies the required parameters in the `customer` object.
 | `processorCustomerId` | *string* | 1024 | UUID in Fiserv EV |
 | `firstName` | *string* | 256 | Customer first name |
 | `lastName` | *string* | 256 | Customer last name |
-| `dob` | *string* | 10 | Customer date of birth in mmddyyyy format |
+| `dob` | *string* | 10 | Customer date of birth in YYYY-MM-DD format |
 | `email` | *string* | 256 | Customer email address |
 | `ipaddress` | *string* | 39 | This field should contain the IP Address of the customer. |
 | `hostName` | *string* | 1024 | This field should contain the name of the server the customer is connected to.|
@@ -43,7 +43,7 @@ JSON string format for `customer`:
       "processorCustomerId": "1122334",
       "firstName": "Joe",
       "lastName": "Smith",
-      "dob": "01-01-1990",
+      "dob": "1990-01-01",
       "email": "def@gmail.com",
       "ipAddress": "170.165.02.26",
       "hostName": "dreamwave.com",
