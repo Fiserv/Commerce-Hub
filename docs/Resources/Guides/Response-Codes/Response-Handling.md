@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, enterprise, response-codes-and-messages, host, gatew
 ---
 
 
-# Response Codes and Messages
+# Response Code and Message Handling
 
 Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and rejects. 
 
