@@ -14,12 +14,12 @@ The `cardDetails` are returned in the account information lookup response. The b
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `brand` | *string* |  | Card Brand |
-| `brandProductId` | *string* |  | Category within the card brand |
-| `cardFunction` | *string* |  | Identifies the type of card as CREDIT or DEBIT |
-| `commercialCard` | *string* |  | Identifies if the card is a CORPORATE, COMMERCIAL or NON_CORPORATE card |
-| `issuerCountry` | *string* |  | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md) |
-| `issuerName` | *string* |  | Issuing bank name |
+| `brand` | *string* | 256 | Card Brand |
+| `brandProductId` | *string* | 256 | Category within the card brand |
+| `cardFunction` | *string* | 256 | Identifies the type of card as CREDIT or DEBIT |
+| `commercialCard` | *string* | 256 | Identifies if the card is a CORPORATE, COMMERCIAL or NON_CORPORATE card |
+| `issuerCountry` | *string* | 256 | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md) |
+| `issuerName` | *string* | 256 | Issuing bank name |
 
 ## Endpoint
 <!-- theme: success -->
@@ -130,7 +130,6 @@ The merchant can initiate information lookup transaction by passing the card det
 |`tokenData`| *string* | 19 | Token created for Card. | 
 
 ### Payload Example
-
 <!--
 type: tab
 title: Request

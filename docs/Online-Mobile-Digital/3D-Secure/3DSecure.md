@@ -10,7 +10,7 @@ tags: [carat, commerce-hub, enterprise, 3-d-secure, pass-through, 3-d-secure-aut
 
 3-D Secure technologies include Visa Secure (previously Verified by Visa), Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
 
-Transactions can originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a [passthrough](#passthrough) or an [authentication](#authentication) request.
+Transactions can originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a [passthrough](#passthrough) or a [authentication](#authentication) request.
 
 ---
 
@@ -24,7 +24,7 @@ When using our payments API with passthrough, the authentication is performed wi
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use Value *Payment3dsPassthrough* for 3-D Secure passthrough transactions. |
+| `sourceType` | *string* | 15 | Use value *Payment3dsPassthrough* for 3-D Secure passthrough transactions. |
 | `xid` | *string* | 32 | 3-D Secure/Verified by Visa value returned by Cardinal Commerce. |
 | `card` | *object* | | [Card](?path=docs/Resources/Master-Data/Card.md) sub component objects. |
 | `merchantIdentifier` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer |
@@ -34,8 +34,8 @@ When using our payments API with passthrough, the authentication is performed wi
 #### Object: transactionDetails
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md). |
-
+| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md)(#electroniccommerceindicators). |
+  
 
 ---
 
