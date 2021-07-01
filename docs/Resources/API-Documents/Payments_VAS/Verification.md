@@ -4,9 +4,7 @@ tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, s
 
 # Account Verification
 
-## Overview
-
-The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#paymentcard-requirements) or [token](#paymenttoken-requirements).
+The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#account-verification-using-paymentcard) or [token](#account-verification-using-paymenttoken).
 
 ---
 
@@ -16,14 +14,23 @@ The merchant can perform account verification transaction to confirm that the ca
 
 ---
 
-## PaymentCard Requirements
+## Account Verification using PaymentCard
 
-#### Object: source
+### Minimum Requirements
 
-| Variable | Type | Maximum Length | Description/Values |
-| --------- | ---------- | ---------------- | --------- |
-| `sourceType` | *string* | 15 | Value *PaymentCard* used for verification request using card details. Refer Payment [source type](?path=docs/Guides/Payment-Sources/Source-Type.md) for more details. |
-| `cardData` | *string* | 19 | Encrypted or unencrypted [card data](?path=docs/Resources/Master-Data/Card.md) (e.g. PAN, EMV, Track, etc.). |
+<!--
+type: tab
+title: amount
+-->
+
+The below table identifies the required parameters in the `amount` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!-- type: tab-end -->
 
 <!--theme:info-->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
@@ -50,6 +57,7 @@ title: Request
    }
 }
 ```
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 
 <!--
 type: tab
@@ -90,14 +98,22 @@ title: Response
 
 ---
 
-## PaymentToken Requirements
+## Account Verification using PaymentToken
 
-#### Object: source
+### Minimum Requirements
+<!--
+type: tab
+title: amount
+-->
 
-| Variable | Type | Maximum Length | Description/Values |
-|---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
-|`tokenData`| *string* | 19 | Token created for Card. | 
+The below table identifies the required parameters in the `amount` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!-- type: tab-end -->
 
 ### Payload Example
 

@@ -4,8 +4,6 @@ tags: [carat, card-not-present, commerce-hub, error, response, responses-code, c
 
 # Host Response Codes
 
-## Overview
-
 Commerce Hub receives host response codes from the processing network or bank. Commerce Hub includes the value in the `hostResponseCode` along with the corresponding text in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
 ---
@@ -16,7 +14,7 @@ Commerce Hub receives host response codes from the processing network or bank. C
 
 | Code| Message |
 | ---- | ------------ |
-| 00 | Transaction has been approved. |
+| 00 | Transaction has been approved |
 | 01 | Refer to issuer |  
 | 03 | Invalid merchant |
 | 05 | The credit card being used for the transaction has been rejected by the issuer. |

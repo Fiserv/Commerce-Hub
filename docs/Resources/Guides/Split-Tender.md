@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, enterprise, split-tender, vault]
 
 # Split Tender
 
-## Overview
-
 Split Tender allows a customer to pay a partial amount using one method of payment and the rest of the amount using a different method of payment.
 
 <!-- theme: danger -->

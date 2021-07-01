@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, card-not-present, card-present, restful-api, request
 
 # Constructing a RESTful API Request
 
-## Overview
-
 Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, app, or terminal. Each request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
 
 <!-- theme: warning -->
