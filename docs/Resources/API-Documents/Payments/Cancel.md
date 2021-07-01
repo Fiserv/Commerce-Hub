@@ -78,9 +78,9 @@ title: Response
 {
   "gatewayResponse": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "cancel",
-    "transactionState": "reversed",
-    "transactionOrigin": "ecom",
+    "transactionType": "CANCEL",
+    "transactionState": "VOIDED",
+    "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
       "transactionTime": "2016-04-16T16:06:05Z",
       "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
@@ -102,10 +102,10 @@ title: Response
       "referenceNumber": "845366457890-TODO",
       "schemeTransactionId": "019078743804756",
       "processor": "fiserv",
-      "responseCode": "00",
-      "responseMessage": "APPROVAL",
+      "responseCode": "000",
+      "responseMessage": "Approved",
       "hostResponseCode": "54022",
-      "hostResponseMessage": "",
+      "hostResponseMessage": "Approved",
       "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails": {
         "associationResponseCode": "000",
