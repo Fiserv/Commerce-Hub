@@ -1,4 +1,4 @@
--
+---
 tags: [carat, commerce-hub, enterprise, payment-source-types]
 ---
 
