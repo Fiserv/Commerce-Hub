@@ -104,29 +104,6 @@ title: Error Response
 }
 ```
 
-{
-  "error": [
-    {
-      "code": "5019",
-      "message": "Transaction not voidable"
-    }
-  ],
-  "gatewayResponse": {
-    "transactionType": "CANCEL",
-    "transactionState": "DECLINED",
-    "transactionOrigin": "ECOM",
-    "transactionProcessingDetails": {
-      "orderId": "CH-aafaaf45-0cfb-4f4f-8ec0-301e40c14e34",
-      "transactionDate": "2021-06-20",
-      "transactionTime": "2021-06-20T23:42:48Z",
-      "apiTraceId": "5c059eee2388e191",
-      "clientRequestId": "myClientRequestId",
-      "transactionId": "b2d883cdf3051598acb295f29a1e1582"
-    }
-  }
-}
-
-
 <!-- type: tab-end -->
 
 ---
