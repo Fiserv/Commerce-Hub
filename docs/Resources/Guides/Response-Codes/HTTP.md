@@ -80,19 +80,27 @@ title: Error Response
 
 ```json
 {
-   "errorResponse":{
-      "gatewayResponse":{
-         "transactionProcessingDetails":{
-            "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+   "errorResponse": {
+      "gatewayResponse": {
+         "transactionType": "CANCEL",
+         "transactionState": "DECLINED",
+         "transactionOrigin": "ECOM",
+         "transactionProcessingDetails": {
+            "orderId": "CH-aafaaf45-0cfb-4f4f-8ec0-301e40c14e34",
+            "transactionDate": "2021-06-20",
+            "transactionTime": "2021-06-20T23:42:48Z",
+            "apiTraceId": "5c059eee2388e191",
             "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+            "transactionId": "b2d883cdf3051598acb295f29a1e1582"
          }
       },
       "error":{
          "type": "GATEWAY",
-         "code": "400",
-         "field": "sourceType",
-         "message": "Missing type ID property."
+         "code": "103",
+         "field": "cardData",
+         "message": "Missing or Invalid Card Number or Token"
       }
+
    }
 }
 ```
