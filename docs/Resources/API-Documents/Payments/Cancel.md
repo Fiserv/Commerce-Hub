@@ -77,7 +77,6 @@ title: Response
 ```json
 {
   "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
     "transactionType": "CANCEL",
     "transactionState": "VOIDED",
     "transactionOrigin": "ECOM",
@@ -85,11 +84,19 @@ title: Response
       "transactionTime": "2016-04-16T16:06:05Z",
       "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
       "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
       "transactionId": "838916029301"
     }
   },
   "source": {
-    "sourceType": "PaymentToken"
+    "sourceType": "PaymentCard",
+     "card": {
+      "bin": "400555",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
   },
   "paymentReceipt": {
     "approvedAmount": {
