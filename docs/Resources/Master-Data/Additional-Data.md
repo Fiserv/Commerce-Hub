@@ -31,7 +31,7 @@ The below table identifies the required parameters in the `additionalDataCommon`
 | `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 -->
 
-^
+^ 
 
 <!--
 type: tab

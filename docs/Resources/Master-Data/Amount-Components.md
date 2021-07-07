@@ -8,7 +8,7 @@ tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-am
 Transaction amount information is contained into two objects, `amount` and `amountComponents`.
 
 - [**amount:**](#amount) Used to support the request for payment.
-- [**amountComponents:**](#amountcomponents) Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
+- [**amountComponents:**](#amount-components) Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
 
 ## Amount
 
@@ -23,7 +23,7 @@ The below table identifies the required parameters in the `amount` object.
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
+| `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
