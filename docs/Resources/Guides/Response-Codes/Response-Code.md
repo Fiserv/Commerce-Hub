@@ -13,6 +13,12 @@ https://support.payeezy.com/hc/en-us/articles/203730509-First-Data-Payeezy-Gatew
 https://support.payeezy.com/hc/en-us/articles/203730499-eCommerce-Response-Codes-ETG-Payeezy-Gateway-Transaction-Codes- - Payeezy Gateway
 
 https://escmconfluence.1dc.com/display/ACCOR/IPG+response+codes - IPG Responses
+
+
+commerce hub response code can come back in error responsecode or response code
+
+if the txn doesnt get to the processor then it is a errr code (http 4xx) else it is a    response code in (2xx).
+
 -->
 
 ---
