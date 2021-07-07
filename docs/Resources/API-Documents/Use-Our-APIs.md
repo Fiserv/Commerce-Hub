@@ -49,16 +49,16 @@ Description goes here -->
 
 ## Request Header
 
-Commerce Hub RESTful API has a consistent Header structure based on a set of Parameters. To create the header, provide the following values:
+Commerce Hub RESTful API has a consistent header structure based on a set of parameters. To create the header, provide the following values:
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
-| `Content-Type` | *string* |  | The content type. Valid Value (application/json) |
+| `Content-Type` | *string* |  | The content type. Valid value (application/json) |
 | `Client-Request-Id` | *string* |  | A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format. |
-| `Api-Key` | *string* |  | API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal. |
-| `Timestamp` | *integer* |  | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
-| `Accept-Language` | *string* |  | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
-| `Auth-Token-Type`| *string* |  | Indicates Authorization type HMAC, JWT, or AccessToken.|
+| `Api-Key` | *string* |  | API Key provided to the merchant associating the requests with the appropriate app in the Developer Studio. |
+| `Timestamp` | *integer* |  | Epoch timestamp in milliseconds in the request from a client system. Used for message signature generation and time limit (5 mins). |
+| `Accept-Language` | *string* |  | This header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
+| `Auth-Token-Type`| *string* |  | Indicates authorization type HMAC, JWT, or AccessToken.|
 | `Authorization` | *string* |  | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For more information, refer to the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md) article. |
 | `Message-Digest` | *string* |  | Needed only from customer browser or app to the API in Hosted Payment Page requests. |
 
