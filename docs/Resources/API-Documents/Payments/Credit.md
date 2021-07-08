@@ -88,18 +88,17 @@ title: Response
 > See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
-   "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"credit",
-      "transactionState":"credited",
-      "transactionOrigin":"ecom"
-   },
-   "transactionProcessingDetails":{
-      "transactionDate":"2021-04-16",
-      "transactionTime":"2021-04-16T16:06:05Z",
-      "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId":"838916029301"
+  "gatewayResponse": {
+    "transactionType": "CREDIT",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionId": "838916029301"
+    }
    },
    "source":{
       "sourceType":"PaymentCard",
@@ -113,7 +112,7 @@ title: Response
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":"1.00",
+         "total":"12.04",
          "currency":"USD"
       },
       "processorResponseDetails":null,
