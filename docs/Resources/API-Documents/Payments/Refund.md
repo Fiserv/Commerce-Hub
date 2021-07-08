@@ -88,40 +88,26 @@ title: Response
 ```json
 {
   "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "refund",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom",
+    "transactionType": "REFUND",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
       "transactionTime": "2016-04-16T16:06:05Z",
       "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
       "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
       "transactionId": "838916029301"
     }
   },
-  "amount": {
-    "total": "1.50",
-    "currency": "USD"
-  },
   "source": {
-    "sourceType": "PaymentToken"
-  },
-  "transactionDetails": {
-    "captureFlag": "TRUE",
-    "accountVerification": "FALSE",
-    "processingCode": "000000",
-    "merchantTransactionId": "1343678765",
-    "merchantOrderId": "845366457890-TODO",
-    "receiptEmail": "abc@gmail.com",
-    "paymentDescription": ""
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2016-04-16",
-    "transactionTime": "2016-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
+    "sourceType": "PaymentCard",
+     "card": {
+      "bin": "400555",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    }
   },
   "paymentReceipt": {
     "approvedAmount": {
@@ -133,12 +119,11 @@ title: Response
       "approvalCode": "OK3483",
       "referenceNumber": "845366457890-TODO",
       "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "",
       "processor": "fiserv",
-      "responseCode": "00",
-      "responseMessage": "APPROVAL",
+      "responseCode": "000",
+      "responseMessage": "Approved",
       "hostResponseCode": "54022",
-      "hostResponseMessage": "",
+      "hostResponseMessage": "Approved",
       "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails": {
         "associationResponseCode": "000",
@@ -148,7 +133,6 @@ title: Response
   }
 }
 ```
-
 <!-- type: tab-end -->
 
 ---

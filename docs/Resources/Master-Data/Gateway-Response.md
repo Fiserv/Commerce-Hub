@@ -84,8 +84,7 @@ The below table identifies the required parameters in the `transactionProcessing
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
 | `orderId` | *string* | 64 | Order identifier returned in the parameter orderId from a Charge trasaction. |
-| `transactionDate` | *string* | 64 | Date the transaction occured |
-| `transactionTime` | *string* | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
+| `transactionTime` | *string* | 64 | Timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 | `apiTraceId` | *string* | 64 | Request identifier in API, can be used to request logs from the support team. |
 | `clientRequestId` | *string* | 64 | Echoes back the value in the request header for tracking. |
 | `transactionId` | *string* | 64 | Unique identifier for each transaction on the Gateway. This value will be populated for the secondary transaction from the path. |

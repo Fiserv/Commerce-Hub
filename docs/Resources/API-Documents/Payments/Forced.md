@@ -124,49 +124,38 @@ title: Response
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
       "transactionId": "838916029301"
     }
-   },
-{
-  "gatewayResponse":  {
-    "transactionType":  "FORCED",
-    "transactionState":  "AUTHORIZED",
-    "transactionOrigin":  "SECURE_ECOM"
   },
-  "paymentSource":  {
-    "sourceType":  "PaymentCard",
-    "card":  {
-      "bin":  "400555",
-      "last4":  "0019",
-      "scheme":  "VISA"
+  "source": {
+    "sourceType": "PaymentCard",
+     "card": {
+      "bin": "400555",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
     }
   },
-  "transactionProcessingDetails":  {
-    "orderId":  "RKOrdID-525133851837",
-    "apiTraceId":  "362866ac81864d7c9d1ff8b5aa6e98db",
-    "clientRequestId":  "4345791",
-    "transactionId":  "84356531338"
-  },
-  "paymentReceipt":  {
-    "approvedAmount":  {
-      "total":  12.04,
-      "currency":  "USD"
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "12.04",
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "processor": "fiserv",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "54022",
+      "hostResponseMessage": "Approved",
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2016-04-16T16:06:05Z"
+      }
     }
-  },
-  "processorResponseDetails":  {
-    "approvalStatus":  "APPROVED",
-    "approvalCode":  "OK5882",
-    "schemeTransactionId":  "0225MCC625628",
-    "processor":  "fiserv",
-    "responseCode":  "000000",
-    "responseMessage":  "APPROVAL",
-    "hostResponseCode":  "00",
-    "hostResponseMessage":  "APPROVAL",
-    "localTimestamp":  "2021.02.25 14:14:38 (CET)",
-    "bankAssociationDetails":  {
-      "transactionTimestamp":  "2021.02.25 14:14:38 (CET)"
-    }
-  },
-  "transactionDetails":  {
-    "merchantTransactionId":  "RKTransID-768086381518"
   }
 }
 ```
