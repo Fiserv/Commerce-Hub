@@ -96,6 +96,6 @@ JSON string format for `amountComponents`:
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
-- [Convenience Fee](?path=)
+- [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
 
 ---
