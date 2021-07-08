@@ -6,6 +6,9 @@ tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, s
 
 The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#account-verification-using-paymentcard) or [token](#account-verification-using-paymenttoken).
 
+<!--theme:info-->
+> The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
+
 ---
 
 ## Account Verification using PaymentCard
@@ -14,18 +17,28 @@ The merchant can perform account verification transaction to confirm that the ca
 
 <!--
 type: tab
-title: amount
+title: source
 -->
 
-The below table identifies the required parameters in the `amount` object.
+The below table identifies the required parameters in the `source` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+| `sourceType` | *string* | 15 | Value *PaymentCard* is used for verification request using card details. Refer to [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) for more information. |
+| `card` | *object* | N/A | Card details object |
 
-<!--theme:info-->
-> The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
+<!--
+type: tab
+title: card
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `cardData` | *string* | 256 | Credit Card Number or Encrypted Data |
+| `expirationMonth` | *string* | 2 | 2-digit card expiration month |
+| `expirationyear` | *string* | 4 | 4-digit card expiration year |
 
 <!-- type: tab-end -->
 
@@ -53,7 +66,6 @@ title: Request
       "sourceType":"PaymentCard",
       "card":{
          "cardData":"4005550000000019",
-         "nameOnCard":"Jane Smith",
          "expirationMonth":"02",
          "expirationYear":"2035"
       }
@@ -74,11 +86,10 @@ title: Response
 {
    "gatewayResponse":{
       "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"verification",
-      "transactionState":"valid",
-      "transactionOrigin":"ecom",
+      "transactionType":"VERIFICATION",
+      "transactionState":"VALID",
+      "transactionOrigin":"ECOM",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
          "transactionTime":"2016-04-16T16:06:05Z",
          "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
@@ -89,11 +100,11 @@ title: Response
       "sourceType":"PaymentCard",
       "card":{
          "cardData":"4005550000000019",
-         "nameOnCard":"Jane Smith",
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
          "last4":"0019",
+         "scheme":"VISA"
       }
    }
 }
@@ -108,15 +119,28 @@ title: Response
 ### Minimum Requirements
 <!--
 type: tab
-title: amount
+title: source
 -->
 
-The below table identifies the required parameters in the `amount` object.
+The below table identifies the required parameters in the `source` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+|`sourceType` | *string* | 15 | Value *PaymentToken* used for verification request using card details. Refer to [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for more details. |
+|`tokenData`| *string* | 19 | Token created for Card. |
+| `card` | *object* | N/A | Card details object |
+
+<!--
+type: tab
+title: card
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `expirationMonth` | *string* | 2 | 2-digit card expiration month |
+| `expirationyear` | *string* | 4 | 4-digit card expiration year |
 
 <!-- type: tab-end -->
 
@@ -143,13 +167,9 @@ title: Request
    "source":{
       "sourceType": "PaymentToken",
       "tokenData": "1234123412340019",
-      "tokenSource": "TRANSARMOR",
       "card":{
-         "nameOnCard": "Jane Smith",
          "expirationMonth": "05",
          "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019"
       }
    }
 }
@@ -166,11 +186,10 @@ title: Response
 {
    "gatewayResponse":{
       "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"verification",
-      "transactionState":"valid",
-      "transactionOrigin":"ecom",
+      "transactionType":"VERIFICATION",
+      "transactionState":"VALID",
+      "transactionOrigin":"ECOM",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
          "transactionTime":"2016-04-16T16:06:05Z",
          "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
@@ -180,7 +199,6 @@ title: Response
    "source":{
       "sourceType":"PaymentToken",
       "card":{
-         "nameOnCard":"Jane Smith",
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
@@ -188,12 +206,6 @@ title: Response
          "scheme":"VISA"
       }
    },
-   "paymentToken":{
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"false",
-      "tokenSource":"TRANSARMOR"
-   }
 }
 ```
 <!-- type: tab-end -->
@@ -204,9 +216,9 @@ title: Response
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
-
+- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---

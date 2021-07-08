@@ -202,7 +202,8 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | &#10004; | Value *PaymentCard* is used for a Enhanced Data Request request using `cardData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | &#10004; | Value *PaymentCard* is used for a Enhanced Data Request request using `card`. |
+|`card` | *string* | 15 | &#10004; | Card data object |
 
 <!--
 type: tab

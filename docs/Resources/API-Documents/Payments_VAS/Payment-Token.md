@@ -65,13 +65,12 @@ title: Request
 {
   "source": {
     "sourceType": "PaymentCard",
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    }
   },
-  "transactionDetails": {
-    "createToken": true
-  }
 }
 ```
 
@@ -176,7 +175,6 @@ title: Request
          "cardData": "4005550000000019",
          "expirationMonth": "02",
          "expirationYear": "2035",
-         "securityCode": "123"
       }
    },
    "transactionDetails":{
