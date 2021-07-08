@@ -39,7 +39,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer to [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) for more details. |
 
 <!--
 type: tab
@@ -131,7 +131,7 @@ The merchant can initiate information lookup transaction by passing the card det
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer to [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. |
 
 ---
@@ -196,7 +196,10 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---

@@ -391,7 +391,9 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

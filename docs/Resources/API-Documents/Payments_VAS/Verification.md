@@ -214,7 +214,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
