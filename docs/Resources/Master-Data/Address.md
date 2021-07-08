@@ -23,10 +23,10 @@ The below table identifies the required parameters in the `billingAddress` objec
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* | 256 | Customer first name. |
-| `lastName` | *string* | 256 | Customer last name. |
-| `address` | *object* |  | Billing [address](#address) details. |
-| `phone` | *object* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `firstName` | *string* | 256 | Customer first name |
+| `lastName` | *string* | 256 | Customer last name |
+| `address` | *object* |  | Billing [address](#address) details |
+| `phone` | *object* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details |
 
 <!--
 type: tab
