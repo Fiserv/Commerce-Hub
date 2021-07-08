@@ -1,14 +1,15 @@
 ---
-tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card-lookup,]
+tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card-lookup, token-lookup]
 ---
 
 # Information Lookup
 
 If the merchant wants to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token, then the merchant can initiate the account information lookup request.
 
----
-
-####  Response Component: cardDetails
+<!--
+type: tab
+title: cardDetails
+-->
 
 The `cardDetails` are returned in the account information lookup response. The below table identifies the required parameters in the `cardDetails` object.
 
@@ -21,11 +22,7 @@ The `cardDetails` are returned in the account information lookup response. The b
 | `issuerCountry` | *string* | 256 | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md) |
 | `issuerName` | *string* | 256 | Issuing bank name |
 
-## Endpoint
-<!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information`
-
----
+<!-- type: tab-end -->
 
 ## Information Lookup using PaymentCard
 
@@ -56,6 +53,14 @@ The below table identifies the required parameters in the `card` object.
 | `cardData` | *string* | 19 | Card number or encrypted data |
 
 <!-- type: tab-end -->
+
+---
+
+## Endpoint
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/information`
+
+---
 
 
 ### Payload Example
@@ -127,7 +132,15 @@ The merchant can initiate information lookup transaction by passing the card det
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
-|`tokenData`| *string* | 19 | Token created for Card. | 
+|`tokenData`| *string* | 19 | Token created for Card. |
+
+---
+
+## Endpoint
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/information`
+
+---
 
 ### Payload Example
 <!--

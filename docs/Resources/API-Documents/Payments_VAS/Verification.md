@@ -8,12 +8,6 @@ The merchant can perform account verification transaction to confirm that the ca
 
 ---
 
-## Endpoint
-<!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/verification`
-
----
-
 ## Account Verification using PaymentCard
 
 ### Minimum Requirements
@@ -30,10 +24,19 @@ The below table identifies the required parameters in the `amount` object.
 | `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
-<!-- type: tab-end -->
-
 <!--theme:info-->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
+
+<!-- type: tab-end -->
+
+---
+
+## Endpoint
+
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/verification`
+
+---
 
 ### Payload Example
 
@@ -57,6 +60,7 @@ title: Request
    }
 }
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 
 <!--
@@ -94,6 +98,7 @@ title: Response
    }
 }
 ```
+
 <!-- type: tab-end -->
 
 ---
@@ -114,6 +119,15 @@ The below table identifies the required parameters in the `amount` object.
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 <!-- type: tab-end -->
+
+---
+
+## Endpoint
+
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/verification`
+
+---
 
 ### Payload Example
 
