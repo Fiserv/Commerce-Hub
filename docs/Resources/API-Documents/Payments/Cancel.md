@@ -123,9 +123,9 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/cancel)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

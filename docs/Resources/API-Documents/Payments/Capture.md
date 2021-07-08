@@ -149,7 +149,7 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/capture)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
