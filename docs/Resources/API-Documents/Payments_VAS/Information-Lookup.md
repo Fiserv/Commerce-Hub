@@ -4,14 +4,14 @@ tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card
 
 # Information Lookup
 
-If the merchant wants to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token, then the merchant can initiate the account information lookup request.
+Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. The `cardDetails` are returned in the response.
 
 <!--
 type: tab
 title: cardDetails
 -->
 
-The `cardDetails` are returned in the account information lookup response. The below table identifies the required parameters in the `cardDetails` object.
+The below table identifies the parameters in the `cardDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
