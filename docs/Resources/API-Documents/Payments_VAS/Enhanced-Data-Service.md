@@ -114,6 +114,9 @@ The below table identifies the parameters in the `customer` object.
 
 ## Mimimum Requirements - Option B
 
+<!-- theme: info -->
+> The below parameters are the minimum required to submit an EDS request, however it is recommended to submit as much optional data as possible to provide better fraud protection.
+
 <!--
 type: tab
 title: amount
