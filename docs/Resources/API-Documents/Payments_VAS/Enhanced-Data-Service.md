@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise, eds, enhanced-data-service, fraud, secur
 
 Enhanced Data Service (EDS) enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuer leverages data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
 
-## Request Variables
+## Request Variables - Option A
 
 <!--
 type: tab
@@ -18,7 +18,7 @@ The below table identifies the parameters in the `amount` object.
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|
 | `total` | *number* | 18,3 | &#10004; | Total amount of the transaction. |
-| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -73,25 +73,25 @@ The below table identifies the parameters in the `orderData` object.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `orderDate` | *string* | | | Date that goods and services are ordered |
-| `itemCount` | *integer* | | | Total number of items included in the purchase |
+| `orderDate` | *string* | 10 | | Date that goods and services are ordered. YYYY-MM-DD format. |
+| `itemCount` | *integer* | 2 | | Total number of items included in the purchase |
 | `itemDetails` | *array* | | | List of all item categories along with amount and quantity |
-| `preOrder` | *boolean* | | | Identifies if the purchase is a preorder |
-| `preOrderDate` | *string* | | | Date that goods and services are preordered |
-| `reOrder` | *boolean* | | | Identifies if the purchase is a reorder |
-| `giftCardPurchase` | *boolean* | | | Identifies if the order contains a gift card purchase |
-| `giftcardCount`  | *integer* | | | Number of gift cards redeemed during the transaction |
+| `preOrder` | *boolean* | N/A | | Identifies if the purchase is a preorder |
+| `preOrderDate` | *string* | 10 | | Date that goods and services are preordered. YYYY-MM-DD format. |
+| `reOrder` | *boolean* | N/A | | Identifies if the purchase is a reorder |
+| `giftCardPurchase` | *boolean* | N/A| | Identifies if the order contains a gift card purchase |
+| `giftcardCount`  | *integer* | 2 | | Number of gift cards redeemed during the transaction |
 | **giftCardAmount** | *object* | | | |
 | `total` | *number* | 18,3 | | Total amount of the gift card |
-| `currency` | *string* | 3 | | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 The below table identifies the parameters in the `itemDetails` array.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `categoryName` | *string* | | | Category of the item sold |
+| `categoryName` | *string* | 8 | | Category of the item sold |
 | `itemCount` | *string* | | | Item count |
-| `value` | *string* | | | The monetary value of the item sold |
+| `value` | *string* | 32 | | The monetary value of the item sold |
 
 <!--
 type: tab
@@ -108,7 +108,79 @@ The below table identifies the parameters in the `customer` object.
 | **phone** | *array* |  | | Customer phone number |
 | `countryCode` | *string* | 4 | | Country's area code |
 | `phoneNumber` | *string* | 15 | | Customer phone number |
-| `type` | *string* | 5 | | This field indicates the type of phone number provided. Valid Values: *MOBILE*, *WORK*. |
+| `type` | *string* | 5 | | This field indicates the type of phone number provided. Valid Values: *HOME*, *MOBILE*, *WORK*. |
+
+<!-- type: tab-end -->
+
+## Mimimum Requirements - Option B
+
+<!--
+type: tab
+title: amount
+-->
+
+The below table identifies the required parameters in the `amount` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|
+| `total` | *number* | 18,3 | &#10004; | Total amount of the transaction. |
+| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+<!--
+type: tab
+title: transactionDetails
+-->
+
+The below table identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `merchantOrderId` | *string* | 128 | &#10004; | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
+| `deviceFingerPrint` | *array* | N/A | &#10004; | An array containing the device fingerprint details |
+
+<!--
+type: tab
+title: deviceFingerPrint
+-->
+
+The below table identifies the required `dataStatic` parameters in the `deviceFingerprint` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `deviceId` | *string* | 48 | &#10004; | MAC of the device originating the transaction |
+
+The below table identifies the required `dataDynamic` parameters in the `deviceFingerprint` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `latitude` | *string* | 256 | &#10004; | Cardholder current latitude GPS position |
+| `longitude` | *string* | 256 | &#10004; | Cardholder current longitude GPS position |
+| `ipAddress` | *string* | 39 | &#10004; | Device IP Address |
+
+<!-- theme: info -->
+> Refer to the [device finger print](?path=docs/Resources/Master-Data/Transaction-Details.md#device-fingerprint-data) object for additional fields.
+
+<!--
+type: tab
+title: orderData
+-->
+
+<!-- theme: info -->
+> Refer to the [order data](?path=docs/Resources/Master-Data/Transaction-Details.md#device-fingerprint-data) object for available fields.
+
+<!--
+type: tab
+title: customer
+-->
+
+The below table identifies the required parameters in the `customer` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `email` | *string* | 256 | &#10004; | Customer email address |
+
+<!-- theme: info -->
+> Refer to the [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
 
 <!-- type: tab-end -->
 

@@ -159,7 +159,7 @@ The below table identifies the valid values of type of `authorizationSequence`.
 
 ## Device Fingerprint Data
 
-Array that contains the device finger print data.
+The device fingerprint is information collected about the software and hardware of a remote computing device for the purpose of identification. A browser fingerprint is information collected specifically by interaction with the web browser of the device.
 
 <!--
 type: tab
