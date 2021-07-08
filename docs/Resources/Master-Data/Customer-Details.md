@@ -26,7 +26,7 @@ The below table identifies the required parameters in the `customer` object.
 | `locale` | *string* | 256 | The language of the receipt|
 | `driverLicenseNumber` | *string* | 256 | Customer Driver License Number |
 | `ssn` | *string* | 9 | Customer SSN or Tax ID |
-| `phone` | *object* |  | Customer [phone number](#phone-number) |
+| `phone` | *array* |  | Customer [phone number](#phone-number) |
 
 
 <!--
@@ -78,7 +78,7 @@ The below table identifies the required parameters in the `phoneNumber` object.
 | -------- | -- | ------------ | ------------------ |
 | `countryCode` | *string* | 4 | Country's area code |
 | `phoneNumber` | *string* | 15 | Customer phone number |
-| `type` | *string* | 5 | This field indicates the type of phone number provided. Valid Values: *DAY*, *HOME*, *NIGHT*, *WORK*. |
+| `type` | *string* | 5 | This field indicates the type of phone number provided. Valid Values: *DAY*, *HOME*, *NIGHT*, *WORK*, *MOBILE*. |
 
 <!--
 type: tab
