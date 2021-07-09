@@ -35,7 +35,7 @@ The below table identifies the required parameters in the `splitTenderMethod` ar
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `method` | *string* | 1024 | **Valid Values:** CREDIT_CARD, COUPON, GIFT_CARD, STORE_CREDIT, DEBIT_CARD, EBT_SNAP |
+| `method` | *string* | 1024 | **Valid Values:** *CREDIT_CARD*, *COUPON*, *GIFT_CARD*, *STORE_CREDIT*, *DEBIT_CARD, EBT_SNAP* |
 
 <!--
 type: tab

@@ -87,7 +87,7 @@ The below table identifies the required parameters in the `splitTenderMethod` ar
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `method` | *string* | 1024 | &#10004; | **Valid Values:** CREDIT_CARD, COUPON, GIFT_CARD, STORE_CREDIT, DEBIT_CARD, EBT_SNAP |
+| `method` | *string* | 1024 | &#10004; | **Valid Values:** *CREDIT_CARD*, *COUPON*, *GIFT_CARD*, *STORE_CREDIT*, *DEBIT_CARD*, *EBT_SNAP* |
 
 <!-- theme: info -->
 > Refer to the [split tender](?path=docs/Resources/Guides/Split-Tender.md#request-variables) object for available fields.
