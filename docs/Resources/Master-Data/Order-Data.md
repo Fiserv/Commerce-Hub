@@ -27,6 +27,40 @@ The below table identifies the parameters in the `orderData` object.
 | `total` | *number* | 18,3 | Total amount of the gift card |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
+
+<!--
+type: tab
+title: JSON Example 
+-->
+
+JSON string format for `orderData`:
+
+```json
+{
+   "orderData": {
+      "orderDate": "2020-11-20",
+      "itemCount": 1,
+      "itemDetails": [
+         {
+            "categoryName": "Toys",
+            "itemCount": 1,
+            "value": 10.03
+         }
+      ],
+      "preOrder": true,
+      "preOrderDate": "2020-11-20",
+      "reOrder": true,
+      "giftCardPurchase": true,
+      "giftcardCount": 1,
+      "giftCardAmount": {
+         "total": 1,
+         "currency": "USD"
+      }
+   }
+}
+```
+
+
 <!-- type: tab-end -->
 
 ### Item Details

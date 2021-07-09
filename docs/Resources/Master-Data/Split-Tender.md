@@ -34,7 +34,7 @@ type: tab
 title: JSON Example
 -->
 
-JSON string format for `transactionDetails`:
+JSON string format for `splitTender`:
 
 ```json
 {
