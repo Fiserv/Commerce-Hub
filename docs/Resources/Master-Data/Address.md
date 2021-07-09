@@ -146,6 +146,7 @@ The below table identifies the required parameters in the `address` object.
 | -------- | -- | ------------ | ------------------ |
 | `street` | *string* | 256 | Street address |
 | `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
+| `recipientNameOrAddress` | *string* | 256 | Tertiary address information e.g. recipeint name, company name or address |
 | `city` | *string* | 256 | City or locality |
 | `stateOrProvince` | *string* | 256 | State or province name |
 | `postalCode` | *string* | 10 | Postal code |

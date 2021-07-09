@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-tra
 ---
 
 
-# Transactional Data
+# Transactional Details
 
 The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
 
