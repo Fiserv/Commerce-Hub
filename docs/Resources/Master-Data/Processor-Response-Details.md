@@ -28,7 +28,7 @@ The below table identifies the required parameters in the `processorResponseDeta
 | `responseMessage` | *string* | | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Gateway.md) | 
 | `hostResponseCode` | *string* | | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)| 
 | `hostResponseMessage` | *string* | | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)|
-| `localTimestamp` | *string* | | Transaction timestamp in local time.| 
+| `localTimestamp` | *string* | | Timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ | 
 | `bankAssociationDetails` | *object* | | [Bank association](#bank-association-details) response details |
 
 <!--
@@ -52,7 +52,7 @@ JSON string format for `processorResponseDetails`:
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
+      "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails":{
          "associationResponseCode": "000",
          "transactionTimestamp": "2016-04-16T16:06:05Z",
@@ -104,7 +104,7 @@ The below table identifies the required parameters in the `bankAssociationDetail
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
 |` associationResponseCode` | string | 32 | Bank response code |
-| `transactionTimestamp` | string | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ|
+| `transactionTimestamp` | string | 64 | Timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ|
 | `transactionReferenceInformation` | string | 256 | Transaction reference information|
 | `avsSecurityCodeResponse` | object | | [Address and security code response](#address-and-security-code-response) details |
 

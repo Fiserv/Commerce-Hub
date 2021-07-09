@@ -227,7 +227,7 @@ The below table identifies the required parameters in the `dataCapture` object.
 | -------- | -- | ------------ | ------------------ |
 | `rawData` | *string* | 256 | Raw data from the data capture |
 | `dataEventId` | *string* | 256 | Unique ID for the data capture |
-| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
+| `captureTime` | *string* | 20 | Timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
 <!--
 type: tab

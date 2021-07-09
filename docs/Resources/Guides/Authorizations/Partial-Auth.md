@@ -12,50 +12,7 @@ Commerce Hub supports partial authorizations (approvals), authorization reversal
 
 ## Request Variables
 
-<!--
-type: tab
-title: partialAuthDetails
--->
 
-The below table identifies the required parameters in the `partialAuthDetails` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `interchangeComplianceIndicator` | *string* | | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
-| `bankNetRefNumber` | *string* | | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message.|
-| `bankNetDate` | *string* | | A Mastercard generated date for this transaction. MMDD format |
-| `cvcIndicator` | *string* | | Indicates the CVC response data |
-| `partialAuthTransactionId` | *string* | | Generated identifier unique for each original authorization request. |
-| `validationCode` | *string* | | A code calculated by Visa to ensure that the fields present in the authorization are also present in the clearing record. |
-| `totalAuthAmount` | *string* | | Total amount authorized |
-| `downgradeReason` | *string* | | Downgrade reason as supplied by Visa |
-| `creditAuthType` | *string* | | Indicates the type of authorization required |
-| `authScore` | *string* | | The auth score returned for the transaction |
- 
-<!--
-type: tab
-title: JSON Example
--->
-
-JSON string format for `partialAuthDetails`:
-
-```json
-{
-   "partialAuthDetails":{
-      "interchangeComplianceIndicator": "A",
-      "bankNetRefNumber": "12345678",
-      "bankNetDate": "0310",
-      "cvcIndicator": "Y",
-      "partialAuthTransactionId": "string",
-      "validationCode": "string",
-      "totalAuthAmount": 1.00,
-      "downgradeReason": "ACCOUNT_NUMBER_MISSING",
-      "creditAuthType": "DISCOVER",
-      "authScore": "string"
-   }
-}
-```
-<!-- type: tab-end -->
 
 ---
 

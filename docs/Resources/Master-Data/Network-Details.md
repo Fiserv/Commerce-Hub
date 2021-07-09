@@ -15,7 +15,7 @@ The below table identifies the required parameters in the `networkDetails` objec
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `partialAuthDetails` | *object* | | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) details |
+| `partialAuthDetails` | *object* | | [Partial authorization](#partial-auth-details) details |
 | `network` | *string* | 64 | Processing card network e.g. VISA |
 | `debitNetworkId` | *string* | | Network ID for the debit component |
 | `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
@@ -38,7 +38,7 @@ JSON string format for `networkDetails`:
    "partialAuthDetails":{
       "interchangeComplianceIndicator":"A",
       "bankNetRefNumber":"string",
-      "bankNetDate":"0310",
+      "bankNetDate":"2021-07-09",
       "cvcIndicator":"Y",
       "partialAuthTransactionId":"string",
       "validationCode":"string",
@@ -73,7 +73,52 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 | *REQUEST_PARTICIPATION* |  Transaction requests participation |
 | *CARD_NOT_PRESENT_NO_AVS* |  Card not present, AVS not required |
 
+## Partial Auth Details
 
+<!--
+type: tab
+title: partialAuthDetails
+-->
+
+The below table identifies the required parameters in the `partialAuthDetails` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `interchangeComplianceIndicator` | *string* | | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
+| `bankNetRefNumber` | *string* | | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message.|
+| `bankNetDate` | *string* | | A Mastercard generated date for this transaction. YYYY-MM-DD format |
+| `cvcIndicator` | *string* | | Indicates the CVC response data |
+| `partialAuthTransactionId` | *string* | | Generated identifier unique for each original authorization request. |
+| `validationCode` | *string* | | A code calculated by Visa to ensure that the fields present in the authorization are also present in the clearing record. |
+| `totalAuthAmount` | *string* | | Total amount authorized |
+| `downgradeReason` | *string* | | Downgrade reason as supplied by Visa |
+| `creditAuthType` | *string* | | Indicates the type of authorization required |
+| `authScore` | *string* | | The auth score returned for the transaction |
+ 
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `partialAuthDetails`:
+
+```json
+{
+   "partialAuthDetails":{
+      "interchangeComplianceIndicator": "A",
+      "bankNetRefNumber": "12345678",
+      "bankNetDate": "2021-07-09",
+      "cvcIndicator": "Y",
+      "partialAuthTransactionId": "string",
+      "validationCode": "string",
+      "totalAuthAmount": 1.00,
+      "downgradeReason": "ACCOUNT_NUMBER_MISSING",
+      "creditAuthType": "DISCOVER",
+      "authScore": "string"
+   }
+}
+```
+<!-- type: tab-end -->
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
