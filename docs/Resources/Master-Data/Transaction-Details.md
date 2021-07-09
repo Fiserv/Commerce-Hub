@@ -184,25 +184,34 @@ JSON string format for `deviceFingerprint`:
 
 ```json
 {
-   "deviceFingerprint":[
+   "deviceFingerprint": [
       {
          "provider": "InAuth",
-         "dataCapture":{
+         "dataCapture": {
             "rawData": "aaaaaXREUVZGRlFY...aMV",
             "dataEventId": "BB8E4E92...Fz1E063113",
             "captureTime": "2016-04-16T16:06:05Z"
          },
-         "dataStatic":{
+         "dataStatic": {
             "operatingSystem": "ANDROID",
             "operatingSystemVersion": "5.1.1 Lollipop",
             "model": "XYX-1",
-            "type": "Moto G"
+            "type": "Moto G",
+            "deviceId": "00:1B:44:11:3A:B7",
+            "javaScriptEnabled": true,
+            "javaEnabled": true,
+            "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+            "locale": "en-US"
          },
-         "dataDynamic":{
+         "dataDynamic": {
             "latitude": "13.0827 N",
             "longitude": "80.2707 E",
             "ipAddress": "172.27.37.221",
-            "captureTime": "2016-04-16T16:06:05Z"
+            "captureTime": "2016-04-16T16:06:05Z",
+            "address": {
+               "city": "Atlanta",
+               "country": "US"
+            }
          }
       }
    ]
@@ -265,6 +274,11 @@ The below table identifies the required parameters in the `dataStatic` object.
 | `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
 | `model` | *string* | 256 | Device Model |
 | `type` | *string* | 256 | Device type/name |
+| `deviceId` | *string* | 48 | MAC of the device originating the transaction |
+| `javaScriptEnabled` | *boolean* | N/A | Identifies if JavaScript is enabled on the device |
+| `javaEnabled` | *boolean* | N/A | Identifies if Java is enabled on the device |
+| `userAgent` | *string* | 2048 | User agent data from the user device truncated to 2048 bytes |
+| `locale` | *string* | 8 | Language/Region code of user in IETF BCP47 format |
 
 <!--
 type: tab
@@ -279,7 +293,12 @@ JSON string format for `dataStatic`:
       "operatingSystem": "ANDROID",
       "operatingSystemVersion": "5.1.1 Lollipop",
       "model": "XYX-1",
-      "type": "Moto G"
+      "type": "Moto G",
+      "deviceId": "00:1B:44:11:3A:B7",
+      "javaScriptEnabled": true,
+      "javaEnabled": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+      "locale": "en-US"
    }
 }
 ```
@@ -303,6 +322,7 @@ The below table identifies the required parameters in the `dataDynamic` object.
 | `longitude` | *string* | 256 | Cardholder current longitude GPS position |
 | `ipAddress` | *string* | 39 | Customer IP Address |
 | `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
+| `address` | *object* | N/A | City and country [address](?path=docs/Resources/Master-Data/Address.md#address) the IP/Device is resident in when transaction was originated |
 
 
 <!--
@@ -314,11 +334,15 @@ JSON string format for `dataDynamic`:
 
 ```json
 {
-   "dataDynamic":{
+   "dataDynamic": {
       "latitude": "13.0827 N",
       "longitude": "80.2707 E",
       "ipAddress": "172.27.37.221",
-      "captureTime": "2016-04-16T16:06:05Z"
+      "captureTime": "2016-04-16T16:06:05Z",
+      "address": {
+         "city": "Atlanta",
+         "country": "US"
+      }
    }
 }
 

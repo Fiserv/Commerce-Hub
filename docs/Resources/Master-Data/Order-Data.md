@@ -1,6 +1,10 @@
+---
+tags: [carat, commerce-hub, enterprise, order-details, order-data, master-data, item-details]
+---
+
 # Order Data
 
-Order data contains elements of the customers purchase. This data can be used to improve authorization rates and reduce fraud.
+Order data contains parameters of the customers purchase. This data can be used for merchant database tracking, improve authorization rates and reduce fraud.
 
 <!--
 type: tab

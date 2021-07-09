@@ -15,8 +15,8 @@ The below table identifies the required parameters in the `customer` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `merchantCustomerId` | *string* | 1024 | Unique customer identifier |
-| `processorCustomerId` | *string* | 1024 | UUID in Fiserv EV |
+| `merchantCustomerId` | *string* | 1024 | Merchant's unique customer identifier |
+| `processorCustomerId` | *string* | 1024 | Processor's unique customer identifier |
 | `firstName` | *string* | 256 | Customer first name |
 | `lastName` | *string* | 256 | Customer last name |
 | `dob` | *string* | 10 | Customer date of birth in YYYY-MM-DD format |
