@@ -282,7 +282,7 @@ title: Response
 
 ## EDS using PaymentToken
 
-The merchant can initiate EDS request transaction by passing the card details of the customer and using `PaymentToken` as a payment source.
+The merchant can initiate EDS request transaction by passing the token details of the customer and using `PaymentToken` as a payment source.
 
 ### Additional Requirements
 
