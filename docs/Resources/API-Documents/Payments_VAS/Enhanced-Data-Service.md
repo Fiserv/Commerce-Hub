@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, eds, enhanced-data-service, fraud, secur
 
 # Enhanced Data Service
 
-Enhanced Data Service (EDS) enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuer leverages data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
+Enhanced Data Service (EDS) enables sharing of relevant data between merchants and issuers outside of the authorization flow. The issuer leverages data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
 
 ## Mimimum Requirements
 
@@ -125,17 +125,19 @@ type: tab
 title: Optional Data
 -->
 
-Refer to the respective article below for optional request parameters.
+##### Refer to the respective article below for optional request parameters.
+
 - [billingAddress](?path=docs/Resources/Master-Data/Address.md#billing-address)
 - [fraudAttributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
 - [orderData](?path=docs/Resources/Master-Data/Order-Data.md)
 - [storedCredentials](?path=docs/Resources/Guides/Stored-Credentials.md)
+- [additionalPosInformation](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 
 <!-- type: tab-end -->
 
 ## EDS using PaymentCard
 
-The merchant can initiate Enhanced Data Service request ransaction by passing the card details of the customer and using `PaymentCard` as a payment source.
+The merchant can initiate EDS request transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
 
 ### Additional Requirements
 
@@ -149,7 +151,7 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentCard* is used for a Enhanced Data Request request using `card`. |
-|`card` | *string* | 15 | &#10004; | Card data object |
+|`card` | *object* | N/A | &#10004; | Card data object |
 
 <!--
 type: tab
@@ -176,30 +178,77 @@ title: Request
 
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "ApplePay",
-    "data": "hbreWcQg980mUoUCfuCoripnHO210lvtizOFLV6PTw1DjooSwik778bH....",
-    "header": {
-      "applicationDataHash": "94ee059335e587e501cc4bf90613e0814f00a7b08bc7c648fd865a2af6a22cc2",
-      "ephemeralPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvR....",
-      "publicKeyHash": "KRsyW0NauLpN8OwKr+yeu4jl6APbgW05/TYo5eGW0bQ=",
-      "transactionId": "31323334353637"
-    },
-    "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhki.....",
-    "version": "EC_v1",
-    "applicationData": "VEVTVA==",
-    "merchantId": "merchant.com.fapi.tcoe.applepay",
-    "merchantPrivateKey": "MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
-  }
-  "transactionDetails": {
-    "captureFlag": true,
-    "createToken": true,
-    "tokenProvider": "RSA"
-  }
+   "amount": {
+      "total": "12.04",
+      "currency": "USD"
+   },
+   "source":{
+      "sourceType": "PaymentCard",
+      "card": {
+         "bin": "400555",
+         "last4": "0019"
+      }
+   },
+   "transactionDetails": {
+      "merchantOrderId": "123456789012",
+      "deviceFingerPrint": [
+         {
+            "dataStatic": {
+               "deviceId": "00:1B:44:11:3A:B7"
+            },
+            "dataDynamic": {
+               "latitude": "13.0827 N",
+               "longitude": "80.2707 E",
+               "ipAddress": "172.27.37.221"
+            }
+         }
+      ]
+   },
+   "customer": {
+      "email": "customer@somedomain.com",
+      "phone": [
+         {
+            "countryCode": "1",
+            "phoneNumber": "123-123-1234",
+            "type": "MOBILE"
+         }
+      ]
+   },
+   "splitTender": {
+      "splitTenderMethod": [
+         {
+            "type": "CREDIT_CARD",
+            "count": "1",
+            "amount":{
+               "total": "7.04"
+            }
+         },
+         {
+            "type": "GIFT_CARD",
+            "count": "1",
+            "amount": {
+               "total": "5.00"
+            }
+         }
+      ]
+   },
+   "shippingAddress": {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "address": {
+         "street": "Main Street",
+         "houseNumberOrName": "123",
+         "recipientNameOrAddress": "Accounting Department",
+         "city": "Sandy Springs",
+         "stateOrProvince": "GA",
+         "postalCode": "30303",
+         "country": "US"
+      }
+   },
+   "merchantDetails": {
+      "merchantId": "1234567890123456",
+      "alternateMerchantId": "1234567890123456"
+   }
 }
 
 ```
@@ -213,48 +262,150 @@ title: Response
 
 <!-- theme: info -->
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom"
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2021-04-16",
-    "transactionTime": "2021-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "source": "ApplePay",
-  "tokenData": "1234123412340019",
-  "PARId": "string",
-  "declineDuplicates": false,
-  "tokenSource": "string",
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": "1.00",
+   "gatewayResponse": {
+      "transactionProcessingDetails": {
+         "transactionTime": "2021-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
+      }
+   },
+   "processorResponseDetails":{
+      "referenceNumber": "845366457890-TODO"
+   }
+}
+```
+<!-- type: tab-end -->
+
+## EDS using PaymentToken
+
+The merchant can initiate EDS request transaction by passing the card details of the customer and using `PaymentToken` as a payment source.
+
+### Additional Requirements
+
+<!--
+type: tab
+title: source
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|
+|`sourceType` | *string* | 15 | &#10004; | Value *PaymentToken* is used for a Enhanced Data Request request using a token. |
+|`tokenData` | *string* | 2048 | &#10004; | Card data object |
+
+<!-- type: tab-end -->
+
+### Payload Example
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of an EDS payload request.
+
+```json
+{
+   "amount": {
+      "total": "12.04",
       "currency": "USD"
-    },
-    "processorResponseDetails": null,
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK7118",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionID": "019078743804756",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "Approved",
-    "localTimestamp": "2021-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2021-04-16T16:06:05Z",
-      "transactionReferenceInformation": null,
-    }
-  }
+   },
+   "source":{
+      "sourceType": "PaymentToken",
+      "tokenData": "1234560000000019"
+   },
+   "transactionDetails": {
+      "merchantOrderId": "123456789012",
+      "deviceFingerPrint": [
+         {
+            "dataStatic": {
+               "deviceId": "00:1B:44:11:3A:B7"
+            },
+            "dataDynamic": {
+               "latitude": "13.0827 N",
+               "longitude": "80.2707 E",
+               "ipAddress": "172.27.37.221"
+            }
+         }
+      ]
+   },
+   "customer": {
+      "email": "customer@somedomain.com",
+      "phone": [
+         {
+            "countryCode": "1",
+            "phoneNumber": "123-123-1234",
+            "type": "MOBILE"
+         }
+      ]
+   },
+   "splitTender": {
+      "splitTenderMethod": [
+         {
+            "type": "CREDIT_CARD",
+            "count": "1",
+            "amount":{
+               "total": "7.04"
+            }
+         },
+         {
+            "type": "GIFT_CARD",
+            "count": "1",
+            "amount": {
+               "total": "5.00"
+            }
+         }
+      ]
+   },
+   "shippingAddress": {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "address": {
+         "street": "Main Street",
+         "houseNumberOrName": "123",
+         "recipientNameOrAddress": "Accounting Department",
+         "city": "Sandy Springs",
+         "stateOrProvince": "GA",
+         "postalCode": "30303",
+         "country": "US"
+      }
+   },
+   "merchantDetails": {
+      "merchantId": "1234567890123456",
+      "alternateMerchantId": "1234567890123456"
+   }
+}
+
+```
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of an EDS response.
+
+<!-- theme: info -->
+> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+
+```json
+{
+   "gatewayResponse": {
+      "transactionProcessingDetails": {
+         "transactionTime": "2021-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
+      }
+   },
+   "processorResponseDetails":{
+      "referenceNumber": "845366457890-TODO"
+   }
 }
 ```
 <!-- type: tab-end -->

@@ -46,6 +46,7 @@ JSON string format for `billingAddress`:
          "stateOrProvince": "GA",
          "postalCode": "30301",
          "country": "US"
+         "addressHistory": "FIRST"
       },
       "phone":{
          "countryCode": "1",
@@ -103,6 +104,7 @@ JSON string format for `shippingAddress`:
          "stateOrProvince": "GA",
          "postalCode": "30301",
          "country": "US"
+         "addressHistory": "FIRST"
       },
       "phone":{
          "countryCode": "1",
@@ -150,6 +152,7 @@ The below table identifies the parameters in the `address` object.
 | `stateOrProvince` | *string* | 256 | State or province name |
 | `postalCode` | *string* | 10 | Postal code |
 | `country` | *string* | 256 | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
+| `addressHistory` | *string* | | | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
 
 <!--
 type: tab
@@ -167,6 +170,7 @@ JSON string format for `address`:
       "stateOrProvince": "GA",
       "postalCode": "30301",
       "country": "US"
+      "addressHistory": "FIRST"
    }
 }
 ```
