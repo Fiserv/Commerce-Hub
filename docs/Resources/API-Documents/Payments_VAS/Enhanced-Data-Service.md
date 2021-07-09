@@ -85,13 +85,7 @@ The below table identifies the parameters in the `orderData` object.
 | `total` | *number* | 18,3 | | Total amount of the gift card |
 | `currency` | *string* | 3 | | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
-The below table identifies the parameters in the `itemDetails` array.
 
-| Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
-| `categoryName` | *string* | 8 | | Category of the item sold |
-| `itemCount` | *string* | | | Item count |
-| `value` | *string* | 32 | | The monetary value of the item sold |
 
 <!--
 type: tab
