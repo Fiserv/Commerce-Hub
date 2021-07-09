@@ -11,7 +11,7 @@ type: tab
 title: merchantDetails
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the parameters in the `merchantDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- |------------| ------------------ |

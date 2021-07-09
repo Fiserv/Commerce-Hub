@@ -13,7 +13,7 @@ type: tab
 title: processorResponseDetails
 -->
 
-The below table identifies the required parameters in the `processorResponseDetails` object.
+The below table identifies the parameters in the `processorResponseDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
@@ -99,7 +99,7 @@ type: tab
 title: bankAssociationDetails
 -->
 
-The below table identifies the required parameters in the `bankAssociationDetails` object.
+The below table identifies the parameters in the `bankAssociationDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
@@ -148,7 +148,7 @@ type: tab
 title: avsSecurityCodeResponse
 -->
 
-The below table identifies the required parameters in the `avsSecurityCodeResponse` object.
+The below table identifies the parameters in the `avsSecurityCodeResponse` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -193,7 +193,7 @@ type: tab
 title: association
 -->
 
-The below table identifies the required parameters in the `association` object.
+The below table identifies the parameters in the `association` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|

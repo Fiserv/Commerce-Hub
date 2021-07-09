@@ -11,7 +11,7 @@ type: tab
 title: transactionInteraction
 -->
 
-The below table identifies the required parameters in the `transactionInteraction` object.
+The below table identifies the parameters in the `transactionInteraction` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -136,4 +136,5 @@ The below table identifies the valid values of `eciIndicator`.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
+
 ---

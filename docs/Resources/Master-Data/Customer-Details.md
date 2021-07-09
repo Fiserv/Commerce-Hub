@@ -11,7 +11,7 @@ type: tab
 title: customer
 -->
 
-The below table identifies the required parameters in the `customer` object.
+The below table identifies the parameters in the `customer` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -72,7 +72,7 @@ type: tab
 title: phone
 -->
 
-The below table identifies the required parameters in the `phoneNumber` object.
+The below table identifies the parameters in the `phoneNumber` object.
 
 | Variable | Type |Maximum Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |

@@ -11,7 +11,7 @@ type: tab
 title: networkDetails
 -->
 
-The below table identifies the required parameters in the `networkDetails` object.
+The below table identifies the parameters in the `networkDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |

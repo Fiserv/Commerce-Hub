@@ -16,7 +16,7 @@ type: tab
 title: gatewayResponse
 -->
 
-The below table identifies the required parameters in the `gatewayResponse` object.
+The below table identifies the parameters in the `gatewayResponse` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
@@ -79,7 +79,7 @@ type: tab
 title: transactionProcessingDetails
 -->
 
-The below table identifies the required parameters in the `transactionProcessingDetails` object.
+The below table identifies the parameters in the `transactionProcessingDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |

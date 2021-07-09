@@ -12,7 +12,7 @@ type: tab
 title: transactionDetails
 -->
 
-The below table identifies the required parameters in the `transactionDetails` object.
+The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
@@ -166,7 +166,7 @@ type: tab
 title: deviceFingerprintData
 -->
 
-The below table identifies the required parameters in the `deviceFingerprintData` object.
+The below table identifies the parameters in the `deviceFingerprintData` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
@@ -230,7 +230,7 @@ type: tab
 title: dataCapture
 -->
 
-The below table identifies the required parameters in the `dataCapture` object.
+The below table identifies the parameters in the `dataCapture` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -266,7 +266,7 @@ type: tab
 title: dataStatic
 -->
 
-The below table identifies the required parameters in the `dataStatic` object.
+The below table identifies the parameters in the `dataStatic` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -314,7 +314,7 @@ type: tab
 title: dataDynamic
 -->
 
-The below table identifies the required parameters in the `dataDynamic` object.
+The below table identifies the parameters in the `dataDynamic` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
