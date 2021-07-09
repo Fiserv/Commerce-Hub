@@ -12,7 +12,7 @@ type: tab
 title: additionalDataCommon
 -->
 
-The below table identifies the required parameters in the `additionalDataCommon` object.
+The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -137,6 +137,8 @@ Additional Data identifies various elments based on the specific transaction typ
 type: tab
 title: additionalData
 -->
+
+The below table identifies the parameters in the `additionalData` object.
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
