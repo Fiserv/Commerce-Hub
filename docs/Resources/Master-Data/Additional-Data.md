@@ -5,7 +5,7 @@ tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data
 
 # Additional Data Common
 
-Additional data common is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
+Additional data common is used for specific business requirements.
 
 <!--
 type: tab
@@ -18,15 +18,14 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `directedRouting` | *object* | | Required in Directed Routing transactions. |
-| `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
-
-
-<!---
 | `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
 | `installments` | *object* | | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
+| `recurring` | *object* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
+
+<!---
 | `deferredPayments` | *object* | | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md) |
-| `recurringPayments` | *object* | | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
+| `directedRouting` | *object* | | Required in Directed Routing transactions. |
+| `subMerchant` | *object* | | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 | `privateLabel` | *object* | | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customFields` | *array* | | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 -->
@@ -114,7 +113,6 @@ JSON string format for `additionalDataCommon`:
 
 ---
 
-<!---
 #### Bill Payment Indicator
 
 The below table identifies the valid values of the `billPaymentIndicator`.
@@ -125,7 +123,6 @@ The below table identifies the valid values of the `billPaymentIndicator`.
 | *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
 | *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
 | *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
--->
 
 ---
 
@@ -138,7 +135,7 @@ type: tab
 title: additionalData
 -->
 
-The below table identifies the parameters in the `additionalData` object.
+
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
