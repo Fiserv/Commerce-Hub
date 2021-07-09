@@ -34,7 +34,8 @@
             "payments-vas-accounts-information.yaml"
       ]
    },
-   "yamlVersion":"v1",
+   "yamlVersion":",
+            "emv-parameter-downloads.yaml"v1",
    "featureSet":{
       "yamlType":"ExternalYaml"
    }
