@@ -26,7 +26,7 @@ The below table identifies the required parameters in the `customer` object.
 | `locale` | *string* | 256 | The language of the receipt|
 | `driverLicenseNumber` | *string* | 256 | Customer Driver License Number |
 | `ssn` | *string* | 9 | Customer SSN or Tax ID |
-| `phone` | *array* |  | Customer [phone number](#phone-number) |
+| `phone` | *array* | N/A | Customer [phone number](#phone-number) |
 
 
 <!--

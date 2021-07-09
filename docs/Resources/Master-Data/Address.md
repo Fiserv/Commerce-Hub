@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, customer-address, billing-address, master-data, shipping-address, shipping-method]
 ---
 
-
 # Customer Address
 
 A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
@@ -19,7 +18,7 @@ type: tab
 title: billingAddress
 -->
 
-The below table identifies the required parameters in the `billingAddress` object.
+The below table identifies the parameters in the `billingAddress` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
@@ -72,7 +71,7 @@ title: shippingAddress
 -->
 
 
-The below table identifies the required parameters in the `shippingAddress` object.
+The below table identifies the parameters in the `shippingAddress` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -140,7 +139,7 @@ title: address
 -->
 
 
-The below table identifies the required parameters in the `address` object.
+The below table identifies the parameters in the `address` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |

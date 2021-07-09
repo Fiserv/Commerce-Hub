@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, order-details, order-data, master-data, 
 
 # Order Data
 
-Order data contains parameters of the customers purchase. This data can be used for merchant database tracking, improve authorization rates and reduce fraud.
+A transaction can contain `orderData` as part of the customer's purchase. This data can be used for merchant database tracking, improve authorization rates and reduce fraud.
 
 <!--
 type: tab
@@ -73,4 +73,11 @@ The below table identifies the parameters in the `itemDetails` array.
 | `itemCount` | *string* | 2 | Item count |
 | `value` | *string* | 32 | The monetary value of the item sold |
 
+---
 
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
+
+---

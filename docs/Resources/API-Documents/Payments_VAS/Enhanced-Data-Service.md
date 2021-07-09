@@ -59,14 +59,6 @@ The below table identifies the required `dataDynamic` parameters in the `deviceF
 
 <!--
 type: tab
-title: orderData
--->
-
-<!-- theme: info -->
-> Refer to the [order data](?path=docs/Resources/Master-Data/Transaction-Details.md#device-fingerprint-data) object for available fields.
-
-<!--
-type: tab
 title: customer
 -->
 
@@ -75,9 +67,69 @@ The below table identifies the required parameters in the `customer` object.
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `email` | *string* | 256 | &#10004; | Customer email address |
+| `phone` | *array* | N/A | &#10004; | Customer [phone number](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) |
 
 <!-- theme: info -->
 > Refer to the [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
+
+<!--
+type: tab
+title: splitTender
+-->
+
+The below table identifies the required parameters in the `splitTender` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `splitTenderMethod` | *array* | N/A | &#10004; | Identifies the additional forms of payment used as part of this order |
+
+The below table identifies the required parameters in the `splitTenderMethod` array.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `method` | *string* | 1024 | &#10004; | **Valid Values:** CREDIT_CARD, COUPON, GIFT_CARD, STORE_CREDIT, DEBIT_CARD, EBT_SNAP |
+
+<!-- theme: info -->
+> Refer to the [split tender](?path=docs/Resources/Guides/Split-Tender.md#request-variables) object for available fields.
+
+<!--
+type: tab
+title: shippingAddress
+-->
+
+The below table identifies the required parameters in the `shippingAddress` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `firstName` | *string* | 256  | &#10004; | Shipping contact first name |
+| `lastName` | *string* | 256 | &#10004; | Shipping contact last name |
+| `address` | *object* | N/A | &#10004; | Shipping [address](?path=docs/Resources/Master-Data/Address.md#address) details |
+
+<!-- theme: info -->
+> Refer to the [address](?path=docs/Resources/Master-Data/Order-Data.md) object for available fields.
+
+<!--
+type: tab
+title: merchantDetails
+-->
+
+The below table identifies the required parameters in the `shippingAddress` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
+
+<!--
+type: tab
+title: Optional Data
+-->
+
+Refer to the respective article below for optional request parameters.
+- [billingAddress](?path=docs/Resources/Master-Data/Address.md#billing-address)
+- [fraudAttributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
+- [orderData](?path=docs/Resources/Master-Data/Order-Data.md)
+- [storedCredentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 
 <!-- type: tab-end -->
 
@@ -212,8 +264,7 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
-
+- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
+- [Fraud Attributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 ---

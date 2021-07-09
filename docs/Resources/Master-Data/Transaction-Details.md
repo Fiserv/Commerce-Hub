@@ -307,7 +307,7 @@ JSON string format for `dataStatic`:
 
 ## Data Dynamic
 
-Contains the dayamic data like device location and ipaddress. 
+Contains the dayamic data like device location and IP address. 
 
 <!--
 type: tab
