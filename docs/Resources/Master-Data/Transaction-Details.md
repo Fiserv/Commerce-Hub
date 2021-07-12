@@ -3,18 +3,18 @@ tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-tra
 ---
 
 
-# Transactional Data
+# Transactional Details
 
 The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
 
-## Transaction Details
-
 <!--
 type: tab
-title: transaction
+title: transactionDetails
 -->
 
-|Variable    | Type| Maximum Length | Description/Values|
+The below table identifies the parameters in the `transactionDetails` object.
+
+| Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
@@ -27,7 +27,7 @@ title: transaction
 | `merchantOrderId` | *string* | 128 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `merchantInvoiceNumber` | *string* | 1024 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `receiptEmail` | *string* | 256 | Email id to send the digital receipt.|
-| `paymentDescription` | *string* | 1024 | Payment Description|
+| `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
 | `partiallyApprovedTransactionAmount` | *number* |  |  The partially approved transaction amount from the original request. |
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
@@ -46,6 +46,8 @@ title: transaction
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `transactionDetails`:
 
 ```json
 {
@@ -107,7 +109,9 @@ title: JSON Example
 
 ---
 
-### Authorization Type Indicator
+#### Authorization Type Indicator
+
+The below table identifies the valid values of `authorizationTypeIndicator` in subsequent transactions.
 
 | Value | Description |
 | ----- | ----- |
@@ -116,7 +120,9 @@ title: JSON Example
 | *DEFERRED* | [Deferred Auth](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) |
 | *INCREMENTAL* | [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) |
 
-### Primary Transaction Type
+#### Primary Transaction Type
+
+The below table identifies the valid values of `primaryTransactionType`.
 
 | Value | Description |
 | ----- | ----- |
@@ -126,7 +132,9 @@ title: JSON Example
 | *CANCEL* | Cancel/Void |
 | *REFUND* | Refund |
 
-### Reversal Reason Code
+#### Reversal Reason Code
+
+The below table identifies the valid values of `reversalReasonCode` the reason merchant/customer requests for cancel (void).
 
 | Value | Description |
 | ----- | ----- |
@@ -139,7 +147,9 @@ title: JSON Example
 | *SYSTEM_ERROR* | System error |
 | *SUSPECTED_FRAUD* | Suspect fraud |
 
-### Authorization Sequence
+#### Authorization Sequence
+
+The below table identifies the valid values of type of `authorizationSequence`.
 
 | Value | Description |
 | ----- | ----- |
@@ -149,12 +159,16 @@ title: JSON Example
 
 ## Device Fingerprint Data
 
+The device fingerprint is information collected about the software and hardware of a remote computing device for the purpose of identification. A browser fingerprint is information collected specifically by interaction with the web browser of the device.
+
 <!--
 type: tab
 title: deviceFingerprintData
 -->
 
-| Variable | Type| Maximum Length | Description/Values|
+The below table identifies the parameters in the `deviceFingerprintData` object.
+
+| Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 |`provider` | *string* | N/A | Device provider e.g. InAuth. |
 |`dataCapture`| *object* | N/A | [Data capture](#data-capture) details. | 
@@ -166,27 +180,38 @@ type: tab
 title: JSON Example
 -->
 
+JSON string format for `deviceFingerprint`:
+
 ```json
 {
-   "deviceFingerprint":[
+   "deviceFingerprint": [
       {
          "provider": "InAuth",
-         "dataCapture":{
+         "dataCapture": {
             "rawData": "aaaaaXREUVZGRlFY...aMV",
             "dataEventId": "BB8E4E92...Fz1E063113",
             "captureTime": "2016-04-16T16:06:05Z"
          },
-         "dataStatic":{
+         "dataStatic": {
             "operatingSystem": "ANDROID",
             "operatingSystemVersion": "5.1.1 Lollipop",
             "model": "XYX-1",
-            "type": "Moto G"
+            "type": "Moto G",
+            "deviceId": "00:1B:44:11:3A:B7",
+            "javaScriptEnabled": true,
+            "javaEnabled": true,
+            "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+            "locale": "en-US"
          },
-         "dataDynamic":{
+         "dataDynamic": {
             "latitude": "13.0827 N",
             "longitude": "80.2707 E",
             "ipAddress": "172.27.37.221",
-            "captureTime": "2016-04-16T16:06:05Z"
+            "captureTime": "2016-04-16T16:06:05Z",
+            "address": {
+               "city": "Atlanta",
+               "country": "US"
+            }
          }
       }
    ]
@@ -198,22 +223,27 @@ title: JSON Example
 
 ## Data Capture
 
+Contains the finger print data and time it is captured.
+
 <!--
 type: tab
 title: dataCapture
 -->
 
+The below table identifies the parameters in the `dataCapture` object.
 
-| Variable | Type | Length | Description/Values |
-| -------- | -- | ------------: | ------------------ |
-| `rawData` | *string* | 256 | Raw data from the data capture. |
-| `dataEventId` | *string* | 256 | Unique ID for the data capture. |
-| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ. |
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `rawData` | *string* | 256 | Raw data from the data capture |
+| `dataEventId` | *string* | 256 | Unique ID for the data capture |
+| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `dataCapture`:
 
 ```json
 {
@@ -229,22 +259,33 @@ title: JSON Example
 
 ## Data Static
 
+Contains the static data such as operating system details and device type/model.
+
 <!--
 type: tab
 title: dataStatic
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `dataStatic` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `operatingSystem` | *string* | 256 | Device operating system (OS). |
-| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version. |
-| `model` | *string* | 256 | Device Model. |
-| `type` | *string* | 256 | Device type/name. |
+| `operatingSystem` | *string* | 256 | Device operating system (OS) |
+| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
+| `model` | *string* | 256 | Device Model |
+| `type` | *string* | 256 | Device type/name |
+| `deviceId` | *string* | 48 | MAC of the device originating the transaction |
+| `javaScriptEnabled` | *boolean* | N/A | Identifies if JavaScript is enabled on the device |
+| `javaEnabled` | *boolean* | N/A | Identifies if Java is enabled on the device |
+| `userAgent` | *string* | 2048 | User agent data from the user device truncated to 2048 bytes |
+| `locale` | *string* | 8 | Language/Region code of user in IETF BCP47 format |
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `dataStatic`:
 
 ```json
 {
@@ -252,7 +293,12 @@ title: JSON Example
       "operatingSystem": "ANDROID",
       "operatingSystemVersion": "5.1.1 Lollipop",
       "model": "XYX-1",
-      "type": "Moto G"
+      "type": "Moto G",
+      "deviceId": "00:1B:44:11:3A:B7",
+      "javaScriptEnabled": true,
+      "javaEnabled": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+      "locale": "en-US"
    }
 }
 ```
@@ -261,17 +307,22 @@ title: JSON Example
 
 ## Data Dynamic
 
+Contains the dayamic data like device location and IP address. 
+
 <!--
 type: tab
 title: dataDynamic
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `dataDynamic` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `latitude` | *string* | 256 | Cardholder current latitude GPS position. |
-| `longitude` | *string* | 256 | Cardholder current longitude GPS position. |
-| `ipAddress` | *string* | 39 | Customer IP Address. |
-| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ. |
+| `latitude` | *string* | 256 | Cardholder current latitude GPS position |
+| `longitude` | *string* | 256 | Cardholder current longitude GPS position |
+| `ipAddress` | *string* | 39 | Customer IP Address |
+| `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
+| `address` | *object* | N/A | City and country [address](?path=docs/Resources/Master-Data/Address.md#address) the IP/Device is resident in when transaction was originated |
 
 
 <!--
@@ -279,13 +330,19 @@ type: tab
 title: JSON Example
 -->
 
+JSON string format for `dataDynamic`:
+
 ```json
 {
-   "dataDynamic":{
+   "dataDynamic": {
       "latitude": "13.0827 N",
       "longitude": "80.2707 E",
       "ipAddress": "172.27.37.221",
-      "captureTime": "2016-04-16T16:06:05Z"
+      "captureTime": "2016-04-16T16:06:05Z",
+      "address": {
+         "city": "Atlanta",
+         "country": "US"
+      }
    }
 }
 

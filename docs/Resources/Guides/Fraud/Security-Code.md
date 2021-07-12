@@ -5,25 +5,50 @@ tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, 
 
 # Security Code
 
-## Overview
 Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
-## Requirements
+## Request Variables
 
 For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
 
-#### Object: card
+<!--
+type: tab
+title: card
+-->
 
-| Variable | Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`securityCode` | *string* | 3 | The card security code.|
 |`securityCodeIndicator` | *string* | N/A | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE.|
 
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `card`:
+
+```json
+{
+   "card":{
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123",
+      "securityCodeIndicator": "PROVIDED"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
 ---
 
-## Verification Request
+## Security Code Verification Request
 
 ### Endpoint
 
@@ -121,7 +146,7 @@ title: Response
 
 ---
 
-## Verification with Charges Request
+## Security Code Verification with Charges Request
 
 ### Endpoint
 
@@ -225,18 +250,21 @@ title: Response
 
 ---
 
-## Response Values
+## AVS Security Code Response Values
 
-The result of checking the cardholder’s entered security code against the Issuer’s system of record is is received in the response. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the security code response from the bank.
+The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
-| Value | Description |
-| ------- | ------- |
-| *MATCH* | Security code matched. |
-| *NO_MATCH* | Security code did not matched. |
-| *NOT_PROVIDED* | Security code value was not provided. |
-| *NOT_PROCESSED* | Security code verification was not processed. |
-| *NO_PARTICIPANT* | Bank Associatino does not participate in security verification. |
-| *UNKNOWN* | Unknown status. |
+The below table identifies the valid values of `securityCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *M* | Card security code matched |
+| *N* | Card security code does not matched |
+| *P* | Not processed |
+| *S* | Merchant has indicated that the card security code is not present on the card. |
+| *U* | Issuer is not certified and/or not provides encryption keys. |
+| *X* | No response from the credit card association was received. |
+| | A blank code should indicate that no code was sent and that there was no indication that the code was present on the card. |
 
 ---
 

@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, forced-p
 
 # Forced Post
 
-## Overview
-
 <!-- theme: danger -->
 > Due to higher instances of fraud, it is highly recommended that the forced post be limited to certain personnel. An administrator in the Virtual Terminal can manage forced Post.
 
@@ -26,28 +24,42 @@ The [example](#payload-example) below contains the mandatory fields required for
 <!--theme:info-->
 > A charge request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
 
-| Variable | Data Type| Maximum Length | Description/Values |
+<!--
+type: tab
+title: amount
+-->
+
+The below table identifies the required parameters in the `amount` object.
+
+|Variable |  Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`approvalCode`|  *string* | 6 | Approval code obtained from calling the Voice Authorization Center.|
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
-#### Object: amount
+<!--
+type: tab
+title: source
+-->
 
-| Variable    |  Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
-#### Object: source
+<!--
+type: tab
+title: transactionDetails
+-->
 
-| Variable | Type| Maximum Length | Description/Values|
+The below table identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth) |
+|`approvalCode`|  *string* | 6 | Approval code obtained from calling the Voice Authorization Center |
 
-#### Object: transactionDetails
-
-| Variable | Data Type| Maximum Length | Description/Values |
-|---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth).|
+<!-- type: tab-end -->
 
 ---
 
@@ -81,9 +93,9 @@ title: Request
       }
    },
    "transactionDetails": {
-      "captureFlag": true
-   },
-   "approvalCode": "OK5882"
+      "captureFlag": true,
+      "approvalCode": "OK5882"
+   } 
 }
 ```
 
@@ -94,7 +106,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a charge (201: Created) response.
+##### Example of a forced post (201: Created) response.
 
 <!-- theme: info -->
 > See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
@@ -152,6 +164,7 @@ title: Response
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/forcedpost)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 

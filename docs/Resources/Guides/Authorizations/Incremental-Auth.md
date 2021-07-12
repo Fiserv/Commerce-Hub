@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, card-not-present, card-present, incremental-auth, au
 
 # Incremental Authorization
 
-## Overview
-
 An incremental authorization is typically found in hotel and rental environments, where the consumer has agreed to pay for any service incurred during the duration of the contract, typically a hotel stay or car rental. 
 
 Field requirement authorizationTypeIndicator

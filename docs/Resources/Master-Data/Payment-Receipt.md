@@ -10,12 +10,16 @@ A Customer Transaction Record (CTR), also known as a payment receipt is returned
 
 ## Payment Receipt
 
+Object contains payment receipt response details.
+
 <!--
 type: tab
 title: paymentReceipt
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `paymentReceipt` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `approvedAmount` | *object* | N/A | Contains the approved [amount](?path=docs/Resources/Master-Data/Amount-Components.md) and currency code. |
 | `processorResponseDetails` | *object* | N/A | Contains the [response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) parameters from the Commerce Hub for any successful or unsuccessful transaction. |
@@ -32,6 +36,8 @@ title: paymentReceipt
 type: tab
 title: JSON Example 
 -->
+
+JSON string format for `paymentReceipt`:
 
 ```json
 {

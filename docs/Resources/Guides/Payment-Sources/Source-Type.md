@@ -2,10 +2,7 @@
 tags: [carat, commerce-hub, enterprise, payment-source-types]
 ---
 
-
 # Payment Source Types
-
-## Overview
 
 The variable `sourceType` is used to determine the source of the transaction. Depending on the source the required variables change. 
 
@@ -21,5 +18,6 @@ The variable `sourceType` is used to determine the source of the transaction. De
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

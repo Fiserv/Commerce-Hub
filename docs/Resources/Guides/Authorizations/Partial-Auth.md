@@ -10,15 +10,16 @@ Commerce Hub supports partial authorizations (approvals), authorization reversal
 
 ---
 
+## Request Variables
 
-
-## Partial Auth Details
 <!--
 type: tab
 title: partialAuthDetails
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the required parameters in the `partialAuthDetails` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `interchangeComplianceIndicator` | *string* | N/A | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
 | `bankNetRefNumber` | *string* | N/A | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message.|
@@ -35,6 +36,8 @@ title: partialAuthDetails
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `partialAuthDetails`:
 
 ```json
 {
@@ -53,8 +56,6 @@ title: JSON Example
 }
 ```
 <!-- type: tab-end -->
-
-
 
 ---
 

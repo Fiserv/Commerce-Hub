@@ -11,5 +11,3 @@ tags: [carat, commerce-hub, enterprise, bill-payments, deferred-bill-payments]
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-
----

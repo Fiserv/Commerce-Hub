@@ -838,7 +838,7 @@ components:
         object to support the request for payment.
       properties:
         total: {type: number, maximum: 1.0E18, description: Sub component values must
-            add up to total amount., example: '1.00'}
+            add up to total amount., example: '1.00', x-faker: finance.amount}
         currency: {type: string, maxLength: 3, description: ISO 3 Currency Format.,
           example: USD}
     Source:

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount, ]
+tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
 ---
 
 
@@ -12,20 +12,26 @@ Transaction amount information is contained into two objects, `amount` and `amou
 
 ## Amount
 
+Used to present the transaction amount and transaction currency for particular transaction.
+
 <!--
 type: tab
 title: amount
 -->
 
-|Variable    |  Type| Maximum Length | Description/Values|
+The below table identifies the parameters in the `amount` object.
+
+|Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
+| `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amountcomponents) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `amount`:
 
 ```json
 {
@@ -40,28 +46,31 @@ title: JSON Example
 
 ## Amount Components
 
-<!-- theme:info -->
-> Nested object in [`additionalDataCommon`](?path=docs/Resources/Master-Data/Additional-Data.md).
+Used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
 
 <!--
 type: tab
 title: amountComponents
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `amountComponents` object.
+
+| Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
-| `subTotal` | *number* | 12 | Subtotal amount. |
+| `subTotal` | *number* | 12 | Subtotal amount |
 | `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
-| `localTax` | *number* | 12 | Local sales tax amount included in a transaction. |
-| `shippingAmount` | *number* | 12 | Shipping amount included in a transaction. |
+| `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
+| `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
-| `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount. |
+| `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `amountComponents`:
 
 ```json
 {

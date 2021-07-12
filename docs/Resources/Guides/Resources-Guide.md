@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, fraud-controls, industry-verticals, mast
 
 # Resources and Guides
 
-## Overview
-
 Explore and learn about things that a merchant needs to start accepting transactions and processing with Commerce Hub. 
 
 ---

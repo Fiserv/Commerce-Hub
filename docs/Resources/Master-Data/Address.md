@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, customer-address, billing-address, master-data, shipping-address, shipping-method]
 ---
 
-
 # Customer Address
 
 A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
@@ -19,9 +18,9 @@ type: tab
 title: billingAddress
 -->
 
-Parameters included in the `billingAddress` object:
+The below table identifies the parameters in the `billingAddress` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
@@ -47,6 +46,7 @@ JSON string format for `billingAddress`:
          "stateOrProvince": "GA",
          "postalCode": "30301",
          "country": "US"
+         "addressHistory": "FIRST"
       },
       "phone":{
          "countryCode": "1",
@@ -71,16 +71,17 @@ type: tab
 title: shippingAddress
 -->
 
-Parameters included in the `shippingAddress` object:
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `shippingAddress` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `firstName` | *string* | 256  | Shipping contact first name. |
-| `lastName` | *string* | 256 | Shipping contact last name.|
-| `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method).|
-| `shipToEmail` | *string* | 13 | Email on a digital delivery transaction. |
-| `address` | *object* | N/A | Shipping [address](#address) details. |
-| `phone` | *object* | N/A | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `firstName` | *string* | 256  | Shipping contact first name |
+| `lastName` | *string* | 256 | Shipping contact last name |
+| `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method) |
+| `shipToEmail` | *string* | 13 | Email on a digital delivery transaction |
+| `address` | *object* | N/A | Shipping [address](#address) details |
+| `phone` | *object* | N/A | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details |
 
 <!--
 type: tab
@@ -103,6 +104,7 @@ JSON string format for `shippingAddress`:
          "stateOrProvince": "GA",
          "postalCode": "30301",
          "country": "US"
+         "addressHistory": "FIRST"
       },
       "phone":{
          "countryCode": "1",
@@ -116,6 +118,8 @@ JSON string format for `shippingAddress`:
 <!-- type: tab-end -->
 
 #### Shipping Method
+
+The below table identifies the valid values of `shippingMethod`.
 
 | Value | Description |
 | ----- | ----------- |
@@ -136,16 +140,19 @@ type: tab
 title: address
 -->
 
-Parameters included in the `address` object:
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `street` | *string* | 256 | Street address. |
-| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name. |
-| `city` | *string* | 256 | City or locality. |
-| `stateOrProvince` | *string* | 256 | State or province name. |
-| `postalCode` | *string* | 10 | Postal code. |
+The below table identifies the parameters in the `address` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `street` | *string* | 256 | Street address |
+| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
+| `recipientNameOrAddress` | *string* | 256 | Tertiary address information e.g. recipeint name, company name or address |
+| `city` | *string* | 256 | City or locality |
+| `stateOrProvince` | *string* | 256 | State or province name |
+| `postalCode` | *string* | 10 | Postal code |
 | `country` | *string* | 256 | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
+| `addressHistory` | *string* | 18 | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
 
 <!--
 type: tab
@@ -163,6 +170,7 @@ JSON string format for `address`:
       "stateOrProvince": "GA",
       "postalCode": "30301",
       "country": "US"
+      "addressHistory": "FIRST"
    }
 }
 ```

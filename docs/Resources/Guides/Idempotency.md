@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, idempotency, vault]
 
 # Idempotency
 
-## Overview
-
 A property of an operation that states that clients can make that same call repeatedly while producing the same result. For example, in the case of a timeout error, a merchant can retry the same API call multiple times; this guarantees that the transaction processes once. Our REST API uses the `Client-Request-Id` element to ensure idempotency on transaction requests.
 
 ---

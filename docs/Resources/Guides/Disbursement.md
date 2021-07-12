@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, enterprise, digital-disbursements-and-payouts, disbu
 
 # Digital Disbursements and Payouts
 
-## Overview
-
 Commerce Hub will allow integration for digtial disbursments and payouts for the following industries; insurance, healthcare and gaming & sports betting.
 
 <!-- theme: danger -->

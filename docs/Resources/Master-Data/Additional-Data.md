@@ -3,38 +3,40 @@ tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data
 ---
 
 
-## Additional Transaction Data
+# Additional Data Common
 
-Additional transaction data is used for specific condition like installments, deferred payments, 3D-secure transactions etc. These data fields can be included as per the business requirements.
-
----
-
-## Additional Data Common
-
-The `additionalDataCommon` object contains common data elements used in requests based on business requirements.
+Additional data common is used for specific business requirements.
 
 <!--
 type: tab
 title: additionalDataCommon
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `additionalDataCommon` object.
+
+| Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
+| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
+| `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
+| `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
+
+<!---
+| `deferredPayments` | *object* | N/A | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md) |
 | `directedRouting` | *object* | N/A | Required in Directed Routing transactions. |
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
-| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
-| `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md). |
-| `deferredPayments` | *object* | N/A | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md). |
-| `recurringPayments` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md). |
 | `privateLabel` | *object* | N/A | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
+-->
 
+^
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `additionalDataCommon`:
 
 ```json
 {
@@ -108,7 +110,11 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
+---
+
 #### Bill Payment Indicator
+
+The below table identifies the valid values of the `billPaymentIndicator`.
 
 | Value | Description |
 | ----- | ----- |
@@ -128,45 +134,54 @@ type: tab
 title: additionalData
 -->
 
-| Variable | Type | Length | Description/Values |
+
+
+| Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
+| `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
+| `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
+
+<!---
 | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
 | `billPayment` | *boolean* | N/A | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
-| `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
-| `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
 | `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. |
-| `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
-| `emvParameterDownloadIndicator` | *string* |N/A | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
+| `emvParameterDownloadIndicator` | *boolean* |  N/A  | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
+-->
+
+^
 
 <!--
 type: tab
 title: JSON Example
 -->
 
+JSON string format for `additionalData`:
+
 ```json
 {
    "additionalData":{
-      "baiFlag": "PERSON_TO_PERSON",
+      "baiFlag": "PERSON_TO_PERSON", // Future Release
       "networkTransactionReference": "123456788",
-      "billPayment": false,
+      "billPayment": false, // Future Release
       "ecomURL": "https://www.somedomain.com",
-      "goodsSoldCode": "GIFT_CARD",
-      "terminalLaneNumber": "001",
+      "goodsSoldCode": "GIFT_CARD", // Future Release
+      "terminalLaneNumber": "001", // Future Release
       "requestedTestErrorResponseCode": "NO_CONNECTION_AVAILABLE",
-      "emvParameterDownloadIndicator": true
+      "emvParameterDownloadIndicator": true // Future Release
    }
 }
 ```
 
 <!-- type: tab-end -->
 
-#### Business Application Identifier
+---
 
-The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision.
+<!--- #### Business Application Identifier
+The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
 
 | Value | Description |
 | ----- | ----- |
-| `PERSON_TO_PERSON` | Person to person initiated. |
+| *PERSON_TO_PERSON* | Person to person initiated. |
 | *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
 | *BUSINESS_TO_BUSINESS* | Business to business initiated. |
 | *DIGITAL_WALLET* | Digital Wallet transfer. |
@@ -177,6 +192,7 @@ The BAI determines the data carried in the message, the limits and economics tha
 | *DISBURSEMENT* | Funds disbursement or payout. |
 | *GAMBLING_PAYOUT* | Gambling payout non-online. |
 | *GAMBLING_PAYOUT_ONLINE* | Online gambling payout. |
+-->
 
 ---
 
