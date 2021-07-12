@@ -1,3 +1,12 @@
 # Secure-Data-Capture
 
-The beginning of an awesome article...
+
+general introduction
+SAQ - add in glossary
+
+SAQ-A
+Capturing data usig hpp
+  - features and 
+
+SAQ-AEP
+  - js, restful
