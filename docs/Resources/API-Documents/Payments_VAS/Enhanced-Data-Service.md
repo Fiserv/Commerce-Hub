@@ -34,7 +34,6 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `merchantOrderId` | *string* | 128 | &#10004; | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `deviceFingerPrint` | *array* | N/A | &#10004; | An array containing the device fingerprint details |
 
 <!--
