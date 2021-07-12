@@ -285,7 +285,7 @@ The below table identifies the required parameters in the `paymentToken` object.
 | `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 | `card` | *object* | | &#10004; |Contains card specific information. |
 | `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
-| `expirationYear` | *string* | 2 | &#10004; |Card expiration year. |
+| `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
 
 <!-- type: tab-end -->
 

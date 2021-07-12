@@ -20,11 +20,11 @@ title: billingAddress
 
 The below table identifies the required parameters in the `billingAddress` object.
 
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `firstName` | *string* |  | Customer first name |
-| `lastName` | *string* |  | Customer last name |
-| `address` | *object* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+| Variable | Type | Length | Description/Values |
+| -------- | :--: | :------------: | ------------------ |
+| `firstName` | *string* | N/A | Customer first name. |
+| `lastName` | *string* | N/A | Customer last name. |
+| `address` | *array* | N/A | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
 
 <!--
 type: tab

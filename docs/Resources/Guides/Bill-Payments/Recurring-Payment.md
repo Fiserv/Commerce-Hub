@@ -13,3 +13,11 @@ Reccuring transaction information is submitted in the `recurring` object as part
 | -------- | -- | ------------ | ------------------ |
 | `frequency` | *string* | | Number of days between transactions |
 | `expiry` | *string* | | When does the recurring transaction expire in YYYY-MM-DD format |
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---

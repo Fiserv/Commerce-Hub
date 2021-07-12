@@ -21,7 +21,7 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `card` | *object* | |  &#10004; | Contains the payment card details |
+| `card` | *object* | N/A |  &#10004; | Contains the payment card details |
 
 <!--
 type: tab

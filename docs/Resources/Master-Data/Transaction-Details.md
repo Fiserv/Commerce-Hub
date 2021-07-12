@@ -16,10 +16,10 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `approvalCode` | *string* |  | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
+| `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `captureFlag` | *boolean* |  | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
-| `transactionCaptureType` | *string* |  |  |
+| `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
+| `transactionCaptureType` | *string* | N/A |  |
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
 | `processingCode` | *string* | 6 | A [required code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
@@ -31,16 +31,16 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `cardVerificationAmount` | *number* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
 | `partiallyApprovedTransactionAmount` | *number* |  |  The partially approved transaction amount from the original request. |
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
-| `authorizationTypeIndicator` | *string* |  | Identifies the [authorization type](#authorization-type-indicator) of subsequent transactions |
-| `duplicateTransactionCheckingIndicator` | *boolean* |  | Determines if duplicate transactions should be checked |
-| `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type) |
-| `vaultFundingSource` | *boolean* |  | Identifies if the customer information was from the Vault |
-| `deviceFingerprint` | *array* |  | An array containing the [device fingerprint](#device-fingerprint) details|
-| `splitShipment` | *string* |  | Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth |
-| `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void) |
-| `physicalGoodsIndicator` | *boolean* |  | Identifies if physical goods were sold |
-| `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested |
-| `createToken` | *boolean* | | Used to create a token on a charge transaction. |
+| `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization type](#authorization-type-indicator) of subsequent transactions. |
+| `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
+| `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
+| `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
+| `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](#device-fingerprint) details.|
+| `splitShipment` | *string* |N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
+| `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void).|
+| `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
+| `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested.|
+| `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
 
 <!--
 type: tab
@@ -140,7 +140,7 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 | ----- | ----- |
 | *VOID* | Cancel/Void |
 | *TIMEOUT* | Transaction timeout |
-| *EDIT_ERROR* |
+| *EDIT_ERROR* | 
 | *MAC_VERIFICATION_ERROR* | Mac Verification error |
 | *MAC_SYNCH_ERROR* | Mac sync error |
 | *ENCRYPTION_ERROR* | Encryption error |
@@ -170,10 +170,10 @@ The below table identifies the parameters in the `deviceFingerprintData` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-|`provider` | *string* |  | Device provider e.g. InAuth |
-|`dataCapture`| *object* |  | [Data capture](#data-capture) details | 
-|`dataStatic`| *object* |  | [Data static](#data-static) details|
-|`dataDynamic`| *object* |  | [Data dynamic](#data-dynamic) details |
+|`provider` | *string* | N/A | Device provider e.g. InAuth. |
+|`dataCapture`| *object* | N/A | [Data capture](#data-capture) details. | 
+|`dataStatic`| *object* | N/A | [Data static](#data-static) details.|
+|`dataDynamic`| *object* | N/A | [Data dynamic](#data-dynamic) details. |
 
 <!--
 type: tab

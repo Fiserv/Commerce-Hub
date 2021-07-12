@@ -24,8 +24,8 @@ The below table identifies the parameters in the `billingAddress` object.
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
-| `address` | *object* |  | Billing [address](#address) details. |
-| `phone` | *object* |  | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `address` | *object* | N/A  | Billing [address](#address) details. |
+| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
 <!--
 type: tab
@@ -80,8 +80,8 @@ The below table identifies the parameters in the `shippingAddress` object.
 | `lastName` | *string* | 256 | Shipping contact last name |
 | `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method) |
 | `shipToEmail` | *string* | 13 | Email on a digital delivery transaction |
-| `address` | *object* |  | Shipping [address](#address) details |
-| `phone` | *object* |  | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details |
+| `address` | *object* | N/A | Shipping [address](#address) details |
+| `phone` | *object* | N/A | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details |
 
 <!--
 type: tab
@@ -152,7 +152,7 @@ The below table identifies the parameters in the `address` object.
 | `stateOrProvince` | *string* | 256 | State or province name |
 | `postalCode` | *string* | 10 | Postal code |
 | `country` | *string* | 256 | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
-| `addressHistory` | *string* | | | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
+| `addressHistory` | *string* | 18 | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
 
 <!--
 type: tab

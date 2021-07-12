@@ -12,3 +12,11 @@ Installment transaction information is submitted in the `installments` object as
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `installmentCount` | *integer* | 3 | Number of installment payments in the plan |
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---

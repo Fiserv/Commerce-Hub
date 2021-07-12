@@ -34,9 +34,9 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 |Variable | Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `captureFlag` | *boolean* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth) |
-| `primaryTransactionId` | *string* |  | The `transactionId` from the original transaction passed for a reauthorization |
-| `authorizationTypeIndicator` | *string* |  | Identifies the authorization type of subsequent transactions. **Value:** REAUTH|
+| `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `primaryTransactionId` | *string* | N/A | The `transactionId` from the original transaction passed for a reauthorization.|
+| `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
  
 <!--
 type: tab
