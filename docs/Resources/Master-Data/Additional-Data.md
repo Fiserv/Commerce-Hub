@@ -140,7 +140,6 @@ title: additionalData
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
-| `goodsSoldCode` | *string* | 16 | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales in a card present environment. |
 | `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
 
 <!---

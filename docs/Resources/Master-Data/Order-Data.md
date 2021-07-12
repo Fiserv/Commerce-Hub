@@ -21,12 +21,9 @@ The below table identifies the parameters in the `orderData` object.
 | `preOrder` | *boolean* | N/A | Identifies if the purchase is a preorder |
 | `preOrderDate` | *string* | 10 | Date that goods and services are preordered. YYYY-MM-DD format. |
 | `reOrder` | *boolean* | N/A | Identifies if the purchase is a reorder |
-| `giftCardPurchase` | *boolean* | N/A| Identifies if the order contains a gift card purchase |
+| `goodsSoldCode` | *boolean* | N/A| Indicates a specific type of goods. It is used to help identify potentially fraudulent sales |
 | `giftcardCount`  | *integer* | 2 | Number of gift cards redeemed during the transaction |
 | `giftCardAmount` | *object* | N/A | Used for the [total and currency](?path=docs/Resources/Master-Data/Amount-Components.md) |
-| `total` | *number* | 18,3 | Total amount of the gift card |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
 
 <!--
 type: tab
@@ -50,7 +47,7 @@ JSON string format for `orderData`:
       "preOrder": true,
       "preOrderDate": "2020-11-20",
       "reOrder": true,
-      "giftCardPurchase": true,
+      "goodsSoldCode": "GIFT_CARD",
       "giftcardCount": 1,
       "giftCardAmount": {
          "total": 1,
