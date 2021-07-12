@@ -22,14 +22,14 @@ The below table identifies the required parameters in the `subMerchant` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`id` | *string* |  | This field contains a sub-merchant ID used by Payment Facilitators. |
-|`name` | *string* |  | This field contains the merchant name/product/service to be used in lieu of the Payment Facilitator name. |
-|`street` | *string* |  | This field contains the merchant street address to be used in lieu of the Payment Facilitator. |
-|`city` | *string* |  | This field contains the merchant city to be used in lieu of the Payment Facilitator. |
-|`state` | *string* |  | This field contains the merchant state to be used in lieu of the Payment Facilitator. |
-|`postal` | *string* |  | This field contains the merchant postal code to be used in lieu of the Payment Facilitator. |
-|`country` | *string* |  | This field contains the merchant country to be used in lieu of the Payment Facilitator. |
-|`taxid` | *string* |  | This field should contain the Tax ID collected by the merchant for this transaction. |
+|`id` | *string* | N/A | This field contains a sub-merchant ID used by Payment Facilitators. |
+|`name` | *string* | N/A | This field contains the merchant name/product/service to be used in lieu of the Payment Facilitator name. |
+|`street` | *string* | N/A | This field contains the merchant street address to be used in lieu of the Payment Facilitator. |
+|`city` | *string* | N/A | This field contains the merchant city to be used in lieu of the Payment Facilitator. |
+|`state` | *string* | N/A | This field contains the merchant state to be used in lieu of the Payment Facilitator. |
+|`postal` | *string* | N/A | This field contains the merchant postal code to be used in lieu of the Payment Facilitator. |
+|`country` | *string* | N/A | This field contains the merchant country to be used in lieu of the Payment Facilitator. |
+|`taxid` | *string* | N/A | This field should contain the Tax ID collected by the merchant for this transaction. |
 
 <!--
 type: tab

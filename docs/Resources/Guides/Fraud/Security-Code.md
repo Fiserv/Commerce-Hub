@@ -22,8 +22,8 @@ The below table identifies the required parameters in the `card` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`securityCode` | *string* | 3| The card security code |
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE |
+|`securityCode` | *string* | 3 | The card security code.|
+|`securityCodeIndicator` | *string* | N/A | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE.|
 
 <!--
 type: tab

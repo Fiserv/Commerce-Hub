@@ -143,7 +143,7 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/credit)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---

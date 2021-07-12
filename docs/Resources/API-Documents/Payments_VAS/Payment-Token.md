@@ -65,13 +65,12 @@ title: Request
 {
   "source": {
     "sourceType": "PaymentCard",
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    }
   },
-  "transactionDetails": {
-    "createToken": true
-  }
 }
 ```
 
@@ -176,7 +175,6 @@ title: Request
          "cardData": "4005550000000019",
          "expirationMonth": "02",
          "expirationYear": "2035",
-         "securityCode": "123"
       }
    },
    "transactionDetails":{
@@ -287,7 +285,7 @@ The below table identifies the required parameters in the `paymentToken` object.
 | `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 | `card` | *object* | | &#10004; |Contains card specific information. |
 | `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
-| `expirationYear` | *string* | 2 | &#10004; |Card expiration year. |
+| `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
 
 <!-- type: tab-end -->
 
@@ -393,7 +391,9 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

@@ -1,6 +1,4 @@
-<link href="test.css" rel="stylesheet"></link> 
-
-# Apple Pay Updated
+# Apple Pay with Diagram
 
 ## Overview
 

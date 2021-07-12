@@ -122,8 +122,8 @@ title: Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/inquiry)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---
