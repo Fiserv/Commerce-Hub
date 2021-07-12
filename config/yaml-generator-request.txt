@@ -3,7 +3,7 @@
       "topLevelType":"TopLevelCustom",
       "info":{
          "title":"API Explorer",
-         "description":"This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing in Card Not Present environments.",
+         "description":"This API Specification is designed to provide technical guidance required to consume and integrate with Commerce Hub APIs.",
          "version":"1.0.0"
       },
       "servers":[
