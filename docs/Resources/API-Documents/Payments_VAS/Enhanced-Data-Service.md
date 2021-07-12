@@ -6,6 +6,8 @@ tags: [carat, commerce-hub, enterprise, eds, enhanced-data-service, fraud, secur
 
 Enhanced Data Service (EDS) enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuers leverage the data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
 
+---
+
 ## Mimimum Requirements
 
 <!-- theme: info -->
@@ -134,6 +136,8 @@ title: Optional Data
 - [additionalPosInformation](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 
 <!-- type: tab-end -->
+
+---
 
 ## EDS using PaymentCard
 
@@ -279,6 +283,8 @@ title: Response
 }
 ```
 <!-- type: tab-end -->
+
+---
 
 ## EDS using PaymentToken
 
