@@ -111,7 +111,7 @@ title: Error Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
-- [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
+- [Gateway Error Code](?path=docs/Resources/Guides/Response-Codes/Error.md)
 
 ---
