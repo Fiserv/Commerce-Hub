@@ -109,6 +109,8 @@ type: tab
 title: 5xx
 -->
 
+Codes starting with 5xx identifies a [vertical](?path=docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md) specific error. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
+
 | Code| Message |
 | ---- | ----- |
 | 502 | Missing or Invalid Auth Data for Financial Institutions |
@@ -155,7 +157,7 @@ type: tab
 title: 7xx
 -->
 
-Codes starting with 7xx identifies an error related to gateway communication. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
+Codes starting with 7xx identifies an error related to gateway communication. Check the error message and take appropriate action. Contact your account respresentative for further assistance.
 
 | Code| Message |
 | ---- | ----- |
@@ -180,7 +182,7 @@ type: tab
 title: 8xx
 -->
 
-Codes starting with 8xx identifies an error related to gateway communication. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
+Codes starting with 8xx identifies an error related to the transaction information. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
 | Code| Message |
 | ---- | ----- |
@@ -216,6 +218,17 @@ Codes starting with 8xx identifies an error related to gateway communication. Ch
 | 866 | Only 3D Secure as Non Recurring Transaction Allowed |
 | 877 | Transaction Expired |
 
+<!--
+type: tab
+title: 9xx
+-->
+
+Codes starting with 8xx identifies a general gateway error. Check the error message and take appropriate action. Contact your account respresentative for further assistance.
+
+| Code| Message |
+| ---- | ----- |
+| 999 | Unable to Process Transaction. Please Contact Support Team. |
+
 
 <!-- type: tab-end -->
 
@@ -226,5 +239,6 @@ Codes starting with 8xx identifies an error related to gateway communication. Ch
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
+- [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
 
 ---
