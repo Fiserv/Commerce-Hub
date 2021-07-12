@@ -301,7 +301,7 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentToken* is used for a Enhanced Data Request request using a token. |
-|`tokenData` | *string* | 2048 | &#10004; | Card data object |
+|`tokenData` | *string* | 2048 | &#10004; | Token created from the payment source. |
 
 <!-- type: tab-end -->
 
