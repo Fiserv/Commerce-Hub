@@ -10,9 +10,9 @@ Commerce Hub receives host response codes from the processing network or bank. C
 
 ## Nashville Response Codes
 
-<!-- https://docs.firstdata.com/org/gateway/node/473 -->
+The below table identifies the valid values of `hostResponseCode` along with `hostResponseMessage`.
 
-| Code| Message |
+| Response Code| Message |
 | ---- | ------------ |
 | 00 | Transaction has been approved |
 | 01 | Refer to issuer |  
