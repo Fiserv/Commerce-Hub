@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted
 
 # Apple Pay
 
-## Overview
-
 Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
 
 <!-- theme: info -->

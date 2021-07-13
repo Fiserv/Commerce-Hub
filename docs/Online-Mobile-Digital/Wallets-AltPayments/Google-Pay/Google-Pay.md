@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted
 
 # Google Pay
 
-## Overview
-
 Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. 
 
 <!--

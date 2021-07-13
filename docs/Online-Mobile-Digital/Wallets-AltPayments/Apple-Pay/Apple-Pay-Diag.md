@@ -1,7 +1,5 @@
 # Apple Pay with Diagram
 
-## Overview
-
 Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
 
 <!-- theme: info -->
