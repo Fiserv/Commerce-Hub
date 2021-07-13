@@ -10,8 +10,7 @@ Enhanced Data Service (EDS) enables sharing of relevant data between merchants a
 
 ## Mimimum Requirements
 
-<!-- theme: info -->
-> The below parameters are the minimum required to submit an EDS request; however it is recommended to submit as much optional data as possible to provide better fraud protection.
+The following parameters are the minimums required to submit an EDS request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the following: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
 
 <!--
 type: tab
@@ -56,7 +55,7 @@ The below table identifies the required `dataDynamic` parameters in the `deviceF
 | `ipAddress` | *string* | 39 | &#10004; | Device IP Address |
 
 <!-- theme: info -->
-> Refer to the [device finger print](?path=docs/Resources/Master-Data/Transaction-Details.md#device-fingerprint-data) object for additional fields.
+> Refer to the [device finger print](?path=docs/Resources/Master-Data/Device-Fingerprint.md) object for additional fields.
 
 <!--
 type: tab
@@ -126,7 +125,10 @@ type: tab
 title: Optional Data
 -->
 
-##### Refer to the respective article below for optional request parameters.
+##### Refer to the respective article below for additional request parameters.
+
+<!-- theme: warning -->
+> It is recommended to submit as much optional data as possible to provide better authorization rate and fraud protection.
 
 - [billingAddress](?path=docs/Resources/Master-Data/Address.md#billing-address)
 - [fraudAttributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
