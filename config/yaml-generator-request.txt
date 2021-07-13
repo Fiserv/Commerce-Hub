@@ -3,7 +3,7 @@
       "topLevelType":"TopLevelCustom",
       "info":{
          "title":"API Explorer",
-         "description":"This API Specification is designed to provide technical guidance required to consume and integrate with Commerce Hub APIs.",
+         "description":"This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing in Card Not Present environments.",
          "version":"1.0.0"
       },
       "servers":[
@@ -31,11 +31,10 @@
             "payments-vas-accounts-verification.yaml",
             "payments-vas-security-credentials.yaml",
             "payments-vas-tokenize.yaml",
-            "payments-vas-accounts-information.yaml",
-            "payments-vas-enhanced-data-service.yaml"
+            "payments-vas-accounts-information.yaml"
       ]
    },
-   "yamlVersion": "v1",
+   "yamlVersion":"v1",
    "featureSet":{
       "yamlType":"ExternalYaml"
    }

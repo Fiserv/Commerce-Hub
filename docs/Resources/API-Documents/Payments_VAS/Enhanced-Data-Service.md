@@ -34,7 +34,6 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `merchantOrderId` | *string* | 128 | &#10004; | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
 | `deviceFingerPrint` | *array* | N/A | &#10004; | An array containing the device fingerprint details |
 
 <!--
@@ -171,6 +170,14 @@ The below table identifies the required parameters in the `card` object.
 
 <!-- type: tab-end -->
 
+---
+
+### Endpoint
+<!-- theme: success -->
+>**POST** `payments-vas/v1/enhanceddata`
+
+---
+
 ### Payload Example
 
 <!--
@@ -257,6 +264,8 @@ title: Request
 
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/enhanceddata)
+
 <!--
 type: tab
 title: Response
@@ -302,9 +311,17 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentToken* is used for a Enhanced Data Request request using a token. |
-|`tokenData` | *string* | 2048 | &#10004; | Card data object |
+|`tokenData` | *string* | 2048 | &#10004; | Token created from the payment source. |
 
 <!-- type: tab-end -->
+
+---
+
+### Endpoint
+<!-- theme: success -->
+>**POST** `payments-vas/v1/enhanceddata`
+
+---
 
 ### Payload Example
 
@@ -389,6 +406,8 @@ title: Request
 
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/enhanceddata)
+
 <!--
 type: tab
 title: Response
@@ -420,8 +439,9 @@ title: Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/enhanceddata)
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Fraud Attributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
+
 ---
