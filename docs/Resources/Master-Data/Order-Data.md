@@ -21,8 +21,8 @@ The below table identifies the parameters in the `orderData` object.
 | `preOrder` | *boolean* | N/A | Identifies if the purchase is a preorder |
 | `preOrderDate` | *string* | 10 | Date that goods and services are preordered. YYYY-MM-DD format. |
 | `reOrder` | *boolean* | N/A | Identifies if the purchase is a reorder |
-| `goodsSoldCode` | *boolean* | N/A| Indicates a specific type of goods. It is used to help identify potentially fraudulent sales |
-| `giftcardCount`  | *integer* | 2 | Number of gift cards redeemed during the transaction |
+| `goodsSoldCode` | *string* | N/A | Indicates a specific type of goods. It is used to help identify potentially fraudulent sales e.g. GIFT_CARD |
+| `giftcardCount`  | *integer* | 2 | Number of gift cards purchased during the transaction |
 | `giftCardAmount` | *object* | N/A | Used for the [total and currency](?path=docs/Resources/Master-Data/Amount-Components.md) |
 
 <!--
