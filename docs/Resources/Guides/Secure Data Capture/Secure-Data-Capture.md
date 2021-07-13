@@ -1,10 +1,10 @@
 # Secure Data Capture
 
-The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. Commerce Hub offers online integration methods that need SAQ A and SAQ A-EP complaince requirements.
+The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. Commerce Hub offers online integration methods to [card not present](?path=docs/Resources/FAQs-Glossary/Glossary.md#card-not-present) merchants that need SAQ A and SAQ A-EP complaince requirements.
 
-- **SAQ A:-** applies to [card not present](?path=docs/Resources/FAQs-Glossary/Glossary.md#card-not-present) merchants, that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any cardholder data on their systems.
+- **SAQ A:-** applies to the merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any cardholder data on their systems.
 
-- **SAQ A-EP:-** applies to card not present merchants who partially outsource payment processing to Commerce Hub. The merchant typically have a website that hosts a checkout process and redirects cardholder to Commerce Hub at a point of payment. Merchant website presents the payment page but processing of the cardholder data is handled by Commerce Hub.
+- **SAQ A-EP:-** applies to the merchants who partially outsource payment processing to Commerce Hub. The merchant typically have a website that hosts a checkout process and redirects cardholder to Commerce Hub at a point of payment. Merchant website presents the payment page but processing of the cardholder data is handled by Commerce Hub.
 
 <!--
 line 3 in glossary
