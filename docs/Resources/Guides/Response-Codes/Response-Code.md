@@ -4,22 +4,7 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-codes, c
 
 # Gateway Response Codes
 
-The gateway response code indicates the status of a transaction after Commerce Hub receives the transaction. Commerce Hub includes the value in the `responseCode` along with the corresponding text in the `responseMessage` fields of the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
-
-<!-- https://escmconfluence.1dc.com/display/CARAT/CARAT+Response+Codes+to+Nashville+Response+Codes+%28from+Spec+Version+2020-2%29+Mapping - CARAT Mapping
-
-https://support.payeezy.com/hc/en-us/articles/203730509-First-Data-Payeezy-Gateway-Bank-Response-Codes - Payeezy
-
-https://support.payeezy.com/hc/en-us/articles/203730499-eCommerce-Response-Codes-ETG-Payeezy-Gateway-Transaction-Codes- - Payeezy Gateway
-
-https://escmconfluence.1dc.com/display/ACCOR/IPG+response+codes - IPG Responses
-
-
-commerce hub response code can come back in error responsecode or response code
-
-if the txn doesnt get to the processor then it is a errr code (http 4xx) else it is a response code in (2xx).
-
--->
+The gateway response code indicates the status of a transaction after Commerce Hub processes the transaction. Commerce Hub includes the response in `responseCode` along with the corresponding message in `responseMessage` fields of the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
 ---
 
@@ -55,7 +40,7 @@ The below table identifies the valid values of `responseCode` along with `respon
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
+- [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 

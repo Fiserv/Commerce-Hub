@@ -4,7 +4,7 @@ tags: [carat, card-not-present, commerce-hub, error, response, responses-code, c
 
 # Host Response Codes
 
-Commerce Hub receives host response codes from the processing network or bank. Commerce Hub includes the value in the `hostResponseCode` along with the corresponding text in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
+Commerce Hub receives host response codes from the processing network or bank. Commerce Hub includes the response in `hostResponseCode` along with the corresponding message in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
 ---
 

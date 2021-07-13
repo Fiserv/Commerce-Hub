@@ -10,8 +10,27 @@ Commerce Hub responds back to the merchant request with a three-digit HTTP statu
 - **4xx: Client Error** – Indicates that incorrect data in request.
 - **5xx: Server Error** – Indicates that the server was unable to process the request.
 
-<!-- theme: info -->
-> Commerce Hub includes an HTTP error status in the `errorResponse` along with the corresponding text in `type`, `code`, `field` and `message` in the `error` array.
+## Error Response
+
+Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response-Codes/Error.md) as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields.
+
+<!-- 
+type:
+          description: 'The type of response either from the HOST, GATEWAY, NETWORK, or APIM.'
+          type: string
+          example: 'HOST'
+        code: 
+          description: 'Error response code from the host, gateway or network.'
+          type: string
+        field:
+          description: 'The property or attribute associated with the error.'
+          type: string
+          example: 'source.sourceType'
+        message:
+          description: 'Information specific to a property or attribute.'
+          type: string
+          example: 'Missing type ID property.'
+-->
 
 ---
 
