@@ -1,21 +1,10 @@
 # Secure Data Capture
 
-The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. Commerce Hub offers online integration methods to [card not present](?path=docs/Resources/FAQs-Glossary/Glossary.md#card-not-present) merchants that need SAQ A and SAQ A-EP complaince requirements.
+The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self-validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. Commerce Hub offers online integration methods to [card not present](?path=docs/Resources/FAQs-Glossary/Glossary.md#card-not-present) merchants that need SAQ A and SAQ A-EP compliance requirements.
 
 - **SAQ A:-** applies to the merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any cardholder data on their systems.
 
-- **SAQ A-EP:-** applies to the merchants who partially outsource payment processing to Commerce Hub. The merchant typically have a website that hosts a checkout process and redirects cardholder to Commerce Hub at a point of payment. Merchant website presents the payment page but processing of the cardholder data is handled by Commerce Hub.
-
-<!--
-line 3 in glossary
-The overview should be - how CH offers online integration methods that need SAQA and SAQA-EP complaince requirements.
-- SAQ-A, where CH hosts the checkout process
-- SAQ A-EP - an integration where the merchant hosts the checkout process
-
-## Integrations 
-- SAQ A - HPP, 
-- SAQ A-EP - JS, and RESTful API, **HPP bypass**
--->
+- **SAQ A-EP:-** applies to the merchants who partially outsource payment processing to Commerce Hub. The merchant typically have a website that hosts a checkout process and redirects cardholder to Commerce Hub at a point of payment. Merchant website presents the payment page but Commerce Hub processes the cardholder data.
 
 ## SAQ A Integrations
 
@@ -53,7 +42,7 @@ Allows the merchants to build their own UI and manage customer transactions with
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Payment.js makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The form fields can be customized by the merchant.
+Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The merchant can customize the form fields.
 
 **Begin integration with Commerce Hub's [Payment.js](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
 
