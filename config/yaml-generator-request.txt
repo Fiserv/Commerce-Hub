@@ -35,9 +35,7 @@
             "payments-vas-enhanced-data-service.yaml"
       ]
    },
-   "yamlVersion":",
-            "payments-vas-enhanced-data-service.yaml",
-            "emv-parameter-downloads.yaml"v1",
+   "yamlVersion": "v1",
    "featureSet":{
       "yamlType":"ExternalYaml"
    }
