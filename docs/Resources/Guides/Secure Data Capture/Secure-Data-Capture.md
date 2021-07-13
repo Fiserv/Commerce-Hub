@@ -1,6 +1,10 @@
 # Secure Data Capture
 
-The PCI DSS Self-Assessment Questionnaires (SAQs) are self validation tools intended to assist merchants and service providers in evaluating their compliance with the PCI DSS, ideal for small merchants and service providers that are not required to submit a report on compliance, an SAQ is designed as a self-validation tool to assess security for cardholder data.
+The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. Commerce Hub offers online integration methods that need SAQ A and SAQ A-EP complaince requirements.
+
+- **SAQ A:-** applies to [card not present](?path=docs/Resources/FAQs-Glossary/Glossary.md#card-not-present) merchants, that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any cardholder data on their systems.
+
+- **SAQ A-EP:-** applies to card not present merchants who partially outsource payment processing to Commerce Hub. The merchant typically have a website that hosts a checkout process and redirects cardholder to Commerce Hub at a point of payment. Merchant website presents the payment page but processing of the cardholder data is handled by Commerce Hub.
 
 <!--
 line 3 in glossary
@@ -13,15 +17,52 @@ The overview should be - how CH offers online integration methods that need SAQA
 - SAQ A-EP - JS, and RESTful API, **HPP bypass**
 -->
 
+## SAQ A Integrations
 
-## SAQ-A
+### Hosted Payment Page
 
-SAQ-A applies to Card-not-present merchants (e-commerce ), that have fully outsourced all cardholder data functions to PCI DSS compliant third-party service providers, with no electronic storage, processing, or transmission of any cardholder data on the merchant’s systems or premise and is not applicable to face-to-face channels. 
+Allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction. The Commerce Hub Hosted Payment Page manages the customer interactions that are required in the checkout process based on payment method, or authentication mechanisms (3-D Secure).
 
-- All payment acceptance and processing are entirely outsourced to PCI-DSS validated third party service providers OR
-- Redirect the request to hosted payment page provided by validated PCI-DSS complaint service provider.
+Using Commerce Hub's secure hosted pages can reduce the burden of compliance with the Data Security Standard of the Payment Card Industry (PCI DSS).
 
-## SAQ-A-EP
+<!-- theme: info -->
+>A merchant can lessen the PCI DSS load by using Hosted Payment Pages, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
 
-SAQ A-EP is designed to apply to e-commerce merchants who partially outsource payment processing to PCI DSS compliant service providers. The merchant will typically have a website that redirects consumer users to a payment processor at point of payment, but the web server itself doesn’t electronically store, process, or transmit card data. Merchant website present the payment page but processing of the cardholder data is handled by a validated PCI-DSS complaint service provider, such as a website configured for a direct post to force submission of a cardholder data direct from the browser to the payment processor. 
+**Begin integration with Commerce Hub's [Hosted Payment Pages](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md).**
 
+### Payment URL
+
+Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub hosted payment page to complete the payment.
+
+**Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md).**
+
+---
+
+## SAQ A-EP Integrations
+
+### RESTful APIs
+
+Allows the merchants to build their own UI and manage customer transactions within their own website, software, or terminal using Commerce Hub's RESTful APIs.
+
+<!-- theme: warning -->
+> The merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+
+**Begin integration with Commerce Hub's [RESTful APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md).**
+
+### Payment.js
+
+Allows a merchant an easy and secure way to embed a payment form into a website. Payment.js makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+
+Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The form fields can be customized by the merchant.
+
+**Begin integration with Commerce Hub's [Payment.js](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
+
+---
+
+## See Also
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Hosted Payment Page Integration](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md)
+- [Payment URL Integration](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
+
+---
