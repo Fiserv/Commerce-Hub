@@ -536,7 +536,7 @@ A sale is a customer transaction where the purchase amount is authorized and set
 The subsequent transactions between a customer and a merchant. Commerce Hub supports [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), and [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md) transactions.
 
 ## Self Assessment Questionnaire
-The PCI DSS Self-Assessment Questionnaires (SAQs) are self validation tools intended to assist merchants and service providers in evaluating their compliance with the PCI DSS, ideal for small merchants and service providers that are not required to submit a report on compliance, an SAQ is designed as a self-validation tool to assess security for cardholder data. For more information visit [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
+The PCI DSS Self-Assessment Questionnaires (SAQs) are self validation tools intended to assist merchants and service providers in evaluating their compliance with the PCI DSS, ideal for merchants and service providers that are not required to submit a report on compliance, an SAQ is designed as a self-validation tool to assess security for cardholder data. For more information visit [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
 ## Settlement
 The process by which a merchant will receive or return funds for a transaction.
