@@ -14,23 +14,39 @@ Commerce Hub responds back to the merchant request with a three-digit HTTP statu
 
 Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response-Codes/Error.md) as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields.
 
-<!-- 
-type:
-          description: 'The type of response either from the HOST, GATEWAY, NETWORK, or APIM.'
-          type: string
-          example: 'HOST'
-        code: 
-          description: 'Error response code from the host, gateway or network.'
-          type: string
-        field:
-          description: 'The property or attribute associated with the error.'
-          type: string
-          example: 'source.sourceType'
-        message:
-          description: 'Information specific to a property or attribute.'
-          type: string
-          example: 'Missing type ID property.'
+<!--
+type: tab
+title: error
 -->
+
+The below table identifies the required parameters in the `error` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `type` | *string* | 256 | The type of response either from the HOST, GATEWAY, NETWORK, or APIM |
+| `code` | *string* | 256 | Error response code from the host, gateway or network |
+| `field` | *string* | 256 | The property or attribute associated with the error |
+| `message` | *string* | 256 | Information specific to a property or attribute |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `error`:
+
+```json
+{
+   "error":{
+      "type":"GATEWAY",
+      "code":"XXX",
+      "field":"sourceType",
+      "message":"Missing type ID property."
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
