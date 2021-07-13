@@ -90,7 +90,7 @@ type: tab
 title: JSON Example 
 -->
 
-JSON string format for `orderData`:
+JSON string format for `itemDetails`:
 
 ```json
 {
