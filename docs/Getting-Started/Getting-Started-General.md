@@ -35,6 +35,7 @@ In-person or Card Present (CP) transactions are initiated when a customer physic
 - [Fraud Prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
 
 ---
 

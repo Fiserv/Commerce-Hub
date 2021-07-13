@@ -2,9 +2,12 @@
 tags: [carat, commerce-hub, enterprise, integration-methods, hosted-payment-page, web, online, google-pay, wallet]
 ---
 
-# Google-Pay-Web-HPP
+# Google Pay Web: Hosted Payment Page
 
-We are enhancing Commerce Hub to include Google Pay support with Hosted Payment Page and the documents related to the features will be released soon.
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Google Pay support with Hosted Payment Page and the documents related to the features will be released soon.
+
+
 
 ---
 

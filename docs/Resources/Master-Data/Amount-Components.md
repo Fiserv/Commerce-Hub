@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount, ]
+tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
 ---
 
 
@@ -19,7 +19,7 @@ type: tab
 title: amount
 -->
 
-The below table identifies the required parameters in the `amount` object.
+The below table identifies the parameters in the `amount` object.
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
@@ -53,7 +53,7 @@ type: tab
 title: amountComponents
 -->
 
-The below table identifies the required parameters in the `amountComponents` object.
+The below table identifies the parameters in the `amountComponents` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
@@ -92,7 +92,7 @@ JSON string format for `amountComponents`:
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
 
 ---

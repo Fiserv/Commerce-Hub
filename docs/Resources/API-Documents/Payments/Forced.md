@@ -164,6 +164,7 @@ title: Response
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/forcedpost)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 

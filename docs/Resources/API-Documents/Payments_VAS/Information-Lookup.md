@@ -1,16 +1,17 @@
 ---
-tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card-lookup,]
+tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card-lookup, token-lookup]
 ---
 
 # Information Lookup
 
-If the merchant wants to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token, then the merchant can initiate the account information lookup request.
+Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. The `cardDetails` are returned in the response.
 
----
+<!--
+type: tab
+title: cardDetails
+-->
 
-####  Response Component: cardDetails
-
-The `cardDetails` are returned in the account information lookup response. The below table identifies the required parameters in the `cardDetails` object.
+The below table identifies the parameters in the `cardDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -21,11 +22,7 @@ The `cardDetails` are returned in the account information lookup response. The b
 | `issuerCountry` | *string* | 256 | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md) |
 | `issuerName` | *string* | 256 | Issuing bank name |
 
-## Endpoint
-<!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information`
-
----
+<!-- type: tab-end -->
 
 ## Information Lookup using PaymentCard
 
@@ -42,7 +39,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
+|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer to [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) for more details. |
 
 <!--
 type: tab
@@ -56,6 +53,14 @@ The below table identifies the required parameters in the `card` object.
 | `cardData` | *string* | 19 | Card number or encrypted data |
 
 <!-- type: tab-end -->
+
+---
+
+## Endpoint
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/information`
+
+---
 
 
 ### Payload Example
@@ -126,8 +131,16 @@ The merchant can initiate information lookup transaction by passing the card det
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
-|`tokenData`| *string* | 19 | Token created for Card. | 
+|`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer to [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for more details. |
+|`tokenData`| *string* | 19 | Token created for Card. |
+
+---
+
+## Endpoint
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/information`
+
+---
 
 ### Payload Example
 <!--
@@ -183,7 +196,10 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---

@@ -11,7 +11,7 @@ type: tab
 title: networkDetails
 -->
 
-The below table identifies the required parameters in the `networkDetails` object.
+The below table identifies the parameters in the `networkDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -76,7 +76,7 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)

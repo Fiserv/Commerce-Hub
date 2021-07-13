@@ -16,14 +16,14 @@ type: tab
 title: gatewayResponse
 -->
 
-The below table identifies the required parameters in the `gatewayResponse` object.
+The below table identifies the parameters in the `gatewayResponse` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
-| `transactionType` | *string* | 256 | Type of transaction submitted |
-| `transactionState` | *string* | 256 | Final [state](#transaction-state) of the transaction |
-| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origin) |
-| `transactionProcessingDetails` | *object* | | Object containing the [transaction processing details](#transaction-processing-details) |
+| `transactionType` | *string* | 256 | Type of transaction submitted. |
+| `transactionState` | *string* | 256 | Final [state](#transactionstate) of the transaction. |
+| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
+| `transactionProcessingDetails` | *object* | N/A | Object containing the [transaction processing details](#transaction-processing-details). |
 
 <!--
 type: tab
@@ -79,7 +79,7 @@ type: tab
 title: transactionProcessingDetails
 -->
 
-The below table identifies the required parameters in the `transactionProcessingDetails` object.
+The below table identifies the parameters in the `transactionProcessingDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
@@ -115,7 +115,7 @@ JSON string format for `transactionProcessingDetails`:
 ---
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
 - [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)

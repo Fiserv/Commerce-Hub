@@ -10,7 +10,7 @@ Our payments solutions enable you to integrate them into a seamless customer exp
 |Payment Method | Value|
 |-------|-------|
 |Visa | *VISA* |
-|MasterCard | *MASTERCARD* |
+|Mastercard | *MASTERCARD* |
 |American Express | *AMERICAN_EXPRESS* |
 |Discover | *DISCOVER* |
 |Diners | *DINERS* |
