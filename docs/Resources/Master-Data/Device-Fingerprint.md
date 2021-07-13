@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, device, master-data, device-fingerprint,
 
 # Device Fingerprint Data
 
-The device fingerprint is information collected about the software and hardware of a remote computing device for the purpose of identification. A browser fingerprint is information collected specifically by interaction with the web browser of the device.
+The `deviceFingerPrint` is information collected about the software and hardware of a device or browser for the purpose of identification and is included in the `transactionDetails` object.
 
 <!--
 type: tab
@@ -29,37 +29,39 @@ JSON string format for `deviceFingerprint`:
 
 ```json
 {
-   "deviceFingerprint": [
-      {
-         "provider": "InAuth",
-         "dataCapture": {
-            "rawData": "aaaaaXREUVZGRlFY...aMV",
-            "dataEventId": "BB8E4E92...Fz1E063113",
-            "captureTime": "2016-04-16T16:06:05Z"
-         },
-         "dataStatic": {
-            "operatingSystem": "ANDROID",
-            "operatingSystemVersion": "5.1.1 Lollipop",
-            "model": "XYX-1",
-            "type": "Moto G",
-            "deviceId": "00:1B:44:11:3A:B7",
-            "javaScriptEnabled": true,
-            "javaEnabled": true,
-            "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
-            "locale": "en-US"
-         },
-         "dataDynamic": {
-            "latitude": "13.0827 N",
-            "longitude": "80.2707 E",
-            "ipAddress": "172.27.37.221",
-            "captureTime": "2016-04-16T16:06:05Z",
-            "address": {
-               "city": "Atlanta",
-               "country": "US"
+   "transactionDetails": {
+      "deviceFingerprint": [
+         {
+            "provider": "InAuth",
+            "dataCapture": {
+               "rawData": "aaaaaXREUVZGRlFY...aMV",
+               "dataEventId": "BB8E4E92...Fz1E063113",
+               "captureTime": "2016-04-16T16:06:05Z"
+            },
+            "dataStatic": {
+               "operatingSystem": "ANDROID",
+               "operatingSystemVersion": "5.1.1 Lollipop",
+               "model": "XYX-1",
+               "type": "Moto G",
+               "deviceId": "00:1B:44:11:3A:B7",
+               "javaScriptEnabled": true,
+               "javaEnabled": true,
+               "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+               "locale": "en-US"
+            },
+            "dataDynamic": {
+               "latitude": "13.0827 N",
+               "longitude": "80.2707 E",
+               "ipAddress": "172.27.37.221",
+               "captureTime": "2016-04-16T16:06:05Z",
+               "address": {
+                  "city": "Atlanta",
+                  "country": "US"
+               }
             }
          }
-      }
-   ]
+      ]
+   }
 }
 
 ```
