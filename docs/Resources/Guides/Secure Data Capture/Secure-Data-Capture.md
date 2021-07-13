@@ -1,10 +1,14 @@
 # Secure Data Capture
 
-The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self-validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. Commerce Hub offers online integration methods to [card not present](?path=docs/Resources/FAQs-Glossary/Glossary.md#card-not-present) merchants that need SAQ A and SAQ A-EP compliance requirements.
+Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
 
-- **SAQ A:-** applies to the merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any cardholder data on their systems.
+The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self-validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. For more information visit [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
-- **SAQ A-EP:-** applies to the merchants who partially outsource payment processing to Commerce Hub. The merchant typically have a website that hosts a checkout process and redirects cardholder to Commerce Hub at a point of payment. Merchant website presents the payment page but Commerce Hub processes the cardholder data.
+- **SAQ A:** applies to the merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any cardholder data on their systems.
+
+- **SAQ A-EP:** applies to the merchants who partially outsource payment processing to Commerce Hub. The merchant typically has a website that hosts a checkout process and sends the cardholder data to Commerce Hub at a point of payment.
+
+---
 
 ## SAQ A Integrations
 
@@ -53,5 +57,6 @@ Payment.js accomplishes this by injecting an iframe into a parent form where cus
 - [Hosted Payment Page Integration](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md)
 - [Payment URL Integration](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
+- [RESTful API Integration](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---
