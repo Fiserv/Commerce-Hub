@@ -41,12 +41,17 @@ JSON string format for `orderData`:
          {
             "categoryName": "Toys",
             "itemCount": 1,
-            "value": 10.03
+            "value": 49.99
+         },
+         {
+            "categoryName": "Gift Card",
+            "itemCount": 2,
+            "value": 100.00
          }
       ],
       "preOrder": true,
       "preOrderDate": "2020-11-20",
-      "reOrder": true,
+      "reOrder": false,
       "goodsSoldCode": "GIFT_CARD",
       "giftcardCount": 1,
       "giftCardAmount": {
@@ -62,13 +67,49 @@ JSON string format for `orderData`:
 
 ### Item Details
 
+Item details is an array that identifies the category, item count, and value of the customer's purchase, where each group of values is defined by the category.
+
+<!-- theme: example -->
+> If customer purchased a pair of tennis shoes, a tennis racket, and tennis balls, the array will contain groups, see JSON example.
+
+<!--
+type: tab
+title: itemDetails
+-->
+
 The below table identifies the parameters in the `itemDetails` array.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `categoryName` | *string* | 8 | Category of the item sold |
-| `itemCount` | *string* | 2 | Item count |
-| `value` | *string* | 32 | The monetary value of the item sold |
+| `categoryName` | *string* | 8 | Merchant defined category of the item(s) sold |
+| `itemCount` | *string* | 2 | The total item count for the category |
+| `value` | *string* | 32 | The monetary value of the item(s) sold for the category |
+
+<!--
+type: tab
+title: JSON Example 
+-->
+
+JSON string format for `orderData`:
+
+```json
+{
+   "itemDetails": [
+      {
+         "categoryName": "Apparel",
+         "itemCount": 1,
+         "value": 49.99
+      },
+      {
+         "categoryName": "Sporting Goods",
+         "itemCount": 2,
+         "value": 59.98
+      }
+   ]
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
