@@ -170,6 +170,14 @@ The below table identifies the required parameters in the `card` object.
 
 <!-- type: tab-end -->
 
+---
+
+### Endpoint
+<!-- theme: success -->
+>**POST** `payments-vas/v1/enhanceddata`
+
+---
+
 ### Payload Example
 
 <!--
@@ -256,6 +264,8 @@ title: Request
 
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/enhanceddata)
+
 <!--
 type: tab
 title: Response
@@ -304,6 +314,14 @@ The below table identifies the required parameters in the `source` object.
 |`tokenData` | *string* | 2048 | &#10004; | Token created from the payment source. |
 
 <!-- type: tab-end -->
+
+---
+
+### Endpoint
+<!-- theme: success -->
+>**POST** `payments-vas/v1/enhanceddata`
+
+---
 
 ### Payload Example
 
@@ -387,6 +405,8 @@ title: Request
 }
 
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/enhanceddata)
 
 <!--
 type: tab
