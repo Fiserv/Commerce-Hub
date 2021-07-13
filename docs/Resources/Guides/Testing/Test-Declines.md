@@ -6,9 +6,24 @@ tags: [carat, commerce-hub, declines, enterprise, testing]
 # Test Declines
 
 
+
 Decline response codes are issued based on errors received from the processing network or bank. Commerce Hub includes the value in the `hostResponseCode` along with the corresponding text in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
 Submitting the transaction with a specific dollar amount to get a specific decline response.
+
+There are a number of ways to generate unsuccessful transactions from a test account.
+
+### Simulate unapproved Bank Responses
+
+Merchants can use the dollar amounts between 5000.00 - 5999.00 to trigger a variety of Bank Responses, where the desired response code is added to 5000.
+
+### Simulate unsuccessful Ecommerce Responses
+
+You can use the penny amounts to trigger a variety of eCommerce Responses, where the desired response code is added to 5000.00.
+
+For example, to simulate a transaction that encountered the "Unable to Send Trans" error (code 42) during processing, use 5000.42 as the transaction amount.
+
+Note: If both the dollar and penny amounts would trigger a simulated code (for example, 5200.42), the penny amount trigger will take precedence.
 
 
 ---
@@ -43,10 +58,10 @@ Submitting the transaction with a specific dollar amount to get a specific decli
 ## See Also
 
 
-- [API Explorer]
-- [Charge Request]
+- [API Explorer](../api/?type=post&path=/payments/v1/capture)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Test Address and Security Code]
-- [Test Declines]
+- [Test Declines] 
 - [Test Errors]
 
 
