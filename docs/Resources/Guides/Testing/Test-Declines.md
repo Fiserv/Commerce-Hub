@@ -6,9 +6,10 @@ tags: [carat, commerce-hub, declines, enterprise, testing]
 # Test Declines
 
 
+Decline response codes are issued based on errors received from the processing network or bank. Commerce Hub includes the value in the `hostResponseCode` along with the corresponding text in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
+Submitting the transaction with a specific dollar amount to get a specific decline response.
 
-receives host response codes from the processing network or bank. Commerce Hub includes the value in the `hostResponseCode` along with the corresponding text in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
 ---
 
@@ -41,12 +42,16 @@ receives host response codes from the processing network or bank. Commerce Hub i
 
 ## See Also
 
-- [Test]
+
+- [API Explorer]
+- [Charge Request]
+- [Test Address and Security Code]
+- [Test Declines]
+- [Test Errors]
+
 
 ---
 
-Submitting the transaction with a specific dollar amount to get a specific decline response.
 
-To receive a specific error, link to the error response article.
 
 
