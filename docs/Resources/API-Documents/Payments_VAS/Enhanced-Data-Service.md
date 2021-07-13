@@ -10,7 +10,7 @@ Enhanced Data Service (EDS) enables sharing of relevant data between merchants a
 
 ## Mimimum Requirements
 
-The following parameters are the minimums required to submit an EDS request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the following: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
+The following parameters are required to submit an EDS request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the following: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
 
 <!--
 type: tab
