@@ -280,7 +280,6 @@ title: Response
 
 The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `streetMatch` and `postalCodeMatch` value.
 
-
 The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
 
 | Value | Descrption |
@@ -289,7 +288,7 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 | *MATCHED* | Data matches with issuer system with some mismatch |
 | *NOT_MATCHED* | Data does not match with issuer system |
 | *NOT_CHECKED* | Street address or postal code verification not done |
-| *NO_INPUT_DATA* | Street address or postal code mot present in the input |
+| *NO_INPUT_DATA* | Street address or postal code not present in the input |
 
 ## Association Response Code
 
