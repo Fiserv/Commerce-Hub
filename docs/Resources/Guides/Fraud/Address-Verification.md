@@ -24,7 +24,7 @@ The below table identifies the required parameters in the `billingAddress` objec
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | N/A | Customer first name. |
 | `lastName` | *string* | N/A | Customer last name. |
-| `address` | *array* | N/A | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+| `address` | *array* | N/A | [Billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) details. |
 
 <!--
 type: tab
