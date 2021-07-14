@@ -200,7 +200,7 @@ JSON string format for `dataDynamic`:
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

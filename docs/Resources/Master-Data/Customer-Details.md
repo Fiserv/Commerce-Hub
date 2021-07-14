@@ -103,7 +103,7 @@ JSON string format for `phoneNumber`:
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Customer Address](?path=docs/Resources/Master-Data/Address.md)
 
 ---
