@@ -68,7 +68,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 ---
 
-## Payload Example
+## Payload Example 
 
 <!--
 type: tab
