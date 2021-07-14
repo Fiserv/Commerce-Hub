@@ -135,6 +135,7 @@ title: Optional Data
 - [orderData](?path=docs/Resources/Master-Data/Order-Data.md)
 - [storedCredentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 - [additionalPosInformation](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
+- [additionalDataCommon](?docs/Resources/Master-Data/Additional-Data.md)
 
 <!-- type: tab-end -->
 
@@ -282,7 +283,7 @@ title: Response
 {
    "gatewayResponse": {
       "transactionProcessingDetails": {
-         "transactionTime": "2021-04-16T16:06:05Z",
+         "transactionTimestamp": "2021-04-16T16:06:05Z",
          "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId": "838916029301"
