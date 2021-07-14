@@ -152,9 +152,9 @@ The below table identifies the required parameters in the `avsSecurityCodeRespon
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `streetMatch` | *string* | 1 | Contains the normalized gateway response of [street number](#street-match) match.|
-| `postalCodeMatch` | *string* | 1 |Contains the noramlized gateway response of [postal code](#postal-code-match) match. |
-| `securityCodeMatch` | *string* | 8 |  Contains the noramlized gateway response of [security code](#security-code-match) match. |
+| `streetMatch` | *string* | 1 | Contains the normalized gateway response of [street number](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match.|
+| `postalCodeMatch` | *string* | 1 |Contains the noramlized gateway response of [postal code](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match. |
+| `securityCodeMatch` | *string* | 8 |  Contains the noramlized gateway response of [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) match. |
 | `association` | *object* | | Bank [association](#association-response) address and security code responses |
 
 <!--
@@ -197,9 +197,9 @@ The below table identifies the required parameters in the `association` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `avsCode` | *string* | 32 | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md) response received from the association bank. |
-| `securityCodeResponse` | *string* | 32 | Contains the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) response received from the association bank. |
-| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#object-cardholdernameresponse) received from the association bank. Only applicable for AMEX card type. |
+| `avsCode` | *string* | 32 | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) response received from the association bank. |
+| `securityCodeResponse` | *string* | 32 | Contains the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#association-response-code) response received from the association bank. |
+| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) received from the association bank. Only applicable for AMEX card type. |
 
 <!--
 type: tab

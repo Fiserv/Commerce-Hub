@@ -276,7 +276,7 @@ title: Response
 
 ---
 
-## AVS Security Code Response Values
+## Response Values
 
 The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `streetMatch` and `postalCodeMatch` value.
 
