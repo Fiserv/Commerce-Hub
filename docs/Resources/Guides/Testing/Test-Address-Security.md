@@ -8,22 +8,51 @@ In Commere Hub, a merchant can generate a test request and test response for the
 
 ## Address Verification
 
-A specific address to get a specific response. For the processor response the street name field, you must pass the value that you would like returned.
+### Street
 
+A specific address is needed to get a specific response. For the processor response the street name field, you must pass the value that you would like returned in the NO_MATCHED field.
 
+### Postal Code
+
+Passing the number code in the postal field will return the following field:
+
+The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *EXACT_MATCHED* | Data exactly matches with issuer system |
+| *MATCHED* | Data matches with issuer system with some mismatch |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_CHECKED* | Street address or postal code verification not done |
+| *NO_INPUT_DATA* | Street address or postal code mot present in the input |
 
 ## Cardholder Name Verification
 
 In the first name field, pass the number for desired response.
-
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) transactions.
 
 ## Security Code Verification
 
-To receive the specific response, you must pass a specific code from the table below.
+To receive the specific response, you must pass a specific 3 or 4 digit (AMEX) security code from the table below.
 
+| 3-digit | 4-digit | Response |
+| ---- | ----- | ----------|
+| 111 | 1111 | MATCHED |
+| 999 | 9999 | NOT_MATCHED |
+| 8888 | 8888 | NOT_PROVIDED |
+
+
+| Value | Descrption | 
+| ---- | ----- |
+| MATCHED | Data matches with issuer system | 
+| NOT_MATCHED | Data does not match with issuer system |
+| NOT_PROCESSED | Security code verification not done |
+| NOT_PRESENT | Security code not present in the input |
+| NOT_CERTIFIED | Issuer not certified to verify sercurity code |
+| NOT_CHECKED | Security code not checked |
+| NONE | No security code provided |
 
 ## Payload Example
 
@@ -124,10 +153,6 @@ title: Response
 <!-- type: tab-end -->
 
 ---
-
-
-
-
 
 
 ## See Also

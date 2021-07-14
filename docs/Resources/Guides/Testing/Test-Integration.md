@@ -7,6 +7,10 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 
 Commerce Hub allows developers to integrate with the API to trigger responses and to ensure that they are handled accordingly. 
 
+<!-- theme: warning -->
+
+> Test documentation provided to test is intended to for the Commerce Hub sandbox environment for end-to-end certification testing utilize the test scripts located in the developer dashboard.
+
 ## Test Cards
 
 Commerce Hub supports [test cards](?path=docs/Resources/Guides/Testing/Test-Cards.md) in the sandbox environment. No funds will be charged, refunded or processed while utilizing a test account. 
