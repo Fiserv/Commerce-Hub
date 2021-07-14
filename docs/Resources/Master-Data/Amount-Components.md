@@ -92,7 +92,7 @@ JSON string format for `amountComponents`:
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
 
 ---
