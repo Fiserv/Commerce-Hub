@@ -3,130 +3,57 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 ---
 
 
-# Test Errors
+# Test Error Response
 
-Merchants can trigger a specific error code when intergrating with Commerce Hub (using a test account) by entering a desired error code as the transaction amount. 
+An error response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering the desired [error code](?path=docs/Resources/Guides/Response-Codes/Error.md) in `requestedTestErrorResponseCode` in the `additionalDataCommon` object.
 
-To trigger an error code, enter the desired error code as the transaction amount. The error codes are listed in the error codes section.
+---
 
-Describe how to submit an error with based with field requestedTestErrorResponseCode in additionalDataCommon
+## Payload Example
 
-Link to the error codes 
-
-JSON Request Example based with field requestedTestErrorResponseCode in additionalDataCommon
-JSON Response Example 
-
-### Example of a request
 <!--
 type: tab
-title: JSON Example
+title: Request
 -->
 
-JSON string format for `additionalDataCommon`:
+##### Example of a charge payload request.
 
 ```json
 {
+   "amount":{
+      "total": "12.04",
+      "currency": "USD"
+   },
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
+      }
+   },
+   "transactionDetails":{
+      "captureFlag": true
+   },
    "additionalDataCommon":{
       "additionalData":{
-         "baiFlag": "PERSON_TO_PERSON",
-         "networkTransactionReference":"123456788",
-         "billPayment":false,
-         "ecomURL":"https://www.somedomain.com",
-         "goodsSoldCode":"GIFT_CARD",
-         "terminalLaneNumber":"001",
-         "requestedTestErrorResponseCode":"NO_CONNECTION_AVAILABLE",
-         "emvParameterDownloadIndicator":true
-      },
-      "amountComponents":{
-         "subTotal": 12.00,
-         "convenienceFee": 1.00,
-         "ITBISTaxAmount": 0.50,
-         "localTax": 1.00,
-         "shippingAmount": 5.00,
-         "surcharge": 1.20,
-         "vatAmount": 1.00
-      },
-      "directedRouting":{
-         "network": "VISA",
-         "cardFunction": "CREDIT",
-         "processor": "fiserv"
-      },
-      "subMerchant":{
-         "id": "9999",
-         "name": "Some Business",
-         "street": "123 Main Street",
-         "city": "Atlanta",
-         "state": "GA",
-         "postalCode": "30303-001",
-         "country": "US",
-         "taxId": "123456789"
-      },
-      "billPaymentIndicator": "RECURRING",
-      "installments":{
-         "installmentAmount": 20.00,
-         "lastInstallmentAmount": 20.00,
-         "interestRate": 10,
-         "paymentFirstDay": 10.00,
-         "invoiceId": "534242",
-         "invoiceDate": "05-01-2020",
-         "deliveryDate": "05-01-2020",
-         "dueDate": "05-01-2030"
-      },
-      "deferredPayments":{
-         "numberOfPayments": "5",
-         "paymentPlan": "PAY_LATER",
-         "timePeriod": "12"
-      },
-      "recurringPayments":{    
-      },
-      "privateLabel":{
-         "paymentSource": "SHELL",
-         "paymentType": "REFUND",
-         "specialFinanceIndicator": "24/0"
-      },
-      "customFields":{
-         "keyValuePair":{
-            "key": "",
-            "value": ""
-         }
-      }
-   }
+         "requestedTestErrorResponseCode":"103",
+      },   
 }
 ```
 
-
-<!-- type: tab-end -->
-
-### Example of a response
----
-
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
-title: JSON Example
+title: Response
 -->
 
-### Response
-JSON string format for `additionalData`:
+##### Example of a charge (400: Bad Request) response.
 
-```json
-{
-   "additionalData":{
-      "baiFlag": "PERSON_TO_PERSON", // Future Release
-      "networkTransactionReference": "123456788",
-      "billPayment": false, // Future Release
-      "ecomURL": "https://www.somedomain.com",
-      "goodsSoldCode": "GIFT_CARD", // Future Release
-      "terminalLaneNumber": "001", // Future Release
-      "requestedTestErrorResponseCode": "NO_CONNECTION_AVAILABLE",
-      "emvParameterDownloadIndicator": true // Future Release
-   }
-}
-```
+<!-- theme: info -->
+> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
-<!-- type: tab-end -->
-
----
 
 ```json
 {
@@ -149,10 +76,14 @@ JSON string format for `additionalData`:
          "field": "cardData",
          "message": "Missing or Invalid Card Number or Token"
       }
-
    }
 }
 ```
+
+<!-- type: tab-end -->
+
+---
+
 
 
 ## See Also

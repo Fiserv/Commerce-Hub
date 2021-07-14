@@ -3,32 +3,13 @@ tags: [carat, commerce-hub, declines, enterprise, testing]
 ---
 
 
-# Test Declines
+# Test Decline Response
 
-
-
-Decline response codes are issued based on errors received from the processing network or bank. Commerce Hub includes the value in the `hostResponseCode` along with the corresponding text in `hostResponseMessage` fields of the [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
-
-Submitting the transaction with a specific dollar amount to get a specific decline response.
-
-There are a number of ways to generate unsuccessful transactions from a test account.
-
-### Simulate unapproved Bank Responses
-
-Merchants can use the dollar amounts between 5000.00 - 5999.00 to trigger a variety of Bank Responses, where the desired response code is added to 5000.
-
-### Simulate unsuccessful Ecommerce Responses
-
-You can use the penny amounts to trigger a variety of eCommerce Responses, where the desired response code is added to 5000.00.
-
-For example, to simulate a transaction that encountered the "Unable to Send Trans" error (code 42) during processing, use 5000.42 as the transaction amount.
-
-Note: If both the dollar and penny amounts would trigger a simulated code (for example, 5200.42), the penny amount trigger will take precedence.
-
+A decline response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object. The dollar amounts between 5001.00 - 5999.00 to trigger a specific decline response, where the desired response code is the last 3 digits.
 
 ---
 
-| Code| Message |
+| Amount| Message |
 | ---- | ------------ |
 | 00 | Transaction has been approved |
 | 01 | Refer to issuer |  
@@ -51,7 +32,6 @@ Note: If both the dollar and penny amounts would trigger a simulated code (for e
 | 89 | Invalid Terminal ID |
 | 91 | System error |
 | 94 | Duplicate transaction |
-| C2 | CVV2 Declined |
 
 ---
 

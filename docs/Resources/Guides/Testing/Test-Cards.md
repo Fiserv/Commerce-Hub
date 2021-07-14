@@ -7,31 +7,17 @@ tags: [carat, commerce-hub, enterprise, testing, test-cards]
 
 Commerce Hub allows merchants to test various forms of payments by providing test card data. Although no money will be processed while using a test account, merchants will most likely want to perform tests that simulate certain situations for different card brands.
 
-A transaction error can also be triggered (for testing purposes) by entering a specific amount or  error code for the transaction.  
-
-Address and security code verification responses can be triggered (for testing purposes) by entering a specific address or security code. 
 
 <!-- theme: info -->
 >Any future expiration date can be used for test cards.
 
-| Number | Card Type | 
+| Number | Card Type | | 
 | -------- | :--: |
 | 4111111111111111 | Visa | 
-| 4200000000000000 | Visa |
+| 4200000000000000 | Visa | | |
 | 5500000000000004 | MasterCard |
 | 370000000000002 |American Express |
 | 6011000993010970 |Discover |
-
-
-### Basic test card numbers 
-
-Genuine card information cannot be used in test mode. Instead, use any of the following test card numbers, a valid expiration date in the future, and any random CVC number, to create a successful payment. Each basic test card’s billing country is set to U.S. If you need to create test card payments using cards for other billing countries, use the international test cards.
-
-<!-- theme: info -->
->Any future expiration date can be used for test cards.
-
-| Number | Card Type |	CVC	| Date |
-| -------- | :--: |
 | 4242424242424242 |	Visa|	Any 3 digits |	Any future date
 | 4000056655665556 |	Visa (debit)| Any 3 digits | 	Any future date |
 | 5555555555554444 |	Mastercard |	Any 3 digits |	Any future date |
