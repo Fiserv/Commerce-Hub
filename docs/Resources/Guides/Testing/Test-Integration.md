@@ -29,9 +29,9 @@ Address and security code verification responses can be triggered (for testing p
 ## See Also
 
 
-- [API Explorer]
-- [Charge Request]
-- [Test Address and Security Code]
-- [Test Declines]
-- [Test Errors]
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
+- [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
 

@@ -8,22 +8,13 @@ In Commere Hub, a merchant can generate a test request and test response for the
 
 ## Address Verification
 
-A specific address to get a specific response. For the processor response the street name field, you must pass the value that you would like returned in the 
+A specific address to get a specific response. For the processor response the street name field, you must pass the value that you would like returned.
 
-Postal Code 
-
-Passing the number code in the postal field will return the following field.
-
-Field names are in AVS article  
-
-Make a table 
-Passing 11111 = Matched
-Passing 22222 = 
 
 
 ## Cardholder Name Verification
 
-In the first name field, pass the number for desired response
+In the first name field, pass the number for desired response.
 
 
 <!-- theme: info -->
@@ -142,9 +133,9 @@ title: Response
 ## See Also
 
 
-- [API Explorer]
-- [Charge Request]
-- [Test Address and Security Code]
-- [Test Declines]
-- [Test Errors]
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
+- [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
 

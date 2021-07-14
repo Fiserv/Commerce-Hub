@@ -11,13 +11,13 @@ Commerce Hub allows merchants to test various forms of payments by providing tes
 <!-- theme: info -->
 >Any future expiration date can be used for test cards.
 
-| Number | Card Type | | 
+| Number | Card Type | CVV | Expiration Date |
 | -------- | :--: |
-| 4111111111111111 | Visa | 
-| 4200000000000000 | Visa | | |
-| 5500000000000004 | MasterCard |
-| 370000000000002 |American Express |
-| 6011000993010970 |Discover |
+| 4111111111111111 | Visa | Any 3 digits | Any future date|
+| 4200000000000000 | Visa | Any 3 digits | Any future date|
+| 5500000000000004 | MasterCard | Any 3 digits| Any future date|
+| 370000000000002 |American Express | Any 3 digits| Any future date|
+| 6011000993010970 |Discover |Any 3 digits | Any future date |
 | 4242424242424242 |	Visa|	Any 3 digits |	Any future date
 | 4000056655665556 |	Visa (debit)| Any 3 digits | 	Any future date |
 | 5555555555554444 |	Mastercard |	Any 3 digits |	Any future date |
@@ -38,9 +38,9 @@ Commerce Hub allows merchants to test various forms of payments by providing tes
 
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request] (../docs/Resources/API-Documents/Payments/Charges.md)
-- [Test Address and Security Code]
-- [Test Declines]
-- [Test Errors]
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
+- [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
+- [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 
 

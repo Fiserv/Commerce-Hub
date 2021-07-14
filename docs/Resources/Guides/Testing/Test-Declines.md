@@ -115,13 +115,11 @@ title: Response
 ## See Also
 
 
-- [API Explorer](../api/?type=post&path=/payments/v1/capture)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Test Address and Security Code]
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
 - [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) 
-- [Test Errors]
-
-
+- [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
 ---
 
 
