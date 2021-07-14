@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, iso-country-code]
 
 # ISO Country Codes
 
-The country codes can be represented either as a two-letter code *(Alpha-2)* which is recommended as the general-purpose code, a three-letter code *(Alpha-3)* which is more closely related to the country name and a three-digit numeric code *(Numeric-3)* which can be useful if you need to avoid using Latin script.
+The country codes can be represented either as a two-letter code *(Alpha-2)* which is recommended as the general-purpose code, a three-letter code *(Alpha-3)* which is more closely related to the country name and a three-digit numeric code *(Numeric-3)* which can be instead of Latin script.
 
 ---
 
@@ -267,7 +267,7 @@ The table below contains all the countries and their Alpha 2, Alpha 3 and Number
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
-- [Currency Conversion](?path=docs/Resources/Master-Data/Currency-Code.md)
+- [Address Object](?path=docs/Resources/Master-Data/Address.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---
