@@ -10,8 +10,43 @@ Commerce Hub responds back to the merchant request with a three-digit HTTP statu
 - **4xx: Client Error** – Indicates that incorrect data in request.
 - **5xx: Server Error** – Indicates that the server was unable to process the request.
 
-<!-- theme: info -->
-> Commerce Hub includes an HTTP error status in the `errorResponse` along with the corresponding text in `type`, `code`, `field` and `message` in the `error` array.
+## Error Response
+
+Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response-Codes/Error.md) as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields.
+
+<!--
+type: tab
+title: error
+-->
+
+The below table identifies the required parameters in the `error` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `type` | *string* | 256 | The type of response either from the HOST, GATEWAY, NETWORK, or APIM |
+| `code` | *string* | 256 | Error response code from the host, gateway or network |
+| `field` | *string* | 256 | The property or attribute associated with the error |
+| `message` | *string* | 256 | Information specific to a property or attribute |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `error`:
+
+```json
+{
+   "error":{
+      "type":"GATEWAY",
+      "code":"XXX",
+      "field":"sourceType",
+      "message":"Missing type ID property."
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
@@ -27,7 +62,7 @@ title: 2xx
 | Code | Message | Description |
 | --------- | --- | ------- |
 | 200 | Success | Indicates that request has succeeded |
-| 201 | Created | Indicates that request has succeeded and a new resource has been created as a result. |
+| 201 | Created | Indicates that request has succeeded and a new resource has been created as a result |
 
 
 <!--
@@ -80,6 +115,7 @@ title: Error Response
 
 ```json
 {
+
    "errorResponse": {
       "gatewayResponse": {
          "transactionType": "CANCEL",
@@ -111,7 +147,7 @@ title: Error Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
-- [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [Bank Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
+- [Gateway Error Code](?path=docs/Resources/Guides/Response-Codes/Error.md)
 
 ---
