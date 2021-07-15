@@ -87,7 +87,7 @@ title: Response
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionTime": "2021-06-20T23:42:48Z",
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
          "orderId": "RKOrdID-525133851837",
          "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
          "clientRequestId": "4345791",
@@ -104,20 +104,20 @@ title: Response
          "expirationYear": "30"
       }
       "cavv": "01ade6ae340005c681c3a1890418b53000020000",
-      "wallet": "APPLE_PAY"
+      "wallet": "GOOGLE_PAY"
    },
    "paymentReceipt":{
       "approvedAmount":{
          "total": 12.04,
-         "currency": "USD",
-         "merchantName": "Merchant Name",
-         "merchantAddress": "123 Peach Ave",
-         "merchantCity": "Atlanta",
-         "merchantStateOrProvince": "GA",
-         "merchantPostalCode": "12345",
-         "merchantCountry": "US",
-         "merchantURL": "https://www.somedomain.com"
+         "currency": "USD"
       },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com"
       "processorResponseDetails":{
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
@@ -127,10 +127,10 @@ title: Response
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021.02.25 14:14:38 (CET)",
+         "localTimestamp": "2021-06-20T23:42:48Z",
          "bankAssociationDetails":{
             "associationResponseCode": "000",
-            "transactionTimestamp": "2021.02.25 14:14:38 (CET)"
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
          }
       }
    },

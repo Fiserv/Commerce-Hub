@@ -99,7 +99,7 @@ title: Response
     "transactionType": "INFORMATION",
     "transactionState": "SUCCESS",
     "transactionProcessingDetails": {
-      "transactionTime": "2021-06-20T23:42:48Z",
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
       "orderId": "RKOrdID-525133851837",
       "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
       "clientRequestId": "4345791",

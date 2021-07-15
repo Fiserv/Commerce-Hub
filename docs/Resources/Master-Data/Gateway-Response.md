@@ -85,7 +85,7 @@ The below table identifies the parameters in the `transactionProcessingDetails` 
 | ----- | ----- | ----- | ----- |
 | `orderId` | *string* | 64 | Order identifier returned in the parameter orderId from a Charge trasaction. |
 | `transactionDate` | *string* | 64 | Date the transaction occured |
-| `transactionTime` | *string* | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
+| `transactionTimestamp` | *string* | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 | `apiTraceId` | *string* | 64 | Request identifier in API, can be used to request logs from the support team. |
 | `clientRequestId` | *string* | 64 | Echoes back the value in the request header for tracking. |
 | `transactionId` | *string* | 64 | Unique identifier for each transaction on the Gateway. This value will be populated for the secondary transaction from the path. |
@@ -102,7 +102,7 @@ JSON string format for `transactionProcessingDetails`:
    "transactionProcessingDetails":{
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
       "transactionDate": "2016-04-16'",
-      "transactionTime": "2016-04-16T16:06:05Z",
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
       "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7'",
       "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
       "transactionId": "838916029301"

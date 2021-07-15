@@ -92,7 +92,7 @@ title: Response
       "transactionOrigin": "ecom",
       "transactionProcessingDetails":{
          "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
          "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId": "838916029301"
@@ -202,7 +202,7 @@ title: Response
       "transactionOrigin": "ecom",
       "transactionProcessingDetails":{
          "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
          "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId": "838916029301"
@@ -225,21 +225,32 @@ title: Response
       "declineDuplicates": "FALSE",
       "tokenSource": "RSA"
    },
-   "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "string",
-      "processor": "fiserv",
-      "responseCode": "00",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "54022",
-      "hostResponseMessage": "",
-      "localTimestamp": "2016-04-16T16:06:05Z",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z"
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": 12.04,
+         "currency": "USD"
+      },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com"
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
+         }
       }
    }
 }
@@ -340,50 +351,54 @@ title: Response
 
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom"
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2021-04-16",
-    "transactionTime": "2021-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "paymentSource": "PaymentToken",
-  "card": {
-    "last4": "0019",
-    "brand": "VISA",
-    "expirationMonth": "03",
-    "expirationYear": "30"
-  },
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": "1.00",
-      "currency": "USD"
-    },
-    "processorResponseDetails": null,
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK7118",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionID": "019078743804756",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "Approved",
-    "localTimestamp": "2021-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2021-04-16T16:06:05Z",
-      "transactionReferenceInformation": null,
-        }
+   "gatewayResponse":{
+      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType":"charge",
+      "transactionState":"authorized",
+      "transactionOrigin":"ecom"
+   },
+   "transactionProcessingDetails":{
+      "transactionDate":"2021-04-16",
+      "transactionTimestamp":"2021-04-16T16:06:05Z",
+      "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId":"838916029301"
+   },
+   "paymentSource":"PaymentToken",
+   "card":{
+      "last4":"0019",
+      "brand":"VISA",
+      "expirationMonth":"03",
+      "expirationYear":"30"
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total":12.04,
+         "currency":"USD"
+      },
+      "merchantName":"Merchant Name",
+      "merchantAddress":"123 Peach Ave",
+      "merchantCity":"Atlanta",
+      "merchantStateOrProvince":"GA",
+      "merchantPostalCode":"12345",
+      "merchantCountry":"US",
+      "merchantURL":"https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus":"APPROVED",
+         "approvalCode":"OK5882",
+         "schemeTransactionId":"0225MCC625628",
+         "processor":"fiserv",
+         "responseCode":"000000",
+         "responseMessage":"APPROVAL",
+         "hostResponseCode":"00",
+         "hostResponseMessage":"APPROVAL",
+         "localTimestamp":"2021-04-16T16:06:05Z",
+         "bankAssociationDetails":{
+            "associationResponseCode":"000",
+            "transactionTimestamp":"2021-04-16T16:06:05Z"
+         }
       }
-    }
-  }
+   }
 }
 ```
 <!-- type: tab-end -->
