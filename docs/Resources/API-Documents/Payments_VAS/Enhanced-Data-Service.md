@@ -19,10 +19,10 @@ title: amount
 
 The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|
+| Variable | Type | Maximum Length | Required | Description |
+| --------- | -- | ---------------- | --------- |
 | `total` | *number* | 18,3 | &#10004; | Total amount of the transaction. |
-| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md). |
 
 <!--
 type: tab
@@ -154,8 +154,8 @@ title: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentCard* is used for a Enhanced Data Request request using `card`. |
 |`card` | *object* | N/A | &#10004; | Card data object |
 
@@ -311,8 +311,8 @@ title: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentToken* is used for a Enhanced Data Request request using a token. |
 |`tokenData` | *string* | 2048 | &#10004; | Token created from the payment source. |
 
