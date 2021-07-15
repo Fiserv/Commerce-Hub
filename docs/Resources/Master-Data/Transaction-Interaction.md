@@ -11,15 +11,16 @@ type: tab
 title: transactionInteraction
 -->
 
-The below table identifies the required parameters in the `transactionInteraction` object.
+The below table identifies the parameters in the `transactionInteraction` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* |  | The [origin](#transaction-origin) of the transaction |
-| `posEntryMode` | *string* |  | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
-| `posConditionCode` | *string* |  | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
-| `mobileInteraction` | *string* |  | Mobile method of [interaction](#mobile-interaction)|
-| `eciIndicator` | *string* |  | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator)|
+| `origin` | *string* | N/A | The [origin](#transaction-origin) of the transaction. |
+| `posEntryMode` | *string* | N/A | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
+| `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
+| `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator).|
+| `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
 
 <!--
 type: tab
@@ -134,5 +135,6 @@ The below table identifies the valid values of `eciIndicator`.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 
 ---

@@ -6,7 +6,6 @@ tags: [carat, commerce-hub, enterprise, iso-country-code]
 
 The country codes can be represented either as a two-letter code *(alpha-2)* which is recommended as the general-purpose code, a three-letter code *(alpha-3)* which is more closely related to the country name and a three-digit numeric code *(numeric-3)* which can be useful if you need to avoid using Latin script.
 
-
 | Country | Alpha-2 | Alpha-3 | Numeric-3 |
 | ------- | ------- | ------- | -------|
 |Afghanistan | AF | AFG | 004|
@@ -262,7 +261,7 @@ The country codes can be represented either as a two-letter code *(alpha-2)* whi
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
-- [Currency Conversion](?path=docs/Resources/Master-Data/Currency-Code.md)
+- [Address Object](?path=docs/Resources/Master-Data/Address.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

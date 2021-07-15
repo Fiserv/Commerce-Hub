@@ -57,8 +57,6 @@ type: tab
 title: header
 -->
 
-### Apple Header
-
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `applicationDataHash` | *string* | 256 | | Encrypted app data |

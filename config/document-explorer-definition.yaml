@@ -48,9 +48,11 @@
   - title: Resources and Guides
     sections:
     - title: Featured Guides
-      link: docs/Resources/Resources-Guide.md
+      link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: Enhanced Data Service
+      link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
     - title: Fraud Controls
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
     - title: Industry and Verticals
@@ -84,7 +86,7 @@
         link: docs/Resources/API-Documents/Payments/Cancel.md
       - title: Refund
         link: docs/Resources/API-Documents/Payments/Refund.md
-      - title: Inquiry
+      - title: Transaction Inquiry
         link: docs/Resources/API-Documents/Payments/Inquiry.md
       - title: Credit
         link: docs/Resources/API-Documents/Payments/Credit.md
@@ -92,7 +94,9 @@
         link: docs/Resources/API-Documents/Payments/Forced.md
     - title: Payments VAS
       sections:
-      - title: Tokens
+      - title: Tokenization
         link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-      - title: Verification
+      - title: Account Verification
         link: docs/Resources/API-Documents/Payments_VAS/Verification.md
+      - title: Enhanced Data Service
+        link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md

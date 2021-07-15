@@ -1,7 +1,6 @@
 ---
-tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount, ]
+tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
 ---
-
 
 # Transaction Amount
 
@@ -19,7 +18,7 @@ type: tab
 title: amount
 -->
 
-The below table identifies the required parameters in the `amount` object.
+The below table identifies the parameters in the `amount` object.
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
@@ -53,7 +52,7 @@ type: tab
 title: amountComponents
 -->
 
-The below table identifies the required parameters in the `amountComponents` object.
+The below table identifies the parameters in the `amountComponents` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |

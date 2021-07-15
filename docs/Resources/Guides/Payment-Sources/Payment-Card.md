@@ -21,7 +21,7 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `card` | *object* | |  &#10004; | Contains the payment card details |
+| `card` | *object* | N/A |  &#10004; | Contains the payment card details |
 
 <!--
 type: tab
@@ -166,7 +166,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
