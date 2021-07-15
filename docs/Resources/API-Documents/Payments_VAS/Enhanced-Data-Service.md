@@ -62,7 +62,7 @@ type: tab
 title: deviceFingerPrint
 -->
 
-The below table identifies the required `dataStatic` parameters in the `deviceFingerprint` object.
+The below table identifies the required `dataStatic` parameters in the `deviceFingerprint` array.
 
 | Variable | Type| Maximum Length | Description |
 |-----|---|-----|-----|
