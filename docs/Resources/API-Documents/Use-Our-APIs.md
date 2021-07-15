@@ -49,7 +49,7 @@ Description goes here -->
 
 ## Request Header
 
-Commerce Hub RESTful API has a consistent Header structure based on a set of Parameters. To create the header, provide the following values:
+Commerce Hub RESTful API has a consistent header structure based on a set of parameters. To create the header, provide the following values:
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
