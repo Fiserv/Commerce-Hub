@@ -8,9 +8,11 @@ Enhanced Data Service (EDS) enables sharing of relevant data between merchants a
 
 ---
 
-## Mimimum Requirements
+## Request Variables
 
-The following parameters are required to submit an EDS request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the following: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
+### Minimum Requirements
+
+The following parameters are required to submit an EDS request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the [conditional requirements](#conditional-requirements).
 
 <!--
 type: tab
@@ -26,14 +28,34 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
+title: merchantDetails
+-->
+
+The below table identifies the required parameters in the `shippingAddress` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+|-----|---|-----|-----|-----|
+| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
+
+<!-- type: tab-end -->
+
+---
+
+### Conditional Requirements
+
+One of the following parameters is required to submit an EDS request: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
+
+<!--
+type: tab
 title: transactionDetails
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `deviceFingerPrint` | *array* | N/A | &#10004; | An array containing the device fingerprint details |
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `deviceFingerPrint` | *array* | N/A | An array containing the device fingerprint details |
 
 <!--
 type: tab
@@ -42,14 +64,14 @@ title: deviceFingerPrint
 
 The below table identifies the required `dataStatic` parameters in the `deviceFingerprint` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `deviceId` | *string* | 48 | &#10004; | MAC of the device originating the transaction |
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `deviceId` | *string* | 48 | MAC of the device originating the transaction |
 
 The below table identifies the required `dataDynamic` parameters in the `deviceFingerprint` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
 | `latitude` | *string* | 256 | &#10004; | Cardholder current latitude GPS position |
 | `longitude` | *string* | 256 | &#10004; | Cardholder current longitude GPS position |
 | `ipAddress` | *string* | 39 | &#10004; | Device IP Address |
@@ -64,10 +86,10 @@ title: customer
 
 The below table identifies the required parameters in the `customer` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `email` | *string* | 256 | &#10004; | Customer email address |
-| `phone` | *array* | N/A | &#10004; | Customer [phone number](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) |
+| Variable | Type| Maximum Length |Description |
+|-----|---|-----|-----|
+| `email` | *string* | 256 | Customer email address |
+| `phone` | *array* | N/A | Customer [phone number](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) |
 
 <!-- theme: info -->
 > Refer to the [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
@@ -79,15 +101,15 @@ title: splitTender
 
 The below table identifies the required parameters in the `splitTender` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `splitTenderMethod` | *array* | N/A | &#10004; | Identifies the additional forms of payment used as part of this order |
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `splitTenderMethod` | *array* | N/A | Identifies the additional forms of payment used as part of this order |
 
 The below table identifies the required parameters in the `splitTenderMethod` array.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `method` | *string* | 1024 | &#10004; | **Valid Values:** *CREDIT_CARD*, *COUPON*, *GIFT_CARD*, *STORE_CREDIT*, *DEBIT_CARD*, *EBT_SNAP* |
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `method` | *string* | 1024 |**Valid Values:** *CREDIT_CARD*, *COUPON*, *GIFT_CARD*, *STORE_CREDIT*, *DEBIT_CARD*, *EBT_SNAP* |
 
 <!-- theme: info -->
 > Refer to the [split tender](?path=docs/Resources/Guides/Split-Tender.md#request-variables) object for available fields.
@@ -99,33 +121,22 @@ title: shippingAddress
 
 The below table identifies the required parameters in the `shippingAddress` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `firstName` | *string* | 256  | &#10004; | Shipping contact first name |
-| `lastName` | *string* | 256 | &#10004; | Shipping contact last name |
-| `address` | *object* | N/A | &#10004; | Shipping [address](?path=docs/Resources/Master-Data/Address.md#address) details |
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `firstName` | *string* | 256  | Shipping contact first name |
+| `lastName` | *string* | 256 | Shipping contact last name |
+| `address` | *object* | N/A | Shipping [address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
 <!-- theme: info -->
 > Refer to the [address](?path=docs/Resources/Master-Data/Order-Data.md) object for available fields.
 
-<!--
-type: tab
-title: merchantDetails
--->
+<!-- type: tab-end -->
 
-The below table identifies the required parameters in the `shippingAddress` object.
+---
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
+### Optional Variables
 
-<!--
-type: tab
-title: Optional Data
--->
-
-##### Refer to the respective article below for additional request parameters.
+Refer to the respective article below for additional request parameters.
 
 <!-- theme: warning -->
 > It is recommended to submit as much optional data as possible to provide better authorization rate and fraud protection.
@@ -136,8 +147,6 @@ title: Optional Data
 - [storedCredentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 - [additionalPosInformation](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [additionalDataCommon](?docs/Resources/Master-Data/Additional-Data.md)
-
-<!-- type: tab-end -->
 
 ---
 
@@ -314,7 +323,7 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentToken* is used for a Enhanced Data Request request using a token. |
-|`tokenData` | *string* | 2048 | &#10004; | Token created from the payment source. |
+|`tokenData` | *string* | 2048 | &#10004; | TransArmor token created from the payment source. |
 
 <!-- type: tab-end -->
 
