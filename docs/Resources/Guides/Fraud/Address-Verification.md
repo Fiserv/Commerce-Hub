@@ -102,58 +102,55 @@ title: Response
 ##### Example of an address verification response.
 
 ```json
+
 {
-   "gatewayResponse":{
-      "transactionType": "VERIFICATION",
-      "transactionState": "CHECKED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+  "gatewayResponse": {
+    "transactionType": "VERIFICATION",
+    "transactionState": "VERIFIED",
+    "transactionProcessingDetails": {
+      "transactionTime": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "processorResponseDetails": {
+    "approvalStatus": "APPROVED",
+    "approvalCode": "OK5882",
+    "schemeTransactionId": "0225MCC625628",
+    "processor": "fiserv",
+    "responseCode": "000000",
+    "responseMessage": "APPROVAL",
+    "hostResponseCode": "00",
+    "hostResponseMessage": "APPROVAL",
+    "localTimestamp": "2021.02.25 14:14:38 (CET)",
+    "bankAssociationDetails": {
+      "associationResponseCode": "000",
+      "transactionTimestamp": "2021.02.25 14:14:38 (CET)",
+      "avsSecurityCodeResponse": {
+        "streetMatch": "EXACT_MATCH",
+        "postalCodeMatch": "EXACT_MATCH",
+        "securityCodeMatch": "MATCHED",
+        "association": {
+          "avsCode": "Y"
+        }
       }
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019"
-      }
-   },
-   "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
-      "processor": "fiserv",
-      "responseCode": "00000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "transactionReferenceInformation": "string",
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
-            "association":{
-               "avsCode": "YY",
-               "cardholderNameResponse": "1"
-            }
-         }
-      }
-   }
+    }
+  },
+  "transactionDetails": {
+    "merchantInvoiceNumber": "123456789012"
+  }
 }
 ```
 <!-- type: tab-end -->
@@ -219,55 +216,66 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "transactionType": "VERIFICATION",
-      "transactionState": "CHECKED",
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+         "transactionTime": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
       }
    },
    "source":{
       "sourceType": "PaymentCard",
       "card":{
-         "cardData": "4005550000000019",
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019"
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "10",
+         "expirationYear": "2030"
       }
    },
-   "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
-      "processor": "fiserv",
-      "responseCode": "00000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "transactionReferenceInformation": "string",
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
-            "association":{
-               "avsCode": "YY",
-               "cardholderNameResponse": "1"
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": 12.04,
+         "currency": "USD",
+         "merchantName": "Merchant Name",
+         "merchantAddress": "123 Peach Ave",
+         "merchantCity": "Atlanta",
+         "merchantStateOrProvince": "GA",
+         "merchantPostalCode": "12345",
+         "merchantCountry": "US",
+         "merchantURL": "https://www.somedomain.com"
+      },
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021.02.25 14:14:38 (CET)",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021.02.25 14:14:38 (CET)",
+            "avsSecurityCodeResponse":{
+               "streetMatch": "EXACT_MATCH",
+               "postalCodeMatch": "EXACT_MATCH",
+               "securityCodeMatch": "MATCHED",
+               "association":{
+                  "avsCode": "Y"
+               }
             }
          }
       }
+   },
+   "transactionDetails":{
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
    }
 }
 ```

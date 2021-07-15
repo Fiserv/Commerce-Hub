@@ -52,13 +52,14 @@ JSON string format for `paymentReceipt`:
          "authenticationResponseCode": "string",
          "referenceNumber": "845366457890-TODO",
          "schemeTransactionId": "019078743804756",
+         "networkOriginalAmount":100.5,
          "feeProgramIndicator": "123",
          "processor": "fiserv",
          "responseCode": "00000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021.02.25 14:14:38 (EST)",
+         "localTimestamp": "2016-04-16T16:06:05Z",
          "bankAssociationDetails":{
             "associationResponseCode": "000",
             "transactionTimestamp": "2016-04-16T16:06:05Z",
@@ -68,9 +69,9 @@ JSON string format for `paymentReceipt`:
                "postalCodeMatch": "MATCH",
                "securityCodeMatch": "MATCH",
                "association":{
-                  "avsCode": "BOTH_MATCH",
-                  "securityCodeResponse": "MATCH",
-                  "cardholderNameResponse": "NAME_MATCH"
+                  "avsCode": "YY",
+                  "securityCodeResponse": "M",
+                  "cardholderNameResponse": "1"
                }
             }
          }
@@ -84,7 +85,6 @@ JSON string format for `paymentReceipt`:
       "merchantPostalCode": "2322"
    }
 }
-  
 ```
 
 <!-- type: tab-end -->

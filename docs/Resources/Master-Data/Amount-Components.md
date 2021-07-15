@@ -75,13 +75,15 @@ JSON string format for `amountComponents`:
 ```json
 {
    "amountComponents":{
-      "subTotal": 12.00,
-      "convenienceFee": 1.00,
-      "ITBISTaxAmount": 0.50,
-      "localTax": 1.00,
-      "shippingAmount": 5.00,
-      "surcharge": 1.20,
-      "vatAmount": 1.00
+      "subTotal": 1.5,
+      "vatAmount": 1.5,
+      "localTax": 1.5,
+      "shippingAmount": 1.5,
+      "cashback": 1.5,
+      "tip": 1.5,
+      "surcharge": 1.5,
+      "ITBISTaxAmount": 1.5,
+      "convenienceFee": 1.5
    }
 }
 ```

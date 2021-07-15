@@ -36,24 +36,25 @@ JSON string format for `billingAddress`:
 
 ```json
 {
-   "billingAddress":{
-      "firstName": "John",
-      "lastName": "Doe",
-      "address":{
-         "street": "123 Main St.",
-         "houseNumberOrName": "Apt 1",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30301",
-         "country": "US"
-         "addressHistory": "FIRST"
-      },
-      "phone":{
-         "countryCode": "1",
-         "phoneNumber": "123-123-1234",
-         "type": "DAY"
-      }
-   }
+   "billingAddress": {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "address": {
+      "street": "123 Main Street",
+      "houseNumberOrName": "Apt 213",
+      "recipientNameOrAddress": "ATTN: Accounting Dept",
+      "city": "Sandy Springs",
+      "stateOrProvince": "GA",
+      "postalCode": "30303-0001",
+      "country": "US",
+      "addressHistory": "OVER_90_DAYS"
+    },
+    "phone": {
+      "countryCode": "91",
+      "phoneNumber": "123-123-1234",
+      "type": "DAY"
+    }
+  }
 }
 ```
 
@@ -92,26 +93,27 @@ JSON string format for `shippingAddress`:
 
 ```json
 {
-   "shippingAddress":{
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "shippingMethod": "SAME_DAY",
-      "shipToEmail": "customer@domain.com",
-      "address":{
-         "street": "112 Main St.",
-         "houseNumberOrName": "Apt 112",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30301",
-         "country": "US"
-         "addressHistory": "FIRST"
-      },
-      "phone":{
-         "countryCode": "1",
-         "phoneNumber": "123-123-1234",
-         "type": "DAY"
-      }
-   }
+   "shippingAddress": {
+    "firstName": "Joe",
+    "lastName": "Smith",
+    "shipToEmail": "customer@domain.com",
+    "shippingMethod": "SAME_DAY",
+    "address": {
+      "street": "123 Main Street",
+      "houseNumberOrName": "Apt 213",
+      "recipientNameOrAddress": "ATTN: Accounting Dept",
+      "city": "Sandy Springs",
+      "stateOrProvince": "GA",
+      "postalCode": "30303-0001",
+      "country": "US",
+      "addressHistory": "OVER_90_DAYS"
+    },
+    "phone": {
+      "countryCode": "91",
+      "phoneNumber": "123-123-1234",
+      "type": "DAY"
+    }
+  }
 }
 ```
 
@@ -163,15 +165,16 @@ JSON string format for `address`:
 
 ```json
 {
-   "address":{
-      "street": "112 Main St.",
+   "address": {
+      "street": "123 Main Street",
       "houseNumberOrName": "Apt 213",
-      "city": "Atlanta",
+      "recipientNameOrAddress": "ATTN: Accounting Dept",
+      "city": "Sandy Springs",
       "stateOrProvince": "GA",
-      "postalCode": "30301",
-      "country": "US"
-      "addressHistory": "FIRST"
-   }
+      "postalCode": "30303-0001",
+      "country": "US",
+      "addressHistory": "OVER_90_DAYS"
+    }
 }
 ```
 
