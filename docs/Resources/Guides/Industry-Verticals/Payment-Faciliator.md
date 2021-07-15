@@ -79,7 +79,7 @@ title: Request
     "cardData": "4005550000000019",
     "expirationMonth": "02",
     "expirationYear": "2035",
-    "securityCode": "123"
+    "securityCode": "123",
     "securityCodeIndicator": "PROVIDED"
   },
   "transactionDetails": {
