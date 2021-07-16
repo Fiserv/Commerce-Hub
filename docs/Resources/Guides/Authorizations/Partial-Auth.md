@@ -9,7 +9,7 @@ Commerce Hub supports partial authorizations (approvals), authorization reversal
 - **Authorization Reversal:** will release the customer's authorization when partial approvals are not completed, releasing the customer's hold for future purchases.
 
 <!-- theme: info -->
-> Support for Partial Authorization is mandatory for all card brands. The partialApproval field should be populated correctly for all card present transactions showing that the terminal is capable of partial authorization responses.
+> Support for Partial Authorization is mandatory for all card brands. The `partialApproval` field should be populated correctly for all card present transactions showing that the terminal is capable of partial authorization responses.
 
 ---
 
