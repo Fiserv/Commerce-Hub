@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, master-data, processing-codes]
 
 A set of numbers that describe the type of the transaction as well as the account type being used. Required on all transaction requests and upload detail records.
 
-The Processing code has 3 subdivisions 
+The Processing code has 3 subdivisions: 
 
 - Positions 1 – 2, [Transaction Type](#transaction-type)
 - Positions 3 – 4, [Account Type (From)](#from-account-type)
@@ -75,5 +75,6 @@ Describes the cardholder account type affected for cardholder account credits an
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
 
 ---

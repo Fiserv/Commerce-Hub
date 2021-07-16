@@ -253,7 +253,9 @@ title: Response
 
 The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
-The below table identifies the valid values of `securityCodeMatch`.
+## Association Response Code
+
+The below table identifies the valid values of `securityCodeResponse`.
 
 | Value | Descrption |
 | ---- | ------------|
@@ -291,9 +293,6 @@ The below table identifies the valid values of `securityCodeResponse`.
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
-- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
-- [Prepaid Gift Card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
-Fraud-Settings-Restrictions.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
