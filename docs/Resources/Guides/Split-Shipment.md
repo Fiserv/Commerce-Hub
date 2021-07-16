@@ -147,7 +147,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 
