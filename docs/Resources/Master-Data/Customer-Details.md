@@ -39,24 +39,22 @@ JSON string format for `customer`:
 ```json
 {
    "customer":{
-      "merchantCustomerId":"234567",
-      "processorCustomerId":"1122334",
-      "firstName":"Joe",
-      "lastName":"Smith",
-      "dob":"1990-01-01",
-      "email":"customer@domain.com",
-      "ipAddress":"170.165.02.26",
-      "hostName":"dreamwave.com",
-      "locale":"en-US",
-      "driverLicenseNumber":"GA456183789",
-      "ssn":"123456789",
-      "phone":[
-         {
-            "countryCode":"91",
-            "phoneNumber":"123-123-1234",
-            "type":"DAY"
-         }
-      ]
+      "merchantCustomerId": "234567",
+      "processorCustomerId": "1122334",
+      "firstName": "Joe",
+      "lastName": "Smith",
+      "dob": "1990-01-01",
+      "email": "def@gmail.com",
+      "ipAddress": "170.165.02.26",
+      "hostName": "dreamwave.com",
+      "locale": "ENGLISH",
+      "driverLicenseNumber": "GA456183789",
+      "ssn": "123456789",
+      "phone":{
+         "countryCode": "91",
+         "phoneNumber": "123-123-1234",
+         "type": "DAY"
+      }
    }
 }
 ```

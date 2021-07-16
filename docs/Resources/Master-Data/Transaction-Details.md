@@ -52,59 +52,44 @@ JSON string format for `transactionDetails`:
 ```json
 {
    "transactionDetails":{
-      "approvalCode":"string",
-      "primaryTransactionId":"838916029301",
+      "approvalCode": "string",
+      "primaryTransactionId": "838916029301",
       "captureFlag":false,
-      "transactionCaptureType":"TCS",
+      "transactionCaptureType": "TCS",
       "accountVerification":false,
-      "partialApproval":"string",
-      "processingCode":"000000",
-      "merchantTransactionId":"1343678765",
-      "merchantOrderId":"845366457890-TODO",
-      "merchantInvoiceNumber":"123890",
-      "receiptEmail":"abc@gmail.com",
-      "paymentDescription":"string",
+      "partialApproval": "string",
+      "processingCode": "000000",
+      "merchantTransactionId": "1343678765",
+      "merchantOrderId": "845366457890-TODO",
+      "merchantInvoiceNumber": "123890",
+      "receiptEmail": "abc@gmail.com",
+      "paymentDescription": "string",
       "cardVerificationAmount":0.02,
       "partiallyApprovedTransactionAmount":10.55,
-      "splitTenderId":"12423434",
-      "authorizationTypeIndicator":"REAUTH",
+      "splitTenderId": "12423434",
+      "authorizationTypeIndicator": "REAUTH",
       "duplicateTransactionCheckingIndicator":true,
-      "primaryTransactionType":"CHARGE_SALE",
+      "primaryTransactionType": "CHARGE_SALE",
       "vaultFundingSource":true,
       "deviceFingerprint":[
          {
-            "provider":"InAuth",
+            "provider": "InAuth",
             "dataCapture":{
-               "rawData":"aaaaaXREUVZGRlFY...aMV",
-               "dataEventId":"BB8E4E92...Fz1E063113",
-               "captureTime":"2016-04-16T16:06:05Z"
+               "rawData": "aaaaaXREUVZGRlFY...aMV",
+               "dataEventId": "BB8E4E92...Fz1E063113",
+               "captureTime": "2016-04-16T16:06:05Z"
             },
             "dataStatic":{
-               "operatingSystem":"ANDROID",
-               "operatingSystemVersion":"5.1.1 Lollipop",
-               "model":"XYX-1",
-               "type":"Moto G",
-               "deviceId":"00:1B:44:11:3A:B7",
-               "javaScriptEnabled":true,
-               "javaEnabled":true,
-               "userAgent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
-               "locale":"en-US"
+               "operatingSystem": "ANDROID",
+               "operatingSystemVersion": "5.1.1 Lollipop",
+               "model": "XYX-1",
+               "type": "Moto G"
             },
             "dataDynamic":{
-               "latitude":"13.0827 N",
-               "longitude":"80.2707 E",
-               "ipAddress":"172.27.37.221",
-               "captureTime":"2016-04-16T16:06:05Z",
-               "address":{
-                  "street":"123 Main Street",
-                  "houseNumberOrName":"Apt 213",
-                  "recipientNameOrAddress":"ATTN: Accounting Dept",
-                  "city":"Sandy Springs",
-                  "stateOrProvince":"GA",
-                  "postalCode":"30303-0001",
-                  "country":"US",
-                  "addressHistory":"OVER_90_DAYS"
-               }
+               "latitude": "13.0827 N",
+               "longitude": "80.2707 E",
+               "ipAddress": "172.27.37.221",
+               "captureTime": "2016-04-16T16:06:05Z"
             }
          }
       ],
@@ -112,10 +97,10 @@ JSON string format for `transactionDetails`:
          "totalCount":5,
          "finalShipment":true
       },
-      "reversalReasonCode":"VOID",
+      "reversalReasonCode": "VOID",
       "physicalGoodsIndicator":true,
-      "authorizationSequence":"CANCEL_BEFORE_AUTHORIZATION",
-      "createToken":false
+      "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
+      "createToken": false
    }
 }
 ```

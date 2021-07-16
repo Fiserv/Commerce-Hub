@@ -283,7 +283,7 @@ title: Response
 {
   "gatewayResponse": {
     "transactionProcessingDetails": {
-      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "transactionTime": "2021-06-20T23:42:48Z",
       "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
       "clientRequestId": "4345791",
       "transactionId": "84356531338"

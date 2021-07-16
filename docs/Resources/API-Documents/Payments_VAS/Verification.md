@@ -88,7 +88,7 @@ title: Response
       "transactionType": "VERIFICATION",
       "transactionState": "VERIFIED",
       "transactionProcessingDetails":{
-         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "transactionTime": "2021-06-20T23:42:48Z",
          "orderId": "RKOrdID-525133851837",
          "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
          "clientRequestId": "4345791",
@@ -114,10 +114,10 @@ title: Response
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021-06-20T23:42:48Z",
+      "localTimestamp": "2021.02.25 14:14:38 (CET)",
       "bankAssociationDetails":{
          "associationResponseCode": "000",
-         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "transactionTimestamp": "2021.02.25 14:14:38 (CET)",
          "avsSecurityCodeResponse":{
             "streetMatch": "EXACT_MATCH",
             "postalCodeMatch": "EXACT_MATCH",
@@ -209,58 +209,53 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "transactionType":"VERIFICATION",
-      "transactionState":"VERIFIED",
+      "transactionType": "VERIFICATION",
+      "transactionState": "VERIFIED",
       "transactionProcessingDetails":{
-         "transactionTimestamp":"2021-06-20T23:42:48Z",
-         "orderId":"RKOrdID-525133851837",
-         "apiTraceId":"362866ac81864d7c9d1ff8b5aa6e98db",
-         "clientRequestId":"4345791",
-         "transactionId":"84356531338"
+         "transactionTime": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
       }
    },
    "source":{
-      "sourceType":"PaymentToken",
-      "tokenSource":"TRANSARMOR",
-      "tokenData":"8519371934460009",
+      "sourceType": "PaymentToken",
+      "tokenSource": "TRANSARMOR",
+      "tokenData": "8519371934460009",
       "card":{
-         "bin":"40055500",
-         "last4":"0019",
-         "scheme":"VISA",
-         "expirationMonth":"10",
-         "expirationYear":"30"
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "10",
+         "expirationYear": "30"
       }
    },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total":12.04,
-         "currency":"USD"
-      },
-      "merchantName":"Merchant Name",
-      "merchantAddress":"123 Peach Ave",
-      "merchantCity":"Atlanta",
-      "merchantStateOrProvince":"GA",
-      "merchantPostalCode":"12345",
-      "merchantCountry":"US",
-      "merchantURL":"https://www.somedomain.com",
-      "processorResponseDetails":{
-         "approvalStatus":"APPROVED",
-         "approvalCode":"OK5882",
-         "schemeTransactionId":"0225MCC625628",
-         "processor":"fiserv",
-         "responseCode":"000000",
-         "responseMessage":"APPROVAL",
-         "hostResponseCode":"00",
-         "hostResponseMessage":"APPROVAL",
-         "localTimestamp":"2021-04-16T16:06:05Z",
-         "bankAssociationDetails":{
-            "associationResponseCode":"000",
-            "transactionTimestamp":"2021-04-16T16:06:05Z"
+   "processorResponseDetails":{
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "fiserv",
+      "responseCode": "000000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021.02.25 14:14:38 (CET)",
+      "bankAssociationDetails":{
+         "associationResponseCode": "000",
+         "transactionTimestamp": "2021.02.25 14:14:38 (CET)",
+         "avsSecurityCodeResponse":{
+            "streetMatch": "EXACT_MATCH",
+            "postalCodeMatch": "EXACT_MATCH",
+            "securityCodeMatch": "MATCHED",
+            "association":{
+               "avsCode": "Y"
+            }
          }
       }
    },
    "transactionDetails":{
-      "merchantInvoiceNumber":"123456789012"
+      "merchantInvoiceNumber": "123456789012"
    }
 }
 ```

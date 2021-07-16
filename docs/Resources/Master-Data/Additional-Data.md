@@ -42,72 +42,67 @@ JSON string format for `additionalDataCommon`:
 {
    "additionalDataCommon":{
       "additionalData":{
-         "baiFlag":"PERSON_TO_PERSON",
-         "goodsSoldCode":"GIFT_CARD",
+         "baiFlag": "PERSON_TO_PERSON",
          "networkTransactionReference":"123456788",
          "billPayment":false,
          "ecomURL":"https://www.somedomain.com",
+         "goodsSoldCode":"GIFT_CARD",
          "terminalLaneNumber":"001",
-         "requestedTestErrorResponseCode":"213",
-         "emvParameterDownloadIndicator":"string"
+         "requestedTestErrorResponseCode":"NO_CONNECTION_AVAILABLE",
+         "emvParameterDownloadIndicator":true
       },
       "amountComponents":{
-         "subTotal":1.5,
-         "vatAmount":1.5,
-         "localTax":1.5,
-         "shippingAmount":1.5,
-         "cashback":1.5,
-         "tip":1.5,
-         "surcharge":1.5,
-         "ITBISTaxAmount":1.5,
-         "convenienceFee":1.5
+         "subTotal": 12.00,
+         "convenienceFee": 1.00,
+         "ITBISTaxAmount": 0.50,
+         "localTax": 1.00,
+         "shippingAmount": 5.00,
+         "surcharge": 1.20,
+         "vatAmount": 1.00
       },
       "directedRouting":{
-         "network":"VISA",
-         "cardFunction":"CREDIT",
-         "processor":"fiserv"
+         "network": "VISA",
+         "cardFunction": "CREDIT",
+         "processor": "fiserv"
       },
       "subMerchant":{
-         "id":"9999",
-         "name":"Some Business",
-         "street":"123 Main Street",
-         "city":"Atlanta",
-         "state":"GA",
-         "postalCode":"30303-001",
-         "country":"US",
-         "taxId":"123456789"
+         "id": "9999",
+         "name": "Some Business",
+         "street": "123 Main Street",
+         "city": "Atlanta",
+         "state": "GA",
+         "postalCode": "30303-001",
+         "country": "US",
+         "taxId": "123456789"
       },
+      "billPaymentIndicator": "RECURRING",
       "installments":{
-         "installmentAmount":20,
-         "lastInstallmentAmount":20,
-         "installmentCount":12,
-         "interestRate":1.32,
-         "paymentFirstDay":15,
-         "invoiceId":"534242",
-         "invoiceDate":"2020-05-01",
-         "deliveryDate":"2020-05-01",
-         "dueDate":"2030-05-01"
+         "installmentAmount": 20.00,
+         "lastInstallmentAmount": 20.00,
+         "interestRate": 10,
+         "paymentFirstDay": 10.00,
+         "invoiceId": "534242",
+         "invoiceDate": "05-01-2020",
+         "deliveryDate": "05-01-2020",
+         "dueDate": "05-01-2030"
+      },
+      "deferredPayments":{
+         "numberOfPayments": "5",
+         "paymentPlan": "PAY_LATER",
+         "timePeriod": "12"
+      },
+      "recurringPayments":{    
       },
       "privateLabel":{
-         "paymentSource":"SHELL",
-         "paymentType":"REFUND",
-         "specialFinanceIndicator":"24/0"
+         "paymentSource": "SHELL",
+         "paymentType": "REFUND",
+         "specialFinanceIndicator": "24/0"
       },
-      "customFields":[
-         {
-            "key":"string",
-            "value":"string"
+      "customFields":{
+         "keyValuePair":{
+            "key": "",
+            "value": ""
          }
-      ],
-      "deferredPayments":{
-         "numberOfPayments":"5",
-         "paymentPlan":"PAY_LATER",
-         "timePeriod":"12"
-      },
-      "recurringTypeIndicator":"RECURRING",
-      "recurring":{
-         "frequency":"MONTHLY",
-         "expiry":"2030-11-20"
       }
    }
 }
