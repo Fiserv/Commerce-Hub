@@ -34,7 +34,7 @@ The below table identifies the parameters in the `storedCredentials` object.
 | -------- | -- | ------------ | ------------------ |
 | `initiator` | *string* | 11 | &#10004; | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* | N/A | &#10004; | Indicator if this is a scheduled transaction. |
-| `schemeReferencedTransactionId` | *string* | 256 | | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
+| `schemeReferencedTransactionId` | *string* | 256 | &#10004;  | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
 | `sequence` | *string* | 10 | &#10004; | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
 | `networkOriginalAmount` | *number* | 18,3 | | Original transaction amount, required for Discover Card on File transactions. |
 | `originationDate` | *string* | 10 | | Date the customer account was created with merchant in YYYY-MM-DD format. |
