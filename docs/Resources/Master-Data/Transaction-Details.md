@@ -36,7 +36,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
 | `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
-| `splitShipment` | *string* |N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
+| `splitShipment` | *object* |N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
 | `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void).|
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested.|
