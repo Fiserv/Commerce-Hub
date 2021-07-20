@@ -13,6 +13,18 @@ Stored Credentials also known as Credentials on File, allows the merchant to ini
 The following variables are used in the initial `PaymentToken` request and subsequent transactions.
 
 <!--
+        recurringTypeIndicator:
+          type: string
+          maxLength: 11
+          description: |+
+            Indicates the type of recurring payment.
+
+            * RECURRING - Agreement where charges will occur on a periodic basis.
+            * INSTALLMENT - Single purchase where the cardholder is billed (charged) in installments.
+
+-->
+
+<!--
 type: tab
 title: transactionDetails
 -->
