@@ -14,6 +14,7 @@ Commerce Hub provides test scripts with card numbers that will allow you test ag
 <!-- 
 Will our system automatically submit the void on the test card or will the merchant have to manually void the transaction?
 Is our certification testing scripts using sandbox test scenarios or network E2E testing scripts?
+Will we support 3-D secure?
  --> 
 
 ## Sandbox Test Cards

@@ -24,7 +24,7 @@ The below table identifies the required parameters in the `card` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`securityCode` | *string* | 3| The card security code |
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE |
+|`securityCodeIndicator` | *string* | 15 | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE |
 
 <!--
 type: tab
@@ -273,7 +273,7 @@ The below table identifies the valid values of `securityCodeMatch`.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)

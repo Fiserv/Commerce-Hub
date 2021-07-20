@@ -7,6 +7,13 @@ tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data
 
 Our payments solutions enable you to integrate them into a seamless customer experience, and enable you to accept your customers' preferred payment methods.
 
+<!-- 
+Do we need to include BIN (first digit only, 4, 5, 6)
+Do we need to include security code?
+Will we support union pay? 
+ --> 
+
+
 |Payment Method | BIN | Length | Security Code | Response Value| 
 |-------|-------|
 | Visa | 4 | 13, 16 | 3-digit |*VISA* | 
