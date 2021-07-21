@@ -2,27 +2,27 @@
 tags: [carat, commerce-hub, enterprise, testing, test-cards]
 ---
 
-
 # Test Cards
 
 Commerce Hub allows testing of [supported card types](?path=docs/Resources/Master-Data/Card-Type.md) by providing test card data. Funds will not be processed while using the sandbox or certification environments, these test cards are used to perform tests that simulate certain situations for different card brands.
 
-## Network E2E Test Cards
+---
 
-Commerce Hub provides test scripts with card numbers that will allow you test against the various networks that are supported using the certification environment. No funds will be charged, refunded or processd while utilizing a test account. 
+## Network End to End Test Cards
+
+Commerce Hub provides test scripts with card numbers that will allow you test against the various networks that are supported using the certification environment. No funds will be charged, refunded or processd while utilizing a production account. 
 
 <!-- 
 Will our system automatically submit the void on the test card or will the merchant have to manually void the transaction?
-Is our certification testing scripts using sandbox test scenarios or network E2E testing scripts?
 Will we support 3-D secure?
 Can we simulate payments in another country?
-
-
  --> 
+
+---
 
 ## Sandbox Test Cards
 
-Commerce Hub provides generic test card numbers, but you can also generate your own. Using the Commerce Hub sandbox, you can use the generated test payment cards to simulate real-life payment scenarios and to verify the correct integration of your systems. Up to four additional No funds will be charged, refunded or processd while utilizing a test account. 
+Commerce Hub provides generic test card numbers, an allows generation of merchant dedicated card numbers. Using the Commerce Hub sandbox, you can use the generated test payment cards to simulate real-life payment scenarios and to verify the correct integration of your systems. No funds will be charged, refunded or processd while utilizing a test account. 
 
 
 <!-- theme: info -->
@@ -50,6 +50,8 @@ Commerce Hub provides generic test card numbers, but you can also generate your 
 | 4242424242424242 |	Visa |	
 | 4000056655665556 |	Visa (debit)| 
 
+---
+
 ### Test Card Requirements
 
 Test card requirements
@@ -67,12 +69,9 @@ Generated test cards should meet the following requirements:
 <!-- theme: info -->
 <!-- https://docs.adyen.com/development-resources/test-cards/create-test-cards -->
 
-### Test Card Payments
-
-Test payments in the 
+---
 
 ## See Also
-
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
@@ -81,4 +80,4 @@ Test payments in the
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Supported Card Types](?path=docs/Resources/Master-Data/Card-Type.md)
 
-
+---
