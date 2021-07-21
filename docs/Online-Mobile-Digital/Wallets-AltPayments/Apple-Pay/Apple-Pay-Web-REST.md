@@ -119,46 +119,62 @@ title: Response
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom"
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2021-04-16",
-    "transactionTime": "2021-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "source": "ApplePay",
-  "tokenData": "1234123412340019",
-  "PARId": "string",
-  "declineDuplicates": false,
-  "tokenSource": "string",
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": "1.00",
-      "currency": "USD"
-    },
-    "processorResponseDetails": null,
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK7118",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionID": "019078743804756",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "Approved",
-    "localTimestamp": "2021-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2021-04-16T16:06:05Z",
-      "transactionReferenceInformation": null,
-    }
-  }
+   "gatewayResponse":{
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
+      }
+   },
+   "source":{
+      "sourceType": "DecryptedWallet",
+      "card":{
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "10",
+         "expirationYear": "30"
+      },
+      "cavv": "01ade6ae340005c681c3a1890418b53000020000",
+      "wallet": "APPLE_PAY"
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": 12.04,
+         "currency": "USD"
+      },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
+         }
+      }
+   },
+   "transactionDetails":{
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
+   }
 }
 ```
 <!-- type: tab-end -->
