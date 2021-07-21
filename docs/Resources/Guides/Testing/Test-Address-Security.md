@@ -46,11 +46,16 @@ Can we simulate payments in another country?
 
  --> 
 
-| 3-digit | 4-digit | Response |
-| ---- | ----- | ----------|
-| 111 | 1111 | MATCHED |
-| 999 | 9999 | NOT_MATCHED |
-| 8888 | 8888 | NOT_PROVIDED |
+| 3-digit | 4-digit | Response | Description |
+| ---- | ----- | ----------|-----|
+| 111 | 1111 | MATCHED | Data matches with issuer system | 
+| 999 | 9999 | NOT_MATCHED | Data does not match with issuer system |
+| 8888 | 8888 | NOT_PROCESSED | Security code verification not done |
+| 222 | 2222 | NOT_PRESENT | Security code not present in the input |
+| 333 | 3333 | NOT_CERTIFIED| Issuer not certified to verify sercurity code |
+| 444 | 4444 | NOT_CHECKED | Security code not checked |
+| 555 | 5555 | NONE | Security code not checked |
+
 
 <!-- 
 What is the value that the developer will need to send to get the matched/not matched results?

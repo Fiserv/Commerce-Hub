@@ -267,7 +267,9 @@ The below table identifies the valid values of `securityCodeMatch`.
 | *NOT_CHECKED* | Security code not checked |
 | *NONE* | No security code provided |
 
-### Association Response Code
+---
+
+## Association Response Code
 
 The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
 
