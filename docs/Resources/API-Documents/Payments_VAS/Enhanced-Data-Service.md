@@ -21,7 +21,7 @@ The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
-| `total` | *number* | 18,3 | &#10004; | Total amount of the transaction. |
+| `total` | *number* | 18, 3 | &#10004; | Total amount of the transaction. |
 | `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md). |
 
 <!--
