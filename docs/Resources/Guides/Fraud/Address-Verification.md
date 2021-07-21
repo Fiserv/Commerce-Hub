@@ -291,6 +291,8 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 | *NOT_CHECKED* | Street address or postal code verification not done |
 | *NO_INPUT_DATA* | Street address or postal code mot present in the input |
 
+
+
 ## Association Response Code
 
 The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`.

@@ -9,13 +9,13 @@ Our payments solutions enable you to integrate them into a seamless customer exp
 
 <!-- 
 Do we need to include BIN (first digit only, 4, 5, 6)
-Do we need to include security code?
+Do we need to include security code or security code length?
 Will we support union pay? 
  --> 
 
 
 |Payment Method | BIN | Length | Security Code | Response Value| 
-|-------|-------|
+|-------|-------|-------|-------|--------------|
 | Visa | 4 | 13, 16 | 3-digit |*VISA* | 
 | Mastercard | 51-55, 2221-2720 | 16 | 3-digit | *MASTERCARD* |
 | American Express | 34, 37 | 15 | 4-digit| *AMERICAN_EXPRESS* |

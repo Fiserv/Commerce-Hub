@@ -18,6 +18,7 @@ Passing the number code in the postal field will return the following field:
 
 The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
 
+
 | Value | Descrption |
 | ---- | ------------|
 | *EXACT_MATCHED* | Data exactly matches with issuer system |
@@ -36,12 +37,26 @@ In the first name field, pass the number for desired response.
 ## Security Code Verification
 
 To receive the specific response, you must pass a specific 3 or 4 digit (AMEX) security code from the table below.
+<!-- 
+Will our system automatically submit the void on the test card or will the merchant have to manually void the transaction?
+Is our certification testing scripts using sandbox test scenarios or network E2E testing scripts?
+Will we support 3-D secure?
+Can we simulate payments in another country?
+
+
+ --> 
 
 | 3-digit | 4-digit | Response |
 | ---- | ----- | ----------|
 | 111 | 1111 | MATCHED |
 | 999 | 9999 | NOT_MATCHED |
 | 8888 | 8888 | NOT_PROVIDED |
+
+<!-- 
+What is the value that the developer will need to send to get the matched/not matched results?
+
+
+ -->
 
 
 | Value | Descrption | 

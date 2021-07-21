@@ -15,11 +15,14 @@ Commerce Hub provides test scripts with card numbers that will allow you test ag
 Will our system automatically submit the void on the test card or will the merchant have to manually void the transaction?
 Is our certification testing scripts using sandbox test scenarios or network E2E testing scripts?
 Will we support 3-D secure?
+Can we simulate payments in another country?
+
+
  --> 
 
 ## Sandbox Test Cards
 
-Commerce Hub provides generic test card numbers, but you can also generate your own. Using the Commerce Hub sandbox, you can use the generated test payment cards to simulate real-life payment scenarios and to verify the correct integration of your systems. No funds will be charged, refunded or processd while utilizing a test account. 
+Commerce Hub provides generic test card numbers, but you can also generate your own. Using the Commerce Hub sandbox, you can use the generated test payment cards to simulate real-life payment scenarios and to verify the correct integration of your systems. Up to four additional No funds will be charged, refunded or processd while utilizing a test account. 
 
 
 <!-- theme: info -->
@@ -63,6 +66,10 @@ Generated test cards should meet the following requirements:
 
 <!-- theme: info -->
 <!-- https://docs.adyen.com/development-resources/test-cards/create-test-cards -->
+
+### Test Card Payments
+
+Test payments in the 
 
 ## See Also
 
