@@ -52,7 +52,7 @@ JSON string format for `billingAddress`:
 
 ---
 
-## AVS Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -158,7 +158,7 @@ title: Response
 
 ---
 
-## AVS Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 

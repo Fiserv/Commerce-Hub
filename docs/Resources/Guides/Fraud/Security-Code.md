@@ -47,7 +47,7 @@ JSON string format for `card`:
 
 ---
 
-## Security Code Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -145,7 +145,7 @@ title: Response
 
 ---
 
-## Security Code Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 
