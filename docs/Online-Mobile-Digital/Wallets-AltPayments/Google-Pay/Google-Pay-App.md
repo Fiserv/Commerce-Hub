@@ -106,7 +106,7 @@ title: Response
          "expirationYear": "30"
       },
       "cavv": "01ade6ae340005c681c3a1890418b53000020000",
-      "wallet": "GOGGLE_PAY"
+      "wallet": "GOOGLE_PAY"
    },
    "paymentReceipt":{
       "approvedAmount":{
