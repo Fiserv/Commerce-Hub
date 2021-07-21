@@ -255,9 +255,7 @@ title: Response
 
 The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
-## Association Response Code
-
-The below table identifies the valid values of `securityCodeResponse`.
+The below table identifies the valid values of `securityCodeMatch`.
 
 | Value | Descrption |
 | ---- | ------------|
@@ -269,7 +267,7 @@ The below table identifies the valid values of `securityCodeResponse`.
 | *NOT_CHECKED* | Security code not checked |
 | *NONE* | No security code provided |
 
-## Association Response Code
+### Association Response Code
 
 The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
 
@@ -304,5 +302,4 @@ The below table identifies the valid values of `securityCodeResponse`.
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---
-
 
