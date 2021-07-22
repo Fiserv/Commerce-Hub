@@ -2804,14 +2804,14 @@ components:
         customer:
           email: customer@somedomain.com
           phone:
-          - {countryCode: '1', phoneNumber: 1234, type: MOB}
+          - {countryCode: '1', phoneNumber: '1234', type: 'MOB'}
         splitTender:
           splitTenderMethod:
-          - type: CREDIT_CARD
-            count: '1'
+          - type: 'CREDIT_CARD'
+            count: 1
             amount: {total: 7.04}
           - type: GIFT_CARD
-            count: '1'
+            count: 1
             amount: {total: 5.00}
         shippingAddress:
           firstName: Jane
