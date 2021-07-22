@@ -15,7 +15,7 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `dataEntrySource` | *number* | 18,3 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
+| `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
 
 <!--
 type: tab
