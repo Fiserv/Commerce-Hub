@@ -2609,7 +2609,7 @@ components:
         customer:
           email: customer@somedomain.com
           phone:
-          - {countryCode: '1', phoneNumber: 123-123-1234, type: MOBILE}
+          - {countryCode: '1', phoneNumber: 123-123-1234, type: MOBIL}
         splitTender:
           splitTenderMethod:
           - type: CREDIT_CARD
@@ -2794,7 +2794,7 @@ components:
             stateOrProvince: GA, postalCode: '30303', country: US}
     PaymentTokenEDSRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source: {sourceType: PaymentToken, tokenData: '1234560000000019'}
         transactionDetails:
           merchantOrderId: '123456789012'
@@ -2809,10 +2809,10 @@ components:
           splitTenderMethod:
           - type: CREDIT_CARD
             count: '1'
-            amount: {total: '7.04'}
+            amount: {total: 7.04}
           - type: GIFT_CARD
             count: '1'
-            amount: {total: '5.00'}
+            amount: {total: 5.00}
         shippingAddress:
           firstName: Jane
           lastName: Doe
