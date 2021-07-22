@@ -28,12 +28,7 @@ JSON string format for `additionalPosInformation`:
 {
    "transactionInteraction": {
       "additionalPosInformation": {
-         "dataEntrySource": "MOBILE_APP",
-         "houseNumberOrName": "Apt 1",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30301",
-         "country": "US"
+         "dataEntrySource": "MOBILE_APP"
       }
    }
 }
