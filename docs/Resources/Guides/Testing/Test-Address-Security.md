@@ -12,20 +12,31 @@ In Commere Hub, a merchant can generate a test request and test response for the
 
 A specific address is needed to get a specific response. For the processor response the street name field, you must pass the value that you would like returned in the NO_MATCHED field.
 
+<!-- theme: info -->
+>If any of the address fields are not available or not applicable, they may be omitted. If available, the last 5 or 9 digits, without embedded spaces, should be the zip code (ex. "12345-6789" becomes "123456789"). Numbers are not spelled out. (“First Street” becomes “1ST Street”, “Second” becomes “2ND”, etc).
+
+
+| Address | Value | Descrption | 
+| ----- | ---- | ------------|
+| 11111 | *EXACT_MATCHED* | Data exactly matches with issuer system |
+|22222| *MATCHED* | Data matches with issuer system with some mismatch |
+|33333| *NOT_MATCHED* | Data does not match with issuer system |
+| 44444 |*NOT_CHECKED* | Street address or postal code verification not done |
+|55555 |*NO_INPUT_DATA* | Street address or postal code mot present in the input |
+
+
 ### Postal Code
 
-Passing the number code in the postal field will return the following field:
-
-The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
+A specific postal code is needed to generate a specific response. For the postal code, you must pass the value that you would like returned. 
 
 
-| Value | Descrption |
-| ---- | ------------|
-| *EXACT_MATCHED* | Data exactly matches with issuer system |
-| *MATCHED* | Data matches with issuer system with some mismatch |
-| *NOT_MATCHED* | Data does not match with issuer system |
-| *NOT_CHECKED* | Street address or postal code verification not done |
-| *NO_INPUT_DATA* | Street address or postal code mot present in the input |
+| Postal Code  | Value | Descrption | 
+| ----- | ---- | ------------|
+| 11111-1111 | *EXACT_MATCHED* | Data exactly matches with issuer system |
+|22222-2222| *MATCHED* | Data matches with issuer system with some mismatch |
+|33333-3333| *NOT_MATCHED* | Data does not match with issuer system |
+| 44444-4444 |*NOT_CHECKED* | Street address or postal code verification not done |
+|55555-5555 |*NO_INPUT_DATA* | Street address or postal code mot present in the input |
 
 ## Cardholder Name Verification
 
@@ -42,6 +53,8 @@ Will our system automatically submit the void on the test card or will the merch
 Is our certification testing scripts using sandbox test scenarios or network E2E testing scripts?
 Will we support 3-D secure?
 Can we simulate payments in another country?
+Zip Code
+
 
 
  --> 
@@ -50,29 +63,14 @@ Can we simulate payments in another country?
 | ---- | ----- | ----------|-----|
 | 111 | 1111 | MATCHED | Data matches with issuer system | 
 | 999 | 9999 | NOT_MATCHED | Data does not match with issuer system |
-| 8888 | 8888 | NOT_PROCESSED | Security code verification not done |
+| 888 | 8888 | NOT_PROCESSED | Security code verification not done |
 | 222 | 2222 | NOT_PRESENT | Security code not present in the input |
 | 333 | 3333 | NOT_CERTIFIED| Issuer not certified to verify sercurity code |
 | 444 | 4444 | NOT_CHECKED | Security code not checked |
-| 555 | 5555 | NONE | Security code not checked |
+|  |  | NONE | No security code provided |
 
 
-<!-- 
-What is the value that the developer will need to send to get the matched/not matched results?
-
-
- -->
-
-
-| Value | Descrption | 
-| ---- | ----- |
-| MATCHED | Data matches with issuer system | 
-| NOT_MATCHED | Data does not match with issuer system |
-| NOT_PROCESSED | Security code verification not done |
-| NOT_PRESENT | Security code not present in the input |
-| NOT_CERTIFIED | Issuer not certified to verify sercurity code |
-| NOT_CHECKED | Security code not checked |
-| NONE | No security code provided |
+---
 
 ## Payload Example
 
@@ -90,7 +88,9 @@ title: Request
       "card":{
          "cardData": "4005550000000019",
          "expirationMonth": "02",
-         "expirationYear": "2035"
+         "expirationYear": "2035",
+         "securityCode": "111",
+         "securityCodeIndicator": "PROVIDED"
       }
    },
    "billingAddress":{
@@ -118,8 +118,8 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "transactionType": "VERIFICATION",
-      "transactionState": "CHECKED",
+      "transactionType": "CHARGE",
+      "transactionState": "APPROVED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
          "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
@@ -161,7 +161,9 @@ title: Response
          "avsSecurityCodeResponse":{
             "streetMatch": "MATCH",
             "postalCodeMatch": "MATCH",
+            "securityCodeMatch": "MATCH",
             "association":{
+               "securityCodeResponse": "M"
                "avsCode": "YY",
                "cardholderNameResponse": "1"
             }
