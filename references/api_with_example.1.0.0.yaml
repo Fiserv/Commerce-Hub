@@ -2804,7 +2804,7 @@ components:
         customer:
           email: customer@somedomain.com
           phone:
-          - {countryCode: '1', phoneNumber: 123-123-1234, type: MOBILE}
+          - {countryCode: '1', phoneNumber: 1234, type: MOB}
         splitTender:
           splitTenderMethod:
           - type: CREDIT_CARD
