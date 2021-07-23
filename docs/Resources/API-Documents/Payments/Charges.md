@@ -136,7 +136,7 @@ title: Response
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":12.04,
+         "total": 12.04,
          "currency": "USD"
       },
       "merchantName": "Merchant Name",
@@ -145,21 +145,21 @@ title: Response
       "merchantStateOrProvince": "GA",
       "merchantPostalCode": "12345",
       "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com"
-   },
-   "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK5882",
-      "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "000000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021-06-20T23:42:48Z",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2021-06-20T23:42:48Z"
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
+         }
       }
    },
    "transactionDetails":{

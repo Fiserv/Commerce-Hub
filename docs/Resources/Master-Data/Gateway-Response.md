@@ -21,8 +21,8 @@ The below table identifies the parameters in the `gatewayResponse` object.
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
 | `transactionType` | *string* | 256 | Type of transaction submitted. |
-| `transactionState` | *string* | 256 | Final [state](#transactionstate) of the transaction. |
-| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
+| `transactionState` | *string* | 256 | Final [state](#transaction-state) of the transaction. |
+| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origins). |
 | `transactionProcessingDetails` | *object* | N/A | Object containing the [transaction processing details](#transaction-processing-details). |
 
 <!--
