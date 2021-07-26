@@ -2,7 +2,15 @@
 tags: [carat, commerce-hub, enterprise, bill-payments, payment-schedule]
 ---
 
+# Payment Schedule
 
-# Payment-Schedule
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support bill payments and the documents related to this feature will be released soon.
 
-The beginning of an awesome article...
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---

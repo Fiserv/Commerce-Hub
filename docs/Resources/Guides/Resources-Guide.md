@@ -16,8 +16,8 @@ Commerce Hub implements various fraud controls that allows merchant to monitor p
 
 ### Featured Guides
 
-- [AVS](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [CVV](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 
 ---
@@ -29,9 +29,7 @@ Commerce Hub offers multiple transactions related guides to assist merchants wit
 ### Featured Guides
 
 - [Secondary Authorizations](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
-
 - [Bill Payments](?path=docs/Resources/Guides/Bill-Payments/Bill-Payments.md)
-
 - [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md)
 
 ---
@@ -64,6 +62,6 @@ Commerce Hub offers guides to assist with integrating different industry, trade,
 
 ## Next Steps
 
-[Learn Commerce Hub API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+[Use Commerce Hub API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---

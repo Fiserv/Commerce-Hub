@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, to
 **[Tokenization](../../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#chargerequest) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokenrequest) endpoint.
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
-  - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
+  - Requires the use of [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
 - **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
 
 ---
@@ -285,7 +285,7 @@ The below table identifies the required parameters in the `paymentToken` object.
 | `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 | `card` | *object* | | &#10004; |Contains card specific information. |
 | `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
-| `expirationYear` | *string* | 2 | &#10004; |Card expiration year. |
+| `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
 
 <!-- type: tab-end -->
 

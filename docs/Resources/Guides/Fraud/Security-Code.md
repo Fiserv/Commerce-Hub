@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, fraud, security-code-verification]
 ---
 
-
 # Security Code
 
 Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit (AMEX) security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
@@ -24,7 +23,18 @@ The below table identifies the required parameters in the `card` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`securityCode` | *string* | 3| The card security code |
-|`securityCodeIndicator` | *string* | 15 | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE |
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+
+#### Security Code Indicator
+
+The below table identifies the valid values of `securityCodeIndicator`.
+
+| Value | Description |
+| ----- | --------- |
+| *NOT_SUPPORTED* | Not supported (Default) |
+| *PROVIDED* | Security code provided in the transaction request |
+| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
+| *NOT_AVAILABLE* | Security code not available. |
 
 <!--
 type: tab
@@ -49,7 +59,7 @@ JSON string format for `card`:
 
 ---
 
-## Security Code Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -147,7 +157,7 @@ title: Response
 
 ---
 
-## Security Code Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 
@@ -255,7 +265,25 @@ title: Response
 
 The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
-The below table identifies the valid values of `securityCodeMatch`.
+## Association Response Code
+
+The below table identifies the valid values of `securityCodeResponse`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *MATCHED* | Data matches with issuer system |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_PROCESSED* | Security code verification not done |
+| *NOT_PRESENT* | Security code not present in the input |
+| *NOT_CERTIFIED* | Issuer not certified to verify sercurity code |
+| *NOT_CHECKED* | Security code not checked |
+| *NONE* | No security code provided |
+
+## Association Response Code
+
+The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
+
+The below table identifies the valid values of `securityCodeResponse`.
 
 | Value | Descrption |
 | ---- | ------------|
@@ -295,8 +323,6 @@ The below table identifies the valid values of `securityCodeResponse`.
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
-- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
-- [Prepaid Gift Card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
@@ -304,4 +330,3 @@ The below table identifies the valid values of `securityCodeResponse`.
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---
-

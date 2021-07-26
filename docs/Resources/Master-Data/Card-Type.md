@@ -1,18 +1,10 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data]
+tags: [carat, commerce-hub, enterprise, master-data, credit-card, card-brand, card-scheme, card-type]
 ---
-
 
 # Supported Card Types
 
-Our payments solutions enable you to integrate them into a seamless customer experience, and enable you to accept your customers' preferred payment methods.
-
-<!-- 
-Do we need to include BIN (first digit only, 4, 5, 6)
-Do we need to include security code or security code length?
-Will we support union pay? 
- --> 
-
+Commerce Hub supports the following major card brands (schemes).
 
 |Payment Method | BIN | Length | Security Code | Response Value| 
 |-------|-------|-------|-------|--------------|
@@ -31,5 +23,6 @@ Will we support union pay?
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 
 ---

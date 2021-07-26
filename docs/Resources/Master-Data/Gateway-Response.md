@@ -16,14 +16,14 @@ type: tab
 title: gatewayResponse
 -->
 
-The below table identifies the required parameters in the `gatewayResponse` object.
+The below table identifies the parameters in the `gatewayResponse` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
-| `transactionType` | *string* | 256 | Type of transaction submitted |
-| `transactionState` | *string* | 256 | Final [state](#transaction-state) of the transaction |
-| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origin) |
-| `transactionProcessingDetails` | *object* | | Object containing the [transaction processing details](#transaction-processing-details) |
+| `transactionType` | *string* | 256 | Type of transaction submitted. |
+| `transactionState` | *string* | 256 | Final [state](#transactionstate) of the transaction. |
+| `transactionOrigin` | *string* | 4 | Transaction [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transactionorigins). |
+| `transactionProcessingDetails` | *object* | N/A | Object containing the [transaction processing details](#transaction-processing-details). |
 
 <!--
 type: tab
@@ -60,11 +60,11 @@ The below table identifies the valid values of `transactionState` in the gateway
 
 | Value | Description |
 |-------|-------------|
-| *AUTHORIZED* | Transaction has been [authorized](?path=docs/Resources/API-Documents/Payments/Charges.md) |
-| *CAPTURED* | Authorization has been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) |
-| *CHECKED* | Applicable to [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) and [information lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) |
-| *DECLINED* | Transaction has been [declined](?path=docs/Resources/Guides/Response-Codes/Gateway.md) |
-| *VOIDED* | Transaction has been [voided](?path=docs/Resources/API-Documents/Payments/Cancel.md) |
+| *AUTHORIZED* | Transaction has been authorized |
+| *CAPTURED* | Authorization has been captured |
+| *CHECKED* | Applicable to account verification and information lookup |
+| *DECLINED* | Transaction has been declined |
+| *VOIDED* | Transaction has been voided |
 
 <!-- COMPLETED_GET, INITIALIZED, PENDING, READY, TEMPLATE, SETTLED, WAITING -->
 
@@ -79,7 +79,7 @@ type: tab
 title: transactionProcessingDetails
 -->
 
-The below table identifies the required parameters in the `transactionProcessingDetails` object.
+The below table identifies the parameters in the `transactionProcessingDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |

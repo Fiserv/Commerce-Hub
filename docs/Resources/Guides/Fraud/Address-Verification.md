@@ -4,7 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, in-perso
 
 # Address Verification Services
 
-
 Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#address-verification-service) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
@@ -20,11 +19,11 @@ title: billingAddress
 
 The below table identifies the required parameters in the `billingAddress` object.
 
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `firstName` | *string* |  | Customer first name |
-| `lastName` | *string* |  | Customer last name |
-| `address` | *object* |  | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+| Variable | Type | Length | Description/Values |
+| -------- | :--: | :------------: | ------------------ |
+| `firstName` | *string* | N/A | Customer first name. |
+| `lastName` | *string* | N/A | Customer last name. |
+| `address` | *array* | N/A | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
 
 <!--
 type: tab
@@ -39,8 +38,7 @@ JSON string format for `billingAddress`:
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -54,7 +52,7 @@ JSON string format for `billingAddress`:
 
 ---
 
-## AVS Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -84,8 +82,7 @@ title: Request
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince":"GA",
          "postalCode": "30301",
@@ -161,7 +158,7 @@ title: Response
 
 ---
 
-## AVS Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 
@@ -276,10 +273,9 @@ title: Response
 
 ---
 
-## AVS Security Code Response Values
+## Response Values
 
 The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `streetMatch` and `postalCodeMatch` value.
-
 
 The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
 
@@ -289,7 +285,9 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 | *MATCHED* | Data matches with issuer system with some mismatch |
 | *NOT_MATCHED* | Data does not match with issuer system |
 | *NOT_CHECKED* | Street address or postal code verification not done |
-| *NO_INPUT_DATA* | Street address or postal code mot present in the input |
+| *NO_INPUT_DATA* | Street address or postal code not present in the input |
+
+---
 
 
 
@@ -307,7 +305,6 @@ The below table identifies the valid values of `avsCode`.
 | *U* | Card issuer did not check the AVS information |
 | *Z* | Postal code matched but street does not |
 | *A* | Street matched but postal code does not |
-
 
 The below table identifies the valid values of `cardHolderNameResponse`.
 
