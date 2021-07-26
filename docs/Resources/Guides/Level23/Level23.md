@@ -5,6 +5,6 @@ tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, 
 # Level II and III Purchase Cards
 
 <!-- theme: danger -->
-> We are enhancing the Commerce Hub to include Currency Conversion support and the documents related to the features will be released soon.
+> We are enhancing the Commerce Hub to include Level II and III purchase card support and the documents related to the features will be released soon.
 
-Commerce Hub can pass Level II & III data with purchase card and commercial card transactions. With a Level II & III data pass through solution, you can meet customer demand to provide invoice-level transaction details. 
+Commerce Hub can pass Level II and III data with purchase card transactions. With a Level II and III data pass through solution, merchant's can meet card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Data.md) and provide invoice-level transaction details. 
