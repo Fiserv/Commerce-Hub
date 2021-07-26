@@ -10,7 +10,7 @@ In Commere Hub, a merchant can generate a test request and test response for the
 
 ### Street
 
-A specific address is needed to get a specific response. For the processor response the street name field, you must pass the value that you would like returned in the NO_MATCHED field.
+A specific address is needed to get a specific response. For the processor response for the street name field, you must pass the value that you would like returned in the NO_MATCHED field.
 
 <!-- theme: info -->
 >If any of the address fields are not available or not applicable, they may be omitted. If available, the last 5 or 9 digits, without embedded spaces, should be the zip code (ex. "12345-6789" becomes "123456789"). Numbers are not spelled out. (“First Street” becomes “1ST Street”, “Second” becomes “2ND”, etc).

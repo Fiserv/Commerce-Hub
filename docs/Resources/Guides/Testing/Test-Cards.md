@@ -57,7 +57,7 @@ Commerce Hub provides generic test card numbers, an allows generation of merchan
 Test card requirements
 Generated test cards should meet the following requirements:
 
-- Test card numbers should be between 6-19 digits long.
+- Test card numbers should be between 16-19 digits long.
 - All test card numbers in a generated test card range need to have the same number of digits.
 - The first six digits of the test card numbers in any generated range need to be valid BIN numbers.
 - Test card numbers should comply with standard payment card number constraints. For example, to test a system with Visa you should create a test card range with a valid Visa BIN.
