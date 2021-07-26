@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 
 An [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification response can be triggered when testing a Commerce Hub integration in the sandbox environment by using the corresponding values in the request.
 
----
+--- 
 
 ## Address Verification
 
