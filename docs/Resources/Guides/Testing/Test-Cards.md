@@ -52,7 +52,7 @@ Commerce Hub provides generic test card numbers, an allows generation of merchan
 
 ---
 
-### Test Card Requirements
+### Card Generation Requirements
 
 Generated test cards should meet the following requirements:
 
