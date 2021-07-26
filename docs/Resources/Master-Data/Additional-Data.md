@@ -31,6 +31,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 -->
 
 ^
+
 <!--
 type: tab
 title: JSON Example

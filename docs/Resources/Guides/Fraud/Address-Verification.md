@@ -289,6 +289,8 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 ---
 
+
+
 ## Association Response Code
 
 The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`.
@@ -325,13 +327,14 @@ The below table identifies the valid values of `cardHolderNameResponse`.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
-- [Address Component](?path=docs/Resources/Master-Data/Address.md)
+- [Address Object](?path=docs/Resources/Master-Data/Address.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
