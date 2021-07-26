@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, american-express, discover, vault]
 ---
 
-
 # Convenience Fees
 
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
