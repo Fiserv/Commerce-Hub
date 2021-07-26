@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 
 # Test Address and Security Code
 
-In Commere Hub, a merchant can generate a test request and test response for the billing address, cardholder's name and security code by using the corresponding variables in the sandbox environment.
+An [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification response can be triggered when testing a Commerce Hub integration in the sandbox environment by using the corresponding values in the request.
 
 ---
 
@@ -12,7 +12,7 @@ In Commere Hub, a merchant can generate a test request and test response for the
 
 ### Street
 
-A specific `street` value is required to get a specific response.
+To receive a specific `streetMatch` response, pass the specific `street` value from the table below.
 
 | Street | Value | Descrption | 
 | ----- | ---- | ------------|
@@ -26,7 +26,7 @@ A specific `street` value is required to get a specific response.
 
 ### Postal Code
 
-A specific `postalCode` value is required to generate a specific response.
+To receive a specific `postalCodeMatch` response, pass the specific `postalCode` value  from the table below.
 
 | Postal Code  | Value | Descrption | 
 | ----- | ---- | ------------|
@@ -38,9 +38,9 @@ A specific `postalCode` value is required to generate a specific response.
 
 ---
 
-### Cardholder Name Verification
+### Cardholder Name
 
-In the `firstName` field, pass the number for desired response.
+To receive a specific `cardholderNameResponse` response, pass the specific value as the `firstName` from the table below.
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) transactions.
@@ -60,7 +60,7 @@ In the `firstName` field, pass the number for desired response.
 
 ## Security Code Verification
 
-To receive the specific response, you must pass a specific 3 or 4 digit (AMEX) security code from the table below.
+To receive a specific `securityCodeMatch` response, pass the specific 3 or 4 digit (AMEX) `securityCode` from the table below.
 
 <!-- 
 Will our system automatically submit the void on the test card or will the merchant have to manually void the transaction?
