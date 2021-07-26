@@ -2,10 +2,9 @@
 tags: [carat, commerce-hub, declines, enterprise, testing]
 ---
 
-
 # Test Decline Response
 
-A decline response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object. The dollar amounts between 5001.00 - 5999.00 to trigger a decline, where the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) is the last 3 digits.
+A decline response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object. The dollar amounts between 5001.00 - 5999.00 can be used to trigger a decline, where the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) is the last 3 digits.
 
 <!-- theme: example -->
 >To receive a response of 006 Declined, submit 5006.00 as the total. 

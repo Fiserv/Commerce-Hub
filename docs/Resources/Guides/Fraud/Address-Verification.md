@@ -143,8 +143,8 @@ title: Response
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
             "association":{
                "avsCode": "YY",
                "cardholderNameResponse": "1"
@@ -196,8 +196,7 @@ title: Request
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -258,8 +257,8 @@ title: Response
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
             "association":{
                "avsCode": "YY",
                "cardholderNameResponse": "1"
@@ -281,15 +280,13 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 | Value | Descrption |
 | ---- | ------------|
-| *EXACT_MATCHED* | Data exactly matches with issuer system |
 | *MATCHED* | Data matches with issuer system with some mismatch |
 | *NOT_MATCHED* | Data does not match with issuer system |
 | *NOT_CHECKED* | Street address or postal code verification not done |
 | *NO_INPUT_DATA* | Street address or postal code not present in the input |
+| *NONE* | Street address or postal code not available |
 
 ---
-
-
 
 ## Association Response Code
 

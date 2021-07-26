@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-errors]
 ---
 
-
 # Test Error Response
 
 An error response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering the desired [error code](?path=docs/Resources/Guides/Response-Codes/Error.md) in `requestedTestResponseCode` in the `additionalDataCommon` object.

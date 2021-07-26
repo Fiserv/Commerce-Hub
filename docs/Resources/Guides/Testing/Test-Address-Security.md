@@ -6,68 +6,79 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 
 In Commere Hub, a merchant can generate a test request and test response for the billing address, cardholder's name and security code by using the corresponding variables in the sandbox environment.
 
+---
+
 ## Address Verification
 
 ### Street
 
-A specific address is needed to get a specific response. For the processor response for the street name field, you must pass the value that you would like returned in the NO_MATCHED field.
+A specific `street` value is required to get a specific response.
 
-<!-- theme: info -->
->If any of the address fields are not available or not applicable, they may be omitted. If available, the last 5 or 9 digits, without embedded spaces, should be the zip code (ex. "12345-6789" becomes "123456789"). Numbers are not spelled out. (“First Street” becomes “1ST Street”, “Second” becomes “2ND”, etc).
-
-
-| Address | Value | Descrption | 
+| Street | Value | Descrption | 
 | ----- | ---- | ------------|
-| 11111 | *EXACT_MATCHED* | Data exactly matches with issuer system |
-|22222| *MATCHED* | Data matches with issuer system with some mismatch |
-|33333| *NOT_MATCHED* | Data does not match with issuer system |
-| 44444 |*NOT_CHECKED* | Street address or postal code verification not done |
-|55555 |*NO_INPUT_DATA* | Street address or postal code mot present in the input |
+| MATCHED | *MATCHED* | Data matches with issuer system with some mismatch |
+| NOT_MATCHED | *NOT_MATCHED* | Data does not match with issuer system |
+| NOT_CHECKED |*NOT_CHECKED* | Street address verification not done |
+| |*NO_INPUT_DATA* | Street address not present in the input |
+| Any Address | *NONE* | Street address not available (Default Response) |
 
+---
 
 ### Postal Code
 
-A specific postal code is needed to generate a specific response. For the postal code, you must pass the value that you would like returned. 
-
+A specific `postalCode` value is required to generate a specific response.
 
 | Postal Code  | Value | Descrption | 
 | ----- | ---- | ------------|
-| 11111-1111 | *EXACT_MATCHED* | Data exactly matches with issuer system |
-|22222-2222| *MATCHED* | Data matches with issuer system with some mismatch |
-|33333-3333| *NOT_MATCHED* | Data does not match with issuer system |
-| 44444-4444 |*NOT_CHECKED* | Street address or postal code verification not done |
-|55555-5555 |*NO_INPUT_DATA* | Street address or postal code mot present in the input |
+| 11111 | *MATCHED* | Data matches with issuer system with some mismatch |
+| 22222 | *NOT_MATCHED* | Data does not match with issuer system |
+| 33333 | *NOT_CHECKED* | Postal code verification not done |
+| | *NO_INPUT_DATA* | Postal code not present in the input |
+| Any Postal Code | *NONE* | Postal code not available (Default Response) |
 
-## Cardholder Name Verification
+---
 
-In the first name field, pass the number for desired response.
+### Cardholder Name Verification
+
+In the `firstName` field, pass the number for desired response.
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) transactions.
 
+| Value | Description |
+| ------- | ------- |
+| *1* | Cardholder name matches |
+| *2* | Cardholder name, billing address, and postal code match |
+| *3* | Cardholder name and billing postal code match |
+| *4* | Cardholder name and billing address match |
+| *5* | Cardholder name incorrect, billing address and postal code match |
+| *6* | Cardholder name incorrect, billing postal code matches |
+| *7* | Cardholder name incorrect, billing address matches |
+| *8* | Cardholder name, billing address, and postal code are all incorrect |
+
+---
+
 ## Security Code Verification
 
 To receive the specific response, you must pass a specific 3 or 4 digit (AMEX) security code from the table below.
+
 <!-- 
 Will our system automatically submit the void on the test card or will the merchant have to manually void the transaction?
 Is our certification testing scripts using sandbox test scenarios or network E2E testing scripts?
 Will we support 3-D secure?
 Can we simulate payments in another country?
 Zip Code
-
-
-
  --> 
 
 | 3-digit | 4-digit | Response | Description |
 | ---- | ----- | ----------|-----|
-| 111 | 1111 | MATCHED | Data matches with issuer system | 
-| 999 | 9999 | NOT_MATCHED | Data does not match with issuer system |
-| 888 | 8888 | NOT_PROCESSED | Security code verification not done |
-| 222 | 2222 | NOT_PRESENT | Security code not present in the input |
-| 333 | 3333 | NOT_CERTIFIED| Issuer not certified to verify sercurity code |
-| 444 | 4444 | NOT_CHECKED | Security code not checked |
-|  |  | NONE | No security code provided |
+| 111 | 1111 | *MATCHED* | Data matches with issuer system | 
+| 999 | 9999 | *NOT_MATCHED* | Data does not match with issuer system |
+| 888 | 8888 | *NOT_PROCESSED* | Security code verification not done |
+| 222 | 2222 | *NOT_PRESENT* | Security code not present in the input |
+| 333 | 3333 | *NOT_CERTIFIED*| Issuer not certified to verify sercurity code |
+| 444 | 4444 | *NOT_CHECKED* | Security code not checked |
+|  |  | *NONE* | No security code provided |
 
 
 ---
@@ -94,14 +105,13 @@ title: Request
       }
    },
    "billingAddress":{
-      "firstName": "John",
+      "firstName": "1",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "MATCHED",
          "city": "Atlanta",
          "stateOrProvince":"GA",
-         "postalCode": "30301",
+         "postalCode": "22222",
          "country": "US"
       }
    }
@@ -159,9 +169,9 @@ title: Response
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
-            "securityCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
+            "securityCodeMatch": "MATCHED",
             "association":{
                "securityCodeResponse": "M"
                "avsCode": "YY",

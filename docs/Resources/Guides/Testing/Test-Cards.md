@@ -54,7 +54,6 @@ Commerce Hub provides generic test card numbers, an allows generation of merchan
 
 ### Test Card Requirements
 
-Test card requirements
 Generated test cards should meet the following requirements:
 
 - Test card numbers should be between 16-19 digits long.
