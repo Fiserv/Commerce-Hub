@@ -16,7 +16,7 @@ Commerce Hub allows developers to integrate with the API to trigger responses an
 
 Commerce Hub supports [test cards](?path=docs/Resources/Guides/Testing/Test-Cards.md) in the sandbox environment. No funds will be charged, refunded or processed while utilizing a test account.
 
----
+--- 
 
 ## Error Response Testing
 
