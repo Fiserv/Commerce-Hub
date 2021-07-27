@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 
 An [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification response can be triggered when testing a Commerce Hub integration in the sandbox environment by using the corresponding values in the request.
 
----
+--- 
 
 ## Address Verification
 
@@ -106,13 +106,9 @@ title: Request
    },
    "billingAddress":{
       "firstName": "1",
-      "lastName": "Doe",
       "address":{
          "street": "MATCHED",
-         "city": "Atlanta",
-         "stateOrProvince":"GA",
-         "postalCode": "22222",
-         "country": "US"
+         "postalCode": "11111",
       }
    }
 }
@@ -133,8 +129,7 @@ title: Response
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
          "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
          "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId": "838916029301"
@@ -144,7 +139,6 @@ title: Response
       "sourceType": "PaymentCard",
       "card":{
          "cardData": "4005550000000019",
-         "nameOnCard": "Jane Smith",
          "expirationMonth": "05",
          "expirationYear": "2025",
          "bin": "400555",
@@ -163,7 +157,7 @@ title: Response
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
+      "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails":{
          "associationResponseCode": "000",
          "transactionTimestamp": "2016-04-16T16:06:05Z",
@@ -186,13 +180,13 @@ title: Response
 
 ---
 
-
 ## See Also
 
-
-
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
 - [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
 
+---
