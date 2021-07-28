@@ -2,10 +2,9 @@
 tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-transaction-type, reversal-reason-code, authorization-sequence, device-fingerprint-data, data-capture, data-dynamic, master-data, transactional-data, transaction-details,]
 ---
 
-
 # Transactional Details
 
-The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
+The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` object.
 
 <!--
 type: tab
