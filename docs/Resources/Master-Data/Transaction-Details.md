@@ -23,9 +23,9 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
 | `processingCode` | *string* | 6 | A [required code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
-| `merchantTransactionId` | *string* | 64 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
-| `merchantOrderId` | *string* | 128 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
-| `merchantInvoiceNumber` | *string* | 1024 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
+| `merchantTransactionId` | *string* | 64 | Unique merchant transaction ID (aka transaction reference ID). |
+| `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
+| `merchantInvoiceNumber` | *string* | 1024 | Merchant invoice number (aka reference number). |
 | `receiptEmail` | *string* | 256 | Email id to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
