@@ -21,7 +21,7 @@ The below table identifies the parameters in the `orderData` object.
 | `preOrder` | *boolean* | N/A | Identifies if the purchase is a preorder |
 | `preOrderDate` | *string* | 10 | Date that goods and services are preordered. YYYY-MM-DD format. |
 | `reOrder` | *boolean* | N/A | Identifies if the purchase is a reorder |
-| `goodsSoldCode` | *string* | N/A | Indicates a specific type of goods is being purchased in an Amex or [EDS](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md) transaction. It is used to help identify potentially fraudulent sales. **Valid Value:** *GIFT_CARD* |
+| `goodsSoldCode` | *string* | N/A | Indicates a specific type of good is being purchased in an Amex or [EDS](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md) transaction. It is used to help identify potentially fraudulent sales. **Valid Value:** *GIFT_CARD* |
 | `giftcardCount`  | *integer* | 2 | Number of gift cards purchased during the transaction |
 | `giftCardAmount` | *object* | N/A | Used for the [total and currency](?path=docs/Resources/Master-Data/Amount-Components.md) |
 
