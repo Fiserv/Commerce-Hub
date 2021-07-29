@@ -31,7 +31,13 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 6. Merchant submits the encrypted google Pay payload to Commerce Hub.
 7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to Google Pay integration using RESTful API. The documents related to the features will be released soon.
+
+
+<!--- 
 **Begin integration with [Google Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md).**
+--->
 
 ---
 
