@@ -202,9 +202,9 @@ title: Response
             "transactionTimestamp": "2016-04-16T16:06:05Z",
             "transactionReferenceInformation": "string",
             "avsSecurityCodeResponse":{
-               "streetMatch": "MATCH",
-               "postalCodeMatch": "MATCH",
-               "securityCodeMatch": "MATCH",
+               "streetMatch": "MATCHED",
+               "postalCodeMatch": "MATCHED",
+               "securityCodeMatch": "MATCHED",
                "association":{
                   "avsCode": "YY",
                   "securityCodeResponse": "M",

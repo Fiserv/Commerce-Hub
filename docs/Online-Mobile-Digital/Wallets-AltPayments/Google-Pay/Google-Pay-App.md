@@ -17,6 +17,8 @@ The merchant will need to be do the changes in their [App to integrate with Goog
 - Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
 - Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
 
+---
+
 ### Request Variables
 
 <!--
@@ -51,6 +53,8 @@ The below table identifies the required parameters in the `keyInfo` array.
 
 <!-- type: tab-end -->
 
+---
+
 ### Payload Example
 
 <!--
@@ -60,15 +64,29 @@ title: Request
 
 ##### Example of a Charge Payload Request.
 ```json
-{
-   "amount":{
-      "total":"12.04",
-      "currency":"USD"
-   },
-   "source":{
-      "sourceType":"GooglePay",
 
-   }
+{
+  "amount": {
+    "total": 12.04,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "GooglePay",
+    "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/...}",
+    "signature": "MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uW...",
+    "version": "ECv2",
+    "merchantId": "676174657761793A666972737464617461",
+    "merchantPrivateKey": "DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2A...",
+    "signingVerificationKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIs..."
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "SECURE_ECOM"
+  }
 }
 
 ```
@@ -144,6 +162,8 @@ title: Response
 ```
 
 <!-- type: tab-end -->
+
+---
 
 ## See Also
 

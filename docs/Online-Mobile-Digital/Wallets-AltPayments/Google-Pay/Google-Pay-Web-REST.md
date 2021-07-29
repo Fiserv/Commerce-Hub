@@ -6,14 +6,20 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 Merchants need to follow the below steps in order to integrate Google Pay with their website.
 
+---
+
 ## Step 1: Configure Google Pay on the Web
 
 The merchant need to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API Version, request a payment token, define payment card networks & auth methods, describe payment allowed methods, add payment tag, determine readiness to pay, add google pay button etc.
+
+---
 
 ## Step 2: Submit a Charge Request
 
 - Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
 - Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
+
+---
 
 ### Request Variables
 
@@ -33,8 +39,6 @@ The below table identifies the required parameters in the `source` object.
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 | `keyInfo` | *array* | N/A | &#10004; | Key information |
 
-
-
 <!--
 type: tab
 title: keyInfo
@@ -49,6 +53,8 @@ The below table identifies the required parameters in the `keyInfo` array.
 
 <!-- type: tab-end -->
 
+---
+
 ### Payload Example
 
 <!--
@@ -58,15 +64,29 @@ title: Request
 
 ##### Example of a charge payload request.
 ```json
-{
-   "amount":{
-      "total":"12.04",
-      "currency":"USD"
-   },
-   "source":{
-      "sourceType":"GooglePay",
 
-   }
+{
+  "amount": {
+    "total": 12.04,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "GooglePay",
+    "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/...}",
+    "signature": "MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uW...",
+    "version": "ECv2",
+    "merchantId": "676174657761793A666972737464617461",
+    "merchantPrivateKey": "DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2A...",
+    "signingVerificationKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIs..."
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "SECURE_ECOM"
+  }
 }
 
 ```
@@ -149,6 +169,7 @@ title: Response
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 
+---

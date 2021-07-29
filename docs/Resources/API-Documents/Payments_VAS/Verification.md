@@ -119,8 +119,8 @@ title: Response
          "associationResponseCode": "000",
          "transactionTimestamp": "2021-06-20T23:42:48Z",
          "avsSecurityCodeResponse":{
-            "streetMatch": "EXACT_MATCH",
-            "postalCodeMatch": "EXACT_MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
             "securityCodeMatch": "MATCHED",
             "association":{
                "avsCode": "Y"

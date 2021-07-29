@@ -24,6 +24,8 @@ The below table identifies the parameters in the `cardDetails` object.
 
 <!-- type: tab-end -->
 
+---
+
 ## Information Lookup using PaymentCard
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
