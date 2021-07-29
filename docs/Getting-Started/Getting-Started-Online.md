@@ -33,8 +33,9 @@ Using Commerce Hub's secure hosted pages can reduce the burden of compliance wit
 <!-- theme: info -->
 >A merchant can lessen the PCI DSS load by using Hosted Payment Pages, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
 
+<!---
 **Begin integration with Commerce Hub's [Hosted Payment Pages](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md).**
-
+--->
 ---
 
 ## Payment URL
