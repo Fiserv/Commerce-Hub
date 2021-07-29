@@ -18,6 +18,8 @@ Transactions can originate from a either a merchant 3DS service or through Comme
 
 When using our payments API with passthrough, the authentication is performed with the merchant's 3DS provider, and will send the response from 3DS as the source type Payment3dsPassthrough the charge request.
 
+<!---
+
 ### Minimum Requirements
 
 #### Object: paymentSource
@@ -36,15 +38,19 @@ When using our payments API with passthrough, the authentication is performed wi
 | -------- | :--: | :------------: | ------------------ |
 | `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md)(#electroniccommerceindicators). |
   
+--->
 
 ---
 
+<!--- 
 ### Payload Example
+--->
 
 <!--
 type: tab
 title: Request
 -->
+<!---
 
 ```json
 {
@@ -67,6 +73,7 @@ title: Request
     }
 }
 ```
+--->
 
 <!-- type: tab-end -->
 
@@ -74,4 +81,9 @@ title: Request
 
 When using our payments API as the 3-D Secure provider, the authentication is performed in-line with the existing transaction flow. The process starts by performing a typical authorization or sale request with a desire to perform 3-D Secure authentication in the request.
 
-### Minimum Requirements
+---
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for 3-D Secure. The documents related to the feature and integration will be released soon.
+
+---

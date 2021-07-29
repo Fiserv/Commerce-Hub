@@ -33,16 +33,25 @@ Using Commerce Hub's secure hosted pages can reduce the burden of compliance wit
 <!-- theme: info -->
 >A merchant can lessen the PCI DSS load by using Hosted Payment Pages, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for Hosted Payment Pages. The documents related to the feature and integration will be released soon.
+
 <!---
 **Begin integration with Commerce Hub's [Hosted Payment Pages](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md).**
 --->
+
 ---
 
 ## Payment URL
 
 Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub [Hosted Payment Page](#hosted-payment-page) to complete the payment.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for Payment URL. The documents related to the feature and integration will be released soon.
+
+<!---
 **Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md).**
+--->
 
 ---
 
@@ -52,7 +61,12 @@ Allows a merchant an easy and secure way to embed a payment form into a website.
 
 Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The form fields can be customized by the merchant.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for Payment.js. The documents related to the feature and integration will be released soon.
+
+<!---
 **Begin integration with Commerce Hub's [Payment.js](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
+--->
 
 ---
 
@@ -60,6 +74,11 @@ Payment.js accomplishes this by injecting an iframe into a parent form where cus
 
 Commerce Hub's Virtual Terminal allows a merchant an easy way to process offline transactions, transaction corrections, setup fraud controls and provides enchanced reporting capabilities.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for virtual terminal. The documents related to the feature and integration will be released soon.
+
+<!---
 **Begin processing with Commerce Hub's [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md).**
+--->
 
 ---
