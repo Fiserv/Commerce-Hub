@@ -4,7 +4,6 @@ tags: [carat, commerce-hub, enterprise, getting-started, in-person, payments, ca
 
 # In-Person Payments
 
-## Overview
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include card present transactions support and the documents related to the features will be released soon.
