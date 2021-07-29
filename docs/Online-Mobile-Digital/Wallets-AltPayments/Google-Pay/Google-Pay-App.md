@@ -4,6 +4,10 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 # Google Pay: In-App Integration
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to Apple Pay in app integration. The documents related to the features will be released soon.
+
+<!---
 #### Google Pay on the App
 
 ## Step 1: Configure Google Pay in App
@@ -18,12 +22,12 @@ The merchant will need to be do the changes in their [App to integrate with Goog
 - Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
 
 ### Request Variables
-
-<!--
+--->
+<!---
 type: tab
 title: source
--->
-
+--->
+<!---
 The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Required | Description |
@@ -35,29 +39,30 @@ The below table identifies the required parameters in the `source` object.
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 | `keyInfo` | *array* | N/A | &#10004; | Key information |
 
+--->
 
-
-<!--
+<!---
 type: tab
 title: keyInfo
--->
-
+--->
+<!---
 The below table identifies the required parameters in the `keyInfo` array.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `merchantPrivateKey` | *string* | 1024 | | Merchant private key - Hex encoded. |
 | `signingVerificationKey` | *string* | 1024 | &#10004; | Signing verification key - Base64 encoded. |
-
-<!-- type: tab-end -->
-
+--->
+<!--- type: tab-end --->
+<!---
 ### Payload Example
+--->
 
-<!--
+<!---
 type: tab
 title: Request
--->
-
+--->
+<!---
 ##### Example of a Charge Payload Request.
 ```json
 {
@@ -72,16 +77,17 @@ title: Request
 }
 
 ```
-
-<!--
+--->
+<!---
 type: tab
 title: Response
--->
-
-##### Example of a Charge (201: Created) Response.
+--->
+<!---
+##### Example of a Charge (201: Created) Response.--->
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+<!--- > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.--->
+<!---
 ```json
 {
    "gatewayResponse":{
@@ -128,15 +134,17 @@ title: Response
    }
 }
 ```
-
-<!-- type: tab-end -->
+--->
+<!--- type: tab-end --->
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Google Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
-- [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 
+<!---
+- [Google Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
+- [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
+--->
 ---

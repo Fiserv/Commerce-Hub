@@ -4,9 +4,6 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted
 
 # Google Pay
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Google Pay support and the documents related to the features will be released soon.
-
 Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. 
 
 Google Pay is available to cardholders in supported countries. Refer to Google's documentation to learn about [supported countries](https://support.google.com/pay/answer/9023773).
@@ -52,7 +49,12 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Complaince requir
 6. Hosted Payment Page submits the encrypted Google Pay payload to Commerce Hub.
 7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to Google Pay integration using hosted payment page. The documents related to the features will be released soon.
+
+<!---
 **Begin integration with [Google Pay on the Web: Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md).**
+--->
 
 ---
 
@@ -67,6 +69,9 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 3. The App calls the Google Pay framework to obtain the encrypted wallet data.
 4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
 5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to Google Pay in app integration. The documents related to the features will be released soon.
 
 <!---
 **Begin integration with [Google Pay Integration In-App](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md).**
