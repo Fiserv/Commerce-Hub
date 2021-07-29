@@ -13,3 +13,11 @@ Commerce Hub can pass Level II and III data (also knows as Enhanced Data) with b
 
 ## Request Variables
 
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---
+
