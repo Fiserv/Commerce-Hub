@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, getting-started, card-not-present, onlin
 
 # Create a Payment Form
 
-## Overview
-
 The first step for adding payments capabilities to your website is to implement a HTML form that you can use to accept a payment.
 
 This type of integration manages the customer checkout process and supports many payment methods or authentication mechanisms.
