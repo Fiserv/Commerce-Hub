@@ -20,7 +20,11 @@ The below table identifies the parameters in the `transactionInteraction` object
 | `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
 | `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
 | `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator).|
+<!---
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
+--->
+
+---
 
 <!--
 type: tab
@@ -33,8 +37,8 @@ JSON string format for `transactionInteraction`:
 {
    "transactionInteraction":{
       "origin": "ECOM",
-      "posEntryMode": "MANUAL",
-      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
+      "posEntryMode": "MANUAL", // Future Release
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM", // Future Release
       "mobileInteraction": "PHONE_NUMBER",
       "eciIndicator": "SECURE_ECOM"
    }
@@ -58,6 +62,7 @@ The below table identifies the valid values of `origin`.
 
 ---
 
+<!---
 #### POS Entry Mode
 
 POS entry mode value identifies how account number was entered on the transaction.  The below table identifies the valid values of `posEntryMode`.
@@ -101,6 +106,8 @@ The below table identifies the valid values of `posConditionCode`.
 | *CARD_NOT_PRESENT_F2F* | **Cardholder Present - Card Not Present - Face 2 Face.** Designates a transaction where the cardholder was present at a merchant location but did not have a card to swipe *(i.e. manual transaction)*. |
 | *CARD_NOT_PRESENT_MOTO* | **Cardholder Not Present - Mail Order/Telephone Order:** Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
 | *CARD_NOT_PRESENT_ECOM* | **Cardholder Not Present - E-commerce.** Designates a transaction initiated from the merchant's website, email, or app. Specific E-commerce type is identified in the `eciIndicator`. |
+
+--->
 
 ---
 
