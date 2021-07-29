@@ -4,11 +4,10 @@ tags: [carat, commerce-hub, enterprise, getting-started, in-person, payments, ca
 
 # In-Person Payments
 
-
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to include card present transactions support and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to include card present transactions support. The documents related to the features will be released soon.
 
-
+Commerce Hub offers multiple methods of accepting encrypted in-person payments. A merchant can accept EMV, Track, Contactless (NFC), and manual entry payments. Transactions can be submitted using Commerce Hub RESTful API with custom built software and semi-integrated terminals.
 
 ---
 

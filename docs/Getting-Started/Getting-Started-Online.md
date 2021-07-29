@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, restful, apis, card present, online, mob
 
 # Online/Mobile/Digital Payments
 
-## Overview
-
 Commerce Hub offers multiple methods of accepting online, mobile, and digital payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, or virtual terminal.
 
 <!-- theme: warning -->
@@ -55,14 +53,14 @@ Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and s
 
 ---
 
-## Payment.js
+## Fiserv JS
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Payment.js makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Fiserv JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The form fields can be customized by the merchant.
+Fiserv JS accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The form fields can be customized by the merchant.
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to include support for Payment.js. The documents related to the feature and integration will be released soon.
+> We are enhancing Commerce Hub to include support for Fiserv JS. The documents related to the feature and integration will be released soon.
 
 <!---
 **Begin integration with Commerce Hub's [Payment.js](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
