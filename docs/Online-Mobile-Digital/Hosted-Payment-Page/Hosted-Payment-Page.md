@@ -16,6 +16,7 @@ With the transaction type Pre-Authorization (preauth) you can reserve funds on a
 
 Alternatively, you can use the transaction type Sale which immediately charges a customer’s card or bank account over night with no further action required from you.
 
+<!---
 ## Getting started
 
 When using the embedded form or hosted payment page, you'll need the following:
@@ -74,11 +75,18 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Enable Re-Captcha
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
-- Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
+- Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow --->
+
+---
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for Hosted Payment Pages and the documents related to the feature and integration will be released soon.
+
+---
 
 ## See Also
-- Available Fields
-- Customize Payment Page
+<!--- - Available Fields
+- Customize Payment Page --->
 - [Online Wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md)
 
 ---

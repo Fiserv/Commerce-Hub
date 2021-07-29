@@ -48,7 +48,14 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requir
 5. The Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to Apple Pay integration using hosted payment page. The documents related to the features will be released soon.
+
+<!---
 **Begin integration with [Apple Pay on the Web: Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md).**
+--->
+
+---
 
 ### In-App Integration
 
@@ -61,7 +68,12 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 3. The merchant’s app submits the encrypted Apple Pay payload to Commerce Hub.
 4. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to Apple Pay in app integration. The documents related to the features will be released soon.
+
+<!---
 **Begin integration with [Apple Pay Integration In-App](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md).**
+--->
 
 ---
 

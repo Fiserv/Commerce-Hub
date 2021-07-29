@@ -26,21 +26,25 @@ Commerce Hub provides an API that allows merchant to send transaction type, amou
 <!--theme: info-->
 > The default `expiration` for the Payment URL is 182 days.
 
+<!---
 ### Endpoint
+--->
 <!-- theme: success -->
->**POST** `/payment-vas/payment-url`
-
+<!--- >**POST** `/payment-vas/payment-url`--->
+<!---
 ### Minimum Requirements
 
 add here
 
 ### Payload Example
+--->
 
-<!--
+<!---
 type: tab
 title: Request
--->
+--->
 
+<!---
 ##### Example of Payment URL Request.
 
 ```json
@@ -66,17 +70,19 @@ title: Request
   }
 }
 ```
+--->
 
-<!--
+<!---
 type: tab
 title: Response
--->
+--->
 
+<!---
 ##### Example of Payment Url (200: Success) Response.
-
+--->
 <!-- theme: info -->
-> See [Error Responses](#error-responses) for additional status.
-
+<!--- > See [Error Responses](#error-responses) for additional status. --->
+<!---
 ```json
 
 {
@@ -96,6 +102,7 @@ title: Response
 }
 
 ```
+--->
 <!-- type: tab-end -->
 
 ---
@@ -104,20 +111,24 @@ title: Response
 
 Merchant may need to get the status of the payment URL so that if required they may contact shopper and request them to complete the transaction if they have not done. It may also be helpful while solving the customer queries if any on the status of the payment.
 
+<!---
 Get Payment URL request can be initiated by sending the request to the appropriate endpoint by providing valid `paymentUrlId` with no minimum field requirement.
 
 ### Endpoint
+--->
 <!-- theme: info -->
->**GET** `/payment-vas/payment-url/{payment-url-id}`
+<!--- >**GET** `/payment-vas/payment-url/{payment-url-id}`--->
 
+<!---
 ### Payload Example
+--->
 
-
-<!--
+<!---
 type: tab
 title: Response
--->
+--->
 
+<!---
 ##### Example of Payment URL Detail (200: Success) Response.
 
 The [status](#payment-url-status) of the Payment URL will be recieved in component `paymentUrlDetail` of the response. 
@@ -140,8 +151,11 @@ The [status](#payment-url-status) of the Payment URL will be recieved in compone
 }
 
 ```
+--->
+
 <!-- type: tab-end -->
 
+<!---
 #### Component: paymentUrlDetail
 
 | Variable | Type| Maximum Length | Description/Values|
@@ -159,29 +173,34 @@ The [status](#payment-url-status) of the Payment URL will be recieved in compone
 - **Expired:** The Payment URL is not used by the shopper and is expired. New Payment URL needs to be created if required.
 - **Cancelled:** The Payment URL is deleted by the merchant. 
 
+--->
+
 ---
 
 ## Delete a Payment URL
 
 In some scenarios, merchant may want to force the expiry of a payment link. For example, if a shopper updates their order after payment link is sent, so merchant may want to create a new payment link with the updated amount. To avoid confusion with two payment links, set the status of the previous payment link to expired. Changing the status to expired also changes the payment link's expiry date to the current date and time.
 
+<!---
 Delete Payment URL request can be initiated by sending the request to the appopriate endpoint by providing valid `paymentUrlId` with no minimum field requirement.
 
 
 ### Endpoint
+--->
 <!-- theme: danger -->
->**DELETE** `/payment-vas/payment-url/{payment-url-id}`
-
+<!--- >**DELETE** `/payment-vas/payment-url/{payment-url-id}`--->
+<!---
 ### Payload Example
-
-<!--
+--->
+<!---
 type: tab
 title: Response
--->
-
+--->
+<!---
 ##### Example of Payment URL Delete (200: Success) Response.
+--->
 <!-- theme: info -->
-> See [Error Responses](#error-responses) for additional status.
+<!--- > See [Error Responses](#error-responses) for additional status.
 
 ```json
 
@@ -202,10 +221,10 @@ title: Response
 }
 
 ```
+--->
 <!-- type: tab-end -->
 
----
-
+<!---
 ## Error Responses
 
 | Value | Description |
@@ -215,3 +234,20 @@ title: Response
 | PROCESSING_FAILED | Failed to process the Payment URL. |
 | FAILURE | Generic failure message. |
 
+--->
+
+---
+
+<!-- theme: danger -->
+>We are enhancing Commerce Hub to include support for Payment URL. The documents related to the feature and integration will be released soon.
+
+---
+
+## See Also
+
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [Hosted Payment Page Integration](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md)
+- [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)
+
+---
