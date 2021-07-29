@@ -5,8 +5,6 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 # Payment.JS Integration
 
-## Overview
-
 During the form submission the client library, loaded into the parent window, sends one of the iframes a clientToken (for authentication with the service) and a RSA public key (asymmetric key pair). This iframe then collects the data hidden in the other iframes and encrypts the card number, expiration date, and cvv (the other fields are transferred without data layer encryption due to RSA message limits). This iframe then makes an API call to the Payment.js service for tokenization.
 
 Assuming the customer is using a browser with modern cross-origin security controls, and these controls are not compromised by a browser defect, it will not be possible for non-Payment.js code to steal the data hidden in these iframes as the card number, expiration date, and cvv in particular never escape into the parent window in an unencrypted form.
