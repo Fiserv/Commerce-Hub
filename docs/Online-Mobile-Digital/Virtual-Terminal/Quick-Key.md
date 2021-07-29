@@ -4,11 +4,14 @@ tags: [carat, commerce-hub, enterprise, batch-upload card-not-present,  csv-form
 
 # Quick Key
 
-## Overview
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Quick Key support and the documents related to the features will be released soon.
+
 
 Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upload of transactions using a Comma Seperated Value (CSV) file.
 
-- The Quick Key UI shall capable to upload a transaction file with the predefined format.
+<!---
+- The Quick Key UI allows merchants to upload a transaction file with the predefined format.
 - An upload file action button shall be available for the CLX user.
 - On click of Upload action a file selection window shall be displayed to the user to select the file.
 - The Quick Key transaction upload file format shall be CSV.
@@ -17,11 +20,8 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 - The maximum record count allowed in a Quick Key transaction upload file shall be based on the configuration at service config by merchant.
 - Transaction record in upload file shall separate by carriage return character
 - UI shall have an option to download the Quick Key Transaction file template.
+--->
 
----
-
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Fraud Detect support and the documents related to the features will be released soon.
 
 <!---
 ## CSV Format

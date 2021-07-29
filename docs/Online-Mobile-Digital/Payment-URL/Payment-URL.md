@@ -4,6 +4,10 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, invoice, secur
 
 # Payment URL Integration
 
+<!-- theme: danger -->
+>We are enhancing Commerce Hub to include support for Payment URL. The documents related to the feature and integration will be released soon.
+
+
 Merchant's can use the Payment URL integration method to generate a invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the Payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
 
 **User Action:** The merchant needs to invoice a customer's purchase. 
@@ -17,12 +21,18 @@ Merchant's can use the Payment URL integration method to generate a invoice that
 
 ---
 
+<!---
+
 ## Generate a Payment URL
 
 Commerce Hub provides an API that allows merchant to send transaction type, amount and currency as well as the language that shall be used on the hosted payment page that will be shown to the customer after accessing the link.
+--->
 
 <!--theme: info-->
+
+<!---
 > The default `expiration` for the Payment URL is 182 days.
+--->
 
 <!---
 ### Endpoint
@@ -37,10 +47,10 @@ add here
 ### Payload Example
 --->
 
-<!---
+<!--
 type: tab
 title: Request
---->
+-->
 
 <!---
 ##### Example of Payment URL Request.
@@ -70,10 +80,10 @@ title: Request
 ```
 --->
 
-<!---
+<!--
 type: tab
 title: Response
---->
+-->
 
 <!---
 ##### Example of Payment Url (200: Success) Response.
@@ -102,6 +112,7 @@ title: Response
 ```
 --->
 <!-- type: tab-end -->
+<!---
 
 ---
 
@@ -109,7 +120,6 @@ title: Response
 
 Merchant may need to get the status of the payment URL so that if required they may contact shopper and request them to complete the transaction if they have not done. It may also be helpful while solving the customer queries if any on the status of the payment.
 
-<!---
 Get Payment URL request can be initiated by sending the request to the appropriate endpoint by providing valid `paymentUrlId` with no minimum field requirement.
 
 ### Endpoint
@@ -121,10 +131,10 @@ Get Payment URL request can be initiated by sending the request to the appropria
 ### Payload Example
 --->
 
-<!---
+<!--
 type: tab
 title: Response
---->
+-->
 
 <!---
 ##### Example of Payment URL Detail (200: Success) Response.
@@ -171,7 +181,7 @@ The [status](#payment-url-status) of the Payment URL will be recieved in compone
 - **Expired:** The Payment URL is not used by the shopper and is expired. New Payment URL needs to be created if required.
 - **Cancelled:** The Payment URL is deleted by the merchant. 
 
---->
+
 
 ---
 
@@ -179,7 +189,6 @@ The [status](#payment-url-status) of the Payment URL will be recieved in compone
 
 In some scenarios, merchant may want to force the expiry of a payment link. For example, if a shopper updates their order after payment link is sent, so merchant may want to create a new payment link with the updated amount. To avoid confusion with two payment links, set the status of the previous payment link to expired. Changing the status to expired also changes the payment link's expiry date to the current date and time.
 
-<!---
 Delete Payment URL request can be initiated by sending the request to the appopriate endpoint by providing valid `paymentUrlId` with no minimum field requirement.
 
 
@@ -233,13 +242,6 @@ title: Response
 | FAILURE | Generic failure message. |
 
 --->
-
----
-
-<!-- theme: danger -->
->We are enhancing Commerce Hub to include support for Payment URL. The documents related to the feature and integration will be released soon.
-
----
 
 ## See Also
 

@@ -168,11 +168,12 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Apple Pay In-App](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 <!---
-- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Apple Pay Web: Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)
 --->
 
 ---

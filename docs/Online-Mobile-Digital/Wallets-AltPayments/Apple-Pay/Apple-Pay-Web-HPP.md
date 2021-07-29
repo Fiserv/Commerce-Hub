@@ -7,6 +7,8 @@ tags: [carat, commerce-hub, enterprise, integration-methods, hosted-payment-page
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to Apple Pay integration using hosted payment page. The documents related to the features will be released soon.
 
+Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
+
 <!---
 ## Step 1: Configure Apple Pay on the Web
 
@@ -34,11 +36,11 @@ The merchant can enhance the purchase experience from their website by creating 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay Web RESTful Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md)
+- [Apple Pay Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md)
 - [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 <!---
-- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
+- [Apple Pay In-App](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
 --->
 ---
