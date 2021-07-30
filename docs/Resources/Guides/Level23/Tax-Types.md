@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, visa, american-express, discover, purchase-card, commercial-card, business-card]
+---
+
 # Tax-Types
 
 Use these values to populate the Tax Type property in the Level III line item detail. 
@@ -27,6 +31,8 @@ Use these values to populate the Tax Type property in the Level III line item de
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Commodity Codes](path?=docs/Resources/Guides/Level23/Commodity-Codes.md)
 - [Level II & III Brand](path?=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
 
 ---
