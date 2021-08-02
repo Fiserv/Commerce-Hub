@@ -1,5 +1,5 @@
 openapi: 3.0.2
-info: {title: Charges, description: This API Specification is designed to provide
+info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
     processing in Card Not Present environments., version: 1.0.0}
 servers:
