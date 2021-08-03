@@ -28,8 +28,58 @@ The table below includes the commodity codes (class and subclass list) for abras
 
 <!--
 type: tab
-title: 035 Airline
+title: 010 Acoustical Tile, Insulating Materials and Supplies
 -->
+
+The table below includes the commodity codes (class and subclass list) for abrasives.
+
+| Code | Description |
+| -------- | :--: |
+| 00514 | Abrasives, Coated, Cloth, Fiber, Paper, etc. |
+| 00521 | Abrasives, Sandblasting, Metal |
+| 00528 | Abrasives, Sandblasting (All except metal) |
+| 00542 | Abrasives, Solid: Wheels, Stones, etc. |
+| 00556 | Abrasives, Tumbling (Wheel) |
+| 00563 | Grinding and Polishing Compounds: Carborundum, Diamond, etc. |
+| 00570 | Pumice Stone |
+| 00584 | Steel Wool |
+
+| Code | Description |
+| -------- | :--: |
+| 01005 | Acoustical Tile, All Types |
+| 01008 | Acoustical Tile Accessories: Channels, Grids, Mounting Hardw |
+| 01009 | Acoustical Tile Insulation |
+01011 - ADHESIVES AND CEMENTS, ACOUSTICAL TILE
+01014 - ADHESIVES AND CEMENTS, INSULATION
+01017 - ALUMINUM FOIL ETC.
+01053 - FIBERGLASS: BATTS, BLANKETS AND ROLLS
+01056 - FOAM GLASS: BLOCKS, SHEETS, ETC.
+01057 - FOAM-IN-PLACE INSULATION: PHENOLIC, URETHANE, ETC.
+01059 - FOAM PLASTICS: BLOCKS, BOARDS, SHEETS, ETC.
+01075 - PAINTS, PRIMERS, SEALERS, ETC. (FOR INSULATION)
+01078 - PIPE AND TUBING INSULATION, ALL TYPES
+01081 - PREFORMED INSULATION, ALL TYPES (FOR ELLS, TEES, VALVES, ETC
+01084 - RUBBER INSULATION
+
+
+<!--
+type: tab
+title: 005 Abrasives
+-->
+
+The table below includes the commodity codes (class and subclass list) for abrasives.
+
+| Code | Description |
+| -------- | :--: |
+| 00514 | Abrasives, Coated, Cloth, Fiber, Paper, etc. |
+| 00521 | Abrasives, Sandblasting, Metal |
+| 00528 | Abrasives, Sandblasting (All except metal) |
+| 00542 | Abrasives, Solid: Wheels, Stones, etc. |
+| 00556 | Abrasives, Tumbling (Wheel) |
+| 00563 | Grinding and Polishing Compounds: Carborundum, Diamond, etc. |
+| 00570 | Pumice Stone |
+| 00584 | Steel Wool |
+
 
 The table below includes the commodity codes (class and subclass list) for aircraft and airport, equipment, parts and supplies.
 
