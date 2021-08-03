@@ -14,13 +14,13 @@ An [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [sec
 
 To receive a specific `streetMatch` response, pass the specific `street` value from the table below.
 
-| Street | Value | Descrption | 
+| Street | Response | Descrption | 
 | ----- | ---- | ------------|
-| MATCHED | *MATCHED* | Data matches with issuer system with some mismatch |
-| NOT_MATCHED | *NOT_MATCHED* | Data does not match with issuer system |
-| NOT_CHECKED |*NOT_CHECKED* | Street address verification not done |
-| |*NO_INPUT_DATA* | Street address not present in the input |
-| Any Address | *NONE* | Street address not available (Default Response) |
+| *MATCHED* | MATCHED | Data matches with issuer system with some mismatch |
+| *NOT_MATCHED* | NOT_MATCHED | Data does not match with issuer system |
+| *NOT_CHECKED* |NOT_CHECKED | Street address verification not done |
+| any address | NONE | Street address not available (Default Response) |
+| blank | NO_INPUT_DATA | Street address not present in the input |
 
 ---
 
@@ -28,13 +28,13 @@ To receive a specific `streetMatch` response, pass the specific `street` value f
 
 To receive a specific `postalCodeMatch` response, pass the specific `postalCode` value  from the table below.
 
-| Postal Code  | Value | Descrption | 
+| Postal Code  | Response | Descrption | 
 | ----- | ---- | ------------|
-| 11111 | *MATCHED* | Data matches with issuer system with some mismatch |
-| 22222 | *NOT_MATCHED* | Data does not match with issuer system |
-| 33333 | *NOT_CHECKED* | Postal code verification not done |
-| | *NO_INPUT_DATA* | Postal code not present in the input |
-| Any Postal Code | *NONE* | Postal code not available (Default Response) |
+| *11111* | MATCHED | Data matches with issuer system with some mismatch |
+| *22222* | NOT_MATCHED | Data does not match with issuer system |
+| *33333* | NOT_CHECKED | Postal code verification not done |
+| any postal code | NONE | Postal code not available (Default Response) |
+| blank | NO_INPUT_DATA | Postal code not present in the input |
 
 ---
 
@@ -72,13 +72,13 @@ Zip Code
 
 | 3-digit | 4-digit | Response | Description |
 | ---- | ----- | ----------|-----|
-| 111 | 1111 | *MATCHED* | Data matches with issuer system | 
-| 999 | 9999 | *NOT_MATCHED* | Data does not match with issuer system |
-| 888 | 8888 | *NOT_PROCESSED* | Security code verification not done |
-| 222 | 2222 | *NOT_PRESENT* | Security code not present in the input |
-| 333 | 3333 | *NOT_CERTIFIED*| Issuer not certified to verify sercurity code |
-| 444 | 4444 | *NOT_CHECKED* | Security code not checked |
-|  |  | *NONE* | No security code provided |
+| *111* | *1111* | MATCHED | Data matches with issuer system | 
+| *999* | *9999* | NOT_MATCHED | Data does not match with issuer system |
+| *888* | *8888* | NOT_PROCESSED | Security code verification not done |
+| *222* | *2222* | NOT_PRESENT | Security code not present in the input |
+| *333* | *3333* | NOT_CERTIFIED| Issuer not certified to verify sercurity code |
+| *444* | *4444* | NOT_CHECKED | Security code not checked |
+|  blank | blank  | NONE | No security code provided |
 
 
 ---
