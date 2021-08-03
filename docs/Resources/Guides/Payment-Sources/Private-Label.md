@@ -4,8 +4,8 @@ tags: [carat, commerce-hub, enterprise, private-label, payment-sources]
 
 
 # Private Label
-
-We are enhancing Commerce Hub to support the Private Label and the documents related to the features will be released soon.
+<!-- theme : danger -->
+>We are enhancing Commerce Hub to support the Private Label. The documents related to the features will be released soon.
 
 ---
 
