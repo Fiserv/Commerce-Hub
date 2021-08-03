@@ -8,15 +8,13 @@ Prepare the data required to perform the authorization. Note that the data comes
 
 
 $paypal_params = array(
-    'sale'     => array(
+    'sale' => array(
         'amount'      => 19.99,
         'currency'    => 'EUR',
         'description' => 'Product #1'
     ),
     'back_url'  => 'http://example-page.com',
 );
-
-
 
 
 Once the data is prepared, simply call the paypalAuthorization method (just like you would do with the paypalSale method).
