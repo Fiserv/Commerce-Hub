@@ -4,6 +4,9 @@ tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, 
 
 # Level II and III Brand Requirements
 
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include Level II and III purchase card support. The documents related to the features will be released soon.
+
 Card brands require specific data fields for [level II and III](?path=docs/Resources/Guides/Level23/Level23.md) transactions. Commere Hub supports Level II and III data for Visa and MasterCard, and supports Level II data for American Express.
 
 Failure to submit required fields when submitting a [Level II](#level-ii) or [Level III](level-iii) transaction could result in a possible reject, reversal during settlement, or higher fees (billback).

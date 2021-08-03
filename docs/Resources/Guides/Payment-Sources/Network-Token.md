@@ -5,7 +5,8 @@ tags: [carat, commerce-hub, enterprise, network-token, payment-sources]
 
 # Network Token
 
-We are enhancing Commerce Hub to support the Network Tokens and the documents related to the features will be released soon.
+<!-- theme : danger -->
+>We are enhancing Commerce Hub to support the Network Tokens. The documents related to the features will be released soon.
 
 ---
 
