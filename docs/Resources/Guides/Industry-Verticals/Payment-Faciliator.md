@@ -4,19 +4,28 @@ tags: [carat, commerce-hub, enterprise, payment-faciliator]
 
 # Payment Faciliator
 
+<!-- theme : danger -->
+>We are enhancing Commerce Hub to support Payment Facilitator. The documents related to the features will be released soon.
+
+
 A payment facilitator is a merchant service provider that simplifies the merchant account enrollment process. Small merchants that don't have enough infrastructure to start accepting card payments, gets onboarded under payment facilitator as a sub-merchant. Payment facilitator have removed the friction in the application and onboarding process by simplifying it and tailoring it to the businesses they serve, enabling those businesses to begin accepting card payments more quickly.
+
+
+<!---
 
 ---
 
+ 
 ## Request Variables
 
 For the transaction acquired at sub-merchant, the transaction request from payment facilitator should have the merchant information as in below format.
+--->
 
 <!--
 type: tab
 title: subMerchant
 -->
-
+<!---
 The below table identifies the required parameters in the `subMerchant` object.
 
 | Variable | Type| Maximum Length | Description |
@@ -29,12 +38,13 @@ The below table identifies the required parameters in the `subMerchant` object.
 |`postal` | *string* | N/A | This field contains the merchant postal code to be used in lieu of the Payment Facilitator. |
 |`country` | *string* | N/A | This field contains the merchant country to be used in lieu of the Payment Facilitator. |
 |`taxid` | *string* | N/A | This field should contain the Tax ID collected by the merchant for this transaction. |
-
+--->
 <!--
 type: tab
 title: JSON Example
 -->
 
+<!---
 JSON string format for `subMerchant`:
 
 ```json
@@ -51,17 +61,23 @@ JSON string format for `subMerchant`:
    }
 }
 ```
+--->
 
 <!-- type: tab-end -->
+
+<!---
 
 ---
 
 ## Payload Example
 
+--->
+
 <!--
 type: tab
 title: Request
 -->
+<!---
 
 ##### Charge payload request with subMerchant details.
 
@@ -98,15 +114,20 @@ title: Request
   }
 }
 ```
+--->
+
 <!--
 type: tab
 title: Response
 -->
 
+<!---
 ##### Example of a charge (201: Created) response.
 
+--->
+
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+<!--- > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
   "gatewayResponse": {
@@ -176,6 +197,7 @@ title: Response
   }
 }
 ```
+--->
 
 <!-- type: tab-end -->
 

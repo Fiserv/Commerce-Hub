@@ -2,8 +2,13 @@
 tags: [carat, commerce-hub, enterprise, payment-js, sequence-flow]
 ---
 
-# Payment.JS Sequence Flow
+# Fiserv JS Sequence Flow
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for Fiserv JS and the documents related to the feature and integration will be released soon.
+
+
+<!---
 ![PaymentJS Sequence](../../../assets/images/PaymentJS_sequence_diagram.png)
 
 1. Consumer visits merchant’s payment page; merchant will return payment page back to consumer’s web browser including the payment.js javascript library (referenced within merchant’s payment page script tag).
@@ -35,3 +40,4 @@ tags: [carat, commerce-hub, enterprise, payment-js, sequence-flow]
 14. Merchant webform should be updated to notify user that the tokenization request was successful or failed.
 
 15. At this point, the payment.js flow has completed. Merchant would save token generated from the payment.js request in a database on their end and/or then do a subsequent auth or sale transactions using the token to charge the consumer.
+--->

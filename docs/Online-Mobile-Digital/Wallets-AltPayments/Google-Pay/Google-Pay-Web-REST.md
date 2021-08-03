@@ -4,6 +4,10 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 # Google Pay on the Web: RESTful API Integration
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to Google Pay RESTful API integration. The documents related to the features will be released soon.
+
+<!---
 Merchants need to follow the below steps in order to integrate Google Pay with their website.
 
 ## Step 1: Configure Google Pay on the Web
@@ -15,7 +19,7 @@ The merchant need to configure the merchant environment to accept [Google Pay on
 - Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
 - Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
 
-<!---
+
 ### Request Variables
 -->
 
