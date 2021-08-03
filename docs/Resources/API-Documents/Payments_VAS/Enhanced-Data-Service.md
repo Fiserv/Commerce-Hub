@@ -106,14 +106,14 @@ The below table identifies the required parameters in the `shippingAddress` obje
 | `address` | *object* | N/A | &#10004; | Shipping [address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
 <!-- theme: info -->
-> Refer to the [address](?path=docs/Resources/Master-Data/Order-Data.md) object for available fields.
+> Refer to the [shipping address](?path=docs/Resources/Master-Data/Address.md#shipping-address) object for available fields.
 
 <!--
 type: tab
 title: merchantDetails
 -->
 
-The below table identifies the required parameters in the `shippingAddress` object.
+The below table identifies the required parameters in the `merchantDetails` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
