@@ -2,10 +2,7 @@
 tags: [carat, commerce-hub, enterprise, ecommerce]
 ---
 
-
 # eCommerce
-
-## Overview
 
 We are enhancing Commerce Hub to support ecommerce vertical and the documents related to the features will be released soon.
 

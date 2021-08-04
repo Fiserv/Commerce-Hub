@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, master-data, processing-codes]
 
 A set of numbers that describe the type of the transaction as well as the account type being used. Required on all transaction requests and upload detail records.
 
-The Processing code has 3 subdivisions 
+The Processing code has 3 subdivisions: 
 
 - Positions 1 – 2, [Transaction Type](#transaction-type)
 - Positions 3 – 4, [Account Type (From)](#from-account-type)
@@ -17,7 +17,7 @@ The Processing code has 3 subdivisions
 
 ## Transaction Type
 
-Describes the transaction being performed. Valid values are
+The below table identifies the valid values of the transaction type.
 
 | Transaction Type | Description |
 | ------ | ------ |
@@ -46,7 +46,7 @@ Describes the transaction being performed. Valid values are
 
 ## From Account Type
 
-Describes the cardholder account type affected for cardholder account debits and inquiries and the "from" account type for cardholder account transfer transaction.
+Describes the cardholder account type affected for cardholder account debits and inquiries and the "from" account type for cardholder account transfer transaction. The below table identifies the valid values for from account type in processing code.
 
 | Account Type | Description |
 | ------ | ------ |
@@ -61,7 +61,7 @@ Describes the cardholder account type affected for cardholder account debits and
 
 ## To Account Type
 
-Describes the cardholder account type affected for cardholder account credits and the "to" account type for cardholder account transfer transaction.
+Describes the cardholder account type affected for cardholder account credits and the "to" account type for cardholder account transfer transaction. The below table identifies the valid values for to account type in processing code.
 
 | Account Type | Description |
 | ------ | ------ |
@@ -75,5 +75,6 @@ Describes the cardholder account type affected for cardholder account credits an
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
 
 ---

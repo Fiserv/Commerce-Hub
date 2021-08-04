@@ -4,8 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-present, contactless, in-person, le
 
 # Least Cost Debit
 
-## Overview
-
 When a customer makes a contactless ('tap-and-go') payment with their dual-network debit card, the merchant may choose to send the transaction via the debit network that costs them the least to accept.
 
 <!-- theme: danger -->

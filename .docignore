@@ -1,0 +1,10 @@
+# File to hide/ignore any document file(s) or directory(s).
+
+# Directory
+archive/
+
+# All file and subdirectory
+archive/**
+
+# Markdown file to ignore
+Reporting-Overview.md

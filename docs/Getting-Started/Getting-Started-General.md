@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, getting-
 
 # Getting Started with Commerce Hub
 
-Commerce Hub provides a [simple way](?path=docs/Getting-Started/Getting-Started-Dev-Portal.md) to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. Commerce Hub offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
+The Commerce Hub provides a simple way through [Developer Studio](?path=docs/Getting-Started/Getting-Started-Dev-Portal.md) to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. Commerce Hub offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
 
 Beyond accepting customer payments, Commerce Hub's services include; tokenization, account verification, fraud prevention, 3-D Secure, AVS/CVV filtering, creating and managing recurring payments, installments and deferred payments, split shipment, EMV and contactless payments, secure hosted Payment Pages, Payment URLs, and more.
 
@@ -35,6 +35,7 @@ In-person or Card Present (CP) transactions are initiated when a customer physic
 - [Fraud Prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
 
 ---
 

@@ -1,10 +1,8 @@
 ---
-tags: [carat, commerce-hub, enterprise, endpoints, full-refund, payments, partial-refund, refund]
+tags: [carat, commerce-hub, enterprise, full-refund, payments, partial-refund, refund,api-reference,]
 ---
 
 # Refund
-
-## Overview
 
 If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId` or `orderId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
@@ -16,7 +14,7 @@ If the customer returns product or requests to cancel the transaction after the 
 
 ---
 
-## Requirements
+## Minimum Requirements
 
 A refund request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId`. The request may contain the `amount` object based on the refund type.
 
@@ -26,12 +24,19 @@ A refund request can be initiated by sending the request to the appropriate endp
 - **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
 
-#### Component : amount
+<!--
+type: tab
+title: amount
+-->
 
-|Variable    |  Type| Maximum Length | Description/Values|
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Sub component values must add up to total amount. 0.00 expected format|
-| `currency` | *string* | 3 | [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+The below table identifies the required parameters in the `amount` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -42,9 +47,9 @@ A refund request can be initiated by sending the request to the appropriate endp
 Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: success -->
->**POST** `/payments/v1/charges/{transactionId}/capture`
+>**POST** `/payments/v1/charges/{transactionId}/refund`
 >
->**POST** `/payments/v1/charges/orders/{orderId}/capture`
+>**POST** `/payments/v1/charges/orders/{orderId}/refund`
 
 ---
 
@@ -65,6 +70,9 @@ title: Request
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/refund)
+
 
 <!--
 type: tab
@@ -146,10 +154,11 @@ title: Response
 ---
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
+
+- [API Explorer](../api/?type=post&path=/payments/v1/refund)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

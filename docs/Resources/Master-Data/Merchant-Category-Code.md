@@ -18,7 +18,9 @@ Each business is assigned a Merchant Category Code (MCC), which is determined by
 
 ## MCC List
 
-| Code | Description |
+The below table identifies the valid values of merchant category codes and description.
+
+| Description | Code |
 | ------- | ------- |
 | A/C, Refrigeration Repair | 7623 |
 | Accounting/Bookkeeping Services | 8931 |

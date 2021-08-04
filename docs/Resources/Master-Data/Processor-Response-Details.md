@@ -13,26 +13,30 @@ type: tab
 title: processorResponseDetails
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `processorResponseDetails` object.
+
+| Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
-| `approvalStatus` | *string* | | Final [status](#approval-status) of the transaction. | 
-| `approvalCode` |*string* | | Approval code from the processor. |
-| `authenticationResponseCode` | string | | Response code from authentication. |
-| `referenceNumber` | *string* | | Transaction reference number. |
-| `schemeTransactionId` | *string* | | Brand (card issuer) transaction ID. |
-| `feeProgramIndicator` | *string* | | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.|
+| `approvalStatus` | *string* | N/A | Final [status](#approval-status) of the transaction. | 
+| `approvalCode` |*string* |  N/A | Approval code from the processor. |
+| `authenticationResponseCode` | string | N/A | Response code from authentication. |
+| `referenceNumber` | *string* | N/A | Transaction reference number. |
+| `schemeTransactionId` | *string* | N/A | Brand (card issuer) transaction ID. |
+| `feeProgramIndicator` | *string* | N/A | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.|
 | `processor` | *string* | 256 | Card processor. |
-| `responseCode` | *string* | | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
-| `responseMessage` | *string* | | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
-| `hostResponseCode` | *string* | | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).| 
-| `hostResponseMessage` | *string* | | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).|
-| `localTimestamp` | *string* | | Transaction timestamp in local time.| 
-| `bankAssociationDetails` | *object* | | [Bank association](#bank-association-details) response details.|
+| `responseCode` | *string* | N/A | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
+| `responseMessage` | *string* | N/A | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
+| `hostResponseCode` | *string* | N/A | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).| 
+| `hostResponseMessage` | *string* | N/A | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).|
+| `localTimestamp` | *string* | N/A | Transaction timestamp in local time.| 
+| `bankAssociationDetails` | *object* | N/A | [Bank association](#bank-association-details) response details.|
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `processorResponseDetails`:
 
 ```json
 {
@@ -48,7 +52,7 @@ title: JSON Example
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
+      "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails":{
          "associationResponseCode": "000",
          "transactionTimestamp": "2016-04-16T16:06:05Z",
@@ -72,36 +76,44 @@ title: JSON Example
 
 ---
 
-### Approval Status
+#### Approval Status
+
+The below table identifies the valid values of `approvalStatus`.
 
 | Value | Description |
 |-------|-------------|
-| *APPROVED* | The transaction was approved. |
-| *DECLINED* | The transaction was declined by the issuing bank. |
-| *PROCESSING_FAILED* | Transaction failed to process, try again later. |
-| *VALIDATION_FAILED* | Validation failed. |
+| *APPROVED* | The transaction was approved |
+| *DECLINED* | The transaction was declined by the issuing bank |
+| *PROCESSING_FAILED* | Transaction failed to process, try again later |
+| *VALIDATION_FAILED* | Validation failed |
 | *WAITING* | Transaction has been placed in queue. Wait 24 hours before retrying the transaction. |
 
 ---
 
 ## Bank Association Details
 
+Indicates the bank association response details.
+
 <!--
 type: tab
 title: bankAssociationDetails
 -->
 
-| Variable | Type | Length | Description/Values |
+The below table identifies the parameters in the `bankAssociationDetails` object.
+
+| Variable | Type | Maximum Length | Description |
 | ----- | ----- | ----- | ----- |
-| associationResponseCode | string | 32 | Bank response code. |
-| transactionTimestamp | string | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ.|
-| transactionReferenceInformation| string | 256 | Transaction reference information.|
-|avsSecurityCodeResponse | object | | [Address and security code response](#address-and-security-code-response) details. |
+|` associationResponseCode` | string | 32 | Bank response code |
+| `transactionTimestamp` | string | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ|
+| `transactionReferenceInformation` | string | 256 | Transaction reference information|
+| `avsSecurityCodeResponse` | object | | [Address and security code response](#address-and-security-code-response) details |
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `bankAssociationDetails`:
 
 ```json
 {
@@ -129,22 +141,28 @@ title: JSON Example
 
 ## Address and Security Code Response
 
+Indicates the AVS and Security code gateway response details.
+
 <!--
 type: tab
 title: avsSecurityCodeResponse
 -->
 
-| Variable | Type| Maximum Length | Description/Values|
+The below table identifies the parameters in the `avsSecurityCodeResponse` object.
+
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `streetMatch` | *string* | 8 | Contains the normalized gateway response of [street number](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match.|
-| `postalCodeMatch` | *string* | 8 |Contains the noramlized gateway response of [postal code](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match. |
+| `streetMatch` | *string* | 1 | Contains the normalized gateway response of [street number](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match.|
+| `postalCodeMatch` | *string* | 1 |Contains the noramlized gateway response of [postal code](?path=docs/Resources/Guides/Fraud/Address-Verification.md#response-values) match. |
 | `securityCodeMatch` | *string* | 8 |  Contains the noramlized gateway response of [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) match. |
-| `association` | *object* | | Bank [association](#association-response) address and security code responses. |
+| `association` | *object* | | Bank [association](#association-response) address and security code responses |
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `avsSecurityCodeResponse`:
 
 ```json
 {
@@ -163,25 +181,32 @@ title: JSON Example
 
 <!--type: tab-end -->
 
+
 ---
 
-## Association
+## Association Response
+
+Indicates the AVS and Security code association response details.
 
 <!--
 type: tab
 title: association
 -->
 
-| Variable | Type| Maximum Length | Description/Values|
+The below table identifies the parameters in the `association` object.
+
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `avsCode` | *string* | 32 | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md) response received from the association bank. |
-| `securityCodeResponse` | *string* | 32 | Contains the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) response received from the association bank.
-| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#object-cardholdernameresponse) received from the association bank. Only applicable for AMEX card type. |
+| `avsCode` | *string* | 32 | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) response received from the association bank. |
+| `securityCodeResponse` | *string* | 32 | Contains the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#association-response-code) response received from the association bank. |
+| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) received from the association bank. Only applicable for AMEX card type. |
 
 <!--
 type: tab
 title: JSON Example
 -->
+
+JSON string format for `association`:
 
 ```json
 {

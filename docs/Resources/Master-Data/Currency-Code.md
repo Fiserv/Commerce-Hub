@@ -14,7 +14,9 @@ The `currency` variable in the `amount` array determines what currency the trans
 
 ## Currency List
 
-| Currency Code | Currency Name | Currency Number | Decimal |
+The table below contains all valid values of currency name, code, number and decimal values. 
+
+| Currency Name | Currency Code | Currency Number | Decimal |
 | ------- | ------- | -------| -------- |
 | Afghan Afghani | AFN | 971 | 2 |
 | Algerian Dinar | DZD | 012 | 2 |
@@ -160,3 +162,6 @@ The `currency` variable in the `amount` array determines what currency the trans
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Amount Object](?path=docs/Resources/Master-Data/Amount-Components.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+---

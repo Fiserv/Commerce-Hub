@@ -1,29 +1,56 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, tokens-request, tokenization-with-charges-request, payment-token-charges-request, payload-example, payment-token, tokenization]
+tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, tokens-request, payment-token, tokenization, api-reference,]
 ---
 
 # Tokenization
 
-## Overview
-
 **[Tokenization](../../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#chargerequest) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokenrequest) endpoint.
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
-  - Requires the use of [Stored Credential](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
+  - Requires the use of [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
 - **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
-
-### Required Field
-
-<!-- theme: warning -->
-> Merchants using multiple tokenization services, `tokenProvider` is a required field.
 
 ---
 
 ## Tokens Request
 
+The merchant can initiate token request in order to generate a token for the payment source without authorization.
+
+---
+
+### Requirements
+
+<!--
+type: tab
+title: source
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type| Maximum Length | Description|
+|---------|----------|----------------|---------|
+|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+
+<!--
+type: tab
+title: transactionDetails
+-->
+
+The below table identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`createToken` | *boolean* |  | Used to create a token on a charge transaction |
+
+<!-- type: tab-end -->
+
+---
+
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/tokens`
+
+---
 
 ### Payload Example
 
@@ -38,16 +65,17 @@ title: Request
 {
   "source": {
     "sourceType": "PaymentCard",
-    "cardData": "4005550000000019",
-    "expirationMonth": "02",
-    "expirationYear": "2035",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    }
   },
-  "transactionDetails": {
-    "tokenProvider": "TRANSARMOR",
-    "createToken": true
-  }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/tokens)
+
 <!--
 type: tab
 title: Response
@@ -110,13 +138,21 @@ title: Response
 
 ## Tokenization with Charges Request
 
-### Required Field
+The merchant can initiate token request in order to generate a token for the payment source during the initial charge transaction. 
 
-- `createToken`: *boolean* : *true*
+---
+
+### Requirements
+
+In additional to the minimum requirement for a charge request, `createToken` *true* needs to be sent in the `transactionDetails` object.
+
+---
 
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
+
+---
 
 ### Payload Example
 
@@ -139,16 +175,17 @@ title: Request
          "cardData": "4005550000000019",
          "expirationMonth": "02",
          "expirationYear": "2035",
-         "securityCode": "123"
       }
    },
    "transactionDetails":{
       "captureFlag": false,
-      "createToken": true,
-      "tokenProvider": "TRANSARMOR"
+      "createToken": true
    }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
 <!--
 type: tab
 title: Response
@@ -213,18 +250,52 @@ title: Response
 
 ## PaymentToken Charges Request
 
+The merchant can use the saved tokenized data in order to initate a charge request. 
+
+---
+
 ### Requirements
 
-| Variable | Type| Maximum Length | Description/Values|
+<!--
+type: tab
+title: amount
+-->
+
+The below table identifies the required parameters in the `amount` object.
+
+|Variable |  Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `tokenData` | *string* | 2048 | Token created from the payment source. |
-| `PARId` | *string* | 256 | |
-| `declineDuplicates` | *boolean* | | Identifies if a duplicate transaction should automatically be declined. |
-| `tokenSource` | *string* | | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+<!--
+type: tab
+title: paymentToken
+-->
+
+The below table identifies the required parameters in the `paymentToken` object.
+
+
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|
+| `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+| `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
+| `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
+| `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
+| `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | | &#10004; |Contains card specific information. |
+| `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
+| `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
+
+<!-- type: tab-end -->
+
+---
 
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
+
+---
 
 ### Payload Example
 
@@ -241,18 +312,25 @@ title: Request
     "total": "1.00",
     "currency": "USD"
   },
-  "paymentSource": {
+  "source": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
     "PARId": "",
     "declineDuplicates": true,
     "tokenSource": "TRANSARMOR"
+    "card": {
+      "expirationMonth": "03",
+      "expirationYear": "30"
+    }
   },
   "transactionDetails": {
     "captureFlag": true
   },
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
 <!--
 type: tab
 title: Response
@@ -279,6 +357,8 @@ title: Response
   "card": {
     "last4": "0019",
     "brand": "VISA",
+    "expirationMonth": "03",
+    "expirationYear": "30"
   },
   "paymentReceipt": {
     "approvedAmount": {
@@ -308,8 +388,12 @@ title: Response
 ```
 <!-- type: tab-end -->
 
+---
+
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

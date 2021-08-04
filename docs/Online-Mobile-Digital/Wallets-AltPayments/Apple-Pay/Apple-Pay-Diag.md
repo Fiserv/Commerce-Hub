@@ -1,8 +1,4 @@
-<link href="test.css" rel="stylesheet"></link> 
-
-# Apple Pay Updated
-
-## Overview
+# Apple Pay with Diagram
 
 Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
 

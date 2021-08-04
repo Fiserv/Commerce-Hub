@@ -39,7 +39,7 @@ Using Commerce Hub's secure hosted pages can reduce the burden of compliance wit
 
 ## Payment URL
 
-Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub [Hosted Payment Page](#hostedpaymentpage) to complete the payment.
+Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub [Hosted Payment Page](#hosted-payment-page) to complete the payment.
 
 **Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md).**
 
@@ -47,7 +47,7 @@ Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and s
 
 ## Payment.js
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Payment.js makes it simple to [tokenize](../../Transactions/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Payment.js makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The form fields can be customized by the merchant.
 

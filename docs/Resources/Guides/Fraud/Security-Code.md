@@ -2,24 +2,60 @@
 tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, fraud, security-code-verification]
 ---
 
-
 # Security Code
 
-## Overview
-Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
+Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit (AMEX) security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
-## Requirements
+## Request Variables
 
 For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
 
-#### Object: card
 
-| Variable | Type| Maximum Length | Description/Values|
+<!--
+type: tab
+title: card
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`securityCode` | *string* | 3| The card security code.|
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE.|
+|`securityCode` | *string* | 3| The card security code |
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+
+#### Security Code Indicator
+
+The below table identifies the valid values of `securityCodeIndicator`.
+
+| Value | Description |
+| ----- | --------- |
+| *NOT_SUPPORTED* | Not supported (Default) |
+| *PROVIDED* | Security code provided in the transaction request |
+| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
+| *NOT_AVAILABLE* | Security code not available. |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for `card`:
+
+```json
+{
+   "card":{
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123",
+      "securityCodeIndicator": "PROVIDED"
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
@@ -109,7 +145,7 @@ title: Response
          "avsSecurityCodeResponse":{
             "securityCodeMatch": "MATCH",
             "association":{
-               "securityCodeResponse": "MATCH"
+               "securityCodeResponse": "M"
             }
          }
       }
@@ -213,30 +249,69 @@ title: Response
          "avsSecurityCodeResponse":{
             "securityCodeMatch":"MATCH",
             "association":{
-               "securityCodeResponse":"MATCH"
+               "securityCodeResponse":"M"
             }
          }
       }
    }
 }
 ```
-
+ 
 <!-- type: tab-end -->
 
 ---
 
 ## Response Values
 
-The result of checking the cardholder’s entered security code against the Issuer’s system of record is is received in the response. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the security code response from the bank.
+The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
-| Value | Description |
-| ------- | ------- |
-| *MATCH* | Security code matched. |
-| *NO_MATCH* | Security code did not matched. |
-| *NOT_PROVIDED* | Security code value was not provided. |
-| *NOT_PROCESSED* | Security code verification was not processed. |
-| *NO_PARTICIPANT* | Bank Associatino does not participate in security verification. |
-| *UNKNOWN* | Unknown status. |
+## Association Response Code
+
+The below table identifies the valid values of `securityCodeResponse`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *MATCHED* | Data matches with issuer system |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_PROCESSED* | Security code verification not done |
+| *NOT_PRESENT* | Security code not present in the input |
+| *NOT_CERTIFIED* | Issuer not certified to verify sercurity code |
+| *NOT_CHECKED* | Security code not checked |
+| *NONE* | No security code provided |
+
+## Association Response Code
+
+The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
+
+The below table identifies the valid values of `securityCodeResponse`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *MATCHED* | Data matches with issuer system |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_PROCESSED* | Security code verification not done |
+| *NOT_PRESENT* | Security code not present in the input |
+| *NOT_CERTIFIED* | Issuer not certified to verify sercurity code |
+| *NOT_CHECKED* | Security code not checked |
+| *NONE* | No security code provided |
+
+---
+
+## Association Response Code
+
+The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
+
+The below table identifies the valid values of `securityCodeResponse`.
+
+| Value | Descrption |
+| ---- | ------------|
+| *M* | Card security code matched |
+| *N* | Card security code does not matched |
+| *P* | Not processed |
+| *S* | Merchant has indicated that the card security code is not present on the card. |
+| *U* | Issuer is not certified and/or not provides encryption keys. |
+| *X* | No response from the credit card association was received. |
+| | A blank code should indicate that no code was sent and that there was no indication that the code was present on the card. |
 
 ---
 
@@ -244,14 +319,13 @@ The result of checking the cardholder’s entered security code against the Issu
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
-- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
-- [Prepaid Gift Card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
-Fraud-Settings-Restrictions.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
