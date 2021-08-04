@@ -44,22 +44,28 @@ The table below includes the commodity codes (class and subclass list) for abras
 | 00570 | Pumice Stone |
 | 00584 | Steel Wool |
 
+<!--
+type: tab
+title: 010 Acoustical Tile, Insulating Materials and Supplies
+-->
+
+The table below includes the commodity codes for acoustical tile, insulating materials and supplies.
+
 | Code | Description |
 | -------- | :--: |
 | 01005 | Acoustical Tile, All Types |
 | 01008 | Acoustical Tile Accessories: Channels, Grids, Mounting Hardw |
 | 01009 | Acoustical Tile Insulation |
-01011 - ADHESIVES AND CEMENTS, ACOUSTICAL TILE
-01014 - ADHESIVES AND CEMENTS, INSULATION
-01017 - ALUMINUM FOIL ETC.
-01053 - FIBERGLASS: BATTS, BLANKETS AND ROLLS
-01056 - FOAM GLASS: BLOCKS, SHEETS, ETC.
-01057 - FOAM-IN-PLACE INSULATION: PHENOLIC, URETHANE, ETC.
-01059 - FOAM PLASTICS: BLOCKS, BOARDS, SHEETS, ETC.
-01075 - PAINTS, PRIMERS, SEALERS, ETC. (FOR INSULATION)
-01078 - PIPE AND TUBING INSULATION, ALL TYPES
-01081 - PREFORMED INSULATION, ALL TYPES (FOR ELLS, TEES, VALVES, ETC
-01084 - RUBBER INSULATION
+| 01011 | Adhesives and Cements, Acoustial Tile |
+| 01014 | Adhesives and Cements, Insulation |
+| 01053 | Fiberglass: Batts, Blankets and Rolls |
+| 01056 | Foam Glass: Blocks, Sheets, etc. |
+| 01057 | Foam-In-Place Insulation : Phenolic, Urethane, etc. |
+| 01059 | Foam Plastics: Blocks, Boards, Sheets, etc. |
+| 01075 | Paints, Primers, Sealers, etc. (For Insulation) |
+| 01078 | Pipe and Tubing Insulation, All Types |
+| 01081 | Preformed Insulation, All Types (For Ells, Tees, Valves, etc. |
+| 01084 | Rubber Insulation |
 
 
 <!--
@@ -144,6 +150,16 @@ title: 961 Prof Svc
 | 96154 | Mitigation Services, Wetlands |
 | 96155 | Mediator Services |
 
+
+| Code | Description |
+| -------- | :--: |
+| 990 | Security, Fire, Saety and Emergency Services |
+| 99005 | Alarm Services |
+| 99042 | Fire and Safety Services |
+| 99046 | Guard and Security Services |
+| 99052 | Investigative Services |
+| 99067 | Patrol Services |
+| 99090 | X-Ray Film Badge Services |
 
 | Code | Description |
 | -------- | :--: |

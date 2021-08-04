@@ -9,7 +9,55 @@ tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, 
 
 Commerce Hub can pass Level II and III data (also knows as Enhanced Data) with business-to-business corporate and purchase card transactions. With a Level II and III data pass through solution, merchant's can meet card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) and provide invoice-level transaction details and qualify for lower rates.
 
+
+
 ## Request Variables
+
+<!--
+type: tab
+title: level23Data
+
+The below table identifies the required parameters in the `amount` object.
+
+|Variable | Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+
+-->
+level23Data
+
+<!--
+type: tab
+title: level23DataItems
+
+The below table identifies the required parameters in the `amount` object.
+
+|Variable | Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+-->
+level23DataItems
+
+<!--
+type: tab
+title: JSON
+
+The below table identifies the required parameters in the `amount` object.
+
+|Variable | Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+-->
+Json
+
+<!-- type: tab-end -->
+
 
 ## Payload Example 
 
