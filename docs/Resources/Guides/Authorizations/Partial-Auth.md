@@ -2,7 +2,7 @@
 
 Commerce Hub supports partial authorizations (approvals), authorization reversals, and balance response in order to improve in-person debit and prepaid transactions.
 
-- **Partial Approvals:** allows merchants to process [split-tender](path=?docs/Resources/Guides/Split-Tender.md) charges by allowing an authorization request where the transaction amount exceeds the funds available on the card. The merchant can then process an additional charge to obtain the remaining amount.
+- **Partial Approvals:** allows merchants to process [split-tender](?path=docs/Resources/Guides/Split-Tender.md) charges by allowing an authorization request where the transaction amount exceeds the funds available on the card. The merchant can then process an additional charge to obtain the remaining amount.
 
 - **Balance Response:** the merchant can inquire to the account balance information, leading to fewer declines.
 
