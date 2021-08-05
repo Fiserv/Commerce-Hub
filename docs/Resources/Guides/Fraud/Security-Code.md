@@ -4,13 +4,14 @@ tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, 
 
 # Security Code
 
-Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
+Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit (AMEX) security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
 ## Request Variables
 
 For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
+
 
 <!--
 type: tab
@@ -22,7 +23,18 @@ The below table identifies the required parameters in the `card` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`securityCode` | *string* | 3| The card security code |
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE |
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+
+#### Security Code Indicator
+
+The below table identifies the valid values of `securityCodeIndicator`.
+
+| Value | Description |
+| ----- | --------- |
+| *NOT_SUPPORTED* | Not supported (Default) |
+| *PROVIDED* | Security code provided in the transaction request |
+| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
+| *NOT_AVAILABLE* | Security code not available. |
 
 <!--
 type: tab
@@ -47,7 +59,7 @@ JSON string format for `card`:
 
 ---
 
-## Security Code Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -145,7 +157,7 @@ title: Response
 
 ---
 
-## Security Code Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 
@@ -244,7 +256,7 @@ title: Response
    }
 }
 ```
-
+ 
 <!-- type: tab-end -->
 
 ---
@@ -275,6 +287,24 @@ The below table identifies the valid values of `securityCodeResponse`.
 
 | Value | Descrption |
 | ---- | ------------|
+| *MATCHED* | Data matches with issuer system |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_PROCESSED* | Security code verification not done |
+| *NOT_PRESENT* | Security code not present in the input |
+| *NOT_CERTIFIED* | Issuer not certified to verify sercurity code |
+| *NOT_CHECKED* | Security code not checked |
+| *NONE* | No security code provided |
+
+---
+
+## Association Response Code
+
+The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
+
+The below table identifies the valid values of `securityCodeResponse`.
+
+| Value | Descrption |
+| ---- | ------------|
 | *M* | Card security code matched |
 | *N* | Card security code does not matched |
 | *P* | Not processed |
@@ -289,11 +319,13 @@ The below table identifies the valid values of `securityCodeResponse`.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 

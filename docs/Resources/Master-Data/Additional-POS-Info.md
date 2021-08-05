@@ -15,7 +15,7 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `dataEntrySource` | *number* | 18,3 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
+| `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
 
 <!--
 type: tab
@@ -28,12 +28,7 @@ JSON string format for `additionalPosInformation`:
 {
    "transactionInteraction": {
       "additionalPosInformation": {
-         "dataEntrySource": "MOBILE_APP",
-         "houseNumberOrName": "Apt 1",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30301",
-         "country": "US"
+         "dataEntrySource": "MOBILE_APP"
       }
    }
 }

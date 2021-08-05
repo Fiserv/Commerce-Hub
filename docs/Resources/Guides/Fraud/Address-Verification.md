@@ -4,7 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, in-perso
 
 # Address Verification Services
 
-
 Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#address-verification-service) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
@@ -39,8 +38,7 @@ JSON string format for `billingAddress`:
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -54,7 +52,7 @@ JSON string format for `billingAddress`:
 
 ---
 
-## AVS Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -84,8 +82,7 @@ title: Request
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince":"GA",
          "postalCode": "30301",
@@ -146,8 +143,8 @@ title: Response
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
             "association":{
                "avsCode": "YY",
                "cardholderNameResponse": "1"
@@ -161,7 +158,7 @@ title: Response
 
 ---
 
-## AVS Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 
@@ -199,8 +196,7 @@ title: Request
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -261,8 +257,8 @@ title: Response
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
             "association":{
                "avsCode": "YY",
                "cardholderNameResponse": "1"
@@ -284,11 +280,13 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 | Value | Descrption |
 | ---- | ------------|
-| *EXACT_MATCHED* | Data exactly matches with issuer system |
 | *MATCHED* | Data matches with issuer system with some mismatch |
 | *NOT_MATCHED* | Data does not match with issuer system |
 | *NOT_CHECKED* | Street address or postal code verification not done |
 | *NO_INPUT_DATA* | Street address or postal code not present in the input |
+| *NONE* | Street address or postal code not available |
+
+---
 
 ## Association Response Code
 
@@ -304,7 +302,6 @@ The below table identifies the valid values of `avsCode`.
 | *U* | Card issuer did not check the AVS information |
 | *Z* | Postal code matched but street does not |
 | *A* | Street matched but postal code does not |
-
 
 The below table identifies the valid values of `cardHolderNameResponse`.
 
@@ -327,13 +324,14 @@ The below table identifies the valid values of `cardHolderNameResponse`.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
-- [Address Component](?path=docs/Resources/Master-Data/Address.md)
+- [Address Object](?path=docs/Resources/Master-Data/Address.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

@@ -60,7 +60,7 @@ The below table identifies the valid values of `origin`.
 
 #### POS Entry Mode
 
-Pos entry mode value identifies how account number was entered on the transaction.  The below table identifies the valid values of `posEntryMode`.
+POS entry mode value identifies how account number was entered on the transaction.  The below table identifies the valid values of `posEntryMode`.
 
 | Value | Description |
 |-------|-------------|
