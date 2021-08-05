@@ -10,15 +10,18 @@ Fraud filters enables the merchants to configure filters to control the fraudule
 The fraud filters configuration is flexible and completely customizable by the merchant and can be setup based on industry, product, sales or promotions, channel, customer details and store abilities.
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to include Fraud Filter support and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to include Fraud Filter support. The documents related to the features will be released soon.
+
+<!---
 
 ---
 
 ## Positive Filters
 
 Positive filters are used to configure a whitelist and allow the transaction to process based on specific criteria.
-
+--->
 <!-- theme: info -->
+<!---
 > Positive filters will override negative filters
 
 | Filter | Variable | Case Sensitive |
@@ -43,6 +46,8 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | Country | `country` | NO |
 | Email Address/Domain | `email` | NO |
 | BIN | `cardData` | NO |
+
+--->
 
 ---
 

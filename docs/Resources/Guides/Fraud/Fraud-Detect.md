@@ -8,7 +8,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, address-verification-s
 Commerce Hub offers an advance fraud detection service to help reduce fraudulent transactions, which in turn can help reduce chargebacks.
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to include Fraud Detect support and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to include Fraud Detect support. The documents related to the features will be released soon.
 
 <!-- http://www.linkpointsource.com/fraud-flex-detect -->
 

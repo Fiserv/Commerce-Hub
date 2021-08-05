@@ -8,7 +8,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, fraud, address-and-sec
 The address and security code filters provide a merchant the ability to enable various transaction filters using the [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification. Commerce Hub will reject and automatically reverse the submitted transaction if the conditions for any of these filters are met.
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to include address and security code verification filters support and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to include address and security code verification filters support. The documents related to the features will be released soon.
 
 ---
 
