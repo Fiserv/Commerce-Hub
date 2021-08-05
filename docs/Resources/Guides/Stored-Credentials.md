@@ -56,8 +56,10 @@ The below table identifies the parameters in the `storedCredentials` object.
 
 Stored credentials can be used to submit merchant managed scheduled transactions by submitting `billPaymentType` in the `additionalDataCommon` object.
 
-- RECURRING - Agreement where charges will occur on a periodic basis.
-- INSTALLMENT - Single purchase where the cardholder is billed (charged) in installments.
+- RECURRING - A transaction in a series of transaction that uses stored credentials and are processed at fixed, regular intervals *(not to exceed one year between transaction)*, representing a cardholder agreement for the merchant to initiate future transaction for the purchase of goods or services provided at regular intervals.
+- INSTALLMENT - A transaction in a series of transactions that uses stored credentials and represents a cardholder agreement for the merchant to initiate one or more future transactions over a period for a single purchase of goods or services.
+- SINGLE - A transaction using stored credentials for a fixed or variable amount that does not occur on a scheduled or regularly occurring transaction date, where the cardholder has provided consent for the merchant to initiate one or more future transactions, e.g. account auto-top.
+
 
 ---
 
