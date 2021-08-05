@@ -9,7 +9,7 @@ Commerce Hub has integrated with PaySecure in order to provide Least Cost Debit 
 Commece Hub will recognize if the transaction is from a debit or credit card and the Debit card transactions will be routed to the PaySecure platform. PaySecure will perform a BIN check and if enabled for optimized debit supported, will process the transaction. If the debit card is not supported, the transaction is forwarded to the the standard processing platform to continue with the transaction.
 
 <!-- theme: info -->
-> To utilize the Least Cost Routing service the merchant account will need to be boarded directly with PaySecure and obtain their credentials. These credentials then need to be added to Commerce Hub boarding configuration. For more information, please contact your account representative.
+> To utilize the Least Cost Routing service the merchant account will need to be boarded directly with PaySecure and obtain their credentials. These credentials need to be added to Commerce Hub boarding configuration. For more information, please contact your account representative.
 
 ---
 
