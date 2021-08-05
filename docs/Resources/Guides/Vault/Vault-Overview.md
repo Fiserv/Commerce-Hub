@@ -5,10 +5,10 @@ tags: [carat, commerce-hub, enterprise, vault, vault-payments]
 
 # Vault Payments
 
-When a payment method is stored in the Vault, the information is encrypted by the gateway and associated with a unique payment method token. This token can be used to create transactions without the [PCI compliance](https://www.pcisecuritystandards.org/) burden that comes with handling unencrypted data.
-
 <!-- theme: danger -->
 > We are enhancing the Commerce Hub to include Vault payments. The documents related to the features will be released soon.
+
+When a payment method is stored in the Vault, the information is encrypted by the gateway and associated with a unique payment method token. This token can be used to create transactions without the [PCI compliance](https://www.pcisecuritystandards.org/) burden that comes with handling unencrypted data.
 
 <!--- theme: warning --->
 <!---
