@@ -3,13 +3,13 @@ tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, 
 ---
 
 
-# Unit-Measurement
+# Unit of Measurement
 
-In Commerce Hub, unit of measure codes are used in international trade as adopted by the ECB Working party on Facilitation of International Trade Procedures in Recommendation No. 20 (March 1985). These codes are intended for use in manual and automated systems for the exchange of information between participants in international trade.
+In Commerce Hub, `unitOfMeasurement` codes are used in manual and automated systems for the exchange of information between participants in international trade when processing Level III data.
 
-The asterisk after the unit name indicates recommended units of measurement that are either an SI (International System of Units) unit, or its multiple or a non-SI unit that may be used together with the SI units and their multiples.
+<!-- theme: info -->
+>The asterisk after the unit name indicates recommended units of measurement that are either an SI (International System of Units) unit, or its multiple or a non-SI unit that may be used together with the SI units and their multiples.
 
-Use these values to populate the `unitOfMeasure` property tag when  processing Level III data.
 
 | Unit Name | Code |
 | -------- | :--: |
@@ -129,115 +129,115 @@ Use these values to populate the `unitOfMeasure` property tag when  processing L
 | Kilotonne* |	KTN |
 | Kilovar |	KVR |
 | Kilovolt* |	KVT |
-Kilovolt-ampere*	KVA
-Kilowatt*	KWT
-Kilowatt-hour*	KWH
-Knot (1 nautical mile per hour)	KNT
-Leaf	LEF
-Liquid gallon (3.78541 dm3)	GLL
-Liquid pint (0.473176 dm3)	PTL
-Liquid quart (0.946353 dm3)	QTL
-Litre (1dm3)*	LTR
-Litre of pure alcohol	LPA
-Long ton GB, US (1.0160469 t)	LTN
-Lumen*	LUM
-Lux	LUX
-Megahertz*	MHZ
-Megalitre*	MAL
-Megametre*	MAM
-Megapascal*	MPA
-Megavolt-ampere (1000 KVA)*	MVA
-Megawatt*	MAW
-Megawatt-hour (1000 kW/h)*	MWH
-Metre per second squared*	MSK
-Metre per second*	MTS
-Metre*	MTR
-Metric Carat (200 MG = 2.10-4kg)	CTM
-Metric ton (1000 kg) (tonne (1000 kg))	TNE
-Millibar*	MBR
-Millicurie	MCU
-Milligram*	MGM
-Millilitre*	MLT
-Millimetre*	MMT
-Million	MIO
-Million cubic metres*	HMQ
-Million international units	MIU
-Minute*	MIN
-Month	MON
-Nautical mile (1852 m)	NMI
-Net (register) ton	NTT
-Newton*	NEW
-Number	NMB
-Number of articles	NAR
-Number of bobbins	NBB
-Number of cells*	NCL
-Number of international units	NIU
-Number of packs	NMP
-Number of pairs	NMR
-Number of parcels	NPL
-Number of parts	NPT
-Number of rolls	NRL
-Ohm*	OHM
-Ounce GB, US (28.349523 g)	ONZ
-Ounce GB, US (31.10348 g) Troy Ounce	APZ
-Package	PK
-Pascal*	PAL
-Pennyweight GB, US (1.555174 g)	DWT
-Piece	PCB
-Piece	PCE
-Piece	PSC
-Pint (0.568262 dm3)	PTI
-Pound GB, US (0.45359237 kg)	LBR
-Pounds	LBS
-Proof gallon	PGL
-Quart (1.136523 dm3)	QTI
-Quarter (of a year)	QAN
-Quarter, GB (12.700586 kg)	QTR
-Revolution per minute*	RPM
-Revolution per second*	RPS
-Score	SCO
-Scruple GB, US (1.295982 g)	SCR
-Second*	SEC
-Set	SET
-Shipping ton	SHT
-Short standard (7200 matches)	SST
-Short ton GB, US (.90718474 t)	STN
-Siemens*	SIE
-Square centimetre*	CMK
-Square decimetre*	DMK
-Square foot	FTK
-Square inch	INK
-Square kilometre*	KMK
-Square metre*	MTK
-Square Mile	MIK
-Square millimetre*	MMK
-Square yard	YDK
-Standard	WSD
-Standard atmosphere (101325 Pa)	ATM
-Statute mile (1609.344 m)	SMI
-Stone GB (6.350293 kg)	STI
-Technical atmosphere (98066.5 Pa)	ATT
-Ten days	DAD
-Ten pairs	TPR
-Thousand	MIL
-Thousand ampere-hour*	TAH
-Thousand board feet (2.36 m3)	MBF
-Thousand cubic metres per day*	TQD
-Thousand standard brick equivalent	MBE
-Ton of steam per hour	TSH
-Tonne of substance 90% dry	TSD
-Trillion EUR	TRL
-Troy pound, US (373.242 g)	LBT
-Unknown unit of measure	ST
-Volt*	VLT
-Watt*	WTT
-Watt-hour*	WHR
-Weber	WEB
-Week	WEE
-Yard (.9144 m)	YRD
+| Kilovolt-ampere* |	KVA |
+| Kilowatt* |	KWT |
+| Kilowatt-hour* |	KWH |
+| Knot (1 nautical mile per hour) |	KNT |
+| Leaf |	LEF |
+| Liquid gallon (3.78541 dm3) |	GLL |
+| Liquid pint (0.473176 dm3) |	PTL |
+| Liquid quart (0.946353 dm3) |	QTL |
+| Litre (1dm3)*	| LTR |
+| Litre of pure alcohol |	LPA |
+| Long ton GB, US (1.0160469 t) |	LTN |
+| Lumen* |	LUM |
+| Lux |	LUX |
+| Megahertz* |	MHZ |
+| Megalitre* |	MAL |
+| Megametre* |	MAM |
+| Megapascal* |	MPA |
+| Megavolt-ampere (1000 KVA)* |	MVA |
+| Megawatt* |	MAW |
+| Megawatt-hour (1000 kW/h)* |	MWH |
+| Metre per second squared*	| MSK |
+| Metre per second* |	MTS |
+| Metre* |	MTR |
+| Metric Carat (200 MG = 2.10-4kg) |	CTM |
+| Metric ton (1000 kg) (tonne (1000 kg)) |	TNE |
+| Millibar*	| MBR |
+| Millicurie |	MCU |
+| Milligram* |	MGM |
+| Millilitre*	|MLT |
+| Millimetre* |	MMT |
+| Million |	MIO |
+| Million cubic metres* |	HMQ |
+| Million international units |	MIU |
+| Minute* |	MIN |
+|Month |	MON |
+| Nautical mile (1852 m) |	NMI |
+| Net (register) ton |	NTT |
+| Newton*	| NEW |
+| Number |	NMB |
+| Number of articles |	NAR |
+| Number of bobbins |	NBB |
+| Number of cells* |	NCL |
+| Number of international units |	NIU |
+| Number of packs| NMP |
+| Number of pairs |	NMR |
+| Number of parcels |	NPL |
+| Number of parts |	NPT |
+| Number of rolls |	NRL |
+| Ohm* |	OHM |
+| Ounce GB, US (28.349523 g) |	ONZ |
+| Ounce GB, US (31.10348 g) Troy Ounce |	APZ |
+| Package |	PK |
+| Pascal* |	PAL |
+| Pennyweight GB, US (1.555174 g) |	DWT |
+| Piece	| PCB |
+| Piece |	PCE |
+| Piece |	PSC |
+| Pint (0.568262 dm3) |	PTI |
+| Pound GB, US (0.45359237 kg) |	LBR |
+| Pounds |	LBS |
+| Proof gallon |	PGL |
+| Quart (1.136523 dm3) |	QTI |
+| Quarter (of a year) |	QAN |
+| Quarter, GB (12.700586 kg) |	QTR |
+| Revolution per minute* |	RPM |
+| Revolution per second* |	RPS |
+| Score |	SCO| 
+| Scruple GB, US (1.295982 g)	| SCR |
+| Second* |	SEC |
+| Set	| SET |
+| Shipping ton |	SHT |
+| Short standard (7200 matches) |	SST |
+| Short ton GB, US (.90718474 t) |	STN |
+| Siemens* |	SIE |
+| Square centimetre* |	CMK |
+| Square decimetre* |	DMK |
+| Square foot |	FTK |
+| Square inch |	INK |
+| Square kilometre* |	KMK |
+| Square metre* |	MTK |
+| Square Mile |	MIK |
+| Square millimetre* |	MMK |
+| Square yard |	YDK |
+| Standard |	WSD |
+| Standard atmosphere (101325 Pa) |	ATM |
+| Statute mile (1609.344 m)	| SMI |
+| Stone GB (6.350293 kg) |	STI |
+| Technical atmosphere (98066.5 Pa) |	ATT |
+| Ten days |	DAD |
+| Ten pairs |	TPR |
+| Thousand |	MIL |
+| Thousand ampere-hour* |	TAH |
+| Thousand board feet (2.36 m3) |	MBF |
+| Thousand cubic metres per day* |	TQD |
+| Thousand standard brick equivalent |	MBE |
+| Ton of steam per hour	| TSH
+| Tonne of substance 90% dry |	TSD
+| Trillion EUR |	TRL |
+| Troy pound, US (373.242 g) |	LBT |
+| Unknown unit of measure |	ST |
+| Volt* |	VLT |
+| Watt*	| WTT |
+| Watt-hour* |	WHR |
+| Weber |	WEB |
+| Week |	WEE |
+| Yard (.9144 m) |	YRD |
 | Year | ANN |
 
- ---
+---
 
 ## See Also
 
