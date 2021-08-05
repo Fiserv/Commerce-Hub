@@ -3,8 +3,8 @@
 # Directory
 archive/
 
-# All file and subdirectory
+# All Files and Subdirectories
 archive/**
 
-# Markdown file to ignore
-Reporting-Overview.md
+# Markdown File
+docs/Resources/Guides/Reporting/Reporting-Overview.md
