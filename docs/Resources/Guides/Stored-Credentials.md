@@ -119,8 +119,8 @@ title: Response
          "bin": "40055500",
          "last4": "0019",
          "scheme": "VISA",
-         "expirationMonth": "10",
-         "expirationYear": "2030"
+         "expirationMonth": "02",
+         "expirationYear": "2035"
       }
    },
    "paymentReceipt":{
@@ -134,7 +134,7 @@ title: Response
       "merchantStateOrProvince": "GA",
       "merchantPostalCode": "12345",
       "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com"
+      "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
@@ -156,7 +156,7 @@ title: Response
       "createToken": true
    },
    "storedCredentials":{
-      "scheduled": true,
+      "scheduled":true,
       "initiator": "CARD_HOLDER",
       "sequence": "FIRST",
       "schemeReferenceTransactionId": "54231235467"

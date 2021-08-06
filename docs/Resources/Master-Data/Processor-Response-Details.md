@@ -58,9 +58,9 @@ JSON string format for `processorResponseDetails`:
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
-            "securityCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
+            "securityCodeMatch": "MATCHED",
             "association":{
                "avsCode": "BOTH_MATCH",
                "securityCodeResponse": "MATCH",
@@ -122,9 +122,9 @@ JSON string format for `bankAssociationDetails`:
       "transactionTimestamp": "2016-04-16T16:06:05Z",
       "transactionReferenceInformation": "string",
       "avsSecurityCodeResponse":{
-         "streetMatch": "MATCH",
-         "postalCodeMatch": "MATCH",
-         "securityCodeMatch": "MATCH",
+         "streetMatch": "MATCHED",
+         "postalCodeMatch": "MATCHED",
+         "securityCodeMatch": "MATCHED",
          "association":{
             "avsCode": "BOTH_MATCH",
             "securityCodeResponse": "MATCH",
@@ -167,9 +167,9 @@ JSON string format for `avsSecurityCodeResponse`:
 ```json
 {
    "avsSecurityCodeResponse":{
-      "streetMatch": "MATCH",
-      "postalCodeMatch": "MATCH",
-      "securityCodeMatch": "MATCH",
+      "streetMatch": "MATCHED",
+      "postalCodeMatch": "MATCHED",
+      "securityCodeMatch": "MATCHED",
       "association":{
          "avsCode": "BOTH_MATCH",
          "securityCodeResponse": "MATCH",

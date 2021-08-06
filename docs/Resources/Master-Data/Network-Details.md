@@ -77,11 +77,11 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 ## See Also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
-- [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 
 ---
