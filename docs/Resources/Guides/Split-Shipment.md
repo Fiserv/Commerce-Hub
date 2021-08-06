@@ -10,7 +10,7 @@ A split shipment is an ability to [capture](?path=docs/Resources/API-Documents/P
 Situations in which this could be implemented include:
 
 - Shipment of goods will be split, the cardholder can be charged for each individual shipment.
-- Occurs when the goods url are not available for shipment at the time of the consumer’s purchase.
+- Occurs when the goods are not available for shipment at the time of the consumer’s purchase.
 
 <!-- theme: info -->
 > If the customer cancels or refunds their order before the last shipment, the `finalShipment` indicator is required to be sent during the [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
@@ -90,52 +90,45 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
       }
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":12.04,
-         "currency":"USD"
+         "total": 12.04,
+         "currency": "USD"
       },
       "processorResponseDetails":{
-         "approvalStatus":"APPROVED",
-         "approvalCode":"OK3483",
-         "authenticationResponseCode":"string",
-         "referenceNumber":"845366457890-TODO",
-         "schemeTransactionId":"019078743804756",
-         "feeProgramIndicator":"123",
-         "processor":"fiserv",
-         "responseCode":"00000",
-         "responseMessage":"APPROVAL",
-         "hostResponseCode":"00",
-         "hostResponseMessage":"APPROVAL",
-         "localTimestamp":"2021.02.25 14:14:38 (EST)",
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK3483",
+         "authenticationResponseCode": "string",
+         "referenceNumber": "845366457890-TODO",
+         "schemeTransactionId": "019078743804756",
+         "feeProgramIndicator": "123",
+         "processor": "fiserv",
+         "responseCode": "00000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2016-04-16T16:06:05Z",
          "bankAssociationDetails":{
-            "associationResponseCode":"000",
-            "transactionTimestamp":"2016-04-16T16:06:05Z",
-            "avsSecurityCodeResponse":{
-               "securityCodeMatch":"MATCH",
-               "association":{
-                  "securityCodeResponse":"MATCH"
-               }
-            }
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2016-04-16T16:06:05Z"
          }
       }
    },
    "transactionDetails":{
       "splitShipment":{
-       "totalCount":5,
-       "finalShipment":true
+       "totalCount": 5,
+       "finalShipment": true
       }
    }  
 }
