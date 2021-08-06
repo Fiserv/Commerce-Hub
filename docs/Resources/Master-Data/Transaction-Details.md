@@ -54,9 +54,9 @@ JSON string format for `transactionDetails`:
    "transactionDetails":{
       "approvalCode": "string",
       "primaryTransactionId": "838916029301",
-      "captureFlag":false,
+      "captureFlag": false,
       "transactionCaptureType": "TCS",
-      "accountVerification":false,
+      "accountVerification": false,
       "partialApproval": "string",
       "processingCode": "000000",
       "merchantTransactionId": "1343678765",
@@ -64,13 +64,13 @@ JSON string format for `transactionDetails`:
       "merchantInvoiceNumber": "123890",
       "receiptEmail": "abc@gmail.com",
       "paymentDescription": "string",
-      "cardVerificationAmount":0.02,
-      "partiallyApprovedTransactionAmount":10.55,
+      "cardVerificationAmount": 0.02,
+      "partiallyApprovedTransactionAmount": 10.55,
       "splitTenderId": "12423434",
       "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator":true,
+      "duplicateTransactionCheckingIndicator": true,
       "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource":true,
+      "vaultFundingSource": true,
       "deviceFingerprint":[
          {
             "provider": "InAuth",
@@ -94,11 +94,11 @@ JSON string format for `transactionDetails`:
          }
       ],
       "splitShipment":{
-         "totalCount":5,
-         "finalShipment":true
+         "totalCount": 5,
+         "finalShipment": true
       },
       "reversalReasonCode": "VOID",
-      "physicalGoodsIndicator":true,
+      "physicalGoodsIndicator": true,
       "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
       "createToken": false
    }
