@@ -52,7 +52,7 @@ JSON string format for `processorResponseDetails`:
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
+      "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails":{
          "associationResponseCode": "000",
          "transactionTimestamp": "2016-04-16T16:06:05Z",
@@ -62,9 +62,9 @@ JSON string format for `processorResponseDetails`:
             "postalCodeMatch": "MATCHED",
             "securityCodeMatch": "MATCHED",
             "association":{
-               "avsCode": "BOTH_MATCH",
-               "securityCodeResponse": "MATCH",
-               "cardholderNameResponse": "NAME_MATCH"
+               "avsCode": "YY",
+               "securityCodeResponse": "M",
+               "cardholderNameResponse": "1"
             }
          }
       }
@@ -126,9 +126,9 @@ JSON string format for `bankAssociationDetails`:
          "postalCodeMatch": "MATCHED",
          "securityCodeMatch": "MATCHED",
          "association":{
-            "avsCode": "BOTH_MATCH",
-            "securityCodeResponse": "MATCH",
-            "cardholderNameResponse": "NAME_MATCH"
+            "avsCode": "YY",
+            "securityCodeResponse": "M",
+            "cardholderNameResponse": "1"
          }
       }
    }
@@ -171,9 +171,9 @@ JSON string format for `avsSecurityCodeResponse`:
       "postalCodeMatch": "MATCHED",
       "securityCodeMatch": "MATCHED",
       "association":{
-         "avsCode": "BOTH_MATCH",
-         "securityCodeResponse": "MATCH",
-         "cardholderNameResponse": "NAME_MATCH"
+         "avsCode": "YY",
+         "securityCodeResponse": "M",
+         "cardholderNameResponse": "1"
       }
    }
 }
@@ -211,9 +211,9 @@ JSON string format for `association`:
 ```json
 {
    "association":{
-      "avsCode": "BOTH_MATCH",
-      "securityCodeResponse": "MATCH",
-      "cardholderNameResponse": "NAME_MATCH"
+      "avsCode": "YY",
+      "securityCodeResponse": "M",
+      "cardholderNameResponse": "1"
    }
 }
 ```

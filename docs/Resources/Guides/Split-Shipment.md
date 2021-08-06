@@ -10,7 +10,7 @@ A split shipment is an ability to [capture](?path=docs/Resources/API-Documents/P
 Situations in which this could be implemented include:
 
 - Shipment of goods will be split, the cardholder can be charged for each individual shipment.
-- Occurs when the goods url are not available for shipment at the time of the consumer’s purchase.
+- Occurs when the goods are not available for shipment at the time of the consumer’s purchase.
 
 <!-- theme: info -->
 > If the customer cancels or refunds their order before the last shipment, the `finalShipment` indicator is required to be sent during the [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
@@ -93,7 +93,6 @@ title: Response
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionDate": "2016-04-16",
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
@@ -126,13 +125,7 @@ title: Response
          "localTimestamp": "2016-04-16T16:06:05Z",
          "bankAssociationDetails":{
             "associationResponseCode": "000",
-            "transactionTimestamp": "2016-04-16T16:06:05Z",
-            "avsSecurityCodeResponse":{
-               "securityCodeMatch": "MATCHED",
-               "association":{
-                  "securityCodeResponse": "MATCHED"
-               }
-            }
+            "transactionTimestamp": "2016-04-16T16:06:05Z"
          }
       }
    },
