@@ -143,7 +143,7 @@ title: Response
          "associationResponseCode": "000",
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "avsSecurityCodeResponse":{
-            "securityCodeMatch": "MATCH",
+            "securityCodeMatch": "MATCHED",
             "association":{
                "securityCodeResponse": "M"
             }
@@ -247,7 +247,7 @@ title: Response
          "associationResponseCode":"000",
          "transactionTimestamp":"2016-04-16T16:06:05Z",
          "avsSecurityCodeResponse":{
-            "securityCodeMatch":"MATCH",
+            "securityCodeMatch":"MATCHED",
             "association":{
                "securityCodeResponse":"M"
             }
