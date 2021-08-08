@@ -7,35 +7,37 @@ tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, 
 <!-- theme: danger -->
 > We are enhancing the Commerce Hub to include Level II and III purchase card support and the documents related to the features will be released soon.
 
-Commerce Hub can pass Level II and III data (also knows as Enhanced Data) with business-to-business corporate and purchase card transactions. With a Level II and III data pass through solution, merchant's can meet card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) and provide invoice-level transaction details and qualify for lower rates.
+Commerce Hub can pass Level II and III data (also knows as Enhanced Data) with business-to-business corporate and purchase card transactions. With a Level II and III data pass through solution, merchant's can meet card brand requirements, provide invoice-level transaction details and qualify for lower rates.
 
 ## Request Variables
 
-For Level II and III transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
-
+Level II and III transactions require the `level23Data` object, and level III requires line item details in the `level23DataItems` object based on card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
 
 <!--
 type: tab
-title: card
+title: level23Data
 -->
 
-The below table identifies the required parameters in the `card` object.
+
+The below table identifies the parameters in the `level23Data` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`securityCode` | *string* | 3| The card security code |
 |`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
 
-#### Security Code Indicator
+<!--
+type: tab
+title: level23DataItems
+-->
 
-The below table identifies the valid values of `securityCodeIndicator`.
 
-| Value | Description |
-| ----- | --------- |
-| *NOT_SUPPORTED* | Not supported (Default) |
-| *PROVIDED* | Security code provided in the transaction request |
-| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
-| *NOT_AVAILABLE* | Security code not available. |
+The below table identifies the parameters in the `level23DataItems` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`securityCode` | *string* | 3| The card security code |
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
 
 <!--
 type: tab
