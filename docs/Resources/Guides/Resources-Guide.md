@@ -20,6 +20,7 @@ Commerce Hub implements various fraud controls that allows merchant to monitor p
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 
+
 ---
 
 ## Transaction Processing

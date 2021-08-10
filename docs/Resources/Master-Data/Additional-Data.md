@@ -54,7 +54,7 @@ JSON string format for `additionalDataCommon`:
       },
       "amountComponents":{
          "subTotal": 12.00, // Future Release
-         "convenienceFee": 1.00, // Future Release
+         "convenienceFee": 1.00,  Future Release
          "ITBISTaxAmount": 0.50, // Future Release
          "localTax": 1.00, // Future Release
          "shippingAmount": 5.00, // Future Release
