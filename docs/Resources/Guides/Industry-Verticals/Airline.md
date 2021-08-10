@@ -4,10 +4,11 @@ tags: [carat, commerce-hub, enterprise, airline]
 
 # Airline
 
-An Airline is a company that provides air transport services for traveling passengers and freight.
-
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Airline vertical support. The documents related to the features will be released soon.
+
+
+An Airline is a company that provides air transport services for traveling passengers and freight.
 
 ---
 

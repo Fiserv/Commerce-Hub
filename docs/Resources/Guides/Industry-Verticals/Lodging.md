@@ -4,10 +4,10 @@ tags: [carat, commerce-hub, enterprise, lodging]
 
 # Lodging
 
-Companies that develop, own, manage, and/or operate lodging facilities, including motels and full-service hotels.
-
 <!-- theme : danger -->
 >We are enhancing Commerce Hub to support the Lodging vertical. The documents related to the features will be released soon.
+
+Companies that develop, own, manage, and/or operate lodging facilities, including motels and full-service hotels.
 
 ---
 

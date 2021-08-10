@@ -4,8 +4,12 @@ tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, amer
 
 # Convenience Fees
 
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include Convenience Fees support. The documents related to the features will be released soon.
+
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
+<!---
 A merchant that charges a convenience fee must ensure that the fee is:
 
 - Charged for a bona fide convenience in the form of an alternative payment channel outside the merchant's customary payment channels.
@@ -14,8 +18,11 @@ A merchant that charges a convenience fee must ensure that the fee is:
 - A flat percentage rate or a fixed amount, regardless of the value of the payment due.
 - Applicable to all [payment sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) accepted in the alternative payment channel.
 - Included as a part of the total amount of the transaction.
+--->
 
 <!-- theme : warning -->
+
+<!---
 > A convenience fee is different than a [surcharge](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge). A surcharge is the ability to charge extra just for the benefit of using a credit card while a convenience fee is for a specific use, such as taxes or tuitions, or payment through alternative channels, such as by phone or online.
 
 ---
@@ -38,12 +45,12 @@ The `convenienceFee` is part of the `amountComponents` and the `additionalDataCo
 ---
 
 ## Payload Example
-
+--->
 <!--
 type: tab
 title: Request
 -->
-
+<!---
 ##### Example of a charge payload request using `convenienceFee`.
 
 ```json
@@ -73,11 +80,13 @@ title: Request
    }
 }
 ```
+--->
+
 <!--
 type: tab
 title: Response
 -->
-
+<!---
 ##### Example of a charge (201: Created) response.
 
 ```json
@@ -137,7 +146,7 @@ title: Response
    }
 }
 ```
-
+--->
 <!-- type: tab-end -->
 
 ---

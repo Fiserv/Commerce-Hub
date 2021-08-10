@@ -5,10 +5,10 @@ tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud,
 
 # Transaction Restrictions
 
-The Transaction Restriction settings can be enabled for duplicate transaction detection and restricting refund transactions.
-
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to support Transaction Restrictions. The documents related to the features will be released soon.
+
+The Transaction Restriction settings can be enabled for duplicate transaction detection and restricting refund transactions.
 
 ---
 
