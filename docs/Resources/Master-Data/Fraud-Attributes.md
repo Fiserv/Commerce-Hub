@@ -9,10 +9,12 @@ tags: [carat, commerce-hub, enterprise, fraud, fraud-attributes, risk-scoring]
 
 A transaction can contain `fraudAttributes` to improve authorization rates and reduce fraud.
 
-<!--
+---
+
+<!---
 type: tab
 title: fraudAttributes
--->
+--->
 
 <!---
 The below table identifies the parameters in the `fraudAttributes` object.
@@ -23,10 +25,10 @@ The below table identifies the parameters in the `fraudAttributes` object.
 | `suspicious` | *boolean* | N/A | Has the merchant detected suspicious activity on card, account or device used for this transaction in prior 60 days |
 --->
 
-<!--
+<!---
 type: tab
 title: JSON Example 
--->
+--->
 
 <!---
 JSON string format for `orderData`:
@@ -42,9 +44,9 @@ JSON string format for `orderData`:
 
 --->
 
-<!-- type: tab-end -->
+<!--- type: tab-end --->
 
----
+
 
 ## See Also
 
