@@ -4,6 +4,11 @@ tags: [carat, commerce-hub, enterprise, getting-started, card-not-present, onlin
 
 # Create a Payment Form
 
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for Hosted Payment Pages and the documents related to the feature and integration will be released soon.
+
+
 The first step for adding payments capabilities to your website is to implement a HTML form that you can use to accept a payment.
 
 This type of integration manages the customer checkout process and supports many payment methods or authentication mechanisms.
@@ -75,10 +80,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow --->
 
----
-
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include support for Hosted Payment Pages and the documents related to the feature and integration will be released soon.
 
 ---
 

@@ -6,10 +6,11 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
 
 ## Overview
 
-EMV is a secure payment method for payment terminals and automated teller machines.
-
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include EMV support. The documents related to this feature will be released soon.
+
+
+EMV is a payment method based upon a technical standard for smart payment cards and for payment terminals and automated teller machines which can accept them.
 
 ---
 

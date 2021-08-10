@@ -4,10 +4,10 @@ tags: [carat, commerce-hub, enterprise, debit, in-person, card-present, smart-ro
 
 # Smart Routing
 
-Smart routing consists of working with multiple payment service providers in order to be able to use the most relevant one for a single transaction. All of this for live transactions and with it being fully transparent to the shopper.
-
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include support of smart routing for debit transactions. The documents related to this feature will be released soon.
+
+Smart routing consists of working with multiple payment service providers in order to be able to use the most relevant one for a single transaction. All of this for live transactions and with it being fully transparent to the shopper.
 
 ---
 
