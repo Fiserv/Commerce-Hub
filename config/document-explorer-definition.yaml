@@ -72,8 +72,6 @@
       link: docs/Resources/Guides/Split-Shipment.md
     - title: Subsequent Authorization
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
-    - title: Tokenization
-      link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
 - sections:
