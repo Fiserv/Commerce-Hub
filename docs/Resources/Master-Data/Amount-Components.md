@@ -43,21 +43,28 @@ JSON string format for `amount`:
 
 <!-- type: tab-end -->
 
+<!---
+
 ## Amount Components
 
 Used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
+--->
 
-<!--
+
+<!---
 type: tab
 title: amountComponents
 -->
+
+
+
+<!---
 
 The below table identifies the parameters in the `amountComponents` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
-<!---
 | `subTotal` | *number* | 12 | Subtotal amount |
 | `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
 | `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
@@ -66,10 +73,12 @@ The below table identifies the parameters in the `amountComponents` object.
 | `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount |
 --->
 
-<!--
+<!---
 type: tab
 title: JSON Example
--->
+--->
+
+<!---
 
 JSON string format for `amountComponents`:
 
@@ -86,6 +95,7 @@ JSON string format for `amountComponents`:
    }
 }
 ```
+--->
 
 <!-- type: tab-end -->
 

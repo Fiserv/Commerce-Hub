@@ -12,17 +12,19 @@ Primary transactions include; [charge](?path=docs/Resources/API-Documents/Paymen
 
 ### Secondary Transactions
 
-Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [void](?path=docs/Resources/API-Documents/Payments/Cancel.md), [capture](?path=docs/Resources/API-Documents/Payments/Capture.md), and [inquiry](?path=ocs/Resources/API-Documents/Payments/Inquiry.md) using the `transactionId` or `orderId` from a prior request.
+Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [void](?path=docs/Resources/API-Documents/Payments/Cancel.md), [capture](?path=docs/Resources/API-Documents/Payments/Capture.md), and [inquiry](?path=ocs/Resources/API-Documents/Payments/Inquiry.md) using the `transactionId` <!-- or `orderId` --> from a prior request.
 
 - 'transactionID`: Transaction identifier returned in the *transactionProcessingDetails* of the *gatewayResponse*.
 
 <!-- theme: example -->
 >**Example Endpoint:** `/payments/v1/charges/{transactionId}/capture`
 
+<!---
 - `orderID`: Order identifier returned in the *gatewayResponse*.
+--->
 
 <!-- theme: example -->
->**Example Endpoint:** `/payments/v1/charges/orders/{orderId}/capture`
+<!--- >**Example Endpoint:** `/payments/v1/charges/orders/{orderId}/capture` --->
 
 ---
 
