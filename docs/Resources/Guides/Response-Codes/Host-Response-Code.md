@@ -42,7 +42,7 @@ The below table identifies the valid values of `hostResponseCode` along with `ho
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [Gateway Response Code](?path=docs/Resources/Master-Data/Gateway-Response.md)
 - [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 
