@@ -2,10 +2,9 @@
 tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-transaction-type, reversal-reason-code, authorization-sequence, device-fingerprint-data, data-capture, data-dynamic, master-data, transactional-data, transaction-details,]
 ---
 
-
 # Transactional Details
 
-The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
+The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` object.
 
 <!--
 type: tab
@@ -16,16 +15,16 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
+| `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a [forced post](?path=docs/Resources/API-Documents/Payments/Forced.md) transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `transactionCaptureType` | *string* | N/A |  |
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
 | `processingCode` | *string* | 6 | A [required code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
-| `merchantTransactionId` | *string* | 64 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
-| `merchantOrderId` | *string* | 128 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
-| `merchantInvoiceNumber` | *string* | 1024 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
+| `merchantTransactionId` | *string* | 64 | Unique merchant transaction ID (aka transaction reference ID). |
+| `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
+| `merchantInvoiceNumber` | *string* | 1024 | Merchant invoice number (aka reference number). |
 | `receiptEmail` | *string* | 256 | Email id to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
@@ -36,7 +35,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
 | `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
-| `splitShipment` | *string* |N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
+| `splitShipment` | *object* |N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
 | `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void).|
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested.|
@@ -161,7 +160,7 @@ The below table identifies the valid values of type of `authorizationSequence`.
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)

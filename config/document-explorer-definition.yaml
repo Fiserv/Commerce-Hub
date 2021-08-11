@@ -45,30 +45,33 @@
   - title: Connected Commerce
     link: docs/Getting-Started/Getting-Started-UCOM.md
 - sections:
+  - title: Features
+    sections:
+    - title: Enhanced Data Service
+      link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
+    - title: Tokenization
+      link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+- sections:
   - title: Resources and Guides
     sections:
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Enhanced Data Service
-      link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
     - title: Fraud Controls
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
     - title: Industry and Verticals
       link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
-    - title: Response Codes
-      link: docs/Resources/Guides/Response-Codes/Response-Codes.md
+    - title: Response Handling
+      link: docs/Resources/Guides/Response-Codes/Response-Handling.md
     - title: Split Tender
       link: docs/Resources/Guides/Split-Tender.md
     - title: Split Shipment
       link: docs/Resources/Guides/Split-Shipment.md
     - title: Subsequent Authorization
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
-    - title: Tokenization
-      link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
 - sections:

@@ -4,6 +4,9 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 # Google Pay on the Web: RESTful API Integration
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Google Pay support and the documents related to the features will be released soon.
+
 Merchants need to follow the below steps in order to integrate Google Pay with their website.
 
 ---
@@ -21,13 +24,16 @@ The merchant need to configure the merchant environment to accept [Google Pay on
 
 ---
 
+<!---
 ### Request Variables
+-->
 
 <!--
 type: tab
 title: source
 -->
 
+<!---
 The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Required | Description |
@@ -39,29 +45,34 @@ The below table identifies the required parameters in the `source` object.
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 | `keyInfo` | *array* | N/A | &#10004; | Key information |
 
+-->
+
 <!--
 type: tab
 title: keyInfo
 -->
-
+<!---
 The below table identifies the required parameters in the `keyInfo` array.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `merchantPrivateKey` | *string* | 1024 | | Merchant private key - Hex encoded. |
 | `signingVerificationKey` | *string* | 1024 | &#10004; | Signing verification key - Base64 encoded. |
-
+-->
 <!-- type: tab-end -->
 
 ---
 
+<!---
 ### Payload Example
+-->
 
 <!--
 type: tab
 title: Request
 -->
 
+<!---
 ##### Example of a charge payload request.
 ```json
 
@@ -90,15 +101,19 @@ title: Request
 }
 
 ```
+-->
 
 <!--
 type: tab
 title: Response
 -->
 
+<!---
 ##### Example of a charge (201: Created) response.
+-->
 
 <!-- theme: info -->
+<!--
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
@@ -160,6 +175,7 @@ title: Response
    }
 }
 ```
+-->
 
 <!-- type: tab-end -->
 

@@ -15,6 +15,9 @@ The merchant can perform account verification transaction to confirm that the ca
 
 ### Minimum Requirements
 
+<!-- theme: warning -->
+> Some cards do not allows $0 authorization, in which case `cardVerificationAmount` in the `transactionDetails` object will be required.
+
 <!--
 type: tab
 title: source

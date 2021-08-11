@@ -76,7 +76,7 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)

@@ -1,7 +1,6 @@
 ---
-tags: [carat, commerce-hub, idempotency, vault]
+tags: [carat, commerce-hub, idempotency, time-out]
 ---
-
 
 # Idempotency
 
@@ -13,7 +12,7 @@ A property of an operation that states that clients can make that same call repe
 
 When the below scenarios occur, the merchant can initiate a idempotency on the transaction request;
 
-- The merchant did not received the response for the request within a set timeout period
+- The merchant did not received the response for the request within a set time-out period
 - The merchant received a timeout response from the Commerce Hub gateway.
 
 ---
@@ -23,7 +22,7 @@ When the below scenarios occur, the merchant can initiate a idempotency on the t
 The merchant can submit the API request using the same `Client-Request-Id` from the original request. The gateway will verify the status of the original request and if the response received from the host, the gateway will send the response back to the merchant else, gateway will forward the request to host again for authorization.
 
 <!-- theme : info -->
->The merchant can also verify the status of the transaction by initiating an [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) request using `transactionId` or `orderId`.
+>The merchant can also verify the status of the transaction by initiating an [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) request using the `transactionId`<!-- or `orderId`-->.
 
 ---
 
