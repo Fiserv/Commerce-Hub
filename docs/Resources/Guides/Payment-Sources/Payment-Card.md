@@ -111,6 +111,7 @@ title: Response
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
+         "transactionTimestamp": "2021-04-16T16:06:05Z",        
          "orderId": "RKOrdID-525133851837",
          "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
          "clientRequestId": "4345791",
@@ -127,12 +128,6 @@ title: Response
          "scheme": "VISA"
       }
    },
-   "transactionProcessingDetails": {
-      "orderId": "RKOrdID-525133851837",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
-   },
    "paymentReceipt": {
       "approvedAmount": {
          "total": "12.04",
@@ -147,9 +142,9 @@ title: Response
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021.02.25 14:14:38 (CET)",
+         "localTimestamp": "2021-04-16T16:06:05Z",
          "bankAssociationDetails": {
-            "transactionTimestamp": "2021.02.25 14:14:38 (CET)"
+            "transactionTimestamp": "2021-04-16T16:06:05Z"
          }
       }
    },
@@ -168,7 +163,7 @@ title: Response
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---
