@@ -25,6 +25,8 @@ The below table identifies the parameters in the `amount` object.
 | `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
+---
+
 <!--
 type: tab
 title: JSON Example
