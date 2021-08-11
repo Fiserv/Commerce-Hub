@@ -84,7 +84,7 @@ JSON string format for `amountComponents`:
    }
 }
 ```
-
+ 
 <!-- type: tab-end -->
 
 ---
