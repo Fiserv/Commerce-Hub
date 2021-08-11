@@ -27,7 +27,7 @@ The below table identifies the parameters in the `orderData` object.
 
 <!--
 type: tab
-title: JSON Example 
+title: JSON Example
 -->
 
 JSON string format for `orderData`:
