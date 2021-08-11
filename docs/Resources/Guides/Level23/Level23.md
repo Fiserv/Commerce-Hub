@@ -23,8 +23,24 @@ The below table identifies the parameters in the `level23Data` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`securityCode` | *string* | 3| The card security code |
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+|`customerReference` | *string* | 128 | Purchase order number (PO Number), mapped from `merchantOrderId` in `transactionDetails` |
+|`totalTaxAmount` | *number* | 18,3 | Total tax amount |
+|`freightAmount` | *number* | 18,3 | Total amount of freight |
+|`totalDiscountAmount` | *number* | 18,3 | Total discount amount |
+|`dutyAmount` | *number* | 18,3 | Duty amount charged |
+|`destinationPostalCode` | *string* | | Postal Code where goods will be delivered |
+|`destinationCountryCode` | *string* | | Country code where goods will be delivered |
+|`orderDate` | *string* | | Date of order in YYYY-MM-DD format |
+|`shipFromPostalCode` | *string* | | Postal code where goods are being shipped from |
+|`merchantTaxId` | *string* | | Merchant tax ID |
+|`merchantInvoiceNumber` | *string* | | Merchant invoice number |
+
+Add these to the level23 data table
+taxRateRegistration
+supplierVat
+freightRate
+totalDiscountRate
+totalLineItemTax
 
 <!--
 type: tab
@@ -36,15 +52,24 @@ The below table identifies the parameters in the `level23DataItems` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`securityCode` | *string* | 3| The card security code |
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+|`commodityCode` | *string* |  | Code for the commodity |
+|`itemDescription` | *string* | | Description of the item being purchased |
+|`productCode` | *string* | | Code for the product being purchased |
+|`unitPrice` | *string* | | Price for the unit being purchased |
+|`quantity` | *string* | | Amount of the product being purchased |
+|`unitOfMeasurement` | *string* | | Unit of measurment for the product purchased |
+|`totalAmount` | *number* | 18,3 | Total amount purchased |
+|`discountIndicator` | *string* | | Discout code for the product being purchased |
+|`discountAmount` | *number* | 18,3 | Discount amount on the purchased product |
+|`taxIndicator` | *string* | | Tax code for purchased product |
+|`totalAmount` | *number* | 18,3 | Total amount purchased |
 
 <!--
 type: tab
 title: JSON Example
 -->
 
-JSON string format for `card`:
+JSON string format for `leve23Data`:
 
 ```json
 {
@@ -62,54 +87,6 @@ JSON string format for `card`:
 
 
 
-## Request Variables
-
-<!--
-type: tab
-title: level23Data
-
-The below table identifies the required parameters in the `amount` object.
-
-|Variable | Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
-
--->
-level23Data
-
-<!--
-type: tab
-title: level23DataItems
-
-The below table identifies the required parameters in the `amount` object.
-
-|Variable | Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
--->
-level23DataItems
-
-<!--
-type: tab
-title: JSON
-
-The below table identifies the required parameters in the `amount` object.
-
-|Variable | Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
--->
-Json
-
-<!-- type: tab-end -->
-
-
 ## Payload Example 
 
 <!--
@@ -117,94 +94,12 @@ type: tab
 title: Request
 -->
 
-```json
-{
-  "source": {
-      "sourceType": "level23",
-  },
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123"
-    },
-    "channel": "ANDROID",
-    "merchantIdentifier": "1234567890123456",
-    "version": "3DS2",
-    "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
-    "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth### Payload Example
-
-<!--
-type: tab
-title: Request
--->
-
-```json
-{
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "customer": {
-	  "locale": "ENGLISH",
-   },
-  "transactionDetails": {
-    "captureFlag": "true",
-	  "merchantInvoiceNumber": "123890",
-    "merchantOrderId": "845366457890"
-  },
-  "transactionNotificationURL": "https://showmethepaymentresult.com",
-  "expiration": "4102358400",
-  "merchantIpAddress": "10.10.10.10",
-  "authenticateTransaction": "TRUE",
-  "dynamicDescriptor": {
-	  "merchantName": "MyWebsite.com"
-  }
-}
-```
-
-<!--
-type: tab
-title: Response
--->
-
-<!-- theme: info -->
-> See [Error Responses](#error-responses) for additional status.
-
-```json
-
-{
-  "gatewayResponse": {
-    "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
-      "transactionTime": "2016-04-16T16:06:05Z",
-      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301",
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16"
-    }
-  },
-  "requestStatus": "SUCCESS",
-  "paymentUrl": "https://api.fiservapps.com/ch/payment-vas/payment-url?storename=123456789&oid=R-96cdbaa4-c22e-4598-a2f1-c2b5fed79ef1&paymentUrlId=d3eb74fe-cf63-47e1-b89f-52ba0cc7965c",
-  "paymentUrlId": "d3eb74fe-cf63-47e1-b89f-52ba0cc7965c"
-}
-
-```
-<!-- type: tab-end -->
-
-### Payload Example
-
-<!--
-type: tab
-title: Request
--->
-
-##### Example of a charge payload request with `createToken`.
+##### Example of a charge payload request.
 
 ```json
 {
    "amount":{
-      "total": "1.00",
+      "total": "12.04",
       "currency": "USD"
    },
    "source":{
@@ -212,12 +107,11 @@ title: Request
       "card":{
          "cardData": "4005550000000019",
          "expirationMonth": "02",
-         "expirationYear": "2035",
+         "expirationYear": "2035"
       }
    },
    "transactionDetails":{
-      "captureFlag": false,
-      "createToken": true
+      "captureFlag": true
    }
 }
 ```
@@ -229,59 +123,58 @@ type: tab
 title: Response
 -->
 
-##### Example of a charge (201: Created) tokenization response.
+##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
 {
    "gatewayResponse":{
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "token",
-      "transactionState": "authorized",
-      "transactionOrigin": "ecom",
-      "transactionProcessingDetails":{
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
-      }
+      "transactionType":"CHARGE",
+      "transactionState":"AUTHORIZED",
+      "transactionOrigin":"SECURE_ECOM"
    },
    "source":{
-      "sourceType": "PaymentCard",
+      "sourceType":"PaymentCard",
       "card":{
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019",
-         "scheme": "VISA"
+         "cardData":"4005550000000019",
+         "expirationMonth":"02",
+         "expirationYear":"2035"
       }
    },
-   "paymentToken":{
-      "tokenData": "1234123412340019",
-      "PARId": "1234567895461303321654",
-      "declineDuplicates": "FALSE",
-      "tokenSource": "RSA"
+   "transactionProcessingDetails":{
+      "orderId":"RKOrdID-525133851837",
+      "apiTraceId":"362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId":"4345791",
+      "transactionId":"84356531338"
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total":"12.04",
+         "currency":"USD"
+      }
    },
    "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "string",
-      "processor": "fiserv",
-      "responseCode": "00",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "54022",
-      "hostResponseMessage": "",
-      "localTimestamp": "2016-04-16T16:06:05Z",
+      "approvalStatus":"APPROVED",
+      "approvalCode":"OK5882",
+      "schemeTransactionId":"0225MCC625628",
+      "processor":"fiserv",
+      "responseCode":"000000",
+      "responseMessage":"APPROVAL",
+      "hostResponseCode":"00",
+      "hostResponseMessage":"APPROVAL",
+      "localTimestamp":"2021.02.25 14:14:38 (CET)",
       "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z"
+         "transactionTimestamp":"2021.02.25 14:14:38 (CET)"
       }
+   },
+   "transactionDetails":{
+      "merchantTransactionId":"RKTransID-768086381518"
    }
 }
 ```
+
 <!-- type: tab-end -->
 
 
