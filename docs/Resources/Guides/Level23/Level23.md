@@ -34,13 +34,12 @@ The below table identifies the parameters in the `level23Data` object.
 |`shipFromPostalCode` | *string* | | Postal code where goods are being shipped from |
 |`merchantTaxId` | *string* | | Merchant tax ID |
 |`merchantInvoiceNumber` | *string* | | Merchant invoice number |
+|`taxRate` | *string* | | Tax rate for the amount purchased |
+|`supplierVatRegistrationNumber` | *string* | | Supplier VAT registration number |
+|`freightRate` | *string* | | Freight rate percent |
+|`totalDiscountRate` | *string* | | Discount rate percent |
+|`totalLineItemTax` | *string* | | Line item tax |
 
-Add these to the level23 data table
-taxRateRegistration
-supplierVat
-freightRate
-totalDiscountRate
-totalLineItemTax
 
 <!--
 type: tab
@@ -60,8 +59,15 @@ The below table identifies the parameters in the `level23DataItems` object.
 |`unitOfMeasurement` | *string* | | Unit of measurment for the product purchased |
 |`totalAmount` | *number* | 18,3 | Total amount purchased |
 |`discountIndicator` | *string* | | Discout code for the product being purchased |
+|`discountRate` | *string* | | Discout rate percent |
 |`discountAmount` | *number* | 18,3 | Discount amount on the purchased product |
 |`taxIndicator` | *string* | | Tax code for purchased product |
+|`lineItemTaxRate` | *string* | | Discout code for the product being purchased |
+|`taxType` | *string* | | Discout code for the product being purchased |
+|`lineItemTax` | *string* | | Discout code for the product being purchased |
+|`vatRate` | *string* | | Value added tax (VAT) rate percent |
+|`vatAmount` | *number* | 18,3 | Value added tax (VAT) amount |
+|`lineItemTotal` | *string* | | Line item total after tax and discounts |
 |`totalAmount` | *number* | 18,3 | Total amount purchased |
 
 <!--
