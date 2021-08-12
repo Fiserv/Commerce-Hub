@@ -10,12 +10,12 @@ tags: [carat, commerce-hub, enterprise, device, master-data, device-fingerprint,
 
 The `deviceFingerPrint` is information collected about the software and hardware of a device or browser for the purpose of identification and is included in the `transactionDetails` object.
 
-<!---
+<!--
 type: tab
 title: deviceFingerprintData
---->
+-->
 
-<!---
+
 The below table identifies the parameters in the `deviceFingerprintData` object.
 
 | Variable | Type| Maximum Length | Description|
@@ -25,14 +25,14 @@ The below table identifies the parameters in the `deviceFingerprintData` object.
 |`dataStatic`| *object* | N/A | [Data static](#data-static) details.|
 |`dataDynamic`| *object* | N/A | [Data dynamic](#data-dynamic) details. |
 
---->
 
-<!---
+
+<!--
 type: tab
 title: JSON Example
---->
+-->
 
-<!---
+
 JSON string format for `deviceFingerprint`:
 
 ```json
@@ -73,24 +73,22 @@ JSON string format for `deviceFingerprint`:
 }
 
 ```
---->
+
 
 <!--type: tab-end -->
-
-<!---
 
 ## Data Capture
 
 Contains the finger print data and time it is captured.
 
---->
 
-<!---
+
+<!--
 type: tab
 title: dataCapture
---->
+-->
 
-<!---
+
 The below table identifies the parameters in the `dataCapture` object.
 
 | Variable | Type | Maximum Length | Description |
@@ -98,14 +96,12 @@ The below table identifies the parameters in the `dataCapture` object.
 | `rawData` | *string* | 256 | Raw data from the data capture |
 | `dataEventId` | *string* | 256 | Unique ID for the data capture |
 | `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
---->
 
-<!---
+
+<!--
 type: tab
 title: JSON Example
---->
-
-<!---
+-->
 
 JSON string format for `dataCapture`:
 
@@ -118,22 +114,21 @@ JSON string format for `dataCapture`:
    }
 }
 ```
---->
 
 <!--type: tab-end -->
 
-<!---
+
 ## Data Static
 
 Contains the static data such as operating system details and device type/model.
---->
 
-<!---
+
+<!--
 type: tab
 title: dataStatic
---->
+-->
 
-<!---
+
 The below table identifies the parameters in the `dataStatic` object.
 
 | Variable | Type | Maximum Length | Description |
@@ -147,14 +142,13 @@ The below table identifies the parameters in the `dataStatic` object.
 | `javaEnabled` | *boolean* | N/A | Identifies if Java is enabled on the device |
 | `userAgent` | *string* | 2048 | User agent data from the user device truncated to 2048 bytes |
 | `locale` | *string* | 8 | Language/Region code of user in IETF BCP47 format |
---->
 
-<!---
+
+<!--
 type: tab
 title: JSON Example
---->
+-->
 
-<!---
 JSON string format for `dataStatic`:
 
 ```json
@@ -172,22 +166,18 @@ JSON string format for `dataStatic`:
    }
 }
 ```
---->
 
 <!--type: tab-end -->
 
-<!---
 ## Data Dynamic
 
 Contains the dayamic data like device location and IP address. 
---->
 
-<!---
+
+<!--
 type: tab
 title: dataDynamic
---->
-
-<!---
+-->
 
 The below table identifies the parameters in the `dataDynamic` object.
 
@@ -199,14 +189,14 @@ The below table identifies the parameters in the `dataDynamic` object.
 | `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 | `address` | *object* | N/A | City and country [address](?path=docs/Resources/Master-Data/Address.md#address) the IP/Device is resident in when transaction was originated |
 
---->
 
-<!---
+
+<!--
 type: tab
 title: JSON Example
 --->
 
-<!---
+
 JSON string format for `dataDynamic`:
 
 ```json
@@ -224,7 +214,6 @@ JSON string format for `dataDynamic`:
 }
 
 ```
---->
 
 <!--type: tab-end -->
 
