@@ -16,12 +16,12 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: info -->
->Commerce Hub highly recommend testing against our cert environment before using our production environment.
+>Commerce Hub highly recommend testing against our test environment before using our production environment.
 
-### Cert Sandbox
+### Sandbox
 
 <!--theme: success -->
-> https://cert.api.fiservapps.com/ch/{resource}
+> https://test.api.fiservapps.com/ch/{resource}
 
 - Test APIs before you deploy to production
 - View the response format of a specific API
@@ -31,7 +31,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 ### Production
 
 <!--theme: success -->
-> https://api.fiservapps.com/ch/{resource}
+> https://prod.api.fiservapps.com/ch/{resource}
 
 - Send and cancel "live" transactions
 - Access Value Added Services
