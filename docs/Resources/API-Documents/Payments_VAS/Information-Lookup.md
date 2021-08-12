@@ -4,12 +4,22 @@ tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card
 
 # Information Lookup
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include information lookup transaction support. The documents related to the features will be released soon.
+
+Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. 
+
+<!--
 Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. The `cardDetails` are returned in the response.
+-->
+
 
 <!--
 type: tab
 title: cardDetails
 -->
+
+<!---
 
 The below table identifies the parameters in the `cardDetails` object.
 
@@ -21,55 +31,69 @@ The below table identifies the parameters in the `cardDetails` object.
 | `commercialCard` | *string* | 256 | Identifies if the card is a CORPORATE, COMMERCIAL or NON_CORPORATE card |
 | `issuerCountry` | *string* | 256 | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md) |
 | `issuerName` | *string* | 256 | Issuing bank name |
+--->
 
 <!-- type: tab-end -->
+
+<!---
 
 ## Information Lookup using PaymentCard
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
 
 ### Minimum Requirements
+--->
 
 <!--
 type: tab
 title: source
 -->
 
+<!---
+
 The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer to [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) for more details. |
+--->
 
 <!--
 type: tab
 title: card
 -->
 
+<!---
 The below table identifies the required parameters in the `card` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `cardData` | *string* | 19 | Card number or encrypted data |
+--->
 
 <!-- type: tab-end -->
+
+<!---
 
 ---
 
 ## Endpoint
 <!-- theme: success -->
+<!---
 >**POST** `/payments-vas/v1/accounts/information`
 
 ---
 
 
 ### Payload Example
+--->
 
-<!--
+<!---
 type: tab
 title: Request
--->
+--->
 
+<!---
 ##### Account information lookup request using PaymentCard.
 
 ```json
@@ -84,12 +108,14 @@ title: Request
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information)
+--->
 
-<!--
+<!---
 type: tab
 title: Response
--->
+--->
 
+<!---
 ##### Account information lookup response.
 
 ```json
@@ -117,7 +143,11 @@ title: Response
    }
 }
 ```
+--->
+
 <!-- type: tab-end -->
+
+<!---
 
 ---
 
@@ -137,17 +167,23 @@ The merchant can initiate information lookup transaction by passing the card det
 ---
 
 ## Endpoint
+--->
+
 <!-- theme: success -->
+<!---
 >**POST** `/payments-vas/v1/accounts/information`
 
 ---
 
 ### Payload Example
-<!--
+--->
+
+<!---
 type: tab
 title: Request
--->
+--->
 
+<!---
 ##### Account information lookup request using PaymentToken.
 
 ```json
@@ -158,12 +194,14 @@ title: Request
    }
 }
 ```
+--->
 
-<!--
+<!---
 type: tab
 title: Response
--->
+--->
 
+<!---
 ##### Account information lookup response.
 
 ```json
@@ -191,6 +229,8 @@ title: Response
    }
 }
 ```
+--->
+
 <!-- type: tab-end -->
 
 ---

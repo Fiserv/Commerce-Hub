@@ -1,7 +1,7 @@
 # Partial Authorizations
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to support partial authorizations and the documents related to the feature will be released soon.
+> We are enhancing Commerce Hub to support partial authorizations. The documents related to the feature will be released soon.
 
 Commerce Hub supports partial authorizations (approvals), authorization reversals, and balance response in order to improve in-person debit and prepaid transactions. Partial authorization capability addresses decline rates and enhances the consumer and merchant experience at the point of sale.
 

@@ -38,13 +38,18 @@ The below table identifies the required parameters in the `amount` object.
 
 ---
 
+<!---
 ## Endpoints
+--->
+
+## Endpoint
 Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/capture`
->
->**POST** `/payments/v1/charges/orders/{orderId}/capture`
 
+<!--- >
+>**POST** `/payments/v1/charges/orders/{orderId}/capture`
+--->
 ---
 
 ## Payload Example

@@ -4,7 +4,12 @@ tags: [carat, commerce-hub, enterprise, inquiry, transaction-inquiry, transactio
 
 # Transaction Inquiry
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include transaction inquiry transaction. The documents related to the features will be released soon.
+
 To retrieve the current state of any previous [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
+
+<!---
 
 ---
 
@@ -17,8 +22,10 @@ Get transaction inquiry request can be initiated by sending the request to the a
 ## Endpoints
 
 Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
+--->
 
 <!-- theme: info -->
+<!---
 >**GET** `/payments/v1/charges/{transactionId}/inquiry`
 >
 >**GET** `/payments/v1/charges/orders/{orderId}/inquiry`
@@ -26,16 +33,18 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 ---
 
 ## Payload Example
+--->
 
 <!--
 type: tab
 title: Response
 -->
-
+<!---
 ##### Example of an inquiry (200: Success) response.
+--->
 
 <!-- theme: info -->
-
+<!---
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
@@ -117,8 +126,11 @@ title: Response
   }
 }
 ```
+--->
 
 <!-- type: tab-end -->
+
+---
 
 ## See Also
 
