@@ -18,7 +18,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
+| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
 
@@ -117,6 +117,9 @@ JSON string format for `additionalDataCommon`:
 ---
 
 #### Bill Payment Indicator
+
+<!-- theme: warning -->
+> Bill Payment Indicator is required for Charges, Cancel and Capture transactions where a bill payment is being processed.
 
 The below table identifies the valid values of the `billPaymentIndicator`.
 
