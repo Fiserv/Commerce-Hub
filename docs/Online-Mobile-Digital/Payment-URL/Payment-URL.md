@@ -215,3 +215,4 @@ title: Response
 | PROCESSING_FAILED | Failed to process the Payment URL. |
 | FAILURE | Generic failure message. |
 
+---

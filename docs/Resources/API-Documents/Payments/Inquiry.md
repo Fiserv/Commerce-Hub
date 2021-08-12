@@ -32,7 +32,7 @@ type: tab
 title: Response
 -->
 
-##### Example of an inquiry (200: Success) response.
+##### Example of an inquiry (201: Success) response.
 
 <!-- theme: info -->
 
@@ -47,8 +47,7 @@ title: Response
     "transactionOrigin": "string",
     "transactionProcessingDetails": {
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionDate": "2016-04-16'",
-      "transactionTime": "2016-04-16T16:06:05Z",
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
       "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7'",
       "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
       "transactionId": "838916029301"
@@ -86,13 +85,28 @@ title: Response
           "operatingSystem": "ANDROID",
           "operatingSystemVersion": "5.1.1 Lollipop",
           "model": "XYX-1",
-          "type": "Moto G"
+          "type": "Moto G",
+          "deviceId": "00:1B:44:11:3A:B7",
+          "javaScriptEnabled": true,
+          "javaEnabled": true,
+          "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+          "locale": "en-US"
         },
         "dataDynamic": {
           "latitude": "13.0827 N",
           "longitude": "80.2707 E",
           "ipAddress": "172.27.37.221",
-          "captureTime": "2016-04-16T16:06:05Z"
+          "captureTime": "2016-04-16T16:06:05Z",
+          "address": {
+            "street": "123 Main Street",
+            "houseNumberOrName": "Apt 213",
+            "recipientNameOrAddress": "ATTN: Accounting Dept",
+            "city": "Sandy Springs",
+            "stateOrProvince": "GA",
+            "postalCode": "30303-0001",
+            "country": "US",
+            "addressHistory": "OVER_90_DAYS"
+          }
         }
       }
     ],
@@ -102,15 +116,15 @@ title: Response
     },
     "reversalReasonCode": "VOID",
     "physicalGoodsIndicator": true,
-    "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION"
+    "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
+    "createToken": false
   },
   "source": {
     "sourceType": "PaymentCard"
   },
   "transactionProcessingDetails": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionDate": "2016-04-16'",
-    "transactionTime": "2016-04-16T16:06:05Z",
+    "transactionTimestamp": "2016-04-16T16:06:05Z",
     "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7'",
     "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
     "transactionId": "838916029301"
