@@ -5,7 +5,7 @@ tags: [carat, commerce-hub, enterprise, authorizations, bill-payments, deferred-
 # Bill Payments
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to bill payment support and the documents related to this feature will be released soon.
+> We are enhancing Commerce Hub to bill payment support. The documents related to this feature will be released soon.
 
 - Single payments are individual or extra payments outside the payment schedule.
 - [Deferred payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md) are payments that were completely or partially postponed.
