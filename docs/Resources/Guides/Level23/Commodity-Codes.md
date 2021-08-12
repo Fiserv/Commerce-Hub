@@ -158,10 +158,10 @@ The table below includes the commodity codes (class and subclass list) for air c
 | 03113 | Chillers, Heat Exchangers and Receivers |
 | 03117 | Coils: Chilled or Heated Water, and Direct Expansion |
 | 03118 | Coil and Fan Units, Air Conditioning |
-03120 - compressors, air conditioning: hermetically sealed, window u |
-03121 - compressors, air conditioning: industrial type, and parts |
-03123 - condensing units (for air conditioners)
-03125 - controls: limit switches, relays, thermostats, gas valves, e
+| 03120 | Compressors, Air Conditioning: Hermetically Sealed, Window U |
+| 03121 | Compressors, Air Conditioning: Industrial Type, and Parts |
+| 03123 | Condensing Units (For Air Conditioners) |
+| 03125 | Controls: Limit Switches, Relays, Thermostats, Gas Valves, E |
 03126 - control systems: complete (for automatic temperature control
 03128 - cooling towers: forced air, gravity, etc.
 03130 - dehumidifiers and humidifiers
@@ -189,10 +189,10 @@ The table below includes the commodity codes (class and subclass list) for air c
 03162 - heaters, kerosene or oil fired (space type, vented and unven
 03165 - heating elements, electric
 03173 - pumps, refrigerant circulating
-03174 - pumps, refrigerant vacuum
+| 03174 | Pumps, Refrigerant Vacuum |
 | 03178 | roof ventilators, power driven
 | 03179 | roof ventilators, wind driven
-| 03187 | testing and recording instruments
+| 03187 | Testing and Recording Instruments |
 | 03189 | Thermometers and Gauges |
 | 03191 | Unit Heaters, Electric (Duct and Suspended Types) |
 | 03118 | Oil and Fan Units, Air Conditioning |
