@@ -184,6 +184,6 @@ JSON string format for `address`:
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

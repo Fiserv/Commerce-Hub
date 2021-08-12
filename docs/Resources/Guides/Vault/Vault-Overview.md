@@ -21,3 +21,9 @@ When a payment method is stored in the Vault, the information is encrypted by th
 
 
 ### Card Updater
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)

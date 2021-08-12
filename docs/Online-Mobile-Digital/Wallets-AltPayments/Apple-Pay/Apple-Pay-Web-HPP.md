@@ -31,7 +31,7 @@ The merchant can enhance the purchase experience from their website by creating 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
 - [Apple Pay Web RESTful Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---

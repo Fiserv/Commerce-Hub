@@ -30,7 +30,6 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 -->
 
-^
 
 <!--
 type: tab
