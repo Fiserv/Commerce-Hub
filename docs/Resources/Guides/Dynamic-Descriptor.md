@@ -196,7 +196,7 @@ title: Response
 ## See Also
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 
