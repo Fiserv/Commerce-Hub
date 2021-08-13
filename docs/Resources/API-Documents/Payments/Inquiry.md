@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, inquiry, transaction-inquiry, transactio
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include transaction inquiry transaction. The documents related to the features will be released soon.
 
-To retrieve the current state of any previous [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
+To retrieve the current state of any previous [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an Inquiry request can be submitted against the original `transactionId`. <!-- or `orderId`.-->
 
 <!---
 

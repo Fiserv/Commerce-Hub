@@ -4,7 +4,11 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, cancel,a
 
 # Cancel
 
+If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId`.
+
+<!---
 If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` or `orderId`.
+--->
 
 <!-- theme: warning -->
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
@@ -13,7 +17,11 @@ If the customer cancels the order or if fraud is suspected, the merchant will ne
 
 ## Minimum Requirements
 
+Cancel request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` along with the `reversalReasonCode` in `transactionDetails` object. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel).
+
+<!---
 Cancel request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId` along with the `reversalReasonCode` in `transactionDetails` object. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel).
+--->
 
 #### Reversal Reason Code
 
@@ -40,8 +48,10 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/cancel`
+<!---
 >
 >**POST** `/payments/v1/charges/orders/{orderId}/cancel`
+--->
 
 ---
 
