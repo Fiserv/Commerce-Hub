@@ -170,7 +170,10 @@ title: Response
 - [API Explorer](../api/?type=post&path=/payments/v1/refund)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+<!---
+- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
+--->
 
 ---
