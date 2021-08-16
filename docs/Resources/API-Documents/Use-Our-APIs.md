@@ -146,14 +146,15 @@ A standard API call to execute a charge transaction might look like this:
 
 ---
 
-## Next Steps
+## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Account Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---
