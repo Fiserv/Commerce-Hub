@@ -10,6 +10,7 @@ We are enhancing Commerce Hub to support the Car rental vertical and the documen
 ---
 
 ## See Also
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

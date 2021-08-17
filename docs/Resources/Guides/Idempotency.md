@@ -31,8 +31,8 @@ The merchant can submit the API request using the same `Client-Request-Id` from 
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md)
 - [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 

@@ -452,8 +452,8 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/enhanceddata)
-- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Fraud Attributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
+- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 
 ---

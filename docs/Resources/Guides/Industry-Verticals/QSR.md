@@ -10,6 +10,7 @@ We are enhancing Commerce Hub to support the QSR vertical and the documents rela
 ---
 
 ## See Also
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

@@ -14,8 +14,9 @@ We are enhancing Commerce Hub and the documents related to the features will be 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+
 
 ---
