@@ -90,6 +90,7 @@ function b64encode (input) {
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
 - [Use Our API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---

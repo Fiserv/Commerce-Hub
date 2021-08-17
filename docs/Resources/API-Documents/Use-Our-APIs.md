@@ -65,12 +65,13 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 #### Sample Header
 
 ```json
-header: {
+"header": {
       "Content-Type": "application/json",
-      "Client-Request-Id": "Client request ID goes here",
-      "REQUEST_UUID": "REQUEST_UUID goes here",
-      "Timestamp": "Date().getTime() goes here",
-      "Message-Signature": "Message Signature goes here"
+      "Client-Request-Id": "1000000012",
+      "Api-Key": "api'Key",
+      "Timestamp": "Date().getTime()",
+      "Auth-Token-Type": "HMAC" ,
+      "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
     },
 ```
 
@@ -112,48 +113,50 @@ A standard API call to execute a charge transaction might look like this:
 ```json
 
 {
-  "method": "POST",
-  "url": "https://api.fiservapps.com/ch/payments/v1/charges",
-  "headers": {
-    "Content-Type": "application/json",
-    "Client-Request-Id": "Client request ID goes here",
-    "Api-Key": "Api-Key goes here",
-    "Timestamp": "Date().getTime() goes here",
-    "Auth-Token-Type" :" HMAC",
-    "Authorization": "Authetication Header goes here"
+  method: "POST",
+  url: "https://prod.api.fiservapps.com/ch/payments/v1/charges",
+  headers: {
+      "Content-Type": "application/json",
+      "Client-Request-Id": "1000000012",
+      "Api-Key": "api'Key",
+      "Timestamp": "Date().getTime()",
+      "Auth-Token-Type": "HMAC" ,
+      "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
   },
-  "body": {
-    "amount": {
-      "total": "12.04",
-      "currency": "USD"
+  body: JSON.stringify({
+    amount: {
+      total: "12.04",
+      currency: "USD"
     },
-    "paymentSource": {
-      "sourceType": "PaymentCard",
-      "card": {
-        "cardData": "4005550000000019",
-        "expirationMonth": "02",
-        "expirationYear": "2035",
-        "securityCode": "123"
+    paymentSource: {
+      sourceType: "PaymentCard",
+      card: {
+        cardData: "4005550000000019",
+        expirationMonth: "02",
+        expirationYear: "2035",
+        securityCode: "123"
         }
     },
-    "transactionDetails": {
-      "captureFlag": true
+    transactionDetails: {
+      captureFlag: true
     }
-  }
+  })
 }
 
 ```
 
 ---
 
-## Next Steps
+## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Account Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---
