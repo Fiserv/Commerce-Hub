@@ -29,7 +29,7 @@ title: Javascript
 ##### Example of a Javascript Request.
 
 <!-- theme: example -->
-> Authentication : OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
+> Authorization: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
 
 ```javascript
 var key = 'api'Key;
