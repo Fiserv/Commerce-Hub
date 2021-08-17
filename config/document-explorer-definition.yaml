@@ -6,12 +6,6 @@
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-InPerson.md
-    - title: Debit
-      sections:
-      - title: Least Cost Debit
-        link: docs/In-Person/Debit/Least-Cost-Debit.md
-      - title: Smart Routing
-        link: docs/In-Person/Debit/Smart-Routing.md
     - title: EMV and Track Readers
       link: docs/In-Person/EMV-Track/EMV.md
     - title: Contactless (NFC)
@@ -47,6 +41,12 @@
 - sections:
   - title: Features
     sections:
+    - title: Debit
+      sections:
+      - title: Least Cost Debit
+        link: docs/In-Person/Debit/Least-Cost-Debit.md
+      - title: Smart Routing
+        link: docs/In-Person/Debit/Smart-Routing.md
     - title: Enhanced Data Service
       link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
     - title: Tokenization
