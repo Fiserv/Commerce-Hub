@@ -144,7 +144,7 @@ type: tab
 title: 031 AC, Heating Parts
 -->
 
-The table below includes the commodity codes (class and subclass list) for air conditioning, heating and ventilating equipment and parts.
+The table below includes the commodity codes (class and subclass list)for air conditioning, heating and ventilating equipment and parts.
 
 | Code | Description |
 | -------- | :--: |
@@ -200,7 +200,15 @@ The table below includes the commodity codes (class and subclass list) for air c
 | 03193 | Unit Heaters, Gas-Fired (Radiant and Infrared, Portable And |
 | 03196 | Vent Pipes, Fittings, and Accessories |
  
-035 - aircraft & airport, equipment, parts & supplies
+<!--
+type: tab
+title: 031 Aircraft Equip
+-->
+
+The table below includes the commodity codes (class and subclass list)for aircraft & airport, equipment, parts & supplies.
+
+| Code | Description |
+| -------- | :--: | 
 | 03510 | Aircraft Navigation Radio |
 03515 - aircraft radar
 03520 - airplanes
