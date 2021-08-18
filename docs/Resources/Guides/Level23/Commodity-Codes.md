@@ -201,7 +201,7 @@ The table below includes the commodity codes (class and subclass list) for air c
 | 03196 | Vent Pipes, Fittings, and Accessories |
  
 035 - aircraft & airport, equipment, parts & supplies
-03510 - aircraft navigation radio
+| 03510 | Aircraft Navigation Radio |
 03515 - aircraft radar
 03520 - airplanes
 03525 - automatic pilot systems
