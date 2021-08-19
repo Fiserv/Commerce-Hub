@@ -68,7 +68,7 @@ The table below includes the commodity codes (class and subclass list) for chemi
 
 <!--
 type: tab
-title: 020 Agric Equip
+title: 020 Ag Equip
 -->
 The table below includes the commodity codes (class and subclass list) for agricultural equipment.
 
@@ -122,7 +122,7 @@ The table below includes the commodity codes (class and subclass list) for agric
 
 <!--
 type: tab
-title: 025 Air Accessories
+title: 025 Air Compressors
 -->
 
 The table below includes the commodity codes (class and subclass list) for agricultural accessory parts.
@@ -141,7 +141,7 @@ The table below includes the commodity codes (class and subclass list) for agric
 
 <!--
 type: tab
-title: 031 AC, Heating Parts
+title: 031 HVAC Parts
 -->
 
 The table below includes the commodity codes (class and subclass list) for air conditioning, heating and ventilating equipment and parts.
@@ -202,7 +202,7 @@ The table below includes the commodity codes (class and subclass list) for air c
  
 <!--
 type: tab
-title: 03510 Aircraft Nav Radio
+title: 035 Aircraft
 -->
 
 The table below includes the commodity codes (class and subclass list) for aircraft navigation radio.
@@ -228,7 +228,7 @@ The table below includes the commodity codes (class and subclass list) for aircr
 
 <!--
 type: tab
-title: 03510 Appliances Equip
+title: 045 Appliances
 -->
 
 The table below includes the commodity codes (class and subclass list) for appliances & equipment, household type.
@@ -277,7 +277,7 @@ The table below includes the commodity codes (class and subclass list) for art o
 
 <!--
 type: tab
-title: 055 Art Objects
+title: 055 Automotive
 -->
 
 The table below includes the commodity codes (class and subclass list) for automotive accessories for automobiles, buses, trucks, etc.
@@ -3420,8 +3420,10 @@ The table below includes the commodity codes (class and subclass list) for secur
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
-- [Level II & III Brand](path?=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
-- [Tax Types](path?=docs/Resources/Guides/Level23/Tax-Types.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Card Brand Requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
+- [Level II/III Data](?path=docs/Resources/Guides/Level23/Level23.md)
+- [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
+- [Unit of Measurement](?path=docs/Resources/Guides/Level23/Unit-Measurement.md)
 
 ---
