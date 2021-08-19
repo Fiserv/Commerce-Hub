@@ -235,31 +235,56 @@ The table below includes the commodity codes (class and subclass list) for appli
  
 | Code | Description |
 | -------- | :--: | 
-| 04506 | appliances, small, electric |
-| 04512 | appliances, small, (not electric) |
-| 04518 | cleaners and sweepers, hand-operated |
-| 04552 | ovens, microwave |
-| 04554 | ranges, stove tops, and ovens, electric |
-| 04560 | ranges, stove tops, and ovens, gas |
-| 04566 | refrigerators and freezers |
-| 04578 | vacuum cleaners, electric |
-| 04584 | vent hoods (for ranges) |
+| 04506 | Appliances, Small, Electric |
+| 04512 | Appliances, Small, (Not Electric) |
+| 04518 | Cleaners and Sweepers, Hand-Operated |
+| 04552 | Ovens, Microwave |
+| 04554 | Ranges, Stove Tops, and Ovens, Electric |
+| 04560 | Ranges, Stove Tops, and Ovens, Gas |
+| 04566 | Refrigerators and Freezers |
+| 04578 | Vacuum Cleaners, Electric |
+| 04584 | Vent Hoods (For Ranges) |
  
-050 - art equipment
-05010 - block printing supplies
-05040 - drawing and painting supplies: brushes, chalk, colors (acryl
-05050 - engraving, etching, and lithography equipment and supplies
-05060 - picture frames and framing supplies: mat cutters, mats, mold
+<!--
+type: tab
+title: 050 Art Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for art equipment.
  
-052 - art objects
-05216 - drawings (originals)
-05224 - engravings, etchings, lithographs, serigraphs, and similar r
-05256 - painting (originals)
-05264 - photographs
-05272 - posters & prints (not originals)
+| Code | Description |
+| -------- | :--: |  
+| 050 | Art Equipment |
+| 05010 | Block Printing Supplies |
+| 05040 | Drawing and Painting Supplies: Brushes, Chalk, Colors (Acryl) |
+| 05050 | Engraving, Etching, and Lithography Equipment and Supplies |
+| 05060 | Picture Frames and Framing Supplies: Mat Cutters, Mats, Mold |
+
+<!--
+type: tab
+title: 052 Art Objects
+-->
+
+The table below includes the commodity codes (class and subclass list) for art objects.
  
-055 - automotive accessories for automobiles, buses, trucks, etc
-05502 - automotive air bags
+| Code | Description |
+| -------- | :--: | 
+| 05216 | Drawings (Originals) |
+| 05224 | Engravings, Etchings, Lithographs, Serigraphs, and Similar r |
+| 05256 | Painting (Originals) |
+| 05264 | Photographs |
+| 05272 | Posters & Prints (Not Originals) |
+
+<!--
+type: tab
+title: 055 Art Objects
+-->
+
+The table below includes the commodity codes (class and subclass list) for automotive accessories for automobiles, buses, trucks, etc.
+
+| Code | Description |
+| -------- | :--: | 
+| 05502 | Automotive Air Bags |
 05504 - air conditioners and parts
 05506 - automobile top carriers
 05508 - belts, safety; and child restraint systems
@@ -3303,31 +3328,10 @@ computer
 
 
 
-025 - AIR COMPRESSORS & ACCESSORIES
-
-02510 - COMPRESSOR, BARE UNIT (NOT MOUNTED OR POWERED), 15 HP AND LE
-
-02520 - COMPRESSOR, BARE UNIT (NOT MOUNTED OR POWERED), OVER 15 HP
-
-02530 - COMPRESSOR, BASE OR TANK MOUNTED, 15 HP OR LESS
-
-02540 - COMPRESSOR, BASE OR TANK MOUNTED, OVER 15 HP AND PARTS
-
-02543 - COMPRESSORS, HIGH PRESSURE, ALL SIZES AND MODELS
-
-02545 - COMPRESSOR, PORTABLE, ELECTRIC OR ENGINE DRIVEN, 5 HP & LESS
-
-02550 - COMPRESSOR, PORTABLE, ELECTRIC OR ENGINE DRIVEN, OVER 25 CFM
-
-02560 - COMPRESSOR ACCESSORIES, AIR
-
-02570 - MOISTURE SEPARATORS, NON-REFRIGERATED
-
 <!--
 type: tab
-title: 022 Aircraft
+title: 035 Aircraft
 -->
-
 
 The table below includes the commodity codes (class and subclass list) for aircraft and airport, equipment, parts and supplies.
 
@@ -3353,12 +3357,13 @@ The table below includes the commodity codes (class and subclass list) for aircr
 
 <!--
 type: tab
-title: 961 Prof Svc
+title: 961 Misc Prof Serv
 -->
+
+The table below includes the commodity codes (class and subclass list) for miscellaneous professional services
 
 | Code | Description |
 | -------- | :--: |
-| 961 | Miscellaneous Professional Services |
 | 96102 | Administrative Services, All Kinds |
 | 96103 | Analytical, Studies & Survey Services (Not Otherwise) |
 | 96104 | Artists |
@@ -3392,20 +3397,15 @@ title: 961 Prof Svc
 | 96154 | Mitigation Services, Wetlands |
 | 96155 | Mediator Services |
 
+<!--
+type: tab
+title: 990 Security and Emergency Serv
+-->
+
+The table below includes the commodity codes (class and subclass list) for security, fire, safety and emergency services.
 
 | Code | Description |
 | -------- | :--: |
-| 990 | Security, Fire, Saety and Emergency Services |
-| 99005 | Alarm Services |
-| 99042 | Fire and Safety Services |
-| 99046 | Guard and Security Services |
-| 99052 | Investigative Services |
-| 99067 | Patrol Services |
-| 99090 | X-Ray Film Badge Services |
-
-| Code | Description |
-| -------- | :--: |
-| 990 | Security, Fire, Saety and Emergency Services |
 | 99005 | Alarm Services |
 | 99042 | Fire and Safety Services |
 | 99046 | Guard and Security Services |
