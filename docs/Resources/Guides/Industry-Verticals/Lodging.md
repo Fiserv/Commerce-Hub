@@ -4,7 +4,8 @@ tags: [carat, commerce-hub, enterprise, lodging]
 
 # Lodging
 
-We are enhancing Commerce Hub to support the Lodging vertical and the documents related to the features will be released soon.
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support the Lodging vertical and the documents related to the features will be released soon.
 
 ---
 

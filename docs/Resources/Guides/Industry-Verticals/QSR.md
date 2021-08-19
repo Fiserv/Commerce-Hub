@@ -5,7 +5,8 @@ tags: [carat, commerce-hub, enterprise, quick-service-restaurant]
 
 # Quick Service Restaurant (QSR)
 
-We are enhancing Commerce Hub to support the QSR vertical and the documents related to the features will be released soon.
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support the QSR vertical and the documents related to the features will be released soon.
 
 ---
 
