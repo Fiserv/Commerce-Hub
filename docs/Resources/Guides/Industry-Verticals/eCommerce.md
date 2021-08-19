@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, ecommerce]
 ---
 
-
 # eCommerce
 
 <!-- theme: danger -->

@@ -7,19 +7,21 @@ tags: [carat, commerce-hub, enterprise, response-codes-and-messages, host, gatew
 
 Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and rejects. 
 
-- [**Host:**](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md) are the response which is received by the processing network or the bank.
+- **Host Response:** the response which is received by the processing [host](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md) *(network or bank)*.
 
-- [**Gateway:**](?path=docs/Resources/Guides/Response-Codes/Gateway.md) indicates the status of a transaction after Commerce Hub receives the transaction.
+- **Gateway Response:** indicates the status in a [successful response](?path=docs/Resources/Guides/Response-Codes/Response-Code.md) or [error response](?path=docs/Resources/Guides/Response-Codes/Error.md) after Commerce Hub receives the transaction.
 
-- [**HTTP:**](?path=docs/Resources/Guides/Response-Codes/HTTP.md) are the 3 digit codes which Commerce Hub responds back to the merchant request.
+- **HTTP Response:** the 3 digit [HTTP response code](?path=docs/Resources/Guides/Response-Codes/HTTP.md) which Commerce Hub responds back to the API request.
 
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
-- [Gateway Response Code](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
-- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
+- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
+- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
+- [Error Response Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
+- [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+- [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
 
 ---

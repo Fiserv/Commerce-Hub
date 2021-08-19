@@ -24,6 +24,8 @@ The below table identifies the parameters in the `cardDetails` object.
 
 <!-- type: tab-end -->
 
+---
+
 ## Information Lookup using PaymentCard
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
@@ -56,7 +58,7 @@ The below table identifies the required parameters in the `card` object.
 
 ---
 
-## Endpoint
+### Endpoint
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/information`
 
@@ -93,28 +95,29 @@ title: Response
 ##### Account information lookup response.
 
 ```json
+
 {
-   "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
-      "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
-      }
-   },
-   "cardDetails":{
-      "brand":"VISA",
-      "brandProductId":"VISA_BUSINESS",
-      "cardFunction":"CREDIT",
-      "commercialCard":"CORPORATE",
-      "issuerCountry":"US",
-      "issuerName":"First National Bank of Omaha"
-   }
+  "gatewayResponse": {
+    "transactionType": "INFORMATION",
+    "transactionState": "SUCCESS",
+    "transactionProcessingDetails": {
+      "transactionTime": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "cardDetails": [
+    {
+      "brand": "VISA",
+      "brandProductId": "VISA_BUSINESS",
+      "cardFunction": "CREDIT",
+      "commercialCard": "CORPORATE",
+      "issuerCountry": "US",
+      "issuerName": "First National Bank of Omaha"
+    }
+  ]
 }
 ```
 <!-- type: tab-end -->
@@ -136,7 +139,7 @@ The merchant can initiate information lookup transaction by passing the card det
 
 ---
 
-## Endpoint
+### Endpoint
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/information`
 
@@ -167,28 +170,29 @@ title: Response
 ##### Account information lookup response.
 
 ```json
+
 {
-   "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
-      "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
-      }
-   },
-   "CardDetails":{
-      "brand":"VISA",
-      "brandProductId":"VISA_BUSINESS",
-      "cardFunction":"CREDIT",
-      "commercialCard":"CORPORATE",
-      "issuerCountry":"US",
-      "issuerName":"First National Bank of Omaha"
-   }
+  "gatewayResponse": {
+    "transactionType": "INFORMATION",
+    "transactionState": "SUCCESS",
+    "transactionProcessingDetails": {
+      "transactionTime": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "cardDetails": [
+    {
+      "brand": "VISA",
+      "brandProductId": "VISA_BUSINESS",
+      "cardFunction": "CREDIT",
+      "commercialCard": "CORPORATE",
+      "issuerCountry": "US",
+      "issuerName": "First National Bank of Omaha"
+    }
+  ]
 }
 ```
 <!-- type: tab-end -->
