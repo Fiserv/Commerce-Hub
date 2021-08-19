@@ -11,7 +11,7 @@ Commerce Hub can pass Level II and III data (also knows as Enhanced Data) with b
 
 ## Request Variables
 
-Level II and III transactions require the `level23Data` object, and level III requires line item details in the `level23DataItems` object based on card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
+Level II and III transactions require the `level23Data` object, and level III requires line `itemDetails` object. Required fields are based on the specific card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
 
 <!--
 type: tab
