@@ -9,11 +9,11 @@ Use these values to populate the Tax Type property in the Level III line item de
 
 | Value | Description |
 | -------- | :--: |
-| UNKNOWN | Unknown or no tax submitted | 
+| *UNKNOWN* | Unknown or no tax submitted | 
 | FEDERAL |	Federal sales tax |	
 | NATIONAL |	National sales tax |	
 | STATE |	State sales tax | 
-| 3| City Sales Tax |	
+| CITY | City Sales Tax |	
 | 4 |	Local Sales Tax |	
 | 5 | Municipal Sales Tax |
 | 6 | Other Tax|
