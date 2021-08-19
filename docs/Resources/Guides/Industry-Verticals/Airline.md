@@ -10,6 +10,9 @@ tags: [carat, commerce-hub, enterprise, airline]
 ---
 
 ## See Also
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Industry Verticals](?path=docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md)
 
 ---

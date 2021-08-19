@@ -134,7 +134,7 @@ The below table identifies the valid values of `eciIndicator`.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
+- [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 
 ---
