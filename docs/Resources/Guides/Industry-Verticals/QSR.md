@@ -13,6 +13,6 @@ tags: [carat, commerce-hub, enterprise, quick-service-restaurant]
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

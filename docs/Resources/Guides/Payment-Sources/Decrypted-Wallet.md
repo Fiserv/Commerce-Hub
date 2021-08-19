@@ -16,10 +16,11 @@ tags: [carat, commerce-hub, enterprise, decrypted-wallet, apple-pay, google-pay,
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
 ---

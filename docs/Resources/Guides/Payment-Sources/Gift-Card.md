@@ -15,10 +15,12 @@ A gift card is a prepaid stored-value money card, usually issued by a retailer o
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Split Tender](?path=docs/Resources/Guides/Split-Tender.md)
+
 ---
 

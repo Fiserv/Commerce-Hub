@@ -95,14 +95,13 @@ JSON string format for `paymentReceipt`:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
-
 
 ---

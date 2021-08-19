@@ -105,6 +105,7 @@ type: tab
 title: 022 Ag Parts
 -->
 
+
 The table below includes the commodity codes (class and subclass list) for agricultural implement and accessory parts.
 
 | Code | Description |
@@ -158,92 +159,132 @@ The table below includes the commodity codes (class and subclass list) for air c
 | 03113 | Chillers, Heat Exchangers and Receivers |
 | 03117 | Coils: Chilled or Heated Water, and Direct Expansion |
 | 03118 | Coil and Fan Units, Air Conditioning |
-03120 - compressors, air conditioning: hermetically sealed, window u |
-03121 - compressors, air conditioning: industrial type, and parts |
-03123 - condensing units (for air conditioners)
-03125 - controls: limit switches, relays, thermostats, gas valves, e
-03126 - control systems: complete (for automatic temperature control
-03128 - cooling towers: forced air, gravity, etc.
-03130 - dehumidifiers and humidifiers
-03132 - duct, prefabricated (flexible or rigid): glass fiber, plasti
-03133 - duct, fabricated, metal
-03134 - dust collectors, industrial type
-03136 - electronic air cleaners, electrostatic precipitators, access
-03138 - evaporative coolers
-03140 - fans, industrial types: attic, exhaust, forced draft, etc.
-03141 - fans, room type: ceiling, floor, wall, oscillating, etc.
-03143 - filter coating, adhesive, coil cleaners, degreasing solvents
-03144 - filters, air conditioning (permanent type)
-03145 - filters and filter media, air conditioning (disposable types
-03146 - filters and filter media, evaporative cooler
-03149 - filter frames, metal
-03150 - freon
-03151 - furnaces, central heating type (forced air, gas fired)
-03153 - grilles, diffusers, registers, etc.
-03155 - hand tools, air conditioning and heating service type
-03156 - heat pumps
-03157 - heaters, electric (baseboard type) and parts
-03158 - heaters, electric (panel type) and parts
-03159 - heaters, electric (portable) and parts
-03160 - heaters, gas-fired (space type, vented and unvented) and par
-03162 - heaters, kerosene or oil fired (space type, vented and unven
-03165 - heating elements, electric
-03173 - pumps, refrigerant circulating
-03174 - pumps, refrigerant vacuum
-| 03178 | roof ventilators, power driven
-| 03179 | roof ventilators, wind driven
-| 03187 | testing and recording instruments
+| 03120 | Compressors, Air Conditioning: Hermetically Sealed, Window U |
+| 03121 | Compressors, Air Conditioning: Industrial Type, and Parts |
+| 03123 | Condensing Units (For Air Conditioners) |
+| 03125 | Controls: Limit Switches, Relays, Thermostats, Gas Valves, E |
+| 03126 | Control Systems: Complete (For Automatic Temperature Control |
+| 03128 | Cooling Towers: Forced Air, Gravity, Etc. |
+| 03130 | Dehumidifiers and Humidifiers |
+| 03132 | Duct, Prefabricated (Flexible or Rigid): Glass Fiber, Plastic |
+| 03133 | Duct, Fabricated, Metal |
+| 03134 | Dust Collectors, Industrial Type |
+| 03136 | Electronic Air Cleaners, Electrostatic Precipitators, Access |
+| 03138 | Evaporative Coolers |
+| 03140 | Fans, Industrial Types: Attic, Exhaust, Forced Draft, Etc. |
+| 03141 | Fans, Room Type: Ceiling, Floor, Wall, Oscillating, Etc. |
+| 03143 | Filter Coating, Adhesive, Coil Cleaners, Degreasing Solvents |
+| 03144 | Filters, Air Conditioning (Permanent Type) |
+| 03145 | Filters and Filter Media, Air Conditioning (Disposable Types) |
+| 03146 | Filters and Filter Media, Evaporative Cooler |
+| 03149 | Filter Frames, Metal |
+| 03150 | Freon |
+| 03151 | Furnaces, Central Heating Type (Forced Air, Gas Fired) |
+| 03153 | Grilles, Diffusers, Registers, Etc. |
+| 03155 | Hand Tools, Air Conditioning and Heating Service Type |
+| 03156 | Heat Pumps |
+| 03157 | Heaters, Electric (Baseboard Type) and Parts |
+| 03158 | Heaters, Electric (Panel Type) and Parts |
+| 03159 | Heaters, Electric (Portable) and Parts |
+| 03160 | Heaters, Gas-Fired (Space Type, Vented and Unvented) and Par |
+| 03162 | Heaters, Kerosene or Oil Fired (Space Type, Vented and Unven |
+| 03165 | Heating Elements, Electric |
+| 03173 | Pumps, Refrigerant Circulating |
+| 03174 | Pumps, Refrigerant Vacuum |
+| 03178 | Roof Ventilators, Power Driven |
+| 03179 | Roof Ventilators, Wind Driven |
+| 03187 | Testing and Recording Instruments |
 | 03189 | Thermometers and Gauges |
 | 03191 | Unit Heaters, Electric (Duct and Suspended Types) |
 | 03118 | Oil and Fan Units, Air Conditioning |
 | 03193 | Unit Heaters, Gas-Fired (Radiant and Infrared, Portable And |
 | 03196 | Vent Pipes, Fittings, and Accessories |
  
-035 - aircraft & airport, equipment, parts & supplies
-03510 - aircraft navigation radio
-03515 - aircraft radar
-03520 - airplanes
-03525 - automatic pilot systems
-03530 - engines and parts, airplane
-03535 - engines and parts, helicopter
-03540 - equipment and supplies, airplane
-03545 - equipment and supplies, helicopter
-03550 - helicopters
-03555 - instrument landing systems
-03560 - instruments and testers, airplane
-03565 - instruments and testers, helicopter
-03570 - parts (except engine), airplane
-03575 - parts (except engine), helicopter
-03585 - tools, airplane
-03590 - tools, helicopter
-03592 - wind tees and wind socks, airport
+<!--
+type: tab
+title: 03510 Aircraft Nav Radio
+-->
+
+The table below includes the commodity codes (class and subclass list) for aircraft navigation radio.
+
+| Code | Description |
+| -------- | :--: | 
+| 03515 | Aircraft Radar |
+| 03520 | Airplanes |
+| 03525 | Automatic Pilot Systems |
+| 03530 | Engines and Parts, Airplane |
+| 03535 | Engines and Parts, Helicopter |
+| 03540 | Equipment and Supplies, Airplane |
+| 03545 | Equipment and Supplies, Helicopter |
+| 03550 | Helicopters |
+| 03555 | Instrument Landing Systems |
+| 03560 | Instruments and Testers, Airplane |
+| 03565 | Instruments and Testers, Helicopter |
+| 03570 | Parts (Except Engine), Airplane |
+| 03575 | Parts (Except Engine), Helicopter |
+| 03585 | Tools, Airplane |
+| 03590 | Tools, Helicopter |
+| 03592 | Wind Tees and Wind Socks, Airport |
+
+<!--
+type: tab
+title: 03510 Appliances Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for appliances & equipment, household type.
  
-045 - appliances & equipment, household type
-04506 - appliances, small, electric
-04512 - appliances, small, (not electric)
-04518 - cleaners and sweepers, hand-operated
-04552 - ovens, microwave
-04554 - ranges, stove tops, and ovens, electric
-04560 - ranges, stove tops, and ovens, gas
-04566 - refrigerators and freezers
-04578 - vacuum cleaners, electric
-04584 - vent hoods (for ranges)
+| Code | Description |
+| -------- | :--: | 
+| 04506 | Appliances, Small, Electric |
+| 04512 | Appliances, Small, (Not Electric) |
+| 04518 | Cleaners and Sweepers, Hand-Operated |
+| 04552 | Ovens, Microwave |
+| 04554 | Ranges, Stove Tops, and Ovens, Electric |
+| 04560 | Ranges, Stove Tops, and Ovens, Gas |
+| 04566 | Refrigerators and Freezers |
+| 04578 | Vacuum Cleaners, Electric |
+| 04584 | Vent Hoods (For Ranges) |
  
-050 - art equipment
-05010 - block printing supplies
-05040 - drawing and painting supplies: brushes, chalk, colors (acryl
-05050 - engraving, etching, and lithography equipment and supplies
-05060 - picture frames and framing supplies: mat cutters, mats, mold
+<!--
+type: tab
+title: 050 Art Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for art equipment.
  
-052 - art objects
-05216 - drawings (originals)
-05224 - engravings, etchings, lithographs, serigraphs, and similar r
-05256 - painting (originals)
-05264 - photographs
-05272 - posters & prints (not originals)
+| Code | Description |
+| -------- | :--: |  
+| 050 | Art Equipment |
+| 05010 | Block Printing Supplies |
+| 05040 | Drawing and Painting Supplies: Brushes, Chalk, Colors (Acryl) |
+| 05050 | Engraving, Etching, and Lithography Equipment and Supplies |
+| 05060 | Picture Frames and Framing Supplies: Mat Cutters, Mats, Mold |
+
+<!--
+type: tab
+title: 052 Art Objects
+-->
+
+The table below includes the commodity codes (class and subclass list) for art objects.
  
-055 - automotive accessories for automobiles, buses, trucks, etc
-05502 - automotive air bags
+| Code | Description |
+| -------- | :--: | 
+| 05216 | Drawings (Originals) |
+| 05224 | Engravings, Etchings, Lithographs, Serigraphs, and Similar r |
+| 05256 | Painting (Originals) |
+| 05264 | Photographs |
+| 05272 | Posters & Prints (Not Originals) |
+
+<!--
+type: tab
+title: 055 Art Objects
+-->
+
+The table below includes the commodity codes (class and subclass list) for automotive accessories for automobiles, buses, trucks, etc.
+
+| Code | Description |
+| -------- | :--: | 
+| 05502 | Automotive Air Bags |
 05504 - air conditioners and parts
 05506 - automobile top carriers
 05508 - belts, safety; and child restraint systems
@@ -3287,31 +3328,10 @@ computer
 
 
 
-025 - AIR COMPRESSORS & ACCESSORIES
-
-02510 - COMPRESSOR, BARE UNIT (NOT MOUNTED OR POWERED), 15 HP AND LE
-
-02520 - COMPRESSOR, BARE UNIT (NOT MOUNTED OR POWERED), OVER 15 HP
-
-02530 - COMPRESSOR, BASE OR TANK MOUNTED, 15 HP OR LESS
-
-02540 - COMPRESSOR, BASE OR TANK MOUNTED, OVER 15 HP AND PARTS
-
-02543 - COMPRESSORS, HIGH PRESSURE, ALL SIZES AND MODELS
-
-02545 - COMPRESSOR, PORTABLE, ELECTRIC OR ENGINE DRIVEN, 5 HP & LESS
-
-02550 - COMPRESSOR, PORTABLE, ELECTRIC OR ENGINE DRIVEN, OVER 25 CFM
-
-02560 - COMPRESSOR ACCESSORIES, AIR
-
-02570 - MOISTURE SEPARATORS, NON-REFRIGERATED
-
 <!--
 type: tab
-title: 022 Aircraft
+title: 035 Aircraft
 -->
-
 
 The table below includes the commodity codes (class and subclass list) for aircraft and airport, equipment, parts and supplies.
 
@@ -3337,12 +3357,13 @@ The table below includes the commodity codes (class and subclass list) for aircr
 
 <!--
 type: tab
-title: 961 Prof Svc
+title: 961 Misc Prof Serv
 -->
+
+The table below includes the commodity codes (class and subclass list) for miscellaneous professional services
 
 | Code | Description |
 | -------- | :--: |
-| 961 | Miscellaneous Professional Services |
 | 96102 | Administrative Services, All Kinds |
 | 96103 | Analytical, Studies & Survey Services (Not Otherwise) |
 | 96104 | Artists |
@@ -3376,20 +3397,15 @@ title: 961 Prof Svc
 | 96154 | Mitigation Services, Wetlands |
 | 96155 | Mediator Services |
 
+<!--
+type: tab
+title: 990 Security and Emergency Serv
+-->
+
+The table below includes the commodity codes (class and subclass list) for security, fire, safety and emergency services.
 
 | Code | Description |
 | -------- | :--: |
-| 990 | Security, Fire, Saety and Emergency Services |
-| 99005 | Alarm Services |
-| 99042 | Fire and Safety Services |
-| 99046 | Guard and Security Services |
-| 99052 | Investigative Services |
-| 99067 | Patrol Services |
-| 99090 | X-Ray Film Badge Services |
-
-| Code | Description |
-| -------- | :--: |
-| 990 | Security, Fire, Saety and Emergency Services |
 | 99005 | Alarm Services |
 | 99042 | Fire and Safety Services |
 | 99046 | Guard and Security Services |

@@ -11,7 +11,7 @@ type: tab
 title: transactionInteraction
 -->
 
-The below table identifies the parameters in the `transactionInteraction` object.
+The below table identifies the parameters in the `transactionInteraction` object. 
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
