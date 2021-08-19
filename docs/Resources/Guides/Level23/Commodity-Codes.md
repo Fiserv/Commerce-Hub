@@ -144,7 +144,7 @@ type: tab
 title: 031 AC, Heating Parts
 -->
 
-The table below includes the commodity codes (class and subclass list)for air conditioning, heating and ventilating equipment and parts.
+The table below includes the commodity codes (class and subclass list) for air conditioning, heating and ventilating equipment and parts.
 
 | Code | Description |
 | -------- | :--: |
@@ -163,36 +163,36 @@ The table below includes the commodity codes (class and subclass list)for air co
 | 03121 | Compressors, Air Conditioning: Industrial Type, and Parts |
 | 03123 | Condensing Units (For Air Conditioners) |
 | 03125 | Controls: Limit Switches, Relays, Thermostats, Gas Valves, E |
-03126 - control systems: complete (for automatic temperature control
-03128 - cooling towers: forced air, gravity, etc.
-03130 - dehumidifiers and humidifiers
-03132 - duct, prefabricated (flexible or rigid): glass fiber, plasti
-03133 - duct, fabricated, metal
-03134 - dust collectors, industrial type
-03136 - electronic air cleaners, electrostatic precipitators, access
-03138 - evaporative coolers
-03140 - fans, industrial types: attic, exhaust, forced draft, etc.
-03141 - fans, room type: ceiling, floor, wall, oscillating, etc.
-03143 - filter coating, adhesive, coil cleaners, degreasing solvents
-03144 - filters, air conditioning (permanent type)
-03145 - filters and filter media, air conditioning (disposable types
-03146 - filters and filter media, evaporative cooler
-03149 - filter frames, metal
-03150 - freon
-03151 - furnaces, central heating type (forced air, gas fired)
-03153 - grilles, diffusers, registers, etc.
-03155 - hand tools, air conditioning and heating service type
-03156 - heat pumps
-03157 - heaters, electric (baseboard type) and parts
-03158 - heaters, electric (panel type) and parts
-03159 - heaters, electric (portable) and parts
-03160 - heaters, gas-fired (space type, vented and unvented) and par
-03162 - heaters, kerosene or oil fired (space type, vented and unven
-03165 - heating elements, electric
-03173 - pumps, refrigerant circulating
+| 03126 | Control Systems: Complete (For Automatic Temperature Control |
+| 03128 | Cooling Towers: Forced Air, Gravity, Etc. |
+| 03130 | Dehumidifiers and Humidifiers |
+| 03132 | Duct, Prefabricated (Flexible or Rigid): Glass Fiber, Plastic |
+| 03133 | Duct, Fabricated, Metal |
+| 03134 | Dust Collectors, Industrial Type |
+| 03136 | Electronic Air Cleaners, Electrostatic Precipitators, Access |
+| 03138 | Evaporative Coolers |
+| 03140 | Fans, Industrial Types: Attic, Exhaust, Forced Draft, Etc. |
+| 03141 | Fans, Room Type: Ceiling, Floor, Wall, Oscillating, Etc. |
+| 03143 | Filter Coating, Adhesive, Coil Cleaners, Degreasing Solvents |
+| 03144 | Filters, Air Conditioning (Permanent Type) |
+| 03145 | Filters and Filter Media, Air Conditioning (Disposable Types) |
+| 03146 | Filters and Filter Media, Evaporative Cooler |
+| 03149 | Filter Frames, Metal |
+| 03150 | Freon |
+| 03151 | Furnaces, Central Heating Type (Forced Air, Gas Fired) |
+| 03153 | Grilles, Diffusers, Registers, Etc. |
+| 03155 | Hand Tools, Air Conditioning and Heating Service Type |
+| 03156 | Heat Pumps |
+| 03157 | Heaters, Electric (Baseboard Type) and Parts |
+| 03158 | Heaters, Electric (Panel Type) and Parts |
+| 03159 | Heaters, Electric (Portable) and Parts |
+| 03160 | Heaters, Gas-Fired (Space Type, Vented and Unvented) and Par |
+| 03162 | Heaters, Kerosene or Oil Fired (Space Type, Vented and Unven |
+| 03165 | Heating Elements, Electric |
+| 03173 | Pumps, Refrigerant Circulating |
 | 03174 | Pumps, Refrigerant Vacuum |
-| 03178 | roof ventilators, power driven
-| 03179 | roof ventilators, wind driven
+| 03178 | Roof Ventilators, Power Driven |
+| 03179 | Roof Ventilators, Wind Driven |
 | 03187 | Testing and Recording Instruments |
 | 03189 | Thermometers and Gauges |
 | 03191 | Unit Heaters, Electric (Duct and Suspended Types) |
@@ -202,41 +202,48 @@ The table below includes the commodity codes (class and subclass list)for air co
  
 <!--
 type: tab
-title: 031 Aircraft Equip
+title: 03510 Aircraft Nav Radio
 -->
 
-The table below includes the commodity codes (class and subclass list)for aircraft & airport, equipment, parts & supplies.
+The table below includes the commodity codes (class and subclass list) for aircraft navigation radio.
 
 | Code | Description |
 | -------- | :--: | 
-| 03510 | Aircraft Navigation Radio |
-03515 - aircraft radar
-03520 - airplanes
-03525 - automatic pilot systems
-03530 - engines and parts, airplane
-03535 - engines and parts, helicopter
-03540 - equipment and supplies, airplane
-03545 - equipment and supplies, helicopter
-03550 - helicopters
-03555 - instrument landing systems
-03560 - instruments and testers, airplane
-03565 - instruments and testers, helicopter
-03570 - parts (except engine), airplane
-03575 - parts (except engine), helicopter
-03585 - tools, airplane
-03590 - tools, helicopter
-03592 - wind tees and wind socks, airport
+| 03515 | Aircraft Radar |
+| 03520 | Airplanes |
+| 03525 | Automatic Pilot Systems |
+| 03530 | Engines and Parts, Airplane |
+| 03535 | Engines and Parts, Helicopter |
+| 03540 | Equipment and Supplies, Airplane |
+| 03545 | Equipment and Supplies, Helicopter |
+| 03550 | Helicopters |
+| 03555 | Instrument Landing Systems |
+| 03560 | Instruments and Testers, Airplane |
+| 03565 | Instruments and Testers, Helicopter |
+| 03570 | Parts (Except Engine), Airplane |
+| 03575 | Parts (Except Engine), Helicopter |
+| 03585 | Tools, Airplane |
+| 03590 | Tools, Helicopter |
+| 03592 | Wind Tees and Wind Socks, Airport |
+
+<!--
+type: tab
+title: 03510 Appliances Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for appliances & equipment, household type.
  
-045 - appliances & equipment, household type
-04506 - appliances, small, electric
-04512 - appliances, small, (not electric)
-04518 - cleaners and sweepers, hand-operated
-04552 - ovens, microwave
-04554 - ranges, stove tops, and ovens, electric
-04560 - ranges, stove tops, and ovens, gas
-04566 - refrigerators and freezers
-04578 - vacuum cleaners, electric
-04584 - vent hoods (for ranges)
+| Code | Description |
+| -------- | :--: | 
+| 04506 | appliances, small, electric |
+| 04512 | appliances, small, (not electric) |
+| 04518 | cleaners and sweepers, hand-operated |
+| 04552 | ovens, microwave |
+| 04554 | ranges, stove tops, and ovens, electric |
+| 04560 | ranges, stove tops, and ovens, gas |
+| 04566 | refrigerators and freezers |
+| 04578 | vacuum cleaners, electric |
+| 04584 | vent hoods (for ranges) |
  
 050 - art equipment
 05010 - block printing supplies
