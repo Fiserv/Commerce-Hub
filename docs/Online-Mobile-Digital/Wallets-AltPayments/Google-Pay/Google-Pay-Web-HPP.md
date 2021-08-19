@@ -14,5 +14,6 @@ tags: [carat, commerce-hub, enterprise, integration-methods, hosted-payment-page
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

@@ -22,7 +22,9 @@ Commerce Hub supports the following major card brands (schemes).
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+- [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+
 
 ---

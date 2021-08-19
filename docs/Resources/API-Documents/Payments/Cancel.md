@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, card-present, cancel,api-reference,]
+tags: [carat, commerce-hub, enterprise, card-not-present, card-present, cancel,api-reference]
 ---
 
 # Cancel

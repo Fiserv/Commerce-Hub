@@ -11,6 +11,8 @@ tags: [carat, commerce-hub, enterprise, retail]
 ---
 
 ## See Also
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

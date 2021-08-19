@@ -11,6 +11,8 @@ tags: [carat, commerce-hub, enterprise, multi-acquiring]
 ---
 
 ## See Also
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+
+- [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---
