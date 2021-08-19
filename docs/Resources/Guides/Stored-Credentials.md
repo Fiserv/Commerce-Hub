@@ -56,8 +56,10 @@ The below table identifies the parameters in the `storedCredentials` object.
 
 Stored credentials can be used to submit merchant managed scheduled transactions by submitting `billPaymentType` in the `additionalDataCommon` object.
 
-- RECURRING - Agreement where charges will occur on a periodic basis.
-- INSTALLMENT - Single purchase where the cardholder is billed (charged) in installments.
+- RECURRING - A transaction in a series of transaction that uses stored credentials and are processed at fixed, regular intervals *(not to exceed one year between transaction)*, representing a cardholder agreement for the merchant to initiate future transaction for the purchase of goods or services provided at regular intervals.
+- INSTALLMENT - A transaction in a series of transactions that uses stored credentials and represents a cardholder agreement for the merchant to initiate one or more future transactions over a period for a single purchase of goods or services.
+- SINGLE - A transaction using stored credentials for a fixed or variable amount that does not occur on a scheduled or regularly occurring transaction date, where the cardholder has provided consent for the merchant to initiate one or more future transactions, e.g. account auto-top.
+
 
 ---
 
@@ -112,73 +114,65 @@ title: Response
 
 ```json
 {
-   "gatewayResponse": {
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "CHARGES",
+   "gatewayResponse":{
+      "transactionType": "CHARGE",
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
-      "transactionProcessingDetails": {
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+      "transactionProcessingDetails":{
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
       }
    },
-   "source": {
+   "source":{
       "sourceType": "PaymentCard",
-      "tokenData": "1234123412340019",
-      "tokenSource": "TRANSARMOR",
-      "card": {
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019"
+      "card":{
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
       }
    },
-   "transactionDetails": {
-      "captureFlag": true,
-      "createToken": true,
-      "authorizationTypeIndicator": "INITIAL"
-   },
-   "paymentReceipt": {
-      "approvedAmount": {
+   "paymentReceipt":{
+      "approvedAmount":{
          "total": 12.04,
          "currency": "USD"
       },
-      "processorResponseDetails": {
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
          "approvalStatus": "APPROVED",
-         "approvalCode": "OK3483",
-         "authenticationResponseCode": "string",
-         "referenceNumber": "845366457890-TODO",
-         "schemeTransactionId": "019078743804756",
-         "feeProgramIndicator": "123",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
          "processor": "fiserv",
-         "responseCode": "00000",
+         "responseCode": "000000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2016-04-16T16:06:05Z",
-         "bankAssociationDetails": {
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
             "associationResponseCode": "000",
-            "transactionTimestamp": "2016-04-16T16:06:05Z",
-            "avsSecurityCodeResponse": {
-               "securityCodeMatch": "MATCH",
-               "association": {
-                  "securityCodeResponse": "M"
-               }
-            }
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
          }
       }
    },
-   "storedCredentials": {
-      "scheduled": true,
+   "transactionDetails":{
+      "captureFlag": true,
+      "createToken": true
+   },
+   "storedCredentials":{
+      "scheduled":true,
       "initiator": "CARD_HOLDER",
       "sequence": "FIRST",
       "schemeReferenceTransactionId": "54231235467"
-   },
-   "additionalDataCommon": {
-      "billPaymentType": "RECURRING"
    }
 }
 ```

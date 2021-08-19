@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, payment-faciliator]
 ---
 
-
 # Payment Faciliator
 
 A payment facilitator is a merchant service provider that simplifies the merchant account enrollment process. Small merchants that don't have enough infrastructure to start accepting card payments, gets onboarded under payment facilitator as a sub-merchant. Payment facilitator have removed the friction in the application and onboarding process by simplifying it and tailoring it to the businesses they serve, enabling those businesses to begin accepting card payments more quickly.
@@ -68,7 +67,7 @@ title: Request
 
 ```json
 {
-  "amount": {
+  "amount"
     "total": "12.04",
     "currency": "USD"
   },
@@ -78,9 +77,7 @@ title: Request
   "card": {
     "cardData": "4005550000000019",
     "expirationMonth": "02",
-    "expirationYear": "2035",
-    "securityCode": "123"
-    "securityCodeIndicator": "PROVIDED"
+    "expirationYear": "2035"
   },
   "transactionDetails": {
     "captureFlag": true
@@ -110,71 +107,72 @@ title: Response
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
-  "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom"
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2021-04-16",
-    "transactionTime": "2021-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "source": "PaymentCard",
-  "card": {
-    "bin": "400555",
-    "last4": "0019",
-    "brand": "VISA",
-    "expirationMonth": "02",
-    "expirationYear": "2035"
-  },
-  "additionalDataCommon": {
-    "subMerchant": {
-      "id": "99998888",
-      "name": "ABC Pharmacy",
-      "street": "123 Main Street",
-      "city": "Atlanta",
-      "state": "GA",
-      "postalCode": "30303-001",
-      "country": "US",
-      "taxId": "123456789"
-    }
-  },
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": "1.00",
-      "currency": "USD"
-    },
-    "processorResponseDetails": null,
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK7118",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionID": "019078743804756",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "Approved",
-    "localTimestamp": "2021-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2021-04-16T16:06:05Z",
-      "transactionReferenceInformation": null,
-      "avsSecurityCodeResponse": {
-        "streetMatch": "EXACT_MATCH",
-        "postalCodeMatch": "EXACT_MATCH",
-        "securityCodeMatch": "MATCHED",
-        "association": {
-          "avsCode": "Z",
-          "securityCodeResponse": "S",
-          "cardHolderNameResponse": "M"
-        }
+   "gatewayResponse":{
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "transactionDate": "2021-04-16",
+         "transactionTimestamp": "2021-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
       }
-    }
-  }
+   },
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "bin": "400555",
+         "last4": "0019",
+         "scheme": "VISA"
+      }
+   },
+   "additionalDataCommon":{
+      "subMerchant":{
+         "id": "99998888",
+         "name": "ABC Pharmacy",
+         "street": "123 Main Street",
+         "city": "Atlanta",
+         "state": "GA",
+         "postalCode": "30303-001",
+         "country": "US",
+         "taxId": "123456789"
+      }
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": "12.04",
+         "currency": "USD"
+      },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK3483",
+         "referenceNumber": "845366457890-TODO",
+         "schemeTransactionId": "019078743804756",
+         "feeProgramIndicator": "123",
+         "processor": "fiserv",
+         "responseCode": "00000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2016-04-16T16:06:05Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2016-04-16T16:06:05Z"
+         }
+      }
+   }
 }
 ```
 

@@ -2,10 +2,9 @@
 tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-transaction-type, reversal-reason-code, authorization-sequence, device-fingerprint-data, data-capture, data-dynamic, master-data, transactional-data, transaction-details,]
 ---
 
-
 # Transactional Details
 
-The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` component.
+The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` object.
 
 <!--
 type: tab
@@ -16,16 +15,16 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization. |
+| `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a [forced post](?path=docs/Resources/API-Documents/Payments/Forced.md) transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `transactionCaptureType` | *string* | N/A |  |
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
 | `processingCode` | *string* | 6 | A [required code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
-| `merchantTransactionId` | *string* | 64 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
-| `merchantOrderId` | *string* | 128 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
-| `merchantInvoiceNumber` | *string* | 1024 | Client transaction ID if supplied by client mapped from Retrieval Reference Number (RRN) in the Request.|
+| `merchantTransactionId` | *string* | 64 | Unique merchant transaction ID (aka transaction reference ID). |
+| `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
+| `merchantInvoiceNumber` | *string* | 1024 | Merchant invoice number (aka reference number). |
 | `receiptEmail` | *string* | 256 | Email id to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
@@ -54,9 +53,9 @@ JSON string format for `transactionDetails`:
    "transactionDetails":{
       "approvalCode": "string",
       "primaryTransactionId": "838916029301",
-      "captureFlag":false,
+      "captureFlag": false,
       "transactionCaptureType": "TCS",
-      "accountVerification":false,
+      "accountVerification": false,
       "partialApproval": "string",
       "processingCode": "000000",
       "merchantTransactionId": "1343678765",
@@ -64,13 +63,13 @@ JSON string format for `transactionDetails`:
       "merchantInvoiceNumber": "123890",
       "receiptEmail": "abc@gmail.com",
       "paymentDescription": "string",
-      "cardVerificationAmount":0.02,
-      "partiallyApprovedTransactionAmount":10.55,
+      "cardVerificationAmount": 0.02,
+      "partiallyApprovedTransactionAmount": 10.55,
       "splitTenderId": "12423434",
       "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator":true,
+      "duplicateTransactionCheckingIndicator": true,
       "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource":true,
+      "vaultFundingSource": true,
       "deviceFingerprint":[
          {
             "provider": "InAuth",
@@ -94,11 +93,11 @@ JSON string format for `transactionDetails`:
          }
       ],
       "splitShipment":{
-         "totalCount":5,
-         "finalShipment":true
+         "totalCount": 5,
+         "finalShipment": true
       },
       "reversalReasonCode": "VOID",
-      "physicalGoodsIndicator":true,
+      "physicalGoodsIndicator": true,
       "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
       "createToken": false
    }
