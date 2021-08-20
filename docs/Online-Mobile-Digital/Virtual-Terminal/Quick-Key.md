@@ -58,4 +58,7 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 
 
 ## See Also
+
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)

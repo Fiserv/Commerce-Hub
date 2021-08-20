@@ -4,13 +4,14 @@ tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, 
 
 # Security Code
 
-Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
+Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit (AMEX) security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
 ## Request Variables
 
 For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
+
 
 <!--
 type: tab
@@ -22,7 +23,18 @@ The below table identifies the required parameters in the `card` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`securityCode` | *string* | 3| The card security code |
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed. **Valid Values:** NOT_SUPPORTED (Default), PROVIDED, VALUE_ILLEGIBLE,  NOT_AVAILABLE |
+|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+
+#### Security Code Indicator
+
+The below table identifies the valid values of `securityCodeIndicator`.
+
+| Value | Description |
+| ----- | --------- |
+| *NOT_SUPPORTED* | Not supported (Default) |
+| *PROVIDED* | Security code provided in the transaction request |
+| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
+| *NOT_AVAILABLE* | Security code not available. |
 
 <!--
 type: tab
@@ -47,7 +59,7 @@ JSON string format for `card`:
 
 ---
 
-## Security Code Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -89,12 +101,11 @@ title: Response
 {
    "gatewayResponse":{
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "token",
-      "transactionState": "authorized",
-      "transactionOrigin": "ecom",
+      "transactionType": "CHARGES",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
+         "transactionTimestamp": "2016-04-16T16:06:05Z",
          "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
          "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId": "838916029301"
@@ -102,38 +113,45 @@ title: Response
    },
    "source":{
       "sourceType": "PaymentCard",
-      "tokenData": "1234123412340019",
-      "PARId": "string",
-      "declineDuplicates": "FALSE",
-      "tokenSource": "string",
       "card":{
          "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
          "bin": "400555",
-         "last4": "0019"
+         "last4": "0019",
+         "scheme": "VISA"
       }
    },
-   "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
-      "processor": "fiserv",
-      "responseCode": "00000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "avsSecurityCodeResponse":{
-            "securityCodeMatch": "MATCH",
-            "association":{
-               "securityCodeResponse": "M"
+   "paymentReceipt":{
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK3483",
+         "authenticationResponseCode": "string",
+         "referenceNumber": "845366457890-TODO",
+         "schemeTransactionId": "019078743804756",
+         "feeProgramIndicator": "123",
+         "processor": "fiserv",
+         "responseCode": "00000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2016-04-16T16:06:05Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2016-04-16T16:06:05Z",
+            "transactionReferenceInformation": "string",
+            "avsSecurityCodeResponse":{
+               "securityCodeMatch": "MATCHED",
+               "association":{
+                 "securityCodeResponse": "M"
+               }
             }
          }
       }
@@ -145,7 +163,7 @@ title: Response
 
 ---
 
-## Security Code Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 
@@ -235,7 +253,7 @@ title: Response
          "associationResponseCode":"000",
          "transactionTimestamp":"2016-04-16T16:06:05Z",
          "avsSecurityCodeResponse":{
-            "securityCodeMatch":"MATCH",
+            "securityCodeMatch":"MATCHED",
             "association":{
                "securityCodeResponse":"M"
             }
@@ -244,7 +262,7 @@ title: Response
    }
 }
 ```
-
+ 
 <!-- type: tab-end -->
 
 ---
@@ -275,13 +293,31 @@ The below table identifies the valid values of `securityCodeResponse`.
 
 | Value | Descrption |
 | ---- | ------------|
+| *MATCHED* | Data matches with issuer system |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_PROCESSED* | Security code verification not done |
+| *NOT_PRESENT* | Security code not present in the input |
+| *NOT_CERTIFIED* | Issuer not certified to verify sercurity code |
+| *NOT_CHECKED* | Security code not checked |
+| *NONE* | No security code provided |
+
+---
+
+## Association Response Code
+
+The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
+
+The below table identifies the valid values of `securityCodeResponse`.
+
+| Value | Descrption |
+| ---- | ------------|
 | *M* | Card security code matched |
 | *N* | Card security code does not matched |
 | *P* | Not processed |
 | *S* | Merchant has indicated that the card security code is not present on the card. |
 | *U* | Issuer is not certified and/or not provides encryption keys. |
 | *X* | No response from the credit card association was received. |
-| | A blank code should indicate that no code was sent and that there was no indication that the code was present on the card. |
+| | A blank response will indicate that no code was sent and that there was no indication that the code was present on the card. |
 
 ---
 
@@ -289,14 +325,13 @@ The below table identifies the valid values of `securityCodeResponse`.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
-- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
-- [Prepaid Gift Card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
-Fraud-Settings-Restrictions.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
+- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 

@@ -18,7 +18,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
 | `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). | 
+| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
 
@@ -30,7 +30,8 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 -->
 
-^
+---
+
 <!--
 type: tab
 title: JSON Example
@@ -52,56 +53,59 @@ JSON string format for `additionalDataCommon`:
          "emvParameterDownloadIndicator":true
       },
       "amountComponents":{
-         "subTotal": 12.00,
-         "convenienceFee": 1.00,
-         "ITBISTaxAmount": 0.50,
-         "localTax": 1.00,
-         "shippingAmount": 5.00,
-         "surcharge": 1.20,
-         "vatAmount": 1.00
+         "subTotal": 12.00, // Future Release
+         "convenienceFee": 1.00, // Future Release
+         "ITBISTaxAmount": 0.50, // Future Release
+         "localTax": 1.00, // Future Release
+         "shippingAmount": 5.00, // Future Release
+         "surcharge": 1.20, // Future Release
+         "vatAmount": 1.00 // Future Release
       },
-      "directedRouting":{
-         "network": "VISA",
-         "cardFunction": "CREDIT",
-         "processor": "fiserv"
+      "directedRouting":{ // Future Release
+         "network": "VISA", // Future Release
+         "cardFunction": "CREDIT", // Future Release
+         "processor": "fiserv" // Future Release
       },
-      "subMerchant":{
-         "id": "9999",
-         "name": "Some Business",
-         "street": "123 Main Street",
-         "city": "Atlanta",
-         "state": "GA",
-         "postalCode": "30303-001",
-         "country": "US",
-         "taxId": "123456789"
+      "subMerchant":{ // Future Release
+         "id": "9999", // Future Release
+         "name": "Some Business", // Future Release
+         "street": "123 Main Street", // Future Release
+         "city": "Atlanta", // Future Release
+         "state": "GA", // Future Release
+         "postalCode": "30303-001", // Future Release
+         "country": "US", // Future Release
+         "taxId": "123456789" // Future Release
       },
       "billPaymentIndicator": "RECURRING",
       "installments":{
-         "installmentAmount": 20.00,
-         "lastInstallmentAmount": 20.00,
-         "interestRate": 10,
-         "paymentFirstDay": 10.00,
-         "invoiceId": "534242",
-         "invoiceDate": "05-01-2020",
-         "deliveryDate": "05-01-2020",
-         "dueDate": "05-01-2030"
+         "installmentAmount": 20.00, // Future Release
+         "lastInstallmentAmount": 20.00, // Future Release
+         "interestRate": 10, // Future Release
+         "paymentFirstDay": 10.00, // Future Release
+         "invoiceId": "534242", // Future Release
+         "invoiceDate": "05-01-2020", // Future Release
+         "deliveryDate": "05-01-2020", // Future Release
+         "dueDate": "05-01-2030", // Future Release
+         "installmentCount": 12 
       },
-      "deferredPayments":{
-         "numberOfPayments": "5",
-         "paymentPlan": "PAY_LATER",
-         "timePeriod": "12"
+      "deferredPayments":{ // Future Release
+         "numberOfPayments": "5", // Future Release
+         "paymentPlan": "PAY_LATER", // Future Release
+         "timePeriod": "12" // Future Release
       },
-      "recurringPayments":{    
+      "recurringPayments":{
+        "frequency": "MONTHLY",
+        "expiry": "05-05-2025"
       },
-      "privateLabel":{
-         "paymentSource": "SHELL",
-         "paymentType": "REFUND",
-         "specialFinanceIndicator": "24/0"
+      "privateLabel":{ // Future Release
+         "paymentSource": "SHELL", // Future Release
+         "paymentType": "REFUND", // Future Release
+         "specialFinanceIndicator": "24/0" // Future Release
       },
-      "customFields":{
-         "keyValuePair":{
-            "key": "",
-            "value": ""
+      "customFields":{ // Future Release
+         "keyValuePair":{ // Future Release
+            "key": "", // Future Release
+            "value": "" // Future Release
          }
       }
    }
@@ -113,6 +117,9 @@ JSON string format for `additionalDataCommon`:
 ---
 
 #### Bill Payment Indicator
+
+<!-- theme: warning -->
+> Bill Payment Indicator is required for Charges, Cancel and Capture transactions where a bill payment is being processed.
 
 The below table identifies the valid values of the `billPaymentIndicator`.
 
@@ -148,7 +155,7 @@ title: additionalData
 | `emvParameterDownloadIndicator` | *boolean* |  N/A  | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
 -->
 
-^
+---
 
 <!--
 type: tab
@@ -166,7 +173,7 @@ JSON string format for `additionalData`:
       "ecomURL": "https://www.somedomain.com",
       "goodsSoldCode": "GIFT_CARD", // Future Release
       "terminalLaneNumber": "001", // Future Release
-      "requestedTestErrorResponseCode": "NO_CONNECTION_AVAILABLE",
+      "requestedTestResponseCode": "705", // Future Release
       "emvParameterDownloadIndicator": true // Future Release
    }
 }
@@ -176,7 +183,8 @@ JSON string format for `additionalData`:
 
 ---
 
-<!--- #### Business Application Identifier
+<!---
+#### Business Application Identifier
 The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
 
 | Value | Description |

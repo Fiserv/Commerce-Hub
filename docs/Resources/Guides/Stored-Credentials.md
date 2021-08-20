@@ -33,8 +33,8 @@ The below table identifies the parameters in the `storedCredentials` object.
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `initiator` | *string* | 11 | &#10004; | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
-| `scheduled` | *boolean* | N/A | &#10004; | Indicator if this is a scheduled transaction. |
-| `schemeReferencedTransactionId` | *string* | 256 | | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
+| `scheduled` | *boolean* | N/A | &#10004; | Indicator if this is a [scheduled transaction](#scheduled-transaction). |
+| `schemeReferencedTransactionId` | *string* | 256 | &#10004;  | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
 | `sequence` | *string* | 10 | &#10004; | Indicates if the transaction is first or subsequent. **Valid Values:** *FIRST*, *SUBSEQUENT* |
 | `networkOriginalAmount` | *number* | 18,3 | | Original transaction amount, required for Discover Card on File transactions. |
 | `originationDate` | *string* | 10 | | Date the customer account was created with merchant in YYYY-MM-DD format. |
@@ -52,6 +52,17 @@ The below table identifies the parameters in the `storedCredentials` object.
 
 ---
 
+## Scheduled Transaction
+
+Stored credentials can be used to submit merchant managed scheduled transactions by submitting `billPaymentType` in the `additionalDataCommon` object.
+
+- RECURRING - A transaction in a series of transaction that uses stored credentials and are processed at fixed, regular intervals *(not to exceed one year between transaction)*, representing a cardholder agreement for the merchant to initiate future transaction for the purchase of goods or services provided at regular intervals.
+- INSTALLMENT - A transaction in a series of transactions that uses stored credentials and represents a cardholder agreement for the merchant to initiate one or more future transactions over a period for a single purchase of goods or services.
+- SINGLE - A transaction using stored credentials for a fixed or variable amount that does not occur on a scheduled or regularly occurring transaction date, where the cardholder has provided consent for the merchant to initiate one or more future transactions, e.g. account auto-top.
+
+
+---
+
 ## Payload Example
 
 <!--
@@ -63,31 +74,33 @@ title: Request
 
 ```json
 {
-   "amount":{
-      "total":"12.04",
-      "currency":"USD"
+   "amount": {
+      "total": "12.04",
+      "currency": "USD"
    },
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019",
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123"
+   "source": {
+      "sourceType": "PaymentCard",
+      "card": {
+         "cardData": "4005550000000019",
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "securityCode": "123"
       }
    },
    "transactionDetails":{
-      "captureFlag":true,
-      "createToken":true,
-      "tokenProvider":"RSA",
-      "authorizationTypeIndicator":"INITIAL"
+      "captureFlag": true,
+      "createToken": true,
+      "authorizationTypeIndicator": "INITIAL"
    },
-   "storedCredentials":{
-      "scheduled":true,
-      "initiator":"CARD_HOLDER",
-      "sequence":"FIRST",
-      "schemeReferenceTransactionId":"54231235467",
+   "storedCredentials": {
+      "scheduled": true,
+      "initiator": "CARD_HOLDER",
+      "sequence": "FIRST",
+      "schemeReferenceTransactionId": "54231235467"
+   },
+   "additionalDataCommon": {
+      "billPaymentType": "RECURRING"
    }
 }
 ```
@@ -102,76 +115,69 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"CHARGES",
-      "transactionState":"AUTHORIZED",
-      "transactionOrigin":"ECOM",
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
       }
    },
    "source":{
-      "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "tokenSource":"RSA",
+      "sourceType": "PaymentCard",
       "card":{
-         "nameOnCard": "Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019"
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
       }
-   },
-   "transactionDetails":{
-      "captureFlag":true,
-      "createToken":true,
-      "tokenProvider":"RSA",
-      "authorizationTypeIndicator":"INITIAL"
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":12.04,
-         "currency":"USD"
+         "total": 12.04,
+         "currency": "USD"
       },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
-         "approvalStatus":"APPROVED",
-         "approvalCode":"OK3483",
-         "authenticationResponseCode":"string",
-         "referenceNumber":"845366457890-TODO",
-         "schemeTransactionId":"019078743804756",
-         "feeProgramIndicator":"123",
-         "processor":"fiserv",
-         "responseCode":"00000",
-         "responseMessage":"APPROVAL",
-         "hostResponseCode":"00",
-         "hostResponseMessage":"APPROVAL",
-         "localTimestamp":"2016-04-16T16:06:05Z",
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
          "bankAssociationDetails":{
-            "associationResponseCode":"000",
-            "transactionTimestamp":"2016-04-16T16:06:05Z",
-            "avsSecurityCodeResponse":{
-               "securityCodeMatch":"MATCH",
-               "association":{
-                  "securityCodeResponse":"M"
-               }
-            }
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
          }
       }
    },
+   "transactionDetails":{
+      "captureFlag": true,
+      "createToken": true
+   },
    "storedCredentials":{
       "scheduled":true,
-      "initiator":"CARD_HOLDER",
-      "sequence":"FIRST",
-      "schemeReferenceTransactionId":"54231235467",
+      "initiator": "CARD_HOLDER",
+      "sequence": "FIRST",
+      "schemeReferenceTransactionId": "54231235467"
    }
 }
 ```
 
 <!-- type: tab-end -->
-
 
 ---
 
@@ -181,7 +187,9 @@ title: Response
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
+- [Installment Payment](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
-- [Recurring Payment](?path=docs/Resources/Guides/Bill-Payments/Recurring-Installments.md)
+- [Recurring Payment](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+
 ---

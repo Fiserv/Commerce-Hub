@@ -4,7 +4,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, in-perso
 
 # Address Verification Services
 
-
 Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#address-verification-service) to verify the cardholder’s [billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) with the association bank. Address verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
@@ -24,7 +23,7 @@ The below table identifies the required parameters in the `billingAddress` objec
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | N/A | Customer first name. |
 | `lastName` | *string* | N/A | Customer last name. |
-| `address` | *array* | N/A | [Billing address](?path=docs/Resources/Master-Data/Address.md#billingaddress) details. |
+| `address` | *array* | N/A | [Billing address](?path=docs/Resources/Master-Data/Address.md#billing-address) details. |
 
 <!--
 type: tab
@@ -39,8 +38,7 @@ JSON string format for `billingAddress`:
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -54,7 +52,7 @@ JSON string format for `billingAddress`:
 
 ---
 
-## AVS Verification Request
+## Verification Request
 
 ### Endpoint
 
@@ -84,8 +82,7 @@ title: Request
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince":"GA",
          "postalCode": "30301",
@@ -109,51 +106,61 @@ title: Response
       "transactionState": "CHECKED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
       }
    },
    "source":{
       "sourceType": "PaymentCard",
       "card":{
-         "cardData": "4005550000000019",
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019"
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
       }
    },
-   "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
-      "processor": "fiserv",
-      "responseCode": "00000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "transactionReferenceInformation": "string",
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
-            "association":{
-               "avsCode": "YY",
-               "cardholderNameResponse": "1"
+   "paymentReceipt":{
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK3483",
+         "authenticationResponseCode": "string",
+         "referenceNumber": "845366457890-TODO",
+         "schemeTransactionId": "019078743804756",
+         "feeProgramIndicator": "123",
+         "processor": "fiserv",
+         "responseCode": "00000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z",
+            "transactionReferenceInformation": "string",
+            "avsSecurityCodeResponse":{
+               "streetMatch": "MATCHED",
+               "postalCodeMatch": "MATCHED",
+               "association":{
+                  "avsCode": "YY",
+                  "cardholderNameResponse": "1"
+               }
             }
          }
       }
+   },
+   "transactionDetails":{
+      "merchantInvoiceNumber": "123456789012"
    }
 }
 ```
@@ -161,7 +168,7 @@ title: Response
 
 ---
 
-## AVS Verification with Charges Request
+## Verification with Charges Request
 
 ### Endpoint
 
@@ -199,8 +206,7 @@ title: Request
       "firstName": "John",
       "lastName": "Doe",
       "address":{
-         "houseNumberOrName": "112",
-         "street": "Main St.",
+         "street": "112 Main St.",
          "city": "Atlanta",
          "stateOrProvince": "GA",
          "postalCode": "30301",
@@ -261,8 +267,8 @@ title: Response
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
             "association":{
                "avsCode": "YY",
                "cardholderNameResponse": "1"
@@ -284,11 +290,13 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 | Value | Descrption |
 | ---- | ------------|
-| *EXACT_MATCHED* | Data exactly matches with issuer system |
 | *MATCHED* | Data matches with issuer system with some mismatch |
 | *NOT_MATCHED* | Data does not match with issuer system |
 | *NOT_CHECKED* | Street address or postal code verification not done |
 | *NO_INPUT_DATA* | Street address or postal code not present in the input |
+| *NONE* | Street address or postal code not available |
+
+---
 
 ## Association Response Code
 
@@ -304,7 +312,6 @@ The below table identifies the valid values of `avsCode`.
 | *U* | Card issuer did not check the AVS information |
 | *Z* | Postal code matched but street does not |
 | *A* | Street matched but postal code does not |
-
 
 The below table identifies the valid values of `cardHolderNameResponse`.
 
@@ -327,13 +334,14 @@ The below table identifies the valid values of `cardHolderNameResponse`.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
-- [Address Component](?path=docs/Resources/Master-Data/Address.md)
+- [Address Object](?path=docs/Resources/Master-Data/Address.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

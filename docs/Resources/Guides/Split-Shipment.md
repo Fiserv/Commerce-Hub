@@ -69,9 +69,7 @@ title: Request
    },
    "transactionDetails":{
       "captureFlag":true,
-      "createToken": true
-   },
-   "transactionDetails":{
+      "createToken": true,
       "splitShipment":{
        "totalCount":5,
        "finalShipment":true
@@ -100,6 +98,12 @@ title: Response
          "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
          "transactionId": "838916029301"
       }
+   },
+   "paymentToken":{
+      "tokenData": "1234123412340019",
+      "PARId": "1234567895461303321654",
+      "declineDuplicates": "FALSE",
+      "tokenSource": "RSA"
    },
    "paymentReceipt":{
       "approvedAmount":{
@@ -130,7 +134,7 @@ title: Response
        "totalCount": 5,
        "finalShipment": true
       }
-   }  
+   }
 }
 ```
 
@@ -140,8 +144,8 @@ title: Response
 
 ## See Also
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 
 ---

@@ -112,50 +112,61 @@ title: Response
 > See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
-
 {
-  "gatewayResponse":  {
-    "transactionType":  "CHARGE",
-    "transactionState":  "AUTHORIZED",
-    "transactionOrigin":  "SECURE_ECOM"
-  },
-  "paymentSource":  {
-    "sourceType":  "PaymentCard",
-    "card":  {
-      "bin":  "400555",
-      "last4":  "0019",
-      "scheme":  "VISA"
-    }
-  },
-  "transactionProcessingDetails":  {
-    "orderId":  "RKOrdID-525133851837",
-    "apiTraceId":  "362866ac81864d7c9d1ff8b5aa6e98db",
-    "clientRequestId":  "4345791",
-    "transactionId":  "84356531338"
-  },
-  "paymentReceipt":  {
-    "approvedAmount":  {
-      "total":  12.04,
-      "currency":  "USD"
-    }
-  },
-  "processorResponseDetails":  {
-    "approvalStatus":  "APPROVED",
-    "approvalCode":  "OK5882",
-    "schemeTransactionId":  "0225MCC625628",
-    "processor":  "fiserv",
-    "responseCode":  "000000",
-    "responseMessage":  "APPROVAL",
-    "hostResponseCode":  "00",
-    "hostResponseMessage":  "APPROVAL",
-    "localTimestamp":  "2021.02.25 14:14:38 (CET)",
-    "bankAssociationDetails":  {
-      "transactionTimestamp":  "2021.02.25 14:14:38 (CET)"
-    }
-  },
-  "transactionDetails":  {
-    "merchantTransactionId":  "RKTransID-768086381518"
-  }
+   "gatewayResponse":{
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
+      }
+   },
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "10",
+         "expirationYear": "2030"
+      }
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": 12.04,
+         "currency": "USD"
+      },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
+         }
+      }
+   },
+   "transactionDetails":{
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
+   }
 }
 ```
 

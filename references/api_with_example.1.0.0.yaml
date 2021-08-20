@@ -1,11 +1,11 @@
 openapi: 3.0.2
-info: {title: API Explorer, description: This API Specification is designed to provide
+info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
-    processing in Card Not Present environments., version: 1.0.0}
+    processing., version: 1.0.0}
 servers:
-- {url: 'https://api.fiservapps.com/ch/{resource}', description: Production}
-- {url: 'https:// cert.api.fiservapps.com/ch/{resource}', description: Cert Sandbox}
-- {url: 'https:// qa.api.fiservapps.com/ch/{resource}', description: QA Sandbox}
+- {url: 'https://api.fiservapps.com/ch', description: Production}
+- {url: 'https:// cert.api.fiservapps.com/ch', description: Cert Sandbox}
+- {url: 'https:// qa.api.fiservapps.com/ch', description: QA Sandbox}
 paths:
   /payments/v1/charges:
     x-model-version: 1.0
@@ -819,6 +819,7 @@ components:
         customer: {$ref: '#/components/schemas/Customer'}
         storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
+        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
     Phone:
       x-model-version: 1.0
@@ -831,7 +832,7 @@ components:
           example: 123-123-1234}
         type:
           type: string
-          maxLength: 5
+          maxLength: 16
           description: |
             Indicates the type of phone number.
 
@@ -908,17 +909,9 @@ components:
       - {$ref: '#/components/schemas/Source'}
       - type: object
         properties:
-          encrypted: {type: boolean, description: Identifies if the card data is encrypted.,
-            example: true}
           card: {$ref: '#/components/schemas/Card'}
-          encryptedKey: {type: string, maxLength: 2000, description: Identifier required
-              for decryption., example: NdCmVw5...}
-          encryptedPin: {type: string, maxLength: 2000, description: 'Contains the
-              encrypted PIN block for Debit, EBT, or Credit transactions.', example: F5f36kA...}
-          beginningBalance: {type: number, maximum: 1.0E18, description: Beginning
-              card balance., example: '1.00'}
-          endingBalance: {type: number, maximum: 1.0E18, description: Ending card
-              balance., example: '0.10'}
+          encryptionData: {$ref: '#/components/schemas/EncryptionData'}
+          pinBlock: {$ref: '#/components/schemas/PinBlock'}
     Card:
       x-model-version: 1.0
       description: Common <a href="../docs?path=docs/Resources/Master-Data/Card.md">card</a>
@@ -954,6 +947,41 @@ components:
         last4: {type: string, maxLength: 4, description: Contains the last four digits
             of the Primary Account Number (PAN)., example: '0019'}
         scheme: {type: string, maxLength: 256, description: Card brand., example: VISA}
+        beginningBalance: {type: number, maximum: 1.0E18, description: Beginning card
+            balance., example: '1.00'}
+        endingBalance: {type: number, maximum: 1.0E18, description: Ending card balance.,
+          example: '0.10'}
+    EncryptionData:
+      x-model-version: 1.0
+      description: ''
+      properties:
+        encryptionType: {type: string, maxLength: 256, description: 'Encryption type
+            to be passed. Possible values: RSA, Verifone, TDES/DUKPT,On-Guard FPE,
+            AES/Dukpt. Defaults to RSA.', example: ON_GAURD}
+        encryptionTarget: {type: string, maxLength: 256, description: 'Target could
+            be Track1, Track2, Both or Manual', example: TRACK_2}
+        encryptionBlock: {type: string, maxLength: 2000, description: '', example: ''}
+        deviceType: {type: string, maxLength: 256, description: 'Device type need
+            to be sent for TDES and AES encrypted track data. Possible values: INGENICO,
+            RPXXX, CLOVER, NCR, NCRTLV. Defaults to INGENICO.', example: INGENICO}
+        securitykeyUpdateIndicator: {type: boolean, description: 'Provided in response.
+            POS is expected to download updated key, key cert', example: 'false'}
+        keyId: {type: string, description: Needs to be passed if track data is encrypted.,
+          example: ''}
+        encryptedKey: {type: string, maxLength: 2000, description: Identifier required
+            for decryption., example: NdCmVw5...}
+    PinBlock:
+      x-model-version: 1.0
+      description: ''
+      properties:
+        encryptedPin: {type: string, maxLength: 2000, description: 'This field contains
+            the Encrypted PIN Block for Debit, EBT, Fleet or Credit transactions.',
+          example: F5f36kA...}
+        keySerialNumber: {type: string, maxLength: 256, description: 'This field is
+            used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet
+            and Credit Transactions.', example: TRACK_2}
+        pinEncryptionWorkingKey: {type: string, maxLength: 2000, description: '',
+          example: ''}
     PaymentEMV:
       x-model-version: 1.0
       allOf:
@@ -963,62 +991,19 @@ components:
           card: {$ref: '#/components/schemas/Card'}
           emvData: {type: string, description: EMV/Chip data is a series of "Tag/Length/Value"
               combination for chip card processing.}
-          emvAuthData: {type: string, description: EMV/Chip response data is a series
-              of "Tag/Length/Value" combination for chip card processing.}
-          encryptedPin: {type: string}
-          pinEncryptionWorkingKey: {type: string, description: ''}
-          panSequenceNumber: {type: string, description: Contactless PAN sequence
-              number to be sent as a mandatory parameter.}
-          transactionSequenceCounter: {type: integer, description: Required for Canadian
-              debit EMV transactions.}
-          applicationIdentifier: {type: string, description: EMV/Contactless application
-              ID used for Canadian debit routing.}
-          cardAuthenticationResultsCode: {type: string}
-    PrepaidCard:
-      x-model-version: 1.0
-      allOf:
-      - {$ref: '#/components/schemas/Source'}
-      - type: object
-        properties:
-          card: {$ref: '#/components/schemas/Card'}
-          beginningBalance: {type: number, maximum: 1.0E18, description: Beginning
-              card balance., example: '1.00'}
-          endingBalance: {type: number, maximum: 1.0E18, description: Ending card
-              balance., example: '0.10'}
+          encryptionData: {$ref: '#/components/schemas/EncryptionData'}
+          pinBlock: {$ref: '#/components/schemas/PinBlock'}
     PaymentTrack:
       x-model-version: 1.0
       allOf:
       - {$ref: '#/components/schemas/Source'}
       - type: object
         properties:
-          trackData: {type: string, description: Track data which is encrypted or
-              plain.}
-          encrypted: {type: boolean, description: If track data is encrypted.}
-          encryptionType: {type: string, description: 'Encryption yype to be passed.
-              Possible values: RSA, Verifone, TDES/DUKPT,On-Guard FPE, AES/Dukpt.
-              Defaults to RSA.', example: RSA}
-          keyId: {type: string, description: Needs to be passed if track data is encrypted.}
-          deviceType: {type: string, description: 'Device type need to be sent for
-              TDES and AES encrypted track data. Possible values: INGENICO, RPXXX,
-              CLOVER, NCR, NCRTLV. Defaults to INGENICO.', example: INGENICO}
-          target: {type: string, description: 'Target could be Track1, Track2, Both
-              or Manual', example: Track2}
+          card: {$ref: '#/components/schemas/Card'}
+          encryptionData: {$ref: '#/components/schemas/EncryptionData'}
+          pinBlock: {$ref: '#/components/schemas/PinBlock'}
           track1Data: {type: string, description: ''}
           track2Data: {type: string, description: ''}
-          card: {$ref: '#/components/schemas/Card'}
-          region: {type: string, description: 'Region of debit origin. Canadian, German,
-              etc'}
-          encryptedKeyIndex: {type: string, description: ''}
-          messageAuthenticationWorkingKey: {type: string, description: ''}
-          messageEncryptionWorkingKey: {type: string, description: ''}
-          encryptedPin: {type: string, description: ''}
-          pinEncryptionWorkingKey: {type: string, description: ''}
-          debitMACValue: {type: string, description: To confirm that the key data
-              elements of the transaction have not been tampered with.}
-          debitPinPadSerialNumber: {type: string, description: ''}
-          debitTransactionCode: {type: string, description: ''}
-          accountType: {type: string, description: ' '}
-          applicationIdentifier: {type: string}
     PaymentToken:
       x-model-version: 1.0
       allOf:
@@ -1175,16 +1160,29 @@ components:
             and incremental authorization., example: '838916029301'}
         captureFlag: {type: boolean, description: Designates if the transaction should
             be captured. Auth (False) or Sale (True)., example: true}
-        transactionCaptureType: {type: string, maxLength: 64, example: TCS}
+        transactionCaptureType: {type: string, description: Identifies if settlement
+            was Host capture or Terminal capture., maxLength: 64, example: TCS}
         accountVerification: {type: boolean, description: Determines if verification
             should be performed on the payment type., example: 'false'}
-        partialApproval: {type: string, description: Indicates if a partial approval
-            is allowed., example: false}
+        partialApproval:
+          type: string
+          maxLength: 32
+          description: |
+            Indicates if a partial approval is allowed.
+
+            Valid Values:
+            * NOT_SUPPORTED - Partial authorization approvals are not supported
+            * SUPPORTED_NO_CASH_BACK - Partial authorization approvals are supported, however partial authorization of cash disbursement amount is not supported. POS/Terminal should not prompt for cash back.
+            * MERCH_CASH_BACK_SUPPORTED - Merchandise can be partially authorized, and cash disbursement amount can be partially authorized.
+            * MERCH_SUPPORTED_ONLY - Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized.
+            * CASH_BACK_SUPPORTED_ONLY - Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized.
+            * MERCH_CASH_BACK_NOT_SUPPORTED - Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized."
+          example: NOT_SUPPORTED
         processingCode:
           type: string
           maxLength: 6
           description: |
-            A required code is used in conjunction with the message type to define the type of transaction that is by the terminal to the host. See documentation for codes.
+            A required <a href=../docs/Resources/Master-Data/Processing-Code.md>code</a> is used in conjunction with the message type to define the type of transaction that is by the terminal to the host
 
             Code Format:
             * Position 1-2 Transaction Type
@@ -1329,6 +1327,39 @@ components:
         captureTime: {type: string, format: date-time, maxLength: 20, description: 'Timestamp
             in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         address: {$ref: '#/components/schemas/Address'}
+    OrderData:
+      x-model-version: 1.0
+      description: <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md">Order
+        data</a> can be used for merchant database tracking, improve authorization
+        rates and reduce fraud.
+      properties:
+        orderDate: {type: string, format: date, maxLength: 10, description: 'Date
+            that goods and services are ordered, in YYYY-MM-DD format.', example: '2020-11-20'}
+        itemCount: {type: integer, description: Total number of items included in
+            the purchase., example: '1'}
+        itemDetails:
+          type: array
+          items: {$ref: '#/components/schemas/ItemDetails'}
+        preOrder: {type: boolean, description: Identifies if the purchase is a preorder.,
+          example: 'true'}
+        preOrderDate: {type: string, format: date, maxLength: 10, description: 'Date
+            that goods and services are pre-ordered, in YYYY-MM-DD format.', example: '2020-11-20'}
+        reOrder: {type: boolean, description: Identifies if the purchase is a reorder.,
+          example: 'false'}
+        goodsSoldCode: {type: string, maxLength: 16, description: Indicates a specific
+            type of goods. It is used to help identify potentially fraudulent sales.,
+          example: GIFT_CARD}
+        giftcardCount: {type: integer, maximum: 99, description: Total number of gift
+            cards purchased., example: '1'}
+        giftCardAmount: {$ref: '#/components/schemas/Amount'}
+    ItemDetails:
+      x-model-version: 1.0
+      description: ''
+      properties:
+        categoryName: {type: string, maxLength: 8, description: ' ', example: ' '}
+        itemCount: {type: integer, description: The item count in category., example: ' '}
+        value: {type: string, maxLength: 32, description: ' ', example: The monetary
+            value of items.}
     DynamicDescriptors:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Guides/Dynamic-Descriptor.md">Dynamic
@@ -1408,9 +1439,8 @@ components:
             ID, please contact your account representative.', example: '12345678'}
         promotionCode: {type: string, maxLength: 1024, description: Promotion code.,
           example: ABCD1234}
-        mcc: {type: string, maxLength: 4, description: The merchant category code
-            (MCC) is an industry standard four-digit number used to classify a business
-            by the type of goods or services it provides., example: '4457'}
+        terminalLaneNumber: {type: string, maxLength: 16, description: Terminal lane
+            number., example: '001'}
     Customer:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a>
@@ -1515,6 +1545,9 @@ components:
             on this account in prior 24 hours., example: '1'}
         retryAttempts: {type: integer, description: Number of retry attempt if the
             initial transaction was unsuccessful., example: '0'}
+        networkTransactionReference: {type: string, maxLength: 64, description: Allows
+            linking of the transaction to the original or previous one in a subscription/card-on-file
+            chain., example: '123456788'}
     TransactionInteraction:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md">Transaction
@@ -1574,8 +1607,10 @@ components:
             * CARD_NOT_PRESENT_MOTO – Cardholder Not Present, Mail Order/Telephone Order
             * CARD_NOT_PRESENT_ECOM – Cardholder Not Present, E-commerce
           example: CARD_NOT_PRESENT_ECOM
-        responseCode: {type: string, description: Response data.}
-        posData: {type: string, description: ' '}
+        responseCode: {type: string, description: Response code returned by network/issuer
+            used in subsequent transactions.}
+        posData: {type: string, description: POS data returned by network/issuer used
+            in subsequent transactions.}
         mobileInteraction:
           type: string
           maxLength: 12
@@ -1586,8 +1621,41 @@ components:
             * PHONE_NUMBER - Invoice received by phone number
             * QR_CODE - Invoice paid by scanning QR Code
           example: PHONE_NUMBER
-        terminalEntryCapability: {type: string, description: ''}
-        cardholderAuthenticationMethod: {type: string, description: ''}
+        terminalEntryCapability:
+          type: string
+          description: |
+            Identifies how data can be entered in the terminal or software.
+
+            Valid Values:
+            * UNSPECIFIED - Default
+            * ECOMMERCE - E-commerce no terminal used
+            * MAG_STRIPE_ONLY - Track read only
+            * MAG_STRIPE_MANUAL - Track read or manual key
+            * MAG_STRIPE_MANUAL_CHIP - Track read, manual key or chip
+            * BARCODE - Barcode scan
+            * CONTACTLESS - Contactless integrated circuit read
+            * OCR - Opitcal character reader
+            * CHIP_ONLY - Chip only
+            * CHIP_MAG_STRIPE - Chip with track fallback
+            * MANUAL_ONLY - Manual key only
+            * CONTACTLESS_MAG_STRIPE - Contactless or track read
+            * HYBRID - Hybrid entry mode"
+          example: CHIP_ONLY
+        cardholderAuthenticationMethod:
+          type: string
+          maxLength: 32
+          description: |
+            Identifies how the cardholder was authenticated/verified.
+
+            Valid Values:
+            * NOT_AUTHENTICATED
+            * PIN
+            * ELECTRONIC_SIGNATURE
+            * MANUAL_SIGNATURE
+            * OTHER_MANUAL_VERIFICATION
+            * UNKNOWN
+            * OTHER_SYSTEMATIC_VERIFICATION
+          example: PIN
         eciIndicator:
           type: string
           maxLength: 17
@@ -1598,10 +1666,8 @@ components:
             \ NON_SECURE_ECOM - Non-Secure Electronic Commerce Transaction\n"
           example: SECURE_ECOM
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
-        attendedTerminalData: {type: string}
-        terminalLocation: {type: string}
-        cardholderActivatedTerminalInformation: {type: string}
-        cardPresentAtPosIndicator: {type: string}
+        authorizationCharacteristicsIndicator: {type: string, maxLength: 23, description: Response
+            code used for qualification used in subsequent transactions., example: CARD_NOT_PRESENT}
     AdditionalPosInformation:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Additional-POS-Info.md">Additional
@@ -1622,7 +1688,18 @@ components:
             but also other attributes such as device technology and payment app specifications.
             Values from 20–99 exclusively indicate the form factor only without also
             indicating the storage technology.', example: '02'}
-        enhancedAuthorizationRequestIndicator: {type: string, description: ''}
+        enhancedAuthorizationRequestIndicator:
+          type: string
+          maxLength: 32
+          description: |
+            Used to indicate that the terminal or software is capable of supporting partial authorizations, prepaid identification and to request balances. Partial Authorization support is dependent on card type and region please contact your account representative.
+
+            Valid Values:
+            * NOT_SUPPORTED - Partial authorizations NOT requested; Balance information NOT requested
+            * BALANCE_ONLY - Partial authorizations NOT requested; Balance information requested
+            * PARTIAL_AUTH_ONLY - Partial authorizations requested; Balance information NOT requested
+            * BOTH_SUPPORTED - Partial authorizations requested; Balance information requested"
+          example: BOTH_SUPPORTED
         dataEntrySource:
           type: string
           maxLength: 32
@@ -1638,14 +1715,60 @@ components:
             * 3DS_REQUESTOR_INITIATED
         transactionQualifier: {type: string, description: Used for Discover - Discover
             TransactionQualifier.}
-        enhancedAuthorizationResponseIndicator: {type: string, description: Returns
-            the authorization type (full or partial).}
-        attendedTerminalData: {type: string, description: ''}
+        enhancedAuthorizationResponseIndicator:
+          type: string
+          description: |
+            Returns the approval type for Enhanced Authorization.
+
+            Valid Values:
+            * FULL
+            * PARTIAL
+            * DEPLETED
+            * DECLINE
+            * ERROR
+          example: FULL
+        attendedTerminalData:
+          type: string
+          maxLength: 16
+          description: |
+            Indicates if the card acceptor was at the point of sale.
+
+            Valid Values:
+            * ATTENDED – Attended terminal (Not a valid option if  cardholderActivatedTerminalInformation is CAT_LEVEL_6)
+            * UNATTENDED – Unattended terminal or software
+            * NONE – No terminal or software used (VRU, etc.)
+          example: ATTENDED
         cardPresentIndicator: {type: string, description: ''}
-        terminalLocation: {type: string, description: ''}
-        cardholderActivatedTerminalInformation: {type: string, description: ''}
+        cardPresentAtPosIndicator: {type: string, description: Indicates if the actual
+            card was present at the point of sale., example: false}
+        terminalLocation:
+          type: string
+          maxLength: 16
+          description: |
+            Identifies the location of the terminal or software.
+
+            Valid Values:
+            * MERCHANT – On the premises of the card acceptor
+            * CARDHOLDER – On the premises of the cardholder (e.g. Home PC)
+            * NONE – No terminal used
+          example: MERCHANT
+        cardholderActivatedTerminalInformation:
+          type: string
+          maxLength: 16
+          description: |
+            Identifies Cardholder Activated Terminal (CAT) capabilities of the device.
+
+            Valid Values:
+            * 0 – Not a CAT device
+            * CAT_LEVEL_1 - Automated dispensing machine with online/offline PIN (MC Only)
+            * CAT_LEVEL_2 - Self-service terminal, used for automated fueling transactions and unattended terminals.
+            * CAT_LEVEL_3 - Limited amount terminal
+            * CAT_LEVEL_6 - Electronic commerce transaction (attendedTerminalData must not be ATTENDED)
+          example: '2'
         posHardwareAndSoftware: {$ref: '#/components/schemas/PosHardwareAndSoftware'}
         posFeatures: {$ref: '#/components/schemas/PosFeatures'}
+        supervisorId: {type: string, description: Used to uniquely identify the merchant’s
+            store supervisor transactions., example: '1234567'}
     PosHardwareAndSoftware:
       x-model-version: 1.0
       description: Terminal hardware and software information.
@@ -1699,6 +1822,92 @@ components:
             services’ Mobile Payment Gateway. Note: It is required for merchants to
             send the appropriate information in this element in the case where a mobile
             terminal is supported.'}
+    NetworkDetails:
+      x-model-version: 1.0
+      description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
+        response</a> details.
+      properties:
+        network: {$ref: '#/components/schemas/Network'}
+        debitNetworkId: {type: string, maxLength: 64, description: Network ID for
+            the debit component., example: '123456'}
+        transactionSequence: {type: string, maxLength: 64, description: Transaction
+            specific data that may be returned in response messages., example: '1123456'}
+        systemTrace: {type: string, maxLength: 64, description: Original trace number
+            that was returned in an authorization response., example: '123456789'}
+        debitIssuerData: {type: string, description: Debit issuer specific data that
+            may be returned in the response messages., example: Standard Issuer}
+        networkResponseCode: {type: string, maxLength: 16, description: Debit network
+            response code., example: '00'}
+        posEntryModeChange: {type: boolean, description: Issuer will reply if the
+            entry mode has changed.}
+        cardLevelResultCode: {type: string, description: 'Identifies purchase, corporate,
+            and business card level e.g. Level II/Level III'}
+        validationCode: {type: string, description: A code calculated by card brands
+            to ensure that the fields present in the authorization are also present
+            in the clearing record., example: ''}
+        downgradeReason: {type: string, description: Downgrade reason as supplied
+            by Visa., example: ACCOUNT_NUMBER_MISSING}
+        creditAuthType: {type: string, description: Indicates the type of authorization
+            required., example: DISCOVER}
+        authScore: {type: string, description: The auth score returned for the transaction.,
+          example: ''}
+        partialAuthTransactionId: {type: string, description: Generated identifier
+            unique for each original authorization request., example: ''}
+        totalAuthAmount: {type: number, description: Total amount authorized., example: '1.00'}
+        transactionIdentifier: {type: string, description: This field represents a
+            unique value used to identify and link all related transactions for authorization
+            and settlement}
+        magStripeQualityIndicator: {type: string, description: '', example: ''}
+        authSource: {type: string, description: '', example: ''}
+    Network:
+      x-model-version: 1.0
+      description: ''
+      required: [network]
+      discriminator: {propertyName: network}
+      properties:
+        network: {type: string, description: Processing card network}
+    Mastercard:
+      x-model-version: 1.0
+      allOf:
+      - {$ref: '#/components/schemas/Network'}
+      - type: object
+        properties:
+          interchangeComplianceIndicator: {type: string, description: 'A code to indicate
+              that Mastercard interchange compliance data was provided for this transaction,
+              and if any other special Mastercard authorization requirements were
+              met.'}
+          bankNetRefNumber: {type: string, description: A Mastercard generated identifier
+              for each original authorization request. Reference number assigned by
+              Mastercard to each authorization message.}
+          bankNetDate: {type: string, description: A Mastercard generated date for
+              this transaction. MMDD format}
+          cvcErrorIndicator: {type: string, description: Indicates the CVC Error response
+              data.}
+          transactionIntegrityClass: {type: string, description: Contains the MasterCard
+              provided Transaction Integrity Classification for Point of Sale (POS)
+              Purchase and Purchase with Cash Back transactions initiated on the Authorization
+              Platform.}
+    Visa:
+      x-model-version: 1.0
+      allOf:
+      - {$ref: '#/components/schemas/Network'}
+      - type: object
+        properties:
+          VISABID: {type: string, maxLength: 128, description: The Business Identifier
+              (BID) provided by Visa to Third Party Services (TPS)., example: ''}
+          VISAAUR: {type: string, maxLength: 128, description: Agent Unique Account
+              Result (AUAR) provided by Visa to Third Party Services (TPS) in 12 hex
+              digit format., example: 12345AD89012}
+    AmericanExpress:
+      x-model-version: 1.0
+      allOf:
+      - {$ref: '#/components/schemas/Network'}
+      - {type: object}
+    Discover:
+      x-model-version: 1.0
+      allOf:
+      - {$ref: '#/components/schemas/Network'}
+      - {type: object}
     AdditionalDataCommon:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Additional-Data.md">Common
@@ -1715,7 +1924,7 @@ components:
           type: array
           items: {$ref: '#/components/schemas/KeyValuePair'}
         deferredPayments: {$ref: '#/components/schemas/DeferredPayments'}
-        recurringTypeIndicator:
+        billPaymentType:
           type: string
           maxLength: 11
           description: |
@@ -1748,18 +1957,8 @@ components:
             * ACCOUNT_VERIFICATION - Account Verification ($0.00 Transaction)
             * FUNDS_TRANSFER - Funds Transfer
           example: PERSON_TO_PERSON
-        goodsSoldCode: {type: string, maxLength: 16, description: Indicates a specific
-            type of goods. It is used to help identify potentially fraudulent sales.,
-          example: GIFT_CARD}
-        networkTransactionReference: {type: string, maxLength: 64, description: Allows
-            linking of the transaction to the original or previous one in a subscription/card-on-file
-            chain., example: '123456788'}
-        billPayment: {type: boolean, description: Identifies a bill payment transaction.,
-          example: 'false'}
         ecomURL: {type: string, maxLength: 512, description: This field contains the
             URL of the site performing the Ecommerce transaction., example: 'https://www.somedomain.com'}
-        terminalLaneNumber: {type: string, maxLength: 16, description: Terminal lane
-            number., example: '001'}
         requestedTestErrorResponseCode: {type: string, maxLength: 23, description: Value
             used to test/replicate a transaction error., example: '213'}
         emvParameterDownloadIndicator: {type: string, description: 'Indicator if EMV
@@ -1911,6 +2110,31 @@ components:
             check, or ACH. Note: Not all processors and acquirers allow convenience
             fees. For more information, please contact your account representative.',
           example: '1.50'}
+    RegionalDebit:
+      x-model-version: 1.0
+      description: Applies to International Debit
+      properties:
+        pinBlock: {$ref: '#/components/schemas/PinBlock'}
+        region: {type: string, description: 'Region of Debit Origin - Canadian, German
+            , etc'}
+        debitTransactionCode: {type: string, description: ''}
+        debitMACValue: {type: string, description: to confirm that the key data elements
+            of the transaction have not been tampered. MAC protection is required
+            on all Canadian Debit transactions. It is optional when processing U.S.
+            debit/EBT transactions. Chase ISO page 230}
+        encryptedKeyIndex: {type: string, description: ''}
+        messageAuthenticationWorkingKey: {type: string, description: ''}
+        messageAuthenticationWorkingKeyCheckDigits: {type: string, description: ''}
+        messageEncryptionWorkingKey: {type: string, description: ''}
+        debitPinPadSerialNumber: {type: string, description: Canadian Debit requests
+            to indicate the serial number of the PIN device being used at the POS.Serial
+            Number of the PIN device in use at the POS. This value must be present
+            on the Chase Merchant Services system in order for any Canadian Debit
+            transactions to process successfully.}
+        accountType: {type: string, description: 'Canada debit - Checking, Savings'}
+        transactionSequenceCounter: {type: integer, description: required on all Canadian
+            Debit EMV transaction requests. Contains a unique sequence counter for
+            this transaction from this point of sale}
     ChargesResponse:
       x-model-version: 1.0
       properties:
@@ -1925,11 +2149,8 @@ components:
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        paymentToken:
-          properties:
-            tokenData: {type: string, description: Token created for card}
-            tokenSource: {type: string, description: Source for the Token Provider-
-                TSP}
+        cardDetails: {$ref: '#/components/schemas/CardDetails'}
+        paymentToken: {$ref: '#/components/schemas/PaymentToken'}
     PaymentReceipt:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Payment-Receipt.md">Payment
@@ -1982,6 +2203,9 @@ components:
         localTimestamp: {type: string, format: date-time, description: 'Timestamp
             in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         bankAssociationDetails: {$ref: '#/components/schemas/BankAssociationDetails'}
+        additionalInfo:
+          type: array
+          items: {$ref: '#/components/schemas/NameValuePair'}
     BankAssociationDetails:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Processor-Response-Details.md#bank-association-details">Bank
@@ -2017,6 +2241,12 @@ components:
             code response., example: M}
         cardholderNameResponse: {type: string, maxLength: 32, description: 'Cardholder
             name response, if supported by card type.', example: '1'}
+    NameValuePair:
+      x-model-version: 1.0
+      description: Generic object for the Name-Value pair types.
+      properties:
+        name: {type: string}
+        value: {type: string}
     TransactionBatch:
       x-model-version: 1.0
       properties:
@@ -2029,66 +2259,21 @@ components:
             Authorised Only, Declinced, Batch Control.', example: '1'}
         sequenceNumber: {type: string, description: 'Sequence number of this transaction
             within the current batch, ranges from 000001 through 000999.', example: '000001'}
-    NetworkDetails:
+    CardDetails:
       x-model-version: 1.0
-      description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
-        response</a> details.
+      description: Card details for Account Information Response.
       properties:
-        partialAuthDetails: {$ref: '#/components/schemas/PartialAuthDetails'}
-        network: {type: string, maxLength: 64, description: Processing card network.,
-          example: VISA}
-        debitNetworkId: {type: string, maxLength: 64, description: Network ID for
-            the debit component., example: '123456'}
-        transactionSequence: {type: string, maxLength: 64, description: Transaction
-            specific data that may be returned in response messages., example: '1123456'}
-        systemTrace: {type: string, maxLength: 64, description: Original trace number
-            that was returned in an authorization response., example: '123456789'}
-        authorizationCharacteristicsIndicator:
-          type: string
-          maxLength: 23
-          description: |
-            Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Upon evaluation, the code may be changed in the response message if provided by Visa.
-
-            Valid Values:
-            * CARD_NOT_PRESENT – Card not present trasaction (preferred customer only e.g. Lodging or Auto Rental)
-            * INCREMENT – Incremental Authorization
-            * REQUEST_PARTICIPATION – Transaction requests participation
-            * CARD_NOT_PRESENT_NO_AVS – Card not present, AVS not required
-          example: CARD_NOT_PRESENT
-        VISABID: {type: string, maxLength: 128, description: The Business Identifier
-            (BID) provided by Visa to Third Party Servicers (TPS)., example: ''}
-        VISAAUR: {type: string, maxLength: 128, description: Agent Unique Account
-            Result (AUAR) provided by Visa to Third Party Servicers (TPS) in 12 hex
-            digit format., example: 12345AD89012}
-        networkResponseCode: {type: string, maxLength: 16, description: Debit network
-            response code., example: '00'}
-    PartialAuthDetails:
-      x-model-version: 1.0
-      description: Partial authorization response details.
-      properties:
-        interchangeComplianceIndicator: {type: string, description: A code to indicate
-            that Mastercard interchange compliance data was provided for this transaction
-            and if any other special Mastercard authorization requirements were met.,
-          example: A}
-        bankNetRefNumber: {type: string, description: A Mastercard generated identifier
-            for each original authorization request. Reference number assigned by
-            Mastercard to each authorization message., example: ''}
-        bankNetDate: {type: string, format: date, description: A Mastercard generated
-            date for this transaction in YYYY-MM-DD format., example: '2022-05-21'}
-        cvcIndicator: {type: string, description: Indicates the CVC response data.,
-          example: Y}
-        partialAuthTransactionId: {type: string, description: Generated identifier
-            unique for each original authorization request., example: ''}
-        validationCode: {type: string, description: A code calculated by Visa to ensure
-            that the fields present in the authorization are also present in the clearing
-            record., example: ''}
-        totalAuthAmount: {type: string, description: Total amount authorized., example: '1.00'}
-        downgradeReason: {type: string, description: Downgrade reason as supplied
-            by Visa., example: ACCOUNT_NUMBER_MISSING}
-        creditAuthType: {type: string, description: Indicates the type of authorization
-            required., example: DISCOVER}
-        authScore: {type: string, description: The auth score returned for the transaction.,
-          example: ''}
+        brand: {type: string, maxLength: 256, description: Card brand., example: VISA}
+        brandProductId: {type: string, maxLength: 256, description: Category within
+            the card brand., example: VISA_BUSINESS}
+        cardFunction: {type: string, maxLength: 256, description: Identifies the type
+            of card as CREDIT or DEBIT., example: CREDIT}
+        commercialCard: {type: string, description: 'Identifies if the card is a CORPORATE,
+            COMMERCIAL or NON_CORPORATE card.', example: CORPORATE}
+        issuerCountry: {type: string, maxLength: 256, description: Card issuer two-letter
+            country code., example: US}
+        issuerName: {type: string, maxLength: 256, description: Issuing bank name.,
+          example: First National Bank of Omaha}
     ForcedPostRequest:
       x-model-version: 1.0
       properties:
@@ -2103,10 +2288,6 @@ components:
         storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        createToken: {type: boolean, description: Used to create a token on a charge
-            transaction., example: true}
-        approvalCode: {type: string, description: Approval code obtained from calling
-            the Voice Authorization Center., example: '123456'}
     ForcedPostResponse:
       x-model-version: 1.0
       properties:
@@ -2121,11 +2302,7 @@ components:
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        paymentToken:
-          properties:
-            tokenData: {type: string, description: Token created for card.}
-            tokenSource: {type: string, description: Source for the Token Provider-
-                TSP.}
+        cardDetails: {$ref: '#/components/schemas/CardDetails'}
     CaptureRequest:
       x-model-version: 1.0
       properties:
@@ -2299,21 +2476,6 @@ components:
         cardDetails:
           type: array
           items: {$ref: '#/components/schemas/CardDetails'}
-    CardDetails:
-      x-model-version: 1.0
-      description: Card details for Account Information Response.
-      properties:
-        brand: {type: string, maxLength: 256, description: Card brand., example: VISA}
-        brandProductId: {type: string, maxLength: 256, description: Category within
-            the card brand., example: VISA_BUSINESS}
-        cardFunction: {type: string, maxLength: 256, description: Identifies the type
-            of card as CREDIT or DEBIT., example: CREDIT}
-        commercialCard: {type: string, description: 'Identifies if the card is a CORPORATE,
-            COMMERCIAL or NON_CORPORATE card.', example: CORPORATE}
-        issuerCountry: {type: string, maxLength: 256, description: Card issuer two-letter
-            country code., example: US}
-        issuerName: {type: string, maxLength: 256, description: Issuing bank name.,
-          example: First National Bank of Omaha}
     EnhancedDataServiceRequest:
       x-model-version: 1.0
       properties:
@@ -2327,6 +2489,7 @@ components:
         customer: {$ref: '#/components/schemas/Customer'}
         fraudAttributes: {$ref: '#/components/schemas/FraudAttributes'}
         storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
         orderData: {$ref: '#/components/schemas/OrderData'}
         splitTender: {$ref: '#/components/schemas/SplitTender'}
@@ -2365,39 +2528,6 @@ components:
         count: {type: integer, maximum: 99, description: Number of accounts presented
             of this type., example: '2'}
         amount: {$ref: '#/components/schemas/Amount'}
-    OrderData:
-      x-model-version: 1.0
-      description: <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md">Order
-        data</a> can be used for merchant database tracking, improve authorization
-        rates and reduce fraud.
-      properties:
-        orderDate: {type: string, format: date, maxLength: 10, description: 'Date
-            that goods and services are ordered, in YYYY-MM-DD format.', example: '2020-11-20'}
-        itemCount: {type: integer, description: Total number of items included in
-            the purchase., example: '1'}
-        itemDetails:
-          type: array
-          items: {$ref: '#/components/schemas/ItemDetails'}
-        preOrder: {type: boolean, description: Identifies if the purchase is a preorder.,
-          example: 'true'}
-        preOrderDate: {type: string, format: date, maxLength: 10, description: 'Date
-            that goods and services are pre-ordered, in YYYY-MM-DD format.', example: '2020-11-20'}
-        reOrder: {type: boolean, description: Identifies if the purchase is a reorder.,
-          example: 'false'}
-        goodsSoldCode: {type: string, maxLength: 16, description: Indicates a specific
-            type of goods. It is used to help identify potentially fraudulent sales.,
-          example: GIFT_CARD}
-        giftcardCount: {type: integer, maximum: 99, description: Total number of gift
-            cards purchased., example: '1'}
-        giftCardAmount: {$ref: '#/components/schemas/Amount'}
-    ItemDetails:
-      x-model-version: 1.0
-      description: ''
-      properties:
-        categoryName: {type: string, maxLength: 8, description: ' ', example: ' '}
-        itemCount: {type: integer, description: The item count in category., example: ' '}
-        value: {type: string, maxLength: 32, description: ' ', example: The monetary
-            value of items.}
     EnhancedDataServiceResponse:
       x-model-version: 1.0
       properties:

@@ -237,8 +237,9 @@ Codes starting with 8xx identifies a general gateway error. Check the error mess
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
+- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
+
 
 ---

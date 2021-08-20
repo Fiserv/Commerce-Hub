@@ -1,7 +1,6 @@
 ---
-tags: [carat, commerce-hub, enterprise, reporting-overview]
+tags: [carat, commerce-hub, enterprise, reporting, api]
 ---
-
 
 # API Reporting
 
@@ -12,7 +11,8 @@ The Commerce Hub reporting API allows users to search the transaction records an
 
 ---
 
-## Coming soon
+## Coming Soon
 - API Explorer
 - Enterprise Portal Reporting
 
+---
