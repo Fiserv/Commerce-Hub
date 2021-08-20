@@ -543,19 +543,19 @@ The table below includes the commodity codes (class and subclass list) for bags,
 
 | Code | Description |
 | -------- | :--: |
-10006 - containers, plastic (all purpose)
-10007 - containers, recycling
-10008 - covers, drum (all types and sizes)
-10010 - drum spigots, metal or plastic
-10021 - freight and cargo containers (shipping)
-10025 - gaskets, all types (for barrels, drums, kegs, and pails)
-10030 - hazardous material (chem.) containment/storage
-10031 - hazardous material containment/storage (petroleum)
-10040 - pail-type containers, steel
-10045 - plastic barrels, reinforced
-10050 - plugs, drum
-10060 - stainless steel drums
-10067 - steel barrels, drums, and kegs
+| 100 | Containers, Plastic (All Purpose) |
+| 100 | Containers, Recycling |
+| 100 | Covers, Drum (All Types and Sizes) |
+| 100 | Drum Spigots, Metal or Plastic |
+| 100 | Freight and Cargo Containers (Shipping) |
+| 100 | Gaskets, All Types (For Barrels, Drums, Kegs, and Pails) |
+| 100 | Hazardous Material (Chem.) Containment/Storage |
+| 100 | Hazardous Material Containment/Storage (Petroleum) |
+| 100 | Pail-Type Containers, Steel |
+| 100 | Plastic Barrels, Reinforced |
+| 100 | Plugs, Drum |
+| 100 |Stainless Steel Drums |
+| 100 | Steel Barrels, Drums, and Kegs |
 
 <!--
 type: tab
@@ -566,13 +566,13 @@ The table below includes the commodity codes (class and subclass list) for beari
 
 | Code | Description |
 | -------- | :--: |
-10512 - ball bearings and parts
-10518 - bearing assemblies (including hanger bearings and custom-mad
-10530 - bearings and parts (for marine equipment)
-10548 - pillow blocks (for bearings)
-10560 - roller and needle bearings and parts, straight
-10572 - roller taper bearings and parts
-10584 - sleeve bearings and parts
+| 105 | Ball Bearings and Parts |
+10518 - bearing assemblies (including hanger bearings and Custom-Mad |
+10530 - bearings and parts (for marine equipment) |
+10548 - pillow blocks (for bearings) |
+10560 - roller and needle bearings and parts, straight |
+10572 - roller taper bearings and parts |
+10584 - sleeve bearings and parts |
 
 <!--
 type: tab
@@ -655,6 +655,7 @@ title: 125 Bookbinding
 -->
 
 The table below includes the commodity codes (class and subclass list) for adhesives, compounds, glues, pastes, glue pots, and containe.
+
 | Code | Description |
 | -------- | :--: |
 | 125 | Base Compound (Hot Melt Polyethylene Binding) |
@@ -772,18 +773,33 @@ The table below includes the commodity codes (class and subclass list) for build
 15094 - windows and frames, steel
 15096 - windows and frames, wooden
 
- 
-155 - buildings and structures: fabricated and prefabricated
-15510 - buildings, large, prefabricated (over 500 sq.ft.)
-15512 - building (500 sq.ft. and under)
-15520 - canopy, freestanding
-15546 - guard and watchman huts
-15570 - portable toilets
-15578 - shelters, insulated (for remote equipment)
-15579 - shelters, non-insulated
-15580 - shelters, portable
- 
-160 - knives, stones, & sharpeners
+<!--
+type: tab
+title: 155 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for buildings and structures: fabricated and prefabricated.
+
+| Code | Description |
+| -------- | :--: |
+| 155 | Buildings, Large, Prefabricated (Over 500 Sq.Ft.) |
+| 155 | Building (500 Sq.Ft. and Under) |
+| 155 | Canopy, Freestanding |
+| 155 | Guard and Watchman Huts |
+| 155 | Portable Toilets |
+| 155 | Shelters, Insulated (For Remote Equipment) |
+| 155 | Shelters, Non-Insulated |
+| 155 | Shelters, Portable |
+
+<!--
+type: tab
+title: 160 Tools
+-->
+
+The table below includes the commodity codes (class and subclass list) for forknives, stones, & sharpeners.
+
+| Code | Description |
+| -------- | :--: |
 16019 - stones & sharpeners
 165 - cafeteria and kitchen equipment, commercial
 16510 - can openers, electric
@@ -793,6 +809,16 @@ The table below includes the commodity codes (class and subclass list) for build
 16552 - ice equipment: carts, crushers, shavers, and storage bins
 16560 - ovens, convection and microwave
 16576 - repair parts, cafeteria and kitchen equipment
+
+<!--
+type: tab
+title: 160 Tools
+-->
+
+The table below includes the commodity codes (class and subclass list) for forknives, stones, & sharpeners.
+
+| Code | Description |
+| -------- | :--: |
  
 175 - chemical laboratory equipment and supplies
 17503 - aprons and gloves, laboratory: plastic, rubber, etc.
@@ -829,8 +855,16 @@ The table below includes the commodity codes (class and subclass list) for build
 17589 - tubing, plastic, all types
 17590 - tubing, rubber, all types
 17595 - water purification apparatus & treatments (distilled, reagen
- 
-180 - chemical raw materials (in large quantities primarily for ma
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
 18002 - abrasives: feldspar, pumice, silica, etc.
 18004 - acids, inorganic: hydrochloric, phosphoric, sulfuric, etc.
 18006 - acids, organic: hydroxyacetic, oleic, stearic, etc.
@@ -852,6 +886,16 @@ The table below includes the commodity codes (class and subclass list) for build
 18091 - surfactants, amphoteric and cationic: detergents, emulsifier
 18092 - surfactants, anionic: organic phosphates, sulfates, sulfonat
 18093 - surfactants, nonionic: ethoxylated alcohols, ethoxylated lan
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
  
 190 - chemicals and solvents, commercial (in bulk)
 19018 - acids, mineral: boric, hydrobromic, hydrochloric, sulfuric,
@@ -862,6 +906,16 @@ The table below includes the commodity codes (class and subclass list) for build
 19081 - pentachlorophenol (penta), creosote oil, and other wood pres
 19085 - sodium phosphates and polyphosphates
 19090 - solvents (not otherwise itemized)
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
  
 192 - cleaning compositions, detergents, solvents, and strippers -
 19217 - chemical spill solvents and detergents
@@ -870,6 +924,16 @@ The table below includes the commodity codes (class and subclass list) for build
 19280 - spray detergents (for heavy duty and steam cleaning)
 19283 - steam cleaning compounds
 19285 - surface-active agents: emulsifiers, wetting agents, and one-
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
  
 195 - clocks, timers, watches, and jewelers' and watchmakers' tool
 19508 - alarm clocks, electric and spring
@@ -883,6 +947,16 @@ The table below includes the commodity codes (class and subclass list) for build
 19580 - wall clocks, battery
 19583 - wall clocks, electric
 19588 - watchmen's clocks and supplies
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
  
 200 - clothing, apparel, uniforms, and accessories
 20006 - aprons (not laboratory or leather)
@@ -902,6 +976,16 @@ The table below includes the commodity codes (class and subclass list) for build
 20057 - shirts, sport
 20058 - shorts (walking), jump suits, and other casual clothing
 20084 - wearing apparel, work, men's and women's: blue jeans, covera
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
  
 205 - computers and information processing systems: hardware, soft
 20502 - cables, computer, premade: printer, terminal, disk, etc. att
@@ -957,6 +1041,16 @@ computer
 20587 - terminals and crt's, graphic: data processing systems (all s
 20589 - terminals and crt's, non-graphic: data processing systems (a
 20593 - word processing system and equipment: dedicated word process
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
  
 210 - concrete and metal culverts, pilings, pipe, septic tanks, ac
 21010 - blocks, hollow and solid, lightweight
@@ -982,6 +1076,16 @@ computer
 21072 - risers, reinforced concrete
 21075 - septic tanks, grease traps, and water troughs
 21080 - ties and anchors and other masonry wall reinforcements
+
+<!--
+type: tab
+title: 180 Building Struc
+-->
+
+The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+
+| Code | Description |
+| -------- | :--: |
  
 220 - controlling, indicating, measuring, monitoring, and recordin
 22002 - accelerometers
@@ -1008,18 +1112,42 @@ computer
 22072 - temperature controllers, indicators, and recorders (digital
 22075 - transducers and couplers
 22087 - weather instruments: anemometers, barographs, barometers, hy
+
+<!--
+type: tab
+title: 225 Water Coolers
+-->
+
+The table below includes the commodity codes (class and subclass list) for coolers, drinking water (water fountains).
+
+| Code | Description |
+| -------- | :--: |
+| 225 | Coolers, Electric (Water Fountain) |
+| 225 | Coolers, Nonelectric |
+| 225 | Coolers, Storage Type (Remote Refrigeration Unit) |
+| 225 | Cooler, Water, Repair Parts, All Types |
  
-225 - coolers, drinking water (water fountains)
-22530 - coolers, electric (water fountain)
-22532 - coolers, nonelectric
-22540 - coolers, storage type (remote refrigeration unit)
-22545 - cooler, water, repair parts, all types
- 
-232 - crafts, general
-23202 - artificial plants, shrubs, and trees
-23235 - floral supplies: artificial flowers, floral tape, etc.
- 
-240 - cutlery, dishes, flatware, glassware, trays, utensils, and s
+<!--
+type: tab
+title: 232 Crafts
+-->
+
+The table below includes the commodity codes (class and subclass list) for crafts and general.
+
+| Code | Description |
+| -------- | :--: |
+| 232 | Artificial Plants, Shrubs, and Trees |
+| 232 | Floral Supplies: Artificial Flowers, Floral Tape, Etc. |
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
 24007 - cooking utensils, aluminum
 24014 - beverage servers, all types
 24021 - chinaware: cups & plates
@@ -1028,6 +1156,16 @@ computer
 24070 - plastic ware: kitchen & table
 24084 - silverware (tableware)
 24091 - utensils, cooking, stainless steel
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
  
 250 - data processing cards and paper
 25018 - cards, tabulating, special (for automatic and manual data pr
@@ -1035,12 +1173,30 @@ computer
 25070 - roll paper, bond (for edp portable terminals)
 25072 - roll paper, thermal (for edp portable terminals)
 25080 - tests, answer sheets, scoring keys, etc. (for edp systems)
- 
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
 255 - decals and stamps
 25530 - decals (for cigarette machines, doors, equipment, vehicles,
 25540 - inventory and other small decals
 25560 - windshield decals, not numbered
- 
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
 265 - draperies, curtains, and upholstery material (including auto
 26510 - draperies and curtains, installed
 26520 - curtains and draperies
@@ -1048,6 +1204,16 @@ computer
 26540 - material, drapery
 26544 - material, upholstery (fabric), furniture and auto
 26546 - material, upholstery (vinyl), furniture and auto
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
  
 270 - drugs, pharmaceuticals and biologicals (for human therapeuti
 27003 - drugs, allergy
@@ -1069,6 +1235,16 @@ computer
 27084 - topicals: creams, lotions, shampoos, skin cleansers, etc.
 27092 - vaccines
 27093 - drugs, vascular headache and fatigue
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
  
 280 - electrical cables and wires (not electronic)
 28008 - appliance, fixture, and portable cables and wires (up to 600
@@ -1085,6 +1261,16 @@ computer
 28075 - ties and anchors, cable and wiring
 28080 - underground cables and wires, solid and stranded, single and
 28090 - weatherproof cables and wires, solid and stranded, single an
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
  
 285 - electrical equipment and supplies (except cable and wire)
 28502 - analyzer, electric power demand
@@ -1160,6 +1346,16 @@ computer
 28593 - wire molding, raceways, accessories, and fittings
 28595 - wiring devices: adapters, caps, connectors, extension cords,
  
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
+
 287 - electronic components, replacement parts, and accessories: a
 28706 - amplifiers and preamplifiers (not for sound systems or tv an
 28712 - batteries and hardware (for electronic equipment)
@@ -1176,6 +1372,16 @@ computer
 28780 - testing equip. and systems, electronic meter
 28790 - tubes, electronic: cathode ray, power, receiving, thyratron,
 28796 - wire and cable, electronic: audio, coaxial, hook-up, lead-in
+
+<!--
+type: tab
+title: 240 Cutlery
+-->
+
+The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+
+| Code | Description |
+| -------- | :--: |
  
 290 - energy collecting equipment and accessories: solar and wind
 29010 - cells, solar (photovoltaic cells), unmounted
@@ -1191,13 +1397,39 @@ computer
 29090 - solar water heating systems and accessories
 29095 - wind electrical generating systems and accessories
  
-295 - elevators, building type
-29570 - passenger elevators and parts
+<!--
+type: tab
+title: 295 Elevators
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
+| 295 | Passenger Elevators and Parts |
  
-300 - embossing and engraving
-30020 - certificates and awards, engraved
-30035 - diplomas, engraved
-30070 - stationery and cards, embossed and engraved
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
+| 300 | Certificates and Awards, Engraved |
+| 300 | Diplomas, Engraved |
+|300 | Stationery and Cards, Embossed and Engraved |
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
  
 305 - engineering equipment, surveying equipment, drawing instrume
 30504 - blades, gouges, knives, needle files, routers, etc.
@@ -1236,6 +1468,16 @@ computer
 30580 - surveying systems, geo/satellite navigation type
 30582 - tables, tracing and light
 30584 - technical pens and sets, points and refills, etc.
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
  
 310 - envelopes, plain or printed
 31006 - envelopes: clasp, string, etc.
@@ -1246,6 +1488,16 @@ computer
 31060 - envelopes, recycled paper
 31065 - envelopes: seed, metal or plastic closure
 31067 - envelopes, shipping
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
  
 315 - epoxy based formulations for adhesives, coatings, and relate
 31510 - adhesives (for concrete): cured-to-cured, fresh-to-cured, an
@@ -1257,7 +1509,16 @@ computer
 31570 - hardening agents: amines, anhydrides, polyamide solutions, e
 31580 - mortars and/or grouts
 31590 - resins (epoxy only)
- 
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
 320 - fastening, packaging, strapping, tying equipment and supplie
 32010 - anchors, expansion shields, molly bolts, plugs, toggle bolts
 32020 - bolts and washers, steel
@@ -1275,6 +1536,16 @@ computer
 32079 - strapping, seals, and tools (not metal or polyester)
 32083 - threaded rod and studs
 32085 - ties: bar, form, etc.
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
  
 330 - fencing
 33013 - chain link fencing and fittings (including fabric, gates, pa
@@ -1284,6 +1555,16 @@ computer
 33078 - wire, plain
 33091 - wire, woven
 33095 - wood fencing and gates, all types
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
  
 335 - fertilizers and soil conditioners
 33530 - fertilizer, blended or dry mix, commercial
@@ -1296,6 +1577,16 @@ computer
 33566 - phosphate, agricultural (including triple superphosphate)
 33572 - soil conditioners: composted cotton gin waste, marine humus,
 33578 - urea, fertilizer grade
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
  
 340 - fire protection equipment and supplies
 34004 - backfiring and burning equipment: firing torches, flame guns
@@ -1339,6 +1630,16 @@ computer
 34584 - resuscitators and parts (including portable rescue units)
 34592 - vest, safety
  
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
+
 350 - flags, flag poles, banners, and accessories
 35010 - banners, pennants, and decorative fans, drapes, and pull dow
 35020 - flag accessories: belts, brackets, covers, crosses, eagles,
@@ -1349,6 +1650,16 @@ computer
 35060 - flags, safety and warning (any color)
 35070 - flags, state and u.s.: cotton, nylon, polyester, and wool
 35072 - flags, state and u.s. (presentation): nylon, rayon, and taff
+
+<!--
+type: tab
+title: 300 Embossing and Engraving
+-->
+
+The table below includes the commodity codes (class and subclass list) for elevators and building type.
+
+| Code | Description |
+| -------- | :--: |
  
 360 - floor covering, floor covering installation and removal equi
 36005 - adhesive, cement and mastic
@@ -1383,15 +1694,40 @@ computer
 36560 - scrubbing machines (with vacuum pickup), parts and accessori
 36570 - shampoo and spray buffing machines, parts and accessories
 36580 - vacuum cleaners, (commercial, wet or dry), parts, and access
+
+<!--
+type: tab
+title: 375 Bakery Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: bakery products (fresh).
+
+| Code | Description |
+| -------- | :--: |
+| 375 | Bread and rolls |
+| 375 | Cakes, Fresh |
  
-375 - foods: bakery products (fresh)
-37515 - bread and rolls
-37530 - cakes, fresh
+<!--
+type: tab
+title: 385 Bakery Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: freeze-dried, frozen & prepared ready to eat.
+
+| Code | Description |
+| -------- | :--: |
+| 385 | Entrees, Specialty |
+| 385 | Sandwiches, Ready Made |
  
-385 - foods: freeze-dried, frozen & prepared ready to eat
-38547 - entrees, specialty
-38565 - sandwiches, ready made
- 
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
 390 - foods: perishable
 39007 - cheese
 39028 - fresh fruits
@@ -1421,6 +1757,16 @@ computer
 39381 - sugar and sweeteners
 39384 - tea (not instant)
 39386 - vegetables, canned
+
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
  
 395 - forms, continuous: computer paper, form labels, snap-out for
 39515 - binders and documentation folders (for continuous forms)
@@ -1432,6 +1778,16 @@ computer
 39551 - continuous forms, recycled, all types
 39570 - snap-out forms, carbon interleaved
 39580 - snap-out forms, carbonless paper
+
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
  
 400 - foundry castings, equipment, and supplies
 40015 - castings, aluminum
@@ -1440,6 +1796,16 @@ computer
 40037 - lead castings
 40045 - castings, malleable iron
 40047 - castings, steel
+
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
  
 405 - fuel, oil, grease and lubricants
 40503 - butane and propane
@@ -1477,12 +1843,31 @@ computer
 40582 - oil, two-cycle engine
 40585 - power steering fluid
  
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
 410 - furniture: health care and hospital facility
 41006 - cabinets, instrument and treatment
 41012 - carts: dressing, laboratory, medication, patient tray, resus
 41030 - examining room suites (not optical or auditory)
 41048 - nurses' desks and accessories
 41084 - tables, treatment; and accessories
+
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
  
 415 - furniture: laboratory
 41513 - cabinets, storage, floor and wall
@@ -1496,6 +1881,16 @@ computer
 41578 - sinks, laboratory type
 41585 - stools, laboratory
 41591 - tables, laboratory type
+
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
  
 420 - furniture: cafeteria, chapel, dormitory, household, library,
 42004 - auditorium, stadium, team seating furniture and portable ble
@@ -1518,6 +1913,16 @@ computer
 42088 - schoolroom furniture, wood: cabinets, chairs, desks, etc.
 42092 - showcase, trophy cases and exhibit cases
 42096 - work benches, shop desks and tables
+
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: | 
  
 425 - furniture: office
 42503 - bookcases and bookshelves, metal and wood
@@ -1559,6 +1964,15 @@ computer
 42592 - visual filing systems
 42594 - work stations, modular, systems furniture
  
+<!--
+type: tab
+title: 390 Foods (Perishable)
+-->
+
+The table below includes the commodity codes (class and subclass list) for foods: perishable.
+
+| Code | Description |
+| -------- | :--: |  
 430 - gases, containers, equipment: laboratory, medical, and weldi
 43012 - containers (for liquefied gases), large dewars (for laborato
 43024 - gas cylinder carts, clamps, and stands, hospital and laborat
@@ -1567,11 +1981,28 @@ computer
 43036 - gas regulators, gauges, fittings, and parts
 43042 - laboratory gases: argon, carbon dioxide, helium, hydrogen, n
 43092 - welding gases: acetylene, argon, carbon dioxide, oxygen, etc
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
+| 435 | Skin Cleansers: Emollient, Nonalkaline, Etc. |
+| 435 | Skin Cleansers, Antimicrobial |
  
-435 - germicides, cleaners, and related sanitation products for he
-43568 - skin cleansers: emollient, nonalkaline, etc.
-43570 - skin cleansers, antimicrobial
- 
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
 440 - glass and glazing supplies
 44007 - desk felts and pads
 44030 - glass tinting film & supplies
@@ -1582,6 +2013,16 @@ computer
 44060 - pyrex glass
 44063 - safety glass, laminated
 44084 - wire glass
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
  
 445 - hand tools (powered and non-powered), accessories and suppli
 44503 - axes, bush hooks, hatchets, mattocks, picks, etc.
@@ -1629,6 +2070,15 @@ computer
 44591 - wrenches, first line (professional), all kinds
 44592 - wrenches, second line, all kinds
  
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
 450 - hardware and related items
 45002 - adhesives: rubber and silicone
 45003 - adhesives: glue and glue guns, gum, paste, etc.
@@ -1690,6 +2140,15 @@ computer
 45093 - wire stretchers
 45099 - miscellanous hardware items (not otherwise classified)
  
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
 460 - hose, accessories, and supplies: industrial, commercial, and
 46005 - acid/chemical hose
 46010 - air hose and fittings
@@ -1710,6 +2169,16 @@ computer
 46085 - suction and discharge hose
 46090 - water hose and fittings, high pressure
 46091 - wire reinforced hose
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
  
 465 - hospital and surgical equipment, instruments, and supplies
 46507 - blood chemistry equipment
@@ -1717,6 +2186,16 @@ computer
 46523 - diagnostic equipment accessories
 46537 - audioscope
 46590 - sterilizing equipment, hospital and research
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
  
 470 - hospital equipment, invalid
 47010 - stretchers, ambulance
@@ -1724,6 +2203,15 @@ computer
 47017 - canes, crutches, walkers, etc.
 47080 - wheelchairs
  
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
 475 - hospital, surgical, and related medical accessories and sund
 47509 - bandages (all types), dressings, plaster of paris, and surgi
 47527 - cotton, surgical
@@ -1739,6 +2227,16 @@ computer
 47585 - thermometers, clinical
 47588 - utensils, sickroom: aluminum, enamelware, stainless steel, e
 47590 - utensils, sickroom, plastic
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
  
 485 - janitorial supplies, general line
 48501 - ammonia, household (plain or sudsing)
@@ -1801,6 +2299,16 @@ computer
 48588 - squeegees, sponges, and scrubbing pads (for manual hard surf
 48590 - stain remover, active chlorine or oxygen type (for coffee ur
 48594 - waste receptacles and dust pans
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
  
 490 - laboratory equipment and accessories (for general analytical
 49006 - barometers and manometers, laboratory type
@@ -1834,7 +2342,16 @@ computer
 49088 - spectroscopes, direct reading
 49090 - testing instruments (not otherwise classified)
 49093 - ultrasonic equipment (for research): ultrasound interferomet
- 
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
 493 - laboratory equipment and accessories: biochemistry, chemistr
 49306 - bath, recirculating & shaking
 49308 - biochemical research equipment
@@ -1861,6 +2378,16 @@ computer
 49384 - tissue disrupting, grinding, and homogenizing equipment: fro
 49392 - vacuum still: short path, spinning band, etc.
 49396 - water quality monitoring equipment: bod analyzers, turbidime
+
+<!--
+type: tab
+title: 435 Cleaning Products
+-->
+
+The table below includes the commodity codes (class and subclass list) for germicides, cleaners, and related sanitation products for he. 
+
+| Code | Description |
+| -------- | :--: |
  
 495 - laboratory and field equipment and supplies: biology, botany
 49507 - agricultural science equipment
@@ -1875,13 +2402,40 @@ computer
 49550 - herbarium equipment & supplies
 49555 - dissecting instruments
 49560 - mounts and models
+
+<!--
+type: tab
+title: 500 Dry Cleaning Equp
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 500 | Dryers, Electric |
+| 500 | Washing Machines |
  
-500 - laundry and dry cleaning equipment
-50017 - dryers, electric
-50095 - washing machines
- 
-505 - laundry and dry cleaning compounds and supplies
-50525 - chlorine bleaches, etc
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 515 - lawn maintenance equipment, accessories, and parts (non-agri
 51505 - aerators, pluggers, and spikers
@@ -1904,6 +2458,17 @@ computer
 51582 - sprinkler systems and parts, lawn and turf
 51583 - tree trimming equip.
 51585 - vacuum cleaners and other litter pickup devices: lawn, parki
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 525 - library and archival equipment, machines, and supplies
 52505 - archival storage materials (acid free): document cases, enve
@@ -1915,12 +2480,34 @@ computer
 52565 - library forms, all kinds: circulation record, continuous, st
 52570 - library labeling supplies,labels,letters,signals,signs,etc.
 52580 - library supplies, miscellaneous
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 530 - luggage, brief cases, purses and related items
 53015 - attache cases
 53030 - brief cases, brief bags, and portfolios
 53045 - cases: catalog, id card, salesman's and special
 53060 - luggage and trunks
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 540 - lumber and related products
 54009 - blocking wood
@@ -1957,6 +2544,17 @@ computer
 54088 - siding, vinyl clad
 54090 - stakes: engineers', agricultural, etc.
 54095 - veneers, all kinds
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 545 - machinery and hardware, industrial
 54502 - bits, dies, reamers, taps, etc. (for stationary power tools)
@@ -1996,7 +2594,18 @@ computer
 54586 - trowler, concrete, engine driven
 54587 - windmills and parts
 54590 - woodworking machines and tools, (not itemized herein), porta
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 550 - markers, plaques, signs, and traffic control devices
 55004 - beads, glass, sign and stripe
 55005 - brackets, sign
@@ -2039,7 +2648,18 @@ computer
 55550 - stenciling rollers
 55570 - stencils, brass, adjustable, stock
 55590 - stencils, brass (precut)
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 560 - material handling and storage equipment and allied items
 56002 - carts, industrial, all kinds (except gas and hospital)
 56021 - conveyors, gravity, roller type, aluminum & steel frames
@@ -2061,6 +2681,17 @@ computer
 56078 - trucks, pallet, hand operated and powered
 56081 - trucks, platform
 56084 - wheels, industrial, steel, pneumatic, and rubber tired molde
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 570 - metals: bars, plates, rods, sheets, strips, structural shape
 57003 - alloy metal: angles, sheets, etc.
@@ -2104,7 +2735,18 @@ computer
 57087 - tool steel: bars, drill rod, flat stock, etc.
 57090 - tubing, mechanical, steel: rectangular, round, square, etc.
 57095 - zinc: anodes, sheets, etc.
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 575 - microfiche and microfilm equipment, accessories, and supplie
 57525 - computer output microfilm/microfiche (com) units: com record
 57527 - computer output to microfilm (com) processing
@@ -2121,6 +2763,17 @@ computer
 57570 - raw microfilm
 57572 - reader, microfiche and microfilm
 57576 - reader/printer, microfiche and microfilm
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 578 - miscellaneous products
 57810 - bicycles & tricycles
@@ -2136,11 +2789,33 @@ computer
 57880 - signs, electronic display: marquee, scoreboard, etc.
 57884 - souvenirs: promotional and advertising items
 57886 - tags, key (all kinds)
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 590 - notions and related sewing accessories and supplies
 59022 - fasteners, self-gripping
 59024 - fasteners, snap
 59044 - needles, pins, thimbles, etc
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 595 - nursery stock, equipment, and supplies
 59510 - bedding plants and cuttings
@@ -2160,6 +2835,17 @@ computer
 59580 - turf blankets, seeded
 59590 - vermiculite and perlite
 59595 - wood chips and bark: composted, shredded, etc.
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 600 - office machines, equipment, and accessories
 60003 - accounting and bookkeeping machines (not data processing)
@@ -2207,6 +2893,17 @@ computer
 60088 - typewriters, manual, accessories and parts
 60089 - typewriters, memory: typewriters with memory for data storag
 60090 - typewriters, portable, accessories and parts
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 605 - office mechanical aids, small machines, and apparatuses
 60505 - collators, mechanical, table top type; and accessories
@@ -2231,6 +2928,17 @@ computer
 60582 - staple removers
 60585 - stapling machines, electric; and parts
 60588 - stapling machines, hand; and parts
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 610 - office supplies: carbon paper and ribbons, all types
 61007 - carbon paper, one-time
@@ -2244,6 +2952,17 @@ computer
 61077 - ribbons, typewriter and word processing, fabric
 61084 - ribbons, typewriter and word processing, film
  
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 615 - office supplies, general
 61500 - office supplies, general
 61503 - adding machines and calculator paper (rolls)
@@ -2294,7 +3013,18 @@ computer
 61588 - tape and dispensers, office type
 61593 - visible record supplies: cards, flags, folders, hinges, sign
 61595 - waste basket, office, rubbeermaid 2956 10x14x15
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 620 - office supplies: erasers, inks, leads, pens, pencils, etc.
 62010 - desk sets, inkstands, penholders, pen points, etc.
 62020 - erasers, all types (except electric)
@@ -2311,10 +3041,43 @@ computer
 62086 - pens, felt tip erasable markers (for porcelain boards)
 62088 - pens, felt tip markers ("high lighting" type, etc.)
 62090 - pens, general purpose marking types: broad felt tip, etc.
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 625 - optical equipment, accessories, and supplies
 62513 - binoculars
  
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 630 - paint, protective coatings, varnish, wallpaper, and related
 63003 - additives and miscellaneous paint ingredients: driers, fungi
 63006 - caulking compounds, bulk or cartridge type
@@ -2342,6 +3105,17 @@ computer
 63090 - thinners (reducers): alcohols, aromatic solvents, esters, ke
 63093 - wall coverings, fabric and plastic
 63097 - wood preservative and/or water-repellent finishes
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 635 - painting equipment and accessories
 63508 - compressors, portable paint sprayer, electric motor or engin
@@ -2355,6 +3129,17 @@ computer
 63575 - sprayer components and accessories: guns, hoses, pots, regul
 63580 - sprayers and spray systems, industrial, heavy duty
 63585 - spraying outfits, portable, light duty
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 640 - paper and plastic products, disposable
 64010 - bags, padded: book mailing, shipping, etc.
@@ -2377,12 +3162,34 @@ computer
 64565 - paper, telecopier
 64572 - paper, teletype
 64575 - paper, transceiver (facsimile)
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 650 - park, playground, and swimming pool equipment
 65006 - benches, park
 65010 - bicycle racks
 65024 - grill and park stoves, outdoor
 65036 - picnic tables
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 655 - photographic equipment and supplies (not including graphic a
 65515 - camera accessories: batteries, exposure meters (light meters
@@ -2402,6 +3209,17 @@ computer
 65590 - studio production equipment: backdrop mechanisms, floods, po
 65592 - transparency film
  
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
+
 665 - plastics, resins, fiberglass: forming, laminating, and moldi
 66506 - acetate film and sheets
 66518 - acrylic sheets (methyl methacrylate)
@@ -2422,7 +3240,17 @@ computer
 66583 - stretch film and wrapping equipment
 66584 - sheeting, plastic, reinforced (not polyethylene)
 66587 - teflon sheets and rods
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. | 
 670 - plumbing equipment, fixtures, and supplies
 67005 - cement and cleaners (for plastic conduit, fittings, and pipe
 67006 - compound, pipe joint and tape
@@ -2465,6 +3293,17 @@ computer
 67084 - venturi tubes, air and vacuum
 67089 - water heater, residential
 67091 - water heaters, commercial
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 675 - poisons: agricultural and industrial
 67535 - grains and baits, poisoned
@@ -2473,9 +3312,30 @@ computer
 67555 - adjuvants: emulsifiers, spreader/stickers, wetting agents
 67585 - weed killers (herbicides), dry
 67590 - weed killers (herbicides), liquid
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. | 
 680 - police equipment and supplies
 68002 - access control systems and security systems
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 700 - printing plant equipment and supplies (except papers)
 70024 - collators and sorters
@@ -2494,11 +3354,32 @@ computer
 70074 - punching and binding machines, comb type, electric
 70075 - punching and binding machines, comb type, manual
 70082 - signature reproduction machines, pen and ink type
- 
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
 705 - printing preparations: etching, photoengraving, and prepari
 70505 - artwork, camera ready
 70542 - negatives and plates (for offset printing)
 70550 - plates, color process
+
+<!--
+type: tab
+title: 505 Laundry Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 505 | Chlorine Bleaches, Etc. |
  
 710 - prosthetic devices, hearing aids, auditory testing equipment
 71072 - hearing aids
@@ -3455,38 +4336,38 @@ The table below includes the commodity codes (class and subclass list) for misce
 
 | Code | Description |
 | -------- | :--: |
-| 96102 | Administrative Services, All Kinds |
-| 96103 | Analytical, Studies & Survey Services (Not Otherwise) |
-| 96104 | Artists |
-| 96105 | Archaeological / Historical Studies |
-| 96110 | Bond Counsel Services |
-| 96115 | Concessions, Catering, Vending: Mobile and Stationary |
-| 96117 | Construction Management |
-| 96118 | Caretaker Services |
-| 96119 | Environmental Management |
-| 96120 | Consulting (Not Otherwise classified) |
-| 96121 | Cost Estimating |
-| 96124 | Court Reporting Services |
-| 96129 | Ecological Restoration |
-| 96130 | Employment Agency and Search Firm Services (See Class 964)
-| 96131 | Environmental Assessment/Research |
-| 96132 | Environmental Impact Studies |
-| 96133 | Expert Witness Services |
-| 96134 | Feasibility Studies (All Kinds) |
-| 96135 | Environmental Contamination Cleanup |
-| 96136 | Economic Impact Studies |
-| 96137 | Fleet Management |
-| 96138 | Facilitator Services |
-| 96141 | Fuel Management Services |
-|96143 | Hydrological Services |
-| 96145 | Inspection and Certification Services |
-| 96148 | Laboratory and Field Testing |
-| 96150 | Legal Services |
-| 96151 | Lobby Services |
-| 96152 | Management Consulting Services |
-| 96153 | Marketing Services |
-| 96154 | Mitigation Services, Wetlands |
-| 96155 | Mediator Services |
+| 961 | Administrative Services, All Kinds |
+| 961 | Analytical, Studies & Survey Services (Not Otherwise) |
+| 961 | Artists |
+| 961 | Archaeological / Historical Studies |
+| 961 | Bond Counsel Services |
+| 961 | Concessions, Catering, Vending: Mobile and Stationary |
+| 961 | Construction Management |
+| 961 | Caretaker Services |
+| 961 | Environmental Management |
+| 961 | Consulting (Not Otherwise classified) |
+| 961 | Cost Estimating |
+| 961 | Court Reporting Services |
+| 961 | Ecological Restoration |
+| 961 | Employment Agency and Search Firm Services (See Class 964)
+| 961 | Environmental Assessment/Research |
+| 961 | Environmental Impact Studies |
+| 961 | Expert Witness Services |
+| 961 | Feasibility Studies (All Kinds) |
+| 961 | Environmental Contamination Cleanup |
+| 961 | Economic Impact Studies |
+| 961 | Fleet Management |
+| 961 | Facilitator Services |
+| 961 | Fuel Management Services |
+| 961 | Hydrological Services |
+| 961 | Inspection and Certification Services |
+| 961 | Laboratory and Field Testing |
+| 961 | Legal Services |
+| 961 | Lobby Services |
+| 961 | Management Consulting Services |
+| 961 | Marketing Services |
+| 961 | Mitigation Services, Wetlands |
+| 961 | Mediator Services |
 
 <!--
 type: tab
@@ -3497,12 +4378,12 @@ The table below includes the commodity codes (class and subclass list) for secur
 
 | Code | Description |
 | -------- | :--: |
-| 99005 | Alarm Services |
-| 99042 | Fire and Safety Services |
-| 99046 | Guard and Security Services |
-| 99052 | Investigative Services |
-| 99067 | Patrol Services |
-| 99090 | X-Ray Film Badge Services |
+| 990 | Alarm Services |
+| 990 | Fire and Safety Services |
+| 990 | Guard and Security Services |
+| 990 | Investigative Services |
+| 990 | Patrol Services |
+| 990 | X-Ray Film Badge Services |
 
 <!-- type: tab-end -->
 
