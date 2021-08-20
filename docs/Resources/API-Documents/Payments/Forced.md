@@ -13,7 +13,7 @@ A forced post is used when an issuer (bank) provides a referral also known as ca
 - If the voice authorization center was not called and the merchant wants to process the transaction later, a [deferred authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) will need to be submitted.
 
 <!-- theme: warning -->
->It is recommended to only call the voice authorization center when the [issuer requests](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md) the merchant to do so. Using the voice authorization center to process an off-line transaction can lead to a false approval and a chargeback.
+>It is recommended to only call the voice authorization center when the [issuer requests](?path=docs/Resources/Guides/Response-Codes/Response-Code.md) the merchant to do so. Using the voice authorization center to process an off-line transaction can lead to a false approval and a chargeback.
 
 ---
 

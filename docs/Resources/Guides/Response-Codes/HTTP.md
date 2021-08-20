@@ -82,7 +82,7 @@ title: 4xx
 | 404 | Not Found | Commerce Hub can not find the requested resource. | Please check API Explorer for more information. |
 | 408 | Request Time Out | The response to the request did not received till set period time. | Please try after some time. |
 | 415 | Unsupported Media Type | Commerce Hub not able to process the supplied media type, as indicated by the Content-Type request header. | Merchant to correct the data and resend. |
-| 425 | Too Early | The request was sent too early | Merchant to wait for sometime and send request. |
+| 425 | Too Early | The request was sent too early. | Merchant to wait for sometime and send request. |
 | 429 | Too Many Requests | Merchant had sent too many requests in a given amount of time. | Merchant to wait for sometime and send request. |
 
 
@@ -98,7 +98,7 @@ title: 5xx
 | --------- | ---- | ------ | ------- |
 | 500 | Internal Server Error | Commerce Hub encountered an unexpected condition which prevented it from fulfilling the request. | Report the error to Commerce Hub support team. |
 | 503 | Service Unavailable | The application server is not ready to handle the request. | Please try after sometime. |
-| 504 | Gateway Timeout | Commerce Hub did not received response from upstream application.. | Please try after sometime. |
+| 504 | Gateway Timeout | Commerce Hub did not received response from upstream application. | Please try after sometime. |
 
 <!-- type: tab-end -->
 

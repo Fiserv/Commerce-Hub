@@ -20,11 +20,11 @@ A deferred authorization is a transaction that occurs when a merchant captures t
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Deferred Bill Payment](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 
 ---
