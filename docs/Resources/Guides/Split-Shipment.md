@@ -131,8 +131,8 @@ title: Response
    },
    "transactionDetails":{
       "splitShipment":{
-         "totalCount": 5,
-         "finalShipment": true
+       "totalCount": 5,
+       "finalShipment": true
       }
    }
 }

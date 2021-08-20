@@ -11,7 +11,7 @@ Commerce Hub can pass Level II and III data (also knows as Enhanced Data) with b
 
 ## Request Variables
 
-Level II and III transactions require the `level23Data` object, and level III requires line item details in the `level23DataItems` object based on card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
+Level II and III transactions require the `level23Data` object, and level III requires line `itemDetails` object. Required fields are based on the specific card brand [data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
 
 <!--
 type: tab
@@ -29,25 +29,26 @@ The below table identifies the parameters in the `level23Data` object.
 |`totalDiscountAmount` | *number* | 18,3 | Total discount amount |
 |`dutyAmount` | *number* | 18,3 | Duty amount charged |
 |`destinationPostalCode` | *string* | | Postal Code where goods will be delivered |
-|`destinationCountryCode` | *string* | | Country code where goods will be delivered |
+|`destinationCountryCode` | *string* | | [Country code](?path=docs/Resources/Master-Data/Country-Code.md) where goods will be delivered |
 |`orderDate` | *string* | | Date of order in YYYY-MM-DD format |
 |`shipFromPostalCode` | *string* | | Postal code where goods are being shipped from |
 |`merchantTaxId` | *string* | | Merchant tax ID |
 |`merchantInvoiceNumber` | *string* | | Merchant invoice number |
-|`taxRate` | *string* | | Tax rate for the amount purchased |
+|`taxRate` | *number* | | Tax rate for the amount purchased |
 |`supplierVatRegistrationNumber` | *string* | | Supplier VAT registration number |
-|`freightRate` | *string* | | Freight rate percent |
-|`totalDiscountRate` | *string* | | Discount rate percent |
-|`totalLineItemTax` | *string* | | Line item tax |
+|`freightRate` | *number* | | Freight rate percent |
+|`totalDiscountRate` | *number* | | Discount rate percent |
+|`totalLineItemTax` | *number* | | Line item tax |
+| `itemDetails` | *array* | NA | Array containing the details of line items sold |
 
 
 <!--
 type: tab
-title: level23DataItems
+title: itemDetails
 -->
 
 
-The below table identifies the parameters in the `level23DataItems` object.
+The below table identifies the parameters in the `itemDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -56,19 +57,18 @@ The below table identifies the parameters in the `level23DataItems` object.
 |`productCode` | *string* | | Code for the product being purchased |
 |`unitPrice` | *string* | | Price for the unit being purchased |
 |`quantity` | *string* | | Amount of the product being purchased |
-|`unitOfMeasurement` | *string* | | Unit of measurment for the product purchased |
-|`totalAmount` | *number* | 18,3 | Total amount purchased |
-|`discountIndicator` | *string* | | Discout code for the product being purchased |
-|`discountRate` | *string* | | Discout rate percent |
+|`unitOfMeasurement` | *string* | | [Unit of measurment](?path=docs/Resources/Guides/Level23/Unit-Measurement.md) for the product purchased |
+|`totalAmount` | *number* | 18,3 | Total before tax and discounts |
+|`discountIndicator` | *boolean* | | Discout code for the product being purchased |
+|`discountRate` | *number* | | Discout rate percent |
 |`discountAmount` | *number* | 18,3 | Discount amount on the purchased product |
-|`taxIndicator` | *string* | | Tax code for purchased product |
-|`lineItemTaxRate` | *string* | | Discout code for the product being purchased |
-|`taxType` | *string* | | Discout code for the product being purchased |
-|`lineItemTax` | *string* | | Discout code for the product being purchased |
-|`vatRate` | *string* | | Value added tax (VAT) rate percent |
+|`taxIndicator` | *boolean* | | Tax code for purchased product |
+|`lineItemTaxRate` | *number* | | Discout code for the product being purchased |
+|`taxType` | *string* | | [Tax type](?path=docs/Resources/Guides/Level23/Tax-Types.md) for the product being purchased |
+|`lineItemTax` | *number* | 18,3| Tax aount for the line item |
+|`vatRate` | *number* | | Value added tax (VAT) rate percent |
 |`vatAmount` | *number* | 18,3 | Value added tax (VAT) amount |
-|`lineItemTotal` | *string* | | Line item total after tax and discounts |
-|`totalAmount` | *number* | 18,3 | Total amount purchased |
+|`lineItemTotal` | *number* | 18,3 | Line item total after tax and discounts |
 
 <!--
 type: tab
@@ -90,8 +90,6 @@ JSON string format for `leve23Data`:
 ```
 
 <!-- type: tab-end -->
-
-
 
 ## Payload Example 
 
@@ -188,10 +186,10 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
-- [Commodity Codes](path?=docs/Resources/Guides/Level23/Commodity-Codes.md)
-- [Tax Types](path?=docs/Resources/Guides/Level23/Tax-Types.md)
-
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Card Brand Requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
+- [Commodity Codes](?path=docs/Resources/Guides/Level23/Commodity-Codes.md)
+- [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
+- [Unit of Measurement](?path=docs/Resources/Guides/Level23/Unit-Measurement.md)
 
 ---
-

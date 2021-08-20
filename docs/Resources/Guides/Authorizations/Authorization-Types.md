@@ -17,7 +17,7 @@ authorizationTypeIndicator identifies the authorization type of subsequent trans
 
 ---
 
- ### Featured Guides
+### Featured Guides
 
  - [Deferred Authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md)
  - [Incremental Authorization](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)

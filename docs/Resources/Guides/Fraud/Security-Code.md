@@ -317,7 +317,7 @@ The below table identifies the valid values of `securityCodeResponse`.
 | *S* | Merchant has indicated that the card security code is not present on the card. |
 | *U* | Issuer is not certified and/or not provides encryption keys. |
 | *X* | No response from the credit card association was received. |
-| | A blank code should indicate that no code was sent and that there was no indication that the code was present on the card. |
+| | A blank response will indicate that no code was sent and that there was no indication that the code was present on the card. |
 
 ---
 

@@ -4,13 +4,16 @@ tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, 
 
 # Level II and III Brand Requirements
 
-Card brands require specific data fields for [level II and III](?path=docs/Resources/Guides/Level23/Level23.md) transactions. Commerce Hub supports Level II and III data for Visa and MasterCard, and supports Level II data for American Express.
+Card brands require specific data fields for [Level II and III](?path=docs/Resources/Guides/Level23/Level23.md) transactions. Commerce Hub supports Level II and III data for Visa and MasterCard, and supports Level II data for American Express.
 
-Failure to submit required fields when submitting a [Level II](#level-ii) or [Level III](level-iii) transaction could result in a possible reject, reversal during settlement, or higher fees (billback).
+<!-- theme: warning -->
+> Failure to submit required fields when submitting a [Level II](#level-ii) or [Level III](level-iii) transaction could result in a possible reject, reversal during settlement, or higher fees (billback).
 
 ---
 
 ## Level II
+
+Level II transactions require the fields in the below table based on card brand.
 
 | Card Brand | Level II Data Field | Description | Criteria for the Field|
 | -------- | :--: |
@@ -24,6 +27,7 @@ Failure to submit required fields when submitting a [Level II](#level-ii) or [Le
 
 ## Level III
 
+Level III transactions require all Level II data in addition to the fields in the below table.
 
 | Card Brand | Level III Data Field | Description | Criteria for the Field|
 | -------- | :--: |
@@ -43,7 +47,10 @@ Failure to submit required fields when submitting a [Level II](#level-ii) or [Le
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
-- [Commodity Codes](path?=docs/Resources/Guides/Level23/Commodity-Codes.md)
-- [Tax Types](path?=docs/Resources/Guides/Level23/Tax-Types.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Commodity Codes](?path=docs/Resources/Guides/Level23/Commodity-Codes.md)
+- [Level II/III Data](?path=docs/Resources/Guides/Level23/Level23.md)
+- [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
+- [Unit of Measurement](?path=docs/Resources/Guides/Level23/Unit-Measurement.md)
+
 ---

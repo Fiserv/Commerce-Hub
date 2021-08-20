@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, to
 
 # Tokenization
 
-**[Tokenization](../../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#chargerequest) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokenrequest) endpoint.
+**[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#tokenization-with-charges-request) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokens-request) endpoint.
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
   - Requires the use of [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
