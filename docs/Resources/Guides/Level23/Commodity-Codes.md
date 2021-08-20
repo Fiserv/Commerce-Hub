@@ -464,64 +464,85 @@ The table below includes the commodity codes (class and subclass list) for autom
 | 075 | Files, Ignition, Tungsten Point
 | 075 | Grinders, Cylinder Hone and Valve Seat; Portable Boring Mach |
 | 075 | Hand Tools, Automotive Air Conditioning |
-| 075 | Hand tools, body rebuilder's |
-07535 - hand tools, special automotive: brake tools, body and fender |
-07536 - hose, exhaust (for shop use only) |
-07538 - hydrometers, antifreeze and battery |
-07541 - jacks, safety stands, portable cranes, and parts (for automo |
-07542 - lights, drop, and other remote work lights (with cords) |
-07543 - lathes, armature and brake drum
-07544 - lifts and hoists, floor type: electric, hydraulic, or pneuma
-07546 - lubrication equipment: guns, hoses, fittings, etc
-07548 - mechanic's wire
-07549 - parts washing equipment including air agitated and pump agit
-07554 - presses and pullers, machine powered (including frame alignm
-07557 - reel and hose assemblies, air and water dispensing
-07560 - refinisher products (including polish and body filler - not
-07563 - relining equipment (for brakes)
-07565 - spark plug cleaner and tester, electric
-07566 - specialty products (carb, windshield, radiator, sealer)
-07567 - spring tester (to balance valve springs, etc.)
-07572 - tachometer (with wheel for speed recording)
-07578 - testers: engine analysis, headlight, ignition, timing, comp
-07581 - tire changing equipment
-07583 - tire changing tools and accessories: lug wrenches, tire gaug
-07587 - tow bars and chains
-07590 - undercoater equipment and accessories
-07592 - undercoating compounds
-07595 - valve grinding compounds
-07597 - windshield replacement tools
+| 075 | Hand Tools, Body Rebuilder's |
+| 075 | Hand Tools, Special Automotive: Brake Tools, Body and Fender |
+| 075 | Hose, Exhaust (For Shop Use Only) |
+| 075 | Hydrometers, Antifreeze and Battery |
+| 075 | Jacks, Safety Stands, Portable Cranes, and Parts (For Automo) |
+| 075 | Lights, Drop, and Other Remote Work Lights (With Cords) |
+| 075 | Lathes, Armature and Brake Drum |
+| 075 | Lifts and Hoists, Floor Type: Electric, Hydraulic, or Pneuma |
+| 075 | Lubrication Equipment: Guns, Hoses, Fittings, Etc. |
+| 075 | Mechanic's Wire |
+| 075 | Parts Washing Equipment Including Air Agitated and Pump Agit |
+| 075 | Presses and Pullers, Machine Powered (Including Frame Align) |
+| 075 | Reel and Hose Assemblies, Air and Water Dispensing |
+| 075 | Refinisher Products (Including Polish and Body Filler - Not |
+| 075 | Relining Equipment (For Brakes) |
+| 075 | Spark Plug Cleaner and Tester, Electric |
+| 075 | Specialty Products (Carb, Windshield, Radiator, Sealer) |
+| 075 | Spring Tester (To Balance Valve Springs, Etc.) |
+| 075 | Tachometer (With Wheel for Speed Recording) |
+| 075 | Testers: Engine Analysis, Headlight, Ignition, Timing, Comp |
+| 075 | Tire Changing Equipment |
+| 075 | Tire Changing Tools and Accessories: Lug Wrenches, Tire Gaug |
+| 075 | Tow Bars and Chains |
+| 075 | Undercoater Equipment and Accessories |
+| 075 | Undercoating Compounds |
+| 075 | Valve Grinding Compounds |
+| 075 | Windshield Replacement Tools |
+
+<!--
+type: tab
+title: 080 Badges, Plates and Tags
+-->
+
+The table below includes the commodity codes (class and subclass list) for badges, emblems, name tags and plates, jewelry, etc.
 
 | Code | Description |
 | -------- | :--: | 
+| 080 | Badges, Buttons, Emblems, and ID Cards, Celluloid and Plastic |
+| 080 | Badges and Emblems, Metal: Cap, Game Wardens', Officers', SE |
+| 080 | Card Holders, All Types (Except Metal - See Class 578-50) |
+| 080 | Convention Badges and Name Tags, Adhesive Back |
+| 080 | Convention Badges and Name Tags, Nonadhesive Type |
+| 080 | Fasteners (for badges, etc.): metal, plastic, etc. |
+| 080 | Nameplates, Metal, Adhesive Back |
+| 080 | Nameplates, Metal, Nonadhesive |
+| 080 | Nameplates, Plastic |
+| 080 | Plaque, Award Type |
+| 080 | Service Awards: Jewelry, Clocks, Knives, Etc. |
+| 080 | Safety Awards: Cooler, Chronometer, Flashlight, Etc. |
+| 080 | Tags, Metal, Adhesive Back: Inventory, Property, Tool, Etc. |
+| 080 | Tags, Metal, Nonadhesive: Inventory, Property, Skiff, Seine |
+| 080 | Tags, Labels, Bands, Pre-Printed |
  
-080 - badges, emblems, name tags and plates, jewelry, etc.
-08010 - badges, buttons, emblems, and id cards, celluloid and plasti
-08015 - badges and emblems, metal: cap, game wardens', officers', se
-08025 - card holders, all types (except metal - see class 578-50)
-08035 - convention badges and name tags, adhesive back
-08038 - convention badges and name tags, nonadhesive type
-08044 - fasteners (for badges, etc.): metal, plastic, etc.
-08050 - nameplates, metal, adhesive back
-08053 - nameplates, metal, nonadhesive
-08055 - nameplates, plastic
-08057 - plaque, award type
-08060 - service awards: jewelry, clocks, knives, etc.
-08065 - safety awards: cooler, chronometer, flashlight, etc.
-08070 - tags, metal, adhesive back: inventory, property, tool, etc.
-08073 - tags, metal, nonadhesive: inventory, property, skiff, seine
-08080 - tags, labels, and bands, pre-printed
- 
-085 - bags, bagging, ties, and erosion control equipment
-08515 - bags, burlap or jute, new and used
-08520 - bags, canvas or duck (except mail)
-08525 - bags, cement, used
-08530 - bags, mail
-08545 - bags, nylon or polyester
-08555 - bags, sand
-08585 - sheeting, soil erosion: asphalt, biodegradable paper, burlap
- 
-100 - barrels, drums, kegs, and containers
+<!--
+type: tab
+title: 085 Bag Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for bags, bagging, ties, and erosion control equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 085 | Bags, Burlap or Jute, New and Used |
+| 085 | Bags, Canvas or Duck (Except Mail) |
+| 085 | Bags, Cement, Used |
+| 085 | Bags, Mail |
+| 085 | Bags, Nylon or Polyester |
+| 085 | Bags, Sand |
+| 085 | Sheeting, Soil Erosion: Asphalt, Biodegradable Paper, Burlap |
+
+<!--
+type: tab
+title: 100 Containers
+-->
+
+The table below includes the commodity codes (class and subclass list) for bags, bagging, ties, and erosion control equipment.
+
+| Code | Description |
+| -------- | :--: |
 10006 - containers, plastic (all purpose)
 10007 - containers, recycling
 10008 - covers, drum (all types and sizes)
@@ -535,8 +556,16 @@ The table below includes the commodity codes (class and subclass list) for autom
 10050 - plugs, drum
 10060 - stainless steel drums
 10067 - steel barrels, drums, and kegs
- 
-105 - bearings (except wheel bearings and seals -see class 060)
+
+<!--
+type: tab
+title: 105 Bearings
+-->
+
+The table below includes the commodity codes (class and subclass list) for bearings (except wheel bearings and seals -see class 060).
+
+| Code | Description |
+| -------- | :--: |
 10512 - ball bearings and parts
 10518 - bearing assemblies (including hanger bearings and custom-mad
 10530 - bearings and parts (for marine equipment)
@@ -544,19 +573,44 @@ The table below includes the commodity codes (class and subclass list) for autom
 10560 - roller and needle bearings and parts, straight
 10572 - roller taper bearings and parts
 10584 - sleeve bearings and parts
- 
-110 - belts and belting: conveyor, elevator, power transmission, a
-11009 - accessories: dressing, hooks, laces, etc.
-11074 - v-belts, automotive fan and generator
-11082 - v-belts, industrial
-11090 - v-belts, fractional horsepower
- 
-115 - biochemicals, research
-11505 - biochemical reagents and tests: antibiotic assays, different
- 
-120 - boats, motors, and marine and wildlife supplies
-12008 - airboats
-12010 - anchors
+
+<!--
+type: tab
+title: 110 Belting
+-->
+
+The table below includes the commodity codes (class and subclass list) for belts and belting: conveyor, elevator, power transmission, a.
+
+| Code | Description |
+| -------- | :--: |
+| 110 | Accessories: Dressing, Hooks, Laces, Etc. |
+| 110 | V-Belts, Automotive Fan and Generator |
+| 110 | V-Belts, Industrial |
+| 110 | V-Belts, Fractional Horsepower |
+
+<!--
+type: tab
+title: 115 Biochemicals
+-->
+
+The table below includes the commodity codes (class and subclass list) for biochemicals, research.
+
+| Code | Description |
+| -------- | :--: |
+| 115 | Biochemical Reagents and Tests: Antibiotic Assays, Different |
+
+<!--
+type: tab
+title: 120 Boats
+-->
+
+The table below includes the commodity codes (class and subclass list) for boats, motors, and marine and wildlife supplies.
+
+| Code | Description |
+| -------- | :--: |
+
+| 120 | Airboats |
+| 120 | Anchors |
 12011 - animal capture guns and accessories
 12012 - bait, fish
 12013 - battery boxes, marine
@@ -594,15 +648,30 @@ The table below includes the commodity codes (class and subclass list) for autom
 12090 - trailers, boat
 12094 - wildlife scare devices
 12097 - winches & lifts, boat
- 
-125 - bookbinding supplies
-12505 - adhesives, compounds, glues, pastes, glue pots, and containe
-12508 - base compound (hot melt polyethylene binding)
-12510 - bindery supplies (paper merchants' catalog items)
-12570 - paper, reproduction proofing
-12572 - paper treatment chemicals (deacidifiers)
-12575 - tapes, bookbinding
- 
+
+<!--
+type: tab
+title: 125 Bookbinding
+-->
+
+The table below includes the commodity codes (class and subclass list) for adhesives, compounds, glues, pastes, glue pots, and containe.
+| Code | Description |
+| -------- | :--: |
+| 125 | Base Compound (Hot Melt Polyethylene Binding) |
+| 125 | Bindery Supplies (Paper Merchants' Catalog items) |
+| 125 | Paper, Reproduction Proofing |
+| 125 | Paper Treatment Chemicals (Deacidifiers) |
+| 125 | Tapes, Bookbinding |
+
+<!--
+type: tab
+title: 135 Brick Materials
+-->
+
+The table below includes the commodity codes (class and subclass list) for bookbinding supplies.
+
+| Code | Description |
+| -------- | :--: |
 135 - bricks and other clay products, refractory materials, and st
 13508 - brick, common
 13509 - brick facing
@@ -623,8 +692,15 @@ The table below includes the commodity codes (class and subclass list) for autom
 13566 - tile, floor and wall, ceramic, unglazed
 13570 - tile, quarry
 13579 - tile sealant
- 
-145 - brushes (not otherwise classified)
+
+<!--
+type: tab
+title: 145 Brushes
+-->
+
+The table below includes the commodity codes (class and subclass list) for brushes (not otherwise classified).
+| Code | Description |
+| -------- | :--: |
 14515 - acid
 14543 - masonry brushes
 14545 - paint and varnish
@@ -633,8 +709,15 @@ The table below includes the commodity codes (class and subclass list) for autom
 14572 - wash, car/truck
 14575 - wire, hand
 14590 - wire, wheel
- 
-150 - builder's supplies
+
+<!--
+type: tab
+title: 150 Builder's Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for builder's supplies.
+| Code | Description |
+| -------- | :--: |
 15002 - adhesives and bonding agents
 15004 - aluminum extrusions (for fabricating window and door screens
 15006 - builder's paper, kraft types (not felt and tar paper)
@@ -688,6 +771,7 @@ The table below includes the commodity codes (class and subclass list) for autom
 15092 - windows and frames, aluminum
 15094 - windows and frames, steel
 15096 - windows and frames, wooden
+
  
 155 - buildings and structures: fabricated and prefabricated
 15510 - buildings, large, prefabricated (over 500 sq.ft.)
