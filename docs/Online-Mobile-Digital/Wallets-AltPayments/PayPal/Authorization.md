@@ -23,6 +23,8 @@ Once the data is prepared, simply call the paypalAuthorization method (just like
 
 You can also easily check whether the authorization was successful and retrieve the ID number – you can use it later to perform resales within the recurring payments.
 
+```java
+
 try {
     $status = $client->paypalAuthorization($paypal_params);
 } catch (Exception $e) {
@@ -36,6 +38,8 @@ if ($client->isSuccess()) {
         "Error number: {$status['error']['error_number']}, \n".
         "Error description: {$status['error']['error_description']}");
 }
+
+```
 ---
 
 ## See Also
