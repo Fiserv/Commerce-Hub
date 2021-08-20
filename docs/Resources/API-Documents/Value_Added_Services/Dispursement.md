@@ -16,4 +16,3 @@ Commerce Hub will allow integration for digtial disbursments and payouts for the
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 
 ---
-
