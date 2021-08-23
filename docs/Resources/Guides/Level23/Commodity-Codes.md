@@ -3364,37 +3364,50 @@ The table below includes the commodity codes (class and subclass list) for laund
 
 | Code | Description |
 | -------- | :--: |
-| 505 | Chlorine Bleaches, Etc. |
-705 - printing preparations: etching, photoengraving, and prepari
-70505 - artwork, camera ready
-70542 - negatives and plates (for offset printing)
-70550 - plates, color process
+| 705 | Printing Preparations: Etching, Photoengraving, and Preparing |
+| 705 | Artwork, Camera Ready |
+| 705 | Negatives and Plates (For Offset Printing) |
+| 705 | Plates, Color Process |
 
 <!--
 type: tab
-title: 505 Laundry Supplies
+title: 710 Prosthetic Devices
 -->
 
-The table below includes the commodity codes (class and subclass list) for laundry and dry cleaning equipment.
+The table below includes the commodity codes (class and subclass list) for prosthetic devices, hearing aids, auditory testing equipment.
 
 | Code | Description |
 | -------- | :--: |
-| 505 | Chlorine Bleaches, Etc. |
+| 710 | Hearing Aids |
+| 710 | Hearing Protectors and Parts
+
+<!--
+type: tab
+title: 715 Prosthetic Devices
+-->
+
+The table below includes the commodity codes (class and subclass list) for publications and audiovisual materials (prepared materials o).
+
+| Code | Description |
+| -------- | :--: |
+71510 - books, magazines, pamphlets, reprints, etc. |
+71520 - catalog cards, library of congress type and other types |
+71530 - display and exhibit materials |
+71540 - filmstrips, slides, transparencies, etc. |
+71550 - microfilm, microfiche, etc. |
+71560 - multimedia sets |
+71580 - phonograph records, precorded tapes, etc |
+71590 - video cassettes, disks, tapes, etc. (for computer and tv, pr) |
  
-710 - prosthetic devices, hearing aids, auditory testing equipment
-71072 - hearing aids
-71075 - hearing protectors and parts
- 
-715 - publications and audiovisual materials (prepared materials o
-71510 - books, magazines, pamphlets, reprints, etc.
-71520 - catalog cards, library of congress type and other types
-71530 - display and exhibit materials
-71540 - filmstrips, slides, transparencies, etc.
-71550 - microfilm, microfiche, etc.
-71560 - multimedia sets
-71580 - phonograph records, precorded tapes, etc
-71590 - video cassettes, disks, tapes, etc. (for computer and tv, pr
- 
+<!--
+type: tab
+title: 715 Prosthetic Devices
+-->
+
+The table below includes the commodity codes (class and subclass list) for publications and audiovisual materials (prepared materials o).
+
+| Code | Description |
+| -------- | :--: |
 720 - pumping equipment and accessories
 72004 - automotive fueling, sys., access. and parts
 72006 - barrel pumps (drum pumps), rotary and plunger types, hand op
@@ -3420,6 +3433,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 72079 - trash pumps, portable, engine-driven
 72084 - water well accessories: drive points, foot valves and strain
 72090 - well pumps, all kinds
+
+<!--
+type: tab
+title: 715 Prosthetic Devices
+-->
+
+The table below includes the commodity codes (class and subclass list) for publications and audiovisual materials (prepared materials o).
+
+| Code | Description |
+| -------- | :--: |
  
 725 - radio communication, telephone, and telecommunication equipm
 72505 - aircraft communications radio
@@ -3451,8 +3474,17 @@ The table below includes the commodity codes (class and subclass list) for laund
 72581 - data communications, radio
 72582 - two-way radio supplies and repair parts
 72584 - wide area telecommunications services (wats); autovon
-72590 - wildlife tracking equipment (not fish locators -see class 12
- 
+72590 - wildlife tracking equipment (not fish locators -see class 12) 
+
+<!--
+type: tab
+title: 715 Prosthetic Devices
+-->
+
+The table below includes the commodity codes (class and subclass list) for publications and audiovisual materials (prepared materials o).
+
+| Code | Description |
+| -------- | :--: |
 730 - radio communication and telecommunication testing, measuring
 73006 - calibrators: resistance, power, voltage, time, etc.
 73018 - converters: analog-to-digital, digital-to-analog, time-to-am
@@ -3463,17 +3495,45 @@ The table below includes the commodity codes (class and subclass list) for laund
 73078 - signal averagers, integrators, etc.
 73084 - spectrum analyzers: radio frequencies, sound, etc.
 73090 - video testing equipment: color bar generators, vectorscopes,
- 
-735 - rags, shop towels, and wiping cloths
+
+<!--
+type: tab
+title: 715 Prosthetic Devices
+-->
+
+The table below includes the commodity codes (class and subclass list) for publications and audiovisual materials (prepared materials o).
+
+| Code | Description |
+| -------- | :--: |
+735 - rags, shop towels, and wiping cloths |
 73510 - towels, shop type, new
 73520 - wipers, fabric, non-woven
 73560 - wiping rags, all types: cotton towels, lightweight blankets,
+
+<!--
+type: tab
+title: 740 Refrigeration Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for refrigeration equipment and accessories.
+
+| Code | Description |
+| -------- | :--: |
  
 740 - refrigeration equipment and accessories
 74040 - hand tools, refrigeration
 74045 - ice making and dispensing machines (not dry ice)
 74055 - refrigerant gases (except ammonia)
- 
+
+<!--
+type: tab
+title: 740 Refrigeration Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for refrigeration equipment and accessories.
+
+| Code | Description |
+| -------- | :--: |
 745 - road and highway building materials (asphaltic)
 74507 - asphalt
 74514 - asphaltic concrete, cold laid
@@ -3483,7 +3543,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 74556 - joint sealants: asphalt, glass filament, impervious membrane
 74567 - rapid curing cutback asphalt patching mix
 74580 - rubber asphalt crack sealing compound
- 
+
+<!--
+type: tab
+title: 740 Refrigeration Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for refrigeration equipment and accessories.
+
+| Code | Description |
+| -------- | :--: |
 750 - road and highway building materials (not asphaltic)
 75007 - barrow and soil
 75021 - cement, truckload lots and larger
@@ -3496,13 +3565,31 @@ The table below includes the commodity codes (class and subclass list) for laund
 75077 - sand and gravel
 75084 - shell
 75089 - slag
- 
+
+<!--
+type: tab
+title: 740 Refrigeration Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for refrigeration equipment and accessories.
+
+| Code | Description |
+| -------- | :--: |
 755 - road and highway equipment and parts: asphalt and concrete h
 75565 - concrete cutters, saws, multipurpose saws, and accessories
 75573 - concrete form tubes, & boxes, all types (for forming concret
 75580 - concrete mixers
 75585 - concrete vibrators
- 
+
+<!--
+type: tab
+title: 740 Refrigeration Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for refrigeration equipment and accessories.
+
+| Code | Description |
+| -------- | :--: |
 760 - road and highway equipment: earth handling, grading, moving,
 76003 - backhoe
 76004 - backhoe/loader combination
@@ -3519,7 +3606,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 76050 - loaders, front end (for wheel type tractors)
 76051 - loaders, pneumatic tired
 76090 - shovels, power; and excavating machines, telescoping and hin
- 
+
+<!--
+type: tab
+title: 740 Refrigeration Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for refrigeration equipment and accessories.
+
+| Code | Description |
+| -------- | :--: |
 765 - road and highway equipment (except asphalt, concrete, and ea
 76502 - air conditioners for heavy equipment
 76503 - booms: crane, tractor, etc.
@@ -3540,8 +3636,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 76590 - weed burners and accessories
 76593 - wire rope
 76595 - wire rope accessories: clamps, clips, cutters, eyes, slings,
- 
-770 - roofing (except wood -see class 540)
+
+<!--
+type: tab
+title: 770 Roofing
+-->
+
+The table below includes the commodity codes (class and subclass list) for roofing (except wood -see class 540).
+
+| Code | Description |
+| -------- | :--: |
 77006 - aggregate, gravel, marble and stone chips, etc. (for roofs)
 77009 - asphalt, roofing
 77015 - bolts, clips, fasteners, etc. (for sheet roofing)
@@ -3562,10 +3666,27 @@ The table below includes the commodity codes (class and subclass list) for laund
 77078 - shingles, fiberglass
 77088 - tar, roofing (coal tar pitch)
 77093 - waterproofing membrane and base sheet
- 
-775 - salt (sodium chloride) (see class 393 for table salt)
-77590 - water softener salt
- 
+
+<!--
+type: tab
+title: 775 Salt (Sodium Chrloide)
+-->
+
+The table below includes the commodity codes (class and subclass list) for salt (sodium chloride) (see class 393 for table salt).
+
+| Code | Description |
+| -------- | :--: |
+| 775 | Water Softener Salt |
+
+<!--
+type: tab
+title: 780 Salt (Sodium Chrloide)
+-->
+
+The table below includes the commodity codes (class and subclass list) for scales and weighing apparatus (see 175-08 for laboratory bal).
+
+| Code | Description |
+| -------- | :--: |
 780 - scales and weighing apparatus (see 175-08 for laboratory bal
 78020 - bench and counter scales
 78024 - computing scales (except postal)
@@ -3574,9 +3695,17 @@ The table below includes the commodity codes (class and subclass list) for laund
 78076 - platform scales
 78077 - postal scales, conventional
 78078 - postal scales, electronic (computing)
- 
-785 - school equipment and supplies
-78505 - atlases, charts, globes, and maps
+
+<!--
+type: tab
+title: 785 School Supplies
+-->
+
+The table below includes the commodity codes (class and subclass list) for school equipment and supplies.
+| Code | Description |
+| -------- | :--: |
+|785 - school equipment and supplies
+| 785 | Atlases, Charts, Globes, and Maps |
 78515 - blackboards and chalkboards
 78525 - bulletin boards: changeable letter, cork, magnetic, peg, etc
 78527 - carrels, audiovisual
@@ -3587,13 +3716,29 @@ The table below includes the commodity codes (class and subclass list) for laund
 78557 - erasers and cleaners, chalkboard
 78570 - instructional aids: courses, lesson plans, programs, etc.
 78572 - lecterns and speaker's stands
- 
-790 - seed, sod, soil, and inoculants
-79020 - grass seed
-79050 - sod, grass
-79054 - soil mixtures, special
-79070 - top soil and fill dirt (for mulch, see 335-72)
- 
+
+<!--
+type: tab
+title: 790 Grass Seed
+-->
+
+The table below includes the commodity codes (class and subclass list) for seed, sod, soil,and inoculants.
+
+| Code | Description |
+| -------- | :--: |
+| 790 | Sod, Grass |
+| 790 | Soil Mixtures, Special |
+| 790 | Top Soil and Fill Dirt (For Mulch, See 335-72) |
+
+<!--
+type: tab
+title: 790 Grass Seed
+-->
+
+The table below includes the commodity codes (class and subclass list) for seed, sod, soil,and inoculants.
+
+| Code | Description |
+| -------- | :--: |
 800 - shoes and boots
 80008 - boots, leather
 80016 - boots, rubber
@@ -3601,7 +3746,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 80072 - shoes & boots, safety toe
 80086 - shoes, work, men's
 80088 - shoes, work, women's
- 
+
+<!--
+type: tab
+title: 790 Grass Seed
+-->
+
+The table below includes the commodity codes (class and subclass list) for seed, sod, soil,and inoculants.
+
+| Code | Description |
+| -------- | :--: |
 803 - sound systems, components, and accessories: group intercom,
 80320 - auditory systems
 80340 - microphones and related equipment: chestsets, earphones, han
@@ -3610,7 +3764,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 80375 - recording tape, sound: audio cassettes, cartridges, reels, e
 80380 - speakers and accessories (sound)
 80390 - tape duplicating and erasing equipment
- 
+
+<!--
+type: tab
+title: 790 Grass Seed
+-->
+
+The table below includes the commodity codes (class and subclass list) for seed, sod, soil,and inoculants.
+
+| Code | Description |
+| -------- | :--: |
 805 - sporting and athletic goods
 80512 - athletic apparel
 80515 - athletic awards (not service type -see class 080): medals, p
@@ -3618,18 +3781,53 @@ The table below includes the commodity codes (class and subclass list) for laund
 80557 - gymnasium apparatus & equipment
 80569 - softball equipment
 80590 - volleyball equipment
- 
+
+<!--
+type: tab
+title: 790 Grass Seed
+-->
+
+The table below includes the commodity codes (class and subclass list) for seed, sod, soil,and inoculants.
+
+| Code | Description |
+| -------- | :--: |
 810 - spraying equipment (except household, nursery plant, and pai
 81015 - cleaner, spray equipment
 81056 - spray equipment, defoliant
 81090 - spray equipment, portable, hand powered
 81093 - spray equipment, vehicle mounted
  
-815 - steam & hot water fittings, accessories & supplies
-81554 - packing, sheet, all kinds
- 
-820 - steam & hot water boilers, steam heating & power plant equip
-82040 - controls, combustion, fuel cut-off, hardness, etc.
+<!--
+type: tab
+title: 815 Steam and Hot Fittings
+-->
+
+The table below includes the commodity codes (class and subclass list) for steam & hot water fittings, accessories & supplies.
+
+| Code | Description |
+| -------- | :--: | 
+| 815 | Packing, Sheet, All Kinds |
+
+<!--
+type: tab
+title: 820 Steam Heating Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for steam & hot water boilers, steam heating & power plant equipment.
+
+| Code | Description |
+| -------- | :--: |
+| 820 | Controls, Combustion, Fuel Cut-Off, Hardness, Etc. |
+
+<!--
+type: tab
+title: 820 Steam Heating Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for steam & hot water boilers, steam heating & power plant equipment.
+
+| Code | Description |
+| -------- | :--: |
  
 830 - tanks (metal, wood, and synthetic materials): mobile, portab
 83013 - butane and propane tanks, surface and underground
@@ -3642,8 +3840,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 83061 - steel tanks, pressure type (for air, gas, water, etc.)
 83067 - steel tanks, transport truck type (for asphalt, gasoline, oi
 83070 - steel tanks, underground type (for gasoline, kerosene, etc.)
- 
-832 - tape (not data processing, measuring, optical, sewing, sound
+
+<!--
+type: tab
+title: 832 Tape
+-->
+
+The table below includes the commodity codes (class and subclass list) for tape (not data processing, measuring, optical, sewing, sound. 
+
+| Code | Description |
+| -------- | :--: |
 83203 - tape, anti-skid
 83205 - tape, automotive type
 83210 - tape, barrier (cautionary)
@@ -3665,7 +3871,16 @@ The table below includes the commodity codes (class and subclass list) for laund
 83274 - tape, vinyl
 83275 - tape, wire marking and access.
 83276 - tape, wood, all kinds
- 
+
+<!--
+type: tab
+title: 840 Television Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for television equipment and accessories. 
+
+| Code | Description |
+| -------- | :--: |
 840 - television equipment and accessories
 84010 - antennas and accessories: amplifiers, brackets, masts, mount
 84034 - editing, titling, and special effects systems, accessories,
@@ -3684,12 +3899,20 @@ The table below includes the commodity codes (class and subclass list) for laund
 84082 - video recorders (with playback capability), playback only de
 84084 - video and audio surveillance systems (closed circuit tv), ac
 84086 - video systems (for studio quality production)
- 
-845 - testing apparatus and instruments (not for electrical or ele
-84506 - concrete testing apparatus
-84546 - testers, moisture-density (for soils)
-84554 - precision linear measuring instruments: calipers and vernier
-84581 - soil testing apparatus
+
+<!--
+type: tab
+title: 845 Apparatus Instruments
+-->
+
+The table below includes the commodity codes (class and subclass list) for testing apparatus and instruments (not for electrical or ele).
+
+| Code | Description |
+| -------- | :--: |
+| 845 | Concrete Testing Apparatus |
+| 845 | Testers, Moisture-Density (For Soils) |
+| 845 | Precision Linear Measuring Instruments: Calipers and Vernier |
+| 845 | Soil Testing Apparatus |
  
 850 - textiles, fibers, household linens, and piece goods
 85012 - blankets, bedding
