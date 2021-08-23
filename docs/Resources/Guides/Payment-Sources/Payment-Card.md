@@ -22,6 +22,8 @@ The below table identifies the required parameters in the `source` object.
 | -------- | -- | ------------ | ------------------ |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
 | `card` | *object* | N/A |  &#10004; | Contains the payment card details |
+| `encryptionData` | *object* | N/A | | Contains the encrypted payment details |
+| `pinBlock` | *object* | N/A | | Contains the encrypted PIN details |
 
 <!--
 type: tab

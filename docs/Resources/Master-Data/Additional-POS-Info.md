@@ -36,6 +36,15 @@ JSON string format for `additionalPosInformation`:
 
 <!-- type: tab-end -->
 
+### Hardware and Software Information
+
+posHardwareAndSoftware
+
+### POS Features
+
+posFeatures
+
+
 ---
 
 ## See Also
