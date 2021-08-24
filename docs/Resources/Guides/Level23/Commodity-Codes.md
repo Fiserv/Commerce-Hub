@@ -898,79 +898,73 @@ The table below includes the commodity codes (class and subclass list) for chemi
 | 190 | Chemicals, Bulk (Not Otherwise Itemized) |
 | 190 | Formaldehyde Solution (Formalin) |
 | 190 | Ketones: Acetone, Diacetone Alcohol, Methyl Isobutyl Ketone |
-| 19081 - pentachlorophenol (penta), creosote oil, and other wood pres |
-| 19085 - sodium phosphates and polyphosphates |
-| 19090 - solvents (not otherwise itemized) |
+| 190 | Pentachlorophenol (Penta), Creosote Oil, and Other Wood Pres |
+| 190 | Sodium Phosphates and Polyphosphates |
+| 190 | Solvents (Not Otherwise Itemized) |
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 192 Cleaning Compositions
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for cleaning compositions, detergents, solvents, and strippers.
 
 | Code | Description |
 | -------- | :--: |
- 
-192 - cleaning compositions, detergents, solvents, and strippers -
-19217 - chemical spill solvents and detergents
-19225 - concrete strippers and brick detergents
-19265 - paint spray booth compounds, water-soluble
-19280 - spray detergents (for heavy duty and steam cleaning)
-19283 - steam cleaning compounds
-19285 - surface-active agents: emulsifiers, wetting agents, and one-
+| 192 | Chemical Spill Solvents and Detergents |
+| 192 | Concrete Strippers and Brick Detergents |
+| 192 | Paint Spray Booth Compounds, Water-Soluble |
+| 192 | Spray Detergents (For Heavy Duty and Steam Cleaning) |
+| 192 | Steam Cleaning Compounds |
+| 192 | Surface-Active Agents: Emulsifiers, Wetting Agents, and one- |
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 195 Jewelry
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for clocks, timers, watches, and jewelers' and watchmakers' tool
 
 | Code | Description |
 | -------- | :--: |
- 
-195 - clocks, timers, watches, and jewelers' and watchmakers' tool
-19508 - alarm clocks, electric and spring
-19516 - clock and watchmakers' repair parts and materials
-19518 - clocks, electric, commercial
-19527 - jewelers' and watchmakers' tools
-19540 - master clock systems and parts
-19550 - program clocks, bells, lights, and chimes
-19568 - time clocks and recorders, accessories, and parts
-19574 - timers, interval; accessories, and parts (not photographic o
-19580 - wall clocks, battery
-19583 - wall clocks, electric
-19588 - watchmen's clocks and supplies
+| 195 | Alarm Clocks, Electric and Spring |
+| 195 | Clock and Watchmakers' Repair Parts and Materials |
+| 195 | Clocks, Electric, Commercial |
+| 195 | Jewelers' and Watchmakers' Tools |
+| 195 | Master Clock Systems and Parts |
+| 195 | Program Clocks, Bells, Lights, and Chimes |
+| 195 | Time Clocks and Recorders, Accessories, and Parts |
+| 195 | Timers, Interval; Accessories, and Parts (Not Photographic o) |
+| 195 | Wall Clocks, Battery |
+| 195 | Wall Clocks, Electric |
+| 195 | Watchmen's Clocks and Supplies |
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 200 Clothing and Uniforms
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for clothing, apparel, uniforms, and accessories.
 
 | Code | Description |
 | -------- | :--: |
- 
-200 - clothing, apparel, uniforms, and accessories
-20006 - aprons (not laboratory or leather)
-20007 - bags, clothing
-20008 - bands: arm, hat, head, sweat
-20009 - belts and suspenders
-20012 - caps, all types (except disposable)
-20015 - clothing, disposable: aprons, capes, caps, coveralls, etc. (
-20021 - emblems and shoulder patches (for uniforms)
-20027 - gloves, work: canvas, coated, leather, plastic, rubber, etc.
-20033 - hats, straw & fabric
-20037 - hazardous environment clothing
-20041 - hospital wear, professional: lab coats and smocks, surgical
-20045 - rainwear: coats, hats, slicker suits, and umbrellas (storm s
-20055 - tee shirts, custom silk screen
-20056 - shirts, tee
-20057 - shirts, sport
-20058 - shorts (walking), jump suits, and other casual clothing
-20084 - wearing apparel, work, men's and women's: blue jeans, covera
+| 200 | Aprons (Not Laboratory or Leather) | 
+| 200 | Bags, Clothing |
+| 200 | Bands: Arm, Hat, Head, Sweat |
+| 200 | Belts and Suspenders |
+| 200 | Caps, All Types (Except Disposable) |
+| 200 | Clothing, Disposable: Aprons, Capes, Caps, Coveralls, Etc. |
+| 200 | Emblems and Shoulder Patches (For Uniforms) |
+| 200 | Gloves, Work: Canvas, Coated, Leather, Plastic, Rubber, Etc. |
+| 200 | Hats, Straw & Fabric |
+| 200 | Hazardous Environment Clothing |
+| 200 | Hospital Wear, Professional: Lab Coats and Smocks,  Surgical |
+| 200 | Rainwear: Coats, Hats, Slicker Suits, and Umbrellas (Storm s) |
+| 200 | Tee Shirts, Custom Silk Screen |
+| 200 | Shirts, Tee |
+| 200 | Shirts, Sport |
+| 200 | Shorts (Walking), Jump Suits, and Other Casual Clothing |
+| 200 | Wearing Apparel, Work, Men's and Women's: Blue Jeans, Covera |
 
 <!--
 type: tab
@@ -1143,45 +1137,43 @@ The table below includes the commodity codes (class and subclass list) for cutle
 
 | Code | Description |
 | -------- | :--: |
-24007 - cooking utensils, aluminum |
-24014 - beverage servers, all types
-24021 - chinaware: cups & plates
-24028 - cutlery: knives, spatulas
-24042 - enamelware (kitchen & table)
-24070 - plastic ware: kitchen & table
-24084 - silverware (tableware)
-24091 - utensils, cooking, stainless steel
+| 240 | Cooking Utensils, Aluminum |
+| 240 | Beverage Servers, All types |
+| 240 | Chinaware: Cups & Plates |
+| 240 | Cutlery: Knives, Spatulas |
+| 240 | utlery: knives, spatulas |
+| 240 | Enamelware (Kitchen & Table) |
+| 240 | Plastic Ware: Kitchen & Table |
+| 240 | Silverware (Tableware) |
+| 240 | Utensils, Cooking, Stainless Steel |
 
 <!--
 type: tab
-title: 240 Cutlery
+title: 250 Data Processing Cards
 -->
 
-The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+The table below includes the commodity codes (class and subclass list) for data processing cards and paper.
 
 | Code | Description |
 | -------- | :--: |
- 
-250 - data processing cards and paper
-25018 - cards, tabulating, special (for automatic and manual data pr
-25030 - cards, tabulating, standard (for edp systems)
-25070 - roll paper, bond (for edp portable terminals)
-25072 - roll paper, thermal (for edp portable terminals)
-25080 - tests, answer sheets, scoring keys, etc. (for edp systems)
+| 250 | Cards, Tabulating, Special (For Automatic and Manual Data Pr |
+| 250 | Cards, Tabulating, Standard (For EDP Systems) |
+| 250 | Roll Paper, Bond (For EDP Portable Terminals) |
+| 250 | Roll Paper, Thermal (For EDP Portable Terminals) |
+| 250 | Tests, Answer Sheets, Scoring Keys, Etc. (For EDP Systems) |
 
 <!--
 type: tab
-title: 240 Cutlery
+title: 255 Decals and Stamps
 -->
 
-The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+The table below includes the commodity codes (class and subclass list) for decals and stamps.
 
 | Code | Description |
 | -------- | :--: |
-255 - decals and stamps
-25530 - decals (for cigarette machines, doors, equipment, vehicles,
-25540 - inventory and other small decals
-25560 - windshield decals, not numbered
+| 255 | Decals (For Cigarette Machines, Doors, Equipment, Vehicles) |
+| 255 | Inventory and Other Small Decals |
+| 255 | Windshield Decals, Not Numbered |
 
 <!--
 type: tab
@@ -4578,21 +4570,19 @@ The table below includes the commodity codes (class and subclass list) for misce
 
 <!--
 type: tab
-title: 998 Surplus Items
+title: 990 Security Services
 -->
 
 The table below includes the commodity codes (class and subclass list) for security, fire, safety, and emergency services.
 
 | Code | Description |
 | -------- | :--: |
- 
-990 - 
-99005 - alarm services
-99042 - fire and safety services
-99046 - guard and security services
-99052 - investigative services
-99067 - patrol services
-99090 - x-ray film badge services
+| 990 | Alarm services |
+| 990 | Fire and Safety Services |
+| 990 | Guard and Security Services |
+| 990 | Investigative Services | 
+| 990 | Patrol Services |
+| 990 | X-Ray Film Badge Services |
 
 <!--
 type: tab
