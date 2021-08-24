@@ -567,12 +567,12 @@ The table below includes the commodity codes (class and subclass list) for beari
 | Code | Description |
 | -------- | :--: |
 | 105 | Ball Bearings and Parts |
-10518 - bearing assemblies (including hanger bearings and Custom-Mad |
-10530 - bearings and parts (for marine equipment) |
-10548 - pillow blocks (for bearings) |
-10560 - roller and needle bearings and parts, straight |
-10572 - roller taper bearings and parts |
-10584 - sleeve bearings and parts |
+| 105 | Bearing Assemblies (Including Hanger Bearings and Custom-Mad |
+| 105 | Bearings and Parts (For Marine Equipment) |
+| 105 | Pillow Blocks (For Bearings) |
+| 105 | Roller and Needle Bearings and Parts, Straight |
+| 105 | Roller Taper Bearings and Parts |
+| 105 | Sleeve Bearings and Parts |
 
 <!--
 type: tab
@@ -608,46 +608,45 @@ The table below includes the commodity codes (class and subclass list) for boats
 
 | Code | Description |
 | -------- | :--: |
-
 | 120 | Airboats |
 | 120 | Anchors |
-12011 - animal capture guns and accessories
-12012 - bait, fish
-12013 - battery boxes, marine
-12015 - barriers, turbidity
-12016 - bilge pumps and boat bailers
-12019 - boat fenders
-12021 - boats, 21 feet and under
-12023 - boats, over 21 feet
-12024 - boats, pedal and pontoon
-12026 - buoys, marker
-12030 - canoes
-12033 - depth finders
-12035 - docks and piers, fixed and floating
-12037 - fish locators and shockers
-12040 - fuel tanks, boat
-12044 - hardware and supplies, boat (except spark plugs)
-12048 - life preservers
-12050 - lights, beacon and signal
-12052 - lights, marine navigation, boat
-12057 - motors, electric, trolling
-12058 - motors, inboard, diesel, marine
-12059 - motor conversion unit (outboard propeller to jet water drive
-12060 - motors, inboard, gasoline
-12062 - motors, outboard, diesel
-12063 - motors, outboard, gasoline
-12064 - navigation instruments, marine: compasses, sextant, etc. (fo
-12065 - nets and repair supplies, marine
-12070 - paddles and oars
-12071 - pontoons, all types
-12073 - preservatives, net
-12075 - propellers
-12080 - rods, reels, and tackle supplies
-12083 - scuba and skin diving equipment
-12086 - searchlights, marine
-12090 - trailers, boat
-12094 - wildlife scare devices
-12097 - winches & lifts, boat
+| 120 | Animal Capture Guns and Accessories |
+| 120 | Bait, Fish |
+| 120 | Battery Boxes, Marine |
+| 120 | Barriers, Turbidity |
+| 120 | Bilge Pumps and Boat Bailers |
+| 120 | Boat Fenders |
+| 120 | Boats, 21 Feet and Under |
+| 120 | Boats, Over 21 Feet |
+| 120 | Boats, Pedal and Pontoon |
+| 120 | Buoys, Marker |
+| 120 | Canoes |
+| 120 | Depth Finders |
+| 120 | Docks and Piers, Fixed and Floating |
+| 120 | Fish Locators and Shockers |
+| 120 | Fuel Tanks, Boat |
+| 120 | Hardware and Supplies, Boat (Except Spark Plugs) |
+| 120 | Life Preservers |
+| 120 | Lights, Beacon and Signal |
+| 120 | Lights, Marine Navigation, Boat |
+| 120 | Motors, Electric, Trolling |
+| 120 | Motors, Inboard, Diesel, Marine |
+| 120 | Motor Conversion Unit (Outboard Propeller to Jet Water Drive |
+| 120 | Motors, Inboard, Gasoline
+| 120 | Motors, Outboard, Diesel |
+| 120 | Motors, Outboard, Gasoline |
+| 120 | Navigation Instruments, Marine: Compasses, Sextant, Etc. (fo) |
+| 120 | Nets and Repair Supplies, Marine |
+| 120 | Paddles and Oars |
+| 120 | Pontoons, All Types |
+| 120 | Preservatives, Net |
+| 120 | Propellers |
+| 120 | Rods, reels, and Tackle Supplies |
+| 120 | Scuba and Skin Diving Equipment |
+| 120 | Searchlights, Marine |
+| 120 | Trailers, Boat |
+| 120 | Wildlife Scare Devices |
+| 120 | Winches & Lifts, Boat |
 
 <!--
 type: tab
@@ -669,30 +668,29 @@ type: tab
 title: 135 Brick Materials
 -->
 
-The table below includes the commodity codes (class and subclass list) for bookbinding supplies.
+The table below includes the commodity codes (class and subclass list) for bricks and other clay products, refractory materials, and st.
 
 | Code | Description |
 | -------- | :--: |
-135 - bricks and other clay products, refractory materials, and st
-13508 - brick, common
-13509 - brick facing
-13510 - brick, sewer
-13512 - cement (mortar), refractory
-13517 - clay pipe and fittings, vitreous clay (up to 4 inches)
-13518 - clay pipe, culverts, and fittings
-13520 - coloring for cement and grout
-13528 - firebrick
-13534 - fire clay
-13538 - grout sealer
-13540 - grout, tile
-13545 - marble, building
-13547 - refractories, castable
-13550 - stone, building (except marble)
-13555 - ties and anchors, furnace
-13564 - tile, floor and wall, ceramic, glazed
-13566 - tile, floor and wall, ceramic, unglazed
-13570 - tile, quarry
-13579 - tile sealant
+| 135 | Brick, Common |
+| 135 | Brick Facing |
+| 135 | Brick, Sewer |
+| 135 | Cement (Mortar), Refractory |
+| 135 | Clay Pipe and Fittings, Vitreous Clay (Up To 4 Inches) |
+| 135 | Clay Pipe, Culverts, and fittings |
+| 135 |Coloring for Cement and Grout |
+| 135 | Firebrick |
+| 135 | Fire Clay |
+| 135 | Grout Sealer |
+| 135 | Grout, Tile |
+| 135 | Marble, Building |
+| 135 | Refractories, Castable |
+| 135 |Stone, Building (Except Marble) |
+| 135 | Ties and anchors, furnace |
+| 135 | Tile, Floor and Wall, Ceramic, Glazed |
+| 135 | Tile, Floor and Wall, Ceramic, Unglazed |
+| 135 | Tile, Quarry |
+| 135 | Tile Sealant |
 
 <!--
 type: tab
@@ -700,16 +698,17 @@ title: 145 Brushes
 -->
 
 The table below includes the commodity codes (class and subclass list) for brushes (not otherwise classified).
+
 | Code | Description |
 | -------- | :--: |
-14515 - acid
-14543 - masonry brushes
-14545 - paint and varnish
-14560 - roofing
-14565 - solder flux paste brush
-14572 - wash, car/truck
-14575 - wire, hand
-14590 - wire, wheel
+| 145 | Acid |
+| 145 | Masonry Brushes |
+| 145 | Paint and Varnish |
+| 145 | Roofing |
+| 145 | Solder Flux Paste Brush |
+| 145 | Wash, Car/Truck |
+| 145 | Wire, Hand |
+| 145 | Wire, Wheel |
 
 <!--
 type: tab
@@ -717,61 +716,62 @@ title: 150 Builder's Supplies
 -->
 
 The table below includes the commodity codes (class and subclass list) for builder's supplies.
+
 | Code | Description |
 | -------- | :--: |
-15002 - adhesives and bonding agents
-15004 - aluminum extrusions (for fabricating window and door screens
-15006 - builder's paper, kraft types (not felt and tar paper)
-15009 - casement window hardware: latches, operators, and handles
-15012 - cement and plaster mixes, sacked (limited quantities)
-15014 - cement, quick setting, sacked
-15015 - concrete, polymer, all types
-15016 - curing mixtures, all types (for curing concrete)
-15018 - door bells, chimes and hardware
-15019 - door operators (not door closers): chain hoist type, electri
-15020 - door openers and parts, electric
-15021 - doors, aluminum and glass, all types
-15023 - doors and parts, automatic, drive-through type, etc.
-15024 - doors and parts, swinging
-15025 - doors, frames, and jambs, steel
-15027 - doors, frames, and jambs, wood
-15028 - dowels, and rods, wood
-15029 - down pipes, eaves, troughs, guttering, and accessories
-15030 - folding doors, commercial type
-15031 - folding doors, residential type
-15032 - handrails, metal
-15033 - grout, drywall
-15034 - handrails, wood
-15035 - hardeners, concrete and plaster
-15037 - jalousie doors and windows
-15042 - lath, metal
-15044 - lath, wood
-15045 - logs, building
-15046 - louvers (not air conditioning - see 031-53)
-15049 - millwork: counters, custom-made cabinets, shelves, etc.
-15051 - moldings, metal
-15052 - moldings, plastic
-15053 - moldings, strips, stops, rounds, etc.: wood
-15055 - overhead doors (garage, etc. - see class 450-26 for hardware
-15056 - partitions, office, metal and glass, custom-made
-15058 - partitions, office, wood and glass, custom-made
-15061 - retarder, plaster
-15072 - screen doors and window screens, aluminum frame
-15074 - screen doors and window screens, steel frame
-15076 - screen doors and window screens, wood frame
-15077 - sliding and rolling doors, commercial type; and hardware
-15078 - sliding and rolling doors, residential type; and hardware
-15079 - storm doors and windows
-15081 - ties, wall (not concrete form)
-15083 - tile, wall, metal
-15085 - tile, wall, plastic
-15086 - trusses, roof, wooden
-15088 - vents, foundation
-15089 - warehouse type doors (impact, pvc strip, etc.)
-15090 - weather stripping, all kinds
-15092 - windows and frames, aluminum
-15094 - windows and frames, steel
-15096 - windows and frames, wooden
+| 150 | Adhesives and Bonding Agents |
+| 150 | Aluminum Extrusions (For Fabricating Window and Door Screens |
+| 150 | Builder's Paper, Kraft Types (Not Felt and Tar Paper) |
+| 150 | Casement Window Hardware: Latches, Operators, and Handles |
+| 150 | Cement and Plaster Mixes, Sacked (Limited Quantities) |
+| 150 | Cement, Quick Setting, Sacked |
+| 150 | Concrete, Polymer, All Types |
+| 150 | Curing Mixtures, All Types (For Curing Concrete) |
+| 150 | Door Bells, Chimes and Hardware |
+| 150 | Door Operators (Not Door Closers): Chain Hoist Type, Electri |
+| 150 | Door Openers and Parts, Electric |
+| 150 | Doors, Aluminum and Glass, All Types |
+| 150 | Doors and Parts, Automatic, Drive-Through Type, Etc. |
+| 150 | Doors and Parts, Swinging |
+| 150 | Doors, Frames, and Jambs, Steel |
+| 150 | Doors, Frames, and Jambs, Wood |
+| 150 | Dowels, and Rods, Wood |
+| 150 | Down Eipes, Eaves, Troughs, Guttering, and Accessories |
+| 150 | Folding Doors, Commercial Type |
+| 150 | Folding Doors, Residential Type |
+| 150 | Handrails, Metal |
+| 150 | Grout, Drywall |
+| 150 | Handrails, Wood |
+| 150 | Hardeners, Concrete and Plaster |
+| 150 | Jalousie Doors and Windows |
+| 150 | Lath, Metal |
+| 150 | Lath, Wood |
+| 150 | Logs, Building |
+| 150 | Louvers (Not Air Conditioning - See 031-53) |
+| 150 | Millwork: Counters, Custom-Made Cabinets, Shelves, Etc. |
+| 150 | Moldings, Metal |
+| 150 | Moldings, Plastic |
+| 150 | Moldings, Strips, Stops, Rounds, Etc.: Wood |
+| 150 | Overhead Doors (Garage, Etc. - See Class 450-26 for Hardware |
+| 150 | Partitions, Office, Metal and Glass, Custom-Made |
+| 150 | Partitions, Office, Wood and Glass, Custom-Made |
+| 150 | Retarder, Plaster |
+| 150 | Screen Doors and Window Screens, Aluminum Frame |
+| 150 | Screen Doors and Window Screens, Steel Frame |
+| 150 | Screen Doors and Window Screens, Wood Frame |
+| 150 | Sliding and Rolling Doors, Commercial Type; and Hardware |
+| 150 | Sliding and Rolling Doors, Residential Type; and Hardware |
+| 150 | Storm Doors and Windows |
+| 150 | Ties, Wall (Not Concrete Form) |
+| 150 | Tile, Wall, Metal |
+| 150 | Tile, Wall, Plastic |
+| 150 | Trusses, Roof, Wooden |
+| 150 | Vents, Foundation |
+| 150 | Warehouse Type Doors (Impact, Pvc Strip, Etc.) |
+| 150 | Weather Stripping, All Kinds |
+| 150 | Windows and Frames, Aluminum |
+| 150 | Windows and Frames, Steel |
+| 150 | Windows and Frames, Wooden |
 
 <!--
 type: tab
@@ -800,112 +800,107 @@ The table below includes the commodity codes (class and subclass list) for forkn
 
 | Code | Description |
 | -------- | :--: |
-16019 - stones & sharpeners
-165 - cafeteria and kitchen equipment, commercial
-16510 - can openers, electric
-16512 - can openers, manual
-16515 - coffeemakers, hot water dispensers, urn bags and filters
-16533 - dispensers: cup, dish, silverware, tray, etc.
-16552 - ice equipment: carts, crushers, shavers, and storage bins
-16560 - ovens, convection and microwave
-16576 - repair parts, cafeteria and kitchen equipment
+| 160 | Stones & Sharpeners |
+| 165 | Cafeteria and Kitchen Equipment, Commercial |
+| 165 | Can Openers, Electric |
+| 165 | Can Openers, Manual |
+| 165 | Coffeemakers, Hot Water Dispensers, Urn Bags and Filters |
+| 165 | Dispensers: Cup, Dish, Silverware, Tray, Etc. |
+| 165 | Ice equipment: carts, Crushers, Shavers, and Storage Bins |
+| 165 | Ovens, Convection and Microwave |
+| 165 | Repair Parts, Cafeteria and Kitchen Equipment |
 
 <!--
 type: tab
-title: 160 Tools
+title: 175 Chemical Supplies
 -->
 
-The table below includes the commodity codes (class and subclass list) for forknives, stones, & sharpeners.
+The table below includes the commodity codes (class and subclass list) for chemical laboratory equipment and supplies
 
 | Code | Description |
 | -------- | :--: |
- 
-175 - chemical laboratory equipment and supplies
-17503 - aprons and gloves, laboratory: plastic, rubber, etc.
-17508 - balances and accessories
-17510 - burners, heat guns, hot plates (with or without stirring), m
-17513 - chemicals, laboratory (acs, cp, practical, reagent grade, et
-17517 - containers (for liquefied or compressed gases), laboratory s
-17527 - electrode sensing meters and electrodes: dissolved oxygen, p
-17529 - extraction apparatus, laboratory
-17532 - filtering apparatus and filters (for liquids)
-17533 - filter paper and membranes
-17536 - furnaces, laboratory
-17539 - glass pipe and fittings
-17542 - glassware, laboratory (stock only)
-17544 - glassware washing compounds
-17546 - holders, glass tube
-17549 - interval timers and actuators, electrical and mechanical
-17551 - ion exchange materials: liquids, resins, etc.
-17554 - laboratory supplies: asbestos squares, corks, files, glass c
-17560 - ovens, laboratory
-17562 - paper, laboratory
-17565 - ph buffer solutions, indicators, and papers
-17567 - pipetters and dispensers, semiautomatic (single action)
-17568 - plastic ware, all types
-17574 - reagents and chemicals, ultrapure (meeting higher standards
-17575 - refractometers
-17577 - sand, cement testing (ottawa grade)
-17578 - screening and sieving apparatus and accessories: riffle samp
-17580 - stainless steel ware, all kinds
-17582 - stirrers, blenders, homogenizers, and shakers
-17584 - stoppers, rubber and synthetic
-17585 - syringes, laboratory, manual and automatic
-17587 - thermometers, general laboratory type
-17589 - tubing, plastic, all types
-17590 - tubing, rubber, all types
-17595 - water purification apparatus & treatments (distilled, reagen
+| 175 | Aprons and Gloves, Laboratory: Plastic, Rubber, Etc. |
+| 175 | Balances and Accessories |
+| 175 | Burners, Heat Guns, Hot Plates (With or Without Stirring), m |
+| 175 | Chemicals, Laboratory (acs, cp, practical, reagent grade, et |
+| 175 | Containers (For Liquefied or Compressed Gases), Laboratory s |
+| 175 | Electrode Sensing Meters and Electrodes: Dissolved Oxygen, p |
+| 175 | Extraction Apparatus, Laboratory |
+| 175 | Filtering Apparatus and Filters (For Liquids) |
+| 175 | Filter Paper and Membranes |
+| 175 | Furnaces, Laboratory |
+| 175 | Glass Pipe and Fittings |
+| 175 | Glassware, Laboratory (Stock Only) |
+| 175 | Glassware Washing Compounds |
+| 175 | Holders, Glass Tube |
+| 175 | Interval Timers and Actuators, Electrical and Mechanical |
+| 175 | Ion Exchange Materials: Liquids, Resins, Etc. |
+| 175 | Laboratory Supplies: Asbestos Squares, Corks, Files, Glass c |
+| 175 | Ovens, Laboratory |
+| 175 | Paper, Laboratory |
+| 175 | Ph buffer Solutions, Indicators, and Papers |
+| 175 | Pipetters and Dispensers, Semiautomatic (Single Action) |
+| 175 | Plastic wWre, All Types |
+| 175 | Reagents and Chemicals, Ultrapure (Meeting Higher Standards) |
+| 175 | Refractometers |
+| 175 | Sand, Cement Testing (Ottawa Grade) |
+| 175 | Screening and Sieving Apparatus and Accessories: Riffle Samp |
+| 175 | Stainless Steel Ware, All Kinds |
+| 175 | Stirrers, Blenders, Homogenizers, and Shakers |
+| 175 | Stoppers, Rubber and Synthetic |
+| 175 | Syringes, Laboratory, Manual and Automatic |
+| 175 | Thermometers, General Laboratory Type |
+| 175 | Tubing, Plastic, All Types |
+| 175 | Tubing, Rubber, All Types |
+| 175 | Water Purification Apparatus & Treatments (Distilled, Reagen ) |
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 180 Abrasives
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for abrasives: feldspar, pumice, silica, etc.
 
 | Code | Description |
 | -------- | :--: |
-18002 - abrasives: feldspar, pumice, silica, etc.
-18004 - acids, inorganic: hydrochloric, phosphoric, sulfuric, etc.
-18006 - acids, organic: hydroxyacetic, oleic, stearic, etc.
-18008 - alcohols
-18012 - ammonium hydroxide (aqua ammonia) and amines
-18014 - antioxidants
-18020 - bacteriostats and germicides (except quaternary ammonium typ
-18024 - bicarbonates and carbonates
-18028 - boron compounds
-18030 - brighteners, fluorescent (optical bleaches)
-18034 - chelating and sequestering agents (except phosphates)
-18036 - chlorine carriers, inorganic and organic
-18042 - dyes and pigments
-18066 - mineral oil, petrolatum, etc.
-18084 - silicates
-18086 - sodium carboxymethylcellulose (cmc) and other cellulose deri
-18088 - solvents and coupling agents
-18090 - sulfates, inorganic
-18091 - surfactants, amphoteric and cationic: detergents, emulsifier
-18092 - surfactants, anionic: organic phosphates, sulfates, sulfonat
-18093 - surfactants, nonionic: ethoxylated alcohols, ethoxylated lan
+| 180 | Acids, Inorganic: Hydrochloric, Phosphoric, Sulfuric, Etc. |
+| 180 | Acids, Organic: Hydroxyacetic, Oleic, Stearic, Etc. |
+| 180 | Alcohols |
+| 180 | Ammonium Hydroxide (Aqua Ammonia) and Amines |
+| 180 | Antioxidants |
+| 180 | Bacteriostats and Germicides (Except Quaternary Ammonium Typ |
+| 180 | Bicarbonates and Carbonates |
+| 180 | Boron Compounds |
+| 180 | Brighteners, Fluorescent (Optical Bleaches) |
+| 180 | Chelating and Sequestering Agents (Except Phosphates) |
+| 180 | Chlorine Carriers, Inorganic and Organic |
+| 180 | Dyes and Pigments |
+| 180 | Mineral Oil, Petrolatum, Etc. |
+| 180 | Silicates |
+| 180 | Sodium Carboxymethylcellulose (cmc) and Other Cellulose Deri |
+| 180 | Solvents and coupling agents |
+| 180 | Sulfates, Inorganic |
+| 180 | Surfactants, Amphoteric and Cationic: Detergents, Emulsifier |
+| 180 | Surfactants, Anionic: Organic Phosphates, Sulfates, Sulfonat |
+| 180 | Surfactants, Nonionic: Ethoxylated Alcohols, Ethoxylated Lan |
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 190 Chemicals
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for chemicals and solvents, commercial (in bulk).
 
 | Code | Description |
 | -------- | :--: |
- 
-190 - chemicals and solvents, commercial (in bulk)
-19018 - acids, mineral: boric, hydrobromic, hydrochloric, sulfuric,
-19025 - alcohols: ethyl, isopropyl, methyl, etc., and glycerine
-19036 - chemicals, bulk (not otherwise itemized)
-19046 - formaldehyde solution (formalin)
-19060 - ketones: acetone, diacetone alcohol, methyl isobutyl ketone,
-19081 - pentachlorophenol (penta), creosote oil, and other wood pres
-19085 - sodium phosphates and polyphosphates
-19090 - solvents (not otherwise itemized)
+| 190 | Acids, Mineral: Boric, Hydrobromic, Hydrochloric, Sulfuric |
+| 190 | Alcohols: Ethyl, Isopropyl, Methyl, Etc., and Glycerine |
+| 190 | Chemicals, Bulk (Not Otherwise Itemized) |
+| 190 | Formaldehyde Solution (Formalin) |
+| 190 | Ketones: Acetone, Diacetone Alcohol, Methyl Isobutyl Ketone |
+| 19081 - pentachlorophenol (penta), creosote oil, and other wood pres |
+| 19085 - sodium phosphates and polyphosphates |
+| 19090 - solvents (not otherwise itemized) |
 
 <!--
 type: tab
@@ -1148,7 +1143,7 @@ The table below includes the commodity codes (class and subclass list) for cutle
 
 | Code | Description |
 | -------- | :--: |
-24007 - cooking utensils, aluminum
+24007 - cooking utensils, aluminum |
 24014 - beverage servers, all types
 24021 - chinaware: cups & plates
 24028 - cutlery: knives, spatulas
@@ -3913,23 +3908,55 @@ The table below includes the commodity codes (class and subclass list) for testi
 | 845 | Testers, Moisture-Density (For Soils) |
 | 845 | Precision Linear Measuring Instruments: Calipers and Vernier |
 | 845 | Soil Testing Apparatus |
- 
-850 - textiles, fibers, household linens, and piece goods
+
+<!--
+type: tab
+title: 850 Apparatus Instruments
+-->
+
+The table below includes the commodity codes (class and subclass list) for textiles, fibers, household linens, and piece goods.
+
+| Code | Description |
+| -------- | :--: |
 85012 - blankets, bedding
 85024 - cloth (yard goods): blends, mixtures, & synthetics
 85060 - mattress protectors & pillow covers, synthetic
 85072 - shower curtain, synthetic
 85092 - towels, washcloths, and bathmats, huck and terry
+
+<!--
+type: tab
+title: 855 Theatrical Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for theatrical equipment and supplies.
+
+| Code | Description |
+| -------- | :--: |
+| 855 | Customes & Accessories |
+| 855 | Lighting and Dimming Controls: Autotransformer Dimmers, cont. |
+
+<!--
+type: tab
+title: 860 Theatrical Equip
+-->
+
+The table below includes the commodity codes (class and subclass list) for tickets, coupon books, sales books, script books, etc.
+
+| Code | Description |
+| -------- | :--: |
+| 860 | Coupon Books |
+| 860 | Tickets, Roll Type |
  
-855 - theatrical equipment and supplies
-85515 - customes & accessories
-85544 - lighting and dimming controls: autotransformer dimmers, cont
- 
-860 - tickets, coupon books, sales books, script books, etc.
-86020 - coupon books
-86075 - tickets, roll type
- 
-863 - tires and tubes
+<!--
+type: tab
+title: 863 Tires and Tubes
+-->
+
+The table below includes the commodity codes (class and subclass list) for tickets, coupon books, sales books, script books, etc.
+
+| Code | Description |
+| -------- | :--: |
 86305 - tires and tubes, passenger vehicles
 86307 - tires and tubes, light trucks
 86310 - tires and tubes, medium truck and bus
@@ -4295,39 +4322,48 @@ The table below includes the commodity codes (class and subclass list) for testi
 95660 - professional journal subscriptions
 95670 - research services (library)
  
-961 - miscellaneous professional services
-96102 - administrative services, all kinds
-96103 - analytical, studies, and survey services (not otherwise clas
-96104 - artists
-96105 - archaeological / historical studies
-96110 - bond counsel services
-96115 - concessions, catering, vending: mobile and stationary
-96117 - construction management
-96118 - caretaker services
-96119 - environmental management
-96120 - consulting (not otherwise classified)
-96121 - cost estimating
-96124 - court reporting services
-96129 - ecological restoration
-96130 - employment agency and search firm services (see class 964 fo
-96131 - environmental assessment/research
-96132 - environmental impact studies
-96133 - expert witness services
-96134 - feasibility studies (all kinds)
-96135 - environmental contamination cleanup
-96136 - economic impact studies
-96137 - fleet management
-96138 - facilitator services
-96141 - fuel management services
-96143 - hydrological services
-96145 - inspection and certification services
-96148 - laboratory and field testing services
-96150 - legal services
-96151 - lobby services
-96152 - management consulting services
-96153 - marketing services
-96154 - mitigation services, wetlands
-96155 - mediator services
+
+<!--
+type: tab
+title: 961 Misc Prof Serv
+-->
+
+The table below includes the commodity codes (class and subclass list) for miscellaneous professional services.
+
+| Code | Description |
+| -------- | :--: |
+| 961 | Administrative Services, All Kinds |
+| 961 | Analytical, Studies & Survey Services (Not Otherwise) |
+| 961 | Artists |
+| 961 | Archaeological / Historical Studies |
+| 961 | Bond Counsel Services |
+| 961 | Concessions, Catering, Vending: Mobile and Stationary |
+| 961 | Construction Management |
+| 961 | Caretaker Services |
+| 961 | Environmental Management |
+| 961 | Consulting (Not Otherwise classified) |
+| 961 | Cost Estimating |
+| 961 | Court Reporting Services |
+| 961 | Ecological Restoration |
+| 961 | Employment Agency and Search Firm Services (See Class 964)
+| 961 | Environmental Assessment/Research |
+| 961 | Environmental Impact Studies |
+| 961 | Expert Witness Services |
+| 961 | Feasibility Studies (All Kinds) |
+| 961 | Environmental Contamination Cleanup |
+| 961 | Economic Impact Studies |
+| 961 | Fleet Management |
+| 961 | Facilitator Services |
+| 961 | Fuel Management Services |
+| 961 | Hydrological Services |
+| 961 | Inspection and Certification Services |
+| 961 | Laboratory and Field Testing |
+| 961 | Legal Services |
+| 961 | Lobby Services |
+| 961 | Management Consulting Services |
+| 961 | Marketing Services |
+| 961 | Mitigation Services, Wetlands |
+| 961 | Mediator Services |
 96159 - peer review (expert panel)
 96160 - public opinion surveys
 96168 - sports professionals services
@@ -4337,7 +4373,7 @@ The table below includes the commodity codes (class and subclass list) for testi
 96178 - water resources consultants
 96179 - travel programs management services
 96188 - weather forecasting services
- 
+
 962 - miscellaneous services
 96201 - cost sharing agreements w/governmental agencies
 96202 - cooperative agreements
@@ -4395,6 +4431,9 @@ The table below includes the commodity codes (class and subclass list) for testi
 96295 - warehousing and storage services (not storage space rental)
 96296 - well plugging/drilling services
 96297 - towing services
+
+
+
  
 964 - personnel, temporary (employment agency services)
 96426 - computer programming personnel
@@ -4536,61 +4575,24 @@ The table below includes the commodity codes (class and subclass list) for testi
 98888 - tree trimming and pruning services
 98889 - tree/vegetation/weed control services (non-aquatic)
 98890 - revegetation services
+
+<!--
+type: tab
+title: 998 Surplus Items
+-->
+
+The table below includes the commodity codes (class and subclass list) for security, fire, safety, and emergency services.
+
+| Code | Description |
+| -------- | :--: |
  
-990 - security, fire, safety, and emergency services
+990 - 
 99005 - alarm services
 99042 - fire and safety services
 99046 - guard and security services
 99052 - investigative services
 99067 - patrol services
 99090 - x-ray film badge services
- 
-998 - sale of surplus & obsolete items
-99800 - sale of surplus & obsolete items
-99801 - sale of trees on district lands
-
-
-<!--
-type: tab
-title: 961 Misc Prof Serv
--->
-
-The table below includes the commodity codes (class and subclass list) for miscellaneous professional services
-
-| Code | Description |
-| -------- | :--: |
-| 961 | Administrative Services, All Kinds |
-| 961 | Analytical, Studies & Survey Services (Not Otherwise) |
-| 961 | Artists |
-| 961 | Archaeological / Historical Studies |
-| 961 | Bond Counsel Services |
-| 961 | Concessions, Catering, Vending: Mobile and Stationary |
-| 961 | Construction Management |
-| 961 | Caretaker Services |
-| 961 | Environmental Management |
-| 961 | Consulting (Not Otherwise classified) |
-| 961 | Cost Estimating |
-| 961 | Court Reporting Services |
-| 961 | Ecological Restoration |
-| 961 | Employment Agency and Search Firm Services (See Class 964)
-| 961 | Environmental Assessment/Research |
-| 961 | Environmental Impact Studies |
-| 961 | Expert Witness Services |
-| 961 | Feasibility Studies (All Kinds) |
-| 961 | Environmental Contamination Cleanup |
-| 961 | Economic Impact Studies |
-| 961 | Fleet Management |
-| 961 | Facilitator Services |
-| 961 | Fuel Management Services |
-| 961 | Hydrological Services |
-| 961 | Inspection and Certification Services |
-| 961 | Laboratory and Field Testing |
-| 961 | Legal Services |
-| 961 | Lobby Services |
-| 961 | Management Consulting Services |
-| 961 | Marketing Services |
-| 961 | Mitigation Services, Wetlands |
-| 961 | Mediator Services |
 
 <!--
 type: tab
@@ -4607,6 +4609,19 @@ The table below includes the commodity codes (class and subclass list) for secur
 | 990 | Investigative Services |
 | 990 | Patrol Services |
 | 990 | X-Ray Film Badge Services |
+
+<!--
+type: tab
+title: 998 Surplus Items
+-->
+
+The table below includes the commodity codes (class and subclass list) for sale of surplus & obsolete items
+
+| Code | Description |
+| -------- | :--: |
+| 998 | Sale of Surplus & Obsolete Items |
+| 998 | Sale of Trees on District Lands |
+
 
 <!-- type: tab-end -->
 
