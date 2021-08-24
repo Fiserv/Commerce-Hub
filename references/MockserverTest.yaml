@@ -517,7 +517,7 @@ paths:
           description: Created
           content:
             application/json:
-              schema: {$ref: '#/components/examples/Test'}
+              schema: {$ref: '#/components/schemas/Test'}
               examples:
                 PaymentCard: {summary: EDSResponse with PaymentCard, $ref: '#/components/examples/PaymentCardEDSResponse'}
                 PaymentToken: {summary: EDSResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSResponse'}
@@ -2534,6 +2534,16 @@ components:
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+    Test:
+      x-model-version: 1.0
+      type: object
+      properties:
+        id: 
+          type: number
+        dob:
+          type: string
+          format: date
+        
   examples:
     ApplePayRequest:
       value:
