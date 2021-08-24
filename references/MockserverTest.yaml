@@ -3155,16 +3155,7 @@ components:
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021.02.25
               14:14:38 (CET)'}
     Test:
-      type: object
-      properties:
-        StartDt:
-          type: string
-          description: Start date in {yyyy-MM-ddTHH:mm:ss.SSS} format.
-          format: date-time
-          example: 2021-01-31T23:59:59.999Z
-        EndDt:
-          type: string
-          description: End date in {yyyy-MM-ddTHH:mm:ss.SSS} format.
-          format: date-time
-          example: 2021-01-31T23:59:59.999Z
-      description: Details of the time frame when the address is active.
+      value:
+        id": 1
+        name: 'John Thomas' 
+        dob: '2020-01-20'
