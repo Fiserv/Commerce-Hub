@@ -519,7 +519,7 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/Test'}
               examples:
-                PaymentCard: {summary: EDSResponse with PaymentCard, $ref: '#/components/examples/PaymentCardEDSResponse'}
+                PaymentCard: {summary: EDSResponse with PaymentCard, $ref: '#/components/examples/Test'}
                 PaymentToken: {summary: EDSResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
@@ -2540,6 +2540,8 @@ components:
       properties:
         id: 
           type: number
+        name:
+          type: string
         dob:
           type: string
           format: date
