@@ -516,7 +516,8 @@ paths:
           description: Created
           content:
             application/json:
-              schema: $ref: '#/components/schemas/EnhancedDataServiceResponse'
+              schema: 
+                $ref: '#/components/schemas/EnhancedDataServiceResponse'
               examples:
                 PaymentCard: {summary: EDSResponse with PaymentCard, $ref: '#/components/examples/PaymentCardEDSResponse'}
                 PaymentToken: {summary: EDSResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSResponse'}
