@@ -52,7 +52,7 @@ The below table identifies the valid values of `origin`.
 
 | Value | Description |
 |-------|-------------|
-| *ECOM* | Card Not Present email or internet |
+| *ECOM* | Card not present email or internet |
 | *MOTO* | Mail order or telephone order |
 | *POS* | Card Present retail face to face |
 
