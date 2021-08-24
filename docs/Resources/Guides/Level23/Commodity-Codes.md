@@ -968,139 +968,128 @@ The table below includes the commodity codes (class and subclass list) for cloth
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 205 Computers
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for computers and information processing systems: hardware, software. 
 
 | Code | Description |
 | -------- | :--: |
- 
-205 - computers and information processing systems: hardware, soft
-20502 - cables, computer, premade: printer, terminal, disk, etc. att
-20505 - central processing unit (cpu): computer assisted design/manu
-20507 - central processing unit (cpu): main frame oriented (analog/s
-20509 - central processing unit (cpu): main frame oriented (digital)
-20511 - central processing unit (cpu): microcomputer oriented or sys
-20513 - central processing unit (cpu): minicomputer oriented or syst
-20514 - central processing unit (cpu) not otherwise classified
-20516 - communication control units: concentrators, multiplexors, co
-20518 - communication processors and protocol convertors: front-end
-20520 - computer assisted retrieval systems: indexing, retrieval and
-20524 - covers and enclosures (acoustical and protective): data or i
-20526 - data entry/remote job entry systems: dedicated single functi
-20528 - data or information processing programmer's supplies and acc
-20531 - direct access storage devices & controllers: main frame sys
-20532 - direct access storage devices & controllers: microcomputer
-20533 - direct access storage devices & controllers: minicomputer
-20535 - forms bursters, decollators, detachers, feeders, strippers a
-20536 - memory add-on units and memory upgrades: chips, boards, encl
-20537 - memory add-on units and memory upgrades: chips, boards, encl
-20538 - memory add-on units and memory upgrades: chips, boards, encl
-20539 - modems, data communications
-20540 - networks, computer
-20541 - optical character readers and scanners: ocr devices, scanner
-20543 - peripheral devices and accessories, computer system: individ
-20545 - power supplies, surge protectors, uninterruptible power supp
-20547 - printers and plotters: workstation printers, plotters, word
-20549 - printers and printer sub-systems, computer system: system li
-20552 - ribbons and toner, data processing or word processing printe
-20553 - robotics
-20554 - software, application: preprogrammed software for main frame
-20556 - software, application: preprogrammed software for
-microcompu
-20558 - software, application: preprogrammed software for minicomput
-20560 - software, communications control: preprogrammed software
-for
-20562 - software, data base management control: preprogrammed
-softwa
-20564 - software, operating system: preprogrammed software main
-frame
-20566 - software, operating system: preprogrammed software micro
-computer
-20568 - software, operating system: preprogrammed for mini computer
-20571 - supplies and accessories, dasd unit: disk packs, floppy disk
-20573 - supplies and accessories, keyboard: data and word processing
-20575 - supplies and accessories, miscellaneous data processing: crt
-20577 - supplies and accessories, plotter: data and word processing
-20579 - supplies and accessories, printer: data and word processing
-20581 - supplies, data processing tape: data processing tapes, tape
-20583 - supplies, data processing tape/disk media: cleaners, contain
-20585 - tape units and tape sub-systems, data processing: tape media
-20587 - terminals and crt's, graphic: data processing systems (all s
-20589 - terminals and crt's, non-graphic: data processing systems (a
-20593 - word processing system and equipment: dedicated word process
+| 205 | Cables, Computer, Premade: Printer, Terminal, Disk, Etc. att | 
+| 205 | Central Processing Unit (CPU): Computer Assisted Design/Manu | 
+| 205 | Central Processing Unit (CPU): Main Frame Oriented (Analog/S) | 
+| 205 | Central Processing Unit (CPU): Main Frame Oriented (Digital) | 
+| 205 | Central Processing Unit (CPU): Microcomputer Oriented or Sys | 
+| 205 | Central Processing Unit (CPU): Minicomputer Oriented or Syst | 
+| 205 | Central Processing Unit (CPU) Not Otherwise Classified | 
+| 205 | Communication Control Units: Concentrators, Multiplexors, Co | 
+| 205 | Communication Processors and Protocol Convertors: Front-End | 
+| 205 | Computer Assisted Retrieval Systems: Indexing, Retrieval And | 
+| 205 | Covers and Enclosures (Acoustical and Protective): Data or I | 
+| 205 | Data Entry/Remote job entry systems: dedicated single functi | 
+| 205 | Data or Information Processing Programmer's Supplies and ACC | 
+| 205 | Direct Access Storage Devices & Controllers: Main Frame Sys | 
+| 205 | Direct Access Storage Devices & Controllers: Microcomputer | 
+| 205 | Direct Access Storage Devices & Controllers: Minicomputer | 
+| 205 | Forms Bursters, Decollators, Detachers, Feeders, Strippers A | 
+| 205 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl | 
+| 205 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl  | 
+| 205 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl  | 
+| 205 | Modems, Data Communications | 
+| 205 | Networks, Computer | 
+| 205 | Optical Character Readers and Scanners: OCR Devices, Scanner |
+| 205 | Peripheral Devices and Accessories, Computer System: Individ |
+| 205 | Power Supplies, Surge Protectors, Uninterruptible Power Supp |
+| 205 | Printers and Plotters: Workstation Printers, Plotters, Word |
+| 205 | Printers and Printer Sub-Systems, Computer System: System Li |
+| 205 | Ribbons and Toner, Data Processing or Word Processing Printe |
+| 205 | Robotics |
+| 205 | Software, Application: Preprogrammed Software for Main Frame |
+| 205 | Software, Application: Preprogrammed Software for Microcompu |
+| 205 | Software, Application: Preprogrammed Software for Minicomput |
+| 205 | Software, Communications Control: Preprogrammed Software For |
+| 205 | Software, Data Base Management Control: Preprogrammed Software |
+| 205 | Software, Operating System: Preprogrammed Software Mainframe |
+| 205 | Software, Operating System: Preprogrammed Software Microcomputer |
+| 205 | Software, Operating System: Preprogrammed Software Mini computer |
+| 205 | Supplies and Accessories, Dasd Unit: Disk Packs, Floppy Disk |
+| 205 | Supplies and Accessories, Keyboard: Data and Word Processing |
+| 205 | Supplies and Accessories, Miscellaneous Data Processing: CRT |
+| 205 | Supplies and Accessories, Plotter: Data and Word Processing |
+| 205 | Supplies and Accessories, Printer: Data and Word Processing |
+| 205 | Supplies, Data Processing Tape: Data Processing Tapes, Tape |
+| 205 | Supplies, Data Processing Tape/Disk Media: Cleaners, Contain |
+| 205 | Tape Units and Tape Sub-Systems, Data Processing: Tape Media |
+| 205 | Terminals and CRT's, Graphic: Data Processing Systems (all s) |
+| 205 | Terminals and CRT's, Non-Graphic: Data Processing Systems (a) |
+| 205 | Word processing System and Equipment: Dedicated Word Process |
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 210 Concrete Materials
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for concrete and metal culverts, pilings, pipe, septic tanks, ac. 
 
 | Code | Description |
 | -------- | :--: |
- 
-210 - concrete and metal culverts, pilings, pipe, septic tanks, ac
-21010 - blocks, hollow and solid, lightweight
-21011 - blocks, hollow and solid, normal weight
-21012 - blocks, kiln and oven
-21013 - box voids and void concrete forms
-21016 - concrete beams, channels, roof decks, etc., prestressed
-21025 - concrete pilings
-21027 - connecting bands, corrugated metal
-21029 - culverts and drainage pipe, corrugated metal
-21030 - curbs, parking and curb boxes: vehicle
-21031 - ells, tees and valves, corrugated metal
-21032 - forms, fiber tube for concrete construction
-21033 - irrigation pipe, metal
-21035 - joint sealing compound (for sewer and drain pipes)
-21045 - meter boxes and concrete pull boxes
-21055 - paving and stepping blocks
-21060 - pipe and fittings (up to 4 inches)
-21062 - pipe and culverts and fittings (over 4 inches), non-reinforc
-21064 - pipe and culverts (over 4 inches), reinforced
-21066 - pipe and fittings, pre-stressed concrete
-21070 - pipe, well casing
-21072 - risers, reinforced concrete
-21075 - septic tanks, grease traps, and water troughs
-21080 - ties and anchors and other masonry wall reinforcements
+| 210 | Blocks, Hollow and Solid, Lightweight |
+| 210 | Blocks, Hollow and Solid Normal Weight |
+| 210 | Blocks, Kiln and Oven |
+| 210 | Box Voids and Void Concrete Forms |
+| 210 | Concrete Beams, Channels, Roof Decks, etc., Prestressed |
+| 210 | Concrete Pilings |
+| 210 | Connecting Bands, Corrugated Metal |
+| 210 | Culverts and Drainage Pipe, Corrugated Metal |
+| 210 | Curbs, Parking and Curb Boxes: Vehicle |
+| 210 | Ells, Tees and Valves, Corrugated Metal |
+| 210 | Forms, Fiber Tube for Concrete Construction |
+| 210 | Irrigation Pipe, Metal |
+| 210 | Joint Sealing Compound (For Sewer and Drain Pipes) |
+| 210 | Meter Boxes and Concrete Pull Boxes |
+| 210 | Paving and Stepping Blocks |
+| 210 | Pipe and Fittings (Up to 4 Inches) |
+| 210 | Pipe and Culverts and Fittings (Over 4 Inches), Non-Reinforce |
+| 210 | Pipe and Culverts (Over 4 Inches), Reinforced |
+| 210 | Pipe and Fittings, Pre-Stressed Concrete |
+| 210 | Pipe, Well Casing |
+| 210 | Risers, Reinforced Concrete |
+| 210 | Septic Tanks, Grease Traps, and Water Troughs |
+| 210 | Ties and Anchors and Other Masonry Wall Reinforcements |
 
 <!--
 type: tab
-title: 180 Building Struc
+title: 220 Controllers
 -->
 
-The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities primarily for ma.
+The table below includes the commodity codes (class and subclass list) for controlling, indicating, measuring, monitoring, and recording.
 
 | Code | Description |
 | -------- | :--: |
- 
-220 - controlling, indicating, measuring, monitoring, and recordin
-22002 - accelerometers
-22004 - actuators and controls (for robotics, servo systems, etc.)
-22007 - clinometers and inclinometers (for slope and tilt measuremen
-22009 - conductivity instruments (for dissolved solids)
-22015 - flow controllers, indicators, and recorders (for air and gas
-22016 - flow controllers and recorders (for liquids)
-22018 - gauges: altitude, pressure, temperature, liquid level, etc.
-22033 - liquid level controllers, indicators, and recorders
-22034 - logging devices, electronic (long-range data collection and
-22036 - oscillographs (cathode-ray recording systems) and accessorie
-22042 - photoelectric control devices
-22043 - position measuring devices (x-y coordinates)
-22045 - pressure controllers, indicators, and recorders
-22046 - pressure converters
-22048 - radar instruments (marine type), and accessories: magnetrons
-22053 - radiant energy measuring devices (for visual, uv, and ir): l
-22054 - recorders and plotters, general laboratory type (strip chart
-22060 - sonar instruments, research type
-22061 - sound analysis equipment and accessories: noise meters and d
-22063 - strain gauges, force gauges, and associated instruments: str
-22068 - surface profile measurement equipment
-22072 - temperature controllers, indicators, and recorders (digital
-22075 - transducers and couplers
-22087 - weather instruments: anemometers, barographs, barometers, hy
+| 220 | Accelerometers |
+| 220 | Actuators and Controls (For Robotics, Servo Systems, Etc.) |
+| 220 | Clinometers and Inclinometers (For Slope and Tilt Measurement) |
+| 220 | Conductivity Instruments (For Dissolved Solids) |
+| 220 | Flow Controllers, Indicators, and Recorders (For Air and Gas) |
+| 220 | Flow Controllers and Recorders (For Liquids) |
+| 220 | Gauges: Altitude, Pressure, Temperature, Liquid Level, Etc. |
+| 220 | Liquid Level Controllers, Indicators, and Recorders |
+| 220 | Logging Devices, Electronic (Long-Range Data Collection and) |
+| 220 | Scillographs (Cathode-Ray Recording Systems) and Accessories |
+| 220 | Photoelectric Control Devices |
+| 220 | Position Measuring Devices (X-Y Coordinates) |
+| 220 | Pressure Controllers, Indicators, and Recorders |
+| 220 | Pressure Converters |
+| 220 | Radar Instruments (Marine Type), and Accessories: Magnetrons |
+| 220 | Radiant Energy Measuring Devices (For Visual, UV, and IR): L|
+| 220 | Recorders and Plotters, General Laboratory Type (Strip Chart) |
+| 220 | Sonar Instruments, Research Type |
+| 220 | Sound Analysis Equipment and Accessories: Noise Meters and D |
+| 220 | Strain Gauges, Force Gauges, and Associated Instruments: STR |
+| 220 | Surface Profile Measurement Equipment |
+| 220 | Temperature Controllers, Indicators, and Recorders (Digital) |
+| 220 | Transducers and Couplers |
+| 220 | Weather Instruments: Anemometers, Barographs, Barometers, HY |
 
 <!--
 type: tab
@@ -1177,51 +1166,48 @@ The table below includes the commodity codes (class and subclass list) for decal
 
 <!--
 type: tab
-title: 240 Cutlery
+title: 265 Upholstery Material
 -->
 
-The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+The table below includes the commodity codes (class and subclass list) for draperies, curtains, and upholstery material (including auto).
 
 | Code | Description |
 | -------- | :--: |
-265 - draperies, curtains, and upholstery material (including auto
-26510 - draperies and curtains, installed
-26520 - curtains and draperies
-26530 - curtain and drapery hardware: hooks, rods, etc.
-26540 - material, drapery
-26544 - material, upholstery (fabric), furniture and auto
-26546 - material, upholstery (vinyl), furniture and auto
+| 265 | Draperies and Curtains, Installed |
+| 265 | Curtains and Draperies |
+| 265 | Curtain and Drapery Hardware: Hooks, Rods, Etc. |
+| 265 | Material, Drapery |
+| 265 | Material, Upholstery (Fabric), Furniture and Auto |
+| 265 | Material, Upholstery (Vinyl), Furniture and Auto |
 
 <!--
 type: tab
-title: 240 Cutlery
+title: 270 Pharmaceuticals
 -->
 
-The table below includes the commodity codes (class and subclass list) for cutlery, dishes, flatware, glassware, trays, utensils, and s.
+The table below includes the commodity codes (class and subclass list) for drugs, pharmaceuticals and biologicals (for human therapeutic).
 
 | Code | Description |
 | -------- | :--: |
- 
-270 - drugs, pharmaceuticals and biologicals (for human therapeuti
-27003 - drugs, allergy
-27004 - drugs, antibiotic
-27006 - drugs, anti-inflammatory
-27008 - drugs, asthma
-27011 - drugs, blood pressure & circulation
-27018 - drugs, cold & flu (not otherwise classified)
-27021 - drugs, cough
-27026 - drugs, diarrhea
-27027 - drugs, digestive system
-27031 - drugs, eye, ear nose & throat
-27049 - drugs, indigestion
-27053 - laxatives and enemas
-27055 - drugs & pharmaceuticals, over the counter
-27059 - drugs, motion sickness
-27064 - drugs, nausea
-27067 - drugs, pain & fever
-27084 - topicals: creams, lotions, shampoos, skin cleansers, etc.
-27092 - vaccines
-27093 - drugs, vascular headache and fatigue
+| 270 | Drugs, Allergy |
+| 270 | Drugs, Antibiotic |
+| 270 | Drugs, Anti-Inflammatory |
+| 270 | Drugs, Asthma |
+| 270 | Drugs, Blood Pressure & Circulation |
+| 270 | Drugs, Cold & Flu (Not Otherwise Classified) |
+| 270 | Drugs, Cough |
+| 270 | Drugs, Diarrhea |
+| 270 | Drugs, Digestive System |
+| 270 | Drugs, Eye, Ear Nose & Throat |
+| 270 | Drugs, Indigestion |
+| 270 | Laxatives and Enemas |
+| 270 | Drugs & Pharmaceuticals, Over the Counter |
+| 270 | Drugs, Motion Sickness |
+| 270 | Drugs, Nausea |
+| 270 | Drugs, Pain & Fever |
+| 270 | Topicals: Creams, Lotions, Shampoos, Skin Cleansers, Etc. |
+| 270 | Vaccines |
+| 270 | Drugs, Vascular Headache and Fatigue |
 
 <!--
 type: tab
@@ -1458,23 +1444,21 @@ The table below includes the commodity codes (class and subclass list) for eleva
 
 <!--
 type: tab
-title: 300 Embossing and Engraving
+title: 310 Envelopes
 -->
 
-The table below includes the commodity codes (class and subclass list) for elevators and building type.
+The table below includes the commodity codes (class and subclass list) for envelopes, plain or printed. 
 
 | Code | Description |
 | -------- | :--: |
- 
-310 - envelopes, plain or printed
-31006 - envelopes: clasp, string, etc.
-31024 - envelopes, plain, special
-31030 - envelopes, plain, stock sizes
-31042 - envelopes, printed, special
-31048 - envelopes, printed, stock sizes
-31060 - envelopes, recycled paper
-31065 - envelopes: seed, metal or plastic closure
-31067 - envelopes, shipping
+| 310 | Envelopes: Clasp, String, Etc. |
+| 310 | Envelopes, Plain, Special |
+| 310 | Envelopes, Plain, Stock Sizes |
+| 310 | Envelopes, Printed, Special |
+| 310 | Envelopes, Printed, Stock Sizes |
+| 310 | Envelopes, Recycled Paper |
+| 310 | Envelopes: Seed, Metal or Plastic Closure |
+| 310 | Envelopes, Shipping | 
 
 <!--
 type: tab
@@ -1526,15 +1510,13 @@ The table below includes the commodity codes (class and subclass list) for eleva
 
 <!--
 type: tab
-title: 300 Embossing and Engraving
+title: 330 Fencing
 -->
 
-The table below includes the commodity codes (class and subclass list) for elevators and building type.
+The table below includes the commodity codes (class and subclass list) for fencing.
 
 | Code | Description |
 | -------- | :--: |
- 
-330 - fencing
 33013 - chain link fencing and fittings (including fabric, gates, pa
 33037 - metal slat fencing and gates
 33049 - split rail fencing
