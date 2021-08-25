@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-
 
 # PaymentEMV
 
-EMV is a secure payment method for payment terminals and automated teller machines.
+EMV chip and PIN is a secure payment method for payment terminals and automated teller machines.
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include EMV support and the documents related to this feature will be released soon.
