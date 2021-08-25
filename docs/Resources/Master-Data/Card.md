@@ -24,6 +24,8 @@ The below table identifies the parameters in the `card` object.
 | `securityCodeIndicator` | *string* | 15 | | Indicates how the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#security-code-indicator) is passed |
 | `bin` | *String* | 8 | | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN). The BIN identifies the issuer and Level 2/3 qualifications. |
 | `last4` | *String* | 4 | | Last four digits of the Primary Account Number (PAN) |
+| `beginningBalance` | *number* | 18,3 | | Beginning card balance |
+| `endingBalance` | *number* | 18,3 | | Ending card balance |
 
 
 <!--
@@ -43,7 +45,9 @@ JSON string format for `card`:
       "securityCode": "111",
       "securityCodeIndicator": "PROVIDED",
       "bin": "400555",
-      "last4": "0019"
+      "last4": "0019",
+      "beginningBalance": 100.01,
+      "endingBalance": 95.00
    }
 }
 ```
