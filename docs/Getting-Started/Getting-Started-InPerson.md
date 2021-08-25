@@ -7,6 +7,15 @@ tags: [carat, commerce-hub, enterprise, getting-started, in-person, payments, ca
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include card present transactions support and the documents related to the features will be released soon.
 
+## Overview
+
+Commerce Hub supports in-Person or Card Present payment transactions where the customer physically presents the card while making a transaction at any merchant terminal. This type of transcation can include swiping a card with a magnetic strip, inserting a card with an EMV chip, or tapping a mobile device with the card loaded to a digital wallet. A transaction can qualify as a card present transaction only when the merchant must capture electronic data stored on the card. 
+
+The two types of implementation of EMV systems which Commerce Hub offers for Card Present payments are: semi-integration where a 3rd party terminal encrpts the payment source and fully-integration where Commerce Hub encrypts the paymet source. 
+
+## Semi-Intergation Payment Source
+
+The terminal or device used to capture customer card data is connected to the POS application. While the POS terminal still initiates the payment transaction, the software obtains all the payment information from a 3rd party device or a card reader such as ingenico, etc. and submits and RESTful API request to the processor or gateway, which tells the POS whether the sale is approved or declined.
 
 <!-- overview similar to online; integration methods are semi-integrated with a 3rd party terminal that will encrypt the payment source, fully-integration where commerce hub will encrypt the payment source (coming soon).
 
