@@ -13,9 +13,18 @@ Commerce Hub supports in-Person or Card Present payment transactions where the c
 
 The two types of implementation of EMV systems which Commerce Hub offers for Card Present payments are: semi-integration where a 3rd party terminal encrpts the payment source and fully-integration where Commerce Hub encrypts the paymet source. 
 
-## Semi-Intergation Payment Source
+## Integration Supported by Commerce Hub
+
+### Semi-Intergation Payment Source
 
 The terminal or device used to capture customer card data is connected to the POS application. While the POS terminal still initiates the payment transaction, the software obtains all the payment information from a 3rd party device or a card reader such as ingenico, etc. and submits and RESTful API request to the processor or gateway, which tells the POS whether the sale is approved or declined.
+
+## Integrations To Be Supported In Future
+
+### Terminal Direct
+
+
+### Fully Integrated
 
 <!-- overview similar to online; integration methods are semi-integrated with a 3rd party terminal that will encrypt the payment source, fully-integration where commerce hub will encrypt the payment source (coming soon).
 
