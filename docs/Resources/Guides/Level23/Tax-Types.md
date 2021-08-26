@@ -25,7 +25,7 @@ Use these values to populate the Tax Type property in the Level III line item de
 | *ROOM* |	Room Tax |
 | *OCCUPANCY* |	Occupancy Tax |	
 | *ENERGY* |	Energy Tax |	
-| NOT_SUPPORTED | Not Supported | 
+| *NOT_SUPPORTED* | Not Supported | 
 
 ---
 
