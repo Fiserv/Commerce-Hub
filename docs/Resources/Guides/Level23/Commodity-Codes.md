@@ -126,6 +126,7 @@ title: 020 Ag Equip
 The table below includes the commodity codes (class and subclass list) for agricultural equipment.
 
 | Code | Description |
+| -------- | :--: |
 | 02002 |	Backhoe (For Farm Tractor) |
 | 02004 |	Brush and Tree Chippers |
 | 02006 |	Brush Cutters and Saws, Motor Driven |
@@ -154,35 +155,35 @@ The table below includes the commodity codes (class and subclass list) for agric
 | 02046	| Herbicide, Insecticide and Fungicide Applicators and Distributors |
 | 02049	| Irrigation Equipment and Supplies, Agricultural |
 | 02059 | Land Levelers |
-020-61	Loaders, Tractor Mounted, Farm |
-020-62	Log Splitters |
-020-63	Manure Spreaders
-020-64	Mower, Articulated Boom: Flail, Rotary, or Sickle Head |
-020-65	Mower (Steep Slope Type with Cutter Head on Telescoping Boom): Flail, Rotary, or Sickle Bar Cutter Heads, For Mounting on Tractors or Trucks (See Class 515 for Lawn Type Mowers)
-020-66	Mower, Tractor Mounted (Steep Slope Type with Cutter Head on Telescoping Boom): Flail, Rotary, or Sickle Bar Cutter Heads (See Class 515 for Lawn Type Mowers)
-020-67	Mower-Tractor Unit or Self-Propelled Mower, for Slope Mowing (See Class 515 for Lawn Type Mowers)
-020-68	Mower, Center Mounted; and Tractor (See Class 515 for Lawn Type Mowers)
-020-69	Pasture Renovators
-020-71	Planting Equipment, Broadcasting
-020-72	Planting Equipment, Drilling
-020-73	Planting Equipment, Row Crop
-020-74	Processing Machinery and Equipment, Agricultural
-020-75	Posthole Diggers, Tractor Mounted
-020-76	Protection Structures, Rollover (ROPS)
-020-77	Pulverizers and Rotary Tillers, Soil
-020-78	Recycled Agricultural Equipment Accessories and Supplies
-020-79	Rock Pickers and Rakes
-020-81	Rodent Control Equipment, Tractor Operated
-020-82	Spade, Tree (Truck or Trailer Mounted, or Three-Point Hook-Up for Tractor Mounting) and other Tree Transplanting and Diggers
-020-83	Sweeps and other Steel Shapes
-020-84	Soil Mixers and Samplers
-020-85	Terracing Equipment
-020-87	Tillage Equipment, Heavy Duty, Farm: Blade Plows, Disc Harrows, Listers, Rotary Hoes, Tool Bars, etc.
-020-89	Tractors, Farm, Wheel Type
-020-90	Tree and Root Cutters and Stump Grinders, Tractor Mounted
-020-91	Tree Girdlers and Timber Tongs
-020-93	Umbrellas, Tractor
-020-95	Unloaders and Elevators, Grain
+| 02061	| Loaders, Tractor Mounted, Farm |
+| 02062	| Log Splitters |
+| 02063	| Manure Spreaders |
+| 02064 |	Mower, Articulated Boom: Flail, Rotary, or Sickle Head |
+| 02065	| Mower (Steep Slope Type with Cutter Head on Telescoping Boom): Flail, Rotary, or Sickle Bar Cutter Heads, For Mounting on Tractors or Trucks (See Class 515 for Lawn Type Mowers) |
+| 02066	| Mower, Tractor Mounted (Steep Slope Type with Cutter Head on Telescoping Boom): Flail, Rotary, or Sickle Bar Cutter Heads (See Class 515 for Lawn Type Mowers) |
+| 02067 | Mower-Tractor Unit or Self-Propelled Mower, for Slope Mowing (See Class 515 for Lawn Type Mowers) |
+| 02068	| Mower, Center Mounted; and Tractor (See Class 515 for Lawn Type Mowers) |
+| 02069	| Pasture Renovators |
+| 02071	| Planting Equipment, Broadcasting |
+| 02072	| Planting Equipment, Drilling |
+| 02073 |	Planting Equipment, Row Crop |
+| 02074	| Processing Machinery and Equipment, Agricultural |
+| 02075	| Posthole Diggers, Tractor Mounted |
+| 02076	| Protection Structures, Rollover (ROPS) |
+| 02077	| Pulverizers and Rotary Tillers, Soil |
+| 02078	| Recycled Agricultural Equipment Accessories and Supplies |
+| 02079	| Rock Pickers and Rakes |
+| 02081	| Rodent Control Equipment, Tractor Operated |
+| 02082	| Spade, Tree (Truck or Trailer Mounted, or Three-Point Hook-Up for Tractor Mounting) and other Tree Transplanting and Diggers |
+| 02083	| Sweeps and other Steel Shapes |
+| 02084	| Soil Mixers and Samplers |
+| 02085	| Terracing Equipment |
+| 02087	| Tillage Equipment, Heavy Duty, Farm: Blade Plows, Disc Harrows, Listers, Rotary Hoes, Tool Bars, etc. |
+| 02089 |	Tractors, Farm, Wheel Type |
+| 02090	| Tree and Root Cutters and Stump Grinders, Tractor Mounted |
+| 02091	| Tree Girdlers and Timber Tongs |
+| 02093	| Umbrellas, Tractor |
+| 02095	| Unloaders and Elevators, Grain |
 | 02096 |	Wedges, Steel, Tree Felling and Splitting |
  
 <!--
@@ -190,38 +191,54 @@ type: tab
 title: 022 Ag Parts
 -->
 
-The table below includes the commodity codes (class and subclass list) for agricultural implement and accessory parts.
+The table below includes the commodity codes (class and subclass list) for agricultural equipmen and implement parts. 
 
 | Code | Description |
 | -------- | :--: |
-| 022 | Brush Cjhipper, Cutter and Saw Parts |
-| 022 | Cultivating Equipment Parts |
-| 022 | Cutter and Shredder (Mower), Flail, Rotary, Reel and Sickle |
-| 022 | Fertilizer Distributor Parts |
-| 022 | Implement Parts for Ford |
-| 022 | Implement Parts for Other Farm Equipment |
-| 022 | Posthole Digger (Tractor Mounted) Parts |
-| 022 | Tractor (Farm and Garden) Parts |
-| 022 | Unloadeder and Elevator (Grain) Equipment Parts |
+| 02204 | Brush Chipper, Cutter and Saw Parts |
+| 02213 | Cultivating Equipment Parts |
+| 02215 | Cutter and Shredder (Mower), Flail, Rotary, Reel and Sickle |
+| 02230 | Fertilizer Distributor Parts |
+| 02241 |	Harvesting Equipment Parts |
+| 02242	| Haying Equipment Parts |
+| 02243	| Herbicide, Insecticide and Fungicide Applicator and Distributor Parts |
+| 02249 |	Implement Parts for John Deere |
+| 02251 | Implement Parts for Ford |
+| 02253 |	Implement Parts for International Harvester
+| 02258 | Implement Parts for Other Farm Equipment |
+| 02262 | Irrigation System Parts, Agricultural |
+| 02270	| Planting Equipment Parts |
+| 02273	| Posthole Digger (Tractor Mounted) Parts |
+| 02274	| Recycled Agricultural and Implement Parts |
+| 02275	| Sprigger and Seeder Parts, Grass |
+| 02277 |	Tillage Equipment Parts |
+| 02280	| Tractor (Farm and Garden) Parts |
+| 02282 |	Tree Spade and Forestry Equipment Parts |
+| 02295	| Unloader and Elevator (Grain) Equipment Parts |
+| 02297 |	Wagon Parts |
 
 <!--
 type: tab
 title: 025 Air Compressors
 -->
 
-The table below includes the commodity codes (class and subclass list) for agricultural accessory parts.
+The table below includes the commodity codes (class and subclass list) for air compressors and accessories.
 
 | Code | Description |
 | -------- | :--: |
-| 025 | Compressor, Bare Unit (Not Mounted or Powered), 15 HP and LE |
-| 025 | Compressor, Bare Unit (Not Mounted or Powered), Over 15 HP |
-| 025 | Compressor, Base or Tank Mounted, 15 HP or Less |
-| 025 | Compressor, Base or tank Mounted, Over 15 HP and Parts |
-| 025 | Compressors, High Pressure, All Sizes and Models |
-| 025 | Compressor, Portable, Electric or Engine Driven, 5 HP & Less |
-| 025 | Compressor, Portable, Electric or Engine Driven, Over 25 CFM |
-| 025 | Compressor Accessories, Air |
-| 025 | Moisture Separators, Non-Refrigerated |
+| 02510 | Compressor, Bare Unit (Not Mounted or Powered), 15 HP and Less |
+| 02520 | Compressor, Bare Unit (Not Mounted or Powered), Over 15 HP |
+| 02530 | Compressor, Base or Tank Mounted, 15 HP or Less |
+| 02540 | Compressor, Base or tank Mounted, Over 15 HP and Parts |
+| 02543 | Compressors, High Pressure, All Sizes and Models |
+| 02545 | Compressor, Portable, Electric or Engine Driven, 5 HP & Less and Parts |
+| 02550 | Compressor, Portable, Electric or Engine Driven, Over 25 CFM at 100 PSI; and Parts |
+| 02255 | Dryers, Desiccant Air |
+| 02560	| Filters, Air Gauges and Valves, Pressure Regulators, Shock Mounts, etc. |
+| 02570 |	Moisture Separators, Non-Refrigerated |
+| 02580 |	Moisture Separators, Refrigerated |
+| 02585 |	Motors, Air Compressor |
+| 02590	| Recycled Air Compressor Accessories and Supplies |
 
 <!--
 type: tab
@@ -232,57 +249,79 @@ The table below includes the commodity codes (class and subclass list) for air c
 
 | Code | Description |
 | -------- | :--: |
-| 031 | Air Conditioners: Commercial, and Parts and Accessories Not |
-| 031 | Air Conditioners: Controlled Environment (For Computer Rooms |
-| 031 | Air Conditioners (Cooling and Cooling/Heating Types): Window
-| 031 | Air Conditioning and Heating: Central Units, and Parts and A |
-| 031 | Air Doors and Curtains |
-| 031 | Air Flow Meters |
-| 031 | Air Purifiers, Accessories and Supplies |
-| 031 | Blowers: Industrial Types |
-| 031 | Chillers, Heat Exchangers and Receivers |
-| 031 | Coils: Chilled or Heated Water, and Direct Expansion |
-| 031 | Coil and Fan Units, Air Conditioning |
-| 031 | Compressors, Air Conditioning: Hermetically Sealed, Window U |
-| 031 | Compressors, Air Conditioning: Industrial Type, and Parts |
-| 031 | Condensing Units (For Air Conditioners) |
-| 031 | Controls: Limit Switches, Relays, Thermostats, Gas Valves, E |
-| 031 | Control Systems: Complete (For Automatic Temperature Control |
-| 031 | Cooling Towers: Forced Air, Gravity, Etc. |
-| 031 | Dehumidifiers and Humidifiers |
-| 031 | Duct, Prefabricated (Flexible or Rigid): Glass Fiber, Plastic |
-| 031 | Duct, Fabricated, Metal |
-| 031 | Dust Collectors, Industrial Type |
-| 031 | Electronic Air Cleaners, Electrostatic Precipitators, Access |
-| 031 | Evaporative Coolers |
-| 031 | Fans, Industrial Types: Attic, Exhaust, Forced Draft, Etc. |
-| 031 | Fans, Room Type: Ceiling, Floor, Wall, Oscillating, Etc. |
-| 031 | Filter Coating, Adhesive, Coil Cleaners, Degreasing Solvents |
-| 031 | Filters, Air Conditioning (Permanent Type) |
-| 031 | Filters and Filter Media, Air Conditioning (Disposable Types) |
-| 031 | Filters and Filter Media, Evaporative Cooler |
-| 031 | Filter Frames, Metal |
-| 031 | Freon |
-| 031 | Furnaces, Central Heating Type (Forced Air, Gas Fired) |
-| 031 | Grilles, Diffusers, Registers, Etc. |
-| 031 | Hand Tools, Air Conditioning and Heating Service Type |
-| 031 | Heat Pumps |
-| 031 | Heaters, Electric (Baseboard Type) and Parts |
-| 031 | Heaters, Electric (Panel Type) and Parts |
-| 031 | Heaters, Electric (Portable) and Parts |
-| 031 | Heaters, Gas-Fired (Space Type, Vented and Unvented) and Par |
-| 031 | Heaters, Kerosene or Oil Fired (Space Type, Vented and Unven |
-| 031 | Heating Elements, Electric |
-| 031 | Pumps, Refrigerant Circulating |
-| 031 | Pumps, Refrigerant Vacuum |
-| 031 | Roof Ventilators, Power Driven |
-| 031 | Roof Ventilators, Wind Driven |
-| 031 | Testing and Recording Instruments |
-| 031 | Thermometers and Gauges |
-| 031 | Unit Heaters, Electric (Duct and Suspended Types) |
-| 031 | Oil and Fan Units, Air Conditioning |
-| 031 | Unit Heaters, Gas-Fired (Radiant and Infrared, Portable And |
-| 031 | Vent Pipes, Fittings, and Accessories |
+| 03102 |	Air Conditioning Units, Portable (For Computer Rooms, Hospital Rooms, Sporting Events, etc.) |
+| 03103 | Air Conditioners: Commercial, and Parts and Accessories Not Individually Itemized |
+| 03104 | Air Conditioners: Controlled Environment (For Computer Rooms, etc.), and Parts and Accessories not Individually Itemized) |
+| 03105 |	Air Conditioners (Cooling and Cooling/Heating Types): Window and Wall Mounted, and Parts and Accessories Not Individually Itemized |
+| 03106 | Air Conditioning and Heating: Central Units, and Parts and Accessories Not Individually Itemized |
+| 03107 |	Air Circulation Equipment (Not Otherwise Classified) |
+| 03108 |	Air Curtains |
+| 03109	| Air Flow Meters |
+| 03110 |	Air Purifiers, Accessories and Supplies |
+| 03111	| Blowers: Industrial Types |
+| 03113 |	Chillers, Heat Exchangers and Receivers |
+| 03114	| Chilled Water System, Portable |
+| 03115 | Chilled Water Meter System |
+| 03116	| Coatings and Sealants, Duct |
+| 03117 |	Coils: Chilled or Heated Water, and Direct Expansion |
+| 03118	| Coil and Fan Units, Air Conditioning |
+| 03120	| Compressors, Air Conditioning: Hermetically Sealed, Window Unit Type |
+| 03121 |	Compressors, Air Conditioning: Industrial Type, and Parts |
+| 03123	| Condensing Units (For Air Conditioners) |
+| 03124 |	Controls, Cooling Tower Water Treatment: pH, Conductivity, Corrosion Sensors |
+| 03125 | Controls: Limit Switches, Relays, Thermostats, Gas Valves, etc. |
+| 03126 |	Control Systems: Complete (For Automatic Temperature Control) |
+| 03127	| Cooling Tower Water Treatment: Non-chemical Ozone, Centrifugal Separators, Magnetic Descaling Equip. (See Class 885 for Chemical Types) |
+| 03128	| Cooling Towers: Forced Air, Gravity, etc. |
+| 03129 |	Dampers, Motorized |
+| 03131 |	Duct Cleaning Equipment, Air |
+| 03132 |	Duct, Prefabricated (Flexible or Rigid): Glass Fiber, Plastic, etc. |
+| 03133 |	Duct, Fabricated, Metal |
+| 03134	| Dust Collectors, Industrial Type |
+| 03136 |	Electronic Air Cleaners, Electrostatic Precipitators, Ozonators, Accessories, and Parts |
+| 03138 | Evaporative Coolers
+| 03140 |	Fans, Industrial Types: Attic, Exhaust, Forced Draft, etc. (Including Fan Blades and Fan Parts) |
+| 03141 |	Fans, Room Type, Ceiling and Portable Type (Stationary and Oscillating) |
+| 03143 |	Filter Coating, Adhesive, Coil Cleaners, Degreasing Solvents, etc. |
+| 03144	| Filters, Air Conditioning/Furnace (Permanent Type) |
+| 03145	| Filters, Air Conditioning/Furnace (Disposable Types) |
+| 03146	| Filters and Filter Media, Evaporative Cooler |
+| 03149	| Filter Frames, Metal |
+| 03150	| Freon |
+| 03151 |	Furnaces, Central Heating Type (Forced Air, Gas Fired) |
+| 03153 | Grilles, Diffusers, Registers, etc. |
+| 03155 |	Hand Tools, Air Conditioning and Heating Service Type (Including Leak Detectors) |
+| 03156	| Heat Pumps |
+| 03157	| Heaters, Electric (Baseboard Type) and Parts |
+| 03158 |	Heaters, Electric (Panel or Wall Type) and Parts |
+| 03159 |	Heaters, Electric (Portable) and Parts |
+| 03160 |	Heaters, Gas-Fired (Space Type, Vented and Unvented) and Parts |
+| 03161 |	Heaters, Gas-Fired (Wall Type, Vented and Unvented) and Parts |
+| 03162	| Heaters, Kerosene or Oil Fired (Space Type, Vented and Unvented) and Parts |
+| 03163 |	Heaters, Space, Steam |
+| 03165	| Heating Elements, Electric |
+| 03166 |	Hydronic Specialties |
+| 03167 |	HVAC Equipment, Accessories and Supplies (Not Otherwise Classified) |
+| 03169 |	Odor Control Equipment (Indoor) |
+| 03170 |	Odor Control Equipment, Duct Air (Including Ozone Type) |
+| 03172 |	Pumps, Descaling Acid |
+| 03173 |	Pumps, Refrigerant Circulating |
+| 03174 |	Pumps, Refrigerant Vacuum |
+| 03175 |	Radiators, Heating |
+| 03176 |	Recycled HVAC Products, Accessories, and Supplies
+| 03178 |	Roof Ventilators, Power Driven (Including Recycled Types) |
+| 03179 |	Roof Ventilators, Wind Driven (Including Recycled Types) |
+| 03180	| Solar Heating Units |
+| 03182	| Stoves, Wood or Coal |
+| 03187	| Testing and Recording Instruments |
+| 03189	| Thermometers and Gauges |
+| 03191 |	Unit Heaters, Electric (Duct and Suspended Types) |
+| 03192 |	Unit Heaters, Gas-Fired (Duct and Suspended Types) |
+| 03193 |	Unit Heaters, Gas-Fired (Radiant and Infrared, Portable and Stationary) |
+| 03194	| Unit Heaters, Steam and Hot Water Types |
+| 03195	| Ventilation Equipment and Systems (See 031-78, 79 for Roof Ventilators) |
+| 03196	| Vent Pipes, Fittings, and Accessories |
+| 03197 |	Vacuum System, Central, Including Filters, Parts and Accessories |
  
 <!--
 type: tab
@@ -293,23 +332,68 @@ The table below includes the commodity codes (class and subclass list) for aircr
 
 | Code | Description |
 | -------- | :--: | 
-| 035 | Aircraft Navigation Radio |
-| 035 | Aircraft Radar |
-| 035 | Airplanes |
-| 035 | Automatic Pilot Systems |
-| 035 | Engines and Parts, Airplane |
-| 035 | Engines and Parts, Helicopter |
-| 035 | Equipment and Supplies, Airplane |
-| 035 | Equipment and Supplies, Helicopter |
-| 035 | Helicopters |
-| 035 | Instrument Landing Systems |
-| 035 | Instruments and Testers, Airplane |
-| 035 | Instruments and Testers, Helicopter |
-| 035 | Parts (Except Engine), Airplane |
-| 035 | Parts (Except Engine), Helicopter |
-| 035 | Tools, Airplane |
-| 035 | Tools, Helicopter |
-| 035 | Wind Tees and Wind Socks, Airport |
+| 03502	| Air Conditioning Units, Aircraft (For Cooling Interiors While at the Gate) |
+| 03503 |	Aeronautical Charts and Maps |
+| 03504	| Aircraft Avionics, Not Otherwise Classified (Navigation Instruments, Transponders, Global Positioning Systems, etc.) |
+| 03505 |	Aircraft Crash Locators and Accessories |
+| 03506 |	Aircraft Accessories (Not Otherwise Classified) |
+| 03507 |	Aircraft Fuselage and Components |
+| 03508	| Aircraft Fenders |
+| 03509 |	Aircraft Communications Radio |
+| 03510	| Aircraft Navigation Radio |
+| 03511	| Aircraft Master Control Systems (Computer, etc.) |
+| 03515 |	Aircraft Radar |
+| 03516 |	Aircraft, Remotely Operated, Surveillance, Search and Rescue |
+| 03520	| Airplanes |
+| 03521 |	Airships |
+| 03522 |	Airport Equipment (Not Otherwise Classified) |
+| 03523 |	Airport Equipment Ground Power for Aircraft at the Gates |
+| 03525	| Automatic Pilot Systems |
+| 03526 | Baggage Handling Equipment and Parts |
+| 03527 |	Beacons, Visual and Runway Lights |
+| 03528	| Cameras and Accessories, Aerial Photograph |
+| 03529 | Drop Equipment and Supplies, Aerial |
+| 03530 |	Engines and Parts, Airplane |
+| 03531 | Encryption/Decryption Systems, Aircraft |
+| 03532 |	Ejection or Escape Systems, Aircraft |
+| 03535 |	Engines and Parts, Helicopter |
+| 03537 |	Engine Instruments: Fuel, Manifold and Oil Pressure, Oil Temperature, Tachometers, etc. |
+| 03540 |	Equipment and Supplies, Airplane (Not Otherwise Classified) |
+| 03544 | Fire Control Systems, Aircraft |
+| 03545 | Equipment and Supplies, Navigation, Helicopter (Not Otherwise Classified) |
+| 03546	| Flight Instruments: Airspeed, Altimeters, Attitude and Turn/Bank Indicators, etc. |
+| 03547 |	Flight Simulator |
+| 03548 |	Gliders |
+| 03549 |	Hydraulic Systems, Aircraft |
+| 03550 |	Helicopters |
+| 03552 |	Hot Air Balloons |
+| 03554	| Information Display Systems, Flight (F.I.D.S. - Airport) |
+| 03555 |	Instrument Landing Systems |
+| 03560 |	Instruments and Testers, Airplane |
+| 03565 |	Instruments and Testers, Helicopter |
+| 03566 |	Landing and Braking Systems and Components, Aircraft |
+| 03567 |	Lights: Anti-Collision, Landing, Navigations, etc. |
+| 03568 |	Metal Crack Detection Dyes |
+| 03569 |	Magnatometer (Security Screening Equipment) |
+| 03570 |	Parts (Except Engine), Airplane |
+| 03571 |	Oxygen Equipment, Aircraft |
+| 03572 |	Parachutes and Drag Chutes |
+| 03575	| Parts (Except Engine), Helicopter |
+| 03576 |	Power Systems, Aircraft |
+| 03577	| Photographs, Aerial |
+| 03578	| Ramps and Passenger Transportation Vehicles, Aircraft Boarding |
+| 03579 |	Recycled Aircraft and Airport Equipment, Accessories and Supplies |
+| 03580 |	Snow Melters for Runways, Taxiways, Roads and Streets (See Class 765 for other types of Snow Equipment) |
+| 03581 |	Sweepers, Runway (See 765-77 for Street Sweepers) |
+| 03582 |	Taxiway and Runway Testing Equipment and Supplies |
+| 03583 |	Tanks and Accessories, Fuel (Aircraft) |
+| 03585	| Tools, Airplane |
+| 03590	| Tools, Helicopter |
+| 03591	| Tow Bars for Moving Aircraft at the Airport |
+| 03592 |	Wind Tees and Wind Socks, Airport |
+| 03593	| Tugs and Tractors for Moving Aircraft at the Airport |
+| 03594 |	Warning Systems, Aircraft (Emergency, Fire, Escape, Ejection, etc.) |
+| 03595	| X-Ray Scanner, Passenger Baggage |
 
 <!--
 type: tab
@@ -320,15 +404,15 @@ The table below includes the commodity codes (class and subclass list) for appli
  
 | Code | Description |
 | -------- | :--: | 
-| 045 | Appliances, Small, Electric |
-| 045 | Appliances, Small, (Not Electric) |
-| 045 | Cleaners and Sweepers, Hand-Operated |
-| 045 | Ovens, Microwave |
-| 045 | Ranges, Stove Tops, and Ovens, Electric |
-| 045 | Ranges, Stove Tops, and Ovens, Gas |
-| 045 | Refrigerators and Freezers |
-| 045 | Vacuum Cleaners, Electric |
-| 045 | Vent Hoods (For Ranges) |
+| 04506 | Appliances, Small, Electric |
+| 04512 | Appliances, Small, (Not Electric) |
+| 04518 | Cleaners and Sweepers, Hand-Operated |
+| 04552 | Ovens, Microwave |
+| 04554 | Ranges, Stove Tops, and Ovens, Electric |
+| 04560 | Ranges, Stove Tops, and Ovens, Gas |
+| 04566 | Refrigerators and Freezers |
+| 04578 | Vacuum Cleaners, Electric |
+| 04584 | Vent Hoods (For Ranges) |
  
 <!--
 type: tab
@@ -339,11 +423,10 @@ The table below includes the commodity codes (class and subclass list) for art e
  
 | Code | Description |
 | -------- | :--: |  
-| 050 | Art Equipment |
-| 050 | Block Printing Supplies |
-| 050 | Drawing and Painting Supplies: Brushes, Chalk, Colors (Acryl) |
-| 050 | Engraving, Etching, and Lithography Equipment and Supplies |
-| 050 | Picture Frames and Framing Supplies: Mat Cutters, Mats, Mold |
+| 05010 | Block Printing Supplies |
+| 05040 | Drawing and Painting Supplies: Brushes, Chalk, Colors (Acryl) |
+| 05050 | Engraving, Etching, and Lithography Equipment and Supplies |
+| 05060 | Picture Frames and Framing Supplies: Mat Cutters, Mats, Mold |
 
 <!--
 type: tab
@@ -354,11 +437,11 @@ The table below includes the commodity codes (class and subclass list) for art o
  
 | Code | Description |
 | -------- | :--: | 
-| 052 | Drawings (Originals) |
-| 052 | Engravings, Etchings, Lithographs, Serigraphs, and Similar r |
-| 052 | Painting (Originals) |
-| 052 | Photographs |
-| 052 | Posters & Prints (Not Originals) |
+| 05216 | Drawings (Originals) |
+| 05224 | Engravings, Etchings, Lithographs, Serigraphs, and Similar r |
+| 05256 | Painting (Originals) |
+| 05264 | Photographs |
+| 05272 | Posters & Prints (Not Originals) |
 
 <!--
 type: tab
@@ -369,40 +452,40 @@ The table below includes the commodity codes (class and subclass list) for autom
 
 | Code | Description |
 | -------- | :--: | 
-| 055 | Automotive Air Bags |
-| 055 | Air Conditioners and Parts |
-| 055 | Automobile Top Carriers |
-| 055 | Belts, Safety; and Child Restraint Systems |
-| 055 | Brake Adjusters |
-| 055 | Bug Screens |
-| 055 | Covers and Frames, Canvas (Vehicle) |
-| 055 | Couplings and Hitches |
-| 055 | Cushions and Covers, Seat, Automotive |
-| 055 | Fans, Cab |
-| 055 | Fifth Wheels |
-| 055 | Gauges, Automotive |
-| 055 | Grille Guards |
-| 055 | Headlights, Access and Parts
-| 055 | Heaters |
-| 055 | Immobilizer Devices, Vehicle |
-| 055 | Interior Trim Items, Vehicle |
-| 055 | Lights: Back-Up, Stop, Tail, and Parking |
-| 055 | Lights: Clearance and Marker |
-| 055 | Lights: Directional and Turn Signal |
-| 055 | Lights: Emergency and Trouble |
-| 055 | Lights and Accessories: Flashing, Revolving, and Warning (in) |
-| 055 | Mats, Floor |
-| 055 | Mirrors, Rearview, Interior and Exterior |
-| 055 | Moisture Separators |
-| 055 | Power Takeoff |
-| 055 | Reflectors |
-| 055 | Rings, Key, Vehicle (All Types) |
-| 055 | Seats, Automotive |
-| 055 | Sirens, Horns and Back-Up Alarms |
-| 055 | Splash Guards |
-| 055 | Switches and Flashers, Automotive |
-| 055 | Tanks, Fuel, Auxiliary |
-| 055 | Tops and Covers (For Short Wheelbase Vehicles) |
+| 05502 | Automotive Air Bags |
+| 05504 | Air Conditioners and Parts |
+| 05506 | Automobile Top Carriers |
+| 05508 | Belts, Safety; and Child Restraint Systems |
+| 05510 | Brake Adjusters |
+| 05511 | Bug Screens |
+| 05512 | Covers and Frames, Canvas (Vehicle) |
+| 05521 | Couplings and Hitches |
+| 05524 | Cushions and Covers, Seat, Automotive |
+| 05528 | Fans, Cab |
+| 05530 | Fifth Wheels |
+| 05532 | Gauges, Automotive |
+| 05536 | Grille Guards |
+| 05537 | Headlights, Access and Parts
+| 05538 | Heaters |
+| 05539 | Immobilizer Devices, Vehicle |
+| 05540 | Interior Trim Items, Vehicle |
+| 05546 | Lights: Back-Up, Stop, Tail, and Parking |
+| 05548 | Lights: Clearance and Marker |
+| 05551 | Lights: Directional and Turn Signal |
+| 05554 | Lights: Emergency and Trouble |
+| 05557 | Lights and Accessories: Flashing, Revolving, and Warning (in) |
+| 05561 | Mats, Floor |
+| 05564 | Mirrors, Rearview, Interior and Exterior |
+| 05566 | Moisture Separators |
+| 05570 | Power Takeoff |
+| 05576 | Reflectors |
+| 05577 | Rings, Key, Vehicle (All Types) |
+| 05578 | Seats, Automotive |
+| 05579 | Sirens, Horns and Back-Up Alarms |
+| 05582 | Splash Guards |
+| 05583 | Switches and Flashers, Automotive |
+| 05585 | Tanks, Fuel, Auxiliary |
+| 05588 | Tops and Covers (For Short Wheelbase Vehicles) |
 
 <!--
 type: tab
@@ -413,53 +496,53 @@ The table below includes the commodity codes (class and subclass list) for autom
 
 | Code | Description |
 | -------- | :--: | 
-| 060 | Automotive Parts |
-| 060 | Adapters, Automotive Parts |
-| 060 | Antifreeze |
-| 060 | Axles, Trailer and Trucks, Tandem and Single |
-| 060 | Batteries (For Electric Vehicles) |
-| 060 | Batteries, Storage; and Electrolyte |
-| 060 | Brakes, Electric Controller |
-| 060 | Brake Fluid, Hydraulic |
-| 060 | Brakes, Repairs, and Replacements (Not Electric Controller) |
-| 060 | Bushings and Related Items |
-| 060 | Cables, Looms, and Terminals |
-| 060 | Cement, Radiator |
-| 060 | Clamps, Hose |
-| 060 | Cooling System: Radiators, Complete and Cores; Thermostats |
-| 060 | Electrical Accessories: Alternators, Ammeters, Coils, Distri |
-| 060 | Electrical Parts (Not Ignition) |
-| 060 | Engines, Diesel (Automotive) and Replacement Parts |
-| 060 | Engines, Gasoline: Rebuilt, Complete, Short Block, and Parts |
-| 060 | Exhaust System: Clamps, Exhaust Pipes, Mufflers, Tailpipes |
-| 060 | Filters: Air, Fuel, and Oil |
-| 060 | Fittings (For Copper Tubing) (Automotive) |
-| 060 | Front End Alignment Parts and Access |
-| 060 | Fuel System: Carburetors and Kits, Fuel Pumps, Tanks and Cap |
-| 060 | Fuses, Automotive |
-| 060 | Gaskets and Gasket Material |
-| 060 | Glass: Door, Windshield, Etc. |
-| 060 | Governors, Engine and Road Speed |
-| 060 | Hose: Brake, Heater, Radiator, Vacuum, Washer, Wiper, Etc. |
-| 060 | Hydraulic System Components and Parts |
-| 060 | Ignition System: Condensers, Points, Rotors, Spark Plugs (No) |
-| 060 | Lubricating Systems and Parts (See Class 060-42 for Filters |
-| 060 | Power and drive train components and parts |
-| 060 | Replacement Parts for Chrysler (Mopar) |
-| 060 | Replacement Parts for Ford |
-| 060 | Replacement Parts for General Motors |
-| 060 | Replacement Parts for International Harvester |
-| 060 | Replacement Parts for Other Manufacturers |
-| 060 | Seals and O-Rings |
-| 060 | Shock Absorbers, Etc. |
-| 060 | Springs, Leaves, Etc. |
-| 060 | Steering Components and Parts |
-| 060 | Tire and Tube Repair Items and Vulcanizers |
-| 060 | Tire Sealing Compound |
-| 060 | Transmissions, Standard and Automatic |
-| 060 | Wheel Bearings and Seals |
-| 060 | Wheels and Rims |
-| 060 | Windshield Wiper Blades, Blade Refills, Assemblies, and Part |
+| 06000 | Automotive Parts |
+| 06001 | Adapters, Automotive Parts |
+| 06003 | Antifreeze |
+| 06006 | Axles, Trailer and Trucks, Tandem and Single |
+| 06009 | Batteries (For Electric Vehicles) |
+| 06012 | Batteries, Storage; and Electrolyte |
+| 06015 | Brakes, Electric Controller |
+| 06018 | Brake Fluid, Hydraulic |
+| 06021 | Brakes, Repairs, and Replacements (Not Electric Controller) |
+| 06023 | Bushings and Related Items |
+| 06024 | Cables, Looms, and Terminals |
+| 06027 | Cement, Radiator |
+| 06033 | Clamps, Hose |
+| 06035 | Cooling System: Radiators, Complete and Cores; Thermostats |
+| 06036 | Electrical Accessories: Alternators, Ammeters, Coils, Distri |
+| 06037 | Electrical Parts (Not Ignition) |
+| 06038 | Engines, Diesel (Automotive) and Replacement Parts |
+| 06040 | Engines, Gasoline: Rebuilt, Complete, Short Block, and Parts |
+| 06041 | Exhaust System: Clamps, Exhaust Pipes, Mufflers, Tailpipes |
+| 06042 | Filters: Air, Fuel, and Oil |
+| 06045 | Fittings (For Copper Tubing) (Automotive) |
+| 06046 | Front End Alignment Parts and Access |
+| 06047 | Fuel System: Carburetors and Kits, Fuel Pumps, Tanks and Cap |
+| 06050 | Fuses, Automotive |
+| 06054 | Gaskets and Gasket Material |
+| 06057 | Glass: Door, Windshield, Etc. |
+| 06058 | Governors, Engine and Road Speed |
+| 06060 | Hose: Brake, Heater, Radiator, Vacuum, Washer, Wiper, Etc. |
+| 06061 | Hydraulic System Components and Parts |
+| 06063 | Ignition System: Condensers, Points, Rotors, Spark Plugs (No) |
+| 06064 | Lubricating Systems and Parts (See Class 060-42 for Filters |
+| 06065 | Power and drive train components and parts |
+| 06070 | Replacement Parts for Chrysler (Mopar) |
+| 06071 | Replacement Parts for Ford |
+| 06072 | Replacement Parts for General Motors |
+| 06073 | Replacement Parts for International Harvester |
+| 06074 | Replacement Parts for Other Manufacturers |
+| 06079 | Seals and O-Rings |
+| 06083 | Shock Absorbers, Etc. |
+| 06084 | Springs, Leaves, Etc. |
+| 06086 | Steering Components and Parts |
+| 06087 | Tire and Tube Repair Items and Vulcanizers |
+| 06093 | Tire Sealing Compound |
+| 06094 | Transmissions, Standard and Automatic |
+| 06095 | Wheel Bearings and Seals |
+| 06096 | Wheels and Rims |
+| 06097 | Windshield Wiper Blades, Blade Refills, Assemblies, and Part |
 
 <!--
 type: tab
