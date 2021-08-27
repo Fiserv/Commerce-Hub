@@ -553,24 +553,24 @@ The table below includes the commodity codes (class and subclass list) for autom
 
 | Code | Description |
 | -------- | :--: | 
-| 065 | Aerial Ladders and Towers (Including Buckets for Personnel) |
-| 065 | Bodies and Parts, Passenger Cars |
-| 065 | Bodies, Utility |
-| 065 | Covers (Not Canvas), Camper Shells, Etc. (For Pickups) (Not) |
-| 065 | Dump Bodies, Hoist Subframes, Etc. |
-| 065 | Flat Bed Bodies |
-| 065 | Rack, Truck Body |
-| 065 | Rack, Ladder |
-| 065 | Lubrication Bodies |
-| 065 | Platform Bodies (Including Elevating Type) |
-| 065 | Powerlift Tailgate |
-| 065 | Stake Bodies |
-| 065 | Tool Compartment Boxes (For Trucks) |
-| 065 | Truck Bed Liners |
-| 065 | Van Truck Bodies |
-| 065 | Water Tank Bodies |
-| 065 | Winches and Cranes, Automotive |
-| 065 | Wrecker Bodies |
+| 06505 | Aerial Ladders and Towers (Including Buckets for Personnel) |
+| 06507 | Bodies and Parts, Passenger Cars |
+| 06510 | Bodies, Utility |
+| 06525 | Covers (Not Canvas), Camper Shells, Etc. (For Pickups) (Not) |
+| 06530 | Dump Bodies, Hoist Subframes, Etc. |
+| 06535 | Flat Bed Bodies |
+| 06545 | Rack, Truck Body |
+| 06550 | Rack, Ladder |
+| 06562 | Lubrication Bodies |
+| 06567 | Platform Bodies (Including Elevating Type) |
+| 06568 | Powerlift Tailgate |
+| 06580 | Stake Bodies |
+| 06585 | Tool Compartment Boxes (For Trucks) |
+| 06587 | Truck Bed Liners |
+| 06590 | Van Truck Bodies |
+| 06592 | Water Tank Bodies |
+| 06594 | Winches and Cranes, Automotive |
+| 06595 | Wrecker Bodies |
 
 <!--
 type: tab
@@ -581,32 +581,32 @@ The table below includes the commodity codes (class and subclass list) for autom
 
 | Code | Description |
 | -------- | :--: | 
-| 070 | Automobiles and Station Wagons |
-| 070 | Motorcycles, Accessories, and Parts |
-| 070 | Motor Scooters and Trucksters, Electric Powered |
-| 070 | Off-Road Vehicles (Tracked or Wheeled) |
-| 070 | Short Wheelbase, Two and Four Wheel Drive Vehicle |
-| 070 | Truck Tractors |
-| 070 | Trucks, Cab and Chassis Only |
-| 070 | Trucks (One Ton and Less Capacity) |
-| 070 | Trucks (Over One Ton Capacity) |
-| 070 | Trucks (With Specialized Bodies - Aerial Ladders and Tower B |
-| 070 | Trucks, Diesel (All Capacities) |
-| 070 | Trucks, Fire Protection and Crash Rescue |
-| 070 | Trailers, Custom: Personnel, Food Service, Equipment, Etc. |
-| 070 | Trailers, Dump, Hydraulic |
-| 070 | Trailers, Farm Implement and Produce |
-| 070 | Trailers, Flat Bed |
-| 070 | Trailers, Gooseneck |
-| 070 | Trailers, House (Mobile Dorms, Homes, Labs, Offices) |
-| 070 | Trailers, Lowboy |
-| 070 | Trailers, Tank |
-| 070 | Trailers, Tilt Bed |
-| 070 | Trailers, Van, Completely Enclosed |
-| 070 | Vans, Cargo |
-| 070 | Vans, Personnel (Regular and Handicapped Equipped) |
-| 070 | Vans, Modified (Custom) |
-| 070 | Wreckers |
+| 07006 | Automobiles and Station Wagons |
+| 07012 | Motorcycles, Accessories, and Parts |
+| 07020 | Motor Scooters and Trucksters, Electric Powered |
+| 07022 | Off-Road Vehicles (Tracked or Wheeled) |
+| 07042 | Short Wheelbase, Two and Four Wheel Drive Vehicle |
+| 07045 | Truck Tractors |
+| 07047 | Trucks, Cab and Chassis Only |
+| 07048 | Trucks (One Ton and Less Capacity) |
+| 07051 | Trucks (Over One Ton Capacity) |
+| 07053 | Trucks (With Specialized Bodies - Aerial Ladders and Tower B |
+| 07054 | Trucks, Diesel (All Capacities) |
+| 07057 | Trucks, Fire Protection and Crash Rescue |
+| 07059 | Trailers, Custom: Personnel, Food Service, Equipment, Etc. |
+| 07061 | Trailers, Dump, Hydraulic |
+| 07063 | Trailers, Farm Implement and Produce |
+| 07066 | Trailers, Flat Bed |
+| 07069 | Trailers, Gooseneck |
+| 07072 | Trailers, House (Mobile Dorms, Homes, Labs, Offices) |
+| 07078 | Trailers, Lowboy |
+| 07080 | Trailers, Tank |
+| 07081 | Trailers, Tilt Bed |
+| 07084 | Trailers, Van, Completely Enclosed |
+| 07092 | Vans, Cargo |
+| 07093 | Vans, Personnel (Regular and Handicapped Equipped) |
+| 07094 | Vans, Modified (Custom) |
+| 07095 | Wreckers |
 
 <!--
 type: tab
