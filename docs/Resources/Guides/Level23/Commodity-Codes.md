@@ -618,46 +618,46 @@ The table below includes the commodity codes (class and subclass list) for autom
 | Code | Description |
 | -------- | :--: | 
 | 07501 | Air Powered Shop Tools, Regulators, and Parts |
-| 075 | Aligners, Balancers, and Accessories, Wheel |
-| 075 | Battery Chargers and Testers, Automotive (See Also Class 725) |
-| 075 | Brake Bench Stands |
-| 075 | Carbon Removing Tools |
-| 075 | Cements (For Chromated Felt, Gaskets, Trim, and Weather Stri |
-| 075 | Chamois and Sponges |
-| 075 | Cleaning and Washing Equipment, Steam, Cold and Hot Water Pr |
-| 075 | Crankshaft Truing and Engine Stands |
-| 075 | Creepers |
-| 075 | Dynamometers |
-| 075 | Files, Ignition, Tungsten Point
-| 075 | Grinders, Cylinder Hone and Valve Seat; Portable Boring Mach |
-| 075 | Hand Tools, Automotive Air Conditioning |
-| 075 | Hand Tools, Body Rebuilder's |
-| 075 | Hand Tools, Special Automotive: Brake Tools, Body and Fender |
-| 075 | Hose, Exhaust (For Shop Use Only) |
-| 075 | Hydrometers, Antifreeze and Battery |
-| 075 | Jacks, Safety Stands, Portable Cranes, and Parts (For Automo) |
-| 075 | Lights, Drop, and Other Remote Work Lights (With Cords) |
-| 075 | Lathes, Armature and Brake Drum |
-| 075 | Lifts and Hoists, Floor Type: Electric, Hydraulic, or Pneuma |
-| 075 | Lubrication Equipment: Guns, Hoses, Fittings, Etc. |
-| 075 | Mechanic's Wire |
-| 075 | Parts Washing Equipment Including Air Agitated and Pump Agit |
-| 075 | Presses and Pullers, Machine Powered (Including Frame Align) |
-| 075 | Reel and Hose Assemblies, Air and Water Dispensing |
-| 075 | Refinisher Products (Including Polish and Body Filler - Not |
-| 075 | Relining Equipment (For Brakes) |
-| 075 | Spark Plug Cleaner and Tester, Electric |
-| 075 | Specialty Products (Carb, Windshield, Radiator, Sealer) |
-| 075 | Spring Tester (To Balance Valve Springs, Etc.) |
-| 075 | Tachometer (With Wheel for Speed Recording) |
-| 075 | Testers: Engine Analysis, Headlight, Ignition, Timing, Comp |
-| 075 | Tire Changing Equipment |
-| 075 | Tire Changing Tools and Accessories: Lug Wrenches, Tire Gaug |
-| 075 | Tow Bars and Chains |
-| 075 | Undercoater Equipment and Accessories |
-| 075 | Undercoating Compounds |
-| 075 | Valve Grinding Compounds |
-| 075 | Windshield Replacement Tools |
+| 07503 | Aligners, Balancers, and Accessories, Wheel |
+| 07506 | Battery Chargers and Testers, Automotive (See Also Class 725) |
+| 07508 | Brake Bench Stands |
+| 07512 | Carbon Removing Tools |
+| 07514 | Cements (For Chromated Felt, Gaskets, Trim, and Weather Stri |
+| 07517 | Chamois and Sponges |
+| 07519 | Cleaning and Washing Equipment, Steam, Cold and Hot Water Pr |
+| 07520 | Crankshaft Truing and Engine Stands |
+| 07522 | Creepers |
+| 07525 | Dynamometers |
+| 07528 | Files, Ignition, Tungsten Point
+| 07531 | Grinders, Cylinder Hone and Valve Seat; Portable Boring Mach |
+| 07533 | Hand Tools, Automotive Air Conditioning |
+| 07534 | Hand Tools, Body Rebuilder's |
+| 07535 | Hand Tools, Special Automotive: Brake Tools, Body and Fender |
+| 07536 | Hose, Exhaust (For Shop Use Only) |
+| 07538 | Hydrometers, Antifreeze and Battery |
+| 07541 | Jacks, Safety Stands, Portable Cranes, and Parts (For Automo) |
+| 07542 | Lights, Drop, and Other Remote Work Lights (With Cords) |
+| 07543 | Lathes, Armature and Brake Drum |
+| 07544 | Lifts and Hoists, Floor Type: Electric, Hydraulic, or Pneuma |
+| 07546 | Lubrication Equipment: Guns, Hoses, Fittings, Etc. |
+| 07548 | Mechanic's Wire |
+| 07549 | Parts Washing Equipment Including Air Agitated and Pump Agit |
+| 07554 | Presses and Pullers, Machine Powered (Including Frame Align) |
+| 07557 | Reel and Hose Assemblies, Air and Water Dispensing |
+| 07560 | Refinisher Products (Including Polish and Body Filler - Not |
+| 07563 | Relining Equipment (For Brakes) |
+| 07565 | Spark Plug Cleaner and Tester, Electric |
+| 07566 | Specialty Products (Carb, Windshield, Radiator, Sealer) |
+| 07567 | Spring Tester (To Balance Valve Springs, Etc.) |
+| 07572 | Tachometer (With Wheel for Speed Recording) |
+| 07578 | Testers: Engine Analysis, Headlight, Ignition, Timing, Comp |
+| 07581 | Tire Changing Equipment |
+| 07583 | Tire Changing Tools and Accessories: Lug Wrenches, Tire Gaug |
+| 07587 | Tow Bars and Chains |
+| 07590 | Undercoater Equipment and Accessories |
+| 07592 | Undercoating Compounds |
+| 07595 | Valve Grinding Compounds |
+| 07597 | Windshield Replacement Tools |
 
 <!--
 type: tab
@@ -668,21 +668,21 @@ The table below includes the commodity codes (class and subclass list) for badge
 
 | Code | Description |
 | -------- | :--: | 
-| 080 | Badges, Buttons, Emblems, and ID Cards, Celluloid and Plastic |
-| 080 | Badges and Emblems, Metal: Cap, Game Wardens', Officers', SE |
-| 080 | Card Holders, All Types (Except Metal - See Class 578-50) |
-| 080 | Convention Badges and Name Tags, Adhesive Back |
-| 080 | Convention Badges and Name Tags, Nonadhesive Type |
-| 080 | Fasteners (for badges, etc.): metal, plastic, etc. |
-| 080 | Nameplates, Metal, Adhesive Back |
-| 080 | Nameplates, Metal, Nonadhesive |
-| 080 | Nameplates, Plastic |
-| 080 | Plaque, Award Type |
-| 080 | Service Awards: Jewelry, Clocks, Knives, Etc. |
-| 080 | Safety Awards: Cooler, Chronometer, Flashlight, Etc. |
-| 080 | Tags, Metal, Adhesive Back: Inventory, Property, Tool, Etc. |
-| 080 | Tags, Metal, Nonadhesive: Inventory, Property, Skiff, Seine |
-| 080 | Tags, Labels, Bands, Pre-Printed |
+| 08010| Badges, Buttons, Emblems, and ID Cards, Celluloid and Plastic |
+| 08015 | Badges and Emblems, Metal: Cap, Game Wardens', Officers', SE |
+| 08025 | Card Holders, All Types (Except Metal - See Class 578-50) |
+| 08035 | Convention Badges and Name Tags, Adhesive Back |
+| 08038 | Convention Badges and Name Tags, Nonadhesive Type |
+| 08044 | Fasteners (for badges, etc.): metal, plastic, etc. |
+| 08050 | Nameplates, Metal, Adhesive Back |
+| 08053 | Nameplates, Metal, Nonadhesive |
+| 08055 | Nameplates, Plastic |
+| 08057 | Plaque, Award Type |
+| 08060 | Service Awards: Jewelry, Clocks, Knives, Etc. |
+| 08065 | Safety Awards: Cooler, Chronometer, Flashlight, Etc. |
+| 08070 | Tags, Metal, Adhesive Back: Inventory, Property, Tool, Etc. |
+| 08073 | Tags, Metal, Nonadhesive: Inventory, Property, Skiff, Seine |
+| 08080 | Tags, Labels, Bands, Pre-Printed |
  
 <!--
 type: tab
@@ -693,13 +693,13 @@ The table below includes the commodity codes (class and subclass list) for bags,
 
 | Code | Description |
 | -------- | :--: |
-| 085 | Bags, Burlap or Jute, New and Used |
-| 085 | Bags, Canvas or Duck (Except Mail) |
-| 085 | Bags, Cement, Used |
-| 085 | Bags, Mail |
-| 085 | Bags, Nylon or Polyester |
-| 085 | Bags, Sand |
-| 085 | Sheeting, Soil Erosion: Asphalt, Biodegradable Paper, Burlap |
+| 08515 | Bags, Burlap or Jute, New and Used |
+| 08520 | Bags, Canvas or Duck (Except Mail) |
+| 08525 | Bags, Cement, Used |
+| 08530 | Bags, Mail |
+| 08545 | Bags, Nylon or Polyester |
+| 08555 | Bags, Sand |
+| 08585 | Sheeting, Soil Erosion: Asphalt, Biodegradable Paper, Burlap |
 
 <!-- type: tab-end -->
 
@@ -714,19 +714,19 @@ The table below includes the commodity codes (class and subclass list) for bags,
 
 | Code | Description |
 | -------- | :--: |
-| 100 | Containers, Plastic (All Purpose) |
-| 100 | Containers, Recycling |
-| 100 | Covers, Drum (All Types and Sizes) |
-| 100 | Drum Spigots, Metal or Plastic |
-| 100 | Freight and Cargo Containers (Shipping) |
-| 100 | Gaskets, All Types (For Barrels, Drums, Kegs, and Pails) |
-| 100 | Hazardous Material (Chem.) Containment/Storage |
-| 100 | Hazardous Material Containment/Storage (Petroleum) |
-| 100 | Pail-Type Containers, Steel |
-| 100 | Plastic Barrels, Reinforced |
-| 100 | Plugs, Drum |
-| 100 |Stainless Steel Drums |
-| 100 | Steel Barrels, Drums, and Kegs |
+| 10006 | Containers, Plastic (All Purpose) |
+| 10007 | Containers, Recycling |
+| 10008 | Covers, Drum (All Types and Sizes) |
+| 10010 | Drum Spigots, Metal or Plastic |
+| 10021 | Freight and Cargo Containers (Shipping) |
+| 10025 | Gaskets, All Types (For Barrels, Drums, Kegs, and Pails) |
+| 10030 | Hazardous Material (Chem.) Containment/Storage |
+| 10031 | Hazardous Material Containment/Storage (Petroleum) |
+| 10040 | Pail-Type Containers, Steel |
+| 10045 | Plastic Barrels, Reinforced |
+| 10050 | Plugs, Drum |
+| 10060 |Stainless Steel Drums |
+| 10067 | Steel Barrels, Drums, and Kegs |
 
 <!--
 type: tab
@@ -737,13 +737,13 @@ The table below includes the commodity codes (class and subclass list) for beari
 
 | Code | Description |
 | -------- | :--: |
-| 105 | Ball Bearings and Parts |
-| 105 | Bearing Assemblies (Including Hanger Bearings and Custom-Mad |
-| 105 | Bearings and Parts (For Marine Equipment) |
-| 105 | Pillow Blocks (For Bearings) |
-| 105 | Roller and Needle Bearings and Parts, Straight |
-| 105 | Roller Taper Bearings and Parts |
-| 105 | Sleeve Bearings and Parts |
+| 10512 | Ball Bearings and Parts |
+| 10518 | Bearing Assemblies (Including Hanger Bearings and Custom-Mad |
+| 10530 | Bearings and Parts (For Marine Equipment) |
+| 10548 | Pillow Blocks (For Bearings) |
+| 10560 | Roller and Needle Bearings and Parts, Straight |
+| 10572 | Roller Taper Bearings and Parts |
+| 10584 | Sleeve Bearings and Parts |
 
 <!--
 type: tab
@@ -754,10 +754,10 @@ The table below includes the commodity codes (class and subclass list) for belts
 
 | Code | Description |
 | -------- | :--: |
-| 110 | Accessories: Dressing, Hooks, Laces, Etc. |
-| 110 | V-Belts, Automotive Fan and Generator |
-| 110 | V-Belts, Industrial |
-| 110 | V-Belts, Fractional Horsepower |
+| 11009 | Accessories: Dressing, Hooks, Laces, Etc. |
+| 11074 | V-Belts, Automotive Fan and Generator |
+| 11082 | V-Belts, Industrial |
+| 11090 | V-Belts, Fractional Horsepower |
 
 <!--
 type: tab
@@ -768,7 +768,7 @@ The table below includes the commodity codes (class and subclass list) for bioch
 
 | Code | Description |
 | -------- | :--: |
-| 115 | Biochemical Reagents and Tests: Antibiotic Assays, Different |
+| 11505 | Biochemical Reagents and Tests: Antibiotic Assays, Different |
 
 <!--
 type: tab
