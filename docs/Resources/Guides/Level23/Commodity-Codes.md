@@ -438,7 +438,7 @@ The table below includes the commodity codes (class and subclass list) for art o
 | Code | Description |
 | -------- | :--: | 
 | 05216 | Drawings (Originals) |
-| 05224 | Engravings, Etchings, Lithographs, Serigraphs, and Similar r |
+| 05224 | Engravings, Etchings, Lithographs, Serigraphs, and Similar |
 | 05256 | Painting (Originals) |
 | 05264 | Photographs |
 | 05272 | Posters & Prints (Not Originals) |
@@ -617,7 +617,7 @@ The table below includes the commodity codes (class and subclass list) for autom
 
 | Code | Description |
 | -------- | :--: | 
-| 075 | Air Powered Shop Tools, Regulators, and Parts |
+| 07501 | Air Powered Shop Tools, Regulators, and Parts |
 | 075 | Aligners, Balancers, and Accessories, Wheel |
 | 075 | Battery Chargers and Testers, Automotive (See Also Class 725) |
 | 075 | Brake Bench Stands |
