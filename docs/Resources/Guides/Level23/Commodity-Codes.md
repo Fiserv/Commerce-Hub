@@ -779,45 +779,45 @@ The table below includes the commodity codes (class and subclass list) for boats
 
 | Code | Description |
 | -------- | :--: |
-| 120 | Airboats |
-| 120 | Anchors |
-| 120 | Animal Capture Guns and Accessories |
-| 120 | Bait, Fish |
-| 120 | Battery Boxes, Marine |
-| 120 | Barriers, Turbidity |
-| 120 | Bilge Pumps and Boat Bailers |
-| 120 | Boat Fenders |
-| 120 | Boats, 21 Feet and Under |
-| 120 | Boats, Over 21 Feet |
-| 120 | Boats, Pedal and Pontoon |
-| 120 | Buoys, Marker |
-| 120 | Canoes |
-| 120 | Depth Finders |
-| 120 | Docks and Piers, Fixed and Floating |
-| 120 | Fish Locators and Shockers |
-| 120 | Fuel Tanks, Boat |
-| 120 | Hardware and Supplies, Boat (Except Spark Plugs) |
-| 120 | Life Preservers |
-| 120 | Lights, Beacon and Signal |
-| 120 | Lights, Marine Navigation, Boat |
-| 120 | Motors, Electric, Trolling |
-| 120 | Motors, Inboard, Diesel, Marine |
-| 120 | Motor Conversion Unit (Outboard Propeller to Jet Water Drive |
-| 120 | Motors, Inboard, Gasoline
-| 120 | Motors, Outboard, Diesel |
-| 120 | Motors, Outboard, Gasoline |
-| 120 | Navigation Instruments, Marine: Compasses, Sextant, Etc. (fo) |
-| 120 | Nets and Repair Supplies, Marine |
-| 120 | Paddles and Oars |
-| 120 | Pontoons, All Types |
-| 120 | Preservatives, Net |
-| 120 | Propellers |
-| 120 | Rods, reels, and Tackle Supplies |
-| 120 | Scuba and Skin Diving Equipment |
-| 120 | Searchlights, Marine |
-| 120 | Trailers, Boat |
-| 120 | Wildlife Scare Devices |
-| 120 | Winches & Lifts, Boat |
+| 12008 | Airboats |
+| 12010 | Anchors |
+| 12011 | Animal Capture Guns and Accessories |
+| 12012 | Bait, Fish |
+| 12013 | Battery Boxes, Marine |
+| 12015 | Barriers, Turbidity |
+| 12016 | Bilge Pumps and Boat Bailers |
+| 12019 | Boat Fenders |
+| 12021 | Boats, 21 Feet and Under |
+| 12023 | Boats, Over 21 Feet |
+| 12024 | Boats, Pedal and Pontoon |
+| 12026 | Buoys, Marker |
+| 12030 | Canoes |
+| 12033 | Depth Finders |
+| 12035 | Docks and Piers, Fixed and Floating |
+| 12037 | Fish Locators and Shockers |
+| 12040 | Fuel Tanks, Boat |
+| 12044 | Hardware and Supplies, Boat (Except Spark Plugs) |
+| 12048 | Life Preservers |
+| 12050 | Lights, Beacon and Signal |
+| 12052 | Lights, Marine Navigation, Boat |
+| 12057 | Motors, Electric, Trolling |
+| 12058 | Motors, Inboard, Diesel, Marine |
+| 12059 | Motor Conversion Unit (Outboard Propeller to Jet Water Drive |
+| 12060 | Motors, Inboard, Gasoline
+| 12062 | Motors, Outboard, Diesel |
+| 12063 | Motors, Outboard, Gasoline |
+| 12064 | Navigation Instruments, Marine: Compasses, Sextant, Etc. (fo) |
+| 12065 | Nets and Repair Supplies, Marine |
+| 12070 | Paddles and Oars |
+| 12071 | Pontoons, All Types |
+| 12073 | Preservatives, Net |
+| 12075 | Propellers |
+| 12080 | Rods, reels, and Tackle Supplies |
+| 12083 | Scuba and Skin Diving Equipment |
+| 12086 | Searchlights, Marine |
+| 12090 | Trailers, Boat |
+| 12094 | Wildlife Scare Devices |
+| 12097 | Winches & Lifts, Boat |
 
 <!--
 type: tab
@@ -828,11 +828,11 @@ The table below includes the commodity codes (class and subclass list) for adhes
 
 | Code | Description |
 | -------- | :--: |
-| 125 | Base Compound (Hot Melt Polyethylene Binding) |
-| 125 | Bindery Supplies (Paper Merchants' Catalog items) |
-| 125 | Paper, Reproduction Proofing |
-| 125 | Paper Treatment Chemicals (Deacidifiers) |
-| 125 | Tapes, Bookbinding |
+| 12508 | Base Compound (Hot Melt Polyethylene Binding) |
+| 12510 | Bindery Supplies (Paper Merchants' Catalog items) |
+| 12570 | Paper, Reproduction Proofing |
+| 12572 | Paper Treatment Chemicals (Deacidifiers) |
+| 12575 | Tapes, Bookbinding |
 
 <!--
 type: tab
@@ -843,25 +843,25 @@ The table below includes the commodity codes (class and subclass list) for brick
 
 | Code | Description |
 | -------- | :--: |
-| 135 | Brick, Common |
-| 135 | Brick Facing |
-| 135 | Brick, Sewer |
-| 135 | Cement (Mortar), Refractory |
-| 135 | Clay Pipe and Fittings, Vitreous Clay (Up To 4 Inches) |
-| 135 | Clay Pipe, Culverts, and fittings |
-| 135 |Coloring for Cement and Grout |
-| 135 | Firebrick |
-| 135 | Fire Clay |
-| 135 | Grout Sealer |
-| 135 | Grout, Tile |
-| 135 | Marble, Building |
-| 135 | Refractories, Castable |
-| 135 |Stone, Building (Except Marble) |
-| 135 | Ties and anchors, furnace |
-| 135 | Tile, Floor and Wall, Ceramic, Glazed |
-| 135 | Tile, Floor and Wall, Ceramic, Unglazed |
-| 135 | Tile, Quarry |
-| 135 | Tile Sealant |
+| 13508 | Brick, Common |
+| 13509 | Brick Facing |
+| 13510 | Brick, Sewer |
+| 13512 | Cement (Mortar), Refractory |
+| 13517 | Clay Pipe and Fittings, Vitreous Clay (Up To 4 Inches) |
+| 13518 | Clay Pipe, Culverts, and fittings |
+| 13520 |Coloring for Cement and Grout |
+| 13528 | Firebrick |
+| 13534 | Fire Clay |
+| 13538 | Grout Sealer |
+| 13540 | Grout, Tile |
+| 13545 | Marble, Building |
+| 13547 | Refractories, Castable |
+| 13550 |Stone, Building (Except Marble) |
+| 13555 | Ties and anchors, furnace |
+| 13564 | Tile, Floor and Wall, Ceramic, Glazed |
+| 13566 | Tile, Floor and Wall, Ceramic, Unglazed |
+| 13570 | Tile, Quarry |
+| 13579 | Tile Sealant |
 
 <!--
 type: tab
@@ -872,14 +872,14 @@ The table below includes the commodity codes (class and subclass list) for brush
 
 | Code | Description |
 | -------- | :--: |
-| 145 | Acid |
-| 145 | Masonry Brushes |
-| 145 | Paint and Varnish |
-| 145 | Roofing |
-| 145 | Solder Flux Paste Brush |
-| 145 | Wash, Car/Truck |
-| 145 | Wire, Hand |
-| 145 | Wire, Wheel |
+| 14515 | Acid |
+| 14543 | Masonry Brushes |
+| 14545 | Paint and Varnish |
+| 14560 | Roofing |
+| 14565 | Solder Flux Paste Brush |
+| 14572 | Wash, Car/Truck |
+| 14575 | Wire, Hand |
+| 14590 | Wire, Wheel |
 
 <!--
 type: tab
@@ -890,59 +890,59 @@ The table below includes the commodity codes (class and subclass list) for build
 
 | Code | Description |
 | -------- | :--: |
-| 150 | Adhesives and Bonding Agents |
-| 150 | Aluminum Extrusions (For Fabricating Window and Door Screens |
-| 150 | Builder's Paper, Kraft Types (Not Felt and Tar Paper) |
-| 150 | Casement Window Hardware: Latches, Operators, and Handles |
-| 150 | Cement and Plaster Mixes, Sacked (Limited Quantities) |
-| 150 | Cement, Quick Setting, Sacked |
-| 150 | Concrete, Polymer, All Types |
-| 150 | Curing Mixtures, All Types (For Curing Concrete) |
-| 150 | Door Bells, Chimes and Hardware |
-| 150 | Door Operators (Not Door Closers): Chain Hoist Type, Electri |
-| 150 | Door Openers and Parts, Electric |
-| 150 | Doors, Aluminum and Glass, All Types |
-| 150 | Doors and Parts, Automatic, Drive-Through Type, Etc. |
-| 150 | Doors and Parts, Swinging |
-| 150 | Doors, Frames, and Jambs, Steel |
-| 150 | Doors, Frames, and Jambs, Wood |
-| 150 | Dowels, and Rods, Wood |
-| 150 | Down Eipes, Eaves, Troughs, Guttering, and Accessories |
-| 150 | Folding Doors, Commercial Type |
-| 150 | Folding Doors, Residential Type |
-| 150 | Handrails, Metal |
-| 150 | Grout, Drywall |
-| 150 | Handrails, Wood |
-| 150 | Hardeners, Concrete and Plaster |
-| 150 | Jalousie Doors and Windows |
-| 150 | Lath, Metal |
-| 150 | Lath, Wood |
-| 150 | Logs, Building |
-| 150 | Louvers (Not Air Conditioning - See 031-53) |
-| 150 | Millwork: Counters, Custom-Made Cabinets, Shelves, Etc. |
-| 150 | Moldings, Metal |
-| 150 | Moldings, Plastic |
-| 150 | Moldings, Strips, Stops, Rounds, Etc.: Wood |
-| 150 | Overhead Doors (Garage, Etc. - See Class 450-26 for Hardware |
-| 150 | Partitions, Office, Metal and Glass, Custom-Made |
-| 150 | Partitions, Office, Wood and Glass, Custom-Made |
-| 150 | Retarder, Plaster |
-| 150 | Screen Doors and Window Screens, Aluminum Frame |
-| 150 | Screen Doors and Window Screens, Steel Frame |
-| 150 | Screen Doors and Window Screens, Wood Frame |
-| 150 | Sliding and Rolling Doors, Commercial Type; and Hardware |
-| 150 | Sliding and Rolling Doors, Residential Type; and Hardware |
-| 150 | Storm Doors and Windows |
-| 150 | Ties, Wall (Not Concrete Form) |
-| 150 | Tile, Wall, Metal |
-| 150 | Tile, Wall, Plastic |
-| 150 | Trusses, Roof, Wooden |
-| 150 | Vents, Foundation |
-| 150 | Warehouse Type Doors (Impact, Pvc Strip, Etc.) |
-| 150 | Weather Stripping, All Kinds |
-| 150 | Windows and Frames, Aluminum |
-| 150 | Windows and Frames, Steel |
-| 150 | Windows and Frames, Wooden |
+| 15002 | Adhesives and Bonding Agents |
+| 15004 | Aluminum Extrusions (For Fabricating Window and Door Screens |
+| 15006 | Builder's Paper, Kraft Types (Not Felt and Tar Paper) |
+| 15009 | Casement Window Hardware: Latches, Operators, and Handles |
+| 15012 | Cement and Plaster Mixes, Sacked (Limited Quantities) |
+| 15014 | Cement, Quick Setting, Sacked |
+| 15015 | Concrete, Polymer, All Types |
+| 15016 | Curing Mixtures, All Types (For Curing Concrete) |
+| 15018 | Door Bells, Chimes and Hardware |
+| 15019 | Door Operators (Not Door Closers): Chain Hoist Type, Electri |
+| 15020 | Door Openers and Parts, Electric |
+| 15021 | Doors, Aluminum and Glass, All Types |
+| 15023 | Doors and Parts, Automatic, Drive-Through Type, Etc. |
+| 15024 | Doors and Parts, Swinging |
+| 15025 | Doors, Frames, and Jambs, Steel |
+| 15027 | Doors, Frames, and Jambs, Wood |
+| 15028 | Dowels, and Rods, Wood |
+| 15029 | Down Eipes, Eaves, Troughs, Guttering, and Accessories |
+| 15030 | Folding Doors, Commercial Type |
+| 15031 | Folding Doors, Residential Type |
+| 15032 | Handrails, Metal |
+| 15033 | Grout, Drywall |
+| 15034 | Handrails, Wood |
+| 15035 | Hardeners, Concrete and Plaster |
+| 15037 | Jalousie Doors and Windows |
+| 15042 | Lath, Metal |
+| 15044 | Lath, Wood |
+| 15045 | Logs, Building |
+| 15046 | Louvers (Not Air Conditioning - See 031-53) |
+| 15049 | Millwork: Counters, Custom-Made Cabinets, Shelves, Etc. |
+| 15051 | Moldings, Metal |
+| 15052 | Moldings, Plastic |
+| 15053 | Moldings, Strips, Stops, Rounds, Etc.: Wood |
+| 15055 | Overhead Doors (Garage, Etc. - See Class 450-26 for Hardware |
+| 15056 | Partitions, Office, Metal and Glass, Custom-Made |
+| 15058 | Partitions, Office, Wood and Glass, Custom-Made |
+| 15061 | Retarder, Plaster |
+| 15072 | Screen Doors and Window Screens, Aluminum Frame |
+| 15074 | Screen Doors and Window Screens, Steel Frame |
+| 15076 | Screen Doors and Window Screens, Wood Frame |
+| 15077 | Sliding and Rolling Doors, Commercial Type; and Hardware |
+| 15078 | Sliding and Rolling Doors, Residential Type; and Hardware |
+| 15079 | Storm Doors and Windows |
+| 15081 | Ties, Wall (Not Concrete Form) |
+| 15083 | Tile, Wall, Metal |
+| 15085 | Tile, Wall, Plastic |
+| 15086 | Trusses, Roof, Wooden |
+| 15088 | Vents, Foundation |
+| 15089 | Warehouse Type Doors (Impact, Pvc Strip, Etc.) |
+| 15090 | Weather Stripping, All Kinds |
+| 15092 | Windows and Frames, Aluminum |
+| 15094 | Windows and Frames, Steel |
+| 15096 | Windows and Frames, Wooden |
 
 <!--
 type: tab
@@ -953,14 +953,14 @@ The table below includes the commodity codes (class and subclass list) for build
 
 | Code | Description |
 | -------- | :--: |
-| 155 | Buildings, Large, Prefabricated (Over 500 Sq.Ft.) |
-| 155 | Building (500 Sq.Ft. and Under) |
-| 155 | Canopy, Freestanding |
-| 155 | Guard and Watchman Huts |
-| 155 | Portable Toilets |
-| 155 | Shelters, Insulated (For Remote Equipment) |
-| 155 | Shelters, Non-Insulated |
-| 155 | Shelters, Portable |
+| 15510 | Buildings, Large, Prefabricated (Over 500 Sq.Ft.) |
+| 15512 | Building (500 Sq.Ft. and Under) |
+| 15520 | Canopy, Freestanding |
+| 15546 | Guard and Watchman Huts |
+| 15570 | Portable Toilets |
+| 15578 | Shelters, Insulated (For Remote Equipment) |
+| 15579 | Shelters, Non-Insulated |
+| 15580 | Shelters, Portable |
 
 <!--
 type: tab
@@ -971,15 +971,15 @@ The table below includes the commodity codes (class and subclass list) for forkn
 
 | Code | Description |
 | -------- | :--: |
-| 160 | Stones & Sharpeners |
+| 16019 | Stones & Sharpeners |
 | 165 | Cafeteria and Kitchen Equipment, Commercial |
-| 165 | Can Openers, Electric |
-| 165 | Can Openers, Manual |
-| 165 | Coffeemakers, Hot Water Dispensers, Urn Bags and Filters |
-| 165 | Dispensers: Cup, Dish, Silverware, Tray, Etc. |
-| 165 | Ice equipment: carts, Crushers, Shavers, and Storage Bins |
-| 165 | Ovens, Convection and Microwave |
-| 165 | Repair Parts, Cafeteria and Kitchen Equipment |
+| 16510 | Can Openers, Electric |
+| 16512 | Can Openers, Manual |
+| 16515 | Coffeemakers, Hot Water Dispensers, Urn Bags and Filters |
+| 16533 | Dispensers: Cup, Dish, Silverware, Tray, Etc. |
+| 16552 | Ice equipment: carts, Crushers, Shavers, and Storage Bins |
+| 16560 | Ovens, Convection and Microwave |
+| 16576 | Repair Parts, Cafeteria and Kitchen Equipment |
 
 <!--
 type: tab
@@ -990,88 +990,89 @@ The table below includes the commodity codes (class and subclass list) for chemi
 
 | Code | Description |
 | -------- | :--: |
-| 175 | Aprons and Gloves, Laboratory: Plastic, Rubber, Etc. |
-| 175 | Balances and Accessories |
-| 175 | Burners, Heat Guns, Hot Plates (With or Without Stirring), m |
-| 175 | Chemicals, Laboratory (acs, cp, practical, reagent grade, et |
-| 175 | Containers (For Liquefied or Compressed Gases), Laboratory s |
-| 175 | Electrode Sensing Meters and Electrodes: Dissolved Oxygen, p |
-| 175 | Extraction Apparatus, Laboratory |
-| 175 | Filtering Apparatus and Filters (For Liquids) |
-| 175 | Filter Paper and Membranes |
-| 175 | Furnaces, Laboratory |
-| 175 | Glass Pipe and Fittings |
-| 175 | Glassware, Laboratory (Stock Only) |
-| 175 | Glassware Washing Compounds |
-| 175 | Holders, Glass Tube |
-| 175 | Interval Timers and Actuators, Electrical and Mechanical |
-| 175 | Ion Exchange Materials: Liquids, Resins, Etc. |
-| 175 | Laboratory Supplies: Asbestos Squares, Corks, Files, Glass c |
-| 175 | Ovens, Laboratory |
-| 175 | Paper, Laboratory |
-| 175 | Ph buffer Solutions, Indicators, and Papers |
-| 175 | Pipetters and Dispensers, Semiautomatic (Single Action) |
-| 175 | Plastic wWre, All Types |
-| 175 | Reagents and Chemicals, Ultrapure (Meeting Higher Standards) |
-| 175 | Refractometers |
-| 175 | Sand, Cement Testing (Ottawa Grade) |
-| 175 | Screening and Sieving Apparatus and Accessories: Riffle Samp |
-| 175 | Stainless Steel Ware, All Kinds |
-| 175 | Stirrers, Blenders, Homogenizers, and Shakers |
-| 175 | Stoppers, Rubber and Synthetic |
-| 175 | Syringes, Laboratory, Manual and Automatic |
-| 175 | Thermometers, General Laboratory Type |
-| 175 | Tubing, Plastic, All Types |
-| 175 | Tubing, Rubber, All Types |
-| 175 | Water Purification Apparatus & Treatments (Distilled, Reagen ) |
+| 17503 | Aprons and Gloves, Laboratory: Plastic, Rubber, Etc. |
+| 17508 | Balances and Accessories |
+| 17510 | Burners, Heat Guns, Hot Plates (With or Without Stirring), m |
+| 17513 | Chemicals, Laboratory (acs, cp, practical, reagent grade, et |
+| 17517 | Containers (For Liquefied or Compressed Gases), Laboratory s |
+| 17527 | Electrode Sensing Meters and Electrodes: Dissolved Oxygen, p |
+| 17529 | Extraction Apparatus, Laboratory |
+| 17532 | Filtering Apparatus and Filters (For Liquids) |
+| 17533 | Filter Paper and Membranes |
+| 17536 | Furnaces, Laboratory |
+| 17539 | Glass Pipe and Fittings |
+| 17542 | Glassware, Laboratory (Stock Only) |
+| 17544 | Glassware Washing Compounds |
+| 17546 | Holders, Glass Tube |
+| 17549 | Interval Timers and Actuators, Electrical and Mechanical |
+| 17551 | Ion Exchange Materials: Liquids, Resins, Etc. |
+| 17554 | Laboratory Supplies: Asbestos Squares, Corks, Files, Glass c |
+| 17560 | Ovens, Laboratory |
+| 17562 | Paper, Laboratory |
+| 17565 | Ph buffer Solutions, Indicators, and Papers |
+| 17567 | Pipetters and Dispensers, Semiautomatic (Single Action) |
+| 17568 | Plastic wWre, All Types |
+| 17574 | Reagents and Chemicals, Ultrapure (Meeting Higher Standards) |
+| 17575 | Refractometers |
+| 17577 | Sand, Cement Testing (Ottawa Grade) |
+| 17578 | Screening and Sieving Apparatus and Accessories: Riffle Samp |
+| 17580 | Stainless Steel Ware, All Kinds |
+| 17582 | Stirrers, Blenders, Homogenizers, and Shakers |
+| 17584 | Stoppers, Rubber and Synthetic |
+| 17585 | Syringes, Laboratory, Manual and Automatic |
+| 17587 | Thermometers, General Laboratory Type |
+| 17589 | Tubing, Plastic, All Types |
+| 17590 | Tubing, Rubber, All Types |
+| 17595 | Water Purification Apparatus & Treatments (Distilled, Reagen ) |
 
 <!--
 type: tab
-title: 180 Chemicals
+title: 180 Chemicals Raw Materials
 -->
 
 The table below includes the commodity codes (class and subclass list) for chemical raw materials (in large quantities prmarily for manufacturing primarily for manufacturing, janitorial and laundry products). 
 
 | Code | Description |
 | -------- | :--: |
-| 180 | Acids, Inorganic: Hydrochloric, Phosphoric, Sulfuric, Etc. |
-| 180 | Acids, Organic: Hydroxyacetic, Oleic, Stearic, Etc. |
-| 180 | Alcohols |
-| 180 | Ammonium Hydroxide (Aqua Ammonia) and Amines |
-| 180 | Antioxidants |
-| 180 | Bacteriostats and Germicides (Except Quaternary Ammonium Typ |
-| 180 | Bicarbonates and Carbonates |
-| 180 | Boron Compounds |
-| 180 | Brighteners, Fluorescent (Optical Bleaches) |
-| 180 | Chelating and Sequestering Agents (Except Phosphates) |
-| 180 | Chlorine Carriers, Inorganic and Organic |
-| 180 | Dyes and Pigments |
-| 180 | Mineral Oil, Petrolatum, Etc. |
-| 180 | Silicates |
-| 180 | Sodium Carboxymethylcellulose (cmc) and Other Cellulose Deri |
-| 180 | Solvents and coupling agents |
-| 180 | Sulfates, Inorganic |
-| 180 | Surfactants, Amphoteric and Cationic: Detergents, Emulsifier |
-| 180 | Surfactants, Anionic: Organic Phosphates, Sulfates, Sulfonat |
-| 180 | Surfactants, Nonionic: Ethoxylated Alcohols, Ethoxylated Lan |
+| 18002 | Abrasives: Feldspar, Pumice, Silica, Etc. |
+| 18004 | Acids, Inorganic: Hydrochloric, Phosphoric, Sulfuric, Etc. |
+| 18006 | Acids, Organic: Hydroxyacetic, Oleic, Stearic, Etc. |
+| 18008 | Alcohols |
+| 18012 | Ammonium Hydroxide (Aqua Ammonia) and Amines |
+| 18014 | Antioxidants |
+| 18020 | Bacteriostats and Germicides (Except Quaternary Ammonium Typ |
+| 18024 | Bicarbonates and Carbonates |
+| 18028 | Boron Compounds |
+| 18030 | Brighteners, Fluorescent (Optical Bleaches) |
+| 18034 | Chelating and Sequestering Agents (Except Phosphates) |
+| 18036 | Chlorine Carriers, Inorganic and Organic |
+| 18042 | Dyes and Pigments |
+| 18066 | Mineral Oil, Petrolatum, Etc. |
+| 18084 | Silicates |
+| 18086| Sodium Carboxymethylcellulose (cmc) and Other Cellulose Deri |
+| 18088 | Solvents and coupling agents |
+| 18090 | Sulfates, Inorganic |
+| 18091 | Surfactants, Amphoteric and Cationic: Detergents, Emulsifier |
+| 18092 | Surfactants, Anionic: Organic Phosphates, Sulfates, Sulfonat |
+| 18093 | Surfactants, Nonionic: Ethoxylated Alcohols, Ethoxylated Lan |
 
 <!--
 type: tab
-title: 190 Chemicals
+title: 190 Chemicals and Solvents
 -->
 
 The table below includes the commodity codes (class and subclass list) for chemicals and solvents, commercial (in bulk).
 
 | Code | Description |
 | -------- | :--: |
-| 190 | Acids, Mineral: Boric, Hydrobromic, Hydrochloric, Sulfuric |
-| 190 | Alcohols: Ethyl, Isopropyl, Methyl, Etc., and Glycerine |
-| 190 | Chemicals, Bulk (Not Otherwise Itemized) |
-| 190 | Formaldehyde Solution (Formalin) |
-| 190 | Ketones: Acetone, Diacetone Alcohol, Methyl Isobutyl Ketone |
-| 190 | Pentachlorophenol (Penta), Creosote Oil, and Other Wood Pres |
-| 190 | Sodium Phosphates and Polyphosphates |
-| 190 | Solvents (Not Otherwise Itemized) |
+| 19018 | Acids, Mineral: Boric, Hydrobromic, Hydrochloric, Sulfuric |
+| 19025 | Alcohols: Ethyl, Isopropyl, Methyl, Etc., and Glycerine |
+| 19036 | Chemicals, Bulk (Not Otherwise Itemized) |
+| 19046 | Formaldehyde Solution (Formalin) |
+| 19060 | Ketones: Acetone, Diacetone Alcohol, Methyl Isobutyl Ketone |
+| 19081 | Pentachlorophenol (Penta), Creosote Oil, and Other Wood Pres |
+| 19085 | Sodium Phosphates and Polyphosphates |
+| 19090 | Solvents (Not Otherwise Itemized) |
 
 <!--
 type: tab
@@ -1082,12 +1083,12 @@ The table below includes the commodity codes (class and subclass list) for clean
 
 | Code | Description |
 | -------- | :--: |
-| 192 | Chemical Spill Solvents and Detergents |
-| 192 | Concrete Strippers and Brick Detergents |
-| 192 | Paint Spray Booth Compounds, Water-Soluble |
-| 192 | Spray Detergents (For Heavy Duty and Steam Cleaning) |
-| 192 | Steam Cleaning Compounds |
-| 192 | Surface-Active Agents: Emulsifiers, Wetting Agents, and one- |
+| 19217 | Chemical Spill Solvents and Detergents |
+| 19225 | Concrete Strippers and Brick Detergents |
+| 19265 | Paint Spray Booth Compounds, Water-Soluble |
+| 19280 | Spray Detergents (For Heavy Duty and Steam Cleaning) |
+| 19283 | Steam Cleaning Compounds |
+| 19285 | Surface-Active Agents: Emulsifiers, Wetting Agents, and one- |
 
 <!--
 type: tab
@@ -1098,17 +1099,17 @@ The table below includes the commodity codes (class and subclass list) for clock
 
 | Code | Description |
 | -------- | :--: |
-| 195 | Alarm Clocks, Electric and Spring |
-| 195 | Clock and Watchmakers' Repair Parts and Materials |
-| 195 | Clocks, Electric, Commercial |
-| 195 | Jewelers' and Watchmakers' Tools |
-| 195 | Master Clock Systems and Parts |
-| 195 | Program Clocks, Bells, Lights, and Chimes |
-| 195 | Time Clocks and Recorders, Accessories, and Parts |
-| 195 | Timers, Interval; Accessories, and Parts (Not Photographic o) |
-| 195 | Wall Clocks, Battery |
-| 195 | Wall Clocks, Electric |
-| 195 | Watchmen's Clocks and Supplies |
+| 19508 | Alarm Clocks, Electric and Spring |
+| 19516 | Clock and Watchmakers' Repair Parts and Materials |
+| 19518 | Clocks, Electric, Commercial |
+| 19527 | Jewelers' and Watchmakers' Tools |
+| 19540 | Master Clock Systems and Parts |
+| 19550 | Program Clocks, Bells, Lights, and Chimes |
+| 19568 | Time Clocks and Recorders, Accessories, and Parts |
+| 19574 | Timers, Interval; Accessories, and Parts (Not Photographic o) |
+| 19580 | Wall Clocks, Battery |
+| 19583 | Wall Clocks, Electric |
+| 19588 | Watchmen's Clocks and Supplies |
 
 <!-- type: tab-end -->
 
@@ -1123,23 +1124,23 @@ The table below includes the commodity codes (class and subclass list) for cloth
 
 | Code | Description |
 | -------- | :--: |
-| 200 | Aprons (Not Laboratory or Leather) | 
-| 200 | Bags, Clothing |
-| 200 | Bands: Arm, Hat, Head, Sweat |
-| 200 | Belts and Suspenders |
-| 200 | Caps, All Types (Except Disposable) |
-| 200 | Clothing, Disposable: Aprons, Capes, Caps, Coveralls, Etc. |
-| 200 | Emblems and Shoulder Patches (For Uniforms) |
-| 200 | Gloves, Work: Canvas, Coated, Leather, Plastic, Rubber, Etc. |
-| 200 | Hats, Straw & Fabric |
-| 200 | Hazardous Environment Clothing |
-| 200 | Hospital Wear, Professional: Lab Coats and Smocks,  Surgical |
-| 200 | Rainwear: Coats, Hats, Slicker Suits, and Umbrellas (Storm s) |
-| 200 | Tee Shirts, Custom Silk Screen |
-| 200 | Shirts, Tee |
-| 200 | Shirts, Sport |
-| 200 | Shorts (Walking), Jump Suits, and Other Casual Clothing |
-| 200 | Wearing Apparel, Work, Men's and Women's: Blue Jeans, Covera |
+| 20006 | Aprons (Not Laboratory or Leather) | 
+| 20007 | Bags, Clothing |
+| 20008 | Bands: Arm, Hat, Head, Sweat |
+| 20009 | Belts and Suspenders |
+| 20012 | Caps, All Types (Except Disposable) |
+| 20015 | Clothing, Disposable: Aprons, Capes, Caps, Coveralls, Etc. |
+| 20021 | Emblems and Shoulder Patches (For Uniforms) |
+| 20027 | Gloves, Work: Canvas, Coated, Leather, Plastic, Rubber, Etc. |
+| 20033 | Hats, Straw & Fabric |
+| 20037 | Hazardous Environment Clothing |
+| 20041 | Hospital Wear, Professional: Lab Coats and Smocks,  Surgical |
+| 20045 | Rainwear: Coats, Hats, Slicker Suits, and Umbrellas (Storm s) |
+| 20055 | Tee Shirts, Custom Silk Screen |
+| 20056 | Shirts, Tee |
+| 20057 | Shirts, Sport |
+| 20058 | Shorts (Walking), Jump Suits, and Other Casual Clothing |
+| 20084 | Wearing Apparel, Work, Men's and Women's: Blue Jeans, Covera |
 
 <!--
 type: tab
@@ -1150,54 +1151,54 @@ The table below includes the commodity codes (class and subclass list) for compu
 
 | Code | Description |
 | -------- | :--: |
-| 205 | Cables, Computer, Premade: Printer, Terminal, Disk, Etc. att | 
-| 205 | Central Processing Unit (CPU): Computer Assisted Design/Manu | 
-| 205 | Central Processing Unit (CPU): Main Frame Oriented (Analog/S) | 
-| 205 | Central Processing Unit (CPU): Main Frame Oriented (Digital) | 
-| 205 | Central Processing Unit (CPU): Microcomputer Oriented or Sys | 
-| 205 | Central Processing Unit (CPU): Minicomputer Oriented or Syst | 
-| 205 | Central Processing Unit (CPU) Not Otherwise Classified | 
-| 205 | Communication Control Units: Concentrators, Multiplexors, Co | 
-| 205 | Communication Processors and Protocol Convertors: Front-End | 
-| 205 | Computer Assisted Retrieval Systems: Indexing, Retrieval And | 
-| 205 | Covers and Enclosures (Acoustical and Protective): Data or I | 
-| 205 | Data Entry/Remote job entry systems: dedicated single functi | 
-| 205 | Data or Information Processing Programmer's Supplies and ACC | 
-| 205 | Direct Access Storage Devices & Controllers: Main Frame Sys | 
-| 205 | Direct Access Storage Devices & Controllers: Microcomputer | 
-| 205 | Direct Access Storage Devices & Controllers: Minicomputer | 
-| 205 | Forms Bursters, Decollators, Detachers, Feeders, Strippers A | 
-| 205 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl | 
-| 205 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl  | 
-| 205 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl  | 
-| 205 | Modems, Data Communications | 
-| 205 | Networks, Computer | 
-| 205 | Optical Character Readers and Scanners: OCR Devices, Scanner |
-| 205 | Peripheral Devices and Accessories, Computer System: Individ |
-| 205 | Power Supplies, Surge Protectors, Uninterruptible Power Supp |
-| 205 | Printers and Plotters: Workstation Printers, Plotters, Word |
-| 205 | Printers and Printer Sub-Systems, Computer System: System Li |
-| 205 | Ribbons and Toner, Data Processing or Word Processing Printe |
-| 205 | Robotics |
-| 205 | Software, Application: Preprogrammed Software for Main Frame |
-| 205 | Software, Application: Preprogrammed Software for Microcompu |
-| 205 | Software, Application: Preprogrammed Software for Minicomput |
-| 205 | Software, Communications Control: Preprogrammed Software For |
-| 205 | Software, Data Base Management Control: Preprogrammed Software |
-| 205 | Software, Operating System: Preprogrammed Software Mainframe |
-| 205 | Software, Operating System: Preprogrammed Software Microcomputer |
-| 205 | Software, Operating System: Preprogrammed Software Mini computer |
-| 205 | Supplies and Accessories, Dasd Unit: Disk Packs, Floppy Disk |
-| 205 | Supplies and Accessories, Keyboard: Data and Word Processing |
-| 205 | Supplies and Accessories, Miscellaneous Data Processing: CRT |
-| 205 | Supplies and Accessories, Plotter: Data and Word Processing |
-| 205 | Supplies and Accessories, Printer: Data and Word Processing |
-| 205 | Supplies, Data Processing Tape: Data Processing Tapes, Tape |
-| 205 | Supplies, Data Processing Tape/Disk Media: Cleaners, Contain |
-| 205 | Tape Units and Tape Sub-Systems, Data Processing: Tape Media |
-| 205 | Terminals and CRT's, Graphic: Data Processing Systems (all s) |
-| 205 | Terminals and CRT's, Non-Graphic: Data Processing Systems (a) |
-| 205 | Word processing System and Equipment: Dedicated Word Process |
+| 20502 | Cables, Computer, Premade: Printer, Terminal, Disk, Etc. att | 
+| 20505 | Central Processing Unit (CPU): Computer Assisted Design/Manu | 
+| 20507 | Central Processing Unit (CPU): Main Frame Oriented (Analog/S) | 
+| 20509 | Central Processing Unit (CPU): Main Frame Oriented (Digital) | 
+| 20511 | Central Processing Unit (CPU): Microcomputer Oriented or Sys | 
+| 20513 | Central Processing Unit (CPU): Minicomputer Oriented or Syst | 
+| 20514 | Central Processing Unit (CPU) Not Otherwise Classified | 
+| 20516 | Communication Control Units: Concentrators, Multiplexors, Co | 
+| 20518 | Communication Processors and Protocol Convertors: Front-End | 
+| 20520 | Computer Assisted Retrieval Systems: Indexing, Retrieval And | 
+| 20524 | Covers and Enclosures (Acoustical and Protective): Data or I | 
+| 20526 | Data Entry/Remote job entry systems: dedicated single functi | 
+| 20528 | Data or Information Processing Programmer's Supplies and ACC | 
+| 20531 | Direct Access Storage Devices & Controllers: Main Frame Sys | 
+| 20532 | Direct Access Storage Devices & Controllers: Microcomputer | 
+| 20533 | Direct Access Storage Devices & Controllers: Minicomputer | 
+| 20535 | Forms Bursters, Decollators, Detachers, Feeders, Strippers A | 
+| 20536 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl | 
+| 20537 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl  | 
+| 20538 | Memory Add-On Units and Memory Upgrades: Chips, Boards, Encl  | 
+| 20539 | Modems, Data Communications | 
+| 20540 | Networks, Computer | 
+| 20541 | Optical Character Readers and Scanners: OCR Devices, Scanner |
+| 20543 | Peripheral Devices and Accessories, Computer System: Individ |
+| 20545 | Power Supplies, Surge Protectors, Uninterruptible Power Supp |
+| 20547 | Printers and Plotters: Workstation Printers, Plotters, Word |
+| 20549 | Printers and Printer Sub-Systems, Computer System: System Li |
+| 20552 | Ribbons and Toner, Data Processing or Word Processing Printe |
+| 20553 | Robotics |
+| 20554 | Software, Application: Preprogrammed Software for Main Frame |
+| 20556 | Software, Application: Preprogrammed Software for Microcompu |
+| 20558 | Software, Application: Preprogrammed Software for Minicomput |
+| 20560 | Software, Communications Control: Preprogrammed Software For |
+| 20562 | Software, Data Base Management Control: Preprogrammed Software |
+| 20564 | Software, Operating System: Preprogrammed Software Mainframe |
+| 20566 | Software, Operating System: Preprogrammed Software Microcomputer |
+| 20568 | Software, Operating System: Preprogrammed Software Mini computer |
+| 20571 | Supplies and Accessories, Dasd Unit: Disk Packs, Floppy Disk |
+| 20573 | Supplies and Accessories, Keyboard: Data and Word Processing |
+| 20575 | Supplies and Accessories, Miscellaneous Data Processing: CRT |
+| 20577 | Supplies and Accessories, Plotter: Data and Word Processing |
+| 20579 | Supplies and Accessories, Printer: Data and Word Processing |
+| 20581 | Supplies, Data Processing Tape: Data Processing Tapes, Tape |
+| 20583 | Supplies, Data Processing Tape/Disk Media: Cleaners, Contain |
+| 20585 | Tape Units and Tape Sub-Systems, Data Processing: Tape Media |
+| 20587 | Terminals and CRT's, Graphic: Data Processing Systems (all s) |
+| 20589 | Terminals and CRT's, Non-Graphic: Data Processing Systems (a) |
+| 20593 | Word processing System and Equipment: Dedicated Word Process |
 
 <!--
 type: tab
