@@ -75,6 +75,13 @@ The below table identifies the parameters in the `posHardwareAndSoftware` object
 | `softwareReleaseDate` | *string* | | Date software was released, in YYYY-MM-DD format |
 | `softwareVersionNumber` | *string* | | EPROM or version information related to the terminal software. |
 
+<!--
+type: tab
+title: JSON Example
+-->
+
+
+<!-- type: tab-end -->
 
 ### POS Features
 
@@ -101,6 +108,13 @@ The below table identifies the parameters in the `posFeatures` object.
 | `classAndComplianceCertification` | *string* |  | Indicates the type of application or device sending the transaction, Class A or Class B. |
 | `otherCapabilities` | *string* |  | Indicates whether the transaction originated from a mobile device that uses Chase merchant services’ mobile payment gateway or originated from a device that does not use Chase merchant services’ Mobile Payment Gateway. Note: It is required for merchants to send the appropriate information in this element in the case where a mobile terminal is supported. |
 
+<!--
+type: tab
+title: JSON Example
+-->
+
+
+<!-- type: tab-end -->
 
 ---
 
