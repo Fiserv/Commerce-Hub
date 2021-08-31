@@ -48,4 +48,3 @@ In-person or Card Present (CP) transactions are initiated when a customer physic
 
 ---
 
-## Testing this section for webhooks
