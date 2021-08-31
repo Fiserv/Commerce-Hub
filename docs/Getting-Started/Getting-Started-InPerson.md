@@ -17,8 +17,8 @@ The three types of integration Commerce Hub offers for Card Present payments are
 ---
 
 ## Encrypted PIN Pad
-
-Describe the 3rd [party PIN Pad encrypts the payment source and send it to their software or terminal which then submits the RESTful request to Commerce Hub. 
+ 
+By leveraging the third party EMV-enabled payments solution, the customer's payment transactions are encrypted via a multi-layered security approach. The terminal or software processes the transaction with a plug and play, semi-integrated solution and submits the RESTful request to Commerce Hub. This makes the encrypted PIN Pad solution to be the most secure option for businesses leveraging it. 
 
 **Begin integration with Commerce Hub with an [Encrypted PIN Pad](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).**
 
@@ -29,7 +29,7 @@ Describe the 3rd [party PIN Pad encrypts the payment source and send it to their
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include semi-integrated device support and the documents related to the features will be released soon.
 
-Describe the 3rd [party PIN Pad encrypts the payment source and send it to their software or terminal which then submits the RESTful request to Commerce Hub. 
+Semi-integrated solutions run on a combination of Commerce Hub and third-party hardware. Commerce Hub's semi-integration solution allows your existing point-of-sale software to accept EMV based, PCI-compliant transactions. A semi-integration integrates your hardware and software with Commerec Hub's hardware and software, making your point-of-sale EMV compliant quickly and easily.
 
 **Begin integration with Commerce Hub with a [Semi-integrated device](?path=docs/In-Person/Integrations/Semi-Integrated.md).**
 
@@ -40,7 +40,7 @@ Describe the 3rd [party PIN Pad encrypts the payment source and send it to their
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include fully-integrated device support and the documents related to the features will be released soon.
 
-Describe the 3rd [party PIN Pad encrypts the payment source and send it to their software or terminal which then submits the RESTful request to Commerce Hub. 
+Commerce Hub's fully-integrated payment system efficiently manages all the processes by a single integrated system. It has the payment application as a part of the core POS solution. The software handles every aspect of the transaction, from scanning and reading the bar code to processing the payments and managing inventory and replenishment. All card payment activity is handled by the POS terminal from entering the cardholder data to the close of the sale, all in a matter of seconds.
 
 **Begin integration with Commerce Hub with a [Fully-integrated device](?path=docs/In-Person/Integrations/Fully-Integrated.md).**
 
