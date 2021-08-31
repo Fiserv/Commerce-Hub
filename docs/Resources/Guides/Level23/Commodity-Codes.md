@@ -11,7 +11,7 @@ Commodity codes are standard classification codes for products and services used
 - Cost-effective procurement optimization
 - Full useage of E-commerce capabilities
 
-Use these values to populate the Commodity Codes. For the most up to date commodity codes, visit the [UNSPSC website](https://www.unspsc.org/).
+Use these values to populate the Commodity Codes. For the most up to date commodity codes, visit the United Nations Standard Products and Services Code [UNSPSC website](https://www.unspsc.org/).
 
 <!--
 type: tab
@@ -1209,29 +1209,29 @@ The table below includes the commodity codes (class and subclass list) for concr
 
 | Code | Description |
 | -------- | :--: |
-| 210 | Blocks, Hollow and Solid, Lightweight |
-| 210 | Blocks, Hollow and Solid Normal Weight |
-| 210 | Blocks, Kiln and Oven |
-| 210 | Box Voids and Void Concrete Forms |
-| 210 | Concrete Beams, Channels, Roof Decks, etc., Prestressed |
-| 210 | Concrete Pilings |
-| 210 | Connecting Bands, Corrugated Metal |
-| 210 | Culverts and Drainage Pipe, Corrugated Metal |
-| 210 | Curbs, Parking and Curb Boxes: Vehicle |
-| 210 | Ells, Tees and Valves, Corrugated Metal |
-| 210 | Forms, Fiber Tube for Concrete Construction |
-| 210 | Irrigation Pipe, Metal |
-| 210 | Joint Sealing Compound (For Sewer and Drain Pipes) |
-| 210 | Meter Boxes and Concrete Pull Boxes |
-| 210 | Paving and Stepping Blocks |
-| 210 | Pipe and Fittings (Up to 4 Inches) |
-| 210 | Pipe and Culverts and Fittings (Over 4 Inches), Non-Reinforce |
-| 210 | Pipe and Culverts (Over 4 Inches), Reinforced |
-| 210 | Pipe and Fittings, Pre-Stressed Concrete |
-| 210 | Pipe, Well Casing |
-| 210 | Risers, Reinforced Concrete |
-| 210 | Septic Tanks, Grease Traps, and Water Troughs |
-| 210 | Ties and Anchors and Other Masonry Wall Reinforcements |
+| 21010 | Blocks, Hollow and Solid, Lightweight |
+| 21011 | Blocks, Hollow and Solid Normal Weight |
+| 21012 | Blocks, Kiln and Oven |
+| 21013 | Box Voids and Void Concrete Forms |
+| 21016 | Concrete Beams, Channels, Roof Decks, etc., Prestressed |
+| 21025 | Concrete Pilings |
+| 21027 | Connecting Bands, Corrugated Metal |
+| 21029 | Culverts and Drainage Pipe, Corrugated Metal |
+| 21030 | Curbs, Parking and Curb Boxes: Vehicle |
+| 21031 | Ells, Tees and Valves, Corrugated Metal |
+| 21032 | Forms, Fiber Tube for Concrete Construction |
+| 21033 | Irrigation Pipe, Metal |
+| 21035 | Joint Sealing Compound (For Sewer and Drain Pipes) |
+| 21045 | Meter Boxes and Concrete Pull Boxes |
+| 21055 | Paving and Stepping Blocks |
+| 21060 | Pipe and Fittings (Up to 4 Inches) |
+| 21062 | Pipe and Culverts and Fittings (Over 4 Inches), Non-Reinforce |
+| 21064 | Pipe and Culverts (Over 4 Inches), Reinforced |
+| 21066 | Pipe and Fittings, Pre-Stressed Concrete |
+| 21070 | Pipe, Well Casing |
+| 21072 | Risers, Reinforced Concrete |
+| 21075 | Septic Tanks, Grease Traps, and Water Troughs |
+| 21080 | Ties and Anchors and Other Masonry Wall Reinforcements |
 
 <!--
 type: tab
@@ -1242,30 +1242,30 @@ The table below includes the commodity codes (class and subclass list) for contr
 
 | Code | Description |
 | -------- | :--: |
-| 220 | Accelerometers |
-| 220 | Actuators and Controls (For Robotics, Servo Systems, Etc.) |
-| 220 | Clinometers and Inclinometers (For Slope and Tilt Measurement) |
-| 220 | Conductivity Instruments (For Dissolved Solids) |
-| 220 | Flow Controllers, Indicators, and Recorders (For Air and Gas) |
-| 220 | Flow Controllers and Recorders (For Liquids) |
-| 220 | Gauges: Altitude, Pressure, Temperature, Liquid Level, Etc. |
-| 220 | Liquid Level Controllers, Indicators, and Recorders |
-| 220 | Logging Devices, Electronic (Long-Range Data Collection and) |
-| 220 | Scillographs (Cathode-Ray Recording Systems) and Accessories |
-| 220 | Photoelectric Control Devices |
-| 220 | Position Measuring Devices (X-Y Coordinates) |
-| 220 | Pressure Controllers, Indicators, and Recorders |
-| 220 | Pressure Converters |
-| 220 | Radar Instruments (Marine Type), and Accessories: Magnetrons |
-| 220 | Radiant Energy Measuring Devices (For Visual, UV, and IR): L|
-| 220 | Recorders and Plotters, General Laboratory Type (Strip Chart) |
-| 220 | Sonar Instruments, Research Type |
-| 220 | Sound Analysis Equipment and Accessories: Noise Meters and D |
-| 220 | Strain Gauges, Force Gauges, and Associated Instruments: STR |
-| 220 | Surface Profile Measurement Equipment |
-| 220 | Temperature Controllers, Indicators, and Recorders (Digital) |
-| 220 | Transducers and Couplers |
-| 220 | Weather Instruments: Anemometers, Barographs, Barometers, HY |
+| 22002 | Accelerometers |
+| 22004 | Actuators and Controls (For Robotics, Servo Systems, Etc.) |
+| 22007 | Clinometers and Inclinometers (For Slope and Tilt Measurement) |
+| 22009 | Conductivity Instruments (For Dissolved Solids) |
+| 22015 | Flow Controllers, Indicators, and Recorders (For Air and Gas) |
+| 22016 | Flow Controllers and Recorders (For Liquids) |
+| 22018 | Gauges: Altitude, Pressure, Temperature, Liquid Level, Etc. |
+| 22033 | Liquid Level Controllers, Indicators, and Recorders |
+| 22034 | Logging Devices, Electronic (Long-Range Data Collection and) |
+| 22036 | Oscillographs (Cathode-Ray Recording Systems) and Accessories |
+| 22042 | Photoelectric Control Devices |
+| 22043 | Position Measuring Devices (X-Y Coordinates) |
+| 22045 | Pressure Controllers, Indicators, and Recorders |
+| 22046 | Pressure Converters |
+| 22048 | Radar Instruments (Marine Type), and Accessories: Magnetrons |
+| 22053 | Radiant Energy Measuring Devices (For Visual, UV, and IR): L|
+| 22054 | Recorders and Plotters, General Laboratory Type (Strip Chart) |
+| 22060 | Sonar Instruments, Research Type |
+| 22061 | Sound Analysis Equipment and Accessories: Noise Meters and D |
+| 22063 | Strain Gauges, Force Gauges, and Associated Instruments: STR |
+| 22068 | Surface Profile Measurement Equipment |
+| 22072 | Temperature Controllers, Indicators, and Recorders (Digital) |
+| 22075 | Transducers and Couplers |
+| 22087 | Weather Instruments: Anemometers, Barographs, Barometers, HY |
 
 <!--
 type: tab
@@ -1276,10 +1276,10 @@ The table below includes the commodity codes (class and subclass list) for coole
 
 | Code | Description |
 | -------- | :--: |
-| 225 | Coolers, Electric (Water Fountain) |
-| 225 | Coolers, Nonelectric |
-| 225 | Coolers, Storage Type (Remote Refrigeration Unit) |
-| 225 | Cooler, Water, Repair Parts, All Types |
+| 22530 | Coolers, Electric (Water Fountain) |
+| 22532 | Coolers, Nonelectric |
+| 22540 | Coolers, Storage Type (Remote Refrigeration Unit) |
+| 22545 | Cooler, Water, Repair Parts, All Types |
  
 <!--
 type: tab
@@ -1290,8 +1290,8 @@ The table below includes the commodity codes (class and subclass list) for craft
 
 | Code | Description |
 | -------- | :--: |
-| 232 | Artificial Plants, Shrubs, and Trees |
-| 232 | Floral Supplies: Artificial Flowers, Floral Tape, Etc. |
+| 23202 | Artificial Plants, Shrubs, and Trees |
+| 23235 | Floral Supplies: Artificial Flowers, Floral Tape, Etc. |
 
 <!--
 type: tab
@@ -1302,15 +1302,14 @@ The table below includes the commodity codes (class and subclass list) for cutle
 
 | Code | Description |
 | -------- | :--: |
-| 240 | Cooking Utensils, Aluminum |
-| 240 | Beverage Servers, All types |
-| 240 | Chinaware: Cups & Plates |
-| 240 | Cutlery: Knives, Spatulas |
-| 240 | utlery: knives, spatulas |
-| 240 | Enamelware (Kitchen & Table) |
-| 240 | Plastic Ware: Kitchen & Table |
-| 240 | Silverware (Tableware) |
-| 240 | Utensils, Cooking, Stainless Steel |
+| 24007 | Cooking Utensils, Aluminum |
+| 24014 | Beverage Servers, All types |
+| 24021 | Chinaware: Cups & Plates |
+| 24028 | Cutlery: Knives, Spatulas |
+| 24042 | Enamelware (Kitchen & Table) |
+| 24070 | Plastic Ware: Kitchen & Table |
+| 24084 | Silverware (Tableware) |
+| 24091 | Utensils, Cooking, Stainless Steel |
 
 <!--
 type: tab
@@ -1321,11 +1320,11 @@ The table below includes the commodity codes (class and subclass list) for data 
 
 | Code | Description |
 | -------- | :--: |
-| 250 | Cards, Tabulating, Special (For Automatic and Manual Data Pr |
-| 250 | Cards, Tabulating, Standard (For EDP Systems) |
-| 250 | Roll Paper, Bond (For EDP Portable Terminals) |
-| 250 | Roll Paper, Thermal (For EDP Portable Terminals) |
-| 250 | Tests, Answer Sheets, Scoring Keys, Etc. (For EDP Systems) |
+| 25018 | Cards, Tabulating, Special (For Automatic and Manual Data Pr |
+| 25030 | Cards, Tabulating, Standard (For EDP Systems) |
+| 25070 | Roll Paper, Bond (For EDP Portable Terminals) |
+| 25072 | Roll Paper, Thermal (For EDP Portable Terminals) |
+| 25080 | Tests, Answer Sheets, Scoring Keys, Etc. (For EDP Systems) |
 
 <!--
 type: tab
@@ -1336,9 +1335,9 @@ The table below includes the commodity codes (class and subclass list) for decal
 
 | Code | Description |
 | -------- | :--: |
-| 255 | Decals (For Cigarette Machines, Doors, Equipment, Vehicles) |
-| 255 | Inventory and Other Small Decals |
-| 255 | Windshield Decals, Not Numbered |
+| 25530 | Decals (For Cigarette Machines, Doors, Equipment, Vehicles) |
+| 25540 | Inventory and Other Small Decals |
+| 25560 | Windshield Decals, Not Numbered |
 
 <!--
 type: tab
@@ -1349,12 +1348,12 @@ The table below includes the commodity codes (class and subclass list) for drape
 
 | Code | Description |
 | -------- | :--: |
-| 265 | Draperies and Curtains, Installed |
-| 265 | Curtains and Draperies |
-| 265 | Curtain and Drapery Hardware: Hooks, Rods, Etc. |
-| 265 | Material, Drapery |
-| 265 | Material, Upholstery (Fabric), Furniture and Auto |
-| 265 | Material, Upholstery (Vinyl), Furniture and Auto |
+| 26510 | Draperies and Curtains, Installed |
+| 26520 | Curtains and Draperies |
+| 26530 | Curtain and Drapery Hardware: Hooks, Rods, Etc. |
+| 26540 | Material, Drapery |
+| 26544 | Material, Upholstery (Fabric), Furniture and Auto |
+| 26546 | Material, Upholstery (Vinyl), Furniture and Auto |
 
 <!--
 type: tab
@@ -1365,25 +1364,25 @@ The table below includes the commodity codes (class and subclass list) for drugs
 
 | Code | Description |
 | -------- | :--: |
-| 270 | Drugs, Allergy |
-| 270 | Drugs, Antibiotic |
-| 270 | Drugs, Anti-Inflammatory |
-| 270 | Drugs, Asthma |
-| 270 | Drugs, Blood Pressure & Circulation |
-| 270 | Drugs, Cold & Flu (Not Otherwise Classified) |
-| 270 | Drugs, Cough |
-| 270 | Drugs, Diarrhea |
-| 270 | Drugs, Digestive System |
-| 270 | Drugs, Eye, Ear Nose & Throat |
-| 270 | Drugs, Indigestion |
-| 270 | Laxatives and Enemas |
-| 270 | Drugs & Pharmaceuticals, Over the Counter |
-| 270 | Drugs, Motion Sickness |
-| 270 | Drugs, Nausea |
-| 270 | Drugs, Pain & Fever |
-| 270 | Topicals: Creams, Lotions, Shampoos, Skin Cleansers, Etc. |
-| 270 | Vaccines |
-| 270 | Drugs, Vascular Headache and Fatigue |
+| 27003 | Drugs, Allergy |
+| 27004 | Drugs, Antibiotic |
+| 27006 | Drugs, Anti-Inflammatory |
+| 27008 | Drugs, Asthma |
+| 27011 | Drugs, Blood Pressure & Circulation |
+| 27018 | Drugs, Cold & Flu (Not Otherwise Classified) |
+| 27021 | Drugs, Cough |
+| 27026 | Drugs, Diarrhea |
+| 27027 | Drugs, Digestive System |
+| 27031 | Drugs, Eye, Ear Nose & Throat |
+| 27049 | Drugs, Indigestion |
+| 27053 | Laxatives and Enemas |
+| 27055 | Drugs & Pharmaceuticals, Over the Counter |
+| 27059 | Drugs, Motion Sickness |
+| 27064 | Drugs, Nausea |
+| 27067 | Drugs, Pain & Fever |
+| 27084 | Topicals: Creams, Lotions, Shampoos, Skin Cleansers, Etc. |
+| 27092 | Vaccines |
+| 27093 | Drugs, Vascular Headache and Fatigue |
 
 <!--
 type: tab
@@ -1394,20 +1393,20 @@ The table below includes the commodity codes (class and subclass list) for elect
 
 | Code | Description |
 | -------- | :--: |
-| 280 | Appliance, Fixture, and Portable Cables and Wires (Up to 600) |
-| 280 | Bare Cables and Wires: Type Acsr, Bare Copper, Bare Aluminum |
-| 280 | Building Cables and Wires, Single and Multiconductor: Types |
-| 280 | Cathodic Cable (Protection) |
-| 280 | Communications Cable |
-| 280 | Control Cables and Wires, Solid and Stranded, Single and Mul |
-| 280 | Guy Wires and Cables: Guy Strand, SM, HS, EHS, Etc. |
-| 280 | Heating Cables and Wires (Up to 277v): Lead Covered, Neopren |
-| 280 | High Voltage Cables & Wires |
-| 280 | Submarine Wire & Cable |
-| 280 | Telephone Cables and Wires, Single and Multiconductor, Clad |
-| 280 | Ties and Anchors, Cable and Wiring |
-| 280 | Underground Cables and Wires, Solid and Stranded, Single and |
-| 280 | Weatherproof Cables and Wires, Solid and Stranded, Single an) |
+| 28008 | Appliance, Fixture, and Portable Cables and Wires (Up to 600) |
+| 28016 | Bare Cables and Wires: Type Acsr, Bare Copper, Bare Aluminum |
+| 28024 | Building Cables and Wires, Single and Multiconductor: Types |
+| 28028 | Cathodic Cable (Protection) |
+| 28029 | Communications Cable |
+| 28030 | Control Cables and Wires, Solid and Stranded, Single and Mul |
+| 28040 | Guy Wires and Cables: Guy Strand, SM, HS, EHS, Etc. |
+| 28050 | Heating Cables and Wires (Up to 277v): Lead Covered, Neopren |
+| 28058 | High Voltage Cables & Wires |
+| 28065 | Submarine Wire & Cable |
+| 28070 | Telephone Cables and Wires, Single and Multiconductor, Clad |
+| 28075 | Ties and Anchors, Cable and Wiring |
+| 28080 | Underground Cables and Wires, Solid and Stranded, Single and |
+| 28090 | Weatherproof Cables and Wires, Solid and Stranded, Single an) |
 
 <!--
 type: tab
@@ -1418,103 +1417,103 @@ The table below includes the commodity codes (class and subclass list) for elect
 
 | Code | Description |
 | -------- | :--: |
-| 285 | Analyzer, Electric Power Demand |
-| 285 | Arresters, Lightning |
-| 285 | Back-up Systems, Battery Operated (Emergency) |
-| 285 | Beacon Light Systems |
-| 285 | Ballasts, All Kinds |
-| 285 | Bulb and Fixture, Changer/Remover |
-| 285 | Bus Bars, Duct, and Accessories |
-| 285 | Cabinets, Elec. Service Entrance |
-| 285 | Cable Accessories: Clamps, Clasps, Clips, Closures, Wrapping |
-| 285 | Capacitors, Motor Starting and Running |
-| 285 | Circuit Breakers, Load Centers, and Panelboards |
-| 285 | Coatings, Protective, Electrical |
-| 285 | Conduit & Fittings, Fiber & Asbestos-Cement |
-| 285 | Conduit and Fittings, Cast Iron |
-| 285 | Conduit and Fittings, Plastic |
-| 285 | Conduit and Fittings, Aluminum |
-| 285 | Conduit Fittings, Steel: Boxes, Bushings, Clamps, Connectors |
-| 285 | Conduit, Steel |
-| 285 | Control Devices, Lighting |
-| 285 | Cutouts, Pole lLne Type |
-| 285 | Dimmers, Light (See 855-44 for Theatre Dimmers) |
-| 285 | Exit Signs, Lighted |
-| 285 | Fluorescent and H.I.D. Lamp Energy Saving Devices |
-| 285 | Fuses, Fuse Blocks and Holders, Links, Etc. |
-| 285 | Gaskets, Meter |
-| 285 | Gates, Electric |
-| 285 | Generators, Portable, Engine Driven |
-| 285 | Generators, Stationary Type (Not Automotive) |
-| 285 | Grounding Rods and Fittings |
-| 285 | Hose, Protective Line |
-| 285 | Insulation Materials: Compounds, Varnish, Etc. |
-| 285 | Isolation System (For Computer Center) |
-| 285 | Lamps, Projector/Studio |
-| 285 | Lamps: Automotive and Miniature |
-| 285 | Lamps: Decorative, Household |
-| 285 | Lamps: Desk, Floor, and Table |
-| 285 | Lamps: Fluorescent, Incandescent, Mercury Vapor, and Quartz |
-| 285 | Lamps: Scientific Instrument: Microscope, Oscilloscope, Etc. |
-| 285 | Lamps: Portable and Shop |
-| 285 | Lens and Reflectors, Replacement |
-| 285 | Lighting Fixtures, Indoor: All Kinds and Parts |
-| 285 | Lighting Fixtures, Outdoor: Floodlights, Spotlights, Yard Li |
-| 285 | Lighting Units, Emergency, Battery Operated; and Batteries |
-| 285 | Light Meters (For Office Illumination Measurement, Etc. -not |
-| 285 | Meters, Indicating and Recording of Power Consumption |
-| 285 | Meters, Indicating and Recording (Of Powerline Fluctuations |
-| 285 | Miscellaneous Electrical Supplies, Not Otherwise Classified |
-| 285 | Motor Controllers, Push Button Stations, Relays, Safety Swit |
-| 285 | Motor Accessories |
-| 285 | Motors and Parts, Fractional H.P. Electric |
-| 285 | Motors and Parts, Air Start |
-| 285 | Motors and Parts, Integral H.P., Single Phase, Electric |
-| 285 | Motors and Parts, Integral H.P., Three Phase, Electric |
-| 285 | Resistors (Non-Electronic) |
-| 285 | Relays (Non-Electronic) |
-| 285 | Pole Line Hardware: Arms Bolts, Braces, Brackets, Clevises, |
-| 285 | Repair Kits (For Contactors) |
-| 285 | Streetlights and Standards |
-| 285 | Square Duct and Fittings |
-| 285 | Structual Supports and Racks, Mechanical Type: Angles, Brace |
-| 285 | Switches, Miscellaneous |
-| 285 | Tools, Electricians' and Lineman's (Including Cable Fault Lo |
-| 285 | Towers, Light |
-| 285 | Transformers, Transmission Line Type |
-| 285 | Transformers (For Power Distribution Centers - Note: Electron |
-| 285 | Tube guard (For Fluorescent Fixtures) |
-| 285 | Unilets |
-| 285 | Voltage Regulators, Inverters, Converters, Spike and Surge C |
-| 285 | Valves, Electro Pneumatic |
-| 285 | Wire Markers |
-| 285 | Wire Molding, Raceways, Accessories, and Fittings |
-| 285 | Wiring Devices: Adapters, Caps, Connectors, Extension Cords |
+| 28502 | Analyzer, Electric Power Demand |
+| 28503 | Arresters, Lightning |
+| 28504 | Back-up Systems, Battery Operated (Emergency) |
+| 28505 | Beacon Light Systems |
+| 28506 | Ballasts, All Kinds |
+| 28507 | Bulb and Fixture, Changer/Remover |
+| 28508 | Bus Bars, Duct, and Accessories |
+| 28509 | Cabinets, Elec. Service Entrance |
+| 28510 | Cable Accessories: Clamps, Clasps, Clips, Closures, Wrapping |
+| 28511 | Capacitors, Motor Starting and Running |
+| 28514 | Circuit Breakers, Load Centers, and Panelboards |
+| 28515 | Coatings, Protective, Electrical |
+| 28517 | Conduit & Fittings, Fiber & Asbestos-Cement |
+| 28518 | Conduit and Fittings, Cast Iron |
+| 28519 | Conduit and Fittings, Plastic |
+| 28521 | Conduit and Fittings, Aluminum |
+| 28523 | Conduit Fittings, Steel: Boxes, Bushings, Clamps, Connectors |
+| 28526 | Conduit, Steel |
+| 28527 | Control Devices, Lighting |
+| 28528 | Cutouts, Pole lLne Type |
+| 28529 | Dimmers, Light (See 855-44 for Theatre Dimmers) |
+| 28530 | Exit Signs, Lighted |
+| 28532 | Fluorescent and H.I.D. Lamp Energy Saving Devices |
+| 28534 | Fuses, Fuse Blocks and Holders, Links, Etc. |
+| 28535 | Gaskets, Meter |
+| 28536 | Gates, Electric |
+| 28537 | Generators, Portable, Engine Driven |
+| 28539 | Generators, Stationary Type (Not Automotive) |
+| 28540 | Grounding Rods and Fittings |
+| 28541 | Hose, Protective Line |
+| 28542 | Insulation Materials: Compounds, Varnish, Etc. |
+| 28544 | Isolation System (For Computer Center) |
+| 28545 | Lamps, Projector/Studio |
+| 28546 | Lamps: Automotive and Miniature |
+| 28547 | Lamps: Decorative, Household |
+| 28548 | Lamps: Desk, Floor, and Table |
+| 28549 | Lamps: Fluorescent, Incandescent, Mercury Vapor, and Quartz |
+| 28550 | Lamps: Scientific Instrument: Microscope, Oscilloscope, Etc. |
+| 28552 | Lamps: Portable and Shop |
+| 28553 | Lens and Reflectors, Replacement |
+| 28554 | Lighting Fixtures, Indoor: All Kinds and Parts |
+| 28556 | Lighting Fixtures, Outdoor: Floodlights, Spotlights, Yard Li |
+| 28558 | Lighting Units, Emergency, Battery Operated; and Batteries |
+| 28559 | Light Meters (For Office Illumination Measurement, Etc. -not |
+| 28561 | Meters, Indicating and Recording of Power Consumption |
+| 28562 | Meters, Indicating and Recording (Of Powerline Fluctuations |
+| 28563 | Miscellaneous Electrical Supplies, Not Otherwise Classified |
+| 28564 | Motor Controllers, Push Button Stations, Relays, Safety Swit |
+| 28566 | Motor Accessories |
+| 28568 | Motors and Parts, Fractional H.P. Electric |
+| 28569 | Motors and Parts, Air Start |
+| 28570 | Motors and Parts, Integral H.P., Single Phase, Electric |
+| 28571 | Motors and Parts, Integral H.P., Three Phase, Electric |
+| 28572 | Resistors (Non-Electronic) |
+| 28573 | Relays (Non-Electronic) |
+| 28574 | Pole Line Hardware: Arms Bolts, Braces, Brackets, Clevises, |
+| 28575 | Repair Kits (For Contactors) |
+| 28576 | Streetlights and Standards |
+| 28577 | Square Duct and Fittings |
+| 28578 | Structual Supports and Racks, Mechanical Type: Angles, Brace |
+| 28579 | Switches, Miscellaneous |
+| 28581 | Tools, Electricians' and Lineman's (Including Cable Fault Lo |
+| 28583 | Towers, Light |
+| 28584 | Transformers, Transmission Line Type |
+| 28586 | Transformers (For Power Distribution Centers - Note: Electron |
+| 28588 | Tube guard (For Fluorescent Fixtures) |
+| 28589 | Unilets |
+| 28590 | Voltage Regulators, Inverters, Converters, Spike and Surge C |
+| 28591 | Valves, Electro Pneumatic |
+| 28592 | Wire Markers |
+| 28593 | Wire Molding, Raceways, Accessories, and Fittings |
+| 28595 | Wiring Devices: Adapters, Caps, Connectors, Extension Cords |
  
 <!--
 type: tab
 title: 287 Electronic Components 
 -->
 
-The table below includes the commodity codes (class and subclass list) for electronic components, replacement parts, and accessories: a
+The table below includes the commodity codes (class and subclass list) for electronic components, replacement parts, and accessories: a.
 
 | Code | Description |
 | -------- | :--: |
-| 287 | Amplifiers and Preamplifiers (not for sound systems or tv an |
-| 287 | Batteries and Hardware (for Electronic Equipment) |
-| 287 | Chemicals for Electronics Use: Antistatic, Cleaning, Degreas |
-| 287 | Circuit Boards, Modular, Printed (PCB), and Proto |
-| 287 | Metal Items: Boxes, Cabinets, Chassis, Panels, Racks, Etc. |
-| 287 | Microprocessors (CPU Chips, Etc.) |
-| 287 | Microwave Equipment and Accessories: Band Pass Filters, Coax |
-| 287 | Power Supplies, Computer Room |
-| 287 | Power Supplies (Not Computer Room) |
-| 287 | Repair Equipment, Electronic: Cleaning, Desoldering, Soldering |
-| 287 | Replacement and Component Parts: Capacitors, Chokes, Coils, |
-| 287 | Shelf Hardware, Electronic: Adapters, Clips, Connectors, Die |
-| 287 | Testing Equip. and Systems, Electronic Meter |
-| 287 | Tubes, Electronic: Cathode Ray, Power, Receiving, Thyratron, |
-| 287 | Wire and Cable, Electronic: Audio, Coaxial, Hook-Up, Lead-In |
+| 28706 | Amplifiers and Preamplifiers (not for sound systems or tv an |
+| 28712 | Batteries and Hardware (for Electronic Equipment) |
+| 28718 | Chemicals for Electronics Use: Antistatic, Cleaning, Degreas |
+| 28724 | Circuit Boards, Modular, Printed (PCB), and Proto |
+| 28736 | Metal Items: Boxes, Cabinets, Chassis, Panels, Racks, Etc. |
+| 28742 | Microprocessors (CPU Chips, Etc.) |
+| 28748 | Microwave Equipment and Accessories: Band Pass Filters, Coax |
+| 28754 | Power Supplies, Computer Room |
+| 28755 | Power Supplies (Not Computer Room) |
+| 28760 | Repair Equipment, Electronic: Cleaning, Desoldering, Soldering |
+| 28766 | Replacement and Component Parts: Capacitors, Chokes, Coils, |
+| 28772 | Shelf Hardware, Electronic: Adapters, Clips, Connectors, Die |
+| 28780 | Testing Equip. and Systems, Electronic Meter |
+| 28790 | Tubes, Electronic: Cathode Ray, Power, Receiving, Thyratron, |
+| 28796 | Wire and Cable, Electronic: Audio, Coaxial, Hook-Up, Lead-In |
 
 <!--
 type: tab
@@ -1525,17 +1524,18 @@ The table below includes the commodity codes (class and subclass list) for cells
 
 | Code | Description |
 | -------- | :--: |
-| 290 | Solar Space Heating Systems and Accessories |
-| 290 | Solar Heat Collector Systems and Accessories |
-| 290 | Solar Heat Collector Tracking Systems and Accessories |
-| 290 | Solar Heat Collectors, Concentrating Type |
-| 290 | Solar Heat Collectors, Evacuated Tube Type |
-| 290 | Solar Heat Collectors, Flat Plate Type |
-| 290 | Solar Powered Electrical Systems (For Battery Charging, Etc.) |
-| 290 | Solar Energy Systems, Complete |
-| 290 | Solar Radiant Flux Measuring Instruments (See also 220-33) |
-| 290 | Solar Water Heating Systems and Accessories |
-| 290 | Wind Electrical Generating Systems and Accessories |
+| 29010 | Cells, Solar (Photovoltaic Cells) Unmounted
+| 29030 | Solar Space Heating Systems and Accessories |
+| 29040 | Solar Heat Collector Systems and Accessories |
+| 29050 | Solar Heat Collector Tracking Systems and Accessories |
+| 29060 | Solar Heat Collectors, Concentrating Type |
+| 29065 | Solar Heat Collectors, Evacuated Tube Type |
+| 29070 | Solar Heat Collectors, Flat Plate Type |
+| 29080 | Solar Powered Electrical Systems (For Battery Charging, Etc.) |
+| 29082 | Solar Energy Systems, Complete |
+| 29086 | Solar Radiant Flux Measuring Instruments (See also 220-33) |
+| 29090 | Solar Water Heating Systems and Accessories |
+| 29095 | Wind Electrical Generating Systems and Accessories |
  
 <!--
 type: tab
@@ -1546,7 +1546,7 @@ The table below includes the commodity codes (class and subclass list) for eleva
 
 | Code | Description |
 | -------- | :--: |
-| 295 | Passenger Elevators and Parts |
+| 29570 | Passenger Elevators and Parts |
 
 <!-- type: tab-end -->
 
@@ -1561,34 +1561,32 @@ The table below includes the commodity codes (class and subclass list) for eleva
 
 | Code | Description |
 | -------- | :--: |
-| 300 | Certificates and Awards, Engraved |
-| 300 | Diplomas, Engraved |
-| 300 | Stationery and Cards, Embossed and Engraved |
+| 30020 | Certificates and Awards, Engraved |
+| 30035 | Diplomas, Engraved |
+| 30070 | Stationery and Cards, Embossed and Engraved |
 
 <!--
 type: tab
-title: 300 Embossing and Engraving
+title: 305 Engineering Equipment
 -->
 
-The table below includes the commodity codes (class and subclass list) for elevators and building type.
+The table below includes the commodity codes (class and subclass list) for engineering equipment, surveying equipment, drawing instruments.
 
 | Code | Description |
 | -------- | :--: |
- 
-305 - engineering equipment, surveying equipment, drawing instrume
-30504 - blades, gouges, knives, needle files, routers, etc.
-30506 - calculators (programmed for surveying systems; for office ty
-30508 - cloths, films, and papers (special): cross section, graph, l
-30510 - cloths, films, and papers (stock): cross section, graph, log
-30512 - cloths, films, and papers, reproduction types
-30515 - covers (for drafting and drawing boards)
-30518 - data books and tables, engineering and surveying
-30521 - direct print supplies, dry process
-30523 - direct print supplies, wet process
-30525 - distance measuring equipment
-30528 - drafting and drawing instruments
-30530 - drafting and drawing pencils, pens, leads, lead holders, etc
-30532 - drafting machines and scales
+| 30504 | Blades, Gouges, Knives, Needle Files, Routers, Etc. |
+| 30506 | Calculators (Programmed for Surveying Systems; For Office ty |
+| 30508 | Cloths, Films, and Papers (Special): Cross Section, Graph, l |
+| 30510 | Cloths, Films, and Papers (Stock): Cross Section, Graph, Log |
+| 30512 | Cloths, Films, and Papers, Reproduction Types |
+| 30515 | Covers (For Drafting and Drawing Boards) |
+| 30518 | Data Books and Tables, Engineering and Surveying |
+| 30521 | Direct Print Supplies, Dry Process |
+| 30523 | Direct Print Supplies, Wet Process |
+| 30525 | Distance Measuring Equipment |
+| 30528 | Drafting and Drawing Instruments |
+| 30530 | Drafting and Drawing Pencils, Pens, Leads, Lead Holders, Etc. |
+| 30532 - Drafting Machines and Scales |
 30533 - drafting supplies: brushes (dust and wash), cleaning pads an
 30535 - drawing boards, curves, protractors, templates, triangles, t
 30538 - duplicator paper: blue print, brown print, and white print
@@ -1622,9 +1620,9 @@ The table below includes the commodity codes (class and subclass list) for Blade
 
 | Code | Description |
 | -------- | :--: |
-| 305 | Calculators (Programmed for Surveying Systems; for Office Type See Class 600) |
-| 305 | Cloths, Films, and Papers (Special): Cross-Section, Graph, Log, Profile, Tracing, etc. |
-305-10	Cloths, Films, and Papers (Stock): Cross-Section, Graph, Log, Profile, Tracing, etc.
+| 30506 | Calculators (Programmed for Surveying Systems; for Office Type See Class 600) |
+| 30508 | Cloths, Films, and Papers (Special): Cross-Section, Graph, Log, Profile, Tracing, etc. |
+| 30510 |	Cloths, Films, and Papers (Stock): Cross-Section, Graph, Log, Profile, Tracing, etc. |
 305-12	Cloths, Films, and Papers, Reproduction Types
 305-15	Covers (For Drafting and Drawing Boards)
 305-18	Data Books and Tables, Engineering and Surveying
