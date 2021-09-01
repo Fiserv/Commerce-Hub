@@ -9,7 +9,7 @@ Commodity codes are standard classification codes for products and services used
 
 - Customer visibility of spend analysis
 - Cost-effective procurement optimization
-- Full useage of E-commerce capabilities
+- Full usage of E-commerce capabilities
 
 Use these values to populate the Commodity Codes. For the most up to date commodity codes, visit the United Nations Standard Products and Services Code [UNSPSC website](https://www.unspsc.org/).
 
@@ -1586,30 +1586,30 @@ The table below includes the commodity codes (class and subclass list) for engin
 | 30525 | Distance Measuring Equipment |
 | 30528 | Drafting and Drawing Instruments |
 | 30530 | Drafting and Drawing Pencils, Pens, Leads, Lead Holders, Etc. |
-| 30532 - Drafting Machines and Scales |
-30533 - drafting supplies: brushes (dust and wash), cleaning pads an
-30535 - drawing boards, curves, protractors, templates, triangles, t
-30538 - duplicator paper: blue print, brown print, and white print
-30539 - duplicator paper, chemicals, and supplies (for diazo process
-30540 - duplicators: blue print, brown print, diazo process, white p
-30542 - engineering supplies, miscellaneous
-30544 - erasers and erasing machines, electric
-30548 - field books, engineers'
-30550 - field equipment: arrows, bush knives, flags and flagging, ha
-30553 - graphic art type supplies
-30555 - lettering equipment (automatic letter or character generatin
-30557 - lettering equipment (hand manipulated): guides, pens, sets,
-30558 - magnifying glasses, reading glasses, angle mirrors, prisms,
-30560 - measuring equipment: chains, maps, optical tapes, tapes, whe
-30564 - opaquing and transparentizing liquids, erasing fluids, and p
-30568 - planimeters
-30569 - projectional supplies: acetate sheets, films, photo-reflex a
-30572 - slide rules
-30575 - straightedges
-30578 - surveying instruments: alidades, compasses, levels, theodoli
-30580 - surveying systems, geo/satellite navigation type
-30582 - tables, tracing and light
-30584 - technical pens and sets, points and refills, etc.
+| 30532 | Drafting Machines and Scales |
+| 30533 | Drafting Supplies: Brushes (Dust and Wash), Cleaning Pads an |
+| 30535 | Drawing Boards, Curves, Protractors, Templates, Triangles, t |
+| 30538 | Duplicator Paper: Blue Print, Brown Print, and White Print |
+| 30539 | Duplicator Paper, Chemicals, and Supplies (For Diazo Process |
+| 30540 | Duplicators: Blue Print, Brown Print, Diazo Process, White p |
+| 30542 | Engineering Supplies, Miscellaneous |
+| 30544 | Erasers and Erasing Machines, Electric |
+| 30548 | Field Books, Engineers' |
+| 30550 | Field Equipment: Arrows, Bush Knives, Flags and Flagging, ha |
+| 30553 | Graphic Art Type Supplies |
+| 30555 | Lettering Equipment (Automatic Letter or Character Generating |
+| 30557 | Lettering Equipment (Hand Manipulated): Guides, Pens, Sets |
+| 30558 | Magnifying Glasses, Reading Glasses, Angle Mirrors, Prisms |
+| 30560 | Measuring Equipment: Chains, Maps, Optical Tapes, Tapes, Whe |
+| 30564 | Opaquing and Transparentizing Liquids, Erasing Fluids, and P |
+| 30568 | Planimeters |
+| 30569 | Projectional Supplies: Acetate Sheets, Films, Photo-Reflex A |
+| 30572 | Slide Rules |
+| 30575 | Straightedges |
+| 30578 | Surveying Instruments: Alidades, Compasses, Levels, Theodoli |
+| 30580 | Surveying Systems, Geo/Satellite Navigation Type |
+| 30582 | Tables, Tracing and Light |
+| 30584 | Technical Pens and Sets, Points and Refills, Etc. |
 
 <!--
 type: tab
@@ -1623,7 +1623,7 @@ The table below includes the commodity codes (class and subclass list) for Blade
 | 30506 | Calculators (Programmed for Surveying Systems; for Office Type See Class 600) |
 | 30508 | Cloths, Films, and Papers (Special): Cross-Section, Graph, Log, Profile, Tracing, etc. |
 | 30510 |	Cloths, Films, and Papers (Stock): Cross-Section, Graph, Log, Profile, Tracing, etc. |
-305-12	Cloths, Films, and Papers, Reproduction Types
+| 30512 |	Cloths, Films, and Papers, Reproduction Types |
 305-15	Covers (For Drafting and Drawing Boards)
 305-18	Data Books and Tables, Engineering and Surveying
 305-21	Direct Print Supplies, Dry Process
@@ -1662,57 +1662,6 @@ The table below includes the commodity codes (class and subclass list) for Blade
 
 <!--
 type: tab
-title: 305 Engineering Equip
--->
-
-The table below includes the commodity codes (class and subclass list) for Blades, Gouges, Knives, Needle Files, Routers, etc.
-
-| Code | Description |
-| -------- | :--: |
-
-306-04	Blades, Gouges, Knives, Needle Files, Routers, etc. , Environmentally Certified Products
-306-06	Calculators (Programmed for Surveying Systems; for Office Type See Class 600) , Environmentally Certified Products
-306-08	Cloths, Films, and Papers (Special): Cross-Section, Graph, Log, Profile, Tracing, etc., Environmentally Certified Products
-306-10	Cloths, Films, and Papers (Stock): Cross-Section, Graph, Log, Profile, Tracing, etc., Environmentally Certified Products
-306-12	Cloths, Films, and Papers, Reproduction Types , Environmentally Certified Products
-306-15	Covers (For Drafting and Drawing Boards) , Environmentally Certified Products
-306-18	Data Books and Tables, Engineering and Surveying , Environmentally Certified Products
-306-21	Direct Print Supplies, Dry Process , Environmentally Certified Products
-306-23	Direct Print Supplies, Wet Process , Environmentally Certified Products
-306-25	Distance Measuring Equipment (Incl. Measuring Wheels) , Environmentally Certified Products
-306-28	Drafting and Drawing Instruments (See 204-71 for Graphic Plotters and 305-75 for Straightedges), Environmentally Certified Products
-306-30	Drafting and Drawing Pencils, Pens, Leads, Lead Holders, etc. , Environmentally Certified Products
-306-32	Drafting Machines and Scales , Environmentally Certified Products
-306-33	Drafting Supplies: Brushes (Dust and Wash), Cleaning Pads and Power, Paper Shears, Paper Weights, Steel Erasers, Transparent Protective Film and Tape, etc. , Environmentally Certified Products
-306-35	Drawing Boards, Curves, Protractors, Templates, Triangles, T-Squares, etc. , Environmentally Certified Products
-306-36	Drafting Paper , Environmentally Certified Products
-306-38	Duplicator Paper: Blue Print, Brown Print, and White Print , Environmentally Certified Products
-306-39	Duplicator Paper, Chemicals, and Supplies (For Diazo Process Copying Machines) (See Class 015 for Coated/Treated Paper Type, Diffusion Transfer Type, Dual Spectrum Process and Thermal Process Copiers), Environmentally Certified Products
-306-40	Duplicators: Blue Print, Brown Print, Diazo Process, White Print, etc. , Environmentally Certified Products
-306-42	Engineering Supplies, Miscellaneous , Environmentally Certified Products
-306-44	Erasers and Erasing Machines, Electric , Environmentally Certified Products
-306-48	Field Books, Engineers', Environmentally Certified Products
-306-50	Field Equipment: Arrows, Bush Knives, Flags and Flagging, Hand Levels, Leveling Rods, Machetes, Plumb Bobs, Pocket Transits, Range Poles, etc. , Environmentally Certified Products
-306-53	Graphic Art Type Supplies , Environmentally Certified Products
-306-55	Lettering Equipment (Automatic Letter or Character Generating Devices) , Environmentally Certified Products
-306-57	Lettering Equipment (Hand Manipulated): Guides, Pens, Sets, etc. , Environmentally Certified Products
-306-58	Magnifying Glasses, Angle Mirrors, Prisms, Stereoscopes, etc. , Environmentally Certified Products
-306-59	Maps, Engineer and Topographical , Environmentally Certified Products
-306-60	Measuring Equipment: Chains, Maps, Optical Tapes, Tapes, Wheels, etc. (Including Photogrammetry and Laser Equipment) , Environmentally Certified Products
-306-61	Measuring Equipment, Area (Large Scale) , Environmentally Certified Products
-306-64	Opaquing and Transparentizing Liquids, Erasing Fluids, and Pastes , Environmentally Certified Products
-306-68	Planimeters , Environmentally Certified Products
-306-70	Recycled Engineering Equipment, Accessories and Supplies , Environmentally Certified Products
-306-71	Signage and Logos, Architectural (Glass, Photographic, Stone, Tile), Environmentally Certified Products
-306-72	Slide Rules , Environmentally Certified Products
-306-75	Straightedges , Environmentally Certified Products
-306-78	Surveying Instruments and Accessories: Alidades, Compasses, Levels, Theodolites, Transits, Tripods, etc. (See 305-60 for Surveyor's Measuring Equipment), Environmentally Certified Products
-306-80	Surveying Systems, Geo/Satellite Navigation Type , Environmentally Certified Products
-306-82	Tables, Tracing and Light , Environmentally Certified Products
-306-84	Technical Pens and Sets, Points and Refills, etc. , Environmentally Certified Products
-
-<!--
-type: tab
 title: 310 Envelopes
 -->
 
@@ -1720,15 +1669,14 @@ The table below includes the commodity codes (class and subclass list) for envel
 
 | Code | Description |
 | -------- | :--: |
-| 310 | Envelopes: Clasp, String, Etc. |
-| 310 | Envelopes, Plain, Special |
-| 310 | Envelopes, Plain, Stock Sizes |
-| 310 | Envelopes, Printed, Special |
-| 310 | Envelopes, Printed, Stock Sizes |
-| 310 | Envelopes, Recycled Paper |
-| 310 | Envelopes: Seed, Metal or Plastic Closure |
-| 310 | Envelopes, Shipping | 
-| 310 | X-Ray Film Filming |
+| 31006 | Envelopes: Clasp, String, Etc. |
+| 31024 | Envelopes, Plain, Special |
+| 31030 | Envelopes, Plain, Stock Sizes |
+| 31042 | Envelopes, Printed, Special |
+| 31048 | Envelopes, Printed, Stock Sizes |
+| 31060 | Envelopes, Recycled Paper |
+| 31065 | Envelopes: Seed, Metal or Plastic Closure |
+| 31067 | Envelopes, Shipping | 
 
 <!--
 type: tab
@@ -1739,36 +1687,36 @@ The table below includes the commodity codes (class and subclass list) for epoxy
 
 | Code | Description |
 | -------- | :--: |
-312-22	Air Filtration Equipment for Aircraft, Boat/Ship, Cargo Containers and Vehicles
-312-23	Air Filtration Equipment for Soft and Hard Shelters
-312-38	Environmental Control Systems, Aircraft
-312-39	Environmental Control Systems for Automobiles, Emergency Vehicles, Trucks
-312-40	Environmental Control Systems for Boats, Ships, Marine
-312-41	Environmental Control Systems for Cargo Containers, etc.
-312-43	Environmental Control Systems, Spacecraft
-312-46	Environmental Remote Control Systems
-312-48	Environmental Test Chambers and Rooms (Controlled Temperature, Humidity, etc.)
-312-83	Tent Systems, Field (For Ground Zero Environment)
-312-84	Tent Units, Contaminated Patient Isolation (Negative Pressure)
+| 31222 |	Air Filtration Equipment for Aircraft, Boat/Ship, Cargo Containers and Vehicles |
+| 31223 |	Air Filtration Equipment for Soft and Hard Shelters |
+| 31238 |	Environmental Control Systems, Aircraft |
+| 31239 |	Environmental Control Systems for Automobiles, Emergency Vehicles, Trucks |
+| 31240 |	Environmental Control Systems for Boats, Ships, Marine |
+| 31241 |	Environmental Control Systems for Cargo Containers, Etc. |
+| 31243 |	Environmental Control Systems, Spacecraft |
+| 31246	| Environmental Remote Control Systems |
+| 31248 |	Environmental Test Chambers and Rooms (Controlled Temperature, Humidity, Etc.) |
+| 31283	| Tent Systems, Field (For Ground Zero Environment) |
+| 31284	| Tent Units, Contaminated Patient Isolation (Negative Pressure) |
 
 <!--
 type: tab
-title: 315 Adhesives
+title: 315 Epoxy Based Formulations
 -->
 
 The table below includes the commodity codes (class and subclass list) for epoxy based formulations for adhesives, coatings, and relate.
 
 | Code | Description |
 | -------- | :--: |
-| 315 | Adhesives (For Concrete): Cured-to-Cured, Fresh-to-Cured, an |
-| 315 | Adhesive, General Purpose |
-| 315 | Casting, Encapsulating, and Potting Systems |
-| 315 | Coatings, Protective (For Masonry including Concrete Floors) |
-| 315 | Coatings, Protective (For Metal) |
-| 315 | Coatings, Protective (For Wood) |
-| 315 | Hardening Agents: Amines, Anhydrides, Polyamide Solutions, e |
-| 315 | Mortars and/or Grouts |
-| 315 | Resins (Epoxy Only) |
+| 31510 | Adhesives (For Concrete): Cured-to-Cured, Fresh-to-Cured, an |
+| 31520 | Adhesive, General Purpose |
+| 31525 | Casting, Encapsulating, and Potting Systems |
+| 31530 | Coatings, Protective (For Masonry including Concrete Floors) |
+| 31540 | Coatings, Protective (For Metal) |
+| 31550 | Coatings, Protective (For Wood) |
+| 31570 | Hardening Agents: Amines, Anhydrides, Polyamide Solutions, e |
+| 31580 | Mortars and/or Grouts |
+| 31590 | Resins (Epoxy Only) |
 
 <!--
 type: tab
@@ -1779,24 +1727,22 @@ The table below includes the commodity codes (class and subclass list) for faste
 
 | Code | Description |
 | -------- | :--: |
-
-
-318-20	Encoding Equipment
-318-30	Fare Box
-318-33	Fare Box Vault
-318-40	Locks and Keys
-318-50	Money Changers
-318-55	Portable Safe/Money Cart
-318-60	Receiver Bin/Terminal
-318-62	Recycled Fare Collection Equipment and Supplies
-318-70	Testing/Verifying Equipment
-318-75	Tickets, Non-Magnetic
-318-77	Tickets, Pre-Encoded
-318-80	Tickets, Not Encoded
-318-85	Ticket Vending Machine
-318-88	Tokens
-318-89	Transfer Machines
-318-90	Turnstiles
+| 31820 |	Encoding Equipment |
+| 31830 |	Fare Box |
+| 31833 |	Fare Box Vault |
+| 31840 |	Locks and Keys |
+| 31850 |	Money Changers |
+| 31855 |	Portable Safe/Money Cart |
+| 31860	| Receiver Bin/Terminal |
+| 318-62	Recycled Fare Collection Equipment and Supplies |
+318-70	Testing/Verifying Equipment |
+318-75	Tickets, Non-Magnetic |
+318-77	Tickets, Pre-Encoded |
+318-80	Tickets, Not Encoded |
+318-85	Ticket Vending Machine |
+318-88	Tokens |
+318-89	Transfer Machines |
+318-90	Turnstiles |
 
 <!--
 type: tab
