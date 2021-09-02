@@ -1626,12 +1626,12 @@ The table below includes the commodity codes (class and subclass list) for Blade
 | 30512 |	Cloths, Films, and Papers, Reproduction Types |
 | 30515 |	Covers (For Drafting and Drawing Boards) |
 | 30518 |	Data Books and Tables, Engineering and Surveying |
-305-21	Direct Print Supplies, Dry Process |
+| 30521 | Direct Print Supplies, Dry Process |
 305-23	Direct Print Supplies, Wet Process |
 305-25	Distance Measuring Equipment (Incl. Measuring Wheels) |
 305-28	Drafting and Drawing Instruments (See 204-71 for Graphic Plotters and 305-75 for Straightedges) |
-305-30	Drafting and Drawing Pencils, Pens, Leads, Lead Holders, etc.
-305-32	Drafting Machines and Scales
+305-30	Drafting and Drawing Pencils, Pens, Leads, Lead Holders, Etc. |
+305-32	Drafting Machines and Scales |
 305-33	Drafting Supplies: Brushes (Dust and Wash), Cleaning Pads and Power, Paper Shears, Paper Weights, Steel Erasers, Transparent Protective Film and Tape, etc.
 305-35	Drawing Boards, Curves, Protractors, Templates, Triangles, T-Squares, etc.
 305-36	Drafting Paper
