@@ -9,12 +9,18 @@ also known as EMV Fallback (mention EMV fallback (EMV > Track > Manual) in EMV a
 
 explain non-encrypted (link to PaymentCard on PaymentCard article) and encrypted manual , outline the requirements to submit a PaymentCard as encrypted source, reference PaymentCard for example layout, need JSON, request, response.
 
-
 Add to PaymentCard mention encrypted and link back to this article
 - terminal managed: encryptedBlock and keyID (this in the ISO/UMF spec) used in CP transactions (link to docs/In-Person/Encrypted-Payments/Manual.md)
 - merchant managed: cardData and encryptedKey is merchant managed encryption used in CNP (put this example in PaymentCard (might not be supported yet will verify))
 
 -->
+
+Encrypted manual key entry, also known as EMV Fallback, involves manually entering the payment source details a payment terminal. This can be used when the payment terminal fails to obtain the card details from the card's chip or magnetic stripe. 
+
+An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by manually entering the card details or swiping the magnetic stripe.
+
+EMV fallback transactions only apply to card-present transactions where physical cards are presented by cardholders at payment terminals.
+
 ---
 
 ### Minimum Requirements
@@ -42,8 +48,11 @@ The below table identifies the required parameters in the `encryptionData` objec
 | -------- | -- | ------------ | ------------------ |
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target could be Track1, Track2, Both or Manual |
-| `expirationYear` | *string* | 4 |  &#10004; |4-digit card expiration year Example (2025) |
-
+| `encryptionBlock` | *string* | 2000 |  &#10004; | |
+| `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `securitykeyUpdateIndicator` | *boolean* | | &#10004; | Provided in response. POS is expected to download updated key, key cert |
+| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
+| `encryptedKey` | *string* | | &#10004; | Identifier required for decryption |
 
 
 <!--
@@ -58,9 +67,13 @@ JSON string format for PaymentCard:
   "source": {
     "sourceType": "PaymentCard",
     "encryptionData": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
+      "encryptionType": "On-Guard",
+      "encryptionTarget": "Track_2",
+      "encryptionBlock": "",
+      "deviceType": "INGENICO",
+      "securitykeyUpdateIndicator": false,
+      "keyId": ,
+      "encryptedKey": "NdCmVw5..."
       }
    }
 }
@@ -87,10 +100,14 @@ title: Request
    },
    "source": {
       "sourceType": "PaymentCard",
-      "card": {
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
+      "encryptionData": {
+      "encryptionType": "On-Guard",
+      "encryptionTarget": "Track_2",
+      "encryptionBlock": "",
+      "deviceType": "INGENICO",
+      "securitykeyUpdateIndicator": false,
+      "keyId": "",
+      "encryptedKey": "NdCmVw5..."
       }
    },
    "transactionDetails": {
@@ -127,18 +144,20 @@ title: Response
    },
    "source": {
       "sourceType": "PaymentCard",
-      "card": {
-         "expirationMonth": "02",
-         "expirationYear": "2035",
-         "bin": "400555",
-         "last4": "0019",
-         "scheme": "VISA"
+      "encryptionData": {
+        "encryptionType": "On-Guard",
+        "encryptionTarget": "Track_2",
+        "encryptionBlock": "",
+        "deviceType": "INGENICO",
+        "securitykeyUpdateIndicator": false,
+        "keyId": "",
+        "encryptedKey": "NdCmVw5..."
       }
    },
    "paymentReceipt": {
       "approvedAmount": {
          "total": "12.04",
-         "currency":"USD"
+         "currency": "USD"
       },
       "processorResponseDetails": {
          "approvalStatus": "APPROVED",
