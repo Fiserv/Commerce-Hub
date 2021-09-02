@@ -80,11 +80,22 @@ JSON string format for `leve23Data`:
 ```json
 {
    "card":{
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123",
-      "securityCodeIndicator": "PROVIDED"
+      "totalTaxAmount": "3.00",
+      "freightAmount": "9.00",
+      "totalDiscountAmount": "1.0",
+      "dutyAmount": "5.0",
+      "destinationPostalCode": "55555"
+      "destinationCountryCode": "ABC",
+      "orderDate": "MMDDYYYY",
+      "shipFromPostalCode": "55555",
+      "merchantTaxId": "5.0",
+      "merchantInvoiceNumber": "1024"
+      "itemDetails": "array",
+      "taxRate": "number",
+      "supplierVatRegistrationNumber": "15",
+      "freightRate": "1%",
+      "totalDiscountRate": "1%"
+      "totalLineItemTax": "18"
    }
 }
 ```
@@ -107,15 +118,25 @@ title: Request
       "currency": "USD"
    },
    "source":{
-      "sourceType": "PaymentCard",
+      "sourceType": "level23",
       "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true
+         "commodityCode": "12345",
+         "itemDescription": "02",
+         "productCode": "2035"
+         "unitPrice": "3.00",
+         "quantity": "2",
+         "unitOfMeasurement": "EACH",
+         "totalAmount": "20.00",
+         "discountIndicator": "code"
+         "discountRate": "1%",
+         "discountAmount": "2.00",
+         "taxIndicator": "code"
+         "lineItemTaxRate": "1",
+         "taxType": "SALES",
+         "vatRate": "2",
+         "vatAmount": "4.00",
+         "lineItemTotal": "18.00"
+         
    }
 }
 ```
