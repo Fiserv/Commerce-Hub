@@ -36,9 +36,9 @@
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-InPerson.md
     - title: EMV and Track Readers
-      link: docs/In-Person/EMV-Track/EMV.md
+      link: docs/In-Person/Encrypted-Payments/EMV.md
     - title: Contactless (NFC)
-      link: docs/In-Person/NFC/Contactless-QR.md
+      link: docs/In-Person/Encrypted-Payments/Contactless-QR.md
 - sections:
   - title: Online/Digital/Mobile
     sections:
@@ -57,7 +57,7 @@
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
-      articles:
+      sections:
       - title: Integrations
         link: docs/Getting-Started/Getting-Started-Wallets.md
       - title: Apple Pay
