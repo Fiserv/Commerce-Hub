@@ -51,7 +51,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `securitykeyUpdateIndicator` | *boolean* | | &#10004; | Provided in response. POS is expected to download updated key, key cert |
-| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
+| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
 | `encryptedKey` | *string* | | &#10004; | Identifier required for decryption |
 
 
