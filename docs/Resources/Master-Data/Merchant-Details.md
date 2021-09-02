@@ -39,8 +39,7 @@ JSON string format for `merchantDetails`:
       "terminalId": "12",
       "merchantId": "1234567890123456",
       "alternateMerchantId": "12345678",
-      "promotionCode": "ABCD1234",
-      "mcc": "4457"
+      "promotionCode": "ABCD1234"
    }
 }
 ```

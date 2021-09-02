@@ -2,9 +2,15 @@
 tags: [carat, commerce-hub, enterprise, card-present, master-data, pin-block]
 ---
 
-# Pin Block
+# PIN Block
 
-The PIN block is used to transport a PIN value.
+The PIN block is used to transport an `encryptedPin`. When the customer enters the PIN in the terminal it is encrypted using the terminal's Derived Unique Key Per Transaction (DUKPT) key.
+
+#### Requirements
+
+- Mandatory for Debit Card transactions (with exception of Debit Card PIN-Less transactions).
+- Mandatory for EBT Cash Benefit transactions and mandatory for all EBT Food Stamp transactions (except for EBT Voucher Clear transactions).
+- Mandatory for transactions submitted by European Union merchants, sending contactless EMV authorization requests, from their POS Terminals.
 
 
 <!--
@@ -18,7 +24,7 @@ The below table identifies the parameters in the `pinBlock` object.
 | -------- | ---- | ------- | -------------------------------|
 | `encryptedPin` | *string* | 2000 | This field contains the Encrypted PIN Block for Debit, EBT, Fleet or Credit transactions. |
 | `keySerialNumber` | *string* | 256 | This field is used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. |
-| `pinEncryptionWorkingKey` | *string* | 2000 | This field contains the Pin encryption working key. |
+| `pinEncryptionWorkingKey` | *string* | 2000 | Terminal PIN Encryption working key (TKPE). A PIN Encryption Key is a used to protect PINs as they are transmitted. |
 
 
 <!--
@@ -31,9 +37,9 @@ JSON string format for `pinBlock`:
 ```json
 {
    "pinBlock":{
-      "encryptedPin": "F5f36kA...",
-      "keySerialNumber": "TRACK_2",
-      "pinEncryptionWorkingKey": ""
+      "encryptedPin": "53511F325B7C89E3",
+      "keySerialNumber": "7964085138968549....",
+      "pinEncryptionWorkingKey": "7586325254178549....."
    }
 }
 ```

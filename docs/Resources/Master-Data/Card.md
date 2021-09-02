@@ -22,10 +22,10 @@ The below table identifies the parameters in the `card` object.
 | `expirationyear` | *string* | 4 | &#10004; | 4-digit card expiration year |
 | `securityCode` | *string* | 4 | | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
 | `securityCodeIndicator` | *string* | 15 | | Indicates how the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#security-code-indicator) is passed |
-| `bin` | *String* | 8 | | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN). The BIN identifies the issuer and Level 2/3 qualifications. |
+| `bin` | *String* | 8 | | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
 | `last4` | *String* | 4 | | Last four digits of the Primary Account Number (PAN) |
-| `beginningBalance` | *number* | 18,3 | | Beginning card balance |
-| `endingBalance` | *number* | 18,3 | | Ending card balance |
+| `beginningBalance` | *number* | 18,3 | | Beginning card balance received in the transaction response |
+| `endingBalance` | *number* | 18,3 | | Ending card balance received in the transaction response |
 
 
 <!--
