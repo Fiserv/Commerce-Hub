@@ -112,6 +112,7 @@ The below table identifies the valid values of `posConditionCode`.
 | *CARD_NOT_PRESENT_MOTO* | **Cardholder Not Present - Mail Order/Telephone Order:** Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
 | *CARD_NOT_PRESENT_ECOM* | **Cardholder Not Present - E-commerce.** Designates a transaction initiated from the merchant's website, email, or app. Specific E-commerce type is identified in the `eciIndicator`. |
 
+
 ---
 
 #### Mobile Interaction
