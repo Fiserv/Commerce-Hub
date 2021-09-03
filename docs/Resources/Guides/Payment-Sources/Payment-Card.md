@@ -9,21 +9,21 @@ Financial Institutions such as banks issue the **Payment Card** to the customers
 
 ---
 
-### Minimum Requirements
+### Request Variables
 
 <!--
 type: tab
 title: source
 -->
 
-The below table identifies the required parameters in the `source` object.
+The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
 | `card` | *object* | N/A |  &#10004; | Contains the payment card details |
-| `encryptionData` | *object* | N/A | | Contains the encrypted payment details |
-| `pinBlock` | *object* | N/A | | Contains the encrypted PIN details |
+| `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
 
 <!--
 type: tab

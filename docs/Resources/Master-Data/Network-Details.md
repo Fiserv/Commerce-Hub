@@ -15,16 +15,23 @@ The below table identifies the parameters in the `networkDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `partialAuthDetails` | *object* | | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) details |
-| `network` | *string* | 64 | Processing card network e.g. VISA |
+| `network` | *object* | N/A | Processing [card network](#card-network) |
 | `debitNetworkId` | *string* | | Network ID for the debit component |
 | `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
 | `systemTrace`| *string* | | This field contains the original trace number that was returned in an authorization response. |
-| `authorizationCharacteristicsIndicator` | *string* | | Code used for qualification in the Custom Payment Service (CPS) program as defined by Visa. Upon evaluation, the code may be changed in the response message if provided by Visa. |
-| `VisaBID` | *string* | | The Business Identifier (BID) provided by Visa to Third Party Servicers (TPS) |
-| `VisaAUR` | *string* | | Agent Unique Account Result (AUAR) provided by Visa to Third Party Servicers (TPS) |
+| `debitIssuerData` | *string* |  | Debit issuer specific data that may be returned in the response messages. |
 | `networkResponseCode ` | *string* | | Debit network response |
-
+| `posEntryModeChange` | *boolean* |  |  Issuer will reply if the entry mode has changed |
+| `cardLevelResultCode` | *string* |  | Identifies purchase, corporate, and business card level e.g. Level II/Level III |
+| `validationCode` | *string* |  | A code calculated by card brands to ensure that the fields present in the authorization are also present in the clearing record. |
+| `downgradeReason` | *string* |  | Downgrade reason as supplied by Visa. |
+| `creditAuthType` | *string* |  |Indicates the type of authorization required |
+| `authScore` | *string* |  | The auth score returned for the transaction |
+| `partialAuthTransactionId` | *string* |  | Generated identifier unique for each original authorization request |
+| `totalAuthAmount` | *number* | 18,3  | Total amount authorized |
+| `transactionIdentifier` | *string* |  | This field represents a unique value used to identify and link all related transactions for authorization and settlement |
+| `magStripeQualityIndicator` | *string* |  |  |
+| `authSource` | *object* |  |  |
 
 <!--
 type: tab
@@ -35,26 +42,59 @@ JSON string format for `networkDetails`:
 
 ```json
 {
-   "partialAuthDetails":{
-      "interchangeComplianceIndicator":"A",
-      "bankNetRefNumber":"string",
-      "bankNetDate":"0310",
-      "cvcIndicator":"Y",
-      "partialAuthTransactionId":"string",
-      "validationCode":"string",
-      "totalAuthAmount":"1.00",
-      "downgradeReason":"ACCOUNT_NUMBER_MISSING",
-      "creditAuthType":"DISCOVER",
-      "authScore":"string"
-   },
-   "network":"VISA",
-   "debitNetworkId":"123456",
-   "transactionSequence":"1123456",
-   "systemTrace":"123456789",
-   "authorizationCharacteristicsIndicator":"CARD_NOT_PRESENT",
-   "VISABID":"string",
-   "VISAAUR":"12345AD89012",
-   "networkResponseCode":"00"
+   "networkDetails":{
+      "network":{
+         "network": "VISA"
+      },
+      "debitNetworkId": "123456",
+      "transactionSequence": "1123456",
+      "systemTrace": "123456789",
+      "debitIssuerData": "Standard Issuer",
+      "networkResponseCode": "00",
+      "posEntryModeChange": true,
+      "cardLevelResultCode": "string",
+      "validationCode": "string",
+      "downgradeReason": "ACCOUNT_NUMBER_MISSING",
+      "creditAuthType": "DISCOVER",
+      "authScore": "string",
+      "partialAuthTransactionId": "string",
+      "totalAuthAmount": 1,
+      "transactionIdentifier": "string",
+      "magStripeQualityIndicator": "string",
+      "authSource": "string"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+### Card Network 
+
+Contains the card network data.
+
+<!--
+type: tab
+title: network
+-->
+
+The below table identifies the parameters in the `network` object.
+
+|Variable |Type| Maximum Length | Description|
+|------|--------|-------|----------------|
+| `network` | *string* |  | Processing card network |
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+```json
+{
+  "network":{
+    "network":"VISA"
+  }
 }
 ```
 
