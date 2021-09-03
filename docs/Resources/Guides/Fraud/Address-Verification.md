@@ -316,7 +316,7 @@ The below table identifies the valid values of `avsCode`.
 The below table identifies the valid values of `cardHolderNameResponse`.
 
 <!-- theme: info -->
-> Cardholder name response is only valid on American Express (AMEX) transactions.
+> Cardholder name response is only valid on American Express (AMEX) and Discover transactions.
 
 | Value | Description |
 | ------- | ------- |

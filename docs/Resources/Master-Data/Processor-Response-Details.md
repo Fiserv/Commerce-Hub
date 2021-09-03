@@ -199,7 +199,7 @@ The below table identifies the parameters in the `association` object.
 |---------|----------|----------------|---------|
 | `avsCode` | *string* | 32 | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) response received from the association bank. |
 | `securityCodeResponse` | *string* | 32 | Contains the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#association-response-code) response received from the association bank. |
-| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) received from the association bank. Only applicable for AMEX card type. |
+| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) received from the association bank. Only applicable for Discover and AMEX card types. |
 
 <!--
 type: tab
