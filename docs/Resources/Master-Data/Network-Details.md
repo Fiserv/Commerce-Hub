@@ -15,7 +15,7 @@ The below table identifies the parameters in the `networkDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `network` | *object* | N/A | Processing [card network] |
+| `network` | *object* | N/A | Processing [card network](#card-network) |
 | `debitNetworkId` | *string* | | Network ID for the debit component |
 | `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
 | `systemTrace`| *string* | | This field contains the original trace number that was returned in an authorization response. |
@@ -44,7 +44,7 @@ JSON string format for `networkDetails`:
 {
    "networkDetails":{
       "network":{
-         "network": "string"
+         "network": "VISA"
       },
       "debitNetworkId": "123456",
       "transactionSequence": "1123456",
@@ -70,7 +70,7 @@ JSON string format for `networkDetails`:
 
 ---
 
-### Network 
+### Card Network 
 
 Contains the card network data.
 
@@ -92,9 +92,9 @@ title: JSON Example
 
 ```json
 {
-   "network":{
-      "network":"string"
-   }
+  "network":{
+    "network":"VISA"
+  }
 }
 ```
 

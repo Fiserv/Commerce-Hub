@@ -47,6 +47,8 @@ The below table identifies the parameters in the `storedCredentials` object.
 | `sixMonthTransactionCount` | *integer* | 2 | | Number of transaction on this account in prior 6 months |
 | `twentyFourHourTransactionCount` | *integer* | 2 | | Number of transaction on this account in prior 24 hours |
 | `retryAttempts` | *integer* | 2 | | Number of retry attempt if the initial transaction was unsuccessful |
+| `networkTransactionReference` | *string* | 64 |  | Allows linking of the transaction to the original or previous one in a subscription/card-on-file chain |
+
 
 <!-- type: tab-end -->
 

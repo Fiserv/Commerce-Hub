@@ -22,6 +22,8 @@ The below table identifies the parameters in the `merchantDetails` object.
 | `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the the gateway. |
 | `alternateMerchantId` | *string* | 16 | | An Alternate ID assigned to a merchant based on a Value Added Service *(Prepaid Cards, TeleCheck, Enhanced Data Service, etc.)*. For additional information regarding the Alternate Merchant ID, please contact your account representative. |
 | `promotionCode` | *string* |  | | This field contains the Promotion Code. |
+| `terminalLaneNumber` | *string* | 16 |  | Terminal lane number |
+
 
 <!--
 type: tab
@@ -39,7 +41,8 @@ JSON string format for `merchantDetails`:
       "terminalId": "12",
       "merchantId": "1234567890123456",
       "alternateMerchantId": "12345678",
-      "promotionCode": "ABCD1234"
+      "promotionCode": "ABCD1234",
+      "terminalLaneNumber": "001"
    }
 }
 ```
