@@ -30,9 +30,8 @@ The below table identifies the parameters in the `networkDetails` object.
 | `partialAuthTransactionId` | *string* |  | Generated identifier unique for each original authorization request |
 | `totalAuthAmount` | *number* | 18,3  | Total amount authorized |
 | `transactionIdentifier` | *string* |  | This field represents a unique value used to identify and link all related transactions for authorization and settlement |
-| `magStripeQualityIndicator` | *string* |  | |
-| `authSource` | *object* | |  |
-
+| `magStripeQualityIndicator` | *string* |  |  |
+| `authSource` | *object* |  |  |
 
 <!--
 type: tab
@@ -43,26 +42,27 @@ JSON string format for `networkDetails`:
 
 ```json
 {
-   "partialAuthDetails":{
-      "interchangeComplianceIndicator":"A",
-      "bankNetRefNumber":"string",
-      "bankNetDate":"0310",
-      "cvcIndicator":"Y",
-      "partialAuthTransactionId":"string",
-      "validationCode":"string",
-      "totalAuthAmount":"1.00",
-      "downgradeReason":"ACCOUNT_NUMBER_MISSING",
-      "creditAuthType":"DISCOVER",
-      "authScore":"string"
-   },
-   "network":"VISA",
-   "debitNetworkId":"123456",
-   "transactionSequence":"1123456",
-   "systemTrace":"123456789",
-   "authorizationCharacteristicsIndicator":"CARD_NOT_PRESENT",
-   "VISABID":"string",
-   "VISAAUR":"12345AD89012",
-   "networkResponseCode":"00"
+   "networkDetails":{
+      "network":{
+         "network": "string"
+      },
+      "debitNetworkId": "123456",
+      "transactionSequence": "1123456",
+      "systemTrace": "123456789",
+      "debitIssuerData": "Standard Issuer",
+      "networkResponseCode": "00",
+      "posEntryModeChange": true,
+      "cardLevelResultCode": "string",
+      "validationCode": "string",
+      "downgradeReason": "ACCOUNT_NUMBER_MISSING",
+      "creditAuthType": "DISCOVER",
+      "authScore": "string",
+      "partialAuthTransactionId": "string",
+      "totalAuthAmount": 1,
+      "transactionIdentifier": "string",
+      "magStripeQualityIndicator": "string",
+      "authSource": "string"
+   }
 }
 ```
 
@@ -89,6 +89,14 @@ The below table identifies the parameters in the `network` object.
 type: tab
 title: JSON Example
 -->
+
+```json
+{
+   "network":{
+      "network":"string"
+   }
+}
+```
 
 <!-- type: tab-end -->
 
