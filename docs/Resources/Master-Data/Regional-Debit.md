@@ -19,10 +19,10 @@ The below table identifies the parameters in the `regionalPin` object.
 | `region` | *string* |  | Region of Debit Origin - Canadian, German , etc |
 | `debitTransactionCode` | *string* |  |  |
 | `debitMACValue` | *string* |  | To confirm that the key data elements of the transaction have not been tampered. MAC protection is required on all Canadian Debit transactions. It is optional when processing U.S. debit/EBT transactions. |
-| `encryptedKeyIndex` | *string* |  |  |
-| `messageAuthenticationWorkingKey` | *string* |  |  |
-| `messageAuthenticationWorkingKeyCheckDigits` | *string* |  |  |
-| `messageEncryptionWorkingKey` | *string* |  |  |
+| `encryptedKeyIndex` | *string* |  | Keys that are related to specifica tables wihin an index |
+| `messageAuthenticationWorkingKey` | *string* |  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.  |
+| `messageAuthenticationWorkingKeyCheckDigits` | *string* |  | A message authentication code for a working key that uses a session key to check digits. |
+| `messageEncryptionWorkingKey` | *string* |  | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data.  |
 | `debitPinPadSerialNumber` | *string* |  | Canadian Debit requests to indicate the serial number of the PIN device being used at the POS.Serial Number of the PIN device in use at the POS. This value must be present on the Chase Merchant Services system in order for any Canadian Debit transactions to process successfully.' |
 | `accountType` | *string* |  | Canada debit - Checking, Savings |
 | `transactionSequenceCounter` | *string* |  | Required on all Canadian Debit EMV transaction requests. Contains a unique sequence counter for this transaction from this point of sale. |
