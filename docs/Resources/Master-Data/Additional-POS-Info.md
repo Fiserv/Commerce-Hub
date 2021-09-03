@@ -43,10 +43,42 @@ JSON string format for `additionalPosInformation`:
 
 ```json
 {
-   "transactionInteraction": {
-      "additionalPosInformation": {
-         "dataEntrySource": "MOBILE_APP"
-      }
+   "additionalPosInformation":{
+      "posId": "1234",
+      "cashierId": "3456",
+      "stan": "123456",
+      "posFormFactorIndicator": "02",
+      "enhancedAuthorizationRequestIndicator": "BOTH_SUPPORTED",
+      "dataEntrySource": "string",
+      "transactionQualifier": "string",
+      "enhancedAuthorizationResponseIndicator": "FULL",
+      "attendedTerminalData": "ATTENDED",
+      "cardPresentIndicator": "string",
+      "cardPresentAtPosIndicator": "string",
+      "terminalLocation": "MERCHANT",
+      "cardholderActivatedTerminalInformation": "2",
+      "posHardwareAndSoftware":{
+         "hardwareVendorIdentifier": "string",
+         "softwareIdentifier": "string",
+         "hardwareSerialNumber": "V1234567",
+         "softwareApplicationName": "string",
+         "softwareReleaseDate": "2022-05-21",
+         "softwareVersionNumber": "string"
+      },
+      "posFeatures":{
+         "hostProcessingPlatform": "TAS",
+         "messageFormatSupport": "string",
+         "emvSupport": "string",
+         "peripheralInformation1": "string",
+         "peripheralInformation2": "string",
+         "communicationInformation1": "DIAL",
+         "communicationInformation2": "string",
+         "industryInformation1": "string",
+         "industryInformation2": "string",
+         "classAndComplianceCertification": "A",
+         "otherCapabilities": "string"
+      },
+      "supervisorId": "1234567"
    }
 }
 ```
@@ -80,6 +112,18 @@ type: tab
 title: JSON Example
 -->
 
+```json
+{
+   "posHardwareAndSoftware":{
+      "hardwareVendorIdentifier": "string",
+      "softwareIdentifier": "string",
+      "hardwareSerialNumber": "V1234567",
+      "softwareApplicationName": "string",
+      "softwareReleaseDate": "2022-05-21",
+      "softwareVersionNumber": "string"
+   }
+}
+```
 
 <!-- type: tab-end -->
 
@@ -113,6 +157,23 @@ type: tab
 title: JSON Example
 -->
 
+```json
+{
+   "posFeatures":{
+      "hostProcessingPlatform": "TAS",
+      "messageFormatSupport": "string",
+      "emvSupport": "string",
+      "peripheralInformation1": "string",
+      "peripheralInformation2": "string",
+      "communicationInformation1": "DIAL",
+      "communicationInformation2": "string",
+      "industryInformation1": "string",
+      "industryInformation2": "string",
+      "classAndComplianceCertification": "A",
+      "otherCapabilities": "string"
+   }
+}
+```
 
 <!-- type: tab-end -->
 
