@@ -5,7 +5,11 @@ tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 
 # PaymentCard
 
-Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online or in person. The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
+Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
+
+<!-- theme: info -->
+> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
+
 
 ---
 

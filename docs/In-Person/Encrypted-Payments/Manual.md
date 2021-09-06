@@ -15,11 +15,10 @@ Add to PaymentCard mention encrypted and link back to this article
 
 -->
 
-Encrypted manual key entry, also known as EMV Fallback, involves manually entering the payment source details a payment terminal. This can be used when the payment terminal fails to obtain the card details from the card's chip or magnetic stripe. 
+Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually entering the payment source details a payment terminal. This can be used when the payment terminal fails to obtain the card details from the card's chip or magnetic stripe.
 
-An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by manually entering the card details or swiping the magnetic stripe.
+A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
 
-EMV fallback transactions only apply to card-present transactions where physical cards are presented by cardholders at payment terminals.
 
 ---
 
@@ -64,16 +63,21 @@ JSON string format for PaymentCard:
 
 ```json
 {
-  "source": {
-    "sourceType": "PaymentCard",
-    "encryptionData": {
-      "encryptionType": "On-Guard",
-      "encryptionTarget": "Track_2",
-      "encryptionBlock": "",
-      "deviceType": "INGENICO",
-      "securitykeyUpdateIndicator": false,
-      "keyId": ,
-      "encryptedKey": "NdCmVw5..."
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
+      },
+      "encryptionData":{
+         "encryptionType": "RSA",
+         "encryptionTarget": "TRACK_2",
+         "encryptionBlock": "",
+         "deviceType": "INGENICO",
+         "securitykeyUpdateIndicator": false,
+         "keyId":"",
+         "encryptedKey": "NdCmVw5..."
       }
    }
 }
@@ -94,23 +98,28 @@ title: Request
 
 ```json
 {
-   "amount": {
+   "amount":{
       "total": "12.04",
       "currency": "USD"
    },
-   "source": {
+   "source":{
       "sourceType": "PaymentCard",
-      "encryptionData": {
-      "encryptionType": "On-Guard",
-      "encryptionTarget": "Track_2",
-      "encryptionBlock": "",
-      "deviceType": "INGENICO",
-      "securitykeyUpdateIndicator": false,
-      "keyId": "",
-      "encryptedKey": "NdCmVw5..."
+      "card":{
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
+      },
+      "encryptionData":{
+         "encryptionType": "RSA",
+         "encryptionTarget": "TRACK_2",
+         "encryptionBlock": "",
+         "deviceType": "INGENICO",
+         "securitykeyUpdateIndicator": false,
+         "keyId":"",
+         "encryptedKey":"NdCmVw5..."
       }
    },
-   "transactionDetails": {
+   "transactionDetails":{
       "captureFlag": true
    }
 }
@@ -144,6 +153,13 @@ title: Response
    },
    "source": {
       "sourceType": "PaymentCard",
+      "card": {
+        "bin": "40055500",
+        "last4": "0019",
+        "scheme": "VISA",
+        "expirationMonth": "02",
+        "expirationYear": "2035"
+      }
       "encryptionData": {
         "encryptionType": "On-Guard",
         "encryptionTarget": "Track_2",
@@ -182,5 +198,11 @@ title: Response
 ```
 
 <!-- type: tab-end -->
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 
 ---

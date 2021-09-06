@@ -1,8 +1,8 @@
-# PaymentTrack
-
 ---
 tags: [carat, commerce-hub, enterprise, track, in-person, card-present, encrypted-payment]
 ---
+
+# PaymentTrack
 
 <!-- 
 also known as EMV Fallback (mention EMV fallback (EMV > Track > Manual) in EMV article and link here)
@@ -12,3 +12,191 @@ explain non-encrypted and encrypted track, outline the requirements to submit a 
 encrypted: needs encryption data (similar EMV ISO/UMF) encryptionBlock, requirements and examples
 non-encrypted: not recommended for security reasons sends that data in Track1Data and Track2Data, requirements and examples
 -->
+
+
+
+### Minimum Requirements
+
+<!--
+type: tab
+title: source
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
+| `encryptionData` | *object* | N/A | &#10004; | Contains the encrypted payment details |
+
+<!--
+type: tab
+title: encryptionData
+-->
+
+The below table identifies the required parameters in the `encryptionData` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ------------------ |
+| `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
+| `encryptionTarget` | *string* | 256 |  &#10004; |Target could be Track1, Track2, Both or Manual |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | |
+| `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `securitykeyUpdateIndicator` | *boolean* | | &#10004; | Provided in response. POS is expected to download updated key, key cert |
+| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
+| `encryptedKey` | *string* | | &#10004; | Identifier required for decryption |
+
+
+<!--
+type: tab
+title: JSON Example
+-->
+
+JSON string format for PaymentCard:
+
+```json
+{
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
+      },
+      "encryptionData":{
+         "encryptionType": "RSA",
+         "encryptionTarget": "TRACK_2",
+         "encryptionBlock": "",
+         "deviceType": "INGENICO",
+         "securitykeyUpdateIndicator": false,
+         "keyId":"",
+         "encryptedKey": "NdCmVw5..."
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+### Charges Payload Example
+
+<!--
+type: tab
+title: Request
+-->
+
+##### Example of a charge payload request using PaymentCard.
+
+```json
+{
+   "amount":{
+      "total": "12.04",
+      "currency": "USD"
+   },
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "cardData": "4005550000000019",
+         "expirationMonth": "02",
+         "expirationYear": "2035"
+      },
+      "encryptionData":{
+         "encryptionType": "RSA",
+         "encryptionTarget": "TRACK_2",
+         "encryptionBlock": "",
+         "deviceType": "INGENICO",
+         "securitykeyUpdateIndicator": false,
+         "keyId":"",
+         "encryptedKey":"NdCmVw5..."
+      }
+   },
+   "transactionDetails":{
+      "captureFlag": true
+   }
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+title: Response
+-->
+
+##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+
+```json
+{
+   "gatewayResponse": {
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "transactionTimestamp": "2021-04-16T16:06:05Z",        
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
+      }
+   },
+   "source": {
+      "sourceType": "PaymentCard",
+      "card": {
+        "bin": "40055500",
+        "last4": "0019",
+        "scheme": "VISA",
+        "expirationMonth": "02",
+        "expirationYear": "2035"
+      }
+      "encryptionData": {
+        "encryptionType": "On-Guard",
+        "encryptionTarget": "Track_2",
+        "encryptionBlock": "",
+        "deviceType": "INGENICO",
+        "securitykeyUpdateIndicator": false,
+        "keyId": "",
+        "encryptedKey": "NdCmVw5..."
+      }
+   },
+   "paymentReceipt": {
+      "approvedAmount": {
+         "total": "12.04",
+         "currency": "USD"
+      },
+      "processorResponseDetails": {
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-04-16T16:06:05Z",
+         "bankAssociationDetails": {
+            "transactionTimestamp": "2021-04-16T16:06:05Z"
+         }
+      }
+   },
+   "transactionDetails": {
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+
+---
+

@@ -19,7 +19,7 @@ The three types of integration Commerce Hub offers for Card Present payments are
 
 ## Encrypted PIN Pad
  
-By leveraging the third party EMV-enabled payments solution, the customer's payment transactions are encrypted via a multi-layered security approach. The terminal or software processes the transaction with a plug and play, semi-integrated solution and submits the RESTful request to Commerce Hub. This makes the encrypted PIN Pad solution to be the most secure option for businesses leveraging it. 
+By leveraging the third-party EMV-enabled payments solution, the customer's payment transactions are encrypted via a multi-layered security approach. The terminal or software processes the transaction with a plug and play, semi-integrated solution and submits the RESTful request to Commerce Hub. This makes the encrypted PIN Pad solution to be the most secure option for businesses leveraging it. 
 
 **Begin integration with Commerce Hub with an [Encrypted PIN Pad](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).**
 
