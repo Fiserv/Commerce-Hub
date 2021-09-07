@@ -13,21 +13,29 @@ encrypted: needs encryption data (similar EMV ISO/UMF) encryptionBlock, requirem
 non-encrypted: not recommended for security reasons sends that data in Track1Data and Track2Data, requirements and examples
 -->
 
+Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment terminal using magnetic stripe. This can be used when the payment terminal fails to obtain the card details from the card's chip.
+
+A third-party device captures the customer's payment source unencrypted or encryptes the data and sends it to the Commerce Hub integrated terminal or software.
 
 
-### Minimum Requirements
+---
+
+### Request Variables
 
 <!--
 type: tab
 title: source
 -->
 
-The below table identifies the required parameters in the `source` object.
+The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `encryptionData` | *object* | N/A | &#10004; | Contains the encrypted payment details |
+| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentTrack* for Magnetic stripe transactions |
+| `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
+| `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
+| `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
 
 <!--
 type: tab
@@ -39,12 +47,9 @@ The below table identifies the required parameters in the `encryptionData` objec
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target could be Track1, Track2, Both or Manual |
+| `encryptionTarget` | *string* | 256 |  &#10004; |Target could be TRACK_1, TRACK_2, or BOTH |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `securitykeyUpdateIndicator` | *boolean* | | &#10004; | Provided in response. POS is expected to download updated key, key cert |
-| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
-| `encryptedKey` | *string* | | &#10004; | Identifier required for decryption |
 
 
 <!--
@@ -52,25 +57,18 @@ type: tab
 title: JSON Example
 -->
 
-JSON string format for PaymentCard:
+JSON string format for PaymentTrack:
 
 ```json
 {
    "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      },
+      "sourceType": "PaymentTrack",
       "encryptionData":{
          "encryptionType": "RSA",
          "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
          "deviceType": "INGENICO",
-         "securitykeyUpdateIndicator": false,
-         "keyId":"",
-         "encryptedKey": "NdCmVw5..."
+         "keyId": "88000000023"
       }
    }
 }
@@ -87,7 +85,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a charge payload request using PaymentCard.
+##### Example of a charge payload request using PaymentTrack.
 
 ```json
 {
@@ -96,20 +94,13 @@ title: Request
       "currency": "USD"
    },
    "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      },
+      "sourceType": "PaymentTrack",
       "encryptionData":{
          "encryptionType": "RSA",
          "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
          "deviceType": "INGENICO",
-         "securitykeyUpdateIndicator": false,
-         "keyId":"",
-         "encryptedKey":"NdCmVw5..."
+         "keyId": "88000000023"
       }
    },
    "transactionDetails":{
@@ -145,22 +136,13 @@ title: Response
       }
    },
    "source": {
-      "sourceType": "PaymentCard",
+      "sourceType": "PaymentTrack",
       "card": {
         "bin": "40055500",
         "last4": "0019",
         "scheme": "VISA",
         "expirationMonth": "02",
         "expirationYear": "2035"
-      }
-      "encryptionData": {
-        "encryptionType": "On-Guard",
-        "encryptionTarget": "Track_2",
-        "encryptionBlock": "",
-        "deviceType": "INGENICO",
-        "securitykeyUpdateIndicator": false,
-        "keyId": "",
-        "encryptedKey": "NdCmVw5..."
       }
    },
    "paymentReceipt": {

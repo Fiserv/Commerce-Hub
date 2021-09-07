@@ -34,7 +34,7 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `encryptionData` | *object* | N/A | &#10004; | Contains the encrypted payment details |
+| `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
 
 <!--
 type: tab
@@ -46,12 +46,10 @@ The below table identifies the required parameters in the `encryptionData` objec
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target could be Track1, Track2, Both or Manual |
+| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `securitykeyUpdateIndicator` | *boolean* | | &#10004; | Provided in response. POS is expected to download updated key, key cert |
-| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
-| `encryptedKey` | *string* | | &#10004; | Identifier required for decryption |
+| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
 
 
 <!--
@@ -65,19 +63,12 @@ JSON string format for PaymentCard:
 {
    "source":{
       "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      },
       "encryptionData":{
          "encryptionType": "RSA",
-         "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
+         "encryptionTarget": "MANUAL",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
          "deviceType": "INGENICO",
-         "securitykeyUpdateIndicator": false,
-         "keyId":"",
-         "encryptedKey": "NdCmVw5..."
+         "keyId": "88000000023"
       }
    }
 }
@@ -94,34 +85,34 @@ type: tab
 title: Request
 -->
 
-##### Example of a charge payload request using PaymentCard.
+##### Example of a charge payload request using PaymentCard for Manual Entry.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      },
-      "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
-         "deviceType": "INGENICO",
-         "securitykeyUpdateIndicator": false,
-         "keyId":"",
-         "encryptedKey":"NdCmVw5..."
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true
-   }
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "emvData": "0249F3704833A12329F1002AB34",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "deviceType": "INGENICO",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "EMV_FALLBACK",
+    "posConditionCode": "CARD_PRESENT"
+  }
 }
 ```
 
@@ -139,61 +130,60 @@ title: Response
 
 ```json
 {
-   "gatewayResponse": {
-      "transactionType": "CHARGE",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "transactionTimestamp": "2021-04-16T16:06:05Z",        
-         "orderId": "RKOrdID-525133851837",
-         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-         "clientRequestId": "4345791",
-         "transactionId": "84356531338"
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "POS",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "12.04",
+      "currency": "USD"
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "fiserv",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
       }
-   },
-   "source": {
-      "sourceType": "PaymentCard",
-      "card": {
-        "bin": "40055500",
-        "last4": "0019",
-        "scheme": "VISA",
-        "expirationMonth": "02",
-        "expirationYear": "2035"
-      }
-      "encryptionData": {
-        "encryptionType": "On-Guard",
-        "encryptionTarget": "Track_2",
-        "encryptionBlock": "",
-        "deviceType": "INGENICO",
-        "securitykeyUpdateIndicator": false,
-        "keyId": "",
-        "encryptedKey": "NdCmVw5..."
-      }
-   },
-   "paymentReceipt": {
-      "approvedAmount": {
-         "total": "12.04",
-         "currency": "USD"
-      },
-      "processorResponseDetails": {
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK5882",
-         "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021-04-16T16:06:05Z",
-         "bankAssociationDetails": {
-            "transactionTimestamp": "2021-04-16T16:06:05Z"
-         }
-      }
-   },
-   "transactionDetails": {
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   }
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  }
 }
 ```
 
@@ -204,5 +194,5 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-
+- [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 ---
