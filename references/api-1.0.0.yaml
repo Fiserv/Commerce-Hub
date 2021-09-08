@@ -333,8 +333,7 @@ paths:
           description: Created
           content:
             application/json:
-              schema: 
-                $ref: '#/components/schemas/AccountVerificationResponse'
+              schema: {$ref: '#/components/schemas/AccountVerificationResponse'}
               examples:
                 PaymentCard: {summary: AccountVerificationResponse with PaymentCard,
                   $ref: '#/components/examples/PaymentCardVerifyResponse'}
@@ -513,13 +512,13 @@ paths:
               PaymentCard: {summary: EDSRequest with PaymentCard, $ref: '#/components/examples/PaymentCardEDSRequest'}
               PaymentToken: {summary: EDSRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSRequest'}
       responses:
-        "201":
+        201:
           description: Created
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/Test'}
+              schema: {$ref: '#/components/schemas/EnhancedDataServiceResponse'}
               examples:
-                PaymentCard: {summary: EDSResponse with PaymentCard, $ref: '#/components/examples/Test'}
+                PaymentCard: {summary: EDSResponse with PaymentCard, $ref: '#/components/examples/PaymentCardEDSResponse'}
                 PaymentToken: {summary: EDSResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
@@ -2534,18 +2533,6 @@ components:
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-    Test:
-      x-model-version: 1.0
-      type: object
-      properties:
-        id: 
-          type: number
-        name:
-          type: string
-        dob:
-          type: string
-          format: date
-        
   examples:
     ApplePayRequest:
       value:
@@ -3166,8 +3153,3 @@ components:
           localTimestamp: 2021.02.25 14:14:38 (CET)
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021.02.25
               14:14:38 (CET)'}
-    Test:
-      value:
-        id": 1
-        name: 'John Thomas' 
-        dob: '2020-01-20'
