@@ -108,11 +108,16 @@ title: Request
     "captureFlag": true,
     "merchantInvoiceNumber": "123456789012"
   },
-  "transactionInteraction": {
-    "origin": "POS",
-    "posEntryMode": "EMV_FALLBACK",
-    "posConditionCode": "CARD_PRESENT"
-  }
+   "transactionInteraction":{
+      "origin": "POS",
+      "posEntryMode": "EMV_FALLBACK",
+      "posConditionCode": "CARD_PRESENT",
+      "terminalTimestamp": "2021-06-20T23:42:48Z"
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+   }
 }
 ```
 
@@ -195,4 +200,9 @@ title: Response
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
+- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
+- [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 ---

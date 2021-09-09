@@ -106,6 +106,16 @@ title: Request
    "transactionDetails":{
       "captureFlag": true
    }
+    "transactionInteraction":{
+      "origin": "POS",
+      "posEntryMode": "MAG_STRIPE",
+      "posConditionCode": "CARD_PRESENT",
+      "terminalTimestamp": "2021-06-20T23:42:48Z"
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+   }
 }
 ```
 
@@ -178,7 +188,13 @@ title: Response
 
 ## See Also
 
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
+- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
+- [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 
 ---
 

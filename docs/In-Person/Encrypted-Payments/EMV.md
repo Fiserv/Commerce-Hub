@@ -7,11 +7,12 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include EMV support and the documents related to this feature will be released soon.
 
-EMV, popularly known for Europay, MasterCard® and Visa®, refers to the increased security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
+EMV ensures increased security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
-EMV provides global interoperability and easy compatibility of chip-based payment cards with acceptance devices. EMV cards support both contact and contactless payments.
+A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
 
-In the EMV chip transactions the payment application resides in a secure chip that is embedded in a plastic payment card (also known as a chip card or smart card), a mobile phone or other wearble devices. For an in-person payment, the chip must come into physical contact with the chip reader for the payment transaction to occur.
+<!-- theme: info -->
+> EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
 
 <!-- 
 explain EMV, outline the requirements to submit a PaymentEMV source, Fallback, how EMV designed using Track data, reference PaymentCard for example, need JSON, request, response.
@@ -113,8 +114,13 @@ title: Request
    "transactionInteraction":{
       "origin": "POS",
       "posEntryMode": "ICR_RELIABLE",
-      "posConditionCode": "CARD_PRESENT"
-   }
+      "posConditionCode": "CARD_PRESENT",
+      "terminalTimestamp": "2021-06-20T23:42:48Z"
+   },
+    "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 
@@ -196,5 +202,9 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
+- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 
 ---
