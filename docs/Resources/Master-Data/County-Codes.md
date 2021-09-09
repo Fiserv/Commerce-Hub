@@ -21,71 +21,71 @@ The below table contains county codes for Alabama.
 | ------- | ------- |
 | Autauga | 01001 |
 | Baldwin | 01003 |	
-01005	Barbour	AL
-01007	Bibb	AL
-01009	Blount	AL
-01011	Bullock	AL
-01013	Butler	AL
-01015	Calhoun	AL
-01017	Chambers	AL
-01019	Cherokee	AL
-01021	Chilton	AL
-01023	Choctaw	AL
-01025	Clarke	AL
-01027	Clay	AL
-01029	Cleburne	AL
-01031	Coffee	AL
-01033	Colbert	AL
-01035	Conecuh	AL
-01037	Coosa	AL
-01039	Covington	AL
-01041	Crenshaw	AL
-01043	Cullman	AL
-01045	Dale	AL
-01047	Dallas	AL
-01049	De Kalb	AL
-01051	Elmore	AL
-01053	Escambia	AL
-01055	Etowah	AL
-01057	Fayette	AL
-01059	Franklin	AL
-01061	Geneva	AL
-01063	Greene	AL
-01065	Hale	AL
-01067	Henry	AL
-01069	Houston	AL
-01071	Jackson	AL
-01073	Jefferson	AL
-01075	Lamar	AL
-01077	Lauderdale	AL
-01079	Lawrence	AL
-01081	Lee	AL
-01083	Limestone	AL
-01085	Lowndes	AL
-01087	Macon	AL
-01089	Madison	AL
-01091	Marengo	AL
-01093	Marion	AL
-01095	Marshall	AL
-01097	Mobile	AL
-01099	Monroe	AL
-01101	Montgomery	AL
-01103	Morgan	AL
-01105	Perry	AL
-01107	Pickens	AL
-01109	Pike	AL
-01111	Randolph	AL
-01113	Russell	AL
-01115	St Clair	AL
-01117	Shelby	AL
-01119	Sumter	AL
-01121	Talladega	AL
-01123	Tallapoosa	AL
-01125	Tuscaloosa	AL
-01127	Walker	AL
-01129	Washington	AL
-01131	Wilcox	AL
-01133	Winston	AL
+| Barbour | 01005 |	
+| Bibb | 01007 |
+| Blount | 01009 |
+| Bullock | 01011 |
+| Butler |  01013 |
+| Choun | ' 01015 |
+| Chambers | ' 01017 |
+| Cherokee | ' 01019 |
+| Chilton | ' 01021 |
+| Choctaw | ' 01023 |
+| Clarke | ' 01025 |
+| Clay | ' 01027 |
+| Cleburne | ' 01029 |
+| Coffee | ' 01031 |
+| Colbert | ' 01033 |
+| Conecuh | ' 01035 |
+| Coosa | ' 01037 |
+| Covington | ' 01039 |
+| Crenshaw | ' 01041 |
+| Cullman | ' 01043 |
+| De | ' 01045 |
+| Dlas | ' 01047 |
+| De Kb | ' 01049 |
+| Elmore | ' 01051 |
+| Escambia | ' 01053 |
+| Etowah | ' 01055 |
+| Fayette | ' 01057 |
+| Franklin | ' 01059 |
+| Geneva | ' 01061 |
+| Greene | ' 01063 |
+| He | ' 01065 |
+| Henry | ' 01067 |
+| Houston | ' 01069 |
+| Jackson | ' 01071 |
+| Jefferson | ' 01073 |
+| Lamar | ' 01075 |
+| Lauderde | ' 01077 |
+| Lawrence | ' 01079 |
+| Lee | ' 01081 |
+| Limestone | ' 01083 |
+| Lowndes | ' 01085 |
+| Macon | ' 01087 |
+| Madison | ' 01089 |
+| Marengo | ' 01091 |
+| Marion | ' 01093 |
+| Marshl | ' 01095 |
+| Mobile | ' 01097 |
+| Monroe | ' 01099 |
+| Montgomery | ' 01101 |
+| Morgan | ' 01103 |
+| Perry | ' 01105 |
+| Pickens | ' 01107 |
+| Pike | ' 01109 |
+| Randolph | ' 01111 |
+| Russell | ' 01113 |
+| St Clair | ' 01115 |
+| Shelby | ' 01117 |
+| Sumter | ' 01119 |
+| Tladega | ' 01121 |
+| Tlapoosa | ' 01123 |
+| Tuscoosa | 01125 |
+| Wker | 01127 |
+| Washington | 01129 |
+| Wilcox | 01131 |
+| Winston | 01133 |
 
 <!--
 type: tab
