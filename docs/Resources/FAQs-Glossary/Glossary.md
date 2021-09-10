@@ -259,7 +259,7 @@ Identifies the transaction as payment of an existing debt obligation, such as a 
 A system between networks that filters data passing through it and removes unauthorized traffic, thus enhancing the network's security.
 
 ## Financial Institution
-Any commercial bank, federal or state savings and loan association; federal or state savings bank; or any federal or state-chartered credit union. Also known as issuing bank.
+Any commercial bank, federal or state savings and loan association; federal or state savings bank; or any federal or state-chartered credit union. Also known as issuing bank (card issuer).
 
 ## Floor Limit
 A maximum monetary amount above which a particular transaction requires authorization.
