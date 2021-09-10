@@ -3271,7 +3271,7 @@ The below table contains county codes for Vermont.
 |	Orleans	| 50019 |
 |	Rutland	| 50021 |
 |	Washington | 50023 |
-|	Windham	| 50025 |
+|	Windham	| 50025 | 
 |	Windsor	| 50027 |
 
 <!--
