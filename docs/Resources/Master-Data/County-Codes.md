@@ -3281,6 +3281,8 @@ title: Virginia
 
 The below table contains county codes for Virginia.
 
+| County | Code |
+| ------- | ------- |
 51001	Accomack	VA
 51003	Albemarle	VA
 51005	Alleghany	VA
@@ -3425,6 +3427,8 @@ title: Washington
 
 The below table contains county codes for Washington.
 
+| County | Code |
+| ------- | ------- |
 53001	Adams	WA
 53003	Asotin	WA
 53005	Benton	WA
@@ -3472,6 +3476,8 @@ title: West Virginia
 
 The below table contains county codes for West Virginia.
 
+| County | Code |
+| ------- | ------- |
 54001	Barbour	WV
 54003	Berkeley	WV
 54005	Boone	WV
@@ -3535,6 +3541,8 @@ title: Wisconsin
 
 The below table contains county codes for Wisconsin.
 
+| County | Code |
+| ------- | ------- |
 55001	Adams	WI
 55003	Ashland	WI
 55005	Barron	WI
@@ -3614,6 +3622,8 @@ title: Wyoming
 -->
 
 The below table contains county codes for Wyoming. 
+| County | Code |
+| ------- | ------- |
 56001	Albany	WY
 56003	Big Horn	WY
 56005	Campbell	WY
@@ -3660,6 +3670,8 @@ title: Arkansas
 
 The below table contains county codes for Arkansas. 
 
+| County | Code |
+| ------- | ------- |
 66010	Cocos Island	MP
 66010	Guam	GU
 69100	Rota	MP
