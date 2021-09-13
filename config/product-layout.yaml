@@ -133,7 +133,6 @@ featuredFeatures:
     description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
     tags: ["tag1", "tag2"]
     bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
-    #links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
     relatedDocs:
       - relatedDoc: 
         title: Getting Started 
