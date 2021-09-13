@@ -96,7 +96,7 @@ featuredFeatures:
         description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
         type: "post"        
         path: "/payments/v1/charges/{transactionId}/refund"
-       - relatedAPI: 
+      - relatedAPI: 
         title: Tokenization
         description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
         type: "post"        
