@@ -34,15 +34,9 @@
   "apiVersions": [
     {
       "version": "1.0.0",
-      "versionType": "minor",
-      "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
-      "apiSpecFileNames": ["api_with_example.1.0.0"]
-    },
-     {
-      "version": "1.0.1",
       "versionType": "major",
-      "releaseNotesPath": "/release-notes/release-notes-1.0.1.md",
-      "apiSpecFileNames": ["test"]
+      "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
+      "apiSpecFileNames": ["openapi"]
     }
   ],
   "product": {
