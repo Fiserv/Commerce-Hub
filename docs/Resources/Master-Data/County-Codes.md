@@ -96,9 +96,7 @@ The below table contains county codes for Alaska.
 
 | County | Code |
 | ------- | ------- |
-| Autauga | 01001 |
-
-02013	Aleutians East	AK
+| Aleutians East | 02013 |
 02016	Aleutians West	AK
 02020	Anchorage	AK
 02050	Bethel	AK
