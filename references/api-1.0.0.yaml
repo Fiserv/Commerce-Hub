@@ -10,7 +10,7 @@ paths:
   /payments/v1/charges:
     x-model-version: 1.0
     post:
-      tags: [Payment Endpoint Definition]
+      tags: [TEST Payment Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Charges
       summary: Submit a charge transaction.
