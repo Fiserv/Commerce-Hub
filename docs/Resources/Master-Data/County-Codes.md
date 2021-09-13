@@ -97,7 +97,7 @@ The below table contains county codes for Alaska.
 | County | Code |
 | ------- | ------- |
 | Aleutians East | 02013 |
-02016	Aleutians West	AK
+| Aleutians West | 02016 |
 02020	Anchorage	AK
 02050	Bethel	AK
 02060	Bristol Bay	AK
