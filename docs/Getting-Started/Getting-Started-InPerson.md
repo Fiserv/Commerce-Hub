@@ -46,7 +46,4 @@ Commerce Hub's fully-integrated payment system efficiently manages all the proce
 **Begin integration with Commerce Hub with a [Fully-integrated device](?path=docs/In-Person/Integrations/Fully-Integrated.md).**
 
 
-
--->
-
 ---

@@ -4,19 +4,14 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-
 
 # PaymentEMV
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include EMV support and the documents related to this feature will be released soon.
 
-EMV ensures increased security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
+[EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip and PIN enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
 A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
 
 <!-- theme: info -->
 > EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
 
-<!-- 
-explain EMV, outline the requirements to submit a PaymentEMV source, Fallback, how EMV designed using Track data, reference PaymentCard for example, need JSON, request, response.
--->
 
 ---
 
@@ -32,7 +27,7 @@ The below table identifies the parameters in the `source` object.
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentEMV* for EMV transactions |
-| `emvData` | *string* | N/A |  &#10004; | Contains a series of "Tag/Length/Value" combination for chip card processing |
+| `emvData` | *string* | N/A |  &#10004; | Contains a series of [Tag/Length/Value](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md) combination for chip card processing |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
 | `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
 
@@ -206,5 +201,5 @@ title: Response
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
-
+- [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
 ---
