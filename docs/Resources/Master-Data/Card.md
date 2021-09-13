@@ -24,7 +24,7 @@ The below table identifies the parameters in the `card` object.
 | `securityCodeIndicator` | *string* | 15 | Indicates how the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#security-code-indicator) is passed |
 | `bin` | *string* | 8 | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN). The BIN identifies the issuer and Level 2/3 qualifications. |
 | `last4` | *string* | 4 | Last four digits of the Primary Account Number (PAN) |
-| `scheme` | *string* | | Card brand returned in the response; VISA, MAESTRO, MASTERCARD, DINERS/DISCOVER, JCB, AMEX, UNIONPAY |
+| `scheme` | *string* | | Card brand returned in the response; VISA, MAESTRO, MASTERCARD, DINERSCLUB (Discover & Diners Club), JCB (Japanese Commerce Bank), AMEX, CUP (China UnionPay) |
 
 
 
