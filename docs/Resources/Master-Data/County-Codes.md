@@ -21,71 +21,71 @@ The below table contains county codes for Alabama.
 | ------- | ------- |
 | Autauga | 01001 |
 | Baldwin | 01003 |	
-01005	Barbour	AL
-01007	Bibb	AL
-01009	Blount	AL
-01011	Bullock	AL
-01013	Butler	AL
-01015	Calhoun	AL
-01017	Chambers	AL
-01019	Cherokee	AL
-01021	Chilton	AL
-01023	Choctaw	AL
-01025	Clarke	AL
-01027	Clay	AL
-01029	Cleburne	AL
-01031	Coffee	AL
-01033	Colbert	AL
-01035	Conecuh	AL
-01037	Coosa	AL
-01039	Covington	AL
-01041	Crenshaw	AL
-01043	Cullman	AL
-01045	Dale	AL
-01047	Dallas	AL
-01049	De Kalb	AL
-01051	Elmore	AL
-01053	Escambia	AL
-01055	Etowah	AL
-01057	Fayette	AL
-01059	Franklin	AL
-01061	Geneva	AL
-01063	Greene	AL
-01065	Hale	AL
-01067	Henry	AL
-01069	Houston	AL
-01071	Jackson	AL
-01073	Jefferson	AL
-01075	Lamar	AL
-01077	Lauderdale	AL
-01079	Lawrence	AL
-01081	Lee	AL
-01083	Limestone	AL
-01085	Lowndes	AL
-01087	Macon	AL
-01089	Madison	AL
-01091	Marengo	AL
-01093	Marion	AL
-01095	Marshall	AL
-01097	Mobile	AL
-01099	Monroe	AL
-01101	Montgomery	AL
-01103	Morgan	AL
-01105	Perry	AL
-01107	Pickens	AL
-01109	Pike	AL
-01111	Randolph	AL
-01113	Russell	AL
-01115	St Clair	AL
-01117	Shelby	AL
-01119	Sumter	AL
-01121	Talladega	AL
-01123	Tallapoosa	AL
-01125	Tuscaloosa	AL
-01127	Walker	AL
-01129	Washington	AL
-01131	Wilcox	AL
-01133	Winston	AL
+| Barbour | 01005 |	
+| Bibb | 01007 |
+| Blount | 01009 |
+| Bullock | 01011 |
+| Butler |  01013 |
+| Choun | 01015 |
+| Chambers | 01017 |
+| Cherokee | 01019 |
+| Chilton | 01021 |
+| Choctaw | 01023 |
+| Clarke | 01025 |
+| Clay | 01027 |
+| Cleburne | 01029 |
+| Coffee | 01031 |
+| Colbert | 01033 |
+| Conecuh | 01035 |
+| Coosa | 01037 |
+| Covington | 01039 |
+| Crenshaw | 01041 |
+| Cullman | 01043 |
+| De | 01045 |
+| Dlas | 01047 |
+| De Kb | 01049 |
+| Elmore | 01051 |
+| Escambia | 01053 |
+| Etowah | 01055 |
+| Fayette | 01057 |
+| Franklin | 01059 |
+| Geneva | 01061 |
+| Greene | 01063 |
+| He | 01065 |
+| Henry | 01067 |
+| Houston | 01069 |
+| Jackson | 01071 |
+| Jefferson | 01073 |
+| Lamar | 01075 |
+| Lauderde | 01077 |
+| Lawrence | 01079 |
+| Lee | 01081 |
+| Limestone | 01083 |
+| Lowndes | 01085 |
+| Macon | 01087 |
+| Madison | 01089 |
+| Marengo | 01091 |
+| Marion | 01093 |
+| Marshl | 01095 |
+| Mobile | 01097 |
+| Monroe | 01099 |
+| Montgomery | 01101 |
+| Morgan | 01103 |
+| Perry | 01105 |
+| Pickens | 01107 |
+| Pike | 01109 |
+| Randolph | 01111 |
+| Russell | 01113 |
+| St Clair | 01115 |
+| Shelby | 01117 |
+| Sumter | 01119 |
+| Tladega | 01121 |
+| Tlapoosa | 01123 |
+| Tuscoosa | 01125 |
+| Wker | 01127 |
+| Washington | 01129 |
+| Wilcox | 01131 |
+| Winston | 01133 |
 
 <!--
 type: tab
@@ -133,22 +133,23 @@ title: Arizona
 
 The below table contains county codes for Arizona.
 
-
-04001	Apache	AZ
-04003	Cochise	AZ
-04005	Coconino	AZ
-04007	Gila	AZ
-04009	Graham	AZ
-04011	Greenlee	AZ
-04012	La Paz	AZ
-04013	Maricopa	AZ
-04015	Mohave	AZ
-04017	Navajo	AZ
-04019	Pima	AZ
-04021	Pinal	AZ
-04023	Santa Cruz	AZ
-04025	Yavapai	AZ
-04027	Yuma	AZ
+| County | Code |
+| ------- | ------- |
+| Apache | 04001 | 
+|	Cochise	| 04003 |
+| Coconino | 04005 |
+|	Gila | 04007 |
+|	Graham | 04009 |
+| Greenlee | 04011 |	
+| La Paz | 04012 |	
+|	Maricopa | 04013 |
+| Mohave | 04015 |	
+|	Navajo | 04017 |	
+|	Pima | 04019 |	
+|	Pinal | 04021 |	
+|	Santa Cruz | 04023 |	
+| Yavapai | 04025	|
+|	Yuma | 04027 |
 
 <!--
 type: tab
@@ -157,6 +158,8 @@ title: Arkansas
 
 The below table contains county codes for Arkansas.
 
+| County | Code |
+| ------- | ------- |
 05001	Arkansas	AR
 05003	Ashley	AR
 05005	Baxter	AR
@@ -240,6 +243,8 @@ title: California
 
 The below table contains county codes for California.
 
+| County | Code |
+| ------- | ------- |
 06001	Alameda	CA
 06003	Alpine	CA
 06005	Amador	CA
@@ -306,6 +311,8 @@ title: Colorado
 
 The below table contains county codes for Colorado.
 
+| County | Code |
+| ------- | ------- |
 08001	Adams	CO
 08003	Alamosa	CO
 08005	Arapahoe	CO
@@ -377,14 +384,16 @@ title: Connecticut
 
 The below table contains county codes for Connecticut.
 
-09001	Fairfield	CT
-09003	Hartford	CT
-09005	Litchfield	CT
-09007	Middlesex	CT
-09009	New Haven	CT
-09011	New London	CT
-09013	Tolland	CT
-09015	Windham	CT
+| County | Code |
+| ------- | ------- |
+| Fairfield	| 09001 |
+| Hartford | 09003 |
+| Litchfield | 09005 |	
+| Middlesex	| 09007 |
+| New Haven	| 09009 |
+| New London | 09011 |
+| Tolland	| 09013 |
+| Windham	| 09015 |
 
 <!--
 type: tab
@@ -393,9 +402,11 @@ title: Delaware
 
 The below table contains county codes for Delaware.
 
-10001	Kent	DE
-10003	New Castle	DE
-10005	Sussex	DE
+| County | Code |
+| ------- | ------- |
+| Kent | 10001 |
+| New Castle | 10003 |	
+| Sussex |	10005 |
 
 <!--
 type: tab
@@ -404,7 +415,9 @@ title: Washington D. C.
 
 The below table contains county codes for Washington D. C.
 
-11001	Washington	DC
+| County | Code |
+| ------- | ------- |
+| Washington	DC | 11001 |
 
 <!--
 type: tab
@@ -413,6 +426,8 @@ title: Florida
 
 The below table contains county codes for Florida.
 
+| County | Code |
+| ------- | ------- |
 12001	Alachua	FL
 12003	Baker	FL
 12005	Bay	FL
@@ -488,6 +503,8 @@ title: Georgia
 
 The below table contains county codes for Georgia.
 
+| County | Code |
+| ------- | ------- |
 13001	Appling	GA
 13003	Atkinson	GA
 13005	Bacon	GA
@@ -655,10 +672,12 @@ title: Hawaii
 
 The below table contains county codes for Hawaii.
 
-15001	Hawaii	HI
-15003	Honolulu	HI
-15007	Kauai	HI
-15009	Maui	HI
+| County | Code |
+| ------- | ------- |
+| Hawaii | 15001 |
+| Honolulu | 15003 |
+| Kauai	| 15007 |
+| Maui | 15009 |
 
 <!--
 type: tab
@@ -667,6 +686,8 @@ title: Idaho
 
 The below table contains county codes for Idaho.
 
+| County | Code |
+| ------- | ------- |
 16001	Ada	ID
 16003	Adams	ID
 16005	Bannock	ID
@@ -719,6 +740,8 @@ title: Illinois
 
 The below table contains county codes for Illinois.
 
+| County | Code |
+| ------- | ------- |
 17001	Adams	IL
 17003	Alexander	IL
 17005	Bond	IL
@@ -829,6 +852,8 @@ title: Indiana
 
 The below table contains county codes for Indiana.
 
+| County | Code |
+| ------- | ------- |
 18001	Adams	IN
 18003	Allen	IN
 18005	Bartholomew	IN
@@ -929,6 +954,8 @@ title: Iowa
 
 The below table contains county codes for Iowa.
 
+| County | Code |
+| ------- | ------- |
 19001	Adair	IA
 19003	Adams	IA
 19005	Allamakee	IA
@@ -1036,6 +1063,8 @@ title: Kansas
 
 The below table contains county codes for Kansas.
 
+| County | Code |
+| ------- | ------- |
 20001	Allen	KS
 20003	Anderson	KS
 20005	Atchison	KS
@@ -1149,6 +1178,8 @@ title: Kentucky
 
 The below table contains county codes for Kentucky.
 
+| County | Code |
+| ------- | ------- |
 21001	Adair	KY
 21003	Allen	KY
 21005	Anderson	KY
@@ -1277,7 +1308,8 @@ title: Louisiana
 
 The below table contains county codes for Louisiana.
 
-
+| County | Code |
+| ------- | ------- |
 22001	Acadia	LA
 22003	Allen	LA
 22005	Ascension	LA
@@ -1350,6 +1382,8 @@ title: Maine
 
 The below table contains county codes for Maine.
 
+| County | Code |
+| ------- | ------- |
 23001	Androscoggin	ME
 23003	Aroostook	ME
 23005	Cumberland	ME
@@ -1429,6 +1463,8 @@ title: Michigan
 
 The below table contains county codes for Michigan.
 
+| County | Code |
+| ------- | ------- |
 26001	Alcona	MI
 26003	Alger	MI
 26005	Allegan	MI
@@ -1520,6 +1556,8 @@ title: Minnesota
 
 The below table contains county codes for Minnesota.
 
+| County | Code |
+| ------- | ------- |
 27001	Aitkin	MN
 27003	Anoka	MN
 27005	Becker	MN
@@ -1615,6 +1653,8 @@ title: Mississippi
 
 The below table contains county codes for Mississippi.
 
+| County | Code |
+| ------- | ------- |
 28001	Adams	MS
 28003	Alcorn	MS
 28005	Amite	MS
@@ -1705,6 +1745,8 @@ title: Missouri
 
 The below table contains county codes for Missouri.
 
+| County | Code |
+| ------- | ------- |
 29001	Adair	MO
 29003	Andrew	MO
 29005	Atchison	MO
@@ -1828,6 +1870,8 @@ title: Montana
 
 The below table contains county codes for Montana.
 
+| County | Code |
+| ------- | ------- |
 30001	Beaverhead	MT
 30003	Big Horn	MT
 30005	Blaine	MT
@@ -1893,7 +1937,8 @@ title: Nebraska
 
 The below table contains county codes for Nebraska.
 
-
+| County | Code |
+| ------- | ------- |
 31001	Adams	NE
 31003	Antelope	NE
 31005	Arthur	NE
@@ -2020,6 +2065,8 @@ title: New Hampshire
 
 The below table contains county codes for New Hampshire.
 
+| County | Code |
+| ------- | ------- |
 33001	Belknap	NH
 33003	Carroll	NH
 33005	Cheshire	NH
@@ -2108,6 +2155,8 @@ title: New York
 
 The below table contains county codes for New York.
 
+| County | Code |
+| ------- | ------- |
 36001	Albany	NY
 36003	Allegany	NY
 36005	Bronx	NY
@@ -2347,6 +2396,8 @@ title: Ohio
 
 The below table contains county codes for Ohio.
 
+| County | Code |
+| ------- | ------- |
 39001	Adams	OH
 39003	Allen	OH
 39005	Ashland	OH
@@ -2443,6 +2494,8 @@ title: Oklahoma
 
 The below table contains county codes for Oklahoma.
 
+| County | Code |
+| ------- | ------- |
 40001	Adair	OK
 40003	Alfalfa	OK
 40005	Atoka	OK
@@ -2528,6 +2581,8 @@ title: Oregon
 
 The below table contains county codes for Oregon.
 
+| County | Code |
+| ------- | ------- |
 41001	Baker	OR
 41003	Benton	OR
 41005	Clackamas	OR
@@ -2572,6 +2627,8 @@ title: Pennsylvania
 
 The below table contains county codes for Pennsylvania.
 
+| County | Code |
+| ------- | ------- |
 42001	Adams	PA
 42003	Allegheny	PA
 42005	Armstrong	PA
@@ -2647,11 +2704,13 @@ title: Rhode Island
 
 The below table contains county codes for Rhode Island.
 
-44001	Bristol	RI
-44003	Kent	RI
-44005	Newport	RI
-44007	Providence	RI
-44009	Washington	RI
+| County | Code |
+| ------- | ------- |
+| Bristol | 44001 |
+| Kent | 44003|
+|	Newport	| 44003 | 
+| Providence | 44007 |
+|	Washington | 44009 |
 
 <!--
 type: tab
@@ -2714,6 +2773,8 @@ title: South Dakota
 
 The below table contains county codes for South Dakota.
 
+| County | Code |
+| ------- | ------- |
 46003	Aurora	SD
 46005	Beadle	SD
 46007	Bennett	SD
@@ -2788,6 +2849,8 @@ title: Tennessee
 
 The below table contains county codes for Tennessee.
 
+| County | Code |
+| ------- | ------- |
 47001	Anderson	TN
 47003	Bedford	TN
 47005	Benton	TN
@@ -2891,6 +2954,8 @@ title: Texas
 
 The below table contains county codes for Texas.
 
+| County | Code |
+| ------- | ------- |
 48001	Anderson	TX
 48003	Andrews	TX
 48005	Angelina	TX
@@ -3153,6 +3218,8 @@ title: Utah
 
 The below table contains county codes for Utah.
 
+| County | Code |
+| ------- | ------- |
 49001	Beaver	UT
 49003	Box Elder	UT
 49005	Cache	UT
@@ -3190,20 +3257,22 @@ title: Vermont
 
 The below table contains county codes for Vermont.
 
-50001	Addison	VT
-50003	Bennington	VT
-50005	Caledonia	VT
-50007	Chittenden	VT
-50009	Essex	VT
-50011	Franklin	VT
-50013	Grand Isle	VT
-50015	Lamoille	VT
-50017	Orange	VT
-50019	Orleans	VT
-50021	Rutland	VT
-50023	Washington	VT
-50025	Windham	VT
-50027	Windsor	VT
+| County | Code |
+| ------- | ------- |
+| Addison	| 50001	|
+|	Bennington | 50003 |
+|	Caledonia	| 50005 |
+|	Chittenden | 50007 |
+|	Essex	| 50009 |
+| Franklin | 50011 |
+|	Grand Isle | 50013 |
+|	Lamoille | 50015 |
+|	Orange | 50017 |
+|	Orleans	| 50019 |
+|	Rutland	| 50021 |
+|	Washington | 50023 |
+|	Windham	| 50025 |
+|	Windsor	| 50027 |
 
 <!--
 type: tab
