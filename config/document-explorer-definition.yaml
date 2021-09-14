@@ -35,6 +35,8 @@
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-InPerson.md
+    - title: RESTful API
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Encrypted PIN Pad
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
     - title: Semi-Integrated
