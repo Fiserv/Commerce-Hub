@@ -5,7 +5,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, digital, online, virtu
 # Virtual Terminal
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to include Fraud Detect support and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to include Virtual Terminal support and the documents related to the features will be released soon.
 
 Commerce Hub's Vritual Terminal (VPOS) allows a merchant to process and offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
 

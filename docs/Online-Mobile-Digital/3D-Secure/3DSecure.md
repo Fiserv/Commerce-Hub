@@ -4,6 +4,9 @@ tags: [carat, commerce-hub, enterprise, 3-d-secure, pass-through, 3-d-secure-aut
 
 # 3-D Secure
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include 3-D Secure support and the documents related to the features will be released soon.
+
 Commerce Hub supports [3-D Secure](?path=docs/Resources/FAQs-Glossary/Glossary.md#3-d-secure) transactions from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a [passthrough](#passthrough) or a [authentication](#authentication) request.
 
 ---
