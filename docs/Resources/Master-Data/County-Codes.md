@@ -162,77 +162,77 @@ The below table contains county codes for Arkansas.
 | Ashley | 05003 |
 |	Baxter | 05005 |
 |	Benton | 05007 |
-05009	Boone	AR
-05011	Bradley	AR
-05013	Calhoun	AR
-05015	Carroll	AR
-05017	Chicot	AR
-05019	Clark	AR
-05021	Clay	AR
-05023	Cleburne	AR
-05025	Cleveland	AR
-05027	Columbia	AR
-05029	Conway	AR
-05031	Craighead	AR
-05033	Crawford	AR
-05035	Crittenden	AR
-05037	Cross	AR
-05039	Dallas	AR
-05041	Desha	AR
-05043	Drew	AR
-05045	Faulkner	AR
-05047	Franklin	AR
-05049	Fulton	AR
-05051	Garland	AR
-05053	Grant	AR
-05055	Greene	AR
-05057	Hempstead	AR
-05059	Hot Spring	AR
-05061	Howard	AR
-05063	Independence	AR
-05065	Izard	AR
-05067	Jackson	AR
-05069	Jefferson	AR
-05071	Johnson	AR
-05073	Lafayette	AR
-05075	Lawrence	AR
-05077	Lee	AR
-05079	Lincoln	AR
-05081	Little River	AR
-05083	Logan	AR
-05085	Lonoke	AR
-05087	Madison	AR
-05089	Marion	AR
-05091	Miller	AR
-05093	Mississippi	AR
-05095	Monroe	AR
-05097	Montgomery	AR
-05099	Nevada	AR
-05101	Newton	AR
-05103	Ouachita	AR
-05105	Perry	AR
-05107	Phillips	AR
-05109	Pike	AR
-05111	Poinsett	AR
-05113	Polk	AR
-05115	Pope	AR
-05117	Prairie	AR
-05119	Pulaski	AR
-05121	Randolph	AR
-05123	St Francis	AR
-05125	Saline	AR
-05127	Scott	AR
-05129	Searcy	AR
-05131	Sebastian	AR
-05133	Sevier	AR
-05135	Sharp	AR
-05137	Stone	AR
-05139	Union	AR
-05141	Van Buren	AR
-05143	Washington	AR
-05145	White	AR
-05147	Woodruff	AR
-05149	Yell	AR
+| Boone	| 05009	|
+|	Bradley	| 05011 |
+| Calhoun | 05013	|
+|	Carroll	| 05015 |
+|	Chicot | 05017 |
+|	Clark	| 05019 |
+|	Clay| 05021 |
+|	Cleburne | 05023 |
+|	Cleveland | 05025 |
+|	Columbia | 05027 |
+|	Conway | 05029 |
+|	Craighead	| 05031 |
+|	Crawford | 05033 |
+|	Crittenden | 05035 |
+|	Cross	| 05037 |
+|	Dallas | 05039 |
+| Desha	| 05041	|
+|	Drew | 05043 |
+|	Faulkner | 05045 |
+|	Franklin | 05047 |
+| Fulton | 05049 |
+| Garland | 05051 |
+| Grant | 05053 |
+| Greene | 05055 |
+| Hempstead | 05057 |
+| Hot Spring | 05059 |
+| Howard | 05061 |
+| Independenc | 05063 |
+| Izard | 05065 |
+| Jackson | 05067 |
+| Jefferson | 05069 |
+| Johnson | 05071 |
+| Lafayette | 05073 |
+| Lawrence | 05075 |
+| Lee | 05077 |
+| Lincoln | 05079 |
+| Little River | 05081 |
+| Logan | 05083 |
+| Lonoke | 05085 |
+| Madison | 05087 |
+| Marion | 05089 |
+| Miller | 05091 |
+| Mississippi | 05093 |
+| Monroe | 05095 |
+| Montgomery | 05097 |
+| Nevada | 05099 |
+| Newton | 05101 |
+| Ouachita | 05103 |
+| Perry | 05105 |
+| Phillips | 05107 |
+| Pike | 05109 |
+| Poinsett | 05111 |
+| Polk | 05113 |
+| Pope | 05115 |
+| Prairie | 05117 |
+| Pulaski | 05119 |
+| Randolph | 05121 |
+| St Francis | 05123 |
+| Saline | 05125 |
+| Scott | 05127 |
+| Searcy | 05129 |
+| Sebastian | 05131 |
+| Sevier | 05133 |
+| Sharp | 05135 |
+| Stone | 05137 |
+| Union | 05139 |
+| Van Buren | 05141 |
+| Washington | 05143 |
+| White | 05145 |
+| Woodruff | 05147 |
+| Yell | 05149 |
 
 <!--
 type: tab
@@ -1438,21 +1438,23 @@ title: Massachusetts
 
 The below table contains county codes for Massachusetts. 
 
+| County | Code |
+| ------- | ------- |
+| 25001 | Barnstable |
+| 25003 | Berkshire |
+| 25005 | Bristol |
+| 25007 | Dukes |
+| 25009 | Essex |
+| 25011 | Franklin |
+| 25013 | Hampden |
+| 25015 | Hampshire |
+| 25017 | Middlesex |
+| 25019 | Nantucket |
+| 25021 | Norfolk |
+| 25023 | Plymouth |
+| 25025 | Suffolk |
+| 25027 | Worcester |
 
-25001	Barnstable	MA
-25003	Berkshire	MA
-25005	Bristol	MA
-25007	Dukes	MA
-25009	Essex	MA
-25011	Franklin	MA
-25013	Hampden	MA
-25015	Hampshire	MA
-25017	Middlesex	MA
-25019	Nantucket	MA
-25021	Norfolk	MA
-25023	Plymouth	MA
-25025	Suffolk	MA
-25027	Worcester	MA
 
 <!--
 type: tab
