@@ -192,9 +192,11 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
+
 ---
