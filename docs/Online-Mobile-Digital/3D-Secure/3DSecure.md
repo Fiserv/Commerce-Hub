@@ -4,13 +4,10 @@ tags: [carat, commerce-hub, enterprise, 3-d-secure, pass-through, 3-d-secure-aut
 
 # 3-D Secure
 
-## Overview
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include 3-D Secure support and the documents related to the features will be released soon.
 
-3-D Secure (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the "three domains" which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
-
-3-D Secure technologies include Visa Secure (previously Verified by Visa), Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
-
-Transactions can originate from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a [passthrough](#passthrough) or a [authentication](#authentication) request.
+Commerce Hub supports [3-D Secure](?path=docs/Resources/FAQs-Glossary/Glossary.md#3-d-secure) transactions from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a [passthrough](#passthrough) or a [authentication](#authentication) request.
 
 ---
 
@@ -75,3 +72,7 @@ title: Request
 When using our payments API as the 3-D Secure provider, the authentication is performed in-line with the existing transaction flow. The process starts by performing a typical authorization or sale request with a desire to perform 3-D Secure authentication in the request.
 
 ### Minimum Requirements
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)

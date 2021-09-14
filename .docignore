@@ -3,8 +3,15 @@
 # Directory
 archive/
 
-# All file and subdirectory
+# All Files and Subdirectories
 archive/**
+docs/Online-Mobile-Digital/Wallets-AltPayments/PayPal/**
+docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
+docs/Resources/Guides/Payments-101/**
+docs/Resources/Guides/Reporting/**
+docs/Resources/Guides/Vault/**
 
-# Markdown file to ignore
-Reporting-Overview.md
+# Markdown File
+docs/Getting-Started/Getting-Started-General-Cards.md
+docs/Omnicommerce/Coming-Soon.md
+docs/Resources/Guides/VAS.md

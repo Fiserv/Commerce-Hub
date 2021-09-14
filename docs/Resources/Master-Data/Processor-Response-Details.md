@@ -58,13 +58,13 @@ JSON string format for `processorResponseDetails`:
          "transactionTimestamp": "2016-04-16T16:06:05Z",
          "transactionReferenceInformation": "string",
          "avsSecurityCodeResponse":{
-            "streetMatch": "MATCH",
-            "postalCodeMatch": "MATCH",
-            "securityCodeMatch": "MATCH",
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED",
+            "securityCodeMatch": "MATCHED",
             "association":{
-               "avsCode": "BOTH_MATCH",
-               "securityCodeResponse": "MATCH",
-               "cardholderNameResponse": "NAME_MATCH"
+               "avsCode": "YY",
+               "securityCodeResponse": "M",
+               "cardholderNameResponse": "1"
             }
          }
       }
@@ -122,13 +122,13 @@ JSON string format for `bankAssociationDetails`:
       "transactionTimestamp": "2016-04-16T16:06:05Z",
       "transactionReferenceInformation": "string",
       "avsSecurityCodeResponse":{
-         "streetMatch": "MATCH",
-         "postalCodeMatch": "MATCH",
-         "securityCodeMatch": "MATCH",
+         "streetMatch": "MATCHED",
+         "postalCodeMatch": "MATCHED",
+         "securityCodeMatch": "MATCHED",
          "association":{
-            "avsCode": "BOTH_MATCH",
-            "securityCodeResponse": "MATCH",
-            "cardholderNameResponse": "NAME_MATCH"
+            "avsCode": "YY",
+            "securityCodeResponse": "M",
+            "cardholderNameResponse": "1"
          }
       }
    }
@@ -167,13 +167,13 @@ JSON string format for `avsSecurityCodeResponse`:
 ```json
 {
    "avsSecurityCodeResponse":{
-      "streetMatch": "MATCH",
-      "postalCodeMatch": "MATCH",
-      "securityCodeMatch": "MATCH",
+      "streetMatch": "MATCHED",
+      "postalCodeMatch": "MATCHED",
+      "securityCodeMatch": "MATCHED",
       "association":{
-         "avsCode": "BOTH_MATCH",
-         "securityCodeResponse": "MATCH",
-         "cardholderNameResponse": "NAME_MATCH"
+         "avsCode": "YY",
+         "securityCodeResponse": "M",
+         "cardholderNameResponse": "1"
       }
    }
 }
@@ -199,7 +199,7 @@ The below table identifies the parameters in the `association` object.
 |---------|----------|----------------|---------|
 | `avsCode` | *string* | 32 | Contains the [AVS verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) response received from the association bank. |
 | `securityCodeResponse` | *string* | 32 | Contains the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#association-response-code) response received from the association bank. |
-| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) received from the association bank. Only applicable for AMEX card type. |
+| `cardHolderNameResponse` | *string* |  |Contains the response [cardholder name](?path=docs/Resources/Guides/Fraud/Address-Verification.md#association-response-code) received from the association bank. Only applicable for Discover and AMEX card types. |
 
 <!--
 type: tab
@@ -211,9 +211,9 @@ JSON string format for `association`:
 ```json
 {
    "association":{
-      "avsCode": "BOTH_MATCH",
-      "securityCodeResponse": "MATCH",
-      "cardholderNameResponse": "NAME_MATCH"
+      "avsCode": "YY",
+      "securityCodeResponse": "M",
+      "cardholderNameResponse": "1"
    }
 }
 ```

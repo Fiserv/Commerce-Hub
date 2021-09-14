@@ -31,7 +31,7 @@ type: tab
 title: merchantDetails
 -->
 
-The below table identifies the required parameters in the `shippingAddress` object.
+The below table identifies the required parameters in the `merchantDetails` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
@@ -128,7 +128,7 @@ The below table identifies the required parameters in the `shippingAddress` obje
 | `address` | *object* | N/A | Shipping [address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
 <!-- theme: info -->
-> Refer to the [address](?path=docs/Resources/Master-Data/Order-Data.md) object for available fields.
+> Refer to the [shipping address](?path=docs/Resources/Master-Data/Address.md#shipping-address) object for available fields.
 
 <!-- type: tab-end -->
 
@@ -289,18 +289,19 @@ title: Response
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
+
 {
-   "gatewayResponse": {
-      "transactionProcessingDetails": {
-         "transactionTimestamp": "2021-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
-      }
-   },
-   "processorResponseDetails":{
-      "referenceNumber": "845366457890-TODO"
-   }
+  "gatewayResponse": {
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "processorResponseDetails": {
+    "referenceNumber": "845366457890-TODO"
+  }
 }
 ```
 <!-- type: tab-end -->
@@ -452,8 +453,8 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/enhanceddata)
-- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Fraud Attributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
+- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 
 ---

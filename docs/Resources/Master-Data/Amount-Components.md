@@ -84,7 +84,7 @@ JSON string format for `amountComponents`:
    }
 }
 ```
-
+ 
 <!-- type: tab-end -->
 
 ---
@@ -92,9 +92,11 @@ JSON string format for `amountComponents`:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
 
 ---

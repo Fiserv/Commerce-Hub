@@ -4,6 +4,9 @@ tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, amer
 
 # Convenience Fees
 
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include convenience fee support and the documents related to the features will be released soon.
+
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
 A merchant that charges a convenience fee must ensure that the fee is:
@@ -16,7 +19,7 @@ A merchant that charges a convenience fee must ensure that the fee is:
 - Included as a part of the total amount of the transaction.
 
 <!-- theme : warning -->
-> A convenience fee is different than a [surcharge](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge). A surcharge is the ability to charge extra just for the benefit of using a credit card while a convenience fee is for a specific use, such as taxes or tuitions, or payment through alternative channels, such as by phone or online.
+> A convenience fee is different than a [surcharge](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge-fees). A surcharge is the ability to charge extra just for the benefit of using a credit card while a convenience fee is for a specific use, such as taxes or tuitions, or payment through alternative channels, such as by phone or online.
 
 ---
 
@@ -83,51 +86,51 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionType": "TOKEN",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+         "transactionDate": "2016-04-16",
+         "transactionTime": "2016-04-16T16:06:05Z",
+         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId": "838916029301"
       }
    },
    "source":{
-      "sourceType":"PaymentCard",
+      "sourceType": "PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019"
+         "nameOnCard": "Jane Smith",
+         "expirationMonth": "02",
+         "expirationYear": "2035",
+         "bin": "400555",
+         "last4": "0019",
+         "scheme": "VISA"
       }
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total":1,
-         "currency":"USD"
+         "total": "12.04",
+         "currency": "USD"
       },
       "processorResponseDetails":{
-         "approvalStatus":"APPROVED",
-         "approvalCode":"OK3483",
-         "authenticationResponseCode":"string",
-         "referenceNumber":"845366457890-TODO",
-         "schemeTransactionId":"019078743804756",
-         "feeProgramIndicator":"123",
-         "processor":"fiserv",
-         "responseCode":"00000",
-         "responseMessage":"APPROVAL",
-         "hostResponseCode":"00",
-         "hostResponseMessage":"APPROVAL",
-         "localTimestamp":"2021.02.25 14:14:38 (EST)",
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK3483",
+         "authenticationResponseCode": "string",
+         "referenceNumber": "845366457890-TODO",
+         "schemeTransactionId": "019078743804756",
+         "feeProgramIndicator": "123",
+         "processor": "fiserv",
+         "responseCode": "00000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2016-04-16T16:06:05Z",
          "bankAssociationDetails":{
-            "associationResponseCode":"000",
-            "transactionTimestamp":"2016-04-16T16:06:05Z",
-          }
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2016-04-16T16:06:05Z"
+         }
       }
    },
    "additionalDataCommon":{
@@ -146,6 +149,6 @@ title: Response
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Amount Components](?path=docs/Resources/Master-Data/Amount-Components.md)
-- [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

@@ -2,7 +2,7 @@
 tags: [carat, card-not-present, commerce-hub, error, response, response-codes, card-present, http]
 ---
 
-# Error Response
+# Error Response Codes
 
 The error code indicates the reason why a transaction is rejected. Commerce Hub includes the value in the `code` along with the corresponding text in the `message` fields of the [HTTP error response](?path=docs/Resources/Guides/Response-Codes/HTTP.md).
 
@@ -237,8 +237,9 @@ Codes starting with 8xx identifies a general gateway error. Check the error mess
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
+- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
+
 
 ---

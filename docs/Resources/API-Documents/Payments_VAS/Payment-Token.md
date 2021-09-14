@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, to
 
 # Tokenization
 
-**[Tokenization](../../FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#chargerequest) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokenrequest) endpoint.
+**[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#tokenization-with-charges-request) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokens-request) endpoint.
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
   - Requires the use of [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
@@ -86,48 +86,42 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "token",
-      "transactionState": "authorized",
-      "transactionOrigin": "ecom",
+      "transactionType": "TOKENIZE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
       }
    },
-   "paymentSource":{
-      "sourceType": "PaymentCard",
-      "tokenData": "1234123412340019",
-      "PARId": "string",
-      "declineDuplicates": "FALSE",
-      "tokenSource": "string",
+   "source":{
+      "sourceType": "PaymentToken",
+      "tokenSource": "TRANSARMOR",
+      "tokenData": "8519371934460009",
       "card":{
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
+         "bin": "40055500",
          "last4": "0019",
-         "scheme": "VISA"
+         "scheme": "VISA",
+         "expirationMonth": "10",
+         "expirationYear": "2030"
       }
    },
    "processorResponseDetails":{
       "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "string",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
       "processor": "fiserv",
-      "responseCode": "00",
+      "responseCode": "000000",
       "responseMessage": "APPROVAL",
-      "hostResponseCode": "54022",
-      "hostResponseMessage": "",
-      "localTimestamp": "2016-04-16T16:06:05Z",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
       "bankAssociationDetails":{
          "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z"
+         "transactionTimestamp": "2021-06-20T23:42:48Z"
       }
    }
 }
@@ -197,9 +191,9 @@ title: Response
 {
    "gatewayResponse":{
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "token",
-      "transactionState": "authorized",
-      "transactionOrigin": "ecom",
+      "transactionType": "TOKENIZE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
          "transactionDate": "2016-04-16",
          "transactionTime": "2016-04-16T16:06:05Z",
@@ -221,9 +215,7 @@ title: Response
    },
    "paymentToken":{
       "tokenData": "1234123412340019",
-      "PARId": "1234567895461303321654",
-      "declineDuplicates": "FALSE",
-      "tokenSource": "RSA"
+      "tokenSource": "TRANSARMOR"
    },
    "processorResponseDetails":{
       "approvalStatus": "APPROVED",
