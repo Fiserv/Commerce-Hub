@@ -35,10 +35,22 @@
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-InPerson.md
-    - title: EMV and Track Readers
-      link: docs/In-Person/Encrypted-Payments/EMV.md
-    - title: Contactless (NFC)
-      link: docs/In-Person/Encrypted-Payments/Contactless-QR.md
+    - title: Encrypted PIN Pad
+      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
+    - title: Semi-Integrated
+      link: docs/In-Person/Integrations/Semi-Integrated.md
+    - title: Fully-Integrated
+      link: docs/In-Person/Integrations/Fully-Integrated.md
+    - title: Encrypted Payments
+      sections:
+      - title: EMV Chip and PIN
+        link: docs/In-Person/Encrypted-Payments/EMV.md
+      - title: Track 1/2 Data
+        link: docs/In-Person/Encrypted-Payments/Track.md
+      - title: Manual Entry
+        link: docs/In-Person/Encrypted-Payments/Manual-Entry.md
+      - title: Contactless (NFC)
+        link: docs/In-Person/Encrypted-Payments/Contactless-QR.md
 - sections:
   - title: Online/Digital/Mobile
     sections:
