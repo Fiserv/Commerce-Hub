@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, currency-conversion, vault]
 ---
 
-
 # Currency Conversion
 
 <!-- theme: danger -->
