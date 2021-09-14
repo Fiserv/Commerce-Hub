@@ -57,13 +57,13 @@ steps:
         Submit your project for automated certification and deploy to Production.
       link:
 featuredFeatures:
-  - title: Tokenization
-    description: >
-      Remove sensitive customer data from your environment and reduce PCI compliance scope. 
-      Transaction data is protected by a randomly-generated identifier known as a "token".
-    tags: ["tag1", "tag2"]
-    bullets: ["Increase payment security and reduce risk", "No need to store personal customer information", "Less operational costs", "Improved customer experience"]
-    links: ["docs/Resources/API-Documents/Payments_VAS/Payment-Token.md"]
+#   - title: Tokenization
+#     description: >
+#       Remove sensitive customer data from your environment and reduce PCI compliance scope. 
+#       Transaction data is protected by a randomly-generated identifier known as a "token".
+#     tags: ["tag1", "tag2"]
+#     bullets: ["Increase payment security and reduce risk", "No need to store personal customer information", "Less operational costs", "Improved customer experience"]
+#     links: ["docs/Resources/API-Documents/Payments_VAS/Payment-Token.md"]
   - title: Apple Pay
     description: >
       One of the most popular mobile payment and digital wallets. Customers can make payments 
@@ -71,14 +71,93 @@ featuredFeatures:
       iPad, Mac, etc.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
-    links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]
-  - title: API Integration
+    #links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]
+    relatedDocs:
+      - relatedDoc: 
+        title: Getting Started 
+        description: Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
+        link: "/docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"
+      - relatedDoc: 
+        title: Apple Pay on the Web 
+        description: Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Apple Pay. The merchant will host the payment processing on their server and has full control over the look and feel. 
+        link: "/docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md"
+      - relatedDoc: 
+        title: Apple Pay In-App
+        description: Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Apple Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
+        link: "/docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"
+    relatedAPIs:
+      - relatedAPI: 
+        title: Charges 
+        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
+        type: "post"        
+        path: "/payments/v1/charges"
+      - relatedAPI: 
+        title: Refunds
+        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
+        type: "post"        
+        path: "/payments/v1/charges/{transactionId}/refund"
+      - relatedAPI: 
+        title: Tokenization
+        description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
+        type: "post"        
+        path: "/payments-vas/v1/tokens"
+  - title: Omni Channel
     description: >
       Leverage your existing infrastructure and UI to accept payments online, in-store or on mobile 
       devices.
     tags: ["tag1", "tag2"]
     bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
-    links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
+    #links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
+    relatedDocs:
+      - relatedDoc: 
+        title: Getting Started 
+        description: Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
+        link: "/docs/Getting-Started/Getting-Started-UCOM.md"
+    relatedAPIs:
+      - relatedAPI: 
+        title: Charges 
+        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
+        type: "post"        
+        path: "/payments/v1/charges"
+      - relatedAPI: 
+        title: Refunds
+        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
+        type: "post"        
+        path: "/payments/v1/charges/{transactionId}/refund"
+      - relatedAPI: 
+        title: Tokenization
+        description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
+        type: "post"        
+        path: "/payments-vas/v1/tokens"
+  - title: Point of Sale
+    description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
+    tags: ["tag1", "tag2"]
+    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
+    relatedDocs:
+      - relatedDoc: 
+        title: Getting Started 
+        description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
+        link: "/docs/Getting-Started/Getting-Started-InPerson.md"
+      - relatedDoc: 
+        title: EMV 
+        description: Fiserv offers the industry's most complete, comprehensive and integrated EMV solution.
+        link: "/docs/In-Person/Encrypted-Payments/EMV.md"
+    relatedAPIs:
+      - relatedAPI: 
+        title: Charges 
+        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
+        type: "post"        
+        path: "/payments/v1/charges"
+      - relatedAPI: 
+        title: Refunds
+        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
+        type: "post"        
+        path: "/payments/v1/charges/{transactionId}/refund"
+      - relatedAPI: 
+        title: Tokenization
+        description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
+        type: "post"        
+        path: "/payments-vas/v1/tokens"
 benefits:
   - title: Transform Customer Experiences
     description: >
