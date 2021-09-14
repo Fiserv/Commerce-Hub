@@ -5,6 +5,13 @@ archive/
 
 # All Files and Subdirectories
 archive/**
+docs/Online-Mobile-Digital/Wallets-AltPayments/PayPal/**
+docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
+docs/Resources/Guides/Payments-101/**
+docs/Resources/Guides/Reporting/**
+docs/Resources/Guides/Vault/**
 
 # Markdown File
-docs/Resources/Guides/Reporting/Reporting-Overview.md
+docs/Getting-Started/Getting-Started-General-Cards.md
+docs/Omnicommerce/Coming-Soon.md
+docs/Resources/Guides/VAS.md

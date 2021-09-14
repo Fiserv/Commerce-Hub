@@ -61,6 +61,4 @@ JSON string format for `card`:
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
-
-
 ---

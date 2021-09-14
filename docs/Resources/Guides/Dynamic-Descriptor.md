@@ -25,10 +25,17 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 <!-- theme: danger -->
 >Any information entered in the dynamic descriptor fields will overwrite the master descriptor information on the merchant account, it is very important to use the fields correctly.
 
+A soft descriptor should be sent during the initial authorization and again during the Capture. The descriptor sent during the authorization appears on the online statement. The descriptor sent at capture is the final descriptor which appears for the settled transactions. 
+
 <!--
 type: tab
 title: dynamicDescriptor
 -->
+
+Card issuer may limit how many characters will show up in each field, it is recommended to keep the `merchantName` field to fewer than 22 characters and the `city` field to fewer than 11 characters to appear properly on the cardholder’s statement.
+
+- **MOTO:** utilize the `city` field for the phone number
+- **E-commerce:** utlize the `city` field for a URL, email address or phone number
 
 The below table identifies the required parameters in the `dynamicDescriptor` object.
 
