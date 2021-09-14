@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, restful, apis, card present, online, mob
 
 # Online/Mobile/Digital Payments
 
-Commerce Hub offers multiple methods of accepting online, mobile, and digital payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, or virtual terminal.
+Commerce Hub offers multiple methods of accepting online, mobile, digital payments, and MOTO payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, virtual terminal, or software.
 
 <!-- theme: warning -->
 > These transactions are at a higher risk for fraud, due to the inability to verify the account holder is making the purchase. It is recommended to use [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) along with Commerce Hub's [Fraud Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.

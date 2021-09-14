@@ -5,23 +5,29 @@ tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 
 # PaymentCard
 
-Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online or in person. The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
+Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
+
+<!-- theme: info -->
+> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
+
 
 ---
 
-### Minimum Requirements
+### Request Variables
 
 <!--
 type: tab
 title: source
 -->
 
-The below table identifies the required parameters in the `source` object.
+The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
 | `card` | *object* | N/A |  &#10004; | Contains the payment card details |
+| `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
 
 <!--
 type: tab

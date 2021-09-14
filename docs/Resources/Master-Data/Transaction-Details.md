@@ -18,9 +18,9 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a [forced post](?path=docs/Resources/API-Documents/Payments/Forced.md) transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 64 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
-| `transactionCaptureType` | *string* | N/A |  |
+| `transactionCaptureType` | *string* | N/A | Identifies if a settlement was host capture or terminal capture. |
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
-| `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction.|
+| `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
 | `processingCode` | *string* | 6 | A [required code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
 | `merchantTransactionId` | *string* | 64 | Unique merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
@@ -40,6 +40,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](#authorization-sequence) requested.|
 | `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
+| `TPPID` | *string* |  | Third party processor ID assigned by Fiserv. |
 
 <!--
 type: tab
@@ -99,7 +100,8 @@ JSON string format for `transactionDetails`:
       "reversalReasonCode": "VOID",
       "physicalGoodsIndicator": true,
       "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
-      "createToken": false
+      "createToken": false,
+      "TPPID": "string"
    }
 }
 ```
@@ -107,6 +109,20 @@ JSON string format for `transactionDetails`:
 <!--type: tab-end -->
 
 ---
+
+#### Partial Approval
+
+The below table identifies the valid values of `partialApproval`.
+
+| Value | Description |
+| ----- | ----- |
+| NOT_SUPPORTED | Partial authorization approvals are not supported |
+| SUPPORTED_NO_CASH_BACK | Partial authorization approvals are supported, however partial authorization of cash disbursement amount is not supported. POS/Terminal should not prompt for cash back. |
+| MERCH_CASH_BACK_SUPPORTED | Merchandise can be partially authorized, and cash disbursement amount can be partially authorized. |
+| MERCH_SUPPORTED_ONLY | Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized. |
+| CASH_BACK_SUPPORTED_ONLY | Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized. |
+| MERCH_CASH_BACK_NOT_SUPPORTED | Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized. |
+
 
 #### Authorization Type Indicator
 
