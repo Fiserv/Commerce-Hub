@@ -133,7 +133,7 @@ The below table identifies the valid values of `terminalEntryCapability`.
 | Value | Description |
 |-------|-------------|
 | UNSPECIFIED | Default |
-| ECOMMERCE | E|commerce no terminal used |
+| ECOMMERCE | E-commerce no terminal used |
 | MAG_STRIPE_ONLY | Track read only |
 | MAG_STRIPE_MANUAL | Track read or manual key |
 | MAG_STRIPE_MANUAL_CHIP | Track read, manual key or chip |

@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-am
 
 # Transaction Amount
 
-Transaction amount information is contained into two objects, `amount`.<!--- and `amountComponents`-->.
+Transaction amount information is contained into two objects, `amount`<!--- and `amountComponents`-->.
 
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amount-components) Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
