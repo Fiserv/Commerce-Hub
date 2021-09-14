@@ -4,14 +4,12 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-
 
 # PaymentEMV
 
-
 [EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip and PIN enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
 A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
 
 <!-- theme: info -->
 > EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
-
 
 ---
 
@@ -31,8 +29,6 @@ The below table identifies the parameters in the `source` object.
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
 | `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
 
-
-
 <!--
 type: tab
 title: encryptionData
@@ -47,7 +43,6 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `keyId` | *string* | | | Needs to be passed if track data is encrypted |
-
 
 <!--
 type: tab
