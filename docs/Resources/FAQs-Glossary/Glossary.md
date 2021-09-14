@@ -235,6 +235,11 @@ Electronic Commerce Indicator (ECI). Use of this field is mandated by the banks 
 ## EMV
 EMV is a global standard for inter-operation of integrated circuit cards (IC cards or “chip cards”) and IC card capable point of sale (POS) terminals. This standard is used for authenticating credit and debit card transactions.
 
+## EMV Fallback
+An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by manually entering the card details or swiping the magnetic stripe.
+
+EMV fallback transactions only apply to card-present transactions where physical cards are presented by cardholders at payment terminals.
+
 ## End Sentinel
 The character that follows the final character of data recorded on the track of the card's magnetic stripe.
 
