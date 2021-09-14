@@ -17,7 +17,6 @@ Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/G
 
 A third-party device captures the customer's payment source unencrypted or encryptes the data and sends it to the Commerce Hub integrated terminal or software.
 
-
 ---
 
 ### Request Variables
@@ -188,7 +187,6 @@ title: Response
 
 ## See Also
 
-
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
@@ -197,4 +195,3 @@ title: Response
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 
 ---
-
