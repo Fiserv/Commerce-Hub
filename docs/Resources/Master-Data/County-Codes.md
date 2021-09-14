@@ -98,31 +98,31 @@ The below table contains county codes for Alaska.
 | ------- | ------- |
 | Aleutians East | 02013 |
 | Aleutians West | 02016 |
-02020	Anchorage	AK
-02050	Bethel	AK
-02060	Bristol Bay	AK
-02068	Denali	AK
-02070	Dillingham	AK
-02090	Fairbanks North Star	AK
-02100	Haines	AK
-02110	Juneau	AK
-02122	Kenai Peninsula	AK
-02130	Ketchikan Gateway	AK
-02150	Kodiak Island	AK
-02164	Lake and Peninsula	AK
-02170	Matanuska-Susitna	AK
-02180	Nome	AK
-02185	North Slope	AK
-02188	Northwest Arctic	AK
-02201	Prince of Wales-Outer Ketchikan	AK
-02220	Sitka	AK
-02232	Skagway-Hoonah-Angoon	AK
-02240	Southeast Fairbanks	AK
-02261	Valdez-Cordova	AK
-02270	Wade Hampton	AK
-02280	Wrangell-Petersburg	AK
-02282	Yakutat	AK
-02290	Yukon-Koyukuk	AK
+| Anchorage | 02020 |	
+| Bethel | 02050 |	
+| Bristol Bay | 02060	|	
+| Denali | 02068 |	
+| Dillingham | 02070 |
+| Fairbanks North Star | 02090 |
+| Haines | 02100 |
+| Juneau | 02110 |
+| Kenai Peninsula | 02122	|
+| Ketchikan Gateway	| 02130 |
+| Kodiak Island	| 02150 |
+| Lake and Peninsula | 02164 |
+| Matanuska-Susitna	| 02170	|
+| Nome | 02180 |
+|	North Slope	| 02185 |
+| Northwest Arctic | 02188 |
+| Prince of Wales-Outer Ketchikan	| 02201	|
+|	Sitka	| 02220 |
+|	Skagway-Hoonah-Angoon | 02232 |
+| Southeast Fairbanks	| 02240 |
+|	Valdez-Cordova | 02261 |
+| Wade Hampton | 02270 |
+| Wrangell-Petersburg	| 02280 |
+|	Yakutat	| 02282 |
+| Yukon-Koyukuk | 02290	|
 
 <!--
 type: tab
@@ -158,10 +158,10 @@ The below table contains county codes for Arkansas.
 
 | County | Code |
 | ------- | ------- |
-05001	Arkansas	AR
-05003	Ashley	AR
-05005	Baxter	AR
-05007	Benton	AR
+|	Arkansas | 05001 |
+| Ashley | 05003 |
+|	Baxter | 05005 |
+|	Benton | 05007 |
 05009	Boone	AR
 05011	Bradley	AR
 05013	Calhoun	AR
