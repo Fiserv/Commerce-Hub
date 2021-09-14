@@ -2,10 +2,10 @@
 tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
 ---
 
-
 # Payment.JS Integration
 
-## Overview
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Payment.JS support and the documents related to the features will be released soon.
 
 During the form submission the client library, loaded into the parent window, sends one of the iframes a clientToken (for authentication with the service) and a RSA public key (asymmetric key pair). This iframe then collects the data hidden in the other iframes and encrypts the card number, expiration date, and cvv (the other fields are transferred without data layer encryption due to RSA message limits). This iframe then makes an API call to the Payment.js service for tokenization.
 
@@ -14,7 +14,7 @@ Assuming the customer is using a browser with modern cross-origin security contr
 When the tokenization request is sent out, only the already encrypted data will appear in the browser's network log.
 
 <!-- theme:info -->
->The merchant's gateway credentials are never sent to the browser (encrypted or otherwise); The Payment.js client library utilizes a "clientToken" to associate the tokenization API call sent from the browser with credentials passed directly from merchant server to Payment.js server.
+>The merchant's gateway credentials are never sent to the browser *(encrypted or otherwise)*; The Payment.js client library utilizes a "clientToken" to associate the tokenization API call sent from the browser with credentials passed directly from merchant server to Payment.js server.
 
 ## Additional Security Settings
 

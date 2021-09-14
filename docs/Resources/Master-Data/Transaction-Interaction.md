@@ -18,9 +18,14 @@ The below table identifies the parameters in the `transactionInteraction` object
 | `origin` | *string* | N/A | The [origin](#transaction-origin) of the transaction. |
 | `posEntryMode` | *string* | N/A | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
 | `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `responseCode` | *string* | | Response code returned by network/issuer used in subsequent transactions. |
+| `posData` | *string* | | POS data returned by network/issuer used in subsequent transactions. |
 | `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
+| `terminalEntryCapability` | *string* |  | Identifies how data can be [entered](#terminal-entry-capability) in the terminal or software. |
+| `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
 | `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Eequired on all online, mobile, and digital E-Commerce transactions.|
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
+| `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification |
 
 <!--
 type: tab
@@ -35,8 +40,13 @@ JSON string format for `transactionInteraction`:
       "origin": "ECOM",
       "posEntryMode": "MANUAL",
       "posConditionCode": "CARD_NOT_PRESENT_ECOM",
+      "responseCode": "string",
+      "posData": "string",
       "mobileInteraction": "PHONE_NUMBER",
-      "eciIndicator": "SECURE_ECOM"
+      "terminalEntryCapability": "ECOMMERCE",
+      "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",
+      "eciIndicator": "SECURE_ECOM",
+      "additionalPosInformation": "",
    }
 }
 
@@ -52,7 +62,7 @@ The below table identifies the valid values of `origin`.
 
 | Value | Description |
 |-------|-------------|
-| *ECOM* | Card Not Present email or internet |
+| *ECOM* | Card not present email or internet |
 | *MOTO* | Mail order or telephone order |
 | *POS* | Card Present retail face to face |
 
@@ -102,6 +112,7 @@ The below table identifies the valid values of `posConditionCode`.
 | *CARD_NOT_PRESENT_MOTO* | **Cardholder Not Present - Mail Order/Telephone Order:** Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
 | *CARD_NOT_PRESENT_ECOM* | **Cardholder Not Present - E-commerce.** Designates a transaction initiated from the merchant's website, email, or app. Specific E-commerce type is identified in the `eciIndicator`. |
 
+
 ---
 
 #### Mobile Interaction
@@ -112,6 +123,44 @@ The below table identifies the valid values of `mobileInteraction`.
 |-------|-------------|
 | *PHONE_NUMBER* | Invoice received by phone number |
 | *QR_CODE* | Invoice paid by scanning QR Code |
+
+---
+
+#### Terminal Entry Capability
+
+The below table identifies the valid values of `terminalEntryCapability`.
+
+| Value | Description |
+|-------|-------------|
+| UNSPECIFIED | Default |
+| ECOMMERCE | E|commerce no terminal used |
+| MAG_STRIPE_ONLY | Track read only |
+| MAG_STRIPE_MANUAL | Track read or manual key |
+| MAG_STRIPE_MANUAL_CHIP | Track read, manual key or chip |
+| BARCODE | Barcode scan |
+| CONTACTLESS | Contactless integrated circuit read |
+| OCR | Opitcal character reader |
+| CHIP_ONLY | Chip only |
+| CHIP_MAG_STRIPE | Chip with track fallback |
+| MANUAL_ONLY | Manual key only |
+| CONTACTLESS_MAG_STRIPE | Contactless or track read |
+| HYBRID | Hybrid entry mode |
+
+---
+
+#### Cardholder Authentication Method
+
+The below table identifies the valid values of `cardholderAuthenticationMethod`.
+
+| Value | Description |
+|-------|-------------|
+| NOT_AUTHENTICATED | Cardholder not authenticated |
+| PIN | Pin authentication |
+| ELECTRONIC_SIGNATURE | Electronic signature authentication |
+| MANUAL_SIGNATURE | Manual Signature authentication |
+| OTHER_MANUAL_VERIFICATION | Manual authentication |
+| UNKNOWN | Authentication method unknown |
+| OTHER_SYSTEMATIC_VERIFICATION | Used for other authentication methods |
 
 ---
 
