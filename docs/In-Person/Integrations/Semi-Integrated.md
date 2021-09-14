@@ -1,9 +1,14 @@
-# Semi-Integrated
+# Semi-Integrated Device
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include semi-integrated device support and the documents related to the features will be released soon.
 
+---
 
-## Commerce Hub Semi-Integration Process
+## See Also
 
-The API uses an asynchronous call model. Your point-of-sale initiates a request, Clover receives and processes the request, and then provides a response.
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Encrypted PIN Pad](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
+- [Fully-Integrated Device](?path=docs/In-Person/Integrations/Fully-Integrated.md)
 
-Our SDKs support sales, auths, pre-auths, tip adjusts, refunds, manual refunds, and other actions. By downloading a single library and installing our device drivers, you can connect and start taking payments in less than a day.
+---
