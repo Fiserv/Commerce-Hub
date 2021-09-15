@@ -8,17 +8,16 @@ Following is the list of EMV tags and their descriptions:
 
 | EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length |
 |----| --- | ----| ----| ----| ----| ----| ----| ---- |
-| EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length  |
-| 4F  | &#10004;  |  | Application Dedicated File (ADF) Name | Identifies the application as described in ISO/IEC 7816-5 | ICC | binary  | 44332 |
-| 50 | &#10004;  |  | Application Label | Mnemonic associated with the AID according to ISO/IEC 7816-5 | ICC | alphanumeric  | 44212 |
+| 4F  | &#10004;  |  | Application Dedicated File (ADF) Name | Identifies the application as described in ISO/IEC 7816-5 | ICC | binary  | 5-16 |
+| 50 | &#10004;  |  | Application Label | Mnemonic associated with the AID according to ISO/IEC 7816-5 | ICC | alphanumeric  | 1-16 |
 | 5F2A  | &#10004;  |  | Transaction Currency Code | Indicates the currency code of the transaction according to ISO 4217 | Terminal | numeric  | 2 |
 | 5F34  | &#10004;  |  | Application Primary Account Number (PAN) Sequence Number | Identifies and differentiates cards with the same PAN | ICC | numeric  | 1 |
 | 71 |  | &#10004;  | Issuer Script Template 1 | Contains proprietary issuer data for transmission to the ICC before the second GENERATE AC command | Issuer | binary  | 9-746  |
 | 72 |  | &#10004;  | Issuer Script Template 2 | Contains proprietary issuer data for transmission to the ICC after the second GENERATE AC command | Issuer | binary  | 9-746  |
 | 82 | &#10004;  |  | Application Interchange Profile | Indicates the capabilities of the card to support specific functions in the application | ICC | binary  | 2 |
-| 84 | &#10004;  |  | Dedicated File (DF) Name | Identifies the name of the DF as described in ISO/IEC 7816-4 | ICC | binary  | 44332 |
+| 84 | &#10004;  |  | Dedicated File (DF) Name | Identifies the name of the DF as described in ISO/IEC 7816-4 | ICC | binary  | 5-16 |
 | 8A  |  | &#10004;  | Authorisation Response Code | Code that defines the disposition of a message | Issuer/ Terminal | alphanumeric  | 2 |
-| 91 | &#10004;  | &#10004;  | Issuer Authentication Data | Data sent to the ICC for online issuer authentication | Issuer | binary  | 44424 |
+| 91 | &#10004;  | &#10004;  | Issuer Authentication Data | Data sent to the ICC for online issuer authentication | Issuer | binary  | 8-16 |
 | 95 | &#10004;  |  | Terminal Verification Results | Status of the different functions as seen from the terminal | Terminal | binary  | 5 |
 | 98 | &#10004;  |  | Transaction Certificate (TC) Hash Value | Result of a hash function specified in Book 2, Anne&#10004; B3.1 | Terminal | binary  | 20 |
 | 9A  | &#10004;  |  | Transaction Date | Local date that the transaction was authorised | Terminal | numeric  | 3 |
@@ -26,7 +25,7 @@ Following is the list of EMV tags and their descriptions:
 | 9C  | &#10004;  |  | Transaction Type | Indicates the type of financial transaction, represented by the first two digits of the ISO 8583:1987 Processing Code. The actual values to be used for the Transaction Type data element are defined by the relevant payment system | Terminal | numeric  | 1 |
 | 9F02  | &#10004;  |  | Amount, Authorised (Numeric) | Authorised amount of the transaction (excluding adjustments) | Terminal | numeric  | 6 |
 | 9F03  | &#10004;  |  | Amount, Other (Numeric) | Secondary amount associated with the transaction representing a cashback amount | Terminal | numeric  | 6 |
-| 9F06  | &#10004;  |  | Application Identifier (AID) – terminal | Identifies the application as described in ISO/IEC 7816-5 | Terminal | binary  | 44332 |
+| 9F06  | &#10004;  |  | Application Identifier (AID) – terminal | Identifies the application as described in ISO/IEC 7816-5 | Terminal | binary  | 5-16 |
 | 9F07  | &#10004;  |  | Application Usage Control | Indicates issuer’s specified restrictions on the geographic usage and services allowed for the application | ICC | binary  | 2 |
 | 9F09  | &#10004;  |  | Application Version Number | Version number assigned by the payment system for the application | Terminal | binary  | 2 |
 | 9F10  | &#10004;  |  | Issuer Application Data | Contains proprietary application data for transmission to the issuer in an online transaction. Note: For CCD-compliant applications, Annex C, section C7 defines the specific coding of the Issuer Application Data (IAD). To avoid potential conflicts with CCD-compliant applications, it is strongly recommended that the IAD data element in an application that is not CCD-compliant should not use the coding for a CCD-compliant application | ICC | binary  | var. up to 32 |
@@ -43,7 +42,7 @@ Following is the list of EMV tags and their descriptions:
 | 9F37  | &#10004;  |  | Unpredictable Number | Value to provide variability and uniqueness to the generation of a cryptogram | Terminal | binary  | 4 |
 | 9F39  | &#10004;  |  | Point-of-Service (POS) Entry Mode | Indicates the method by which the PAN was entered, according to the first two digits of the ISO 8583:1987 POS Entry Mode | Terminal | numeric  | 1 |
 | 9F40  | &#10004;  |  | Additional Terminal Capabilities | Indicates the data input and output capabilities of the terminal | Terminal | binary  | 5 |
-| 9F41  | &#10004;  |  | Transaction Sequence Counter | Counter maintained by the terminal that is incremented by one for each transaction | Terminal | numeric  | 44294 |
+| 9F41  | &#10004;  |  | Transaction Sequence Counter | Counter maintained by the terminal that is incremented by one for each transaction | Terminal | numeric  | 2-4 |
 | 9F49  | &#10004;  |  | Dynamic Data Authentication Data Object List (DDOL) | List of data objects (tag and length) to be passed to the ICC in the INTERNAL AUTHENTICATE command | ICC | binary  | 0-252  |
 | 9F53  | &#10004;  |  | TransactionCategoryCode-9F53  |  |  | binary  | 1 |
 | 9F67  | &#10004;  |  | EMV-9F67  |  |  | binary  | 11689 |
