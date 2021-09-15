@@ -1657,9 +1657,6 @@ components:
             chain., example: '123456788'}
     TransactionInteraction:
       x-model-version: 1.0
-      allOf:
-      - {$ref: '#/components/schemas/Network'}
-      - {type: object}
       description: <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md">Transaction
         interaction</a> information based on where the transaction is acquired and
         the capabilities of the terminal or software.
@@ -1772,11 +1769,14 @@ components:
         eciIndicator:
           type: string
           maxLength: 17
-          description: "Electronic Commerce Indicator (ECI) is mandatory for all E-commerce\
-            \ transactions.\n  \nValid Values:\n* SECURE_ECOM - Secure Electronic\
-            \ Transaction\n* NON_AUTH_ECOM - Non-Authenticated Electronic Commerce\
-            \ Transaction\n* CHANNEL_ENCRYPTED - Channel Encrypted Transaction\n*\
-            \ NON_SECURE_ECOM - Non-Secure Electronic Commerce Transaction\n"
+          description: |
+            Electronic Commerce Indicator (ECI) is mandatory for all E-commerce transactions.
+
+            Valid Values:
+            * SECURE_ECOM - Secure Electronic Transaction
+            * NON_AUTH_ECOM - Non-Authenticated Electronic Commerce Transaction
+            * CHANNEL_ENCRYPTED - Channel Encrypted Transaction
+            * NON_SECURE_ECOM - Non-Secure Electronic Commerce Transaction
           example: SECURE_ECOM
         cardholderAuthenticationEntity:
           type: string
@@ -2053,79 +2053,6 @@ components:
             * PIN_12 - PIN capture capability 12 characters maximum
             * NONE
           example: UNSPECIFIED
-    NetworkDetails:
-      x-model-version: 1.0
-      description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
-        response</a> details.
-      properties:
-        network: {$ref: '#/components/schemas/Network'}
-        debitNetworkId: {type: string, maxLength: 64, description: Network ID for
-            the debit component., example: '123456'}
-        transactionSequence: {type: string, maxLength: 64, description: Transaction
-            specific data that may be returned in response messages., example: '1123456'}
-        systemTrace: {type: string, maxLength: 64, description: Original trace number
-            that was returned in an authorization response., example: '123456789'}
-        debitIssuerData: {type: string, description: Debit issuer specific data that
-            may be returned in the response messages., example: Standard Issuer}
-        networkResponseCode: {type: string, maxLength: 16, description: Debit network
-            response code., example: '00'}
-        posEntryModeChange: {type: boolean, description: Issuer will reply if the
-            entry mode has changed.}
-        cardLevelResultCode: {type: string, description: 'Identifies purchase, corporate,
-            and business card level e.g. Level II/Level III'}
-        validationCode: {type: string, description: A code calculated by card brands
-            to ensure that the fields present in the authorization are also present
-            in the clearing record., example: ''}
-        downgradeReason: {type: string, description: Downgrade reason as supplied
-            by network., example: ACCOUNT_NUMBER_MISSING}
-        creditAuthType: {type: string, description: Indicates the type of authorization
-            required., example: DISCOVER}
-        authScore: {type: string, description: The auth score returned for the transaction.,
-          example: ''}
-        partialAuthTransactionId: {type: string, description: Generated identifier
-            unique for each original authorization request., example: ''}
-        totalAuthAmount: {type: number, description: Total amount authorized., example: '13.50'}
-        transactionIdentifier: {type: string, description: This field represents a
-            unique value used to identify and link all related transactions for authorization
-            and settlement}
-        magStripeQualityIndicator:
-          type: string
-          description: |
-            This field dentifies the error encountered with the track data provided in the authorization request message.
-
-            Valid Values:
-            * TRACK_PRESENT - Track 1 and Track 2 present in the message
-            * NO_TRACK - Track 1 or Track 2 not present in the message
-            * PAN_NOT_EQUAL - Primary Account Number not equal in track data
-            * EXPIRATION_NOT_EQUAL - Expiration date not equal in track data
-            * CARD_TYPE_INVALID - Card type invalid in track data
-            * FIELD_SEPARATORS - Field separator(s) invalid in track data
-            * EXCEEDS_LENGTH -  A field within the track data exceeds maximum length
-            * CATEGORY_CODE - The transaction category code is "T".
-            * CUSTOMER_PRESENCE - POS customer presence indicator is false.
-            * CARD_PRESENCE - POS card presence indicator is false.
-          example: TRACK_PRESENT
-        networkAvsCode: {type: string, maxLength: 1, description: Non-Normalized newtork
-            AVS response code is available., example: ''}
-        panMappingAccountNumber: {type: string, maxLength: 19, description: 'Returned
-            for MasterCard Token transactions (only for MCCs 4111, 4131, 4784, and
-            7523) and for all AMEX Token transactions.', example: ''}
-        cardholderResponse:
-          type: object
-          maxLength: 5
-          description: |
-            Non-normalized response from for verifying cardholder data where each position represents the postal/zip code, address, name, telephone, and email respectively.
-
-            Valid Values:
-            * Y = Yes data matches
-            * N = No data does not match
-            * U - Data unchecked
-            * R - Retry
-            * S - Service not allowed
-            * Blank - Data not sent
-          example: YYNUU
-        authSource: {type: string, description: Code indicating how the network performed
-            the authorization., example: STIP}
     Network:
       x-model-version: 1.0
       description: ''
@@ -2203,36 +2130,109 @@ components:
               field used by Visa to establish annual point-of-sale spending requirements.}
     AmericanExpress:
       x-model-version: 1.0
-      properties:
-        safeKeyResponse:
-          type: string
-          maxLength: 50
-          description: |
-            Response that corresponds to the American Express SafeKey response value.
-
-            Valid Values:
-            * FAILED_AUTH - Authentication Issuer Key
-            * PASSED_AUTH - Authentication Issuer key
-            * PASSED_ATTEMPT - Attempt, Issuer Key
-            * FAILED_ATTEMPT - Attempt, Issuer Key
-            * FAILED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
-            * PASSED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
-            * FAILED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
-            * PASSED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
-            * UNCHEKED
-          example: PASSED_AUTH
       allOf:
       - {$ref: '#/components/schemas/Network'}
-      - {type: object}
+      - type: object
+        properties:
+          safeKeyResponse:
+            type: string
+            maxLength: 50
+            description: |
+              Response that corresponds to the American Express SafeKey response value.
+
+              Valid Values:
+              * FAILED_AUTH - Authentication Issuer Key
+              * PASSED_AUTH - Authentication Issuer key
+              * PASSED_ATTEMPT - Attempt, Issuer Key
+              * FAILED_ATTEMPT - Attempt, Issuer Key
+              * FAILED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
+              * PASSED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
+              * FAILED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
+              * PASSED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
+              * UNCHEKED
+            example: PASSED_AUTH
     Discover:
       x-model-version: 1.0
-      properties:
-        networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
-            transaction amount, required for Discover card on file transactions.',
-          example: '9.66'}
       allOf:
       - {$ref: '#/components/schemas/Network'}
-      - {type: object}
+      - type: object
+        properties:
+          networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
+              transaction amount, required for Discover card on file transactions.',
+            example: '9.66'}
+    NetworkDetails:
+      x-model-version: 1.0
+      description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
+        response</a> details.
+      properties:
+        network: {$ref: '#/components/schemas/Network'}
+        debitNetworkId: {type: string, maxLength: 64, description: Network ID for
+            the debit component., example: '123456'}
+        transactionSequence: {type: string, maxLength: 64, description: Transaction
+            specific data that may be returned in response messages., example: '1123456'}
+        systemTrace: {type: string, maxLength: 64, description: Original trace number
+            that was returned in an authorization response., example: '123456789'}
+        debitIssuerData: {type: string, description: Debit issuer specific data that
+            may be returned in the response messages., example: Standard Issuer}
+        networkResponseCode: {type: string, maxLength: 16, description: Debit network
+            response code., example: '00'}
+        posEntryModeChange: {type: boolean, description: Issuer will reply if the
+            entry mode has changed.}
+        cardLevelResultCode: {type: string, description: 'Identifies purchase, corporate,
+            and business card level e.g. Level II/Level III'}
+        validationCode: {type: string, description: A code calculated by card brands
+            to ensure that the fields present in the authorization are also present
+            in the clearing record., example: ''}
+        downgradeReason: {type: string, description: Downgrade reason as supplied
+            by network., example: ACCOUNT_NUMBER_MISSING}
+        creditAuthType: {type: string, description: Indicates the type of authorization
+            required., example: DISCOVER}
+        authScore: {type: string, description: The auth score returned for the transaction.,
+          example: ''}
+        partialAuthTransactionId: {type: string, description: Generated identifier
+            unique for each original authorization request., example: ''}
+        totalAuthAmount: {type: number, description: Total amount authorized., example: '13.50'}
+        transactionIdentifier: {type: string, description: This field represents a
+            unique value used to identify and link all related transactions for authorization
+            and settlement}
+        magStripeQualityIndicator:
+          type: string
+          description: |
+            This field dentifies the error encountered with the track data provided in the authorization request message.
+
+            Valid Values:
+            * TRACK_PRESENT - Track 1 and Track 2 present in the message
+            * NO_TRACK - Track 1 or Track 2 not present in the message
+            * PAN_NOT_EQUAL - Primary Account Number not equal in track data
+            * EXPIRATION_NOT_EQUAL - Expiration date not equal in track data
+            * CARD_TYPE_INVALID - Card type invalid in track data
+            * FIELD_SEPARATORS - Field separator(s) invalid in track data
+            * EXCEEDS_LENGTH -  A field within the track data exceeds maximum length
+            * CATEGORY_CODE - The transaction category code is "T".
+            * CUSTOMER_PRESENCE - POS customer presence indicator is false.
+            * CARD_PRESENCE - POS card presence indicator is false.
+          example: TRACK_PRESENT
+        networkAvsCode: {type: string, maxLength: 1, description: Non-Normalized newtork
+            AVS response code is available., example: ''}
+        panMappingAccountNumber: {type: string, maxLength: 19, description: 'Returned
+            for MasterCard Token transactions (only for MCCs 4111, 4131, 4784, and
+            7523) and for all AMEX Token transactions.', example: ''}
+        cardholderResponse:
+          type: string
+          maxLength: 5
+          description: |
+            Non-normalized response from for verifying cardholder data where each position represents the postal/zip code, address, name, telephone, and email respectively.
+
+            Valid Values:
+            * Y = Yes data matches
+            * N = No data does not match
+            * U - Data unchecked
+            * R - Retry
+            * S - Service not allowed
+            * Blank - Data not sent
+          example: YYNUU
+        authSource: {type: string, description: Code indicating how the network performed
+            the authorization., example: STIP}
     AdditionalDataCommon:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Additional-Data.md">Common

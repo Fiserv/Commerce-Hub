@@ -35,8 +35,6 @@
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-InPerson.md
-    - title: RESTful API
-      link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Encrypted PIN Pad
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
     - title: Semi-Integrated
@@ -50,9 +48,9 @@
       - title: Track 1/2 Data
         link: docs/In-Person/Encrypted-Payments/Track.md
       - title: Manual Entry
-        link: docs/In-Person/Encrypted-Payments/Manual-Entry.md
+        link: docs/In-Person/Encrypted-Payments/Manual.md
       - title: Contactless (NFC)
-        link: docs/In-Person/Encrypted-Payments/Contactless-QR.md
+        link: docs/In-Person/Encrypted-Payments/Contactless.md
 - sections:
   - title: Online/Digital/Mobile
     sections:
@@ -87,9 +85,11 @@
     - title: Debit
       sections:
       - title: Least Cost Debit
-        link: docs/In-Person/Debit/Least-Cost-Debit.md
+        link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
+      - title: Reginal Debit
+        link: docs/Resources/Guides/Debit/Regional-Debit.md
       - title: Smart Routing
-        link: docs/In-Person/Debit/Smart-Routing.md
+        link: docs/Resources/Guides/Debit/Smart-Routing.md
     - title: Enhanced Data Service
       link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
     - title: Secure Data Capture

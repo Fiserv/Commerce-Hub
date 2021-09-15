@@ -9,7 +9,6 @@ Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FA
 
 A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
 
-
 ---
 
 ### Minimum Requirements
@@ -40,7 +39,6 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
-
 
 <!--
 type: tab

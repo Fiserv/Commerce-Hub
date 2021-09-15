@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, enterprise, card-present, in-person, nfc, contactless]
 ---
 
-# NFC Contactless
+# Contactless (NFC)
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Contactless transaction support and the documents related to the features will be released soon.
