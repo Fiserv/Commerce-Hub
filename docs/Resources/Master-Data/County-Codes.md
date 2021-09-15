@@ -96,35 +96,33 @@ The below table contains county codes for Alaska.
 
 | County | Code |
 | ------- | ------- |
-| Autauga | 01001 |
-
-02013	Aleutians East	AK
-02016	Aleutians West	AK
-02020	Anchorage	AK
-02050	Bethel	AK
-02060	Bristol Bay	AK
-02068	Denali	AK
-02070	Dillingham	AK
-02090	Fairbanks North Star	AK
-02100	Haines	AK
-02110	Juneau	AK
-02122	Kenai Peninsula	AK
-02130	Ketchikan Gateway	AK
-02150	Kodiak Island	AK
-02164	Lake and Peninsula	AK
-02170	Matanuska-Susitna	AK
-02180	Nome	AK
-02185	North Slope	AK
-02188	Northwest Arctic	AK
-02201	Prince of Wales-Outer Ketchikan	AK
-02220	Sitka	AK
-02232	Skagway-Hoonah-Angoon	AK
-02240	Southeast Fairbanks	AK
-02261	Valdez-Cordova	AK
-02270	Wade Hampton	AK
-02280	Wrangell-Petersburg	AK
-02282	Yakutat	AK
-02290	Yukon-Koyukuk	AK
+| Aleutians East | 02013 |
+| Aleutians West | 02016 |
+| Anchorage | 02020 |	
+| Bethel | 02050 |	
+| Bristol Bay | 02060	|	
+| Denali | 02068 |	
+| Dillingham | 02070 |
+| Fairbanks North Star | 02090 |
+| Haines | 02100 |
+| Juneau | 02110 |
+| Kenai Peninsula | 02122	|
+| Ketchikan Gateway	| 02130 |
+| Kodiak Island	| 02150 |
+| Lake and Peninsula | 02164 |
+| Matanuska-Susitna	| 02170	|
+| Nome | 02180 |
+|	North Slope	| 02185 |
+| Northwest Arctic | 02188 |
+| Prince of Wales-Outer Ketchikan	| 02201	|
+|	Sitka	| 02220 |
+|	Skagway-Hoonah-Angoon | 02232 |
+| Southeast Fairbanks	| 02240 |
+|	Valdez-Cordova | 02261 |
+| Wade Hampton | 02270 |
+| Wrangell-Petersburg	| 02280 |
+|	Yakutat	| 02282 |
+| Yukon-Koyukuk | 02290	|
 
 <!--
 type: tab
@@ -160,81 +158,81 @@ The below table contains county codes for Arkansas.
 
 | County | Code |
 | ------- | ------- |
-05001	Arkansas	AR
-05003	Ashley	AR
-05005	Baxter	AR
-05007	Benton	AR
-05009	Boone	AR
-05011	Bradley	AR
-05013	Calhoun	AR
-05015	Carroll	AR
-05017	Chicot	AR
-05019	Clark	AR
-05021	Clay	AR
-05023	Cleburne	AR
-05025	Cleveland	AR
-05027	Columbia	AR
-05029	Conway	AR
-05031	Craighead	AR
-05033	Crawford	AR
-05035	Crittenden	AR
-05037	Cross	AR
-05039	Dallas	AR
-05041	Desha	AR
-05043	Drew	AR
-05045	Faulkner	AR
-05047	Franklin	AR
-05049	Fulton	AR
-05051	Garland	AR
-05053	Grant	AR
-05055	Greene	AR
-05057	Hempstead	AR
-05059	Hot Spring	AR
-05061	Howard	AR
-05063	Independence	AR
-05065	Izard	AR
-05067	Jackson	AR
-05069	Jefferson	AR
-05071	Johnson	AR
-05073	Lafayette	AR
-05075	Lawrence	AR
-05077	Lee	AR
-05079	Lincoln	AR
-05081	Little River	AR
-05083	Logan	AR
-05085	Lonoke	AR
-05087	Madison	AR
-05089	Marion	AR
-05091	Miller	AR
-05093	Mississippi	AR
-05095	Monroe	AR
-05097	Montgomery	AR
-05099	Nevada	AR
-05101	Newton	AR
-05103	Ouachita	AR
-05105	Perry	AR
-05107	Phillips	AR
-05109	Pike	AR
-05111	Poinsett	AR
-05113	Polk	AR
-05115	Pope	AR
-05117	Prairie	AR
-05119	Pulaski	AR
-05121	Randolph	AR
-05123	St Francis	AR
-05125	Saline	AR
-05127	Scott	AR
-05129	Searcy	AR
-05131	Sebastian	AR
-05133	Sevier	AR
-05135	Sharp	AR
-05137	Stone	AR
-05139	Union	AR
-05141	Van Buren	AR
-05143	Washington	AR
-05145	White	AR
-05147	Woodruff	AR
-05149	Yell	AR
+|	Arkansas | 05001 |
+| Ashley | 05003 |
+|	Baxter | 05005 |
+|	Benton | 05007 |
+| Boone	| 05009	|
+|	Bradley	| 05011 |
+| Calhoun | 05013	|
+|	Carroll	| 05015 |
+|	Chicot | 05017 |
+|	Clark	| 05019 |
+|	Clay| 05021 |
+|	Cleburne | 05023 |
+|	Cleveland | 05025 |
+|	Columbia | 05027 |
+|	Conway | 05029 |
+|	Craighead	| 05031 |
+|	Crawford | 05033 |
+|	Crittenden | 05035 |
+|	Cross	| 05037 |
+|	Dallas | 05039 |
+| Desha	| 05041	|
+|	Drew | 05043 |
+|	Faulkner | 05045 |
+|	Franklin | 05047 |
+| Fulton | 05049 |
+| Garland | 05051 |
+| Grant | 05053 |
+| Greene | 05055 |
+| Hempstead | 05057 |
+| Hot Spring | 05059 |
+| Howard | 05061 |
+| Independenc | 05063 |
+| Izard | 05065 |
+| Jackson | 05067 |
+| Jefferson | 05069 |
+| Johnson | 05071 |
+| Lafayette | 05073 |
+| Lawrence | 05075 |
+| Lee | 05077 |
+| Lincoln | 05079 |
+| Little River | 05081 |
+| Logan | 05083 |
+| Lonoke | 05085 |
+| Madison | 05087 |
+| Marion | 05089 |
+| Miller | 05091 |
+| Mississippi | 05093 |
+| Monroe | 05095 |
+| Montgomery | 05097 |
+| Nevada | 05099 |
+| Newton | 05101 |
+| Ouachita | 05103 |
+| Perry | 05105 |
+| Phillips | 05107 |
+| Pike | 05109 |
+| Poinsett | 05111 |
+| Polk | 05113 |
+| Pope | 05115 |
+| Prairie | 05117 |
+| Pulaski | 05119 |
+| Randolph | 05121 |
+| St Francis | 05123 |
+| Saline | 05125 |
+| Scott | 05127 |
+| Searcy | 05129 |
+| Sebastian | 05131 |
+| Sevier | 05133 |
+| Sharp | 05135 |
+| Stone | 05137 |
+| Union | 05139 |
+| Van Buren | 05141 |
+| Washington | 05143 |
+| White | 05145 |
+| Woodruff | 05147 |
+| Yell | 05149 |
 
 <!--
 type: tab
@@ -245,64 +243,65 @@ The below table contains county codes for California.
 
 | County | Code |
 | ------- | ------- |
-06001	Alameda	CA
-06003	Alpine	CA
-06005	Amador	CA
-06007	Butte	CA
-06009	Calaveras	CA
-06011	Colusa	CA
-06013	Contra Costa	CA
-06015	Del Norte	CA
-06017	El Dorado	CA
-06019	Fresno	CA
-06021	Glenn	CA
-06023	Humboldt	CA
-06025	Imperial	CA
-06027	Inyo	CA
-06029	Kern	CA
-06031	Kings	CA
-06033	Lake	CA
-06035	Lassen	CA
-06037	Los Angeles	CA
-06039	Madera	CA
-06041	Marin	CA
-06043	Mariposa	CA
-06045	Mendocino	CA
-06047	Merced	CA
-06049	Modoc	CA
-06051	Mono	CA
-06053	Monterey	CA
-06055	Napa	CA
-06057	Nevada	CA
-06059	Orange	CA
-06061	Placer	CA
-06063	Plumas	CA
-06065	Riverside	CA
-06067	Sacramento	CA
-06069	San Benito	CA
-06071	San Bernardino	CA
-06073	San Diego	CA
-06075	San Francisco	CA
-06077	San Joaquin	CA
-06079	San Luis Obispo	CA
-06081	San Mateo	CA
-06083	Santa Barbara	CA
-06085	Santa Clara	CA
-06087	Santa Cruz	CA
-06089	Shasta	CA
-06091	Sierra	CA
-06093	Siskiyou	CA
-06095	Solano	CA
-06097	Sonoma	CA
-06099	Stanislaus	CA
-06101	Sutter	CA
-06103	Tehama	CA
-06105	Trinity	CA
-06107	Tulare	CA
-06109	Tuolumne	CA
-06111	Ventura	CA
-06113	Yolo	CA
-06115	Yuba	CA
+| Alameda | 06001 |
+| Alpine | 06003 |
+| Amador | 06005 |
+| Butte | 06007 |
+| laveras | 06009 |
+| Colusa | 06011 |
+| Contra Costa | 06013 |
+| Del Norte | 06015 |
+| El Dorado | 06017 |
+| Fresno | 06019 |
+| Glenn | 06021 |
+| Humboldt | 06023 |
+| Imperial | 06025 |
+| Inyo | 06027 |
+| Kern | 06029 |
+| Kings | 06031 |
+| Lake | 06033 |
+| Lassen | 06035 |
+| Los Angeles | 06037 |
+| Madera | 06039 |
+| Marin | 06041 |
+| Mariposa | 06043 |
+| Mendocino | 06045 |
+| Merced | 06047 |
+| Modoc | 06049 |
+| Mono | 06051 |
+| Monterey | 06053 |
+| Napa | 06055 |
+| Nevada | 06057 |
+| Orange | 06059 |
+| Placer | 06061 |
+| Plumas | 06063 |
+| Riverside | 06065 |
+| Sacramento | 06067 |
+| San Benito | 06069 |
+| San Bernardino | 06071 |
+| San Diego | 06073 |
+| San Francisco | 06075 |
+| San Joaquin | 06077 |
+| San Luis Obispo | 06079 |
+| San Mateo | 06081 |
+| Santa Barbara | 06083 |
+| Santa Clara | 06085 |
+| Santa Cruz | 06087 |
+| Shasta | 06089 |
+| Sierra | 06091 |
+| Siskiyou | 06093 |
+| Solano | 06095 |
+| Sonoma | 06097 |
+| Stanislaus | 06099 |
+| Sutter | 06101 |
+| Tehama | 06103 |
+| Trinity | 06105 |
+| Tulare | 06107 |
+| Tuolumne | 06109 |
+| Ventura | 06111 |
+| Yolo | 06113 |
+| Yuba | 06115 |
+
 
 <!--
 type: tab
@@ -313,69 +312,70 @@ The below table contains county codes for Colorado.
 
 | County | Code |
 | ------- | ------- |
-08001	Adams	CO
-08003	Alamosa	CO
-08005	Arapahoe	CO
-08007	Archuleta	CO
-08009	Baca	CO
-08011	Bent	CO
-08013	Boulder	CO
-08015	Chaffee	CO
-08017	Cheyenne	CO
-08019	Clear Creek	CO
-08021	Conejos	CO
-08023	Costilla	CO
-08025	Crowley	CO
-08027	Custer	CO
-08029	Delta	CO
-08031	Denver	CO
-08033	Dolores	CO
-08035	Douglas	CO
-08037	Eagle	CO
-08039	Elbert	CO
-08041	El Paso	CO
-08043	Fremont	CO
-08045	Garfield	CO
-08047	Gilpin	CO
-08049	Grand	CO
-08051	Gunnison	CO
-08053	Hinsdale	CO
-08055	Huerfano	CO
-08057	Jackson	CO
-08059	Jefferson	CO
-08061	Kiowa	CO
-08063	Kit Carson	CO
-08065	Lake	CO
-08067	La Plata	CO
-08069	Larimer	CO
-08071	Las Animas	CO
-08073	Lincoln	CO
-08075	Logan	CO
-08077	Mesa	CO
-08079	Mineral	CO
-08081	Moffat	CO
-08083	Montezuma	CO
-08085	Montrose	CO
-08087	Morgan	CO
-08089	Otero	CO
-08091	Ouray	CO
-08093	Park	CO
-08095	Phillips	CO
-08097	Pitkin	CO
-08099	Prowers	CO
-08101	Pueblo	CO
-08103	Rio Blanco	CO
-08105	Rio Grande	CO
-08107	Routt	CO
-08109	Saguache	CO
-08111	San Juan	CO
-08113	San Miguel	CO
-08115	Sedgwick	CO
-08117	Summit	CO
-08119	Teller	CO
-08121	Washington	CO
-08123	Weld	CO
-08125	Yuma	CO
+| Adams | 08001 |
+| Alamosa | 08003 |
+| Arapahoe | 08005 |
+| Archuleta | 08007 |
+| Baca | 08009 |
+| Bent | 08011 |
+| Boulder | 08013 |
+| Chaffee | 08015 |
+| Cheyenne | 08017 |
+| Clear Creek | 08019 |
+| nejos | 08021 |
+| stilla | 08023 |
+| Crowley | 08025 |
+| Custer | 08027 |
+| Delta | 08029 |
+| Denver | 08031 |
+| Dolores | 08033 |
+| Douglas | 08035 |
+| Eagle | 08037 |
+| Elbert | 08039 |
+| El Paso | 08041 |
+| Fremont | 08043 |
+| Garfield | 08045 |
+| Gilpin | 08047 |
+| Grand | 08049 |
+| Gunnison | 08051 |
+| Hinsdale | 08053 |
+| Huerfano | 08055 |
+| Jackson | 08057 |
+| Jefferson | 08059 |
+| Kiowa | 08061 |
+| Kit Carson | 08063 |
+| Lake | 08065 |
+| La Plata | 08067 |
+| Larimer | 08069 |
+| Las Animas | 08071 |
+| Linln | 08073 |
+| Logan | 08075 |
+| Mesa | 08077 |
+| Mineral | 08079 |
+| Moffat | 08081 |
+| Montezuma | 08083 |
+| Montrose | 08085 |
+| Morgan | 08087 |
+| Otero | 08089 |
+| Ouray | 08091 |
+| Park | 08093 |
+| Phillips | 08095 |
+| Pitkin | 08097 |
+| Prowers | 08099 |
+| Pueblo | 08101 |
+| Rio Blan | 08103 |
+| Rio Grande | 08105 |
+| Routt | 08107 |
+| Saguache | 08109 |
+| San Juan | 08111 |
+| San Miguel | 08113 |
+| Sedgwick | 08115 |
+| Summit | 08117 |
+| Teller | 08119 |
+| Washington | 08121 |
+| Weld | 08123 |
+| Yuma | 08125 |
+
 
 <!--
 type: tab
@@ -406,7 +406,7 @@ The below table contains county codes for Delaware.
 | ------- | ------- |
 | Kent | 10001 |
 | New Castle | 10003 |	
-| Sussex |	10005 |
+| Sussex | 10005 |
 
 <!--
 type: tab
@@ -428,73 +428,74 @@ The below table contains county codes for Florida.
 
 | County | Code |
 | ------- | ------- |
-12001	Alachua	FL
-12003	Baker	FL
-12005	Bay	FL
-12007	Bradford	FL
-12009	Brevard	FL
-12011	Broward	FL
-12013	Calhoun	FL
-12015	Charlotte	FL
-12017	Citrus	FL
-12019	Clay	FL
-12021	Collier	FL
-12023	Columbia	FL
-12027	De Soto	FL
-12029	Dixie	FL
-12031	Duval	FL
-12033	Escambia	FL
-12035	Flagler	FL
-12037	Franklin	FL
-12039	Gadsden	FL
-12041	Gilchrist	FL
-12043	Glades	FL
-12045	Gulf	FL
-12047	Hamilton	FL
-12049	Hardee	FL
-12051	Hendry	FL
-12053	Hernando	FL
-12055	Highlands	FL
-12057	Hillsborough	FL
-12059	Holmes	FL
-12061	Indian River	FL
-12063	Jackson	FL
-12065	Jefferson	FL
-12067	Lafayette	FL
-12069	Lake	FL
-12071	Lee	FL
-12073	Leon	FL
-12075	Levy	FL
-12077	Liberty	FL
-12079	Madison	FL
-12081	Manatee	FL
-12083	Marion	FL
-12085	Martin	FL
-12086	Miami-Dade	FL
-12087	Monroe	FL
-12089	Nassau	FL
-12091	Okaloosa	FL
-12093	Okeechobee	FL
-12095	Orange	FL
-12097	Osceola	FL
-12099	Palm Beach	FL
-12101	Pasco	FL
-12103	Pinellas	FL
-12105	Polk	FL
-12107	Putnam	FL
-12109	St Johns	FL
-12111	St Lucie	FL
-12113	Santa Rosa	FL
-12115	Sarasota	FL
-12117	Seminole	FL
-12119	Sumter	FL
-12121	Suwannee	FL
-12123	Taylor	FL
-12125	Union	FL
-12127	Volusia	FL
-12129	Wakulla	FL
-12131	Walton	FL
-12133	Washington	FL
+| Alachua | 12001 |
+| Baker | 12003 |
+| Bay | 12005 |
+| Bradford | 12007 |
+| Brevard | 12009 |
+| Broward | 12011 |
+| Calhoun | 12013 |
+| Charlotte | 12015 |
+| Citrus | 12017 |
+| Clay | 12019 |
+| Collier | 12021 |
+| Columbia | 12023 |
+| De Soto | 12027 |
+| Dixie | 12029 |
+| Duval | 12031 |
+| Escambia | 12033 |
+| agler | 12035 |
+| Franklin | 12037 |
+| Gadsden | 12039 |
+| Gilchrist | 12041 |
+| Glades | 12043 |
+| Gulf | 12045 |
+| Hamilton | 12047 |
+| Hardee | 12049 |
+| Hendry | 12051 |
+| Hernando | 12053 |
+| Highlands | 12055 |
+| Hillsborough | 12057 |
+| Holmes | 12059 |
+| Indian River | 12061 |
+| Jackson | 12063 |
+| Jefferson | 12065 |
+| Lafayette | 12067 |
+| Lake | 12069 |
+| Lee | 12071 |
+| Leon | 12073 |
+| Levy | 12075 |
+| Liberty | 12077 |
+| Madison | 12079 |
+| Manatee | 12081 |
+| Marion | 12083 |
+| Martin | 12085 |
+| Miami-Dade | 12086 |
+| Monroe | 12087 |
+| Nassau | 12089 |
+| Okaloosa | 12091 |
+| Okeechobee | 12093 |
+| Orange | 12095 |
+| Osceola | 12097 |
+| Palm Beach | 12099 |
+| Pasco | 12101 |
+| Pinellas | 12103 |
+| Polk | 12105 |
+| Putnam | 12107 |
+| St Johns | 12109 |
+| St Lucie | 12111 |
+| Santa Rosa | 12113 |
+| Sarasota | 12115 |
+| Seminole | 12117 |
+| Sumter | 12119 |
+| Suwannee | 12121 |
+| Taylor | 12123 |
+| Union | 12125 |
+| Volusia | 12127 |
+| Wakulla | 12129 |
+| Walton | 12131 |
+| Washington | 12133 |
+
 
 <!--
 type: tab
@@ -505,165 +506,165 @@ The below table contains county codes for Georgia.
 
 | County | Code |
 | ------- | ------- |
-13001	Appling	GA
-13003	Atkinson	GA
-13005	Bacon	GA
-13007	Baker	GA
-13009	Baldwin	GA
-13011	Banks	GA
-13013	Barrow	GA
-13015	Bartow	GA
-13017	Ben Hill	GA
-13019	Berrien	GA
-13021	Bibb	GA
-13023	Bleckley	GA
-13025	Brantley	GA
-13027	Brooks	GA
-13029	Bryan	GA
-13031	Bulloch	GA
-13033	Burke	GA
-13035	Butts	GA
-13037	Calhoun	GA
-13039	Camden	GA
-13043	Candler	GA
-13045	Carroll	GA
-13047	Catoosa	GA
-13049	Charlton	GA
-13051	Chatham	GA
-13053	Chattahoochee	GA
-13055	Chattooga	GA
-13057	Cherokee	GA
-13059	Clarke	GA
-13061	Clay	GA
-13063	Clayton	GA
-13065	Clinch	GA
-13067	Cobb	GA
-13069	Coffee	GA
-13071	Colquitt	GA
-13073	Columbia	GA
-13075	Cook	GA
-13077	Coweta	GA
-13079	Crawford	GA
-13081	Crisp	GA
-13083	Dade	GA
-13085	Dawson	GA
-13087	Decatur	GA
-13089	De Kalb	GA
-13091	Dodge	GA
-13093	Dooly	GA
-13095	Dougherty	GA
-13097	Douglas	GA
-13099	Early	GA
-13101	Echols	GA
-13103	Effingham	GA
-13105	Elbert	GA
-13107	Emanuel	GA
-13109	Evans	GA
-13111	Fannin	GA
-13113	Fayette	GA
-13115	Floyd	GA
-13117	Forsyth	GA
-13119	Franklin	GA
-13121	Fulton	GA
-13123	Gilmer	GA
-13125	Glascock	GA
-13127	Glynn	GA
-13129	Gordon	GA
-13131	Grady	GA
-13133	Greene	GA
-13135	Gwinnett	GA
-13137	Habersham	GA
-13139	Hall	GA
-13141	Hancock	GA
-13143	Haralson	GA
-13145	Harris	GA
-13147	Hart	GA
-13149	Heard	GA
-13151	Henry	GA
-13153	Houston	GA
-13155	Irwin	GA
-13157	Jackson	GA
-13159	Jasper	GA
-13161	Jeff Davis	GA
-13163	Jefferson	GA
-13165	Jenkins	GA
-13167	Johnson	GA
-13169	Jones	GA
-13171	Lamar	GA
-13173	Lanier	GA
-13175	Laurens	GA
-13177	Lee	GA
-13179	Liberty	GA
-13181	Lincoln	GA
-13183	Long	GA
-13185	Lowndes	GA
-13187	Lumpkin	GA
-13189	McDuffie	GA
-13191	McIntosh	GA
-13193	Macon	GA
-13195	Madison	GA
-13197	Marion	GA
-13199	Meriwether	GA
-13201	Miller	GA
-13205	Mitchell	GA
-13207	Monroe	GA
-13209	Montgomery	GA
-13211	Morgan	GA
-13213	Murray	GA
-13215	Muscogee	GA
-13217	Newton	GA
-13219	Oconee	GA
-13221	Oglethorpe	GA
-13223	Paulding	GA
-13225	Peach	GA
-13227	Pickens	GA
-13229	Pierce	GA
-13231	Pike	GA
-13233	Polk	GA
-13235	Pulaski	GA
-13237	Putnam	GA
-13239	Quitman	GA
-13241	Rabun	GA
-13243	Randolph	GA
-13245	Richmond	GA
-13247	Rockdale	GA
-13249	Schley	GA
-13251	Screven	GA
-13253	Seminole	GA
-13255	Spalding	GA
-13257	Stephens	GA
-13259	Stewart	GA
-13261	Sumter	GA
-13263	Talbot	GA
-13265	Taliaferro	GA
-13267	Tattnall	GA
-13269	Taylor	GA
-13271	Telfair	GA
-13273	Terrell	GA
-13275	Thomas	GA
-13277	Tift	GA
-13279	Toombs	GA
-13281	Towns	GA
-13283	Treutlen	GA
-13285	Troup	GA
-13287	Turner	GA
-13289	Twiggs	GA
-13291	Union	GA
-13293	Upson	GA
-13295	Walker	GA
-13297	Walton	GA
-13299	Ware	GA
-13301	Warren	GA
-13303	Washington	GA
-13305	Wayne	GA
-13307	Webster	GA
-13309	Wheeler	GA
-13311	White	GA
-13313	Whitfield	GA
-13315	Wilcox	GA
-13317	Wilkes	GA
-13319	Wilkinson	GA
-13321	Worth	GA
+| Appling | 13001 |
+| Atkinson | 13003 |
+| Bacon | 13005 |
+| Baker | 13007 |
+| Baldwin | 13009 |
+| Banks | 13011 |
+| Barrow | 13013 |
+| Bartow | 13015 |
+| Ben Hill | 13017 |
+| Berrien | 13019 |
+| Bibb | 13021 |
+| Bleckley | 13023 |
+| Brantley | 13025 |
+| Brooks | 13027 |
+| Bryan | 13029 |
+| Bulloch | 13031 |
+| Burke | 13033 |
+| Butts | 13035 |
+| Calhoun | 13037 |
+| Camden | 13039 |
+| Candler | 13043 |
+| Carroll | 13045 |
+| Catoosa | 13047 |
+| Charlton | 13049 |
+| Chatham | 13051 |
+| Chattahooch | 13053 |
+| Chattoo | 13055 |
+| Cherokee | 13057 |
+| Clarke | 13059 |
+| Clay | 13061 |
+| Clayton | 13063 |
+| Clinch | 13065 |
+| Cobb | 13067 |
+| Coffee | 13069 |
+| Colquitt | 13071 |
+| Columbia | 13073 |
+| Cook | 13075 |
+| Coweta | 13077 |
+| Crawford | 13079 |
+| Crisp | 13081 |
+| Dade | 13083 |
+| Dawson | 13085 |
+| Decatur | 13087 |
+| De Kalb | 13089 |
+| Dodge | 13091 |
+| Dooly | 13093 |
+| Dougherty | 13095 |
+| Douglas | 13097 |
+| Early | 13099 |
+| Echols | 13101 |
+| Effingham | 13103 |
+| Elbert | 13105 |
+| Emanuel | 13107 |
+| Evans | 13109 |
+| Fannin | 13111 |
+| Fayette | 13113 |
+| Floyd | 13115 |
+| Forsyth | 13117 |
+| Franklin | 13119 |
+| Fulton | 13121 |
+| Gilmer | 13123 |
+| Glascock | 13125 |
+| Glynn | 13127 |
+| Gordon | 13129 |
+| Grady | 13131 |
+| Greene | 13133 |
+| Gwinnett | 13135 |
+| Habersham | 13137 |
+| Hall | 13139 |
+| Hancock | 13141 |
+| Haralson | 13143 |
+| Harris | 13145 |
+| Hart | 13147 |
+| Heard | 13149 |
+| Henry | 13151 |
+| Houston | 13153 |
+| Irwin | 13155 |
+| Jackson | 13157 |
+| Jasper | 13159 |
+| Jeff Davis | 13161 |
+| Jefferson | 13163 |
+| Jenkins | 13165 |
+| Johnson | 13167 |
+| Jones | 13169 |
+| Lamar | 13171 |
+| Lanier | 13173 |
+| Laurens | 13175 |
+| Lee | 13177 |
+| Liberty | 13179 |
+| Lincoln | 13181 |
+| Long | 13183 |
+| Lowndes | 13185 |
+| Lumpkin | 13187 |
+| McDuffie | 13189 |
+| McIntosh | 13191 |
+| Macon | 13193 |
+| Madison | 13195 |
+| Marion | 13197 |
+| Meriwether | 13199 |
+| Miller | 13201 |
+| Mitchell | 13205 |
+| Monroe | 13207 |
+| Montgomery | 13209 |
+| Morn | 13211 |
+| Murray | 13213 |
+| Muscogee | 13215 |
+| Newton | 13217 |
+| Oconee | 13219 |
+| Oglethorpe | 13221 |
+| Paulding | 13223 |
+| Peach | 13225 |
+| Pickens | 13227 |
+| Pierce | 13229 |
+| Pike | 13231 |
+| Polk | 13233 |
+| Pulaski | 13235 |
+| Putnam | 13237 |
+| Quitman | 13239 |
+| Rabun | 13241 |
+| Randolph | 13243 |
+| Richmond | 13245 |
+| Rockdale | 13247 |
+| Schley | 13249 |
+| Screven | 13251 |
+| Seminole | 13253 |
+| Spalding | 13255 |
+| Stephens | 13257 |
+| Stewart | 13259 |
+| Sumter | 13261 |
+| Talbot | 13263 |
+| Taliaferro | 13265 |
+| Tattnall | 13267 |
+| Taylor | 13269 |
+| Telfair | 13271 |
+| Terrell | 13273 |
+| Thomas | 13275 |
+| Tift | 13277 |
+| Toombs | 13279 |
+| Towns | 13281 |
+| Treutlen | 13283 |
+| Troup | 13285 |
+| Turner | 13287 |
+| Twiggs | 13289 |
+| Union | 13291 |
+| Upson | 13293 |
+| Walker | 13295 |
+| Walton | 13297 |
+| Ware | 13299 |
+| Warren | 13301 |
+| Washington | 13303 |
+| Wayne | 13305 |
+| Webster | 13307 |
+| Wheeler | 13309 |
+| White | 13311 |
+| Whitfield | 13313 |
+| Wilcox | 13315 |
+| Wilkes | 13317 |
+| Wilkinson | 13319 |
+| Worth | 13321 |
 
 <!--
 type: tab
@@ -688,50 +689,50 @@ The below table contains county codes for Idaho.
 
 | County | Code |
 | ------- | ------- |
-16001	Ada	ID
-16003	Adams	ID
-16005	Bannock	ID
-16007	Bear Lake	ID
-16009	Benewah	ID
-16011	Bingham	ID
-16013	Blaine	ID
-16015	Boise	ID
-16017	Bonner	ID
-16019	Bonneville	ID
-16021	Boundary	ID
-16023	Butte	ID
-16025	Camas	ID
-16027	Canyon	ID
-16029	Caribou	ID
-16031	Cassia	ID
-16033	Clark	ID
-16035	Clearwater	ID
-16037	Custer	ID
-16039	Elmore	ID
-16041	Franklin	ID
-16043	Fremont	ID
-16045	Gem	ID
-16047	Gooding	ID
-16049	Idaho	ID
-16051	Jefferson	ID
-16053	Jerome	ID
-16055	Kootenai	ID
-16057	Latah	ID
-16059	Lemhi	ID
-16061	Lewis	ID
-16063	Lincoln	ID
-16065	Madison	ID
-16067	Minidoka	ID
-16069	Nez Perce	ID
-16071	Oneida	ID
-16073	Owyhee	ID
-16075	Payette	ID
-16077	Power	ID
-16079	Shoshone	ID
-16081	Teton	ID
-16083	Twin Falls	ID
-16085	Valley	ID
-16087	Washington	ID
+| Ada | 16001 |
+| Adams | 16003 |
+| Bannock | 16005 |
+| Bear Lake | 16007 |
+| Benewah | 16009 |
+| Bingham | 16011 |
+| Blaine | 16013 |
+| Boise | 16015 |
+| Bonner | 16017 |
+| Bonneville | 16019 |
+| Boundary | 16021 |
+| Butte | 16023 |
+| Camas | 16025 |
+| Canyon | 16027 |
+| Caribou | 16029 |
+| Cassia | 16031 |
+| Clark | 16033 |
+| Clearwater | 16035 |
+| Custer | 16037 |
+| Elmore | 16039 |
+| Franklin | 16041 |
+| Fremont | 16043 |
+| Gem | 16045 |
+| Gooding | 16047 |
+| Aho | 16049 |
+| Jefferson | 16051 |
+| Jerome | 16053 |
+| Kootenai | 16055 |
+| Latah | 16057 |
+| Lemhi | 16059 |
+| Lewis | 16061 |
+| Lincoln | 16063 |
+| Madison | 16065 |
+| Minoka | 16067 |
+| Nez Perce | 16069 |
+| Onea | 16071 |
+| Owyhee | 16073 |
+| Payette | 16075 |
+| Power | 16077 |
+| Shoshone | 16079 |
+| Teton | 16081 |
+| Twin Falls | 16083 |
+| Valley | 16085 |
+| Washington | 16087 |
 
 <!--
 type: tab
@@ -742,108 +743,108 @@ The below table contains county codes for Illinois.
 
 | County | Code |
 | ------- | ------- |
-17001	Adams	IL
-17003	Alexander	IL
-17005	Bond	IL
-17007	Boone	IL
-17009	Brown	IL
-17011	Bureau	IL
-17013	Calhoun	IL
-17015	Carroll	IL
-17017	Cass	IL
-17019	Champaign	IL
-17021	Christian	IL
-17023	Clark	IL
-17025	Clay	IL
-17027	Clinton	IL
-17029	Coles	IL
-17031	Cook	IL
-17033	Crawford	IL
-17035	Cumberland	IL
-17037	De Kalb	IL
-17039	De Witt	IL
-17041	Douglas	IL
-17043	Du Page	IL
-17045	Edgar	IL
-17047	Edwards	IL
-17049	Effingham	IL
-17051	Fayette	IL
-17053	Ford	IL
-17055	Franklin	IL
-17057	Fulton	IL
-17059	Gallatin	IL
-17061	Greene	IL
-17063	Grundy	IL
-17065	Hamilton	IL
-17067	Hancock	IL
-17069	Hardin	IL
-17071	Henderson	IL
-17073	Henry	IL
-17075	Iroquois	IL
-17077	Jackson	IL
-17079	Jasper	IL
-17081	Jefferson	IL
-17083	Jersey	IL
-17085	Jo Daviess	IL
-17087	Johnson	IL
-17089	Kane	IL
-17091	Kankakee	IL
-17093	Kendall	IL
-17095	Knox	IL
-17097	Lake	IL
-17099	La Salle	IL
-17101	Lawrence	IL
-17103	Lee	IL
-17105	Livingston	IL
-17107	Logan	IL
-17109	McDonough	IL
-17111	McHenry	IL
-17113	McLean	IL
-17115	Macon	IL
-17117	Macoupin	IL
-17119	Madison	IL
-17121	Marion	IL
-17123	Marshall	IL
-17125	Mason	IL
-17127	Massac	IL
-17129	Menard	IL
-17131	Mercer	IL
-17133	Monroe	IL
-17135	Montgomery	IL
-17137	Morgan	IL
-17139	Moultrie	IL
-17141	Ogle	IL
-17143	Peoria	IL
-17145	Perry	IL
-17147	Piatt	IL
-17149	Pike	IL
-17151	Pope	IL
-17153	Pulaski	IL
-17155	Putnam	IL
-17157	Randolph	IL
-17159	Richland	IL
-17161	Rock Island	IL
-17163	St Clair	IL
-17165	Saline	IL
-17167	Sangamon	IL
-17169	Schuyler	IL
-17171	Scott	IL
-17173	Shelby	IL
-17175	Stark	IL
-17177	Stephenson	IL
-17179	Tazewell	IL
-17181	Union	IL
-17183	Vermilion	IL
-17185	Wabash	IL
-17187	Warren	IL
-17189	Washington	IL
-17191	Wayne	IL
-17193	White	IL
-17195	Whiteside	IL
-17197	Will	IL
-17199	Williamson	IL
-17201	Winnebago	IL
-17203	Woodford	IL
+| Adams | 17001 |
+| Alexander | 17003 |
+| Bond | 17005 |
+| Boone | 17007 |
+| Brown | 17009 |
+| Bureau | 17011 |
+| Calhoun | 17013 |
+| Carroll | 17015 |
+| Cass | 17017 |
+| Champaign | 17019 |
+| Christian | 17021 |
+| Clark | 17023 |
+| Clay | 17025 |
+| Clinton | 17027 |
+| Coles | 17029 |
+| Cook | 17031 |
+| Crawford | 17033 |
+| Cumberlan | 17035 |
+| De Kalb | 17037 |
+| De Witt | 17039 |
+| Douglas | 17041 |
+| Du Page | 17043 |
+| Edgar | 17045 |
+| Edwards | 17047 |
+| Effingham | 17049 |
+| Fayette | 17051 |
+| Ford | 17053 |
+| Franklin | 17055 |
+| Fulton | 17057 |
+| Gallatin | 17059 |
+| Greene | 17061 |
+| Grundy | 17063 |
+| Hamton | 17065 |
+| Hancock | 17067 |
+| Hardin | 17069 |
+| Henderson | 17071 |
+| Henry | 17073 |
+| Iroquois | 17075 |
+| Jackson | 17077 |
+| Jasper | 17079 |
+| Jefferson | 17081 |
+| Jersey | 17083 |
+| Jo Daviess | 17085 |
+| Johnson | 17087 |
+| Kane | 17089 |
+| Kankakee | 17091 |
+| Kendall | 17093 |
+| Knox | 17095 |
+| Lake | 17097 |
+| La Salle | 17099 |
+| Lawrence | 17101 |
+| Lee | 17103 |
+| Livingston | 17105 |
+| Logan | 17107 |
+| McDonough | 17109 |
+| McHenry | 17111 |
+| McLean | 17113 |
+| Macon | 17115 |
+| Macoupin | 17117 |
+| Madison | 17119 |
+| Marion | 17121 |
+| Marshall | 17123 |
+| Mason | 17125 |
+| Massac | 17127 |
+| Menard | 17129 |
+| Mercer | 17131 |
+| Monroe | 17133 |
+| Montgomer | 17135 |
+| Morgan | 17137 |
+| Moultrie | 17139 |
+| Ogle | 17141 |
+| Peoria | 17143 |
+| Perry | 17145 |
+| Piatt | 17147 |
+| Pike | 17149 |
+| Pope | 17151 |
+| Pulaski | 17153 |
+| Putnam | 17155 |
+| Randolph | 17157 |
+| Richland | 17159 |
+| Rock Island | 17161 |
+| St Clair | 17163 |
+| Saline | 17165 |
+| Sangamon | 17167 |
+| Schuyler | 17169 |
+| Scott | 17171 |
+| Shelby | 17173 |
+| Stark | 17175 |
+| Stephenson | 17177 |
+| Tazewell | 17179 |
+| Union | 17181 |
+| Vermion | 17183 |
+| Wabash | 17185 |
+| Warren | 17187 |
+| Washington | 17189 |
+| Wayne | 17191 |
+| White | 17193 |
+| Whiteside | 17195 |
+| Wl | 17197 |
+| Wliamson | 17199 |
+| Winnebago | 17201 |
+| Woodford | 17203 |
 
 <!--
 type: tab
@@ -854,98 +855,98 @@ The below table contains county codes for Indiana.
 
 | County | Code |
 | ------- | ------- |
-18001	Adams	IN
-18003	Allen	IN
-18005	Bartholomew	IN
-18007	Benton	IN
-18009	Blackford	IN
-18011	Boone	IN
-18013	Brown	IN
-18015	Carroll	IN
-18017	Cass	IN
-18019	Clark	IN
-18021	Clay	IN
-18023	Clinton	IN
-18025	Crawford	IN
-18027	Daviess	IN
-18029	Dearborn	IN
-18031	Decatur	IN
-18033	De Kalb	IN
-18035	Delaware	IN
-18037	Dubois	IN
-18039	Elkhart	IN
-18041	Fayette	IN
-18043	Floyd	IN
-18045	Fountain	IN
-18047	Franklin	IN
-18049	Fulton	IN
-18051	Gibson	IN
-18053	Grant	IN
-18055	Greene	IN
-18057	Hamilton	IN
-18059	Hancock	IN
-18061	Harrison	IN
-18063	Hendricks	IN
-18065	Henry	IN
-18067	Howard	IN
-18069	Huntington	IN
-18071	Jackson	IN
-18073	Jasper	IN
-18075	Jay	IN
-18077	Jefferson	IN
-18079	Jennings	IN
-18081	Johnson	IN
-18083	Knox	IN
-18085	Kosciusko	IN
-18087	La Grange	IN
-18089	Lake	IN
-18091	La Porte	IN
-18093	Lawrence	IN
-18095	Madison	IN
-18097	Marion	IN
-18099	Marshall	IN
-18101	Martin	IN
-18103	Miami	IN
-18105	Monroe	IN
-18107	Montgomery	IN
-18109	Morgan	IN
-18111	Newton	IN
-18113	Noble	IN
-18115	Ohio	IN
-18117	Orange	IN
-18119	Owen	IN
-18121	Parke	IN
-18123	Perry	IN
-18125	Pike	IN
-18127	Porter	IN
-18129	Posey	IN
-18131	Pulaski	IN
-18133	Putnam	IN
-18135	Randolph	IN
-18137	Ripley	IN
-18139	Rush	IN
-18141	St Joseph	IN
-18143	Scott	IN
-18145	Shelby	IN
-18147	Spencer	IN
-18149	Starke	IN
-18151	Steuben	IN
-18153	Sullivan	IN
-18155	Switzerland	IN
-18157	Tippecanoe	IN
-18159	Tipton	IN
-18161	Union	IN
-18163	Vanderburgh	IN
-18165	Vermillion	IN
-18167	Vigo	IN
-18169	Wabash	IN
-18171	Warren	IN
-18173	Warrick	IN
-18175	Washington	IN
-18177	Wayne	IN
-18179	Wells	IN
-18181	White	IN
-18183	Whitley	IN
+| Adams | 18001 |
+| Allen | 18003 |
+| Bartholomew | 18005 |
+| Benton | 18007 |
+| Blackford | 18009 |
+| Boone | 18011 |
+| Brown | 18013 |
+| Carroll | 18015 |
+| Cass | 18017 |
+| Clark | 18019 |
+| Clay | 18021 |
+| Clton | 18023 |
+| Crawford | 18025 |
+| Daviess | 18027 |
+| Dearborn | 18029 |
+| Decatur | 18031 |
+| De Kalb | 18033 |
+| Delaware | 18035 |
+| Dubois | 18037 |
+| Elkhart | 18039 |
+| Fayette | 18041 |
+| Floyd | 18043 |
+| Founta | 18045 |
+| Frankl | 18047 |
+| Fulton | 18049 |
+| Gibson | 18051 |
+| Grant | 18053 |
+| Greene | 18055 |
+| Hamilton | 18057 |
+| Hancock | 18059 |
+| Harrison | 18061 |
+| Hendricks | 18063 |
+| Henry | 18065 |
+| Howard | 18067 |
+| Huntgton | 18069 |
+| Jackson | 18071 |
+| Jasper | 18073 |
+| Jay | 18075 |
+| Jefferson | 18077 |
+| Jenngs | 18079 |
+| Johnson | 18081 |
+| Knox | 18083 |
+| Kosciusko | 18085 |
+| La Grange | 18087 |
+| Lake | 18089 |
+| La Porte | 18091 |
+| Lawrence | 18093 |
+| Madison | 18095 |
+| Marion | 18097 |
+| Marshall | 18099 |
+| Mart | 18101 |
+| Miami | 18103 |
+| Monroe | 18105 |
+| Montgomery | 18107 |
+| Morgan | 18109 |
+| Newton | 18111 |
+| Noble | 18113 |
+| Ohio | 18115 |
+| Orange | 18117 |
+| Owen | 18119 |
+| Parke | 18121 |
+| Perry | 18123 |
+| Pike | 18125 |
+| Porter | 18127 |
+| Posey | 18129 |
+| Pulaski | 18131 |
+| Putnam | 18133 |
+| Randolph | 18135 |
+| Ripley | 18137 |
+| Rush | 18139 |
+| St Joseph | 18141 |
+| Scott | 18143 |
+| Shelby | 18145 |
+| Spencer | 18147 |
+| Starke | 18149 |
+| Steuben | 18151 |
+| Sullivan | 18153 |
+| Switzerland | 18155 |
+| Tippecanoe | 18157 |
+| Tipton | 18159 |
+| Union | 18161 |
+| Vanderburgh | 18163 |
+| Vermillion | 18165 |
+| Vigo | 18167 |
+| Wabash | 18169 |
+| Warren | 18171 |
+| Warrick | 18173 |
+| Washgton | 18175 |
+| Wayne | 18177 |
+| Wells | 18179 |
+| White | 18181 |
+| Whitley | 18183 |
 
 <!--
 type: tab
@@ -956,105 +957,105 @@ The below table contains county codes for Iowa.
 
 | County | Code |
 | ------- | ------- |
-19001	Adair	IA
-19003	Adams	IA
-19005	Allamakee	IA
-19007	Appanoose	IA
-19009	Audubon	IA
-19011	Benton	IA
-19013	Black Hawk	IA
-19015	Boone	IA
-19017	Bremer	IA
-19019	Buchanan	IA
-19021	Buena Vista	IA
-19023	Butler	IA
-19025	Calhoun	IA
-19027	Carroll	IA
-19029	Cass	IA
-19031	Cedar	IA
-19033	Cerro Gordo	IA
-19035	Cherokee	IA
-19037	Chickasaw	IA
-19039	Clarke	IA
-19041	Clay	IA
-19043	Clayton	IA
-19045	Clinton	IA
-19047	Crawford	IA
-19049	Dallas	IA
-19051	Davis	IA
-19053	Decatur	IA
-19055	Delaware	IA
-19057	Des Moines	IA
-19059	Dickinson	IA
-19061	Dubuque	IA
-19063	Emmet	IA
-19065	Fayette	IA
-19067	Floyd	IA
-19069	Franklin	IA
-19071	Fremont	IA
-19073	Greene	IA
-19075	Grundy	IA
-19077	Guthrie	IA
-19079	Hamilton	IA
-19081	Hancock	IA
-19083	Hardin	IA
-19085	Harrison	IA
-19087	Henry	IA
-19089	Howard	IA
-19091	Humboldt	IA
-19093	Ida	IA
-19095	Iowa	IA
-19097	Jackson	IA
-19099	Jasper	IA
-19101	Jefferson	IA
-19103	Johnson	IA
-19105	Jones	IA
-19107	Keokuk	IA
-19109	Kossuth	IA
-19111	Lee	IA
-19113	Linn	IA
-19115	Louisa	IA
-19117	Lucas	IA
-19119	Lyon	IA
-19121	Madison	IA
-19123	Mahaska	IA
-19125	Marion	IA
-19127	Marshall	IA
-19129	Mills	IA
-19131	Mitchell	IA
-19133	Monona	IA
-19135	Monroe	IA
-19137	Montgomery	IA
-19139	Muscatine	IA
-19141	O Brien	IA
-19143	Osceola	IA
-19145	Page	IA
-19147	Palo Alto	IA
-19149	Plymouth	IA
-19151	Pocahontas	IA
-19153	Polk	IA
-19155	Pottawattamie	IA
-19157	Poweshiek	IA
-19159	Ringgold	IA
-19161	Sac	IA
-19163	Scott	IA
-19165	Shelby	IA
-19167	Sioux	IA
-19169	Story	IA
-19171	Tama	IA
-19173	Taylor	IA
-19175	Union	IA
-19177	Van Buren	IA
-19179	Wapello	IA
-19181	Warren	IA
-19183	Washington	IA
-19185	Wayne	IA
-19187	Webster	IA
-19189	Winnebago	IA
-19191	Winneshiek	IA
-19193	Woodbury	IA
-19195	Worth	IA
-19197	Wright	IA
+| Adair | 19001 |
+| Adams | 19003 |
+| Allamakee | 19005 |
+| Appanoose | 19007 |
+| Audubon | 19009 |
+| Benton | 19011 |
+| Black Hawk | 19013 |
+| Boone | 19015 |
+| Bremer | 19017 |
+| Buchanan | 19019 |
+| Buena Vista | 19021 |
+| Butler | 19023 |
+| Calhoun | 19025 |
+| Carroll | 19027 |
+| Cass | 19029 |
+| Cedar | 19031 |
+| Cerro Gordo | 19033 |
+| Cherokee | 19035 |
+| Chickasaw | 19037 |
+| Clarke | 19039 |
+| Clay | 19041 |
+| Clayton | 19043 |
+| Clinton | 19045 |
+| Crawford | 19047 |
+| Dallas | 19049 |
+| Davis | 19051 |
+| Decatur | 19053 |
+| Delaware | 19055 |
+| Des Moines | 19057 |
+| Dickinson | 19059 |
+| Dubuque | 19061 |
+| Emmet | 19063 |
+| Fayette | 19065 |
+| Floyd | 19067 |
+| Franklin | 19069 |
+| Fremont | 19071 |
+| Greene | 19073 |
+| Grundy | 19075 |
+| Guthrie | 19077 |
+| Hamilton | 19079 |
+| Hancock | 19081 |
+| Hardin | 19083 |
+| Harrison | 19085 |
+| Henry | 19087 |
+| Howard | 19089 |
+| Humboldt | 19091 |
+| Ida | 19093 |
+| Iowa | 19095 |
+| Jackson | 19097 |
+| Jasper | 19099 |
+| Jefferson | 19101 |
+| Johnson | 19103 |
+| Jones | 19105 |
+| Keokuk | 19107 |
+| Kossuth | 19109 |
+| Lee | 19111 |
+| Linn | 19113 |
+| Louisa | 19115 |
+| Lucas | 19117 |
+| Lyon | 19119 |
+| Madison | 19121 |
+| Mahaska | 19123 |
+| Marion | 19125 |
+| Marshall | 19127 |
+| Mills | 19129 |
+| Mitchell | 19131 |
+| Monona | 19133 |
+| Monroe | 19135 |
+| Montgomery | 19137 |
+| Muscatine | 19139 |
+| O Brien | 19141 |
+| Osceola | 19143 |
+| Page | 19145 |
+| Palo Alto | 19147 |
+| Plymouth | 19149 |
+| Pocahontas | 19151 |
+| Polk | 19153 |
+| Pottawattamie | 19155 |
+| Poweshiek | 19157 |
+| Ringgold | 19159 |
+| Sac | 19161 |
+| Scott | 19163 |
+| Shelby | 19165 |
+| Sioux | 19167 |
+| Story | 19169 |
+| Tama | 19171 |
+| Taylor | 19173 |
+| Union | 19175 |
+| Van Buren | 19177 |
+| Wapello | 19179 |
+| Warren | 19181 |
+| Washington | 19183 |
+| Wayne | 19185 |
+| Webster | 19187 |
+| Winnebago | 19189 |
+| Winneshiek | 19191 |
+| Woodbury | 19193 |
+| Worth | 19195 |
+| Wright | 19197 |
 
 <!--
 type: tab
@@ -1065,111 +1066,112 @@ The below table contains county codes for Kansas.
 
 | County | Code |
 | ------- | ------- |
-20001	Allen	KS
-20003	Anderson	KS
-20005	Atchison	KS
-20007	Barber	KS
-20009	Barton	KS
-20011	Bourbon	KS
-20013	Brown	KS
-20015	Butler	KS
-20017	Chase	KS
-20019	Chautauqua	KS
-20021	Cherokee	KS
-20023	Cheyenne	KS
-20025	Clark	KS
-20027	Clay	KS
-20029	Cloud	KS
-20031	Coffey	KS
-20033	Comanche	KS
-20035	Cowley	KS
-20037	Crawford	KS
-20039	Decatur	KS
-20041	Dickinson	KS
-20043	Doniphan	KS
-20045	Douglas	KS
-20047	Edwards	KS
-20049	Elk	KS
-20051	Ellis	KS
-20053	Ellsworth	KS
-20055	Finney	KS
-20057	Ford	KS
-20059	Franklin	KS
-20061	Geary	KS
-20063	Gove	KS
-20065	Graham	KS
-20067	Grant	KS
-20069	Gray	KS
-20071	Greeley	KS
-20073	Greenwood	KS
-20075	Hamilton	KS
-20077	Harper	KS
-20079	Harvey	KS
-20081	Haskell	KS
-20083	Hodgeman	KS
-20085	Jackson	KS
-20087	Jefferson	KS
-20089	Jewell	KS
-20091	Johnson	KS
-20093	Kearny	KS
-20095	Kingman	KS
-20097	Kiowa	KS
-20099	Labette	KS
-20101	Lane	KS
-20103	Leavenworth	KS
-20105	Lincoln	KS
-20107	Linn	KS
-20109	Logan	KS
-20111	Lyon	KS
-20113	McPherson	KS
-20115	Marion	KS
-20117	Marshall	KS
-20119	Meade	KS
-20121	Miami	KS
-20123	Mitchell	KS
-20125	Montgomery	KS
-20127	Morris	KS
-20129	Morton	KS
-20131	Nemaha	KS
-20133	Neosho	KS
-20135	Ness	KS
-20137	Norton	KS
-20139	Osage	KS
-20141	Osborne	KS
-20143	Ottawa	KS
-20145	Pawnee	KS
-20147	Phillips	KS
-20149	Pottawatomie	KS
-20151	Pratt	KS
-20153	Rawlins	KS
-20155	Reno	KS
-20157	Republic	KS
-20159	Rice	KS
-20161	Riley	KS
-20163	Rooks	KS
-20165	Rush	KS
-20167	Russell	KS
-20169	Saline	KS
-20171	Scott	KS
-20173	Sedgwick	KS
-20175	Seward	KS
-20177	Shawnee	KS
-20179	Sheridan	KS
-20181	Sherman	KS
-20183	Smith	KS
-20185	Stafford	KS
-20187	Stanton	KS
-20189	Stevens	KS
-20191	Sumner	KS
-20193	Thomas	KS
-20195	Trego	KS
-20197	Wabaunsee	KS
-20199	Wallace	KS
-20201	Washington	KS
-20203	Wichita	KS
-20205	Wilson	KS
-20207	Woodson	KS
-20209	Wyandotte	KS
+| Allen | 20001 |
+| Anderson | 20003 |
+| Atchison | 20005 |
+| Barber | 20007 |
+| Barton | 20009 |
+| Bourbon | 20011 |
+| Brown | 20013 |
+| Butler | 20015 |
+| Chase | 20017 |
+| Chautauqua | 20019 |
+| Cherokee | 20021 |
+| Cheyenne | 20023 |
+| Clark | 20025 |
+| Clay | 20027 |
+| Cloud | 20029 |
+| Coffey | 20031 |
+| Comanche | 20033 |
+| Cowley | 20035 |
+| Crawford | 20037 |
+| Decatur | 20039 |
+| Dickinson | 20041 |
+| Doniphan | 20043 |
+| Douglas | 20045 |
+| Edwards | 20047 |
+| Elk | 20049 |
+| Ellis | 20051 |
+| Ellsworth | 20053 |
+| Finney | 20055 |
+| Ford | 20057 |
+| Franklin | 20059 |
+| Geary | 20061 |
+| Gove | 20063 |
+| Graham | 20065 |
+| Grant | 20067 |
+| Gray | 20069 |
+| Greeley | 20071 |
+| Greenwood | 20073 |
+| Hamilton | 20075 |
+| Harper | 20077 |
+| Harvey | 20079 |
+| Haskell | 20081 |
+| Hodgeman | 20083 |
+| Jacon | 20085 |
+| Jefferson | 20087 |
+| Jewell | 20089 |
+| Johnson | 20091 |
+| Kearny | 20093 |
+| Kingman | 20095 |
+| Kiowa | 20097 |
+| Labette | 20099 |
+| Lane | 20101 |
+| Leavenworth | 20103 |
+| Lincoln | 20105 |
+| Linn | 20107 |
+| Logan | 20109 |
+| Lyon | 20111 |
+| McPherson | 20113 |
+| Marion | 20115 |
+| Marshall | 20117 |
+| Meade | 20119 |
+| Miami | 20121 |
+| Mitchell | 20123 |
+| Montgomery | 20125 |
+| Morris | 20127 |
+| Morton | 20129 |
+| Nemaha | 20131 |
+| Neosho | 20133 |
+| Ness | 20135 |
+| Norton | 20137 |
+| Osage | 20139 |
+| Osborne | 20141 |
+| Ottawa | 20143 |
+| Pawnee | 20145 |
+| Phillips | 20147 |
+| Pottawatomie | 20149 |
+| Pratt | 20151 |
+| Rawlins | 20153 |
+| Reno | 20155 |
+| Republic | 20157 |
+| Rice | 20159 |
+| Riley | 20161 |
+| Roo | 20163 |
+| Rush | 20165 |
+| Russell | 20167 |
+| Saline | 20169 |
+| Scott | 20171 |
+| Sedgwick | 20173 |
+| Seward | 20175 |
+| Shawnee | 20177 |
+| Sheridan | 20179 |
+| Sherman | 20181 |
+| Smith | 20183 |
+| Stafford | 20185 |
+| Stanton | 20187 |
+| Stevens | 20189 |
+| Sumner | 20191 |
+| Thomas | 20193 |
+| Trego | 20195 |
+| Wabaunsee | 20197 |
+| Wallace | 20199 |
+| Washington | 20201 |
+| Wichita | 20203 |
+| Wilson | 20205 |
+| Woodson | 20207 |
+| Wyandotte | 20209 |
+
 
 <!--
 type: tab
@@ -1180,126 +1182,126 @@ The below table contains county codes for Kentucky.
 
 | County | Code |
 | ------- | ------- |
-21001	Adair	KY
-21003	Allen	KY
-21005	Anderson	KY
-21007	Ballard	KY
-21009	Barren	KY
-21011	Bath	KY
-21013	Bell	KY
-21015	Boone	KY
-21017	Bourbon	KY
-21019	Boyd	KY
-21021	Boyle	KY
-21023	Bracken	KY
-21025	Breathitt	KY
-21027	Breckinridge	KY
-21029	Bullitt	KY
-21031	Butler	KY
-21033	Caldwell	KY
-21035	Calloway	KY
-21037	Campbell	KY
-21039	Carlisle	KY
-21041	Carroll	KY
-21043	Carter	KY
-21045	Casey	KY
-21047	Christian	KY
-21049	Clark	KY
-21051	Clay	KY
-21053	Clinton	KY
-21055	Crittenden	KY
-21057	Cumberland	KY
-21059	Daviess	KY
-21061	Edmonson	KY
-21063	Elliott	KY
-21065	Estill	KY
-21067	Fayette	KY
-21069	Fleming	KY
-21071	Floyd	KY
-21073	Franklin	KY
-21075	Fulton	KY
-21077	Gallatin	KY
-21079	Garrard	KY
-21081	Grant	KY
-21083	Graves	KY
-21085	Grayson	KY
-21087	Green	KY
-21089	Greenup	KY
-21091	Hancock	KY
-21093	Hardin	KY
-21095	Harlan	KY
-21097	Harrison	KY
-21099	Hart	KY
-21101	Henderson	KY
-21103	Henry	KY
-21105	Hickman	KY
-21107	Hopkins	KY
-21109	Jackson	KY
-21111	Jefferson	KY
-21113	Jessamine	KY
-21115	Johnson	KY
-21117	Kenton	KY
-21119	Knott	KY
-21121	Knox	KY
-21123	Larue	KY
-21125	Laurel	KY
-21127	Lawrence	KY
-21129	Lee	KY
-21131	Leslie	KY
-21133	Letcher	KY
-21135	Lewis	KY
-21137	Lincoln	KY
-21139	Livingston	KY
-21141	Logan	KY
-21143	Lyon	KY
-21145	McCracken	KY
-21147	McCreary	KY
-21149	McLean	KY
-21151	Madison	KY
-21153	Magoffin	KY
-21155	Marion	KY
-21157	Marshall	KY
-21159	Martin	KY
-21161	Mason	KY
-21163	Meade	KY
-21165	Menifee	KY
-21167	Mercer	KY
-21169	Metcalfe	KY
-21171	Monroe	KY
-21173	Montgomery	KY
-21175	Morgan	KY
-21177	Muhlenberg	KY
-21179	Nelson	KY
-21181	Nicholas	KY
-21183	Ohio	KY
-21185	Oldham	KY
-21187	Owen	KY
-21189	Owsley	KY
-21191	Pendleton	KY
-21193	Perry	KY
-21195	Pike	KY
-21197	Powell	KY
-21199	Pulaski	KY
-21201	Robertson	KY
-21203	Rockcastle	KY
-21205	Rowan	KY
-21207	Russell	KY
-21209	Scott	KY
-21211	Shelby	KY
-21213	Simpson	KY
-21215	Spencer	KY
-21217	Taylor	KY
-21219	Todd	KY
-21221	Trigg	KY
-21223	Trimble	KY
-21225	Union	KY
-21227	Warren	KY
-21229	Washington	KY
-21231	Wayne	KY
-21233	Webster	KY
-21235	Whitley	KY
-21237	Wolfe	KY
-21239	Woodford	KY
+| Adair | 21001 |
+| Allen | 21003 |
+| Anderson | 21005 |
+| Ballard | 21007 |
+| Barren | 21009 |
+| Bath | 21011 |
+| Bell | 21013 |
+| Boone | 21015 |
+| Bourbon | 21017 |
+| Boyd | 21019 |
+| Boyle | 21021 |
+| Bracken | 21023 |
+| Breathitt | 21025 |
+| Breckinridg | 21027 |
+| Bullitt | 21029 |
+| Butler | 21031 |
+| Caldwell | 21033 |
+| Calloway | 21035 |
+| Campbell | 21037 |
+| Carlisle | 21039 |
+| Carroll | 21041 |
+| Carter | 21043 |
+| Casey | 21045 |
+| Christian | 21047 |
+| Clark | 21049 |
+| Clay | 21051 |
+| Clinton | 21053 |
+| Crittenden | 21055 |
+| Cumberland | 21057 |
+| Daviess | 21059 |
+| Edmonson | 21061 |
+| Elliott | 21063 |
+| Estill | 21065 |
+| Fayette | 21067 |
+| Fleming | 21069 |
+| Floyd | 21071 |
+| Franklin | 21073 |
+| Fulton | 21075 |
+| Gallatin | 21077 |
+| Garrard | 21079 |
+| Grant | 21081 |
+| Graves | 21083 |
+| Grayson | 21085 |
+| Green | 21087 |
+| Greenup | 21089 |
+| Hancock | 21091 |
+| Hardin | 21093 |
+| Harlan | 21095 |
+| Harrison | 21097 |
+| Hart | 21099 |
+| Henderson | 21101 |
+| Henry | 21103 |
+| Hickman | 21105 |
+| Hopkins | 21107 |
+| Jackson | 21109 |
+| Jefferson | 21111 |
+| Jessamine | 21113 |
+| Johnson | 21115 |
+| Kenton | 21117 |
+| Knott | 21119 |
+| Knox | 21121 |
+| Larue | 21123 |
+| Laurel | 21125 |
+| Lawrence | 21127 |
+| Lee | 21129 |
+| Leslie | 21131 |
+| Letcher | 21133 |
+| Lewis | 21135 |
+| Lincoln | 21137 |
+| Livingston | 21139 |
+| Logan | 21141 |
+| Lyon | 21143 |
+| McCracken | 21145 |
+| McCreary | 21147 |
+| McLean | 21149 |
+| Madison | 21151 |
+| Magoffin | 21153 |
+| Marion | 21155 |
+| Marshall | 21157 |
+| Martin | 21159 |
+| Mason | 21161 |
+| Meade | 21163 |
+| Menifee | 21165 |
+| Mercer | 21167 |
+| Metcalfe | 21169 |
+| Monroe | 21171 |
+| Montgomery | 21173 |
+| Morgan | 21175 |
+| Muhlenberg | 21177 |
+| Nelson | 21179 |
+| Nicholas | 21181 |
+| Ohio | 21183 |
+| Oldham | 21185 |
+| Owen | 21187 |
+| Owsley | 21189 |
+| Pendleton | 21191 |
+| Perry | 21193 |
+| Pike | 21195 |
+| Powell | 21197 |
+| Pulaski | 21199 |
+| Robertson | 21201 |
+| Rockcastle | 21203 |
+| Rowan | 21205 |
+| Russell | 21207 |
+| Scott | 21209 |
+| Shelby | 21211 |
+| Simpson | 21213 |
+| Spencer | 21215 |
+| Taylor | 21217 |
+| Todd | 21219 |
+| Trigg | 21221 |
+| Trimble | 21223 |
+| Union | 21225 |
+| Warren | 21227 |
+| Washington | 21229 |
+| Wayne | 21231 |
+| Webster | 21233 |
+| Whitley | 21235 |
+| Wolfe | 21237 |
+| Woodford | 21239 |
 
 <!--
 type: tab
@@ -1310,71 +1312,70 @@ The below table contains county codes for Louisiana.
 
 | County | Code |
 | ------- | ------- |
-22001	Acadia	LA
-22003	Allen	LA
-22005	Ascension	LA
-22007	Assumption	LA
-22009	Avoyelles	LA
-22011	Beauregard	LA
-22013	Bienville	LA
-22015	Bossier	LA
-22017	Caddo	LA
-22019	Calcasieu	LA
-22021	Caldwell	LA
-22023	Cameron	LA
-22025	Catahoula	LA
-22027	Claiborne	LA
-22029	Concordia	LA
-22031	De Soto	LA
-22033	East Baton Rouge	LA
-22035	East Carroll	LA
-22037	East Feliciana	LA
-22039	Evangeline	LA
-22041	Franklin	LA
-22043	Grant	LA
-22045	Iberia	LA
-22047	Iberville	LA
-22049	Jackson	LA
-22051	Jefferson	LA
-22053	Jefferson Davis	LA
-22055	Lafayette	LA
-22057	Lafourche	LA
-22059	La Salle	LA
-22061	Lincoln	LA
-22063	Livingston	LA
-22065	Madison	LA
-22067	Morehouse	LA
-22069	Natchitoches	LA
-22071	Orleans	LA
-22073	Ouachita	LA
-22075	Plaquemines	LA
-22077	Pointe Coupee	LA
-22079	Rapides	LA
-22081	Red River	LA
-22083	Richland	LA
-22085	Sabine	LA
-22087	St Bernard	LA
-22089	St Charles	LA
-22091	St Helena	LA
-22093	St James	LA
-22095	St John the Baptist	LA
-22097	St Landry	LA
-22099	St Martin	LA
-22101	St Mary	LA
-22103	St Tammany	LA
-22105	Tangipahoa	LA
-22107	Tensas	LA
-22109	Terrebonne	LA
-22111	Union	LA
-22113	Vermilion	LA
-22115	Vernon	LA
-22117	Washington	LA
-22119	Webster	LA
-22121	West Baton Rouge	LA
-22123	West Carroll	LA
-22125	West Feliciana	LA
-22127	Winn	LA
-
+| Acadia | 22001 |
+| Allen | 22003 |
+| Ascension | 22005 |
+| Assumption | 22007 |
+| Avoyelles | 22009 |
+| Beauregard | 22011 |
+| Bienville | 22013 |
+| Bossier | 22015 |
+| Caddo | 22017 |
+| Calcasieu | 22019 |
+| Caldwell | 22021 |
+| Cameron | 22023 |
+| Catahou | 22025 |
+| Ciborne | 22027 |
+| Concordia | 22029 |
+| De Soto | 22031 |
+| East Baton Rouge | 22033 |
+| East Carroll | 22035 |
+| East Feliciana | 22037 |
+| Evangeline | 22039 |
+| Franklin | 22041 |
+| Grant | 22043 |
+| Iberia | 22045 |
+| Iberville | 22047 |
+| Jackson | 22049 |
+| Jefferson | 22051 |
+| Jefferson Davis | 22053 |
+| fayette | 22055 |
+| fourche | 22057 |
+|  Salle | 22059 |
+| Lincoln | 22061 |
+| Livingston | 22063 |
+| Madison | 22065 |
+| Morehouse | 22067 |
+| Natchitoches | 22069 |
+| Orleans | 22071 |
+| Ouachita | 22073 |
+| Pquemines | 22075 |
+| Pointe Coupee | 22077 |
+| Rapides | 22079 |
+| Red River | 22081 |
+| Richnd | 22083 |
+| Sabine | 22085 |
+| St Bernard | 22087 |
+| St Charles | 22089 |
+| St Helena | 22091 |
+| St James | 22093 |
+| St John the Baptist | 22095 |
+| St ndry | 22097 |
+| St Martin | 22099 |
+| St Mary | 22101 |
+| St Tammany | 22103 |
+| Tangipahoa | 22105 |
+| Tensas | 22107 |
+| Terrebonne | 22109 |
+| Union | 22111 |
+| Vermilion | 22113 |
+| Vernon | 22115 |
+| Washington | 22117 |
+| Webster | 22119 |
+| West Baton Rouge | 22121 |
+| West Carroll | 22123 |
+| West Feliciana | 22125 |
+| Winn | 22127 |
 <!--
 type: tab
 title: Maine
@@ -1384,22 +1385,22 @@ The below table contains county codes for Maine.
 
 | County | Code |
 | ------- | ------- |
-23001	Androscoggin	ME
-23003	Aroostook	ME
-23005	Cumberland	ME
-23007	Franklin	ME
-23009	Hancock	ME
-23011	Kennebec	ME
-23013	Knox	ME
-23015	Lincoln	ME
-23017	Oxford	ME
-23019	Penobscot	ME
-23021	Piscataquis	ME
-23023	Sagadahoc	ME
-23025	Somerset	ME
-23027	Waldo	ME
-23029	Washington	ME
-23031	York	ME
+| Androscoggin | 23001 |
+| Aroostook | 23003 |
+| Cumberland | 23005 |
+| Franklin | 23007 |
+| Hancock | 23009 |
+| Kennebec | 23011 |
+| Knox | 23013 |
+| Lincoln | 23015 |
+| Oxford | 23017 |
+| Penobscot | 23019 |
+| Piscataquis | 23021 |
+| Sagadahoc | 23023 |
+| Sorset | 23025 |
+| Waldo | 23027 |
+| Washington | 23029 |
+| York | 23031 |
 
 <!--
 type: tab
@@ -1408,30 +1409,33 @@ title: Maryland
 
 The below table contains county codes for Maryland.
 
-24001	Allegany	MD
-24003	Anne Arundel	MD
-24005	Baltimore	MD
-24009	Calvert	MD
-24011	Caroline	MD
-24013	Carroll	MD
-24015	Cecil	MD
-24017	Charles	MD
-24019	Dorchester	MD
-24021	Frederick	MD
-24023	Garrett	MD
-24025	Harford	MD
-24027	Howard	MD
-24029	Kent	MD
-24031	Montgomery	MD
-24033	Prince Georges	MD
-24035	Queen Annes	MD
-24037	St Marys	MD
-24039	Somerset	MD
-24041	Talbot	MD
-24043	Washington	MD
-24045	Wicomico	MD
-24047	Worcester	MD
-24510	Baltimore City	MD
+| County | Code |
+| ------- | ------- |
+| Allegany | 24001 |
+| Anne Arundel | 24003 |
+| Baltimore | 24005 |
+| Calvert | 24009 |
+| Caroline | 24011 |
+| Carroll | 24013 |
+| Cecil | 24015 |
+| Charles | 24017 |
+| Dorchester | 24019 |
+| Frederick | 24021 |
+| Garrett | 24023 |
+| Harford | 24025 |
+| Howard | 24027 |
+| Kent | 24029 |
+| Montgomery | 24031 |
+| Prince Georges | 24033 |
+| Queen Annes | 24035 |
+| St Marys | 24037 |
+| Somerset | 24039 |
+| Talbot | 24041 |
+| Washington | 24043 |
+| Wicomico | 24045 |
+| Worcester | 24047 |
+| Baltimore City | 24510 |
+
 
 <!--
 type: tab
@@ -1440,21 +1444,22 @@ title: Massachusetts
 
 The below table contains county codes for Massachusetts. 
 
-
-25001	Barnstable	MA
-25003	Berkshire	MA
-25005	Bristol	MA
-25007	Dukes	MA
-25009	Essex	MA
-25011	Franklin	MA
-25013	Hampden	MA
-25015	Hampshire	MA
-25017	Middlesex	MA
-25019	Nantucket	MA
-25021	Norfolk	MA
-25023	Plymouth	MA
-25025	Suffolk	MA
-25027	Worcester	MA
+| County | Code |
+| ------- | ------- |
+| 25001 | Barnstable |
+| 25003 | Berkshire |
+| 25005 | Bristol |
+| 25007 | Dukes |
+| 25009 | Essex |
+| 25011 | Franklin |
+| 25013 | Hampden |
+| 25015 | Hampshire |
+| 25017 | Middlesex |
+| 25019 | Nantucket |
+| 25021 | Norfolk |
+| 25023 | Plymouth |
+| 25025 | Suffolk |
+| 25027 | Worcester |
 
 <!--
 type: tab
@@ -1465,89 +1470,89 @@ The below table contains county codes for Michigan.
 
 | County | Code |
 | ------- | ------- |
-26001	Alcona	MI
-26003	Alger	MI
-26005	Allegan	MI
-26007	Alpena	MI
-26009	Antrim	MI
-26011	Arenac	MI
-26013	Baraga	MI
-26015	Barry	MI
-26017	Bay	MI
-26019	Benzie	MI
-26021	Berrien	MI
-26023	Branch	MI
-26025	Calhoun	MI
-26027	Cass	MI
-26029	Charlevoix	MI
-26031	Cheboygan	MI
-26033	Chippewa	MI
-26035	Clare	MI
-26037	Clinton	MI
-26039	Crawford	MI
-26041	Delta	MI
-26043	Dickinson	MI
-26045	Eaton	MI
-26047	Emmet	MI
-26049	Genesee	MI
-26051	Gladwin	MI
-26053	Gogebic	MI
-26055	Grand Traverse	MI
-26057	Gratiot	MI
-26059	Hillsdale	MI
-26061	Houghton	MI
-26063	Huron	MI
-26065	Ingham	MI
-26067	Ionia	MI
-26069	Iosco	MI
-26071	Iron	MI
-26073	Isabella	MI
-26075	Jackson	MI
-26077	Kalamazoo	MI
-26079	Kalkaska	MI
-26081	Kent	MI
-26083	Keweenaw	MI
-26085	Lake	MI
-26087	Lapeer	MI
-26089	Leelanau	MI
-26091	Lenawee	MI
-26093	Livingston	MI
-26095	Luce	MI
-26097	Mackinac	MI
-26099	Macomb	MI
-26101	Manistee	MI
-26103	Marquette	MI
-26105	Mason	MI
-26107	Mecosta	MI
-26109	Menominee	MI
-26111	Midland	MI
-26113	Missaukee	MI
-26115	Monroe	MI
-26117	Montcalm	MI
-26119	Montmorency	MI
-26121	Muskegon	MI
-26123	Newaygo	MI
-26125	Oakland	MI
-26127	Oceana	MI
-26129	Ogemaw	MI
-26131	Ontonagon	MI
-26133	Osceola	MI
-26135	Oscoda	MI
-26137	Otsego	MI
-26139	Ottawa	MI
-26141	Presque Isle	MI
-26143	Roscommon	MI
-26145	Saginaw	MI
-26147	St Clair	MI
-26149	St Joseph	MI
-26151	Sanilac	MI
-26153	Schoolcraft	MI
-26155	Shiawassee	MI
-26157	Tuscola	MI
-26159	Van Buren	MI
-26161	Washtenaw	MI
-26163	Wayne	MI
-26165	Wexford	MI
+| Alcona | 26001 |
+| Alger | 26003 |
+| Allegan | 26005 |
+| Alpena | 26007 |
+| Antrim | 26009 |
+| Arenac | 26011 |
+| Baraga | 26013 |
+| Barry | 26015 |
+| Bay | 26017 |
+| Benzie | 26019 |
+| Berrien | 26021 |
+| Branch | 26023 |
+| Calhoun | 26025 |
+| Cass | 26027 |
+| Charlevoix | 26029 |
+| Cheboygan | 26031 |
+| Chippewa | 26033 |
+| Clare | 26035 |
+| Clinton | 26037 |
+| Crawford | 26039 |
+| Delta | 26041 |
+| Dickinson | 26043 |
+| Eaton | 26045 |
+| Emmet | 26047 |
+| Genesee | 26049 |
+| Gladwin | 26051 |
+| Gogebic | 26053 |
+| Grand Trav | 26055 |
+| Gratiot | 26057 |
+| Hillsdale | 26059 |
+| Houghton | 26061 |
+| Huron | 26063 |
+| Ingham | 26065 |
+| Ionia | 26067 |
+| Iosco | 26069 |
+| Iron | 26071 |
+| Isabella | 26073 |
+| Jackson | 26075 |
+| Kalamazoo | 26077 |
+| Kalkaska | 26079 |
+| Kent | 26081 |
+| Keweenaw | 26083 |
+| Lake | 26085 |
+| Lapeer | 26087 |
+| Leelanau | 26089 |
+| Lenawee | 26091 |
+| Livingston | 26093 |
+| Luce | 26095 |
+| Mackinac | 26097 |
+| Macomb | 26099 |
+| Manistee | 26101 |
+| Marquette | 26103 |
+| Mason | 26105 |
+| Mecosta | 26107 |
+| Menonee | 26109 |
+| dland | 26111 |
+| ssaukee | 26113 |
+| Monroe | 26115 |
+| Montcalm | 26117 |
+| Montmoren | 26119 |
+| Muskegon | 26121 |
+| Newaygo | 26123 |
+| Oakland | 26125 |
+| Oceana | 26127 |
+| Ogemaw | 26129 |
+| Ontonagon | 26131 |
+| Osceola | 26133 |
+| Oscoda | 26135 |
+| Otsego | 26137 |
+| Ottawa | 26139 |
+| Presque Isl | 26141 |
+| Roscommo | 26143 |
+| Saginaw | 26145 |
+| St Clair | 26147 |
+| St Joseph | 26149 |
+| Sanilac | 26151 |
+| Schoolcraft | 26153 |
+| Shiawassee | 26155 |
+| Tuscola | 26157 |
+| Van Buren | 26159 |
+| Washtenaw | 26161 |
+| Wayne | 26163 |
+| Wexford | 26165 |
 
 <!--
 type: tab
@@ -1558,93 +1563,93 @@ The below table contains county codes for Minnesota.
 
 | County | Code |
 | ------- | ------- |
-27001	Aitkin	MN
-27003	Anoka	MN
-27005	Becker	MN
-27007	Beltrami	MN
-27009	Benton	MN
-27011	Big Stone	MN
-27013	Blue Earth	MN
-27015	Brown	MN
-27017	Carlton	MN
-27019	Carver	MN
-27021	Cass	MN
-27023	Chippewa	MN
-27025	Chisago	MN
-27027	Clay	MN
-27029	Clearwater	MN
-27031	Cook	MN
-27033	Cottonwood	MN
-27035	Crow Wing	MN
-27037	Dakota	MN
-27039	Dodge	MN
-27041	Douglas	MN
-27043	Faribault	MN
-27045	Fillmore	MN
-27047	Freeborn	MN
-27049	Goodhue	MN
-27051	Grant	MN
-27053	Hennepin	MN
-27055	Houston	MN
-27057	Hubbard	MN
-27059	Isanti	MN
-27061	Itasca	MN
-27063	Jackson	MN
-27065	Kanabec	MN
-27067	Kandiyohi	MN
-27069	Kittson	MN
-27071	Koochiching	MN
-27073	Lac qui Parle	MN
-27075	Lake	MN
-27077	Lake of the Woods	MN
-27079	Le Sueur	MN
-27081	Lincoln	MN
-27083	Lyon	MN
-27085	McLeod	MN
-27087	Mahnomen	MN
-27089	Marshall	MN
-27091	Martin	MN
-27093	Meeker	MN
-27095	Mille Lacs	MN
-27097	Morrison	MN
-27099	Mower	MN
-27101	Murray	MN
-27103	Nicollet	MN
-27105	Nobles	MN
-27107	Norman	MN
-27109	Olmsted	MN
-27111	Otter Tail	MN
-27113	Pennington	MN
-27115	Pine	MN
-27117	Pipestone	MN
-27119	Polk	MN
-27121	Pope	MN
-27123	Ramsey	MN
-27125	Red Lake	MN
-27127	Redwood	MN
-27129	Renville	MN
-27131	Rice	MN
-27133	Rock	MN
-27135	Roseau	MN
-27137	St Louis	MN
-27139	Scott	MN
-27141	Sherburne	MN
-27143	Sibley	MN
-27145	Stearns	MN
-27147	Steele	MN
-27149	Stevens	MN
-27151	Swift	MN
-27153	Todd	MN
-27155	Traverse	MN
-27157	Wabasha	MN
-27159	Wadena	MN
-27161	Waseca	MN
-27163	Washington	MN
-27165	Watonwan	MN
-27167	Wilkin	MN
-27169	Winona	MN
-27171	Wright	MN
-27173	Yellow Medicine	MN
+| Aitkin | 27001 |
+| Anoka | 27003 |
+| Becker | 27005 |
+| Beltrami | 27007 |
+| Benton | 27009 |
+| Big Stone | 27011 |
+| Blue Earth | 27013 |
+| Brown | 27015 |
+| Carlton | 27017 |
+| Carver | 27019 |
+| Cass | 27021 |
+| Chippewa | 27023 |
+| Chisago | 27025 |
+| Clay | 27027 |
+| Clearwater | 27029 |
+| Cook | 27031 |
+| Cottonwood | 27033 |
+| Crow Wing | 27035 |
+| Dakota | 27037 |
+| Dodge | 27039 |
+| Douglas | 27041 |
+| Faribault | 27043 |
+| Fillmore | 27045 |
+| Freeborn | 27047 |
+| Goodhue | 27049 |
+| Grant | 27051 |
+| Hennepin | 27053 |
+| Houston | 27055 |
+| Hubbard | 27057 |
+| Isanti | 27059 |
+| Itasca | 27061 |
+| Jackson | 27063 |
+| Kanabec | 27065 |
+| Kandiyohi | 27067 |
+| Kittson | 27069 |
+| Koochiching | 27071 |
+| Lac qui Parle | 27073 |
+| Lake | 27075 |
+| Lake of the Woo | 27077 |
+| Le Sueur | 27079 |
+| Lincoln | 27081 |
+| Lyon | 27083 |
+| McLeod | 27085 |
+| Mahnomen | 27087 |
+| Marshall | 27089 |
+| Martin | 27091 |
+| Meeker | 27093 |
+| Mille Lacs | 27095 |
+| Morrison | 27097 |
+| Mower | 27099 |
+| Murray | 27101 |
+| Nicollet | 27103 |
+| Nobles | 27105 |
+| Norman | 27107 |
+| Olmsted | 27109 |
+| Otter Tail | 27111 |
+| Pennington | 27113 |
+| Pine | 27115 |
+| Pipestone | 27117 |
+| Polk | 27119 |
+| Pope | 27121 |
+| Ramsey | 27123 |
+| Red Lake | 27125 |
+| Redwood | 27127 |
+| Renville | 27129 |
+| Rice | 27131 |
+| Rock | 27133 |
+| Roseau | 27135 |
+| St Louis | 27137 |
+| Scott | 27139 |
+| Sherburne | 27141 |
+| Sibley | 27143 |
+| Stearns | 27145 |
+| Steele | 27147 |
+| Stevens | 27149 |
+| Swift | 27151 |
+| Todd | 27153 |
+| Traverse | 27155 |
+| Wabasha | 27157 |
+| Wadena | 27159 |
+| Waseca | 27161 |
+| Washington | 27163 |
+| Watonwan | 27165 |
+| Wilkin | 27167 |
+| Winona | 27169 |
+| Wright | 27171 |
+| Yellow Medicine | 27173 |
 
 <!--
 type: tab
@@ -1655,88 +1660,88 @@ The below table contains county codes for Mississippi.
 
 | County | Code |
 | ------- | ------- |
-28001	Adams	MS
-28003	Alcorn	MS
-28005	Amite	MS
-28007	Attala	MS
-28009	Benton	MS
-28011	Bolivar	MS
-28013	Calhoun	MS
-28015	Carroll	MS
-28017	Chickasaw	MS
-28019	Choctaw	MS
-28021	Claiborne	MS
-28023	Clarke	MS
-28025	Clay	MS
-28027	Coahoma	MS
-28029	Copiah	MS
-28031	Covington	MS
-28033	De Soto	MS
-28035	Forrest	MS
-28037	Franklin	MS
-28039	George	MS
-28041	Greene	MS
-28043	Grenada	MS
-28045	Hancock	MS
-28047	Harrison	MS
-28049	Hinds	MS
-28051	Holmes	MS
-28053	Humphreys	MS
-28055	Issaquena	MS
-28057	Itawamba	MS
-28059	Jackson	MS
-28061	Jasper	MS
-28063	Jefferson	MS
-28065	Jefferson Davis	MS
-28067	Jones	MS
-28069	Kemper	MS
-28071	Lafayette	MS
-28073	Lamar	MS
-28075	Lauderdale	MS
-28077	Lawrence	MS
-28079	Leake	MS
-28081	Lee	MS
-28083	Leflore	MS
-28085	Lincoln	MS
-28087	Lowndes	MS
-28089	Madison	MS
-28091	Marion	MS
-28093	Marshall	MS
-28095	Monroe	MS
-28097	Montgomery	MS
-28099	Neshoba	MS
-28101	Newton	MS
-28103	Noxubee	MS
-28105	Oktibbeha	MS
-28107	Panola	MS
-28109	Pearl River	MS
-28111	Perry	MS
-28113	Pike	MS
-28115	Pontotoc	MS
-28117	Prentiss	MS
-28119	Quitman	MS
-28121	Rankin	MS
-28123	Scott	MS
-28125	Sharkey	MS
-28127	Simpson	MS
-28129	Smith	MS
-28131	Stone	MS
-28133	Sunflower	MS
-28135	Tallahatchie	MS
-28137	Tate	MS
-28139	Tippah	MS
-28141	Tishomingo	MS
-28143	Tunica	MS
-28145	Union	MS
-28147	Walthall	MS
-28149	Warren	MS
-28151	Washington	MS
-28153	Wayne	MS
-28155	Webster	MS
-28157	Wilkinson	MS
-28159	Winston	MS
-28161	Yalobusha	MS
-28163	Yazoo	MS
+| Adams | 28001 |
+| Alcorn | 28003 |
+| Amite | 28005 |
+| Attala | 28007 |
+| Benton | 28009 |
+| Bolivar | 28011 |
+| Calhoun | 28013 |
+| Carroll | 28015 |
+| Chickasaw | 28017 |
+| Choctaw | 28019 |
+| Claiborne | 28021 |
+| Clarke | 28023 |
+| Clay | 28025 |
+| Coahoma | 28027 |
+| Copiah | 28029 |
+| Covington | 28031 |
+| De Soto | 28033 |
+| Forrest | 28035 |
+| Franklin | 28037 |
+| George | 28039 |
+| Greene | 28041 |
+| Grenada | 28043 |
+| Hancock | 28045 |
+| Harrison | 28047 |
+| Hinds | 28049 |
+| Holmes | 28051 |
+| Humphreys | 28053 |
+| Issaquena | 28055 |
+| Itawamba | 28057 |
+| Jackson | 28059 |
+| Jasper | 28061 |
+| Jefferson | 28063 |
+| Jefferson Davis | 28065 |
+| Jones | 28067 |
+| Kemper | 28069 |
+| Lafayette | 28071 |
+| Lamar | 28073 |
+| Lauderdale | 28075 |
+| Lawrence | 28077 |
+| Leake | 28079 |
+| Lee | 28081 |
+| Leflore | 28083 |
+| Lincoln | 28085 |
+| Lowndes | 28087 |
+| Madison | 28089 |
+| Marion | 28091 |
+| Marshall | 28093 |
+| Monroe | 28095 |
+| Montgomery | 28097 |
+| Neshoba | 28099 |
+| Newton | 28101 |
+| Noxubee | 28103 |
+| Oktibbeha | 28105 |
+| Panola | 28107 |
+| Pearl River | 28109 |
+| Perry | 28111 |
+| Pike | 28113 |
+| Pontotoc | 28115 |
+| Prentiss | 28117 |
+| Quitman | 28119 |
+| Rankin | 28121 |
+| Scott | 28123 |
+| Sharkey | 28125 |
+| Simpson | 28127 |
+| Smith | 28129 |
+| Stone | 28131 |
+| Sunflower | 28133 |
+| Tallahatchie | 28135 |
+| Tate | 28137 |
+| Tippah | 28139 |
+| Tishomingo | 28141 |
+| Tunica | 28143 |
+| Union | 28145 |
+| Walthall | 28147 |
+| Warren | 28149 |
+| Washington | 28151 |
+| Wayne | 28153 |
+| Webster | 28155 |
+| Wilkinson | 28157 |
+| Winston | 28159 |
+| Yalobusha | 28161 |
+| Yazoo | 28163 |
 
 <!--
 type: tab
@@ -1747,121 +1752,121 @@ The below table contains county codes for Missouri.
 
 | County | Code |
 | ------- | ------- |
-29001	Adair	MO
-29003	Andrew	MO
-29005	Atchison	MO
-29007	Audrain	MO
-29009	Barry	MO
-29011	Barton	MO
-29013	Bates	MO
-29015	Benton	MO
-29017	Bollinger	MO
-29019	Boone	MO
-29021	Buchanan	MO
-29023	Butler	MO
-29025	Caldwell	MO
-29027	Callaway	MO
-29029	Camden	MO
-29031	Cape Girardeau	MO
-29033	Carroll	MO
-29035	Carter	MO
-29037	Cass	MO
-29039	Cedar	MO
-29041	Chariton	MO
-29043	Christian	MO
-29045	Clark	MO
-29047	Clay	MO
-29049	Clinton	MO
-29051	Cole	MO
-29053	Cooper	MO
-29055	Crawford	MO
-29057	Dade	MO
-29059	Dallas	MO
-29061	Daviess	MO
-29063	De Kalb	MO
-29065	Dent	MO
-29067	Douglas	MO
-29069	Dunklin	MO
-29071	Franklin	MO
-29073	Gasconade	MO
-29075	Gentry	MO
-29077	Greene	MO
-29079	Grundy	MO
-29081	Harrison	MO
-29083	Henry	MO
-29085	Hickory	MO
-29087	Holt	MO
-29089	Howard	MO
-29091	Howell	MO
-29093	Iron	MO
-29095	Jackson	MO
-29097	Jasper	MO
-29099	Jefferson	MO
-29101	Johnson	MO
-29103	Knox	MO
-29105	Laclede	MO
-29107	Lafayette	MO
-29109	Lawrence	MO
-29111	Lewis	MO
-29113	Lincoln	MO
-29115	Linn	MO
-29117	Livingston	MO
-29119	McDonald	MO
-29121	Macon	MO
-29123	Madison	MO
-29125	Maries	MO
-29127	Marion	MO
-29129	Mercer	MO
-29131	Miller	MO
-29133	Mississippi	MO
-29135	Moniteau	MO
-29137	Monroe	MO
-29139	Montgomery	MO
-29141	Morgan	MO
-29143	New Madrid	MO
-29145	Newton	MO
-29147	Nodaway	MO
-29149	Oregon	MO
-29151	Osage	MO
-29153	Ozark	MO
-29155	Pemiscot	MO
-29157	Perry	MO
-29159	Pettis	MO
-29161	Phelps	MO
-29163	Pike	MO
-29165	Platte	MO
-29167	Polk	MO
-29169	Pulaski	MO
-29171	Putnam	MO
-29173	Ralls	MO
-29175	Randolph	MO
-29177	Ray	MO
-29179	Reynolds	MO
-29181	Ripley	MO
-29183	St Charles	MO
-29185	St Clair	MO
-29186	Ste. Genevieve	MO
-29187	St Francois	MO
-29189	St Louis	MO
-29195	Saline	MO
-29197	Schuyler	MO
-29199	Scotland	MO
-29201	Scott	MO
-29203	Shannon	MO
-29205	Shelby	MO
-29207	Stoddard	MO
-29209	Stone	MO
-29211	Sullivan	MO
-29213	Taney	MO
-29215	Texas	MO
-29217	Vernon	MO
-29219	Warren	MO
-29221	Washington	MO
-29223	Wayne	MO
-29225	Webster	MO
-29227	Worth	MO
-29229	Wright	MO
-29510	St Louis City	MO
+| Adair | 29001 |
+| Andrew | 29003 |
+| Atchison | 29005 |
+| Audrain | 29007 |
+| Barry | 29009 |
+| Barton | 29011 |
+| Bates | 29013 |
+| Benton | 29015 |
+| Bollinger | 29017 |
+| Boone | 29019 |
+| Buchanan | 29021 |
+| Butler | 29023 |
+| Caldwell | 29025 |
+| Callaway | 29027 |
+| Camden | 29029 |
+| Cape Girardeau | 29031 |
+| Carroll | 29033 |
+| Carter | 29035 |
+| Cass | 29037 |
+| Cedar | 29039 |
+| Chariton | 29041 |
+| Christian | 29043 |
+| Clark | 29045 |
+| Clay | 29047 |
+| Clinton | 29049 |
+| Cole | 29051 |
+| Cooper | 29053 |
+| Crawford | 29055 |
+| Dade | 29057 |
+| Dallas | 29059 |
+| Daviess | 29061 |
+| De Kalb | 29063 |
+| Dent | 29065 |
+| Douglas | 29067 |
+| Dunklin | 29069 |
+| Franklin | 29071 |
+| Gasconade | 29073 |
+| Gentry | 29075 |
+| Greene | 29077 |
+| Grundy | 29079 |
+| Harrison | 29081 |
+| Henry | 29083 |
+| Hickory | 29085 |
+| Holt | 29087 |
+| Howard | 29089 |
+| Howell | 29091 |
+| Iron | 29093 |
+| Jackson | 29095 |
+| Jasper | 29097 |
+| Jefferson | 29099 |
+| Johnson | 29101 |
+| Knox | 29103 |
+| Laclede | 29105 |
+| Lafayette | 29107 |
+| Lawrence | 29109 |
+| Lewis | 29111 |
+| Lincoln | 29113 |
+| Linn | 29115 |
+| Livingston | 29117 |
+| McDonald | 29119 |
+| Macon | 29121 |
+| Madison | 29123 |
+| Maries | 29125 |
+| Marion | 29127 |
+| Mercer | 29129 |
+| Miller | 29131 |
+| Mississippi | 29133 |
+| niteau | 29135 |
+| nroe | 29137 |
+| ntgomery | 29139 |
+| rgan | 29141 |
+| New Madrid | 29143 |
+| Newton | 29145 |
+| Nodaway | 29147 |
+| Oregon | 29149 |
+| Osage | 29151 |
+| Ozark | 29153 |
+| Pemiscot | 29155 |
+| Perry | 29157 |
+| Pettis | 29159 |
+| Phelps | 29161 |
+| Pike | 29163 |
+| Platte | 29165 |
+| Polk | 29167 |
+| Pulaski | 29169 |
+| Putnam | 29171 |
+| Ralls | 29173 |
+| Randolph | 29175 |
+| Ray | 29177 |
+| Reynolds | 29179 |
+| Ripley | 29181 |
+| St Charles | 29183 |
+| St Clair | 29185 |
+| Ste. Genevieve | 29186 |
+| St Francois | 29187 |
+| St Louis | 29189 |
+| Saline | 29195 |
+| Schuyler | 29197 |
+| Scotland | 29199 |
+| Scott | 29201 |
+| Shannon | 29203 |
+| Shelby | 29205 |
+| Stoddard | 29207 |
+| Stone | 29209 |
+| Sullivan | 29211 |
+| Taney | 29213 |
+| Texas | 29215 |
+| Vernon | 29217 |
+| Warren | 29219 |
+| Washington | 29221 |
+| Wayne | 29223 |
+| Webster | 29225 |
+| Worth | 29227 |
+| Wright | 29229 |
+| St Louis City | 29510 |
 
 <!--
 type: tab
@@ -1872,63 +1877,63 @@ The below table contains county codes for Montana.
 
 | County | Code |
 | ------- | ------- |
-30001	Beaverhead	MT
-30003	Big Horn	MT
-30005	Blaine	MT
-30007	Broadwater	MT
-30009	Carbon	MT
-30011	Carter	MT
-30013	Cascade	MT
-30015	Chouteau	MT
-30017	Custer	MT
-30019	Daniels	MT
-30021	Dawson	MT
-30023	Deer Lodge	MT
-30025	Fallon	MT
-30027	Fergus	MT
-30029	Flathead	MT
-30031	Gallatin	MT
-30033	Garfield	MT
-30035	Glacier	MT
-30037	Golden Valley	MT
-30039	Granite	MT
-30041	Hill	MT
-30043	Jefferson	MT
-30045	Judith Basin	MT
-30047	Lake	MT
-30049	Lewis and Clark	MT
-30051	Liberty	MT
-30053	Lincoln	MT
-30055	McCone	MT
-30057	Madison	MT
-30059	Meagher	MT
-30061	Mineral	MT
-30063	Missoula	MT
-30065	Musselshell	MT
-30067	Park	MT
-30069	Petroleum	MT
-30071	Phillips	MT
-30073	Pondera	MT
-30075	Powder River	MT
-30077	Powell	MT
-30079	Prairie	MT
-30081	Ravalli	MT
-30083	Richland	MT
-30085	Roosevelt	MT
-30087	Rosebud	MT
-30089	Sanders	MT
-30091	Sheridan	MT
-30093	Silver Bow	MT
-30095	Stillwater	MT
-30097	Sweet Grass	MT
-30099	Teton	MT
-30101	Toole	MT
-30103	Treasure	MT
-30105	Valley	MT
-30107	Wheatland	MT
-30109	Wibaux	MT
-30111	Yellowstone	MT
-30113	Yellowstone Nat Park	MT
+| Beaverhead | 30001 |
+| Big Horn | 30003 |
+| Blaine | 30005 |
+| Broadwater | 30007 |
+| Carbon | 30009 |
+| Carter | 30011 |
+| Cascade | 30013 |
+| Chouteau | 30015 |
+| Custer | 30017 |
+| Daniels | 30019 |
+| Dawson | 30021 |
+| Deer Lodge | 30023 |
+| Fallon | 30025 |
+| Fergus | 30027 |
+| Flathead | 30029 |
+| Gallatin | 30031 |
+| Garfield | 30033 |
+| Glacier | 30035 |
+| Golden Valley | 30037 |
+| Granite | 30039 |
+| Hill | 30041 |
+| Jefferson | 30043 |
+| Judith Basin | 30045 |
+| Lake | 30047 |
+| Lewis and Clark | 30049 |
+| Liberty | 30051 |
+| Lincoln | 30053 |
+| McCone | 30055 |
+| Madison | 30057 |
+| Meagher | 30059 |
+| Mineral | 30061 |
+| Missoula | 30063 |
+| Musselshell | 30065 |
+| Park | 30067 |
+| Petroleum | 30069 |
+| Phillips | 30071 |
+| Pondera | 30073 |
+| Powder River | 30075 |
+| Powell | 30077 |
+| Prairie | 30079 |
+| Ravalli | 30081 |
+| Richland | 30083 |
+| Roosevelt | 30085 |
+| Rosebud | 30087 |
+| Sanders | 30089 |
+| Sheridan | 30091 |
+| Silver Bow | 30093 |
+| Stillwater | 30095 |
+| Sweet Grass | 30097 |
+| Teton | 30099 |
+| Toole | 30101 |
+| Treasure | 30103 |
+| Valley | 30105 |
+| Wheatland | 30107 |
+| Wibaux | 30109 |
+| Yellowstone | 30111 |
+| Yellowstone Nat Park | 30113 |
 
 <!--
 type: tab
@@ -1939,99 +1944,99 @@ The below table contains county codes for Nebraska.
 
 | County | Code |
 | ------- | ------- |
-31001	Adams	NE
-31003	Antelope	NE
-31005	Arthur	NE
-31007	Banner	NE
-31009	Blaine	NE
-31011	Boone	NE
-31013	Box Butte	NE
-31015	Boyd	NE
-31017	Brown	NE
-31019	Buffalo	NE
-31021	Burt	NE
-31023	Butler	NE
-31025	Cass	NE
-31027	Cedar	NE
-31029	Chase	NE
-31031	Cherry	NE
-31033	Cheyenne	NE
-31035	Clay	NE
-31037	Colfax	NE
-31039	Cuming	NE
-31041	Custer	NE
-31043	Dakota	NE
-31045	Dawes	NE
-31047	Dawson	NE
-31049	Deuel	NE
-31051	Dixon	NE
-31053	Dodge	NE
-31055	Douglas	NE
-31057	Dundy	NE
-31059	Fillmore	NE
-31061	Franklin	NE
-31063	Frontier	NE
-31065	Furnas	NE
-31067	Gage	NE
-31069	Garden	NE
-31071	Garfield	NE
-31073	Gosper	NE
-31075	Grant	NE
-31077	Greeley	NE
-31079	Hall	NE
-31081	Hamilton	NE
-31083	Harlan	NE
-31085	Hayes	NE
-31087	Hitchcock	NE
-31089	Holt	NE
-31091	Hooker	NE
-31093	Howard	NE
-31095	Jefferson	NE
-31097	Johnson	NE
-31099	Kearney	NE
-31101	Keith	NE
-31103	Keya Paha	NE
-31105	Kimball	NE
-31107	Knox	NE
-31109	Lancaster	NE
-31111	Lincoln	NE
-31113	Logan	NE
-31115	Loup	NE
-31117	McPherson	NE
-31119	Madison	NE
-31121	Merrick	NE
-31123	Morrill	NE
-31125	Nance	NE
-31127	Nemaha	NE
-31129	Nuckolls	NE
-31131	Otoe	NE
-31133	Pawnee	NE
-31135	Perkins	NE
-31137	Phelps	NE
-31139	Pierce	NE
-31141	Platte	NE
-31143	Polk	NE
-31145	Red Willow	NE
-31147	Richardson	NE
-31149	Rock	NE
-31151	Saline	NE
-31153	Sarpy	NE
-31155	Saunders	NE
-31157	Scotts Bluff	NE
-31159	Seward	NE
-31161	Sheridan	NE
-31163	Sherman	NE
-31165	Sioux	NE
-31167	Stanton	NE
-31169	Thayer	NE
-31171	Thomas	NE
-31173	Thurston	NE
-31175	Valley	NE
-31177	Washington	NE
-31179	Wayne	NE
-31181	Webster	NE
-31183	Wheeler	NE
-31185	York	NE
+| Adams | 31001 |
+| Antelope | 31003 |
+| Arthur | 31005 |
+| Banr | 31007 |
+| Blai | 31009 |
+| Boo | 31011 |
+| Box Butte | 31013 |
+| Boyd | 31015 |
+| Brown | 31017 |
+| Buffalo | 31019 |
+| Burt | 31021 |
+| Butler | 31023 |
+| Cass | 31025 |
+| Cedar | 31027 |
+| Chase | 31029 |
+| Cherry | 31031 |
+| Cheyen | 31033 |
+| Clay | 31035 |
+| Colfax | 31037 |
+| Cuming | 31039 |
+| Custer | 31041 |
+| Dakota | 31043 |
+| Dawes | 31045 |
+| Dawson | 31047 |
+| Deuel | 31049 |
+| Dixon | 31051 |
+| Dodge | 31053 |
+| Douglas | 31055 |
+| Dundy | 31057 |
+| Fillmore | 31059 |
+| Franklin | 31061 |
+| Frontier | 31063 |
+| Furnas | 31065 |
+| Gage | 31067 |
+| Garden | 31069 |
+| Garfield | 31071 |
+| Gosper | 31073 |
+| Grant | 31075 |
+| Greeley | 31077 |
+| Hall | 31079 |
+| Hamilton | 31081 |
+| Harlan | 31083 |
+| Hayes | 31085 |
+| Hitchcock | 31087 |
+| Holt | 31089 |
+| Hooker | 31091 |
+| Howard | 31093 |
+| Jefferson | 31095 |
+| Johnson | 31097 |
+| Keary | 31099 |
+| Keith | 31101 |
+| Keya Paha | 31103 |
+| Kimball | 31105 |
+| Knox | 31107 |
+| Lancaster | 31109 |
+| Lincoln | 31111 |
+| Logan | 31113 |
+| Loup | 31115 |
+| McPherson | 31117 |
+| Madison | 31119 |
+| Merrick | 31121 |
+| Morrill | 31123 |
+| Nance | 31125 |
+| maha | 31127 |
+| Nuckolls | 31129 |
+| Otoe | 31131 |
+| Pawe | 31133 |
+| Perkins | 31135 |
+| Phelps | 31137 |
+| Pierce | 31139 |
+| Platte | 31141 |
+| Polk | 31143 |
+| Red Willow | 31145 |
+| Richardson | 31147 |
+| Rock | 31149 |
+| Sali | 31151 |
+| Sarpy | 31153 |
+| Saunders | 31155 |
+| Scotts Bluff | 31157 |
+| Seward | 31159 |
+| Sheridan | 31161 |
+| Sherman | 31163 |
+| Sioux | 31165 |
+| Stanton | 31167 |
+| Thayer | 31169 |
+| Thomas | 31171 |
+| Thurston | 31173 |
+| Valley | 31175 |
+| Washington | 31177 |
+| Way | 31179 |
+| Webster | 31181 |
+| Wheeler | 31183 |
+| York | 31185 |
 
 <!--
 type: tab
@@ -2040,23 +2045,26 @@ title: Nevada
 
 The below table contains county codes for Nevada.
 
-32001	Churchill	NV
-32003	Clark	NV
-32005	Douglas	NV
-32007	Elko	NV
-32009	Esmeralda	NV
-32011	Eureka	NV
-32013	Humboldt	NV
-32015	Lander	NV
-32017	Lincoln	NV
-32019	Lyon	NV
-32021	Mineral	NV
-32023	Nye	NV
-32027	Pershing	NV
-32029	Storey	NV
-32031	Washoe	NV
-32033	White Pine	NV
-32510	Carson City	NV
+| County | Code |
+| ------- | ------- |
+| Churchill | 32001 |
+| Clark | 32003 |
+| Douglas | 32005 |
+| Elko | 32007 |
+| Esmeralda | 32009 |
+| Eureka | 32011 |
+| Humboldt | 32013 |
+| Lander | 32015 |
+| Lincoln | 32017 |
+| Lyon | 32019 |
+| Mineral | 32021 |
+| Nye | 32023 |
+| Pershing | 32027 |
+| Storey | 32029 |
+| Washoe | 32031 |
+| White Pine | 32033 |
+| Carson City | 32510 |
+
 
 <!--
 type: tab
@@ -2067,16 +2075,16 @@ The below table contains county codes for New Hampshire.
 
 | County | Code |
 | ------- | ------- |
-33001	Belknap	NH
-33003	Carroll	NH
-33005	Cheshire	NH
-33007	Coos	NH
-33009	Grafton	NH
-33011	Hillsborough	NH
-33013	Merrimack	NH
-33015	Rockingham	NH
-33017	Strafford	NH
-33019	Sullivan	NH
+| Belknap | 33001 |
+| Carroll | 33003 |
+| Cheshire | 33005 |
+| Coos | 33007 |
+| Grafton | 33009 |
+| Hillsborough | 33011 |
+| Merrimack | 33013 |
+| Rockingham | 33015 |
+| Strafford | 33017 |
+| Sullivan | 33019 |
 
 <!--
 type: tab
@@ -2085,28 +2093,29 @@ title: New Jersey
 
 The below table contains county codes for New Jersey.
 
-34001	Atlantic	NJ
-34003	Bergen	NJ
-34005	Burlington	NJ
-34007	Camden	NJ
-34009	Cape May	NJ
-34011	Cumberland	NJ
-34013	Essex	NJ
-34015	Gloucester	NJ
-34017	Hudson	NJ
-34019	Hunterdon	NJ
-34021	Mercer	NJ
-34023	Middlesex	NJ
-34025	Monmouth	NJ
-34027	Morris	NJ
-34029	Ocean	NJ
-34031	Passaic	NJ
-34033	Salem	NJ
-34035	Somerset	NJ
-34037	Sussex	NJ
-34039	Union	NJ
-34041	Warren	NJ
-
+| County | Code |
+| ------- | ------- |
+| Atlantic | 34001 |
+| Bergen | 34003 |
+| Burlington | 34005 |
+| Camden | 34007 |
+| Cape May | 34009 |
+| Cumberlan | 34011 |
+| Essex | 34013 |
+| Gloucester | 34015 |
+| Hudson | 34017 |
+| Hunterdon | 34019 |
+| Mercer | 34021 |
+| Middlesex | 34023 |
+| Monmouth | 34025 |
+| Morris | 34027 |
+| Ocean | 34029 |
+| Passaic | 34031 |
+| Salem | 34033 |
+| Somerset | 34035 |
+| Sussex | 34037 |
+| Union | 34039 |
+| Warren | 34041 |
 <!--
 type: tab
 title: New Mexico
@@ -2114,39 +2123,41 @@ title: New Mexico
 
 The below table contains county codes for New Mexico.
 
-35001	Bernalillo	NM
-35003	Catron	NM
-35005	Chaves	NM
-35006	Cibola	NM
-35007	Colfax	NM
-35009	Curry	NM
-35011	De Baca	NM
-35013	Dona Ana	NM
-35015	Eddy	NM
-35017	Grant	NM
-35019	Guadalupe	NM
-35021	Harding	NM
-35023	Hidalgo	NM
-35025	Lea	NM
-35027	Lincoln	NM
-35028	Los Alamos	NM
-35029	Luna	NM
-35031	McKinley	NM
-35033	Mora	NM
-35035	Otero	NM
-35037	Quay	NM
-35039	Rio Arriba	NM
-35041	Roosevelt	NM
-35043	Sandoval	NM
-35045	San Juan	NM
-35047	San Miguel	NM
-35049	Santa Fe	NM
-35051	Sierra	NM
-35053	Socorro	NM
-35055	Taos	NM
-35057	Torrance	NM
-35059	Union	NM
-35061	Valencia	NM
+| County | Code |
+| ------- | ------- |
+| Bernalillo | 35001 |
+| Catron | 35003 |
+| Chaves | 35005 |
+| Cibola | 35006 |
+| Colfax | 35007 |
+| Curry | 35009 |
+| De Baca | 35011 |
+| Dona Ana | 35013 |
+| Eddy | 35015 |
+| Grant | 35017 |
+| Guadalupe | 35019 |
+| Harding | 35021 |
+| Hidalgo | 35023 |
+| Lea | 35025 |
+| Lincoln | 35027 |
+| Los Alamos | 35028 |
+| Luna | 35029 |
+| McKinley | 35031 |
+| Mora | 35033 |
+| Otero | 35035 |
+| Quay | 35037 |
+| Rio Arriba | 35039 |
+| Roosevelt | 35041 |
+| Sandoval | 35043 |
+| San Juan | 35045 |
+| San Miguel | 35047 |
+| Santa Fe | 35049 |
+| Sierra | 35051 |
+| Socorro | 35053 |
+| Taos | 35055 |
+| Torrance | 35057 |
+| Union | 35059 |
+| Valencia | 35061 |
 
 <!--
 type: tab
@@ -2157,68 +2168,68 @@ The below table contains county codes for New York.
 
 | County | Code |
 | ------- | ------- |
-36001	Albany	NY
-36003	Allegany	NY
-36005	Bronx	NY
-36007	Broome	NY
-36009	Cattaraugus	NY
-36011	Cayuga	NY
-36013	Chautauqua	NY
-36015	Chemung	NY
-36017	Chenango	NY
-36019	Clinton	NY
-36021	Columbia	NY
-36023	Cortland	NY
-36025	Delaware	NY
-36027	Dutchess	NY
-36029	Erie	NY
-36031	Essex	NY
-36033	Franklin	NY
-36035	Fulton	NY
-36037	Genesee	NY
-36039	Greene	NY
-36041	Hamilton	NY
-36043	Herkimer	NY
-36045	Jefferson	NY
-36047	Kings	NY
-36049	Lewis	NY
-36051	Livingston	NY
-36053	Madison	NY
-36055	Monroe	NY
-36057	Montgomery	NY
-36059	Nassau	NY
-36061	New York	NY
-36063	Niagara	NY
-36065	Oneida	NY
-36067	Onondaga	NY
-36069	Ontario	NY
-36071	Orange	NY
-36073	Orleans	NY
-36075	Oswego	NY
-36077	Otsego	NY
-36079	Putnam	NY
-36081	Queens	NY
-36083	Rensselaer	NY
-36085	Richmond	NY
-36087	Rockland	NY
-36089	St Lawrence	NY
-36091	Saratoga	NY
-36093	Schenectady	NY
-36095	Schoharie	NY
-36097	Schuyler	NY
-36099	Seneca	NY
-36101	Steuben	NY
-36103	Suffolk	NY
-36105	Sullivan	NY
-36107	Tioga	NY
-36109	Tompkins	NY
-36111	Ulster	NY
-36113	Warren	NY
-36115	Washington	NY
-36117	Wayne	NY
-36119	Westchester	NY
-36121	Wyoming	NY
-36123	Yates	NY
+| Alba | 36001 |
+| Allega | 36003 |
+| Bronx | 36005 |
+| Broome | 36007 |
+| Cattaraugus | 36009 |
+| Cayuga | 36011 |
+| Chautauqua | 36013 |
+| Chemung | 36015 |
+| Chenango | 36017 |
+| Clinton | 36019 |
+| Columbia | 36021 |
+| Cortland | 36023 |
+| Delaware | 36025 |
+| Dutchess | 36027 |
+| Erie | 36029 |
+| Essex | 36031 |
+| Franklin | 36033 |
+| Fulton | 36035 |
+| Genesee | 36037 |
+| Greene | 36039 |
+| Hamilton | 36041 |
+| Herkimer | 36043 |
+| Jefferson | 36045 |
+| Kings | 36047 |
+| Lewis | 36049 |
+| Livingston | 36051 |
+| Madison | 36053 |
+| Monroe | 36055 |
+| Montgomery | 36057 |
+| Nassau | 36059 |
+| New York | 36061 |
+| Niagara | 36063 |
+| Oneida | 36065 |
+| Onondaga | 36067 |
+| Ontario | 36069 |
+| Orange | 36071 |
+| Orleans | 36073 |
+| Oswego | 36075 |
+| Otsego | 36077 |
+| Putnam | 36079 |
+| Queens | 36081 |
+| Rensselaer | 36083 |
+| Richmond | 36085 |
+| Rockland | 36087 |
+| St Lawrence | 36089 |
+| Saratoga | 36091 |
+| Schenectady | 36093 |
+| Schoharie | 36095 |
+| Schuyler | 36097 |
+| Seneca | 36099 |
+| Steuben | 36101 |
+| Suffolk | 36103 |
+| Sullivan | 36105 |
+| Tioga | 36107 |
+| Tompkins | 36109 |
+| Ulster | 36111 |
+| Warren | 36113 |
+| Washington | 36115 |
+| Wayne | 36117 |
+| Westchester | 36119 |
+| Wyoming | 36121 |
+| Yates | 36123 |
 
 <!--
 type: tab
@@ -2227,106 +2238,108 @@ title: North Carolina
 
 The below table contains county codes for North Carolina.
 
-37001	Alamance	NC
-37003	Alexander	NC
-37005	Alleghany	NC
-37007	Anson	NC
-37009	Ashe	NC
-37011	Avery	NC
-37013	Beaufort	NC
-37015	Bertie	NC
-37017	Bladen	NC
-37019	Brunswick	NC
-37021	Buncombe	NC
-37023	Burke	NC
-37025	Cabarrus	NC
-37027	Caldwell	NC
-37029	Camden	NC
-37031	Carteret	NC
-37033	Caswell	NC
-37035	Catawba	NC
-37037	Chatham	NC
-37039	Cherokee	NC
-37041	Chowan	NC
-37043	Clay	NC
-37045	Cleveland	NC
-37047	Columbus	NC
-37049	Craven	NC
-37051	Cumberland	NC
-37053	Currituck	NC
-37055	Dare	NC
-37057	Davidson	NC
-37059	Davie	NC
-37061	Duplin	NC
-37063	Durham	NC
-37065	Edgecombe	NC
-37067	Forsyth	NC
-37069	Franklin	NC
-37071	Gaston	NC
-37073	Gates	NC
-37075	Graham	NC
-37077	Granville	NC
-37079	Greene	NC
-37081	Guilford	NC
-37083	Halifax	NC
-37085	Harnett	NC
-37087	Haywood	NC
-37089	Henderson	NC
-37091	Hertford	NC
-37093	Hoke	NC
-37095	Hyde	NC
-37097	Iredell	NC
-37099	Jackson	NC
-37101	Johnston	NC
-37103	Jones	NC
-37105	Lee	NC
-37107	Lenoir	NC
-37109	Lincoln	NC
-37111	McDowell	NC
-37113	Macon	NC
-37115	Madison	NC
-37117	Martin	NC
-37119	Mecklenburg	NC
-37121	Mitchell	NC
-37123	Montgomery	NC
-37125	Moore	NC
-37127	Nash	NC
-37129	New Hanover	NC
-37131	Northampton	NC
-37133	Onslow	NC
-37135	Orange	NC
-37137	Pamlico	NC
-37139	Pasquotank	NC
-37141	Pender	NC
-37143	Perquimans	NC
-37145	Person	NC
-37147	Pitt	NC
-37149	Polk	NC
-37151	Randolph	NC
-37153	Richmond	NC
-37155	Robeson	NC
-37157	Rockingham	NC
-37159	Rowan	NC
-37161	Rutherford	NC
-37163	Sampson	NC
-37165	Scotland	NC
-37167	Stanly	NC
-37169	Stokes	NC
-37171	Surry	NC
-37173	Swain	NC
-37175	Transylvania	NC
-37177	Tyrrell	NC
-37179	Union	NC
-37181	Vance	NC
-37183	Wake	NC
-37185	Warren	NC
-37187	Washington	NC
-37189	Watauga	NC
-37191	Wayne	NC
-37193	Wilkes	NC
-37195	Wilson	NC
-37197	Yadkin	NC
-37199	Yancey	NC
+| County | Code |
+| ------- | ------- |
+| Alamae | 37001 |
+| Alexander | 37003 |
+| Alleghany | 37005 |
+| Anson | 37007 |
+| Ashe | 37009 |
+| Avery | 37011 |
+| Beaufort | 37013 |
+| Bertie | 37015 |
+| Bladen | 37017 |
+| Brunswick | 37019 |
+| Buombe | 37021 |
+| Burke | 37023 |
+| Cabarrus | 37025 |
+| Caldwell | 37027 |
+| Camden | 37029 |
+| Carteret | 37031 |
+| Caswell | 37033 |
+| Catawba | 37035 |
+| Chatham | 37037 |
+| Cherokee | 37039 |
+| Chowan | 37041 |
+| Clay | 37043 |
+| Cleveland | 37045 |
+| Columbus | 37047 |
+| Craven | 37049 |
+| Cumberland | 37051 |
+| Currituck | 37053 |
+| Dare | 37055 |
+| Davidson | 37057 |
+| Davie | 37059 |
+| Duplin | 37061 |
+| Durham | 37063 |
+| Edgecombe | 37065 |
+| Forsyth | 37067 |
+| Franklin | 37069 |
+| Gaston | 37071 |
+| Gates | 37073 |
+| Graham | 37075 |
+| Granville | 37077 |
+| Greene | 37079 |
+| Guilford | 37081 |
+| Halifax | 37083 |
+| Harnett | 37085 |
+| Haywood | 37087 |
+| Henderson | 37089 |
+| Hertford | 37091 |
+| Hoke | 37093 |
+| Hyde | 37095 |
+| Iredell | 37097 |
+| Jackson | 37099 |
+| Johnston | 37101 |
+| Jones | 37103 |
+| Lee | 37105 |
+| Lenoir | 37107 |
+| Lioln | 37109 |
+| McDowell | 37111 |
+| Macon | 37113 |
+| Madison | 37115 |
+| Martin | 37117 |
+| Mecklenburg | 37119 |
+| Mitchell | 37121 |
+| Montgomery | 37123 |
+| Moore | 37125 |
+| Nash | 37127 |
+| New Hanover | 37129 |
+| Northampton | 37131 |
+| Onslow | 37133 |
+| Orange | 37135 |
+| Pamlico | 37137 |
+| Pasquotank | 37139 |
+| Pender | 37141 |
+| Perquimans | 37143 |
+| Person | 37145 |
+| Pitt | 37147 |
+| Polk | 37149 |
+| Randolph | 37151 |
+| Richmond | 37153 |
+| Robeson | 37155 |
+| Rockingham | 37157 |
+| Rowan | 37159 |
+| Rutherford | 37161 |
+| Sampson | 37163 |
+| Scotland | 37165 |
+| Stanly | 37167 |
+| Stokes | 37169 |
+| Surry | 37171 |
+| Swain | 37173 |
+| Transylvania | 37175 |
+| Tyrrell | 37177 |
+| Union | 37179 |
+| Vae | 37181 |
+| Wake | 37183 |
+| Warren | 37185 |
+| Washington | 37187 |
+| Watauga | 37189 |
+| Wayne | 37191 |
+| Wilkes | 37193 |
+| Wilson | 37195 |
+| Yadkin | 37197 |
+| Yaey | 37199 |
 
 <!--
 type: tab
@@ -2335,59 +2348,61 @@ title: North Dakota
 
 The below table contains county codes for North Dakota.
 
-38001	Adams	ND
-38003	Barnes	ND
-38005	Benson	ND
-38007	Billings	ND
-38009	Bottineau	ND
-38011	Bowman	ND
-38013	Burke	ND
-38015	Burleigh	ND
-38017	Cass	ND
-38019	Cavalier	ND
-38021	Dickey	ND
-38023	Divide	ND
-38025	Dunn	ND
-38027	Eddy	ND
-38029	Emmons	ND
-38031	Foster	ND
-38033	Golden Valley	ND
-38035	Grand Forks	ND
-38037	Grant	ND
-38039	Griggs	ND
-38041	Hettinger	ND
-38043	Kidder	ND
-38045	La Moure	ND
-38047	Logan	ND
-38049	McHenry	ND
-38051	McIntosh	ND
-38053	McKenzie	ND
-38055	McLean	ND
-38057	Mercer	ND
-38059	Morton	ND
-38061	Mountrail	ND
-38063	Nelson	ND
-38065	Oliver	ND
-38067	Pembina	ND
-38069	Pierce	ND
-38071	Ramsey	ND
-38073	Ransom	ND
-38075	Renville	ND
-38077	Richland	ND
-38079	Rolette	ND
-38081	Sargent	ND
-38083	Sheridan	ND
-38085	Sioux	ND
-38087	Slope	ND
-38089	Stark	ND
-38091	Steele	ND
-38093	Stutsman	ND
-38095	Towner	ND
-38097	Traill	ND
-38099	Walsh	ND
-38101	Ward	ND
-38103	Wells	ND
-38105	Williams	ND
+| County | Code |
+| ------- | ------- |
+| Adams | 38001 |
+| Barnes | 38003 |
+| Benson | 38005 |
+| Billings | 38007 |
+| Bottineau | 38009 |
+| Bowman | 38011 |
+| Burke | 38013 |
+| Burleigh | 38015 |
+| Cass | 38017 |
+| Cavalier | 38019 |
+| Dickey | 38021 |
+| Divide | 38023 |
+| Dunn | 38025 |
+| Eddy | 38027 |
+| Emmons | 38029 |
+| Foster | 38031 |
+| Golden Vall | 38033 |
+| Gra Forks | 38035 |
+| Grant | 38037 |
+| Griggs | 38039 |
+| Hettinger | 38041 |
+| Kidder | 38043 |
+| La Moure | 38045 |
+| Logan | 38047 |
+| McHenry | 38049 |
+| McIntosh | 38051 |
+| McKenzie | 38053 |
+| McLean | 38055 |
+| Mercer | 38057 |
+| Morton | 38059 |
+| Mountrail | 38061 |
+| Nelson | 38063 |
+| Oliver | 38065 |
+| Pembina | 38067 |
+| Pierce | 38069 |
+| Ramsey | 38071 |
+| Ransom | 38073 |
+| Renville | 38075 |
+| Richla | 38077 |
+| Rolette | 38079 |
+| Sargent | 38081 |
+| Sheridan | 38083 |
+| Sioux | 38085 |
+| Slope | 38087 |
+| Stark | 38089 |
+| Steele | 38091 |
+| Stutsman | 38093 |
+| Towner | 38095 |
+| Traill | 38097 |
+| Walsh | 38099 |
+| Ward | 38101 |
+| Wells | 38103 |
+| Williams | 38105 |
 
 <!--
 type: tab
@@ -2398,94 +2413,94 @@ The below table contains county codes for Ohio.
 
 | County | Code |
 | ------- | ------- |
-39001	Adams	OH
-39003	Allen	OH
-39005	Ashland	OH
-39007	Ashtabula	OH
-39009	Athens	OH
-39011	Auglaize	OH
-39013	Belmont	OH
-39015	Brown	OH
-39017	Butler	OH
-39019	Carroll	OH
-39021	Champaign	OH
-39023	Clark	OH
-39025	Clermont	OH
-39027	Clinton	OH
-39029	Columbiana	OH
-39031	Coshocton	OH
-39033	Crawford	OH
-39035	Cuyahoga	OH
-39037	Darke	OH
-39039	Defiance	OH
-39041	Delaware	OH
-39043	Erie	OH
-39045	Fairfield	OH
-39047	Fayette	OH
-39049	Franklin	OH
-39051	Fulton	OH
-39053	Gallia	OH
-39055	Geauga	OH
-39057	Greene	OH
-39059	Guernsey	OH
-39061	Hamilton	OH
-39063	Hancock	OH
-39065	Hardin	OH
-39067	Harrison	OH
-39069	Henry	OH
-39071	Highland	OH
-39073	Hocking	OH
-39075	Holmes	OH
-39077	Huron	OH
-39079	Jackson	OH
-39081	Jefferson	OH
-39083	Knox	OH
-39085	Lake	OH
-39087	Lawrence	OH
-39089	Licking	OH
-39091	Logan	OH
-39093	Lorain	OH
-39095	Lucas	OH
-39097	Madison	OH
-39099	Mahoning	OH
-39101	Marion	OH
-39103	Medina	OH
-39105	Meigs	OH
-39107	Mercer	OH
-39109	Miami	OH
-39111	Monroe	OH
-39113	Montgomery	OH
-39115	Morgan	OH
-39117	Morrow	OH
-39119	Muskingum	OH
-39121	Noble	OH
-39123	Ottawa	OH
-39125	Paulding	OH
-39127	Perry	OH
-39129	Pickaway	OH
-39131	Pike	OH
-39133	Portage	OH
-39135	Preble	OH
-39137	Putnam	OH
-39139	Richland	OH
-39141	Ross	OH
-39143	Sandusky	OH
-39145	Scioto	OH
-39147	Seneca	OH
-39149	Shelby	OH
-39151	Stark	OH
-39153	Summit	OH
-39155	Trumbull	OH
-39157	Tuscarawas	OH
-39159	Union	OH
-39161	Van Wert	OH
-39163	Vinton	OH
-39165	Warren	OH
-39167	Washington	OH
-39169	Wayne	OH
-39171	Williams	OH
-39173	Wood	OH
-39175	Wyandot	OH
+| Adams | 39001 |
+| Allen | 39003 |
+| Ashland | 39005 |
+| Ashtabula | 39007 |
+| Athens | 39009 |
+| Auglaize | 39011 |
+| Belmont | 39013 |
+| Brown | 39015 |
+| Butler | 39017 |
+| Carroll | 39019 |
+| Champaign | 39021 |
+| Clark | 39023 |
+| Clermont | 39025 |
+| Clinton | 39027 |
+| Columbian | 39029 |
+| Coshocton | 39031 |
+| Crawford | 39033 |
+| Cuyahoga | 39035 |
+| Darke | 39037 |
+| Defiance | 39039 |
+| Delaware | 39041 |
+| Erie | 39043 |
+| Fairfield | 39045 |
+| Fayette | 39047 |
+| Franklin | 39049 |
+| Fulton | 39051 |
+| Gallia | 39053 |
+| Geauga | 39055 |
+| Greene | 39057 |
+| Guernsey | 39059 |
+| Hamilton | 39061 |
+| Hancock | 39063 |
+| Hardin | 39065 |
+| Harrison | 39067 |
+| Henry | 39069 |
+| Highland | 39071 |
+| Hocking | 39073 |
+| Holmes | 39075 |
+| Huron | 39077 |
+| Jackson | 39079 |
+| Jefferson | 39081 |
+| Knox | 39083 |
+| Lake | 39085 |
+| Lawrence | 39087 |
+| Licking | 39089 |
+| Logan | 39091 |
+| Lorain | 39093 |
+| Lucas | 39095 |
+| Madison | 39097 |
+| Mahoning | 39099 |
+| Marion | 39101 |
+| Medina | 39103 |
+| Meigs | 39105 |
+| Mercer | 39107 |
+| Miami | 39109 |
+| Monroe | 39111 |
+| Montgomer | 39113 |
+| Morgan | 39115 |
+| Morrow | 39117 |
+| Muskingum | 39119 |
+| Noble | 39121 |
+| Ottawa | 39123 |
+| Paulding | 39125 |
+| Perry | 39127 |
+| Pickaway | 39129 |
+| Pike | 39131 |
+| Portage | 39133 |
+| Preble | 39135 |
+| Putnam | 39137 |
+| Richland | 39139 |
+| Ross | 39141 |
+| Sandusky | 39143 |
+| Scioto | 39145 |
+| Seneca | 39147 |
+| Shelby | 39149 |
+| Stark | 39151 |
+| Summit | 39153 |
+| Trumbull | 39155 |
+| Tuscarawas | 39157 |
+| Union | 39159 |
+| Van Wert | 39161 |
+| Vinton | 39163 |
+| Warren | 39165 |
+| Washington | 39167 |
+| Wayne | 39169 |
+| Williams | 39171 |
+| Wood | 39173 |
+| Wyandot | 39175 |
 
 <!--
 type: tab
@@ -2496,83 +2511,83 @@ The below table contains county codes for Oklahoma.
 
 | County | Code |
 | ------- | ------- |
-40001	Adair	OK
-40003	Alfalfa	OK
-40005	Atoka	OK
-40007	Beaver	OK
-40009	Beckham	OK
-40011	Blaine	OK
-40013	Bryan	OK
-40015	Caddo	OK
-40017	Canadian	OK
-40019	Carter	OK
-40021	Cherokee	OK
-40023	Choctaw	OK
-40025	Cimarron	OK
-40027	Cleveland	OK
-40029	Coal	OK
-40031	Comanche	OK
-40033	Cotton	OK
-40035	Craig	OK
-40037	Creek	OK
-40039	Custer	OK
-40041	Delaware	OK
-40043	Dewey	OK
-40045	Ellis	OK
-40047	Garfield	OK
-40049	Garvin	OK
-40051	Grady	OK
-40053	Grant	OK
-40055	Greer	OK
-40057	Harmon	OK
-40059	Harper	OK
-40061	Haskell	OK
-40063	Hughes	OK
-40065	Jackson	OK
-40067	Jefferson	OK
-40069	Johnston	OK
-40071	Kay	OK
-40073	Kingfisher	OK
-40075	Kiowa	OK
-40077	Latimer	OK
-40079	Le Flore	OK
-40081	Lincoln	OK
-40083	Logan	OK
-40085	Love	OK
-40087	McClain	OK
-40089	McCurtain	OK
-40091	McIntosh	OK
-40093	Major	OK
-40095	Marshall	OK
-40097	Mayes	OK
-40099	Murray	OK
-40101	Muskogee	OK
-40103	Noble	OK
-40105	Nowata	OK
-40107	Okfuskee	OK
-40109	Oklahoma	OK
-40111	Okmulgee	OK
-40113	Osage	OK
-40115	Ottawa	OK
-40117	Pawnee	OK
-40119	Payne	OK
-40121	Pittsburg	OK
-40123	Pontotoc	OK
-40125	Pottawatomie	OK
-40127	Pushmataha	OK
-40129	Roger Mills	OK
-40131	Rogers	OK
-40133	Seminole	OK
-40135	Sequoyah	OK
-40137	Stephens	OK
-40139	Texas	OK
-40141	Tillman	OK
-40143	Tulsa	OK
-40145	Wagoner	OK
-40147	Washington	OK
-40149	Washita	OK
-40151	Woods	OK
-40153	Woodward	OK
+| Adair | 40001 |
+| Alfalfa | 40003 |
+| Ata | 40005 |
+| Beaver | 40007 |
+| Beckham | 40009 |
+| Blaine | 40011 |
+| Bryan | 40013 |
+| Caddo | 40015 |
+| Canadian | 40017 |
+| Carter | 40019 |
+| Cheree | 40021 |
+| Choctaw | 40023 |
+| Cimarron | 40025 |
+| Cleveland | 40027 |
+| Coal | 40029 |
+| Comanche | 40031 |
+| Cotton | 40033 |
+| Craig | 40035 |
+| Creek | 40037 |
+| Custer | 40039 |
+| Delaware | 40041 |
+| Dewey | 40043 |
+| Ellis | 40045 |
+| Garfield | 40047 |
+| Garvin | 40049 |
+| Grady | 40051 |
+| Grant | 40053 |
+| Greer | 40055 |
+| Harmon | 40057 |
+| Harper | 40059 |
+| Haskell | 40061 |
+| Hughes | 40063 |
+| Jackson | 40065 |
+| Jefferson | 40067 |
+| Johnston | 40069 |
+| Kay | 40071 |
+| Kingfisher | 40073 |
+| Kiowa | 40075 |
+| Latimer | 40077 |
+| Le Flore | 40079 |
+| Lincoln | 40081 |
+| Logan | 40083 |
+| Love | 40085 |
+| McClain | 40087 |
+| McCurtain | 40089 |
+| McIntosh | 40091 |
+| Major | 40093 |
+| Marshall | 40095 |
+| Mayes | 40097 |
+| Murray | 40099 |
+| Muskogee | 40101 |
+| Noble | 40103 |
+| Nowata | 40105 |
+| fuskee | 40107 |
+| lahoma | 40109 |
+| mulgee | 40111 |
+| Osage | 40113 |
+| Ottawa | 40115 |
+| Pawnee | 40117 |
+| Payne | 40119 |
+| Pittsburg | 40121 |
+| Pontotoc | 40123 |
+| Pottawatomie | 40125 |
+| Pushmataha | 40127 |
+| Roger Mills | 40129 |
+| Rogers | 40131 |
+| Seminole | 40133 |
+| Sequoyah | 40135 |
+| Stephens | 40137 |
+| Texas | 40139 |
+| Tillman | 40141 |
+| Tulsa | 40143 |
+| Wagoner | 40145 |
+| Washington | 40147 |
+| Washita | 40149 |
+| Woods | 40151 |
+| Woodward | 40153 |
 
 <!--
 type: tab
@@ -2583,42 +2598,42 @@ The below table contains county codes for Oregon.
 
 | County | Code |
 | ------- | ------- |
-41001	Baker	OR
-41003	Benton	OR
-41005	Clackamas	OR
-41007	Clatsop	OR
-41009	Columbia	OR
-41011	Coos	OR
-41013	Crook	OR
-41015	Curry	OR
-41017	Deschutes	OR
-41019	Douglas	OR
-41021	Gilliam	OR
-41023	Grant	OR
-41025	Harney	OR
-41027	Hood River	OR
-41029	Jackson	OR
-41031	Jefferson	OR
-41033	Josephine	OR
-41035	Klamath	OR
-41037	Lake	OR
-41039	Lane	OR
-41041	Lincoln	OR
-41043	Linn	OR
-41045	Malheur	OR
-41047	Marion	OR
-41049	Morrow	OR
-41051	Multnomah	OR
-41053	Polk	OR
-41055	Sherman	OR
-41057	Tillamook	OR
-41059	Umatilla	OR
-41061	Union	OR
-41063	Wallowa	OR
-41065	Wasco	OR
-41067	Washington	OR
-41069	Wheeler	OR
-41071	Yamhill	OR
+| Baker | 41001 |
+| Benton | 41003 |
+| Clackamas | 41005 |
+| Clatsop | 41007 |
+| Columbia | 41009 |
+| Coos | 41011 |
+| Crook | 41013 |
+| Curry | 41015 |
+| Deschutes | 41017 |
+| Douglas | 41019 |
+| Gilliam | 41021 |
+| Grant | 41023 |
+| Harney | 41025 |
+| Hood River | 41027 |
+| Jackson | 41029 |
+| Jefferson | 41031 |
+| Josephine | 41033 |
+| Klamath | 41035 |
+| Lake | 41037 |
+| Lane | 41039 |
+| Lincoln | 41041 |
+| Linn | 41043 |
+| Malheur | 41045 |
+| Marion | 41047 |
+| Mrow | 41049 |
+| Multnomah | 41051 |
+| Polk | 41053 |
+| Sherman | 41055 |
+| Tillamook | 41057 |
+| Umatilla | 41059 |
+| Union | 41061 |
+| Wallowa | 41063 |
+| Wasco | 41065 |
+| Washington | 41067 |
+| Wheeler | 41069 |
+| Yamhill | 41071 |
 
 <!--
 type: tab
@@ -2629,73 +2644,73 @@ The below table contains county codes for Pennsylvania.
 
 | County | Code |
 | ------- | ------- |
-42001	Adams	PA
-42003	Allegheny	PA
-42005	Armstrong	PA
-42007	Beaver	PA
-42009	Bedford	PA
-42011	Berks	PA
-42013	Blair	PA
-42015	Bradford	PA
-42017	Bucks	PA
-42019	Butler	PA
-42021	Cambria	PA
-42023	Cameron	PA
-42025	Carbon	PA
-42027	Centre	PA
-42029	Chester	PA
-42031	Clarion	PA
-42033	Clearfield	PA
-42035	Clinton	PA
-42037	Columbia	PA
-42039	Crawford	PA
-42041	Cumberland	PA
-42043	Dauphin	PA
-42045	Delaware	PA
-42047	Elk	PA
-42049	Erie	PA
-42051	Fayette	PA
-42053	Forest	PA
-42055	Franklin	PA
-42057	Fulton	PA
-42059	Greene	PA
-42061	Huntingdon	PA
-42063	Indiana	PA
-42065	Jefferson	PA
-42067	Juniata	PA
-42069	Lackawanna	PA
-42071	Lancaster	PA
-42073	Lawrence	PA
-42075	Lebanon	PA
-42077	Lehigh	PA
-42079	Luzerne	PA
-42081	Lycoming	PA
-42083	McKean	PA
-42085	Mercer	PA
-42087	Mifflin	PA
-42089	Monroe	PA
-42091	Montgomery	PA
-42093	Montour	PA
-42095	Northampton	PA
-42097	Northumberland	PA
-42099	Perry	PA
-42101	Philadelphia	PA
-42103	Pike	PA
-42105	Potter	PA
-42107	Schuylkill	PA
-42109	Snyder	PA
-42111	Somerset	PA
-42113	Sullivan	PA
-42115	Susquehanna	PA
-42117	Tioga	PA
-42119	Union	PA
-42121	Venango	PA
-42123	Warren	PA
-42125	Washington	PA
-42127	Wayne	PA
-42129	Westmoreland	PA
-42131	Wyoming	PA
-42133	York	PA
+| Adams | 42001 |
+| Allegheny | 42003 |
+| Armstrong | 42005 |
+| Beaver | 42007 |
+| Bedford | 42009 |
+| Berks | 42011 |
+| Blair | 42013 |
+| Bradford | 42015 |
+| Bucks | 42017 |
+| Butler | 42019 |
+| Cambria | 42021 |
+| Cameron | 42023 |
+| Carbon | 42025 |
+| Centre | 42027 |
+| Chester | 42029 |
+| Clarion | 42031 |
+| Clearfield | 42033 |
+| Clinton | 42035 |
+| Columbia | 42037 |
+| Crawford | 42039 |
+| Cumberland | 42041 |
+| Dauphin | 42043 |
+| Delaware | 42045 |
+| Elk | 42047 |
+| Erie | 42049 |
+| Fayette | 42051 |
+| Forest | 42053 |
+| Franklin | 42055 |
+| Fulton | 42057 |
+| Greene | 42059 |
+| Huntingdon | 42061 |
+| Indiana | 42063 |
+| Jefferson | 42065 |
+| Juniata | 42067 |
+| Lackawanna | 42069 |
+| Lancaster | 42071 |
+| Lawrence | 42073 |
+| Lebanon | 42075 |
+| Lehigh | 42077 |
+| Luzerne | 42079 |
+| Lycoming | 42081 |
+| McKean | 42083 |
+| Mercer | 42085 |
+| Mifflin | 42087 |
+| Monroe | 42089 |
+| Montgomery | 42091 |
+| Montour | 42093 |
+| Northampton | 42095 |
+| Northumberland | 42097 |
+| Perry | 42099 |
+| Philadelphia | 42101 |
+| Pike | 42103 |
+| Potter | 42105 |
+| Schuylkill | 42107 |
+| Snyder | 42109 |
+| Somerset | 42111 |
+| Sullivan | 42113 |
+| Susquehanna | 42115 |
+| Tioga | 42117 |
+| Union | 42119 |
+| Venango | 42121 |
+| Warren | 42123 |
+| Washington | 42125 |
+| Wayne | 42127 |
+| Westmoreland | 42129 |
+| Wyoming | 42131 |
+| York | 42133 |
 
 <!--
 type: tab
@@ -2719,52 +2734,54 @@ title: South Carolina
 
 The below table contains county codes for South Carolina.
 
-45001	Abbeville	SC
-45003	Aiken	SC
-45005	Allendale	SC
-45007	Anderson	SC
-45009	Bamberg	SC
-45011	Barnwell	SC
-45013	Beaufort	SC
-45015	Berkeley	SC
-45017	Calhoun	SC
-45019	Charleston	SC
-45021	Cherokee	SC
-45023	Chester	SC
-45025	Chesterfield	SC
-45027	Clarendon	SC
-45029	Colleton	SC
-45031	Darlington	SC
-45033	Dillon	SC
-45035	Dorchester	SC
-45037	Edgefield	SC
-45039	Fairfield	SC
-45041	Florence	SC
-45043	Georgetown	SC
-45045	Greenville	SC
-45047	Greenwood	SC
-45049	Hampton	SC
-45051	Horry	SC
-45053	Jasper	SC
-45055	Kershaw	SC
-45057	Lancaster	SC
-45059	Laurens	SC
-45061	Lee	SC
-45063	Lexington	SC
-45065	McCormick	SC
-45067	Marion	SC
-45069	Marlboro	SC
-45071	Newberry	SC
-45073	Oconee	SC
-45075	Orangeburg	SC
-45077	Pickens	SC
-45079	Richland	SC
-45081	Saluda	SC
-45083	Spartanburg	SC
-45085	Sumter	SC
-45087	Union	SC
-45089	Williamsburg	SC
-45091	York	SC
+| County | Code |
+| ------- | ------- |
+| Abbeville | 45001 |
+| Aiken | 45003 |
+| Allendale | 45005 |
+| Anderson | 45007 |
+| Bamberg | 45009 |
+| Barnwell | 45011 |
+| Beaufort | 45013 |
+| Berkeley | 45015 |
+| Calhoun | 45017 |
+| Charleston | 45019 |
+| Cherokee | 45021 |
+| Chester | 45023 |
+| Chesterfield | 45025 |
+| Clarendon | 45027 |
+| Colleton | 45029 |
+| Darlington | 45031 |
+| Dillon | 45033 |
+| Dorchester | 45035 |
+| Edgefield | 45037 |
+| Fairfield | 45039 |
+| Florence | 45041 |
+| Georgetown | 45043 |
+| Greenville | 45045 |
+| Greenwood | 45047 |
+| Hampton | 45049 |
+| Horry | 45051 |
+| Jasper | 45053 |
+| Kershaw | 45055 |
+| Lancaster | 45057 |
+| Laurens | 45059 |
+| Lee | 45061 |
+| Lexington | 45063 |
+| McCormick | 45065 |
+| Marion | 45067 |
+| Marlboro | 45069 |
+| Newberry | 45071 |
+| Oconee | 45073 |
+| Orangeburg | 45075 |
+| Pickens | 45077 |
+| Richland | 45079 |
+| Saluda | 45081 |
+| Spartanburg | 45083 |
+| Sumter | 45085 |
+| Union | 45087 |
+| Williamsburg | 45089 |
+| York | 45091 |
 
 <!--
 type: tab
@@ -2775,72 +2792,72 @@ The below table contains county codes for South Dakota.
 
 | County | Code |
 | ------- | ------- |
-46003	Aurora	SD
-46005	Beadle	SD
-46007	Bennett	SD
-46009	Bon Homme	SD
-46011	Brookings	SD
-46013	Brown	SD
-46015	Brule	SD
-46017	Buffalo	SD
-46019	Butte	SD
-46021	Campbell	SD
-46023	Charles Mix	SD
-46025	Clark	SD
-46027	Clay	SD
-46029	Codington	SD
-46031	Corson	SD
-46033	Custer	SD
-46035	Davison	SD
-46037	Day	SD
-46039	Deuel	SD
-46041	Dewey	SD
-46043	Douglas	SD
-46045	Edmunds	SD
-46047	Fall River	SD
-46049	Faulk	SD
-46051	Grant	SD
-46053	Gregory	SD
-46055	Haakon	SD
-46057	Hamlin	SD
-46059	Hand	SD
-46061	Hanson	SD
-46063	Harding	SD
-46065	Hughes	SD
-46067	Hutchinson	SD
-46069	Hyde	SD
-46071	Jackson	SD
-46073	Jerauld	SD
-46075	Jones	SD
-46077	Kingsbury	SD
-46079	Lake	SD
-46081	Lawrence	SD
-46083	Lincoln	SD
-46085	Lyman	SD
-46087	McCook	SD
-46089	McPherson	SD
-46091	Marshall	SD
-46093	Meade	SD
-46095	Mellette	SD
-46097	Miner	SD
-46099	Minnehaha	SD
-46101	Moody	SD
-46103	Pennington	SD
-46105	Perkins	SD
-46107	Potter	SD
-46109	Roberts	SD
-46111	Sanborn	SD
-46113	Shannon	SD
-46115	Spink	SD
-46117	Stanley	SD
-46119	Sully	SD
-46121	Todd	SD
-46123	Tripp	SD
-46125	Turner	SD
-46127	Union	SD
-46129	Walworth	SD
-46135	Yankton	SD
-46137	Ziebach	SD
+| Aurora | 46003 |
+| Beadle | 46005 |
+| Bennett | 46007 |
+| Bon Hom | 46009 |
+| Brooking | 46011 |
+| Brown | 46013 |
+| Brule | 46015 |
+| Buffalo | 46017 |
+| Butte | 46019 |
+| Campbe | 46021 |
+| Charles  | 46023 |
+| Clark | 46025 |
+| Clay | 46027 |
+| Codingto | 46029 |
+| Corson | 46031 |
+| Custer | 46033 |
+| Davison | 46035 |
+| Day | 46037 |
+| Deuel | 46039 |
+| Dewey | 46041 |
+| Douglas | 46043 |
+| Edmund | 46045 |
+| Fall Rive | 46047 |
+| Faulk | 46049 |
+| Grant | 46051 |
+| Gregory | 46053 |
+| Haakon | 46055 |
+| Hamlin | 46057 |
+| Hand | 46059 |
+| Hanson | 46061 |
+| Harding | 46063 |
+| Hughes | 46065 |
+| Hutchins | 46067 |
+| Hyde | 46069 |
+| Jackson | 46071 |
+| Jerauld | 46073 |
+| Jones | 46075 |
+| Kingsbur | 46077 |
+| Lake | 46079 |
+| Lawrenc | 46081 |
+| Lincoln | 46083 |
+| Lyman | 46085 |
+| McCook | 46087 |
+| McPhers | 46089 |
+| Marshall | 46091 |
+| Meade | 46093 |
+| Mellette | 46095 |
+| Miner | 46097 |
+| Minneha | 46099 |
+| Moody | 46101 |
+| Penningt | 46103 |
+| Perkins | 46105 |
+| Potter | 46107 |
+| Roberts | 46109 |
+| Sanborn | 46111 |
+| Shannon | 46113 |
+| Spink | 46115 |
+| Stanley | 46117 |
+| Sully | 46119 |
+| Todd | 46121 |
+| Tripp | 46123 |
+| Turner | 46125 |
+| Union | 46127 |
+| Walwort | 46129 |
+| Yankton | 46135 |
+| Ziebach | 46137 |
 
 <!--
 type: tab
@@ -2851,101 +2868,101 @@ The below table contains county codes for Tennessee.
 
 | County | Code |
 | ------- | ------- |
-47001	Anderson	TN
-47003	Bedford	TN
-47005	Benton	TN
-47007	Bledsoe	TN
-47009	Blount	TN
-47011	Bradley	TN
-47013	Campbell	TN
-47015	Cannon	TN
-47017	Carroll	TN
-47019	Carter	TN
-47021	Cheatham	TN
-47023	Chester	TN
-47025	Claiborne	TN
-47027	Clay	TN
-47029	Cocke	TN
-47031	Coffee	TN
-47033	Crockett	TN
-47035	Cumberland	TN
-47037	Davidson	TN
-47039	Decatur	TN
-47041	De Kalb	TN
-47043	Dickson	TN
-47045	Dyer	TN
-47047	Fayette	TN
-47049	Fentress	TN
-47051	Franklin	TN
-47053	Gibson	TN
-47055	Giles	TN
-47057	Grainger	TN
-47059	Greene	TN
-47061	Grundy	TN
-47063	Hamblen	TN
-47065	Hamilton	TN
-47067	Hancock	TN
-47069	Hardeman	TN
-47071	Hardin	TN
-47073	Hawkins	TN
-47075	Haywood	TN
-47077	Henderson	TN
-47079	Henry	TN
-47081	Hickman	TN
-47083	Houston	TN
-47085	Humphreys	TN
-47087	Jackson	TN
-47089	Jefferson	TN
-47091	Johnson	TN
-47093	Knox	TN
-47095	Lake	TN
-47097	Lauderdale	TN
-47099	Lawrence	TN
-47101	Lewis	TN
-47103	Lincoln	TN
-47105	Loudon	TN
-47107	McMinn	TN
-47109	McNairy	TN
-47111	Macon	TN
-47113	Madison	TN
-47115	Marion	TN
-47117	Marshall	TN
-47119	Maury	TN
-47121	Meigs	TN
-47123	Monroe	TN
-47125	Montgomery	TN
-47127	Moore	TN
-47129	Morgan	TN
-47131	Obion	TN
-47133	Overton	TN
-47135	Perry	TN
-47137	Pickett	TN
-47139	Polk	TN
-47141	Putnam	TN
-47143	Rhea	TN
-47145	Roane	TN
-47147	Robertson	TN
-47149	Rutherford	TN
-47151	Scott	TN
-47153	Sequatchie	TN
-47155	Sevier	TN
-47157	Shelby	TN
-47159	Smith	TN
-47161	Stewart	TN
-47163	Sullivan	TN
-47165	Sumner	TN
-47167	Tipton	TN
-47169	Trousdale	TN
-47171	Unicoi	TN
-47173	Union	TN
-47175	Van Buren	TN
-47177	Warren	TN
-47179	Washington	TN
-47181	Wayne	TN
-47183	Weakley	TN
-47185	White	TN
-47187	Williamson	TN
-47189	Wilson	TN
+| Anderson | 47001 |
+| Bedford | 47003 |
+| Benton | 47005 |
+| Bledsoe | 47007 |
+| Blount | 47009 |
+| Bradley | 47011 |
+| Campbell | 47013 |
+| Cannon | 47015 |
+| Carroll | 47017 |
+| Carter | 47019 |
+| Cheatham | 47021 |
+| Chester | 47023 |
+| Claiborne | 47025 |
+| Clay | 47027 |
+| Cocke | 47029 |
+| Coffee | 47031 |
+| Crockett | 47033 |
+| Cumberland | 47035 |
+| Davidson | 47037 |
+| Decatur | 47039 |
+| De Kalb | 47041 |
+| Dickson | 47043 |
+| Dyer | 47045 |
+| Fayette | 47047 |
+| Fentress | 47049 |
+| Franklin | 47051 |
+| Gibson | 47053 |
+| Giles | 47055 |
+| Grainger | 47057 |
+| Greene | 47059 |
+| Grundy | 47061 |
+| Hamblen | 47063 |
+| Hamilton | 47065 |
+| Hancock | 47067 |
+| Hardeman | 47069 |
+| Hardin | 47071 |
+| Hawkins | 47073 |
+| Haywood | 47075 |
+| Henderson | 47077 |
+| Henry | 47079 |
+| Hickman | 47081 |
+| Houston | 47083 |
+| Humphreys | 47085 |
+| Jackson | 47087 |
+| Jefferson | 47089 |
+| Johnson | 47091 |
+| Knox | 47093 |
+| Lake | 47095 |
+| Lauderdale | 47097 |
+| Lawrence | 47099 |
+| Lewis | 47101 |
+| Lincoln | 47103 |
+| Loudon | 47105 |
+| McMinn | 47107 |
+| McNairy | 47109 |
+| Macon | 47111 |
+| Madison | 47113 |
+| Marion | 47115 |
+| Marshall | 47117 |
+| Maury | 47119 |
+| Meigs | 47121 |
+| Monroe | 47123 |
+| Montgomery | 47125 |
+| Moore | 47127 |
+| Morgan | 47129 |
+| Obion | 47131 |
+| Overton | 47133 |
+| Perry | 47135 |
+| Pickett | 47137 |
+| Polk | 47139 |
+| Puam | 47141 |
+| Rhea | 47143 |
+| Roane | 47145 |
+| Robertson | 47147 |
+| Rutherford | 47149 |
+| Scott | 47151 |
+| Sequatchie | 47153 |
+| Sevier | 47155 |
+| Shelby | 47157 |
+| Smith | 47159 |
+| Stewart | 47161 |
+| Sullivan | 47163 |
+| Sumner | 47165 |
+| Tipton | 47167 |
+| Trousdale | 47169 |
+| Unicoi | 47171 |
+| Union | 47173 |
+| Van Buren | 47175 |
+| Warren | 47177 |
+| Washington | 47179 |
+| Wayne | 47181 |
+| Weakley | 47183 |
+| White | 47185 |
+| Williamson | 47187 |
+| Wilson | 47189 |
 
 <!--
 type: tab
@@ -2956,260 +2973,260 @@ The below table contains county codes for Texas.
 
 | County | Code |
 | ------- | ------- |
-48001	Anderson	TX
-48003	Andrews	TX
-48005	Angelina	TX
-48007	Aransas	TX
-48009	Archer	TX
-48011	Armstrong	TX
-48013	Atascosa	TX
-48015	Austin	TX
-48017	Bailey	TX
-48019	Bandera	TX
-48021	Bastrop	TX
-48023	Baylor	TX
-48025	Bee	TX
-48027	Bell	TX
-48029	Bexar	TX
-48031	Blanco	TX
-48033	Borden	TX
-48035	Bosque	TX
-48037	Bowie	TX
-48039	Brazoria	TX
-48041	Brazos	TX
-48043	Brewster	TX
-48045	Briscoe	TX
-48047	Brooks	TX
-48049	Brown	TX
-48051	Burleson	TX
-48053	Burnet	TX
-48055	Caldwell	TX
-48057	Calhoun	TX
-48059	Callahan	TX
-48061	Cameron	TX
-48063	Camp	TX
-48065	Carson	TX
-48067	Cass	TX
-48069	Castro	TX
-48071	Chambers	TX
-48073	Cherokee	TX
-48075	Childress	TX
-48077	Clay	TX
-48079	Cochran	TX
-48081	Coke	TX
-48083	Coleman	TX
-48085	Collin	TX
-48087	Collingsworth	TX
-48089	Colorado	TX
-48091	Comal	TX
-48093	Comanche	TX
-48095	Concho	TX
-48097	Cooke	TX
-48099	Coryell	TX
-48101	Cottle	TX
-48103	Crane	TX
-48105	Crockett	TX
-48107	Crosby	TX
-48109	Culberson	TX
-48111	Dallam	TX
-48113	Dallas	TX
-48115	Dawson	TX
-48117	Deaf Smith	TX
-48119	Delta	TX
-48121	Denton	TX
-48123	De Witt	TX
-48125	Dickens	TX
-48127	Dimmit	TX
-48129	Donley	TX
-48131	Duval	TX
-48133	Eastland	TX
-48135	Ector	TX
-48137	Edwards	TX
-48139	Ellis	TX
-48141	El Paso	TX
-48143	Erath	TX
-48145	Falls	TX
-48147	Fannin	TX
-48149	Fayette	TX
-48151	Fisher	TX
-48153	Floyd	TX
-48155	Foard	TX
-48157	Fort Bend	TX
-48159	Franklin	TX
-48161	Freestone	TX
-48163	Frio	TX
-48165	Gaines	TX
-48167	Galveston	TX
-48169	Garza	TX
-48171	Gillespie	TX
-48173	Glasscock	TX
-48175	Goliad	TX
-48177	Gonzales	TX
-48179	Gray	TX
-48181	Grayson	TX
-48183	Gregg	TX
-48185	Grimes	TX
-48187	Guadalupe	TX
-48189	Hale	TX
-48191	Hall	TX
-48193	Hamilton	TX
-48195	Hansford	TX
-48197	Hardeman	TX
-48199	Hardin	TX
-48201	Harris	TX
-48203	Harrison	TX
-48205	Hartley	TX
-48207	Haskell	TX
-48209	Hays	TX
-48211	Hemphill	TX
-48213	Henderson	TX
-48215	Hidalgo	TX
-48217	Hill	TX
-48219	Hockley	TX
-48221	Hood	TX
-48223	Hopkins	TX
-48225	Houston	TX
-48227	Howard	TX
-48229	Hudspeth	TX
-48231	Hunt	TX
-48233	Hutchinson	TX
-48235	Irion	TX
-48237	Jack	TX
-48239	Jackson	TX
-48241	Jasper	TX
-48243	Jeff Davis	TX
-48245	Jefferson	TX
-48247	Jim Hogg	TX
-48249	Jim Wells	TX
-48251	Johnson	TX
-48253	Jones	TX
-48255	Karnes	TX
-48257	Kaufman	TX
-48259	Kendall	TX
-48261	Kenedy	TX
-48263	Kent	TX
-48265	Kerr	TX
-48267	Kimble	TX
-48269	King	TX
-48271	Kinney	TX
-48273	Kleberg	TX
-48275	Knox	TX
-48277	Lamar	TX
-48279	Lamb	TX
-48281	Lampasas	TX
-48283	La Salle	TX
-48285	Lavaca	TX
-48287	Lee	TX
-48289	Leon	TX
-48291	Liberty	TX
-48293	Limestone	TX
-48295	Lipscomb	TX
-48297	Live Oak	TX
-48299	Llano	TX
-48301	Loving	TX
-48303	Lubbock	TX
-48305	Lynn	TX
-48307	McCulloch	TX
-48309	McLennan	TX
-48311	McMullen	TX
-48313	Madison	TX
-48315	Marion	TX
-48317	Martin	TX
-48319	Mason	TX
-48321	Matagorda	TX
-48323	Maverick	TX
-48325	Medina	TX
-48327	Menard	TX
-48329	Midland	TX
-48331	Milam	TX
-48333	Mills	TX
-48335	Mitchell	TX
-48337	Montague	TX
-48339	Montgomery	TX
-48341	Moore	TX
-48343	Morris	TX
-48345	Motley	TX
-48347	Nacogdoches	TX
-48349	Navarro	TX
-48351	Newton	TX
-48353	Nolan	TX
-48355	Nueces	TX
-48357	Ochiltree	TX
-48359	Oldham	TX
-48361	Orange	TX
-48363	Palo Pinto	TX
-48365	Panola	TX
-48367	Parker	TX
-48369	Parmer	TX
-48371	Pecos	TX
-48373	Polk	TX
-48375	Potter	TX
-48377	Presidio	TX
-48379	Rains	TX
-48381	Randall	TX
-48383	Reagan	TX
-48385	Real	TX
-48387	Red River	TX
-48389	Reeves	TX
-48391	Refugio	TX
-48393	Roberts	TX
-48395	Robertson	TX
-48397	Rockwall	TX
-48399	Runnels	TX
-48401	Rusk	TX
-48403	Sabine	TX
-48405	San Augustine	TX
-48407	San Jacinto	TX
-48409	San Patricio	TX
-48411	San Saba	TX
-48413	Schleicher	TX
-48415	Scurry	TX
-48417	Shackelford	TX
-48419	Shelby	TX
-48421	Sherman	TX
-48423	Smith	TX
-48425	Somervell	TX
-48427	Starr	TX
-48429	Stephens	TX
-48431	Sterling	TX
-48433	Stonewall	TX
-48435	Sutton	TX
-48437	Swisher	TX
-48439	Tarrant	TX
-48441	Taylor	TX
-48443	Terrell	TX
-48445	Terry	TX
-48447	Throckmorton	TX
-48449	Titus	TX
-48451	Tom Green	TX
-48453	Travis	TX
-48455	Trinity	TX
-48457	Tyler	TX
-48459	Upshur	TX
-48461	Upton	TX
-48463	Uvalde	TX
-48465	Val Verde	TX
-48467	Van Zandt	TX
-48469	Victoria	TX
-48471	Walker	TX
-48473	Waller	TX
-48475	Ward	TX
-48477	Washington	TX
-48479	Webb	TX
-48481	Wharton	TX
-48483	Wheeler	TX
-48485	Wichita	TX
-48487	Wilbarger	TX
-48489	Willacy	TX
-48491	Williamson	TX
-48493	Wilson	TX
-48495	Winkler	TX
-48497	Wise	TX
-48499	Wood	TX
-48501	Yoakum	TX
-48503	Young	TX
-48505	Zapata	TX
-48507	Zavala	TX
+| Anderson | 48001 |
+| Andrews | 48003 |
+| Angelina | 48005 |
+| Aransas | 48007 |
+| Archer | 48009 |
+| Armstrong | 48011 |
+| Atascosa | 48013 |
+| Austin | 48015 |
+| Bailey | 48017 |
+| Bandera | 48019 |
+| Bastrop | 48021 |
+| Baylor | 48023 |
+| Bee | 48025 |
+| Bell | 48027 |
+| Bexar | 48029 |
+| Blanco | 48031 |
+| Borden | 48033 |
+| Bosque | 48035 |
+| Bowie | 48037 |
+| Brazoria | 48039 |
+| Brazos | 48041 |
+| Brewster | 48043 |
+| Briscoe | 48045 |
+| Brooks | 48047 |
+| Brown | 48049 |
+| Burleson | 48051 |
+| Burnet | 48053 |
+| Caldwell | 48055 |
+| Calhoun | 48057 |
+| Callahan | 48059 |
+| Cameron | 48061 |
+| Camp | 48063 |
+| Carson | 48065 |
+| Cass | 48067 |
+| Castro | 48069 |
+| Chambers | 48071 |
+| Cherokee | 48073 |
+| Childress | 48075 |
+| Clay | 48077 |
+| Cochran | 48079 |
+| Coke | 48081 |
+| Coleman | 48083 |
+| Collin | 48085 |
+| Collingsworth | 48087 |
+| Colorado | 48089 |
+| Comal | 48091 |
+| Comanche | 48093 |
+| Concho | 48095 |
+| Cooke | 48097 |
+| Coryell | 48099 |
+| Cottle | 48101 |
+| Crane | 48103 |
+| Crockett | 48105 |
+| Crosby | 48107 |
+| Culberson | 48109 |
+| Dallam | 48111 |
+| Dallas | 48113 |
+| Dawson | 48115 |
+| Deaf Smith | 48117 |
+| Delta | 48119 |
+| Denton | 48121 |
+| De Witt | 48123 |
+| Dickens | 48125 |
+| Dimmit | 48127 |
+| Donley | 48129 |
+| Duval | 48131 |
+| Eastland | 48133 |
+| Ector | 48135 |
+| Edwards | 48137 |
+| Ellis | 48139 |
+| El Paso | 48141 |
+| Erath | 48143 |
+| Falls | 48145 |
+| Fannin | 48147 |
+| Fayette | 48149 |
+| Fisher | 48151 |
+| Floyd | 48153 |
+| Foard | 48155 |
+| Fort Bend | 48157 |
+| Franklin | 48159 |
+| Freestone | 48161 |
+| Frio | 48163 |
+| Gaines | 48165 |
+| Galveston | 48167 |
+| Garza | 48169 |
+| Gillespie | 48171 |
+| Glasscock | 48173 |
+| Goliad | 48175 |
+| Gonzales | 48177 |
+| Gray | 48179 |
+| Grayson | 48181 |
+| Gregg | 48183 |
+| Grimes | 48185 |
+| Guadalupe | 48187 |
+| Hale | 48189 |
+| Hall | 48191 |
+| Hamilton | 48193 |
+| Hansford | 48195 |
+| Hardeman | 48197 |
+| Hardin | 48199 |
+| Harris | 48201 |
+| Harrison | 48203 |
+| Hartley | 48205 |
+| Haskell | 48207 |
+| Hays | 48209 |
+| Hemphill | 48211 |
+| Henderson | 48213 |
+| Hidalgo | 48215 |
+| Hill | 48217 |
+| Hockley | 48219 |
+| Hood | 48221 |
+| Hopkins | 48223 |
+| Houston | 48225 |
+| Howard | 48227 |
+| Hudspeth | 48229 |
+| Hunt | 48231 |
+| Hutchinson | 48233 |
+| Irion | 48235 |
+| Jack | 48237 |
+| Jackson | 48239 |
+| Jasper | 48241 |
+| Jeff Davis | 48243 |
+| Jefferson | 48245 |
+| Jim Hogg | 48247 |
+| Jim Wells | 48249 |
+| Johnson | 48251 |
+| Jones | 48253 |
+| Karnes | 48255 |
+| Kaufman | 48257 |
+| Kendall | 48259 |
+| Kenedy | 48261 |
+| Kent | 48263 |
+| Kerr | 48265 |
+| Kimble | 48267 |
+| King | 48269 |
+| Kinney | 48271 |
+| Kleberg | 48273 |
+| Knox | 48275 |
+| Lamar | 48277 |
+| Lamb | 48279 |
+| Lampasas | 48281 |
+| La Salle | 48283 |
+| Lavaca | 48285 |
+| Lee | 48287 |
+| Leon | 48289 |
+| Liberty | 48291 |
+| Limestone | 48293 |
+| Lipscomb | 48295 |
+| Live Oak | 48297 |
+| Llano | 48299 |
+| Loving | 48301 |
+| Lubbock | 48303 |
+| Lynn | 48305 |
+| McCulloch | 48307 |
+| McLennan | 48309 |
+| McMullen | 48311 |
+| Madison | 48313 |
+| Marion | 48315 |
+| Martin | 48317 |
+| Mason | 48319 |
+| Matagorda | 48321 |
+| Maverick | 48323 |
+| Medina | 48325 |
+| Menard | 48327 |
+| Midland | 48329 |
+| Milam | 48331 |
+| Mills | 48333 |
+| Mitchell | 48335 |
+| Montague | 48337 |
+| Montgomery | 48339 |
+| Moore | 48341 |
+| Morris | 48343 |
+| Motley | 48345 |
+| Nacogdoches | 48347 |
+| Navarro | 48349 |
+| Newton | 48351 |
+| Nolan | 48353 |
+| Nueces | 48355 |
+| Ochiltree | 48357 |
+| Oldham | 48359 |
+| Orange | 48361 |
+| Palo Pinto | 48363 |
+| Panola | 48365 |
+| Parker | 48367 |
+| Parmer | 48369 |
+| Pecos | 48371 |
+| Polk | 48373 |
+| Potter | 48375 |
+| Presidio | 48377 |
+| Rains | 48379 |
+| Randall | 48381 |
+| Reagan | 48383 |
+| Real | 48385 |
+| Red River | 48387 |
+| Reeves | 48389 |
+| Refugio | 48391 |
+| Roberts | 48393 |
+| Robertson | 48395 |
+| Rockwall | 48397 |
+| Runnels | 48399 |
+| Rusk | 48401 |
+| Sabine | 48403 |
+| San Augustine | 48405 |
+| San Jacinto | 48407 |
+| San Patricio | 48409 |
+| San Saba | 48411 |
+| Schleicher | 48413 |
+| Scurry | 48415 |
+| Shackelford | 48417 |
+| Shelby | 48419 |
+| Sherman | 48421 |
+| Smith | 48423 |
+| Somervell | 48425 |
+| Starr | 48427 |
+| Stephens | 48429 |
+| Sterling | 48431 |
+| Stonewall | 48433 |
+| Sutton | 48435 |
+| Swisher | 48437 |
+| Tarrant | 48439 |
+| Taylor | 48441 |
+| Terrell | 48443 |
+| Terry | 48445 |
+| Throckmorton | 48447 |
+| Titus | 48449 |
+| Tom Green | 48451 |
+| Travis | 48453 |
+| Trinity | 48455 |
+| Tyler | 48457 |
+| Upshur | 48459 |
+| Upton | 48461 |
+| Uvalde | 48463 |
+| Val Verde | 48465 |
+| Van Zandt | 48467 |
+| Victoria | 48469 |
+| Walker | 48471 |
+| Waller | 48473 |
+| Ward | 48475 |
+| Washington | 48477 |
+| Webb | 48479 |
+| Wharton | 48481 |
+| Wheeler | 48483 |
+| Wichita | 48485 |
+| Wilbarger | 48487 |
+| Willacy | 48489 |
+| Williamson | 48491 |
+| Wilson | 48493 |
+| Winkler | 48495 |
+| Wise | 48497 |
+| Wood | 48499 |
+| Yoakum | 48501 |
+| Young | 48503 |
+| Zapata | 48505 |
+| Zavala | 48507 |
 
 <!--
 type: tab
@@ -3220,35 +3237,35 @@ The below table contains county codes for Utah.
 
 | County | Code |
 | ------- | ------- |
-49001	Beaver	UT
-49003	Box Elder	UT
-49005	Cache	UT
-49007	Carbon	UT
-49009	Daggett	UT
-49011	Davis	UT
-49013	Duchesne	UT
-49015	Emery	UT
-49017	Garfield	UT
-49019	Grand	UT
-49021	Iron	UT
-49023	Juab	UT
-49025	Kane	UT
-49027	Millard	UT
-49029	Morgan	UT
-49031	Piute	UT
-49033	Rich	UT
-49035	Salt Lake	UT
-49037	San Juan	UT
-49039	Sanpete	UT
-49041	Sevier	UT
-49043	Summit	UT
-49045	Tooele	UT
-49047	Uintah	UT
-49049	Utah	UT
-49051	Wasatch	UT
-49053	Washington	UT
-49055	Wayne	UT
-49057	Weber	UT
+| Beaver | 49001 |
+| Box Elder | 49003 |
+| Cache | 49005 |
+| Carbon | 49007 |
+| Daggett | 49009 |
+| Davis | 49011 |
+| Duchesne | 49013 |
+| Emery | 49015 |
+| Garfield | 49017 |
+| Grand | 49019 |
+| Iron | 49021 |
+| Juab | 49023 |
+| Kane | 49025 |
+| Millard | 49027 |
+| Morgan | 49029 |
+| Pie | 49031 |
+| Rich | 49033 |
+| Salt Lake | 49035 |
+| San Juan | 49037 |
+| Sanpete | 49039 |
+| Sevier | 49041 |
+| Summit | 49043 |
+| Tooele | 49045 |
+| Uintah | 49047 |
+| Ah | 49049 |
+| Wasatch | 49051 |
+| Washington | 49053 |
+| Wayne | 49055 |
+| Weber | 49057 |
 
 <!--
 type: tab
@@ -3271,7 +3288,7 @@ The below table contains county codes for Vermont.
 |	Orleans	| 50019 |
 |	Rutland	| 50021 |
 |	Washington | 50023 |
-|	Windham	| 50025 |
+|	Windham	| 50025 | 
 |	Windsor	| 50027 |
 
 <!--
@@ -3281,142 +3298,144 @@ title: Virginia
 
 The below table contains county codes for Virginia.
 
-51001	Accomack	VA
-51003	Albemarle	VA
-51005	Alleghany	VA
-51007	Amelia	VA
-51009	Amherst	VA
-51011	Appomattox	VA
-51013	Arlington	VA
-51015	Augusta	VA
-51017	Bath	VA
-51019	Bedford	VA
-51021	Bland	VA
-51023	Botetourt	VA
-51025	Brunswick	VA
-51027	Buchanan	VA
-51029	Buckingham	VA
-51031	Campbell	VA
-51033	Caroline	VA
-51035	Carroll	VA
-51036	Charles City	VA
-51037	Charlotte	VA
-51041	Chesterfield	VA
-51043	Clarke	VA
-51045	Craig	VA
-51047	Culpeper	VA
-51049	Cumberland	VA
-51051	Dickenson	VA
-51053	Dinwiddie	VA
-51057	Essex	VA
-51059	Fairfax	VA
-51061	Fauquier	VA
-51063	Floyd	VA
-51065	Fluvanna	VA
-51067	Franklin	VA
-51069	Frederick	VA
-51071	Giles	VA
-51073	Gloucester	VA
-51075	Goochland	VA
-51077	Grayson	VA
-51079	Greene	VA
-51081	Greensville	VA
-51083	Halifax	VA
-51085	Hanover	VA
-51087	Henrico	VA
-51089	Henry	VA
-51091	Highland	VA
-51093	Isle of Wight	VA
-51095	James City	VA
-51097	King and Queen	VA
-51099	King George	VA
-51101	King William	VA
-51103	Lancaster	VA
-51105	Lee	VA
-51107	Loudoun	VA
-51109	Louisa	VA
-51111	Lunenburg	VA
-51113	Madison	VA
-51115	Mathews	VA
-51117	Mecklenburg	VA
-51119	Middlesex	VA
-51121	Montgomery	VA
-51125	Nelson	VA
-51127	New Kent	VA
-51131	Northampton	VA
-51133	Northumberland	VA
-51135	Nottoway	VA
-51137	Orange	VA
-51139	Page	VA
-51141	Patrick	VA
-51143	Pittsylvania	VA
-51145	Powhatan	VA
-51147	Prince Edward	VA
-51149	Prince George	VA
-51153	Prince William	VA
-51155	Pulaski	VA
-51157	Rappahannock	VA
-51159	Richmond	VA
-51161	Roanoke	VA
-51163	Rockbridge	VA
-51165	Rockingham	VA
-51167	Russell	VA
-51169	Scott	VA
-51171	Shenandoah	VA
-51173	Smyth	VA
-51175	Southampton	VA
-51177	Spotsylvania	VA
-51179	Stafford	VA
-51181	Surry	VA
-51183	Sussex	VA
-51185	Tazewell	VA
-51187	Warren	VA
-51191	Washington	VA
-51193	Westmoreland	VA
-51195	Wise	VA
-51197	Wythe	VA
-51199	York	VA
-51510	Alexandria City	VA
-51515	Bedford City	VA
-51520	Bristol City	VA
-51530	Buena Vista City	VA
-51540	Charlottesville City	VA
-51550	Chesapeake City	VA
-51560	Clifton Forge City	VA
-51570	Colonial Heights Cit	VA
-51580	Covington City	VA
-51590	Danville City	VA
-51595	Emporia City	VA
-51600	Fairfax City	VA
-51610	Falls Church City	VA
-51620	Franklin City	VA
-51630	Fredericksburg City	VA
-51640	Galax City	VA
-51650	Hampton City	VA
-51660	Harrisonburg City	VA
-51670	Hopewell City	VA
-51678	Lexington City	VA
-51680	Lynchburg City	VA
-51683	Manassas City	VA
-51685	Manassas Park City	VA
-51690	Martinsville City	VA
-51700	Newport News City	VA
-51710	Norfolk City	VA
-51720	Norton City	VA
-51730	Petersburg City	VA
-51735	Poquoson City	VA
-51740	Portsmouth City	VA
-51750	Radford City	VA
-51760	Richmond City	VA
-51770	Roanoke City	VA
-51775	Salem City	VA
-51780	South Boston City	VA
-51790	Staunton City	VA
-51800	Suffolk City	VA
-51810	Virginia Beach City	VA
-51820	Waynesboro City	VA
-51830	Williamsburg City	VA
-51840	Winchester City	VA
+| County | Code |
+| ------- | ------- |
+| Accomack | 51001 |
+| Albemarle | 51003 |
+| Alleghany | 51005 |
+| Amelia | 51007 |
+| Amherst | 51009 |
+| Appomattox | 51011 |
+| Arlington | 51013 |
+| Augusta | 51015 |
+| Bath | 51017 |
+| Bedford | 51019 |
+| Bland | 51021 |
+| Botetourt | 51023 |
+| Brunswick | 51025 |
+| Buchanan | 51027 |
+| Buckingham | 51029 |
+| Campbell | 51031 |
+| Caroline | 51033 |
+| Carroll | 51035 |
+| Charles City | 51036 |
+| Charlotte | 51037 |
+| Chesterfield | 51041 |
+| Clarke | 51043 |
+| Craig | 51045 |
+| Culpeper | 51047 |
+| Cumberland | 51049 |
+| Dickenson | 51051 |
+| Dinwiddie | 51053 |
+| Essex | 51057 |
+| Fairfax | 51059 |
+| Fauquier | 51061 |
+| Floyd | 51063 |
+| Flunna | 51065 |
+| Franklin | 51067 |
+| Frederick | 51069 |
+| Giles | 51071 |
+| Gloucester | 51073 |
+| Goochland | 51075 |
+| Grayson | 51077 |
+| Greene | 51079 |
+| Greensville | 51081 |
+| Halifax | 51083 |
+| Hanover | 51085 |
+| Henrico | 51087 |
+| Henry | 51089 |
+| Highland | 51091 |
+| Isle of Wight | 51093 |
+| James City | 51095 |
+| King and Queen | 51097 |
+| King George | 51099 |
+| King William | 51101 |
+| Lancaster | 51103 |
+| Lee | 51105 |
+| Loudoun | 51107 |
+| Louisa | 51109 |
+| Lunenburg | 51111 |
+| Madison | 51113 |
+| Mathews | 51115 |
+| Mecklenburg | 51117 |
+| Middlesex | 51119 |
+| Montgomery | 51121 |
+| Nelson | 51125 |
+| New Kent | 51127 |
+| Northampton | 51131 |
+| Northumberland | 51133 |
+| Nottoway | 51135 |
+| Orange | 51137 |
+| Page | 51139 |
+| Patrick | 51141 |
+| Pittsylnia | 51143 |
+| Powhatan | 51145 |
+| Prince Edward | 51147 |
+| Prince George | 51149 |
+| Prince William | 51153 |
+| Pulaski | 51155 |
+| Rappahannock | 51157 |
+| Richmond | 51159 |
+| Roanoke | 51161 |
+| Rockbridge | 51163 |
+| Rockingham | 51165 |
+| Russell | 51167 |
+| Scott | 51169 |
+| Shenandoah | 51171 |
+| Smyth | 51173 |
+| Southampton | 51175 |
+| Spotsylnia | 51177 |
+| Stafford | 51179 |
+| Surry | 51181 |
+| Sussex | 51183 |
+| Tazewell | 51185 |
+| Warren | 51187 |
+| Washington | 51191 |
+| Westmoreland | 51193 |
+| Wise | 51195 |
+| Wythe | 51197 |
+| York | 51199 |
+| Alexandria City | 51510 |
+| Bedford City | 51515 |
+| Bristol City | 51520 |
+| Buena Vista City | 51530 |
+| Charlottesville City | 51540 |
+| Chesapeake City | 51550 |
+| Clifton Forge City | 51560 |
+| Colonial Heights Cit | 51570 |
+| Covington City | 51580 |
+| Danville City | 51590 |
+| Emporia City | 51595 |
+| Fairfax City | 51600 |
+| Falls Church City | 51610 |
+| Franklin City | 51620 |
+| Fredericksburg City | 51630 |
+| Galax City | 51640 |
+| Hampton City | 51650 |
+| Harrisonburg City | 51660 |
+| Hopewell City | 51670 |
+| Lexington City | 51678 |
+| Lynchburg City | 51680 |
+| Manassas City | 51683 |
+| Manassas Park City | 51685 |
+| Martinsville City | 51690 |
+| Newport News City | 51700 |
+| Norfolk City | 51710 |
+| Norton City | 51720 |
+| Petersburg City | 51730 |
+| Poquoson City | 51735 |
+| Portsmouth City | 51740 |
+| Radford City | 51750 |
+| Richmond City | 51760 |
+| Roanoke City | 51770 |
+| Salem City | 51775 |
+| South Boston City | 51780 |
+| Staunton City | 51790 |
+| Suffolk City | 51800 |
+| Virginia Beach City | 51810 |
+| Waynesboro City | 51820 |
+| Williamsburg City | 51830 |
+| Winchester City | 51840 |
 
 <!--
 type: tab
@@ -3425,45 +3444,47 @@ title: Washington
 
 The below table contains county codes for Washington.
 
-53001	Adams	WA
-53003	Asotin	WA
-53005	Benton	WA
-53007	Chelan	WA
-53009	Clallam	WA
-53011	Clark	WA
-53013	Columbia	WA
-53015	Cowlitz	WA
-53017	Douglas	WA
-53019	Ferry	WA
-53021	Franklin	WA
-53023	Garfield	WA
-53025	Grant	WA
-53027	Grays Harbor	WA
-53029	Island	WA
-53031	Jefferson	WA
-53033	King	WA
-53035	Kitsap	WA
-53037	Kittitas	WA
-53039	Klickitat	WA
-53041	Lewis	WA
-53043	Lincoln	WA
-53045	Mason	WA
-53047	Okanogan	WA
-53049	Pacific	WA
-53051	Pend Oreille	WA
-53053	Pierce	WA
-53055	San Juan	WA
-53057	Skagit	WA
-53059	Skamania	WA
-53061	Snohomish	WA
-53063	Spokane	WA
-53065	Stevens	WA
-53067	Thurston	WA
-53069	Wahkiakum	WA
-53071	Walla Walla	WA
-53073	Whatcom	WA
-53075	Whitman	WA
-53077	Yakima	WA
+| County | Code |
+| ------- | ------- |
+| Adams | 53001 |
+| Asotin | 53003 |
+| Benton | 53005 |
+| Chelan | 53007 |
+| Clallam | 53009 |
+| Clark | 53011 |
+| Columbia | 53013 |
+| Cowlitz | 53015 |
+| Douglas | 53017 |
+| Ferry | 53019 |
+| Franklin | 53021 |
+| Garfield | 53023 |
+| Grant | 53025 |
+| Grays Har | 53027 |
+| Island | 53029 |
+| Jefferson | 53031 |
+| King | 53033 |
+| Kitsap | 53035 |
+| Kittitas | 53037 |
+| Klickitat | 53039 |
+| Lewis | 53041 |
+| Lincoln | 53043 |
+| Mason | 53045 |
+| Okanogan | 53047 |
+| Pacific | 53049 |
+| Pend Oreil | 53051 |
+| Pierce | 53053 |
+| San Juan | 53055 |
+| Skagit | 53057 |
+| Skamania | 53059 |
+| Snohomish | 53061 |
+| Spokane | 53063 |
+| Stevens | 53065 |
+| Thurston | 53067 |
+| hkiakum | 53069 |
+| lla lla | 53071 |
+| Whatcom | 53073 |
+| Whitman | 53075 |
+| Yakima | 53077 |
 
 <!--
 type: tab
@@ -3472,61 +3493,63 @@ title: West Virginia
 
 The below table contains county codes for West Virginia.
 
-54001	Barbour	WV
-54003	Berkeley	WV
-54005	Boone	WV
-54007	Braxton	WV
-54009	Brooke	WV
-54011	Cabell	WV
-54013	Calhoun	WV
-54015	Clay	WV
-54017	Doddridge	WV
-54019	Fayette	WV
-54021	Gilmer	WV
-54023	Grant	WV
-54025	Greenbrier	WV
-54027	Hampshire	WV
-54029	Hancock	WV
-54031	Hardy	WV
-54033	Harrison	WV
-54035	Jackson	WV
-54037	Jefferson	WV
-54039	Kanawha	WV
-54041	Lewis	WV
-54043	Lincoln	WV
-54045	Logan	WV
-54047	McDowell	WV
-54049	Marion	WV
-54051	Marshall	WV
-54053	Mason	WV
-54055	Mercer	WV
-54057	Mineral	WV
-54059	Mingo	WV
-54061	Monongalia	WV
-54063	Monroe	WV
-54065	Morgan	WV
-54067	Nicholas	WV
-54069	Ohio	WV
-54071	Pendleton	WV
-54073	Pleasants	WV
-54075	Pocahontas	WV
-54077	Preston	WV
-54079	Putnam	WV
-54081	Raleigh	WV
-54083	Randolph	WV
-54085	Ritchie	WV
-54087	Roane	WV
-54089	Summers	WV
-54091	Taylor	WV
-54093	Tucker	WV
-54095	Tyler	WV
-54097	Upshur	WV
-54099	Wayne	WV
-54101	Webster	WV
-54103	Wetzel	WV
-54105	Wirt	WV
-54107	Wood	WV
-54109	Wyoming	WV
+| County | Code |
+| ------- | ------- |
+| Barbour | 54001 |
+| Berkeley | 54003 |
+| Boone | 54005 |
+| Braxton | 54007 |
+| Brooke | 54009 |
+| Cabell | 54011 |
+| Calhoun | 54013 |
+| Clay | 54015 |
+| Doddridge | 54017 |
+| Fayette | 54019 |
+| Gilmer | 54021 |
+| Grant | 54023 |
+| Greenbrier | 54025 |
+| Hampshire | 54027 |
+| Hancock | 54029 |
+| Hardy | 54031 |
+| Harrison | 54033 |
+| Jackson | 54035 |
+| Jefferson | 54037 |
+| Kanawha | 54039 |
+| Lewis | 54041 |
+| Lincoln | 54043 |
+| Logan | 54045 |
+| McDowell | 54047 |
+| Marion | 54049 |
+| Marshall | 54051 |
+| Mason | 54053 |
+| Mercer | 54055 |
+| Mineral | 54057 |
+| Mingo | 54059 |
+| Monongalia | 54061 |
+| Monroe | 54063 |
+| Morgan | 54065 |
+| Nicholas | 54067 |
+| Ohio | 54069 |
+| Pendleton | 54071 |
+| Pleasants | 54073 |
+| Pocahontas | 54075 |
+| Preston | 54077 |
+| Putnam | 54079 |
+| Raleigh | 54081 |
+| Randolph | 54083 |
+| Ritchie | 54085 |
+| Roane | 54087 |
+| Summers | 54089 |
+| Taylor | 54091 |
+| Tucker | 54093 |
+| Tyler | 54095 |
+| Upshur | 54097 |
+| Wayne | 54099 |
+| Webster | 54101 |
+| Wetzel | 54103 |
+| Wirt | 54105 |
+| Wood | 54107 |
+| Wyoming | 54109 |
 
 <!--
 type: tab
@@ -3535,78 +3558,80 @@ title: Wisconsin
 
 The below table contains county codes for Wisconsin.
 
-55001	Adams	WI
-55003	Ashland	WI
-55005	Barron	WI
-55007	Bayfield	WI
-55009	Brown	WI
-55011	Buffalo	WI
-55013	Burnett	WI
-55015	Calumet	WI
-55017	Chippewa	WI
-55019	Clark	WI
-55021	Columbia	WI
-55023	Crawford	WI
-55025	Dane	WI
-55027	Dodge	WI
-55029	Door	WI
-55031	Douglas	WI
-55033	Dunn	WI
-55035	Eau Claire	WI
-55037	Florence	WI
-55039	Fond du Lac	WI
-55041	Forest	WI
-55043	Grant	WI
-55045	Green	WI
-55047	Green Lake	WI
-55049	Iowa	WI
-55051	Iron	WI
-55053	Jackson	WI
-55055	Jefferson	WI
-55057	Juneau	WI
-55059	Kenosha	WI
-55061	Kewaunee	WI
-55063	La Crosse	WI
-55065	Lafayette	WI
-55067	Langlade	WI
-55069	Lincoln	WI
-55071	Manitowoc	WI
-55073	Marathon	WI
-55075	Marinette	WI
-55077	Marquette	WI
-55078	Menominee	WI
-55079	Milwaukee	WI
-55081	Monroe	WI
-55083	Oconto	WI
-55085	Oneida	WI
-55087	Outagamie	WI
-55089	Ozaukee	WI
-55091	Pepin	WI
-55093	Pierce	WI
-55095	Polk	WI
-55097	Portage	WI
-55099	Price	WI
-55101	Racine	WI
-55103	Richland	WI
-55105	Rock	WI
-55107	Rusk	WI
-55109	St Croix	WI
-55111	Sauk	WI
-55113	Sawyer	WI
-55115	Shawano	WI
-55117	Sheboygan	WI
-55119	Taylor	WI
-55121	Trempealeau	WI
-55123	Vernon	WI
-55125	Vilas	WI
-55127	Walworth	WI
-55129	Washburn	WI
-55131	Washington	WI
-55133	Waukesha	WI
-55135	Waupaca	WI
-55137	Waushara	WI
-55139	Winnebago	WI
-55141	Wood	WI
+| County | Code |
+| ------- | ------- |
+| Adams | 55001 |
+| Ashland | 55003 |
+| Barron | 55005 |
+| Bayfield | 55007 |
+| Brown | 55009 |
+| Buffalo | 55011 |
+| Burnett | 55013 |
+| Calumet | 55015 |
+| Chippewa | 55017 |
+| Clark | 55019 |
+| Columbia | 55021 |
+| Crawford | 55023 |
+| Dane | 55025 |
+| Dodge | 55027 |
+| Door | 55029 |
+| Douglas | 55031 |
+| Dunn | 55033 |
+| Eau Claire | 55035 |
+| Florence | 55037 |
+| Fond du Lac | 55039 |
+| Forest | 55041 |
+| Grant | 55043 |
+| Green | 55045 |
+| Green Lake | 55047 |
+| Iowa | 55049 |
+| Iron | 55051 |
+| Jackson | 55053 |
+| Jefferson | 55055 |
+| Juneau | 55057 |
+| Kenosha | 55059 |
+| Kewaunee | 55061 |
+| La Crosse | 55063 |
+| Lafayette | 55065 |
+| Langlade | 55067 |
+| Lincoln | 55069 |
+| Manitowoc | 55071 |
+| Marathon | 55073 |
+| Marinette | 55075 |
+| Marquette | 55077 |
+| Menominee | 55078 |
+| Milwaukee | 55079 |
+| Monroe | 55081 |
+| Oconto | 55083 |
+| Oneida | 55085 |
+| Outagamie | 55087 |
+| Ozaukee | 55089 |
+| Pepin | 55091 |
+| Pierce | 55093 |
+| Polk | 55095 |
+| Portage | 55097 |
+| Price | 55099 |
+| Racine | 55101 |
+| Richland | 55103 |
+| Rock | 55105 |
+| Rusk | 55107 |
+| St Croix | 55109 |
+| Sauk | 55111 |
+| Sawyer | 55113 |
+| Shawano | 55115 |
+| Sheboygan | 55117 |
+| Taylor | 55119 |
+| Trempealeau | 55121 |
+| Vernon | 55123 |
+| Vilas | 55125 |
+| Walworth | 55127 |
+| Washburn | 55129 |
+| Washington | 55131 |
+| Waukesha | 55133 |
+| Waupaca | 55135 |
+| Waushara | 55137 |
+| nnebago | 55139 |
+| Wood | 55141 |
 
 <!--
 type: tab
@@ -3614,29 +3639,32 @@ title: Wyoming
 -->
 
 The below table contains county codes for Wyoming. 
-56001	Albany	WY
-56003	Big Horn	WY
-56005	Campbell	WY
-56007	Carbon	WY
-56009	Converse	WY
-56011	Crook	WY
-56013	Fremont	WY
-56015	Goshen	WY
-56017	Hot Springs	WY
-56019	Johnson	WY
-56021	Laramie	WY
-56023	Lincoln	WY
-56025	Natrona	WY
-56027	Niobrara	WY
-56029	Park	WY
-56031	Platte	WY
-56033	Sheridan	WY
-56035	Sublette	WY
-56037	Sweetwater	WY
-56039	Teton	WY
-56041	Uinta	WY
-56043	Washakie	WY
-56045	Weston	WY
+| County | Code |
+| ------- | ------- |
+
+| Albany | 56001 |
+| Big Horn | 56003 |
+| Campbell | 56005 |
+| Carbon | 56007 |
+| Converse | 56009 |
+| Crook | 56011 |
+| Fremont | 56013 |
+| Goshen | 56015 |
+| Hot Sprin | 56017 |
+| Johnson | 56019 |
+| Laramie | 56021 |
+| Lincoln | 56023 |
+| Natrona | 56025 |
+| Niobrara | 56027 |
+| Park | 56029 |
+| Platte | 56031 |
+| Sheridan | 56033 |
+| Sublette | 56035 |
+| Sweetwat | 56037 |
+| Teton | 56039 |
+| Uinta | 56041 |
+| Washakie | 56043 |
+| Weston | 56045 |
 
 <!--
 type: tab
@@ -3658,14 +3686,15 @@ type: tab
 title: Arkansas
 -->
 
-The below table contains county codes for Arkansas. 
+The below table contains county codes for Guam. 
 
-66010	Cocos Island	MP
-66010	Guam	GU
-69100	Rota	MP
-69110	Saipan	MP
-69120	Aguijan	MP
-69120	Tinian	MP
+| County | Code |
+| ------- | ------- |
+| Cocos Island | 66010 |
+| Guam | 66010 |
+| Saipan | 69110 |
+| Aguijan | 69120 |
+| Tinian | 69120 |
 
 <!--
 type: tab
@@ -3676,82 +3705,82 @@ The below table contains county codes for Puerto Rico.
 
 | County | Code |
 | ------- | ------- |
-72001	Adjuntas	PR
-72003	Aguada	PR
-72005	Aguadilla	PR
-72007	Aguas Buenas	PR
-72009	Aibonito	PR
-72011	Anasco	PR
-72013	Arecibo	PR
-72015	Arroyo	PR
-72017	Barceloneta	PR
-72019	Barranquitas	PR
-72021	Bayamon	PR
-72023	Cabo Rojo	PR
-72025	Caguas	PR
-72027	Camuy	PR
-72029	Canovanas	PR
-72031	Carolina	PR
-72033	Catano	PR
-72035	Cayey	PR
-72037	Ceiba	PR
-72041	Cidra	PR
-72043	Coamo	PR
-72045	Comerio	PR
-72047	Corozal	PR
-72049	Culebra	PR
-72051	Dorado	PR
-72053	Fajardo	PR
-72054	Florida	PR
-72055	Guanica	PR
-72057	Guayama	PR
-72059	Guayanilla	PR
-72061	Guaynabo	PR
-72063	Gurabo	PR
-72065	Hatillo	PR
-72067	Hormigueros	PR
-72071	Isabela	PR
-72073	Jayuya	PR
-72075	Juana Diaz	PR
-72077	Juncos	PR
-72079	Lajas	PR
-72081	Lares	PR
-72083	Las Marias	PR
-72085	Las Piedras	PR
-72087	Loiza	PR
-72089	Luquillo	PR
-72091	Manati	PR
-72093	Maricao	PR
-72095	Maunabo	PR
-72097	Mayaguez	PR
-72099	Moca	PR
-72101	Morovis	PR
-72103	Nabuabo	PR
-72105	Naranjito	PR
-72107	Orocovis	PR
-72109	Patillas	PR
-72111	Penuelas	PR
-72113	Ponce	PR
-72115	Quebradillas	PR
-72117	Rincon	PR
-72119	Rio Grande	PR
-72121	Sabana Grande	PR
-72123	Salinas	PR
-72125	San German	PR
-72127	San Juan	PR
-72129	San Lorenzo	PR
-72131	San Sabastian	PR
-72133	Santa Isabel	PR
-72135	Toa Alta	PR
-72137	Toa Baja	PR
-72139	Trujillo Alto	PR
-72141	Utuado	PR
-72143	Vega Alta	PR
-72145	Vega Baja	PR
-72147	Vieques	PR
-72149	Villalba	PR
-72151	Yabucoa	PR
-72153	Yauco	PR
+| Adjuntas | 72001 |
+| Aguada | 72003 |
+| Aguadilla | 72005 |
+| Aguas Buenas | 72007 |
+| Aibonito | 72009 |
+| Anasco | 72011 |
+| Arecibo | 72013 |
+| Arroyo | 72015 |
+| Barceloneta | 72017 |
+| Barranquitas | 72019 |
+| Bayamon | 72021 |
+| Cabo Rojo | 72023 |
+| Caguas | 72025 |
+| Camuy | 72027 |
+| Canovanas | 72029 |
+| Carolina | 72031 |
+| Catano | 72033 |
+| Cayey | 72035 |
+| Ceiba | 72037 |
+| Cidra | 72041 |
+| Coamo | 72043 |
+| Comerio | 72045 |
+| Corozal | 72047 |
+| Culebra | 72049 |
+| Dorado | 72051 |
+| Fajardo | 72053 |
+| Florida | 72054 |
+| Guanica | 72055 |
+| Guayama | 72057 |
+| Guayanilla | 72059 |
+| Guaynabo | 72061 |
+| Gurabo | 72063 |
+| Hatillo | 72065 |
+| Hormigueros | 72067 |
+| Isabela | 72071 |
+| Jayuya | 72073 |
+| Juana Diaz | 72075 |
+| Juncos | 72077 |
+| Lajas | 72079 |
+| Lares | 72081 |
+| Las Marias | 72083 |
+| Las Piedras | 72085 |
+| Loiza | 72087 |
+| Luquillo | 72089 |
+| Manati | 72091 |
+| Maricao | 72093 |
+| Maunabo | 72095 |
+| Mayaguez | 72097 |
+| Moca | 72099 |
+| Morovis | 72101 |
+| Nabuabo | 72103 |
+| Naranjito | 72105 |
+| Orocovis | 72107 |
+| Patillas | 72109 |
+| Penuelas | 72111 |
+| Ponce | 72113 |
+| Quebradillas | 72115 |
+| Rincon | 72117 |
+| Rio Grande | 72119 |
+| Sabana Grande | 72121 |
+| Salinas | 72123 |
+| San German | 72125 |
+| San Juan | 72127 |
+| San Lorenzo | 72129 |
+| San Sabastian | 72131 |
+| Santa Isabel | 72133 |
+| Toa Alta | 72135 |
+| Toa Baja | 72137 |
+| Trujillo Alto | 72139 |
+| Utuado | 72141 |
+| Vega Alta | 72143 |
+| Vega Baja | 72145 |
+| Vieques | 72147 |
+| Villalba | 72149 |
+| Yabucoa | 72151 |
+| Yauco | 72153 |
 
 <!--
 type: tab
