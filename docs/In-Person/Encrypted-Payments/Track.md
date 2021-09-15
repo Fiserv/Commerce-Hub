@@ -4,20 +4,13 @@ tags: [carat, commerce-hub, enterprise, track, in-person, card-present, encrypte
 
 # PaymentTrack
 
-<!-- 
-also known as EMV Fallback (mention EMV fallback (EMV > Track > Manual) in EMV article and link here)
-
-explain non-encrypted and encrypted track, outline the requirements to submit a PaymentTrack as non-ecnrypted and encrypted source, reference PaymentCard for example layout, need JSON, request, response.
-
-encrypted: needs encryption data (similar EMV ISO/UMF) encryptionBlock, requirements and examples
-non-encrypted: not recommended for security reasons sends that data in Track1Data and Track2Data, requirements and examples
--->
 
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment terminal using magnetic stripe. This can be used when the payment terminal fails to obtain the card details from the card's chip.
 
 A third-party device captures the customer's payment source unencrypted or encryptes the data and sends it to the Commerce Hub integrated terminal or software.
 
----
+<!-- theme: warning -->
+> It is not recommended to send unencrypted track 1 and track 2 data for the payment transaction.
 
 ### Request Variables
 
