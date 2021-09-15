@@ -4,7 +4,9 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
 
 # EMV Tags
 
-Following is the list of EMV tags and their descriptions:
+The EMV tags listed here define the data elements that are used for payment transaction interchange and their mapping onto data objects and files in tag sequence.
+
+Following is the list of data elements, their consecutive EMV tags and their descriptions:
 
 | EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length |
 |----| --- | ----| ----| ----| ----| ----| ----| ---- |
