@@ -191,9 +191,9 @@ title: Response
 {
    "gatewayResponse":{
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "token",
-      "transactionState": "authorized",
-      "transactionOrigin": "ecom",
+      "transactionType": "TOKENIZE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
          "transactionDate": "2016-04-16",
          "transactionTime": "2016-04-16T16:06:05Z",
@@ -215,9 +215,7 @@ title: Response
    },
    "paymentToken":{
       "tokenData": "1234123412340019",
-      "PARId": "1234567895461303321654",
-      "declineDuplicates": "FALSE",
-      "tokenSource": "RSA"
+      "tokenSource": "TRANSARMOR"
    },
    "processorResponseDetails":{
       "approvalStatus": "APPROVED",

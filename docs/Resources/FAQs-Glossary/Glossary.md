@@ -9,7 +9,12 @@ tags: [carat, enterprise, definition, commerce-hub, glossary, faq]
 # 0-9
 
 ## 3-D Secure
-3-D Secure (3DS) is a technical standard that adds [security](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
+
+[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the "three domains" which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
+
+This is a technical standard that adds security to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
+
+3-D Secure technologies include Visa Secure (previously Verified by Visa), Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
 
 # A
 
@@ -259,7 +264,7 @@ Identifies the transaction as payment of an existing debt obligation, such as a 
 A system between networks that filters data passing through it and removes unauthorized traffic, thus enhancing the network's security.
 
 ## Financial Institution
-Any commercial bank, federal or state savings and loan association; federal or state savings bank; or any federal or state-chartered credit union. Also known as issuing bank.
+Any commercial bank, federal or state savings and loan association; federal or state savings bank; or any federal or state-chartered credit union. Also known as issuing bank (card issuer).
 
 ## Floor Limit
 A maximum monetary amount above which a particular transaction requires authorization.
