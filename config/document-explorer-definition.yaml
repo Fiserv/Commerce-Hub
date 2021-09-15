@@ -85,9 +85,11 @@
     - title: Debit
       sections:
       - title: Least Cost Debit
-        link: docs/In-Person/Debit/Least-Cost-Debit.md
+        link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
+      - title: Reginal Debit
+        link: docs/Resources/Guides/Debit/Regional-Debit.md
       - title: Smart Routing
-        link: docs/In-Person/Debit/Smart-Routing.md
+        link: docs/Resources/Guides/Debit/Smart-Routing.md
     - title: Enhanced Data Service
       link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
     - title: Secure Data Capture
