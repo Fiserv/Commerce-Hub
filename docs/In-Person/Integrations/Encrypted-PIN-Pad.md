@@ -1,3 +1,7 @@
+---
+tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-payment, pin-pad, manual-entry, track-data]
+---
+
 # Encrypted PIN Pad Integration
 
 The PIN Pad or device used to capture the payment source is connected to the terminal or software. The PIN Pad encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device. 

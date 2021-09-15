@@ -1,9 +1,21 @@
+---
+tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-payment, semi-integrated, software, pos, point-of-sale, terminal, manual-entry, track-data]
+---
+
 # Semi-Integrated
 
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include semi-integrated device support and the documents related to the features will be released soon.
 
-## Commerce Hub Semi-Integration Process
+Semi-integrated solutions run on a combination of Commerce Hub and third-party hardware. Commerce Hub's semi-integration solution allows your existing point-of-sale software to accept EMV based, PCI-compliant transactions. A semi-integration integrates your hardware and software with Commerec Hub's hardware and software, making your point-of-sale EMV compliant quickly and easily.
 
-The API uses an asynchronous call model. Your point-of-sale initiates a request, Clover receives and processes the request, and then provides a response.
+---
 
-Our SDKs support sales, auths, pre-auths, tip adjusts, refunds, manual refunds, and other actions. By downloading a single library and installing our device drivers, you can connect and start taking payments in less than a day.
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Encrypted PIN Pad](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
+- [Fully-Integrated Device](?path=docs/In-Person/Integrations/Fully-Integrated.md)
+
+---
