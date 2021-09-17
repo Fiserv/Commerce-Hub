@@ -6,6 +6,7 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
 
 [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) transactions require `emvData` which contains a series of Tag/Length/Value combinations for chip card processing. The data elements are captured from the [Integrated Circuit Card (ICC)](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv), terminal, or issuer and is submitted in the request and returned in the response.
 
+
 The below table contains the list of data elements, their consecutive EMV tags and their descriptions. For more information, refer to the document in [EMVCo](https://www.emvco.com/emv-technologies/contact/). 
 
 | EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length |

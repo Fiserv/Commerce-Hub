@@ -72,7 +72,11 @@ title: Request
          "expirationMonth":"02",
          "expirationYear":"2035"
       }
-   }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 
