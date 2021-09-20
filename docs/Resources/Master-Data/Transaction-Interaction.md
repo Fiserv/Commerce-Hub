@@ -25,7 +25,7 @@ The below table identifies the parameters in the `transactionInteraction` object
 | `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
 | `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Eequired on all online, mobile, and digital E-Commerce transactions.|
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
-| `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification |
+| `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification | 
 
 <!--
 type: tab
@@ -89,7 +89,7 @@ POS entry mode value identifies how account number was entered on the transactio
 | *EMV_FALLBACK* | EMV fallback to manual entry |
 | *EMV_FALLBACK_MAG* | EMV fallback to Magnetic Strip entry |
 | *EMV_SWITCHED* | EMV Transaction switched from Contactless to Contact entry |
-| *MAG_STRIPE* | Magnetic Stripe - Track Read |
+| *MAG_STRIPE* | Magnetic Stripe - Track Read | 
 
 ---
 
