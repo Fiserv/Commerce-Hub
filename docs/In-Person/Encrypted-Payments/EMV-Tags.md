@@ -27,9 +27,9 @@ The below table contains the list of data elements, their consecutive EMV tags a
 | 95 | &#10004;  |  | Terminal Verification Results | Status of the different functions as seen from the terminal | Terminal | binary  | 5 |
 | 9A  | &#10004;  |  | Transaction Date | Local date that the transaction was authorised | Terminal | numeric  | 3 |
 | 9C  | &#10004;  |  | Transaction Type | Indicates the type of financial transaction, represented by the first two digits of the [ISO 8583](https://www.iso.org/standard/31628.html) Processing Code. The actual values to be used for the Transaction Type data element are defined by the relevant payment system | Terminal | numeric  | 1 |
-| 5F24 |  |  | Application Expiry Date | Date after which application expires  | ICC | n 6 (YYMMDD) | 3 |
+| 5F24 | &#10004; |  | Application Expiry Date | Date after which application expires  | ICC | n 6 (YYMMDD) | 3 |
 | 5F2A  | &#10004;  |  | Transaction Currency Code | Indicates the [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the transaction according to ISO 3 currency format | Terminal | numeric  | 3 |
-| 5F30  |  |  | Service Code | Service code as defined in ISO/IEC 7813 for track 1 and track 2 | ICC | n 3  | 2 |
+| 5F30  | &#10004; |  | Service Code | Service code as defined in ISO/IEC 7813 for track 1 and track 2 | ICC | n 3  | 2 |
 | 5F34  | &#10004;  |  | Application Primary Account Number (PAN) Sequence Number | Identifies and differentiates cards with the same PAN | ICC | numeric  | 1 |
 | 9F02  | &#10004;  |  | Amount, Authorised (Numeric) | Authorised amount of the transaction (excluding adjustments) | Terminal | numeric  | 6 |
 | 9F03  | &#10004;  |  | Amount, Other (Numeric) | Secondary amount associated with the transaction representing a cashback amount | Terminal | numeric  | 6 |
@@ -40,7 +40,7 @@ The below table contains the list of data elements, their consecutive EMV tags a
 | 9F10  | &#10004;  |  | Issuer Application Data | Contains proprietary application data for transmission to the issuer in an online transaction. Note: For CCD-compliant applications, EMVCo Book 3, Annex C, section C7 defines the specific coding of the Issuer Application Data (IAD). To avoid potential conflicts with CCD-compliant applications, it is strongly recommended that the IAD data element in an application that is not CCD-compliant should not use the coding for a CCD-compliant application | ICC | binary  | var. up to 32 |
 | 9F1A  | &#10004;  |  | Terminal Country Code | Indicates the country of the terminal, represented according to [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md) | Terminal | numeric  | 2 |
 | 9F1E  | &#10004;  |  | Interface Device (IFD) Serial Number | Unique and permanent serial number assigned to the IFD by the manufacturer | Terminal | alphanumeric  | 8 |
-| 9F24  |  |  | Payment Account Reference (PAR) | Payment Account Reference (PAR) generated or linked directly to the provision request in the token vault | Card | ans 24  | 24 |
+| 9F24  |  | &#10004; | Payment Account Reference (PAR) | Payment Account Reference (PAR) generated or linked directly to the provision request in the token vault | Card | ans 24  | 24 |
 | 9F26  | &#10004;  |  | Application Cryptogram | Cryptogram returned by the ICC in response of the GENERATE AC command | ICC | binary  | 8 |
 | 9F27  | &#10004;  |  | Cryptogram Information Data | Indicates the type of cryptogram and the actions to be performed by the terminal | ICC | binary  | 1 |
 | 9F33  | &#10004;  |  | Terminal Capabilities | Indicates the card data input, CVM, and security capabilities of the terminal | Terminal | binary  | 3 |
@@ -51,10 +51,10 @@ The below table contains the list of data elements, their consecutive EMV tags a
 | 9F39  | &#10004;  |  | Point-of-Service (POS) Entry Mode | Indicates the method by which the PAN was entered, according to the first two digits of the ISO 8583 POS Entry Mode | Terminal | numeric  | 1 |
 | 9F41  | &#10004;  |  | Transaction Sequence Counter | Counter maintained by the terminal that is incremented by one for each transaction | Terminal | numeric  | 2-4 |
 | 9F53*  | &#10004;  |  | Transaction Category Code  | This is a data object defined by MasterCard which indicates the type of transaction being performed, and which may be used in card risk management | Terminal  | binary | 1 |
-| 9F66  |  |  | Terminal Transaction Qualifiers (TTQ)  | Indicates reader capabilities, requirements, and preferences to the card. TTQ byte 2 bits 8-7 are transient values, and reset to zero at the beginning of the transaction. All other TTQ bits are static values, and not modified based on transaction conditions. TTQ byte 3 bit 7 shall be set by the acquirer-merchant to 1b. | Terminal  | binary 32 | 4 |
+| 9F66  | &#10004; |  | Terminal Transaction Qualifiers (TTQ)  | Indicates reader capabilities, requirements, and preferences to the card. TTQ byte 2 bits 8-7 are transient values, and reset to zero at the beginning of the transaction. All other TTQ bits are static values, and not modified based on transaction conditions. TTQ byte 3 bit 7 shall be set by the acquirer-merchant to 1b. | Terminal  | binary 32 | 4 |
 | 9F5B  |  |  | Issuer Script Results  |Indicates the results of Issuer Script processing. When the reader/terminal transmits this data element to the acquirer, in this version of Kernel 3, it is acceptable that only byte 1 is transmitted, although it is preferable for all five bytes to be transmitted. | Terminal  | binary | var |
-| 9F6E |  |  | Form Factor Indicator (VI), Device Type Indicator (M)  |  | Terminal  | binary | 4 |
-| 9F7C |  |  | Merchant Custom Data  | Proprietary merchant data that may be requested by the Card | Card  | binary | 20 |
+| 9F6E | &#10004; |  | Form Factor Indicator (VI), Device Type Indicator (M)  | Indicate not only the physical form factor but also other attributes such as device technology and payment app specifications | Terminal  | binary | 4 |
+| 9F7C | &#10004; |  | Merchant Custom Data  | Proprietary merchant data that may be requested by the Card | Card  | binary | 20 |
 
 
 #### EMV Data Sample
