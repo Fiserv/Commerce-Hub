@@ -6,10 +6,17 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md).
 
+- **Merchant Managed:** The merchant submits the transaction with the required field and it is processed by
+- **Commerce Hub Managed:** The merchant submits a standard transaction which is processed by Commerce Hub.
+
+
+
 <!-- theme: info -->
 > See an account representative for more information on issuer hold times.
 
 ---
+
+
 
 ## Request Variables
 
@@ -20,10 +27,10 @@ title: amount
 
 The below table identifies the required parameters in the `amount` object.
 
-|Variable | Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|------|
+| `total` | *number* | 12 | &#10004; | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -32,11 +39,11 @@ title: transactionDetails
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-|Variable | Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
-| `primaryTransactionId` | *string* | N/A | The `transactionId` from the original transaction passed for a reauthorization.|
-| `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|------|
+| `captureFlag` | *boolean* | 5 | | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `primaryTransactionId` | *string* | N/A |&#10004; | The `transactionId` from the original transaction passed for a reauthorization.|
+| `authorizationTypeIndicator` | *string* | N/A | &#10004; | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 
 
  
