@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
 The below table contains the list of data elements, their consecutive EMV tags and their descriptions. For more information, refer to the document in [EMVCo](https://www.emvco.com/emv-technologies/contact/). 
 
 | EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length |
-|----| --- | ----| ----| ----| ----| ----| ----| ---- |
+|----| --- | ----| ----| ----| ----| ----| ----|
 | 4F  | &#10004;  |  | Application Dedicated File (ADF) Name | Identifies the application as described in [ISO/IEC 7816-5](https://www.iso.org/standard/34259.html) | ICC | binary  | 5-16 |
 | 50 | &#10004;  |  | Application Label | Mnemonic associated with the AID according to ISO/IEC 7816-5 | ICC | alphanumeric  | 1-16 |
 | 5F2A  | &#10004;  |  | Transaction Currency Code | Indicates the [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the transaction according to ISO 3 currency format | Terminal | numeric  | 3 |
