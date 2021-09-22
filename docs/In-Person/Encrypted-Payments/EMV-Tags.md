@@ -16,7 +16,7 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
 The below table contains the list of data elements, their consecutive EMV tags and their descriptions. For a full list of EMV tags, refer to [EMVCo Book 3](https://www.emvco.com/emv-technologies/contact/). 
 
 | EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length |
-|----| --- | ----| ----| ----| ----| ----| ----| ---- |
+|----| --- | ----| ----| ----| ----| ----| ----|
 | 4F  | &#10004;  |  | Application Dedicated File (ADF) Name | Identifies the application as described in [ISO/IEC 7816-5](https://www.iso.org/standard/34259.html) | ICC | binary  | 5-16 |
 | 71 |  | &#10004;  | Issuer Script Template 1 | Contains proprietary issuer data for transmission to the ICC before the second GENERATE AC command | Issuer | binary  | 9-746  |
 | 72 |  | &#10004;  | Issuer Script Template 2 | Contains proprietary issuer data for transmission to the ICC after the second GENERATE AC command | Issuer | binary  | 9-746  |
