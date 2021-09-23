@@ -13,27 +13,27 @@ Merchants need to follow the below steps in order to integrate Google Pay with t
 
 ## Step 1: Configure Google Pay on the Web
 
-The merchant need to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API Version, request a payment token, define payment card networks & auth methods, describe payment allowed methods, add payment tag, determine readiness to pay, add google pay button etc.
+The merchant need to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button etc.
 
 ---
 
 ## Step 2: Submit a Charge Request
 
-- Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
+- Option 1 - Encrypted Data (wallet encrypted data using Apple encryption, Commerce Hub will decrypt)
 - Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
 
 ---
 
-<!---
+
 ### Request Variables
--->
+
 
 <!--
 type: tab
 title: source
 -->
 
-<!---
+
 The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Required | Description |
