@@ -4,10 +4,38 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 # Reauthorize
 
-A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md).
 
-- **Merchant Managed:** The merchant submits the transaction with the required field and it is processed by
+A merchant initiates a reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
+
+A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
+
+- **Merchant Managed:** The merchant submits the transaction with the required field and it is processed by the network.
 - **Commerce Hub Managed:** The merchant submits a standard transaction which is processed by Commerce Hub.
+
+
+There are two common reauthorization scenarios:
+
+- Split or delayed shipments at eCommerce retailers. A split shipment occurs when not all the goods ordered are available for shipment at the time of purchase. If the fulfillment of the goods takes place after the authorization validity limit set by networks, eCommerce merchants perform a 
+reauthorization (separate authorization) to ensure that consumer funds are available.
+
+- Extended stay hotels, car rentals, and cruise lines. A reauthorization is used for stays, voyages, and/or rentals that extend beyond the authorization validity period set by networks.
+Reasons for using this.
+
+The following are the reauthorization options: 
+
+- Option 1 - Commerce Hub sequence initiation configuration - Authorization first, then cancel original transaction
+
+- Option 2 - Commerce Hub sequence initiation configuration -  Cancel original authorization first, then Authorize.
+
+- Option 3 - Allow merchants transaction initiation sequence. Commerce Hub configuration will be set to Authorization only. (Not a priority to configure one value)
+
+Merchant may send authorization after sending cancel
+
+Merchant may send cancel after sending authorization
+
+Merchant may not at all send cancel after sending authorization resulting in double authorization.
+
+
 
 
 
