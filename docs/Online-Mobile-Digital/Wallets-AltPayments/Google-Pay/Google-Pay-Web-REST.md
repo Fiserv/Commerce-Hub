@@ -97,7 +97,11 @@ title: Request
   "transactionInteraction": {
     "origin": "ECOM",
     "eciIndicator": "SECURE_ECOM"
-  }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 
 ```

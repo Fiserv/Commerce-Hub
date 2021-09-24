@@ -93,6 +93,10 @@ title: Request
   "splitShipment": {
     "totalCount": 5
     "finalShipment": false
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
   }
 }
 ```

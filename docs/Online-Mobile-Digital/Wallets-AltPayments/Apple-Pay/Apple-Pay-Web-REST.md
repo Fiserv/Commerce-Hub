@@ -109,7 +109,11 @@ title: Request
     "captureFlag": true,
     "createToken": true,
     "tokenProvider": "RSA"
-  }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 
 ```

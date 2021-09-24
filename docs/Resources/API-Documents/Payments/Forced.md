@@ -95,7 +95,11 @@ title: Request
    "transactionDetails": {
       "captureFlag": true,
       "approvalCode": "OK5882"
-   } 
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    } 
 }
 ```
 

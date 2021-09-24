@@ -67,7 +67,11 @@ title: Request
   "amount": {
     "total": "1.50",
     "currency": "USD"
-  }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 

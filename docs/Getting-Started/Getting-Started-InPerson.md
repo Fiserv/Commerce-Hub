@@ -22,7 +22,7 @@ By leveraging the third-party EMV-enabled payments solution, the customer's paym
 
 ---
 
-## Semi-Intergated
+## Semi-Integrated
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include semi-integrated device support and the documents related to the features will be released soon.
