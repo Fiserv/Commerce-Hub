@@ -116,6 +116,10 @@ title: Request
    },
    "transactionDetails":{
       "captureFlag": true
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }
 }
 ```
