@@ -14,8 +14,8 @@ The merchant will need to be do the changes in their [App to integrate with Goog
 
 ## Step 2: Submit a Charge Request
 
-- Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
-- Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
+- [**Encrypted Data:**](#request-variables) The data is encrypted using Apple's encryption and Commerce Hub will decrypt the information.
+- [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ---
 

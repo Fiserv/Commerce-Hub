@@ -7,9 +7,6 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Google Pay support and the documents related to the features will be released soon.
 
-Merchants need to follow the below steps in order to integrate Google Pay with their website.
-
----
 
 ## Step 1: Configure Google Pay on the Web
 
@@ -19,8 +16,8 @@ The merchant need to configure the merchant environment to accept [Google Pay on
 
 ## Step 2: Submit a Charge Request
 
-- Option 1 - Encrypted Data (wallet encrypted data using Apple encryption, Commerce Hub will decrypt)
-- Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
+- [**Encrypted Data:**](#request-variables) The data is encrypted using Apple's encryption and Commerce Hub will decrypt the information.
+- [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ---
 
@@ -45,34 +42,32 @@ The below table identifies the required parameters in the `source` object.
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 | `keyInfo` | *array* | N/A | &#10004; | Key information |
 
--->
+
 
 <!--
 type: tab
 title: keyInfo
 -->
-<!---
+
 The below table identifies the required parameters in the `keyInfo` array.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |
 | `merchantPrivateKey` | *string* | 1024 | | Merchant private key - Hex encoded. |
 | `signingVerificationKey` | *string* | 1024 | &#10004; | Signing verification key - Base64 encoded. |
--->
+
 <!-- type: tab-end -->
 
 ---
 
-<!---
 ### Payload Example
--->
+
 
 <!--
 type: tab
 title: Request
 -->
 
-<!---
 ##### Example of a charge payload request.
 ```json
 
@@ -105,19 +100,18 @@ title: Request
 }
 
 ```
--->
+
 
 <!--
 type: tab
 title: Response
 -->
 
-<!---
 ##### Example of a charge (201: Created) response.
--->
+
 
 <!-- theme: info -->
-<!--
+
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
@@ -179,7 +173,6 @@ title: Response
    }
 }
 ```
--->
 
 <!-- type: tab-end -->
 
