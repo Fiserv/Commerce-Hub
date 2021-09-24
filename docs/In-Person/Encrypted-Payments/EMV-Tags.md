@@ -16,7 +16,7 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
 The below table contains the list of data elements, their consecutive EMV tags and their descriptions. For a full list of EMV tags, refer to [EMVCo Book 3](https://www.emvco.com/emv-technologies/contact/). 
 
 | EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length |
-|----| --- | ----| ----| ----| ----| ----| ----|
+|----| --- | ----| ----| ----| ----| ----| ----| ---- |
 | 4F  | &#10004;  |  | Application Dedicated File (ADF) Name | Identifies the application as described in [ISO/IEC 7816-5](https://www.iso.org/standard/34259.html) | ICC | binary  | 5-16 |
 | 71 |  | &#10004;  | Issuer Script Template 1 | Contains proprietary issuer data for transmission to the ICC before the second GENERATE AC command | Issuer | binary  | 9-746  |
 | 72 |  | &#10004;  | Issuer Script Template 2 | Contains proprietary issuer data for transmission to the ICC after the second GENERATE AC command | Issuer | binary  | 9-746  |
@@ -36,7 +36,7 @@ The below table contains the list of data elements, their consecutive EMV tags a
 | 9F06  | &#10004;  |  | Application Identifier (AID) – terminal | Identifies the application as described in ISO/IEC 7816-5 | Terminal | binary  | 5-16 |
 | 9F07  | &#10004;  |  | Application Usage Control | Indicates issuer’s specified restrictions on the geographic usage and services allowed for the application | ICC | binary  | 2 |
 | 9F09  | &#10004;  |  | Application Version Number | Version number assigned by the payment system for the application | Terminal | binary  | 2 |
-| 9F0A |  |  | Application Selection Registered Proprietary Data | Proprietary data allowing for proprietary processing during application selection. Proprietary data is identified using Proprietary Data Identifiers that are managed by EMVCo and their usage by the Entry Point is according to their intended usage, as agreed by EMVCo during registration | Card | binary  | var |
+| 9F0A | &#10004; |  | Application Selection Registered Proprietary Data | Proprietary data allowing for proprietary processing during application selection. Proprietary data is identified using Proprietary Data Identifiers that are managed by EMVCo and their usage by the Entry Point is according to their intended usage, as agreed by EMVCo during registration | Card | binary  | var |
 | 9F10  | &#10004;  |  | Issuer Application Data | Contains proprietary application data for transmission to the issuer in an online transaction. Note: For CCD-compliant applications, EMVCo Book 3, Annex C, section C7 defines the specific coding of the Issuer Application Data (IAD). To avoid potential conflicts with CCD-compliant applications, it is strongly recommended that the IAD data element in an application that is not CCD-compliant should not use the coding for a CCD-compliant application | ICC | binary  | var. up to 32 |
 | 9F1A  | &#10004;  |  | Terminal Country Code | Indicates the country of the terminal, represented according to [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md) | Terminal | numeric  | 2 |
 | 9F1E  | &#10004;  |  | Interface Device (IFD) Serial Number | Unique and permanent serial number assigned to the IFD by the manufacturer | Terminal | alphanumeric  | 8 |
@@ -56,6 +56,7 @@ The below table contains the list of data elements, their consecutive EMV tags a
 | 9F6E | &#10004; |  | Form Factor Indicator (VI), Device Type Indicator (M)  | Indicate not only the physical form factor but also other attributes such as device technology and payment app specifications | Terminal  | binary | 4 |
 | 9F7C | &#10004; |  | Merchant Custom Data  | Proprietary merchant data that may be requested by the Card | Card  | binary | 20 |
 
+---
 
 #### EMV Data Sample
 
@@ -88,6 +89,7 @@ Below is a sample of the EMV Data Field Identifier with 2 TLV data elements.
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
