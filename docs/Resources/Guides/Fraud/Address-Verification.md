@@ -88,7 +88,11 @@ title: Request
          "postalCode": "30301",
          "country": "US"
       }
-   }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 
 ```

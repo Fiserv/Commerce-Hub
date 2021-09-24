@@ -100,7 +100,11 @@ The body of the transaction request differs based on the transaction being initi
   },
   "transactionDetails": {
     "captureFlag": true
-  }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 

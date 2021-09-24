@@ -86,6 +86,10 @@ title: Request
          "securityCode": "123",
          "securityCodeIndicator": "PROVIDED"
       }
+    },
+    "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
     }
 }
 

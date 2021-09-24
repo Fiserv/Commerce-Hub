@@ -270,7 +270,8 @@ title: Request
    },
    "merchantDetails": {
       "merchantId": "1234567890123456",
-      "alternateMerchantId": "1234567890123456"
+      "alternateMerchantId": "1234567890123456",
+      "terminalId": "123456"
    }
 }
 

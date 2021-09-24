@@ -36,8 +36,13 @@ title: Request
    },
    "additionalDataCommon":{
       "additionalData":{
-         "requestedTestErrorResponseCode":"103",
-      },   
+         "requestedTestErrorResponseCode":"103"
+      }
+    },
+    "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }   
 }
 ```
 

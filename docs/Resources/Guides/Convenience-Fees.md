@@ -73,6 +73,10 @@ title: Request
       "amountComponents":{
          "convenienceFees":"1.00"
       }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }
 }
 ```
