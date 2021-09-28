@@ -64,31 +64,43 @@ title: Request
 ```json
 
 {
-  "amount": {
-    "total": 12.04,
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "GooglePay",
-    "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/...}",
-    "signature": "MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uW...",
-    "version": "ECv2",
-    "merchantId": "676174657761793A666972737464617461",
-    "merchantPrivateKey": "DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2A...",
-    "signingVerificationKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIs..."
-  },
-  "transactionDetails": {
-    "captureFlag": true,
-    "merchantInvoiceNumber": "123456789012"
-  },
-  "transactionInteraction": {
-    "origin": "ECOM",
-    "eciIndicator": "SECURE_ECOM"
-  },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
+   "amount":{
+      "total":12.04,
+      "currency": "USD"
+   },
+   "source":{
+      "sourceType": "GooglePay",
+      "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/...}",
+      "signature": "MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uW...",
+      "version": "ECv2"
+   },
+   "transactionDetails":{
+      "captureFlag": true,
+      "merchantTransactionId": "ABCD1234-EFGH2345-IJKL14...",
+      "merchantOrderId": "ORD12345",
+      "merchantInvoiceNumber": ""
+   },
+   "billingAddress":{
+      "name": "John Doe",
+      "address":{
+         "street": "100 Main Street",
+         "houseNumberOrName": "2101 Business Plaza",
+         "city": "Alpharetta",
+         "stateOrProvince": "GA",
+         "postalCode": "30001",
+         "country": "US"
+      }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567"
+   },
+   "transactionProcessingDetails":{
+      "transactionDate": "05/21/2020",
+      "transactionTime": "19:43:37",
+      "apiTraceId": "apigeeTraceId",
+      "clientRequestId": "requestId",
+      "transactionId": "apigeeTraceId"
+   }
 }
 
 ```
