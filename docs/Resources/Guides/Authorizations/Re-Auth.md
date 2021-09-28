@@ -23,18 +23,17 @@ Reasons for using this.
 
 The following are the reauthorization options: 
 
-- Option 1 - Commerce Hub sequence initiation configuration - Authorization first, then cancel original transaction
+- Option 1 - Commerce Hub sequence initiation configuration - Authorization first, then cancel original transaction.
 
 - Option 2 - Commerce Hub sequence initiation configuration -  Cancel original authorization first, then Authorize.
 
-- Option 3 - Allow merchants transaction initiation sequence. Commerce Hub configuration will be set to Authorization only. (Not a priority to configure one value)
+- Option 3 - Allow merchants transaction initiation sequence. Commerce Hub configuration will be set to Authorization only. (Not a priority to configure one value).
 
 Merchant may send authorization after sending cancel
 
 Merchant may send cancel after sending authorization
 
 Merchant may not at all send cancel after sending authorization resulting in double authorization.
-
 
 
 
