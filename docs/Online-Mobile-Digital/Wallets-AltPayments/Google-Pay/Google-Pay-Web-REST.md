@@ -10,13 +10,13 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 ## Step 1: Configure Google Pay on the Web
 
-The merchant need to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button etc.
+The merchant needs to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button etc.
 
 ---
 
 ## Step 2: Submit a Charge Request
 
-- [**Encrypted Data:**](#request-variables) The data is encrypted using Apple's encryption and Commerce Hub will decrypt the information.
+- [**Encrypted Data:**](#request-variables) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ---

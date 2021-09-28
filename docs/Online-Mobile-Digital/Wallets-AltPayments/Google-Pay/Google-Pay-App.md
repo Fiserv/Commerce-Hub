@@ -4,17 +4,15 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 # Google Pay: In-App Integration
 
-#### Google Pay on the App
-
 ## Step 1: Configure Google Pay in App
 
-The merchant will need to be do the changes in their [App to integrate with Google Pay](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API Version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler etc.
+The merchant will have to do the changes in their [App to integrate with Google Pay](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler etc.
 
 ---
 
 ## Step 2: Submit a Charge Request
 
-- [**Encrypted Data:**](#request-variables) The data is encrypted using Apple's encryption and Commerce Hub will decrypt the information.
+- [**Encrypted Data:**](#request-variables) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ---
