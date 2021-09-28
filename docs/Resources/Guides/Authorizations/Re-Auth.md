@@ -5,7 +5,7 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 # Reauthorize
 
 
-A merchant initiates a reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
+A merchant initiates a new reauthorization on beahalf of the merchant when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
 A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
 
@@ -28,6 +28,8 @@ The following are the reauthorization options:
 - Option 2 - Commerce Hub sequence initiation configuration -  Cancel original authorization first, then Authorize.
 
 - Option 3 - Allow merchants transaction initiation sequence. Commerce Hub configuration will be set to Authorization only. (Not a priority to configure one value).
+
+**Note**: 
 
 Merchant may send authorization after sending cancel
 
