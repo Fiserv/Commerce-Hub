@@ -21,29 +21,6 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - Original auth is missing  (CPS) qualified data.
 - Different transaction amount in either authorization or settlement.
 
-
-### Additional Use Cases FAQ's
-
-What happens if a reauthorization fails in above mention used cases?
-
-Most of the time, a merchant will receive decline code for that particular transaction while doing deposit. There are some merchants which would like to proceed with a "Forced Deposit", in which there is data field even though reauthorization is failed they will have to settled/deposit the transaction.
- 
-How does reauthorization works if merchant is processing across different external platforms? 
-
-In that case, a merchant is responsible for sending additional data fields such as authcode, approval code, and auth date to Compass.
-In this case, we will not find auth code, auth data in podb as original auth did not happen in Compass, it will initiate for reauthorization and merchant will have to pay downgrade fees.
-
-### Split Shipment 
-
-For Split shipment transactions, merchant will need to provide additional data stating that this is Split shipment transaction. In split shipment transactions, the amount might be broken into several ways. 
-
-For this type of transactions Compass will not do a reauthorization, it will wait on merchant (which can be ecommerce merchant) providing data that product has been ship and then this transaction will go directly towards settlement. The data is stored for more number days in podb for this type of transactions.
-
-### Extend Validity Period 
-
-There are some exceptional merchants where card association/brands have extended their validity period for that specific merchant. If Visa has 7 days of original auth validity period, for Apple that is extended to 30 days. 
-
-
 <!-- theme: info -->
 > See an account representative for more information on issuer hold times.
 
