@@ -42,7 +42,7 @@ title: source
 The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|
+|---------|----------|-------|---------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *ApplePay* is used for Apple Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 | `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
 | `header` | *object* | N/A| &#10004; | Additional version-dependent information used to decrypt and verify the payment. |
@@ -62,7 +62,7 @@ title: header
 The below table identifies the required parameters in the `header` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ---------|--------- |
 | `applicationDataHash` | *string* | 256 | | Encrypted app data |
 | `ephemeralPublicKey` | *string* | 256 | &#10004; | Used to derive the actual Public Key. Ephemeral public key bytes. EC_v1 only. X.509 encoded key bytes, Base64 encoded as a string. |
 | `publicKeyHash` | *string* | 256 | &#10004; | Hash of the X.509 encoded public key bytes of the merchant’s certificate. SHA–256 hash, Base64 encoded as a string. |
@@ -107,8 +107,7 @@ title: Request
   }
   "transactionDetails": {
     "captureFlag": true,
-    "createToken": true,
-    "tokenProvider": "RSA"
+    "createToken": false
   },
   "merchantDetails":{
       "merchantId": "123456789789567",
