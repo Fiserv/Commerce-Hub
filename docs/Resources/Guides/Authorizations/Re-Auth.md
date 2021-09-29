@@ -13,51 +13,14 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - **Commerce Hub Managed:** The merchant submits a standard transaction which is processed by Commerce Hub.
 
 
-### There are two common reauthorization scenarios:
+### Reauthorization Scenarios
 
-- Split or delayed shipments at eCommerce retailers. A split shipment occurs when not all the goods ordered are available for shipment at the time of purchase. If the fulfillment of the goods takes place after the authorization validity limit set by networks, eCommerce merchants perform a 
-reauthorization (separate authorization) to ensure that consumer funds are available.
+- Split or delayed shipments at eCommerce retailers.
+- Extended stay hotels, car rentals, and cruise lines.
+- Validity period of original authorization has expired.
+- Original auth is missing  (CPS) qualified data.
+- Different transaction amount in either authorization or settlement.
 
-- Extended stay hotels, car rentals, and cruise lines. A reauthorization is used for stays, voyages, and/or rentals that extend beyond the authorization validity period set by networks.
-Reasons for using this.
-
-### The following are the reauthorization options: 
-
-- Option 1 - Commerce Hub sequence initiation configuration - Authorization first, then cancel original transaction.
-
-- Option 2 - Commerce Hub sequence initiation configuration -  Cancel original authorization first, then Authorize.
-
-- Option 3 - Allow merchants transaction initiation sequence. Commerce Hub configuration will be set to Authorization only. (Not a priority to configure one value).
-
-**Note**: 
-
-- Merchant may send authorization after sending cancel
-
-- Merchant may send cancel after sending authorization
-
-- Merchant may not at all send cancel after sending authorization resulting in double authorization.
-
-## Use cases or scenarios for Reauthorization 
-
-There are 3 scenario which will triggered reauthorization on behalf of merchant:
-
-### Validity Period
-
-### Will we support this?
-
-Validity period of original authorization has expired
-Original auth is missing CPS qualified data
-Different transaction amount in either authorization or settlement 
-
-Validity period of original authorization has expired - Each card brand (Visa, MasterCard, Amex, Discover) has their authorization validity period, if original authorization goes beyond that validity period or days then gateway has to initiates new authorization on behalf of merchant for that  particular transaction. 
-
-For instance - If merchant sends original authorization for Visa card today, and after 15 days merchant submits the deposit / settlement in batch file, then it wont be able to find matching data in podb for original authorization because Visa has 7 days of validity period and after 7 days Podb does not store Visa transactions. Therefore in this case it will collect transaction data from deposit file and initiate reauthorization.
-
-### Original Authorization
-
-Original authorization is missing CPS qualification data  - Each card brand has their own CPS qualification data, this qualification data is mandatory for authorization and settlement. For eg - If the transaction is still valid from authorization validity perspective and original auth is missing CPS qualification data, then gateway will need to initiate reauthorization for that particular transaction otherwise merchant will have to pay down grade fees. For Visa, CPS data is Trans id, For MC - Bank Reference no, Amex - Amex Trans id. 
-
-Different transaction amount in either authorization or settlement - There are two instances (1) Merchant can send settlement amount less than original authorization amount or (2) Merchant can send deposit higher than authorization amount. - In both of these cases Compass will initiate reauthorization to get exact amount or fresh data.
 
 ### Additional Use Cases FAQ's
 
