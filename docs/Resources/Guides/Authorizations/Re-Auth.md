@@ -39,7 +39,7 @@ The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|------|
-| `total` | *number* | 12 | &#10004; | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `total` | *number* | 12 | &#10004; | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
