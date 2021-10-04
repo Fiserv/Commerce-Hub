@@ -12,7 +12,6 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - **Merchant Managed:** The merchant submits the transaction with the required field and it is processed by the network.
 - **Commerce Hub Managed:** The merchant submits a standard transaction which is processed by Commerce Hub.
 
-
 ### Reauthorization Scenarios
 
 - Split or delayed shipments at eCommerce retailers.
