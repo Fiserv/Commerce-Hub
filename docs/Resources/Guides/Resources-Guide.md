@@ -40,9 +40,12 @@ Commerce Hub offers multiple transactions related guides to assist with managing
 
 ### Featured Guides
 
-- [Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md) 
+- [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+<!--
 - [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md)
+- [Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md)
+-->
 
 ---
 
