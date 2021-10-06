@@ -10,7 +10,7 @@ Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/
 
 ## Request Variables
 
-For the transactions where a address verification is required, the merchant's API is required to pass the billing information as part of the request.
+For the transactions where an address verification is required, the merchant's API is required to pass the billing information as part of the request.
 
 <!--
 type: tab
