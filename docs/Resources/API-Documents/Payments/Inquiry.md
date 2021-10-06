@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, inquiry, transaction-inquiry, transactio
 
 # Transaction Inquiry
 
-To retrieve the current state of any previous [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an Inquiry request can be submitted against the original `transactionId` or `orderId`.
+To retrieve the current state of any previous [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), an inquiry request can be submitted against the original `transactionId` or `orderId`.
 
 ---
 

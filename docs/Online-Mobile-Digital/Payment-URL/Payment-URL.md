@@ -19,7 +19,7 @@ Merchant's can use the Payment URL integration method to generate a invoice that
 
 ## Generate a Payment URL
 
-Commerce Hub provides an API that allows merchant to send transaction type, amount and currency as well as the language that shall be used on the hosted payment page that will be shown to the customer after accessing the link.
+Commerce Hub provides an API that allows the merchant to send transaction type, amount and currency as well as the language that shall be used on the hosted payment page that will be shown to the customer after accessing the link.
 
 <!--theme: info-->
 > The default `expiration` for the Payment URL is 182 days.
