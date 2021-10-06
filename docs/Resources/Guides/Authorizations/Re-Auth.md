@@ -57,7 +57,7 @@ type: tab
 title: JSON Example
 -->
 
-JSON string format for re-authorization:
+JSON string format for reauthorization:
 
 ```json
 {
@@ -91,7 +91,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a re-authorization payload request.
+##### Example of a reauthorization payload request.
 
 ```json
 {
@@ -119,7 +119,7 @@ type: tab
 title: Response
 -->
 
-##### Example of a re-authorization (201: Created) response.
+##### Example of a reauthorization (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
