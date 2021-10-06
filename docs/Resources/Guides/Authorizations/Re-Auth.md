@@ -22,7 +22,7 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 <!-- theme: info --> 
 > See an account representative for more information on issuer hold times.
-
+ 
 ---
 
 ## Request Variables
