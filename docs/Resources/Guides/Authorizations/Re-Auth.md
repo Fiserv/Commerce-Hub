@@ -20,7 +20,7 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - Original auth is missing  (CPS) qualified data.
 - Different transaction amount in either authorization or settlement.
 
-<!-- theme: info -->
+<!-- theme: info --> 
 > See an account representative for more information on issuer hold times.
 
 ---
