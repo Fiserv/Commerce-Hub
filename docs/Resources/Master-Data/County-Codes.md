@@ -18,7 +18,7 @@ title: Alabama
 The below table contains county codes for Alabama.
 
 | County | Code |
-| ------- | ------- |
+| ------- | ------- | 
 | Autauga | 01001 |
 | Baldwin | 01003 |	
 | Barbour | 01005 |	
