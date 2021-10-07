@@ -6,6 +6,9 @@ tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card
 
 Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. The `cardDetails` are returned in the response.
 
+- CPS (card processing requirements) - based on things like brand, function, type (commercial, non-corporate)
+- Directed Routing - sending the request to a network based on card brand, function or type
+
 <!--
 type: tab
 title: cardDetails
