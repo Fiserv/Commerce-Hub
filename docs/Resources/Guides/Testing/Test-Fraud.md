@@ -4,13 +4,13 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 
 # Test Fraud Settings
 
-[Fraud settings](path?=docs/Resources/Guides/Fraud/Fraud-Settings.md) can be tested in Commerce Hub after setting them on the test account in [Marketplace](link to document). A fraud response can be triggered when testing a Commerce Hub integration in the sandbox environment in two ways, by passing a specific [error code](path?=docs/Resources/Guides/Testing/Test-Errors.md) or by submitting an applicable transaction that meets a fraud filter.
+[Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) can be tested in Commerce Hub after setting them on the test account in [Marketplace]. A fraud response can be triggered when testing a Commerce Hub integration in the sandbox environment in two ways, by passing a specific [error code](?path=docs/Resources/Guides/Testing/Test-Errors.md) or by submitting an applicable transaction that meets a fraud filter.
 
 ---
 
 ## Address and Security Code
 
-To verify [address and security code](path?=docs/Resources/Guides/Testing/Test-Address-Security.md) fraud settings, submit a transaction using the corresponding values in the request.
+To verify [address and security code](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) fraud settings, submit a transaction using the corresponding [test values](?path=docs/Resources/Guides/Testing/Test-Address-Security.md) in the request.
 
 
 ### Payload Example
@@ -128,7 +128,7 @@ title: Response
 
 ## Velocity Controls
 
-To verify [velocity controls], submit a transaction that violates the fraud setting for a velocity control. 
+To verify [velocity controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md), submit a transaction that violates the fraud setting for a velocity control. 
 
 
 ### Payload Example
@@ -220,7 +220,7 @@ title: Response
 
 ## Transaction Restrictions
 
-To verify [transaction restrictions], submit a transaction that violates the fraud setting for the transaction restriction. 
+To verify [transaction restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md), submit a transaction that violates the fraud setting for the transaction restriction. 
 
 ### Payload Example
 
@@ -311,7 +311,7 @@ title: Response
 
 ## Positive and Negative Filters
 
-To verify [positive and negative filters], submit a transaction that meets the condition of the positive or negative filter.
+To verify [positive and negative filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md), submit a transaction that meets the condition of the positive or negative filter.
 
 
 ### Payload Example
@@ -403,7 +403,7 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Test Cards](?path=docs/Resources/Guides/Testing/Test-Cards.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
