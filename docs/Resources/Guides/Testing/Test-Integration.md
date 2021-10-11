@@ -16,6 +16,7 @@ Commerce Hub allows developers to integrate with the API to trigger responses an
 
 Commerce Hub supports [test cards](?path=docs/Resources/Guides/Testing/Test-Cards.md) in the sandbox environment. No funds will be charged, refunded or processed while utilizing a test account.
 
+
 --- 
 
 ## Error Response Testing
@@ -33,6 +34,12 @@ A transaction decline can be triggered by entering a specific amount for the tra
 ## Address and Security Code Testing
 
 Address and security code verification responses can be triggered by entering a specific address or security code. For more information, see [test address and security code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md).
+
+---
+## Fraud Setting Testing
+
+A fraud setting can be triggered by entering a specific amount for the transaction. For more information, see [test declines](?path=docs/Resources/Testing/Test-Declines.md).
+
 
 ---
 

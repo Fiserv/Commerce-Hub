@@ -122,6 +122,7 @@ title: Response
 - [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
 - [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) 
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Test Cards](?path=docs/Resources/Guides/Testing/Test-Cards.md)
 - [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
 ---
 

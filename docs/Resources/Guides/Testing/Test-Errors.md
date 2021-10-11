@@ -36,7 +36,7 @@ title: Request
    },
    "additionalDataCommon":{
       "additionalData":{
-         "requestedTestErrorResponseCode":"103"
+         "requestedTestResponseCode":"103"
       }
     },
     "merchantDetails":{
