@@ -94,6 +94,10 @@ title: Request
 
 ```json
 {
+   "amount":{
+      "total": "12.04",
+      "currency": "USD"
+   },
    "source":{
       "sourceType": "PaymentCard",
       "card":{
@@ -107,7 +111,7 @@ title: Request
    "billingAddress":{
       "firstName": "1",
       "address":{
-         "street": "MATCHED",
+         "street": "NOT_MATCHED",
          "postalCode": "11111",
       }
    },
@@ -128,52 +132,60 @@ title: Response
 ```json
 {
    "gatewayResponse":{
-      "transactionType": "CHARGE",
-      "transactionState": "APPROVED",
-      "transactionOrigin": "ECOM",
+      "transactionType":"CHARGE",
+      "transactionState":"APPROVED",
+      "transactionOrigin":"ECOM",
       "transactionProcessingDetails":{
-         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+         "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+         "transactionTimestamp":"2016-04-16T16:06:05Z",
+         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+         "transactionId":"838916029301"
       }
    },
    "source":{
-      "sourceType": "PaymentCard",
+      "sourceType":"PaymentCard",
       "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019"
+         "expirationMonth":"05",
+         "expirationYear":"2025",
+         "bin":"400555",
+         "last4":"0019"
       }
    },
-   "processorResponseDetails":{
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
-      "processor": "fiserv",
-      "responseCode": "00000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2016-04-16T16:06:05Z",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "transactionReferenceInformation": "string",
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCHED",
-            "postalCodeMatch": "MATCHED",
-            "securityCodeMatch": "MATCHED",
-            "association":{
-               "securityCodeResponse": "M"
-               "avsCode": "YY",
-               "cardholderNameResponse": "1"
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total":12.04,
+         "currency":"USD"
+      },
+      "merchantName":"Merchant Name",
+      "merchantAddress":"123 Peach Ave",
+      "merchantCity":"Atlanta",
+      "merchantStateOrProvince":"GA",
+      "merchantPostalCode":"12345",
+      "merchantCountry":"US",
+      "merchantURL":"https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus":"APPROVED",
+         "approvalCode":"OK5882",
+         "schemeTransactionId":"0225MCC625628",
+         "processor":"fiserv",
+         "responseCode":"000",
+         "responseMessage":"APPROVAL",
+         "hostResponseCode":"00",
+         "hostResponseMessage":"APPROVAL",
+         "localTimestamp":"2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode":"000",
+            "transactionTimestamp":"2016-04-16T16:06:05Z",
+            "avsSecurityCodeResponse":{
+               "streetMatch":"NOT_MATCHED",
+               "postalCodeMatch":"MATCHED",
+               "securityCodeMatch":"MATCHED",
+               "association":{
+                  "securityCodeResponse":"M",
+                  "avsCode":"NY",
+                  "cardholderNameResponse":"1"
+               }
             }
          }
       }
@@ -187,10 +199,11 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
 - [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
+- [Test Fraud Settings](?path=docs/Resources/Guides/Testing/Test-Fraud.md)
 
 ---

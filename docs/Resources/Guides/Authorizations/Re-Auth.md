@@ -4,20 +4,19 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 # Reauthorize
 
-
 A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
 A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
 
-- **Merchant Managed:** The merchant submits the transaction with the required field and it is processed by the network.
-- **Commerce Hub Managed:** The merchant submits a standard transaction which is processed by Commerce Hub.
+- **Merchant Managed:** The merchant submits the transaction with the required fields and a reauthorization is processed by Commerce Hub.
+- **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthrorizes if required.
 
 ### Reauthorization Scenarios
 
 - Split or delayed shipments at eCommerce retailers.
 - Extended stay hotels, car rentals, and cruise lines.
 - Validity period of original authorization has expired.
-- Original auth is missing  (CPS) qualified data.
+- Original auth is missing qualified data.
 - Different transaction amount in either authorization or settlement.
 
 <!-- theme: info --> 
@@ -44,11 +43,11 @@ type: tab
 title: transactionDetails
 -->
 
-The below table identifies the required parameters in the `transactionDetails` object.
+The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|------|
-| `captureFlag` | *boolean* | 5 | | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
+| `captureFlag` | *boolean* | 5 | | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth). |
 | `primaryTransactionId` | *string* | N/A |&#10004; | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | &#10004; | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 
@@ -58,7 +57,7 @@ type: tab
 title: JSON Example
 -->
 
-JSON string format for re-authorization:
+JSON string format for reauthorization:
 
 ```json
 {
@@ -92,7 +91,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a re-authorization payload request.
+##### Example of a reauthorization payload request.
 
 ```json
 {
@@ -120,10 +119,11 @@ type: tab
 title: Response
 -->
 
-##### Example of a re-authorization (201: Created) response.
+##### Example of a reauthorization (201: Created) response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
    "gatewayResponse":{

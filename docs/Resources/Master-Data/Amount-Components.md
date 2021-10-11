@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-am
 Transaction amount information is contained into two objects, `amount`<!--- and `amountComponents`-->.
 
 - [**amount:**](#amount) Used to support the request for payment.
-- [**amountComponents:**](#amount-components) Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
+- [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
 
 ## Amount
 
@@ -35,7 +35,7 @@ JSON string format for `amount`:
 ```json
 {
    "amount":{
-      "total": 12.00,
+      "total": 21.70,
       "currency": "USD"
    }
 }
@@ -45,7 +45,7 @@ JSON string format for `amount`:
 
 ## Amount Components
 
-Used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
+Used in transactions where additional amount fields such as taxes, [surcharge fee](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge-fees), or [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) are required as part of the request.
 
 <!--
 type: tab
@@ -61,7 +61,7 @@ The below table identifies the parameters in the `amountComponents` object.
 | `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
 | `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
-| `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount |
+| `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 
 <!--
