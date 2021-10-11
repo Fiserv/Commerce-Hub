@@ -15,7 +15,7 @@ To ensure data integrity, prevent replay attacks, and eliminate stale requests, 
 The message data for the signature is the following items concatenated: `Api-Key`, `Client-Request-Id`, `Timestamp`, `Signature`.
 
 <!-- theme: info -->
->The `Client-Request-Id` is a client generated number that is unique for each request. It is used as nonce and validated against all Client-Request-Ids received by Commerce Hub within a predetermined timeframe *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.
+>The `Client-Request-Id` is a client generated number that is unique for each request. It is used as nonce and validated against all IDs received by Commerce Hub within a predetermined timeframe *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.
 
 ---
 
