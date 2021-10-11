@@ -25,7 +25,7 @@ A transaction error can be triggered by entering the desired error code in the r
 
 ## Decline Response Testing
 
-A transaction decline can be triggered by entering a specific amount for the transaction. For more information, see [test declines](?path=docs/Resources/Testing/Test-Declines.md).
+A transaction decline can be triggered by entering a specific amount for the transaction. For more information, see [test declines](?path=docs/Resources/Guides/Testing/Test-Declines.md).
 
 ---
 
