@@ -23,7 +23,7 @@ title: source
 The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------ | --- |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
 | `card` | *object* | N/A |  &#10004; | Contains the payment card details |
 | `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |

@@ -117,15 +117,12 @@ title: Response
 
 ## See Also
 
-
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
-- [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) 
+- [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) 
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Test Cards](?path=docs/Resources/Guides/Testing/Test-Cards.md)
 - [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
+- [Test Fraud Settings](?path=docs/Resources/Guides/Testing/Test-Fraud.md)
+
 ---
-
-
-
-

@@ -115,8 +115,6 @@
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
     - title: Response Handling
       link: docs/Resources/Guides/Response-Codes/Response-Handling.md
-    - title: Response Testing
-      link: docs/Resources/Guides/Testing/Test-Integration.md
     - title: Split Shipment
       link: docs/Resources/Guides/Split-Shipment.md
     - title: Split Tender
@@ -125,6 +123,8 @@
       link: docs/Resources/Guides/Stored-Credentials.md
     - title: Subsequent Authorization
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
+    - title: Test Integration
+      link: docs/Resources/Guides/Testing/Test-Integration.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
 - sections:
