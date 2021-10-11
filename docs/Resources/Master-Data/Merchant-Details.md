@@ -14,7 +14,7 @@ title: merchantDetails
 The below table identifies the parameters in the `merchantDetails` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- |------------| ------------------ |
+| -------- | -- |------------| ------- | ---- |
 | `tokenType` | *string* |  | | Specific Token Type is assigned to each merchant. e.g. TRANSARMOR |
 | `storeId` | *string* |  | | An optional outlet ID for clients that support multiple stores in the same app. |
 | `siteId` | *string* |  | | The location ID or number used to identify the unique site and merchant. |
