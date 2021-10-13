@@ -1,4 +1,26 @@
+---
+tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtual-terminal, reporting, settings]
+---
+
 # ClientLine Enterprise Portal
+
+ClientLine  offers merchants the ability to run business task such as:
+
+- Creating Reports
+- Managing Reports
+
+Reports
+Authorizations/SiteCard Activity Report: New report to identify duplicate site and card activities
+
+
+Settlement: New report was introduced called Airline Addenda Search.
+Reference: New report was introduced called Outlet Search.
+Enhancements
+Reports
+Authorizations/GenericAnalysis: Added From and To time to generic analysis report.
+Authorization: Added additional merchandise codes for Buypass transactions.
+Authorization: Additional fields have been added to Search report.
+Reference/Metadata: Enabled JSON format to download report data.
 
 Overview of CLX, what client can use for etc.
 
@@ -21,6 +43,8 @@ What it is, who/why the merchant developer would use it. (Intiate Transaction)
 
 See the Help section in the ClientLine Enterpirse Portal for more information on how to use x,y,z.
 
+
+
 ---
 
 ## Quick Key
@@ -34,6 +58,8 @@ how to use, formatting, etc
 ## Reporting
 
 how to run, schedule, update blah blah blah
+
+Report types
 
 ---
 
@@ -65,10 +91,6 @@ link to the how to, and link to the HPP documentation we create
 ---
 
 # OLD INFO
-
----
-tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtual-terminal, reporting, settings]
----
 
 # Enterprise Portal
 
