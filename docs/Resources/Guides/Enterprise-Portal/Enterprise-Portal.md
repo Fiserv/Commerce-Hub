@@ -8,6 +8,7 @@ ClientLine  offers merchants the ability to run business task such as:
 
 - Creating Reports
 - Managing Reports
+- Settlements
 
 Reports
 Authorizations/SiteCard Activity Report: New report to identify duplicate site and card activities
