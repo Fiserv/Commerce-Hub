@@ -18,12 +18,12 @@ Allows the merchants to build their own UI and manage customer transactions with
 <!-- theme: warning -->
 > The merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
+<!-- theme: info -->
+>A merchant can lessen the PCI DSS load by using a [Secure Data Capture integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md), and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
+
 **Begin integration with Commerce Hub's [RESTful APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md).**
 
 ---
-
-<!-- theme: info -->
->A merchant can lessen the PCI DSS load by using a [Secure Data Capture integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) like Hosted Payment Pages, Payment JS, or iFrame JS, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
 
 ## Hosted Payment Page
 
