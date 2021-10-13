@@ -1,3 +1,3 @@
-# JS-Request
+# Create a JS Payment Request
 
 The beginning of an awesome article...
