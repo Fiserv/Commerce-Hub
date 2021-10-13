@@ -9,9 +9,6 @@ Commerce Hub offers multiple methods of accepting online, mobile, digital paymen
 <!-- theme: warning -->
 > These transactions are at a higher risk for fraud, due to the inability to verify the account holder who is making the purchase. It is recommended to use [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) along with Commerce Hub's [Fraud Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.
 
-<!-- theme: info -->
->A merchant can lessen the PCI DSS load by using a [Secure Data Capture integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md), and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
-
 ---
 
 ## RESTful APIs
@@ -24,6 +21,9 @@ Allows the merchants to build their own UI and manage customer transactions with
 **Begin integration with Commerce Hub's [RESTful APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md).**
 
 ---
+
+<!-- theme: info -->
+>A merchant can lessen the PCI DSS load by using a [Secure Data Capture integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) like Hosted Payment Pages, Payment JS, or iFrame JS, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
 
 ## Hosted Payment Page
 
