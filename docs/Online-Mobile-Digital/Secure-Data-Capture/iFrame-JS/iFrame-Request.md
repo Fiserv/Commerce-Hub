@@ -1,3 +1,3 @@
-# iFrame-Request
+# Create an iFrame JS Request
 
 The beginning of an awesome article...

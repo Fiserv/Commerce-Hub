@@ -1,3 +1,3 @@
-# iFrame-Error
+# iFrame JS Error Handling
 
 The beginning of an awesome article...
