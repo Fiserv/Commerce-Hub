@@ -29,42 +29,36 @@ Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and s
 
 **Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-URL/Payment-URL.md).**
 
-### Payment JS/iFrame JS??
+### iFrame JS
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Payment JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 Payment JS accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
 
-**Begin integration with Commerce Hub's [Payment JS](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
+**Begin integration with Commerce Hub's [Payment JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md).**
 
 ---
 
 ## SAQ A-EP Integrations
 
-### RESTful APIs
+### Direct Post
 
-Allows the merchants to build their own UI and manage customer transactions within their own website, software, or terminal using Commerce Hub's RESTful APIs.
+Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's HPP.
 
-<!-- theme: warning -->
-> The merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+**Begin integration with Commerce Hub's [Direct Post].**
 
-**Begin integration with Commerce Hub's [RESTful APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md).**
-
-### Payment JS/iFrame JS??
+### Payment JS
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Payment JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
-
-Payment JS accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
 
 **Begin integration with Commerce Hub's [Payment JS](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
 
 ---
 
 ## See Also
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Hosted Payment Page Integration](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md)
+- [iFrame JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md)
 - [Payment URL Integration](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
-- [RESTful API Integration](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---
