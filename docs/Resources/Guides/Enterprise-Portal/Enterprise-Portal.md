@@ -4,26 +4,12 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtu
 
 # ClientLine Enterprise Portal
 
-ClientLine  offers merchants the ability to run business task such as:
+ClientLine enterprise portal offers merchants the ability to analyze payment processing with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions run business task such as:
 
 - Creating Reports
 - Managing Reports
 - Settlements
 
-Reports
-Authorizations/SiteCard Activity Report: New report to identify duplicate site and card activities
-
-
-Settlement: New report was introduced called Airline Addenda Search.
-Reference: New report was introduced called Outlet Search.
-Enhancements
-Reports
-Authorizations/GenericAnalysis: Added From and To time to generic analysis report.
-Authorization: Added additional merchandise codes for Buypass transactions.
-Authorization: Additional fields have been added to Search report.
-Reference/Metadata: Enabled JSON format to download report data.
-
-Overview of CLX, what client can use for etc.
 
 
 # OPTION 1
@@ -31,6 +17,26 @@ Overview of CLX, what client can use for etc.
 Should look like future Getting Started articles (with a header and cards (dev studio team is currently implementing)
 
 CARD 1 - VT with small description and links to VT article (this allows us more flexibility)
+
+Follow the below steps to get an access to the ClientLine Enterprise Portal.
+
+### 1. Sign up for ClientLine Enterprise Portal.
+
+Request and create a account in the ClientLine Enterprise Portal.
+
+<!-- theme: info -->
+> After registration, the merchant will have instant access to the ClientLine Enterprise Portal.
+
+### 2. Generate an API key
+
+Go to the Apps page and create a Sandbox app to obtain your API-Key and API-Secret.
+
+<!-- theme: info -->
+> These are required in the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md).
+
+### 3. Constructing the API call
+
+Construct an [API request](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to use the Commerce Hub APIs.
 
 ---
 
