@@ -14,29 +14,27 @@ ClientLine enterprise portal offers merchants the ability to analyze payment pro
 
 # OPTION 1
 
-Should look like future Getting Started articles (with a header and cards (dev studio team is currently implementing)
 
-CARD 1 - VT with small description and links to VT article (this allows us more flexibility)
 
 Follow the below steps to get an access to the ClientLine Enterprise Portal.
 
 ### 1. Sign up for ClientLine Enterprise Portal.
 
-Request and create a account in the ClientLine Enterprise Portal.
+Request and create a account in the ClientLine Enterprise Portal and features based on the account type.
 
 <!-- theme: info -->
 > After registration, the merchant will have instant access to the ClientLine Enterprise Portal.
 
-### 2. Generate an API key
+### 2. Create a Report
 
-Go to the Apps page and create a Sandbox app to obtain your API-Key and API-Secret.
+Go to the Marketplace page and create a report.
 
 <!-- theme: info -->
 > These are required in the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md).
 
-### 3. Constructing the API call
+### 3. Manage a Report
 
-Construct an [API request](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to use the Commerce Hub APIs.
+Go to the Marketplace page and select a report to manage. 
 
 ---
 
@@ -48,8 +46,11 @@ Should look like current Getting Started articles with a header and description
 
 What it is, who/why the merchant developer would use it. (Intiate Transaction)
 
-See the Help section in the ClientLine Enterpirse Portal for more information on how to use x,y,z.
+Virtual Terminal is a web-based application that allows a merchant to process electronic payments by telephone, mail order, fax, email, or in person. 
 
+This is allows the merchant developer to communicate with Virtual Terminal more efficiently.
+
+See the Help section in the ClientLine Enterpirse Portal for more information on how to use the [Virtual Terminal]. 
 
 
 ---
