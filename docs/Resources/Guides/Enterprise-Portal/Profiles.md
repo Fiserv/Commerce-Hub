@@ -1,11 +1,17 @@
 ---
-tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtual-terminal, reporting, settings]
+tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track,profiles, virtual-terminal, reporting, settings]
 ---
 
 
 # Profiles
 
+ClientLine enterprise portal offers merchants the ability to setup and manage an array of profiles. The supported profile types are:
 
+- User
+- Merchant
+- Manager
+- Managing Reports
+- Settlements
 
 Service config - CLX UI and Carat APIs - e.g 3DS, Wallets enablement, Payment API config, HPP config, VL config, Telecheck config
 

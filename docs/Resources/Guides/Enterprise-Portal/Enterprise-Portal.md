@@ -36,6 +36,10 @@ Go to the Marketplace page and create a report.
 
 Go to the Marketplace page and select a report to manage. 
 
+
+To find out more information on Reports, visit the help section in ClientLine Enterprise.
+
+
 ---
 
 # OPTION 2
