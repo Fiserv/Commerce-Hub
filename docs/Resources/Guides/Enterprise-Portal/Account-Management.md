@@ -4,8 +4,7 @@ tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, b
 
 # Account-Management
 
-
-Merchant being able to manage the account
+ClientLine enterprise portal offers merchants the ability to manage all aspects of their accounts such as:
 
 - Configuration (Profiles)
 - Merchant Boarding

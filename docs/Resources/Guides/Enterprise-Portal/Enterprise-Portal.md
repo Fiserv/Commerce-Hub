@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtu
 
 # ClientLine Enterprise Portal
 
-ClientLine enterprise portal offers merchants the ability to analyze payment processing with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions run business task such as:
+ClientLine enterprise portal offers merchants the ability to analyze payment processing with an easy-to-use suite of online tools that provide greater insight to quickly and effectively manage your electronic transactions run business task such as:
 
 - Creating Reports
 - Managing Reports
@@ -27,7 +27,7 @@ Request and create a account in the ClientLine Enterprise Portal and features ba
 
 ### 2. Create a Report
 
-Go to the Marketplace page and create a report.
+Go to the Marketplace page and create a report. Reports can be generated and shared if desired.
 
 <!-- theme: info -->
 > These are required in the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md).
@@ -61,7 +61,7 @@ See the Help section in the ClientLine Enterpirse Portal for more information on
 
 ## Quick Key
 
-depending if they put format and explain the fields, we may need article
+Depending if they put format and explain the fields, we may need article
 
 how to use, formatting, etc
 
@@ -69,9 +69,13 @@ how to use, formatting, etc
 
 ## Reporting
 
-how to run, schedule, update blah blah blah
 
-Report types
+The Commerce Hub reporting API allows users to search the transaction records and to generate standard reports (Activity, Closed Batches, Pending Batches, Declined). The data is returned in CSV format. Merchants can use the reporting data to validate the payouts and the transactions settlement. The data also helps merchants to respond back to any chargeback or transaction related query, fraud detects etc.
+
+- How to run, schedule, update, etc. 
+
+- Report types
+
 
 ---
 
