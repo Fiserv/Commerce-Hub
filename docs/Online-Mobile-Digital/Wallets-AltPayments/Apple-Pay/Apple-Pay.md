@@ -73,5 +73,6 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 
 ---
