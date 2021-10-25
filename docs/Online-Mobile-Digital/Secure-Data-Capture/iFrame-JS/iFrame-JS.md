@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your Payment.js page.
+The following recommendations are to limit potential for fraudulent activity on your Payment.js page. 
 
 **Recommendations**
 
