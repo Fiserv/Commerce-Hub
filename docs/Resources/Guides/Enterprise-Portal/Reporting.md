@@ -52,78 +52,29 @@ Funding reports allow you to view an account overview, adjustments, generic anal
 
 Chargeback reports allow you to view an account summary, sales to chargeback, generic analysis and search. To learn more about each chargeback report, click the help button in the top right of the report.
 
+---
+
+## Retrievals
+
+Chargeback reports allow you to view generic analysis and search. To learn more about each retrievals report, click the help button in the top right of the report.
 
 ---
 
-## Gross Summary
+## TeleCheck
 
-This report calculates a gross summary of all of the transaction information related to gift cards.
-
----
-
-## Aging
-
-This report calculates all of the transaction information related to aging for gift cards such as activation location, activation mid, consortium and promotion. 
+TeleCheck reports allow you to view transaction, bank deposit and collections information. To learn more about each TeleCheck report, click the help button in the top right of the report.
 
 ---
 
-## Gift Card Search
+## Benchmarking
 
-This search option allows Merchants to obtain a list of Gift Card Transactions process bases on a select date or range of dates. The merchant will have the ability to search transaction activity as far back as inception of their program and select the columns to be displayed on the listing.
+Benchmarking reports allow you to view approval rate, relative utilization and average ticket size. To learn more about each benchmarking report, click the help button in the top right of the report.
 
+## Reference
 
-## Liability/Summary
-
-Summary & Detail of the overall Outstanding Liability by Consortium, Promotion, MID or Location MID level. The default date selection of Life to Date will provide the latest snapshot of the Outstanding liability based on the dimensions chosen. 
-
-To see the Liability within a particular range, of only the financial transactions within that date range, select the desired date range and view the Liability.
-
-To see the Liability over time, select the Activity Year, Month or Date to see that trend over time. Filter by a specific currency to see the liability and the totals for that currency. There are many analysis options available.
+Reference reports allow you to view approval metadata, sites search, bin search, outlet search and prepaid information. To learn more about each reference report, click the help button in the top right of the report.
 
 ---
-
-## Liability/Search
-
-This search option allows Merchants to search the liability details of their gift card transactions. 
-
----
-
-## Card Inventory
-
-This report provides the details of the card inventory for a merchant's gift cards.
-
-
-
-
-
---- 
-
-## Settlement
-
-This report provides an overview across multiple dimensions in one unified view. This is a quick way to get a view across many dimensions. You can utilize the generic analysis reports to drill into specific dimensions and further analyze the data.
-
----
-
-## Top Sites
-
-This report provides the Site level metrics for a particular time range,showing the top locations based on their volume.
-
----
-
-## Amount Distribution 
-
-This report provides a view into the pricing strategy of your business. You can quickly see, for which price range, the most number of transactions are coming in. When you flip the view to Amount, you will see what price range is bringing in the most revenue.
-
----
-
-## Generic Analysis
-
-
-This report provides analysis for fields included in Commerce Hub. All the other reports, except a few exceptions, are derivations of Generic Analysis. With the available analysis options, you can narrow down the results using one of the many filters that are available.
-
----
-
-
 
 ## See Also
 
