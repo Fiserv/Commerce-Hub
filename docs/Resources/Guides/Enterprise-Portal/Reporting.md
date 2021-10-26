@@ -15,26 +15,43 @@ ClientLine enterprise portal offers merchants the ability to generate reports wi
 
 ## Authorizations
 
-Authorization reports allow you view an account overview, a quick at-a-glance view, decline reasons, decline detail analysis, site/card activity, amount distribution, EBT states, generic analysis, DCC analysis, authorization search and audit search. To learn more about each authorization report, click the help button in the top right of the report. 
+Authorization reports allow you to view an account overview, a quick at-a-glance view, decline reasons, decline detail analysis, site/card activity, amount distribution, EBT states, generic analysis, DCC analysis, authorization search and audit search. To learn more about each authorization report, click the help button in the top right of the report. 
 
 ---
 ## Network Routing
 
-### Network Maximizer
-
-The network maximizer allows you to analyze hypothetical scenarios to route the maximum number of authorizations (sales only, does not include returns, etc.) to a specific network. The analysis is based on routing rules associated with every card that was authorized in the selected timeframe. If a card was eligible to be routed to the maximized network based on the POS entry mode, then the transaction can be routed to that network.
+Network routing allows you to view network maximizer information and conversion ratios by currency, POS entry method and issuer regulations.  To learn more about network routing, click the help button in the top right of the report.
 
 ---
 
-## Conversion Ratios
+## Gift Card
 
-This report calculates the percentage of actual transactions that were routed to the specified network vs. the maximum possible transactions that could have been routed to the specified network.
+Gift card reporting allows you to view transaction, liability and distribution information. To learn more about gift cards, click the help button in the top right of the report.
 
 ---
 
-## Net Summary
+## Commerce Hub
 
-This report calculates a net summary of all of the transaction information related to gift cards.
+Commerce Hub reports allow you to generate a report using Commerce Hub's field names. A generic analysis or search can be completed based on the request to Commerce Hub and the response. To learn more about each Commerce Hub report, click the help button in the top right of the report. 
+
+---
+
+## Settlement
+
+Settlement reports allow you to view an account overview, a quick at-a-glance view, top sites, amount distribution, generic analysis, search, fee search, network fraud alert and network late settle. To learn more about each settlement report, click the help button in the top right of the report.
+
+---
+
+## Funding
+
+Funding reports allow you to view an account overview, adjustments, generic analysis and search. To learn more about each funding report, click the help button in the top right of the report.
+
+---
+
+## Chargeback
+
+Chargeback reports allow you to view an account summary, sales to chargeback, generic analysis and search. To learn more about each chargeback report, click the help button in the top right of the report.
+
 
 ---
 
@@ -76,9 +93,7 @@ This search option allows Merchants to search the liability details of their gif
 This report provides the details of the card inventory for a merchant's gift cards.
 
 
-## Commerce Hub
 
-Commerce Hub reports allow you to generate a report using Commerce Hub's field names. A generic analysis or search can be completed based on the request to Commerce Hub and the response. To learn more about each Commerce Hub report, click the help button in the top right of the report. 
 
 
 --- 
