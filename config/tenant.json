@@ -39,6 +39,7 @@
       "apiSpecFileNames": ["openapi"]
     }
   ],
+  "featureBranches": ["test"],
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Commerce-Hub/develop/assets/images/Commerce-Hub-Circle.png",
