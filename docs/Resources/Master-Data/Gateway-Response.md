@@ -116,9 +116,7 @@ JSON string format for `transactionProcessingDetails`:
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
-- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
-- [HTTP Response Codes](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
+- [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 
 ---
