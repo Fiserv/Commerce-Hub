@@ -72,7 +72,7 @@ title: 5xx
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Error Response](?path=docs/Resources/Guides/Response-Codes/Error-Response.md)
-- [Error Response Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
+- [Error Response Codes](?path=docs/Resources/Guides/Response-Codes/Error-Code.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
 - [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
