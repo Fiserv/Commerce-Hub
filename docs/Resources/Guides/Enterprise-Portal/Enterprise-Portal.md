@@ -94,7 +94,7 @@ PGW https://support.payeezy.com/hc/en-us/articles/203731249-Real-time-Payment-Ma
 
 ## Fraud Controls
 
-very complex so depending on what BT teams we made need to make
+Very complex so depending on what BT teams we made need to make
 
 ---
 

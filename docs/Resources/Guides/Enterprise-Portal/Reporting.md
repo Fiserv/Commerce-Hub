@@ -20,7 +20,7 @@ Authorization reports allow you to view an account overview, a quick at-a-glance
 ---
 ## Network Routing
 
-Network routing allows you to view network maximizer information and conversion ratios by currency, POS entry method and issuer regulations.  To learn more about network routing, click the help button in the top right of the report.
+Network routing allows you to view network maximizer information and conversion ratios by currency, POS entry method and issuer regulations. To learn more about network routing, click the help button in the top right of the report.
 
 ---
 
