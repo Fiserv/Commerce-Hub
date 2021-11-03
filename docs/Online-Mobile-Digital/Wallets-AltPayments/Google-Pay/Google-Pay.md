@@ -31,7 +31,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 3. Customer selects Google Pay and then redirected to the Google Pay payment form.
 4. Customer completes the google pay form and then redirected to the merchant's website.
 5. Customer selects to complete the transaction.
-6. Merchant submits the encrypted google Pay payload to Commerce Hub.
+6. Merchant submits the encrypted Google Pay payload to Commerce Hub.
 7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
 **Begin integration with [Google Pay on the Web: RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md).**
@@ -47,7 +47,7 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Complaince requir
 1. Customer selects checkout from the merchant's website.
 2. Customer then presented with the Commerce Hub's secure Hosted Payment Page.
 3. Customer selects Google Pay and then redirected to the Google Pay payment form.
-4. Customer completes the Google pay form and then redirected to the Hosted Payment Page.
+4. Customer completes the Google Pay form and then redirected to the Hosted Payment Page.
 5. Customer selects to complete the transaction.
 6. Hosted Payment Page submits the encrypted Google Pay payload to Commerce Hub.
 7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
@@ -68,9 +68,8 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
 5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
 
-<!---
+
 **Begin integration with [Google Pay Integration In-App](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md).**
--->
 
 ---
 
@@ -78,5 +77,6 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 
 ---

@@ -27,8 +27,8 @@ The merchant can submit a payment request to Apple to verify if apple pay is sup
 
 ## Step 4: Submit a Charge Request
 
-- Option 1 - Encrypted Data (wallet encrypted data using apple encryption, commerce hub will decrypt)
-- Option 2 - Decrypted Wallet (Merchant using their own certificate and they decrypt themselves and send us card data)
+- [**Encrypted Data:**](#request-variables) The data is encrypted using Apple's encryption and Commerce Hub will decrypt the information.
+- [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ---
 
@@ -41,8 +41,8 @@ title: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|
+| Variable | Type | Maximum Length | Required | Description |
+|---------|----------|--------|--------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *ApplePay* is used for Apple Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 | `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
 | `header` | *object* | N/A| &#10004; | Additional version-dependent information used to decrypt and verify the payment. |
@@ -60,7 +60,7 @@ title: header
 The below table identifies the required parameters in the `header` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | ------ | --------- | ---------|--------- |
 | `applicationDataHash` | *string* | 256 | | Encrypted app data |
 | `ephemeralPublicKey` | *string* | 256 | &#10004; | Used to derive the actual Public Key. Ephemeral public key bytes. EC_v1 only. X.509 encoded key bytes, Base64 encoded as a string. |
 | `publicKeyHash` | *string* | 256 | &#10004; | Hash of the X.509 encoded public key bytes of the merchant’s certificate. SHA–256 hash, Base64 encoded as a string. |
@@ -105,8 +105,7 @@ title: Request
   }
   "transactionDetails": {
     "captureFlag": true,
-    "createToken": true,
-    "tokenProvider": "RSA"
+    "createToken": false
   },
   "merchantDetails":{
       "merchantId": "123456789789567",
@@ -197,5 +196,6 @@ title: Response
 - [Apple Pay Web Integration Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 
 ---
