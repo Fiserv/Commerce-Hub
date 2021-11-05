@@ -40,6 +40,8 @@ JSON string format for `error`:
 
 <!-- type: tab-end -->
 
+---
+
 ## Response Example
 
 <!--
@@ -77,6 +79,7 @@ title: Error Response
 ```
 
 <!-- type: tab-end -->
+
 ---
 
 ## See Also
