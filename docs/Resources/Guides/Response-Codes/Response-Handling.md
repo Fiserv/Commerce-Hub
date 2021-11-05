@@ -4,13 +4,13 @@ tags: [carat, commerce-hub, enterprise, response-codes-and-messages, host, gatew
 
 # Response Code and Message Handling
 
-Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and errors.
+Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and errors. 
 
 ---
 
 ## HTTP Status Codes
 
-The state of the transaction can be determined by the three-digit [HTTP status code](?path=docs/Resources/Guides/Response-Codes/HTTP.md) from the response. These status codes are grouped in to three different classes, and the first digit can be used to quickly identify the class of a status code.
+The state of the transaction can be determined by the three-digit HTTP status code from the response. These status codes are grouped in to three different classes, and the first digit can be used to quickly identify the class of a status code.
 
 - **2xx: Success** – Indicates that the request was accepted successfully and will return the `processorResponseDetails` object along with the `responseCode` and `responseMessage`.
 - **4xx: Client Error** – Indicates that incorrect data in request and will return the `errorResponse` object along with the code, message, and field.

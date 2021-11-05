@@ -4,7 +4,7 @@ tags: [carat, enterprise, commerce-hub, error, response, response-codes]
 
 # Error Response
 
-Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response-Codes/Error.md) as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields.
+Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response-Codes/Error.md) as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields. 
 
 <!--
 type: tab
@@ -39,6 +39,8 @@ JSON string format for `error`:
 ```
 
 <!-- type: tab-end -->
+
+---
 
 ## Response Example
 
@@ -77,6 +79,7 @@ title: Error Response
 ```
 
 <!-- type: tab-end -->
+
 ---
 
 ## See Also
