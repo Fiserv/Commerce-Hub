@@ -25,8 +25,9 @@ title: 2xx
 
 | Code | Message | Description |
 | --------- | --- | ------- |
-| 200 | Success | Indicates that request has succeeded |
-| 201 | Created | Indicates that request has succeeded and a new resource has been created as a result |
+| 200 | Success | Indicates that a request has succeeded |
+| 201 | Created | Indicates that a request has succeeded and a new resource has been created as a result |
+| 204 | No Content | Indicates that a request has succeeded and that the client doesn't need to navigate away from its current page |
 
 
 <!--
@@ -72,7 +73,7 @@ title: 5xx
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Error Response](?path=docs/Resources/Guides/Response-Codes/Error-Response.md)
-- [Error Response Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
+- [Error Response Codes](?path=docs/Resources/Guides/Response-Codes/Error-Code.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
 - [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
