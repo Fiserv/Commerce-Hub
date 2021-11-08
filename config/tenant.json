@@ -70,7 +70,9 @@
       {
         "name": "editParameterAPIExplorer",
         "value": true
-      },
+      }      
+     ],
+    "selfServicefeatures":[
       {
         "name": "exploreDocumentation",
         "value": true
