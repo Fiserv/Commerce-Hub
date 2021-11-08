@@ -74,7 +74,24 @@
       {
         "name": "exploreDocumentation",
         "value": true
-      }
+      },
+      {
+        "name": "apiExperimentation",
+        "value": true
+      },
+      {
+        "name": "createWorkspace",
+        "value": false
+      },
+      {
+        "name": "generateCredentials",
+        "value": true
+      },
+      {
+        "name": "testingAndCertifications",
+        "value": false
+      },
+      
      ]
   }
 }
