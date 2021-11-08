@@ -6,10 +6,9 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtu
 
 ClientLine enterprise portal offers merchants the ability to analyze payment processing with an easy-to-use suite of online tools that provide greater insight to quickly and effectively manage your electronic transactions run business task such as:
 
-- Creating Reports
+- Creating Reports 
 - Managing Reports
 - Settlements
-
 
 
 # OPTION 1

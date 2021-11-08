@@ -6,6 +6,13 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track,profil
 
 ClientLine enterprise portal offers merchants the ability to setup and manage an array of profiles. The supported profile types are:
 
+Account Profiles
+Transaction Controls and (link to the fraud settings article)
+
+How to set up profiles
+
+## For each step
+
 
 - Service configuration
 
