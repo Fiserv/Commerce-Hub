@@ -69,60 +69,60 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments/v1/forcedpost:
-    x-model-version: 1.0
-    post:
-      tags: [Payment Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Forced
-      summary: Submit a forced post transaction.
-      description: Use this payload to originate a financial transaction after receiving
-        an <code>approvalCode</code> from the voice authorization center due to an
-        off-line or referral (call) decline response.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/ForcedPostRequest'}
-            examples:
-              PaymentCard: {summary: ForcedPostRequest with PaymentCard, $ref: '#/components/examples/PaymentCardForcedRequest'}
-              PaymentEMV: {summary: ForcedPostRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVForcedRequest'}
-              PaymentTrack: {summary: ForcedPostRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackForcedRequest'}
-              ManualEntry: {summary: ForcedPostRequest with maunal entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryForcedRequest'}
-              PaymentToken: {summary: ForcedPostRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenForcedRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/ForcedPostResponse'}
-              examples:
-                PaymentCard: {summary: ForcedPostResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
-                PaymentEMV: {summary: ForcedPostResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
-                PaymentTrack: {summary: ForcedPostResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                ManualEntry: {summary: ForcedPostResponse with manual entry PaymentCard,
-                  $ref: '#/components/examples/ManualEntryChargesResponse'}
-                PaymentToken: {summary: ForcedPostResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
+#  /payments/v1/forcedpost:
+#    x-model-version: 1.0
+#    post:
+#      tags: [Payment Endpoint Definition]
+#      x-group-name: Payments
+#      x-proxy-name: Forced
+#      summary: Submit a forced post transaction.
+#      description: Use this payload to originate a financial transaction after receiving
+#        an <code>approvalCode</code> from the voice authorization center due to an
+#        off-line or referral (call) decline response.
+#      requestBody:
+#        required: true
+#       content:
+#          application/json:
+#            schema: {$ref: '#/components/schemas/ForcedPostRequest'}
+#            examples:
+#              PaymentCard: {summary: ForcedPostRequest with PaymentCard, $ref: '#/components/examples/PaymentCardForcedRequest'}
+#              PaymentEMV: {summary: ForcedPostRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVForcedRequest'}
+#              PaymentTrack: {summary: ForcedPostRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackForcedRequest'}
+#              ManualEntry: {summary: ForcedPostRequest with maunal entry PaymentCard,
+#                $ref: '#/components/examples/ManualEntryForcedRequest'}
+#              PaymentToken: {summary: ForcedPostRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenForcedRequest'}
+#      responses:
+#        201:
+#          description: Created
+#          content:
+#            application/json:
+#              schema: {$ref: '#/components/schemas/ForcedPostResponse'}
+#              examples:
+#                PaymentCard: {summary: ForcedPostResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
+#                PaymentEMV: {summary: ForcedPostResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
+#                PaymentTrack: {summary: ForcedPostResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
+#                ManualEntry: {summary: ForcedPostResponse with manual entry PaymentCard,
+#                  $ref: '#/components/examples/ManualEntryChargesResponse'}
+#                PaymentToken: {summary: ForcedPostResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
+#        400: {$ref: '#/components/responses/BadRequest'}
+#        401: {$ref: '#/components/responses/Unauthorized'}
+#        404: {$ref: '#/components/responses/NotFound'}
+#        408: {$ref: '#/components/responses/RequestTimeout'}
+#        415: {$ref: '#/components/responses/UnsupportedMediaType'}
+#        425: {$ref: '#/components/responses/TooEarly'}
+#        429: {$ref: '#/components/responses/TooManyRequest'}
+#        500: {$ref: '#/components/responses/ServerError'}
+#        503: {$ref: '#/components/responses/ServiceUnavailable'}
+#        504: {$ref: '#/components/responses/GatewayTimeout'}
+#      parameters:
+#      - {$ref: '#/components/parameters/ContentTypeHeader'}
+#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+#      - {$ref: '#/components/parameters/ApiKeyHeader'}
+#      - {$ref: '#/components/parameters/TimestampHeader'}
+#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationHeader'}
+#      - {$ref: '#/components/parameters/MessageDigestHeader'}
   /payments/v1/charges/{transactionId}/capture:
     x-model-version: 1.0
     post:
