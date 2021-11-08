@@ -71,28 +71,6 @@
         "name": "editParameterAPIExplorer",
         "value": true
       }      
-     ],
-    "selfServicefeatures":[
-      {
-        "name": "exploreDocumentation",
-        "value": true
-      },
-      {
-        "name": "apiExperimentationWithRunbox",
-        "value": true
-      },
-      {
-        "name": "createWorkspace",
-        "value": false
-      },
-      {
-        "name": "generateCredentials",
-        "value": true
-      },
-      {
-        "name": "testingAndCertifications",
-        "value": false
-      }      
      ]
   }
 }
