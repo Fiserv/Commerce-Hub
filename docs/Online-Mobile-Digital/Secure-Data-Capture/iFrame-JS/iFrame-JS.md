@@ -20,6 +20,8 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 **Begin integration with [iFrame JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
 
+---
+
 ## Additional Security Settings
 
 The following recommendations are to limit potential for fraudulent activity on your Payment.js page. 
@@ -31,8 +33,9 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
+---
+
 ## See Also
 
 - Customize iFrame Payment Form
-- iFrame Error Handling
 - Payment JS Integration

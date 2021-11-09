@@ -1,6 +1,8 @@
-# Create an iFrame JS Request
+---
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+---
 
-The beginning of an awesome article...
+# Create an iFrame JS Request
 
 ## Step 1: Authentication
 
@@ -8,6 +10,9 @@ An authentication request is required to recive an AccessToken. This will be you
 
 1. A RESTful API request is made from the merchant server to obtain the authorization.
 2. The client access token and public key will be submitted as part of the iFrame JS script.
+
+---
+
 
 ### RESTful API Request
 
@@ -62,6 +67,8 @@ title: Response
 
 <!-- type: tab-end -->
 
+---
+
 ### Authentication Script
 
 The following script is required to submit the authentication of the iFrame JS:
@@ -77,7 +84,6 @@ const formConfig = {
 }
 ```
 ---
-
 
 ## Step 2: Configuration
 
@@ -98,6 +104,7 @@ const form = new commercehub.Fiserv({/* configuration object */}, authorization,
 form.loadPaymentForm("payment-saq-a-form-div");
 
 ```
+---
 
 ### Error Handling
 
@@ -108,7 +115,7 @@ Errors in iFrame JS should be handled in the .catch() of the promise for loadPay
 .catch((error) => { });
 
 ```
-
+---
 
 ## Step 3: Load the Payment Form
 
@@ -146,13 +153,11 @@ All the description of the code includeing authentication, error handling, langu
  
 </html>
 ```
+---
 
 ## Step 4: Submit Payment Request
 
-Description
-Submitting the Charges request with payment spourcetype: PaymentSession
-
-
+Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the sessionID from the [authorization](#step-1-authentication) request. 
 
 ### Endpoint
 <!-- theme: success -->
@@ -161,9 +166,8 @@ Submitting the Charges request with payment spourcetype: PaymentSession
 <!-- theme: success -->
 >**POST** `/payments/v1/tokens`
 
----
 
-## Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -174,25 +178,22 @@ title: Request
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentSession",
+    "sessionId": "df8c33d2-af27-4a3a-b7a0-61d4edf09cad"
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "accountVerification": false,
+    "merchantTransactionId": "RKTransID-768086381518"
+  },
+  "merchantDetails": {
+    "merchantId": "123456789012345"
+  }
 }
 ```
 
@@ -322,3 +323,7 @@ title: Tokens Response
 
 ---
 
+## See Also
+
+- Customize iFrame Payment Form
+- Payment JS Integration
