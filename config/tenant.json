@@ -77,14 +77,12 @@
          "label": "bug,CommerceHub",
          "template": "bug.md",
          "assignees": "william.wade@fiserv.com"
-       },
-   
+       },  
        "feedback": {
          "label": "feedback,CommerceHub",
          "template": "feedback.md",
          "assignees": "william.wade@fiserv.com"
        },
-   
        "enhancement": {
          "label": "enhancement,CommerceHub",
          "template": "feature.md",
