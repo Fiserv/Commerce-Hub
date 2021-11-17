@@ -4,13 +4,10 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 # Google Pay on the Web: RESTful API Integration
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Google Pay support and the documents related to the features will be released soon.
-
 
 ## Step 1: Configure Google Pay on the Web
 
-The merchant needs to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button etc.
+Configure the environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button, etc.
 
 ---
 
@@ -20,7 +17,6 @@ The merchant needs to configure the merchant environment to accept [Google Pay o
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ---
-
 
 ### Request Variables
 
@@ -41,11 +37,9 @@ The below table identifies the required parameters in the `source` object.
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
-
 ---
 
 ### Payload Example
-
 
 <!--
 type: tab
@@ -78,14 +72,12 @@ title: Request
 
 ```
 
-
 <!--
 type: tab
 title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
-
 
 <!-- theme: info -->
 
