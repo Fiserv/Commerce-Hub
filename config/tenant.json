@@ -39,7 +39,7 @@
       "apiSpecFileNames": ["openapi"]
     }
   ],
-  "featureBranches": ["test", "CHD-12-Future-Release", "CHD-21-Card-Present"],
+  "featureBranches": ["test"],
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Commerce-Hub/develop/assets/images/Commerce-Hub-Circle.png",
@@ -69,8 +69,25 @@
       },
       {
         "name": "editParameterAPIExplorer",
-        "value": false
-      }
+        "value": true
+      }      
      ]
-  }
+  },
+  "supportConfig": [{ 
+    "bug": {
+      "label": "bug,CommerceHub",
+      "template": "bug.md",
+      "assignees": "william.wade@fiserv.com"
+    },  
+    "feedback": {
+      "label": "feedback,CommerceHub",
+      "template": "feedback.md",
+      "assignees": "william.wade@fiserv.com"
+    },
+    "enhancement": {
+      "label": "enhancement,CommerceHub",
+      "template": "feature.md",
+      "assignees": "william.wade@fiserv.com"
+    }
+  }]
 }
