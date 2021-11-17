@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, daas, data-as-a-service, data-solutions, enterprise,
 
 # Returns Optimizatoin Service
 
-Returns Optimization Service (EDS) enables sharing of relevant data between like industry merchants to compare cardholder's likelyhood to return a product. Merchants can leverage the data to make a more informed authorization decision in an attempt to reduce refunds.
+Returns Optimization Service (ROS) enables sharing of relevant data between like industry verticals by receiving a consumer return report. Merchants can leverage the data to make a more informed transaction decision in an attempt to reduce refunds.
 
 ---
 
@@ -12,7 +12,7 @@ Returns Optimization Service (EDS) enables sharing of relevant data between like
 
 ### Minimum Requirements
 
-The following parameters are required to submit an EDS request: `source` and `merchantId`.
+The following parameters are required to submit an ROS request: `source` and `merchantId`.
 
 <!--
 type: tab
@@ -53,8 +53,11 @@ The below table identifies the response parameters in the `transactionScoreRespo
 
 | Variable | Type| Maximum Length | Description |
 |-----|---|-----|-----|
-| `merchantId` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `alternateMerchantId` | *string* | 16 | An Alternate ID assigned to a merchant based on a Value Added Service. |
+| `invocationId` | *string* | N/A | Unique Identifier associated with the invocation response |
+| `consumerType` | *string* | N/A | Indicator for NEW or EXISTING customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for new customers. |
+| `modelId` | *string* | N/A | Model Identifier???? |
+| `myReturnScoreDetails` | *object* | N/A | ???? |
+| `peerReturnScoreDetails` | *object* | N/A | ???? |
 
 <!--
 type: tab
@@ -65,8 +68,8 @@ The below table identifies the response parameters in the `myReturnScoreDetails`
 
 | Variable | Type| Maximum Length | Description |
 |-----|---|-----|-----|
-| `merchantId` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `alternateMerchantId` | *string* | 16 | An Alternate ID assigned to a merchant based on a Value Added Service. |
+| `score` | *integer* | 3 | Normalized score of a return probability. 0 indicating a low returner and 100 indicating a high returner. |
+| `returnProbabilityProfile` | *string* | 16 | Bucketed return probability profile, HIGH or LOW. |
 
 <!--
 type: tab
@@ -77,8 +80,9 @@ The below table identifies the response parameters in the `peerReturnScoreDetail
 
 | Variable | Type| Maximum Length | Description |
 |-----|---|-----|-----|
-| `merchantId` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `alternateMerchantId` | *string* | 16 | An Alternate ID assigned to a merchant based on a Value Added Service. |
+| `averageReturnValue` | *number* | 19,3 | Average amount value returned (ARV) |
+| `averageOrderValue` | *number* | 19,3 | Average amount value spent (AOV) |
+| `percentSalesReturned` | *number* | 3 | % of sales returned (by Amount) |
 
 <!-- type: tab-end -->
 
