@@ -5,7 +5,7 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 # Google Pay on the Web: RESTful API Integration
 
 
-## Step 1: Configure Google Pay on the Web
+## Step 1: Configure Google Pay
 
 Configure the environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button, etc.
 
