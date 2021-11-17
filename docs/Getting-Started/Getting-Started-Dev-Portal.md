@@ -34,5 +34,5 @@ Go to the Apps page and create a Sandbox app to obtain your API-Key and API-Secr
 ### 4. Constructing the API call
 
 Construct an [API request](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to use the Commerce Hub APIs.
-
+ 
 ---
