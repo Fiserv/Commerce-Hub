@@ -69,7 +69,7 @@
       },
       {
         "name": "editParameterAPIExplorer",
-        "value": true
+        "value": false
       }      
      ]
   },
