@@ -88,9 +88,9 @@ The below table identifies the response parameters in the `peerReturnScoreDetail
 
 ---
 
-## ROS using PaymentToken
+## PaymentToken Request
 
-The merchant can initiate ROS request transaction by passing the token details of the customer and using `PaymentToken` as a payment source.
+The merchant can initiate Returns Optimization request by passing the token details of the customer and using `PaymentToken` as a payment source.
 
 ### Additional Requirements
 
@@ -123,7 +123,7 @@ type: tab
 title: Request
 -->
 
-##### Example of an EDS payload request.
+##### Example of a Returns Optimizer payload request.
 
 ```json
 {
@@ -206,7 +206,7 @@ type: tab
 title: Response
 -->
 
-##### Example of an EDS response.
+##### Example of a Returns Optimizer response.
 
 <!-- theme: info -->
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.

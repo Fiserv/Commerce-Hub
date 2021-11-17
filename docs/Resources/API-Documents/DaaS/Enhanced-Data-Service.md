@@ -4,7 +4,7 @@ tags: [carat, commerce-hub,  daas, data-as-a-service, data-solutions, enterprise
 
 # Enhanced Data Service
 
-Enhanced Data Service (EDS) enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuers leverage the data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
+Enhanced Data Service enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuers leverage the data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
 
 ---
 
@@ -12,7 +12,7 @@ Enhanced Data Service (EDS) enables sharing of relevant data between merchants a
 
 ### Minimum Requirements
 
-The following parameters are required to submit an EDS request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the [conditional requirements](#conditional-requirements).
+The following parameters are required to submit an Enhanced Data Service request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the [conditional requirements](#conditional-requirements).
 
 <!--
 type: tab
@@ -44,7 +44,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ### Conditional Requirements
 
-One of the following parameters is required to submit an EDS request: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
+One of the following parameters is required to submit an Enhanced Data Service request: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
 
 <!--
 type: tab
@@ -150,9 +150,9 @@ Refer to the respective article below for additional request parameters.
 
 ---
 
-## EDS using PaymentCard
+## PaymentCard Request
 
-The merchant can initiate EDS request transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
+The merchant can initiate Enhanced Data Service request transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
 
 ### Additional Requirements
 
@@ -197,7 +197,7 @@ type: tab
 title: Request
 -->
 
-##### Example of an EDS payload request.
+##### Example of an Enhanced Data payload request.
 
 ```json
 {
@@ -284,7 +284,7 @@ type: tab
 title: Response
 -->
 
-##### Example of an EDS response.
+##### Example of an Enhanced Data response.
 
 <!-- theme: info -->
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
@@ -309,9 +309,9 @@ title: Response
 
 ---
 
-## EDS using PaymentToken
+## PaymentToken Request
 
-The merchant can initiate EDS request transaction by passing the token details of the customer and using `PaymentToken` as a payment source.
+The merchant can initiate Enhanced Data Service request transaction by passing the token details of the customer and using `PaymentToken` as a payment source.
 
 ### Additional Requirements
 
@@ -344,7 +344,7 @@ type: tab
 title: Request
 -->
 
-##### Example of an EDS payload request.
+##### Example of an Enhanced Data payload request.
 
 ```json
 {
@@ -427,7 +427,7 @@ type: tab
 title: Response
 -->
 
-##### Example of an EDS response.
+##### Example of an Enhanced Data response.
 
 <!-- theme: info -->
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
