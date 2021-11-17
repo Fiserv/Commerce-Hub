@@ -3338,7 +3338,7 @@ components:
           transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
             apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
             transactionId: '84356531338'}
-        transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '0.3', score: '100', returnProbablilityRate: HIGH}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '0.3' } }
+        transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '100', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '0.3'} }
         processorResponseDetails: {referenceNumber: 845366457890-TODO}
     Payment3DSRequest:
       value:
