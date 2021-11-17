@@ -49,43 +49,38 @@ type: tab
 title: transactionScoreResponse
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the response parameters in the `transactionScoreResponse` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
-
-<!-- type: tab-end -->
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `merchantId` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `alternateMerchantId` | *string* | 16 | An Alternate ID assigned to a merchant based on a Value Added Service. |
 
 <!--
 type: tab
 title: myReturnScoreDetails
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the response parameters in the `myReturnScoreDetails` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
-
-<!-- type: tab-end -->
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `merchantId` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `alternateMerchantId` | *string* | 16 | An Alternate ID assigned to a merchant based on a Value Added Service. |
 
 <!--
 type: tab
 title: peerReturnScoreDetails
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the response parameters in the `peerReturnScoreDetails` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
+| Variable | Type| Maximum Length | Description |
+|-----|---|-----|-----|
+| `merchantId` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `alternateMerchantId` | *string* | 16 | An Alternate ID assigned to a merchant based on a Value Added Service. |
 
 <!-- type: tab-end -->
-
 
 ---
 
@@ -113,7 +108,7 @@ The below table identifies the required parameters in the `source` object.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `payments-vas/v1/enhanceddata`
+>**POST** `/daas/v1/returnoptimizer`
 
 ---
 

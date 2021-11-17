@@ -186,7 +186,7 @@ The below table identifies the required parameters in the `card` object.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `payments-vas/v1/enhanceddata`
+>**POST** `daas/v1/enhanceddata`
 
 ---
 
@@ -333,7 +333,7 @@ The below table identifies the required parameters in the `source` object.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `payments-vas/v1/enhanceddata`
+>**POST** `daas/v1/enhanceddata`
 
 ---
 
