@@ -319,11 +319,11 @@ paths:
     x-model-version: 1.0
     post:
       tags: [Enhanced Data Definition]
-      x-group-name: DaaS
+      x-group-name: Data Solutions
       x-proxy-name: Enhanced Data Service
       summary: Submit a EDS Request.
       description: Use this payload prior to a transaction to perform an Enhanced
-        Data Service request for a payment card or payment token. This will be used
+        Data Service request for a PaymentCard or PaymentToken. This will be used
         by the issuer to make a more informed authorization decision.
       requestBody:
         required: true
@@ -365,11 +365,11 @@ paths:
     x-model-version: 1.0
     post:
       tags: [Return Optimizer Definition]
-      x-group-name: DaaS
-      x-proxy-name: Return Optimizer Service
-      summary: Submit a return optimizer request.
+      x-group-name: Data Solutions
+      x-proxy-name: Return Optimization Service
+      summary: Submit a ROS request.
       description: Use this payload prior to a transaction to perform an Return Optimizer
-        request for a payment card or payment token. This will be used by the issuer
+        request for a PaymentToken. This will be used by the merchant
         to make a more informed authorization decision.
       requestBody:
         required: true
@@ -377,8 +377,7 @@ paths:
           application/json:
             schema: {$ref: '#/components/schemas/ReturnOptimizerRequest'}
             examples:
-              PaymentCard: {summary: ReturnOptimizerRequest with PaymentCard, $ref: '#/components/examples/PaymentCardEDSRequest'}
-              PaymentToken: {summary: ReturnOptimizerRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSRequest'}
+              PaymentToken: {summary: ReturnOptimizerRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenROSRequest'}
       responses:
         201:
           description: Created
@@ -386,9 +385,8 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/ReturnOptimizerResponse'}
               examples:
-                PaymentCard: {summary: ReturnOptimizerResponse with PaymentCard, $ref: '#/components/examples/PaymentCardEDSResponse'}
                 PaymentToken: {summary: ReturnOptimizerResponse with PaymentToken,
-                  $ref: '#/components/examples/PaymentTokenEDSResponse'}
+                  $ref: '#/components/examples/PaymentTokenROSResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -2838,8 +2836,7 @@ components:
         amount: {total: '12.04', currency: USD}
         source: {sourceType: GooglePay, data: '{"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"}',
           signature: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=,
-          version: ECv2, merchantId: 676174657761793A666972737464617461, merchantPrivateKey: DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A,
-          signingVerificationKey: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIsFro6K+IUxRr4yFTOTO+kFCCEvHo7B9IOMLxah6c977oFzX/beObH4a9OfosMHmft3JJZ6B3xpjIb8kduK4/A==}
+          version: ECv2, merchantId: 676174657761793A666972737464617461}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
         transactionInteraction: {origin: ECOM, eciIndicator: SECURE_ECOM}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
@@ -2847,8 +2844,7 @@ components:
       value:
         source: {sourceType: GooglePay, data: '{"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"}',
           signature: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=,
-          version: ECv2, merchantId: 676174657761793A666972737464617461, merchantPrivateKey: DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A,
-          signingVerificationKey: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIsFro6K+IUxRr4yFTOTO+kFCCEvHo7B9IOMLxah6c977oFzX/beObH4a9OfosMHmft3JJZ6B3xpjIb8kduK4/A==}
+          version: ECv2, merchantId: 676174657761793A666972737464617461}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
         transactionInteraction: {origin: ECOM, eciIndicator: SECURE_ECOM}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
@@ -3208,6 +3204,11 @@ components:
               Department, city: Sandy Springs, stateOrProvince: GA, postalCode: '30303',
             country: US}
         merchantDetails: {merchantId: '1234567890123456', alternateMerchantId: '1234567890123456'}
+    PaymentTokenROSRequest:
+      value:
+        amount: {total: '12.04', currency: USD}
+        source: {sourceType: PaymentToken, tokenData: '1234560000000019'}
+        merchantDetails: {merchantId: '1234567890123456'}
     PaymentTokenChargesResponse:
       value:
         gatewayResponse:
@@ -3330,6 +3331,14 @@ components:
           transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
             apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
             transactionId: '84356531338'}
+        processorResponseDetails: {referenceNumber: 845366457890-TODO}
+    PaymentTokenROSResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
+            transactionId: '84356531338'}
+        transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '100', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '0.3'} }
         processorResponseDetails: {referenceNumber: 845366457890-TODO}
     Payment3DSRequest:
       value:
