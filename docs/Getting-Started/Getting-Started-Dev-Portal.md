@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, access, developer-studio, sandbox, devel
 
 # Getting Started with Developer Studio 
 
-## Access Commerce Hub APIs
+## Access Commerce Hub APIs,
 
 Follow the below steps to get an access to the Developer Studio and use Commerce Hub's APIs.
 
