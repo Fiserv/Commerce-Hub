@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, daas, data-as-a-service, enterprise, returns-optimization, returns-optimizer-service, fraud, security, api-reference]
+tags: [carat, commerce-hub, daas, data-as-a-service, data-solutions, enterprise, returns-optimization, returns-optimizer-service, fraud, security, api-reference]
 ---
 
 # Returns Optimizatoin Service
