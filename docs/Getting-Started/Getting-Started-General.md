@@ -22,10 +22,22 @@ Online, mobile, and digital transactions are considered Card Not Present (CNP) w
 
 ### In-Person
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include In-Person support and the documents related to the features will be released soon.
+
 In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include; manual entry, track data and EMV.
 
+<!---
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Integration](?path=docs/Getting-Started/Getting-Started-InPerson.md)
+-->
+
+### Connected Commerce
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Connected Commerce support and the documents related to the features will be released soon.
+
+Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce Hub's unified commerce solution that consolidates sales channels, and allows for a more consistent and personalized customer experience.
 
 ---
 
@@ -33,9 +45,12 @@ In-person or Card Present (CP) transactions are initiated when a customer physic
 
 - [Acount Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [Fraud Prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
-- [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
-- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
+- [Returns Optimization Service](?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md)
+<!---
+- [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
+-->
 
 ---
 

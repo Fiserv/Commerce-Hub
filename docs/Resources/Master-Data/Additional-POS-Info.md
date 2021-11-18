@@ -234,7 +234,7 @@ The below table identifies the valid values of `cardholderActivatedTerminalInfor
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---

@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 # Apple Pay on the Web: RESTful API Integration
 
-## Step 1: Configure Apple Pay on the Web
+## Step 1: Configure Apple Pay
 
 Configure Apple developer account with merchant information to accept [Apple Pay on the web](https://help.apple.com/developer-account/#/dev1731126fb). This includes creating a merchant identifier, creating a processing certificate, registering the merchant and creating a merchant identity certificate.
 
