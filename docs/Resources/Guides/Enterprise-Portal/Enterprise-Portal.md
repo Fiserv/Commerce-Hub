@@ -11,15 +11,11 @@ ClientLine enterprise portal offers merchants the ability to analyze payment pro
 - Settlements
 
 
-# OPTION 1
-
-
-
 Follow the below steps to get an access to the ClientLine Enterprise Portal.
 
 ### 1. Sign up for ClientLine Enterprise Portal.
 
-Request and create a account in the ClientLine Enterprise Portal and features based on the account type.
+Request and create an account in the ClientLine Enterprise Portal and features based on the account type.
 
 <!-- theme: info -->
 > After registration, the merchant will have instant access to the ClientLine Enterprise Portal.
@@ -41,67 +37,58 @@ To find out more information on Reports, visit the help section in ClientLine En
 
 ---
 
-# OPTION 2
-
-Should look like current Getting Started articles with a header and description
-
 ## Virtual Terminal
-
-What it is, who/why the merchant developer would use it. (Intiate Transaction)
 
 Virtual Terminal is a web-based application that allows a merchant to process electronic payments by telephone, mail order, fax, email, or in person. 
 
 This is allows the merchant developer to communicate with Virtual Terminal more efficiently.
 
-See the Help section in the ClientLine Enterpirse Portal for more information on how to use the [Virtual Terminal]. 
+See the Help section in the ClientLine Enterpirse Portal for more information on how to use the [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md). 
+
+### Initiate Card Transaction
+
+Initiate Card Transaction allows a merchant to view transaction details pertaining to a specific location. See the Help section in the ClientLine Enterpirse Portal for more information on how to use the Initiate Card Transaction feature.
+
+### Initiate Bulk (Quick Key)
 
 
----
+Initiate Bulk (Quick Key) allows a merchant to obtain transaction details for a bulk amount of locations. See the Help section in the ClientLine Enterpirse Portal for more information on how to use the Initiate Bulk (Quick Key) feature.
 
-## Quick Key
+### Generic Analysis
 
-Depending if they put format and explain the fields, we may need article
-
-how to use, formatting, etc
+Generic Analysis allows a merchant to generate reports using various filters such as measures display, network, approval status, payment method etc. See the Help section in the ClientLine Enterpirse Portal for more information on how to use the Generic Analysis feature.
 
 ---
 
 ## Reporting
 
-
 The Commerce Hub reporting API allows users to search the transaction records and to generate standard reports (Activity, Closed Batches, Pending Batches, Declined). The data is returned in CSV format. Merchants can use the reporting data to validate the payouts and the transactions settlement. The data also helps merchants to respond back to any chargeback or transaction related query, fraud detects etc.
 
-- How to run, schedule, update, etc. 
 
-- Report types
+Go to the Marketplace page and create a report. Reports can be generated and shared if desired. For a list of report types, go to [Reports](?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md).
 
 
 ---
 
 ## Account Management
 
-We will have to create most of the documentation as it will redirect to Marketplace, so would need to describe and then link to another doc with the steps.
+Merchants can create an account by requesting account access from their user admin. For more information on creating an account, go to [Account Management](?path=docs/Resources/Guides/Enterprise-Portal/Account-Management.md).
 
-This involves adding MIDs to CH, Entitlements, features, etc (will neeed to get with the marketplace team to get full info)
-
-How will User Management work, at the BT level, by a merchant admin, in marketplace, in BT??
-theorycrafting: user signs up, merch admin will be able to add them to the VT and set permissions?? different roles and levels and restrictions. Similarly who documents that in BT or they make us do it? 
-
-PGW https://support.payeezy.com/hc/en-us/articles/203731249-Real-time-Payment-Manager-RPM-User-Guide#7
+<!-- theme: info -->
+> To add a MID for Commerce Hub, utilize the default method and the sandbox.
 
 ---
 
 ## Fraud Controls
 
-Very complex so depending on what BT teams we made need to make
+Fraud controls allow merchants to control the settings related to certain filters. For more information regarding fraud controls, go to [Fraud Controls](?pathdocs/Resources/Guides/Fraud). 
 
 ---
 
 ## Hosted Payment Page Setup
 
-I doubt going to make something, if they do probably won't include code, most likely jsut an overview of customzation
+Merchants can create a custom hosted payment page based on their preferences. For more information regarding the Hosted Payment Page, go to [Hosted Payments](?pagedocs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md). 
 
-link to the how to, and link to the HPP documentation we create
 
 ---
 
