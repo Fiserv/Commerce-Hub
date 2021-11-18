@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, daas, data-as-a-service, data-solutions, enterprise,
 
 # Returns Optimization Service
 
-Returns Optimization Service (ROS) enables sharing of relevant data between like industry verticals by receiving a consumer return report. Merchants can leverage the data to make a more informed transaction decision in an attempt to reduce refunds.
+Returns Optimization Service enables sharing of relevant data between like industry verticals by receiving a consumer return report. Merchants can leverage the data to make a more informed transaction decision in an attempt to reduce refunds.
 
 ---
 
@@ -12,7 +12,7 @@ Returns Optimization Service (ROS) enables sharing of relevant data between like
 
 ### Minimum Requirements
 
-The following parameters are required to submit an ROS request: `source` and `merchantId`.
+The following parameters are required to submit an Returns Optimization request: `source` and `merchantId`.
 
 <!--
 type: tab
