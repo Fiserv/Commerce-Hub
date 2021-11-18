@@ -8,19 +8,22 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtu
 ClientLine enterprise portal offers merchants the ability to generate reports with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions. 
 
 <!-- theme: info -->
->To find out more information on creating, scheduling and managing reports, visit the help section in [ClientLine Enterprise](path?=https://www.businesstrack.com).
+>To find out more information on creating, scheduling and managing reports, visit the help section in [ClientLine Enterprise](https://www.businesstrack.com).
+
+<!-- theme: info -->
+>To learn more about each Commerce Hub report, click the help button in the top right of the report. 
 
 ---
-
 
 ## Authorizations
 
-Authorization reports allow you to view an account overview, a quick at-a-glance view, decline reasons, decline detail analysis, site/card activity, amount distribution, EBT states, generic analysis, DCC analysis, authorization search and audit search. To learn more about each authorization report, click the help button in the top right of the report. 
+Authorization reports allow you to view an account overview, a quick at-a-glance view, decline reasons, decline detail analysis, site/card activity, amount distribution, EBT states, generic analysis, DCC analysis, authorization search and audit search.
 
 ---
+
 ## Network Routing
 
-Network routing allows you to view network maximizer information and conversion ratios by currency, POS entry method and issuer regulations. To learn more about network routing, click the help button in the top right of the report.
+Network routing allows you to view network maximizer information and conversion ratios by currency, POS entry method and issuer regulations. 
 
 ---
 
@@ -32,7 +35,7 @@ Gift card reporting allows you to view transaction, liability and distribution i
 
 ## Commerce Hub
 
-Commerce Hub reports allow you to generate a report using Commerce Hub's field names. A generic analysis or search can be completed based on the request to Commerce Hub and the response. To learn more about each Commerce Hub report, click the help button in the top right of the report. 
+Commerce Hub reports allow you to generate a report using Commerce Hub's field names. A generic analysis or search can be completed based on the request to Commerce Hub and the response. 
 
 ---
 
