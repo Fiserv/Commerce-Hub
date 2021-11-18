@@ -17,6 +17,10 @@ To create an account in Commerce Hub, you will need the following:
 - Account information 
 - Valid E-mail address
 
+
+<!-- theme: info -->
+> Use the default mid or create a new dedicated sandbox mid.
+
 ### 2. Sign up for  Developer Studio
 
 Request and create a developer account in the Developer Studio.

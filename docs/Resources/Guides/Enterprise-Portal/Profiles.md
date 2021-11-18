@@ -6,46 +6,92 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track,profil
 
 ClientLine Enterprise portal offers merchants the ability to setup and manage an array of profiles. The supported profile types are:
 
-Account Profiles
-Transaction Controls and (link to the fraud settings article)
+- Account Profiles
+- Transaction Controls [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 
-## Setting up a Profiles
+## Setting up a Profile
 
-Setting up a profile in ClientLine Enterprise up profiles
+### Account Settings
 
-## For each step
+#### Create a New Profile
+
+To create a new profile in Marketplace, do the following steps:
+
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type a Profile Name in the text box.
+3. Add a Profile Description in the text box. 
+4. Click Create Profile. 
+
+#### Modify an Existing Profile
+
+To modify an existing profile in Marketplace, do the following steps:
+
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Edit any information and select a profile from the Hierarchy Add a Profile Description in the text box. 
+4. Click Create Profile. 
+
+#### Clone an Existing Profile
+
+To clone an existing profile in Marketplace, do the following steps:
+
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Click Clone Profile. 
+4. Click Create Profile. If you do not want to clone the profile, click Discard Changes.
+
+#### Edit an Existing Profile
+
+To clone an existing profile in Marketplace, do the following steps:
+
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Click Clone Profile. 
+4. Click Create Profile. If you do not want to clone the profile, click Discard Changes.
+
+#### Delete an Existing Profile
+
+To clone an existing profile in Marketplace, do the following steps:
+
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Click Delete Profile.
+
+#### Discard Changes
+
+To discard changes to a existing profile in Marketplace, do the following steps:
+
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Click Discard Changes.
 
 
-- Service configuration
+#### Assign a Profile
 
-CLX UI and Carat APIs - e.g 3DS, Wallets enablement, Payment API config, HPP config, VL config, Telecheck config.
+To assign a profile in Marketplace, do the following steps:
 
-- Merchant configuration 
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Edit any information in the profile description. 
+4. Select a profile from the Hierarchy that you want to assign and click Assign Profile. 
 
-CLX UI and Carat APIs IPG is building APIs for these merchant configurations , which will be wrapped into Carat APIs. CLX UI would consume these Carat APIs to make updates to merchant configuration related Payments and Payment VAS.
+**Note**: If a profile is already existing and you want to assign it, you must click yes to replace the profile with the new profile. 
+5. Click Assign Profile. 
 
+### Transaction Controls
 
-- Payment and Payment VAS configs
+To create a new profile in Marketplace, create the following steps:
 
-- HPP setup
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type a Profile Name in the text box.
+3. Add a Profile Description in the text box. 
+4. Click Create Profile 
 
-- Payment Schedule
-
-- Mutual SSL certificate download
-
-- VAS configuration 
-
-CLX UI and Carat APIs - uCom must build VAS config APIs , which will be wrapped into Carat APIs. CLX UI would consume these Carat APIs to make updates to merchant configuration related VAS
-
-
-- User
-- Merchant
-- Manager
-- Managing Reports
-- Settlements
 
 
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
+- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)

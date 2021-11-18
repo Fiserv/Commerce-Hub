@@ -75,7 +75,7 @@ Go to the Marketplace page and create a report. Reports can be generated and sha
 Merchants can create an account by requesting account access from their user admin. For more information on creating an account, go to [Account Management](?path=docs/Resources/Guides/Enterprise-Portal/Account-Management.md).
 
 <!-- theme: info -->
-> To add a MID for Commerce Hub, utilize the default method and the sandbox.
+> Use the default mid or create a new dedicated sandbox mid.
 
 ---
 
