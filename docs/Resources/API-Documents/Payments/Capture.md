@@ -34,16 +34,26 @@ The below table identifies the required parameters in the `amount` object.
 | `total` | *number* | 18,3  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
+<!--
+type: tab
+title: merchantDetails
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
 <!-- type: tab-end -->
 
 ---
 
-## Endpoints
-Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
+## Endpoint
+Use the below endpoint based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/capture`
->
->**POST** `/payments/v1/charges/orders/{orderId}/capture`
 
 ---
 
@@ -62,6 +72,10 @@ title: Request
     "total": "12.04",
     "currency": "USD"
   },
+  "merchantDetails":{
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 

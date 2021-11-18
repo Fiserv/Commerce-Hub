@@ -24,7 +24,9 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
  
 ---
 
-## Request Variables
+## Minimum Requirements
+
+The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
 
 <!--
 type: tab
@@ -51,28 +53,17 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryTransactionId` | *string* | N/A |&#10004; | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | &#10004; | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 
- 
 <!--
 type: tab
-title: JSON Example
+title: merchantDetails
 -->
 
-JSON string format for reauthorization:
+The below table identifies the required parameters in the `merchantDetails` object.
 
-```json
-{
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "transactionDetails": {
-    "captureFlag": false,
-    "primaryTransactionId": "838916029300",
-    "authorizationTypeIndicator": "REAUTH"
-  }
-}
-```
-
+| Variable | Data Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|-----|
+|`merchantId` | *string* | 40 | &#10004; |  A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 

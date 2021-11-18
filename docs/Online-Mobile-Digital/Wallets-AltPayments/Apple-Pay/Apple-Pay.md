@@ -37,6 +37,9 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 
 ### Web: Hosted Payment Page
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Apple Pay Hosted Payment Page support and the documents related to the features will be released soon.
+
 Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
 
 ---
@@ -50,7 +53,9 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requir
 5. The Hosted Payment Page submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
+<!---
 **Begin integration with [Apple Pay on the Web: Hosted Payment Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md).**
+-->
 
 ---
 
@@ -73,6 +78,8 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+<!---
 - [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+-->
 
 ---

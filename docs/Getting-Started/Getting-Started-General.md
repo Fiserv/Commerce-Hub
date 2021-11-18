@@ -17,7 +17,7 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Transaction types include; online payments, in-app payments, and MOTO.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Integration](?path=docs/Getting-Started/Getting-Started-Online.md)
+- [Integrations](?path=docs/Getting-Started/Getting-Started-Online.md)
 
 
 ### In-Person
@@ -57,9 +57,11 @@ Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce 
 ## Use Cases
 
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
+<!---
+- [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
+-->
 
 ---
 
