@@ -28,7 +28,7 @@ The merchant can submit a payment request to Apple to verify if apple pay is sup
 ## Step 4: Submit a Charge Request
 
 - [**Encrypted Data:**](#request-variables) The data is encrypted using Apple's encryption and Commerce Hub will decrypt the information.
-- [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
+- [**Decrypted Wallet:**]<!--(?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)--> The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ### Request Variables
 
@@ -68,8 +68,9 @@ The below table identifies the required parameters in the `header` object.
 
 ### Payload Example
 
-<!-- theme:info -->
+<!-- theme:info 
 >Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
+-->
 
 <!--
 type: tab
@@ -192,6 +193,7 @@ title: Response
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 <!--
+- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Apple Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)
 - [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 -->

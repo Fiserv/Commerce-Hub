@@ -11,46 +11,37 @@ An incremental authorization is typically found in hotel and rental environments
 
 ---
 
-## Minimum Requirements
+## Request Variables
 
 The `transactionIndicatorType` of *INCREMENTAL* and `primaryTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
-
-<!--
-type: tab
-title: amount
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|------|
-| `total` | *number* | 12 | &#10004; | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
 title: transactionDetails
 -->
 
-The below table identifies the parameters in the `transactionDetails` object.
+The below table identifies the additional required parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|------|
-| `captureFlag` | *boolean* | 5 | | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth). |
-| `primaryTransactionId` | *string* | N/A |&#10004; | The `transactionId` from the original transaction passed for a reauthorization.|
-| `authorizationTypeIndicator` | *string* | N/A | &#10004; | Identifies the authorization type of subsequent transactions. **Value:** INCREMENTAL.|
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
+| `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** INCREMENTAL.|
 
 <!--
 type: tab
-title: merchantDetails
+title: JSON Example
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+JSON string format:
 
-| Variable | Data Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|-----|
-|`merchantId` | *string* | 40 | &#10004; |  A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+```json
+{
+   "transactionDetails":{
+      "primaryTransactionId": "84356532738",
+      "transactionIndicatorType": "INCREMENTAL"
+   }
+}
+```
 
 <!-- type: tab-end -->
 
@@ -166,9 +157,9 @@ title: Response
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 

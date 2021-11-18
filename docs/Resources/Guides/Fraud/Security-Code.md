@@ -18,7 +18,7 @@ type: tab
 title: card
 -->
 
-The below table identifies the required parameters in the `card` object.
+The below table identifies the additional required parameters in the `card` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|

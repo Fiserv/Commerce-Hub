@@ -4,10 +4,10 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted
 
 # Apple Pay
 
-Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
+Apple Pay is a digital wallet platform and online payment system developed by Apple to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with iPhones, iPads, and Apple Watches.
 
 <!-- theme: info -->
->Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
+> Apple Pay is available to cardholders at participating banks in supported countries. Refer to Apple’s [participating banks](https://support.apple.com/en-us/HT204916) documentation to learn about supported banks and countries.
 
 ---
 

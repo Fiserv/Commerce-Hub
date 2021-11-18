@@ -13,7 +13,7 @@ Configure the [App to integrate with Google Pay](https://developers.google.com/p
 ## Step 2: Submit a Charge Request
 
 - [**Encrypted Data:**](#request-variables) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
-- [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
+- [**Decrypted Wallet:**]<!--(?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)--> The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
 ---
 
@@ -38,6 +38,10 @@ The below table identifies the required parameters in the `source` object.
 ---
 
 ### Payload Example
+
+<!-- theme:info 
+>Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
+-->
 
 <!--
 type: tab
@@ -150,8 +154,8 @@ title: Response
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Google Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
-- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 <!---
+- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
 - [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 -->
