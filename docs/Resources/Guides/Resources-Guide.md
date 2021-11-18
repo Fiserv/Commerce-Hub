@@ -47,9 +47,11 @@ Commerce Hub offers multiple transactions related guides to assist with managing
 
 ### Featured Guides
 
-- Enterprise Portal
+- [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
+- [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 <!--
-- [Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md) 
+- [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md)
+- [API Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md)
 - [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md)
 -->
 
@@ -67,11 +69,5 @@ Commerce Hub offers guides to assist with integrating different industry, trade,
 - [Quick Service Restruants (QSR)](?path=docs/Resources/Guides/Industry-Verticals/QSR.md)
 - [Retail](?path=docs/Resources/Guides/Industry-Verticals/Retail.md)
 -->
-
----
-
-## Next Steps
-
-[Use Commerce Hub API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---
