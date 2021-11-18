@@ -15,7 +15,7 @@ title: card
 The below table identifies the parameters in the `card` object.
 
 | Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | -----| ------------------ |
+| -------- | -- | ------------ | -----|
 | `cardData` | *string* | 256 | Credit card number |
 | `nameOnCard` | *string* | 256 | Cardholder name |
 | `expirationMonth` | *string* | 2 | 2-digit card expiration month |

@@ -24,10 +24,10 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `schemeTransactionId` | *string* | N/A | Brand (card issuer) transaction ID. |
 | `feeProgramIndicator` | *string* | N/A | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.|
 | `processor` | *string* | 256 | Card processor. |
-| `responseCode` | *string* | N/A | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
-| `responseMessage` | *string* | N/A | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Gateway.md). | 
-| `hostResponseCode` | *string* | N/A | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).| 
-| `hostResponseMessage` | *string* | N/A | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md).|
+| `responseCode` | *string* | N/A | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
+| `responseMessage` | *string* | N/A | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
+| `hostResponseCode` | *string* | N/A | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).| 
+| `hostResponseMessage` | *string* | N/A | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).|
 | `localTimestamp` | *string* | N/A | Transaction timestamp in local time.| 
 | `bankAssociationDetails` | *object* | N/A | [Bank association](#bank-association-details) response details.|
 
@@ -225,9 +225,8 @@ JSON string format for `association`:
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Gateway Response Codes](?path=docs/Resources/Guides/Response-Codes/Gateway.md)
+- [Response Code Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
 - [Gateway Response](?path=docs/Resources/Master-Data/Gateway-Response.md)
-- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Bank-Issuer.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 
 ---

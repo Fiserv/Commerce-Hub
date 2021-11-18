@@ -24,8 +24,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `processingCode` | *string* | 6 | A [required code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host.|
 | `merchantTransactionId` | *string* | 64 | Unique merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
-| `merchantInvoiceNumber` | *string* | 1024 | Merchant invoice number (aka reference number). |
-| `receiptEmail` | *string* | 256 | Email id to send the digital receipt.|
+| `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number (aka reference number). |
+| `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* |  | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
 | `partiallyApprovedTransactionAmount` | *number* |  |  The partially approved transaction amount from the original request. |

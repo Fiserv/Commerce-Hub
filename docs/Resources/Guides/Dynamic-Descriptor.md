@@ -87,53 +87,17 @@ title: Request
 ##### Example of a charge payload request using `dynamicDescriptors`.
 
 ```json
-{
-   "gatewayResponse":{
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "TOKEN",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
-      }
+ {
+   "amount":{
+      "total": "12.04",
+      "currency": "USD"
    },
    "source":{
       "sourceType": "PaymentCard",
       "card":{
-         "nameOnCard": "Jane Smith",
+         "cardData": "4005550000000019",
          "expirationMonth": "02",
-         "expirationYear": "2035",
-         "bin": "400555",
-         "last4": "0019",
-         "scheme": "VISA"
-      }
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": "12.04",
-         "currency": "USD"
-      },
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK3483",
-         "authenticationResponseCode": "string",
-         "referenceNumber": "845366457890-TODO",
-         "schemeTransactionId": "019078743804756",
-         "feeProgramIndicator": "123",
-         "processor": "fiserv",
-         "responseCode": "00000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2016-04-16T16:06:05Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2016-04-16T16:06:05Z"
-         }
+         "expirationYear": "2035"
       }
    },
    "dynamicDescriptors":{
@@ -149,6 +113,13 @@ title: Request
          "postalCode": "30303",
          "country": "US"
       }
+   },
+   "transactionDetails":{
+      "captureFlag": true
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }
 }
 ```

@@ -4,61 +4,57 @@ tags: [carat, commerce-hub, card-not-present, reauthorization, reauth, reauthori
 
 # Reauthorize
 
-A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md).
+A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
-<!-- theme: info -->
+A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
+
+- **Merchant Managed:** The merchant submits the transaction with the required fields and a reauthorization is processed by Commerce Hub.
+- **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthrorizes if required.
+
+### Reauthorization Scenarios
+
+- Split or delayed shipments at eCommerce retailers.
+- Extended stay hotels, car rentals, and cruise lines.
+- Validity period of original authorization has expired.
+- Original auth is missing qualified data.
+- Different transaction amount in either authorization or settlement.
+
+<!-- theme: info --> 
 > See an account representative for more information on issuer hold times.
-
+ 
 ---
 
 ## Request Variables
 
-<!--
-type: tab
-title: amount
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-|Variable | Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
 
 <!--
 type: tab
 title: transactionDetails
 -->
 
-The below table identifies the required parameters in the `transactionDetails` object.
+The below table identifies the additional parameters in the `transactionDetails` object.
 
-|Variable | Type | Maximum Length | Description |
+| Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `captureFlag` | *boolean* | 5 | Total amount of the transaction. [Sub component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. Expected format 0.00. |
-| `primaryTransactionId` | *string* | N/A | The `transactionId` from the original transaction passed for a reauthorization.|
+| `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
- 
+
 <!--
 type: tab
 title: JSON Example
 -->
 
-JSON string format for re-authorization:
+JSON string format:
 
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "transactionDetails": {
-    "captureFlag": false,
-    "primaryTransactionId": "838916029300",
-    "authorizationTypeIndicator": "REAUTH"
-  }
+   "transactionDetails":{
+      "primaryTransactionId": "84356532738",
+      "transactionIndicatorType": "REAUTH"
+   }
 }
 ```
-
 
 <!-- type: tab-end -->
 
@@ -77,7 +73,7 @@ type: tab
 title: Request
 -->
 
-##### Example of a re-authorization payload request.
+##### Example of a reauthorization payload request.
 
 ```json
 {
@@ -93,6 +89,10 @@ title: Request
   "splitShipment": {
     "totalCount": 5
     "finalShipment": false
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
   }
 }
 ```
@@ -101,10 +101,11 @@ type: tab
 title: Response
 -->
 
-##### Example of a re-authorization (201: Created) response.
+##### Example of a reauthorization (201: Created) response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
    "gatewayResponse":{
@@ -172,9 +173,9 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)

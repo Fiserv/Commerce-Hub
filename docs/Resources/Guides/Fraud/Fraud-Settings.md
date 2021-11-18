@@ -38,7 +38,6 @@ Using the tabs on the left side, setup the following transaction controls;
 
 
 ### Step 5: Save Settings
-
 Click the Save button.
 
 ---

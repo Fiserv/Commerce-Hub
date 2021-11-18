@@ -74,6 +74,10 @@ title: Request
        "totalCount":5,
        "finalShipment":true
       }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }  
 }
 ```

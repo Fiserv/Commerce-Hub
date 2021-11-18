@@ -6,10 +6,6 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-codes, c
 
 The gateway response code indicates the status of a transaction after Commerce Hub processes the transaction. Commerce Hub includes the response in `responseCode` along with the corresponding message in `responseMessage` fields of the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md). 
 
----
-
-## Commerce Hub Response Codes
-
 The below table identifies the valid values of `responseCode` along with `responseMessage`.
 
 | Response Code | Description |
@@ -40,8 +36,8 @@ The below table identifies the valid values of `responseCode` along with `respon
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
 - [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
-- [HTTP Response Code](?path=docs/Resources/Guides/Response-Codes/HTTP.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 
 ---
