@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, daas, data-as-a-service, data-solutions, enterprise, returns-optimization, returns-optimizer-service, fraud, security, api-reference]
 ---
 
-# Returns Optimizatoin Service
+# Returns Optimization Service
 
 Returns Optimization Service (ROS) enables sharing of relevant data between like industry verticals by receiving a consumer return report. Merchants can leverage the data to make a more informed transaction decision in an attempt to reduce refunds.
 
