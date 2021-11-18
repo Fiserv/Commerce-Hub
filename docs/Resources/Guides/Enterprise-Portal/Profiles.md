@@ -9,8 +9,6 @@ ClientLine Enterprise portal offers merchants the ability to setup and manage an
 - Account Profiles
 - Transaction Controls [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 
-## Setting up a Profile
-
 ### Account Settings
 
 #### Create a New Profile
@@ -80,12 +78,17 @@ To assign a profile in Marketplace, do the following steps:
 
 ### Transaction Controls
 
-To create a new profile in Marketplace, create the following steps:
+To create a new transaction control in Marketplace, create the following steps:
 
 1. Log in to Marketplace.
-2. Under the Profile Settings, click Account Settings and type a Profile Name in the text box.
+2. Under the Profile Settings, click Transaction Controls and type a Profile Name in the text box.
 3. Add a Profile Description in the text box. 
-4. Click Create Profile 
+4. Click Create Profile.
+5. Select the Service Configs that you want to enable on Commerce Hub.
+6. Select the Payment URL settings that you want to enable. Click Next.
+7. Select the Fraud Settings, Fraud Filters and Positive Filters Features that you want to enable. Click Next. 
+8. Review the summary for this profile. Click Next.
+9. Select the profile that you want to assign from the Account Heirarchy. Click Assign Profile. 
 
 
 
