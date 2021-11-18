@@ -457,5 +457,6 @@ title: Response
 - [Fraud Attributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
+- [Returns Optimization Service](?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md)
 
 ---

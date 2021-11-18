@@ -189,7 +189,7 @@ title: Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/enhanceddata)
-- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
+- [API Explorer](../api/?type=post&path=/data-solutions/v1/returnoptimizer)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 
 ---
