@@ -6,6 +6,8 @@ tags: [carat, commerce-hub, daas, data-as-a-service, data-solutions, enterprise,
 
 Returns Optimization Service enables sharing of relevant data between like industry verticals by receiving a consumer return report. Merchants can leverage the data to make a more informed transaction decision in an attempt to reduce refunds.
 
+The service will help merchants reduce returns in real-time at the time of purchase or return through targeted incentives for "High Returners" identified using Fiserv's data analytics.
+
 ---
 
 ## Request Variables
