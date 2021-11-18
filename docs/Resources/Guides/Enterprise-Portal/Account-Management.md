@@ -4,13 +4,21 @@ tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, b
 
 # Account-Management
 
-ClientLine enterprise portal offers merchants the ability to manage all aspects of their accounts such as:
+## ClientLine Enterpise
 
-- Configuration (Profiles)
-- Merchant Boarding
-- User Management
+ClientLine enterprise portal gives merchants the ability to quickly and effectively manage all your electronic transactions.
+
+## ClientLine Reporting
+
+ClientLine reporting provides access to comprehensive card processing reporting solutions to manage your business. 
+
+## Virtual Terminal 
+
+Virtual terminal allows merchants to initiate card transactions, initiate bulk (quick key), generic analysis and search.
+
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)
+- [Profiles](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md)

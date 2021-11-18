@@ -17,6 +17,10 @@ To create an account in Commerce Hub, you will need the following:
 - Account information 
 - Valid E-mail address
 
+
+<!-- theme: info -->
+> Use the default mid or create a new dedicated sandbox mid.
+
 ### 2. Sign up for  Developer Studio
 
 Request and create a developer account in the Developer Studio.
@@ -34,5 +38,5 @@ Go to the Apps page and create a Sandbox app to obtain your API-Key and API-Secr
 ### 4. Constructing the API call
 
 Construct an [API request](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to use the Commerce Hub APIs.
-
+ 
 ---

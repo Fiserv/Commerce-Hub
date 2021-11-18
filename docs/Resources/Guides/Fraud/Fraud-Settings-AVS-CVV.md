@@ -49,9 +49,10 @@ Settings for managing fraud for this account.
 
 To set up a filter, complete the following:
 
-1. Log in to BusinessTrack and select Marketplace.
-Create a profile and assign a profile to a merchant account  Link to the profile article.
+1. Log in to BusinessTrack and select Marketplace. Create a profile and assign a profile to a merchant account Link to the profile article.
+
 2. Go to Administration.
+
 3. Select Terminals.
 4. Select the terminal (outlet) the filter will be set up on.
 5. Select the "AVS Filters" tab.

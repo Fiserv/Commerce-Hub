@@ -6,45 +6,95 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track,profil
 
 ClientLine Enterprise portal offers merchants the ability to setup and manage an array of profiles. The supported profile types are:
 
-Account Profiles
-Transaction Controls and (link to the fraud settings article)
+- **Account Settings:** setup a profile for the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types.
+- **Transaction Controls:** setup a profile for [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md).
 
-## Setting up a Profiles
+---
 
-Setting up a profile in ClientLine Enterprise up profiles
+## Create a New Account Profile
 
-## For each step
+To create a new profile in Marketplace, do the following steps:
+
+### Step 1: Access Marketplace
+
+Marketplace is accessed throught the Business Track Enterprise Portal.
+
+### Step 2: Access Account Settings
+
+From the Profile Settings dropdown menu, click Account Settings. 
+
+### Step 3: Create Profile Name
+Type the desired Profile Name and Description in the text boxes and click the Create Profile button. 
+
+<!-- theme: Info -->
+> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to Clone, [Edit](#edit-an-existing-profile), Delete or Assign the profile. 
+
+### Step 4: Setup Profile Features
+
+Using the tabs on the left side, setup the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types.
+
+<!-- theme: Info -->
+> In order to go to the next tab, click the Next button. 
+
+### Step 5: Assign Profile
+
+Select the Account Heirarchy or location to assign the profile. The gear icon indicates an existing profile assignment.
+
+<!-- theme: Info -->
+> Once assigned, the gear icon will display. Click the Home button to exit the profile settings. 
 
 
-- Service configuration
+---
 
-CLX UI and Carat APIs - e.g 3DS, Wallets enablement, Payment API config, HPP config, VL config, Telecheck config.
+## Edit an Existing Profile
 
-- Merchant configuration 
+To edit an existing profile in Marketplace, do the following steps:
 
-CLX UI and Carat APIs IPG is building APIs for these merchant configurations , which will be wrapped into Carat APIs. CLX UI would consume these Carat APIs to make updates to merchant configuration related Payments and Payment VAS.
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Edit any information and select a profile from the Hierarchy Add a Profile Description in the text box. 
+4. Click Create Profile. 
 
+---
 
-- Payment and Payment VAS configs
+## Clone an Existing Profile
 
-- HPP setup
+To clone an existing profile in Marketplace, do the following steps:
 
-- Payment Schedule
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Click Clone Profile. 
+4. Click Create Profile. If you do not want to clone the profile, click Discard Changes.
 
-- Mutual SSL certificate download
+---
 
-- VAS configuration 
+## Delete an Existing Profile
 
-CLX UI and Carat APIs - uCom must build VAS config APIs , which will be wrapped into Carat APIs. CLX UI would consume these Carat APIs to make updates to merchant configuration related VAS
+To clone an existing profile in Marketplace, do the following steps:
 
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Click Delete Profile.
 
-- User
-- Merchant
-- Manager
-- Managing Reports
-- Settlements
+---
+
+## Assign a Profile
+
+To assign a profile in Marketplace, do the following steps:
+
+1. Log in to Marketplace.
+2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
+3. Edit any information in the profile description. 
+4. Select a profile from the Hierarchy that you want to assign and click Assign Profile. 
+
+**Note**: If a profile is already existing and you want to assign it, you must click yes to replace the profile with the new profile. 
+5. Click Assign Profile. 
+
+---
+
 
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
+- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
