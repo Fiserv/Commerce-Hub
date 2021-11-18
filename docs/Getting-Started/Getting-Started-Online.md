@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, restful, apis, card present, online, mob
 Commerce Hub offers multiple methods of accepting online, mobile, digital payments, and MOTO payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, virtual terminal, or software.
 
 <!-- theme: warning -->
-> These transactions are at a higher risk for fraud, due to the inability to verify the account holder who is making the purchase. It is recommended to use [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) along with Commerce Hub's [Fraud Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.
+> These transactions are at a higher risk for fraud, due to the inability to verify the account holder who is making the purchase. It is recommended to use <!--[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)--> along with Commerce Hub's [Transaction Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.
 
 ---
 
@@ -72,6 +72,6 @@ Payment.js accomplishes this by injecting an iframe into a parent form where cus
 
 Commerce Hub's Virtual Terminal allows a merchant an easy way to process offline transactions, transaction corrections, setup fraud controls and provides enchanced reporting capabilities.
 
-**Begin processing with Commerce Hub's [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md).**
+**Begin processing with Commerce Hub's [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md).**
 
 ---
