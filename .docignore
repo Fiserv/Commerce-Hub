@@ -10,8 +10,27 @@ docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
 docs/Resources/Guides/Payments-101/**
 docs/Resources/Guides/Reporting/**
 docs/Resources/Guides/Vault/**
+docs/In-Person/**
+docs/Omnicommerce/**
+docs/Online-Mobile-Digital/3D-Secure/**
+docs/Online-Mobile-Digital/Secure-Data-Capture/**
+docs/Resources/API-Documents/Value_Added_Services/**
 
-# Markdown File
+
+
+# Markdown Files
 docs/Getting-Started/Getting-Started-General-Cards.md
 docs/Omnicommerce/Coming-Soon.md
 docs/Resources/Guides/VAS.md
+docs/Getting-Started/Getting-Started-InPerson.md
+docs/Getting-Started/Getting-Started-UCOM.md
+docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md
+docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md
+docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Diag.md
+docs/Release-Notes-Alerts/Updates.md
+docs/Release-Notes-Alerts/Alerts.md
+docs/Resources/API-Documents/Payments/Credit.md
+docs/Resources/API-Documents/Payments/Forced.md
+docs/Resources/API-Documents/Payments/Inquiry.md
+docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+docs/Resources/Guides/Authorizations/Partial-Auth.md
