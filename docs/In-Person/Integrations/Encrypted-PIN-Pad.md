@@ -8,7 +8,7 @@ The PIN Pad or device used to capture the payment source is connected to the ter
 
 Commerce Hub supports the following encrypted payment source types: [EMV chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md), [track data (magstripe)](?path=docs/In-Person/Encrypted-Payments/Track.md), NFC/contactless, and [manual entry (EMV fallback)](?path=docs/In-Person/Encrypted-Payments/Manual.md).
 
-The benefits of encyrpted PIN Pad solution are:
+The benefits of a encyrpted PIN Pad solution are:
 - Reduced coding effort for the developer because the encryption handling is already implemented by the third party vendor
 - All forms of electronic payment are accepted
 - Faster payment improving the customer experience
