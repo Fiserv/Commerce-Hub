@@ -15,6 +15,8 @@ docs/Omnicommerce/**
 docs/Online-Mobile-Digital/3D-Secure/**
 docs/Online-Mobile-Digital/Secure-Data-Capture/**
 docs/Resources/API-Documents/Value_Added_Services/**
+docs/Resources/Guides/Industry-Verticals/**
+docs/Resources/Guides/Level23/**
 
 
 
@@ -34,3 +36,15 @@ docs/Resources/API-Documents/Payments/Forced.md
 docs/Resources/API-Documents/Payments/Inquiry.md
 docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
 docs/Resources/Guides/Authorizations/Partial-Auth.md
+docs/Resources/Guides/Authorizations/Deferred-Auth.md
+docs/Resources/Guides/Bill-Payments/Bill-Payments.md
+docs/Resources/Guides/Bill-Payments/Deferred-Payment.md
+docs/Resources/Guides/Bill-Payments/Payment-Schedule.md
+docs/Resources/Guides/Debit/Regional-Debit.md
+docs/Resources/Guides/Debit/Smart-Routing.md
+docs/Resources/Guides/Fraud/Fraud-Detect.md
+docs/Resources/Guides/Payment-Sources/Gift-Card.md
+docs/Resources/Guides/Payment-Sources/Network-Token.md
+docs/Resources/Guides/Payment-Sources/Private-Label.md
+docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
+docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md
