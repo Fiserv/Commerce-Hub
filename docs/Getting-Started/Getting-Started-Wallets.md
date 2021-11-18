@@ -17,7 +17,7 @@ Wallet transactions originate from a digital wallet either from a website or on 
 - **Encrypted Wallet:** The merchant will send the encrypted data along with their private key and Commerce Hub will decrypt the information for processing.
 - **Decrypted Wallet:** The merchant will decrypt the wallet data before submitting to Commerce Hub for processing.
 
-[{(Apple Pay)(Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)}{(Google Pay)(Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)}{(title 3)}]
+[{(Apple Pay)(Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)}{(Google Pay)(Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)}]
 
 ---
 
@@ -25,12 +25,5 @@ Wallet transactions originate from a digital wallet either from a website or on 
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include support for digital wallets (eWallets) including PayPal and AmazonPay. The documents related to the features will be released soon. 
-
----
-
-## Next Steps
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
 ---
