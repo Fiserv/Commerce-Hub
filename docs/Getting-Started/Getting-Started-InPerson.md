@@ -6,9 +6,7 @@ tags: [carat, commerce-hub, enterprise, getting-started, in-person, payments, ca
 
 Commerce Hub supports in-person or card present payment transactions where the customer physically presents the payment source while making a transaction at any merchant terminal. This type of transcation can include swiping a card with a magnetic strip, inserting or tapping a card with an [EMV chip](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv), or tapping a mobile device with the card loaded to a digital wallet.
 
----
-
-### RESTful APIs
+#### RESTful APIs
 
 Commerce Hub allows a merchant to build their own UI and manage customer transactions within their own software or terminal using Commerce Hub's RESTful APIs.
 
@@ -24,7 +22,7 @@ By leveraging the third-party EMV-enabled payments solution, the customer's paym
 
 ---
 
-## Semi-Intergated
+## Semi-Integrated
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include semi-integrated device support and the documents related to the features will be released soon.
