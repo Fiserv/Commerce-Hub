@@ -127,35 +127,35 @@ featuredFeatures:
         description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
         type: "post"        
         path: "/payments-vas/v1/tokens"
-  - title: Point of Sale
-    description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
-    tags: ["tag1", "tag2"]
-    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
-    relatedDocs:
-      - relatedDoc: 
-        title: Getting Started 
-        description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
-        link: "/docs/Getting-Started/Getting-Started-InPerson.md"
-      - relatedDoc: 
-        title: EMV 
-        description: Fiserv offers the industry's most complete, comprehensive and integrated EMV solution.
-        link: "/docs/In-Person/Encrypted-Payments/EMV.md"
-    relatedAPIs:
-      - relatedAPI: 
-        title: Charges 
-        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
-        type: "post"        
-        path: "/payments/v1/charges"
-      - relatedAPI: 
-        title: Refunds
-        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
-        type: "post"        
-        path: "/payments/v1/charges/{transactionId}/refund"
-      - relatedAPI: 
-        title: Tokenization
-        description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
-        type: "post"        
-        path: "/payments-vas/v1/tokens"
+#  - title: Point of Sale
+#    description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
+#    tags: ["tag1", "tag2"]
+#    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
+#    relatedDocs:
+#      - relatedDoc: 
+#        title: Getting Started 
+#        description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
+#        link: "/docs/Getting-Started/Getting-Started-InPerson.md"
+#      - relatedDoc: 
+#        title: EMV 
+#        description: Fiserv offers the industry's most complete, comprehensive and integrated EMV solution.
+#        link: "/docs/In-Person/Encrypted-Payments/EMV.md"
+#    relatedAPIs:
+#      - relatedAPI: 
+#        title: Charges 
+#        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
+#        type: "post"        
+#        path: "/payments/v1/charges"
+#      - relatedAPI: 
+#        title: Refunds
+#        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
+#        type: "post"        
+#        path: "/payments/v1/charges/{transactionId}/refund"
+#      - relatedAPI: 
+#        title: Tokenization
+#        description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
+#        type: "post"        
+#        path: "/payments-vas/v1/tokens"
 benefits:
   - title: Transform Customer Experiences
     description: >
