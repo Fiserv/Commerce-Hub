@@ -50,6 +50,8 @@
 - sections:
   - title: Features
     sections:
+    - title: Auth Optimization
+      link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
     - title: Least Cost Debit
       link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Data Solutions
