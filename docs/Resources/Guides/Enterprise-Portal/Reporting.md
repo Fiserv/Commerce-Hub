@@ -41,41 +41,43 @@ Commerce Hub reports allow you to generate a report using Commerce Hub's field n
 
 ## Settlement
 
-Settlement reports allow you to view an account overview, a quick at-a-glance view, top sites, amount distribution, generic analysis, search, fee search, network fraud alert and network late settle. To learn more about each settlement report, click the help button in the top right of the report.
+Settlement reports allow you to view an account overview, a quick at-a-glance view, top sites, amount distribution, generic analysis, search, fee search, network fraud alert and network late settle. 
 
 ---
 
 ## Funding
 
-Funding reports allow you to view an account overview, adjustments, generic analysis and search. To learn more about each funding report, click the help button in the top right of the report.
+Funding reports allow you to view an account overview, adjustments, generic analysis and search. 
 
 ---
 
 ## Chargeback
 
-Chargeback reports allow you to view an account summary, sales to chargeback, generic analysis and search. To learn more about each chargeback report, click the help button in the top right of the report.
+Chargeback reports allow you to view an account summary, sales to chargeback, generic analysis and search. 
 
 ---
 
 ## Retrievals
 
-Chargeback reports allow you to view generic analysis and search. To learn more about each retrievals report, click the help button in the top right of the report.
+Chargeback reports allow you to view generic analysis and search. 
 
 ---
 
 ## TeleCheck
 
-TeleCheck reports allow you to view transaction, bank deposit and collections information. To learn more about each TeleCheck report, click the help button in the top right of the report.
+TeleCheck reports allow you to view transaction, bank deposit and collections information. 
 
 ---
 
 ## Benchmarking
 
-Benchmarking reports allow you to view approval rate, relative utilization and average ticket size. To learn more about each benchmarking report, click the help button in the top right of the report.
+Benchmarking reports allow you to view approval rate, relative utilization and average ticket size. 
+
+----
 
 ## Reference
 
-Reference reports allow you to view approval metadata, sites search, bin search, outlet search and prepaid information. To learn more about each reference report, click the help button in the top right of the report.
+Reference reports allow you to view approval metadata, sites search, bin search, outlet search and prepaid information. 
 
 ---
 
