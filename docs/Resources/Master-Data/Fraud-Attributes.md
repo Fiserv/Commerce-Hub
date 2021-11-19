@@ -41,7 +41,7 @@ JSON string format for `orderData`:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

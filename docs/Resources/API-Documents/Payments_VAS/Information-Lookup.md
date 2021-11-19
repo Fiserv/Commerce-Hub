@@ -81,7 +81,11 @@ title: Request
       "card":{
          "cardData":"4005550000000019"
       }
-   }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 

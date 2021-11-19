@@ -38,7 +38,6 @@ Select the Fraud Setting tab on the left side. Select the Fraud Setting from the
 
 
 ### Step 5: Save Settings
-
 Click the Save button.
 
 ---
