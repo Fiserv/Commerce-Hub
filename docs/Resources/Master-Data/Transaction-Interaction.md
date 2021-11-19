@@ -16,6 +16,9 @@ The below table identifies the parameters in the `transactionInteraction` object
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `origin` | *string* | N/A | The [origin](#transaction-origin) of the transaction. |
+| `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Required on all online, mobile, and digital E-Commerce transactions.|
+
+<!---
 | `posEntryMode` | *string* | N/A | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
 | `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
 | `responseCode` | *string* | | Response code returned by network/issuer used in subsequent transactions. |
@@ -23,9 +26,9 @@ The below table identifies the parameters in the `transactionInteraction` object
 | `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
 | `terminalEntryCapability` | *string* |  | Identifies how data can be [entered](#terminal-entry-capability) in the terminal or software. |
 | `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
-| `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Eequired on all online, mobile, and digital E-Commerce transactions.|
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
 | `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification | 
+-->
 
 <!--
 type: tab
@@ -38,15 +41,15 @@ JSON string format for `transactionInteraction`:
 {
    "transactionInteraction":{
       "origin": "ECOM",
-      "posEntryMode": "MANUAL",
-      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
-      "responseCode": "string",
-      "posData": "string",
-      "mobileInteraction": "PHONE_NUMBER",
-      "terminalEntryCapability": "ECOMMERCE",
-      "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",
+      "posEntryMode": "MANUAL", /// Future Release
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM", /// Future Release
+      "responseCode": "string", /// Future Release
+      "posData": "string", /// Future Release
+      "mobileInteraction": "PHONE_NUMBER", /// Future Release
+      "terminalEntryCapability": "ECOMMERCE", /// Future Release
+      "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE", /// Future Release
       "eciIndicator": "SECURE_ECOM",
-      "additionalPosInformation": "",
+      "additionalPosInformation": "", /// Future Release
    }
 }
 
@@ -66,6 +69,7 @@ The below table identifies the valid values of `origin`.
 | *MOTO* | Mail order or telephone order |
 | *POS* | Card Present retail face to face |
 
+<!---
 ---
 
 #### POS Entry Mode
@@ -161,6 +165,7 @@ The below table identifies the valid values of `cardholderAuthenticationMethod`.
 | OTHER_MANUAL_VERIFICATION | Manual authentication |
 | UNKNOWN | Authentication method unknown |
 | OTHER_SYSTEMATIC_VERIFICATION | Used for other authentication methods |
+-->
 
 ---
 
@@ -183,7 +188,9 @@ The below table identifies the valid values of `eciIndicator`.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 
+<!---
+- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
+-->
 ---

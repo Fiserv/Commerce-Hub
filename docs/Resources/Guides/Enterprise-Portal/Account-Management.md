@@ -1,21 +1,10 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, business-track, virtual-terminal, reporting, settings]
+tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, settings]
 ---
 
-# Account-Management
+# Account Management
 
-## ClientLine Enterpise
-
-ClientLine enterprise portal gives merchants the ability to quickly and effectively manage all your electronic transactions.
-
-## ClientLine Reporting
-
-ClientLine reporting provides access to comprehensive card processing reporting solutions to manage your business. 
-
-## Virtual Terminal 
-
-Virtual terminal allows merchants to initiate card transactions, initiate bulk (quick key), generic analysis and search.
-
+Landing Page for Marketplace
 
 ## See Also
 

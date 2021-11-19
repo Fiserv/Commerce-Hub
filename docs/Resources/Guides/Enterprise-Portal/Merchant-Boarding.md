@@ -5,7 +5,7 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtu
 
 # Merchant-Boarding
 
-ClientLine enterprise portal offers merchants the ability to manage the onboarding process for clients.
+ClientLine Enterprise Portal offers merchants the ability to manage the onboarding process for clients.
 
 Follow the below steps to board a mechant:
 
@@ -25,10 +25,7 @@ Go to the Marketplace page and create a report.
 
 ### 3. Manage a Report
 
-Go to the Marketplace page and select a report to manage. 
-
-
-To find out more information on merchant boarding, visit the help section in ClientLine Enterprise.
+Go to the Marketplace page and select a report to manage.
 
 
 ---

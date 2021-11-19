@@ -4,13 +4,10 @@ tags: [carat, commerce-hub, enterprise, card-not-present, digital, online, virtu
 
 # Virtual Terminal
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Virtual Terminal support and the documents related to the features will be released soon.
-
 Commerce Hub's Vritual Terminal (VPOS) allows a merchant to process and offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
 
 <!-- theme: info -->
->See the Help section in the ClientLine Enterpirse Portal for more information on how to use the Virtual Terminal feature.
+>See the Help section in the [ClientLine Enterpirse Portal](https://www.businesstrack.com) for more information on how to use the Virtual Terminal feature.
 
 ### Initiate Card Transaction
 
@@ -29,7 +26,8 @@ Generic Analysis allows a merchant to generate reports using various filters suc
 
 ## See Also
 
-- [Payment URL](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
+- [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
 - [Quick Key](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Quick-Key.md)
-
+<!-- - [Payment URL](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
+-->
 ---

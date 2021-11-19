@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track,profil
 
 # Profiles
 
-ClientLine Enterprise portal offers merchants the ability to setup and manage an array of profiles. The supported profile types are:
+ClientLine Enterprise portal offers merchants the ability to setup and manage profiles:
 
 - **Account Settings:** setup a profile for the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types.
 - **Transaction Controls:** setup a profile for [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md).
@@ -17,7 +17,7 @@ To create a new profile in Marketplace, complete the following steps:
 
 ### Step 1: Access Marketplace
 
-Marketplace is accessed through the Business Track Enterprise Portal.
+Marketplace is accessed through the [Business Track Enterprise Portal](https://www.businesstrack.com).
 
 ### Step 2: Access Account Settings
 
@@ -47,23 +47,20 @@ Select the Account Heirarchy or location to assign the profile. The gear icon in
 
 ## Clone an Existing Profile
 
-To clone a new profile in Marketplace, complete the following steps:
+To clone an existing profile in Marketplace, complete the following steps:
 
 ### Step 1: Access Marketplace
 
-Marketplace is accessed through the Business Track Enterprise Portal.
+Marketplace is accessed through the [Business Track Enterprise Portal](https://www.businesstrack.com).
 
 ### Step 2: Access Account Settings
 
 From the Profile Settings dropdown menu, click Account Settings. 
 
 ### Step 3: Clone an Existing Profile 
-Type the desired Profile Name and Description in the text boxes and click the Create Profile button. 
+Click in the Profile Name box and select the profile that you want to copy and click the Clone Profile button.
 
-<!-- theme: Info -->
-> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
-
-### Step 4: Setup Profile Features
+### Step 4: Edit Profile Features
 
 Using the tabs on the left side, setup the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types. After making any edits, click Next. 
 
@@ -76,25 +73,24 @@ Select the Account Heirarchy or location to assign the profile. The gear icon in
 
 <!-- theme: Info -->
 > Once assigned, the gear icon will display. Click the Assign Profile button to exit the profile settings.
+
 ---
 
 ## Edit an Existing Profile
 
-To edit a new profile in Marketplace, complete the following steps:
+To edit an existing profile in Marketplace, complete the following steps:
 
 ### Step 1: Access Marketplace
 
-Marketplace is accessed through the Business Track Enterprise Portal.
+Marketplace is accessed through the [Business Track Enterprise Portal](https://www.businesstrack.com).
 
 ### Step 2: Access Account Settings
 
 From the Profile Settings dropdown menu, click Account Settings. 
 
 ### Step 3: Edit an Existing Profile 
-Type the desired Profile Name and Description in the text boxes and click the Edit Profile button. Click the Continue to Edit Profile Button.  
 
-<!-- theme: Info -->
-> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
+Click in the Profile Name box and select the profile that you want to copy and click the Clone Profile button and click the Continue to Edit Profile button on the next screen.  
 
 ### Step 4: Setup Profile Features
 
@@ -103,86 +99,55 @@ Using the tabs on the left side, setup the Acquirers, Offerings, Value Added Ser
 <!-- theme: Info -->
 > In order to go to the next tab, click the Next button. 
 
-### Step 5: Assign Profile
+### Step 5: Save Profile
 
-Select the Account Heirarchy or location to assign the profile. The gear icon indicates an existing profile assignment.
-
-<!-- theme: Info -->
-> Once assigned, the gear icon will display. Click the Assign Profile button to exit the profile settings.
+Click the Save button.
 
 ---
 
 ## Delete an Account Profile
 
-To delete a new profile in Marketplace, complete the following steps:
+To delete an existing profile in Marketplace, complete the following steps:
 
 ### Step 1: Access Marketplace
 
-Marketplace is accessed through the Business Track Enterprise Portal.
+Marketplace is accessed through the [Business Track Enterprise Portal](https://www.businesstrack.com).
 
 ### Step 2: Access Account Settings
 
 From the Profile Settings dropdown menu, click Account Settings. 
 
 ### Step 3: Delete Profile Name
-Type the desired Profile Name and Description in the text boxes and click the Delete Profile button. 
+
+Click in the Profile Name box and select the profile that you want to copy and click the Delete Profile button. 
 
 <!-- theme: Info -->
-> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
-
----
-
-## Create a New Account Profile
-
-To create a new profile in Marketplace, complete the following steps:
-
-### Step 1: Access Marketplace
-
-Marketplace is accessed through the Business Track Enterprise Portal.
-
-### Step 2: Access Account Settings
-
-From the Profile Settings dropdown menu, click Account Settings. 
-
-### Step 3: Create Profile Name
-Type the desired Profile Name and Description in the text boxes and click the Create Profile button. 
-
-<!-- theme: Info -->
-> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
-
-### Step 4: Setup Profile Features
-
-Using the tabs on the left side, setup the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types.
-
-<!-- theme: Info -->
-> In order to go to the next tab, click the Next button. 
-
-### Step 5: Assign Profile
-
-Select the Account Heirarchy or location to assign the profile. The gear icon indicates an existing profile assignment.
-
-<!-- theme: Info -->
-> Once assigned, the gear icon will display. Click the Home button to exit the profile settings. 
+> A confirmation box will have you confirm the deletion of the profile.
 
 ---
 
 ## Assign a Profile
 
-To create a new profile in Marketplace, complete the following steps:
+To assign an existing profile in Marketplace, complete the following steps:
 
 ### Step 1: Access Marketplace
 
-Marketplace is accessed through the Business Track Enterprise Portal.
+Marketplace is accessed through the [Business Track Enterprise Portal](https://www.businesstrack.com).
 
 ### Step 2: Access Account Settings
 
 From the Profile Settings dropdown menu, click Account Settings. 
 
-### Step 3: Assign a Profile
-Type the desired Profile Name and Description in the text boxes and select the account from the Hierarchy and click Assign Profile. 
+### Step 3: Select a Profile
+
+Click in the Profile Name box and select the profile that you want to copy and click Assign Profile. 
+
+### Step 4: Assign a Profile
+
+Select the Account Heirarchy or location to assign the profile. The gear icon indicates an existing profile assignment.
 
 <!-- theme: Info -->
-> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
+> Once assigned, the gear icon will display. Click the Assign Profile button to exit the profile settings.
 
 ---
 
@@ -190,3 +155,4 @@ Type the desired Profile Name and Description in the text boxes and select the a
 
 - [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
 - [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+---

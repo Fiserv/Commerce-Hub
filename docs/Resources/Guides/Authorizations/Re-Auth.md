@@ -41,6 +41,16 @@ The below table identifies the additional parameters in the `transactionDetails`
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 | `authorizationSequence` | *string* | 27 | Type of authorization sequence requested. **Valid Value:** AUTHORIZATION_ONLY (default), AUTHORIZATION_BEFORE_CANCEL, CANCEL_BEFORE_AUTHORIZATION.|
 
+#### Authorization Sequence
+
+The below table identifies the valid values of type of `authorizationSequence`.
+
+| Value | Description |
+| ----- | ----- |
+| *AUTHORIZATION_ONLY* | Only authorize the transaction |
+| *AUTHORIZATION_BEFORE_CANCEL* | Authorize the transaction before canceling the original |
+| *CANCEL_BEFORE_AUTHORIZATION* | Cancel the original transaction before submitting a new authorization |
+
 <!--
 type: tab
 title: JSON Example
