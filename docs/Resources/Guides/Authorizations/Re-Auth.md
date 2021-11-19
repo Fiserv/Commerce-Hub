@@ -39,6 +39,7 @@ The below table identifies the additional parameters in the `transactionDetails`
 |---------|----------|----------------|---------|
 | `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
+| `authorizationSequence` | *string* | 27 | Type of authorization sequence requested. **Valid Value:** AUTHORIZATION_ONLY (default), AUTHORIZATION_BEFORE_CANCEL, CANCEL_BEFORE_AUTHORIZATION.|
 
 <!--
 type: tab
@@ -51,7 +52,8 @@ JSON string format:
 {
    "transactionDetails":{
       "primaryTransactionId": "84356532738",
-      "transactionIndicatorType": "REAUTH"
+      "transactionIndicatorType": "REAUTH",
+      "authorizationSequence": "AUTHORIZATION_ONLY"
    }
 }
 ```
@@ -84,7 +86,8 @@ title: Request
   "transactionDetails": {
     "captureFlag": false,
     "primaryTransactionId": "838916029300",
-    "authorizationTypeIndicator": "REAUTH"
+    "authorizationTypeIndicator": "REAUTH",
+    "authorizationSequence": "AUTHORIZATION_ONLY"
   },
   "splitShipment": {
     "totalCount": 5
