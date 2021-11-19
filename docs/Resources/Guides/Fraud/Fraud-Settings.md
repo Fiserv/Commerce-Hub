@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, enterprise, card-not-present, fraud, fraud-settings]
 ---
 
-# Transaction Controls
+# Fraud Settings
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include additional fraud settings support and the documents related to the features will be released soon.
@@ -11,9 +11,9 @@ Commerce Hub implements various transaction and fraud controls that allows merch
 
 ---
 
-## Setup Transaction Controls
+## Setup Fraud Settings
 
-To setup Transaction Controls in Marketplace, complete the following steps:
+To setup Fraud Settings in Marketplace, complete the following steps:
 
 ### Step 1: Access Marketplace
 
@@ -25,11 +25,11 @@ From the Profile Settings dropdown menu, click Transaction Controls.
 
 ### Step 3: Choose a Profile
 
-Click in the Profile Name box and select the profile that you want to assign transaction controls or [create a new profile](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md). 
+Click in the Profile Name box and select the profile that you want to assign transaction controls or [create a new profile](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md). Click the Edit Profile button and then click the Continue to Edit Profile button. 
 
-### Step 4: Setup Transaction Controls
+### Step 4: Setup Fraud Settings
 
-Using the tabs on the left side, setup the following transaction controls;
+Select the Fraud Setting tab on the left side. Select the Fraud Setting from the list to enable/disable the functions and features.
 
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md): Filters to reject transaction based on address and security code responses.
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md): Positive and negative filters to approve or reject transactions.

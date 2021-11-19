@@ -13,11 +13,11 @@ ClientLine Enterprise portal offers merchants the ability to setup and manage an
 
 ## Create a New Account Profile
 
-To create a new profile in Marketplace, do the following steps:
+To create a new profile in Marketplace, complete the following steps:
 
 ### Step 1: Access Marketplace
 
-Marketplace is accessed throught the Business Track Enterprise Portal.
+Marketplace is accessed through the Business Track Enterprise Portal.
 
 ### Step 2: Access Account Settings
 
@@ -27,7 +27,7 @@ From the Profile Settings dropdown menu, click Account Settings.
 Type the desired Profile Name and Description in the text boxes and click the Create Profile button. 
 
 <!-- theme: Info -->
-> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to Clone, [Edit](#edit-an-existing-profile), Delete or Assign the profile. 
+> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
 
 ### Step 4: Setup Profile Features
 
@@ -43,56 +43,148 @@ Select the Account Heirarchy or location to assign the profile. The gear icon in
 <!-- theme: Info -->
 > Once assigned, the gear icon will display. Click the Home button to exit the profile settings. 
 
-
----
-
-## Edit an Existing Profile
-
-To edit an existing profile in Marketplace, do the following steps:
-
-1. Log in to Marketplace.
-2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
-3. Edit any information and select a profile from the Hierarchy Add a Profile Description in the text box. 
-4. Click Create Profile. 
-
 ---
 
 ## Clone an Existing Profile
 
-To clone an existing profile in Marketplace, do the following steps:
+To clone a new profile in Marketplace, complete the following steps:
 
-1. Log in to Marketplace.
-2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
-3. Click Clone Profile. 
-4. Click Create Profile. If you do not want to clone the profile, click Discard Changes.
+### Step 1: Access Marketplace
+
+Marketplace is accessed through the Business Track Enterprise Portal.
+
+### Step 2: Access Account Settings
+
+From the Profile Settings dropdown menu, click Account Settings. 
+
+### Step 3: Clone an Existing Profile 
+Type the desired Profile Name and Description in the text boxes and click the Create Profile button. 
+
+<!-- theme: Info -->
+> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
+
+### Step 4: Setup Profile Features
+
+Using the tabs on the left side, setup the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types. After making any edits, click Next. 
+
+<!-- theme: Info -->
+> In order to go to the next tab, click the Next button. 
+
+### Step 5: Assign Profile
+
+Select the Account Heirarchy or location to assign the profile. The gear icon indicates an existing profile assignment.
+
+<!-- theme: Info -->
+> Once assigned, the gear icon will display. Click the Assign Profile button to exit the profile settings.
+---
+
+## Edit an Existing Profile
+
+To edit a new profile in Marketplace, complete the following steps:
+
+### Step 1: Access Marketplace
+
+Marketplace is accessed through the Business Track Enterprise Portal.
+
+### Step 2: Access Account Settings
+
+From the Profile Settings dropdown menu, click Account Settings. 
+
+### Step 3: Edit an Existing Profile 
+Type the desired Profile Name and Description in the text boxes and click the Edit Profile button. Click the Continue to Edit Profile Button.  
+
+<!-- theme: Info -->
+> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
+
+### Step 4: Setup Profile Features
+
+Using the tabs on the left side, setup the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types. After making any edits, click Next. 
+
+<!-- theme: Info -->
+> In order to go to the next tab, click the Next button. 
+
+### Step 5: Assign Profile
+
+Select the Account Heirarchy or location to assign the profile. The gear icon indicates an existing profile assignment.
+
+<!-- theme: Info -->
+> Once assigned, the gear icon will display. Click the Assign Profile button to exit the profile settings.
 
 ---
 
-## Delete an Existing Profile
+## Delete an Account Profile
 
-To clone an existing profile in Marketplace, do the following steps:
+To delete a new profile in Marketplace, complete the following steps:
 
-1. Log in to Marketplace.
-2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
-3. Click Delete Profile.
+### Step 1: Access Marketplace
+
+Marketplace is accessed through the Business Track Enterprise Portal.
+
+### Step 2: Access Account Settings
+
+From the Profile Settings dropdown menu, click Account Settings. 
+
+### Step 3: Delete Profile Name
+Type the desired Profile Name and Description in the text boxes and click the Delete Profile button. 
+
+<!-- theme: Info -->
+> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
+
+---
+
+## Create a New Account Profile
+
+To create a new profile in Marketplace, complete the following steps:
+
+### Step 1: Access Marketplace
+
+Marketplace is accessed through the Business Track Enterprise Portal.
+
+### Step 2: Access Account Settings
+
+From the Profile Settings dropdown menu, click Account Settings. 
+
+### Step 3: Create Profile Name
+Type the desired Profile Name and Description in the text boxes and click the Create Profile button. 
+
+<!-- theme: Info -->
+> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
+
+### Step 4: Setup Profile Features
+
+Using the tabs on the left side, setup the Acquirers, Offerings, Value Added Services, Entitlements and Payment Types.
+
+<!-- theme: Info -->
+> In order to go to the next tab, click the Next button. 
+
+### Step 5: Assign Profile
+
+Select the Account Heirarchy or location to assign the profile. The gear icon indicates an existing profile assignment.
+
+<!-- theme: Info -->
+> Once assigned, the gear icon will display. Click the Home button to exit the profile settings. 
 
 ---
 
 ## Assign a Profile
 
-To assign a profile in Marketplace, do the following steps:
+To create a new profile in Marketplace, complete the following steps:
 
-1. Log in to Marketplace.
-2. Under the Profile Settings, click Account Settings and type or select a Profile Name in the text box.
-3. Edit any information in the profile description. 
-4. Select a profile from the Hierarchy that you want to assign and click Assign Profile. 
+### Step 1: Access Marketplace
 
-**Note**: If a profile is already existing and you want to assign it, you must click yes to replace the profile with the new profile. 
-5. Click Assign Profile. 
+Marketplace is accessed through the Business Track Enterprise Portal.
+
+### Step 2: Access Account Settings
+
+From the Profile Settings dropdown menu, click Account Settings. 
+
+### Step 3: Assign a Profile
+Type the desired Profile Name and Description in the text boxes and select the account from the Hierarchy and click Assign Profile. 
+
+<!-- theme: Info -->
+> When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
 
 ---
-
-
 
 ## See Also
 

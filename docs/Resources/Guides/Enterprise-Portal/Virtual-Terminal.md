@@ -9,8 +9,21 @@ tags: [carat, commerce-hub, enterprise, card-not-present, digital, online, virtu
 
 Commerce Hub's Vritual Terminal (VPOS) allows a merchant to process and offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
 
-- Create [Payment URLs](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md) that allow consumers to make the payment at a later point.
-- Batch uploads via [Quick Key](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Quick-Key.md) to enter multiple transactions quickly into the Virtual Terminal.
+<!-- theme: info -->
+>See the Help section in the ClientLine Enterpirse Portal for more information on how to use the Virtual Terminal feature.
+
+### Initiate Card Transaction
+
+Initiate Card Transaction allows a merchant to view transaction details pertaining to a specific location. 
+
+### Quick Key
+
+[Quick Key](?path=docs/Resources/Guides/Enterprise-Portal/Quick-Key.md) (Bulk Upload) allows a merchant to obtain transaction details for a bulk amount of locations.
+
+### Generic Analysis
+
+Generic Analysis allows a merchant to generate reports using various filters such as measures display, network, approval status, payment method etc.
+
 
 ---
 
