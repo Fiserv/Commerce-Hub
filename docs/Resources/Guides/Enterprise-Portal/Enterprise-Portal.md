@@ -28,8 +28,6 @@ ClientLine Enterprise Portal offers merchants the ability to [generate reports](
 
 Merchants can create an account by requesting account access from their user admin. For more information on creating an account, go to [Account Management](?path=docs/Resources/Guides/Enterprise-Portal/Account-Management.md).
 
-
-
 ---
 
 ## Transaction Controls
@@ -49,8 +47,6 @@ Account Profiles allow merchants to setup templates that apply to merchant accou
 
 
 ---
-
-
 
 ## See Also
 

@@ -45,7 +45,6 @@ Select the Account Heirarchy or location to assign the profile. The gear icon in
 
 ---
 
-
 ## Clone an Existing Profile
 
 To clone a new profile in Marketplace, complete the following steps:
@@ -186,8 +185,6 @@ Type the desired Profile Name and Description in the text boxes and select the a
 > When you click in the Profile Name box, a list of existing profile names will display. Selecting a profile will allow you to [Clone](#clone-an-existing-profile), [Edit](#edit-an-existing-profile), [Delete](#delete-an-existing-profile) or [Assign](#assign-an-esisting-profile) the profile. 
 
 ---
-
-
 
 ## See Also
 
