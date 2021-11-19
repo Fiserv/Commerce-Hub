@@ -1,0 +1,58 @@
+---
+tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtual-terminal, reporting, settings]
+---
+
+# ClientLine Enterprise Portal
+
+Merchants can access the Enterprise Portal through Business Track. Each merchant receives access to Commerce Hub, a real-time web-based back-office application that logs the transactions conducted through the Virtual POS, Batch Uploads (Quick Key), and Commerce Hub intergrations. 
+
+The Enterprise Portal also provides access to Commerce Hub's marketplace that allows boarding and configuration of a merchant accounts. 
+
+<!-- info -->
+> Contact your account representative to gain access to the Enterprise Portal. 
+---
+
+## Virtual Terminal
+
+Virtual Terminal is a web-based application that allows a merchant to process electronic payments by telephone, mail order, fax and e-mail through the [Virtual POS](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md) and [Quick Key](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Quick-Key.md) functionality.
+
+---
+
+## Reporting
+
+ClientLine Enterprise Portal offers merchants the ability to [generate reports](?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md) with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions. 
+
+---
+
+## Account Management
+
+Merchants can create an account by requesting account access from their user admin. For more information on creating an account, go to [Account Management](?path=docs/Resources/Guides/Enterprise-Portal/Account-Management.md).
+
+---
+
+## Transaction Controls
+
+[Transaction controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)  allow merchants to control the transactional settings and fraud filters.
+
+---
+
+## Hosted Payment Page Setup
+
+Merchants can create a custom [Hosted Payment Page](?pagedocs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md) based on their preferences.
+
+---
+## Account Profiles 
+
+Account Profiles allow merchants to setup templates that apply to merchant accounts.
+
+
+---
+
+## See Also
+
+- Requesting Access
+- User Management
+- Profile Settings
+
+---
+

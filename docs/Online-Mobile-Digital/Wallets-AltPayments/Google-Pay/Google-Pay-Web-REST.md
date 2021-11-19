@@ -4,13 +4,10 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 # Google Pay on the Web: RESTful API Integration
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Google Pay support and the documents related to the features will be released soon.
 
+## Step 1: Configure Google Pay
 
-## Step 1: Configure Google Pay on the Web
-
-The merchant needs to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button etc.
+Configure the environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button, etc.
 
 ---
 
@@ -21,15 +18,12 @@ The merchant needs to configure the merchant environment to accept [Google Pay o
 
 ---
 
-
 ### Request Variables
-
 
 <!--
 type: tab
 title: source
 -->
-
 
 The below table identifies the required parameters in the `source` object.
 
@@ -41,11 +35,12 @@ The below table identifies the required parameters in the `source` object.
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
-
 ---
 
 ### Payload Example
 
+<!-- theme:info -->
+>Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
 
 <!--
 type: tab
@@ -78,14 +73,12 @@ title: Request
 
 ```
 
-
 <!--
 type: tab
 title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
-
 
 <!-- theme: info -->
 
@@ -160,6 +153,10 @@ title: Response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
+<!---
+- [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
 - [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+-->
 ---

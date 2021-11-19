@@ -26,53 +26,47 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 ## Request Variables
 
-<!--
-type: tab
-title: amount
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|------|
-| `total` | *number* | 12 | &#10004; | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
 
 <!--
 type: tab
 title: transactionDetails
 -->
 
-The below table identifies the parameters in the `transactionDetails` object.
+The below table identifies the additional parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|------|
-| `captureFlag` | *boolean* | 5 | | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth). |
-| `primaryTransactionId` | *string* | N/A |&#10004; | The `transactionId` from the original transaction passed for a reauthorization.|
-| `authorizationTypeIndicator` | *string* | N/A | &#10004; | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
+| `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
+| `authorizationSequence` | *string* | 27 | Type of authorization sequence requested. **Valid Value:** AUTHORIZATION_ONLY (default), AUTHORIZATION_BEFORE_CANCEL, CANCEL_BEFORE_AUTHORIZATION.|
 
- 
+#### Authorization Sequence
+
+The below table identifies the valid values of type of `authorizationSequence`.
+
+| Value | Description |
+| ----- | ----- |
+| *AUTHORIZATION_ONLY* | Only authorize the transaction |
+| *AUTHORIZATION_BEFORE_CANCEL* | Authorize the transaction before canceling the original |
+| *CANCEL_BEFORE_AUTHORIZATION* | Cancel the original transaction before submitting a new authorization |
+
 <!--
 type: tab
 title: JSON Example
 -->
 
-JSON string format for reauthorization:
+JSON string format:
 
 ```json
 {
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "transactionDetails": {
-    "captureFlag": false,
-    "primaryTransactionId": "838916029300",
-    "authorizationTypeIndicator": "REAUTH"
-  }
+   "transactionDetails":{
+      "primaryTransactionId": "84356532738",
+      "transactionIndicatorType": "REAUTH",
+      "authorizationSequence": "AUTHORIZATION_ONLY"
+   }
 }
 ```
-
 
 <!-- type: tab-end -->
 
@@ -102,7 +96,8 @@ title: Request
   "transactionDetails": {
     "captureFlag": false,
     "primaryTransactionId": "838916029300",
-    "authorizationTypeIndicator": "REAUTH"
+    "authorizationTypeIndicator": "REAUTH",
+    "authorizationSequence": "AUTHORIZATION_ONLY"
   },
   "splitShipment": {
     "totalCount": 5
@@ -191,9 +186,9 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)

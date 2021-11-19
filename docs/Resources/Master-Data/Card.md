@@ -15,7 +15,7 @@ title: card
 The below table identifies the parameters in the `card` object.
 
 | Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | -----| ------------------ |
+| -------- | -- | ------------ | -----|
 | `cardData` | *string* | 256 | Credit card number |
 | `nameOnCard` | *string* | 256 | Cardholder name |
 | `expirationMonth` | *string* | 2 | 2-digit card expiration month |
@@ -25,9 +25,11 @@ The below table identifies the parameters in the `card` object.
 | `bin` | *String* | 8 |  Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
 | `last4` | *String* | 4 |  Last four digits of the Primary Account Number (PAN) |
 | `scheme` | *String* | 256 |  Card brand received in the transaction response |
+
+<!---
 | `beginningBalance` | *number* | 18,3 | Beginning card balance received in the transaction response |
 | `endingBalance` | *number* | 18,3 | Ending card balance received in the transaction response |
-
+-->
 
 <!--
 type: tab
