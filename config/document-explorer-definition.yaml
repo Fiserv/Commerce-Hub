@@ -38,7 +38,7 @@
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Virtual Terminal
-      link: docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md
+      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
     - title: Wallets and Alt Payments
       sections:
       - title: Integrations
