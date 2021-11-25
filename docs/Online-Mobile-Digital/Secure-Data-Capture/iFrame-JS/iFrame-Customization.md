@@ -1,12 +1,14 @@
 # iFrame JS Customization
 
-The beginning of an awesome article...
+Description
 
 ## Languages
 
 iFrame is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load.
 
-You can also provide your own translations by including a languages attribute as part of your form configuration object creation. The following example shows all the text labels that can be overridden for a particular language/locale:
+You can also provide your own translations by including a languages attribute as part of your form configuration object creation. We can override the fields ......
+
+The following example shows all the text labels that can be overridden for a particular language/locale:
 
 ```javascript
 
@@ -78,11 +80,11 @@ There are 5 fields that can be overridden:
             // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
             // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
             const authorization = 'CLIENT_AUTHORIZATION'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'CLIENT_API_KEY'; // merchant receives this during on-boarding process
+            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
  
             const formConfig = {
-                "merchantId": 'MERCHANT_ID', // merchant receives this during on-boarding process
-                "publicKey": 'PUBLIC_KEY', // merchant call to ../security/credentials to receive this
+                "merchantId": '123456789012345', // merchant receives this during on-boarding process
+                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
                 "css": {
                     "primaryColorTheme": "#2D2D2D",
                     "contrastColorTheme": "#ffffff",
