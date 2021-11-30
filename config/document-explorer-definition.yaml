@@ -65,8 +65,6 @@
       link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
     - title: Virtual Terminal
       link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
-    - title: 3-D Secure
-      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
       sections:
       - title: Integrations
