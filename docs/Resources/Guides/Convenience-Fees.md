@@ -36,7 +36,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ## Request Variables
 
-The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
+The `convenienceFee` is part of the `amountComponents` object in the `additionalDataCommon` object. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
 
 ---
 
