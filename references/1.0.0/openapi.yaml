@@ -26,7 +26,9 @@ paths:
             examples:
               PaymentCard: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
               PaymentEMV: {summary: ChargesRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
+              PaymentEMV-DR: {summary: ChargesRequest with PaymentEMV and Directed Routing, $ref: '#/components/examples/PaymentEMVDRRequest'}
               PaymentTrack: {summary: ChargesRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
+              PaymentTrack-DR: {summary: ChargesRequest with PaymentTrack and Directed Routing, $ref: '#/components/examples/PaymentTrackDRRequest'}
               ManualEntry: {summary: ChargesRequest with manual entry PaymentCard,
                 $ref: '#/components/examples/ManualEntryRequest'}
               ApplePay: {summary: ChargesRequest with ApplePay, $ref: '#/components/examples/ApplePayRequest'}
@@ -42,7 +44,9 @@ paths:
               examples:
                 PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
                 PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
+                PaymentEMV-DR: {summary: ChargesResponse with PaymentEMV and Directed Routing, $ref: '#/components/examples/PaymentEMVChargesDRResponse'}
                 PaymentTrack: {summary: ChargesResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
+                PaymentTrack-DR: {summary: ChargesResponse with PaymentTrack and Directed Routing, $ref: '#/components/examples/PaymentTrackChargesDRResponse'}
                 ManualEntry: {summary: ChargesResponse with manual entry PaymentCard,
                   $ref: '#/components/examples/ManualEntryChargesResponse'}
                 ApplePay: {summary: ChargesResponse with ApplePay, $ref: '#/components/examples/ApplePayChargesResponse'}
@@ -2295,11 +2299,33 @@ components:
       x-model-version: 1.0
       description: Identifies the card processor.
       properties:
-        code: {type: string, maxLength: 256, description: Key for the custom information.}
-        platform: {type: string, maxLength: 256, description: Value for the custom
-            information.}
-        priority: {type: string, maxLength: 256, description: Value for the custom
-            information.}
+        code:
+          type: string
+          maxLength: 256
+          description: |
+            Identifies the payment processor.
+
+            Valid Values:
+            * FISERV
+            * CHASE
+        platform: 
+          type: string
+          maxLength: 256
+          description:  |
+            Identifies the payment platform of the processor.
+
+            Valid Values:
+            * NORTH
+            * TAMPA
+        priority:
+          type: string
+          maxLength: 256
+          description:  |
+            Identifies the priority to use each processor.
+
+            Valid Values:
+            * PRIMARY
+            * SECONDARY
     AmountComponents:
       x-model-version: 1.0
       description: Used in transactions where additional <a href="../docs?path=docs/Resources/Master-Data/Amount-Components.md">amount</a>
@@ -3492,6 +3518,22 @@ components:
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+    PaymentEMVDRRequest:
+      value:
+        amount: {total: '10.80', currency: USD}
+        source:
+          sourceType: PaymentEMV
+          emvData: 0249F3704833A12329F1002AB34
+          encryptionData: {encryptionType: ON_GUARD, encryptionTarget: TRACK_2, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
+            deviceType: INGENICO, keyId: '88000000022'}
+        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+        transactionInteraction: {origin: POS, posEntryMode: ICR_RELIABLE, posConditionCode: CARD_PRESENT,
+          terminalTimestamp: '2021-06-20T23:42:48Z', additionalPosInformation: {dataEntrySource: 'MOBILE_TERMINAL'}, posFeatures: {terminalEntryCapability: 'MAG_STRIPE_MANUAL_CHIP', pinAuthenticationCapability: 'UNSPECIFIED'}}
+        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+        additionalDataCommon:
+          directedRouting: 
+            processors:
+            - {code: 'FISERV', platform: NORTH, priority: 'PRIMARY'}
     PaymentEMVRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3562,6 +3604,40 @@ components:
             expirationYear: '2030'}
         paymentReceipt:
           approvedAmount: {total: '12.04', currency: USD}
+          merchantName: Merchant Name
+          merchantAddress: 123 Peach Ave
+          merchantCity: Atlanta
+          merchantStateOrProvince: GA
+          merchantPostalCode: '12345'
+          merchantCountry: US
+          merchantURL: https://www.somedomain.com
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: OK5882
+            schemeTransactionId: 0225MCC625628
+            processor: fiserv
+            responseCode: '000'
+            responseMessage: APPROVAL
+            hostResponseCode: '00'
+            hostResponseMessage: APPROVAL
+            localTimestamp: '2021-06-20T23:42:48Z'
+            bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+    PaymentEMVChargesDRResponse:
+      value:
+        gatewayResponse:
+          transactionType: CHARGE
+          transactionState: AUTHORIZED
+          transactionOrigin: POS
+          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
+            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
+            clientRequestId: '4345791', transactionId: '84356531338'}
+        source:
+          sourceType: PaymentEMV
+          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
+            expirationYear: '2030'}
+        paymentReceipt:
+          approvedAmount: {total: '10.80', currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -3688,12 +3764,28 @@ components:
         amount: {total: '12.04', currency: USD}
         source:
           sourceType: PaymentTrack
-          encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
+          encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: 9050770762789954=7171229002517746248,
             deviceType: INGENICO, keyId: '88000000022'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
         transactionInteraction: {origin: POS, posEntryMode: EMV_FALLBACK_MAG, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentTrackDRRequest:
+      value:
+        amount: {total: '10.80', currency: USD}
+        source:
+          sourceType: PaymentTrack
+          emvData: 0249F3704833A12329F1002AB34
+          encryptionData: {encryptionType: ON_GUARD, encryptionTarget: TRACK_2, encryptionBlock: 9050770762789954=7171229002517746248,
+            deviceType: INGENICO, keyId: '88000000022'}
+        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+        transactionInteraction: {origin: POS, posEntryMode: MAG_STRIPE, posConditionCode: CARD_PRESENT,
+          terminalTimestamp: '2021-06-20T23:42:48Z', additionalPosInformation: {dataEntrySource: 'MOBILE_TERMINAL'}, posFeatures: {terminalEntryCapability: 'MAG_STRIPE_ONLY', pinAuthenticationCapability: 'CAN_ACCEPT_PIN'}}
+        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+        additionalDataCommon:
+          directedRouting: 
+            processors:
+            - {code: 'FISERV', platform: NORTH, priority: 'PRIMARY'}
     PaymentTrackForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3748,6 +3840,40 @@ components:
             expirationYear: '2030'}
         paymentReceipt:
           approvedAmount: {total: '12.04', currency: USD}
+          merchantName: Merchant Name
+          merchantAddress: 123 Peach Ave
+          merchantCity: Atlanta
+          merchantStateOrProvince: GA
+          merchantPostalCode: '12345'
+          merchantCountry: US
+          merchantURL: https://www.somedomain.com
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: OK5882
+            schemeTransactionId: 0225MCC625628
+            processor: fiserv
+            responseCode: '000'
+            responseMessage: APPROVAL
+            hostResponseCode: '00'
+            hostResponseMessage: APPROVAL
+            localTimestamp: '2021-06-20T23:42:48Z'
+            bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+    PaymentTrackChargesDRResponse:
+      value:
+        gatewayResponse:
+          transactionType: CHARGE
+          transactionState: AUTHORIZED
+          transactionOrigin: RETAIL
+          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
+            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
+            clientRequestId: '4345791', transactionId: '84356531338'}
+        source:
+          sourceType: PaymentTrack
+          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
+            expirationYear: '2030'}
+        paymentReceipt:
+          approvedAmount: {total: '10.80', currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
