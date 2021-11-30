@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, american-express, discover, vault]
+tags: [carat, commerce-hub, enterprise, convenience-fees]
 ---
 
 # Convenience Fees
