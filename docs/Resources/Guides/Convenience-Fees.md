@@ -91,7 +91,7 @@ title: Response
 {
    "gatewayResponse":{
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "TOKEN",
+      "transactionType": "CHARGES",
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
