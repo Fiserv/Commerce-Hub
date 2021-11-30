@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, restful, apis, card present, online, mob
 Commerce Hub offers multiple methods of accepting online, mobile, digital payments, and MOTO payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, virtual terminal, or software.
 
 <!-- theme: warning -->
-> These transactions are at a higher risk for fraud, due to the inability to verify the account holder who is making the purchase. It is recommended to use <!--[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)--> along with Commerce Hub's [Transaction Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.
+> These transactions are at a higher risk for fraud, due to the inability to verify the account holder who is making the purchase. It is recommended to use [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) along with Commerce Hub's [Transaction Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.
 
 ---
 
@@ -34,9 +34,7 @@ Using Commerce Hub's secure hosted pages can reduce the burden of compliance wit
 <!-- theme: info -->
 >A merchant can lessen the PCI DSS load by using Hosted Payment Pages, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
 
-<!---
 **Begin integration with Commerce Hub's [Hosted Payment Pages](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md).**
--->
 
 ---
 
@@ -47,9 +45,7 @@ Using Commerce Hub's secure hosted pages can reduce the burden of compliance wit
 
 Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and are directed to a Commerce Hub [Hosted Payment Page](#hosted-payment-page) to complete the payment.
 
-<!---
 **Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md).**
--->
 
 ---
 
@@ -62,9 +58,7 @@ Allows a merchant an easy and secure way to embed a payment form into a website.
 
 Payment.js accomplishes this by injecting an iframe into a parent form where customers can enter their data. The form fields can be customized by the merchant.
 
-<!---
 **Begin integration with Commerce Hub's [Payment.js](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
--->
 
 ---
 

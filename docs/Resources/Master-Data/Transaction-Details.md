@@ -29,8 +29,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](?path=docs/Resources/Guides/Authorizations/Re-Auth.md#authorization-sequence) requested.|
 | `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
-
-<!---
 | `transactionCaptureType` | *string* | N/A | Identifies if a settlement was host capture or terminal capture. |
 | `accountVerification` | *boolean* | 5 | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | 5 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
@@ -41,7 +39,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
 | `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
--->
 
 <!--
 type: tab
@@ -56,34 +53,34 @@ JSON string format for `transactionDetails`:
       "approvalCode": "string",
       "primaryTransactionId": "838916029301",
       "captureFlag": false,
-      "transactionCaptureType": "TCS", /// Future Release
+      "transactionCaptureType": "TCS",  
       "accountVerification": false,
-      "partialApproval": "string", /// Future Release
+      "partialApproval": "string",  
       "merchantTransactionId": "1343678765",
       "merchantOrderId": "845366457890-TODO",
       "merchantInvoiceNumber": "123890",
-      "receiptEmail": "abc@gmail.com", /// Future Release
-      "paymentDescription": "string", /// Future Release
-      "cardVerificationAmount": 0.02, /// Future Release
-      "partiallyApprovedTransactionAmount": 10.55, /// Future Release
-      "splitTenderId": "12423434", /// Future Release
+      "receiptEmail": "abc@gmail.com",  
+      "paymentDescription": "string",  
+      "cardVerificationAmount": 0.02,  
+      "partiallyApprovedTransactionAmount": 10.55,  
+      "splitTenderId": "12423434",  
       "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator": true, /// Future Release
+      "duplicateTransactionCheckingIndicator": true,  
       "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource": true, /// Future Release
-      "deviceFingerprint":[ /// Future Release
+      "vaultFundingSource": true,  
+      "deviceFingerprint":[  
          {
-            "provider": "InAuth", /// Future Release
+            "provider": "InAuth",  
             "dataCapture":{
                "rawData": "aaaaaXREUVZGRlFY...aMV",
-               "dataEventId": "BB8E4E92...Fz1E063113", /// Future Release
-               "captureTime": "2016-04-16T16:06:05Z" /// Future Release
+               "dataEventId": "BB8E4E92...Fz1E063113",  
+               "captureTime": "2016-04-16T16:06:05Z"  
             },
-            "dataStatic":{ /// Future Release
+            "dataStatic":{  
                "operatingSystem": "ANDROID",
-               "operatingSystemVersion": "5.1.1 Lollipop", /// Future Release
-               "model": "XYX-1", /// Future Release
-               "type": "Moto G" /// Future Release
+               "operatingSystemVersion": "5.1.1 Lollipop",  
+               "model": "XYX-1",  
+               "type": "Moto G"  
             },
             "dataDynamic":{
                "latitude": "13.0827 N",
@@ -109,7 +106,6 @@ JSON string format for `transactionDetails`:
 
 ---
 
-<!---
 #### Partial Approval
 
 The below table identifies the valid values of `partialApproval`.
@@ -122,7 +118,6 @@ The below table identifies the valid values of `partialApproval`.
 | MERCH_SUPPORTED_ONLY | Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized. |
 | CASH_BACK_SUPPORTED_ONLY | Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized. |
 | MERCH_CASH_BACK_NOT_SUPPORTED | Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized. |
--->
 
 #### Primary Transaction Type
 

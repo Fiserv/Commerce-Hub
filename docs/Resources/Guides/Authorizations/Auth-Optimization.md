@@ -52,8 +52,6 @@ JSON string format:
 
 <!-- type: tab-end -->
 
-
-
 ---
 
 ## See Also

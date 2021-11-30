@@ -137,8 +137,6 @@
         link: docs/Resources/API-Documents/Payments/Cancel.md
       - title: Refund
         link: docs/Resources/API-Documents/Payments/Refund.md
-      - title: Transaction Inquiry
-        link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Payments VAS
       sections:
       - title: Tokenization

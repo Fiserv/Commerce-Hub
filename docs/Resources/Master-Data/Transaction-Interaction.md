@@ -17,8 +17,6 @@ The below table identifies the parameters in the `transactionInteraction` object
 | -------- | -- | ------------ | ------------------ |
 | `origin` | *string* | N/A | The [origin](#transaction-origin) of the transaction. |
 | `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Required on all online, mobile, and digital E-Commerce transactions.|
-
-<!---
 | `posEntryMode` | *string* | N/A | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
 | `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
 | `responseCode` | *string* | | Response code returned by network/issuer used in subsequent transactions. |
@@ -28,7 +26,6 @@ The below table identifies the parameters in the `transactionInteraction` object
 | `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
 | `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification | 
--->
 
 <!--
 type: tab
@@ -41,15 +38,15 @@ JSON string format for `transactionInteraction`:
 {
    "transactionInteraction":{
       "origin": "ECOM",
-      "posEntryMode": "MANUAL", /// Future Release
-      "posConditionCode": "CARD_NOT_PRESENT_ECOM", /// Future Release
-      "responseCode": "string", /// Future Release
-      "posData": "string", /// Future Release
-      "mobileInteraction": "PHONE_NUMBER", /// Future Release
-      "terminalEntryCapability": "ECOMMERCE", /// Future Release
-      "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE", /// Future Release
+      "posEntryMode": "MANUAL",  
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM",  
+      "responseCode": "string",  
+      "posData": "string",  
+      "mobileInteraction": "PHONE_NUMBER",  
+      "terminalEntryCapability": "ECOMMERCE",  
+      "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",  
       "eciIndicator": "SECURE_ECOM",
-      "additionalPosInformation": "", /// Future Release
+      "additionalPosInformation": "",  
    }
 }
 
@@ -69,7 +66,6 @@ The below table identifies the valid values of `origin`.
 | *MOTO* | Mail order or telephone order |
 | *POS* | Card Present retail face to face |
 
-<!---
 ---
 
 #### POS Entry Mode
@@ -115,7 +111,6 @@ The below table identifies the valid values of `posConditionCode`.
 | *CARD_NOT_PRESENT_F2F* | **Cardholder Present - Card Not Present - Face 2 Face.** Designates a transaction where the cardholder was present at a merchant location but did not have a card to swipe *(i.e. manual transaction)*. |
 | *CARD_NOT_PRESENT_MOTO* | **Cardholder Not Present - Mail Order/Telephone Order:** Designates a transaction where the cardholder is not present at a merchant location and consummates the sale via the phone or through the mail. The transaction is not for recurring services or product and does not include sales that are processed via an installment plan. |
 | *CARD_NOT_PRESENT_ECOM* | **Cardholder Not Present - E-commerce.** Designates a transaction initiated from the merchant's website, email, or app. Specific E-commerce type is identified in the `eciIndicator`. |
-
 
 ---
 
@@ -165,7 +160,6 @@ The below table identifies the valid values of `cardholderAuthenticationMethod`.
 | OTHER_MANUAL_VERIFICATION | Manual authentication |
 | UNKNOWN | Authentication method unknown |
 | OTHER_SYSTEMATIC_VERIFICATION | Used for other authentication methods |
--->
 
 ---
 
@@ -189,8 +183,6 @@ The below table identifies the valid values of `eciIndicator`.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
-
-<!---
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
--->
+
 ---

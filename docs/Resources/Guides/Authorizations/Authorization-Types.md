@@ -29,8 +29,6 @@ The below table identifies the valid values of `authorizationTypeIndicator` to i
 - [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md)
 - [Incremental Authorization](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
-<!---
 - [Deferred Authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md)
 - [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
--->
 ---

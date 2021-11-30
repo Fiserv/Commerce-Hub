@@ -74,6 +74,3 @@ JSON string format for `regionalPin`:
 - [Pin Block](?path=docs/Resources/Master-Data/Pin-Block.md)
 
 ---
-
-
-

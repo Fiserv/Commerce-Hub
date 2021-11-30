@@ -16,8 +16,6 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 | `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
-
-<!---
 | `posId` | *string* | | Identifies the specific device or point of entry where the transaction originated. For example, pump number, lane number, terminal number, etc. |
 | `cashierId` | *string* | | Used to uniquely identify the merchant’s store cashier or employee accepting the transaction. |
 | `stan` | *string* | | Contains the System Trace Audit Numbers (STAN) returned for a Discover incremental transaction. Note: This field has limited platform availability. For more information, please contact your account representative. |
@@ -33,7 +31,6 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 | `posHardwareAndSoftware` | *object* | N/A | [Terminal hardware and software](#hardware-and-software-information) information. |
 | `posFeatures` | *object* | N/A | Terminal or [software feature](#pos-features) information. |
 | `supervisorId` | *string* |  | Used to uniquely identify the merchant’s store supervisor transactions. |
--->
 
 
 <!--

@@ -27,10 +27,8 @@ Online, mobile, and digital transactions are considered Card Not Present (CNP) w
 
 In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include; manual entry, track data and EMV.
 
-<!---
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Integration](?path=docs/Getting-Started/Getting-Started-InPerson.md)
--->
+- [Integrations](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 
 ### Connected Commerce
 
@@ -48,9 +46,7 @@ Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce 
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Returns Optimization Service](?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md)
-<!---
 - [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
--->
 
 ---
 
@@ -59,9 +55,6 @@ Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce 
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
-<!---
 - [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
--->
 
 ---
-

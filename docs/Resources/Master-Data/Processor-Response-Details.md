@@ -28,12 +28,8 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `hostResponseMessage` | *string* | N/A | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).|
 | `localTimestamp` | *string* | N/A | Transaction timestamp in local time.| 
 | `bankAssociationDetails` | *object* | N/A | [Bank association](#bank-association-details) response details.|
-
-<!---
 | `authenticationResponseCode` | string | N/A | Response code from authentication. |
 | `feeProgramIndicator` | *string* | N/A | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or PLDebit transaction response.|
-
--->
 
 <!--
 type: tab
@@ -47,10 +43,10 @@ JSON string format for `processorResponseDetails`:
    "processorResponseDetails":{
       "approvalStatus": "APPROVED",
       "approvalCode": "OK3483",
-      "authenticationResponseCode": "string", /// Future Release
+      "authenticationResponseCode": "string",  
       "referenceNumber": "845366457890-TODO",
       "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123", /// Future Release
+      "feeProgramIndicator": "123",  
       "processor": "fiserv",
       "responseCode": "00000",
       "responseMessage": "APPROVAL",
@@ -58,9 +54,9 @@ JSON string format for `processorResponseDetails`:
       "hostResponseMessage": "APPROVAL",
       "localTimestamp": "2016-04-16T16:06:05Z",
       "bankAssociationDetails":{
-         "associationResponseCode": "000", /// Future Release
+         "associationResponseCode": "000",  
          "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "transactionReferenceInformation": "string", /// Future Release
+         "transactionReferenceInformation": "string",  
          "avsSecurityCodeResponse":{
             "streetMatch": "MATCHED",
             "postalCodeMatch": "MATCHED",
@@ -109,11 +105,8 @@ The below table identifies the parameters in the `bankAssociationDetails` object
 | ----- | ----- | ----- | ----- |
 | `transactionTimestamp` | string | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ|
 | `avsSecurityCodeResponse` | object | | [Address and security code response](#address-and-security-code-response) details |
-
-<!---
 |` associationResponseCode` | string | 32 | Bank response code |
 | `transactionReferenceInformation` | string | 256 | Transaction reference information|
--->
 
 <!--
 type: tab
@@ -125,9 +118,9 @@ JSON string format for `bankAssociationDetails`:
 ```json
 {
    "bankAssociationDetails":{
-      "associationResponseCode": "000", /// Future Release
+      "associationResponseCode": "000",  
       "transactionTimestamp": "2016-04-16T16:06:05Z",
-      "transactionReferenceInformation": "string", /// Future Release
+      "transactionReferenceInformation": "string",  
       "avsSecurityCodeResponse":{
          "streetMatch": "MATCHED",
          "postalCodeMatch": "MATCHED",
@@ -178,9 +171,9 @@ JSON string format for `avsSecurityCodeResponse`:
       "postalCodeMatch": "MATCHED",
       "securityCodeMatch": "MATCHED",
       "association":{
-         "avsCode": "YY",
+         "avsCode": "Y",
          "securityCodeResponse": "M",
-         "cardholderNameResponse": "1"
+         "cardholderNameResponse": "S"
       }
    }
 }
