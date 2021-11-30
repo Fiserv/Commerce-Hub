@@ -133,52 +133,53 @@ title: Response
 ```json
 {
   "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "CHARGES",
+    "transactionType": "CHARGE",
     "transactionState": "AUTHORIZED",
-    "transactionOrigin": "ECOM",
+    "transactionOrigin": "POS",
     "transactionProcessingDetails": {
-      "transactionDate": "2016-04-16",
-      "transactionTime": "2016-04-16T16:06:05Z",
-      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
+      "orderId": "CHG01864c3cb65c824d99b7f297505f914605",
+      "transactionTimestamp": "2021-11-30T21:26:14.90396Z",
+      "apiTraceId": "635866b3fc244917aa864fbc5baaae18",
+      "clientRequestId": "4324974",
+      "transactionId": "635866b3fc244917aa864fbc5baaae18"
     }
   },
   "source": {
-    "sourceType": "PaymentCard",
+    "sourceType": "PaymentTrack",
     "card": {
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "bin": "400555",
-      "last4": "0019",
-      "scheme": "VISA"
+      "expirationMonth": "12",
+      "expirationYear": "2024",
+      "bin": "401200",
+      "last4": "0026",
+      "scheme": "Visa"
     }
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 10.56,
       "currency": "USD"
     },
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
-      "processor": "FISERV",
-      "responseCode": "00000",
-      "responseMessage": "APPROVAL",
+      "approvalCode": "OK123C",
+      "referenceNumber": "4fbc5baaae18",
+      "networkRouted": "VISA",
+      "networkInternationalId": "0001",
+      "responseCode": "000",
+      "responseMessage": "Approved",
       "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2016-04-16T16:06:05Z",
+      "hostResponseMessage": "APPROVAL ",
       "bankAssociationDetails": {
-        "associationResponseCode": "000",
-        "transactionTimestamp": "2016-04-16T16:06:05Z"
+        "associationResponseCode": "00"
       }
     }
+  },
+  "transactionDetails": {
+    "captureFlag": false
+  },
+  "merchantDetails": {
+    "terminalId": "123456",
+    "merchantId": "123456789789567"
   },
   "additionalDataCommon": {
     "directedRouting": {
@@ -191,9 +192,9 @@ title: Response
           "priority": "PRIMARY"
         },
         {
-          "code": "CHASE",
-          "platform": "TAMPA",
-          "priority": "SECONDARY"
+          "code": "FISERV",
+          "platform": "NORTH",
+          "priority": "FINAL"
         }
       ]
     }

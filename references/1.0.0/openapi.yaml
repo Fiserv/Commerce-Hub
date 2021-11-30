@@ -3629,34 +3629,82 @@ components:
           transactionType: CHARGE
           transactionState: AUTHORIZED
           transactionOrigin: POS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionProcessingDetails:
+            orderId: CHG01864c3cb65c824d99b7f297505f914605
+            transactionTimestamp: '2021-11-30T21:26:14.90396Z'
+            apiTraceId: 635866b3fc244917aa864fbc5baaae18
+            clientRequestId: '4324974'
+            transactionId: 635866b3fc244917aa864fbc5baaae18
         source:
           sourceType: PaymentEMV
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          card:
+            expirationMonth: '12'
+            expirationYear: '2024'
+            bin: '401200'
+            last4: '0026'
+            scheme: Visa
         paymentReceipt:
-          approvedAmount: {total: '10.80', currency: USD}
-          merchantName: Merchant Name
-          merchantAddress: 123 Peach Ave
-          merchantCity: Atlanta
-          merchantStateOrProvince: GA
-          merchantPostalCode: '12345'
-          merchantCountry: US
-          merchantURL: https://www.somedomain.com
+          approvedAmount:
+            total: 10.80
+            currency: USD
           processorResponseDetails:
             approvalStatus: APPROVED
-            approvalCode: OK5882
-            schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            approvalCode: OK123C
+            referenceNumber: 4fbc5baaae18
+            networkRouted: VISA
+            networkInternationalId: '0001'
             responseCode: '000'
-            responseMessage: APPROVAL
+            responseMessage: Approved
             hostResponseCode: '00'
-            hostResponseMessage: APPROVAL
-            localTimestamp: '2021-06-20T23:42:48Z'
-            bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+            hostResponseMessage: 'APPROVAL '
+            bankAssociationDetails:
+              associationResponseCode: '00'
+            additionalInfo:
+              - name: Nashville.posEntryMode
+                value: '90'
+              - name: Nashville.pinAuthenticationCapability
+                value: '1'
+              - name: Nashville.posConditionCode
+                value: '00'
+        transactionDetails:
+          captureFlag: false
+          retrievalReferenceNumber: 4fbc5baaae18
+        transactionInteraction:
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-11-02T12:35:42Z'
+          additionalPosInformation:
+            stan: '000002'
+            dataEntrySource: MOBILE_POS
+          authorizationCharacteristicsIndicator: E
+        merchantDetails:
+          tokenType: '1174'
+          terminalId: '10000001'
+          merchantId: '100009000000090'
+        additionalDataCommon:
+          directedRouting:
+            network: VISA
+            cardFunction: CREDIT
+            processors:
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
+              - code: FISERV
+                platform: NORTH
+                priority: FINAL
+          customFields:
+            - key: processorResponse
+              value: ARAyIAHvv70O77+9AAIAAAAAAAAAEFYRMCEmFQAAAgABADRmYmM1YmFhYWUxOE9LMTIzQzAwMDE0OTQ3MzQCBQBIMTRFMDExMzM0NzY4NDQwODU1RzQzMiAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwABgyMkFQUFJPVkFMICAgICAgICAABlZJQ1JDIAAHRVYwMjEwMQBmU0RUQzAxNTkwMDExMDAwMDAwMDAwMFJJMDE1MDAwMDAwMDAwMDAwMDAwTkwwMDRWSVNBVFkwMDFDQVIwMDRWMDAwAEhBUkJOMDA4VVNBIEJhbmtDSTAwM1VTQUNQMDAxSERQMDAxQ1JDMDAyMDBDQjAwMVY=
+        networkDetails:
+          network:
+            network: Visa
+          cardLevelResultCode: 'CRC '
+          validationCode: G432
+        paymentTokens:
+          - tokenData: '9189080250240026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
     PaymentEMVCreditResponse:
       value:
         gatewayResponse:
@@ -3864,35 +3912,84 @@ components:
         gatewayResponse:
           transactionType: CHARGE
           transactionState: AUTHORIZED
-          transactionOrigin: RETAIL
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionOrigin: POS
+          transactionProcessingDetails:
+            orderId: CHG01864c3cb65c824d99b7f297505f914605
+            transactionTimestamp: '2021-11-30T21:26:14.90396Z'
+            apiTraceId: 635866b3fc244917aa864fbc5baaae18
+            clientRequestId: '4324974'
+            transactionId: 635866b3fc244917aa864fbc5baaae18
         source:
           sourceType: PaymentTrack
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          card:
+            expirationMonth: '12'
+            expirationYear: '2024'
+            bin: '401200'
+            last4: '0026'
+            scheme: Visa
         paymentReceipt:
-          approvedAmount: {total: '10.80', currency: USD}
-          merchantName: Merchant Name
-          merchantAddress: 123 Peach Ave
-          merchantCity: Atlanta
-          merchantStateOrProvince: GA
-          merchantPostalCode: '12345'
-          merchantCountry: US
-          merchantURL: https://www.somedomain.com
+          approvedAmount:
+            total: 10.80
+            currency: USD
           processorResponseDetails:
             approvalStatus: APPROVED
-            approvalCode: OK5882
-            schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            approvalCode: OK123C
+            referenceNumber: 4fbc5baaae18
+            networkRouted: VISA
+            networkInternationalId: '0001'
             responseCode: '000'
-            responseMessage: APPROVAL
+            responseMessage: Approved
             hostResponseCode: '00'
-            hostResponseMessage: APPROVAL
-            localTimestamp: '2021-06-20T23:42:48Z'
-            bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+            hostResponseMessage: 'APPROVAL '
+            bankAssociationDetails:
+              associationResponseCode: '00'
+            additionalInfo:
+              - name: Nashville.posEntryMode
+                value: '90'
+              - name: Nashville.pinAuthenticationCapability
+                value: '1'
+              - name: Nashville.posConditionCode
+                value: '00'
+        transactionDetails:
+          captureFlag: false
+          retrievalReferenceNumber: 4fbc5baaae18
+        transactionInteraction:
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-11-02T12:35:42Z'
+          additionalPosInformation:
+            stan: '000002'
+            dataEntrySource: MOBILE_POS
+          authorizationCharacteristicsIndicator: E
+        merchantDetails:
+          tokenType: '1174'
+          terminalId: '10000001'
+          merchantId: '100009000000090'
+        additionalDataCommon:
+          directedRouting:
+            network: VISA
+            cardFunction: CREDIT
+            processors:
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
+              - code: FISERV
+                platform: NORTH
+                priority: FINAL
+          customFields:
+            - key: processorResponse
+              value: ARAyIAHvv70O77+9AAIAAAAAAAAAEFYRMCEmFQAAAgABADRmYmM1YmFhYWUxOE9LMTIzQzAwMDE0OTQ3MzQCBQBIMTRFMDExMzM0NzY4NDQwODU1RzQzMiAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwABgyMkFQUFJPVkFMICAgICAgICAABlZJQ1JDIAAHRVYwMjEwMQBmU0RUQzAxNTkwMDExMDAwMDAwMDAwMFJJMDE1MDAwMDAwMDAwMDAwMDAwTkwwMDRWSVNBVFkwMDFDQVIwMDRWMDAwAEhBUkJOMDA4VVNBIEJhbmtDSTAwM1VTQUNQMDAxSERQMDAxQ1JDMDAyMDBDQjAwMVY=
+        networkDetails:
+          network:
+            network: Visa
+          cardLevelResultCode: 'CRC '
+          validationCode: G432
+        paymentTokens:
+          - tokenData: '9189080250240026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+
     PaymentTrackCreditResponse:
       value:
         gatewayResponse:
