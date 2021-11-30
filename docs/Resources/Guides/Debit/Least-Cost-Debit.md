@@ -17,5 +17,6 @@ Commece Hub will recognize if the transaction is from a debit or credit card and
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
 - [Smart Routing](?path=docs/In-Person/Debit/Smart-Routing.md)
 ---
