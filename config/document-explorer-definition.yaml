@@ -150,7 +150,7 @@
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
 - sections:
-  - title: Updates and Releases
+  - title: Updates and Alerts
     sections:
       - title: Release Notes
         link: docs/Release-Notes-Alerts/Release-Notes.md
