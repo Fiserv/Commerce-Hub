@@ -3520,23 +3520,42 @@ components:
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
     PaymentEMVHDRequest:
       value:
-        amount: {total: '10.80', currency: USD}
+        amount:
+          total: 10.8
+          currency: USD
         source:
           sourceType: PaymentEMV
-          emvData: 0249F3704833A12329F1002AB34
-          encryptionData: {encryptionType: ON_GUARD, encryptionTarget: TRACK_2, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
-            deviceType: INGENICO, keyId: '88000000022'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: POS, posEntryMode: ICR_RELIABLE, posConditionCode: CARD_PRESENT,
-          terminalTimestamp: '2021-06-20T23:42:48Z', additionalPosInformation: {dataEntrySource: 'MOBILE_TERMINAL'}, posFeatures: {terminalEntryCapability: 'MAG_STRIPE_MANUAL_CHIP', pinAuthenticationCapability: 'UNSPECIFIED'}}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+          emvData: 9F1A020840950500000080009A031604289F2701808407A00000000410109F3704EEDC585A9F3602000382021B809F34033F0002500A4D415354455243415244DF0201099C01009F2608956FA33B281C3AD69F3303E008085F3401129F3901079F02060000000001009F03060000000000009F0607A00000000410109F3501225F2A0208404F07A00000000410109F10120114A14003020000000000000000000000FF
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 6796867212329053=03538407821768469
+            keyId: FFFF9999990217A000170114
+            deviceType: INGENICO
+        transactionDetails:
+          captureFlag: false
+        transactionInteraction:
+          origin: POS
+          posEntryMode: ICR_RELIABLE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-12-01T08:40:48Z'
+          additionalPosInformation:
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+              pinAuthenticationCapability: UNSPECIFIED
+        merchantDetails:
+          merchantId: '100009000000035'
+          tokenType: '1174'
         additionalDataCommon:
-          directedRouting: 
+          directedRouting:
             processors:
-            - {code: 'FISERV', platform: NORTH, priority: 'PRIMARY'}
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
         networkDetails:
           network:
-            network: "VISA"
+            network: Visa
     PaymentEMVRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3823,23 +3842,42 @@ components:
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     PaymentTrackHDRequest:
       value:
-        amount: {total: '10.80', currency: USD}
+        amount:
+          total: 10.8
+          currency: USD
         source:
           sourceType: PaymentTrack
-          emvData: 0249F3704833A12329F1002AB34
-          encryptionData: {encryptionType: ON_GUARD, encryptionTarget: TRACK_2, encryptionBlock: 9050770762789954=7171229002517746248,
-            deviceType: INGENICO, keyId: '88000000022'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: POS, posEntryMode: MAG_STRIPE, posConditionCode: CARD_PRESENT,
-          terminalTimestamp: '2021-06-20T23:42:48Z', additionalPosInformation: {dataEntrySource: 'MOBILE_TERMINAL'}, posFeatures: {terminalEntryCapability: 'MAG_STRIPE_ONLY', pinAuthenticationCapability: 'CAN_ACCEPT_PIN'}}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 5920827294965894=843844352383401781
+            keyId: FFFF109700000E4000140114
+            deviceType: INGENICO
+        transactionDetails:
+          captureFlag: true
+        transactionInteraction:
+          origin: POS
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-12-01T12:02:48Z'
+          additionalPosInformation:
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              terminalEntryCapability: MAG_STRIPE_ONLY
+              pinAuthenticationCapability: UNSPECIFIED
+        merchantDetails:
+          merchantId: '100009000000035'
+          terminalId: '10000001'
+          tokenType: '1174'
         additionalDataCommon:
-          directedRouting: 
+          directedRouting:
             processors:
-            - {code: 'FISERV', platform: NORTH, priority: 'PRIMARY'}
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
         networkDetails:
           network:
-            network: "VISA"
+            network: Visa
     PaymentTrackForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
