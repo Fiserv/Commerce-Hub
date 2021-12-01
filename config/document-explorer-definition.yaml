@@ -94,8 +94,6 @@
     sections:
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md
-    - title: Use Our APIs
-      link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Dynamic Descriptors
       link: docs/Resources/Guides/Dynamic-Descriptor.md
     - title: Fraud Controls
@@ -114,7 +112,7 @@
       link: docs/Resources/Guides/Split-Tender.md
     - title: Stored Credentials
       link: docs/Resources/Guides/Stored-Credentials.md
-    - title: Subsequent Authorization
+    - title: Subsequent Authorizations
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
     - title: Test Integration
       link: docs/Resources/Guides/Testing/Test-Integration.md
