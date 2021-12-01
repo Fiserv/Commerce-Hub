@@ -123,8 +123,10 @@
 - sections:
   - title: API Reference
     sections:
-    - title: Release Notes
-      link: docs/Release-Notes-Alerts/Release-Notes.md
+    - title: Use Our APIs
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: Authentication Header
+      link: docs/Resources/API-Documents/Authentication-Header.md
     - title: Payments
       sections:
       - title: Charges
@@ -147,3 +149,8 @@
         link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+- sections:
+  - title: Updates and Releases
+    sections:
+      - title: Release Notes
+        link: docs/Release-Notes-Alerts/Release-Notes.md
