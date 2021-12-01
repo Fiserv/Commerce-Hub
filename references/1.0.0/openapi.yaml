@@ -3546,6 +3546,7 @@ components:
               pinAuthenticationCapability: UNSPECIFIED
         merchantDetails:
           merchantId: '100009000000035'
+          terminalId: '10000001'
           tokenType: '1174'
         additionalDataCommon:
           directedRouting:
