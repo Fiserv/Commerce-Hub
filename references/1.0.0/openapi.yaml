@@ -26,9 +26,9 @@ paths:
             examples:
               PaymentCard: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
               PaymentEMV: {summary: ChargesRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
-              PaymentEMV-DR: {summary: ChargesRequest with PaymentEMV and Directed Routing, $ref: '#/components/examples/PaymentEMVDRRequest'}
+              PaymentEMV-HD: {summary: ChargesRequest with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDRequest'}
               PaymentTrack: {summary: ChargesRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
-              PaymentTrack-DR: {summary: ChargesRequest with PaymentTrack and Directed Routing, $ref: '#/components/examples/PaymentTrackDRRequest'}
+              PaymentTrack-HD: {summary: ChargesRequest with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDRequest'}
               ManualEntry: {summary: ChargesRequest with manual entry PaymentCard,
                 $ref: '#/components/examples/ManualEntryRequest'}
               ApplePay: {summary: ChargesRequest with ApplePay, $ref: '#/components/examples/ApplePayRequest'}
@@ -44,9 +44,9 @@ paths:
               examples:
                 PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
                 PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
-                PaymentEMV-DR: {summary: ChargesResponse with PaymentEMV and Directed Routing, $ref: '#/components/examples/PaymentEMVChargesDRResponse'}
+                PaymentEMV-HD: {summary: ChargesResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVChargesHDResponse'}
                 PaymentTrack: {summary: ChargesResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                PaymentTrack-DR: {summary: ChargesResponse with PaymentTrack and Directed Routing, $ref: '#/components/examples/PaymentTrackChargesDRResponse'}
+                PaymentTrack-HD: {summary: ChargesResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackChargesHDResponse'}
                 ManualEntry: {summary: ChargesResponse with manual entry PaymentCard,
                   $ref: '#/components/examples/ManualEntryChargesResponse'}
                 ApplePay: {summary: ChargesResponse with ApplePay, $ref: '#/components/examples/ApplePayChargesResponse'}
@@ -3518,7 +3518,7 @@ components:
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
-    PaymentEMVDRRequest:
+    PaymentEMVHDRequest:
       value:
         amount: {total: '10.80', currency: USD}
         source:
@@ -3534,6 +3534,9 @@ components:
           directedRouting: 
             processors:
             - {code: 'FISERV', platform: NORTH, priority: 'PRIMARY'}
+        networkDetails:
+          network:
+            network: "VISA"
     PaymentEMVRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3623,7 +3626,7 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-    PaymentEMVChargesDRResponse:
+    PaymentEMVChargesHDResponse:
       value:
         gatewayResponse:
           transactionType: CHARGE
@@ -3818,7 +3821,7 @@ components:
         transactionInteraction: {origin: POS, posEntryMode: EMV_FALLBACK_MAG, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
-    PaymentTrackDRRequest:
+    PaymentTrackHDRequest:
       value:
         amount: {total: '10.80', currency: USD}
         source:
@@ -3834,6 +3837,9 @@ components:
           directedRouting: 
             processors:
             - {code: 'FISERV', platform: NORTH, priority: 'PRIMARY'}
+        networkDetails:
+          network:
+            network: "VISA"
     PaymentTrackForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3907,7 +3913,7 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-    PaymentTrackChargesDRResponse:
+    PaymentTrackChargesHDResponse:
       value:
         gatewayResponse:
           transactionType: CHARGE
