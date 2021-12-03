@@ -144,7 +144,7 @@
     - title: Data Solutions
       sections:
       - title: Enhanced Data Service
-        link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
+        link: docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
 - sections:
