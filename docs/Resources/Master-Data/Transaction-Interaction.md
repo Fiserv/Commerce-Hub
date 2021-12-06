@@ -176,6 +176,7 @@ The below table identifies the valid values of `eciIndicator`.
 | *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via E-commerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
 | *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
 | *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
+| *AMEX_PAYMENT_TOKEN* | **American Express Payment Token:** Designates a secure transaction between a cardholder and a merchant via E-commerce where AMEX Payment Token data is present. |
 
 ---
 
