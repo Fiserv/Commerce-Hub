@@ -39,7 +39,7 @@ The below table identifies the required parameters in the `source` object.
 
 <!---
 <!-- theme:info 
->Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
+> Merchants using the wallet encryption will send a [Wallet](?path=docs/Getting-Started/Getting-Started-Wallets.md) payload request based on the wallet type.
 -->
 
 <!--
