@@ -1,12 +1,18 @@
+---
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+---
 # iFrame JS Customization
 
-Description
+Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame included including [language](#languages), and the [theme and font](#theme-and-font).
+
+---
 
 ## Languages
 
 iFrame is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load.
 
-You can also provide your own translations by including a languages attribute as part of your form configuration object creation. We can override the fields ......
+The merchant can also provide your own translations by including a languages attribute as part of your form configuration object creation. 
+
 
 The following example shows all the text labels that can be overridden for a particular language/locale:
 
@@ -55,12 +61,14 @@ The following example shows all the text labels that can be overridden for a par
 
 ---
 
-## CSS
+
+## Theme and Font
 
 For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
 
-#### Field Overrides
-There are 5 fields that can be overridden:
+
+#### Overriding Elements
+The following elements can be overridden:
 
 - **Primary Color Theme:** changes the main color, i.e. highlight color, font color, button color (when enabled). Hexadecimal only
 - **Contrast Color Theme:** button font color. Hexadecimal only

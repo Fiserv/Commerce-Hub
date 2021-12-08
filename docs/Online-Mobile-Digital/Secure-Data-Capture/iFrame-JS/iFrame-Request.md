@@ -6,10 +6,11 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 ## Step 1: Authentication
 
-An authentication request is required to recive an AccessToken. This will be your authorization and apiKey used when creating an iFrame JS request.
+An authentication request is required to recive an AccessToken. This will be your authorization and API Key used when creating an iFrame JS request.
 
 1. A RESTful API request is made from the merchant server to obtain the authorization.
-2. The client access token and public key will be submitted as part of the iFrame JS script.
+2. The client `accessToken`, `sessionId`, and `publicKey` will be part of authentication response along with the iFrame JS script.
+3. Create the [authorization](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the iFrame request.
 
 ---
 
@@ -38,7 +39,7 @@ The below table identifies the required parameters in the `SecurityCredentialsRe
 | `responseRedirectURL` | *string* | 4000 | &#10004; | Response URL redirect |
 
 
-##### Example of an authentication payload request.
+##### Example of a credentials payload request.
 
 ```json
 
@@ -69,7 +70,7 @@ The below table identifies the response parameters in the `SecurityCredentialsRe
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
 | `asymmetricEncryptionAlgorithm` | *string* |  | RSA/ECB/PKCS1Padding. |
 
-##### Example of a charge (201: Created) response.
+##### Example of a credentials (201: Created) response.
 
 
 
@@ -144,7 +145,7 @@ Errors in iFrame JS should be handled in the .catch() of the promise for loadPay
 
 ## Step 3: Load the Payment Form
 
-All the description of the code includeing authentication, error handling, languages, script.
+All the description of the code including authentication, error handling, languages, script.
 
 ```php
 <html>
@@ -155,8 +156,6 @@ All the description of the code includeing authentication, error handling, langu
     <body>
         <div id="payment-saq-a-form-div"></div>
         <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
             const authorization = 'CLIENT_AUTHORIZATION'; // merchant call to ../security/credentials to receive this
             const apiKey = 'CLIENT_API_KEY'; // merchant receives this during on-boarding process
  
@@ -182,7 +181,7 @@ All the description of the code includeing authentication, error handling, langu
 
 ## Step 4: Submit Payment Request
 
-Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the sessionID from the [authorization](#step-1-authentication) request. 
+Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the `sessionId` from the [authorization](#step-1-authentication) request. 
 
 ### Endpoint
 <!-- theme: success -->
