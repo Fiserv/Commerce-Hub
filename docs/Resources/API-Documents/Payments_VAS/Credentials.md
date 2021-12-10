@@ -93,3 +93,7 @@ The below table identifies the response parameters in the `SecurityCredentialsRe
 
 ---
 
+## See Also
+
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+
