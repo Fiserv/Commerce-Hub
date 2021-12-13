@@ -325,7 +325,7 @@ The below table identifies the required parameters in the `paymentToken` object.
 
 
 | Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|
+|---------|----------|----------------|---------|---|
 | `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 | `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
 | `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
