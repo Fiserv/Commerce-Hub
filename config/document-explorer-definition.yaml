@@ -31,43 +31,14 @@
   - title: Getting Started
     link: docs/Getting-Started/Getting-Started-General.md
 - sections:
-  - title: In-Person
-    sections:
-    - title: Integrations
-      link: docs/Getting-Started/Getting-Started-InPerson.md
-    - title: Encrypted PIN Pad
-      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
-    - title: Semi-Integrated
-      link: docs/In-Person/Integrations/Semi-Integrated.md
-    - title: Fully-Integrated
-      link: docs/In-Person/Integrations/Fully-Integrated.md
-    - title: Encrypted Payments
-      sections:
-      - title: EMV Chip and PIN
-        link: docs/In-Person/Encrypted-Payments/EMV.md
-      - title: Track 1/2 Data
-        link: docs/In-Person/Encrypted-Payments/Track.md
-      - title: Manual Entry
-        link: docs/In-Person/Encrypted-Payments/Manual.md
-      - title: Contactless (NFC)
-        link: docs/In-Person/Encrypted-Payments/Contactless.md
-- sections:
   - title: Online/Digital/Mobile
     sections:
     - title: Integrations
       link: docs/Getting-Started/Getting-Started-Online.md
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Hosted Payment Page
-      link: docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md
-    - title: Payment JS
-      link: docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md
-    - title: Payment URL
-      link: docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md
     - title: Virtual Terminal
       link: docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md
-    - title: 3-D Secure
-      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
       sections:
       - title: Integrations
@@ -77,23 +48,16 @@
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
 - sections:
-  - title: Connected Commerce
-    link: docs/Getting-Started/Getting-Started-UCOM.md
-- sections:
   - title: Features
     sections:
-    - title: Debit
-      sections:
-      - title: Least Cost Debit
-        link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
-      - title: Reginal Debit
-        link: docs/Resources/Guides/Debit/Regional-Debit.md
-      - title: Smart Routing
-        link: docs/Resources/Guides/Debit/Smart-Routing.md
-    - title: Enhanced Data Service
-      link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
-    - title: Secure Data Capture
-      link: docs/Resources/Guides/Secure-Data-Capture/Secure-Data-Capture.md
+    - title: Auth Optimization
+      link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
+    - title: Least Cost Debit
+      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
+    - title: Data Solutions
+      link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
+#    - title: Secure Data Capture
+#      link: docs/Resources/Guides/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Tokenization
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:
@@ -103,28 +67,14 @@
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Dynamic Descriptors
-      link: docs/Resources/Guides/Dynamic-Descriptor.md
-    - title: Fraud Controls
-      link: docs/Resources/Guides/Fraud/Fraud-Settings.md
-    - title: Industry and Verticals
-      link: docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md
-    - title: Level 2/3 Purchase Cards
-      link: docs/Resources/Guides/Level23/Level23.md
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
     - title: Response Handling
       link: docs/Resources/Guides/Response-Codes/Response-Handling.md
-    - title: Response Testing
-      link: docs/Resources/Guides/Testing/Test-Integration.md
     - title: Split Shipment
       link: docs/Resources/Guides/Split-Shipment.md
-    - title: Split Tender
-      link: docs/Resources/Guides/Split-Tender.md
     - title: Stored Credentials
       link: docs/Resources/Guides/Stored-Credentials.md
-    - title: Subsequent Authorization
-      link: docs/Resources/Guides/Authorizations/Authorization-Types.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
 - sections:
@@ -142,17 +92,15 @@
         link: docs/Resources/API-Documents/Payments/Cancel.md
       - title: Refund
         link: docs/Resources/API-Documents/Payments/Refund.md
-      - title: Transaction Inquiry
-        link: docs/Resources/API-Documents/Payments/Inquiry.md
-      - title: Credit
-        link: docs/Resources/API-Documents/Payments/Credit.md
-      - title: Forced
-        link: docs/Resources/API-Documents/Payments/Forced.md
     - title: Payments VAS
       sections:
       - title: Tokenization
         link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
       - title: Account Verification
         link: docs/Resources/API-Documents/Payments_VAS/Verification.md
+    - title: Data Solutions
+      sections:
       - title: Enhanced Data Service
         link: docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md
+      - title: Returns Optimization
+        link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md

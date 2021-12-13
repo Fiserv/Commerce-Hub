@@ -36,8 +36,13 @@ title: Request
    },
    "additionalDataCommon":{
       "additionalData":{
-         "requestedTestErrorResponseCode":"103",
-      },   
+         "requestedTestResponseCode":"103"
+      }
+    },
+    "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }   
 }
 ```
 
@@ -83,12 +88,14 @@ title: Response
 
 ---
 
-
-
 ## See Also
 
-
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Test Cards](?path=docs/Resources/Guides/Testing/Test-Cards.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
+- [Test Fraud Settings](?path=docs/Resources/Guides/Testing/Test-Fraud.md)
+
+---

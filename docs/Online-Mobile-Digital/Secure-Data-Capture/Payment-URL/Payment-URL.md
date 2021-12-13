@@ -61,7 +61,11 @@ title: Request
   "authenticateTransaction": "TRUE",
   "dynamicDescriptor": {
 	  "merchantName": "MyWebsite.com"
-  }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 

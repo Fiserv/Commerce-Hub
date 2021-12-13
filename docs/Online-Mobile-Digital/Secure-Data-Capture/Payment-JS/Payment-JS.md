@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
 ---
 
-# Payment.JS Integration
+# Payment JS Integration
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Payment.JS support and the documents related to the features will be released soon.
@@ -29,4 +29,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 ## Next Steps
 
-- [Sequence Flow](?path=docs/Online-Mobile-Digital/Payment-JS/Sequence-Flow.md)
+- Create a Payment Request
+- Customize Payment Form
+- Error Handling

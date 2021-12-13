@@ -73,9 +73,10 @@ Generated test cards should meet the following requirements:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
 - [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
-- [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Test Fraud Settings](?path=docs/Resources/Guides/Testing/Test-Fraud.md)
 - [Supported Card Types](?path=docs/Resources/Master-Data/Card-Type.md)
 
 ---

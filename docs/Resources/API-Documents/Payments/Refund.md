@@ -10,13 +10,13 @@ If the customer returns product or requests to cancel the transaction after the 
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 <!-- theme: warning -->
-> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the account.
+> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the customer's account.
 
 ---
 
 ## Minimum Requirements
 
-A refund request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId` or `orderId`. The request may contain the `amount` object based on the refund type.
+A refund request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId`. The request may contain the `amount` object based on the refund type.
 
 #### Refund Types
 
@@ -36,20 +36,28 @@ The below table identifies the required parameters in the `amount` object.
 | `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
+<!--
+type: tab
+title: merchantDetails
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
 <!-- type: tab-end -->
 
 ---
 
-<!-- theme: success -->
+## Endpoint
 
-## Endpoints
-
-Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
+Use the below endpoint based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/refund`
->
->**POST** `/payments/v1/charges/orders/{orderId}/refund`
 
 ---
 
@@ -67,7 +75,11 @@ title: Request
   "amount": {
     "total": "1.50",
     "currency": "USD"
-  }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 
