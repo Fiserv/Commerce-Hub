@@ -90,7 +90,7 @@ title: Response
 ```json
 {
   "gatewayResponse": {
-    "transactionType": "CHARGE",
+    "transactionType": "TOKENIZE",
     "transactionState": "AUTHORIZED",
     "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
@@ -390,9 +390,9 @@ title: Response
 {
   "gatewayResponse": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom"
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM"
   },
   "transactionProcessingDetails": {
     "transactionDate": "2021-04-16",
