@@ -16,9 +16,9 @@ The below table identifies the parameters in the `deviceFingerprintData` object.
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 |`provider` | *string* | N/A | Device provider e.g. InAuth. |
-|`dataCapture`| *object* | N/A | [Data capture](#data-capture) details. | 
 |`dataStatic`| *object* | N/A | [Data static](#data-static) details.|
 |`dataDynamic`| *object* | N/A | [Data dynamic](#data-dynamic) details. |
+|`dataCapture`| *object* | N/A | [Data capture](#data-capture) details. |
 
 <!--
 type: tab
@@ -33,16 +33,16 @@ JSON string format for `deviceFingerprint`:
       "deviceFingerprint": [
          {
             "provider": "InAuth",
-            "dataCapture": {
-               "rawData": "aaaaaXREUVZGRlFY...aMV",
-               "dataEventId": "BB8E4E92...Fz1E063113",
-               "captureTime": "2016-04-16T16:06:05Z"
+            "dataCapture": {  
+               "rawData": "aaaaaXREUVZGRlFY...aMV",  
+               "dataEventId": "BB8E4E92...Fz1E063113",  
+               "captureTime": "2016-04-16T16:06:05Z"  
             },
             "dataStatic": {
-               "operatingSystem": "ANDROID",
-               "operatingSystemVersion": "5.1.1 Lollipop",
-               "model": "XYX-1",
-               "type": "Moto G",
+               "operatingSystem": "ANDROID",  
+               "operatingSystemVersion": "5.1.1 Lollipop",  
+               "model": "XYX-1",  
+               "type": "Moto G",  
                "deviceId": "00:1B:44:11:3A:B7",
                "javaScriptEnabled": true,
                "javaEnabled": true,
@@ -50,8 +50,8 @@ JSON string format for `deviceFingerprint`:
                "locale": "en-US"
             },
             "dataDynamic": {
-               "latitude": "13.0827 N",
-               "longitude": "80.2707 E",
+               "latitude": "13.0827 N",  
+               "longitude": "80.2707 E",  
                "ipAddress": "172.27.37.221",
                "captureTime": "2016-04-16T16:06:05Z",
                "address": {
@@ -117,15 +117,15 @@ The below table identifies the parameters in the `dataStatic` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `operatingSystem` | *string* | 256 | Device operating system (OS) |
-| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
-| `model` | *string* | 256 | Device Model |
-| `type` | *string* | 256 | Device type/name |
 | `deviceId` | *string* | 48 | MAC of the device originating the transaction |
 | `javaScriptEnabled` | *boolean* | N/A | Identifies if JavaScript is enabled on the device |
 | `javaEnabled` | *boolean* | N/A | Identifies if Java is enabled on the device |
 | `userAgent` | *string* | 2048 | User agent data from the user device truncated to 2048 bytes |
 | `locale` | *string* | 8 | Language/Region code of user in IETF BCP47 format |
+| `operatingSystem` | *string* | 256 | Device operating system (OS) |
+| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
+| `model` | *string* | 256 | Device Model |
+| `type` | *string* | 256 | Device type/name |
 
 <!--
 type: tab
@@ -137,10 +137,10 @@ JSON string format for `dataStatic`:
 ```json
 {
    "dataStatic":{
-      "operatingSystem": "ANDROID",
-      "operatingSystemVersion": "5.1.1 Lollipop",
-      "model": "XYX-1",
-      "type": "Moto G",
+      "operatingSystem": "ANDROID",  
+      "operatingSystemVersion": "5.1.1 Lollipop",  
+      "model": "XYX-1",  
+      "type": "Moto G",  
       "deviceId": "00:1B:44:11:3A:B7",
       "javaScriptEnabled": true,
       "javaEnabled": true,
@@ -201,6 +201,7 @@ JSON string format for `dataDynamic`:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Emhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

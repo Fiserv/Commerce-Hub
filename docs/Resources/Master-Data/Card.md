@@ -15,7 +15,7 @@ title: card
 The below table identifies the parameters in the `card` object.
 
 | Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | -----| ------------------ |
+| -------- | -- | ------------ | -----|
 | `cardData` | *string* | 256 | Credit card number |
 | `nameOnCard` | *string* | 256 | Cardholder name |
 | `expirationMonth` | *string* | 2 | 2-digit card expiration month |
@@ -27,7 +27,6 @@ The below table identifies the parameters in the `card` object.
 | `scheme` | *String* | 256 |  Card brand received in the transaction response |
 | `beginningBalance` | *number* | 18,3 | Beginning card balance received in the transaction response |
 | `endingBalance` | *number* | 18,3 | Ending card balance received in the transaction response |
-
 
 <!--
 type: tab

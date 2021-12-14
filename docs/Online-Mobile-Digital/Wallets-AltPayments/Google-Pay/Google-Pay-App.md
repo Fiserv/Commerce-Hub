@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 ## Step 1: Configure Google Pay
 
-The merchant will have to do the changes in their [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler etc.
+Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler, etc.
 
 ---
 
@@ -38,6 +38,9 @@ The below table identifies the required parameters in the `source` object.
 ---
 
 ### Payload Example
+
+<!-- theme:info -->
+>Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
 
 <!--
 type: tab
@@ -149,8 +152,11 @@ title: Response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
+<!---
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
 - [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+-->
 
 ---
