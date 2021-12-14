@@ -40,7 +40,7 @@ Click Dashboard to view your Merchant ID's. To create a new Merchant ID, select 
 
 ## Access a Merchant ID
 
-Access a Merchant ID allows a developer to access the End2End Test acquiring Merchant ID(s)/Prod Acquiring Merchant ID(s) created by a corporate merchant, provided developer has received Access code from a corporate merchant.
+Access Merchant ID allows a developer to access the End-To-End Test acquiring Merchant ID(s)/Prod Acquiring Merchant ID(s) created by a corporate merchant, provided developer has received Access code from a corporate merchant.
 
 ### Step 1: Select an Environment
 
@@ -56,7 +56,7 @@ If you want to add a Merchant ID to a Workspace, select from the list of Merchan
 
 ## Clone a Merchant ID
 
-A developer can create a dedicated Sandbox Merchant ID(s) by cloning all the features of End2End, Test, or Prod Acquiring Merchant ID created by a corporate merchant, provided developer has received Access code from a corporate merchant. Further, developer can edit the features of cloned Sandbox Merchant ID(s).
+A developer can create a dedicated Sandbox Merchant ID(s) by cloning all the features of End-To-End, Test, or Prod Acquiring Merchant ID created by a corporate merchant, provided developer has received Access code from a corporate merchant. Further, developer can edit the features of cloned Sandbox Merchant ID(s).
 
 ### Step 1: Select a Merchant ID to Clone
 
