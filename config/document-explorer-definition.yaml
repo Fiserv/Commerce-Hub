@@ -86,7 +86,7 @@
     - title: Least Cost Debit
       link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Secure Data Capture
-      link: docs/Resources/Guides/Secure-Data-Capture/Secure-Data-Capture.md
+      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Tokenization
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:
