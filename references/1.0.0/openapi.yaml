@@ -3202,7 +3202,6 @@ components:
         merchantDetails: {merchantId: '1234567890123456', alternateMerchantId: '1234567890123456'}
     PaymentTokenROSRequest:
       value:
-        amount: {total: '12.04', currency: USD}
         source: {sourceType: PaymentToken, tokenData: '1234560000019'}
         merchantDetails: {merchantId: '1234567890123456', tokenType: 'TRANSARMOR'}
     PaymentTokenChargesResponse:
