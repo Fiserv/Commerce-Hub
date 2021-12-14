@@ -1,6 +1,9 @@
-# Credentials
+# Security Credentials
 
-Description
+A credentials request is used for authorizing or submitting subsequent financial transactions. 
+
+- Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
+- Returns a `sessionId` used in [iFrame JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) and [Payment JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) requests.
 
 ## Minimum Requirements
 
@@ -63,7 +66,7 @@ The below table identifies the response parameters in the `SecurityCredentialsRe
 | `publicKey` | *string* | | Base64 encoded public key |
 | `accessToken` | *string* |  | Access token created and sent back |
 | `sessionId` | *string* |  | Used as an identifier for a session after a successful call to security/credentials endpoint or after a successful authentication request" |
-| `accessTokenIssuedTime` | *string* |  | Token issue time in YYYY-MM-DDThh:mm:ssZ format. Example - 2016-04-16T16:06:05Z |
+| `accessTokenIssuedTime` | *string* |  | Token issue time in YYYY-MM-DDThh:mm:ssZ format |
 | `accessTokenTimeToLive` | *string* | | Access token expiry |
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
 | `asymmetricEncryptionAlgorithm` | *string* |  | RSA/ECB/PKCS1Padding. |
@@ -78,9 +81,9 @@ The below table identifies the response parameters in the `SecurityCredentialsRe
 ```json
 
 {
-  "publicKey": "string",
-  "accessToken": "string",
-  "sessionId": "string",
+  "publicKey": "TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=",
+  "accessToken": "Q7aLVOVwj327v20EcxPUq4zwAMPO",
+  "sessionId": "13bdefe8-cbf4-401e-853d-d687ae4ac3af",
   "accessTokenIssuedTime": "2016-04-16T16:06:05Z",
   "accessTokenTimeToLive": "string",
   "symmetricEncryptionAlgorithm": "string",
