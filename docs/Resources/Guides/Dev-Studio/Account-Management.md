@@ -10,37 +10,35 @@ Login to the Developer Studio and access the Developer Dashboard.
 
 ### Step 2: Select a Method
 
-Click Add Merchant ID. Select the method from the following options:
+Click Add Merchant ID button. From the Select Method dropdown, choose Create a new Sandbox Merchant ID and click Next.
 
-- Create a new Sandbox Merchant ID 
-- Access a Merchant ID
-- Clone a Merchant ID
+### Step 3: Create a Sandbox MID Name
 
-### Step 3: Create a new Sandbox Merchant ID
+Create a Sandbox Merchant ID name and click Create. 
 
-Sandbox Merchant ID is dedicated Commerce Hub test Merchant ID for respective developer.
-Select Create a Sandbox Merchant ID from the method dropdown. 
+<!-- theme: info -->
+> The name that displays in Developer Dashboard may not match the name that displays in Marketplace.
 
-Create a Sandbox Merchant ID name and click Create. You will be re-directed to the Marketplace. Edit the following settings as needed and click Update Account.
+### Step 4: Configure Sandbox Account
+
+You will be re-directed to the Marketplace. Edit the following settings as needed and click Update Account.
 
 - Entitlements
 - Payment Types
 - Value Added Services
 - Summary
 
-
 <!-- theme: info -->
 > Once your Sandbox Merchant ID has been successfully added to your workspace in Developer Studio, it may be pending and will not be updated in real time once approved.
 
+
+### Step 5: View your Sandbox Merchant ID
+
+Click the Go to Developer Studio button to return and click Dashboard to view the Merchant ID. 
+
+
 <!-- theme: info -->
->Once your Sandbox Merchant ID has been successfully added to your workspace in Developer Studio, click Go to Developer Studio to be re-directed back to the setup for your Sandbox Merchant ID. 
-
-
-### Step 4: View your Sandbox Merchant ID
-
-Click Dashboard to view your Merchant ID's. To create a new Merchant ID, select the methhod and follow the steps mentioned above. 
-
----
+> Newly created Merchant IDs may not immediately display in the list. Click Refresh to update the list of Merchant IDs.
 
 ## Access a Merchant ID
 
