@@ -145,6 +145,7 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 | *ENCRYPTION_ERROR* | Encryption error |
 | *SYSTEM_ERROR* | System error |
 | *SUSPECTED_FRAUD* | Suspect fraud |
+| *CARD_OVERRIDE* | Chip card override |
 
 ---
 
