@@ -38,7 +38,7 @@ Click the Go to Developer Studio button to return and click Dashboard to view th
 
 
 <!-- theme: info -->
-> Newly created Merchant IDs may not immediately display in the list. Click Refresh to update the list of Merchant IDs.
+> Newly created Merchant IDs may not immediately display in the list of Merchant IDs. Click Refresh to update the list of Merchant IDs.
 
 ## Access a Merchant ID
 
