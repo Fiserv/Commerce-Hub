@@ -19,7 +19,9 @@ Click Add Merchant ID. Select the method from the following options:
 ### Step 3: Create a new Sandbox Merchant ID
 
 Sandbox Merchant ID is dedicated Commerce Hub test Merchant ID for respective developer.
-Select Create a Sandbox Merchant ID from the method dropdown. Create a Sandbox Merchant ID name and click Create. You will be re-directed to the Marketplace. Edit the following settings as needed and click Update Account.
+Select Create a Sandbox Merchant ID from the method dropdown. 
+
+Create a Sandbox Merchant ID name and click Create. You will be re-directed to the Marketplace. Edit the following settings as needed and click Update Account.
 
 - Entitlements
 - Payment Types
@@ -30,13 +32,15 @@ Select Create a Sandbox Merchant ID from the method dropdown. Create a Sandbox M
 <!-- theme: info -->
 > Once your Sandbox Merchant ID has been successfully added to your workspace in Developer Studio, it may be pending and will not be updated in real time once approved.
 
-<!-- theme: danger -->
+<!-- theme: info -->
 >Once your Sandbox Merchant ID has been successfully added to your workspace in Developer Studio, click Go to Developer Studio to be re-directed back to the setup for your Sandbox Merchant ID. 
 
 
 ### Step 4: View your Sandbox Merchant ID
 
 Click Dashboard to view your Merchant ID's. To create a new Merchant ID, select the methhod and follow the steps mentioned above. 
+
+---
 
 ## Access a Merchant ID
 
@@ -53,6 +57,7 @@ Select Access a Merchant ID from the method dropdown. Enter your access code. Se
 
 If you want to add a Merchant ID to a Workspace, select from the list of Merchant ID's and click Add MID's to Workspace.
 
+---
 
 ## Clone a Merchant ID
 
@@ -61,6 +66,36 @@ A developer can create a dedicated Sandbox Merchant ID(s) by cloning all the fea
 ### Step 1: Select a Merchant ID to Clone
 
 Enter a Merchant ID name that you want to clone or select from the Merchant ID list. 
+
+--- 
+
+## Create a API Key
+
+Developers can create and manage API Keys from the Dashboard in the API Key section..
+
+### Step 1: Access Developer Studio
+
+Login to the Developer Studio and access the Developer Dashboard. 
+
+### Step 2: Add a new API Key
+
+Click Add API Key. Select a Product Name from the dropdown. Select the Merchant ID from the dropdown. Create a API Key Name. Select the API Key Type from the following list and click Create.
+
+- Sandbox
+- E2E
+- Prod
+
+Select features from the following:
+
+- Data as a Service: Enhanced Data 
+- Data as a Service: Return Optimizer
+- Payments
+- Payments: Val
+
+<!-- theme: info -->
+> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret.
+
+---
 
 ## How do they get the access code?
 
