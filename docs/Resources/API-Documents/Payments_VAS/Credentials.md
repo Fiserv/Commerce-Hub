@@ -87,9 +87,7 @@ title: Response
   "accessToken": "Q7aLVOVwj327v20EcxPUq4zwAMPO",
   "sessionId": "13bdefe8-cbf4-401e-853d-d687ae4ac3af",
   "accessTokenIssuedTime": "2016-04-16T16:06:05Z",
-  "accessTokenTimeToLive": "string",
-  "symmetricEncryptionAlgorithm": "string",
-  "asymmetricEncryptionAlgorithm": "string"
+  "accessTokenTimeToLive": "889",
 }
 
 ```
