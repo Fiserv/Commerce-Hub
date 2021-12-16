@@ -44,57 +44,47 @@ Click the Go to Developer Studio button to return and click Dashboard to view th
 
 Access Merchant ID allows a developer to access the End-To-End Test acquiring Merchant ID(s)/Prod Acquiring Merchant ID(s) created by a corporate merchant, provided developer has received Access code from a corporate merchant.
 
-### Step 1: Select an Environment
-
-Select Access a Merchant ID from the method dropdown. Enter your access code. Select one of the following environments:
-
-- End-To-End
-- Production
-
-### Step 2: Add a Merchant ID
-
-If you want to add a Merchant ID to a Workspace, select from the list of Merchant ID's and click Add MID's to Workspace.
-
----
-
-## Clone a Merchant ID
-
-A developer can create a dedicated Sandbox Merchant ID(s) by cloning all the features of End-To-End, Test, or Prod Acquiring Merchant ID created by a corporate merchant, provided developer has received Access code from a corporate merchant. Further, developer can edit the features of cloned Sandbox Merchant ID(s).
-
-### Step 1: Select a Merchant ID to Clone
-
-Enter a Merchant ID name that you want to clone or select from the Merchant ID list. 
-
---- 
-
-## Create a API Key
-
-Developers can create and manage API Keys from the Dashboard in the API Key section..
+<!-- theme: warning -->
+> An access code is required from the merchant administrator after it is created in Marketplace.
 
 ### Step 1: Access Developer Studio
 
 Login to the Developer Studio and access the Developer Dashboard. 
 
-### Step 2: Add a new API Key
 
-Click Add API Key. Select a Product Name from the dropdown. Select the Merchant ID from the dropdown. Create a API Key Name. Select the API Key Type from the following list and click Create.
+### Step 2: Select a Method
 
-- Sandbox
-- E2E
-- Prod
+Click Add Merchant ID button. From the Select Method dropdown, choose Access a Merchant ID and click Next.
 
-Select features from the following:
 
-- Data as a Service: Enhanced Data 
-- Data as a Service: Return Optimizer
-- Payments
-- Payments: Val
+### Step 3: Select an Environment
+
+Enter the access code provided by the merchant administrator. Select the required environment and click the Access button.
+
+- **End-To-End:** Used to certify your API application
+- **Production:** Used to obtain production API credentials
+
+### Step 4: Add a Merchant ID
+
+Select the required Merchant ID's and click Add MID's to Workspace.
 
 <!-- theme: info -->
-> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret.
+>The selected MID's will be added based on the [profile](?docs/Resources/Guides/Enterprise-Portal/Profiles.md) configuration in Marketplace. If features or settings need to be modified, please contact your merchant administrator. 
 
----
+## Clone a Merchant ID
 
-## How do they get the access code?
+A developer can create a dedicated Sandbox Merchant ID(s) by cloning all the features of End-To-End, Test, or Prod Acquiring Merchant ID created by a corporate merchant, provided developer has received Access code from a corporate merchant. Further, developer can edit the features of cloned Sandbox Merchant ID(s).
 
-Clone a Merchant ID:Developer can create a dedicated Sandbox Merchant ID(s) by cloning all the features of End2End, test, or prod acquiring Merchant ID created by corporate merchant, provided developer has received Access code from a corporate merchant. Further, developer can edit the features of cloned Sandbox Merchant ID(s).
+### Step 1: Access Developer Studio
+
+Login to the Developer Studio and access the Developer Dashboard. 
+
+### Step 2: Select a Method
+
+Click Add Merchant ID button. From the Select Method dropdown, choose Clone a Merchant ID and click Next.
+
+### Step 3: Select a Merchant ID to Clone
+
+Enter a Merchant ID name that you want to clone or select from the Merchant ID list. Click Next.
+
+--- 
