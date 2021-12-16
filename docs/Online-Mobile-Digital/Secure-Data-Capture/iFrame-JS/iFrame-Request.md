@@ -20,7 +20,7 @@ The iFrame JS script tag is required in the website by downloading or including 
 
 ```php
 
-<script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="..{commercehub-domain}../ch/sdk/v1/commercehub-client-sdk.js"></script>
 
 ```
 
@@ -316,7 +316,8 @@ title: Tokens Response
 
 ## See Also
 
-- Customize iFrame Payment Form
-- Payment JS Integration
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [iFrame JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
 - [Authentication Header](?path+docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
