@@ -26,6 +26,8 @@ Select features from the following:
 - Data as a Service: Return Optimizer
 
 
+![API Key](../../../../assets/images/APIKEY.PNG)
+
 <!-- theme: info -->
 > Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret.
 
@@ -34,6 +36,6 @@ Select features from the following:
 ## Certificate Management
 
 
-##Downloading certificates for ApplePay
+## Downloading certificates for ApplePay
 
 ---
