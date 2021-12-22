@@ -1,3 +1,7 @@
+---
+tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal,key-management, certification]
+---
+
 # Account-Management
 
 ## Create a new Sandbox Merchant ID
@@ -70,6 +74,10 @@ Select the required Merchant ID's and click Add MID's to Workspace.
 
 <!-- theme: info -->
 >The selected MID's will be added based on the [profile](?docs/Resources/Guides/Enterprise-Portal/Profiles.md) configuration in Marketplace. If features or settings need to be modified, please contact your merchant administrator. 
+
+### Step: Enter Access Code
+
+
 
 ## Clone a Merchant ID
 

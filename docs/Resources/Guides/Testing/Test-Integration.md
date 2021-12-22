@@ -1,4 +1,3 @@
-
 ---
 tags: [carat, commerce-hub, enterprise, sandbox, testing, test-integration, test-cards, test-declines, test-errors, test-fraud]
 ---
@@ -20,7 +19,7 @@ Commerce Hub supports [test cards](?path=docs/Resources/Guides/Testing/Test-Card
 
 ## Error Response Testing
 
-A transaction error can be triggered by entering the desired error code in the request payload. For more information, see [test errors](?path=docs/Resources/Guides/Testing/Test-Errors.md).
+A transaction error can be triggered by entering the desired error code in the request payload. For more information, see [test errors](?path=docs/Resources/Guides/Testing/Test-Errors.md). 
 
 ---
 
