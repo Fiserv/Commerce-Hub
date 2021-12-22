@@ -25,7 +25,7 @@ Online, mobile, and digital transactions are considered Card Not Present (CNP) w
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include In-Person support and the documents related to the features will be released soon.
 
-In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data and EMV.
+In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Integrations](?path=docs/Getting-Started/Getting-Started-InPerson.md)
