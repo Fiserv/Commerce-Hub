@@ -8,7 +8,7 @@ tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal,ke
 
 ## Create a API Key
 
-Developers can create and manage API Keys from the Dashboard in the API Key section..
+Developers can create and manage API Keys from the Dashboard in the API Key section.
 
 ### Step 1: Access Developer Studio
 
