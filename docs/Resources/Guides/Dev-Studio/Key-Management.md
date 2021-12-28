@@ -5,7 +5,6 @@ tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal,ke
 
 # API Key-Management
 
-
 ## Create a API Key
 
 Developers can create and manage API Keys from the Dashboard in the API Key section.
@@ -41,7 +40,7 @@ Select features from the following:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)
-- [Profiles](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md)
-
+- [Account Management](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md)
+- [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
+- [Transaction Verification](?path=docs/Resources/Guides/Dev-Studio/Transaction-Verification.md)
 ---

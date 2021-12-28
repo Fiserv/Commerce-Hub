@@ -97,4 +97,11 @@ Click Add Merchant ID button. From the Select Method dropdown, choose Clone a Me
 
 Enter a Merchant ID name that you want to clone or select from the Merchant ID list. Click Next.
 
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
+- [Key Management](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+- [Transaction Verification](?path=docs/Resources/Guides/Dev-Studio/Transaction-Verification.md)
+
 --- 
