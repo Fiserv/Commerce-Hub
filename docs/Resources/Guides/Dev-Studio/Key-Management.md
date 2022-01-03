@@ -19,7 +19,7 @@ Click Add API Key. Select a Product Name from the dropdown. Select the Merchant 
 
 - **Sandbox:** Used to certify you API environment
 - **End-To-End:** Used to certify your API application
-- **Production:** Used to obtain production API credentials
+- **Production:** Used to obtain production API credentials 
 
 Select features from the following:
 
