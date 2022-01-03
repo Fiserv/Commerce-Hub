@@ -95,7 +95,7 @@ Click Add Merchant ID button. From the Select Method dropdown, choose Clone a Me
 
 ### Step 3: Select a Merchant ID to Clone
 
-Enter a Merchant ID name that you want to clone or select from the Merchant ID list. Click Next.
+Enter a Merchant ID name that you want to clone or select from the Merchant ID list. Click Next. 
 
 ## See Also
 
