@@ -6,7 +6,7 @@ tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal,ke
 
 ## Create a new Sandbox Merchant ID
 
-Sandbox Merchant ID is a dedicated Commerce Hub test account Merchant ID for a respective developer.
+Sandbox Merchant ID is a dedicated Commerce Hub test account Merchant ID for a respective developer. 
 
 ### Step 1: Access Developer Studio
 
