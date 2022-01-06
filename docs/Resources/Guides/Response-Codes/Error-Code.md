@@ -126,7 +126,7 @@ Codes starting with 5xx identifies a [vertical](?path=docs/Resources/Guides/Indu
 
 <!--
 type: tab
-title: 6xx
+title: 6xx-649
 -->
 
 Codes starting with 6xx identifies an error related to [fraud checks](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md). Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
@@ -151,6 +151,18 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 | 676 | Terminal ID Not Unique |
 | 677 | Terminal Denied |
 
+<!--
+type: tab
+title: 65x-699
+-->
+
+Codes starting with 6xx identifies an error related to terminal configuration. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
+
+| Code| Message |
+| ---- | ----- |
+| 675 | No Terminal Setup or Found |
+| 676 | Terminal ID Not Unique |
+| 677 | Terminal Denied |
 
 <!--
 type: tab
