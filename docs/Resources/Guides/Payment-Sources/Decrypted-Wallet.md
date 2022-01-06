@@ -35,7 +35,7 @@ The below table identifies the required parameters in the `header` object.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ---------|--------- |
-| `cardData` | *string* | 256 | | Card number or encrypted data |
+| `cardData` | *string* | 256 | &#10004; | Card number or encrypted data |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit expiration month |
 | `expirationYear` | *string* | 5 | &#10004; | 4-digit expiration year |
 
