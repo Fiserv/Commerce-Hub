@@ -24,12 +24,6 @@ The below table identifies the valid values of `responseCode` along with `respon
 | 039 | Retry: Try Again Later |
 | 041 | Service Not Allowed |
 | 050 | Host Key Error |
-| 105 | Invalid Amount or Currency |
-| 201 | Invalid Merchant ID or Setup |
-| 202 | Invalid Terminal ID or Setup |
-| 245 | Invalid Transaction: Not Allowed |
-| 360 | Exceeds Withdrawal Limit |
-| 705 | System Error or Problem |
 
 ---
 
