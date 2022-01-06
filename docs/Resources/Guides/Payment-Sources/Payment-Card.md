@@ -37,7 +37,7 @@ title: card
 The below table identifies the required parameters in the `card` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ----------- |---|
 | `cardData` | *string* | 15 |  &#10004; | Credit Card Number or Encrypted Data |
 | `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month Example (05) |
 | `expirationYear` | *string* | 4 |  &#10004; |4-digit card expiration year Example (2025) |
@@ -54,14 +54,14 @@ JSON string format for PaymentCard:
 
 ```json
 {
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      }
-   }
+	"source": {
+		"sourceType": "PaymentCard",
+		"card": {
+			"cardData": "4005550000000019",
+			"expirationMonth": "02",
+			"expirationYear": "2035"
+		}
+	}
 }
 ```
 
