@@ -16,7 +16,7 @@ type: tab
 title: source
 -->
 
-The below table identifies the required parameters in the `source` object.
+The below table identifies the parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|-------|---------|---------|
@@ -31,7 +31,7 @@ type: tab
 title: card
 -->
 
-The below table identifies the required parameters in the `header` object.
+The below table identifies the required parameters in the `card` object.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ---------|--------- |
