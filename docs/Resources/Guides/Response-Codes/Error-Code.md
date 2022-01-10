@@ -144,7 +144,7 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 | 617 | Blocked: Billing Name |
 | 619 | Velocity: Merchant Volume Exceeded |
 | 621 | Velocity: Maximum Sale Exceeded |
-| 624 | Velocity: Refund Limit Exceeded |
+| 624 | Velocity: Refund Limit Exceeded | 
 | 628 | Declined Fraud Detect Score |
 | 629 | Declined: Fraud Detect Not Available |
 | 675 | No Terminal Setup or Found |
