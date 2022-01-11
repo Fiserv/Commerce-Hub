@@ -4,6 +4,62 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-codes, c
 
 # Error Response Codes
 
+<!--
+type: tab
+title: 0xx
+-->
+| Code| Message |
+| ---- | ----- |
+| 000 |  Approved |
+|	001 | Partial Approval |
+| 002 | Pending Approval |
+|	003	| Referral: Call For Voice Auth	| 
+|	004	| Referral: Call Bank/Issuer |
+|	005 |	Referral: Call Acquirer	|	 
+|	006	| Declined |
+|	007	| Declined: Do Not Honor | 
+|	008	| Declined: Insufficient Funds |	 
+|	009	| Declined: Duplicate Transaction	|	 
+|	010	| Declined: Over Amount/Floor Limit |	 
+|	011	| Declined: Over Transaction Limit |	 
+|	012	| Declined: Security Code Failure	| 
+|	013	| Declined: Hard - Do Not Try Again	|	 
+|	014	| Declined: Violation of Law |
+|	015	| Declined: Negative Data	|
+|	016	| Declined: Per Cardholder Request |
+|	017 |	Lost or Stolen |
+|	018	| Suspected Fraud	| 
+|	019	| Suspected Chip Manipulation	|
+|	020	| Suspected Counterfeit Card |	 
+|	021	| PIN Required |
+|	022	| Excessive PIN Attempts |
+| 023	| Invalid PIN	|	 
+| 024	| PIN Not Active | 
+| 025	| Account Not On File |
+| 026	| Invalid Card or Account Number |	 
+| 027	| Invalid Account Type |
+| 028	| Account Blocked, Frozen or Restricted	|	 
+| 029	| Blocked Overseas |
+| 030	| Closed Account |
+| 031	| New Card/Account Issued	| 
+| 032	| Expired Card or Card Not Activated | 
+|	033	| Expiration Date Mismatch |
+|	034	| Bill Payment or Recurring Not Supported	|	 
+|	035	| One Time Stop Bill Payment Requested |
+|	036	| Stop Payment Requested for All Bill Payments |
+|	037	| ACH Non-Participant	| 
+| 038	| Outstanding Auth: Funds on Hold |	 
+|	039	| Retry: Try Again Later | 
+| 040	| Transaction Not Allowed	|	 
+| 041	| Service Not Allowed	| 
+| 042	| Invalid DETOK |	 
+| 043	| Approved Authorization, Honor with Identification |	 
+| 044 |	Approved Authorization, VIP Approval | 
+| 045	| Pickup Card	|
+| 046 |	Declined : Bad Authorization Number	| 	  	 
+| 048	| Cardholder Authentication Required | 	 
+| 050 |	Host Key Error  |
+
 The error code indicates the reason why a transaction is rejected. Commerce Hub includes the value in the `code` along with the corresponding text in the `message` fields of the [HTTP error response](?path=docs/Resources/Guides/Response-Codes/HTTP.md).
 
 <!--
