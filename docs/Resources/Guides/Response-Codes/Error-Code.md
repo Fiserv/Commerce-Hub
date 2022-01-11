@@ -24,10 +24,10 @@ Codes starting with 1xx identifies an error in the submission data. This include
 | 106 | Amount or currency missing |
 | 107 | Missing Required Field |
 | 108 | Missing Conditional Data |	 	 
-| 109	| Invalid or Incomplete Level 2 Data |	 	 
-|	110 |	Invalid or Incomplete Level 3 Data |	 	 
-|	111	| Blanks Not Passed in Reserved Field	| 	 
-|	112	| Approval Code Invalid |
+| 109 | Invalid or Incomplete Level 2 Data |	 	 
+| 110 |	Invalid or Incomplete Level 3 Data |	 	 
+| 111	| Blanks Not Passed in Reserved Field	| 	 
+| 112	| Approval Code Invalid |
 | 113 | Invalid Date or Time |
 | 114 | Invalid Time Zone |
 | 115 | Missing or Invalid Expiration Date |
@@ -385,10 +385,10 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 | ---- | ----- |
 | 600 | Fraud Error : General |
 | 602 | Security Code Not Verified |
-|	603 | Security Code Verification Failed |
+| 603 | Security Code Verification Failed |
 | 604 | Security Code is Mandatory |
 | 605 | Address Not Verified | 
-|	606 |	Address Verification Failed |
+| 606 |	Address Verification Failed |
 | 607 |	Address is Mandatory |
 | 609 | Blocked: BIN |
 | 610 | Blocked: Card Number |
@@ -488,7 +488,7 @@ Codes starting with 7xx identifies an error related to gateway communication. Ch
 | 702 | Communication Error |
 | 703 | Internal Error |
 | 704 | Transaction Timed Out |
-705	System Error or Problem	 	 
+| 705 |	System Error or Problem |	 	 
  	706	Function Performed Error Free	 	 
  	707	Unknown Processor Response Code	 	 
  	708	Invalid Action Attempted	 	 
