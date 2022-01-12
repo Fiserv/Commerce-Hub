@@ -401,6 +401,8 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 
 Codes starting with 6xx identifies an error related to terminal configuration or encryption. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
+| Code| Message |
+| ---- | ----- |
 | 650 | Terminal Error: General | 	 
 | 651 |	Invalid Initialization: Try Again | 	 
 | 652 | Initialization Not Permitted: Terminal Locked	| 	 
