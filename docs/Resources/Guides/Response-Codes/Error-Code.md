@@ -471,6 +471,14 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 | 631 | Velocity: Transaction Limit Exceeded |
 | 632 |	Velocity: Max Amount Per Merchant Per Time-Box Exceeded | 
 | 633 | Velocity: Max Amount Per Card Per Time-Box Exceeded |
+
+<!--
+type: tab
+title: 65x-699
+-->
+
+Codes starting with 6xx identifies an error related to terminal configuration or encryption. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
+
 | 650 | Terminal Error: General | 	 
 | 651 |	Invalid Initialization: Try Again | 	 
 | 652 | Initialization Not Permitted: Terminal Locked	| 	 
@@ -516,19 +524,6 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 |	692	| Batch Upload Error: Invalid Transaction |	 	 
 |693 | Decryption Processing Error 
 | 694	| Certificate not found |
-
-<!--
-type: tab
-title: 65x-699
--->
-
-Codes starting with 6xx identifies an error related to terminal configuration. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
-
-| Code| Message |
-| ---- | ----- |
-| 675 | No Terminal Setup or Found |
-| 676 | Terminal ID Not Unique |
-| 677 | Terminal Denied |
 
 <!--
 type: tab
