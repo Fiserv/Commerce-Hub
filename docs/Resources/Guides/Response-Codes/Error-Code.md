@@ -65,7 +65,7 @@ The below table identifies the valid values of `responseCode` along with `respon
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
-- [Host Response Code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
+- [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error-Code.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 
 ---
