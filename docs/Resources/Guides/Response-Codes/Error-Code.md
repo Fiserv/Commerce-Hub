@@ -684,7 +684,7 @@ Codes starting with 8xx identifies a general gateway error. Check the error mess
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
-- [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md)
+- [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
 - [Error Response](?path=docs/Resources/Guides/Response-Codes/Error-Response.md)
 
 ---
