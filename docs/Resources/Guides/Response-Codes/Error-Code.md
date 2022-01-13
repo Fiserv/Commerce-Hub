@@ -4,7 +4,7 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-codes, c
 
 # Error Response Codes
 
-The error code indicates the reason why a transaction is rejected. Commerce Hub includes the value in the `code` along with the corresponding text in the `message` fields of the [HTTP error response](?path=docs/Resources/Guides/Response-Codes/HTTP.md).
+The error code indicates the reason why a transaction is rejected and is returned in a HTTP 2xx, 4xx or 5xx response. Commerce Hub includes the code along with the corresponding message in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) or [HTTP error response](?path=docs/Resources/Guides/Response-Codes/HTTP.md). 
 
 <!--
 type: tab
