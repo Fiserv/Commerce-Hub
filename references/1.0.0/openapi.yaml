@@ -421,7 +421,7 @@ paths:
       tags:
         - Transaction Inquiry
       x-group-name: 'Payments'
-      x-proxy-name: 'Transaction Inquiry'
+      x-proxy-name: 'Inquiry'
       summary: Submit a transaction inquiry.
       description: 'Provides a Commerce Hub transaction and their attributes based on order identifier.' 
       requestBody:
