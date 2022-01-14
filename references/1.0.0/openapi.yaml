@@ -414,6 +414,70 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+      
+  /payments/v1/inquiry:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Transaction Inquiry
+      x-group-name: 'Payments'
+      x-proxy-name: 'Transaction Inquiry'
+      summary: Submit a transaction inquiry.
+      description: 'Provides a Commerce Hub transaction and their attributes based on order identifier.' 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionInquiryRequest'
+            examples:
+              transactionID:
+                summary: Transaction inquiry request using transactionID
+                $ref: '#/components/examples/TransactionInquiryRequest'
+              merchantOrderID:
+                summary: Transaction inquiry request using merchantOrderID
+                $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TransactionInquiryResponse'
+              examples:
+                transactionID:
+                    summary: Transaction inquiry response from transactionID
+                    $ref: '#/components/examples/TransactionInquiryResponse'
+                merchantOrderID:
+                    summary: Transaction inquiry response from merchantOrderID
+                    $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+x-depends-on:
+  - models/common-objects.yaml
+  - models/transaction-inquiry-request.yaml
+  - models/transaction-inquiry-response.yaml
+  - external-examples/external-examples-transaction-inquiry.yaml
 components:
   parameters:
     OrderIdParam:
@@ -689,6 +753,82 @@ components:
         transactionId: {type: string, maxLength: 40, description: Unique identifier
             for each transaction on the gateway. This value will be populated for
             the secondary transaction from the path., example: '838916029301'}
+    
+    TransactionInquiryRequest:
+      x-model-version: 1.0
+      properties:
+        transactionDetails:
+          $ref: '#/components/schemas/InquiryRequestDetails'
+
+    InquiryRequestDetails:   
+      x-model-version: 1.0
+      properties:      
+        clientRequestId:
+          maxLength: 64
+          type: string
+          description: A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format.
+          example: '2b52a1c95ca446f5abf0e51f37a1d7c5'
+        primaryTransactionId:
+          maxLength: 40
+          type: string
+          description: 'Unique identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
+          example: '838916029301'
+        primaryOrderId:
+          maxLength: 40
+          type: string
+          description: 'Unique order identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
+          example: '1343678765'
+        merchantTransactionId:
+          maxLength: 32
+          type: string
+          description: 'Merchant transaction ID (aka transaction reference ID).'
+          example: '1343678765'
+        merchantOrderId:
+          maxLength: 32
+          type: string
+          description: 'Merchant order ID (aka customer reference number or purchase order number).'
+          example: '845366457890'
+
+    TransactionInquiryResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        transactionBatch:
+          $ref: '#/components/schemas/TransactionBatch'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
+        paymentToken:
+          $ref: '#/components/schemas/ResponsePaymentToken'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        authOptimizationDetails:
+          $ref: '#/components/schemas/AuthOptimizationDetails'
+
     ChargesRequest:
       x-model-version: 1.0
       properties:
@@ -1140,6 +1280,16 @@ components:
         primaryTransactionId: {type: string, maxLength: 40, description: The unique
             identifier from the original transaction passed for a reauthorization
             and incremental authorization., example: '838916029301'}
+        primaryOrderId:
+          type: string
+          maxLength: 40
+          description: 'The unique order identifier from the original transaction passed for a reauthorization and incremental authorization.'
+          example: '838916029301'
+        clientRequestId:
+          type: string
+          maxLength: 64
+          description: 'Echoes back the value in the request header for tracking.'
+          example: '30dd879c-ee2f-11db-8314-0800200c9a66'
         captureFlag: {type: boolean, description: Designates if the transaction should
             be captured. Auth (False) or Sale (True)., example: true}
         transactionCaptureType: {type: string, description: Identifies if settlement
@@ -4537,3 +4687,133 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
+    TransactionInquiryRequest:
+      value:
+        transactionDetails:
+          primaryTransactionId: 'aa829dcb83cd49f485141168e051b8d1'
+
+    TransactionInquiryByMerchantOrderIdRequest:
+      value:
+        transactionDetails:
+          merchantOrderId: 'RKOrdID-822715036'
+
+    TransactionInquiryResponse:
+      value:
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - platform: 'IPG'
+                priority: 'FINAL'
+          gatewayResponse:
+            gatewayName: 'IPG'
+            gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
+            gatewayTransactionId: '84439763459'
+            transactionOrigin: 'ECOM'
+            transactionProcessingDetails:
+              apiTraceId: 'aa829dcb83cd49f485141168e051b8d1'
+              clientRequestId: '9806383'
+              orderId: 'CHG01586b6416dddd4425ae764daee6c3ac8a'
+              transactionId: 'aa829dcb83cd49f485141168e051b8d1'
+              transactionTimestamp: '2022-01-13T19:09:27.939151Z'
+            transactionState: 'CAPTURED'
+            transactionType: 'CHARGE'
+          merchantDetails:
+            merchantId: '100004000000233'
+            storeId: '66100004000000233'
+          paymentReceipt:
+            approvedAmount:
+              currency: 'USD'
+              total: '690'
+            processorResponseDetails:
+              approvalCode: 'OK6982'
+              approvalStatus: 'APPROVED'
+              hostResponseCode: '00'
+              hostResponseMessage: 'APPROVAL'
+              localTimestamp: '2022-01-13T19:09:29Z'
+              processor: fiserv
+              responseCode: '000000'
+              responseMessage: 'APPROVAL'
+              schemeTransactionId: '0113MCC815463'
+          source:
+            card:
+              bin: '542418'
+              expirationMonth: '12'
+              expirationYear: '2025'
+              last4: '1732'
+              scheme: 'MASTERCARD'
+            sourceType: 'PaymentCard'
+          transactionDetails:
+            captureFlag: 'true'
+            merchantInvoiceNumber: 'CHG01586b641'
+
+    TransactionInquiryByMerchantOrderIdResponse:
+      value:
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - platform: 'IPG'
+                priority: 'FINAL'
+          billingAddress:
+            address:
+              city: 'Atlanta'
+              country: 'USA'
+              houseNumberOrName: '4201'
+              postalCode: '30338'
+              stateOrProvince: 'Georgia'
+              street: '100 Ashford Gables Dr'
+            firstName: 'Raghavendiran'
+            lastName: 'Kannan'
+          gatewayResponse:
+            gatewayName: 'IPG'
+            gatewayOrderId: 'CH-130870e4-0adc-494a-b15a-265f1547af26'
+            gatewayTransactionId: '84438752938'
+            transactionOrigin: 'ECOM'
+            transactionProcessingDetails:
+              apiTraceId: 'c16a33b487af4eb9b6b6e97a912bda6f'
+              clientRequestId: '8893258'
+              orderId: 'CHG01c23b5480234e4a26b172e1f33296a51e'
+              transactionId: 'c16a33b487af4eb9b6b6e97a912bda6f'
+              transactionTimestamp: '2022-01-13T18:15:43.777576Z'
+            transactionState: 'CAPTURED'
+            transactionType: 'CHARGE'
+          merchantDetails:
+            merchantId: '100004000000233'
+            storeId: '66100004000000233'
+          paymentReceipt:
+            approvedAmount:
+              currency: 'USD'
+              total: '16.93'
+            processorResponseDetails:
+              approvalCode: 'OK7742'
+              approvalStatus: 'APPROVED'
+              bankAssociationDetails:
+                avsSecurityCodeResponse:
+                  association:
+                    avsCode: 'Y'
+                    securityCodeResponse: 'X'
+                  postalCodeMatch: 'NOT_MATCHED'
+                  securityCodeMatch: 'NOT_CHECKED'
+                  streetMatch: 'MATCHED'
+                transactionTimestamp: '2022-01-13T18:15:45.177Z'
+              hostResponseCode: '00'
+              hostResponseMessage: 'APPROVAL'
+              localTimestamp: '2022-01-13T18:15:45Z'
+              processor: 'fiserv'
+              responseCode: '000000'
+              responseMessage: 'APPROVAL'
+              schemeTransactionId: '164209774594909'
+          source:
+            card:
+              bin: '653949'
+              expirationMonth: '06'
+              expirationYear: '2026'
+              last4: '1727'
+              scheme: 'DINERSCLUB'
+            sourceType: 'DecryptedWallet'
+          transactionDetails:
+            captureFlag: 'true'
+            merchantInvoiceNumber: '520608612'
+            merchantOrderId: 'RKOrdID-822715036'
+            merchantTransactionId: 'RKTransID-834788206'
+          transactionInteraction:
+            eciIndicator: 'SECURE_ECOM'
