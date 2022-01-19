@@ -12,7 +12,6 @@ try {
   fs.readdir(folder, (err, files) => {
     files.forEach(async file => {
       const content = fs.readFileSync(`${folder}/${file}`, 'utf8');
-      console.log(`${folder}/${file}`);
       
       try {
         const apiJson = yaml.load(content);
