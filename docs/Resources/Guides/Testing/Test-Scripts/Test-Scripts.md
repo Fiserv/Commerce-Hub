@@ -9,7 +9,7 @@ Commerce Hub Simulator allows users to perform sand box testing using various te
 To receive a successful response, pass a specific `success` response value from the table below with an amount of $5000.01 or higher.
 
 | Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ---- | ---------- |
+| ----- | ---- | ------------| ---- | ------------ |
 |$XX- | *Visa* | Success | V1 | Purchase Successful |
 |$XX- | *MasterCard* | Success | V1 | Purchase Successful |
 |$XX- | *Discover* | Success | V1 | Purchase Successful |
@@ -24,7 +24,7 @@ To receive a successful response, pass a specific `success` response value from 
 To receive a decline response, pass a specific `decline` response value from the table below with an amount of $5001.01 or less.
 
 | Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ---- | ---------- |
+| ----- | ---- | ------------| ---- |---------- |
 | 5001  | *Visa* | Declines | V2 | Purchase Partical Approve |
 | 5044  | *Visa* | Declines | V2 | Purchase VIP Approval |
 | 50XX  |*Visa* | Declines | V2 | Any other purchase failure |
