@@ -7,6 +7,12 @@ const SwaggerParser = require('@apidevtools/swagger-parser');
 const args = process.argv.slice(2);
 const folder = '../' + (args?.[0] || 'references/1.0.0');
 
+const failValidation = (message) => {
+  console.log('------------------------- VALIDATOR FAILED --------------------------')
+  console.log(message)
+  process.exit(1);
+};
+
 try {
 
   fs.readdir(folder, (err, files) => {
@@ -15,18 +21,17 @@ try {
       
       try {
         const apiJson = yaml.load(content);
+        if (!apiJson.paths || !Object.keys(apiJson.paths).length) {
+          failValidation('No path provided!');
+        }
         const parsedData = await SwaggerParser.validate(apiJson, );
         console.log(`${file} - PASSED`);
       
       } catch (e) {
-        console.log('------------------------- VALIDATOR FAILED --------------------------')
-        console.log(e.message)
-        process.exit(1);
+        failValidation(e.message);
       }
     });
   });
 } catch (e) {
-  console.log('------------------------- VALIDATOR FAILED --------------------------')
-  console.log(e.message)
-  process.exit(1);
+  failValidation(e.message);
 }
