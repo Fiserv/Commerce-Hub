@@ -95,5 +95,6 @@ title: Response
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
