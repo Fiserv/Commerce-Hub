@@ -10,8 +10,10 @@ A approval response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 11111 | 00/00 | 111 |
-
+|*Visa* | 4111115602185807 | 12/2030 | 439 |
+|*MasterCard* | 5555553679073219 | 12/2030 | 602 |
+|*Amex* | 370914835193719 | 12/2030 | 7926 |
+|*Discover* | 6011118622185191 | 12/2030 | 552 |
 
 ---
 
@@ -24,7 +26,10 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 11111 | 00/00 | 111 |
+|*Visa* | 4111115990459889 | 12/2030 | 984 |
+|*Mastercard* | 5555558336352682 | 12/2030 | 955 |
+| *Amex* | 377949020721752 | 12/2030 | 8646 |
+| *Discover* | 6011114738850455 | 12/2030 | 123 |
 
 ---
 
@@ -37,7 +42,10 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 11111 | 00/00 | 111 |
+|*Visa* | 4111114749861560 | 12/2030 | 715 |
+|*Mastercard* | 5555553341608855 | 12/2030 | 679 |
+| *Amex* | 379743445089848 | 12/2030 | 4714 |
+| *Discover* | 6011117590247116 | 12/2030 | 550 |
 
 
 | Amount | Response | Description |
@@ -60,7 +68,11 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 11111 | 00/00 | 111 |
+|*Visa* | 4111111210491042 | 12/2030 | 728 |
+|*Mastercard* | 5555552765293848 | 12/2030 | 426 |
+| *Amex* | 342344233011237 | 12/2030 | 6377 |
+| *Discover* | 6011118480526619 | 12/2030 | 635 |
+
 
 ### Street
 
