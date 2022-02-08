@@ -1,159 +1,122 @@
 ---
-tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-errors]
+tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-errors] 
 ---
 
 Commerce Hub Simulator allows users to perform sand box testing using various test scripts for each of the card brands.
 
-### Successful
+## Approval Response
 
-To receive a successful response, pass a specific `success` response value from the table below with an amount of $5000.01 or higher.
+A approval response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering any `total` in the `amount` object under $5,000 using the test cards below.
 
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ------------ |
-|$XX- | *Visa* | Success | V1 | Purchase Successful |
-|$XX- | *MasterCard* | Success | V1 | Purchase Successful |
-|$XX- | *Discover* | Success | V1 | Purchase Successful |
-|$XX- | *Amex* | Success | V1 | Purchase Successful |
+| Card Type | Card Number | Expiration Date | Security Code |
+| ----- | ---- | ----------- | ------------ |
+|*Visa* | 11111 | 00/00 | 111 |
+
 
 ---
 
-### Declines
+## Specific Response
 
-## Visa
+A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5001.00 - 5999.00 can be used to trigger the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) or [error code](?path=docs/Resources/Guides/Response-Codes/Error.md).
 
-To receive a decline response, pass a specific `decline` response value from the table below with an amount of $5001.01 or less.
+<!-- theme: example -->
+>To receive a response of 006 Declined, submit 5006.00 as the total. 
 
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- |---------- |
-| 5001  | *Visa* | Declines | V2 | Purchase Partical Approve |
-| 5044  | *Visa* | Declines | V2 | Purchase VIP Approval |
-| 50XX  |*Visa* | Declines | V2 | Any other purchase failure |
-
----
-
-## MasterCard
-
-To receive a decline response, pass a specific `decline` response value from the table below with an amount of $5001.01 or less.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ------------- |
-| 5001  | *Visa* | Declines | V2 | Purchase Partical Approve |
-| 5044  | *Visa* | Declines | V2 | Purchase VIP Approval |
-| 50XX  |*Visa* | Declines | V2 | Any other purchase failure |
+| Card Type | Card Number | Expiration Date | Security Code |
+| ----- | ---- | ----------- | ------------ |
+|*Visa* | 11111 | 00/00 | 111 |
 
 ---
 
-## Discover
+## Security Code
 
-To receive a decline response, pass a specific `decline` response value from the table below with an amount of $5001.01 or less.
+A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5070.00 - 5079.00 can be used to trigger the desired response.
 
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ---------- |
-| 5001  | *Visa* | Declines | V2 | Purchase Partical Approve |
-| 5044  | *Visa* | Declines | V2 | Purchase VIP Approval |
-| 50XX  |*Visa* | Declines | V2 | Any other purchase failure |
+<!-- theme: example -->
+>Street, Postal Code and Cardholder verification cannot be tested at the same time. 
+
+| Card Type | Card Number | Expiration Date | Security Code |
+| ----- | ---- | ----------- | ------------ |
+|*Visa* | 11111 | 00/00 | 111 |
+
+
+| Amount | Response | Description |
+| ---- | ----------|-----|
+| $5070.00 | *MATCHED* | Data matches with issuer system | 
+| $5071.00 | *NOT_MATCHED* | Data does not match with issuer system |
+| $5072.00 | *NOT_PROCESSED* | Security code verification not done |
+| $5073.00 | *NOT_PRESENT* | Security code not present in the input |
+| $5074.00 | *NOT_CERTIFIED*| Issuer not certified to verify sercurity code |
+| $5075.00 | *NOT_CHECKED* | Security code not checked |
+| Any Amount | *NONE* | No security code provided |
+
+---
+## Address Verification
+
+A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5080.00 - 5099.00 can be used to trigger the desired response.
+
+<!-- theme: example -->
+>Street, Postal Code and Cardholder verification cannot be tested at the same time. 
+
+| Card Type | Card Number | Expiration Date | Security Code |
+| ----- | ---- | ----------- | ------------ |
+|*Visa* | 11111 | 00/00 | 111 |
+
+### Street
+
+To receive a specific `streetMatch` response, pass the specific amount from the table below.
+
+| Amount | Value | Descrption | 
+| ----- | ---- | ------------|
+| $5080.00 | *MATCHED* | Data matches with issuer system with some mismatch |
+| $5081.00 | *NOT_MATCHED* | Data does not match with issuer system |
+| $5082.00 |*NOT_CHECKED* | Street address verification not done |
+| $5083.00 | *NO_INPUT_DATA* | Street address not present in the input |
+| Any Amount | *NONE* | Street address not available (Default Response) |
 
 ---
 
-## Amex
+### Postal Code
 
-To receive a decline response, pass a specific `decline` response value from the table below with an amount of $5001.01 or less.
+To receive a specific `postalCodeMatch` response, pass the specific amount from the table below.
 
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ----------- |
-| 5001  | *Visa* | Declines | V2 | Purchase Partical Approve |
-| 5044  | *Visa* | Declines | V2 | Purchase VIP Approval |
-| 50XX  |*Visa* | Declines | V2 | Any other purchase failure |
-
----
-### AVS Approval/Decline
-
-## Visa
-
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | -------------- |
-| $XX  | *Visa* | Approval/Decline | V3 | AVS Approve |
-| $508X | *Visa* | Approval/Decline | V3 | AVS Failure |
+| Amount | Value | Descrption | 
+| ----- | ---- | ------------|
+| $5085.00 | *MATCHED* | Data matches with issuer system with some mismatch |
+| $5086.00 | *NOT_MATCHED* | Data does not match with issuer system |
+| $5087.00 | *NOT_CHECKED* | Postal code verification not done |
+| $5088.00 | *NO_INPUT_DATA* | Postal code not present in the input |
+| Any Amount | *NONE* | Postal code not available (Default Response) |
 
 ---
 
-## MasterCard
+### Cardholder Name
 
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
+To receive a specific `cardholderNameResponse` response, pass the specific amount from the table below.
 
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | -------------- |
-| $XX  | *MasterCard* | Approval/Decline| V3 | AVS Approve |
-| $508X | *MasterCard* | Approval/Decline| V3  AVS Failure |
+<!-- theme: info -->
+> Cardholder name response is only valid on American Express (AMEX) transactions.
 
----
-
-## Discover
-
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ------------- |
-| $XX  | *MasterCard* | Approval/Decline| V3 | AVS Approve |
-| $508X | *MasterCard* | Approval/Decline| V3  AVS Failure |
-
----
-## Amex
-
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ------------- |
-| $XX  | *MasterCard* | Approval/Decline| V3 | AVS Approve |
-| $508X | *MasterCard* | Approval/Decline| V3  AVS Failure |
+| Amount | Value | Description |
+| --- | ------- | ------- |
+| $5091.00 | *1* | Cardholder name matches |
+| $5092.00 | *2* | Cardholder name, billing address, and postal code match |
+| $5093.00 | *3* | Cardholder name and billing postal code match |
+| $5094.00 | *4* | Cardholder name and billing address match |
+| $5095.00 | *5* | Cardholder name incorrect, billing address and postal code match |
+| $5096.00 | *6* | Cardholder name incorrect, billing postal code matches |
+| $5097.00 | *7* | Cardholder name incorrect, billing address matches |
+| $5098.00 | *8* | Cardholder name, billing address, and postal code are all incorrect |
 
 ---
 
+## See Also
 
-### CVV Approve/Decline
-
-## Visa
-
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ----------- |
-| $XX  | *Visa* | Approval/Decline | V4 | CVV Approve |
-| $507x |*Visa* | Approval/Decline | V4 |  CVV Failure |
-
----
-
-## MasterCard
-
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ----------- |
-| $XX  | *MasterCard* | Approval/Decline | V4 | CVV Approve |
-| $507x |*MasterCard* | Approval/Decline | V4 |  CVV Failure |
-
----
-
-## Discover
-
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ---------- |
-| $XX  | *Discover* | Approval/Decline | V4 | CVV Approve |
-| $507x |*Discover* | Approval/Decline | V4 |  CVV Failure |
-
----
-
-## Amex
-
-To receive a approval/decline response, pass a specific `approval/decline` response value from the table below with an amount of $5080.01 or more.
-
-| Card Number | Card Type | Result | Code | Description |
-| ----- | ---- | ------------| ---- | ----------- |
-| $XX  | *Amex* | Approval/Decline | V4 | CVV Approve |
-| $507x |*Amex* | Approval/Decline | V4| CVV Failure |
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
+- [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md)
+- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 
 ---
