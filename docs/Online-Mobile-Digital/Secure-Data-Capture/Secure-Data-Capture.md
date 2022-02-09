@@ -29,7 +29,7 @@ Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and s
 
 **Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-URL/Payment-URL.md).**
 
-### Commerce Hub iFrame
+### iFrame
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
@@ -47,7 +47,7 @@ Allows the merchants to build their own form to collect all payment information 
 
 **Begin integration with Commerce Hub's [Direct Post].**
 
-### Commerce Hub JS
+### .JS
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
