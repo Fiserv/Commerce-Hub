@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-am
 
 # Transaction Amount
 
-Transaction amount information is contained into two objects, `amount`<!--- and `amountComponents`-->.
+Transaction amount information is contained in the `amount` and `amountComponents` object.
 
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
@@ -23,7 +23,7 @@ The below table identifies the parameters in the `amount` object.
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 | `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -93,9 +93,7 @@ JSON string format for `amountComponents`:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
 

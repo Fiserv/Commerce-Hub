@@ -120,7 +120,10 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 
 ## Step 3: Submit Request
 
-Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request. 
+Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request.
+
+<!-- theme: info -->
+> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 ### Endpoint
 <!-- theme: success -->

@@ -22,7 +22,7 @@ title: transactionDetails
 The below table identifies the required parameters in the `transactionDetails` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------------------ |---|
 | `authorizationTypeIndicator` | *string* | 11 | &#10004; | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
 
 <!--

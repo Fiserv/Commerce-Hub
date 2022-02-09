@@ -37,7 +37,7 @@ Card issuer may limit how many characters will show up in each field, it is reco
 - **MOTO:** utilize the `city` field for the phone number
 - **E-commerce:** utlize the `city` field for a URL, email address or phone number
 
-The below table identifies the required parameters in the `dynamicDescriptor` object.
+The below table identifies the parameters in the `dynamicDescriptor` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |

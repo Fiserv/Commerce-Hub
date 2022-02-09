@@ -31,7 +31,6 @@ The below table identifies the parameters in the `paymentReceipt` object.
 | `merchantURL` | *string* | 256 | Merchant URL returned from boarded account. |
 | `merchantPostalCode`| *string* | 10 | Postal code of the merchant returned from boarded account or dyanamic descriptor. |
 
-
 <!--
 type: tab
 title: JSON Example 
@@ -49,39 +48,39 @@ JSON string format for `paymentReceipt`:
       "processorResponseDetails":{
          "approvalStatus": "APPROVED",
          "approvalCode": "OK3483",
-         "authenticationResponseCode": "string",
+         "authenticationResponseCode": "string",  
          "referenceNumber": "845366457890-TODO",
          "schemeTransactionId": "019078743804756",
-         "feeProgramIndicator": "123",
+         "feeProgramIndicator": "123",  
          "processor": "fiserv",
-         "responseCode": "00000",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
          "localTimestamp": "2021.02.25 14:14:38 (EST)",
          "bankAssociationDetails":{
-            "associationResponseCode": "000",
+            "associationResponseCode": "000",  
             "transactionTimestamp": "2016-04-16T16:06:05Z",
-            "transactionReferenceInformation": "string",
+            "transactionReferenceInformation": "123456789",  
             "avsSecurityCodeResponse":{
                "streetMatch": "MATCH",
                "postalCodeMatch": "MATCH",
                "securityCodeMatch": "MATCH",
                "association":{
-                  "avsCode": "BOTH_MATCH",
+                  "avsCode": "A",
                   "securityCodeResponse": "MATCH",
-                  "cardholderNameResponse": "NAME_MATCH"
+                  "cardholderNameResponse": "5"
                }
             }
          }
       },
-      "merchantName": "Merchant Business",
-      "merchantAddress": "30 Memorial Drive",
-      "merchantCity": "Avon",
-      "merchantStateOrProvince": "MA",
-      "merchantCountry": "Albama",
-      "merchantURL": "www.business.com",
-      "merchantPostalCode": "2322"
+      "merchantName": "Merchant Business",  
+      "merchantAddress": "30 Memorial Drive",  
+      "merchantCity": "Avon",  
+      "merchantStateOrProvince": "MA",  
+      "merchantCountry": "Albama",  
+      "merchantURL": "www.business.com",  
+      "merchantPostalCode": "2322"  
    }
 }
   
@@ -98,10 +97,13 @@ JSON string format for `paymentReceipt`:
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
-- [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+
+<!---
+- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
+- [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
+-->
 
 ---

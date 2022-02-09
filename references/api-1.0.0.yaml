@@ -1799,7 +1799,7 @@ components:
             in an authorization response, and if returned must be provided in subsequent
             Capture transactions.'}
         applicationExpiryDate: {type: string, format: date, description: Captured
-            from the EMV chip data. YYYY-MM-DD format., example: ' 2021-09-03'}
+            from the EMV chip data. YYYY-MM-DD format., example: '2021-09-03'}
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
         network: {$ref: '#/components/schemas/Network'}
         authorizationCharacteristicsIndicator: {type: string, maxLength: 23, description: Response

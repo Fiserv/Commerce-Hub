@@ -15,12 +15,37 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
+| `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
+
+The below table contains the valid values for `dataEntrySource` parameter.
+
+| Valid Value | Description |
+|--------|--------|
+| MOBILE_APP | |
+| MOBILE_WEB | |
+| BROWSER_PC | |
+| KIOSK | |
+| CONSOLE | |
+| 3DS_REQUESTOR_INITIATED | |
+| UNSPECIFIED | |
+| ELECTRONIC_PAYMENT_TERMINAL | |
+| AUTOMATED_FUEL_DISPENSING_MACHINE | |
+| UNATTENDED_CUSTOMER_TERMINAL | |
+| ECOMMERCE_CUSTOMER_PRESENT | |
+| MOBILE_TERMINAL | |
+| MOBILE_POS | |
+| ELECTRONIC_CASH_REGISTER | |
+| IVR_VRU | |
+| TICKET_MACHINE | |
+| CALL_CENTER_OPERATOR |  | 
+
+
+<!---
 | `posId` | *string* | | Identifies the specific device or point of entry where the transaction originated. For example, pump number, lane number, terminal number, etc. |
 | `cashierId` | *string* | | Used to uniquely identify the merchant’s store cashier or employee accepting the transaction. |
 | `stan` | *string* | | Contains the System Trace Audit Numbers (STAN) returned for a Discover incremental transaction. Note: This field has limited platform availability. For more information, please contact your account representative. |
 | `posFormFactorIndicator` | *string* | | This field is used to identify the form factor used at the POS for MasterCard PayPass transactions. Note: Some values from 00–19 may indicate not only the physical form factor but also other attributes such as device technology and payment app specifications. Values from 20–99 exclusively indicate the form factor only without also indicating the storage technology.|
 | `enhancedAuthorizationRequestIndicator` | *string* | 32 | Used to indicate that the terminal or software is capable of supporting partial authorizations, [prepaid identification and request balances](#enhanced-authorization-request-indicator). Partial Authorization support is dependent on card type and region please contact your account representative.|
-| `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
 | `transactionQualifier` | *string* | | Used for Discover - Discover TransactionQualifier. |
 | `enhancedAuthorizationResponseIndicator` | *string* |  | Returns the approval type for Enhanced Authorization. **Valid Values:** *FULL*, *PARTIAL*, *DEPLETED*, *DECLINE*, *ERROR* |
 | `attendedTerminalData` | *string* | 16 | [Attended terminal data](#attended-terminal-data) indicates if the card acceptor was at the point of sale. |
@@ -31,7 +56,7 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 | `posHardwareAndSoftware` | *object* | N/A | [Terminal hardware and software](#hardware-and-software-information) information. |
 | `posFeatures` | *object* | N/A | Terminal or [software feature](#pos-features) information. |
 | `supervisorId` | *string* |  | Used to uniquely identify the merchant’s store supervisor transactions. |
-
+-->
 
 
 <!--
@@ -75,6 +100,7 @@ JSON string format for `additionalPosInformation`:
          "communicationInformation2": "string",
          "industryInformation1": "string",
          "industryInformation2": "string",
+         "terminalEntryCapability": "ECOMMERCE",
          "classAndComplianceCertification": "A",
          "otherCapabilities": "string"
       },
@@ -149,6 +175,7 @@ The below table identifies the parameters in the `posFeatures` object.
 | `communicationInformation2` | *string* |  | Reserved for future use |
 | `industryInformation1` | *string* |  | Indicates the industries supported by the payment application. More than one industry can be indicated. |
 | `industryInformation2` | *string* |  | Reserved for future use |
+| `terminalEntryCapability` | *string* | 28 | Identifies how data can be entered in the terminal or software. |
 | `classAndComplianceCertification` | *string* |  | Indicates the type of application or device sending the transaction, Class A or Class B. |
 | `otherCapabilities` | *string* |  | Indicates whether the transaction originated from a mobile device that uses Chase merchant services’ mobile payment gateway or originated from a device that does not use Chase merchant services’ Mobile Payment Gateway. Note: It is required for merchants to send the appropriate information in this element in the case where a mobile terminal is supported. |
 
@@ -169,6 +196,7 @@ title: JSON Example
       "communicationInformation2": "string",
       "industryInformation1": "string",
       "industryInformation2": "string",
+      "terminalEntryCapability": "ECOMMERCE",
       "classAndComplianceCertification": "A",
       "otherCapabilities": "string"
    }
@@ -234,7 +262,7 @@ The below table identifies the valid values of `cardholderActivatedTerminalInfor
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---

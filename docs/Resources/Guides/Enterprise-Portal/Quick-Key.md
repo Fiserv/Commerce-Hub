@@ -4,9 +4,6 @@ tags: [carat, commerce-hub, enterprise, batch-upload card-not-present,  csv-form
 
 # Quick Key
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Quick Key support and the documents related to the features will be released soon.
-
 Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upload of transactions using a Comma Seperated Value (CSV) file.
 
 - The Quick Key UI shall capable to upload a transaction file with the predefined format.
@@ -56,6 +53,7 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 
 ## See Also
 
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
 - [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)
+
+---

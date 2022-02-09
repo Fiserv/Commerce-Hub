@@ -16,7 +16,10 @@ The `currency` variable in the `amount` array determines what currency the trans
 
 The table below contains all valid values of currency name, code, number and decimal values. 
 
-| Currency Name | Currency Code | Currency Number | Decimal |
+<!-- theme: warning -->
+> When submitting the `currency` ensure the correct 3 character alpha code is used from the below table.
+
+| Currency Name | Alpha Code | ISO Number | Decimal |
 | ------- | ------- | -------| -------- |
 | Afghan Afghani | AFN | 971 | 2 |
 | Algerian Dinar | DZD | 012 | 2 |
@@ -162,7 +165,7 @@ The table below contains all valid values of currency name, code, number and dec
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Amount Object](?path=docs/Resources/Master-Data/Amount-Components.md)
+- [Amount](?path=docs/Resources/Master-Data/Amount-Components.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---

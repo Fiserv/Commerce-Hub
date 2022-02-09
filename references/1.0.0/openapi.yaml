@@ -1,11 +1,10 @@
-openapi: 3.0.3
-info: {title: API Explorer, description: This API Specification is designed to provide
+openapi: 3.0.2
+info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
-    processing in Card Not Present environments., version: 1.0.0}
+    processing., version: v1-1.0.2}
 servers:
-- {url: 'https://api.fiservapps.com/ch/{resource}', description: Production}
-- {url: 'https:// cert.api.fiservapps.com/ch/{resource}', description: Cert Sandbox}
-- {url: 'https:// qa.api.fiservapps.com/ch/{resource}', description: QA Sandbox}
+- {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
+- {url: 'https://test.api.fiservapps.com/ch/', description: Sandbox}
 paths:
   /payments/v1/charges:
     x-model-version: 1.0
@@ -27,7 +26,9 @@ paths:
             examples:
               PaymentCard: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
               PaymentEMV: {summary: ChargesRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
+              PaymentEMV-HD: {summary: ChargesRequest with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDRequest'}
               PaymentTrack: {summary: ChargesRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
+              PaymentTrack-HD: {summary: ChargesRequest with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDRequest'}
               ManualEntry: {summary: ChargesRequest with manual entry PaymentCard,
                 $ref: '#/components/examples/ManualEntryRequest'}
               ApplePay: {summary: ChargesRequest with ApplePay, $ref: '#/components/examples/ApplePayRequest'}
@@ -43,67 +44,15 @@ paths:
               examples:
                 PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
                 PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
+                PaymentEMV-HD: {summary: ChargesResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVChargesHDResponse'}
                 PaymentTrack: {summary: ChargesResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
+                PaymentTrack-HD: {summary: ChargesResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackChargesHDResponse'}
                 ManualEntry: {summary: ChargesResponse with manual entry PaymentCard,
                   $ref: '#/components/examples/ManualEntryChargesResponse'}
                 ApplePay: {summary: ChargesResponse with ApplePay, $ref: '#/components/examples/ApplePayChargesResponse'}
                 GooglePay: {summary: ChargesResponse with GooglePay, $ref: '#/components/examples/GooglePayChargesResponse'}
                 Payment3DS: {summary: ChargesResponse with Payment3DS, $ref: '#/components/examples/Payment3DSChargesResponse'}
                 PaymentToken: {summary: ChargesResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments/v1/forcedpost:
-    x-model-version: 1.0
-    post:
-      tags: [Payment Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Forced
-      summary: Submit a forced post transaction.
-      description: Use this payload to originate a financial transaction after receiving
-        an <code>approvalCode</code> from the voice authorization center due to an
-        off-line or referral (call) decline response.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/ForcedPostRequest'}
-            examples:
-              PaymentCard: {summary: ForcedPostRequest with PaymentCard, $ref: '#/components/examples/PaymentCardForcedRequest'}
-              PaymentEMV: {summary: ForcedPostRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVForcedRequest'}
-              PaymentTrack: {summary: ForcedPostRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackForcedRequest'}
-              ManualEntry: {summary: ForcedPostRequest with maunal entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryForcedRequest'}
-              PaymentToken: {summary: ForcedPostRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenForcedRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/ForcedPostResponse'}
-              examples:
-                PaymentCard: {summary: ForcedPostResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
-                PaymentEMV: {summary: ForcedPostResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
-                PaymentTrack: {summary: ForcedPostResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                ManualEntry: {summary: ForcedPostResponse with manual entry PaymentCard,
-                  $ref: '#/components/examples/ManualEntryChargesResponse'}
-                PaymentToken: {summary: ForcedPostResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -254,96 +203,6 @@ paths:
         500: {$ref: '#/components/responses/ServerError'}
         503: {$ref: '#/components/responses/ServiceUnavailable'}
         504: {$ref: '#/components/responses/GatewayTimeout'}
-  /payments/v1/credits:
-    x-model-version: 1.0
-    post:
-      tags: [Credit Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Credits
-      summary: Submit a refund transaction without a prior transaction.
-      description: 'Use this payload to perform a partial or full credit without a
-        <code>transactionID</code> or <code>orderID</code>. Note: This should only
-        be performed if a prior authorization was performed on a different API, merchant
-        account, or device; otherwise utilize <code>{transactionId}/refund</code>
-        or <code>orders/{orderId}/refund</code>.'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/CreditRequest'}
-            examples:
-              PaymentCard: {summary: CreditRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
-              PaymentEMV: {summary: CreditRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
-              PaymentTrack: {summary: CreditRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
-              ManualEntry: {summary: CreditRequest with manual entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryRequest'}
-              PaymentToken: {summary: CreditRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/CreditResponse'}
-              examples:
-                PaymentCard: {summary: CreditResponse with PaymentCard, $ref: '#/components/examples/PaymentCardCreditResponse'}
-                PaymentEMV: {summary: CreditResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVCreditResponse'}
-                PaymentTrack: {summary: CreditResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                ManualEntry: {summary: CreditResponse with manual entry PaymentCard,
-                  $ref: '#/components/examples/ManualEntryCreditResponse'}
-                PaymentToken: {summary: CreditResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenCreditResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/charges/{transactionId}/inquiry:
-    x-model-version: 1.0
-    get:
-      tags: [Transaction Inquiry based on transactionId]
-      x-group-name: Payments VAS
-      x-proxy-name: Transaction Inquiry
-      summary: Submit a transaction inquiry.
-      description: Use this payload to retrieve information from a previous transaction.
-      parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/TransactionInquiryResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
   /payments-vas/v1/accounts/verification:
     x-model-version: 1.0
     post:
@@ -405,46 +264,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/security/credentials:
-    x-model-version: 1.0
-    post:
-      tags: [Payment Security Endpoint]
-      x-group-name: Payments VAS
-      x-proxy-name: Authentication
-      summary: Request security credentials (access token).
-      description: This is the credential generation call for authorizing subsequent
-        financial transactions. A valid <code>accessToken</code> is required for web
-        client requests.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/SecurityCredentialsRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/SecurityCredentialsResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
   /payments-vas/v1/tokens:
     x-model-version: 1.0
     post:
@@ -460,7 +279,9 @@ paths:
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
+              PaymentEMV-HD: {summary: TokenizationRequest with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
+              PaymentTrack-HD: {summary: TokenizationRequest with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
                 $ref: '#/components/examples/ManualEntryTokenRequest'}
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
@@ -475,7 +296,9 @@ paths:
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
+                PaymentEMV-HD: {summary: TokenizationResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
+                PaymentTrack-HD: {summary: TokenizationResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDTokenResponse'}
                 ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
                   $ref: '#/components/examples/ManualEntryTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
@@ -500,70 +323,11 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/accounts/information:
-    x-model-version: 1.0
-    post:
-      tags: [Account lookup information Endpoint Definition]
-      x-group-name: Payments VAS
-      x-proxy-name: Information Lookup
-      summary: Lookup a payment card or payment token.
-      description: Use this to look up card related information such as issuer country,
-        card function and card brand associated with a card or token.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/AccountInformationRequest'}
-            examples:
-              PaymentCard: {summary: AccountInformationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardInfoRequest'}
-              PaymentEMV: {summary: AccountInformationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVInfoRequest'}
-              PaymentTrack: {summary: AccountInformationRequest with PaymentTrack,
-                $ref: '#/components/examples/PaymentTrackInfoRequest'}
-              ManualEntry: {summary: AccountInformationRequest with manual entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryInfoRequest'}
-              PaymentToken: {summary: AccountInformationRequest with PaymentToken,
-                $ref: '#/components/examples/PaymentTokenInfoRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/AccountInformationResponse'}
-              examples:
-                PaymentCard: {summary: AccountInformationResponse with PaymentCard,
-                  $ref: '#/components/examples/PaymentCardInfoResponse'}
-                PaymentEMV: {summary: AccountInformationResponse with PaymentEMV,
-                  $ref: '#/components/examples/PaymentEMVInfoResponse'}
-                PaymentTrack: {summary: AccountInformationResponse with PaymentTrack,
-                  $ref: '#/components/examples/PaymentTrackInfoResponse'}
-                ManualEntry: {summary: AccountInformationResponse with maunal entry
-                    PaymentCard, $ref: '#/components/examples/ManualEntryInfoResponse'}
-                PaymentToken: {summary: AccountInformationResponse with PaymentToken,
-                  $ref: '#/components/examples/PaymentTokenInfoResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/enhanceddata:
+  /daas/v1/enhanceddata:
     x-model-version: 1.0
     post:
       tags: [Enhanced Data Definition]
-      x-group-name: Payments VAS
+      x-group-name: Data Solutions
       x-proxy-name: Enhanced Data Service
       summary: Submit a EDS Request.
       description: Use this payload prior to a transaction to perform an Enhanced
@@ -605,6 +369,115 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+  /daas/v1/returnoptimizer:
+    x-model-version: 1.0
+    post:
+      tags: [Return Optimizer Definition]
+      x-group-name: Data Solutions
+      x-proxy-name: Return Optimization Service
+      summary: Submit a ROS request.
+      description: Use this payload prior to a transaction to perform an Return Optimizer
+        request for a PaymentToken. This will be used by the merchant
+        to make a more informed authorization decision.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ReturnOptimizerRequest'}
+            examples:
+              PaymentToken: {summary: ReturnOptimizerRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenROSRequest'}
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/ReturnOptimizerResponse'}
+              examples:
+                PaymentToken: {summary: ReturnOptimizerResponse with PaymentToken,
+                  $ref: '#/components/examples/PaymentTokenROSResponse'}
+        400: {$ref: '#/components/responses/BadRequest'}
+        401: {$ref: '#/components/responses/Unauthorized'}
+        404: {$ref: '#/components/responses/NotFound'}
+        408: {$ref: '#/components/responses/RequestTimeout'}
+        415: {$ref: '#/components/responses/UnsupportedMediaType'}
+        425: {$ref: '#/components/responses/TooEarly'}
+        429: {$ref: '#/components/responses/TooManyRequest'}
+        500: {$ref: '#/components/responses/ServerError'}
+        503: {$ref: '#/components/responses/ServiceUnavailable'}
+        504: {$ref: '#/components/responses/GatewayTimeout'}
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      
+  /payments/v1/inquiry:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Transaction Inquiry
+      x-group-name: 'Payments'
+      x-proxy-name: 'Inquiry'
+      summary: Submit a transaction inquiry.
+      description: 'Provides a Commerce Hub transaction and their attributes based on order identifier.' 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionInquiryRequest'
+            examples:
+              transactionID:
+                summary: Transaction inquiry request using transactionID
+                $ref: '#/components/examples/TransactionInquiryRequest'
+              merchantOrderID:
+                summary: Transaction inquiry request using merchantOrderID
+                $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TransactionInquiryResponse'
+              examples:
+                transactionID:
+                    summary: Transaction inquiry response from transactionID
+                    $ref: '#/components/examples/TransactionInquiryResponse'
+                merchantOrderID:
+                    summary: Transaction inquiry response from merchantOrderID
+                    $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+x-depends-on:
+  - models/common-objects.yaml
+  - models/transaction-inquiry-request.yaml
+  - models/transaction-inquiry-response.yaml
+  - external-examples/external-examples-transaction-inquiry.yaml
 components:
   parameters:
     OrderIdParam:
@@ -847,6 +720,10 @@ components:
           type: string, example: source.sourceType}
         message: {description: Information specific to a property or attribute., type: string,
           example: Missing type ID property.}
+        additionalInfo: {description: Additional info added by commerce hub in addition
+            to error message returned by GATEWAY, type: string, example: 'The Reauthorization
+            request was not successful and the Cancel of referenced authorization
+            transaction was not processed, per Auth_before_Cancel configuration'}
     GatewayResponse:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Gateway-Response.md">gateway
@@ -868,13 +745,90 @@ components:
             in the parameter orderId from a Charge transaction., example: R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16}
         transactionTimestamp: {type: string, format: date-time, description: 'Date
             and time the transaction occurred in YYYY-MM-DDThh:mm:ssZ format.', example: '2016-04-16T16:06:05Z'}
-        apiTraceId: {type: string, maxLength: 32, description: Request identifier
-            in API that can be used to request logs from the support team., example: rrt-0bd552c12342d3448-b-ea-1142-12938318-7}
+        apiTraceId: {pattern: '^[a-f0-9]{32}$', type: string, maxLength: 32, description: Request
+            identifier in API that can be used to request logs from the support team.,
+          example: 1234567a1234567b1234567c1234567d}
         clientRequestId: {type: string, maxLength: 64, description: Echoes back the
             value in the request header for tracking., example: 30dd879c-ee2f-11db-8314-0800200c9a66}
         transactionId: {type: string, maxLength: 40, description: Unique identifier
             for each transaction on the gateway. This value will be populated for
             the secondary transaction from the path., example: '838916029301'}
+    
+    TransactionInquiryRequest:
+      x-model-version: 1.0
+      properties:
+        transactionDetails:
+          $ref: '#/components/schemas/InquiryRequestDetails'
+
+    InquiryRequestDetails:   
+      x-model-version: 1.0
+      properties:      
+        clientRequestId:
+          maxLength: 64
+          type: string
+          description: A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format.
+          example: '2b52a1c95ca446f5abf0e51f37a1d7c5'
+        primaryTransactionId:
+          maxLength: 40
+          type: string
+          description: 'Unique identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
+          example: '838916029301'
+        primaryOrderId:
+          maxLength: 40
+          type: string
+          description: 'Unique order identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
+          example: '1343678765'
+        merchantTransactionId:
+          maxLength: 32
+          type: string
+          description: 'Merchant transaction ID (aka transaction reference ID).'
+          example: '1343678765'
+        merchantOrderId:
+          maxLength: 32
+          type: string
+          description: 'Merchant order ID (aka customer reference number or purchase order number).'
+          example: '845366457890'
+
+    TransactionInquiryResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        transactionBatch:
+          $ref: '#/components/schemas/TransactionBatch'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
+        paymentToken:
+          $ref: '#/components/schemas/ResponsePaymentToken'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        authOptimizationDetails:
+          $ref: '#/components/schemas/AuthOptimizationDetails'
+
     ChargesRequest:
       x-model-version: 1.0
       properties:
@@ -890,6 +844,64 @@ components:
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+        level23Data: {$ref: '#/components/schemas/Level23Data'}
+    Level23Data:
+      x-model-version: 1.0
+      properties:
+        customerReference: {type: string, maxLength: 128, description: 'Purchase order
+            number (PO Number), mapped from <code>merchantOrderId</code> in transactionDetails.'}
+        totalTaxAmount: {type: number, maximum: 1.0E18, example: '3.00'}
+        freightAmount: {type: number, maximum: 1.0E18, example: '9.00'}
+        totalDiscountAmount: {type: number, maximum: 1.0E18, example: '1.00'}
+        dutyAmount: {type: number, maximum: 1.0E18, example: '5.00'}
+        destinationPostalCode: {type: string, description: Postal code where goods
+            will be delivered.}
+        destinationCountryCode: {type: string, description: Country code where goods
+            will be delivered.}
+        orderDate: {type: string, format: date, description: Date of order in YYYY-MM-DD
+            format., example: '2022-05-21'}
+        shipFromPostalCode: {type: string, description: Postal code where goods are
+            being shipped from.}
+        merchantTaxId: {type: string, description: Merchant tax ID.}
+        merchantInvoiceNumber: {type: string, maxLength: 1024, description: Mapped
+            from <code>merchantInvoiceNumber</code> in transactionDetails.}
+        itemDetails:
+          type: array
+          items: {$ref: '#/components/schemas/Level23DataItems'}
+        taxRate: {type: number, maximum: 100, description: '', example: '1'}
+        supplierVatRegistrationNumber: {type: string, maxLength: 15, description: Supplier
+            VAT registration number., example: U12345678}
+        freightRate: {type: number, maximum: 100, description: Freight rate percent.,
+          example: '1'}
+        totalDiscountRate: {type: number, maximum: 100, description: Discount rate
+            percent., example: '1'}
+        totalLineItemTax: {type: number, maximum: 1.0E18, description: Line item tax.,
+          example: '18.00'}
+    Level23DataItems:
+      x-model-version: 1.0
+      properties:
+        commodityCode: {type: string, description: ''}
+        itemDescription: {type: string, description: ''}
+        productCode: {type: string, description: ''}
+        unitPrice: {type: number, maximum: 1.0E18, example: '10.00'}
+        quantity: {type: number, example: '2'}
+        unitOfMeasurement: {type: string, description: '', example: EACH}
+        totalAmount: {type: number, maximum: 1.0E18, description: Total before tax
+            and discounts., example: '20.00'}
+        discountIndicator: {type: boolean, example: 'true'}
+        discountRate: {type: number, maximum: 100, description: Discount rate percent.,
+          example: '1'}
+        discountAmount: {type: number, maximum: 1.0E18, example: '2.00'}
+        taxIndicator: {type: boolean, example: 'true'}
+        lineItemTaxRate: {type: number, maximum: 100, description: Line item tax rate
+            percent., example: '1'}
+        taxType: {type: string, example: SALES}
+        lineItemTax: {type: number, maximum: 1.0E18, example: '2.00'}
+        vatRate: {type: number, maximum: 100, description: Value added tax (VAT) rate
+            percent., example: '2'}
+        vatAmount: {type: number, maximum: 1.0E18, example: '4.00'}
+        lineItemTotal: {type: number, maximum: 1.0E18, description: Line item total
+            after tax and discounts., example: '18.00'}
     Phone:
       x-model-version: 1.0
       description: Customer <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">phone</a>
@@ -994,10 +1006,10 @@ components:
             data., example: '4005550000000019'}
         nameOnCard: {type: string, maxLength: 256, description: Cardholder name.,
           example: Jane Smith}
-        expirationMonth: {type: string, maxLength: 2, description: 2-digit expiration
-            month., example: '05'}
-        expirationYear: {type: string, maxLength: 4, description: 4-digit expiration
-            year., example: '2035'}
+        expirationMonth: {pattern: '^(0[1-9]|1[012])$', type: string, description: 2-digit
+            expiration month., example: '05'}
+        expirationYear: {pattern: '^[0-9]{4}$', type: string, maxLength: 4, description: 4-digit
+            expiration year., example: '2035'}
         securityCode: {type: string, maxLength: 4, description: 'Card Security Code
             (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card
             Verification Value (CVV), Card Verification Code (CVC), Verification Code
@@ -1185,7 +1197,7 @@ components:
         properties:
           data: {type: string, maxLength: 4000, description: 'Encrypted data. Payment
               data dictionary, base64 encoded as a string.', example: '{"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"}'}
-          signature: {type: string, maxLength: 2000, description: 'Verifies that the
+          signature: {type: string, maxLength: 1500, description: 'Verifies that the
               message came from Google, base64 encoded, and created with ECDSA by
               the intermediate signing key.', example: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=}
           version: {type: string, maxLength: 32, description: 'Specific protocol version
@@ -1212,6 +1224,10 @@ components:
         properties:
           data: {type: string, description: ''}
           version: {type: string, description: '100'}
+          samsungPayMerchantId: {type: string, maxLength: 256, description: Unique
+              AppID registered in the Samsung portal., example: merchant.com.futurex}
+          merchantPrivateKey: {type: string, maxLength: 256, description: Merchant
+              private key in hex encoded format., example: 2B939D88050A48885DC2FDD8BC1780CC0AF4DA741424A82A60579DB3F08C7DCF81B03E7A0EC28D6705705488FDEFF6DEC8E37D3C20E9C11B36C9D710C42D029831}
     Payment3DS:
       x-model-version: 1.0
       allOf:
@@ -1248,7 +1264,8 @@ components:
       - type: object
         properties:
           card: {$ref: '#/components/schemas/Card'}
-          cavv: {type: string, maxLength: 256, description: Cryptogram., example: 01ade6ae340005c681c3a1890418b53000020000}
+          cavv: {type: string, maxLength: 40, description: Cryptogram., example: 01ade6ae340005c681c3a1890418b53000020000}
+          xid: {type: string, maxLength: 40, description: Cryptogram.}
           walletType: {type: string, maxLength: 256, description: 'Identifies the
               wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY.', example: APPLE_PAY}
     TransactionDetails:
@@ -1263,6 +1280,16 @@ components:
         primaryTransactionId: {type: string, maxLength: 40, description: The unique
             identifier from the original transaction passed for a reauthorization
             and incremental authorization., example: '838916029301'}
+        primaryOrderId:
+          type: string
+          maxLength: 40
+          description: 'The unique order identifier from the original transaction passed for a reauthorization and incremental authorization.'
+          example: '838916029301'
+        clientRequestId:
+          type: string
+          maxLength: 64
+          description: 'Echoes back the value in the request header for tracking.'
+          example: '30dd879c-ee2f-11db-8314-0800200c9a66'
         captureFlag: {type: boolean, description: Designates if the transaction should
             be captured. Auth (False) or Sale (True)., example: true}
         transactionCaptureType: {type: string, description: Identifies if settlement
@@ -1543,14 +1570,6 @@ components:
         merchantId: {type: string, maxLength: 1024, description: A unique ID used
             to identify the Merchant. The merchant must use the value assigned by
             the acquirer or the gateway when submitting a transaction., example: '123456789012345'}
-        alternateMerchantId: {type: string, maxLength: 1024, description: 'Alternate
-            ID assigned to a merchant based on a value added service (Prepaid Cards,
-            TeleCheck, etc.). For additional information regarding the Alternate Merchant
-            ID, please contact your account representative.', example: '12345678'}
-        promotionCode: {type: string, maxLength: 1024, description: Promotion code.,
-          example: ABCD1234}
-        terminalLaneNumber: {type: string, maxLength: 16, description: 'Terminal lane
-            number, register number, or pump number.', example: '001'}
     Customer:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a>
@@ -1799,7 +1818,7 @@ components:
             in an authorization response, and if returned must be provided in subsequent
             Capture transactions.'}
         applicationExpiryDate: {type: string, format: date, description: Captured
-            from the EMV chip data. YYYY-MM-DD format., example: ' 2021-09-03'}
+            from the EMV chip data. YYYY-MM-DD format., example: '2021-09-03'}
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
         network: {$ref: '#/components/schemas/Network'}
         authorizationCharacteristicsIndicator: {type: string, maxLength: 23, description: Response
@@ -1891,8 +1910,16 @@ components:
             * NONE – No terminal or software used (VRU, etc.)
           example: ATTENDED
         cardPresentIndicator: {type: string, description: ''}
-        cardPresentAtPosIndicator: {type: string, description: Indicates if the actual
-            card was present at the point of sale., example: false}
+        cardPresentAtPosIndicator:
+          type: string
+          description: |
+            Indicates if the actual card was present at the point of sale.
+
+            Valid Values:
+            * CARD_NOT_PRESENT
+            * CARD_PRESENT
+            * UNSPECIFIED
+          example: CARD_PRESENT
         terminalLocation:
           type: string
           maxLength: 16
@@ -2306,8 +2333,10 @@ components:
           example: VISA
         cardFunction: {type: string, maxLength: 6, description: Identifies if the
             processing method is CREDIT or DEBIT., example: CREDIT}
-        processor: {type: string, maxLength: 256, description: Identifies the card
-            processor., example: fiserv}
+        processors:
+          type: array
+          items: {$ref: '#/components/schemas/Processor'}
+          description: Identifies the card processor.
     SubMerchant:
       x-model-version: 1.0
       description: Sub-merchant information applicable to <a ="../docs?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md">Payment
@@ -2420,6 +2449,37 @@ components:
           example: NOT_PROVIDED
         expiry: {type: string, format: date, maxLength: 10, description: When does
             the recurring transaction expire in YYYY-MM-DD format., example: '2030-11-20'}
+    Processor:
+      x-model-version: 1.0
+      description: Identifies the card processor.
+      properties:
+        code:
+          type: string
+          maxLength: 256
+          description: |
+            Identifies the payment processor.
+
+            Valid Values:
+            * FISERV
+            * CHASE
+        platform: 
+          type: string
+          maxLength: 256
+          description:  |
+            Identifies the payment platform of the processor.
+
+            Valid Values:
+            * NORTH
+            * TAMPA
+        priority:
+          type: string
+          maxLength: 256
+          description:  |
+            Identifies the priority to use each processor.
+
+            Valid Values:
+            * PRIMARY
+            * SECONDARY
     AmountComponents:
       x-model-version: 1.0
       description: Used in transactions where additional <a href="../docs?path=docs/Resources/Master-Data/Amount-Components.md">amount</a>
@@ -2492,6 +2552,11 @@ components:
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
         cardDetails: {$ref: '#/components/schemas/CardDetails'}
         paymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        paymentTokens:
+          type: array
+          items: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
     PaymentReceipt:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Payment-Receipt.md">Payment
@@ -2565,16 +2630,18 @@ components:
             in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         debitReceiptNumber: {type: string, maxLength: 6, description: Debit Receipt
             Number generated by switch.}
-        responseIndicators:
-          type: object
-          properties:
-            alternateRouteDebitIndicator: {type: boolean, example: false}
-            signatureLineIndicator: {type: boolean, example: false}
-            signatureDebitRouteIndicator: {type: boolean, example: false}
+        responseIndicators: {$ref: '#/components/schemas/ResponseIndicator'}
         bankAssociationDetails: {$ref: '#/components/schemas/BankAssociationDetails'}
         additionalInfo:
           type: array
           items: {$ref: '#/components/schemas/NameValuePair'}
+    ResponseIndicator:
+      x-model-version: 1.0
+      description: ''
+      properties:
+        alternateRouteDebitIndicator: {type: boolean, example: 'false'}
+        signatureLineIndicator: {type: boolean, example: 'false'}
+        signatureDebitRouteIndicator: {type: boolean, example: 'false'}
     BankAssociationDetails:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Processor-Response-Details.md#bank-association-details">Bank
@@ -2645,7 +2712,7 @@ components:
             * CORPORATE
             * BUSINESS
             * PURCHASE
-            * UNAVAILBLE
+            * UNAVAILABLE
             * NON_COMMERCIAL
           example: CORPORATE
         issuerCountry: {type: string, maxLength: 256, description: Card issuer two-letter
@@ -2659,35 +2726,30 @@ components:
             the payment source., example: '1234123412340019'}
         tokenSource: {type: string, maxLength: 256, description: Source for the Token
             Service Provider (TSP)., example: TRANSARMOR}
-    ForcedPostRequest:
+        tokenResponseCode: {type: string, maxLength: 256, description: Response code
+            for token generation request., example: '000'}
+        tokenResponseDescription: {type: string, maxLength: 256, description: Response
+            description for token generation request., example: SUCCESS}
+    AuthOptimizationDetails:
       x-model-version: 1.0
+      description: Updated account details provided by Auth Optimizer for expired
+        cards
       properties:
-        amount: {$ref: '#/components/schemas/Amount'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        customer: {$ref: '#/components/schemas/Customer'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-    ForcedPostResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        cardDetails: {$ref: '#/components/schemas/CardDetails'}
+        accountStatus:
+          type: string
+          description: |
+            Indicates the current status of the account.
+
+            Valid Values:
+            * ACCOUNT_CHANGE
+            * ACCOUNT_CLOSED
+            * EXPIRATION_CHANGE
+            * CONTACT_CARDHOLDER
+          example: ACCOUNT_CHANGE
+        accountUpdaterErrorCode: {type: string, description: Error code provided the
+            account updater system., example: VAU001}
+        originalResponseCode: {type: string, description: Original Response Code for
+            re-authorized (Optimized) transaction., example: '006'}
     CaptureRequest:
       x-model-version: 1.0
       properties:
@@ -2718,6 +2780,7 @@ components:
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     CancelRequest:
       x-model-version: 1.0
       properties:
@@ -2725,6 +2788,7 @@ components:
         source: {$ref: '#/components/schemas/Source'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
@@ -2741,6 +2805,7 @@ components:
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
+        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
     RefundRequest:
       x-model-version: 1.0
       properties:
@@ -2763,42 +2828,9 @@ components:
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-    CreditRequest:
-      x-model-version: 1.0
-      properties:
-        source: {$ref: '#/components/schemas/Source'}
-        amount: {$ref: '#/components/schemas/Amount'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-    CreditResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        amount: {$ref: '#/components/schemas/Amount'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-    TransactionInquiryResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
     AccountVerificationRequest:
       x-model-version: 1.0
       properties:
@@ -2806,38 +2838,13 @@ components:
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
+        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
     AccountVerificationResponse:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-    SecurityCredentialsRequest:
-      x-model-version: 1.0
-      properties:
-        publicKeyRequired: {type: boolean, description: If the signedCert is expired
-            or invalid then merchant would send a request., example: 'true'}
-        accessTokenRequired: {type: boolean, description: If the access token is expired
-            then merchant would request for a new token., example: 'true'}
-        accessTokenTimeToLive: {type: string, description: 'Time to live (expiration
-            time) in milliseconds. 1800000 ms, max 30 minutes.', example: '889'}
-        responseRedirectURL: {type: string, description: Response URL redirect., example: 'https://www.somedomain.com'}
-        customer: {$ref: '#/components/schemas/Customer'}
-        deviceFingerprint:
-          type: array
-          items: {$ref: '#/components/schemas/DeviceFingerPrint'}
-        amount: {$ref: '#/components/schemas/Amount'}
-        amountComponents: {$ref: '#/components/schemas/AmountComponents'}
-    SecurityCredentialsResponse:
-      x-model-version: 1.0
-      properties:
-        publicKey: {type: string, description: Base64 encoded public key.}
-        accessToken: {type: string, description: Access token created and sent back.}
-        sessionId: {type: string, description: ''}
-        accessTokenIssuedTime: {type: string, format: date-time, description: 'Token
-            issue time in YYYY-MM-DDThh:mm:ssZ format.', example: '2016-04-16T16:06:05Z'}
-        accessTokenTimeToLive: {type: string, description: Access token expiry.}
-        symmetricEncryptionAlgorithm: {type: string, description: AES 256/PKCS with
-            padding.}
-        asymmetricEncryptionAlgorithm: {type: string, description: RSA/ECB/PKCS1Padding.}
+        responsePaymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
     TokenizationRequest:
       x-model-version: 1.0
       properties:
@@ -2850,20 +2857,12 @@ components:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
+        paymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        paymentTokens:
+          type: array
+          items: {$ref: '#/components/schemas/ResponsePaymentToken'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-    AccountInformationRequest:
-      x-model-version: 1.0
-      properties:
-        source: {$ref: '#/components/schemas/Source'}
-    AccountInformationResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        cardDetails:
-          type: array
-          items: {$ref: '#/components/schemas/CardDetails'}
     EnhancedDataServiceRequest:
       x-model-version: 1.0
       properties:
@@ -2921,6 +2920,63 @@ components:
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+    ReturnOptimizerRequest:
+      x-model-version: 1.0
+      properties:
+        source: {$ref: '#/components/schemas/Source'}
+        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
+    ReturnOptimizerResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
+        transactionScoreResponse: {$ref: '#/components/schemas/TransactionScoreResponse'}
+    TransactionScoreResponse:
+      x-model-version: 1.0
+      description: Response containing return score details
+      properties:
+        invocationId: {type: string, description: Unique Identifier associated with
+            the invocation response, example: ad0760bf-2db5-4ba9-b294-0d2241ff58f8}
+        consumerType:
+          type: string
+          description: |
+            Indicator for new or returning customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for New Customers
+
+            Valid Values:
+            * New
+            * Existing
+          example: Existing
+        modelId: {type: string, description: Model Identifier, example: 1.0.0}
+        myReturnScoreDetails: {$ref: '#/components/schemas/MyReturnScoreDetails'}
+        peerReturnScoreDetails: {$ref: '#/components/schemas/ReturnScoreDetails'}
+    MyReturnScoreDetails:
+      x-model-version: 1.0
+      description: My Return Score Details
+      allOf:
+      - {$ref: '#/components/schemas/ReturnScoreDetails'}
+      - type: object
+        properties:
+          score: {maximum: 100, minimum: 0, type: integer, description: Normalized
+              score of a return probability. 0 indicating a low returner and 100 indicating
+              a high returner., example: '100'}
+          returnProbabilityProfile:
+            type: string
+            description: |
+              Bucketed return probability profile
+
+              Valid Values:
+              * High
+              * Low
+            example: High
+    ReturnScoreDetails:
+      x-model-version: 1.0
+      description: Return Score Details
+      properties:
+        averageReturnValue: {type: number, description: Average amount value returned
+            (ARV), example: '45.53'}
+        averageOrderValue: {type: number, description: Average amount value spent
+            (AOV), example: '275.25'}
+        percentSalesReturned: {maximum: 1, minimum: 0, type: number, description: '%
+            of sales returned (by Amount)', example: '0.3'}
   examples:
     ApplePayRequest:
       value:
@@ -3180,6 +3236,11 @@ components:
           sourceType: PaymentCard
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
+        paymentTokens:
+        - {tokenData: '8519371934460009', tokenSource: TRANSARMOR, tokenResponseCode: '000',
+          tokenResponseDescription: SUCCESS}
+        - {tokenData: '8519371934460010', tokenSource: CHASE, tokenResponseCode: '000',
+          tokenResponseDescription: SUCCESS}
         paymentReceipt:
           approvedAmount: {total: '12.04', currency: USD}
           merchantName: Merchant Name
@@ -3241,26 +3302,43 @@ components:
           transactionType: TOKENIZE
           transactionState: AUTHORIZED
           transactionOrigin: ECOM
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         source:
-          sourceType: PaymentToken
-          tokenSource: TRANSARMOR
-          tokenData: '8519371934460009'
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          sourceType: PaymentCard
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '8519371934460009'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+          - tokenData: '8519371934460010'
+            tokenSource: CHASE
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
         processorResponseDetails:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
           processor: fiserv
-          responseCode: '000000'
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+          bankAssociationDetails:
+            associationResponseCode: '000'
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+        
     PaymentCardInfoResponse:
       value:
         gatewayResponse:
@@ -3383,6 +3461,10 @@ components:
               Department, city: Sandy Springs, stateOrProvince: GA, postalCode: '30303',
             country: US}
         merchantDetails: {merchantId: '1234567890123456', alternateMerchantId: '1234567890123456'}
+    PaymentTokenROSRequest:
+      value:
+        source: {sourceType: PaymentToken, tokenData: '1234560000019'}
+        merchantDetails: {merchantId: '1234567890123456', tokenType: 'TRANSARMOR'}
     PaymentTokenChargesResponse:
       value:
         gatewayResponse:
@@ -3506,6 +3588,13 @@ components:
             apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
             transactionId: '84356531338'}
         processorResponseDetails: {referenceNumber: 845366457890-TODO}
+    PaymentTokenROSResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
+            transactionId: '84356531338'}
+        transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '93', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '30'} }
     Payment3DSRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3599,6 +3688,45 @@ components:
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+    PaymentEMVHDRequest:
+      value:
+        amount:
+          total: 10.8
+          currency: USD
+        source:
+          sourceType: PaymentEMV
+          emvData: 9F1A020840950500000080009A031604289F2701808407A00000000410109F3704EEDC585A9F3602000382021B809F34033F0002500A4D415354455243415244DF0201099C01009F2608956FA33B281C3AD69F3303E008085F3401129F3901079F02060000000001009F03060000000000009F0607A00000000410109F3501225F2A0208404F07A00000000410109F10120114A14003020000000000000000000000FF
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 6796867212329053=03538407821768469
+            keyId: FFFF9999990217A000170114
+            deviceType: INGENICO
+        transactionDetails:
+          captureFlag: false
+        transactionInteraction:
+          origin: POS
+          posEntryMode: ICR_RELIABLE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-12-01T08:40:48Z'
+          additionalPosInformation:
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+              pinAuthenticationCapability: UNSPECIFIED
+        merchantDetails:
+          merchantId: '100009000000035'
+          terminalId: '10000001'
+          tokenType: '1174'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
+        networkDetails:
+          network:
+            network: Visa
     PaymentEMVRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3635,6 +3763,20 @@ components:
         transactionInteraction: {origin: POS, posEntryMode: ICR_RELIABLE, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentEMVHDTokenRequest:
+      value:
+        source:
+          sourceType: PaymentEMV
+          emvData: 9F03060000000000009F5301529F26082ED06DD1FFB3EB27820218009F360200029F34033F00019F02060000000006009F2701808407A00000015230109F10080105A000030000009F3303E098C89F1A0201249F1E084B553030303030339A032104129F350125950580008080005F2A0201245F24032312315F3401019F4104000000199F3901059C01009F370444A376B54F07A00000015230109F0607A0000001523010
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 6866928729586224=03272981102005210986
+            keyId: FFFF10970000000003FD0114
+            deviceType: INGENICO
+        merchantDetails:
+          merchantId: '100009000000041'
+          tokenType: SBE
     PaymentEMVInfoRequest:
       value:
         source:
@@ -3688,6 +3830,88 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+    PaymentEMVChargesHDResponse:
+      value:
+        gatewayResponse:
+          transactionType: CHARGE
+          transactionState: AUTHORIZED
+          transactionOrigin: POS
+          transactionProcessingDetails:
+            orderId: CHG01864c3cb65c824d99b7f297505f914605
+            transactionTimestamp: '2021-11-30T21:26:14.90396Z'
+            apiTraceId: 635866b3fc244917aa864fbc5baaae18
+            clientRequestId: '4324974'
+            transactionId: 635866b3fc244917aa864fbc5baaae18
+        source:
+          sourceType: PaymentEMV
+          card:
+            expirationMonth: '12'
+            expirationYear: '2024'
+            bin: '401200'
+            last4: '0026'
+            scheme: Visa
+        paymentReceipt:
+          approvedAmount:
+            total: 10.80
+            currency: USD
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: OK123C
+            referenceNumber: 4fbc5baaae18
+            networkRouted: VISA
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL '
+            bankAssociationDetails:
+              associationResponseCode: '00'
+            additionalInfo:
+              - name: Nashville.posEntryMode
+                value: '90'
+              - name: Nashville.pinAuthenticationCapability
+                value: '1'
+              - name: Nashville.posConditionCode
+                value: '00'
+        transactionDetails:
+          captureFlag: false
+          retrievalReferenceNumber: 4fbc5baaae18
+        transactionInteraction:
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-11-02T12:35:42Z'
+          additionalPosInformation:
+            stan: '000002'
+            dataEntrySource: MOBILE_POS
+          authorizationCharacteristicsIndicator: E
+        merchantDetails:
+          tokenType: '1174'
+          terminalId: '10000001'
+          merchantId: '100009000000090'
+        additionalDataCommon:
+          directedRouting:
+            network: VISA
+            cardFunction: CREDIT
+            processors:
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
+              - code: FISERV
+                platform: NORTH
+                priority: FINAL
+          customFields:
+            - key: processorResponse
+              value: ARAyIAHvv70O77+9AAIAAAAAAAAAEFYRMCEmFQAAAgABADRmYmM1YmFhYWUxOE9LMTIzQzAwMDE0OTQ3MzQCBQBIMTRFMDExMzM0NzY4NDQwODU1RzQzMiAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwABgyMkFQUFJPVkFMICAgICAgICAABlZJQ1JDIAAHRVYwMjEwMQBmU0RUQzAxNTkwMDExMDAwMDAwMDAwMFJJMDE1MDAwMDAwMDAwMDAwMDAwTkwwMDRWSVNBVFkwMDFDQVIwMDRWMDAwAEhBUkJOMDA4VVNBIEJhbmtDSTAwM1VTQUNQMDAxSERQMDAxQ1JDMDAyMDBDQjAwMVY=
+        networkDetails:
+          network:
+            network: Visa
+          cardLevelResultCode: 'CRC '
+          validationCode: G432
+        paymentTokens:
+          - tokenData: '9189080250240026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
     PaymentEMVCreditResponse:
       value:
         gatewayResponse:
@@ -3727,27 +3951,57 @@ components:
         gatewayResponse:
           transactionType: TOKENIZE
           transactionState: AUTHORIZED
-          transactionOrigin: POS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionOrigin: RETAIL
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         source:
-          sourceType: PaymentToken
-          tokenSource: TRANSARMOR
-          tokenData: '8519371934460009'
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          sourceType: PaymentEMV
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '8519371934460009'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+          - tokenData: '8519371934460010'
+            tokenSource: CHASE
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
         processorResponseDetails:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
           processor: fiserv
-          responseCode: '000000'
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+          bankAssociationDetails:
+            associationResponseCode: '000'
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+    PaymentEMVHDTokenResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            orderId: CHG0101e85dbe491247cd8327a2b4ecdfea0f
+            transactionTimestamp: '2022-01-05T17:42:46.626544Z'
+            apiTraceId: 3c08107f270d4a6e9d649fa259bd7d0d
+            clientRequestId: '5498158'
+            transactionId: 3c08107f270d4a6e9d649fa259bd7d0d
+        paymentTokens:
+          - tokenData: '9639819952240026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
     PaymentEMVInfoResponse:
       value:
         gatewayResponse:
@@ -3795,12 +4049,50 @@ components:
         amount: {total: '12.04', currency: USD}
         source:
           sourceType: PaymentTrack
-          encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
+          encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: 9050770762789954=7171229002517746248,
             deviceType: INGENICO, keyId: '88000000022'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
         transactionInteraction: {origin: POS, posEntryMode: EMV_FALLBACK_MAG, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentTrackHDRequest:
+      value:
+        amount:
+          total: 10.8
+          currency: USD
+        source:
+          sourceType: PaymentTrack
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 5920827294965894=843844352383401781
+            keyId: FFFF109700000E4000140114
+            deviceType: INGENICO
+        transactionDetails:
+          captureFlag: true
+        transactionInteraction:
+          origin: POS
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-12-01T12:02:48Z'
+          additionalPosInformation:
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              terminalEntryCapability: MAG_STRIPE_ONLY
+              pinAuthenticationCapability: UNSPECIFIED
+        merchantDetails:
+          merchantId: '100009000000035'
+          terminalId: '10000001'
+          tokenType: '1174'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
+        networkDetails:
+          network:
+            network: Visa
     PaymentTrackForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3823,6 +4115,19 @@ components:
         transactionInteraction: {origin: POS, posEntryMode: EMV_FALLBACK_MAG, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentTrackHDTokenRequest:
+      value:
+        source:
+          sourceType: PaymentTrack
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 9050770762789954=71712290025177462481
+            keyId: FFFF10970000052000170114
+            deviceType: INGENICO
+        merchantDetails:
+          merchantId: '100009000000027'
+          tokenType: '1174'
     PaymentTrackInfoRequest:
       value:
         source:
@@ -3874,6 +4179,89 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+    PaymentTrackChargesHDResponse:
+      value:
+        gatewayResponse:
+          transactionType: CHARGE
+          transactionState: AUTHORIZED
+          transactionOrigin: POS
+          transactionProcessingDetails:
+            orderId: CHG01864c3cb65c824d99b7f297505f914605
+            transactionTimestamp: '2021-11-30T21:26:14.90396Z'
+            apiTraceId: 635866b3fc244917aa864fbc5baaae18
+            clientRequestId: '4324974'
+            transactionId: 635866b3fc244917aa864fbc5baaae18
+        source:
+          sourceType: PaymentTrack
+          card:
+            expirationMonth: '12'
+            expirationYear: '2024'
+            bin: '401200'
+            last4: '0026'
+            scheme: Visa
+        paymentReceipt:
+          approvedAmount:
+            total: 10.80
+            currency: USD
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: OK123C
+            referenceNumber: 4fbc5baaae18
+            networkRouted: VISA
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL '
+            bankAssociationDetails:
+              associationResponseCode: '00'
+            additionalInfo:
+              - name: Nashville.posEntryMode
+                value: '90'
+              - name: Nashville.pinAuthenticationCapability
+                value: '1'
+              - name: Nashville.posConditionCode
+                value: '00'
+        transactionDetails:
+          captureFlag: false
+          retrievalReferenceNumber: 4fbc5baaae18
+        transactionInteraction:
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2021-11-02T12:35:42Z'
+          additionalPosInformation:
+            stan: '000002'
+            dataEntrySource: MOBILE_POS
+          authorizationCharacteristicsIndicator: E
+        merchantDetails:
+          tokenType: '1174'
+          terminalId: '10000001'
+          merchantId: '100009000000090'
+        additionalDataCommon:
+          directedRouting:
+            network: VISA
+            cardFunction: CREDIT
+            processors:
+              - code: FISERV
+                platform: NORTH
+                priority: PRIMARY
+              - code: FISERV
+                platform: NORTH
+                priority: FINAL
+          customFields:
+            - key: processorResponse
+              value: ARAyIAHvv70O77+9AAIAAAAAAAAAEFYRMCEmFQAAAgABADRmYmM1YmFhYWUxOE9LMTIzQzAwMDE0OTQ3MzQCBQBIMTRFMDExMzM0NzY4NDQwODU1RzQzMiAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwABgyMkFQUFJPVkFMICAgICAgICAABlZJQ1JDIAAHRVYwMjEwMQBmU0RUQzAxNTkwMDExMDAwMDAwMDAwMFJJMDE1MDAwMDAwMDAwMDAwMDAwTkwwMDRWSVNBVFkwMDFDQVIwMDRWMDAwAEhBUkJOMDA4VVNBIEJhbmtDSTAwM1VTQUNQMDAxSERQMDAxQ1JDMDAyMDBDQjAwMVY=
+        networkDetails:
+          network:
+            network: Visa
+          cardLevelResultCode: 'CRC '
+          validationCode: G432
+        paymentTokens:
+          - tokenData: '9189080250240026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+
     PaymentTrackCreditResponse:
       value:
         gatewayResponse:
@@ -3914,26 +4302,56 @@ components:
           transactionType: TOKENIZE
           transactionState: AUTHORIZED
           transactionOrigin: RETAIL
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         source:
-          sourceType: PaymentToken
-          tokenSource: TRANSARMOR
-          tokenData: '8519371934460009'
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          sourceType: PaymentTrack
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '8519371934460009'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+          - tokenData: '8519371934460010'
+            tokenSource: CHASE
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
         processorResponseDetails:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
           processor: fiserv
-          responseCode: '000000'
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+          bankAssociationDetails:
+            associationResponseCode: '000'
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+    PaymentTrackHDTokenResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            orderId: CHG01e6c4ce64f87b426d928f7426037ed5e4
+            transactionTimestamp: '2022-01-05T17:05:50.1727Z'
+            apiTraceId: 75ba47397a9f45b8961f738f8e2b33ab
+            clientRequestId: '2594119'
+            transactionId: 75ba47397a9f45b8961f738f8e2b33ab
+        paymentTokens:
+          - tokenData: '9189080250240026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
     PaymentTrackInfoResponse:
       value:
         gatewayResponse:
@@ -4269,3 +4687,133 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
+    TransactionInquiryRequest:
+      value:
+        transactionDetails:
+          primaryTransactionId: 'aa829dcb83cd49f485141168e051b8d1'
+
+    TransactionInquiryByMerchantOrderIdRequest:
+      value:
+        transactionDetails:
+          merchantOrderId: 'RKOrdID-822715036'
+
+    TransactionInquiryResponse:
+      value:
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - platform: 'IPG'
+                priority: 'FINAL'
+          gatewayResponse:
+            gatewayName: 'IPG'
+            gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
+            gatewayTransactionId: '84439763459'
+            transactionOrigin: 'ECOM'
+            transactionProcessingDetails:
+              apiTraceId: 'aa829dcb83cd49f485141168e051b8d1'
+              clientRequestId: '9806383'
+              orderId: 'CHG01586b6416dddd4425ae764daee6c3ac8a'
+              transactionId: 'aa829dcb83cd49f485141168e051b8d1'
+              transactionTimestamp: '2022-01-13T19:09:27.939151Z'
+            transactionState: 'CAPTURED'
+            transactionType: 'CHARGE'
+          merchantDetails:
+            merchantId: '100004000000233'
+            storeId: '66100004000000233'
+          paymentReceipt:
+            approvedAmount:
+              currency: 'USD'
+              total: '690'
+            processorResponseDetails:
+              approvalCode: 'OK6982'
+              approvalStatus: 'APPROVED'
+              hostResponseCode: '00'
+              hostResponseMessage: 'APPROVAL'
+              localTimestamp: '2022-01-13T19:09:29Z'
+              processor: fiserv
+              responseCode: '000000'
+              responseMessage: 'APPROVAL'
+              schemeTransactionId: '0113MCC815463'
+          source:
+            card:
+              bin: '542418'
+              expirationMonth: '12'
+              expirationYear: '2025'
+              last4: '1732'
+              scheme: 'MASTERCARD'
+            sourceType: 'PaymentCard'
+          transactionDetails:
+            captureFlag: 'true'
+            merchantInvoiceNumber: 'CHG01586b641'
+
+    TransactionInquiryByMerchantOrderIdResponse:
+      value:
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - platform: 'IPG'
+                priority: 'FINAL'
+          billingAddress:
+            address:
+              city: 'Atlanta'
+              country: 'USA'
+              houseNumberOrName: '4201'
+              postalCode: '30338'
+              stateOrProvince: 'Georgia'
+              street: '100 Ashford Gables Dr'
+            firstName: 'Raghavendiran'
+            lastName: 'Kannan'
+          gatewayResponse:
+            gatewayName: 'IPG'
+            gatewayOrderId: 'CH-130870e4-0adc-494a-b15a-265f1547af26'
+            gatewayTransactionId: '84438752938'
+            transactionOrigin: 'ECOM'
+            transactionProcessingDetails:
+              apiTraceId: 'c16a33b487af4eb9b6b6e97a912bda6f'
+              clientRequestId: '8893258'
+              orderId: 'CHG01c23b5480234e4a26b172e1f33296a51e'
+              transactionId: 'c16a33b487af4eb9b6b6e97a912bda6f'
+              transactionTimestamp: '2022-01-13T18:15:43.777576Z'
+            transactionState: 'CAPTURED'
+            transactionType: 'CHARGE'
+          merchantDetails:
+            merchantId: '100004000000233'
+            storeId: '66100004000000233'
+          paymentReceipt:
+            approvedAmount:
+              currency: 'USD'
+              total: '16.93'
+            processorResponseDetails:
+              approvalCode: 'OK7742'
+              approvalStatus: 'APPROVED'
+              bankAssociationDetails:
+                avsSecurityCodeResponse:
+                  association:
+                    avsCode: 'Y'
+                    securityCodeResponse: 'X'
+                  postalCodeMatch: 'NOT_MATCHED'
+                  securityCodeMatch: 'NOT_CHECKED'
+                  streetMatch: 'MATCHED'
+                transactionTimestamp: '2022-01-13T18:15:45.177Z'
+              hostResponseCode: '00'
+              hostResponseMessage: 'APPROVAL'
+              localTimestamp: '2022-01-13T18:15:45Z'
+              processor: 'fiserv'
+              responseCode: '000000'
+              responseMessage: 'APPROVAL'
+              schemeTransactionId: '164209774594909'
+          source:
+            card:
+              bin: '653949'
+              expirationMonth: '06'
+              expirationYear: '2026'
+              last4: '1727'
+              scheme: 'DINERSCLUB'
+            sourceType: 'DecryptedWallet'
+          transactionDetails:
+            captureFlag: 'true'
+            merchantInvoiceNumber: '520608612'
+            merchantOrderId: 'RKOrdID-822715036'
+            merchantTransactionId: 'RKTransID-834788206'
+          transactionInteraction:
+            eciIndicator: 'SECURE_ECOM'
