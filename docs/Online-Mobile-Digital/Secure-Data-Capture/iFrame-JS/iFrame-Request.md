@@ -317,7 +317,7 @@ title: Tokens Response
 
 ## See Also
 
-- Customize iFrame Payment Form
-- Payment JS Integration
-- [Authentication Header](?path+docs/Resources/API-Documents/Authentication-Header.md)
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
