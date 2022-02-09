@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 ## Step 1: Authentication
 
-A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
 
 
 ---
@@ -20,7 +20,7 @@ The iFrame JS script tag is required in the website by downloading or including 
 
 ```php
 
-<script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="https://api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
 
 ```
 
@@ -45,7 +45,7 @@ const formConfig = {
 
 ### Payment Form
 
-Add the global `commercehub` object which includes the iFrame JS form:
+Add the global `commercehub` object which includes the iFrame JS form. The `commercehub` object name should match with the script tag id that loads the SDK.
 
 ```javascript
 
@@ -103,6 +103,7 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
             const formConfig = {
                 "merchantId": '100004000002050',
                 "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
+                "symmetricEncryptionAlgorithm": 'AES_GCM'
             };
             const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
               form.loadPaymentForm("payment-saq-a-form-div")
@@ -129,7 +130,7 @@ Submit a charge or tokenization request with the payment `sourceType` of `Paymen
 >**POST** `/payments/v1/charges`
 
 <!-- theme: success -->
->**POST** `/payments/v1/tokens`
+>**POST** `/payments-vas/v1/tokens`
 
 
 ### Payload Example
@@ -319,7 +320,7 @@ title: Tokens Response
 
 ## See Also
 
-- Customize iFrame Payment Form
-- Payment JS Integration
-- [Authentication Header](?path+docs/Resources/API-Documents/Authentication-Header.md)
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)

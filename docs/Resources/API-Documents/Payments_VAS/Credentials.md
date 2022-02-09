@@ -84,10 +84,13 @@ title: Response
 
 {
   "publicKey": "TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=",
-  "accessToken": "Q7aLVOVwj327v20EcxPUq4zwAMPO",
-  "sessionId": "13bdefe8-cbf4-401e-853d-d687ae4ac3af",
-  "accessTokenIssuedTime": "2016-04-16T16:06:05Z",
-  "accessTokenTimeToLive": "889",
+  "keyLength": "12345",
+  "accessToken": "vsmsrKcNFWzq79Yd8aaxHetHBdxm",
+  "sessionId": "b28ba2ca-6368-4d72-b5f0-c185b4d0de4c",
+  "accessTokenIssuedTime": "1635522684450",
+  "accessTokenTimeToLive": "1799",
+  "symmetricEncryptionAlgorithm": "AES-GCM",
+  "asymmetricEncryptionAlgorithm": "RSA-2048"
 }
 
 ```
