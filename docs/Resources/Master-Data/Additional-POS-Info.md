@@ -32,7 +32,6 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 | `posHardwareAndSoftware` | *object* | N/A | [Terminal hardware and software](#hardware-and-software-information) information. |
 | `posFeatures` | *object* | N/A | Terminal or [software feature](#pos-features) information. |
 | `supervisorId` | *string* |  | Used to uniquely identify the merchant’s store supervisor transactions. |
--->
 
 
 <!--
