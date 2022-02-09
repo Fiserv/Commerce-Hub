@@ -7,7 +7,7 @@ The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/
 - **SAQ A:** applies to the merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any cardholder data on their systems.
 
 - **SAQ A-EP:** applies to the merchants who partially outsource payment processing to Commerce Hub. The merchant typically has a website that hosts a checkout process and sends the cardholder data to Commerce Hub at a point of payment.
-
+ 
 ---
 
 ## SAQ A Integrations
@@ -29,13 +29,13 @@ Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and s
 
 **Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-URL/Payment-URL.md).**
 
-### iFrame JS
+### iFrame
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Payment JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-Payment JS accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
+Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
 
-**Begin integration with Commerce Hub's [Payment JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md).**
+**Begin integration with Commerce Hub's [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md).**
 
 ---
 
@@ -47,18 +47,18 @@ Allows the merchants to build their own form to collect all payment information 
 
 **Begin integration with Commerce Hub's [Direct Post].**
 
-### Payment JS
+### .JS
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Payment JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-**Begin integration with Commerce Hub's [Payment JS](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
+**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
 
 ---
 
 ## See Also
 - [Hosted Payment Page Integration](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md)
-- [iFrame JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
-- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md)
+- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
+- [JS Integration](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md)
 - [Payment URL Integration](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
 
 ---

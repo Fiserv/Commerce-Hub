@@ -26,7 +26,7 @@ The below table identifies the parameters in the `cardDetails` object.
 
 ---
 
-## Information Lookup using PaymentCard
+## PaymentCard Request
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
 
@@ -42,6 +42,7 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer to [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) for more details. |
+| `card` | *object* | N/A | Object containing `cardData` |
 
 <!--
 type: tab
@@ -128,7 +129,7 @@ title: Response
 
 ---
 
-## Information Lookup using PaymentToken 
+## PaymentToken Request
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentToken` as a payment source.
 
