@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node yaml.js references/1.0.0"
+    "test": "node yaml.js references"
   },
   "author": "",
   "license": "ISC",
