@@ -10,10 +10,10 @@ A approval response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 4111115602185807 | 12/2030 | 439 |
-|*MasterCard* | 5555553679073219 | 12/2030 | 602 |
-|*Amex* | 370914835193719 | 12/2030 | 7926 |
-|*Discover* | 6011118622185191 | 12/2030 | 552 |
+|*Visa* | 4012001928706700 | 12/2030 | 777 |
+|*MasterCard* | 5500007287297385 | 12/2030 | 777 |
+|*Amex* | 341111227713933 | 12/2030 | 7777 |
+|*Discover* | 6011114305944707 | 12/2030 | 777 |
 
 ---
 
@@ -26,10 +26,10 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 4111115990459889 | 12/2030 | 984 |
-|*Mastercard* | 5555558336352682 | 12/2030 | 955 |
-| *Amex* | 377949020721752 | 12/2030 | 8646 |
-| *Discover* | 6011114738850455 | 12/2030 | 123 |
+|*Visa* | 4012001915677112 | 12/2030 | 777 |
+|*Mastercard* | 5500005275558172 | 12/2030 | 777 |
+| *Amex* | 341111213920088 | 12/2030 | 7777 |
+| *Discover* | 6011118233647696 | 12/2030 | 777 |
 
 ---
 
@@ -42,10 +42,10 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 4111114749861560 | 12/2030 | 715 |
-|*Mastercard* | 5555553341608855 | 12/2030 | 679 |
-| *Amex* | 379743445089848 | 12/2030 | 4714 |
-| *Discover* | 6011117590247116 | 12/2030 | 550 |
+|*Visa* | 4012001472472642 | 12/2030 | 777 |
+|*Mastercard* | 5500008286090219 | 12/2030 | 777 |
+| *Amex* | 341111880552552 | 12/2030 | 7777 |
+| *Discover* | 6011111273436666 | 12/2030 | 777 |
 
 
 | Amount | Response | Description |
@@ -68,10 +68,10 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
-|*Visa* | 4111111210491042 | 12/2030 | 728 |
-|*Mastercard* | 5555552765293848 | 12/2030 | 426 |
-| *Amex* | 342344233011237 | 12/2030 | 6377 |
-| *Discover* | 6011118480526619 | 12/2030 | 635 |
+|*Visa* | 4012008565774776 | 12/2030 | 777 |
+|*Mastercard* | 5500002389250960 | 12/2030 | 777 |
+| *Amex* | 341111565369561 | 12/2030 | 7777 |
+| *Discover* | 6011116171399338 | 12/2030 | 777 |
 
 
 ### Street
