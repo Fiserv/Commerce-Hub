@@ -129,6 +129,8 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
+---
+
 ### POS Features
 
 Terminal or software feature information.
@@ -213,6 +215,8 @@ The below table contains the valid values for `dataEntrySource` parameter.
 | IVR_VRU | |
 | TICKET_MACHINE | |
 | CALL_CENTER_OPERATOR |  | 
+
+---
 
 #### Enhanced Authorization Request Indicator
 
