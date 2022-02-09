@@ -17,6 +17,29 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 |---------|----------|----------------|---------|
 | `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
 
+The below table contains the valid values for `dataEntrySource` parameter.
+
+| Valid Value | Description |
+|--------|--------|
+| MOBILE_APP | |
+| MOBILE_WEB | |
+| BROWSER_PC | |
+| KIOSK | |
+| CONSOLE | |
+| 3DS_REQUESTOR_INITIATED | |
+| UNSPECIFIED | |
+| ELECTRONIC_PAYMENT_TERMINAL | |
+| AUTOMATED_FUEL_DISPENSING_MACHINE | |
+| UNATTENDED_CUSTOMER_TERMINAL | |
+| ECOMMERCE_CUSTOMER_PRESENT | |
+| MOBILE_TERMINAL | |
+| MOBILE_POS | |
+| ELECTRONIC_CASH_REGISTER | |
+| IVR_VRU | |
+| TICKET_MACHINE | |
+| CALL_CENTER_OPERATOR |  | 
+
+
 <!---
 | `posId` | *string* | | Identifies the specific device or point of entry where the transaction originated. For example, pump number, lane number, terminal number, etc. |
 | `cashierId` | *string* | | Used to uniquely identify the merchant’s store cashier or employee accepting the transaction. |
