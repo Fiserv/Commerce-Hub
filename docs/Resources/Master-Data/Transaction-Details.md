@@ -37,8 +37,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `processingCode` | *string* | 6 |  A required <a href=../docs/Resources/Master-Data/Processing-Code.md>code</a> is used in conjunction with the message type to define the type of transaction that is by the terminal to the host. |
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
-| `cardVerificationAmount` | *number* | 999999999999999999.999 | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
-| `partiallyApprovedTransactionAmount` | *number* | 999999999999999999.999 |  The partially approved transaction amount from the original request. |
+| `cardVerificationAmount` | *number* | 18,3 | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
+| `partiallyApprovedTransactionAmount` | *number* | 18,3 |  The partially approved transaction amount from the original request. |
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
 | `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
