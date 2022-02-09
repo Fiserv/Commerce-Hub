@@ -35,7 +35,7 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 ## Security Code
 
-A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5070.00 - 5079.00 can be used to trigger the desired response.
+A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. 
 
 <!-- theme: example -->
 >Street, Postal Code and Cardholder verification cannot be tested at the same time. 
@@ -47,6 +47,9 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 | *Amex* | 341111880552552 | 12/2030 | 7777 |
 | *Discover* | 6011111273436666 | 12/2030 | 777 |
 
+### Test Security Code Response
+
+The dollar amounts between 5070.00 - 5079.00 can be used to trigger the desired response.
 
 | Amount | Response | Description |
 | ---- | ----------|-----|
@@ -74,7 +77,7 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 | *Discover* | 6011116171399338 | 12/2030 | 777 |
 
 
-### Street
+### Test Street Response
 
 To receive a specific `streetMatch` response, pass the specific amount from the table below.
 
@@ -88,7 +91,7 @@ To receive a specific `streetMatch` response, pass the specific amount from the 
 
 ---
 
-### Postal Code
+### Test Postal Code Response
 
 To receive a specific `postalCodeMatch` response, pass the specific amount from the table below.
 
@@ -102,7 +105,7 @@ To receive a specific `postalCodeMatch` response, pass the specific amount from 
 
 ---
 
-### Cardholder Name
+### Test Cardholder Name Response
 
 To receive a specific `cardholderNameResponse` response, pass the specific amount from the table below.
 
