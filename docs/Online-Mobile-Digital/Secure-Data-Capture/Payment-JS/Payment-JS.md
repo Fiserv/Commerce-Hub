@@ -35,4 +35,4 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 - Create a Payment Request
 - Customize Payment Form
-- Error Handling
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
