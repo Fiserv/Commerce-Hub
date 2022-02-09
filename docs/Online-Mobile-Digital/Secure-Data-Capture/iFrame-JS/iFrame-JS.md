@@ -2,10 +2,10 @@
 tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
 ---
 
-# iFrame JS Integration
+# iFrame Integration
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to include Payment.JS support and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to include iFrame integration support and the documents related to the features will be released soon.
 
 
 #### Transaction Flow
@@ -18,7 +18,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 6. Commerce Hub sends the transaction response to the merchant’s website.
 
 
-**Begin integration with [iFrame JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
+**Begin integration with Commerce Hub's [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
 
 ---
 
@@ -36,5 +36,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 ## See Also
 
-- Customize iFrame Payment Form
-- Payment JS Integration
+- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
