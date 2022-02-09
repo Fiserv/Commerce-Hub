@@ -120,7 +120,10 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 
 ## Step 3: Submit Request
 
-Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request. 
+Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request.
+
+<!-- theme: info -->
+> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 ### Endpoint
 <!-- theme: success -->
@@ -317,7 +320,7 @@ title: Tokens Response
 
 ## See Also
 
-- Customize iFrame Payment Form
-- Payment JS Integration
-- [Authentication Header](?path+docs/Resources/API-Documents/Authentication-Header.md)
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)

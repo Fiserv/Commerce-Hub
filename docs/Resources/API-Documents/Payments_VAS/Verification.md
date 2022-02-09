@@ -4,14 +4,14 @@ tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, s
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#account-verification-using-paymentcard) or [token](#account-verification-using-paymenttoken).
+The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#paymentcard-request) or [token](#paymenttoken-request).
 
 <!--theme:info-->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
 
 ---
 
-## Account Verification using PaymentCard
+## PaymentCard Request
 
 ### Minimum Requirements
 
@@ -145,7 +145,7 @@ title: Response
 
 ---
 
-## Account Verification using PaymentToken
+## PaymentToken Request
 
 ### Minimum Requirements
 <!--

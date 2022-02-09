@@ -81,5 +81,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Available Fields
 - Customize Payment Page
 - [Online Wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md)
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

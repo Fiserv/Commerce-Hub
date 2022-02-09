@@ -22,7 +22,6 @@ The below table identifies the parameters in the `transactionInteraction` object
 | `responseCode` | *string* | | Response code returned by network/issuer used in subsequent transactions. |
 | `posData` | *string* | | POS data returned by network/issuer used in subsequent transactions. |
 | `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
-| `terminalEntryCapability` | *string* |  | Identifies how data can be [entered](#terminal-entry-capability) in the terminal or software. |
 | `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
 | `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification | 
@@ -42,8 +41,7 @@ JSON string format for `transactionInteraction`:
       "posConditionCode": "CARD_NOT_PRESENT_ECOM",  
       "responseCode": "string",  
       "posData": "string",  
-      "mobileInteraction": "PHONE_NUMBER",  
-      "terminalEntryCapability": "ECOMMERCE",  
+      "mobileInteraction": "PHONE_NUMBER",
       "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",  
       "eciIndicator": "SECURE_ECOM",
       "additionalPosInformation": "",  
