@@ -59,7 +59,9 @@
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Hosted Payment Page
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md
-    - title: Payment JS
+    - title: iFrame
+      link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
+    - title: JS
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
     - title: Virtual Terminal
       link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
