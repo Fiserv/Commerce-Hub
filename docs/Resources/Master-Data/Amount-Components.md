@@ -62,7 +62,7 @@ The below table identifies the parameters in the `amountComponents` object.
 | `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
 | `cashback` | *number* | 12 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase. |
 | `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
-| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
 | `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 
