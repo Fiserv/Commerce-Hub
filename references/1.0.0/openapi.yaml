@@ -1558,8 +1558,7 @@ components:
       description: Used to pass <a href="../docs?path=docs/Resources/Master-Data/Merchant-Details.md">merchant</a>
         specific data during the transaction.
       properties:
-        tokenType: {type: string, maxLength: 64, description: Specific token type
-            requested by the merchant., example: TRANSARMOR}
+        tokenType: {type: string, maxLength: 64, description: Specific value to be passed to tokenization platform., example: AB001}
         storeId: {type: string, maxLength: 1024, description: 'The unique ID or number
             used to identify the unique location, store, or site.', example: '12345'}
         siteId: {type: string, maxLength: 1024, description: The location ID or number
