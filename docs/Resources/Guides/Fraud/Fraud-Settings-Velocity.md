@@ -11,25 +11,39 @@ Velocity settings determine which transactions Commerce Hub allows to proceed to
 
 The following settings can be configured for Velocity Controls:
 
-Minimum Sale $ - Set this to determine the minimum dollar amount to allow for each transaction; when triggered, the transaction will receive a response – below minimum sale.
+## Minimum Sale $  
 
-# Maximum $ of Transactions - This allows you to set the maximum dollar amount, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response  merchant volume exceeded.
+Set this to determine the minimum dollar amount to allow for each transaction; when triggered, the transaction will receive a response – below minimum sale.
+
+## Maximum $ of Transactions 
+
+This allows you to set the maximum dollar amount, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response  merchant volume exceeded.
 
 <!-- theme: Caution -->
 >This will limit the total amount you could process on the terminal during the designated period.
 
-Maximum # of Transactions - This allows you to set the maximum number of transactions, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive response that the merchant volume exceeded. 
+## Maximum # of Transactions 
+
+This allows you to set the maximum number of transactions, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive response that the merchant volume exceeded. 
 
 <!-- theme: Caution -->
 >This will limit the total transactions you could process on the terminal during the designated period.  
 
-Maximum $ Amount per Card/Check No. - This allows you to set the maximum dollar amount allowed per card or check number*, per transaction type,  during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response of card volume exceeded.
+## Maximum $ Amount per Card/Check No. 
 
-Maximum # Transactions per Card/Check No. - This allows you to set the maximum number of transactions per card or check number*, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response card volume exceeded.
+This allows you to set the maximum dollar amount allowed per card or check number*, per transaction type,  during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response of card volume exceeded.
 
-Maximum # Transactions per IP - This allows you to set the maximum number of transactions allowed per individual IP address, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline or not.
+## Maximum # Transactions per Card/Check No. 
 
-Maximum Sale $ - Set this to determine the maximum dollar amount to allow for each transaction; when triggered, the transaction will receive a response of maximum sale exceeded.
+This allows you to set the maximum number of transactions per card or check number*, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response card volume exceeded.
+
+## Maximum # Transactions per IP 
+
+This allows you to set the maximum number of transactions allowed per individual IP address, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline or not.
+
+## Maximum Sale $  
+
+Set this to determine the maximum dollar amount to allow for each transaction; when triggered, the transaction will receive a response of maximum sale exceeded.
 
 ---
 
