@@ -13,7 +13,7 @@ The following settings can be configured for Velocity Controls:
 
 Minimum Sale $ - Set this to determine the minimum dollar amount to allow for each transaction; when triggered, the transaction will receive a response – below minimum sale.
 
-Maximum $ of Transactions - This allows you to set the maximum dollar amount, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response  merchant volume exceeded.
+# Maximum $ of Transactions - This allows you to set the maximum dollar amount, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response  merchant volume exceeded.
 
 <!-- theme: Caution -->
 >This will limit the total amount you could process on the terminal during the designated period.
