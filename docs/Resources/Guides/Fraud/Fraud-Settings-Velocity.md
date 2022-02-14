@@ -45,6 +45,13 @@ This allows you to set the maximum number of transactions allowed per individual
 
 Set this to determine the maximum dollar amount to allow for each transaction; when triggered, the transaction will receive a response of maximum sale exceeded.
 
+Minimum Sles $ Features
+
+## Action
+
+Currency
+
+Minimum Limit
 ---
 
 ## See Also
