@@ -15,6 +15,8 @@ The address and security code filters provide a merchant the ability to enable v
 
 Filters are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) inside of Marketplace. Filters are applied per card brand and their respective response value.
 
+### Examples
+
 ##### Address and Postal Code
 
 <!-- theme: Example -->
