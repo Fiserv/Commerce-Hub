@@ -39,7 +39,7 @@
       "apiSpecFileNames": ["openapi"]
     }
   ],
-  "featureBranches": ["CHD-19-SAQ", "CHD-41-Samsung-Pay"],
+  "featureBranches": ["develop"],
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Commerce-Hub/develop/assets/images/Commerce-Hub-Circle.png",
