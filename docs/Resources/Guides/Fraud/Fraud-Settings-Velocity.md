@@ -31,7 +31,7 @@ This allows you to set the maximum number of transactions, per transaction type,
 
 ## Maximum $ Amount per Card/Check No. 
 
-This allows you to set the maximum dollar amount allowed per card or check number*, per transaction type,  during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response of card volume exceeded.
+This allows you to set the maximum dollar amount allowed per card or check number*, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response of card volume exceeded.
 
 ## Maximum # Transactions per Card/Check No. 
 
