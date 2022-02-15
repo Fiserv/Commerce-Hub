@@ -1558,7 +1558,7 @@ components:
       description: Used to pass <a href="../docs?path=docs/Resources/Master-Data/Merchant-Details.md">merchant</a>
         specific data during the transaction.
       properties:
-        tokenType: {type: string, maxLength: 64, description: Specific value to be passed to tokenization platform., example: AB001}
+        tokenType: {type: string, maxLength: 64, description: Specific value to be passed to tokenization platform., example: AB01}
         storeId: {type: string, maxLength: 1024, description: 'The unique ID or number
             used to identify the unique location, store, or site.', example: '12345'}
         siteId: {type: string, maxLength: 1024, description: The location ID or number
@@ -3463,7 +3463,7 @@ components:
     PaymentTokenROSRequest:
       value:
         source: {sourceType: PaymentToken, tokenData: '1234560000019'}
-        merchantDetails: {merchantId: '1234567890123456', tokenType: 'TRANSARMOR'}
+        merchantDetails: {merchantId: '1234567890123456', tokenType: 'AB01'}
     PaymentTokenChargesResponse:
       value:
         gatewayResponse:
@@ -3716,7 +3716,7 @@ components:
         merchantDetails:
           merchantId: '100009000000035'
           terminalId: '10000001'
-          tokenType: '1174'
+          tokenType: 'AB01'
         additionalDataCommon:
           directedRouting:
             processors:
@@ -3775,7 +3775,7 @@ components:
             deviceType: INGENICO
         merchantDetails:
           merchantId: '100009000000041'
-          tokenType: SBE
+          tokenType: 'AB01'
     PaymentEMVInfoRequest:
       value:
         source:
@@ -3884,7 +3884,7 @@ components:
             dataEntrySource: MOBILE_POS
           authorizationCharacteristicsIndicator: E
         merchantDetails:
-          tokenType: '1174'
+          tokenType: 'AB01'
           terminalId: '10000001'
           merchantId: '100009000000090'
         additionalDataCommon:
@@ -4082,7 +4082,7 @@ components:
         merchantDetails:
           merchantId: '100009000000035'
           terminalId: '10000001'
-          tokenType: '1174'
+          tokenType: 'AB01'
         additionalDataCommon:
           directedRouting:
             processors:
@@ -4126,7 +4126,7 @@ components:
             deviceType: INGENICO
         merchantDetails:
           merchantId: '100009000000027'
-          tokenType: '1174'
+          tokenType: 'AB01'
     PaymentTrackInfoRequest:
       value:
         source:
@@ -4233,7 +4233,7 @@ components:
             dataEntrySource: MOBILE_POS
           authorizationCharacteristicsIndicator: E
         merchantDetails:
-          tokenType: '1174'
+          tokenType: 'AB01'
           terminalId: '10000001'
           merchantId: '100009000000090'
         additionalDataCommon:
