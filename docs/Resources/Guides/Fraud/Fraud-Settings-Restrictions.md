@@ -15,7 +15,7 @@ In the Transaction Restriction tab under the Fraud Settings, the settings can be
 
 Duplicate Restrictions are used to enable or disable duplicate transactions. Enable on Commercehub allows duplicate checking and will reject duplicate transactions once the specified configuration have been met. The merchant as the option to have duplicate checking calculated (Query) from "Approved Only" transactions (default) or "All Transactions."
 
-## Lockout Time (Minutes)
+## Lockout Time 
 
 Lockout Time is the time frame configured for duplicates to be locked out when detected and rejected. 
 
