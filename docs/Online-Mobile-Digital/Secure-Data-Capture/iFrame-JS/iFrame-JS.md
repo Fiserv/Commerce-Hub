@@ -9,6 +9,12 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 Commerce Hub's iFrame allows E-commerce merchants to create payment data via a returns a payment nonce `sessionId` (one-time use token). Cardholder data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrame, thereby allowing merchants to offload payment processing of card data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
+### Benefits
+
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+
+Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
+
 #### Transaction Flow
 
 1. The cardholder navigates to checkout page of the merchant's website.
