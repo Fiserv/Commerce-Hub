@@ -31,7 +31,7 @@ Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and s
 
 ### iFrame
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
 
@@ -43,15 +43,21 @@ Commerce Hub accomplishes this by injecting an iFrame into a parent form where c
 
 ### Direct Post
 
-Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's HPP.
+Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's Hosted Payment Page.
 
 **Begin integration with Commerce Hub's [Direct Post].**
 
 ### .JS
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to [tokenize](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 **Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
+
+### Merchant Managed API Only
+
+Allows a merchant an easy and secure way to manage the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+
+**Begin integration with [API Only](?path=docs/Online-Mobile-Digital/API/API-Only.md).**
 
 ---
 
