@@ -15,7 +15,7 @@ The below table identifies the parameters in the `merchantDetails` object.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
-| `tokenType` | *string* |  | | Specific Token Type is assigned to each merchant. e.g. TRANSARMOR |
+| `tokenType` | *string* | 64 | | Specific value to be passed to tokenization platform. e.g. AB01 for TransArmor |
 | `storeId` | *string* |  | | An optional outlet ID for clients that support multiple stores in the same app. |
 | `siteId` | *string* |  | | The location ID or number used to identify the unique site and merchant. |
 | `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. Utilized for clients that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
