@@ -42,7 +42,7 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. 
 
 <!-- theme: example -->
->Street, Postal Code and Cardholder verification cannot be tested at the same time. 
+>Street, Postal Code and Cardholder verification cannot be tested at the same time. The default response of _NONE_ will return for the fields not tested.
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
