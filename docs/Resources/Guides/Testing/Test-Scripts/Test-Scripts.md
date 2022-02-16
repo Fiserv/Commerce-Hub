@@ -45,9 +45,6 @@ A specific response can be triggered by entering a specific `total` in the `amou
 
 A specific [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) response can be triggered by entering a specific `total` in the `amount` object using the test cards below. 
 
-<!-- theme: example -->
->Street, Postal Code and Cardholder verification cannot be tested at the same time. The default response of _NONE_ will return for the fields not tested.
-
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
 |*Visa* | 4012001472472642 | 12/2030 | 777 |
@@ -75,7 +72,7 @@ The dollar amounts between 5070.00 - 5079.00 can be used to trigger the desired 
 A specific [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md) response can be triggered by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5080.00 - 5099.00 can be used to trigger the desired response.
 
 <!-- theme: example -->
->Street, Postal Code and Cardholder verification cannot be tested at the same time. 
+>Street, Postal Code and Cardholder verification cannot be tested at the same time. The default response of _NONE_ will return for the fields not tested.
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
