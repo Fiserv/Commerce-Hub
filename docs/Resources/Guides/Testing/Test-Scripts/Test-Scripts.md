@@ -14,7 +14,7 @@ Commerce Hub allows developers who integrate with our API the ability to trigger
 
 ## Approval Response
 
-A approval response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering any `total` in the `amount` object under $5,000 using the test cards below.
+A approval response can be triggered by entering any `total` in the `amount` object under $5,000 using the test cards below.
 
 | Card Type | Card Number | Expiration Date | Security Code |
 | ----- | ---- | ----------- | ------------ |
