@@ -2,9 +2,13 @@
 tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-errors] 
 ---
 
-# Response Testing
+# Test Response Messages
 
-Commerce Hub Simulator allows users to perform sand box testing using various test scripts for each of the card brands.
+Commerce Hub allows developers to integrate with the API to trigger responses and to ensure that they are handled accordingly. 
+
+<!-- theme: warning -->
+
+> Test documentation provided is intended to be used in the Commerce Hub sandbox environment, for end-to-end certification testing utilize the test scripts located in the developer dashboard.
 
 ---
 
