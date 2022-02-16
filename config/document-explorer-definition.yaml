@@ -57,10 +57,8 @@
       link: docs/Getting-Started/Getting-Started-Online.md
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Hosted Payment Page
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md
-    - title: Payment JS
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
+    - title: Secure Data Capture
+      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Virtual Terminal
       link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
     - title: Wallets and Alt Payments
