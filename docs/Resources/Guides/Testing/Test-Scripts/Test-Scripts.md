@@ -2,7 +2,11 @@
 tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-errors] 
 ---
 
+# Response Testing
+
 Commerce Hub Simulator allows users to perform sand box testing using various test scripts for each of the card brands.
+
+---
 
 ## Approval Response
 
@@ -76,7 +80,6 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 | *Amex* | 341111565369561 | 12/2030 | 7777 |
 | *Discover* | 6011116171399338 | 12/2030 | 777 |
 
-
 ### Test Street Response
 
 To receive a specific `streetMatch` response, pass the specific amount from the table below.
@@ -89,8 +92,6 @@ To receive a specific `streetMatch` response, pass the specific amount from the 
 | $5083.00 | *NO_INPUT_DATA* | Street address not present in the input |
 | Any Amount | *NONE* | Street address not available (Default Response) |
 
----
-
 ### Test Postal Code Response
 
 To receive a specific `postalCodeMatch` response, pass the specific amount from the table below.
@@ -102,8 +103,6 @@ To receive a specific `postalCodeMatch` response, pass the specific amount from 
 | $5087.00 | *NOT_CHECKED* | Postal code verification not done |
 | $5088.00 | *NO_INPUT_DATA* | Postal code not present in the input |
 | Any Amount | *NONE* | Postal code not available (Default Response) |
-
----
 
 ### Test Cardholder Name Response
 
