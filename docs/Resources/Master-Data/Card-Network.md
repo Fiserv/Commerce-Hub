@@ -21,8 +21,10 @@ The below table identifies the parameters in the `visa` object.
 
 |Variable |Type| Maximum Length | Description|
 |------|--------|-------|----------------|
-| `visaBid` | *string* |  | The Business Identifier (BID) provided by Visa to Third Party Services (TPS) |
-| `visaAur` | *string* |  | Agent Unique Account Result (AUAR) provided by Visa to Third Party Services (TPS) in 12 hex digit format. |
+| `VISABID` | *string* | 128 | The Business Identifier (BID) provided by Visa to Third Party Services (TPS) |
+| `VISAAUR` | *string* | 128 | Agent Unique Account Result (AUAR) provided by Visa to Third Party Services (TPS) in 12 hex digit format. |
+| `cardAuthenticationResultCode` | *string* | 1 | Card Authentication Results Code returned by Visa for EMV chip transactions. |
+| `spendQualificationIndicator` | *boolean* |  | A field used by Visa to establish annual point-of-sale spending requirements. |
 
 <!--
 type: tab
@@ -34,8 +36,10 @@ JSON string format for `visa`:
 ```json
 {
   "visa":{
-    "visaBid":"VISA",
-    "visaAur":"12345AD89012"
+    "VISABID":"VISA",
+    "VISAAUR":"12345AD89012",
+    "cardAuthenticationResultCode": "",
+    "spendQualificationIndicator": false
   }
 }
 ```
@@ -61,7 +65,12 @@ The below table identifies the parameters in the `mastercard` object.
 | `bankNetRefNumber` | *string* |  | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message. |
 | `bankNetDate` | *string* |  | A Mastercard generated date for this transaction. MMDD format |
 | `cvvErrorIndicator` | *string* |  | Indicates the CVC Error response data |
+| `transactionEditErrorCode` | *string* |  |  Indicates the track data & POS validation Error in response data. |
 | `transactionIntegrityClass` | *string* |  | Contains the MasterCard provided Transaction Integrity Classification for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
+| `xCodeResponse` | *string* | 6 | Contains the MasterCard provided Transaction Integrity Classification for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
+| `chipCryptoValue` | *string* | 3 | Conditional for Mastercard EMV chip transactions. This value is used to notify the chip that the transaction was unable to go online and is required for batch uploads.' |
+| `cardDataOutputCapability` | *string* | 25 | Identifies the card's capability to output data. |
+| `terminalDataOutputCapability` | *string* | 25 | Identifies the terminal's capability to display response data. |
 
 
 <!--
@@ -78,7 +87,12 @@ JSON string format for `mastercard`:
     "bankNetRefNumber":"string",
     "bankNetDate": "string",
     "cvvErrorIndicator": "string",
-    "transactionIntegrityClass": "string"
+    "transactionEditErrorCode": "PRESENT_TRACK_DATA",
+    "transactionIntegrityClass": "string",
+    "xCodeResponse": "string",
+    "chipCryptoValue": "string",
+    "cardDataOutputCapability": "UNSPECIFIED",
+    "terminalDataOutputCapability": "UNSPECIFIED"
   }
 }
 ```
