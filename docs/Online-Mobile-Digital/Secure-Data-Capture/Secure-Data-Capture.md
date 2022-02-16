@@ -55,7 +55,7 @@ Allows a merchant an easy and secure way to embed a payment form into a website.
 
 ### Merchant Managed API Only
 
-Allows a merchant an easy and secure way to manage the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 **Begin integration with [API Only](?path=docs/Online-Mobile-Digital/API/API-Only.md).**
 
