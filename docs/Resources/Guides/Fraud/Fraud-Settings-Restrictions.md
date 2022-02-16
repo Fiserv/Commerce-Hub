@@ -5,67 +5,42 @@ tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud,
 
 # Transaction Restrictions
 
-The Transaction Restriction settings can be enabled for duplicate transaction detection and restricting refund transactions.
+The Transaction Restriction settings can be enabled for duplicate transaction detection<!-- and restricting refund transactions-->. Restrictions are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) inside of Marketplace. 
 
-Filters are applied by transaction controls inside of Marketplace. Transaction Restrictions are applied per card brand and their respective response value.
+## Duplicate Restrictions
 
-In the Transaction Restriction tab under the Fraud Settings, the settings can be enabled for Duplicate Restrictions.
+Duplicate Restrictions are used to reject duplicate transactions. Enabling on Commercehub allows duplicate checking and will reject duplicate transactions once the specified configuration has been met. The merchant has the option to have duplicate checking calculated from Approved or All transactions. Duplicate checking is based on the following settings; Lockout Time, Timeframe, Transaction Count, Transaction Status and Transaction Type.
 
-## Duplicate Status
+### Lockout Time 
 
-Duplicate Restrictions are used to enable or disable duplicate transactions. Enable on Commercehub allows duplicate checking and will reject duplicate transactions once the specified configuration have been met. The merchant as the option to have duplicate checking calculated (Query) from "Approved Only" transactions (default) or "All Transactions."
+Lockout Time is the timeframe configured for transactions to be locked out when detected and rejected. 
 
-## Lockout Time 
+### Timeframe
 
-Lockout Time is the time frame configured for duplicates to be locked out when detected and rejected. 
+Timeframe is the timeframe configured for duplicates to be detected and rejected. 
 
-## Timeframe
+<!--theme: example-->
+>A five minute timeframe will detect duplicate transactions made within the last five minutes (of when a transaction is processed).
 
-Timeframe is the time frame configured for duplicates to be detected and rejected. For example, a five minute time frame would detect duplicate transactions made within the last five minutes (of when a transaction is processed).
+### Transaction Count 
 
-## Transaction Count 
+Transaction Count is the set amount of transactions that are allowed for processing before duplicates are detected and rejected.
 
-Transaction Count is the set amount of transactions that are processed for duplicates that will be detected and rejected.
+### Transaction Status
 
-## Transaction Status
+Transaction Status determines if approved or all transactions will be checked when determing a duplicate. 
 
-Transaction Status is the status that is displayed for the transaction restrictions. All transactions displays the status of the transactions. Approved displays all of the transactions that have been approved. 
+### Transaction Type
 
-## Transaction Type
+Transactions can be rejected based on the type selected.
 
-Transaction types can be sorted by:
-
-All: All of the restricted transactions
-Cancel: All of the cancelled transactions
-Capture: All of the captured transactions
-Charge: All of the charged transactions
-Credit: All of the credit transactions
-
----
-
-Duplicate Status
-
-Duplicate Status is used to enable or disable duplicate checking. Default is “Unrestricted,” which performs no checks. “Deny All” enables duplicate checking and will reject duplicate transactions once the specified configuration have been met. The merchant as the option to have duplicate checking calculated (Query) from "Approved Only" transactions (default) or "All Transactions."
-
-A duplicate is defined as transactions with the same:
-
-Transaction Type
-Credit Card Number
-Amount
-
-
-Maximum Duplicates
-
-“Maximum Duplications” is the amount of duplicate transactions that are allowed within the specified time frame before the feature will reject subsequent duplicate transactions.
-
-Refund Status
-
-“Refund Status” is used to enable or disable refund volume checking. Default is “Unrestricted,” which performs no checks. “Volume” enables the feature and will prevent Refunds once the specified configuration has been met.
-
-Once the “Volume” option is selected, the "Maximum Refund Count" and the "Maximum Refund Amount" interact with each other. Once one of the limitations have been met, no more refund transactions will be allowed.
-
-For example, if the "Maximum Refund Count" was set to 5 and the "Maximum Refund Amount" to $500, the first limit reached within the last 24 hours will block any other refunds. If you had one refund of $500, you could no longer do any other refunds, and if you had 6 refunds of $50 each, the 6th would not pass, even if the $500 limit had not been reached yet.
-
+| Type | Description |
+|---| ---- |
+| All | All transactions will be checked for duplicates |
+| Cancel | Only cancelled transactions will be checked for duplicates |
+| Capture | Only captured transactions will be checked for duplicates |
+| Charge | Only charges transactions will be checked for duplicates |
+| Credit | Only credit transactions will be checked for duplicates |
 
 
 ---
