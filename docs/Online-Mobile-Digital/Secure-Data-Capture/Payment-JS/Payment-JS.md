@@ -9,6 +9,10 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and form of their website (unlike [Hosted Payment Page](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md) and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions). The JavaScript call sends payment information directly to Commerce Hub and returns a payment nonce `sessionId` (one-time use token). The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
+### Benefits
+
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+
 #### Transaction Flow
 
 1. The cardholder navigates to checkout page of the merchant's website.
@@ -31,7 +35,9 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
-## Next Steps
+---
+
+## See Also
 
 - Create a Payment Request
 - Customize Payment Form
