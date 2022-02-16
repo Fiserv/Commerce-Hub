@@ -35,7 +35,9 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
-## Next Steps
+---
+
+## See Also
 
 - Create a Payment Request
 - Customize Payment Form
