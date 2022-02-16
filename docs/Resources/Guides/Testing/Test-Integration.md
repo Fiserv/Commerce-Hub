@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, t
 
 # Test Response Messages
 
-Commerce Hub allows developers to integrate with the API to trigger responses and to ensure that they are handled accordingly. 
+Commerce Hub allows developers who integrate with our API the ability to trigger responses and to ensure that they are handled accordingly. 
 
 <!-- theme: warning -->
 
