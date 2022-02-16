@@ -197,23 +197,23 @@ The below table contains the valid values for `dataEntrySource` parameter.
 
 | Valid Value | Description |
 |--------|--------|
-| MOBILE_APP | |
-| MOBILE_WEB | |
-| BROWSER_PC | |
-| KIOSK | |
-| CONSOLE | |
-| 3DS_REQUESTOR_INITIATED | |
-| UNSPECIFIED | |
-| ELECTRONIC_PAYMENT_TERMINAL | |
-| AUTOMATED_FUEL_DISPENSING_MACHINE | |
-| UNATTENDED_CUSTOMER_TERMINAL | |
-| ECOMMERCE_CUSTOMER_PRESENT | |
-| MOBILE_TERMINAL | |
-| MOBILE_POS | |
-| ELECTRONIC_CASH_REGISTER | |
-| IVR_VRU | |
-| TICKET_MACHINE | |
-| CALL_CENTER_OPERATOR |  | 
+| MOBILE_APP | The payment source was entered into a mobile app or obtained from a mobile wallet.  |
+| MOBILE_WEB | The payment source was entered into a website on a mobile device or obtained from a digital wallet. |
+| BROWSER_PC | The payment source was entered into a website on a personal computer or obtained from a digital wallet. |
+| KIOSK | The payment source was entered into a kisok or obtained from a mobile wallet. |
+| CONSOLE | Gaming console.... |
+| 3DS_REQUESTOR_INITIATED | The payment source initiated by the cuatomer using 3-D Secure. |
+| UNSPECIFIED | The data entry source is unknown or left blank. |
+| ELECTRONIC_PAYMENT_TERMINAL | black box terminal/........ |
+| AUTOMATED_FUEL_DISPENSING_MACHINE | Unattended fuel station.......... |
+| UNATTENDED_CUSTOMER_TERMINAL | Unattended customer terminal....... |
+| ECOMMERCE_CUSTOMER_PRESENT | The ecommerce transaction where the payment source is entered at the merchant's location. |
+| MOBILE_TERMINAL | black box terminal/.......works from cellular |
+| MOBILE_POS | Point of sales terminal that works on wifi. |
+| ELECTRONIC_CASH_REGISTER | Point of sales terminal that allows cash transaction.  |
+| IVR_VRU | Interactive Voice Response(IVR), Voice Response Unit (VRU) |
+| TICKET_MACHINE | A machine to buy the tickets. |
+| CALL_CENTER_OPERATOR | The payment source entered by a call center operator when taking an order from a customer. | 
 
 ---
 
