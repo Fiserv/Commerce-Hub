@@ -27,7 +27,7 @@ A approval response can be triggered when testing a Commerce Hub integration in 
 
 ## Specific Response
 
-A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5001.00 - 5999.00 can be used to trigger the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) or [error code](?path=docs/Resources/Guides/Response-Codes/Error.md).
+A specific response can be triggered by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5001.00 - 5999.00 can be used to trigger the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) or [error code](?path=docs/Resources/Guides/Response-Codes/Error.md).
 
 <!-- theme: example -->
 >To receive a response of 006 Declined, submit 5006.00 as the total. 
@@ -43,7 +43,7 @@ A specific response can be triggered when testing a Commerce Hub integration in 
 
 ## Security Code
 
-A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. 
+A specific [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) response can be triggered by entering a specific `total` in the `amount` object using the test cards below. 
 
 <!-- theme: example -->
 >Street, Postal Code and Cardholder verification cannot be tested at the same time. The default response of _NONE_ will return for the fields not tested.
@@ -72,7 +72,7 @@ The dollar amounts between 5070.00 - 5079.00 can be used to trigger the desired 
 ---
 ## Address Verification
 
-A specific response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5080.00 - 5099.00 can be used to trigger the desired response.
+A specific [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md) response can be triggered by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5080.00 - 5099.00 can be used to trigger the desired response.
 
 <!-- theme: example -->
 >Street, Postal Code and Cardholder verification cannot be tested at the same time. 
