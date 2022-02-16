@@ -25,11 +25,9 @@ The below table identifies the parameters in the `card` object.
 | `bin` | *String* | 8 |  Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
 | `last4` | *String* | 4 |  Last four digits of the Primary Account Number (PAN) |
 | `scheme` | *String* | 256 |  Card brand received in the transaction response |
-
-<!---
 | `beginningBalance` | *number* | 18,3 | Beginning card balance received in the transaction response |
 | `endingBalance` | *number* | 18,3 | Ending card balance received in the transaction response |
--->
+
 
 <!--
 type: tab
@@ -48,7 +46,10 @@ JSON string format for `card`:
       "securityCode": "111",
       "securityCodeIndicator": "PROVIDED",
       "bin": "400555",
-      "last4": "0019"
+      "last4": "0019",
+      "scheme": "VISA",
+      "beginningBalance": "1.00",
+      "endingBalance": "0.10"
    }
 }
 ```
