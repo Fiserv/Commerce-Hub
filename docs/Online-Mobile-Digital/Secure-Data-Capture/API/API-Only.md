@@ -30,5 +30,4 @@ The following recommendations are to limit potential for fraudulent activity on 
 ---
 
 ## See Also
-- iFrame Integration
-- JS Integration
+- Secure Data Capture
