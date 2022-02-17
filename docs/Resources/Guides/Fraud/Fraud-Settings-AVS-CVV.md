@@ -32,6 +32,35 @@ Filters are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/
 <!-- theme: Example -->
 >To reject all Mastercard transactions where the `securityCodeMatch` is *NO_MATCH* or `securityCodeResponse` is *"N"*, select the CVV No Match (N) checkbox.
 
+### AVS Filters
+
+| AVS Filters | Variable | 
+| ----- | ------ | 
+| AVS Visa | `avsvisa` | 
+| AVS MasterCard | `avsmastercard` | 
+| AVS Amex | `avsamex` |  
+| AVS Discover | `avsdiscover` | 
+
+### AVS Visa Features
+
+| AVS Filters | Variable | 
+| ----- | ------ | 
+| Address Not Verified (U) | |
+| Address Match and 5or9 Digit Postal Match for US Only (Y)	| 
+| Address Match Postal Incompatible Format (B)	| |
+| Address Match and Postal Mismatch (A)	| |
+| Address Mismatch and Postal Match (Z)	| |
+| Address and Postal Incompatible Format (C ) | |
+| Address and Postal Match UK Only (F) | |
+| Address Mismatch and Postal Mismatch (N)	| |
+| Issuer No Support Not Verified International (G) | |
+| Not Supported (S)	 | |
+| Not Verified (I)	| |
+| Postal Match and Address Incompatible Format (P)	| |
+| Retry System Unavailable (R )	 | |
+| Street Addresses Postal Codes Match for International Only (M)	| |
+| Street Address Postal Code Match for International Only (D) | |
+
 ---
 
 ## See Also
