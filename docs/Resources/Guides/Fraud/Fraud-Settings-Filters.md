@@ -5,12 +5,27 @@ tags: [carat, commerce-hub, enterprise, fraud, card-not-present, fraud-filters]
 
 # Fraud Filters
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include Fraud Filter support and the documents related to the features will be released soon.
+
 Fraud filters enable the merchants to configure filters to control the fraudulent transactions from different channels and across multiple payment methods. Each charge request will run through the configured [positive](#positive-filters) and [negative](#negative-filters) rules to determine whether the payment should be accepted or rejected.
 
 The fraud filters configuration is flexible and completely customizable by the merchant and can be setup based on industry, product, sales or promotions, channel, customer details and store abilities.
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Fraud Filter support and the documents related to the features will be released soon.
+
+---
+
+## Setting Attributes
+
+Fraud Filters are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) inside of Marketplace. Filters are applied by attributes and their respective value.
+
+### Add Attributes
+
+Type the attribute in the applicable search box and click the green plus button. Once all attributes are added, click the Save button at the bottom of the page. 
+
+### Delete Attributes
+
+Type the attribute in the applicable search box, select it and click the red minus button. Once all desired attributes are deleted, click the Save button at the bottom of the page. 
 
 ---
 
@@ -21,10 +36,10 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 <!-- theme: info -->
 > Positive filters will override negative filters
 
-| Filter | Variable | Case Sensitive |
+| Filter | Variable | Attribute Criteria  |
 | ----- | ------ | ----- |
-| Card Number | `cardData` | N/A |
-| Customer Reference | `customerId` | NO |
+| Card Number | `cardData` | No dashes or spaces |
+| Customer Reference | `customerId` | Not case sensitive |
 
 ---
 
@@ -32,21 +47,21 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 
 Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
 
-| Filter | Variable | Case Sensitive | 
+| Filter | Variable | Attribute Criteria | 
 | ----- | ------ | ----- |
-| Billing Address | `billingAddress` | NO |
-| Cardholder Name to block | `cardholdernametoblock` |  |
-| Add/change card numbers to block | `addchangecardnumberstoblock` |  |
-| Country Profiles | `countryprofiles` | NO |
-| Credit BIN Block | `creditbinblock` |  |
-| Customer Reference to block | `customerreferencetoblock` | |
-| Debit BIN Block | `debitbinblock` | N/A |
-| Domain Name to block | `domainnametoblock` |  |
-| Email address/domain | `emailaddressdomain` | |
-| IP Addresses to block | `ipaddressestoblock` | |
-| Lockout Time | `lockouttime` | |
-| Risk Setting | `risksetting` | |
-| Change Country profile for VT | `changecountryprofileforvt` | |
+| Billing Address | | Not case sensitive |
+| Cardholder Name to block | |  |
+| Add/change card numbers to block |  |  |
+| Country Profiles |  | ? |
+| Credit BIN Block |  | N/A |
+| Customer Reference to block |  | |
+| Debit BIN Block |  | N/A |
+| Domain Name to block |  |  |
+| Email address/domain |  | |
+| IP Addresses to block |  | |
+| Lockout Time |  | |
+| Risk Setting |  | |
+| Change Country profile for VT |  | |
 
 
 ---
