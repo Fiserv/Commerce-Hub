@@ -46,7 +46,7 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | IP Addresses to block | `ipaddressestoblock` | |
 | Lockout Time | `lockouttime` | |
 | Risk Setting | `risksetting` | |
-| Change Country profile for VT | |
+| Change Country profile for VT | `changecountryprofileforvt` | |
 
 
 ---
