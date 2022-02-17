@@ -32,7 +32,7 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 
 Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
 
-| Filter | Variable | Case Sensitive |
+| Filter | Variable | Case Sensitive | 
 | ----- | ------ | ----- |
 | Billing Address | `billingAddress` | NO |
 | Cardholder Name to block | `cardholdernametoblock` |  |
