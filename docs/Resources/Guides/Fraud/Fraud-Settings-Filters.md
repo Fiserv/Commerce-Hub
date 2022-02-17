@@ -38,25 +38,16 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | Cardholder Name to block | `cardholdernametoblock` |  |
 | Add/change card numbers to block | `addchangecardnumberstoblock` |  |
 | Country Profiles | `countryprofiles` | NO |
+| Credit BIN Block | `creditbinblock` |  |
+| Customer Reference to block | `customerreferencetoblock` | |
+| Debit BIN Block | `debitbinblock` | N/A |
+| Domain Name to block | `domainnametoblock` |  |
+| Email address/domain | `emailaddressdomain` | |
+| IP Addresses to block | `ipaddressestoblock` | |
+| Lockout Time | `lockouttime` | |
+| Risk Setting | `risksetting` | |
+| Change Country profile for VT | |
 
-| Card Number | `cardData` | N/A |
-| Customer Reference | `customerId` | NO |
-| Billing Address | `billingAddress` | NO |
-| Cardholder Name |`nameOnCard` | NO |
-| Domain Name | `hostName` | NO |
-| IP/Class C Address | `ipAddress` | N/A |
-| Country | `country` | NO |
-| Email Address/Domain | `email` | NO |
-| BIN | `cardData` | NO |
-| Card Number | `cardData` | N/A |
-| Customer Reference | `customerId` | NO |
-| Billing Address | `billingAddress` | NO |
-| Cardholder Name |`nameOnCard` | NO |
-| Domain Name | `hostName` | NO |
-| IP/Class C Address | `ipAddress` | N/A |
-| Country | `country` | NO |
-| Email Address/Domain | `email` | NO |
-| BIN | `cardData` | NO |
 
 ---
 
