@@ -61,6 +61,27 @@ Filters are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/
 | Street Addresses Postal Codes Match for International Only (M)	| |
 | Street Address Postal Code Match for International Only (D) | |
 
+### CVV Filters
+
+| CVV Filters | Variable | 
+| ----- | ------ | 
+| CVV Visa | `cvvvisa` | 
+| CVV MasterCard | `cvvmastercard` | 
+| CVV Amex | `cvvamex` |  
+| CVV Discover | `cvvdiscover` | 
+
+### CVV Visa Features
+
+| CVV Filters | Variable | 
+| ----- | ------ | 
+| CVV2 CVC2 CID Match (M)	| |
+| CVV Not Processed (P)	| |
+| CVV No Match (N)	| |
+| CVV Required Error (S) | |	
+| Server Response Error (X)	| |
+| Unknown Issuer (U) | |
+
+
 ---
 
 ## See Also
