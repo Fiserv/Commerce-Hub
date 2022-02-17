@@ -4,6 +4,9 @@ tags: [carat, commerce-hub, enterprise, directed-routing, network, processor]
 
 # Directed Routing
 
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include directed routing support and the documents related to the feature will be updated soon.
+
 Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
 
 
