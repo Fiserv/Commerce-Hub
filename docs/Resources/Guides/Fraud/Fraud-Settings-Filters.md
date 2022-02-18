@@ -38,8 +38,8 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 
 | Filter | Variable | Attribute Criteria  |
 | ----- | ------ | ----- |
-| Card Number | `cardData` | No dashes or spaces |
-| Customer Reference | `customerId` | Not case sensitive |
+| Card # to unblock | `cardData` | No dashes or spaces |
+| Customer Reference(s) | `customerId` | Not case sensitive |
 
 ---
 
@@ -47,20 +47,23 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 
 Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
 
+- **Lockout Time:** Lockout time fraud filter help merchant to configure how long any automatically blocked transaction will continue to be blocked from same card. The cardholder can then attempt approval again when the lock out time has expired.
+- **Risk Setting:** Risk Settings (Fraud Score Threshold), fraud filter enablea a merchant to setup the transaction fraud analysis acceptable score range. The range is 1-1000, with the default being 500.
+- **Change Country profile for VT:**
+
 | Filter | Variable | Attribute Criteria | 
 | ----- | ------ | ----- |
 | Billing Address | | Not case sensitive |
 | Cardholder Name to block | |  |
-| Add/change card numbers to block |  |  |
+| Add/change card numbers to block | `cardData` | No dashes or spaces  |
 | Country Profiles |  | ? |
-| Credit BIN Block | 6-11  | N/A |
+| Credit BIN Block | `cardData` | 6-11 digit BIN. Will override the negative and positive card number lists. |
 | Customer Reference to block |  | |
-| Debit BIN Block |  | N/A |
-| Domain Name to block |  |  |
+| Debit BIN Block | `cardData`  | 6-11 digit BIN. Will override the negative and positive card number lists. |
+| Domain Name to block | `ecomURL` |  |
 | Email address/domain |  | |
 | IP Addresses to block |  | |
-| Lockout Time |  | |
-| Risk Setting |  | |
+
 | Change Country profile for VT |  | |
 
 
