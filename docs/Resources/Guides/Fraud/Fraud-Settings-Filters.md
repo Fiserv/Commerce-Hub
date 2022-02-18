@@ -53,7 +53,7 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | Cardholder Name to block | |  |
 | Add/change card numbers to block |  |  |
 | Country Profiles |  | ? |
-| Credit BIN Block |  | N/A |
+| Credit BIN Block | 6-11  | N/A |
 | Customer Reference to block |  | |
 | Debit BIN Block |  | N/A |
 | Domain Name to block |  |  |
