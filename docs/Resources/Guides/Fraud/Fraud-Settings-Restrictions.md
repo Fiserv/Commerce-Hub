@@ -7,6 +7,8 @@ tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud,
 
 The Transaction Restriction settings can be enabled for duplicate transaction detection<!-- and restricting refund transactions-->. Restrictions are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) inside of Marketplace. 
 
+---
+
 ## Duplicate Restrictions
 
 Duplicate Restrictions are used to reject duplicate transactions. Enabling on Commercehub allows duplicate checking and will reject duplicate transactions once the specified configuration has been met. The merchant has the option to have duplicate checking calculated from Approved or All transactions. Duplicate checking is based on the following settings; Lockout Time, Timeframe, Transaction Count, Transaction Status and Transaction Type.
