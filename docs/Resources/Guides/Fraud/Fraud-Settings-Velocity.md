@@ -49,9 +49,16 @@ Minimum Sles $ Features
 
 ## Action
 
-Currency
+Set this attribute to decline to reject a minimum sale amount.
 
-Minimum Limit
+## Currency
+
+Set this attribute to the type of currency that you want to use for the minimum sale amount.
+
+## Minimum Limit
+
+Set the minimum limit amount that you want to process for this attribute. 
+
 ---
 
 ## See Also
