@@ -22,7 +22,7 @@ title: source
 The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ---------| --------- |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentTrack* for Magnetic stripe transactions |
 | `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
 | `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
@@ -37,7 +37,7 @@ title: encryptionData
 The below table identifies the required parameters in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | --------| ---------- |
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target could be TRACK_1, TRACK_2, or BOTH |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
