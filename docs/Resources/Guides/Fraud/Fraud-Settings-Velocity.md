@@ -58,9 +58,11 @@ Attributes determine what actions should be taken based on the velocity settings
 
 | Attribute | Description |
 |---|----|
-| Action | Set this attribute to decline or reject a minimum sale amount |
-| Currency | Set this attribute to the type of currency that you want to use for the minimum sale amount |
-| Minimum Limit | Set the minimum limit amount that you want to process for this attribute |
+| Action | Action to take on the transaction based on the attributes selected |
+| Currency | Currency to apply to this velocity control |
+| Duration | Defines the length of time long the velocity control will verify the transaction history |
+| Minimum Limit | Minimum limit allowed to process, any transaction under the limit will take the action selected |   
+| Maximum Limit | Maximum limit allowed to process, any transaction over the limit will take the action selected | 
 
 
 ---
