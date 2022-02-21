@@ -58,18 +58,10 @@ Attributes determine what actions should be taken based on the velocity settings
 
 | Attribute | Description |
 |---|----|
-| Action | 
-### Action
+| Action | Set this attribute to decline or reject a minimum sale amount |
+| Currency | Set this attribute to the type of currency that you want to use for the minimum sale amount |
+| Minimum Limit | Set the minimum limit amount that you want to process for this attribute |
 
-Set this attribute to decline or reject a minimum sale amount.
-
-### Currency
-
-Set this attribute to the type of currency that you want to use for the minimum sale amount.
-
-## Minimum Limit
-
-Set the minimum limit amount that you want to process for this attribute. 
 
 ---
 
