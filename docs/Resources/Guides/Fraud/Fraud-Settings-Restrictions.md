@@ -37,7 +37,7 @@ Transaction Status determines if approved or all transactions will be checked wh
 Transactions can be rejected based on the type selected.
 
 | Type | Description |
-|---| ---- |
+|---| ---- | 
 | All | All transactions will be checked for duplicates |
 | Cancel | Only cancelled transactions will be checked for duplicates |
 | Capture | Only captured transactions will be checked for duplicates |
