@@ -83,7 +83,6 @@ title: Response
 ##### Example of a cancel (200: Success) response.
 
 <!-- theme: info -->
-
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 
 ```json
