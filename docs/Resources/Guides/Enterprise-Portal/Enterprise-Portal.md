@@ -14,7 +14,7 @@ The Enterprise Portal also provides access to Commerce Hub's marketplace that al
 
 ## Virtual Terminal
 
-Virtual Terminal is a web-based application that allows a merchant to process electronic payments by telephone, mail order, fax and e-mail through the [Virtual POS](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md) and [Quick Key](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Quick-Key.md) functionality.
+Virtual Terminal is a web-based application that allows a merchant to process electronic payments by telephone, mail order, fax and e-mail through the [Virtual POS](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md) and [Quick Key](?path=docs/Resources/Guides/Enterprise-Portal/Quick-Key.md) functionality.
 
 ---
 
