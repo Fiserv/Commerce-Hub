@@ -62,7 +62,7 @@
 #    - title: Payment JS
 #      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
     - title: Virtual Terminal
-      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
+      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md 
     - title: Wallets and Alt Payments
       sections:
       - title: Integrations
