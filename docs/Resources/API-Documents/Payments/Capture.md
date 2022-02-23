@@ -117,7 +117,7 @@ title: Response
       }
    },
    "paymentReceipt":{
-      "approvedAmount":{
+      "approvedAmount":{ 
          "total": 12.04,
          "currency": "USD"
       },
