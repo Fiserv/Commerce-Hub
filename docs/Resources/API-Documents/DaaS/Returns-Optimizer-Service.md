@@ -154,7 +154,7 @@ title: Response
 ##### Example of a Returns Optimizer response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for additional examples.
 
 ```json
 {
