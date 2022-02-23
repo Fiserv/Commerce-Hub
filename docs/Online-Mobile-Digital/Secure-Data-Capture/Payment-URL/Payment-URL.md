@@ -77,7 +77,7 @@ title: Response
 ##### Example of Payment Url (200: Success) Response.
 
 <!-- theme: info -->
-> See [Error Responses](#error-responses) for additional status.
+>  See [Response Handling](#response-handling) for additional status. 
 
 ```json
 
@@ -183,7 +183,7 @@ title: Response
 
 ##### Example of Payment URL Delete (200: Success) Response.
 <!-- theme: info -->
-> See [Error Responses](#error-responses) for additional status.
+> See [Response Handling](#response-handling) for additional status.
 
 ```json
 
