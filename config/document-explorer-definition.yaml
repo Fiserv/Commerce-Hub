@@ -60,7 +60,7 @@
     - title: Secure Data Capture
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Virtual Terminal
-      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
+      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md 
     - title: Wallets and Alt Payments
       sections:
       - title: Integrations
