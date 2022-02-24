@@ -131,10 +131,6 @@ Submit a charge or tokenization request after a successful response which identi
 >**POST** `/payments/v1/charges`
 
 
-<!--
-type: tab
-title: charges
--->
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/tokens`
