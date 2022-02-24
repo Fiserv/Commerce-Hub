@@ -51,7 +51,7 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 <!-- theme: info -->
 
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
