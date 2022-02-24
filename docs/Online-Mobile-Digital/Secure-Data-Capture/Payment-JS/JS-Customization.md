@@ -1,10 +1,11 @@
+---
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+---
 # Payment JS Customization
 
-# JS Customization
+The JS elements are set by default based on the ADA guidelines. Commerece Hub allows the merchant to customize the styling by setting a flag and apply their own styling. The merchant can override the elements of the JS including [language](#languages), and the [theme and font](#theme-and-font).
 
-Commerce Hub supports customization of JS elements to match the merchant's website for a seamless payment and checkout experience. The merchant can iFrame elements override the iFrame elements and submits the request.
-
-For SAQ-A-EP the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines) However, if you would wish to customize the styling you can set a flag to ignore the default styling and apply your own:
+---
 
 ## Languages
 
@@ -60,12 +61,14 @@ The following example shows all the text labels that can be overridden for a par
 
 ---
 
-## CSS
+
+## Theme and Font
 
 For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
 
-#### Field Overrides
-There are 5 fields that can be overridden:
+
+#### Overriding Elements
+The following elements can be overridden:
 
 - **Primary Color Theme:** changes the main color, i.e. highlight color, font color, button color (when enabled). Hexadecimal only
 - **Contrast Color Theme:** button font color. Hexadecimal only
@@ -109,5 +112,6 @@ There are 5 fields that can be overridden:
 
 ## See Also
 
-- Payment JS Integration
-- iFrame Request Form
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
+- [iFrame JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
+- [iFrame Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
