@@ -77,7 +77,7 @@ title: Response
 ##### Example of Payment Url (200: Success) Response.
 
 <!-- theme: info -->
->  See [Response Handling](#response-handling) for additional status. 
+>  See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
