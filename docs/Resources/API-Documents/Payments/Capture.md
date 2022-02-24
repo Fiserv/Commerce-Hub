@@ -36,7 +36,7 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: merchantDetails
+title: merchantDetails 
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
