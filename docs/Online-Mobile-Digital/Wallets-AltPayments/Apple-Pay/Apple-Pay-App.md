@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Apple Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
 
-## How it Works
+### How it Works
 
 1. The customer selects checkout from the merchant's app and the merchant’s payment form displays.
 2. The app calls the Apple Pay framework to obtain the encrypted wallet data.
