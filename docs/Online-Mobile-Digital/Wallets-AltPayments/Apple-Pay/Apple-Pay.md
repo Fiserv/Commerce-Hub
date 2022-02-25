@@ -13,7 +13,7 @@ Apple Pay is a digital wallet platform and online payment system developed by Ap
 
 ## Integration Methods
 
-Build an integration that to make an Apple Pay payment.
+Build an integration that to accept an Apple Pay payment.
 
 <!-- type: row -->
 
