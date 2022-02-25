@@ -37,7 +37,7 @@ Configure the environment to accept [Google Pay on the web](https://developers.g
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -50,7 +50,7 @@ The below table identifies the required parameters in the `source` object.
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
----
+<!-- type: tab-end -->
 
 ### Payload Example
 
@@ -59,7 +59,7 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -90,7 +90,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
@@ -98,6 +97,7 @@ title: Response
 <!-- theme: info -->
 
 > See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+
 ```json
 {
    "gatewayResponse":{
