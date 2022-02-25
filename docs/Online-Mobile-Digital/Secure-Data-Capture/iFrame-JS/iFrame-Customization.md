@@ -1,9 +1,9 @@
 ---
 tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
 ---
-# iFrame JS Customization
+# iFrame Customization
 
-Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame included including [language](#languages), and the [theme and font](#theme-and-font).
+Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [language](#languages), and the [theme and font](#theme-and-font).
 
 ---
 

@@ -120,20 +120,28 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 
 ## Step 3: Submit Request
 
-Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request.
+Submit a charge or tokenization request after a successful response which identifies the card data is captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request. 
 
 <!-- theme: info -->
-> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
+>If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
+
 
 ### Endpoint
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
+
+
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/tokens`
 
 
 ### Payload Example
+
+<!-- theme: info -->
+> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+
 
 <!--
 type: tab
