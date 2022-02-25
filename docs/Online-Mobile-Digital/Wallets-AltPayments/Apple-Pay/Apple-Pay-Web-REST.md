@@ -9,7 +9,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
-## How it Works
+### How it Works
 
 1. The customer selects checkout from the merchant's website and the merchant’s payment form displays.
 2. The customer selects Apple Pay and the Apple Pay payment form displays.
