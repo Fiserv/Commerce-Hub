@@ -4,6 +4,23 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 # Google Pay: In-App Integration
 
+Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Google Pay. The merchants would need to setup their own server for secure communication with Google Pay. The merchant will host the payment processing on their server and has full control over the look and feel.
+
+<!-- theme: warning -->
+> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+
+### How it Works
+
+1. Customer selects checkout from the merchant's website.
+2. Customer then presented with the merchant's payment form.
+3. Customer selects Google Pay and then redirected to the Google Pay payment form.
+4. Customer completes the google pay form and then redirected to the merchant's website.
+5. Customer selects to complete the transaction.
+6. Merchant submits the encrypted Google Pay payload to Commerce Hub.
+7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
+
+---
+
 ## Step 1: Configure Google Pay
 
 Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler, etc.
