@@ -203,7 +203,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
