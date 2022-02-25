@@ -20,9 +20,10 @@ The below table identifies the parameters in the `error` object.
 | `field` | *string* | 256 | The property or attribute associated with the error |
 | `message` | *string* | 256 | Information specific to a property or attribute |
 
-<!--
+
+<!-- 
 type: tab
-title: JSON Example
+titles: JSON Example, Error Response
 -->
 
 JSON string format for `error`:
@@ -46,7 +47,6 @@ JSON string format for `error`:
 
 <!--
 type: tab
-title: Error Response
 -->
 
 ##### Example of a charge (400: Bad Request) response.
