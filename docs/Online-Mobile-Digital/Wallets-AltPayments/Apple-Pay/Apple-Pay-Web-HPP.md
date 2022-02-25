@@ -9,8 +9,6 @@ tags: [carat, commerce-hub, enterprise, integration-methods, hosted-payment-page
 
 Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
 
----
-
 ## How it Works
 
 1. The customer selects checkout from the merchant's website and Commerce Hub's secure Hosted Payment Page displays.
