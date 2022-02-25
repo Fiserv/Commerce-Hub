@@ -3690,16 +3690,16 @@ components:
     PaymentEMVHDRequest:
       value:
         amount:
-          total: 10.8
+          total: 60
           currency: USD
         source:
           sourceType: PaymentEMV
-          emvData: 9F1A020840950500000080009A031604289F2701808407A00000000410109F3704EEDC585A9F3602000382021B809F34033F0002500A4D415354455243415244DF0201099C01009F2608956FA33B281C3AD69F3303E008085F3401129F3901079F02060000000001009F03060000000000009F0607A00000000410109F3501225F2A0208404F07A00000000410109F10120114A14003020000000000000000000000FF
+          emvData: 9F03060000000000009F5301529F2608453917CB42536AED820278009F360206019F34031F00029F02060000000060009F2701808407A00000000310109F100706011203A000029F3303E098C89F1A0201249F1E084B553030303030339A032104059F350125950500800080005F2A0201245F24032212315F3401019F4104000000059F3901059C01009F37040DC7201A4F07A00000000310109F0607A0000000031010
           encryptionData:
             encryptionType: ON_GUARD
             encryptionTarget: TRACK_2
-            encryptionBlock: 6796867212329053=03538407821768469
-            keyId: FFFF9999990217A000170114
+            encryptionBlock: 7328103867958912=48754338018216697
+            keyId: FFFF10970000000003320114
             deviceType: INGENICO
         transactionDetails:
           captureFlag: false
@@ -3707,7 +3707,7 @@ components:
           origin: POS
           posEntryMode: ICR_RELIABLE
           posConditionCode: CARD_PRESENT
-          terminalTimestamp: '2021-12-01T08:40:48Z'
+          terminalTimestamp: '2022-02-17T15:56:48Z'
           additionalPosInformation:
             dataEntrySource: MOBILE_TERMINAL
             posFeatures:
@@ -3715,17 +3715,14 @@ components:
               pinAuthenticationCapability: UNSPECIFIED
         merchantDetails:
           merchantId: '100009000000035'
-          terminalId: '10000001'
-          tokenType: 'AB01'
+          terminalId: '10000002'
+          tokenType: '1174'
         additionalDataCommon:
           directedRouting:
             processors:
-              - code: FISERV
+              - code: NASHVILLE
                 platform: NORTH
                 priority: PRIMARY
-        networkDetails:
-          network:
-            network: Visa
     PaymentEMVRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3774,8 +3771,9 @@ components:
             keyId: FFFF10970000000003FD0114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100009000000041'
-          tokenType: 'AB01'
+          merchantId: '100009000000035'
+          terminalId: '10000002'
+          tokenType: '1174'
     PaymentEMVInfoRequest:
       value:
         source:
@@ -3836,78 +3834,75 @@ components:
           transactionState: AUTHORIZED
           transactionOrigin: POS
           transactionProcessingDetails:
-            orderId: CHG01864c3cb65c824d99b7f297505f914605
-            transactionTimestamp: '2021-11-30T21:26:14.90396Z'
-            apiTraceId: 635866b3fc244917aa864fbc5baaae18
-            clientRequestId: '4324974'
-            transactionId: 635866b3fc244917aa864fbc5baaae18
+            orderId: CHG01d86d34de7a834aeda8d12cb91a22f486
+            transactionTimestamp: '2022-02-17T20:57:15.963521Z'
+            apiTraceId: e524c0d514b546f48197a74ed468b7b6
+            clientRequestId: '8594138'
+            transactionId: e524c0d514b546f48197a74ed468b7b6
         source:
           sourceType: PaymentEMV
           card:
             expirationMonth: '12'
-            expirationYear: '2024'
-            bin: '401200'
-            last4: '0026'
+            expirationYear: '2022'
+            bin: '476173'
+            last4: '0010'
             scheme: Visa
+          emvData: 8a0230309f3602060191083789367800820000
         paymentReceipt:
           approvedAmount:
-            total: 10.80
+            total: 60
             currency: USD
           processorResponseDetails:
             approvalStatus: APPROVED
-            approvalCode: OK123C
-            referenceNumber: 4fbc5baaae18
+            approvalCode: '714073'
+            referenceNumber: a74ed468b7b6
+            processor: NASHVILLE.NORTH
             networkRouted: VISA
             networkInternationalId: '0001'
             responseCode: '000'
             responseMessage: Approved
             hostResponseCode: '00'
-            hostResponseMessage: 'APPROVAL '
+            hostResponseMessage: 'APPROVAL        '
             bankAssociationDetails:
               associationResponseCode: '00'
             additionalInfo:
-              - name: Nashville.posEntryMode
-                value: '90'
-              - name: Nashville.pinAuthenticationCapability
-                value: '1'
-              - name: Nashville.posConditionCode
-                value: '00'
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: ARAyIAHvv70O77+9AgIAAAAAAAAAYAACFyBXFgASIgABAGE3NGVkNDY4YjdiNjcxNDA3MzAwMDE0ODQ1NDkAGe+/vQIwMO+/vTYCBgHvv70IN++/vTZ4AO+/vQAAAgUASDE0QTc1MjA0ODc1NDM2MDk4NDA0NDEgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMAAYMjJBUFBST1ZBTCAgICAgICAgAAZWSUNSQSAAIEVWMDIyMDEcMDQyMjEyMzEcMDUyAGZTRFRDMDE1OTAwMTExMDAwMDAwMDAwUkkwMTUwMDAwMDAwMDAwMDAwMDBOTDAwNFZJU0FUWTAwMUNBUjAwNFYwMDAANUFSQ0kwMDNVTktDUDAwMT9EUDAwMUFSQzAwMjAwQ0IwMDFW
         transactionDetails:
           captureFlag: false
-          retrievalReferenceNumber: 4fbc5baaae18
+          processingCode: '000000'
+          retrievalReferenceNumber: a74ed468b7b6
         transactionInteraction:
-          posEntryMode: MAG_STRIPE
+          posEntryMode: ICR_RELIABLE
           posConditionCode: CARD_PRESENT
-          terminalTimestamp: '2021-11-02T12:35:42Z'
+          terminalTimestamp: '2022-02-17T15:56:48Z'
           additionalPosInformation:
-            stan: '000002'
-            dataEntrySource: MOBILE_POS
-          authorizationCharacteristicsIndicator: E
+            stan: '001222'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: UNSPECIFIED
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+          authorizationCharacteristicsIndicator: A
+          hostPosConditionCode: '00'
         merchantDetails:
-          tokenType: 'AB01'
-          terminalId: '10000001'
-          merchantId: '100009000000090'
-        additionalDataCommon:
-          directedRouting:
-            network: VISA
-            cardFunction: CREDIT
-            processors:
-              - code: FISERV
-                platform: NORTH
-                priority: PRIMARY
-              - code: FISERV
-                platform: NORTH
-                priority: FINAL
-          customFields:
-            - key: processorResponse
-              value: ARAyIAHvv70O77+9AAIAAAAAAAAAEFYRMCEmFQAAAgABADRmYmM1YmFhYWUxOE9LMTIzQzAwMDE0OTQ3MzQCBQBIMTRFMDExMzM0NzY4NDQwODU1RzQzMiAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwABgyMkFQUFJPVkFMICAgICAgICAABlZJQ1JDIAAHRVYwMjEwMQBmU0RUQzAxNTkwMDExMDAwMDAwMDAwMFJJMDE1MDAwMDAwMDAwMDAwMDAwTkwwMDRWSVNBVFkwMDFDQVIwMDRWMDAwAEhBUkJOMDA4VVNBIEJhbmtDSTAwM1VTQUNQMDAxSERQMDAxQ1JDMDAyMDBDQjAwMVY=
+          tokenType: '1174'
+          terminalId: '10000002'
+          merchantId: '100009000000035'
+        additionalDataCommon: {}
         networkDetails:
           network:
             network: Visa
-          cardLevelResultCode: 'CRC '
-          validationCode: G432
+            cardAuthenticationResultCode: '2'
+          cardLevelResultCode: A
+          validationCode: '0441'
+          transactionIdentifier: '752048754360984'
+        cardDetails:
+          brand: V
+          brandProductId: '?'
+          detailProductId: A
+          issuerCountry: UNK
         paymentTokens:
-          - tokenData: '9189080250240026'
+          - tokenData: '9613142534200010'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
@@ -3991,13 +3986,13 @@ components:
       value:
         gatewayResponse:
           transactionProcessingDetails:
-            orderId: CHG0101e85dbe491247cd8327a2b4ecdfea0f
-            transactionTimestamp: '2022-01-05T17:42:46.626544Z'
-            apiTraceId: 3c08107f270d4a6e9d649fa259bd7d0d
-            clientRequestId: '5498158'
-            transactionId: 3c08107f270d4a6e9d649fa259bd7d0d
+            orderId: CHG0152c60a0a11d4433397a62aefc1a62af4
+            transactionTimestamp: '2022-02-17T20:52:29.405215Z'
+            apiTraceId: 77d39f42e50c40d2ac2d56751e296f10
+            clientRequestId: '5759843'
+            transactionId: 77d39f42e50c40d2ac2d56751e296f10
         paymentTokens:
-          - tokenData: '9639819952240026'
+          - tokenData: '1079740327790026'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
@@ -4073,7 +4068,7 @@ components:
           origin: POS
           posEntryMode: MAG_STRIPE
           posConditionCode: CARD_PRESENT
-          terminalTimestamp: '2021-12-01T12:02:48Z'
+          terminalTimestamp: '2022-02-17T16:17:48Z'
           additionalPosInformation:
             dataEntrySource: MOBILE_TERMINAL
             posFeatures:
@@ -4081,17 +4076,14 @@ components:
               pinAuthenticationCapability: UNSPECIFIED
         merchantDetails:
           merchantId: '100009000000035'
-          terminalId: '10000001'
-          tokenType: 'AB01'
+          terminalId: '10000002'
+          tokenType: '1174'
         additionalDataCommon:
           directedRouting:
             processors:
-              - code: FISERV
+              - code: NASHVILLE
                 platform: NORTH
                 priority: PRIMARY
-        networkDetails:
-          network:
-            network: Visa
     PaymentTrackForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -4121,12 +4113,13 @@ components:
           encryptionData:
             encryptionType: ON_GUARD
             encryptionTarget: TRACK_2
-            encryptionBlock: 9050770762789954=71712290025177462481
-            keyId: FFFF10970000052000170114
+            encryptionBlock: 5920827294965894=843844352383401781
+            keyId: FFFF109700000E4000140114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100009000000027'
-          tokenType: 'AB01'
+          merchantId: '100009000000035'
+          terminalId: '10000002'
+          tokenType: '1174'
     PaymentTrackInfoRequest:
       value:
         source:
@@ -4182,85 +4175,78 @@ components:
       value:
         gatewayResponse:
           transactionType: CHARGE
-          transactionState: AUTHORIZED
+          transactionState: CAPTURED
           transactionOrigin: POS
           transactionProcessingDetails:
-            orderId: CHG01864c3cb65c824d99b7f297505f914605
-            transactionTimestamp: '2021-11-30T21:26:14.90396Z'
-            apiTraceId: 635866b3fc244917aa864fbc5baaae18
-            clientRequestId: '4324974'
-            transactionId: 635866b3fc244917aa864fbc5baaae18
+            orderId: CHG0107179b52c7884322969dfe1df76eeafb
+            transactionTimestamp: '2022-02-17T20:54:35.207943Z'
+            apiTraceId: 07111337e45d446ba2182c906f9cd41a
+            clientRequestId: '1705848'
+            transactionId: 07111337e45d446ba2182c906f9cd41a
         source:
           sourceType: PaymentTrack
           card:
             expirationMonth: '12'
-            expirationYear: '2024'
-            bin: '401200'
-            last4: '0026'
+            expirationYear: '2025'
+            bin: '448464'
+            last4: '0042'
             scheme: Visa
         paymentReceipt:
           approvedAmount:
-            total: 10.80
+            total: 10.8
             currency: USD
           processorResponseDetails:
             approvalStatus: APPROVED
-            approvalCode: OK123C
-            referenceNumber: 4fbc5baaae18
+            approvalCode: OK5059
+            referenceNumber: 2c906f9cd41a
+            processor: NASHVILLE.NORTH
             networkRouted: VISA
             networkInternationalId: '0001'
             responseCode: '000'
             responseMessage: Approved
             hostResponseCode: '00'
-            hostResponseMessage: 'APPROVAL '
+            hostResponseMessage: 'APPROVAL        '
             bankAssociationDetails:
               associationResponseCode: '00'
             additionalInfo:
-              - name: Nashville.posEntryMode
-                value: '90'
-              - name: Nashville.pinAuthenticationCapability
-                value: '1'
-              - name: Nashville.posConditionCode
-                value: '00'
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: ARAyIAHvv70O77+9AAIAAAAAAAAAEO+/vQIXIFQ2ABIgAAEAMmM5MDZmOWNkNDFhT0s1MDU5MDAwMTQ4NDU0OQHvv70ASDE0RTAxMjA0ODAwNDc2NzkwNEcyNDUgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMAAYMjJBUFBST1ZBTCAgICAgICAgABBWSUNSICAcUlNCAGZTRFRDMDE1OTAwMTEwMDAwMDAwMDAwUkkwMTUwMDAwMDAwMDAwMDAwMDBOTDAwNFZJU0FUWTAwMUNBUjAwNFYwMDAAKUFSQ0kwMDNVTktDUDAwMT9SQzAwMjAwQ0IwMDFW
         transactionDetails:
-          captureFlag: false
-          retrievalReferenceNumber: 4fbc5baaae18
+          captureFlag: true
+          processingCode: '000000'
+          retrievalReferenceNumber: 2c906f9cd41a
         transactionInteraction:
           posEntryMode: MAG_STRIPE
           posConditionCode: CARD_PRESENT
-          terminalTimestamp: '2021-11-02T12:35:42Z'
+          terminalTimestamp: '2022-02-17T16:17:48Z'
           additionalPosInformation:
-            stan: '000002'
-            dataEntrySource: MOBILE_POS
+            stan: '001220'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: UNSPECIFIED
+              terminalEntryCapability: MAG_STRIPE_ONLY
           authorizationCharacteristicsIndicator: E
+          hostPosConditionCode: '00'
         merchantDetails:
-          tokenType: 'AB01'
-          terminalId: '10000001'
-          merchantId: '100009000000090'
-        additionalDataCommon:
-          directedRouting:
-            network: VISA
-            cardFunction: CREDIT
-            processors:
-              - code: FISERV
-                platform: NORTH
-                priority: PRIMARY
-              - code: FISERV
-                platform: NORTH
-                priority: FINAL
-          customFields:
-            - key: processorResponse
-              value: ARAyIAHvv70O77+9AAIAAAAAAAAAEFYRMCEmFQAAAgABADRmYmM1YmFhYWUxOE9LMTIzQzAwMDE0OTQ3MzQCBQBIMTRFMDExMzM0NzY4NDQwODU1RzQzMiAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwABgyMkFQUFJPVkFMICAgICAgICAABlZJQ1JDIAAHRVYwMjEwMQBmU0RUQzAxNTkwMDExMDAwMDAwMDAwMFJJMDE1MDAwMDAwMDAwMDAwMDAwTkwwMDRWSVNBVFkwMDFDQVIwMDRWMDAwAEhBUkJOMDA4VVNBIEJhbmtDSTAwM1VTQUNQMDAxSERQMDAxQ1JDMDAyMDBDQjAwMVY=
+          tokenType: '1174'
+          terminalId: '10000002'
+          merchantId: '100009000000035'
+        additionalDataCommon: {}
         networkDetails:
           network:
             network: Visa
-          cardLevelResultCode: 'CRC '
-          validationCode: G432
+          cardLevelResultCode: ''
+          validationCode: G245
+          transactionIdentifier: '012048004767904'
+        cardDetails:
+          brand: V
+          brandProductId: '?'
+          issuerCountry: UNK
         paymentTokens:
-          - tokenData: '9189080250240026'
+          - tokenData: '9897939877720042'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
-
     PaymentTrackCreditResponse:
       value:
         gatewayResponse:
@@ -4341,13 +4327,13 @@ components:
       value:
         gatewayResponse:
           transactionProcessingDetails:
-            orderId: CHG01e6c4ce64f87b426d928f7426037ed5e4
-            transactionTimestamp: '2022-01-05T17:05:50.1727Z'
-            apiTraceId: 75ba47397a9f45b8961f738f8e2b33ab
-            clientRequestId: '2594119'
-            transactionId: 75ba47397a9f45b8961f738f8e2b33ab
+            orderId: CHG0180a225bc4b95465ab38950c05e6fc47a
+            transactionTimestamp: '2022-02-17T20:51:44.803878Z'
+            apiTraceId: dc4f925017ae4afbabb8cb91d7d999dd
+            clientRequestId: '1488768'
+            transactionId: dc4f925017ae4afbabb8cb91d7d999dd
         paymentTokens:
-          - tokenData: '9189080250240026'
+          - tokenData: '9897939877720042'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
