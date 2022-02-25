@@ -47,7 +47,7 @@ Allows the merchants to build their own form to collect all payment information 
 
 **Begin integration with Commerce Hub's [Direct Post].**
 
-### .JS
+### JavaScript
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
