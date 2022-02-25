@@ -36,7 +36,7 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: merchantDetails
+title: merchantDetails 
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -90,7 +90,7 @@ title: Response
 
 <!-- theme: info -->
 
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

@@ -12,52 +12,53 @@ The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/
 
 ## SAQ A Integrations
 
-### Hosted Payment Page
+<!-- type: row -->
 
-Allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction. The Commerce Hub Hosted Payment Page manages the customer interactions that are required in the checkout process based on payment method, or authentication mechanisms (3-D Secure).
+<!-- type: card
+title: Hosted Payment Page
+description: Allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md
+-->
 
-Using Commerce Hub's secure hosted pages can reduce the burden of compliance with the Data Security Standard of the Payment Card Industry (PCI DSS).
+<!-- type: card
+title: Payment URL
+description: Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-URL/Payment-URL.md
+-->
 
-<!-- theme: info -->
->A merchant can lessen the PCI DSS load by using Hosted Payment Pages, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
+<!-- type: card
+title: iFrame
+description: Allows a merchant an easy and secure way to embed a payment form into a website.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
+-->
 
-**Begin integration with Commerce Hub's [Hosted Payment Pages](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md).**
-
-### Payment URL
-
-Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer. The customer accesses the URL received, and taken to a Commerce Hub hosted payment page to complete the payment.
-
-**Begin integration with Commerce Hub's [Payment URLs](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-URL/Payment-URL.md).**
-
-### iFrame
-
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
-
-Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
-
-**Begin integration with Commerce Hub's [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md).**
+<!-- type: row-end -->
 
 ---
 
 ## SAQ A-EP Integrations
 
-### Direct Post
+<!-- type: row -->
 
-Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's Hosted Payment Page.
+<!-- type: card
+title: Direct Post
+description: Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's Hosted Payment Page.
+link: 
+-->
 
-**Begin integration with Commerce Hub's [Direct Post].**
+<!-- type: card
+title: JavaScript
+description: Allows a merchant an easy and secure way to embed a payment form into a website.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
+-->
 
-### JavaScript
+<!-- type: card
+title: API Only
+description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+-->
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
-
-**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md).**
-
-### Merchant Managed API Only
-
-Allows a merchant an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
-
-**Begin integration with [API Only](?path=docs/Online-Mobile-Digital/API/API-Only.md).**
+<!-- type: row-end -->
 
 ---
 

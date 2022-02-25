@@ -4,6 +4,17 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 # Apple Pay: In-App Integration
 
+Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Apple Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
+
+### How it Works
+
+1. The customer selects checkout from the merchant's app and the merchant’s payment form displays.
+2. The app calls the Apple Pay framework to obtain the encrypted wallet data.
+3. The merchant’s app submits the encrypted Apple Pay payload to Commerce Hub.
+4. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
+
+---
+
 ## Step 1: Configure Apple Pay
 
 Configure Apple developer account with merchant information to accept [Apple Pay in the App](https://help.apple.com/developer-account/#/devb2e62b839). This includes creating a merchant identifier, enabling Apple Pay in App and creating a processing certificate.
@@ -34,7 +45,7 @@ The merchant can submit a payment request to Apple to verify if apple pay is sup
 
 <!--
 type: tab
-title: source
+title: source, header
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -52,7 +63,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: header
 -->
 
 The below table identifies the required parameters in the `header` object.
@@ -73,7 +83,7 @@ The below table identifies the required parameters in the `header` object.
 
 <!--
 type: tab
-title: Request
+title: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -113,13 +123,13 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 
 {
@@ -181,6 +191,7 @@ title: Response
    }
 }
 ```
+
 <!-- type: tab-end -->
 
 ---

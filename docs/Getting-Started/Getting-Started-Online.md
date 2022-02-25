@@ -66,6 +66,6 @@ Payment.js accomplishes this by injecting an iframe into a parent form where cus
 
 Commerce Hub's Virtual Terminal allows a merchant an easy way to process offline transactions, transaction corrections, setup fraud controls and provides enchanced reporting capabilities.
 
-**Begin processing with Commerce Hub's [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md).**
+**Begin processing with Commerce Hub's [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md).** 
 
 ---

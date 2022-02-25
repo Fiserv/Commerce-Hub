@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card
 
 # Information Lookup
 
-Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. The `cardDetails` are returned in the response.
+Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. The `cardDetails` are returned in the response. The card iformation can be used to determine terminal prompts, level II/III data requirements, used to determine directed routing, and fraud controls.
 
 <!--
 type: tab

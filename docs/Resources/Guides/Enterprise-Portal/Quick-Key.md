@@ -54,6 +54,6 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 ## See Also
 
 - [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
-- [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)
+- [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md)
 
 ---

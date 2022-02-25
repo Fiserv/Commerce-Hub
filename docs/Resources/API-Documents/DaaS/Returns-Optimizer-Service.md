@@ -57,9 +57,9 @@ The below table identifies the response parameters in the `transactionScoreRespo
 |-----|---|-----|-----|
 | `invocationId` | *string* | N/A | Unique Identifier associated with the invocation response |
 | `consumerType` | *string* | N/A | Indicator for NEW or EXISTING customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for new customers. |
-| `modelId` | *string* | N/A | Model Identifier???? |
-| `myReturnScoreDetails` | *object* | N/A | ???? |
-| `peerReturnScoreDetails` | *object* | N/A | ???? |
+| `modelId` | *string* | N/A | Identifies the model version that was used to score this transaction request for a Return probability. |
+| `myReturnScoreDetails` | *object* | N/A | Details associated with the returns score based on the merchants profile. |
+| `peerReturnScoreDetails` | *object* | N/A | Details associated with the returns score based on the peer profile. |
 
 <!--
 type: tab
@@ -154,7 +154,7 @@ title: Response
 ##### Example of a Returns Optimizer response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
