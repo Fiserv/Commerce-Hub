@@ -33,7 +33,7 @@ description: Commerce Hub allows developers to quickly enable secure and conveni
 link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
 -->
 
-<!-- type row-end -->
+<!-- type: row-end -->
 
 ---
 
