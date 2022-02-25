@@ -19,18 +19,7 @@ Wallet transactions originate from a digital wallet either from a website or on 
 
 ### Integrations
 
-[
-  {
-    (Apple Pay)
-    (Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.)
-    (?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-  }
-  {
-    (Google Pay)
-    (Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.)
-    (?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
-  }
-]
+[{(Apple Pay)(Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)}{(Google Pay)(Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)}]
 
 ---
 
