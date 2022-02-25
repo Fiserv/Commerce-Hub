@@ -8,7 +8,7 @@ Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response
 
 <!--
 type: tab
-title: error
+titles: error, JSON Example
 -->
 
 The below table identifies the parameters in the `error` object.
@@ -21,9 +21,8 @@ The below table identifies the parameters in the `error` object.
 | `message` | *string* | 256 | Information specific to a property or attribute |
 
 
-<!-- 
+<!--
 type: tab
-titles: JSON Example, Error Response
 -->
 
 JSON string format for `error`:
@@ -47,6 +46,7 @@ JSON string format for `error`:
 
 <!--
 type: tab
+titles: Error Response
 -->
 
 ##### Example of a charge (400: Bad Request) response.
@@ -69,9 +69,9 @@ type: tab
       },
       "error":{
          "type": "GATEWAY",
-         "code": "103",
+         "code": "100",
          "field": "cardData",
-         "message": "Missing or Invalid Card Number or Token"
+         "message": "Invalid or missing field data"
       }
 
    }
