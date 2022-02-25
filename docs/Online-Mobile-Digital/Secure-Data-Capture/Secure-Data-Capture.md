@@ -38,23 +38,27 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.m
 
 ## SAQ A-EP Integrations
 
-### Direct Post Integration
+<!-- type: row -->
 
-Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's Hosted Payment Page.
+<!-- type: card
+title: Direct Post
+description: Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's Hosted Payment Page.
+link: 
+-->
 
-**Begin integration with Commerce Hub's [Direct Post].**
+<!-- type: card
+title: JavaScript
+description: Allows a merchant an easy and secure way to embed a payment form into a website.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
+-->
 
-### JavaScript Integration
+<!-- type: card
+title: API Only
+description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+-->
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
-
-**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md).**
-
-### API Only Integration
-
-Allows a merchant an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
-
-**Begin integration with [API Only](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md).**
+<!-- type: row-end -->
 
 ---
 
