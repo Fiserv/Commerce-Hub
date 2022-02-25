@@ -32,7 +32,7 @@ description: Allows a merchant an easy and secure way to embed a payment form in
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
 -->
 
-<!-- type row-end -->
+<!-- type: row-end -->
 
 ---
 
