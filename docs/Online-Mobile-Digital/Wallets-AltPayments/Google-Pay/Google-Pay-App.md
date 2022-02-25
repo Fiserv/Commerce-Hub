@@ -27,13 +27,11 @@ Configure the [App to integrate with Google Pay](https://developers.google.com/p
 - [**Encrypted Data:**](#request-variables) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
----
-
 ### Request Variables
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -46,8 +44,7 @@ The below table identifies the required parameters in the `source` object.
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
-
----
+<!-- type: tab-end -->
 
 ### Payload Example
 
@@ -56,7 +53,7 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Charge Payload Request.
@@ -87,7 +84,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a Charge (201: Created) Response.
