@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, customer-address, billing-address, maste
 
 # Customer Address
 
-A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
+A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request. 
 
 ---
 
