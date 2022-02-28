@@ -2,14 +2,14 @@
 tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
 ---
 
-# Create a JS Payment Request
+# Create a JavaScript Request
 
 ## Step 1: Authentication
 
-An authentication request is required to recive an AccessToken. This will be your authorization and apiKey used when creating an iFrame JS request.
+An authentication request is required to recive an AccessToken. This will be your authorization and apiKey used when creating an JS request.
 
 1. A RESTful API request is made from the merchant server to obtain the authorization.
-2. The client access token, sessionID, and public key will be submitted as part of authentication response along with the iFrame JS script.
+2. The client access token, sessionID, and public key will be submitted as part of authentication response along with the JS script.
 
 ---
 
@@ -96,7 +96,7 @@ The below table identifies the response parameters in the `SecurityCredentialsRe
 
 ### Authentication Script
 
-The following script is required to submit the authentication of the iFrame JS:
+The following script is required to submit the authentication of the JS:
 
 ```javascript
 
@@ -112,16 +112,16 @@ const formConfig = {
 
 ## Step 2: Configuration
 
-### iFrame JS Script
+### JS Script
 
-The iFrame JS script tag is required in the website by downloading or including the following code:
+The JS script tag is required in the website by downloading or including the following code:
 
 ```php
 
 <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
 
 ```
-The following is the global `commercehub` object which includes the iFrame JS:
+The following is the global `commercehub` object which includes the JS:
 
 ```javascript
 
@@ -133,7 +133,7 @@ form.loadPaymentForm("payment-saq-a-form-div");
 
 ### Error Handling
 
-Errors in iFrame JS should be handled in the .catch() of the promise for loadPaymentForm. 
+Errors in JS should be handled in the .catch() of the promise for loadPaymentForm. 
 
 ```javascript
 
