@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, capture,
 
 # Capture
 
-Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to the original `transactionId`<!-- or `orderId`-->, also known as a post-authorization. This will settle (withdrawl) funds from the customer.
+Capture allows a previous pre-authorized [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to be completed based on the original `transactionId`<!-- or `orderId`-->, also known as a post-authorization. This will settle (withdrawl) funds from the customer.
 
 <!-- theme: warning -->
 > Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md).
