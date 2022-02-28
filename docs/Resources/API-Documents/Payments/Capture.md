@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, capture,
 
 # Capture
 
-Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md). This is known as a post-authorization. This will settle (withdrawl) funds from the customer.
+Use this payload to capture a previous pre-authorized [Charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to the original `transactionId`<!-- or `orderId`-->, also known as a post-authorization. This will settle (withdrawl) funds from the customer.
 
 <!-- theme: warning -->
 > Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md).
@@ -24,7 +24,7 @@ The [example](#payload-example) below contains the mandatory fields required for
 
 <!--
 type: tab
-title: amount
+titles: amount, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -36,7 +36,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -61,7 +60,7 @@ Use the below endpoint based on the [transaction type](?path=docs/Resources/Guid
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Capture Payload Request.
@@ -83,13 +82,11 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a capture (201: Success) response.
 
 <!-- theme: info -->
-
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
