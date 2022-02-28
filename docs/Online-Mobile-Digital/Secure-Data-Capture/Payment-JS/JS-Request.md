@@ -25,7 +25,7 @@ An authentication request is required to recive an AccessToken. This will be you
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 The below table identifies the required parameters in the `SecurityCredentialsRequest` object.
@@ -54,7 +54,6 @@ The below table identifies the required parameters in the `SecurityCredentialsRe
 
 <!--
 type: tab
-title: Response
 -->
 
 The below table identifies the response parameters in the `SecurityCredentialsResponse` object.
@@ -74,7 +73,7 @@ The below table identifies the response parameters in the `SecurityCredentialsRe
 
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
@@ -196,7 +195,7 @@ Submit a charge or tokenization request with the payment `sourceType` of `Paymen
 
 <!--
 type: tab
-title: Request
+titles: Request, Charges Response, Tokens Response
 -->
 
 ##### Example of a charge payload request.
@@ -225,13 +224,12 @@ title: Request
 
 <!--
 type: tab
-title: Charges Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
@@ -295,10 +293,12 @@ title: Charges Response
 
 <!--
 type: tab
-title: Tokens Response
 -->
 
 ##### Example of a tokenization (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
