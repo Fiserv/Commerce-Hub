@@ -18,7 +18,7 @@ The following parameters are required to submit an Returns Optimization request:
 
 <!--
 type: tab
-title: source
+titles: source, merchantDetails
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -29,7 +29,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -48,7 +47,7 @@ The following response variables can be utilized to make an informed decision on
 
 <!--
 type: tab
-title: transactionScoreResponse
+titles: transactionScoreResponse, myReturnScoreDetails, peerReturnScoreDetails
 -->
 
 The below table identifies the response parameters in the `transactionScoreResponse` object.
@@ -63,7 +62,6 @@ The below table identifies the response parameters in the `transactionScoreRespo
 
 <!--
 type: tab
-title: myReturnScoreDetails
 -->
 
 The below table identifies the response parameters in the `myReturnScoreDetails` object.
@@ -75,7 +73,6 @@ The below table identifies the response parameters in the `myReturnScoreDetails`
 
 <!--
 type: tab
-title: peerReturnScoreDetails
 -->
 
 The below table identifies the response parameters in the `peerReturnScoreDetails` object.
@@ -98,7 +95,7 @@ The merchant can initiate Returns Optimization request by passing the token deta
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -122,7 +119,7 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Returns Optimizer payload request.
@@ -148,7 +145,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a Returns Optimizer response.
