@@ -14,7 +14,7 @@ Object contains payment receipt response details.
 
 <!--
 type: tab
-title: paymentReceipt
+titles: paymentReceipt, JSON Example
 -->
 
 The below table identifies the parameters in the `paymentReceipt` object.
@@ -33,7 +33,6 @@ The below table identifies the parameters in the `paymentReceipt` object.
 
 <!--
 type: tab
-title: JSON Example 
 -->
 
 JSON string format for `paymentReceipt`:
