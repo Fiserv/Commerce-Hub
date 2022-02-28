@@ -12,9 +12,9 @@ The card networks can return sepcific values in the [network response](?path=doc
 
 Contains the Visa specific network data.
 
-<!--
+<!--s
 type: tab
-title: VISA
+title: VISA, JSON Example
 -->
 
 The below table identifies the parameters in the `visa` object.
@@ -28,7 +28,6 @@ The below table identifies the parameters in the `visa` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `visa`:
@@ -54,7 +53,7 @@ Contains the mastercard specific network data.
 
 <!--
 type: tab
-title: Mastercard
+titles: Mastercard, JSON Examples
 -->
 
 The below table identifies the parameters in the `mastercard` object.
@@ -75,7 +74,6 @@ The below table identifies the parameters in the `mastercard` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `mastercard`:
