@@ -1,6 +1,6 @@
 ---
 tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
----
+--- 
 
 # Transaction Amount
 
