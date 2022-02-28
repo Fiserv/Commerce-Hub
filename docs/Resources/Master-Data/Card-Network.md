@@ -53,7 +53,7 @@ Contains the mastercard specific network data.
 
 <!--
 type: tab
-title: Mastercard, JSON Example
+titles: Mastercard, JSON Example
 -->
 
 The below table identifies the parameters in the `mastercard` object.
