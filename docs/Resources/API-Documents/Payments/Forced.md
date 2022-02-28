@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, forced-p
 <!-- theme: danger -->
 > Due to higher instances of fraud, it is highly recommended that the forced post be limited to certain personnel. An administrator in the Virtual Terminal can manage forced Post.
 
-A forced post is used when an issuer (bank) provides a referral also known as call response or for off-line processing. The merchant will contact the voice authorization center to receive an `approvalCode` to submit manually via an API call or [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md). 
+A forced post is used when an issuer (bank) provides a referral also known as call response or for off-line processing. The merchant will contact the voice authorization center to receive an `approvalCode` to submit manually via an API call or [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md).
 
 - If the merchant website is down, make an attempt to process the transaction in the Virtual Terminal before calling the voice authorization center.
 - If the voice authorization center was not called and the merchant wants to process the transaction later, a [deferred authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) will need to be submitted.
@@ -26,7 +26,7 @@ The [example](#payload-example) below contains the mandatory fields required for
 
 <!--
 type: tab
-title: amount
+titles: amount, source, transactionDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -38,7 +38,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -49,7 +48,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: transactionDetails
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -73,7 +71,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a forced post payload request.
@@ -107,13 +105,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a forced post (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
