@@ -8,7 +8,7 @@ Data encryption is a method of protecting data confidentiality by converting it 
 
 <!--
 type: tab
-title: encryptionData, JSON Example
+titles: encryptionData, JSON Example
 -->
 
 The below table identifies the parameters in the `encryptionData` object.
