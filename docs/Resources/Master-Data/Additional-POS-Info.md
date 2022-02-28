@@ -210,7 +210,7 @@ The below table identifies the valid values of `attendedTerminalData`.
 
 The below table identifies the valid values of `terminalLocation`.
 
-| Value | Description |
+| Value | Description | 
 | ----- | ----------- |
 | *MERCHANT* | On the premises of the card acceptor |
 | *CARDHOLDER* | On the premises of the cardholder (e.g. Home PC) |
