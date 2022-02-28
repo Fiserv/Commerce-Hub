@@ -16,7 +16,7 @@ The following parameters are required to submit an Enhanced Data Service request
 
 <!--
 type: tab
-title: amount
+titles: amount, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -28,7 +28,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -48,7 +47,7 @@ One of the following parameters is required to submit an Enhanced Data Service r
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, deviceFingerPrint, customer, splitTender, shippingAddress
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -59,7 +58,6 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: deviceFingerPrint
 -->
 
 The below table identifies the required `dataStatic` parameters in the `deviceFingerprint` array.
@@ -81,7 +79,6 @@ The below table identifies the required `dataDynamic` parameters in the `deviceF
 
 <!--
 type: tab
-title: customer
 -->
 
 The below table identifies the required parameters in the `customer` object.
@@ -96,7 +93,6 @@ The below table identifies the required parameters in the `customer` object.
 
 <!--
 type: tab
-title: splitTender
 -->
 
 The below table identifies the required parameters in the `splitTender` object.
@@ -116,7 +112,6 @@ The below table identifies the required parameters in the `splitTenderMethod` ar
 
 <!--
 type: tab
-title: shippingAddress
 -->
 
 The below table identifies the required parameters in the `shippingAddress` object.
@@ -158,7 +153,7 @@ The merchant can initiate Enhanced Data Service request transaction by passing t
 
 <!--
 type: tab
-title: source
+titles: source, card
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -170,7 +165,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -194,7 +188,7 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an Enhanced Data payload request.
@@ -281,7 +275,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an Enhanced Data response.
@@ -317,7 +310,7 @@ The merchant can initiate Enhanced Data Service request transaction by passing t
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -341,7 +334,7 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an Enhanced Data payload request.
@@ -424,7 +417,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an Enhanced Data response.
