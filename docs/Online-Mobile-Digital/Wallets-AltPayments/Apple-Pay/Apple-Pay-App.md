@@ -45,7 +45,7 @@ The merchant can submit a payment request to Apple to verify if apple pay is sup
 
 <!--
 type: tab
-title: source, header
+titles: source, header
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -83,7 +83,7 @@ The below table identifies the required parameters in the `header` object.
 
 <!--
 type: tab
-title: Request, Response
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
