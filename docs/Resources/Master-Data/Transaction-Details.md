@@ -8,7 +8,7 @@ The transaction request initiated by merchant contains various transaction relat
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `transactionDetails` object.
@@ -46,7 +46,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `transactionDetails`:
