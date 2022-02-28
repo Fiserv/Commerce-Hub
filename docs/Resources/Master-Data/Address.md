@@ -28,7 +28,7 @@ The below table identifies the parameters in the `billingAddress` object.
 | `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
 <!--
-type: tab
+type: tab 
 -->
 
 JSON string format for `billingAddress`:
