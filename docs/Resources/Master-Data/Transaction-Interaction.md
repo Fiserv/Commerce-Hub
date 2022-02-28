@@ -8,7 +8,7 @@ The `transactionInteraction` object contains the data indicating where the trans
 
 <!--
 type: tab
-title: transactionInteraction
+titles: transactionInteraction, JSON Example
 -->
 
 The below table identifies the parameters in the `transactionInteraction` object. 
@@ -28,7 +28,6 @@ The below table identifies the parameters in the `transactionInteraction` object
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `transactionInteraction`:
