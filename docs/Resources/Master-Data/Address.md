@@ -15,7 +15,7 @@ Is the address connected to the customer's [payment method](?path=docs/Resources
 
 <!--
 type: tab
-title: billingAddress
+title: billingAddress, JSON Example
 -->
 
 The below table identifies the parameters in the `billingAddress` object.
@@ -29,7 +29,6 @@ The below table identifies the parameters in the `billingAddress` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `billingAddress`:
@@ -68,7 +67,7 @@ Is the address or email where the merchant will deliver the goods or services.
 
 <!--
 type: tab
-title: shippingAddress
+titles: shippingAddress, JSON Example
 -->
 
 
@@ -85,7 +84,6 @@ The below table identifies the parameters in the `shippingAddress` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `shippingAddress`:
@@ -137,7 +135,7 @@ The below table identifies the valid values of `shippingMethod`.
 Common `address` object used in both the billing address and shipping address.
 <!--
 type: tab
-title: address
+titles: address, JSON Example
 -->
 
 
@@ -156,7 +154,6 @@ The below table identifies the parameters in the `address` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `address`:
