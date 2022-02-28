@@ -36,7 +36,7 @@ The below table identifies the parameters in the `networkDetails` object.
 <!--
 type: tab
 -->
-
+ 
 JSON string format for `networkDetails`:
 
 ```json
