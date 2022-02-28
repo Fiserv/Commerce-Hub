@@ -8,7 +8,7 @@ The `deviceFingerPrint` is information collected about the software and hardware
 
 <!--
 type: tab
-title: deviceFingerprintData
+titles: deviceFingerprintData, JSON Example
 -->
 
 The below table identifies the parameters in the `deviceFingerprintData` object.
@@ -22,7 +22,6 @@ The below table identifies the parameters in the `deviceFingerprintData` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `deviceFingerprint`:
@@ -74,7 +73,7 @@ Contains the finger print data and time it is captured.
 
 <!--
 type: tab
-title: dataCapture
+title: dataCapture, JSON Example
 -->
 
 The below table identifies the parameters in the `dataCapture` object.
@@ -87,7 +86,6 @@ The below table identifies the parameters in the `dataCapture` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `dataCapture`:
@@ -110,7 +108,7 @@ Contains the static data such as operating system details and device type/model.
 
 <!--
 type: tab
-title: dataStatic
+titles: dataStatic, JSON Example
 -->
 
 The below table identifies the parameters in the `dataStatic` object.
@@ -129,7 +127,6 @@ The below table identifies the parameters in the `dataStatic` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `dataStatic`:
@@ -158,7 +155,7 @@ Contains the dayamic data like device location and IP address.
 
 <!--
 type: tab
-title: dataDynamic
+titles: dataDynamic, JSON Examples
 -->
 
 The below table identifies the parameters in the `dataDynamic` object.
@@ -174,7 +171,6 @@ The below table identifies the parameters in the `dataDynamic` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `dataDynamic`:
