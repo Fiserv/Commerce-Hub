@@ -9,7 +9,7 @@ Additional data common is used for specific business requirements.
 
 <!--
 type: tab
-title: additionalDataCommon
+titles: additionalDataCommon, JSON Example
 -->
 
 The below table identifies the parameters in the `additionalDataCommon` object.
@@ -34,7 +34,6 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `additionalDataCommon`:
@@ -134,7 +133,7 @@ Additional Data identifies various elments based on the specific transaction typ
 
 <!--
 type: tab
-title: additionalData
+titles: additionalData, JSON Example
 -->
 
 | Variable | Type | Maximum Length | Description/Values |
@@ -151,7 +150,6 @@ title: additionalData
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `additionalData`:
