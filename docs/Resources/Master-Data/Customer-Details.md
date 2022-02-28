@@ -8,7 +8,7 @@ The transaction request may contain the `customerDetails` consisting of customer
 
 <!--
 type: tab
-title: customer
+titles: customer, JSON Example
 -->
 
 The below table identifies the parameters in the `customer` object.
@@ -31,7 +31,6 @@ The below table identifies the parameters in the `customer` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `customer`:
@@ -69,7 +68,7 @@ Object contains the phone details of the customer.
 
 <!--
 type: tab
-title: phone
+titles: phone, JSON Example
 -->
 
 The below table identifies the parameters in the `phoneNumber` object.
@@ -82,7 +81,6 @@ The below table identifies the parameters in the `phoneNumber` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `phoneNumber`:
