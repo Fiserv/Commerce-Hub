@@ -13,7 +13,7 @@ Object containing the Commerce Hub response parameters.
 
 <!--
 type: tab
-title: gatewayResponse
+titles: gatewayResponse, JSON Example
 -->
 
 The below table identifies the parameters in the `gatewayResponse` object.
@@ -27,7 +27,6 @@ The below table identifies the parameters in the `gatewayResponse` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `gatewayResponse`:
@@ -76,7 +75,7 @@ Object contains the transaction processing details.
 
 <!--
 type: tab
-title: transactionProcessingDetails
+titles: transactionProcessingDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `transactionProcessingDetails` object.
@@ -92,7 +91,6 @@ The below table identifies the parameters in the `transactionProcessingDetails` 
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `transactionProcessingDetails`:
