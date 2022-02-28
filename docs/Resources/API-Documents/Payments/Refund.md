@@ -26,7 +26,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 
 <!--
 type: tab
-title: amount
+titles: amount, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -38,7 +38,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -65,7 +64,7 @@ Use the below endpoint based on the [transaction type](?path=docs/Resources/Guid
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Parital Refund Payload Request.
@@ -88,13 +87,11 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a Partial Refund (201: Success) Response.
 
 <!-- theme: info -->
-
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
