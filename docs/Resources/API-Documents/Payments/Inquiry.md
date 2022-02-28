@@ -33,9 +33,10 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 
 ## Payload Example
 
-{tabs: [Request, Response]}
-
-{tab: start}
+<!--
+type: tab
+titles: Request, Response
+-->
 
 ```json
 {
@@ -45,12 +46,13 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 }
 ```
 
-{tab}
+<!--
+type: tab
+-->
 
 ##### Example of an inquiry (201: Success) response.
 
 <!-- theme: info -->
-
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
@@ -119,7 +121,7 @@ Use the below endpoints based on the [transaction type](?path=docs/Resources/Gui
 }
 ```
 
-{tabs: end}
+<!-- type: tab-end -->
 
 ---
 
