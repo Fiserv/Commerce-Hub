@@ -5,10 +5,11 @@ tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data
 # Additional Data Common
 
 Additional data common is used for specific business requirements.
+<!--
+type: tab
+titles: additionalDataCommon, JSON Example
+-->
 
-{tabs: [additionalDataCommon, JSON Example]}
-
-{tab: start}
 
 The below table identifies the parameters in the `additionalDataCommon` object.
 
@@ -28,7 +29,11 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 ---
 
-{tab}
+
+<!--
+type: tab
+-->
+
 
 JSON string format for `additionalDataCommon`:
 
@@ -101,7 +106,7 @@ JSON string format for `additionalDataCommon`:
 }
 ```
 
-{tabs: end}
+<!-- type: tab-end -->
 
 ---
 
@@ -124,10 +129,11 @@ The below table identifies the valid values of the `billPaymentIndicator`.
 ## Additional Data
 
 Additional Data identifies various elments based on the specific transaction type.
+<!--
+type: tab
+titles: additionalData, JSON Example
+-->
 
-{tabs: [additionalData, JSON Example]}
-
-{tab: start}
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
@@ -141,7 +147,10 @@ Additional Data identifies various elments based on the specific transaction typ
 
 ---
 
-{tab}
+<!--
+type: tab
+-->
+
 
 JSON string format for `additionalData`:
 
@@ -158,7 +167,7 @@ JSON string format for `additionalData`:
 }
 ```
 
-{tabs: end}
+<!-- type: tab-end -->
 
 ---
 
