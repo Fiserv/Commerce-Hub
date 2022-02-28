@@ -41,4 +41,22 @@ link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include support for digital wallets (eWallets) including PayPal and AmazonPay. The documents related to the features will be released soon. 
 
+### Integrations
+
+<!-- type: row -->
+
+<!-- type: card
+title: Amazon Pay
+description: Commerce Hub allows developers to quickly enable secure and convenient Amazon Pay payments in their app or website.
+link:
+-->
+
+<!-- type: card
+title: PayPal
+description: Commerce Hub allows developers to quickly enable secure and convenient PayPal payments in their app or website.
+link:
+-->
+
+<!-- type: row-end -->
+
 ---
