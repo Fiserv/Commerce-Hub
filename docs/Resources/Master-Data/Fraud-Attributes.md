@@ -8,7 +8,7 @@ A transaction can contain `fraudAttributes` to improve authorization rates and r
 
 <!--
 type: tab
-title: fraudAttributes
+titles: fraudAttributes, JSON Example
 -->
 
 The below table identifies the parameters in the `fraudAttributes` object.
@@ -20,7 +20,6 @@ The below table identifies the parameters in the `fraudAttributes` object.
 
 <!--
 type: tab
-title: JSON Example 
 -->
 
 JSON string format for `orderData`:
