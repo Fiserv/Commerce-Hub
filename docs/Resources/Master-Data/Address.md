@@ -15,7 +15,7 @@ Is the address connected to the customer's [payment method](?path=docs/Resources
 
 <!--
 type: tab
-title: billingAddress, JSON Example
+titles: billingAddress, JSON Example
 -->
 
 The below table identifies the parameters in the `billingAddress` object.
