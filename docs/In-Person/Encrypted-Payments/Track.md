@@ -16,7 +16,7 @@ A third-party device captures the customer's payment source unencrypted or encry
 
 <!--
 type: tab
-title: source
+titles: source, encryptionData, JSON Example
 -->
 
 The below table identifies the parameters in the `source` object.
@@ -31,7 +31,6 @@ The below table identifies the parameters in the `source` object.
 
 <!--
 type: tab
-title: encryptionData
 -->
 
 The below table identifies the required parameters in the `encryptionData` object.
@@ -46,7 +45,6 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for PaymentTrack:
@@ -74,7 +72,7 @@ JSON string format for PaymentTrack:
 
 <!--
 type: tab
-title: Request
+title: Request, Response
 -->
 
 ##### Example of a charge payload request using PaymentTrack.
@@ -115,13 +113,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
