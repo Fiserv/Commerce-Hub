@@ -74,7 +74,7 @@ JSON string format for `networkDetails`:
 Contains the card network data.
 
 <!--
-type: tab
+type: tab 
 titles: network, JSON Example
 -->
 
