@@ -87,7 +87,7 @@ Zip Code
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an address verification request.
@@ -124,7 +124,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an address verification response.
