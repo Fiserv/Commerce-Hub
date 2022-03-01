@@ -73,7 +73,7 @@ Contains the finger print data and time it is captured.
 
 <!--
 type: tab
-title: dataCapture, JSON Example
+titles: dataCapture, JSON Example
 -->
 
 The below table identifies the parameters in the `dataCapture` object.
@@ -126,7 +126,7 @@ The below table identifies the parameters in the `dataStatic` object.
 | `type` | *string* | 256 | Device type/name |
 
 <!--
-type: tab
+type: tab 
 -->
 
 JSON string format for `dataStatic`:
@@ -155,7 +155,7 @@ Contains the dayamic data like device location and IP address.
 
 <!--
 type: tab
-titles: dataDynamic, JSON Examples
+titles: dataDynamic, JSON Example
 -->
 
 The below table identifies the parameters in the `dataDynamic` object.
