@@ -59,7 +59,7 @@ JSON string format for `customer`:
 ```
 
 <!-- type: tab-end -->
-
+ 
 ---
 
 ## Phone Number
