@@ -20,7 +20,7 @@ The merchant can perform account verification transaction to confirm that the ca
 
 <!--
 type: tab
-title: source
+titles: source, card
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -32,7 +32,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -58,7 +57,7 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Account verification request using PaymentCard.
@@ -84,7 +83,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Account verification response.
@@ -150,7 +148,7 @@ title: Response
 ### Minimum Requirements
 <!--
 type: tab
-title: source
+titles: source, card
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -163,7 +161,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -188,7 +185,7 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Account verification request using PaymentToken.
@@ -208,7 +205,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Account verification response
