@@ -200,7 +200,6 @@ The below table identifies the parameters in the `association` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `association`:
