@@ -46,7 +46,7 @@ JSON string format for `merchantDetails`:
 }
 ```
 <!--type: tab-end -->
-
+ 
 ---
 
 ## See Also
