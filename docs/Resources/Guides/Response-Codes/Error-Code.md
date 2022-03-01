@@ -6,9 +6,11 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-codes, c
 
 The error code indicates the reason why a transaction is rejected. Commerce Hub includes the value in the `code` along with the corresponding text in the `message` fields of the [HTTP error response](?path=docs/Resources/Guides/Response-Codes/HTTP.md).
 
-{tabs: [1xx, 2xx, 3xx, 4xx, 5xx, 6xx-649, 65x-699, 7xx, 8xx, 9xx]}
 
-{tab: start}
+<!--
+type: tab
+titles: 1xx, 2xx, 3xx, 4xx, 5xx, 6xx-649, 65x-699, 7xx, 8xx, 9xx
+-->
 
 Codes starting with 1xx identifies an error in the submission data. This includes missing data, invalid data or format errors. Verify the data submitted and resend the request.
 
@@ -56,7 +58,9 @@ Codes starting with 1xx identifies an error in the submission data. This include
 | 139 | Hosted payment page only supports Ecom Transaction origin | 	
 | 140 |	Hosted Payment Page Extended Hash Already Used |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 2xx identifies an error in the configuration setup. This includes merchant and terminal setup, account setup. Check the setup or contact your account respresentative for further assistance.
 
@@ -125,7 +129,9 @@ Codes starting with 2xx identifies an error in the configuration setup. This inc
 | 262 |	Invalid MCC For Hotel/Lodging |	 		 	 	 
 | 268 |	Received Merchant TransactionId Does Not Match The TransactionId |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 3xx identifies an error related to [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
@@ -220,7 +226,9 @@ Codes starting with 3xx identifies an error related to [payment source](?path=do
 | 396 | Only Ecommerce Transactions Are Supported  |
 | 397 | Card function Not supported |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 4xx identifies an error related to [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
@@ -299,7 +307,9 @@ Codes starting with 4xx identifies an error related to [payment source](?path=do
 | 482 |	SMS Response Timeout |	 	 	 
 | 493 |	Trace Number in Authorization Request and Response Do Not Match |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 5xx identifies a [vertical](?path=docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md) specific error. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
@@ -358,7 +368,9 @@ Codes starting with 5xx identifies a [vertical](?path=docs/Resources/Guides/Indu
 | 571 |	Sub-Merchant Data Not Supported	| 	 
 | 572 | Payment Facilitator Missing MerchantID | 
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 6xx identifies an error related to [fraud checks](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md). Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
@@ -397,7 +409,9 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 | 632 |	Velocity: Max Amount Per Merchant Per Time-Box Exceeded | 
 | 633 | Velocity: Max Amount Per Card Per Time-Box Exceeded |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 6xx identifies an error related to terminal configuration or encryption. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
@@ -449,7 +463,9 @@ Codes starting with 6xx identifies an error related to terminal configuration or
 |693 | Decryption Processing Error 
 | 694	| Certificate not found |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 7xx identifies an error related to gateway communication. Check the error message and take appropriate action. Contact your account respresentative for further assistance.
 
@@ -518,7 +534,9 @@ Codes starting with 7xx identifies an error related to gateway communication. Ch
 | 771 | Vault ID Should Not be Present With Create Token |
 | 793 |	Payment Source Does Not Support Feature |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 8xx identifies an error related to the transaction information. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
 
@@ -582,14 +600,15 @@ Codes starting with 8xx identifies an error related to the transaction informati
 | 866 | Only 3D Secure as Non Recurring Transaction Allowed |
 | 877 | Transaction Expired |
 
-{tab:}
+<!--
+type: tab
+-->
 
 Codes starting with 8xx identifies a general gateway error. Check the error message and take appropriate action. Contact your account respresentative for further assistance.
 
 | Code| Message |
 | ---- | ----- |
 | 999 | Unable to Process Transaction. Please Contact Support Team. |
-
 
 <!-- type: tab-end -->
 
