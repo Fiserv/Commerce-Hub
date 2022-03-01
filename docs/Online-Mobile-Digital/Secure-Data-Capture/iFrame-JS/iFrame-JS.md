@@ -17,10 +17,10 @@ Commerce Hub accomplishes this by injecting an iFrame into a parent form where c
 
 #### Transaction Flow
 
-1. The cardholder navigates to checkout page of the merchant's website.
-2. The merchant’s browser loads the Commerce Hub iFrame SDK.
-3. The Commerce Hub SDK builds and renders an iFrame with a card form that allows the cardholder to initiate the payment session.
-4. The cardholder's details are entered and stored against a sessionID within Commerce Hub on form submit.
+1. The customer navigates to checkout page of the merchant's website.
+2. The customer's browser loads the Commerce Hub iFrame SDK.
+3. The Commerce Hub SDK builds and renders an iFrame with a card form that allows the customer to initiate the payment session.
+4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
 5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchants backend server.
 6. Commerce Hub sends the transaction response to the merchant’s website.
 
