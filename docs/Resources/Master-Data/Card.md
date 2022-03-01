@@ -49,7 +49,7 @@ JSON string format for `card`:
       "scheme": "VISA",
       "beginningBalance": "1.00",
       "endingBalance": "0.10"
-   }
+   } 
 }
 ```
 
