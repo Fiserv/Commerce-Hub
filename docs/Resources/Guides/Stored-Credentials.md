@@ -16,7 +16,7 @@ The following variables are used in the initial `PaymentToken` request and subse
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, storedCredentials
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -27,13 +27,12 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: storedCredentials
 -->
 
 The below table identifies the parameters in the `storedCredentials` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ---------| --------- |
 | `initiator` | *string* | 11 | &#10004; | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* | N/A | &#10004; | Indicator if this is a [scheduled transaction](#scheduled-transaction). |
 | `schemeReferencedTransactionId` | *string* | 256 | &#10004;  | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
@@ -70,7 +69,7 @@ Stored credentials can be used to submit merchant managed scheduled transactions
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `storedCredentials`.
@@ -114,10 +113,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
