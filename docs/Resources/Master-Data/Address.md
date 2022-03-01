@@ -127,7 +127,7 @@ The below table identifies the valid values of `shippingMethod`.
 | *GROUND* | Shipping within 4 days |
 | *ELECTRONIC* | Email or digital goods |
 | *SHIP_TO_STORE* | Ship to store |
-
+ 
 ---
 
 ## Address
