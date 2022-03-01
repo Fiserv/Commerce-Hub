@@ -44,7 +44,7 @@ JSON string format for `transactionInteraction`:
       "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",  
       "eciIndicator": "SECURE_ECOM",
       "additionalPosInformation": "",  
-   }
+   } 
 }
 
 ```
