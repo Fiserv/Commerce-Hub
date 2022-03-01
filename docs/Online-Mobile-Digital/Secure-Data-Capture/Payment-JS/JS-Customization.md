@@ -18,7 +18,98 @@ The following example shows all the text labels that can be overridden for a par
 
 ``` php
 
- <html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+    </head>
+    <body>
+        <div id="payment-saq-a-ep-form-div"></div>
+        <script>
+            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
+            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
+            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR'; // merchant call to ../security/credentials to receive this
+            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
+ 
+            const formConfig = {
+                "merchantId": '100004000002050', // merchant receives this during on-boarding process
+                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
+                "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
+                "languages": [
+                    {
+                        "language": "en-US",
+                        "cardNumber": {
+                            "label": "[MO] Card Number",
+                            "errors": {
+                                "required": "[MO] Enter a valid card number.",
+                                "mask": "[MO] Your card number is incomplete.",
+                                "invalid": "[MO] Enter a valid card number."
+                            }
+                        },
+                        "cardHolder": {
+                            "label": "[MO] Name on Card",
+                            "errors": {
+                                "required": "[MO] Enter a valid name."
+                            }
+                        },
+                        "cardSecurityCode": {
+                            "label": "[MO] CVC",
+                            "errors": {
+                                "required": "[MO] Enter a valid CVC.",
+                                "mask": "[MO] Your CVC is incomplete."
+                            }
+                        },
+                        "cardExpiryDate": {
+                            "label": "[MO] Expiry Date",
+                            "errors": {
+                                "before": "[MO] Date must be in the future.",
+                                "invalid": "[MO] Enter a valid date.",
+                                "required": "[MO] Enter a valid date."
+                            }
+                        },
+                        "payButton": {
+                            "label": "[MO] PAY",
+                            "loading": "[MO] PROCESSING"
+                        }
+                    }
+                ]
+            };
+            const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
+            from.loadPaymentForm("payment-saq-a-ep-form-div");
+        </script>
+    </body>
+</html>
+
+```
+
+---
+
+
+## Theme and Font
+
+For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
+
+
+#### Overriding Elements
+The following elements can be overridden:
+
+- **form:** CSS class responsible for styling the "form" HTML element, where all the other elements are contained within.
+- **input:** CSS class responsible for styling the "input" HTML element, where the user enters their card details.
+- **label:** CSS class responsible for styling the "label" HTML element, where the descriptions/names above the input fields are shown.
+- **button:** CSS class responsible for styling the "button" HTML element, only enabled once the input fields have valid entries.
+- **container:** CSS class responsible for adding style to the HTML div's which contains the card form and button.
+- **span:** CSS class responsible for adding style to the HTML div which contains the error messages for incorrect inputs.
+- **divError:** CSS class responsible for adding style to the HTML div which contains the error messages for incorrect inputs.
+- **inputWithValue:** CSS class responsible for styling the "input" HTML element, however, this is for the styling of entered values in those input fields.
+- **labelError:** CSS class responsible for styling the "label" HTML element, however, this is for the styling for when errors occur.
+- **materialTextfield:** CSS class responsible for adding style to the HTML nested div inside the button div..
+- **inputError:** CSS class responsible for styling the "input" HTML element, where an error has occurred with entered values in the input fields.
+- **spinner:** CSS class responsible for styling the "spinner" HTML div.
+- **loadingContainer:** CSS class responsible for adding style to the HTML div's which contains the spinner.
+
+``` php
+
+<html>
     <head>
         <meta charset="utf-8">
         <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
@@ -62,64 +153,6 @@ The following example shows all the text labels that can be overridden for a par
                 classList: classList
             });
             fiservSaqAEp.loadPaymentForm("payment-saq-a-ep-form-div");
-        </script>
-    </body>
-</html>
-
-```
-
----
-
-
-## Theme and Font
-
-For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
-
-
-#### Overriding Elements
-The following elements can be overridden:
-
-- **form:** CSS class responsible for styling the "form" HTML element, where all the other elements are contained within.
-- **input:** CSS class responsible for styling the "input" HTML element, where the user enters their card details.
-- **label:** CSS class responsible for styling the "label" HTML element, where the descriptions/names above the input fields are shown.
-- **button:** CSS class responsible for styling the "button" HTML element, only enabled once the input fields have valid entries.
-- **container:** CSS class responsible for adding style to the HTML div's which contains the card form and button.
-- **span:** CSS class responsible for adding style to the HTML div which contains the error messages for incorrect inputs.
-- **divError:** CSS class responsible for adding style to the HTML div which contains the error messages for incorrect inputs.
-- **inputWithValue:** CSS class responsible for styling the "input" HTML element, however, this is for the styling of entered values in those input fields.
-- **labelError:** CSS class responsible for styling the "label" HTML element, however, this is for the styling for when errors occur.
-- **materialTextfield:** CSS class responsible for adding style to the HTML nested div inside the button div..
-- **inputError:** CSS class responsible for styling the "input" HTML element, where an error has occurred with entered values in the input fields.
-- **spinner:** CSS class responsible for styling the "spinner" HTML div.
-- **loadingContainer:** CSS class responsible for adding style to the HTML div's which contains the spinner.
-
-``` php
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
-    </head>
-    <body>
-        <div id="payment-saq-a-form-div"></div>
-        <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'CLIENT_AUTHORIZATION'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
-            const formConfig = {
-                "merchantId": '123456789012345', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
-                "css": {
-                    "primaryColorTheme": "#2D2D2D",
-                    "contrastColorTheme": "#ffffff",
-                    "fieldsFontFamily": "ROBOTO",
-                    "buttonFontSize": "20px",
-                    "inputTextFontSize": "20px"
-                }
-            };
-            const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
-            form.loadPaymentForm("payment-saq-a-form-div");
         </script>
     </body>
 </html>
