@@ -16,7 +16,7 @@ The `directedRouting` is part of the `additionalDataCommon` object.
 
 <!--
 type: tab
-title: directedRouting
+titles: directedRouting, processors, JSON Example
 -->
 
 The below table identifies the required parameters in the `directedRouting` object.
@@ -29,7 +29,6 @@ The below table identifies the required parameters in the `directedRouting` obje
 
 <!--
 type: tab
-title: processors
 -->
 
 The below table identifies the required parameters in the `processors` array.
@@ -42,7 +41,6 @@ The below table identifies the required parameters in the `processors` array.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json
@@ -77,7 +75,7 @@ title: JSON Example
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `directedRouting`.
@@ -128,10 +126,12 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -166,6 +166,7 @@ title: Response
       "approvalStatus": "APPROVED",
       "approvalCode": "OK123C",
       "referenceNumber": "4fbc5baaae18",
+      "processor": "NASHVILLE.NORTH",
       "networkRouted": "VISA",
       "networkInternationalId": "0001",
       "responseCode": "000",
@@ -184,24 +185,6 @@ title: Response
     "terminalId": "123456",
     "merchantId": "123456789789567"
   },
-  "additionalDataCommon": {
-    "directedRouting": {
-      "network": "VISA",
-      "cardFunction": "CREDIT",
-      "processors": [
-        {
-          "code": "FISERV",
-          "platform": "NORTH",
-          "priority": "PRIMARY"
-        },
-        {
-          "code": "FISERV",
-          "platform": "NORTH",
-          "priority": "FINAL"
-        }
-      ]
-    }
-  }
 }
 ```
 
