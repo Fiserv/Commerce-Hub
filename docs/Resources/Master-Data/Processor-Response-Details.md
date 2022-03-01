@@ -164,7 +164,6 @@ The below table identifies the parameters in the `avsSecurityCodeResponse` objec
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `avsSecurityCodeResponse`:
