@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtu
 ---
 
 
-# Merchant-Boarding
+# Merchant Boarding
 
 ClientLine Enterprise Portal offers merchants the ability to manage the onboarding process for clients.
 
