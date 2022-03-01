@@ -12,7 +12,7 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 
 ## Integration Options
 
-Build an integration to accept a payment.
+Build a Commerce Hub integration based on customer type to accept a payment.
 
 <!-- type: row -->
 
