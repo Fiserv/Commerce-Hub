@@ -112,7 +112,7 @@ The below table identifies the parameters in the `posHardwareAndSoftware` object
 <!--
 type: tab
 -->
-
+ 
 ```json
 {
    "posHardwareAndSoftware":{
