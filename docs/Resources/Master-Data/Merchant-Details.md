@@ -8,7 +8,7 @@ Used to pass merchant business data during the transaction and contains data lik
 
 <!--
 type: tab
-title: merchantDetails, JSON Example
+titles: merchantDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `merchantDetails` object.
