@@ -15,7 +15,7 @@ Split Tender allows a customer to pay a partial amount using one method of payme
 
 <!--
 type: tab
-title: splitTender
+titles: splitTender, splitTenderMethod, JSON Example
 -->
 
 The below table identifies the parameters in the `splitTender` object.
@@ -27,7 +27,6 @@ The below table identifies the parameters in the `splitTender` object.
 
 <!--
 type: tab
-title: splitTenderMethod
 -->
 
 The below table identifies the required parameters in the `splitTenderMethod` array.
@@ -38,7 +37,6 @@ The below table identifies the required parameters in the `splitTenderMethod` ar
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `splitTender`:
