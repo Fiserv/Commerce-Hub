@@ -150,7 +150,7 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 | *SUSPECTED_FRAUD* | Suspect fraud |
 | *CARD_OVERRIDE* | Chip card override |
 
----
+--- 
 
 ## See Also
 
