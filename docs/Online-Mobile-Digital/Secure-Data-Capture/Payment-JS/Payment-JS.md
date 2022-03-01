@@ -39,6 +39,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 ## See Also
 
-- Create a Payment Request
-- Customize Payment Form
+- [Create a Payment Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
+- [Customize Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
