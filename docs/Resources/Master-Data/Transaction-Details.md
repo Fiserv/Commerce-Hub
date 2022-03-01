@@ -159,4 +159,4 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
----
+--- 
