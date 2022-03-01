@@ -128,7 +128,7 @@ The below table identifies the valid values of `shippingMethod`.
 | *ELECTRONIC* | Email or digital goods |
 | *SHIP_TO_STORE* | Ship to store |
 
----
+--- 
 
 ## Address
 
