@@ -22,7 +22,7 @@ The following transactions may receive updated card details in the response; [Ch
 
 <!--
 type: tab
-title: authOptimizationDetails
+titles: authOptimizationDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `authOptimizationDetails` object.
@@ -35,7 +35,6 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format:
@@ -51,8 +50,6 @@ JSON string format:
 ```
 
 <!-- type: tab-end -->
-
-
 
 ---
 
