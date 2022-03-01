@@ -8,7 +8,7 @@ The transaction request may contain the `customerDetails` consisting of customer
 
 <!--
 type: tab
-titles: customer, JSON Example
+titles: customer, JSON Example 
 -->
 
 The below table identifies the parameters in the `customer` object.
