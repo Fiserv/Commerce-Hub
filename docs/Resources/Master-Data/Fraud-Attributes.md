@@ -36,7 +36,7 @@ JSON string format for `orderData`:
 <!-- type: tab-end -->
 
 ---
-
+ 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
