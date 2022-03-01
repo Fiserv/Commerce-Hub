@@ -24,7 +24,7 @@ The below table identifies the parameters in the `merchantDetails` object.
 | `promotionCode` | *string* |  | | This field contains the Promotion Code. |
 | `terminalLaneNumber` | *string* | 16 |  | Terminal lane number |
 
-
+ 
 <!--
 type: tab
 -->
