@@ -224,7 +224,7 @@ The below table identifies the valid values of `enhancedAuthorizationRequestIndi
 | *BALANCE_ONLY* | Partial authorizations NOT requested; Balance information requested |
 | *PARTIAL_AUTH_ONLY* | Partial authorizations requested; Balance information NOT requested |
 | *BOTH_SUPPORTED* | Partial authorizations requested; Balance information requested |
-
+ 
 ----
 
 #### Attended Terminal Data
