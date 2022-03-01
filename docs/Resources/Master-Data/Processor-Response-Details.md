@@ -177,7 +177,7 @@ JSON string format for `avsSecurityCodeResponse`:
 ```
 
 <!--type: tab-end -->
-
+ 
 
 ---
 
