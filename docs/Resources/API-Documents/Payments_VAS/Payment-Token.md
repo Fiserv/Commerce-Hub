@@ -22,7 +22,7 @@ The merchant can initiate token request in order to generate a token for the pay
 
 <!--
 type: tab
-title: source
+titles: source, transactionDetails
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -33,7 +33,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: transactionDetails
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -56,7 +55,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a token only payload request.
@@ -82,7 +81,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a tokenization (201: Created) response.
@@ -185,7 +183,7 @@ In additional to the minimum requirement for a charge request, `createToken` *tr
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request with `createToken`.
@@ -215,7 +213,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) tokenization response.
@@ -306,7 +303,7 @@ The merchant can use the saved tokenized data in order to initate a charge reque
 
 <!--
 type: tab
-title: amount
+titles: amount, paymentToken
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -318,7 +315,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: paymentToken
 -->
 
 The below table identifies the required parameters in the `paymentToken` object.
@@ -349,7 +345,7 @@ The below table identifies the required parameters in the `paymentToken` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request with PaymentToken.
@@ -381,7 +377,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (200: Success) response.

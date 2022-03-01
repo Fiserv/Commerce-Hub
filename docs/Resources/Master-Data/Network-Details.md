@@ -8,7 +8,7 @@ Authorization network response contains the `networkDetails` object.
 
 <!--
 type: tab
-title: networkDetails
+titles: networkDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `networkDetails` object.
@@ -35,9 +35,8 @@ The below table identifies the parameters in the `networkDetails` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
-
+ 
 JSON string format for `networkDetails`:
 
 ```json
@@ -76,7 +75,7 @@ Contains the card network data.
 
 <!--
 type: tab
-title: network
+titles: network, JSON Example
 -->
 
 The below table identifies the parameters in the `network` object.
@@ -87,7 +86,6 @@ The below table identifies the parameters in the `network` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json

@@ -37,7 +37,7 @@ The merchant can submit a payment request to Samsung to verify if Samsung Pay is
 
 <!--
 type: tab
-title: source
+titles: source, header
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -53,7 +53,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: header
 -->
 
 The below table identifies the required parameters in the `header` object.
@@ -76,7 +75,7 @@ The below table identifies the required parameters in the `header` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -107,7 +106,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.

@@ -26,7 +26,7 @@ The [example](#payload-example) below contains the mandatory fields required for
 
 <!--
 type: tab
-title: amount
+titles: amount, source, transactionDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -38,7 +38,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -49,7 +48,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: transactionDetails
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -73,7 +71,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a forced post payload request.
@@ -107,13 +105,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a forced post (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

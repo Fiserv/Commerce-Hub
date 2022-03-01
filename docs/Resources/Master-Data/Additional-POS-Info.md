@@ -8,7 +8,7 @@ Additional information about the POS functions and features can be submitted in 
 
 <!--
 type: tab
-title: additionalPosInformation
+titles: additionalPosInformation, JSON Example
 -->
 
 The below table identifies the parameters in the `additionalPosInformation` object.
@@ -36,7 +36,6 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `additionalPosInformation`:
@@ -94,7 +93,7 @@ Contains additional terminal's hardware and software information.
 
 <!--
 type: tab
-title: posHardwareAndSoftware
+titles: posHardwareAndSoftware, JSON Example
 -->
 
 The below table identifies the parameters in the `posHardwareAndSoftware` object.
@@ -110,7 +109,6 @@ The below table identifies the parameters in the `posHardwareAndSoftware` object
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json
@@ -136,7 +134,7 @@ Terminal or software feature information.
 
 <!--
 type: tab
-title: posFeatures
+titles: posFeatures, JSON Example
 -->
 
 The below table identifies the parameters in the `posFeatures` object.
@@ -165,7 +163,6 @@ The below table identifies the parameters in the `posFeatures` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json
@@ -274,5 +271,5 @@ The below table identifies the valid values of `cardholderActivatedTerminalInfor
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-
+ 
 ---

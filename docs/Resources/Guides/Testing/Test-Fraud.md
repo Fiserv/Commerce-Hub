@@ -17,7 +17,7 @@ To verify [address and security code](?path=docs/Resources/Guides/Fraud/Fraud-Se
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an address verification filter request where the transaction is set to decline if the address does not match.
@@ -54,7 +54,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 
@@ -135,7 +134,7 @@ To verify [velocity controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-V
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a velocity control transaction where the dollar amount exceeds the maximum dollar amount setting.
@@ -166,7 +165,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an address verification response.
@@ -226,7 +224,7 @@ To verify [transaction restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Set
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a transaction restriction where a duplicate transaction is submitted.
@@ -257,7 +255,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an address verification response.
@@ -308,7 +305,6 @@ title: Response
 
 ---
 
-
 ## Positive and Negative Filters
 
 To verify [positive and negative filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md), submit a transaction that meets the condition of the positive or negative filter.
@@ -318,7 +314,7 @@ To verify [positive and negative filters](?path=docs/Resources/Guides/Fraud/Frau
 
 <!--
 type: tab
-title: Request
+titlea: Request, Response
 -->
 
 ##### Example of a negative filter where the card number has been blocked. 
@@ -349,7 +345,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an address verification response.

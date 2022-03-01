@@ -15,9 +15,8 @@ Level II and III transactions require the `level23Data` object, and level III re
 
 <!--
 type: tab
-title: level23Data
+titles: level23Data, itemDetails, JSON Example
 -->
-
 
 The below table identifies the parameters in the `level23Data` object.
 
@@ -44,7 +43,6 @@ The below table identifies the parameters in the `level23Data` object.
 
 <!--
 type: tab
-title: itemDetails
 -->
 
 
@@ -72,7 +70,6 @@ The below table identifies the parameters in the `itemDetails` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `leve23Data`:
@@ -95,7 +92,7 @@ JSON string format for `leve23Data`:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -128,13 +125,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -185,7 +181,7 @@ title: Response
 
 <!-- type: tab-end -->
 
-
+---
 
 ## See Also
 

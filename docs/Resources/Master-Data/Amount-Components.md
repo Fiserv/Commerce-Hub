@@ -1,6 +1,6 @@
 ---
 tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
----
+--- 
 
 # Transaction Amount
 
@@ -15,7 +15,7 @@ Used to present the transaction amount and transaction currency for particular t
 
 <!--
 type: tab
-title: amount
+titles: amount, JSON Example
 -->
 
 The below table identifies the parameters in the `amount` object.
@@ -27,7 +27,6 @@ The below table identifies the parameters in the `amount` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `amount`:
@@ -49,7 +48,7 @@ Used in transactions where additional amount fields such as taxes, [surcharge fe
 
 <!--
 type: tab
-title: amountComponents
+titles: amountComponents, JSON Example
 -->
 
 The below table identifies the parameters in the `amountComponents` object.
@@ -68,7 +67,6 @@ The below table identifies the parameters in the `amountComponents` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `amountComponents`:

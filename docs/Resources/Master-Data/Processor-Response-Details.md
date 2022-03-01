@@ -10,7 +10,7 @@ The processor response contains the response parameters from the Commerce Hub fo
 
 <!--
 type: tab
-title: processorResponseDetails
+titles: processorResponseDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `processorResponseDetails` object.
@@ -33,7 +33,6 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `processorResponseDetails`:
@@ -96,7 +95,7 @@ Indicates the bank association response details.
 
 <!--
 type: tab
-title: bankAssociationDetails
+titles: bankAssociationDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `bankAssociationDetails` object.
@@ -110,7 +109,6 @@ The below table identifies the parameters in the `bankAssociationDetails` object
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `bankAssociationDetails`:
@@ -145,7 +143,7 @@ Indicates the AVS and Security code gateway response details.
 
 <!--
 type: tab
-title: avsSecurityCodeResponse
+titles: avsSecurityCodeResponse, JSON Example
 -->
 
 The below table identifies the parameters in the `avsSecurityCodeResponse` object.
@@ -159,7 +157,6 @@ The below table identifies the parameters in the `avsSecurityCodeResponse` objec
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `avsSecurityCodeResponse`:
@@ -190,7 +187,7 @@ Indicates the AVS and Security code association response details.
 
 <!--
 type: tab
-title: association
+titles: association, JSON Example
 -->
 
 The below table identifies the parameters in the `association` object.
