@@ -211,7 +211,7 @@ JSON string format for `association`:
       "securityCodeResponse": "M",
       "cardholderNameResponse": "1"
    }
-}
+} 
 ```
 
 <!--type: tab-end -->
