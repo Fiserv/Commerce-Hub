@@ -117,7 +117,7 @@ Contains the static data such as operating system details and device type/model.
 
 <!--
 type: tab
-title: dataStatic, JSON Example
+titles: dataStatic, JSON Example
 -->
 
 The below table identifies the parameters in the `dataStatic` object.
