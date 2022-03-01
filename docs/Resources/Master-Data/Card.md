@@ -52,7 +52,7 @@ JSON string format for `card`:
    }
 }
 ```
-
+ 
 <!-- type: tab-end -->
 
 ---
