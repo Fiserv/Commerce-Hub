@@ -204,7 +204,7 @@ The below table identifies the valid values of `attendedTerminalData`.
 | *UNATTENDED* | Unattended terminal or software |
 | *NONE* | No terminal or software used (VRU, etc.) |
 
----
+--- 
 
 #### Terminal Location
 
