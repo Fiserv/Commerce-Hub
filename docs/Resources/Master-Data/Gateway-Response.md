@@ -74,7 +74,7 @@ The below table identifies the valid values of `transactionState` in the gateway
 Object contains the transaction processing details.
 
 <!--
-type: tab
+type: tab 
 titles: transactionProcessingDetails, JSON Example
 -->
 
