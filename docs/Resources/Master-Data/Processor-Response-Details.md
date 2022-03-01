@@ -226,7 +226,7 @@ JSON string format for `association`:
 
 ---
 
-## See Also
+## See Also 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Response Code Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
