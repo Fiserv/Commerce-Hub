@@ -82,7 +82,7 @@ The below table identifies the parameters in the `phoneNumber` object.
 <!--
 type: tab
 -->
-
+ 
 JSON string format for `phoneNumber`:
 
 ```json
