@@ -73,7 +73,7 @@ Item details is an array that identifies the category, item count, and value of 
 
 <!--
 type: tab
-title: itemDetails, JSON Exaample
+titles: itemDetails, JSON Exaample
 -->
 
 The below table identifies the parameters in the `itemDetails` array.
