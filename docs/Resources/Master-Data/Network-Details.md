@@ -97,7 +97,7 @@ type: tab
 ```
 
 <!-- type: tab-end -->
-
+ 
 ---
 
 #### Authorization Characteristics Indicator
