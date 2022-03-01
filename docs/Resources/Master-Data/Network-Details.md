@@ -121,5 +121,5 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
-
+ 
 ---
