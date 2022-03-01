@@ -83,7 +83,7 @@ JSON string format for `amountComponents`:
       "vatAmount": 1.00
    }
 }
-```
+``` 
  
 <!-- type: tab-end -->
 
