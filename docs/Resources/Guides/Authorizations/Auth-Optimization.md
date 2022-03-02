@@ -1,7 +1,7 @@
 # Authorization Optimization
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon.
+> We are enhancing Commerce Hub to support auth optimization and the documents related to the feature will be released soon.
 
 Authorization Optimization from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for E-commerce transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks ensuring higher approval rates. Features include;
 
