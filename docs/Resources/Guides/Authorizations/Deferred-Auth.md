@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, deferred-authorization, payload-example]
+tags: [carat, commerce-hub, enterprise, deferred-authorization, authorization]
 ---
 
 # Deferred Authorization
