@@ -72,7 +72,7 @@ JSON string format for PaymentTrack:
 
 <!--
 type: tab
-title: Request, Response
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using PaymentTrack.

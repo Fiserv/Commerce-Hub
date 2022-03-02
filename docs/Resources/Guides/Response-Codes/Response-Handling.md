@@ -34,8 +34,6 @@ titles: 2xx, 4xx, 5xx
 type: tab
 -->
 
-<!-- Add new responses and edit the payload example as well -->
-
 ##### Client Error Status code, description and resolution
 
 | Code | Message  | Description | Resolution |
@@ -48,8 +46,6 @@ type: tab
 | 415 | Unsupported Media Type | Commerce Hub not able to process the supplied media type, as indicated by the Content-Type request header. | Merchant to correct the data and resend. |
 | 425 | Too Early | The request was sent too early. | Merchant to wait for sometime and send request. |
 | 429 | Too Many Requests | Merchant had sent too many requests in a given amount of time. | Merchant to wait for sometime and send request. |
-
-
 
 <!--
 type: tab
