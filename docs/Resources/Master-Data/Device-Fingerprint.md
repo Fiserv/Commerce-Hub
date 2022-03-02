@@ -8,7 +8,7 @@ The `deviceFingerPrint` is information collected about the software and hardware
 
 <!--
 type: tab
-title: deviceFingerprintData
+titles: deviceFingerprintData, JSON Example
 -->
 
 The below table identifies the parameters in the `deviceFingerprintData` object.
@@ -16,13 +16,12 @@ The below table identifies the parameters in the `deviceFingerprintData` object.
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 |`provider` | *string* | N/A | Device provider e.g. InAuth. |
-|`dataCapture`| *object* | N/A | [Data capture](#data-capture) details. | 
 |`dataStatic`| *object* | N/A | [Data static](#data-static) details.|
 |`dataDynamic`| *object* | N/A | [Data dynamic](#data-dynamic) details. |
+|`dataCapture`| *object* | N/A | [Data capture](#data-capture) details. |
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `deviceFingerprint`:
@@ -33,16 +32,16 @@ JSON string format for `deviceFingerprint`:
       "deviceFingerprint": [
          {
             "provider": "InAuth",
-            "dataCapture": {
-               "rawData": "aaaaaXREUVZGRlFY...aMV",
-               "dataEventId": "BB8E4E92...Fz1E063113",
-               "captureTime": "2016-04-16T16:06:05Z"
+            "dataCapture": {  
+               "rawData": "aaaaaXREUVZGRlFY...aMV",  
+               "dataEventId": "BB8E4E92...Fz1E063113",  
+               "captureTime": "2016-04-16T16:06:05Z"  
             },
             "dataStatic": {
-               "operatingSystem": "ANDROID",
-               "operatingSystemVersion": "5.1.1 Lollipop",
-               "model": "XYX-1",
-               "type": "Moto G",
+               "operatingSystem": "ANDROID",  
+               "operatingSystemVersion": "5.1.1 Lollipop",  
+               "model": "XYX-1",  
+               "type": "Moto G",  
                "deviceId": "00:1B:44:11:3A:B7",
                "javaScriptEnabled": true,
                "javaEnabled": true,
@@ -50,8 +49,8 @@ JSON string format for `deviceFingerprint`:
                "locale": "en-US"
             },
             "dataDynamic": {
-               "latitude": "13.0827 N",
-               "longitude": "80.2707 E",
+               "latitude": "13.0827 N",  
+               "longitude": "80.2707 E",  
                "ipAddress": "172.27.37.221",
                "captureTime": "2016-04-16T16:06:05Z",
                "address": {
@@ -74,7 +73,7 @@ Contains the finger print data and time it is captured.
 
 <!--
 type: tab
-title: dataCapture
+titles: dataCapture, JSON Example
 -->
 
 The below table identifies the parameters in the `dataCapture` object.
@@ -87,7 +86,6 @@ The below table identifies the parameters in the `dataCapture` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `dataCapture`:
@@ -110,26 +108,25 @@ Contains the static data such as operating system details and device type/model.
 
 <!--
 type: tab
-title: dataStatic
+titles: dataStatic, JSON Example
 -->
 
 The below table identifies the parameters in the `dataStatic` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `operatingSystem` | *string* | 256 | Device operating system (OS) |
-| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
-| `model` | *string* | 256 | Device Model |
-| `type` | *string* | 256 | Device type/name |
 | `deviceId` | *string* | 48 | MAC of the device originating the transaction |
 | `javaScriptEnabled` | *boolean* | N/A | Identifies if JavaScript is enabled on the device |
 | `javaEnabled` | *boolean* | N/A | Identifies if Java is enabled on the device |
 | `userAgent` | *string* | 2048 | User agent data from the user device truncated to 2048 bytes |
 | `locale` | *string* | 8 | Language/Region code of user in IETF BCP47 format |
+| `operatingSystem` | *string* | 256 | Device operating system (OS) |
+| `operatingSystemVersion` | *string* |  56| Device operating system (OS) version |
+| `model` | *string* | 256 | Device Model |
+| `type` | *string* | 256 | Device type/name |
 
 <!--
-type: tab
-title: JSON Example
+type: tab 
 -->
 
 JSON string format for `dataStatic`:
@@ -137,10 +134,10 @@ JSON string format for `dataStatic`:
 ```json
 {
    "dataStatic":{
-      "operatingSystem": "ANDROID",
-      "operatingSystemVersion": "5.1.1 Lollipop",
-      "model": "XYX-1",
-      "type": "Moto G",
+      "operatingSystem": "ANDROID",  
+      "operatingSystemVersion": "5.1.1 Lollipop",  
+      "model": "XYX-1",  
+      "type": "Moto G",  
       "deviceId": "00:1B:44:11:3A:B7",
       "javaScriptEnabled": true,
       "javaEnabled": true,
@@ -158,7 +155,7 @@ Contains the dayamic data like device location and IP address.
 
 <!--
 type: tab
-title: dataDynamic
+titles: dataDynamic, JSON Example
 -->
 
 The below table identifies the parameters in the `dataDynamic` object.
@@ -170,11 +167,10 @@ The below table identifies the parameters in the `dataDynamic` object.
 | `ipAddress` | *string* | 39 | Customer IP Address |
 | `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 | `address` | *object* | N/A | City and country [address](?path=docs/Resources/Master-Data/Address.md#address) the IP/Device is resident in when transaction was originated |
-
+ 
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `dataDynamic`:
@@ -194,13 +190,14 @@ JSON string format for `dataDynamic`:
 }
 
 ```
-<!--type: tab-end -->
+<!--type: tab-end --> 
 
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Emhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

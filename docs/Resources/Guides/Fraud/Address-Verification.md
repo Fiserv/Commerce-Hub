@@ -10,11 +10,11 @@ Commerce Hub supports [Address Verification Service (AVS)](?path=docs/Resources/
 
 ## Request Variables
 
-For the transactions where address verification is required, the merchant's API is required to pass the billing information as part of the request.
+For the transactions where an address verification is required, the merchant's API is required to pass the billing information as part of the request.
 
 <!--
 type: tab
-title: billingAddress
+titles: billingAddress, JSON Example
 -->
 
 The below table identifies the required parameters in the `billingAddress` object.
@@ -27,7 +27,6 @@ The below table identifies the required parameters in the `billingAddress` objec
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `billingAddress`:
@@ -63,7 +62,7 @@ JSON string format for `billingAddress`:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an address verification request.
@@ -88,13 +87,16 @@ title: Request
          "postalCode": "30301",
          "country": "US"
       }
-   }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an address verification response.
@@ -179,7 +181,7 @@ title: Response
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an address verification during a charges request.
@@ -218,7 +220,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Charges response containing AVS details.
@@ -316,7 +317,7 @@ The below table identifies the valid values of `avsCode`.
 The below table identifies the valid values of `cardHolderNameResponse`.
 
 <!-- theme: info -->
-> Cardholder name response is only valid on American Express (AMEX) transactions.
+> Cardholder name response is only valid on American Express (AMEX) and Discover transactions.
 
 | Value | Description |
 | ------- | ------- |
@@ -337,13 +338,8 @@ The below table identifies the valid values of `cardHolderNameResponse`.
 - [Address Object](?path=docs/Resources/Master-Data/Address.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
-- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
-- [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
-- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---

@@ -24,7 +24,7 @@ Situations in which this could be implemented include:
 
 <!--
 type: tab
-title: splitShipment
+titles: splitShipment, JSON Example
 -->
 
 The below table identifies the required parameters in the `splitShipment` object.
@@ -36,7 +36,6 @@ The below table identifies the required parameters in the `splitShipment` object
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `splitShipment`:
@@ -56,7 +55,7 @@ JSON string format for `splitShipment`:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `splitShipment`.
@@ -74,16 +73,22 @@ title: Request
        "totalCount":5,
        "finalShipment":true
       }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }  
 }
 ```
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -131,8 +136,8 @@ title: Response
    },
    "transactionDetails":{
       "splitShipment":{
-         "totalCount": 5,
-         "finalShipment": true
+       "totalCount": 5,
+       "finalShipment": true
       }
    }
 }

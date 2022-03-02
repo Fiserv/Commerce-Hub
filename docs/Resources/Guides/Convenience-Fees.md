@@ -1,8 +1,11 @@
 ---
-tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, american-express, discover, vault]
+tags: [carat, commerce-hub, enterprise, convenience-fees]
 ---
 
 # Convenience Fees
+
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include convenience fee support and the documents related to the features will be released soon.
 
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
@@ -16,7 +19,7 @@ A merchant that charges a convenience fee must ensure that the fee is:
 - Included as a part of the total amount of the transaction.
 
 <!-- theme : warning -->
-> A convenience fee is different than a [surcharge](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge). A surcharge is the ability to charge extra just for the benefit of using a credit card while a convenience fee is for a specific use, such as taxes or tuitions, or payment through alternative channels, such as by phone or online.
+> A convenience fee is different than a [surcharge](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge-fees). A surcharge is the ability to charge extra just for the benefit of using a credit card while a convenience fee is for a specific use, such as taxes or tuitions, or payment through alternative channels, such as by phone or online.
 
 ---
 
@@ -33,7 +36,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ## Request Variables
 
-The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
+The `convenienceFee` is part of the `amountComponents` object in the `additionalDataCommon` object. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
 
 ---
 
@@ -41,7 +44,7 @@ The `convenienceFee` is part of the `amountComponents` and the `additionalDataCo
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `convenienceFee`.
@@ -70,21 +73,27 @@ title: Request
       "amountComponents":{
          "convenienceFees":"1.00"
       }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }
 }
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
    "gatewayResponse":{
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "TOKEN",
+      "transactionType": "CHARGES",
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{

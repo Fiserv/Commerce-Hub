@@ -2,10 +2,9 @@
 tags: [carat, commerce-hub, enterprise, airline, card-rental, ecommerce, lodging, payment-facilitator, petro, quick-service-restaurants, retail]
 ---
 
-
 # Industry Verticals
 
-A Industry vertical is used to distingiush between different business model of vendors offer goods and services specific to an industry, trade, profession, or other group of customers with specialized needs.
+A Industry vertical is used to distingiush between different business models of vendors who offer goods and services specific to an industry, trade, profession, or other group of customers with specialized needs.
 
 ---
 

@@ -26,7 +26,7 @@ The [example](#payload-example) below contains the mandatory fields required for
 
 <!--
 type: tab
-title: amount
+titles: amount, source, transactionDetails, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -38,7 +38,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -49,7 +48,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: transactionDetails
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -57,6 +55,17 @@ The below table identifies the required parameters in the `transactionDetails` o
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -72,7 +81,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -93,7 +102,11 @@ title: Request
    },
    "transactionDetails":{
       "captureFlag": true
-   }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 
@@ -101,13 +114,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 

@@ -2,40 +2,38 @@
 tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data]
 ---
 
-
 # Additional Data Common
 
 Additional data common is used for specific business requirements.
-
 <!--
 type: tab
-title: additionalDataCommon
+titles: additionalDataCommon, JSON Example
 -->
+
 
 The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
-| `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `billPaymentIndicator` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
-
-<!---
+| `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
+| `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `deferredPayments` | *object* | N/A | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md) |
 | `directedRouting` | *object* | N/A | Required in Directed Routing transactions. |
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 | `privateLabel` | *object* | N/A | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
--->
+
 
 ---
 
+
 <!--
 type: tab
-title: JSON Example
 -->
+
 
 JSON string format for `additionalDataCommon`:
 
@@ -44,12 +42,8 @@ JSON string format for `additionalDataCommon`:
    "additionalDataCommon":{
       "additionalData":{
          "baiFlag": "PERSON_TO_PERSON",
-         "networkTransactionReference":"123456788",
-         "billPayment":false,
          "ecomURL":"https://www.somedomain.com",
-         "goodsSoldCode":"GIFT_CARD",
-         "terminalLaneNumber":"001",
-         "requestedTestErrorResponseCode":"NO_CONNECTION_AVAILABLE",
+         "requestedTestResponseCode":"NO_CONNECTION_AVAILABLE",
          "emvParameterDownloadIndicator":true
       },
       "amountComponents":{
@@ -76,7 +70,7 @@ JSON string format for `additionalDataCommon`:
          "country": "US", // Future Release
          "taxId": "123456789" // Future Release
       },
-      "billPaymentIndicator": "RECURRING",
+      "billPaymentType": "RECURRING",
       "installments":{
          "installmentAmount": 20.00, // Future Release
          "lastInstallmentAmount": 20.00, // Future Release
@@ -135,23 +129,19 @@ The below table identifies the valid values of the `billPaymentIndicator`.
 ## Additional Data
 
 Additional Data identifies various elments based on the specific transaction type.
-
 <!--
 type: tab
-title: additionalData
+titles: additionalData, JSON Example
 -->
-
 
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
-| `requestedTestErrorResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
+| `requestedTestResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
 
 <!---
 | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
-| `billPayment` | *boolean* | N/A | Identifies a [bill payment](docs/Resources/Guides/Bill-Payments/Bill-Payments.md) transaction. |
-| `terminalLaneNumber` | *string* | 16 | Terminal Lane Number. |
 | `emvParameterDownloadIndicator` | *boolean* |  N/A  | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
 -->
 
@@ -159,8 +149,8 @@ title: additionalData
 
 <!--
 type: tab
-title: JSON Example
 -->
+
 
 JSON string format for `additionalData`:
 
@@ -168,11 +158,9 @@ JSON string format for `additionalData`:
 {
    "additionalData":{
       "baiFlag": "PERSON_TO_PERSON", // Future Release
-      "networkTransactionReference": "123456788",
       "billPayment": false, // Future Release
       "ecomURL": "https://www.somedomain.com",
       "goodsSoldCode": "GIFT_CARD", // Future Release
-      "terminalLaneNumber": "001", // Future Release
       "requestedTestResponseCode": "705", // Future Release
       "emvParameterDownloadIndicator": true // Future Release
    }
@@ -211,7 +199,10 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+ 
+<!---
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
+-->
 
----
+--- 

@@ -1,13 +1,13 @@
 ---
 tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
----
+--- 
 
 # Transaction Amount
 
-Transaction amount information is contained into two objects, `amount`<!--- and `amountComponents`-->.
+Transaction amount information is contained in the `amount` and `amountComponents` object.
 
 - [**amount:**](#amount) Used to support the request for payment.
-- [**amountComponents:**](#amount-components) Used in transactions where additional amount fields such as tax, surcharge, or fees are required as part of the request.
+- [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
 
 ## Amount
 
@@ -15,7 +15,7 @@ Used to present the transaction amount and transaction currency for particular t
 
 <!--
 type: tab
-title: amount
+titles: amount, JSON Example
 -->
 
 The below table identifies the parameters in the `amount` object.
@@ -23,11 +23,10 @@ The below table identifies the parameters in the `amount` object.
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 | `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `amount`:
@@ -35,7 +34,7 @@ JSON string format for `amount`:
 ```json
 {
    "amount":{
-      "total": 12.00,
+      "total": 21.70,
       "currency": "USD"
    }
 }
@@ -45,11 +44,11 @@ JSON string format for `amount`:
 
 ## Amount Components
 
-Used in transactions where additional amount fields such as tax, surcharge, fees are required as part of the request.
+Used in transactions where additional amount fields such as taxes, [surcharge fee](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge-fees), or [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) are required as part of the request.
 
 <!--
 type: tab
-title: amountComponents
+titles: amountComponents, JSON Example
 -->
 
 The below table identifies the parameters in the `amountComponents` object.
@@ -60,13 +59,14 @@ The below table identifies the parameters in the `amountComponents` object.
 | `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
 | `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
 | `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
-| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
-| `ITBISTaxAmount` | *number* | 12 | Tax on the Transfer of Industrialised Goods and Services (ITBIS) tax amount |
+| `cashback` | *number* | 12 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase. |
+| `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
+| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+| `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `amountComponents`:
@@ -83,7 +83,7 @@ JSON string format for `amountComponents`:
       "vatAmount": 1.00
    }
 }
-```
+``` 
  
 <!-- type: tab-end -->
 
@@ -93,10 +93,8 @@ JSON string format for `amountComponents`:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
-
+ 
 ---

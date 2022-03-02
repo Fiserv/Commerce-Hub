@@ -8,7 +8,7 @@ The `transactionInteraction` object contains the data indicating where the trans
 
 <!--
 type: tab
-title: transactionInteraction
+titles: transactionInteraction, JSON Example
 -->
 
 The below table identifies the parameters in the `transactionInteraction` object. 
@@ -16,15 +16,18 @@ The below table identifies the parameters in the `transactionInteraction` object
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `origin` | *string* | N/A | The [origin](#transaction-origin) of the transaction. |
+| `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Required on all online, mobile, and digital E-Commerce transactions.|
 | `posEntryMode` | *string* | N/A | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
 | `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `responseCode` | *string* | | Response code returned by network/issuer used in subsequent transactions. |
+| `posData` | *string* | | POS data returned by network/issuer used in subsequent transactions. |
 | `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
-| `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Eequired on all online, mobile, and digital E-Commerce transactions.|
+| `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
+| `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification | 
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `transactionInteraction`:
@@ -33,11 +36,15 @@ JSON string format for `transactionInteraction`:
 {
    "transactionInteraction":{
       "origin": "ECOM",
-      "posEntryMode": "MANUAL",
-      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
+      "posEntryMode": "MANUAL",  
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM",  
+      "responseCode": "string",  
+      "posData": "string",  
       "mobileInteraction": "PHONE_NUMBER",
-      "eciIndicator": "SECURE_ECOM"
-   }
+      "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",  
+      "eciIndicator": "SECURE_ECOM",
+      "additionalPosInformation": "",  
+   } 
 }
 
 ```
@@ -52,7 +59,7 @@ The below table identifies the valid values of `origin`.
 
 | Value | Description |
 |-------|-------------|
-| *ECOM* | Card Not Present email or internet |
+| *ECOM* | Card not present email or internet |
 | *MOTO* | Mail order or telephone order |
 | *POS* | Card Present retail face to face |
 
@@ -79,7 +86,7 @@ POS entry mode value identifies how account number was entered on the transactio
 | *EMV_FALLBACK* | EMV fallback to manual entry |
 | *EMV_FALLBACK_MAG* | EMV fallback to Magnetic Strip entry |
 | *EMV_SWITCHED* | EMV Transaction switched from Contactless to Contact entry |
-| *MAG_STRIPE* | Magnetic Stripe - Track Read |
+| *MAG_STRIPE* | Magnetic Stripe - Track Read | 
 
 ---
 
@@ -115,6 +122,44 @@ The below table identifies the valid values of `mobileInteraction`.
 
 ---
 
+#### Terminal Entry Capability
+
+The below table identifies the valid values of `terminalEntryCapability`.
+
+| Value | Description |
+|-------|-------------|
+| UNSPECIFIED | Default |
+| ECOMMERCE | E-commerce no terminal used |
+| MAG_STRIPE_ONLY | Track read only |
+| MAG_STRIPE_MANUAL | Track read or manual key |
+| MAG_STRIPE_MANUAL_CHIP | Track read, manual key or chip |
+| BARCODE | Barcode scan |
+| CONTACTLESS | Contactless integrated circuit read |
+| OCR | Opitcal character reader |
+| CHIP_ONLY | Chip only |
+| CHIP_MAG_STRIPE | Chip with track fallback |
+| MANUAL_ONLY | Manual key only |
+| CONTACTLESS_MAG_STRIPE | Contactless or track read |
+| HYBRID | Hybrid entry mode |
+
+---
+
+#### Cardholder Authentication Method
+
+The below table identifies the valid values of `cardholderAuthenticationMethod`.
+
+| Value | Description |
+|-------|-------------|
+| NOT_AUTHENTICATED | Cardholder not authenticated |
+| PIN | Pin authentication |
+| ELECTRONIC_SIGNATURE | Electronic signature authentication |
+| MANUAL_SIGNATURE | Manual Signature authentication |
+| OTHER_MANUAL_VERIFICATION | Manual authentication |
+| UNKNOWN | Authentication method unknown |
+| OTHER_SYSTEMATIC_VERIFICATION | Used for other authentication methods |
+
+---
+
 #### Electronic Commerce Indicator
 
 <!-- theme: warning -->
@@ -128,13 +173,14 @@ The below table identifies the valid values of `eciIndicator`.
 | *NON_AUTH_ECOM* | **Non-Authenticated Electronic Commerce Transaction:** Designates a transaction consummated via E-commerce that attempted to authenticate the cardholder.  Utilized for transactions in the event of: A non-participating Issuer, a non-participating cardholder of a participating Issuer, or a participating Issuer, but the authentication server is not available. |
 | *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
 | *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
-
+| *AMEX_PAYMENT_TOKEN* | **American Express Payment Token:** Designates a secure transaction between a cardholder and a merchant via E-commerce where AMEX Payment Token data is present. |
+ 
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 
----
+--- 

@@ -5,33 +5,37 @@ tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 
 # PaymentCard
 
-Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online or in person. The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
+Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
+
+<!-- theme: info -->
+> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
 
 ---
 
-### Minimum Requirements
+### Request Variables
 
 <!--
 type: tab
-title: source
+titles: source, card, JSON Example
 -->
 
-The below table identifies the required parameters in the `source` object.
+The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------ | --- |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
 | `card` | *object* | N/A |  &#10004; | Contains the payment card details |
+| `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ----------- |---|
 | `cardData` | *string* | 15 |  &#10004; | Credit Card Number or Encrypted Data |
 | `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month Example (05) |
 | `expirationYear` | *string* | 4 |  &#10004; |4-digit card expiration year Example (2025) |
@@ -41,21 +45,20 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for PaymentCard:
 
 ```json
 {
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      }
-   }
+	"source": {
+		"sourceType": "PaymentCard",
+		"card": {
+			"cardData": "4005550000000019",
+			"expirationMonth": "02",
+			"expirationYear": "2035"
+		}
+	}
 }
 ```
 
@@ -67,7 +70,7 @@ JSON string format for PaymentCard:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using PaymentCard.
@@ -88,6 +91,10 @@ title: Request
    },
    "transactionDetails": {
       "captureFlag": true
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }
 }
 ```
@@ -96,13 +103,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

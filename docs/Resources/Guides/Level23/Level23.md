@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, 
 <!-- theme: danger -->
 > We are enhancing the Commerce Hub to include Level II and III purchase card support and the documents related to the features will be released soon.
 
-Commerce Hub can pass Level II and III data (also knows as Enhanced Data) with business-to-business corporate and purchase card transactions. With a Level II and III data pass through solution, merchant's can meet card brand requirements, provide invoice-level transaction details and qualify for lower rates.
+Commerce Hub can pass Level II and III data *(also knows as Enhanced Data)* with business-to-business corporate and purchase card transactions. With a Level II and III data pass through solution, merchant's can meet card brand requirements, provide invoice-level transaction details and qualify for lower rates.
 
 ## Request Variables
 
@@ -15,9 +15,8 @@ Level II and III transactions require the `level23Data` object, and level III re
 
 <!--
 type: tab
-title: level23Data
+titles: level23Data, itemDetails, JSON Example
 -->
-
 
 The below table identifies the parameters in the `level23Data` object.
 
@@ -41,12 +40,9 @@ The below table identifies the parameters in the `level23Data` object.
 |`totalLineItemTax` | *number* | | Line item tax |
 | `itemDetails` | *array* | NA | Array containing the details of line items sold |
 
-
 <!--
 type: tab
-title: itemDetails
 -->
-
 
 The below table identifies the parameters in the `itemDetails` object.
 
@@ -59,10 +55,10 @@ The below table identifies the parameters in the `itemDetails` object.
 |`quantity` | *string* | | Amount of the product being purchased |
 |`unitOfMeasurement` | *string* | | [Unit of measurment](?path=docs/Resources/Guides/Level23/Unit-Measurement.md) for the product purchased |
 |`totalAmount` | *number* | 18,3 | Total before tax and discounts |
-|`discountIndicator` | *boolean* | | Discout code for the product being purchased |
+|`discountIndicator` | *boolean* | | Indicates the product being purchased has a discount |
 |`discountRate` | *number* | | Discout rate percent |
 |`discountAmount` | *number* | 18,3 | Discount amount on the purchased product |
-|`taxIndicator` | *boolean* | | Tax code for purchased product |
+|`taxIndicator` | *boolean* | | Indicates tax is being charged for the purchased product |
 |`lineItemTaxRate` | *number* | | Discout code for the product being purchased |
 |`taxType` | *string* | | [Tax type](?path=docs/Resources/Guides/Level23/Tax-Types.md) for the product being purchased |
 |`lineItemTax` | *number* | 18,3| Tax aount for the line item |
@@ -72,30 +68,48 @@ The below table identifies the parameters in the `itemDetails` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `leve23Data`:
 
 ```json
 {
-   "card":{
-      "totalTaxAmount": "3.00",
-      "freightAmount": "9.00",
-      "totalDiscountAmount": "1.0",
-      "dutyAmount": "5.0",
-      "destinationPostalCode": "55555"
-      "destinationCountryCode": "ABC",
-      "orderDate": "MMDDYYYY",
-      "shipFromPostalCode": "55555",
-      "merchantTaxId": "5.0",
-      "merchantInvoiceNumber": "1024"
-      "itemDetails": "array",
-      "taxRate": "number",
-      "supplierVatRegistrationNumber": "15",
-      "freightRate": "1%",
-      "totalDiscountRate": "1%"
-      "totalLineItemTax": "18"
+	"leve23Data": {
+    "totalTaxAmount": "3.00",
+    "freightAmount": "9.00",
+    "totalDiscountAmount": "2.00",
+    "dutyAmount": "5.00",
+    "destinationPostalCode": "12875",
+    "destinationCountryCode": "ABC",
+    "orderDate": "2023-03-27",
+    "shipFromPostalCode": "55555",
+    "merchantTaxId": "1112233333",
+    "merchantInvoiceNumber": "1024245874",
+    "taxRate": "5",
+    "supplierVatRegistrationNumber": "15574",
+    "freightRate": "1",
+    "totalDiscountRate": "1",
+    "totalLineItemTax": "4.50",
+		"itemDetails": [
+		    {
+			"commodityCode": "12345",
+			"itemDescription": "Shoes",
+			"productCode": "2035",
+			"unitPrice": "10.00",
+			"quantity": "2",
+			"unitOfMeasurement": "EACH",
+			"totalAmount": "20.00",
+			"discountIndicator": "true",
+			"discountRate": "10",
+			"discountAmount": "2.00",
+			"taxIndicator": "true",
+			"lineItemTaxRate": "5",
+			"taxType": "SALES",
+			"vatRate": "20",
+			"vatAmount": "3.60",
+			"lineItemTotal": "22.50"
+		    }
+     ]
    }
 }
 ```
@@ -106,38 +120,69 @@ JSON string format for `leve23Data`:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "level23",
-      "card":{
-         "commodityCode": "12345",
-         "itemDescription": "02",
-         "productCode": "2035"
-         "unitPrice": "3.00",
-         "quantity": "2",
-         "unitOfMeasurement": "EACH",
-         "totalAmount": "20.00",
-         "discountIndicator": "code"
-         "discountRate": "1%",
-         "discountAmount": "2.00",
-         "taxIndicator": "code"
-         "lineItemTaxRate": "1",
-         "taxType": "SALES",
-         "vatRate": "2",
-         "vatAmount": "4.00",
-         "lineItemTotal": "18.00"
-         
-   }
+	"amount": {
+		"total": "12.04",
+		"currency": "USD"
+	},
+	"source": {
+		"sourceType": "level23",
+		"card": {
+			"cardData": "4005550000000019",
+			"expirationMonth": "02",
+			"expirationYear": "2035"
+		}
+	},
+	"leve23Data": {
+    "totalTaxAmount": "3.00",
+    "freightAmount": "9.00",
+    "totalDiscountAmount": "2.00",
+    "dutyAmount": "5.00",
+    "destinationPostalCode": "12875",
+    "destinationCountryCode": "ABC",
+    "orderDate": "2023-03-27",
+    "shipFromPostalCode": "55555",
+    "merchantTaxId": "1112233333",
+    "merchantInvoiceNumber": "1024245874",
+    "taxRate": "5",
+    "supplierVatRegistrationNumber": "15574",
+    "freightRate": "1",
+    "totalDiscountRate": "1",
+    "totalLineItemTax": "4.50",
+		"itemDetails": [
+      {
+			"commodityCode": "12345",
+			"itemDescription": "Shoes",
+			"productCode": "2035",
+			"unitPrice": "10.00",
+			"quantity": "2",
+			"unitOfMeasurement": "EACH",
+			"totalAmount": "20.00",
+			"discountIndicator": "true",
+			"discountRate": "10",
+			"discountAmount": "2.00",
+			"taxIndicator": "true",
+			"lineItemTaxRate": "5",
+			"taxType": "SALES",
+			"vatRate": "20",
+			"vatAmount": "3.60",
+			"lineItemTotal": "22.50"
+		  }
+    ]
+	},
+	"transactionDetails": {
+		"captureFlag": true
+	},
+	"merchantDetails": {
+		"merchantId": "123456789789567",
+		"terminalId": "123456"
+	}
 }
 ```
 
@@ -145,13 +190,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -191,7 +235,7 @@ title: Response
       "hostResponseMessage":"APPROVAL",
       "localTimestamp":"2021.02.25 14:14:38 (CET)",
       "bankAssociationDetails":{
-         "transactionTimestamp":"2021.02.25 14:14:38 (CET)"
+      "transactionTimestamp":"2021.02.25 14:14:38 (CET)"
       }
    },
    "transactionDetails":{
@@ -202,7 +246,7 @@ title: Response
 
 <!-- type: tab-end -->
 
-
+---
 
 ## See Also
 

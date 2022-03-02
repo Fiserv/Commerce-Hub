@@ -15,7 +15,7 @@ Is the address connected to the customer's [payment method](?path=docs/Resources
 
 <!--
 type: tab
-title: billingAddress
+titles: billingAddress, JSON Example
 -->
 
 The below table identifies the parameters in the `billingAddress` object.
@@ -29,7 +29,6 @@ The below table identifies the parameters in the `billingAddress` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `billingAddress`:
@@ -68,7 +67,7 @@ Is the address or email where the merchant will deliver the goods or services.
 
 <!--
 type: tab
-title: shippingAddress
+titles: shippingAddress, JSON Example
 -->
 
 
@@ -85,7 +84,6 @@ The below table identifies the parameters in the `shippingAddress` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `shippingAddress`:
@@ -129,7 +127,7 @@ The below table identifies the valid values of `shippingMethod`.
 | *GROUND* | Shipping within 4 days |
 | *ELECTRONIC* | Email or digital goods |
 | *SHIP_TO_STORE* | Ship to store |
-
+ 
 ---
 
 ## Address
@@ -137,7 +135,7 @@ The below table identifies the valid values of `shippingMethod`.
 Common `address` object used in both the billing address and shipping address.
 <!--
 type: tab
-title: address
+titles: address, JSON Example
 -->
 
 
@@ -151,12 +149,12 @@ The below table identifies the parameters in the `address` object.
 | `city` | *string* | 256 | City or locality |
 | `stateOrProvince` | *string* | 256 | State or province name |
 | `postalCode` | *string* | 10 | Postal code |
-| `country` | *string* | 256 | [ISO country code](?path=docs/Resources/Master-Data/Country-Code.md).|
+| `country` | *string* | 256 | [ISO country or code or full country name](?path=docs/Resources/Master-Data/Country-Code.md).|
+| `county` | *string* | 256 | The [5-digit number or full county name](?path=docs/Resources/Master-Data/County-Codes.md) identifying the U.S. county as defined by FIPS, indicating where the transaction occurred. Commonly used with EBT transactions. |
 | `addressHistory` | *string* | 18 | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `address`:

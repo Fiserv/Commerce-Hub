@@ -4,14 +4,14 @@ tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, s
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#account-verification-using-paymentcard) or [token](#account-verification-using-paymenttoken).
+The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#paymentcard-request) or [token](#paymenttoken-request).
 
 <!--theme:info-->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
 
 ---
 
-## Account Verification using PaymentCard
+## PaymentCard Request
 
 ### Minimum Requirements
 
@@ -20,7 +20,7 @@ The merchant can perform account verification transaction to confirm that the ca
 
 <!--
 type: tab
-title: source
+titles: source, card
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -32,7 +32,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -58,7 +57,7 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Account verification request using PaymentCard.
@@ -72,7 +71,11 @@ title: Request
          "expirationMonth":"02",
          "expirationYear":"2035"
       }
-   }
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 ```
 
@@ -80,7 +83,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Account verification response.
@@ -141,12 +143,12 @@ title: Response
 
 ---
 
-## Account Verification using PaymentToken
+## PaymentToken Request
 
 ### Minimum Requirements
 <!--
 type: tab
-title: source
+titles: source, card
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -159,7 +161,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -184,7 +185,7 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Account verification request using PaymentToken.
@@ -204,7 +205,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Account verification response

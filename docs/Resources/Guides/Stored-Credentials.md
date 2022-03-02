@@ -4,7 +4,9 @@ tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
 
 # Stored Credentials
 
-Stored Credentials also known as Credentials on File, allows the merchant to initiate a transactions on behalf of customers (e.g. for subscription payments), using the [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) created from the customer's card details.
+Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas a Cardholder Initiated Transaction (CIT).
+
+The merchant can initiate a subsequent transactions on behalf of customers (e.g. for subscription payments), using the [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) created from the customer's details as a Merchant Initiated Transaction (MIT).
 
 ---
 
@@ -14,24 +16,23 @@ The following variables are used in the initial `PaymentToken` request and subse
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, storedCredentials
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------------------ |---|
 | `authorizationTypeIndicator` | *string* | 11 | &#10004; | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
 
 <!--
 type: tab
-title: storedCredentials
 -->
 
 The below table identifies the parameters in the `storedCredentials` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ---------| --------- |
 | `initiator` | *string* | 11 | &#10004; | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* | N/A | &#10004; | Indicator if this is a [scheduled transaction](#scheduled-transaction). |
 | `schemeReferencedTransactionId` | *string* | 256 | &#10004;  | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
@@ -47,6 +48,8 @@ The below table identifies the parameters in the `storedCredentials` object.
 | `sixMonthTransactionCount` | *integer* | 2 | | Number of transaction on this account in prior 6 months |
 | `twentyFourHourTransactionCount` | *integer* | 2 | | Number of transaction on this account in prior 24 hours |
 | `retryAttempts` | *integer* | 2 | | Number of retry attempt if the initial transaction was unsuccessful |
+| `networkTransactionReference` | *string* | 64 |  | Allows linking of the transaction to the original or previous one in a subscription/card-on-file chain |
+
 
 <!-- type: tab-end -->
 
@@ -54,12 +57,11 @@ The below table identifies the parameters in the `storedCredentials` object.
 
 ## Scheduled Transaction
 
-Stored credentials can be used to submit merchant managed scheduled transactions by submitting `billPaymentType` in the `additionalDataCommon` object.
+Stored credentials can be used to submit merchant managed scheduled transactions by submitting `billPaymentType` in the `additionalDataCommon` [object](?path=docs/Resources/Master-Data/Additional-Data.md).
 
-- RECURRING - A transaction in a series of transaction that uses stored credentials and are processed at fixed, regular intervals *(not to exceed one year between transaction)*, representing a cardholder agreement for the merchant to initiate future transaction for the purchase of goods or services provided at regular intervals.
-- INSTALLMENT - A transaction in a series of transactions that uses stored credentials and represents a cardholder agreement for the merchant to initiate one or more future transactions over a period for a single purchase of goods or services.
-- SINGLE - A transaction using stored credentials for a fixed or variable amount that does not occur on a scheduled or regularly occurring transaction date, where the cardholder has provided consent for the merchant to initiate one or more future transactions, e.g. account auto-top.
-
+- **Recurring:** A transaction in a series of transaction that uses stored credentials and are processed at fixed, regular intervals *(not to exceed one year between transaction)*, representing a cardholder agreement for the merchant to initiate future transaction for the purchase of goods or services provided at regular intervals.
+- **Installment:** A transaction in a series of transactions that uses stored credentials and represents a cardholder agreement for the merchant to initiate one or more future transactions over a period for a single purchase of goods or services.
+- **Single:** A transaction using stored credentials for a fixed or variable amount that does not occur on a scheduled or regularly occurring transaction date, where the cardholder has provided consent for the merchant to initiate one or more future transactions, e.g. account auto-top.
 
 ---
 
@@ -67,7 +69,7 @@ Stored credentials can be used to submit merchant managed scheduled transactions
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `storedCredentials`.
@@ -101,16 +103,22 @@ title: Request
    },
    "additionalDataCommon": {
       "billPaymentType": "RECURRING"
+   },
+   "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
    }
 }
 ```
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

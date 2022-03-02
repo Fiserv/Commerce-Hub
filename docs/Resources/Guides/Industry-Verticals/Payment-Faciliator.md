@@ -93,6 +93,10 @@ title: Request
       "country": "US",
       "taxId": "123456789"
     }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
   }
 }
 ```
@@ -104,7 +108,7 @@ title: Response
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 ```json
 {
    "gatewayResponse":{
