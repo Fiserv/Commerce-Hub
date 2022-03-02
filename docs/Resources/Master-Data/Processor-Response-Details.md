@@ -177,7 +177,7 @@ JSON string format for `avsSecurityCodeResponse`:
 ```
 
 <!--type: tab-end -->
-
+ 
 
 ---
 
@@ -214,7 +214,7 @@ JSON string format for `association`:
 } 
 ```
 
-<!--type: tab-end -->
+<!--type: tab-end --> 
 
 ---
 

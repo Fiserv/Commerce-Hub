@@ -83,7 +83,7 @@ JSON string format for `paymentReceipt`:
    }
 } 
   
-```
+``` 
 
 <!-- type: tab-end -->
 

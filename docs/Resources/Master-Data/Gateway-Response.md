@@ -67,7 +67,7 @@ The below table identifies the valid values of `transactionState` in the gateway
 
 <!-- COMPLETED_GET, INITIALIZED, PENDING, READY, TEMPLATE, SETTLED, WAITING -->
 
----
+--- 
 
 ## Transaction Processing Details
 

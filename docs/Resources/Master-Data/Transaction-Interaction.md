@@ -183,4 +183,4 @@ The below table identifies the valid values of `eciIndicator`.
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 
----
+--- 
