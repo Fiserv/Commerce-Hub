@@ -21,7 +21,7 @@ titles: level23Data, itemDetails, JSON Example
 The below table identifies the parameters in the `level23Data` object.
 
 | Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
+|---------|:----------:|:----------------:|---------|
 |`customerReference` | *string* | 128 | Purchase order number (PO Number), mapped from `merchantOrderId` in `transactionDetails` |
 |`totalTaxAmount` | *number* | 18,3 | Total tax amount |
 |`freightAmount` | *number* | 18,3 | Total amount of freight |
@@ -47,7 +47,7 @@ type: tab
 The below table identifies the parameters in the `itemDetails` object.
 
 | Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
+|---------|:----------:|:----------------:|---------|
 |`commodityCode` | *string* |  | [Code](?path=docs/Resources/Guides/Level23/Commodity-Codes.md) for the commodity |
 |`itemDescription` | *string* | | Description of the item being purchased |
 |`productCode` | *string* | | Code for the product being purchased |
