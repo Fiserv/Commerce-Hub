@@ -12,7 +12,7 @@ An error response can be triggered when testing a Commerce Hub integration in th
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -50,13 +50,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (400: Bad Request) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 
 ```json
@@ -88,13 +87,14 @@ title: Response
 
 ---
 
-
-
 ## See Also
 
-
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
+- [Test Cards](?path=docs/Resources/Guides/Testing/Test-Cards.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
+- [Test Fraud Settings](?path=docs/Resources/Guides/Testing/Test-Fraud.md)
+
+---

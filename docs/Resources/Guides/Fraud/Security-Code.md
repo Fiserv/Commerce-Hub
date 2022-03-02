@@ -15,10 +15,10 @@ For the transactions where security code verification is required, the merchant'
 
 <!--
 type: tab
-title: card
+titles: card, JSON Example
 -->
 
-The below table identifies the required parameters in the `card` object.
+The below table identifies the additional required parameters in the `card` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -38,7 +38,6 @@ The below table identifies the valid values of `securityCodeIndicator`.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `card`:
@@ -70,7 +69,7 @@ JSON string format for `card`:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a security code verification request.
@@ -96,7 +95,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a security code verification response.
@@ -178,7 +176,7 @@ title: Response
 
 <!--
 type: tab
-title: Request
+titlea: Request, Response
 -->
 
 ##### Example of a security code verification during a charges request.
@@ -206,7 +204,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Charges response containing security code response details.
@@ -331,12 +328,7 @@ The below table identifies the valid values of `securityCodeResponse`.
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
-- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
-- [Test Address and Security Code Response](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
-- [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
-- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---

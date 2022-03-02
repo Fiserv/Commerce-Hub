@@ -87,7 +87,7 @@ Zip Code
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an address verification request.
@@ -124,7 +124,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an address verification response.
@@ -146,7 +145,6 @@ title: Response
    "source":{
       "sourceType":"PaymentCard",
       "card":{
-         "cardData":"4005550000000019",
          "expirationMonth":"05",
          "expirationYear":"2025",
          "bin":"400555",
@@ -170,7 +168,7 @@ title: Response
          "approvalCode":"OK5882",
          "schemeTransactionId":"0225MCC625628",
          "processor":"fiserv",
-         "responseCode":"000000",
+         "responseCode":"000",
          "responseMessage":"APPROVAL",
          "hostResponseCode":"00",
          "hostResponseMessage":"APPROVAL",
@@ -178,7 +176,6 @@ title: Response
          "bankAssociationDetails":{
             "associationResponseCode":"000",
             "transactionTimestamp":"2016-04-16T16:06:05Z",
-            "transactionReferenceInformation":"string",
             "avsSecurityCodeResponse":{
                "streetMatch":"NOT_MATCHED",
                "postalCodeMatch":"MATCHED",
@@ -201,10 +198,11 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
 - [Test Errors](?path=docs/Resources/Guides/Testing/Test-Errors.md)
+- [Test Fraud Settings](?path=docs/Resources/Guides/Testing/Test-Fraud.md)
 
 ---

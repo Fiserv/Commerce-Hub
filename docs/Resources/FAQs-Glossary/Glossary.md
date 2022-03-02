@@ -539,8 +539,7 @@ The [value](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) 
 A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided [(cancel)](?path=docs/Resources/API-Documents/Payments/Cancel.md) before batching, the merchant funding process begins for this charge. At this point, the merchant can still return funds [(refund)](?path=docs/Resources/API-Documents/Payments/Refund.md) the customer.
 
 <!-- theme: warning -->
-> 
->Settlement time is based on processing network, contact your account manager for more details.
+> Settlement time is based on processing network, contact your account manager for more details.
 
 ## Secondary Transaction
 The subsequent transactions between a customer and a merchant. Commerce Hub supports [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), and [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md) transactions.
@@ -563,12 +562,6 @@ A [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) transaction ch
 ## Soft Descriptor
 The descriptor that shows up after a transaction has been authorized. If the charge is in a pending state, the soft descriptor will be displayed on the customer's statement.
 
-## Supplemental Nutrition Assistance Program
-Supplemental Nutrition Assistance Program (SNAP), formerly known as Food Benefit, it is a program to provide nutrition assistance to eligible individuals and families.
-
-## Sub-Merchant
-A merchant that contracts with a [payment facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) or service provider to obtain payment services. Also known as Sponsored Merchant.
-
 ## Stand-In-Processing
 Stand-In-Processing (STIP) is a service offered by the Associations that provides transaction processing services on behalf of an unavailable or timed-out issuer.
 
@@ -578,8 +571,17 @@ The character that indicates the initial data position on the track of the card'
 ## Stock Keeping Unit
 Stock Keeping Unit (SKU) is a number used to uniquely identify a product.
 
+## Sub-Merchant
+A merchant that contracts with a [payment facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) or service provider to obtain payment services. Also known as Sponsored Merchant.
+
+## Supplemental Nutrition Assistance Program
+Supplemental Nutrition Assistance Program (SNAP), formerly known as Food Benefit, it is a program to provide nutrition assistance to eligible individuals and families.
+
 ## Surcharge Fees
 A surcharge, also known as checkout fee, is an extra fee charged by a merchant when receiving a payment by check or payment card. The surcharge covers the cost to the merchant for processing the payment, such as the merchant service fee imposed by a processor.
+
+<!-- theme: warning -->
+> Surcharge is not supported by all processors or in all states, contact your account manager for more details.
 
 ## Synchronous Communications
 High-speed transmission, synchronous communications is the transmission and recognition of long groups of characters at a time. Both the sending and receiving devices are set to the same synchronization of pulses (BITS).

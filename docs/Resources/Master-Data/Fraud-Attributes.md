@@ -3,12 +3,12 @@ tags: [carat, commerce-hub, enterprise, fraud, fraud-attributes, risk-scoring]
 ---
 
 # Fraud Attributes
-
+ 
 A transaction can contain `fraudAttributes` to improve authorization rates and reduce fraud.
 
 <!--
 type: tab
-title: fraudAttributes
+titles: fraudAttributes, JSON Example
 -->
 
 The below table identifies the parameters in the `fraudAttributes` object.
@@ -20,7 +20,6 @@ The below table identifies the parameters in the `fraudAttributes` object.
 
 <!--
 type: tab
-title: JSON Example 
 -->
 
 JSON string format for `orderData`:
@@ -41,7 +40,7 @@ JSON string format for `orderData`:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
