@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, cancel,a
 
 # Cancel
 
-If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId`.
+When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId`.
 
 <!-- theme: warning -->
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
