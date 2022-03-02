@@ -29,15 +29,15 @@ The below table identifies the parameters in the `level23Data` object.
 |`dutyAmount` | *number* | 18,3 | Duty amount charged |
 |`destinationPostalCode` | *string* | | Postal Code where goods will be delivered |
 |`destinationCountryCode` | *string* | | [Country code](?path=docs/Resources/Master-Data/Country-Code.md) where goods will be delivered |
-|`orderDate` | *string* | | Date of order in YYYY-MM-DD format |
+|`orderDate` | *string* | 10 | Date of order in YYYY-MM-DD format |
 |`shipFromPostalCode` | *string* | | Postal code where goods are being shipped from |
 |`merchantTaxId` | *string* | | Merchant tax ID |
 |`merchantInvoiceNumber` | *string* | | Merchant invoice number |
-|`taxRate` | *number* | | Tax rate for the amount purchased |
+|`taxRate` | *number* | 3 | Tax rate for the amount purchased |
 |`supplierVatRegistrationNumber` | *string* | | Supplier VAT registration number |
-|`freightRate` | *number* | | Freight rate percent |
-|`totalDiscountRate` | *number* | | Discount rate percent |
-|`totalLineItemTax` | *number* | | Line item tax |
+|`freightRate` | *number* | 3 | Freight rate percent |
+|`totalDiscountRate` | *number* | 3 | Discount rate percent |
+|`totalLineItemTax` | *number* | 18,3 | Line item tax |
 | `itemDetails` | *array* | NA | Array containing the details of line items sold |
 
 <!--
@@ -48,21 +48,21 @@ The below table identifies the parameters in the `itemDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`commodityCode` | *string* |  | Code for the commodity |
+|`commodityCode` | *string* |  | [Code](?path=docs/Resources/Guides/Level23/Commodity-Codes.md) for the commodity |
 |`itemDescription` | *string* | | Description of the item being purchased |
 |`productCode` | *string* | | Code for the product being purchased |
-|`unitPrice` | *string* | | Price for the unit being purchased |
+|`unitPrice` | *string* | 18,3 | Price for the unit being purchased |
 |`quantity` | *string* | | Amount of the product being purchased |
 |`unitOfMeasurement` | *string* | | [Unit of measurment](?path=docs/Resources/Guides/Level23/Unit-Measurement.md) for the product purchased |
 |`totalAmount` | *number* | 18,3 | Total before tax and discounts |
-|`discountIndicator` | *boolean* | | Indicates the product being purchased has a discount |
-|`discountRate` | *number* | | Discout rate percent |
+|`discountIndicator` | *boolean* | NA | Indicates the product being purchased has a discount |
+|`discountRate` | *number* | 3 | Discout rate percent |
 |`discountAmount` | *number* | 18,3 | Discount amount on the purchased product |
-|`taxIndicator` | *boolean* | | Indicates tax is being charged for the purchased product |
-|`lineItemTaxRate` | *number* | | Discout code for the product being purchased |
+|`taxIndicator` | *boolean* | NA | Indicates tax is being charged for the purchased product |
+|`lineItemTaxRate` | *number* | 3 | Tax rate precent |
 |`taxType` | *string* | | [Tax type](?path=docs/Resources/Guides/Level23/Tax-Types.md) for the product being purchased |
 |`lineItemTax` | *number* | 18,3| Tax aount for the line item |
-|`vatRate` | *number* | | Value added tax (VAT) rate percent |
+|`vatRate` | *number* | 3 | Value added tax (VAT) rate percent |
 |`vatAmount` | *number* | 18,3 | Value added tax (VAT) amount |
 |`lineItemTotal` | *number* | 18,3 | Line item total after tax and discounts |
 
