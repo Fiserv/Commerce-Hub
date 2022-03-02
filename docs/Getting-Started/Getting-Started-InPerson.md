@@ -29,7 +29,7 @@ link:
 <!-- type: card
 title: Fully-Integrated
 description: Commerce Hub's fully-integrated payment system efficiently manages all the processes by a single integrated system. It has the payment application as a part of the core POS solution. The software handles every aspect of the transaction, from scanning and reading the bar code to processing the payments and managing inventory and replenishment.
-link: ?path=docs/about-developer-studio.md
+link:
 -->
 
 <!-- type: row-end -->
