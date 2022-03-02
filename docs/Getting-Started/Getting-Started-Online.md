@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, enterprise, restful, apis, card present, online, mobile, digital-payments, card-not-present, getting-started, hosted-payment-page, virtual-terminal]
 ---
 
-# Online/Mobile/Digital Payments
+# Online, Digital and Mobile Payments
 
 Commerce Hub offers multiple methods of accepting online, mobile, digital payments, and MOTO payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, virtual terminal, or software.
 
