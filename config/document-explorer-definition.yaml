@@ -71,6 +71,8 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+      - title: Samsung Pay
+        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md 
 - sections:
   - title: Connected Commerce
     link: docs/Getting-Started/Getting-Started-UCOM.md
@@ -95,6 +97,8 @@
     sections:
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md
+    - title: Use Our APIs
+      link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Dynamic Descriptors
       link: docs/Resources/Guides/Dynamic-Descriptor.md
     - title: Fraud Controls

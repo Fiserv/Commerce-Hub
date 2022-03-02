@@ -46,6 +46,8 @@ The below table identifies the required parameters in the `source` object.
 
 <!-- type: tab-end -->
 
+---
+
 ### Payload Example
 
 <!-- theme:info -->
