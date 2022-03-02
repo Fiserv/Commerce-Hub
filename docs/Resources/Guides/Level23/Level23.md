@@ -74,7 +74,7 @@ JSON string format for `leve23Data`:
 
 ```json
 {
-	"leve23Data": {
+  "leve23Data": {
     "totalTaxAmount": "3.00",
     "freightAmount": "9.00",
     "totalDiscountAmount": "2.00",
@@ -90,27 +90,27 @@ JSON string format for `leve23Data`:
     "freightRate": "1",
     "totalDiscountRate": "1",
     "totalLineItemTax": "4.50",
-		"itemDetails": [
-		    {
-			"commodityCode": "12345",
-			"itemDescription": "Shoes",
-			"productCode": "2035",
-			"unitPrice": "10.00",
-			"quantity": "2",
-			"unitOfMeasurement": "EACH",
-			"totalAmount": "20.00",
-			"discountIndicator": "true",
-			"discountRate": "10",
-			"discountAmount": "2.00",
-			"taxIndicator": "true",
-			"lineItemTaxRate": "5",
-			"taxType": "SALES",
-			"vatRate": "20",
-			"vatAmount": "3.60",
-			"lineItemTotal": "22.50"
-		    }
-     ]
-   }
+    "itemDetails": [
+      {
+        "commodityCode": "12345",
+        "itemDescription": "Shoes",
+        "productCode": "2035",
+        "unitPrice": "10.00",
+        "quantity": "2",
+        "unitOfMeasurement": "EACH",
+        "totalAmount": "20.00",
+        "discountIndicator": "true",
+        "discountRate": "10",
+        "discountAmount": "2.00",
+        "taxIndicator": "true",
+        "lineItemTaxRate": "5",
+        "taxType": "SALES",
+        "vatRate": "20",
+        "vatAmount": "3.60",
+        "lineItemTotal": "22.50"
+      }
+    ]
+  }
 }
 ```
 
@@ -127,19 +127,19 @@ titles: Request, Response
 
 ```json
 {
-	"amount": {
-		"total": "12.04",
-		"currency": "USD"
-	},
-	"source": {
-		"sourceType": "level23",
-		"card": {
-			"cardData": "4005550000000019",
-			"expirationMonth": "02",
-			"expirationYear": "2035"
-		}
-	},
-	"leve23Data": {
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "level23",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    }
+  },
+  "leve23Data": {
     "totalTaxAmount": "3.00",
     "freightAmount": "9.00",
     "totalDiscountAmount": "2.00",
@@ -155,34 +155,34 @@ titles: Request, Response
     "freightRate": "1",
     "totalDiscountRate": "1",
     "totalLineItemTax": "4.50",
-		"itemDetails": [
+    "itemDetails": [
       {
-			"commodityCode": "12345",
-			"itemDescription": "Shoes",
-			"productCode": "2035",
-			"unitPrice": "10.00",
-			"quantity": "2",
-			"unitOfMeasurement": "EACH",
-			"totalAmount": "20.00",
-			"discountIndicator": "true",
-			"discountRate": "10",
-			"discountAmount": "2.00",
-			"taxIndicator": "true",
-			"lineItemTaxRate": "5",
-			"taxType": "SALES",
-			"vatRate": "20",
-			"vatAmount": "3.60",
-			"lineItemTotal": "22.50"
-		  }
+        "commodityCode": "12345",
+        "itemDescription": "Shoes",
+        "productCode": "2035",
+        "unitPrice": "10.00",
+        "quantity": "2",
+        "unitOfMeasurement": "EACH",
+        "totalAmount": "20.00",
+        "discountIndicator": "true",
+        "discountRate": "10",
+        "discountAmount": "2.00",
+        "taxIndicator": "true",
+        "lineItemTaxRate": "5",
+        "taxType": "SALES",
+        "vatRate": "20",
+        "vatAmount": "3.60",
+        "lineItemTotal": "22.50"
+      }
     ]
-	},
-	"transactionDetails": {
-		"captureFlag": true
-	},
-	"merchantDetails": {
-		"merchantId": "123456789789567",
-		"terminalId": "123456"
-	}
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 
@@ -199,48 +199,48 @@ type: tab
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType":"CHARGE",
-      "transactionState":"AUTHORIZED",
-      "transactionOrigin":"SECURE_ECOM"
-   },
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035"
-      }
-   },
-   "transactionProcessingDetails":{
-      "orderId":"RKOrdID-525133851837",
-      "apiTraceId":"362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId":"4345791",
-      "transactionId":"84356531338"
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total":"12.04",
-         "currency":"USD"
-      }
-   },
-   "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK5882",
-      "schemeTransactionId":"0225MCC625628",
-      "processor":"fiserv",
-      "responseCode":"000000",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"00",
-      "hostResponseMessage":"APPROVAL",
-      "localTimestamp":"2021.02.25 14:14:38 (CET)",
-      "bankAssociationDetails":{
-      "transactionTimestamp":"2021.02.25 14:14:38 (CET)"
-      }
-   },
-   "transactionDetails":{
-      "merchantTransactionId":"RKTransID-768086381518"
-   }
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "SECURE_ECOM"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    }
+  },
+  "transactionProcessingDetails": {
+    "orderId": "RKOrdID-525133851837",
+    "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+    "clientRequestId": "4345791",
+    "transactionId": "84356531338"
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "12.04",
+      "currency": "USD"
+    }
+  },
+  "processorResponseDetails": {
+    "approvalStatus": "APPROVED",
+    "approvalCode": "OK5882",
+    "schemeTransactionId": "0225MCC625628",
+    "processor": "fiserv",
+    "responseCode": "000000",
+    "responseMessage": "APPROVAL",
+    "hostResponseCode": "00",
+    "hostResponseMessage": "APPROVAL",
+    "localTimestamp": "2021.02.25 14:14:38 (CET)",
+    "bankAssociationDetails": {
+      "transactionTimestamp": "2021.02.25 14:14:38 (CET)"
+    }
+  },
+  "transactionDetails": {
+    "merchantTransactionId": "RKTransID-768086381518"
+  }
 }
 ```
 
