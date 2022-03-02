@@ -33,7 +33,7 @@ The below table identifies the parameters in the `card` object.
 type: tab
 -->
 
-JSON string format for `card`:
+JSON string format for `card`: 
 
 ```json
 {
@@ -49,7 +49,7 @@ JSON string format for `card`:
       "scheme": "VISA",
       "beginningBalance": "1.00",
       "endingBalance": "0.10"
-   }
+   } 
 }
 ```
 

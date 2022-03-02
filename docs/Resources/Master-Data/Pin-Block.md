@@ -31,7 +31,7 @@ The below table identifies the parameters in the `pinBlock` object.
 type: tab
 -->
 
-JSON string format for `pinBlock`:
+JSON string format for `pinBlock`: 
 
 ```json
 {
@@ -39,7 +39,7 @@ JSON string format for `pinBlock`:
       "encryptedPin": "53511F325B7C89E3",
       "keySerialNumber": "7964085138968549....",
       "pinEncryptionWorkingKey": "7586325254178549....."
-   }
+   } 
 }
 ```
 

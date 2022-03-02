@@ -34,8 +34,6 @@
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
     sections:
-    - title: Integrations
-      link: docs/Getting-Started/Getting-Started-InPerson.md
     - title: Encrypted PIN Pad
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
     - title: Semi-Integrated
@@ -53,9 +51,8 @@
       - title: Contactless (NFC)
         link: docs/In-Person/Encrypted-Payments/Contactless.md
   - title: Online/Digital/Mobile
+    link: docs/Getting-Started/Getting-Started-Online.md
     sections:
-    - title: Integrations
-      link: docs/Getting-Started/Getting-Started-Online.md
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Secure Data Capture
@@ -68,9 +65,8 @@
     - title: Virtual Terminal
       link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md 
     - title: Wallets and Alt Payments
+      link: docs/Getting-Started/Getting-Started-Wallets.md
       sections:
-      - title: Integrations
-        link: docs/Getting-Started/Getting-Started-Wallets.md
       - title: Apple Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
@@ -95,6 +91,7 @@
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:
   - title: Resources and Guides
+    link: docs/Resources/Guides/Resources-Guide.md
     sections:
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md

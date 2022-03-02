@@ -13,7 +13,7 @@ Object containing the Commerce Hub response parameters.
 
 <!--
 type: tab
-title: gatewayResponse, JSON Example
+titles: gatewayResponse, JSON Example
 -->
 
 The below table identifies the parameters in the `gatewayResponse` object.
@@ -67,7 +67,7 @@ The below table identifies the valid values of `transactionState` in the gateway
 
 <!-- COMPLETED_GET, INITIALIZED, PENDING, READY, TEMPLATE, SETTLED, WAITING -->
 
----
+--- 
 
 ## Transaction Processing Details
 
@@ -75,7 +75,7 @@ Object contains the transaction processing details.
 
 <!--
 type: tab
-title: transactionProcessingDetails, JSON Example
+titles: transactionProcessingDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `transactionProcessingDetails` object.
@@ -110,7 +110,7 @@ JSON string format for `transactionProcessingDetails`:
 
 <!--type: tab-end -->
 
----
+--- 
 
 ## See Also
 

@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, enterprise, fraud, fraud-attributes, risk-scoring]
 ---
 
 # Fraud Attributes
-
+ 
 A transaction can contain `fraudAttributes` to improve authorization rates and reduce fraud.
 
 <!--

@@ -167,7 +167,7 @@ The below table identifies the parameters in the `dataDynamic` object.
 | `ipAddress` | *string* | 39 | Customer IP Address |
 | `captureTime` | *string* | 20 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ |
 | `address` | *object* | N/A | City and country [address](?path=docs/Resources/Master-Data/Address.md#address) the IP/Device is resident in when transaction was originated |
-
+ 
 
 <!--
 type: tab
@@ -190,7 +190,7 @@ JSON string format for `dataDynamic`:
 }
 
 ```
-<!--type: tab-end -->
+<!--type: tab-end --> 
 
 ---
 

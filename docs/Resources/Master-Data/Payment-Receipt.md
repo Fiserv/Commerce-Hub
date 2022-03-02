@@ -81,9 +81,9 @@ JSON string format for `paymentReceipt`:
       "merchantURL": "www.business.com",  
       "merchantPostalCode": "2322"  
    }
-}
+} 
   
-```
+``` 
 
 <!-- type: tab-end -->
 

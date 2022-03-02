@@ -61,11 +61,3 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
 <!-- type: row-end -->
 
 ---
-
-## See Also
-- [Hosted Payment Page Integration](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md)
-- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
-- [JS Integration](?path=docs/Online-Mobile-Digital/Payment-JS/Payment-JS.md)
-- [Payment URL Integration](?path=docs/Online-Mobile-Digital/Payment-URL/Payment-URL.md)
-
----

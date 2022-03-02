@@ -9,12 +9,9 @@ The JavaScript or JS elements are set by default based on the ADA guidelines. Co
 
 ## Languages
 
-Component/Hosted Fields is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load.
-
-You can also provide your own translations by including a languages attribute as part of your form configuration object creation.
+Component/Hosted Fields is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load. You can also provide your own translations by including a languages attribute as part of your form configuration object creation.
 
 The following example shows all the text labels that can be overridden for a particular language/locale:
-
 
 ``` php
 

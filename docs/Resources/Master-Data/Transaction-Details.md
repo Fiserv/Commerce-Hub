@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-tra
 
 The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` object.
 
-<!--
+<!-- 
 type: tab
 titles: transactionDetails, JSON Example
 -->
@@ -159,4 +159,4 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
----
+--- 
