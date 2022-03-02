@@ -10,6 +10,22 @@ Velocity settings determine which transactions Commerce Hub allows to proceed to
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Velocity Control support and the documents related to the features will be released soon.
 
+The fraud settings that you can configure are:
+
+- Minimum Sale Amount
+- Maximum Sale Amount
+- Maximum Amount of Transactions
+- Maximum Number of Transactions
+- Maximum Amount Per Card/Check Number
+
+
+Fraud Settings
+
+Use Pay eezy 
+
+Add example
+
+
 ---
 
 ## See Also
