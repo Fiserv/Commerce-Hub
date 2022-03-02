@@ -23,7 +23,7 @@ The message data for the signature is the following items concatenated: `Api-Key
 
 <!--
 type: tab
-title: Javascript
+titles: Javascript
 -->
 
 ##### Example of a Javascript Request.
