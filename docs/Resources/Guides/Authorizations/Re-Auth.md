@@ -33,7 +33,7 @@ The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` from the o
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, JSON Example
 -->
 
 The below table identifies the additional parameters in the `transactionDetails` object.
@@ -42,7 +42,7 @@ The below table identifies the additional parameters in the `transactionDetails`
 |---------|----------|----------------|---------|
 | `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
-| `authorizationSequence` | *string* | 27 | Type of authorization sequence requested. **Valid Value:** AUTHORIZATION_ONLY (default), AUTHORIZATION_BEFORE_CANCEL, CANCEL_BEFORE_AUTHORIZATION.|
+| `authorizationSequence` | *string* | 27 | Type of authorization sequence requested.|
 
 #### Authorization Sequence
 
@@ -56,7 +56,6 @@ The below table identifies the valid values of type of `authorizationSequence`.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format:
@@ -85,7 +84,7 @@ JSON string format:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a reauthorization payload request.
@@ -114,7 +113,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a reauthorization (201: Created) response.

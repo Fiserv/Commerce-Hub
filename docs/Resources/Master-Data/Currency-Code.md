@@ -14,9 +14,12 @@ The `currency` variable in the `amount` array determines what currency the trans
 
 ## Currency List
 
-The table below contains all valid values of currency name, code, number and decimal values. 
+The table below contains all valid values of currency name, code, number and decimal values.
 
-| Currency Name | Currency Code | Currency Number | Decimal |
+<!-- theme: warning -->
+> When submitting the `currency` ensure the correct 3 character alpha code is used from the below table.
+
+| Currency Name | Alpha Code | ISO Number | Decimal |
 | ------- | ------- | -------| -------- |
 | Afghan Afghani | AFN | 971 | 2 |
 | Algerian Dinar | DZD | 012 | 2 |

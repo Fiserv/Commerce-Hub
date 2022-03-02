@@ -4,6 +4,22 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 # Apple Pay on the Web: RESTful API Integration
 
+Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Apple Pay. The merchant will host the payment processing on their server and has full control over the look and feel. 
+
+<!-- theme: warning -->
+> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+
+### How it Works
+
+1. The customer selects checkout from the merchant's website and the merchant’s payment form displays.
+2. The customer selects Apple Pay and the Apple Pay payment form displays.
+3. The customer completes the Apple Pay form and returns to the merchant's website.
+4. The customer selects to complete the transaction.
+5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
+6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
+
+---
+
 ## Step 1: Configure Apple Pay
 
 Configure Apple developer account with merchant information to accept [Apple Pay on the web](https://help.apple.com/developer-account/#/dev1731126fb). This includes creating a merchant identifier, creating a processing certificate, registering the merchant and creating a merchant identity certificate.
@@ -34,7 +50,7 @@ The merchant can enhance the purchase experience from their website by creating 
 
 <!--
 type: tab
-title: source
+titles: source, header
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -52,7 +68,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: header
 -->
 
 The below table identifies the required parameters in the `header` object.
@@ -73,7 +88,7 @@ The below table identifies the required parameters in the `header` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -113,13 +128,13 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
    "gatewayResponse":{
@@ -180,6 +195,7 @@ title: Response
    }
 }
 ```
+
 <!-- type: tab-end -->
 
 ---
@@ -187,7 +203,7 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)

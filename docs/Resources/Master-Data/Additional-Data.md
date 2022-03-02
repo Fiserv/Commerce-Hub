@@ -2,15 +2,14 @@
 tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data]
 ---
 
-
 # Additional Data Common
 
 Additional data common is used for specific business requirements.
-
 <!--
 type: tab
-title: additionalDataCommon
+titles: additionalDataCommon, JSON Example
 -->
+
 
 The below table identifies the parameters in the `additionalDataCommon` object.
 
@@ -19,8 +18,6 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
 | `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
-
-<!---
 | `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
 | `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `deferredPayments` | *object* | N/A | Used in [defferred bill payments](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md) |
@@ -28,14 +25,15 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a [Payment Facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) to identify the sub-merchant information. |
 | `privateLabel` | *object* | N/A | Used to process [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) payment cards. |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
--->
+
 
 ---
 
+
 <!--
 type: tab
-title: JSON Example
 -->
+
 
 JSON string format for `additionalDataCommon`:
 
@@ -131,11 +129,11 @@ The below table identifies the valid values of the `billPaymentIndicator`.
 ## Additional Data
 
 Additional Data identifies various elments based on the specific transaction type.
-
 <!--
 type: tab
-title: additionalData
+titles: additionalData, JSON Example
 -->
+
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
@@ -151,8 +149,8 @@ title: additionalData
 
 <!--
 type: tab
-title: JSON Example
 -->
+
 
 JSON string format for `additionalData`:
 
@@ -201,10 +199,10 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
-
+ 
 <!---
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 -->
 
----
+--- 

@@ -7,17 +7,16 @@ tags: [carat, commerce-hub, enterprise, getting-started, card-not-present, onlin
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Hosted Payment Page support and the documents related to the features will be released soon.
 
-The first step for adding payments capabilities to your website is to implement a HTML form that you can use to accept a payment.
+Allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction. The Commerce Hub Hosted Payment Page manages the customer interactions that are required in the checkout process based on payment method, or authentication mechanisms (3-D Secure).
 
-This type of integration manages the customer checkout process and supports many payment methods or authentication mechanisms.
+This gives merchants the option to use our secure hosted pages or an embeddable form which can reduce the burden of compliance with the Data Security Standard of the Payment Card Industry (PCI DSS).
 
-This gives you the option to use our secure hosted pages or an embeddable form which can reduce the burden of compliance with the Data Security Standard of the Payment Card Industry (PCI DSS).
-
-With the transaction type Pre-Authorization (preauth), you can reserve funds on a customer's card account. This transaction does not charge the card until you perform a completion transaction. In order to complete a transaction and initiate the settlement process, you will need to send a Post-Authorization (postauth) via our API or initiate the completion manually using our Virtual Terminal.
-
-Alternatively, you can use the transaction type Sale which immediately charges a customer’s card or bank account over night with no further action required from you.
+<!-- theme: info -->
+>A merchant can lessen the PCI DSS load by using Hosted Payment Pages, and still make use of our extended capabilities using our RESTful APIs to access features where no direct consumer interaction is required and no sensitive data been processed.
 
 ## Getting started
+
+The first step for adding payments capabilities to your website is to implement a HTML form that you can use to accept a payment. This type of integration manages the customer checkout process and supports many payment methods or authentication mechanisms.
 
 When using the embedded form or hosted payment page, you'll need the following:
 
@@ -81,5 +80,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Available Fields
 - Customize Payment Page
 - [Online Wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md)
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

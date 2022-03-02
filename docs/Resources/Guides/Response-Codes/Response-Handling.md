@@ -18,7 +18,7 @@ The state of the transaction can be determined by the three-digit HTTP status co
 
 <!--
 type: tab
-title: 2xx
+titles: 2xx, 4xx, 5xx
 -->
 
 ##### Success Status code and description
@@ -32,7 +32,6 @@ title: 2xx
 
 <!--
 type: tab
-title: 4xx
 -->
 
 <!-- Add new responses and edit the payload example as well -->
@@ -54,7 +53,6 @@ title: 4xx
 
 <!--
 type: tab
-title: 5xx
 -->
 
 ##### Server Error Status code, description and resolution

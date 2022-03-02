@@ -18,7 +18,7 @@ The following parameters are required to submit an Returns Optimization request:
 
 <!--
 type: tab
-title: source
+titles: source, merchantDetails
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -29,7 +29,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -48,7 +47,7 @@ The following response variables can be utilized to make an informed decision on
 
 <!--
 type: tab
-title: transactionScoreResponse
+titles: transactionScoreResponse, myReturnScoreDetails, peerReturnScoreDetails
 -->
 
 The below table identifies the response parameters in the `transactionScoreResponse` object.
@@ -57,13 +56,12 @@ The below table identifies the response parameters in the `transactionScoreRespo
 |-----|---|-----|-----|
 | `invocationId` | *string* | N/A | Unique Identifier associated with the invocation response |
 | `consumerType` | *string* | N/A | Indicator for NEW or EXISTING customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for new customers. |
-| `modelId` | *string* | N/A | Model Identifier???? |
-| `myReturnScoreDetails` | *object* | N/A | ???? |
-| `peerReturnScoreDetails` | *object* | N/A | ???? |
+| `modelId` | *string* | N/A | Identifies the model version that was used to score this transaction request for a Return probability. |
+| `myReturnScoreDetails` | *object* | N/A | Details associated with the returns score based on the merchants profile. |
+| `peerReturnScoreDetails` | *object* | N/A | Details associated with the returns score based on the peer profile. |
 
 <!--
 type: tab
-title: myReturnScoreDetails
 -->
 
 The below table identifies the response parameters in the `myReturnScoreDetails` object.
@@ -75,7 +73,6 @@ The below table identifies the response parameters in the `myReturnScoreDetails`
 
 <!--
 type: tab
-title: peerReturnScoreDetails
 -->
 
 The below table identifies the response parameters in the `peerReturnScoreDetails` object.
@@ -98,7 +95,7 @@ The merchant can initiate Returns Optimization request by passing the token deta
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -122,7 +119,7 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Returns Optimizer payload request.
@@ -148,13 +145,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a Returns Optimizer response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
