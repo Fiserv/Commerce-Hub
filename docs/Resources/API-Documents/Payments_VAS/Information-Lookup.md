@@ -11,7 +11,7 @@ Information Lookup is used to verify card related information of the cardholder 
 
 <!--
 type: tab
-title: cardDetails
+titles: cardDetails
 -->
 
 The below table identifies the parameters in the `cardDetails` object.
@@ -37,7 +37,7 @@ The merchant can initiate information lookup transaction by passing the card det
 
 <!--
 type: tab
-title: source
+titles: source, card
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -48,7 +48,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -72,7 +71,7 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Account information lookup request using PaymentCard.
@@ -96,7 +95,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Account information lookup response.
@@ -127,6 +125,7 @@ title: Response
   ]
 }
 ```
+
 <!-- type: tab-end -->
 
 ---
@@ -137,12 +136,17 @@ The merchant can initiate information lookup transaction by passing the card det
 
 ### Minimum Requirements
 
-#### source
+<!--
+type: tab
+titles: source
+-->
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer to [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for more details. |
 |`tokenData`| *string* | 19 | Token created for Card. |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -153,9 +157,10 @@ The merchant can initiate information lookup transaction by passing the card det
 ---
 
 ### Payload Example
+
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Account information lookup request using PaymentToken.
@@ -171,7 +176,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Account information lookup response.

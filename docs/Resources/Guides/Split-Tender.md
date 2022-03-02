@@ -15,7 +15,7 @@ Split Tender allows a customer to pay a partial amount using one method of payme
 
 <!--
 type: tab
-title: splitTender
+titles: splitTender, splitTenderMethod, JSON Example
 -->
 
 The below table identifies the parameters in the `splitTender` object.
@@ -27,7 +27,6 @@ The below table identifies the parameters in the `splitTender` object.
 
 <!--
 type: tab
-title: splitTenderMethod
 -->
 
 The below table identifies the required parameters in the `splitTenderMethod` array.
@@ -38,7 +37,6 @@ The below table identifies the required parameters in the `splitTenderMethod` ar
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `splitTender`:
@@ -69,7 +67,7 @@ JSON string format for `splitTender`:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Enhanced Data Service](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md)
+- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 

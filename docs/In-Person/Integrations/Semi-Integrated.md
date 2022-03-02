@@ -2,8 +2,7 @@
 tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-payment, semi-integrated, software, pos, point-of-sale, terminal, manual-entry, track-data]
 ---
 
-# Semi-Integrated
-
+# Semi-Integrated Device
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include semi-integrated device support and the documents related to the features will be released soon.

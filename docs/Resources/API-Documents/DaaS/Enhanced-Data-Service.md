@@ -1,10 +1,10 @@
 ---
-tags: [carat, commerce-hub, enterprise, eds, enhanced-data-service, fraud, security, api-reference]
+tags: [carat, commerce-hub,  daas, data-as-a-service, data-solutions, enterprise, eds, enhanced-data-service, fraud, security, api-reference]
 ---
 
 # Enhanced Data Service
 
-Enhanced Data Service (EDS) enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuers leverage the data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
+Enhanced Data Service enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuers leverage the data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
 
 ---
 
@@ -12,11 +12,11 @@ Enhanced Data Service (EDS) enables sharing of relevant data between merchants a
 
 ### Minimum Requirements
 
-The following parameters are required to submit an EDS request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the [conditional requirements](#conditional-requirements).
+The following parameters are required to submit an Enhanced Data Service request: `bin` and `last4` or `tokenData`, `amount`, `currency`, `merchantId` and `alternateMerchantId` along with one of the [conditional requirements](#conditional-requirements).
 
 <!--
 type: tab
-title: amount
+titles: amount, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -28,7 +28,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -44,11 +43,11 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ### Conditional Requirements
 
-One of the following parameters is required to submit an EDS request: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
+One of the following parameters is required to submit an Enhanced Data Service request: `email`, `phone`, `shippingAddress`, `splitTenderMethod`, or the device’s `deviceId`, `ipAddress`, `lattitude`, or `longitude`.
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, deviceFingerPrint, customer, splitTender, shippingAddress
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -59,7 +58,6 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: deviceFingerPrint
 -->
 
 The below table identifies the required `dataStatic` parameters in the `deviceFingerprint` array.
@@ -81,7 +79,6 @@ The below table identifies the required `dataDynamic` parameters in the `deviceF
 
 <!--
 type: tab
-title: customer
 -->
 
 The below table identifies the required parameters in the `customer` object.
@@ -96,7 +93,6 @@ The below table identifies the required parameters in the `customer` object.
 
 <!--
 type: tab
-title: splitTender
 -->
 
 The below table identifies the required parameters in the `splitTender` object.
@@ -116,7 +112,6 @@ The below table identifies the required parameters in the `splitTenderMethod` ar
 
 <!--
 type: tab
-title: shippingAddress
 -->
 
 The below table identifies the required parameters in the `shippingAddress` object.
@@ -150,15 +145,15 @@ Refer to the respective article below for additional request parameters.
 
 ---
 
-## EDS using PaymentCard
+## PaymentCard Request
 
-The merchant can initiate EDS request transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
+The merchant can initiate Enhanced Data Service request transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
 
 ### Additional Requirements
 
 <!--
 type: tab
-title: source
+titles: source, card
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -170,7 +165,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -186,7 +180,7 @@ The below table identifies the required parameters in the `card` object.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `payments-vas/v1/enhanceddata`
+>**POST** `daas/v1/enhanceddata`
 
 ---
 
@@ -194,10 +188,10 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
-##### Example of an EDS payload request.
+##### Example of an Enhanced Data payload request.
 
 ```json
 {
@@ -281,13 +275,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
-##### Example of an EDS response.
+##### Example of an Enhanced Data response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
@@ -309,15 +302,15 @@ title: Response
 
 ---
 
-## EDS using PaymentToken
+## PaymentToken Request
 
-The merchant can initiate EDS request transaction by passing the token details of the customer and using `PaymentToken` as a payment source.
+The merchant can initiate Enhanced Data Service request transaction by passing the token details of the customer and using `PaymentToken` as a payment source.
 
 ### Additional Requirements
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -333,7 +326,7 @@ The below table identifies the required parameters in the `source` object.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `payments-vas/v1/enhanceddata`
+>**POST** `daas/v1/enhanceddata`
 
 ---
 
@@ -341,10 +334,10 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
-##### Example of an EDS payload request.
+##### Example of an Enhanced Data payload request.
 
 ```json
 {
@@ -424,13 +417,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
-##### Example of an EDS response.
+##### Example of an Enhanced Data response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for additional examples.
 
 ```json
 {
@@ -457,5 +449,6 @@ title: Response
 - [Fraud Attributes](?path=docs/Resources/Master-Data/Fraud-Attributes.md)
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
+- [Returns Optimization Service](?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md)
 
 ---

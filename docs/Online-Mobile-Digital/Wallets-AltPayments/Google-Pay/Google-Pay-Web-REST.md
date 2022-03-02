@@ -4,13 +4,25 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, o
 
 # Google Pay on the Web: RESTful API Integration
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Google Pay support and the documents related to the features will be released soon.
+Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Google Pay. The merchants would need to setup their own server for secure communication with Google Pay. The merchant will host the payment processing on their server and has full control over the look and feel.
 
+<!-- theme: warning -->
+> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
-## Step 1: Configure Google Pay on the Web
+### How it Works
+1. Customer selects checkout from the merchant's website.
+2. Customer then presented with the merchant's payment form.
+3. Customer selects Google Pay and then redirected to the Google Pay payment form.
+4. Customer completes the google pay form and then redirected to the merchant's website.
+5. Customer selects to complete the transaction.
+6. Merchant submits the encrypted Google Pay payload to Commerce Hub.
+7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
-The merchant needs to configure the merchant environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button etc.
+---
+
+## Step 1: Configure Google Pay
+
+Configure the environment to accept [Google Pay on the web](https://developers.google.com/pay/api/web/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks and auth methods, describe acceptable payment methods, add payment tag, determine readiness to pay, add Google Pay button, etc.
 
 ---
 
@@ -21,15 +33,12 @@ The merchant needs to configure the merchant environment to accept [Google Pay o
 
 ---
 
-
 ### Request Variables
-
 
 <!--
 type: tab
-title: source
+titles: source
 -->
-
 
 The below table identifies the required parameters in the `source` object.
 
@@ -41,15 +50,18 @@ The below table identifies the required parameters in the `source` object.
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
-
----
+<!-- type: tab-end -->
 
 ### Payload Example
 
+<!-- theme:info -->
+>Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
+
+---
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -78,18 +90,15 @@ title: Request
 
 ```
 
-
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
-
 <!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
 ```json
 {
    "gatewayResponse":{
@@ -160,6 +169,10 @@ title: Response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
-
+<!---
+- [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+-->
 ---

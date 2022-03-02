@@ -4,7 +4,6 @@ tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-
 
 # PaymentEMV
 
-
 [EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip and PIN enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
 A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
@@ -12,46 +11,40 @@ A third-party device encrypts the customer's payment source and sends the encryp
 <!-- theme: info -->
 > EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
 
-
 ---
 
 ### Request Variables
 
 <!--
 type: tab
-title: source
+titles: source,  encryptionData, JSON Example
 -->
 
 The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------------------ |---|
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentEMV* for EMV transactions |
 | `emvData` | *string* | N/A |  &#10004; | Contains a series of [Tag/Length/Value](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md) combination for chip card processing |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
 | `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
 
-
-
 <!--
 type: tab
-title: encryptionData
 -->
 
 The below table identifies the required parameters in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------------------ |---|
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `keyId` | *string* | | | Needs to be passed if track data is encrypted |
 
-
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for PaymentEMV:
@@ -80,7 +73,7 @@ JSON string format for PaymentEMV:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using PaymentEMV.
@@ -123,13 +116,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -197,9 +189,11 @@ title: Response
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
+
 ---

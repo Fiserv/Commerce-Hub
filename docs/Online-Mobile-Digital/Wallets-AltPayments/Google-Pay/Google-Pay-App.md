@@ -4,9 +4,21 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 # Google Pay: In-App Integration
 
-## Step 1: Configure Google Pay in App
+Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Google Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
 
-The merchant will have to do the changes in their [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler etc.
+### How it Works
+
+1. Customer selects checkout from the merchant's App.
+2. Customer then presented with the merchant's payment form.
+3. The App calls the Google Pay framework to obtain the encrypted wallet data.
+4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
+5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+
+---
+
+## Step 1: Configure Google Pay
+
+Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler, etc.
 
 ---
 
@@ -15,13 +27,11 @@ The merchant will have to do the changes in their [App to integrate with Google 
 - [**Encrypted Data:**](#request-variables) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
----
-
 ### Request Variables
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -34,14 +44,18 @@ The below table identifies the required parameters in the `source` object.
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
+<!-- type: tab-end -->
 
 ---
 
 ### Payload Example
 
+<!-- theme:info -->
+>Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
+
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Charge Payload Request.
@@ -72,13 +86,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a Charge (201: Created) Response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 ```json
 {
    "gatewayResponse":{
@@ -149,7 +162,11 @@ title: Response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
+<!---
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+-->
 
 ---

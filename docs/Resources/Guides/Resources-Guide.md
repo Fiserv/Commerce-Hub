@@ -18,7 +18,9 @@ Commerce Hub implements various fraud controls that allows merchant to monitor p
 
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+<!---
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+-->
 
 ---
 
@@ -28,9 +30,14 @@ Commerce Hub offers multiple transactions related guides to assist merchants wit
 
 ### Featured Guides
 
+- [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Secondary Authorizations](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
+- [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
+- [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
+<!---
 - [Bill Payments](?path=docs/Resources/Guides/Bill-Payments/Bill-Payments.md)
-- [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md)
+-->
 
 ---
 
@@ -40,12 +47,16 @@ Commerce Hub offers multiple transactions related guides to assist with managing
 
 ### Featured Guides
 
-- [Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md) 
+- [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+<!--
 - [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md)
+- [API Reporting](?path=docs/Resources/Guides/Reporting/Reporting-Overview.md)
+- [Vault](?path=docs/Resources/Guides/Vault/Vault-Overview.md)
+-->
 
+<!--
 ---
-
 ## Industry Verticals
 
 Commerce Hub offers guides to assist with integrating different industry, trade, profession, or other group of customers with specialized needs.
@@ -57,11 +68,6 @@ Commerce Hub offers guides to assist with integrating different industry, trade,
 - [Petro](?path=docs/Resources/Guides/Industry-Verticals/Petro.md)
 - [Quick Service Restruants (QSR)](?path=docs/Resources/Guides/Industry-Verticals/QSR.md)
 - [Retail](?path=docs/Resources/Guides/Industry-Verticals/Retail.md)
-
----
-
-## Next Steps
-
-[Use Commerce Hub API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+-->
 
 ---

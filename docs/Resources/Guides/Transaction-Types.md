@@ -8,7 +8,7 @@ The Commerce Hub API allows a merchant to create, inquire, and finalize payment 
 
 ### Primary Transactions
 
-Primary transactions include; [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) and [information lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) requests that are submitted without reference to a prior transaction.
+Primary transactions include; [charge](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md), [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and information lookup requests that are submitted without reference to a prior transaction.
 
 ### Secondary Transactions
 
@@ -19,10 +19,6 @@ Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Paym
 <!-- theme: example -->
 >**Example Endpoint:** `/payments/v1/charges/{transactionId}/capture`
 
-- `orderID`: Order identifier returned in the *gatewayResponse*.
-
-<!-- theme: example -->
->**Example Endpoint:** `/payments/v1/charges/orders/{orderId}/capture`
 
 ---
 
@@ -32,6 +28,5 @@ Secondary Transactions include; [refund](?path=docs/Resources/API-Documents/Paym
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md) 
-
 - [Transaction Inquiry](?path=ocs/Resources/API-Documents/Payments/Inquiry.md) 
 ---

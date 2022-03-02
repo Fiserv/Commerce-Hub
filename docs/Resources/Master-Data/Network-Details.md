@@ -8,7 +8,7 @@ Authorization network response contains the `networkDetails` object.
 
 <!--
 type: tab
-title: networkDetails
+titles: networkDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `networkDetails` object.
@@ -35,9 +35,8 @@ The below table identifies the parameters in the `networkDetails` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
-
+ 
 JSON string format for `networkDetails`:
 
 ```json
@@ -76,7 +75,7 @@ Contains the card network data.
 
 <!--
 type: tab
-title: network
+titles: network, JSON Example
 -->
 
 The below table identifies the parameters in the `network` object.
@@ -87,7 +86,6 @@ The below table identifies the parameters in the `network` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json
@@ -99,7 +97,7 @@ title: JSON Example
 ```
 
 <!-- type: tab-end -->
-
+ 
 ---
 
 #### Authorization Characteristics Indicator
@@ -113,6 +111,7 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 | *REQUEST_PARTICIPATION* |  Transaction requests participation |
 | *CARD_NOT_PRESENT_NO_AVS* |  Card not present, AVS not required |
 
+---
 
 ## See Also
 
@@ -123,5 +122,5 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
-
+ 
 ---

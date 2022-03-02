@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, convenience-fees, mastercard, visa, american-express, discover, vault]
+tags: [carat, commerce-hub, enterprise, convenience-fees]
 ---
 
 # Convenience Fees
@@ -36,7 +36,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ## Request Variables
 
-The `convenienceFee` is part of the `amountComponents` and the `additionalDataCommon` array. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
+The `convenienceFee` is part of the `amountComponents` object in the `additionalDataCommon` object. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
 
 ---
 
@@ -44,7 +44,7 @@ The `convenienceFee` is part of the `amountComponents` and the `additionalDataCo
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `convenienceFee`.
@@ -82,16 +82,18 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
    "gatewayResponse":{
       "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "TOKEN",
+      "transactionType": "CHARGES",
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{

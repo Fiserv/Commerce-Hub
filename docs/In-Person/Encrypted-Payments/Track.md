@@ -12,20 +12,17 @@ A third-party device captures the customer's payment source unencrypted or encry
 <!-- theme: warning -->
 > It is not recommended to send unencrypted track 1 and track 2 data for the payment transaction.
 
-
----
-
 ### Request Variables
 
 <!--
 type: tab
-title: source
+titles: source, encryptionData, JSON Example
 -->
 
 The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ---------| --------- |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentTrack* for Magnetic stripe transactions |
 | `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
 | `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
@@ -34,13 +31,12 @@ The below table identifies the parameters in the `source` object.
 
 <!--
 type: tab
-title: encryptionData
 -->
 
 The below table identifies the required parameters in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | --------| ---------- |
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target could be TRACK_1, TRACK_2, or BOTH |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
@@ -49,7 +45,6 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for PaymentTrack:
@@ -77,7 +72,7 @@ JSON string format for PaymentTrack:
 
 <!--
 type: tab
-title: Request
+title: Request, Response
 -->
 
 ##### Example of a charge payload request using PaymentTrack.
@@ -118,13 +113,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -183,7 +177,6 @@ title: Response
 
 ## See Also
 
-
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
@@ -192,4 +185,3 @@ title: Response
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 
 ---
-

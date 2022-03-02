@@ -5,7 +5,7 @@ tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud,
 
 # Velocity Controls
 
-Velocity settings determine which transactions Commerce Hub allows to proceed to authorization. A single transaction can be controlled by maximum or minimum sale amount. Groups of transactions can be evaluated by time period or total dollar amount thresholds that, when exceeded, Commerce Hub will prevent all future transactions from processing. These controls allow a merchant to monitor / restrict transaction flow by IP address, by card number, and amount right down to the hour, per transaction type.
+Velocity settings determine which transactions Commerce Hub allows to proceed to authorization. A single transaction can be controlled by a minimum or maximum sale amount. Groups of transactions can be evaluated by time period or total dollar amount thresholds that, when exceeded, Commerce Hub will prevent all future transactions from processing. These controls allow a merchant to monitor / restrict transaction flow by IP address, by card number, and amount right down to the hour, per transaction type.
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Velocity Control support and the documents related to the features will be released soon.
