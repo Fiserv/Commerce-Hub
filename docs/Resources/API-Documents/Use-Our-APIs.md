@@ -38,12 +38,11 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Conduct a complete beta test of your application
 - Run reports
 
-<!-- ## QA Sandbox
-
-Description goes here -->
-
-<!--theme: success -->
-<!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
+<!--
+## QA Sandbox
+Description goes here
+https://qa.api.fiservapps.com/ch/{resource}
+-->
 
 ---
 
