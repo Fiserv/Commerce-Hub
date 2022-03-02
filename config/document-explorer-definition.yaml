@@ -71,6 +71,9 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+#- sections:
+#  - title: Connected Commerce
+#    link: docs/Getting-Started/Getting-Started-UCOM.md
 - sections:
   - title: Connected Commerce
     link: docs/Getting-Started/Getting-Started-UCOM.md
@@ -107,6 +110,8 @@
       link: docs/Resources/Guides/Response-Codes/Response-Handling.md
     - title: Split Shipment
       link: docs/Resources/Guides/Split-Shipment.md
+#    - title: Split Tender
+#      link: docs/Resources/Guides/Split-Tender.md
     - title: Stored Credentials
       link: docs/Resources/Guides/Stored-Credentials.md
     - title: Subsequent Authorizations

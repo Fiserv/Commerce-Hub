@@ -12,7 +12,7 @@ Response codes identify the final status of the transaction from the Gateway, Ho
 
 The state of the transaction can be determined by the three-digit HTTP status code from the response. These status codes are grouped in to three different classes, and the first digit can be used to quickly identify the class of a status code.
 
-- **2xx: Success** – Indicates that the request was accepted successfully and will return the `processorResponseDetails` object along with the `responseCode` and `responseMessage`.
+- **2xx: Success** – Indicates that the request was processed successfully by Commerce Hub and will return the `processorResponseDetails` object along with the `responseCode` and `responseMessage`. This can be the issuer response or a processor error response.
 - **4xx: Client Error** – Indicates that incorrect data in request and will return the `errorResponse` object along with the code, message, and field.
 - **5xx: Server Error** – Indicates that the server was unable to process the request and will return the `errorResponse` object along with the code, message, and field.
 
