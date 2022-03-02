@@ -4,6 +4,9 @@ tags: [carat, commerce-hub, enterprise, deferred-authorization, payload-example]
 
 # Deferred Authorization
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support deferred authorizations and the documents related to the feature will be released soon.
+
 A deferred authorization is a transaction that occurs when a merchant captures transaction information while the connectivity is interrupted or unavailable. The `transactionIndicatorType` of *DEFERRED* must be sent in the authorization/purchase/refund `transactionDetails` once the connectivity is restored.
 
 <!-- theme: info -->
@@ -16,6 +19,7 @@ A deferred authorization is a transaction that occurs when a merchant captures t
 
 ## Payload Example
 
+---
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
