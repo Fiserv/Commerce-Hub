@@ -11,7 +11,7 @@ Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Docum
 
 #### Capture Types
 
-- **Automatic Capture:** A charge is automatically captured when a [Sale](?path=docs/Resources/FAQs-Glossary/Glossary.md#sale) <!--or [Deferred Payment](?path=docs/Resources/Guides/Bill-Payments/Deferred-Payment.md)--> request is made.
+- **Automatic Capture:** A charge is automatically captured when a [Sale](?path=docs/Resources/FAQs-Glossary/Glossary.md#sale) Deferred Payment request is made.
 - **Manual Capture:** A manual capture can be processed for the full amount or a partial amount.
   - **Full:** A full capture request will settle the full amount of the held funds. This amount can be for more than the amount for certain industries (e.g., tips).
   - **Partial:** A partial capture request is used when the full pre-auth amount is not needed or when submitting a [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md). When the full amount is not captured, then the remaining balance is released to the customer (e.g., the price of a pre-order item decreases before shipping).
@@ -22,12 +22,10 @@ Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Docum
 
 A capture request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the capture type.
 
-
 <!--
 type: tab
 titles: amount, merchantDetails
 -->
-
 
 The below table identifies the required parameters in the `amount` object.
 
