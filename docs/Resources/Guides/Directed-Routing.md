@@ -4,6 +4,9 @@ tags: [carat, commerce-hub, enterprise, directed-routing, network, processor]
 
 # Directed Routing
 
+<!-- theme: danger -->
+> We are enhancing the Commerce Hub to include directed routing support and the documents related to the feature will be updated frequently.
+
 Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
 
 
@@ -13,7 +16,7 @@ The `directedRouting` is part of the `additionalDataCommon` object.
 
 <!--
 type: tab
-title: directedRouting
+titles: directedRouting, processors, JSON Example
 -->
 
 The below table identifies the required parameters in the `directedRouting` object.
@@ -26,20 +29,18 @@ The below table identifies the required parameters in the `directedRouting` obje
 
 <!--
 type: tab
-title: processors
 -->
 
 The below table identifies the required parameters in the `processors` array.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `code` | *string* | 256 | Identifies the payment processor. **Valid Values:** FISERV, CHASE |
-| `platform` | *string* | 256 | Identifies the payment platform of the processor. **Valid Values:** NORTH, TAMPA |
+| `code` | *string* | 256 | Identifies the payment processor. **Valid Values:** TBD |
+| `platform` | *string* | 256 | Identifies the payment platform of the processor. **Valid Values:** TBD |
 | `priority` | *string* | 256 | Identifies the priority to use each processor. **Valid Values:** PRIMARY, SECONDARY |
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json
@@ -50,13 +51,13 @@ title: JSON Example
 		"network": "VISA",
 		"cardFunction": "CREDIT",
 		"processors": [{
-				"code": "FISERV",
-				"platform": "NORTH",
+				"code": "TBD",
+				"platform": "TBD",
 				"priority": "PRIMARY"
 			},
 			{
-				"code": "CHASE",
-				"platform": "TAMPA",
+				"code": "TBD",
+				"platform": "TBD",
 				"priority": "SECONDARY"
 			}
 		]
@@ -74,7 +75,7 @@ title: JSON Example
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `directedRouting`.
@@ -125,10 +126,12 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -163,6 +166,7 @@ title: Response
       "approvalStatus": "APPROVED",
       "approvalCode": "OK123C",
       "referenceNumber": "4fbc5baaae18",
+      "processor": "NASHVILLE.NORTH",
       "networkRouted": "VISA",
       "networkInternationalId": "0001",
       "responseCode": "000",
@@ -181,24 +185,6 @@ title: Response
     "terminalId": "123456",
     "merchantId": "123456789789567"
   },
-  "additionalDataCommon": {
-    "directedRouting": {
-      "network": "VISA",
-      "cardFunction": "CREDIT",
-      "processors": [
-        {
-          "code": "FISERV",
-          "platform": "NORTH",
-          "priority": "PRIMARY"
-        },
-        {
-          "code": "FISERV",
-          "platform": "NORTH",
-          "priority": "FINAL"
-        }
-      ]
-    }
-  }
 }
 ```
 

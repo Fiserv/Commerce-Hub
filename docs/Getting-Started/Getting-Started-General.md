@@ -12,49 +12,107 @@ Beyond accepting customer payments, Commerce Hub's services include; tokenizatio
 
 ## Integration Options
 
-### Online/Mobile/Digital
+Build a Commerce Hub integration based on customer type to accept a payment.
 
-Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Transaction types include; online payments, in-app payments, and MOTO.
+<!-- type: row -->
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Integrations](?path=docs/Getting-Started/Getting-Started-Online.md)
+<!-- type: card
+title: Online/Mobile/Digital
+description: Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Transaction types include; online payments, in-app payments, and MOTO.
+link: ?path=docs/Getting-Started/Getting-Started-Online.md
+-->
 
+<!-- type: card
+title: In-Person
+description: In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
+link: ?path=docs/Getting-Started/Getting-Started-InPerson.md
+-->
 
-### In-Person
+<!-- type: card
+title: Connected Commerce
+description: Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce Hub's unified commerce solution that consolidates sales channels, and allows for a more consistent and personalized customer experience.
+link:
+-->
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include In-Person support and the documents related to the features will be released soon.
-
-In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include; manual entry, track data and EMV.
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Integrations](?path=docs/Getting-Started/Getting-Started-InPerson.md)
-
-### Connected Commerce
-
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Connected Commerce support and the documents related to the features will be released soon.
-
-Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce Hub's unified commerce solution that consolidates sales channels, and allows for a more consistent and personalized customer experience.
+<!-- type: row-end -->
 
 ---
 
 ## Features
 
-- [Acount Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Fraud Prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
-- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
-- [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
-- [Returns Optimization Service](?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md)
-- [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
+Once your integration can accept payments, enhance your integration by adding more Commerce Hub features and functionality.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Acount Verification
+description: Account Verification can be used to confirm that the customer account is valid for a transaction.
+link: ?path=docs/Resources/API-Documents/Payments_VAS/Verification.md
+-->
+
+<!-- type: card
+title: Fraud Prevention
+description: Commerce Hub implements various transaction and fraud controls that allows merchants to monitor potentially fraudulent transactions including positive and negative filters, velocity controls, and transaction restrictions, that will automatically accept or reject transactions.
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings.md
+-->
+
+<!-- type: card
+title: Tokenization
+description: Tokenization replaces customer's sensitive data with non-sensitive equivalent, which can be stored for credentials on file and used on future transactions.
+link: ?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+-->
+
+<!-- type: row-end -->
+
+
+<!-- type: row -->
+
+<!-- type: card
+title: Enhanced Data Service
+description: Enhanced Data Service enables sharing of relevant data between merchants and issuers outside of the authorization flow. Issuers leverage the data to make a more informed authorization decision in an attempt to improve authorization rates and reduce fraud.
+link: ?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
+-->
+
+<!-- type: card
+title: Returns Optimization Service
+description: Returns Optimization Service enables sharing of relevant data between like industry verticals by receiving a consumer return report. Merchants can leverage the data to make a more informed transaction decision in an attempt to reduce refunds.
+link: ?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+-->
+
+<!-- type: card
+title: Information Lookup
+description: Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token.
+link: 
+-->
+
+<!-- type: row-end -->
 
 ---
 
 ## Use Cases
 
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
-- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
-- [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
+Build an integration based on common use cases and industry verticals.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Mobile Wallets
+description: Commerce Hub allows integration with Apple Pay and Google Pay mobile wallets.
+link: ?path=docs/Getting-Started/Getting-Started-Wallets.md
+-->
+
+<!-- type: card
+title: Split Shipment
+description: A split shipment is an ability to capture an authorization for the full order amount by performing a capture for each item shipped.
+link: ?path=docs/Resources/Guides/Split-Shipment.md
+-->
+
+<!-- type: card
+title: Stored Credentials
+description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas a Cardholder Initiated Transaction (CIT).
+link: ?path=docs/Resources/Guides/Stored-Credentials.md
+-->
+
+<!-- type: row-end -->
 
 ---

@@ -3,35 +3,32 @@ tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtu
 ---
 
 
-# Merchant-Boarding
+# Merchant Boarding
 
 ClientLine Enterprise Portal offers merchants the ability to manage the onboarding process for clients.
 
 Follow the below steps to board a mechant:
 
-### 1. Sign up for ClientLine Enterprise Portal.
+### 1. Sign up for ClientLine Enterprise Portal
 
 Request and create a account in the ClientLine Enterprise Portal and features based on the account type.
 
 <!-- theme: info -->
 > After registration, the merchant will have instant access to the ClientLine Enterprise Portal.
 
-### 2. Create a new account for the merchant
+### 2. Create a New Account
 
-Go to the Marketplace page and create a report.
+Go to the Marketplace page and create an account.
 
-<!-- theme: info -->
-> These are required in the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md).
+### 3. Manage an Account
 
-### 3. Manage a Report
-
-Go to the Marketplace page and select a report to manage.
-
+Go to the Marketplace
 
 ---
 
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)
+- [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md) 
+
+---

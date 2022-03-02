@@ -8,7 +8,7 @@ The `transactionInteraction` object contains the data indicating where the trans
 
 <!--
 type: tab
-title: transactionInteraction
+titles: transactionInteraction, JSON Example
 -->
 
 The below table identifies the parameters in the `transactionInteraction` object. 
@@ -22,14 +22,12 @@ The below table identifies the parameters in the `transactionInteraction` object
 | `responseCode` | *string* | | Response code returned by network/issuer used in subsequent transactions. |
 | `posData` | *string* | | POS data returned by network/issuer used in subsequent transactions. |
 | `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
-| `terminalEntryCapability` | *string* |  | Identifies how data can be [entered](#terminal-entry-capability) in the terminal or software. |
 | `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
 | `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification | 
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `transactionInteraction`:
@@ -42,12 +40,11 @@ JSON string format for `transactionInteraction`:
       "posConditionCode": "CARD_NOT_PRESENT_ECOM",  
       "responseCode": "string",  
       "posData": "string",  
-      "mobileInteraction": "PHONE_NUMBER",  
-      "terminalEntryCapability": "ECOMMERCE",  
+      "mobileInteraction": "PHONE_NUMBER",
       "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",  
       "eciIndicator": "SECURE_ECOM",
       "additionalPosInformation": "",  
-   }
+   } 
 }
 
 ```
@@ -177,7 +174,7 @@ The below table identifies the valid values of `eciIndicator`.
 | *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
 | *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
 | *AMEX_PAYMENT_TOKEN* | **American Express Payment Token:** Designates a secure transaction between a cardholder and a merchant via E-commerce where AMEX Payment Token data is present. |
-
+ 
 ---
 
 ## See Also
@@ -186,4 +183,4 @@ The below table identifies the valid values of `eciIndicator`.
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 
----
+--- 

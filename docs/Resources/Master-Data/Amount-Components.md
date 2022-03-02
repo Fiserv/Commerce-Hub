@@ -1,6 +1,6 @@
 ---
 tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
----
+--- 
 
 # Transaction Amount
 
@@ -15,7 +15,7 @@ Used to present the transaction amount and transaction currency for particular t
 
 <!--
 type: tab
-title: amount
+titles: amount, JSON Example
 -->
 
 The below table identifies the parameters in the `amount` object.
@@ -27,7 +27,6 @@ The below table identifies the parameters in the `amount` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `amount`:
@@ -49,7 +48,7 @@ Used in transactions where additional amount fields such as taxes, [surcharge fe
 
 <!--
 type: tab
-title: amountComponents
+titles: amountComponents, JSON Example
 -->
 
 The below table identifies the parameters in the `amountComponents` object.
@@ -60,13 +59,14 @@ The below table identifies the parameters in the `amountComponents` object.
 | `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
 | `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
 | `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
-| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+| `cashback` | *number* | 12 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase. |
+| `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
+| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
 | `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `amountComponents`:
@@ -83,7 +83,7 @@ JSON string format for `amountComponents`:
       "vatAmount": 1.00
    }
 }
-```
+``` 
  
 <!-- type: tab-end -->
 
@@ -96,5 +96,5 @@ JSON string format for `amountComponents`:
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
-
+ 
 ---

@@ -10,14 +10,13 @@ Financial Institutions such as banks issue the **Payment Card** to the customers
 <!-- theme: info -->
 > The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
 
-
 ---
 
 ### Request Variables
 
 <!--
 type: tab
-title: source
+titles: source, card, JSON Example
 -->
 
 The below table identifies the parameters in the `source` object.
@@ -31,7 +30,6 @@ The below table identifies the parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -47,7 +45,6 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for PaymentCard:
@@ -73,7 +70,7 @@ JSON string format for PaymentCard:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using PaymentCard.
@@ -106,13 +103,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

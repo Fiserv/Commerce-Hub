@@ -13,7 +13,7 @@ tags: [carat, commerce-hub, enterprise, decrypted-wallet, apple-pay, google-pay,
 
 <!--
 type: tab
-title: source
+titles: source, card, JSON Example
 -->
 
 The below table identifies the parameters in the `source` object.
@@ -28,7 +28,6 @@ The below table identifies the parameters in the `source` object.
 
 <!--
 type: tab
-title: card
 -->
 
 The below table identifies the required parameters in the `card` object.
@@ -44,7 +43,6 @@ The below table identifies the required parameters in the `card` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for DecryptedWallet:
@@ -71,7 +69,7 @@ JSON string format for DecryptedWallet:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -107,13 +105,13 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
    "gatewayResponse":{

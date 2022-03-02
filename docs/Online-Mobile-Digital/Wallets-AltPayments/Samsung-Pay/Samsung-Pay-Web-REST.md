@@ -36,7 +36,7 @@ The merchant can enhance the purchase experience from their website by creating 
 
 <!--
 type: tab
-title: source
+titles: source, header
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -56,7 +56,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: header
 -->
 
 The below table identifies the required parameters in the `header` object.
@@ -79,7 +78,7 @@ The below table identifies the required parameters in the `header` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -112,13 +111,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 ```json
 {
    "gatewayResponse":{

@@ -62,6 +62,6 @@ Reference reports allow you to view approval metadata, sites search, bin search,
 ## See Also
 
 - [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
-- [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md)
+- [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md)
 
 ---

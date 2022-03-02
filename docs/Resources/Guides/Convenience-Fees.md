@@ -44,7 +44,7 @@ The `convenienceFee` is part of the `amountComponents` object in the `additional
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `convenienceFee`.
@@ -82,10 +82,12 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

@@ -4,11 +4,12 @@ tags: [carat, card-not-present, commerce-hub, error, response, response-codes, c
 
 # Error Response Codes
 
-The error code indicates the reason why a transaction is rejected. Commerce Hub includes the value in the `code` along with the corresponding text in the `message` fields of the [HTTP error response](?path=docs/Resources/Guides/Response-Codes/HTTP.md).
+The error code indicates the reason why a transaction is rejected and is returned in a HTTP 2xx, 4xx or 5xx response. Commerce Hub includes the code along with the corresponding message in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) or [HTTP error response](?path=docs/Resources/Guides/Response-Codes/HTTP.md). 
+
 
 <!--
 type: tab
-title: 1xx
+titles: 1xx, 2xx, 3xx, 4xx, 5xx, 6xx-649, 65x-699, 7xx, 8xx, 9xx
 -->
 
 Codes starting with 1xx identifies an error in the submission data. This includes missing data, invalid data or format errors. Verify the data submitted and resend the request.
@@ -59,7 +60,6 @@ Codes starting with 1xx identifies an error in the submission data. This include
 
 <!--
 type: tab
-title: 2xx
 -->
 
 Codes starting with 2xx identifies an error in the configuration setup. This includes merchant and terminal setup, account setup. Check the setup or contact your account respresentative for further assistance.
@@ -129,10 +129,8 @@ Codes starting with 2xx identifies an error in the configuration setup. This inc
 | 262 |	Invalid MCC For Hotel/Lodging |	 		 	 	 
 | 268 |	Received Merchant TransactionId Does Not Match The TransactionId |
 
-
 <!--
 type: tab
-title: 3xx
 -->
 
 Codes starting with 3xx identifies an error related to [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
@@ -230,7 +228,6 @@ Codes starting with 3xx identifies an error related to [payment source](?path=do
 
 <!--
 type: tab
-title: 4xx
 -->
 
 Codes starting with 4xx identifies an error related to [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
@@ -310,10 +307,8 @@ Codes starting with 4xx identifies an error related to [payment source](?path=do
 | 482 |	SMS Response Timeout |	 	 	 
 | 493 |	Trace Number in Authorization Request and Response Do Not Match |
 
-
 <!--
 type: tab
-title: 5xx
 -->
 
 Codes starting with 5xx identifies a [vertical](?path=docs/Resources/Guides/Industry-Verticals/Industry-Verticals.md) specific error. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
@@ -373,10 +368,8 @@ Codes starting with 5xx identifies a [vertical](?path=docs/Resources/Guides/Indu
 | 571 |	Sub-Merchant Data Not Supported	| 	 
 | 572 | Payment Facilitator Missing MerchantID | 
 
-
 <!--
 type: tab
-title: 6xx-649
 -->
 
 Codes starting with 6xx identifies an error related to [fraud checks](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md). Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
@@ -418,7 +411,6 @@ Codes starting with 6xx identifies an error related to [fraud checks](?path=docs
 
 <!--
 type: tab
-title: 65x-699
 -->
 
 Codes starting with 6xx identifies an error related to terminal configuration or encryption. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
@@ -473,7 +465,6 @@ Codes starting with 6xx identifies an error related to terminal configuration or
 
 <!--
 type: tab
-title: 7xx
 -->
 
 Codes starting with 7xx identifies an error related to gateway communication. Check the error message and take appropriate action. Contact your account respresentative for further assistance.
@@ -545,7 +536,6 @@ Codes starting with 7xx identifies an error related to gateway communication. Ch
 
 <!--
 type: tab
-title: 8xx
 -->
 
 Codes starting with 8xx identifies an error related to the transaction information. Check the error message, correct the data and resend the request. Contact your account respresentative for further assistance.
@@ -612,7 +602,6 @@ Codes starting with 8xx identifies an error related to the transaction informati
 
 <!--
 type: tab
-title: 9xx
 -->
 
 Codes starting with 8xx identifies a general gateway error. Check the error message and take appropriate action. Contact your account respresentative for further assistance.
@@ -620,7 +609,6 @@ Codes starting with 8xx identifies a general gateway error. Check the error mess
 | Code| Message |
 | ---- | ----- |
 | 999 | Unable to Process Transaction. Please Contact Support Team. |
-
 
 <!-- type: tab-end -->
 

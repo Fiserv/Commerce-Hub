@@ -19,12 +19,44 @@ Wallet transactions originate from a digital wallet either from a website or on 
 
 ### Integrations
 
-[{(Apple Pay)(Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)}{(Google Pay)(Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.)(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)}]
+<!-- type: row -->
+
+<!-- type: card
+title: Apple Pay
+description: Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
+link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+-->
+
+<!-- type: card
+title: Google Pay
+description: Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.
+link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+-->
+
+<!-- type: row-end -->
 
 ---
 
 ## Digital Wallets (eWallets)
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include support for digital wallets (eWallets) including PayPal and AmazonPay. The documents related to the features will be released soon. 
+
+### Integrations
+
+<!-- type: row -->
+
+<!-- type: card
+title: Amazon Pay
+description: Commerce Hub allows developers to quickly enable secure and convenient Amazon Pay payments in their app or website.
+link:
+-->
+
+<!-- type: card
+title: PayPal
+description: Commerce Hub allows developers to quickly enable secure and convenient PayPal payments in their app or website.
+link:
+-->
+
+<!-- type: row-end -->
 
 ---

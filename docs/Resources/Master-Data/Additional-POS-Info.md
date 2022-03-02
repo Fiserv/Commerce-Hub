@@ -8,18 +8,19 @@ Additional information about the POS functions and features can be submitted in 
 
 <!--
 type: tab
-title: additionalPosInformation
+titles: additionalPosInformation, JSON Example
 -->
 
 The below table identifies the parameters in the `additionalPosInformation` object.
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
+| `dataEntrySource` | *string* | 50 | [Source](#data-entry-source) used to initiated transaction. |
 | `posId` | *string* | | Identifies the specific device or point of entry where the transaction originated. For example, pump number, lane number, terminal number, etc. |
 | `cashierId` | *string* | | Used to uniquely identify the merchant’s store cashier or employee accepting the transaction. |
-| `stan` | *string* | | Contains the System Trace Audit Numbers (STAN) returned for a Discover incremental transaction. Note: This field has limited platform availability. For more information, please contact your account representative. |
+| `stan` | *string* | 6 | Contains the System Trace Audit Numbers (STAN) returned for a Discover incremental transaction. Note: This field has limited platform availability. For more information, please contact your account representative. |
 | `posFormFactorIndicator` | *string* | | This field is used to identify the form factor used at the POS for MasterCard PayPass transactions. Note: Some values from 00–19 may indicate not only the physical form factor but also other attributes such as device technology and payment app specifications. Values from 20–99 exclusively indicate the form factor only without also indicating the storage technology.|
+| `alternateRoutingIndicator` | *boolean* | | 'Identifies if the terminal support the Alternate Routing feature used for PINless POS, Signature Debit, and EMV Common AID features (excluding Online PIN CVM) allows merchants to process PIN Debit Network transactions without a PIN.' |
 | `enhancedAuthorizationRequestIndicator` | *string* | 32 | Used to indicate that the terminal or software is capable of supporting partial authorizations, [prepaid identification and request balances](#enhanced-authorization-request-indicator). Partial Authorization support is dependent on card type and region please contact your account representative.|
 | `transactionQualifier` | *string* | | Used for Discover - Discover TransactionQualifier. |
 | `enhancedAuthorizationResponseIndicator` | *string* |  | Returns the approval type for Enhanced Authorization. **Valid Values:** *FULL*, *PARTIAL*, *DEPLETED*, *DECLINE*, *ERROR* |
@@ -35,7 +36,6 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `additionalPosInformation`:
@@ -74,6 +74,7 @@ JSON string format for `additionalPosInformation`:
          "communicationInformation2": "string",
          "industryInformation1": "string",
          "industryInformation2": "string",
+         "terminalEntryCapability": "ECOMMERCE",
          "classAndComplianceCertification": "A",
          "otherCapabilities": "string"
       },
@@ -92,7 +93,7 @@ Contains additional terminal's hardware and software information.
 
 <!--
 type: tab
-title: posHardwareAndSoftware
+titles: posHardwareAndSoftware, JSON Example
 -->
 
 The below table identifies the parameters in the `posHardwareAndSoftware` object.
@@ -108,7 +109,6 @@ The below table identifies the parameters in the `posHardwareAndSoftware` object
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json
@@ -126,13 +126,15 @@ title: JSON Example
 
 <!-- type: tab-end -->
 
+---
+
 ### POS Features
 
 Terminal or software feature information.
 
 <!--
 type: tab
-title: posFeatures
+titles: posFeatures, JSON Example
 -->
 
 The below table identifies the parameters in the `posFeatures` object.
@@ -141,19 +143,26 @@ The below table identifies the parameters in the `posFeatures` object.
 |---------|----------|----------------|---------|
 | `hostProcessingPlatform` | *string* |  | Indicates which system is being used by the payment application and to what extent it is being used. |
 | `messageFormatSupport` | *string* |  | Indicates which message format the application uses to communicate with the Chase merchant services PNS Host. |
-| `emvSupport` | *string* |   Indicates the payment brands supported by the application for EMV processing. Required for any application that supports EMV processing. |
+| `emvSupport` | *string* |  | Indicates the payment brands supported by the application for EMV processing. Required for any application that supports EMV processing. |
 | `peripheralInformation1` | *string* |  | Indicates the type of peripheral device attached to or being used by the payment application or point of sale device. Only the highest level of support should be indicated unless multiple devices are attached. |
 | `peripheralInformation2` | *string* |  | Reserved for future use |
 | `communicationInformation1` | *string* |  | Indicates the methods of communication supported by the payment application. It is possible for an application to support more than one type of communication at a time. |
 | `communicationInformation2` | *string* |  | Reserved for future use |
 | `industryInformation1` | *string* |  | Indicates the industries supported by the payment application. More than one industry can be indicated. |
 | `industryInformation2` | *string* |  | Reserved for future use |
+| `terminalEntryCapability` | *string* | 28 | Identifies how data can be entered in the terminal or software. |
 | `classAndComplianceCertification` | *string* |  | Indicates the type of application or device sending the transaction, Class A or Class B. |
 | `otherCapabilities` | *string* |  | Indicates whether the transaction originated from a mobile device that uses Chase merchant services’ mobile payment gateway or originated from a device that does not use Chase merchant services’ Mobile Payment Gateway. Note: It is required for merchants to send the appropriate information in this element in the case where a mobile terminal is supported. |
+| `cardCaptureCapability` | *boolean* |  | Identifies if the terminal is able to capture the card data. |
+| `pinAuthenticationCapability` | *string* | 25 | PIN entry capability of the Point of Sale. |
+| `authenticationCapability` | *string* | 50 | Identifies the terminals capability to authenticate  the cardholder. |
+| `taxPromptCapability` | *string* | 25 | This field indicates the capability of the terminal to prompt for the Tax Amount, and then handle the Commercial card type in the response message. |
+| `terminalEntryCapability` | *string* | 28 | Identifies how data can be entered in the terminal or software. |
+| `PINcaptureCapability` | *string* | 50 | Identifies the terminals capability to caputer a PIN. |
+
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 ```json
@@ -168,6 +177,7 @@ title: JSON Example
       "communicationInformation2": "string",
       "industryInformation1": "string",
       "industryInformation2": "string",
+      "terminalEntryCapability": "ECOMMERCE",
       "classAndComplianceCertification": "A",
       "otherCapabilities": "string"
    }
@@ -175,6 +185,32 @@ title: JSON Example
 ```
 
 <!-- type: tab-end -->
+
+---
+
+#### Data Entry Source
+
+The below table contains the valid values for `dataEntrySource` parameter.
+
+| Valid Value | Description |
+|--------|--------|
+| MOBILE_APP | The payment source was entered into a mobile app or obtained from a mobile wallet.  |
+| MOBILE_WEB | The payment source was entered into a website on a mobile device or obtained from a digital wallet. |
+| BROWSER_PC | The payment source was entered into a website on a personal computer or obtained from a digital wallet. |
+| KIOSK | The payment source was entered into a kisok or obtained from a mobile wallet. |
+| CONSOLE | Gaming console.... |
+| 3DS_REQUESTOR_INITIATED | The payment source initiated by the cuatomer using 3-D Secure. |
+| UNSPECIFIED | The data entry source is unknown or left blank. |
+| ELECTRONIC_PAYMENT_TERMINAL | black box terminal/........ |
+| AUTOMATED_FUEL_DISPENSING_MACHINE | Unattended fuel station.......... |
+| UNATTENDED_CUSTOMER_TERMINAL | Unattended customer terminal....... |
+| ECOMMERCE_CUSTOMER_PRESENT | The ecommerce transaction where the payment source is entered at the merchant's location. |
+| MOBILE_TERMINAL | black box terminal/.......works from cellular |
+| MOBILE_POS | Point of sales terminal that works on wifi. |
+| ELECTRONIC_CASH_REGISTER | Point of sales terminal that allows cash transaction.  |
+| IVR_VRU | Interactive Voice Response(IVR), Voice Response Unit (VRU) |
+| TICKET_MACHINE | A machine to buy the tickets. |
+| CALL_CENTER_OPERATOR | The payment source entered by a call center operator when taking an order from a customer. | 
 
 ---
 
@@ -188,7 +224,7 @@ The below table identifies the valid values of `enhancedAuthorizationRequestIndi
 | *BALANCE_ONLY* | Partial authorizations NOT requested; Balance information requested |
 | *PARTIAL_AUTH_ONLY* | Partial authorizations requested; Balance information NOT requested |
 | *BOTH_SUPPORTED* | Partial authorizations requested; Balance information requested |
-
+ 
 ----
 
 #### Attended Terminal Data
@@ -235,5 +271,5 @@ The below table identifies the valid values of `cardholderActivatedTerminalInfor
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-
+ 
 ---

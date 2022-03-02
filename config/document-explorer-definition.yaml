@@ -32,9 +32,8 @@
     link: docs/Getting-Started/Getting-Started-General.md
 - sections:
   - title: In-Person
+    link: docs/Getting-Started/Getting-Started-InPerson.md
     sections:
-    - title: Integrations
-      link: docs/Getting-Started/Getting-Started-InPerson.md
     - title: Encrypted PIN Pad
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
     - title: Semi-Integrated
@@ -52,25 +51,29 @@
       - title: Contactless (NFC)
         link: docs/In-Person/Encrypted-Payments/Contactless.md
   - title: Online/Digital/Mobile
+    link: docs/Getting-Started/Getting-Started-Online.md
     sections:
-    - title: Integrations
-      link: docs/Getting-Started/Getting-Started-Online.md
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Hosted Payment Page
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md
-    - title: Payment JS
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-    - title: Virtual Terminal
-      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
-    - title: Wallets and Alt Payments
+    - title: Secure Data Capture
+      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
       sections:
-      - title: Integrations
-        link: docs/Getting-Started/Getting-Started-Wallets.md
+      - title: iFrame
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
+      - title: JavaScript
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
+    - title: Virtual Terminal
+      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md 
+    - title: Wallets and Alt Payments
+      link: docs/Getting-Started/Getting-Started-Wallets.md
+      sections:
       - title: Apple Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+#- sections:
+#  - title: Connected Commerce
+#    link: docs/Getting-Started/Getting-Started-UCOM.md
 - sections:
   - title: Connected Commerce
     link: docs/Getting-Started/Getting-Started-UCOM.md
@@ -91,6 +94,7 @@
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:
   - title: Resources and Guides
+    link: docs/Resources/Guides/Resources-Guide.md
     sections:
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md
@@ -106,6 +110,8 @@
       link: docs/Resources/Guides/Response-Codes/Response-Handling.md
     - title: Split Shipment
       link: docs/Resources/Guides/Split-Shipment.md
+#    - title: Split Tender
+#      link: docs/Resources/Guides/Split-Tender.md
     - title: Stored Credentials
       link: docs/Resources/Guides/Stored-Credentials.md
     - title: Subsequent Authorizations
@@ -129,6 +135,8 @@
         link: docs/Resources/API-Documents/Payments/Cancel.md
       - title: Refund
         link: docs/Resources/API-Documents/Payments/Refund.md
+      - title: Inquiry
+        link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Payments VAS
       sections:
       - title: Tokenization

@@ -64,9 +64,7 @@ featuredFeatures:
 #     links: ["docs/Resources/API-Documents/Payments_VAS/Payment-Token.md"]
   - title: Apple Pay
     description: >
-      One of the most popular mobile payment and digital wallets. Customers can make payments 
-      in-store, mobile or online. To leverage, customers use an Apple devices - iPhone, Apple Watch, 
-      iPad, Mac, etc.
+      One of the most popular mobile payment and digital wallets. Customers can make payments in-store, mobile or online. To leverage, customers use an Apple device - iPhone, Apple Watch, iPad, Mac, etc.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     #links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]

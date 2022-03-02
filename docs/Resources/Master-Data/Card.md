@@ -9,7 +9,7 @@ Card is a required object in `source` for all card payment types including; debi
 
 <!--
 type: tab
-title: card
+titles: card, JSON Example
 -->
 
 The below table identifies the parameters in the `card` object.
@@ -28,12 +28,12 @@ The below table identifies the parameters in the `card` object.
 | `beginningBalance` | *number* | 18,3 | Beginning card balance received in the transaction response |
 | `endingBalance` | *number* | 18,3 | Ending card balance received in the transaction response |
 
+
 <!--
 type: tab
-title: JSON Example
 -->
 
-JSON string format for `card`:
+JSON string format for `card`: 
 
 ```json
 {
@@ -45,8 +45,11 @@ JSON string format for `card`:
       "securityCode": "111",
       "securityCodeIndicator": "PROVIDED",
       "bin": "400555",
-      "last4": "0019"
-   }
+      "last4": "0019",
+      "scheme": "VISA",
+      "beginningBalance": "1.00",
+      "endingBalance": "0.10"
+   } 
 }
 ```
 
