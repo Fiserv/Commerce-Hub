@@ -200,7 +200,6 @@ The below table identifies the parameters in the `association` object.
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `association`:
@@ -212,7 +211,7 @@ JSON string format for `association`:
       "securityCodeResponse": "M",
       "cardholderNameResponse": "1"
    }
-}
+} 
 ```
 
 <!--type: tab-end --> 

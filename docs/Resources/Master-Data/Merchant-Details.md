@@ -24,7 +24,7 @@ The below table identifies the parameters in the `merchantDetails` object.
 | `promotionCode` | *string* |  | | This field contains the Promotion Code. |
 | `terminalLaneNumber` | *string* | 16 |  | Terminal lane number |
 
-
+ 
 <!--
 type: tab
 -->
@@ -46,9 +46,9 @@ JSON string format for `merchantDetails`:
 }
 ```
 <!--type: tab-end -->
- 
----
- 
+
+--- 
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)

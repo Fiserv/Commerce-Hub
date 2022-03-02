@@ -205,4 +205,4 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 -->
 
----
+--- 

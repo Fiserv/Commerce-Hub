@@ -110,7 +110,7 @@ JSON string format for `transactionProcessingDetails`:
 
 <!--type: tab-end -->
 
----
+--- 
 
 ## See Also
 

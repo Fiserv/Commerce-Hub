@@ -31,7 +31,7 @@ The below table identifies the parameters in the `pinBlock` object.
 type: tab
 -->
 
-JSON string format for `pinBlock`:
+JSON string format for `pinBlock`: 
 
 ```json
 {

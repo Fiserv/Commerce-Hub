@@ -74,7 +74,7 @@ JSON string format for `networkDetails`:
 Contains the card network data.
 
 <!--
-type: tab 
+type: tab
 titles: network, JSON Example
 -->
 
@@ -97,7 +97,7 @@ type: tab
 ```
 
 <!-- type: tab-end -->
-
+ 
 ---
 
 #### Authorization Characteristics Indicator
@@ -111,6 +111,7 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 | *REQUEST_PARTICIPATION* |  Transaction requests participation |
 | *CARD_NOT_PRESENT_NO_AVS* |  Card not present, AVS not required |
 
+---
 
 ## See Also
 

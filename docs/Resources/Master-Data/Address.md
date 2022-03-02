@@ -28,7 +28,7 @@ The below table identifies the parameters in the `billingAddress` object.
 | `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
 
 <!--
-type: tab 
+type: tab
 -->
 
 JSON string format for `billingAddress`:
@@ -127,8 +127,8 @@ The below table identifies the valid values of `shippingMethod`.
 | *GROUND* | Shipping within 4 days |
 | *ELECTRONIC* | Email or digital goods |
 | *SHIP_TO_STORE* | Ship to store |
-
---- 
+ 
+---
 
 ## Address
 
