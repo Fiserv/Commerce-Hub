@@ -8,7 +8,7 @@ A transaction can contain `orderData` as part of the customer's purchase. This d
 
 <!--
 type: tab
-title: orderData
+titles: orderData, JSON Example
 -->
 
 The below table identifies the parameters in the `orderData` object.
@@ -27,7 +27,6 @@ The below table identifies the parameters in the `orderData` object.
 
 <!--
 type: tab
-title: JSON Example 
 -->
 
 JSON string format for `orderData`:
@@ -74,7 +73,7 @@ Item details is an array that identifies the category, item count, and value of 
 
 <!--
 type: tab
-title: itemDetails
+titles: itemDetails, JSON Exaample
 -->
 
 The below table identifies the parameters in the `itemDetails` array.
@@ -87,7 +86,6 @@ The below table identifies the parameters in the `itemDetails` array.
 
 <!--
 type: tab
-title: JSON Example 
 -->
 
 JSON string format for `itemDetails`:

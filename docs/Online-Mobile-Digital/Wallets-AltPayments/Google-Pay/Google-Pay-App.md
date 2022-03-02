@@ -4,6 +4,18 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 # Google Pay: In-App Integration
 
+Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Google Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
+
+### How it Works
+
+1. Customer selects checkout from the merchant's App.
+2. Customer then presented with the merchant's payment form.
+3. The App calls the Google Pay framework to obtain the encrypted wallet data.
+4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
+5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+
+---
+
 ## Step 1: Configure Google Pay
 
 Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler, etc.
@@ -15,13 +27,11 @@ Configure the [App to integrate with Google Pay](https://developers.google.com/p
 - [**Encrypted Data:**](#request-variables) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
----
-
 ### Request Variables
 
 <!--
 type: tab
-title: source
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -34,6 +44,7 @@ The below table identifies the required parameters in the `source` object.
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
 | `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
+<!-- type: tab-end -->
 
 ---
 
@@ -44,7 +55,7 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Charge Payload Request.
@@ -75,13 +86,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a Charge (201: Created) Response.
 
 <!-- theme: info -->
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 ```json
 {
    "gatewayResponse":{

@@ -13,7 +13,7 @@ Applies to Regional (International) Debit transactions.
 
 <!--
 type: tab
-title: regionalDebit
+titles: regionalDebit, JSON Example
 -->
 
 The below table identifies the parameters in the `regionalDebit` object.
@@ -32,10 +32,8 @@ The below table identifies the parameters in the `regionalDebit` object.
 | `accountType` | *string* |  | CHECKING or SAVINGS |
 | `transactionSequenceCounter` | *string* |  | Contains a unique sequence counter for this transaction from this point of sale. Required on all Canadian Debit EMV transaction requests. |
 
-
 <!--
 type: tab
-title: JSON Example 
 -->
 
 JSON string format for `regionalPin`:
@@ -74,6 +72,3 @@ JSON string format for `regionalPin`:
 - [Pin Block](?path=docs/Resources/Master-Data/Pin-Block.md)
 
 ---
-
-
-

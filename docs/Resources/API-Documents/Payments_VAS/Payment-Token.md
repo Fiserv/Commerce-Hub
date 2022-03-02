@@ -22,7 +22,7 @@ The merchant can initiate token request in order to generate a token for the pay
 
 <!--
 type: tab
-title: source
+titles: source, transactionDetails
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -33,7 +33,6 @@ The below table identifies the required parameters in the `source` object.
 
 <!--
 type: tab
-title: transactionDetails
 -->
 
 The below table identifies the required parameters in the `transactionDetails` object.
@@ -56,7 +55,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a token only payload request.
@@ -82,7 +81,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a tokenization (201: Created) response.
@@ -90,7 +88,7 @@ title: Response
 ```json
 {
   "gatewayResponse": {
-    "transactionType": "CHARGE",
+    "transactionType": "TOKENIZE",
     "transactionState": "AUTHORIZED",
     "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
@@ -185,7 +183,7 @@ In additional to the minimum requirement for a charge request, `createToken` *tr
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request with `createToken`.
@@ -215,7 +213,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) tokenization response.
@@ -306,7 +303,7 @@ The merchant can use the saved tokenized data in order to initate a charge reque
 
 <!--
 type: tab
-title: amount
+titles: amount, paymentToken
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -318,14 +315,13 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: paymentToken
 -->
 
 The below table identifies the required parameters in the `paymentToken` object.
 
 
 | Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|
+|---------|----------|----------------|---------|---|
 | `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
 | `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
 | `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
@@ -349,7 +345,7 @@ The below table identifies the required parameters in the `paymentToken` object.
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request with PaymentToken.
@@ -381,7 +377,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (200: Success) response.
@@ -390,9 +385,9 @@ title: Response
 {
   "gatewayResponse": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "charge",
-    "transactionState": "authorized",
-    "transactionOrigin": "ecom"
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM"
   },
   "transactionProcessingDetails": {
     "transactionDate": "2021-04-16",

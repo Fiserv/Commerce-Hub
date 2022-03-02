@@ -17,13 +17,13 @@ A third-party device encrypts the customer's payment source and sends the encryp
 
 <!--
 type: tab
-title: source
+titles: source,  encryptionData, JSON Example
 -->
 
 The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------------------ |---|
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentEMV* for EMV transactions |
 | `emvData` | *string* | N/A |  &#10004; | Contains a series of [Tag/Length/Value](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md) combination for chip card processing |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
@@ -31,13 +31,12 @@ The below table identifies the parameters in the `source` object.
 
 <!--
 type: tab
-title: encryptionData
 -->
 
 The below table identifies the required parameters in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | -- | ------------ | ------------------ |---|
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
@@ -46,7 +45,6 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for PaymentEMV:
@@ -75,7 +73,7 @@ JSON string format for PaymentEMV:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using PaymentEMV.
@@ -118,13 +116,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

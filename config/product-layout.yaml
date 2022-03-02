@@ -25,7 +25,7 @@
 # resulting from the use of this information. 
 # No warranties, either express or implied, 
 # are granted or extended by this work or 
-# the delivery of this work
+# the delivery of this work 
 ################################################################################
 header:
   productionDescription: With developer-friendly, flexible communication standards, unified APIs, and pre-certified integrations the Commerce Hub reduces development time and accelerates speed to market. A single entry point and intelligent orchestration layer creates a unified payments, reporting, and boarding experience through your existing infrastructure. With less ongoing maintenance and fewer operational costs, you can focus on creating new ways for consumers to discover and interact with your brand.
@@ -64,9 +64,7 @@ featuredFeatures:
 #     links: ["docs/Resources/API-Documents/Payments_VAS/Payment-Token.md"]
   - title: Apple Pay
     description: >
-      One of the most popular mobile payment and digital wallets. Customers can make payments 
-      in-store, mobile or online. To leverage, customers use an Apple devices - iPhone, Apple Watch, 
-      iPad, Mac, etc.
+      One of the most popular mobile payment and digital wallets. Customers can make payments in-store, mobile or online. To leverage, customers use an Apple device - iPhone, Apple Watch, iPad, Mac, etc.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     #links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]
@@ -127,35 +125,35 @@ featuredFeatures:
         description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
         type: "post"        
         path: "/payments-vas/v1/tokens"
-  - title: Point of Sale
-    description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
-    tags: ["tag1", "tag2"]
-    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
-    relatedDocs:
-      - relatedDoc: 
-        title: Getting Started 
-        description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
-        link: "/docs/Getting-Started/Getting-Started-InPerson.md"
-      - relatedDoc: 
-        title: EMV 
-        description: Fiserv offers the industry's most complete, comprehensive and integrated EMV solution.
-        link: "/docs/In-Person/Encrypted-Payments/EMV.md"
-    relatedAPIs:
-      - relatedAPI: 
-        title: Charges 
-        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
-        type: "post"        
-        path: "/payments/v1/charges"
-      - relatedAPI: 
-        title: Refunds
-        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
-        type: "post"        
-        path: "/payments/v1/charges/{transactionId}/refund"
-      - relatedAPI: 
-        title: Tokenization
-        description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
-        type: "post"        
-        path: "/payments-vas/v1/tokens"
+#  - title: Point of Sale
+#    description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
+#    tags: ["tag1", "tag2"]
+#    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
+#    relatedDocs:
+#      - relatedDoc: 
+#        title: Getting Started 
+#        description: Point-of-Sale (POS) is the point at which a product is paid for. In-person transactions are conducted by a terminal or software. Online transactions are conducted by a software on their online store or mobile app.
+#        link: "/docs/Getting-Started/Getting-Started-InPerson.md"
+#      - relatedDoc: 
+#        title: EMV 
+#        description: Fiserv offers the industry's most complete, comprehensive and integrated EMV solution.
+#        link: "/docs/In-Person/Encrypted-Payments/EMV.md"
+#    relatedAPIs:
+#      - relatedAPI: 
+#        title: Charges 
+#        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
+#        type: "post"        
+#        path: "/payments/v1/charges"
+#      - relatedAPI: 
+#        title: Refunds
+#        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original transactionId or orderId. 
+#        type: "post"        
+#        path: "/payments/v1/charges/{transactionId}/refund"
+#      - relatedAPI: 
+#        title: Tokenization
+#        description: Remove sensitive customer data from your environment and reduce PCI compliance scope.Transaction data is protected by a randomly-generated identifier known as a "token".
+#        type: "post"        
+#        path: "/payments-vas/v1/tokens"
 benefits:
   - title: Transform Customer Experiences
     description: >

@@ -26,7 +26,7 @@ A refund request can be initiated by sending the request to the appropriate endp
 
 <!--
 type: tab
-title: amount
+titles: amount, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -38,7 +38,6 @@ The below table identifies the required parameters in the `amount` object.
 
 <!--
 type: tab
-title: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
@@ -65,7 +64,7 @@ Use the below endpoint based on the [transaction type](?path=docs/Resources/Guid
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a Parital Refund Payload Request.
@@ -88,322 +87,68 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a Partial Refund (201: Success) Response.
 
 <!-- theme: info -->
-
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType": "string",
-      "transactionState": "string",
-      "transactionOrigin": "string",
-      "transactionProcessingDetails":{
-         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7'",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+  "gatewayResponse": {
+    "transactionType": "REFUND",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 12.04,
+      "currency": "USD"
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "fiserv",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
       }
-   },
-   "source":{
-      "sourceType": "PaymentCard"
-   },
-   "transactionDetails":{
-      "approvalCode": "string",
-      "primaryTransactionId": "838916029301",
-      "captureFlag": false,
-      "transactionCaptureType": "TCS",
-      "accountVerification": false,
-      "partialApproval": "string",
-      "processingCode": "000000",
-      "merchantTransactionId": "1343678765",
-      "merchantOrderId": "845366457890-TODO",
-      "merchantInvoiceNumber": "123890",
-      "receiptEmail": "abc@gmail.com",
-      "paymentDescription": "string",
-      "cardVerificationAmount": 0.02,
-      "partiallyApprovedTransactionAmount": 10.55,
-      "splitTenderId": "12423434",
-      "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator": true,
-      "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource": true,
-      "deviceFingerprint":[
-         {
-            "provider": "InAuth",
-            "dataCapture":{
-               "rawData": "aaaaaXREUVZGRlFY...aMV",
-               "dataEventId": "BB8E4E92...Fz1E063113",
-               "captureTime": "2016-04-16T16:06:05Z"
-            },
-            "dataStatic":{
-               "operatingSystem": "ANDROID",
-               "operatingSystemVersion": "5.1.1 Lollipop",
-               "model": "XYX-1",
-               "type": "Moto G",
-               "deviceId": "00:1B:44:11:3A:B7",
-               "javaScriptEnabled": true,
-               "javaEnabled": true,
-               "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
-               "locale": "en-US"
-            },
-            "dataDynamic":{
-               "latitude": "13.0827 N",
-               "longitude": "80.2707 E",
-               "ipAddress": "172.27.37.221",
-               "captureTime": "2016-04-16T16:06:05Z",
-               "address":{
-                  "street": "123 Main Street",
-                  "houseNumberOrName": "Apt 213",
-                  "recipientNameOrAddress": "ATTN: Accounting Dept",
-                  "city": "Sandy Springs",
-                  "stateOrProvince": "GA",
-                  "postalCode": "30303-0001",
-                  "country": "US",
-                  "addressHistory": "OVER_90_DAYS"
-               }
-            }
-         }
-      ],
-      "splitShipment":{
-         "totalCount": 5,
-         "finalShipment": true
-      },
-      "reversalReasonCode": "VOID",
-      "physicalGoodsIndicator": true,
-      "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
-      "createToken": false
-   },
-   "merchantDetails":{
-      "tokenType": "TRANSARMOR",
-      "storeId": "12345",
-      "siteId": "CA123456",
-      "terminalId": "12",
-      "merchantId": "1234567890123456",
-      "alternateMerchantId": "12345678",
-      "promotionCode": "ABCD1234",
-      "mcc": "4457"
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": 1,
-         "currency": "USD"
-      },
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK3483",
-         "authenticationResponseCode": "string",
-         "referenceNumber": "845366457890-TODO",
-         "schemeTransactionId": "019078743804756",
-         "networkOriginalAmount": 100.5,
-         "feeProgramIndicator": "123",
-         "processor": "fiserv",
-         "responseCode": "00000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2016-04-16T16:06:05Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2016-04-16T16:06:05Z",
-            "transactionReferenceInformation": "string",
-            "avsSecurityCodeResponse":{
-               "streetMatch": "MATCHED",
-               "postalCodeMatch": "MATCHED",
-               "securityCodeMatch": "MATCHED",
-               "association":{
-                  "avsCode": "YY",
-                  "securityCodeResponse": "M",
-                  "cardholderNameResponse": "1"
-               }
-            }
-         }
-      },
-      "merchantName": "string",
-      "merchantAddress": "string",
-      "merchantCity": "string",
-      "merchantStateOrProvince": "string",
-      "merchantCountry": "string",
-      "merchantURL": "string",
-      "merchantPostalCode": "string"
-   },
-   "transactionBatch":{
-      "julianDay": "001",
-      "batchNumber": "000001",
-      "transactionClass": "1",
-      "sequenceNumber": "000001"
-   },
-   "networkDetails":{
-      "partialAuthDetails":{
-         "interchangeComplianceIndicator": "A",
-         "bankNetRefNumber": "string",
-         "bankNetDate": "2022-05-21",
-         "cvcIndicator": "Y",
-         "partialAuthTransactionId": "string",
-         "validationCode": "string",
-         "totalAuthAmount": "1.00",
-         "downgradeReason": "ACCOUNT_NUMBER_MISSING",
-         "creditAuthType": "DISCOVER",
-         "authScore": "string"
-      },
-      "network": "VISA",
-      "debitNetworkId": "123456",
-      "transactionSequence": "1123456",
-      "systemTrace": "123456789",
-      "authorizationCharacteristicsIndicator": "CARD_NOT_PRESENT",
-      "VISABID": "string",
-      "VISAAUR": "12345AD89012",
-      "networkResponseCode": "00"
-   }
-}      "transactionCaptureType": "TCS",
-      "accountVerification": false,
-      "partialApproval": "string",
-      "processingCode": "000000",
-      "merchantTransactionId": "1343678765",
-      "merchantOrderId": "845366457890-TODO",
-      "merchantInvoiceNumber": "123890",
-      "receiptEmail": "abc@gmail.com",
-      "paymentDescription": "string",
-      "cardVerificationAmount": 0.02,
-      "partiallyApprovedTransactionAmount": 10.55,
-      "splitTenderId": "12423434",
-      "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator": true,
-      "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource": true,
-      "deviceFingerprint":[
-         {
-            "provider": "InAuth",
-            "dataCapture":{
-               "rawData": "aaaaaXREUVZGRlFY...aMV",
-               "dataEventId": "BB8E4E92...Fz1E063113",
-               "captureTime": "2016-04-16T16:06:05Z"
-            },
-            "dataStatic":{
-               "operatingSystem": "ANDROID",
-               "operatingSystemVersion": "5.1.1 Lollipop",
-               "model": "XYX-1",
-               "type": "Moto G",
-               "deviceId": "00:1B:44:11:3A:B7",
-               "javaScriptEnabled": true,
-               "javaEnabled": true,
-               "userAgent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
-               "locale": "en-US"
-            },
-            "dataDynamic":{
-               "latitude": "13.0827 N",
-               "longitude": "80.2707 E",
-               "ipAddress": "172.27.37.221",
-               "captureTime": "2016-04-16T16:06:05Z",
-               "address":{
-                  "street": "123 Main Street",
-                  "houseNumberOrName": "Apt 213",
-                  "recipientNameOrAddress": "ATTN: Accounting Dept",
-                  "city": "Sandy Springs",
-                  "stateOrProvince": "GA",
-                  "postalCode": "30303-0001",
-                  "country": "US",
-                  "addressHistory": "OVER_90_DAYS"
-               }
-            }
-         }
-      ],
-      "splitShipment":{
-         "totalCount": 5,
-         "finalShipment": true
-      },
-      "reversalReasonCode": "VOID",
-      "physicalGoodsIndicator": true,
-      "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
-      "createToken": false
-   },
-   "merchantDetails":{
-      "tokenType": "TRANSARMOR",
-      "storeId": "12345",
-      "siteId": "CA123456",
-      "terminalId": "12",
-      "merchantId": "1234567890123456",
-      "alternateMerchantId": "12345678",
-      "promotionCode": "ABCD1234",
-      "mcc": "4457"
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": 1,
-         "currency": "USD"
-      },
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK3483",
-         "authenticationResponseCode": "string",
-         "referenceNumber": "845366457890-TODO",
-         "schemeTransactionId": "019078743804756",
-         "networkOriginalAmount": 100.5,
-         "feeProgramIndicator": "123",
-         "processor": "fiserv",
-         "responseCode": "00000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2016-04-16T16:06:05Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2016-04-16T16:06:05Z",
-            "transactionReferenceInformation": "string",
-            "avsSecurityCodeResponse":{
-               "streetMatch": "MATCH",
-               "postalCodeMatch": "MATCH",
-               "securityCodeMatch": "MATCH",
-               "association":{
-                  "avsCode": "YY",
-                  "securityCodeResponse": "M",
-                  "cardholderNameResponse": "1"
-               }
-            }
-         }
-      },
-      "merchantName": "string",
-      "merchantAddress": "string",
-      "merchantCity": "string",
-      "merchantStateOrProvince": "string",
-      "merchantCountry": "string",
-      "merchantURL": "string",
-      "merchantPostalCode": "string"
-   },
-   "transactionBatch":{
-      "julianDay": "001",
-      "batchNumber": "000001",
-      "transactionClass": "1",
-      "sequenceNumber": "000001"
-   },
-   "networkDetails":{
-      "partialAuthDetails":{
-         "interchangeComplianceIndicator": "A",
-         "bankNetRefNumber": "string",
-         "bankNetDate": "2022-05-21",
-         "cvcIndicator": "Y",
-         "partialAuthTransactionId": "string",
-         "validationCode": "string",
-         "totalAuthAmount": "1.00",
-         "downgradeReason": "ACCOUNT_NUMBER_MISSING",
-         "creditAuthType": "DISCOVER",
-         "authScore": "string"
-      },
-      "network": "VISA",
-      "debitNetworkId": "123456",
-      "transactionSequence": "1123456",
-      "systemTrace": "123456789",
-      "authorizationCharacteristicsIndicator": "CARD_NOT_PRESENT",
-      "VISABID": "string",
-      "VISAAUR": "12345AD89012",
-      "networkResponseCode": "00"
-   }
+    }
+  },
+  "transactionDetails": {
+    "merchantInvoiceNumber": "123456789012"
+  }
 }
 ```
 

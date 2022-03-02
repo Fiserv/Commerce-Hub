@@ -17,7 +17,7 @@ The `transactionIndicatorType` of *INCREMENTAL* and `primaryTransactionId` from 
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, JSON Example
 -->
 
 The below table identifies the additional required parameters in the `transactionDetails` object.
@@ -29,7 +29,6 @@ The below table identifies the additional required parameters in the `transactio
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format:
@@ -57,7 +56,7 @@ JSON string format:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -83,7 +82,6 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.

@@ -40,7 +40,7 @@ When using our payments API with passthrough, the authentication is performed wi
 
 <!--
 type: tab
-title: Request
+titles: Request
 -->
 
 ```json

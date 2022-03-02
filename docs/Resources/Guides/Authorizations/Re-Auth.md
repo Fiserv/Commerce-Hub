@@ -11,6 +11,9 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - **Merchant Managed:** The merchant submits the transaction with the required fields and a reauthorization is processed by Commerce Hub.
 - **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthrorizes if required.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon.
+
 ### Reauthorization Scenarios
 
 - Split or delayed shipments at eCommerce retailers.
@@ -30,7 +33,7 @@ The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` from the o
 
 <!--
 type: tab
-title: transactionDetails
+titles: transactionDetails, JSON Example
 -->
 
 The below table identifies the additional parameters in the `transactionDetails` object.
@@ -39,11 +42,20 @@ The below table identifies the additional parameters in the `transactionDetails`
 |---------|----------|----------------|---------|
 | `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
-| `authorizationSequence` | *string* | 27 | Type of authorization sequence requested. **Valid Value:** AUTHORIZATION_ONLY (default), AUTHORIZATION_BEFORE_CANCEL, CANCEL_BEFORE_AUTHORIZATION.|
+| `authorizationSequence` | *string* | 27 | Type of authorization sequence requested.|
+
+#### Authorization Sequence
+
+The below table identifies the valid values of type of `authorizationSequence`.
+
+| Value | Description |
+| ----- | ----- |
+| *AUTHORIZATION_ONLY* | Only authorize the transaction |
+| *AUTHORIZATION_BEFORE_CANCEL* | Authorize the transaction before canceling the original |
+| *CANCEL_BEFORE_AUTHORIZATION* | Cancel the original transaction before submitting a new authorization |
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format:
@@ -72,7 +84,7 @@ JSON string format:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a reauthorization payload request.
@@ -101,7 +113,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a reauthorization (201: Created) response.

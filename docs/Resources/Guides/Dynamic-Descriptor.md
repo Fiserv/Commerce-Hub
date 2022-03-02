@@ -29,7 +29,7 @@ A soft descriptor should be sent during the initial authorization and again duri
 
 <!--
 type: tab
-title: dynamicDescriptor
+titles: dynamicDescriptor, JSON Example
 -->
 
 Card issuer may limit how many characters will show up in each field, it is recommended to keep the `merchantName` field to fewer than 22 characters and the `city` field to fewer than 11 characters to appear properly on the cardholder’s statement.
@@ -49,7 +49,6 @@ The below table identifies the required parameters in the `dynamicDescriptor` ob
 
 <!--
 type: tab
-title: JSON Example
 -->
 
 JSON string format for `dynamicDescriptor`:
@@ -81,7 +80,7 @@ JSON string format for `dynamicDescriptor`:
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request using `dynamicDescriptors`.
@@ -126,10 +125,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -209,4 +210,3 @@ title: Response
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---
-
