@@ -16,7 +16,7 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: info -->
->Commerce Hub highly recommend testing against our test environment before using our production environment.
+>Commerce Hub highly recommends testing against our sandbox environment before using our production environment.
 
 ### Sandbox
 
@@ -115,7 +115,6 @@ The body of the transaction request differs based on the transaction being initi
 A standard API call to execute a charge transaction might look like this:
 
 ```json
-
 {
   method: "POST",
   url: "https://prod.api.fiservapps.com/ch/payments/v1/charges",
