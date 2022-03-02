@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, card-present, cancel,a
 
 # Cancel
 
-If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` or `orderId`.
+If the customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId`.
 
 <!-- theme: warning -->
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
@@ -13,7 +13,7 @@ If the customer cancels the order or if fraud is suspected, the merchant will ne
 
 ## Minimum Requirements
 
-Cancel request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/cancel).
+A cancel request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the cancel type.
 
 <!--
 type: tab
@@ -45,7 +45,6 @@ The below table identifies the required parameters in the `merchantDetails` obje
 ---
 
 ## Endpoint
-Use the below endpoint based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/cancel`
