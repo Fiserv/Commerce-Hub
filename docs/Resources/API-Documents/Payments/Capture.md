@@ -51,6 +51,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ## Endpoint
 Use the below endpoint based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
+
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/capture`
 
