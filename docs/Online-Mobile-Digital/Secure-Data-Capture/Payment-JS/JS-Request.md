@@ -271,6 +271,6 @@ type: tab
 
 ## See Also
 
-- Customize iFrame Payment Form
-- Payment JS Integration
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+
 
