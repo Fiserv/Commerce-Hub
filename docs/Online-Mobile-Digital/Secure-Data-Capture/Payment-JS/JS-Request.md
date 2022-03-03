@@ -6,13 +6,26 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 ## Step 1: Authentication
 
-An authentication request is required to recive an AccessToken. This will be your authorization and apiKey used when creating an JS request.
-
-1. A RESTful API request is made from the merchant server to obtain the authorization.
-2. The client access token, sessionID, and public key will be submitted as part of authentication response along with the JS script.
+A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request). 
 
 ---
-### Authentication Script
+
+## Step 2: Configuration
+
+### JS SDK
+
+The JS script tag is required in the website by downloading or including the following code:
+
+```php
+
+<script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+
+```
+
+---
+
+
+### Authentication
 
 The following script is required to submit the authentication of the JS:
 
@@ -27,30 +40,45 @@ const formConfig = {
    "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
     }
 ```
+
 ---
 
-## Step 2: Configuration
 
-### JS Script
+### Payment Form
 
-The JS script tag is required in the website by downloading or including the following code:
 
-```php
-
-<script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
-
-```
 The following is the global `commercehub` object which includes the JS:
 
 ```javascript
 
-const form = new commercehub.Fiserv({/* configuration object */}, authorization, apiKey);
-form.loadPaymentForm("payment-saq-a-form-div");
+const form = new commercehub.FiservSaqAEp({/* configuration object */}, authorization, apiKey);
+form.loadPaymentForm("payment-saq-a-ep-form-div");
 
 ```
----
 
-### Error Handling
+Configure the `loadPaymentForm` and pass the merchant defined `div id` matching  the HTML container. Once the page is loaded the form will render in the container.
+
+```html
+
+<div id="payment-saq-aep-form-div"></div>
+
+```
+ 
+```javascript
+
+form.loadPaymentForm("payment-saq-aep-form-div");
+
+```
+
+
+A successful card capture in the JS will be handled by `.then()` in the `loadPaymentForm` and is responsible for contacting the merchant's backend/server.
+ 
+
+```javascript
+
+.then((next) => { });
+
+```
 
 Errors in JS should be handled in the .catch() of the promise for loadPaymentForm. 
 
@@ -59,20 +87,23 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
 .catch((error) => { });
 
 ```
+
 ---
 
-## Step 3: Load the Payment Form
 
-All the description of the code including authentication, error handling, languages, script.
+### Payment Form Example
+
+
 
 ```php
+
 <html>
     <head>
         <meta charset="utf-8">
         <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
     </head>
     <body>
-        <div id="payment-saq-a-form-div"></div>
+        <div id="payment-saq-a-ep-form-div"></div>
         <script>
             // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
             // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
@@ -84,8 +115,8 @@ All the description of the code including authentication, error handling, langua
                 "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
                 "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
             };
-            const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
-            form.loadPaymentForm("payment-saq-a-form-div")
+            const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
+            form.loadPaymentForm("payment-saq-a-ep-form-div")
             .then((next) => {
                 /* Merchant must call their own backend which will in turn call either the /charges or /tokens endpoints */
             })
@@ -97,10 +128,11 @@ All the description of the code including authentication, error handling, langua
     </body>
  
 </html>
+
 ```
 ---
 
-## Step 4: Submit Payment Request
+## Step 3: Submit Payment Request
 
 Submit a charge or tokenization request with the payment `sourceType` of `PaymentSession` and the sessionID from the [authorization](#step-1-authentication) request. 
 
