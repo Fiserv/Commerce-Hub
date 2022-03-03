@@ -4,6 +4,10 @@ tags: [carat, commerce-hub, enterprise, card-not-present, fraud, fraud-settings]
 
 # Fraud Settings
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include additional fraud settings support and the documents related to the features will be released soon.
+
+---
 
 ## Setup Fraud Settings
 
