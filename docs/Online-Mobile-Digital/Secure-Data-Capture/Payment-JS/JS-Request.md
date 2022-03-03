@@ -69,19 +69,20 @@ All the description of the code including authentication, error handling, langua
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-form-div"></div>
         <script>
             // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
             // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'CLIENT_AUTHORIZATION'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'CLIENT_API_KEY'; // merchant receives this during on-boarding process
+            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR'; // merchant call to ../security/credentials to receive this
+            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
  
             const formConfig = {
-                "merchantId": 'MERCHANT_ID', // merchant receives this during on-boarding process
-                "publicKey": 'PUBLIC_KEY' // merchant call to ../security/credentials to receive this
+                "merchantId": '100004000002050', // merchant receives this during on-boarding process
+                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
+                "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
             };
             const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
             form.loadPaymentForm("payment-saq-a-form-div")
