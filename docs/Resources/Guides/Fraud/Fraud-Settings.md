@@ -25,13 +25,11 @@ From the Profile Settings dropdown menu, click Transaction Controls.
 
 ### Step 3: Choose a Profile
 
-Click in the Profile Name box and select the profile that you want to assign transaction controls
+Click in the Profile Name box and select the profile that you want to assign transaction controls or [create a new profile](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md). Click the Edit Profile button and then click the Continue to Edit Profile button. 
 
 ### Step 4: Setup Fraud Settings
 
 Select the Fraud Setting tab on the left side. Select the Fraud Setting from the list to enable/disable the functions and features.
-
-- [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md): Filters to reject transaction based on address and security code responses.
 
 ### Step 5: Save Settings
 Click the Save button and click the Home icon to return to the main screen.
