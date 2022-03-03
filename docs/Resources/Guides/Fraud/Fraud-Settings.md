@@ -25,7 +25,7 @@ From the Profile Settings dropdown menu, click Transaction Controls.
 
 ### Step 3: Choose a Profile
 
-Click in the Profile Name box and select the profile that you want to assign transaction controls or [create a new profile](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md). Click the Edit Profile button and then click the Continue to Edit Profile button. 
+Click in the Profile Name box and select the profile that you want to assign transaction controls
 
 ### Step 4: Setup Fraud Settings
 
