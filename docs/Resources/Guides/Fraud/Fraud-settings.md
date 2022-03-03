@@ -31,13 +31,6 @@ Click in the Profile Name box and select the profile that you want to assign tra
 
 Select the Fraud Setting tab on the left side. Select the Fraud Setting from the list to enable/disable the functions and features.
 
-- [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md): Filters to reject transaction based on address and security code responses.
-<!---
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md): Positive and negative filters to approve or reject transactions.
-- [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md): Enable duplicate transaction detection and restrict refunds.
-- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md): Reject transactions based on minimum and maximum limits. 
--->
-
 ### Step 5: Save Settings
 Click the Save button and click the Home icon to return to the main screen.
 
