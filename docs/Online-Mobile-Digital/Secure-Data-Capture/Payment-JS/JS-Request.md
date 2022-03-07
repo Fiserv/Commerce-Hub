@@ -31,13 +31,12 @@ The following script is required to submit the authentication of the JS:
 
 ```javascript
 
-const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR'; // merchant call to ../security/credentials to receive this
-const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
+const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR';
+const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; 
 const formConfig = {
-  "merchantId": '100004000002050', // merchant receives this during on-boarding process
-  "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
-   "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
+  "merchantId": '100004000002050',
+  "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=',
+   "symmetricEncryptionAlgorithm": 'AES_GCM'
     }
 ```
 
@@ -60,16 +59,15 @@ Configure the `loadPaymentForm` and pass the merchant defined `div id` matching 
 
 ```html
 
-<div id="payment-saq-aep-form-div"></div>
+<div id="payment-saq-a-ep-form-div"></div>
 
 ```
  
 ```javascript
 
-form.loadPaymentForm("payment-saq-aep-form-div");
+form.loadPaymentForm("payment-saq-a-ep-form-div")
 
 ```
-
 
 A successful card capture in the JS will be handled by `.then()` in the `loadPaymentForm` and is responsible for contacting the merchant's backend/server.
  
@@ -93,8 +91,6 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
 
 ### Payment Form Example
 
-
-
 ```php
 
 <html>
@@ -105,24 +101,18 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
         <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
-            const formConfig = {
+            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR';
+            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK';
+             const formConfig = {
                 "merchantId": '100004000002050', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
-                "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
+                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=',
+                "symmetricEncryptionAlgorithm": 'AES_GCM'
             };
             const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
             form.loadPaymentForm("payment-saq-a-ep-form-div")
             .then((next) => {
-                /* Merchant must call their own backend which will in turn call either the /charges or /tokens endpoints */
             })
             .catch((error) => {
-                /* This catch is hit when there's a problem capturing the card details on submit
-                the merchant can choose the failure behaviour at this point, redirect to a failure page, retry, etc */
             });
         </script>
     </body>
