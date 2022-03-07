@@ -41,8 +41,6 @@ const formConfig = {
 
 ```
 
----
-
 ### Payment Form
 
 Add the global `commercehub` object which includes the iFrame JS form. The `commercehub` object name should match with the script tag id that loads the SDK.
@@ -88,7 +86,8 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 ### Payment Form Example 
 
 
-```html
+
+```php
 
 <html>
     <head>
