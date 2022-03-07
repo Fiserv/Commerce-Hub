@@ -11,7 +11,7 @@ Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within
 
 ### Benefits
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website while maintaining their look and feel. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 #### Transaction Flow
 
@@ -22,7 +22,7 @@ Allows a merchant an easy and secure way to embed a payment form into a website.
 5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchants backend server.
 6. Commerce Hub sends the transaction response to the merchant's website.
 
-**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md).**
+**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md).**
 
 ## Additional Security Settings
 
@@ -41,4 +41,7 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 - [Create a Payment Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
 - [Customize Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
+- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+
+---

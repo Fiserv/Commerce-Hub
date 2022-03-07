@@ -140,11 +140,9 @@ Submit a charge or tokenization request after a successful response which identi
 <!-- theme: info -->
 > Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
-
-
 <!--
 type: tab
-title: Request
+titles: Request, Charges Response, Tokens Response
 -->
 
 ##### Example of a charge payload request.
@@ -173,13 +171,12 @@ title: Request
 
 <!--
 type: tab
-title: Charges Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
@@ -243,10 +240,12 @@ title: Charges Response
 
 <!--
 type: tab
-title: Tokens Response
 -->
 
 ##### Example of a tokenization (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -331,3 +330,5 @@ title: Tokens Response
 - [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
 - [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
+
+---

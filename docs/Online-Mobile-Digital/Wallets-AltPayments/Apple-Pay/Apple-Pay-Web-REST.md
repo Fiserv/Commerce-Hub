@@ -46,6 +46,8 @@ The merchant can enhance the purchase experience from their website by creating 
 - [**Encrypted Data:**](#request-variables) The data is encrypted using Apple's encryption and Commerce Hub will decrypt the information.
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
+---
+
 ### Request Variables
 
 <!--

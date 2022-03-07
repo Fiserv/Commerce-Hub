@@ -57,6 +57,8 @@ The below table identifies the required parameters in the `source` object.
 <!-- theme:info -->
 >Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
 
+---
+
 <!--
 type: tab
 titles: Request, Response
@@ -95,8 +97,7 @@ type: tab
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {

@@ -16,7 +16,7 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: info -->
->Commerce Hub highly recommend [testing](?path=docs/Resources/Guides/Testing/Test-Integration.md) against our sandbox environment before using our production environment.
+>Commerce Hub highly recommends testing against our sandbox environment before using our production environment.
 
 ### Sandbox
 
@@ -38,12 +38,11 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Conduct a complete beta test of your application
 - Run reports
 
-<!-- ## QA Sandbox
-
-Description goes here -->
-
-<!--theme: success -->
-<!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
+<!--
+## QA Sandbox
+Description goes here
+https://qa.api.fiservapps.com/ch/{resource}
+-->
 
 ---
 
@@ -115,7 +114,6 @@ The body of the transaction request differs based on the transaction being initi
 A standard API call to execute a charge transaction might look like this:
 
 ```json
-
 {
   method: "POST",
   url: "https://prod.api.fiservapps.com/ch/payments/v1/charges",
@@ -155,10 +153,10 @@ A standard API call to execute a charge transaction might look like this:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

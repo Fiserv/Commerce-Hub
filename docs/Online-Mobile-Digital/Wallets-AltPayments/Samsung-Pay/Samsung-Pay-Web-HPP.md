@@ -7,7 +7,6 @@ tags: [carat, commerce-hub, enterprise, integration-methods, hosted-payment-page
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Samsung Pay support with Hosted Payment Page and the documents related to the features will be released soon.
 
-
 ---
 
 ## See Also
