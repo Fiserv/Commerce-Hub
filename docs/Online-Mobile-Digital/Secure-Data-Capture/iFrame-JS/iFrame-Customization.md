@@ -80,19 +80,16 @@ The following elements can be overridden:
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-form-div"></div>
         <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'CLIENT_AUTHORIZATION'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
+            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+            const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
             const formConfig = {
-                "merchantId": '123456789012345', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
+                "merchantId": '100204342250',
+                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
                 "css": {
                     "primaryColorTheme": "#2D2D2D",
                     "contrastColorTheme": "#ffffff",
