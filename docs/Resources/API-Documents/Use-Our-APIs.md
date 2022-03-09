@@ -42,7 +42,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 Description goes here -->
 
-<!--theme: success -->
+<!-- theme: success -->
 <!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
 
 ---
