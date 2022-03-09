@@ -32,12 +32,12 @@ Authentication credentials are acquired at boarding and from the [security crede
 
 ```javascript
 
-const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR';
-const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; 
+const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
 const formConfig = {
-  "merchantId": '100004000002050',
-  "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=',
-   "symmetricEncryptionAlgorithm": 'AES_GCM'
+       "merchantId": '100204342250',
+       "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
+       "symmetricEncryptionAlgorithm": 'AES_GCM'
     }
 ```
 
@@ -102,11 +102,11 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
         <script>
-            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR';
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK';
-             const formConfig = {
-                "merchantId": '100004000002050', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=',
+         const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+         const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
+         const formConfig = {
+                "merchantId": '100204342250',
+                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
                 "symmetricEncryptionAlgorithm": 'AES_GCM'
             };
             const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
@@ -117,7 +117,6 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
             });
         </script>
     </body>
- 
 </html>
 
 ```
