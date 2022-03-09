@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, mobile-wallets, encryp
 
 # Wallet Payments
 
-Commerce Hub allows integration with most popular mobile and digital wallet providers including; [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md), [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md), Samsung Pay and PayPal.
+Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
 
 ---
 
