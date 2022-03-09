@@ -143,7 +143,7 @@ The below table identifies the parameters in the `posFeatures` object.
 |---------|----------|----------------|---------|
 | `hostProcessingPlatform` | *string* |  | Indicates which system is being used by the payment application and to what extent it is being used. |
 | `messageFormatSupport` | *string* |  | Indicates which message format the application uses to communicate with the Chase merchant services PNS Host. |
-| `emvSupport` | *string* |   Indicates the payment brands supported by the application for EMV processing. Required for any application that supports EMV processing. |
+| `emvSupport` | *string* |  | Indicates the payment brands supported by the application for EMV processing. Required for any application that supports EMV processing. |
 | `peripheralInformation1` | *string* |  | Indicates the type of peripheral device attached to or being used by the payment application or point of sale device. Only the highest level of support should be indicated unless multiple devices are attached. |
 | `peripheralInformation2` | *string* |  | Reserved for future use |
 | `communicationInformation1` | *string* |  | Indicates the methods of communication supported by the payment application. It is possible for an application to support more than one type of communication at a time. |
