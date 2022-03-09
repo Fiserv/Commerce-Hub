@@ -6,8 +6,6 @@ tags: [carat, commerce-hub, enterprise, card-not-present, mobile-wallets, encryp
 
 Commerce Hub allows integration with most popular mobile and digital wallet providers including; [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md), [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md), Samsung Pay and PayPal.
 
-<!-- https://stripe.com/docs/payments/wallets -->
-
 ---
 
 ## Mobile Wallets
@@ -31,6 +29,12 @@ link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.m
 title: Google Pay
 description: Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.
 link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+-->
+
+<!-- type: card
+title: Samsung Pay
+description: Commerce Hub allows developers to quickly enable secure and convenient Samsung Pay payments in their app or website.
+link:
 -->
 
 <!-- type: row-end -->
