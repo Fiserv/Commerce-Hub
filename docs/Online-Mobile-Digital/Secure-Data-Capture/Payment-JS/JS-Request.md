@@ -25,7 +25,7 @@ The JS script tag is required in the website by downloading or including the fol
 ---
 
 
-### SDK Configiuration
+### Authentication Credentials
 
 The following code snippet shows how to create and initialise the SDK configuration which is required by the SDK:
 
