@@ -34,7 +34,7 @@ link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay
 <!-- type: card
 title: Samsung Pay
 description: Commerce Hub allows developers to quickly enable secure and convenient Samsung Pay payments in their app or website.
-link:
+link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md
 -->
 
 <!-- type: row-end -->
