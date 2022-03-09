@@ -158,7 +158,8 @@ titles: Request, Charges Response, Tokens Response
     "merchantTransactionId": "RKTransID-768086381518"
   },
   "merchantDetails": {
-    "merchantId": "100004000002050"
+    "merchantId": "123456789012345",
+    "terminalId": "123456"
   }
 }
 ```
