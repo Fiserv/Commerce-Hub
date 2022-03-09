@@ -12,6 +12,8 @@ A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) 
 
 ## Step 2: Configuration
 
+The following code snippets are required to create and initialize the SDK configuration for the JS.
+
 ### JS SDK
 
 The JS script tag is required in the website by downloading or including the following code:
@@ -24,10 +26,9 @@ The JS script tag is required in the website by downloading or including the fol
 
 ---
 
-
 ### Authentication Credentials
 
-The following code snippet shows how to create and initialise the SDK configuration which is required by the SDK:
+Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) in step 1.
 
 ```javascript
 
@@ -96,7 +97,7 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
