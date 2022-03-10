@@ -20,11 +20,8 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|-------|---------|---------|
-|`sourceType` | *string* | 15 | &#10004; | Value *DecryptedWallet* is used for Decrypted Wallet requests. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
-| `card` | *object* | N/A | &#10004; | Decrypted card details |
-| `cavv` | *string* | 40 | &#10004; | Cardholder Authentication Verification Value provided by the Wallet Provider |
-| `xid` | *string* | 40 | | The unique identifier for the transaction provided by the Wallet Provider |
-| `walletType` | *string* | 256 | &#10004; | Identifies the wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY. |
+|`sourceType` | *string* | 256 | &#10004; |   Payment source type for a transaction request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
+
 
 <!--
 type: tab
@@ -35,8 +32,16 @@ The below table identifies the required parameters in the `card` object.
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- | ------------ | ---------|--------- |
 | `cardData` | *string* | 256 | &#10004; | Card number or encrypted data |
+| `nameOnCard` | *string* | 256 | &#10004; | Cardholder or customer name |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit expiration month |
-| `expirationYear` | *string* | 5 | &#10004; | 4-digit expiration year |
+| `expirationYear` | *string* | 4 | &#10004; | 4-digit expiration year |
+| 'securityCode' | *string* | 4 | &#10004; | Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC). |
+| 'securityCodeIndicator' | *string* | 15 | &#10004; | Indicates how the security code is passed |
+| 'bin' | *string* | 8 | &#10004; | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN). The BIN identifies the issuer and Level 2/3 qualifications. |
+| 'last4' | *string* | 4 | &#10004; | Contains the last four digits of the Primary Account Number (PAN) |
+| 'scheme' | *string* | 256 | &#10004; | Card brand |
+| 'beginningBalance' | *number* | 999999999999999999.999 | &#10004; | Beginning card balance |
+| 'endingBalance' | *number* | 999999999999999999.999 | &#10004; | Ending card balance |
 
 <!-- theme: info -->
 > Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
