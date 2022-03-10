@@ -13,6 +13,7 @@ A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) 
 
 ## Step 2: Configuration
 
+The following code snippets are required to create and initialize the SDK configuration for the iFrame.
 
 ### iFrame SDK
 
@@ -26,9 +27,9 @@ The iFrame JS script tag is required in the website by downloading or including 
 
 ---
 
-### Authentication
+### Authentication Credentials
 
-The following script is required to submit the authentication of the iFrame JS:
+Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) in step 1.
 
 ```javascript
 
