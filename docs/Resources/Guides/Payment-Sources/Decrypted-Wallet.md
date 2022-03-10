@@ -58,12 +58,23 @@ JSON string format for DecryptedWallet:
 		"sourceType": "DecryptedWallet",
 		"card": {
 			"cardData": "4005550000000019",
+			"nameOnCard": "Peter Andrew"
 			"expirationMonth": "02",
-			"expirationYear": "2035"
+			"expirationYear": "2035",
+			"securityCode": "123",
+			"securityCodeIndicator": "NOT_SUPPORTED",
+			"bin": "400555",
+			"last4": "0019",
+			"scheme": "VISA",
+			"beginningBalance": 1.00,
+			"endingbalance": 0.10
 		},
 		"cavv": "01ade6ae340005c681c3a1890418b53000020000",
 		"xid": "13456789",
-		"walletType": "ApplePay"
+		"walletType": "ApplePay",
+		"walletAmount": 1.00,
+		"walletCurrency": "USD",
+		"deviceManufacturerIdentifier": 040010030273
 	}
 }
 ```
@@ -89,12 +100,23 @@ titles: Request, Response
 		"sourceType": "DecryptedWallet",
 		"card": {
 			"cardData": "4005550000000019",
+			"nameOnCard": "Peter Andrew"
 			"expirationMonth": "02",
-			"expirationYear": "2035"
+			"expirationYear": "2035",
+			"securityCode": "123",
+			"securityCodeIndicator": "NOT_SUPPORTED",
+			"bin": "400555",
+			"last4": "0019",
+			"scheme": "VISA",
+			"beginningBalance": 1.00,
+			"endingbalance": 0.10
 		},
 		"cavv": "01ade6ae340005c681c3a1890418b53000020000",
 		"xid": "13456789",
-		"walletType": "APPLE_PAY"
+		"walletType": "APPLE_PAY",
+		"walletAmount": 1.00,
+		"walletCurrency": "USD",
+		"deviceManufacturerIdentifier": 040010030273
 	},
 	"transactionDetails": {
 		"captureFlag": true,
