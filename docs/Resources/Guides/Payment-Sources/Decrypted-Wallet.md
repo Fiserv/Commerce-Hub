@@ -35,13 +35,13 @@ The below table identifies the required parameters in the `card` object.
 | `nameOnCard` | *string* | 256 | &#10004; | Cardholder or customer name |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit expiration month |
 | `expirationYear` | *string* | 4 | &#10004; | 4-digit expiration year |
-| 'securityCode' | *string* | 4 | &#10004; | Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC). |
-| 'securityCodeIndicator' | *string* | 15 | &#10004; | Indicates how the security code is passed |
-| 'bin' | *string* | 8 | &#10004; | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN). The BIN identifies the issuer and Level 2/3 qualifications. |
-| 'last4' | *string* | 4 | &#10004; | Contains the last four digits of the Primary Account Number (PAN) |
-| 'scheme' | *string* | 256 | &#10004; | Card brand |
-| 'beginningBalance' | *number* | 999999999999999999.999 | &#10004; | Beginning card balance |
-| 'endingBalance' | *number* | 999999999999999999.999 | &#10004; | Ending card balance |
+| `securityCode` | *string* | 4 | &#10004; | Card Security Code (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card Verification Value (CVV), Card Verification Code (CVC), Verification Code (V-code or V code), or Signature Panel Code (SPC). |
+| `securityCodeIndicator` | *string* | 15 | &#10004; | Indicates how the security code is passed |
+| `bin` | *string* | 8 | &#10004; | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN). The BIN identifies the issuer and Level 2/3 qualifications. |
+| `last4` | *string* | 4 | &#10004; | Contains the last four digits of the Primary Account Number (PAN) |
+| `scheme` | *string* | 256 | &#10004; | Card brand |
+| `beginningBalance` | *number* | 999999999999999999.999 | &#10004; | Beginning card balance |
+| `endingBalance` | *number* | 999999999999999999.999 | &#10004; | Ending card balance |
 
 <!-- theme: info -->
 > Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
