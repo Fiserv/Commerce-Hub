@@ -844,64 +844,6 @@ components:
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        level23Data: {$ref: '#/components/schemas/Level23Data'}
-    Level23Data:
-      x-model-version: 1.0
-      properties:
-        customerReference: {type: string, maxLength: 128, description: 'Purchase order
-            number (PO Number), mapped from <code>merchantOrderId</code> in transactionDetails.'}
-        totalTaxAmount: {type: number, maximum: 1.0E18, example: '3.00'}
-        freightAmount: {type: number, maximum: 1.0E18, example: '9.00'}
-        totalDiscountAmount: {type: number, maximum: 1.0E18, example: '1.00'}
-        dutyAmount: {type: number, maximum: 1.0E18, example: '5.00'}
-        destinationPostalCode: {type: string, description: Postal code where goods
-            will be delivered.}
-        destinationCountryCode: {type: string, description: Country code where goods
-            will be delivered.}
-        orderDate: {type: string, format: date, description: Date of order in YYYY-MM-DD
-            format., example: '2022-05-21'}
-        shipFromPostalCode: {type: string, description: Postal code where goods are
-            being shipped from.}
-        merchantTaxId: {type: string, description: Merchant tax ID.}
-        merchantInvoiceNumber: {type: string, maxLength: 1024, description: Mapped
-            from <code>merchantInvoiceNumber</code> in transactionDetails.}
-        itemDetails:
-          type: array
-          items: {$ref: '#/components/schemas/Level23DataItems'}
-        taxRate: {type: number, maximum: 100, description: '', example: '1'}
-        supplierVatRegistrationNumber: {type: string, maxLength: 15, description: Supplier
-            VAT registration number., example: U12345678}
-        freightRate: {type: number, maximum: 100, description: Freight rate percent.,
-          example: '1'}
-        totalDiscountRate: {type: number, maximum: 100, description: Discount rate
-            percent., example: '1'}
-        totalLineItemTax: {type: number, maximum: 1.0E18, description: Line item tax.,
-          example: '18.00'}
-    Level23DataItems:
-      x-model-version: 1.0
-      properties:
-        commodityCode: {type: string, description: ''}
-        itemDescription: {type: string, description: ''}
-        productCode: {type: string, description: ''}
-        unitPrice: {type: number, maximum: 1.0E18, example: '10.00'}
-        quantity: {type: number, example: '2'}
-        unitOfMeasurement: {type: string, description: '', example: EACH}
-        totalAmount: {type: number, maximum: 1.0E18, description: Total before tax
-            and discounts., example: '20.00'}
-        discountIndicator: {type: boolean, example: 'true'}
-        discountRate: {type: number, maximum: 100, description: Discount rate percent.,
-          example: '1'}
-        discountAmount: {type: number, maximum: 1.0E18, example: '2.00'}
-        taxIndicator: {type: boolean, example: 'true'}
-        lineItemTaxRate: {type: number, maximum: 100, description: Line item tax rate
-            percent., example: '1'}
-        taxType: {type: string, example: SALES}
-        lineItemTax: {type: number, maximum: 1.0E18, example: '2.00'}
-        vatRate: {type: number, maximum: 100, description: Value added tax (VAT) rate
-            percent., example: '2'}
-        vatAmount: {type: number, maximum: 1.0E18, example: '4.00'}
-        lineItemTotal: {type: number, maximum: 1.0E18, description: Line item total
-            after tax and discounts., example: '18.00'}
     Phone:
       x-model-version: 1.0
       description: Customer <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">phone</a>
@@ -985,8 +927,11 @@ components:
 
             Valid Values:
             * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md">ApplePay</a>
+            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md">GooglePay</a>
             * <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md">PaymentCard</a>
             * <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md">PaymentToken</a>
+            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/EMV.md">PaymentEMV</a>
+            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/Track.md">PaymentTrack</a>
           example: PaymentCard
     PaymentCard:
       x-model-version: 1.0
@@ -3690,33 +3635,35 @@ components:
     PaymentEMVHDRequest:
       value:
         amount:
-          total: 60
+          total: 100
           currency: USD
         source:
           sourceType: PaymentEMV
-          emvData: 9F03060000000000009F5301529F2608453917CB42536AED820278009F360206019F34031F00029F02060000000060009F2701808407A00000000310109F100706011203A000029F3303E098C89F1A0201249F1E084B553030303030339A032104059F350125950500800080005F2A0201245F24032212315F3401019F4104000000059F3901059C01009F37040DC7201A4F07A00000000310109F0607A0000000031010
+          emvData: 9F03060000000000009F5301529F2608453917CB42536AED820278009F360206019F34034200009F02060000000060009F2701808407A00000009808409F100706011203A000029F3303E098C89F1A0201249F1E084B553030303030339A032104059F350125950500800080005F2A0201245F24032212315F3401019F4104000000059F3901059C01009F37040DC7201A4F07A00000009808409F0607A0000000980840
           encryptionData:
             encryptionType: ON_GUARD
             encryptionTarget: TRACK_2
-            encryptionBlock: 7328103867958912=48754338018216697
-            keyId: FFFF10970000000003320114
+            encryptionBlock: 4614507291879694=078443325742854
+            keyId: FFFF109700000E4000340114
             deviceType: INGENICO
+          pinBlock:
+            encryptedPin: 0FF7A610CC84CE40
+            keySerialNumber: FFFF3D3D3D00232002C9
         transactionDetails:
-          captureFlag: false
+          captureFlag: true
         transactionInteraction:
           origin: POS
           posEntryMode: ICR_RELIABLE
           posConditionCode: CARD_PRESENT
-          terminalTimestamp: '2022-02-17T15:56:48Z'
+          terminalTimestamp: '2022-03-10T01:37:13Z'
           additionalPosInformation:
             dataEntrySource: MOBILE_TERMINAL
             posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
               terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
-              pinAuthenticationCapability: UNSPECIFIED
         merchantDetails:
-          merchantId: '100009000000035'
+          merchantId: '100009000000041'
           terminalId: '10000002'
-          tokenType: '1174'
         additionalDataCommon:
           directedRouting:
             processors:
@@ -3831,81 +3778,69 @@ components:
       value:
         gatewayResponse:
           transactionType: CHARGE
-          transactionState: AUTHORIZED
+          transactionState: CAPTURED
           transactionOrigin: POS
           transactionProcessingDetails:
-            orderId: CHG01d86d34de7a834aeda8d12cb91a22f486
-            transactionTimestamp: '2022-02-17T20:57:15.963521Z'
-            apiTraceId: e524c0d514b546f48197a74ed468b7b6
-            clientRequestId: '8594138'
-            transactionId: e524c0d514b546f48197a74ed468b7b6
+            orderId: CHG018764206e3bbf4727875d88a79c72fa23
+            transactionTimestamp: '2022-03-14T15:16:19.780767Z'
+            apiTraceId: 556c623caa4b401aa3be1bca5b9e31e2
+            clientRequestId: '4360596'
+            transactionId: 556c623caa4b401aa3be1bca5b9e31e2
         source:
           sourceType: PaymentEMV
           card:
             expirationMonth: '12'
-            expirationYear: '2022'
-            bin: '476173'
-            last4: '0010'
+            expirationYear: '2025'
+            bin: '401777'
+            last4: '5556'
             scheme: Visa
-          emvData: 8a0230309f3602060191083789367800820000
+          emvData: 8a0230309f36020073910a1be55403be070aa53030
         paymentReceipt:
           approvedAmount:
-            total: 60
+            total: 100
             currency: USD
           processorResponseDetails:
             approvalStatus: APPROVED
-            approvalCode: '714073'
-            referenceNumber: a74ed468b7b6
+            approvalCode: '001626'
+            referenceNumber: 1bca5b9e31e2
             processor: NASHVILLE.NORTH
-            networkRouted: VISA
             networkInternationalId: '0001'
             responseCode: '000'
             responseMessage: Approved
             hostResponseCode: '00'
             hostResponseMessage: 'APPROVAL        '
-            bankAssociationDetails:
-              associationResponseCode: '00'
             additionalInfo:
               - name: HOST_RAW_PROCESSOR_RESPONSE
-                value: ARAyIAHvv70O77+9AgIAAAAAAAAAYAACFyBXFgASIgABAGE3NGVkNDY4YjdiNjcxNDA3MzAwMDE0ODQ1NDkAGe+/vQIwMO+/vTYCBgHvv70IN++/vTZ4AO+/vQAAAgUASDE0QTc1MjA0ODc1NDM2MDk4NDA0NDEgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMAAYMjJBUFBST1ZBTCAgICAgICAgAAZWSUNSQSAAIEVWMDIyMDEcMDQyMjEyMzEcMDUyAGZTRFRDMDE1OTAwMTExMDAwMDAwMDAwUkkwMTUwMDAwMDAwMDAwMDAwMDBOTDAwNFZJU0FUWTAwMUNBUjAwNFYwMDAANUFSQ0kwMDNVTktDUDAwMT9EUDAwMUFSQzAwMjAwQ0IwMDFW
+                value: AhAyOAHvv70O77+9AgIA77+9AAAAAAEAAAMUFRYgABcJATcTAxAAAQAxYmNhNWI5ZTMxZTIwMDE2MjYwMDAxNDg0NTQ5ACHvv70CMDDvv702AgBz77+9Chvvv71UA++/vQcK77+9MDAAMAAYMjJBUFBST1ZBTCAgICAgICAgAAg2NjA2MDAwNw==
         transactionDetails:
-          captureFlag: false
-          processingCode: '000000'
-          retrievalReferenceNumber: a74ed468b7b6
+          captureFlag: true
+          transactionCaptureType: hcs
+          processingCode: '009000'
+          retrievalReferenceNumber: 1bca5b9e31e2
         transactionInteraction:
           posEntryMode: ICR_RELIABLE
           posConditionCode: CARD_PRESENT
-          terminalTimestamp: '2022-02-17T15:56:48Z'
+          terminalTimestamp: '2022-03-10T01:37:13Z'
           additionalPosInformation:
-            stan: '001222'
+            stan: '001709'
             dataEntrySource: MOBILE_TERMINAL
             posFeatures:
-              pinAuthenticationCapability: UNSPECIFIED
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
               terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
-          authorizationCharacteristicsIndicator: A
-          hostPosConditionCode: '00'
         merchantDetails:
-          tokenType: '1174'
           terminalId: '10000002'
-          merchantId: '100009000000035'
+          merchantId: '100009000000041'
         additionalDataCommon: {}
         networkDetails:
           network:
             network: Visa
-            cardAuthenticationResultCode: '2'
-          cardLevelResultCode: A
-          validationCode: '0441'
-          transactionIdentifier: '752048754360984'
-        cardDetails:
-          brand: V
-          brandProductId: '?'
-          detailProductId: A
-          issuerCountry: UNK
+          debitNetworkId: '060007'
         paymentTokens:
-          - tokenData: '9613142534200010'
+          - tokenData: '2955395481625556'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
+
     PaymentEMVCreditResponse:
       value:
         gatewayResponse:
@@ -4052,32 +3987,34 @@ components:
     PaymentTrackHDRequest:
       value:
         amount:
-          total: 10.8
+          total: 100
           currency: USD
         source:
           sourceType: PaymentTrack
           encryptionData:
             encryptionType: ON_GUARD
             encryptionTarget: TRACK_2
-            encryptionBlock: 5920827294965894=843844352383401781
-            keyId: FFFF109700000E4000140114
+            encryptionBlock: 4614507291879694=078443325742854
+            keyId: FFFF109700000E4000340114
             deviceType: INGENICO
+          pinBlock:
+            encryptedPin: 0FF7A610CC84CE40
+            keySerialNumber: FFFF3D3D3D00232002C9
         transactionDetails:
           captureFlag: true
         transactionInteraction:
           origin: POS
           posEntryMode: MAG_STRIPE
           posConditionCode: CARD_PRESENT
-          terminalTimestamp: '2022-02-17T16:17:48Z'
+          terminalTimestamp: '2022-03-10T04:26:56Z'
           additionalPosInformation:
             dataEntrySource: MOBILE_TERMINAL
             posFeatures:
-              terminalEntryCapability: MAG_STRIPE_ONLY
-              pinAuthenticationCapability: UNSPECIFIED
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
         merchantDetails:
-          merchantId: '100009000000035'
+          merchantId: '100009000000041'
           terminalId: '10000002'
-          tokenType: '1174'
         additionalDataCommon:
           directedRouting:
             processors:
@@ -4326,14 +4263,65 @@ components:
     PaymentTrackHDTokenResponse:
       value:
         gatewayResponse:
+          transactionType: CHARGE
+          transactionState: CAPTURED
+          transactionOrigin: POS
           transactionProcessingDetails:
-            orderId: CHG0180a225bc4b95465ab38950c05e6fc47a
-            transactionTimestamp: '2022-02-17T20:51:44.803878Z'
-            apiTraceId: dc4f925017ae4afbabb8cb91d7d999dd
-            clientRequestId: '1488768'
-            transactionId: dc4f925017ae4afbabb8cb91d7d999dd
+            orderId: CHG01e0ffbc1729bb41bebe1a7cc5112b9879
+            transactionTimestamp: '2022-03-14T15:12:40.940286Z'
+            apiTraceId: a000dd8244284608bca77cec6e7ab177
+            clientRequestId: '9626805'
+            transactionId: a000dd8244284608bca77cec6e7ab177
+        source:
+          sourceType: PaymentTrack
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '401777'
+            last4: '5556'
+            scheme: Visa
+        paymentReceipt:
+          approvedAmount:
+            total: 100
+            currency: USD
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: '001134'
+            referenceNumber: 7cec6e7ab177
+            processor: NASHVILLE.NORTH
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL        '
+            additionalInfo:
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: AhAyOAHvv70O77+9AAIA77+9AAAAAAEAAAMUFRJBABcGBCZWAxAAAQA3Y2VjNmU3YWIxNzcwMDExMzQwMDAxNDg0NTQ5ADAAGDIyQVBQUk9WQUwgICAgICAgIAAINjYwNjAwMDc=
+        transactionDetails:
+          captureFlag: true
+          transactionCaptureType: hcs
+          processingCode: '009000'
+          retrievalReferenceNumber: 7cec6e7ab177
+        transactionInteraction:
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-03-10T04:26:56Z'
+          additionalPosInformation:
+            stan: '001706'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+        merchantDetails:
+          terminalId: '10000002'
+          merchantId: '100009000000041'
+        additionalDataCommon: {}
+        networkDetails:
+          network:
+            network: Visa
+          debitNetworkId: '060007'
         paymentTokens:
-          - tokenData: '9897939877720042'
+          - tokenData: '2955395481625556'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
