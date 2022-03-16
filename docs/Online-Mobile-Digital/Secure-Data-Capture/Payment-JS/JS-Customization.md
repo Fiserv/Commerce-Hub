@@ -18,20 +18,17 @@ The following example shows all the text labels that can be overridden for a par
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
         <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
+            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+            const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
             const formConfig = {
-                "merchantId": '100004000002050', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
-                "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
+                "merchantId": '100204342250',
+                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
+                "symmetricEncryptionAlgorithm": 'AES_GCM'
                 "languages": [
                     {
                         "language": "en-US",
@@ -84,7 +81,7 @@ The following example shows all the text labels that can be overridden for a par
 
 ## Theme and Font
 
-For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
+For iFrame JS, the styling is set by default, based off of [ADA guidelines](?path=https://www.ada.gov/2010ADAstandards_index.htm).
 
 
 #### Overriding Elements
@@ -109,24 +106,19 @@ The following elements can be overridden:
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
         <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
         <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
+            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+            const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
             const formConfig = {
-                "merchantId": '100004000002050', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
-                "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
-                // any CSS attribute added here will be ignored by the SDK
+                "merchantId": '100204342250',
+                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
+                "symmetricEncryptionAlgorithm": 'AES_GCM'                
             };
-            // bootstrap 3.3.6 classes
             const classList = {
                 "form": ["form-group"],
                 "input": ["form-control"],
@@ -142,9 +134,6 @@ The following elements can be overridden:
                 "spinner": ["sr-only"],
                 "loadingContainer": ["container"]
             };
- 
-            // Remove all existing default classes
-            // Add new custom classes
             const fiservSaqAEp = new commercehub.FiservSaqAEp(formConfig, {
                 useDefaultCSS: true,
                 classList: classList
