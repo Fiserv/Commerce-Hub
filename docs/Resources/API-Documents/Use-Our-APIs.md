@@ -116,7 +116,7 @@ A standard API call to execute a charge transaction might look like this:
 ```json
 {
   method: "POST",
-  url: "https://prod.api.fiservapps.com/ch/payments/v1/charges",
+  url: "https://test.api.fiservapps.com/ch/payments/v1/charges",
   headers: {
       "Content-Type": "application/json",
       "Client-Request-Id": "1000000012",
