@@ -74,14 +74,6 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
     },
 ```
 
-const authorization = 'ACCESS_TOKEN';
-const apiKey = 'API_KEY'; 
-const formConfig = {
-   "merchantId": 'MERCHANT_ID',
-   "publicKey": 'PUBLIC_KEY',
-   "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM'
-   };
-
 ---
 
 ## Request Body
