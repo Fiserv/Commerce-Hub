@@ -26,7 +26,7 @@ The below table identifies the parameters in the `source` object.
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
 | `card` | *object* | N/A |  &#10004; | Contains the payment card details |
 | `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
-| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab
