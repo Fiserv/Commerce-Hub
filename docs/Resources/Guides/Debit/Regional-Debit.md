@@ -20,7 +20,7 @@ The below table identifies the parameters in the `regionalDebit` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -------------------------------|
-| `pinBlock` | *object* | N/A | The [PIN block](?path=docs/Resources/Master-Data/Pin-Block.md) is used to transport a PIN value. |
+| `pinBlock` | *object* | N/A | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 | `region` | *string* |  | Region of Debit Origin - Canadian, German , etc |
 | `debitTransactionCode` | *string* |  | Identifies the debit transaction |
 | `debitMACValue` | *string* |  | To confirm that the key data elements of the transaction have not been tampered. MAC protection is required on all Canadian debit transactions. It is optional when processing U.S. debit/EBT transactions. |
