@@ -27,7 +27,7 @@ The below table identifies the parameters in the `source` object.
 | `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
 | `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab
