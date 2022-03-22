@@ -11,8 +11,8 @@ The PIN debit transactions are secure as a PIN is a confidential code known only
 Commerce Hub supports the PIN debit card payments where the length of the PIN is determined by the customer's issuing bank. The minimum length of a PIN is 4 digits and the maximum length is 12 digits.
 
 The benefits of a PIN debit transaction are:
-- Pin-Based Debit cost less to process than Credit Cards.
-- Becoming more widely used because of Pin-Based security.
+- Pin based funds withdrwal cost less to process than Credit Cards.
+- Becoming popular and widely used because of Pin-based security.
 - Fast, convenient because they don’t require a signature.
 - Ability to offer customers “Cash Back”.
 - Transactions cannot be downgraded to Mid or Non Qualified rates.
