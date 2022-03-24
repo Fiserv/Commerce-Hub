@@ -185,6 +185,9 @@ Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via th
 ## Doing Business As
 Doing business as (DBA) refers to the specific name and location of the merchant's store where a transaction is made.
 
+## Debit
+Debit card transactions are the purchase/obtaining of goods and/or services, balance inquiries and cash withdrawals initiated by a cardholder with a debit card. There are two types of of debit card transactions: [PIN-based](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md) and PIN-less. 
+
 ## Debit Function Code
 Indicates the specific purpose of the message within its message class.
 
@@ -481,7 +484,9 @@ A cryptographically secure representation of payment instrument details for use 
 ## Payment Card Industry Data Security Standard
 Payment Card Industry Data Security Standard (PCI DSS) is the published security standards for the handling of payment card data.
 
-## PIN Debit
+## PIN
+A PIN also known as a Personal Identification Number, is a unique 4 to 12 digit confidential code created by the customer to secure PIN based transactions. This can be submitted in Commerce Hub using the encrypted [PIN block].
+
 
 ## Practical Extraction and Report Language
 Practical Extraction and Report Language (Perl) is a popular programming language used for web server applications. It can be used for creating interactive forms and CGI programs.
