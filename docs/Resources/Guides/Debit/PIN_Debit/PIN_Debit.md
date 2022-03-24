@@ -2,11 +2,11 @@
 
 # PIN Debit
 
-A PIN Debit transaction is an electronic funds transfer from a customer's bank to a merchant's bank when the customer presents a bank-issued debit card and enters the PIN at the point of sale. Commerce Hub supports PIN debit transactions for charges, refunds and cancels.
+A PIN [Debit](?path=docs/Resources/FAQs-Glossary/Glossary.md#debit) transaction is an electronic funds transfer from a customer's bank to a merchant's bank when the customer presents a bank-issued debit card and enters the [PIN](?path=docs/Resources/FAQs-Glossary/Glossary.md#pin) at the point of sale. Commerce Hub supports PIN debit transactions for charges, refunds and cancels.
 
 
-<!-- theme: info -->
-> Merchants must be set up by their merchant account provider to accept PIN debit transactions and will also need a PIN capable PIN-pad or terminal.
+<!-- theme: caution -->
+> Merchants must be set up by their processor to accept PIN debit transactions and refunds. The merchant will also need a PIN capable PIN-pad or terminal.
 
 
 ---
@@ -42,6 +42,10 @@ link:
 ## Features 
 
 Once your integration can accept payments, enhance your integration by adding more PIN Debit features and functionality.
+
+<!-- theme: warning -->
+> We are enhancing Commerce Hub to include additional PIN debit support and the documents related to the features will be released soon.
+
 
 Balance Inquiry
 Cash Back
