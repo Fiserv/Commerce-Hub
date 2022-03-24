@@ -19,14 +19,14 @@ Build a Commerce Hub integration based on payment source to initiate a transacti
 
 <!-- type: card
 title: EMV Request
-description: EMV Request
-link: ?path=
+description: EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
+link: ?path=docs/Resources/FAQs-Glossary/Glossary.md
 -->
 
 <!-- type: card
 title: Track Request
-description:  Track Request
-link: ?path=
+description: Payment Track can be used as EMV Fallback and involves manually swiping the payment source into a payment terminal using magnetic stripe. This can be used when the payment terminal fails to obtain the card details from the card's chip.
+link: ?path=docs/In-Person/Encrypted-Payments/Track.md
 -->
 
 <!-- type: card
