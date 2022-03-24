@@ -477,11 +477,11 @@ Commerce Hub can return a [partial authorization](?path=docs/Resources/Guides/Au
 
 ## Payment Token
 A cryptographically secure representation of payment instrument details for use with subsequent payment transactions. This token may be generated for a single or multiple use. Through a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), the merchant does not need to store sensitive payment details on their servers.
-## Payment Token
-A randomly generated number used to represent a payment source for [token transactions](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 ## Payment Card Industry Data Security Standard
 Payment Card Industry Data Security Standard (PCI DSS) is the published security standards for the handling of payment card data.
+
+## PIN Debit
 
 ## Practical Extraction and Report Language
 Practical Extraction and Report Language (Perl) is a popular programming language used for web server applications. It can be used for creating interactive forms and CGI programs.
