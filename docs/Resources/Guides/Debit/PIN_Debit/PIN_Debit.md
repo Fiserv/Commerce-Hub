@@ -50,19 +50,22 @@ Once your integration can accept payments, enhance your integration by adding mo
 
 <!-- type: card
 title: Balance Inquiry
-description:
-link: ?path=
+description: Balance inquiry can be used to know the funds remaining in the customer's debit account. Click to know how Commerce Hub supports the balance inquiry request for PIN debit transaction.
+link: 
 -->
 
 <!-- type: card
 title: Cash Back
-description: 
-link: ?path=
+description: The cashback feature allows shoppers get cash back in your account, either after a purchase or without a purchase. 
+link: 
 -->
 
 <!-- type: card
 title: Partial Approval
-description: 
+description: A partial approval validation or authorization is the ability to partially authorize a transaction if the customer does not have the funds to cover the entire cost on their debit card, prepaid card or gift card. The merchant can obtain the remainder of the purchase amount in another form of payment. 
+This validation is used only for transactions where the acquirer supports partial authorisations, and only from certain MCCs such as automatic fuel dispensers and electronic cash registers. This validation checks if the transaction amount depletes the card's balance and requires another payment method to complete the transaction. The result is always valid, because this validation is only performed when the transaction meets the conditions.
+
+
 link:
 -->
 
@@ -72,14 +75,14 @@ link:
 
 <!-- type: card
 title: EBT
-description:
-link: ?path=
+description: Electronic Benefit Transfer payment cards allows the acceptance of electronic benefits........
+link: 
 -->
 
 <!-- type: card
 title: Debit Reversals (Merchant-Initiated and )
 description: 
-link: ?path=
+link: 
 -->
 
 <!-- type: card
