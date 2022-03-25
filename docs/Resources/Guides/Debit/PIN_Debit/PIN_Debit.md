@@ -46,36 +46,47 @@ Once your integration can accept payments, enhance your integration by adding mo
 <!-- theme: warning -->
 > We are enhancing Commerce Hub to include additional PIN debit support and the documents related to the features will be released soon.
 
-
-Balance Inquiry
-Cash Back
-Partial Approval
-EBT
-Debit Reversals (Merchant-Initiated and )
-Quasi-Cash
-
-2 rows
-
 <!-- type: row -->
 
 <!-- type: card
-title: 
-description: EMV Request
+title: Balance Inquiry
+description:
 link: ?path=
 -->
 
 <!-- type: card
-title: Track Request
-description:  Track Request
+title: Cash Back
+description: 
 link: ?path=
 -->
 
 <!-- type: card
-title: Key Management
+title: Partial Approval
 description: 
 link:
 -->
 
 <!-- type: row-end -->
 
+<!-- type: row -->
+
+<!-- type: card
+title: EBT
+description:
+link: ?path=
+-->
+
+<!-- type: card
+title: Debit Reversals (Merchant-Initiated and )
+description: 
+link: ?path=
+-->
+
+<!-- type: card
+title: Quasi-Cash
+description: 
+link:
+-->
+
+<!-- type: row-end -->
 ---
