@@ -84,7 +84,7 @@ link:
 
 <!-- type: card
 title: Quasi-Cash
-description: 
+description: Quasi-Cash Transaction is the transaction between the merchant and a Cardholder where you sell items that are directly convertible to cash. Quasi-Cash Transaction means merchandise and/or service transactions provided by a financial institution such as travellers cheques, foreign currency and/or gambling transactions.
 link:
 -->
 
