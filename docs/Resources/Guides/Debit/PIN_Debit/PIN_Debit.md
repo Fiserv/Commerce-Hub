@@ -31,7 +31,7 @@ link: ?path=docs/In-Person/Encrypted-Payments/Track.md
 
 <!-- type: card
 title: Key Management
-description: 
+description: Key management involves creating, deleting, storing and distributing keys. Managing keys nneds a number of requirements, for physical security and procedural aspects, such as the renowned 'dual control'.
 link:
 -->
 
@@ -50,7 +50,7 @@ Once your integration can accept payments, enhance your integration by adding mo
 
 <!-- type: card
 title: Balance Inquiry
-description: Balance inquiry can be used to know the funds remaining in the customer's debit account. Click to know how Commerce Hub supports the balance inquiry request for PIN debit transaction.
+description: Balance inquiry can be used to know the funds remaining in the customer's debit account.
 link: 
 -->
 
@@ -62,10 +62,7 @@ link:
 
 <!-- type: card
 title: Partial Approval
-description: A partial approval validation or authorization is the ability to partially authorize a transaction if the customer does not have the funds to cover the entire cost on their debit card, prepaid card or gift card. The merchant can obtain the remainder of the purchase amount in another form of payment. 
-This validation is used only for transactions where the acquirer supports partial authorisations, and only from certain MCCs such as automatic fuel dispensers and electronic cash registers. This validation checks if the transaction amount depletes the card's balance and requires another payment method to complete the transaction. The result is always valid, because this validation is only performed when the transaction meets the conditions.
-
-
+description: This validation is used only for transactions where the acquirer supports partial authorisations. Partial approval checks if the transaction amount depletes the card's balance and requires another payment method to complete the transaction.
 link:
 -->
 
