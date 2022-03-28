@@ -192,7 +192,7 @@ type: tab
 
 ## PIN Based Transactions
 
-
+Password protected payment method that authroizes a tranfer of funds.
 
 ### Request Variables
 
@@ -208,7 +208,7 @@ The below table identifies the parameters in the `source` object.
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentEMV* for EMV transactions |
 | `emvData` | *string* | N/A |  &#10004; | Contains a series of [Tag/Length/Value](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md) combination for chip card processing |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab
@@ -247,19 +247,19 @@ JSON string format for PaymentEMV:
 ```json
 {
    "source":{
-      "sourceType":"PaymentEMV",
-      "emvData":"0249F3704833A12329F1002AB34",
+      "sourceType": "PaymentEMV",
+      "emvData": "0249F3704833A12329F1002AB34",
       "encryptionData":{
-         "encryptionType":"RSA",
-         "encryptionTarget":"TRACK_2",
-         "encryptionBlock":"",
-         "deviceType":"INGENICO",
-         "keyId":""
+         "encryptionType": "RSA",
+         "encryptionTarget": "TRACK_2",
+         "encryptionBlock": "",
+         "deviceType": "INGENICO",
+         "keyId": ""
       },
       "pinBlock":{
-         "encryptedPin":"53511F325B7C89E3",
-         "keySerialNumber":"7964085138968549....",
-         "pinEncryptionWorkingKey":"7586325254178549.....",
+         "encryptedPin": "53511F325B7C89E3",
+         "keySerialNumber": "7964085138968549....",
+         "pinEncryptionWorkingKey": "7586325254178549.....",
       }
    }
 }
@@ -293,6 +293,11 @@ titles: Request, Response
          "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
          "deviceType": "INGENICO",
          "keyId": "88000000022"
+      },
+      "pinBlock":{
+         "encryptedPin": "53511F325B7C89E3",
+         "keySerialNumber": "7964085138968549....",
+         "pinEncryptionWorkingKey": "7586325254178549.....",
       }
    },
    "transactionDetails":{
@@ -389,7 +394,6 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
