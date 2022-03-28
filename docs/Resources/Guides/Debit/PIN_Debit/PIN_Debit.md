@@ -77,8 +77,8 @@ link:
 -->
 
 <!-- type: card
-title: Debit Reversals (Merchant-Initiated and )
-description: 
+title: Debit Reversals
+description: A debit reversal is initiated when the funds a customer used in a transaction are returned to the customer's bank. This can be initiated by the cardholder, the merchant, the issuing bank, the acquiring bank, or the card association.
 link: 
 -->
 
