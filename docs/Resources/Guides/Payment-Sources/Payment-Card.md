@@ -38,7 +38,7 @@ The below table identifies the required parameters in the `card` object.
 | -------- | -- | ------------ | ----------- |---|
 | `cardData` | *string* | 15 |  &#10004; | Credit Card Number or Encrypted Data |
 | `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month Example (05) |
-| `expirationYear` | *string* | 4 |  &#10004; |4-digit card expiration year Example (2025) |
+| `expirationYear` | *string* | 4 |  &#10004; | 4-digit card expiration year Example (2025) |
 
 <!-- theme: info -->
 > Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
