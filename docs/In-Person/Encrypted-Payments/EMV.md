@@ -18,7 +18,6 @@ A third-party device encrypts the customer's payment source and sends the encryp
 Accept PIN less and signature based EMV payment cards.
 
 
-
 ### Request Variables
 
 <!--
@@ -30,7 +29,7 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentEMV* for EMV transactions |
+| `sourceType` | *string* | 256 |  &#10004; | Use Value *PaymentEMV* for EMV transactions |
 | `emvData` | *string* | N/A |  &#10004; | Contains a series of [Tag/Length/Value](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md) combination for chip card processing |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
 
@@ -233,11 +232,9 @@ The below table identifies the required parameters in the `pinBlock` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | |
-| `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
+| `encryptedPin` | *string* | 2000 |  &#10004; | This field contains the Encrypted PIN Block for Debit, EBT, Fleet or Credit transactions. |
+| `keySerialNumber` | *string* | 256 |  &#10004; | This field is used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. |
+| `pinEncryptionWorkingKey` | *string* | 2000 |  &#10004; | Terminal PIN Encryption working key (TKPE). A PIN Encryption Key is a used to protect PINs as they are transmitted. |
 
 
 <!--
@@ -245,20 +242,24 @@ type: tab
 -->
 
 
-
 JSON string format for PaymentEMV:
 
 ```json
 {
    "source":{
-      "sourceType": "PaymentEMV",
-      "emvData": "0249F3704833A12329F1002AB34",
+      "sourceType":"PaymentEMV",
+      "emvData":"0249F3704833A12329F1002AB34",
       "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
-         "deviceType": "INGENICO",
-         "keyId": ""
+         "encryptionType":"RSA",
+         "encryptionTarget":"TRACK_2",
+         "encryptionBlock":"",
+         "deviceType":"INGENICO",
+         "keyId":""
+      },
+      "pinBlock":{
+         "encryptedPin":"53511F325B7C89E3",
+         "keySerialNumber":"7964085138968549....",
+         "pinEncryptionWorkingKey":"7586325254178549.....",
       }
    }
 }
