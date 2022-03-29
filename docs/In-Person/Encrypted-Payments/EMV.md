@@ -304,9 +304,9 @@ JSON string format for PaymentEMV:
       "encryptionData":{
          "encryptionType": "RSA",
          "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
+         "encryptionBlock": "4614507291879694=078443325742854",
          "deviceType": "INGENICO",
-         "keyId": ""
+         "keyId": "FFFF109700000E4000340114"
       },
       "pinBlock":{
          "encryptedPin": "53511F325B7C89E3",
@@ -342,14 +342,14 @@ titles: Request, Response
       "encryptionData":{
          "encryptionType": "RSA",
          "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
+         "encryptionBlock": "4614507291879694=078443325742854",
          "deviceType": "INGENICO",
-         "keyId": "88000000022"
+         "keyId": "FFFF109700000E4000340114"
       },
       "pinBlock":{
          "encryptedPin": "53511F325B7C89E3",
-         "keySerialNumber": "7964085138968549....",
-         "pinEncryptionWorkingKey": "7586325254178549.....",
+         "keySerialNumber": "FFFF3D3D3D00232002C9",
+         "pinEncryptionWorkingKey": "7586325254178549....."
       }
    },
    "transactionDetails":{
@@ -360,12 +360,30 @@ titles: Request, Response
       "origin": "POS",
       "posEntryMode": "ICR_RELIABLE",
       "posConditionCode": "CARD_PRESENT",
-      "terminalTimestamp": "2021-06-20T23:42:48Z"
+      "terminalTimestamp": "2022-03-10T01:37:13Z",
+      "additionalPosInformation":{
+         "dataEntrySource": "MOBILE_TERMINAL",
+         "posFeatures":{
+            "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+            "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
+         }
+      }
    },
-    "merchantDetails":{
+   "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-    }
+   },
+   "additionalDataCommon":{
+      "directedRouting":{
+         "processors":[
+            {
+               "code": "NASHVILLE",
+               "platform": "NORTH",
+               "priority": "PRIMARY"
+            }
+         ]
+      }
+   }
 }
 ```
 
@@ -402,7 +420,8 @@ type: tab
          "scheme": "VISA",
          "expirationMonth": "02",
          "expirationYear": "2035"
-      }
+      },
+      "emvData": "8a0230309f36020073910a1be55403be070aa53030"
    },
    "paymentReceipt":{
       "approvedAmount":{
@@ -426,16 +445,38 @@ type: tab
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
          "localTimestamp": "2021-06-20T23:42:48Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2021-06-20T23:42:48Z"
-         }
+         "additionalInfo": [
+          {
+            "name": "HOST_RAW_PROCESSOR_RESPONSE",
+            "value": "AhAyOAHvv70O77+9AgIA77+9AAAAAAEAAAMUFRYgABcJATcTAxAAAQAxYmNhNWI5ZTMxZTIwMDE2MjYwMDAxNDg0NTQ5ACHvv70CMDDvv702AgBz77+9Chvvv71UA++/vQcK77+9MDAAMAAYMjJBUFBST1ZBTCAgICAgICAgAAg2NjA2MDAwNw=="
+          }
+         ]
       }
    },
    "transactionDetails":{
       "captureFlag": true,
       "merchantInvoiceNumber": "123456789012"
-   }
+   },
+  "transactionInteraction": {
+    "posEntryMode": "ICR_RELIABLE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2022-03-10T01:37:13Z",
+    "additionalPosInformation": {
+      "stan": "001709",
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
+      }
+    }
+  },
+  "additionalDataCommon": {},
+  "networkDetails": {
+    "network": {
+      "network": "Visa"
+    },
+    "debitNetworkId": "060007"
+  }
 }
 ```
 
