@@ -15,7 +15,7 @@ A third-party device encrypts the customer's payment source and sends the encryp
 
 ## PINless Transactions
 
-Accept PIN less and signature based EMV payment cards.
+Accept PINless and signature based EMV payment cards.
 
 
 ### Request Variables
@@ -103,16 +103,34 @@ titles: Request, Response
       "captureFlag": true,
       "merchantInvoiceNumber": "123456789012"
    },
-   "transactionInteraction":{
-      "origin": "POS",
-      "posEntryMode": "ICR_RELIABLE",
-      "posConditionCode": "CARD_PRESENT",
-      "terminalTimestamp": "2021-06-20T23:42:48Z"
-   },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "ICR_RELIABLE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2022-03-10T01:37:13Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
+      }
+    }
+  },
     "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
+    },
+  "additionalDataCommon": {
+    "directedRouting": {
+      "processors": [
+        {
+          "code": "NASHVILLE",
+          "platform": "NORTH",
+          "priority": "PRIMARY"
+        }
+      ]
     }
+  }
 }
 ```
 
@@ -127,8 +145,7 @@ type: tab
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
-```json
-{
+```json{
    "gatewayResponse":{
       "transactionType": "CHARGE",
       "transactionState": "AUTHORIZED",
@@ -149,7 +166,8 @@ type: tab
          "scheme": "VISA",
          "expirationMonth": "02",
          "expirationYear": "2035"
-      }
+      },
+      "emvData": "8a0230309f36020073910a1be55403be070aa53030"
    },
    "paymentReceipt":{
       "approvedAmount":{
@@ -176,12 +194,46 @@ type: tab
          "bankAssociationDetails":{
             "associationResponseCode": "000",
             "transactionTimestamp": "2021-06-20T23:42:48Z"
-         }
+         },
+         "additionalInfo":[
+            {
+               "name": "HOST_RAW_PROCESSOR_RESPONSE",
+               "value": "AhAyOAHvv70O77+9AgIA77+9AAAAAAEAAAMUFRYgABcJATcTAxAAAQAxYmNhNWI5ZTMxZTIwMDE2MjYwMDAxNDg0NTQ5ACHvv70CMDDvv702AgBz77+9Chvvv71UA++/vQcK77+9MDAAMAAYMjJBUFBST1ZBTCAgICAgICAgAAg2NjA2MDAwNw=="
+            }
+         ]
       }
    },
    "transactionDetails":{
       "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
+      "transactionCaptureType": "hcs",
+      "processingCode": "009000",
+      "retrievalReferenceNumber": "1bca5b9e31e2"
+   },
+   "transactionInteraction":{
+      "posEntryMode": "ICR_RELIABLE",
+      "posConditionCode": "CARD_PRESENT",
+      "terminalTimestamp": "2022-03-10T01:37:13Z",
+      "additionalPosInformation":{
+         "stan": "001709",
+         "dataEntrySource": "MOBILE_TERMINAL",
+         "posFeatures":{
+            "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+            "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
+         }
+      }
+   },
+   "merchantDetails":{
+      "terminalId": "10000002",
+      "merchantId": "100009000000041"
+   },
+   "additionalDataCommon":{
+      
+   },
+   "networkDetails":{
+      "network":{
+         "network": "Visa"
+      },
+      "debitNetworkId": "060007"
    }
 }
 ```
@@ -192,7 +244,7 @@ type: tab
 
 ## PIN Based Transactions
 
-Password protected payment method that authroizes a tranfer of funds.
+Accept PIN based EMV payment cards.
 
 ### Request Variables
 
