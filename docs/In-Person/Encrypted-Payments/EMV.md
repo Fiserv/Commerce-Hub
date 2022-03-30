@@ -20,6 +20,9 @@ Accept PINless and signature based EMV payment cards.
 
 ### Request Variables
 
+<!-- theme: info -->
+> Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
+
 <!--
 type: tab
 titles: source,  encryptionData, JSON Example
@@ -247,6 +250,9 @@ type: tab
 Accept PIN based EMV payment cards.
 
 ### Request Variables
+
+<!-- theme: info -->
+> Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
 
 <!--
 type: tab
