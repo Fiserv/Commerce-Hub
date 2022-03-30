@@ -71,7 +71,7 @@ link:
 <!-- type: card
 title: Merchant Managed Encryption
 description: Integration that includes the use of a static public key, where the merchant can capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/MM-Encryption/MM-Encryption.md
 -->
 
 
