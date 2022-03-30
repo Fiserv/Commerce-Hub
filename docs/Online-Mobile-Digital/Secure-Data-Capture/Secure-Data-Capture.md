@@ -4,11 +4,11 @@ Commerce Hub offers online integration methods for E-commerce merchants that req
 
 The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self-validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. For more information visit [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
-- **SAQ A:** applies to the merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any customer data on their systems.
+- **SAQ A:** applies to merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any customer data on their systems.
 
-- **SAQ A-EP:** applies to the merchants who partially outsource payment processing to Commerce Hub. The merchant typically has a website that hosts a checkout process and sends the customer data to Commerce Hub at a point of payment.
+- **SAQ A-EP:** applies to merchants who partially outsource payment processing to Commerce Hub. The merchant typically has a website that hosts a checkout process and sends the customer data to Commerce Hub at a point of payment.
 
-- **SAQ D:** applies to the merchants who capturing the payment source details and also saved the data in the merchant database. The merchant typically has a website that hosts a checkout process and encrypts the customer data before sending to Commerce Hub for authroization.
+- **SAQ D:** applies to merchants who capture the payment source details and save the data in their database. The merchant typically has a website that hosts a checkout process and encrypts the customer data before sending to Commerce Hub for authroization.
  
 ---
 
