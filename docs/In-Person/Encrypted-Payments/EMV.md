@@ -495,6 +495,8 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
+- [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
