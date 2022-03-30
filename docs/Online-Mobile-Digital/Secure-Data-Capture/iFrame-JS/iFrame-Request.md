@@ -40,7 +40,7 @@ const formConfig = {
    "publicKey": 'PUBLIC_KEY',
    "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM'
    };
-
+   
 ```
 
 ### Payment Form
