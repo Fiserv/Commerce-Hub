@@ -12,12 +12,11 @@ A third-party device captures the customer's payment source unencrypted or encry
 <!-- theme: warning -->
 > It is not recommended to send unencrypted track 1 and track 2 data for the payment transaction.
 
-
 ---
 
 ## PINless Transactions
 
-Accept PINless and signature based Track payment cards.
+Accept PINless and signature based track payments.
 
 
 ### Request Variables
@@ -52,7 +51,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
+| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
 
 <!--
 type: tab
@@ -110,7 +109,7 @@ titles: Request, Response
    },
   "transactionInteraction": {
     "origin": "POS",
-    "posEntryMode": "ICR_RELIABLE",
+    "posEntryMode": "MAG_STRIPE",
     "posConditionCode": "CARD_PRESENT",
     "terminalTimestamp": "2022-03-10T01:37:13Z",
     "additionalPosInformation": {
@@ -195,7 +194,7 @@ type: tab
       "merchantInvoiceNumber": "123456789012"
    },
   "transactionInteraction": {
-    "posEntryMode": "ICR_RELIABLE",
+    "posEntryMode": "MAG_STRIPE",
     "posConditionCode": "CARD_PRESENT",
     "terminalTimestamp": "2022-03-10T01:37:13Z",
     "additionalPosInformation": {
@@ -327,7 +326,7 @@ titles: Request, Response
    },
    "transactionInteraction":{
       "origin": "POS",
-      "posEntryMode": "ICR_RELIABLE",
+      "posEntryMode": "MAG_STRIPE",
       "posConditionCode": "CARD_PRESENT",
       "terminalTimestamp": "2022-03-10T01:37:13Z",
       "additionalPosInformation":{
@@ -369,95 +368,80 @@ type: tab
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType": "CHARGE",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "POS",
-      "transactionProcessingDetails":{
-         "transactionTimestamp": "2021-06-20T23:42:48Z",
-         "orderId": "RKOrdID-525133851837",
-         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-         "clientRequestId": "4345791",
-         "transactionId": "84356531338"
-      }
-   },
-   "source":{
-      "sourceType": "PaymentTrack",
-      "card":{
-         "expirationMonth": "12",
-         "expirationYear": "2025",
-         "bin": "401777",
-         "last4": "5556",
-         "scheme": "Visa"
-      }
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": "12.04",
-         "currency": "USD"
-      },
-      "merchantName": "Merchant Name",
-      "merchantAddress": "123 Peach Ave",
-      "merchantCity": "Atlanta",
-      "merchantStateOrProvince": "GA",
-      "merchantPostalCode": "12345",
-      "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com",
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK5882",
-         "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021-06-20T23:42:48Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2021-06-20T23:42:48Z"
-         },
-         "additionalInfo":[
-            {
-               "name": "HOST_RAW_PROCESSOR_RESPONSE",
-               "value": "ARAyIAHvv70O77+9AAIAAAAAAAAAEO+/vQIXIFQ2ABIgAAEAMmM5MDZmOWNkNDFhT0s1MDU5MDAwMTQ4NDU0OQHvv70ASDE0RTAxMjA0ODAwNDc2NzkwNEcyNDUgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMAAYMjJBUFBST1ZBTCAgICAgICAgABBWSUNSICAcUlNCAGZTRFRDMDE1OTAwMTEwMDAwMDAwMDAwUkkwMTUwMDAwMDAwMDAwMDAwMDBOTDAwNFZJU0FUWTAwMUNBUjAwNFYwMDAAKUFSQ0kwMDNVTktDUDAwMT9SQzAwMjAwQ0IwMDFW"
-            }
-         ]
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   },
-   "transactionInteraction":{
-      "posEntryMode": "ICR_RELIABLE",
-      "posConditionCode": "CARD_PRESENT",
-      "terminalTimestamp": "2022-03-10T01:37:13Z",
-      "additionalPosInformation":{
-         "stan": "001709",
-         "dataEntrySource": "MOBILE_TERMINAL",
-         "posFeatures":{
-            "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
-            "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
-         }
-      },
-      "authorizationCharacteristicsIndicator": "E",
-      "hostPosConditionCode": "00"
-   },
-   "additionalDataCommon":{},
-   "networkDetails":{
-      "network":{
-         "network": "Visa"
-      },
-      "cardLevelResultCode": "",
-      "validationCode": "G245",
-      "transactionIdentifier": "012048004767904"
-   },
-   "cardDetails":{
-      "brand": "V",
-      "brandProductId": "?",
-      "issuerCountry": "UNK"
-   }
+	"gatewayResponse": {
+		"transactionType": "CHARGE",
+		"transactionState": "AUTHORIZED",
+		"transactionOrigin": "POS",
+		"transactionProcessingDetails": {
+			"transactionTimestamp": "2021-06-20T23:42:48Z",
+			"orderId": "RKOrdID-525133851837",
+			"apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+			"clientRequestId": "4345791",
+			"transactionId": "84356531338"
+		}
+	},
+	"source": {
+		"sourceType": "PaymentTrack",
+		"card": {
+			"expirationMonth": "12",
+			"expirationYear": "2025",
+			"bin": "401777",
+			"last4": "5556",
+			"scheme": "Visa"
+		}
+	},
+	"paymentReceipt": {
+		"approvedAmount": {
+			"total": "12.04",
+			"currency": "USD"
+		},
+		"merchantName": "Merchant Name",
+		"merchantAddress": "123 Peach Ave",
+		"merchantCity": "Atlanta",
+		"merchantStateOrProvince": "GA",
+		"merchantPostalCode": "12345",
+		"merchantCountry": "US",
+		"merchantURL": "https://www.somedomain.com",
+		"processorResponseDetails": {
+			"approvalStatus": "APPROVED",
+			"approvalCode": "OK5882",
+			"schemeTransactionId": "0225MCC625628",
+			"processor": "fiserv",
+			"responseCode": "000",
+			"responseMessage": "APPROVAL",
+			"hostResponseCode": "00",
+			"hostResponseMessage": "APPROVAL",
+			"localTimestamp": "2021-06-20T23:42:48Z",
+			"bankAssociationDetails": {
+				"associationResponseCode": "000",
+				"transactionTimestamp": "2021-06-20T23:42:48Z"
+			}
+		}
+	},
+	"transactionDetails": {
+		"captureFlag": true,
+		"merchantInvoiceNumber": "123456789012"
+	},
+	"transactionInteraction": {
+		"posEntryMode": "MAG_STRIPE",
+		"posConditionCode": "CARD_PRESENT",
+		"terminalTimestamp": "2022-03-10T01:37:13Z",
+		"additionalPosInformation": {
+			"stan": "001709",
+			"dataEntrySource": "MOBILE_TERMINAL",
+			"posFeatures": {
+				"pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+				"terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
+			}
+		}
+	},
+	"additionalDataCommon": {},
+	"networkDetails": {
+		"network": {
+			"network": "Visa"
+		},
+		"debitNetworkId": "060007"
+	}
 }
 ```
 
@@ -468,10 +452,11 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
+- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---
