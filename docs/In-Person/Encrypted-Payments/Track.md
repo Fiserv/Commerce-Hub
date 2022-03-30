@@ -22,6 +22,9 @@ Accept PINless and signature based Track payment cards.
 
 ### Request Variables
 
+<!-- theme: info -->
+> Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
+
 <!--
 type: tab
 titles: source,  encryptionData, JSON Example
@@ -215,6 +218,9 @@ type: tab
 Accept PIN based Track payment cards.
 
 ### Request Variables
+
+<!-- theme: info -->
+> Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
 
 <!--
 type: tab
@@ -458,6 +464,7 @@ type: tab
 <!-- type: tab-end -->
 
 ---
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
