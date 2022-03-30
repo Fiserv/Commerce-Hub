@@ -46,9 +46,9 @@ The below table identifies the required parameters in the `encryptionData` objec
 | -------- | -- | ------------ | ------------------ |---|
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
+| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
 
 <!--
 type: tab
@@ -278,9 +278,9 @@ The below table identifies the required parameters in the `encryptionData` objec
 | -------- | -- | ------------ | ------------------ |---|
 | `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
+| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
 
 <!--
 type: tab
