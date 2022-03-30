@@ -13,6 +13,9 @@ A third-party device encrypts the customer's payment source and sends the encryp
 
 ### Minimum Requirements
 
+<!-- theme: info -->
+> Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
+
 <!--
 type: tab
 titles: source, encryptionData, JSON Example
@@ -184,10 +187,12 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
-- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
+- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
+
 ---
