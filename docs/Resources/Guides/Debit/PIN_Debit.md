@@ -20,7 +20,7 @@ Build a Commerce Hub integration based on payment source to initiate a transacti
 <!-- type: card
 title: EMV Request
 description: EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
-link: docs/In-Person/Encrypted-Payments/EMV.md
+link: ?path=docs/In-Person/Encrypted-Payments/EMV.md
 -->
 
 <!-- type: card
