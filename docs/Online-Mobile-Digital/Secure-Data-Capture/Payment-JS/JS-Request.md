@@ -32,13 +32,14 @@ Authentication credentials are acquired at boarding and from the [security crede
 
 ```javascript
 
-const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
-const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
+const authorization = 'ACCESS_TOKEN';
+const apiKey = 'API_KEY'; 
 const formConfig = {
-       "merchantId": '100204342250',
-       "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
-       "symmetricEncryptionAlgorithm": 'AES_GCM'
-    }
+   "merchantId": 'MERCHANT_ID',
+   "publicKey": 'PUBLIC_KEY',
+   "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM'
+   };
+
 ```
 
 ---

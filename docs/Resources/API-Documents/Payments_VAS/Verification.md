@@ -18,6 +18,9 @@ The merchant can perform account verification transaction to confirm that the ca
 <!-- theme: warning -->
 > Some cards do not allows $0 authorization, in which case `cardVerificationAmount` in the `transactionDetails` object will be required.
 
+<!--theme:info-->
+> A verification request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
+
 <!--
 type: tab
 titles: source, card

@@ -66,11 +66,11 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 ```json
 "header": {
       "Content-Type": "application/json",
-      "Client-Request-Id": "1000000012",
-      "Api-Key": "api'Key",
-      "Timestamp": "Date().getTime()",
-      "Auth-Token-Type": "HMAC" ,
-      "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
+      "Client-Request-Id": "CLIENT_REQUEST_ID",
+      "Api-Key": "API_KEY",
+      "Timestamp": "TIMESTAMP",
+      "Auth-Token-Type": "AUTH_TOKEN_TYPE" ,
+      "Authorization": "ACCESS_TOKEN"
     },
 ```
 
@@ -116,11 +116,11 @@ A standard API call to execute a charge transaction might look like this:
 ```json
 {
   method: "POST",
-  url: "https://prod.api.fiservapps.com/ch/payments/v1/charges",
+  url: "https://test.api.fiservapps.com/ch/payments/v1/charges",
   headers: {
       "Content-Type": "application/json",
       "Client-Request-Id": "1000000012",
-      "Api-Key": "api'Key",
+      "Api-Key": "1951fe5b30e34cdaad758b8874140872",
       "Timestamp": "Date().getTime()",
       "Auth-Token-Type": "HMAC" ,
       "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
