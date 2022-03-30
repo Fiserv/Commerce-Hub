@@ -259,14 +259,14 @@ type: tab
 titles: source, encryptionData, pinBlock, JSON Example
 -->
 
-The below table identifies the parameters in the `source` object.
+The below table identifies the required parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentEMV* for EMV transactions |
 | `emvData` | *string* | N/A |  &#10004; | Contains a series of [Tag/Length/Value](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md) combination for chip card processing |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
+| `pinBlock` | *object* | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab
@@ -280,7 +280,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
+| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
 
 <!--
 type: tab
