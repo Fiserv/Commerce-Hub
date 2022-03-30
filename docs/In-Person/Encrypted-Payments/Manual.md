@@ -40,7 +40,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | |
 | `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | 64 | &#10004; | Needs to be passed if track data is encrypted |
+| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
 
 <!--
 type: tab
