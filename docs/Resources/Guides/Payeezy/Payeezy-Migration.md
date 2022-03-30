@@ -15,6 +15,12 @@ description
 
 Cards
 
+<!-- type: card
+title: Acount Verification
+description: Account Verification can be used to confirm that the customer account is valid for a transaction.
+link: ?path=docs/Resources/API-Documents/Payments_VAS/Verification.md
+-->
+
 ---
 
 ## See Also
