@@ -47,11 +47,11 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | |
-| `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
+| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
+| `encryptionTarget` | *string* | 256 |  &#10004; | Target can be TRACK_1, TRACK_2, or BOTH |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `keyId` | *string* | 64 | | Required if track data is encrypted |
 
 <!--
 type: tab
@@ -231,22 +231,24 @@ The below table identifies the parameters in the `source` object.
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentTrack* for Track transactions |
+| `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
+| `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
+| `pinBlock` | *object* | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab
 -->
 
-The below table identifies the required parameters in the `encryptionData` object.
+The below table identifies the parameters in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | |
-| `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | | Needs to be passed if track data is encrypted |
+| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
+| `encryptionTarget` | *string* | 256 |  &#10004; | Target can be TRACK_1, TRACK_2, or BOTH |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `keyId` | *string* | 64 | | Required if track data is encrypted |
 
 <!--
 type: tab
@@ -455,6 +457,8 @@ type: tab
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
+- [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
