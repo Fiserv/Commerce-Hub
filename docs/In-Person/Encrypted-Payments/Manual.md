@@ -13,6 +13,9 @@ A third-party device encrypts the customer's payment source and sends the encryp
 
 ### Minimum Requirements
 
+<!-- theme: info -->
+> Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
+
 <!--
 type: tab
 titles: source, encryptionData, JSON Example
