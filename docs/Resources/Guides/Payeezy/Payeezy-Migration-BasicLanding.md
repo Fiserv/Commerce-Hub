@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy, migra
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-> The Commerce Hub Payeezy Gateway Merchant Migration Playbook is a living document with formal, yet dynamic tools for assisting with Merchant Migrations. This playbook is to be used by a merchant moving from Payeezy Gateway to Commerce Hub to understand the functional differences in the systems as well as support them in the migration journey. As Commerce Hub continues to grow and new features are added, the playbook will continue to evolve and adapt to meet the changing needs of the Merchants it serves.  
+The Commerce Hub Payeezy Gateway Merchant Migration Playbook is a living document with formal, yet dynamic tools for assisting with Merchant Migrations. This playbook is to be used by a merchant moving from Payeezy Gateway to Commerce Hub to understand the functional differences in the systems as well as support them in the migration journey. As Commerce Hub continues to grow and new features are added, the playbook will continue to evolve and adapt to meet the changing needs of the Merchants it serves.  
 
 ---
 
