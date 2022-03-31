@@ -2,8 +2,9 @@
 tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ---
 # Virtual Terminal
+
 <!-- theme: danger -->
-> The following documentation is for Payeezy migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  :memo: **Note:** The following documentation is for Payeezy migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
 ## General
 
