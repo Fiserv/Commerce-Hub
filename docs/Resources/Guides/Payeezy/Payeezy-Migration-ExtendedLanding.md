@@ -18,26 +18,26 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- type: row -->
 <!-- type: card
 title: API Structure
-description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
+description: Differences in API
 [Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md)
 -->
 
 <!-- type: card
 title: Configuration
-description: For each feature, a summary of differences between Payeezy and Commerce Hub Core Components.
+description: Differences in Configuration.
 [Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md)
 -->
 
 <!-- type: card
 title: Virtual Terminal
-description: Element level mapping for request and response payloads, required fields and CTR creation.
+description: Differences in Virtual Terminal functionality.
 [Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
 -->
 
 <!-- type: card
 title: Reporting
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Differences in Reporting capabilities.
+[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
 -->
 <!-- type: row-end -->
 ---
