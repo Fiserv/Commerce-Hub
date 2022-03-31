@@ -14,7 +14,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 -->
 
 | PGW Transaction Type | Commerce Hub Endpoint | 
-| -------- | ------------- |
+| :--------: | :------------- |
 | 00 = Purchase | /payments/v1/charges with captureFlag = "true" | 
 |01 = Pre-Authorization  | /payments/v1/charges captureFlag = "false”  | 
 |03 = Forced Post   | NOT YET SUPPORTED  | 
