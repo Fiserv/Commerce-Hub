@@ -12,3 +12,11 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 - There is more configuration available to a merchant admin in Marketplace for CommerceHub that was previously available to this role via Payeezy Gateway. 
 - The ability to edit the terminal/MID address and create and edit users was available in Payeezy RPM Administration and cannot be performed in Marketplace <need to know where address edit self-serve and user creation and edit self-service is performed to do a comparative analysis of that system>. 
 - Finally, in Payeezy Gateway the Administrative pages could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time Marketplace is available in English language only.
+---
+  ## See Also
+
+- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
