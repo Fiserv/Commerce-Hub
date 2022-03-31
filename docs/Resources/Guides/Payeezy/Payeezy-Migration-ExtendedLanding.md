@@ -15,11 +15,11 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 
 ## Core Components
 
+<!-- type: row -->
 <!-- type: card
 title: API Structure
 description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
 [Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md)
-<!-- type: card-end -->
 -->
 
 <!-- type: card
@@ -39,10 +39,11 @@ title: Reporting
 description: Element level mapping for request and response payloads, required fields and CTR creation.
 [Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
+<!-- type: row-end -->
 ---
 
 ## Features
-
+<!-- type: row -->
 <!-- type: card
 title: Velocity Controls
 description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
@@ -66,7 +67,8 @@ title: Soft Descriptors
 description: Element level mapping for request and response payloads, required fields and CTR creation.
 [Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
-
+<!-- type: row-end -->
+<!-- type: row -->
 <!-- type: card
 title: Tokenization
 description: Element level mapping for request and response payloads, required fields and CTR creation.
@@ -90,12 +92,14 @@ title: Account Verification
 description: Element level mapping for request and response payloads, required fields and CTR creation.
 [Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
-
+<!-- type: row-end -->
+<!-- type: row -->
 <!-- type: card
 title: Quick Key
 description: Element level mapping for request and response payloads, required fields and CTR creation.
 [Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
+<!-- type: row-end -->
 ---
 
 ## Technical Specifications
