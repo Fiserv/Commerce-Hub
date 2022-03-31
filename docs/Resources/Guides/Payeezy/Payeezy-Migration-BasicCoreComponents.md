@@ -1,13 +1,12 @@
 ---
 tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ---
-
-# API Differences
-
+# Core Components
 <!-- theme: danger -->
 > The following documentation is for Payeezy migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
-## Transaction Types and Endpoints
+## API Differences
+### Transaction Types and Endpoints
 
 >In Payeezy Gateway there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
 <!--
@@ -27,9 +26,9 @@ type: tab
 |33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund   | 
 
 <!-- type: tab-end -->
----
 
-## Formats, Contents and Elements
+
+### Formats, Contents and Elements
 
 - In Payeezy Gateway three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is used. 
 - The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see <link to specific dev portal documentation on required elements here>.
@@ -39,6 +38,15 @@ type: tab
 - The bank Customer Transaction Record (CTR) is no longer available as a single element in the response, the independent values are available in separate elements (see Appendix A for more details).  Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
 
 ---
+
+## Configuration
+- Configuration was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available from Marketplace.  For more details please see <link to Marketplace documentation/training>.
+- Batch Settlement cutoff times can no longer be configured. 
+- A new API Password, HMAC Key and other API relation authorization and authentication was available self-serve in Payeezy RPM Administration and cannot be performed in Marketplace; <need to know where a merchant can do this self-service to a comparative analysis of that system can be performed>. 
+- There is more configuration available to a merchant admin in Marketplace for CommerceHub that was previously available to this role via Payeezy Gateway. 
+- The ability to edit the terminal/MID address and create and edit users was available in Payeezy RPM Administration and cannot be performed in Marketplace <need to know where address edit self-serve and user creation and edit self-service is performed to do a comparative analysis of that system>. 
+- Finally, in Payeezy Gateway the Administrative pages could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time Marketplace is available in English language only.
+
 
 ## See Also
 
