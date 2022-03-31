@@ -3,7 +3,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ---
 # Features
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  :warning: **Warning:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
 ## Velocity Controls
 <!-- type: row -->
@@ -121,23 +121,23 @@ description: No Change
 ---
 
 ## Tokenization
-Tokenization
+
 ---
 
 ## Encrypted Wallet
-Encrypted Wallet
+
 ---
 
 ## Decrypted Wallet
-Decrypted Wallet
+
 ---
 
 ## Account Verification
-Account Verification
+
 ---
 
 ## Quick Keys
-Quick Keys
+
 ---
 
 ## See Also
