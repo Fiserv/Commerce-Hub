@@ -18,7 +18,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- type: card
 title: API Structure
 description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md)
 -->
 
 <!-- type: card
