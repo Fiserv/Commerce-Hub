@@ -46,58 +46,58 @@ description: Differences in Reporting capabilities.
 <!-- type: row -->
 <!-- type: card
 title: Velocity Controls
-description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Velocity Contorls core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesVelocity.md)
 -->
 
 <!-- type: card
 title: AVS Filters
-description: For each feature, a summary of differences between Payeezy and Commerce Hub Core Components.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: AVS Filters core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAVS.md)
 -->
 
 <!-- type: card
 title: CVV2 Filters
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: CVV2 Filters core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2.md)
 -->
 
 <!-- type: card
 title: Soft Descriptors
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Soft Descriptors core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md)
 -->
 <!-- type: row-end -->
 <!-- type: row -->
 <!-- type: card
 title: Tokenization
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Tokenization core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesTokens.md)
 -->
 
 <!-- type: card
 title: Encrypted Wallet
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Encrypted Wallet core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesEncWallet.md)
 -->
 
 <!-- type: card
 title: Decrypted Wallet
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Decrypted Wallet core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesDecWallet.md)
 -->
 
 <!-- type: card
 title: Account Verification
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Account Verification core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md)
 -->
 <!-- type: row-end -->
 <!-- type: row -->
 <!-- type: card
 title: Quick Key
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Quick Key core differences
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md)
 -->
 <!-- type: row-end -->
 ---
