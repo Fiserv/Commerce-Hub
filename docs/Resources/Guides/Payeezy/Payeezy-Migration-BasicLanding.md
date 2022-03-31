@@ -14,7 +14,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ---
 
 ## Getting Started
-
+<!-- type: row -->
 <!-- type: card
 title: Core Components
 description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
@@ -32,6 +32,7 @@ title: Technical Specifications
 description: Element level mapping for request and response payloads, required fields and CTR creation.
 [Build](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-BasicTechnical.md)
 -->
+<!-- type: row-end -->
 ---
 
 ## See Also
