@@ -17,7 +17,7 @@ type: tab
 -->
 
 | PGW Transaction Type | In PGW | In CLX | Notes|
-| -------- | ------------- | ---------- |----------|
+| -------- | :-------------: | :----------: |----------|
 |Purchase |In POS Screen | In Virtual Terminal|
 |Pre-Authorization |In POS Screen | In Virtual Terminal|
 |Forced Post |In POS Screen | Not Available|
