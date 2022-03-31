@@ -121,23 +121,23 @@ description: No Change
 ---
 
 ## Tokenization
-
+Tokenization
 ---
 
 ## Encrypted Wallet
-
+Encrypted Wallet
 ---
 
 ## Decrypted Wallet
-
+Decrypted Wallet
 ---
 
 ## Account Verification
-
+Account Verification
 ---
 
 ## Quick Keys
-
+Quick Keys
 ---
 
 ## See Also
