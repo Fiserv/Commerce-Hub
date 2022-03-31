@@ -473,11 +473,52 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
-x-depends-on:
-  - models/common-objects.yaml
-  - models/transaction-inquiry-request.yaml
-  - models/transaction-inquiry-response.yaml
-  - external-examples/external-examples-transaction-inquiry.yaml
+  /payments-vas/v1/security/credentials:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Payment Security Endpoint
+      x-group-name: 'Security'
+      x-proxy-name: 'Credentials'
+      summary: Request security credentials (access token).
+      description: 'This is the credential generation call for authorizing subsequent financial transactions. A valid <code>accessToken</code> is required for web client requests.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityCredentialsRequest'
+            examples:
+              Credentials:
+                summary: Security credntials request
+                $ref: '#/components/examples/SecurityCredentialsRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityCredentialsResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
 components:
   parameters:
     OrderIdParam:
@@ -2921,6 +2962,61 @@ components:
             (AOV), example: '275.25'}
         percentSalesReturned: {maximum: 1, minimum: 0, type: number, description: '%
             of sales returned (by Amount)', example: '0.3'}
+    SecurityCredentialsRequest:
+      x-model-version: 1.0
+      properties:
+        publicKeyRequired:
+          type: boolean
+          description: 'If the signedCert is expired or invalid then merchant would send a request.'
+          example: 'true'
+        accessTokenRequired:
+          type: boolean
+          description: 'If the access token is expired then merchant would request for a new token.'
+          example: 'true'
+        accessTokenTimeToLive:
+          type: string
+          description: 'Time to live (expiration time) in milliseconds. 1800000 ms, max 30 minutes.'
+          example: '889'
+        responseRedirectURL:
+          type: string
+          description: 'Response URL redirect.'
+          example: 'https://www.somedomain.com'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        deviceFingerprint:
+          type: array
+          items:
+           $ref: '#/components/schemas/DeviceFingerPrint'
+        amount:
+          $ref: '#/components/schemas/Amount'
+        amountComponents:
+          $ref: '#/components/schemas/AmountComponents'
+    SecurityCredentialsResponse:
+      x-model-version: 1.0
+      properties:
+        publicKey:
+          type: string 
+          description: 'Base64 encoded public key.'
+        accessToken:
+          type: string
+          description: 'Access token created and sent back.'
+        sessionId:
+          type: string
+          description: ''
+        accessTokenIssuedTime:
+          type: string
+          format: date-time
+          description: 'Token issue time in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2016-04-16T16:06:05Z'
+        accessTokenTimeToLive:
+          type: string
+          description: 'Access token expiry.'
+        symmetricEncryptionAlgorithm:
+          type: string
+          description: 'AES 256/PKCS with padding.'
+        asymmetricEncryptionAlgorithm:
+          type: string
+          description: 'RSA/ECB/PKCS1Padding.'
   examples:
     ApplePayRequest:
       value:
@@ -4790,3 +4886,10 @@ components:
             merchantTransactionId: 'RKTransID-834788206'
           transactionInteraction:
             eciIndicator: 'SECURE_ECOM'
+
+    SecurityCredentialsRequest:
+      value:
+        publicKeyRequired: true
+        accessTokenRequired: true
+        accessTokenTimeToLive: '889'
+        responseRedirectURL: https://www.somedomain.com
