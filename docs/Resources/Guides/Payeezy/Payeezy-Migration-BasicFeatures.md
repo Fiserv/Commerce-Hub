@@ -35,7 +35,7 @@ description: A canned report for all transactions declined by any type of Fraud 
 ## AVS Filters
 <!-- type: row -->
 <!-- type: card
-title: **API**
+title: API
 description: 
 In Payeezy Gateway AVS Filters were applied to Pre-Auth and Purchase transactions, in Commerce Hub they are applied to these and Tagged Refunds.  The AVS Response Codes themselves have changed, but the application of filters remains the same.
 
@@ -65,7 +65,7 @@ description: A canned report for all transactions declined by any type of Fraud 
 ## CVV2 Filters
 <!-- type: row -->
 <!-- type: card
-title: **API**
+title: API
 description: 
 No change in Filters.  The CVV Response Codes themselves have changed, but the application of filters remains the same.
 
@@ -96,7 +96,7 @@ description: A canned report for all transactions declined by any type of Fraud 
 ## Soft Descriptors
 <!-- type: row -->
 <!-- type: card
-title: **API**
+title: API
 description: 
 One element (mvv_maid) is not available in Commerce Hub, no functional impact.
 
@@ -119,16 +119,27 @@ description: No Change
 -->
 <!-- type: row-end -->
 ---
+
 ## Tokenization
+
 ---
+
 ## Encrypted Wallet
+
 ---
+
 ## Decrypted Wallet
+
 ---
+
 ## Account Verification
+
 ---
+
 ## Quick Keys
+
 ---
+
 ## See Also
 
 - [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
