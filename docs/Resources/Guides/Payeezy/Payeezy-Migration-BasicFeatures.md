@@ -5,14 +5,11 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 >  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
-a 
-
 ## Velocity Controls
 <!-- type: row -->
 <!-- type: card
 title: **API**
-description: 
-In Commerce Hub, the Velocity controls are not applied to Tagged Pre-Auth Completion/Capture (Transaction Type 32); whereas they were applied to this transaction type in Payeezy.
+description: In Commerce Hub, the Velocity controls are not applied to Tagged Pre-Auth Completion/Capture (Transaction Type 32); whereas they were applied to this transaction type in Payeezy.
 
 In Commerce Hub, the Velocity controls are applied to Tagged Refunds (Transaction Type 34); whereas they were not applied to this transaiction type in Payeezy.
 
@@ -20,8 +17,7 @@ The Cumulative Amount Velocity Controls are only checked against the totals of p
 -->
 <!-- type: card
 title: Configuration
-description: 
-Configuration not available in Marketplace to apply Cumulative Amount controls to “All” transactions (vs. approved).
+description: Configuration not available in Marketplace to apply Cumulative Amount controls to “All” transactions (vs. approved).
 
 For $ based controls, Marketplace/Commerce Hub requires a currency to be selected for each control.  In Payeezy the Currency was set at the terminal/outlet MID (vs. each control).
 -->
