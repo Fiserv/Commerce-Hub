@@ -107,20 +107,20 @@ description: Quick Key core differences
 <!-- type: row -->
 <!-- type: card
 title: Element Level Mapping
-description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: API Spec Mapping.
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md)
 -->
 
 <!-- type: card
 title: Required Fields
-description: For each feature, a summary of differences between Payeezy and Commerce Hub Core Components.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: Fields Required in a request by Commerce Hub for each transaction.
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md)
 -->
 
 <!-- type: card
 title: CTR Creation
-description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+description: CTR element creation specs.
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md)
 -->
 <!-- type: row-end -->
 ---
