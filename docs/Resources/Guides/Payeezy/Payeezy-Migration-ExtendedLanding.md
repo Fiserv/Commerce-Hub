@@ -19,25 +19,25 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- type: card
 title: API Structure
 description: Differences in API
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md)
 -->
 
 <!-- type: card
 title: Configuration
 description: Differences in Configuration.
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md)
 -->
 
 <!-- type: card
 title: Virtual Terminal
 description: Differences in Virtual Terminal functionality.
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
 -->
 
 <!-- type: card
 title: Reporting
 description: Differences in Reporting capabilities.
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
 -->
 <!-- type: row-end -->
 ---
@@ -47,57 +47,57 @@ description: Differences in Reporting capabilities.
 <!-- type: card
 title: Velocity Controls
 description: Velocity Contorls core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesVelocity.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesVelocity.md)
 -->
 
 <!-- type: card
 title: AVS Filters
 description: AVS Filters core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAVS.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAVS.md)
 -->
 
 <!-- type: card
 title: CVV2 Filters
 description: CVV2 Filters core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2.md)
 -->
 
 <!-- type: card
 title: Soft Descriptors
 description: Soft Descriptors core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md)
 -->
 <!-- type: row-end -->
 <!-- type: row -->
 <!-- type: card
 title: Tokenization
 description: Tokenization core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesTokens.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesTokens.md)
 -->
 
 <!-- type: card
 title: Encrypted Wallet
 description: Encrypted Wallet core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesEncWallet.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesEncWallet.md)
 -->
 
 <!-- type: card
 title: Decrypted Wallet
 description: Decrypted Wallet core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesDecWallet.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesDecWallet.md)
 -->
 
 <!-- type: card
 title: Account Verification
 description: Account Verification core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md)
 -->
 <!-- type: row-end -->
 <!-- type: row -->
 <!-- type: card
 title: Quick Key
 description: Quick Key core differences
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md)
 -->
 <!-- type: row-end -->
 ---
@@ -108,19 +108,19 @@ description: Quick Key core differences
 <!-- type: card
 title: Element Level Mapping
 description: API Spec Mapping.
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md)
 -->
 
 <!-- type: card
 title: Required Fields
 description: Fields Required in a request by Commerce Hub for each transaction.
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md)
 -->
 
 <!-- type: card
 title: CTR Creation
 description: CTR element creation specs.
-[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md)
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md)
 -->
 <!-- type: row-end -->
 ---
