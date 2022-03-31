@@ -30,7 +30,7 @@ description: For each feature, a summary of differences between Payeezy and Comm
 <!-- type: card
 title: Virtual Terminal
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
 -->
 
 <!-- type: card
