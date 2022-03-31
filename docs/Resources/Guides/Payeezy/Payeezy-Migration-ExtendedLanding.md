@@ -104,6 +104,7 @@ description: Element level mapping for request and response payloads, required f
 
 ## Technical Specifications
 
+<!-- type: row -->
 <!-- type: card
 title: Element Level Mapping
 description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
@@ -121,6 +122,7 @@ title: CTR Creation
 description: Element level mapping for request and response payloads, required fields and CTR creation.
 [Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
+<!-- type: row-end -->
 ---
 
 ## See Also
