@@ -24,7 +24,7 @@ description: A guide to understanding the differences in the API Structure, Conf
 <!-- type: card
 title: Configuration
 description: For each feature, a summary of differences between Payeezy and Commerce Hub Core Components.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md)
 -->
 
 <!-- type: card
