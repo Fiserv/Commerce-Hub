@@ -19,25 +19,25 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- type: card
 title: API Structure
 description: Differences in API
-[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md)
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md)
 -->
 
 <!-- type: card
 title: Configuration
 description: Differences in Configuration.
-[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md)
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md)
 -->
 
 <!-- type: card
 title: Virtual Terminal
 description: Differences in Virtual Terminal functionality.
-[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
 -->
 
 <!-- type: card
 title: Reporting
 description: Differences in Reporting capabilities.
-[Learn More] (?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
+[Learn More](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
 -->
 <!-- type: row-end -->
 ---
@@ -47,57 +47,57 @@ description: Differences in Reporting capabilities.
 <!-- type: card
 title: Velocity Controls
 description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: AVS Filters
 description: For each feature, a summary of differences between Payeezy and Commerce Hub Core Components.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: CVV2 Filters
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: Soft Descriptors
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 <!-- type: row-end -->
 <!-- type: row -->
 <!-- type: card
 title: Tokenization
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: Encrypted Wallet
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: Decrypted Wallet
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: Account Verification
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 <!-- type: row-end -->
 <!-- type: row -->
 <!-- type: card
 title: Quick Key
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 <!-- type: row-end -->
 ---
@@ -108,19 +108,19 @@ description: Element level mapping for request and response payloads, required f
 <!-- type: card
 title: Element Level Mapping
 description: A guide to understanding the differences in the API Structure, Configuration of Account, Virtual Terminal functionality and Reporting capabilities as you migrate from Payeezy to Commerce Hub.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: Required Fields
 description: For each feature, a summary of differences between Payeezy and Commerce Hub Core Components.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 
 <!-- type: card
 title: CTR Creation
 description: Element level mapping for request and response payloads, required fields and CTR creation.
-[Learn More] (?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+[Learn More](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 -->
 <!-- type: row-end -->
 ---
