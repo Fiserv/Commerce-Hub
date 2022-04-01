@@ -1,8 +1,8 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization, secure-data-capture, iframe]
 ---
 
-# Create an iFrame JS Request
+# Create an iFrame Request
 
 ## Step 1: Authentication
 
