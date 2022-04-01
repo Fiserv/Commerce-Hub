@@ -15,24 +15,43 @@ Login to the Developer Studio and access the Developer Dashboard.
 
 ### Step 2: Add a new API Key
 
-Click Add API Key. Select a Product Name from the dropdown. Select the Merchant ID from the dropdown. Create a API Key Name. Select the API Key Type from the following list and click Create.
+Click Add API Key
 
-- **Sandbox:** Used to certify you API environment
+### Step 3: Select Product
+
+Select Commerce Hub from the dropdown
+
+### Step 4: Select Merchant Account
+
+Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) and associated Merchant ID required for integration from the dropdown
+
+### Step 5: Create an API Name
+
+Create a API Key Name to identifiy the project
+
+### Step 6: Select Environment
+
+Select the API Key Type based on the enviroment;
+
+- **Sandbox:** Used to test you API application
 - **End-To-End:** Used to certify your API application
-- **Production:** Used to obtain production API credentials 
+- **Production:** Used to obtain production API credentials
 
-Select features from the following:
+### Step 7: Select Features
+
+Select the features to be integrated from the following;
 
 - Payments
 - Payments: Value Added Services
-- Data as a Service: Enhanced Data 
+- Data as a Service: Enhanced Data
 - Data as a Service: Return Optimizer
 
+### Step 8: Create Keys
 
-![API Key](../../../../assets/images/APIKEY.PNG)
+Click Create to obtain the API Key/Secret
 
-<!-- theme: info -->
-> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret.
+<!-- theme: warning -->
+> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Dev Studio in the future.
 
 ---
 
@@ -43,4 +62,6 @@ Select features from the following:
 - [Account Management](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md)
 - [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
 - [Transaction Verification](?path=docs/Resources/Guides/Dev-Studio/Transaction-Verification.md)
+- [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+
 ---

@@ -16,33 +16,38 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: info -->
->Commerce Hub highly recommends testing against our sandbox environment before using our production environment.
+> Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
 
 ### Sandbox
 
 <!--theme: success -->
-> https://test.api.fiservapps.com/ch/{resource}
+> https://cert.api.fiservapps.com/ch/{resource}
 
-- Test APIs before you deploy to production
+- Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Test APIs before certifying for production
 - View the response format of a specific API
 - Experiment, develop code and fix bugs
 - Send and cancel "test" transactions
+
+### End to End
+
+<!--theme: success -->
+> https://cert.api.fiservapps.com/ch/{resource}
+
+- Uses End to End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Certify before deploying to production
+- Run test scripts based on the API's requirements
+- Conduct a complete beta test of your application
 
 ### Production
 
 <!--theme: success -->
 > https://prod.api.fiservapps.com/ch/{resource}
 
+- Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
 - Send and cancel "live" transactions
 - Access Value Added Services
-- Conduct a complete beta test of your application
 - Run reports
-
-<!--
-## QA Sandbox
-Description goes here
-https://qa.api.fiservapps.com/ch/{resource}
--->
 
 ---
 
@@ -116,7 +121,7 @@ A standard API call to execute a charge transaction might look like this:
 ```json
 {
   method: "POST",
-  url: "https://test.api.fiservapps.com/ch/payments/v1/charges",
+  url: "https://cert.api.fiservapps.com/ch/payments/v1/charges",
   headers: {
       "Content-Type": "application/json",
       "Client-Request-Id": "1000000012",

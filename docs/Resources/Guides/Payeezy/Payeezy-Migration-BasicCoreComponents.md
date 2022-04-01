@@ -3,19 +3,18 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ---
 # Core Components
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  :warning: **Warning:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
 ## API Differences
 ### Transaction Types and Endpoints
 
 >In Payeezy Gateway there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
-<!--
-type: tab
+<!--type: tab
 
 -->
 
 | PGW Transaction Type | Commerce Hub Endpoint | 
-| -------- | ------------- |
+| :--------: | :------------- |
 | 00 = Purchase | /payments/v1/charges with captureFlag = "true" | 
 |01 = Pre-Authorization  | /payments/v1/charges captureFlag = "false”  | 
 |03 = Forced Post   | NOT YET SUPPORTED  | 
@@ -57,8 +56,7 @@ type: tab
 - In Payeezy Gateway the Virtual Terminal functionality allows for Forced Post and Open Voids to be processed via Virtual Terminal; in the Client Line Enterprise solution those transaction types are no longer supported via Virtual Terminal.  Additionally, the ability to create a copy of a prior Pre-Auth or Purchase via a “New Transaction” is no longer available.
 - Finally, in Payeezy Gateway the Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time Client Line Enterprise Virtual terminal is available in English language only.
 
-<!--
-type: tab
+<!--type: tab
 
 -->
 

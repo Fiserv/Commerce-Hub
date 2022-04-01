@@ -3,23 +3,19 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ---
 # Features
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  :warning: **Warning:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
 ## Velocity Controls
 <!-- type: row -->
 <!-- type: card
-title: **API**
-description: 
-In Commerce Hub, the Velocity controls are not applied to Tagged Pre-Auth Completion/Capture (Transaction Type 32); whereas they were applied to this transaction type in Payeezy.
-
+title: API
+description: In Commerce Hub, the Velocity controls are not applied to Tagged Pre-Auth Completion/Capture (Transaction Type 32); whereas they were applied to this transaction type in Payeezy.
 In Commerce Hub, the Velocity controls are applied to Tagged Refunds (Transaction Type 34); whereas they were not applied to this transaiction type in Payeezy.
-
 The Cumulative Amount Velocity Controls are only checked against the totals of previously approved transactions.
 -->
 <!-- type: card
 title: Configuration
-description: 
-Configuration not available in Marketplace to apply Cumulative Amount controls to “All” transactions (vs. approved).
+description: Configuration not available in Marketplace to apply Cumulative Amount controls to “All” transactions (vs. approved).
 
 For $ based controls, Marketplace/Commerce Hub requires a currency to be selected for each control.  In Payeezy the Currency was set at the terminal/outlet MID (vs. each control).
 -->
@@ -39,7 +35,7 @@ description: A canned report for all transactions declined by any type of Fraud 
 ## AVS Filters
 <!-- type: row -->
 <!-- type: card
-title: **API**
+title: API
 description: 
 In Payeezy Gateway AVS Filters were applied to Pre-Auth and Purchase transactions, in Commerce Hub they are applied to these and Tagged Refunds.  The AVS Response Codes themselves have changed, but the application of filters remains the same.
 
@@ -69,7 +65,7 @@ description: A canned report for all transactions declined by any type of Fraud 
 ## CVV2 Filters
 <!-- type: row -->
 <!-- type: card
-title: **API**
+title: API
 description: 
 No change in Filters.  The CVV Response Codes themselves have changed, but the application of filters remains the same.
 
@@ -100,7 +96,7 @@ description: A canned report for all transactions declined by any type of Fraud 
 ## Soft Descriptors
 <!-- type: row -->
 <!-- type: card
-title: **API**
+title: API
 description: 
 One element (mvv_maid) is not available in Commerce Hub, no functional impact.
 
@@ -123,16 +119,27 @@ description: No Change
 -->
 <!-- type: row-end -->
 ---
+
 ## Tokenization
+
 ---
+
 ## Encrypted Wallet
+
 ---
+
 ## Decrypted Wallet
+
 ---
+
 ## Account Verification
+
 ---
+
 ## Quick Keys
+
 ---
+
 ## See Also
 
 - [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
