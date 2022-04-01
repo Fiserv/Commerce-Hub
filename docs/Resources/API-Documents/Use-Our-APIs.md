@@ -21,7 +21,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 ### Sandbox
 
 <!--theme: success -->
-> https://test.api.fiservapps.com/ch/{resource}
+> https://cert.api.fiservapps.com/ch/{resource}
 
 - Test APIs before you deploy to production
 - View the response format of a specific API
@@ -37,12 +37,6 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Access Value Added Services
 - Conduct a complete beta test of your application
 - Run reports
-
-<!--
-## QA Sandbox
-Description goes here
-https://qa.api.fiservapps.com/ch/{resource}
--->
 
 ---
 
