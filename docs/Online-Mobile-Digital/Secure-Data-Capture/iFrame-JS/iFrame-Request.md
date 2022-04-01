@@ -1,8 +1,8 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, tokenization, secure-data-capture, iframe]
 ---
 
-# Create an iFrame JS Request
+# Create an iFrame Request
 
 ## Step 1: Authentication
 
@@ -21,7 +21,7 @@ The iFrame JS script tag is required in the website by downloading or including 
 
 ```php
 
-<script id="commercehub" src="https://api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
 
 ```
 
@@ -92,7 +92,7 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-form-div"></div>

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form,  js, javascript, secure-data-capture, tokenization]
 ---
 
 # Create a JavaScript Request
@@ -20,7 +20,7 @@ The JS script tag is required in the website by downloading or including the fol
 
 ```php
 
-<script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="https://prod.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
 
 ```
 
@@ -98,7 +98,7 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
