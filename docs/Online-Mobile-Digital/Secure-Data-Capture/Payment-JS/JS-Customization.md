@@ -14,65 +14,44 @@ Component/Hosted Fields is available for the English (United States/US) language
 The following example shows all the text labels that can be overridden for a particular language/locale:
 
 ``` php
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
-    </head>
-    <body>
-        <div id="payment-saq-a-ep-form-div"></div>
-        <script>
-            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
-            const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
-            const formConfig = {
-                "merchantId": '100204342250',
-                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
-                "symmetricEncryptionAlgorithm": 'AES_GCM'
-                "languages": [
-                    {
-                        "language": "en-US",
-                        "cardNumber": {
-                            "label": "[MO] Card Number",
-                            "errors": {
-                                "required": "[MO] Enter a valid card number.",
-                                "mask": "[MO] Your card number is incomplete.",
-                                "invalid": "[MO] Enter a valid card number."
-                            }
-                        },
-                        "cardHolder": {
-                            "label": "[MO] Name on Card",
-                            "errors": {
-                                "required": "[MO] Enter a valid name."
-                            }
-                        },
-                        "cardSecurityCode": {
-                            "label": "[MO] CVC",
-                            "errors": {
-                                "required": "[MO] Enter a valid CVC.",
-                                "mask": "[MO] Your CVC is incomplete."
-                            }
-                        },
-                        "cardExpiryDate": {
-                            "label": "[MO] Expiry Date",
-                            "errors": {
-                                "before": "[MO] Date must be in the future.",
-                                "invalid": "[MO] Enter a valid date.",
-                                "required": "[MO] Enter a valid date."
-                            }
-                        },
-                        "payButton": {
-                            "label": "[MO] PAY",
-                            "loading": "[MO] PROCESSING"
-                        }
-                    }
-                ]
-            };
-            const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
-            from.loadPaymentForm("payment-saq-a-ep-form-div");
-        </script>
-    </body>
-</html>
+    "languages": [
+        {
+            "language": "en-US",
+            "cardNumber": {
+                "label": "[MO] Card Number",
+                "errors": {
+                    "required": "[MO] Enter a valid card number.",
+                    "mask": "[MO] Your card number is incomplete.",
+                    "invalid": "[MO] Enter a valid card number."
+                }
+            },
+            "cardHolder": {
+                "label": "[MO] Name on Card",
+                "errors": {
+                    "required": "[MO] Enter a valid name."
+                }
+            },
+            "cardSecurityCode": {
+                "label": "[MO] CVC",
+                "errors": {
+                    "required": "[MO] Enter a valid CVC.",
+                    "mask": "[MO] Your CVC is incomplete."
+                }
+            },
+            "cardExpiryDate": {
+                "label": "[MO] Expiry Date",
+                "errors": {
+                    "before": "[MO] Date must be in the future.",
+                    "invalid": "[MO] Enter a valid date.",
+                    "required": "[MO] Enter a valid date."
+                }
+            },
+            "payButton": {
+                "label": "[MO] PAY",
+                "loading": "[MO] PROCESSING"
+            }
+        }
+    ]
 
 ```
 
@@ -102,46 +81,21 @@ The following elements can be overridden:
 - **loadingContainer:** CSS class responsible for adding style to the HTML div's which contains the spinner.
 
 ``` php
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="payment-saq-a-ep-form-div"></div>
-        <script>
-            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
-            const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
-            const formConfig = {
-                "merchantId": '100204342250',
-                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
-                "symmetricEncryptionAlgorithm": 'AES_GCM'                
-            };
-            const classList = {
-                "form": ["form-group"],
-                "input": ["form-control"],
-                "label": ["sr-only"],
-                "button": ["btn", "btn-primary"],
-                "container": ["container"],
-                "span": ["sr-only"],
-                "divError": ["form-group", "has-error"],
-                "inputWithValue": ["form-control"],
-                "labelError": ["sr-only", "has-error"],
-                "materialTextfield": ["container-fluid"],
-                "inputError": ["form-control", "has-error"],
-                "spinner": ["sr-only"],
-                "loadingContainer": ["container"]
-            };
-            const fiservSaqAEp = new commercehub.FiservSaqAEp(formConfig, {
-                useDefaultCSS: true,
-                classList: classList
-            });
-            fiservSaqAEp.loadPaymentForm("payment-saq-a-ep-form-div");
-        </script>
-    </body>
-</html>
+    const classList = {
+        "form": ["form-group"],
+        "input": ["form-control"],
+        "label": ["sr-only"],
+        "button": ["btn", "btn-primary"],
+        "container": ["container"],
+        "span": ["sr-only"],
+        "divError": ["form-group", "has-error"],
+        "inputWithValue": ["form-control"],
+        "labelError": ["sr-only", "has-error"],
+        "materialTextfield": ["container-fluid"],
+        "inputError": ["form-control", "has-error"],
+        "spinner": ["sr-only"],
+        "loadingContainer": ["container"]
+    };
 
 ```
 ---
