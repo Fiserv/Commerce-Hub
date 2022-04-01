@@ -20,7 +20,7 @@ The JS script tag is required in the website by downloading or including the fol
 
 ```php
 
-<script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="https://prod.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
 
 ```
 
