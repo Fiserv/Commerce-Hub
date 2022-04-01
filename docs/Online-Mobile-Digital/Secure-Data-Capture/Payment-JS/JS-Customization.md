@@ -13,45 +13,43 @@ Component/Hosted Fields is available for the English (United States/US) language
 
 The following example shows all the text labels that can be overridden for a particular language/locale:
 
-``` php
-    "languages": [
-        {
-            "language": "en-US",
-            "cardNumber": {
-                "label": "[MO] Card Number",
-                "errors": {
-                    "required": "[MO] Enter a valid card number.",
-                    "mask": "[MO] Your card number is incomplete.",
-                    "invalid": "[MO] Enter a valid card number."
-                }
-            },
-            "cardHolder": {
-                "label": "[MO] Name on Card",
-                "errors": {
-                    "required": "[MO] Enter a valid name."
-                }
-            },
-            "cardSecurityCode": {
-                "label": "[MO] CVC",
-                "errors": {
-                    "required": "[MO] Enter a valid CVC.",
-                    "mask": "[MO] Your CVC is incomplete."
-                }
-            },
-            "cardExpiryDate": {
-                "label": "[MO] Expiry Date",
-                "errors": {
-                    "before": "[MO] Date must be in the future.",
-                    "invalid": "[MO] Enter a valid date.",
-                    "required": "[MO] Enter a valid date."
-                }
-            },
-            "payButton": {
-                "label": "[MO] PAY",
-                "loading": "[MO] PROCESSING"
-            }
+``` java
+    "languages": [{
+      "language": "en-US",
+      "cardNumber": {
+        "label": "[MO] Card Number",
+        "errors": {
+          "required": "[MO] Enter a valid card number.",
+          "mask": "[MO] Your card number is incomplete.",
+          "invalid": "[MO] Enter a valid card number."
         }
-    ]
+      },
+      "cardHolder": {
+        "label": "[MO] Name on Card",
+        "errors": {
+          "required": "[MO] Enter a valid name."
+        }
+      },
+      "cardSecurityCode": {
+        "label": "[MO] CVC",
+        "errors": {
+          "required": "[MO] Enter a valid CVC.",
+          "mask": "[MO] Your CVC is incomplete."
+        }
+      },
+      "cardExpiryDate": {
+        "label": "[MO] Expiry Date",
+        "errors": {
+          "before": "[MO] Date must be in the future.",
+          "invalid": "[MO] Enter a valid date.",
+          "required": "[MO] Enter a valid date."
+        }
+      },
+      "payButton": {
+        "label": "[MO] PAY",
+        "loading": "[MO] PROCESSING"
+      }
+    }]
 
 ```
 
@@ -80,21 +78,21 @@ The following elements can be overridden:
 - **spinner:** CSS class responsible for styling the "spinner" HTML div.
 - **loadingContainer:** CSS class responsible for adding style to the HTML div's which contains the spinner.
 
-``` php
+``` java
     const classList = {
-        "form": ["form-group"],
-        "input": ["form-control"],
-        "label": ["sr-only"],
-        "button": ["btn", "btn-primary"],
-        "container": ["container"],
-        "span": ["sr-only"],
-        "divError": ["form-group", "has-error"],
-        "inputWithValue": ["form-control"],
-        "labelError": ["sr-only", "has-error"],
-        "materialTextfield": ["container-fluid"],
-        "inputError": ["form-control", "has-error"],
-        "spinner": ["sr-only"],
-        "loadingContainer": ["container"]
+      "form": ["form-group"],
+      "input": ["form-control"],
+      "label": ["sr-only"],
+      "button": ["btn", "btn-primary"],
+      "container": ["container"],
+      "span": ["sr-only"],
+      "divError": ["form-group", "has-error"],
+      "inputWithValue": ["form-control"],
+      "labelError": ["sr-only", "has-error"],
+      "materialTextfield": ["container-fluid"],
+      "inputError": ["form-control", "has-error"],
+      "spinner": ["sr-only"],
+      "loadingContainer": ["container"]
     };
 
 ```
