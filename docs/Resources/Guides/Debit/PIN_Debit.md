@@ -2,7 +2,7 @@
 tags: [carat, commerce-hub, enterprise, card-present, in-person, debit, pin-debit, emv-debit, track-debit, pin]
 ---
 
-# PIN Debit
+# PIN Debit 
 
 A PIN [Debit](?path=docs/Resources/FAQs-Glossary/Glossary.md#debit) transaction is an electronic funds transfer from a customer's bank to a merchant's bank when the customer presents a bank-issued debit card and enters the [PIN](?path=docs/Resources/FAQs-Glossary/Glossary.md#pin) at the point of sale. Commerce Hub supports PIN debit transactions for charges, refunds and cancels.
 
