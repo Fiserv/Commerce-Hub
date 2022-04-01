@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization, secure-data-capture, iframe]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, tokenization, secure-data-capture, iframe]
 ---
 
 # iFrame Integration
