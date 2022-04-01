@@ -1,6 +1,7 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization, secure-data-capture, iframe]
 ---
+
 # iFrame Customization
 
 Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [language](#languages), and the [theme and font](#theme-and-font).
@@ -9,10 +10,7 @@ Commerce Hub supports customization of iFrame elements to match the merchant's w
 
 ## Languages
 
-iFrame is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load.
-
-The merchant can also provide their own translations by including a languages attribute as part of your form configuration object creation. 
-
+iFrame is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load. You can also provide your own translations by including a languages attribute as part of your form configuration object creation.
 
 The following example shows all the text labels that can be overridden for a particular language/locale:
 
