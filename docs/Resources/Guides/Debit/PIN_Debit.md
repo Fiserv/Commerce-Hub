@@ -43,7 +43,7 @@ link:
 
 Once your integration can accept payments, enhance your integration by adding more PIN Debit features and functionality.
 
-<!-- theme: warning -->
+<!-- theme: danger -->
 > We are enhancing Commerce Hub to include additional PIN debit support and the documents related to the features will be released soon.
 
 <!-- type: row -->
