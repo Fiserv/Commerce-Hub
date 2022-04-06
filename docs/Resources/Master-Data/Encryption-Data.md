@@ -49,21 +49,23 @@ JSON string format for `encryptionData`:
 
 ### Encryption Type
 
+Encryption type is the method used to encrypt payment data before sending it to Commerce Hub.
+
 | Valid Values | Details |
 | ----- | ----- | 
-| *RSA* | Default | |
-| *VERIFONE* | |
+| *RSA* | RSA Software Encryption (public/private keys) |
+| *VERIFONE* | VeriFone Hardware Encryption – Currently not supported |
 | *VERIFONE_VDR* | |
-| *TDES_DUKPT* | |
-| *ON_GUARD* | |
+| *TDES_DUKPT* | Triple DES Encryption - Symmetric-key block cipher, which applies the DES cipher algorithm three times to each data block. |
+| *ON_GUARD* | Ingenico OnGuard Encryption – Format preserving option that relies on symmetric encryption keys used to encrypt and decrypt the cardholder data using 3DES encryption standard. |
 | *FPE* | |
-| *AES_DUKPT* | |
+| *AES_DUKPT* | Advanced Encryption Standard – Format preserving option that relies on symmetric encryption keys. AES algorithm uses cryptographic keys of 128/256 bits to encrypt and decrypt data. |
 
 ### Device Type
 
 | Valid Values | Details |
 | ----- | ----- | 
-| *INGENICO* | Default |
+| *INGENICO* | Default | 
 | *RPXXX* | |
 | *CLOVER* | |
 | *NCR* | |
