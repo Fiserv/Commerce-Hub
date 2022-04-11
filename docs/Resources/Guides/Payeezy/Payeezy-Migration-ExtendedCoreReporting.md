@@ -20,10 +20,10 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ## Data Available in Reports UI
 
 In General, many more data elements are available for reporting in the new Client Line Enterprise solution than were previously available in Payeezy Gateway reporting.  The following exceptions exist where the data was available in Payeezy Reports, but is not available or is conditionally available in Client Line Enterprise:
-> - Network (formerly known as Card Brand)
-> - Transaction Type is available, but will be displayed as “unknown” in some cases
-> - Approval Status is available, but “unknown” when the response was an error
-> - User Id, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in Client Line reporting
+- Network (formerly known as Card Brand)
+- Transaction Type is available, but will be displayed as “unknown” in some cases
+- Approval Status is available, but “unknown” when the response was an error
+- User Id, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in Client Line reporting
 
 ## Reporting APIs
 
