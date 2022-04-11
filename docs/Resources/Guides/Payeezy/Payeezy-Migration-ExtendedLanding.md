@@ -1,21 +1,22 @@
 ---
+
 tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+
 ---
 
 # Payeezy Migration
 
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-## Overview
-
->The Commerce Hub Payeezy Gateway Merchant Migration Playbook is a living document with formal, yet dynamic tools for assisting with Merchant Migrations. This playbook is to be used by a merchant moving from Payeezy Gateway to Commerce Hub to understand the functional differences in the systems as well as support them in the migration journey. As Commerce Hub continues to grow and new features are added, the playbook will continue to evolve and adapt to meet the changing needs of the Merchants it serves.  
+The Commerce Hub Payeezy Gateway Merchant Migration Playbook is a living document with formal, yet dynamic tools for assisting with Merchant Migrations. This playbook is to be used by a merchant moving from Payeezy Gateway to Commerce Hub to understand the functional differences in the systems as well as support them in the migration journey. As Commerce Hub continues to grow and new features are added, the playbook will continue to evolve and adapt to meet the changing needs of the Merchants it serves.  
 
 ---
 
 ## Core Components
 
 <!-- type: row -->
+
 <!-- type: card
 title: API Structure
 description: Differences in API
@@ -39,11 +40,15 @@ title: Reporting
 description: Differences in Reporting capabilities.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
 -->
+
 <!-- type: row-end -->
+
 ---
 
 ## Features
+
 <!-- type: row -->
+
 <!-- type: card
 title: Velocity Controls
 description: Velocity Contorls core differences
@@ -67,8 +72,11 @@ title: Soft Descriptors
 description: Soft Descriptors core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md)
 -->
+
 <!-- type: row-end -->
+
 <!-- type: row -->
+
 <!-- type: card
 title: Tokenization
 description: Tokenization core differences
@@ -92,19 +100,21 @@ title: Account Verification
 description: Account Verification core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md)
 -->
+
 <!-- type: row-end -->
-<!-- type: row -->
+
 <!-- type: card
 title: Quick Key
 description: Quick Key core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md)
 -->
-<!-- type: row-end -->
+
 ---
 
 ## Technical Specifications
 
 <!-- type: row -->
+
 <!-- type: card
 title: Element Level Mapping
 description: API Spec Mapping.
@@ -122,7 +132,9 @@ title: CTR Creation
 description: CTR element creation specs.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md)
 -->
+
 <!-- type: row-end -->
+
 ---
 
 ## See Also
