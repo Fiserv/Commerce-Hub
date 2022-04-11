@@ -5,15 +5,11 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 # API Differences
 
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 ## Transaction Types and Endpoints
 
->In Payeezy Gateway there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
-<!--
-type: tab
-
--->
+In Payeezy Gateway there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
 
 | PGW Transaction Type | Commerce Hub Endpoint | 
 | -------- | ------------- |
@@ -26,7 +22,6 @@ type: tab
 |33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel  | 
 |33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund   | 
 
-<!-- type: tab-end -->
 ---
 
 ## Formats, Contents and Elements

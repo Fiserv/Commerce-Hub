@@ -1,11 +1,16 @@
 ---
+
 tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+
 ---
+
 # Reporting
+
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for Payeezy migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 ## General
+
 - Reporting was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available from Client Line Enterprise.  For more details please see <link to CLX documentation/training>.
 - In Payeezy there were five pre-defined reports available with the ability to adjust data ranges; the new solution,  Client Line Enterprise, is highly Configurable reporting engine.
 - In Payeezy the reports had grouping/sub-totals by Terminal, Card Brand and Transaction Type, in the Client Line Enterprise the search does not have grouping/sub-totals but return a list of all transactions that meet the criteria; the generic analysis function supports grouping but does not have drill-down capability to the transaction.
@@ -15,13 +20,19 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 ## Data Available in Reports UI
 
 In General, many more data elements are available for reporting in the new Client Line Enterprise solution than were previously available in Payeezy Gateway reporting.  The following exceptions exist where the data was available in Payeezy Reports, but is not available or is conditionally available in Client Line Enterprise:
-> - Network (formerly known as Card Brand)
-> - Transaction Type is available, but will be displayed as “unknown” in some cases
-> - Approval Status is available, but “unknown” when the response was an error
-> - User Id, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in Client Line reporting
+- Network (formerly known as Card Brand)
+- Transaction Type is available, but will be displayed as “unknown” in some cases
+- Approval Status is available, but “unknown” when the response was an error
+- User Id, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in Client Line reporting
 
 ## Reporting APIs
+
 ---
+
+## Search APIs
+
+---
+
 ## See Also
 
 - [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
