@@ -60,8 +60,11 @@ Click Create to obtain the API Key/Secret
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Account Management](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md)
-- [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
-- [Transaction Verification](?path=docs/Resources/Guides/Dev-Studio/Transaction-Verification.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+
+<!---
+- [Transaction Verification](?path=docs/Resources/Guides/Dev-Studio/Transaction-Verification.md)
+- [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
+-->
 
 ---
