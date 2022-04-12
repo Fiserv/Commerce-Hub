@@ -30,6 +30,9 @@
 - sections:
   - title: Getting Started
     link: docs/Getting-Started/Getting-Started-General.md
+    sections: 
+    - title: Developer Studio
+      link: docs/Getting-Started/Getting-Started-Dev-Portal.md
 - sections:
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
@@ -104,6 +107,8 @@
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: Developer Studio
+      link: docs/Getting-Started/Getting-Started-Dev-Portal.md
     - title: Dynamic Descriptors
       link: docs/Resources/Guides/Dynamic-Descriptor.md
     - title: Fraud Controls
