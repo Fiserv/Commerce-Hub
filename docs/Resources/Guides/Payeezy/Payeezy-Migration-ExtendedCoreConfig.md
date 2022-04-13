@@ -15,13 +15,15 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 - Batch Settlement cutoff times can no longer be configured. 
 - A new API Password, HMAC Key and other API relation authorization and authentication was available self-serve in Payeezy RPM Administration and cannot be performed in Marketplace; <need to know where a merchant can do this self-service to a comparative analysis of that system can be performed>. 
 - There is more configuration available to a merchant admin in Marketplace for CommerceHub that was previously available to this role via Payeezy Gateway. 
-- The ability to edit the terminal/MID address and create and edit users was available in Payeezy RPM Administration and will now be done in User Management inside BusinessTrack.
+- The ability to edit the terminal/MID address and create and edit users was available in Payeezy RPM Administration and will now be done in User Management inside of BusinessTrack.
 - Partner API capabilities are currently not supported and will be available in future releases
 - Finally, in Payeezy Gateway the Administrative pages could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time Marketplace is available in English language only.
 
+---
+
 ## User Management
 
-Provides the capability to 
+Provides the capability to: 
 - Filter list by client
 - Export user list
 - Import user
@@ -42,17 +44,26 @@ User status can be changed after user is created; could be set at time of creati
 Admin can update information on all users; not just their own
 
 Change log of all updates to a user account is available for review
- 
+
+---
+
 ## By Screen/Capability Comparison
+
+### Payeezy Comparison to Marketplace Capabilities 
    
 | PGW Screen/Function | Marketplace Screen/Function | Notes/Differences|
-| :-------- | :------------- |----------------|
-| Terminal List | MID List | Data displayed at summary view is different |
-|Terminal Details<br> - Set Batch Cutoff Time<br> - Generate New API Password<br> - Set Terminal Type<br> - Enable Special Payments<br> - Allow Soft Descriptors<br> - Configure L2/L3 Support  | /payments/v1/charges captureFlag = "false”  | 
-|03 = Forced Post   | NOT YET SUPPORTED  | 
-|05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | 
-|13 = Open Void   | NOT YET SUPPORTED  | 
-|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture  | 
+| :----------------- | :------------- |:----------------|
+| **Terminal List** | **MID List** | Data displayed at summary view is different |
+|**Terminal Details**<br> Set Batch Cutoff Time<br> Generate New API Password<br> Set Terminal Type<br> Enable Special Payments<br> Allow Soft Descriptors<br> Configure L2/L3 Support  | **Account Settings**<br> View Entitlements<br> Set Payment Types<br> VAS/Set Debit Routing<br> Services Configurations to Enable and Configure:<br>  - Transaction Types<br>  - Partial Approvals<br> - Quick Key<br> - Recurring Payments<br> - Re-Authorization| Cannot configure batch settlement time in Marketplace<br> <br> Cannot generate new API passwords in Marketplace. <br> <br> Enabling Special Payments and Soft Descriptors no longer required. <br> <br> Additional Configuration abailable in Marketplace that could not previously be completed by a merchant administrator. |
+|**API Access**<br> Generate New HMAC Key<br> Calculate HMAC Signature  | Not Available in Marketplace| Will be done through Dev Studio by merchant developer via algorithm provided. | 
+|**Address Details**<br> Update address details | Configuration of business details in Marketplace will be managed by the onboarding team.  Future release may provide limited capacity for a merchant to make updates.  | 
+
+### Payeezy Comparison to User Management (in BusinessTrack) Capabilities   
+   
+| PGW Screen/Function | User Management Screen/Function | Notes/Differences|
+| :---------------- | :------------- |:----------------|  
+|**User List**<br> Name<br> Email<br> Phone<br> Login<br> Role<br> Password Expires<br>  Total Logins<br>  Last Login<br>  Status | **User Management**<br> UserID<br> Full Name<br> Email<br> Last Login<br>  Status<br>  Actions:<br> - Reset Password<br> - Delete Account<br> - DIsable Account<br> - Clone<br> Search<br> Status Filter<br> Client FIlter<br> Export User List<br> Import Users<br> Add User<br> | Clone capability available in User Management<br> <br> Export user list and import users capability available in User Management.|
+|**Create New User**<br> Contact<br> - First Name<br> - Last Name<br> - Email<br> - Position<br> - Phone<br>  - Fax<br>  - Allow Alerst<br>  Login<br> - Login<br> - Status<br> - Password<br> - Confirmation<br> - Role<br>  - POS Permissions<br>  - Enable Recurring<br> IP Restrictions<br> Account Restrictions<br> Preferences <br> - Records per Page<br> - TIme Zone<br> - Language | **User Management**<br> UserID<br> Full Name<br> Email<br> Last Login<br>  Status<br>  Actions:<br> - Reset Password<br> - Delete Account<br> - Disable Account<br> - Clone<br> Search<br> Status Filter<br> Client FIlter<br> Export User List<br> Import Users<br> Add User<br> | Clone capability available in User Management<br> <br> Export user list and import users capability available in User Management.|
 |33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel  | 
 |33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund   | 
 
