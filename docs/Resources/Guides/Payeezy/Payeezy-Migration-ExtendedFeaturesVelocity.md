@@ -1,4 +1,5 @@
 ---
+
 tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 
 ---
@@ -6,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 # Velocity Controls
 
 <!-- theme: danger -->
->  :warning: **Warning:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 <!--type: tab
 titles: API, Configuration, Virtual Terminal, Reporting
@@ -37,8 +38,8 @@ A canned report for all transactions declined by any type of Fraud Control (incl
 
 <!-- type: tab-end -->
 
-
 ---
+
 ## See Also
 
 - [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
