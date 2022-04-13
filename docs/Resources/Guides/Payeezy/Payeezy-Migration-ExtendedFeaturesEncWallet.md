@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 # Encrypted Wallet
 
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
 <!--type: tab
 titles: API, Configuration, Virtual Terminal, Reporting
