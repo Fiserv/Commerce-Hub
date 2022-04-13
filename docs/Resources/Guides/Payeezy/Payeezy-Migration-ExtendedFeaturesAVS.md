@@ -31,13 +31,13 @@ type: tab
 type: tab
 -->
 
-Same as API.
+- Same as API.
 
 <!--
 type: tab
 -->
 
-A canned report for all transactions declined by any type of Fraud Control (including AVS Filters) is available in Payeezy Gateway.  In Client Line Enterprise, the merchant can configure a report that queries for all relevant response codes associated with a decline due to fraud filter.
+- A canned report for all transactions declined by any type of Fraud Control (including AVS Filters) is available in Payeezy Gateway.  In Client Line Enterprise, the merchant can configure a report that queries for all relevant response codes associated with a decline due to fraud filter.
 
 <!-- type: tab-end -->
 
