@@ -37,7 +37,7 @@ type: tab
 
 A canned report for all transactions declined by any type of Fraud Control (including CVV2 Filters) is available in Payeezy Gateway.  In Client Line Enterprise, the merchant can configure a report that queries for all relevant response codes associated with a decline due to fraud filter.
 
--->
+
 <!-- type: tab-end -->
 
 ---
