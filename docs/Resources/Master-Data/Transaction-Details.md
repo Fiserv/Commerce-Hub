@@ -20,8 +20,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
-| `merchantTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
-| `merchantOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
+| `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
+| `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number (aka reference number). |
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization type](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
 | `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
