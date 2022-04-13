@@ -12,6 +12,8 @@ Commerce Hub is continually being improved with new features, security enhanceme
 - **Update:** Existing feature was updated or enhanced
 - **Patch:** Bug was fixed
 
+---
+
 ## April 15th 2022
 
 | Details | Type | Environment | 
