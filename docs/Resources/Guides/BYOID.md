@@ -66,8 +66,8 @@ The below table identifies the avaiable parameters in the `transactionDetails` o
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `merchantTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
-| `merchantOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
+| `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
+| `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
 
 <!--
 type: tab
