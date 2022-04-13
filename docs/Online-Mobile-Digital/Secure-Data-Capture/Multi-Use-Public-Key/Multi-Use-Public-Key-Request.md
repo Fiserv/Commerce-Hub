@@ -4,10 +4,8 @@ tags: [multi-use-key, card-encryption, carat, commerce-hub, enterprise, payment-
 
 # Multi-Use Public Key Request
 
-Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually entering the payment source details a payment terminal. This can be used when the payment terminal fails to obtain the card details from the card's chip or magnetic stripe.
-
-A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
-
+When the merchants capture the payemnt source details, multi-use public key issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization.   
+   
 ---
 
 ### Minimum Requirements
