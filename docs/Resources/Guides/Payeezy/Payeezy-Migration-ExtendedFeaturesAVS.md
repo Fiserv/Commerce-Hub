@@ -25,8 +25,6 @@ type: tab
 - In Payeezy the configurate was set to filter out / reject the transactions with that response code; Marketplace/Commerce Hub the configuration drives which transactions are allowable (a list of acceptable codes vs. a filter).  One exception is that if no codes are configured they will all be considered acceptable.
 
 
-<!-- type: tab-end -->
-
 <!--
 type: tab
 -->
