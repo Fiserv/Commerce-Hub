@@ -43,6 +43,19 @@ Admin can update information on all users; not just their own
 
 Change log of all updates to a user account is available for review
  
+## By Screen/Capability Comparison
+   
+| PGW Screen/Function | Marketplace Screen/Function | Notes/Differences|
+| :-------- | :------------- |----------------|
+| Terminal List | MID List | Data displayed at summary view is different |
+|Terminal Details<br> - Set Batch Cutoff Time<br> - Generate New API Password<br> - Set Terminal Type<br> - Enable Special Payments<br> - Allow Soft Descriptors<br> - Configure L2/L3 Support  | /payments/v1/charges captureFlag = "false”  | 
+|03 = Forced Post   | NOT YET SUPPORTED  | 
+|05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | 
+|13 = Open Void   | NOT YET SUPPORTED  | 
+|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture  | 
+|33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel  | 
+|33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund   | 
+
 
 ---
   
