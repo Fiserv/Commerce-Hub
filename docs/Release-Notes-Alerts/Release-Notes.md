@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, release-notes]
+tags: [carat, commerce-hub, enterprise, getting-started, release-notes, update, patch, bug-fix, enhancement]
 ---
 
 # Release Notes
@@ -21,6 +21,8 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | [Processor response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) enhanced to support better identifiaction of payment processor and host | Update | Cert |
 | Timeout causing 703: Internal Error resolved | Patch | Cert |
 | [Bring Your Own Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) | Feature | Cert |
+| Increased maxLength of `merchantOrderId` and `merchantTransactionId` to 128 in [transaction details](?path=docs/Resources/Master-Data/Transaction-Details.md) | Update | Cert |
+| Added support for processing card not present authorization and cancel transactions through Chase Salem [processor](?path=(?path=docs/Resources/Guides/Directed-Routing.md)). | Feature | Cert |
 
 ---
 
