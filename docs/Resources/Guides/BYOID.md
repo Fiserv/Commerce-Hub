@@ -13,6 +13,8 @@ Merchant Identifiers allow a merchant to use their existing identifier for a loc
 <!-- theme: info -->
 > The merchant account will need to be boarded with the merchant specific identifiers.
 
+---
+
 ## Order Identifiers
 
 <!-- theme: danger -->
@@ -20,7 +22,11 @@ Merchant Identifiers allow a merchant to use their existing identifier for a loc
 
 Order Identifiers allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; refund, cancel, inquiry, instead of using the Commerce Hub generated `transactionID` or `orderID`.
 
+---
+
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- Merchant Details
-- 
+- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+
+---
