@@ -7,6 +7,16 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
+Blurb about API differences
+
+Payeezy Gateway definition is blah, blah, blah
+
+FAPI definition is blah, blah, blah
+
+<!--type: tab
+titles: Payeezy Gateway Direct, First API
+-->
+
 ## Transaction Types and Endpoints
 
 In Payeezy Gateway there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
@@ -14,7 +24,7 @@ In Payeezy Gateway there was a single endpoint for all transactions; In Commerce
 | PGW Transaction Type | Commerce Hub Endpoint | 
 | -------- | ------------- |
 | 00 = Purchase | /payments/v1/charges with captureFlag = "true" | 
-|01 = Pre-Authorization  | /payments/v1/charges captureFlag = "false”  | 
+|01 = Pre-Authorization  | /payments/v1/charges with captureFlag = "false”  | 
 |03 = Forced Post   | NOT YET SUPPORTED  | 
 |05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | 
 |13 = Open Void   | NOT YET SUPPORTED  | 
@@ -32,6 +42,37 @@ In Payeezy Gateway there was a single endpoint for all transactions; In Commerce
 - In Payeezy, most elements from the request are also sent back on the response, in Commerce Hub the request elements will only be sent back on the response if they could have changed during processing.
 - Non-approved (Declined or Error) transaction responses have changed – see <link to specific dev portal documentation on http response codes, gateway response codes and host response codes> for more details on the new http response codes, gateway response codes and bank response codes for Commerce Hub.
 - The bank Customer Transaction Record (CTR) is no longer available as a single element in the response, the independent values are available in separate elements (see Appendix A for more details).  Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
+
+<!--
+type: tab
+-->
+
+## Transaction Types and Endpoints
+
+In PAPI there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
+
+| PAPI Transaction Type | Commerce Hub Endpoint | 
+| -------- | ------------- |
+| purchase | /payments/v1/charges with captureFlag = "true" | 
+|authorize | /payments/v1/charges with captureFlag = "false”  | 
+|forced_post   | NOT YET SUPPORTED  | 
+|capture   | /payments/v1/charges/{transactionId}/capture  | 
+|void   | /payments/v1/charges/{transactionId}/cancel  | 
+|refund  | /payments/v1/charges/{transactionId}/refund   | 
+
+## Formats, Contents and Elements
+
+The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see <link to specific dev portal documentation on required elements here>. (See Appendix A for additional details)
+
+The element names, types and enumerations have changed (see appendix A for an element level mapping between Payeezy API and Commerce Hub).
+
+In Payeezy, some elements from the request are sent back on the response, in Commerce Hub the request elements will only be sent back on the response if they could have changed during processing.
+
+Non-approved (Declined or Error) transaction responses have changed – see <link to specific dev portal documentation on http response codes, gateway response codes and host response codes> for more details on the new http response codes, gateway response codes and bank response codes for Commerce Hub.
+
+The bank Customer Transaction Record (CTR) is no longer available as a single element in the response, the independent values are available in separate elements (see Appendix A for more details).  Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
+
+<!-- type: tab-end -->
 
 ---
 

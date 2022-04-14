@@ -25,19 +25,17 @@ type: tab
 - In Payeezy the configurate was set to filter out / reject the transactions with that response code; Marketplace/Commerce Hub the configuration drives which transactions are allowable (a list of acceptable codes vs. a filter).  One exception is that if no codes are configured they will all be considered acceptable.
 
 
-<!-- type: tab-end -->
+<!--
+type: tab
+-->
+
+- Same as API.
 
 <!--
 type: tab
 -->
 
-Same as API.
-
-<!--
-type: tab
--->
-
-A canned report for all transactions declined by any type of Fraud Control (including AVS Filters) is available in Payeezy Gateway.  In Client Line Enterprise, the merchant can configure a report that queries for all relevant response codes associated with a decline due to fraud filter.
+- A canned report for all transactions declined by any type of Fraud Control (including AVS Filters) is available in Payeezy Gateway.  In Client Line Enterprise, the merchant can configure a report that queries for all relevant response codes associated with a decline due to fraud filter.
 
 <!-- type: tab-end -->
 
