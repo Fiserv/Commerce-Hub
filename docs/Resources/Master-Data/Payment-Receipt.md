@@ -52,7 +52,7 @@ JSON string format for `paymentReceipt`:
          "schemeTransactionId": "019078743804756",
          "feeProgramIndicator": "123",  
          "processor": "FISERV",
-         "host": "NASHVILLE"
+         "host": "NASHVILLE",
          "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
