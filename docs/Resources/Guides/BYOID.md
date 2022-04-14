@@ -1,10 +1,12 @@
 ---
-tags: [carat, commerce-hub, enterprise, merchant-identifier, order-identifier, merchant-id, terminal-id, mid, tid, transaction-id, order-id]
+tags: [carat, commerce-hub, enterprise, merchant-identifier, order-identifier, merchant-id, terminal-id, mid, tid, transaction-id, order-id, custom-identifiers]
 ---
 
-# Bring Your Own Identifier
+# Custom Identifiers
 
 Commerce Hub supports the ability for mercant's to use thier own Merchant Identifiers and Order Identifiers. This allows a seemless integration into existing merchant APIs and databases.
+
+---
 
 ## Merchant Identifiers
 
