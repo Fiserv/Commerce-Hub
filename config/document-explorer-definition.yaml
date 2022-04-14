@@ -89,6 +89,8 @@
     sections:
     - title: Auth Optimization
       link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
+    - title: Custom Identifiers
+      link: docs/Resources/Guides/BYOID.md
     - title: Data Solutions
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
