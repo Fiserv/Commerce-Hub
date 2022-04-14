@@ -219,7 +219,7 @@ type: tab
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
          "processor": "FISERV",
-         "host": "NASHVILLE"
+         "host": "NASHVILLE",
          "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
