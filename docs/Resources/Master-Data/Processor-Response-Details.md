@@ -21,7 +21,8 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `approvalCode` |*string* |  N/A | Approval code from the processor. |
 | `referenceNumber` | *string* | N/A | Transaction reference number. |
 | `schemeTransactionId` | *string* | N/A | Brand (card issuer) transaction ID. |
-| `processor` | *string* | 256 | Card processor. |
+| `processor` | *string* | 256 | Payment card processor. |
+| `host` | *string* | 256 | Processing endpoint or issuer. |
 | `responseCode` | *string* | N/A | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `responseMessage` | *string* | N/A | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `hostResponseCode` | *string* | N/A | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).| 
@@ -46,8 +47,9 @@ JSON string format for `processorResponseDetails`:
       "referenceNumber": "845366457890-TODO",
       "schemeTransactionId": "019078743804756",
       "feeProgramIndicator": "123",  
-      "processor": "fiserv",
-      "responseCode": "00000",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",

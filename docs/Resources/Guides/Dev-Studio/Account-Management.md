@@ -100,8 +100,11 @@ Enter a Merchant ID name that you want to clone or select from the Merchant ID l
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
 - [Key Management](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+
+<!---
+- [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
 - [Transaction Verification](?path=docs/Resources/Guides/Dev-Studio/Transaction-Verification.md)
+-->
 
 --- 
