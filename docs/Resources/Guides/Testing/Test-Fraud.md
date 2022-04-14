@@ -98,7 +98,7 @@ type: tab
          "schemeTransactionId":"0225MCC625628",
          "processor":"FISERV",
          "host": "NASHVILLE",
-         "responseCode":"606",
+         "responseCode":"000",
          "responseMessage":"Address Verification Failed",
          "hostResponseCode":"00",
          "hostResponseMessage":"APPROVAL",
