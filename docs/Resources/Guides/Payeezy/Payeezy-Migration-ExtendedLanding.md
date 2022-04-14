@@ -21,6 +21,7 @@ The Commerce Hub Payeezy Gateway Merchant Migration Playbook is a living documen
 title: API Structure
 description: Differences in API
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
 -->
 
 <!-- type: card
@@ -67,15 +68,15 @@ description: CVV2 Filters core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2.md
 -->
 
+<!-- type: row-end -->
+
+<!-- type: row -->
+
 <!-- type: card
 title: Soft Descriptors
 description: Soft Descriptors core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md
 -->
-
-<!-- type: row-end -->
-
-<!-- type: row -->
 
 <!-- type: card
 title: Tokenization
@@ -89,6 +90,10 @@ description: Encrypted Wallet core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesEncWallet.md
 -->
 
+<!-- type: row-end -->
+
+<!-- type: row -->
+
 <!-- type: card
 title: Decrypted Wallet
 description: Decrypted Wallet core differences
@@ -100,8 +105,6 @@ title: Account Verification
 description: Account Verification core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md
 -->
-
-<!-- type: row-end -->
 
 <!-- type: card
 title: Quick Key
