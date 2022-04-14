@@ -1,7 +1,8 @@
 
 # Multi-Use Public Key Management
 
-Description of key management
+The objective of a key management system is to achieve PCI DSS compliance for a banking institution. It involves implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys for protecting users’ or clients’ sensitive payment card data.
+
 
 ## Best Practices for Key Management
 
