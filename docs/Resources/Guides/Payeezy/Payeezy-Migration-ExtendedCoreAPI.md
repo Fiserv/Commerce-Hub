@@ -34,7 +34,7 @@ In Payeezy Gateway there was a single endpoint for all transactions; In Commerce
 
 ---
 
-## Formats, Contents and Elements
+## Request and Response - Formats and Elements
 
 - In Payeezy Gateway three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is used. 
 - The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see <link to specific dev portal documentation on required elements here>.
@@ -60,7 +60,7 @@ In PAPI there was a single endpoint for all transactions; In Commerce Hub there 
 |void   | /payments/v1/charges/{transactionId}/cancel  | 
 |refund  | /payments/v1/charges/{transactionId}/refund   | 
 
-## Formats, Contents and Elements
+## Request and Response - Formats and Elements
 
 The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see <link to specific dev portal documentation on required elements here>. (See Appendix A for additional details)
 
