@@ -21,13 +21,13 @@ As Commerce Hub continues to grow and new features are added, the playbook will 
 
 <!-- type: card
 title: API Structure
-description: Differences in API
+description: Includes Endpoint changes. Includes overview of request and response element and format changes.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
 -->
 
 <!-- type: card
 title: Configuration
-description: Differences in Configuration.
+description: Includes configuration comparison for users and terminals in the new ClientLine Enterprise platform.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md
 -->
 
@@ -39,7 +39,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md
 
 <!-- type: card
 title: Reporting
-description: Differences in Reporting capabilities.
+description: Learn about the new enhanced capabilitities in ClientLine Enterprise.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md
 -->
 
@@ -53,25 +53,25 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReportin
 
 <!-- type: card
 title: Velocity Controls
-description: Velocity Contorls core differences
+description: How the Velocity Controls have changed in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesVelocity.md
 -->
 
 <!-- type: card
 title: AVS Filters
-description: AVS Filters core differences
+description: How the AVS Filters have changed in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAVS.md
 -->
 
 <!-- type: card
 title: CVV2 Filters
-description: CVV2 Filters core differences
+description: How the CVV2 Filters have changed in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2.md
 -->
 
 <!-- type: card
 title: Soft Descriptors
-description: Soft Descriptors core differences
+description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md
 -->
 
@@ -81,7 +81,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoft
 
 <!-- type: card
 title: Tokenization
-description: Tokenization core differences
+description: How the configuration and functionality of tokens has changed with Commerce Hub.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesTokens.md
 -->
 
@@ -99,7 +99,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesDecW
 
 <!-- type: card
 title: Account Verification
-description: Account Verification core differences
+description: Recommended API integration changes for account verification 
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md
 -->
 
@@ -107,7 +107,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcct
 
 <!-- type: card
 title: Quick Key
-description: Quick Key core differences
+description: Differences in Quick Key functionality
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
 -->
 
