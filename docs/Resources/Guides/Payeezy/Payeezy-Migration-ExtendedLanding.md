@@ -148,5 +148,4 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR
 - [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
-
 ---
