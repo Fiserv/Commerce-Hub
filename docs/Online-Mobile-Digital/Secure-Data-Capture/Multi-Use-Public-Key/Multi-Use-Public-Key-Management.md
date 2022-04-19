@@ -14,11 +14,40 @@ The objective of a key management system is to achieve PCI DSS compliance for a 
 
 ## Generate Key
 
-Description.
+Commerce Hub allows the merchant to provision a new encryption key to store for the payment data for any future offline requirements. This provides a valid Commerce Hub generated merchant public key for card encryption where a merchant will store and forward to Commerce Hub at a later time.
 
 Table of fields.
 
-Payload examples.
+### Payment Form Example
+
+```php
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+    </head>
+    <body>
+        <div id="payment-saq-a-ep-form-div"></div>
+        <script>
+         const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+         const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
+         const formConfig = {
+                "merchantId": '100204342250',
+                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
+                "symmetricEncryptionAlgorithm": 'AES_GCM'
+            };
+            const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
+            form.loadPaymentForm("payment-saq-a-ep-form-div")
+            .then((next) => {
+            })
+            .catch((error) => {
+            });
+        </script>
+    </body>
+</html>
+
+```
 
 ## Revoke Key
 
