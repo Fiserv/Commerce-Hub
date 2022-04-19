@@ -19,11 +19,11 @@ titles: Payeezy Gateway Direct, First API
 
 ## Transaction Types and Endpoints
 
-In Payeezy Gateway there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
+In Payeezy Gateway there was a single endpoint (/api.globalgatewaye4.firstdata.com/transaction/v32) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being done:
 
-| PGW Transaction Type | Commerce Hub Endpoint | 
-| -------- | ------------- |
-| 00 = Purchase | /payments/v1/charges with captureFlag = "true" | 
+| PGW Transaction Type | Commerce Hub Endpoint | Commerce Hub Additional Info |
+| -------- | ------------- | -------------- |
+|00 = Purchase | /payments/v1/charges with captureFlag = "true" | [Charges](?type=post&path=/payments/v1/charges) |
 |01 = Pre-Authorization  | /payments/v1/charges with captureFlag = "false”  | 
 |03 = Forced Post   | NOT YET SUPPORTED  | 
 |05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | 
@@ -36,12 +36,19 @@ In Payeezy Gateway there was a single endpoint for all transactions; In Commerce
 
 ## Request and Response - Formats and Elements
 
-- In Payeezy Gateway three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is used. 
-- The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see <link to specific dev portal documentation on required elements here>.
-- The element names, types and enumerations have changed (see appendix A for an element level mapping between Payeezy Gateway and Commerce Hub).
-- In Payeezy, most elements from the request are also sent back on the response, in Commerce Hub the request elements will only be sent back on the response if they could have changed during processing.
-- Non-approved (Declined or Error) transaction responses have changed – see <link to specific dev portal documentation on http response codes, gateway response codes and host response codes> for more details on the new http response codes, gateway response codes and bank response codes for Commerce Hub.
-- The bank Customer Transaction Record (CTR) is no longer available as a single element in the response, the independent values are available in separate elements (see Appendix A for more details).  Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
+In Payeezy Gateway, three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is used. 
+
+In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
+
+The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see [Commerce Hub Required Elements](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md) documentation.
+
+The element names, types and enumerations have changed - see [Element Level Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) documentation.
+
+Non-approved (Declined or Error) transaction response codes have changed – see <link to specific dev portal documentation on http response codes, gateway response codes and host response codes> for more details on the new http response codes, gateway response codes and bank response codes for Commerce Hub.
+
+The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements into a customized response element.  
+
+Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
 
 <!--
 type: tab
@@ -49,7 +56,7 @@ type: tab
 
 ## Transaction Types and Endpoints
 
-In PAPI there was a single endpoint for all transactions; In Commerce Hub there are multiple endpoints:
+In PAPI there was a single endpoint (/api.payeezy.com/v1/transactions) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being done:
 
 | PAPI Transaction Type | Commerce Hub Endpoint | 
 | -------- | ------------- |
@@ -62,15 +69,17 @@ In PAPI there was a single endpoint for all transactions; In Commerce Hub there 
 
 ## Request and Response - Formats and Elements
 
-The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see <link to specific dev portal documentation on required elements here>. (See Appendix A for additional details)
+In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
 
-The element names, types and enumerations have changed (see appendix A for an element level mapping between Payeezy API and Commerce Hub).
+The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; Source Type and Currency are now required elements – see [Commerce Hub Required Elements](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md) documentation.
 
-In Payeezy, some elements from the request are sent back on the response, in Commerce Hub the request elements will only be sent back on the response if they could have changed during processing.
+The element names, types and enumerations have changed - see [Element Level Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) documentation.
 
 Non-approved (Declined or Error) transaction responses have changed – see <link to specific dev portal documentation on http response codes, gateway response codes and host response codes> for more details on the new http response codes, gateway response codes and bank response codes for Commerce Hub.
 
-The bank Customer Transaction Record (CTR) is no longer available as a single element in the response, the independent values are available in separate elements (see Appendix A for more details).  Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
+The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements into a customized response element.  
+
+Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
 
 <!-- type: tab-end -->
 
