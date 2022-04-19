@@ -13,7 +13,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 titles: API, Configuration, Virtual Terminal, Reporting
 -->
 
-One element (mvv_maid) is not available in Commerce Hub, no functional impact.
+<One element (mvv_maid) is not available in Commerce Hub, no functional impact. removed because feature is not used>
 
 Commerce Hub allows Soft Descriptors for all merchants, in Payeezy the North Merchant Master configuration was used to determine if the elements would be accepted in the API.
 

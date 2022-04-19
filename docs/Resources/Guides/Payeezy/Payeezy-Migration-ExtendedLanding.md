@@ -9,7 +9,9 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-The Commerce Hub Payeezy Gateway Merchant Migration Playbook is a living document with formal, yet dynamic tools for assisting with Merchant Migrations. This playbook is to be used by a merchant moving from Payeezy Gateway to Commerce Hub to understand the functional differences in the systems as well as support them in the migration journey. As Commerce Hub continues to grow and new features are added, the playbook will continue to evolve and adapt to meet the changing needs of the Merchants it serves.  
+Welcome to the Payeezy Merchant Migration Playbook.  The playbook is a site containing information to help you upgrade to the new Commerce Hub gateway. These articles provide guidance on the functional and technical differences between the systems. 
+
+As Commerce Hub continues to grow and new features are added, the playbook will continue be expanded to cover the changes.  
 
 ---
 
@@ -19,14 +21,14 @@ The Commerce Hub Payeezy Gateway Merchant Migration Playbook is a living documen
 
 <!-- type: card
 title: API Structure
-description: Differences in API
+description: Includes Endpoint changes. Includes overview of request and response element and format changes.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
 -->
 
 <!-- type: card
 title: Configuration
-description: Differences in Configuration.
+description: Includes configuration comparison for users and terminals in the new ClientLine Enterprise platform.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md
 -->
 
@@ -38,7 +40,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md
 
 <!-- type: card
 title: Reporting
-description: Differences in Reporting capabilities.
+description: Learn about the new enhanced capabilitities in ClientLine Enterprise.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md
 -->
 
@@ -52,19 +54,19 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReportin
 
 <!-- type: card
 title: Velocity Controls
-description: Velocity Contorls core differences
+description: How the Velocity Controls have changed in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesVelocity.md
 -->
 
 <!-- type: card
 title: AVS Filters
-description: AVS Filters core differences
+description: How the AVS Filters have changed in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAVS.md
 -->
 
 <!-- type: card
 title: CVV2 Filters
-description: CVV2 Filters core differences
+description: How the CVV2 Filters have changed in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2.md
 -->
 
@@ -74,13 +76,13 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2
 
 <!-- type: card
 title: Soft Descriptors
-description: Soft Descriptors core differences
+description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md
 -->
 
 <!-- type: card
 title: Tokenization
-description: Tokenization core differences
+description: How the configuration and functionality of tokens has changed with Commerce Hub.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesTokens.md
 -->
 
@@ -102,13 +104,13 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesDecW
 
 <!-- type: card
 title: Account Verification
-description: Account Verification core differences
+description: Recommended API integration changes for account verification 
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md
 -->
 
 <!-- type: card
 title: Quick Key
-description: Quick Key core differences
+description: Differences in Quick Key functionality
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
 -->
 
