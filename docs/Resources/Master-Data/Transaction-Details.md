@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-tra
 
 The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` object.
 
-<!--
+<!-- 
 type: tab
 titles: transactionDetails, JSON Example
 -->
@@ -20,8 +20,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
-| `merchantTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
-| `merchantOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
+| `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
+| `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number (aka reference number). |
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization type](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
 | `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
@@ -34,7 +34,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `transactionCaptureType` | *string* | 64 | Identifies if a settlement was host capture or terminal capture. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *string* | 32 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
-| `processingCode` | *string* | 6 |  A required <a href=../docs/Resources/Master-Data/Processing-Code.md>code</a> is used in conjunction with the message type to define the type of transaction that is by the terminal to the host. |
+| `processingCode` | *string* | 6 |  A required [code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host. |
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* | 18,3 | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
@@ -150,7 +150,7 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 | *SUSPECTED_FRAUD* | Suspect fraud |
 | *CARD_OVERRIDE* | Chip card override |
 
---- 
+---
 
 ## See Also
 
@@ -159,4 +159,4 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 
----
+--- 
