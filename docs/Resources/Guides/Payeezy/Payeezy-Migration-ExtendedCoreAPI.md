@@ -14,7 +14,7 @@ Payeezy Gateway definition is blah, blah, blah
 FAPI definition is blah, blah, blah
 
 <!--type: tab
-titles: Payeezy Gateway Direct, First API
+titles: Payeezy Gateway Direct, Developer
 -->
 
 ## Transaction Types and Endpoints
@@ -56,7 +56,7 @@ type: tab
 
 ## Transaction Types and Endpoints
 
-In PAPI there was a single endpoint (/api.payeezy.com/v1/transactions) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being done:
+In Developer API there was a single endpoint (/api.payeezy.com/v1/transactions) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being done:
 
 | PAPI Transaction Type | Commerce Hub Endpoint | 
 | -------- | ------------- |
