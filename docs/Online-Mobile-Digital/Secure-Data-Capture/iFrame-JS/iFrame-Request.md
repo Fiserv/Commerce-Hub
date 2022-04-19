@@ -6,7 +6,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment
 
 ## Step 1: Authentication
 
-A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
 
 
 ---
@@ -29,7 +29,7 @@ The iFrame JS script tag is required in the website by downloading or including 
 
 ### Authentication Credentials
 
-Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) in step 1.
+Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md) in step 1.
 
 ```javascript
 
@@ -327,7 +327,7 @@ type: tab
 ## See Also
 
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
 
