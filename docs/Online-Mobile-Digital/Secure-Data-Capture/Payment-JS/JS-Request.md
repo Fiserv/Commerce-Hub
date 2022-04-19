@@ -297,7 +297,7 @@ type: tab
 ## See Also
 
 - [Customize JS Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
-- [Security Credentials](?path=docs/Resources/API-Documents/Security/Credentials.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
 - [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
 
