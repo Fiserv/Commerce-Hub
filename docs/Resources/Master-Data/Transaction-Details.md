@@ -34,7 +34,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `transactionCaptureType` | *string* | 64 | Identifies if a settlement was host capture or terminal capture. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *string* | 32 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
-| `processingCode` | *string* | 6 |  A required <a href=../docs/Resources/Master-Data/Processing-Code.md>code</a> is used in conjunction with the message type to define the type of transaction that is by the terminal to the host. |
+| `processingCode` | *string* | 6 |  A required <a href="?path=/docs/Resources/Master-Data/Processing-Code.md">code</a> is used in conjunction with the message type to define the type of transaction that is by the terminal to the host. |
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* | 18,3 | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
