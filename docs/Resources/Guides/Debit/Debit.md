@@ -11,7 +11,9 @@ Debit Solutions from Commerce Hub provide anywhere, anytime payment convenience 
 
 ---
 
-## Solutions
+## Debit Transaction
+
+Begin integration with Commerce Hub to start accepting debit card payments.
 
 <!-- type: row -->
 
@@ -27,15 +29,21 @@ description: Process debit cards through debit newtworks to accept in-person pay
 link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 -->
 
+<!-- type: row-end -->
+
+---
+
+## Routing Solutions
+
+Commerce Hub allows the merchant to optimize the debit transaction by routing the processing to the best network based account setup and business needs.
+
+<!-- type: row -->
+
 <!-- type: card
 title: Directed Routing
 description: Directed Routing allows merchants to send transactions to a specific debit network based on cost, approval rates, liability shift and ticket size.
 link: docs/Resources/Guides/Directed-Routing.md
 -->
-
-<!-- type: row-end -->
-
-<!-- type: row -->
 
 <!-- type: card
 title: Least Cost Debit
