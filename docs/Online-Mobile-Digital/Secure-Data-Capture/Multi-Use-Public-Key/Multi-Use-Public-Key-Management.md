@@ -20,15 +20,41 @@ Commerce Hub allows the merchant to provision a new encryption key to store for 
 
 <!--
 type: tab
-titles: Request Payload
+titles: Requese, Response
 -->
 
-The below table identifies the required parameters in the `source` object.
+The below table identifies the required parameters for generate request paylod.
 
 | Field | Data Type| Mandatory | Description |
 |---------|----------|----------------|---------|
-|`merchantDetails` | *object* |   | Used to create a token on a charge transaction |
+|`merchantDetails` | *object* |   | Used to pass merchant specific data during the transaction |
+| `merchantDetails` | *string* |  | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. Utilized for clients that support dynamic descriptor, or support multiple stores in the same app. |
+
+
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters for response payload.
+
+| Field | Data Type| Mandatory | Description |
+|---------|----------|----------------|---------|
+|`asymmetricKeyDetails` | *object* |  | Public Key and itsasymmetricKeyDetails relevant details for asymmetric cryptography |
+| `asymmetricKeyDetails` | *string* |  | Unique identifier of the key pair |
+| `asymmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA. |
+| `asymmetricKeyDetails` | *integer* |  | Modulus size of the key pair |
+| `asymmetricKeyDetails` | *string* |  | Hex encoded public key |
+| `asymmetricKeyDetails` | *datetime* |  | Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format |
+| `asymmetricKeyDetails` | *datetime* |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
+| `asymmetricKeyDetails` | *string* |  | Status of the key pair. Valid values are ACTIVE, INACTIVE or LEGACY |  
+| `asymmetricKeyDetails` | *object* |  | Key and its relevant detaiModulus size of the key pairls for symmetric cryptography |  
+| `asymmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA |  
+| `asymmetricKeyDetails` | *integer* |  | Modulus size of the key pair |  
+
 <!-- type: tab-end -->
+
+---
 
 ### Endpoint
 <!-- theme: success -->
@@ -85,6 +111,11 @@ type: tab
     }
 }
 ```
+
+<!-- type: tab-end -->
+
+---
+
 
 ## Revoke Key
 
