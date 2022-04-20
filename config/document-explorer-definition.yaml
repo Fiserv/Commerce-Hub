@@ -44,6 +44,7 @@
     - title: Semi-Integrated
       link: docs/In-Person/Integrations/Semi-Integrated.md
     - title: Debit
+      link: docs/Resources/Guides/Debit/Debit.md
       sections:
       - title: Least Cost Debit
         link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
