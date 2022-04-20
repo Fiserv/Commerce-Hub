@@ -1,5 +1,5 @@
 ---
-tags: [carat, enterprise, definition, commerce-hub, debit, pin-less-debit, pin-debit]
+tags: [carat, enterprise, definition, commerce-hub, debit, pin-less-debit, pin-debit, debit-routing]
 ---
 
 # Debit Solutions
