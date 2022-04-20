@@ -16,37 +16,74 @@ The objective of a key management system is to achieve PCI DSS compliance for a 
 
 Commerce Hub allows the merchant to provision a new encryption key to store for the payment data for any future offline requirements. This provides a valid Commerce Hub generated merchant public key for card encryption where a merchant will store and forward to Commerce Hub at a later time.
 
-Table of fields.
+### Requirements
 
-### Payment Form Example
+<!--
+type: tab
+titles: Request Payload
+-->
 
-```php
+The below table identifies the required parameters in the `source` object.
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
-    </head>
-    <body>
-        <div id="payment-saq-a-ep-form-div"></div>
-        <script>
-         const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
-         const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
-         const formConfig = {
-                "merchantId": '100204342250',
-                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
-                "symmetricEncryptionAlgorithm": 'AES_GCM'
-            };
-            const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
-            form.loadPaymentForm("payment-saq-a-ep-form-div")
-            .then((next) => {
-            })
-            .catch((error) => {
-            });
-        </script>
-    </body>
-</html>
+| Field | Data Type| Mandatory | Description |
+|---------|----------|----------------|---------|
+|`merchantDetails` | *object* |   | Used to create a token on a charge transaction |
+<!-- type: tab-end -->
 
+### Endpoint
+<!-- theme: success -->
+>**POST** `/security/v1/keys/generate`
+
+---
+
+### Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+##### Example of payload request.
+
+```json
+
+{
+    "merchantDetails": {
+        "merchantId": "100004000000175"
+    }
+}
+```
+
+<!--
+type: tab
+-->
+
+##### Example of (201: Created) response.
+
+```json
+{
+    "gatewayResponse": {
+        "transactionProcessingDetails": {
+            "transactionTimestamp": "2022-03-09T12:15:36.864999Z",
+            "apiTraceId": "7285fd4f2496418992e5b12fbb7f68e4",
+            "clientRequestId": "46e4aee3c4f41a1b7ac95a5c8a313c6d",
+            "transactionId": "7285fd4f2496418992e5b12fbb7f68e4"
+        }
+    },
+    "asymmetricKeyDetails": {
+        "keyId": "e294a246-078b-4ec0-82d6-5ab7fccd6491",
+        "encryptionType": "RSA",
+        "modulus": 2048,
+        "encodedPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtb18DQ0vV/1bz7q2kew+uckYIEON++ItNPcEaDj/vwBITAQTJtpZNY1EWQApZqx/b2aJl2gx4Ucv8pSbQWixbshy5eKLf0PblfeJmHwXuFZHXdwjCL243sKqx1yxifOymnujyp9l2GHls9F7OCAj6MGP8EjKc4nYmAlf9BMR6L22gxPG9Y+VoJBb0HhWwtSNYpn4pfv+wZOH+wlENusCcqOL3AbQbRASpaKgg3CzzTWfYJtYMf/nslnzjsvye1/Jx61VyYARn8yI0pj7U8K3W3R2A/zut9fYE2lSIaJEvcKW/PzAAyd+tqvjFqNTP7fUX46JABQAMfU6dETSQG2guwIDAQAB",
+        "validFrom": "2022-03-09T12:15:39.576795Z",
+        "validTo": "2022-06-07T12:15:39.576795Z",
+        "status": "ACTIVE"
+    },
+    "symmetricKeyDetails": {
+        "encryptionType": "AES-GCM",
+        "modulus": 256
+    }
+}
 ```
 
 ## Revoke Key
@@ -59,6 +96,7 @@ Payload examples.
 
 ## Key Expiry Example
 
-(Table..... point 6 )
+|  |  |  |  |
+
 
 ## See Also
