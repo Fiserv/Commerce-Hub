@@ -1,0 +1,54 @@
+---
+tags: [carat, enterprise, definition, commerce-hub, debit, pin-less-debit, pin-debit]
+---
+
+# Debit Solutions
+
+Debit Solutions from Commerce Hub provide anywhere, anytime payment convenience to your customers through comprehensive transaction processing and settlement services, card management and personalization services, and extensive implementation and support services.
+
+<!-- theme: info -->
+> Contact your account representative for more information on using debit solutions.
+
+---
+
+## Solutions
+
+<!-- type: row -->
+
+<!-- type: card
+title: PIN-Less Debit
+description: Process debit cards through debit and credit networks for online, in-app, MOTO and in-person payments.
+link: ?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md
+-->
+
+<!-- type: card
+title: PIN Debit
+description: Process debit cards through debit newtworks to accept in-person payments and cash withdraws. 
+link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
+-->
+
+<!-- type: card
+title: Directed Routing
+description: Directed Routing allows merchants to send transactions to a specific debit network based on cost, approval rates, liability shift and ticket size.
+link: docs/Resources/Guides/Directed-Routing.md
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Least Cost Debit
+description: Least Cost Debit Routing capabilities use a single API interface, for both standard processing and optimized debit routing. When enabled for this service, debit transactions are sent in a standard charges request with no additional coding.
+link: ?path=docs/Resources/Guides/Debit/Least-Cost-Debit.md
+-->
+
+<!-- type: card
+title: Smart Routing
+description: Smart Routing offers merchants the ability to override the default debit network for the debit card and allows the terminal to process the transaction via the lowest cost network.
+link: 
+-->
+
+<!-- type: row-end -->
+
+---
