@@ -130,8 +130,8 @@ type: tab
 
 ## Revoke Key
 
-Description.
-
+Revokes an encryption key pair that was previously used in encrypting payment card payload in multi use public key feature. 
+  
 ### Requirements
 
 <!--
@@ -152,32 +152,13 @@ type: tab
 
 The below table identifies the required parameters for generate request paylod.
 
-| Field | Data Type| Mandatory | Description |
+| Field | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `merchantDetails` | *object* |   | Used to pass merchant specific data during the transaction |
-| `merchantDetails` | *string* |  | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. Utilized for clients that support dynamic descriptor, or support multiple stores in the same app. |
+| `merchantId` | *string* |  | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. Utilized for clients that support dynamic descriptor, or support multiple stores in the same app. |
 
-<!--
-type: tab
--->
-
-The below table identifies the required parameters for response payload.
-
-| Field | Data Type| Mandatory | Description |
-|---------|----------|----------------|---------|
-| `asymmetricKeyDetails` | *object* |  | Public Key and its relevant details for asymmetric cryptography |
-| `asymmetricKeyDetails` | *string* |  | Unique identifier of the key pair |
-| `asymmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA. |
-| `asymmetricKeyDetails` | *integer* |  | Modulus size of the key pair |
-| `asymmetricKeyDetails` | *string* |  | Hex encoded public key |
-| `asymmetricKeyDetails` | *datetime* |  | Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format |
-| `asymmetricKeyDetails` | *datetime* |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
-| `asymmetricKeyDetails` | *string* |  | Status of the key pair. This will be REVOKED for this call |  
-| `symmetricKeyDetails` | *object* |  | Key and its relevant detaiModulus size of the key pairls for symmetric cryptography |  
-| `symmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA |  
-| `symmetricKeyDetails` | *integer* |  | Modulus size of the key pair |  
 
 <!-- type: tab-end -->
+
 
 ---
 
