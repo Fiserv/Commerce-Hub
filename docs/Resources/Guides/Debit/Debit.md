@@ -35,7 +35,7 @@ link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 
 ## Debit Routing
 
-Commerce Hub allows the merchant to optimize the debit transaction by routing the processing to the best network based account setup and business needs.
+Commerce Hub allows the merchant to optimize the debit transaction by routing the processing to the best network based account setup and business requirements.
 
 <!-- type: row -->
 
