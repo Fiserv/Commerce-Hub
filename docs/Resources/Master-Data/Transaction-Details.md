@@ -29,11 +29,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](?path=docs/Resources/Guides/Authorizations/Re-Auth.md#authorization-sequence) requested.|
 | `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
-
-<!---
 | `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
-| `transactionCaptureType` | *string* | 64 | Identifies if a settlement was host capture or terminal capture. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *string* | 32 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
@@ -44,7 +41,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
 | `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant’s choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks. |
--->
 
 <!--
 type: tab
@@ -57,22 +53,21 @@ JSON string format for `transactionDetails`:
    "transactionDetails":{
       "approvalCode": "string",
       "primaryTransactionId": "838916029301",
-      "primaryOrderId": "123456789", /// Future Release
-      "clientRequestId": "13267786514316843133216746", /// Future Release
+      "primaryOrderId": "123456789",
+      "clientRequestId": "13267786514316843133216746",
       "captureFlag": false,
-      "transactionCaptureType": "TCS", /// Future Release
       "accountVerification": false,
-      "partialApproval": "NOT_SUPPORTED", /// Future Release
+      "partialApproval": "NOT_SUPPORTED",
       "merchantTransactionId": "1343678765",
       "merchantOrderId": "845366457890-TODO",
       "merchantInvoiceNumber": "123890",
-      "receiptEmail": "abc@gmail.com", /// Future Release
-      "paymentDescription": "Merchandise", /// Future Release
-      "cardVerificationAmount": 0.02, /// Future Release
-      "partiallyApprovedTransactionAmount": 10.55, /// Future Release
+      "receiptEmail": "abc@gmail.com",
+      "paymentDescription": "Merchandise",
+      "cardVerificationAmount": 0.02,
+      "partiallyApprovedTransactionAmount": 10.55,
       "splitTenderId": "12423434",  
       "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator": true, /// Future Release
+      "duplicateTransactionCheckingIndicator": true,
       "primaryTransactionType": "CHARGE_SALE",
       "vaultFundingSource": true,  /// Future Release
       "deviceFingerprint":[  
@@ -113,7 +108,6 @@ JSON string format for `transactionDetails`:
 
 ---
 
-<!---
 #### Partial Approval
 
 The below table identifies the valid values of `partialApproval`.
@@ -126,7 +120,6 @@ The below table identifies the valid values of `partialApproval`.
 | MERCH_SUPPORTED_ONLY | Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized. |
 | CASH_BACK_SUPPORTED_ONLY | Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized. |
 | MERCH_CASH_BACK_NOT_SUPPORTED | Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized. |
--->
 
 #### Primary Transaction Type
 
