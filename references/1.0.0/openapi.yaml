@@ -4990,7 +4990,7 @@ components:
             clientRequestId: '4345791'
             transactionId: '84356531338'
         source:
-          sourceType: 'PaymentSession'
+          sourceType: 'PaymentCard'
           card:
             bin: '40055500'
             last4: '0019'
@@ -5038,7 +5038,7 @@ components:
             clientRequestId: '4345791'
             transactionId: '84356531338'
         source:
-          sourceType: 'PaymentSession'
+          sourceType: 'PaymentCard'
           card:
             bin: '40055500'
             last4: '0019'
