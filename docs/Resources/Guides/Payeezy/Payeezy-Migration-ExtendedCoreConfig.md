@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Configuration was previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be available from ClientLine Enterprise (CLX).  For more details please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
+Configuration was previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be available from ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
 <!--type: tab
 titles: Terminal Configuration, User Management
@@ -17,24 +17,22 @@ titles: Terminal Configuration, User Management
 
 ### General
 
-Batch Settlement cutoff times can no longer be configured. 
-
-A new API Password, HMAC Key and other API relation authorization and authentication was available self-serve in Payeezy RPM Administration and cannot be performed in CLX; <need to know where a merchant can do this self-service to a comparative analysis of that system can be performed>. 
-
-There is more configuration available to a merchant admin in Marketplace for CommerceHub that was previously available to this role via Payeezy Gateway. 
-
-Partner API capabilities are currently not supported and will be available in future releases
-
-In Payeezy Gateway the Administrative pages could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time Marketplace is available in English language only.
-
-### By Screen/Capability Comparison
+Batch Settlement cutoff times configuration will not be available in the interface. 
  
-| PGW Screen/Function | Marketplace Screen/Function | Notes/Differences|
+The API integration settings were originally controlled solely in RPM; in Commerce Hub, it will be controlled jointly in CLX and Dev Studio.
+
+Partner API capabilities are currently not supported.
+
+In Payeezy, the Administrative pages could be displayed in multiple languages (EN, ES) based on the terminal setting; at this time CLX is available in English language only.
+
+### Capability Comparison by Screen
+ 
+| RPM Screen/Function | CLX Screen/Function | Notes/Differences|
 | :----------------- | :------------- |:----------------|
-| **Terminal List** | **MID List** | Data displayed at summary view is different |
-|**Terminal Details**<br> Set Batch Cutoff Time<br> Generate New API Password<br> Set Terminal Type<br> Enable Special Payments<br> Allow Soft Descriptors<br> Configure L2/L3 Support  | **Account Settings**<br> View Entitlements<br> Set Payment Types<br> VAS/Set Debit Routing<br> Services Configurations to Enable and Configure:<br>  - Transaction Types<br>  - Partial Approvals<br> - Quick Key<br> - Recurring Payments<br> - Re-Authorization <br> <br> <br>| Cannot configure batch settlement time in Marketplace<br> <br> Cannot generate new API passwords in Marketplace. <br> <br> Enabling Special Payments and Soft Descriptors no longer required. <br> <br> Additional Configuration abailable in Marketplace that could not previously be completed by a merchant administrator. |
-|**API Access**<br> Generate New HMAC Key<br> Calculate HMAC Signature  | Not Available in Marketplace| Will be done through Dev Studio by merchant developer via algorithm provided. | 
-|**Address Details**<br> Update address details | Configuration of business details in Marketplace will be managed by the onboarding team.  Future release may provide limited capacity for a merchant to make updates.  | 
+| **Terminal List** | **MID List** | Summary data includes key idenifiers but differing supplemental data |
+|**Terminal Details**<br> Set Batch Cutoff Time<br> Generate New API Password<br> Set Terminal Type<br> Enable Special Payments<br> Allow Soft Descriptors<br> Configure L2/L3 Support  | **Account Settings**<br> View Entitlements<br> Set Payment Types<br> VAS/Set Debit Routing<br> Services Configurations to Enable and Configure:<br>  - Transaction Types<br>  - Partial Approvals<br> - Quick Key<br> - Recurring Payments<br> - Re-Authorization <br> <br> <br>| API integration is handled differentlyin CLX <br> <br> Enabling Special Payments and Soft Descriptors is no longer required. <br> <br>  <br> <br>  <br> <br> 
+|**API Access**<br> Generate New HMAC Key<br> Calculate HMAC Signature  | Not available in CLX | |
+|**Address Details**<br> Update address details | Configuration of business details in CLX will be managed by the onboarding team.  Future release may provide limited capacity for a merchant to make updates.  | 
 
 <!--
 type: tab
@@ -68,7 +66,7 @@ Admin can update information on all users; not just their own
 
 Change log of all updates to a user account is available for review
 
-### By Screen/Capability Comparison 
+###  Capability Comparison by Screen
    
 | PGW Screen/Function | User Management Screen/Function | Notes/Differences|
 | :---------------- | :------------- |:----------------|  
