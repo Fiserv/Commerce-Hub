@@ -17,11 +17,10 @@ type: tab
 titles: asymmetricKeyDetails, symmetricKeyDetails
 -->
 
-The below table identifies the parameters for `asymmetricKeyDetails` object.
+The below table identifies the parameters for `asymmetricKeyDetails` object. The `asymmetricKeyDetails` object contains the public Key and its relevant details for asymmetric cryptography.
 
 | Variables | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `asymmetricKeyDetails` | *object* |  | Public Key and itsasymmetricKeyDetails relevant details for asymmetric cryptography |
 | `asymmetricKeyDetails` | *string* |  | Unique identifier of the key pair |
 | `asymmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA. |
 | `asymmetricKeyDetails` | *integer* |  | Modulus size of the key pair |
@@ -36,11 +35,10 @@ type: tab
 titles: asymmetricKeyDetails, symmetricKeyDetails
 -->
 
-The below table identifies the parameters for `symmetricKeyDetails` object.
+The below table identifies the parameters for `symmetricKeyDetails` object. The `symmetricKeyDetails` object contains the key and its relevant details for symmetric cryptography.
 
 | Variables | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `symmetricKeyDetails` | *object* |  | Key and its relevant detaiModulus size of the key pairls for symmetric cryptography |  
 | `symmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA |  
 | `symmetricKeyDetails` | *integer* |  | Modulus size of the key pair |  
 
@@ -58,11 +56,11 @@ type: tab
 titles: merchantDetails
 -->
 
-The below table identifies the required parameters for generate request payload.
+The below table identifies the required parameter for the generate request payload.
 
-| Field | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `merchantId` | *string* |  | A unique ID used to identify the Merchant. |
+| Variables | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|-------- | --------|
+| `merchantId` | *string* |  |  | A unique ID used to identify the Merchant. |
 
 <!-- type: tab-end -->
 ---
@@ -130,31 +128,32 @@ type: tab
 
 ## Revoke Key
 
-Revokes an encryption key pair that was previously used in encrypting payment card payload in multi use public key feature. 
+Revokes an encryption key pair that was previously generated. 
+
   
 ### Requirements
 
 <!--
 type: tab
-titles: URI Parameter, Request, Response
+titles: URI Parameter, merchantDetails
 -->
 
-The below table identifies the required parameters for generate request paylod.
+The below table identifies the required parameter for the URI.
 
-| Field | Data Type| Mandatory | Description |
-|---------|----------|----------------|---------|
-| `keyId` | *string* |   | Used to pass the keyId of the encryption key pair to be revoked |
+| Variables | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|--------- | -------|
+| `keyId` | *string* |   |  | Used to pass the keyId of the encryption key pair to be revoked |
 
 
 <!--
 type: tab
 -->
 
-The below table identifies the required parameters for generate request paylod.
+The below table identifies the required parameter for the revoke request payload.
 
-| Field | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `merchantId` | *string* |  | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. Utilized for clients that support dynamic descriptor, or support multiple stores in the same app. |
+| Variables | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|-----|-------|
+| `merchantId` | *string* |  |  | A unique ID used to identify the Merchant. |
 
 
 <!-- type: tab-end -->
@@ -164,7 +163,7 @@ The below table identifies the required parameters for generate request paylod.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/security/v1/keys/generate`
+>**POST** ` /security/v1/keys/{keyId}/revoke`
 
 ---
 
