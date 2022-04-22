@@ -13,7 +13,7 @@ Samsung Pay is a digital wallet platform and online payment system developed by 
 
 ## Integration Methods
 
-Build an integration that to accept an Google Pay payment.
+Build an integration that to accept an Samsung Pay payment.
 
 <!-- type: row -->
 
