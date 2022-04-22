@@ -9,19 +9,19 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-If you are using the /api.globalgatewaye4.firstdata.com URL, then you are transacting through the Payeezy Gateway Direct platform.
+If you are using the /api.globalgatewaye4.firstdata.com URL, then you are transacting through the Payeezy Gateway Direct (PGW) platform.
 
 If you are using the /api.payeezy.com URL, then you are transacting through the Developer API platform.
 
 See tabs below for information pertaining to the platform you are transacting on.
 
 <!--type: tab
-titles: Payeezy Gateway Direct, Developer
+titles: Payeezy Gateway Direct, Developer API
 -->
 
 ## Transaction Types and Endpoints
 
-In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgatewaye4.firstdata.com/transaction/v32) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being done:
+In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgatewaye4.firstdata.com/transaction/v32 or all previous versions) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being executed:
 
 | PGW Transaction Type | Commerce Hub Endpoint | Commerce Hub <br> Additional Info |
 | -------- | ------------- | :--------------: |
@@ -30,6 +30,7 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |03 = Forced Post   | NOT YET SUPPORTED  | 
 |05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |13 = Open Void   | NOT YET SUPPORTED  | 
+|13 = Open Refund   | NOT YET SUPPORTED  | 
 |32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture | [Capture Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
 |33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
 |33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
@@ -40,7 +41,7 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 
 ## Request and Response - Formats and Elements
 
-In Payeezy, three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is used. 
+In Payeezy, three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is available. 
 
 In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
 
@@ -48,11 +49,11 @@ The API messages for Commerce Hub require different elements than the Payeezy me
 
 The element names, types and enumerations have changed - see [Element Level Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) documentation.
 
-Not only have the non-approved (Declined or Error) transaction response codes changed, but the response handling has changed as well. See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more details.
+Not only have the non-approved (Declined or Error) transaction response codes changed, but the resolution of error codes has changed as well. See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more details.
 
-The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements into a customized response element.  
+The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements.  
 
-Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
+Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time, Commerce Hub will send back English language only responses.
 
 <!--
 type: tab
@@ -79,11 +80,11 @@ The API messages for Commerce Hub require different elements than the Payeezy me
 
 The element names, types and enumerations have changed - see [Element Level Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) documentation.
 
-Not only have the non-approved (Declined or Error) transaction response codes changed, but the response handling has changed as well. See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more details.
+Not only have the non-approved (Declined or Error) transaction response codes changed, but the resolution of error codes has changed as well. See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more details.
 
-The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements into a customized response element.  
+The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements. 
 
-Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time Commerce Hub will send back English language only responses.
+Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time, Commerce Hub will send back English language only responses.
 
 <!-- type: tab-end -->
 
