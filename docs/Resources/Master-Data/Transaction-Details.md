@@ -17,8 +17,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 |---------|-----------|----------------|---------|
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a [forced post](?path=docs/Resources/API-Documents/Payments/Forced.md) transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
 | `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
@@ -31,10 +29,12 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](?path=docs/Resources/Guides/Authorizations/Re-Auth.md#authorization-sequence) requested.|
 | `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
-| `transactionCaptureType` | *string* | 64 | Identifies if a settlement was host capture or terminal capture. |
+
+<!---
+| `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
+| `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *string* | 32 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
-| `processingCode` | *string* | 6 |  A required [code](?path=docs/Resources/Master-Data/Processing-Code.md) is used in conjunction with the message type to define the type of transaction that is by the terminal to the host. |
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* | 18,3 | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
@@ -42,7 +42,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
 | `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
-| `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant’s choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks.' |
+| `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant’s choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks. |
+-->
 
 <!--
 type: tab
@@ -55,22 +56,23 @@ JSON string format for `transactionDetails`:
    "transactionDetails":{
       "approvalCode": "string",
       "primaryTransactionId": "838916029301",
+      "primaryOrderId": "123456789", /// Future Release
+      "clientRequestId": "13267786514316843133216746", /// Future Release
       "captureFlag": false,
-      "transactionCaptureType": "TCS",  
       "accountVerification": false,
-      "partialApproval": "string",  
+      "partialApproval": "NOT_SUPPORTED", /// Future Release
       "merchantTransactionId": "1343678765",
       "merchantOrderId": "845366457890-TODO",
       "merchantInvoiceNumber": "123890",
-      "receiptEmail": "abc@gmail.com",  
-      "paymentDescription": "string",  
-      "cardVerificationAmount": 0.02,  
-      "partiallyApprovedTransactionAmount": 10.55,  
+      "receiptEmail": "abc@gmail.com", /// Future Release
+      "paymentDescription": "Merchandise", /// Future Release
+      "cardVerificationAmount": 0.02, /// Future Release
+      "partiallyApprovedTransactionAmount": 10.55, /// Future Release
       "splitTenderId": "12423434",  
       "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator": true,  
+      "duplicateTransactionCheckingIndicator": true, /// Future Release
       "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource": true,  
+      "vaultFundingSource": true,  /// Future Release
       "deviceFingerprint":[  
          {
             "provider": "InAuth",  
@@ -109,6 +111,7 @@ JSON string format for `transactionDetails`:
 
 ---
 
+<!---
 #### Partial Approval
 
 The below table identifies the valid values of `partialApproval`.
@@ -121,6 +124,7 @@ The below table identifies the valid values of `partialApproval`.
 | MERCH_SUPPORTED_ONLY | Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized. |
 | CASH_BACK_SUPPORTED_ONLY | Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized. |
 | MERCH_CASH_BACK_NOT_SUPPORTED | Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized. |
+-->
 
 #### Primary Transaction Type
 
