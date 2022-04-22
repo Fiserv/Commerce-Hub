@@ -8,7 +8,7 @@ tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
 
 <!-- theme: info -->
-> PIN-less Debit transaction process via the credit network unless the merchant account is setup for debit processing. Please contact your account representitive for more information on [debit solutions](?path=docs/Resources/Guides/Debit/Debit.md].
+> PIN-less Debit transaction process via the credit network unless the merchant account is setup for debit processing. Please contact your account representitive for more information on [debit solutions](?path=docs/Resources/Guides/Debit/Debit.md).
 
 ---
 
