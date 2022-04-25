@@ -121,20 +121,20 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuic
 <!-- type: row -->
 
 <!-- type: card
-title: Element Level Mapping
-description: API Spec Mapping.
+title: Payeezy to Commerce Hub Element Level Mapping
+description: Use this document to help convert your current API request and response elements into Commerce Hub nomenclature and formatting.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md
 -->
 
 <!-- type: card
 title: Required Fields
-description: Fields Required in a request by Commerce Hub for each transaction.
+description: Fields Required in a request by Commerce Hub for each transaction type.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md
 -->
 
 <!-- type: card
-title: CTR Creation
-description: CTR element creation specs.
+title: Customer Transaction Record (CTR) Response Element Creation
+description: How to create the CTR response element from Commerce Hub elements.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md
 -->
 
@@ -142,12 +142,10 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR
 
 ---
 
-## See Also
+## Commerce Hub Documentation
 
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
+- [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
+
 
 ---
