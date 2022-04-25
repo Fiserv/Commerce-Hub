@@ -28,9 +28,9 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |00 = Purchase | /payments/v1/charges with captureFlag = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |01 = Pre-Authorization  | /payments/v1/charges with captureFlag = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |03 = Forced Post   | NOT YET SUPPORTED  | 
+|04 = Open Refund   | NOT YET SUPPORTED  | 
 |05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |13 = Open Void   | NOT YET SUPPORTED  | 
-|13 = Open Refund   | NOT YET SUPPORTED  | 
 |32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture | [Capture Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
 |33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
 |33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
@@ -65,12 +65,16 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 
 | Transaction Type | Commerce Hub Endpoint | Commerce Hub <br> Additional Info |
 | -------- | ------------- | :----------: |
-| purchase | /payments/v1/charges with captureFlag = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|authorize | /payments/v1/charges with captureFlag = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|purchase | /payments/v1/charges with captureFlag = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|authorize (zero dollar) | NO LONGER SUPPORTED* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
+|authorize (non zero dollar) | /payments/v1/charges with captureFlag = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |forced_post   | NOT YET SUPPORTED  | 
 |capture   | /payments/v1/charges/{transactionId}/capture  | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
 |void   | /payments/v1/charges/{transactionId}/cancel  | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)|
-|refund  | /payments/v1/charges/{transactionId}/refund   | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
+|refund (open)  | NOT YET SUPPORTED  | |
+|refund (tagged) | /payments/v1/charges/{transactionId}/refund   | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
+
+*It is highly recommended to use the new [Account Verification](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ## Request and Response - Formats and Elements
 
