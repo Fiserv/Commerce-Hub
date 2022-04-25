@@ -21,13 +21,13 @@ The below table identifies the parameters for `asymmetricKeyDetails` object. The
 
 | Variables | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `asymmetricKeyDetails` | *string* |  | Unique identifier of the key pair |
-| `asymmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA. |
-| `asymmetricKeyDetails` | *integer* |  | Modulus size of the key pair |
-| `asymmetricKeyDetails` | *string* |  | Hex encoded public key |
-| `asymmetricKeyDetails` | *datetime* |  | Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format |
-| `asymmetricKeyDetails` | *datetime* |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
-| `asymmetricKeyDetails` | *string* |  | Status of the key pair. Valid values are ACTIVE, INACTIVE or LEGACY | 
+| `keyId` | *string* |  | Unique identifier of the key pair |
+| `encryptionType` | *string* |  | Encryption type of the key pair. Defaults to RSA. |
+| `modulus` | *integer* |  | Modulus size of the key pair |
+| `encodedPublicKey` | *string* |  | Hex encoded public key |
+| `validFrom` | *datetime* |  | Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format |
+| `validTo` | *datetime* |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
+| `status` | *string* |  | Status of the key pair. Valid values are ACTIVE, INACTIVE or LEGACY | 
 
 
 <!--
@@ -39,8 +39,8 @@ The below table identifies the parameters for `symmetricKeyDetails` object. The 
 
 | Variables | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `symmetricKeyDetails` | *string* |  | Encryption type of the key pair. Defaults to RSA |  
-| `symmetricKeyDetails` | *integer* |  | Modulus size of the key pair |  
+| `encryptionType` | *string* |  | Encryption type of the key pair. Defaults to RSA |  
+| `modulus` | *integer* |  | Modulus size of the key pair |  
 
 <!-- type: tab-end -->
 ---
