@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, s
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#paymentcard-request) or [token](#paymenttoken-request).
+The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification request using a payment [card](#paymentcard-request) or [token](#paymenttoken-request).
 
 <!--theme:info-->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
@@ -14,12 +14,6 @@ The merchant can perform account verification transaction to confirm that the ca
 ## PaymentCard Request
 
 ### Minimum Requirements
-
-<!-- theme: warning -->
-> Some cards do not allows $0 authorization, in which case `cardVerificationAmount` in the `transactionDetails` object will be required.
-
-<!--theme:info-->
-> A verification request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
 
 <!--
 type: tab
@@ -117,9 +111,8 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "FISERV",
-      "host": "NASHVILLE",
-      "responseCode": "000",
+      "processor": "fiserv",
+      "responseCode": "000000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
