@@ -11,11 +11,11 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 
 ## General
 
-- Reporting was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available from Client Line Enterprise.  For more details please see <link to CLX documentation/training>.
-- In Payeezy there were five pre-defined reports available with the ability to adjust data ranges; the new solution,  Client Line Enterprise, is highly Configurable reporting engine.
-- In Payeezy the reports had grouping/sub-totals by Terminal, Card Brand and Transaction Type, in the Client Line Enterprise the search does not have grouping/sub-totals but return a list of all transactions that meet the criteria; the generic analysis function supports grouping but does not have drill-down capability to the transaction.
-- The Actions available for a transaction from the reporting screens in Payeezy Gateway differ from those available in Client Line Enterprise; for example a Purchase includes Refund and Void in Client Line Enterprise and Refund and New Transaction in Payeezy Gateway.  
-- Finally, in Payeezy Gateway the Search could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time Client Line Enterprise is available in English language only.
+Reporting was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available through ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) .
+
+In RPM there were five pre-defined reports available with the ability to adjust the date ranges; the new solution, CLX, is a highly Configurable reporting engine.
+
+In RPM the Search could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX is available in English language only.
 
 <!--type: tab
 titles: UI Reporting, Reporting APIs, Search APIs
@@ -23,7 +23,43 @@ titles: UI Reporting, Reporting APIs, Search APIs
 
 ## Reporting UI
 
-In General, many more data elements are available for reporting in the new Client Line Enterprise solution than were previously available in Payeezy Gateway reporting.  The following exceptions exist where the data was available in Payeezy Reports, but is not available or is conditionally available in Client Line Enterprise:
+In General, many more data elements are available for reporting in the new CLX solution than were previously available in RPM.  
+
+In Payeezy, the reports had grouping and sub-totals by Terminal, Card Brand and Transaction Type. In CLX, the search does not have grouping and sub-totals but return a list of all transactions that meet the criteria; the generic analysis function supports grouping but does not have drill-down capability to the transaction.
+
+The Actions available for a transaction from the reporting screens in Payeezy Gateway differ from those available in Client Line Enterprise; for example a Purchase includes Refund and Void in Client Line Enterprise and Refund and New Transaction in Payeezy Gateway.  
+
+|Title| RPM | CLX|
+| :--------: | :------------- | :---------- |
+|Scope| Information organizaed by terminal/outlet/MID <br> <br> Shows summary with drill down to each transaction level detail <br> <br> <br>| No MID grouping <br> <br>No summary view/rolled up view – queries result in all transactions that meet the criteria.  The Generic Analysis (vs. Search) will allow for grouping, but currently the drill down capability to individual transactions that make up the result isn’t enabled.|
+|Filters| By date range, up to six months at a time | All RPM filters plus the extended ability to filter on all elements available|
+|Delivery|  Download CSV <br> Email report <br> <br> Print <br>| Download as CSV, Excel or JSON <br> Email one-time <br> Schedule a report to email <br> _No print functionality from UI_|
+|Actions| Sale transactions allow for Refund and New Transaction|Sale transactions allow for Refund and Void|
+
+|    RPM Report ELement             |    CLX Report Element  |
+|------------------------------------------|---------------------------------|
+|Sub-total:   Terminal             |   No Sub-total/summary                                                                                            |
+| Sub-total:   Card (brand)         |   No   Sub-total/summary                                                                                          |
+|Sub-total:   Transaction Type     |    No   Sub-total/summary                                                                                          |
+| Sub-total:   Quantity             |    No   Sub-total/summary                                                                                          |
+| Sub-total:   Currency             |   No   Sub-total/summary                                                                                          |
+| Sub-total:   Amount               |   No   Sub-total/summary                                                                                          |
+| Txn Detail:   Actions             |  Actions                                                                                                         |
+| Txn Detail:   Card Holder         |   Customer Name                                                                                                   |
+| Txn Detail:   Card (brand)        |   Network – always “unknown”                                                                                      |
+| Txn Detail:   Amount              |   Amount                                                                                                          |
+| Txn Detail:   Card Number         |   Account #                                                                                                       |
+|  Txn Detail:   Expiry              |  Card Expiry   Date                                                                                              |
+|  Txn Detail:   Transaction Type    |  Transaction   Type – sometimes “unknown”                                                                        |
+| Txn Detail:   Status              | Approval   Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
+| Txn Detail:   Time (Datetime)     |  Txn Date   & Time                                                                                               |
+| Txn Detail:   Auth                |  Auth Code                                                                                                       |
+| Txn Detail:   Ref Num             | Merchant Invoice   Number                                                                                       |
+| Txn Detail:   Cust. Ref Num       | Merchant Order   Id                                                                                             |
+| Txn Detail:   User ID             | Not available                                                                                                   |
+
+
+The following exceptions exist where the data was available in Payeezy Reports, but is not available or is conditionally available in Client Line Enterprise:
 - Network (formerly known as Card Brand)
 - Transaction Type is available, but will be displayed as “unknown” in some cases
 - Approval Status is available, but “unknown” when the response was an error
