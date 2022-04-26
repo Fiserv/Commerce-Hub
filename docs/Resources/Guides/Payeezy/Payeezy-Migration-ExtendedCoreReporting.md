@@ -25,9 +25,7 @@ titles: UI Reporting, Reporting APIs, Search APIs
 
 In General, many more data elements are available for reporting in the new CLX solution than were previously available in RPM.  
 
-In Payeezy, the reports had grouping and sub-totals by Terminal, Card Brand and Transaction Type. In CLX, the search does not have grouping and sub-totals but return a list of all transactions that meet the criteria; the generic analysis function supports grouping but does not have drill-down capability to the transaction.
-
-The Actions available for a transaction from the reporting screens in Payeezy Gateway differ from those available in Client Line Enterprise; for example a Purchase includes Refund and Void in Client Line Enterprise and Refund and New Transaction in Payeezy Gateway.  
+**Format and Functionality Overview**
 
 |Title| RPM | CLX|
 | :--------: | :------------- | :---------- |
@@ -36,34 +34,33 @@ The Actions available for a transaction from the reporting screens in Payeezy Ga
 |Delivery|  Download CSV <br> Email report <br> <br> Print <br>| Download as CSV, Excel or JSON <br> Email one-time <br> Schedule a report to email <br> _No print functionality from UI_|
 |Actions| Sale transactions allow for Refund and New Transaction|Sale transactions allow for Refund and Void|
 
-|    RPM Report ELement             |    CLX Report Element  |
-|------------------------------------------|---------------------------------|
-|Sub-total:   Terminal             |   No Sub-total/summary                                                                                            |
-| Sub-total:   Card (brand)         |   No   Sub-total/summary                                                                                          |
-|Sub-total:   Transaction Type     |    No   Sub-total/summary                                                                                          |
-| Sub-total:   Quantity             |    No   Sub-total/summary                                                                                          |
-| Sub-total:   Currency             |   No   Sub-total/summary                                                                                          |
-| Sub-total:   Amount               |   No   Sub-total/summary                                                                                          |
-| Txn Detail:   Actions             |  Actions                                                                                                         |
-| Txn Detail:   Card Holder         |   Customer Name                                                                                                   |
-| Txn Detail:   Card (brand)        |   Network – always “unknown”                                                                                      |
-| Txn Detail:   Amount              |   Amount                                                                                                          |
-| Txn Detail:   Card Number         |   Account #                                                                                                       |
-|  Txn Detail:   Expiry              |  Card Expiry   Date                                                                                              |
-|  Txn Detail:   Transaction Type    |  Transaction   Type – sometimes “unknown”                                                                        |
-| Txn Detail:   Status              | Approval   Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
-| Txn Detail:   Time (Datetime)     |  Txn Date   & Time                                                                                               |
-| Txn Detail:   Auth                |  Auth Code                                                                                                       |
-| Txn Detail:   Ref Num             | Merchant Invoice   Number                                                                                       |
-| Txn Detail:   Cust. Ref Num       | Merchant Order   Id                                                                                             |
-| Txn Detail:   User ID             | Not available                                                                                                   |
+<br>
 
+**Report Result Element Comparison**
 
-The following exceptions exist where the data was available in Payeezy Reports, but is not available or is conditionally available in Client Line Enterprise:
-- Network (formerly known as Card Brand)
-- Transaction Type is available, but will be displayed as “unknown” in some cases
-- Approval Status is available, but “unknown” when the response was an error
-- User Id, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in Client Line reporting
+|RPM Element             |CLX Element  |
+|:------------------------------------------|:---------------------------------|
+|Sub-total: Terminal             |   No Sub-total/summary |
+|Sub-total: Card (brand)         |   No Sub-total/summary|
+|Sub-total: Transaction Type     |    No Sub-total/summary|
+|Sub-total: Quantity             |    No Sub-total/summary|
+|Sub-total: Currency             |   No Sub-total/summary|
+|Sub-total: Amount               |   No Sub-total/summary |
+|Txn Detail: Actions             |  Actions|
+|Txn Detail: Card Holder         |   Customer Name |
+|Txn Detail: Card (brand)        |   Network – always “unknown"|
+|Txn Detail: Amount              |   Amount  |
+|Txn Detail: Card Number         |   Account #  |
+|Txn Detail: Expiry              |  Card Expiry Date  |
+|Txn Detail: Transaction Type    |  Transaction   Type – sometimes “unknown”  |
+|Txn Detail: Status              | Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
+|Txn Detail: Time (Datetime)     |  Txn Date & Time  |
+|Txn Detail: Auth                |  Auth Code          |
+|Txn Detail: Ref Num             | Merchant Invoice Number  
+|Txn Detail: Cust. Ref Num       | Merchant Order ID     |
+|Txn Detail: User ID*             | Not Available      |
+
+*User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.
 
 <!--
 type: tab
