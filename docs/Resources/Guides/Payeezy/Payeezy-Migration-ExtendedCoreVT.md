@@ -39,3 +39,4 @@ In CLX Virtual Terminal, the Card brand is selectable. If the full card number i
 The Country field is now free form text vs. a drop down.
 
 When processing secondary transactions (Completion/Capture, Void and Refund), the reference fields are editable in Payeezy Virtual Terminal but they are not editable in CLX Virtual Terminal.
+

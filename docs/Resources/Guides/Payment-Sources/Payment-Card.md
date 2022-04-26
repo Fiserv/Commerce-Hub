@@ -8,11 +8,14 @@ tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
 
 <!-- theme: info -->
-> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
+> PINless Debit transaction process via the credit network unless the merchant account is setup for debit processing. Please contact your account representitive for more information on [debit solutions](?path=docs/Resources/Guides/Debit/Debit.md).
 
 ---
 
 ### Request Variables
+
+<!-- theme: info -->
+> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
 
 <!--
 type: tab
@@ -143,8 +146,9 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+	 "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",

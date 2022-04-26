@@ -38,13 +38,3 @@ link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay
 <!-- type: row-end -->
 
 ---
-
-## See Also
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-<!--
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
--->
-
----

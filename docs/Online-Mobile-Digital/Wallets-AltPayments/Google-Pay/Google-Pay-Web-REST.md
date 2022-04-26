@@ -142,8 +142,9 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "000000",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
@@ -167,12 +168,12 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 <!---
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 -->
 ---

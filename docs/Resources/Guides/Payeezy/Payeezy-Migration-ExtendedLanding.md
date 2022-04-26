@@ -11,6 +11,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 
 Welcome to the Payeezy Merchant Migration Playbook.  The playbook is a site containing information to help you upgrade to the new Commerce Hub gateway. These articles provide guidance on the functional and technical differences between the systems. 
 
+
 As Commerce Hub continues to grow and new features are added, the playbook will continue to expand and include the changes.   
 
 ---
@@ -23,6 +24,7 @@ As Commerce Hub continues to grow and new features are added, the playbook will 
 title: API Structure
 description: Includes Endpoint changes. Includes overview of request and response element and format changes.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
 -->
 
 <!-- type: card
@@ -69,15 +71,15 @@ description: How the CVV2 Filters have changed in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2.md
 -->
 
+<!-- type: row-end -->
+
+<!-- type: row -->
+
 <!-- type: card
 title: Soft Descriptors
 description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md
 -->
-
-<!-- type: row-end -->
-
-<!-- type: row -->
 
 <!-- type: card
 title: Tokenization
@@ -91,6 +93,10 @@ description: Encrypted Wallet core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesEncWallet.md
 -->
 
+<!-- type: row-end -->
+
+<!-- type: row -->
+
 <!-- type: card
 title: Decrypted Wallet
 description: Decrypted Wallet core differences
@@ -102,8 +108,6 @@ title: Account Verification
 description: Recommended API integration changes for account verification 
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md
 -->
-
-<!-- type: row-end -->
 
 <!-- type: card
 title: Quick Key
@@ -143,7 +147,6 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR
 
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
-
 
 
 ---

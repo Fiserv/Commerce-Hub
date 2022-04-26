@@ -4,7 +4,7 @@ info: {title: Payments, description: This API Specification is designed to provi
     processing., version: v1-1.0.2}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
-- {url: 'https://test.api.fiservapps.com/ch/', description: Sandbox}
+- {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
 paths:
   /payments/v1/charges:
     x-model-version: 1.0
@@ -511,6 +511,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SecurityCredentialsResponse'
+              examples:
+                Credentials:
+                  summary: Security credentials response
+                  $ref: '#/components/examples/SecurityCredentialsResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -2451,7 +2455,7 @@ components:
       x-model-version: 1.0
       description: Identifies the card processor.
       properties:
-        code:
+        processorName:
           type: string
           maxLength: 256
           description: |
@@ -2460,15 +2464,16 @@ components:
             Valid Values:
             * FISERV
             * CHASE
-        platform: 
+        processingPlatform: 
           type: string
           maxLength: 256
           description:  |
             Identifies the payment platform of the processor.
 
             Valid Values:
-            * NORTH
+            * NASHVILLE
             * TAMPA
+            * SALEM
         priority:
           type: string
           maxLength: 256
@@ -2595,7 +2600,8 @@ components:
         feeProgramIndicator: {type: string, description: Contains the Fee Program
             Indicator (FPI) code that may be returned on Debit or PLDebit transaction
             response., example: '123'}
-        processor: {type: string, maxLength: 256, description: Card processor., example: fiserv}
+        processor: {type: string, maxLength: 256, description: Card processor., example: FISERV}
+        host: {type: string, maxLength: 256, description: Processing endpoint or issuer., example: NASHVILLE}
         networkRouted: {type: string, maxLength: 10, description: 'Network label that
             shows the network where the transaction was routed for authorization (e.g.
             NYCE, PULSE, STAR, Visa, Mastercard, etc.).'}
@@ -3088,8 +3094,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3115,8 +3122,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3169,8 +3177,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3196,8 +3205,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3307,8 +3317,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3341,8 +3352,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3382,7 +3394,8 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
+          processor: FISERV
+          host: NASHVILLE
           responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
@@ -3419,8 +3432,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3546,8 +3560,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3582,8 +3597,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3619,8 +3635,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3707,8 +3724,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3734,8 +3752,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3776,8 +3795,8 @@ components:
         additionalDataCommon:
           directedRouting:
             processors:
-              - code: NASHVILLE
-                platform: NORTH
+              - processorName: FISERV
+                processingPlatform: NASHVILLE
                 priority: PRIMARY
     PaymentEMVRequest:
       value:
@@ -3875,7 +3894,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -3976,7 +3996,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -4017,7 +4038,8 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
+          processor: FISERV
+          host: NASHVILLE
           responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
@@ -4067,8 +4089,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4127,8 +4150,8 @@ components:
         additionalDataCommon:
           directedRouting:
             processors:
-              - code: NASHVILLE
-                platform: NORTH
+              - processorName: FISERV
+                processingPlatform: NASHVILLE
                 priority: PRIMARY
     PaymentTrackForcedRequest:
       value:
@@ -4209,7 +4232,7 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -4319,8 +4342,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4360,7 +4384,8 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
+          processor: FISERV
+          host: NASHVILLE
           responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
@@ -4461,8 +4486,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4552,7 +4578,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -4586,8 +4613,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4613,8 +4641,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4647,8 +4676,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4693,8 +4723,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4727,8 +4758,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4761,8 +4793,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4782,10 +4815,6 @@ components:
     TransactionInquiryResponse:
       value:
         additionalDataCommon:
-          directedRouting:
-            processors:
-              - platform: 'IPG'
-                priority: 'FINAL'
           gatewayResponse:
             gatewayName: 'IPG'
             gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
@@ -4812,8 +4841,9 @@ components:
               hostResponseCode: '00'
               hostResponseMessage: 'APPROVAL'
               localTimestamp: '2022-01-13T19:09:29Z'
-              processor: fiserv
-              responseCode: '000000'
+              processor: FISERV
+              host: NASHVILLE
+              responseCode: '000'
               responseMessage: 'APPROVAL'
               schemeTransactionId: '0113MCC815463'
           source:
@@ -4831,10 +4861,6 @@ components:
     TransactionInquiryByMerchantOrderIdResponse:
       value:
         additionalDataCommon:
-          directedRouting:
-            processors:
-              - platform: 'IPG'
-                priority: 'FINAL'
           billingAddress:
             address:
               city: 'Atlanta'
@@ -4906,6 +4932,17 @@ components:
         accessTokenRequired: true
         accessTokenTimeToLive: '889'
         responseRedirectURL: https://www.somedomain.com
+        
+    SecurityCredentialsResponse:
+      value:
+        publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
+        keyLength: '12345'
+        accessToken: 'vsmsrKcNFWzq79Yd8aaxHetHBdxm'
+        sessionId: 'b28ba2ca-6368-4d72-b5f0-c185b4d0de4c'
+        accessTokenIssuedTime: '2016-04-16T16:06:05Z'
+        accessTokenTimeToLive: '1799'
+        symmetricEncryptionAlgorithm: 'AES-GCM'
+        asymmetricEncryptionAlgorithm: 'RSA-2048'
 
     PaymentSessionRequest:
       value:
@@ -4953,7 +4990,7 @@ components:
             clientRequestId: '4345791'
             transactionId: '84356531338'
         source:
-          sourceType: 'PaymentSession'
+          sourceType: 'PaymentCard'
           card:
             bin: '40055500'
             last4: '0019'
@@ -5001,7 +5038,7 @@ components:
             clientRequestId: '4345791'
             transactionId: '84356531338'
         source:
-          sourceType: 'PaymentSession'
+          sourceType: 'PaymentCard'
           card:
             bin: '40055500'
             last4: '0019'
@@ -5021,7 +5058,8 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
+          processor: FISERV
+          host: NASHVILLE
           responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'

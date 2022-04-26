@@ -97,8 +97,9 @@ type: tab
         "hostResponseCode": "00",
         "hostResponseMessage": "APPROVAL",
         "localTimestamp": "2022-01-13T19:09:29Z",
-        "processor": "fiserv",
-        "responseCode": "000000",
+        "processor": "FISERV",
+        "host": "NASHVILLE",
+        "responseCode": "000",
         "responseMessage": "APPROVAL",
         "schemeTransactionId": "0113MCC815463"
       }

@@ -25,11 +25,14 @@
 # resulting from the use of this information. 
 # No warranties, either express or implied, 
 # are granted or extended by this work or 
-# the delivery of this work 
+# the delivery of this work   
 ################################################################################
 - sections:
   - title: Getting Started
     link: docs/Getting-Started/Getting-Started-General.md
+    sections: 
+    - title: Developer Studio
+      link: docs/Getting-Started/Getting-Started-Dev-Portal.md
 - sections:
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
@@ -41,6 +44,7 @@
     - title: Semi-Integrated
       link: docs/In-Person/Integrations/Semi-Integrated.md
     - title: Debit
+      link: docs/Resources/Guides/Debit/Debit.md
       sections:
       - title: Least Cost Debit
         link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
@@ -86,6 +90,8 @@
     sections:
     - title: Auth Optimization
       link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
+    - title: Custom Identifiers
+      link: docs/Resources/Guides/BYOID.md
     - title: Data Solutions
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
@@ -104,6 +110,8 @@
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: Developer Studio
+      link: docs/Getting-Started/Getting-Started-Dev-Portal.md
     - title: Dynamic Descriptors
       link: docs/Resources/Guides/Dynamic-Descriptor.md
     - title: Fraud Controls
