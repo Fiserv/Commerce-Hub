@@ -14,25 +14,63 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 titles: API, Configuration, Virtual Terminal, Reporting
 -->
 
-- API
+**Standard Use Cases**
+
+- If the Tokenization Payment Type is enabled for the transacting MID in ClientLine Enterprise (CLX), Commerce Hub will tokenize the card and return the paymentTokens object in the response:
+
+```json
+
+"paymentTokens": [
+  {
+   "tokenData":"0123456789987654",
+   "tokenSource": "TRANSARMOR",
+   "tokenResponseCode": "000",
+   "tokenResponseDescription": "SUCCESS",
+   }
+ ]
+```
+
+- In Payeezy, tokenization of a card, without payment, would be completed via the zero dollar pre-authorization functionality.  In Commerce Hub, merchants can use the /payment-vas/v1/tokens endpoint to tokenize a card without payment. See [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for additional information.
+
+---
+
+**Non-standard Use Cases**
+
+- The merchant can prevent the token from being created and override the automated behavior by including the createToken element in the request with a value of false.
+
+- If the transacting MID is not configured for the Tokenization Payment Type and a request contains the creatToken element with a value of true, Commerce Hub will respond with a 249 error code:
+
+```json
+
+"paymentTokens": [
+  {
+   "tokenData":"0123456789987654",
+   "tokenSource": "TRANSARMOR",
+   "tokenResponseCode": "249",
+   "tokenResponseDescription": "Not boarded for Tokenization",
+   }
+ ]
+```
 
 <!--
 type: tab
 -->
 
-- Configuration
+In Payeezy, a merchant would enable tokenization for each MID by entering a TA Token number in the Details tab for that MID.  In Commerce Hub, the merchant enables tokenization as a Payment Type.
+
+The merchant has the ability to enable this payment type for one, many or all MIDs.
 
 <!--
 type: tab
 -->
 
-- Same as API.
+In ClientLine Enterprise (CLX), transactions can not be initiated using a token through the Virtual Terminal, but a secondary tokenized transaction (Completion/Capture, Void and Refund) can be completed from search screens.
 
 <!--
 type: tab
 -->
 
-- A canned report for all transactions declined by any type of Fraud Control (including AVS Filters) is available in Payeezy Gateway.  In Client Line Enterprise, the merchant can configure a report that queries for all relevant response codes associated with a decline due to fraud filter.
+Limited reporting available in ClientLine Enterprise (CLX).
 
 <!-- type: tab-end -->
 
@@ -41,11 +79,10 @@ type: tab
 ## See Also
 
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
+- [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
+
 
 
 ---
