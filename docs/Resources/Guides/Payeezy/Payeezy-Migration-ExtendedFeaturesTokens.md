@@ -14,7 +14,9 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 titles: API, Configuration, Virtual Terminal, Reporting
 -->
 
-If the Tokenization Payment Type is enabled for the transacting MID in ClientLine Enterprise (CLX), Commerce Hub will tokenize the card and return the paymentTokens object in the response:
+**Standard Use Cases**
+
+- If the Tokenization Payment Type is enabled for the transacting MID in ClientLine Enterprise (CLX), Commerce Hub will tokenize the card and return the paymentTokens object in the response:
 
 ```json
 
@@ -27,9 +29,16 @@ If the Tokenization Payment Type is enabled for the transacting MID in ClientLin
    }
  ]
 ```
-The merchant can override this behavior by including the createToken element in the request with a value of false.
 
-If the transacting MID is not configured for the Tokenization Payment Type and a request contians the creatToken element with a value of true, Commerce Hub will respond with a 249 error code:
+- In Payeezy, tokenization of a card, without payment, would be completed via the zero dollar pre-authorization functionality.  In Commerce Hub, merchants can use the /payment-vas/v1/tokens endpoint to tokenize a card without payment. See [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for additional information.
+
+---
+
+**Non-standard Use Cases**
+
+- The merchant can prevent the token from being created and override the automated behavior by including the createToken element in the request with a value of false.
+
+- If the transacting MID is not configured for the Tokenization Payment Type and a request contains the creatToken element with a value of true, Commerce Hub will respond with a 249 error code:
 
 ```json
 
@@ -43,13 +52,11 @@ If the transacting MID is not configured for the Tokenization Payment Type and a
  ]
 ```
 
-In Payeezy, tokenization of a card, without payment, would be completed via the zero dollar pre-authorization functionality.  In Commerce Hub, merchnats can use the /payment-vas/v1/tokens endpoint to tokenize a card without payment. See [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for additional information.
-
 <!--
 type: tab
 -->
 
-In Payeezy, a merchant would enable tokenization for each MID by entering a TA Token number in the Details tab for that MID.  In Commerce HUb the merchant enbales tokenization as a Payment Type in ClientLine Enterprise (CLX).
+In Payeezy, a merchant would enable tokenization for each MID by entering a TA Token number in the Details tab for that MID.  In Commerce Hub, the merchant enables tokenization as a Payment Type.
 
 The merchant has the ability to enable this payment type for one, many or all MIDs.
 
@@ -57,7 +64,7 @@ The merchant has the ability to enable this payment type for one, many or all MI
 type: tab
 -->
 
-Not applicable to tokens.
+In ClientLine Enterprise (CLX), transactions can not be initiated using a token through the Virtual Terminal, but a secondary tokenized transaction (Completion/Capture, Void and Refund) can be completed from search screens.
 
 <!--
 type: tab
