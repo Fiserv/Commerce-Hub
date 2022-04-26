@@ -60,7 +60,7 @@ The below table identifies the required parameter for the generate request paylo
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-------- | --------|
-| `merchantId` | *string* |  |  | A unique ID used to identify the Merchant. |
+| `merchantId` | *string* |  | &#10004; | A unique ID used to identify the Merchant. |
 
 <!-- type: tab-end -->
 ---
@@ -142,7 +142,7 @@ The below table identifies the required parameter for the URI.
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|--------- | -------|
-| `keyId` | *string* |   |  | Used to pass the keyId of the encryption key pair to be revoked |
+| `keyId` | *string* |   | &#10004; | Used to pass the keyId of the encryption key pair to be revoked |
 
 
 <!--
@@ -153,7 +153,7 @@ The below table identifies the required parameter for the revoke request payload
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-----|-------|
-| `merchantId` | *string* |  |  | A unique ID used to identify the Merchant. |
+| `merchantId` | *string* |  | &#10004; | A unique ID used to identify the Merchant. |
 
 
 <!-- type: tab-end -->
