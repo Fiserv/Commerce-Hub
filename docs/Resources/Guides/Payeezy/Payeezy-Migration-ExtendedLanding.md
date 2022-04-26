@@ -11,7 +11,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 
 Welcome to the Payeezy Merchant Migration Playbook.  The playbook is a site containing information to help you upgrade to the new Commerce Hub gateway. These articles provide guidance on the functional and technical differences between the systems. 
 
-As Commerce Hub continues to grow and new features are added, the playbook will continue be expanded to cover the changes.  
+As Commerce Hub continues to grow and new features are added, the playbook will continue to expand and include the changes.   
 
 ---
 
