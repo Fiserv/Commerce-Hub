@@ -13,9 +13,9 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 
 Reporting was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available through ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) .
 
-In RPM there were five pre-defined reports available with the ability to adjust the date ranges; the new solution, CLX, is a highly Configurable reporting engine.
+In RPM, there were five pre-defined reports available with the ability to adjust the date ranges; the new solution, CLX, is a highly configurable reporting engine.
 
-In RPM the Search could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX is available in English language only.
+In RPM, the Search could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX is available in English language only.
 
 <!--type: tab
 titles: UI Reporting, Reporting APIs, Search APIs
@@ -29,7 +29,7 @@ In General, many more data elements are available for reporting in the new CLX s
 
 |Title| RPM | CLX|
 | :--------: | :------------- | :---------- |
-|Scope| Information organizaed by terminal/outlet/MID <br> <br> Shows summary with drill down to each transaction level detail <br> <br> <br>| No MID grouping <br> <br>No summary view/rolled up view – queries result in all transactions that meet the criteria.  The Generic Analysis (vs. Search) will allow for grouping, but currently the drill down capability to individual transactions that make up the result isn’t enabled.|
+|Scope| Information organizaed by terminal/outlet/MID <br> <br> Shows summary with drill down to each transaction level detail <br> <br> <br>| No MID grouping <br> <br>No summary/rolled up view – queries result in all transactions that meet the criteria.  The Generic Analysis (vs. Search) will allow for grouping, but currently the drill down capability to individual transactions that make up the result isn’t enabled.|
 |Filters| By date range, up to six months at a time | All RPM filters plus the extended ability to filter on all elements available|
 |Delivery|  Download CSV <br> Email report <br> <br> Print <br>| Download as CSV, Excel or JSON <br> Email one-time <br> Schedule a report to email <br> _No print functionality from UI_|
 |Actions| Sale transactions allow for Refund and New Transaction|Sale transactions allow for Refund and Void|
@@ -74,17 +74,22 @@ type: tab
 
 ## Search APIs
 
-Transaction/search to /v1/chub/search = Provides a list of authorization transactions (pre-settle) and their attributes based on optional filter criteria.
+Transaction/search to [/v1/authorizations/search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search) = Provides a list of authorization transactions (pre-settle) and their attributes based on optional filter criteria.
 
--	Payeezy parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows; a mechanism is in place to allow for additional calls to return additional rows.  Commerce Hub is an API request and response (not csv) with no limit on records returned.
--	Payeezy utilizes Authentication per user, not terminal or merchant based; a user that is associated with more than one merchant or mid can specify the mid or terminal in the request; Commerce Hub authentication is by merchant.
--	Commerce Hub search Provides a list of authorization transactions pre-settlement (does not include settlement records). 
--	The Payeezy search allows filtering based on criteria related to cardholder name, reference numbers, transaction tags and card numbers; Commerce Hub does not allow searching on those elements.  Commerce Hub allows filtering on payment method, network, type, currency and auth code in addition to first 6 and last 4 of the card number.   
+Payeezy parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows; a mechanism is in place to allow for additional calls to return additional rows.  Commerce Hub is an API request and response (not csv) with no limit on records returned.
+
+Payeezy utilizes Authentication per user, not terminal or merchant based; a user that is associated with more than one merchant or mid can specify the mid or terminal in the request; Commerce Hub authentication is by merchant.
+
+Commerce Hub search Provides a list of authorization transactions pre-settlement (does not include settlement records). 
+
+The Payeezy search allows filtering based on criteria related to cardholder name, reference numbers, transaction tags and card numbers; Commerce Hub does not allow searching on those elements.  Commerce Hub allows filtering on payment method, network, type, currency and auth code in addition to first 6 and last 4 of the card number.   
+
+Commerce Hub does provide a [summary search function](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/summary).
 
 **Request Elements Detailed Comparison**
 
 | Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
-| :--------: | :-------------: | ---------- |
+| :-------- | :------------- | :---------- |
 |account |Not Available | For users with more than one merchant or mid|
 |merchant |Not Available | For users with more than one merchant or mid|
 |terminal |Not Available | For users with more than one merchant or mid|
@@ -92,15 +97,15 @@ Transaction/search to /v1/chub/search = Provides a list of authorization transac
 |end_date  |toDate | | 
 |search_field   |Not Available  | The Payeezy field to search for: cardholder, refno, custref, tag, cardno|
 |search  |Not Available  | The value to search for in the search field designated above|
-| |limit | |
-|  |fields | |
 |status  |filters.approvalCodes | |
 |amount_from, amount_to  |Not Available | Filter based on amount range |
 |Inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
+| |limit |The maximum number of records that will be returned |
+|  |fields |Specify specific fields to be pulled back instead of the entire set (default behavior) |
 | |filters.paymentMethods | |
 | |filters.networks | |
 | |filters.types | |
-| |filters.currency | |
+| |filters.siteIDs | |
 | |filters.authCode | |
 | |filters.first6 | |
 | |filters.last4 | |
@@ -111,7 +116,7 @@ Transaction/search to /v1/chub/search = Provides a list of authorization transac
 **Response Elements Detailed Comparison**
 
 | Payeezy Gateway Direct Element| In Commerce Hub Response (Y/N) |
-| :--------: | :-------------: | 
+| :-------- | :------------- | 
 |Tag - Transaction Tag (Unique identifier) |Y |
 |Cardholder Name - the cardholder name |Y | 
 |Card Number - Masked Card Number  |Y | 
