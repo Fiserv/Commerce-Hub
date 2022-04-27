@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 
 ---
 
@@ -101,12 +101,6 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesEncW
 title: Decrypted Wallet
 description: Decrypted Wallet core differences
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesDecWallet.md
--->
-
-<!-- type: card
-title: Account Verification
-description: Recommended API integration changes for account verification 
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md
 -->
 
 <!-- type: card
