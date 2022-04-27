@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-not-present, payeezy]
 
 ---
 
@@ -35,7 +35,7 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
 |33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 
-*It is highly recommended to use the new [Account Verification](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+*It is highly recommended to use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ---
 
@@ -74,7 +74,7 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 |refund (open)  | NOT YET SUPPORTED  | |
 |refund (tagged) | /payments/v1/charges/{transactionId}/refund   | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
-*It is highly recommended to use the new [Account Verification](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesAcctVer.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+*It is highly recommended to use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ## Request and Response - Formats and Elements
 
