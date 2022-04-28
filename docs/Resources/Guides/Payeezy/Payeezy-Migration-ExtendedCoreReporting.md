@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, reporting, card-not-present, payeezy, search-api, reporting-api]
 
 ---
 
@@ -9,19 +9,17 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-## General
+<!--type: tab
+titles: UI Reporting, Reporting APIs, Search APIs
+-->
+
+## Reporting UI
 
 Reporting was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available through ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) .
 
 In RPM, there were five pre-defined reports available with the ability to adjust the date ranges; the new solution, CLX, is a highly configurable reporting engine.
 
 In RPM, the Search could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX is available in English language only.
-
-<!--type: tab
-titles: UI Reporting, Reporting APIs, Search APIs
--->
-
-## Reporting UI
 
 In General, many more data elements are available for reporting in the new CLX solution than were previously available in RPM.  
 
@@ -82,7 +80,7 @@ Payeezy utilizes Authentication per user, not terminal or merchant based; a user
 
 Commerce Hub search Provides a list of authorization transactions pre-settlement (does not include settlement records). 
 
-The Payeezy search allows filtering based on criteria related to cardholder name, reference numbers, transaction tags and card numbers; Commerce Hub does not allow searching on those elements.  Commerce Hub allows filtering on payment method, network, type, currency and auth code in addition to first 6 and last 4 of the card number.   
+The Payeezy search allows filtering based on criteria related to cardholder name, reference numbers, transaction tags and card numbers; Commerce Hub does not allow searching on those elements.  Commerce Hub allows filtering on payment method, networks, type, siteIDs and auth code in addition to first 6 and last 4 of the card number.   
 
 Commerce Hub does provide a [summary search function](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/summary).
 
