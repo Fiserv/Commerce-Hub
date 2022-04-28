@@ -66,6 +66,181 @@ type: tab
 
 ## Reporting APIs
 
+Payeezy parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows; a mechanism is in place to allow for additional calls to return additional rows.  Commerce Hub is an API request and response (not csv) with no limit on records returned.
+
+Payeezy utilizes Authentication per user, not terminal or merchant based; a user that is associated with more than one merchant or mid can specify the mid or terminal in the request; Commerce Hub authentication is by merchant.
+
+In Payeezy, the reporting API was one endpoint and used a report_type parameter to select the information returned; in Commerce Hub, there is an endpoint for each report being requested.
+
+| Payeezy Reporting API Report Type| Commerce Hub Endpoint | Commerce Hub Additional Information|
+| :-------- | :------------- | :---------- |
+|vt_activity| /v1/authorization/search |[Authorizations](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search)|
+|vt_deposits_closed |Not Available | For users with more than one merchant or mid|
+|vt_deposits_pending|Not Available | For users with more than one merchant or mid|
+|vt_declined |/v1/authorization/search and filter approvalCodes = "Declined"|[Authorizations](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search)|
+
+**Request and Response Elements Detailed Comparison**
+
+<!--type: tab
+titles: vt_activity, Rvt_deposits_closed, vt_deposits_pending, vt_declined
+-->
+
+<!--type: tab
+titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
+-->
+
+| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
+| :-------- | :------------- | :---------- |
+|account |Not Available | For users with more than one merchant or mid|
+|merchant |Not Available | For users with more than one merchant or mid|
+|terminal |Not Available | For users with more than one merchant or mid|
+|start_date  |fromDate | | 
+|end_date  |toDate | | 
+|report_type  |Not Available  | The Payeezy field to search for: cardholder, refno, custref, tag, cardno|
+|group  |Not Available  | The value to search for in the search field designated above|
+|inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
+| |limit |The maximum number of records that will be returned |
+|  |fields |Specify specific fields to be pulled back instead of the entire set (default behavior) |
+| |filters.paymentMethods | |
+| |filters.networks | |
+| |filters.types | |
+| |filters.siteIDs | |
+| |filters.authCode | |
+| |filters.first6 | |
+| |filters.last4 | |
+|offset  | | An integer determining the offset from where the rows should be fetched.  |
+
+<!--
+type: tab
+-->
+
+|RPM Element             |CLX Element  |
+|:------------------------------------------|:---------------------------------|
+|Sub-total: Terminal             |   No Sub-total/summary |
+|Sub-total: Card (brand)         |   No Sub-total/summary|
+|Sub-total: Transaction Type     |    No Sub-total/summary|
+|Sub-total: Quantity             |    No Sub-total/summary|
+|Sub-total: Currency             |   No Sub-total/summary|
+|Sub-total: Amount               |   No Sub-total/summary |
+|Txn Detail: Actions             |  Actions|
+|Txn Detail: Card Holder         |   Customer Name |
+|Txn Detail: Card (brand)        |   Network – always “unknown"|
+|Txn Detail: Amount              |   Amount  |
+|Txn Detail: Card Number         |   Account #  |
+|Txn Detail: Expiry              |  Card Expiry Date  |
+|Txn Detail: Transaction Type    |  Transaction   Type – sometimes “unknown”  |
+|Txn Detail: Status              | Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
+|Txn Detail: Time (Datetime)     |  Txn Date & Time  |
+|Txn Detail: Auth                |  Auth Code          |
+|Txn Detail: Ref Num             | Merchant Invoice Number  
+|Txn Detail: Cust. Ref Num       | Merchant Order ID     |
+|Txn Detail: User ID*             | Not Available      |
+
+<!-- type: tab-end -->
+
+<!--
+type: tab
+-->
+
+<!--type: tab
+titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
+-->
+
+| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
+| :-------- | :------------- | :---------- |
+|account |Not Available | For users with more than one merchant or mid|
+
+<!--
+type: tab
+-->
+
+| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
+| :-------- | :------------- | :---------- |
+|account |Not Available | For users with more than one merchant or mid|
+
+<!-- type: tab-end -->
+
+<!--
+type: tab
+-->
+
+<!--type: tab
+titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
+-->
+
+| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
+| :-------- | :------------- | :---------- |
+|account |Not Available | For users with more than one merchant or mid|
+
+<!--
+type: tab
+-->
+
+| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
+| :-------- | :------------- | :---------- |
+|account |Not Available | For users with more than one merchant or mid|
+
+<!-- type: tab-end -->
+
+<!--
+type: tab
+-->
+
+<!--type: tab
+titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
+-->
+
+| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
+| :-------- | :------------- | :---------- |
+|account |Not Available | For users with more than one merchant or mid|
+|merchant |Not Available | For users with more than one merchant or mid|
+|terminal |Not Available | For users with more than one merchant or mid|
+|start_date  |fromDate | | 
+|end_date  |toDate | | 
+|report_type  |Not Available  | The Payeezy field to search for: cardholder, refno, custref, tag, cardno|
+|group  |Not Available  | The value to search for in the search field designated above|
+|inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
+| |limit |The maximum number of records that will be returned |
+|  |fields |Specify specific fields to be pulled back instead of the entire set (default behavior) |
+| |filters.paymentMethods | |
+| |filters.networks | |
+| |filters.types | |
+| |filters.siteIDs | |
+| |filters.authCode | |
+| |filters.first6 | |
+| |filters.last4 | |
+|offset  | | An integer determining the offset from where the rows should be fetched.  |
+
+<!--
+type: tab
+-->
+
+|RPM Element             |CLX Element  |
+|:------------------------------------------|:---------------------------------|
+|Sub-total: Terminal             |   No Sub-total/summary |
+|Sub-total: Card (brand)         |   No Sub-total/summary|
+|Sub-total: Transaction Type     |    No Sub-total/summary|
+|Sub-total: Quantity             |    No Sub-total/summary|
+|Sub-total: Currency             |   No Sub-total/summary|
+|Sub-total: Amount               |   No Sub-total/summary |
+|Txn Detail: Actions             |  Actions|
+|Txn Detail: Card Holder         |   Customer Name |
+|Txn Detail: Card (brand)        |   Network – always “unknown"|
+|Txn Detail: Amount              |   Amount  |
+|Txn Detail: Card Number         |   Account #  |
+|Txn Detail: Expiry              |  Card Expiry Date  |
+|Txn Detail: Transaction Type    |  Transaction   Type – sometimes “unknown”  |
+|Txn Detail: Status              | Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
+|Txn Detail: Time (Datetime)     |  Txn Date & Time  |
+|Txn Detail: Auth                |  Auth Code          |
+|Txn Detail: Ref Num             | Merchant Invoice Number  
+|Txn Detail: Cust. Ref Num       | Merchant Order ID     |
+|Txn Detail: User ID*             | Not Available      |
+
+<!-- type: tab-end -->
+
+<!-- type: tab-end -->
+
 <!--
 type: tab
 -->
@@ -97,7 +272,7 @@ Commerce Hub does provide a [summary search function](https://dev-developerstudi
 |search  |Not Available  | The value to search for in the search field designated above|
 |status  |filters.approvalCodes | |
 |amount_from, amount_to  |Not Available | Filter based on amount range |
-|Inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
+|inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
 | |limit |The maximum number of records that will be returned |
 |  |fields |Specify specific fields to be pulled back instead of the entire set (default behavior) |
 | |filters.paymentMethods | |
