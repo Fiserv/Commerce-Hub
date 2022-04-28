@@ -1,9 +1,8 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal,key-management, certification]
+tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, key-management, certification]
 ---
 
-
-# API Key-Management
+# API Key Management
 
 ## Create a API Key
 
