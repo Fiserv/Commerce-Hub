@@ -18,7 +18,7 @@ Begin integration with Commerce Hub to start accepting debit card payments.
 <!-- type: row -->
 
 <!-- type: card
-title: PIN-Less Debit
+title: PINless Debit
 description: Process debit cards through debit and credit networks for online, in-app, MOTO and in-person payments.
 link: ?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md
 -->

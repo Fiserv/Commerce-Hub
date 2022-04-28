@@ -4,6 +4,18 @@ tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app
 
 # Samsung Pay: App Integration
 
+Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Samsung Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
+
+#### How it Works
+
+1. Customer selects checkout from the merchant's App.
+2. Customer then presented with the merchant's payment form.
+3. The App calls the Samsung Pay framework to obtain the encrypted wallet data.
+4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
+5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+
+---
+
 ## Step 1: Configure Samsung Pay
 
 Configure the Samsung [developer account](https://pay.samsung.com/developers/tour/memberguide) with the merchant information to accept Samsung Pay in an App. This includes creating a merchant identifier, create a Samsung Pay In-App or App2App service and upload a processing certificate.
@@ -181,10 +193,9 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay Web Integration RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md)
-- [Apple Pay Web Integration Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Samsung Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay-Web-REST.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 
 ---

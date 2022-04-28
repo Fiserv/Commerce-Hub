@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, configuration, user-management, card-not-present, payeezy]
 
 ---
 
@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Configuration was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available from ClientLine Enterprise (CLX).  For more details please see <link to CLX documentation/training>.
+Configuration was previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be available from ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
 <!--type: tab
 titles: Terminal Configuration, User Management
@@ -17,24 +17,22 @@ titles: Terminal Configuration, User Management
 
 ### General
 
-Batch Settlement cutoff times can no longer be configured. 
-
-A new API Password, HMAC Key and other API relation authorization and authentication was available self-serve in Payeezy RPM Administration and cannot be performed in CLX; <need to know where a merchant can do this self-service to a comparative analysis of that system can be performed>. 
-
-There is more configuration available to a merchant admin in Marketplace for CommerceHub that was previously available to this role via Payeezy Gateway. 
-
-Partner API capabilities are currently not supported and will be available in future releases
-
-In Payeezy Gateway the Administrative pages could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time Marketplace is available in English language only.
-
-### By Screen/Capability Comparison
+Batch Settlement cutoff times configuration will not be available in the interface. 
  
-| PGW Screen/Function | Marketplace Screen/Function | Notes/Differences|
+The API integration settings were originally controlled solely in RPM; in Commerce Hub, it will be controlled jointly in CLX and Dev Studio.
+
+Partner API capabilities are currently not supported.
+
+In Payeezy, the Administrative pages could be displayed in multiple languages (EN, ES) based on the terminal setting; at this time CLX is available in English language only.
+
+### Capability Comparison by Screen
+ 
+| RPM Screen/Function | CLX Screen/Function | Notes/Differences|
 | :----------------- | :------------- |:----------------|
-| **Terminal List** | **MID List** | Data displayed at summary view is different |
-|**Terminal Details**<br> Set Batch Cutoff Time<br> Generate New API Password<br> Set Terminal Type<br> Enable Special Payments<br> Allow Soft Descriptors<br> Configure L2/L3 Support  | **Account Settings**<br> View Entitlements<br> Set Payment Types<br> VAS/Set Debit Routing<br> Services Configurations to Enable and Configure:<br>  - Transaction Types<br>  - Partial Approvals<br> - Quick Key<br> - Recurring Payments<br> - Re-Authorization <br> <br> <br>| Cannot configure batch settlement time in Marketplace<br> <br> Cannot generate new API passwords in Marketplace. <br> <br> Enabling Special Payments and Soft Descriptors no longer required. <br> <br> Additional Configuration abailable in Marketplace that could not previously be completed by a merchant administrator. |
-|**API Access**<br> Generate New HMAC Key<br> Calculate HMAC Signature  | Not Available in Marketplace| Will be done through Dev Studio by merchant developer via algorithm provided. | 
-|**Address Details**<br> Update address details | Configuration of business details in Marketplace will be managed by the onboarding team.  Future release may provide limited capacity for a merchant to make updates.  | 
+| **Terminal List** | **MID List** | Summary data includes key idenifiers but differing supplemental data |
+|**Terminal Details**<br> Set Batch Cutoff Time<br> Generate New API Password<br> Set Terminal Type<br> Enable Special Payments<br> Allow Soft Descriptors<br> Configure L2/L3 Support  | **Account Settings**<br> View Entitlements<br> Set Payment Types<br> VAS/Set Debit Routing<br> Services Configurations to Enable and Configure:<br>  - Transaction Types<br>  - Partial Approvals<br> - Quick Key<br> - Recurring Payments<br> - Re-Authorization <br> <br> <br>| API integration is handled differentlyin CLX <br> <br> Enabling Special Payments and Soft Descriptors is no longer required. <br> <br>  <br> <br>  <br> <br> 
+|**API Access**<br> Generate New HMAC Key<br> Calculate HMAC Signature  | Not available in CLX | |
+|**Address Details**<br> Update address details | Configuration of business details in CLX will be managed by the onboarding team.  Future release may provide limited capacity for a merchant to make updates.  | 
 
 <!--
 type: tab
@@ -44,49 +42,38 @@ type: tab
 
 ### General
 
-Provides the capability to: 
-- Filter list by client
-- Export user list
-- Import user
-- Action button on screen:
+The ability to create and edit users was available in Payeezy RPM Administration and will now be done in CLX.
+
+Provides the additional capability to: 
+- Import User(s) by cloning existing user access
+- Export User list
+- Actions menu:
    - Reset Password
    - Delete Account
    - Disable Account
    - Clone
-- Assignment of client and franchisee access.  _In Payeezy, this was done on the back-end in merchant configuration._
-- Assignment of applications that user can access
-
-The ability to edit the terminal/MID address and create and edit users was available in Payeezy RPM Administration and will now be done in User Management inside of CLX.
+- Assignment of applications (permissions) for user
 
 Postal code is required when creating a new user.
 
-UserID and password are auto-generated by application; functionality for merchant to set their own is no longer available.
+Functionality for the merchant to choose the UserID and initial password for a user is no longer available.  These values are are auto-generated by application.  Users may modify their own password.
 
-User status can be changed after user is created; could be set at time of creation in Payeezy
+User status is set to active upon creation.  Payeezy allowed for the status to be set to any value at time of creation. 
 
-Admin can update information on all users; not just their own
+Admin can now update information on all users.
 
-Change log of all updates to a user account is available for review
+Change log of all updates to a user account is available for review.
 
-### By Screen/Capability Comparison 
+###  Capability Comparison by Screen
    
-| PGW Screen/Function | User Management Screen/Function | Notes/Differences|
+| RPM Screen/Function | CLX Screen/Function | Notes/Differences|
 | :---------------- | :------------- |:----------------|  
-|**User List**<br> Name<br> Email<br> Phone<br> Login<br> Role<br> Password Expires<br>  Total Logins<br>  Last Login<br>  Status <br>  <br>  <br>  <br> <br> <br> <br> <br>| **User Management**<br> UserID<br> Full Name<br> Email<br> Last Login<br>  Status<br>  Actions:<br> - Reset Password<br> - Delete Account<br> - DIsable Account<br> - Clone<br> Search<br> Status Filter<br> Client Filter<br> Export User List<br> Import Users<br> Add User<br> | Clone capability available in User Management<br> <br> Export user list and import users capability available in User Management.  <br>  <br>  <br>  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>|
-|**Create New User**<br> Contact<br> - First Name<br> - Last Name<br> - Email<br> - Position<br> - Phone<br>  - Fax<br>  - Allow Alerst<br>  Login<br> - Login<br> - Status<br> - Password<br> - Confirmation<br> - Role<br>  - POS Permissions<br>  - Enable Recurring<br> IP Restrictions<br> Account Restrictions<br> Preferences <br> - Records per Page<br> - TIme Zone<br> - Language | **Add User**<br> User Details<br> - First Name <br> - Last Name <br> - Email <br>  - Postal Code<br>  - Select Language<br> - Mobile Number<br> - Phone Number<br> Global Settings<br> - Authentication Methods<br> - Truncation of card numbers and DDA<br> - User Channel<br> Clients<br> Franchisee Access<br>Applications <br> <br> <br> <br> <br> <br> <br>| UserID and associated passwords will be generated by the BusinessTrack application. <br> <br> User status can be adjusted after user is created.<br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>|
-|**User Details**<br> View Contact Info<br> View Login Info<br> View Security Questions<br> View IP Restrictions<br> View Preferences   <br> <br> <br> <br>| **User Management**<br> Search user table to select user account to review/edit.<br> - User Details<br> - Global Settings<br> - Clients<br> - Franchisee Access<br> - Applications<br> - Change Log | |
+|**User List**<br> Name<br> Email<br> Phone<br> Login<br> Role<br> Password Expires<br>  Total Logins<br>  Last Login<br>  Status   <br>  <br>  <br> <br> <br> <br> <br>| **User Management**<br> UserID<br> Full Name<br> Email<br> Last Login<br>  Status<br>  Actions:<br> - Reset Password<br> - Delete Account<br> - Disable Account<br> - Clone<br> Search<br> Status Filter<br> Export User List<br> Import Users<br> Add User<br> | Clone capability available. <br> <br> Export user list and import users capability available.  <br> <br>  <br>  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>|
+|**Create New User**<br> Contact<br> - First Name<br> - Last Name<br> - Email<br> - Position<br> - Phone<br>  - Fax<br>  - Allow Alerst<br>  Login<br> - Login<br> - Status<br> - Password<br> - Confirmation<br> - Role<br>  - POS Permissions<br>  - Enable Recurring<br> IP Restrictions<br> Account Restrictions<br> Preferences <br> - Records per Page<br> - Time Zone<br> - Language | **Add User**<br> User Details<br> - First Name <br> - Last Name <br> - Email <br>  - Postal Code<br>  - Select Language<br> - Mobile Number<br> - Phone Number<br> Global Settings<br> - Authentication Methods<br> - Truncation of card numbers and DDA<br> - User Channel<br> Franchisee Access<br>Applications <br> <br> <br> <br> <br> <br> <br> <br>| UserID and associated passwords will be generated by the CLX application. <br> <br> User status can be adjusted after user is created.<br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>|
+|**User Details**<br> View Contact Info<br> View Login Info<br> View Security Questions<br> View IP Restrictions<br> View Preferences   <br> <br> <br> | **User Management**<br> Search user table to select user account to review/edit.<br> - User Details<br> - Global Settings<br>  - Franchisee Access<br> - Applications<br> - Change Log | |
 |**My Account**<br> Same as User Details, but user can make edits to their account. <br> <br> <br> <br> <br> <br> <br> | **User Management**<br> Click on Name in top right corner to edit/view user info: <br> - Name <br> - Email <br>  - UserID<br>  - Change Password<br> - Fullscreen Toggle<br> - Sign Out | |
 
 ---
 
 <!-- type: tab-end -->
-
-## See Also
-
-- [Business Track / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
