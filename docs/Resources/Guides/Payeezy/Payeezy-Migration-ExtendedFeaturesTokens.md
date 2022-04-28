@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, tokens-request, payment-token, tokenization,card-not-present, payeezy]
 
 ---
 
@@ -70,7 +70,9 @@ In ClientLine Enterprise (CLX), transactions can not be initiated using a token 
 type: tab
 -->
 
-Limited reporting available in ClientLine Enterprise (CLX).
+Token generation can be seen as a 'Generate Token' transaction type in the Search report in CLX.
+
+Token number can be viewed in the transaction detail of the Search report in CLX.
 
 <!-- type: tab-end -->
 
@@ -78,7 +80,7 @@ Limited reporting available in ClientLine Enterprise (CLX).
 
 ## See Also
 
-- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
