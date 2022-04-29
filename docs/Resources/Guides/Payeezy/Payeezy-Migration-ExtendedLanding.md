@@ -22,26 +22,26 @@ As Commerce Hub continues to grow and new features are added, the playbook will 
 
 <!-- type: card
 title: API Structure
-description: Includes Endpoint changes. Includes overview of request and response element and format changes.
+description: Includes Endpoint changes Includes overview of request and response element and format changes
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreAPI.md
 -->
 
 <!-- type: card
 title: Configuration
-description: Includes configuration comparison for users and terminals in the new ClientLine Enterprise platform.
+description: Includes configuration comparison for users and terminals in the new ClientLine Enterprise platform
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.md
 -->
 
 <!-- type: card
 title: Virtual Terminal
-description: Differences in Virtual Terminal functionality.
+description: Differences in Virtual Terminal functionality
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md
 -->
 
 <!-- type: card
 title: Reporting
-description: Learn about the new enhanced capabilitities in ClientLine Enterprise.
+description: Learn about the new enhanced capabilitities in ClientLine Enterprise
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md
 -->
 
@@ -77,13 +77,13 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesCVV2
 
 <!-- type: card
 title: Soft Descriptors
-description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub.
+description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md
 -->
 
 <!-- type: card
 title: Tokenization
-description: How the configuration and functionality of tokens has changed with Commerce Hub.
+description: How the configuration and functionality of tokens has changed with Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesTokens.md
 -->
 
@@ -123,13 +123,13 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI
 
 <!-- type: card
 title: Required Fields
-description: Fields Required in a request by Commerce Hub for each transaction type.
+description: Fields Required in a request by Commerce Hub for each transaction type
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md
 -->
 
 <!-- type: card
 title: Customer Transaction Record (CTR) Response Element Creation
-description: How to create the CTR response element from Commerce Hub elements.
+description: How to create the CTR response element from Commerce Hub elements
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md
 -->
 
