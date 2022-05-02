@@ -14,6 +14,14 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## April 27th 2022
+
+| Details | Type | Environment | 
+| ----- | ----- | ----- |
+| Transaction support for Canada credit (Visa, Mastercard,  | Feature | Cert |
+
+---
+
 ## April 15th 2022
 
 | Details | Type | Environment | 
