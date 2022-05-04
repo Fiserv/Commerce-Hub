@@ -109,6 +109,10 @@ description: Differences in Quick Key functionality
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
 -->
 
+<!-- type: card
+
+-->
+
 ---
 
 ## Technical Specifications
