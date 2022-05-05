@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, fraud, fraud-settings]
 
 # Fraud Settings
 
-<!-- theme: danger -->
+<!-- theme: danger --> 
 > We are enhancing Commerce Hub to include additional fraud settings support and the documents related to the features will be released soon.
 
 Commerce Hub implements various transaction and fraud controls that allows merchants to monitor potentially fraudulent transactions including [positive and negative filters], [velocity controls], and [transaction restrictions], that will automatically accept or reject transactions. Unlike [AVS and CVV filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md), these will block transactions before any authorization attempt is made.
