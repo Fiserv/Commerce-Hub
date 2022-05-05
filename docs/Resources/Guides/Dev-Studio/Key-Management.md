@@ -1,34 +1,41 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, key-management, certification]
+tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, key-management, api-key, api-secret]
 ---
 
 # API Key Management
 
-## Create a API Key
+A developer can manage their API application Keys and API Secrets from the Developer Studio Dashboard. API Key Management allows you to [create and delete an API Key](#create-an-api-key).
 
-Developers can create and manage API Keys from the Dashboard in the API Key section.
+<!-- theme: warning -->
+> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Developer Studio in the future.
 
-### Step 1: Access Developer Studio
+---
+
+## Create an API Key
+
+Developers can create and manage API Keys from the Dashboard in the Credentials section.
+
+#### Step 1: Access Developer Studio
 
 Login to the Developer Studio and access the Developer Dashboard. 
 
-### Step 2: Add a new API Key
+#### Step 2: Add a New API Key
 
 Click Add API Key
 
-### Step 3: Select Product
+#### Step 3: Select Product
 
 Select Commerce Hub from the dropdown
 
-### Step 4: Select Merchant Account
+#### Step 4: Select Merchant Account
 
 Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) and associated Merchant ID required for integration from the dropdown
 
-### Step 5: Create an API Name
+#### Step 5: Create an API Name
 
 Create a API Key Name to identifiy the project
 
-### Step 6: Select Environment
+#### Step 6: Select Environment
 
 Select the API Key Type based on the enviroment;
 
@@ -36,7 +43,7 @@ Select the API Key Type based on the enviroment;
 - **End-To-End:** Used to certify your API application
 - **Production:** Used to obtain production API credentials
 
-### Step 7: Select Features
+#### Step 7: Select Features
 
 Select the features to be integrated from the following;
 
@@ -45,15 +52,14 @@ Select the features to be integrated from the following;
 - Data as a Service: Enhanced Data
 - Data as a Service: Return Optimizer
 
-### Step 8: Create Keys
+#### Step 8: Create Keys
 
 Click Create to obtain the API Key/Secret
 
 <!-- theme: warning -->
-> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Dev Studio in the future.
+> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Developer Studio in the future.
 
 ---
-
 
 ## See Also
 
