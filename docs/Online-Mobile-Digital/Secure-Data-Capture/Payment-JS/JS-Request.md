@@ -1,12 +1,12 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form,  js, javascript, secure-data-capture, tokenization]
 ---
 
 # Create a JavaScript Request
 
 ## Step 1: Authentication
 
-A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request). 
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request). 
 
 ---
 
@@ -20,7 +20,7 @@ The JS script tag is required in the website by downloading or including the fol
 
 ```php
 
-<script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="https://prod.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
 
 ```
 
@@ -28,17 +28,18 @@ The JS script tag is required in the website by downloading or including the fol
 
 ### Authentication Credentials
 
-Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) in step 1.
+Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md) in step 1.
 
 ```javascript
 
-const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
-const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
+const authorization = 'ACCESS_TOKEN';
+const apiKey = 'API_KEY'; 
 const formConfig = {
-       "merchantId": '100204342250',
-       "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
-       "symmetricEncryptionAlgorithm": 'AES_GCM'
-    }
+   "merchantId": 'MERCHANT_ID',
+   "publicKey": 'PUBLIC_KEY',
+   "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM'
+   };
+
 ```
 
 ---
@@ -97,7 +98,7 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
@@ -216,8 +217,9 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
@@ -295,6 +297,8 @@ type: tab
 ## See Also
 
 - [Customize JS Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
 - [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
 
+---

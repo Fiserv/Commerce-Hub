@@ -18,6 +18,7 @@ The variable `sourceType` is used to determine the source of the transaction. De
 | [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | **Payment Token** is a created by submitting a token request using a payment card. Used to submit a Payment Token transaction to our application. |
 | [NetworkToken]<!--(?path=docs/Resources/Guides/Payment-Sources/Network-Token.md)--> | **Network Token** is a created by submitting a request to the processing networks (Visa, Mastercard, AMEX, Discover) using a payment card. Used to submit a Network Token transaction to our application. |
 |[Payment3DS]<!--(?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)--> | **3-D Secure** authentication provides an additional security layer for online card transactions. If the merchant account is enabled for 3-D Secure, all charge transactions initiated by their API will by default go through the 3-D Secure process. Used to submit 3-D Secure transaction to our application. |
+| [PaymentSession](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) | **Payment Session** is a nonce token obtained from a security credentials request. *PaymentSession* is used is used in iFrame and JavaScript Secure Data Capture integrations to submit a transaction to our application. |
 
 ---
 

@@ -10,14 +10,14 @@ type: tab
 titles: Request Variables, Response Variables
 -->
 
-The below table identifies the required parameters in the request.
+The below table identifies the parameters in the request.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|------|
-| `publicKeyRequired` | *boolean* | N/A | &#10004; | If the signedCert is expired or invalid then merchant would send a request |
-| `accessTokenRequired` | *boolean* | N/A | &#10004; | If the access token is expired then merchant would request for a new token |
-| `accessTokenTimeToLive` | *string* | 7 | &#10004; | Time to live (expiration time) in milliseconds, max 30 minutes (1800000 ms) |
-| `responseRedirectURL` | *string* | 4000 | &#10004; | Response URL redirect |
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `publicKeyRequired` | *boolean* | N/A | Used ro request a public key. If the signedCert is expired or invalid then merchant would send a request, default is true (false currently not supported) |
+| `accessTokenRequired` | *boolean* | N/A | Used to request an access token. If the access token is expired then merchant would request for a new token, default is true (false currently not supported) |
+| `accessTokenTimeToLive` | *string* | 7 | Time to live (expiration time) in milliseconds, default is the max time of 30 minutes (1800000 ms) |
+| `responseRedirectURL` | *string* | 4000 | Response URL redirect |
 
 <!--
 type: tab
@@ -33,7 +33,7 @@ The below table identifies the response elements.
 | `accessTokenIssuedTime` | *string* | 64 | Token issue time in YYYY-MM-DDThh:mm:ssZ format |
 | `accessTokenTimeToLive` | *string* | 7 | Access token expiry |
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
-| `asymmetricEncryptionAlgorithm` | *string* |  | RSA/ECB/PKCS1Padding. |
+| `asymmetricEncryptionAlgorithm` | *string* |  | RSA/ECB/PKCS1 with padding. |
 
 <!-- type: tab-end -->
 

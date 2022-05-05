@@ -1,31 +1,64 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, release-notes]
+tags: [carat, commerce-hub, enterprise, getting-started, release-notes, update, patch, bug-fix, enhancement]
 ---
 
 # Release Notes
 
-Commerce Hub is continually being improved with new features, security enhancements and upgrades. Below is a summary of the latest releases.
+Commerce Hub is continually being improved with new features, security enhancements bug fixes, and performance improvements. These release notes list the updates for each Commerce Hub release with the most recent update shown first.
 
-## November 19th 2021
+#### Release Types
 
-Commerce Hub launch
+- **Feature:** New feature was released
+- **Update:** Existing feature was updated or enhanced
+- **Patch:** Bug was fixed
 
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md) support
-- [Incremental authorization](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) support
-- [Dynamic descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md) support
-- PaymentCard support for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- Merchant managed [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) support
-- [Data Solutions](?path=docs/Resources/API-Documents/DaaS/Data-Solutions.md) support; Enhanced Data Service, Returns Optimization Service
-- [Address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification support
-- Enterpirse portal support; Virtual Terminal, ClientLine Reporting
+---
 
-## September 9th 2021
+## April 27th 2022
 
-Commerce Hub Beta launch
+| Details | Type | Environment | 
+| ----- | ----- | ----- |
+| Transaction support for Canada credit (Visa, Mastercard,  | Feature | Cert |
 
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md) support
-- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) support
-- Initial card not present [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) support
-- Transaction support; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [Refund](?docs/Resources/API-Documents/Payments/Refund.md), [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) support
-- [Split shipment](?path=docs/Resources/Guides/Split-Shipment.md) support
+---
+
+## April 15th 2022
+
+| Details | Type | Environment | 
+| ----- | ----- | ----- |
+| [Error response messages](?path=docs/Resources/Guides/Response-Codes/Error-Code.md) corrected to send proper code, message, and field | Patch | Cert |
+| [Directed routing](?path=docs/Resources/Guides/Directed-Routing.md) enhanced to support better identification of payment processor and platforms | Update | Cert |
+| [Processor response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) enhanced to support better identifiaction of payment processor and host | Update | Cert |
+| Timeout causing 703: Internal Error resolved | Patch | Cert |
+| [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) | Feature | Cert |
+| Increased maxLength of `merchantOrderId` and `merchantTransactionId` to 128 in [transaction details](?path=docs/Resources/Master-Data/Transaction-Details.md) | Update | Cert |
+| Added support for processing card not present authorization and cancel transactions through Chase Salem [processor](?path=(?path=docs/Resources/Guides/Directed-Routing.md)). | Feature | Cert |
+
+---
+
+## Q1 2022
+
+| Details | Type | Environment | 
+| ----- | ----- | ----- |
+| [Debit network](?path=docs/Resources/Guides/Debit/Debit.md) routing support | Feature | Cert |
+| [PIN](?path=docs/Resources/Master-Data/Pin-Block.md) support for credit and debit cards | Feature | Cert |
+| Generate CSR support for Apple Pay in Dev Studio | Feature | Cert |
+| Added support for processing card present transactions through Chase Salem [processor](?path=(?path=docs/Resources/Guides/Directed-Routing.md)). | Feature | Cert |
+| [Tokenization](?[ath=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) will now return a token for all processors a client is enabled for. | Feature | Cert |
+| Partial authorization support added for card present transactions | Feature | Cert |
+| Ability to add a card present merchant store/location to marketplace. | Feature | ? |
+| Ability to add Clover devices to marketplace. | Feature | ? |
+| [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) `sourceType` support added. | Feature | Cert |
+| [Idempotency](?path=docs/Resources/Guides/Idempotency.md) will send the status of the original transaction back when using the same `Client-Request-Id`. | Feature | Cert |
+| [Sandbox account creation](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) enabled for Stage Developer Studio environment | Feature | Cert |
+| Ability to configure account settings and features added to marketplace. | Feature | ? |
+| [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) added to support integration for SAQ-A and SAQ A-EP clients. | Feature | Cert |
+
+
+
+---
+
+## Archive
+- [2021](?path=docs/Release-Notes-Alerts/RN-2021.md)
+
+---
