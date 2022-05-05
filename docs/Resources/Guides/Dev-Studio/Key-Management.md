@@ -1,10 +1,17 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, key-management, certification]
+tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, key-management, api-key, api-secret]
 ---
 
 # API Key Management
 
-## Create a API Key
+A developer can manage their API application Keys and API Secrets from the Developer Studio Dashboard. API Key Management allows you to [create and delete an API Key](#create-an-api-key).
+
+<!-- theme: warning -->
+> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Developer Studio in the future.
+
+---
+
+## Create an API Key
 
 Developers can create and manage API Keys from the Dashboard in the API Key section.
 
@@ -50,7 +57,7 @@ Select the features to be integrated from the following;
 Click Create to obtain the API Key/Secret
 
 <!-- theme: warning -->
-> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Dev Studio in the future.
+> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Developer Studio in the future.
 
 ---
 
