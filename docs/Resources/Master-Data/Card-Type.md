@@ -16,6 +16,7 @@ Commerce Hub supports the following major card brands (schemes).
 | Maestro | 6759, 676770, 676774, 5018, 5020, 5038, 5893, 6304, 6759, 6761, 6762, 6763 | 12-19 | 3-digit | *MAESTRO* | US |
 | JCB | 3528–3589 | 16-19 | 3-digit | *JCB* | US |
 | Union Pay | 62 | 16-19 | 3-digit | *UNION_PAY* | US |
+| Interac | 001203 | 16 | N/A | *INTERAC* | CA |
 
 ---
 
