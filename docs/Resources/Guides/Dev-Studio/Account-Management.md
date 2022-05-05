@@ -4,7 +4,7 @@ tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal,ke
 
 # Account Management
 
-Developer's can manage their sandbox, cert, and production Merchant IDs from the Developer Dashboard. Account management allows you to [create a sandbox account](#create-a-new-sandbox-merchant-id), [access a production account](#access-a-merchant-id) or [clone a production account](#clone-a-merchant-id).
+A developer can manage their sandbox, cert, and production Merchant IDs from the Developer Studio Dashboard. Account management allows you to [create a sandbox account](#create-a-new-sandbox-merchant-id), [access a production account](#access-a-merchant-id) or [clone a production account](#clone-a-merchant-id).
 
 ---
 
