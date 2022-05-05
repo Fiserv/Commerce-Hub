@@ -19,7 +19,7 @@ Developers can create and manage API Keys from the Dashboard in the Credentials 
 
 Login to the Developer Studio and access the Developer Dashboard. 
 
-#### Step 2: Add a new API Key
+#### Step 2: Add a New API Key
 
 Click Add API Key
 
