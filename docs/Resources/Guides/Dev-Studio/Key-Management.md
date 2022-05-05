@@ -13,7 +13,7 @@ A developer can manage their API application Keys and API Secrets from the Devel
 
 ## Create an API Key
 
-Developers can create and manage API Keys from the Dashboard in the API Key section.
+Developers can create and manage API Keys from the Dashboard in the Credentials section.
 
 #### Step 1: Access Developer Studio
 
