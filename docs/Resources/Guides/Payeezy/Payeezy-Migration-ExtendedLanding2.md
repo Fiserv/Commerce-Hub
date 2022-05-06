@@ -73,16 +73,12 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesToke
 
 <!-- type: row-end -->
 
-<!-- type: card
-title: Encrypted Wallet
-description: Encrypted Wallet core differences
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesEncWallet.md
--->
+<!-- type: row -->
 
 <!-- type: card
-title: Decrypted Wallet
-description: Decrypted Wallet core differences
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesDecWallet.md
+title: Wallets
+description: Expanded capabilities for Apple Pay and Google Pay
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesWallets.md
 -->
 
 <!-- type: card
@@ -90,6 +86,14 @@ title: Quick Key
 description: Differences in Quick Key functionality
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
 -->
+
+<!-- type: card
+title: 
+description:
+link:
+-->
+
+<!-- type: row-end -->
 
 ---
 
