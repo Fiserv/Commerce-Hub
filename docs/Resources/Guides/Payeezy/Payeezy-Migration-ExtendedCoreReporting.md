@@ -23,7 +23,7 @@ In General, many more data elements are available for reporting in the new CLX s
 
 |Function| RPM | CLX|
 | :--------: | :------------- | :---------- |
-|Scope| Information organizaed by terminal/outlet/MID <br><br> Shows summary with drill down to each transaction level detail <br>  <br>| Site ID is the equivalent element to MID in Commerce Hub <br> <br>  Use the Generic Analysis to create summarized reporting. Results displayed have drill-down capabilities into the underlying transactions (via. Search).|
+|Scope| Information organizaed by terminal/outlet/MID <br><br> Shows summary with drill down to each transaction level detail <br>  <br>| Site ID is the equivalent element to MID in Commerce Hub <br> <br>  Use the Reporting --> Generic Analysis to create summarized reporting. Results displayed have drill-down capabilities into the underlying transactions (via Reporting --> Search).|
 |Filters| Limited to date range, up to six months at a time | All RPM filters plus the extended ability to filter on all additional Commerce Hub elements and a date range of up to 25 months or predefined ranges |
 |Delivery|  Download CSV <br> Email report <br> <br> Print <br>| Download as CSV, Excel or JSON <br> Email one-time <br> Schedule a report to email <br> _No print functionality from UI_|
 |Actions| Sale transactions allow for Refund and New Transaction|Sale transactions allow for Refund and Void|
@@ -56,15 +56,17 @@ In General, many more data elements are available for reporting in the new CLX s
 |Txn Detail: Auth                |  Search: Auth Code          |
 |Txn Detail: Ref Num             | Search: Merchant Invoice Number  
 |Txn Detail: Cust. Ref Num       | Search: Merchant Order ID     |
-|Txn Detail: User ID*             | Not Available      |
+|Txn Detail: User ID*             | Not Available - *User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.   |
 
-*User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.
+To generate the comparable **RPM Declined** report in CLX, use the Reporting --> Decline Reasons menu item for a summarized report.  See Generic Analysis parameters in table above for information on inputs.  Drill-down capabilities to the transaction level are not enabled from this report.  Use the Reporting --> Decline Details Anlalysis menu item; same parameters as Search in table above.
 
-To generate the comparable **RPM Declined** report in CLX, use the Decline Reasons menu item for a summarized report.  See Generic Analysis parameters in table above for information on inputs.  Drill-down capabilities to the transaction level are not enabled from this report.  Use the Decline Details Anlalysis menu item; same parameters as Search in table above.
+To generate the comparable **RPM Fraudulent** report in CLX, there are two options:
+- Use the Generic Analysis report for a summary view and select the Decline Reson filter to **??????????????**.  The same can be done using the Search menu item.
+- Use the Decline Reasons report for a summary view and select the Decline Reson filter to **??????????????**. _Note: The Decline Details Analysis report does not allow for filtering on Decline Reason._
 
+To generate the comparable **RPM Deposits - Closed Batches** report in CLX,
 
-
-
+To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
 
 <!--
 type: tab
