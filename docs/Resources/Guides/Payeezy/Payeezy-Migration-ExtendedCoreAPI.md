@@ -31,9 +31,9 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |04 = Open Refund   | NOT YET SUPPORTED  | 
 |05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |13 = Open Void   | NOT YET SUPPORTED  | 
-|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture | [Capture Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
-|33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
-|33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)| 
+|33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)| 
+|33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
 *It is highly recommended to use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 

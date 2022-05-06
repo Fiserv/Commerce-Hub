@@ -10,61 +10,67 @@ tags: [carat, commerce-hub, enterprise, reporting, card-not-present, payeezy, se
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 <!--type: tab
-titles: UI Reporting, Reporting APIs, Search APIs
+titles: Reporting UI, Reporting APIs, Search APIs
 -->
-
-## Reporting UI
 
 Reporting was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available through ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) .
 
-In RPM, there were five pre-defined reports available with the ability to adjust the date ranges; the new solution, CLX, is a highly configurable reporting engine.
-
-In RPM, the Search could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX is available in English language only.
+In RPM, there were five pre-defined reports (Activity, Declined, Fraudulent, Deposits - Closed Batches, Deposits - Pending Batches) available with the ability to adjust the date ranges; the new solution, CLX, is a highly flexible reporting engine that allows you to create many customizable reports. 
 
 In General, many more data elements are available for reporting in the new CLX solution than were previously available in RPM.  
 
 **Format and Functionality Overview**
 
-|Title| RPM | CLX|
+|Function| RPM | CLX|
 | :--------: | :------------- | :---------- |
-|Scope| Information organizaed by terminal/outlet/MID <br> <br> Shows summary with drill down to each transaction level detail <br> <br> <br>| No MID grouping <br> <br>No summary/rolled up view – queries result in all transactions that meet the criteria.  The Generic Analysis (vs. Search) will allow for grouping, but currently the drill down capability to individual transactions that make up the result isn’t enabled.|
-|Filters| By date range, up to six months at a time | All RPM filters plus the extended ability to filter on all elements available|
+|Scope| Information organized by terminal/outlet/MID <br><br> Shows summary with drill down to each transaction level detail <br>  <br>| Site ID is the equivalent element to MID in Commerce Hub <br> <br>  Use the Reporting --> Generic Analysis to create summarized reporting. Results displayed have drill-down capabilities into the underlying transactions (via Reporting --> Search).|
+|Filters| Limited to date range, up to six months at a time | All RPM filters plus the extended ability to filter on all additional Commerce Hub elements and a date range of up to 25 months or predefined ranges |
 |Delivery|  Download CSV <br> Email report <br> <br> Print <br>| Download as CSV, Excel or JSON <br> Email one-time <br> Schedule a report to email <br> _No print functionality from UI_|
 |Actions| Sale transactions allow for Refund and New Transaction|Sale transactions allow for Refund and Void|
 
 <br>
 
-**Report Result Element Comparison**
+
+**RPM Activity Report Generation and Result Element Comparison in CLX**
+
+*Note: many additional elements are available in the CLX reporting UI, the below is a comparison with what was available in RPM.*
 
 |RPM Element             |CLX Element  |
 |:------------------------------------------|:---------------------------------|
-|Sub-total: Terminal             |   No Sub-total/summary |
-|Sub-total: Card (brand)         |   No Sub-total/summary|
-|Sub-total: Transaction Type     |    No Sub-total/summary|
-|Sub-total: Quantity             |    No Sub-total/summary|
-|Sub-total: Currency             |   No Sub-total/summary|
-|Sub-total: Amount               |   No Sub-total/summary |
-|Txn Detail: Actions             |  Actions|
-|Txn Detail: Card Holder         |   Customer Name |
-|Txn Detail: Card (brand)        |   Network – always “unknown"|
-|Txn Detail: Amount              |   Amount  |
-|Txn Detail: Card Number         |   Account #  |
-|Txn Detail: Expiry              |  Card Expiry Date  |
-|Txn Detail: Transaction Type    |  Transaction   Type – sometimes “unknown”  |
-|Txn Detail: Status              | Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
-|Txn Detail: Time (Datetime)     |  Txn Date & Time  |
-|Txn Detail: Auth                |  Auth Code          |
-|Txn Detail: Ref Num             | Merchant Invoice Number  
-|Txn Detail: Cust. Ref Num       | Merchant Order ID     |
-|Txn Detail: User ID*             | Not Available      |
+|Sub-total: Terminal             |   Generic Analysis (_Select Group by_): Terminal ID |
+|Sub-total: Card (brand)         |   Generic Analysis (_Select Group by_): Card Brand |
+|Sub-total: Transaction Type     |   Generic Analysis (_Select Group by and on Result Filter_): Type|
+|Sub-total: Quantity             |   Generic Analysis (_Results_): # of Txns|
+|Sub-total: Currency             |   Generic Analysis (_Select Group by and on Result Filter_): Auth Currency|
+|Sub-total: Amount               |   Generic Analysis (_Results_): Amount |
+|Sub-total                       |  Generic Analysis: Toggle Sub Total button |
+|Txn Detail: Actions             |  Search: Actions|
+|Txn Detail: Card Holder         |   Search: Customer Name |
+|Txn Detail: Card (brand)        |   Search: Network – always “unknown"|
+|Txn Detail: Amount              |   Search: Amount  |
+|Txn Detail: Card Number         |   Search: Account #  |
+|Txn Detail: Expiry              |  Search: Card Expiry Date  |
+|Txn Detail: Transaction Type    |  Search: Transaction   Type – sometimes “unknown”  |
+|Txn Detail: Status              | Search: Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
+|Txn Detail: Time (Datetime)     |  Search: Txn Date & Time  |
+|Txn Detail: Auth                |  Search: Auth Code          |
+|Txn Detail: Ref Num             | Search: Merchant Invoice Number  
+|Txn Detail: Cust. Ref Num       | Search: Merchant Order ID     |
+|Txn Detail: User ID*             | Not Available - *User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.   |
 
-*User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.
+To generate the comparable **RPM Declined** report in CLX, use the Reporting --> Decline Reasons menu item for a summarized report.  See Generic Analysis parameters in table above for information on inputs.  Drill-down capabilities to the transaction level are not enabled from this report.  Use the Reporting --> Decline Details Anlalysis menu item; same parameters as Search in table above.
+
+To generate the comparable **RPM Fraudulent** report in CLX, there are two options:
+- Use the Generic Analysis report for a summary view and select the Decline Reson filter to **??????????????**.  The same can be done using the Search menu item.
+- Use the Decline Reasons report for a summary view and select the Decline Reson filter to **??????????????**. _Note: The Decline Details Analysis report does not allow for filtering on Decline Reason._
+
+To generate the comparable **RPM Deposits - Closed Batches** report in CLX,
+
+To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
 
 <!--
 type: tab
 -->
-
-## Reporting APIs
 
 Payeezy parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows; a mechanism is in place to allow for additional calls to return additional rows.  Commerce Hub is an API request and response (not csv) with no limit on records returned.
 
@@ -245,17 +251,13 @@ type: tab
 type: tab
 -->
 
-## Search APIs
+In Commerce Hub, the Endpoint [/v1/authorizations/search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search) will provide a list of authorization transactions (pre-settle) and their attributes based on optional filter criteria.
 
-Transaction/search to [/v1/authorizations/search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search) = Provides a list of authorization transactions (pre-settle) and their attributes based on optional filter criteria.
+In Payeezy, parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows per response.  Commerce Hub is an API request and response with no limit on records returned.
 
-Payeezy parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows; a mechanism is in place to allow for additional calls to return additional rows.  Commerce Hub is an API request and response (not csv) with no limit on records returned.
+Payeezy utilizes Authentication per user; Commerce Hub authentication is by merchant.
 
-Payeezy utilizes Authentication per user, not terminal or merchant based; a user that is associated with more than one merchant or mid can specify the mid or terminal in the request; Commerce Hub authentication is by merchant.
-
-Commerce Hub search Provides a list of authorization transactions pre-settlement (does not include settlement records). 
-
-The Payeezy search allows filtering based on criteria related to cardholder name, reference numbers, transaction tags and card numbers; Commerce Hub does not allow searching on those elements.  Commerce Hub allows filtering on payment method, networks, type, siteIDs and auth code in addition to first 6 and last 4 of the card number.   
+The Payeezy search allows filtering based on criteria related to **???cardholder name**, reference numbers, transaction tags and full card numbers; Commerce Hub does not allow searching on those elements.  Commerce Hub allows filtering on payment method, networks, type, siteIDs and auth code in addition to first 6 and last 4 of the card number.   
 
 Commerce Hub does provide a [summary search function](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/summary).
 
