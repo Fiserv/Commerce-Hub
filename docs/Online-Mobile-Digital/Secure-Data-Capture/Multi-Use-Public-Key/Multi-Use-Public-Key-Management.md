@@ -142,7 +142,7 @@ The below table identifies the required parameter for the URI.
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|--------- | -------|
-| `keyId` | *string* |   | &#10004; | Used to pass the keyId of the encryption key pair to be revoked |
+| `keyId` | *string* | 64 | &#10004; | Used to pass the keyId of the encryption key pair to be revoked |
 
 
 <!--
@@ -153,7 +153,7 @@ The below table identifies the required parameter for the revoke request payload
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-----|-------|
-| `merchantId` | *string* |  | &#10004; | A unique ID used to identify the Merchant. |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
 
 
 <!-- type: tab-end -->
