@@ -21,13 +21,13 @@ The below table identifies the parameters for `asymmetricKeyDetails` object. The
 
 | Variables | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `keyId` | *string* |  | Unique identifier of the key pair |
-| `encryptionType` | *string* |  | Encryption type of the key pair. Defaults to RSA. |
+| `keyId` | *string* | 64 | Unique identifier of the key pair |
+| `encryptionType` | *string* | 32 | Encryption type of the key pair. Defaults to RSA. |
 | `modulus` | *integer* |  | Modulus size of the key pair |
 | `encodedPublicKey` | *string* |  | Hex encoded public key |
 | `validFrom` | *datetime* |  | Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format |
 | `validTo` | *datetime* |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
-| `status` | *string* |  | Status of the key pair. Valid values are ACTIVE, INACTIVE or LEGACY | 
+| `status` | *string* | 10 | Status of the key pair. Valid values are ACTIVE, REVOKED, INACTIVE or LEGACY | 
 
 
 <!--
