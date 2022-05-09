@@ -29,19 +29,6 @@ The below table identifies the parameters for `asymmetricKeyDetails` object. The
 | `validTo` | *datetime* |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
 | `status` | *string* | 10 | Status of the key pair. Valid values are ACTIVE, REVOKED, INACTIVE or LEGACY | 
 
-
-<!--
-type: tab
-titles: asymmetricKeyDetails, symmetricKeyDetails
--->
-
-The below table identifies the parameters for `symmetricKeyDetails` object. The `symmetricKeyDetails` object contains the key and its relevant details for symmetric cryptography.
-
-| Variables | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `encryptionType` | *string* |  | Encryption type of the key pair. Defaults to RSA |  
-| `modulus` | *integer* |  | Modulus size of the key pair |  
-
 <!-- type: tab-end -->
 ---
 
