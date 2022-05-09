@@ -219,9 +219,9 @@ type: tab
 ### Key Expiry Example
 
 |   | Generated | Activated | Expiry Date and Time |
-| Key #1 Expired |  |  |
-| Key #2 Expired |  |  |
-| Key #3 Expired |  |  |
+| Key #1 Expired |  |  |  |
+| Key #2 Expired |  |  |  |
+| Key #3 Expired |  |  |  |
 
 
 |  |  |  |  |
