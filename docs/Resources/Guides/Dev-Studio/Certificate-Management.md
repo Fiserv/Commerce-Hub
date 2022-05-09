@@ -18,29 +18,30 @@ Login to the Developer Studio and access the Developer Dashboard.
 
 #### Step 2: Add a New Certificate
 
-Click 
+Click Certificates to create certificate signing requests.
 
 #### Step 3: 
 
+Click the Create CSR button to create a certificate signing request. Complete the following information and click Create. 
 
+- Common name
+
+- Wallet type (Select Apple Pay)
+
+- Organization name
+
+- Country/region
+
+- State/province
+
+- City/locality
+
+- Description
 
 #### Step 4: 
 
+Click View to access the Certificate Signing Request details. 
 
-
-#### Step 5: 
-
-
-
-#### Step 6: 
-
-
-
-#### Step 7: 
-
-
-
-#### Step 8: 
 
 
 ---
