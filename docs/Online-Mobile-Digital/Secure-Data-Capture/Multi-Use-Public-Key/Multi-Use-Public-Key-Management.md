@@ -209,15 +209,19 @@ type: tab
 ---
 
 
-## Key Expiry Example
-
-### Best practice for Multi Use Public key Expiry
+## Best practice for Multi Use Public key Expiry
 
 - The merchant administrator have the authority to set the number of days of the validity of the statis multi use public key.
 - Commerce Hub needs to adhere to the Fiserv standards for key validity.
 - Commerce Hub and a merchant can have multiple static public keys where the key identifier in the transaction request determines which key is being used to encrypt the data.
--  
+- A transaction request received with an expired key is rejected and an expiry response is being sent.  
 
+### Key Expiry Example
+
+|   | Generated | Activated | Expiry Date and Time |
+| Key #1 Expired |  |  |
+| Key #2 Expired |  |  |
+| Key #3 Expired |  |  |
 
 
 |  |  |  |  |
