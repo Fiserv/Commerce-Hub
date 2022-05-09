@@ -23,7 +23,7 @@ The message data for the signature is the following items concatenated: `Api-Key
 
 <!--
 type: tab
-title: Javascript
+titles: Javascript
 -->
 
 ##### Example of a Javascript Request.
@@ -91,6 +91,7 @@ function b64encode (input) {
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
-- [Use Our API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
-- [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+- [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
+
 ---

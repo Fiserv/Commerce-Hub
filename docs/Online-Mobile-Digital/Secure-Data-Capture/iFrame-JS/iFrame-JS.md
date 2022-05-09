@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, tokenization, secure-data-capture, iframe]
 ---
 
 # iFrame Integration
@@ -13,16 +13,16 @@ Commerce Hub's iFrame allows E-commerce merchants to create payment data via a p
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields.
+Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can [customize](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md) the form fields to match their site.
 
 #### Transaction Flow
 
-1. The cardholder navigates to checkout page of the merchant's website.
-2. The merchant’s browser loads the Commerce Hub iFrame SDK.
-3. The Commerce Hub SDK builds and renders an iFrame with a card form that allows the cardholder to initiate the payment session.
-4. The cardholder's details are entered and stored against a sessionID within Commerce Hub on form submit.
-5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchants backend server.
-6. Commerce Hub sends the transaction response to the merchant’s website.
+1. The customer navigates to checkout page of the merchant's website.
+2. The customer's browser loads the Commerce Hub iFrame SDK.
+3. The Commerce Hub SDK builds and renders an iFrame with a card form that allows the customer to initiate the payment session.
+4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
+5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
+6. Commerce Hub sends the transaction response to the merchant's website.
 
 **Begin integration with Commerce Hub's [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
 
@@ -44,5 +44,7 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 - [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
 - [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
-- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
+- [JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+
+---

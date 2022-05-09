@@ -13,6 +13,9 @@ A third-party device encrypts the customer's payment source and sends the encryp
 
 ### Minimum Requirements
 
+<!-- theme: info -->
+> Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
+
 <!--
 type: tab
 titles: source, encryptionData, JSON Example
@@ -33,11 +36,11 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | *string* | 256 |  &#10004; | Encryption type to be passed. Example (ON_GAURD) |
+| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | |
-| `deviceType` | *string* | 256 |  &#10004; | Device type need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
-| `keyId` | *string* | | &#10004; | Needs to be passed if track data is encrypted |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
 
 <!--
 type: tab
@@ -158,7 +161,8 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
       "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
@@ -184,10 +188,12 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
-- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
+- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
+- [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
+
 ---

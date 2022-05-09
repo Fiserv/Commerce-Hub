@@ -109,7 +109,7 @@ link: ?path=docs/Resources/Guides/Split-Shipment.md
 
 <!-- type: card
 title: Stored Credentials
-description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas a Cardholder Initiated Transaction (CIT).
+description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionst as a Cardholder Initiated Transaction (CIT).
 link: ?path=docs/Resources/Guides/Stored-Credentials.md
 -->
 

@@ -2,7 +2,6 @@
 tags: [carat, commerce-hub, enterprise, subsequent-authorization-types]
 ---
 
-
 # Subsequent Authorization Types
 
 Subsequent authorization is typically a second authorization which is initaited in one of the cases below

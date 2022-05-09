@@ -91,8 +91,9 @@ type: tab
     "processorResponseDetails": {
       "approvalStatus": "DECLINED",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "006",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
       "responseMessage": "DECLINED",
       "hostResponseCode": "51",
       "hostResponseMessage": "Declined",

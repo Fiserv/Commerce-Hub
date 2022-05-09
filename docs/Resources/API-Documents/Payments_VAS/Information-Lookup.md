@@ -29,7 +29,7 @@ The below table identifies the parameters in the `cardDetails` object.
 
 ---
 
-## Information Lookup using PaymentCard
+## Information Lookup Using PaymentCard
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
 
@@ -130,7 +130,7 @@ type: tab
 
 ---
 
-## Information Lookup using PaymentToken 
+## Information Lookup Using PaymentToken 
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentToken` as a payment source.
 

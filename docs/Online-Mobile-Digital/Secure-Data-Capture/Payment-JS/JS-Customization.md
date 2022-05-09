@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, js, javascript, secure-data-capture, tokenization]
 ---
 # JavaScript Customization
 
@@ -9,62 +9,47 @@ The JavaScript or JS elements are set by default based on the ADA guidelines. Co
 
 ## Languages
 
-iFrame is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load.
-
-The merchant can also provide your own translations by including a languages attribute as part of your form configuration object creation. 
-
+Component/Hosted Fields is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load. You can also provide your own translations by including a languages attribute as part of your form configuration object creation.
 
 The following example shows all the text labels that can be overridden for a particular language/locale:
 
-``` php
-
- <html>
-    <head>
-        <meta charset="utf-8">
-        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="payment-saq-a-ep-form-div"></div>
-        <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
-            const formConfig = {
-                "merchantId": '100004000002050', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
-                "symmetricEncryptionAlgorithm": 'AES_GCM' // merchant call to ../security/credentials to receive this
-                // any CSS attribute added here will be ignored by the SDK
-            };
-            // bootstrap 3.3.6 classes
-            const classList = {
-                "form": ["form-group"],
-                "input": ["form-control"],
-                "label": ["sr-only"],
-                "button": ["btn", "btn-primary"],
-                "container": ["container"],
-                "span": ["sr-only"],
-                "divError": ["form-group", "has-error"],
-                "inputWithValue": ["form-control"],
-                "labelError": ["sr-only", "has-error"],
-                "materialTextfield": ["container-fluid"],
-                "inputError": ["form-control", "has-error"],
-                "spinner": ["sr-only"],
-                "loadingContainer": ["container"]
-            };
- 
-            // Remove all existing default classes
-            // Add new custom classes
-            const fiservSaqAEp = new commercehub.FiservSaqAEp(formConfig, {
-                useDefaultCSS: true,
-                classList: classList
-            });
-            fiservSaqAEp.loadPaymentForm("payment-saq-a-ep-form-div");
-        </script>
-    </body>
-</html>
+``` java
+    "languages": [{
+      "language": "en-US",
+      "cardNumber": {
+        "label": "[MO] Card Number",
+        "errors": {
+          "required": "[MO] Enter a valid card number.",
+          "mask": "[MO] Your card number is incomplete.",
+          "invalid": "[MO] Enter a valid card number."
+        }
+      },
+      "cardHolder": {
+        "label": "[MO] Name on Card",
+        "errors": {
+          "required": "[MO] Enter a valid name."
+        }
+      },
+      "cardSecurityCode": {
+        "label": "[MO] CVC",
+        "errors": {
+          "required": "[MO] Enter a valid CVC.",
+          "mask": "[MO] Your CVC is incomplete."
+        }
+      },
+      "cardExpiryDate": {
+        "label": "[MO] Expiry Date",
+        "errors": {
+          "before": "[MO] Date must be in the future.",
+          "invalid": "[MO] Enter a valid date.",
+          "required": "[MO] Enter a valid date."
+        }
+      },
+      "payButton": {
+        "label": "[MO] PAY",
+        "loading": "[MO] PROCESSING"
+      }
+    }]
 
 ```
 
@@ -73,7 +58,7 @@ The following example shows all the text labels that can be overridden for a par
 
 ## Theme and Font
 
-For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
+For iFrame JS, the styling is set by default, based off of [ADA guidelines](?path=https://www.ada.gov/2010ADAstandards_index.htm).
 
 
 #### Overriding Elements
@@ -93,42 +78,30 @@ The following elements can be overridden:
 - **spinner:** CSS class responsible for styling the "spinner" HTML div.
 - **loadingContainer:** CSS class responsible for adding style to the HTML div's which contains the spinner.
 
-``` php
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script id="commercehub" src="..{commercehub-domain}../js/commercehub-client-sdk.js"></script>
-    </head>
-    <body>
-        <div id="payment-saq-a-form-div"></div>
-        <script>
-            // Merchant will make a call to their own server which will in turn call ../security/credentials end point for creating a
-            // payment session, merchant will receive details in the response, e.g. CLIENT_ACCESS_TOKEN, PUBLIC_KEY, etc.
-            const authorization = 'CLIENT_AUTHORIZATION'; // merchant call to ../security/credentials to receive this
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; // merchant receives this during on-boarding process
- 
-            const formConfig = {
-                "merchantId": '123456789012345', // merchant receives this during on-boarding process
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI=', // merchant call to ../security/credentials to receive this
-                "css": {
-                    "primaryColorTheme": "#2D2D2D",
-                    "contrastColorTheme": "#ffffff",
-                    "fieldsFontFamily": "ROBOTO",
-                    "buttonFontSize": "20px",
-                    "inputTextFontSize": "20px"
-                }
-            };
-            const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
-            form.loadPaymentForm("payment-saq-a-form-div");
-        </script>
-    </body>
-</html>
+``` java
+    const classList = {
+      "form": ["form-group"],
+      "input": ["form-control"],
+      "label": ["sr-only"],
+      "button": ["btn", "btn-primary"],
+      "container": ["container"],
+      "span": ["sr-only"],
+      "divError": ["form-group", "has-error"],
+      "inputWithValue": ["form-control"],
+      "labelError": ["sr-only", "has-error"],
+      "materialTextfield": ["container-fluid"],
+      "inputError": ["form-control", "has-error"],
+      "spinner": ["sr-only"],
+      "loadingContainer": ["container"]
+    };
 
 ```
 ---
 
 ## See Also
 
-- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
-- [iFrame JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
-- [iFrame Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
+- [JS Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
+- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
+
+---

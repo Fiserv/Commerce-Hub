@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, full-refund, payments, partial-refund, r
 
 # Refund
 
-If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId` or `orderId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
+If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request to the original `transactionId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
 <!-- theme: danger -->
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
@@ -16,7 +16,7 @@ If the customer returns product or requests to cancel the transaction after the 
 
 ## Minimum Requirements
 
-A refund request can be initiated by sending the request to the appropriate endpoint by providing valid `transactionId`. The request may contain the `amount` object based on the refund type.
+A refund request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the refund type.
 
 #### Refund Types
 
@@ -52,8 +52,6 @@ The below table identifies the required parameters in the `merchantDetails` obje
 ---
 
 ## Endpoint
-
-Use the below endpoint based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/refund`
@@ -134,7 +132,8 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
       "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",

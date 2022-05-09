@@ -1,8 +1,11 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, incremental-auth, authorization]
+tags: [carat, commerce-hub, card-not-present, card-present, incremental-auth, incremental, authorization]
 ---
 
 # Incremental Authorization
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support incremental authorizations and the documents related to the feature will be released soon.
 
 An incremental authorization is typically found in hotel and rental environments, where the consumer has agreed to pay for any service incurred during the duration of the contract, typically a hotel stay or car rental. 
 
@@ -87,7 +90,7 @@ type: tab
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
@@ -130,7 +133,8 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
          "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
