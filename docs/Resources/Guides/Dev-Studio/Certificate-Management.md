@@ -26,7 +26,7 @@ Click the Create CSR button, complete the following information and click Update
 
 - Common name: Fully qualified domain name
 
-- Wallet type: Type of digital wallett
+- Wallet type: Type of digital wallet
 
 - Organization name: Legal name of your organization
 
