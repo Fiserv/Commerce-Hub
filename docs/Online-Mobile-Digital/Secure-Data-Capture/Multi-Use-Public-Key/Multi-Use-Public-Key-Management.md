@@ -217,7 +217,6 @@ Commerce Hub and a merchant can have multiple static public keys where the key i
 
 Below is an example of multiple pblic keys that are generated during a transaction request and expires after a set time interval. 
 
-The below table .....
 
 | Public Key  | Generated/Activated | Expiry Date and Time |
 | ------------ | ----------- | ------- |
@@ -225,12 +224,11 @@ The below table .....
 | Key #2 | 6 Jan 00:00:00 AM | 12 Jan 11:59:59 PM | 
 | Key #3 | 11 Jan 08:00:01 AM | 18 Jan 08:00:00 PM | 
 
-Description
+Below are some of the examples of offline transactions and the multi-use public keys that can be used at a given instance.
 
-(3 bullet points explaining key use while system interruption instances.......
-
-
-
+- The transaction request is submitted on Jan 2nd at 2:30 PM, the merchant can process with the first key generated.  
+- The transaction request is submitted on Jan 6th at 8:30 AM, as per the best practices the merchant should use the second key generated. However, the merchant can use the first generated key.   
+- The transaction request is submitted on Jan 11th at 11:45 PM, as per the best practices the merchant should use the third key generated. However, the merchant can still use the second generated key. If the merchants submits the first key, Commerce Hub will rejects the transaction.
 
 
 
