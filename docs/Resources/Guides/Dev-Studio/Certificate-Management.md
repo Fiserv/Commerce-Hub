@@ -22,7 +22,7 @@ Select Certificates from the left navigation menu to create a Certificate Signin
 
 #### Step 3: Create CSR
 
-Click the Create CSR button, complete the following information and click Update.
+Click the Create CSR button, complete the following information and click the Create button.
 
 - Common name: Fully qualified domain name
 
