@@ -215,15 +215,15 @@ Commerce Hub and a merchant can have multiple static public keys where the key i
 
 ### Key Expiry Example
 
-Description
+Below is an example of multiple pblic keys that are generated during a transaction request and expires after a set time interval. 
 
 The below table .....
 
 | Public Key  | Generated/Activated | Expiry Date and Time |
 | ------------ | ----------- | ------- |
-| Key #1 |  |  | 
-| Key #2 |  |  | 
-| Key #3 |  |  | 
+| Key #1 | 1 Jan 00:00:00 AM |7 Jan 11:59:59 PM  | 
+| Key #2 | 6 Jan 00:00:00 AM | 12 Jan 11:59:59 PM | 
+| Key #3 | 11 Jan 08:00:01 AM | 18 Jan 08:00:00 PM | 
 
 Description
 
