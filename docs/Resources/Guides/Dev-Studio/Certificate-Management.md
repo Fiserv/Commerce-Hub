@@ -40,7 +40,7 @@ Click the Create CSR button to create a certificate signing request. Complete th
 
 #### Step 4: 
 
-Click View to access the Certificate Signing Request details. 
+Click View to access the Certificate Signing Request details.  
 
 
 
