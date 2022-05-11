@@ -127,7 +127,7 @@ type: tab
 |Account Name| N| |
 | Ref Num   | N| |
 |Cust. Ref Num   | Y  | ordNo|
-| Card Type         | Y     | Network  |
+| Card Type         | Y     | network  |
 | Status       | Y  | approvalCode   |
 | Auth No          | Y    |  authCode  |
 | Time   | Y |  transactionDate + transactionTime |
@@ -140,10 +140,10 @@ type: tab
 |Amount  | Y|amount|
 |Currency  | Y | currency|
 |Card Number  | Y| accountNumber|
-|Code  | Y| Type|
+|Code  | Y| type|
 |Refernce 3  | Y| mrchTranId|
 |UserId| N| |
-|Bank Response Code  | Y| AssocRespCode _(comparable)_|
+|Bank Response Code  | Y| assocRespCode _(comparable)_|
 |ETG Response Code| N| |
 
 <!-- type: tab-end -->
@@ -205,7 +205,7 @@ type: tab
 |Account Name| N| |
 | Ref Num   | N| |
 |Cust. Ref Num   | Y  | ordNo|
-| Card Type         | Y     | Network  |
+| Card Type         | Y     | network  |
 | Status       | Y  | approvalCode   |
 | Auth No          | Y    |  authCode  |
 | Time   | Y |  transactionDate + transactionTime |
@@ -218,10 +218,10 @@ type: tab
 |Amount  | Y|amount|
 |Currency  | Y | currency|
 |Card Number  | Y| accountNumber|
-|Code  | Y| Type|
+|Code  | Y| type|
 |Refernce 3  | Y| mrchTranId|
 |UserId| N| |
-|Bank Response Code  | Y| AssocRespCode _(comparable)_|
+|Bank Response Code  | Y| assocRespCode _(comparable)_|
 |ETG Response Code| N| |
 
 
