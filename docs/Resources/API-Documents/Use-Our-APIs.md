@@ -16,34 +16,38 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: info -->
->Commerce Hub highly recommend testing against our test environment before using our production environment.
+> Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
 
 ### Sandbox
 
 <!--theme: success -->
-> https://test.api.fiservapps.com/ch/{resource}
+> https://cert.api.fiservapps.com/ch/{resource}
 
-- Test APIs before you deploy to production
+- Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Test APIs before certifying for production
 - View the response format of a specific API
 - Experiment, develop code and fix bugs
 - Send and cancel "test" transactions
+
+### End to End
+
+<!--theme: success -->
+> https://cert.api.fiservapps.com/ch/{resource}
+
+- Uses End to End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Certify before deploying to production
+- Run test scripts based on the API's requirements
+- Conduct a complete beta test of your application
 
 ### Production
 
 <!--theme: success -->
 > https://prod.api.fiservapps.com/ch/{resource}
 
+- Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
 - Send and cancel "live" transactions
 - Access Value Added Services
-- Conduct a complete beta test of your application
 - Run reports
-
-<!-- ## QA Sandbox
-
-Description goes here -->
-
-<!-- theme: success -->
-<!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
 
 ---
 
@@ -67,11 +71,11 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 ```json
 "header": {
       "Content-Type": "application/json",
-      "Client-Request-Id": "1000000012",
-      "Api-Key": "api'Key",
-      "Timestamp": "Date().getTime()",
-      "Auth-Token-Type": "HMAC" ,
-      "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
+      "Client-Request-Id": "CLIENT_REQUEST_ID",
+      "Api-Key": "API_KEY",
+      "Timestamp": "TIMESTAMP",
+      "Auth-Token-Type": "AUTH_TOKEN_TYPE" ,
+      "Authorization": "ACCESS_TOKEN"
     },
 ```
 
@@ -115,14 +119,13 @@ The body of the transaction request differs based on the transaction being initi
 A standard API call to execute a charge transaction might look like this:
 
 ```json
-
 {
   method: "POST",
-  url: "https://prod.api.fiservapps.com/ch/payments/v1/charges",
+  url: "https://cert.api.fiservapps.com/ch/payments/v1/charges",
   headers: {
       "Content-Type": "application/json",
       "Client-Request-Id": "1000000012",
-      "Api-Key": "api'Key",
+      "Api-Key": "1951fe5b30e34cdaad758b8874140872",
       "Timestamp": "Date().getTime()",
       "Auth-Token-Type": "HMAC" ,
       "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
