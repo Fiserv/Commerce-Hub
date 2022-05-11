@@ -3,10 +3,11 @@
 
 ## Overview
 
+The merchant uses multi-use public key for the asymmeteric PaymentCard encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.    
 
 ## Steps of Encryption
 
-### Step 1: Generate encryption target
+### Step 1: Generate encryption block fields
 
 Comma separated string with each index indicating the field name and byte length of the data.
 
