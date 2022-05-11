@@ -40,8 +40,10 @@ Click the Create CSR button, complete the following information and click the Cr
 
 #### Step 4: Download the CSR
 
+Click the download icon, review the steps and click the OK button to save the CSR (_common_name.pem_) to your computer. 
+
 <!-- theme: info -->
-> View, Update or Delete the CSR by clicking the appropriate icon. 
+> View, Update or Delete the CSR by clicking the appropriate button or icon. 
 
 
 
