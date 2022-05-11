@@ -72,75 +72,79 @@ To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
 type: tab
 -->
 
-Payeezy parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows; a mechanism is in place to allow for additional calls to return additional rows.  Commerce Hub is an API request and response (not csv) with no limit on records returned.
+Commerce Hub offers a robust library of reporting APIs that includes Search (itemized data) and Summary level results.  For more details, please see [Commerce Hub Reporting](https://dev-developerstudio.fiserv.com/product/Reporting).
 
-Payeezy utilizes Authentication per user, not terminal or merchant based; a user that is associated with more than one merchant or mid can specify the mid or terminal in the request; Commerce Hub authentication is by merchant.
+In the Payeezy Reporting API, parameters are sent in the url and results are sent back in XML format with a limit of 10k rows.  Commerce Hub has no limit on records returned.
 
-In Payeezy, the reporting API was one endpoint and used a report_type parameter to select the information returned; in Commerce Hub, there is an endpoint for each report being requested.
+Payeezy utilizes authentication per user. In Commerce Hub, authentication is by merchant.
+
+In Payeezy, the reporting API was one endpoint and used a report_type parameter to select the information returned; in Commerce Hub, there are multiple available endpoints to retrive the information needed.
+
+**Payeezy Reporting API Comparable Report in Commerce Hub**
 
 | Payeezy Reporting API Report Type| Commerce Hub Endpoint | Commerce Hub Additional Information|
 | :-------- | :------------- | :---------- |
-|vt_activity| /v1/authorization/search |[Authorizations](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search)|
-|vt_deposits_closed |Not Available | For users with more than one merchant or mid|
-|vt_deposits_pending|Not Available | For users with more than one merchant or mid|
-|vt_declined |/v1/authorization/search and filter approvalCodes = "Declined"|[Authorizations](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search)|
+|Activity| /v1/authorization/search <br> /v1/authorization/summary |[Authorizations](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search)|
+|Closed Batches | | |
+|Pending Batches| | |
+|Declined |/v1/authorization/search  <br> /v1/authorization/summary <br> filter approvalCodes = "Declined"|[Authorizations](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search)|
 
 **Request and Response Elements Detailed Comparison**
 
 <!--type: tab
-titles: vt_activity, Rvt_deposits_closed, vt_deposits_pending, vt_declined
+titles: Request Element Detailed Comparison, Response Element Detailed Comparison
 -->
 
-<!--type: tab
-titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
--->
-
-| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
+| Payeezy Gateway Direct Parameter | Commerce Hub Element | Notes|
 | :-------- | :------------- | :---------- |
-|account |Not Available | For users with more than one merchant or mid|
-|merchant |Not Available | For users with more than one merchant or mid|
-|terminal |Not Available | For users with more than one merchant or mid|
+|account |filters.siteIDs | Also known as MID|
+|merchant |Not Available | |
 |start_date  |fromDate | | 
 |end_date  |toDate | | 
-|report_type  |Not Available  | The Payeezy field to search for: cardholder, refno, custref, tag, cardno|
-|group  |Not Available  | The value to search for in the search field designated above|
-|inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
+|report_type  |Not Available  | |
+|group  |summaryBy | When using Summary, specify the fields for the group by: <br> - Network <br> - PaymentMethod <br> - ApprovalCode <br> - Type <br> - MobileWallet <br> - SiteID <br> - TxnDay <br> - TxnWeek <br> - TxnMonth <br> - TxnQuarter <br> - TxnYear  |
+|inactive_merchants |Not Available | |
 | |limit |The maximum number of records that will be returned |
-|  |fields |Specify specific fields to be pulled back instead of the entire set (default behavior) |
+|  |fields | When using Search (transaction level), there is the capability to list specific fields to be returned instead of the entire set (default behavior) |
+| |filters.approvalCodes | |
 | |filters.paymentMethods | |
 | |filters.networks | |
-| |filters.types | |
-| |filters.siteIDs | |
+| |filters.types | Transaction Type ENUM |
 | |filters.authCode | |
 | |filters.first6 | |
 | |filters.last4 | |
-|offset  | | An integer determining the offset from where the rows should be fetched.  |
+| |filters.dateType | |
 
 <!--
 type: tab
 -->
 
-|RPM Element             |CLX Element  |
-|:------------------------------------------|:---------------------------------|
-|Sub-total: Terminal             |   No Sub-total/summary |
-|Sub-total: Card (brand)         |   No Sub-total/summary|
-|Sub-total: Transaction Type     |    No Sub-total/summary|
-|Sub-total: Quantity             |    No Sub-total/summary|
-|Sub-total: Currency             |   No Sub-total/summary|
-|Sub-total: Amount               |   No Sub-total/summary |
-|Txn Detail: Actions             |  Actions|
-|Txn Detail: Card Holder         |   Customer Name |
-|Txn Detail: Card (brand)        |   Network – always “unknown"|
-|Txn Detail: Amount              |   Amount  |
-|Txn Detail: Card Number         |   Account #  |
-|Txn Detail: Expiry              |  Card Expiry Date  |
-|Txn Detail: Transaction Type    |  Transaction   Type – sometimes “unknown”  |
-|Txn Detail: Status              | Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
-|Txn Detail: Time (Datetime)     |  Txn Date & Time  |
-|Txn Detail: Auth                |  Auth Code          |
-|Txn Detail: Ref Num             | Merchant Invoice Number  
-|Txn Detail: Cust. Ref Num       | Merchant Order ID     |
-|Txn Detail: User ID*             | Not Available      |
+*Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM.*
+
+|Payeezy Reporting API Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
+|:------------------------------------------|:---------------------------------:|:---------------------|
+|Name        | Y|  customerName |
+|Account Name| N| |
+| Ref Num   | N| |
+|Cust. Ref Num   | Y  | ordNo|
+| Card Type         | Y     | network  |
+| Status       | Y  | approvalCode   |
+| Auth No          | Y    |  authCode  |
+| Time   | Y |  transactionDate + transactionTime |
+| Merchant Name  | N| |
+| Terminal Name   | Y  |  terminalId  |
+|Expiry           | Y     |  cardExpiryDate          |
+| Gateway  | N| |
+|Merchant Code| N| |
+|Tag  | Y| trckrid |
+|Amount  | Y|amount|
+|Currency  | Y | currency|
+|Card Number  | Y| accountNumber|
+|Code  | Y| type|
+|Refernce 3  | Y| mrchTranId|
+|UserId| N| |
+|Bank Response Code  | Y| assocRespCode _(comparable)_|
+|ETG Response Code| N| |
 
 <!-- type: tab-end -->
 
@@ -148,170 +152,80 @@ type: tab
 type: tab
 -->
 
-<!--type: tab
-titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
--->
+In Commerce Hub, the Endpoint [/v1/authorizations/search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search) will provide a list of authorization transactions (pre-settle) and their attributes based on optional filter criteria. For more details on the expanded capabilities, please see [Commerce Hub Reporting](https://dev-developerstudio.fiserv.com/product/Reporting).
 
-| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
-| :-------- | :------------- | :---------- |
-|account |Not Available | For users with more than one merchant or mid|
+In Payeezy, parameters are sent in the url and the results are sent back in the CSV format with a limit of 10k rows per response.  Commerce Hub is an API request and response with no limit on records returned.
 
-<!--
-type: tab
--->
-
-| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
-| :-------- | :------------- | :---------- |
-|account |Not Available | For users with more than one merchant or mid|
-
-<!-- type: tab-end -->
-
-<!--
-type: tab
--->
-
-<!--type: tab
-titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
--->
-
-| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
-| :-------- | :------------- | :---------- |
-|account |Not Available | For users with more than one merchant or mid|
-
-<!--
-type: tab
--->
-
-| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
-| :-------- | :------------- | :---------- |
-|account |Not Available | For users with more than one merchant or mid|
-
-<!-- type: tab-end -->
-
-<!--
-type: tab
--->
-
-<!--type: tab
-titles: Request Element Detailed Comparison, Response ELement Detailed Comparison
--->
-
-| Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
-| :-------- | :------------- | :---------- |
-|account |Not Available | For users with more than one merchant or mid|
-|merchant |Not Available | For users with more than one merchant or mid|
-|terminal |Not Available | For users with more than one merchant or mid|
-|start_date  |fromDate | | 
-|end_date  |toDate | | 
-|report_type  |Not Available  | The Payeezy field to search for: cardholder, refno, custref, tag, cardno|
-|group  |Not Available  | The value to search for in the search field designated above|
-|inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
-| |limit |The maximum number of records that will be returned |
-|  |fields |Specify specific fields to be pulled back instead of the entire set (default behavior) |
-| |filters.paymentMethods | |
-| |filters.networks | |
-| |filters.types | |
-| |filters.siteIDs | |
-| |filters.authCode | |
-| |filters.first6 | |
-| |filters.last4 | |
-|offset  | | An integer determining the offset from where the rows should be fetched.  |
-
-<!--
-type: tab
--->
-
-|RPM Element             |CLX Element  |
-|:------------------------------------------|:---------------------------------|
-|Sub-total: Terminal             |   No Sub-total/summary |
-|Sub-total: Card (brand)         |   No Sub-total/summary|
-|Sub-total: Transaction Type     |    No Sub-total/summary|
-|Sub-total: Quantity             |    No Sub-total/summary|
-|Sub-total: Currency             |   No Sub-total/summary|
-|Sub-total: Amount               |   No Sub-total/summary |
-|Txn Detail: Actions             |  Actions|
-|Txn Detail: Card Holder         |   Customer Name |
-|Txn Detail: Card (brand)        |   Network – always “unknown"|
-|Txn Detail: Amount              |   Amount  |
-|Txn Detail: Card Number         |   Account #  |
-|Txn Detail: Expiry              |  Card Expiry Date  |
-|Txn Detail: Transaction Type    |  Transaction   Type – sometimes “unknown”  |
-|Txn Detail: Status              | Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
-|Txn Detail: Time (Datetime)     |  Txn Date & Time  |
-|Txn Detail: Auth                |  Auth Code          |
-|Txn Detail: Ref Num             | Merchant Invoice Number  
-|Txn Detail: Cust. Ref Num       | Merchant Order ID     |
-|Txn Detail: User ID*             | Not Available      |
-
-<!-- type: tab-end -->
-
-<!-- type: tab-end -->
-
-<!--
-type: tab
--->
-
-In Commerce Hub, the Endpoint [/v1/authorizations/search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search) will provide a list of authorization transactions (pre-settle) and their attributes based on optional filter criteria.
-
-In Payeezy, parameters are sent in the url and results are sent back in the CSV format with a limit of 10k rows per response.  Commerce Hub is an API request and response with no limit on records returned.
-
-Payeezy utilizes Authentication per user; Commerce Hub authentication is by merchant.
+Payeezy utilizes authentication per user. Commerce Hub authentication is by merchant.
 
 The Payeezy search allows filtering based on criteria related to **???cardholder name**, reference numbers, transaction tags and full card numbers; Commerce Hub does not allow searching on those elements.  Commerce Hub allows filtering on payment method, networks, type, siteIDs and auth code in addition to first 6 and last 4 of the card number.   
 
 Commerce Hub does provide a [summary search function](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/summary).
 
+<!--type: tab
+titles: Request Element Detailed Comparison, Response Element Detailed Comparison
+-->
+
 **Request Elements Detailed Comparison**
 
 | Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
 | :-------- | :------------- | :---------- |
-|account |Not Available | For users with more than one merchant or mid|
-|merchant |Not Available | For users with more than one merchant or mid|
-|terminal |Not Available | For users with more than one merchant or mid|
+|account |filters.siteIDs | Also known as MID|
+|merchant |Not Available | |
+|terminal |Not Available | |
 |start_date  |fromDate | | 
 |end_date  |toDate | | 
-|search_field   |Not Available  | The Payeezy field to search for: cardholder, refno, custref, tag, cardno|
-|search  |Not Available  | The value to search for in the search field designated above|
+|search_field   |Not Available  | |
+|search  |Not Available  | |
 |status  |filters.approvalCodes | |
-|amount_from, amount_to  |Not Available | Filter based on amount range |
-|inactive_merchants |Not Available | Flag to include inactive merchant transactions in search |
+|amount_from, amount_to  |Not Available |  |
+|inactive_merchants |Not Available |  |
+|offset| Not Avalaible | No longer neccessary|
 | |limit |The maximum number of records that will be returned |
-|  |fields |Specify specific fields to be pulled back instead of the entire set (default behavior) |
+|  |fields | When using Search (transaction level), there is the capability to list specific fields to be returned instead of the entire set (default behavior) |
+| |filters.approvalCodes | |
 | |filters.paymentMethods | |
 | |filters.networks | |
-| |filters.types | |
-| |filters.siteIDs | |
+| |filters.types | Transaction Type ENUM |
 | |filters.authCode | |
 | |filters.first6 | |
 | |filters.last4 | |
-|offset  | | An integer determining the offset from where the rows should be fetched.  |
 
-
+<!--
+type: tab
+-->
 
 **Response Elements Detailed Comparison**
 
-| Payeezy Gateway Direct Element| In Commerce Hub Response (Y/N) |
-| :-------- | :------------- | 
-|Tag - Transaction Tag (Unique identifier) |Y |
-|Cardholder Name - the cardholder name |Y | 
-|Card Number - Masked Card Number  |Y | 
-|Expiry - Expiry Date on the Card  |Y | 
-|Card Type - Card Type (VISA, AMEX, MASTERCARD ...)   |Y | 
-|Amount - Transaction Amount   |Y  | 
-|Code - Transaction Code/Type (Purchase, Tagged Refund, Pre-Auth etc)   |Y  | 
-|Status - Status of the transaction (Approved, Declined, Error)  |Y | 
-| Auth No - Transaction Authorization number |Y | 
-|Time - Transaction Time (in the Terminal Time Zone)  |Y |
-|Ref Num - Transaction Reference number   |Y | 
-|Cust. Ref Num - Transaction Customer Reference  |Y | 
-| Reference 3 - Transaction Reference 3 data|Y | 
-|Account Name - Payeezy Gateway account name  |N| 
-|Merchant Name - Merchant Name  |N | 
-| Merchant Code - Merchant Code |Y |
-| Terminal Name - Terminal Name|Y | 
-| Gateway - Terminal Gateway ID|N | 
- 
-*Note: many additional elements are available in the CH response payload, the above is a comparison with what was available in Payeezy.*
+*Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM.*
+
+|Payeezy Reporting API Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
+|:------------------------------------------|:---------------------------------:|:---------------------|
+|Name        | Y|  customerName |
+|Account Name| N| |
+| Ref Num   | N| |
+|Cust. Ref Num   | Y  | ordNo|
+| Card Type         | Y     | network  |
+| Status       | Y  | approvalCode   |
+| Auth No          | Y    |  authCode  |
+| Time   | Y |  transactionDate + transactionTime |
+| Merchant Name  | N| |
+| Terminal Name   | Y  |  terminalId  |
+|Expiry           | Y     |  cardExpiryDate          |
+| Gateway  | N| |
+|Merchant Code| N| |
+|Tag  | Y| trckrid |
+|Amount  | Y|amount|
+|Currency  | Y | currency|
+|Card Number  | Y| accountNumber|
+|Code  | Y| type|
+|Refernce 3  | Y| mrchTranId|
+|UserId| N| |
+|Bank Response Code  | Y| assocRespCode _(comparable)_|
+|ETG Response Code| N| |
+
+
+<!-- type: tab-end -->
 
 <!-- type: tab-end -->
 
@@ -319,11 +233,8 @@ Commerce Hub does provide a [summary search function](https://dev-developerstudi
 
 ## See Also
 
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
+
 
 
 ---
