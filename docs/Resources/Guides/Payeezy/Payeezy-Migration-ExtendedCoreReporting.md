@@ -223,8 +223,7 @@ type: tab
 |UserId| N| |
 |Bank Response Code  | Y| AssocRespCode _(comparable)_|
 |ETG Response Code| N| |
- 
-*Note: many additional elements are available in the CH response payload, the above is a comparison with what was available in Payeezy.*
+
 
 <!-- type: tab-end -->
 
