@@ -19,7 +19,7 @@ In RPM, there were five pre-defined reports (Activity, Declined, Fraudulent, Dep
 
 In General, many more data elements are available for reporting in the new CLX solution than were previously available in RPM.  
 
-**Format and Functionality Overview**
+## Format and Functionality Overview
 
 |Function| RPM | CLX|
 | :--------: | :------------- | :---------- |
@@ -30,8 +30,21 @@ In General, many more data elements are available for reporting in the new CLX s
 
 <br>
 
+## RPM Comparable Report Creation in CLX
 
-**RPM Activity Report Generation and Result Element Comparison in CLX**
+To generate the comparable **RPM Activity** report in CLX, use the Reporting --> Generic Analysis menu item for a summarized report.  See Generic Analysis parameters in table below for information on inputs.  Drill-down capabilities to the transaction level are enabled on this report (via Reporting --> Search).  See Search parameters in table below.
+
+To generate the comparable **RPM Declined** report in CLX, use the Reporting --> Decline Reasons menu item for a summarized report.  See Generic Analysis parameters in table below for information on inputs.  Drill-down capabilities to the transaction level are not enabled from this report.  Use the Reporting --> Decline Details Anlalysis menu item; same parameters as Search in table below.
+
+To generate the comparable **RPM Fraudulent** report in CLX, there are two options:
+- Use the Generic Analysis report for a summary view and select the Decline Reson filter to **??????????????**.  The same can be done using the Search menu item.
+- Use the Decline Reasons report for a summary view and select the Decline Reson filter to **??????????????**. _Note: The Decline Details Analysis report does not allow for filtering on Decline Reason._
+
+To generate the comparable **RPM Deposits - Closed Batches** report in CLX,
+
+To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
+
+**Comparison of RPM Report Generation and Result Elements to CLX Reports**
 
 *Note: many additional elements are available in the CLX reporting UI, the below is a comparison with what was available in RPM.*
 
@@ -58,15 +71,7 @@ In General, many more data elements are available for reporting in the new CLX s
 |Txn Detail: Cust. Ref Num       | Search: Merchant Order ID     |
 |Txn Detail: User ID*             | Not Available - *User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.   |
 
-To generate the comparable **RPM Declined** report in CLX, use the Reporting --> Decline Reasons menu item for a summarized report.  See Generic Analysis parameters in table above for information on inputs.  Drill-down capabilities to the transaction level are not enabled from this report.  Use the Reporting --> Decline Details Anlalysis menu item; same parameters as Search in table above.
 
-To generate the comparable **RPM Fraudulent** report in CLX, there are two options:
-- Use the Generic Analysis report for a summary view and select the Decline Reson filter to **??????????????**.  The same can be done using the Search menu item.
-- Use the Decline Reasons report for a summary view and select the Decline Reson filter to **??????????????**. _Note: The Decline Details Analysis report does not allow for filtering on Decline Reason._
-
-To generate the comparable **RPM Deposits - Closed Batches** report in CLX,
-
-To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
 
 <!--
 type: tab
