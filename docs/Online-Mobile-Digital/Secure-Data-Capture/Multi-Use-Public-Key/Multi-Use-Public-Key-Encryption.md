@@ -95,9 +95,16 @@ Base64 encode encrypted data.
 
 ### Step 5: Form encryptionData which will contain encrypted PaymentCard details
 
+```Javascript
+
 "encryptionData": { "keyId": "12ce48b1-b7a7-45cb-b14e-6ff961afe0d8", "encryptionType": "RSA", "encryptionBlock": "gYRo6dFgXFIBOsflWrjhoKtOuMgtDgB2BreC...", "encryptionTarget": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3" }
+```
 
+### Step 6: Build payment source object
 
+```javascript
+{"sourceType": "PaymentCard", "encryptionData": {...}}
+```
 ---
 
 ## See Also
