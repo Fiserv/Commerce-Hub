@@ -9,9 +9,9 @@ tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-n
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-If you are using the /api.globalgatewaye4.firstdata.com URL, then you are transacting through the Payeezy Gateway Direct (PGW) platform.
+>If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform.
 
-If you are using the /api.payeezy.com URL, then you are transacting through the Developer API platform.
+>If you are using the /api.payeezy.com URL, then you are transacting through the Developer API platform.
 
 See tabs below for information pertaining to the platform you are transacting on.
 
@@ -35,7 +35,7 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)| 
 |33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
-*It is highly recommended to use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+*Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ---
 
@@ -74,7 +74,7 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 |refund (open)  | NOT YET SUPPORTED  | |
 |refund (tagged) | /payments/v1/charges/{transactionId}/refund   | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
-*It is highly recommended to use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+*Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ## Request and Response - Formats and Elements
 
