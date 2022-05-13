@@ -29,5 +29,140 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 ---
 
+
+---
+tags: [carat, commerce-hub, enterprise, offline, card-not-present, secure-payment-form, multi-use public key, tokenization]
+---
+
+# Secure Data Capture API Only
+
+Description........
+
+## Step 1: Security Credentials 
+
+A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`encryption block`](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
+
+
+## Step 2: Encryption
+
+The following code snippets are required to encrypt the payment card information using the multi-use public key.
+
+
+
+
+
+## Step 3: Submit the Card capture Request
+
+Description.........
+
+#### Minimum Requirements
+
+<!--
+type: tab
+titles: source, encryptionData, JSON Example
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | --------| ---------- |
+| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
+| `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `encryptionData` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ---------| --------- |
+| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
+| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `encryptionBlockFields` | *string* | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
+| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
+
+
+<!--
+type: tab
+-->
+
+JSON string format for PaymentCard:
+
+```json
+{
+   "source":{
+      "sourceType": "PaymentCard",
+      "encryptionData":{
+         "encryptionType": "RSA",
+         "encryptionTarget": "MANUAL",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
+         "deviceType": "INGENICO",
+         "keyId": "88000000023"
+      }
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+#### Endpoint
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/card-capture`
+
+---
+
+
+#### Card Capture Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+##### Example of a card capture payload request using PaymentCard for Secure Data Capture.
+
+```json
+{
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "deviceType": "INGENICO",
+      "keyId": "88000000022"
+    }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+   }
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+-->
+
+##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+
+```
+
+<!-- type: tab-end -->
+
+---
+
+## Step 4: Submit Token 
 ## See Also
 - Secure Data Capture
