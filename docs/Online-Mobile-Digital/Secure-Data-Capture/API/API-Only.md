@@ -30,10 +30,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 ---
 
 
----
-tags: [carat, commerce-hub, enterprise, offline, card-not-present, secure-payment-form, multi-use public key, tokenization]
----
-
 # Secure Data Capture API Only
 
 Description........
@@ -164,5 +160,7 @@ type: tab
 ---
 
 ## Step 4: Submit Token 
+
+
 ## See Also
-- Secure Data Capture
+- [Secure Data Capture]
