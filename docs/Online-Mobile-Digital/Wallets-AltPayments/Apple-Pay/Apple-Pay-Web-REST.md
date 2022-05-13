@@ -65,7 +65,7 @@ The below table identifies the required parameters in the `source` object.
 | `signature` | *string* | 4000 | &#10004; | Signature of the payment and header data. The signature includes the signing certificate, its intermediate CA certificate, and information about the signing algorithm. Detached PKCS #7 signature, Base64 encoded as string. |
 | `version` | *string* | 64 | &#10004; | Specific Protocol version supported by Apple. Version information about the payment token. The token uses EC_v1 for ECC-encrypted data, and RSA_v1 for RSA-encrypted data. |
 | `applicationData` | *string* | 4000 |  | Hash of the applicationData property of the original PKPaymentRequest object. If the value of that property is nil, this key is omitted. SHA–256 hash, hex encoded as a string. |
-| `applePayMerchantId` | *string* | 256 | &#10004; | Unique AppID registered in the Apple portal |
+| `applePayMerchantId` | *string* | 256 | &#10004; | Unique AppID registered in the [Commerce Hub Developer portal](?path=docs/Resources/Guides/Dev-Studio/Certificate-Management.md) |
 | `merchantPrivateKey` | *string* | 256 | &#10004; | Merchant private key - Hex encoded |
 
 <!--
@@ -113,7 +113,7 @@ titles: Request, Response
     "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhki.....",
     "version": "EC_v1",
     "applicationData": "VEVTVA==",
-    "merchantId": "merchant.com.fapi.tcoe.applepay",
+    "applePayMerchantId": "merchant.com.organizationname.unitname.commonname",
     "merchantPrivateKey": "MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
   }
   "transactionDetails": {
