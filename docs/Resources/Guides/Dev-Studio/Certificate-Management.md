@@ -24,7 +24,7 @@ Select Certificates from the left navigation menu to create a Certificate Signin
 
 Click the Create CSR button, complete the following information and click the Create button.
 
-- Common name: Fully qualified domain name
+- Common name: Fully qualified domain name. Cannot contain a space or special characters. 
 
 - Wallet type: Type of digital wallet
 
