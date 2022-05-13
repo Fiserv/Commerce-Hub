@@ -34,21 +34,19 @@ In General, many more data elements are available for reporting in the new CLX s
 
 To generate the comparable **RPM Activity** report in CLX, use the Reporting --> Generic Analysis menu item for a summarized report.  See Generic Analysis parameters in table below for information on inputs.  Drill-down capabilities to the transaction level are enabled on this report (via Reporting --> Search).  See Search parameters in table below.
 
-To generate the comparable **RPM Declined** report in CLX, use the Reporting --> Decline Reasons menu item for a summarized report.  See Generic Analysis parameters in table below for information on inputs.  Drill-down capabilities to the transaction level are not enabled from this report.  Use the Reporting --> Decline Details Anlalysis menu item; same parameters as Search in table below.
+To generate the comparable **RPM Declined** report in CLX, use the Reporting --> Decline Reasons menu item for a summarized report.  See Generic Analysis parameters in table below for information on inputs.  Drill-down capabilities to the transaction level are not enabled for this report.  Use the Reporting --> Decline Details Anlalysis menu item; same parameters as Search in table below.
 
-To generate the comparable **RPM Fraudulent** report in CLX, there are two options:
-- Use the Generic Analysis report for a summary view and select the Decline Reson filter to **??????????????**.  The same can be done using the Search menu item.
-- Use the Decline Reasons report for a summary view and select the Decline Reson filter to **??????????????**. _Note: The Decline Details Analysis report does not allow for filtering on Decline Reason._
+To generate the comparable **RPM Fraudulent** report in CLX, use the Data Solutions --> Fraud --> Manage menu item.  Select Reviews & Details in the Viewing drop-down list to show all transactions declined due to fraud configurations (settings, velocity controls and filters).
 
 To generate the comparable **RPM Deposits - Closed Batches** report in CLX,
 
 To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
 
-**Comparison of RPM Report Generation and Result Elements to CLX Reports**
+### Comparison of RPM Reporting Result Elements to CLX Reports
 
 *Note: many additional elements are available in the CLX reporting UI, the below is a comparison with what was available in RPM.*
 
-|RPM Element             |CLX Element  |
+|RPM Result Element             |CLX Element  |
 |:------------------------------------------|:---------------------------------|
 |Sub-total: Terminal             |   Generic Analysis (_Select Group by_): Terminal ID |
 |Sub-total: Card (brand)         |   Generic Analysis (_Select Group by_): Card Brand |
@@ -59,15 +57,15 @@ To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
 |Sub-total                       |  Generic Analysis: Toggle Sub Total button |
 |Txn Detail: Actions             |  Search: Actions|
 |Txn Detail: Card Holder         |   Search: Customer Name |
-|Txn Detail: Card (brand)        |   Search: Network – always “unknown"|
+|Txn Detail: Card (brand)        |   Search: Network|
 |Txn Detail: Amount              |   Search: Amount  |
 |Txn Detail: Card Number         |   Search: Account #  |
 |Txn Detail: Expiry              |  Search: Card Expiry Date  |
-|Txn Detail: Transaction Type    |  Search: Transaction   Type – sometimes “unknown”  |
-|Txn Detail: Status              | Search: Approval Status – sometimes “unknown”; appears to be often when   the response is an error (vs. a decline)    |
+|Txn Detail: Transaction Type    |  Search: Transaction Type  |
+|Txn Detail: Status              | Search: Approval Status    |
 |Txn Detail: Time (Datetime)     |  Search: Txn Date & Time  |
 |Txn Detail: Auth                |  Search: Auth Code          |
-|Txn Detail: Ref Num             | Search: Merchant Invoice Number  
+|Txn Detail: Ref Num             | Search: Merchant Invoice Number  |
 |Txn Detail: Cust. Ref Num       | Search: Merchant Order ID     |
 |Txn Detail: User ID*             | Not Available - *User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.   |
 
