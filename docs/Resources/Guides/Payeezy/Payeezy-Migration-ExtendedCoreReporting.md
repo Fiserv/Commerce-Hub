@@ -71,8 +71,6 @@ To generate the comparable **RPM Deposits - Pending Batches** report in CLX,
 |Txn Detail: Cust. Ref Num       | Search: Merchant Order ID     |
 |Txn Detail: User ID*             | Not Available - *User ID, which indicated whether the transaction was processed via API (with the GatewayID) or via Virtual Terminal (with the User ID) will not be available in CLX reporting.   |
 
-
-
 <!--
 type: tab
 -->
@@ -85,7 +83,7 @@ Payeezy utilizes authentication per user. In Commerce Hub, authentication is by 
 
 In Payeezy, the reporting API was one endpoint and used a report_type parameter to select the information returned; in Commerce Hub, there are multiple available endpoints to retrive the information needed.
 
-**Payeezy Reporting API Comparable Report in Commerce Hub**
+## Payeezy Reporting API Comparable Report in Commerce Hub
 
 | Payeezy Reporting API Report Type| Commerce Hub Endpoint | Commerce Hub Additional Information|
 | :-------- | :------------- | :---------- |
@@ -94,7 +92,7 @@ In Payeezy, the reporting API was one endpoint and used a report_type parameter 
 |Pending Batches| | |
 |Declined |/v1/authorization/search  <br> /v1/authorization/summary <br> filter approvalCodes = "Declined"|[Authorizations](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/authorization/search)|
 
-**Request and Response Elements Detailed Comparison**
+## Request and Response Elements Detailed Comparison
 
 <!--type: tab
 titles: Request Element Detailed Comparison, Response Element Detailed Comparison
