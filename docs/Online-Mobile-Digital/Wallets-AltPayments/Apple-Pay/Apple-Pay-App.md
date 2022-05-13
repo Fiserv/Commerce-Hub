@@ -52,15 +52,15 @@ titles: source, header
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type | Maximum Length | Required | Description |
-|---------|----------|--------|--------|---------|
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|-------|---------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *ApplePay* is used for Apple Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 | `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
 | `header` | *object* | N/A| &#10004; | Additional version-dependent information used to decrypt and verify the payment. |
 | `signature` | *string* | 4000 | &#10004; | Signature of the payment and header data. The signature includes the signing certificate, its intermediate CA certificate, and information about the signing algorithm. Detached PKCS #7 signature, Base64 encoded as string. |
 | `version` | *string* | 64 | &#10004; | Specific Protocol version supported by Apple. Version information about the payment token. The token uses EC_v1 for ECC-encrypted data, and RSA_v1 for RSA-encrypted data. |
 | `applicationData` | *string* | 4000 |  | Hash of the applicationData property of the original PKPaymentRequest object. If the value of that property is nil, this key is omitted. SHA–256 hash, hex encoded as a string. |
-| `applePayMerchantId` | *string* | 256 | &#10004; | Unique AppID registered in the Apple portal |
+| `applePayMerchantId` | *string* | 256 | &#10004; | Unique AppID registered in the [Commerce Hub Developer portal](?path=docs/Resources/Guides/Dev-Studio/Certificate-Management.md) |
 | `merchantPrivateKey` | *string* | 256 | &#10004; | Merchant private key - Hex encoded |
 
 <!--
@@ -70,7 +70,7 @@ type: tab
 The below table identifies the required parameters in the `header` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | ------ | --------- | ---------|--------- |
+| -------- | -- | ------------ | ---------|--------- |
 | `applicationDataHash` | *string* | 256 | | Encrypted app data |
 | `ephemeralPublicKey` | *string* | 256 | &#10004; | Used to derive the actual Public Key. Ephemeral public key bytes. EC_v1 only. X.509 encoded key bytes, Base64 encoded as a string. |
 | `publicKeyHash` | *string* | 256 | &#10004; | Hash of the X.509 encoded public key bytes of the merchant’s certificate. SHA–256 hash, Base64 encoded as a string. |
@@ -108,7 +108,7 @@ titles: Request, Response
     "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhki.....",
     "version": "EC_v1",
     "applicationData": "VEVTVA==",
-    "merchantId": "merchant.com.fapi.tcoe.applepay",
+    "applePayMerchantId": "merchant.com.organizationname.unitname.commonname",
     "merchantPrivateKey": "MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
   }
   "transactionDetails": {
