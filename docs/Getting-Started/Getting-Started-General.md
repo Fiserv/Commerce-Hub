@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Card Present, Getting Started, In-Person, Online, Mobile, Digital]
+tags: [Getting Started, Card Not Present, Card Present, In-Person, Online, Mobile, Digital, Omnicommerce, Connected Commerce]
 ---
 
 # Getting Started with Commerce Hub
