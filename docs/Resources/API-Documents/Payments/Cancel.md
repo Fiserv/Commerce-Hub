@@ -167,8 +167,8 @@ The below table identifies the available parameters in the `referenceTransaction
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-|`referenceTransactionId` | *string* | 40 | Commerce Hub generated identifier from the original transaction. |
-|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated identifier](?path=docs/Resources/Guides/BYOID.md) from the original transaction. |
+|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
 
 <!--
 type: tab
