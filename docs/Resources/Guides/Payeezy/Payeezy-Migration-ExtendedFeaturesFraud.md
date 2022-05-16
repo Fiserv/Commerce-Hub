@@ -9,6 +9,8 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, address-verif
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
+Fraud Configuration was previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be available in ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
+
 <!--type: tab
 titles: Fraud Settings, Velocity Controls, Address Verification Services (AVS) Filter, Security Code Verification (CVV2) Filter
 -->
@@ -19,7 +21,7 @@ In Payeezy Real-time Payment Manager (RPM), a csv file containing positive and n
 
 In Payeezy RPM, fraud filters could be printed from the screen or downloaded into a csv file.  In CLX, the /rules/list/{clientID} and /rules/details/{rulesID} endpoints provide the information in JSON format.
 
-**Additional Negative Filters are available in CLX:**
+**Additional Negative Filters are available for configuration in CLX:**
 
 |RPM|CLX|
 |:-----|:-----|
