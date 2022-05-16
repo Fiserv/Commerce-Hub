@@ -19,6 +19,8 @@ The ability to create a copy of a prior Pre-Auth or Purchase is no longer availa
 
 RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX Virtual Terminal is available in English language only.
 
+### Functionality Comparison between RPM and CLX Virtual Terminal
+
 | Payeezy Transaction Type | In RPM | In CLX | Notes|
 | -------- | :-------------: | :----------: |----------|
 |Purchase |POS Screen | Virtual Terminal|
@@ -28,7 +30,7 @@ RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based
 |Tagged Pre-Authorization Completion  |POS Screen and Action in search or reports |Search| 
 |Tagged Void   |Action in search or reports  | Search |
 |Tagged Refund  |Action in search or reports  | Search |
-|New Transaction (Tagged Pre-Auth or Tagged Purchase)  |Action in search or reports  | Not Available | Transaction Type only available in VT, not API |
+|New Transaction (Tagged Pre-Auth or Tagged Purchase)  |Action in search or reports  | Not Available | Transaction Type only available in Virtual Terminal, not API |
 
 ## Element Level Differences
 
