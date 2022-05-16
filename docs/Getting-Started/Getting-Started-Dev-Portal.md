@@ -1,5 +1,5 @@
 ---
-tags: [Develoer Studio, Sandbox, Developer Portal, Enroll, API Key, Getting Started]
+tags: [Developer Studio, Sandbox, Developer Portal, Enroll, API Key, Getting Started]
 ---
 
 # Getting Started with Developer Studio 
