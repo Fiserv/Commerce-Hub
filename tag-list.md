@@ -21,3 +21,5 @@ Debit
 Point of Sale
 Terminal
 Secure Data Capture
+Omnicommerce
+Connected Commerce
