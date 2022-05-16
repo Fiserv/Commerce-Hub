@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, card-present, getting-started, in-person, online, mobile, digital, integration, features, use-cases]
+tags: [Card Not Present, Card Present, Getting Started, In-Person, Online, Mobile, Digital]
 ---
 
 # Getting Started with Commerce Hub
