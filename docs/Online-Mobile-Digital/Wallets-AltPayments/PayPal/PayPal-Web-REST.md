@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, paypal, wallet]
+tags: [Integration Methods, Restful-API, Web, Online, PayPal, Wallet]
 ---
 
 # PayPal on the Web: RESTful API Integration
