@@ -95,5 +95,6 @@ JSON string format for `transactionDetails`:
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+- [Reference Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)
 
 ---
