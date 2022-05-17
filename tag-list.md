@@ -1,25 +1,26 @@
 List of tags used in Commerce Hub. Articles should be limited to no more than 7 tags. Tags should be title case.
 ---------------
-Card Present
-Card Not Present
-In-Person
-Online
-Mobile
-Digital
-Apple Pay
-Google Pay
-Getting Started
-Charges
-Refund
-Cancel
-Sandbox
-Developer Portal
-Enroll
-API Key
-EMV
-Debit
-Point of Sale
-Terminal
-Secure Data Capture
-Omnicommerce
-Connected Commerce
+- Card Present
+- Card Not Present
+- In-Person
+- Online
+- Mobile
+- Digital
+- Apple Pay
+- Google Pay
+- Getting Started
+- Charges
+- Refund
+- Cancel
+- Sandbox
+- Developer Portal
+- Enroll
+- API Key
+- EMV
+- Debit
+- Point of Sale
+- Terminal
+- Secure Data Capture
+- Omnicommerce
+- Connected Commerce
+- Univesal Commerce
