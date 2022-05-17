@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Restful API, In App, Online, apple Pay, Wallet, Mobile]
+tags: [Integration Methods, Restful API, In App, Online, Apple Pay, Wallet, Mobile]
 ---
 
 # Samsung Pay: App Integration
