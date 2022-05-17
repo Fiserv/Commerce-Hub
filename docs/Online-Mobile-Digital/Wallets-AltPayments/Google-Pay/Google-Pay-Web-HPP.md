@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, hosted-payment-page, web, online, google-pay, wallet]
+tags: [Integration Methods, Hosted Payment Page, Web, Online, Google Pay, Wallet]
 ---
 
 # Google Pay Web: Hosted Payment Page
