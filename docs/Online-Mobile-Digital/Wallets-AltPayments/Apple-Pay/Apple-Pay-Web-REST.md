@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, apple-pay, wallet]
+tags: [Integration  Methods, Restful-API, Web, Online, Apple Pay, Wallet]
 ---
 
 # Apple Pay on the Web: RESTful API Integration
