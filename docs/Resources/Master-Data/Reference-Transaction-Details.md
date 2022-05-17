@@ -1,6 +1,6 @@
 # Reference Transaction Details
 
-Reference transaction details are used to reference the original transaction identifier in secondary request [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incemental auth, re-auth or inquiry.
+Reference transaction details are used to reference the original transaction identifier in secondary request [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, re-auth or inquiry.
 # Custom Identifiers
 
 Commerce Hub supports the ability for mercant's to use thier own Merchant Identifiers and Order Identifiers. This allows a seemless integration into existing merchant APIs and databases.
