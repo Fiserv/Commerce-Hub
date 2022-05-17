@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, google-pay, wallet]
+tags: [Integration Methods, Restful-API, Web, Online, Google Pay, Wallet]
 ---
 
 # Google Pay on the Web: RESTful API Integration
