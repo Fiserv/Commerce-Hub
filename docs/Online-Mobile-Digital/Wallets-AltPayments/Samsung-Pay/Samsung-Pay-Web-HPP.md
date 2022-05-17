@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, hosted-payment-page, web, online, apple-pay, wallet]
+tags: [Integration Methods, Hosted Payment Page, Web, Online, Apple Pay, Wallet]
 ---
 
 # Samsung Pay on the Web: Hosted Payment Page
