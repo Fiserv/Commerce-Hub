@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, js, javascript, secure-data-capture, tokenization]
+tags: [Online, Card Not Present, Secure Payment Form, JS, Javascript, Secure Data Capture, Tokenization]
 ---
 
 # JS Integration
