@@ -1,5 +1,5 @@
 ---
-tags: [Online, Card Not Present, Secure Payment Form, Tokenization, Secure Data Capture, Iframe]
+tags: [Online, Card Not Present, Secure Payment Form, Tokenization, Secure Data Capture, iFrame]
 ---
 
 # iFrame Integration
