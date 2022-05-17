@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, invoice, secured-payment-form, payment-url]
+tags: [Online, Card Not Present, Invoice, Secured Payment Form, Payment URL]
 ---
 
 # Payment URL Integration
