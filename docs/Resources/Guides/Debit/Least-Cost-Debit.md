@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Present, In-Person, Least Cost-Debit Rounting, Debit, Debit-Routing, Paysecure]
+tags: [Commerce Hub, Card Present, In-Person, Least Cost Debit Routing, Debit, Debit-Routing, Paysecure]
 ---
 
 # Least Cost Debit Routing
