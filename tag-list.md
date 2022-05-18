@@ -1,5 +1,7 @@
 List of tags used in Commerce Hub. Articles should be limited to no more than 7 tags. Tags should be title case.
 ---------------
+- 3-D
+- 3-D Secure Verification
 - Card Present
 - Card Not Present
 - In-Person
@@ -30,3 +32,15 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Payment Card
 - Manual Entry
 - Track
+- Pin Pad
+- Terminal
+- Fully Integrated
+- Pass Through
+- Visa Secure
+- Verified by Visa
+- Securecode
+- Protectby
+- Jsecure
+- Safekey
+- Tokenization
+- Secure Payment Form
