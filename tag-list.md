@@ -2,69 +2,69 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 ---------------
 - 3-D
 - 3-D Secure Verification
+- API Key
+- API Reeference
+- API Secret
+- Apple Pay 
+- Approval Rate
+- Auth Optimization
+- Business Track
+- Cancel
 - Card Present
 - Card Not Present
-- CSR
-- In-Person
-- Online
-- Mobile
-- Digital
-- Apple Pay
-- Google Pay
-- Deferred Authorization
-- Getting Started
 - Charges
-- Refund
-- Cancel
-- Sandbox
-- Debit Routing
-- Definition
-- Developer Portal
-- Enroll
-- API Key
-- API Secret
-- EMV
-- Debit
-- Point of Sale
-- Terminal
-- Secure Data Capture
-- Omnicommerce
 - Connected Commerce
-- Univesal Commerce
-- NFC
 - Contactless
-- Encrypted Payments
-- Payment Card
-- Manual Entry
-- Payment Token
-- Track
-- Pin Pad
-- Pin Less Debit
-- Terminal
-- Fully Integrated
-- Pass Through
-- Visa Secure
-- Verified by Visa
-- Securecode
-- Protectby
-- Jsecure
-- Safekey
-- Tokenization
-- Secure Payment Form
-- Data-As-A-Service
+- CSR
+- Data as-a-Service
 - Data Solutions
+- Debit
+- Debit Routing
+- Deferred Payments
+- Decline Rate
+- Deferred Authorization
+- Definition
+- Digital
+- Developer Portal
+- EMV
+- Encrypted Payments
+- Enroll
+- Environments
+- Fraud
+- Fully Integrated
+- Getting Started
+- Google Pay
+- In-Person
+- Installments
+- Key Management
+- Least Cost Debit Routing
+- Manual Entry
+- Mobile
+- NFC
+- Omnicommerce
+- Online
+- Optimization
+- Pass Through
+- Payment Card
+- Payment Token
+- Pin Less Debit
+- Pin Pad
+- Point of Sale
+- Protectby
+- Recurring Payments
+- Refund
 - Returns Optimization
 - Returns Optimizer Service
-- API Reeference
-- Environments
-- Optimization
-- Auth Optimization
-- Approval Rate
-- Decline Rate
-- Recurring Payments
-- Installments
-- Deferred Payments
-- Least Cost Debit Routing
-- Smart Routing
-- Key Management
+- Safekey
+- Sandbox
+- Securecode
+- Secure Data Capture
+- Secure Payment Form
 - Settings
+- Deferred Payments
+- Terminal
+- Tokenization
+- Track
+- Univesal Commerce
+- Verified by Visa
+- Visa Secure
