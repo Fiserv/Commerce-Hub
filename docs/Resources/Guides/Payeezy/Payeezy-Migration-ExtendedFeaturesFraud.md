@@ -56,9 +56,7 @@ type: tab
 
 In Payeezy, Velocity Controls are applied to Tagged Pre-Auth Completion/Capture; in Commerce Hub they are not. 
 
-In Payeezy, Velocity Controls are not applied to Tagged Refunds; in Commerce Hub they are.
-
-The Cumulative Amount Velocity Controls are only checked against the totals of previously approved transactions.
+The Cumulative Amount Velocity Controls are only checked against the totals of previously approved transactions only (default).
 
 ---
 
