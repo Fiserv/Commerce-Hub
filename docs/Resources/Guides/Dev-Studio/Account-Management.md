@@ -1,5 +1,5 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal,key-management, certification]
+tags: [Account Management, Commerce Hub, Enterprise Portal, Key Management, Certification]
 ---
 
 # Account Management
