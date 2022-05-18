@@ -4,6 +4,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - 3-D Secure Verification
 - Card Present
 - Card Not Present
+- CSR
 - In-Person
 - Online
 - Mobile
@@ -21,6 +22,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Developer Portal
 - Enroll
 - API Key
+- API Secret
 - EMV
 - Debit
 - Point of Sale
@@ -64,3 +66,5 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Deferred Payments
 - Least Cost Debit Routing
 - Smart Routing
+- Key Management
+- Settings
