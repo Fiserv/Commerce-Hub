@@ -10,6 +10,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Digital
 - Apple Pay
 - Google Pay
+- Deferred Authorization
 - Getting Started
 - Charges
 - Refund
@@ -55,3 +56,6 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Auth Optimization
 - Approval Rate
 - Decline Rate
+- Recurring Payments
+- Installments
+- Deferred Payments
