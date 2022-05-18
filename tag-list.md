@@ -16,6 +16,8 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Refund
 - Cancel
 - Sandbox
+- Debit Routing
+- Definition
 - Developer Portal
 - Enroll
 - API Key
@@ -35,6 +37,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Payment Token
 - Track
 - Pin Pad
+- Pin Less Debit
 - Terminal
 - Fully Integrated
 - Pass Through
@@ -59,3 +62,5 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Recurring Payments
 - Installments
 - Deferred Payments
+- Least Cost Debit Routing
+- Smart Routing
