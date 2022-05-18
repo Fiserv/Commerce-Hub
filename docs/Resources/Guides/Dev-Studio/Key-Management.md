@@ -1,5 +1,5 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, key-management, api-key, api-secret]
+tags: [Account Management, Commerce Hub, Enterprise Portal, Key Management, API Key, API Secret]
 ---
 
 # API Key Management
