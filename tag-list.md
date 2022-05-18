@@ -51,3 +51,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Returns Optimizer Service
 - API Reeference
 - Environments
+- Optimization
+- Auth Optimization
+- Approval Rate
+- Decline Rate
