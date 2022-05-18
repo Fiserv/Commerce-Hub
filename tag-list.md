@@ -31,6 +31,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Encrypted Payments
 - Payment Card
 - Manual Entry
+- Payment Token
 - Track
 - Pin Pad
 - Terminal
@@ -44,3 +45,8 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Safekey
 - Tokenization
 - Secure Payment Form
+- Data-As-A-Service
+- Data Solutions
+- Returns Optimization
+- Returns Optimizer Service
+- API Reeference
