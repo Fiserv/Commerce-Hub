@@ -1,5 +1,5 @@
 ---
-tags: [Enterprise, Getting Started, PayPal]
+tags: [Getting Started, PayPal]
 ---
 
 # PayPal
