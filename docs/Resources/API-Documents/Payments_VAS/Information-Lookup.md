@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card-lookup, token-lookup]
+tags: [Information Lookup, Account Lookup, Card Lookup, Token Lookup]
 ---
 
 # Information Lookup
