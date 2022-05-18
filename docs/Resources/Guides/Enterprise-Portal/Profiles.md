@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track,profiles, virtual-terminal, reporting, settings]
+tags: [Commerce Hub, Enterprise Portal, Business Track, Profiles, Virtual Terminal, Reporting, Settings]
 ---
 
 # Profiles
