@@ -24,3 +24,9 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Omnicommerce
 - Connected Commerce
 - Univesal Commerce
+- NFC
+- Contactless
+- Encrypted Payments
+- Payment Card
+- Manual Entry
+- Track
