@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Restful-API, Hosted Payment Page, In App, Web, Online, Google Pay, Wallet, Mobile, Getting Started]
+tags: [In-App, Web, Online, Google Pay, Wallet, Mobile, Getting Started]
 ---
 
 # Google Pay
