@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-present, in-person, least-cost-debit-rounting, debit, debit-routing, paysecure]
+tags: [Commerce Hub, Card Present, In-Person, Least Cost-Debit Rounting, Debit, Debit-Routing, Paysecure]
 ---
 
 # Least Cost Debit Routing
