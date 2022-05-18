@@ -1,5 +1,5 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, settings]
+tags: [Account Management, Commerce Hub, Enterprise Portal, Settings]
 ---
 
 # Account Management
