@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Restful-API, In-App, Online, Google Pay, Wallet, Mobile]
+tags: [In-App, Online, Google Pay, Wallet, Mobile]
 ---
 
 # Google Pay: In-App Integration
