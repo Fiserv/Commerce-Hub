@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Restful-API, In App, Online, PayPal, Wallet, Mobile]
+tags: [In-App, Online, PayPal, Wallet, Mobile]
 ---
 
 
