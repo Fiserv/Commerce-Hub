@@ -1,5 +1,5 @@
 ---
-tags: [carat, account-management, commerce-hub, enterprise, enterprise-portal, key-management, certificate, csr, apple-pay]
+tags: [Account Management, Commerce Hub, Enterprise Portal, Key Management, Certificate, CSR, Apple Pay]
 ---
 
 # Certificate Signing Requests
