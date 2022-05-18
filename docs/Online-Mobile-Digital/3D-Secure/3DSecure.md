@@ -1,5 +1,5 @@
 ---
-tags: [3-D-Secure, Pass Through, 3-D Secure Authentication, Visa Secure, Verified by Visa, Securecode, Protectbuy, jsecure, Safekey]
+tags: [3-D-Secure, Pass Through, 3-D Secure Authentication, Visa Secure, Verified by Visa, Securecode, Protectbuy, Secure, Safekey]
 ---
 
 # 3-D Secure
