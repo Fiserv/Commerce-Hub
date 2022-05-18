@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, bill-payments, recurring-bill-payments]
+tags: [Commerce Hub, Bill Payments, Recurring Bill Payments]
 ---
 
 # Recurring Bill Payments
