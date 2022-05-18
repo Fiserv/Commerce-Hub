@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-present, in-person, debit, pin-debit, emv-debit, track-debit, pin]
+tags: [Commerce Hub, Card Present, In-Person, Debit, Pin Debit, EMV Debit, Track Debit, Pin]
 ---
 
 # PIN Debit
