@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Data-As-A-Service, Data Solutions, Returns Optimization, Returns Optimizer Service, Fraud, Security, API Reeference]
+tags: [Commerce Hub, Data As A Service, Data Solutions, Returns Optimization, Returns Optimizer Service, Fraud, Security, API Reeference]
 ---
 
 # Returns Optimization Service
