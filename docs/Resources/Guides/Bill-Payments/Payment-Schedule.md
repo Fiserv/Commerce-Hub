@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, bill-payments, payment-schedule]
+tags: [Commerce Hub, Bill Payments, Payment Schedule]
 ---
 
 # Payment Schedule
