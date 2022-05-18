@@ -1,5 +1,5 @@
 ---
-tags: [Data As A Service, Data Solutions, Enterprise, EDS, Enhanced Data Service, Fraud, Security, API Reference]
+tags: [Data as a Service, Data Solutions, Enterprise, EDS, Enhanced Data Service, Fraud, Security, API Reference]
 ---
 
 # Data Solutions
