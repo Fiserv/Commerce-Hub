@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Hosted Payment Page, Web, Online, Google Pay, Wallet]
+tags: [Hosted Payment Page, Web, Online, Google Pay, Wallet]
 ---
 
 # Google Pay Web: Hosted Payment Page
