@@ -1,5 +1,5 @@
 ---
-tags: [Integration  Methods, Restful-API, Web, Online, Apple Pay, Wallet]
+tags: [Web, Online, Apple Pay, Wallet]
 ---
 
 # Apple Pay on the Web: RESTful API Integration
