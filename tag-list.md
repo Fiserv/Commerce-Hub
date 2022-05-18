@@ -10,11 +10,11 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Auth Optimization
 - Business Track
 - Cancel
-- Card Present
-- Card Not Present
+- Contactless
 - Charges
 - Connected Commerce
-- Contactless
+- Card Not Present
+- Card Present
 - CSR
 - Data as-a-Service
 - Data Solutions
