@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Hosted Payment Page, Web, Online, Apple Pay, Wallet]
+tags: [Hosted Payment Page, Web, Online, Apple Pay, Wallet]
 ---
 
 # Apple Pay on the Web: Hosted Payment Page
