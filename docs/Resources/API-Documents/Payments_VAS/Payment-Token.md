@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, tokens-request, payment-token, tokenization, api-reference,]
+tags: [Customer Authorized, Merchant Stored, Tokens Request, Payment Token, Tokenization, API Reference,]
 ---
 
 # Tokenization
