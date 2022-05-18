@@ -9,7 +9,16 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, address-verif
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Fraud Configuration was previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be available in ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
+Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed in [Marketplace (MP)](www.needalink.com).  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).  
+
+### Rule Groupings
+
+Commerce Hub has introduced the concept of rule groupings for fraud configuration.
+
+In Marketplace, the merchant can:
+- Review the three pre-defined (Online, Mobile and In Store) groupings and edit as needed
+- Create up to five custom groupings as needed
+- Assign MIDs to each grouping
 
 <!--type: tab
 titles: Fraud Settings, Velocity Controls, Address Verification Services (AVS) Filter, Security Code Verification (CVV2) Filter
@@ -17,15 +26,17 @@ titles: Fraud Settings, Velocity Controls, Address Verification Services (AVS) F
 
 ## Configuration
 
-In Payeezy Real-time Payment Manager (RPM), a csv file containing positive and negative fraud filters could be uploaded to configure the MID.  This funcationality is not available in ClientLine Enterprise (CLX).
+In Payeezy RPM, a csv file containing positive and negative fraud filters could be uploaded to configure the MID.  This functionality is not available in Marketplace.
 
 In Payeezy RPM, fraud filters could be printed from the screen or downloaded into a csv file.  In CLX, the /rules/list/{clientID} and /rules/details/{rulesID} endpoints provide the information in JSON format.
 
+There is currently an unlimited number of values that can be set for each filter; however, a threshold will be determined and implemented at a future date. _Playbook will be updated with the specific number once it has been set._ 
+
 **Additional Negative Filters are available for configuration in CLX:**
 
-|RPM|CLX|
+|RPM|MP|
 |:-----|:-----|
-|Bill to Address|Bill to Address|
+|Bill to Address|Currently not supported|
 |Country|Country Profiles|
 |Credit Card Number|Add/change card numbers to block|
 |Customer Reference|Customer Reference to block|
@@ -36,7 +47,6 @@ In Payeezy RPM, fraud filters could be printed from the screen or downloaded int
 ||Debit BIN Block|
 ||Lockout Time|
 ||Risk Setting|
-
 
 <!--
 type: tab
@@ -50,11 +60,17 @@ In Payeezy, Velocity Controls are not applied to Tagged Refunds; in Commerce Hub
 
 The Cumulative Amount Velocity Controls are only checked against the totals of previously approved transactions.
 
+---
+
 ## Configuration
 
-Configuration in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) does not allow the application of Cumulative Amount controls to all transactions; they are applied to approved only.
+In Payeezy, configuration settings were set and applied at the terminal level; in Commerce Hub, they are now configured at the client level.
 
-In Payeezy, the currency was set at the terminal/outlet MID vs. each control. In CLX, currency is required to be selected for each control. 
+Configuration in Marketplace will allow for the application of controls at a more granular level than Payeezy.  Controls can be assigned by transaction type or status.
+
+In Payeezy, the currency was set at the terminal/outlet MID vs. each control. In Marketplace, currency is required to be selected for each control. 
+
+---
 
 ## Reporting
 
@@ -70,13 +86,45 @@ In Payeezy Gateway,  Account Verification Services (AVS) Filters were applied to
 
 In Payeezy Gateway, an AVS response code will not be returned for a transaction unless a filter is enabled; in Commerce Hub, a filter does not need to be enabled to get a response.
 
+---
+
 ## Configuration
 
-In Payeezy, the AVS Filters were applied across all card brands; in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv), the AVS Filters are set for each of the four major card brands separately.
+In Payeezy, configuration settings were set and applied at the terminal level; in Commerce Hub, they are now configured at the client level.
 
-In Payeezy, the configuration was set to filter out / reject the transactions with that response code; in CLX, the configuration drives which transactions are allowable (a list of acceptable codes vs. a filter).  One exception is that if no codes are configured they will all be considered acceptable.
+In Payeezy, the configuration was set to filter out / reject the transactions with that response code; in MP, the configuration drives which transactions are allowable (a list of acceptable codes vs. a filter).  One exception is that if no codes are configured they will all be considered acceptable.
 
-In RPM, you could search a transaction, click on the detail, andd create a new fraud filter based on that transaction. This funcationality is not available in CLX.
+**AVS Values have been normalized across cardbrands:**
+
+|Payeezy RPM Value - Description|Marketplace Value|
+|:--------------------------|:----------------|
+|Y - Street Address, and 5 digit ZIP Code match|Address & Postal Match|
+|A - Street Address matches, ZIP Code does not|Address Match, Postal Mismatch|
+|B - International street address match, postal code not verified due to incompatible formats|Not Available|
+|W - ZIP Code matches, Street Address does not|Address Mismatch, Postal Match|
+|P - International postal code match, street address not verified due to incompatible format|Not Available|
+|N - No Address or ZIP Code match|Address & Postal Mismatch|
+|C - International street address and postal code not verified due to incompatible formats|Not Available|
+|R - System unavailable, retry later|Unchecked Unavailable|
+|G - Non-US Issuer does not participate|Not Available|
+|U - Address information is unavailable for that account number, or the card issuer does not support AVS|Not Available|
+|E - Not a mail or phone order|Not Available|
+|S - Service not supported|Not Supported|
+|2 - Cardholder name, billing address and postal code match|Name & Postal Match|
+|3 - Cardholder name and billing postal code match|Name & Address Match|
+|4 - Cardholder name and billing address match|Name Match|
+|1 - Cardholder name matches|Name Mismatch, Address Match, Postal Match|
+|5 - Cardholder name incorrect, billing address and postal code match|Name Mismatch, Address Match, Postal Match|
+|6 - Cardholder name incorrect, billing postal code matches|Name Mismatch, PostalMatch|
+|7 - Cardholder name incorrect, billing address matches|Name Mismatch, Address Match|
+|8 - Cardholder name, billing address and postal code are all incorrect|Name, Address & Postal Mismatch|
+|D - International street address and postal code match|Street Addresses & Postal Codes Match (International Only)|
+|Q - Bill to address did not pass edit checks|Not Available|
+|Z - 5 digit ZIP Code match only|Not Available|
+
+In RPM, you could search a transaction, click on the detail, and create a new fraud filter based on that transaction. This functionality is not available in CLX.
+
+---
 
 ## Reporting
 
@@ -90,15 +138,27 @@ type: tab
 
 No change in Filters.  The CVV Response Codes themselves have changed, but the application of filters remains the same. See [Commerce Hub Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) documentation for more information.
 
-In Payeezy Gateway, an CVV response code will not be returned for a transaction unless one of these filters is enabled; in Commerce Hub, a filter does not need to be enabled to get a response.
+In Payeezy Gateway, a CVV response code will not be returned for a transaction unless one of these filters is enabled; in Commerce Hub, a filter does not need to be enabled to get a response.
+
+---
 
 ## Configuration
 
-In Payeezy, the CVV Filters were applied across all card brands, in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv), the CVV Filters are set for each of the 4 major card brands separately.
+In Payeezy, configuration settings were set and applied at the terminal level; in Commerce Hub, they are now configured at the client level.
 
 In Payeezy, the configuration was set to filter out / reject the transactions with that response code; in CLX, the configuration drives which transactions are allowable (a list of acceptable codes vs. a filter).  One exception is that if no codes are configured they will all be considered acceptable.
 
-In RPM, you could search a transaction, click on the detail, andd create a new fraud filter based on that transaction. This funcationality is not available in CLX.
+|Payeezy RPM Value - Description|Marketplace Value|
+|:--------------------------|:----------------|
+|N - CVV2 Does not match|Did Not Match|
+|P - Card expiration not provided or card does not have valid CVD code|Not Provided|
+|S - Merchant indicated that CVV2 is not present on card|Unknown Issuer|
+|U - Card issuer is not certified and/or has not provided visa encryption keys|Required Error|
+|I - CVV2 code is invalid or empty|Server Error|
+
+In RPM, you could search a transaction, click on the detail, and create a new fraud filter based on that transaction. This functionality is not available in CLX.
+
+---
 
 ## Reporting
 
