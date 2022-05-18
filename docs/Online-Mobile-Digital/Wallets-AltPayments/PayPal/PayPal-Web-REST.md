@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Restful-API, Web, Online, PayPal, Wallet]
+tags: [Web, Online, PayPal, Wallet]
 ---
 
 # PayPal on the Web: RESTful API Integration
