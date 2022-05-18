@@ -1,5 +1,5 @@
 ---
-tags: [Integration Methods, Restful-API, Web, Online, Google Pay, Wallet]
+tags: [Web, Online, Google Pay, Wallet]
 ---
 
 # Google Pay on the Web: RESTful API Integration
