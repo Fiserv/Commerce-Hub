@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, batch-upload card-not-present,  csv-format, virtual-terminal, online]
+tags: [Commerce Hub, Batch Upload, Card Not Present, CSV Format, Virtual Terminal, Online]
 ---
 
 # Quick Key
