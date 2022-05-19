@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, digital, online, user-management, virtual-pos, virtual-terminal]
+tags: [Commerce Hub, Card Not Present, Digital, Online, User Management, Virtual POS, Virtual Terminal]
 ---
 
 # User-Management
