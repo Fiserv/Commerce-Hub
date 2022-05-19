@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Subsequent Authorization Types]
+tags: [Subsequent Authorization Types]
 ---
 
 # Subsequent Authorization Types
