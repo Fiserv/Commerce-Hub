@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, In Person, Online, Mobile, Digital, Address Verification, Fraud]
+tags: [Card Not Present, Card Present, In Person, Online, Mobile, Digital, Address Verification, Fraud]
 ---
 
 # Address Verification Services
