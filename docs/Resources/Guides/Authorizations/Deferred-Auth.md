@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Deferred Authorization, Authorization]
+tags: [Deferred Authorization, Authorization]
 ---
 
 # Deferred Authorization
