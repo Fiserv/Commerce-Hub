@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Bill Payments, Recurring Bill Payments]
+tags: [Bill Payments, Recurring Bill Payments]
 ---
 
 # Recurring Bill Payments
