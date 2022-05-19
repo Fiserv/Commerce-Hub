@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud, transaction-restrictions]
+tags: [Authorizations, Card Not Present, Fraud, Transaction Restrictions]
 ---
 
 
