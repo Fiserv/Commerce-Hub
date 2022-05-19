@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [Online, Card Not Present, Payeezy]
 ---
 # Technical Specifications
 <!-- theme: danger -->
