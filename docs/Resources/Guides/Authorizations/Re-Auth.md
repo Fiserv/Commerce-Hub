@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
+tags: [Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
 ---
 
 # Reauthorize
