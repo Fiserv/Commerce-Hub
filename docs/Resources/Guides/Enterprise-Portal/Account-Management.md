@@ -1,5 +1,5 @@
 ---
-tags: [Account Management, Commerce Hub, Enterprise Portal, Settings]
+tags: [Account Management, Enterprise Portal, Settings]
 ---
 
 # Account Management
