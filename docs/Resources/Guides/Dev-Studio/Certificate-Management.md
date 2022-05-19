@@ -1,5 +1,5 @@
 ---
-tags: [Account Management, Commerce Hub, Enterprise Portal, Key Management, Certificate, CSR, Apple Pay]
+tags: [Account Management, Enterprise Portal, Key Management, Certificate, CSR, Apple Pay]
 ---
 
 # Certificate Signing Requests
