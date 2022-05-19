@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Present, Master Data, Regional Debit, International Debit]
+tags: [Card Present, Master Data, Regional Debit, International Debit]
 ---
 
 # Regional Debit
