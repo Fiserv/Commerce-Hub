@@ -1,5 +1,5 @@
 ---
-tags: [Account Management, Commerce Hub, Enterprise Portal, Key Management, API Key, API Secret]
+tags: [Account Management, Enterprise Portal, Key Management, API Key, API Secret]
 ---
 
 # API Key Management
