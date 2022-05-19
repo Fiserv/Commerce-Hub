@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy, migration]
+tags: [Online, Card Not Present, Payeezy, Migration]
 ---
 
 # Payeezy Migration
