@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Digital, Online, Virtual POS, Virtual Terminal]
+tags: [Card Not Present, Digital, Online, Virtual POS, Virtual Terminal]
 ---
 
 # Virtual Terminal
