@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Enterprise Portal, Business Track, Profiles, Virtual Terminal, Reporting, Settings]
+tags: [Enterprise Portal, Business Track, Profiles, Virtual Terminal, Reporting, Settings]
 ---
 
 # Profiles
