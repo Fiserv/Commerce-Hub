@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Partial Approval, Partial Auth, Partial, Authorization]
+tags: [Partial Approval, Partial Auth, Partial, Authorization]
 ---
 
 # Partial Authorizations
