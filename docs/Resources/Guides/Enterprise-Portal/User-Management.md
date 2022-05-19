@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Digital, Online, User Management, Virtual POS, Virtual Terminal]
+tags: [Card Not Present, Digital, Online, User Management, Virtual POS, Virtual Terminal]
 ---
 
 # User-Management
