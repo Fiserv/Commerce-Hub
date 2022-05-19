@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, digital, online, virtual-pos, virtual-terminal]
+tags: [Commerce Hub, Card Not Present, Digital, Online, Virtual POS, Virtual Terminal]
 ---
 
 # Virtual Terminal
