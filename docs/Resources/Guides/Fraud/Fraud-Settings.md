@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, fraud, fraud-settings]
+tags: [Card Not Present, Fraud, Fraud Settings]
 ---
 
 # Fraud Settings
