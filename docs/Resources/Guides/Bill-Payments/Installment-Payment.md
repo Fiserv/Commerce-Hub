@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Bill Payments, Installment Bill Payments]
+tags: [Bill Payments, Installment Bill Payments]
 ---
 
 # Installment Bill Payments
