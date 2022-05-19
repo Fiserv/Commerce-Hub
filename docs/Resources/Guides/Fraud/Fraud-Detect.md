@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Address Verification Service, Detect-Fraud, Fraud, Security Code]
+tags: [Commerce Hub, Card Not Present, Address Verification Service, Detect Fraud, Fraud, Security Code]
 ---
 
 
