@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Bill Payments, Payment Schedule]
+tags: [Bill Payments, Payment Schedule]
 ---
 
 # Payment Schedule
