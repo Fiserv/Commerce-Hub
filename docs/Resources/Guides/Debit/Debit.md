@@ -1,5 +1,5 @@
 ---
-tags: [Definition, Commerce Hub, Debit, Pin Less Debit, Pin Debit, Debit Routing]
+tags: [Definition, Debit, Pin Less Debit, Pin Debit, Debit Routing]
 ---
 
 # Debit Solutions
