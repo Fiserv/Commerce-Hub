@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Debit, In-Person, Card Present, Smart Routing]
+tags: [Debit, In-Person, Card Present, Smart Routing]
 ---
 
 # Smart Debit Routing
