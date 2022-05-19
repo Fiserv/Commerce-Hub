@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Authorization, Optimization, Auth Optimization, Approval Rate, Decline Rate]
+tags: [Authorization, Optimization, Auth Optimization, Approval Rate, Decline Rate]
 ---
 
 # Authorization Optimization
