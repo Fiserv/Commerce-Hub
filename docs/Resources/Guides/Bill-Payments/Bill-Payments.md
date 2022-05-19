@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Authorizations, Bill Payments, Deferred Payments, Recurring Payments, Installment Payments]
+tags: [Authorizations, Bill Payments, Deferred Payments, Recurring Payments, Installment Payments]
 ---
 
 # Bill Payments
