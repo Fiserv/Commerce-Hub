@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, payment-faciliator]
+tags: [Payment Faciliator]
 ---
 
 # Payment Faciliator
