@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, lodging]
+tags: [Lodging]
 ---
 
 # Lodging
