@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Batch Upload, Card Not Present, CSV Format, Virtual Terminal, Online]
+tags: [Batch Upload, Card Not Present, CSV Format, Virtual Terminal, Online]
 ---
 
 # Quick Key
