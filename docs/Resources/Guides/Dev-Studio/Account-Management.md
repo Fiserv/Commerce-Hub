@@ -1,5 +1,5 @@
 ---
-tags: [Account Management, Commerce Hub, Enterprise Portal, Key Management, Certification]
+tags: [Account Management, Enterprise Portal, Key Management, Certification]
 ---
 
 # Account Management
