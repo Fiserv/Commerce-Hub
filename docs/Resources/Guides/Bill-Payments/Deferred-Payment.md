@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Bill Payments, Deferred Bill Payments]
+tags: [Bill Payments, Deferred Bill Payments]
 ---
 
 # Deferred Bill Payments
