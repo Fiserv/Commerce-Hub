@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, Incremental Auth, Incremental, Authorization]
+tags: [Card Not Present, Card Present, Incremental Auth, Incremental, Authorization]
 ---
 
 # Incremental Authorization
