@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, sandbox, testing, test-integration, test-cards, test-declines, test-errors, test-fraud]
+tags: [Sandbox, Testing, Test Integration, Test Cards, Test Declines, Test Errors, Test Fraud]
 ---
 
 # Test Response Messages
