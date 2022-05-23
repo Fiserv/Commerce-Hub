@@ -1,6 +1,6 @@
 ---
 
-tags: [Reporting, Card Not Present, Payeezy, Search API, Reporting API]
+tags: [Carat, Commerce Hub, Enterprise, Reporting, Card Not Present, Payeezy, Search API, Reporting API]
 
 ---
 
