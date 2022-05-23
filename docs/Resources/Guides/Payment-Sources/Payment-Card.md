@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
+tags: [Paymentcard, Payment Sources]
 ---
 
 
