@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-address, billing-address, master-data, shipping-address, shipping-method]
+tags: [Customer Address, Billing Address, Master Data, Shipping Address, Shipping Method]
 ---
 
 # Customer Address
