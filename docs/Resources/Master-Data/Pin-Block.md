@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-present, master-data, pin-block]
+tags: [Card Present, Master Data, Pin Block]
 ---
 
 # PIN Key Management
