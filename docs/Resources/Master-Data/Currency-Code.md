@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, iso-country-code, master-data]
+tags: [ISO Country Code, Master Data]
 ---
 
 
