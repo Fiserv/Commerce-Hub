@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub,encrypted-data, enterprise, card-present, master-data, pin-block]
+tags: [Encrypted Data, Card Present, Master Data, Pin Block]
 ---
 
 # Encryption Data
