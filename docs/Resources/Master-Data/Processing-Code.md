@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, processing-codes]
+tags: [Master Data, Processing Codes]
 ---
 
 # Processing Codes
