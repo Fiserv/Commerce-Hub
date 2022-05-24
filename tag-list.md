@@ -61,7 +61,8 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Secure Data Capture
 - Secure Payment Form
 - Settings
-- Deferred Payments
+- Shipping Address
+- Shipping Methods
 - Terminal
 - Tokenization
 - Track
