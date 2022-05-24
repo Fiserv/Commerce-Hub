@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, iso-country-code]
+tags: [ISO Country Code]
 ---
 
 # ISO Country Codes
