@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data]
+tags: [Master Data, Additional Transaction Data]
 ---
 
 # Additional Data Common
