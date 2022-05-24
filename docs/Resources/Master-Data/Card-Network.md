@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, card-network, card-brand, card-scheme, visa, mastercard, amex, discover]
+tags: [Master Data, Card Network, Card Brand, Card Scheme, Visa, Mastercard, AMEX, Discover]
 ---
 
 # Card Network
