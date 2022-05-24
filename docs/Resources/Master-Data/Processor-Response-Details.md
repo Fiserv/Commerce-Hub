@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, processor-response-parameters]
+tags: [Master Data, Processor Response Parameters]
 ---
 
 # Processor Response Parameters
