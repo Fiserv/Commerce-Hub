@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, commerce-hub-response, master-data]
+tags: [Commerce Hub Response, Master Data]
 ---
 
 # Commerce Hub Response
