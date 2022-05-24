@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-transaction-type, reversal-reason-code, authorization-sequence, device-fingerprint-data, data-capture, data-dynamic, master-data, transactional-data, transaction-details,]
+tags: [Authorization Type Indicator, Primary Transaction Type, Reversal Reason Code, Authorization Sequence, Device Fingerprint Data, Data Capture, Data Dynamic, Master Data, Transactional Data, Transaction Details]
 ---
 
 # Transactional Details
