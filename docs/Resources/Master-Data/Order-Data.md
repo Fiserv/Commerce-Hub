@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, order-details, order-data, master-data, item-details]
+tags: [Order Details, Order Data, Master Data, Item Details]
 ---
 
 # Order Data
