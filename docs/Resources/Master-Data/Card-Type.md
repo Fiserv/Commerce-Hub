@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, credit-card, card-brand, card-scheme, card-type]
+tags: [Master Data, Credit Card, Card Brand, Card Scheme, Card Type]
 ---
 
 # Supported Card Types
