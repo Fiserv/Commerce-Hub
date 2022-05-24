@@ -27,7 +27,7 @@ In Payeezy RPM, you could search a transaction, click on the detail, and create 
 
 There is currently an unlimited number of values that can be set for each filter; however, a threshold will be determined and implemented at a future date. _Playbook will be updated with the specific number once it has been set._ 
 
-**Additional Negative Filters are available for configuration in CLX:**
+**Negative Filters available for configuration in MP:**
 
 |RPM|MP|
 |:-----|:-----|
