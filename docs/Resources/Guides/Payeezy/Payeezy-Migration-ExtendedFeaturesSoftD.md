@@ -9,13 +9,38 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 <!-- theme: danger -->
 > The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
 
+Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub.  
+
 <!--type: tab
 titles: API, Configuration, Virtual Terminal, Reporting
 -->
 
-<One element (mvv_maid) is not available in Commerce Hub, no functional impact. removed because feature is not used>
+In Payeezy, the North Merchant Master configuration was used to determine if the elements would be accepted in the API; Commerce Hub allows Soft Descriptors for all merchants.
 
-Commerce Hub allows Soft Descriptors for all merchants, in Payeezy the North Merchant Master configuration was used to determine if the elements would be accepted in the API.
+The mvv_maid element is not available in Commerce Hub.
+
+JSON string format for `dynamicDescriptor`:
+
+```json
+{
+ "dynamicDescriptors":{
+      "mcc":"4457",
+      "merchantName":"Mywebsite.com",
+      "customerServiceNumber":"1231231234",
+      "serviceEntitlement":"67893827513",
+      "address":{
+         "street":"Main Street",
+         "houseNumberOrName":"123",
+         "city":"Main Street",
+         "stateOrProvince":"GA",
+         "postalCode":"30303",
+         "country":"US"
+      }
+   }
+}
+```
+
+See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md) documentation for additional information.
 
 <!--
 type: tab
