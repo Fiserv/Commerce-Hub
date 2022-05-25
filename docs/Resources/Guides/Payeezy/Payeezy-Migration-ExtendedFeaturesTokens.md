@@ -14,9 +14,9 @@ tags: [carat, commerce-hub, enterprise, tokens-request, payment-token, tokenizat
 titles: API, Configuration, Virtual Terminal, Reporting
 -->
 
-**Standard Use Cases**
+**Happy Path Token Usage**
 
-- If the Tokenization Payment Type is enabled for the transacting MID in ClientLine Enterprise (CLX), Commerce Hub will tokenize the card and return the paymentTokens object in the response:
+If the Tokenization Payment Type is enabled for the transacting MID in ClientLine Enterprise (CLX), Commerce Hub will tokenize the card and return the paymentTokens object in the response:
 
 ```json
 
@@ -30,15 +30,15 @@ titles: API, Configuration, Virtual Terminal, Reporting
  ]
 ```
 
-- In Payeezy, tokenization of a card, without payment, would be completed via the zero dollar pre-authorization functionality.  In Commerce Hub, merchants can use the /payment-vas/v1/tokens endpoint to tokenize a card without payment. See [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for additional information.
+In Payeezy, tokenization of a card, without payment, would be completed via the zero dollar pre-authorization functionality.  In Commerce Hub, merchants can use the /payment-vas/v1/tokens endpoint to tokenize a card without payment. See [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for additional information.
 
 ---
 
-**Non-standard Use Cases**
+**Non-happy Path Token Usage**
 
-- The merchant can prevent the token from being created and override the automated behavior by including the createToken element in the request with a value of false.
+The merchant can prevent the token from being created and override the automated behavior by including the createToken element in the request with a value of false.
 
-- If the transacting MID is not configured for the Tokenization Payment Type and a request contains the creatToken element with a value of true, Commerce Hub will respond with a 249 error code:
+If the transacting MID is not configured for the Tokenization Payment Type and a request contains the creatToken element with a value of true, Commerce Hub will respond with a 249 error code:
 
 ```json
 
@@ -56,9 +56,7 @@ titles: API, Configuration, Virtual Terminal, Reporting
 type: tab
 -->
 
-In Payeezy, a merchant would enable tokenization for each MID by entering a TA Token number in the Details tab for that MID.  In Commerce Hub, the merchant enables tokenization as a Payment Type.
-
-The merchant has the ability to enable this payment type for one, many or all MIDs.
+In Payeezy Real-time Payment Manager (RPM), a merchant would enable tokenization for each MID by entering a TA Token number in the Details tab for that MID.  In ClientLine Enterpricse (CLX), the merchant enables tokenization as a Payment Type.  The merchant has the ability to enable this payment type for one, many or all MIDs.
 
 <!--
 type: tab
