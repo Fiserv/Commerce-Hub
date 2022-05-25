@@ -9,10 +9,12 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, address-verif
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed in Marketplace (MP) by Fiserv personnel.  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).  
+Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed in Marketplace (MP) by Fiserv personnel.  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv). 
+
+System level fraud controls are regulated and managed by the Fiserv Fraud team.
 
 <!--type: tab
-titles: Fraud Settings, Velocity Controls, Address Verification Services (AVS) Filter, Security Code Verification (CVV2) Filter
+titles: Fraud Filters, Velocity Controls, Address Verification Services (AVS) Filter, Security Code Verification (CVV2) Filter
 -->
 
 ## Configuration
