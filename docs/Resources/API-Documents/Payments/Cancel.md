@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, Cancel, API Reference]
+tags: [Card Not Present, Card Present, Cancel, API Reference]
 ---
 
 # Cancel
