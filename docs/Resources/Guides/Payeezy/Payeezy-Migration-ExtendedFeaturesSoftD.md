@@ -19,7 +19,7 @@ In Payeezy, the North Merchant Master configuration was used to determine if the
 
 The mvv_maid element is not available in Commerce Hub.
 
-JSON string format for `dynamicDescriptor`:
+Sample JSON string format for `dynamicDescriptor`:
 
 ```json
 {
@@ -40,7 +40,7 @@ JSON string format for `dynamicDescriptor`:
 }
 ```
 
-See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md) documentation for additional information.
+See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md) documentation for detailed information on translating Payeezy Soft Descriptor elements to Commerce Hub Dynamic Descriptor elements.
 
 <!--
 type: tab
