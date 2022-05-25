@@ -72,15 +72,17 @@ type: tab
 
 ## API Structure
 
-In Payeezy,  Account Verification Services (AVS) Filters were applied to Pre-Auth and Purchase transactions; in Commerce Hub, they are applied to Pre-Auth, Purchase and Tagged Refund transactions.  The AVS Response Codes themselves have changed, but the application of filters remains the same.  See [Commerce Hub Address Verifications Services](?path=docs/Resources/Guides/Fraud/Address-Verification.md) documentation for more information.
+In Payeezy,  Account Verification Services (AVS) Filters were applied to Pre-Auth and Purchase transactions; in Commerce Hub, they are applied to Pre-Auth, Purchase and Tagged Refund transactions.  
 
-In Payeezy, an AVS response code will not be returned for a transaction unless a filter is enabled; in Commerce Hub, a filter does not need to be enabled to get a response.
+In Commerce Hub, the AVS Response Codes have changed, but the application of filters remains the same.  See [Commerce Hub Address Verifications Services](?path=docs/Resources/Guides/Fraud/Address-Verification.md) documentation for more information.
 
 ---
 
 ## Configuration
 
-In Payeezy, the configuration was set to filter out / reject the transactions with that response code; in MP, the configuration drives which transactions are allowable (a list of acceptable codes vs. a filter).  One exception is that if no codes are configured they will all be considered acceptable.
+AVS must be enabled in Marketplace in order to receive a response code.
+
+In Marketplace, if no codes are configured, they will all be considered acceptable.
 
 **AVS Values have been normalized across cardbrands:**
 
@@ -122,15 +124,17 @@ type: tab
 
 ## API Structure
 
-The CVV Response Codes have changed, but the application of filters remains the same. See [Commerce Hub Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) documentation for more information.
+In Commerce Hub, the CVV Response Codes have changed, but the application of filters remains the same. See [Commerce Hub Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) documentation for more information.
 
-In Payeezy, a CVV response code will not be returned for a transaction unless one of these filters is enabled; in Commerce Hub, a filter does not need to be enabled to get a response.
+If CVV is enabled, but the element is not included in the request API, a response code will be returned.
 
 ---
 
 ## Configuration
 
-In Payeezy, the configuration was set to filter out / reject the transactions with that response code; in MP, the configuration drives which transactions are allowable (a list of acceptable codes vs. a filter).  One exception is that if no codes are configured they will all be considered acceptable.
+In Payeezy, CVV configuration was at the terminal level and enabled by selecting terminal type of Mail Order/Telephone Order (CVV2) or E-Commerce Transaction (CVV2); In Marketplace, CVV must be enabled and is set at the MID level.
+
+In Marketplace, if no codes are configured, they will all be considered acceptable.
 
 **CVV values have been normalized in MP:**
 
