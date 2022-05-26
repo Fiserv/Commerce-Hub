@@ -1,5 +1,5 @@
 ---
-tags: [Amount, Amount Components,Transaction Amount]
+tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Transaction Interaction]
 ---
 
 # Additional POS Information
