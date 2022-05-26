@@ -15,6 +15,8 @@ Virtual Terminal was previously accessed via the Payeezy Real-time Payment Manag
 
 In RPM, the Virtual Terminal functionality allows for Forced Post and Open Voids to be processed. In the CLX solution, Forced Post is not currently supported, but planned for a future release. Open Void is not supported in CLX.  
 
+The ability to enter in Soft Descriptors on an inititated transaction is not available.
+
 The ability to create a copy of a prior Pre-Auth or Purchase is no longer available.
 
 RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX Virtual Terminal is available in English language only.
