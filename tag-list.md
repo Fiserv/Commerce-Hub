@@ -1,12 +1,12 @@
-List of tags used in Commerce Hub. Articles should be limited to no more than 7 tags. Tags should be title case.
+List of tags used in Commerce Hub. Articles should be limited to no more than 7 tags. Tags should be title case. Objects should be a tag in master data.
 ---------------
-- 3-D
-- 3-D Secure Verification
-- API Key
-- API Reeference
-- API Secret
+- 3-D (Changed to 3-D Secure)
+- 3-D Secure Verification (Changed to 3-D Secure)
+- API Key (Changed to API Credentials)
+- API Reference (Verify that this is in all of the master data articles)
+- API Secret (Changed to API Credentials)
 - Apple Pay 
-- Approval Rate
+- Approval Rate (Remove Approval Rate)
 - Auth Optimization
 - Business Track
 - Cancel
@@ -16,19 +16,19 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Card Not Present
 - Card Present
 - CSR
-- Data as-a-Service
+- Data as a Service (Double check daas)
 - Data Solutions
 - Debit
 - Debit Routing
 - Deferred Payments
-- Decline Rate
+- Decline Rate (Remove)
 - Deferred Authorization
 - Definition
 - Digital
 - Developer Portal
 - EMV
 - Encrypted Payments
-- Enroll
+- Enroll (Remove)
 - Environments
 - Fraud
 - Fully Integrated
@@ -37,20 +37,21 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - In-Person
 - Installments
 - Key Management
-- Least Cost Debit Routing
+- Least Cost Debit Routing (Change to Debit Routing)
 - Manual Entry
+- Master Data (Add the master data tags to the master data articles)
 - Mobile
 - NFC
-- Omnicommerce
+- Omnicommerce (X2)
 - Online
 - Optimization
-- Pass Through
+- Pass Through (Passthrough)
 - Payment Card
 - Payment Token
-- Pin Less Debit
-- Pin Pad
+- Pin Less Debit (Change to PIN-Less Debit)
+- Pin Pad (Change to PIN Pad)
 - Point of Sale
-- Protectby
+- Protectbuy
 - Recurring Payments
 - Refund
 - Returns Optimization
@@ -66,6 +67,8 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Terminal
 - Tokenization
 - Track
+- Transaction Interaction
 - Univesal Commerce
 - Verified by Visa
 - Visa Secure
+Master Data, API Reference, POS Features, POS Information, Point of Sale, Transaction Interaction
