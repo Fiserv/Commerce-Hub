@@ -1,5 +1,5 @@
 ---
-tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Transaction Interaction]
+tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Terminal Transaction Interaction]
 ---
 
 # Additional POS Information
