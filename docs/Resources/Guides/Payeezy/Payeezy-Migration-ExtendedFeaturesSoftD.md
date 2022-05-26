@@ -46,7 +46,7 @@ See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migratio
 type: tab
 -->
 
-To enable Soft Descriptors if Virtual Terminal, a self-service configuration was available in Payeezy (after the North Merchant Master configuration is set).  In Commerce Hub this is not available (see Virtual Terminal details).
+To enable Soft Descriptors in Virtual Terminal, a self-service configuration was available in Payeezy (after the North Merchant Master configuration is set).  In Commerce Hub this is not available (see Virtual Terminal details).
 
 <!--
 type: tab
