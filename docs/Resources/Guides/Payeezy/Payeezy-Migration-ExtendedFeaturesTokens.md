@@ -68,7 +68,7 @@ In ClientLine Enterprise (CLX), transactions can not be initiated using a token 
 type: tab
 -->
 
-Token generation can be seen as a 'Generate Token' transaction type in the Search report in CLX.
+Token generation can be seen as a 'Generate Token' transaction type in the Search report in ClientLine Enterprise (CLX).
 
 Token number can be viewed in the transaction detail of the Search report in CLX.
 
