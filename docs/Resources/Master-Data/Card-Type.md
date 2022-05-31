@@ -1,5 +1,5 @@
 ---
-tags: [Master Data, Credit Card, Card Brand, Card Scheme, Card Type]
+tags: [API Reference, Credit Card, Card Brand, Card Scheme, Card Type, Master Data]
 ---
 
 # Supported Card Types
