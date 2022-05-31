@@ -1,5 +1,5 @@
 ---
-tags: [Card Present, Master Data, Pin Block]
+tags: [API Reference, Card Present, Master Data, Pin Block]
 ---
 
 # PIN Key Management
