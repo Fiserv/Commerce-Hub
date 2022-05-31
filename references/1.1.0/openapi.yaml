@@ -123,7 +123,7 @@ paths:
         503: {$ref: '#/components/responses/ServiceUnavailable'}
         504: {$ref: '#/components/responses/GatewayTimeout'}
   /payments/v1/cancels:
-    x-model-version: 1.0
+    x-model-version: 1.1
     post:
       tags:
       - Cancel Endpoint Definition
