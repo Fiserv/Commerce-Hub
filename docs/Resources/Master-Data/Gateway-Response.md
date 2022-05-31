@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub Response, Master Data]
+tags: [API Reference, Commerce Hub Response, Master Data]
 ---
 
 # Commerce Hub Response
