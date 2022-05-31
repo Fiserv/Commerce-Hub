@@ -1,5 +1,5 @@
 ---
-tags: [Customer Transaction Record, Master Data]
+tags: [API Reference, Customer Transaction Record, Master Data]
 ---
 
 # Customer Transaction Record 
