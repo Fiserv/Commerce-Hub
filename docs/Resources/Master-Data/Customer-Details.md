@@ -1,5 +1,5 @@
 ---
-tags: [Customer Details, Master Data]
+tags: [API Reference, Customer Details, Master Data]
 ---
 
 # Customer Details
