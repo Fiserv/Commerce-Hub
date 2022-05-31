@@ -1,5 +1,5 @@
 ---
-tags: [Merchant Business Details, Master Data]
+tags: [API Reference, Merchant Business Details, Master Data]
 ---
 
 # Merchant Details
