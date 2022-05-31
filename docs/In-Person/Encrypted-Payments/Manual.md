@@ -84,7 +84,6 @@ titles: Request, Response
   },
   "source": {
     "sourceType": "PaymentCard",
-    "emvData": "0249F3704833A12329F1002AB34",
     "encryptionData": {
       "encryptionType": "RSA",
       "encryptionTarget": "MANUAL",
