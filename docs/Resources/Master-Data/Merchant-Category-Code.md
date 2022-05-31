@@ -1,5 +1,5 @@
 ---
-tags: [Master Data, Merchant Category Code]
+tags: [API Reference, Master Data, Merchant Category Code]
 ---
 
 # Merchant Category Codes
