@@ -1,5 +1,5 @@
 ---
-tags: [Network Details, Master Data]
+tags: [API Reference, Network Details, Master Data]
 ---
 
 # Authorization Network Response
