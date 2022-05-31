@@ -1,5 +1,5 @@
 ---
-tags: [Fraud, Fraud Attributes, Risk Scoring]
+tags: [API Reference, Fraud, Fraud Attributes, Risk Scoring]
 ---
 
 # Fraud Attributes
