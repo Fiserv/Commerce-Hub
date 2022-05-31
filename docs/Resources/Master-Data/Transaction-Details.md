@@ -1,5 +1,5 @@
 ---
-tags: [Authorization Type Indicator, Primary Transaction Type, Reversal Reason Code, Authorization Sequence, Device Fingerprint Data, Data Capture, Data Dynamic, Master Data, Transactional Data, Transaction Details]
+tags: [API Refernce, Authorization Sequence, Authorization Type Indicator, Data Capture, Data Dynamic, Device Fingerprint Data, Master Data, Primary Transaction Type, Reversal Reason Code, Transactional Data, Transaction Details]
 ---
 
 # Transactional Details
