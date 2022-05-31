@@ -32,7 +32,7 @@
     }
   ],
   "apiVersions": [
-   {
+    {
       "version": "1.0.0",
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",

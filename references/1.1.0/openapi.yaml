@@ -128,7 +128,7 @@ paths:
       tags:
       - Cancel Endpoint Definition
       x-group-name: 'Payments'
-      x-proxy-name: 'Cancel'
+      x-proxy-name: 'Cancels'
       summary: Submit a cancel transaction.
       description: 'Use this payload to perform cancel a transaction (aka void).'
       requestBody:
