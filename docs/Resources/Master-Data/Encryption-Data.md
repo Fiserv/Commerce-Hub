@@ -1,5 +1,5 @@
 ---
-tags: [Encrypted Data, Card Present, Master Data, Pin Block]
+tags: [API Reference, Card Present, Encrypted Data, Master Data, Pin Block]
 ---
 
 # Encryption Data
