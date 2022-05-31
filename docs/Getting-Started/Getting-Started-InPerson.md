@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, in-person, payments, card-not-present, card-present, emv, debit, software, terminal, point-of-sale, pos]
+tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point of Sale, Terminal]
 ---
 
 # In-Person Payments
