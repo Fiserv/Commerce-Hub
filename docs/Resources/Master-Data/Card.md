@@ -1,5 +1,5 @@
 ---
-tags: [Master Data, Card Details]
+tags: [API Reference, Card Details, Master Data]
 ---
 
 
