@@ -122,49 +122,59 @@ paths:
         500: {$ref: '#/components/responses/ServerError'}
         503: {$ref: '#/components/responses/ServiceUnavailable'}
         504: {$ref: '#/components/responses/GatewayTimeout'}
-  /payments/v1/charges/{transactionId}/cancel:
+  /payments/v1/cancels:
     x-model-version: 1.0
     post:
-      tags: [Cancel Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Cancel
+      tags:
+      - Cancel Endpoint Definition
+      x-group-name: 'Payments'
+      x-proxy-name: 'Cancel'
       summary: Submit a cancel transaction.
-      description: Use this payload to perform cancel a transaction (aka void).
+      description: 'Use this payload to perform cancel a transaction (aka void).'
       requestBody:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/CancelRequest'}
+            schema:
+              $ref: '#/components/schemas/CancelRequest'
             examples:
-              Cancel: {summary: CancelRequest, $ref: '#/components/examples/SecondaryRequest'}
-      parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
+              MerchantTransactionID:
+                summary: Cancel a transaction using Merchant Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
+              TransactionID:
+                summary: Cancel a transaction using CommerceHub Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       responses:
         200:
           description: Success
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/CancelResponse'}
+              schema:
+                $ref: '#/components/schemas/CancelResponse'
               examples:
-                Cancel: {summary: CancelResponse, $ref: '#/components/examples/CancelResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
+                Cancel:
+                  summary: CancelResponse
+                  $ref: '#/components/examples/CancelResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
   /payments/v1/charges/{transactionId}/refund:
     x-model-version: 1.0
     post:
@@ -1467,6 +1477,44 @@ components:
         captureTime: {type: string, format: date-time, maxLength: 20, description: 'Timestamp
             in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         address: {$ref: '#/components/schemas/Address'}
+    ReferenceTransactionDetails:
+      x-model-version: 1.0
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Reference-Transaction-Details.md">Reference Transaction details</a> specific to each request based on business requirements.'
+      properties:
+        referenceTransactionId:
+          type: string
+          maxLength: 40
+          description: 'Commerce Hub generated <code>transactionId</code> from the original transaction used for reference in a secondary transaction.'
+          example: '838916029301'
+        referenceMerchantTransactionId:
+          type: string
+          maxLength: 128
+          description: 'Merchant/client generated <code>merchantTransactionId</code> from the original transaction used for reference in a secondary transaction'
+          example: '1343678765'
+        referenceMerchantOrderId:
+          type: string
+          maxLength: 128
+          description: 'Merchant/client generated <code>merchantOrderId</code> from the original transaction used for reference in a secondary transaction'
+          example: '953729024'
+        referenceOrderId:
+          type: string
+          maxLength: 128
+          description: 'Commerce Hub generated <code>orderId</code> from the original transaction used for reference in a secondary transaction'
+          example: 'CHG014994a6b0729e4517858f74c6a41c8d61'
+        referenceClientRequestId:
+          type: string
+          maxLength: 128
+          description: 'Merchant/client generated <code>clientRequestId</code> from the original transaction. Can only be used in a transaction inquiry request.'
+          example: '2994454'
+        referenceTransactionType:
+          type: string
+          maxLength: 64
+          description: |+
+            Identifies the type of the referenced transaction.
+            Valid Values:
+            * CHARGES
+            * REFUND
+          example: 'CHARGES'
     OrderData:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md">Order
@@ -4697,6 +4745,33 @@ components:
         amount: {total: '12.04', currency: USD}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    SecondaryRequestWithReferenceMerchantTransactionId:
+      value:
+        referenceTransactionDetails:
+          referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
+          referenceTransactionType: 'CHARGES'
+        amount:
+          total: '12.04'
+          currency: 'USD'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    SecondaryRequestWithReferenceTransactionId:
+      value:
+        referenceTransactionDetails:
+          referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
+          referenceTransactionType: 'CHARGES'
+        amount:
+          total: '12.04'
+          currency: 'USD'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
     CancelResponse:
       value:
         gatewayResponse:
