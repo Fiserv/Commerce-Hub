@@ -1,5 +1,5 @@
 ---
-tags: [Master Data, Transaction Origin and Entry Modes, Transaction Interaction]
+tags: [API Reference, Master Data, Transaction Origin and Entry Modes, Transaction Interaction]
 ---
 
 # Transaction Interaction
