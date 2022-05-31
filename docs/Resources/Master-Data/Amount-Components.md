@@ -1,5 +1,5 @@
 ---
-tags: [Amount, Amount Components,Transaction Amount]
+tags: [Amount, Amount Components, API Reference, Transaction Amount]
 --- 
 
 # Transaction Amount
