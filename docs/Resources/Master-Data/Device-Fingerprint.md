@@ -1,5 +1,5 @@
 ---
-tags: [Device, Master Data, Device Fingerprint, Device Information, Data Capture, Data Static, Data Dynamic]
+tags: [API Reference, Data Capture, Data Dynamic, Data Static, Device, Device Fingerprint, Device Information, Master Data]
 ---
 
 # Device Fingerprint Data
