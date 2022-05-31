@@ -1,5 +1,5 @@
 ---
-tags: [Master Data, Additional Transaction Data]
+tags: [Additional Data, API Reference, Master Data]
 ---
 
 # Additional Data Common
