@@ -1,5 +1,5 @@
 ---
-tags: [Customer Address, Billing Address, Master Data, Shipping Address, Shipping Method]
+tags: [API Reference, Customer Address, Billing Address, Master Data, Shipping Address, Shipping Method]
 ---
 
 # Customer Address
