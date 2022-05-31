@@ -1,5 +1,5 @@
 ---
-tags: [Master Data, Card Network, Card Brand, Card Scheme, Visa, Mastercard, AMEX, Discover]
+tags: [AMEX, API Reference, Card Brand, Card Network, Card Scheme, Discover, Mastercard, Master Data, Visa]
 ---
 
 # Card Network
