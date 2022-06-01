@@ -17,58 +17,59 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Card Present (X?)
 - CSR (X1)
 - Data as a Service (Double check daas) (X26)
-- Data Solutions (x?)
+- Data Solutions (X12)
 - Debit (x30)
-- Debit Routing (x12)
-- Deferred Payments
-- Decline Rate (Remove)
-- Deferred Authorization
-- Definition
-- Digital
-- Developer Portal
-- EMV
-- Encrypted Payments
-- Enroll (Remove)
-- Environments
-- Fraud
-- Fully Integrated
-- Getting Started
-- Google Pay
-- In-Person
-- Installments
-- Key Management
+- Debit Routing (X12)
+- Deferred Payments (X0)
+- Decline Rate (Remove) (X3)
+- Deferred Authorization (X10)
+- Definition (X2)
+- Digital (X47)
+- Developer Portal (X13)
+- EMV (X24)
+- Encrypted Payments (X34)
+- Enroll (Remove) (X2)
+- Environments (X4)
+- Fraud (X59)
+- Fully Integrated (X4)
+- Getting Started (X31)
+- Google Pay (X27)
+- In-Person (X27)
+- Installments (X4)
+- Key Management (X11)
 - Least Cost Debit Routing (Change to Debit Routing)
-- Manual Entry
-- Master Data (Add the master data tags to the master data articles)
-- Mobile
-- NFC
+- Manual Entry (X15)
+- Master Data (Add the master data tags to the master data articles) (X64)
+- Mobile (X56)
+- NFC (X4)
 - Omnicommerce (X2)
-- Online
-- Optimization
-- Pass Through (Passthrough)
-- Payment Card
-- Payment Token
-- Pin Less Debit (Change to PIN-Less Debit)
-- Pin Pad (Change to PIN Pad)
-- Point of Sale
-- Protectbuy
-- Recurring Payments
-- Refund
-- Returns Optimization
-- Returns Optimizer Service
-- Safekey
-- Sandbox
-- Securecode
-- Secure Data Capture
-- Secure Payment Form
-- Settings
-- Shipping Address
-- Shipping Methods
-- Terminal
-- Tokenization
-- Track
-- Transaction Interaction
-- Univesal Commerce
-- Verified by Visa
-- Visa Secure
-Master Data, API Reference, POS Features, POS Information, Point of Sale, Transaction Interaction
+- Online (X75)
+- Optimization (X9)
+- Pass Through (Passthrough) (X1)
+- Payment Card (X101)
+- Payment Token (X46)
+- Pin Less Debit (Change to PIN-Less Debit) (X2)
+- Pin Pad (Change to PIN Pad) (X2)
+- Point of Sale (X19)
+- POS Features (X7)
+- POS Information (X18)
+- Protectbuy (X2)
+- Recurring Payments (X13)
+- Refund (X38)
+- Returns Optimization (X8)
+- Returns Optimizer Service (X8)
+- Safekey (X2)
+- Sandbox (X18)
+- Securecode (X2)
+- Secure Data Capture (X24)
+- Secure Payment Form (X20)
+- Settings (X36)
+- Shipping Address (X6)
+- Shipping Methods X3)
+- Terminal (X93)
+- Tokenization (X27)
+- Track (X27)
+- Transaction Interaction (X9)
+- Univesal Commerce (X4)
+- Verified by Visa (X6)
+- Visa Secure (X5)
