@@ -5,21 +5,21 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - API Key (Changed to API Credentials)
 - API Reference (Verify that this is in all of the master data articles)
 - API Secret (Changed to API Credentials)
-- Apple Pay 
+- Apple Pay (X26)
 - Approval Rate (Remove Approval Rate)
-- Auth Optimization
-- Business Track
-- Cancel
-- Contactless
-- Charges
-- Connected Commerce
-- Card Not Present
-- Card Present
-- CSR
-- Data as a Service (Double check daas)
-- Data Solutions
-- Debit
-- Debit Routing
+- Auth Optimization (X3)
+- Business Track (X9)
+- Cancel (X32)
+- Contactless (X9)
+- Charges (X12)
+- Connected Commerce (X8)
+- Card Not Present (X78)
+- Card Present (X?)
+- CSR (X1)
+- Data as a Service (Double check daas) (X26)
+- Data Solutions (x?)
+- Debit (x30)
+- Debit Routing (x12)
 - Deferred Payments
 - Decline Rate (Remove)
 - Deferred Authorization
