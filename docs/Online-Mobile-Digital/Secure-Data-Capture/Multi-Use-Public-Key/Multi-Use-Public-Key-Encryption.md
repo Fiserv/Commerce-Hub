@@ -7,12 +7,11 @@ The merchant uses multi-use public key for the asymmeteric PaymentCard encryptio
 
 ## Steps of Encryption
 
-### Step 1: Generate encryption block fields
+### Step 1: Generate unencrypted encryption block
 
-Comma separated string with each index indicating the field name and byte length of the data.
+Concatenated string of all the card data fields - card number, name, cvv, expiry month and year.
 
-```Javascript
-card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+```javascript
 
 ```
 ```java
@@ -20,11 +19,12 @@ card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4
 ```
 ---
 
-### Step 2: Generate unencrypted encryption block
+### Step 2:  Generate encryption block fields
 
-Concatenated string of all the card data fields - card number, name, cvv, expiry month and year.
+Comma separated string with each index indicating the field name and byte length of the data.
 
-```javascript
+```Javascript
+card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
 
 ```
 ```java
