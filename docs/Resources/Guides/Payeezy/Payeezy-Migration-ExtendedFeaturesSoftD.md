@@ -13,7 +13,7 @@ Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additio
 
 In Payeezy Real-time Payment Manager (RPM), self-service configuration was available to enable Soft Descriptors for each terminal (after North Merchant Master configuration); In Commerce Hub, Dynamic Descriptors are allowed for all merchant transacting MIDs.
 
-In Payeezy, Soft Descriptors could be entered in the Virtual Terminal screen for a transaction if the configuration was enabled on a terminal; in ClientLine Enterprise (CLX) Virtual Terminal, Dynamic Descriptors cannot be entered.
+To enable Soft Descriptors in Virtual Terminal, a self-service configuration was available in Payeezy (after the North Merchant Master configuration is set). In Commerce Hub this is not available (see Virtual Terminal details).
 
 ### API Structure
 
@@ -40,7 +40,7 @@ Sample JSON string format for `dynamicDescriptor`:
 }
 ```
 
-See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md) documentation for detailed information on translating Payeezy Soft Descriptor elements to Commerce Hub Dynamic Descriptor elements.
+See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) documentation for detailed information on translating Payeezy Soft Descriptor elements to Commerce Hub Dynamic Descriptor elements.
 
 ---
 
