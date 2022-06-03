@@ -198,6 +198,12 @@ paths:
                 Cancel:
                   summary: CancelResponse
                   $ref: '#/components/examples/CancelResponse'
+                MerchantTransactionID:
+                  summary: CancelResponse
+                  $ref: '#/components/examples/CancelResponse'
+                TransactionID:
+                  summary: CancelResponse
+                  $ref: '#/components/examples/CancelResponse'                  
         400:
           $ref: '#/components/responses/BadRequest'
         401:
