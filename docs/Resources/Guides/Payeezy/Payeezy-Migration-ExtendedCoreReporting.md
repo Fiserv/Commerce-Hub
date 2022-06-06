@@ -220,7 +220,7 @@ type: tab
 |Currency  | Y | currency|
 |Card Number  | Y| accountNumber|
 |Code  | Y| type|
-|Refernce 3  | Y| mrchTranId|
+|Reference 3  | Y| mrchTranId|
 |UserId| N| |
 |Bank Response Code  | Y| assocRespCode _(comparable)_|
 |ETG Response Code| N| |
