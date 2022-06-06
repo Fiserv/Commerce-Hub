@@ -9,11 +9,13 @@ tags: [carat, commerce-hub,  card-not-present, dynamic-descriptor, Statement-Des
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub.  
+Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub. 
+
+In Payeezy, the 'dba_name' or 'mcc' element was required on the capture request for settlement; In Commerce Hub, 'mcc', 'merchantName', 'customerServiceNumber', 'serviceEntitlement' and 'address' are all required. 
 
 In Payeezy Real-time Payment Manager (RPM), self-service configuration was available to enable Soft Descriptors for each terminal (after North Merchant Master configuration); In Commerce Hub, Dynamic Descriptors are allowed for all merchant transacting MIDs.
 
-To enable Soft Descriptors in Virtual Terminal, a self-service configuration was available in Payeezy (after the North Merchant Master configuration is set). In Commerce Hub this is not available (see Virtual Terminal details).
+In Payeezy Real-time Payment Manager (RPM), a self-service configuration was available to enable Soft Descriptors in Virtual Terminal (after the North Merchant Master configuration is set). In ClientLine Enterprise (CLX) this is not available (see Virtual Terminal details).
 
 ### API Structure
 
