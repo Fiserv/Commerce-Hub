@@ -88,9 +88,9 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuic
 -->
 
 <!-- type: card
-title: 
-description:
-link:
+title: Stored Credentials
+description: Need to update this.
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesStoredCredentials.md
 -->
 
 <!-- type: row-end -->
