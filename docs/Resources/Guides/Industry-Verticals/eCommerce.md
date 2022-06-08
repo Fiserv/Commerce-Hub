@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, ecommerce]
+tags: [Ecommerce]
 ---
 
 # eCommerce

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, value-added-services, vault]
+tags: [Value Added Services, Vault]
 ---
 
 

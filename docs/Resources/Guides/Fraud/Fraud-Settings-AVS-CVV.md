@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, fraud, address-and-security-code-filters, fraud-filters]
+tags: [Address Verification, AVS, Security Code Verification, CVV, Fraud Filters, Transaction Controls]
 ---
 
 # Address and Security Code Filters

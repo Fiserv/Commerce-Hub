@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, configuration, user-management, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Configuration, User Management, Card Not Present, Payeezy]
 
 ---
 

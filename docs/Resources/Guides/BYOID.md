@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, merchant-identifier, order-identifier, merchant-id, terminal-id, mid, tid, transaction-id, order-id, custom-identifiers]
+tags: [Merchant Identifier, Order Identifier, Merchant ID, Terminal ID, MID, TID, Transaction ID, Order ID, Custom Identifiers]
 ---
 
 # Custom Identifiers

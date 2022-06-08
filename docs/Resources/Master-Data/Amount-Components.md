@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
+tags: [Amount, Amount Components, API Reference, Transaction Amount]
 --- 
 
 # Transaction Amount

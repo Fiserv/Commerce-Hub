@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, payment-sources, telecheck-ach]
+tags: [Payment Sources, Telecheck ACH]
 ---
 
 

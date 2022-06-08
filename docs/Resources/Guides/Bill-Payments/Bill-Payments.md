@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, authorizations, bill-payments, deferred-payments, recurring-payments, installment-payments]
+tags: [Authorizations, Bill Payments, Deferred Payments, Recurring Payments, Installment Payments]
 ---
 
 # Bill Payments

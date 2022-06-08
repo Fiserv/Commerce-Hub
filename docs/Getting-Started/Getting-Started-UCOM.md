@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, connected-commerce, universal-commerce, omnicommerce]
+tags: [Connected Commerce, Universal Commerce, Omnicommerce]
 ---
 
 # Connected Commerce

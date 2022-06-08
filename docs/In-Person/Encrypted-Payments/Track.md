@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, track, in-person, card-present, encrypted-payment]
+tags: [Track, In-Person, Card Present, Encrypted Payments]
 ---
 
 # PaymentTrack

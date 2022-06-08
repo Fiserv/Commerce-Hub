@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, payment-card, manual-entry, in-person, card-present, encrypted-payment]
+tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments]
 ---
 
 # Encrypted Manual Entry

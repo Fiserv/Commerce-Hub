@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted-payment-page, in-app, web, online, google-pay, wallet, mobile, getting-started]
+tags: [In-App, Web, Online, Google Pay, Wallet, Mobile, Getting Started]
 ---
 
 # Google Pay

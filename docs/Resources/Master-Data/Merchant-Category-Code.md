@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, merchant-category-code]
+tags: [API Reference, Master Data, Merchant Category Code]
 ---
 
 # Merchant Category Codes

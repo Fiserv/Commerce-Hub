@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, gift-card, payment-sources]
+tags: [Gift Card, Payment Sources]
 ---
 
 

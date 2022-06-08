@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-payment, semi-integrated, software, pos, point-of-sale, terminal, manual-entry, track-data]
+tags: [EMV, In-Person, Card Present, Encrypted Payments, Semi Integrated, POS, Terminal, Manual Entry, Track Data]
 ---
 
 # Semi-Integrated Device

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app, online, paypal, wallet, mobile]
+tags: [In-App, Online, PayPal, Wallet, Mobile]
 ---
 
 

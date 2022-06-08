@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Transaction Types, API Reference, Card Not Present, Payeezy]
 
 ---
 

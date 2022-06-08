@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, reporting, card-not-present, payeezy, search-api, reporting-api]
+tags: [Carat, Commerce Hub, Enterprise, Reporting, Card Not Present, Payeezy, Search API, Reporting API]
 
 ---
 
