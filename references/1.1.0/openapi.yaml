@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
-    processing., version: v1-1.0.2}
+    processing., version: v1.1.0}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
 - {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
@@ -898,8 +898,23 @@ components:
     TransactionInquiryRequest:
       x-model-version: 1.0
       properties:
-        transactionDetails:
-          $ref: '#/components/schemas/InquiryRequestDetails'
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/TransactionInquiryMerchantDetails'
+    TransactionInquiryMerchantDetails:
+      x-model-version: 1.0
+      properties:
+        merchantId:
+          maxLength: 1024
+          type: string
+          description: 'A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction.'
+          example: '222222222222'
+        terminalId:
+          maxLength: 1024
+          type: string
+          description: 'Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway.'
+          example: '1413257'
 
     InquiryRequestDetails:   
       x-model-version: 1.0
@@ -5649,62 +5664,56 @@ components:
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
     TransactionInquiryRequest:
       value:
-        transactionDetails:
-          primaryTransactionId: 'aa829dcb83cd49f485141168e051b8d1'
+        referenceTransactionDetails:
+          referenceTransactionId: '95f6b8c8ec024e1183a8e998406656ce'
+        merchantDetails:
+          merchantId: '222222222222'
 
     TransactionInquiryByMerchantOrderIdRequest:
       value:
-        transactionDetails:
-          merchantOrderId: 'RKOrdID-822715036'
+        referenceTransactionDetails:
+          referenceMerchantOrderId: '953729024'
+        merchantDetails:
+          merchantId: '222222222222'
 
     TransactionInquiryResponse:
       value:
-        additionalDataCommon:
-          gatewayResponse:
-            gatewayName: 'IPG'
-            gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
-            gatewayTransactionId: '84439763459'
-            transactionOrigin: 'ECOM'
-            transactionProcessingDetails:
-              apiTraceId: 'aa829dcb83cd49f485141168e051b8d1'
-              clientRequestId: '9806383'
-              orderId: 'CHG01586b6416dddd4425ae764daee6c3ac8a'
-              transactionId: 'aa829dcb83cd49f485141168e051b8d1'
-              transactionTimestamp: '2022-01-13T19:09:27.939151Z'
-            transactionState: 'CAPTURED'
-            transactionType: 'CHARGE'
-          merchantDetails:
-            merchantId: '100004000000233'
-            storeId: '66100004000000233'
-          paymentReceipt:
-            approvedAmount:
-              currency: 'USD'
-              total: '690'
-            processorResponseDetails:
-              approvalCode: 'OK6982'
-              approvalStatus: 'APPROVED'
-              hostResponseCode: '00'
-              hostResponseMessage: 'APPROVAL'
-              localTimestamp: '2022-01-13T19:09:29Z'
-              processor: FISERV
-              host: NASHVILLE
-              responseCode: '000'
-              responseMessage: 'APPROVAL'
-              schemeTransactionId: '0113MCC815463'
-          source:
-            card:
-              bin: '542418'
-              expirationMonth: '12'
-              expirationYear: '2025'
-              last4: '1732'
-              scheme: 'MASTERCARD'
-            sourceType: 'PaymentCard'
-          transactionDetails:
-            captureFlag: 'true'
-            merchantInvoiceNumber: 'CHG01586b641'
-
-    TransactionInquiryByMerchantOrderIdResponse:
-      value:
+        gatewayResponse:
+          gatewayName: 'IPG'
+          gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
+          gatewayTransactionId: '84439763459'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            apiTraceId: 'aa829dcb83cd49f485141168e051b8d1'
+            clientRequestId: '9806383'
+            orderId: 'CHG01586b6416dddd4425ae764daee6c3ac8a'
+            transactionId: 'aa829dcb83cd49f485141168e051b8d1'
+            transactionTimestamp: '2022-01-13T19:09:27.939151Z'
+          transactionState: 'CAPTURED'
+          transactionType: 'CHARGE'
+        paymentReceipt:
+          approvedAmount:
+            currency: 'USD'
+            total: '690'
+          processorResponseDetails:
+            approvalCode: 'OK6982'
+            approvalStatus: 'APPROVED'
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            localTimestamp: '2022-01-13T19:09:29Z'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
+            responseMessage: 'APPROVAL'
+            schemeTransactionId: '0113MCC815463'
+        source:
+          card:
+            bin: '542418'
+            expirationMonth: '12'
+            expirationYear: '2025'
+            last4: '1732'
+            scheme: 'MASTERCARD'
+          sourceType: 'PaymentCard'
         additionalDataCommon:
           billingAddress:
             address:
@@ -5713,9 +5722,15 @@ components:
               houseNumberOrName: '4201'
               postalCode: '30338'
               stateOrProvince: 'Georgia'
-              street: '100 Ashford Gables Dr'
-            firstName: 'Raghavendiran'
-            lastName: 'Kannan'
+              street: '123 Main Dr'
+            firstName: 'Jane'
+            lastName: 'Doe'
+        transactionDetails:
+          captureFlag: 'true'
+          merchantInvoiceNumber: 'CHG01586b641'
+
+    TransactionInquiryByMerchantOrderIdResponse:
+      value:
           gatewayResponse:
             gatewayName: 'IPG'
             gatewayOrderId: 'CH-130870e4-0adc-494a-b15a-265f1547af26'
@@ -5729,9 +5744,6 @@ components:
               transactionTimestamp: '2022-01-13T18:15:43.777576Z'
             transactionState: 'CAPTURED'
             transactionType: 'CHARGE'
-          merchantDetails:
-            merchantId: '100004000000233'
-            storeId: '66100004000000233'
           paymentReceipt:
             approvedAmount:
               currency: 'USD'
@@ -5763,6 +5775,17 @@ components:
               last4: '1727'
               scheme: 'DINERSCLUB'
             sourceType: 'DecryptedWallet'
+          additionalDataCommon:
+            billingAddress:
+              address:
+                city: 'Atlanta'
+                country: 'USA'
+                houseNumberOrName: '4201'
+                postalCode: '30338'
+                stateOrProvince: 'Georgia'
+                street: '123 Main Dr'
+              firstName: 'Jane'
+              lastName: 'Doe'
           transactionDetails:
             captureFlag: 'true'
             merchantInvoiceNumber: '520608612'
