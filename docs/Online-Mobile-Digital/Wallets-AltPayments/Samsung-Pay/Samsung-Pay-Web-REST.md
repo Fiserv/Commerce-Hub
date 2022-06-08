@@ -1,5 +1,5 @@
 ---
-tags: [Web, Online, Apple Pay, Wallet]
+tags: [Samsung Pay, Web, Online, Wallet]
 ---
 
 # Samsung Pay on the Web: RESTful API Integration
