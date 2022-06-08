@@ -21,7 +21,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number (aka reference number). |
-| `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization type](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
+| `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
 | `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
 | `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
 | `splitShipment` | *object* | N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
@@ -154,8 +154,9 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
+- [Device Fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 
 --- 
