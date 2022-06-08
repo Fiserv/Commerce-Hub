@@ -4,7 +4,9 @@ tags: [carat, commerce-hub, enterprise, inquiry, transaction-inquiry, transactio
 
 # Transaction Inquiry
 
-To retrieve the current state of any previous transaction, an inquiry request can be submitted against the original Commerce Hub transaction identifier or [merchant defined transaction identifier](?path=docs/Resources/Guides/BYOID.md).
+To retrieve the current state of any previous transaction, an inquiry request can be submitted against the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
+
+
 ---
 
 ## Request Variables
