@@ -13,6 +13,10 @@ The below table identifies the parameters in the `referenceTransactionDetails` o
 |---------|-----------|----------------|---------|
 |`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
+| `referenceRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
+| `referenceTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
+| `referenceOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
 
 
 <!--
