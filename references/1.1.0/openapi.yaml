@@ -545,6 +545,80 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
+  /payments-vas/v1/accounts/information-lookup:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Account Information Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Information Lookup'
+      summary: Lookup a payment card or payment token.
+      description: 'Use this to look up card related information such as issuer country, card function and card brand associated with a card or token.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountInformationRequest'
+            examples:
+              PaymentCard:
+                summary: AccountInformationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardInfoRequest'
+              PaymentEMV:
+                summary: AccountInformationRequest with PaymentEMV
+                $ref: '#/components/examples/PaymentEMVInfoRequest'
+              PaymentTrack:
+                summary: AccountInformationRequest with PaymentTrack
+                $ref: '#/components/examples/PaymentTrackInfoRequest'
+              ManualEntry:
+                summary: AccountInformationRequest with manual entry PaymentCard
+                $ref: '#/components/examples/ManualEntryInfoRequest'
+              PaymentToken:
+                summary: AccountInformationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenInfoRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountInformationResponse'
+              examples:
+                PaymentCard:
+                  summary: AccountInformationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardInfoResponse'
+                PaymentEMV:
+                  summary: AccountInformationResponse with PaymentEMV
+                  $ref: '#/components/examples/PaymentEMVInfoResponse'
+                PaymentTrack:
+                  summary: AccountInformationResponse with PaymentTrack
+                  $ref: '#/components/examples/PaymentTrackInfoResponse'
+                ManualEntry:
+                  summary: AccountInformationResponse with maunal entry PaymentCard
+                  $ref: '#/components/examples/ManualEntryInfoResponse'
+                PaymentToken:
+                  summary: AccountInformationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenInfoResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
 components:
   parameters:
     OrderIdParam:
@@ -895,7 +969,20 @@ components:
           $ref: '#/components/schemas/StoredCredentials'
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
-
+    AccountInformationRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+    AccountInformationResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        cardDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardDetails'
     ChargesRequest:
       x-model-version: 1.0
       properties:
@@ -2749,28 +2836,516 @@ components:
             within the current batch, ranges from 000001 through 000999.', example: '000001'}
     CardDetails:
       x-model-version: 1.0
-      description: Card details for Account Information Response.
+      description: 'Card details for Account Information Response.'
       properties:
-        brand: {type: string, maxLength: 256, description: Card brand., example: VISA}
-        brandProductId: {type: string, maxLength: 256, description: Category within
-            the card brand., example: VISA_BUSINESS}
-        cardFunction: {type: string, maxLength: 256, description: Identifies the type
-            of card as CREDIT or DEBIT., example: CREDIT}
-        commercialCard:
+        binSource:
           type: string
-          description: |
-            Identifies if the card is a commercial card.
+          maxLength: 30
+          description: |+
+            Categorizes the source of the BIN record.
+            
             Valid Values:
-            * CORPORATE
+            * FISERV - (Default) Fiserv Global BIN file
+            * CHASE - Chase BIN file(s)
+            * PRIVATE_LABEL - Private Label specific BIN (availability restricted per merchant)
+          example: 'CHASE'
+        recordType:
+          type: string
+          maxLength: 10
+          description: |+
+            Record Type
+            
+            Valid Values:
+            * DETAIL - Detail Record
+          example: 'DETAIL'
+        lowBin:
+          type: string
+          maxLength: 21
+          description: 'This field contains the low BIN value of the BIN range.'
+          example: '400337'
+        highBin:
+          type: string
+          maxLength: 21
+          description: 'This field contains the high BIN value of the BIN range.'
+          example: '400338'
+        binLength:
+          type: string
+          maxLength: 2
+          description: 'Length of the BIN.'
+          example: '6'
+        binDetailPan:
+          type: string
+          maxLength: 2
+          description: 'Displays the primary PAN length.'
+          example: '16'
+        issuerBankName:
+          type: string
+          maxLength: 100
+          description: 'Issuer bank name for the BIN.'
+          example: 'Example Bank'
+        countryCode:
+          type: string
+          maxLength: 3
+          description: 'ISO-3166-1 alpha-3 country code.'
+          example: 'USA'
+        detailedCardProduct:
+          type: string
+          maxLength: 21
+          description: |+
+            Card Product.
+            
+            Valid Values:
+            * VISA - Visa
+            * MASTERCARD - Mastercard
+            * AMEX - American Express
+            * DISCOVER - Discover
+            * PIN_ONLY - PIN Only (Not Visa, Mastercard, American Express, Discover)
+            * MAESTRO - International Maestro
+            * DINERS - Diners Club
+            * INTERAC - Interac
+            * JCB - JCB
+          example: 'VISA'
+        detailedCardIndicator:
+          type: string
+          maxLength: 16
+          description: |+
+            Determines the card type (credit, debit).
+            
+            Valid Values:
+            * CREDIT
+            * DEBIT
+            * COMMERCIAL_DEBIT
+            * CONSUMER_DEBIT
+          example: 'CREDIT'
+        pinSignatureCapability:
+          type: string
+          maxLength: 16
+          description: |+
+            Determines the card PIN/Signature capability.
+
+            Valid Values:
+            * PIN_CAPABLE - PIN Capable
+            * SIGNATURE - Signature Capable
+            * PIN_OR_SIGNATURE - Supports Both PIN or Signature
+          example: 'PIN_OR_SIGNATURE'
+        issuerUpdateYear:
+          type: string
+          maxLength: 2
+          description: 'The year the BIN record was last updated.'
+          example: '20'
+        issuerUpdateMonth:
+          type: string
+          maxLength: 2
+          description: 'The month the BIN record was last updated.'
+          example: '09'
+        issuerUpdateDay:
+          type: string
+          maxLength: 2
+          description: 'The day the BIN record was last updated.'
+          example: '22'
+        regulatorIndicator:
+          type: string
+          maxLength: 15
+          description: |+
+            Applies to US issued cards only (Visa, Mastercard, and Discover).
+            
+            Valid Values:
+            * NON_REGULATED - (Default) ISS non-regulated (unregulated issuer OR Non US issued card)
+            * REGULATED - ISS regulated (regulated issuer)
+            * REGULATED_FRAUD - ISS regulated fraud (regulated issuer with fraud)
+          example: 'NON_REGULATED'
+        cardClass:
+          type: string
+          maxLength: 30
+          description: |+
+            Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card.
+            
+            Valid Values:
             * BUSINESS
+            * CONSUMER
             * PURCHASE
-            * UNAVAILABLE
-            * NON_COMMERCIAL
-          example: CORPORATE
-        issuerCountry: {type: string, maxLength: 256, description: Card issuer two-letter
-            country code., example: US}
-        issuerName: {type: string, maxLength: 256, description: Issuing bank name.,
-          example: First National Bank of Omaha}
+            * CORPORATE
+          example: 'CONSUMER'
+        debitPinlessIndicator:
+          type: array
+          items:
+            $ref: '#/components/schemas/DebitNetworkPinlessDetails'
+          description: 'A list of Debit Network PINless Details.'
+        ebtState:
+          type: string
+          maxLength: 2
+          description: 'This is the EBT State. Will only be present if EBT capable. Information originates from the debit network.'
+        fsaIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            FSA/HSA (Flexible Spending Account / Health Savings Account) indicator, which denotes prepaid card program in the US that permits use of funds to pay for qualified out of pocket medical expenses.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        nonMoneyTransferOCTsDomestic:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if domestic non-money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        nonMoneyTransferOCTsCrossBorder:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if cross-border non-money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        onlineGamblingOCTsDomestic:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if domestic online gambling OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        onlineGamblingOCTsCrossBorder:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if cross-border online gambling OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        moneyTransferOCTsDomestic:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if domestic money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        moneyTransferOCTsCrossBorder:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if cross-border money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsDomesticMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for domestic money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsCrossBorderMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for cross-border money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsDomesticNonMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for domestic non-money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsCrossBorderNonMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for cross-border non-money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsDomesticGambling:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for domestic gambling OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsCrossBorderGambling:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for cross-border gambling OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        prepaidIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates whether the card is prepaid.
+            
+            Valid Values:
+            * NON_PREPAID - (Default) No / Not Supported
+            * PREPAID - Yes / Supported
+          example: 'SUPPORTED'
+        anonymousPrepaidIndicator:
+          type: string
+          maxLength: 26
+          description: |+
+            Identifies whether Anonymous Prepaid is supported, like AMLD5 (Anti-Money Laundering Directive) compliant,
+            non-AMLD5 compliant, or non-anonymous prepaid programs / not a prepaid program. Mastercard Only.
+
+            Valid Values:
+            * AMLD5_NON_COMPLIANT - Anonymous Mastercard and Maestro prepaid card programs, not AMLD5 compliant
+            * AMLD5_COMPLIANT_EQUIVALENT - Anonymous Mastercard and Maestro prepaid card programs with restrictions considered by the issuer as either compliant with or equivalent to AMLD5 requirements
+            * NON_ANONYMOUS - Non-Anonymous Mastercard and Maestro prepaid programs that follow full Know-Your-Customer (KYC) or Simplified Due Diligence (SDD) or not a Prepaid Program
+            example: 'AMLD5_COMPLIANT_EQUIVALENT'
+        productId:
+          type: string
+          maxLength: 5
+          description: 'Indicates card product sub categories (Purchase Card, Business Card, etc.) for Visa, Mastercard, Discover or Private Label. Refer to BIN specs for valid values.'
+          example: 'N1'
+        visaProductSubType:
+          type: string
+          maxLength: 2
+          description: 'This is used to identify product subtypes. Refer to BIN specs for valid values.'
+          example: 'HC'
+        visaLargeTicketIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Visa large ticket indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        accountFundSource:
+          type: string
+          maxLength: 15
+          description: |+
+            For Visa, Mastercard, Discover, and UnionPay. Identifies the source of the funds associated with the primary account for the card.
+            
+            Valid Values:
+            * CREDIT - Credit
+            * DEBIT - Debit
+            * PREPAID - Prepaid
+            * CHARGE - Charge
+            * DEFERRED_DEBIT - Deferred Debit (Visa ONLY)
+          example: 'CREDIT'
+        panLengthMin:
+          type: string
+          maxLength: 2
+          description: 'Primary Account Number (PAN) Length Minimum'
+          example: '16'
+        panLengthMax:
+          type: string
+          maxLength: 2
+          description: 'Primary Account Number (PAN) Length Maximum'
+          example: '16'
+        tokenIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Token indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        issuingNetwork:
+          type: string
+          maxLength: 10
+          description: |+
+            Identifies Discover card types.
+
+            Valid Values:
+            * DISCOVER - Discover
+            * DINERS - Diners
+            * JCB - JCB (Japanese Credit Bank)
+            * CUP - CUP (China Union Pay)
+            * PAYPAL - PayPal
+          example: 'DINERS'
+        cardholderBillingCurrency:
+          type: string
+          maxLength: 3
+          description: 'Cardholder billing currency in 3-letter ISO currency format.'
+          example: 'USD'
+        accountFundSourceSubtype:
+          type: string
+          maxLength: 22
+          description: |+
+            Account fund source subtype. Mastercard only.
+
+            Valid Values:
+            * PREPAID_RELOADABLE - Prepaid card is reloadable
+            * PREPAID_NON_RELOADABLE - Prepaid card is non-reloadable
+          example: 'PREPAID_RELOADABLE'
+        b2bProgramId:
+          type: string
+          maxLength: 15
+          description: |+
+            Business-to-Business Virtual Payments Product Offering. Visa only.
+            
+            Valid Values:
+            * B2B_PROGRAM_1 - B2B Program 1
+            * B2B_PROGRAM_2 - B2B Program 2
+            * B2B_PROGRAM_3 - B2B Program 3
+            * B2B_PROGRAM_4 - B2B Program 4
+            * B2B_PROGRAM_5 - B2B Program 5
+            * B2B_PROGRAM_6 - B2B Program 6
+          example: 'B2B_PROGRAM_1'
+        moneySendIndicator:
+          type: string
+          maxLength: 25
+          description: |+
+            MoneySend is a set of a Mastercard network transactions that facilitate fund transfers.
+            This indicator determines if the Mastercard account is eligible to receive a MoneySend payment.
+            
+            Valid Values:
+            * UNKNOWN - (Default) MoneySend unknown
+            * DOMESTIC_AND_CROSS_BORDER - MoneySend enabled Domestic and Cross-Border
+            * DOMESTIC - MoneySend enabled Domestic only
+            * NOT_ENABLED - NOT MoneySend enabled
+          example: 'DOMESTIC_AND_CROSS_BORDER'
+          
+    DebitNetworkPinlessDetails:
+      x-model-version: 1.0
+      description: 'Debit network PINless details based on account/card info BIN data.'
+      properties:
+        debitNetworkId:
+          type: string
+          maxLength: 20
+          description: |+
+            
+            Valid Values:
+            * PAVD_FISERV - A5: PAVD FISERV
+            * SHAZAM - 01: SHAZAM
+            * NYCE - 02: NYCE
+            * PULSE - 03: PULSE
+            * STAR_WEST - 05: STAR-WEST
+            * STAR_EAST - 07: STAR-EAST
+            * JETS - 11: JETS
+            * INFOLINKS - 12: INFOLINKS
+            * CARLFS - 13: CARLFS
+            * STAR_NE - 14: STAR NE
+            * PAVD - 15: PAVD
+            * CNB_ENID - 16: CNB-ENID
+            * ATH_SCOTIA_BANK - 17: ATH-SCOTIA BANK
+            * ATH_DIRECT - 18: ATH-DIRECT
+            * INTERLINK - 19: INTERLINK
+            * INTERAC_EVERLINK - 20: INTERAC EVERLINK
+            * EVERLINK_INTERAC_ICU - 21: EVERLINK INTERAC ICU
+            * UNIONPAY - 23: UNIONPAY
+            * MAESTRO_DIRECT - 25: MAESTRO DIRECT
+            * MCX - 26: MCX
+            * EBT_SOLUTRAN - 28: EBT SOLUTRAN
+            * EBT_ACS - 29: EBT ACS
+            * MAESTRO_STAR_WEST - 30: MAESTRO STAR WEST
+            * STAR_WEST_OPTION - 31: STAR WEST OPTION
+            * JEANIE_STAR_WEST - 33: JEANIE STAR WEST
+            * JEANIE_DIRECT - 34: JEANIE DIRECT
+            * AFFN_DIRECT - 35: AFFN DIRECT
+            * CU24_DIRECT - 36: CU24-DIRECT
+            * EBT_TEAM_OF_TEXAS - 37: EBT TEAM OF TEXAS
+            * EBT_JPCHASE - 39: EBT JPCHASE
+            * SVS - 41: SVS
+            * EXXON - 42: EXXON
+            * BASE_24/INTERAC - 43: BASE 24/INTERAC
+            * CU24_FIDELITY - 46: CU24-FIDELITY
+            * EBT_EFUNDS - 47: EBT EFUNDS
+            * AFFN_FIDELITY - 48: AFFN FIDELITY
+            * EBT_NORTHRUP_GRUMMAN - 49: EBT NORTHRUP GRUMMAN
+            * CU24_FISERV - 51: CU24-FISERV
+            * AFFN_FISERV - 52: AFFN FISERV
+            * STAR_EAST_FISERV - 56: STAR-EAST FISERV
+            * PULSE_FISERV - 57: PULSE FISERV
+            * NYCE_FISERV - 59: NYCE FISERV
+            * STAR_WEST_FISERV - 62: STAR-WEST FISERV
+            * STAR_NE_FISERV - 63: STAR NE FISERV
+            * MAESTRO_FISERV - 64: MAESTRO FISERV
+            * INTERLINK_FISERV - 65: INTERLINK FISERV
+            * EBT_FISERV - 67: EBT-FISERV
+            * ACCEL_FISERV - 68: ACCEL FISERV
+            * OPTION_FISERV - 69: OPTION-FISERV
+          example: 'STAR_WEST'
+        pinlessPOS:
+          type: string
+          maxLength: 13
+          description: |+
+            PINless POS indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        pinlessBillPay:
+          type: string
+          maxLength: 13
+          description: |+
+            PINless BillPay indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        eCommerce:
+          type: string
+          maxLength: 13
+          description: |+
+            e-Commerce indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        dualIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Dual indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        pinnedPOS:
+          type: string
+          maxLength: 13
+          description: |+
+            Pinned POS indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
     ResponsePaymentToken:
       x-model-version: 1.0
       properties:
@@ -3456,14 +4031,53 @@ components:
     PaymentCardInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentCardVerifyResponse:
       value:
         gatewayResponse:
@@ -3657,14 +4271,53 @@ components:
     PaymentTokenInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentTokenVerifyResponse:
       value:
         gatewayResponse:
@@ -4113,14 +4766,53 @@ components:
     PaymentEMVInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentEMVVerifyResponse:
       value:
         gatewayResponse:
@@ -4510,14 +5202,53 @@ components:
     PaymentTrackInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentTrackVerifyResponse:
       value:
         gatewayResponse:
@@ -4700,14 +5431,53 @@ components:
     ManualEntryInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     ManualEntryVerifyResponse:
       value:
         gatewayResponse:
