@@ -1,5 +1,5 @@
 ---
-tags: [In-App, Online, Apple Pay, Wallet, Mobile]
+tags: [In-App, Online, Samsung Pay, Wallet, Mobile]
 ---
 
 # Samsung Pay: App Integration
