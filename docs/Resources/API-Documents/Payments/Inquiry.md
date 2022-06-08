@@ -22,6 +22,19 @@ The below table identifies the transaction identifiers in the `transactionDetail
 
 ---
 
+## Transaction Identifiers
+
+The below table identifies the transaction identifiers in the `transactionDetails` object.
+
+| Variable | Type| Maximum Length | Description|
+|---------|-----------|----------------|---------|
+| `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
+| `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
+| `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
+| `merchantTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
+| `merchantOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
+---
+
 ## Endpoints
 
 Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
