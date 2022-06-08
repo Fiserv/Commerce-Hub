@@ -1,5 +1,5 @@
 ---
-tags: [Hosted Payment Page, Web, Online, Apple Pay, Wallet]
+tags: [Hosted Payment Page, Web, Online, Samsung Pay, Wallet]
 ---
 
 # Samsung Pay on the Web: Hosted Payment Page
