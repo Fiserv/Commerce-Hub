@@ -3490,21 +3490,39 @@ components:
     TokenizationRequest:
       x-model-version: 1.0
       properties:
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
     TokenizationResponse:
       x-model-version: 1.0
       properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        paymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        cardDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardDetails'
+        paymentToken:
+          $ref: '#/components/schemas/ResponsePaymentToken'
         paymentTokens:
           type: array
-          items: {$ref: '#/components/schemas/ResponsePaymentToken'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
     EnhancedDataServiceRequest:
       x-model-version: 1.0
       properties:
@@ -4648,7 +4666,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: '001626'
             referenceNumber: 1bca5b9e31e2
-            processor: NASHVILLE.NORTH
+            processor: FISERV
+            host: NASHVILLE
             networkInternationalId: '0001'
             responseCode: '000'
             responseMessage: Approved
@@ -4773,11 +4792,96 @@ components:
             apiTraceId: 77d39f42e50c40d2ac2d56751e296f10
             clientRequestId: '5759843'
             transactionId: 77d39f42e50c40d2ac2d56751e296f10
+        source:
+          sourceType: PaymentEMV
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '401777'
+            last4: '5556'
+            scheme: Visa
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: '001134'
+            referenceNumber: 7cec6e7ab177
+            processor: FISERV
+            host: NASHVILLE
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            additionalInfo:
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: AhAyOAHvv70O77+9AAIA77+9AAAAAAEAAAMUFRJBABcGBCZWAxAAAQA3Y2VjNmU3YWIxNzcwMDExMzQwMDAxNDg0NTQ5ADAAGDIyQVBQUk9WQUwgICAgICAgIAAINjYwNjAwMDc=
+        transactionDetails:
+          captureFlag: true
+          transactionCaptureType: hcs
+          processingCode: '009000'
+          retrievalReferenceNumber: 1bca5b9e31e2
+        transactionInteraction:
+          posEntryMode: ICR_RELIABLE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-03-10T01:37:13Z'
+          additionalPosInformation:
+            stan: '001709'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+        merchantDetails:
+          terminalId: '10000002'
+          merchantId: '100009000000041'
+        additionalDataCommon: {}
+        networkDetails:
+          network:
+            network: Visa
+          debitNetworkId: '060007'
         paymentTokens:
           - tokenData: '1079740327790026'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
+        cardDetails:
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
+
     PaymentEMVInfoResponse:
       value:
         gatewayResponse:
@@ -5023,7 +5127,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5059
             referenceNumber: 2c906f9cd41a
-            processor: NASHVILLE.NORTH
+            processor: FISERV
+            host: NASHVILLE
             networkRouted: VISA
             networkInternationalId: '0001'
             responseCode: '000'
@@ -5177,7 +5282,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: '001134'
             referenceNumber: 7cec6e7ab177
-            processor: NASHVILLE.NORTH
+            processor: FISERV
+            host: NASHVILLE
             networkInternationalId: '0001'
             responseCode: '000'
             responseMessage: Approved
@@ -5214,6 +5320,45 @@ components:
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
+        cardDetails:
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentTrackInfoResponse:
       value:
         gatewayResponse:
