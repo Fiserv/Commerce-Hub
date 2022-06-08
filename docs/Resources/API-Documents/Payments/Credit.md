@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, card-present, credit, api-reference, authorization, sale, pre-auth]
+tags: [Card Not Present, Card Present, Credit, API Reference, Authorization, Sale, Pre Auth]
 ---
 
 

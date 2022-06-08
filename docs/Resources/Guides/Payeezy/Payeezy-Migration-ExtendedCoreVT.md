@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, virtual-terminal, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Virtual Terminal, Card Not Present, Payeezy]
 
 ---
 

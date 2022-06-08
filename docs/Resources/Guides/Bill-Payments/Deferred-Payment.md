@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, bill-payments, deferred-bill-payments]
+tags: [Bill Payments, Deferred Bill Payments]
 ---
 
 # Deferred Bill Payments

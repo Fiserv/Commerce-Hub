@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, merchant-business-details, master-data]
+tags: [API Reference, Merchant Business Details, Master Data]
 ---
 
 # Merchant Details

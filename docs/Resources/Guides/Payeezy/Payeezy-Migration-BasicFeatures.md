@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Online, Card Not Present, Payeezy]
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, emv, in-person, card-present]
+tags: [EMV, Encrypted Payments, In-Person, Card Present]
 ---
 
 # EMV Tag/Length/Value

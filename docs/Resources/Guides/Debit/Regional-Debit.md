@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-present, master-data, regional-debit, international-debit]
+tags: [Card Present, Master Data, Regional Debit, International Debit]
 ---
 
 # Regional Debit

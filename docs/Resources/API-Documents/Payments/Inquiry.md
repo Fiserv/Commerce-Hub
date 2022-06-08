@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, inquiry, transaction-inquiry, transaction-status, api-reference,]
+tags: [Inquiry, Transaction Inquiry, Transaction Status, API Reference]
 ---
 
 # Transaction Inquiry

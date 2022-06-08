@@ -1,5 +1,5 @@
 ---
-tags: [carat, card-not-present, commerce-hub, error, response, responses-code, card-present]
+tags: [Card Not Present, Error, Response, Responses Code, Card Present]
 ---
 
 # Host Response Codes

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, authorization, optimization, auth-optimization, approval-rate, decline-rate]
+tags: [Authorization, Optimization, Auth Optimization, Approval Rate, Decline Rate]
 ---
 
 # Authorization Optimization

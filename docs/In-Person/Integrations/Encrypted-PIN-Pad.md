@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-payment, pin-pad, manual-entry, track-data]
+tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, Track Data]
 ---
 
 # Encrypted PIN Pad Integration

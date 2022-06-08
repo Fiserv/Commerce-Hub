@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub,  daas, data-as-a-service, data-solutions, enterprise, eds, enhanced-data-service, fraud, security, api-reference]
+tags: [Data as a Service, Service, Data Solutions, EDS, Enhanced Data Service, Fraud, Security, API Reference]
 ---
 
 # Enhanced Data Service

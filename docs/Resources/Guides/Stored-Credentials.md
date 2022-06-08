@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
+tags: [Stored Credentials, Vault]
 ---
 
 # Stored Credentials

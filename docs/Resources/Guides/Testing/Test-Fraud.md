@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-fraud]
+tags: [Testing, Test Integration, Test Cards, Test Fraud]
 ---
 
 # Test Fraud Settings

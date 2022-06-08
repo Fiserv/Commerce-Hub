@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
+tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Terminal Transaction Interaction]
 ---
 
 # Additional POS Information

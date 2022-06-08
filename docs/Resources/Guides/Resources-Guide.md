@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, fraud-controls, industry-verticals, master-data, resources-and-guides]
+tags: [Fraud Controls, Industry Verticals, Master Data, Resources and Guides]
 ---
 
 # Resources and Guides

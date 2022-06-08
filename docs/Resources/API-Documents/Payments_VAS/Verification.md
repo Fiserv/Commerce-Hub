@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, security-code, address-verification]
+tags: [Account Verification, Card Verification, AVS, CVV, Security Code, Address Verrification]
 ---
 
 # Account Verification

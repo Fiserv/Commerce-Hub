@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-transaction-record, master-data]
+tags: [API Reference, Customer Transaction Record, Master Data]
 ---
 
 # Customer Transaction Record 
