@@ -4,35 +4,24 @@ tags: [carat, commerce-hub, enterprise, inquiry, transaction-inquiry, transactio
 
 # Transaction Inquiry
 
-To retrieve the current state of any previous transaction, an inquiry request can be submitted against the original transaction identifier.
-
+To retrieve the current state of any previous transaction, an inquiry request can be submitted against the original Commerce Hub transaction identifier or [merchant defined transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 ---
 
-## Transaction Identifiers
+## Request Variables
 
-The below table identifies the transaction identifiers in the `transactionDetails` object.
+The below table identifies the transaction identifiers in the `referencetransactionDetails` object.
+
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request. 
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
-| `merchantTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
-| `merchantOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
+| `referenceTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
+| `referenceOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
+| `referenceRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
+| `referenceTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
+| `referenceOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
 
----
-
-## Transaction Identifiers
-
-The below table identifies the transaction identifiers in the `transactionDetails` object.
-
-| Variable | Type| Maximum Length | Description|
-|---------|-----------|----------------|---------|
-| `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
-| `merchantTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
-| `merchantOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
 ---
 
 ## Endpoints
@@ -143,6 +132,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/inquiry)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Reference Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---
