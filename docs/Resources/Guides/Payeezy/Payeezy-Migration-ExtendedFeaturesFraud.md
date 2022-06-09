@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, address-verif
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed in Marketplace (MP) by Fiserv personnel.  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv). 
+Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed by Fiserv personnel.  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv). 
 
 System level fraud controls are regulated and managed by the Fiserv Fraud team.
 
@@ -21,7 +21,7 @@ titles: Fraud Filters, Velocity Controls, Address Verification Services (AVS) Fi
 
 In Payeezy, fraud filters were set at the merchant level; in Commerce Hub, fraud filters are set at the MID (SiteId) level. 
 
-In Payeezy RPM, a csv file containing positive and negative fraud filters could be uploaded to configure the merchant settings.  This functionality is not available in Marketplace.
+In Payeezy RPM, a csv file containing positive and negative fraud filters could be uploaded to configure the merchant settings.  This functionality is not available in CLX.
 
 In Payeezy RPM, fraud filters could be printed from the screen or downloaded into a csv file.  In CLX, the /rules/list/{clientID} and /rules/details/{rulesID} endpoints provide the information in JSON format.
 
@@ -29,9 +29,9 @@ In Payeezy RPM, you could search a transaction, click on the detail, and create 
 
 There is currently an unlimited number of values that can be set for each filter; however, a threshold will be determined and implemented at a future date. _Playbook will be updated with the specific number once it has been set._ 
 
-**Negative Filters available for configuration in MP:**
+**Negative Filters available for configuration in CLX:**
 
-|RPM|MP|
+|RPM|CLX|
 |:-----|:-----|
 |Bill to Address|Currently not supported|
 |Country|Country Profiles|
@@ -56,9 +56,9 @@ The Cumulative Amount Velocity Controls are checked against the totals of previo
 
 ## Configuration
 
-Configuration in Marketplace will allow for the application of controls at a more granular level than Payeezy.  Controls can be assigned by transaction type (Purchase, Refund, etc.) or status (All vs. Approved).
+Configuration in CLX will allow for the application of controls at a more granular level than Payeezy.  Controls can be assigned by transaction type (Purchase, Refund, etc.) or status (All vs. Approved).
 
-In Payeezy, the currency was set at the terminal/outlet MID vs. each control. In Marketplace, currency is required to be selected for each control. 
+In Payeezy, the currency was set at the terminal/outlet MID vs. each control. In CLX, currency is required to be selected for each control. 
 
 ---
 
@@ -80,13 +80,13 @@ In Commerce Hub, the AVS Response Codes have changed, but the application of fil
 
 ## Configuration
 
-AVS must be enabled in Marketplace in order to receive a response code.
+AVS must be enabled in CLX in order to receive a response code.
 
-In Marketplace, if no codes are configured, they will all be considered acceptable.
+In CLX, if no codes are configured, they will all be considered acceptable.
 
 **AVS Values have been normalized across cardbrands:**
 
-|Payeezy RPM Value - Description|Marketplace Value|
+|Payeezy RPM Value - Description|CLX Value|
 |:--------------------------|:----------------|
 |Y - Street Address, and 5 digit ZIP Code match|Address & Postal Match|
 |A - Street Address matches, ZIP Code does not|Address Match, Postal Mismatch|
@@ -132,13 +132,13 @@ If CVV is enabled, but the element is not included in the request API, a respons
 
 ## Configuration
 
-In Payeezy, CVV configuration was at the terminal level and enabled by selecting terminal type of Mail Order/Telephone Order (CVV2) or E-Commerce Transaction (CVV2); In Marketplace, CVV must be enabled and is set at the MID level.
+In Payeezy, CVV configuration was at the terminal level and enabled by selecting terminal type of Mail Order/Telephone Order (CVV2) or E-Commerce Transaction (CVV2); In CLX, CVV must be enabled and is set at the MID level.
 
-In Marketplace, if no codes are configured, they will all be considered acceptable.
+In CLX, if no codes are configured, they will all be considered acceptable.
 
-**CVV values have been normalized in MP:**
+**CVV values have been normalized in CLX:**
 
-|Payeezy RPM Value - Description|Marketplace Value|
+|Payeezy RPM Value - Description|CLX Value|
 |:--------------------------|:----------------|
 |N - CVV2 Does not match|Did Not Match|
 |P - Card expiration not provided or card does not have valid CVD code|Not Provided|
