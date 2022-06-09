@@ -77,18 +77,16 @@ titles: Request, Response
 ##### Account information lookup request using PaymentCard.
 
 ```json
+
 {
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019"
-      }
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019"
     }
+  }
 }
+
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information)
@@ -101,12 +99,13 @@ type: tab
 
 ```json
 
+
 {
   "gatewayResponse": {
     "transactionType": "INFORMATION",
     "transactionState": "SUCCESS",
     "transactionProcessingDetails": {
-      "transactionTime": "2021-06-20T23:42:48Z",
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
       "orderId": "RKOrdID-525133851837",
       "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
       "clientRequestId": "4345791",
@@ -115,12 +114,44 @@ type: tab
   },
   "cardDetails": [
     {
-      "brand": "VISA",
-      "brandProductId": "VISA_BUSINESS",
-      "cardFunction": "CREDIT",
-      "commercialCard": "CORPORATE",
-      "issuerCountry": "US",
-      "issuerName": "First National Bank of Omaha"
+      "detailedCardProduct": "VISA",
+      "productId": "N1",
+      "visaProductSubType": "HC",
+      "detailedCardIndicator": "DEBIT",
+      "pinSignatureCapability": "PIN_OR_SIGNATURE",
+      "cardClass": "CORPORATE",
+      "countryCode": "USA",
+      "issuerBankName": "Example Bank",
+      "recordType": "DETAIL",
+      "lowBin": "400337",
+      "highBin": "400338",
+      "binLength": "6",
+      "binDetailPan": "16",
+      "issuerUpdateYear": "20",
+      "issuerUpdateMonth": "09",
+      "issuerUpdateDay": "22",
+      "regulatorIndicator": "NON_REGULATED",
+      "fsaIndicator": "SUPPORTED",
+      "nonMoneyTransferOCTsDomestic": "SUPPORTED",
+      "nonMoneyTransferOCTsCrossBorder": "SUPPORTED",
+      "onlineGamblingOCTsDomestic": "SUPPORTED",
+      "onlineGamblingOCTsCrossBorder": "SUPPORTED",
+      "moneyTransferOCTsDomestic": "SUPPORTED",
+      "moneyTransferOCTsCrossBorder": "SUPPORTED",
+      "fastFundsDomesticMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticNonMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderNonMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticGambling": "SUPPORTED",
+      "fastFundsCrossBorderGambling": "SUPPORTED",
+      "prepaidIndicator": "PREPAID",
+      "visaLargeTicketIndicator": "SUPPORTED",
+      "accountFundSource": "DEBIT",
+      "panLengthMin": "16",
+      "panLengthMax": "16",
+      "tokenIndicator": "SUPPORTED",
+      "cardholderBillingCurrency": "USD",
+      "b2bProgramId": "B2B_PROGRAM_1"
     }
   ]
 }
