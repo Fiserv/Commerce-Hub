@@ -104,8 +104,4 @@ Additionally, the CTR was previously available in multiple languages (EN, FR, ES
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
-
-
-
-
 ---
