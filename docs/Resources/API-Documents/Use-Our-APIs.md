@@ -23,7 +23,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 <!--theme: success -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
-- Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Uses Sandbox credentials
 - Test APIs before certifying for production
 - View the response format of a specific API
 - Experiment, develop code and fix bugs
@@ -34,7 +34,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 <!--theme: success -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
-- Uses End to End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Uses End to End credentials
 - Certify before deploying to production
 - Run test scripts based on the API's requirements
 - Conduct a complete beta test of your application
@@ -44,7 +44,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 <!--theme: success -->
 > https://prod.api.fiservapps.com/ch/{resource}
 
-- Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Uses production credentials
 - Send and cancel "live" transactions
 - Access Value Added Services
 - Run reports
