@@ -46,6 +46,8 @@ titles: Request, Response
 {
   "transactionDetails": {
     "primaryTransactionId": "aa829dcb83cd49f485141168e051b8d1"
+    "transactionInquiryMerchantDetails": "1024"
+    "terminalId": 1024
   }
 }
 ```
