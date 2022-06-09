@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Card Present, Cancel, API Reference]
+tags: [Card Not Present, Card Present, Cancel, Void, API Reference]
 ---
 
 # Cancels
@@ -24,7 +24,10 @@ type: tab
 titles: referenceTransactionDetails, transactionDetails, merchantDetails
 -->
 
-The below table identifies the available parameters in the `referenceTransactionDetails` object. Only one identifier is required in the request. 
+The below table identifies the available parameters in the `referenceTransactionDetails` object.
+
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request. 
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
@@ -50,10 +53,10 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|-----|
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -169,7 +172,7 @@ type: tab
 
 A cancel request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the cancel type.
 
-### Minimum Requirements
+### Request Variables
 
 <!--
 type: tab
@@ -191,10 +194,10 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|-----|
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
