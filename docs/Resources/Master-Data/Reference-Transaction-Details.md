@@ -18,8 +18,6 @@ The below table identifies the parameters in the `referenceTransactionDetails` o
 | `referenceMerchantOrderId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantOrderId` from the original transaction. |
 | `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
 
-
-
 <!--
 type: tab
 -->
@@ -40,15 +38,12 @@ JSON string format for `referenceTransactionDetails`:
 
 <!--type: tab-end -->
 
-
-
-
 ---
 
 ## See Also
 - [API Explorer](../api/?type=post&path=/payments/v1/cancel)
 - [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Cancels Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Transaction Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md)
 
 ---
