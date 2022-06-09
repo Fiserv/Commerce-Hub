@@ -11,18 +11,34 @@ To retrieve the current state of any previous transaction, an inquiry request ca
 
 ## Request Variables
 
-The below table identifies the transaction identifiers in the `referencetransactionDetails` object.
+<!--
+type: tab
+titles: referenceTransactionDetails, merchantDetails
+-->
+
+The below table identifies the transaction identifiers in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request. 
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
-| `referenceTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `referenceOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `referenceRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
-| `referenceTransactionId` | *string* | 32 | Unique merchant transaction ID (aka transaction reference ID). |
-| `referenceOrderId` | *string* | 32 | Merchant order ID (aka customer reference number or purchase order number). |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction used for reference in a secondary transaction. |
+| `referenceOrderId` | *string* | 128 | Commerce Hub generated `orderId` from the original transaction used for reference in a secondary transaction. |
+| `referenceClientRequestId` | *string* | 128 | Merchant/client generated `clientRequestId` from the original transaction. Can only be used in a transaction inquiry request.' |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceMerchantOrderId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantOrderId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `merchantDetails` object.
+
+| Variable | Type | Maximum Length | Required | Description |
+| -------- | -- |------------| ------- | ---- |
+| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction. Can be used for merchants that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
+| `terminalId` | *string* | 1024 |  | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md). |
 
 ---
 
@@ -44,10 +60,11 @@ titles: Request, Response
 
 ```json
 {
-  "transactionDetails": {
-    "primaryTransactionId": "aa829dcb83cd49f485141168e051b8d1"
-    "transactionInquiryMerchantDetails": "1024"
-    "terminalId": 1024
+  "referenceTransactionDetails": {
+    "referenceTransactionId": "aa829dcb83cd49f485141168e051b8d1"
+  },
+  "merchantDetails": {
+    "merchantId": "1234567890123456"
   }
 }
 ```
