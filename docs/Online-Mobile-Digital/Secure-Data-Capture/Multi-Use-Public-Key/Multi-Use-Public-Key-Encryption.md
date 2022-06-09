@@ -77,53 +77,17 @@ const encryptionBlockFields = Object.keys(cardData).map(key => `card.${key}:${en
 
 ### Step 3: Perfrom RSA encryption on encryption block
 
+The merchant will have to use the generate key api to receive a base64 encoded encryption key that they will store themselves. This key is then used to encrypt the encryption block that was created in step 1
+
 Using public key previously retrieved from Commercehub.
 
 ```javascript
 
-const importPublicKey = async (base64Der) => {
-  const pubKeyDer = window.atob(base64Der);
-  const keyBuf = str2ab(pubKeyDer);
- 
-  const key = await window.crypto.subtle.importKey("spki", keyBuf, {
-    name: "RSA-OAEP",
-    hash: "SHA-256"
-  }, true, ["encrypt"]);
-  return key;
-}
- 
-const rsaEncrypt = async (pubKey, data) => {
-  return await window.crypto.subtle.encrypt({
-      name: 'RSA-OAEP'
-    },
-    pubKey,
-    new TextEncoder().encode(data))
-}
-
-```
-```java
-
-public static String encodeBase64(final byte[] bytes) {
-    return Base64.getEncoder().encodeToString(bytes);
-}
- 
-public static byte[] decodeBase64(final String base64Encoded) {
-    return Base64.getDecoder().decode(base64Encoded);
-}
- 
-public static class Rsa {
-    public static byte[] encrypt(final String plainText, final byte[] publicKeyBytes) throws Exception {
-        final KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-        final EncodedKeySpec publicKeySpec = new X509EncodedKeySpec(publicKeyBytes);
-        final PublicKey publicKey = keyFactory.generatePublic(publicKeySpec);
- 
-        final Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPPadding");
-        final OAEPParameterSpec oaepParameterSpec = new OAEPParameterSpec("SHA-256", "MGF1", new MGF1ParameterSpec("SHA-256"), PSource.PSpecified.DEFAULT);
-        cipher.init(Cipher.ENCRYPT_MODE, publicKey, oaepParameterSpec);
-        return cipher.doFinal(plainText.getBytes(StandardCharsets.UTF_8));
-    }
-}
-```
+const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {  const keyBuf = toArrayBuffer(window.atob(base64PubKey));
+  const pubKeyDer = await window.crypto.subtle.importKey("spki", keyBuf, { name: "RSA-OAEP", hash: "SHA-256", }, true, ["encrypt"]);
+  const encryptedBlock = await window.crypto.subtle.encrypt({name: "RSA-OAEP",}, pubKeyDer, new TextEncoder().encode(sourceString));
+  return toBase64Encode(encryptedBlock);
+};
 
 ### Step 4: Apply Base64 encoding on encrypted encryption block
 
