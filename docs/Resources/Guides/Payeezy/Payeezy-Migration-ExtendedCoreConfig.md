@@ -77,3 +77,9 @@ Change log of all updates to a user account is available for review.
 
 <!-- type: tab-end -->
 
+## See Also
+
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+
+---
+
