@@ -2,7 +2,7 @@
 tags: [Card Not Present, Card Present, Cancel, API Reference]
 ---
 
-# Cancel
+# Cancels
 
 When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` in the URI or a reference transaction identifier in the payload.
 
@@ -10,153 +10,14 @@ When a customer cancels the order or if fraud is suspected, the merchant will ne
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
 
 ---
-## Cancel Using URI 
 
-A cancel request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the cancel type.
-
-### Minimum Requirements
-
-
-
-<!--
-type: tab
-titles: transactionDetails, merchantDetails
--->
-
-<!-- theme: info -->
-> Some card brands require the reason for a cancelled transaction, it is recommended to always pass the `reversalReasonCode` in the request.
-
-The below table identifies the recommended parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Maximum Length |Description |
-|---------|----------|----------------|---------|
-|`reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!-- type: tab-end -->
-
----
-
-### Endpoint
-
-<!-- theme: success -->
-> **POST** `/payments/v1/charges/{transactionId}/cancel`
-
----
-
-### Payload Example
-
-<!--
-type: tab
-titles: Request, Response
--->
-
-##### Example of a cancel payload request.
-
-```json
-{
-  "transactionDetails": {
-    "reversalReasonCode": "VOID"
-  },
-  "merchantDetails":{
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
-  }
-}
-```
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/cancel)
-
-<!--
-type: tab
--->
-
-##### Example of a cancel (200: Success) response.
-
-<!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-{
-   "gatewayResponse":{
-      "transactionType": "CANCEL",
-      "transactionState": "VOIDED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "transactionTimestamp": "2021-06-20T23:42:48Z",
-         "orderId": "RKOrdID-525133851837",
-         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-         "clientRequestId": "4345791",
-         "transactionId": "84356531338"
-      }
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "bin": "40055500",
-         "last4": "0019",
-         "scheme": "VISA",
-         "expirationMonth": "10",
-         "expirationYear": "2030"
-      }
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": 12.04,
-         "currency": "USD"
-      },
-      "merchantName": "Merchant Name",
-      "merchantAddress": "123 Peach Ave",
-      "merchantCity": "Atlanta",
-      "merchantStateOrProvince": "GA",
-      "merchantPostalCode": "12345",
-      "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com",
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK5882",
-         "schemeTransactionId": "0225MCC625628",
-         "processor": "FISERV",
-         "host": "NASHVILLE",
-         "responseCode": "000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021-06-20T23:42:48Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2021-06-20T23:42:48Z"
-         }
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   }
-}
-```
-
-<!-- type: tab-end -->
-
----
-## Cancel Using Referenced Identifier
+## Cancels Using Referenced Identifier
 
 A cancel request is initiated by sending the `referenceTransactionDetails` in the request and may contain the `amount` object based on the cancel type.
 
 ---
 
 ### Minimum Requirements
-
-
 
 <!--
 type: tab
@@ -302,7 +163,144 @@ type: tab
 
 <!-- type: tab-end -->
 
+---
 
+## Cancel Using URI 
+
+A cancel request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the cancel type.
+
+### Minimum Requirements
+
+<!--
+type: tab
+titles: transactionDetails, merchantDetails
+-->
+
+<!-- theme: info -->
+> Some card brands require the reason for a cancelled transaction, it is recommended to always pass the `reversalReasonCode` in the request.
+
+The below table identifies the recommended parameters in the `transactionDetails` object.
+
+| Variable | Data Type| Maximum Length |Description |
+|---------|----------|----------------|---------|
+|`reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
+<!-- type: tab-end -->
+
+---
+
+### Endpoint
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges/{transactionId}/cancel`
+
+---
+
+### Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+##### Example of a cancel payload request.
+
+```json
+{
+  "transactionDetails": {
+    "reversalReasonCode": "VOID"
+  },
+  "merchantDetails":{
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
+}
+```
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/cancel)
+
+<!--
+type: tab
+-->
+
+##### Example of a cancel (200: Success) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+{
+   "gatewayResponse":{
+      "transactionType": "CANCEL",
+      "transactionState": "VOIDED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
+      }
+   },
+   "source":{
+      "sourceType": "PaymentCard",
+      "card":{
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "10",
+         "expirationYear": "2030"
+      }
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": 12.04,
+         "currency": "USD"
+      },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
+         }
+      }
+   },
+   "transactionDetails":{
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
 
 ## Reversal Reason Code
 
@@ -326,8 +324,8 @@ The below table identifies the valid values of the reason the merchant/customer 
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/cancel)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/cancels)
+- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
