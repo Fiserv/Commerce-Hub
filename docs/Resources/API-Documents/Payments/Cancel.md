@@ -13,7 +13,7 @@ When a customer cancels the order or if fraud is suspected, the merchant will ne
 
 ## Cancels Using Referenced Identifier
 
-A cancel request is initiated by sending the `referenceTransactionDetails` in the request and may contain the `amount` object based on the cancel type.
+A cancels request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the cancel type.
 
 ---
 
@@ -76,7 +76,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a cancel payload request.
+##### Example of a cancels payload request.
 
 ```json
 
@@ -100,7 +100,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a cancel (200: Success) response.
+##### Example of a cancels (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
