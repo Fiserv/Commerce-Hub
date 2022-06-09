@@ -12,6 +12,7 @@ Element level mapping (Payeezy Gateway REST & SOAP to CH with summary of transfo
 
 ## See Also
 
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
