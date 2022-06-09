@@ -33,6 +33,7 @@ The below table identifies the available parameters in the `referenceTransaction
 |---------|----------|----------------|---------|
 |`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
 
 <!--
 type: tab
