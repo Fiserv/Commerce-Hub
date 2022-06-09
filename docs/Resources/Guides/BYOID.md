@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, merchant-identifier, order-identifier, merchant-id, terminal-id, mid, tid, transaction-id, order-id, custom-identifiers]
+tags: [Merchant Identifier, Order Identifier, Merchant ID, Terminal ID, MID, TID, Transaction ID, Order ID, Custom Identifiers]
 ---
 
 # Custom Identifiers
@@ -37,14 +37,8 @@ JSON string format for `merchantDetails`:
 ```json
 {
    "merchantDetails":{
-      "tokenType": "TRANSARMOR",
-      "storeId": "12345",
-      "siteId": "CA123456",
       "terminalId": "12",
       "merchantId": "1234567890123456",
-      "alternateMerchantId": "12345678",
-      "promotionCode": "ABCD1234",
-      "terminalLaneNumber": "001"
    }
 }
 ```

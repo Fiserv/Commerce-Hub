@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, paypal]
+tags: [Getting Started, PayPal]
 ---
 
 # PayPal

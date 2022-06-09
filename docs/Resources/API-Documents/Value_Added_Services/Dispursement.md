@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, digital-disbursements-and-payouts, disbursement, vault]
+tags: [Digital Disbursements and Payouts, Disbursement, Vault]
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, release-notes, update, patch, bug-fix, enhancement]
+tags: [Getting Started, Release Notes, Update, Patch, Bug Fix, Enhancement]
 ---
 
 # Release Notes

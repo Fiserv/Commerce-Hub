@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, iso-country-code]
+tags: [API Reference, ISO Country Code]
 ---
 
 # FIPS County Codes

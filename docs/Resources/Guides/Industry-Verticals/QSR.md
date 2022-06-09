@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, quick-service-restaurant]
+tags: [Quick Service Restaurant]
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, response-codes-and-messages, host, gateway, http]
+tags: [Response Codes and Messages, Host, Gateway, HTTP]
 ---
 
 # Response Code and Message Handling

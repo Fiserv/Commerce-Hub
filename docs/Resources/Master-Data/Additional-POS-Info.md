@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
+tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Terminal Transaction Interaction]
 ---
 
 # Additional POS Information
@@ -198,14 +198,14 @@ The below table contains the valid values for `dataEntrySource` parameter.
 | MOBILE_WEB | The payment source was entered into a website on a mobile device or obtained from a digital wallet. |
 | BROWSER_PC | The payment source was entered into a website on a personal computer or obtained from a digital wallet. |
 | KIOSK | The payment source was entered into a kisok or obtained from a mobile wallet. |
-| CONSOLE | Gaming console.... |
+| CONSOLE | The payment source was entered into gaming console. |
 | 3DS_REQUESTOR_INITIATED | The payment source initiated by the cuatomer using 3-D Secure. |
 | UNSPECIFIED | The data entry source is unknown or left blank. |
-| ELECTRONIC_PAYMENT_TERMINAL | black box terminal/........ |
-| AUTOMATED_FUEL_DISPENSING_MACHINE | Unattended fuel station.......... |
-| UNATTENDED_CUSTOMER_TERMINAL | Unattended customer terminal....... |
+| ELECTRONIC_PAYMENT_TERMINAL | The payment source was entered into a standard point of sale terminal. |
+| AUTOMATED_FUEL_DISPENSING_MACHINE | The payment source was entered into an unattended fuel station. |
+| UNATTENDED_CUSTOMER_TERMINAL | The payment source was entered int unattended customer terminal. |
 | ECOMMERCE_CUSTOMER_PRESENT | The ecommerce transaction where the payment source is entered at the merchant's location. |
-| MOBILE_TERMINAL | black box terminal/.......works from cellular |
+| MOBILE_TERMINAL | The payment source was entered into a wireless point of sale terminal on a cellular network. |
 | MOBILE_POS | Point of sales terminal that works on wifi. |
 | ELECTRONIC_CASH_REGISTER | Point of sales terminal that allows cash transaction.  |
 | IVR_VRU | Interactive Voice Response(IVR), Voice Response Unit (VRU) |

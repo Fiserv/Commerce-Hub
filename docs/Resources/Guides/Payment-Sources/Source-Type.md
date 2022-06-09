@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, payment-source-types]
+tags: [Payment Source Types]
 ---
 
 # Payment Source Types

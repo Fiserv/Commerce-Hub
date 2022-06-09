@@ -1,50 +1,37 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, quick-keys, batch-upload]
 
 ---
 
 # Quick Keys
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-<!--type: tab
-titles: API, Configuration, Virtual Terminal, Reporting
--->
+Quick Key was previously accessed via the Payeezy Real-time Payment Manager (RPM) POS screen and will now be available through ClientLine Enterprise (CLX) Virtual Terminal Initiate Bulk. For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
-- API.
+In RPM, the Quick Key functionality had to be requested; In CLX, all merchants will have access to the Initiate Bulk menu item under Virtual Terminal.
 
-<!--
-type: tab
--->
+CLX supports the new Commerce Hub format as well as the Payeezy format.  Both templates can be downloaded from the screen.
 
-- Configuration.
+CLX provides the additional functionality:
+- The ability to add single transactions to the batch after the file upload
+- An option to override the terminal type
+- A toggle button to switch between initiating single transactions and bulk uploads
 
+In RPM, a row could be edited by clicking on it; In CLX, checking the box in the first column of the row will make it editable.
 
-<!--
-type: tab
--->
+The transaction type of 'Purchase' in RPM is now a 'Sale' in CLX.
 
-- Same as API.
-
-<!--
-type: tab
--->
-
-- A canned report for all transactions declined by any type of Fraud Control (including AVS Filters) is available in Payeezy Gateway.  In Client Line Enterprise, the merchant can configure a report that queries for all relevant response codes associated with a decline due to fraud filter.
-
-<!-- type: tab-end -->
+RPM allowed for only 250 transactions per batch upload, CLX allows for an unlimited number of transactions.
 
 ---
 
 ## See Also
 
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
+
 
 
 ---

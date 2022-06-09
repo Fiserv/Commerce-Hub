@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, fraud, fraud-attributes, risk-scoring]
+tags: [API Reference, Fraud, Fraud Attributes, Risk Scoring]
 ---
 
 # Fraud Attributes
