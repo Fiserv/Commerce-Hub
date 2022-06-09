@@ -8,6 +8,7 @@ tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
 Element level mapping (Payeezy Gateway REST & SOAP to CH with summary of transformation)
 
 [Payeezy Merchant Migration API Spec Mapping.xlsx](https://github.com/Fiserv/Commerce-Hub/files/8392048/Payeezy.Merchant.Migration.API.Spec.Mapping.xlsx)
+
 ---
 
 ## See Also
