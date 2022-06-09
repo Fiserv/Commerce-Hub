@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, idempotency, time-out]
+tags: [Idempotency, Time Out]
 ---
 
 # Idempotency

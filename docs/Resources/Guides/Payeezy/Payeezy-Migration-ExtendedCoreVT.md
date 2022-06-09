@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, virtual-terminal, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Virtual Terminal, Card Not Present, Payeezy]
 
 ---
 
@@ -15,20 +15,26 @@ Virtual Terminal was previously accessed via the Payeezy Real-time Payment Manag
 
 In RPM, the Virtual Terminal functionality allows for Forced Post and Open Voids to be processed. In the CLX solution, Forced Post is not currently supported, but planned for a future release. Open Void is not supported in CLX.  
 
+The ability to enter in Soft Descriptors on an inititated transaction is not available.
+
 The ability to create a copy of a prior Pre-Auth or Purchase is no longer available.
 
 RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time CLX Virtual Terminal is available in English language only.
+
+**Available Transaction Type Functionality Comparison**
 
 | Payeezy Transaction Type | In RPM | In CLX | Notes|
 | -------- | :-------------: | :----------: |----------|
 |Purchase |POS Screen | Virtual Terminal|
 |Pre-Authorization |POS Screen |Virtual Terminal|
-|Forced Post |POS Screen | Not Available| Functionality planned for future release.|
+|Forced Post |POS Screen | Not Available| Functionality planned for future release|
 |Open Void  |POS Screen | Not Available| 
 |Tagged Pre-Authorization Completion  |POS Screen and Action in search or reports |Search| 
 |Tagged Void   |Action in search or reports  | Search |
 |Tagged Refund  |Action in search or reports  | Search |
-|New Transaction (Tagged Pre-Auth or Tagged Purchase)  |Action in search or reports  | Not Available | Transaction Type only available in VT, not API |
+|New Transaction (Tagged Pre-Auth or Tagged Purchase)  |Action in search or reports  | Not Available | Transaction Type only available in Virtual Terminal, not API |
+
+---
 
 ## Element Level Differences
 

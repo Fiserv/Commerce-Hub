@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Transaction Types, API Reference, Card Not Present, Payeezy]
 
 ---
 
@@ -9,9 +9,11 @@ tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-n
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-If you are using the /api.globalgatewaye4.firstdata.com URL, then you are transacting through the Payeezy Gateway Direct (PGW) platform.
+<br>
 
-If you are using the /api.payeezy.com URL, then you are transacting through the Developer API platform.
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your migration to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
+
+<br> 
 
 See tabs below for information pertaining to the platform you are transacting on.
 
@@ -31,11 +33,11 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |04 = Open Refund   | NOT YET SUPPORTED  | 
 |05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |13 = Open Void   | NOT YET SUPPORTED  | 
-|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture | [Capture Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
-|33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Charges.md)| 
-|33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)| 
+|33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)| 
+|33 = Tagged Refund   | /payments/v1/charges/{transactionId}/refund  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
-*It is highly recommended to use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+*Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ---
 
@@ -51,7 +53,7 @@ The element names, types and enumerations have changed - see [Element Level Mapp
 
 Not only have the non-approved (Declined or Error) transaction response codes changed, but the resolution of error codes has changed as well. See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more details.
 
-The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements.  
+The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [CTR mapping document](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements.  
 
 Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time, Commerce Hub will send back English language only responses.
 
@@ -74,7 +76,9 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 |refund (open)  | NOT YET SUPPORTED  | |
 |refund (tagged) | /payments/v1/charges/{transactionId}/refund   | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
-*It is highly recommended to use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+*Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+
+---
 
 ## Request and Response - Formats and Elements
 
@@ -86,7 +90,7 @@ The element names, types and enumerations have changed - see [Element Level Mapp
 
 Not only have the non-approved (Declined or Error) transaction response codes changed, but the resolution of error codes has changed as well. See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more details.
 
-The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements. 
+The bank Customer Transaction Record (CTR) is no longer available as a single element in the response. The independent values are available in Commerce Hub and by using this [CTR mapping document](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md), the CTR can be created by combining the needed elements. 
 
 Additionally, the CTR was previously available in multiple languages (EN, FR, ES) based on the terminal setting or the language element in the API request; at this time, Commerce Hub will send back English language only responses.
 
@@ -97,7 +101,7 @@ Additionally, the CTR was previously available in multiple languages (EN, FR, ES
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
 
 

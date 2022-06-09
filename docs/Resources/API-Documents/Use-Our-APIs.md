@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, restful-api, request-header, request-body, api, header, request-body, environments]
+tags: [Commerce Hub, Card Not Present, Card Present, Request Header, Request Body, API, Header, Request Body, Environments]
 ---
 
 # Constructing a RESTful API Request

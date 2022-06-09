@@ -1,5 +1,5 @@
 ---
-tags: [carat, enterprise, definition, commerce-hub, glossary, faq]
+tags: [Definition, Commerce Hub, Glossary, FAQ]
 ---
 
 # Glossary

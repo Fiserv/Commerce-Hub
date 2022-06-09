@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, hash, primary-transactions, secondary-transactions, vault]
+tags: [Card Not Present, Card Present, Hash, Primary Transactions, Secondary Transactions, Vault]
 ---
 
 # Transaction Types

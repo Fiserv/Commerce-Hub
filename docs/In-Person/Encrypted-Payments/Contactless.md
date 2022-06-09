@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-present, in-person, nfc, contactless]
+tags: [Card Present, Encrypted Payments, In-Person, NFC, Contactless]
 ---
 
 # Contactless (NFC)

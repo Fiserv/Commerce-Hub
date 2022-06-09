@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, airline, card-rental, ecommerce, lodging, payment-facilitator, petro, quick-service-restaurants, retail]
+tags: [Airline, Car Rental, Ecommerce, Lodging, Payment Facilitator, Petro, Quick Service Restaurants, Retail]
 ---
 
 # Industry Verticals
@@ -12,7 +12,7 @@ A Industry vertical is used to distingiush between different business models of 
 
 - **Airline :** An [Airline](?path=docs/Resources/Guides/Industry-Verticals/Airline.md) is a company that provides air transport services for traveling passengers and freight.
 
-- **Card Rental :** A [car rental](?path=docs/Resources/Guides/Industry-Verticals/Car-Rental.md), hire car, or car hire agency is a company that rents automobiles for short periods of time, generally ranging from a few hours to a few weeks.
+- **Car Rental :** A [car rental](?path=docs/Resources/Guides/Industry-Verticals/Car-Rental.md), hire car, or car hire agency is a company that rents automobiles for short periods of time, generally ranging from a few hours to a few weeks.
 
 - **eCommerce :** [E-commerce](?path=docs/Resources/Guides/Industry-Verticals/eCommerce.md) is the activity of electronically buying or selling of products on online services or over the Internet
 

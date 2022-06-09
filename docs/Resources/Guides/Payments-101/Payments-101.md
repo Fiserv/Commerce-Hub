@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, payment-101]
+tags: [Enterprise, Payment 101]
 ---
 
 

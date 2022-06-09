@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, custom-reporting-attributes]
+tags: [Custom Reporting Attributes]
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, convenience-fees]
+tags: [Convenience Fees]
 ---
 
 # Convenience Fees

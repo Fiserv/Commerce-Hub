@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-errors]
+tags: [Testing, Test Integration, Test Cards, Test Errors]
 ---
 
 # Test Error Response

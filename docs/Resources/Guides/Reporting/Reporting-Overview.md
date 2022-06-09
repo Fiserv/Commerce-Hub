@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, reporting, api]
+tags: [Reporting, API]
 ---
 
 # API Reporting

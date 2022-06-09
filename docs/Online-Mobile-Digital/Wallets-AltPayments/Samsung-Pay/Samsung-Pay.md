@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, samsung-pay, android, mobile, wallet]
+tags: [Getting Started, Samsung Pay, Android, Mobile, Wallet]
 ---
 
 # Samsung Pay
@@ -20,7 +20,7 @@ Build an integration that to accept an Samsung Pay payment.
 <!-- type: card
 title: Web: RESTful API
 description: Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Samsung Pay. The merchants would need to setup their own server for secure communication with Google Pay.
-link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay-Web-REST.md
+link:
 -->
 
 <!-- type: card
@@ -32,7 +32,7 @@ link:
 <!-- type: card
 title: Integration in App
 description: Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Samsung Pay.
-link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay-App.md
+link:
 -->
 
 <!-- type: row-end -->

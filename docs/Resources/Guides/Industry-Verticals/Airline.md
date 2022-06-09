@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, airline]
+tags: [Airline]
 ---
 
 # Airline

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, split-shipment, vault]
+tags: [Split Shipment, Vault]
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, network-token, payment-sources]
+tags: [Carat, Commerce Hub, Enterprise, Network Token, Payment Sources]
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, address-verification-service, detect-fraud, fraud, security-code]
+tags: [Card Not Present, Address Verification Service, Detect Fraud, Fraud, Security Code]
 ---
 
 

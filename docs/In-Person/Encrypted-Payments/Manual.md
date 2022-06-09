@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, payment-card, manual-entry, in-person, card-present, encrypted-payment]
+tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments]
 ---
 
 # Encrypted Manual Entry
@@ -84,7 +84,6 @@ titles: Request, Response
   },
   "source": {
     "sourceType": "PaymentCard",
-    "emvData": "0249F3704833A12329F1002AB34",
     "encryptionData": {
       "encryptionType": "RSA",
       "encryptionTarget": "MANUAL",
