@@ -51,7 +51,6 @@ In Payeezy Real-time Payment Manager (RPM), a self-service configuration was ava
 ## See Also
 
 - [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
-- [Payeezy Merchant Migration Virtual Terminal Information](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
