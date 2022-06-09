@@ -17,7 +17,7 @@ A cancel request is initiated by sending the `referenceTransactionDetails` in th
 
 ---
 
-### Minimum Requirements
+### Request Variables
 
 <!--
 type: tab
