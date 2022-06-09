@@ -156,5 +156,6 @@ A canned report for all transactions declined by any type of Fraud Control (incl
 
 ## See Also
 
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [Address and Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
