@@ -1,24 +1,11 @@
 
-# Encryption of Data
+# Multi-Use Public Key Encryption
 
-## Overview
+The merchant uses multi-use public key for the asymmeteric PaymentCard encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.   
 
-The merchant uses multi-use public key for the asymmeteric PaymentCard encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.    
+## Step 1: Generate Unencrypted encryptionBlock
 
-## Steps of Encryption
-
-### Step 1: Generate unencrypted encryption block
-
-The encryptionBlock field is passed through the PaymentCard request to encrypt the data. The encryptionBlock field is a concatenated string of the card details such as card number, name, cvv, expiry month, and year.
-
-For example:
-
-- card number - 4111111111111111
-- card name - Joe Bloggs
-- cvv - 123
-- expiry month - 12
-- expiry year - 2034
-And the cancatenated encryptionBlock = 4111111111111111JoeBloggs123122034
+The `encryptionBlock` field is passed through the `PaymentCard` request to encrypt the data. The `encryptionBlock` field is a concatenated string of the card details such as card number, name, cvv, expiry month, and year.
 
 ```Javascript
 const cardData = {
@@ -30,10 +17,15 @@ const cardData = {
 }
   
 const encryptionBlock =  Object.values(cardData).join(""));
+
 ```
 
+<!-- theme: example -->
+> encryptionBlock = 4111111111111111JoeBloggs123122034
 
-### Step 2:  Generate encryption block fields
+--- 
+
+### Step 2:  Generate encryptionBlockFields
 
 The encrytpion block field is generated that contains a string with the card data fields and its corresponding byte lengths. The string must match the order in which the encryptionBlock was generated in step 1. 
 
