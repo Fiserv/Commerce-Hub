@@ -89,28 +89,53 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {  const key
   return toBase64Encode(encryptedBlock);
 };
 
+
 ### Step 4: Apply Base64 encoding on encrypted encryption block
 
 Base64 encode encrypted data.
 
 ```javascript
 
-```
-```java
+const toBase64Encode = (arrayBuffer) => window.btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
 
 ```
 
 ### Step 5: Form encryptionData which will contain encrypted PaymentCard details
 
+Form the encryptionData object which will contain the encrypted PaymentCard details.
+
+
 ```Javascript
 
-"encryptionData": { "keyId": "12ce48b1-b7a7-45cb-b14e-6ff961afe0d8", "encryptionType": "RSA", "encryptionBlock": "gYRo6dFgXFIBOsflWrjhoKtOuMgtDgB2BreC...", "encryptionTarget": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3" }
+encryptionData: {
+  keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51", /** obtained from generate multi-use encryption key API */
+  encryptionType: "RSA",
+  encryptionBlock: encryptionBlock,
+  encryptionBlockFields: encryptionBlockFields,
+  encryptionTarget: "MANUAL",
+}
+
 ```
 
 ### Step 6: Build payment source object
 
+Build the payment source object that will be sent within the payload.
+
 ```javascript
-{"sourceType": "PaymentCard", "encryptionData": {...}}
+
+const payload = {       
+ source: {
+            sourceType: "PaymentCard",
+            encryptionData: {
+                keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51", /** obtained from generate multi-use encryption key API */
+                encryptionType: "RSA",
+                encryptionBlock: encryptionBlock,
+                encryptionBlockFields: encryptionBlockFields,
+                encryptionTarget: "MANUAL",
+            }
+         }
+     };
+     
 ```
 ---
 
