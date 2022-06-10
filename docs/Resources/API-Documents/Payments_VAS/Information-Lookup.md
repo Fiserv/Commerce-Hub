@@ -66,15 +66,8 @@ The below table identifies the parameters in the `cardDetails` object.
 | `b2bProgramId`| *string* | 15 | Business-to-Business Virtual Payments Product Offering. Visa only. **Valid Values**_ _B2B_PROGRAM_1, B2B_PROGRAM_2, B2B_PROGRAM_3, B2B_PROGRAM_4, B2B_PROGRAM_5, B2B_PROGRAM_6|_|
 | `moneySendIndicator` | *string* | 25 | MoneySend is a set of a Mastercard network transactions that facilitate fund transfers. This indicator determines if the Mastercard account is eligible to receive a MoneySend payment. |
 | `countryCode` | *string* | 30 | Categorizes the source of the BIN record. **Valid Values** _UNKNOWN, DOMESTIC_AND_CROSS_BORDER, NOT_ENABLED _|_|
-| `detailedCardProduct` | *string* | 21 | Card Product. **Valid Values** _* VISA - Visa |
-            * MASTERCARD - Mastercard
-            * AMEX - American Express
-            * DISCOVER - Discover
-            * PIN_ONLY - PIN Only (Not Visa, Mastercard, American Express, Discover)
-            * MAESTRO - International Maestro
-            * DINERS - Diners Club
-            * INTERAC - Interac
-            * JCB - JCB __|_ |          
+| `detailedCardProduct` | *string* | 21 | Card Product. **Valid Values** _* VISA - Visa, MASTERCARD - Mastercard, AMEX - American Express
+DISCOVER - Discover, PIN_ONLY - PIN Only (Not Visa, Mastercard, American Express, Discover), MAESTRO - International Maestro, DINERS - Diners Club, INTERAC - Interac,JCB - JCB __|_ |          
 | `clientId` | *string* |  64 | Intermediate field which categorizes BIN records as client ownership, with restricted availability to that client like PLCC private label. |
 | `mTIndicator` | *string* | 13 | (Deprecated) The Original Credit Money Transfer (MT) Indicator determines if the MasterCard account is eligible to receive a MoneySend Payment. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ _|_|
 | `ogIndicator` | *string* | 13 |   (Deprecated) The Original Credit Online Gambling (OG) Indicator determines if the Visa account is eligible to receive an Original Credit Money Transfer. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ _|_ |
@@ -91,8 +84,8 @@ The below table identifies the parameters in the `cardDetails` object.
 | ` detailProductId` | *string* | 256 | To be removed. Not used, or use productId instead. Detailed Product ID.'. |
 | `cardFunction` | *string* | 256 | To be removed. Use detailedCardIndicator. Identifies the type of card as CREDIT, DEBIT, FUEL, or GIFT. |
 | `commercialCard` | *string* | | To be removed. Use cardClass. Identifies if the card is a commercial card.  **Valid Values** _CORPPORATE, BUSINESS, PURCHASE, UNAVAILABLE, NON_COMMERCIAL_|
-| issuerCountry` | *string* | 256 | To be removed. Use countryCode. Card issuer two-letter country code. |
-| issuerName` | *string* | 256 | To be removed. Use issuerBankName. Issuing bank name. |
+| `issuerCountry` | *string* | 256 | To be removed. Use countryCode. Card issuer two-letter country code. |
+| `issuerName` | *string* | 256 | To be removed. Use issuerBankName. Issuing bank name. |
 
 <!-- type: tab-end -->
 
