@@ -124,7 +124,7 @@ type: tab
 
 *Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM.*
 
-|Payeezy Reporting API Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
+|Payeezy Reporting API Response Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
 |:------------------------------------------|:---------------------------------:|:---------------------|
 |Name        | Y|  customerName |
 |Account Name| N| |
@@ -202,7 +202,7 @@ type: tab
 
 *Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM.*
 
-|Payeezy Reporting API Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
+|Payeezy Search API Response Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
 |:------------------------------------------|:---------------------------------:|:---------------------|
 |Name        | Y|  customerName |
 |Account Name| N| |
