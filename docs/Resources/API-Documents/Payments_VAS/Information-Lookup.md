@@ -31,7 +31,42 @@ The below table identifies the parameters in the `cardDetails` object.
 | `binLength` | *string* | 2 | Length of the BIN. |
 | `binDetailPan` | *string* | 2 | Displays the primary PAN length. |
 | `issuerBankName` | *string* | 3 | ISO-31661-1 aplpha-3 country code. |
-| `countryCode` | *string* | 30 | Categorizes the source of the BIN record. |
+| `detailedCardIndicator` | *string* | 16 | Determines the card type (credit, debit). **Valid Values** _Credit, Debit, Commercial_Debit, Consumber_Debit_ |
+| `pinSignatureCapability` | *string* | 16 | Determines the card PIN/Signature capability. **Valid Values** _PIN_CAPABLE, SIGNATURE, PIN OR SIGNATURE_ |
+| `issuerUpdateYear` | *string* | 2 | The year the BIN record was last updated. |
+| `issuerUpdateMonth` | *string* | 2 | The month the BIN record was last updated. |
+| `issuerUpdateDay` | *string* | 2 | The day the BIN record was last updated. |
+| `regulatorIndicator` | *string* | 15 | Applies to US issued cards only (Visa, Mastercard, and Discover). **Valid Values** _NON_REGULATED, REGULATED, REGULATED_FRAUD_ |
+| `cardClass` | *string* | 30 |   Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card. **Valid Values** _BUSINESS, CONSUMER, PURCHASE, CORPORATE_ |
+| `debitPinlessIndicator` | *array* |  | A list of Debit Network PINless Details. |
+| `ebtState` | *string* | 2 | This is the EBT State. Will only be present if EBT capable. Information originates from the debit network. |
+| `fsaIndicator` | *string* | 13 | FSA/HSA (Flexible Spending Account / Health Savings Account) indicator, which denotes prepaid card program in the US that permits use of funds to pay for qualified out of pocket medical expenses. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `nonMoneyTransferOCTsDomestic` | *string* | 13 | Indicates if domestic non-money transfer OCTs are supported. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `nonMoneyTransferOCTsCrossBorder` | *string* | 13 | Indicates if cross-border non-money transfer OCTs are supported. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `onlineGamblingOCTsCrossBorder` | *string* | 13 |  Indicates if cross-border online gambling OCTs are supported. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `moneyTransferOCTsDomestic` | *string* | 13 | Indicates if domestic money transfer OCTs are supported. Visa Only.  **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `moneyTransferOCTsCrossBorder` | *string* | 13 | Indicates if cross-border money transfer OCTs are supported. Visa Only.  **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `fastFundsDomesticMoneyTransfer` | *string* | 13 |  Indicates if fast funds is supported for domestic money transfer OCTs. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `fastFundsCrossBorderMoneyTransfer` | *string* | 13 | Indicates if fast funds is supported for cross-border money transfer OCTs. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `fastFundsDomesticNonMoneyTransfer` | *string* | 13 |    Indicates if fast funds is supported for cross-border non-money transfer OCTs. Visa Only. Visa Only. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `fastFundsCrossBorderNonMoneyTransfer` | *string* | 13 | Indicates if fast funds is supported for domestic non-money transfer OCTs. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `fastFundsCrossBorderGambling` | *string* | 13 | Indicates if fast funds is supported for cross-border gambling OCTs. Visa Only. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `prepaidIndicator` | *string* | 13 | Indicates whether the card is prepaid. **Valid Values** _NON_PREPAID, PREPAID_ |
+| `anonymousPrepaidIndicator` | *string* | 26 | Identifies whether Anonymous Prepaid is supported, like AMLD5 (Anti-Money Laundering Directive) compliant, non-AMLD5 compliant, or non-anonymous prepaid programs / not a prepaid program. Mastercard Only. **Valid Values** _AMLD5_NON_COMPLIANT, _AMLD4_COMPLIANT_EQUIVALENT, _NON_ANONYMOUS_ |
+| `productID` | *string* | 5 | Indicates card product sub categories (Purchase Card, Business Card, etc.) for Visa, Mastercard, Discover or Private Label. Refer to BIN specs for valid values. |
+| `visaProductSubType` | *string* | 2 | This is used to identify product subtypes. Refer to BIN specs for valid values. |
+| `visaLargeTicketIndicator` | *string* | 13 | Visa large ticket indicator. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `accountFundSource` | *string* | 15 | Categorizes the source of the BIN recordFor Visa, Mastercard, Discover, and UnionPay. Identifies the source of the funds associated with the primary account for the card. **Valid Values** _CREDIT, DEBIT, PREPAID, CHARGE, DEFERRED_DEBIT_|
+| `panLengthMin` | *string* | 2 | Primary Account Number (PAN) Length Minimum. |
+| `panLengthMax` | *string* | 2 | Primary Account Number (PAN) Length Maximum. |
+| `tokenIndicator` | *string* | 13 | Token Indicator. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ |
+| `issuingNetwork` | *string* | 10| Identifies Discover card types. **Valid Values** _DISCOVER, DINERS, JCB, CUP, PAYPAL_|
+| `cardholderBillingCurrency` | *string* | 3 | Cardholder billing currency in 3-letter ISO currency format. |
+| `accountFundSourceSubtype` | *string* | 22 | Account fund source subtype. Mastercard only. **Valid Values** _PREPAID_RELOADBLE, PREPAID_NON_RELOADABLE_ |
+| `b2bProgramId`| *string* | 15 | Business-to-Business Virtual Payments Product Offering. Visa only. **Valid Values**_ _B2B_PROGRAM_1, B2B_PROGRAM_2, B2B_PROGRAM_3, B2B_PROGRAM_4, B2B_PROGRAM_5, B2B_PROGRAM_6|_|
+| `moneySendIndicator` | *string* | 25 | MoneySend is a set of a Mastercard network transactions that facilitate fund transfers.
+This indicator determines if the Mastercard account is eligible to receive a MoneySend payment. |
+| `countryCode` | *string* | 30 | Categorizes the source of the BIN record. **Valid Values** _UNKNOWN, DOMESTIC_AND_CROSS_BORDER, NOT_ENABLED _|_|
 | `detailedCardProduct` | *string* | 21 | Card Product. **Valid Values** _* VISA - Visa
             * MASTERCARD - Mastercard
             * AMEX - American Express
@@ -40,10 +75,16 @@ The below table identifies the parameters in the `cardDetails` object.
             * MAESTRO - International Maestro
             * DINERS - Diners Club
             * INTERAC - Interac
-            * JCB - JCB _ |
+            * JCB - JCB __|_
+            
+| `clientId` | *string* |  64 | Intermediate field which categorizes BIN records as client ownership, with restricted availability to that client like PLCC private label. |
+| `mTIndicator` | *string* | 13 | (Deprecated) The Original Credit Money Transfer (MT) Indicator determines if the MasterCard account is eligible to receive a MoneySend Payment. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ _|_|
+| `ogIndicator` | *string* | 13 |   (Deprecated) The Original Credit Online Gambling (OG) Indicator determines if the Visa account is eligible to receive an Original Credit Money Transfer. **Valid Values** _NOT_SUPPORTED, SUPPORTED_ _|_ |
+| `fastFunds` | *string* | 25 |  (Deprecated) The Fast Funds Indicator determines if the Visa/MasterCard account can receive the transfer of funds within 30 minutes. **Valid Values** _NOT_ENABLED, DOMESTIC_AND_CROSS_BORDER, CROSS_BORDER, DOMESTIC_|_|_|
 | `cardDetails` | *string* | 30 | Categorizes the source of the BIN record. |
 | `cardDetails` | *string* | 30 | Categorizes the source of the BIN record. |
-
+| `cardDetails` | *string* | 30 | Categorizes the source of the BIN record. |
+| `cardDetails` | *string* | 30 | Categorizes the source of the BIN record. |
 
 <!-- type: tab-end -->
 
