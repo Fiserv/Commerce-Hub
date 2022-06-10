@@ -12,6 +12,8 @@ The CTR element is no longer available as a response field.  Use this mapping to
 
 ## See Also
 
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+
 - [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

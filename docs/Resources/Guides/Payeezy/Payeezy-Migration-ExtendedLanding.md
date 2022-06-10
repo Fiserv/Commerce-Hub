@@ -34,15 +34,15 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreConfig.m
 -->
 
 <!-- type: card
-title: Virtual Terminal
-description: Differences in Virtual Terminal functionality
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md
--->
-
-<!-- type: card
 title: Reporting
 description: Learn about the new enhanced capabilitities in ClientLine Enterprise
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md
+-->
+
+<!-- type: card
+title: Virtual Terminal
+description: Differences in Virtual Terminal functionality
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md
 -->
 
 <!-- type: row-end -->
@@ -60,9 +60,25 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesFrau
 -->
 
 <!-- type: card
+title: Quick Key
+description: Differences in Quick Key functionality
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
+-->
+
+<!-- type: card
 title: Soft Descriptors
 description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesSoftD.md
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Stored Credentials
+description: Need to update this.
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesStoredCredentials.md
 -->
 
 <!-- type: card
@@ -71,26 +87,10 @@ description: How the configuration and functionality of tokens has changed with 
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesTokens.md
 -->
 
-<!-- type: row-end -->
-
-<!-- type: row -->
-
 <!-- type: card
 title: Wallets
 description: Expanded capabilities for Apple Pay and Google Pay
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesWallets.md
--->
-
-<!-- type: card
-title: Quick Key
-description: Differences in Quick Key functionality
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
--->
-
-<!-- type: card
-title: Stored Credentials
-description: Need to update this.
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesStoredCredentials.md
 -->
 
 <!-- type: row-end -->
