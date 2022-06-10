@@ -31,7 +31,7 @@ The below table identifies the parameters in the `cardDetails` object.
 | `issuerUpdateYear` | *string* | 2 | The year the BIN record was last updated. |
 | `issuerUpdateMonth` | *string* | 2 | The month the BIN record was last updated. |
 | `issuerUpdateDay` | *string* | 2 | The day the BIN record was last updated. |
-| `regulatorIndicator` | *string* | 15 | Applies to US issued cards only (Visa, Mastercard, and Discover). **Valid Values:** _NON_REGULATED, REGULATED, REGULATED_FRAUD_ |
+| `regulatorIndicator` | *string* | 15 | Applies to US issued cards only (Visa, Mastercard, and Discover). **Valid Values:** _NON_REGULATED, REGULATED, REGULATED_FRAUD_ | 
 | `cardClass` | *string* | 30 |   Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card. **Valid Values:** _BUSINESS, CONSUMER, PURCHASE, CORPORATE_ |
 | `debitPinlessIndicator` | *array* |  | A list of [Debit Network PINless Details](?path=docs/Resources/Master-Data/Debit-Pinless-Indicator.md). | 
 | `ebtState` | *string* | 2 | This is the EBT State. Will only be present if EBT capable. Information originates from the debit network. |
