@@ -24,6 +24,26 @@ The below table identifies the parameters in the `cardDetails` object.
 | `commercialCard` | *string* | 256 | Identifies if the card is a CORPORATE, COMMERCIAL or NON_CORPORATE card |
 | `issuerCountry` | *string* | 256 | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md) |
 | `issuerName` | *string* | 256 | Issuing bank name |
+| `cardDetails` | *string* | 30 | Categorizes the source of the BIN record. |
+| `recordType` | *string* | 10 | Record Type |
+| `lowBin` | *string* | 21 | This field contains the low BIN value of the BIN range. |
+| `highBin` | *string* | 21 | This field contains the high BIN value of the BIN range. |
+| `binLength` | *string* | 2 | Length of the BIN. |
+| `binDetailPan` | *string* | 2 | Displays the primary PAN length. |
+| `issuerBankName` | *string* | 3 | ISO-31661-1 aplpha-3 country code. |
+| `countryCode` | *string* | 30 | Categorizes the source of the BIN record. |
+| `detailedCardProduct` | *string* | 21 | Card Product. **Valid Values** _* VISA - Visa
+            * MASTERCARD - Mastercard
+            * AMEX - American Express
+            * DISCOVER - Discover
+            * PIN_ONLY - PIN Only (Not Visa, Mastercard, American Express, Discover)
+            * MAESTRO - International Maestro
+            * DINERS - Diners Club
+            * INTERAC - Interac
+            * JCB - JCB _ |
+| `cardDetails` | *string* | 30 | Categorizes the source of the BIN record. |
+| `cardDetails` | *string* | 30 | Categorizes the source of the BIN record. |
+
 
 <!-- type: tab-end -->
 
