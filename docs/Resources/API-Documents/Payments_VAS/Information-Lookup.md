@@ -50,11 +50,11 @@ The below table identifies the parameters in the `cardDetails` object.
 | `anonymousPrepaidIndicator` | *string* | 26 | Identifies whether Anonymous Prepaid is supported, like AMLD5 (Anti-Money Laundering Directive) compliant, non-AMLD5 compliant, or non-anonymous prepaid programs / not a prepaid program. Mastercard Only. **Valid Values:** _AMLD5_NON_COMPLIANT, _AMLD4_COMPLIANT_EQUIVALENT, _NON_ANONYMOUS_ |
 | `productID` | *string* | 5 | Indicates card product sub categories (Purchase Card, Business Card, etc.) for Visa, Mastercard, Discover or Private Label. Refer to BIN specs for valid values. |
 | `visaProductSubType` | *string* | 2 | This is used to identify product subtypes. Refer to BIN specs for valid values. |
-| `visaLargeTicketIndicator` | *string* | 13 | Visa large ticket indicator. **Valid Values:** _NOT_SUPPORTED, SUPPORTED_ |
+| `visaLargeTicketIndicator` | *string* | 13 | Visa large ticket indicator. **Valid Values:** |
 | `accountFundSource` | *string* | 15 | Categorizes the source of the BIN recordFor Visa, Mastercard, Discover, and UnionPay. Identifies the source of the funds associated with the primary account for the card. **Valid Values:** _CREDIT, DEBIT, PREPAID, CHARGE, DEFERRED_DEBIT_|
 | `panLengthMin` | *string* | 2 | Primary Account Number (PAN) Length Minimum. |
 | `panLengthMax` | *string* | 2 | Primary Account Number (PAN) Length Maximum. |
-| `tokenIndicator` | *string* | 13 | Token Indicator. **Valid Values:** _NOT_SUPPORTED, SUPPORTED_ |
+| `tokenIndicator` | *string* | 13 | Token Indicator. **Valid Values:**  |
 | `issuingNetwork` | *string* | 10| Identifies Discover card types. **Valid Values:** _DISCOVER, DINERS, JCB, CUP, PAYPAL_|
 | `cardholderBillingCurrency` | *string* | 3 | Cardholder billing currency in 3-letter ISO currency format. |
 | `accountFundSourceSubtype` | *string* | 22 | Account fund source subtype. Mastercard only. **Valid Values:** _PREPAID_RELOADBLE, PREPAID_NON_RELOADABLE_ |
@@ -63,7 +63,7 @@ The below table identifies the parameters in the `cardDetails` object.
 | `countryCode` | *string* | 30 | Categorizes the source of the BIN record. **Valid Values:** _UNKNOWN, DOMESTIC_AND_CROSS_BORDER, NOT_ENABLED_|
 | `detailedCardProduct` | *string* | 21 | Card Product. **Valid Values:** _VISA, MASTERCARD, AMEX, DISCOVER, PIN_ONLY (Not Visa, Mastercard, American Express, Discover), MAESTRO, DINERS, INTERAC, JCB_ |         
 | `clientId` | *string* |  64 | Intermediate field which categorizes BIN records as client ownership, with restricted availability to that client like PLCC private label. |
-| `mTIndicator` | *string* | 13 | (Deprecated) The Original Credit Money Transfer (MT) Indicator determines if the MasterCard account is eligible to receive a MoneySend Payment. **Valid Values:** _NOT_SUPPORTED, SUPPORTED_|
+| `mTIndicator` | *string* | 13 | (Deprecated) The Original Credit Money Transfer (MT) Indicator determines if the MasterCard account is eligible to receive a MoneySend Payment. **Valid Values:** |
 | `ogIndicator` | *string* | 13 | (Deprecated) The Original Credit Online Gambling (OG) Indicator determines if the Visa account is eligible to receive an Original Credit Money Transfer. **Valid Values:** |
 | `fastFunds` | *string* | 25 | (Deprecated) The Fast Funds Indicator determines if the Visa/MasterCard account can receive the transfer of funds within 30 minutes. **Valid Values:** _NOT_ENABLED, DOMESTIC_AND_CROSS_BORDER, CROSS_BORDER, DOMESTIC_|_|_|
 | `octIndicator` | *string* | 13 | (Deprecated) The Original Credit Transaction (OCT) Indicator determines if the Visa account can receive a gambling or lottery payout Original Credit Transaction (OCT).
