@@ -47,7 +47,7 @@ The following code snippets are required to encrypt the payment card information
 
 
 
-## Step 3: Submit the Card capture Request
+## Step 3: Submit Card Capture Request
 
 Description.........
 
@@ -159,7 +159,7 @@ type: tab
 
 ---
 
-## Step 4: Submit Token 
+## Step 4: Submit Request 
 
 
 ## See Also
