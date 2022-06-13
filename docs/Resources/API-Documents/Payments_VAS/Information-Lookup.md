@@ -13,7 +13,7 @@ Information Lookup is used to verify card related information of the cardholder 
 type: tab
 titles: cardDetails
 -->
-
+ 
 The below table identifies the parameters in the `cardDetails` object.
 
 | Variable | Type| Maximum Length | Description |
