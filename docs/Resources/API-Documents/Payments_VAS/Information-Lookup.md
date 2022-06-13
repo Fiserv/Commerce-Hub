@@ -35,26 +35,26 @@ The below table identifies the parameters in the `cardDetails` object.
 | `cardClass` | *string* | 30 |   Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card. **Valid Values:** _BUSINESS, CONSUMER, PURCHASE, CORPORATE_ |
 | `debitPinlessIndicator` | *array* |  | A list of [Debit Network PINless Details](?path=docs/Resources/Master-Data/Debit-Pinless-Indicator.md). | 
 | `ebtState` | *string* | 2 | This is the EBT State. Will only be present if EBT capable. Information originates from the debit network. |
-| `fsaIndicator` | *string* | 13 | FSA/HSA (Flexible Spending Account / Health Savings Account) indicator, which denotes prepaid card program in the US that permits use of funds to pay for qualified out of pocket medical expenses. **Valid Values:**  |
-| `nonMoneyTransferOCTsDomestic` | *string* | 13 | Indicates if domestic non-money transfer OCTs are supported. Visa Only. **Valid Values:** |
-| `nonMoneyTransferOCTsCrossBorder` | *string* | 13 | Indicates if cross-border non-money transfer OCTs are supported. Visa Only. **Valid Values:** |
-| `onlineGamblingOCTsCrossBorder` | *string* | 13 |  Indicates if cross-border online gambling OCTs are supported. Visa Only. **Valid Values:** |
-| `moneyTransferOCTsDomestic` | *string* | 13 | Indicates if domestic money transfer OCTs are supported. Visa Only.  **Valid Values:** |
-| `moneyTransferOCTsCrossBorder` | *string* | 13 | Indicates if cross-border money transfer OCTs are supported. Visa Only.  **Valid Values** |
-| `fastFundsDomesticMoneyTransfer` | *string* | 13 |  Indicates if fast funds is supported for domestic money transfer OCTs. Visa Only. **Valid Values:** |
-| `fastFundsCrossBorderMoneyTransfer` | *string* | 13 | Indicates if fast funds is supported for cross-border money transfer OCTs. Visa Only. **Valid Values:** |
-| `fastFundsDomesticNonMoneyTransfer` | *string* | 13 |    Indicates if fast funds is supported for cross-border non-money transfer OCTs. Visa Only. Visa Only. Visa Only. **Valid Values:** |
-| `fastFundsCrossBorderNonMoneyTransfer` | *string* | 13 | Indicates if fast funds is supported for domestic non-money transfer OCTs. Visa Only. **Valid Values:** |
+| `fsaIndicator` | *string* | 13 | FSA/HSA (Flexible Spending Account / Health Savings Account) indicator, which denotes prepaid card program in the US that permits use of funds to pay for qualified out of pocket medical expenses. |
+| `nonMoneyTransferOCTsDomestic` | *string* | 13 | Indicates if domestic non-money transfer OCTs are supported. |
+| `nonMoneyTransferOCTsCrossBorder` | *string* | 13 | Indicates if cross-border non-money transfer OCTs are supported. |
+| `onlineGamblingOCTsCrossBorder` | *string* | 13 |  Indicates if cross-border online gambling OCTs are supported. |
+| `moneyTransferOCTsDomestic` | *string* | 13 | Indicates if domestic money transfer OCTs are supported. **Visa Only**. |
+| `moneyTransferOCTsCrossBorder` | *string* | 13 | Indicates if cross-border money transfer OCTs are supported. **Visa Only**. |
+| `fastFundsDomesticMoneyTransfer` | *string* | 13 |  Indicates if fast funds is supported for domestic money transfer OCTs. **Visa Only**. |
+| `fastFundsCrossBorderMoneyTransfer` | *string* | 13 | Indicates if fast funds is supported for cross-border money transfer OCTs. **Visa Only**. |
+| `fastFundsDomesticNonMoneyTransfer` | *string* | 13 |    Indicates if fast funds is supported for cross-border non-money transfer OCTs. **Visa Only**. |
+| `fastFundsCrossBorderNonMoneyTransfer` | *string* | 13 | Indicates if fast funds is supported for domestic non-money transfer OCTs. **Visa Only**. |
 | `fastFundsCrossBorderGambling` | *string* | 13 | Indicates if fast funds is supported for cross-border gambling OCTs. Visa Only. **Valid Values:** |
 | `prepaidIndicator` | *string* | 13 | Indicates whether the card is prepaid. **Valid Values:** _NON_PREPAID, PREPAID_ |
 | `anonymousPrepaidIndicator` | *string* | 26 | Identifies whether Anonymous Prepaid is supported, like AMLD5 (Anti-Money Laundering Directive) compliant, non-AMLD5 compliant, or non-anonymous prepaid programs / not a prepaid program. Mastercard Only. **Valid Values:** _AMLD5_NON_COMPLIANT, _AMLD4_COMPLIANT_EQUIVALENT, _NON_ANONYMOUS_ |
 | `productID` | *string* | 5 | Indicates card product sub categories (Purchase Card, Business Card, etc.) for Visa, Mastercard, Discover or Private Label. Refer to BIN specs for valid values. |
 | `visaProductSubType` | *string* | 2 | This is used to identify product subtypes. Refer to BIN specs for valid values. |
-| `visaLargeTicketIndicator` | *string* | 13 | Visa large ticket indicator. **Valid Values:** |
+| `visaLargeTicketIndicator` | *string* | 13 | Visa large ticket indicator. |
 | `accountFundSource` | *string* | 15 | Categorizes the source of the BIN recordFor Visa, Mastercard, Discover, and UnionPay. Identifies the source of the funds associated with the primary account for the card. **Valid Values:** _CREDIT, DEBIT, PREPAID, CHARGE, DEFERRED_DEBIT_|
 | `panLengthMin` | *string* | 2 | Primary Account Number (PAN) Length Minimum. |
 | `panLengthMax` | *string* | 2 | Primary Account Number (PAN) Length Maximum. |
-| `tokenIndicator` | *string* | 13 | Token Indicator. **Valid Values:**  |
+| `tokenIndicator` | *string* | 13 | Token Indicator. |
 | `issuingNetwork` | *string* | 10| Identifies Discover card types. **Valid Values:** _DISCOVER, DINERS, JCB, CUP, PAYPAL_|
 | `cardholderBillingCurrency` | *string* | 3 | Cardholder billing currency in 3-letter ISO currency format. |
 | `accountFundSourceSubtype` | *string* | 22 | Account fund source subtype. Mastercard only. **Valid Values:** _PREPAID_RELOADBLE, PREPAID_NON_RELOADABLE_ |
