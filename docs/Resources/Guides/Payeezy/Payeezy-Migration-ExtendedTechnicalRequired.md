@@ -1,23 +1,33 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 ---
-# Required Fields
+
+# Commerce Hub API Required Elements
+
 <!-- theme: danger -->
->  :memo: **Note:** The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-> Commerce Hub required fields for each transaction
+The prurpose of this page is to give developers a list of required API elements in Commerce Hub by transaction type.  _As new transation types and features are released in Commerce Hub, this table and downloadable document will be updated._  
 
-[Payeezy Merchant Migration Commerce Hub Required Fields.xlsx](https://github.com/Fiserv/Commerce-Hub/files/8392059/Payeezy.Merchant.Migration.Commerce.Hub.Required.Fields.xlsx)
+Click [here](?path=/docs/Resources/Guides/Payeezy/Commerce_Hub_Required_API_Elements.xlsx) to download the table in Excel.
+
+| Transaction Type | without Token | with Token|
+| :-------------------------------------- | :------------- |:----------------|
+|**Purchase** | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.sourceType <br> transactionDetails.captureFlag  <br> <br> <br> <br> <br> | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.card.expirationMonth <br> source.card.expirationYear <br>  source.sourceType <br> source.tokenData <br> source.tokenSource <br> transactionDetails.captureFlag |
+|**Pre-Authorization** | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.sourceType <br> transactionDetails.captureFlag  <br> <br> <br> <br> <br> | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.card.expirationMonth <br> source.card.expirationYear <br>  source.sourceType <br> source.tokenData <br> source.tokenSource <br> transactionDetails.captureFlag |
+|**Pre-Auth Completion** | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> transactionId  |  |
+|**Account Verification** | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.sourceType <br> transactionDetails.captureFlag  <br> <br> <br> <br> <br> <br> | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.card.expirationMonth <br> source.card.expirationYear <br>  source.sourceType <br> source.tokenData <br> source.tokenSource <br> transactionDetails.captureFlag <br> transactionDetails.createToken |
+|**Tagged Void** |  merchantDetails.merchantId <br> merchantDetails.terminalId <br> transactionDetails.reversalReasonCode <br> transactionId <br> <br> <br> <br> <br> <br> |  merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.card.expirationMonth <br> source.card.expirationYear <br>  source.sourceType <br> source.tokenData <br> source.tokenSource <br> transactionDetails.reversalReasonCode <br> transactionId |
+|**Tagged Refund** | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> transactionId <br> <br> <br> <br> <br> <br> | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.card.expirationMonth <br> source.card.expirationYear <br>  source.sourceType <br> source.tokenData <br> source.tokenSource <br> transactionId  |
+
 ---
 
 ## See Also
 
 - [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
+
 
 
 ---
