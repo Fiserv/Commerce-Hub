@@ -4,21 +4,24 @@ tags: [Getting Started, Release Notes, Update, Patch, Bug Fix, Enhancement]
 
 # Release Notes
 
-Commerce Hub is continually being improved with new features, security enhancements bug fixes, and performance improvements. These release notes list the updates for each Commerce Hub release with the most recent update shown first.
+Commerce Hub is continually being improved with new features, security enhancements, and performance improvements. These release notes list the updates for each release with the most recent update shown first.
 
 #### Release Types
 
 - **Feature:** New feature was released
 - **Update:** Existing feature was updated or enhanced
-- **Patch:** Bug was fixed
 
 ---
 
-## April 27th 2022
+## June 16th 2022
 
 | Details | Type | Environment | 
 | ----- | ----- | ----- |
-| Transaction support for Canada credit (Visa, Mastercard,  | Feature | Cert |
+| [BIN lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) with `cardDetails` are available from account information lookup and tokens requests | Feature | Cert |
+| Transaction support for Canada credit (Visa, Mastercard) for postal code and currency | Update | Cert |
+| [Reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) support added for cancels and inquiry requests | Feature | Cert |
+| [Cashback](?path=https://github.com/Fiserv/Commerce-Hub/blob/develop/docs/Resources/Master-Data/Amount-Components.md) supported for debit and Discover credit cards | Feature | Cert |
+| [Encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) transaction support | Feature | Cert |
 
 ---
 
@@ -26,10 +29,10 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 | Details | Type | Environment | 
 | ----- | ----- | ----- |
-| [Error response messages](?path=docs/Resources/Guides/Response-Codes/Error-Code.md) corrected to send proper code, message, and field | Patch | Cert |
+| [Error response messages](?path=docs/Resources/Guides/Response-Codes/Error-Code.md) enhanced with additional codes | Update | Cert |
 | [Directed routing](?path=docs/Resources/Guides/Directed-Routing.md) enhanced to support better identification of payment processor and platforms | Update | Cert |
 | [Processor response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) enhanced to support better identifiaction of payment processor and host | Update | Cert |
-| Timeout causing 703: Internal Error resolved | Patch | Cert |
+| Timeout error handling enhanced | Update | Cert |
 | [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) | Feature | Cert |
 | Increased maxLength of `merchantOrderId` and `merchantTransactionId` to 128 in [transaction details](?path=docs/Resources/Master-Data/Transaction-Details.md) | Update | Cert |
 | Added support for processing card not present authorization and cancel transactions through Chase Salem [processor](?path=(?path=docs/Resources/Guides/Directed-Routing.md)). | Feature | Cert |
