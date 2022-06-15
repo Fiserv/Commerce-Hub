@@ -25,9 +25,6 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 | `transactionQualifier` | *string* | | Used for Discover - Discover TransactionQualifier. |
 | `enhancedAuthorizationResponseIndicator` | *string* |  | Returns the approval type for Enhanced Authorization. **Valid Values:** *FULL*, *PARTIAL*, *DEPLETED*, *DECLINE*, *ERROR* |
 | `attendedTerminalData` | *string* | 16 | [Attended terminal data](#attended-terminal-data) indicates if the card acceptor was at the point of sale. |
-| `cardPresentIndicator` | *string* |  | Indicates if the actual card that was used for the transaction was present  |
-| `cardPresentAtPosIndicator` | *string* |  | Indicates if the actual card was present at the point of sale. |
-| `terminalLocation` | *string* | 16 | Identifies the [location of the terminal](#terminal-location) or software. |
 | `cardholderActivatedTerminalInformation` | *string* | 16 | Identifies [Cardholder Activated Terminal](#cardholder-activated-terminal) (CAT) capabilities of the device. |
 | `posHardwareAndSoftware` | *object* | N/A | [Terminal hardware and software](#hardware-and-software-information) information. |
 | `posFeatures` | *object* | N/A | Terminal or [software feature](#pos-features) information. |
@@ -52,9 +49,6 @@ JSON string format for `additionalPosInformation`:
       "transactionQualifier": "string",
       "enhancedAuthorizationResponseIndicator": "FULL",
       "attendedTerminalData": "ATTENDED",
-      "cardPresentIndicator": "string",
-      "cardPresentAtPosIndicator": "string",
-      "terminalLocation": "MERCHANT",
       "cardholderActivatedTerminalInformation": "2",
       "posHardwareAndSoftware":{
          "hardwareVendorIdentifier": "string",
