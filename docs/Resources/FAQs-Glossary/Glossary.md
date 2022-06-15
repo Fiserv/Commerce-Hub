@@ -326,6 +326,9 @@ A property of an operation that states that clients can make that same call repe
 ## Installation Root
 The file system directory where the shopping cart is installed, e.g. /var/www/html/cart or /var/www/html/commerce.
 
+## Interbank Network
+An interbank network, known as ATM consortium or ATM network, is a computer network that allows ATM cards issued by different financial institution to perform transactions through ATMs that belong to another member of the network.
+
 ## Interchange
 The exchange of transaction data between the merchant bank and customer card issuing bank.
 
