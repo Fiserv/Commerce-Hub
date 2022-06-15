@@ -59,7 +59,7 @@ The below table identifies the parameters in the `amountComponents` object.
 | `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
 | `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
 | `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
-| `cashback` | *number* | 12 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase. Currently not supported on Visa, Mastercard, Amex or Signature Debit. |
+| `cashback` | *number* | 12 | For Debit or Credit: The amount of cash requested by the cardholder at the time of purchase. Currently not supported on Visa, Mastercard, Amex, EBTCash or Signature Debit. |
 | `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
 | `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
