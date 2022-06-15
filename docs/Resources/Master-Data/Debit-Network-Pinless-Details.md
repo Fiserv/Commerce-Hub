@@ -52,10 +52,10 @@ The below table identifies the values for `debitNetworkId`.
 | Value | Description |
 |---------|----------|
 | `pinlessPOS` | PAVD FISERV |
-| `SHAZAM` | 01 | SHAZAM|
-| `NYCE` | 02 | NYCE|
-| `PULSE` | 03 | Pulse  |
-| `STAR_WEST` | 05 | STAR_WEST |
+| `SHAZAM` | 01 | US based interbank network. |
+| `NYCE` | 02 | Debit payment services provider. |
+| `PULSE` | 03 | US based electronic funds transfer. |
+| `STAR_WEST` | 05 | Star West payment network. (Mortgage/Wealth Management?) |
 | `STAR_WEST` | 07 | STAR_WEST|
 | `JETS`| 11 | JETS |
 | `INFOLINKS` | 12 | INFOLINKS |
@@ -78,14 +78,14 @@ The below table identifies the values for `debitNetworkId`.
 | `AFFN_DIRECT` | 35 | AFFN_DIRECT | 
 | `CU24_DIRECT` | 36| CU24-DIRECT |
 | `EBT_TEAM_OF_TEXAS` | 37 | TEAM OF TEXAS EBT Card  |
-| `EBT_JPCHASE`| 39 | EBT JPCHASE | 
+| `EBT_JPCHASE`| 39 | JPCHASE EBT  | 
 | `SVS`| 39 | SVS |
 | `EXXON`| 42 | EXXON |
 | `BASE_24/INTERAC`| 43 | BASE 24/INTERAC | 
 | `CU24_FIDELITY | 46 | CU24-FIDELITY | 
-| EBT_EFUNDS`| 47 | EBT EFUNDS | 
+| EBT_EFUNDS`| 47 | EFUNDS EBT | 
 | `AFFN_FIDELITY`| 48 | AFFN FIDELITY | 
-| `EBT_NORTHRUP_GRUMMAN` | 49 | EBT NORTHRUP GRUMMAN | 
+| `EBT_NORTHRUP_GRUMMAN` | 49 | NORTHRUP GRUMMAN EBT  | 
 | `CU24_FISERV`| 51 | CU24-FISERV | 
 | `AFFN_FISERV`| 52 | AFFN-FISERV | 
 | `STAR_EAST_FISERV`| 56 | STAR-EAST FISERV | 
