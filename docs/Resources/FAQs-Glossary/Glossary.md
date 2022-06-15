@@ -255,6 +255,9 @@ An estimated authorization occurs when the merchant does not have the total amou
 ## Electronic Benefits Transfer
 Electronic Benefits Transfer (EBT) is a payment card used at the point of sale to access a government account for Food Stamps or Cash Benefits.
 
+## Electronic Funds Transfer
+Electronic Funds Transfer (EFT) is the electronic transfer of money from one bank account to another, using an ATM, direct deposit, debit or credit card, paper check, wire transfers or bill payments.
+
 ## Expiration Date
 The date embossed on the card beyond which the card is not valid to be used. Generally, mentions the Month and Year that the card expires.
 
