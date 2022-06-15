@@ -20,8 +20,8 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | [BIN lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) with `cardDetails` are available from account information lookup and tokens requests | Feature | Cert |
 | Transaction support for Canada credit (Visa, Mastercard) for postal code and currency | Update | Cert |
 | [Reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) support added for cancels and inquiry requests | Feature | Cert |
-| [Cashback](?path=https://github.com/Fiserv/Commerce-Hub/blob/develop/docs/Resources/Master-Data/Amount-Components.md) supported for debit and Discover credit cards | Feature | Cert |
 | [Encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) transaction support | Feature | Cert |
+| [Cashback](?path=docs/Resources/Master-Data/Amount-Components.md) supported for PIN debit and Discover cards | Feature | Cert |
 
 ---
 
