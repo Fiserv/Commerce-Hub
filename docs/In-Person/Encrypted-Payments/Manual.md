@@ -9,9 +9,33 @@ Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FA
 
 A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
 
+### Encryption Type
+
+#### Ingenico
+Ingenico uses FPE _(Format Preserving Encryption)_ based of TDES/DUKPT encryption. The encrypted data looks exactly like the clear data, except the digits are scrambled. An Ingenico terminal using OnGuard encryption, will create an encrypted string of concatenated mock Track 2 data composed of the PAN, Expiration Date and CVV.
+
+<!-- theme: example -->
+> M5482652331427157=3402583
+>
+> In the example, M indicates Manual Data, 5482652331427157 is the PAN, 3402 is the expiration date (YYMM), and 583 is the CCV Data
+
+#### 3DES
+In 3DES the string to be encrypted consists of concatenated dummy Track 1 and Track 2 data with Start and End Sentinels. The dummy tracks are constructed from the manually-entered PAN, expiration date and CCV Data which are all required when using TDES encryption in manual entry mode.
+
+<!-- theme: example -->
+> %M5444009999222205^MANUALLY/ENTERED^12120000001234000000?; 5444009999222205=12120000001234000?
+>
+> In the example, 5444009999222205 is the PAN, 1212 is the expiration date (YYMM), and 1234 is the CCV Data. There will always be six 0’s between the expiration date and the CCV Data. There will always be six 0’s after the CCV Data in Track 1, and three 0’s after the CCV Data in Track 2.
+
+#### RSA
+The RSA data block contains the Terminal ID or Merchant ID _(right justified, lead zero padding to 8)_; followed by data from Encryption Target _(PAN, and optionally the Card Expiration Date, CVV Data, AVS Billing Postal Code, or the AVS Billing Address, Track1, Track2)_.
+
+<!-- theme: example -->
+> =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA== |
+
 ---
 
-### Minimum Requirements
+## Minimum Requirements
 
 <!-- theme: info -->
 > Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
@@ -67,7 +91,7 @@ JSON string format for PaymentCard:
 
 ---
 
-### Charges Payload Example
+## Payload Example
 
 <!--
 type: tab
