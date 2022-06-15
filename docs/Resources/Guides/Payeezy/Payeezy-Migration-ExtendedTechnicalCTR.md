@@ -9,8 +9,11 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 
 Commerce Hub will not be providing a single CTR element in the API response.  The purpose of this page is to provide developers with the element equivalent list in Commerce Hub in order to recreate the CTR if neccessary.
 
-![API Response CTR Example](?path=docs/Resources/Guides/Payeezy/Customer_Transaction_Record_pic_example.png "API Response CTR Example")
+**Payeezy CTR Example:**
 
+![API Response CTR Example](Customer_Transaction_Record_pic_example.png)
+
+### CTR Creation from Commerce Hub Elements
 Click [here](?path=/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel.
 
 | Payeezy Customer Transaction Record (CTR)| Commerce Hub Elements | 
@@ -22,7 +25,7 @@ Click [here](?path=/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Cr
 |United States| paymentReceipt.merchantCountry|
 |TYPE: Purchase | TYPE: + <br> if charges endpoint and transactionDetails.captureFlag = true, then "Purchase" <br> if charges endpoint and transactionDetails.captureFlag = false, then "Pre - Authorization" <br> if cancel endpoint  then "Void" <br> if refund endpoint  then "Refund" |
 |ACCT: Visa                    $ 5.00 USD| ACCT: + cardDetails.brand + $ + paymentReceipt.approvedAmount.total + paymentReceipt.approvedAmount.currency |
-|<FEE TAG>:                    $ 2.00 USD | <FEE TAG>: + $ + AmountComponents.convenienceFee + paymentReceipt.approvedAmount.currency |
+|FEE NAME:                    $ 2.00 USD | FEE NAME: + $ + AmountComponents.convenienceFee + paymentReceipt.approvedAmount.currency |
 |TOTAL:                        $ 7.00 USD | TOTAL: + $ + (paymentReceipt.approvedAmount.total + AmountComponents.convenienceFee) + paymentReceipt.approvedAmount.currency |
 |CARDHOLDER NAME : Joe Public | CARDHOLDER NAME: source.card.nameOnCard |
 |CARD NUMBER     : ############1111 | CARD NUMBER: + <br> if cardDetails.brand = "Amex" then ########### + source.card.last4 <br> else ############ + source.card.last4|
