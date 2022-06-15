@@ -476,5 +476,6 @@ type: tab
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---
