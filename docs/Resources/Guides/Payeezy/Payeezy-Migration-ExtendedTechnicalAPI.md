@@ -1,14 +1,15 @@
 ---
 tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 ---
-# API Spec Mapping
+
+# API Element Mapping
 
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-The prurpose of this page is to give developers an API spec mapping between Payeezy and Commerce Hub elements.  It includes value transformation rules where applicable.  _It does NOT contain all Payyezy API request and response elements; only those that are currently supported in Commerce Hub.  As new features and functionality are released in Commerce Hub, these documents will be updated._  
+The prurpose of this page is to give developers an API element mapping between Payeezy and Commerce Hub elements.  It includes value transformation rules where applicable.  _It does NOT contain all Payyezy API request and response elements; only those that are currently supported in Commerce Hub.  As new features and functionality are released in Commerce Hub, these documents will be updated._  
 
-Clicking on the links below will download the documents to the local machine.
+Documents can be dowloaded by clicking on the links below.
 
 ---
 
