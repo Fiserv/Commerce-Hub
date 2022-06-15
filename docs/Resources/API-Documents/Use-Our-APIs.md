@@ -1,5 +1,5 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, Request Header, Request Body, API, Header, Request Body, Environments]
+tags: [Card Not Present, Card Present, Request Header, Request Body, Header, Environments]
 ---
 
 # Constructing a RESTful API Request

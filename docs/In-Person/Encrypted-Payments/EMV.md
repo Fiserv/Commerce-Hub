@@ -76,7 +76,7 @@ JSON string format for PaymentEMV:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -328,7 +328,7 @@ JSON string format for PaymentEMV:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
