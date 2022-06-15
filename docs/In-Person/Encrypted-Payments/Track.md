@@ -78,7 +78,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -295,7 +295,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
