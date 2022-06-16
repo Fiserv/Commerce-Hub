@@ -21,11 +21,15 @@ If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are tr
 
 [Payeezy Gateway Direct API Element Level Mapping to Commerce Hub](?path=/docs/Resources/Guides/Payeezy/Payeezy_Gateway_Direct_Element_Mapping.xlsx)
 
+_Last Updated: June 15, 2022_
+
 ### Developer API
 
 If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
 
 [Developer API Element Level Mapping to Commerce Hub](?path=/docs/Resources/Guides/Payeezy/Payeezy_Developer_API_Element_Mapping.xlsx)
+
+_Last Updated: June 15, 2022_
 
 ---
 
