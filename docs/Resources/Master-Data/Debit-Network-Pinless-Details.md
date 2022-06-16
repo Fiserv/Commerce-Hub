@@ -83,8 +83,8 @@ The below table identifies the values for `debitNetworkId`.
 | `SVS`| Provides support to clients to process over gift card transactions. |
 | `EXXON`| Exxon payment network. |
 | `BASE_24/INTERAC`| Integrated e-payment processing engine that provides application software to acquire and authenticate, route, switch and authorize transactions, regardless of the channel in which they originate.  | 
-| `CU24_FIDELITY | Credit Union 24 payment network for Fidelity. | 
-| EBT_EFUNDS`| EFUNDS EBT | 
+| `CU24_FIDELITY` | Credit Union 24 payment network for Fidelity. | 
+| `EBT_EFUNDS`| EFUNDS EBT | 
 | `AFFN_FIDELITY`| Provide U.S. military personnel (active, reserve, dependents and retired) with access to their funds through ATM and point-of-sale (POS) terminals at or near U.S. military bases worldwide. | 
 | `EBT_NORTHRUP_GRUMMAN` | NORTHRUP GRUMMAN EBT  | 
 | `CU24_FISERV`| Credit Union 24 payment network. | 
