@@ -59,10 +59,10 @@ The below table identifies the values for `debitNetworkId`.
 | `STAR_EAST` | Star East payment network. |
 | `JETS`| Jets payment solutions. |
 | `INFOLINKS` | Infolinks payment card. |
-| `CARLFS`| Interbank electronic funds transfer (EFT) network in the United States. NO INFO |
+| `CARLFS`| Interbank electronic funds transfer (EFT) network in the United States. **NO INFO** |
 | `STAR_NE` | Multiple payment channel network.  |
 | `PAVD` | Transactions that are Visa Debit transactions and are part of the existing Visa network functionality. |
-| `CNB_ENID` | Central National Bank of ENID |
+| `CNB_ENID` | Central National Bank of ENID. |
 | `ATH-SCOTIA BANK` | Bill payment processor. |
 | `ATH_DIRECT` | Direct Debit processing system for recurring payments. |
 | `INTERLINK` | Visa's electronic funds transfer card. |
@@ -70,8 +70,8 @@ The below table identifies the values for `debitNetworkId`.
 | `UNIONPAY`| Provider of bank card services and a major card scheme in mainland China. | 
 | `MAESTRO_DIRECT`| Brand of debit cards and prepaid cards owned by Mastercard. |
 | `MCX` | Payment Processing platform. |
-| `EBT_SOLUTRAN` | SOLUTRAN EBT |
-| `EBT_ACS` | ACS EBT |
+| `EBT_SOLUTRAN` | SOLUTRAN EBT. |
+| `EBT_ACS` | ACS EBT. |
 | `MAESTRO_STAR_WEST` | Brand of debit cards and prepaid cards owned by Mastercard. |
 | `STAR_WEST_OPTION`| STAR WEST OPTION | 
 | `JEANIE_STAR_WEST`| Online-shared ATM network. |
@@ -86,7 +86,7 @@ The below table identifies the values for `debitNetworkId`.
 | `CU24_FIDELITY` | Credit Union 24 payment network for Fidelity. | 
 | `EBT_EFUNDS`| EFUNDS EBT | 
 | `AFFN_FIDELITY`| Provide U.S. military personnel (active, reserve, dependents and retired) with access to their funds through ATM and point-of-sale (POS) terminals at or near U.S. military bases worldwide. | 
-| `EBT_NORTHRUP_GRUMMAN` | NORTHRUP GRUMMAN EBT  | 
+| `EBT_NORTHRUP_GRUMMAN` | NORTHRUP GRUMMAN EBT.  | 
 | `CU24_FISERV`| Credit Union 24 payment network. | 
 | `AFFN_FISERV`| Provide U.S. military personnel (active, reserve, dependents and retired) with access to their funds through ATM and point-of-sale (POS) terminals at or near U.S. military bases worldwide. | 
 | `STAR_EAST_FISERV`| Full-service debit payments network that gives cardholders anytime, anywhere access to cash, purchases and payments options through any channel. | 
@@ -94,9 +94,9 @@ The below table identifies the values for `debitNetworkId`.
 | `NYCE_FISERV`| Interbank network connecting the ATMs of various financial institutions in the United States and Canada. | 
 | `STAR_WEST_FISERV`| Full-service debit payments network that gives cardholders anytime, anywhere access to cash, purchases and payments options through any channel for the West region. | 
 | `STAR_NE_FISERV`| Full-service debit payments network that gives cardholders anytime, anywhere access to cash, purchases and payments options through any channel for the NE region. | 
-| `MAESTRO_FISERVT` | MAESTRO FISERV | 
-| `INTERLINK_FISERV` | INTERLINK FISERV | 
-| `EBT_FISERV` | FISERV EBT payment network.  | 
+| `MAESTRO_FISERVT` | MAESTRO FISERV. | 
+| `INTERLINK_FISERV` | INTERLINK FISERV. | 
+| `EBT_FISERV` | FISERV EBT payment network. | 
 | `ACCEL_FISERV` | Payment newtwork allows account holders to access funds in a multitude of ways, make in-store and online purchases with ease, and send and receive money in real-time. | 
 | `OPTION_FISERV` | OPTION-FISERV | 
   
