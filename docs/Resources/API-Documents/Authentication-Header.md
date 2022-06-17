@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, hash, header, authentication]
+tags: [Commerce Hub, Card Not Present, Card Present, Hash, Header, Authentication]
 ---
 
 # Generate Authentication Header
@@ -19,14 +19,14 @@ The message data for the signature is the following items concatenated: `Api-Key
 
 ---
 
-## Code Examples
+## Code Example
 
 <!--
 type: tab
-title: Javascript
+titles: Javascript
 -->
 
-##### Example of a Javascript Request.
+##### Generate the authentication required for use with our payments API.
 
 <!-- theme: example -->
 > Authorization: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
@@ -91,6 +91,7 @@ function b64encode (input) {
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
-- [Use Our API](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+- [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 
 ---
