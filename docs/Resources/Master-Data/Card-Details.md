@@ -208,7 +208,7 @@ The below table identifies the values for `debitNetworkId`.
 | `EBT_SOLUTRAN` | SOLUTRAN EBT. |
 | `EBT_ACS` | ACS EBT. |
 | `MAESTRO_STAR_WEST` | Brand of debit cards and prepaid cards owned by Mastercard. |
-| `STAR_WEST_OPTION`| STAR WEST OPTION | 
+| `STAR_WEST_OPTION`| STAR WEST OPTION. | 
 | `JEANIE_STAR_WEST`| Online-shared ATM network. |
 | `JEANIE_DIRECT` | Direct payment network. |
 | `AFFN_DIRECT` | Provide U.S. military personnel (active, reserve, dependents and retired) with access to their funds through ATM and point-of-sale (POS) terminals at or near U.S. military bases worldwide. | 
@@ -219,7 +219,7 @@ The below table identifies the values for `debitNetworkId`.
 | `EXXON`| Exxon payment network. |
 | `BASE_24/INTERAC`| Integrated e-payment processing engine that provides application software to acquire and authenticate, route, switch and authorize transactions, regardless of the channel in which they originate.  | 
 | `CU24_FIDELITY` | Credit Union 24 payment network for Fidelity. | 
-| `EBT_EFUNDS`| EFUNDS EBT | 
+| `EBT_EFUNDS`| EFUNDS EBT. | 
 | `AFFN_FIDELITY`| Provide U.S. military personnel (active, reserve, dependents and retired) with access to their funds through ATM and point-of-sale (POS) terminals at or near U.S. military bases worldwide. | 
 | `EBT_NORTHRUP_GRUMMAN` | NORTHRUP GRUMMAN EBT.  | 
 | `CU24_FISERV`| Credit Union 24 payment network. | 
@@ -233,7 +233,7 @@ The below table identifies the values for `debitNetworkId`.
 | `INTERLINK_FISERV` | INTERLINK FISERV. | 
 | `EBT_FISERV` | FISERV EBT payment network. | 
 | `ACCEL_FISERV` | Payment newtwork allows account holders to access funds in a multitude of ways, make in-store and online purchases with ease, and send and receive money in real-time. | 
-| `OPTION_FISERV` | OPTION-FISERV | 
+| `OPTION_FISERV` | OPTION-FISERV. | 
   
 ---
 
