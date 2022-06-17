@@ -1,8 +1,8 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, Hash, Header, Authentication]
+tags: [Commerce Hub, Card Not Present, Card Present, HMAC, Header, Authentication]
 ---
 
-# Generate Authentication Header
+# Generate HMAC Authentication
 
 To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [Header](?path=docs/Resources/API-Documents/Use-Our-APIs.md).
 
