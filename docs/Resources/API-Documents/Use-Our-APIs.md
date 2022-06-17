@@ -157,7 +157,7 @@ A standard API call to execute a charge transaction might look like this:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+- [HMAC Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
