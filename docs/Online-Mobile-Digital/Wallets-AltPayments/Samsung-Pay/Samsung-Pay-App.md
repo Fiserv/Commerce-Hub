@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app, online, apple-pay, wallet, mobile]
+tags: [In-App, Online, Samsung Pay, Wallet, Mobile]
 ---
 
 # Samsung Pay: App Integration

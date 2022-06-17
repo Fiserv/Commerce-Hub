@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, declines, enterprise, testing]
+tags: [Declines, Testing]
 ---
 
 # Test Decline Response

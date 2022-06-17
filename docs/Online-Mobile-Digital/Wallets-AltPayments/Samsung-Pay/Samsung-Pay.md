@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, samsung-pay, android, mobile, wallet]
+tags: [Getting Started, Samsung Pay, Android, Mobile, Wallet]
 ---
 
 # Samsung Pay

@@ -1,5 +1,5 @@
 ---
-tags: [carat, enterprise, commerce-hub, error, response, response-codes]
+tags: [Error, Response, Response Codes]
 ---
 
 # Error Response

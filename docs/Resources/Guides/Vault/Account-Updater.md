@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, account-updater, vault]
+tags: [Account Updater, Vault]
 ---
 
 

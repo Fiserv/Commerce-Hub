@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-payment]
+tags: [EMV, In-Person, Card Present, Encrypted Payments]
 ---
 
 # PaymentEMV
@@ -64,7 +64,7 @@ JSON string format for PaymentEMV:
       "encryptionData":{
          "encryptionType": "RSA",
          "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
          "deviceType": "INGENICO",
          "keyId": ""
       }
@@ -76,7 +76,7 @@ JSON string format for PaymentEMV:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -122,16 +122,6 @@ titles: Request, Response
     "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-    },
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "code": "NASHVILLE",
-          "platform": "NORTH",
-          "priority": "PRIMARY"
-        }
-      ]
     }
   }
 }
@@ -225,10 +215,6 @@ type: tab
             "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
          }
       }
-   },
-   "merchantDetails":{
-      "terminalId": "10000002",
-      "merchantId": "100009000000041"
    },
    "additionalDataCommon":{
       
@@ -328,7 +314,7 @@ JSON string format for PaymentEMV:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -379,17 +365,6 @@ titles: Request, Response
    "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-   },
-   "additionalDataCommon":{
-      "directedRouting":{
-         "processors":[
-            {
-               "code": "NASHVILLE",
-               "platform": "NORTH",
-               "priority": "PRIMARY"
-            }
-         ]
-      }
    }
 }
 ```
@@ -496,10 +471,10 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
-- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 

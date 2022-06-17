@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, partial-approval, partial-auth, partial, authorization]
+tags: [Partial Approval, Partial Auth, Partial, Authorization]
 ---
 
 # Partial Authorizations

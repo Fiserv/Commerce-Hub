@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, configuration, user-management, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Configuration, User Management, Card Not Present, Payeezy]
 
 ---
 
@@ -76,4 +76,10 @@ Change log of all updates to a user account is available for review.
 ---
 
 <!-- type: tab-end -->
+
+## See Also
+
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+
+---
 

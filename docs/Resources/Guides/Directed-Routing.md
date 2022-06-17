@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, directed-routing, network, processor]
+tags: [Directed Routing, Network, Processor]
 ---
 
 # Directed Routing

@@ -1,5 +1,5 @@
 ---
-tags: [carat, enterprise, definition, commerce-hub, glossary, faq]
+tags: [Definition, Commerce Hub, Glossary, FAQ]
 ---
 
 # Glossary
@@ -180,7 +180,7 @@ Identifies transactions where the billing occurred after the merchandise was del
 Identifies a bill pay transaction where a recurring or incremental payment is delayed and charged at a future date.
 
 ## Derived Unique Key Per Transaction
-Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction. See also [Key Management](#key-management).
+Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction. DUKPT system of derived keys is used in a point-of-sale (POS) environment where the merchant can accept transactions from a large number of unique [PIN entry](?path=docs/Resources/Master-Data/Pin-Block.md) devices. This technique involves the use of a non-secret key serial number and a secret base derivation key. On each transaction, the PIN pad derives a unique key based on a previous key and the key serial number. Terminal encrypts the PIN with this derived key, and sends both the encrypted PIN and the key serial number to the Host. See also [Key Management](#key-management).
 
 ## Doing Business As
 Doing business as (DBA) refers to the specific name and location of the merchant's store where a transaction is made.
@@ -255,6 +255,9 @@ An estimated authorization occurs when the merchant does not have the total amou
 ## Electronic Benefits Transfer
 Electronic Benefits Transfer (EBT) is a payment card used at the point of sale to access a government account for Food Stamps or Cash Benefits.
 
+## Electronic Funds Transfer
+Electronic Funds Transfer (EFT) is the electronic transfer of money from one bank account to another, using an ATM, direct deposit, debit or credit card, paper check, wire transfers or bill payments.
+
 ## Expiration Date
 The date embossed on the card beyond which the card is not valid to be used. Generally, mentions the Month and Year that the card expires.
 
@@ -322,6 +325,9 @@ A property of an operation that states that clients can make that same call repe
 
 ## Installation Root
 The file system directory where the shopping cart is installed, e.g. /var/www/html/cart or /var/www/html/commerce.
+
+## Interbank Network
+An interbank network, known as ATM consortium or ATM network, is a computer network that allows ATM cards issued by different financial institution to perform transactions through ATMs that belong to another member of the network.
 
 ## Interchange
 The exchange of transaction data between the merchant bank and customer card issuing bank.

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, private-label, payment-sources]
+tags: [Private Label, Payment Sources]
 ---
 
 

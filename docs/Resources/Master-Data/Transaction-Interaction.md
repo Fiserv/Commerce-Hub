@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, transaction-origin-and-entry-modes, transaction-interaction]
+tags: [API Reference, Master Data, Transaction Origin and Entry Modes, Transaction Interaction]
 ---
 
 # Transaction Interaction

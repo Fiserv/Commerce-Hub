@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, visa, american-express, discover, purchase-card, commercial-card, business-card, unit-of-measurement, weight, measurement]
+tags: [Level 2 Card, Level 3 Card, Mastercard, Visa, American Express, Discover, Purchase Card, Commercial Card, Business Card, Unit of Measurement, Weight, Measurement]
 ---
 
 # Unit of Measurement

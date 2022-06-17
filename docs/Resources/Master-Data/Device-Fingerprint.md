@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, device, master-data, device-fingerprint, device-information, data-capture, data-static, data-dynamic]
+tags: [API Reference, Data Capture, Data Dynamic, Data Static, Device, Device Fingerprint, Device Information, Master Data]
 ---
 
 # Device Fingerprint Data

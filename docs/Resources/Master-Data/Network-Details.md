@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, network-details, master-data]
+tags: [API Reference, Network Details, Master Data]
 ---
 
 # Authorization Network Response

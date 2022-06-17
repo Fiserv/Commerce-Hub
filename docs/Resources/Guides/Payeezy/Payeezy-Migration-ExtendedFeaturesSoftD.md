@@ -11,8 +11,6 @@ tags: [carat, commerce-hub,  card-not-present, dynamic-descriptor, Statement-Des
 
 Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub. 
 
-In Payeezy Real-time Payment Manager (RPM), a self-service configuration was available to enable Soft Descriptors in Virtual Terminal (after the North Merchant Master configuration is set). In ClientLine Enterprise (CLX), this is not available [(see Virtual Terminal details)](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md).
-
 ### API Structure
 
 In Payeezy, the 'dba_name' or 'mcc' element was required on the capture request for settlement; In Commerce Hub, 'mcc', 'merchantName', 'customerServiceNumber', 'serviceEntitlement' and 'address' are all required. 
@@ -44,9 +42,15 @@ See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migratio
 
 ---
 
+### Virtual Terminal
+
+In Payeezy Real-time Payment Manager (RPM), a self-service configuration was available to enable the use of Soft Descriptors in Virtual Terminal (after the North Merchant Master configuration is set). In ClientLine Enterprise (CLX), usage of soft descriptors in not availble in Virtual Terminal [(see Virtual Terminal details)](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md).
+
+---
+
 ## See Also
 
-- [Payeezy Merchant Migration Virtual Terminal Information](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md)
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 

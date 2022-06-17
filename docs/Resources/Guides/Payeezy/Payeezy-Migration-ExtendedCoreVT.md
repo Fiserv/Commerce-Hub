@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, virtual-terminal, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Virtual Terminal, Card Not Present, Payeezy]
 
 ---
 
@@ -46,3 +46,10 @@ The Country field is now free form text vs. a drop down.
 
 When processing secondary transactions (Completion/Capture, Void and Refund), the reference fields are editable in Payeezy Virtual Terminal but they are not editable in CLX Virtual Terminal.
 
+---
+
+## See Also
+
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+
+---

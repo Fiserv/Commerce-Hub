@@ -78,7 +78,7 @@ Token number can be viewed in the transaction detail of the Search report in CLX
 
 ## See Also
 
-- [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)

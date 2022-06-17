@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-not-present, payeezy]
+tags: [Carat, Commerce Hub, Enterprise, Transaction Types, API Reference, Card Not Present, Payeezy]
 
 ---
 
@@ -100,10 +100,8 @@ Additionally, the CTR was previously available in multiple languages (EN, FR, ES
 
 ## See Also
 
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
-
-
-
 
 ---
