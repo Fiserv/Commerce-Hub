@@ -19,14 +19,14 @@ The message data for the signature is the following items concatenated: `Api-Key
 
 ---
 
-## Code Examples
+## Code Example
 
 <!--
 type: tab
 titles: Javascript
 -->
 
-##### Example of a Javascript Request.
+##### Generate the authentication required for use with our payments API.
 
 <!-- theme: example -->
 > Authorization: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
