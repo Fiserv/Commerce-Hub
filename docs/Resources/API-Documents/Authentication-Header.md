@@ -1,8 +1,8 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, Hash, Header, Authentication]
+tags: [Commerce Hub, Card Not Present, Card Present, HMAC, Header, Authentication]
 ---
 
-# Generate Authentication Header
+# Generate HMAC Authentication
 
 To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [Header](?path=docs/Resources/API-Documents/Use-Our-APIs.md).
 
@@ -12,21 +12,21 @@ To ensure data integrity, prevent replay attacks, and eliminate stale requests, 
 - **Signature Encoding:** Base64
 - **Signed With:** Developer App Secret Key; provided to merchant when boarded
 
-The message data for the signature is the following items concatenated: `Api-Key`, `Client-Request-Id`, `Timestamp`, `Signature`.
+The message data for the signature is the following items concatenated: `Api-Key`, `Client-Request-Id`, `Timestamp`, `Request-Body`.
 
 <!-- theme: info -->
 >The `Client-Request-Id` is a client generated number that is unique for each request. It is used as nonce and validated against all Client-Request-Ids received by Commerce Hub within a predetermined timeframe *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.
 
 ---
 
-## Code Examples
+## Code Example
 
 <!--
 type: tab
 titles: Javascript
 -->
 
-##### Example of a Javascript Request.
+##### Generate the authentication required for use with our payments API.
 
 <!-- theme: example -->
 > Authorization: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==

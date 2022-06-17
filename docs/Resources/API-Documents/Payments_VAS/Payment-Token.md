@@ -439,5 +439,6 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
 
 ---
