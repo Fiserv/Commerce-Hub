@@ -63,7 +63,7 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 | `Timestamp` | *integer* | N/A | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
 | `Accept-Language` | *string* | N/A | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
 | `Auth-Token-Type`| *string* | N/A | Indicates Authorization type HMAC or AccessToken.|
-| `Authorization` | *string* | N/A | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC or AccessToken. For more information, refer to the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md) article. |
+| `Authorization` | *string* | N/A | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
 | `Message-Digest` | *string* | N/A | Needed only from customer browser or app to the API in Hosted Payment Page requests. |
 
 #### Sample Header
