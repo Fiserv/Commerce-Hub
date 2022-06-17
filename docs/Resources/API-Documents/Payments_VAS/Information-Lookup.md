@@ -4,7 +4,7 @@ tags: [Account Information, Card Details, BIN]
 
 # Account Information Lookup
 
-Account information lookup is used to obtain card information of the cardholder such as issuer country, card function, card brand, and supported features of a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), these [card details](?path=docs/Resources/Master-Data/Card-Details.md) are returned in the response.
+Account information lookup is used to obtain the [card details](?path=docs/Resources/Master-Data/Card-Details.md) of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 - CPS (card processing requirements) - based on things like brand, function, type (commercial, non-corporate)
 - Directed Routing - sending the request to a network based on card brand, function or type
