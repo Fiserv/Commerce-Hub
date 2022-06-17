@@ -4,7 +4,7 @@ tags: [API Reference, Card Details, Debit, Master Data]
 
 # Card Details
 
-Card details contains elements from the card or token's BIN details. The information can be obtained by performing an [account information lookup request].
+Card details contains elements from the card or token's BIN details. The information can be obtained by performing an [account information lookup request](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md).
 
 <!-- theme: info -->
 > Card details can be returned as part of a tokens or charges request if enabled in Marketplace.
