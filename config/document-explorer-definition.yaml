@@ -149,7 +149,7 @@
         link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Payments VAS
       sections:
-      - title: Account Verification
+      - title: Verification
         link: docs/Resources/API-Documents/Payments_VAS/Verification.md
       - title: Information Lookup
         link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
