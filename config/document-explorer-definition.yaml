@@ -123,8 +123,6 @@
     sections:
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Authentication Header
-      link: docs/Resources/API-Documents/Authentication-Header.md
     - title: Payments
       sections:
       - title: Charges
