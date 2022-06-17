@@ -4,7 +4,7 @@ tags: [API Reference, Card Present, Master Data, Pin Block]
 
 # PIN Key Management
 
-A PIN entered at the point of sale must be encrypted before it is sent in the payload to Commerce Hub. Commerce Hub currently supports [DUKPT (Derived Unique Key Per Transaction)](?path=docs/Resources/FAQs-Glossary/Glossary.md#derived-unique-key-per-transaction) methodology. To comply with debit network mandates, Triple DES (TDES) DUKPT with double length keys must be supported.
+A PIN entered at the point of sale must be encrypted before it is sent in the payload to Commerce Hub. Commerce Hub currently supports [DUKPT (Derived Unique Key Per Transaction)](?path=docs/Resources/FAQs-Glossary/Glossary.md#derived-unique-key-per-transaction) methodology. To comply with debit network mandates, [Triple DES (TDES)](?path=docs/Resources/FAQs-Glossary/Glossary.md#tripple-des) DUKPT with double length keys must be supported.
 
 <!-- theme: info -->
 > Please contact your account representative for more information on the setup and provisioning of DUKPT keys in your environment.
