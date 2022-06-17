@@ -233,7 +233,7 @@ The below table identifies the values for `debitNetworkId`.
 | `INTERLINK_FISERV` | INTERLINK FISERV. | 
 | `EBT_FISERV` | FISERV EBT payment network. | 
 | `ACCEL_FISERV` | Payment newtwork allows account holders to access funds in a multitude of ways, make in-store and online purchases with ease, and send and receive money in real-time. | 
-| `OPTION_FISERV` | OPTION-FISERV. | 
+| `OPTION_FISERV` | Fiserv Network. | 
   
 ---
 
