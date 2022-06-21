@@ -47,7 +47,7 @@ The below table identifies the required parameters in the `card` object.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information`
+>**POST** `/payments-vas/v1/accounts/information-lookup`
 
 ---
 
@@ -74,7 +74,7 @@ titles: Request, Response
 
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 
 <!--
 type: tab
@@ -158,7 +158,7 @@ titles: source
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer to [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for more details. |
-|`tokenData`| *string* | 19 | Token created for Card. |
+|`tokenData`| *string* | 19 | Token created for a payment type. |
 
 <!-- type: tab-end -->
 
@@ -166,7 +166,7 @@ titles: source
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information`
+>**POST** `/payments-vas/v1/accounts/information-lookup`
 
 ---
 
@@ -187,6 +187,8 @@ titles: Request, Response
    }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 
 <!--
 type: tab
@@ -259,7 +261,7 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 - [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
