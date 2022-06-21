@@ -9,6 +9,9 @@ Account information lookup is used to obtain the [card details](?path=docs/Resou
 - CPS (card processing requirements) - based on things like brand, function, type (commercial, non-corporate)
 - Directed Routing - sending the request to a network based on card brand, function or type
 
+<!-- theme: info -->
+> Card details can be returned as part of a tokens or charges request if enabled in Marketplace.
+
 ---
 
 ## Information Lookup Using PaymentCard
