@@ -9,12 +9,12 @@ Commerce Hub allows E-commerce merchants to manage the design and form of their 
 
 Allows a merchant an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-#### Endpoints
+#### Request Types
 
-- security/credentials: responsible for creating a payment session.
-- card-capture: responsible for capturing encrypted card details.
-- charges: responsible for decrypting captured card details and then charging based on a payment session.
-- tokens: responsible for decrypting captured card details and then generating a token based on a payment session.
+- **credentials:** responsible for creating a payment session.
+- **card-capture:** responsible for capturing encrypted card details.
+- **charges:** responsible for decrypting captured card details and then charging based on a payment session.
+- **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
 
 ---
 
