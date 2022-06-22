@@ -9,6 +9,8 @@ Commerce Hub allows E-commerce merchants to manage the design and form of their 
 
 Allows a merchant an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
+#### Endpoints
+
 - security/credentials: responsible for creating a payment session.
 - card-capture: responsible for capturing encrypted card details.
 - charges: responsible for decrypting captured card details and then charging based on a payment session.
@@ -29,7 +31,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 ---
 
-
 # Secure Data Capture API Only
 
 Description........
@@ -38,18 +39,17 @@ Description........
 
 A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`encryption block`](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
 
+---
 
 ## Step 2: Encryption
 
-The following code snippets are required to encrypt the payment card information using the multi-use public key.
+The card data is encypted using Base64 RSA Multi-Use Public Key...... once encrypted you will the encryptionblock and encyptionblockfields used in the card capture request.
 
-
-
-
+---
 
 ## Step 3: Submit Card Capture Request
 
-Description.........
+the encrypted data is submitted to Commerce Hub to store the card data.....
 
 #### Minimum Requirements
 
@@ -111,7 +111,6 @@ JSON string format for PaymentCard:
 
 ---
 
-
 #### Card Capture Payload Example
 
 <!--
@@ -140,18 +139,20 @@ titles: Request, Response
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/card-capture)
 
 <!--
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+##### Example of a card capture (204: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
+
+since we only send a HTTP 204 back, verify the merchant will not recieve any gatewayresponse elements, if no JSON is returned then update 148 example to state Commerce Hub will return an HTTP 204: Success on a successful card capture response.
 
 ```
 
@@ -161,6 +162,9 @@ type: tab
 
 ## Step 4: Submit Request 
 
+copy the request from JS or iFrame for charges/tokens and response.
+
+---
 
 ## See Also
 - [Secure Data Capture]
