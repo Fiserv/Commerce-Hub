@@ -19,7 +19,6 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | ----- | ----- | ----- |
 | New [cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) endpoint to support referenced transaction identifiers | Feature | Cert |
 | [Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) updated to support referenced transaction identifiers | Update | Cert |
-
 | [BIN lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) with `cardDetails` are available from account information lookup and tokens requests | Feature | Cert |
 | Transaction support for Canada credit (Visa, Mastercard) for postal code and currency | Update | Cert |
 | [Reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) support added for cancels and inquiry requests | Feature | Cert |
