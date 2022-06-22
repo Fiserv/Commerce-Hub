@@ -18,7 +18,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Details | Type | Environment | 
 | ----- | ----- | ----- |
 | New [cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) endpoint to support referenced transaction identifiers | Feature | Cert |
-| [Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) updated to support referenced transaction identifiers | Update | Cert |
+| [Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) updated to support referenced transaction identifiers and to require `merchantId` | Update | Cert |
 | [BIN lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) with `cardDetails` are available from account information lookup and tokens requests | Feature | Cert |
 | Transaction support for Canada credit (Visa, Mastercard) for postal code and currency | Update | Cert |
 | [Reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) support added for cancels and inquiry requests | Feature | Cert |
@@ -58,8 +58,6 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | [Sandbox account creation](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) enabled for Stage Developer Studio environment | Feature | Cert |
 | Ability to configure account settings and features added to marketplace. | Feature | ? |
 | [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) added to support integration for SAQ-A and SAQ A-EP clients. | Feature | Cert |
-
-
 
 ---
 
