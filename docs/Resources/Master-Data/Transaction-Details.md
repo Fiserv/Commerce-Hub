@@ -51,7 +51,7 @@ JSON string format for `transactionDetails`:
 ```json
 {
    "transactionDetails":{
-      "approvalCode": "string",
+      "approvalCode": "123456",
       "primaryTransactionId": "838916029301",
       "primaryOrderId": "123456789",
       "clientRequestId": "13267786514316843133216746",

@@ -1,52 +1,57 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, online, card-not-present, payeezy]
+tags: [carat, commerce-hub,  card-not-present, dynamic-descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor, payeezy]
 
 ---
 
 # Soft Descriptors
 
 <!-- theme: danger -->
-> The following documentation is for **Payeezy** migration clients only. See [Fiserv Developer Studio for Merchants](https://developer.fiserv.com/merchants) for Commerce Hub integration options.
+>  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-<!--type: tab
-titles: API, Configuration, Virtual Terminal, Reporting
--->
+Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub. 
 
-<One element (mvv_maid) is not available in Commerce Hub, no functional impact. removed because feature is not used>
+### API Structure
 
-Commerce Hub allows Soft Descriptors for all merchants, in Payeezy the North Merchant Master configuration was used to determine if the elements would be accepted in the API.
+In Payeezy, the 'dba_name' or 'mcc' element was required on the capture request for settlement; In Commerce Hub, 'mcc', 'merchantName', 'customerServiceNumber', 'serviceEntitlement' and 'address' are all required. 
 
-<!--
-type: tab
--->
+The mvv_maid element is not available in Commerce Hub.
 
-To enable Soft Descriptors if Virtual Terminal, a self-service configuration was available in Payeezy (after the North Merchant Master configuration is set).  In Commerce Hub this is not available (see Virtual Terminal details).
+Sample JSON string format for `dynamicDescriptor`:
 
-<!--
-type: tab
--->
+```json
+{
+ "dynamicDescriptors":{
+      "mcc":"4457",
+      "merchantName":"Mywebsite.com",
+      "customerServiceNumber":"1231231234",
+      "serviceEntitlement":"67893827513",
+      "address":{
+         "street":"Main Street",
+         "houseNumberOrName":"123",
+         "city":"Main Street",
+         "stateOrProvince":"GA",
+         "postalCode":"30303",
+         "country":"US"
+      }
+   }
+}
+```
 
-In Payeezy, soft descriptors could be entered in Virtual Terminal for transactions where the configuration was enabled; in Commerce Hub / Client Line Enterprise Virtual Terminal Soft Descriptors cannot be entered.
+See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) documentation for detailed information on translating Payeezy Soft Descriptor elements to Commerce Hub Dynamic Descriptor elements.
 
-<!--
-type: tab
--->
+---
 
-No Change
+### Virtual Terminal
 
-<!-- type: tab-end -->
+In Payeezy Real-time Payment Manager (RPM), a self-service configuration was available to enable the use of Soft Descriptors in Virtual Terminal (after the North Merchant Master configuration is set). In ClientLine Enterprise (CLX), usage of soft descriptors in not availble in Virtual Terminal [(see Virtual Terminal details)](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreVT.md).
 
 ---
 
 ## See Also
 
-- [Soft Descriptors](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Overview](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Solution Architecture](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CH Dev Studio](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [CLX Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-- [Marketplace Training / How To](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+- [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
+- [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
 ---

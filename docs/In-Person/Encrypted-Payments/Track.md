@@ -78,7 +78,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -295,7 +295,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -343,17 +343,6 @@ titles: Request, Response
    "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-   },
-   "additionalDataCommon":{
-      "directedRouting":{
-         "processors":[
-            {
-               "code": "NASHVILLE",
-               "platform": "NORTH",
-               "priority": "PRIMARY"
-            }
-         ]
-      }
    }
 }
 ```

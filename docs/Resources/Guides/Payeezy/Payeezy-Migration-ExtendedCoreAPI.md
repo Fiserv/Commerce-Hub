@@ -78,6 +78,8 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 
 *Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
+---
+
 ## Request and Response - Formats and Elements
 
 In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
@@ -98,10 +100,8 @@ Additionally, the CTR was previously available in multiple languages (EN, FR, ES
 
 ## See Also
 
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
-
-
-
 
 ---
