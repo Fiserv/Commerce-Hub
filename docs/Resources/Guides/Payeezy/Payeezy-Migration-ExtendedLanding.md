@@ -60,8 +60,8 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesFrau
 -->
 
 <!-- type: card
-title: Quick Key
-description: Differences in Quick Key functionality
+title: Quick Keys
+description: Differences in Quick Keys functionality
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
 -->
 
