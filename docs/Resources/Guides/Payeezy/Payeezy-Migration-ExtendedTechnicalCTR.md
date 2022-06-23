@@ -14,7 +14,7 @@ Commerce Hub will not be providing a single CTR element in the API response.  Th
 ![API Response CTR Example](../../../../assets/images/Customer_Transaction_Record_pic_example.png)
 
 ### CTR Creation from Commerce Hub Elements
-Click [here](?path=/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
+Click [here](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Migration/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
 
 | Payeezy Customer Transaction Record (CTR)| Commerce Hub Elements | 
 | :-------------------------------------- | :------------- |
