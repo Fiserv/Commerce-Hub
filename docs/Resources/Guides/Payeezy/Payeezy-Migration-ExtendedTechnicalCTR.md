@@ -11,7 +11,11 @@ Commerce Hub will not be providing a single CTR element in the API response.  Th
 
 **Payeezy CTR Example:**
 
-![API Response CTR Example](Customer_Transaction_Record_pic_example.png)
+![API Response CTR Example](?path=../../../../assets/images/Customer_Transaction_Record_pic_example.png)
+
+blah blah blah
+
+![API Response CTR Example](../../../../assets/images/Customer_Transaction_Record_pic_example.png)
 
 ### CTR Creation from Commerce Hub Elements
 Click [here](?path=/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
