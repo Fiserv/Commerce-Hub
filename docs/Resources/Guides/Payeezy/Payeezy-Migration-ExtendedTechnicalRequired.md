@@ -11,7 +11,7 @@ The prurpose of this page is to give developers a list of required API elements 
 
 Click [here](?path=/docs/Resources/Guides/Payeezy/Commerce_Hub_Required_API_Elements.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
 
-| Transaction Type | without Token | with Token|
+| Transaction Type | without Transarmor Token | with Transarmor Token|
 | :-------------------------------------- | :------------- |:----------------|
 |**Purchase** | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.sourceType <br> transactionDetails.captureFlag  <br> <br> <br> <br> <br> | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.card.expirationMonth <br> source.card.expirationYear <br>  source.sourceType <br> source.tokenData <br> source.tokenSource <br> transactionDetails.captureFlag |
 |**Pre-Authorization** | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.sourceType <br> transactionDetails.captureFlag  <br> <br> <br> <br> <br> | amount.currency <br> Amount.total <br> merchantDetails.merchantId <br> merchantDetails.terminalId <br> source.card.expirationMonth <br> source.card.expirationYear <br>  source.sourceType <br> source.tokenData <br> source.tokenSource <br> transactionDetails.captureFlag |
