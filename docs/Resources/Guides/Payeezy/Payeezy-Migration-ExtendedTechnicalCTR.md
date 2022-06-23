@@ -11,10 +11,6 @@ Commerce Hub will not be providing a single CTR element in the API response.  Th
 
 **Payeezy CTR Example:**
 
-![API Response CTR Example](?path=../../../../assets/images/Customer_Transaction_Record_pic_example.png)
-
-blah blah blah
-
 ![API Response CTR Example](../../../../assets/images/Customer_Transaction_Record_pic_example.png)
 
 ### CTR Creation from Commerce Hub Elements
