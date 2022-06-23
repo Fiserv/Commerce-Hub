@@ -77,7 +77,9 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
 | `encryptionBlockFields` | *string* | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
+| `deviceType` | *string* | 256 | &#10004; | Device type need to be sent for TDES and AES encrypted track data |
 | `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
+| `encryptedKey` | *string* | 2000 | &#10004; | Merchant or device defined encryption key required for decryption of encrypted <code>cardData</code>. Normally used in card not present integrations e.g. Mobile device. |
 
 
 <!--
@@ -94,8 +96,10 @@ JSON string format for PaymentCard:
          "encryptionType": "RSA",
          "encryptionTarget": "MANUAL",
          "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
+         "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
          "deviceType": "INGENICO",
-         "keyId": "88000000023"
+         "keyId": "88000000023",
+         "encryptedKey": "NdCmVw5"
       }
    }
 }
