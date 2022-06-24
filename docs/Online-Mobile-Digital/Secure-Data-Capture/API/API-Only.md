@@ -168,7 +168,210 @@ since we only send a HTTP 204 back, verify the merchant will not recieve any gat
 
 copy the request from JS or iFrame for charges/tokens and response.
 
+Submit a charge or tokenization request after a successful response which identifies the card data is captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request. 
+
+<!-- theme: info -->
+>If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
+
+
+### Endpoint
+<!-- theme: success -->
+>**POST** `/payments/v1/charges`
+
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/tokens`
+
+
+### Payload Example
+
+<!-- theme: info -->
+> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!--
+type: tab
+titles: Request, Charges Response, Tokens Response
+-->
+
+##### Example of a charge payload request.
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentSession",
+    "sessionId": "df8c33d2-af27-4a3a-b7a0-61d4edf09cad"
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "accountVerification": false,
+    "merchantTransactionId": "RKTransID-768086381518"
+  },
+  "merchantDetails": {
+    "merchantId": "123456789012345",
+    "terminalId": "123456"
+  }
+}
+```
+
+
+<!--
+type: tab
+-->
+
+##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+
+{
+   "gatewayResponse":{
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails":{
+         "transactionTimestamp": "2021-06-20T23:42:48Z",
+         "orderId": "RKOrdID-525133851837",
+         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+         "clientRequestId": "4345791",
+         "transactionId": "84356531338"
+      }
+   }, 
+   "source":{
+      "sourceType": "PaymentSession",
+      "card":{
+         "bin": "40055500",
+         "last4": "0019",
+         "scheme": "VISA",
+         "expirationMonth": "10",
+         "expirationYear": "2030"
+      }
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total": 12.04,
+         "currency": "USD"
+      },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
+      "processorResponseDetails":{
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "fiserv",
+         "responseCode": "000000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
+         }
+      }
+   },
+   "transactionDetails":{
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
+   }
+}
+```
+
+<!--
+type: tab
+-->
+
+##### Example of a tokenization (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "TOKENIZE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentSession",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "paymentTokens": [
+    {
+      "tokenData": "8519371934460009",
+      "tokenSource": "TRANSARMOR",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
+    },
+    {
+      "tokenData": "8519371934460010",
+      "tokenSource": "CHASE",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
+    }
+  ],
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 12.04,
+      "currency": "USD"
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "fiserv",
+      "responseCode": "000000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
+      }
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  }
+}
+```
+
+<!-- type: tab-end -->
+
 ---
+
 
 ## See Also
 - [Secure Data Capture]
