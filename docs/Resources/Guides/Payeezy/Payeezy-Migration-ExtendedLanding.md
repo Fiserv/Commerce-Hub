@@ -60,8 +60,8 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesFrau
 -->
 
 <!-- type: card
-title: Quick Key
-description: Differences in Quick Key functionality
+title: Quick Keys
+description: Differences in Quick Keys functionality
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedFeaturesQuickKey.md
 -->
 
@@ -117,6 +117,32 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalReq
 title: Customer Transaction Record (CTR) Response Element Creation
 description: How to create the CTR response element from Commerce Hub elements
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md
+-->
+
+<!-- type: row-end -->
+
+---
+
+## Learning Center
+
+<!-- type: row -->
+
+<!-- type: card
+title: FAQs
+description: Our most common questions and answers for Payeezy merchants migrating to Commerce Hub.
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FAQs.md
+-->
+
+<!-- type: card
+title: Glossary
+description: A list of programming and API-related terms, acronyms, and phrases to help you think like a developer.
+link: ?path=docs/api-glossary.md
+-->
+
+<!-- type: card
+title: Release Notes
+description: View recent and historical changes to the Payeezy Merchant Migration Playbook.
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ReleaseNotes.md
 -->
 
 <!-- type: row-end -->
