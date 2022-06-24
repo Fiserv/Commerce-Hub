@@ -159,6 +159,8 @@ type: tab
 since we only send a HTTP 204 back, verify the merchant will not recieve any gatewayresponse elements, if no JSON is returned then update 148 example to state Commerce Hub will return an HTTP 204: Success on a successful card capture response.
 
 ```
+<!-- theme: info -->
+>If a successful response is not received, best practice is to still submit the transaction.
 
 <!-- type: tab-end -->
 
@@ -166,12 +168,7 @@ since we only send a HTTP 204 back, verify the merchant will not recieve any gat
 
 ## Step 4: Submit Request 
 
-copy the request from JS or iFrame for charges/tokens and response.
-
 Submit a charge or tokenization request after a successful response which identifies the card data is captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request. 
-
-<!-- theme: info -->
->If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
 
 
 ### Endpoint
