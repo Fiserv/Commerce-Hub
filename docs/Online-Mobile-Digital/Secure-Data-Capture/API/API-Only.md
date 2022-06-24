@@ -9,7 +9,7 @@ Commerce Hub allows E-commerce merchants to manage the design and form of their 
 
 Allows a merchant an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-#### Request Types
+### Request Types
 
 - **credentials:** responsible for creating a payment session.
 - **card-capture:** responsible for capturing encrypted card details.
@@ -17,23 +17,6 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 - **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
 
 ---
-
-## Additional Security Settings
-
-The following recommendations are to limit potential for fraudulent activity on your Commerce Hub JS integration.
-
-**Recommendations**
-
-- Enable Re-Captcha
-- Authentication/Login requirement to access the payment page
-- Limit response back to the browser/customer
-- Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
-
----
-
-# Secure Data Capture API Only
-
-Description........
 
 ## Step 1: Security Credentials 
 
@@ -45,13 +28,15 @@ A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) 
 
 The card data is encypted using Base64 RSA Multi-Use Public Key...... once encrypted you will the encryptionblock and encyptionblockfields used in the card capture request.
 
+Link to the encryotion article.....
+
 ---
 
 ## Step 3: Submit Card Capture Request
 
 the encrypted data is submitted to Commerce Hub to store the card data.....
 
-#### Minimum Requirements
+### Minimum Requirements
 
 <!--
 type: tab
@@ -105,13 +90,13 @@ JSON string format for PaymentCard:
 
 ---
 
-#### Endpoint
+### Endpoint
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/card-capture`
 
 ---
 
-#### Card Capture Payload Example
+### Card Capture Payload Example
 
 <!--
 type: tab
