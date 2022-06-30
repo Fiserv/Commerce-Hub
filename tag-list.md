@@ -9,7 +9,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Approval Rate (Remove Approval Rate)
 - Auth Optimization (X3)
 - Business Track (X9)
-- Cancel (X32)
+- Cancel (X30)
 - Contactless (X9)
 - Charges (X12)
 - Connected Commerce (X8)
