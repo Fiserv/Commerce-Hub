@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, customer-transaction-record]
 ---
 
 # Customer Transaction Record (CTR) Response Element Creation
@@ -12,6 +12,10 @@ Commerce Hub will not be providing a single CTR element in the API response.  Th
 **Payeezy CTR Example:**
 
 ![API Response CTR Example](../../../../assets/images/Customer_Transaction_Record_pic_example.png)
+
+Second try:
+
+![API Response CTR Example](?path=docs/Resources/Guides/Payeezy/Customer_Transaction_Record_pic_example.png)
 
 ### CTR Creation from Commerce Hub Elements
 Click [here](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Migration/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
