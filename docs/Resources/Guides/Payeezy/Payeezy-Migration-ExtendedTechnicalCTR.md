@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, customer-transaction-record]
 ---
 
 # Customer Transaction Record (CTR) Response Element Creation
