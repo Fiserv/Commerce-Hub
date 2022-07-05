@@ -45,7 +45,7 @@ Yes.  Soft Descriptors are referred to as Dynmaic Descriptors in Commerce Hub. Y
 
 ### Are there any additional techincal resources for my developers?
 
-Yes.  There is an entire section of the playbook contianing techincal information which will help to [map elements](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) from Payeezy to Commerce Hub, understand the [required fields](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md) for an API request and [create the Customer Transaction Record (CTR)](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md) response element.
+Yes.  There is an entire section of the playbook containing technical information which will help to [map elements](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalAPI.md) from Payeezy to Commerce Hub, understand the [required fields](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalRequired.md) for an API request and [create the Customer Transaction Record (CTR)](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedTechnicalCTR.md) response element.
 
 ---
 
