@@ -25,7 +25,7 @@ Configuration management will be available in ClientLine Experience (CLX).  You 
 
 ### Will there be reporting available and how can I access it?
 
-A new and robust reporting experience awaits in ClientLine Experience (CLX). For information on the comparison to Payeezy Real Time Reporting and an available training video, [click here](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
+A new and robust reporting experience awaits in ClientLine Experience (CLX). For information on the comparison to Payeezy Real-time Payment Manager (RPM) and an available training video, [click here](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedCoreReporting.md)
 
 ### Is Virtual Terminal available?  And will Quick Keys functionality be included?
 
