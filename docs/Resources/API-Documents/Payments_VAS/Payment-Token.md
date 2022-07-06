@@ -365,7 +365,7 @@ titles: Request, Response
     "tokenSource": "TRANSARMOR"
     "card": {
       "expirationMonth": "03",
-      "expirationYear": "30"
+      "expirationYear": "2035"
     }
   },
   "transactionDetails": {
@@ -402,7 +402,7 @@ type: tab
     "last4": "0019",
     "brand": "VISA",
     "expirationMonth": "03",
-    "expirationYear": "30"
+    "expirationYear": "2035"
   },
   "paymentReceipt": {
     "approvedAmount": {
