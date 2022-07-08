@@ -1,10 +1,10 @@
 ---
-tags: [Enterprise Portal, Business Track, Virtual Terminal, Reporting, Settings]
+tags: [Enterprise Portal, Business Track, Reporting]
 ---
 
 # ClientLine Reporting
 
-ClientLine Enterprise Portal offers merchants the ability to generate reports with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions. To find out more information on creating, scheduling and managing reports, visit the help section in [ClientLine Enterprise](https://www.businesstrack.com).
+ClientLine Reporting offers merchants the ability to generate reports with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions. To find out more information on creating, scheduling and managing reports, visit the help section in the [Enterprise Portal](https://www.businesstrack.com).
 
 <!-- theme: warning -->
 > Some Commerce Hub field names have a different nomenclature in ClientLine Reporting, the full list of fields can be found in the MetaData section of the Enterprise Portal.
