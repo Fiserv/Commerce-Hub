@@ -79,6 +79,6 @@ Change log of all updates to a user account is available for review.
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-GuideLandingPage.md)
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
 
 ---
