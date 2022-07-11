@@ -36,9 +36,9 @@ In Payeezy, tokenization of a card, without payment, would be completed via the 
 
 **Non-happy Path Token Usage**
 
-The merchant can prevent the token from being created and override the automated behavior by including the createToken element in the request with a value of false.
+The merchant can prevent the token from being created and override the automated behavior by including the `createToken` element in the request with a value of false.
 
-If the transacting MID is not configured for the Tokenization Payment Type and a request contains the creatToken element with a value of true, Commerce Hub will respond with a 249 error code:
+If the transacting MID is not configured for the Tokenization Payment Type and a request contains the `creatToken` element with a value of true, Commerce Hub will respond with a 249 error code:
 
 ```json
 
