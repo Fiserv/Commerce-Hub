@@ -50,6 +50,6 @@ When processing secondary transactions (Completion/Capture, Void and Refund), th
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-GuideLandingPage.md)
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
 
 ---
