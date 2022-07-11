@@ -77,7 +77,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesSoftD.md
 
 <!-- type: card
 title: Stored Credentials
-description: Need to update this.
+description: Understanding the differences in capabilities and functionality of Stored Credentials in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesStoredCredentials.md
 -->
 
