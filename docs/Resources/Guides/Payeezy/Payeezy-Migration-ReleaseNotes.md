@@ -41,6 +41,6 @@ As Commerce Hub continues to be improved with new features and value added servi
 
 ---
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-GuideLandingPage.md)
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
 
 ---
