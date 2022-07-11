@@ -29,7 +29,7 @@ As Commerce Hub continues to be improved with new features and value added servi
 | New Content | [Fraud](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesFraud.md) What's different for the fraud settings, velocity controls, AVS filters and CVV2 filters in Commerce Hub |
 | New Content | [Quick Keys](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesQuickKey.md) Differences in Quick Keys functionality |
 | New Content | [Soft Descriptors](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesSoftD.md) Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub|
-| New Content | [Stored Credentials](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesStoredCredentials.md) **Need to update this.** |
+| New Content | [Stored Credentials](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesStoredCredentials.md) Understanding the differences in capabilities and functionality of Stored Credentials in Commerce Hub |
 | New Content | [Tokenization](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTokens.md) How the configuration and functionality of tokens has changed with Commerce Hub|
 | New Content | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-TechnicalAPI.md) Use this document to help convert your current API request and <br> response elements into Commerce Hub nomenclature and formatting. |
 | New Content | [Required Fields](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-TechnicalRequired.md) Fields Required in a request by Commerce Hub for each transaction type|
