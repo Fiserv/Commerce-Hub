@@ -13,6 +13,16 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## July 15th 2022
+
+| Details | Type | Environment | 
+| ----- | ----- | ----- |
+| New refunds endpoint to support referenced transaction identifiers | Feature | Cert |
+| [PIN](?path=docs/Resources/Master-Data/Pin-Block.md) support for credit and debit cards on Chase | Feature | Cert |
+
+
+---
+
 ## June 16th 2022
 
 | Details | Type | Environment | 
