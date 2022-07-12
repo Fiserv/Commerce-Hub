@@ -6,6 +6,8 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request to the original `transactionId`. Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
+Using the `transactionId` or 'merchantTransactionId' in the payload and 
+
 <!-- theme: danger -->
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
@@ -40,7 +42,7 @@ The below table identifies the required parameters in the `amount` object.
 type: tab
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `merchantDetails` object. 
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
