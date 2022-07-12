@@ -10,7 +10,7 @@ If the customer returns product or requests to cancel the transaction after the 
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 <!-- theme: warning -->
-> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the customer's account.
+> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the customer's account. 
 
 ---
 
