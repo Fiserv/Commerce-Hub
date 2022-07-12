@@ -30,4 +30,5 @@ The below table identifies the valid values of `authorizationTypeIndicator` to i
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Deferred Authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md)
 - [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
+
 ---
