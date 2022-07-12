@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, enterprise, stored-credentials,card-not-present, pay
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-In Payeezy, American Express card brand used the `ecommerce_flag` element for processing stored credential transactions; in Commerce Hub, all suported card brands will use the Stored Credentials object.
+In Payeezy, American Express card brand used the `ecommerce_flag` element for processing stored credential transactions; in Commerce Hub, all supported card brands will use the Stored Credentials object.
 
 In Payeezy, the Stored Credentials are returned in the response; in Commerce Hub, they are not.  See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) documentation for more information.
 
