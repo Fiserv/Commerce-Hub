@@ -136,7 +136,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-FAQs.md
 <!-- type: card
 title: Glossary
 description: A list of programming and API-related terms, acronyms, and phrases to help you think like a developer.
-link: ?path=docs/api-glossary.md
+link: https://developer.fiserv.com/support/docs/?path=docs/api-glossary.md
 -->
 
 <!-- type: card
