@@ -1,5 +1,5 @@
 ---
-tags: [3-D-Secure, Visa Secure, Verified by Visa, Mastercard Securecode, Discover ProtectBuy, JCB J/Secure, AMEX SafeKey]
+tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 ---
 
 # Merchant Managed 3-D Secure Integration
