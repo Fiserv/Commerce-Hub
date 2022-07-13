@@ -1,5 +1,5 @@
 
-# Merchant Managed 3-D Secure
+# Merchant Managed 3-D Secure Integration
 
 ---
 
