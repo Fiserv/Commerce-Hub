@@ -196,7 +196,7 @@ paths:
       x-group-name: 'Payments'
       x-proxy-name: 'Refunds'
       summary: Submit a cancel transaction.
-      description: 'Use this payload to perform cancel a transaction (aka void).'
+      description: 'Use this payload to perform a partial or full refund (aka credit/return). This will return funds to the customer.'
       requestBody:
         required: true
         content:
