@@ -26,8 +26,14 @@ link: ?path=docs/Online-Mobile-Digital/3D-Secure/Merchant-Managed-3DS.md
 -->
 
 <!-- type: card
-title: Commerce Hub Managed
-description: Allows the integration directly with Commerce Hub to obtain the 3DS Authentication details and process the payment authorization transaction.
+title: Native
+description: Allows the integration directly with Commerce Hub to obtain the 3DS Authentication details and process the payment authorization transaction within the merchant's website or mobile app.
+link: 
+-->
+
+<!-- type: card
+title: Redirect
+description: Allows the integration directly with Commerce Hub to obtain the 3DS Authentication details and process the payment authorization transaction after the customer is redirected to the issuer's website..
 link: 
 -->
 
