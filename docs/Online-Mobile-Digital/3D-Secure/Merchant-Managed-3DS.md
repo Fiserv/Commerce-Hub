@@ -102,7 +102,7 @@ titles: Request, Response
       "captureFlag":false
    },
    "transactionInteraction":{
-      "eciIndicator":"SECURE_ECOMMERCE"
+      "eciIndicator":"SECURE_ECOM"
    },
 "merchantDetails":{
       "merchantId":"100009000000202",
@@ -156,30 +156,14 @@ type: tab
          "responseCode":"000",
          "responseMessage":"Approved",
          "hostResponseCode":"00",
-         "hostResponseMessage":"APPROVAL",
-         "responseIndicators":{
-            "alternateRouteDebitIndicator":false,
-            "signatureLineIndicator":false,
-            "signatureDebitRouteIndicator":false
-         },
-         "bankAssociationDetails":{
-            "associationResponseCode":"V000",
-            "avsSecurityCodeResponse":{
-               "streetMatch":"NONE",
-               "postalCodeMatch":"NONE",
-               "securityCodeMatch":"NOT_CHECKED",
-               "association":{
-                  "securityCodeResponse":"X"
-               }
-            }
-         }
+         "hostResponseMessage":"APPROVAL"
       }
    },
    "transactionDetails":{
       "captureFlag":false
    },
    "transactionInteraction":{
-      "eciIndicator":"SECURE_ECOMMERCE"
+      "eciIndicator":"SECURE_ECOM"
    },
    "networkDetails":{
       "network":{
@@ -190,14 +174,6 @@ type: tab
       "validationCode":"G205",
       "transactionIdentifier":"012182063695002"
    },
-   "paymentTokens":[
-      {
-         "tokenData":"0724125326420026",
-         "tokenSource":"TRANSARMOR",
-         "tokenResponseCode":"000",
-         "tokenResponseDescription":"SUCCESS"
-      }
-   ]
 }
 
 ```
