@@ -23,7 +23,7 @@ A cancels request is initiated by sending the `referenceTransactionDetails` in t
 type: tab
 titles: referenceTransactionDetails, transactionDetails, merchantDetails
 -->
-
+ 
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
