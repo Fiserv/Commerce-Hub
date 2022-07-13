@@ -32,7 +32,7 @@ The card data is encypted using Base64 RSA Multi-Use Public Key. Once [`encrypte
 
 ## Step 3: Submit Card Capture Request
 
-the encrypted data is submitted to Commerce Hub to store the card data.....
+The encrypted data is submitted to Commerce Hub to store the card data where the merchant API-key is validated and sessionId ois generated. The encrypted card data is stored in a cache. 
 
 ### Minimum Requirements
 
