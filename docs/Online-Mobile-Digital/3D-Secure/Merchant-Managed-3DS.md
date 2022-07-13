@@ -17,7 +17,7 @@ Commerce Hub allows a merchant to pass the 3-D Secure Authentication results tha
 ### How it Works
 
 1. The customer selects checkout from the merchant's website and the merchant's payment form displays.
-2. The customer enters their payment informatn and is redirected to the 3DS provider.
+2. The customer enters their payment information and is redirected to the 3DS provider.
 3. The customer completes the 3DS authentication form and returns to the merchant's website.
 4. The merchant's website submits the 3DS payload to Commerce Hub.
 5. Commerce Hub attempts to process the transaction and sends the response to the merchant's website.
