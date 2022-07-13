@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Getting Started]
 
 # 3-D Secure
 
-Commerce Hub supports [3-D Secure (3DS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#3-d-secure) transactions from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. For additional information about 3-D Secure visit the [EMVCo](https://www.emvco.com/emv-technologies/3d-secure/) website.
+Commerce Hub supports [3-D Secure (3DS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#3-d-secure) transactions from a either a merchant 3DS service or through Commerce Hub's 3DS authentication service. For additional information about 3-D Secure visit the [EMVCo](https://www.emvco.com/emv-technologies/3d-secure/) website.
 
 ### How it Works
 
