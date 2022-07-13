@@ -24,7 +24,7 @@ The refund can be issued using the original `transactionId` in the URI or a refe
 
 ## Refund Using Referenced Identifier 
 
-A refund request is initiated by sending the 'referenceTransactionDetails' in the payload and may contain the 'amount' object based on the refund type. 
+A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type. 
 
 ### Request Variables
 
@@ -116,7 +116,7 @@ type: tab
 ```json
 {
    "gatewayResponse":{
-      "transactionType": "CANCEL",
+      "transactionType": "REFUND",
       "transactionState": "VOIDED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
