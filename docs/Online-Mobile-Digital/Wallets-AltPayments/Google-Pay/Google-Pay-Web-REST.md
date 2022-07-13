@@ -11,7 +11,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 
 ### How it Works
 1. Customer selects checkout from the merchant's website.
-2. Customer then presented with the merchant's payment form.
+2. Customer is presented with the merchant's payment form.
 3. Customer selects Google Pay and then redirected to the Google Pay payment form.
 4. Customer completes the google pay form and then redirected to the merchant's website.
 5. Customer selects to complete the transaction.
