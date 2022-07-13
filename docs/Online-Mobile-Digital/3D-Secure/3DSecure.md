@@ -6,12 +6,10 @@ tags: [3-D-Secure, Visa Secure, Verified by Visa, Securecode, Protectbuy, Safeke
 
 Commerce Hub supports [3-D Secure (3DS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#3-d-secure) transactions from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service.
 
-3-D Secure helps reduce fraudulent transactions and increases the transaction security for E-commerce transactions.
+3-D Secure helps reduce fraudulent transactions and increases the transaction security for E-commerce transactions and has two available versions:
 
-3D Secure has two available versions:
-
-- 3DS v1: The customer is redirected to the issuer's website to provide additional authentication data (e.g. password or an SMS verification code).
-- 3DS v2: The card issuer performs the authentication within the merchant's website or mobile app using passive, biometric, and two-factor authentication methods.
+- **Version 1:** The customer is redirected to the issuer's website to provide additional authentication data (e.g. password or an SMS verification code).
+- **Version 2:** The card issuer performs the authentication within the merchant's website or mobile app using passive, biometric, and two-factor authentication methods.
 
 ---
 
