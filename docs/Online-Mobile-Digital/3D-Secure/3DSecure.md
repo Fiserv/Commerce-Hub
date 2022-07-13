@@ -29,19 +29,19 @@ Build an integration that to accept a 3-D Secure payment.
 
 <!-- type: card
 title: Merchant Managed
-description: Allows the 3DS authentication details that were completed by a third-party 3DS provider to be passed in the payment authorization transaction to Commerce Hub.
+description: Allows the 3DS authentication details that were completed by a third-party provider to be passed in the payment authorization transaction to Commerce Hub.
 link: ?path=docs/Online-Mobile-Digital/3D-Secure/Merchant-Managed-3DS.md
 -->
 
 <!-- type: card
 title: Native
-description: Allows the integration directly with Commerce Hub to obtain the 3DS Authentication details and process the payment authorization transaction within the merchant's website or mobile app.
+description: Allows the integration directly with Commerce Hub to obtain the 3DS authentication details and process the payment authorization transaction within the merchant's website or mobile app.
 link: 
 -->
 
 <!-- type: card
 title: Redirect
-description: Allows the integration directly with Commerce Hub to obtain the 3DS Authentication details and process the payment authorization transaction after the customer is redirected to the issuer's website..
+description: Allows the integration directly with Commerce Hub to obtain the 3DS authentication details and process the payment authorization transaction after the customer is redirected to the issuer's website..
 link: 
 -->
 
