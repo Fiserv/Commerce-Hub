@@ -1,5 +1,5 @@
 ---
-tags: [3-D-Secure, Visa Secure, Verified by Visa, Mastercard Securecode, Discover ProtectBuy, JCB J/Secure, AMEX SafeKey, Mobile]
+tags: [3-D-Secure, Mobile, Card Not Present]
 ---
 
 # 3-D Secure Redirect Mobile Integration
