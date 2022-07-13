@@ -26,9 +26,7 @@ A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) 
 
 ## Step 2: Encryption
 
-The card data is encypted using Base64 RSA Multi-Use Public Key...... once encrypted you will the encryptionblock and encyptionblockfields used in the card capture request.
-
-Link to the encryotion article.....
+The card data is encypted using Base64 RSA Multi-Use Public Key. Once encrypted the encryptionblock and encyptionblockfields are used in the card capture request. The merchant recieves the one-time `accessToken`.
 
 ---
 
