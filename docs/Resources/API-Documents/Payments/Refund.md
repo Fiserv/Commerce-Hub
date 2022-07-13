@@ -20,6 +20,10 @@ Using the `transactionId` or 'merchantTransactionId' in the payload [referencedT
 
 ## Refund Using Referenced Identifier 
 
+A refund request is initiated by sending the 'referenceTransactionDetails' in the payload and may contain the 'amount' object based on the refund type. 
+
+## Refund Using Referenced Transaction 
+
 ## Minimum Requirements
 
 A refund request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the refund type.
@@ -166,7 +170,9 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/refund)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---
