@@ -304,7 +304,7 @@ The merchant can use the saved tokenized data in order to initate a charge reque
 
 <!--
 type: tab
-titles: amount, paymentToken
+titles: amount, source, card
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -318,7 +318,7 @@ The below table identifies the required parameters in the `amount` object.
 type: tab
 -->
 
-The below table identifies the required parameters in the `paymentToken` object.
+The below table identifies the required parameters in the `source` object.
 
 
 | Variable | Type| Maximum Length | Required | Description |
@@ -328,6 +328,16 @@ The below table identifies the required parameters in the `paymentToken` object.
 | `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
 | `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
 | `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | | &#10004; | Contains card specific information. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|---|
 | `card` | *object* | | &#10004; |Contains card specific information. |
 | `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
 | `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
