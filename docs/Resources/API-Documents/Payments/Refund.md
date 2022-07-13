@@ -18,7 +18,7 @@ The refund can be issued using the original `transactionId` in the URI or a refe
 
 <!-- theme: warning -->
 > Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the customer's account. 
-
+ 
 
 ---
 
