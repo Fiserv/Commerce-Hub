@@ -6,7 +6,7 @@ tags: [3-D-Secure, Visa Secure, Verified by Visa, Securecode, Protectbuy, Safeke
 
 ---
 
-Commerce Hub allows a merchant to pass the 3-D Secure Authentication results that were obtained externally with a thrid-party 3-D Secure (3DS) provider when sending the authorization transaction to Commerce Hub.
+Commerce Hub allows a merchant to pass the 3-D Secure Authentication results that were obtained externally with a thrid-party 3-D Secure (3DS) provider when sending the authorization transaction to Commerce Hub. _Payment3DS_ is used by the merchant as the payment source when sending the transaction to the Commerce Hub.
 
 <!-- theme: info -->
 > This feature is intended for CommerceHub Merchants who directly connect to an external 3-D Secure service provider to perform authentication outside of Commerce Hub.
@@ -27,7 +27,7 @@ titles: source, card, transactionInteraction
 
 The below table identifies the parameters in the `source` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Use value *Payment3ds* for merchant managed 3-D Secure transactions. |
 | `xid` | *string* | 256 | 3-D Secure/Verified by Visa value returned by the 3DS provider. |
@@ -62,7 +62,7 @@ type: tab
 
 The below table identifies the parameters in the `transactionInteraction` object.
 
-| Variable | Type | Length | Description/Values |
+| Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md#electroniccommerceindicators). |
 
@@ -192,12 +192,6 @@ type: tab
       "validationCode":"G205",
       "transactionIdentifier":"012182063695002"
    },
-   "cardDetails":{
-      "issuerBankName":"USA Bank",
-      "countryCode":"USA",
-      "detailedCardProduct":"V",
-      "productId":"H"
-   },
    "paymentTokens":[
       {
          "tokenData":"0724125326420026",
@@ -215,5 +209,9 @@ type: tab
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- 
+- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+---
