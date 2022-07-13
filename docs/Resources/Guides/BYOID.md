@@ -10,10 +10,10 @@ Commerce Hub supports the ability for mercant's to use thier own Merchant Identi
 
 ## Merchant Identifiers
 
-Merchant Identifiers allow a merchant to use their existing identifier for a location in the `merchantId` and their terminal for `terminalId` to submit transactions to Commerce Hub.
+Merchant Identifiers, known as Bring Your Own Account (BYOA) or Bring Your Own MID (BYOM), allow a merchant to use their existing identifiers for a location in the `merchantId` and their terminal for `terminalId` to submit transactions to Commerce Hub.
 
 <!-- theme: info -->
-> The merchant account will need to be boarded with the merchant specific identifiers.
+> The merchant account will need to be boarded with the merchant specific identifiers. Please contact your account representative for more information.
 
 <!--
 type: tab
@@ -51,7 +51,7 @@ JSON string format for `merchantDetails`:
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to support Order Identifiers and the documents related to the features will be released soon.
 
-Order Identifiers allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; refund, [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, re-auth, or inquiry, instead of using the Commerce Hub generated `transactionID` or `orderID`.
+Order Identifiers, known as Bring Your Own ID (BYOID), allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; refund, [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, re-auth, or inquiry, instead of using the Commerce Hub generated `transactionID` or `orderID`.
 
 <!-- 
 type: tab
