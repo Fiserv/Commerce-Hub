@@ -4,12 +4,10 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 
 # Merchant Managed 3-D Secure Integration
 
----
-
 Commerce Hub allows a merchant to pass the 3-D Secure Authentication results that were obtained externally with a thrid-party 3-D Secure (3DS) provider when sending the authorization transaction to Commerce Hub. _Payment3DS_ is used by the merchant as the payment source when sending the transaction to the Commerce Hub.
 
 <!-- theme: info -->
-> This feature is intended for CommerceHub Merchants who directly connect to an external 3-D Secure service provider to perform authentication outside of Commerce Hub.
+> This integration method is intended for merchants who directly connect to an external 3-D Secure service provider to perform authentication outside of Commerce Hub.
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
