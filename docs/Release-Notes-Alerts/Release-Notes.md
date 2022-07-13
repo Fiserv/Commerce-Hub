@@ -20,7 +20,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | New [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) endpoint to support referenced transaction identifiers | Feature | Cert |
 | [PIN](?path=docs/Resources/Master-Data/Pin-Block.md) support for credit and debit cards on Chase | Update | Cert |
 | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) enhanced to remove deprecated fields `enhancedAuthorizationRequestIndicator` and `enhancedAuthorizationResponseIndicator` and changed `partialApproval` indicator to boolean | Update | Cert |
-| Merchant managed 3D-Secure payment source support added | Feature | Cert |
+| Merchant managed [3D-Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) payment source support added | Feature | Cert |
 | [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) on Chase | Update | Cert |
 
 ---
