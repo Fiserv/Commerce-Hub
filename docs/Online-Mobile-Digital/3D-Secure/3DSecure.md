@@ -21,7 +21,7 @@ Commerce Hub supports [3-D Secure (3DS)](?path=docs/Resources/FAQs-Glossary/Glos
 
 ---
 
-##Integration Methods
+## Integration Methods
 
 Build an integration that to accept a 3-D Secure payment.
 
