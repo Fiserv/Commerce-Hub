@@ -9,7 +9,6 @@ docs/Online-Mobile-Digital/Wallets-AltPayments/PayPal/**
 docs/Resources/Guides/Payments-101/**
 docs/Resources/Guides/Reporting/**
 docs/Resources/Guides/Vault/**
-docs/Online-Mobile-Digital/3D-Secure/**
 docs/Resources/API-Documents/Value_Added_Services/**
 docs/Resources/Guides/Industry-Verticals/**
 docs/Resources/Guides/Testing/**
@@ -40,3 +39,4 @@ docs/Resources/Guides/VAS.md
 docs/Resources/Guides/Enterprise-Portal/Account-Management.md
 docs/Resources/Guides/Enterprise-Portal/Merchant-Boarding.md
 docs/Resources/Guides/Enterprise-Portal/User-Management.md
+docs/Online-Mobile-Digital/3D-Secure/CH-Managed-3DS.md
