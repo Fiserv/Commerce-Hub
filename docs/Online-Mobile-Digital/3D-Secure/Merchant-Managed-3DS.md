@@ -3,6 +3,23 @@
 
 ---
 
+Commerce Hub allows a merchant to pass the 3-D Secure Authentication results that were obtained externally with a thrid-party 3DS provider when sending the authorization transaction to Commerce Hub.
+
+<!-- theme: info -->
+> This feature is intended for CommerceHub Merchants who directly connect to an external 3-D Secure service provider to perform authentication outside of Commerce Hub.
+
+<!-- theme: warning -->
+> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+
+### How it Works
+
+1. The customer selects checkout from the merchant's website and the merchant's payment form displays.
+2. The customer enters their payment informatn and is redirected to the 3DS provider.
+3. The customer completes the 3DS authentication form and returns to the merchant's website.
+4. The merchant's website submits the 3DS payload to Commerce Hub.
+5. Commerce Hub attempts to process the transaction and sends the response to the merchant's website.
+
+---
 
 ### Minimum Requirements
 
