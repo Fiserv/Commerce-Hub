@@ -51,7 +51,7 @@ JSON string format for `merchantDetails`:
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to support Order Identifiers and the documents related to the features will be released soon.
 
-Order Identifiers allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, re-auth, or inquiry, instead of using the Commerce Hub generated `transactionID` or `orderID`.
+Order Identifiers allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, re-auth, or [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md), instead of using the Commerce Hub generated `transactionID` or `orderID`.
 
 <!-- 
 type: tab
