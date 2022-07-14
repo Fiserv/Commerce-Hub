@@ -13,7 +13,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
-## July 15th 2022
+## July 18th 2022
 
 | Details | Type | Environment | 
 | ----- | ----- | ----- |
