@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
-    processing., version: v1.1.0}
+    processing., version: v1.2.0}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
 - {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
@@ -188,22 +188,28 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
-  /payments/v1/charges/{transactionId}/refund:
-    x-model-version: 1.0
+  /payments/v1/refunds:
+    x-model-version: 1.2
     post:
-      tags: [Refund Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Refund
-      summary: Submit a refund transaction.
-      description: Use this payload to perform a partial or full refund (aka credit/return).
-        This will return funds to the customer.
+      tags:
+      - Refund Endpoint Definition
+      x-group-name: 'Payments'
+      x-proxy-name: 'Refunds'
+      summary: Submit a cancel transaction.
+      description: 'Use this payload to perform a partial or full refund (aka credit/return). This will return funds to the customer.'
       requestBody:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/RefundRequest'}
+            schema:
+              $ref: '#/components/schemas/CancelRequest'
             examples:
-              Refund: {summary: RefundRequest, $ref: '#/components/examples/SecondaryRequest'}
+              MerchantTransactionID:
+                summary: Cancel a transaction using Merchant Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
+              TransactionID:
+                summary: Cancel a transaction using CommerceHub Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
       - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
@@ -215,23 +221,39 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       responses:
-        201:
-          description: Created
+        200:
+          description: Success
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/RefundResponse'}
+              schema:
+                $ref: '#/components/schemas/CancelResponse'
               examples:
-                Refund: {summary: RefundResponse, $ref: '#/components/examples/RefundResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
+                MerchantTransactionID:
+                  summary: Cancel response using Merchant Transaction ID
+                  $ref: '#/components/examples/CancelResponse'
+                TransactionID:
+                  summary: Cancel response using Transaction ID
+                  $ref: '#/components/examples/CancelResponse'   
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
   /payments-vas/v1/accounts/verification:
     x-model-version: 1.0
     post:
@@ -1392,32 +1414,74 @@ components:
     Payment3DS:
       x-model-version: 1.0
       allOf:
-      - {$ref: '#/components/schemas/Source'}
-      - type: object
-        description: 3DSecure source.
-        properties:
-          card: {$ref: '#/components/schemas/Card'}
-          merchantIdentifier: {type: string, maxLength: 256, description: A unique
-              ID used to identify the merchant. The merchant must use the value assigned
-              by the acquirer., example: '1234567890123456'}
-          version: {type: string, maxLength: 64, description: Specific protocol version
-              supported by 3DS., example: 3DS2}
-          cavv: {type: string, maxLength: 256, description: The Cardholder Authentication
-              Verification Value (CAVV) is a cryptographic value derived by the issuer
-              during payment authentication that can provide evidence of the results
-              of payment authentication during an online purchase., example: AAABCZIhcQAAAABZlyFxAAAAAAA}
-          xid: {type: string, maxLength: 256, description: 3DSecure/Verified by Visa
-              value returned by Cardinal Commerce., example: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'}
-          verificationResponse: {type: string, maxLength: 256, description: Verification
-              response message., example: PASSED_VALIDATION}
-          authenticationAttemptResult: {type: string, maxLength: 256, description: Result
-              of authentication attempt from Payer Authentication Response (PaRes).,
-            example: uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4}
-          channel:
-            type: string
-            maxLength: 32
-            description: "\nValid Values: \n* MOBILE_APP\n* MOBILE_WEB\n* BROWSER_PC\n\
-              * KIOSK\n* CONSOLE\n* 3DS_REQUESTOR_INITIATED\n"
+        - $ref: '#/components/schemas/Source'
+        - type: object
+          description: '3DSecure source.'
+          properties:
+            card:
+              $ref: '#/components/schemas/Card'
+            merchantIdentifier:
+              type: string
+              maxLength: 256
+              description: 'A unique ID used to identify the merchant. The merchant must use the value assigned by the acquirer.'
+              example: '1234567890123456'
+            version:
+              type: string
+              maxLength: 64
+              description: 'Specific protocol version supported by 3DS.'
+              example: '3DS2'
+            cavv:
+              type: string
+              maxLength: 256
+              description: 'The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase.'
+              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            xid:
+              type: string
+              maxLength: 256
+              description: '3DSecure/Verified by Visa value returned by Cardinal Commerce.'
+              example: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+            verificationResponse:
+              type: string
+              maxLength: 256
+              description: 'Verification response message.'
+              example: 'PASSED_VALIDATION'
+            authenticationAttemptResult:
+              type: string
+              maxLength: 256
+              description: 'Result of authentication attempt from Payer Authentication Response (PaRes).'
+              example: 'uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4'
+            channel:
+              type: string
+              maxLength: 32
+              description: |+
+          
+                Valid Values: 
+                * MOBILE_APP
+                * MOBILE_WEB
+                * BROWSER_PC
+                * KIOSK
+                * CONSOLE
+                * 3DS_REQUESTOR_INITIATED
+            authenticationResponse:
+              type: string
+              description: 'The result of authentication attempt returned by the 3D Secure authentication process (PaRes).'
+              example: 'A'
+            directoryServerTransactionId:
+              type: string
+              description: 'The response transaction UUID from the DS (directory server)'
+              example: 'f38e6948-5388-41a6-bca4-b49723c19437'
+            messageCategory:
+              type: string
+              description: 'Indicates the message category of 3d secure authentication version 2.X. 01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only'
+              example: '1'
+            tavv:
+              type: string
+              description: 'Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction.'
+              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            challengeStatus:
+              type: string
+              description: 'The transaction status as returned by the 3D Secure authentication process. (CRes)'
+              example: 'A'
     DecryptedWallet:
       x-model-version: 1.0
       allOf:
@@ -1458,30 +1522,9 @@ components:
         accountVerification: {type: boolean, description: Determines if verification
             should be performed on the payment type., example: 'false'}
         partialApproval:
-          type: string
-          maxLength: 32
-          description: |
-            Indicates if a partial approval is allowed.
-
-            Valid Values:
-            * NOT_SUPPORTED - Partial authorization approvals are not supported
-            * SUPPORTED_NO_CASH_BACK - Partial authorization approvals are supported, however partial authorization of cash disbursement amount is not supported. POS/Terminal should not prompt for cash back.
-            * MERCH_CASH_BACK_SUPPORTED - Merchandise can be partially authorized, and cash disbursement amount can be partially authorized.
-            * MERCH_SUPPORTED_ONLY - Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized.
-            * CASH_BACK_SUPPORTED_ONLY - Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized.
-            * MERCH_CASH_BACK_NOT_SUPPORTED - Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized.
-          example: NOT_SUPPORTED
-        processingCode:
-          type: string
-          maxLength: 6
-          description: |
-            A required <a href=../docs/Resources/Master-Data/Processing-Code.md>code</a> is used in conjunction with the message type to define the type of transaction that is by the terminal to the host
-
-            Code Format:
-            * Position 1-2 Transaction Type
-            * Position 3–4 From Account
-            * Position 5–6 To Account
-          example: '000000'
+          type: boolean
+          description: ' Indicates if a partial approval is allowed.'
+          example: true
         merchantTransactionId: {type: string, maxLength: 32, description: Merchant
             transaction ID (aka transaction reference ID)., example: '1343678765'}
         merchantOrderId: {type: string, maxLength: 32, description: Merchant order
@@ -2045,18 +2088,6 @@ components:
             terminal support the Alternate Routing feature used for PINless POS, Signature
             Debit, and EMV Common AID features (excluding Online PIN CVM) allows merchants
             to process PIN Debit Network transactions without a PIN.', example: 'true'}
-        enhancedAuthorizationRequestIndicator:
-          type: string
-          maxLength: 32
-          description: |
-            Used to indicate that the terminal or software is capable of supporting partial authorizations, prepaid identification and to request balances. Partial Authorization support is dependent on card type and region please contact your account representative.
-
-            Valid Values:
-            * NOT_SUPPORTED - Partial authorizations NOT requested; Balance information NOT requested
-            * BALANCE_ONLY - Partial authorizations NOT requested; Balance information requested
-            * PARTIAL_AUTH_ONLY - Partial authorizations requested; Balance information NOT requested
-            * BOTH_SUPPORTED - Partial authorizations requested; Balance information requested"
-          example: BOTH_SUPPORTED
         dataEntrySource:
           type: string
           maxLength: 50
@@ -2084,18 +2115,6 @@ components:
             * CALL_CENTER_OPERATOR
         transactionQualifier: {type: string, description: Used for Discover - Discover
             TransactionQualifier.}
-        enhancedAuthorizationResponseIndicator:
-          type: string
-          description: |
-            Returns the approval type for Enhanced Authorization.
-
-            Valid Values:
-            * FULL
-            * PARTIAL
-            * DEPLETED
-            * DECLINE
-            * ERROR
-          example: FULL
         attendedTerminalData:
           type: string
           maxLength: 16

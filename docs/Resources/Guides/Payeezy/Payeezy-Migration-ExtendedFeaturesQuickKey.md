@@ -19,13 +19,15 @@ CLX supports the new Commerce Hub upload file format as well as the Payeezy file
 
 RPM allowed for only 250 transactions per batch upload; CLX allows for an unlimited number of transactions.
 
+The transaction type of 'Purchase' in RPM is now a 'Sale' in CLX.
+
 ### Screen Functionality
 
 CLX provides the additional functionality of toggling between initiating a single transaction and bulk upload.
 
 In RPM, a row could be edited by clicking on it and updating information in the left column; In CLX, checking the box in the first column of the row will make the row editable.
 
-The transaction type of 'Purchase' in RPM is now a 'Sale' in CLX.
+
 
 
 

@@ -1,78 +1,48 @@
 ---
-tags: [3-D-Secure, Pass Through, 3-D Secure Authentication, Visa Secure, Verified by Visa, Securecode, Protectbuy, Secure, Safekey]
+tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Getting Started]
 ---
 
 # 3-D Secure
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include 3-D Secure support and the documents related to the features will be released soon.
+Commerce Hub supports [3-D Secure (3DS)](?path=docs/Resources/FAQs-Glossary/Glossary.md#3-d-secure) transactions from a either a merchant 3DS service or through Commerce Hub's 3DS authentication service. For additional information about 3-D Secure visit the [EMVCo](https://www.emvco.com/emv-technologies/3d-secure/) website.
 
-Commerce Hub supports [3-D Secure](?path=docs/Resources/FAQs-Glossary/Glossary.md#3-d-secure) transactions from a either a merchant 3DS service or through Commerce Hub's 3DS Authentication service. Merchants can submit this data as either a [passthrough](#passthrough) or a [authentication](#authentication) request.
+### How it Works
 
----
+1. The customer selects checkout from the merchant's website and the merchant's payment form displays.
+2. The customer enters their payment information and is redirected to the 3DS provider.
+3. The customer completes the 3DS authentication form and returns to the merchant's website.
+4. The merchant's website submits the 3DS payload to Commerce Hub.
+5. Commerce Hub attempts to process the transaction and sends the response to the merchant's website.
 
-## Passthrough
+3-D Secure helps reduce fraudulent transactions and increases the transaction security for E-commerce transactions and has two available versions:
 
-When using our payments API with passthrough, the authentication is performed with the merchant's 3DS provider, and will send the response from 3DS as the source type Payment3dsPassthrough the charge request.
-
-### Minimum Requirements
-
-#### Object: paymentSource
-
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use value *Payment3dsPassthrough* for 3-D Secure passthrough transactions. |
-| `xid` | *string* | 32 | 3-D Secure/Verified by Visa value returned by Cardinal Commerce. |
-| `card` | *object* | N/A | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
-| `merchantIdentifier` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer |
-| `version` | *string* | 4 | Specific Protocol version supported by 3DS |
-| `cavv` | *string* | N/A | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
-
-#### Object: transactionDetails
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md)(#electroniccommerceindicators). |
-  
+- **Version 1:** The customer is redirected to the issuer's website to provide additional authentication data (e.g. password or an SMS verification code).
+- **Version 2:** The card issuer performs the authentication within the merchant's website or mobile app using passive, biometric, and two-factor authentication methods.
 
 ---
 
-### Payload Example
+## Integration Methods
 
-<!--
-type: tab
-titles: Request
+Build an integration that to accept a 3-D Secure payment.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Merchant Managed
+description: Allows the 3DS authentication details that were completed by a third-party provider to be passed in the payment authorization transaction to Commerce Hub.
+link: ?path=docs/Online-Mobile-Digital/3D-Secure/Merchant-Managed-3DS.md
 -->
 
-```json
-{
-  "source": {
-      "sourceType": "Payment3DS",
-  },
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123"
-    },
-    "channel": "ANDROID",
-    "merchantIdentifier": "1234567890123456",
-    "version": "3DS2",
-    "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
-    "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695"
-    "transactionInteraction": {
-      "eciIndicator": "SECURE_ECOM",
-    }
-}
-```
+<!-- type: card
+title: Native
+description: Allows the integration directly with Commerce Hub to obtain the 3DS authentication details and process the payment authorization transaction within the merchant's website or mobile app.
+link: 
+-->
 
-<!-- type: tab-end -->
+<!-- type: card
+title: Redirect
+description: Allows the integration directly with Commerce Hub to obtain the 3DS authentication details and process the payment authorization transaction after the customer is redirected to the issuer's website..
+link: 
+-->
 
-## Authentication
-
-When using our payments API as the 3-D Secure provider, the authentication is performed in-line with the existing transaction flow. The process starts by performing a typical authorization or sale request with a desire to perform 3-D Secure authentication in the request.
-
-### Minimum Requirements
-
-## See Also
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+<!-- type: row-end -->

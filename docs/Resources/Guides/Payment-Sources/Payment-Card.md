@@ -40,8 +40,8 @@ The below table identifies the required parameters in the `card` object.
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ----------- |---|
 | `cardData` | *string* | 15 |  &#10004; | Credit Card Number or Encrypted Data |
-| `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month Example (05) |
-| `expirationYear` | *string* | 4 |  &#10004; | 4-digit card expiration year Example (2025) |
+| `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month |
+| `expirationYear` | *string* | 4 |  &#10004; | 4-digit card expiration year |
 
 <!-- theme: info -->
 > Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.

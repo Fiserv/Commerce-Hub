@@ -8,11 +8,10 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 ### How it Works
 
-1. Customer selects checkout from the merchant's App.
-2. Customer then presented with the merchant's payment form.
-3. The App calls the Google Pay framework to obtain the encrypted wallet data.
-4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
-5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+1. The customer selects checkout from the merchant's App and is presented with the merchant's payment form.
+2. The app calls the Google Pay framework to obtain the encrypted wallet data.
+3. The merchant's app submits the encrypted Google Pay payload to Commerce Hub.
+4. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, customer-transaction-record]
 ---
 
 # Customer Transaction Record (CTR) Response Element Creation
@@ -11,14 +11,16 @@ Commerce Hub will not be providing a single CTR element in the API response.  Th
 
 **Payeezy CTR Example:**
 
-![API Response CTR Example](?path=../../../../assets/images/Customer_Transaction_Record_pic_example.png)
-
-blah blah blah
-
-![API Response CTR Example](../../../../assets/images/Customer_Transaction_Record_pic_example.png)
+```json
+{
+   "additional_info": {
+             "ctr": "========== TRANSACTION RECORD ==========\nSEI stereo shop Terminal NO-TA\n1231 Durrett Lane\nLouisville, KY 40217\nUnited States\nwww.abc.com\n\nTYPE: Purchase\n\nACCT: Visa                   $ 5.00 USD\nTest 2 Dollar:        $2.00 USD\nTotal:        $7.00 USD\n\nCARDHOLDER NAME : Joe Public\nCARD NUMBER     : ############0002\nDATE/TIME       : 10 May 21 12:59:08\nREFERENCE #     : 001 0599326 M\nAUTHOR. #       : 875006\nTRANS. REF.     : Invoice A\n\n    Approved - Thank You 100\n\n\nPlease retain this copy for your records.\n\nCardholder will pay above amount to\ncard issuer pursuant to cardholder\nagreement.\n========================================"
+    }
+}
+```
 
 ### CTR Creation from Commerce Hub Elements
-Click [here](?path=/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
+Click [here](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Migration/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
 
 | Payeezy Customer Transaction Record (CTR)| Commerce Hub Elements | 
 | :-------------------------------------- | :------------- |

@@ -47,7 +47,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
 
 <!--
@@ -470,7 +470,6 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
