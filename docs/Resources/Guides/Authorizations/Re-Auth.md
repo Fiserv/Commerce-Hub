@@ -4,8 +4,6 @@ tags: [Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
 
 # Reauthorize
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon.
 
 A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
@@ -13,6 +11,9 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 - **Merchant Managed:** The merchant submits the transaction with the required fields and a reauthorization is processed by Commerce Hub.
 - **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthrorizes if required.
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon.
 
 ### Reauthorization Scenarios
 
@@ -59,7 +60,7 @@ type: tab
 -->
 
 JSON string format:
-
+ 
 ```json
 {
    "transactionDetails":{
