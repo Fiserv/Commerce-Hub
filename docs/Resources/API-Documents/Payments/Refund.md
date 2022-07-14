@@ -22,7 +22,7 @@ The refund can be issued using the original `transactionId` in the URI or a refe
 
 ---
 
-## Refund Using Referenced Identifier 
+## Refunds Using Referenced Identifier 
 
 A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type. 
 
@@ -93,8 +93,9 @@ titles: Request, Response
     "referenceTransactionId": "84356531348"
   },
 {
-  "transactionDetails": {
-    "reversalReasonCode": "VOID"
+  "amount": {
+    "total": "10.00",
+    "currency": "USD"
   },
   "merchantDetails":{
     "merchantId": "123456789789567",
@@ -115,61 +116,61 @@ type: tab
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType": "REFUND",
-      "transactionState": "VOIDED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "transactionTimestamp": "2021-06-20T23:42:48Z",
-         "orderId": "RKOrdID-525133851837",
-         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-         "clientRequestId": "4345791",
-         "transactionId": "84356531338"
+
+  "gatewayResponse": {
+    "transactionType": "REFUND",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 12.04,
+      "currency": "USD"
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
       }
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "bin": "40055500",
-         "last4": "0019",
-         "scheme": "VISA",
-         "expirationMonth": "10",
-         "expirationYear": "2030"
-      }
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": 12.04,
-         "currency": "USD"
-      },
-      "merchantName": "Merchant Name",
-      "merchantAddress": "123 Peach Ave",
-      "merchantCity": "Atlanta",
-      "merchantStateOrProvince": "GA",
-      "merchantPostalCode": "12345",
-      "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com",
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK5882",
-         "schemeTransactionId": "0225MCC625628",
-         "processor": "FISERV",
-         "host": "NASHVILLE",
-         "responseCode": "000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021-06-20T23:42:48Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2021-06-20T23:42:48Z"
-         }
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   }
+    }
+  },
+  "transactionDetails": {
+    "merchantInvoiceNumber": "123456789012"
+  }
 }
 ```
 
@@ -181,13 +182,9 @@ type: tab
 
 A refund request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the refund type.
 
-
-## Request Variables
+### Request Variables
 
 A refund request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the refund type.
-
-
-
 
 <!--
 type: tab
@@ -216,14 +213,14 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-## Endpoint
+### Endpoint
 
 <!-- theme: success -->
 >**POST** `/payments/v1/charges/{transactionId}/refund`
 
 ---
 
-## Payload Example
+### Payload Example
 
 <!--
 type: tab
