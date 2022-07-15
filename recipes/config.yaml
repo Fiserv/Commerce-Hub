@@ -3,9 +3,13 @@ version: 1.0.0
 recipes:
 - link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
   title: Payment with JS
+  type: recipe
 - link: docs/In-Person/Integrations/Fully-Integrated.md
   title: Payment with Py
+  type: recipe
 - link: docs/In-Person/Integrations/Semi-Integrated.md
   title: Payment with Rust
+  type: recipe
 - link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
   title: Payment with Java
+  type: recipe
