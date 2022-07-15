@@ -72,8 +72,8 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
       - title: JavaScript
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-    - title: Virtual Terminal
-      link: docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md 
+    - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
       link: docs/Getting-Started/Getting-Started-Wallets.md
       sections:
@@ -88,6 +88,8 @@
 - sections:
   - title: Features
     sections:
+    - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Auth Optimization
       link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
     - title: Custom Identifiers
@@ -135,8 +137,6 @@
     sections:
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Authentication Header
-      link: docs/Resources/API-Documents/Authentication-Header.md
     - title: Payments
       sections:
       - title: Charges
@@ -144,17 +144,19 @@
       - title: Capture
         link: docs/Resources/API-Documents/Payments/Capture.md
       - title: Cancel
-        link: docs/Resources/API-Documents/Payments/Cancel.md
+        link: docs/Resources/API-Documents/Payments/Cancels.md
       - title: Refund
         link: docs/Resources/API-Documents/Payments/Refund.md
       - title: Inquiry
         link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Payments VAS
       sections:
+      - title: Verification
+        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
+      - title: Information Lookup
+        link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
       - title: Tokenization
         link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-      - title: Account Verification
-        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
     - title: Data Solutions
       sections:
       - title: Enhanced Data Service

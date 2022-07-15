@@ -23,7 +23,7 @@ A cancels request is initiated by sending the `referenceTransactionDetails` in t
 type: tab
 titles: referenceTransactionDetails, transactionDetails, merchantDetails
 -->
-
+ 
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
@@ -323,7 +323,7 @@ The below table identifies the valid values of the reason the merchant/customer 
 |*MAC_SYNCH_ERROR* | MAC Synch Error terminal MAC is out of synch with host MAC |
 |*ENCRYPTION_ERROR* | Message Encryption Error terminal message encryption key is out of synch with host message encryption key or there is an error with the input data. |
 |*SYSTEM_ERROR* | System Error all other errors except for timeout (no response received) such as communication errors between the terminal and the PIN pad. |
-
+ 
 ---
 
 ## See Also

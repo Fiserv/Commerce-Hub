@@ -9,27 +9,33 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, quick-keys, b
 <!-- theme: danger -->
 >  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Quick Key was previously accessed via the Payeezy Real-time Payment Manager (RPM) POS screen and will now be available through ClientLine Enterprise (CLX) Virtual Terminal Initiate Bulk. For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
+Quick Keys was previously accessed via the Payeezy Real-time Payment Manager (RPM) POS screen and will now be available through ClientLine Enterprise (CLX) Virtual Terminal Initiate Bulk. For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
-In RPM, the Quick Key functionality had to be requested; In CLX, all merchants will have access to the Initiate Bulk menu item under Virtual Terminal.
+In RPM, the Quick Keys functionality had to be requested; In CLX, all merchants will have access to the Initiate Bulk menu item under Virtual Terminal.
 
-CLX supports the new Commerce Hub format as well as the Payeezy format.  Both templates can be downloaded from the screen.
+### File Format and Upload
 
-CLX provides the additional functionality:
-- The ability to add single transactions to the batch after the file upload
-- An option to override the terminal type
-- A toggle button to switch between initiating single transactions and bulk uploads
+CLX supports the new Commerce Hub upload file format as well as the Payeezy file format.  Both templates can be downloaded from the Initiate Bulk screen.
 
-In RPM, a row could be edited by clicking on it; In CLX, checking the box in the first column of the row will make it editable.
+RPM allowed for only 250 transactions per batch upload; CLX allows for an unlimited number of transactions.
 
 The transaction type of 'Purchase' in RPM is now a 'Sale' in CLX.
 
-RPM allowed for only 250 transactions per batch upload, CLX allows for an unlimited number of transactions.
+### Screen Functionality
+
+CLX provides the additional functionality of toggling between initiating a single transaction and bulk upload.
+
+In RPM, a row could be edited by clicking on it and updating information in the left column; In CLX, checking the box in the first column of the row will make the row editable.
+
+
+
+
 
 ---
 
 ## See Also
 
+- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
 

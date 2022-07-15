@@ -50,7 +50,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; | Target can be TRACK_1, TRACK_2, or BOTH |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `keyId` | *string* | 64 | | Required if track data is encrypted |
 
 <!--
@@ -78,7 +78,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -295,7 +295,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -343,17 +343,6 @@ titles: Request, Response
    "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-   },
-   "additionalDataCommon":{
-      "directedRouting":{
-         "processors":[
-            {
-               "code": "NASHVILLE",
-               "platform": "NORTH",
-               "priority": "PRIMARY"
-            }
-         ]
-      }
    }
 }
 ```

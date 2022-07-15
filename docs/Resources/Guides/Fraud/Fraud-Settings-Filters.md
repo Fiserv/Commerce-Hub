@@ -1,5 +1,5 @@
 ---
-tags: [Fraud, Card Not Present, Fraud Filters]
+tags: [Fraud, Card Not Present, Card Present, In-Person, Online]
 ---
 
 
