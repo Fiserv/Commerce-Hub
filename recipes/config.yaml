@@ -1,7 +1,7 @@
 ---
 version: 1.1.0-beta
 recipes:
-- path: docs/banks-and-CU/content-mgt.md
-  name: Payment with Java
-- path: docs/useCases/DepositAccountOrigination.md
-  name: Payment with Java-18
+- link: docs/banks-and-CU/content-mgt.md
+  title: Payment with Java
+- link: docs/useCases/DepositAccountOrigination.md
+  title: Payment with Java-18
