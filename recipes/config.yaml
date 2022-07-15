@@ -1,11 +1,11 @@
 ---
 version: 1.0.0
 recipes:
-- link: docs/banks-and-CU/content-mgt.md
+- link: docs/Getting-Started/Getting-Started-General.md
   title: Payment with JS
 - link: docs/useCases/DepositAccountOrigination.md
   title: Payment with Py
-- linkv: docs/useCases/CustomerMaintenance.md
+- link: docs/useCases/CustomerMaintenance.md
   title: Payment with Rust
-- links: docs/fintechs/accountholder.md
+- link: docs/fintechs/accountholder.md
   title: Payment with Java
