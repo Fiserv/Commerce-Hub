@@ -1,11 +1,11 @@
 ---
 version: 1.0.0
 recipes:
-- link: docs/Getting-Started/Getting-Started-General.md
+- link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
   title: Payment with JS
-- link: docs/useCases/DepositAccountOrigination.md
+- link: docs/In-Person/Integrations/Fully-Integrated.md
   title: Payment with Py
-- link: docs/useCases/CustomerMaintenance.md
+- link: docs/In-Person/Integrations/Semi-Integrated.md
   title: Payment with Rust
-- link: docs/fintechs/accountholder.md
+- link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
   title: Payment with Java
