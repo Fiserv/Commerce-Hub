@@ -3,7 +3,7 @@ tags: [Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
 ---
 
 # Reauthorize
-
+ 
 
 A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
@@ -114,7 +114,7 @@ titles: Request, Response
 ```
 <!--
 type: tab
--->
+--> 
 
 ##### Example of a reauthorization (201: Created) response.
 
