@@ -1,2 +1,11 @@
+---
 version: 1.0.0
-apis:
+recipes:
+- path: docs/banks-and-CU/content-mgt.md
+  name: Payment with JS
+- path: docs/useCases/DepositAccountOrigination.md
+  name: Payment with Py
+- path: docs/useCases/CustomerMaintenance.md
+  name: Payment with Rust
+- path: docs/fintechs/accountholder.md
+  name: Payment with Java
