@@ -1,9 +1,9 @@
 ---
 version: 1.1.0-beta
 recipes:
-- link: docs/banks-and-CU/content-mgt.md
+- link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
   title: Payment with Java
   type: recipe
-- link: docs/useCases/DepositAccountOrigination.md
+- link: docs/In-Person/Integrations/Fully-Integrated.md
   title: Payment with Java-18
   type: recipe
