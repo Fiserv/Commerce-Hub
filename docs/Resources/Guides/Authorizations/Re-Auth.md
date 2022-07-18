@@ -3,7 +3,6 @@ tags: [Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
 ---
 
 # Reauthorize
- 
 
 A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
@@ -30,7 +29,7 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 ## Request Variables
 
-The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
+The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` `referenceTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
 
 <!--
 type: tab
