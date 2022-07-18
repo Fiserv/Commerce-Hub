@@ -46,8 +46,6 @@
     - title: Debit
       link: docs/Resources/Guides/Debit/Debit.md
       sections:
-      - title: Least Cost Debit
-        link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
       - title: PIN Debit
         link: docs/Resources/Guides/Debit/PIN_Debit.md
     - title: Encrypted Payments
@@ -98,8 +96,6 @@
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
       link: docs/Resources/Guides/Directed-Routing.md
-    - title: Least Cost Debit
-      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Secure Data Capture
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Tokenization
