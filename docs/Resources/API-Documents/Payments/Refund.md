@@ -319,7 +319,7 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/refund)
+- [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
