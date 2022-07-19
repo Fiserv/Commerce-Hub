@@ -45,14 +45,14 @@ The below table identifies the required fields in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | --------| ---------- |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
+| `sourceType` | *string* | 15 |  &#10004; | Use *PaymentCard* for card transactions |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
 
 <!--
 type: tab
 -->
 
-The below table identifies the required parameters in the `encryptionData` object.
+The below table identifies the required fields in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
