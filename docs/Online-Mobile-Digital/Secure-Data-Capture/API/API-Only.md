@@ -41,7 +41,7 @@ type: tab
 titles: source, encryptionData, JSON Example
 -->
 
-The below table identifies the required parameters in the `source` object.
+The below table identifies the required fields in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | --------| ---------- |
