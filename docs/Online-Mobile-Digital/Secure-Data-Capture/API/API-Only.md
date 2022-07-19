@@ -20,7 +20,7 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 
 ## Step 1: Security Credentials 
 
-A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`encryption block`](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, 'keyId', and `publicKey`. These will be used to create the [`encryption block`](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
 
 ---
 
