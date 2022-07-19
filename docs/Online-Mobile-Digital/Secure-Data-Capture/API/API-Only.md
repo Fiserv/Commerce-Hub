@@ -26,13 +26,13 @@ A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) 
 
 ## Step 2: Encryption
 
-The card data is encypted using Base64 RSA Multi-Use Public Key. Once [`encrypted`](?path+docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) the encryptionblock and encyptionblockfields are used in the card capture request. 
+The card data is encypted using Base64 RSA Multi-Use Public Key. Once [`encryption`](?path+docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
 
 ---
 
 ## Step 3: Submit Card Capture Request
 
-The encrypted data is submitted to Commerce Hub to store the card data where the API-key is validated and linked to the generated `sessionId` in step 1. 
+The encrypted data is securely submitted to Commerce Hub, using API-key is validated, where it persisted and linked to the `sessionId` generated in step 1. 
 
 ### Minimum Requirements
 
