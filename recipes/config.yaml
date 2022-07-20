@@ -1,9 +1,9 @@
 ---
 version: 1.1.0-beta
 recipes:
-- link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
+- link: recipes/Recipe-5.md
   title: Payment with Java
   type: recipe
-- link: docs/In-Person/Integrations/Fully-Integrated.md
+- link: recipes/Recipe-6.md
   title: Payment with Java-18
   type: recipe
