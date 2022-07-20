@@ -25,7 +25,7 @@ Allows a merchant an easy and secure way to embed a payment form into a website 
 
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your Commerce Hub JS integration.
+The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
 **Recommendations**
 
