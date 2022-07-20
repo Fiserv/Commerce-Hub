@@ -354,7 +354,7 @@ paths:
                 Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/Payment3DSTokenResponse'}
                 PaymentSession:
                   summary: TokenizationResponse with PaymentSession
-                  $ref: '#/components/examples/PaymentCardTokenRequest'
+                  $ref: '#/components/examples/PaymentCardTokenResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -694,7 +694,7 @@ paths:
             schema:
               $ref: '#/components/schemas/CardCaptureRequest'
             examples:
-              PaymentCard: {summary: CardCapture Request with PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedRequest'}
+              PaymentCard: {summary: CardCapture Request with PaymentCard, $ref: '#/components/examples/PaymentCardCaptureRequest'}
       responses:
         204:
           description: Success.
@@ -3964,6 +3964,30 @@ components:
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
     PaymentCardRequest:
       value:
+        amount:
+          total: 12.04
+          currency: USD
+        source:
+          sourceType: PaymentCard
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+        transactionDetails:
+          captureFlag: true
+          merchantInvoiceNumber: '123456789012'
+        transactionInteraction:
+          origin: ECOM
+          eciIndicator: CHANNEL_ENCRYPTED
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    PaymentCardEncryptedRequest:
+      value:
+        amount:
+          total: '12.04'
+          currency: USD
         source:
           sourceType: PaymentCard
           encryptionData:
@@ -3975,15 +3999,20 @@ components:
         merchantDetails:
           merchantId: '123456789789567'
           terminalId: '123456'
-    PaymentCardEncryptedRequest:
+
+    PaymentCardCaptureRequest:
       value:
-        amount: {total: '12.04', currency: USD}
         source:
           sourceType: PaymentCard
-          card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+          encryptionData:
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            keyId: '88000000022'
+        merchantDetails:
+          merchantId: '123456789012345'
+          terminalId: '123456'
     PaymentCardForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
