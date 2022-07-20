@@ -51,7 +51,7 @@ JSON string format for PaymentCard:
          "encryptionType": "RSA",
          "encryptionTarget": "MANUAL",
          "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
-         "deviceType": "INGENICO",
+         "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
          "keyId": "88000000023"
       }
    }
@@ -77,27 +77,17 @@ titles: Request, Response
     "total": "12.04",
     "currency": "USD"
   },
-  "source": {
-    "sourceType": "PaymentCard",
-    "emvData": "0249F3704833A12329F1002AB34",
-    "encryptionData": {
-      "encryptionType": "RSA",
-      "encryptionTarget": "MANUAL",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-      "deviceType": "INGENICO",
-      "keyId": "88000000022"
-    }
+   "source":{
+      "sourceType": "PaymentCard",
+      "encryptionData":{
+         "encryptionType": "RSA",
+         "encryptionTarget": "MANUAL",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
+         "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+         "keyId": "88000000023"
+      }
+   }
   },
-  "transactionDetails": {
-    "captureFlag": true,
-    "merchantInvoiceNumber": "123456789012"
-  },
-   "transactionInteraction":{
-      "origin": "POS",
-      "posEntryMode": "EMV_FALLBACK",
-      "posConditionCode": "CARD_PRESENT",
-      "terminalTimestamp": "2021-06-20T23:42:48Z"
-   },
    "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
