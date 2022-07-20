@@ -175,7 +175,6 @@ titles: Request, Charges Response, Tokens Response
   },
   "transactionDetails": {
     "captureFlag": true,
-    "accountVerification": false,
     "merchantTransactionId": "RKTransID-768086381518"
   },
   "merchantDetails": {
