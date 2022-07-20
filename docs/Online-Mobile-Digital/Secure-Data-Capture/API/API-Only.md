@@ -1,7 +1,8 @@
-# Merchant Managed Secure Data Capture
+---
+tags: [Online, Card Not Present, Secure Data Capture]
+---
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include API Only integration support and the documents related to the features will be released soon.
+# Merchant Managed Secure Data Capture
 
 Commerce Hub allows E-commerce merchants to manage the design and form of their website (unlike [Hosted Payment Page](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md) and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions). The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment nonce `sessionId` (one-time use token). The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
@@ -20,19 +21,19 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 
 ## Step 1: Security Credentials 
 
-A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, 'keyId', and `publicKey`. These will be used to create the [`encryption data`](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, 'keyId', and `publicKey`. These will be used to create the [encryption data](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
 
 ---
 
 ## Step 2: Encryption
 
-The card data is encypted using Base64 RSA Multi-Use Public Key. Once [`encryption`](?path+docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
+The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path+docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
 
 ---
 
 ## Step 3: Submit Card Capture Request
 
-The encrypted data is securely submitted to Commerce Hub, using API-key is validated, where it persisted and linked to the `sessionId` generated in step 1. 
+The encrypted data is securely submitted to Commerce Hub using API-key validation, where it is persisted and linked to the `sessionId` generated in step 1. 
 
 ### Minimum Requirements
 
@@ -41,7 +42,7 @@ type: tab
 titles: source, encryptionData, JSON Example
 -->
 
-The below table identifies the required fields in the `source` object.
+The below table identifies the required parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | --------| ---------- |
@@ -52,7 +53,7 @@ The below table identifies the required fields in the `source` object.
 type: tab
 -->
 
-The below table identifies the required fields in the `encryptionData` object.
+The below table identifies the required parameters in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
@@ -128,18 +129,10 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a card capture (204: Success) response.
+A successful card capture response will result in a HTTP 204 No Content, if a response is not received, best practice is to still submit the transaction.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-
-since we only send a HTTP 204 back, verify the merchant will not recieve any gatewayresponse elements, if no JSON is returned then update 148 example to state Commerce Hub will return an HTTP 204: Success on a successful card capture response.
-
-```
-<!-- theme: info -->
->If a successful response is not received, best practice is to still submit the transaction.
 
 <!-- type: tab-end -->
 
