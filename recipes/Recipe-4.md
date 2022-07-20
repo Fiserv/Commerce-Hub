@@ -9,6 +9,8 @@ Commerce Hub supports the following encrypted payment source types: [EMV chip an
 - [Step 2: Get Payment Details](?type=post&path=/payments/v1/charges&branch=develop#step-2)
 - [Step 3: Process Payment](?type=post&path=/payments/v1/charges&branch=develop#step-3)
 - [Step 4: Finalize Transaction](?type=post&path=/payments/v1/charges&branch=develop#step-4)
+
+
 ---
 
 ## Step 1: Create Keys
