@@ -5,10 +5,12 @@ The PIN Pad or device used to capture the payment source is connected to the ter
 Commerce Hub supports the following encrypted payment source types: [EMV chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md), [track data (magstripe)](?path=docs/In-Person/Encrypted-Payments/Track.md), NFC/contactless, and [manual entry (EMV fallback)](?path=docs/In-Person/Encrypted-Payments/Manual.md).
 
 ---
-- [Step 1: Create Keys](?path=recipes/Recipe-5.md&branch=develop#step-1-create-keys)
-- [Step 2: Get Payment Details](?path=recipes/Recipe-5.md&branch=develop#step-2-get-payment-details)
-- [Step 3: Process Payment](?path=recipes/Recipe-5.md&branch=develop#step-3-process-payment)
-- [Step 4: Finalize Transaction](path=recipes/Recipe-5.md&branch=develop#step-4)
+- [Step 1: Create Keys](?path=recipes/Recipe-6.md&branch=develop#step-1-create-keys)
+- [Step 2: Get Payment Details](?path=recipes/Recipe-6.md&branch=develop#step-2-get-payment-details)
+- [Step 3: Process Payment](?path=recipes/Recipe-6.md&branch=develop#step-3-process-payment)
+- [Step 4: Finalize Transaction](path=recipes/Recipe-6.md&branch=develop#step-4)
+
+
 ---
 
 ## Step 1: Create Keys
