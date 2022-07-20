@@ -341,6 +341,19 @@ type: tab
 
 ---
 
+## Additional Security Settings
+
+The following recommendations are to limit potential for fraudulent activity on your Commerce Hub integration.
+
+**Recommendations**
+
+- Enable Re-Captcha
+- Authentication/Login requirement to access the payment page
+- Limit response back to the browser/customer
+- Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
+
+---
+
 ## See Also
 
 - [Secure Data Capture]
