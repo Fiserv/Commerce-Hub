@@ -7,7 +7,9 @@ tags: [Card Present, In-Person, Debit, Regional]
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include support for Regional Debit transactions and the documents related to this feature will be released soon.
 
-Applies to Regional (International) Debit transactions.
+Regional (International) Debit Solutions from Commerce Hub provide anywhere, anytime payment convenience to your customers through comprehensive transaction processing and settlement services, card management and personalization services, and extensive implementation and support services.
+
+Contact your account representative for more information on using regional (international) debit solutions.
 
 ---
 
