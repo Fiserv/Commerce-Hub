@@ -27,7 +27,7 @@ Commerce Hub accomplishes this by injecting an iFrame into a parent form where c
 
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your iFrame integaration. 
+The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
 **Recommendations**
 
