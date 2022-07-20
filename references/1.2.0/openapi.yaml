@@ -47,9 +47,7 @@ paths:
                 PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
                 PaymentCard-Encrypted: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
                 PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
-                PaymentEMV-HD: {summary: ChargesResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVChargesHDResponse'}
                 PaymentTrack: {summary: ChargesResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                PaymentTrack-HD: {summary: ChargesResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackChargesHDResponse'}
                 ManualEntry: {summary: ChargesResponse with manual entry PaymentCard,
                   $ref: '#/components/examples/ManualEntryChargesResponse'}
                 ApplePay: {summary: ChargesResponse with ApplePay, $ref: '#/components/examples/ApplePayChargesResponse'}
