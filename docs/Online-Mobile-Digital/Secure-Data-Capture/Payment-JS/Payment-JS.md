@@ -21,6 +21,8 @@ Allows a merchant an easy and secure way to embed a payment form into a website 
 
 **Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md).**
 
+---
+
 ## Additional Security Settings
 
 The following recommendations are to limit potential for fraudulent activity on your Commerce Hub JS integration.
