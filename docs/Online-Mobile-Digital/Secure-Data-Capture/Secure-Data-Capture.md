@@ -1,3 +1,7 @@
+---
+tags: [Online, Card Not Present, Secure Data Capture]
+---
+
 # Secure Data Capture
 
 Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
@@ -55,7 +59,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS
 -->
 
 <!-- type: card
-title: API Only
+title: Merchant Managed API
 description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
 -->
