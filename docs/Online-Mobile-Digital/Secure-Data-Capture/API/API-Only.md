@@ -27,7 +27,7 @@ A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) 
 
 ## Step 2: Encryption
 
-The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path+docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
+The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
 
 ---
 
@@ -341,9 +341,11 @@ type: tab
 
 ---
 
-
 ## See Also
+
 - [Secure Data Capture]
-- API Explorer
-- Encryption
-- Security Credentials
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture)
+- [Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Security Credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+
+---
