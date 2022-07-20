@@ -12,7 +12,7 @@ Regional (International) Debit Solutions from Commerce Hub provide anywhere, any
 Contact your account representative for more information on using regional (international) debit solutions.
 
 ---
-
+ 
 <!--
 type: tab
 titles: regionalDebit, JSON Example
@@ -61,6 +61,60 @@ JSON string format for `regionalPin`:
    }
 }
 ```
+##### Example of a regional debit payload request.
+
+```json
+{
+   "amount":{
+      "total": "12.04",
+      "currency": "USD"
+   },
+   "source":{
+      "sourceType": "PaymentEMV",
+      "emvData": "0249F3704833A12329F1002AB34",
+      "encryptionData":{
+         "encryptionType": "RSA",
+         "encryptionTarget": "TRACK_2",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
+         "deviceType": "INGENICO",
+         "keyId": "88000000022"
+      }
+   },
+   "transactionDetails":{
+      "captureFlag": true,
+      "merchantInvoiceNumber": "123456789012"
+   },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "ICR_RELIABLE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2022-03-10T01:37:13Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
+      }
+    }
+  },
+    "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    },
+  "additionalDataCommon": {
+    "directedRouting": {
+      "processors": [
+        {
+          "code": "NASHVILLE",
+          "platform": "NORTH",
+          "priority": "PRIMARY"
+        }
+      ]
+    }
+  }
+}
+```
+
 
 <!-- type: tab-end -->
 
