@@ -21,7 +21,7 @@ Commerce Hub accomplishes this by injecting an iFrame into a parent form where c
 5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
 6. Commerce Hub sends the transaction response to the merchant's website.
 
-**Begin integration with Commerce Hub's [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
+**Begin integration with Commerce Hub's [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
 
 ---
 
