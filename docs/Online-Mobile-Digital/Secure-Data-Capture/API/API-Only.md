@@ -343,7 +343,7 @@ type: tab
 
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your Commerce Hub integration.
+The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
 **Recommendations**
 
