@@ -7,7 +7,7 @@ tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments]
 
 Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually entering the payment source details a payment terminal. This can be used when the payment terminal fails to obtain the card details from the card's chip or magnetic stripe.
 
-A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
+A device encrypts the customer's payment source and sends the encryption data to Commerce Hub.
 
 ---
 
@@ -225,7 +225,7 @@ The data will be an encrypted value coming from VeriFone terminal, the same leng
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [EMV Chip](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
