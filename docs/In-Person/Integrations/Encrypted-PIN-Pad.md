@@ -2,11 +2,11 @@
 tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, Track Data]
 ---
 
-# Encrypted PIN Pad Integration
+# Encrypted Device Integration
 
-The PIN Pad or device used to capture the payment source is connected to the terminal or software. The PIN Pad encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device.
+A third party device or PIN Pad is used to capture the payment source and is connected to the terminal or software which communicates with Commerce Hub. The divice encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device.
 
-The benefits of a encyrpted PIN Pad solution are:
+The benefits of a encyrpted device solution are:
 - Reduced coding effort for the developer because the encryption handling is already implemented by the third party vendor
 - All forms of electronic payment are accepted
 - Faster payment improving the customer experience
