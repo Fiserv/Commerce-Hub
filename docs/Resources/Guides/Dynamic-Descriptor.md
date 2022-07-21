@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, dynamic-descriptor, Statement-Descriptor, Merchant-Descriptor, Merchant-Details, Soft-Descriptor, Hard-Descriptor, vault]
+tags: [Dynamic Descriptor, Statement Descriptor, Merchant Descriptor, Merchant Details, Soft Descriptor, Hard Descriptor, Vault]
 ---
 
 # Dynamic Descriptor
@@ -169,8 +169,9 @@ type: tab
          "referenceNumber": "845366457890-TODO",
          "schemeTransactionId": "019078743804756",
          "feeProgramIndicator": "123",
-         "processor": "fiserv",
-         "responseCode": "00000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",

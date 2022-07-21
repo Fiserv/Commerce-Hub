@@ -3,7 +3,7 @@
   "name": "CommerceHub",
   "brand": "Carat",
   "brandLogoURL": "https://raw.githubusercontent.com/tomeck/transactionenrichmentstoplight/main/docs/carat_logo.png",
-  "solution": "merchants",
+  "solution": ["merchants","carat"],
   "brandDescription": "Our powerful omnichannel commerce solutions help companies reach untapped markets and expand globally without being limited by borders, currencies or old ways of thinking.\n      Carat's single-source commerce engine makes the process seamless, effortless, and secure. We've unified our suite of solutions into a powerful tech ecosystem so you can create commerce.\n      Carat's single-source commerce engine makes the process seamless, effortless, and secure. We've unified our suite of solutions into a powerful tech ecosystem so you can create commerce. Carat's single-source commerce engine makes the process seamless, effortless, and secure. We've unified our suite of solutions into a powerful tech ecosystem so you can create commerce.",
   "categories": [
     {
@@ -34,8 +34,20 @@
   "apiVersions": [
     {
       "version": "1.0.0",
-      "versionType": "major",
+      "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
+      "apiSpecFileNames": ["openapi"]
+    },
+    {
+      "version": "1.1.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-1.1.0.md",
+      "apiSpecFileNames": ["openapi"]
+    },
+    {
+      "version": "1.2.0",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/release-notes-1.2.0.md",
       "apiSpecFileNames": ["openapi"]
     }
   ],
@@ -69,7 +81,7 @@
       },
       {
         "name": "editParameterAPIExplorer",
-        "value": true
+        "value": false
       }      
      ]
   },

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-authorized, merchant-stored, tokens-request, payment-token, tokenization, api-reference,]
+tags: [Customer Authorized, Merchant Stored, Tokens Request, Payment Token, Tokenization, API Reference,]
 ---
 
 # Tokenization
@@ -139,8 +139,9 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "000000",
+      "processor": "FISERV",
+      "host" "NASHVILLE",
+      "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
@@ -303,7 +304,7 @@ The merchant can use the saved tokenized data in order to initate a charge reque
 
 <!--
 type: tab
-titles: amount, paymentToken
+titles: amount, source, card
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -317,7 +318,7 @@ The below table identifies the required parameters in the `amount` object.
 type: tab
 -->
 
-The below table identifies the required parameters in the `paymentToken` object.
+The below table identifies the required parameters in the `source` object.
 
 
 | Variable | Type| Maximum Length | Required | Description |
@@ -327,6 +328,16 @@ The below table identifies the required parameters in the `paymentToken` object.
 | `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
 | `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
 | `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | | &#10004; | Contains card specific information. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|---|
 | `card` | *object* | | &#10004; |Contains card specific information. |
 | `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
 | `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
@@ -364,7 +375,7 @@ titles: Request, Response
     "tokenSource": "TRANSARMOR"
     "card": {
       "expirationMonth": "03",
-      "expirationYear": "30"
+      "expirationYear": "2035"
     }
   },
   "transactionDetails": {
@@ -401,7 +412,7 @@ type: tab
     "last4": "0019",
     "brand": "VISA",
     "expirationMonth": "03",
-    "expirationYear": "30"
+    "expirationYear": "2035"
   },
   "paymentReceipt": {
     "approvedAmount": {
@@ -438,5 +449,6 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
 
 ---

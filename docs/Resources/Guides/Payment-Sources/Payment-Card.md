@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
+tags: [Paymentcard, Payment Sources]
 ---
 
 
@@ -8,11 +8,14 @@ tags: [carat, commerce-hub, enterprise, paymentcard, payment-sources]
 Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
 
 <!-- theme: info -->
-> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
+> PINless Debit transaction process via the credit network unless the merchant account is setup for debit processing. Please contact your account representitive for more information on [debit solutions](?path=docs/Resources/Guides/Debit/Debit.md).
 
 ---
 
 ### Request Variables
+
+<!-- theme: info -->
+> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
 
 <!--
 type: tab
@@ -26,7 +29,7 @@ The below table identifies the parameters in the `source` object.
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
 | `card` | *object* | N/A |  &#10004; | Contains the payment card details |
 | `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
-| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md) |
+| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab
@@ -37,8 +40,8 @@ The below table identifies the required parameters in the `card` object.
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ----------- |---|
 | `cardData` | *string* | 15 |  &#10004; | Credit Card Number or Encrypted Data |
-| `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month Example (05) |
-| `expirationYear` | *string* | 4 |  &#10004; |4-digit card expiration year Example (2025) |
+| `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month |
+| `expirationYear` | *string* | 4 |  &#10004; | 4-digit card expiration year |
 
 <!-- theme: info -->
 > Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
@@ -143,8 +146,9 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+	 "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",

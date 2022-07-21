@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, google-pay, wallet]
+tags: [Web, Online, Google Pay, Wallet]
 ---
 
 # Google Pay on the Web: RESTful API Integration
@@ -10,13 +10,13 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
 ### How it Works
-1. Customer selects checkout from the merchant's website.
-2. Customer then presented with the merchant's payment form.
-3. Customer selects Google Pay and then redirected to the Google Pay payment form.
-4. Customer completes the google pay form and then redirected to the merchant's website.
-5. Customer selects to complete the transaction.
-6. Merchant submits the encrypted Google Pay payload to Commerce Hub.
-7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
+
+1. The customer selects checkout from the merchant's website and is presented with the merchant's payment form.
+2. The customer selects Google Pay and then redirected to the Google Pay payment form.
+3. The customer completes the google pay form and then redirected to the merchant's website.
+4. The customer selects to complete the transaction.
+5. The merchant submits the encrypted Google Pay payload to Commerce Hub.
+6. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
 ---
 
@@ -57,6 +57,8 @@ The below table identifies the required parameters in the `source` object.
 <!-- theme:info -->
 >Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
 
+---
+
 <!--
 type: tab
 titles: Request, Response
@@ -95,8 +97,7 @@ type: tab
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-
-> See [Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -141,8 +142,9 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "000000",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
@@ -166,12 +168,12 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 <!---
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 -->
 ---

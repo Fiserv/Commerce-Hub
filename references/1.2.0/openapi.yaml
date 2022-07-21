@@ -1,16 +1,15 @@
-openapi: 3.0.3
-info: {title: API Explorer, description: This API Specification is designed to provide
+openapi: 3.0.2
+info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
-    processing in Card Not Present environments., version: 1.0.0}
+    processing., version: v1.2.0}
 servers:
-- {url: 'https://api.fiservapps.com/ch/{resource}', description: Production}
-- {url: 'https:// cert.api.fiservapps.com/ch/{resource}', description: Cert Sandbox}
-- {url: 'https:// qa.api.fiservapps.com/ch/{resource}', description: QA Sandbox}
+- {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
+- {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
 paths:
   /payments/v1/charges:
     x-model-version: 1.0
     post:
-      tags: [TEST Payment Endpoint Definition]
+      tags: [Payment Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Charges
       summary: Submit a charge transaction.
@@ -26,6 +25,7 @@ paths:
             schema: {$ref: '#/components/schemas/ChargesRequest'}
             examples:
               PaymentCard: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
+              PaymentCard-Encrypted: {summary: ChargesRequest Request with Encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedRequest'}
               PaymentEMV: {summary: ChargesRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
               PaymentTrack: {summary: ChargesRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
               ManualEntry: {summary: ChargesRequest with manual entry PaymentCard,
@@ -34,6 +34,9 @@ paths:
               GooglePay: {summary: ChargesRequest with GooglePay, $ref: '#/components/examples/GooglePayRequest'}
               Payment3DS: {summary: ChargesRequest with Payment3DS, $ref: '#/components/examples/Payment3DSRequest'}
               PaymentToken: {summary: ChargesRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenRequest'}
+              PaymentSession:
+                summary: ChargesRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionRequest'
       responses:
         201:
           description: Created
@@ -42,6 +45,7 @@ paths:
               schema: {$ref: '#/components/schemas/ChargesResponse'}
               examples:
                 PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
+                PaymentCard-Encrypted: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
                 PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
                 PaymentTrack: {summary: ChargesResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
                 ManualEntry: {summary: ChargesResponse with manual entry PaymentCard,
@@ -50,6 +54,9 @@ paths:
                 GooglePay: {summary: ChargesResponse with GooglePay, $ref: '#/components/examples/GooglePayChargesResponse'}
                 Payment3DS: {summary: ChargesResponse with Payment3DS, $ref: '#/components/examples/Payment3DSChargesResponse'}
                 PaymentToken: {summary: ChargesResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
+                PaymentSession:
+                  summary: ChargesResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentCardChargesResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -69,60 +76,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-#  /payments/v1/forcedpost:
-#    x-model-version: 1.0
-#    post:
-#      tags: [Payment Endpoint Definition]
-#      x-group-name: Payments
-#      x-proxy-name: Forced
-#      summary: Submit a forced post transaction.
-#      description: Use this payload to originate a financial transaction after receiving
-#        an <code>approvalCode</code> from the voice authorization center due to an
-#        off-line or referral (call) decline response.
-#      requestBody:
-#        required: true
-#       content:
-#          application/json:
-#            schema: {$ref: '#/components/schemas/ForcedPostRequest'}
-#            examples:
-#              PaymentCard: {summary: ForcedPostRequest with PaymentCard, $ref: '#/components/examples/PaymentCardForcedRequest'}
-#              PaymentEMV: {summary: ForcedPostRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVForcedRequest'}
-#              PaymentTrack: {summary: ForcedPostRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackForcedRequest'}
-#              ManualEntry: {summary: ForcedPostRequest with maunal entry PaymentCard,
-#                $ref: '#/components/examples/ManualEntryForcedRequest'}
-#              PaymentToken: {summary: ForcedPostRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenForcedRequest'}
-#      responses:
-#        201:
-#          description: Created
-#          content:
-#            application/json:
-#              schema: {$ref: '#/components/schemas/ForcedPostResponse'}
-#              examples:
-#                PaymentCard: {summary: ForcedPostResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
-#                PaymentEMV: {summary: ForcedPostResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
-#                PaymentTrack: {summary: ForcedPostResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-#                ManualEntry: {summary: ForcedPostResponse with manual entry PaymentCard,
-#                  $ref: '#/components/examples/ManualEntryChargesResponse'}
-#                PaymentToken: {summary: ForcedPostResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
-#        400: {$ref: '#/components/responses/BadRequest'}
-#        401: {$ref: '#/components/responses/Unauthorized'}
-#        404: {$ref: '#/components/responses/NotFound'}
-#        408: {$ref: '#/components/responses/RequestTimeout'}
-#        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-#        425: {$ref: '#/components/responses/TooEarly'}
-#        429: {$ref: '#/components/responses/TooManyRequest'}
-#        500: {$ref: '#/components/responses/ServerError'}
-#        503: {$ref: '#/components/responses/ServiceUnavailable'}
-#        504: {$ref: '#/components/responses/GatewayTimeout'}
-#      parameters:
-#      - {$ref: '#/components/parameters/ContentTypeHeader'}
-#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-#      - {$ref: '#/components/parameters/ApiKeyHeader'}
-#      - {$ref: '#/components/parameters/TimestampHeader'}
-#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationHeader'}
-#      - {$ref: '#/components/parameters/MessageDigestHeader'}
   /payments/v1/charges/{transactionId}/capture:
     x-model-version: 1.0
     post:
@@ -167,21 +120,28 @@ paths:
         500: {$ref: '#/components/responses/ServerError'}
         503: {$ref: '#/components/responses/ServiceUnavailable'}
         504: {$ref: '#/components/responses/GatewayTimeout'}
-  /payments/v1/charges/{transactionId}/cancel:
-    x-model-version: 1.0
+  /payments/v1/cancels:
+    x-model-version: 1.1
     post:
-      tags: [Cancel Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Cancel
+      tags:
+      - Cancel Endpoint Definition
+      x-group-name: 'Payments'
+      x-proxy-name: 'Cancels'
       summary: Submit a cancel transaction.
-      description: Use this payload to perform cancel a transaction (aka void).
+      description: 'Use this payload to perform cancel a transaction (aka void).'
       requestBody:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/CancelRequest'}
+            schema:
+              $ref: '#/components/schemas/CancelRequest'
             examples:
-              Cancel: {summary: CancelRequest, $ref: '#/components/examples/SecondaryRequest'}
+              MerchantTransactionID:
+                summary: Cancel a transaction using Merchant Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
+              TransactionID:
+                summary: Cancel a transaction using CommerceHub Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
       - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
@@ -197,35 +157,57 @@ paths:
           description: Success
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/CancelResponse'}
+              schema:
+                $ref: '#/components/schemas/CancelResponse'
               examples:
-                Cancel: {summary: CancelResponse, $ref: '#/components/examples/CancelResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-  /payments/v1/charges/{transactionId}/refund:
-    x-model-version: 1.0
+                MerchantTransactionID:
+                  summary: Cancel response using Merchant Transaction ID
+                  $ref: '#/components/examples/CancelResponse'
+                TransactionID:
+                  summary: Cancel response using Transaction ID
+                  $ref: '#/components/examples/CancelResponse'   
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+  /payments/v1/refunds:
+    x-model-version: 1.2
     post:
-      tags: [Refund Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Refund
-      summary: Submit a refund transaction.
-      description: Use this payload to perform a partial or full refund (aka credit/return).
-        This will return funds to the customer.
+      tags:
+      - Refund Endpoint Definition
+      x-group-name: 'Payments'
+      x-proxy-name: 'Refunds'
+      summary: Submit a cancel transaction.
+      description: 'Use this payload to perform a partial or full refund (aka credit/return). This will return funds to the customer.'
       requestBody:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/RefundRequest'}
+            schema:
+              $ref: '#/components/schemas/CancelRequest'
             examples:
-              Refund: {summary: RefundRequest, $ref: '#/components/examples/SecondaryRequest'}
+              MerchantTransactionID:
+                summary: Cancel a transaction using Merchant Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
+              TransactionID:
+                summary: Cancel a transaction using CommerceHub Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
       - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
@@ -237,113 +219,39 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       responses:
-        201:
-          description: Created
+        200:
+          description: Success
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/RefundResponse'}
+              schema:
+                $ref: '#/components/schemas/CancelResponse'
               examples:
-                Refund: {summary: RefundResponse, $ref: '#/components/examples/RefundResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-  /payments/v1/credits:
-    x-model-version: 1.0
-    post:
-      tags: [Credit Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Credits
-      summary: Submit a refund transaction without a prior transaction.
-      description: 'Use this payload to perform a partial or full credit without a
-        <code>transactionID</code> or <code>orderID</code>. Note: This should only
-        be performed if a prior authorization was performed on a different API, merchant
-        account, or device; otherwise utilize <code>{transactionId}/refund</code>
-        or <code>orders/{orderId}/refund</code>.'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/CreditRequest'}
-            examples:
-              PaymentCard: {summary: CreditRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
-              PaymentEMV: {summary: CreditRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
-              PaymentTrack: {summary: CreditRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
-              ManualEntry: {summary: CreditRequest with manual entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryRequest'}
-              PaymentToken: {summary: CreditRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/CreditResponse'}
-              examples:
-                PaymentCard: {summary: CreditResponse with PaymentCard, $ref: '#/components/examples/PaymentCardCreditResponse'}
-                PaymentEMV: {summary: CreditResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVCreditResponse'}
-                PaymentTrack: {summary: CreditResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                ManualEntry: {summary: CreditResponse with manual entry PaymentCard,
-                  $ref: '#/components/examples/ManualEntryCreditResponse'}
-                PaymentToken: {summary: CreditResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenCreditResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/charges/{transactionId}/inquiry:
-    x-model-version: 1.0
-    get:
-      tags: [Transaction Inquiry based on transactionId]
-      x-group-name: Payments VAS
-      x-proxy-name: Transaction Inquiry
-      summary: Submit a transaction inquiry.
-      description: Use this payload to retrieve information from a previous transaction.
-      parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/TransactionInquiryResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
+                MerchantTransactionID:
+                  summary: Cancel response using Merchant Transaction ID
+                  $ref: '#/components/examples/CancelResponse'
+                TransactionID:
+                  summary: Cancel response using Transaction ID
+                  $ref: '#/components/examples/CancelResponse'   
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
   /payments-vas/v1/accounts/verification:
     x-model-version: 1.0
     post:
@@ -405,46 +313,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/security/credentials:
-    x-model-version: 1.0
-    post:
-      tags: [Payment Security Endpoint]
-      x-group-name: Payments VAS
-      x-proxy-name: Authentication
-      summary: Request security credentials (access token).
-      description: This is the credential generation call for authorizing subsequent
-        financial transactions. A valid <code>accessToken</code> is required for web
-        client requests.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/SecurityCredentialsRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/SecurityCredentialsResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
   /payments-vas/v1/tokens:
     x-model-version: 1.0
     post:
@@ -466,6 +334,9 @@ paths:
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
               GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
               Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/Payment3DSTokenRequest'}
+              PaymentSession:
+                summary: TokenizationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionTokenRequest'
       responses:
         200:
           description: Success.
@@ -481,6 +352,9 @@ paths:
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
                 GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
                 Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/Payment3DSTokenResponse'}
+                PaymentSession:
+                  summary: TokenizationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentCardTokenResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -500,70 +374,11 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/accounts/information:
-    x-model-version: 1.0
-    post:
-      tags: [Account lookup information Endpoint Definition]
-      x-group-name: Payments VAS
-      x-proxy-name: Information Lookup
-      summary: Lookup a payment card or payment token.
-      description: Use this to look up card related information such as issuer country,
-        card function and card brand associated with a card or token.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/AccountInformationRequest'}
-            examples:
-              PaymentCard: {summary: AccountInformationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardInfoRequest'}
-              PaymentEMV: {summary: AccountInformationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVInfoRequest'}
-              PaymentTrack: {summary: AccountInformationRequest with PaymentTrack,
-                $ref: '#/components/examples/PaymentTrackInfoRequest'}
-              ManualEntry: {summary: AccountInformationRequest with manual entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryInfoRequest'}
-              PaymentToken: {summary: AccountInformationRequest with PaymentToken,
-                $ref: '#/components/examples/PaymentTokenInfoRequest'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/AccountInformationResponse'}
-              examples:
-                PaymentCard: {summary: AccountInformationResponse with PaymentCard,
-                  $ref: '#/components/examples/PaymentCardInfoResponse'}
-                PaymentEMV: {summary: AccountInformationResponse with PaymentEMV,
-                  $ref: '#/components/examples/PaymentEMVInfoResponse'}
-                PaymentTrack: {summary: AccountInformationResponse with PaymentTrack,
-                  $ref: '#/components/examples/PaymentTrackInfoResponse'}
-                ManualEntry: {summary: AccountInformationResponse with maunal entry
-                    PaymentCard, $ref: '#/components/examples/ManualEntryInfoResponse'}
-                PaymentToken: {summary: AccountInformationResponse with PaymentToken,
-                  $ref: '#/components/examples/PaymentTokenInfoResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments-vas/v1/enhanceddata:
+  /daas/v1/enhanceddata:
     x-model-version: 1.0
     post:
       tags: [Enhanced Data Definition]
-      x-group-name: Payments VAS
+      x-group-name: Data Solutions
       x-proxy-name: Enhanced Data Service
       summary: Submit a EDS Request.
       description: Use this payload prior to a transaction to perform an Enhanced
@@ -605,6 +420,315 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+  /daas/v1/returnoptimizer:
+    x-model-version: 1.0
+    post:
+      tags: [Return Optimizer Definition]
+      x-group-name: Data Solutions
+      x-proxy-name: Return Optimization Service
+      summary: Submit a ROS request.
+      description: Use this payload prior to a transaction to perform an Return Optimizer
+        request for a PaymentToken. This will be used by the merchant
+        to make a more informed authorization decision.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ReturnOptimizerRequest'}
+            examples:
+              PaymentToken: {summary: ReturnOptimizerRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenROSRequest'}
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/ReturnOptimizerResponse'}
+              examples:
+                PaymentToken: {summary: ReturnOptimizerResponse with PaymentToken,
+                  $ref: '#/components/examples/PaymentTokenROSResponse'}
+        400: {$ref: '#/components/responses/BadRequest'}
+        401: {$ref: '#/components/responses/Unauthorized'}
+        404: {$ref: '#/components/responses/NotFound'}
+        408: {$ref: '#/components/responses/RequestTimeout'}
+        415: {$ref: '#/components/responses/UnsupportedMediaType'}
+        425: {$ref: '#/components/responses/TooEarly'}
+        429: {$ref: '#/components/responses/TooManyRequest'}
+        500: {$ref: '#/components/responses/ServerError'}
+        503: {$ref: '#/components/responses/ServiceUnavailable'}
+        504: {$ref: '#/components/responses/GatewayTimeout'}
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      
+  /payments/v1/transaction-inquiry:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Transaction Inquiry
+      x-group-name: 'Payments'
+      x-proxy-name: 'Inquiry'
+      summary: Submit a transaction inquiry.
+      description: 'Provides a Commerce Hub transaction and their attributes based on order identifier.' 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionInquiryRequest'
+            examples:
+              transactionID:
+                summary: Transaction inquiry request using transactionID
+                $ref: '#/components/examples/TransactionInquiryRequest'
+              merchantOrderID:
+                summary: Transaction inquiry request using merchantOrderID
+                $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TransactionInquiryResponse'
+              examples:
+                transactionID:
+                    summary: Transaction inquiry response from transactionID
+                    $ref: '#/components/examples/TransactionInquiryResponse'
+                merchantOrderID:
+                    summary: Transaction inquiry response from merchantOrderID
+                    $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/TransactionIdParam'}
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
+  /payments-vas/v1/security/credentials:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Payment Security Endpoint
+      x-group-name: 'Security'
+      x-proxy-name: 'Credentials'
+      summary: Request security credentials (access token).
+      description: 'This is the credential generation call for authorizing subsequent financial transactions. A valid <code>accessToken</code> is required for web client requests.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityCredentialsRequest'
+            examples:
+              Credentials:
+                summary: Security credntials request
+                $ref: '#/components/examples/SecurityCredentialsRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityCredentialsResponse'
+              examples:
+                Credentials:
+                  summary: Security credentials response
+                  $ref: '#/components/examples/SecurityCredentialsResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/TransactionIdParam'}
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
+  /payments-vas/v1/accounts/information-lookup:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Account Information Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Information Lookup'
+      summary: Lookup a payment card or payment token.
+      description: 'Use this to look up card related information such as issuer country, card function and card brand associated with a card or token.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountInformationRequest'
+            examples:
+              PaymentCard:
+                summary: AccountInformationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardInfoRequest'
+              PaymentEMV:
+                summary: AccountInformationRequest with PaymentEMV
+                $ref: '#/components/examples/PaymentEMVInfoRequest'
+              PaymentTrack:
+                summary: AccountInformationRequest with PaymentTrack
+                $ref: '#/components/examples/PaymentTrackInfoRequest'
+              ManualEntry:
+                summary: AccountInformationRequest with manual entry PaymentCard
+                $ref: '#/components/examples/ManualEntryInfoRequest'
+              PaymentToken:
+                summary: AccountInformationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenInfoRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountInformationResponse'
+              examples:
+                PaymentCard:
+                  summary: AccountInformationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardInfoResponse'
+                PaymentEMV:
+                  summary: AccountInformationResponse with PaymentEMV
+                  $ref: '#/components/examples/PaymentEMVInfoResponse'
+                PaymentTrack:
+                  summary: AccountInformationResponse with PaymentTrack
+                  $ref: '#/components/examples/PaymentTrackInfoResponse'
+                ManualEntry:
+                  summary: AccountInformationResponse with maunal entry PaymentCard
+                  $ref: '#/components/examples/ManualEntryInfoResponse'
+                PaymentToken:
+                  summary: AccountInformationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenInfoResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/TransactionIdParam'}
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
+  /payments-vas/v1/card-capture:
+    x-model-version: 1.0
+    post:
+      summary: 'Card Capturing Operation'
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Card Capture'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardCaptureRequest'
+            examples:
+              PaymentCard: {summary: CardCapture Request with PaymentCard, $ref: '#/components/examples/PaymentCardCaptureRequest'}
+      responses:
+        204:
+          description: Success.
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/TransactionIdParam'}
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      
 components:
   parameters:
     OrderIdParam:
@@ -847,6 +971,10 @@ components:
           type: string, example: source.sourceType}
         message: {description: Information specific to a property or attribute., type: string,
           example: Missing type ID property.}
+        additionalInfo: {description: Additional info added by commerce hub in addition
+            to error message returned by GATEWAY, type: string, example: 'The Reauthorization
+            request was not successful and the Cancel of referenced authorization
+            transaction was not processed, per Auth_before_Cancel configuration'}
     GatewayResponse:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Gateway-Response.md">gateway
@@ -868,13 +996,126 @@ components:
             in the parameter orderId from a Charge transaction., example: R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16}
         transactionTimestamp: {type: string, format: date-time, description: 'Date
             and time the transaction occurred in YYYY-MM-DDThh:mm:ssZ format.', example: '2016-04-16T16:06:05Z'}
-        apiTraceId: {type: string, maxLength: 32, description: Request identifier
-            in API that can be used to request logs from the support team., example: rrt-0bd552c12342d3448-b-ea-1142-12938318-7}
+        apiTraceId: {pattern: '^[a-f0-9]{32}$', type: string, maxLength: 32, description: Request
+            identifier in API that can be used to request logs from the support team.,
+          example: 1234567a1234567b1234567c1234567d}
         clientRequestId: {type: string, maxLength: 64, description: Echoes back the
             value in the request header for tracking., example: 30dd879c-ee2f-11db-8314-0800200c9a66}
         transactionId: {type: string, maxLength: 40, description: Unique identifier
             for each transaction on the gateway. This value will be populated for
             the secondary transaction from the path., example: '838916029301'}
+ 
+    CardCaptureRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/PaymentCard'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+    
+    TransactionInquiryRequest:
+      x-model-version: 1.0
+      properties:
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/TransactionInquiryMerchantDetails'
+    TransactionInquiryMerchantDetails:
+      x-model-version: 1.0
+      properties:
+        merchantId:
+          maxLength: 1024
+          type: string
+          description: 'A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction.'
+          example: '222222222222'
+        terminalId:
+          maxLength: 1024
+          type: string
+          description: 'Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway.'
+          example: '1413257'
+
+    InquiryRequestDetails:   
+      x-model-version: 1.0
+      properties:      
+        clientRequestId:
+          maxLength: 64
+          type: string
+          description: A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format.
+          example: '2b52a1c95ca446f5abf0e51f37a1d7c5'
+        primaryTransactionId:
+          maxLength: 40
+          type: string
+          description: 'Unique identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
+          example: '838916029301'
+        primaryOrderId:
+          maxLength: 40
+          type: string
+          description: 'Unique order identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
+          example: '1343678765'
+        merchantTransactionId:
+          maxLength: 32
+          type: string
+          description: 'Merchant transaction ID (aka transaction reference ID).'
+          example: '1343678765'
+        merchantOrderId:
+          maxLength: 32
+          type: string
+          description: 'Merchant order ID (aka customer reference number or purchase order number).'
+          example: '845366457890'
+
+    TransactionInquiryResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        transactionBatch:
+          $ref: '#/components/schemas/TransactionBatch'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
+        paymentToken:
+          $ref: '#/components/schemas/ResponsePaymentToken'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        authOptimizationDetails:
+          $ref: '#/components/schemas/AuthOptimizationDetails'
+    AccountInformationRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+    AccountInformationResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        cardDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardDetails'
     ChargesRequest:
       x-model-version: 1.0
       properties:
@@ -973,8 +1214,12 @@ components:
 
             Valid Values:
             * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md">ApplePay</a>
+            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md">GooglePay</a>
             * <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md">PaymentCard</a>
             * <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md">PaymentToken</a>
+            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/EMV.md">PaymentEMV</a>
+            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/Track.md">PaymentTrack</a>
+            * <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md">PaymentSession</a>
           example: PaymentCard
     PaymentCard:
       x-model-version: 1.0
@@ -994,10 +1239,10 @@ components:
             data., example: '4005550000000019'}
         nameOnCard: {type: string, maxLength: 256, description: Cardholder name.,
           example: Jane Smith}
-        expirationMonth: {type: string, maxLength: 2, description: 2-digit expiration
-            month., example: '05'}
-        expirationYear: {type: string, maxLength: 4, description: 4-digit expiration
-            year., example: '2035'}
+        expirationMonth: {pattern: '^(0[1-9]|1[012])$', type: string, description: 2-digit
+            expiration month., example: '05'}
+        expirationYear: {pattern: '^[0-9]{4}$', type: string, maxLength: 4, description: 4-digit
+            expiration year., example: '2035'}
         securityCode: {type: string, maxLength: 4, description: 'Card Security Code
             (CSC), Card Verification Data (CVD), Card Verification Number (CVN), Card
             Verification Value (CVV), Card Verification Code (CVC), Verification Code
@@ -1185,7 +1430,7 @@ components:
         properties:
           data: {type: string, maxLength: 4000, description: 'Encrypted data. Payment
               data dictionary, base64 encoded as a string.', example: '{"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"}'}
-          signature: {type: string, maxLength: 2000, description: 'Verifies that the
+          signature: {type: string, maxLength: 1500, description: 'Verifies that the
               message came from Google, base64 encoded, and created with ECDSA by
               the intermediate signing key.', example: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=}
           version: {type: string, maxLength: 32, description: 'Specific protocol version
@@ -1212,35 +1457,81 @@ components:
         properties:
           data: {type: string, description: ''}
           version: {type: string, description: '100'}
+          samsungPayMerchantId: {type: string, maxLength: 256, description: Unique
+              AppID registered in the Samsung portal., example: merchant.com.futurex}
+          merchantPrivateKey: {type: string, maxLength: 256, description: Merchant
+              private key in hex encoded format., example: 2B939D88050A48885DC2FDD8BC1780CC0AF4DA741424A82A60579DB3F08C7DCF81B03E7A0EC28D6705705488FDEFF6DEC8E37D3C20E9C11B36C9D710C42D029831}
     Payment3DS:
       x-model-version: 1.0
       allOf:
-      - {$ref: '#/components/schemas/Source'}
-      - type: object
-        description: 3DSecure source.
-        properties:
-          card: {$ref: '#/components/schemas/Card'}
-          merchantIdentifier: {type: string, maxLength: 256, description: A unique
-              ID used to identify the merchant. The merchant must use the value assigned
-              by the acquirer., example: '1234567890123456'}
-          version: {type: string, maxLength: 64, description: Specific protocol version
-              supported by 3DS., example: 3DS2}
-          cavv: {type: string, maxLength: 256, description: The Cardholder Authentication
-              Verification Value (CAVV) is a cryptographic value derived by the issuer
-              during payment authentication that can provide evidence of the results
-              of payment authentication during an online purchase., example: AAABCZIhcQAAAABZlyFxAAAAAAA}
-          xid: {type: string, maxLength: 256, description: 3DSecure/Verified by Visa
-              value returned by Cardinal Commerce., example: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'}
-          verificationResponse: {type: string, maxLength: 256, description: Verification
-              response message., example: PASSED_VALIDATION}
-          authenticationAttemptResult: {type: string, maxLength: 256, description: Result
-              of authentication attempt from Payer Authentication Response (PaRes).,
-            example: uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4}
-          channel:
-            type: string
-            maxLength: 32
-            description: "\nValid Values: \n* MOBILE_APP\n* MOBILE_WEB\n* BROWSER_PC\n\
-              * KIOSK\n* CONSOLE\n* 3DS_REQUESTOR_INITIATED\n"
+        - $ref: '#/components/schemas/Source'
+        - type: object
+          description: '3DSecure source.'
+          properties:
+            card:
+              $ref: '#/components/schemas/Card'
+            merchantIdentifier:
+              type: string
+              maxLength: 256
+              description: 'A unique ID used to identify the merchant. The merchant must use the value assigned by the acquirer.'
+              example: '1234567890123456'
+            version:
+              type: string
+              maxLength: 64
+              description: 'Specific protocol version supported by 3DS.'
+              example: '3DS2'
+            cavv:
+              type: string
+              maxLength: 256
+              description: 'The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase.'
+              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            xid:
+              type: string
+              maxLength: 256
+              description: '3DSecure/Verified by Visa value returned by Cardinal Commerce.'
+              example: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+            verificationResponse:
+              type: string
+              maxLength: 256
+              description: 'Verification response message.'
+              example: 'PASSED_VALIDATION'
+            authenticationAttemptResult:
+              type: string
+              maxLength: 256
+              description: 'Result of authentication attempt from Payer Authentication Response (PaRes).'
+              example: 'uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4'
+            channel:
+              type: string
+              maxLength: 32
+              description: |+
+          
+                Valid Values: 
+                * MOBILE_APP
+                * MOBILE_WEB
+                * BROWSER_PC
+                * KIOSK
+                * CONSOLE
+                * 3DS_REQUESTOR_INITIATED
+            authenticationResponse:
+              type: string
+              description: 'The result of authentication attempt returned by the 3D Secure authentication process (PaRes).'
+              example: 'A'
+            directoryServerTransactionId:
+              type: string
+              description: 'The response transaction UUID from the DS (directory server)'
+              example: 'f38e6948-5388-41a6-bca4-b49723c19437'
+            messageCategory:
+              type: string
+              description: 'Indicates the message category of 3d secure authentication version 2.X. 01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only'
+              example: '1'
+            tavv:
+              type: string
+              description: 'Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction.'
+              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            challengeStatus:
+              type: string
+              description: 'The transaction status as returned by the 3D Secure authentication process. (CRes)'
+              example: 'A'
     DecryptedWallet:
       x-model-version: 1.0
       allOf:
@@ -1248,7 +1539,8 @@ components:
       - type: object
         properties:
           card: {$ref: '#/components/schemas/Card'}
-          cavv: {type: string, maxLength: 256, description: Cryptogram., example: 01ade6ae340005c681c3a1890418b53000020000}
+          cavv: {type: string, maxLength: 40, description: Cryptogram., example: 01ade6ae340005c681c3a1890418b53000020000}
+          xid: {type: string, maxLength: 40, description: Cryptogram.}
           walletType: {type: string, maxLength: 256, description: 'Identifies the
               wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY.', example: APPLE_PAY}
     TransactionDetails:
@@ -1263,6 +1555,16 @@ components:
         primaryTransactionId: {type: string, maxLength: 40, description: The unique
             identifier from the original transaction passed for a reauthorization
             and incremental authorization., example: '838916029301'}
+        primaryOrderId:
+          type: string
+          maxLength: 40
+          description: 'The unique order identifier from the original transaction passed for a reauthorization and incremental authorization.'
+          example: '838916029301'
+        clientRequestId:
+          type: string
+          maxLength: 64
+          description: 'Echoes back the value in the request header for tracking.'
+          example: '30dd879c-ee2f-11db-8314-0800200c9a66'
         captureFlag: {type: boolean, description: Designates if the transaction should
             be captured. Auth (False) or Sale (True)., example: true}
         transactionCaptureType: {type: string, description: Identifies if settlement
@@ -1270,30 +1572,9 @@ components:
         accountVerification: {type: boolean, description: Determines if verification
             should be performed on the payment type., example: 'false'}
         partialApproval:
-          type: string
-          maxLength: 32
-          description: |
-            Indicates if a partial approval is allowed.
-
-            Valid Values:
-            * NOT_SUPPORTED - Partial authorization approvals are not supported
-            * SUPPORTED_NO_CASH_BACK - Partial authorization approvals are supported, however partial authorization of cash disbursement amount is not supported. POS/Terminal should not prompt for cash back.
-            * MERCH_CASH_BACK_SUPPORTED - Merchandise can be partially authorized, and cash disbursement amount can be partially authorized.
-            * MERCH_SUPPORTED_ONLY - Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized.
-            * CASH_BACK_SUPPORTED_ONLY - Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized.
-            * MERCH_CASH_BACK_NOT_SUPPORTED - Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized.
-          example: NOT_SUPPORTED
-        processingCode:
-          type: string
-          maxLength: 6
-          description: |
-            A required <a href=../docs/Resources/Master-Data/Processing-Code.md>code</a> is used in conjunction with the message type to define the type of transaction that is by the terminal to the host
-
-            Code Format:
-            * Position 1-2 Transaction Type
-            * Position 3–4 From Account
-            * Position 5–6 To Account
-          example: '000000'
+          type: boolean
+          description: ' Indicates if a partial approval is allowed.'
+          example: true
         merchantTransactionId: {type: string, maxLength: 32, description: Merchant
             transaction ID (aka transaction reference ID)., example: '1343678765'}
         merchantOrderId: {type: string, maxLength: 32, description: Merchant order
@@ -1437,6 +1718,44 @@ components:
         captureTime: {type: string, format: date-time, maxLength: 20, description: 'Timestamp
             in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         address: {$ref: '#/components/schemas/Address'}
+    ReferenceTransactionDetails:
+      x-model-version: 1.0
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Reference-Transaction-Details.md">Reference Transaction details</a> specific to each request based on business requirements.'
+      properties:
+        referenceTransactionId:
+          type: string
+          maxLength: 40
+          description: 'Commerce Hub generated <code>transactionId</code> from the original transaction used for reference in a secondary transaction.'
+          example: '838916029301'
+        referenceMerchantTransactionId:
+          type: string
+          maxLength: 128
+          description: 'Merchant/client generated <code>merchantTransactionId</code> from the original transaction used for reference in a secondary transaction'
+          example: '1343678765'
+        referenceMerchantOrderId:
+          type: string
+          maxLength: 128
+          description: 'Merchant/client generated <code>merchantOrderId</code> from the original transaction used for reference in a secondary transaction'
+          example: '953729024'
+        referenceOrderId:
+          type: string
+          maxLength: 128
+          description: 'Commerce Hub generated <code>orderId</code> from the original transaction used for reference in a secondary transaction'
+          example: 'CHG014994a6b0729e4517858f74c6a41c8d61'
+        referenceClientRequestId:
+          type: string
+          maxLength: 128
+          description: 'Merchant/client generated <code>clientRequestId</code> from the original transaction. Can only be used in a transaction inquiry request.'
+          example: '2994454'
+        referenceTransactionType:
+          type: string
+          maxLength: 64
+          description: |+
+            Identifies the type of the referenced transaction.
+            Valid Values:
+            * CHARGES
+            * REFUND
+          example: 'CHARGES'
     OrderData:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md">Order
@@ -1531,8 +1850,7 @@ components:
       description: Used to pass <a href="../docs?path=docs/Resources/Master-Data/Merchant-Details.md">merchant</a>
         specific data during the transaction.
       properties:
-        tokenType: {type: string, maxLength: 64, description: Specific token type
-            requested by the merchant., example: TRANSARMOR}
+        tokenType: {type: string, maxLength: 64, description: Specific value to be passed to tokenization platform., example: AB01}
         storeId: {type: string, maxLength: 1024, description: 'The unique ID or number
             used to identify the unique location, store, or site.', example: '12345'}
         siteId: {type: string, maxLength: 1024, description: The location ID or number
@@ -1543,14 +1861,6 @@ components:
         merchantId: {type: string, maxLength: 1024, description: A unique ID used
             to identify the Merchant. The merchant must use the value assigned by
             the acquirer or the gateway when submitting a transaction., example: '123456789012345'}
-        alternateMerchantId: {type: string, maxLength: 1024, description: 'Alternate
-            ID assigned to a merchant based on a value added service (Prepaid Cards,
-            TeleCheck, etc.). For additional information regarding the Alternate Merchant
-            ID, please contact your account representative.', example: '12345678'}
-        promotionCode: {type: string, maxLength: 1024, description: Promotion code.,
-          example: ABCD1234}
-        terminalLaneNumber: {type: string, maxLength: 16, description: 'Terminal lane
-            number, register number, or pump number.', example: '001'}
     Customer:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a>
@@ -1657,9 +1967,6 @@ components:
             chain., example: '123456788'}
     TransactionInteraction:
       x-model-version: 1.0
-      allOf:
-      - {$ref: '#/components/schemas/Network'}
-      - {type: object}
       description: <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md">Transaction
         interaction</a> information based on where the transaction is acquired and
         the capabilities of the terminal or software.
@@ -1772,11 +2079,14 @@ components:
         eciIndicator:
           type: string
           maxLength: 17
-          description: "Electronic Commerce Indicator (ECI) is mandatory for all E-commerce\
-            \ transactions.\n  \nValid Values:\n* SECURE_ECOM - Secure Electronic\
-            \ Transaction\n* NON_AUTH_ECOM - Non-Authenticated Electronic Commerce\
-            \ Transaction\n* CHANNEL_ENCRYPTED - Channel Encrypted Transaction\n*\
-            \ NON_SECURE_ECOM - Non-Secure Electronic Commerce Transaction\n"
+          description: |
+            Electronic Commerce Indicator (ECI) is mandatory for all E-commerce transactions.
+
+            Valid Values:
+            * SECURE_ECOM - Secure Electronic Transaction
+            * NON_AUTH_ECOM - Non-Authenticated Electronic Commerce Transaction
+            * CHANNEL_ENCRYPTED - Channel Encrypted Transaction
+            * NON_SECURE_ECOM - Non-Secure Electronic Commerce Transaction
           example: SECURE_ECOM
         cardholderAuthenticationEntity:
           type: string
@@ -1799,7 +2109,7 @@ components:
             in an authorization response, and if returned must be provided in subsequent
             Capture transactions.'}
         applicationExpiryDate: {type: string, format: date, description: Captured
-            from the EMV chip data. YYYY-MM-DD format., example: '2021-09-03'}
+            from the EMV chip data. YYYY-MM-DD format., example: ' 2021-09-03'}
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
         network: {$ref: '#/components/schemas/Network'}
         authorizationCharacteristicsIndicator: {type: string, maxLength: 23, description: Response
@@ -1828,18 +2138,6 @@ components:
             terminal support the Alternate Routing feature used for PINless POS, Signature
             Debit, and EMV Common AID features (excluding Online PIN CVM) allows merchants
             to process PIN Debit Network transactions without a PIN.', example: 'true'}
-        enhancedAuthorizationRequestIndicator:
-          type: string
-          maxLength: 32
-          description: |
-            Used to indicate that the terminal or software is capable of supporting partial authorizations, prepaid identification and to request balances. Partial Authorization support is dependent on card type and region please contact your account representative.
-
-            Valid Values:
-            * NOT_SUPPORTED - Partial authorizations NOT requested; Balance information NOT requested
-            * BALANCE_ONLY - Partial authorizations NOT requested; Balance information requested
-            * PARTIAL_AUTH_ONLY - Partial authorizations requested; Balance information NOT requested
-            * BOTH_SUPPORTED - Partial authorizations requested; Balance information requested"
-          example: BOTH_SUPPORTED
         dataEntrySource:
           type: string
           maxLength: 50
@@ -1867,18 +2165,6 @@ components:
             * CALL_CENTER_OPERATOR
         transactionQualifier: {type: string, description: Used for Discover - Discover
             TransactionQualifier.}
-        enhancedAuthorizationResponseIndicator:
-          type: string
-          description: |
-            Returns the approval type for Enhanced Authorization.
-
-            Valid Values:
-            * FULL
-            * PARTIAL
-            * DEPLETED
-            * DECLINE
-            * ERROR
-          example: FULL
         attendedTerminalData:
           type: string
           maxLength: 16
@@ -1890,20 +2176,6 @@ components:
             * UNATTENDED – Unattended terminal or software
             * NONE – No terminal or software used (VRU, etc.)
           example: ATTENDED
-        cardPresentIndicator: {type: string, description: ''}
-        cardPresentAtPosIndicator: {type: string, description: Indicates if the actual
-            card was present at the point of sale., example: false}
-        terminalLocation:
-          type: string
-          maxLength: 16
-          description: |
-            Identifies the location of the terminal or software.
-
-            Valid Values:
-            * MERCHANT – On the premises of the card acceptor
-            * CARDHOLDER – On the premises of the cardholder (e.g. Home PC)
-            * NONE – No terminal used
-          example: MERCHANT
         cardholderActivatedTerminalInformation:
           type: string
           maxLength: 16
@@ -2053,79 +2325,6 @@ components:
             * PIN_12 - PIN capture capability 12 characters maximum
             * NONE
           example: UNSPECIFIED
-    NetworkDetails:
-      x-model-version: 1.0
-      description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
-        response</a> details.
-      properties:
-        network: {$ref: '#/components/schemas/Network'}
-        debitNetworkId: {type: string, maxLength: 64, description: Network ID for
-            the debit component., example: '123456'}
-        transactionSequence: {type: string, maxLength: 64, description: Transaction
-            specific data that may be returned in response messages., example: '1123456'}
-        systemTrace: {type: string, maxLength: 64, description: Original trace number
-            that was returned in an authorization response., example: '123456789'}
-        debitIssuerData: {type: string, description: Debit issuer specific data that
-            may be returned in the response messages., example: Standard Issuer}
-        networkResponseCode: {type: string, maxLength: 16, description: Debit network
-            response code., example: '00'}
-        posEntryModeChange: {type: boolean, description: Issuer will reply if the
-            entry mode has changed.}
-        cardLevelResultCode: {type: string, description: 'Identifies purchase, corporate,
-            and business card level e.g. Level II/Level III'}
-        validationCode: {type: string, description: A code calculated by card brands
-            to ensure that the fields present in the authorization are also present
-            in the clearing record., example: ''}
-        downgradeReason: {type: string, description: Downgrade reason as supplied
-            by network., example: ACCOUNT_NUMBER_MISSING}
-        creditAuthType: {type: string, description: Indicates the type of authorization
-            required., example: DISCOVER}
-        authScore: {type: string, description: The auth score returned for the transaction.,
-          example: ''}
-        partialAuthTransactionId: {type: string, description: Generated identifier
-            unique for each original authorization request., example: ''}
-        totalAuthAmount: {type: number, description: Total amount authorized., example: '13.50'}
-        transactionIdentifier: {type: string, description: This field represents a
-            unique value used to identify and link all related transactions for authorization
-            and settlement}
-        magStripeQualityIndicator:
-          type: string
-          description: |
-            This field dentifies the error encountered with the track data provided in the authorization request message.
-
-            Valid Values:
-            * TRACK_PRESENT - Track 1 and Track 2 present in the message
-            * NO_TRACK - Track 1 or Track 2 not present in the message
-            * PAN_NOT_EQUAL - Primary Account Number not equal in track data
-            * EXPIRATION_NOT_EQUAL - Expiration date not equal in track data
-            * CARD_TYPE_INVALID - Card type invalid in track data
-            * FIELD_SEPARATORS - Field separator(s) invalid in track data
-            * EXCEEDS_LENGTH -  A field within the track data exceeds maximum length
-            * CATEGORY_CODE - The transaction category code is "T".
-            * CUSTOMER_PRESENCE - POS customer presence indicator is false.
-            * CARD_PRESENCE - POS card presence indicator is false.
-          example: TRACK_PRESENT
-        networkAvsCode: {type: string, maxLength: 1, description: Non-Normalized newtork
-            AVS response code is available., example: ''}
-        panMappingAccountNumber: {type: string, maxLength: 19, description: 'Returned
-            for MasterCard Token transactions (only for MCCs 4111, 4131, 4784, and
-            7523) and for all AMEX Token transactions.', example: ''}
-        cardholderResponse:
-          type: object
-          maxLength: 5
-          description: |
-            Non-normalized response from for verifying cardholder data where each position represents the postal/zip code, address, name, telephone, and email respectively.
-
-            Valid Values:
-            * Y = Yes data matches
-            * N = No data does not match
-            * U - Data unchecked
-            * R - Retry
-            * S - Service not allowed
-            * Blank - Data not sent
-          example: YYNUU
-        authSource: {type: string, description: Code indicating how the network performed
-            the authorization., example: STIP}
     Network:
       x-model-version: 1.0
       description: ''
@@ -2203,36 +2402,109 @@ components:
               field used by Visa to establish annual point-of-sale spending requirements.}
     AmericanExpress:
       x-model-version: 1.0
-      properties:
-        safeKeyResponse:
-          type: string
-          maxLength: 50
-          description: |
-            Response that corresponds to the American Express SafeKey response value.
-
-            Valid Values:
-            * FAILED_AUTH - Authentication Issuer Key
-            * PASSED_AUTH - Authentication Issuer key
-            * PASSED_ATTEMPT - Attempt, Issuer Key
-            * FAILED_ATTEMPT - Attempt, Issuer Key
-            * FAILED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
-            * PASSED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
-            * FAILED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
-            * PASSED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
-            * UNCHEKED
-          example: PASSED_AUTH
       allOf:
       - {$ref: '#/components/schemas/Network'}
-      - {type: object}
+      - type: object
+        properties:
+          safeKeyResponse:
+            type: string
+            maxLength: 50
+            description: |
+              Response that corresponds to the American Express SafeKey response value.
+
+              Valid Values:
+              * FAILED_AUTH - Authentication Issuer Key
+              * PASSED_AUTH - Authentication Issuer key
+              * PASSED_ATTEMPT - Attempt, Issuer Key
+              * FAILED_ATTEMPT - Attempt, Issuer Key
+              * FAILED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
+              * PASSED_NON_PARTICIPANT - Attempt, Issuer not participating, Network Key
+              * FAILED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
+              * PASSED_PARTICIPANT - Attempt, Participating, ACS not available, Network Key
+              * UNCHEKED
+            example: PASSED_AUTH
     Discover:
       x-model-version: 1.0
-      properties:
-        networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
-            transaction amount, required for Discover card on file transactions.',
-          example: '9.66'}
       allOf:
       - {$ref: '#/components/schemas/Network'}
-      - {type: object}
+      - type: object
+        properties:
+          networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
+              transaction amount, required for Discover card on file transactions.',
+            example: '9.66'}
+    NetworkDetails:
+      x-model-version: 1.0
+      description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
+        response</a> details.
+      properties:
+        network: {$ref: '#/components/schemas/Network'}
+        debitNetworkId: {type: string, maxLength: 64, description: Network ID for
+            the debit component., example: '123456'}
+        transactionSequence: {type: string, maxLength: 64, description: Transaction
+            specific data that may be returned in response messages., example: '1123456'}
+        systemTrace: {type: string, maxLength: 64, description: Original trace number
+            that was returned in an authorization response., example: '123456789'}
+        debitIssuerData: {type: string, description: Debit issuer specific data that
+            may be returned in the response messages., example: Standard Issuer}
+        networkResponseCode: {type: string, maxLength: 16, description: Debit network
+            response code., example: '00'}
+        posEntryModeChange: {type: boolean, description: Issuer will reply if the
+            entry mode has changed.}
+        cardLevelResultCode: {type: string, description: 'Identifies purchase, corporate,
+            and business card level e.g. Level II/Level III'}
+        validationCode: {type: string, description: A code calculated by card brands
+            to ensure that the fields present in the authorization are also present
+            in the clearing record., example: ''}
+        downgradeReason: {type: string, description: Downgrade reason as supplied
+            by network., example: ACCOUNT_NUMBER_MISSING}
+        creditAuthType: {type: string, description: Indicates the type of authorization
+            required., example: DISCOVER}
+        authScore: {type: string, description: The auth score returned for the transaction.,
+          example: ''}
+        partialAuthTransactionId: {type: string, description: Generated identifier
+            unique for each original authorization request., example: ''}
+        totalAuthAmount: {type: number, description: Total amount authorized., example: '13.50'}
+        transactionIdentifier: {type: string, description: This field represents a
+            unique value used to identify and link all related transactions for authorization
+            and settlement}
+        magStripeQualityIndicator:
+          type: string
+          description: |
+            This field dentifies the error encountered with the track data provided in the authorization request message.
+
+            Valid Values:
+            * TRACK_PRESENT - Track 1 and Track 2 present in the message
+            * NO_TRACK - Track 1 or Track 2 not present in the message
+            * PAN_NOT_EQUAL - Primary Account Number not equal in track data
+            * EXPIRATION_NOT_EQUAL - Expiration date not equal in track data
+            * CARD_TYPE_INVALID - Card type invalid in track data
+            * FIELD_SEPARATORS - Field separator(s) invalid in track data
+            * EXCEEDS_LENGTH -  A field within the track data exceeds maximum length
+            * CATEGORY_CODE - The transaction category code is "T".
+            * CUSTOMER_PRESENCE - POS customer presence indicator is false.
+            * CARD_PRESENCE - POS card presence indicator is false.
+          example: TRACK_PRESENT
+        networkAvsCode: {type: string, maxLength: 1, description: Non-Normalized newtork
+            AVS response code is available., example: ''}
+        panMappingAccountNumber: {type: string, maxLength: 19, description: 'Returned
+            for MasterCard Token transactions (only for MCCs 4111, 4131, 4784, and
+            7523) and for all AMEX Token transactions.', example: ''}
+        cardholderResponse:
+          type: string
+          maxLength: 5
+          description: |
+            Non-normalized response from for verifying cardholder data where each position represents the postal/zip code, address, name, telephone, and email respectively.
+
+            Valid Values:
+            * Y = Yes data matches
+            * N = No data does not match
+            * U - Data unchecked
+            * R - Retry
+            * S - Service not allowed
+            * Blank - Data not sent
+          example: YYNUU
+        authSource: {type: string, description: Code indicating how the network performed
+            the authorization., example: STIP}
     AdditionalDataCommon:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Additional-Data.md">Common
@@ -2306,8 +2578,10 @@ components:
           example: VISA
         cardFunction: {type: string, maxLength: 6, description: Identifies if the
             processing method is CREDIT or DEBIT., example: CREDIT}
-        processor: {type: string, maxLength: 256, description: Identifies the card
-            processor., example: fiserv}
+        processors:
+          type: array
+          items: {$ref: '#/components/schemas/Processor'}
+          description: Identifies the card processor.
     SubMerchant:
       x-model-version: 1.0
       description: Sub-merchant information applicable to <a ="../docs?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md">Payment
@@ -2420,6 +2694,38 @@ components:
           example: NOT_PROVIDED
         expiry: {type: string, format: date, maxLength: 10, description: When does
             the recurring transaction expire in YYYY-MM-DD format., example: '2030-11-20'}
+    Processor:
+      x-model-version: 1.0
+      description: Identifies the card processor.
+      properties:
+        processorName:
+          type: string
+          maxLength: 256
+          description: |
+            Identifies the payment processor.
+
+            Valid Values:
+            * FISERV
+            * CHASE
+        processingPlatform: 
+          type: string
+          maxLength: 256
+          description:  |
+            Identifies the payment platform of the processor.
+
+            Valid Values:
+            * NASHVILLE
+            * TAMPA
+            * SALEM
+        priority:
+          type: string
+          maxLength: 256
+          description:  |
+            Identifies the priority to use each processor.
+
+            Valid Values:
+            * PRIMARY
+            * SECONDARY
     AmountComponents:
       x-model-version: 1.0
       description: Used in transactions where additional <a href="../docs?path=docs/Resources/Master-Data/Amount-Components.md">amount</a>
@@ -2492,6 +2798,11 @@ components:
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
         cardDetails: {$ref: '#/components/schemas/CardDetails'}
         paymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        paymentTokens:
+          type: array
+          items: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
     PaymentReceipt:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Payment-Receipt.md">Payment
@@ -2532,7 +2843,8 @@ components:
         feeProgramIndicator: {type: string, description: Contains the Fee Program
             Indicator (FPI) code that may be returned on Debit or PLDebit transaction
             response., example: '123'}
-        processor: {type: string, maxLength: 256, description: Card processor., example: fiserv}
+        processor: {type: string, maxLength: 256, description: Card processor., example: FISERV}
+        host: {type: string, maxLength: 256, description: Processing endpoint or issuer., example: NASHVILLE}
         networkRouted: {type: string, maxLength: 10, description: 'Network label that
             shows the network where the transaction was routed for authorization (e.g.
             NYCE, PULSE, STAR, Visa, Mastercard, etc.).'}
@@ -2565,16 +2877,18 @@ components:
             in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         debitReceiptNumber: {type: string, maxLength: 6, description: Debit Receipt
             Number generated by switch.}
-        responseIndicators:
-          type: object
-          properties:
-            alternateRouteDebitIndicator: {type: boolean, example: false}
-            signatureLineIndicator: {type: boolean, example: false}
-            signatureDebitRouteIndicator: {type: boolean, example: false}
+        responseIndicators: {$ref: '#/components/schemas/ResponseIndicator'}
         bankAssociationDetails: {$ref: '#/components/schemas/BankAssociationDetails'}
         additionalInfo:
           type: array
           items: {$ref: '#/components/schemas/NameValuePair'}
+    ResponseIndicator:
+      x-model-version: 1.0
+      description: ''
+      properties:
+        alternateRouteDebitIndicator: {type: boolean, example: 'false'}
+        signatureLineIndicator: {type: boolean, example: 'false'}
+        signatureDebitRouteIndicator: {type: boolean, example: 'false'}
     BankAssociationDetails:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Processor-Response-Details.md#bank-association-details">Bank
@@ -2630,28 +2944,516 @@ components:
             within the current batch, ranges from 000001 through 000999.', example: '000001'}
     CardDetails:
       x-model-version: 1.0
-      description: Card details for Account Information Response.
+      description: 'Card details for Account Information Response.'
       properties:
-        brand: {type: string, maxLength: 256, description: Card brand., example: VISA}
-        brandProductId: {type: string, maxLength: 256, description: Category within
-            the card brand., example: VISA_BUSINESS}
-        cardFunction: {type: string, maxLength: 256, description: Identifies the type
-            of card as CREDIT or DEBIT., example: CREDIT}
-        commercialCard:
+        binSource:
           type: string
-          description: |
-            Identifies if the card is a commercial card.
+          maxLength: 30
+          description: |+
+            Categorizes the source of the BIN record.
+            
             Valid Values:
-            * CORPORATE
+            * FISERV - (Default) Fiserv Global BIN file
+            * CHASE - Chase BIN file(s)
+            * PRIVATE_LABEL - Private Label specific BIN (availability restricted per merchant)
+          example: 'CHASE'
+        recordType:
+          type: string
+          maxLength: 10
+          description: |+
+            Record Type
+            
+            Valid Values:
+            * DETAIL - Detail Record
+          example: 'DETAIL'
+        lowBin:
+          type: string
+          maxLength: 21
+          description: 'This field contains the low BIN value of the BIN range.'
+          example: '400337'
+        highBin:
+          type: string
+          maxLength: 21
+          description: 'This field contains the high BIN value of the BIN range.'
+          example: '400338'
+        binLength:
+          type: string
+          maxLength: 2
+          description: 'Length of the BIN.'
+          example: '6'
+        binDetailPan:
+          type: string
+          maxLength: 2
+          description: 'Displays the primary PAN length.'
+          example: '16'
+        issuerBankName:
+          type: string
+          maxLength: 100
+          description: 'Issuer bank name for the BIN.'
+          example: 'Example Bank'
+        countryCode:
+          type: string
+          maxLength: 3
+          description: 'ISO-3166-1 alpha-3 country code.'
+          example: 'USA'
+        detailedCardProduct:
+          type: string
+          maxLength: 21
+          description: |+
+            Card Product.
+            
+            Valid Values:
+            * VISA - Visa
+            * MASTERCARD - Mastercard
+            * AMEX - American Express
+            * DISCOVER - Discover
+            * PIN_ONLY - PIN Only (Not Visa, Mastercard, American Express, Discover)
+            * MAESTRO - International Maestro
+            * DINERS - Diners Club
+            * INTERAC - Interac
+            * JCB - JCB
+          example: 'VISA'
+        detailedCardIndicator:
+          type: string
+          maxLength: 16
+          description: |+
+            Determines the card type (credit, debit).
+            
+            Valid Values:
+            * CREDIT
+            * DEBIT
+            * COMMERCIAL_DEBIT
+            * CONSUMER_DEBIT
+          example: 'CREDIT'
+        pinSignatureCapability:
+          type: string
+          maxLength: 16
+          description: |+
+            Determines the card PIN/Signature capability.
+
+            Valid Values:
+            * PIN_CAPABLE - PIN Capable
+            * SIGNATURE - Signature Capable
+            * PIN_OR_SIGNATURE - Supports Both PIN or Signature
+          example: 'PIN_OR_SIGNATURE'
+        issuerUpdateYear:
+          type: string
+          maxLength: 2
+          description: 'The year the BIN record was last updated.'
+          example: '20'
+        issuerUpdateMonth:
+          type: string
+          maxLength: 2
+          description: 'The month the BIN record was last updated.'
+          example: '09'
+        issuerUpdateDay:
+          type: string
+          maxLength: 2
+          description: 'The day the BIN record was last updated.'
+          example: '22'
+        regulatorIndicator:
+          type: string
+          maxLength: 15
+          description: |+
+            Applies to US issued cards only (Visa, Mastercard, and Discover).
+            
+            Valid Values:
+            * NON_REGULATED - (Default) ISS non-regulated (unregulated issuer OR Non US issued card)
+            * REGULATED - ISS regulated (regulated issuer)
+            * REGULATED_FRAUD - ISS regulated fraud (regulated issuer with fraud)
+          example: 'NON_REGULATED'
+        cardClass:
+          type: string
+          maxLength: 30
+          description: |+
+            Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card.
+            
+            Valid Values:
             * BUSINESS
+            * CONSUMER
             * PURCHASE
-            * UNAVAILBLE
-            * NON_COMMERCIAL
-          example: CORPORATE
-        issuerCountry: {type: string, maxLength: 256, description: Card issuer two-letter
-            country code., example: US}
-        issuerName: {type: string, maxLength: 256, description: Issuing bank name.,
-          example: First National Bank of Omaha}
+            * CORPORATE
+          example: 'CONSUMER'
+        debitPinlessIndicator:
+          type: array
+          items:
+            $ref: '#/components/schemas/DebitNetworkPinlessDetails'
+          description: 'A list of Debit Network PINless Details.'
+        ebtState:
+          type: string
+          maxLength: 2
+          description: 'This is the EBT State. Will only be present if EBT capable. Information originates from the debit network.'
+        fsaIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            FSA/HSA (Flexible Spending Account / Health Savings Account) indicator, which denotes prepaid card program in the US that permits use of funds to pay for qualified out of pocket medical expenses.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        nonMoneyTransferOCTsDomestic:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if domestic non-money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        nonMoneyTransferOCTsCrossBorder:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if cross-border non-money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        onlineGamblingOCTsDomestic:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if domestic online gambling OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        onlineGamblingOCTsCrossBorder:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if cross-border online gambling OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        moneyTransferOCTsDomestic:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if domestic money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        moneyTransferOCTsCrossBorder:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if cross-border money transfer OCTs are supported. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsDomesticMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for domestic money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsCrossBorderMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for cross-border money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsDomesticNonMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for domestic non-money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsCrossBorderNonMoneyTransfer:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for cross-border non-money transfer OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsDomesticGambling:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for domestic gambling OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        fastFundsCrossBorderGambling:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates if fast funds is supported for cross-border gambling OCTs. Visa Only.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        prepaidIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Indicates whether the card is prepaid.
+            
+            Valid Values:
+            * NON_PREPAID - (Default) No / Not Supported
+            * PREPAID - Yes / Supported
+          example: 'SUPPORTED'
+        anonymousPrepaidIndicator:
+          type: string
+          maxLength: 26
+          description: |+
+            Identifies whether Anonymous Prepaid is supported, like AMLD5 (Anti-Money Laundering Directive) compliant,
+            non-AMLD5 compliant, or non-anonymous prepaid programs / not a prepaid program. Mastercard Only.
+
+            Valid Values:
+            * AMLD5_NON_COMPLIANT - Anonymous Mastercard and Maestro prepaid card programs, not AMLD5 compliant
+            * AMLD5_COMPLIANT_EQUIVALENT - Anonymous Mastercard and Maestro prepaid card programs with restrictions considered by the issuer as either compliant with or equivalent to AMLD5 requirements
+            * NON_ANONYMOUS - Non-Anonymous Mastercard and Maestro prepaid programs that follow full Know-Your-Customer (KYC) or Simplified Due Diligence (SDD) or not a Prepaid Program
+            example: 'AMLD5_COMPLIANT_EQUIVALENT'
+        productId:
+          type: string
+          maxLength: 5
+          description: 'Indicates card product sub categories (Purchase Card, Business Card, etc.) for Visa, Mastercard, Discover or Private Label. Refer to BIN specs for valid values.'
+          example: 'N1'
+        visaProductSubType:
+          type: string
+          maxLength: 2
+          description: 'This is used to identify product subtypes. Refer to BIN specs for valid values.'
+          example: 'HC'
+        visaLargeTicketIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Visa large ticket indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        accountFundSource:
+          type: string
+          maxLength: 15
+          description: |+
+            For Visa, Mastercard, Discover, and UnionPay. Identifies the source of the funds associated with the primary account for the card.
+            
+            Valid Values:
+            * CREDIT - Credit
+            * DEBIT - Debit
+            * PREPAID - Prepaid
+            * CHARGE - Charge
+            * DEFERRED_DEBIT - Deferred Debit (Visa ONLY)
+          example: 'CREDIT'
+        panLengthMin:
+          type: string
+          maxLength: 2
+          description: 'Primary Account Number (PAN) Length Minimum'
+          example: '16'
+        panLengthMax:
+          type: string
+          maxLength: 2
+          description: 'Primary Account Number (PAN) Length Maximum'
+          example: '16'
+        tokenIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Token indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        issuingNetwork:
+          type: string
+          maxLength: 10
+          description: |+
+            Identifies Discover card types.
+
+            Valid Values:
+            * DISCOVER - Discover
+            * DINERS - Diners
+            * JCB - JCB (Japanese Credit Bank)
+            * CUP - CUP (China Union Pay)
+            * PAYPAL - PayPal
+          example: 'DINERS'
+        cardholderBillingCurrency:
+          type: string
+          maxLength: 3
+          description: 'Cardholder billing currency in 3-letter ISO currency format.'
+          example: 'USD'
+        accountFundSourceSubtype:
+          type: string
+          maxLength: 22
+          description: |+
+            Account fund source subtype. Mastercard only.
+
+            Valid Values:
+            * PREPAID_RELOADABLE - Prepaid card is reloadable
+            * PREPAID_NON_RELOADABLE - Prepaid card is non-reloadable
+          example: 'PREPAID_RELOADABLE'
+        b2bProgramId:
+          type: string
+          maxLength: 15
+          description: |+
+            Business-to-Business Virtual Payments Product Offering. Visa only.
+            
+            Valid Values:
+            * B2B_PROGRAM_1 - B2B Program 1
+            * B2B_PROGRAM_2 - B2B Program 2
+            * B2B_PROGRAM_3 - B2B Program 3
+            * B2B_PROGRAM_4 - B2B Program 4
+            * B2B_PROGRAM_5 - B2B Program 5
+            * B2B_PROGRAM_6 - B2B Program 6
+          example: 'B2B_PROGRAM_1'
+        moneySendIndicator:
+          type: string
+          maxLength: 25
+          description: |+
+            MoneySend is a set of a Mastercard network transactions that facilitate fund transfers.
+            This indicator determines if the Mastercard account is eligible to receive a MoneySend payment.
+            
+            Valid Values:
+            * UNKNOWN - (Default) MoneySend unknown
+            * DOMESTIC_AND_CROSS_BORDER - MoneySend enabled Domestic and Cross-Border
+            * DOMESTIC - MoneySend enabled Domestic only
+            * NOT_ENABLED - NOT MoneySend enabled
+          example: 'DOMESTIC_AND_CROSS_BORDER'
+          
+    DebitNetworkPinlessDetails:
+      x-model-version: 1.0
+      description: 'Debit network PINless details based on account/card info BIN data.'
+      properties:
+        debitNetworkId:
+          type: string
+          maxLength: 20
+          description: |+
+            
+            Valid Values:
+            * PAVD_FISERV - A5: PAVD FISERV
+            * SHAZAM - 01: SHAZAM
+            * NYCE - 02: NYCE
+            * PULSE - 03: PULSE
+            * STAR_WEST - 05: STAR-WEST
+            * STAR_EAST - 07: STAR-EAST
+            * JETS - 11: JETS
+            * INFOLINKS - 12: INFOLINKS
+            * CARLFS - 13: CARLFS
+            * STAR_NE - 14: STAR NE
+            * PAVD - 15: PAVD
+            * CNB_ENID - 16: CNB-ENID
+            * ATH_SCOTIA_BANK - 17: ATH-SCOTIA BANK
+            * ATH_DIRECT - 18: ATH-DIRECT
+            * INTERLINK - 19: INTERLINK
+            * INTERAC_EVERLINK - 20: INTERAC EVERLINK
+            * EVERLINK_INTERAC_ICU - 21: EVERLINK INTERAC ICU
+            * UNIONPAY - 23: UNIONPAY
+            * MAESTRO_DIRECT - 25: MAESTRO DIRECT
+            * MCX - 26: MCX
+            * EBT_SOLUTRAN - 28: EBT SOLUTRAN
+            * EBT_ACS - 29: EBT ACS
+            * MAESTRO_STAR_WEST - 30: MAESTRO STAR WEST
+            * STAR_WEST_OPTION - 31: STAR WEST OPTION
+            * JEANIE_STAR_WEST - 33: JEANIE STAR WEST
+            * JEANIE_DIRECT - 34: JEANIE DIRECT
+            * AFFN_DIRECT - 35: AFFN DIRECT
+            * CU24_DIRECT - 36: CU24-DIRECT
+            * EBT_TEAM_OF_TEXAS - 37: EBT TEAM OF TEXAS
+            * EBT_JPCHASE - 39: EBT JPCHASE
+            * SVS - 41: SVS
+            * EXXON - 42: EXXON
+            * BASE_24/INTERAC - 43: BASE 24/INTERAC
+            * CU24_FIDELITY - 46: CU24-FIDELITY
+            * EBT_EFUNDS - 47: EBT EFUNDS
+            * AFFN_FIDELITY - 48: AFFN FIDELITY
+            * EBT_NORTHRUP_GRUMMAN - 49: EBT NORTHRUP GRUMMAN
+            * CU24_FISERV - 51: CU24-FISERV
+            * AFFN_FISERV - 52: AFFN FISERV
+            * STAR_EAST_FISERV - 56: STAR-EAST FISERV
+            * PULSE_FISERV - 57: PULSE FISERV
+            * NYCE_FISERV - 59: NYCE FISERV
+            * STAR_WEST_FISERV - 62: STAR-WEST FISERV
+            * STAR_NE_FISERV - 63: STAR NE FISERV
+            * MAESTRO_FISERV - 64: MAESTRO FISERV
+            * INTERLINK_FISERV - 65: INTERLINK FISERV
+            * EBT_FISERV - 67: EBT-FISERV
+            * ACCEL_FISERV - 68: ACCEL FISERV
+            * OPTION_FISERV - 69: OPTION-FISERV
+          example: 'STAR_WEST'
+        pinlessPOS:
+          type: string
+          maxLength: 13
+          description: |+
+            PINless POS indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        pinlessBillPay:
+          type: string
+          maxLength: 13
+          description: |+
+            PINless BillPay indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        eCommerce:
+          type: string
+          maxLength: 13
+          description: |+
+            e-Commerce indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        dualIndicator:
+          type: string
+          maxLength: 13
+          description: |+
+            Dual indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
+        pinnedPOS:
+          type: string
+          maxLength: 13
+          description: |+
+            Pinned POS indicator.
+            
+            Valid Values:
+            * NOT_SUPPORTED - (Default) No / Not Supported
+            * SUPPORTED - Yes / Supported
+          example: 'SUPPORTED'
     ResponsePaymentToken:
       x-model-version: 1.0
       properties:
@@ -2659,35 +3461,30 @@ components:
             the payment source., example: '1234123412340019'}
         tokenSource: {type: string, maxLength: 256, description: Source for the Token
             Service Provider (TSP)., example: TRANSARMOR}
-    ForcedPostRequest:
+        tokenResponseCode: {type: string, maxLength: 256, description: Response code
+            for token generation request., example: '000'}
+        tokenResponseDescription: {type: string, maxLength: 256, description: Response
+            description for token generation request., example: SUCCESS}
+    AuthOptimizationDetails:
       x-model-version: 1.0
+      description: Updated account details provided by Auth Optimizer for expired
+        cards
       properties:
-        amount: {$ref: '#/components/schemas/Amount'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        customer: {$ref: '#/components/schemas/Customer'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-    ForcedPostResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        cardDetails: {$ref: '#/components/schemas/CardDetails'}
+        accountStatus:
+          type: string
+          description: |
+            Indicates the current status of the account.
+
+            Valid Values:
+            * ACCOUNT_CHANGE
+            * ACCOUNT_CLOSED
+            * EXPIRATION_CHANGE
+            * CONTACT_CARDHOLDER
+          example: ACCOUNT_CHANGE
+        accountUpdaterErrorCode: {type: string, description: Error code provided the
+            account updater system., example: VAU001}
+        originalResponseCode: {type: string, description: Original Response Code for
+            re-authorized (Optimized) transaction., example: '006'}
     CaptureRequest:
       x-model-version: 1.0
       properties:
@@ -2718,6 +3515,7 @@ components:
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     CancelRequest:
       x-model-version: 1.0
       properties:
@@ -2725,6 +3523,7 @@ components:
         source: {$ref: '#/components/schemas/Source'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
@@ -2741,6 +3540,7 @@ components:
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
+        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
     RefundRequest:
       x-model-version: 1.0
       properties:
@@ -2763,42 +3563,9 @@ components:
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-    CreditRequest:
-      x-model-version: 1.0
-      properties:
-        source: {$ref: '#/components/schemas/Source'}
-        amount: {$ref: '#/components/schemas/Amount'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-    CreditResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        amount: {$ref: '#/components/schemas/Amount'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-    TransactionInquiryResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
     AccountVerificationRequest:
       x-model-version: 1.0
       properties:
@@ -2806,64 +3573,49 @@ components:
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
+        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
     AccountVerificationResponse:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-    SecurityCredentialsRequest:
-      x-model-version: 1.0
-      properties:
-        publicKeyRequired: {type: boolean, description: If the signedCert is expired
-            or invalid then merchant would send a request., example: 'true'}
-        accessTokenRequired: {type: boolean, description: If the access token is expired
-            then merchant would request for a new token., example: 'true'}
-        accessTokenTimeToLive: {type: string, description: 'Time to live (expiration
-            time) in milliseconds. 1800000 ms, max 30 minutes.', example: '889'}
-        responseRedirectURL: {type: string, description: Response URL redirect., example: 'https://www.somedomain.com'}
-        customer: {$ref: '#/components/schemas/Customer'}
-        deviceFingerprint:
-          type: array
-          items: {$ref: '#/components/schemas/DeviceFingerPrint'}
-        amount: {$ref: '#/components/schemas/Amount'}
-        amountComponents: {$ref: '#/components/schemas/AmountComponents'}
-    SecurityCredentialsResponse:
-      x-model-version: 1.0
-      properties:
-        publicKey: {type: string, description: Base64 encoded public key.}
-        accessToken: {type: string, description: Access token created and sent back.}
-        sessionId: {type: string, description: ''}
-        accessTokenIssuedTime: {type: string, format: date-time, description: 'Token
-            issue time in YYYY-MM-DDThh:mm:ssZ format.', example: '2016-04-16T16:06:05Z'}
-        accessTokenTimeToLive: {type: string, description: Access token expiry.}
-        symmetricEncryptionAlgorithm: {type: string, description: AES 256/PKCS with
-            padding.}
-        asymmetricEncryptionAlgorithm: {type: string, description: RSA/ECB/PKCS1Padding.}
+        responsePaymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
+        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
     TokenizationRequest:
       x-model-version: 1.0
       properties:
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
     TokenizationResponse:
       x-model-version: 1.0
       properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-    AccountInformationRequest:
-      x-model-version: 1.0
-      properties:
-        source: {$ref: '#/components/schemas/Source'}
-    AccountInformationResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
         cardDetails:
           type: array
-          items: {$ref: '#/components/schemas/CardDetails'}
+          items:
+            $ref: '#/components/schemas/CardDetails'
+        paymentToken:
+          $ref: '#/components/schemas/ResponsePaymentToken'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
     EnhancedDataServiceRequest:
       x-model-version: 1.0
       properties:
@@ -2921,6 +3673,118 @@ components:
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+    ReturnOptimizerRequest:
+      x-model-version: 1.0
+      properties:
+        source: {$ref: '#/components/schemas/Source'}
+        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
+    ReturnOptimizerResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
+        transactionScoreResponse: {$ref: '#/components/schemas/TransactionScoreResponse'}
+    TransactionScoreResponse:
+      x-model-version: 1.0
+      description: Response containing return score details
+      properties:
+        invocationId: {type: string, description: Unique Identifier associated with
+            the invocation response, example: ad0760bf-2db5-4ba9-b294-0d2241ff58f8}
+        consumerType:
+          type: string
+          description: |
+            Indicator for new or returning customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for New Customers
+
+            Valid Values:
+            * New
+            * Existing
+          example: Existing
+        modelId: {type: string, description: Model Identifier, example: 1.0.0}
+        myReturnScoreDetails: {$ref: '#/components/schemas/MyReturnScoreDetails'}
+        peerReturnScoreDetails: {$ref: '#/components/schemas/ReturnScoreDetails'}
+    MyReturnScoreDetails:
+      x-model-version: 1.0
+      description: My Return Score Details
+      allOf:
+      - {$ref: '#/components/schemas/ReturnScoreDetails'}
+      - type: object
+        properties:
+          score: {maximum: 100, minimum: 0, type: integer, description: Normalized
+              score of a return probability. 0 indicating a low returner and 100 indicating
+              a high returner., example: '100'}
+          returnProbabilityProfile:
+            type: string
+            description: |
+              Bucketed return probability profile
+
+              Valid Values:
+              * High
+              * Low
+            example: High
+    ReturnScoreDetails:
+      x-model-version: 1.0
+      description: Return Score Details
+      properties:
+        averageReturnValue: {type: number, description: Average amount value returned
+            (ARV), example: '45.53'}
+        averageOrderValue: {type: number, description: Average amount value spent
+            (AOV), example: '275.25'}
+        percentSalesReturned: {maximum: 1, minimum: 0, type: number, description: '%
+            of sales returned (by Amount)', example: '0.3'}
+    SecurityCredentialsRequest:
+      x-model-version: 1.0
+      properties:
+        publicKeyRequired:
+          type: boolean
+          description: 'If the signedCert is expired or invalid then merchant would send a request.'
+          example: 'true'
+        accessTokenRequired:
+          type: boolean
+          description: 'If the access token is expired then merchant would request for a new token.'
+          example: 'true'
+        accessTokenTimeToLive:
+          type: string
+          description: 'Time to live (expiration time) in milliseconds. 1800000 ms, max 30 minutes.'
+          example: '889'
+        responseRedirectURL:
+          type: string
+          description: 'Response URL redirect.'
+          example: 'https://www.somedomain.com'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        deviceFingerprint:
+          type: array
+          items:
+           $ref: '#/components/schemas/DeviceFingerPrint'
+        amount:
+          $ref: '#/components/schemas/Amount'
+        amountComponents:
+          $ref: '#/components/schemas/AmountComponents'
+    SecurityCredentialsResponse:
+      x-model-version: 1.0
+      properties:
+        publicKey:
+          type: string 
+          description: 'Base64 encoded public key.'
+        accessToken:
+          type: string
+          description: 'Access token created and sent back.'
+        sessionId:
+          type: string
+          description: ''
+        accessTokenIssuedTime:
+          type: string
+          format: date-time
+          description: 'Token issue time in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2016-04-16T16:06:05Z'
+        accessTokenTimeToLive:
+          type: string
+          description: 'Access token expiry.'
+        symmetricEncryptionAlgorithm:
+          type: string
+          description: 'AES 256/PKCS with padding.'
+        asymmetricEncryptionAlgorithm:
+          type: string
+          description: 'RSA/ECB/PKCS1Padding.'
   examples:
     ApplePayRequest:
       value:
@@ -2979,8 +3843,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3006,8 +3871,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3060,8 +3926,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3087,8 +3954,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3096,13 +3964,55 @@ components:
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
     PaymentCardRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount:
+          total: 12.04
+          currency: USD
         source:
           sourceType: PaymentCard
-          card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+        transactionDetails:
+          captureFlag: true
+          merchantInvoiceNumber: '123456789012'
+        transactionInteraction:
+          origin: ECOM
+          eciIndicator: CHANNEL_ENCRYPTED
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    PaymentCardEncryptedRequest:
+      value:
+        amount:
+          total: '12.04'
+          currency: USD
+        source:
+          sourceType: PaymentCard
+          encryptionData:
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            keyId: '88000000022'
+        merchantDetails:
+          merchantId: '123456789789567'
+          terminalId: '123456'
+
+    PaymentCardCaptureRequest:
+      value:
+        source:
+          sourceType: PaymentCard
+          encryptionData:
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            keyId: '88000000022'
+        merchantDetails:
+          merchantId: '123456789012345'
+          terminalId: '123456'
     PaymentCardForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3180,6 +4090,11 @@ components:
           sourceType: PaymentCard
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
+        paymentTokens:
+        - {tokenData: '8519371934460009', tokenSource: TRANSARMOR, tokenResponseCode: '000',
+          tokenResponseDescription: SUCCESS}
+        - {tokenData: '8519371934460010', tokenSource: CHASE, tokenResponseCode: '000',
+          tokenResponseDescription: SUCCESS}
         paymentReceipt:
           approvedAmount: {total: '12.04', currency: USD}
           merchantName: Merchant Name
@@ -3193,8 +4108,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3227,8 +4143,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3241,37 +4158,94 @@ components:
           transactionType: TOKENIZE
           transactionState: AUTHORIZED
           transactionOrigin: ECOM
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         source:
-          sourceType: PaymentToken
-          tokenSource: TRANSARMOR
-          tokenData: '8519371934460009'
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          sourceType: PaymentCard
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '8519371934460009'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+          - tokenData: '8519371934460010'
+            tokenSource: CHASE
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
         processorResponseDetails:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+          bankAssociationDetails:
+            associationResponseCode: '000'
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+        
     PaymentCardInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentCardVerifyResponse:
       value:
         gatewayResponse:
@@ -3288,8 +4262,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3318,7 +4293,7 @@ components:
           tokenData: '1234560000000019'
           tokenSource: TRANSARMOR
           declineDuplicates: false
-          card: {expirationMonth: '10', expirationYear: '30'}
+          card: {expirationMonth: '10', expirationYear: '2030'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
         transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
@@ -3330,7 +4305,7 @@ components:
           tokenData: '1234560000000019'
           tokenSource: TRANSARMOR
           declineDuplicates: false
-          card: {expirationMonth: '10', expirationYear: '30'}
+          card: {expirationMonth: '10', expirationYear: '2030'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012',
           approvalCode: OK5882}
         transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
@@ -3341,14 +4316,14 @@ components:
           sourceType: PaymentToken
           tokenData: '1234560000000019'
           tokenSource: TRANSARMOR
-          card: {expirationMonth: '10', expirationYear: '30'}
+          card: {expirationMonth: '10', expirationYear: '2030'}
     PaymentTokenVerifyRequest:
       value:
         source:
           sourceType: PaymentToken
           tokenData: '1234560000000019'
           tokenSource: TRANSARMOR
-          card: {expirationMonth: '10', expirationYear: '30', securityCode: '123',
+          card: {expirationMonth: '10', expirationYear: '2030', securityCode: '123',
             securityCodeIndicator: PROVIDED}
         billingAddress:
           firstName: Jane
@@ -3383,6 +4358,10 @@ components:
               Department, city: Sandy Springs, stateOrProvince: GA, postalCode: '30303',
             country: US}
         merchantDetails: {merchantId: '1234567890123456', alternateMerchantId: '1234567890123456'}
+    PaymentTokenROSRequest:
+      value:
+        source: {sourceType: PaymentToken, tokenData: '1234560000019'}
+        merchantDetails: {merchantId: '1234567890123456', tokenType: 'AB01'}
     PaymentTokenChargesResponse:
       value:
         gatewayResponse:
@@ -3397,7 +4376,7 @@ components:
           tokenSource: TRANSARMOR
           tokenData: '8519371934460009'
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '30'}
+            expirationYear: '2030'}
         paymentReceipt:
           approvedAmount: {total: '12.04', currency: USD}
           merchantName: Merchant Name
@@ -3411,8 +4390,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3433,7 +4413,7 @@ components:
           tokenSource: TRANSARMOR
           tokenData: '8519371934460009'
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '30'}
+            expirationYear: '2030'}
         paymentReceipt:
           approvedAmount: {total: '12.04', currency: USD}
           merchantName: Merchant Name
@@ -3447,8 +4427,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3458,14 +4439,53 @@ components:
     PaymentTokenInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentTokenVerifyResponse:
       value:
         gatewayResponse:
@@ -3479,13 +4499,14 @@ components:
           tokenSource: TRANSARMOR
           tokenData: '8519371934460009'
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '30'}
+            expirationYear: '2030'}
         processorResponseDetails:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3506,6 +4527,13 @@ components:
             apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
             transactionId: '84356531338'}
         processorResponseDetails: {referenceNumber: 845366457890-TODO}
+    PaymentTokenROSResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
+            transactionId: '84356531338'}
+        transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '93', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '30'} }
     Payment3DSRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3565,8 +4593,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3592,13 +4621,52 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+    PaymentEMVHDRequest:
+      value:
+        amount:
+          total: 100
+          currency: USD
+        source:
+          sourceType: PaymentEMV
+          emvData: 9F03060000000000009F5301529F2608453917CB42536AED820278009F360206019F34034200009F02060000000060009F2701808407A00000009808409F100706011203A000029F3303E098C89F1A0201249F1E084B553030303030339A032104059F350125950500800080005F2A0201245F24032212315F3401019F4104000000059F3901059C01009F37040DC7201A4F07A00000009808409F0607A0000000980840
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 4614507291879694=078443325742854
+            keyId: FFFF109700000E4000340114
+            deviceType: INGENICO
+          pinBlock:
+            encryptedPin: 0FF7A610CC84CE40
+            keySerialNumber: FFFF3D3D3D00232002C9
+        transactionDetails:
+          captureFlag: true
+        transactionInteraction:
+          origin: POS
+          posEntryMode: ICR_RELIABLE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-03-10T01:37:13Z'
+          additionalPosInformation:
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+        merchantDetails:
+          merchantId: '100009000000041'
+          terminalId: '10000002'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - processorName: FISERV
+                processingPlatform: NASHVILLE
+                priority: PRIMARY
     PaymentEMVRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3635,6 +4703,21 @@ components:
         transactionInteraction: {origin: POS, posEntryMode: ICR_RELIABLE, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentEMVHDTokenRequest:
+      value:
+        source:
+          sourceType: PaymentEMV
+          emvData: 9F03060000000000009F5301529F26082ED06DD1FFB3EB27820218009F360200029F34033F00019F02060000000006009F2701808407A00000015230109F10080105A000030000009F3303E098C89F1A0201249F1E084B553030303030339A032104129F350125950580008080005F2A0201245F24032312315F3401019F4104000000199F3901059C01009F370444A376B54F07A00000015230109F0607A0000001523010
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 6866928729586224=03272981102005210986
+            keyId: FFFF10970000000003FD0114
+            deviceType: INGENICO
+        merchantDetails:
+          merchantId: '100009000000035'
+          terminalId: '10000002'
+          tokenType: '1174'
     PaymentEMVInfoRequest:
       value:
         source:
@@ -3680,7 +4763,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -3688,6 +4772,74 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+    PaymentEMVChargesHDResponse:
+      value:
+        gatewayResponse:
+          transactionType: CHARGE
+          transactionState: CAPTURED
+          transactionOrigin: POS
+          transactionProcessingDetails:
+            orderId: CHG018764206e3bbf4727875d88a79c72fa23
+            transactionTimestamp: '2022-03-14T15:16:19.780767Z'
+            apiTraceId: 556c623caa4b401aa3be1bca5b9e31e2
+            clientRequestId: '4360596'
+            transactionId: 556c623caa4b401aa3be1bca5b9e31e2
+        source:
+          sourceType: PaymentEMV
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '401777'
+            last4: '5556'
+            scheme: Visa
+          emvData: 8a0230309f36020073910a1be55403be070aa53030
+        paymentReceipt:
+          approvedAmount:
+            total: 100
+            currency: USD
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: '001626'
+            referenceNumber: 1bca5b9e31e2
+            processor: FISERV
+            host: NASHVILLE
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL        '
+            additionalInfo:
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: AhAyOAHvv70O77+9AgIA77+9AAAAAAEAAAMUFRYgABcJATcTAxAAAQAxYmNhNWI5ZTMxZTIwMDE2MjYwMDAxNDg0NTQ5ACHvv70CMDDvv702AgBz77+9Chvvv71UA++/vQcK77+9MDAAMAAYMjJBUFBST1ZBTCAgICAgICAgAAg2NjA2MDAwNw==
+        transactionDetails:
+          captureFlag: true
+          transactionCaptureType: hcs
+          processingCode: '009000'
+          retrievalReferenceNumber: 1bca5b9e31e2
+        transactionInteraction:
+          posEntryMode: ICR_RELIABLE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-03-10T01:37:13Z'
+          additionalPosInformation:
+            stan: '001709'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+        merchantDetails:
+          terminalId: '10000002'
+          merchantId: '100009000000041'
+        additionalDataCommon: {}
+        networkDetails:
+          network:
+            network: Visa
+          debitNetworkId: '060007'
+        paymentTokens:
+          - tokenData: '2955395481625556'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+
     PaymentEMVCreditResponse:
       value:
         gatewayResponse:
@@ -3714,7 +4866,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -3727,38 +4880,193 @@ components:
         gatewayResponse:
           transactionType: TOKENIZE
           transactionState: AUTHORIZED
-          transactionOrigin: POS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionOrigin: RETAIL
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         source:
-          sourceType: PaymentToken
-          tokenSource: TRANSARMOR
-          tokenData: '8519371934460009'
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          sourceType: PaymentEMV
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '8519371934460009'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+          - tokenData: '8519371934460010'
+            tokenSource: CHASE
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
         processorResponseDetails:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+          bankAssociationDetails:
+            associationResponseCode: '000'
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+    PaymentEMVHDTokenResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            orderId: CHG0152c60a0a11d4433397a62aefc1a62af4
+            transactionTimestamp: '2022-02-17T20:52:29.405215Z'
+            apiTraceId: 77d39f42e50c40d2ac2d56751e296f10
+            clientRequestId: '5759843'
+            transactionId: 77d39f42e50c40d2ac2d56751e296f10
+        source:
+          sourceType: PaymentEMV
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '401777'
+            last4: '5556'
+            scheme: Visa
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: '001134'
+            referenceNumber: 7cec6e7ab177
+            processor: FISERV
+            host: NASHVILLE
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            additionalInfo:
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: AhAyOAHvv70O77+9AAIA77+9AAAAAAEAAAMUFRJBABcGBCZWAxAAAQA3Y2VjNmU3YWIxNzcwMDExMzQwMDAxNDg0NTQ5ADAAGDIyQVBQUk9WQUwgICAgICAgIAAINjYwNjAwMDc=
+        transactionDetails:
+          captureFlag: true
+          transactionCaptureType: hcs
+          processingCode: '009000'
+          retrievalReferenceNumber: 1bca5b9e31e2
+        transactionInteraction:
+          posEntryMode: ICR_RELIABLE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-03-10T01:37:13Z'
+          additionalPosInformation:
+            stan: '001709'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+        merchantDetails:
+          terminalId: '10000002'
+          merchantId: '100009000000041'
+        additionalDataCommon: {}
+        networkDetails:
+          network:
+            network: Visa
+          debitNetworkId: '060007'
+        paymentTokens:
+          - tokenData: '1079740327790026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+        cardDetails:
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
+
     PaymentEMVInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentEMVVerifyResponse:
       value:
         gatewayResponse:
@@ -3775,8 +5083,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3795,12 +5104,49 @@ components:
         amount: {total: '12.04', currency: USD}
         source:
           sourceType: PaymentTrack
-          encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
+          encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: 9050770762789954=7171229002517746248,
             deviceType: INGENICO, keyId: '88000000022'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
         transactionInteraction: {origin: POS, posEntryMode: EMV_FALLBACK_MAG, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentTrackHDRequest:
+      value:
+        amount:
+          total: 100
+          currency: USD
+        source:
+          sourceType: PaymentTrack
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 4614507291879694=078443325742854
+            keyId: FFFF109700000E4000340114
+            deviceType: INGENICO
+          pinBlock:
+            encryptedPin: 0FF7A610CC84CE40
+            keySerialNumber: FFFF3D3D3D00232002C9
+        transactionDetails:
+          captureFlag: true
+        transactionInteraction:
+          origin: POS
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-03-10T04:26:56Z'
+          additionalPosInformation:
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+        merchantDetails:
+          merchantId: '100009000000041'
+          terminalId: '10000002'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              - processorName: FISERV
+                processingPlatform: NASHVILLE
+                priority: PRIMARY
     PaymentTrackForcedRequest:
       value:
         amount: {total: '12.04', currency: USD}
@@ -3823,6 +5169,20 @@ components:
         transactionInteraction: {origin: POS, posEntryMode: EMV_FALLBACK_MAG, posConditionCode: CARD_PRESENT,
           terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentTrackHDTokenRequest:
+      value:
+        source:
+          sourceType: PaymentTrack
+          encryptionData:
+            encryptionType: ON_GUARD
+            encryptionTarget: TRACK_2
+            encryptionBlock: 5920827294965894=843844352383401781
+            keyId: FFFF109700000E4000140114
+            deviceType: INGENICO
+        merchantDetails:
+          merchantId: '100009000000035'
+          terminalId: '10000002'
+          tokenType: '1174'
     PaymentTrackInfoRequest:
       value:
         source:
@@ -3866,7 +5226,7 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -3874,6 +5234,83 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+    PaymentTrackChargesHDResponse:
+      value:
+        gatewayResponse:
+          transactionType: CHARGE
+          transactionState: CAPTURED
+          transactionOrigin: POS
+          transactionProcessingDetails:
+            orderId: CHG0107179b52c7884322969dfe1df76eeafb
+            transactionTimestamp: '2022-02-17T20:54:35.207943Z'
+            apiTraceId: 07111337e45d446ba2182c906f9cd41a
+            clientRequestId: '1705848'
+            transactionId: 07111337e45d446ba2182c906f9cd41a
+        source:
+          sourceType: PaymentTrack
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '448464'
+            last4: '0042'
+            scheme: Visa
+        paymentReceipt:
+          approvedAmount:
+            total: 10.8
+            currency: USD
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: OK5059
+            referenceNumber: 2c906f9cd41a
+            processor: FISERV
+            host: NASHVILLE
+            networkRouted: VISA
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL        '
+            bankAssociationDetails:
+              associationResponseCode: '00'
+            additionalInfo:
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: ARAyIAHvv70O77+9AAIAAAAAAAAAEO+/vQIXIFQ2ABIgAAEAMmM5MDZmOWNkNDFhT0s1MDU5MDAwMTQ4NDU0OQHvv70ASDE0RTAxMjA0ODAwNDc2NzkwNEcyNDUgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMAAYMjJBUFBST1ZBTCAgICAgICAgABBWSUNSICAcUlNCAGZTRFRDMDE1OTAwMTEwMDAwMDAwMDAwUkkwMTUwMDAwMDAwMDAwMDAwMDBOTDAwNFZJU0FUWTAwMUNBUjAwNFYwMDAAKUFSQ0kwMDNVTktDUDAwMT9SQzAwMjAwQ0IwMDFW
+        transactionDetails:
+          captureFlag: true
+          processingCode: '000000'
+          retrievalReferenceNumber: 2c906f9cd41a
+        transactionInteraction:
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-02-17T16:17:48Z'
+          additionalPosInformation:
+            stan: '001220'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: UNSPECIFIED
+              terminalEntryCapability: MAG_STRIPE_ONLY
+          authorizationCharacteristicsIndicator: E
+          hostPosConditionCode: '00'
+        merchantDetails:
+          tokenType: '1174'
+          terminalId: '10000002'
+          merchantId: '100009000000035'
+        additionalDataCommon: {}
+        networkDetails:
+          network:
+            network: Visa
+          cardLevelResultCode: ''
+          validationCode: G245
+          transactionIdentifier: '012048004767904'
+        cardDetails:
+          brand: V
+          brandProductId: '?'
+          issuerCountry: UNK
+        paymentTokens:
+          - tokenData: '9897939877720042'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
     PaymentTrackCreditResponse:
       value:
         gatewayResponse:
@@ -3900,8 +5337,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3914,37 +5352,198 @@ components:
           transactionType: TOKENIZE
           transactionState: AUTHORIZED
           transactionOrigin: RETAIL
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         source:
-          sourceType: PaymentToken
-          tokenSource: TRANSARMOR
-          tokenData: '8519371934460009'
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
+          sourceType: PaymentTrack
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '8519371934460009'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+          - tokenData: '8519371934460010'
+            tokenSource: CHASE
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
         processorResponseDetails:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+          bankAssociationDetails:
+            associationResponseCode: '000'
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+    PaymentTrackHDTokenResponse:
+      value:
+        gatewayResponse:
+          transactionType: CHARGE
+          transactionState: CAPTURED
+          transactionOrigin: POS
+          transactionProcessingDetails:
+            orderId: CHG01e0ffbc1729bb41bebe1a7cc5112b9879
+            transactionTimestamp: '2022-03-14T15:12:40.940286Z'
+            apiTraceId: a000dd8244284608bca77cec6e7ab177
+            clientRequestId: '9626805'
+            transactionId: a000dd8244284608bca77cec6e7ab177
+        source:
+          sourceType: PaymentTrack
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '401777'
+            last4: '5556'
+            scheme: Visa
+        paymentReceipt:
+          approvedAmount:
+            total: 100
+            currency: USD
+          processorResponseDetails:
+            approvalStatus: APPROVED
+            approvalCode: '001134'
+            referenceNumber: 7cec6e7ab177
+            processor: FISERV
+            host: NASHVILLE
+            networkInternationalId: '0001'
+            responseCode: '000'
+            responseMessage: Approved
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL        '
+            additionalInfo:
+              - name: HOST_RAW_PROCESSOR_RESPONSE
+                value: AhAyOAHvv70O77+9AAIA77+9AAAAAAEAAAMUFRJBABcGBCZWAxAAAQA3Y2VjNmU3YWIxNzcwMDExMzQwMDAxNDg0NTQ5ADAAGDIyQVBQUk9WQUwgICAgICAgIAAINjYwNjAwMDc=
+        transactionDetails:
+          captureFlag: true
+          transactionCaptureType: hcs
+          processingCode: '009000'
+          retrievalReferenceNumber: 7cec6e7ab177
+        transactionInteraction:
+          posEntryMode: MAG_STRIPE
+          posConditionCode: CARD_PRESENT
+          terminalTimestamp: '2022-03-10T04:26:56Z'
+          additionalPosInformation:
+            stan: '001706'
+            dataEntrySource: MOBILE_TERMINAL
+            posFeatures:
+              pinAuthenticationCapability: CAN_ACCEPT_PIN
+              terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+        merchantDetails:
+          terminalId: '10000002'
+          merchantId: '100009000000041'
+        additionalDataCommon: {}
+        networkDetails:
+          network:
+            network: Visa
+          debitNetworkId: '060007'
+        paymentTokens:
+          - tokenData: '2955395481625556'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+        cardDetails:
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentTrackInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     PaymentTrackVerifyResponse:
       value:
         gatewayResponse:
@@ -3961,8 +5560,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4052,7 +5652,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -4086,8 +5687,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4113,8 +5715,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4123,14 +5726,53 @@ components:
     ManualEntryInfoResponse:
       value:
         gatewayResponse:
-          transactionType: INFORMATION
-          transactionState: SUCCESS
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'INFORMATION'
+          transactionState: 'SUCCESS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
         cardDetails:
-        - {brand: VISA, brandProductId: VISA_BUSINESS, cardFunction: CREDIT, commercialCard: CORPORATE,
-          issuerCountry: US, issuerName: First National Bank of Omaha}
+          - detailedCardProduct: 'VISA'
+            productId: 'N1'
+            visaProductSubType: 'HC'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            cardClass: 'CORPORATE'
+            countryCode: 'USA'
+            issuerBankName: 'Example Bank'
+            recordType: 'DETAIL'
+            lowBin: '400337'
+            highBin: '400338'
+            binLength: '6'
+            binDetailPan: '16'
+            issuerUpdateYear: '20'
+            issuerUpdateMonth: '09'
+            issuerUpdateDay: '22'
+            regulatorIndicator: 'NON_REGULATED'
+            fsaIndicator: 'SUPPORTED'
+            nonMoneyTransferOCTsDomestic: 'SUPPORTED'
+            nonMoneyTransferOCTsCrossBorder: 'SUPPORTED'
+            onlineGamblingOCTsDomestic: 'SUPPORTED'
+            onlineGamblingOCTsCrossBorder: 'SUPPORTED'
+            moneyTransferOCTsDomestic: 'SUPPORTED'
+            moneyTransferOCTsCrossBorder: 'SUPPORTED'
+            fastFundsDomesticMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticNonMoneyTransfer: 'SUPPORTED'
+            fastFundsCrossBorderNonMoneyTransfer: 'SUPPORTED'
+            fastFundsDomesticGambling: 'SUPPORTED'
+            fastFundsCrossBorderGambling: 'SUPPORTED'
+            prepaidIndicator: 'PREPAID'
+            visaLargeTicketIndicator: 'SUPPORTED'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            tokenIndicator: 'SUPPORTED'
+            cardholderBillingCurrency: 'USD'
+            b2bProgramId: 'B2B_PROGRAM_1'
     ManualEntryVerifyResponse:
       value:
         gatewayResponse:
@@ -4147,8 +5789,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4167,6 +5810,33 @@ components:
         amount: {total: '12.04', currency: USD}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    SecondaryRequestWithReferenceMerchantTransactionId:
+      value:
+        referenceTransactionDetails:
+          referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
+          referenceTransactionType: 'CHARGES'
+        amount:
+          total: '12.04'
+          currency: 'USD'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    SecondaryRequestWithReferenceTransactionId:
+      value:
+        referenceTransactionDetails:
+          referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
+          referenceTransactionType: 'CHARGES'
+        amount:
+          total: '12.04'
+          currency: 'USD'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
     CancelResponse:
       value:
         gatewayResponse:
@@ -4193,8 +5863,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4227,8 +5898,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4261,11 +5933,195 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
+    TransactionInquiryRequest:
+      value:
+        referenceTransactionDetails:
+          referenceTransactionId: '95f6b8c8ec024e1183a8e998406656ce'
+        merchantDetails:
+          merchantId: '222222222222'
+
+    TransactionInquiryByMerchantOrderIdRequest:
+      value:
+        referenceTransactionDetails:
+          referenceMerchantOrderId: '953729024'
+        merchantDetails:
+          merchantId: '222222222222'
+
+    TransactionInquiryResponse:
+      value:
+        gatewayResponse:
+          gatewayName: 'IPG'
+          gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
+          gatewayTransactionId: '84439763459'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            apiTraceId: 'aa829dcb83cd49f485141168e051b8d1'
+            clientRequestId: '9806383'
+            orderId: 'CHG01586b6416dddd4425ae764daee6c3ac8a'
+            transactionId: 'aa829dcb83cd49f485141168e051b8d1'
+            transactionTimestamp: '2022-01-13T19:09:27.939151Z'
+          transactionState: 'CAPTURED'
+          transactionType: 'CHARGE'
+        paymentReceipt:
+          approvedAmount:
+            currency: 'USD'
+            total: '690'
+          processorResponseDetails:
+            approvalCode: 'OK6982'
+            approvalStatus: 'APPROVED'
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            localTimestamp: '2022-01-13T19:09:29Z'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
+            responseMessage: 'APPROVAL'
+            schemeTransactionId: '0113MCC815463'
+        source:
+          card:
+            bin: '542418'
+            expirationMonth: '12'
+            expirationYear: '2025'
+            last4: '1732'
+            scheme: 'MASTERCARD'
+          sourceType: 'PaymentCard'
+        additionalDataCommon:
+          billingAddress:
+            address:
+              city: 'Atlanta'
+              country: 'USA'
+              houseNumberOrName: '4201'
+              postalCode: '30338'
+              stateOrProvince: 'Georgia'
+              street: '123 Main Dr'
+            firstName: 'Jane'
+            lastName: 'Doe'
+        transactionDetails:
+          captureFlag: 'true'
+          merchantInvoiceNumber: 'CHG01586b641'
+
+    TransactionInquiryByMerchantOrderIdResponse:
+      value:
+          gatewayResponse:
+            gatewayName: 'IPG'
+            gatewayOrderId: 'CH-130870e4-0adc-494a-b15a-265f1547af26'
+            gatewayTransactionId: '84438752938'
+            transactionOrigin: 'ECOM'
+            transactionProcessingDetails:
+              apiTraceId: 'c16a33b487af4eb9b6b6e97a912bda6f'
+              clientRequestId: '8893258'
+              orderId: 'CHG01c23b5480234e4a26b172e1f33296a51e'
+              transactionId: 'c16a33b487af4eb9b6b6e97a912bda6f'
+              transactionTimestamp: '2022-01-13T18:15:43.777576Z'
+            transactionState: 'CAPTURED'
+            transactionType: 'CHARGE'
+          paymentReceipt:
+            approvedAmount:
+              currency: 'USD'
+              total: '16.93'
+            processorResponseDetails:
+              approvalCode: 'OK7742'
+              approvalStatus: 'APPROVED'
+              bankAssociationDetails:
+                avsSecurityCodeResponse:
+                  association:
+                    avsCode: 'Y'
+                    securityCodeResponse: 'X'
+                  postalCodeMatch: 'NOT_MATCHED'
+                  securityCodeMatch: 'NOT_CHECKED'
+                  streetMatch: 'MATCHED'
+                transactionTimestamp: '2022-01-13T18:15:45.177Z'
+              hostResponseCode: '00'
+              hostResponseMessage: 'APPROVAL'
+              localTimestamp: '2022-01-13T18:15:45Z'
+              processor: 'fiserv'
+              responseCode: '000000'
+              responseMessage: 'APPROVAL'
+              schemeTransactionId: '164209774594909'
+          source:
+            card:
+              bin: '653949'
+              expirationMonth: '06'
+              expirationYear: '2026'
+              last4: '1727'
+              scheme: 'DINERSCLUB'
+            sourceType: 'DecryptedWallet'
+          additionalDataCommon:
+            billingAddress:
+              address:
+                city: 'Atlanta'
+                country: 'USA'
+                houseNumberOrName: '4201'
+                postalCode: '30338'
+                stateOrProvince: 'Georgia'
+                street: '123 Main Dr'
+              firstName: 'Jane'
+              lastName: 'Doe'
+          transactionDetails:
+            captureFlag: 'true'
+            merchantInvoiceNumber: '520608612'
+            merchantOrderId: 'RKOrdID-822715036'
+            merchantTransactionId: 'RKTransID-834788206'
+          transactionInteraction:
+            eciIndicator: 'SECURE_ECOM'
+
+    SecurityCredentialsRequest:
+      value:
+        publicKeyRequired: true
+        accessTokenRequired: true
+        accessTokenTimeToLive: '889'
+        responseRedirectURL: https://www.somedomain.com
+        
+    SecurityCredentialsResponse:
+      value:
+        publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
+        keyLength: '12345'
+        accessToken: 'vsmsrKcNFWzq79Yd8aaxHetHBdxm'
+        sessionId: 'b28ba2ca-6368-4d72-b5f0-c185b4d0de4c'
+        accessTokenIssuedTime: '2016-04-16T16:06:05Z'
+        accessTokenTimeToLive: '1799'
+        symmetricEncryptionAlgorithm: 'AES-GCM'
+        asymmetricEncryptionAlgorithm: 'RSA-2048'
+
+    PaymentSessionRequest:
+      value:
+        amount:
+          total: '12.04'
+          currency: USD
+        source:
+          sourceType: PaymentSession
+          sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
+        transactionDetails:
+          captureFlag: true
+          accountVerification: false
+          merchantInvoiceNumber: '123456789012'
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'CHANNEL_ENCRYPTED'
+        merchantDetails:
+          merchantId: '123456789012345'
+          terminalId: '123456'
+    
+    PaymentSessionTokenRequest:
+      value:
+        source:
+          sourceType: PaymentSession
+          sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'CHANNEL_ENCRYPTED'
+        merchantDetails:
+          merchantId: '123456789012345'
+          terminalId: '123456'
+

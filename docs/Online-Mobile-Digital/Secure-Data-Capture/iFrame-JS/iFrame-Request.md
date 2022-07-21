@@ -1,18 +1,19 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [Online, Card Not Present, Secure Payment Form, Tokenization, Secure Data Capture, iFrame]
 ---
 
-# Create an iFrame JS Request
+# Create an iFrame Request
 
 ## Step 1: Authentication
 
-A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
 
 
 ---
 
 ## Step 2: Configuration
 
+The following code snippets are required to create and initialize the SDK configuration for the iFrame.
 
 ### iFrame SDK
 
@@ -20,28 +21,27 @@ The iFrame JS script tag is required in the website by downloading or including 
 
 ```php
 
-<script id="commercehub" src="https://api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
 
 ```
 
 ---
 
-### Authentication
+### Authentication Credentials
 
-The following script is required to submit the authentication of the iFrame JS:
+Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md) in step 1.
 
 ```javascript
 
-const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR';
-const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK';
+const authorization = 'ACCESS_TOKEN';
+const apiKey = 'API_KEY'; 
 const formConfig = {
-  "merchantId": '100004000002050',
-  "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
-};
-
+   "merchantId": 'MERCHANT_ID',
+   "publicKey": 'PUBLIC_KEY',
+   "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM'
+   };
+   
 ```
-
----
 
 ### Payment Form
 
@@ -87,22 +87,21 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 
 ### Payment Form Example 
 
-
-```html
+```php
 
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="https://test.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-form-div"></div>
         <script>
-            const authorization = 'NthfE86HpAYaxu3jm6cBJiY0JbYR';
-            const apiKey = 'gSAXZehdtSlhDGpumkVjlZZ4AXFBAfoK'; 
+            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+            const apiKey = '1951fe5b30e34cdaad758b8874140872'; 
             const formConfig = {
-                "merchantId": '100004000002050',
-                "publicKey": 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
+                "merchantId": '100204342250',
+                "publicKey": 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCUYMJPHx8HLM1hUGNr1WOteYFt+PC0RZTpSeOcMhyQreTcfSwNi75wRR0k+QvMk4u8fm8A/Vq7tRU+LRbSTiFuSDJqszQGybm1LWoDoYuTD3QkF8r3Ej1VkhR7nBB8jlK+tpbWsigF3PeWUmfVEIA/qfLKhNDpUY71lyw8pxZTfwIDAQAB=',
                 "symmetricEncryptionAlgorithm": 'AES_GCM'
             };
             const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
@@ -130,8 +129,6 @@ Submit a charge or tokenization request after a successful response which identi
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
 
-
-
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/tokens`
 
@@ -141,11 +138,9 @@ Submit a charge or tokenization request after a successful response which identi
 <!-- theme: info -->
 > Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
-
-
 <!--
 type: tab
-title: Request
+titles: Request, Charges Response, Tokens Response
 -->
 
 ##### Example of a charge payload request.
@@ -166,7 +161,8 @@ title: Request
     "merchantTransactionId": "RKTransID-768086381518"
   },
   "merchantDetails": {
-    "merchantId": "100004000002050"
+    "merchantId": "123456789012345",
+    "terminalId": "123456"
   }
 }
 ```
@@ -174,13 +170,12 @@ title: Request
 
 <!--
 type: tab
-title: Charges Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
@@ -223,8 +218,9 @@ title: Charges Response
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
@@ -244,10 +240,12 @@ title: Charges Response
 
 <!--
 type: tab
-title: Tokens Response
 -->
 
 ##### Example of a tokenization (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -329,6 +327,8 @@ title: Tokens Response
 ## See Also
 
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
+
+---

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-details, master-data]
+tags: [API Reference, Customer Details, Master Data]
 ---
 
 # Customer Details

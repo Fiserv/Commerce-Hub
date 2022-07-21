@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, directed-routing, network, processor]
+tags: [Directed Routing, Network, Processor]
 ---
 
 # Directed Routing
@@ -35,8 +35,8 @@ The below table identifies the required parameters in the `processors` array.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `code` | *string* | 256 | Identifies the payment processor. **Valid Values:** TBD |
-| `platform` | *string* | 256 | Identifies the payment platform of the processor. **Valid Values:** TBD |
+| `processorName` | *string* | 256 | Identifies the payment processor. **Valid Values:** FISERV, CHASE |
+| `processingPlatform` | *string* | 256 | Identifies the payment platform of the processor. **Valid Values:** NASHVILLE, TAMPA, SALEM |
 | `priority` | *string* | 256 | Identifies the priority to use each processor. **Valid Values:** PRIMARY, SECONDARY |
 
 <!--
@@ -46,23 +46,24 @@ type: tab
 ```json
 
 {
-"additionalDataCommon": {
-	"directedRouting": {
-		"network": "VISA",
-		"cardFunction": "CREDIT",
-		"processors": [{
-				"code": "TBD",
-				"platform": "TBD",
-				"priority": "PRIMARY"
-			},
-			{
-				"code": "TBD",
-				"platform": "TBD",
-				"priority": "SECONDARY"
-			}
-		]
-	}
-}
+  "additionalDataCommon": {
+    "directedRouting": {
+      "network": "VISA",
+      "cardFunction": "CREDIT",
+      "processors": [
+        {
+          "processorName": "FISERV",
+          "processingPlatform": "NASHVILLE",
+          "priority": "PRIMARY"
+        },
+        {
+          "processorName": "CHASE",
+          "processingPlatform": "TAMPA",
+          "priority": "SECONDARY"
+        }
+      ]
+    }
+  }
 }
 
 ```
@@ -106,13 +107,13 @@ titles: Request, Response
       "cardFunction": "CREDIT",
       "processors": [
         {
-          "code": "FISERV",
-          "platform": "NORTH",
+          "processorName": "FISERV",
+          "processingPlatform": "NASHVILLE",
           "priority": "PRIMARY"
         },
         {
-          "code": "CHASE",
-          "platform": "TAMPA",
+          "processorName": "CHASE",
+          "processingPlatform": "TAMPA",
           "priority": "SECONDARY"
         }
       ]
@@ -166,11 +167,12 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK123C",
       "referenceNumber": "4fbc5baaae18",
-      "processor": "NASHVILLE.NORTH",
+      "processor": "FISERV",
       "networkRouted": "VISA",
       "networkInternationalId": "0001",
       "responseCode": "000",
       "responseMessage": "Approved",
+      "host": "NASHVILLE",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL ",
       "bankAssociationDetails": {

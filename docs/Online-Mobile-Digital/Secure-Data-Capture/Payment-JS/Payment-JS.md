@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [Online, Card Not Present, Secure Payment Form, JS, Javascript, Secure Data Capture, Tokenization]
 ---
 
 # JS Integration
@@ -11,18 +11,18 @@ Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within
 
 ### Benefits
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website while maintaining their look and feel. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
 #### Transaction Flow
 
-1. The cardholder navigates to checkout page of the merchant's website.
-2. The merchant’s browser loads the Commerce Hub iFrame SDK.
-3. The Commerce Hub SDK builds and renders on the merchant's website with a card form that allows the cardholder to initiate the payment session.
-4. The cardholder's details are entered and stored against a sessionID within Commerce Hub on form submit.
-5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchants backend server.
-6. Commerce Hub sends the transaction response to the merchant’s website.
+1. The customer navigates to checkout page of the merchant's website.
+2. The merchant's website loads the Commerce Hub SDK.
+3. The Commerce Hub SDK builds and renders a card form that allows the customer to initiate the payment session.
+4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
+5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
+6. Commerce Hub sends the transaction response to the merchant's website.
 
-**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md).**
+**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md).**
 
 ## Additional Security Settings
 
@@ -39,6 +39,9 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 ## See Also
 
-- Create a Payment Request
-- Customize Payment Form
+- [Create a Payment Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
+- [Customize Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
+- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+
+---

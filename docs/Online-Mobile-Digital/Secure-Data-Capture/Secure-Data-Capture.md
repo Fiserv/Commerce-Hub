@@ -17,13 +17,13 @@ The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/
 <!-- type: card
 title: Hosted Payment Page
 description: Allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md
+link:
 -->
 
 <!-- type: card
 title: Payment URL
 description: Allows a merchant to request an invoice via the Commerce Hub RESTful APIs, and send a Payment URL to their customer.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-URL/Payment-URL.md
+link:
 -->
 
 <!-- type: card
@@ -55,7 +55,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS
 <!-- type: card
 title: API Only
 description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+link:
 -->
 
 <!-- type: row-end -->

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, bill-payments, installment-bill-payments]
+tags: [Bill Payments, Installment Bill Payments]
 ---
 
 # Installment Bill Payments
@@ -19,4 +19,5 @@ Installment transaction information is submitted in the `installments` object as
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
+
 ---

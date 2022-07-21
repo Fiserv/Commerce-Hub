@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, fraud, card-not-present, fraud-filters]
+tags: [Fraud, Card Not Present, Card Present, In-Person, Online]
 ---
 
 

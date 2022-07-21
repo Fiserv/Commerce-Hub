@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, visa, american-express, discover, purchase-card, commercial-card, business-card]
+tags: [Level 2 Card, Level 3 Card, Mastercard, Visa, American Express, Discover, Purchase Card, Commercial Card, Business Card]
 ---
 
 # Level II and III Data
@@ -228,8 +228,9 @@ type: tab
     "approvalStatus": "APPROVED",
     "approvalCode": "OK5882",
     "schemeTransactionId": "0225MCC625628",
-    "processor": "fiserv",
-    "responseCode": "000000",
+    "processor": "FISERV",
+    "host": "NASHVILLE",
+    "responseCode": "000",
     "responseMessage": "APPROVAL",
     "hostResponseCode": "00",
     "hostResponseMessage": "APPROVAL",

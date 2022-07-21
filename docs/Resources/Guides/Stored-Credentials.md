@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
+tags: [Stored Credentials, Vault]
 ---
 
 # Stored Credentials
@@ -160,8 +160,9 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",

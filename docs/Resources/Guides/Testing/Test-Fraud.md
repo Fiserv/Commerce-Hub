@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-fraud]
+tags: [Testing, Test Integration, Test Cards, Test Fraud]
 ---
 
 # Test Fraud Settings
@@ -96,8 +96,9 @@ type: tab
          "approvalStatus":"APPROVED",
          "approvalCode":"OK5882",
          "schemeTransactionId":"0225MCC625628",
-         "processor":"fiserv",
-         "responseCode":"606",
+         "processor":"FISERV",
+         "host": "NASHVILLE",
+         "responseCode":"000",
          "responseMessage":"Address Verification Failed",
          "hostResponseCode":"00",
          "hostResponseMessage":"APPROVAL",

@@ -1,8 +1,25 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, apple-pay, wallet]
+tags: [Samsung Pay, Web, Online, Wallet]
 ---
 
 # Samsung Pay on the Web: RESTful API Integration
+
+Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Samsung Pay. The merchants would need to setup their own server for secure communication with Samsung Pay. The merchant will host the payment processing on their server and has full control over the look and feel.
+
+<!-- theme: warning -->
+> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+
+#### How it Works
+
+1. Customer selects checkout from the merchant's website.
+2. Customer then presented with the merchant's payment form.
+3. Customer selects Samsung Pay and then redirected to the Samsung Pay payment form.
+4. Customer completes the Samsung Pay form and then redirected to the merchant's website.
+5. Customer selects to complete the transaction.
+6. Merchant submits the encrypted Samsung Pay payload to Commerce Hub.
+7. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
+
+---
 
 ## Step 1: Configure Samsung Pay
 
@@ -116,7 +133,9 @@ type: tab
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
+
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
    "gatewayResponse":{
@@ -159,8 +178,9 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
@@ -184,9 +204,9 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
-- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Samsung Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay-App.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 

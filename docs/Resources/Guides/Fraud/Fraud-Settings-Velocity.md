@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, authorizations, card-not-present, fraud, velocity-controls, velocity-settings]
+tags: [Authorizations, Card Not Present, Fraud, Velocity Controls, Velocity Settings]
 ---
 
 
@@ -63,6 +63,22 @@ Attributes determine what actions should be taken based on the velocity settings
 | Duration | Defines the length of time long the velocity control will verify the transaction history |
 | Minimum Limit | Minimum limit allowed to process, any transaction under the limit will take the action selected |   
 | Maximum Limit | Maximum limit allowed to process, any transaction over the limit will take the action selected | 
+
+
+The fraud settings that you can configure are:
+
+- Minimum Sale Amount
+- Maximum Sale Amount
+- Maximum Amount of Transactions
+- Maximum Number of Transactions
+- Maximum Amount Per Card/Check Number
+
+
+Fraud Settings
+
+Use Pay eezy 
+
+Add example
 
 
 ---

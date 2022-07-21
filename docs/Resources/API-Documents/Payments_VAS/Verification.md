@@ -1,10 +1,10 @@
 ---
-tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, security-code, address-verification]
+tags: [Account Verification, Card Verification, AVS, CVV, Security Code, Address Verrification]
 ---
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the cardholder account is valid for a transaction. The merchant can initiate the verification request using a payment [card](#paymentcard-request) or [token](#paymenttoken-request).
+The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification request using a payment [card](#paymentcard-request) or [token](#paymenttoken-request).
 
 <!--theme:info-->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
@@ -14,9 +14,6 @@ The merchant can perform account verification transaction to confirm that the ca
 ## PaymentCard Request
 
 ### Minimum Requirements
-
-<!-- theme: warning -->
-> Some cards do not allows $0 authorization, in which case `cardVerificationAmount` in the `transactionDetails` object will be required.
 
 <!--
 type: tab
