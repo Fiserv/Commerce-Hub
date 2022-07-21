@@ -4,9 +4,7 @@ tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, 
 
 # Encrypted PIN Pad Integration
 
-The PIN Pad or device used to capture the payment source is connected to the terminal or software. The PIN Pad encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device. 
-
-Commerce Hub supports the following encrypted payment source types: [EMV chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md), [track data (magstripe)](?path=docs/In-Person/Encrypted-Payments/Track.md), NFC/contactless, and [manual entry (EMV fallback)](?path=docs/In-Person/Encrypted-Payments/Manual.md).
+The PIN Pad or device used to capture the payment source is connected to the terminal or software. The PIN Pad encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device.
 
 The benefits of a encyrpted PIN Pad solution are:
 - Reduced coding effort for the developer because the encryption handling is already implemented by the third party vendor
@@ -14,17 +12,36 @@ The benefits of a encyrpted PIN Pad solution are:
 - Faster payment improving the customer experience
 - Business security by enabling acceptance of chip and signature, and chip and PIN
 
-**Begin integration with Commerce Hub's [RESTful APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md).**
+## Encrypted Payment Types
 
----
+Commerce Hub allows a merchant to send encrypted card data from their device to Commerce Hub's RESTful APIs.
 
-## See Also
+<!-- type: row -->
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
-- [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
-- [NFC/Contactless](?path=docs/In-Person/Encrypted-Payments/Contactless.md)
-- [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
+<!-- type: card
+title: EMV Chip
+description: EMV chip enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards.
+link: ?path=docs/In-Person/Encrypted-Payments/EMV.md
+-->
+
+<!-- type: card
+title: Contactless
+description: Near Field Communication (NFC) or contactless payment are transactions made by tapping either a contactless chip card or payment-enabled device with a contactless-enabled terminal.
+link: 
+-->
+
+<!-- type: card
+title: Track Data
+description: Payment Track can be used as EMV Fallback and involves manually swiping the payment source into a payment terminal using magnetic stripe.
+link: ?path=docs/In-Person/Encrypted-Payments/Track.md
+-->
+
+<!-- type: card
+title: Manual Entry
+description: Encrypted manual key entry can be used as EMV Fallback and involves manually entering the payment source details a payment terminal. 
+link: ?path=docs/In-Person/Encrypted-Payments/Manual.md
+-->
+
+<!-- type: row-end -->
 
 ---
