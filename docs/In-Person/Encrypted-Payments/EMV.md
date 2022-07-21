@@ -4,9 +4,9 @@ tags: [EMV, In-Person, Card Present, Encrypted Payments]
 
 # PaymentEMV
 
-[EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip and PIN enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
+[EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip with signature or PIN enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
-A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
+A device encrypts the customer's payment source and sends the encryption data to Commerce Hub.
 
 <!-- theme: info -->
 > EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
