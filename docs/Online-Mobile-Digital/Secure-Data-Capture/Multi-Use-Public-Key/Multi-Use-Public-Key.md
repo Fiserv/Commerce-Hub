@@ -1,5 +1,5 @@
 ---
-tags: 
+tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
 ---
 
 # Merchant Managed Encryption
