@@ -29,6 +29,12 @@ description: Process debit cards through debit newtworks to accept in-person pay
 link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 -->
 
+<!-- type: card
+title: Regional Debit
+description: Process international debit cards through debit newtworks to accept in-person payments and cash withdraws. 
+link: 
+-->
+
 <!-- type: row-end -->
 
 ---
