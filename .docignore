@@ -66,4 +66,13 @@ docs/Resources/Master-Data/Encryption-Data.md
 docs/Resources/Master-Data/Pin-Block.md
 docs/Resources/Master-Data/Network-Details.md
 docs/Resources/Master-Data/Processing-Code.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesWallet.md
+docs/Resources/Guides/Payeezy/ReportingandSearchAPI.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesPartialVoid.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesOpenRefund.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesSplitShip.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-Features3DS.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesLevel23.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTimeoutReversal.md
+docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTerminalSettlement.md
 docs/Resources/Guides/Debit/Least-Cost-Debit.md
