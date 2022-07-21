@@ -1,20 +1,13 @@
 ---
-tags: [carat, commerce-hub, enterprise, batch-upload card-not-present,  csv-format, virtual-terminal, online]
+tags: [Batch Upload, Card Not Present, CSV Format, Virtual Terminal, Online]
 ---
 
 # Quick Key
 
-Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upload of transactions using a Comma Seperated Value (CSV) file.
+Quick key is a feature in the Virtual Termial that allows batch upload of transactions using a Comma Seperated Value (CSV) file.
 
-- The Quick Key UI shall capable to upload a transaction file with the predefined format.
-- An upload file action button shall be available for the CLX user.
-- On click of Upload action a file selection window shall be displayed to the user to select the file.
-- The Quick Key transaction upload file format shall be CSV.
-- A Quick key transaction upload file template shall be available for merchant to download form the UI.
-- One Quick Key transaction upload file shall have a minimum support for 250 transaction records. (info)Current maximum support of records in Payeezy VPOS - Quick Key.
-- The maximum record count allowed in a Quick Key transaction upload file shall be based on the configuration at service config by merchant.
-- Transaction record in upload file shall separate by carriage return character
-- UI shall have an option to download the Quick Key Transaction file template.
+<!-- theme: info -->
+> A Quick Key upload file supports 250 transaction records.
 
 ---
 
@@ -50,6 +43,7 @@ Quick key is a feature in the Commerce Hub Virtual Termial that allows batch upl
 
 `MIN1234567890,MOI001234758,MTI1234567,Jane Doe,CHARGES,true,,4012000033330026,10.00,0126,,,2900,Westside Pkwy,Atlanta,GA,30004`
 
+---
 
 ## See Also
 

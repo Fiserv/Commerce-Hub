@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, restful-api, request-header, request-body, api, header, request-body, environments]
+tags: [Card Not Present, Card Present, Request Header, Request Body, Header, Environments]
 ---
 
 # Constructing a RESTful API Request
@@ -16,34 +16,38 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: info -->
->Commerce Hub highly recommend testing against our test environment before using our production environment.
+> Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
 
 ### Sandbox
 
 <!--theme: success -->
-> https://test.api.fiservapps.com/ch/{resource}
+> https://cert.api.fiservapps.com/ch/{resource}
 
-- Test APIs before you deploy to production
+- Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Test APIs before certifying for production
 - View the response format of a specific API
 - Experiment, develop code and fix bugs
 - Send and cancel "test" transactions
+
+### End to End
+
+<!--theme: success -->
+> https://cert.api.fiservapps.com/ch/{resource}
+
+- Uses End to End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Certify before deploying to production
+- Run test scripts based on the API's requirements
+- Conduct a complete beta test of your application
 
 ### Production
 
 <!--theme: success -->
 > https://prod.api.fiservapps.com/ch/{resource}
 
+- Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
 - Send and cancel "live" transactions
 - Access Value Added Services
-- Conduct a complete beta test of your application
 - Run reports
-
-<!-- ## QA Sandbox
-
-Description goes here -->
-
-<!-- theme: success -->
-<!-- > https:// qa.api.fiservapps.com/ch/{resource} -->
 
 ---
 
@@ -59,7 +63,7 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 | `Timestamp` | *integer* | N/A | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
 | `Accept-Language` | *string* | N/A | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
 | `Auth-Token-Type`| *string* | N/A | Indicates Authorization type HMAC or AccessToken.|
-| `Authorization` | *string* | N/A | Used to ensure the request has not been tampered with during transmission. Valid encryption; HMAC or AccessToken. For more information, refer to the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md) article. |
+| `Authorization` | *string* | N/A | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
 | `Message-Digest` | *string* | N/A | Needed only from customer browser or app to the API in Hosted Payment Page requests. |
 
 #### Sample Header
@@ -67,11 +71,11 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 ```json
 "header": {
       "Content-Type": "application/json",
-      "Client-Request-Id": "1000000012",
-      "Api-Key": "api'Key",
-      "Timestamp": "Date().getTime()",
-      "Auth-Token-Type": "HMAC" ,
-      "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
+      "Client-Request-Id": "CLIENT_REQUEST_ID",
+      "Api-Key": "API_KEY",
+      "Timestamp": "TIMESTAMP",
+      "Auth-Token-Type": "AUTH_TOKEN_TYPE" ,
+      "Authorization": "ACCESS_TOKEN"
     },
 ```
 
@@ -115,14 +119,13 @@ The body of the transaction request differs based on the transaction being initi
 A standard API call to execute a charge transaction might look like this:
 
 ```json
-
 {
   method: "POST",
-  url: "https://prod.api.fiservapps.com/ch/payments/v1/charges",
+  url: "https://cert.api.fiservapps.com/ch/payments/v1/charges",
   headers: {
       "Content-Type": "application/json",
       "Client-Request-Id": "1000000012",
-      "Api-Key": "api'Key",
+      "Api-Key": "1951fe5b30e34cdaad758b8874140872",
       "Timestamp": "Date().getTime()",
       "Auth-Token-Type": "HMAC" ,
       "Authorization": "OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ=="
@@ -154,7 +157,7 @@ A standard API call to execute a charge transaction might look like this:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+- [HMAC Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
