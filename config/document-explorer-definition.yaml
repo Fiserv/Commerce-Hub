@@ -54,7 +54,7 @@
       sections:
 #      - title: Contactless (NFC)
 #        link: docs/In-Person/Encrypted-Payments/Contactless.md
-      - title: EMV Chip and PIN
+      - title: EMV Chip
         link: docs/In-Person/Encrypted-Payments/EMV.md
       - title: Manual Entry
         link: docs/In-Person/Encrypted-Payments/Manual.md
