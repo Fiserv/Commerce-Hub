@@ -176,8 +176,7 @@ type: tab
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-- Public Key Management
-- Public Key Encryption
+- Multi-Use Public Key Management
+- Multi-Use Public Key Encryption
 
 ---
-
