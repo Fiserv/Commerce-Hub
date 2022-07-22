@@ -47,18 +47,18 @@ JSON string format for `additionalDataCommon`:
          "emvParameterDownloadIndicator":true
       },
       "amountComponents":{
-         "subTotal": 12.00, // Future Release
-         "convenienceFee": 1.00, // Future Release
-         "ITBISTaxAmount": 0.50, // Future Release
-         "localTax": 1.00, // Future Release
-         "shippingAmount": 5.00, // Future Release
-         "surcharge": 1.20, // Future Release
-         "vatAmount": 1.00 // Future Release
+         "subTotal": 12.00,
+         "convenienceFee": 1.00,
+         "ITBISTaxAmount": 0.50,
+         "localTax": 1.00,
+         "shippingAmount": 5.00,
+         "surcharge": 1.20,
+         "vatAmount": 1.00 
       },
-      "directedRouting":{ // Future Release
-         "network": "VISA", // Future Release
-         "cardFunction": "CREDIT", // Future Release
-         "processor": "fiserv" // Future Release
+      "directedRouting":{
+         "network": "VISA",
+         "cardFunction": "CREDIT",
+         "processor": "fiserv"
       },
       "subMerchant":{ // Future Release
          "id": "9999", // Future Release
@@ -96,10 +96,10 @@ JSON string format for `additionalDataCommon`:
          "paymentType": "REFUND", // Future Release
          "specialFinanceIndicator": "24/0" // Future Release
       },
-      "customFields":{ // Future Release
-         "keyValuePair":{ // Future Release
-            "key": "", // Future Release
-            "value": "" // Future Release
+      "customFields":{ 
+         "keyValuePair":{ 
+            "key": "customFieldExample", 
+            "value": "custom value example" 
          }
       }
    }
@@ -138,9 +138,9 @@ titles: additionalData, JSON Example
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
-| `requestedTestResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
 
 <!---
+| `requestedTestResponseCode` | *string* | 28 | Value used to test/replicate a [transaction error](?path=docs/Resources/Guides/Response-Codes/Error-Code.md).|
 | `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
 | `emvParameterDownloadIndicator` | *boolean* |  N/A  | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
 -->
@@ -160,7 +160,6 @@ JSON string format for `additionalData`:
       "baiFlag": "PERSON_TO_PERSON", // Future Release
       "billPayment": false, // Future Release
       "ecomURL": "https://www.somedomain.com",
-      "goodsSoldCode": "GIFT_CARD", // Future Release
       "requestedTestResponseCode": "705", // Future Release
       "emvParameterDownloadIndicator": true // Future Release
    }
@@ -199,10 +198,5 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
- 
-<!---
-- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
-- [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
--->
 
 --- 
