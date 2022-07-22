@@ -37,7 +37,7 @@
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
     sections:
-    - title: Encrypted PIN Pad
+    - title: Encrypted Device
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
 #    - title: Fully-Integrated
 #      link: docs/In-Person/Integrations/Fully-Integrated.md
@@ -148,23 +148,21 @@
       - title: Capture
         link: docs/Resources/API-Documents/Payments/Capture.md
       - title: Cancels
-        link: docs/Resources/API-Documents/Payments/Cancels.md
+        link: docs/Resources/API-Documents/Payments/Cancel.md
       - title: Refunds
         link: docs/Resources/API-Documents/Payments/Refund.md
       - title: Inquiry
         link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Payments VAS
       sections:
-      - title: Verification
-        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
+      - title: Card Capture
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
       - title: Information Lookup
         link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
       - title: Tokenization
         link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-      - title: Account Verification
+      - title: Verification
         link: docs/Resources/API-Documents/Payments_VAS/Verification.md
-      - title: Card Capture
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
     - title: Data Solutions
       sections:
       - title: Enhanced Data Service
@@ -174,7 +172,7 @@
     - title: Security
       sections:
       - title: Credentials
-        link: docs/Resources/API-Documents/Payments_VAS/Credentials.md   
+        link: docs/Resources/API-Documents/Security/Credentials.md  
 - sections:
   - title: Updates and Alerts
     sections:
