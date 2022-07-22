@@ -1,5 +1,5 @@
 ---
-tags: [Track, In-Person, Card Present, Encrypted Payments]
+tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source]
 ---
 
 # PaymentTrack
