@@ -1,5 +1,5 @@
 ---
-tags: [EMV, In-Person, Card Present, Encrypted Payments]
+tags: [EMV, In-Person, Card Present, Encrypted Payments, Payment Source]
 ---
 
 # PaymentEMV
