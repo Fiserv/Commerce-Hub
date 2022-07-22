@@ -1,5 +1,5 @@
 ---
-tags: [Card Present, Encrypted Payments, In-Person, NFC, Contactless]
+tags: [Card Present, Encrypted Payments, In-Person, NFC, Contactless, Payment Source]
 ---
 
 # Contactless (NFC)
@@ -27,6 +27,6 @@ NFC contactless payment solution offers the following benefits to its customers:
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
-- [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [EMV Chip](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 
 ---

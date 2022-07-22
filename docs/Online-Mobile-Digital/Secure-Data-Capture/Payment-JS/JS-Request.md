@@ -1,8 +1,9 @@
 ---
-tags: [Card Not Present, Secure Payment Form,  JS, Javascript, Secure Data Capture, Tokenization]
+tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-# Create a JavaScript Request
+
+# Secure Data Capture - JS Integration Guide
 
 ## Step 1: Authentication
 
@@ -296,9 +297,12 @@ type: tab
 
 ## See Also
 
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
 - [Customize JS Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
-- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

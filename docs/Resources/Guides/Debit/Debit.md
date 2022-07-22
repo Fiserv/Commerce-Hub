@@ -54,7 +54,7 @@ link: docs/Resources/Guides/Directed-Routing.md
 <!-- type: card
 title: Least Cost Debit
 description: Least Cost Debit Routing capabilities use a single API interface, for both standard processing and optimized debit routing. When enabled for this service, debit transactions are sent in a standard charges request with no additional coding.
-link: ?path=docs/Resources/Guides/Debit/Least-Cost-Debit.md
+link: 
 -->
 
 <!-- type: card

@@ -22,6 +22,8 @@ The below table identifies the parameters in the `encryptionData` object.
 | `securitykeyUpdateIndicator` | *boolean* |  | Provided in response. POS is expected to download updated key, key cert. |
 | `keyId` | *string* | 40 | Provided encryption key required for decryption of data that is encrypted. This field must be submitted for encryption request messages sending manual PAN, Track 1, or Track 2 data that is encrypted. |
 | `encryptedKey` | *string* | 2000 | Merchant or device defined encryption key required for decryption of encrypted `cardData`. Normally used in card not present integrations e.g. Mobile device |
+| `encryptionBlockFields` | *string* | 256 | Encryption block field descriptors to facilitate decryption when using [multi-use public key encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md). Each field should recorded the form field_name:byte_count e.g. card.expirationMonth:2 |
+
 
 <!--
 type: tab
@@ -81,5 +83,6 @@ Encryption type is the method used to encrypt payment data before sending it to 
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Pin Block](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
+- [Multi-Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 
 ---

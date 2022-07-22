@@ -1,5 +1,5 @@
 ---
-tags: [In-App, Web, Online, Google Pay, Wallet, Mobile, Getting Started]
+tags: [In-App, Web, Online, Google Pay, Wallet, Mobile, Getting Started, Payment Source]
 ---
 
 # Google Pay

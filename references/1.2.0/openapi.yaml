@@ -684,7 +684,7 @@ paths:
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
-      summary: 'Card Capturing Operation'
+      summary: 'Submit a <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">merchant managed</a> card capture for use with Secure Card Capture'
       x-group-name: 'Payments VAS'
       x-proxy-name: 'Card Capture'
       requestBody:
@@ -1293,7 +1293,7 @@ components:
             be TRACK_1, TRACK_2 (including EMV), BOTH (Track 1 and 2) or MANUAL.',
           example: TRACK_2}
         encryptionBlock: {type: string, maxLength: 2000, description: This field contains
-            the track data or card number provided in encrypted form., example: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==}
+            the track data or card number provided in encrypted form., example: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==}
         deviceType:
           type: string
           maxLength: 256

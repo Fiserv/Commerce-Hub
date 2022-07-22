@@ -1,13 +1,11 @@
 ---
-tags: [Online, Card Not Present, Secure Payment Form, JS, Javascript, Secure Data Capture, Tokenization]
+tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-# JS Integration
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include JS integration support and the documents related to the features will be released soon.
+# Seacure Data Capture - JS Solution
 
-Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and form of their website (unlike [Hosted Payment Page](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Hosted-Payment-Page/Hosted-Payment-Page.md) and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions). The JavaScript call sends payment information directly to Commerce Hub and returns a payment nonce `sessionId` (one-time use token). The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends payment information directly to Commerce Hub and returns a payment nonce `sessionId` _(one-time use token)_. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 ### Benefits
 
@@ -24,9 +22,11 @@ Allows a merchant an easy and secure way to embed a payment form into a website 
 
 **Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md).**
 
+---
+
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your Commerce Hub JS integration.
+The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
 **Recommendations**
 
@@ -41,7 +41,6 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 - [Create a Payment Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
 - [Customize Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
-- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

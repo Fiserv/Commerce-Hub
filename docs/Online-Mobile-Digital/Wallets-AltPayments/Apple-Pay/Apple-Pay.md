@@ -1,5 +1,5 @@
 ---
-tags: [Hosted Payment Page, In-App, Web, Online, Apple Pay, Wallet, Mobile, Getting Started]
+tags: [Hosted Payment Page, In-App, Web, Online, Apple Pay, Wallet, Mobile, Getting Started, Payment Source]
 ---
 
 # Apple Pay
