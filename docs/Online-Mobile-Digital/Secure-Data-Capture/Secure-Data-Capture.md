@@ -59,7 +59,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS
 -->
 
 <!-- type: card
-title: Merchant Managed API
+title: API Only
 description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
 -->
