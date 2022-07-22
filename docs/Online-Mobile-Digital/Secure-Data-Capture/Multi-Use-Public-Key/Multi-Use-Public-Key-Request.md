@@ -1,5 +1,5 @@
 ---
-tags: [multi-use-key, card-encryption, carat, commerce-hub, enterprise, payment-card, online, card-not-present, store-and-forward, offline-processing, encrypted-payment]
+tags: tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
 ---
 
 # Multi-Use Public Key Request
@@ -172,11 +172,9 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Multi-Use Public Key Management](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
+- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
-- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
-- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-- Multi-Use Public Key Management
-- Multi-Use Public Key Encryption
 
 ---
