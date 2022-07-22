@@ -191,7 +191,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
 - [Multi-Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Multi-Use Public Key Management](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
 - [Multi-Use Public Key Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md)
-- [Secure Data Capture Merchant Managed](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md)
+- [Secure Data Capture API Only](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md)
 
 ---
 
