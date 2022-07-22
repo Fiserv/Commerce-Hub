@@ -1,5 +1,5 @@
 ---
-tags: [Card Present, Encrypted Payments, In-Person, NFC, Contactless]
+tags: [Card Present, Encrypted Payments, In-Person, NFC, Contactless, Payment Source]
 ---
 
 # Contactless (NFC)
