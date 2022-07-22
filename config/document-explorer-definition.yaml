@@ -37,7 +37,7 @@
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
     sections:
-    - title: Encrypted PIN Pad
+    - title: Encrypted Device
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
 #    - title: Fully-Integrated
 #      link: docs/In-Person/Integrations/Fully-Integrated.md
