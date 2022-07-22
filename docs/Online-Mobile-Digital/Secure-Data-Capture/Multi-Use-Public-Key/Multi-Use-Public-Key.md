@@ -34,7 +34,7 @@ link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-
 
 <!-- type: card
 title: Transaction Request
-description: After the merchants captures the payemnt source details, the multi-use public key issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization. 
+description: After the merchants captures the payment source details, the multi-use public key issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization. 
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md
 -->
 
