@@ -1,7 +1,8 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
-# JavaScript Customization
+
+# Secure Data Capture - JS Customization
 
 The JavaScript or JS elements are set by default based on the ADA guidelines. Commerece Hub allows the merchant to customize the styling by setting a flag and apply their own styling. The merchant can override the elements of the JS including [language](#languages), and the [theme and font](#theme-and-font).
 
