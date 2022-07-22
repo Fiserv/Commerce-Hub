@@ -1,8 +1,8 @@
 ---
-tags: [Online, Card Not Present, Secure Payment Form, Tokenization, Secure Data Capture, Iframe]
+tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 ---
 
-# iFrame Customization
+# Secure Data Capture - iFrame Customization
 
 Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [language](#languages), and the [theme and font](#theme-and-font).
 
@@ -87,8 +87,8 @@ The following elements can be overridden:
 
 ## See Also
 
-- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
-- [iFrame JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
+- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
 - [iFrame Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---
