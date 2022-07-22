@@ -1,5 +1,5 @@
 ---
-tags: [Authorizations]
+tags: [Authorization]
 ---
 
 # Subsequent Authorization Types
