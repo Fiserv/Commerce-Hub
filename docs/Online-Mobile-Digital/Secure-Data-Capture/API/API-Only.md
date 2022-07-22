@@ -357,7 +357,7 @@ The following steps are recommended to limit the potential for fraudulent activi
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
