@@ -1,8 +1,9 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-# Create a JavaScript Request
+
+# Secure Data Capture - JS Integration Guide
 
 ## Step 1: Authentication
 
