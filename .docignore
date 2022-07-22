@@ -59,3 +59,5 @@ docs/Resources/Guides/Debit/Least-Cost-Debit.md
 docs/In-Person/Integrations/Fully-Integrated.md
 docs/In-Person/Integrations/Semi-Integrated.md
 docs/In-Person/Encrypted-Payments/Contactless.md
+docs/Resources/Guides/Authorizations/Incremental-Auth.md
+docs/Resources/Guides/Authorizations/Deferred-Auth.md
