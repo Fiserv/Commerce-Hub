@@ -1,5 +1,5 @@
 ---
-tags: [Getting Started, Samsung Pay, Android, Mobile, Wallet]
+tags: [Getting Started, Samsung Pay, Android, Mobile, Wallet, Payment Source]
 ---
 
 # Samsung Pay
