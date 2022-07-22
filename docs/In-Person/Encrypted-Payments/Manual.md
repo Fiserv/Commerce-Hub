@@ -1,5 +1,5 @@
 ---
-tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments]
+tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments, Payment Source]
 ---
 
 # Encrypted Manual Entry
