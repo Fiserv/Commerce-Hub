@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, payment-faciliator]
+tags: [Payment Faciliator]
 ---
 
 # Payment Faciliator
@@ -165,8 +165,9 @@ title: Response
          "referenceNumber": "845366457890-TODO",
          "schemeTransactionId": "019078743804756",
          "feeProgramIndicator": "123",
-         "processor": "fiserv",
-         "responseCode": "00000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",

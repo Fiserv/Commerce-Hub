@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-transaction-record, master-data]
+tags: [API Reference, Customer Transaction Record, Master Data]
 ---
 
 # Customer Transaction Record 
@@ -51,7 +51,8 @@ JSON string format for `paymentReceipt`:
          "referenceNumber": "845366457890-TODO",
          "schemeTransactionId": "019078743804756",
          "feeProgramIndicator": "123",  
-         "processor": "fiserv",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
          "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",

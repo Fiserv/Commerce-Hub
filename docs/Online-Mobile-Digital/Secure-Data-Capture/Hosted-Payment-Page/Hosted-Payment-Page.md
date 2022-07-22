@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, card-not-present, online, hosted-payment-page, secure-payment-form]
+tags: [Getting Started, Card Not Present, Online, Hosted Payment Page, Secure Payment Form]
 ---
 
 # Create a Payment Form

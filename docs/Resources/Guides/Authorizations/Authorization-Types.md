@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, subsequent-authorization-types]
+tags: [Subsequent Authorization Types]
 ---
 
 # Subsequent Authorization Types
@@ -15,7 +15,7 @@ The below table identifies the valid values of `authorizationTypeIndicator` to i
 
 | Value | Description |
 | ----- | ----- |
-| *INITIAL* | Initial authorization. |
+| *INITIAL* | [Initial authorization](?path=docs/Resources/API-Documents/Payments/Charges.md). |
 | *REAUTH* | [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)|
 | *DEFERRED* | [Deferred Auth](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) |
 | *INCREMENTAL* | [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md) |
@@ -30,4 +30,5 @@ The below table identifies the valid values of `authorizationTypeIndicator` to i
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Deferred Authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md)
 - [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
+
 ---

@@ -1,12 +1,12 @@
 ---
-tags: [carat, commerce-hub, enterprise, emv, in-person, card-present, encrypted-payment]
+tags: [EMV, In-Person, Card Present, Encrypted Payments, Payment Source]
 ---
 
 # PaymentEMV
 
-[EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip and PIN enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
+[EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip with signature or PIN enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards. EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
-A third-party device encrypts the customer's payment source and sends the encryption data to the Commerce Hub integrated terminal or software.
+A device encrypts the customer's payment source and sends the encryption data to Commerce Hub.
 
 <!-- theme: info -->
 > EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
@@ -47,7 +47,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; |Target should be TRACK_2 |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
 
 <!--
@@ -64,7 +64,7 @@ JSON string format for PaymentEMV:
       "encryptionData":{
          "encryptionType": "RSA",
          "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "",
+         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
          "deviceType": "INGENICO",
          "keyId": ""
       }
@@ -76,7 +76,7 @@ JSON string format for PaymentEMV:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -122,16 +122,6 @@ titles: Request, Response
     "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-    },
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "code": "NASHVILLE",
-          "platform": "NORTH",
-          "priority": "PRIMARY"
-        }
-      ]
     }
   }
 }
@@ -188,7 +178,8 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
          "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
@@ -224,10 +215,6 @@ type: tab
             "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
          }
       }
-   },
-   "merchantDetails":{
-      "terminalId": "10000002",
-      "merchantId": "100009000000041"
    },
    "additionalDataCommon":{
       
@@ -327,7 +314,7 @@ JSON string format for PaymentEMV:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -378,17 +365,6 @@ titles: Request, Response
    "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-   },
-   "additionalDataCommon":{
-      "directedRouting":{
-         "processors":[
-            {
-               "code": "NASHVILLE",
-               "platform": "NORTH",
-               "priority": "PRIMARY"
-            }
-         ]
-      }
    }
 }
 ```
@@ -494,11 +470,10 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
-- [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 

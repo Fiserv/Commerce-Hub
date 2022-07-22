@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, card-present, incremental-auth, incremental, authorization]
+tags: [Card Not Present, Card Present, Incremental Auth, Incremental, Authorization]
 ---
 
 # Incremental Authorization
@@ -133,7 +133,8 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
          "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, partial-approval, partial-auth, partial, authorization]
+tags: [Partial Approval, Partial Auth, Partial, Authorization]
 ---
 
 # Partial Authorizations
@@ -14,7 +14,7 @@ tags: [carat, commerce-hub, enterprise, partial-approval, partial-auth, partial,
 - **Authorization Reversal:** will release the customer's authorization when partial approvals are not completed, releasing the customer's hold for future purchases.
 
 <!-- theme: info -->
-> Support for Partial Authorization is mandatory for all card brands. The value for `partialApproval` in `transactionDetails` is required for all card present transactions identifying the terminal is capable of partial authorization responses.
+> Support for Partial Authorization is mandatory for all card brands. The value for `partialApproval` _true_ in `transactionDetails` is required for all card present transactions identifying the terminal is capable of partial authorization responses.
 
 ---
 

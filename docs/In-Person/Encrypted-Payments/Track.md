@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, track, in-person, card-present, encrypted-payment]
+tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source]
 ---
 
 # PaymentTrack
@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, track, in-person, card-present, encrypte
 
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment terminal using magnetic stripe. This can be used when the payment terminal fails to obtain the card details from the card's chip.
 
-A third-party device captures the customer's payment source unencrypted or encryptes the data and sends it to the Commerce Hub integrated terminal or software.
+A device captures the customer's payment source unencrypted or encryptes the data and sends it to Commerce Hub.
 
 <!-- theme: warning -->
 > It is not recommended to send unencrypted track 1 and track 2 data for the payment transaction.
@@ -50,7 +50,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 | `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
 | `encryptionTarget` | *string* | 256 |  &#10004; | Target can be TRACK_1, TRACK_2, or BOTH |
 | `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `deviceType` | *string* | 256 |  &#10004; | [Device type](?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
 | `keyId` | *string* | 64 | | Required if track data is encrypted |
 
 <!--
@@ -78,7 +78,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -177,7 +177,8 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
+         "processor": "FISERV",
+	 "host": "NASHVILLE",
          "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
@@ -294,7 +295,7 @@ JSON string format for PaymentTrack:
 
 ---
 
-### Charges Payload Example
+### Payload Example
 
 <!--
 type: tab
@@ -342,17 +343,6 @@ titles: Request, Response
    "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-   },
-   "additionalDataCommon":{
-      "directedRouting":{
-         "processors":[
-            {
-               "code": "NASHVILLE",
-               "platform": "NORTH",
-               "priority": "PRIMARY"
-            }
-         ]
-      }
    }
 }
 ```
@@ -456,7 +446,7 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [EMV Chip](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)

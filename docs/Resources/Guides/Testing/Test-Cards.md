@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, testing, test-cards]
+tags: [Testing, Test Cards]
 ---
 
 # Test Cards

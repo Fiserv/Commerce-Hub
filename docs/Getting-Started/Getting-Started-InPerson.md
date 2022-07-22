@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, in-person, payments, card-not-present, card-present, emv, debit, software, terminal, point-of-sale, pos]
+tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point of Sale, Terminal]
 ---
 
 # In-Person Payments
@@ -15,14 +15,14 @@ Commerce Hub allows a merchant to build their own UI and manage customer transac
 <!-- type: row -->
 
 <!-- type: card
-title: Encrypted PIN Pad
+title: Encrypted Device
 description: By leveraging the third-party EMV-enabled payments solution, the customer's payment transactions are encrypted via a multi-layered security approach. The terminal or software processes the transaction with a plug and play, semi-integrated solution and submits the RESTful request to Commerce Hub.
 link: ?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md
 -->
 
 <!-- type: card
 title: Semi-Integrated
-description: Semi-integrated solutions run on a combination of Commerce Hub and third-party hardware. Commerce Hub's semi-integration solution allows your existing point-of-sale software to accept EMV based, PCI-compliant transactions.
+description: Semi-integrated solutions run on a combination of Commerce Hub and third-party hardware and software. Commerce Hub's semi-integration solution allows your existing point-of-sale software to accept EMV based, PCI-compliant transactions.
 link: 
 -->
 

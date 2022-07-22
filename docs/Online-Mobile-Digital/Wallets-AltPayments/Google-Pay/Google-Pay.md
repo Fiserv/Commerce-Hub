@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted-payment-page, in-app, web, online, google-pay, wallet, mobile, getting-started]
+tags: [In-App, Web, Online, Google Pay, Wallet, Mobile, Getting Started, Payment Source]
 ---
 
 # Google Pay
@@ -13,7 +13,7 @@ Google Pay is a digital wallet platform and online payment system developed by G
 
 ## Integration Methods
 
-Build an integration that to accept an Google Pay payment.
+Build an integration that to accept a Google Pay payment.
 
 <!-- type: row -->
 
@@ -36,15 +36,5 @@ link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay
 -->
 
 <!-- type: row-end -->
-
----
-
-## See Also
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-<!--
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
--->
 
 ---

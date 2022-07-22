@@ -1,35 +1,20 @@
 ---
-tags: [carat, commerce-hub, enterprise, information-lookup, account-lookup, card-lookup, token-lookup]
+tags: [Account Information, Card Details, BIN]
 ---
 
-# Information Lookup
+# Account Information Lookup
 
-Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token. The `cardDetails` are returned in the response.
+Account information lookup is used to obtain the [card details](?path=docs/Resources/Master-Data/Card-Details.md) of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 - CPS (card processing requirements) - based on things like brand, function, type (commercial, non-corporate)
 - Directed Routing - sending the request to a network based on card brand, function or type
 
-<!--
-type: tab
-titles: cardDetails
--->
-
-The below table identifies the parameters in the `cardDetails` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `brand` | *string* | 256 | Card Brand |
-| `brandProductId` | *string* | 256 | Category within the card brand |
-| `cardFunction` | *string* | 256 | Identifies the type of card as CREDIT or DEBIT |
-| `commercialCard` | *string* | 256 | Identifies if the card is a CORPORATE, COMMERCIAL or NON_CORPORATE card |
-| `issuerCountry` | *string* | 256 | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md) |
-| `issuerName` | *string* | 256 | Issuing bank name |
-
-<!-- type: tab-end -->
+<!-- theme: info -->
+> Card details can be returned as part of a tokens or charges request if enabled in Marketplace.
 
 ---
 
-## Information Lookup using PaymentCard
+## Information Lookup Using PaymentCard
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
 
@@ -62,7 +47,7 @@ The below table identifies the required parameters in the `card` object.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information`
+>**POST** `/payments-vas/v1/accounts/information-lookup`
 
 ---
 
@@ -77,21 +62,19 @@ titles: Request, Response
 ##### Account information lookup request using PaymentCard.
 
 ```json
+
 {
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019"
-      }
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019"
     }
+  }
 }
+
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 
 <!--
 type: tab
@@ -100,13 +83,12 @@ type: tab
 ##### Account information lookup response.
 
 ```json
-
 {
   "gatewayResponse": {
     "transactionType": "INFORMATION",
     "transactionState": "SUCCESS",
     "transactionProcessingDetails": {
-      "transactionTime": "2021-06-20T23:42:48Z",
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
       "orderId": "RKOrdID-525133851837",
       "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
       "clientRequestId": "4345791",
@@ -115,12 +97,44 @@ type: tab
   },
   "cardDetails": [
     {
-      "brand": "VISA",
-      "brandProductId": "VISA_BUSINESS",
-      "cardFunction": "CREDIT",
-      "commercialCard": "CORPORATE",
-      "issuerCountry": "US",
-      "issuerName": "First National Bank of Omaha"
+      "detailedCardProduct": "VISA",
+      "productId": "N1",
+      "visaProductSubType": "HC",
+      "detailedCardIndicator": "DEBIT",
+      "pinSignatureCapability": "PIN_OR_SIGNATURE",
+      "cardClass": "CORPORATE",
+      "countryCode": "USA",
+      "issuerBankName": "Example Bank",
+      "recordType": "DETAIL",
+      "lowBin": "400337",
+      "highBin": "400338",
+      "binLength": "6",
+      "binDetailPan": "16",
+      "issuerUpdateYear": "20",
+      "issuerUpdateMonth": "09",
+      "issuerUpdateDay": "22",
+      "regulatorIndicator": "NON_REGULATED",
+      "fsaIndicator": "SUPPORTED",
+      "nonMoneyTransferOCTsDomestic": "SUPPORTED",
+      "nonMoneyTransferOCTsCrossBorder": "SUPPORTED",
+      "onlineGamblingOCTsDomestic": "SUPPORTED",
+      "onlineGamblingOCTsCrossBorder": "SUPPORTED",
+      "moneyTransferOCTsDomestic": "SUPPORTED",
+      "moneyTransferOCTsCrossBorder": "SUPPORTED",
+      "fastFundsDomesticMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticNonMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderNonMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticGambling": "SUPPORTED",
+      "fastFundsCrossBorderGambling": "SUPPORTED",
+      "prepaidIndicator": "PREPAID",
+      "visaLargeTicketIndicator": "SUPPORTED",
+      "accountFundSource": "DEBIT",
+      "panLengthMin": "16",
+      "panLengthMax": "16",
+      "tokenIndicator": "SUPPORTED",
+      "cardholderBillingCurrency": "USD",
+      "b2bProgramId": "B2B_PROGRAM_1"
     }
   ]
 }
@@ -130,7 +144,7 @@ type: tab
 
 ---
 
-## Information Lookup using PaymentToken 
+## Information Lookup Using PaymentToken 
 
 The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentToken` as a payment source.
 
@@ -144,7 +158,7 @@ titles: source
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Value *PaymentToken* is used for a verification request using `tokenData`. Refer to [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for more details. |
-|`tokenData`| *string* | 19 | Token created for Card. |
+|`tokenData`| *string* | 19 | Token created for a payment type. |
 
 <!-- type: tab-end -->
 
@@ -152,7 +166,7 @@ titles: source
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information`
+>**POST** `/payments-vas/v1/accounts/information-lookup`
 
 ---
 
@@ -174,6 +188,8 @@ titles: Request, Response
 }
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
+
 <!--
 type: tab
 -->
@@ -182,12 +198,13 @@ type: tab
 
 ```json
 
+
 {
   "gatewayResponse": {
     "transactionType": "INFORMATION",
     "transactionState": "SUCCESS",
     "transactionProcessingDetails": {
-      "transactionTime": "2021-06-20T23:42:48Z",
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
       "orderId": "RKOrdID-525133851837",
       "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
       "clientRequestId": "4345791",
@@ -196,12 +213,44 @@ type: tab
   },
   "cardDetails": [
     {
-      "brand": "VISA",
-      "brandProductId": "VISA_BUSINESS",
-      "cardFunction": "CREDIT",
-      "commercialCard": "CORPORATE",
-      "issuerCountry": "US",
-      "issuerName": "First National Bank of Omaha"
+      "detailedCardProduct": "VISA",
+      "productId": "N1",
+      "visaProductSubType": "HC",
+      "detailedCardIndicator": "DEBIT",
+      "pinSignatureCapability": "PIN_OR_SIGNATURE",
+      "cardClass": "CORPORATE",
+      "countryCode": "USA",
+      "issuerBankName": "Example Bank",
+      "recordType": "DETAIL",
+      "lowBin": "400337",
+      "highBin": "400338",
+      "binLength": "6",
+      "binDetailPan": "16",
+      "issuerUpdateYear": "20",
+      "issuerUpdateMonth": "09",
+      "issuerUpdateDay": "22",
+      "regulatorIndicator": "NON_REGULATED",
+      "fsaIndicator": "SUPPORTED",
+      "nonMoneyTransferOCTsDomestic": "SUPPORTED",
+      "nonMoneyTransferOCTsCrossBorder": "SUPPORTED",
+      "onlineGamblingOCTsDomestic": "SUPPORTED",
+      "onlineGamblingOCTsCrossBorder": "SUPPORTED",
+      "moneyTransferOCTsDomestic": "SUPPORTED",
+      "moneyTransferOCTsCrossBorder": "SUPPORTED",
+      "fastFundsDomesticMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticNonMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderNonMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticGambling": "SUPPORTED",
+      "fastFundsCrossBorderGambling": "SUPPORTED",
+      "prepaidIndicator": "PREPAID",
+      "visaLargeTicketIndicator": "SUPPORTED",
+      "accountFundSource": "DEBIT",
+      "panLengthMin": "16",
+      "panLengthMax": "16",
+      "tokenIndicator": "SUPPORTED",
+      "cardholderBillingCurrency": "USD",
+      "b2bProgramId": "B2B_PROGRAM_1"
     }
   ]
 }
@@ -212,9 +261,8 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
+- [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---

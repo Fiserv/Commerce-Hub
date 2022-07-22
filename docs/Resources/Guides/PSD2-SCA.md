@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, psd2-sca, vault]
+tags: [PSD2 SCA, Vault]
 ---
 
 

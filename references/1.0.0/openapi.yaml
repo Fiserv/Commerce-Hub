@@ -4,7 +4,7 @@ info: {title: Payments, description: This API Specification is designed to provi
     processing., version: v1-1.0.2}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
-- {url: 'https://test.api.fiservapps.com/ch/', description: Sandbox}
+- {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
 paths:
   /payments/v1/charges:
     x-model-version: 1.0
@@ -26,15 +26,18 @@ paths:
             examples:
               PaymentCard: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
               PaymentEMV: {summary: ChargesRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
-              PaymentEMV-HD: {summary: ChargesRequest with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDRequest'}
+#              PaymentEMV-HD: {summary: ChargesRequest with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDRequest'}
               PaymentTrack: {summary: ChargesRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
-              PaymentTrack-HD: {summary: ChargesRequest with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDRequest'}
+#              PaymentTrack-HD: {summary: ChargesRequest with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDRequest'}
               ManualEntry: {summary: ChargesRequest with manual entry PaymentCard,
                 $ref: '#/components/examples/ManualEntryRequest'}
               ApplePay: {summary: ChargesRequest with ApplePay, $ref: '#/components/examples/ApplePayRequest'}
               GooglePay: {summary: ChargesRequest with GooglePay, $ref: '#/components/examples/GooglePayRequest'}
               Payment3DS: {summary: ChargesRequest with Payment3DS, $ref: '#/components/examples/Payment3DSRequest'}
               PaymentToken: {summary: ChargesRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenRequest'}
+              PaymentSession:
+                summary: ChargesRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionRequest'
       responses:
         201:
           description: Created
@@ -44,15 +47,18 @@ paths:
               examples:
                 PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
                 PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
-                PaymentEMV-HD: {summary: ChargesResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVChargesHDResponse'}
+#                PaymentEMV-HD: {summary: ChargesResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVChargesHDResponse'}
                 PaymentTrack: {summary: ChargesResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                PaymentTrack-HD: {summary: ChargesResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackChargesHDResponse'}
+#                PaymentTrack-HD: {summary: ChargesResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackChargesHDResponse'}
                 ManualEntry: {summary: ChargesResponse with manual entry PaymentCard,
                   $ref: '#/components/examples/ManualEntryChargesResponse'}
                 ApplePay: {summary: ChargesResponse with ApplePay, $ref: '#/components/examples/ApplePayChargesResponse'}
                 GooglePay: {summary: ChargesResponse with GooglePay, $ref: '#/components/examples/GooglePayChargesResponse'}
                 Payment3DS: {summary: ChargesResponse with Payment3DS, $ref: '#/components/examples/Payment3DSChargesResponse'}
                 PaymentToken: {summary: ChargesResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
+                PaymentSession:
+                  summary: ChargesResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentSessionChargesResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -279,14 +285,17 @@ paths:
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
-              PaymentEMV-HD: {summary: TokenizationRequest with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDTokenRequest'}
+#              PaymentEMV-HD: {summary: TokenizationRequest with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
-              PaymentTrack-HD: {summary: TokenizationRequest with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDTokenRequest'}
+#              PaymentTrack-HD: {summary: TokenizationRequest with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
                 $ref: '#/components/examples/ManualEntryTokenRequest'}
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
               GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
               Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/Payment3DSTokenRequest'}
+              PaymentSession:
+                summary: TokenizationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionTokenRequest'
       responses:
         200:
           description: Success.
@@ -296,14 +305,17 @@ paths:
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
-                PaymentEMV-HD: {summary: TokenizationResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDTokenResponse'}
+#                PaymentEMV-HD: {summary: TokenizationResponse with PaymentEMV for HD, $ref: '#/components/examples/PaymentEMVHDTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
-                PaymentTrack-HD: {summary: TokenizationResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDTokenResponse'}
+#                PaymentTrack-HD: {summary: TokenizationResponse with PaymentTrack for HD, $ref: '#/components/examples/PaymentTrackHDTokenResponse'}
                 ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
                   $ref: '#/components/examples/ManualEntryTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
                 GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
                 Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/Payment3DSTokenResponse'}
+                PaymentSession:
+                  summary: TokenizationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentSessionTokenResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -473,11 +485,56 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
-x-depends-on:
-  - models/common-objects.yaml
-  - models/transaction-inquiry-request.yaml
-  - models/transaction-inquiry-response.yaml
-  - external-examples/external-examples-transaction-inquiry.yaml
+  /payments-vas/v1/security/credentials:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Payment Security Endpoint
+      x-group-name: 'Security'
+      x-proxy-name: 'Credentials'
+      summary: Request security credentials (access token).
+      description: 'This is the credential generation call for authorizing subsequent financial transactions. A valid <code>accessToken</code> is required for web client requests.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityCredentialsRequest'
+            examples:
+              Credentials:
+                summary: Security credntials request
+                $ref: '#/components/examples/SecurityCredentialsRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityCredentialsResponse'
+              examples:
+                Credentials:
+                  summary: Security credentials response
+                  $ref: '#/components/examples/SecurityCredentialsResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
 components:
   parameters:
     OrderIdParam:
@@ -932,6 +989,7 @@ components:
             * <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md">PaymentToken</a>
             * <a href="../docs?path=docs/In-Person/Encrypted-Payments/EMV.md">PaymentEMV</a>
             * <a href="../docs?path=docs/In-Person/Encrypted-Payments/Track.md">PaymentTrack</a>
+            * <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md">PaymentSession</a>
           example: PaymentCard
     PaymentCard:
       x-model-version: 1.0
@@ -2397,7 +2455,7 @@ components:
       x-model-version: 1.0
       description: Identifies the card processor.
       properties:
-        code:
+        processorName:
           type: string
           maxLength: 256
           description: |
@@ -2406,15 +2464,16 @@ components:
             Valid Values:
             * FISERV
             * CHASE
-        platform: 
+        processingPlatform: 
           type: string
           maxLength: 256
           description:  |
             Identifies the payment platform of the processor.
 
             Valid Values:
-            * NORTH
+            * NASHVILLE
             * TAMPA
+            * SALEM
         priority:
           type: string
           maxLength: 256
@@ -2541,7 +2600,8 @@ components:
         feeProgramIndicator: {type: string, description: Contains the Fee Program
             Indicator (FPI) code that may be returned on Debit or PLDebit transaction
             response., example: '123'}
-        processor: {type: string, maxLength: 256, description: Card processor., example: fiserv}
+        processor: {type: string, maxLength: 256, description: Card processor., example: FISERV}
+        host: {type: string, maxLength: 256, description: Processing endpoint or issuer., example: NASHVILLE}
         networkRouted: {type: string, maxLength: 10, description: 'Network label that
             shows the network where the transaction was routed for authorization (e.g.
             NYCE, PULSE, STAR, Visa, Mastercard, etc.).'}
@@ -2921,6 +2981,61 @@ components:
             (AOV), example: '275.25'}
         percentSalesReturned: {maximum: 1, minimum: 0, type: number, description: '%
             of sales returned (by Amount)', example: '0.3'}
+    SecurityCredentialsRequest:
+      x-model-version: 1.0
+      properties:
+        publicKeyRequired:
+          type: boolean
+          description: 'If the signedCert is expired or invalid then merchant would send a request.'
+          example: 'true'
+        accessTokenRequired:
+          type: boolean
+          description: 'If the access token is expired then merchant would request for a new token.'
+          example: 'true'
+        accessTokenTimeToLive:
+          type: string
+          description: 'Time to live (expiration time) in milliseconds. 1800000 ms, max 30 minutes.'
+          example: '889'
+        responseRedirectURL:
+          type: string
+          description: 'Response URL redirect.'
+          example: 'https://www.somedomain.com'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        deviceFingerprint:
+          type: array
+          items:
+           $ref: '#/components/schemas/DeviceFingerPrint'
+        amount:
+          $ref: '#/components/schemas/Amount'
+        amountComponents:
+          $ref: '#/components/schemas/AmountComponents'
+    SecurityCredentialsResponse:
+      x-model-version: 1.0
+      properties:
+        publicKey:
+          type: string 
+          description: 'Base64 encoded public key.'
+        accessToken:
+          type: string
+          description: 'Access token created and sent back.'
+        sessionId:
+          type: string
+          description: ''
+        accessTokenIssuedTime:
+          type: string
+          format: date-time
+          description: 'Token issue time in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2016-04-16T16:06:05Z'
+        accessTokenTimeToLive:
+          type: string
+          description: 'Access token expiry.'
+        symmetricEncryptionAlgorithm:
+          type: string
+          description: 'AES 256/PKCS with padding.'
+        asymmetricEncryptionAlgorithm:
+          type: string
+          description: 'RSA/ECB/PKCS1Padding.'
   examples:
     ApplePayRequest:
       value:
@@ -2979,8 +3094,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3006,8 +3122,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3060,8 +3177,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3087,8 +3205,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3198,8 +3317,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3232,8 +3352,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3273,7 +3394,8 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
+          processor: FISERV
+          host: NASHVILLE
           responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
@@ -3310,8 +3432,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3437,8 +3560,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3473,8 +3597,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3510,8 +3635,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3598,8 +3724,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -3625,8 +3752,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -3667,8 +3795,8 @@ components:
         additionalDataCommon:
           directedRouting:
             processors:
-              - code: NASHVILLE
-                platform: NORTH
+              - processorName: FISERV
+                processingPlatform: NASHVILLE
                 priority: PRIMARY
     PaymentEMVRequest:
       value:
@@ -3766,7 +3894,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -3867,7 +3996,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -3908,7 +4038,8 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
+          processor: FISERV
+          host: NASHVILLE
           responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
@@ -3958,8 +4089,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4018,8 +4150,8 @@ components:
         additionalDataCommon:
           directedRouting:
             processors:
-              - code: NASHVILLE
-                platform: NORTH
+              - processorName: FISERV
+                processingPlatform: NASHVILLE
                 priority: PRIMARY
     PaymentTrackForcedRequest:
       value:
@@ -4100,7 +4232,7 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -4210,8 +4342,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4251,7 +4384,8 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
+          processor: FISERV
+          host: NASHVILLE
           responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
@@ -4352,8 +4486,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4443,7 +4578,8 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
+            processor: FISERV
+            host: NASHVILLE
             responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
@@ -4477,8 +4613,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4504,8 +4641,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4538,8 +4676,9 @@ components:
           approvalStatus: APPROVED
           approvalCode: OK5882
           schemeTransactionId: 0225MCC625628
-          processor: fiserv
-          responseCode: '000000'
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
           responseMessage: APPROVAL
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
@@ -4584,8 +4723,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4618,8 +4758,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4652,8 +4793,9 @@ components:
             approvalStatus: APPROVED
             approvalCode: OK5882
             schemeTransactionId: 0225MCC625628
-            processor: fiserv
-            responseCode: '000000'
+            processor: FISERV
+            host: NASHVILLE
+            responseCode: '000'
             responseMessage: APPROVAL
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
@@ -4673,10 +4815,6 @@ components:
     TransactionInquiryResponse:
       value:
         additionalDataCommon:
-          directedRouting:
-            processors:
-              - platform: 'IPG'
-                priority: 'FINAL'
           gatewayResponse:
             gatewayName: 'IPG'
             gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
@@ -4703,8 +4841,9 @@ components:
               hostResponseCode: '00'
               hostResponseMessage: 'APPROVAL'
               localTimestamp: '2022-01-13T19:09:29Z'
-              processor: fiserv
-              responseCode: '000000'
+              processor: FISERV
+              host: NASHVILLE
+              responseCode: '000'
               responseMessage: 'APPROVAL'
               schemeTransactionId: '0113MCC815463'
           source:
@@ -4722,10 +4861,6 @@ components:
     TransactionInquiryByMerchantOrderIdResponse:
       value:
         additionalDataCommon:
-          directedRouting:
-            processors:
-              - platform: 'IPG'
-                priority: 'FINAL'
           billingAddress:
             address:
               city: 'Atlanta'
@@ -4790,3 +4925,146 @@ components:
             merchantTransactionId: 'RKTransID-834788206'
           transactionInteraction:
             eciIndicator: 'SECURE_ECOM'
+
+    SecurityCredentialsRequest:
+      value:
+        publicKeyRequired: true
+        accessTokenRequired: true
+        accessTokenTimeToLive: '889'
+        responseRedirectURL: https://www.somedomain.com
+        
+    SecurityCredentialsResponse:
+      value:
+        publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
+        keyLength: '12345'
+        accessToken: 'vsmsrKcNFWzq79Yd8aaxHetHBdxm'
+        sessionId: 'b28ba2ca-6368-4d72-b5f0-c185b4d0de4c'
+        accessTokenIssuedTime: '2016-04-16T16:06:05Z'
+        accessTokenTimeToLive: '1799'
+        symmetricEncryptionAlgorithm: 'AES-GCM'
+        asymmetricEncryptionAlgorithm: 'RSA-2048'
+
+    PaymentSessionRequest:
+      value:
+        amount:
+          total: '12.04'
+          currency: USD
+        source:
+          sourceType: PaymentSession
+          sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
+        transactionDetails:
+          captureFlag: true
+          accountVerification: false
+          merchantInvoiceNumber: '123456789012'
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'CHANNEL_ENCRYPTED'
+        merchantDetails:
+          merchantId: '123456789012345'
+          terminalId: '123456'
+    
+    PaymentSessionTokenRequest:
+      value:
+        source:
+          sourceType: PaymentSession
+          sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'CHANNEL_ENCRYPTED'
+        merchantDetails:
+          merchantId: '123456789012345'
+          terminalId: '123456'
+    
+    PaymentSessionChargesResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'CHARGE'
+          transactionState: 'AUTHORIZED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentReceipt:
+          approvedAmount:
+            total: '12.04'
+            currency: 'USD'
+          merchantName: 'Merchant Name'
+          merchantAddress: '123 Peach Ave'
+          merchantCity: 'Atlanta'
+          merchantStateOrProvince: 'GA'
+          merchantPostalCode: '12345'
+          merchantCountry: 'US'
+          merchantURL: 'https://www.somedomain.com'
+          processorResponseDetails:
+            approvalStatus: 'APPROVED'
+            approvalCode: 'OK5882'
+            schemeTransactionId: '0225MCC625628'
+            processor: 'fiserv'
+            responseCode: '000000'
+            responseMessage: 'APPROVAL'
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            localTimestamp: '2021-06-20T23:42:48Z'
+            bankAssociationDetails:
+              associationResponseCode: '000'
+              transactionTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          captureFlag: true
+          merchantInvoiceNumber: '123456789012'
+
+    PaymentSessionTokenResponse:
+      value:
+        gatewayResponse:
+          transactionType: TOKENIZE
+          transactionState: AUTHORIZED
+          transactionOrigin: ECOM
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '8519371934460009'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+          - tokenData: '8519371934460010'
+            tokenSource: CHASE
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
+        processorResponseDetails:
+          approvalStatus: APPROVED
+          approvalCode: OK5882
+          schemeTransactionId: 0225MCC625628
+          processor: FISERV
+          host: NASHVILLE
+          responseCode: '000'
+          responseMessage: APPROVAL
+          hostResponseCode: '00'
+          hostResponseMessage: APPROVAL
+          localTimestamp: '2021-06-20T23:42:48Z'
+          bankAssociationDetails:
+            associationResponseCode: '000'
+            transactionTimestamp: '2021-06-20T23:42:48Z'
