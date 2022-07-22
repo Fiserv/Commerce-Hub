@@ -1,5 +1,5 @@
 ---
-tags: [Authorization, Optimization, Auth Optimization, Approval Rate, Decline Rate]
+tags: [Authorization, Approval Rate, Decline Rate]
 ---
 
 # Authorization Optimization
@@ -66,8 +66,6 @@ JSON string format:
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
-- [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---

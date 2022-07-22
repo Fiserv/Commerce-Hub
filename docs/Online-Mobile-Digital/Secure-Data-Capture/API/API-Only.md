@@ -2,7 +2,7 @@
 tags: [Online, Card Not Present, Secure Data Capture]
 ---
 
-# Secure Data Capture - Merchant Managed Solution
+# Secure Data Capture - API Only
 
 Commerce Hub allows E-commerce merchants to manage the design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment nonce `sessionId` _(one-time use token)_. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 

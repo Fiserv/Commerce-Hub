@@ -1,5 +1,5 @@
 ---
-tags: [Subsequent Authorization Types]
+tags: [Authorization]
 ---
 
 # Subsequent Authorization Types
@@ -26,9 +26,12 @@ The below table identifies the valid values of `authorizationTypeIndicator` to i
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md)
-- [Incremental Authorization](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
-- [Deferred Authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md)
 - [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
+
+<!---
+- [Deferred Authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md)
+- [Incremental Authorization](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
+-->
 
 ---

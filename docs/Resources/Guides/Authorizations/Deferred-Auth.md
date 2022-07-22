@@ -1,5 +1,5 @@
 ---
-tags: [Deferred Authorization, Authorization]
+tags: [Authorization]
 ---
 
 # Deferred Authorization
