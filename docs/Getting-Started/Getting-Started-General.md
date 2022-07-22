@@ -82,7 +82,7 @@ link: ?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
 <!-- type: card
 title: Information Lookup
 description: Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token.
-link: 
+link: ?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
 -->
 
 <!-- type: row-end -->
