@@ -296,6 +296,7 @@ type: tab
 
 ## See Also
 
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Customize JS Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
 - [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
