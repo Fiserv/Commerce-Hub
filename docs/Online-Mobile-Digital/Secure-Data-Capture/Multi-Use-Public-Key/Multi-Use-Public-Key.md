@@ -14,21 +14,31 @@ Merchant Managed Encryption is a [Secure Data Capture](?path=docs/Online-Mobile-
 
 ---
 
-Step 1 Request RSA Key
-docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
+## Integration Methods
 
-Step 2 Encrypt Card Data
-docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md
+Build an integration using a Multi-Use Public Key.
 
-Step 3 Submite Request
-docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md
+<!-- type: row -->
 
----
+<!-- type: card
+title: Web: Key Management
+description: Commerce Hub's key management system is needed to achieve PCI DSS compliance by implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys, to protect a customer's sensitive payment card data.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
+-->
 
-## See Also
-- API Explorer
-- Multi-Use Public Key Management
-- Multi-Use Public Key Encryption
-- Multi-Use Public Key Request
+<!-- type: card
+title: Web: Encrypt Card Data
+description: The merchant uses multi-use public key for the asymmeteric PaymentCard encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.
+link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md
+-->
+
+<!-- type: card
+title: Transaction Request
+description: After the merchants captures the payemnt source details, the multi-use public key issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization. 
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md
+-->
+
+<!-- type: row-end -->
+
 
 ---
