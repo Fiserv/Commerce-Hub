@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, order-details, order-data, master-data, item-details]
+tags: [API Reference, Item Details, Master Data, Order Data, Order Details]
 ---
 
 # Order Data
@@ -73,7 +73,7 @@ Item details is an array that identifies the category, item count, and value of 
 
 <!--
 type: tab
-titles: itemDetails, JSON Example
+titles: itemDetails, JSON Exaample
 -->
 
 The below table identifies the parameters in the `itemDetails` array.
@@ -116,4 +116,4 @@ JSON string format for `itemDetails`:
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 
---- 
+---
