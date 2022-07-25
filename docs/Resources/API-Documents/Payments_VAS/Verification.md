@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, account-verification, card-verification, avs, cvv, security-code, address-verification]
+tags: [Account, Verification, Security Code, Address Verrification Service]
 ---
 
 # Account Verification
@@ -43,7 +43,7 @@ The below table identifies the required parameters in the `card` object.
 
 ---
 
-## Endpoint
+### Endpoint
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/verification`
@@ -171,7 +171,7 @@ The below table identifies the required parameters in the `card` object.
 
 ---
 
-## Endpoint
+### Endpoint
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/verification`
