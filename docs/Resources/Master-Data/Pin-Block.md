@@ -54,7 +54,7 @@ JSON string format for `pinBlock`:
 <!-- type: tab-end -->
 
 ---
-
+ 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
