@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise,authorization-type-indicator, primary-transaction-type, reversal-reason-code, authorization-sequence, device-fingerprint-data, data-capture, data-dynamic, master-data, transactional-data, transaction-details,]
+tags: [API Reference, Authorization Sequence, Authorization Type Indicator, Data Capture, Data Dynamic, Device Fingerprint Data, Master Data, Primary Transaction Type, Reversal Reason Code, Transactional Data, Transaction Details]
 ---
 
 # Transactional Details
@@ -21,7 +21,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number (aka reference number). |
-| `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization type](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
+| `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
 | `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
 | `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
 | `splitShipment` | *object* | N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
@@ -29,8 +29,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](?path=docs/Resources/Guides/Authorizations/Re-Auth.md#authorization-sequence) requested.|
 | `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
-
-<!---
 | `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
@@ -43,7 +41,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
 | `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant’s choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks. |
--->
 
 <!--
 type: tab
@@ -54,23 +51,23 @@ JSON string format for `transactionDetails`:
 ```json
 {
    "transactionDetails":{
-      "approvalCode": "string",
+      "approvalCode": "123456",
       "primaryTransactionId": "838916029301",
-      "primaryOrderId": "123456789", /// Future Release
-      "clientRequestId": "13267786514316843133216746", /// Future Release
+      "primaryOrderId": "123456789",
+      "clientRequestId": "13267786514316843133216746",
       "captureFlag": false,
       "accountVerification": false,
-      "partialApproval": "NOT_SUPPORTED", /// Future Release
+      "partialApproval": "NOT_SUPPORTED",
       "merchantTransactionId": "1343678765",
       "merchantOrderId": "845366457890-TODO",
       "merchantInvoiceNumber": "123890",
-      "receiptEmail": "abc@gmail.com", /// Future Release
-      "paymentDescription": "Merchandise", /// Future Release
-      "cardVerificationAmount": 0.02, /// Future Release
-      "partiallyApprovedTransactionAmount": 10.55, /// Future Release
+      "receiptEmail": "abc@gmail.com",
+      "paymentDescription": "Merchandise",
+      "cardVerificationAmount": 0.02,
+      "partiallyApprovedTransactionAmount": 10.55,
       "splitTenderId": "12423434",  
       "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator": true, /// Future Release
+      "duplicateTransactionCheckingIndicator": true,
       "primaryTransactionType": "CHARGE_SALE",
       "vaultFundingSource": true,  /// Future Release
       "deviceFingerprint":[  
@@ -111,7 +108,6 @@ JSON string format for `transactionDetails`:
 
 ---
 
-<!---
 #### Partial Approval
 
 The below table identifies the valid values of `partialApproval`.
@@ -124,7 +120,6 @@ The below table identifies the valid values of `partialApproval`.
 | MERCH_SUPPORTED_ONLY | Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized. |
 | CASH_BACK_SUPPORTED_ONLY | Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized. |
 | MERCH_CASH_BACK_NOT_SUPPORTED | Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized. |
--->
 
 #### Primary Transaction Type
 
@@ -159,8 +154,9 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
+- [Device Fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 
 --- 
