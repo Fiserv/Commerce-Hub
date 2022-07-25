@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, commerce-hub-response, master-data]
+tags: [API Reference, Commerce Hub Response, Master Data]
 ---
 
 # Commerce Hub Response
@@ -67,14 +67,14 @@ The below table identifies the valid values of `transactionState` in the gateway
 
 <!-- COMPLETED_GET, INITIALIZED, PENDING, READY, TEMPLATE, SETTLED, WAITING -->
 
----
+--- 
 
 ## Transaction Processing Details
 
 Object contains the transaction processing details.
 
 <!--
-type: tab 
+type: tab
 titles: transactionProcessingDetails, JSON Example
 -->
 
@@ -110,7 +110,7 @@ JSON string format for `transactionProcessingDetails`:
 
 <!--type: tab-end -->
 
----
+--- 
 
 ## See Also
 
