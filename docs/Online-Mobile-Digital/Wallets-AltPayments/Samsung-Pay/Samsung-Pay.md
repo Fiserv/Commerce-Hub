@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, getting-started, samsung-pay, android, mobile, wallet]
+tags: [Getting Started, Samsung Pay, Android, Mobile, Wallet, Payment Source]
 ---
 
 # Samsung Pay
@@ -11,10 +11,30 @@ Samsung Pay is a digital wallet platform and online payment system developed by 
 
 ---
 
-## See Also
+## Integration Methods
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+Build an integration that to accept an Samsung Pay payment.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Web: RESTful API
+description: Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Samsung Pay. The merchants would need to setup their own server for secure communication with Google Pay.
+link:
+-->
+
+<!-- type: card
+title: Web: Hosted Payment Page
+description: Commerce Hub's Hosted Payment Page integration removes the PCI Complaince requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server.
+link:
+-->
+
+<!-- type: card
+title: Integration in App
+description: Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Samsung Pay.
+link:
+-->
+
+<!-- type: row-end -->
 
 ---
