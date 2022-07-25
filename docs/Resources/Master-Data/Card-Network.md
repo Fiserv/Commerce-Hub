@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, master-data, card-network, card-brand, card-scheme, visa, mastercard, amex, discover]
+tags: [AMEX, API Reference, Card Brand, Card Network, Card Scheme, Discover, Mastercard, Master Data, Visa]
 ---
 
 # Card Network
@@ -12,7 +12,7 @@ The card networks can return sepcific values in the [network response](?path=doc
 
 Contains the Visa specific network data.
 
-<!--
+<!--s
 type: tab
 titles: VISA, JSON Example
 -->
@@ -53,7 +53,7 @@ Contains the mastercard specific network data.
 
 <!--
 type: tab
-titles: Mastercard, JSON Example
+titles: Mastercard, JSON Examples
 -->
 
 The below table identifies the parameters in the `mastercard` object.
