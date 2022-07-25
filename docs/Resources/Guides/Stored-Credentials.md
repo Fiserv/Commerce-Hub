@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, stored-credentials, vault]
+tags: [Stored Credentials, Tokenization, Card Not Present]
 ---
 
 # Stored Credentials
@@ -160,8 +160,9 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
@@ -194,10 +195,11 @@ type: tab
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
-- [Installment Payment](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
-- [Recurring Payment](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+
+<!---
+- [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
+-->
 
 ---

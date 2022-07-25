@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, currency-conversion, vault]
+tags: [Currency Conversion, Vault]
 ---
 
 # Currency Conversion

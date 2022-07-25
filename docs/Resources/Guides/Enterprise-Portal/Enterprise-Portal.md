@@ -1,15 +1,16 @@
 ---
-tags: [carat, commerce-hub, enterprise, enterprise-portal, business-track, virtual-terminal, reporting, settings]
+tags: [Enterprise Portal, Business Track, Virtual Terminal, Reporting, Settings]
 ---
 
 # ClientLine Enterprise Portal
 
-Merchants can access the Enterprise Portal through Business Track. Each merchant receives access to Commerce Hub, a real-time web-based back-office application that logs the transactions conducted through the Virtual POS, Batch Uploads (Quick Key), and Commerce Hub intergrations. 
+Merchants can access the Enterprise Portal through Business Track. Each merchant receives access to ClientLine, a real-time web-based back-office application that logs the transactions conducted through the Virtual POS, Batch Uploads (Quick Key), and Commerce Hub intergrations. 
 
 The Enterprise Portal also provides access to Commerce Hub's marketplace that allows boarding and configuration of a merchant accounts. 
 
 <!-- info -->
-> Contact your account representative to gain access to the Enterprise Portal. 
+> Contact your account representative to gain access to the Enterprise Portal.
+
 ---
 
 ## Virtual Terminal
@@ -20,7 +21,7 @@ Virtual Terminal is a web-based application that allows a merchant to process el
 
 ## Reporting
 
-ClientLine Enterprise Portal offers merchants the ability to [generate reports](?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md) with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions. 
+ClientLine Enterprise Portal offers merchants the ability to [generate reports](?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md) with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions.
 
 ---
 

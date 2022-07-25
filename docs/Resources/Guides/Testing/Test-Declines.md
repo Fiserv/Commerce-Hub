@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, declines, enterprise, testing]
+tags: [Declines, Testing]
 ---
 
 # Test Decline Response
@@ -15,7 +15,7 @@ A decline response can be triggered when testing a Commerce Hub integration in t
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
@@ -48,13 +48,12 @@ title: Request
 
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
-> See [HTTP Error Responses](?path=docs/Resources/Guides/Response-Codes/HTTP.md) for additional examples.
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -92,8 +91,9 @@ title: Response
     "processorResponseDetails": {
       "approvalStatus": "DECLINED",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "006",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
       "responseMessage": "DECLINED",
       "hostResponseCode": "51",
       "hostResponseMessage": "Declined",

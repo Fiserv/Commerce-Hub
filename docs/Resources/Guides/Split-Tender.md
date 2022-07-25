@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, split-tender, vault]
+tags: [Split Tender, Vault]
 ---
 
 # Split Tender

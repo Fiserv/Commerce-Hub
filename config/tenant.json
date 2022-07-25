@@ -34,12 +34,24 @@
   "apiVersions": [
     {
       "version": "1.0.0",
-      "versionType": "major",
+      "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
+      "apiSpecFileNames": ["openapi"]
+    },
+    {
+      "version": "1.1.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-1.1.0.md",
+      "apiSpecFileNames": ["openapi"]
+    },
+    {
+      "version": "1.2.0",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/release-notes-1.2.0.md",
       "apiSpecFileNames": ["openapi"]
     }
   ],
-  "featureBranches": ["CHD-41-Samsung-Pay"],
+  "featureBranches": ["develop"],
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Commerce-Hub/develop/assets/images/Commerce-Hub-Circle.png",
@@ -77,17 +89,17 @@
     "bug": {
       "label": "bug,CommerceHub",
       "template": "bug.md",
-      "assignees": "william.wade@fiserv.com"
+      "assignees": "wwfiserv"
     },  
     "feedback": {
       "label": "feedback,CommerceHub",
       "template": "feedback.md",
-      "assignees": "william.wade@fiserv.com"
+      "assignees": "wwfiserv"
     },
     "enhancement": {
       "label": "enhancement,CommerceHub",
       "template": "feature.md",
-      "assignees": "william.wade@fiserv.com"
+      "assignees": "wwfiserv"
     }
   }]
 }

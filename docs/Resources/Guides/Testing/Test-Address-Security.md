@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, testing, test-integration, test-cards, test-errors]
+tags: [Testing, Test Integration, Test Cards, Test Errors]
 ---
 
 # Test Address and Security Code
@@ -87,7 +87,7 @@ Zip Code
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 ##### Example of an address verification request.
@@ -124,7 +124,6 @@ title: Request
 ```
 <!--
 type: tab
-title: Response
 -->
 
 ##### Example of an address verification response.
@@ -168,7 +167,8 @@ title: Response
          "approvalStatus":"APPROVED",
          "approvalCode":"OK5882",
          "schemeTransactionId":"0225MCC625628",
-         "processor":"fiserv",
+         "processor":"FISERV",
+         "host": "NASHVILLE",
          "responseCode":"000",
          "responseMessage":"APPROVAL",
          "hostResponseCode":"00",

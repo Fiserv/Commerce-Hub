@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, network-details, master-data]
+tags: [API Reference, Network Details, Master Data]
 ---
 
 # Authorization Network Response
@@ -36,7 +36,7 @@ The below table identifies the parameters in the `networkDetails` object.
 <!--
 type: tab
 -->
-
+ 
 JSON string format for `networkDetails`:
 
 ```json
@@ -97,7 +97,7 @@ type: tab
 ```
 
 <!-- type: tab-end -->
-
+ 
 ---
 
 #### Authorization Characteristics Indicator
@@ -111,6 +111,7 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 | *REQUEST_PARTICIPATION* |  Transaction requests participation |
 | *CARD_NOT_PRESENT_NO_AVS* |  Card not present, AVS not required |
 
+---
 
 ## See Also
 
@@ -121,5 +122,5 @@ Code used for qualification in the Custom Payment Service (CPS) program as defin
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
-
+ 
 ---

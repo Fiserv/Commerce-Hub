@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, car-rental]
+tags: [Car Rental]
 ---
 
 

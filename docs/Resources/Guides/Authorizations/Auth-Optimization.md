@@ -1,4 +1,11 @@
+---
+tags: [Authorization, Approval Rate, Decline Rate]
+---
+
 # Authorization Optimization
+
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support auth optimization and the documents related to the feature will be released soon.
 
 Authorization Optimization from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for E-commerce transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks ensuring higher approval rates. Features include;
 
@@ -59,8 +66,6 @@ JSON string format:
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
-- [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---

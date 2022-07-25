@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, level-2-card, level-3-card, mastercard, visa, american-express, discover, purchase-card, commercial-card, business-card]
+tags: [Level 2 Card, Level 3 Card, Mastercard, Visa, American Express, Discover, Purchase Card, Commercial Card, Business Card]
 ---
 
 # Tax Types
@@ -9,23 +9,23 @@ Use these values to populate the Tax Type property in the Level III line item de
 
 | Value | Description |
 | -------- | :--: |
-| UNKNOWN | Unknown or no tax submitted | 
-| FEDERAL |	Federal sales tax |	
-| NATIONAL |	National sales tax |	
-| STATE |	State sales tax | 
-| 3| City Sales Tax |	
-| 4 |	Local Sales Tax |	
-| 5 | Municipal Sales Tax |
-| 6 | Other Tax|
-| 10 | Value Added Tax (VAT) |	
-| 11 |	Goods and Services Tax (GST) |	
-| 12 | Provincial Sales Tax (PST) | 
-| 13 |	Harmonized Sales Tax (HST) |	
-| 14 |	Quebe Sales Tax (QST) | 
-| 20 |	Room Tax |
-| 21 |	Occupancy Tax |	
-| 22 |	Energy Tax |	
-| NOT_SUPPORTED | Not Supported | 
+| *UNKNOWN* | Unknown or no tax submitted | 
+| *FEDERAL* |	Federal sales tax |	
+| *NATIONAL* |	National sales tax |	
+| *STATE* |	State sales tax | 
+| *CITY* | City Sales Tax |	
+| *LOCAL* |	Local Sales Tax |	
+| *MUNICIPAL* | Municipal Sales Tax |
+| *OTHER* | Other Tax|
+| *VALUE* | Value Added Tax (VAT) |	
+| *GOODS*|	Goods and Services Tax (GST) |	
+| *PROVINCIAL* | Provincial Sales Tax (PST) | 
+| *HARMONIZED* |	Harmonized Sales Tax (HST) |	
+| *QUEBE* |	Quebe Sales Tax (QST) | 
+| *ROOM* |	Room Tax |
+| *OCCUPANCY* |	Occupancy Tax |	
+| *ENERGY* |	Energy Tax |	
+| *NOT_SUPPORTED* | Not Supported | 
 
 ---
 

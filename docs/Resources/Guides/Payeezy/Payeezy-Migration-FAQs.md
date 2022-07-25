@@ -54,5 +54,3 @@ Yes.  There is an entire section of the playbook containing technical informatio
 - [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
-
----

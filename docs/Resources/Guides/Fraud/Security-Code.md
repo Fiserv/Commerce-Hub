@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, fraud, security-code-verification]
+tags: [Card Not Present, Fraud, Security Code, Fraud, Security Code Verification]
 ---
 
 # Security Code
