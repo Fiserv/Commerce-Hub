@@ -11,7 +11,7 @@ Commerce Hub implements various transaction and fraud controls that allows merch
 
 ---
 
-## Setup Fraud Settings
+## Setup Fraud Settings 
 
 To setup Fraud Settings in Marketplace, complete the following steps:
 
@@ -54,6 +54,18 @@ description: About...
 link: ?path=docs/about-developer-studio.md
 -->
 
+
+<!-- type: card
+title: Third Card
+description: About...
+link: ?path=docs/about-developer-studio.md
+-->
+
+<!-- type: card
+title: Fourth Card
+description: About...
+link: ?path=docs/about-developer-studio.md
+-->
 
 <!-- type: row-end -->
 
