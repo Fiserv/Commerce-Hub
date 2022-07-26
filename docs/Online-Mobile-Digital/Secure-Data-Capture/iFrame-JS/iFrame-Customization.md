@@ -57,31 +57,112 @@ The following example shows all the text labels that can be overridden for a par
 
 ---
 
+## Styling
 
-## Theme and Font
+The iFrame styling enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. 
 
-For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
+The following code snippet shows a sample configuration and how it can be used to target individual elements:
 
+```java
 
-#### Overriding Elements
-The following elements can be overridden:
+const fiservConfig = {
+  css: {
+    styles: {
+      base: {
+        body: {
+          "font-style": "italic",
+          p: {
+            "background-color": "whitesmoke",
+            "padding": "10px",
+            "border": "lightgray dashed 2px",
+            "font-style": "normal",
+            "font-family": "Courier New",
+            "font-size": "12px",
+            ":hover": {
+              "background-color": "lightgray",
+              "border": "darkgray dashed 2px"
+            }
+          }
+        },
+        form: {
+          input: {
+            margin: "0 0 10px 0",
+            "box-shadow": "3px 3px lightgray",
+            "::placeholder": {
+              "color": "lightgray",
+              "font-style": "italic",
+              "font-size": "12px"
+            },
+            ":disabled": {
+              "border": "solid red 2px"
+            },
+            ":focus": {
+              "::placeholder": {
+                "color": "orange"
+              }
+            },
+            ":-webkit-autofill": {
+              "box-shadow": "5px 5px darkorange"
+            },
+            ".sbutton": {
+              "border-right": "solid 15px purple"
+            },
+            ":nth-of-type(2)": {
+              "border-right": "solid 15px pink"
+            },
+            ".sinput.slname": {
+              "border-right": "solid 15px magenta"
+            }
+          },
+          "input[type=submit]": {
+            "margin": "10px 0 0 0 "
+          }
+        }
+      },
+      media: [
+        {
+          query:
+            "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)",
+          form: {
+            input: {
+              "box-shadow": "3px 3px cyan"
+            }
+          }
+        },
+        {
+          query:
+            "@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)",
+          form: {
+            input: {
+              "box-shadow": "3px 3px gold"
+            }
+          }
+        }
+      ]
+    }
+  }
+};
 
-- **Primary Color Theme:** changes the main color, i.e. highlight color, font color, button color (when enabled). Hexadecimal only
-- **Contrast Color Theme:** button font color. Hexadecimal only
-- **Fields Font Family:** font used on the form. Supported fonts: NotoSans, NotoSerif, OpenSans, Roboto, RobotoMono
-- **Button Font Size:** size of the text font on the button.
-- **Input Text Font Size:** size of the rest of the text font.
+```
+
+The fiservConfig.css.styles object allows the developer to target specific elements and define properties without having to duplicate query selectors. Consider the following example
 
 ```css
 
-"css": {
-  "primaryColorTheme": "#2D2D2D",
-  "contrastColorTheme": "#ffffff",
-  "fieldsFontFamily": "ROBOTO",
-  "buttonFontSize": "20px",
-  "inputTextFontSize": "20px"
+styles: {
+ base: {
+  form: {
+    input: {
+      margin: "0 0 10px 0",
+      "box-shadow": "3px 3px lightgray",
+      ":focus": {
+        "::placeholder": {
+           color: "orange"
+        }
+      }
+    }
   }
-  
+}
 ```
 ---
 
