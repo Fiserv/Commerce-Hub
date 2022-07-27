@@ -88,19 +88,18 @@ const fiservConfig = {
                     }
                 }
             },
-            "media": [{
-                    "query": "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)",
-                    "app-card-form": {
-                        "app-input-card": {
-                            "box-shadow": "3px 3px cyan"
-                        }
-                    }
-                },
-                {
-                    "query": "@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)",
-                    "form": {
-                        "input": {
-                            "box-shadow": "3px 3px gold"
+            "media": {
+			        	"@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)": {
+					"app-card-form": {
+						"app-input-card": {
+							"box-shadow": "3px 3px cyan"
+						}
+					}
+				},
+				"@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)": {
+					"app-card-form": {
+						"app-input-card": {
+							"box-shadow": "3px 3px gold"
                         }
                     }
                 }
@@ -129,25 +128,50 @@ The following list outlines the well known card form tags thatdo not change irre
 - app-input-card (used for CVV and card holder)
 - app-submit-button
 
-The fiservConfig.css.styles object allows the developer to target specific elements and define properties without having to duplicate query selectors. Consider the following example
+
+<!-- theme: warning -->
+> Support for certain CSS properties/selectors have been removed for security reasons. These limitations are documented in the following sections.
+
+### CSS Whitelist
+The following list outlines the list CSS properties that are supported by the iframe:
 
 ```css
+const CSS_PROPERTY_WHITELIST = Object.freeze({
+  "-moz-appearance": true,
+  "-moz-osx-font-smoothing": true,
+  "-moz-tap-highlight-color": true,
+  "-moz-transition": true,
+  "-webkit-appearance": true,
+  "-webkit-font-smoothing": true,
+  "-webkit-tap-highlight-color": true,
+  "-webkit-transition": true,
+  "box-shadow": true,
+  "-webkit-box-shadow": true,
+  "-webkit-text-fill-color": true,
+  "background-color": true,
+  "appearance": true,
+  "color": true,
+  "margin": true,
+  "border": true,
+  "border-bottom": true,
+  "border-left": true,
+  "border-right": true,
+  "border-top": true,
+  "border-color": true,
+  "border-style": true,
+  "font-style": true,
+  "font-family": true,
+  "font-size": true,
+  "font-weight": true,
+  "padding": true
+});
 
-styles: {
- base: {
-  form: {
-    input: {
-      margin: "0 0 10px 0",
-      "box-shadow": "3px 3px lightgray",
-      ":focus": {
-        "::placeholder": {
-           color: "orange"
-        }
-      }
-    }
-  }
-}
 ```
+### Unsupported CSS Query Selectors
+
+There are certain insecure query selectors that are not supported by the iframe solution, such as `input[value='*']`.
+
+
 ---
 
 ## See Also
