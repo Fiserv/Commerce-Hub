@@ -38,7 +38,7 @@ The below table identifies the parameters in the `regionalDebit` object.
 type: tab
 -->
 
-JSON string format for `regionalPin`:
+JSON string format for `regionalPin`: 
 
 ```json
 {
@@ -114,7 +114,7 @@ JSON string format for `regionalPin`:
   }
 }
 ```
-
+ 
 
 <!-- type: tab-end -->
 
