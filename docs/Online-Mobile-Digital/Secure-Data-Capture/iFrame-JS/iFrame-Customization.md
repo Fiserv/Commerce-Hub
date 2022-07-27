@@ -61,65 +61,70 @@ The following example shows all the text labels that can be overridden for a par
 
 The default iFrame JS styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
 
+<!-- theme: warning -->
+> Support for certain CSS properties/selectors have been restricted for security reasons.
+
+Following are the two attributres of `configFiserv` object:
+
+| Attributes | Description |
+|------|-------|
+| `base` | base styling for the iframe on all device sizes |
+| `media` | device based styling rules that override the base styling rules when the current device matches the defined media query | 
+
+
 The following code snippet shows a sample styling configuration:
 
 ```java
 
 const fiservConfig = {
-    "css": {
-        "styles": {
-            "base": {
-                "app-root": {
-                    "font-style": "italic",
-                    "app-card-number": {
-                        "background-color": "whitesmoke",
-                        "font-style": "normal",
-                        "font-family": "Courier New",
-                        "font-size": "12px",
-                        ":hover": {
-                            "background-color": "lightgray",
-                            "border": "darkgray dashed 2px"
-                        }
-                    }
-                },
-                "app-card-form": {
-                    "app-input-card": {
-                        "box-shadow": "3px 3px lightgray"
-                    }
-                }
+   "css": {
+      "styles": {
+         "base": {
+            "app-root": {
+               "font-style": "italic",
+               "app-card-number": {
+                  "background-color": "whitesmoke",
+                  "font-style": "normal",
+                  "font-family": "Courier New",
+                  "font-size": "12px",
+                  ":hover": {
+                     "background-color": "lightgray",
+                     "border": "darkgray dashed 2px"
+                  }
+               }
             },
-            "media": {
-			        	"@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)": {
-					"app-card-form": {
-						"app-input-card": {
-							"box-shadow": "3px 3px cyan"
-						}
-					}
-				},
-				"@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)": {
-					"app-card-form": {
-						"app-input-card": {
-							"box-shadow": "3px 3px gold"
-                        }
-                    }
-                }
-            ]
-        }
-    }
-}
+            "app-card-form": {
+               "app-input-card": {
+                  "box-shadow": "3px 3px lightgray"
+               }
+            }
+         },
+         "media": {
+            "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)": {
+               "app-card-form": {
+                  "app-input-card": {
+                     "box-shadow": "3px 3px cyan"
+                  }
+               }
+            },
+            "@media only screen and (min-device-width: 320px) and (max-device-width: 480px)": {
+               "app-card-form": {
+                  "app-input-card": {
+                     "box-shadow": "3px 3px gold"
+                  }
+               }
+            }
+         }
+      }
+   }
+};
 
 ```
-Following are the description of the two attributres of configFiserv object:
-
-| Attributes | Description |
-|------|-------|
-| base | base styling for the iframe on all device sizes |
-| media | device based styling rules that override the base styling rules when the current device matches the defined media query | 
 
 
-### Tags to remember
+### Standard Tags
 
-The following list outlines the well known card form tags thatdo not change irrespective of the releases and should form the basis of core media queries:
+The following list outlines the standard card form tags that do not change and should form the basis of core media queries:
 
 - app-root
 - app-card-form
@@ -128,9 +133,6 @@ The following list outlines the well known card form tags thatdo not change irre
 - app-input-card (used for CVV and card holder)
 - app-submit-button
 
-
-<!-- theme: warning -->
-> Support for certain CSS properties/selectors have been removed for security reasons. These limitations are documented in the following sections.
 
 ### CSS Whitelist
 The following list outlines the list CSS properties that are supported by the iframe:
@@ -167,9 +169,9 @@ const CSS_PROPERTY_WHITELIST = Object.freeze({
 });
 
 ```
-### Unsupported CSS Query Selectors
+### Unsupported CSS
 
-There are certain insecure query selectors that are not supported by the iframe solution, such as `input[value='*']`.
+iFrame solution does not support `input[value='*']` query selector. 
 
 
 ---
