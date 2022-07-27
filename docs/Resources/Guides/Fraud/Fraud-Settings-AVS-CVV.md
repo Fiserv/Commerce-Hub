@@ -67,6 +67,72 @@ Filters are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/
 
 ---
 
+### AVS MasterCard Features
+
+| AVS Filters | Variable | 
+| ----- | ------ | 
+| Address Not Verified (U) | |
+| Address Match and 5or9 Digit Postal Match for US Only (Y)	| 
+| Address Match Postal Incompatible Format (B)	| |
+| Address Match and Postal Mismatch (A)	| |
+| Address Mismatch and Postal Match (Z)	| |
+| Address and Postal Incompatible Format (C ) | |
+| Address and Postal Match UK Only (F) | |
+| Address Mismatch and Postal Mismatch (N)	| |
+| Issuer No Support Not Verified International (G) | |
+| Not Supported (S)	 | |
+| Not Verified (I)	| |
+| Postal Match and Address Incompatible Format (P)	| |
+| Retry System Unavailable (R )	 | |
+| Street Addresses Postal Codes Match for International Only (M)	| |
+| Street Address Postal Code Match for International Only (D) | |
+
+---
+
+### AVS Amex Features
+
+| AVS Filters | Variable | 
+| ----- | ------ | 
+| Address Not Verified (U) | |
+| Address Match and 5or9 Digit Postal Match for US Only (Y)	| 
+| Address Match Postal Incompatible Format (B)	| |
+| Address Match and Postal Mismatch (A)	| |
+| Address Mismatch and Postal Match (Z)	| |
+| Address and Postal Incompatible Format (C ) | |
+| Address and Postal Match UK Only (F) | |
+| Address Mismatch and Postal Mismatch (N)	| |
+| Issuer No Support Not Verified International (G) | |
+| Not Supported (S)	 | |
+| Not Verified (I)	| |
+| Postal Match and Address Incompatible Format (P)	| |
+| Retry System Unavailable (R )	 | |
+| Street Addresses Postal Codes Match for International Only (M)	| |
+| Street Address Postal Code Match for International Only (D) | |
+
+---
+
+### AVS Discover Features
+
+| AVS Filters | Variable | 
+| ----- | ------ | 
+| Address Not Verified (U) | |
+| Address Match and 5or9 Digit Postal Match for US Only (Y)	| 
+| Address Match Postal Incompatible Format (B)	| |
+| Address Match and Postal Mismatch (A)	| |
+| Address Mismatch and Postal Match (Z)	| |
+| Address and Postal Incompatible Format (C ) | |
+| Address and Postal Match UK Only (F) | |
+| Address Mismatch and Postal Mismatch (N)	| |
+| Issuer No Support Not Verified International (G) | |
+| Not Supported (S)	 | |
+| Not Verified (I)	| |
+| Postal Match and Address Incompatible Format (P)	| |
+| Retry System Unavailable (R )	 | |
+| Street Addresses Postal Codes Match for International Only (M)	| |
+| Street Address Postal Code Match for International Only (D) | |
+
+---
+
 ## CVV Filters
 Add a description 
 
@@ -88,6 +154,44 @@ Add a description
 | Server Response Error (X)	| |
 | Unknown Issuer (U) | |
 
+---
+
+### CVV MasterCard Features
+
+| CVV Filters | Variable | 
+| ----- | ------ | 
+| CVV2 CVC2 CID Match (M)	| |
+| CVV Not Processed (P)	| |
+| CVV No Match (N)	| |
+| CVV Required Error (S) | |	
+| Server Response Error (X)	| |
+| Unknown Issuer (U) | |
+
+---
+
+### CVV Amex Features
+
+| CVV Filters | Variable | 
+| ----- | ------ | 
+| CVV2 CVC2 CID Match (M)	| |
+| CVV Not Processed (P)	| |
+| CVV No Match (N)	| |
+| CVV Required Error (S) | |	
+| Server Response Error (X)	| |
+| Unknown Issuer (U) | |
+
+---
+
+### CVV Discover Features
+
+| CVV Filters | Variable | 
+| ----- | ------ | 
+| CVV2 CVC2 CID Match (M)	| |
+| CVV Not Processed (P)	| |
+| CVV No Match (N)	| |
+| CVV Required Error (S) | |	
+| Server Response Error (X)	| |
+| Unknown Issuer (U) | |
 
 ---
 
