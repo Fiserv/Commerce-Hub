@@ -117,6 +117,18 @@ Following are the description of the two attributres of configFiserv object:
 | base | base styling for the iframe on all device sizes |
 | media | device based styling rules that override the base styling rules when the current device matches the defined media query | 
 
+
+### Tags to remember
+
+The following list outlines the well known card form tags thatdo not change irrespective of the releases and should form the basis of core media queries:
+
+- app-root
+- app-card-form
+- app-select-expiry
+- app-card-number
+- app-input-card (used for CVV and card holder)
+- app-submit-button
+
 The fiservConfig.css.styles object allows the developer to target specific elements and define properties without having to duplicate query selectors. Consider the following example
 
 ```css
