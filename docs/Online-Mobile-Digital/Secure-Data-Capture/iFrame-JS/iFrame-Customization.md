@@ -57,93 +57,65 @@ The following example shows all the text labels that can be overridden for a par
 
 ---
 
-## Styling
+## CSS Styling
 
-The iFrame styling enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. 
+The default iFrame JS styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
 
-The following code snippet shows a sample configuration and how it can be used to target individual elements:
+The following code snippet shows a sample styling configuration:
 
 ```java
 
 const fiservConfig = {
-  css: {
-    styles: {
-      base: {
-        body: {
-          "font-style": "italic",
-          p: {
-            "background-color": "whitesmoke",
-            "padding": "10px",
-            "border": "lightgray dashed 2px",
-            "font-style": "normal",
-            "font-family": "Courier New",
-            "font-size": "12px",
-            ":hover": {
-              "background-color": "lightgray",
-              "border": "darkgray dashed 2px"
-            }
-          }
-        },
-        form: {
-          input: {
-            margin: "0 0 10px 0",
-            "box-shadow": "3px 3px lightgray",
-            "::placeholder": {
-              "color": "lightgray",
-              "font-style": "italic",
-              "font-size": "12px"
+    "css": {
+        "styles": {
+            "base": {
+                "app-root": {
+                    "font-style": "italic",
+                    "app-card-number": {
+                        "background-color": "whitesmoke",
+                        "font-style": "normal",
+                        "font-family": "Courier New",
+                        "font-size": "12px",
+                        ":hover": {
+                            "background-color": "lightgray",
+                            "border": "darkgray dashed 2px"
+                        }
+                    }
+                },
+                "app-card-form": {
+                    "app-input-card": {
+                        "box-shadow": "3px 3px lightgray"
+                    }
+                }
             },
-            ":disabled": {
-              "border": "solid red 2px"
-            },
-            ":focus": {
-              "::placeholder": {
-                "color": "orange"
-              }
-            },
-            ":-webkit-autofill": {
-              "box-shadow": "5px 5px darkorange"
-            },
-            ".sbutton": {
-              "border-right": "solid 15px purple"
-            },
-            ":nth-of-type(2)": {
-              "border-right": "solid 15px pink"
-            },
-            ".sinput.slname": {
-              "border-right": "solid 15px magenta"
-            }
-          },
-          "input[type=submit]": {
-            "margin": "10px 0 0 0 "
-          }
+            "media": [{
+                    "query": "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)",
+                    "app-card-form": {
+                        "app-input-card": {
+                            "box-shadow": "3px 3px cyan"
+                        }
+                    }
+                },
+                {
+                    "query": "@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)",
+                    "form": {
+                        "input": {
+                            "box-shadow": "3px 3px gold"
+                        }
+                    }
+                }
+            ]
         }
-      },
-      media: [
-        {
-          query:
-            "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)",
-          form: {
-            input: {
-              "box-shadow": "3px 3px cyan"
-            }
-          }
-        },
-        {
-          query:
-            "@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)",
-          form: {
-            input: {
-              "box-shadow": "3px 3px gold"
-            }
-          }
-        }
-      ]
     }
-  }
-};
+}
 
 ```
+Following are the description of the two attributres of configFiserv object:
+
+| Attributes | Description |
+|------|-------|
+| base | base styling for the iframe on all device sizes |
+| media | device based styling rules that override the base styling rules when the current device matches the defined media query | 
 
 The fiservConfig.css.styles object allows the developer to target specific elements and define properties without having to duplicate query selectors. Consider the following example
 
