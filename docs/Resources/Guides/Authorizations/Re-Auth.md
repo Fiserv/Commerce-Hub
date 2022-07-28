@@ -20,7 +20,7 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - Extended stay hotels, car rentals, and cruise lines.
 - Validity period of original authorization has expired.
 - Original auth is missing qualified data.
-- Different transaction amount in either authorization or settlement.
+- Different transaction amount in either authorization or settlement. 
 
 <!-- theme: info --> 
 > See an account representative for more information on issuer hold times.
