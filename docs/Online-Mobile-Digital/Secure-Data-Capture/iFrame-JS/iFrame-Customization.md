@@ -174,6 +174,7 @@ const CSS_PROPERTY_WHITELIST = Object.freeze({
 
 iFrame solution does not support `input[value='*']` query selector as it poses a security risk by letting the attackers inject css that calls a remote URL when the input matches a certain value. If the injected remote url is a unique URL per input value, the attacker can have full or partial access to the individual content. To prevent this, Commerce Hub implements a filter that bypasses this query selector that match a specific regex. 
 
+To mitigate the risk of a CSS exfiltration attack, `[url\(.*\]` incorporates a CSS property value filter which blocks certain css values. 
 
 ---
 
