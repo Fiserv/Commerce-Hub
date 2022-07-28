@@ -139,32 +139,32 @@ The following list outlines the list CSS properties that are supported by the if
 
 - -moz-appearance
 - -moz-osx-font-smoothing
--moz-tap-highlight-color
--moz-transition
--webkit-appearance
--webkit-font-smoothing
--webkit-tap-highlight
-color
--webkit-transition
-box-shadow
--webkit-box-shadow
--webkit-text-fill-color
-background-color
-appearance
-color
-margin
-border
-border-bottom
-border-left
-border-right
-border-top
-border-color
-border-style
-font-style
-font-family
-font-size
-font-weight
-padding
+- -moz-tap-highlight-color
+- -moz-transition
+- -webkit-appearance
+- -webkit-font-smoothing
+- -webkit-tap-highlight
+- color
+- -webkit-transition
+- box-shadow
+- -webkit-box-shadow
+- -webkit-text-fill-color
+- background-color
+- appearance
+- color
+- margin
+- border
+- border-bottom
+- border-left
+- border-right
+- border-top
+- border-color
+- border-style
+- font-style
+- font-family
+- font-size
+- font-weight
+- padding
 
 ### Security Restrictions
 
