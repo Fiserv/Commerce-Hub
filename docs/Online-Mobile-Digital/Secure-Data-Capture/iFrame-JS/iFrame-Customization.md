@@ -134,47 +134,44 @@ The following list outlines the standard card form tags that do not change and s
 - app-submit-button
 
 
-### CSS Whitelist
+### Supported Properties
 The following list outlines the list CSS properties that are supported by the iframe:
 
-```css
+- -moz-appearance
+- -moz-osx-font-smoothing
+-moz-tap-highlight-color
+-moz-transition
+-webkit-appearance
+-webkit-font-smoothing
+-webkit-tap-highlight
+color
+-webkit-transition
+box-shadow
+-webkit-box-shadow
+-webkit-text-fill-color
+background-color
+appearance
+color
+margin
+border
+border-bottom
+border-left
+border-right
+border-top
+border-color
+border-style
+font-style
+font-family
+font-size
+font-weight
+padding
 
-const CSS_PROPERTY_WHITELIST = Object.freeze({
-  "-moz-appearance": true,
-  "-moz-osx-font-smoothing": true,
-  "-moz-tap-highlight-color": true,
-  "-moz-transition": true,
-  "-webkit-appearance": true,
-  "-webkit-font-smoothing": true,
-  "-webkit-tap-highlight-color": true,
-  "-webkit-transition": true,
-  "box-shadow": true,
-  "-webkit-box-shadow": true,
-  "-webkit-text-fill-color": true,
-  "background-color": true,
-  "appearance": true,
-  "color": true,
-  "margin": true,
-  "border": true,
-  "border-bottom": true,
-  "border-left": true,
-  "border-right": true,
-  "border-top": true,
-  "border-color": true,
-  "border-style": true,
-  "font-style": true,
-  "font-family": true,
-  "font-size": true,
-  "font-weight": true,
-  "padding": true
-});
+### Security Restrictions
 
-```
-### Unsupported CSS
+Commerce Hub implements security restrictions that prevent attackers from injecting or performing exfiltration attacks in the iFrame solution.
 
-iFrame solution does not support `input[value='*']` query selector as it poses a security risk by letting the attackers inject css that calls a remote URL when the input matches a certain value. If the injected remote url is a unique URL per input value, the attacker can have full or partial access to the individual content. To prevent this, Commerce Hub implements a filter that bypasses this query selector that match a specific regex. 
-
-To mitigate the risk of a CSS exfiltration attack, `[url\(.*\]` incorporates a CSS property value filter which blocks certain css values. 
+- `input[value='*']` query selector: Poses a security risk by allowing attackers to inject css that calls a remote URL when the input matches a certain value. If the injected remote URL is a unique URL per input value, the attacker can have full or partial access to the individual content.  
+- `[url\(.*\]` property: Mitigates the risk of a CSS exfiltration attack.
 
 ---
 
