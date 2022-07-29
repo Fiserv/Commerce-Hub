@@ -27,7 +27,7 @@ A refund request is initiated by sending the `referenceTransactionDetails` in th
 
 ### Request Variables
 
-<!-- theme: caution -->
+<!-- theme: warning -->
 > In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
 
 <!-- 
@@ -186,7 +186,7 @@ A refund request is initiated by sending the `transactionId` in the URI and may 
 
 ### Request Variables
 
-<!-- theme: caution -->
+<!-- theme: warning -->
 > In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
 
 <!--
