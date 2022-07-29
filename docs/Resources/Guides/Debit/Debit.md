@@ -29,6 +29,12 @@ description: Process debit cards through debit newtworks to accept in-person pay
 link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 -->
 
+<!-- type: card
+title: Regional Debit
+description: Process regional debit cards through debit networks for in-person payments.
+link: ?path=docs/Resources/Guides/Debit/Regional-Debit.md
+-->
+
 <!-- type: row-end -->
 
 ---
