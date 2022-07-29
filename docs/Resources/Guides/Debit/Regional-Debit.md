@@ -27,6 +27,7 @@ The below table identifies the parameters in the `regionalDebit` object.
 | `debitTransactionCode` | *string* |  | Identifies the debit transaction |
 | `debitMACValue` | *string* |  | To confirm that the key data elements of the transaction have not been tampered. MAC protection is required on all Canadian debit transactions. It is optional when processing U.S. debit/EBT transactions. |
 | `encryptedKeyIndex` | *string* |  | Indicates the key index in use by PIN Pad, valid values are 1 through 9. Required in Canadian Debit requests. |
+| `encryptedKeyIndex` | *string* |  | Indicates the key index in use by PIN Pad, valid values are 1 through 9. Required in Canadian Debit requests. |
 | `messageAuthenticationWorkingKey` | *string* |  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.  |
 | `messageAuthenticationWorkingKeyCheckDigits` | *string* |  | A message authentication code for a working key that uses a session key to check digits. |
 | `messageEncryptionWorkingKey` | *string* |  | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data.  |
