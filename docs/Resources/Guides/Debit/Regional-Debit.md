@@ -4,9 +4,6 @@ tags: [Card Present, In-Person, Debit, Regional]
 
 # Regional Debit
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include support for Regional Debit transactions and the documents related to this feature will be released soon. Remove?
-
 Regional (International) Debit Solutions from Commerce Hub provide anywhere, anytime payment convenience to your customers through comprehensive transaction processing and settlement services, card management and personalization services, and extensive implementation and support services.
 
 Contact your account representative for more information on using regional (international) debit solutions. 
@@ -37,82 +34,98 @@ The below table identifies the parameters in the `regionalDebit` object.
 type: tab
 -->
 
-JSON string format for `regionalPin`: 
+JSON string format for `regionalDebit`: 
 
 ```json
 {
-   "regionalPin":{
+   "regionalDebit":{
      "pinBlock":{
         "encryptedPin": "F5f36kA...",
         "keySerialNumber": "TRACK_2",
         "pinEncryptionWorkingKey": ""
      }
-     "region": "",
-     "debitTransactioCode": "",
-     "debitMACValue": "",
-     "encryptedKeyIndex": "",
+     "debitMACValue": "7A773FA892CDAADC",  
+     "macSerialNumber": "F876543210E000200019",
+     "macWorkingKey": "FFFF",
+     "macWorkingKeyCheckDigits": "",
      "messageAuthenticationWorkingKey": "",
      "messageAuthenticationWorkingKeyCheckDigits": "",
      "messageEncryptionWorkingKey": "",
-     "debitPinPadSerialNumber": "",
-     "accountType": "",
-     "transactionSequenceCounter": ""
+     "accountType": "CHECKING"
    }
 }
 ```
+
+<!-- type: tab-end -->
+
+---
+
+### Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
 ##### Example of a regional debit payload request.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentEMV",
-      "emvData": "0249F3704833A12329F1002AB34",
-      "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
-         "deviceType": "INGENICO",
-         "keyId": "88000000022"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   },
-  "transactionInteraction": {
-    "origin": "POS",
-    "posEntryMode": "ICR_RELIABLE",
-    "posConditionCode": "CARD_PRESENT",
-    "terminalTimestamp": "2022-03-10T01:37:13Z",
-    "additionalPosInformation": {
-      "dataEntrySource": "MOBILE_TERMINAL",
-      "posFeatures": {
-        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
-        "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
-      }
-    }
-  },
-    "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+    "amount": {
+        "total": 42.80,
+        "currency": "CAD"
     },
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "code": "NASHVILLE",
-          "platform": "NORTH",
-          "priority": "PRIMARY"
+    "source": {
+        "sourceType": "PaymentTrack",
+        "encryptionData": {
+            "encryptionType": "ON_GUARD",
+            "encryptionTarget": "TRACK_2",
+            "encryptionBlock": "9986536786560=18292034288863948535615",
+            "keyId": "FFFF10970000000000F60114",
+            "deviceType": "INGENICO"
+        },
+        "regionalDebit": {
+            "debitMacValue": "7A773FA892CDAADC",  
+            "macKeySerialNumber": "F876543210E000200019",
+            "macWorkingKeyCheckDigits": "FFFF",
+            "accountType": "CHECKING"
         }
-      ]
+    },
+    "transactionDetails": {
+        "captureFlag": true,
+        "retrievalReferenceNumber": "000018486001" // REQUIRED FOR CANADA 
+    },
+    "transactionInteraction": {
+        "origin": "POS",
+        "posEntryMode": "MAG_STRIPE",
+        "posConditionCode": "CARD_PRESENT",
+        "additionalPosInformation": {
+            "dataEntrySource": "MOBILE_TERMINAL",
+            "stan": "486001", // REQUIRED FOR CANADA 
+            "posFeatures": {
+                "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+                "terminalEntryCapability": "MAG_STRIPE_ONLY"
+            }
+        }
+    },
+    "merchantDetails": {
+        "merchantId": "123409000000442",
+        "terminalId": "10000001"
     }
-  }
 }
+
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+-->
+
+##### Example of a refunds (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
  
 
 <!-- type: tab-end -->
@@ -125,5 +138,8 @@ JSON string format for `regionalPin`:
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Encrypted Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Pin Block](?path=docs/Resources/Master-Data/Pin-Block.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+- [Transaction Interaction](?path=/docs/Resources/Master-Data/Transaction-Interaction.md)
+
 
 ---
