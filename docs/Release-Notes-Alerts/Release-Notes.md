@@ -20,10 +20,10 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 | Details | Type |
 | ----- | ----- |
-| Reauth enhanced to support referenced transaction identifiers | Update |
-| Regional Debit support added for Canada | Feature |
-| Secure Data Capture iFrame solution updated to support Event Handling and advanced CSS | Update |
-| Fraud Settings updated in Marketplace to support Positive/Negative filtering and Transaction Restrictions | Update |
+| [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) updated to support referenced transaction identifiers | Update |
+| [Regional Debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) support added for Canada on Nashville | Feature |
+| Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support [event handling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md) and [advanced CSS styling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md) | Update |
+| [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Marketplace to support [positive/negative filtering](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md) and [transaction restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md) | Update |
 
 ---
 
