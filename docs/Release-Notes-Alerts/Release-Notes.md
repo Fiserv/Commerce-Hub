@@ -13,6 +13,20 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## August 2022
+
+- **Certification:** August ? 2022
+- **Production:** August ? 2022
+
+| Details | Type |
+| ----- | ----- |
+| Reauth enhanced to support referenced transaction identifiers | Update |
+| Regional Debit support added for Canada | Feature |
+| Secure Data Capture iFrame solution updated to support Event Handling and advanced CSS | Update |
+| Fraud Settings updated in Marketplace to support Positive/Negative filtering and Transaction Restrictions | Update |
+
+---
+
 ## July 2022
 
 - **Certification:** July 19th 2022
@@ -22,7 +36,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | ----- | ----- |
 | New [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) endpoint to support referenced transaction identifiers | Feature |
 | [PIN](?path=docs/Resources/Master-Data/Pin-Block.md) support for credit and debit cards on Chase | Update |
-| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) enhanced to remove deprecated fields `enhancedAuthorizationRequestIndicator` and `enhancedAuthorizationResponseIndicator` for Chase and changed `partialApproval` indicator to boolean for Nashville | Update 
+| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) enhanced to remove deprecated fields `enhancedAuthorizationRequestIndicator` and `enhancedAuthorizationResponseIndicator` for Chase and changed `partialApproval` indicator to boolean for Nashville | Update |
 | Merchant managed [3D-Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) payment source support added | Feature |
 | [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) on Chase | Update |
 
