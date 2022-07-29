@@ -77,8 +77,15 @@ The following table describes each for the fields in the above JSON sample:
 
 | Attributes | Valid Values | Description |
 | ---------- | -------------- | ---------------|
-| type | saq-card-form-state-change	| The type of event being emitted. Best practices dictate that the parent page should check this attribute in addition to the origin when consuming events to prevent malicious scripts. See "Listening for Card Form State Change Events' above. |
-
-
+| type | saq-card-form-state-change	| The type of eveready | blur | submit | card-capture-success | card-capture-failednt being emitted. Best practices dictate that the parent page should check this attribute in addition to the origin when consuming events to prevent malicious scripts. See "Listening for Card Form State Change Events' above |
+| valid | true or false	| A boolean flag indicating if the form (all fields) is in a valid state |
+| triger | object	| A complex object indicating what triggered this event |
+| valid | true or false	| A boolean flag indicating if the form (all fields) is in a valid state |
+| triger.type | ready, blur, submit, card-capture-success, card-capture-failed	| A string indicating what type of trigger initiated this event * ready - card form was successfully initialised and is ready to receive cardholder data
+- submit - card form was validated and core SAQ submit button was clicked. Please note that this event will not fire if a submit button is being used outside of the SAQ-A iframe bounds. See 'Submitting the card form' below.
+- card-capture-success - card capture was successful
+- card-capture-failed - card capture failed
+- blur - a card form input lost focus after user input |
+| valid | true or false	| A boolean flag indicating if the form (all fields) is in a valid state |
 
 
