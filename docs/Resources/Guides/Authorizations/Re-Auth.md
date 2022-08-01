@@ -108,7 +108,7 @@ titles: Request, Response
   "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-  }
+  } 
 }
 ```
 <!--
