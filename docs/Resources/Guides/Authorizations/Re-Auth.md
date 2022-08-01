@@ -40,7 +40,6 @@ The below table identifies the additional parameters in the `transactionDetails`
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 | `authorizationSequence` | *string* | 27 | Type of authorization sequence requested.|
 
