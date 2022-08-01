@@ -53,18 +53,18 @@ Negative filters are used to configure a blacklist and block the transaction bas
 
 | Filter | Variable | Attribute Criteria | 
 | ----- | ------ | ----- |
+| Add/change card numbers to block | `cardData` | No dashes or spaces  |
+| Credit BIN Block | `cardData` | 6-11 digit BIN. Will override the negative and positive card number lists. |
+| IP Addresses to block |  | |
+
+<!---
 | Billing Address | | Not case sensitive |
 | Cardholder Name to block | |  |
-| Add/change card numbers to block | `cardData` | No dashes or spaces  |
 | Country Profiles |  | |
-| Credit BIN Block | `cardData` | 6-11 digit BIN. Will override the negative and positive card number lists. |
 | Customer Reference to block |  | |
 | Debit BIN Block | `cardData`  | 6-11 digit BIN. Will override the negative and positive card number lists. |
 | Domain Name to block | `ecomURL` |  |
 | Email address/domain |  | |
-| IP Addresses to block |  | |
-
-<!---
 | Change Country profile for VT | | |
 -->
 ---
