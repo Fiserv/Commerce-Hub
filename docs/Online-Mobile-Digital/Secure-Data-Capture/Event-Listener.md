@@ -1,10 +1,10 @@
 
 # Interacting with the iframe
 
-Commerce Hub supports external interaction with the SAQ-A iframe which allows merchants to
+Commerce Hub supports external interaction with the iframe which allows merchants to do the following:
 
-- Listen for card form state change events and react accordingly
-- Explicitly submit the card form from an external stimulus such as a button click on the merchants site
+- Listen for card form state change events and react accordingly.
+- Explicitly submit the card form from an external stimulus such as a button click on the merchants site.
 
 ## Listening for Card Form State Changes
 
