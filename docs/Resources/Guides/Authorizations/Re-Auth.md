@@ -205,9 +205,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Referenced Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
