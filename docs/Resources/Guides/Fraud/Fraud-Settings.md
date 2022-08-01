@@ -38,30 +38,32 @@ Click the Save button and click the Home icon to return to the main screen.
 
 ## Fraud Features
 
+Enable Commerce Hub's fraud filters to help reduce fraudulent transactions.
+
 <!-- type: row -->
 
 <!-- type: card
 title: Address and Security Code
-description: About...
+description: The address and security code filters provide a merchant the ability to enable various transaction filters using the address and security code verification.
 link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
 -->
 
 <!-- type: card
-title: Second Card
+title: Positive/Negative Filters
 description: About...
-link: ?path=docs/about-developer-studio.md
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md
 -->
 
 <!-- type: card
-title: Third Card
+title: Transaction Restrictions
 description: About...
-link: ?path=docs/about-developer-studio.md
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
 -->
 
 <!-- type: card
-title: Fourth Card
+title: Velocity Controls
 description: About...
-link: ?path=docs/about-developer-studio.md
+link: 
 -->
 
 <!-- type: row-end -->
