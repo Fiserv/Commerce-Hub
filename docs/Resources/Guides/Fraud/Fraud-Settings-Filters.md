@@ -5,9 +5,6 @@ tags: [Fraud, Card Not Present, Card Present, In-Person, Online]
 
 # Fraud Filters
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Fraud Filter support and the documents related to the features will be released soon.
-
 Fraud filters enable the merchants to configure filters to control the fraudulent transactions from different channels and across multiple payment methods. Each charge request will run through the configured [positive](#positive-filters) and [negative](#negative-filters) rules to determine whether the payment should be accepted or rejected.
 
 The fraud filters configuration is flexible and completely customizable by the merchant and can be setup based on industry, product, sales or promotions, channel, customer details and store abilities.
@@ -49,14 +46,17 @@ Negative filters are used to configure a blacklist and block the transaction bas
 
 - **Lockout Time:** Lockout time fraud filter help merchant to configure how long any automatically blocked transaction will continue to be blocked from same card. The cardholder can then attempt approval again when the lock out time has expired.
 - **Risk Setting:** Risk Settings (Fraud Score Threshold), fraud filter enablea a merchant to setup the transaction fraud analysis acceptable score range. The range is 1-1000, with the default being 500.
+
+<!---
 - **Change Country profile for VT:**
+-->
 
 | Filter | Variable | Attribute Criteria | 
 | ----- | ------ | ----- |
 | Billing Address | | Not case sensitive |
 | Cardholder Name to block | |  |
 | Add/change card numbers to block | `cardData` | No dashes or spaces  |
-| Country Profiles |  | ? |
+| Country Profiles |  | |
 | Credit BIN Block | `cardData` | 6-11 digit BIN. Will override the negative and positive card number lists. |
 | Customer Reference to block |  | |
 | Debit BIN Block | `cardData`  | 6-11 digit BIN. Will override the negative and positive card number lists. |
@@ -64,20 +64,20 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | Email address/domain |  | |
 | IP Addresses to block |  | |
 
-| Change Country profile for VT |  | |
-
-
+<!---
+| Change Country profile for VT | | |
+-->
 ---
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
-- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
-- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
+
+<!---
+- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
-- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
+-->
 
 ---

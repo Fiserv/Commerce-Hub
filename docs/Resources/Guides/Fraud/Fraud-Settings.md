@@ -1,7 +1,7 @@
 ---
 tags: [Card Not Present, Fraud, Fraud Settings]
 ---
-
+ 
 # Fraud Settings
 
 <!-- theme: danger --> 
@@ -11,7 +11,7 @@ Commerce Hub implements various transaction and fraud controls that allows merch
 
 ---
 
-## Setup Fraud Settings
+## Setup Fraud Settings 
 
 To setup Fraud Settings in Marketplace, complete the following steps:
 
@@ -36,9 +36,36 @@ Click the Save button and click the Home icon to return to the main screen.
 
 ---
 
-## See Also
+## Fraud Features
 
-- [Account Profiles](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md)
-- [Enterpirse Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
+Enable Commerce Hub's fraud filters to help reduce fraudulent transactions.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Address and Security Code
+description: The address and security code filters provide a merchant the ability to enable various transaction filters using the address and security code verification.
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
+-->
+
+<!-- type: card
+title: Positive/Negative Filters
+description: Positive filters are used to configure a whitelist and allow the transaction to process based on specific criteria. Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md
+-->
+
+<!-- type: card
+title: Transaction Restrictions
+description: The Transaction Restriction settings can be enabled for duplicate transaction detection. Restrictions are applied by transaction controls inside of Marketplace.
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
+-->
+
+<!-- type: card
+title: Velocity Controls
+description: Velocity settings determine which transactions Commerce Hub allows to proceed to authorization. 
+link: 
+-->
+
+<!-- type: row-end -->
 
 ---
