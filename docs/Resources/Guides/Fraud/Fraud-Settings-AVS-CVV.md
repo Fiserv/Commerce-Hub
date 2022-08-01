@@ -214,7 +214,8 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Positive/Negative Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
