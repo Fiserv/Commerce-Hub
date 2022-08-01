@@ -38,7 +38,7 @@ Click the Save button and click the Home icon to return to the main screen.
 
 ## Fraud Features 
 
--[Visa](
+-[Visa]
 
 <!-- type: row -->
 
@@ -48,18 +48,23 @@ description: About...
 link: ?path=docs/about-developer-studio.md
 -->
 
+-[MasterCard]
+
 <!-- type: card
 title: Second Card
 description: About...
 link: ?path=docs/about-developer-studio.md
 -->
 
+-[Amex]
 
 <!-- type: card
 title: Third Card
 description: About...
 link: ?path=docs/about-developer-studio.md
 -->
+
+-[Discover]
 
 <!-- type: card
 title: Fourth Card
