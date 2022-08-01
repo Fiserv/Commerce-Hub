@@ -46,7 +46,10 @@ Negative filters are used to configure a blacklist and block the transaction bas
 
 - **Lockout Time:** Lockout time fraud filter help merchant to configure how long any automatically blocked transaction will continue to be blocked from same card. The cardholder can then attempt approval again when the lock out time has expired.
 - **Risk Setting:** Risk Settings (Fraud Score Threshold), fraud filter enablea a merchant to setup the transaction fraud analysis acceptable score range. The range is 1-1000, with the default being 500.
+
+<!---
 - **Change Country profile for VT:**
+-->
 
 | Filter | Variable | Attribute Criteria | 
 | ----- | ------ | ----- |
@@ -60,8 +63,10 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | Domain Name to block | `ecomURL` |  |
 | Email address/domain |  | |
 | IP Addresses to block |  | |
-| Change Country profile for VT | | |
 
+<!---
+| Change Country profile for VT | | |
+-->
 ---
 
 ## See Also
