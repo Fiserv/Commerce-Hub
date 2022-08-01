@@ -26,7 +26,7 @@ The below table identifies the parameters in the `regionalDebit` object.
 | `macWorkingKey` | *string* | 16  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data. |
 | `macWorkingKeyCheckDigits` | *string* | 4  | A message authentication code for a working key that uses a session key to check digits. |
 | `messageAuthenticationWorkingKey` | *string* | 2048 | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.  |
-| `messageAuthenticationWorkingKeyCheckDigits` | *string* |  | A message authentication code for a working key that uses a session key to check digits. |
+| `messageAuthenticationWorkingKeyCheckDigits` | *string* | 2048 | A message authentication code for a working key that uses a session key to check digits. |
 | `messageEncryptionWorkingKey` | *string* | 2048 | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data.  |
 | `accountType` | *string* | 256 | CHECKING or SAVINGS |
 
