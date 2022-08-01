@@ -2,7 +2,7 @@
 tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 ---
 
-# Secure Data Capture - iFrame Event Handling
+# Secure Data Capture - iFrame Event Listener
 
 Commerce Hub supports external interaction with the iFrame solution which allows merchants to listen for card form state change events and react accordingly, and explicitly submit the card form from an external stimulus such as a button click on the merchants site.
 
@@ -39,20 +39,19 @@ The following table describes each for the fields in the even schema:
 
 | Attribute| Description |
 | ----- | ----- |
-|	_type_ | The type of event being emitted. Best practices dictate that the parent page should check this attribute in addition to the origin when consuming events to prevent malicious scripts. See "Listening for Card Form State Change Events' above. _**Valid Value:** saq-card-form-state-change_ |
+|	_type_ | The type of event being emitted. Best practices dictate that the parent page should check this attribute in addition to the origin when consuming events to prevent malicious scripts. _**Valid Value:** saq-card-form-state-change_ |
 | _valid_	| A boolean flag _(true, false)_ indicating if the form (all fields) is in a valid state |
 | _trigger_ |	A complex object indicating what triggered this event. _**Valid Value:** object_ |
 | _trigger.type_ | A string indicating what [type of trigger](#trigger-type) initiated this event |
-5	trigger.element	N/A	A string representing the source DOM element which trigger this event
-6	trigger.window	saq-iframe | null	A string representing the document id of the window from which this event was trigger. This can be either the iframe window or the merchant site window or null.
-7	fields	N/A	An array of field objects giving a more detailed breakdown of the individual field validation checks.
-8	fields.card[*].valid	true | false	A boolean flag indicating if the form field is in a valid state
-9	fields.card[*].length	0,1,2,3....N	An integer indicating the number of characters in the field data at the time the event was fired
-Submitting the Card Form
-Commerce Hub allows merchants to submit the SAQ-A card form using a stimulus, such as a button click, from the merchants own website. The Fiserv SDK exposes the submitCardForm() function that make it easy for merchants to explicitly submit the card form. The following code snippet shows how a merchant can use a card form reference to submit the card form when a button external to the iframe is clicked
+|	_trigger.element_ |A string representing the source DOM element which trigger this event |
+|	_trigger.window_	|	A string representing the document id of the window from which this event was trigger. This can be either the iframe window or the merchant site window _(saq-iframe)_ or null. |
+|	_fields_	| | An array of field objects giving a more detailed breakdown of the individual field validation checks |
+| _fields.card[*].valid_	| A boolean flag _(true, false)_ indicating if the form field is in a valid state |
+|	_fields.card[*].length_ | An integer indicating the number of characters in the field data at the time the event was fired
 
 
 #### Trigger Type
+
 | Value | Description |
 | ----- | ----- |
 | _ready_ | card form was successfully initialised and is ready to receive cardholder data |
@@ -94,8 +93,26 @@ The following JSON is an example of a card for submit event
     }
 }
 
+## Submitting the Card Form
+
+Commerce Hub allows the submission of the card form using a stimulus, such as a button click, from the merchant's own website. The SDK exposes the `submitCardForm()` function that make it easy to explicitly submit the card form. The following code snippet shows how to use a card form reference to submit the form when a button external to the iFrame is clicked.
+
+<!--theme info-->
+> The card form `submit` state change event will not be emitted from the card form when it has been explicitly submitted from an external command.
+
+```javascript
 const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
 form.loadPaymentForm("payment-saq-a-form-div").then((next) => {}).catch((error) => {});
 // on external button click
 document.getElementById('external-submit-button').addEventListener('click', () => form.submitCardForm()) 
-Please note: The card form 'submit' state change event will not be emitted from the card form when it has been explicitly submitted from an external command.
+```
+
+## See Also
+
+## See Also
+
+- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+
+---
