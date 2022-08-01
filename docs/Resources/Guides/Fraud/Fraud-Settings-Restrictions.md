@@ -49,7 +49,7 @@ Transactions can be rejected based on the type selected.
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
+- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 
