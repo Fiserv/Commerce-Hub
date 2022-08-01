@@ -31,7 +31,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.m
 
 <!-- type: card
 title: Virtual Terminal
-description: Commerce Hub's Virtual Terminal allows a merchant an easy way to process offline transactions, transaction corrections, setup fraud controls and provides enchanced reporting capabilities.
+description: Commerce Hub's Virtual Terminal allows a merchant an easy way to process offline transactions, transaction corrections, setup fraud controls and provides enhanced reporting capabilities.
 link: ?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
 -->
 
