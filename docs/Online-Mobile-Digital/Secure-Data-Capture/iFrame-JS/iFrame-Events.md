@@ -120,6 +120,8 @@ document.getElementById('external-submit-button').addEventListener('click', () =
 
 ```
 
+---
+
 ## See Also
 
 - [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
