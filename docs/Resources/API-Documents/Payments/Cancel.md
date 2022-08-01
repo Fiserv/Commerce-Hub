@@ -68,7 +68,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 > **POST** `/payments/v1/cancel`
 
 ---
-
+ 
 ### Payload Example
 
 <!--
