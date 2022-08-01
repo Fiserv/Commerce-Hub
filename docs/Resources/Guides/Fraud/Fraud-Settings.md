@@ -21,22 +21,25 @@ Marketplace is accessed through the [Business Track Enterprise Portal](https://w
 
 #### Step 2: Access Transaction Controls 
 
-From the Profile Settings dropdown menu, click Transaction Controls. 
+Select either the Card Not Present Accounts or Card Present Accounts tab. From the account records, select the account and click Transaction Controls. 
 
 #### Step 3: Choose a Profile
 
-Click in the Profile Name box and select the profile that you want to assign transaction controls or [create a new profile](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md). Click the Edit Profile button and then click the Continue to Edit Profile button. 
+Click the Assign Profile link and select the profile that you want to assign transaction controls or [create a new profile](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md) and click the Assign button.
+
+<!-- theme: info -->
+> You can also change the profile associated by clicking the name of the profile and assigning a different one. 
 
 #### Step 4: Setup Fraud Settings
 
-Select the Fraud Setting tab on the left side. Select the Fraud Setting from the list to enable/disable the functions and features.
+Select the Fraud Settings tab on the left side. Select the [Fraud Settings](#fraud-settings) from the list to enable/disable the functions and features. Enable the fraud settings by selecting Enable on Commercehub checkbox and enabling the features or filters.
 
 #### Step 5: Save Settings
 Click the Save button and click the Home icon to return to the main screen.
 
 ---
 
-## Fraud Features
+## Fraud Settings
 
 Enable Commerce Hub's fraud filters to help reduce fraudulent transactions.
 
@@ -61,8 +64,8 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
 -->
 
 <!-- type: card
-title: Velocity Controls
-description: Velocity settings determine which transactions Commerce Hub allows to proceed to authorization. 
+title: Velocity Settings
+description: Velocity Settings determine which transactions Commerce Hub allows to proceed to authorization. 
 link: 
 -->
 
