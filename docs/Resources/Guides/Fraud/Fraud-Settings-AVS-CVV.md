@@ -50,20 +50,20 @@ titles: Visa, Mastercard, AMEX, Discover
 |  avsCode | streetMatch | postalCodeMatch | Description |
 | ----- | ------ | ----- | ----- |
 | U | NOT_CHECKED | NOT_CHECKED | Address Not Verified |
-| Address Match and 5 or 9 Digit Postal Match for US Only (Y)	| 
-| Address Match Postal Incompatible Format (B)	| |
-| Address Match and Postal Mismatch (A)	| |
-| Address Mismatch and Postal Match (Z)	| |
-| Address and Postal Incompatible Format (C ) | |
-| Address and Postal Match UK Only (F) | |
-| Address Mismatch and Postal Mismatch (N)	| |
-| Issuer No Support Not Verified International (G) | |
-| Not Supported (S)	 | |
-| Not Verified (I)	| |
-| Postal Match and Address Incompatible Format (P)	| |
-| Retry System Unavailable (R )	 | |
-| Street Addresses Postal Codes Match for International Only (M)	| |
-| Street Address Postal Code Match for International Only (D) | |
+| Y | MATCHED	| MATCHED | Address Match and 5 or 9 Digit Postal Match for US Only |
+| B | NOT_MATCHED| NOT_MATCHED | Address Match Postal Incompatible Format |
+| A | MATCHED | NOT_MATCHED | Address Match and Postal Mismatch |
+| Z | MISMATCH | MATCHED | Address Mismatch and Postal Match |
+| C | INCOMPATIBLE | INCIMPATIBLE | Address and Postal Incompatible Format |
+| F | MATCH | MATCH | Address and Postal Match UK Only |
+| N | MISMATCH | MISMATCH | Address Mismatch and Postal Mismatch |
+| G | NOT_SUPPORTED | NOT_VERIFIED | Issuer No Support Not Verified International |
+| S | NOT_SUPPORTED | NOT_SUPPORTED | Not Supported |
+| I | NOT_VERIFIED | NOT_VERIFIED | Not Verified |
+| P | MATCH | INCOMPATIBLE | Postal Match and Address Incompatible Format |
+| R | RETRY | RETRY | Retry System Unavailable |
+| M | MATCH | MATCH | Street Addresses Postal Codes Match for International Only |
+| D | MATCH | MATCH | Street Address Postal Code Match for International Only |
 
 <!--
 type: tab
@@ -71,10 +71,20 @@ type: tab
 
 #### MasterCard Filters
 
-| AVS Filters | Variable | 
-| ----- | ------ | 
-| Address Not Verified (U) | |
-| Address Match and 5or9 Digit Postal Match for US Only (Y)	| 
+
+|  avsCode | streetMatch | postalCodeMatch | Description |
+| ----- | ------ | ----- | ----- |
+| X | MATCH | MATCH | Address and 9 Digit ZIP Match | 
+| Y | MATCH | MATCH | Address and 5-digit ZIP Match | 
+| A | MATCH | MATCH | Address and 5-digit ZIP Match |
+| W | MATCH | NOT_MATCHED | 9-digit ZIP Matches, Address Does Not Match |
+| Z | MATCH | NOT_MATCHED | 5-digit ZIP Matches, Address Does Not Match | 
+| N | NOT_MATCH | NOT_MATCHED | Address and ZIP Do Not Match | 
+| U | UNAVAILABLE | UNAVAILABLE | Address Info is Unavailable | 
+| R | UNAVAILABLE | UNAVAILABLE | Retry: System Unavailable or Timeout |
+| E | INELIGIBLE | INELIGIBLE | Error: Transaction ineligible for address verification or edit error found in the message that prevents AVS from being performed | 
+| S | NOT_SUPPORTED | NOT_SUPPORTED | Service Not Supported: Issuer does not support address verification | 
+
 | Address Match Postal Incompatible Format (B)	| |
 | Address Match and Postal Mismatch (A)	| |
 | Address Mismatch and Postal Match (Z)	| |
