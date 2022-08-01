@@ -1,7 +1,7 @@
 ---
 tags: [Card Not Present, Fraud, Fraud Settings]
 ---
-
+ 
 # Fraud Settings
 
 <!-- theme: danger --> 
