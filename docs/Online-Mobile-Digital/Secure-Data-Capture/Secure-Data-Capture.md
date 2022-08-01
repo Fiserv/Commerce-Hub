@@ -21,6 +21,12 @@ The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/
 <!-- type: row -->
 
 <!-- type: card
+title: iFrame
+description: Allows a merchant an easy and secure way to embed a payment form into a website.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
+-->
+
+<!-- type: card
 title: Hosted Payment Page
 description: Allows a merchant to redirect their customer to a secure Commerce Hub Hosted Payment Page to process a transaction.
 link:
@@ -32,12 +38,6 @@ description: Allows a merchant to request an invoice via the Commerce Hub RESTfu
 link:
 -->
 
-<!-- type: card
-title: iFrame
-description: Allows a merchant an easy and secure way to embed a payment form into a website.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
--->
-
 <!-- type: row-end -->
 
 ---
@@ -47,21 +47,21 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.m
 <!-- type: row -->
 
 <!-- type: card
-title: Direct Post
-description: Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's Hosted Payment Page.
-link: 
--->
-
-<!-- type: card
 title: JavaScript
 description: Allows a merchant an easy and secure way to embed a payment form into a website.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
 -->
 
 <!-- type: card
-title: Merchant Managed API
+title: API Only
 description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+-->
+
+<!-- type: card
+title: Direct Post
+description: Allows the merchants to build their own form to collect all payment information and submit a transaction using Commerce Hub's Hosted Payment Page.
+link: 
 -->
 
 <!-- type: row-end -->
@@ -73,11 +73,10 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
 <!-- type: row -->
 
 <!-- type: card
-title: Merchant Managed Encryption
+title: Multi-Use Public Key
 description: Integration that includes the use of a static public key, where the merchant can capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/MM-Encryption/MM-Encryption.md
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
 -->
-
 
 <!-- type: row-end -->
 
