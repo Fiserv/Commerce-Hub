@@ -29,11 +29,11 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 ## Request Variables
 
-The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` `referenceTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
+The `transactionIndicatorType` and `authorizationSequence` in `transactionDetails` along with the `referenceTransactionId` or `referenceMerchantTransactionId` in `referenceTransactionDetails` from the original transaction must be sent in the subsequent reauthorization performed.
 
 <!--
 type: tab
-titles: transactionDetails, JSON Example
+titles: transactionDetails, referenceTransactionDetails, JSON Example
 -->
 
 The below table identifies the additional parameters in the `transactionDetails` object.
@@ -58,14 +58,28 @@ The below table identifies the valid values of type of `authorizationSequence`.
 type: tab
 -->
 
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request. 
+
+| Variable | Data Type | Maximum Length |Description |
+|---------|----------|----------------|---------|
+|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
 JSON string format:
  
 ```json
 {
    "transactionDetails":{
-      "primaryTransactionId": "84356532738",
       "transactionIndicatorType": "REAUTH",
       "authorizationSequence": "AUTHORIZATION_ONLY"
+   },
+   "referenceTransactionDetails":{
+      "referenceTransactionId": "84356531348"
    }
 }
 ```
@@ -97,9 +111,11 @@ titles: Request, Response
   },
   "transactionDetails": {
     "captureFlag": false,
-    "primaryTransactionId": "838916029300",
     "authorizationTypeIndicator": "REAUTH",
     "authorizationSequence": "AUTHORIZATION_ONLY"
+  },
+  "referenceTransactionDetails": {
+      "referenceTransactionId": "84356531348"
   },
   "splitShipment": {
     "totalCount": 5
@@ -108,7 +124,7 @@ titles: Request, Response
   "merchantDetails":{
       "merchantId": "123456789789567",
       "terminalId": "123456"
-  } 
+  }
 }
 ```
 <!--
@@ -158,24 +174,24 @@ type: tab
       "merchantCountry": "US",
       "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2021-04-16T16:06:05Z",
-         "transactionReferenceInformation": null,
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCHED",
-            "postalCodeMatch": "MATCHED",
-            "securityCodeMatch": "MATCHED",
-            "association":{
-               "avsCode": "Z",
-               "securityCodeResponse": "S",
-               "cardHolderNameResponse": "M"
-            }
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
          }
       }
    },
    "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
+      "captureFlag": false
    }
 }
 ```
