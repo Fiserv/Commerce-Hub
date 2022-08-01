@@ -128,6 +128,94 @@ type: tab
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
  
+```json
+{
+    "gatewayResponse": {
+        "transactionType": "CHARGE",
+        "transactionState": "CAPTURED",
+        "transactionOrigin": "POS",
+        "transactionProcessingDetails": {
+            "orderId": "CHG01567188dd4bb94cfd93543edd7acba8cb",
+            "transactionTimestamp": "2022-07-29T17:17:28.158609Z",
+            "apiTraceId": "f944365dcd634f06b9faa1c722db1977",
+            "clientRequestId": "82561",
+            "transactionId": "f944365dcd634f06b9faa1c722db1977"
+        }
+    },
+    "source": {
+        "sourceType": "PaymentEMV",
+        "card": {
+            "expirationMonth": "12",
+            "expirationYear": "2018",
+            "bin": "450644",
+            "last4": "1933",
+            "scheme": "VISA"
+        },
+        "emvData": "8a023030910ac2e41378606776818840",
+        "regionalDebit": {
+            "debitMacValue": "3E4F63782824AD3D",
+            "messageAuthenticationWorkingKeyCheckDigits": "FFFF"
+        }
+    },
+    "paymentReceipt": {
+        "approvedAmount": {
+            "total": 20.00,
+            "currency": "CAD"
+        },
+        "processorResponseDetails": {
+            "approvalStatus": "APPROVED",
+            "approvalCode": "000025",
+            "referenceNumber": "000018458051",
+            "processor": "FISERV",
+            "host": "NASHVILLE",
+            "networkInternationalId": "0047",
+            "responseCode": "000",
+            "responseMessage": "Approved",
+            "hostResponseCode": "00",
+            "hostResponseMessage": "APPROVAL",
+        }
+    },
+    "transactionDetails": {
+        "captureFlag": true,
+        "transactionCaptureType": "hcs",
+        "processingCode": "002000",
+        "createToken": false,
+        "retrievalReferenceNumber": "000018458051"
+    },
+    "transactionInteraction": {
+        "posEntryMode": "ICR_RELIABLE",
+        "posConditionCode": "CARD_PRESENT",
+        "additionalPosInformation": {
+            "stan": "458051",
+            "dataEntrySource": "MOBILE_TERMINAL",
+            "posFeatures": {
+                "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+                "terminalEntryCapability": "MAG_STRIPE_ONLY"
+            }
+        }
+    },
+    "merchantDetails": {
+        "tokenType": "S013",
+        "terminalId": "10000001",
+        "merchantId": "100009000000442"
+    },
+    "networkDetails": {
+        "network": {
+            "network": "Visa"
+        },
+        "debitNetworkId": "074000",
+        "networkResponseCode": "00"
+    },
+    "paymentTokens": [
+        {
+            "tokenData": "1499982719941933",
+            "tokenSource": "TRANSARMOR",
+            "tokenResponseCode": "000",
+            "tokenResponseDescription": "SUCCESS"
+        }
+    ]
+}
+```
 
 <!-- type: tab-end -->
 
