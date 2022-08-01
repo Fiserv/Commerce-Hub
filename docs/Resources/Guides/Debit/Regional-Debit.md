@@ -21,14 +21,14 @@ The below table identifies the parameters in the `regionalDebit` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `pinBlock` | *object* | N/A | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
-| `debitMacValue` | *string* |  | To confirm that the key data elements of the transaction have not been tampered. MAC protection is required on all Canadian debit transactions. It is optional when processing U.S. debit/EBT transactions. |
+| `debitMacValue` | *string* | 256 | To confirm that the key data elements of the transaction have not been tampered. MAC protection is required on all Canadian debit transactions. It is optional when processing U.S. debit/EBT transactions. |
 | `macKeySerialNumber` | *string* | 256  | This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions.  |
 | `macWorkingKey` | *string* | 16  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data. |
 | `macWorkingKeyCheckDigits` | *string* | 4  | A message authentication code for a working key that uses a session key to check digits. |
-| `messageAuthenticationWorkingKey` | *string* |  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.  |
+| `messageAuthenticationWorkingKey` | *string* | 2048 | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.  |
 | `messageAuthenticationWorkingKeyCheckDigits` | *string* |  | A message authentication code for a working key that uses a session key to check digits. |
-| `messageEncryptionWorkingKey` | *string* |  | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data.  |
-| `accountType` | *string* |  | CHECKING or SAVINGS |
+| `messageEncryptionWorkingKey` | *string* | 2048 | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data.  |
+| `accountType` | *string* | 256 | CHECKING or SAVINGS |
 
 
 <!--
