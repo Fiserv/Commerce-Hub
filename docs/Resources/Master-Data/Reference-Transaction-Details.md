@@ -41,9 +41,12 @@ JSON string format for `referenceTransactionDetails`:
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/cancel)
 - [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Cancels Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Returns Request](?path=docs/Resources/API-Documents/Payments/Return.md)
+- [Reauthorization Request](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Transaction Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md)
 
 ---
