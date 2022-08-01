@@ -50,19 +50,19 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
 
 <!-- type: card
 title: Positive/Negative Filters
-description: About...
+description: Positive filters are used to configure a whitelist and allow the transaction to process based on specific criteria. Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
 link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md
 -->
 
 <!-- type: card
 title: Transaction Restrictions
-description: About...
+description: The Transaction Restriction settings can be enabled for duplicate transaction detection. Restrictions are applied by transaction controls inside of Marketplace.
 link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
 -->
 
 <!-- type: card
 title: Velocity Controls
-description: About...
+description: Velocity settings determine which transactions Commerce Hub allows to proceed to authorization. 
 link: 
 -->
 
