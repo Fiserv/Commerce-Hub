@@ -58,6 +58,8 @@ The below table identifies the valid values of type of `authorizationSequence`.
 type: tab
 -->
 
+The below table identifies the additional parameters in the `referenceTransactionDetails` object.
+
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request. 
 
