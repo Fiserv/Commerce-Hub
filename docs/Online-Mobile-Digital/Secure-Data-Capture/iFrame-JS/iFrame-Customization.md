@@ -131,6 +131,8 @@ In order to achieve the desired branding, merchants will need to target specific
 -body
 |-app-root
   |-app-card-form
+    |-app-card-number form
+
     |-app-card-number
       |-Input element: id = cardNumber, name = ccNumber
     |-app-select-expiry
@@ -144,11 +146,11 @@ In order to achieve the desired branding, merchants will need to target specific
 
 ```
 
-Our best practices advise the following
+Following are the best practices:
 
-- Prefer well known tags, ids or names when targeting HTML elements (see above)
+- Prefer standard tags, ids or names when targeting HTML elements.
 - Don't target classes if it can be avoided
-- With the exception of the aforementioned well known elements, never assume the HTML contents and structure will never change
+- Considering the exception of the aforementioned standard elements, do not assume the HTML contents and structure will never change
 - Keep query selectors short and concise for example, prefer input[type='submit'] over body form div input[type='submit']
 
 ### CSS Whitelist
