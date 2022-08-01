@@ -25,11 +25,13 @@ The below table identifies the parameters in the `regionalDebit` object.
 | `macKeySerialNumber` | *string* | 256  | This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions.  |
 | `macWorkingKey` | *string* | 16  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data. |
 | `macWorkingKeyCheckDigits` | *string* | 4  | A message authentication code for a working key that uses a session key to check digits. |
+| `accountType` | *string* | 256 | CHECKING or SAVINGS |
+
+<!---
 | `messageAuthenticationWorkingKey` | *string* | 2048 | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.  |
 | `messageAuthenticationWorkingKeyCheckDigits` | *string* | 2048 | A message authentication code for a working key that uses a session key to check digits. |
 | `messageEncryptionWorkingKey` | *string* | 2048 | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data.  |
-| `accountType` | *string* | 256 | CHECKING or SAVINGS |
-
+-->
 
 <!--
 type: tab
@@ -47,11 +49,8 @@ JSON string format for `regionalDebit`:
      }
      "debitMACValue": "7A773FA892CDAADC",  
      "macSerialNumber": "F876543210E000200019",
-     "macWorkingKey": "FFFF",
-     "macWorkingKeyCheckDigits": "",
-     "messageAuthenticationWorkingKey": "",
-     "messageAuthenticationWorkingKeyCheckDigits": "",
-     "messageEncryptionWorkingKey": "",
+     "macWorkingKey": "",
+     "macWorkingKeyCheckDigits": "FFFF",
      "accountType": "CHECKING"
    }
 }
