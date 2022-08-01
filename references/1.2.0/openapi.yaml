@@ -2757,30 +2757,38 @@ components:
           example: '1.50'}
     RegionalDebit:
       x-model-version: 1.0
-      description: Data that applies to <a href="../docs?path=docs/Resources/Guides/Debit/Regional-Debit.md">regional
-        debit</a> transactions.
+      description: 'Data that applies to <a href="../docs?path=docs/Resources/Guides/Debit/Regional-Debit.md">regional debit</a> transactions.'
       properties:
-        pinBlock: {$ref: '#/components/schemas/PinBlock'}
-        region: {type: string, description: Region of debit origin.}
-        debitTransactionCode: {type: string, description: Identifies the debit transaction.}
-        debitMACValue: {type: string, description: Used to confirm that the key data
-            elements of the transaction have not been tampered.}
-        encryptedKeyIndex: {type: number, description: 'Indicates the key index in
-            use by PIN Pad, valid values are 1 through 9.', example: '1'}
-        messageAuthenticationWorkingKey: {type: string, description: A message authentication
-            code for a working key that uses a session key to detect both accidental
-            and intentional modifications of the data.}
-        messageAuthenticationWorkingKeyCheckDigits: {type: string, description: A
-            message authentication code for a working key that uses a session key
-            to check digits.}
-        messageEncryptionWorkingKey: {type: string, description: A message encryption
-            working key is typically a random string of bits generated specifically
-            to scramble and unscramble data.}
-        debitPinPadSerialNumber: {type: string, description: Serial Number of the
-            PIN device in use at the POS.}
-        accountType: {type: string, description: CHECKING or SAVINGS, example: CHECKING}
-        transactionSequenceCounter: {type: integer, description: Contains a unique
-            sequence counter for this transaction from this point of sale.}
+        pinBlock:
+          $ref: '#/components/schemas/PinBlock'
+        debitMacValue:
+          type: string
+          description: 'Used to confirm that the key data elements of the transaction have not been tampered.'
+        macKeySerialNumber:
+          type: string
+          maxLength: 256
+          description: 'This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions.'
+        macWorkingKey:
+          type: string
+          maxLength: 16
+          description: 'A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.'
+        macWorkingKeyCheckDigits:
+          type: string
+          maxLength: 4
+          description: 'A message authentication code for a working key that uses a session key to check digits.'
+        messageAuthenticationWorkingKey:
+          type: string
+          description: 'A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.'
+        messageAuthenticationWorkingKeyCheckDigits:
+          type: string
+          description: 'A message authentication code for a working key that uses a session key to check digits.'
+        messageEncryptionWorkingKey:
+          type: string
+          description: 'A message encryption working key is typically a random string of bits generated specifically to scramble and unscramble data.'
+        accountType:
+          type: string
+          description: 'CHECKING or SAVINGS'
+          example: 'CHECKING'
     ChargesResponse:
       x-model-version: 1.0
       properties:
@@ -6124,4 +6132,3 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
-
