@@ -36,19 +36,15 @@ Click the Save button and click the Home icon to return to the main screen.
 
 ---
 
-## Fraud Features 
-
--[Visa]
+## Fraud Features
 
 <!-- type: row -->
 
 <!-- type: card
-title: Card One
+title: Address and Security Code
 description: About...
-link: ?path=docs/about-developer-studio.md
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md
 -->
-
--[MasterCard]
 
 <!-- type: card
 title: Second Card
@@ -56,15 +52,11 @@ description: About...
 link: ?path=docs/about-developer-studio.md
 -->
 
--[Amex]
-
 <!-- type: card
 title: Third Card
 description: About...
 link: ?path=docs/about-developer-studio.md
 -->
-
--[Discover]
 
 <!-- type: card
 title: Fourth Card
