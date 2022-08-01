@@ -31,9 +31,9 @@ link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 
 <!-- type: card
 title: Regional Debit
-description: Process international debit cards through debit newtworks to accept in-person payments and cash withdraws. 
-link: 
--->
+description: Process international debit cards through debit networks to accept in-person payments and cash withdraws. 
+link: ?path=docs/Resources/Guides/Debit/Regional-Debit.md
+
 
 <!-- type: row-end -->
 
