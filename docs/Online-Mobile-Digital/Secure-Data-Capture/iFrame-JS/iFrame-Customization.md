@@ -127,6 +127,11 @@ const fiservConfig = {
 
 In order to achieve the desired branding, merchants will need to target specific elements within the HTML DOM and apply custom styles to those elements. Commerce Hub will attempt to maintain the current HTML structure, custom CSS query selectors may not work between releases if targeting HTML elements is not done correctly. The following block outlines the common element tags, identifiers and names that Commerce Hub guarantees will not change between minor releases.
 
+- Use standard tags, ids or names when targeting HTML elements
+- Don't target classes if it can be avoided
+- With the exception of the standard tags, do not assume the HTML contents and structure will never change
+- Keep query selectors short and concise, example: use `input[type='submit']` instead of `body form div input[type='submit']`
+
 ```css
 
 -body
@@ -146,16 +151,10 @@ In order to achieve the desired branding, merchants will need to target specific
 
 ```
 
-Following are the best practices:
-
-- Prefer standard tags, ids or names when targeting HTML elements.
-- Don't target classes if it can be avoided
-- Considering the exception of the aforementioned standard elements, do not assume the HTML contents and structure will never change
-- Keep query selectors short and concise for example, prefer input[type='submit'] over body form div input[type='submit']
-
 ---
 
-### CSS Whitelist
+### Supported Properties
+
 The following list outlines the list CSS properties that are supported by the iframe:
 
 ```css
@@ -194,11 +193,12 @@ const CSS_PROPERTY_WHITELIST = Object.freeze({
 
 ---
 
-### Unsupported CSS
+### Security Restrictions
 
-iFrame solution does not support `input[value='*']` query selector as it poses a security risk by letting the attackers inject css that calls a remote URL when the input matches a certain value. If the injected remote url is a unique URL per input value, the attacker can have full or partial access to the individual content. To prevent this, Commerce Hub implements a filter that bypasses this query selector that match a specific regex. 
+Commerce Hub implements security restrictions that prevent attackers from injecting or performing exfiltration attacks in the iFrame solution.
 
-To mitigate the risk of a CSS exfiltration attack, `[url\(.*\]` incorporates a CSS property value filter which blocks certain css values. 
+- `input[value='*']` query selector: Poses a security risk by allowing attackers to inject css that calls a remote URL when the input matches a certain value. If the injected remote URL is a unique URL per input value, the attacker can have full or partial access to the individual content.  
+- `[url\(.*\]` property: Mitigates the risk of a CSS exfiltration attack.
 
 ---
 
