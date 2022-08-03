@@ -12,6 +12,7 @@ paths:
       tags: [Payment Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Charges
+      x-disable-default-example: true
       summary: Submit a charge transaction.
       description: Use this payload to originate a financial transaction based on
         the <code>captureFlag</code> False (Auth) or True (Sale). A sale will authorize
@@ -22,7 +23,7 @@ paths:
         required: true
         content:
           application/json:
-            # schema: {$ref: '#/components/schemas/ChargesRequest'}
+            
             examples:
               PaymentCard: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
               PaymentEMV: {summary: ChargesRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
@@ -43,7 +44,7 @@ paths:
           description: Created
           content:
             application/json:
-              # schema: {$ref: '#/components/schemas/ChargesResponse'}
+              
               examples:
                 PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
                 PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
