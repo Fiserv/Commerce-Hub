@@ -20,11 +20,11 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 | Details | Type |
 | ----- | ----- |
-| [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) updated to support referenced transaction identifiers | Update |
-| [Regional Debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) support added for Canada on Nashville | Feature |
-| Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support event handling and advanced CSS styling | Update |
-| [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Marketplace to support positive/negative filtering and transaction restrictions | Update |
-| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) support added for card present transactions on Chase | Update |
+| [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md&branch=preview) updated to support referenced transaction identifiers | Update |
+| [Regional Debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md&branch=preview) support added for Canada on Nashville | Feature |
+| Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md&branch=preview) updated to support event handling and advanced CSS styling | Update |
+| [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md&branch=preview) updated in Marketplace to support positive/negative filtering and transaction restrictions | Update |
+| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md&branch=preview) support added for card present transactions on Chase | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
@@ -40,7 +40,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | [PIN](?path=docs/Resources/Master-Data/Pin-Block.md&branch=preview) support for credit and debit cards on Chase | Update |
 | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md&branch=preview) changed `partialApproval` indicator to boolean for Nashville | Update |
 | Merchant managed [3D-Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md&branch=preview) payment source support added | Feature |
-| [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) on Chase | Update |
+| [Custom Identifier](?path=docs/Resources/Guides/BYOID.md&branch=preview) support for Merchant Identifiers (MID/TID) on Chase | Update |
 
 ---
 
@@ -72,7 +72,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | [Directed routing](?path=docs/Resources/Guides/Directed-Routing.md&branch=preview) enhanced to support better identification of payment processor and platforms | Update |
 | [Processor response](?path=docs/Resources/Master-Data/Processor-Response-Details.md&branch=preview) enhanced to support better identifiaction of payment processor and host | Update |
 | Timeout error handling enhanced | Update |
-| [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) on Nashville | Feature |
+| [Custom Identifier](?path=docs/Resources/Guides/BYOID.md&branch=preview) support for Merchant Identifiers (MID/TID) on Nashville | Feature |
 | Increased maxLength of `merchantOrderId` and `merchantTransactionId` to 128 in [transaction details](?path=docs/Resources/Master-Data/Transaction-Details.md&branch=preview) | Update |
 | Added support for processing card not present authorization and cancel transactions through Chase Salem [processor](?path=(?path=docs/Resources/Guides/Directed-Routing.md&branch=preview)). | Feature 
 
