@@ -430,21 +430,7 @@ components:
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
 
-    ChargesRequest:
-      x-model-version: 1.0
-      properties:
-        amount: {$ref: '#/components/schemas/Amount'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        customer: {$ref: '#/components/schemas/Customer'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+    
     Phone:
       x-model-version: 1.0
       description: Customer <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">phone</a>
@@ -2082,28 +2068,7 @@ components:
         accountType: {type: string, description: CHECKING or SAVINGS, example: CHECKING}
         transactionSequenceCounter: {type: integer, description: Contains a unique
             sequence counter for this transaction from this point of sale.}
-    ChargesResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        cardDetails: {$ref: '#/components/schemas/CardDetails'}
-        paymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
-        paymentTokens:
-          type: array
-          items: {$ref: '#/components/schemas/ResponsePaymentToken'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
+    
     PaymentReceipt:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Payment-Receipt.md">Payment
