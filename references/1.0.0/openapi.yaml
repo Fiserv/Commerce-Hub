@@ -1,4 +1,4 @@
- openapi: 3.0.2
+openapi: 3.0.2
 info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
     processing., version: v1-1.0.2}
