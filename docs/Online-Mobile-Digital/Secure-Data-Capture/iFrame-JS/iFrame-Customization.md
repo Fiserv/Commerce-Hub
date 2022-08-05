@@ -157,39 +157,34 @@ In order to achieve the desired branding, merchants will need to target specific
 
 The following block outlines the common element tags, identifiers, and names that Commerce Hub guarantees will not change between minor releases.
 
-```css
-
-const CSS_PROPERTY_WHITELIST = Object.freeze({
-  "-moz-appearance": true,
-  "-moz-osx-font-smoothing": true,
-  "-moz-tap-highlight-color": true,
-  "-moz-transition": true,
-  "-webkit-appearance": true,
-  "-webkit-font-smoothing": true,
-  "-webkit-tap-highlight-color": true,
-  "-webkit-transition": true,
-  "box-shadow": true,
-  "-webkit-box-shadow": true,
-  "-webkit-text-fill-color": true,
-  "background-color": true,
-  "appearance": true,
-  "color": true,
-  "margin": true,
-  "border": true,
-  "border-bottom": true,
-  "border-left": true,
-  "border-right": true,
-  "border-top": true,
-  "border-color": true,
-  "border-style": true,
-  "font-style": true,
-  "font-family": true,
-  "font-size": true,
-  "font-weight": true,
-  "padding": true
-});
-
-```
+- -moz-appearance
+- -moz-osx-font-smoothing
+- -moz-tap-highlight-color
+- -moz-transition
+- -webkit-appearance
+- -webkit-font-smoothing
+- -webkit-tap-highlight
+- color
+- -webkit-transition
+- box-shadow
+- -webkit-box-shadow
+- -webkit-text-fill-color
+- background-color
+- appearance
+- color
+- margin
+- border
+- border-bottom
+- border-left
+- border-right
+- border-top
+- border-color
+- border-style
+- font-style
+- font-family
+- font-size
+- font-weight
+- padding
 
 ---
 
