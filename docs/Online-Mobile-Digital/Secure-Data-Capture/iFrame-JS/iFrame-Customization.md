@@ -59,17 +59,17 @@ The following example shows all the text labels that can be overridden for a par
 
 ## CSS Styling
 
-The default iFrame JS styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
+The default iFrame styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
 
 <!-- theme: warning -->
 > Support for certain CSS properties/selectors have been restricted for security reasons.
 
-Following are the two attributres of `configFiserv` object:
+The following table outlines the attributes of the `fiservConfig.css.styleConfig` object:
 
 | Attributes | Description |
 |------|-------|
 | `base` | base styling for the iframe on all device sizes |
-| `media` | device based styling rules that override the base styling rules when the current device matches the defined media query | 
+| `media` | device specific styling rules that override the base styling rules when the current device matches the defined media query | 
 
 
 The following code snippet shows a sample styling configuration:
@@ -125,7 +125,7 @@ const fiservConfig = {
 
 ### Standard Tags
 
-In order to achieve the desired branding, merchants will need to target specific elements within the HTML DOM and apply custom styles to those elements. Commerce Hub will attempt to maintain the current HTML structure, custom CSS query selectors may not work between releases if targeting HTML elements is not done correctly. The following block outlines the common element tags, identifiers and names that Commerce Hub guarantees will not change between minor releases.
+In order to achieve the desired branding, merchants will need to target specific elements within the HTML DOM and apply custom styles to those elements. Commerce Hub will attempt to maintain the current HTML structure, however, custom CSS query selectors may not work between releases if targeting HTML elements is not done correctly. 
 
 - Use standard tags, ids or names when targeting HTML elements
 - Don't target classes if it can be avoided
@@ -155,7 +155,7 @@ In order to achieve the desired branding, merchants will need to target specific
 
 ### Supported Properties
 
-The following list outlines the list CSS properties that are supported by the iframe:
+The following block outlines the common element tags, identifiers, and names that Commerce Hub guarantees will not change between minor releases.
 
 ```css
 
