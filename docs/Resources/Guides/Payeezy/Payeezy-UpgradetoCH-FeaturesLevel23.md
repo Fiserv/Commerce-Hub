@@ -13,7 +13,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, quick-keys, b
 
 ## See Also
 
-- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ExtendedLanding.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
 
