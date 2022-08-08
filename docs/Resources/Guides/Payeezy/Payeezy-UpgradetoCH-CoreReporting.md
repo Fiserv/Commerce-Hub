@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, reporting, card-not-present, payeezy, se
 # Reporting
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 ## Reporting UI
 
@@ -73,7 +73,7 @@ To generate the comparable **RPM Fraudulent** report in CLX, use the Data Soluti
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
 ---
