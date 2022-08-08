@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, virtual-terminal, card-not-present, paye
 # Virtual Terminal
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 ## General
 
@@ -15,9 +15,12 @@ Virtual Terminal was previously accessed via the Payeezy Real-time Payment Manag
 
 In RPM, the Virtual Terminal functionality allows for Forced Post and Open Voids to be processed. In the CLX solution, Forced Post is not currently supported, but planned for a future release. Open Void is not supported in CLX.  
 
-The ability to enter in Soft Descriptors on an inititated transaction is not available.
+Features currently unavailable in CLX Virtual Terminal:
 
-The ability to create a copy of a prior Pre-Auth or Purchase is no longer available.
+<ul>
+  <li>The ability to add Soft Descriptors on an inititated transaction.</li>
+  <li>Creating a copy of a prior Pre-Auth or Purchase.</li>
+</ul>
 
 RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time, CLX Virtual Terminal is available in English language only.
 
@@ -50,6 +53,6 @@ When processing secondary transactions (Completion/Capture, Void and Refund), th
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 
 ---
