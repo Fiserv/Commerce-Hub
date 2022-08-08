@@ -38,12 +38,48 @@ Filters are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/
 
 AVS filters allow you to reject transaction based on each card brand. 
 
+| AVS-Visa | 
+| AVS-MasterCard |
+| AVS Decline Codes |
+| AVS-Discover |
+
+#### AVS Decline Codes Features
+
+|  avsCode | streetMatch | postalCodeMatch | Description |
+| ----- | ------ | ----- | ----- |
+| Y | MATCHED | MATCHED | Address Match and Postal Match |
+| A | MATCHED	| MIS_MATCHED | Address Match and Postal Mismatch |
+| Z | MIS_ MATCHED | MATCHED | Address and Postal Match UK Only |
+| F | MATCHED	| MATCHED | Address Match and 5 or 9 Digit Postal Match for US Only |
+| N | MIS_MATCHED | MIS_MATCHED | Address Mismatch and Postal Mismatch |
+| S | NOT_SUPPORTED	| NOT_SUPPORTED | AVS Check Not Supported |
+| K | MATCHED | MATCHED | Name Match |
+| O | MATCHED	| MATCHED | Name Match and Address Match |
+| L | MATCHED | MATCHED | Name Match and Postal Match |
+| M | MATCHED	| MATCHED | Name Match , Address Match and Postal Match |
+| E | MIS_MATCHED	| MATCHED | Name Mismatch ,Address Match and Postal Match |
+| W | MIS_MATCHED | MIS_MATCHED | Name Mismatch , Address Mismatch and Postal Mismatch |
+| F | MIS_MATCHED	| MATCH | Name Mismatch and Address Match |
+| D | MIS_MATCHED | MATCHED | Name Mismatch and Postal Match |
+| U | N/A	| N/A | Not Available |
+| I | NOT_PROVIDED | NOT_PROVIDED | CVV Not Provided |
+| M | MATCHED	| MATCHED | Street Addresses Postal Codes Match for International Only |
+| D | MATCHED | MATCHED | Street Address Postal Code Match for International Only |
+| R | N/A	| N/A | System Unavailable  |
+
+
+
+
 ---
 
 <!--
 type: tab
 titles: Visa, Mastercard, AMEX, Discover
 -->
+
+#
+
+REMOVE THE BELOW FILTERS?
 
 #### Visa Filters
 
