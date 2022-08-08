@@ -30,7 +30,7 @@ The 'original_amount' element used for processing Discover cards in Payeezy is n
 
 ## See Also
 
-- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ExtendedLanding.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
 ---
