@@ -173,10 +173,33 @@ type: tab
 
 CVV filters allow you to reject transaction based on each card brand. 
 
+|  avsCode | streetMatch | postalCodeMatch | Description |
+| ----- | ------ | ----- | ----- |
+| M | MATCH | MATCH | CVV2 CVC2 CID Match | 
+| P | NOT_PROCESSED | NOT_PROCESSED | CVV Not Processed | 
+| N | NO_MATCH | NO_MATCH | CVV No Match | 
+| S | N/A | N/A | CVV Required Error | 
+| I | NOT_PROVIDED | NOT_PROVIDED | CVV Not Provided | 
+| X | N/A | N/A | Server Response Error | 
+| U | N/A | N/A | Unknown Issuer | 
+
 <!--
 type: tab
 titles: Visa, Mastercard, AMEX, Discover
 -->
+
+#### Visa Filters
+
+| securityCodeResponse | securityCodeMatch | Description |
+| ----- | ------ | ----- |
+| M	| MATCHED | CVV2 CVC2 CID Match |
+| CVV Not Processed (P)	| |
+| CVV No Match (N)	| |
+| CVV Required Error (S) | |	
+| Server Response Error (X)	| |
+| Unknown Issuer (U) | |
+
+
 
 #### Visa Filters
 
