@@ -7,7 +7,7 @@ tags: [carat, commerce-hub,  card-not-present, dynamic-descriptor, Statement-Des
 # Soft Descriptors
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub. 
 
@@ -38,19 +38,19 @@ Sample JSON string format for `dynamicDescriptor`:
 }
 ```
 
-See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-TechnicalAPI.md) documentation for detailed information on translating Payeezy Soft Descriptor elements to Commerce Hub Dynamic Descriptor elements.
+See [element level mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) documentation for detailed information on translating Payeezy Soft Descriptor elements to Commerce Hub Dynamic Descriptor elements.
 
 ---
 
 ### Virtual Terminal
 
-In Payeezy Real-time Payment Manager (RPM), a self-service configuration was available to enable the use of Soft Descriptors in Virtual Terminal (after the North Merchant Master configuration is set). In ClientLine Enterprise (CLX), usage of soft descriptors is not availble in Virtual Terminal [(see Virtual Terminal details)](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-CoreVT.md).
+In Payeezy Real-time Payment Manager (RPM), a self-service configuration was available to enable the use of Soft Descriptors in Virtual Terminal (after the North Merchant Master configuration is set). In ClientLine Enterprise (CLX), usage of soft descriptors is not availble in Virtual Terminal [(see Virtual Terminal details)](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreVT.md).
 
 ---
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ExtendedLanding.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
