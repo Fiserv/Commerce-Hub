@@ -4,10 +4,10 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, release-notes
 
 ---
 
+# Release Notes
+
 <!-- theme: danger -->
 >  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
-
-# Release Notes
 
 As Commerce Hub continues to be improved with new features and value added services, the Payeezy Merchant Migration Playbook will be updated to include new content or revise previous content if needed.  These release notes list the updates made to the playbook with the most recent update shown first.
 
