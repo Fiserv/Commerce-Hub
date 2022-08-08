@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, tokens-request, payment-token, tokenizat
 # Tokenization
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 
 <!--type: tab
@@ -78,7 +78,7 @@ Token number can be viewed in the transaction detail of the Search report in CLX
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
