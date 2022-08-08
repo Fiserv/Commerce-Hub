@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, quick-keys, b
 # Quick Keys
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Quick Keys was previously accessed via the Payeezy Real-time Payment Manager (RPM) POS screen and will now be available through ClientLine Enterprise (CLX) Virtual Terminal Initiate Bulk. For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
@@ -31,7 +31,7 @@ In RPM, a row could be edited by clicking on it and updating information in the 
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ExtendedLanding.md)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 
 ---
