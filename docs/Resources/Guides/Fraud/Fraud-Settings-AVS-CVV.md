@@ -75,12 +75,13 @@ CVV filters allow you to reject transaction based on each card brand.
 | ----- | ------  | ----- |
 | M | MATCHED | Data matches with issuer system | 
 | P | NOT_MATCHED | Data does not match with issuer system | 
-| N | NO_PROCESSED | Security code verification not done | 
+| N | NOT_PROCESSED | Security code verification not done | 
 | S | NOT_PRESENT | Security code not present in the input | 
-| I | NOT_PROVIDED | NOT_PROVIDED | CVV Not Provided | 
+| I | NOT_PROVIDED | NOT_PROVIDED | CVV Not Provided | REMOVE? NOT IN CONFLUENCE LIST
 | X | NOT_CERTIFIED | Issuer not certified to verify sercurity code | 
 | U | NOT_CHECKED | Security code not checked | 
-|   | NONE | No security code provided |
+| Y | MATCHED | Applicable only for AMEX | 
+| Blank Response  | NONE | No security code provided |
 
 
 ---
