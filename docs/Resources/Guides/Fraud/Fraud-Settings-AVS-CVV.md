@@ -8,7 +8,7 @@ The address and security code filters provide a merchant the ability to enable v
 
 <!-- theme: info -->
 > Not all banks return a response when cardholder verification data is sent and a filter will not cover this situation.
-
+ 
 ---
 
 ## Filter Settings
