@@ -21,7 +21,7 @@ The below table identifies the parameters in the `regionalDebit` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `pinBlock` | *object* | N/A | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
-| `debitMacValue` | *string* | 256 | To confirm that the key data elements of the transaction have not been tampered. MAC protection is required on all Canadian debit transactions. It is optional when processing U.S. debit/EBT transactions. |
+| `debitMacValue` | *string* | 256 | [Message authentication](#message-authentication) is used to confirm that the key data elements of the transaction have not been tampered. MAC protection is required on all Canadian debit transactions. It is optional when processing U.S. debit/EBT transactions. |
 | `macKeySerialNumber` | *string* | 256  | This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions.  |
 | `macWorkingKey` | *string* | 16  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data. |
 | `macWorkingKeyCheckDigits` | *string* | 4  | A message authentication code for a working key that uses a session key to check digits. |
@@ -93,6 +93,7 @@ titles: Request, Response
     },
     "transactionDetails": {
         "captureFlag": true,
+        "processingCode": "002000", // REQUIRED FOR CANADA 
         "retrievalReferenceNumber": "000018486001" // REQUIRED FOR CANADA 
     },
     "transactionInteraction": {
@@ -217,6 +218,55 @@ type: tab
 ```
 
 <!-- type: tab-end -->
+
+---
+
+## Message Authentication
+
+Message authentication provides another layer of security using encryption so that the message is received by the intended recipient and has not been tampered with on the network. Message authentication is performed by using a MAC value computed by both the sender and receiver. MAC value is derived using an encryption algorithm on certain data elements in a message. Terminal computes and includes `debitMACValue` in the message sent to the host. The host calculates the MAC using the same data elements. If the host-calculated value matches that in the message, it confirms the message has not been tampered with or damaged during the transmission.
+
+### Request Requirements
+
+A terminal uses a DUKPT key to generate the encrypted MAC block and is included in the request sent to the host.
+
+<!-- theme: Info -->
+> The `processingCode` and `retrievalReferenceNumber` in `transactionDetails` and `stan` in `transactionInteraction` are required fields for Canada Debit processing. 
+
+The terminal generates a MAC block for a transaction by using the following data elements:
+
+- Account number (PAN)
+- Processing code 
+- Transaction amount
+- STAN
+- Retrieval Reference Number 
+
+#### Processing Codes
+ 
+ 
+The following values are supported Canadian debit [processing codes](?path=docs/Resources/Master-Data/Processing-Code.md)
+
+- **Sale:** ‘001000’ (savings) ‘002000’ (checking)
+- **Refund:** ‘200010’ (savings) ‘200020’ (checking)
+- **Adjustment of Refund:** ‘021000’ (savings) ‘022000’ (checking)
+- **Adjustment of Sale:** ‘220010’ (savings) ‘220020’ (checking)
+
+### Response Validation
+
+Responses received by the terminal may or may not have a MAC value, depending upon the response code received. If there is a valid MAC value present in the `debitMACValue` field in the response, the terminal does the verification on the MAC.
+
+When terminal receives the transaction response from the host, the MAC value is validated using the same DUKPT key that was sent in the request. 
+
+The following are the mandated data elements that are used for the MAC verification by the terminal:
+
+- Account number (PAN). This is a variable length field and the maximum length is 19 bytes
+- Processing code
+- Transaction amount
+- STAN
+- Retrieval Reference Number
+- Response code
+ 
+<!-- theme: info -->
+> Upon a MAC validation failure, the terminal must complete a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) with the host.
 
 ---
 
