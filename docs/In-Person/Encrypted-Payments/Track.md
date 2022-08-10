@@ -1,5 +1,5 @@
 ---
-tags: [Track, In-Person, Card Present, Encrypted Payments]
+tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source]
 ---
 
 # PaymentTrack
@@ -7,7 +7,7 @@ tags: [Track, In-Person, Card Present, Encrypted Payments]
 
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment terminal using magnetic stripe. This can be used when the payment terminal fails to obtain the card details from the card's chip.
 
-A third-party device captures the customer's payment source unencrypted or encryptes the data and sends it to the Commerce Hub integrated terminal or software.
+A device captures the customer's payment source unencrypted or encryptes the data and sends it to Commerce Hub.
 
 <!-- theme: warning -->
 > It is not recommended to send unencrypted track 1 and track 2 data for the payment transaction.
@@ -446,7 +446,7 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [EMV Chip](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)

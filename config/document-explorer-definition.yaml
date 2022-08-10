@@ -37,7 +37,7 @@
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
     sections:
-    - title: Encrypted PIN Pad
+    - title: Encrypted Device
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
     - title: Fully-Integrated
       link: docs/In-Person/Integrations/Fully-Integrated.md
@@ -54,7 +54,7 @@
       sections:
       - title: Contactless (NFC)
         link: docs/In-Person/Encrypted-Payments/Contactless.md
-      - title: EMV Chip and PIN
+      - title: EMV Chip
         link: docs/In-Person/Encrypted-Payments/EMV.md
       - title: Manual Entry
         link: docs/In-Person/Encrypted-Payments/Manual.md
@@ -72,6 +72,10 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
       - title: JavaScript
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
+      - title: API Only
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+      - title: Multi-Use Public Key
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
@@ -143,26 +147,32 @@
         link: docs/Resources/API-Documents/Payments/Charges.md
       - title: Capture
         link: docs/Resources/API-Documents/Payments/Capture.md
-      - title: Cancel
-        link: docs/Resources/API-Documents/Payments/Cancels.md
-      - title: Refund
+      - title: Cancels
+        link: docs/Resources/API-Documents/Payments/Cancel.md
+      - title: Refunds
         link: docs/Resources/API-Documents/Payments/Refund.md
       - title: Inquiry
         link: docs/Resources/API-Documents/Payments/Inquiry.md
     - title: Payments VAS
       sections:
-      - title: Verification
-        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
+      - title: Card Capture
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
       - title: Information Lookup
         link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
       - title: Tokenization
         link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+      - title: Verification
+        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
     - title: Data Solutions
       sections:
       - title: Enhanced Data Service
         link: docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+    - title: Security
+      sections:
+      - title: Credentials
+        link: docs/Resources/API-Documents/Security/Credentials.md  
 - sections:
   - title: Updates and Alerts
     sections:

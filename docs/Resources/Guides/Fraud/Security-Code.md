@@ -272,6 +272,7 @@ type: tab
 
 The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
+
 The below table identifies the valid values of `securityCodeMatch`.
 
 | Value | Descrption |

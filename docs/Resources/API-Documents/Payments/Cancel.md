@@ -68,7 +68,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 > **POST** `/payments/v1/cancel`
 
 ---
-
+ 
 ### Payload Example
 
 <!--
@@ -100,7 +100,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a cancels (200: Success) response.
+##### Example of a cancels (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

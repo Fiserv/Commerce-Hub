@@ -17,8 +17,7 @@ Refunds can be initiated for the full amount or a partial amount of the original
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 <!-- theme: warning -->
-> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the customer's account. 
- 
+> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the customer's account.
 
 ---
 
@@ -27,6 +26,9 @@ Refunds can be initiated for the full amount or a partial amount of the original
 A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type. 
 
 ### Request Variables
+
+<!-- theme: warning -->
+> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
 
 <!-- 
 type: tab
@@ -84,7 +86,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a cancels payload request.
+##### Example of a refunds payload request.
 
 ```json
 
@@ -109,7 +111,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a refunds (200: Success) response.
+##### Example of a refunds (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -184,7 +186,8 @@ A refund request is initiated by sending the `transactionId` in the URI and may 
 
 ### Request Variables
 
-A refund request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the refund type.
+<!-- theme: warning -->
+> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
 
 <!--
 type: tab

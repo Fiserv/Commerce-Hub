@@ -1,13 +1,10 @@
 ---
-tags: [Online, Card Not Present, Secure Payment Form, Tokenization, Secure Data Capture, iFrame]
+tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 ---
 
-# iFrame Integration
+# Secure Data Capture - iFrame Solution
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include iFrame integration support and the documents related to the features will be released soon.
-
-Commerce Hub's iFrame allows E-commerce merchants to create payment data via a payment nonce `sessionId` (one-time use token). Cardholder data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrame, thereby allowing merchants to offload payment processing of card data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub's iFrame allows E-commerce merchants to create payment data via a payment nonce `sessionId` _(one-time use token)_. Cardholder data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrame, thereby allowing merchants to offload payment processing of card data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 ### Benefits
 
@@ -24,13 +21,13 @@ Commerce Hub accomplishes this by injecting an iFrame into a parent form where c
 5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
 6. Commerce Hub sends the transaction response to the merchant's website.
 
-**Begin integration with Commerce Hub's [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
+**Begin integration with Commerce Hub's [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
 
 ---
 
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your iFrame integaration. 
+The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
 **Recommendations**
 
@@ -44,7 +41,7 @@ The following recommendations are to limit potential for fraudulent activity on 
 
 - [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
 - [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
-- [JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
+- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

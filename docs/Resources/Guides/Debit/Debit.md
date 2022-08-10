@@ -31,9 +31,9 @@ link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 
 <!-- type: card
 title: Regional Debit
-description: Process international debit cards through debit newtworks to accept in-person payments and cash withdraws. 
-link: 
--->
+description: Process international debit cards through debit networks to accept in-person payments and cash withdraws. 
+link: ?path=docs/Resources/Guides/Debit/Regional-Debit.md
+
 
 <!-- type: row-end -->
 
@@ -54,7 +54,7 @@ link: docs/Resources/Guides/Directed-Routing.md
 <!-- type: card
 title: Least Cost Debit
 description: Least Cost Debit Routing capabilities use a single API interface, for both standard processing and optimized debit routing. When enabled for this service, debit transactions are sent in a standard charges request with no additional coding.
-link: ?path=docs/Resources/Guides/Debit/Least-Cost-Debit.md
+link: 
 -->
 
 <!-- type: card
