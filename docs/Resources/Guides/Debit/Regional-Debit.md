@@ -9,6 +9,45 @@ Regional (International) Debit Solutions from Commerce Hub provide anywhere, any
 <!-- theme: info -->
 > Commerce Hub currently only supports regional debit for Canada on Nashville. Contact your account representative for more information on using regional (international) debit solutions.
 
+# Message Authentication
+
+Message authentication provides another layer of security using encryption so that the message is received by the intended recipient and has not been tampered with on the network. Message authentication is performed by using a MAC value computed by both the sender and receiver. MAC value is derived using an encryption algorithm on certain data elements in a message. Terminal computes and includes the MAC value in the message sent to the host. Receiver calculates the MAC using the same data elements. If the receiver-calculated value matches that in the message, it is relatively certain that the message has not been tampered with or damaged during the transmission.
+
+Responses received by the terminal may or may not have a MAC block, depending upon the response code received. If there is a valid MAC block present in the MAC field in the response, the terminal does the verification on the MAC.
+
+The terminal generates a MAC block for a sale/refund/reversal request by using the following data elements:
+
+- Account number (PAN)
+- Processing code
+- Transaction amount
+- STAN
+- Terminal RRN
+
+Terminal uses DUKPT key for MAC to generate the encrypted MAC block and includes it in the request sent to the host.
+ 
+Processing code, STAN and Terminal RRN are required fields for Canada Debit processing. 
+ 
+The following values are supported Canadian debit processing codes:
+
+- Sale - ‘001000’ (savings) ‘002000’ (checking)
+- Refund - ‘200010’ (savings) ‘200020’ (checking)
+- Adjustment of Refund - ‘021000’ (savings) ‘022000’ (checking)
+- Adjustment of Sale - ‘220010’ (savings) ‘220020’ (checking)
+ 
+When terminal receives the sale/refund/reversal response from the host, the MAC block is validated using the same DUKPT key that was sent in the request. 
+
+The following are the mandated data elements that are used for the MAC verification by the terminal:
+
+1. Account number (PAN). This is a variable length field and the maximum length is 19 bytes
+2. Processing code
+3. Transaction amount
+4. STAN
+5. Terminal RRN
+6. Response code.
+ 
+<!-- theme: info -->
+> Upon a MAC validation failure, terminal must complete a reversal with the host.
+
 ---
  
 <!--
