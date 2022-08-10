@@ -35,6 +35,18 @@ The below table identifies the response elements.
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
 | `asymmetricEncryptionAlgorithm` | *string* |  | RSA/ECB/PKCS1 with padding. |
 
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
+
 <!-- type: tab-end -->
 
 ---
@@ -61,7 +73,11 @@ titles: Request, Response
   "publicKeyRequired": true,
   "accessTokenRequired": true,
   "accessTokenTimeToLive": "889",
-  "responseRedirectURL": "https://www.somedomain.com"
+  "responseRedirectURL": "https://www.somedomain.com",
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+    }
 }
 
 ```
