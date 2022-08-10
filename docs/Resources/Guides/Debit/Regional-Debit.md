@@ -9,25 +9,33 @@ Regional (International) Debit Solutions from Commerce Hub provide anywhere, any
 <!-- theme: info -->
 > Commerce Hub currently only supports regional debit for Canada on Nashville. Contact your account representative for more information on using regional (international) debit solutions.
 
-# Message Authentication
+## Message Authentication
 
 Message authentication provides another layer of security using encryption so that the message is received by the intended recipient and has not been tampered with on the network. Message authentication is performed by using a MAC value computed by both the sender and receiver. MAC value is derived using an encryption algorithm on certain data elements in a message. Terminal computes and includes the MAC value in the message sent to the host. Receiver calculates the MAC using the same data elements. If the receiver-calculated value matches that in the message, it is relatively certain that the message has not been tampered with or damaged during the transmission.
 
+### MAC Block
+
 Responses received by the terminal may or may not have a MAC block, depending upon the response code received. If there is a valid MAC block present in the MAC field in the response, the terminal does the verification on the MAC.
 
-The terminal generates a MAC block for a sale/refund/reversal request by using the following data elements:
+#### Request Requirements
+
+A terminal uses a DUKPT key to generate the encrypted MAC block and is included in the request sent to the host.
+
+<!-- theme: Info -->
+> The `processingCode` and `retrievalReferenceNumber` in `transactionDetails` and `stan` in `transactionInteraction` are required fields for Canada Debit processing. 
+
+The terminal generates a MAC block for a transaction by using the following data elements:
 
 - Account number (PAN)
-- Processing code
+- Processing code 
 - Transaction amount
 - STAN
-- Terminal RRN
+- Retrieval Reference Number 
 
-Terminal uses DUKPT key for MAC to generate the encrypted MAC block and includes it in the request sent to the host.
+##### Canada Processing Codes
  
-Processing code, STAN and Terminal RRN are required fields for Canada Debit processing. 
  
-The following values are supported Canadian debit processing codes:
+The following values are supported Canadian debit processing codes(?path:
 
 - Sale - ‘001000’ (savings) ‘002000’ (checking)
 - Refund - ‘200010’ (savings) ‘200020’ (checking)
@@ -132,6 +140,7 @@ titles: Request, Response
     },
     "transactionDetails": {
         "captureFlag": true,
+        "processingCode": "002000", // REQUIRED FOR CANADA 
         "retrievalReferenceNumber": "000018486001" // REQUIRED FOR CANADA 
     },
     "transactionInteraction": {
