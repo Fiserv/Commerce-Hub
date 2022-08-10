@@ -31,7 +31,7 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |01 = Pre-Authorization  | /payments/v1/charges with captureFlag = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |03 = Forced Post   | Q2 2023 Targeted Release   | 
 |04 = Open Refund   | Q3 2022 Targeted Release | 
-|05 = Pre-Authorization Only   | NO LONGER SUPPORTED* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
+|05 = Pre-Authorization Only   | REPLACED by Account Verification* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |13 = Open Void   | NOT YET SUPPORTED  | 
 |32 = Tagged Pre-Authorization Completion   | /payments/v1/charges/{transactionId}/capture | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)| 
 |33 = Tagged Void   | /payments/v1/charges/{transactionId}/cancel | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)| 
@@ -68,7 +68,7 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 | Transaction Type | Commerce Hub Endpoint | Commerce Hub <br> Additional Info |
 | -------- | ------------- | :----------: |
 |purchase | /payments/v1/charges with captureFlag = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|authorize (zero dollar) | NO LONGER SUPPORTED* | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
+|authorize (zero dollar) | REPLACED by Account Verification* * | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |authorize (non zero dollar) | /payments/v1/charges with captureFlag = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |forced_post   | Q2 2023 Targeted Release  | 
 |capture   | /payments/v1/charges/{transactionId}/capture  | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
