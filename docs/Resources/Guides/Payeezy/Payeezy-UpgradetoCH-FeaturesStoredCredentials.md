@@ -15,9 +15,9 @@ In Payeezy, American Express card brand used the `ecommerce_flag` element for pr
 
 In Payeezy, the Stored Credentials are returned in the response; in Commerce Hub, they are not.  See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) documentation for more information.
 
-In Commerce Hub, merchant managed scheduled transactions require the billPaymentType request element in the [additionalDataCommon object](?path=docs/Resources/Master-Data/Additional-Data.md).
+In Commerce Hub, merchant managed scheduled transactions require the `billPaymentType` request element in the [additionalDataCommon object](?path=docs/Resources/Master-Data/Additional-Data.md).
 
-The 'original_amount' element used for processing Discover cards in Payeezy is now 'networkOriginalAmount' in Commerce Hub and contained in the Discover object. Additional information on mapping stored credential elements from Payeezy to Commerce Hub can be found in the [mapping documentation](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md).
+The `original_amount` element used for processing Discover cards in Payeezy is now `networkOriginalAmount` in Commerce Hub and contained in the Discover object. 
 
 **The following elements are currently not supported in Commerce Hub:**
 
@@ -25,6 +25,8 @@ The 'original_amount' element used for processing Discover cards in Payeezy is n
 |----------|---------------|
 |Discover| `protectbuy_indicator`|
 |Visa|`authorization_type_override`|
+
+Additional information on mapping stored credential elements from Payeezy to Commerce Hub can be found in the [mapping documentation](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md).
 
 ---
 
