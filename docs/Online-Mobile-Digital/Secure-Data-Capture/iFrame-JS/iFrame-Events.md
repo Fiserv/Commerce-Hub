@@ -45,7 +45,6 @@ The following table describes each for the fields in the even schema:
 | ----- | ----- |
 |	_type_ | The type of event being emitted. Best practices dictate that the parent page should check this attribute in addition to the origin when consuming events to prevent malicious usage. _**Valid Value:** saq-card-form-state-change_ |
 | _valid_	| A boolean flag _(true, false)_ indicating if the form (all fields) is in a valid state |
-| _trigger_ |	A complex object indicating what triggered this event. _**Valid Value:** object_ |
 | _trigger.type_ | A string indicating what [type of trigger](#trigger-type) initiated this event |
 |	_trigger.element_ |A string representing the source DOM element which trigger this event |
 |	_trigger.window_	|	A string representing the document id of the window from which this event was trigger. This can be either the iframe window or the merchant site window _(saq-iframe)_ or null. |
@@ -57,7 +56,7 @@ The following table describes each for the fields in the even schema:
 
 | Value | Description |
 | ----- | ----- |
-| _ready_ | card form was successfully initialised and is ready to receive cardholder data |
+| _ready_ | card form was successfully initialized and is ready to receive cardholder data |
 | _submit_ | card form was validated and core SAQ submit button was clicked. Please note that this event will not fire if a submit button is being used outside of the iFrame bounds. |
 | _card-capture-success_ | card capture was successful |
 | _card-capture-failed_ | card capture failed |
@@ -105,7 +104,7 @@ The following JSON is an example of a card form submit event:
 
 ## Submitting the Card Form
 
-Commerce Hub allows the submission of the card form using a stimulus, such as a button click, from the merchant's own website. The SDK exposes the `submitCardForm()` function that make it easy to explicitly submit the card form. The following code snippet shows how to use a card form reference to submit the form when a button external to the iFrame is clicked.
+Commerce Hub allows the submission of the card form using a stimulus, such as a button click, from the merchant's own website. The SDK exposes the `submitCardForm()` function that makes it easy to explicitly submit the card form. The following code snippet shows how to use a card form reference to submit the form when a button external to the iFrame is clicked.
 
 <!--theme info-->
 > The card form `submit` state change event will not be emitted from the card form when it has been explicitly submitted from an external command.
