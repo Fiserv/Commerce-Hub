@@ -43,7 +43,7 @@ The following table describes each for the fields in the even schema:
 
 | Attribute| Description |
 | ----- | ----- |
-|	_type_ | The type of event being emitted. Best practices dictate that the parent page should check this attribute in addition to the origin when consuming events to prevent malicious scripts. _**Valid Value:** saq-card-form-state-change_ |
+|	_type_ | The type of event being emitted. Best practices dictate that the parent page should check this attribute in addition to the origin when consuming events to prevent malicious usage. _**Valid Value:** saq-card-form-state-change_ |
 | _valid_	| A boolean flag _(true, false)_ indicating if the form (all fields) is in a valid state |
 | _trigger_ |	A complex object indicating what triggered this event. _**Valid Value:** object_ |
 | _trigger.type_ | A string indicating what [type of trigger](#trigger-type) initiated this event |
