@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, configuration, user-management, card-not
 # Configuration
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Configuration was previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be available from ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
@@ -79,6 +79,6 @@ Change log of all updates to a user account is available for review.
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyMigrationGuideLandingPage.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 
 ---
