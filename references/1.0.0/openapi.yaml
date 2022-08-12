@@ -12,6 +12,7 @@ paths:
       tags: [Payment Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Charges
+      x-default-example: PaymentCard
       summary: Submit a charge transaction.
       description: Use this payload to originate a financial transaction based on
         the <code>captureFlag</code> False (Auth) or True (Sale). A sale will authorize
@@ -84,6 +85,7 @@ paths:
       tags: [Capture Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Capture
+      x-default-example: Capture
       summary: Submit a capture transaction.
       description: Use this payload to capture a previous pre-authorized transaction
         (aka post-authorization). This will settle (withdrawal) funds from the customer.
@@ -128,6 +130,7 @@ paths:
       tags: [Cancel Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Cancel
+      x-default-example: Cancel
       summary: Submit a cancel transaction.
       description: Use this payload to perform cancel a transaction (aka void).
       requestBody:
@@ -171,6 +174,7 @@ paths:
       tags: [Refund Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Refund
+      x-default-example: Refund
       summary: Submit a refund transaction.
       description: Use this payload to perform a partial or full refund (aka credit/return).
         This will return funds to the customer.
@@ -215,6 +219,7 @@ paths:
       tags: [Account  Verification Endpoint Definition]
       x-group-name: Payments VAS
       x-proxy-name: Verification
+      x-default-example: PaymentCard
       summary: Verify a payment card or payment token.
       description: Use this payload to perform an account verification for a payment
         card or payment token. This will check the validity and respond if an account
@@ -275,6 +280,7 @@ paths:
     post:
       x-group-name: Payments VAS
       x-proxy-name: Tokenization
+      x-default-example: PaymentCard
       summary: Create a payment token.
       description: Use this payload to create a payment token from a payment source.
       requestBody:
@@ -341,6 +347,7 @@ paths:
       tags: [Enhanced Data Definition]
       x-group-name: Data Solutions
       x-proxy-name: Enhanced Data Service
+      x-default-example: PaymentCard
       summary: Submit a EDS Request.
       description: Use this payload prior to a transaction to perform an Enhanced
         Data Service request for a payment card or payment token. This will be used
@@ -387,6 +394,7 @@ paths:
       tags: [Return Optimizer Definition]
       x-group-name: Data Solutions
       x-proxy-name: Return Optimization Service
+      x-default-example: PaymentToken
       summary: Submit a ROS request.
       description: Use this payload prior to a transaction to perform an Return Optimizer
         request for a PaymentToken. This will be used by the merchant
@@ -426,7 +434,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-      
   /payments/v1/transaction-inquiry:
     x-model-version: 1.0
     post:
@@ -434,6 +441,7 @@ paths:
         - Transaction Inquiry
       x-group-name: 'Payments'
       x-proxy-name: 'Inquiry'
+      x-default-example: transactionID
       summary: Submit a transaction inquiry.
       description: 'Provides a Commerce Hub transaction and their attributes based on order identifier.' 
       requestBody:
@@ -492,6 +500,7 @@ paths:
         - Payment Security Endpoint
       x-group-name: 'Security'
       x-proxy-name: 'Credentials'
+      x-default-example: Credentials
       summary: Request security credentials (access token).
       description: 'This is the credential generation call for authorizing subsequent financial transactions. A valid <code>accessToken</code> is required for web client requests.'
       requestBody:
