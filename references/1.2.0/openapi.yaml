@@ -12,6 +12,7 @@ paths:
       tags: [Payment Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Charges
+      x-default-example: PaymentCard
       summary: Submit a charge transaction.
       description: Use this payload to originate a financial transaction based on
         the <code>captureFlag</code> False (Auth) or True (Sale). A sale will authorize
@@ -82,6 +83,7 @@ paths:
       tags: [Capture Endpoint Definition]
       x-group-name: Payments
       x-proxy-name: Capture
+      x-default-example: Capture
       summary: Submit a capture transaction.
       description: Use this payload to capture a previous pre-authorized transaction
         (aka post-authorization). This will settle (withdrawal) funds from the customer.
@@ -127,6 +129,7 @@ paths:
       - Cancel Endpoint Definition
       x-group-name: 'Payments'
       x-proxy-name: 'Cancels'
+      x-default-example: transactionId
       summary: Submit a cancel transaction.
       description: 'Use this payload to perform cancel a transaction (aka void).'
       requestBody:
@@ -136,14 +139,13 @@ paths:
             schema:
               $ref: '#/components/schemas/CancelRequest'
             examples:
-              MerchantTransactionID:
+              merchantTransactionId:
                 summary: Cancel a transaction using Merchant Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
-              TransactionID:
+              transactionId:
                 summary: Cancel a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -160,10 +162,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/CancelResponse'
               examples:
-                MerchantTransactionID:
+                merchantTransactionId:
                   summary: Cancel response using Merchant Transaction ID
                   $ref: '#/components/examples/CancelResponse'
-                TransactionID:
+                transactionId:
                   summary: Cancel response using Transaction ID
                   $ref: '#/components/examples/CancelResponse'   
         400:
@@ -193,6 +195,7 @@ paths:
       - Refund Endpoint Definition
       x-group-name: 'Payments'
       x-proxy-name: 'Refunds'
+      x-default-example: transactionId
       summary: Submit a cancel transaction.
       description: 'Use this payload to perform a partial or full refund (aka credit/return). This will return funds to the customer.'
       requestBody:
@@ -202,14 +205,13 @@ paths:
             schema:
               $ref: '#/components/schemas/CancelRequest'
             examples:
-              MerchantTransactionID:
+              merchantTransactionId:
                 summary: Cancel a transaction using Merchant Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
-              TransactionID:
+              transactionId:
                 summary: Cancel a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -226,10 +228,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/CancelResponse'
               examples:
-                MerchantTransactionID:
+                merchantTransactionId:
                   summary: Cancel response using Merchant Transaction ID
                   $ref: '#/components/examples/CancelResponse'
-                TransactionID:
+                transactionId:
                   summary: Cancel response using Transaction ID
                   $ref: '#/components/examples/CancelResponse'   
         400:
@@ -258,6 +260,7 @@ paths:
       tags: [Account  Verification Endpoint Definition]
       x-group-name: Payments VAS
       x-proxy-name: Verification
+      x-default-example: PaymentCard
       summary: Verify a payment card or payment token.
       description: Use this payload to perform an account verification for a payment
         card or payment token. This will check the validity and respond if an account
@@ -318,6 +321,7 @@ paths:
     post:
       x-group-name: Payments VAS
       x-proxy-name: Tokenization
+      x-default-example: PaymentCard
       summary: Create a payment token.
       description: Use this payload to create a payment token from a payment source.
       requestBody:
@@ -380,6 +384,7 @@ paths:
       tags: [Enhanced Data Definition]
       x-group-name: Data Solutions
       x-proxy-name: Enhanced Data Service
+      x-default-example: PaymentCard
       summary: Submit a EDS Request.
       description: Use this payload prior to a transaction to perform an Enhanced
         Data Service request for a payment card or payment token. This will be used
@@ -426,6 +431,7 @@ paths:
       tags: [Return Optimizer Definition]
       x-group-name: Data Solutions
       x-proxy-name: Return Optimization Service
+      x-default-example: PaymentToken
       summary: Submit a ROS request.
       description: Use this payload prior to a transaction to perform an Return Optimizer
         request for a PaymentToken. This will be used by the merchant
@@ -465,7 +471,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-      
   /payments/v1/transaction-inquiry:
     x-model-version: 1.0
     post:
@@ -473,6 +478,7 @@ paths:
         - Transaction Inquiry
       x-group-name: 'Payments'
       x-proxy-name: 'Inquiry'
+      x-default-example: transactionId
       summary: Submit a transaction inquiry.
       description: 'Provides a Commerce Hub transaction and their attributes based on order identifier.' 
       requestBody:
@@ -482,10 +488,10 @@ paths:
             schema:
               $ref: '#/components/schemas/TransactionInquiryRequest'
             examples:
-              transactionID:
+              transactionId:
                 summary: Transaction inquiry request using transactionID
                 $ref: '#/components/examples/TransactionInquiryRequest'
-              merchantOrderID:
+              merchantOrderId:
                 summary: Transaction inquiry request using merchantOrderID
                 $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdRequest'
       responses:
@@ -498,10 +504,10 @@ paths:
                 items:
                   $ref: '#/components/schemas/TransactionInquiryResponse'
               examples:
-                transactionID:
+                transactionId:
                     summary: Transaction inquiry response from transactionID
                     $ref: '#/components/examples/TransactionInquiryResponse'
-                merchantOrderID:
+                merchantOrderId:
                     summary: Transaction inquiry response from merchantOrderID
                     $ref: '#/components/examples/TransactionInquiryByMerchantOrderIdResponse'
         400:
@@ -534,7 +540,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-
   /payments-vas/v1/security/credentials:
     x-model-version: 1.0
     post:
@@ -542,6 +547,7 @@ paths:
         - Payment Security Endpoint
       x-group-name: 'Security'
       x-proxy-name: 'Credentials'
+      x-default-example: Credentials
       summary: Request security credentials (access token).
       description: 'This is the credential generation call for authorizing subsequent financial transactions. A valid <code>accessToken</code> is required for web client requests.'
       requestBody:
@@ -595,7 +601,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-
   /payments-vas/v1/accounts/information-lookup:
     x-model-version: 1.0
     post:
@@ -603,6 +608,7 @@ paths:
         - Account Information Endpoint Definition
       x-group-name: 'Payments VAS'
       x-proxy-name: 'Information Lookup'
+      x-default-example: PaymentCard
       summary: Lookup a payment card or payment token.
       description: 'Use this to look up card related information such as issuer country, card function and card brand associated with a card or token.'
       requestBody:
@@ -680,13 +686,13 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
       summary: 'Submit a <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">merchant managed</a> card capture for use with Secure Card Capture'
       x-group-name: 'Payments VAS'
       x-proxy-name: 'Card Capture'
+      x-default-example: PaymentCard
       requestBody:
         required: true
         content:
@@ -719,7 +725,6 @@ paths:
         504:
           $ref: '#/components/responses/GatewayTimeout'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -728,7 +733,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-      
 components:
   parameters:
     OrderIdParam:
@@ -1122,8 +1126,6 @@ components:
         amount: {$ref: '#/components/schemas/Amount'}
         source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        referenceTransactionDetails:
-          $ref: '#/components/schemas/ReferenceTransactionDetails'
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
@@ -1654,7 +1656,7 @@ components:
         retrievalReferenceNumber: {type: string, maxLength: 12, description: 'Retrieval
             reference number can be any value based on the merchant’s choosing (e.g.
             sequential tracking of transactions, fixed value etc.) used for transaction
-            retrieval from the networks.', example: 56004567}
+            retrieval from the networks.', example: "56004567"}
     SplitShipment:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Guides/Split-Shipment.md">Split
@@ -2109,7 +2111,7 @@ components:
             timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         serviceCode: {type: string, maxLength: 3, description: 'If this field is returned
             in an authorization response, and if returned must be provided in subsequent
-            Capture transactions.'}
+            Capture transactions.', example: "000"}
         applicationExpiryDate: {type: string, format: date, description: Captured
             from the EMV chip data. YYYY-MM-DD format., example: ' 2021-09-03'}
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
@@ -2759,38 +2761,30 @@ components:
           example: '1.50'}
     RegionalDebit:
       x-model-version: 1.0
-      description: 'Data that applies to <a href="../docs?path=docs/Resources/Guides/Debit/Regional-Debit.md">regional debit</a> transactions.'
+      description: Data that applies to <a href="../docs?path=docs/Resources/Guides/Debit/Regional-Debit.md">regional
+        debit</a> transactions.
       properties:
-        pinBlock:
-          $ref: '#/components/schemas/PinBlock'
-        debitMacValue:
-          type: string
-          description: 'Used to confirm that the key data elements of the transaction have not been tampered.'
-        macKeySerialNumber:
-          type: string
-          maxLength: 256
-          description: 'This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions.'
-        macWorkingKey:
-          type: string
-          maxLength: 16
-          description: 'A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.'
-        macWorkingKeyCheckDigits:
-          type: string
-          maxLength: 4
-          description: 'A message authentication code for a working key that uses a session key to check digits.'
-        messageAuthenticationWorkingKey:
-          type: string
-          description: 'A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.'
-        messageAuthenticationWorkingKeyCheckDigits:
-          type: string
-          description: 'A message authentication code for a working key that uses a session key to check digits.'
-        messageEncryptionWorkingKey:
-          type: string
-          description: 'A message encryption working key is typically a random string of bits generated specifically to scramble and unscramble data.'
-        accountType:
-          type: string
-          description: 'CHECKING or SAVINGS'
-          example: 'CHECKING'
+        pinBlock: {$ref: '#/components/schemas/PinBlock'}
+        region: {type: string, description: Region of debit origin.}
+        debitTransactionCode: {type: string, description: Identifies the debit transaction.}
+        debitMACValue: {type: string, description: Used to confirm that the key data
+            elements of the transaction have not been tampered.}
+        encryptedKeyIndex: {type: number, description: 'Indicates the key index in
+            use by PIN Pad, valid values are 1 through 9.', example: '1'}
+        messageAuthenticationWorkingKey: {type: string, description: A message authentication
+            code for a working key that uses a session key to detect both accidental
+            and intentional modifications of the data.}
+        messageAuthenticationWorkingKeyCheckDigits: {type: string, description: A
+            message authentication code for a working key that uses a session key
+            to check digits.}
+        messageEncryptionWorkingKey: {type: string, description: A message encryption
+            working key is typically a random string of bits generated specifically
+            to scramble and unscramble data.}
+        debitPinPadSerialNumber: {type: string, description: Serial Number of the
+            PIN device in use at the POS.}
+        accountType: {type: string, description: CHECKING or SAVINGS, example: CHECKING}
+        transactionSequenceCounter: {type: integer, description: Contains a unique
+            sequence counter for this transaction from this point of sale.}
     ChargesResponse:
       x-model-version: 1.0
       properties:
