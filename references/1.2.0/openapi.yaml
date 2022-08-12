@@ -143,7 +143,6 @@ paths:
                 summary: Cancel a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -209,7 +208,6 @@ paths:
                 summary: Cancel a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -719,7 +717,6 @@ paths:
         504:
           $ref: '#/components/responses/GatewayTimeout'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -728,7 +725,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-      
 components:
   parameters:
     OrderIdParam:
