@@ -145,7 +145,6 @@ paths:
                 summary: Cancel a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -1559,7 +1558,7 @@ components:
         retrievalReferenceNumber: {type: string, maxLength: 12, description: 'Retrieval
             reference number can be any value based on the merchant’s choosing (e.g.
             sequential tracking of transactions, fixed value etc.) used for transaction
-            retrieval from the networks.', example: 56004567}
+            retrieval from the networks.', example: "56004567"}
     SplitShipment:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Guides/Split-Shipment.md">Split
