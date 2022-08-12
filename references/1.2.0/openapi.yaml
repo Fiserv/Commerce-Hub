@@ -591,7 +591,6 @@ paths:
         504:
           $ref: '#/components/responses/GatewayTimeout'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
@@ -676,7 +675,6 @@ paths:
         504:
           $ref: '#/components/responses/GatewayTimeout'
       parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
       - {$ref: '#/components/parameters/ApiKeyHeader'}
