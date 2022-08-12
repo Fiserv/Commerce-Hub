@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, iso-country-code, master-data]
+tags: [API Reference, ISO Country Code, Master Data]
 ---
 
 
@@ -14,7 +14,7 @@ The `currency` variable in the `amount` array determines what currency the trans
 
 ## Currency List
 
-The table below contains all valid values of currency name, code, number and decimal values. 
+The table below contains all valid values of currency name, code, number and decimal values.
 
 <!-- theme: warning -->
 > When submitting the `currency` ensure the correct 3 character alpha code is used from the below table.

@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, in-app, online, google-pay, wallet, mobile]
+tags: [In-App, Online, Google Pay, Wallet, Mobile]
 ---
 
 # Google Pay: In-App Integration
@@ -8,11 +8,10 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 ### How it Works
 
-1. Customer selects checkout from the merchant's App.
-2. Customer then presented with the merchant's payment form.
-3. The App calls the Google Pay framework to obtain the encrypted wallet data.
-4. Merchant's App submits the encrypted Google Pay payload to Commerce Hub.
-5. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
+1. The customer selects checkout from the merchant's App and is presented with the merchant's payment form.
+2. The app calls the Google Pay framework to obtain the encrypted wallet data.
+3. The merchant's app submits the encrypted Google Pay payload to Commerce Hub.
+4. Commerce Hub attempts to process the transaction and sends the response to the merchant's App.
 
 ---
 
@@ -135,8 +134,9 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "000000",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
@@ -160,13 +160,14 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay Web Integration - RESTful API](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+
 <!---
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 -->
 
 ---

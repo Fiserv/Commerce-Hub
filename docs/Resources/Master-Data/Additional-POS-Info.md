@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, amount, amount-components,transaction-amount ]
+tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Terminal Transaction Interaction]
 ---
 
 # Additional POS Information
@@ -15,25 +15,20 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `dataEntrySource` | *string* | 32 | Channel the consumer used to initiated transaction. **Valid Values:** *MOBILE_APP*, *MOBILE_WEB*, *BROWSER_PC*, *KIOSK*, *CONSOLE*, *3DS_REQUESTOR_INITIATED* |
-
-<!---
+| `dataEntrySource` | *string* | 50 | [Source](#data-entry-source) used to initiated transaction. |
 | `posId` | *string* | | Identifies the specific device or point of entry where the transaction originated. For example, pump number, lane number, terminal number, etc. |
 | `cashierId` | *string* | | Used to uniquely identify the merchant’s store cashier or employee accepting the transaction. |
-| `stan` | *string* | | Contains the System Trace Audit Numbers (STAN) returned for a Discover incremental transaction. Note: This field has limited platform availability. For more information, please contact your account representative. |
+| `stan` | *string* | 6 | Contains the System Trace Audit Numbers (STAN) returned for a Discover incremental transaction. Note: This field has limited platform availability. For more information, please contact your account representative. |
 | `posFormFactorIndicator` | *string* | | This field is used to identify the form factor used at the POS for MasterCard PayPass transactions. Note: Some values from 00–19 may indicate not only the physical form factor but also other attributes such as device technology and payment app specifications. Values from 20–99 exclusively indicate the form factor only without also indicating the storage technology.|
+| `alternateRoutingIndicator` | *boolean* | | 'Identifies if the terminal support the Alternate Routing feature used for PINless POS, Signature Debit, and EMV Common AID features (excluding Online PIN CVM) allows merchants to process PIN Debit Network transactions without a PIN.' |
 | `enhancedAuthorizationRequestIndicator` | *string* | 32 | Used to indicate that the terminal or software is capable of supporting partial authorizations, [prepaid identification and request balances](#enhanced-authorization-request-indicator). Partial Authorization support is dependent on card type and region please contact your account representative.|
 | `transactionQualifier` | *string* | | Used for Discover - Discover TransactionQualifier. |
 | `enhancedAuthorizationResponseIndicator` | *string* |  | Returns the approval type for Enhanced Authorization. **Valid Values:** *FULL*, *PARTIAL*, *DEPLETED*, *DECLINE*, *ERROR* |
 | `attendedTerminalData` | *string* | 16 | [Attended terminal data](#attended-terminal-data) indicates if the card acceptor was at the point of sale. |
-| `cardPresentIndicator` | *string* |  | Indicates if the actual card that was used for the transaction was present  |
-| `cardPresentAtPosIndicator` | *string* |  | Indicates if the actual card was present at the point of sale. |
-| `terminalLocation` | *string* | 16 | Identifies the [location of the terminal](#terminal-location) or software. |
 | `cardholderActivatedTerminalInformation` | *string* | 16 | Identifies [Cardholder Activated Terminal](#cardholder-activated-terminal) (CAT) capabilities of the device. |
 | `posHardwareAndSoftware` | *object* | N/A | [Terminal hardware and software](#hardware-and-software-information) information. |
 | `posFeatures` | *object* | N/A | Terminal or [software feature](#pos-features) information. |
 | `supervisorId` | *string* |  | Used to uniquely identify the merchant’s store supervisor transactions. |
--->
 
 
 <!--
@@ -54,9 +49,6 @@ JSON string format for `additionalPosInformation`:
       "transactionQualifier": "string",
       "enhancedAuthorizationResponseIndicator": "FULL",
       "attendedTerminalData": "ATTENDED",
-      "cardPresentIndicator": "string",
-      "cardPresentAtPosIndicator": "string",
-      "terminalLocation": "MERCHANT",
       "cardholderActivatedTerminalInformation": "2",
       "posHardwareAndSoftware":{
          "hardwareVendorIdentifier": "string",
@@ -112,7 +104,7 @@ The below table identifies the parameters in the `posHardwareAndSoftware` object
 <!--
 type: tab
 -->
- 
+
 ```json
 {
    "posHardwareAndSoftware":{
@@ -127,6 +119,8 @@ type: tab
 ```
 
 <!-- type: tab-end -->
+
+---
 
 ### POS Features
 
@@ -153,6 +147,13 @@ The below table identifies the parameters in the `posFeatures` object.
 | `terminalEntryCapability` | *string* | 28 | Identifies how data can be entered in the terminal or software. |
 | `classAndComplianceCertification` | *string* |  | Indicates the type of application or device sending the transaction, Class A or Class B. |
 | `otherCapabilities` | *string* |  | Indicates whether the transaction originated from a mobile device that uses Chase merchant services’ mobile payment gateway or originated from a device that does not use Chase merchant services’ Mobile Payment Gateway. Note: It is required for merchants to send the appropriate information in this element in the case where a mobile terminal is supported. |
+| `cardCaptureCapability` | *boolean* |  | Identifies if the terminal is able to capture the card data. |
+| `pinAuthenticationCapability` | *string* | 25 | PIN entry capability of the Point of Sale. |
+| `authenticationCapability` | *string* | 50 | Identifies the terminals capability to authenticate  the cardholder. |
+| `taxPromptCapability` | *string* | 25 | This field indicates the capability of the terminal to prompt for the Tax Amount, and then handle the Commercial card type in the response message. |
+| `terminalEntryCapability` | *string* | 28 | Identifies how data can be entered in the terminal or software. |
+| `PINcaptureCapability` | *string* | 50 | Identifies the terminals capability to caputer a PIN. |
+
 
 <!--
 type: tab
@@ -181,6 +182,32 @@ type: tab
 
 ---
 
+#### Data Entry Source
+
+The below table contains the valid values for `dataEntrySource` parameter.
+
+| Valid Value | Description |
+|--------|--------|
+| MOBILE_APP | The payment source was entered into a mobile app or obtained from a mobile wallet.  |
+| MOBILE_WEB | The payment source was entered into a website on a mobile device or obtained from a digital wallet. |
+| BROWSER_PC | The payment source was entered into a website on a personal computer or obtained from a digital wallet. |
+| KIOSK | The payment source was entered into a kisok or obtained from a mobile wallet. |
+| CONSOLE | The payment source was entered into gaming console. |
+| 3DS_REQUESTOR_INITIATED | The payment source initiated by the cuatomer using 3-D Secure. |
+| UNSPECIFIED | The data entry source is unknown or left blank. |
+| ELECTRONIC_PAYMENT_TERMINAL | The payment source was entered into a standard point of sale terminal. |
+| AUTOMATED_FUEL_DISPENSING_MACHINE | The payment source was entered into an unattended fuel station. |
+| UNATTENDED_CUSTOMER_TERMINAL | The payment source was entered int unattended customer terminal. |
+| ECOMMERCE_CUSTOMER_PRESENT | The ecommerce transaction where the payment source is entered at the merchant's location. |
+| MOBILE_TERMINAL | The payment source was entered into a wireless point of sale terminal on a cellular network. |
+| MOBILE_POS | Point of sales terminal that works on wifi. |
+| ELECTRONIC_CASH_REGISTER | Point of sales terminal that allows cash transaction.  |
+| IVR_VRU | Interactive Voice Response(IVR), Voice Response Unit (VRU) |
+| TICKET_MACHINE | A machine to buy the tickets. |
+| CALL_CENTER_OPERATOR | The payment source entered by a call center operator when taking an order from a customer. | 
+
+---
+
 #### Enhanced Authorization Request Indicator
 
 The below table identifies the valid values of `enhancedAuthorizationRequestIndicator`.
@@ -191,7 +218,7 @@ The below table identifies the valid values of `enhancedAuthorizationRequestIndi
 | *BALANCE_ONLY* | Partial authorizations NOT requested; Balance information requested |
 | *PARTIAL_AUTH_ONLY* | Partial authorizations requested; Balance information NOT requested |
 | *BOTH_SUPPORTED* | Partial authorizations requested; Balance information requested |
-
+ 
 ----
 
 #### Attended Terminal Data
@@ -204,13 +231,13 @@ The below table identifies the valid values of `attendedTerminalData`.
 | *UNATTENDED* | Unattended terminal or software |
 | *NONE* | No terminal or software used (VRU, etc.) |
 
---- 
+---
 
 #### Terminal Location
 
 The below table identifies the valid values of `terminalLocation`.
 
-| Value | Description | 
+| Value | Description |
 | ----- | ----------- |
 | *MERCHANT* | On the premises of the card acceptor |
 | *CARDHOLDER* | On the premises of the cardholder (e.g. Home PC) |
@@ -238,5 +265,5 @@ The below table identifies the valid values of `cardholderActivatedTerminalInfor
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
-
+ 
 ---

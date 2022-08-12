@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, apple-pay, wallet]
+tags: [Web, Online, Apple Pay, Wallet]
 ---
 
 # Apple Pay on the Web: RESTful API Integration
@@ -14,7 +14,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 1. The customer selects checkout from the merchant's website and the merchant’s payment form displays.
 2. The customer selects Apple Pay and the Apple Pay payment form displays.
 3. The customer completes the Apple Pay form and returns to the merchant's website.
-4. The customer selects to complete the transaction.
+4. The customer completes the transaction.
 5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
 
@@ -179,8 +179,9 @@ type: tab
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
          "schemeTransactionId": "0225MCC625628",
-         "processor": "fiserv",
-         "responseCode": "000000",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
          "responseMessage": "APPROVAL",
          "hostResponseCode": "00",
          "hostResponseMessage": "APPROVAL",
@@ -205,13 +206,13 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
+- [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 <!--
 - [Apple Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 -->
 
 ---

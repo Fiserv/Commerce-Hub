@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, card-not-present, card-present, getting-started, in-person, online, mobile, digital, integration, features, use-cases]
+tags: [Getting Started, Card Not Present, Card Present, In-Person, Online, Mobile, Digital, Omnicommerce, Connected Commerce]
 ---
 
 # Getting Started with Commerce Hub
@@ -25,7 +25,7 @@ link: ?path=docs/Getting-Started/Getting-Started-Online.md
 <!-- type: card
 title: In-Person
 description: In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
-link: 
+link: ?path=docs/Getting-Started/Getting-Started-InPerson.md
 -->
 
 <!-- type: card
@@ -53,7 +53,7 @@ link: ?path=docs/Resources/API-Documents/Payments_VAS/Verification.md
 <!-- type: card
 title: Fraud Prevention
 description: Commerce Hub implements various transaction and fraud controls that allows merchants to monitor potentially fraudulent transactions including positive and negative filters, velocity controls, and transaction restrictions, that will automatically accept or reject transactions.
-link: 
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings.md
 -->
 
 <!-- type: card
@@ -82,7 +82,7 @@ link: ?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
 <!-- type: card
 title: Information Lookup
 description: Information Lookup is used to verify card related information of the cardholder such as issuer country, card function and card brand associated with a card or token.
-link: 
+link: ?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
 -->
 
 <!-- type: row-end -->
@@ -109,7 +109,7 @@ link: ?path=docs/Resources/Guides/Split-Shipment.md
 
 <!-- type: card
 title: Stored Credentials
-description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas a Cardholder Initiated Transaction (CIT).
+description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionst as a Cardholder Initiated Transaction (CIT).
 link: ?path=docs/Resources/Guides/Stored-Credentials.md
 -->
 

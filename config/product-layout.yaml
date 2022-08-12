@@ -25,7 +25,7 @@
 # resulting from the use of this information. 
 # No warranties, either express or implied, 
 # are granted or extended by this work or 
-# the delivery of this work
+# the delivery of this work 
 ################################################################################
 header:
   productionDescription: With developer-friendly, flexible communication standards, unified APIs, and pre-certified integrations the Commerce Hub reduces development time and accelerates speed to market. A single entry point and intelligent orchestration layer creates a unified payments, reporting, and boarding experience through your existing infrastructure. With less ongoing maintenance and fewer operational costs, you can focus on creating new ways for consumers to discover and interact with your brand.
@@ -64,9 +64,7 @@ featuredFeatures:
 #     links: ["docs/Resources/API-Documents/Payments_VAS/Payment-Token.md"]
   - title: Apple Pay
     description: >
-      One of the most popular mobile payment and digital wallets. Customers can make payments 
-      in-store, mobile or online. To leverage, customers use an Apple devices - iPhone, Apple Watch, 
-      iPad, Mac, etc.
+      One of the most popular mobile payment and digital wallets. Customers can make payments in-store, mobile or online. To leverage, customers use an Apple device - iPhone, Apple Watch, iPad, Mac, etc.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     #links: ["docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md"]

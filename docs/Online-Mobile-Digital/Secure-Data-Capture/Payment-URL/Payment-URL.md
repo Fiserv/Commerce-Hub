@@ -1,10 +1,10 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, invoice, secured-payment-form, payment-url]
+tags: [Online, Card Not Present, Invoice, Secured Payment Form, Payment URL]
 ---
 
 # Payment URL Integration
 
-Merchant's can use the Payment URL integration method to generate a invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the Payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
+Merchant's can use the Payment URL integration method to generate an invoice that they can send to a customer, which the customers can then use to pay for their purchase. When the customer clicks on the Payment URL, they are directed to Commerce Hub secured hosted payment page solution where they can securely make the payment with their preferred payment method.
 
 **User Action:** The merchant needs to invoice a customer's purchase. 
 
@@ -183,7 +183,7 @@ title: Response
 
 ##### Example of Payment URL Delete (200: Success) Response.
 <!-- theme: info -->
-> See [Response Handling](#response-handling) for additional status.
+>  See [Response Handling](#response-handling) for additional status.
 
 ```json
 
@@ -218,3 +218,6 @@ title: Response
 | FAILURE | Generic failure message. |
 
 ---
+
+## See Also
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)

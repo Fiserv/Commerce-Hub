@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, hosted-payment-page, in-app, web, online, apple-pay, wallet, mobile, getting-started]
+tags: [Hosted Payment Page, In-App, Web, Online, Apple Pay, Wallet, Mobile, Getting Started, Payment Source]
 ---
 
 # Apple Pay
@@ -36,15 +36,5 @@ link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-A
 -->
 
 <!-- type: row-end -->
-
----
-
-## See Also
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
-<!---
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
--->
 
 ---

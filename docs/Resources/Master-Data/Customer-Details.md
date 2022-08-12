@@ -1,14 +1,14 @@
 ---
-tags: [carat, commerce-hub, enterprise, customer-details, master-data]
+tags: [API Reference, Customer Details, Master Data]
 ---
 
 # Customer Details
 
 The transaction request may contain the `customerDetails` consisting of customer specific data like; customer id, name, date of birth, phone number, etc.  
- 
+
 <!--
 type: tab
-titles: customer, JSON Example
+titles: customer, JSON Example 
 -->
 
 The below table identifies the parameters in the `customer` object.
@@ -59,7 +59,7 @@ JSON string format for `customer`:
 ```
 
 <!-- type: tab-end -->
-
+ 
 ---
 
 ## Phone Number
@@ -82,7 +82,7 @@ The below table identifies the parameters in the `phoneNumber` object.
 <!--
 type: tab
 -->
-
+ 
 JSON string format for `phoneNumber`:
 
 ```json

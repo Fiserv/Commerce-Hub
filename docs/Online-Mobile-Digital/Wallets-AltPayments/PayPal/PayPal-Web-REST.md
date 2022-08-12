@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, enterprise, integration-methods, restful-api, web, online, paypal, wallet]
+tags: [Web, Online, PayPal, Wallet]
 ---
 
 # PayPal on the Web: RESTful API Integration
@@ -75,8 +75,9 @@ title: Response
       "approvalCode":"OK7118",
       "referenceNumber":"845366457890-TODO",
       "schemeTransactionID":"019078743804756",
-      "processor":"fiserv",
-      "responseCode":"00",
+      "processor":"FISERV",
+      "host": "NASHVILLE",
+      "responseCode":"000",
       "responseMessage":"APPROVAL",
       "hostResponseCode":"54022",
       "hostResponseMessage":"Approved",

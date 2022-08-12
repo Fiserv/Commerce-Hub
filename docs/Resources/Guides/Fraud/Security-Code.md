@@ -1,5 +1,5 @@
 ---
-tags: [carat, commerce-hub, card-not-present, enterprise, fraud, security-code, fraud, security-code-verification]
+tags: [Card Not Present, Fraud, Security Code, Fraud, Security Code Verification]
 ---
 
 # Security Code
@@ -273,22 +273,6 @@ type: tab
 The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
 ## Association Response Code
-
-The below table identifies the valid values of `securityCodeResponse`.
-
-| Value | Descrption |
-| ---- | ------------|
-| *MATCHED* | Data matches with issuer system |
-| *NOT_MATCHED* | Data does not match with issuer system |
-| *NOT_PROCESSED* | Security code verification not done |
-| *NOT_PRESENT* | Security code not present in the input |
-| *NOT_CERTIFIED* | Issuer not certified to verify sercurity code |
-| *NOT_CHECKED* | Security code not checked |
-| *NONE* | No security code provided |
-
-## Association Response Code
-
-The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`.
 
 The below table identifies the valid values of `securityCodeResponse`.
 

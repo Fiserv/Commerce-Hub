@@ -1,24 +1,32 @@
 ---
-tags: [carat, commerce-hub, enterprise, online, card-not-present, secure-payment-form, payment-js, tokenization]
+tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-# Payment JS Integration
 
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include Payment.JS support and the documents related to the features will be released soon.
+# Seacure Data Capture - JS Solution
 
-During the form submission the client library, loaded into the parent window, sends one of the iframes a clientToken (for authentication with the service) and a RSA public key (asymmetric key pair). This iframe then collects the data hidden in the other iframes and encrypts the card number, expiration date, and cvv (the other fields are transferred without data layer encryption due to RSA message limits). This iframe then makes an API call to the Payment.js service for tokenization.
+Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends payment information directly to Commerce Hub and returns a payment nonce `sessionId` _(one-time use token)_. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
-Assuming the customer is using a browser with modern cross-origin security controls, and these controls are not compromised by a browser defect, it will not be possible for non-Payment.js code to steal the data hidden in these iframes as the card number, expiration date, and cvv in particular never escape into the parent window in an unencrypted form.
+### Benefits
 
-When the tokenization request is sent out, only the already encrypted data will appear in the browser's network log.
+Allows a merchant an easy and secure way to embed a payment form into a website while maintaining their look and feel. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-<!-- theme:info -->
->The merchant's gateway credentials are never sent to the browser *(encrypted or otherwise)*; The Payment.js client library utilizes a "clientToken" to associate the tokenization API call sent from the browser with credentials passed directly from merchant server to Payment.js server.
+#### Transaction Flow
+
+1. The customer navigates to checkout page of the merchant's website.
+2. The merchant's website loads the Commerce Hub SDK.
+3. The Commerce Hub SDK builds and renders a card form that allows the customer to initiate the payment session.
+4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
+5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
+6. Commerce Hub sends the transaction response to the merchant's website.
+
+**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md).**
+
+---
 
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your Payment.js page.
+The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
 **Recommendations**
 
@@ -27,8 +35,12 @@ The following recommendations are to limit potential for fraudulent activity on 
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
-## Next Steps
+---
 
-- Create a Payment Request
-- Customize Payment Form
-- Error Handling
+## See Also
+
+- [Create a Payment Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
+- [Customize Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+
+---
