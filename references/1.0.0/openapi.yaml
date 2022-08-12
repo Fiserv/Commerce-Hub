@@ -1818,7 +1818,7 @@ components:
             timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
         serviceCode: {type: string, maxLength: 3, description: 'If this field is returned
             in an authorization response, and if returned must be provided in subsequent
-            Capture transactions.'}
+            Capture transactions.', example: "000"}
         applicationExpiryDate: {type: string, format: date, description: Captured
             from the EMV chip data. YYYY-MM-DD format., example: ' 2021-09-03'}
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
