@@ -3832,7 +3832,7 @@ components:
           cavv: 01ade6ae340005c681c3a1890418b53000020000
           wallet: APPLE_PAY
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -3915,7 +3915,7 @@ components:
           cavv: 01ade6ae340005c681c3a1890418b53000020000
           wallet: GOOGLE_PAY
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4097,7 +4097,7 @@ components:
         - {tokenData: '8519371934460010', tokenSource: CHASE, tokenResponseCode: '000',
           tokenResponseDescription: SUCCESS}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4132,7 +4132,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4379,7 +4379,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4416,7 +4416,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4582,7 +4582,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '30'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4752,7 +4752,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4855,7 +4855,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5215,7 +5215,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5326,7 +5326,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5641,7 +5641,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5676,7 +5676,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5852,7 +5852,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5887,7 +5887,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5922,7 +5922,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5975,7 +5975,7 @@ components:
         paymentReceipt:
           approvedAmount:
             currency: 'USD'
-            total: '690'
+            total: 690
           processorResponseDetails:
             approvalCode: 'OK6982'
             approvalStatus: 'APPROVED'
@@ -6028,7 +6028,7 @@ components:
           paymentReceipt:
             approvedAmount:
               currency: 'USD'
-              total: '16.93'
+              total: 16.93
             processorResponseDetails:
               approvalCode: 'OK7742'
               approvalStatus: 'APPROVED'
