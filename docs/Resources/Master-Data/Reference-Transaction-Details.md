@@ -1,6 +1,6 @@
 # Reference Transaction Details
 
-Reference transaction details are used to reference the original transaction identifier in secondary request [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, re-auth or [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md).
+Reference transaction details are used to reference the original transaction identifier in secondary requests; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, [re-auth](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) or [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md).
 
 <!-- 
 type: tab
