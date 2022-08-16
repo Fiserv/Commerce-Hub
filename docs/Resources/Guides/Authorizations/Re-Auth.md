@@ -3,10 +3,7 @@ tags: [Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
 ---
 
 # Reauthorize
-
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon.
-
+ 
 A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
 A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
@@ -14,13 +11,16 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - **Merchant Managed:** The merchant submits the transaction with the required fields and a reauthorization is processed by Commerce Hub.
 - **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthrorizes if required.
 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon. 
+
 ### Reauthorization Scenarios
 
 - Split or delayed shipments at eCommerce retailers.
 - Extended stay hotels, car rentals, and cruise lines.
 - Validity period of original authorization has expired.
 - Original auth is missing qualified data.
-- Different transaction amount in either authorization or settlement.
+- Different transaction amount in either authorization or settlement. 
 
 <!-- theme: info --> 
 > See an account representative for more information on issuer hold times.
@@ -29,18 +29,17 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 
 ## Request Variables
 
-The `transactionIndicatorType` of *REAUTH* and `primaryTransactionId` from the original transaction must be sent in the subsequent authorization's `transactionDetails` for each incremental authorization performed.
+The `transactionIndicatorType` and `authorizationSequence` in `transactionDetails` along with the `referenceTransactionId` or `referenceMerchantTransactionId` in `referenceTransactionDetails` from the original transaction must be sent in the subsequent reauthorization performed.
 
 <!--
 type: tab
-titles: transactionDetails, JSON Example
+titles: transactionDetails, referenceTransactionDetails, JSON Example
 -->
 
 The below table identifies the additional parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 | `authorizationSequence` | *string* | 27 | Type of authorization sequence requested.|
 
@@ -58,14 +57,30 @@ The below table identifies the valid values of type of `authorizationSequence`.
 type: tab
 -->
 
-JSON string format:
+The below table identifies the additional parameters in the `referenceTransactionDetails` object.
 
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request. 
+
+| Variable | Data Type | Maximum Length |Description |
+|---------|----------|----------------|---------|
+|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+JSON string format:
+ 
 ```json
 {
    "transactionDetails":{
-      "primaryTransactionId": "84356532738",
       "transactionIndicatorType": "REAUTH",
       "authorizationSequence": "AUTHORIZATION_ONLY"
+   },
+   "referenceTransactionDetails":{
+      "referenceTransactionId": "84356531348"
    }
 }
 ```
@@ -97,9 +112,11 @@ titles: Request, Response
   },
   "transactionDetails": {
     "captureFlag": false,
-    "primaryTransactionId": "838916029300",
     "authorizationTypeIndicator": "REAUTH",
     "authorizationSequence": "AUTHORIZATION_ONLY"
+  },
+  "referenceTransactionDetails": {
+      "referenceTransactionId": "84356531348"
   },
   "splitShipment": {
     "totalCount": 5
@@ -111,9 +128,10 @@ titles: Request, Response
   }
 }
 ```
+
 <!--
 type: tab
--->
+--> 
 
 ##### Example of a reauthorization (201: Created) response.
 
@@ -158,24 +176,24 @@ type: tab
       "merchantCountry": "US",
       "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2021-04-16T16:06:05Z",
-         "transactionReferenceInformation": null,
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCHED",
-            "postalCodeMatch": "MATCHED",
-            "securityCodeMatch": "MATCHED",
-            "association":{
-               "avsCode": "Z",
-               "securityCodeResponse": "S",
-               "cardHolderNameResponse": "M"
-            }
+         "approvalStatus": "APPROVED",
+         "approvalCode": "OK5882",
+         "schemeTransactionId": "0225MCC625628",
+         "processor": "FISERV",
+         "host": "NASHVILLE",
+         "responseCode": "000",
+         "responseMessage": "APPROVAL",
+         "hostResponseCode": "00",
+         "hostResponseMessage": "APPROVAL",
+         "localTimestamp": "2021-06-20T23:42:48Z",
+         "bankAssociationDetails":{
+            "associationResponseCode": "000",
+            "transactionTimestamp": "2021-06-20T23:42:48Z"
          }
       }
    },
    "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
+      "captureFlag": false
    }
 }
 ```
@@ -187,9 +205,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Referenced Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Subsequent Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)

@@ -4,7 +4,7 @@ tags: [Error, Response, Response Codes]
 
 # Error Response
 
-Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response-Codes/Error.md) as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields. 
+Commerce Hub includes the `errorResponse` as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields. 
 
 <!--
 type: tab

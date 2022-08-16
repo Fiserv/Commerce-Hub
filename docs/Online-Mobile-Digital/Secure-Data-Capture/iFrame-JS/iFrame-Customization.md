@@ -57,38 +57,151 @@ The following example shows all the text labels that can be overridden for a par
 
 ---
 
+## CSS Styling
 
-## Theme and Font
+The default iFrame styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
 
-For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
+<!-- theme: warning -->
+> Support for certain CSS properties/selectors have been restricted for security reasons.
+
+The following table outlines the attributes of the `fiservConfig.css.styleConfig` object:
+
+| Attributes | Description |
+|------|-------|
+| `base` | base styling for the iframe on all device sizes |
+| `media` | device specific styling rules that override the base styling rules when the current device matches the defined media query | 
 
 
-#### Overriding Elements
-The following elements can be overridden:
+The following code snippet shows a sample styling configuration:
 
-- **Primary Color Theme:** changes the main color, i.e. highlight color, font color, button color (when enabled). Hexadecimal only
-- **Contrast Color Theme:** button font color. Hexadecimal only
-- **Fields Font Family:** font used on the form. Supported fonts: NotoSans, NotoSerif, OpenSans, Roboto, RobotoMono
-- **Button Font Size:** size of the text font on the button.
-- **Input Text Font Size:** size of the rest of the text font.
+```java
+
+const fiservConfig = {
+   "css": {
+      "styles": {
+         "base": {
+            "app-root": {
+               "font-style": "italic",
+               "app-card-number": {
+                  "background-color": "whitesmoke",
+                  "font-style": "normal",
+                  "font-family": "Courier New",
+                  "font-size": "12px",
+                  ":hover": {
+                     "background-color": "lightgray",
+                     "border": "darkgray dashed 2px"
+                  }
+               }
+            },
+            "app-card-form": {
+               "app-input-card": {
+                  "box-shadow": "3px 3px lightgray"
+               }
+            }
+         },
+         "media": {
+            "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)": {
+               "app-card-form": {
+                  "app-input-card": {
+                     "box-shadow": "3px 3px cyan"
+                  }
+               }
+            },
+            "@media only screen and (min-device-width: 320px) and (max-device-width: 480px)": {
+               "app-card-form": {
+                  "app-input-card": {
+                     "box-shadow": "3px 3px gold"
+                  }
+               }
+            }
+         }
+      }
+   }
+};
+
+```
+
+---
+
+### Standard Tags
+
+In order to achieve the desired branding, merchants will need to target specific elements within the HTML DOM and apply custom styles to those elements. Commerce Hub will maintain the current HTML structure, however between our releases, custom CSS query selectors may not work if targeting HTML elements are not coded correctly. 
+
+- Use standard tags, ids or names when targeting HTML elements
+- Don't target classes if it can be avoided
+- With the exception of the standard tags, do not assume the HTML contents and structure will never change
+- Keep query selectors short and concise, example: use `input[type='submit']` instead of `body form div input[type='submit']`
 
 ```css
 
-"css": {
-  "primaryColorTheme": "#2D2D2D",
-  "contrastColorTheme": "#ffffff",
-  "fieldsFontFamily": "ROBOTO",
-  "buttonFontSize": "20px",
-  "inputTextFontSize": "20px"
-  }
-  
+-body
+|-app-root
+  |-app-card-form
+    |-app-card-number form
+    |-app-card-number
+      |-Input element: id = cardNumber, name = ccNumber
+    |-app-select-expiry
+      |-Mat-select element (Month): id = cardExpiryMonth, name = ccExpMonth
+      |-Mat-select element(Year): id = cardExpiryYear, name = ccExpYear
+    |-app-input-card
+      |-Input element: id = cardSecurityCode, name = ccSecurityCode    
+      |-Input element: id = cardHolder, name = ccName
+    |-app-submit-button
+      |-Button element: id = submitButton name = btnSubmit 
+
 ```
+
+---
+
+### Supported Properties
+
+The following block outlines the common element tags, identifiers, and names that Commerce Hub guarantees will not change between our minor releases.
+
+- -moz-appearance
+- -moz-osx-font-smoothing
+- -moz-tap-highlight-color
+- -moz-transition
+- -webkit-appearance
+- -webkit-font-smoothing
+- -webkit-tap-highlight
+- color
+- -webkit-transition
+- box-shadow
+- -webkit-box-shadow
+- -webkit-text-fill-color
+- background-color
+- appearance
+- color
+- margin
+- border
+- border-bottom
+- border-left
+- border-right
+- border-top
+- border-color
+- border-style
+- font-style
+- font-family
+- font-size
+- font-weight
+- padding
+
+---
+
+### Security Restrictions
+
+Commerce Hub implements security restrictions that prevent attackers from injecting or performing exfiltration attacks in the iFrame solution.
+
+- `input[value='*']` query selector: Poses a security risk by allowing attackers to inject css that calls a remote URL when the input matches a certain value. If the injected remote URL is a unique URL per input value, the attacker can have full or partial access to the individual content.  
+- `[url\(.*\]` property: Mitigates the risk of a CSS exfiltration attack.
+
 ---
 
 ## See Also
 
-- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
-- [iFrame Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 
 ---
