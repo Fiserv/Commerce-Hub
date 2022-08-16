@@ -51,7 +51,7 @@ JSON string format for `merchantDetails`:
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to support Order Identifiers and the documents related to the features will be released soon.
 
-Order Identifiers, known as Bring Your Own ID (BYOID), allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; refund, [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, [re-auth](docs/?path=docs/Resources/Guides/Authorizations/Re-Auth.md), or inquiry, instead of using the Commerce Hub generated `transactionID` or `orderID`.
+Order Identifiers, known as Bring Your Own ID (BYOID), allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, [re-auth](docs/?path=docs/Resources/Guides/Authorizations/Re-Auth.md), or inquiry, instead of using the Commerce Hub generated `transactionID` or `orderID`.
 
 <!-- 
 type: tab
