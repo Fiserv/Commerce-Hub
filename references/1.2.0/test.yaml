@@ -743,7 +743,10 @@ components:
     TransactionIdParam:
       x-model-version: 1.0
       name: transactionId
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "string"
+      }
       in: path
       required: true
       description: Use this to perform secondary transaction, received from primary
@@ -770,7 +773,10 @@ components:
     AuthorizationHeader:
       x-model-version: 1.0
       name: Authorization
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Authorization-Key"
+      }
       in: header
       required: true
       description: Authorization header used to ensure the request has not been tampered
@@ -779,7 +785,10 @@ components:
     MessageDigestHeader:
       x-model-version: 1.0
       name: Message-Digest
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "HMAC"
+      }
       in: header
       required: false
       description: Needed only from customer browser or app to the API in Hosted Payment
@@ -787,7 +796,10 @@ components:
     AcceptLanguageHeader:
       x-model-version: 1.0
       name: Accept-Language
-      schema: {type: string}
+      schema: {
+        type: string,
+        example: '*/*'
+      }
       in: header
       required: false
       description: The Accept Language header contains information about the language
@@ -806,7 +818,10 @@ components:
     ClientRequestIdHeader:
       x-model-version: 1.0
       name: Client-Request-Id
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "111"
+      }
       in: header
       required: true
       description: A client-generated ID for request tracking and signature creation,
@@ -823,7 +838,10 @@ components:
     ApiKeyHeader:
       x-model-version: 1.0
       name: Api-Key
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Default-Api-Key"
+      }
       in: header
       required: true
       description: API key provided to the merchant associating the requests with
