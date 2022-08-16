@@ -11,13 +11,13 @@ The objective of a key management system is to achieve PCI DSS compliance for a 
 
 - The merchant should initiate the new key request 2 days prior to the expiry of the previous key. The merchant shall start using the new key once it is successfully exchanged.
   - If merchant does not initiate the new key exchange as per the best practices, Commerce Hub will send three notifications via webhook at 47, 44 and 41 hours before the key expires.
-- Merchant should set the limit on the transaction amount for offline (Store and Forward) transactions.
+- Merchant should set the limit on the transaction amount for offline _(Store and Forward)_ transactions.
   - Any transaction that exceeds the set limit should be rejected by the merchant.
   - The merchant is liable for any approved transaction with a higher amount that is rejected during processing.
 
 <!--
 type: tab
-titles: asymmetricKeyDetails, symmetricKeyDetails
+titles: asymmetricKeyDetails
 -->
 
 The below table identifies the parameters for `asymmetricKeyDetails` object. The `asymmetricKeyDetails` object contains the public Key and its relevant details for asymmetric cryptography.
@@ -33,6 +33,7 @@ The below table identifies the parameters for `asymmetricKeyDetails` object. The
 | `status` | *string* | 10 | Status of the key pair. Valid values are ACTIVE, REVOKED, INACTIVE or LEGACY | 
 
 <!-- type: tab-end -->
+
 ---
 
 ## Generate Key
@@ -53,13 +54,16 @@ The below table identifies the required parameter for the generate request paylo
 | `merchantId` | *string* |  | &#10004; | A unique ID used to identify the Merchant. |
 
 <!-- type: tab-end -->
+
 ---
 
 ### Endpoint
+
 <!-- theme: success -->
 >**POST** `/security/v1/keys/generate`
 
 ---
+
 ### Payload Example
 
 <!--
@@ -80,8 +84,6 @@ titles: Request, Response
 <!--
 type: tab
 -->
-
-
 
 ##### Example of (201: Created) response.
 
@@ -115,11 +117,11 @@ type: tab
 
 ---
 
+---
 
 ## Revoke Key
 
 Revokes an encryption key pair that was previously generated. 
-
   
 ### Requirements
 
@@ -134,7 +136,6 @@ The below table identifies the required parameter for the URI.
 |---------|----------|----------------|--------- | -------|
 | `keyId` | *string* | 64 | &#10004; | Used to pass the keyId of the encryption key pair to be revoked |
 
-
 <!--
 type: tab
 -->
@@ -147,7 +148,6 @@ The below table identifies the required parameter for the revoke request payload
 
 
 <!-- type: tab-end -->
-
 
 ---
 
@@ -167,7 +167,6 @@ titles: Request, Response
 ##### Example of payload request.
 
 ```json
-
 {
     "merchantDetails": {
         "merchantId": "100004000000175"
@@ -211,7 +210,6 @@ type: tab
 
 ---
 
-
 ## Multi-Use Public Key Expiry
 
 Commerce Hub and a merchant can have multiple static public keys where the key identifiers in the transaction request determines which key is being used to encrypt the data. A transaction request received with an expired key is rejected and an expiry response will be sent. A merchant should follow key management best practices to prevent rejected transactions. 
@@ -219,7 +217,6 @@ Commerce Hub and a merchant can have multiple static public keys where the key i
 ### Key Expiry Example
 
 Below is an example of multiple pblic keys that are generated during a transaction request and expires after a set time interval. 
-
 
 | Public Key  | Generated/Activated | Expiry Date and Time |
 | ------------ | ----------- | ------- |
@@ -232,8 +229,6 @@ Below are some of the examples of offline transactions and the multi-use public 
 - The transaction request is submitted on Jan 2nd at 2:30 PM, the merchant can process with the first key generated.  
 - The transaction request is submitted on Jan 6th at 8:30 AM, as per the best practices the merchant should use the second key generated. However, the merchant can use the first generated key.   
 - The transaction request is submitted on Jan 11th at 11:45 PM, as per the best practices the merchant should use the third key generated. However, the merchant can still use the second generated key. If the merchants submits the first key, Commerce Hub will rejects the transaction.
-
-
 
 ---
 
