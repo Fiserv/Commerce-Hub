@@ -3688,7 +3688,7 @@ components:
             * STORE_CREDIT\n* DEBIT_CARD\n* EBT_SNAP\n"
           example: CREDIT_CARD
         count: {type: integer, maximum: 99, description: Number of accounts presented
-            of this type., example: '2'}
+            of this type., example: 2}
         amount: {$ref: '#/components/schemas/Amount'}
     EnhancedDataServiceResponse:
       x-model-version: 1.0
@@ -4087,11 +4087,11 @@ components:
         splitTender:
           splitTenderMethod:
           - type: CREDIT_CARD
-            count: '1'
-            amount: {total: '7.04'}
+            count: 1
+            amount: {total: 7.04}
           - type: GIFT_CARD
-            count: '1'
-            amount: {total: '5.00'}
+            count: 1
+            amount: {total: 5.00}
         shippingAddress:
           firstName: Jane
           lastName: Doe
@@ -4368,11 +4368,11 @@ components:
         splitTender:
           splitTenderMethod:
           - type: CREDIT_CARD
-            count: '1'
-            amount: {total: '7.04'}
+            count: 1
+            amount: {total: 7.04}
           - type: GIFT_CARD
-            count: '1'
-            amount: {total: '5.00'}
+            count: 1
+            amount: {total: 5.00}
         shippingAddress:
           firstName: Jane
           lastName: Doe
