@@ -766,7 +766,10 @@ components:
     AuthorizationTokenTypeHeader:
       x-model-version: 1.0
       name: Auth-Token-Type
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "auth-token-type"
+      }
       in: header
       required: true
       description: Indicates authorization type HMAC, JWT, or AccessToken.
