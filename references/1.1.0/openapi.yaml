@@ -131,7 +131,7 @@ paths:
       - Cancel Endpoint Definition
       x-group-name: 'Payments'
       x-proxy-name: 'Cancels'
-      x-default-example: TransactionID
+      x-default-example: TransactionId
       summary: Submit a cancel transaction.
       description: 'Use this payload to perform cancel a transaction (aka void).'
       requestBody:
@@ -673,7 +673,10 @@ components:
     OrderIdParam:
       x-model-version: 1.0
       name: orderId
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "orderId"
+      }
       in: path
       required: true
       description: Use this to perform secondary transaction, received from primary
@@ -681,7 +684,10 @@ components:
     TransactionIdParam:
       x-model-version: 1.0
       name: transactionId
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "transactionId"
+      }
       in: path
       required: true
       description: Use this to perform secondary transaction, received from primary
@@ -689,26 +695,34 @@ components:
     WalletTypeParam:
       x-model-version: 1.0
       name: walletType
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "walletType"
+      }
       in: path
       required: true
       description: |
         Wallet type for which the keypair is to be generated.
-
         Valid Values:
         * ApplePay
         * SamsungPay
     AuthorizationTokenTypeHeader:
       x-model-version: 1.0
       name: Auth-Token-Type
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Auth-Token-Type"
+      }
       in: header
       required: true
       description: Indicates authorization type HMAC, JWT, or AccessToken.
     AuthorizationHeader:
       x-model-version: 1.0
       name: Authorization
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Authorization"
+      }
       in: header
       required: true
       description: Authorization header used to ensure the request has not been tampered
@@ -717,7 +731,10 @@ components:
     MessageDigestHeader:
       x-model-version: 1.0
       name: Message-Digest
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Message-Digest"
+      }
       in: header
       required: false
       description: Needed only from customer browser or app to the API in Hosted Payment
@@ -725,7 +742,10 @@ components:
     AcceptLanguageHeader:
       x-model-version: 1.0
       name: Accept-Language
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Accept-Language"
+      }
       in: header
       required: false
       description: The Accept Language header contains information about the language
@@ -744,7 +764,10 @@ components:
     ClientRequestIdHeader:
       x-model-version: 1.0
       name: Client-Request-Id
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Client-Request-Id"
+      }
       in: header
       required: true
       description: A client-generated ID for request tracking and signature creation,
@@ -761,7 +784,10 @@ components:
     ApiKeyHeader:
       x-model-version: 1.0
       name: Api-Key
-      schema: {type: string}
+      schema: {
+        type: string,
+        default: "Api-Key"
+      }
       in: header
       required: true
       description: API key provided to the merchant associating the requests with
@@ -1127,7 +1153,7 @@ components:
         object to support the request for payment.
       properties:
         total: {type: number, maximum: 1.0E18, description: Sub-component values must
-            add up to total amount., example: '13.50'}
+            add up to total amount., example: 13.50}
         currency: {type: string, maxLength: 3, description: ISO 3 Currency Format.,
           example: USD}
     Source:
@@ -1197,9 +1223,9 @@ components:
             of the Primary Account Number (PAN)., example: '0019'}
         scheme: {type: string, maxLength: 256, description: Card brand., example: VISA}
         beginningBalance: {type: number, maximum: 1.0E18, description: Beginning card
-            balance., example: '1.00'}
+            balance., example: 1.00}
         endingBalance: {type: number, maximum: 1.0E18, description: Ending card balance.,
-          example: '0.10'}
+          example: 0.10}
     EncryptionData:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Encryption-Data.md">Encrypted
@@ -1496,9 +1522,9 @@ components:
         paymentDescription: {type: string, maxLength: 1024, description: Payment description.}
         cardVerificationAmount: {type: number, maximum: 1.0E18, description: Amount
             used to verify the transaction. Some issuers do not allow $0.00 authorizations.,
-          example: '0.02'}
+          example: 0.02}
         partiallyApprovedTransactionAmount: {type: number, maximum: 1.0E18, description: The
-            partially approved transaction amount from the original request., example: '10.55'}
+            partially approved transaction amount from the original request., example: 10.55}
         splitTenderId: {type: string, maxLength: 1024, description: A partially-authorized
             transaction will generate a split tender ID. Subsequent transactions to
             complete the authorization should include the split tender ID so that
@@ -1675,7 +1701,7 @@ components:
         orderDate: {type: string, format: date, maxLength: 10, description: 'Date
             that goods and services are ordered, in YYYY-MM-DD format.', example: '2020-11-20'}
         itemCount: {type: integer, description: Total number of items included in
-            the purchase., example: '1'}
+            the purchase., example: 1}
         itemDetails:
           type: array
           items: {$ref: '#/components/schemas/ItemDetails'}
@@ -1689,16 +1715,15 @@ components:
             type of goods. It is used to help identify potentially fraudulent sales.,
           example: GIFT_CARD}
         giftcardCount: {type: integer, maximum: 99, description: Total number of gift
-            cards purchased., example: '1'}
+            cards purchased., example: 1}
         giftCardAmount: {$ref: '#/components/schemas/Amount'}
     ItemDetails:
       x-model-version: 1.0
       description: ''
       properties:
         categoryName: {type: string, maxLength: 8, description: ' ', example: ' '}
-        itemCount: {type: integer, description: The item count in category., example: ' '}
-        value: {type: string, maxLength: 32, description: ' ', example: The monetary
-            value of items.}
+        itemCount: {type: integer, description: 'The item count in category.', example: ' '}
+        value: {type: string, maxLength: 32, description: 'The monetary value of items.', example: }
     DynamicDescriptors:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Guides/Dynamic-Descriptor.md">Dynamic
@@ -1843,7 +1868,7 @@ components:
             * 60_90_DAYS\n* OVER_90_DAYS\n"
           example: 'GUEST '
         count: {type: integer, description: Number of cards on file with this account.,
-          example: '1'}
+          example: 1}
         lastUpdated:
           type: string
           maxLength: 32
@@ -1858,7 +1883,7 @@ components:
             * 60_90_DAYS\n* OVER_90_DAYS\n"
           example: GUEST
         attempts: {type: integer, description: Number of attempts to add a payment
-            card in prior 24 hours., example: '1'}
+            card in prior 24 hours., example: 1}
         accountPasswordReset:
           type: string
           maxLength: 32
@@ -1867,11 +1892,11 @@ components:
             * 60_90_DAYS\n* OVER_90_DAYS\n"
           example: NEVER
         sixMonthTransactionCount: {type: integer, description: Number of transaction
-            on this account in prior 6 months., example: '5'}
+            on this account in prior 6 months., example: 5}
         twentyFourHourTransactionCount: {type: integer, description: Number of transaction
-            on this account in prior 24 hours., example: '1'}
+            on this account in prior 24 hours., example: 1}
         retryAttempts: {type: integer, description: Number of retry attempt if the
-            initial transaction was unsuccessful., example: '0'}
+            initial transaction was unsuccessful., example: 0}
         networkTransactionReference: {type: string, maxLength: 64, description: Allows
             linking of the transaction to the original or previous one in a subscription/card-on-file
             chain., example: '123456788'}
@@ -2365,7 +2390,7 @@ components:
         properties:
           networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
               transaction amount, required for Discover card on file transactions.',
-            example: '9.66'}
+            example: 9.66}
     NetworkDetails:
       x-model-version: 1.0
       description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
@@ -2397,7 +2422,7 @@ components:
           example: ''}
         partialAuthTransactionId: {type: string, description: Generated identifier
             unique for each original authorization request., example: ''}
-        totalAuthAmount: {type: number, description: Total amount authorized., example: '13.50'}
+        totalAuthAmount: {type: number, description: Total amount authorized., example: 13.50}
         transactionIdentifier: {type: string, description: This field represents a
             unique value used to identify and link all related transactions for authorization
             and settlement}
@@ -2543,15 +2568,15 @@ components:
       description: Installment bill payment transaction information.
       properties:
         installmentAmount: {type: number, maximum: 1.0E18, description: Amount the
-            customer will be charged per installment., example: '20.00'}
+            customer will be charged per installment., example: 20.00}
         lastInstallmentAmount: {type: number, maximum: 1.0E18, description: Amount
-            the customer will be charged on the last installment., example: '20.00'}
+            the customer will be charged on the last installment., example: 20.00}
         installmentCount: {type: integer, maximum: 999, description: Number of installment
             payments in the plan, example: 12}
         interestRate: {type: number, maximum: 100, description: Indicates the installment
-            interest rate if applicable., example: '1.32'}
+            interest rate if applicable., example: 1.32}
         paymentFirstDay: {type: number, maximum: 1.0E18, description: Amount the customer
-            will be charged on the first day., example: '15.00'}
+            will be charged on the first day., example: 15.00}
         invoiceId: {type: string, maxLength: 256, description: 'Invoice Number of
             an installment bill payment transaction. Note: This field has limited
             platform availability. For more information, please contact your account
@@ -2665,30 +2690,30 @@ components:
       description: Used in transactions where additional <a href="../docs?path=docs/Resources/Master-Data/Amount-Components.md">amount</a>
         fields such as tax, surcharge, or fees are required as part of the request.
       properties:
-        subTotal: {type: number, maximum: 1.0E18, description: Subtotal amount., example: '1.50'}
+        subTotal: {type: number, maximum: 1.0E18, description: Subtotal amount., example: 1.50}
         vatAmount: {type: number, maximum: 1.0E18, description: Level 2 VAT (Value
-            Added Tax) or alternate tax amount applied at the order level., example: '1.50'}
+            Added Tax) or alternate tax amount applied at the order level., example: 1.50}
         localTax: {type: number, maximum: 1.0E18, description: Local sales tax amount
-            included in a transaction., example: '1.50'}
+            included in a transaction., example: 1.50}
         shippingAmount: {type: number, maximum: 1.0E18, description: Shipping amount
-            included in a transaction., example: '1.50'}
+            included in a transaction., example: 1.50}
         cashback: {type: number, maximum: 1.0E18, description: 'For Debit, EBTCash,
             or Credit: The amount of cash requested by the cardholder at the time
-            of purchase.', example: '1.50'}
+            of purchase.', example: 1.50}
         tip: {type: number, maximum: 1.0E18, description: The portion of the transaction
-            amount that represents the tip., example: '1.50'}
+            amount that represents the tip., example: 1.50}
         surcharge: {type: number, maximum: 1.0E18, description: 'Identifies the transaction
             surcharge amount as an extra fee, tax, or cost added to the already existent
             cost of a good or service. Note: Not all processors and acquirers allow
             surcharge fees. For more information, please contact your account representative.',
-          example: '1.50'}
+          example: 1.50}
         ITBISTaxAmount: {type: number, maximum: 1.0E18, description: Tax amount on
-            the transfer of Industrialised Goods and Services (ITBIS)., example: '1.50'}
+            the transfer of Industrialised Goods and Services (ITBIS)., example: 1.50}
         convenienceFee: {type: number, maximum: 1.0E18, description: 'Optional convenience
             fee for payments made through an alternative channel. rather than by cash,
             check, or ACH. Note: Not all processors and acquirers allow convenience
             fees. For more information, please contact your account representative.',
-          example: '1.50'}
+          example: 1.50}
     RegionalDebit:
       x-model-version: 1.0
       description: Data that applies to <a href="../docs?path=docs/Resources/Guides/Debit/Regional-Debit.md">regional
@@ -2700,7 +2725,7 @@ components:
         debitMACValue: {type: string, description: Used to confirm that the key data
             elements of the transaction have not been tampered.}
         encryptedKeyIndex: {type: number, description: 'Indicates the key index in
-            use by PIN Pad, valid values are 1 through 9.', example: '1'}
+            use by PIN Pad, valid values are 1 through 9.', example: 1}
         messageAuthenticationWorkingKey: {type: string, description: A message authentication
             code for a working key that uses a session key to detect both accidental
             and intentional modifications of the data.}
@@ -2773,7 +2798,7 @@ components:
           example: 845366457890-TODO}
         schemeTransactionId: {type: string, description: Brand transaction ID., example: '019078743804756'}
         networkOriginalAmount: {type: number, maximum: 1.0E18, description: Network
-            original amount, example: '100.50'}
+            original amount, example: 100.50}
         feeProgramIndicator: {type: string, description: Contains the Fee Program
             Indicator (FPI) code that may be returned on Debit or PLDebit transaction
             response., example: '123'}
@@ -3573,7 +3598,7 @@ components:
       properties:
         riskScore: {type: integer, maximum: 100, description: 'Merchant’s defined
             fraud risk score for this transaction 0-100, 100 being highest risk.',
-          example: '100'}
+          example: 100}
         suspicious: {type: boolean, description: 'If the merchant detected suspicious
             activity on card, account or device used for this transaction in prior
             60 days.', example: 'true'}
@@ -3600,7 +3625,7 @@ components:
             * STORE_CREDIT\n* DEBIT_CARD\n* EBT_SNAP\n"
           example: CREDIT_CARD
         count: {type: integer, maximum: 99, description: Number of accounts presented
-            of this type., example: '2'}
+            of this type., example: 2}
         amount: {$ref: '#/components/schemas/Amount'}
     EnhancedDataServiceResponse:
       x-model-version: 1.0
@@ -3644,7 +3669,7 @@ components:
         properties:
           score: {maximum: 100, minimum: 0, type: integer, description: Normalized
               score of a return probability. 0 indicating a low returner and 100 indicating
-              a high returner., example: '100'}
+              a high returner., example: 100}
           returnProbabilityProfile:
             type: string
             description: |
@@ -3659,11 +3684,11 @@ components:
       description: Return Score Details
       properties:
         averageReturnValue: {type: number, description: Average amount value returned
-            (ARV), example: '45.53'}
+            (ARV), example: 45.53}
         averageOrderValue: {type: number, description: Average amount value spent
-            (AOV), example: '275.25'}
+            (AOV), example: 275.25}
         percentSalesReturned: {maximum: 1, minimum: 0, type: number, description: '%
-            of sales returned (by Amount)', example: '0.3'}
+            of sales returned (by Amount)', example: 0.3}
     SecurityCredentialsRequest:
       x-model-version: 1.0
       properties:
@@ -3722,7 +3747,7 @@ components:
   examples:
     ApplePayRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: ApplePay
           data: hbreWcQg980mUoUCfuCoripnHO210lvtizOFLV6PTw1DjooSwik778bH/qgK2pKelDTiiC8eXeiSwSIfrTPp6tq9x8Xo2H0KYAHCjLaJtoDdnjXm8QtC3m8MlcKAyYKp4hOW6tcPmy5rKVCKr1RFCDwjWd9zfVmp/au8hzZQtTYvnlje9t36xNy057eKmA1Bl1r9MFPxicTudVesSYMoAPS4IS+IlYiZzCPHzSLYLvFNiLFzP77qq7B6HSZ3dAZm244v8ep9EQdZVb1xzYdr6U+F5n1W+prS/fnL4+PVdiJK1Gn2qhiveyQX1XopLEQSbMDaW0wYhfDP9XM/+EDMLaXIKRiCtFry9nkbQZDjr2ti91KOAvzQf7XFbV+O8i60BSlI4/QRmLdKHmk/m0rDgQAoYLgUZ5xjKzXpJR9iW6RWuNYyaf9XdD8s2eB9aBQ=
@@ -3765,7 +3790,7 @@ components:
           cavv: 01ade6ae340005c681c3a1890418b53000020000
           wallet: APPLE_PAY
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -3815,7 +3840,7 @@ components:
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
     GooglePayRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source: {sourceType: GooglePay, data: '{"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"}',
           signature: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=,
           version: ECv2, merchantId: 676174657761793A666972737464617461, merchantPrivateKey: DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A,
@@ -3848,7 +3873,7 @@ components:
           cavv: 01ade6ae340005c681c3a1890418b53000020000
           wallet: GOOGLE_PAY
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -3898,7 +3923,7 @@ components:
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
     PaymentCardRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentCard
           card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
@@ -3907,7 +3932,7 @@ components:
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     PaymentCardForcedRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentCard
           card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
@@ -3941,7 +3966,7 @@ components:
             stateOrProvince: GA, postalCode: '30303', country: US}
     PaymentCardEDSRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentCard
           card: {bin: '400555', last4: '0019'}
@@ -3957,11 +3982,11 @@ components:
         splitTender:
           splitTenderMethod:
           - type: CREDIT_CARD
-            count: '1'
-            amount: {total: '7.04'}
+            count: 1
+            amount: {total: 7.04}
           - type: GIFT_CARD
-            count: '1'
-            amount: {total: '5.00'}
+            count: 1
+            amount: {total: 5.00}
         shippingAddress:
           firstName: Jane
           lastName: Doe
@@ -3988,7 +4013,7 @@ components:
         - {tokenData: '8519371934460010', tokenSource: CHASE, tokenResponseCode: '000',
           tokenResponseDescription: SUCCESS}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4023,7 +4048,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4179,7 +4204,7 @@ components:
         processorResponseDetails: {referenceNumber: 845366457890-TODO}
     PaymentTokenRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentToken
           tokenData: '1234560000000019'
@@ -4191,7 +4216,7 @@ components:
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     PaymentTokenForcedRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentToken
           tokenData: '1234560000000019'
@@ -4224,7 +4249,7 @@ components:
             stateOrProvince: GA, postalCode: '30303', country: US}
     PaymentTokenEDSRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source: {sourceType: PaymentToken, tokenData: '1234560000000019'}
         transactionDetails:
           merchantOrderId: '123456789012'
@@ -4238,11 +4263,11 @@ components:
         splitTender:
           splitTenderMethod:
           - type: CREDIT_CARD
-            count: '1'
-            amount: {total: '7.04'}
+            count: 1
+            amount: {total: 7.04}
           - type: GIFT_CARD
-            count: '1'
-            amount: {total: '5.00'}
+            count: 1
+            amount: {total: 5.00}
         shippingAddress:
           firstName: Jane
           lastName: Doe
@@ -4270,7 +4295,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4307,7 +4332,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4428,7 +4453,7 @@ components:
         transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '93', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '30'} }
     Payment3DSRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: Payment3DS
           card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035',
@@ -4473,7 +4498,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '30'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4561,7 +4586,7 @@ components:
                 priority: PRIMARY
     PaymentEMVRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentEMV
           emvData: 0249F3704833A12329F1002AB34
@@ -4573,7 +4598,7 @@ components:
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     PaymentEMVForcedRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentEMV
           emvData: 0249F3704833A12329F1002AB34
@@ -4643,7 +4668,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4746,7 +4771,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -4993,7 +5018,7 @@ components:
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
     PaymentTrackRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentTrack
           encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: 9050770762789954=7171229002517746248,
@@ -5041,7 +5066,7 @@ components:
                 priority: PRIMARY
     PaymentTrackForcedRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentTrack
           encryptionData: {encryptionType: RSA, encryptionTarget: TRACK_2, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
@@ -5106,7 +5131,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5217,7 +5242,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5470,7 +5495,7 @@ components:
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
     ManualEntryRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentCard
           encryptionData: {encryptionType: RSA, encryptionTarget: MANUAL, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
@@ -5481,7 +5506,7 @@ components:
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     ManualEntryForcedRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         source:
           sourceType: PaymentCard
           encryptionData: {encryptionType: RSA, encryptionTarget: MANUAL, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
@@ -5532,7 +5557,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5567,7 +5592,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5699,7 +5724,7 @@ components:
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
     SecondaryRequest:
       value:
-        amount: {total: '12.04', currency: USD}
+        amount: {total: 12.04, currency: USD}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     SecondaryRequestWithReferenceMerchantTransactionId:
@@ -5708,7 +5733,7 @@ components:
           referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
           referenceTransactionType: 'CHARGES'
         amount:
-          total: '12.04'
+          total: 12.04
           currency: 'USD'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
@@ -5722,7 +5747,7 @@ components:
           referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
           referenceTransactionType: 'CHARGES'
         amount:
-          total: '12.04'
+          total: 12.04
           currency: 'USD'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
@@ -5743,7 +5768,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5778,7 +5803,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5813,7 +5838,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: '12.04', currency: USD}
+          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5866,7 +5891,7 @@ components:
         paymentReceipt:
           approvedAmount:
             currency: 'USD'
-            total: '690'
+            total: 690
           processorResponseDetails:
             approvalCode: 'OK6982'
             approvalStatus: 'APPROVED'
@@ -5919,7 +5944,7 @@ components:
           paymentReceipt:
             approvedAmount:
               currency: 'USD'
-              total: '16.93'
+              total: 6.93
             processorResponseDetails:
               approvalCode: 'OK7742'
               approvalStatus: 'APPROVED'
@@ -5987,7 +6012,7 @@ components:
     PaymentSessionRequest:
       value:
         amount:
-          total: '12.04'
+          total: 12.04
           currency: USD
         source:
           sourceType: PaymentSession
@@ -6039,7 +6064,7 @@ components:
             expirationYear: '2030'
         paymentReceipt:
           approvedAmount:
-            total: '12.04'
+            total: 12.04
             currency: 'USD'
           merchantName: 'Merchant Name'
           merchantAddress: '123 Peach Ave'
