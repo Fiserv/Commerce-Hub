@@ -189,51 +189,41 @@ paths:
         504:
           $ref: '#/components/responses/GatewayTimeout'
   /payments/v1/refunds:
-    x-model-version: 1.2
+    x-model-version: 1.0
     post:
       tags:
       - Refund Endpoint Definition
       x-group-name: 'Payments'
-      x-proxy-name: 'Refunds'
-      x-default-example: transactionId
-      summary: Submit a cancel transaction.
+      x-proxy-name: 'Refund'
+      summary: Submit a refund transaction.
       description: 'Use this payload to perform a partial or full refund (aka credit/return). This will return funds to the customer.'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CancelRequest'
+              $ref: '#/components/schemas/RefundRequest'
             examples:
-              merchantTransactionId:
-                summary: Cancel a transaction using Merchant Transaction ID
+              MerchantTransactionID:
+                summary: Refund a transaction using Merchant Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
-              transactionId:
-                summary: Cancel a transaction using CommerceHub Transaction ID
+              TransactionID:
+                summary: Refund a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
       responses:
-        200:
-          description: Success
+        201:
+          description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CancelResponse'
+                $ref: '#/components/schemas/RefundResponse'
               examples:
-                merchantTransactionId:
-                  summary: Cancel response using Merchant Transaction ID
-                  $ref: '#/components/examples/CancelResponse'
-                transactionId:
-                  summary: Cancel response using Transaction ID
-                  $ref: '#/components/examples/CancelResponse'   
+                MerchantTransactionID:
+                  summary: Refund a transaction using Merchant Transaction ID
+                  $ref: '#/components/examples/RefundResponse'
+                TransactionID:
+                  summary: Refund a transaction using CommerceHub Transaction ID
+                  $ref: '#/components/examples/RefundResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -1150,6 +1140,7 @@ components:
         amount: {$ref: '#/components/schemas/Amount'}
         source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
@@ -3550,6 +3541,7 @@ components:
         source: {$ref: '#/components/schemas/Source'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
@@ -3574,6 +3566,7 @@ components:
         source: {$ref: '#/components/schemas/Source'}
         amount: {$ref: '#/components/schemas/Amount'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
