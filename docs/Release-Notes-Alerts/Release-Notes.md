@@ -24,6 +24,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Details | Type |
 | ----- | ----- |
 | [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) updated to support referenced transaction identifiers | Update |
+| Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support event handling and advanced CSS styling | Update |
 | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) support added for card present transactions on Chase | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
