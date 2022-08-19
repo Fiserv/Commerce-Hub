@@ -6,6 +6,9 @@ tags: [Getting Started, Release Notes, Update, Enhancement]
 
 Commerce Hub is continually being improved with new features, security enhancements, and performance improvements. These release notes list the updates for each release with the most recent update shown first.
 
+<!-- theme: info -->
+> See the [Preview Release Notes](?path=docs/Release-Notes-Alerts/Preview.md) for upcoming features and updates.
+
 #### Release Types
 
 - **Feature:** New feature was released
@@ -21,9 +24,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Details | Type |
 | ----- | ----- |
 | [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) updated to support referenced transaction identifiers | Update |
-| [Regional Debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) support added for Canada on Nashville | Feature |
 | Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support event handling and advanced CSS styling | Update |
-| [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Marketplace to support positive/negative filtering and transaction restrictions | Update |
 | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) support added for card present transactions on Chase | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
