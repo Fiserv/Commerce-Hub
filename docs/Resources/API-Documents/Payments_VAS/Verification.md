@@ -7,13 +7,16 @@ tags: [Account, Verification, Security Code, Address Verrification Service]
 The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification request using a payment [card](#paymentcard-request) or [token](#paymenttoken-request).
 
 <!--theme:info-->
-> The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request.
+> The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request by sending the customer's `billingAddress` and `securityCode`.
 
 ---
 
 ## PaymentCard Request
 
 ### Minimum Requirements
+
+<!--theme:info-->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 <!--
 type: tab
