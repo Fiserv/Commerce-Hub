@@ -1,5 +1,5 @@
 ---
-tags: [Card Present, Master Data, Regional Debit, International Debit]
+tags: [Card Present, In-Person, Debit, Regional]
 ---
 
 # Regional Debit

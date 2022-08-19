@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Card Present, Incremental Auth, Incremental, Authorization]
+tags: [Card Not Present, Card Present, Authorization]
 ---
 
 # Incremental Authorization

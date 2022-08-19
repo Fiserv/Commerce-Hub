@@ -1,7 +1,8 @@
 ---
-tags: [Online, Card Not Present, Secure Payment Form, JS, Javascript, Secure Data Capture, Tokenization]
+tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
-# JavaScript Customization
+
+# Secure Data Capture - JS Customization
 
 The JavaScript or JS elements are set by default based on the ADA guidelines. Commerece Hub allows the merchant to customize the styling by setting a flag and apply their own styling. The merchant can override the elements of the JS including [language](#languages), and the [theme and font](#theme-and-font).
 
@@ -102,6 +103,6 @@ The following elements can be overridden:
 
 - [JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
 - [JS Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
-- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
+- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

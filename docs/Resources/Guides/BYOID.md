@@ -1,10 +1,10 @@
 ---
-tags: [Merchant Identifier, Order Identifier, Merchant ID, Terminal ID, MID, TID, Transaction ID, Order ID, Custom Identifiers]
+tags: [Merchant Identifier, Order Identifier, Merchant ID, Terminal ID, Transaction ID, Order ID, Custom Identifiers]
 ---
 
 # Custom Identifiers
 
-Commerce Hub supports the ability for mercant's to use thier own Merchant Identifiers and Order Identifiers. This allows a seemless integration into existing merchant APIs and databases.
+Commerce Hub supports the ability for mercant's to use thier own [Merchant Identifiers](#merchant-identifiers) and [Order Identifiers](#order-identifiers). This allows a seemless integration into existing merchant APIs and databases.
 
 ---
 
