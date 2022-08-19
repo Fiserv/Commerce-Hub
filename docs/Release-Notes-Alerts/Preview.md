@@ -15,7 +15,7 @@ Commerce Hub provides a preview of our upcoming feture releases in Developer Stu
 
 ## September 30th 2022
 
-Commerce Hub will target to update our environments on the following dates, however this content is subject to change based on testing results.
+Commerce Hub will target to update our environments on the following dates, however the dates and content is subject to change based on testing results.
 
 - **Certification:** September 12th 2022
 - **Production:** September 18th 2022
@@ -29,7 +29,7 @@ Commerce Hub will target to update our environments on the following dates, howe
 
 ## August 2022
 
-Commerce Hub will target to update our environments on the following dates, however this content is subject to change based on testing results.
+Commerce Hub will target to update our environments on the following dates, however the dates and content is subject to change based on testing results.
 
 - **Certification:** August 17th 2022
 - **Production:** August 23rd 2022
