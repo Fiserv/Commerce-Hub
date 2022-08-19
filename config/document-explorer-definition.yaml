@@ -176,5 +176,7 @@
 - sections:
   - title: Updates and Alerts
     sections:
+      - title: Preview Releases
+        link: docs/Release-Notes-Alerts/Preview.md
       - title: Release Notes
         link: docs/Release-Notes-Alerts/Release-Notes.md
