@@ -13,7 +13,7 @@ Commerce Hub provides a preview of our upcoming feture releases in Developer Stu
 
 ---
 
-## September 30th
+## September 30th 2022
 
 Commerce Hub will target to update our environments on the following dates, however this content is subject to change based on testing results.
 
