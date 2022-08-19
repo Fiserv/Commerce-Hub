@@ -1,4 +1,5 @@
-tags: [Getting Started, Release Notes, Update, Patch, Enhancement]
+---
+tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
 ---
 
 # Preview Release
