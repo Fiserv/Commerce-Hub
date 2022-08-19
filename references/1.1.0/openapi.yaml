@@ -3482,6 +3482,7 @@ components:
         source: {$ref: '#/components/schemas/Source'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
