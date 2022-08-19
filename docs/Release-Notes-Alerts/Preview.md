@@ -1,1 +1,1 @@
-Commerce Hub provides a preview of our upcoming releases in Developer Studio. The upcoming features and updates can be viewed by changing the dropdown from Active to Preview. When these features are released they will be announced in the Release Notes.
+Commerce Hub provides a preview of our upcoming releases in Developer Studio. The upcoming features and updates can be viewed by changing the dropdown from Active to Preview. When these features are released they will be announced in the [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
