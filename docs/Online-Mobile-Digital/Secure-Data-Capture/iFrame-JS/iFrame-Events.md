@@ -51,7 +51,7 @@ The following table describes each for the fields in the even schema:
 |	_fields_	| An array of field objects giving a more detailed breakdown of the individual field validation checks |
 | _fields.card[*].valid_	| A boolean flag _(true, false)_ indicating if the form field is in a valid state |
 |	_fields.card[*].length_ | An integer indicating the number of characters in the field data at the time the event was fired
-| fields.card[*].error	A string description of the field error if the field is in an invalid state
+| _fields.card[*].error_	| A string description of the field error if the field is in an invalid state |
 
 
 #### Trigger Type
