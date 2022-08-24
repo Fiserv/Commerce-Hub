@@ -41,7 +41,6 @@ The below table identifies the required parameters in the `source` object.
 | `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
 | `signature` | *string* | 2000 | &#10004; | Verifies that the message came from Google, base64-encoded, and created with ECDSA by the intermediate signing key. |
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
-| `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
 <!-- type: tab-end -->
 
@@ -76,7 +75,6 @@ titles: Request, Response
       "createToken": false
    },
    "merchantDetails":{
-      "merchantId": "123456789789567",
       "terminalId": "123456"
    }
 }
