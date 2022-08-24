@@ -5,14 +5,6 @@ archive/
 
 # All Files and Subdirectories
 archive/**
-docs/Online-Mobile-Digital/Wallets-AltPayments/PayPal/**
-docs/Resources/Guides/Payments-101/**
-docs/Resources/Guides/Reporting/**
-docs/Resources/Guides/Vault/**
-docs/Resources/API-Documents/Value_Added_Services/**
-docs/Resources/Guides/Industry-Verticals/**
-docs/Resources/Guides/Testing/**
-docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
 
 # Markdown Files
 tag-list.md
@@ -26,8 +18,6 @@ docs/Resources/Guides/Bill-Payments/Bill-Payments.md
 docs/Resources/Guides/Bill-Payments/Deferred-Payment.md
 docs/Resources/Guides/Bill-Payments/Payment-Schedule.md
 docs/Resources/Guides/Fraud/Fraud-Detect.md
-docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md
-docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
 docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
 docs/Resources/Guides/Payment-Sources/Gift-Card.md
 docs/Resources/Guides/Payment-Sources/Network-Token.md

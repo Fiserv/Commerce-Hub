@@ -1,13 +1,13 @@
 ---
 
-tags: [Carat, Commerce Hub, Enterprise, Configuration, User Management, Card Not Present, Payeezy]
+tags: [carat, commerce-hub, enterprise, configuration, user-management, card-not-present, payeezy]
 
 ---
 
 # Configuration
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Configuration was previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be available from ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
@@ -23,7 +23,7 @@ The API integration settings were originally controlled solely in RPM; in Commer
 
 Partner API capabilities are currently not supported.
 
-In Payeezy, the Administrative pages could be displayed in multiple languages (EN, ES) based on the terminal setting; at this time CLX is available in English language only.
+In Payeezy, the Administrative pages could be displayed in multiple languages (EN, ES) based on the terminal setting; at this time, CLX is available in English language only.
 
 ### Capability Comparison by Screen
  
@@ -79,7 +79,6 @@ Change log of all updates to a user account is available for review.
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 
 ---
-
