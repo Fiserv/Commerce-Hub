@@ -4,32 +4,21 @@ tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
 
 # Preview Release Notes
 
-Commerce Hub provides a preview of our upcoming feture releases in Developer Studio. The upcoming features and updates can be viewed by changing the dropdown from **Active** to **Preview**. When these features are released they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
+Commerce Hub provides a preview of our upcoming feature releases in Developer Studio. When these features are released they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
+
+<!-- theme: info -->
+> The upcoming features and updates can be viewed by changing the dropdown from **Active** to **Preview** when viewing an article.
 
 #### Release Types
 
-- **Feature:** New feature was released
-- **Update:** Existing feature was updated or enhanced
-
----
-
-## September 30th 2022
-
-Commerce Hub will target to update our environments on the following dates, however the dates and content is subject to change based on testing results.
-
-- **Certification:** September 12th 2022
-- **Production:** September 18th 2022
-
-| Details | Type |
-| ----- | ----- |
-| blah | Feature |
-| blah | Update |
+- **Feature:** New feature release
+- **Update:** Existing feature update or enhancement
 
 ---
 
 ## August 2022
 
-Commerce Hub will target to update our environments on the following dates, however the dates and content is subject to change based on testing results.
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
 - **Certification:** August 17th 2022
 - **Production:** August 23rd 2022
@@ -46,4 +35,7 @@ Commerce Hub will target to update our environments on the following dates, howe
 ---
 
 ## See Also
+
 - [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md)
+
+---
