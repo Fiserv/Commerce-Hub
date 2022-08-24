@@ -204,10 +204,10 @@ paths:
             schema:
               $ref: '#/components/schemas/RefundRequest'
             examples:
-              MerchantTransactionID:
+              merchantTransactionId:
                 summary: Refund a transaction using Merchant Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
-              TransactionID:
+              transactionId:
                 summary: Refund a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
       responses:
@@ -218,10 +218,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/RefundResponse'
               examples:
-                MerchantTransactionID:
+                merchantTransactionId:
                   summary: Refund a transaction using Merchant Transaction ID
                   $ref: '#/components/examples/RefundResponse'
-                TransactionID:
+                transactionId:
                   summary: Refund a transaction using CommerceHub Transaction ID
                   $ref: '#/components/examples/RefundResponse'
         400:
