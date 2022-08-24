@@ -57,38 +57,131 @@ The following example shows all the text labels that can be overridden for a par
 
 ---
 
+## CSS Styling
 
-## Theme and Font
+The default iFrame JS styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
 
-For iFrame JS, the styling is set by default, based off of ADA guidelines. (Link to ADA guidelines)
+<!-- theme: warning -->
+> Support for certain CSS properties/selectors have been restricted for security reasons.
+
+Following are the two attributres of `configFiserv` object:
+
+| Attributes | Description |
+|------|-------|
+| `base` | base styling for the iframe on all device sizes |
+| `media` | device based styling rules that override the base styling rules when the current device matches the defined media query | 
 
 
-#### Overriding Elements
-The following elements can be overridden:
+The following code snippet shows a sample styling configuration:
 
-- **Primary Color Theme:** changes the main color, i.e. highlight color, font color, button color (when enabled). Hexadecimal only
-- **Contrast Color Theme:** button font color. Hexadecimal only
-- **Fields Font Family:** font used on the form. Supported fonts: NotoSans, NotoSerif, OpenSans, Roboto, RobotoMono
-- **Button Font Size:** size of the text font on the button.
-- **Input Text Font Size:** size of the rest of the text font.
+```java
+
+const fiservConfig = {
+   "css": {
+      "styles": {
+         "base": {
+            "app-root": {
+               "font-style": "italic",
+               "app-card-number": {
+                  "background-color": "whitesmoke",
+                  "font-style": "normal",
+                  "font-family": "Courier New",
+                  "font-size": "12px",
+                  ":hover": {
+                     "background-color": "lightgray",
+                     "border": "darkgray dashed 2px"
+                  }
+               }
+            },
+            "app-card-form": {
+               "app-input-card": {
+                  "box-shadow": "3px 3px lightgray"
+               }
+            }
+         },
+         "media": {
+            "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)": {
+               "app-card-form": {
+                  "app-input-card": {
+                     "box-shadow": "3px 3px cyan"
+                  }
+               }
+            },
+            "@media only screen and (min-device-width: 320px) and (max-device-width: 480px)": {
+               "app-card-form": {
+                  "app-input-card": {
+                     "box-shadow": "3px 3px gold"
+                  }
+               }
+            }
+         }
+      }
+   }
+};
+
+```
+
+
+### Standard Tags
+
+The following list outlines the standard card form tags that do not change and should form the basis of core media queries:
+
+- app-root
+- app-card-form
+- app-select-expiry
+- app-card-number
+- app-input-card (used for CVV and card holder)
+- app-submit-button
+
+
+### CSS Whitelist
+The following list outlines the list CSS properties that are supported by the iframe:
 
 ```css
 
-"css": {
-  "primaryColorTheme": "#2D2D2D",
-  "contrastColorTheme": "#ffffff",
-  "fieldsFontFamily": "ROBOTO",
-  "buttonFontSize": "20px",
-  "inputTextFontSize": "20px"
-  }
-  
+const CSS_PROPERTY_WHITELIST = Object.freeze({
+  "-moz-appearance": true,
+  "-moz-osx-font-smoothing": true,
+  "-moz-tap-highlight-color": true,
+  "-moz-transition": true,
+  "-webkit-appearance": true,
+  "-webkit-font-smoothing": true,
+  "-webkit-tap-highlight-color": true,
+  "-webkit-transition": true,
+  "box-shadow": true,
+  "-webkit-box-shadow": true,
+  "-webkit-text-fill-color": true,
+  "background-color": true,
+  "appearance": true,
+  "color": true,
+  "margin": true,
+  "border": true,
+  "border-bottom": true,
+  "border-left": true,
+  "border-right": true,
+  "border-top": true,
+  "border-color": true,
+  "border-style": true,
+  "font-style": true,
+  "font-family": true,
+  "font-size": true,
+  "font-weight": true,
+  "padding": true
+});
+
 ```
+### Unsupported CSS
+
+iFrame solution does not support `input[value='*']` query selector as it poses a security risk by letting the attackers inject css that calls a remote URL when the input matches a certain value. If the injected remote url is a unique URL per input value, the attacker can have full or partial access to the individual content. To prevent this, Commerce Hub implements a filter that bypasses this query selector that match a specific regex. 
+
+To mitigate the risk of a CSS exfiltration attack, `[url\(.*\]` incorporates a CSS property value filter which blocks certain css values. 
+
 ---
 
 ## See Also
 
-- [iFrame Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md)
-- [iFrame Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
+- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---
