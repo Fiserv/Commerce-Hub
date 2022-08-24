@@ -32,7 +32,7 @@ Click the Assign Profile link and select the profile that you want to assign tra
 
 #### Step 4: Setup Fraud Settings
 
-Select the Fraud Settings tab on the left side. Select the [Fraud Settings](#fraud-settings) from the list to enable/disable the functions and features. Enable the fraud settings by selecting Enable on Commercehub checkbox and enabling the features or filters.
+Select the Fraud Settings tab on the left side. Select the [Fraud Settings](#fraud-settings-1) from the list to enable/disable the functions and features. Enable the fraud settings by selecting Enable on Commercehub checkbox and enabling the features or filters.
 
 #### Step 5: Save Settings
 Click the Save button and click the Home icon to return to the main screen.
