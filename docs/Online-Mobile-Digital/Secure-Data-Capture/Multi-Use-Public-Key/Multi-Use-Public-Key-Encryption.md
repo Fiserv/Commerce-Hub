@@ -11,7 +11,7 @@ The merchant uses multi-use public key for the asymmeteric PaymentCard encryptio
 
 The `encryptionBlock` field is passed through the `PaymentCard` request to encrypt the data. The `encryptionBlock` field is a concatenated string of the `card` object fields which includes: `cardData`, `nameOnCard`, `expirationMonth`, `expirationYear`, and `securityCode`.
 
-```Javascript
+```javascript
 const cardData = {
     "cardData": "4141414141414141",
     "nameOnCard": "Joe Bloggs",
@@ -34,7 +34,7 @@ const encryptionBlock =  Object.values(cardData).join(""));
 The `encryptionBlockFields` when generated contains a string of card data fields and its corresponding byte lengths. The string must match the order in which the `encryptionBlock` was generated in step 1. 
 
 
-```Javascript
+```javascript
 const cardData = {
     "cardData": "4141414141414141",
     "nameOnCard": "Joe Bloggs",
@@ -79,7 +79,7 @@ Form the `encryptionData` object using the encrypted `encryptionBlock` and `encr
 The below table identifies the parameters in the `encryptionData` object.
 
 | Variable | Type | Maximum Length | Description |
-| -------- | ---- | ------- | -------------------------------|
+| -------- | ---- | ------- | -----------|
 | `encryptionType` | *string* | 256 | Encryption type to be passed. |
 | `encryptionTarget` | *string* | 256 | Target could be *TRACK1*, *TRACK2*, Both or Manual. |
 | `encryptionBlock` | *string* | 2000 | This field contains the track data or card number provided in encrypted form. |
@@ -87,7 +87,7 @@ The below table identifies the parameters in the `encryptionData` object.
 | `encryptionBlockFields` | *string* | 256 | Encryption block field descriptors to facilitate decryption when using multi-use public key encryption. Each field should recorded the form field_name:byte_count e.g. card.expirationMonth:2 |
 
 
-```Javascript
+```javascript
 
 encryptionData: {
   keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
@@ -121,6 +121,7 @@ const payload = {
      };
      
 ```
+
 ---
 
 ## Encryption Example
@@ -194,4 +195,3 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
 - [Secure Data Capture API Only](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md)
 
 ---
-
