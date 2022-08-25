@@ -189,51 +189,41 @@ paths:
         504:
           $ref: '#/components/responses/GatewayTimeout'
   /payments/v1/refunds:
-    x-model-version: 1.2
+    x-model-version: 1.0
     post:
       tags:
       - Refund Endpoint Definition
       x-group-name: 'Payments'
-      x-proxy-name: 'Refunds'
-      x-default-example: transactionId
-      summary: Submit a cancel transaction.
+      x-proxy-name: 'Refund'
+      summary: Submit a refund transaction.
       description: 'Use this payload to perform a partial or full refund (aka credit/return). This will return funds to the customer.'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CancelRequest'
+              $ref: '#/components/schemas/RefundRequest'
             examples:
               merchantTransactionId:
-                summary: Cancel a transaction using Merchant Transaction ID
+                summary: Refund a transaction using Merchant Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
               transactionId:
-                summary: Cancel a transaction using CommerceHub Transaction ID
+                summary: Refund a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
       responses:
-        200:
-          description: Success
+        201:
+          description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CancelResponse'
+                $ref: '#/components/schemas/RefundResponse'
               examples:
                 merchantTransactionId:
-                  summary: Cancel response using Merchant Transaction ID
-                  $ref: '#/components/examples/CancelResponse'
+                  summary: Refund a transaction using Merchant Transaction ID
+                  $ref: '#/components/examples/RefundResponse'
                 transactionId:
-                  summary: Cancel response using Transaction ID
-                  $ref: '#/components/examples/CancelResponse'   
+                  summary: Refund a transaction using CommerceHub Transaction ID
+                  $ref: '#/components/examples/RefundResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -1150,6 +1140,7 @@ components:
         amount: {$ref: '#/components/schemas/Amount'}
         source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
@@ -2136,7 +2127,7 @@ components:
             in an authorization response, and if returned must be provided in subsequent
             Capture transactions.', example: "000"}
         applicationExpiryDate: {type: string, format: date, description: Captured
-            from the EMV chip data. YYYY-MM-DD format., example: ' 2021-09-03'}
+            from the EMV chip data. YYYY-MM-DD format., example: '2021-09-03'}
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
         network: {$ref: '#/components/schemas/Network'}
         authorizationCharacteristicsIndicator: {type: string, maxLength: 23, description: Response
@@ -2784,8 +2775,7 @@ components:
           example: 1.50}
     RegionalDebit:
       x-model-version: 1.0
-      description: Data that applies to <a href="../docs?path=docs/Resources/Guides/Debit/Regional-Debit.md">regional
-        debit</a> transactions.
+      description: 'Data that applies to <a href="../docs?path=docs/Resources/Guides/Debit/Regional-Debit.md">regional debit</a> transactions.'
       properties:
         pinBlock: {$ref: '#/components/schemas/PinBlock'}
         region: {type: string, description: Region of debit origin.}
@@ -3550,6 +3540,7 @@ components:
         source: {$ref: '#/components/schemas/Source'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
@@ -3574,6 +3565,7 @@ components:
         source: {$ref: '#/components/schemas/Source'}
         amount: {$ref: '#/components/schemas/Amount'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
@@ -5602,14 +5594,12 @@ components:
           referenceTransactionId: '95f6b8c8ec024e1183a8e998406656ce'
         merchantDetails:
           merchantId: '222222222222'
-
     TransactionInquiryByMerchantOrderIdRequest:
       value:
         referenceTransactionDetails:
           referenceMerchantOrderId: '953729024'
         merchantDetails:
           merchantId: '222222222222'
-
     TransactionInquiryResponse:
       value:
         gatewayResponse:
@@ -5662,7 +5652,6 @@ components:
         transactionDetails:
           captureFlag: 'true'
           merchantInvoiceNumber: 'CHG01586b641'
-
     TransactionInquiryByMerchantOrderIdResponse:
       value:
           gatewayResponse:
@@ -5727,14 +5716,12 @@ components:
             merchantTransactionId: 'RKTransID-834788206'
           transactionInteraction:
             eciIndicator: 'SECURE_ECOM'
-
     SecurityCredentialsRequest:
       value:
         publicKeyRequired: true
         accessTokenRequired: true
         accessTokenTimeToLive: '889'
         responseRedirectURL: https://www.somedomain.com
-        
     SecurityCredentialsResponse:
       value:
         publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
@@ -5745,7 +5732,6 @@ components:
         accessTokenTimeToLive: '1799'
         symmetricEncryptionAlgorithm: 'AES-GCM'
         asymmetricEncryptionAlgorithm: 'RSA-2048'
-
     PaymentSessionRequest:
       value:
         amount:
@@ -5764,7 +5750,6 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
-    
     PaymentSessionTokenRequest:
       value:
         source:
