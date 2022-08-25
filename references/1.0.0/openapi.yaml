@@ -1549,9 +1549,9 @@ components:
       x-model-version: 1.0
       description: ''
       properties:
-        categoryName: {type: string, maxLength: 8, description: ' ', example: ' '}
-        itemCount: {type: integer, description: The item count in category., example: ' '}
-        value: {type: string, maxLength: 32, description: 'The monetary value of items.', example: }
+        categoryName: {type: string, maxLength: 8, description: 'Name of the category', example: 'Shoes'}
+        itemCount: {type: integer, description: The item count in category., example: '1'}
+        value: {type: string, maxLength: 32, description: 'The monetary value of items.', example: 12.50 }
     DynamicDescriptors:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Guides/Dynamic-Descriptor.md">Dynamic
@@ -1872,7 +1872,7 @@ components:
             in an authorization response, and if returned must be provided in subsequent
             Capture transactions.', example: "000"}
         applicationExpiryDate: {type: string, format: date, description: Captured
-            from the EMV chip data. YYYY-MM-DD format., example: ' 2021-09-03'}
+            from the EMV chip data. YYYY-MM-DD format., example: '2021-09-03'}
         additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
         network: {$ref: '#/components/schemas/Network'}
         authorizationCharacteristicsIndicator: {type: string, maxLength: 23, description: Response

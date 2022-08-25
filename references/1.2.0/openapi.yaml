@@ -5594,14 +5594,12 @@ components:
           referenceTransactionId: '95f6b8c8ec024e1183a8e998406656ce'
         merchantDetails:
           merchantId: '222222222222'
-
     TransactionInquiryByMerchantOrderIdRequest:
       value:
         referenceTransactionDetails:
           referenceMerchantOrderId: '953729024'
         merchantDetails:
           merchantId: '222222222222'
-
     TransactionInquiryResponse:
       value:
         gatewayResponse:
@@ -5654,7 +5652,6 @@ components:
         transactionDetails:
           captureFlag: 'true'
           merchantInvoiceNumber: 'CHG01586b641'
-
     TransactionInquiryByMerchantOrderIdResponse:
       value:
           gatewayResponse:
@@ -5719,14 +5716,12 @@ components:
             merchantTransactionId: 'RKTransID-834788206'
           transactionInteraction:
             eciIndicator: 'SECURE_ECOM'
-
     SecurityCredentialsRequest:
       value:
         publicKeyRequired: true
         accessTokenRequired: true
         accessTokenTimeToLive: '889'
         responseRedirectURL: https://www.somedomain.com
-        
     SecurityCredentialsResponse:
       value:
         publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
@@ -5737,7 +5732,6 @@ components:
         accessTokenTimeToLive: '1799'
         symmetricEncryptionAlgorithm: 'AES-GCM'
         asymmetricEncryptionAlgorithm: 'RSA-2048'
-
     PaymentSessionRequest:
       value:
         amount:
@@ -5756,7 +5750,6 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
-    
     PaymentSessionTokenRequest:
       value:
         source:
@@ -5770,4 +5763,3 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
-
