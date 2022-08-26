@@ -33,6 +33,7 @@ link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 title: Regional Debit
 description: Process international debit cards through debit networks to accept in-person payments and cash withdraws. 
 link: ?path=docs/Resources/Guides/Debit/Regional-Debit.md
+-->
 
 
 <!-- type: row-end -->
