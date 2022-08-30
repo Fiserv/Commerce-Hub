@@ -174,7 +174,6 @@ type: tab
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 - [Google Pay Brand Guidelines](?path=https://developers.google.com/pay/api/web/guides/brand-guidelines)
-- [Google Pay API Sample for Android](?path=https://developers.google.com/pay/api/android/guides/tutorial)
 <!---
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
 -->
