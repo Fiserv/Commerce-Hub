@@ -17,7 +17,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 ## Step 1: Configure Google Pay
 
-Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentClientsInstance, determine readniness to pay, create PaymentDataRequest, register event handler, etc.
+Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentsClient object, determine readniness to pay and load the payment button, create a PaymentDataRequest object and, register the event handler.
 
 ---
 
