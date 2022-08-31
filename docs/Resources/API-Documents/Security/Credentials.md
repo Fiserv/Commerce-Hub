@@ -36,6 +36,18 @@ The below table identifies the response elements.
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
 | `asymmetricEncryptionAlgorithm` | *string* |  | RSA/ECB/PKCS1 with padding. |
 
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
+
 <!-- type: tab-end -->
 
 ---
@@ -98,7 +110,6 @@ type: tab
     "symmetricEncryptionAlgorithm": "AES-GCM",
     "asymmetricEncryptionAlgorithm": "RSA-2048"
 } 
-
 ```
 
 <!-- type: tab-end -->
