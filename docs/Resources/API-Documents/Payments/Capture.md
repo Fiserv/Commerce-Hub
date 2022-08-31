@@ -329,9 +329,9 @@ Test
 
 ---
 
-## Cancel Using URI 
+## Capture Using URI 
 
-A cancel request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the cancel type.
+A capture request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the capture type.
 
 ### Request Variables
 
@@ -347,7 +347,7 @@ The below table identifies the recommended parameters in the `transactionDetails
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-|`reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
+|`reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for capture (void). |
 
 <!--
 type: tab
@@ -367,7 +367,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 ### Endpoint
 
 <!-- theme: success -->
-> **POST** `/payments/v1/charges/{transactionId}/cancel`
+> **POST** `/payments/v1/charges/{transactionId}/capture
 
 ---
 
@@ -378,7 +378,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a cancel payload request.
+##### Example of a capture payload request.
 
 ```json
 {
@@ -397,7 +397,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a cancel (200: Success) response.
+##### Example of a capture (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -464,9 +464,184 @@ type: tab
 
 <!-- type: tab-end -->
 
----
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+
+{
+   "amount": {
+              "total": 100,
+              "currency":"USD"
+              },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4482449009116672",
+      "expirationMonth": "12",
+      "expirationYear": "2025",
+      "securityCode": "977"
+      
+    }
+  },
+"transactionDetails": {
+      "captureFlag": false,
+      "processingCode": "000000",
+      "accountVerification": false,
+      "createToken":false,
+              "merchantOrderId": 58553460,
+      "merchantTransactionId": 45503429,
+              "physicalGoodsIndicator":true
+  },
+  "dynamicDescriptors": {
+        "address": {
+            "postalCode": "40567"
+        }
+    },
+
+"billingAddress":{
+"firstName":"Raghavendiran",
+"lastName":"Kannan",
+"address":{
+"street":"100 Ashford Gables Dr",
+"houseNumberOrName":"4201",
+"city":"Atlanta",
+"stateOrProvince":"Georgia",
+"postalCode":"30338",
+"country":"USA"
+}
+},
+   "merchantDetails": {
+      "merchantId": "100009000000200",
+      "terminalId": "00000001"
+      
+},
+    "transactionInteraction": {
+                "origin": "ECOM",
+                "posEntryMode":"MANUAL",
+                "eciIndicator":"CHANNEL_ENCRYPTED",
+                "posConditionCode":"CARD_NOT_PRESENT_ECOM",
+                "additionalPosInformation": {
+              "dataEntrySource": "UNSPECIFIED",
+                "posFeatures": {
+                "pinAuthenticationCapability": "UNSPECIFIED",
+                "terminalEntryCapability": "ECOMMERCE"
+}
+}
+              }
+}
+
+<!-- type: tab-end -->
+
+{
+   "gatewayResponse":{
+      "transactionType":"CAPTURE",
+      "transactionState":"CAPTURED",
+      "transactionOrigin":"ECOM",
+      "transactionProcessingDetails":{
+         "orderId":"CHG01acb64b7e738748e0a22ecad24185e4cf",
+         "transactionTimestamp":"2022-08-23T09:39:13.68485Z",
+         "apiTraceId":"b1ce745e4e634c3185294e254e038200",
+         "clientRequestId":"8444154",
+         "transactionId":"4326bd2c45e645799587a8e064d66332"
+      }
+   },
+   "source":{
+      "sourceType":"PaymentCard",
+      "card":{
+         "expirationMonth":"12",
+         "expirationYear":"2025",
+         "bin":"448244",
+         "last4":"6672",
+         "scheme":"VISA"
+      }
+   },
+   "paymentReceipt":{
+      "approvedAmount":{
+         "total":120.00,
+         "currency":"USD"
+      },
+      "processorResponseDetails":{
+         "approvalStatus":"APPROVED",
+         "approvalCode":"OK4979",
+         "referenceNumber":"27ad37b6b5f4",
+         "processor":"FISERV",
+         "host":"NASHVILLE",
+         "networkInternationalId":"0001",
+         "responseCode":"000",
+         "responseMessage":"Approved",
+         "hostResponseCode":"00",
+         "hostResponseMessage":"APPROVAL",
+         "responseIndicators":{
+            "alternateRouteDebitIndicator":false,
+            "signatureLineIndicator":false,
+            "signatureDebitRouteIndicator":false
+         },
+         "bankAssociationDetails":{
+            "associationResponseCode":"V   ",
+            "avsSecurityCodeResponse":{
+               "streetMatch":"MATCHED",
+               "postalCodeMatch":"MATCHED",
+               "securityCodeMatch":"NONE",
+               "association":{
+                  "avsCode":"Y"
+               }
+            }
+         },
+         "additionalInfo":[
+            {
+               "name":"HOST_RAW_PROCESSOR_RESPONSE",
+               "value":"ARAyIAHvv70O77+9AAIAAAAAAAABIAAIIwk5EwAzQgABWTI3YWQzN2I2YjVmNE9LNDk3OTAwMDE1MDM1NTcAAVkBYwBIMTRXMDEyMjM1MjUzMjk4MTM2RzQzNyAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwABgyMkFQUFJPVkFMICAgICAgICAABlZJQ1IgIABRU0RUQzAxNTAwMTEwMDAwMDAwMDAwMFJJMDE1MDAwMDAwMDAwMDAwMDAwQVIwMDRWICAgADBBUkNJMDAzVU5LQ1AwMDE/UkMwMDMgICBDQjAwMVY="
+            }
+         ]
+      }
+   },
+   "transactionDetails":{
+      "primaryTransactionId":"31a12bba68a44e31b98d27ad37b6b5f4",
+      "captureFlag":true,
+      "transactionCaptureType":"hcs",
+      "accountVerification":false,
+      "processingCode":"000000",
+      "merchantTransactionId":"RKTransID-768086381518",
+      "merchantOrderId":"58553460",
+      "physicalGoodsIndicator":true,
+      "createToken":false,
+      "retrievalReferenceNumber":"27ad37b6b5f4"
+   },
+   "transactionInteraction":{
+      "posEntryMode":"MANUAL",
+      "posConditionCode":"CARD_NOT_PRESENT_ECOM",
+      "additionalPosInformation":{
+         "stan":"003342",
+         "dataEntrySource":"UNSPECIFIED",
+         "posFeatures":{
+            "pinAuthenticationCapability":"UNSPECIFIED",
+            "terminalEntryCapability":"ECOMMERCE"
+         }
+      },
+      "authorizationCharacteristicsIndicator":"W",
+      "hostPosConditionCode":"59"
+   },
+   "merchantDetails":{
+      "terminalId":"00000001",
+      "merchantId":"100009000000200"
+   },
+   "networkDetails":{
+      "network":{
+         "network":"Visa"
+      },
+      "networkResponseCode":"00",
+      "cardLevelResultCode":"",
+      "validationCode":"G437",
+      "transactionIdentifier":"012235253298136"
+   },
+   "storedCredentials":{
+      "schemeReferenceTransactionId":"012235253298136"
+   }
+}
 
 ---
+
 
 ## See Also
 
