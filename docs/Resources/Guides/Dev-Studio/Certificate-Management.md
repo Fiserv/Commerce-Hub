@@ -18,29 +18,33 @@ Login to the Developer Studio and access the Developer Dashboard.
 
 #### Step 2: Add a New Certificate
 
-Click 
+Select Certificates from the left navigation menu to create a Certificate Signing Request (CSR).
 
-#### Step 3: 
+#### Step 3: Create CSR
 
+Click the Create CSR button, complete the following information and click the Create button.
 
+- Common name: Fully qualified domain name. Cannot contain a space or special characters. 
 
-#### Step 4: 
+- Wallet type: Type of digital wallet
 
+- Organization name: Legal name of your organization
 
+- Country/region: Full name of the country/region
 
-#### Step 5: 
+- State/province: Full name of the state/province
 
+- City/locality: Full name of the city/locality
 
+- Description: Details of the CSR
 
-#### Step 6: 
+#### Step 4: Download the CSR
 
+Click the download icon, review the steps and click the OK button to save the CSR (_common_name.pem_) to your computer. 
 
+<!-- theme: info -->
+> View, Update or Delete the CSR by clicking the appropriate button or icon. 
 
-#### Step 7: 
-
-
-
-#### Step 8: 
 
 
 ---
@@ -48,12 +52,8 @@ Click
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Account Management](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md)
+- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
-<!---
-- [Transaction Verification](?path=docs/Resources/Guides/Dev-Studio/Transaction-Verification.md)
-- [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
--->
 
 ---

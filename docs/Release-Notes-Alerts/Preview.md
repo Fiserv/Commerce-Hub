@@ -16,6 +16,20 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+## September 2022
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** September 12th 2022
+- **Production:** September 15th 2022
+
+| Details | Type |
+| ----- | ----- |
+| Charges updated to support [Capture](?path=docs/Resources/API-Documents/Payments/Charges.md) using referenced transaction identifiers | Update |
+| [Security Credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) updated to support merchant details and domains in the request, and include the gateway response | Update |
+
+---
+
 ## August 2022
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -30,9 +44,11 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support event handling and advanced CSS styling | Update |
 | [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Marketplace to support positive/negative filtering and transaction restrictions | Update |
 | [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) support added for card present transactions on Chase | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
 ## See Also
+
 - [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md)
+
+---

@@ -6,18 +6,22 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 If the customer returns a product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request. The refund can be issued using the original `transactionId` in the URI or a reference transaction identifier in the payload. 
 
-Refunds can be initiated for the full amount or a partial amount of the original authorization.
+#### Authorized Refunds 
+
+Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions. These authorization messages will enable issuers to update the customer's account in real-time.
+
+<!-- theme: warning -->
+> Based on the issuing bank timeframe, refunds may take 3-5 days to process and reflect on the customer's account.
 
 #### Refund Types
+
+Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
 - **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
 - **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
 <!-- theme: danger -->
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
-
-<!-- theme: warning -->
-> Based on the issuing bank timeframe, refund may take 3-5 days to process and reflect on the customer's account.
 
 ---
 
