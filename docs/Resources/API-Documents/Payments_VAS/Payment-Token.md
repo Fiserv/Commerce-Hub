@@ -117,6 +117,156 @@ type: tab
 
 ---
 
+## PaymentToken Charges Request
+
+The merchant can use the saved tokenized data in order to initate a charge request. 
+
+---
+
+### Requirements
+
+<!--
+type: tab
+titles: amount, source, card
+-->
+
+The below table identifies the required parameters in the `amount` object.
+
+|Variable |  Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|---|
+| `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+| `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
+| `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
+| `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
+| `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | *object* | | &#10004; | Contains card specific information. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|---|
+| `card` | *object* | | &#10004; |Contains card specific information. |
+| `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
+| `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
+
+<!-- type: tab-end -->
+
+---
+
+### Endpoint
+<!-- theme: success -->
+>**POST** `/payments/v1/charges`
+
+---
+
+### Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+##### Example of a charge payload request with PaymentToken.
+
+```json
+{
+  "amount": {
+    "total": "1.00",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentToken",
+    "tokenData": "1234567890120019",
+    "PARId": "1234",
+    "declineDuplicates": true,
+    "tokenSource": "TRANSARMOR"
+    "card": {
+      "expirationMonth": "03",
+      "expirationYear": "2035"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+-->
+
+##### Example of a charge (200: Success) response.
+
+```json
+{
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM"
+  },
+  "transactionProcessingDetails": {
+    "transactionDate": "2021-04-16",
+    "transactionTime": "2021-04-16T16:06:05Z",
+    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+    "transactionId": "838916029301"
+  },
+  "paymentSource": "PaymentToken",
+  "card": {
+    "last4": "0019",
+    "brand": "VISA",
+    "expirationMonth": "03",
+    "expirationYear": "2035"
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "1.00",
+      "currency": "USD"
+    },
+    "processorResponseDetails": null,
+    "approvalStatus": "APPROVED",
+    "approvalCode": "OK7118",
+    "referenceNumber": "845366457890-TODO",
+    "schemeTransactionID": "019078743804756",
+    "processor": "fiserv",
+    "responseCode": "00",
+    "responseMessage": "APPROVAL",
+    "hostResponseCode": "54022",
+    "hostResponseMessage": "Approved",
+    "localTimestamp": "2021-04-16T16:06:05Z",
+    "bankAssociationDetails": {
+      "associationResponseCode": "000",
+      "transactionTimestamp": "2021-04-16T16:06:05Z",
+      "transactionReferenceInformation": null,
+        }
+      }
+    }
+  }
+}
+```
+<!-- type: tab-end -->
+
+---
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
