@@ -6,10 +6,26 @@ tags: [Getting Started, Release Notes, Update, Patch, Enhancement]
 
 Commerce Hub is continually being improved with new features, security enhancements, and performance improvements. These release notes list the updates for each release with the most recent update shown first.
 
+<!-- theme: info -->
+> See the [Preview Release Notes](?path=docs/Release-Notes-Alerts/Preview.md) for upcoming features and updates.
+
 #### Release Types
 
 - **Feature:** New feature was released
 - **Update:** Existing feature was updated or enhanced
+
+---
+
+## August 2022
+
+- **Certification:** August 17th 2022
+- **Production:** August 23rd 2022
+
+| Details | Type |
+| ----- | ----- |
+| [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) updated to support referenced transaction identifiers | Update |
+| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) support added for card present transactions on Chase | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
@@ -22,7 +38,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | ----- | ----- |
 | New [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) endpoint to support referenced transaction identifiers | Feature |
 | [PIN](?path=docs/Resources/Master-Data/Pin-Block.md) support for credit and debit cards on Chase | Update |
-| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) enhanced to remove deprecated fields `enhancedAuthorizationRequestIndicator` and `enhancedAuthorizationResponseIndicator` and changed `partialApproval` indicator to boolean | Update 
+| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) changed `partialApproval` indicator to boolean for Nashville | Update |
 | Merchant managed [3D-Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) payment source support added | Feature |
 | [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) on Chase | Update |
 
@@ -71,7 +87,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Generate CSR support for Apple Pay in Dev Studio | Feature |
 | Added support for processing card present transactions through Chase Salem [processor](?path=(?path=docs/Resources/Guides/Directed-Routing.md)). | Feature |
 | [Tokenization](?[ath=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) will now return a token for all processors a client is enabled for. | Feature |
-| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) support added for card present transactions | Feature |
+| [Partial authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) support added for card present transactions on Nashville | Feature |
 | Ability to add a card present merchant store/location to marketplace. | Feature |
 | Ability to add Clover devices to marketplace. | Feature |
 | [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) `sourceType` support added. | Feature |

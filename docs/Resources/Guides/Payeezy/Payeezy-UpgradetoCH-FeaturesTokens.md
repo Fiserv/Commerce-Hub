@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, tokens-request, payment-token, tokenizat
 # Tokenization
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 
 <!--type: tab
@@ -36,9 +36,9 @@ In Payeezy, tokenization of a card, without payment, would be completed via the 
 
 **Non-happy Path Token Usage**
 
-The merchant can prevent the token from being created and override the automated behavior by including the createToken element in the request with a value of false.
+The merchant can prevent the token from being created and override the automated behavior by including the `createToken` element in the request with a value of false.
 
-If the transacting MID is not configured for the Tokenization Payment Type and a request contains the creatToken element with a value of true, Commerce Hub will respond with a 249 error code:
+If the transacting MID is not configured for the Tokenization Payment Type and a request contains the `createToken` element with a value of true, Commerce Hub will respond with a 249 error code:
 
 ```json
 
@@ -62,7 +62,7 @@ In Payeezy Real-time Payment Manager (RPM), a merchant would enable tokenization
 type: tab
 -->
 
-In ClientLine Enterprise (CLX), transactions can not be initiated using a token through the Virtual Terminal, but a secondary tokenized transaction (Completion/Capture, Void and Refund) can be completed from search screens.
+In ClientLine Enterprise (CLX), transactions can not be initiated using a token through the Virtual Terminal, but a secondary tokenized transaction (Completion/Capture, Void and Refund) can be completed from the search screen.
 
 <!--
 type: tab
@@ -78,7 +78,7 @@ Token number can be viewed in the transaction detail of the Search report in CLX
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
