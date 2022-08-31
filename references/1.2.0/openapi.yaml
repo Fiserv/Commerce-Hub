@@ -3752,12 +3752,6 @@ components:
     SecurityCredentialsRequest:
       x-model-version: 1.0
       properties:
-        domains:
-          type: array
-          description: 'A whitelist of domains that are applicable for this credentials request.'
-          example: 'http://checkout.example.com, http://*.example.com'
-          items:
-            type: string
         publicKeyRequired:
           type: boolean
           description: 'If the signedCert is expired or invalid then merchant would send a request.'
@@ -3774,34 +3768,28 @@ components:
           type: string
           description: 'Response URL redirect.'
           example: 'https://www.somedomain.com'
-        merchantDetails:
-          $ref: '#/components/schemas/MerchantDetails'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        deviceFingerprint:
+          type: array
+          items:
+           $ref: '#/components/schemas/DeviceFingerPrint'
+        amount:
+          $ref: '#/components/schemas/Amount'
+        amountComponents:
+          $ref: '#/components/schemas/AmountComponents'
     SecurityCredentialsResponse:
       x-model-version: 1.0
       properties:
-        gatewayResponse:
-          $ref: '#/components/schemas/GatewayResponse'
-        keyId:
-          type: string
-          description: 'Unique identifier of the encryption key.'
         publicKey:
-          type: string
+          type: string 
           description: 'Base64 encoded public key.'
-        keyLength:
-          type: integer
-          description: 'Length of the encryption key.'
         accessToken:
           type: string
           description: 'Access token created and sent back.'
         sessionId:
           type: string
           description: ''
-        domains:
-          type: array
-          description: 'A whitelist of domains that are applicable for this credentials request.'
-          example: 'https://checkout.example.com, https://*.mystore.com'
-          items:
-            type: string
         accessTokenIssuedTime:
           type: string
           format: date-time
@@ -3816,14 +3804,6 @@ components:
         asymmetricEncryptionAlgorithm:
           type: string
           description: 'RSA/ECB/PKCS1Padding.'
-        accessTokenType: 
-          type: string
-          maxLength: 50
-          description: |+
-            Access token type.
-            
-            Valid Values: 
-            * BEARER
   examples:
     ApplePayRequest:
       value:
@@ -5738,30 +5718,20 @@ components:
             eciIndicator: 'SECURE_ECOM'
     SecurityCredentialsRequest:
       value:
-        domains:
-        - https://checkout.mystore.com
-        - https://store.mystore.com
-        - https://*.mystore.com
-        publicKeyRequired: false
-        merchantDetails:
-          merchantId: '100004000000260'
+        publicKeyRequired: true
+        accessTokenRequired: true
+        accessTokenTimeToLive: '889'
+        responseRedirectURL: https://www.somedomain.com
     SecurityCredentialsResponse:
       value:
-        gatewayResponse:
-          transactionProcessingDetails:
-            transactionTimestamp: '2022-08-11T09:20:33.229618Z'
-            apiTraceId: cea83af5b1ae4c2fb20e8b6c75600a8d
-            clientRequestId: 36fcd38d2064bcff1222b4e3d2e78fc2
-            transactionId: cea83af5b1ae4c2fb20e8b6c75600a8d
-        keyId: 7250e555-d238-407e-ace1-68cb1930a2d2
-        publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7srHsjawnbAwoN/lGbug53Yntw7wFR8C0yizZK0LMmmEH+wBB945cA61M0ouYt8JeULGpc04/IuPDvM5NXb/gFUg1EfhRxiS4zqS0aKQYmHtqXAZJrC2oZfMRdsc1qErYT6cQSk8iUplGau+d0IScrLP07HomRbTgCLLVkfoVYE3KnZUy8Neko9pn0KmYplhW/thTrq/fISMofBU7DZ1zPFiP5bojNgq2PHO9WmtnLYWv3cMwaDJsG+p9p7XgEqTLFTsy5GU9/R4THPpYczGRzYrPLFjVdISOOzOa1z1VnzrRjSg6rz85drXxcZ1z5udhzt3+pXwvBZmB1llCUU/FQIDAQAB
-        keyLength: '392'
-        accessToken: Pqha9WGVanUm1HZMWPAXjY4dolX3
-        sessionId: 6d8b016a-ea03-4ff2-baf9-3d2f68cb551f
-        accessTokenIssuedTime: '1660209611535'
+        publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
+        keyLength: '12345'
+        accessToken: 'vsmsrKcNFWzq79Yd8aaxHetHBdxm'
+        sessionId: 'b28ba2ca-6368-4d72-b5f0-c185b4d0de4c'
+        accessTokenIssuedTime: '2016-04-16T16:06:05Z'
         accessTokenTimeToLive: '1799'
-        symmetricEncryptionAlgorithm: AES-GCM
-        asymmetricEncryptionAlgorithm: RSA-2048
+        symmetricEncryptionAlgorithm: 'AES-GCM'
+        asymmetricEncryptionAlgorithm: 'RSA-2048'
     PaymentSessionRequest:
       value:
         amount:
