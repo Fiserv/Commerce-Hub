@@ -125,7 +125,7 @@ featuredFeatures:
         description: Remove sensitive customer data from your environment and reduce PCI compliance scope. Transaction data is protected by a randomly-generated identifier known as a "token".
         type: "post"        
         path: "/payments-vas/v1/tokens"
-  - title: Omni Channel
+  - title: Omnichannel
     description: >
       Leverage your existing infrastructure and UI to accept payments online, in-store or on mobile 
       devices.
