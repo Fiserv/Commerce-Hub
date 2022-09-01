@@ -60,7 +60,7 @@ featuredFeatures:
       Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
-    #links: ["docs/Getting-Started/Getting-Started-Wallets.md"]
+#    links: ["docs/Getting-Started/Getting-Started-Wallets.md"]
     relatedDocs:
       - relatedDoc: 
         title: Apple Pay 
@@ -73,7 +73,7 @@ featuredFeatures:
       - relatedDoc: 
         title: Samsung Pay
         description: Commerce Hub allows developers to quickly enable secure and convenient Samsung Pay payments in their app or website.
-        link: "docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md"
+        link:
     relatedAPIs:
       - relatedAPI: 
         title: Charges 
@@ -95,7 +95,7 @@ featuredFeatures:
       By leveraging the third-party EMV-enabled payments solution, the customer's payment transactions are encrypted via a multi-layered security approach.
     tags: ["tag1", "tag2"]
     bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
-    #links: ["docs/In-Person/Integrations/Encrypted-PIN-Pad.md"]
+#    links: ["docs/In-Person/Integrations/Encrypted-PIN-Pad.md"]
     relatedDocs:
       - relatedDoc: 
         title: EMV Chip
@@ -131,28 +131,28 @@ featuredFeatures:
       devices.
     tags: ["tag1", "tag2"]
     bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
-    #links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
+#    links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
     relatedDocs:
       - relatedDoc: 
         title: Getting Started 
         description: Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
-        link: "/docs/Getting-Started/Getting-Started-UCOM.md"
+        link:
     relatedAPIs:
-      - relatedAPI: 
-        title: Charges 
-        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
-        type: "post"        
-        path: "/payments/v1/charges"
-      - relatedAPI: 
-        title: Refunds
-        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request. 
-        type: "post"        
-        path: "/payments/v1/refunds"
-      - relatedAPI: 
-        title: Tokenization
-        description: Remove sensitive customer data from your environment and reduce PCI compliance scope. Transaction data is protected by a randomly-generated identifier known as a "token".
-        type: "post"        
-        path: "/payments-vas/v1/tokens"
+#      - relatedAPI: 
+#        title: Charges 
+#        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
+#        type: "post"        
+#        path: "/payments/v1/charges"
+#      - relatedAPI: 
+#        title: Refunds
+#        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request. 
+#        type: "post"        
+#        path: "/payments/v1/refunds"
+#      - relatedAPI: 
+#        title: Tokenization
+#        description: Remove sensitive customer data from your environment and reduce PCI compliance scope. Transaction data is protected by a randomly-generated identifier known as a "token".
+#        type: "post"        
+#        path: "/payments-vas/v1/tokens"
 benefits:
   - title: Transform Customer Experiences
     description: >
