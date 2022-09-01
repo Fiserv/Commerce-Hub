@@ -1,13 +1,13 @@
 ---
-tags: [Card Not Present, Card Present, Charges, Payments, API Reference, Authorization, Sale, Pre Auth]
+tags: [Card Not Present, Card Present, Charges, Payments, API Reference, Authorization]
 ---
 
 # Charges
 
-Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the `captureFlag` sent in the request.
+Charges can be initiated as a Sale, Pre-Auth, or Capture which is defined in the request by sending `captureFlag` in `transactionDetails`.
 
-- *true:* A sale transaction where the customer will be changed the total amount.
 - *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdrawal the funds.
+- *true:* A sale or subsequent capture transaction where the customer will be charged the total amount, and funds withdrawn.
 
 #### Charge Types
 

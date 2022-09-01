@@ -1,6 +1,6 @@
 # Reference Transaction Details
 
-Reference transaction details are used to reference the original transaction identifier in secondary requests; [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, [re-auth](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) or [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md).
+Reference transaction details are used to reference the original transaction identifier in secondary requests; [capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, [re-auth](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) or [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md).
 
 <!-- 
 type: tab
@@ -45,6 +45,7 @@ JSON string format for `referenceTransactionDetails`:
 - [API Explorer](../api/?type=post&path=/payments/v1/cancel)
 - [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Cancels Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Returns Request](?path=docs/Resources/API-Documents/Payments/Return.md)
 - [Reauthorization Request](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Transaction Inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md)
