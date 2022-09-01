@@ -25,7 +25,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Charges updated to support [Capture](?path=docs/Resources/API-Documents/Payments/Charges.md) using referenced transaction identifiers | Update |
+| Charges updated to support [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md) using referenced transaction identifiers | Update |
 | [Security Credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) updated to support merchant details and domains in the request, and include the gateway response | Update |
 
 ---
