@@ -138,21 +138,21 @@ featuredFeatures:
         description: Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
         link:
     relatedAPIs:
-#      - relatedAPI: 
-#        title: Charges 
-#        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
-#        type: "post"        
-#        path: "/payments/v1/charges"
-#      - relatedAPI: 
-#        title: Refunds
-#        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request. 
-#        type: "post"        
-#        path: "/payments/v1/refunds"
-#      - relatedAPI: 
-#        title: Tokenization
-#        description: Remove sensitive customer data from your environment and reduce PCI compliance scope. Transaction data is protected by a randomly-generated identifier known as a "token".
-#        type: "post"        
-#        path: "/payments-vas/v1/tokens"
+      - relatedAPI: 
+        title: Charges 
+        description: Charges can be initiated in two ways; either as Sale or Pre-Auth and is defined with the captureFlag sent in the request.
+        type: "post"        
+        path: "/payments/v1/charges"
+      - relatedAPI: 
+        title: Refunds
+        description: If the customer returns product or requests to cancel the transaction after the batch has been settled, the merchant will need to release the original authorization by issuing a refund request. 
+        type: "post"        
+        path: "/payments/v1/refunds"
+      - relatedAPI: 
+        title: Tokenization
+        description: Remove sensitive customer data from your environment and reduce PCI compliance scope. Transaction data is protected by a randomly-generated identifier known as a "token".
+        type: "post"        
+        path: "/payments-vas/v1/tokens"
 benefits:
   - title: Transform Customer Experiences
     description: >
