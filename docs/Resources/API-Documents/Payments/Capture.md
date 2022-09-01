@@ -24,11 +24,22 @@ A capture request is initiated by sending the `referenceTransactionDetails` in t
 
 ---
 
-### Minimum Requirements
+### Request Variables
 
 <!--
 type: tab
-titles: referenceTransactionDetails, transactionDetails, merchantDetails
+titles: amount, referenceTransactionDetails, transactionDetails, merchantDetails
+-->
+ 
+The below table identifies the parameters in the `amount` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `total` | *number* | 18,3  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+ <!--
+type: tab
 -->
  
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
@@ -48,9 +59,9 @@ type: tab
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `captureFlag` | *boolean* | 5 | Designates if the transaction should be captured. |
+| Variable | Data Type| Maximum Length |Required | Description |
+|---------|----------|----------------|---------|---|
+| `captureFlag` | *boolean* | 5 | &#10004; | Designates if the transaction should be captured. |
 
 <!--
 type: tab
@@ -58,10 +69,10 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Required|  Description |
+|---------|----------|----------------|---------|---|
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -172,7 +183,7 @@ type: tab
 
 A capture request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the capture type.
 
-### Minimum Requirements
+### Request Variables
 
 A capture request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the capture type.
 
@@ -194,10 +205,10 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|---|
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
