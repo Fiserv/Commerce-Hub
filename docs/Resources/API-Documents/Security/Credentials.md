@@ -3,7 +3,7 @@
 A credentials request is used for authorizing or submitting subsequent financial transactions. 
 
 - Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
-- Returns a `sessionId` used in [iFrame JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) and [Payment JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) requests.
+- Returns a `sessionId` used with Secure Data Capture [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) and [JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) requests.
 
 <!--
 type: tab
@@ -14,11 +14,14 @@ The below table identifies the parameters in the request.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request |
-| `publicKeyRequired` | *boolean* | N/A | Used ro request a public key. If the signedCert is expired or invalid then merchant would send a request, default is true (false currently not supported) |
+| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of clickjacking when integrating with the Secure Data Capture iFrame solution. |
+
+<!---
+| `publicKeyRequired` | *boolean* | N/A | Used to request a public key. If the signedCert is expired or invalid then merchant would send a request, default is true (false currently not supported) |
 | `accessTokenRequired` | *boolean* | N/A | Used to request an access token. If the access token is expired then merchant would request for a new token, default is true (false currently not supported) |
 | `accessTokenTimeToLive` | *string* | 7 | Time to live (expiration time) in milliseconds, default is the max time of 30 minutes (1800000 ms) |
 | `responseRedirectURL` | *string* | 4000 | Response URL redirect |
+--->
 
 <!--
 type: tab
