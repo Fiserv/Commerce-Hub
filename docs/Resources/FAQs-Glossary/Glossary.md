@@ -115,6 +115,9 @@ A transaction in which a cardholder obtains cash as part of the transaction.
 ## Cash Advance
 A transaction in which a customer receives cash in-person which is posted against the customer's account.
 
+## Clickjacking
+A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages.
+
 ## Customer Account
 The customer account associated with a customer account number or checking account number used in a payment request.
 
