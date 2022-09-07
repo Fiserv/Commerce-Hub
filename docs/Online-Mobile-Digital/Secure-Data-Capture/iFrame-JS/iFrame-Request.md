@@ -327,7 +327,8 @@ type: tab
 ### Mitigating risk of clickjacking
 
 The current iFrame solution does not specify the frame-ancestors configuration in the Content-Security-Policy response header. 
-The following flow outlines how the SAQ-A flow can mitigate the risk of Clickjacking
+
+The following flow outlines how the SAQ-A solution can mitigate the risk of [`clickjacking`](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking):
 
 - A new domain field will be added to the `SecurityCredentialsRequest` object.
 - Merchant will provide one or more domains (space separated) for their payment session via the /payments-vas/v1/security/credentials API request
