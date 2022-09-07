@@ -36,8 +36,8 @@ The below table identifies the parameters in the `source` object.
 | `authenticationAttemptResult` | *string* | 256 | Result of authentication attempt from Payer Authentication Response (PaRes). |
 | `authenticationResponse` | *string* |  | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
 | `channel` | *string* | 32 | Channel the 3DS transaction was initiated. _**Valid Values:** MOBILE_APP, MOBILE_WEB, BROWSER_PC, KIOSK, CONSOLE, 3DS_REQUESTOR_INITIATED_ |
-| `directoryServerTransactionId` | *string* |  | Indicates the message category of 3d secure authentication version 2.X. _01 = Payment Authentication, 02 = Non-Payment Authentication, 80 = Mastercard Data Only_ |
-| `messageCategory` | *string* |  | The response transaction UUID from the DS (directory server) |
+| `messageCategory` | *string* |  | Indicates the message category of 3d secure authentication version 2.X. _01 = Payment Authentication, 02 = Non-Payment Authentication, 80 = Mastercard Data Only_ |
+| `directoryServerTransactionId` | *string* |  | The response transaction UUID from the DS (directory server) |
 | `tavv` | *string* |  | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction. |
 | `challengeStatus` | *string* |  | The transaction status as returned by the 3D Secure authentication process. (CRes) |
 | `card` | *object* | N/A | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
@@ -185,6 +185,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
