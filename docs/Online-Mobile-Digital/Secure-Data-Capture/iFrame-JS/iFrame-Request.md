@@ -324,6 +324,31 @@ type: tab
 
 ---
 
+### Mitigating risk of clickjacking
+
+The current iFrame solution does not specify the frame-ancestors configuration in the Content-Security-Policy response header. 
+The following flow outlines how the SAQ-A flow can mitigate the risk of Clickjacking
+
+- A new domain field will be added to the `SecurityCredentialsRequest` object.
+- Merchant will provide one or more domains (space separated) for their payment session via the /payments-vas/v1/security/credentials API request
+- The /payments-vas/v1/security/credentials API  will be changed to send the request downstream to the security delegate for processing
+- The security delegate will store the security request details in Redis using the session ID to be used in the /payments-vas/v1/card-form API
+- CommerceHub will introduce a new card-form proxy API that will query this cached security credentials request from redis. The domain(s) from the stored security credentials request will be used to generate the Content-Security-Policy: frame-ancestors <http_source_list> and X-Frame-Options:<http_source> response headers.
+
+```json
+{
+    "encryptionData": {
+        "keyId": "12ce48b1-b7a7-45cb-b14e-6ff961afe0d8",
+        "encryptionType": "RSA",
+        "encryptionBlock": "gYRo6dFgXFIBOsflWrjhoKtOuMgtDgB2BreCS3RJzlSlhqv7HyGYxKg9S0n1NHGASk1Z0BG6voope3AXqRndcBbH50MBl44ERlgpoRQ7yYQ4g0RkOBTSHT34hfQXNMjIrmhdXE3f7cfbecN+gcsH/7qW5zD+v7wrq9PY0Xd2kr05cRcn+CiyIO1z1DdZZuNoavDwy2KuOCXI25uPyiygWQD2OXYvIutavMJOx4FnPtqXR/pp14BMxuKLAEzKCch8DXMDW55sN5bIzpemYE6qenU/O2v0fPBYBoAAGUzohismMSDSCZHjpAMsrGh6Eo30RUfsvbSJG6tf5O774n1kkA==",
+        "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+        "encryptionTarget": "MANUAL"
+    },
+    "sourceType": "PaymentCard"
+}
+```
+---
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
