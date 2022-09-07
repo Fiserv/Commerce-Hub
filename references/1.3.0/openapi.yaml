@@ -77,6 +77,72 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+  /payments/v1/cancels:
+    x-model-version: 1.1
+    post:
+      tags:
+      - Cancel Endpoint Definition
+      x-group-name: 'Payments'
+      x-proxy-name: 'Cancels'
+      x-default-example: transactionId
+      summary: Submit a cancel transaction.
+      description: 'Use this payload to perform cancel a transaction (aka void).'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelRequest'
+            examples:
+              merchantTransactionId:
+                summary: Cancel a transaction using Merchant Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
+              transactionId:
+                summary: Cancel a transaction using CommerceHub Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelResponse'
+              examples:
+                merchantTransactionId:
+                  summary: Cancel response using Merchant Transaction ID
+                  $ref: '#/components/examples/CancelResponse'
+                transactionId:
+                  summary: Cancel response using Transaction ID
+                  $ref: '#/components/examples/CancelResponse'   
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
   /payments/v1/refunds:
     x-model-version: 1.0
     post:
