@@ -14,7 +14,7 @@ The below table identifies the parameters in the request.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of clickjacking when integrating with the Secure Data Capture iFrame solution. |
+| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of [clickjacking](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking) when integrating with the Secure Data Capture iFrame solution. |
 
 <!---
 | `publicKeyRequired` | *boolean* | N/A | Used to request a public key. If the signedCert is expired or invalid then merchant would send a request, default is true (false currently not supported) |
