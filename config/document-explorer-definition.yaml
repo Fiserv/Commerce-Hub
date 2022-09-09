@@ -39,15 +39,15 @@
     sections:
     - title: Encrypted Device
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
-    - title: Fully-Integrated
-      link: docs/In-Person/Integrations/Fully-Integrated.md
-    - title: Semi-Integrated
-      link: docs/In-Person/Integrations/Semi-Integrated.md
+#    - title: Fully-Integrated
+#      link: docs/In-Person/Integrations/Fully-Integrated.md
+#    - title: Semi-Integrated
+#      link: docs/In-Person/Integrations/Semi-Integrated.md
     - title: Debit
       link: docs/Resources/Guides/Debit/Debit.md
       sections:
-      - title: Least Cost Debit
-        link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
+#      - title: Least Cost Debit
+#        link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
       - title: PIN Debit
         link: docs/Resources/Guides/Debit/PIN_Debit.md
     - title: Encrypted Payments
