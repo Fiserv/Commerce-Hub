@@ -1,10 +1,10 @@
 ---
-tags: [Customer Authorized, Merchant Stored, Tokens Request, Payment Token, Tokenization, API Reference,]
+tags: [Stored Credentials, Token, Tokenization, API Reference]
 ---
 
 # Tokenization
 
-**[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charge](#tokenization-with-charges-request) by using `createToken`, or can tokenize the the payment source separately by sending a request to the [tokens](#tokens-request) endpoint.
+**[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md), or can tokenize the the payment source only by sending a request to the [tokens](#tokens-request) endpoint.
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
   - Requires the use of [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
@@ -22,7 +22,7 @@ The merchant can initiate token request in order to generate a token for the pay
 
 <!--
 type: tab
-titles: source, transactionDetails
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -30,16 +30,6 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`createToken` | *boolean* |  | Used to create a token on a charge transaction |
 
 <!-- type: tab-end -->
 
@@ -90,204 +80,37 @@ type: tab
   "gatewayResponse": {
     "transactionType": "TOKENIZE",
     "transactionState": "AUTHORIZED",
-    "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
-      "transactionTimestamp": "2021-06-20T23:42:48Z",
-      "orderId": "RKOrdID-525133851837",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
+      "orderId": "CHG01737ff9a60441479682b45b6389ef87af",
+      "transactionTimestamp": "2022-08-18T20:09:53.535715Z",
+      "apiTraceId": "f5fcf5088f2b460fac797f0edc5a831b",
+      "clientRequestId": "1243161",
+      "transactionId": "f5fcf5088f2b460fac797f0edc5a831b"
     }
   },
   "source": {
     "sourceType": "PaymentCard",
     "card": {
-      "bin": "40055500",
-      "last4": "0019",
-      "scheme": "VISA",
-      "expirationMonth": "10",
-      "expirationYear": "2030"
+      "expirationMonth": "12",
+      "expirationYear": "2035",
+      "bin": "4400555",
+      "last4": "0019"
     }
   },
   "paymentTokens": [
     {
-      "tokenData": "8519371934460009",
+      "tokenData": "8407840515376672",
       "tokenSource": "TRANSARMOR",
       "tokenResponseCode": "000",
       "tokenResponseDescription": "SUCCESS"
-    },
+    }
     {
-      "tokenData": "8519371934460010",
+      "tokenData": "1234840515376672",
       "tokenSource": "CHASE",
       "tokenResponseCode": "000",
       "tokenResponseDescription": "SUCCESS"
     }
-  ],
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": 12.04,
-      "currency": "USD"
-    },
-    "merchantName": "Merchant Name",
-    "merchantAddress": "123 Peach Ave",
-    "merchantCity": "Atlanta",
-    "merchantStateOrProvince": "GA",
-    "merchantPostalCode": "12345",
-    "merchantCountry": "US",
-    "merchantURL": "https://www.somedomain.com",
-    "processorResponseDetails": {
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK5882",
-      "schemeTransactionId": "0225MCC625628",
-      "processor": "FISERV",
-      "host" "NASHVILLE",
-      "responseCode": "000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021-06-20T23:42:48Z",
-      "bankAssociationDetails": {
-        "associationResponseCode": "000",
-        "transactionTimestamp": "2021-06-20T23:42:48Z"
-      }
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true,
-    "merchantInvoiceNumber": "123456789012"
-  }
-}
-```
-<!-- type: tab-end -->
-
----
-
-## Tokenization with Charges Request
-
-The merchant can initiate token request in order to generate a token for the payment source during the initial charge transaction. 
-
----
-
-### Requirements
-
-In additional to the minimum requirement for a charge request, `createToken` *true* needs to be sent in the `transactionDetails` object.
-
----
-
-### Endpoint
-<!-- theme: success -->
->**POST** `/payments/v1/charges`
-
----
-
-### Payload Example
-
-<!--
-type: tab
-titles: Request, Response
--->
-
-##### Example of a charge payload request with `createToken`.
-
-```json
-{
-   "amount":{
-      "total": "1.00",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035",
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": false,
-      "createToken": true
-   }
-}
-```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
-
-<!--
-type: tab
--->
-
-##### Example of a charge (201: Created) tokenization response.
-
-```json
-{
-  "gatewayResponse": {
-    "transactionType": "CHARGE",
-    "transactionState": "AUTHORIZED",
-    "transactionOrigin": "ECOM",
-    "transactionProcessingDetails": {
-      "transactionTimestamp": "2021-06-20T23:42:48Z",
-      "orderId": "RKOrdID-525133851837",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
-    }
-  },
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "bin": "40055500",
-      "last4": "0019",
-      "scheme": "VISA",
-      "expirationMonth": "10",
-      "expirationYear": "2030"
-    }
-  },
-  "paymentTokens": [
-    {
-      "tokenData": "8519371934460009",
-      "tokenSource": "TRANSARMOR",
-      "tokenResponseCode": "000",
-      "tokenResponseDescription": "SUCCESS"
-    },
-    {
-      "tokenData": "8519371934460010",
-      "tokenSource": "CHASE",
-      "tokenResponseCode": "000",
-      "tokenResponseDescription": "SUCCESS"
-    }
-  ],
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": 12.04,
-      "currency": "USD"
-    },
-    "merchantName": "Merchant Name",
-    "merchantAddress": "123 Peach Ave",
-    "merchantCity": "Atlanta",
-    "merchantStateOrProvince": "GA",
-    "merchantPostalCode": "12345",
-    "merchantCountry": "US",
-    "merchantURL": "https://www.somedomain.com",
-    "processorResponseDetails": {
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK5882",
-      "schemeTransactionId": "0225MCC625628",
-      "processor": "fiserv",
-      "responseCode": "000000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021-06-20T23:42:48Z",
-      "bankAssociationDetails": {
-        "associationResponseCode": "000",
-        "transactionTimestamp": "2021-06-20T23:42:48Z"
-      }
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true,
-    "merchantInvoiceNumber": "123456789012"
-  }
+  ]
 }
 ```
 <!-- type: tab-end -->
@@ -370,9 +193,9 @@ titles: Request, Response
   "source": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
-    "PARId": "",
+    "PARId": "1234",
     "declineDuplicates": true,
-    "tokenSource": "TRANSARMOR"
+    "tokenSource": "TRANSARMOR",
     "card": {
       "expirationMonth": "03",
       "expirationYear": "2035"
@@ -380,7 +203,7 @@ titles: Request, Response
   },
   "transactionDetails": {
     "captureFlag": true
-  },
+  }
 }
 ```
 
@@ -395,48 +218,61 @@ type: tab
 ```json
 {
   "gatewayResponse": {
-    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-    "transactionType": "CHARGE",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "orderId": "RKOrdID-525133851837",
+      "transactionId": "84356531338",
+      "transactionTimestamp": "2021-06-20T23:42:48Z"
+    },
     "transactionState": "AUTHORIZED",
-    "transactionOrigin": "ECOM"
-  },
-  "transactionProcessingDetails": {
-    "transactionDate": "2021-04-16",
-    "transactionTime": "2021-04-16T16:06:05Z",
-    "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-    "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-    "transactionId": "838916029301"
-  },
-  "paymentSource": "PaymentToken",
-  "card": {
-    "last4": "0019",
-    "brand": "VISA",
-    "expirationMonth": "03",
-    "expirationYear": "2035"
+    "transactionType": "CHARGE"
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "1.00",
-      "currency": "USD"
+      "currency": "USD",
+      "total": "12.04"
     },
-    "processorResponseDetails": null,
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK7118",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionID": "019078743804756",
-    "processor": "fiserv",
-    "responseCode": "00",
-    "responseMessage": "APPROVAL",
-    "hostResponseCode": "54022",
-    "hostResponseMessage": "Approved",
-    "localTimestamp": "2021-04-16T16:06:05Z",
-    "bankAssociationDetails": {
-      "associationResponseCode": "000",
-      "transactionTimestamp": "2021-04-16T16:06:05Z",
-      "transactionReferenceInformation": null,
-        }
-      }
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantCountry": "US",
+    "merchantName": "Merchant Name",
+    "merchantPostalCode": "12345",
+    "merchantStateOrProvince": "GA",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalCode": "OK5882",
+      "approvalStatus": "APPROVED",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
+      },
+      "host": "NASHVILLE",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "processor": "FISERV",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "schemeTransactionId": "0225MCC625628"
     }
+  },
+  "source": {
+    "card": {
+      "bin": "40055500",
+      "expirationMonth": "10",
+      "expirationYear": "30",
+      "last4": "0019",
+      "scheme": "VISA"
+    },
+    "sourceType": "PaymentToken",
+    "tokenData": "8519371934460009",
+    "tokenSource": "TRANSARMOR"
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
   }
 }
 ```
@@ -449,6 +285,7 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+- [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
+- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---

@@ -7,11 +7,11 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, address-verif
 # Fraud
 
 <!-- theme: danger -->
->  The following documentation is for **Payeezy** migration clients only. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed by Fiserv personnel.  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv). 
 
-System level fraud controls are regulated and managed by the Fiserv Fraud team.
+System level fraud controls are regulated and managed by the Fiserv Fraud Team.
 
 <!--type: tab
 titles: Fraud Filters, Velocity Controls, Address Verification Services (AVS) Filter, Security Code Verification (CVV2) Filter
@@ -48,7 +48,7 @@ type: tab
 
 ## API Structure
 
-In Payeezy, Velocity Controls are applied to a completion or capture of a Pre-Auth; in Commerce Hub they are not. 
+In Payeezy, Velocity Controls are applied to a completion or capture of a Pre-Auth; in Commerce Hub, they are not. 
 
 The Cumulative Amount Velocity Controls are checked against the totals of previously _**approved**_ transactions only (default).
 
@@ -58,7 +58,7 @@ The Cumulative Amount Velocity Controls are checked against the totals of previo
 
 Configuration in CLX will allow for the application of controls at a more granular level than Payeezy.  Controls can be assigned by transaction type (Purchase, Refund, etc.) or status (All vs. Approved).
 
-In Payeezy, the currency was set at the terminal/outlet MID vs. each control. In CLX, currency is required to be selected for each control. 
+In Payeezy, the currency was set at the terminal/outlet MID versus each control. In CLX, currency is required to be selected for each control. 
 
 ---
 
@@ -132,7 +132,7 @@ If CVV is enabled, but the element is not included in the request API, a respons
 
 ## Configuration
 
-In Payeezy, CVV configuration was at the terminal level and enabled by selecting terminal type of Mail Order/Telephone Order (CVV2) or E-Commerce Transaction (CVV2); In CLX, CVV must be enabled and is set at the MID level.
+In Payeezy, CVV configuration was at the terminal level and enabled by selecting terminal type of Mail Order/Telephone Order (CVV2) or E-Commerce Transaction (CVV2); in CLX, CVV must be enabled and is set at the MID level.
 
 In CLX, if no codes are configured, they will all be considered acceptable.
 
@@ -156,6 +156,6 @@ A canned report for all transactions declined by any type of Fraud Control (incl
 
 ## See Also
 
-- [Payeezy Merchant Migration Playbook](?path=docs/Resources/Guides/Payeezy/Payeezy-Migration-ExtendedLanding.md)
+- [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [Address and Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)

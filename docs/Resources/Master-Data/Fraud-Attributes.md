@@ -24,7 +24,7 @@ type: tab
 
 JSON string format for `orderData`:
 
-```json
+```json 
 {
    "fraudAttributes": {
       "riskScore": 10,

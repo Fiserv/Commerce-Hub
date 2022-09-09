@@ -582,6 +582,9 @@ The character that indicates the initial data position on the track of the card'
 ## Stock Keeping Unit
 Stock Keeping Unit (SKU) is a number used to uniquely identify a product.
 
+## Store and Forward
+Store and forward is a technique in which information is stored in an intermediate system where it is kept and sent at a later time to the final destination. The intermediate system, or node in a networking context, verifies the integrity of the message before forwarding it. In general, this technique is used when their is no connectivity or intermittent connectivity. It may also be preferable in situations when there are long delays in transmission and variable and high error rates, or if a direct, end-to-end connection is not available.
+
 ## Sub-Merchant
 A merchant that contracts with a [payment facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) or service provider to obtain payment services. Also known as Sponsored Merchant.
 
