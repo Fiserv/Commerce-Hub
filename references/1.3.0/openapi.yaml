@@ -5617,21 +5617,19 @@ components:
     TransactionInquiryByMerchantOrderIdRequest:
       value:
         referenceTransactionDetails:
-          referenceMerchantOrderId: '953729024'
+          referenceMerchantOrderId: 'RKOrdID-822715036'
         merchantDetails:
           merchantId: '222222222222'
     TransactionInquiryResponse:
       value:
+      -
         gatewayResponse:
-          gatewayName: 'IPG'
-          gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
-          gatewayTransactionId: '84439763459'
           transactionOrigin: 'ECOM'
           transactionProcessingDetails:
             apiTraceId: 'aa829dcb83cd49f485141168e051b8d1'
             clientRequestId: '9806383'
             orderId: 'CHG01586b6416dddd4425ae764daee6c3ac8a'
-            transactionId: 'aa829dcb83cd49f485141168e051b8d1'
+            transactionId: '95f6b8c8ec024e1183a8e998406656ce'
             transactionTimestamp: '2022-01-13T19:09:27.939151Z'
           transactionState: 'CAPTURED'
           transactionType: 'CHARGE'
@@ -5658,27 +5656,13 @@ components:
             last4: '1732'
             scheme: 'MASTERCARD'
           sourceType: 'PaymentCard'
-        additionalDataCommon:
-          billingAddress:
-            address:
-              city: 'Atlanta'
-              country: 'USA'
-              houseNumberOrName: '4201'
-              postalCode: '30338'
-              stateOrProvince: 'Georgia'
-              street: '123 Main Dr'
-            firstName: 'Jane'
-            lastName: 'Doe'
         transactionDetails:
           captureFlag: 'true'
           merchantInvoiceNumber: 'CHG01586b641'
     TransactionInquiryByMerchantOrderIdResponse:
       value:
+      -
           gatewayResponse:
-            gatewayName: 'IPG'
-            gatewayOrderId: 'CH-130870e4-0adc-494a-b15a-265f1547af26'
-            gatewayTransactionId: '84438752938'
-            transactionOrigin: 'ECOM'
             transactionProcessingDetails:
               apiTraceId: 'c16a33b487af4eb9b6b6e97a912bda6f'
               clientRequestId: '8893258'
