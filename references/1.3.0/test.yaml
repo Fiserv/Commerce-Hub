@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
-    processing., version: v1.2.0}
+    processing., version: v1.3.0}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
 - {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
