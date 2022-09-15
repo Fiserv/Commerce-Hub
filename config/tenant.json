@@ -54,7 +54,7 @@
       "version": "1.3.0",
       "versionType": "major",
       "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
-      "apiSpecFileNames": ["test"]
+      "apiSpecFileNames": ["openapi"]
     }
   ],
   "featureBranches": ["develop"],
@@ -75,7 +75,7 @@
     "feature":[
       {
         "name": "sandBox",
-        "value": true
+        "value": false
       },
       {
         "name": "plugins",
