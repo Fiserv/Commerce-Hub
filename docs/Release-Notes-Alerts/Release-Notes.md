@@ -16,6 +16,22 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## September 2022
+
+- **Certification:** September 15th 2022
+- **Production:** September 19th 2022
+
+| Details | Type |
+| ----- | ----- |
+| Charges updated to support [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md) using referenced transaction identifiers | Update |
+| [Security Credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) updated to support merchant details and domains in the request, and include the gateway response | Update |
+| [Regional Debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) support added for Canada on Nashville | Feature |
+| Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support event handling and advanced CSS styling | Update |
+| [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Marketplace to support positive/negative filtering and transaction restrictions | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## August 2022
 
 - **Certification:** August 17th 2022
