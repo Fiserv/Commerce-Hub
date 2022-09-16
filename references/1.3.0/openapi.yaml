@@ -5427,10 +5427,10 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
-    CaptureResponse:
+    CancelResponse:
       value:
         gatewayResponse:
-          transactionType: CAPTURE
+          transactionType: CANCEL
           transactionState: AUTHORIZED
           transactionOrigin: ECOM
           transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
@@ -5441,7 +5441,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: 12.04, currency: USD}
+          approvedAmount: {total: '12.04', currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
