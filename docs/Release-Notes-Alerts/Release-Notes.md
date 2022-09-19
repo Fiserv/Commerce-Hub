@@ -24,7 +24,6 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Details | Type |
 | ----- | ----- |
 | Charges updated to support [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md) using referenced transaction identifiers | Update |
-| [Security Credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) updated to support merchant details and domains in the request, and include the gateway response | Update |
 | [Regional Debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) support added for Canada on Nashville | Feature |
 | Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support event handling and advanced CSS styling | Update |
 | [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Marketplace to support positive/negative filtering and transaction restrictions | Update |
