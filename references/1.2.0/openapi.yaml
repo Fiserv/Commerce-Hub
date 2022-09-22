@@ -1804,7 +1804,7 @@ components:
       x-model-version: 1.0
       description: ''
       properties:
-        categoryName: {type: string, maxLength: 8, description: 'Merchant defined category of the item(s) sold', example: 'Merchandise'}
+        categoryName: {type: string, maxLength: 16, description: 'Merchant defined category of the item(s) sold', example: 'Merchandise'}
         itemCount: {type: integer, description: 'The item count in category.', example: 1}
         value: {type: number, maxLength: 32, description: 'The monetary value of items.', example: 12.50}
     DynamicDescriptors:
