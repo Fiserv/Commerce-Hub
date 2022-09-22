@@ -123,14 +123,6 @@ type: tab
       "bankAssociationDetails":{
          "associationResponseCode": "000",
          "transactionTimestamp": "2021-06-20T23:42:48Z",
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCHED",
-            "postalCodeMatch": "MATCHED",
-            "securityCodeMatch": "MATCHED",
-            "association":{
-               "avsCode": "Y"
-            }
-         }
       }
    },
    "transactionDetails":{
@@ -247,14 +239,6 @@ type: tab
       "bankAssociationDetails":{
          "associationResponseCode": "000",
          "transactionTimestamp": "2021.02.25 14:14:38 (CET)",
-         "avsSecurityCodeResponse":{
-            "streetMatch": "EXACT_MATCH",
-            "postalCodeMatch": "EXACT_MATCH",
-            "securityCodeMatch": "MATCHED",
-            "association":{
-               "avsCode": "Y"
-            }
-         }
       }
    },
    "transactionDetails":{

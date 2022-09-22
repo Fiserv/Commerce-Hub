@@ -125,7 +125,7 @@ const fiservConfig = {
 
 ### Standard Tags
 
-In order to achieve the desired branding, merchants will need to target specific elements within the HTML DOM and apply custom styles to those elements. Commerce Hub will attempt to maintain the current HTML structure, however, custom CSS query selectors may not work between releases if targeting HTML elements is not done correctly. 
+In order to achieve the desired branding, merchants will need to target specific elements within the HTML DOM and apply custom styles to those elements. Commerce Hub will maintain the current HTML structure, however between our releases, custom CSS query selectors may not work if targeting HTML elements are not coded correctly. 
 
 - Use standard tags, ids or names when targeting HTML elements
 - Don't target classes if it can be avoided
@@ -155,7 +155,7 @@ In order to achieve the desired branding, merchants will need to target specific
 
 ### Supported Properties
 
-The following block outlines the common element tags, identifiers, and names that Commerce Hub guarantees will not change between minor releases.
+The following block outlines the common element tags, identifiers, and names that Commerce Hub guarantees will not change between our minor releases.
 
 - -moz-appearance
 - -moz-osx-font-smoothing

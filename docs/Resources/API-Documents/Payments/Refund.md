@@ -90,7 +90,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a cancels payload request.
+##### Example of a refunds payload request.
 
 ```json
 
@@ -115,7 +115,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a refunds (200: Success) response.
+##### Example of a refunds (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
