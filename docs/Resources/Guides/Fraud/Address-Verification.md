@@ -320,7 +320,7 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 ## Association Response Code
 
-The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`. The valid response values are based on the host or processor, see the respective orocessor's spec doc for a list of response values for `avsCode` and `cardHolderNameResponse`.
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`. The valid response values are based on the host or processor, see the respective orocessor's spec doc for a list of response values.
 
 <!-- theme: info -->
 > Cardholder name response is only valid on American Express (AMEX) and Discover transactions.
