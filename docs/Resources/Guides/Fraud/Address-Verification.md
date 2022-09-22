@@ -95,6 +95,9 @@ titles: Request, Response
 }
 
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/accounts/verification)
+
 <!--
 type: tab
 -->
@@ -154,7 +157,7 @@ type: tab
                "streetMatch": "MATCHED",
                "postalCodeMatch": "MATCHED",
                "association":{
-                  "avsCode": "YY",
+                  "avsCode": "Y",
                   "cardholderNameResponse": "1"
                }
             }
@@ -218,6 +221,8 @@ titles: Request, Response
 }
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
 <!--
 type: tab
 -->
@@ -272,7 +277,7 @@ type: tab
             "streetMatch": "MATCHED",
             "postalCodeMatch": "MATCHED",
             "association":{
-               "avsCode": "YY",
+               "avsCode": "Y",
                "cardholderNameResponse": "1"
             }
          }
@@ -288,6 +293,19 @@ type: tab
 
 The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `streetMatch` and `postalCodeMatch` value.
 
+```json
+{
+   "processorResponseDetails":{
+      "bankAssociationDetails":{
+         "avsSecurityCodeResponse":{
+            "streetMatch": "MATCHED",
+            "postalCodeMatch": "MATCHED"
+         }
+      }
+   }
+}
+```
+
 The below table identifies the valid values of `streetMatch` and `postalCodeMatch`.
 
 | Value | Descrption |
@@ -302,8 +320,27 @@ The below table identifies the valid values of `streetMatch` and `postalCodeMatc
 
 ## Association Response Code
 
-The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`.
+The result of checking the cardholder’s postal code and address information provided with the issuer’s system returns an AVS result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `avsCode` and `cardHolderNameResponse`. The valid response values are based on the host or processor, see the respective orocessor's spec doc for a list of response values for `avsCode` and `cardHolderNameResponse`.
 
+<!-- theme: info -->
+> Cardholder name response is only valid on American Express (AMEX) and Discover transactions.
+
+```json
+{
+   "processorResponseDetails":{
+      "bankAssociationDetails":{
+         "avsSecurityCodeResponse":{
+            "association":{
+               "avsCode": "Y",
+               "cardholderNameResponse": "1"
+            }
+         }
+      }
+   }
+}
+```
+
+<!---
 The below table identifies the valid values of `avsCode`.
 
 | Value | Description |
@@ -317,9 +354,6 @@ The below table identifies the valid values of `avsCode`.
 
 The below table identifies the valid values of `cardHolderNameResponse`.
 
-<!-- theme: info -->
-> Cardholder name response is only valid on American Express (AMEX) and Discover transactions.
-
 | Value | Description |
 | ------- | ------- |
 | *1* | Cardholder name matches |
@@ -330,6 +364,7 @@ The below table identifies the valid values of `cardHolderNameResponse`.
 | *6* | Cardholder name incorrect, billing postal code matches |
 | *7* | Cardholder name incorrect, billing address matches |
 | *8* | Cardholder name, billing address, and postal code are all incorrect |
+-->
 
 ---
 
