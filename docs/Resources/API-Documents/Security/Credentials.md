@@ -14,7 +14,7 @@ The below table identifies the parameters in the request.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `domains` | *array* | | A whitelist of domains that are applicable for this credentials request |
+| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request |
 | `publicKeyRequired` | *boolean* | N/A | Used ro request a public key. If the signedCert is expired or invalid then merchant would send a request, default is true (false currently not supported) |
 | `accessTokenRequired` | *boolean* | N/A | Used to request an access token. If the access token is expired then merchant would request for a new token, default is true (false currently not supported) |
 | `accessTokenTimeToLive` | *string* | 7 | Time to live (expiration time) in milliseconds, default is the max time of 30 minutes (1800000 ms) |
@@ -71,11 +71,11 @@ titles: Request, Response
 ```json
 
 {
-  "domains": ["https://checkout.mystore.com", "https://store.mystore.com", "https://*.mystore.com"],
-  "publicKeyRequired": false,
-  "merchantDetails": {
-    "merchantId": "100004000000260"
-  }
+    "domains": ["https://checkout.mystore.com", "https://store.mystore.com", "https://*.mystore.com"],
+    "publicKeyRequired": false,
+    "merchantDetails": {
+        "merchantId": "100004000000260"
+    }
 }
 
 ```
@@ -92,23 +92,23 @@ type: tab
 ```json
 
 {
-  "gatewayResponse": {
-  "transactionProcessingDetails": {
-    "transactionTimestamp": "2022-08-11T09:20:33.229618Z",
-    "apiTraceId": "cea83af5b1ae4c2fb20e8b6c75600a8d",
-    "clientRequestId": "36fcd38d2064bcff1222b4e3d2e78fc2",
-    "transactionId": "cea83af5b1ae4c2fb20e8b6c75600a8d"
-    }
-  },
-  "keyId": "7250e555-d238-407e-ace1-68cb1930a2d2",
-  "publicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7srHsjawnbAwoN/lGbug53Yntw7wFR8C0yizZK0LMmmEH+wBB945cA61M0ouYt8JeULGpc04/IuPDvM5NXb/gFUg1EfhRxiS4zqS0aKQYmHtqXAZJrC2oZfMRdsc1qErYT6cQSk8iUplGau+d0IScrLP07HomRbTgCLLVkfoVYE3KnZUy8Neko9pn0KmYplhW/thTrq/fISMofBU7DZ1zPFiP5bojNgq2PHO9WmtnLYWv3cMwaDJsG+p9p7XgEqTLFTsy5GU9/R4THPpYczGRzYrPLFjVdISOOzOa1z1VnzrRjSg6rz85drXxcZ1z5udhzt3+pXwvBZmB1llCUU/FQIDAQAB",
-  "keyLength": "392",
-  "accessToken": "Pqha9WGVanUm1HZMWPAXjY4dolX3",
-  "sessionId": "6d8b016a-ea03-4ff2-baf9-3d2f68cb551f",
-  "accessTokenIssuedTime": "1660209611535",
-  "accessTokenTimeToLive": "1799",
-  "symmetricEncryptionAlgorithm": "AES-GCM",
-  "asymmetricEncryptionAlgorithm": "RSA-2048"
+    "gatewayResponse": {
+        "transactionProcessingDetails": {
+            "transactionTimestamp": "2022-08-11T09:20:33.229618Z",
+            "apiTraceId": "cea83af5b1ae4c2fb20e8b6c75600a8d",
+            "clientRequestId": "36fcd38d2064bcff1222b4e3d2e78fc2",
+            "transactionId": "cea83af5b1ae4c2fb20e8b6c75600a8d"
+        }
+    },
+    "keyId": "7250e555-d238-407e-ace1-68cb1930a2d2",
+    "publicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7srHsjawnbAwoN/lGbug53Yntw7wFR8C0yizZK0LMmmEH+wBB945cA61M0ouYt8JeULGpc04/IuPDvM5NXb/gFUg1EfhRxiS4zqS0aKQYmHtqXAZJrC2oZfMRdsc1qErYT6cQSk8iUplGau+d0IScrLP07HomRbTgCLLVkfoVYE3KnZUy8Neko9pn0KmYplhW/thTrq/fISMofBU7DZ1zPFiP5bojNgq2PHO9WmtnLYWv3cMwaDJsG+p9p7XgEqTLFTsy5GU9/R4THPpYczGRzYrPLFjVdISOOzOa1z1VnzrRjSg6rz85drXxcZ1z5udhzt3+pXwvBZmB1llCUU/FQIDAQAB",
+    "keyLength": "392",
+    "accessToken": "Pqha9WGVanUm1HZMWPAXjY4dolX3",
+    "sessionId": "6d8b016a-ea03-4ff2-baf9-3d2f68cb551f",
+    "accessTokenIssuedTime": "1660209611535",
+    "accessTokenTimeToLive": "1799",
+    "symmetricEncryptionAlgorithm": "AES-GCM",
+    "asymmetricEncryptionAlgorithm": "RSA-2048"
 } 
 ```
 
