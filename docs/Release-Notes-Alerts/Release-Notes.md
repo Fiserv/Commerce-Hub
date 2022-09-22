@@ -26,6 +26,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Charges updated to support [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md) using referenced transaction identifiers | Update |
 | [Regional Debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) support added for Canada on Nashville | Feature |
 | Secure Data Capture [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) updated to support event handling and advanced CSS styling | Update |
+| [Cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) support of referenced transaction identifiers on Chase | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
