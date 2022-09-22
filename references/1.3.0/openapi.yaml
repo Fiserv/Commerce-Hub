@@ -77,6 +77,72 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+  /payments/v1/cancels:
+    x-model-version: 1.1
+    post:
+      tags:
+      - Cancel Endpoint Definition
+      x-group-name: 'Payments'
+      x-proxy-name: 'Cancels'
+      x-default-example: transactionId
+      summary: Submit a cancel transaction.
+      description: 'Use this payload to perform cancel a transaction (aka void).'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelRequest'
+            examples:
+              merchantTransactionId:
+                summary: Cancel a transaction using Merchant Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceMerchantTransactionId'
+              transactionId:
+                summary: Cancel a transaction using CommerceHub Transaction ID
+                $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelResponse'
+              examples:
+                merchantTransactionId:
+                  summary: Cancel response using Merchant Transaction ID
+                  $ref: '#/components/examples/CancelResponse'
+                transactionId:
+                  summary: Cancel response using Transaction ID
+                  $ref: '#/components/examples/CancelResponse'   
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
   /payments/v1/refunds:
     x-model-version: 1.0
     post:
@@ -3391,37 +3457,32 @@ components:
             account updater system., example: VAU001}
         originalResponseCode: {type: string, description: Original Response Code for
             re-authorized (Optimized) transaction., example: '006'}
-    CaptureRequest:
+    CancelRequest:
       x-model-version: 1.0
       properties:
-        source: {$ref: '#/components/schemas/Source'}
         amount: {$ref: '#/components/schemas/Amount'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+        source: {$ref: '#/components/schemas/Source'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
+        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
+        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
+        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
+        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
+        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
         storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-    CaptureResponse:
+        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+    CancelResponse:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
+        source: {$ref: '#/components/schemas/Source'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
     RefundRequest:
       x-model-version: 1.0
       properties:
@@ -5366,10 +5427,10 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
-    CaptureResponse:
+    CancelResponse:
       value:
         gatewayResponse:
-          transactionType: CAPTURE
+          transactionType: CANCEL
           transactionState: AUTHORIZED
           transactionOrigin: ECOM
           transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
@@ -5380,7 +5441,7 @@ components:
           card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
             expirationYear: '2030'}
         paymentReceipt:
-          approvedAmount: {total: 12.04, currency: USD}
+          approvedAmount: {total: '12.04', currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta

@@ -18,7 +18,7 @@ Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Docum
 
 ---
 
-## Capture Using Referenceed Identifier
+## Capture Using Referenced Identifier
 
 A capture request is initiated by sending the `referenceTransactionDetails` in the payload along with the `captureFlag` *true* in `transactionDetails` and may contain the `amount` object based on the capture type.
 
@@ -176,6 +176,8 @@ type: tab
    }
 }
 ```
+
+<!-- type: tab-end -->
 
 ---
 
