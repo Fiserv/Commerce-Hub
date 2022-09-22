@@ -9,6 +9,9 @@ tags: [Card Not Present, Fraud, Fraud Settings]
 
 Commerce Hub implements various transaction and fraud controls that allows merchants to monitor potentially fraudulent transactions including [positive and negative filters], [velocity controls], and [transaction restrictions], that will automatically accept or reject transactions. Unlike [AVS and CVV filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md), these will block transactions before any authorization attempt is made.
 
+
+<!---
+
 ---
 
 ## Setup Fraud Settings 
@@ -26,17 +29,21 @@ Select either the Card Not Present Accounts or Card Present Accounts tab. From t
 #### Step 3: Choose a Profile
 
 Click the Assign Profile link and select the profile that you want to assign transaction controls or [create a new profile](?path=docs/Resources/Guides/Enterprise-Portal/Profiles.md) and click the Assign button.
+-->
 
-<!-- theme: info -->
+<!-- 
+theme: info
 > You can also change the profile associated by clicking the name of the profile and assigning a different one. 
+-->
 
+<!---
 #### Step 4: Setup Fraud Settings
 
 Select the Fraud Settings tab on the left side. Select the [Fraud Settings](#fraud-settings-1) from the list to enable/disable the functions and features. Enable the fraud settings by selecting Enable on Commercehub checkbox and enabling the features or filters.
 
 #### Step 5: Save Settings
 Click the Save button and click the Home icon to return to the main screen.
-
+-->
 ---
 
 ## Fraud Settings
