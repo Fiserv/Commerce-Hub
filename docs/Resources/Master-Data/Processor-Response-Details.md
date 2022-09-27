@@ -1,5 +1,5 @@
 ---
-tags: [API Reference, Master Data, Processor Response Parameters]
+tags: [API Reference, Master Data, Processor Response, Response Code]
 ---
 
 # Processor Response Parameters
