@@ -70,6 +70,5 @@ type: tab
 - [Error Response Codes](?path=docs/Resources/Guides/Response-Codes/Error-Code.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
-- [Host Response Codes](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md)
 
 ---
