@@ -59,6 +59,11 @@ The below table identifies the valid values of `responseCode` along with `respon
 | 046 | Declined: Bad Authoriation Number |
 | 048 | Cardholder Authentication Required |
 | 050 | Host Key Error |
+| 051 | Payment instrument Not Found | 
+| 052 | Payment instrument Blocked, Frozen or Restricted |
+| 053 | Payment instrument Closed |
+| 054 | Payment instrument Lost or Stolen |
+| 058 | Account on Warning Bulletin |
 
 ---
 
