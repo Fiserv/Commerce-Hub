@@ -2,6 +2,8 @@
 tags: [Partial Approval, Authorization]
 ---
 
+# Partial Authrorization
+
 Commerce Hub supports partial authorizations (approvals), authorization reversals, and balance response in order to improve in-person debit and prepaid transactions. Partial authorization capability addresses decline rates and enhances the consumer and merchant experience at the point of sale.
 
 - **Partial Approvals:** allows merchants to process split-tender charges by allowing an authorization request where the transaction amount exceeds the funds available on the card. The merchant can then process an additional charge to obtain the remaining amount.
