@@ -3679,25 +3679,8 @@ components:
         domains:
           type: array
           description: 'A whitelist of domains that are applicable for this credentials request.'
-          example: 'http://checkout.example.com, http://*.example.com'
           items:
-            type: string
-        publicKeyRequired:
-          type: boolean
-          description: 'If the signedCert is expired or invalid then merchant would send a request.'
-          example: 'true'
-        accessTokenRequired:
-          type: boolean
-          description: 'If the access token is expired then merchant would request for a new token.'
-          example: 'true'
-        accessTokenTimeToLive:
-          type: string
-          description: 'Time to live (expiration time) in milliseconds. 1800000 ms, max 30 minutes.'
-          example: '889'
-        responseRedirectURL:
-          type: string
-          description: 'Response URL redirect.'
-          example: 'https://www.somedomain.com'
+            $ref: '#/components/schemas/Domain'
         merchantDetails:
           $ref: '#/components/schemas/MerchantDetails'
     SecurityCredentialsResponse:
@@ -3707,47 +3690,65 @@ components:
           $ref: '#/components/schemas/GatewayResponse'
         keyId:
           type: string
-          description: 'Unique identifier of the encryption key.'
+          description: 'Unique identifier of the public encryption key.'
+          maxLength: 64
+          example: '16116eb9-365c-4465-9017-e5bd7f153b9c'
         publicKey:
           type: string
-          description: 'Base64 encoded public key.'
+          description: 'Base64 encoded public encryption key.'
+          maxLength: 4000
+          example: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROE......'
         keyLength:
           type: integer
-          description: 'Length of the encryption key.'
+          description: 'Length of the Base64 encoded public encryption key.'
+          maxLength: 10
+          example: 392
         accessToken:
           type: string
-          description: 'Access token created and sent back.'
+          description: 'Access token credential to be used in subsequent API calls.'
+          maxLength: 2048
+          example: 'saAOM9qjmKfdazqgoZrKbJuukCP9'
         sessionId:
           type: string
-          description: ''
+          description: 'Unique identifier for this session'
+          maxLength: 64
+          example: '1a47b28f-b15d-45d2-9394-07f79ee5e954'
         domains:
           type: array
           description: 'A whitelist of domains that are applicable for this credentials request.'
-          example: 'https://checkout.example.com, https://*.mystore.com'
           items:
-            type: string
+            $ref: '#/components/schemas/Domain'
         accessTokenIssuedTime:
           type: string
           format: date-time
           description: 'Token issue time in YYYY-MM-DDThh:mm:ssZ format.'
           example: '2016-04-16T16:06:05Z'
         accessTokenTimeToLive:
-          type: string
-          description: 'Access token expiry.'
-        symmetricEncryptionAlgorithm:
-          type: string
-          description: 'AES 256/PKCS with padding.'
+          type: integer
+          description: 'Time to live (expiration time) in seconds. 1800s, max 30 minutes.'
+          example: 1800
         asymmetricEncryptionAlgorithm:
           type: string
-          description: 'RSA/ECB/PKCS1Padding.'
+          description: 'Asymmetric encryption algorithm associated with the public key'
+          maxLength: 32
+          example: 'RSA'
         accessTokenType: 
           type: string
           maxLength: 50
           description: |+
-            Access token type.
-            
+            Access token type.'
             Valid Values: 
             * BEARER
+            * JWT (JSON Web Token)
+    Domain:
+      x-model-version: 1.0
+      description: 'An object that represents a HTTP domain'
+      properties:
+        url:
+          type: string
+          maxLength: 2048
+          description: 'URL associated with the HTTP domain'
+          example: 'https://store.example.com'
   examples:
     ApplePayRequest:
       value:
@@ -5506,21 +5507,19 @@ components:
     TransactionInquiryByMerchantOrderIdRequest:
       value:
         referenceTransactionDetails:
-          referenceMerchantOrderId: '953729024'
+          referenceMerchantOrderId: 'RKOrdID-822715036'
         merchantDetails:
           merchantId: '222222222222'
     TransactionInquiryResponse:
       value:
+      -
         gatewayResponse:
-          gatewayName: 'IPG'
-          gatewayOrderId: 'CH-cb1e236f-3136-411d-8eff-7273ad6d2505'
-          gatewayTransactionId: '84439763459'
           transactionOrigin: 'ECOM'
           transactionProcessingDetails:
             apiTraceId: 'aa829dcb83cd49f485141168e051b8d1'
             clientRequestId: '9806383'
             orderId: 'CHG01586b6416dddd4425ae764daee6c3ac8a'
-            transactionId: 'aa829dcb83cd49f485141168e051b8d1'
+            transactionId: '95f6b8c8ec024e1183a8e998406656ce'
             transactionTimestamp: '2022-01-13T19:09:27.939151Z'
           transactionState: 'CAPTURED'
           transactionType: 'CHARGE'
@@ -5547,27 +5546,13 @@ components:
             last4: '1732'
             scheme: 'MASTERCARD'
           sourceType: 'PaymentCard'
-        additionalDataCommon:
-          billingAddress:
-            address:
-              city: 'Atlanta'
-              country: 'USA'
-              houseNumberOrName: '4201'
-              postalCode: '30338'
-              stateOrProvince: 'Georgia'
-              street: '123 Main Dr'
-            firstName: 'Jane'
-            lastName: 'Doe'
         transactionDetails:
           captureFlag: 'true'
           merchantInvoiceNumber: 'CHG01586b641'
     TransactionInquiryByMerchantOrderIdResponse:
       value:
+      -
           gatewayResponse:
-            gatewayName: 'IPG'
-            gatewayOrderId: 'CH-130870e4-0adc-494a-b15a-265f1547af26'
-            gatewayTransactionId: '84438752938'
-            transactionOrigin: 'ECOM'
             transactionProcessingDetails:
               apiTraceId: 'c16a33b487af4eb9b6b6e97a912bda6f'
               clientRequestId: '8893258'
@@ -5628,29 +5613,27 @@ components:
     SecurityCredentialsRequest:
       value:
         domains:
-        - https://checkout.mystore.com
-        - https://store.mystore.com
-        - https://*.mystore.com
-        publicKeyRequired: false
+          - url: "https://checkout.mystore.com"
+          - url: "https://store.mystore.com"
+          - url: "https://*.mystore.com"
         merchantDetails:
-          merchantId: '100004000000260'
+          merchantId: "49e4a8e0-eac6-4db6-ab53-f0b3f18b304c"
     SecurityCredentialsResponse:
       value:
-        gatewayResponse:
-          transactionProcessingDetails:
-            transactionTimestamp: '2022-08-11T09:20:33.229618Z'
-            apiTraceId: cea83af5b1ae4c2fb20e8b6c75600a8d
-            clientRequestId: 36fcd38d2064bcff1222b4e3d2e78fc2
-            transactionId: cea83af5b1ae4c2fb20e8b6c75600a8d
-        keyId: 7250e555-d238-407e-ace1-68cb1930a2d2
-        publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7srHsjawnbAwoN/lGbug53Yntw7wFR8C0yizZK0LMmmEH+wBB945cA61M0ouYt8JeULGpc04/IuPDvM5NXb/gFUg1EfhRxiS4zqS0aKQYmHtqXAZJrC2oZfMRdsc1qErYT6cQSk8iUplGau+d0IScrLP07HomRbTgCLLVkfoVYE3KnZUy8Neko9pn0KmYplhW/thTrq/fISMofBU7DZ1zPFiP5bojNgq2PHO9WmtnLYWv3cMwaDJsG+p9p7XgEqTLFTsy5GU9/R4THPpYczGRzYrPLFjVdISOOzOa1z1VnzrRjSg6rz85drXxcZ1z5udhzt3+pXwvBZmB1llCUU/FQIDAQAB
-        keyLength: '392'
-        accessToken: Pqha9WGVanUm1HZMWPAXjY4dolX3
-        sessionId: 6d8b016a-ea03-4ff2-baf9-3d2f68cb551f
-        accessTokenIssuedTime: '1660209611535'
-        accessTokenTimeToLive: '1799'
-        symmetricEncryptionAlgorithm: AES-GCM
-        asymmetricEncryptionAlgorithm: RSA-2048
+        keyId: 'dc86c901145e47fb8e339bf11af1e0b1'
+        publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
+        keyLength: 792
+        accessToken: 'vsmsrKcNFWzq79Yd8aaxHetHBdxm'
+        sessionId: 'b28ba2ca-6368-4d72-b5f0-c185b4d0de4c'
+        domains:
+          - url: "https://checkout.mystore.com"
+          - url: "https://store.mystore.com"
+          - url: "https://*.mystore.com"
+        symmetricEncryptionAlgorithm: 'AES-GCM'
+        asymmetricEncryptionAlgorithm: 'RSA'
+        accessTokenIssuedTime: '2016-04-16T16:06:05Z'
+        accessTokenTimeToLive: 1799
+        accessTokenType: 'BEARER'
     PaymentSessionRequest:
       value:
         amount:
