@@ -7,7 +7,7 @@ A credentials request is used for authorizing or submitting subsequent financial
 
 <!--
 type: tab
-titles: Request Variables, Response Variables
+titles: Request Variables, Response Variables, Domains
 -->
 
 The below table identifies the parameters in the request.
@@ -45,6 +45,16 @@ The below table identifies the response elements.
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
 -->
 
+<!--
+type: tab
+-->
+
+The below table identifies the fields in the `domains` array.
+
+| Variable | Type | Maximum Length | Description |
+|---------|----------|--------|--------|
+| `url` | *string* | 2048 | URL associated with the HTTP domain |
+
 <!-- type: tab-end -->
 
 ---
@@ -68,9 +78,15 @@ titles: Request, Response
 ```json
 {
   "domains": [
-    "https://checkout.mystore.com",
-    "https://store.mystore.com",
-    "https://*.mystore.com"
+    {
+      "url": "https://checkout.mystore.com"
+    },
+    {
+      "url": "https://store.mystore.com"
+    },
+    {
+      "url": "https://*.mystore.com"
+    }
   ],
   "merchantDetails": {
     "merchantId": "100004000000260"
@@ -91,18 +107,6 @@ type: tab
 
 ```json
 {
-  "gatewayResponse": {
-    "transactionType": "CHARGE",
-    "transactionState": "AUTHORIZED",
-    "transactionOrigin": "ECOM",
-    "transactionProcessingDetails": {
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionTimestamp": "2016-04-16T16:06:05Z",
-      "apiTraceId": "1234567a1234567b1234567c1234567d",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
-    }
-  },
   "keyId": "16116eb9-365c-4465-9017-e5bd7f153b9c",
   "publicKey": "TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROE......",
   "keyLength": 392,
@@ -110,7 +114,13 @@ type: tab
   "sessionId": "1a47b28f-b15d-45d2-9394-07f79ee5e954",
   "domains": [
     {
-      "url": "https://store.example.com"
+      "url": "https://checkout.mystore.com"
+    },
+    {
+      "url": "https://store.mystore.com"
+    },
+    {
+      "url": "https://*.mystore.com"
     }
   ],
   "accessTokenIssuedTime": "2016-04-16T16:06:05Z",
