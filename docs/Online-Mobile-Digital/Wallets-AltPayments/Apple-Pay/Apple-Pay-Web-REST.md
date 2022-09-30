@@ -31,7 +31,7 @@ Configure Apple developer account with merchant information to accept [Apple Pay
 
 ## Step 2: Support Apple Pay on the Web
 
-The merchant can start supporting Apple Pay on their website by using the Commerce Hub's [RESTful API](docs/Resources/API-Documents/Use-Our-APIs.md) with [Apple Pay's JS API Framework](https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api).
+The merchant can start supporting Apple Pay on their website by using the Commerce Hub's [RESTful API](?path=docs/Resources/API-Documents/Use-Our-APIs.md) with [Apple Pay's JS API Framework](https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api).
 
 ---
 
@@ -211,6 +211,7 @@ type: tab
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)
 - [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+
 <!--
 - [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 - [Apple Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md)

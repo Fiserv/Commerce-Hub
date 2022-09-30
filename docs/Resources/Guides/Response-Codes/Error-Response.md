@@ -1,5 +1,5 @@
 ---
-tags: [Error, Response, Response Codes]
+tags: [Error Response, Error Code, Response Code]
 ---
 
 # Error Response

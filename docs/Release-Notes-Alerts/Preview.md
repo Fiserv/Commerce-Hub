@@ -16,6 +16,20 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+## October 2022
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** October 10th 2022
+- **Production:** October 13th 2022
+
+| Details | Type |
+| ----- | ----- |
+| Charges updated to support [Hybrid Card routing](?path=docs/Resources/Guides/Directed-Routing.md) | Update |
+| Support added to Chase Salem for; merchant managed 3-D Secure, soft descriptors, merchant managed recurring, digital wallets, and tokenization  | Update |
+
+---
+
 ## September 2022
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.

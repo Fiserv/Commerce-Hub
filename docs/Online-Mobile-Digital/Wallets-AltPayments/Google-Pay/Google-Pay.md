@@ -4,7 +4,7 @@ tags: [In-App, Web, Online, Google Pay, Wallet, Mobile, Getting Started, Payment
 
 # Google Pay
 
-Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with [supported Android devices](https://support.google.com/android/answer/10248227) like phones, tablets and watches.
+Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with [supported Android devices](https://support.google.com/wallet/answer/12059331?hl=en) like phones, tablets and watches.
 
 <!-- theme: info -->
 > Google Pay is available to cardholders in supported countries. Refer to Google's documentation to learn about [supported countries](https://support.google.com/pay/answer/9023773).
