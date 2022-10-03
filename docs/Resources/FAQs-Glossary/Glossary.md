@@ -121,6 +121,9 @@ A transaction in which a cardholder obtains cash as part of the transaction.
 ## Cash Advance
 A transaction in which a customer receives cash in-person which is posted against the customer's account.
 
+## Clickjacking
+A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md). 
+
 ## Customer Account
 The customer account associated with a customer account number or checking account number used in a payment request.
 
@@ -390,6 +393,9 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 
 ## Key Management
 Key management refers to management of cryptographic keys in a cryptosystem. This includes dealing with the generation, exchange, storage, use, crypto-shredding (destruction) and replacement of keys. It includes cryptographic protocol design, key servers, user procedures, and other relevant protocols. See also [Derived Unique Key Per Transaction (DUKPT)](#derived-unique-key-per-transaction).
+
+## Key Rotation
+Key rotation in card processing is when an encryption key is expired after a timestamp and replaced by generating a new cryptographic key. It is a good practice to keep rotating the SAQ encryption keys on a regular basis to meet industry standards.
 
 ---
 
