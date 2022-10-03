@@ -82,15 +82,6 @@ type: tab
 ```json
 
 {
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "platform": "IPG",
-          "priority": "FINAL"
-        }
-      ]
-    },
     "gatewayResponse": {
       "gatewayName": "IPG",
       "gatewayOrderId": "CH-cb1e236f-3136-411d-8eff-7273ad6d2505",
