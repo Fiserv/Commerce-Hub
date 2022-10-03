@@ -1721,15 +1721,6 @@ components:
           maxLength: 128
           description: 'Merchant/client generated <code>clientRequestId</code> from the original transaction. Can only be used in a transaction inquiry request.'
           example: '2994454'
-        referenceTransactionType:
-          type: string
-          maxLength: 64
-          description: |+
-            Identifies the type of the referenced transaction.
-            Valid Values:
-            * CHARGES
-            * REFUND
-          example: 'CHARGES'
     OrderData:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md">Order
