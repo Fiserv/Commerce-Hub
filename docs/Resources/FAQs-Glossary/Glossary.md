@@ -16,6 +16,8 @@ This is a technical standard that adds security to online Card Not Present trans
 
 3-D Secure technologies include Visa Secure (previously Verified by Visa), Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
 
+---
+
 # A
 
 ## Access Token	
@@ -60,6 +62,8 @@ The process of verifying that purchase transactions are for expenses permitted a
 ## Authorization Type Indicator
 Identifies if the authorization requested is an initial, reauthorization, deferred or incremental.
 
+---
+
 # B
 
 ## Bank Identification Number
@@ -85,6 +89,8 @@ Binary Synchronous (BISYNC) is a category of synchronous communications protocol
 
 ## Bill Payment Indicator
 Identifies if the bill payment requested is a recurring, instalment, or deferred.
+
+---
 
 # C
 
@@ -168,6 +174,8 @@ The [three-digit code](?path=docs/Resources/Master-Data/Currency-Code.md) to des
 ## Customer
 A person or company that buys goods or services from a merchant.
 
+---
+
 # D
 
 ## Decline
@@ -224,6 +232,8 @@ The `daysRented` field is the length of the [car rental](?path=docs/Resources/Gu
 ## Dynamic Descriptor
 A [custom descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md) you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
 
+---
+
 # E
 
 ## Echo
@@ -264,6 +274,8 @@ The date embossed on the card beyond which the card is not valid to be used. Gen
 ## Existing Debt Indicator
 Identifies the transaction as payment of an existing debt obligation, such as a car loan payment.
 
+---
+
 # F
 
 ## Firewall
@@ -293,10 +305,14 @@ A communications channel that transmits in both directions at the same time.
 ## Funding Primary Account Number
 Funding Primary Account Number (FPAN) is the actual account number appearing on the physical card (or similar device) issued by issuing bank. See also [DPAN](#device-specific-primary-account-number).
 
+---
+
 # G
 
 ## Gateway
 A gateway is a program or piece of hardware that passes data between networks.
+
+---
 
 # H
 
@@ -317,6 +333,11 @@ Process where the host (e.g. Commerce Hub) closes and settles batches on behalf 
 
 ## Host Security Module
 A Host Security Module (HSM) is a hardware device that safeguards and manages digital keys for strong authentication and provides crypto-processing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
+
+## Hybrid Card
+A hybrid card combines both debit and credit card functionality in a single card. Based on the rounting choise it allows the customer to be charged immediately using debit processing or a later date using credit processing. Commerce Hub allows the merchant to choose the procssing network using [directed routing](?path=docs/Resources/Guides/Directed-Routing.md).
+
+---
 
 # I
 
@@ -353,6 +374,8 @@ Integrated Voice Response (IVR) technology creates automatic message selections 
 ## Issuing Bank
 The issuing bank also known as the customer's bank, issues a payment card or checks to an individual.
 
+---
+
 # J
 
 ## JavaScript
@@ -361,10 +384,14 @@ JavaScript (JS) is a programming language that conforms to the ECMAScript specif
 ## JSON
 JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. Commerce Hub requests and responses are written in JSON format.
 
+---
+
 # K
 
 ## Key Management
 Key management refers to management of cryptographic keys in a cryptosystem. This includes dealing with the generation, exchange, storage, use, crypto-shredding (destruction) and replacement of keys. It includes cryptographic protocol design, key servers, user procedures, and other relevant protocols. See also [Derived Unique Key Per Transaction (DUKPT)](#derived-unique-key-per-transaction).
+
+---
 
 # L
 
@@ -388,6 +415,8 @@ A bank card that has been reported to the credit issuer as lost or misplaced by 
 
 ## Luhn Check
 The Luhn algorithm or Luhn formula, also known as the "modulus 10" or "mod 10" algorithm, is a simple checksum formula used to validate credit card numbers.
+
+---
 
 # M
 
@@ -457,6 +486,8 @@ A communication line system having more than one terminal connected to the same 
 ## Merchant Verification Value
 Merchant Verification Value (MVV) is an identifier assigned by Visa to identify a merchant who is registered with Visa for specific fees, special interchange treatment, or participation in select acceptance programs.
 
+---
+
 # N
 
 ## National Association
@@ -474,10 +505,14 @@ Ancillary data, obtained in the authorization process, which is used internally 
 ## Number of Nights
 The `numberOfNights` field is the length of the [lodging stay](?path=docs/Resources/Guides/Industry-Verticals/Lodging.md) and is required in hotel and lodging custom payment service transactions.
 
+---
+
 # O
 
 ## On-Us Transaction
 A transaction in which both the cardholder and the merchant are signed by the same member.
+
+---
 
 # P
 
@@ -512,6 +547,8 @@ The main independent transactions between a customer and a merchant. Commerce Hu
 ## Prepaid Closed Loop
 Prepaid Closed Loop is a [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) product that is designed to only be used at the merchant's locations. Closed Loop payment schemes allow companies to reward loyalty and increase customer intimacy. 
 
+---
+
 # R
 
 ## Recurring Transaction
@@ -534,6 +571,8 @@ A dynamic, reflective, general purpose object-oriented programming language. Rub
 
 ## Ruby on Rails
 An open-source web application framework for the Ruby programming language. It is often referred to as 'Rails' or 'RoR'. It is intended to be used with an Agile development methodology, which is often utilized by web developers for its suitability for short, client-driven projects.
+
+---
 
 # S
 
@@ -603,6 +642,8 @@ High-speed transmission, synchronous communications is the transmission and reco
 <!-- theme : warning -->
 > Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative.
 
+---
+
 # T
 
 ## TeleCheck ECA
@@ -623,6 +664,8 @@ A cryptogram generated using the [Payment Token](#payment-token) and additional 
 ## Tokenization
 [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token, that has no extrinsic or exploitable meaning or value. In the payments industry, it is used to safeguard a card's PAN by replacing it with a unique string of numbers.
 
+---
+
 # U
 
 ## UNIX
@@ -630,6 +673,8 @@ A general-purpose operating system that can implement a Perl Module or Ruby Clie
 
 ## Universal Product Code
 Universal Product Code (UPC) is the barcode used for scanning of trade items at the point of sale.
+
+---
 
 # V
 
@@ -641,3 +686,5 @@ A void or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) is a t
 
 ## Virtual Point of Sale
 Virtual Point of Sale (VPOS) or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
+
+---
