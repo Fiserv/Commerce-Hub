@@ -25,7 +25,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Charges updated to support [hybrid card routing](?path=docs/Resources/Guides/Routing/Hybrid-Card.md) | Update |
+| Charges updated to support hybrid card routing | Update |
 | Support added to Chase Salem for; merchant managed 3-D Secure, soft descriptors, merchant managed recurring, digital wallets, and tokenization  | Update |
 
 ---
