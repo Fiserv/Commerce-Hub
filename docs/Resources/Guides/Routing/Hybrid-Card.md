@@ -4,7 +4,7 @@ tags: [Directed Routing, Network, Processor]
 
 # Hybrid Card Routing
 
-Commerce Hub allows a merchant to determine whether a [hybrid card](?path=docs/Resources/FAQs-Glossary/Glossary.md#hybrid-card) should be sent to the credit or debit network for processing. This can be setup in the Merchant Boarding and Configuration for all cards, and/or the merchant manually override the routing by sending the `transactionCaptureType` in `transactionInteraction.
+Commerce Hub allows a merchant to determine whether a [hybrid card](?path=docs/Resources/FAQs-Glossary/Glossary.md#hybrid-card) should be sent to the credit or debit network for processing. This can be setup in the Merchant Boarding and Configuration for all hybrid cards, or the merchant can manually override the routing by sending the `transactionCaptureType` in `transactionInteraction.
 
 <!-- theme: warning -->
 > Commerce Hub only support manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
@@ -24,7 +24,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using `directedRouting`.
+##### Example of a charge payload request using `transactionCaptureType`.
 
 ```json
 {
