@@ -49,7 +49,13 @@ Commerce Hub allows the merchant to optimize the debit transaction by routing th
 <!-- type: card
 title: Directed Routing
 description: Directed Routing allows merchants to send transactions to a specific debit network based on cost, approval rates, liability shift and ticket size.
-link: docs/Resources/Guides/Directed-Routing.md
+link: docs/Resources/Guides/Routing/Directed-Routing.md
+-->
+
+<!-- type: card
+title: Hybrid Card Routing
+description: Hybrid Card Routing allows merchants to designate whether to send hybrid card transactions to the debit or credit network.
+link: docs/Resources/Guides/Routing/Hybrid-Card.md
 -->
 
 <!-- type: card

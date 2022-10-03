@@ -105,7 +105,7 @@
     - title: Data Solutions
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
-      link: docs/Resources/Guides/Directed-Routing.md
+      link: docs/Resources/Guides/Routing/Directed-Routing.md
 #    - title: Least Cost Debit
 #      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Secure Data Capture

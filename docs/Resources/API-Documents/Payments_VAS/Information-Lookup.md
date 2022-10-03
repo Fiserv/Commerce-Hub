@@ -6,17 +6,19 @@ tags: [Account Information, Card Details, BIN]
 
 Account information lookup is used to obtain the [card details](?path=docs/Resources/Master-Data/Card-Details.md) of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
-- CPS (card processing requirements) - based on things like brand, function, type (commercial, non-corporate)
-- Directed Routing - sending the request to a network based on card brand, function or type
+The card details can be used to determine;
+
+- **Card Processing Requirements (CPS):** based on brand, function, type _(commercial, non-corporate)_
+- **[Directed Routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 
 <!-- theme: info -->
-> Card details can be returned as part of a tokens or charges request if enabled in Marketplace.
+> Card details can be returned as part of a tokens or charges request if enabled in Merchant Boarding and Configuration.
 
 ---
 
 ## Information Lookup Using PaymentCard
 
-The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentCard` as a payment source.
+The merchant can initiate information lookup transaction by passing the card details of the customer using `PaymentCard` as a payment source.
 
 ### Minimum Requirements
 
@@ -146,7 +148,7 @@ type: tab
 
 ## Information Lookup Using PaymentToken 
 
-The merchant can initiate information lookup transaction by passing the card details of the customer and using `PaymentToken` as a payment source.
+The merchant can initiate information lookup transaction by passing the card details of the customer and `PaymentToken` as a payment source.
 
 ### Minimum Requirements
 
@@ -263,6 +265,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 - [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Directed Routing](?oath=docs/Resources/Guides/Routing/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
