@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Error, Response, Response Codes, Card Present]
+tags: [Response Code, Decline Code, Error Code]
 ---
 
 # Gateway Response Codes 
