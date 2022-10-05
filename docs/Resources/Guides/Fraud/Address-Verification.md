@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Card Present, In Person, Online, Mobile, Digital, Address Verification, Fraud]
+tags: [Address Verification, AVS, Fraud]
 ---
 
 # Address Verification Services
