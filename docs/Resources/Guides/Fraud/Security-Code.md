@@ -1,8 +1,8 @@
 ---
-tags: [Card Not Present, Fraud, Security Code, Fraud, Security Code Verification]
+tags: [CVV, Fraud, Security Code Verification]
 ---
 
-# Security Code
+# Security Code Verification
 
 Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit (AMEX) security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
