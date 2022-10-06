@@ -193,6 +193,9 @@ Identifies a bill pay transaction where a recurring or incremental payment is de
 ## Derived Unique Key Per Transaction
 Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction. DUKPT system of derived keys is used in a point-of-sale (POS) environment where the merchant can accept transactions from a large number of unique [PIN entry](?path=docs/Resources/Master-Data/Pin-Block.md) devices. This technique involves the use of a non-secret key serial number and a secret base derivation key. On each transaction, the PIN pad derives a unique key based on a previous key and the key serial number. Terminal encrypts the PIN with this derived key, and sends both the encrypted PIN and the key serial number to the Host. See also [Key Management](#key-management).
 
+## Direct Capture
+Direct capture also known as direct settlement, is the process where the merchant's directly settles the batche on the backend settlement system. Typically, credit transactions are setup for direct capture. See also [host capture](#host-capture) and [terminal capture](#terminal-capture).
+
 ## Doing Business As
 Doing business as (DBA) refers to the specific name and location of the merchant's store where a transaction is made.
 
@@ -332,13 +335,13 @@ Hash-based Message Authentication Code, used to ensure secure transmission of tr
 The host is generally the central or controlling computer in a distributed system.
 
 ## Host Capture
-Process where the host (e.g. Commerce Hub) closes and settles batches on behalf of the merchant. 
+Host capture also known as host capture system (HCS), is the process where the host _(e.g. Commerce Hub)_ closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [terminal capture](#terminal-capture).
 
 ## Host Security Module
 A Host Security Module (HSM) is a hardware device that safeguards and manages digital keys for strong authentication and provides crypto-processing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
 
 ## Hybrid Card
-A hybrid card combines both debit and credit card functionality in a single card. Based on the rounting choise it allows the customer to be charged immediately using debit processing or a later date using credit processing. This is accomplished by [routing](?path=docs/Resources/Guides/Routing/Hybrid-Card.md) the hybrid card to the designed  procssing network.
+A hybrid card combines both debit and credit card functionality in a single card. Based on the rounting choise it allows the customer to be charged immediately using debit processing or a later date using credit processing.
 
 ---
 
@@ -654,6 +657,9 @@ High-speed transmission, synchronous communications is the transmission and reco
 
 ## TeleCheck ECA
 The TeleCheck Electronic Check Acceptance® (ECA®) is a service that converts a paper check into an electronic item at the point of sale.
+
+## Terminal Capture
+Terminal capture also known as terminal capture system (TCS), is the process where the merchant's temrinal closes and settles batches. Typically, credit transactions are setup for terminal capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
 
 ## Transport Layer Security
 Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL) is a cryptographic protocol designed to provide communications security over a computer network. Commerce Hub requires that integrations using our RESTful API have TLS to meet PCI compliance requirements.
