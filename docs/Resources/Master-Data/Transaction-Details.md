@@ -1,5 +1,5 @@
 ---
-tags: [API Reference, Authorization Sequence, Authorization Type Indicator, Data Capture, Data Dynamic, Device Fingerprint Data, Master Data, Primary Transaction Type, Reversal Reason Code, Transactional Data, Transaction Details]
+tags: [API Reference, Master Data, Transaction Details]
 ---
 
 # Transactional Details
@@ -18,6 +18,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a [forced post](?path=docs/Resources/API-Documents/Payments/Forced.md) transaction to a previously performed external authorization. |
 | `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*FALSE*) or Sale (*TRUE*)|
+| `transactionCaptureType` | *string* | 64 | Identifies if settlement is HCS *([host capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture))*, TCS *([terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture))* or [DIRECT](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture) capture. |
 | `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number (aka reference number). |
@@ -56,6 +57,7 @@ JSON string format for `transactionDetails`:
       "primaryOrderId": "123456789",
       "clientRequestId": "13267786514316843133216746",
       "captureFlag": false,
+      "transactionCaptureType": "TCS",
       "accountVerification": false,
       "partialApproval": "NOT_SUPPORTED",
       "merchantTransactionId": "1343678765",
@@ -158,5 +160,6 @@ The below table identifies the valid values of `reversalReasonCode` the reason m
 - [Device Fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
+- [Hybrid Card Routing](?path=docs/Resources/Guides/Routing/Hybrid-Card.md)
 
 --- 
