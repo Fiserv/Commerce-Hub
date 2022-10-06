@@ -341,7 +341,7 @@ Host capture also known as host capture system (HCS), is the process where the h
 A Host Security Module (HSM) is a hardware device that safeguards and manages digital keys for strong authentication and provides crypto-processing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
 
 ## Hybrid Card
-A hybrid card combines both debit and credit card functionality in a single card. Based on the rounting choise it allows the customer to be charged immediately using debit processing or a later date using credit processing. This is accomplished by [routing](?path=docs/Resources/Guides/Routing/Hybrid-Card.md) the hybrid card to the designed  procssing network.
+A hybrid card combines both debit and credit card functionality in a single card. Based on the rounting choise it allows the customer to be charged immediately using debit processing or a later date using credit processing.
 
 ---
 
