@@ -9,7 +9,7 @@ Commerce Hub allows a merchant to determine whether a [hybrid card](?path=docs/R
 Routing transactions through a specifc networks allows a merchant to lower their overall acceptance cost _(interchange, switch fees)_ associated with the transaction. Capture type can be setup in the Merchant Boarding and Configuration, or the merchant can manually override the routing by sending the `transactionCaptureType` in `transactionDetails`.
 
 <!-- theme: warning -->
-> Commerce Hub only support manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
+> Commerce Hub currently only supports manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
 
 #### Transaction Capture Type
 
