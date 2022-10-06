@@ -4,18 +4,25 @@ tags: [Directed Routing, Network, Processor]
 
 # Hybrid Card Routing
 
-Commerce Hub allows a merchant to determine whether a [hybrid card](?path=docs/Resources/FAQs-Glossary/Glossary.md#hybrid-card) should be sent to the credit or debit network for processing. This can be setup in the Merchant Boarding and Configuration for all hybrid cards, or the merchant can manually override the routing by sending the `transactionCaptureType` in `transactionInteraction.
+Commerce Hub allows a merchant to determine whether a [hybrid card](?path=docs/Resources/FAQs-Glossary/Glossary.md#hybrid-card) _(also known as a combination card)_ should be sent to the credit or debit network for processing.
+
+Choice in routing transactions through a specifc networks allows a merchant to lower their overall acceptance cost _(interchange, switch fees)_ associated with the transaction. Capture type can be setup in the Merchant Boarding and Configuration, or the merchant can manually override the routing by sending the `transactionCaptureType` in `transactionDetails`.
 
 <!-- theme: warning -->
 > Commerce Hub only support manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
 
 #### Transaction Capture Type
 
+Capture type determines how the transaction is submitted to the settlement system for processing and funding.
+
 | Value | Description |
 | ---- | -------- |
-| HCS | Host Capture System, will route the transaction to the debit network. |
-| TCS | Terminal Capture System, will route the transaction to the credit network. |
-| DIRECT | Direct Settelment, will route the transaction to the credit network. |
+| HCS | [Host capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture), will route the transaction to the debit network. |
+| TCS | [Terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture), will route the transaction to the credit network. |
+| DIRECT | [Direct settelment](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), will route the transaction to the credit network. |
+
+
+HCS *)*, TCS *()* or [DIRECT]
 
 ## Payload Example
 
@@ -44,10 +51,8 @@ titles: Request, Response
     }
   },
   "transactionDetails": {
-    "captureFlag": true
-  },
-  "transactionInteraction": {
-    "transactionCaptureType": "TCS"
+    "captureFlag": true,
+    "transactionCaptureType": "HCS"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
@@ -83,8 +88,8 @@ type: tab
     "card": {
       "expirationMonth": "12",
       "expirationYear": "2024",
-      "bin": "401200",
-      "last4": "0026",
+      "bin": "400555",
+      "last4": "0019",
       "scheme": "Visa"
     }
   },
@@ -111,7 +116,8 @@ type: tab
     }
   },
   "transactionDetails": {
-    "captureFlag": false
+    "captureFlag": true,
+    "transactionCaptureType": "HCS"
   },
   "merchantDetails": {
     "terminalId": "123456",
@@ -129,7 +135,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Transaction Interaction](?path=docs/Resources/Master-Data/Additional-Data.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 - [Directed Routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md)
 
 ---
