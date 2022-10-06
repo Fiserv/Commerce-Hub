@@ -1,12 +1,13 @@
 ---
-tags: [Directed Routing, Network, Processor]
+tags: [Network, Settlement]
 ---
 
-# Hybrid Card Routing
+# Transaction Capture Type
 
-Commerce Hub allows a merchant to determine whether a [hybrid card](?path=docs/Resources/FAQs-Glossary/Glossary.md#hybrid-card) _(also known as a combination card)_ should be sent to the credit or debit network for processing.
+Commerce Hub allows a merchant to determine the settlement type by defining the transaction capture type in the Merchant Boarding and Configuration, or the merchant can manually override the capture type by sending the `transactionCaptureType` in `transactionDetails`.
 
-Routing transactions through a specifc networks allows a merchant to lower their overall acceptance cost _(interchange, switch fees)_ associated with the transaction. Capture type can be setup in the Merchant Boarding and Configuration, or the merchant can manually override the routing by sending the `transactionCaptureType` in `transactionDetails`.
+<!-- theme: info -->
+> For more information on transaction settlement, please contact your account representative.
 
 <!-- theme: warning -->
 > Commerce Hub currently only supports manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
