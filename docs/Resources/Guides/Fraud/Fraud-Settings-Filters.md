@@ -49,8 +49,13 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | Change Country profile for VT | | |
 -->
 
+---
+
 ## Response Example
 
+```json
+code goes here
+```
 
 ---
 
