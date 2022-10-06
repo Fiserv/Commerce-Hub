@@ -21,8 +21,7 @@ Capture type determines how the transaction is submitted to the settlement syste
 | TCS | [Terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture), will route the transaction to the credit network. |
 | DIRECT | [Direct settelment](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), will route the transaction to the credit network. |
 
-
-HCS *)*, TCS *()* or [DIRECT]
+---
 
 ## Payload Example
 
