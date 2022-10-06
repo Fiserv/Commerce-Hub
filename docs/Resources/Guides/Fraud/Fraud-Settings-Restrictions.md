@@ -20,8 +20,9 @@ code goes here
 
 ## See Also
 
+- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Positive/Negative Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 
 <!---
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
