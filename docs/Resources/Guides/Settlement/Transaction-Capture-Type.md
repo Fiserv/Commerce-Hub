@@ -18,9 +18,9 @@ Capture type determines how the transaction is submitted to the settlement syste
 
 | Value | Description |
 | ---- | -------- |
-| HCS | [Host capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture), will route the transaction to the debit network. |
-| TCS | [Terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture), will route the transaction to the credit network. |
-| DIRECT | [Direct settelment](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), will route the transaction to the credit network. |
+| HCS | [Host capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture), Commerce Hub will settle the transaction. |
+| TCS | [Terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture), the merchant's terminal will settle the transaction. |
+| DIRECT | [Direct settelment](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), the merchant will settle directly to the backend processor. |
 
 ---
 
