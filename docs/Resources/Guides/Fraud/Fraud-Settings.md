@@ -2,7 +2,7 @@
 tags: [Card Not Present, Fraud, Address Verification, Security Code Verification, Velocity Controls, Fraud Filters, Transaction Restrictions]
 ---
  
-# Fraud Controls
+# Fraud Settings
 
 <!-- theme: danger --> 
 > We are enhancing Commerce Hub to include additional fraud settings support and the documents related to the features will be released soon.
@@ -11,9 +11,9 @@ Commerce Hub implements various transaction and fraud controls that allows merch
 
 ---
 
-## Fraud Settings
+## Fraud Controls
 
-Enable Commerce Hub's fraud filters to help reduce fraudulent transactions.
+Enable Commerce Hub's fraud controls to help reduce fraudulent transactions.
 
 <!-- type: row -->
 
