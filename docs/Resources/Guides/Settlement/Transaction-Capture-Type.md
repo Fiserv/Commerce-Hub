@@ -1,5 +1,5 @@
 ---
-tags: [Network, Settlement]
+tags: [Settlement, Host Capture, Terminal Capture, Direct Settlement]
 ---
 
 # Transaction Capture Type
