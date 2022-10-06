@@ -53,12 +53,6 @@ link: docs/Resources/Guides/Routing/Directed-Routing.md
 -->
 
 <!-- type: card
-title: Hybrid Card Routing
-description: Hybrid Card Routing allows merchants to designate whether to send hybrid card transactions to the debit or credit network.
-link: docs/Resources/Guides/Routing/Hybrid-Card.md
--->
-
-<!-- type: card
 title: Least Cost Debit
 description: Least Cost Debit Routing capabilities use a single API interface, for both standard processing and optimized debit routing. When enabled for this service, debit transactions are sent in a standard charges request with no additional coding.
 link: 
