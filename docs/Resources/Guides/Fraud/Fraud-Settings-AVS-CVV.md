@@ -23,7 +23,6 @@ code goes here
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
