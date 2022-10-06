@@ -1035,7 +1035,6 @@ components:
           type: string
           description: 'Merchant order ID (aka customer reference number or purchase order number).'
           example: '845366457890'
-
     TransactionInquiryResponse:
       x-model-version: 1.0
       properties:
@@ -1075,6 +1074,10 @@ components:
           $ref: '#/components/schemas/StoredCredentials'
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
     AccountInformationRequest:
       x-model-version: 1.0
       properties:
@@ -5395,7 +5398,6 @@ components:
       value:
         referenceTransactionDetails:
           referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
@@ -5404,12 +5406,10 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
-
     SecondaryRequestWithReferenceTransactionId:
       value:
         referenceTransactionDetails:
           referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
