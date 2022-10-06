@@ -6,38 +6,18 @@ tags: [Address Verification, AVS, Security Code Verification, CVV, Fraud]
 
 The address and security code filters provide a merchant the ability to enable various transaction filters using the [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification requests. Commerce Hub will reject and automatically reverse the submitted transaction if the conditions for any of these filters are met.
 
-<!-- theme: info -->
-> Not all banks return a response when cardholder verification data is sent and a filter will not cover this situation.
- 
----
-
-## Filter Settings
-
 Filters are applied by inside of Merchant Configuration and Boarding _(Marketplace in the ClientLine Enterprise Portal)_. Filters are applied by attributes and the  respective response values.
 
-### Examples
-
-##### Address and Postal Code
-
-<!-- theme: example -->
-> To reject all transactions where the `streetMatch` and `postalCodeMatch` are *NOT_MATCHED*, select the Address Mismatch and Postal Mismatch attribute.
-
-<!-- theme: example -->
-> To reject all transactions where the `streetMatch` is *MATCHED* and `postalCodeMatch` is *NOT_MATCHED*, select the Address Match and Postal Mismatch attribute.
-
-##### Cardholder Name
-
-<!-- theme: example -->
-> To reject all AMEX transactions where the `cardholderNameresponse` is *"E"* where the name is incorrect but the billing address matches, select the Name Mismatch, Address Match and Postal Match attribute.
-
-##### Security Code
-
-<!-- theme: example -->
-> To reject all transactions where the `securityCodeMatch` is *NO_MATCH* select the CVV No Match attribute.
+<!-- theme: info -->
+> Not all banks return a response when cardholder verification data is sent and a filter will not cover this situation.
 
 ---
 
-## Payload Example
+## Response Example
+
+```json
+code goes here
+```
 
 ---
 
