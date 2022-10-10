@@ -136,6 +136,6 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
-- [Directed Routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
 
 ---
