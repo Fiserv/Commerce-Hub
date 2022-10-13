@@ -37,8 +37,8 @@ Negative filters are used to configure a blacklist and block the transaction bas
 | Add/change card numbers to block | `source.card.cardData` | No dashes or spaces  |
 | BIN Block | `source.card.bin` | 6-11 digit BIN, acquired automatically by Commerce Hub from 'cardData`. Will override the negative and positive card number lists. |
 | IP Addresses to block | `customer.ipAddress` |  |
-| Billing Address | billingAddress.address | Not case sensitive |
-| Country | cardDetails.country  | Acquired automatically from `cardData` by Commerce Hub |
+| Billing Address | `billingAddress.address` | Not case sensitive |
+| Country | `cardDetails.country`  | Acquired automatically from `cardData` by Commerce Hub |
 | Customer Reference to block | `transactionDetails.merchantOrderId` | Not case sensitive |
 | Domain Name to block | `additionalDataCommon.additionalData.ecomURL` |  |
 | Email address/domain | `customer.email` | |
