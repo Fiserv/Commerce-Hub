@@ -16,6 +16,7 @@ The below table identifies the parameters in the `transactionInteraction` object
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `origin` | *string* | N/A | The [origin](#transaction-origin) of the transaction. |
+| `motoType` | *string* | N/A | Identifies if the MOTO type is PHONE or MAIL. |
 | `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Required on all online, mobile, and digital E-Commerce transactions.|
 | `posEntryMode` | *string* | N/A | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
 | `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
@@ -36,6 +37,7 @@ JSON string format for `transactionInteraction`:
 {
    "transactionInteraction":{
       "origin": "ECOM",
+      "motoType": "MAIL",
       "posEntryMode": "MANUAL",  
       "posConditionCode": "CARD_NOT_PRESENT_ECOM",  
       "responseCode": "string",  
