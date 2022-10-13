@@ -19,14 +19,14 @@ Processing PLCC transactions is similar to processing normal credit card transac
 
 ## Request Variables
 
-The `privateLable` object is part of the `additionalDataCommon` object.
+The `privateLabel` object is part of the `additionalDataCommon` object.
 
 <!--
 type: tab
 titles: privateLabel, JSON Example
 -->
 
-The below table identifies the required parameters in the `directedRouting` object.
+The below table identifies the conditional parameters in the `privateLabel` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
@@ -44,22 +44,12 @@ type: tab
 
 {
   "additionalDataCommon": {
-    "directedRouting": {
-      "network": "VISA",
-      "cardFunction": "CREDIT",
-      "processors": [
-        {
-          "processorName": "FISERV",
-          "processingPlatform": "NASHVILLE",
-          "priority": "PRIMARY"
-        },
-        {
-          "processorName": "CHASE",
-          "processingPlatform": "TAMPA",
-          "priority": "SECONDARY"
-        }
-      ]
-    }
+    "privateLabel": {
+      "paymentSource": "SHELL",
+      "paymentType": "CHARGE",
+      "specialFinanceIndicator": "24/0"
+      "creditPlanNumber": "12345"
+      "minimumSpendExemptIndicator": "EXEMPT"
   }
 }
 
