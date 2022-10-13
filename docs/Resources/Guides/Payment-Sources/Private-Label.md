@@ -66,10 +66,10 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using `directedRouting`.
+##### Example of a charge payload request using a PLCC.
 
 <!-- info -->
-> PLCC transactions routed to Citi require `posEntyMode` and `posConditionCode` from `transactionInteraction`. The field `motoType` is also required when sending the `origin` as _MOTO_ in `transactionDetails`.
+> PLCC transactions routed to Citi require additional fields in `transactionInteraction`; `posEntyMode`, `posConditionCode`, and `motoType` when the `origin` is _MOTO_.
 
 ```json
 {
