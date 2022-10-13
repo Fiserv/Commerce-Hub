@@ -69,7 +69,7 @@ titles: Request, Response
 ##### Example of a charge payload request using a PLCC.
 
 <!-- info -->
-> PLCC transactions routed to Citi require additional fields in `transactionInteraction`; `posEntyMode`, `posConditionCode`, and `motoType` when the `origin` is _MOTO_.
+> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and `motoType` when the `origin` is _MOTO_ in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 ```json
 {
