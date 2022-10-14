@@ -72,6 +72,8 @@
     "developers": "/v1/credentials/developers",
     "merchants": "/v1/credentials/merchants",
     "applications": "/v1/credentials/applications",
+    "accessConfig": "/v1/fileAccess",
+    "assets": "/v1/assets",    
     "feature":[
       {
         "name": "sandBox",
