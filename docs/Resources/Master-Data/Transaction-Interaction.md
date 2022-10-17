@@ -56,7 +56,7 @@ JSON string format for `transactionInteraction`:
     "authorizationCharacteristicsIndicator": "CARD_NOT_PRESENT",
     "cardHolderAuthenticationRisk": "IDENTITY_VERIFIED",
     "terminalTimestamp": "2016-04-16T16:06:05Z",
-    "serviceCode": "",
+    "serviceCode": "string",
     "applicationExpiryDate": "2021-09-03",
     "hostPosEntryMode": "MANUAL",
     "hostPosConditionCode": "CARD_NOT_PRESENT_ECOM",
