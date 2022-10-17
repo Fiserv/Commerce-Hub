@@ -18,7 +18,6 @@ docs/Resources/Guides/Bill-Payments/Bill-Payments.md
 docs/Resources/Guides/Bill-Payments/Deferred-Payment.md
 docs/Resources/Guides/Bill-Payments/Payment-Schedule.md
 docs/Resources/Guides/Fraud/Fraud-Detect.md
-docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
 docs/Resources/Guides/Payment-Sources/Gift-Card.md
 docs/Resources/Guides/Payment-Sources/Network-Token.md
 docs/Resources/Guides/Payment-Sources/Private-Label.md
@@ -27,8 +26,10 @@ docs/Resources/Guides/Convenience-Fees.md
 docs/Resources/Guides/Currency-Conversion.md
 docs/Resources/Guides/PSD2-SCA.md
 docs/Resources/Guides/VAS.md
+docs/Resources/Guides/Enterprise-Portal/Access-Token.md
 docs/Resources/Guides/Enterprise-Portal/Account-Management.md
 docs/Resources/Guides/Enterprise-Portal/Merchant-Boarding.md
+docs/Resources/Guides/Enterprise-Portal/Profiles.md
 docs/Resources/Guides/Enterprise-Portal/User-Management.md
 docs/Online-Mobile-Digital/3D-Secure/Native-3DS.md
 docs/Online-Mobile-Digital/3D-Secure/Native-Web.md
@@ -51,3 +52,4 @@ docs/In-Person/Integrations/Semi-Integrated.md
 docs/In-Person/Encrypted-Payments/Contactless.md
 docs/Resources/Guides/Authorizations/Incremental-Auth.md
 docs/Resources/Guides/Authorizations/Deferred-Auth.md
+docs/Resources/Guides/Response-Codes/Host-Response-Code.md

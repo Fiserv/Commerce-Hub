@@ -4,9 +4,6 @@ tags: [Directed Routing, Network, Processor]
 
 # Directed Routing
 
-<!-- theme: danger -->
-> We are enhancing the Commerce Hub to include directed routing support and the documents related to the feature will be updated frequently.
-
 Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
 
 
@@ -205,8 +202,10 @@ type: tab
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Additional Data](?path=docs/Resources/Master-Data/Additional-Data.md)
+- [Hybrid Card Routing](?path=docs/Resources/Guides/Routing/Hybrid-Card.md)
 
 ---

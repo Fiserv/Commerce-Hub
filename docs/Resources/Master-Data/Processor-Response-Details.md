@@ -23,8 +23,8 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `host` | *string* | 256 | Processing endpoint or issuer. |
 | `responseCode` | *string* | N/A | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `responseMessage` | *string* | N/A | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
-| `hostResponseCode` | *string* | N/A | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).| 
-| `hostResponseMessage` | *string* | N/A | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).|
+| `hostResponseCode` | *string* | N/A | Endpoint or issuer host response code.| 
+| `hostResponseMessage` | *string* | N/A | Endpoint or issuer host response message.|
 | `localTimestamp` | *string* | N/A | Transaction timestamp in local time.| 
 | `bankAssociationDetails` | *object* | N/A | [Bank association](#bank-association-details) response details.|
 | `authenticationResponseCode` | string | N/A | Response code from authentication. |

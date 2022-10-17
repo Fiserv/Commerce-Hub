@@ -15,17 +15,25 @@ The below table identifies the parameters in the `transactionInteraction` object
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `origin` | *string* | N/A | The [origin](#transaction-origin) of the transaction. |
-| `motoType` | *string* | N/A | Identifies if the MOTO type is PHONE or MAIL. |
-| `eciIndicator` | *string* | N/A | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Required on all online, mobile, and digital E-Commerce transactions.|
-| `posEntryMode` | *string* | N/A | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
-| `posConditionCode` | *string* | N/A | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
-| `responseCode` | *string* | | Response code returned by network/issuer used in subsequent transactions. |
-| `posData` | *string* | | POS data returned by network/issuer used in subsequent transactions. |
-| `mobileInteraction` | *string* | N/A | Mobile method of [interaction](#mobile-interaction).|
-| `cardholderAuthenticationMethod` | *string* |  | Identifies how the cardholder was [authenticated/verified](#cardholder-authentication-method). |
+| `origin` | *string* | 4 | The [origin](#transaction-origin) of the transaction. |
+| `eciIndicator` | *string* | 36 | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Required on all online, mobile, and digital E-Commerce transactions.|
+| `posEntryMode` | *string* | 22 | An identifier used to indicate how the account number was [entered](#pos-entry-mode) on the transaction.|
+| `posConditionCode` | *string* | 26 | An identifier used to indicate the transaction [condition](#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `responseCode` | *string* | N/A | Response code returned by network/issuer used in subsequent transactions. |
+| `posData` | *string* | N/A | POS data returned by network/issuer used in subsequent transactions. |
+| `mobileInteraction` | *string* | 12 | Identifies if the mobile interaction was _PHONE_ or _QR_CODE_|
+| `cardholderAuthenticationMethod` | *string* | 32 | Identifies how the cardholder was authenticated/verified. ***Valid Values:** NOT_AUTHENTICATED, PIN, ELECTRONIC_SIGNATURE, MANUAL_SIGNATURE, OTHER_MANUAL_VERIFICATION, UNKNOWN (Default), OTHER_SYSTEMATIC_VERIFICATION* |
+| `authorizationCharacteristicsIndicator` | *string* | 23 | Response code used for [qualification](#authorization-characteristics-indicator) used in subsequent transactions | 
+| `cardholderAuthenticationEntity` | *string* | 32 | Identifies what entity authenticated the cardholder. ***Valid Values:** UNSPECIFIED, NOT_AUTHORIZED, ICC_OFFLINE_PIN, CARD_ACCEPTANCE_DEVICE, AUTHORZED_AGENT_ONLINE_PIN, MERCHANT_VERIFIED_SIGNATURE, OTHER* |
+| `cardHolderAuthenticationRisk` | *string* | 25 | Identifies the Security Risk from the Card Holder Authentication. ***Valid Values:** NO_RISK, SUSPECTED_FRAUD, IDENTITY_VERIFIED, ECOM_DIGITAL_SIGNATURE* |
+| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
+| `serviceCode` | *string* | 3 | If this field is returned in an authorization response it must be provided in subsequent capture transactions |
+| `applicationExpiryDate` | *string* | N/A | Captured from the EMV chip data. YYYY-MM-DD format. |
+| `hostPosEntryMode` | *string* | 50 | POS entry mode from the response. |
+| `hostPosConditionCode` | *string* | 50 | POS condition code from the response. |
+| `motoType` | *string* | N/A | Defines if the MOTO `origin` is _MAIL_ or _PHONE_ |
 | `additionalPosInformation` | *object* | N/A | Additional [information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) about the POS functions |
-| `authorizationCharacteristicsIndicator` |  | |A code used by an acquirer to request a CPS (Custom Payment Service) qualification | 
+| `network` | *object* | N/A | Card [network](?path=docs/Resources/Master-Data/Network-Details.md) information |
 
 <!--
 type: tab
@@ -35,20 +43,28 @@ JSON string format for `transactionInteraction`:
 
 ```json
 {
-   "transactionInteraction":{
-      "origin": "ECOM",
-      "motoType": "MAIL",
-      "posEntryMode": "MANUAL",  
-      "posConditionCode": "CARD_NOT_PRESENT_ECOM",  
-      "responseCode": "string",  
-      "posData": "string",  
-      "mobileInteraction": "PHONE_NUMBER",
-      "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",  
-      "eciIndicator": "SECURE_ECOM",
-      "additionalPosInformation": "",  
-   } 
+  "transactionInteraction": {
+    "origin": "MOTO",
+    "eciIndicator": "SECURE_ECOM",
+    "posEntryMode": "MANUAL",
+    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+    "responseCode": "string",
+    "posData": "string",
+    "mobileInteraction": "PHONE_NUMBER",
+    "cardholderAuthenticationMethod": "ELECTRONIC_SIGNATURE",
+    "cardholderAuthenticationEntity": "CARD_ACCEPTANCE_DEVICE",
+    "authorizationCharacteristicsIndicator": "CARD_NOT_PRESENT",
+    "cardHolderAuthenticationRisk": "IDENTITY_VERIFIED",
+    "terminalTimestamp": "2016-04-16T16:06:05Z",
+    "serviceCode": "string",
+    "applicationExpiryDate": "2021-09-03",
+    "hostPosEntryMode": "MANUAL",
+    "hostPosConditionCode": "CARD_NOT_PRESENT_ECOM",
+    "motoType": "MAIL",
+    "additionalPosInformation": {},
+    "network": {}
+  }
 }
-
 ```
 
 <!--type: tab-end -->
@@ -113,52 +129,25 @@ The below table identifies the valid values of `posConditionCode`.
 
 ---
 
-#### Mobile Interaction
-
-The below table identifies the valid values of `mobileInteraction`.
-
-| Value | Description |
-|-------|-------------|
-| *PHONE_NUMBER* | Invoice received by phone number |
-| *QR_CODE* | Invoice paid by scanning QR Code |
-
----
-
 #### Terminal Entry Capability
 
 The below table identifies the valid values of `terminalEntryCapability`.
 
 | Value | Description |
 |-------|-------------|
-| UNSPECIFIED | Default |
-| ECOMMERCE | E-commerce no terminal used |
-| MAG_STRIPE_ONLY | Track read only |
-| MAG_STRIPE_MANUAL | Track read or manual key |
-| MAG_STRIPE_MANUAL_CHIP | Track read, manual key or chip |
-| BARCODE | Barcode scan |
-| CONTACTLESS | Contactless integrated circuit read |
-| OCR | Opitcal character reader |
-| CHIP_ONLY | Chip only |
-| CHIP_MAG_STRIPE | Chip with track fallback |
-| MANUAL_ONLY | Manual key only |
-| CONTACTLESS_MAG_STRIPE | Contactless or track read |
-| HYBRID | Hybrid entry mode |
-
----
-
-#### Cardholder Authentication Method
-
-The below table identifies the valid values of `cardholderAuthenticationMethod`.
-
-| Value | Description |
-|-------|-------------|
-| NOT_AUTHENTICATED | Cardholder not authenticated |
-| PIN | Pin authentication |
-| ELECTRONIC_SIGNATURE | Electronic signature authentication |
-| MANUAL_SIGNATURE | Manual Signature authentication |
-| OTHER_MANUAL_VERIFICATION | Manual authentication |
-| UNKNOWN | Authentication method unknown |
-| OTHER_SYSTEMATIC_VERIFICATION | Used for other authentication methods |
+| _UNSPECIFIED_ | Default |
+| _ECOMMERCE_ | E-commerce no terminal used |
+| _MAG_STRIPE_ONLY_ | Track read only |
+| _MAG_STRIPE_MANUAL_ | Track read or manual key |
+| _MAG_STRIPE_MANUAL_CHIP_ | Track read, manual key or chip |
+| _BARCODE_ | Barcode scan |
+| _CONTACTLESS_ | Contactless integrated circuit read |
+| _OCR_ | Opitcal character reader |
+| _CHIP_ONLY_ | Chip only |
+| _CHIP_MAG_STRIPE_ | Chip with track fallback |
+| _MANUAL_ONLY_ | Manual key only |
+| _CONTACTLESS_MAG_STRIPE_ | Contactless or track read |
+| _HYBRID_ | Hybrid entry mode |
 
 ---
 
@@ -176,6 +165,19 @@ The below table identifies the valid values of `eciIndicator`.
 | *CHANNEL_ENCRYPTED* | **Channel Encrypted Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction includes the use of transaction encryption such as SSL/TLS, but authentication was not performed. The cardholder payment data was protected with a form of Internet security, such as SSL/TLS, but authentication was not performed. |
 | *NON_SECURE_ECOM* | **Non-Secure Electronic Commerce Transaction:** Designates a transaction between a cardholder and a merchant consummated via E-commerce where the transaction does not include the use of any transaction encryption such as SSL/TLS, no authentication performed, no management of a cardholder certificate. |
 | *AMEX_PAYMENT_TOKEN* | **American Express Payment Token:** Designates a secure transaction between a cardholder and a merchant via E-commerce where AMEX Payment Token data is present. |
+
+---
+
+#### Authorization Characteristics Indicator
+
+Response code used for qualification and used in subsequent transactions. The below table identifies the valid values of `authorizationCharacteristicsIndicator`.
+
+| Value | Description |
+|-------|-------------|
+| *CARD_NOT_PRESENT* |  Card not present transaction (preferred customer only e.g. Lodging or Auto Rental) |
+| *INCREMENT* | Incremental Authorization | 
+| *REQUEST_PARTICIPATION* |  Transaction requests participation |
+| *CARD_NOT_PRESENT_NO_AVS* |  Card not present, AVS not required |
  
 ---
 
