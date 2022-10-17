@@ -1,57 +1,53 @@
 ---
-tags: [Authorizations, Card Not Present, Fraud, Transaction Restrictions]
+tags: [Fraud, Transaction Restrictions, Duplicate]
 ---
-
 
 # Transaction Restrictions
 
-The Transaction Restriction settings can be enabled for duplicate transaction detection<!-- and restricting refund transactions-->. Restrictions are applied by [transaction controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) inside of Marketplace. 
+The Transaction Restriction settings can be enabled to detect and reject duplicate transactions. Duplicate transaction can be blocked based on timeframe, number of transactions, and transaction type. Enabling Transaction Restrictions in Commerce Hub will reject duplicate transactions once the specified configuration has been met.
+
+Transaction Restrictions are setup inside of Merchant Configuration and Boarding _(Marketplace in the [ClientLine Enterprise Portal](https://www.businestrack.com))_. Filters are applied by attributes and their respective value.
 
 ---
 
-## Duplicate Restrictions
+## Response Example
 
-Duplicate Restrictions are used to reject duplicate transactions. Enabling on Commercehub allows duplicate checking and will reject duplicate transactions once the specified configuration has been met. The merchant has the option to have duplicate checking calculated from Approved or All transactions. Duplicate checking is based on the following settings; Lockout Time, Timeframe, Transaction Count, Transaction Status and Transaction Type.
+##### Example of a charge (400: Bad Request) response.
 
-### Lockout Time 
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
-Lockout Time is the timeframe configured for transactions to be locked out when detected and rejected. 
-
-### Timeframe
-
-Timeframe is the timeframe configured for duplicates to be detected and rejected. 
-
-<!--theme: example-->
->A five minute timeframe will detect duplicate transactions made within the last five minutes (of when a transaction is processed).
-
-### Transaction Count 
-
-Transaction Count is the set amount of transactions that are allowed for processing before duplicates are detected and rejected.
-
-### Transaction Status
-
-Transaction Status determines if approved or all transactions will be checked when determing a duplicate. 
-
-### Transaction Type
-
-Transactions can be rejected based on the type selected.
-
-| Type | Description |
-|---| ---- | 
-| All | All transactions will be checked for duplicates |
-| Cancel | Only cancelled transactions will be checked for duplicates |
-| Capture | Only captured transactions will be checked for duplicates |
-| Charge | Only charges transactions will be checked for duplicates |
-| Credit | Only credit transactions will be checked for duplicates |
-
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "CHARGE_FINAL",
+    "transactionState": "DECLINED",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01cd337bd9d54741a79b666e0f5d9e0b49",
+      "transactionTimestamp": "2022-10-11T12:33:44.195362Z",
+      "apiTraceId": "6723f1a22c3d4205b8bac81ae58bcd24",
+      "clientRequestId": "1705732",
+      "transactionId": "6723f1a22c3d4205b8bac81ae58bcd24"
+    }
+  },
+  "error": [
+    {
+      "type": "GATEWAY",
+      "code": "600",
+      "message": "Fraud Error: General",
+      "additionalInfo": "Block Duplicate"
+    }
+  ]
+}
+```
 
 ---
 
 ## See Also
 
-- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Positive/Negative Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 
 <!---
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
