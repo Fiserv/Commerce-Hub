@@ -33,8 +33,8 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 | `paymentSource` | *string* | 256 | Identifies the private label card source. |
 | `paymentType` | *string* | 16 | Identifies if the Type of transaction. |
 | `specialFinanceIndicator` | *string* | 16  | Indicates if special finance term and rate in month/rate format. |
-| `creditPlanNumber` | *string* | 5  | Payment program assigned by the private label processor. |
-| `minimumSpendExemptIndicator` | *string* | N/A  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
+| `creditPlanNumber` | *string* | 5 | Payment program assigned by the private label processor. |
+| `minimumSpendExemptIndicator` | *string* |  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
 
 <!--
 type: tab
@@ -45,7 +45,7 @@ type: tab
 {
   "additionalDataCommon": {
     "privateLabel": {
-      "paymentSource": "SHELL",
+      "paymentSource": "MERCHANT_NAME",
       "paymentType": "CHARGE",
       "specialFinanceIndicator": "24/0",
       "creditPlanNumber": "12345",
@@ -93,7 +93,7 @@ titles: Request, Response
   },
   "additionalDataCommon": {
     "privateLabel": {
-      "paymentSource": "SHELL",
+      "paymentSource": "MERCHANT_NAME",
       "paymentType": "CHARGE",
       "specialFinanceIndicator": "24/0",
       "creditPlanNumber": "12345",
@@ -165,6 +165,15 @@ type: tab
   },
   "transactionDetails": {
     "captureFlag": true
+  },
+  "additionalDataCommon": {
+    "privateLabel": {
+      "paymentSource": "MERCHANT_NAME",
+      "paymentType": "CHARGE",
+      "specialFinanceIndicator": "24/0",
+      "creditPlanNumber": "12345",
+      "minimumSpendExemptIndicator": "EXEMPT"
+    }
   }
 }
 ```
