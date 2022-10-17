@@ -79,7 +79,7 @@ JSON string format for `networkDetails`:
 
 ## Card Network 
 
-Contains the card network data.
+The card networks can return specific values in the response and some of these values may need to be re-submitted as a part of [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md) for all subsequent transactions.
 
 <!--
 type: tab
