@@ -16,22 +16,26 @@ The below table identifies the parameters in the `networkDetails` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `network` | *object* | N/A | Processing [card network](#card-network) |
-| `debitNetworkId` | *string* | | Network ID for the debit component |
-| `transactionSequence`| *string* | | This field contains transaction specific data that may be returned in response messages. |
-| `systemTrace`| *string* | | This field contains the original trace number that was returned in an authorization response. |
-| `debitIssuerData` | *string* |  | Debit issuer specific data that may be returned in the response messages. |
-| `networkResponseCode ` | *string* | | Debit network response |
-| `posEntryModeChange` | *boolean* |  |  Issuer will reply if the entry mode has changed |
-| `cardLevelResultCode` | *string* |  | Identifies purchase, corporate, and business card level e.g. Level II/Level III |
-| `validationCode` | *string* |  | A code calculated by card brands to ensure that the fields present in the authorization are also present in the clearing record. |
-| `downgradeReason` | *string* |  | Downgrade reason as supplied by Visa. |
-| `creditAuthType` | *string* |  |Indicates the type of authorization required |
-| `authScore` | *string* |  | The auth score returned for the transaction |
-| `partialAuthTransactionId` | *string* |  | Generated identifier unique for each original authorization request |
+| `debitNetworkId` | *string* | 64 | Network ID for the debit component |
+| `transactionSequence`| *string* | 64 | This field contains transaction specific data that may be returned in response messages. |
+| `systemTrace`| *string* | 64 | This field contains the original trace number that was returned in an authorization response. |
+| `debitIssuerData` | *string* | N/A | Debit issuer specific data that may be returned in the response messages. |
+| `networkResponseCode ` | *string* | 16 | Debit network response |
+| `posEntryModeChange` | *boolean* | N/A  |  Issuer will reply if the entry mode has changed |
+| `cardLevelResultCode` | *string* | N/A | Identifies purchase, corporate, and business card level e.g. Level II/Level III |
+| `validationCode` | *string* | N/A | A code calculated by card brands to ensure that the fields present in the authorization are also present in the clearing record. |
+| `downgradeReason` | *string* | N/A | Downgrade reason as supplied by the network. |
+| `creditAuthType` | *string* | N/A  |Indicates the type of authorization required |
+| `authScore` | *string* | N/A | The auth score returned for the transaction |
+| `partialAuthTransactionId` | *string* |  N/A | Generated identifier unique for each original authorization request |
 | `totalAuthAmount` | *number* | 18,3  | Total amount authorized |
-| `transactionIdentifier` | *string* |  | This field represents a unique value used to identify and link all related transactions for authorization and settlement |
-| `magStripeQualityIndicator` | *string* |  |  |
-| `authSource` | *object* |  |  |
+| `transactionIdentifier` | *string* |  N/A | This field represents a unique value used to identify and link all related transactions for authorization and settlement |
+| `magStripeQualityIndicator` | *string* | N/A | This field dentifies the [error](#mag-stripe-quality-indicator) encountered with the track data provided in the authorization request message. |
+| `networkAvsCode` | *string* | 1 | Non-normalized newtork AVS response code if available |
+| `panMappingAccountNumber` | *string* | 19 | Returned for Mastercard (for MCCs 4111, 4131, 4784, and 7523) and for all AMEX token transactions |
+| `cardholderResponse` | *string* | 5 | Non-normalized response from for verifying cardholder data where each position represents the postal/zip code, address, name, telephone, and email respectively. ***Valid Values:** Y = Yes data matches, N = No data does not match, U - Data unchecked, R - Retry, S - Service not allowed, Blank - Data not sent* |
+| `authSource` | *string* | N/A | Code indicating how the network performed the authorization |
+| `debitRouting` | *string* | 256 | Provides the Debit network routing for PINless and Signature Debit transactions. ***Valid Values:** CREDIT, DEBIT, DUAL* |
 
 <!--
 type: tab
@@ -41,27 +45,31 @@ JSON string format for `networkDetails`:
 
 ```json
 {
-   "networkDetails":{
-      "network":{
-         "network": "VISA"
-      },
-      "debitNetworkId": "123456",
-      "transactionSequence": "1123456",
-      "systemTrace": "123456789",
-      "debitIssuerData": "Standard Issuer",
-      "networkResponseCode": "00",
-      "posEntryModeChange": true,
-      "cardLevelResultCode": "string",
-      "validationCode": "string",
-      "downgradeReason": "ACCOUNT_NUMBER_MISSING",
-      "creditAuthType": "DISCOVER",
-      "authScore": "string",
-      "partialAuthTransactionId": "string",
-      "totalAuthAmount": 1,
-      "transactionIdentifier": "string",
-      "magStripeQualityIndicator": "string",
-      "authSource": "string"
-   }
+  "networkDetails": {
+    "network": {
+      "network": "VISA"
+    },
+    "debitNetworkId": "123456",
+    "transactionSequence": "1123456",
+    "systemTrace": "123456789",
+    "debitIssuerData": "Standard Issuer",
+    "networkResponseCode": "00",
+    "posEntryModeChange": true,
+    "cardLevelResultCode": "string",
+    "validationCode": "string",
+    "downgradeReason": "ACCOUNT_NUMBER_MISSING",
+    "creditAuthType": "VISA",
+    "authScore": "string",
+    "partialAuthTransactionId": "string",
+    "totalAuthAmount": 1,
+    "transactionIdentifier": "string",
+    "magStripeQualityIndicator": "TRACK_PRESENT",
+    "networkAvsCode": "Y",
+    "panMappingAccountNumber": "string",
+    "cardholderResponse": "YYNUU",
+    "authSource": "STIP",
+    "debitRouting": "CREDIT"
+  }
 }
 ```
 
@@ -75,7 +83,7 @@ Contains the card network data.
 
 <!--
 type: tab
-titles: network, JSON Example
+titles: network, Amex, Discover, Mastercard, Visa, Debit
 -->
 
 The below table identifies the parameters in the `network` object.
@@ -86,21 +94,6 @@ The below table identifies the parameters in the `network` object.
 
 <!--
 type: tab
--->
-
-```json
-{
-  "network":{
-    "network":"VISA" 
-  }
-}
-```
-
-<!-- type: tab-end -->
-
-<!--
-type: tab
-titles: Amex, Discover, Mastercard, Visa, Debit
 -->
 
 The below table identifies the parameters specific to American Express.
@@ -172,14 +165,14 @@ The below table identifies the parameters specific to Mastercard.
 {
   "network": {
     "network": "Mastercard",
-    "interchangeComplianceIndicator": "",
+    "interchangeComplianceIndicator": "string",
     "bankNetRefNumber": "123456",
     "bankNetDate": "0213",
     "cvcErrorIndicator": "",
     "transactionEditErrorCode": "PRESENT_TRACK_DATA",
-    "transactionIntegrityClass": "",
-    "xCodeResponse": "",
-    "chipCryptoValue": "",
+    "transactionIntegrityClass": "string",
+    "xCodeResponse": "string",
+    "chipCryptoValue": "string",
     "cardDataOutputCapability": "UNSPECIFIED",
     "terminalDataOutputCapability": "PRINTING_AND_DISPLAY"
   }
@@ -207,10 +200,10 @@ The below table identifies the parameters specific to Visa.
     "network": "Visa",
     "VISABID": "0123456789",
     "VISAAUR": "12345AD89012",
-    "cardAuthenticationResultCode": "",
+    "cardAuthenticationResultCode": "string",
     "spendQualificationIndicator": false,
     "decisionSource": "Timeout",
-    "agreementId": ""
+    "agreementId": "string"
   }
 }
 ```
@@ -235,6 +228,24 @@ The below table identifies the parameters specific to Debit.
 ```
 
 <!-- type: tab-end -->
+
+---
+
+### MAG Stripe Quality Indicator
+
+| Value | Description |
+| ----- | ------ |
+| *TRACK_PRESENT* | Track 1 and Track 2 present in the message |
+| *NO_TRACK* | Track 1 or Track 2 not present in the message |
+| *PAN_NOT_EQUAL* | Primary Account Number not equal in track data |
+| *EXPIRATION_NOT_EQUAL* | Expiration date not equal in track data |
+| *CARD_TYPE_INVALID* | Card type invalid in track data |
+| *FIELD_SEPARATORS* | Field separator(s) invalid in track data |
+| *EXCEEDS_LENGTH* | A field within the track data exceeds maximum length |
+| *CATEGORY_CODE* | The transaction category code is "T" |
+| *CUSTOMER_PRESENCE* | `posConditionCode` invalid for customer presense |
+| *CARD_PRESENCE* | `posConditionCode` invalid for card presence |
+
 
 ---
 
