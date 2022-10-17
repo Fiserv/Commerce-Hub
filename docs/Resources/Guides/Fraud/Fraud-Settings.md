@@ -35,7 +35,7 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
 <!-- type: card
 title: Velocity Settings
 description: Velocity Settings determine which transactions Commerce Hub allows to proceed to authorization. 
-link: 
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
 -->
 
 <!-- type: row-end -->

@@ -45,13 +45,13 @@ Transaction Restrictions are setup inside of Merchant Configuration and Boarding
 
 ## See Also
 
-- [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Positive/Negative Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
+- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 
 <!---
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
-- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 -->
 
 ---

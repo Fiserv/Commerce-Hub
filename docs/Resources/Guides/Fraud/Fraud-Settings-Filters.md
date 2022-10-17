@@ -83,10 +83,10 @@ Negative filters are used to configure a blacklist and block the transaction bas
 - [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
+- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 
 <!---
 - [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
-- [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
 -->
 
 ---
