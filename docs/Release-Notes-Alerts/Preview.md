@@ -25,8 +25,9 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Charges updated to support hybrid card routing | Update |
+| Support of [transaction capture type override](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md) for hybrid card settlement | Feature |
 | Support added to Chase Salem for; merchant managed 3-D Secure, soft descriptors, merchant managed recurring, digital wallets, and tokenization  | Update |
+| [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Merchant Boarding and Configuration _(Marketplace)_ to support velocity controls (duplicate transactions) | Update |
 
 ---
 
