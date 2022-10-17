@@ -14,19 +14,12 @@ The merchant can initiate a subsequent transactions on behalf of customers (e.g.
 
 The following variables are used in the initial `PaymentToken` request and subsequent transactions.
 
-<!--
-type: tab
-titles: transactionDetails, storedCredentials
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ------------------ |---|
-| `authorizationTypeIndicator` | *string* | 11 | &#10004; | Type of authorization requested. **Valid Values:** INITIAL, REAUTH, DEFERRED, INCREMENTAL. |
+<!-- theme: danger -->
+> The `bankNetDate` for Mastercard or `networkOriginalAmount` for Discover should be passed for the respective [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 <!--
 type: tab
+titles: storedCredentials
 -->
 
 The below table identifies the parameters in the `storedCredentials` object.
@@ -81,19 +74,19 @@ titles: Request, Response
     "currency": "USD"
   },
   "source": {
-    "sourceType": "PaymentCard",
+    "sourceType": "PaymentToken",
+    "tokenData": "1234567890120019",
+    "PARId": "1234",
+    "declineDuplicates": true,
+    "tokenSource": "TRANSARMOR",
     "card": {
-      "cardData": "4005550000000019",
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123"
+      "expirationMonth": "03",
+      "expirationYear": "2035"
     }
   },
   "transactionDetails": {
     "captureFlag": true,
-    "createToken": true,
-    "authorizationTypeIndicator": "INITIAL"
+    "createToken": true
   },
   "storedCredentials": {
     "scheduled": true,
@@ -138,12 +131,13 @@ type: tab
     }
   },
   "source": {
-    "sourceType": "PaymentCard",
+    "sourceType": "PaymentToken",
+    "tokenData": "1234567890120019",
+    "PARId": "1234",
+    "declineDuplicates": true,
+    "tokenSource": "TRANSARMOR",
     "card": {
-      "bin": "40055500",
-      "last4": "0019",
-      "scheme": "VISA",
-      "expirationMonth": "02",
+      "expirationMonth": "03",
       "expirationYear": "2035"
     }
   },
