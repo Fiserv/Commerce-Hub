@@ -15,6 +15,11 @@ Filters are applied by inside of Merchant Configuration and Boarding _(Marketpla
 
 ## Response Example
 
+##### Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
   "gatewayResponse": {
