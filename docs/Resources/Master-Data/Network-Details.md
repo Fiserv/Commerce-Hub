@@ -19,22 +19,22 @@ The below table identifies the parameters in the `networkDetails` object.
 | `debitNetworkId` | *string* | 64 | Network ID for the debit component |
 | `transactionSequence`| *string* | 64 | This field contains transaction specific data that may be returned in response messages. |
 | `systemTrace`| *string* | 64 | This field contains the original trace number that was returned in an authorization response. |
-| `debitIssuerData` | *string* | N/A | Debit issuer specific data that may be returned in the response messages. |
+| `debitIssuerData` | *string* | | Debit issuer specific data that may be returned in the response messages. |
 | `networkResponseCode ` | *string* | 16 | Debit network response |
 | `posEntryModeChange` | *boolean* | N/A  |  Issuer will reply if the entry mode has changed |
-| `cardLevelResultCode` | *string* | N/A | Identifies purchase, corporate, and business card level e.g. Level II/Level III |
-| `validationCode` | *string* | N/A | A code calculated by card brands to ensure that the fields present in the authorization are also present in the clearing record. |
-| `downgradeReason` | *string* | N/A | Downgrade reason as supplied by the network. |
-| `creditAuthType` | *string* | N/A  |Indicates the type of authorization required |
-| `authScore` | *string* | N/A | The auth score returned for the transaction |
-| `partialAuthTransactionId` | *string* |  N/A | Generated identifier unique for each original authorization request |
+| `cardLevelResultCode` | *string* | | Identifies purchase, corporate, and business card level e.g. Level II/Level III |
+| `validationCode` | *string* | | A code calculated by card brands to ensure that the fields present in the authorization are also present in the clearing record. |
+| `downgradeReason` | *string* | | Downgrade reason as supplied by the network. |
+| `creditAuthType` | *string* |  |Indicates the type of authorization required |
+| `authScore` | *string* | | The auth score returned for the transaction |
+| `partialAuthTransactionId` | *string* | | Generated identifier unique for each original authorization request |
 | `totalAuthAmount` | *number* | 18,3  | Total amount authorized |
-| `transactionIdentifier` | *string* |  N/A | This field represents a unique value used to identify and link all related transactions for authorization and settlement |
-| `magStripeQualityIndicator` | *string* | N/A | This field dentifies the [error](#mag-stripe-quality-indicator) encountered with the track data provided in the authorization request message. |
+| `transactionIdentifier` | *string* | | This field represents a unique value used to identify and link all related transactions for authorization and settlement |
+| `magStripeQualityIndicator` | *string* | | This field dentifies the [error](#mag-stripe-quality-indicator) encountered with the track data provided in the authorization request message. |
 | `networkAvsCode` | *string* | 1 | Non-normalized newtork AVS response code if available |
 | `panMappingAccountNumber` | *string* | 19 | Returned for Mastercard (for MCCs 4111, 4131, 4784, and 7523) and for all AMEX token transactions |
 | `cardholderResponse` | *string* | 5 | Non-normalized response from for verifying cardholder data where each position represents the postal/zip code, address, name, telephone, and email respectively. ***Valid Values:** Y = Yes data matches, N = No data does not match, U - Data unchecked, R - Retry, S - Service not allowed, Blank - Data not sent* |
-| `authSource` | *string* | N/A | Code indicating how the network performed the authorization |
+| `authSource` | *string* | | Code indicating how the network performed the authorization |
 | `debitRouting` | *string* | 256 | Provides the Debit network routing for PINless and Signature Debit transactions. ***Valid Values:** CREDIT, DEBIT, DUAL* |
 
 <!--
@@ -150,12 +150,12 @@ The below table identifies the parameters specific to Mastercard.
 
 |Variable |Type| Maximum Length | Description|
 |------|--------|-------|----------------|
-| `interchangeComplianceIndicator` | *string* | N/A | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
-| 'bankNetRefNumber' | *string* | N/A | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message. |
-| `bankNetDate` | *string* | N/A | A Mastercard generated date for this transaction. MMDD format |
-| `cvcErrorIndicator` | *string* | N/A | Indicates the CVC Error response data. |
-| `transactionEditErrorCode` | *string* | N/A | Indicates the track data & POS validation Error in response data. ***Valid Values:** MISSING_TRACK_DATA, PRESENT_TRACK_DATA, PAN_DOES_NOT_MATCH_WITH_TRACK_DATA, EXPIRY_DATE_DOES_NOT_MATCH_WITH_TRACK_DATA, CARD_TYPE_INVALID, FIELD_SEPARATOR_INVALID, EXCEEDS_MAX_LENGTH, TRANSACTION_CODE_T, POS_CUST_PRESENT_1, POS_CARD_PRESENT_1* |
-| `transactionIntegrityClass` | *string* | N/A | Contains the MasterCard provided Transaction Integrity Classification for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
+| `interchangeComplianceIndicator` | *string* | | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
+| 'bankNetRefNumber' | *string* | | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message. |
+| `bankNetDate` | *string* | | A Mastercard generated date for this transaction. MMDD format |
+| `cvcErrorIndicator` | *string* | | Indicates the CVC Error response data. |
+| `transactionEditErrorCode` | *string* | | Indicates the track data & POS validation Error in response data. ***Valid Values:** MISSING_TRACK_DATA, PRESENT_TRACK_DATA, PAN_DOES_NOT_MATCH_WITH_TRACK_DATA, EXPIRY_DATE_DOES_NOT_MATCH_WITH_TRACK_DATA, CARD_TYPE_INVALID, FIELD_SEPARATOR_INVALID, EXCEEDS_MAX_LENGTH, TRANSACTION_CODE_T, POS_CUST_PRESENT_1, POS_CARD_PRESENT_1* |
+| `transactionIntegrityClass` | *string* | | Contains the MasterCard provided Transaction Integrity Classification for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
 | `xCodeResponse` | *string* | 6 | Conditional for Mastercard EMV chip transactions. This value is used to notify the chip that the transaction was unable to go online and is required for batch uploads. |
 | `chipCryptoValue` | *string* | 3 | Additional EMV chip info returned by Mastercard. |
 | `cardDataOutputCapability` | *string* | 25 | Identifies the card's capability to output data. ***Valid Values:** UNSPECIFIED, NONE, MAG_STRIPE, ICC, OTHER* |
