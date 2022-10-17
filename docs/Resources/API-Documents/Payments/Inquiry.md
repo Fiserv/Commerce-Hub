@@ -6,7 +6,6 @@ tags: [Inquiry, Transaction Inquiry, Transaction Status, API Reference]
 
 To retrieve the current state of any previous transaction, an inquiry request can be submitted against the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
-
 ---
 
 ## Request Variables
@@ -39,6 +38,8 @@ The below table identifies the parameters in the `merchantDetails` object.
 | -------- | -- |------------| ------- | ---- |
 | `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction. Can be used for merchants that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
 | `terminalId` | *string* | 1024 |  | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md). |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -81,15 +82,6 @@ type: tab
 ```json
 
 {
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "platform": "IPG",
-          "priority": "FINAL"
-        }
-      ]
-    },
     "gatewayResponse": {
       "gatewayName": "IPG",
       "gatewayOrderId": "CH-cb1e236f-3136-411d-8eff-7273ad6d2505",

@@ -33,7 +33,7 @@ Merchants can create an account by requesting account access from their user adm
 
 ## Transaction Controls
 
-Transaction controls allows merchants to control the transactional settings and fraud filters.
+Transaction controls allow merchants to control the transactional settings and fraud filters.
 
 ---
 

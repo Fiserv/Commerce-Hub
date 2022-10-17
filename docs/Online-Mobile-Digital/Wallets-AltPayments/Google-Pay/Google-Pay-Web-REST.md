@@ -13,7 +13,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 
 1. The customer selects checkout from the merchant's website and is presented with the merchant's payment form.
 2. The customer selects Google Pay and then redirected to the Google Pay payment form.
-3. The customer completes the google pay form and then redirected to the merchant's website.
+3. The customer completes the Google Pay form and then redirected to the merchant's website.
 4. The customer selects to complete the transaction.
 5. The merchant submits the encrypted Google Pay payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
@@ -48,7 +48,6 @@ The below table identifies the required parameters in the `source` object.
 | `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
 | `signature` | *string* | 2000 | &#10004; | Verifies that the message came from Google, base64-encoded, and created with ECDSA by the intermediate signing key. |
 | `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
-| `merchantId` | *string* | 256 | &#10004; | Single Merchant Identifier common for all Google Pay merchants. |
 
 <!-- type: tab-end -->
 
@@ -171,9 +170,12 @@ type: tab
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Google Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-App.md)
+- [Google Pay Brand Guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
+
 <!---
+- [Samsung Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)
 - [Google Pay Web Integration - Hosted Page](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md)
 -->
+
 ---

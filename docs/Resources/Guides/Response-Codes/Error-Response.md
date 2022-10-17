@@ -1,10 +1,10 @@
 ---
-tags: [Error, Response, Response Codes]
+tags: [Error Response, Error Code, Response Code]
 ---
 
 # Error Response
 
-Commerce Hub includes the [`errorResponse`](?path=docs/Resources/Guides/Response-Codes/Error.md) as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields. 
+Commerce Hub includes the `errorResponse` as part of the `error` object along with the corresponding data in `type`, `code`, `field` and `message` fields. 
 
 <!--
 type: tab
@@ -53,27 +53,26 @@ titles: Error Response
 
 ```json
 {
-
-   "errorResponse": {
-      "gatewayResponse": {
-         "transactionType": "CANCEL",
-         "transactionState": "DECLINED",
-         "transactionOrigin": "ECOM",
-         "transactionProcessingDetails": {
-            "orderId": "CH-aafaaf45-0cfb-4f4f-8ec0-301e40c14e34",
-            "transactionTimestamp": "2021-06-20T23:42:48Z",
-            "apiTraceId": "5c059eee2388e191",
-            "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-            "transactionId": "b2d883cdf3051598acb295f29a1e1582"
+   "errorResponse":{
+      "gatewayResponse":{
+         "transactionType":"CANCEL",
+         "transactionState":"DECLINED",
+         "transactionOrigin":"ECOM",
+         "transactionProcessingDetails":{
+            "orderId":"CH-aafaaf45-0cfb-4f4f-8ec0-301e40c14e34",
+            "transactionTimestamp":"2021-06-20T23:42:48Z",
+            "apiTraceId":"5c059eee2388e191",
+            "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
+            "transactionId":"b2d883cdf3051598acb295f29a1e1582"
          }
       },
-      "error":{
-         "type": "GATEWAY",
-         "code": "100",
-         "field": "cardData",
-         "message": "Invalid or missing field data"
-      }
-
+      "error":[
+         {
+            "type":"GATEWAY",
+            "code":"703",
+            "message":"Write to downstream failed"
+         }
+      ]
    }
 }
 ```

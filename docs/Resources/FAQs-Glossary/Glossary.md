@@ -16,6 +16,8 @@ This is a technical standard that adds security to online Card Not Present trans
 
 3-D Secure technologies include Visa Secure (previously Verified by Visa), Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
 
+---
+
 # A
 
 ## Access Token	
@@ -60,6 +62,8 @@ The process of verifying that purchase transactions are for expenses permitted a
 ## Authorization Type Indicator
 Identifies if the authorization requested is an initial, reauthorization, deferred or incremental.
 
+---
+
 # B
 
 ## Bank Identification Number
@@ -85,6 +89,8 @@ Binary Synchronous (BISYNC) is a category of synchronous communications protocol
 
 ## Bill Payment Indicator
 Identifies if the bill payment requested is a recurring, instalment, or deferred.
+
+---
 
 # C
 
@@ -114,6 +120,9 @@ A transaction in which a cardholder obtains cash as part of the transaction.
 
 ## Cash Advance
 A transaction in which a customer receives cash in-person which is posted against the customer's account.
+
+## Clickjacking
+A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md). 
 
 ## Customer Account
 The customer account associated with a customer account number or checking account number used in a payment request.
@@ -168,6 +177,8 @@ The [three-digit code](?path=docs/Resources/Master-Data/Currency-Code.md) to des
 ## Customer
 A person or company that buys goods or services from a merchant.
 
+---
+
 # D
 
 ## Decline
@@ -181,6 +192,9 @@ Identifies a bill pay transaction where a recurring or incremental payment is de
 
 ## Derived Unique Key Per Transaction
 Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction. DUKPT system of derived keys is used in a point-of-sale (POS) environment where the merchant can accept transactions from a large number of unique [PIN entry](?path=docs/Resources/Master-Data/Pin-Block.md) devices. This technique involves the use of a non-secret key serial number and a secret base derivation key. On each transaction, the PIN pad derives a unique key based on a previous key and the key serial number. Terminal encrypts the PIN with this derived key, and sends both the encrypted PIN and the key serial number to the Host. See also [Key Management](#key-management).
+
+## Direct Capture
+Direct capture also known as direct settlement, is the process where the merchant's directly settles the batche on the backend settlement system. Typically, credit transactions are setup for direct capture. See also [host capture](#host-capture) and [terminal capture](#terminal-capture).
 
 ## Doing Business As
 Doing business as (DBA) refers to the specific name and location of the merchant's store where a transaction is made.
@@ -224,6 +238,8 @@ The `daysRented` field is the length of the [car rental](?path=docs/Resources/Gu
 ## Dynamic Descriptor
 A [custom descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md) you configure and pass with each transaction via the API. This includes both [soft descriptors](#soft-descriptor) and [hard descriptors](#hard-descriptor). Contact your account representative for more information on using dynamic descriptors.
 
+---
+
 # E
 
 ## Echo
@@ -264,6 +280,8 @@ The date embossed on the card beyond which the card is not valid to be used. Gen
 ## Existing Debt Indicator
 Identifies the transaction as payment of an existing debt obligation, such as a car loan payment.
 
+---
+
 # F
 
 ## Firewall
@@ -293,10 +311,14 @@ A communications channel that transmits in both directions at the same time.
 ## Funding Primary Account Number
 Funding Primary Account Number (FPAN) is the actual account number appearing on the physical card (or similar device) issued by issuing bank. See also [DPAN](#device-specific-primary-account-number).
 
+---
+
 # G
 
 ## Gateway
 A gateway is a program or piece of hardware that passes data between networks.
+
+---
 
 # H
 
@@ -313,10 +335,15 @@ Hash-based Message Authentication Code, used to ensure secure transmission of tr
 The host is generally the central or controlling computer in a distributed system.
 
 ## Host Capture
-Process where the host (e.g. Commerce Hub) closes and settles batches on behalf of the merchant. 
+Host capture also known as host capture system (HCS), is the process where the host _(e.g. Commerce Hub)_ closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [terminal capture](#terminal-capture).
 
 ## Host Security Module
 A Host Security Module (HSM) is a hardware device that safeguards and manages digital keys for strong authentication and provides crypto-processing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
+
+## Hybrid Card
+A hybrid card combines both debit and credit card functionality in a single card. Based on the rounting choise it allows the customer to be charged immediately using debit processing or a later date using credit processing.
+
+---
 
 # I
 
@@ -353,6 +380,8 @@ Integrated Voice Response (IVR) technology creates automatic message selections 
 ## Issuing Bank
 The issuing bank also known as the customer's bank, issues a payment card or checks to an individual.
 
+---
+
 # J
 
 ## JavaScript
@@ -361,10 +390,17 @@ JavaScript (JS) is a programming language that conforms to the ECMAScript specif
 ## JSON
 JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. Commerce Hub requests and responses are written in JSON format.
 
+---
+
 # K
 
 ## Key Management
 Key management refers to management of cryptographic keys in a cryptosystem. This includes dealing with the generation, exchange, storage, use, crypto-shredding (destruction) and replacement of keys. It includes cryptographic protocol design, key servers, user procedures, and other relevant protocols. See also [Derived Unique Key Per Transaction (DUKPT)](#derived-unique-key-per-transaction).
+
+## Key Rotation
+Key rotation in card processing is when an encryption key is expired after a timestamp and replaced by generating a new cryptographic key. It is a good practice to keep rotating the SAQ encryption keys on a regular basis to meet industry standards.
+
+---
 
 # L
 
@@ -388,6 +424,8 @@ A bank card that has been reported to the credit issuer as lost or misplaced by 
 
 ## Luhn Check
 The Luhn algorithm or Luhn formula, also known as the "modulus 10" or "mod 10" algorithm, is a simple checksum formula used to validate credit card numbers.
+
+---
 
 # M
 
@@ -457,6 +495,8 @@ A communication line system having more than one terminal connected to the same 
 ## Merchant Verification Value
 Merchant Verification Value (MVV) is an identifier assigned by Visa to identify a merchant who is registered with Visa for specific fees, special interchange treatment, or participation in select acceptance programs.
 
+---
+
 # N
 
 ## National Association
@@ -474,10 +514,14 @@ Ancillary data, obtained in the authorization process, which is used internally 
 ## Number of Nights
 The `numberOfNights` field is the length of the [lodging stay](?path=docs/Resources/Guides/Industry-Verticals/Lodging.md) and is required in hotel and lodging custom payment service transactions.
 
+---
+
 # O
 
 ## On-Us Transaction
 A transaction in which both the cardholder and the merchant are signed by the same member.
+
+---
 
 # P
 
@@ -512,6 +556,8 @@ The main independent transactions between a customer and a merchant. Commerce Hu
 ## Prepaid Closed Loop
 Prepaid Closed Loop is a [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) product that is designed to only be used at the merchant's locations. Closed Loop payment schemes allow companies to reward loyalty and increase customer intimacy. 
 
+---
+
 # R
 
 ## Recurring Transaction
@@ -534,6 +580,8 @@ A dynamic, reflective, general purpose object-oriented programming language. Rub
 
 ## Ruby on Rails
 An open-source web application framework for the Ruby programming language. It is often referred to as 'Rails' or 'RoR'. It is intended to be used with an Agile development methodology, which is often utilized by web developers for its suitability for short, client-driven projects.
+
+---
 
 # S
 
@@ -582,6 +630,9 @@ The character that indicates the initial data position on the track of the card'
 ## Stock Keeping Unit
 Stock Keeping Unit (SKU) is a number used to uniquely identify a product.
 
+## Store and Forward
+Store and forward is a technique in which information is stored in an intermediate system where it is kept and sent at a later time to the final destination. The intermediate system, or node in a networking context, verifies the integrity of the message before forwarding it. In general, this technique is used when their is no connectivity or intermittent connectivity. It may also be preferable in situations when there are long delays in transmission and variable and high error rates, or if a direct, end-to-end connection is not available.
+
 ## Sub-Merchant
 A merchant that contracts with a [payment facilitator](?path=docs/Resources/Guides/Industry-Verticals/Payment-Faciliator.md) or service provider to obtain payment services. Also known as Sponsored Merchant.
 
@@ -600,10 +651,15 @@ High-speed transmission, synchronous communications is the transmission and reco
 <!-- theme : warning -->
 > Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative.
 
+---
+
 # T
 
 ## TeleCheck ECA
 The TeleCheck Electronic Check Acceptance® (ECA®) is a service that converts a paper check into an electronic item at the point of sale.
+
+## Terminal Capture
+Terminal capture also known as terminal capture system (TCS), is the process where the merchant's temrinal closes and settles batches. Typically, credit transactions are setup for terminal capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
 
 ## Transport Layer Security
 Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL) is a cryptographic protocol designed to provide communications security over a computer network. Commerce Hub requires that integrations using our RESTful API have TLS to meet PCI compliance requirements.
@@ -620,6 +676,8 @@ A cryptogram generated using the [Payment Token](#payment-token) and additional 
 ## Tokenization
 [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token, that has no extrinsic or exploitable meaning or value. In the payments industry, it is used to safeguard a card's PAN by replacing it with a unique string of numbers.
 
+---
+
 # U
 
 ## UNIX
@@ -627,6 +685,8 @@ A general-purpose operating system that can implement a Perl Module or Ruby Clie
 
 ## Universal Product Code
 Universal Product Code (UPC) is the barcode used for scanning of trade items at the point of sale.
+
+---
 
 # V
 
@@ -638,3 +698,5 @@ A void or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) is a t
 
 ## Virtual Point of Sale
 Virtual Point of Sale (VPOS) or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
+
+---

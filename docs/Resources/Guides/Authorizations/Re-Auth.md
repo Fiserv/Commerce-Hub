@@ -119,7 +119,7 @@ titles: Request, Response
       "referenceTransactionId": "84356531348"
   },
   "splitShipment": {
-    "totalCount": 5
+    "totalCount": 5,
     "finalShipment": false
   },
   "merchantDetails":{
