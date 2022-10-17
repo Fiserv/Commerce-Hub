@@ -2,9 +2,9 @@
 tags: [API Reference, Network Details, Master Data]
 ---
 
-# Authorization Network Response
+# Network Details
 
-Authorization network response contains the `networkDetails` object.
+Network details contains the card network specific values from the response. Some of these values may need to be re-submitted as a part of [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md) for all subsequent transactions.
 
 <!--
 type: tab
@@ -79,7 +79,7 @@ JSON string format for `networkDetails`:
 
 ## Card Network 
 
-The card networks can return specific values in the response and some of these values may need to be re-submitted as a part of [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md) for all subsequent transactions.
+Each card network can return specific values.
 
 <!--
 type: tab
