@@ -12,8 +12,33 @@ Transaction Restrictions are setup inside of Merchant Configuration and Boarding
 
 ## Response Example
 
+##### Example of a charge (400: Bad Request) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
-code goes here
+{
+  "gatewayResponse": {
+    "transactionType": "CHARGE_FINAL",
+    "transactionState": "DECLINED",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01cd337bd9d54741a79b666e0f5d9e0b49",
+      "transactionTimestamp": "2022-10-11T12:33:44.195362Z",
+      "apiTraceId": "6723f1a22c3d4205b8bac81ae58bcd24",
+      "clientRequestId": "1705732",
+      "transactionId": "6723f1a22c3d4205b8bac81ae58bcd24"
+    }
+  },
+  "error": [
+    {
+      "type": "GATEWAY",
+      "code": "600",
+      "message": "Fraud Error: General",
+      "additionalInfo": "Block Duplicate"
+    }
+  ]
+}
 ```
 
 ---
