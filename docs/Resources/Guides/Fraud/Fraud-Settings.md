@@ -4,9 +4,6 @@ tags: [Card Not Present, Fraud, Address Verification, Security Code Verification
  
 # Fraud Settings
 
-<!-- theme: danger --> 
-> We are enhancing Commerce Hub to include additional fraud settings support and the documents related to the features will be released soon.
-
 Commerce Hub implements various transaction and fraud controls that allows merchants to monitor potentially fraudulent transactions including positive and negative filters, velocity controls, transaction restrictions, and address/security code verification that will automatically accept or reject transactions. These filters will reject the transaction and either block it before any authorization attempt is made, or reverse it it based on the address and security code response.
 
 ---
