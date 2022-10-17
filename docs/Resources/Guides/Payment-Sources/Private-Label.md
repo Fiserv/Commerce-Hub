@@ -47,8 +47,8 @@ type: tab
     "privateLabel": {
       "paymentSource": "SHELL",
       "paymentType": "CHARGE",
-      "specialFinanceIndicator": "24/0"
-      "creditPlanNumber": "12345"
+      "specialFinanceIndicator": "24/0",
+      "creditPlanNumber": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
   }
 }
@@ -69,7 +69,7 @@ titles: Request, Response
 ##### Example of a charge payload request using a PLCC.
 
 <!-- info -->
-> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and `motoType` when the `origin` is _MOTO_ in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
+> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is _MOTO_ `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 ```json
 {
@@ -92,21 +92,12 @@ titles: Request, Response
     "captureFlag": true
   },
   "additionalDataCommon": {
-    "directedRouting": {
-      "network": "VISA",
-      "cardFunction": "CREDIT",
-      "processors": [
-        {
-          "processorName": "FISERV",
-          "processingPlatform": "NASHVILLE",
-          "priority": "PRIMARY"
-        },
-        {
-          "processorName": "CHASE",
-          "processingPlatform": "TAMPA",
-          "priority": "SECONDARY"
-        }
-      ]
+    "privateLabel": {
+      "paymentSource": "SHELL",
+      "paymentType": "CHARGE",
+      "specialFinanceIndicator": "24/0",
+      "creditPlanNumber": "12345",
+      "minimumSpendExemptIndicator": "EXEMPT"
     }
   },
   "merchantDetails": {
@@ -139,18 +130,18 @@ type: tab
     }
   },
   "source": {
-    "sourceType": "PaymentTrack",
+    "sourceType": "PaymentCard",
     "card": {
       "expirationMonth": "12",
-      "expirationYear": "2024",
-      "bin": "401200",
-      "last4": "0026",
+      "expirationYear": "2035",
+      "bin": "400555",
+      "last4": "0019",
       "scheme": "Visa"
     }
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 10.56,
+      "total": 12.04,
       "currency": "USD"
     },
     "processorResponseDetails": {
@@ -165,18 +156,16 @@ type: tab
       "host": "NASHVILLE",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL ",
-      "bankAssociationDetails": {
-        "associationResponseCode": "00"
-      }
+      "purchaseOrderRequiredIndicator": "NOT_REQUIRED",
+      "taxExemptIndicator": "NOT_EXEMPT",
+      "feeProgramIndicator": "123",
+      "purchaseAprType": "FIXED",
+      "arqcResponseCode": "VALIDATION_PASSED"
     }
   },
   "transactionDetails": {
-    "captureFlag": false
-  },
-  "merchantDetails": {
-    "terminalId": "123456",
-    "merchantId": "123456789789567"
-  },
+    "captureFlag": true
+  }
 }
 ```
 
