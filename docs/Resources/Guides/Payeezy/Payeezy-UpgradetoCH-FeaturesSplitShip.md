@@ -19,12 +19,15 @@ A split shipment is the ability to capture an authorization for the full order a
 
 ---
 
+### Platform Comparison for Split Shipment Transactions
+
 | Transacting Platform | Endpoint | Required Elements | Notes|
 | -------- | ------------- | :--------------: |----------|
-|Payeezy Gateway Direct | `transaction_type` = <br> 01 = Pre-Authorization <br> 32 = Tagged Pre-Authorization Completion  | XML: `SplitShipmentNumber` OR <br> JSON: `Split_Shipment` = xx/yy <br> where: xx = number of the shipment <br> and yy = total shipments| If yy is not known, then yy = total number of items in order. <br>  <br> If 01/01 value sent, Compass would reject the transaction. |
-|Developer API | `transaction_type` = <br> Authorize <br> Split | `Split_Shipment` = xx/yy <br> where: xx = number of the shipment <br> and yy = total shipments| If yy is not known, then yy = 99.<br>  <br> If 01/01 value sent, Compass would reject the transaction. 
-|Commerce Hub | Authorize:[/payments/v1/charges with captureFlag = "false” ](?path=docs/Resources/API-Documents/Payments/Charges.md) <br> Partial Capture: [/payments/v1/charges/{transactionId}/capture](?path=docs/Resources/API-Documents/Payments/Capture.md)   |   splitShipment { `totalCount`:5, `finalShipment`:true} within 'transactionDetails' object| `splitShipment` object can be sent in pre-authorization transaction, but is required for all captures. <br>  **2 Questions: 1. If total count unknown, what should a merchant use?  The max? 99?  2. Is total count = 1 accepted or rejected by gateway?**|
+|**Payeezy Gateway Direct** | `transaction_type` = <br> 01 = Pre-Authorization <br> 32 = Tagged Pre-Authorization Completion  | XML: `SplitShipmentNumber` OR <br> JSON: `Split_Shipment` = xx/yy <br> where: xx = number of the shipment <br> and yy = total shipments| If yy is not known, then yy = total number of items in order. <br>  <br> If 01/01 value sent, Compass would reject the transaction. |
+|**Developer API** | `transaction_type` = <br> Authorize <br> Split | `Split_Shipment` = xx/yy <br> where: xx = number of the shipment <br> and yy = total shipments| If yy is not known, then yy = 99.<br>  <br> If 01/01 value sent, Compass would reject the transaction. 
+|**Commerce Hub** | Authorize:[/payments/v1/charges with captureFlag = "false” ](?path=docs/Resources/API-Documents/Payments/Charges.md) <br> Partial Capture: [/payments/v1/charges/{transactionId}/capture](?path=docs/Resources/API-Documents/Payments/Capture.md)   |   splitShipment { `totalCount`:5, `finalShipment`:true} within 'transactionDetails' object| `splitShipment` object can be sent in pre-authorization transaction, but is required for all captures. <br>  **2 Questions: 1. If total count unknown, what should a merchant use?  The max? 99?  2. Is total count = 1 accepted or rejected by gateway?**|
 
+**Does Payeezy do gateway managed re-auth?  From what I can tell, no. So, do we make note here and create a re-auth page?  Or do we just link to the CH page and say this is a new feature?**
 
 ## See Also
 
