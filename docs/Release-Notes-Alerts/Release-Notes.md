@@ -18,8 +18,8 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ## October 2022
 
-- **Certification:** October ? 2022
-- **Production:** October ? 2022
+- **Certification:** October 21 2022
+- **Production:** October 24 2022
 
 | Details | Type |
 | ----- | ----- |
