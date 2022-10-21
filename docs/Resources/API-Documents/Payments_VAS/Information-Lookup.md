@@ -9,7 +9,7 @@ Account information lookup is used to obtain the [card details](?path=docs/Resou
 The card details can be used to determine;
 
 - **Card Processing Requirements (CPS):** based on brand, function, type _(commercial, non-corporate)_
-- **[Directed Routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
+- **[Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 
 <!-- theme: info -->
 > Card details can be returned as part of a tokens or charges request if enabled in Merchant Boarding and Configuration.
@@ -265,7 +265,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 - [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
-- [Directed Routing](?oath=docs/Resources/Guides/Routing/Directed-Routing.md)
+- [Directed Routing](?oath=docs/Resources/Guides/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

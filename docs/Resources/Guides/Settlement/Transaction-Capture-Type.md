@@ -1,21 +1,28 @@
 ---
-tags: [Directed Routing, Network, Processor]
+tags: [Settlement, Host Capture, Terminal Capture, Direct Settlement]
 ---
 
-# Hybrid Card Routing
+# Transaction Capture Type
 
-Commerce Hub allows a merchant to determine whether a [hybrid card](?path=docs/Resources/FAQs-Glossary/Glossary.md#hybrid-card) should be sent to the credit or debit network for processing. This can be setup in the Merchant Boarding and Configuration for all hybrid cards, or the merchant can manually override the routing by sending the `transactionCaptureType` in `transactionInteraction.
+Commerce Hub allows a merchant to determine the settlement type by defining the transaction capture type in the Merchant Boarding and Configuration, or the merchant can manually override the capture type by sending the `transactionCaptureType` in `transactionDetails`.
+
+<!-- theme: info -->
+> For more information on transaction settlement, please contact your account representative.
 
 <!-- theme: warning -->
-> Commerce Hub only support manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
+> Commerce Hub currently only supports manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
 
 #### Transaction Capture Type
 
+Capture type determines how the transaction is submitted to the settlement system for processing and funding.
+
 | Value | Description |
 | ---- | -------- |
-| HCS | Host Capture System, will route the transaction to the debit network. |
-| TCS | Terminal Capture System, will route the transaction to the credit network. |
-| DIRECT | Direct Settelment, will route the transaction to the credit network. |
+| HCS | [Host capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture), Commerce Hub will settle the transaction. |
+| TCS | [Terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture), the merchant's terminal will settle the transaction. |
+| DIRECT | [Direct settelment](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), the merchant will settle directly to the backend processor. |
+
+---
 
 ## Payload Example
 
@@ -44,10 +51,8 @@ titles: Request, Response
     }
   },
   "transactionDetails": {
-    "captureFlag": true
-  },
-  "transactionInteraction": {
-    "transactionCaptureType": "TCS"
+    "captureFlag": true,
+    "transactionCaptureType": "HCS"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
@@ -83,8 +88,8 @@ type: tab
     "card": {
       "expirationMonth": "12",
       "expirationYear": "2024",
-      "bin": "401200",
-      "last4": "0026",
+      "bin": "400555",
+      "last4": "0019",
       "scheme": "Visa"
     }
   },
@@ -111,7 +116,8 @@ type: tab
     }
   },
   "transactionDetails": {
-    "captureFlag": false
+    "captureFlag": true,
+    "transactionCaptureType": "HCS"
   },
   "merchantDetails": {
     "terminalId": "123456",
@@ -129,7 +135,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Transaction Interaction](?path=docs/Resources/Master-Data/Additional-Data.md)
-- [Directed Routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
 
 ---

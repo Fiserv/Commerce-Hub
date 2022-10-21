@@ -99,7 +99,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Details | Type | 
 | ----- | ----- |
 | [Error response messages](?path=docs/Resources/Guides/Response-Codes/Error-Code.md) enhanced with additional codes | Update |
-| [Directed routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md) enhanced to support better identification of payment processor and platforms | Update |
+| [Directed routing](?path=docs/Resources/Guides/Directed-Routing.md) enhanced to support better identification of payment processor and platforms | Update |
 | [Processor response](?path=docs/Resources/Master-Data/Processor-Response-Details.md) enhanced to support better identifiaction of payment processor and host | Update |
 | Timeout error handling enhanced | Update |
 | [Custom Identifier](?path=docs/Resources/Guides/BYOID.md) support for Merchant Identifiers (MID/TID) on Nashville | Feature |

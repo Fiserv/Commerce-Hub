@@ -21,9 +21,9 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
 | `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `deferredPayments` | *object* | N/A | Used in defferred bill payments |
-| `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md) transactions. |
+| `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md) transactions. |
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
-| `privateLabel` | *object* | N/A | Used to process Private Label payment cards. |
+| `privateLabel` | *object* | N/A | Additional attributes used to process [private label payment cards (PLCC)](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md). |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
 
@@ -92,9 +92,11 @@ JSON string format for `additionalDataCommon`:
         "expiry": "05-05-2025"
       },
       "privateLabel":{ // Future Release
-         "paymentSource": "SHELL", // Future Release
-         "paymentType": "REFUND", // Future Release
-         "specialFinanceIndicator": "24/0" // Future Release
+         "paymentSource": "SHELL",
+         "paymentType": "REFUND",
+         "specialFinanceIndicator": "24/0",
+         "creditPlanNumber": "00100",
+         "minimumSpendExemptIndicator": "EXEMPT"
       },
       "customFields":{ 
          "keyValuePair":{ 

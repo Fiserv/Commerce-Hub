@@ -87,25 +87,25 @@ titles: Request, Response
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentEMV",
-      "emvData": "0249F3704833A12329F1002AB34",
-      "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
-         "deviceType": "INGENICO",
-         "keyId": "88000000022"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   },
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentEMV",
+    "emvData": "0249F3704833A12329F1002AB34",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
+      "deviceType": "INGENICO",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
   "transactionInteraction": {
     "origin": "POS",
     "posEntryMode": "ICR_RELIABLE",
@@ -119,10 +119,9 @@ titles: Request, Response
       }
     }
   },
-    "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   }
 }
 ```

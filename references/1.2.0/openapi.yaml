@@ -5460,7 +5460,6 @@ components:
       value:
         referenceTransactionDetails:
           referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
@@ -5474,7 +5473,6 @@ components:
       value:
         referenceTransactionDetails:
           referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'

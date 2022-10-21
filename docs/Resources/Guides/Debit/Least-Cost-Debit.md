@@ -1,5 +1,5 @@
 ---
-tags: [Card Present, In-Person, Least Cost Debit Routing, Debit, Debit Routing, Paysecure]
+tags: [Card Present, In-Person, Debit, Routing]
 ---
 
 # Least Cost Debit Routing
@@ -17,7 +17,8 @@ Commece Hub will recognize if the transaction is from a debit or credit card and
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Directed Routing](?path=docs/Resources/Guides/Routing/Directed-Routing.md)
-- [Hybrid Card Routing](?path=docs/Resources/Guides/Routing/Hybrid-Card.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
 - [Smart Routing](?path=docs/In-Person/Debit/Smart-Routing.md)
+- [Transaction Capture Type](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md)
+
 ---
