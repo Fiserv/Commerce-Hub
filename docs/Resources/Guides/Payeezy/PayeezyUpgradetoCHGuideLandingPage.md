@@ -59,15 +59,15 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesFraud.md
 -->
 
 <!-- type: card
-title: Quick Keys
-description: Differences in Quick Keys functionality
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesQuickKey.md
+title: Mobile Wallets
+description: Apple Pay and Google Pay functional and element differences
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md
 -->
 
 <!-- type: card
-title: Soft Descriptors
-description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSoftD.md
+title: Quick Keys
+description: Differences in Quick Keys functionality
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesQuickKey.md
 -->
 
 <!-- type: row-end -->
@@ -75,15 +75,37 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSoftD.md
 <!-- type: row -->
 
 <!-- type: card
+title: Soft Descriptors
+description: Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSoftD.md
+-->
+
+<!-- type: card
+title: Split Shipment
+description: Outlining the API differences in Commerce Hub
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSplitShip.md
+-->
+
+<!-- type: card
 title: Stored Credentials
 description: Understanding the differences in capabilities and functionality of Stored Credentials in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesStoredCredentials.md
 -->
 
+<!-- type: row-end -->
+
+<!-- type: row -->
+
 <!-- type: card
 title: Tokenization
 description: How the configuration and functionality of tokens has changed with Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesTokens.md
+-->
+
+<!-- type: card
+title: 
+description: 
+link: 
 -->
 
 <!-- type: card
