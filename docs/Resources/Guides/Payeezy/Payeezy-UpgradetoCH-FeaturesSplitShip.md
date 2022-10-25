@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, quick-keys, batch-upload]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, split-shipment]
 
 ---
 
