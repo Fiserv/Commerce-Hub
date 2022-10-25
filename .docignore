@@ -52,3 +52,9 @@ docs/In-Person/Encrypted-Payments/Contactless.md
 docs/Resources/Guides/Authorizations/Incremental-Auth.md
 docs/Resources/Guides/Authorizations/Deferred-Auth.md
 docs/Resources/Guides/Response-Codes/Host-Response-Code.md
+docs/Resources/Guides/Testing/Test-Address-Security.md
+docs/Resources/Guides/Testing/Test-Cards.md
+docs/Resources/Guides/Testing/Test-Declines.md
+docs/Resources/Guides/Testing/Test-Errors.md
+docs/Resources/Guides/Testing/Test-Fraud.md
+docs/Resources/Guides/Testing/Test-Integration.md
