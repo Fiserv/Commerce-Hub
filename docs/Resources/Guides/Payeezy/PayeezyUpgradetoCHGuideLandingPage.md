@@ -83,7 +83,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSoftD.md
 <!-- type: card
 title: Split Shipment
 description: Outlining the API differences in Commerce Hub
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSplitShip.md
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSplitShipment.md
 -->
 
 <!-- type: card
