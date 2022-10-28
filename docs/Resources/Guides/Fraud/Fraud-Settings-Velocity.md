@@ -1,98 +1,57 @@
 ---
-tags: [Authorizations, Card Not Present, Fraud, Velocity Controls, Velocity Settings]
+tags: [Card Not Present, Fraud, Velocity Controls]
 ---
-
 
 # Velocity Controls
 
-Velocity settings determine which transactions Commerce Hub allows to proceed to authorization. A single transaction can be controlled by a minimum or maximum sale amount. Groups of transactions can be evaluated by time period or total dollar amount thresholds that, when exceeded, Commerce Hub will prevent all future transactions from processing. These controls allow a merchant to monitor / restrict transaction flow by IP address, by card number, and amount right down to the hour, per transaction type.
+Velocity control settings determine which transactions Commerce Hub allows to proceed to authorization. A single transaction can be controlled by a minimum or maximum sale amount or number of transactions. Groups of transactions are evaluated by time period for the quantity or total dollar amount thresholds that, when exceeded  Commerce Hub will prevent all future transactions from processing. These controls allow a merchant to monitor and restrict transactions by IP address, account number, or amount.
+
+Transaction Restrictions are setup inside of Merchant Configuration and Boarding _(Marketplace in the [ClientLine Enterprise Portal](https://www.businestrack.com))_. Filters are applied by attributes and their respective value.
 
 ---
 
-## Settings
+## Response Example
 
-The following settings can be configured from [transaction controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) inside of Marketplace. 
+##### Example of a charge (400: Bad Request) response.
 
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
-### Minimum Sale $  
-
-Set this to determine the minimum dollar amount to allow for each transaction; when triggered, the transaction will receive a response – below minimum sale.
-
-### Maximum $ of Transactions 
-
-This allows you to set the maximum dollar amount, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response  merchant volume exceeded.
-
-<!-- theme: Caution -->
->This will limit the total amount you could process on the terminal during the designated period.
-
-### Maximum # of Transactions 
-
-This allows you to set the maximum number of transactions, per transaction type, within a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive response that the merchant volume exceeded. 
-
-<!-- theme: Caution -->
->This will limit the total transactions you could process on the terminal during the designated period.  
-
-### Maximum $ Amount per Card/Check No. 
-
-This allows you to set the maximum dollar amount allowed per card or check number*, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response of card volume exceeded.
-
-### Maximum # Transactions per Card/Check No. 
-
-This allows you to set the maximum number of transactions per card or check number*, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline (transactions are not sent out for authorization) or not; when triggered, the transaction will receive a response card volume exceeded.
-
-### Maximum # Transactions per IP 
-
-This allows you to set the maximum number of transactions allowed per individual IP address, per transaction type, during a specified time period (up to 24 hours or up to 7 days) and whether to decline or not.
-
-### Maximum Sale $  
-
-Set this to determine the maximum dollar amount to allow for each transaction; when triggered, the transaction will receive a response of maximum sale exceeded.
-
-### Minimum Sales $ Feature
-
----
-
-## Attributes 
-
-Attributes determine what actions should be taken based on the velocity settings selected. Not all velocity controls contain each attribute.
-
-| Attribute | Description |
-|---|----|
-| Action | Action to take on the transaction based on the attributes selected |
-| Currency | Currency to apply to this velocity control |
-| Duration | Defines the length of time long the velocity control will verify the transaction history |
-| Minimum Limit | Minimum limit allowed to process, any transaction under the limit will take the action selected |   
-| Maximum Limit | Maximum limit allowed to process, any transaction over the limit will take the action selected | 
-
-
-The fraud settings that you can configure are:
-
-- Minimum Sale Amount
-- Maximum Sale Amount
-- Maximum Amount of Transactions
-- Maximum Number of Transactions
-- Maximum Amount Per Card/Check Number
-
-
-Fraud Settings
-
-Use Pay eezy 
-
-Add example
-
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "CHARGE_FINAL",
+    "transactionState": "DECLINED",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01cd337bd9d54741a79b666e0f5d9e0b49",
+      "transactionTimestamp": "2022-10-11T12:33:44.195362Z",
+      "apiTraceId": "6723f1a22c3d4205b8bac81ae58bcd24",
+      "clientRequestId": "1705732",
+      "transactionId": "6723f1a22c3d4205b8bac81ae58bcd24"
+    }
+  },
+  "error": [
+    {
+      "type": "GATEWAY",
+      "code": "600",
+      "message": "Fraud Error: General",
+      "additionalInfo": "Sale Count Per Card"
+    }
+  ]
+}
+```
 
 ---
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
-- [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
-- [Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
-- [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Positive/Negative Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
-- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
+<!---
+- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
+-->
 
 ---
