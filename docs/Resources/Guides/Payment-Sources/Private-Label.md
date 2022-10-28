@@ -2,7 +2,6 @@
 tags: [Private Label, Payment Sources]
 ---
 
-
 # Private Label
 
 A private label credit card (PLCC) is a type of credit card that is intended for use at a specific retailer. Merchants partner with PLCC issuers like Citi, to qualify customers and extend them a credit card account.
