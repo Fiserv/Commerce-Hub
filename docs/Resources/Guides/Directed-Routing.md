@@ -9,7 +9,7 @@ Directed Routing allows merchants to send transactions to a specific processor o
 
 ## Request Variables
 
-The `directedRouting` is part of the `additionalDataCommon` object.
+The `directedRouting` object is part of the `additionalDataCommon` object.
 
 <!--
 type: tab
@@ -32,9 +32,19 @@ The below table identifies the required parameters in the `processors` array.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `processorName` | *string* | 256 | Identifies the payment processor. **Valid Values:** FISERV, CHASE, CITI |
-| `processingPlatform` | *string* | 256 | Identifies the payment platform of the processor. **Valid Values:** NASHVILLE, TAMPA, SALEM, PRIVATE_LABEL |
-| `priority` | *string* | 256 | Identifies the priority to use each processor. **Valid Values:** PRIMARY, SECONDARY |
+| `processorName` | *string* | 256 | Identifies the payment processor. |
+| `processingPlatform` | *string* | 256 | Identifies the payment platform of the processor. |
+| `priority` | *string* | 256 | Identifies the priority to use each processor. |
+
+##### Procssor and Platform Combinations
+
+The below talbe identifies the valid values and combinations for `processorName` and `processingPlatform`.
+
+| Processor | Platforms |
+| ----- | ----- |
+| _FISERV_ | _NASHVILLE_ |
+| _CHASE_ | _TAMPA_, _SALEM_ |
+| _CITI_ | _PRIVATE_LABEL_ |
 
 <!--
 type: tab
