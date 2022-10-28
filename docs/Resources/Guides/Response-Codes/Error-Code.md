@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Error, Response, Response Codes, Card Present, HTTP]
+tags: [Response Code, Error Code, Error Response]
 ---
 
 # Error Response Codes

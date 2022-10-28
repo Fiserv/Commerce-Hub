@@ -15,10 +15,10 @@ paths:
       x-default-example: PaymentCard
       summary: Submit a charge transaction.
       description: Use this payload to originate a financial transaction based on
-        the <code>captureFlag</code> False (Auth) or True (Sale). A sale will authorize
+        the <code>captureFlag</code> <i>false</i> (Auth) or <i>true</i> (Sale). A sale will authorize
         and charge (withdrawal) the customer funds. An auth (pre-authorization) will
         hold the customer funds and will need to be captured to settle (withdrawal)
-        the funds.
+        the funds. A <a href="../docs?path=docs/Resources/API-Documents/Payments/Capture.md">capture</a> can be performed by sending the <code>captureFlag</code> along with a <a href="../docs?path=docs/Resources/Master-Data/Reference-Transaction-Details.md">transaction identifier</a> on a subsequent charge request.
       requestBody:
         required: true
         content:
@@ -77,51 +77,6 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
-  /payments/v1/charges/{transactionId}/capture:
-    x-model-version: 1.0
-    post:
-      tags: [Capture Endpoint Definition]
-      x-group-name: Payments
-      x-proxy-name: Capture
-      x-default-example: Capture
-      summary: Submit a capture transaction.
-      description: Use this payload to capture a previous pre-authorized transaction
-        (aka post-authorization). This will settle (withdrawal) funds from the customer.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: {$ref: '#/components/schemas/CaptureRequest'}
-            examples:
-              Capture: {summary: CaptureRequest, $ref: '#/components/examples/SecondaryRequest'}
-      parameters:
-      - {$ref: '#/components/parameters/TransactionIdParam'}
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema: {$ref: '#/components/schemas/CaptureResponse'}
-              examples:
-                Capture: {summary: CaptureResponse, $ref: '#/components/examples/CaptureResponse'}
-        400: {$ref: '#/components/responses/BadRequest'}
-        401: {$ref: '#/components/responses/Unauthorized'}
-        404: {$ref: '#/components/responses/NotFound'}
-        408: {$ref: '#/components/responses/RequestTimeout'}
-        415: {$ref: '#/components/responses/UnsupportedMediaType'}
-        425: {$ref: '#/components/responses/TooEarly'}
-        429: {$ref: '#/components/responses/TooManyRequest'}
-        500: {$ref: '#/components/responses/ServerError'}
-        503: {$ref: '#/components/responses/ServiceUnavailable'}
-        504: {$ref: '#/components/responses/GatewayTimeout'}
   /payments/v1/cancels:
     x-model-version: 1.1
     post:
@@ -1766,15 +1721,6 @@ components:
           maxLength: 128
           description: 'Merchant/client generated <code>clientRequestId</code> from the original transaction. Can only be used in a transaction inquiry request.'
           example: '2994454'
-        referenceTransactionType:
-          type: string
-          maxLength: 64
-          description: |+
-            Identifies the type of the referenced transaction.
-            Valid Values:
-            * CHARGES
-            * REFUND
-          example: 'CHARGES'
     OrderData:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md">Order
@@ -1804,7 +1750,7 @@ components:
       x-model-version: 1.0
       description: ''
       properties:
-        categoryName: {type: string, maxLength: 16, description: 'Merchant defined category of the item(s) sold', example: 'Merchandise'}
+        categoryName: {type: string, maxLength: 8, description: 'Merchant defined category of the item(s) sold', example: 'Merchandise'}
         itemCount: {type: integer, description: 'The item count in category.', example: 1}
         value: {type: number, maxLength: 32, description: 'The monetary value of items.', example: 12.50}
     DynamicDescriptors:
@@ -3502,37 +3448,6 @@ components:
             account updater system., example: VAU001}
         originalResponseCode: {type: string, description: Original Response Code for
             re-authorized (Optimized) transaction., example: '006'}
-    CaptureRequest:
-      x-model-version: 1.0
-      properties:
-        source: {$ref: '#/components/schemas/Source'}
-        amount: {$ref: '#/components/schemas/Amount'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-    CaptureResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     CancelRequest:
       x-model-version: 1.0
       properties:
@@ -3752,6 +3667,12 @@ components:
     SecurityCredentialsRequest:
       x-model-version: 1.0
       properties:
+        domains:
+          type: array
+          description: 'A whitelist of domains that are applicable for this credentials request.'
+          example: 'http://checkout.example.com, http://*.example.com'
+          items:
+            type: string
         publicKeyRequired:
           type: boolean
           description: 'If the signedCert is expired or invalid then merchant would send a request.'
@@ -3768,28 +3689,34 @@ components:
           type: string
           description: 'Response URL redirect.'
           example: 'https://www.somedomain.com'
-        customer:
-          $ref: '#/components/schemas/Customer'
-        deviceFingerprint:
-          type: array
-          items:
-           $ref: '#/components/schemas/DeviceFingerPrint'
-        amount:
-          $ref: '#/components/schemas/Amount'
-        amountComponents:
-          $ref: '#/components/schemas/AmountComponents'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
     SecurityCredentialsResponse:
       x-model-version: 1.0
       properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        keyId:
+          type: string
+          description: 'Unique identifier of the encryption key.'
         publicKey:
-          type: string 
+          type: string
           description: 'Base64 encoded public key.'
+        keyLength:
+          type: integer
+          description: 'Length of the encryption key.'
         accessToken:
           type: string
           description: 'Access token created and sent back.'
         sessionId:
           type: string
           description: ''
+        domains:
+          type: array
+          description: 'A whitelist of domains that are applicable for this credentials request.'
+          example: 'https://checkout.example.com, https://*.mystore.com'
+          items:
+            type: string
         accessTokenIssuedTime:
           type: string
           format: date-time
@@ -3804,6 +3731,14 @@ components:
         asymmetricEncryptionAlgorithm:
           type: string
           description: 'RSA/ECB/PKCS1Padding.'
+        accessTokenType: 
+          type: string
+          maxLength: 50
+          description: |+
+            Access token type.
+            
+            Valid Values: 
+            * BEARER
   examples:
     ApplePayRequest:
       value:
@@ -5460,6 +5395,7 @@ components:
       value:
         referenceTransactionDetails:
           referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
+          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
@@ -5473,6 +5409,7 @@ components:
       value:
         referenceTransactionDetails:
           referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
+          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
@@ -5496,41 +5433,6 @@ components:
             expirationYear: '2030'}
         paymentReceipt:
           approvedAmount: {total: '12.04', currency: USD}
-          merchantName: Merchant Name
-          merchantAddress: 123 Peach Ave
-          merchantCity: Atlanta
-          merchantStateOrProvince: GA
-          merchantPostalCode: '12345'
-          merchantCountry: US
-          merchantURL: https://www.somedomain.com
-          processorResponseDetails:
-            approvalStatus: APPROVED
-            approvalCode: OK5882
-            schemeTransactionId: 0225MCC625628
-            processor: FISERV
-            host: NASHVILLE
-            responseCode: '000'
-            responseMessage: APPROVAL
-            hostResponseCode: '00'
-            hostResponseMessage: APPROVAL
-            localTimestamp: '2021-06-20T23:42:48Z'
-            bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
-        transactionDetails: {merchantInvoiceNumber: '123456789012'}
-    CaptureResponse:
-      value:
-        gatewayResponse:
-          transactionType: CAPTURE
-          transactionState: AUTHORIZED
-          transactionOrigin: ECOM
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
-        source:
-          sourceType: PaymentCard
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '2030'}
-        paymentReceipt:
-          approvedAmount: {total: 12.04, currency: USD}
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
           merchantCity: Atlanta
@@ -5716,20 +5618,30 @@ components:
             eciIndicator: 'SECURE_ECOM'
     SecurityCredentialsRequest:
       value:
-        publicKeyRequired: true
-        accessTokenRequired: true
-        accessTokenTimeToLive: '889'
-        responseRedirectURL: https://www.somedomain.com
+        domains:
+        - https://checkout.mystore.com
+        - https://store.mystore.com
+        - https://*.mystore.com
+        publicKeyRequired: false
+        merchantDetails:
+          merchantId: '100004000000260'
     SecurityCredentialsResponse:
       value:
-        publicKey: 'TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtbnBnQUpTellsWVNzNjZwUWc2S3hBdkN3NXk3dXNWRmlLODdRU2FSZzNOYzdodzlVVE5DWXh3L3UxME5MblA1RW1OblVWS2FKcWE4SHdnS1RibmxWNTRsZnhBMkV5OEt6dEtsYVBYMlh2QWw3bXVNVFNsMjZZdzd2ZU1pUUVPSExIL2RQaGQxUlo3UUwwcE1KeVIrbTYzMHhwVDRoakliZkJJV0VTNXRRa3lnSk5LQ2RXT0tQY2VkU2hLeUV5YzYraW1DNTk5VjdETUVrYXVqL2haWVhYOTlyQXJIV3NkYkRmZVpaWlNRcjVVK0lnWmEvdFJiTlA2MUFrKy9KVnFDby8wZ3BzNVJUOU9XV1hYUzYwYlVEby9nSCtweVcrRkpKdjBxYWFPT0IrWjFNN1dCQlBNeEdXZGpJT2VscjR6eGRUdXhHWlpxWG1ad1hTelQyaVZ1b3dJREFRQUI='
-        keyLength: '12345'
-        accessToken: 'vsmsrKcNFWzq79Yd8aaxHetHBdxm'
-        sessionId: 'b28ba2ca-6368-4d72-b5f0-c185b4d0de4c'
-        accessTokenIssuedTime: '2016-04-16T16:06:05Z'
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2022-08-11T09:20:33.229618Z'
+            apiTraceId: cea83af5b1ae4c2fb20e8b6c75600a8d
+            clientRequestId: 36fcd38d2064bcff1222b4e3d2e78fc2
+            transactionId: cea83af5b1ae4c2fb20e8b6c75600a8d
+        keyId: 7250e555-d238-407e-ace1-68cb1930a2d2
+        publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7srHsjawnbAwoN/lGbug53Yntw7wFR8C0yizZK0LMmmEH+wBB945cA61M0ouYt8JeULGpc04/IuPDvM5NXb/gFUg1EfhRxiS4zqS0aKQYmHtqXAZJrC2oZfMRdsc1qErYT6cQSk8iUplGau+d0IScrLP07HomRbTgCLLVkfoVYE3KnZUy8Neko9pn0KmYplhW/thTrq/fISMofBU7DZ1zPFiP5bojNgq2PHO9WmtnLYWv3cMwaDJsG+p9p7XgEqTLFTsy5GU9/R4THPpYczGRzYrPLFjVdISOOzOa1z1VnzrRjSg6rz85drXxcZ1z5udhzt3+pXwvBZmB1llCUU/FQIDAQAB
+        keyLength: '392'
+        accessToken: Pqha9WGVanUm1HZMWPAXjY4dolX3
+        sessionId: 6d8b016a-ea03-4ff2-baf9-3d2f68cb551f
+        accessTokenIssuedTime: '1660209611535'
         accessTokenTimeToLive: '1799'
-        symmetricEncryptionAlgorithm: 'AES-GCM'
-        asymmetricEncryptionAlgorithm: 'RSA-2048'
+        symmetricEncryptionAlgorithm: AES-GCM
+        asymmetricEncryptionAlgorithm: RSA-2048
     PaymentSessionRequest:
       value:
         amount:

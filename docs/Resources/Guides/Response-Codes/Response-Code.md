@@ -1,16 +1,17 @@
 ---
-tags: [Card Not Present, Error, Response, Response Codes, Card Present]
+tags: [Response Code, Decline Code, Error Code]
 ---
 
 # Gateway Response Codes 
 
 The gateway response code indicates the status of a transaction after Commerce Hub processes the transaction. Commerce Hub includes the response in `responseCode` along with the corresponding message in `responseMessage` fields of the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md). 
 
-The below table identifies the valid values of `responseCode` along with `responseMessage` that is returned from the [issuer](?path=/Resources/FAQs-Glossary/Glossary.md#issuing-bank) to identify the final approval or decline status. This information can be displayed to the customer. Errors that occur during processing will result in an error response code and should be handled by the merchant. 
+The below table identifies the normalized values of `responseCode` along with `responseMessage` that is returned from the [issuer](?path=/Resources/FAQs-Glossary/Glossary.md#issuing-bank) to identify the final approval or decline status. This information can be displayed to the customer. Errors that occur during processing will result in an [error response code](?path=docs/Resources/Guides/Response-Codes/Error-Code.md) and should be handled by the merchant. 
 
 | Response Code | Description |
 | ---------- | --------------- |
 | 000 | Approved |
+| 000 | Partial Approval |
 | 002 | Pending Approval |
 | 003 | Referral: Call For Voice Auth |
 | 004 | Referral: Call Bank/Issuer |
@@ -58,6 +59,11 @@ The below table identifies the valid values of `responseCode` along with `respon
 | 046 | Declined: Bad Authoriation Number |
 | 048 | Cardholder Authentication Required |
 | 050 | Host Key Error |
+| 051 | Payment instrument Not Found | 
+| 052 | Payment instrument Blocked, Frozen or Restricted |
+| 053 | Payment instrument Closed |
+| 054 | Payment instrument Lost or Stolen |
+| 058 | Account on Warning Bulletin |
 
 ---
 

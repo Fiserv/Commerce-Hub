@@ -1,12 +1,10 @@
 ---
-tags: [API Reference, Master Data, Processor Response Parameters]
+tags: [API Reference, Master Data, Processor Response, Response Code]
 ---
 
-# Processor Response Parameters
+# Processor Response
 
-The processor response contains the response parameters from the Commerce Hub for any successful or unsuccessful transaction.
-
-## Processor Response Details
+The processor response contains the response parameters from Commerce Hub for any successful or unsuccessful transaction to the processor. If a transaction did not make it to the downstream processor an [error response](?path=docs/Resources/Guides/Response-Codes/Error-Response.md) will be returned.
 
 <!--
 type: tab
@@ -25,8 +23,8 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `host` | *string* | 256 | Processing endpoint or issuer. |
 | `responseCode` | *string* | N/A | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `responseMessage` | *string* | N/A | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
-| `hostResponseCode` | *string* | N/A | Endpoint or issuer [host response code](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).| 
-| `hostResponseMessage` | *string* | N/A | Endpoint or issuer [host response message](?path=docs/Resources/Guides/Response-Codes/Host-Response-Code.md).|
+| `hostResponseCode` | *string* | N/A | Endpoint or issuer host response code.| 
+| `hostResponseMessage` | *string* | N/A | Endpoint or issuer host response message.|
 | `localTimestamp` | *string* | N/A | Transaction timestamp in local time.| 
 | `bankAssociationDetails` | *object* | N/A | [Bank association](#bank-association-details) response details.|
 | `authenticationResponseCode` | string | N/A | Response code from authentication. |
@@ -139,7 +137,7 @@ JSON string format for `bankAssociationDetails`:
 
 ---
 
-## Address and Security Code Response
+### Address and Security Code Response
 
 Indicates the AVS and Security code gateway response details.
 
@@ -183,7 +181,7 @@ JSON string format for `avsSecurityCodeResponse`:
 
 ---
 
-## Association Response
+### Association Response
 
 Indicates the AVS and Security code association response details.
 
@@ -220,11 +218,13 @@ JSON string format for `association`:
 
 ---
 
-## See Also 
+## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Response Code Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
+- [Error Response](?path=docs/Resources/Guides/Response-Codes/Error-Response.md)
 - [Gateway Response](?path=docs/Resources/Master-Data/Gateway-Response.md)
+- [Response Code Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 
 ---

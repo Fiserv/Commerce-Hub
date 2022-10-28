@@ -10,7 +10,9 @@ Regional (International) Debit Solutions from Commerce Hub provide anywhere, any
 > Commerce Hub currently only supports regional debit for Canada on Nashville. Contact your account representative for more information on using regional (international) debit solutions.
 
 ---
- 
+
+## Request Variables
+
 <!--
 type: tab
 titles: regionalDebit, JSON Example

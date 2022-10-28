@@ -10,7 +10,7 @@ Commerce Hub supports external interaction with the iFrame solution which allows
 
 Listening to card form state changes allows notification of state changes from within the iFrame so that the website can respond accordingly. The Commerce Hub iFrame emits card form state events for the following card form lifecycle events:
 
-- **Ready:** card form has been initialized and ready to receive card details
+- **Ready:** card form has been initialized and is ready to receive card details
 - **Blur:** card form element has lost focus
 - **Submit:** card capture request has been submitted
 - **Card Capture Success:** card capture request was successful
@@ -48,9 +48,11 @@ The following table describes each for the fields in the even schema:
 | _trigger.type_ | A string indicating what [type of trigger](#trigger-type) initiated this event |
 |	_trigger.element_ |A string representing the source DOM element which trigger this event |
 |	_trigger.window_	|	A string representing the document id of the window from which this event was trigger. This can be either the iframe window or the merchant site window _(saq-iframe)_ or null. |
-|	_fields_	| | An array of field objects giving a more detailed breakdown of the individual field validation checks |
+|	_fields_	| An array of field objects giving a more detailed breakdown of the individual field validation checks |
 | _fields.card[*].valid_	| A boolean flag _(true, false)_ indicating if the form field is in a valid state |
 |	_fields.card[*].length_ | An integer indicating the number of characters in the field data at the time the event was fired
+| _fields.card[*].error_	| A string description of the field error if the field is in an invalid state |
+
 
 #### Trigger Type
 
