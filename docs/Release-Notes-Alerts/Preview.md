@@ -16,6 +16,21 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+## November 2022
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** November 3rd 2022
+- **Production:** October 5th 2022
+
+| Details | Type |
+| ----- | ----- |
+| Support of [private label credit cards](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) on Citi | Feature |
+| Support added to Chase Salem for [partial approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)  | Update |
+| Merchant managed installment support added to [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) | Update |
+
+---
+
 ## October 2022
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.

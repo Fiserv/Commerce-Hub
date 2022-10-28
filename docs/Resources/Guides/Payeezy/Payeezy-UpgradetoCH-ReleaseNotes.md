@@ -18,6 +18,16 @@ As Commerce Hub continues to be improved with new features and value added servi
 
 ---
 
+## October 15, 2022
+
+| Type | Details |  
+| ----- | ----- |
+| New Content | [Mobile Wallets](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md) Apple Pay and Google Pay functional and element differences |
+| New Content | [Split Shipment](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSplitShip.md) Outlining the API differences in Commerce Hub|
+| Update | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Use this document to help convert your current API request and <br> response elements into Commerce Hub nomenclature and formatting. |
+
+---
+
 ## July 15, 2022
 
 | Type | Details |  
