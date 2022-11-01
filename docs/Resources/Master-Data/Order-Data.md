@@ -21,9 +21,9 @@ The below table identifies the parameters in the `orderData` object.
 | `preOrder` | *boolean* | N/A | Identifies if the purchase is a preorder |
 | `preOrderDate` | *string* | 10 | Date that goods and services are preordered. YYYY-MM-DD format. |
 | `reOrder` | *boolean* | N/A | Identifies if the purchase is a reorder |
-| `goodsSoldCode` | *string* | N/A | Indicates a specific type of good is being purchased in an Amex or [EDS](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md) transaction. It is used to help identify potentially fraudulent sales. **Valid Value:** *GIFT_CARD* |
+| `goodsSoldCode` | *string* |  | Indicates a specific type of good is being purchased in an Amex, [EDS](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md) or 3D-Secure transaction. It is used to help identify potentially fraudulent sales. **Valid Value:** *GIFT_CARD* |
 | `giftcardCount`  | *integer* | 2 | Number of gift cards purchased during the transaction |
-| `giftCardAmount` | *object* | N/A | Used for the [total and currency](?path=docs/Resources/Master-Data/Amount-Components.md) |
+| `giftCardAmount` | *object* |  | Used for the [total and currency](?path=docs/Resources/Master-Data/Amount-Components.md) |
 
 <!--
 type: tab
@@ -35,17 +35,17 @@ JSON string format for `orderData`:
 {
   "orderData": {
     "orderDate": "2020-11-20",
-    "itemCount": 1,
+    "itemCount": 3,
     "itemDetails": [
       {
         "categoryName": "Toys",
         "itemCount": 1,
         "value": 49.99,
         "insuranceClaimNumber": "12345",
-        "departmentCode": 1,
-        "departmentSubCode": 3,
-        "departmentClass": 12,
-        "departmentSubClass": 123
+        "departmentCode": "1",
+        "departmentSubCode": "3",
+        "departmentClass": "12",
+        "departmentSubClass": "123"
       },
       {
         "categoryName": "Gift Card",
@@ -59,7 +59,7 @@ JSON string format for `orderData`:
     "goodsSoldCode": "GIFT_CARD",
     "giftcardCount": 1,
     "giftCardAmount": {
-      "total": 1,
+      "total": 200,
       "currency": "USD"
     }
   }
@@ -88,11 +88,11 @@ The below table identifies the parameters in the `itemDetails` array.
 | `categoryName` | *string* | 8 | Merchant defined category of the item(s) sold |
 | `itemCount` | *string* | 2 | The total item count for the category |
 | `value` | *string* | 32 | The monetary value of the item(s) sold for the category |
-| `insuranceClaimNumber` | *string* | N/A | The insurance claim number of the customer. |
-| `departmentCode` | *integer* | N/A | Merchant defined code identifying the department the item was purchased. |
-| `departmentSubCode` | *integer* | N/A | Merchant defined sub code identifying the sub department the item was purchased. |
-| `departmentClass` | *integer* | N/A | Merchant defined code identifying the department class the item was purchased. |
-| `departmentSubClass` | *integer* | N/A | Merchant defined sub code identifying the department sub class the item was purchased. |
+| `insuranceClaimNumber` | *string* | 64 | The insurance claim number of the customer |
+| `department` | *string* | 256 | Merchant defined code or department description for the product or service sold based on business or processing requirements |
+| `subDepartment` | *string* | 256 | Merchant defined code or sub-department description for the product or service sold based on business or processing requirements |
+| `departmentClass` | *string* | 256 | Merchant defined code or department class description for the product or service sold based on business or processing requirements |
+| `departmentSubClass` | *string* | 256 | Merchant defined code or department sub-class description for the product or service sold based on business or processing requirements |
 
 <!--
 type: tab
@@ -108,15 +108,20 @@ JSON string format for `itemDetails`:
       "itemCount": 1,
       "value": 49.99,
       "insuranceClaimNumber": "12345",
-      "departmentCode": 1,
-      "departmentSubCode": 3,
-      "departmentClass": 12,
-      "departmentSubClass": 123
+      "department": "Toys and Games",
+      "subDepartment": "Infant Toys",
+      "departmentClass": "Educational Toys",
+      "departmentSubClass": "Ages 2+"
     },
     {
       "categoryName": "Sporting Goods",
       "itemCount": 2,
       "value": 59.98
+      "insuranceClaimNumber": "5438",
+      "department": "1",
+      "subDepartment": "3",
+      "departmentClass": "11",
+      "departmentSubClass": "13"
     }
   ]
 }
