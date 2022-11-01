@@ -42,8 +42,8 @@ JSON string format for `orderData`:
         "itemCount": 1,
         "value": 49.99,
         "insuranceClaimNumber": "12345",
-        "departmentCode": "1",
-        "departmentSubCode": "3",
+        "department": "1",
+        "subDepartment": "3",
         "departmentClass": "12",
         "departmentSubClass": "123"
       },
