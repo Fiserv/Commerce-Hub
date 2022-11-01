@@ -27,6 +27,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 | Support added to Chase Salem for; [merchant managed 3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/Merchant-Managed-3DS.md), [dynamic descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md), [merchant managed recurring](?path=docs/Resources/Guides/Stored-Credentials.md), [digital wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md), [custom identifiers](?path=docs/Resources/Guides/BYOID.md) and [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)  | Update |
 | [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Merchant Boarding and Configuration _(Marketplace)_ to support velocity controls (duplicate restrictions) | Update |
 | [Security Credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) updated to support merchant details and domains in the request, and include the gateway response | Update |
+| Requirement for `posConditionCode` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md#pos-condition-code) added for card not present transactions on Nashville | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
