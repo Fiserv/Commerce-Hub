@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info: {title: Payments, description: This API Specification is designed to provide
     technical guidance required to consume and integrate with our APIs for payment
-    processing., version: v1.4.0}
+    processing., version: v1.3.0}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
 - {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
@@ -14,11 +14,12 @@ paths:
       x-proxy-name: Charges
       x-default-example: PaymentCard
       summary: Submit a charge transaction.
-      description: Use this payload to originate a financial transaction based on
-        the <code>captureFlag</code> <i>false</i> (Auth) or <i>true</i> (Sale). A sale will authorize
-        and charge (withdrawal) the customer funds. An auth (pre-authorization) will
-        hold the customer funds and will need to be captured to settle (withdrawal)
-        the funds. A <a href="../docs?path=docs/Resources/API-Documents/Payments/Capture.md">capture</a> can be performed by sending the <code>captureFlag</code> along with a <a href="../docs?path=docs/Resources/Master-Data/Reference-Transaction-Details.md">transaction identifier</a> on a subsequent charge request.
+      description: |+
+        Use this payload to originate a financial transaction based on the <code>captureFlag</code>
+        
+        * <a href="../docs?path=docs/Resources/API-Documents/Payments/Charges.md">Pre-Auth</a> = <i>false</i>
+        * <a href="../docs?path=docs/Resources/API-Documents/Payments/Charges.md">Sale</a> = <i>true</i>
+        * <a href="../docs?path=docs/Resources/API-Documents/Payments/Capture.md">Capture</a> = <i>true</i> with a <a href="../docs?path=docs/Resources/Master-Data/Reference-Transaction-Details.md">transaction identifier</a>
       requestBody:
         required: true
         content:
@@ -708,7 +709,7 @@ components:
       }
       in: path
       required: true
-      description: |
+      description: |+
         Wallet type for which the keypair is to be generated.
 
         Valid Values:
@@ -1117,7 +1118,7 @@ components:
         type:
           type: string
           maxLength: 16
-          description: |
+          description: |+
             Indicates the type of phone number.
 
             Valid Values:
@@ -1154,7 +1155,7 @@ components:
         addressHistory:
           type: string
           maxLength: 32
-          description: |
+          description: |+
             Update history of the address on file.
 
             Valid Values:
@@ -1183,10 +1184,11 @@ components:
         sourceType:
           type: string
           maxLength: 256
-          description: |
+          description: |+
             Payment source type for a transaction request.
 
             Valid Values:
+            * <a href="../docs?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md">3-D Secure</a>
             * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md">ApplePay</a>
             * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md">GooglePay</a>
             * <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md">PaymentCard</a>
@@ -1224,7 +1226,7 @@ components:
         securityCodeIndicator:
           type: string
           maxLength: 15
-          description: |
+          description: |+
             Indicates how the security code is passed.
 
             Valid Values:
@@ -1251,7 +1253,7 @@ components:
         encryptionType:
           type: string
           maxLength: 256
-          description: |
+          description: |+
             Encryption type to be passed.
 
             Valid Values:
@@ -1271,7 +1273,7 @@ components:
         deviceType:
           type: string
           maxLength: 256
-          description: |
+          description: |+
             Device type need to be sent for TDES and AES encrypted track data.
 
             Valid values:
@@ -3574,7 +3576,7 @@ components:
       properties:
         accountStatus:
           type: string
-          description: |
+          description: |+
             Indicates the current status of the account.
 
             Valid Values:
@@ -3582,7 +3584,7 @@ components:
             * ACCOUNT_CLOSED
             * EXPIRATION_CHANGE
             * CONTACT_CARDHOLDER
-          example: ACCOUNT_CHANGE
+          example: 'ACCOUNT_CHANGE'
         accountUpdaterErrorCode: {type: string, description: Error code provided the
             account updater system., example: VAU001}
         originalResponseCode: {type: string, description: Original Response Code for
@@ -3734,10 +3736,17 @@ components:
         type:
           type: string
           maxLength: 32
-          description: "Identifies the additional forms of payment used as part of\
-            \ this order.\n\nValid Values:         \n* CREDIT_CARD\n* COUPON\n* GIFT_CARD\n\
-            * STORE_CREDIT\n* DEBIT_CARD\n* EBT_SNAP\n"
-          example: CREDIT_CARD
+          description: |+
+            Identifies the additional forms of payment used as part of this order.
+            
+            Valid Values:         
+            * CREDIT_CARD
+            * COUPON
+            * GIFT_CARD
+            * STORE_CREDIT
+            * DEBIT_CARD
+            * EBT_SNAP
+          example: 'CREDIT_CARD'
         count: {type: integer, maximum: 99, description: Number of accounts presented
             of this type., example: 2}
         amount: {$ref: '#/components/schemas/Amount'}
@@ -3764,7 +3773,7 @@ components:
             the invocation response, example: ad0760bf-2db5-4ba9-b294-0d2241ff58f8}
         consumerType:
           type: string
-          description: |
+          description: |+
             Indicator for new or returning customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for New Customers
 
             Valid Values:
@@ -3786,7 +3795,7 @@ components:
               a high returner., example: 100}
           returnProbabilityProfile:
             type: string
-            description: |
+            description: |+
               Bucketed return probability profile
 
               Valid Values:
