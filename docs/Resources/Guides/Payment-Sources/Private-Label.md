@@ -29,11 +29,9 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `paymentSource` | *string* | 256 | Identifies the private label card source. |
-| `paymentType` | *string* | 16 | Identifies if the Type of transaction. |
-| `specialFinanceIndicator` | *string* | 16  | Indicates if special finance term and rate in month/rate format. |
-| `creditPlanNumber` | *string* | 5 | Payment program assigned by the private label processor. |
-| `minimumSpendExemptIndicator` | *string* |  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
+| `specialFinanceIndicator` | *string* | 16 | Indicates if special finance term and rate in month/rate format. |
+| `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
+| `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
 
 <!--
 type: tab
@@ -44,8 +42,6 @@ type: tab
 {
   "additionalDataCommon": {
     "privateLabel": {
-      "paymentSource": "MERCHANT_NAME",
-      "paymentType": "CHARGE",
       "specialFinanceIndicator": "24/0",
       "creditPlanNumber": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
@@ -95,7 +91,7 @@ titles: Request, Response
       "paymentSource": "MERCHANT_NAME",
       "paymentType": "CHARGE",
       "specialFinanceIndicator": "24/0",
-      "creditPlanNumber": "12345",
+      "creditPlan": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
     }
   },
