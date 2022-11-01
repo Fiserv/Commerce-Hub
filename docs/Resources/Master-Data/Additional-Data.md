@@ -91,9 +91,7 @@ JSON string format for `additionalDataCommon`:
         "frequency": "MONTHLY",
         "expiry": "05-05-2025"
       },
-      "privateLabel":{ // Future Release
-         "paymentSource": "SHELL",
-         "paymentType": "REFUND",
+      "privateLabel":{
          "specialFinanceIndicator": "24/0",
          "creditPlanNumber": "00100",
          "minimumSpendExemptIndicator": "EXEMPT"
