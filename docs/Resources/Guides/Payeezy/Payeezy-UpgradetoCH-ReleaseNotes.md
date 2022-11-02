@@ -21,7 +21,7 @@ As Commerce Hub continues to be improved with new features and value added servi
 ## October 15, 2022
 
 | Type | Details |  
-| ----- | ----- |
+| :-----: | ----- |
 | New Content | [Mobile Wallets](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md) Apple Pay and Google Pay functional and element differences |
 | New Content | [Split Shipment](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSplitShip.md) Outlining the API differences in Commerce Hub|
 | Update | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Added Split Shipment and Mobile Wallet elements to the mapping. |
@@ -31,7 +31,7 @@ As Commerce Hub continues to be improved with new features and value added servi
 ## July 15, 2022
 
 | Type | Details |  
-| ----- | ----- |
+| :-----: | ----- |
 | New Content | [API Structure](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreAPI.md) Includes Endpoint changes and an overview of request and response element and format changes |
 | New Content | [Configuration](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreConfig.md) Includes configuration comparison for users and terminals in the new ClientLine Enterprise platform|
 | New Content | [Reporting](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreReporting.md) Learn about the new enhanced capabilitities in ClientLine Enterprise|
