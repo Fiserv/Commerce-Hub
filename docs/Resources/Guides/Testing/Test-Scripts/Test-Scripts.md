@@ -7,7 +7,6 @@ tags: [Testing, Test Integration, Test Cards, Test Errors]
 Commerce Hub allows developers who integrate with our API the ability to trigger responses and to ensure that they are handled accordingly. 
 
 <!-- theme: warning -->
-
 > Test documentation provided is intended to be used in the Commerce Hub sandbox environment, for end-to-end certification testing utilize the test scripts located in the developer dashboard.
 
 ---

@@ -74,6 +74,7 @@
     "documentation": "/v1/docs",
     "documenttree": "/v1/docs",
     "documenttreeV2": "/v2/docs",
+    "docsCount": "/v2/docs/count",
     "sandbox": "/v1/sandboxrun",
     "developers": "/v1/credentials/developers",
     "merchants": "/v1/credentials/merchants",
