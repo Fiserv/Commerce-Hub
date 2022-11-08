@@ -123,6 +123,8 @@ Additional information on [Google Pay Integration](?path=docs/Online-Mobile-Digi
 
 <!-- type: tab-end -->
 
+<!-- type: tab-end -->
+
 <!--
 type: tab
 -->
