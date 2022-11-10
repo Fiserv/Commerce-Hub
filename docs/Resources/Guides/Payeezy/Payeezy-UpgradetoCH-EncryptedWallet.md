@@ -1,6 +1,6 @@
 ---
 
-tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallets, decrypted-wallets, encrypted-wallets, apple-pay, google-pay]
+tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallets, encrypted-wallets, apple-pay, google-pay]
 
 ---
 
