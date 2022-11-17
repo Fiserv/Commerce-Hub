@@ -118,8 +118,10 @@ link: ?path=docs/Resources/Guides/Enterprise-Portal/Quick-Key.md
 
 <!-- type: row-end -->
 
-<!--
 ---
+
+<!--
+
 ## Industry Verticals
 
 Commerce Hub offers guides to assist with integrating different industry, trade, profession, or other group of customers with specialized needs.

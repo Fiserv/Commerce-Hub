@@ -14,6 +14,7 @@ Charges can be initiated as a Sale, Pre-Auth, or Capture which is defined in the
 - [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#authorization) A transaction where the merchant [verifies](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
 - [**Pre-Auth:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#preauth) A transaction where the customer authorizes to have funds withdrawn from their account on a future date.
 - [**Sale:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#sale) A transaction where the customer authorizes to have funds withdrawn from their account at the end of the day.
+- [**Capture:**](?path=docs/Resources/API-Documents/Payments/Capture.md) A transaction where the merchant requests to have the pending funds from a pre-auth withdrawn from the customer account at the end of the day.
 
 ---
 

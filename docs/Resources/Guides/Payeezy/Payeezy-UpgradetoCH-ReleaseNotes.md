@@ -21,17 +21,18 @@ As Commerce Hub continues to be improved with new features and value added servi
 ## October 15, 2022
 
 | Type | Details |  
-| ----- | ----- |
+| :-----: | ----- |
 | New Content | [Mobile Wallets](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md) Apple Pay and Google Pay functional and element differences |
 | New Content | [Split Shipment](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSplitShip.md) Outlining the API differences in Commerce Hub|
-| Update | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Use this document to help convert your current API request and <br> response elements into Commerce Hub nomenclature and formatting. |
+| Update | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Added Split Shipment and Mobile Wallet elements to the mapping. |
+| Update | Release Notes |
 
 ---
 
 ## July 15, 2022
 
 | Type | Details |  
-| ----- | ----- |
+| :-----: | ----- |
 | New Content | [API Structure](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreAPI.md) Includes Endpoint changes and an overview of request and response element and format changes |
 | New Content | [Configuration](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreConfig.md) Includes configuration comparison for users and terminals in the new ClientLine Enterprise platform|
 | New Content | [Reporting](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreReporting.md) Learn about the new enhanced capabilitities in ClientLine Enterprise|
@@ -41,12 +42,12 @@ As Commerce Hub continues to be improved with new features and value added servi
 | New Content | [Soft Descriptors](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSoftD.md) Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub|
 | New Content | [Stored Credentials](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesStoredCredentials.md) Understanding the differences in capabilities and functionality of Stored Credentials in Commerce Hub |
 | New Content | [Tokenization](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesTokens.md) How the configuration and functionality of tokens has changed with Commerce Hub|
-| New Content | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Use this document to help convert your current API request and <br> response elements into Commerce Hub nomenclature and formatting. |
+| New Content | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Use this document to help convert your current API request and response elements into <br> Commerce Hub nomenclature and formatting. |
 | New Content | [Required Fields](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalRequired.md) Fields Required in a request by Commerce Hub for each transaction type|
 | New Content | [Customer Transaction Record (CTR)](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalCTR.md) How to create the CTR response element from Commerce Hub elements |
 | New Content | [FAQs](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FAQs.md) Our most common questions and answers for Payeezy merchants migrating to Commerce Hub|
 | New Content | Glossary - Link to a list of programming and API-related terms, acronyms, and phrases to help you think like a developer.|
-| New Content | July 2022 Release Notes|
+| New Content | Release Notes |
 
 
 ---
