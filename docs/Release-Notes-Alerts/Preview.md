@@ -21,7 +21,7 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
 - **Certification:** November 3rd 2022
-- **Production:** October 5th 2022
+- **Production:** November 5th 2022
 
 | Details | Type |
 | ----- | ----- |
