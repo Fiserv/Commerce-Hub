@@ -16,6 +16,22 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## November 2022
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** November 10th 2022
+- **Production:** November 16th 2022
+
+| Details | Type |
+| ----- | ----- |
+| Support added to Chase Salem for [partial approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)  | Update |
+| Merchant managed installment support added to [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) | Update |
+| [Transaction inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) enhancements | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## October 2022
 
 - **Certification:** October 21 2022
