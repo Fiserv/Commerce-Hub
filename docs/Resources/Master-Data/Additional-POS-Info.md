@@ -39,41 +39,46 @@ JSON string format for `additionalPosInformation`:
 
 ```json
 {
-   "additionalPosInformation":{
-      "posId": "1234",
-      "cashierId": "3456",
-      "stan": "123456",
-      "posFormFactorIndicator": "02",
-      "enhancedAuthorizationRequestIndicator": "BOTH_SUPPORTED",
-      "dataEntrySource": "string",
-      "transactionQualifier": "string",
-      "enhancedAuthorizationResponseIndicator": "FULL",
-      "attendedTerminalData": "ATTENDED",
-      "cardholderActivatedTerminalInformation": "2",
-      "posHardwareAndSoftware":{
-         "hardwareVendorIdentifier": "string",
-         "softwareIdentifier": "string",
-         "hardwareSerialNumber": "V1234567",
-         "softwareApplicationName": "string",
-         "softwareReleaseDate": "2022-05-21",
-         "softwareVersionNumber": "string"
-      },
-      "posFeatures":{
-         "hostProcessingPlatform": "TAS",
-         "messageFormatSupport": "string",
-         "emvSupport": "string",
-         "peripheralInformation1": "string",
-         "peripheralInformation2": "string",
-         "communicationInformation1": "DIAL",
-         "communicationInformation2": "string",
-         "industryInformation1": "string",
-         "industryInformation2": "string",
-         "terminalEntryCapability": "ECOMMERCE",
-         "classAndComplianceCertification": "A",
-         "otherCapabilities": "string"
-      },
-      "supervisorId": "1234567"
-   }
+  "additionalPosInformation": {
+    "posId": "1234",
+    "cashierId": "3456",
+    "stan": "123456",
+    "posFormFactorIndicator": "02",
+    "enhancedAuthorizationRequestIndicator": "BOTH_SUPPORTED",
+    "dataEntrySource": "string",
+    "transactionQualifier": "string",
+    "enhancedAuthorizationResponseIndicator": "FULL",
+    "attendedTerminalData": "ATTENDED",
+    "cardholderActivatedTerminalInformation": "2",
+    "supervisorId": "1234567",
+    "posHardwareAndSoftware": {
+      "hardwareVendorIdentifier": "string",
+      "softwareIdentifier": "string",
+      "hardwareSerialNumber": "V1234567",
+      "softwareApplicationName": "string",
+      "softwareReleaseDate": "2022-05-21",
+      "softwareVersionNumber": "string"
+    },
+    "posFeatures": {
+      "hostProcessingPlatform": "TAS",
+      "messageFormatSupport": "string",
+      "emvSupport": "string",
+      "peripheralInformation1": "string",
+      "peripheralInformation2": "string",
+      "communicationInformation1": "DIAL",
+      "communicationInformation2": "string",
+      "industryInformation1": "string",
+      "industryInformation2": "string",
+      "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP",
+      "classAndComplianceCertification": "A",
+      "otherCapabilities": "string",
+      "cardCaptureCapability": true,
+      "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+      "authenticationCapability": "PIN",
+      "taxPromptCapability": "CAPABLE",
+      "PINcaptureCapability": "PIN_12"
+    },
+  }
 }
 ```
 
@@ -148,11 +153,11 @@ The below table identifies the parameters in the `posFeatures` object.
 | `classAndComplianceCertification` | *string* |  | Indicates the type of application or device sending the transaction, Class A or Class B. |
 | `otherCapabilities` | *string* |  | Indicates whether the transaction originated from a mobile device that uses Chase merchant services’ mobile payment gateway or originated from a device that does not use Chase merchant services’ Mobile Payment Gateway. Note: It is required for merchants to send the appropriate information in this element in the case where a mobile terminal is supported. |
 | `cardCaptureCapability` | *boolean* |  | Identifies if the terminal is able to capture the card data. |
-| `pinAuthenticationCapability` | *string* | 25 | PIN entry capability of the Point of Sale. |
-| `authenticationCapability` | *string* | 50 | Identifies the terminals capability to authenticate  the cardholder. |
-| `taxPromptCapability` | *string* | 25 | This field indicates the capability of the terminal to prompt for the Tax Amount, and then handle the Commercial card type in the response message. |
-| `terminalEntryCapability` | *string* | 28 | Identifies how data can be entered in the terminal or software. |
-| `PINcaptureCapability` | *string* | 50 | Identifies the terminals capability to caputer a PIN. |
+| `pinAuthenticationCapability` | *string* | 25 | PIN entry capability of the Point of Sale. ***Valid Values:** UNSPECIFIED, CAN_ACCEPT_PIN, CANNOT_ACCEPT_PIN, PIN_PAD_IS_DOWN, PIN_VERIFIED_BY_TERMINAL* |
+| `authenticationCapability` | *string* | 50 | Identifies the terminals capability to authenticate the cardholder. ***Valid Values:** UNSPECIFIED, NONE, PIN, ELECTRONIC_SIGNATURE, INOPERATIVE, OTHER* |
+| `taxPromptCapability` | *string* | 25 | This field indicates if the terminal is CAPABLE or NOT_CAPABLE of prompting for the tax amount for commercial card types in the response message. |
+| `terminalEntryCapability` | *string* | 28 | Identifies how data can be [entered](#terminal-entry-capability) in the terminal or software. |
+| `PINcaptureCapability` | *string* | 50 | Identifies the terminals capability to caputer a PIN. ***Valid Values:** UNSPECIFIED, NONE, PIN_# (# of characters accepted 1-12)* |
 
 
 <!--
@@ -173,7 +178,13 @@ type: tab
       "industryInformation2": "string",
       "terminalEntryCapability": "ECOMMERCE",
       "classAndComplianceCertification": "A",
-      "otherCapabilities": "string"
+      "otherCapabilities": "string",
+      "cardCaptureCapability": true,
+      "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+      "authenticationCapability": "PIN",
+      "taxPromptCapability": "CAPABLE",
+      "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP",
+      "PINcaptureCapability": "PIN_12"
    }
 }
 ```
@@ -188,23 +199,23 @@ The below table contains the valid values for `dataEntrySource` parameter.
 
 | Valid Value | Description |
 |--------|--------|
-| MOBILE_APP | The payment source was entered into a mobile app or obtained from a mobile wallet.  |
-| MOBILE_WEB | The payment source was entered into a website on a mobile device or obtained from a digital wallet. |
-| BROWSER_PC | The payment source was entered into a website on a personal computer or obtained from a digital wallet. |
-| KIOSK | The payment source was entered into a kisok or obtained from a mobile wallet. |
-| CONSOLE | The payment source was entered into gaming console. |
-| 3DS_REQUESTOR_INITIATED | The payment source initiated by the cuatomer using 3-D Secure. |
-| UNSPECIFIED | The data entry source is unknown or left blank. |
-| ELECTRONIC_PAYMENT_TERMINAL | The payment source was entered into a standard point of sale terminal. |
-| AUTOMATED_FUEL_DISPENSING_MACHINE | The payment source was entered into an unattended fuel station. |
-| UNATTENDED_CUSTOMER_TERMINAL | The payment source was entered int unattended customer terminal. |
-| ECOMMERCE_CUSTOMER_PRESENT | The ecommerce transaction where the payment source is entered at the merchant's location. |
-| MOBILE_TERMINAL | The payment source was entered into a wireless point of sale terminal on a cellular network. |
-| MOBILE_POS | Point of sales terminal that works on wifi. |
-| ELECTRONIC_CASH_REGISTER | Point of sales terminal that allows cash transaction.  |
-| IVR_VRU | Interactive Voice Response(IVR), Voice Response Unit (VRU) |
-| TICKET_MACHINE | A machine to buy the tickets. |
-| CALL_CENTER_OPERATOR | The payment source entered by a call center operator when taking an order from a customer. | 
+| *MOBILE_APP* | The payment source was entered into a mobile app or obtained from a mobile wallet.  |
+| *MOBILE_WEB* | The payment source was entered into a website on a mobile device or obtained from a digital wallet. |
+| *BROWSER_PC* | The payment source was entered into a website on a personal computer or obtained from a digital wallet. |
+| *KIOSK* | The payment source was entered into a kisok or obtained from a mobile wallet. |
+| *CONSOLE* | The payment source was entered into gaming console. |
+| *3DS_REQUESTOR_INITIATED* | The payment source initiated by the cuatomer using 3-D Secure. |
+| *UNSPECIFIED* | The data entry source is unknown or left blank. |
+| *ELECTRONIC_PAYMENT_TERMINAL* | The payment source was entered into a standard point of sale terminal. |
+| *AUTOMATED_FUEL_DISPENSING_MACHINE* | The payment source was entered into an unattended fuel station. |
+| *UNATTENDED_CUSTOMER_TERMINAL* | The payment source was entered int unattended customer terminal. |
+| *ECOMMERCE_CUSTOMER_PRESENT* | The ecommerce transaction where the payment source is entered at the merchant's location. |
+| *MOBILE_TERMINAL* | The payment source was entered into a wireless point of sale terminal on a cellular network. |
+| *MOBILE_POS* | Point of sales terminal that works on wifi. |
+| *ELECTRONIC_CASH_REGISTER* | Point of sales terminal that allows cash transaction.  |
+| *IVR_VRU* | Interactive Voice Response(IVR), Voice Response Unit (VRU) |
+| *TICKET_MACHINE* | A machine to buy the tickets. |
+| *CALL_CENTER_OPERATOR* | The payment source entered by a call center operator when taking an order from a customer. | 
 
 ---
 
@@ -227,21 +238,9 @@ The below table identifies the valid values of `attendedTerminalData`.
 
 | Value | Description |
 | ----- | ----------- |
-| *ATTENDED* | Attended terminal (Not a valid option if  cardholderActivatedTerminalInformation is CAT_LEVEL_6) |
+| *ATTENDED* | Attended terminal (Not a valid option if `cardholderActivatedTerminalInformation` is CAT_LEVEL_6) |
 | *UNATTENDED* | Unattended terminal or software |
 | *NONE* | No terminal or software used (VRU, etc.) |
-
----
-
-#### Terminal Location
-
-The below table identifies the valid values of `terminalLocation`.
-
-| Value | Description |
-| ----- | ----------- |
-| *MERCHANT* | On the premises of the card acceptor |
-| *CARDHOLDER* | On the premises of the cardholder (e.g. Home PC) |
-| *NONE* | No terminal used |
 
 ---
 
@@ -257,6 +256,39 @@ The below table identifies the valid values of `cardholderActivatedTerminalInfor
 | *CAT_LEVEL_3* | Limited amount terminal |
 | *CAT_LEVEL_6* | Electronic commerce transaction (attendedTerminalData must not be ATTENDED) |
 
+---
+
+#### Terminal Location
+
+The below table identifies the valid values of `terminalLocation`.
+
+| Value | Description |
+| ----- | ----------- |
+| *MERCHANT* | On the premises of the card acceptor |
+| *CARDHOLDER* | On the premises of the cardholder (e.g. Home PC, Mobile Device, etc.) |
+| *NONE* | No terminal used |
+
+---
+
+#### Terminal Entry Capability
+
+The below table identifies the valid values of `terminalEntryCapability`.
+
+| Value | Description |
+| ----- | ----------- |
+| *UNSPECIFIED* | Default |
+| *ECOMMERCE* | E-commerce no terminal used |
+| *MAG_STRIPE_ONLY* | Track read only |
+| *MAG_STRIPE_MANUAL* | Track read or manual key |
+| *MAG_STRIPE_MANUAL_CHIP* | Track read, manual key or chip |
+| *BARCODE* | Barcode scan |
+| *CONTACTLESS* | Contactless integrated circuit read |
+| *OCR* | Opitcal character reader |
+| *CHIP_ONLY* | Chip only |
+| *CHIP_MAG_STRIPE* | Chip with track fallback |
+| *MANUAL_ONLY* | Manual key only |
+| *CONTACTLESS_MAG_STRIPE* | Contactless or track read |
+| *HYBRID* | Hybrid entry mode |
 
 ---
 
