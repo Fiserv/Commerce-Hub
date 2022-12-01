@@ -16,6 +16,8 @@ Wallet transactions originate from a digital wallet either from a website or on 
 
 > :memo: **Note:** All merchants upgrading to Commerce Hub, now have the opportunity to utilize Commerce Hub's decryption capabilities.
 
+<!-- type: row -->
+
 <!-- type: card
 title: Ecrypted Wallet
 description: Learn what is now required in Commerce Hub to integrate with the Encrypted Wallet capabilities
@@ -27,6 +29,8 @@ title: Decrypted Wallet
 description: Changes to the required fields and API objects are defined
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-DecryptedWallet.md
 -->
+
+<!-- type: row-end -->
 
 ---
 
