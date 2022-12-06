@@ -4,11 +4,11 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
 
 # 3-D Secure - Secure Data Capture Integration
 
-Commerce Hub's Secure Data Capture is designed to work seemlessly with our 3-D Secure (3DS) authentication provider. This eliminates the need to manually integrate with the provider's API and increases PCI security. The iFrame or Javascript SDK handles the data collection and storage to send to the 3DS provider and processing platforms.
+Commerce Hub's Secure Data Capture is designed to work seemlessly with our 3-D Secure (3DS) authentication provider. This eliminates the need to manually integrate with the provider's API and increases PCI security. The iFrame or Javascript SDK handles the data collection and storage to send to the 3DS provider.
 
 ## Step 1: Authentication
 
-A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to inform Commerce Hub the transaction will require 3DS authentication. This is accomplished by sending the `authentication3DS` indicator in the `transactionDetails` object.
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request with `authentication3DS` *true* in the `transactionDetails` object is required to inform Commerce Hub the transaction will require 3DS authentication.
 
 The credential request is also needed to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the Secure Data Capture request and `sessionId` required in the subsequent request.
 
