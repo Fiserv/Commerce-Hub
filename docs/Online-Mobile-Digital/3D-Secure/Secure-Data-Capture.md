@@ -1,5 +1,5 @@
 ---
-tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
+tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Secure Data Capture]
 ---
 
 # 3-D Secure - Secure Data Capture Integration
