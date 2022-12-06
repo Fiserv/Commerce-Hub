@@ -117,9 +117,9 @@ type: tab
 
 ---
 
-## PaymentToken Charges Request
+## PaymentToken Request
 
-The merchant can use the saved tokenized data in order to initate a charge request. 
+The merchant can use the saved tokenized data in order to initate a subsequent transaction request. 
 
 ---
 
