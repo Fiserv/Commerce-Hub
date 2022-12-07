@@ -20,7 +20,25 @@ Allows a merchant an easy and secure way to embed a payment form into a website 
 5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
 6. Commerce Hub sends the transaction response to the merchant's website.
 
-**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md).**
+---
+
+## Integration
+
+<!-- type: row -->
+
+<!-- type: card
+title: JS Integration Guide
+description: Begin integration with Commerce Hub's JavaScript SDK solution.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md
+-->
+
+<!-- type: card
+title: JS Customization
+description: Customize the language, theme, and font for Commerce Hub's JavaScript SDK solution.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
+-->
+
+<!-- type: row-end -->
 
 ---
 
