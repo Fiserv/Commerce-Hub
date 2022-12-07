@@ -2,12 +2,9 @@
 tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 ---
 
-# Merchant Managed 3-D Secure Integration
+# 3-D Secure Request
 
-Commerce Hub allows a merchant to pass the 3-D Secure Authentication results that were obtained externally with a thrid-party 3-D Secure (3DS) provider when sending the authorization transaction to Commerce Hub. _Payment3DS_ is used by the merchant as the payment source when sending the transaction to the Commerce Hub.
-
-<!-- theme: info -->
-> This integration method is intended for merchants who directly connect to an external 3-D Secure service provider to perform authentication outside of Commerce Hub.
+Commerce Hub allows a merchant to pass the 3-D Secure authentication results that were obtained through a Commerce Hub or a thrid-party 3-D Secure (3DS) provider when sending the authorization transaction. *PaymentCard* or *PaymentToken* is used by the merchant as the payment source when sending the transaction to the Commerce Hub, along with the 3DS response data.
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
@@ -20,14 +17,48 @@ To authorize a 3-D Secure authenticated payment the following fields are availab
 
 <!--
 type: tab
-titles: source, card, transactionInteraction
+titles: source, card, transactionInteraction, additionalData3DS
 -->
 
 The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use value *Payment3ds* for merchant managed 3-D Secure transactions. |
+| `sourceType` | *string* | 15 | Use value *PaymentCard* or *PaymentToken* for 3-D Secure transactions. |
+| `card` | *object* | N/A | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
+| `tokenData` | *string* | 2048 | Token created from the payment source if using *PaymentToken*. |
+| `tokenSource` | *string* | | Source for the Token Provider (TSP) if using *PaymentToken*. Valid Value: TRANSARMOR |
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `cardData` | *object* | 15 |  Credit Card Number or Encrypted Data if using *PaymentCard* |
+| `expirationMonth` | *string* | 2 | Card expiration month. |
+| `expirationYear` | *string* | 4 | Card expiration year. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `transactionInteraction` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md#electroniccommerceindicators). |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `additionalData3DS` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
 | `xid` | *string* | 256 | 3-D Secure/Verified by Visa value returned by the 3DS provider. |
 | `merchantIdentifier` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer |
 | `version` | *string* | 64 | Specific Protocol version supported by 3DS. |
@@ -40,29 +71,7 @@ The below table identifies the parameters in the `source` object.
 | `directoryServerTransactionId` | *string* |  | The response transaction UUID from the DS (directory server) |
 | `tavv` | *string* |  | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction. |
 | `challengeStatus` | *string* |  | The transaction status as returned by the 3D Secure authentication process. (CRes) |
-| `card` | *object* | N/A | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
 
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `card` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `cardData` | *object* | 15 |  Credit Card Number or Encrypted Data |
-| `expirationMonth` | *string* | 2 | Card expiration month. |
-| `expirationYear` | *string* | 4 | Card expiration year. |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `transactionInteraction` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md#electroniccommerceindicators). |
 
 <!-- type: tab-end -->
 
