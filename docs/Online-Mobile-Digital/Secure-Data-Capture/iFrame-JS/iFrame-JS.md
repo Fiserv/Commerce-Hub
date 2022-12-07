@@ -10,7 +10,7 @@ Commerce Hub's iFrame allows E-commerce merchants to create payment data via a p
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can [customize](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md) the form fields to match their site.
+Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields to match their site.
 
 #### Transaction Flow
 
@@ -21,7 +21,31 @@ Commerce Hub accomplishes this by injecting an iFrame into a parent form where c
 5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
 6. Commerce Hub sends the transaction response to the merchant's website.
 
-**Begin integration with Commerce Hub's [iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).**
+---
+
+## Integration
+
+<!-- type: row -->
+
+<!-- type: card
+title: iFrame Integration Guide
+description: Begin integration with Commerce Hub's iFrame solution.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md
+-->
+
+<!-- type: card
+title: iFrame Customization
+description: Customize the language and CSS for Commerce Hub's iFrame solution.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md
+-->
+
+<!-- type: card
+title: iFrame Event Listener
+description: Support external interactions of the card form for Commerce Hub's iFrame solution.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
+-->
+
+<!-- type: row-end -->
 
 ---
 
