@@ -25,7 +25,7 @@ The iFrame or JS form will capture the customer card and device information to b
 
 ## Step 3: Submit Authentication Request
 
-Submit a request after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request.
+Submit a request after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-acquire-credentials) request.
 
 <!-- theme: info -->
 >If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
