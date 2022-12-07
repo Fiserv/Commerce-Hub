@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Secure Data Capture]
 
 # 3-D Secure - Secure Data Capture Integration
 
-Commerce Hub's Secure Data Capture is designed to work seemlessly with our 3-D Secure (3DS) authentication provider. This eliminates the need to manually integrate with the provider's API and increases PCI security. The iFrame or Javascript SDK handles the data collection and storage to send to the 3DS provider.
+Commerce Hub's Secure Data Capture is designed to work seemlessly with our 3-D Secure (3DS) authentication provider. This eliminates the need to manually integrate with the provider's API and increases PCI security. The [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) or [Javascript SDK](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) handles the data collection and storage to send to the 3DS provider.
 
 ## Step 1: Acquire Credentials
 
