@@ -87,7 +87,7 @@ type: tab
 ##### Example of an authentication challenge (201: Created) response.
 
 <!-- theme: warning -->
-> When a challenge response is recieved, a verification request is required before submitting a subsequent transaction.
+> When a challenge response is recieved, a 3DS verification request is required before submitting a subsequent transaction.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
