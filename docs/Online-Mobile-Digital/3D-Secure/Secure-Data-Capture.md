@@ -52,7 +52,7 @@ Based on the merchant's API design requirements the order of submitting a reques
 
 <!--
 type: tab
-titles: Request, Response
+titles: Request, Success Response, Challenge Response
 -->
 
 ##### Example of an authentication payload request.
@@ -69,6 +69,25 @@ type: tab
 -->
 
 ##### Example of an authentication (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+
+{
+
+}
+```
+
+<!--
+type: tab
+-->
+
+##### Example of an authentication challenge (201: Created) response.
+
+<!-- theme: warning -->
+> When a challenge response is recieved, a verification request is required before submitting a subsequent transaction.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
