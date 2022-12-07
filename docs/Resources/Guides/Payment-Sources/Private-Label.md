@@ -88,8 +88,6 @@ titles: Request, Response
   },
   "additionalDataCommon": {
     "privateLabel": {
-      "paymentSource": "MERCHANT_NAME",
-      "paymentType": "CHARGE",
       "specialFinanceIndicator": "24/0",
       "creditPlan": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
@@ -163,8 +161,6 @@ type: tab
   },
   "additionalDataCommon": {
     "privateLabel": {
-      "paymentSource": "MERCHANT_NAME",
-      "paymentType": "CHARGE",
       "specialFinanceIndicator": "24/0",
       "creditPlanNumber": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
