@@ -19,13 +19,13 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 
 ---
 
-## Step 1: Security Credentials 
+## Step 1: Acquire Credentials 
 
 A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, `keyId`, and `publicKey`. These will be used to create the [encryption data](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
 
 ---
 
-## Step 2: Encryption
+## Step 2: Encrypt Card Data
 
 The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
 
