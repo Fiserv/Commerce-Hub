@@ -14,11 +14,12 @@ paths:
       x-proxy-name: Charges
       x-default-example: PaymentCard
       summary: Submit a charge transaction.
-      description: Use this payload to originate a financial transaction based on
-        the <code>captureFlag</code> <i>false</i> (Auth) or <i>true</i> (Sale). A sale will authorize
-        and charge (withdrawal) the customer funds. An auth (pre-authorization) will
-        hold the customer funds and will need to be captured to settle (withdrawal)
-        the funds. A <a href="../docs?path=docs/Resources/API-Documents/Payments/Capture.md">capture</a> can be performed by sending the <code>captureFlag</code> along with a <a href="../docs?path=docs/Resources/Master-Data/Reference-Transaction-Details.md">transaction identifier</a> on a subsequent charge request.
+      description: |+
+        Use this payload to originate a financial transaction based on the <code>captureFlag</code>
+        
+        * <a href="../docs?path=docs/Resources/API-Documents/Payments/Charges.md">Pre-Auth</a> = <i>false</i>
+        * <a href="../docs?path=docs/Resources/API-Documents/Payments/Charges.md">Sale</a> = <i>true</i>
+        * <a href="../docs?path=docs/Resources/API-Documents/Payments/Capture.md">Capture</a> = <i>true</i> with a <a href="../docs?path=docs/Resources/Master-Data/Reference-Transaction-Details.md">transaction identifier</a>
       requestBody:
         required: true
         content:
@@ -708,7 +709,7 @@ components:
       }
       in: path
       required: true
-      description: |
+      description: |+
         Wallet type for which the keypair is to be generated.
 
         Valid Values:
@@ -1117,7 +1118,7 @@ components:
         type:
           type: string
           maxLength: 16
-          description: |
+          description: |+
             Indicates the type of phone number.
 
             Valid Values:
@@ -1154,7 +1155,7 @@ components:
         addressHistory:
           type: string
           maxLength: 32
-          description: |
+          description: |+
             Update history of the address on file.
 
             Valid Values:
@@ -1183,10 +1184,11 @@ components:
         sourceType:
           type: string
           maxLength: 256
-          description: |
+          description: |+
             Payment source type for a transaction request.
 
             Valid Values:
+            * <a href="../docs?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md">3-D Secure</a>
             * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md">ApplePay</a>
             * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md">GooglePay</a>
             * <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md">PaymentCard</a>
@@ -1224,7 +1226,7 @@ components:
         securityCodeIndicator:
           type: string
           maxLength: 15
-          description: |
+          description: |+
             Indicates how the security code is passed.
 
             Valid Values:
@@ -1251,7 +1253,7 @@ components:
         encryptionType:
           type: string
           maxLength: 256
-          description: |
+          description: |+
             Encryption type to be passed.
 
             Valid Values:
@@ -1271,7 +1273,7 @@ components:
         deviceType:
           type: string
           maxLength: 256
-          description: |
+          description: |+
             Device type need to be sent for TDES and AES encrypted track data.
 
             Valid values:
@@ -3574,7 +3576,7 @@ components:
       properties:
         accountStatus:
           type: string
-          description: |
+          description: |+
             Indicates the current status of the account.
 
             Valid Values:
@@ -3582,7 +3584,7 @@ components:
             * ACCOUNT_CLOSED
             * EXPIRATION_CHANGE
             * CONTACT_CARDHOLDER
-          example: ACCOUNT_CHANGE
+          example: 'ACCOUNT_CHANGE'
         accountUpdaterErrorCode: {type: string, description: Error code provided the
             account updater system., example: VAU001}
         originalResponseCode: {type: string, description: Original Response Code for
@@ -3734,10 +3736,17 @@ components:
         type:
           type: string
           maxLength: 32
-          description: "Identifies the additional forms of payment used as part of\
-            \ this order.\n\nValid Values:         \n* CREDIT_CARD\n* COUPON\n* GIFT_CARD\n\
-            * STORE_CREDIT\n* DEBIT_CARD\n* EBT_SNAP\n"
-          example: CREDIT_CARD
+          description: |+
+            Identifies the additional forms of payment used as part of this order.
+            
+            Valid Values:         
+            * CREDIT_CARD
+            * COUPON
+            * GIFT_CARD
+            * STORE_CREDIT
+            * DEBIT_CARD
+            * EBT_SNAP
+          example: 'CREDIT_CARD'
         count: {type: integer, maximum: 99, description: Number of accounts presented
             of this type., example: 2}
         amount: {$ref: '#/components/schemas/Amount'}
@@ -3764,7 +3773,7 @@ components:
             the invocation response, example: ad0760bf-2db5-4ba9-b294-0d2241ff58f8}
         consumerType:
           type: string
-          description: |
+          description: |+
             Indicator for new or returning customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for New Customers
 
             Valid Values:
@@ -3786,7 +3795,7 @@ components:
               a high returner., example: 100}
           returnProbabilityProfile:
             type: string
-            description: |
+            description: |+
               Bucketed return probability profile
 
               Valid Values:
@@ -3893,7 +3902,10 @@ components:
             version: EC_v1, applicationData: VEVTVA==, merchantId: merchant.com.fapi.tcoe.applepay,
             merchantPrivateKey: MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/asdAwEHoUQDQgAaslkdsad8asjdnlkm23leu9jclaskdas/masr4+/as34+4fh/sf64g/nX35fs5w==}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: SECURE_ECOM}
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'SECURE_ECOM'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     ApplePayTokenRequest:
       value:
@@ -3906,7 +3918,6 @@ components:
             signature: MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCAMIIB0zCCAXkCAQEwCQYHKoZIzj0EATB2MQswCQYDVQQGEwJVUzELMAkGA1UECAwCTkoxFDASBgNVBAcMC0plcnNleSBDaXR5MRMwEQYDVQQKDApGaXJzdCBEYXRhMRIwEAYDVQQLDAlGaXJzdCBBUEkxGzAZBgNVBAMMEmQxZHZ0bDEwMDAuMWRjLmNvbTAeFw0xNTA3MjMxNjQxMDNaFw0xOTA3MjIxNjQxMDNaMHYxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOSjEUMBIGA1UEBwwLSmVyc2V5IENpdHkxEzARBgNVBAoMCkZpcnN0IERhdGExEjAQBgNVBAsMCUZpcnN0IEFQSTEbMBkGA1UEAwwSZDFkdnRsMTAwMC4xZGMuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErnHhPM18HFbOomJMUiLiPL7nrJuWvfPy0Gg3xsX3m8q0oWhTs1QcQDTT+TR3yh4sDRPqXnsTUwcvbrCOzdUEeTAJBgcqhkjOPQQBA0kAMEYCIQDrC1z2JTx1jZPvllpnkxPEzBGk9BhTCkEB58j/Cv+sXQIhAKGongoz++3tJroo1GxnwvzK/Qmc4P1K2lHoh9biZeNhAAAxggFSMIIBTgIBATB7MHYxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOSjEUMBIGA1UEBwwLSmVyc2V5IENpdHkxEzARBgNVBAoMCkZpcnN0IERhdGExEjAQBgNVBAsMCUZpcnN0IEFQSTEbMBkGA1UEAwwSZDFkdnRsMTAwMC4xZGMuY29tAgEBMA0GCWCGSAFlAwQCAQUAoGkwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkwNjA3MTg0MTIxWjAvBgkqhkiG9w0BCQQxIgQg0PLaZU4YWZqtP9t/ygv9XIS/5ngU6FlGjpvyK6VFXVMwCgYIKoZIzj0EAwIERjBEAiBTNmQEPyc3aMm4Mwa0riD3dNdSc9aAhslj65Us8b3aKwIgNSc/y+CWpsr8qDln0fZK6ZD/LWPMxofQedlPy7Q6gY8AAAAAAAA=,
             version: EC_v1, applicationData: VEVTVA==, merchantId: merchant.com.fapi.tcoe.applepay,
             merchantPrivateKey: MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/asdAwEHoUQDQgAaslkdsad8asjdnlkm23leu9jclaskdas/masr4+/as34+4fh/sf64g/nX35fs5w==}
-        transactionInteraction: {eciIndicator: SECURE_ECOM}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     ApplePayChargesResponse:
@@ -3986,7 +3997,10 @@ components:
           version: ECv2, merchantId: 676174657761793A666972737464617461, merchantPrivateKey: DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A,
           signingVerificationKey: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIsFro6K+IUxRr4yFTOTO+kFCCEvHo7B9IOMLxah6c977oFzX/beObH4a9OfosMHmft3JJZ6B3xpjIb8kduK4/A==}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: SECURE_ECOM}
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'SECURE_ECOM'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     GooglePayTokenRequest:
       value:
@@ -3995,7 +4009,6 @@ components:
           version: ECv2, merchantId: 676174657761793A666972737464617461, merchantPrivateKey: DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A,
           signingVerificationKey: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIsFro6K+IUxRr4yFTOTO+kFCCEvHo7B9IOMLxah6c977oFzX/beObH4a9OfosMHmft3JJZ6B3xpjIb8kduK4/A==}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: SECURE_ECOM}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     GooglePayChargesResponse:
       value:
@@ -4074,9 +4087,9 @@ components:
       value:
         amount:
           total: 12.04
-          currency: USD
+          currency: 'USD'
         source:
-          sourceType: PaymentCard
+          sourceType: 'PaymentCard'
           card:
             cardData: '4005550000000019'
             expirationMonth: '02'
@@ -4085,12 +4098,12 @@ components:
           captureFlag: true
           merchantInvoiceNumber: '123456789012'
         transactionInteraction:
-          origin: ECOM
-          eciIndicator: CHANNEL_ENCRYPTED
+          origin: 'ECOM'
+          eciIndicator: 'CHANNEL_ENCRYPTED'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
-
     PaymentCardEncryptedRequest:
       value:
         amount:
@@ -4104,10 +4117,13 @@ components:
             encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
             encryptionBlockFields: card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'CHANNEL_ENCRYPTED'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails:
           merchantId: '123456789789567'
           terminalId: '123456'
-
     PaymentCardCaptureRequest:
       value:
         source:
@@ -4137,7 +4153,6 @@ components:
           sourceType: PaymentCard
           card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     PaymentCardInfoRequest:
       value:
@@ -4298,7 +4313,6 @@ components:
           bankAssociationDetails:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
-        
     PaymentCardInfoResponse:
       value:
         gatewayResponse:
@@ -4398,7 +4412,10 @@ components:
           declineDuplicates: false
           card: {expirationMonth: '10', expirationYear: '2030'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'CHANNEL_ENCRYPTED'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     PaymentTokenForcedRequest:
       value:
@@ -4655,7 +4672,10 @@ components:
           messageCategory: '1'
           authenticationResponse: 'Y'
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: SECURE_ECOM}
+        transactionInteraction:
+          origin: 'ECOM'
+          eciIndicator: 'SECURE_ECOM'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     Payment3DSTokenRequest:
       value:
@@ -4673,8 +4693,7 @@ components:
           transactionStatus: 'A'
           messageCategory: '1'
           authenticationResponse: 'Y'
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: ECOM, eciIndicator: SECURE_ECOM}
+        transactionDetails: {merchantInvoiceNumber: '123456789012'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     Payment3DSChargesResponse:
       value:
@@ -5327,8 +5346,6 @@ components:
           encryptionData: {encryptionType: RSA, encryptionTarget: MANUAL, encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==,
             deviceType: INGENICO, keyId: '88000000022'}
         transactionDetails: {merchantInvoiceNumber: '123456789012'}
-        transactionInteraction: {origin: POS, posEntryMode: EMV_FALLBACK, posConditionCode: CARD_PRESENT,
-          terminalTimestamp: '2021-06-20T23:42:48Z'}
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
     ManualEntryInfoRequest:
       value:
@@ -5779,6 +5796,7 @@ components:
         transactionInteraction:
           origin: 'ECOM'
           eciIndicator: 'CHANNEL_ENCRYPTED'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
@@ -5789,9 +5807,6 @@ components:
           sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
-        transactionInteraction:
-          origin: 'ECOM'
-          eciIndicator: 'CHANNEL_ENCRYPTED'
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'

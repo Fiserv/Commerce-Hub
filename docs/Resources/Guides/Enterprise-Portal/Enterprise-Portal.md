@@ -6,7 +6,7 @@ tags: [Enterprise Portal, Business Track, Virtual Terminal, Reporting, Settings]
 
 Merchants can access the Enterprise Portal through Business Track. Each merchant receives access to ClientLine, a real-time web-based back-office application that logs the transactions conducted through the Virtual POS, Batch Uploads (Quick Key), and Commerce Hub intergrations. 
 
-The Enterprise Portal also provides access to Commerce Hub's marketplace that allows boarding and configuration of a merchant accounts. 
+The Enterprise Portal also provides access to Commerce Hub's Merchant Boarding and Configuration (Marketplace), that allows boarding and configuration of a merchant accounts. 
 
 <!-- info -->
 > Contact your account representative to gain access to the Enterprise Portal.
@@ -15,19 +15,19 @@ The Enterprise Portal also provides access to Commerce Hub's marketplace that al
 
 ## Virtual Terminal
 
-Virtual Terminal is a web-based application that allows a merchant to process electronic payments by telephone, mail order, fax and e-mail through the [Virtual POS](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md) and [Quick Key](?path=docs/Resources/Guides/Enterprise-Portal/Quick-Key.md) functionality.
+Virtual Terminal is a web-based application that allows a merchant to process electronic payments by telephone, mail order, fax and e-mail through the Virtual POS and Quick Key functionality.
 
 ---
 
 ## Reporting
 
-ClientLine Enterprise Portal offers merchants the ability to [generate reports](?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md) with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions.
+ClientLine Enterprise Portal offers merchants the ability to generate reports with an easy-to-use suite of online tools, that provide greater insight to quickly and effectively manage your electronic transactions.
 
 ---
 
 ## Account Management
 
-Merchants can create an account by requesting account access from their user admin. For more information on creating an account, go to [Account Management](?path=docs/Resources/Guides/Enterprise-Portal/Account-Management.md).
+Merchants can create an account by requesting account access from their user admin. For more information on creating an account, go to Account Management.
 
 ---
 
@@ -39,21 +39,11 @@ Transaction controls allow merchants to control the transactional settings and f
 
 ## Hosted Payment Page Setup
 
-Merchants can create a custom [Hosted Payment Page](?pagedocs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md) based on their preferences.
+Merchants can create a custom Hosted Payment Page based on their preferences.
 
 ---
 ## Account Profiles 
 
 Account Profiles allow merchants to setup templates that apply to merchant accounts.
 
-
 ---
-
-## See Also
-
-- Requesting Access
-- User Management
-- Profile Settings
-
----
-

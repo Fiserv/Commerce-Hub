@@ -16,6 +16,38 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## November 2022
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** November 10th 2022
+- **Production:** November 16th 2022
+
+| Details | Type |
+| ----- | ----- |
+| Support added to Chase Salem for [partial approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)  | Update |
+| Merchant managed installment support added to [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) | Update |
+| [Transaction inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) enhancements | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
+## October 2022
+
+- **Certification:** October 21 2022
+- **Production:** October 28 2022
+
+| Details | Type |
+| ----- | ----- |
+| Support of [transaction capture type override](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md) for hybrid card settlement | Feature |
+| Support added to Chase Salem for; [merchant managed 3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/Merchant-Managed-3DS.md), [dynamic descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md), [merchant managed recurring](?path=docs/Resources/Guides/Stored-Credentials.md), [digital wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md), [custom identifiers](?path=docs/Resources/Guides/BYOID.md) and [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)  | Update |
+| [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Merchant Boarding and Configuration _(Marketplace)_ to support velocity controls (duplicate restrictions) | Update |
+| [Security Credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) updated to support merchant details and domains in the request, and include the gateway response | Update |
+| Requirement for `posConditionCode` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md#pos-condition-code) added for card not present transactions on Nashville | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## September 2022
 
 - **Certification:** September 15th 2022

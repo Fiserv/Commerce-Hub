@@ -81,16 +81,8 @@ type: tab
 
 ```json
 
-{
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "platform": "IPG",
-          "priority": "FINAL"
-        }
-      ]
-    },
+[
+  {
     "gatewayResponse": {
       "gatewayName": "IPG",
       "gatewayOrderId": "CH-cb1e236f-3136-411d-8eff-7273ad6d2505",
@@ -105,10 +97,6 @@ type: tab
       },
       "transactionState": "CAPTURED",
       "transactionType": "CHARGE"
-    },
-    "merchantDetails": {
-      "merchantId": "100004000000233",
-      "storeId": "66100004000000233"
     },
     "paymentReceipt": {
       "approvedAmount": {
@@ -138,12 +126,26 @@ type: tab
       },
       "sourceType": "PaymentCard"
     },
+    "additionalDataCommon": {
+      "billingAddress": {
+        "address": {
+          "city": "Atlanta",
+          "country": "USA",
+          "houseNumberOrName": "4201",
+          "postalCode": "30338",
+          "stateOrProvince": "Georgia",
+          "street": "123 Main Dr"
+        },
+        "firstName": "Jane",
+        "lastName": "Doe"
+      }
+    },
     "transactionDetails": {
       "captureFlag": "true",
       "merchantInvoiceNumber": "CHG01586b641"
     }
   }
-}
+]
 ```
 
 <!-- type: tab-end -->

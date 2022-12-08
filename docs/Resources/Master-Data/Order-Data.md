@@ -33,31 +33,36 @@ JSON string format for `orderData`:
 
 ```json
 {
-   "orderData": {
-      "orderDate": "2020-11-20",
-      "itemCount": 1,
-      "itemDetails": [
-         {
-            "categoryName": "Toys",
-            "itemCount": 1,
-            "value": 49.99
-         },
-         {
-            "categoryName": "Gift Card",
-            "itemCount": 2,
-            "value": 100.00
-         }
-      ],
-      "preOrder": true,
-      "preOrderDate": "2020-11-20",
-      "reOrder": false,
-      "goodsSoldCode": "GIFT_CARD",
-      "giftcardCount": 1,
-      "giftCardAmount": {
-         "total": 1,
-         "currency": "USD"
+  "orderData": {
+    "orderDate": "2020-11-20",
+    "itemCount": 1,
+    "itemDetails": [
+      {
+        "categoryName": "Toys",
+        "itemCount": 1,
+        "value": 49.99,
+        "insuranceClaimNumber": "12345",
+        "departmentCode": 1,
+        "departmentSubCode": 3,
+        "departmentClass": 12,
+        "departmentSubClass": 123
+      },
+      {
+        "categoryName": "Gift Card",
+        "itemCount": 2,
+        "value": 100
       }
-   }
+    ],
+    "preOrder": true,
+    "preOrderDate": "2020-11-20",
+    "reOrder": false,
+    "goodsSoldCode": "GIFT_CARD",
+    "giftcardCount": 1,
+    "giftCardAmount": {
+      "total": 1,
+      "currency": "USD"
+    }
+  }
 }
 ```
 
@@ -83,6 +88,11 @@ The below table identifies the parameters in the `itemDetails` array.
 | `categoryName` | *string* | 8 | Merchant defined category of the item(s) sold |
 | `itemCount` | *string* | 2 | The total item count for the category |
 | `value` | *string* | 32 | The monetary value of the item(s) sold for the category |
+| `insuranceClaimNumber` | *string* | N/A | The insurance claim number of the customer. |
+| `departmentCode` | *integer* | N/A | Merchant defined code identifying the department the item was purchased. |
+| `departmentSubCode` | *integer* | N/A | Merchant defined sub code identifying the sub department the item was purchased. |
+| `departmentClass` | *integer* | N/A | Merchant defined code identifying the department class the item was purchased. |
+| `departmentSubClass` | *integer* | N/A | Merchant defined sub code identifying the department sub class the item was purchased. |
 
 <!--
 type: tab
@@ -92,18 +102,23 @@ JSON string format for `itemDetails`:
 
 ```json
 {
-   "itemDetails": [
-      {
-         "categoryName": "Apparel",
-         "itemCount": 1,
-         "value": 49.99
-      },
-      {
-         "categoryName": "Sporting Goods",
-         "itemCount": 2,
-         "value": 59.98
-      }
-   ]
+  "itemDetails": [
+    {
+      "categoryName": "Toys",
+      "itemCount": 1,
+      "value": 49.99,
+      "insuranceClaimNumber": "12345",
+      "departmentCode": 1,
+      "departmentSubCode": 3,
+      "departmentClass": 12,
+      "departmentSubClass": 123
+    },
+    {
+      "categoryName": "Sporting Goods",
+      "itemCount": 2,
+      "value": 59.98
+    }
+  ]
 }
 ```
 

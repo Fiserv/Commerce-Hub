@@ -23,7 +23,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `deferredPayments` | *object* | N/A | Used in defferred bill payments |
 | `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md) transactions. |
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
-| `privateLabel` | *object* | N/A | Used to process Private Label payment cards. |
+| `privateLabel` | *object* | N/A | Additional attributes used to process [private label payment cards (PLCC)](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md). |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
 
@@ -92,9 +92,11 @@ JSON string format for `additionalDataCommon`:
         "expiry": "05-05-2025"
       },
       "privateLabel":{ // Future Release
-         "paymentSource": "SHELL", // Future Release
-         "paymentType": "REFUND", // Future Release
-         "specialFinanceIndicator": "24/0" // Future Release
+         "paymentSource": "SHELL",
+         "paymentType": "REFUND",
+         "specialFinanceIndicator": "24/0",
+         "creditPlanNumber": "00100",
+         "minimumSpendExemptIndicator": "EXEMPT"
       },
       "customFields":{ 
          "keyValuePair":{ 
