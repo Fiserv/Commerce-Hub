@@ -18,6 +18,15 @@ As Commerce Hub continues to be improved with new features and value added servi
 
 ---
 
+## December 15, 2022
+
+| Type | Details |  
+| :-----: | ----- |
+| Update | [API Structure](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreAPI.md) Changes to capture, void and refund endpoints |
+| Update | Release Notes |
+
+---
+
 ## October 15, 2022
 
 | Type | Details |  
