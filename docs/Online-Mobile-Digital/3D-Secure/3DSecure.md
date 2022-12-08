@@ -27,7 +27,7 @@ Build an integration that to accept a 3-D Secure payment.
 <!-- type: card
 title: Merchant Managed
 description: Allows the 3DS authentication details that were completed by a third-party provider to be passed in the payment authorization transaction to Commerce Hub.
-link: ?path=docs/Online-Mobile-Digital/3D-Secure/Merchant-Managed-3DS.md
+link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md
 -->
 
 <!-- type: card
