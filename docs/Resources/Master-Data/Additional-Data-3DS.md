@@ -35,6 +35,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | `messageCategory` | *string* | 2 | Indicates the message category of 3-D Secure authentication version 2.X. *01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only* |
 | `methodData` | *object* | N/A | Additional [device data collection details](#method-data) passed during 3DS flows. |
 | `mpiData` | *object* | N/A | [Merchant plug-in (MPI)](#mpi-data) data from 3-D Secure (3DS) authentication. |
+| `versionData` | *object* | N/A | Additional [version data](#version-data) passed during 3-D Secure (3DS) flows. |
 
 ---
 
@@ -76,7 +77,10 @@ JSON string format for `additionalData3DS`:
       "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
       "eci": "05",
       "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
-    }
+    },
+    "versionData":{
+      "recommendedVersion": "2.2.0"
+   }
   }
 }
 ```
@@ -164,6 +168,42 @@ JSON string format for `mpiData`:
 ```
 
 <!-- type: tab-end -->
+
+---
+
+## Version Data
+
+Additional version data passed during 3-D Secure (3DS) flows.
+
+<!--
+type: tab
+titles: versionData, JSON Example
+-->
+
+
+| Variable | Type | Maximum Length | Description/Values |
+| ----- | ----- | ----- | ----- |
+| `recommendedVersion` | *string* | 6 | Recommended 3DS version as specified by the card issuer. |
+
+---
+
+<!--
+type: tab
+-->
+
+
+JSON string format for `mpiData`:
+
+```json
+{
+   "versionData":{
+      "recommendedVersion": "2.2.0"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
 
 ---
 
