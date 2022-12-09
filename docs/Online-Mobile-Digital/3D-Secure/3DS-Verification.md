@@ -1,9 +1,8 @@
 ---
-tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Getting Started]
+tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
 ---
 
 # 3-D Secure Verification
-
 
 Secure Data Capture utilizes a sessionId that Commerce Hub enriches with the applicable data from the challenge.
 
