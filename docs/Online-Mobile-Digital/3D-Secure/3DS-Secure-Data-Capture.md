@@ -41,16 +41,7 @@ The iFrame or JS form will capture the customer card and device information to b
 Submit a request after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-acquire-credentials) request.
 
 <!-- theme: info -->
->If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
-
-<!--- 
-Based on the merchant's API design requirements the order of submitting a request to Commerce Hub can change.
-
-- **Authentication before Charges, Tokenization, or Verification:** By submitting to the authentication endpoint Commerce Hub will route to the 3DS provider to have the customer perform authentication and possible challenge before submitting the `PaymentSession` for a subsequent request.
-- **Tokenization before Authentication:** If the transaction processing is not going to occur realtime it is recommended to perform a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `PaymentSession` to obtain a `PaymentToken` that can be used in a subsequent authentication request.
-- **Account Verification before Authentication:** Submitting to the [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) endpoint allows a merchant to perform [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification prior to submitting an authentication request.
-
--->
+> If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
 
 ### Endpoint
 
@@ -100,7 +91,7 @@ type: tab
 ##### Example of an authentication challenge (201: Created) response.
 
 <!-- theme: warning -->
-> When a challenge response is recieved, a 3DS verification request is required before submitting a subsequent transaction.
+> When a challenge response is recieved, a [3DS verification request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) is required before submitting a subsequent transaction.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
