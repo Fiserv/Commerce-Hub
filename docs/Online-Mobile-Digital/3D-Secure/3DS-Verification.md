@@ -92,19 +92,15 @@ type: tab
         }
     },
     "processorResponseDetails": {
-        "approvalStatus": "APPROVED",
-        "approvalCode": "OK5882",
         "processor": "CARDINAL",
-        "responseCode": "000000",
+        "responseCode": "000",
         "responseMessage": "APPROVAL",
         "hostResponseCode": "00",
         "hostResponseMessage": "APPROVAL",
         "localTimestamp": "2021-06-20T23:42:48Z"
     },
     "transactionDetails": {
-        "merchantInvoiceNumber": "123456789012",
         "merchantTransactionId": "65757575675765",
-        "merchantOrderId": "9458498544433"
     },
     "additionalData3DS": {
         "serviceProvider": "CARDINAL",
