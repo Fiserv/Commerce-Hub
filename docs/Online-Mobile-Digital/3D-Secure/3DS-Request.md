@@ -59,18 +59,27 @@ The below table identifies the required parameters in the `additionalData3DS` ob
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `xid` | *string* | 256 | 3-D Secure/Verified by Visa value returned by the 3DS provider. |
-| `merchantIdentifier` | *string* | 16 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer |
-| `version` | *string* | 64 | Specific Protocol version supported by 3DS. |
+| `dsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction | 
+| `authenticationStatus` | *string* | 2 | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
+| `authenticationAttemptResult` | *string* | 1024 | Result of authentication attempt from Payer Authentication Response (PaRes). 3DS 1.x |
+| `messageCategory` | *string* | 2 | Indicates the message category of 3-D Secure authentication version 2.X. *01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only* |
+| `mpiData` | *object* | N/A | [Merchant plug-in (MPI)](#mpi-data) data from 3-D Secure (3DS) authentication. |
+| `versionData` | *object* | N/A | Additional [version data](#version-data) passed during 3-D Secure (3DS) flows. |
+
+The below table identifies the `mpiData` parameters in the `additionalData3DS` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
 | `cavv` | *string* | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
-| `verificationResponse` | *string* | 256 | Verification response message. |
-| `authenticationAttemptResult` | *string* | 256 | Result of authentication attempt from Payer Authentication Response (PaRes). |
-| `authenticationResponse` | *string* |  | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
-| `channel` | *string* | 32 | Channel the 3DS transaction was initiated. _**Valid Values:** MOBILE_APP, MOBILE_WEB, BROWSER_PC, KIOSK, CONSOLE, 3DS_REQUESTOR_INITIATED_ |
-| `messageCategory` | *string* |  | Indicates the message category of 3d secure authentication version 2.X. _01 = Payment Authentication, 02 = Non-Payment Authentication, 80 = Mastercard Data Only_ |
-| `directoryServerTransactionId` | *string* |  | The response transaction UUID from the DS (directory server) |
-| `tavv` | *string* |  | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction. |
-| `challengeStatus` | *string* |  | The transaction status as returned by the 3D Secure authentication process. (CRes) |
+| `xid` | *string* | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce. |
+| `eci` | *string* | 256 | Payment system-specific value provided by the Access Control Server (ACS) or Directory Server (DS) to indicate the results of the attempt to authenticate the cardholder. |
+| `tavv` | *string* | 512 | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction. |
+
+The below table identifies the `versionData` parameters in the `additionalData3DS` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `recommendedVersion` | *string* | 6 | Recommended 3DS version as specified by the card issuer. |
 
 
 <!-- type: tab-end -->
@@ -86,37 +95,42 @@ titles: Request, Response
 
 ```json
 {
-   "source":{
-      "sourceType":"Payment3DS",
-      "card":{
-         "cardData":"4012000033330026",
-         "expirationMonth":"12",
-         "expirationYear":"2025"
-      },
-      "cavv":"020360C31C002540AFAB9DFFA1F69D3000020000",
-      "xid":"MfhxI43NrkuWQYLCoRWitYRDMYo",
-      "authenticationAttemptResult":"Y",
-      "transactionStatus":"A",
-      "messageCategory":"1",
-      "verificationResponse":"I",
-      "directoryServerTransactionId":"f38e6948-5388-41a6-bca4-b49723c19437",
-      "authenticationResponse":"Y",
-      "version":"2.1.0"
-   },
-   "amount":{
-      "total":6,
-      "currency":"USD"
-   },
-   "transactionDetails":{
-      "captureFlag":false
-   },
-   "transactionInteraction":{
-      "eciIndicator":"SECURE_ECOM"
-   },
-"merchantDetails":{
-      "merchantId":"100009000000202",
-      "terminalId":"00000001"
-   }
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4012000033330026",
+      "expirationMonth": "12",
+      "expirationYear": "2025"
+    }
+  },
+  "additionalDataCommon": {
+    "dsTransactionId": "3543-b90d-d6dc1765c98",
+    "authenticationStatus": "A",
+    "authenticationAttemptResult": "uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4",
+    "messageCategory": "1",
+    "mpiData": {
+      "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
+      "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
+      "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
+    },
+    "versionData": {
+      "recommendedVersion": "2.2.0"
+    }
+  },
+  "amount": {
+    "total": 6,
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "captureFlag": false
+  },
+  "transactionInteraction": {
+    "eciIndicator": "SECURE_ECOM"
+  },
+  "merchantDetails": {
+    "merchantId": "100009000000202",
+    "terminalId": "00000001"
+  }
 }
 
 ```
