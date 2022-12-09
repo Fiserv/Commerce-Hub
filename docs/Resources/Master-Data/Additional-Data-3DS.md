@@ -33,8 +33,8 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | `stepUpUrl` | *string* | 256 | The URL that the client uses to post the cardholder in order to complete the Consumer Authentication transaction. |
 | `channel` | *string* | 32 | Determines the channel that the transaction came through. ***Valid Values:** BROWSER, SDK, 3DS_REQUESTOR_INITIATED* |
 | `messageCategory` | *string* | 2 | Indicates the message category of 3-D Secure authentication version 2.X. *01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only* |
-| `methodData` | *object* | N/A | Additional device data collection details passed during 3DS flows. |
-| `mpiData` | *object* | N/A | Merchant plug-in (MPI) data from 3-D Secure (3DS) authentication. |
+| `methodData` | *object* | N/A | Additional [device data collection details](#method-data) passed during 3DS flows. |
+| `mpiData` | *object* | N/A | [Merchant plug-in (MPI)](#mpi-data) data from 3-D Secure (3DS) authentication. |
 
 ---
 
