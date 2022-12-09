@@ -5,6 +5,7 @@ tags: [Additional Data, API Reference, Master Data]
 # Additional Data Common
 
 Additional data common is used for specific business requirements.
+
 <!--
 type: tab
 titles: additionalDataCommon, JSON Example
