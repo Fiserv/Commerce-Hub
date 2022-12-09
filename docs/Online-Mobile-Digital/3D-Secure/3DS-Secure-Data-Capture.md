@@ -314,7 +314,7 @@ type: tab
 
 ## Step 4: Submit Transaction Request
 
-After authentication has been completed with the 3DS provider, submit a charges, tokenization, or verification request using the same `sessionId` and the [3DS response data].
+After authentication has been completed with the 3DS provider, submit a charges, tokenization, or verification request using the same `sessionId` and the [3DS response data](?path=docs/Resources/Master-Data/Additional-Data-3DS.md).
 
 ### Endpoint
 <!-- theme: success -->
