@@ -7,7 +7,7 @@ A credentials request is used for authorizing or submitting subsequent financial
 
 <!--
 type: tab
-titles: Request Variables, Response Variables, Domains
+titles: Request Variables, Response Variables
 -->
 
 The below table identifies the parameters in the request.
@@ -22,6 +22,12 @@ The below table identifies the parameters in the request.
 | `accessTokenTimeToLive` | *string* | 7 | Time to live (expiration time) in milliseconds, default is the max time of 30 minutes (1800000 ms) |
 | `responseRedirectURL` | *string* | 4000 | Response URL redirect |
 --->
+
+The below table identifies the fields in the `domains` array.
+
+| Variable | Type | Maximum Length | Description |
+|---------|----------|--------|--------|
+| `url` | *string* | 2048 | URL associated with the HTTP domain |
 
 <!--
 type: tab
@@ -44,16 +50,6 @@ The below table identifies the response elements.
 <!---
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
 -->
-
-<!--
-type: tab
--->
-
-The below table identifies the fields in the `domains` array.
-
-| Variable | Type | Maximum Length | Description |
-|---------|----------|--------|--------|
-| `url` | *string* | 2048 | URL associated with the HTTP domain |
 
 <!-- type: tab-end -->
 
@@ -139,5 +135,6 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/credentials)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

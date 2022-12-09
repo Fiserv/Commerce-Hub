@@ -21,7 +21,7 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
 - **Certification:** November 3rd 2022
-- **Production:** October 5th 2022
+- **Production:** November 5th 2022
 
 | Details | Type |
 | ----- | ----- |
@@ -43,6 +43,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Support of [transaction capture type override](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md) for hybrid card settlement | Feature |
 | Support added to Chase Salem for; [merchant managed 3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/Merchant-Managed-3DS.md), [dynamic descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md), [merchant managed recurring](?path=docs/Resources/Guides/Stored-Credentials.md), [digital wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md), [custom identifiers](?path=docs/Resources/Guides/BYOID.md) and [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)  | Update |
 | [Fraud settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) updated in Merchant Boarding and Configuration _(Marketplace)_ to support velocity controls (duplicate restrictions) | Update |
+| Requirement for `posConditionCode` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md#pos-condition-code) added for card not present transactions on Nashville | Update |
 
 ---
 

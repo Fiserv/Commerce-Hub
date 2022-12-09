@@ -52,6 +52,12 @@
     },
     {
       "version": "1.3.0",
+      "versionType": "minor",
+      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
+      "apiSpecFileNames": ["openapi"]
+    },
+    {
+      "version": "1.4.0",
       "versionType": "major",
       "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
       "apiSpecFileNames": ["openapi"]
@@ -68,6 +74,7 @@
     "documentation": "/v1/docs",
     "documenttree": "/v1/docs",
     "documenttreeV2": "/v2/docs",
+    "docsCount": "/v2/docs/count",
     "sandbox": "/v1/sandboxrun",
     "developers": "/v1/credentials/developers",
     "merchants": "/v1/credentials/merchants",
