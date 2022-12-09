@@ -250,9 +250,61 @@ type: tab
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
-
 {
-
+    "gatewayResponse": {
+        "transactionType": "AUTHENTICATE",
+        "transactionState": "WAITING",
+        "transactionProcessingDetails": {
+            "transactionTimestamp": "2021-06-20T23:42:48Z",
+            "orderId": "RKOrdID-525133851837",
+            "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+            "clientRequestId": "4345791",
+            "transactionId": "84356531338"
+        }
+    },
+    "source": {
+        "sourceType": "PaymentCard",
+        "card": {
+            "bin": "40055500",
+            "last4": "0019",
+            "scheme": "VISA",
+            "expirationMonth": "10",
+            "expirationYear": "2030"
+        }
+    },
+    "processorResponseDetails": {
+        "approvalStatus": "WAITING",
+        "approvalCode": "OK5882",
+        "processor": "CARDINAL",
+        "responseCode": "364",
+        "responseMessage": "3-D Secure: Challenged",
+        "hostResponseCode": "01",
+        "hostResponseMessage": "Challenged",
+        "localTimestamp": "2021-06-20T23:42:48Z"
+    },
+    "transactionDetails": {
+        "merchantInvoiceNumber": "123456789012",
+        "merchantTransactionId": "65757575675765",
+        "merchantOrderId": "9458498544433"
+    },
+    "additionalData3DS": {
+        "serviceProvider": "CARDINAL",
+        "serviceProviderTransactionId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
+        "acsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a331b1",
+        "dsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a33132",
+        "acsReferenceNumber": "8561c0ef-931a-474f-bfee-55eb98a3jds7",
+        "authenticationStatus": "C",
+        "statusReason": "Challenged",
+        "serverTransactionId": "8561c0ef-931a-474f-bfee-55ebds7s6s",
+        "challengeIndicator": true,
+        "mpiData": {
+            "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
+            "eci": "05"
+        },
+        "versionData": {
+            "recommendedVersion": "2.2.0"
+        }
+    }
 }
 ```
 
