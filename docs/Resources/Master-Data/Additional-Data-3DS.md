@@ -1,109 +1,83 @@
-
+---
+tags: [3-D Secure, API Reference, Master Data]
+---
 
 # 3-D Secure Data
 
-Additional data 3DS is used to submit 3DS data elements recieved by the 3DS provider.
+Additional data 3DS contains fields used when submiting a 3D-Secure transaction and recieved by the 3DS provider.
 
 <!--
 type: tab
-titles: additionalDataCommon, JSON Example
+titles: additionalData3DS, JSON Example
 -->
 
 
-The below table identifies the parameters in the `additionalDataCommon` object.
+The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
-| `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
-| `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
-| `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
-| `deferredPayments` | *object* | N/A | Used in defferred bill payments |
-| `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md) transactions. |
-| `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
-| `privateLabel` | *object* | N/A | Additional attributes used to process [private label payment cards (PLCC)](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md). |
-| `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
-
+| `serviceProvider` | *object* | 32 | The 3DS service provider responsible for managing the 3DS transaction. ***Valid Values:** CARDINAL* |
+| `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an [initialization](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Initialization.md). |
+| `serviceProviderTransactionId` | *string* | 60 | Unique transaction identifier assigned by the 3DS Server to identify a single transaction. |
+| `acsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Access Control Server (ACS) to identify a single transaction. |
+| `acsReferenceNumber` | *string* | 60 | Unique reference number assigned by the Access Control Server (ACS) to identify a single transaction. |
+| `dsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction | 
+| `challengeStatus` | *string* | 2 | The transaction status as returned by the 3D Secure authentication process. (CRes). |
+| `challengeIndicator` | *boolean* | N/A | Indicator that forces a customer to complete a transaction using 3-D Secure (3DS) if available. |
+| `authenticationStatus` | *string* | 2 | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
+| `statusReason` | *string* | 16 | Details about a given transaction status. |
+| `authenticationAttemptResult` | *string* | 1024 | Result of authentication attempt from Payer Authentication Response (PaRes). 3DS 1.x |
+| `serverTransactionId` | *string* | 16 | DUnique transaction identifier assigned by the 3DS Server to identify a single transaction. |
+| `challengeToken` | *string* | 1024 | Secure token for challenge request (CReq). |
+| `acsUrl` | *string* | 256 | The URL to redirect the Consumer to complete the Consumer Authentication transaction. |
+| `stepUpUrl` | *string* | 256 | The URL that the client uses to post the cardholder in order to complete the Consumer Authentication transaction. |
+| `channel` | *string* | 32 | Determines the channel that the transaction came through. ***Valid Values:** BROWSER, SDK, 3DS_REQUESTOR_INITIATED* |
+| `messageCategory` | *string* | 2 | Indicates the message category of 3-D Secure authentication version 2.X. *01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only* |
+| `methodData` | *object* | N/A | Additional device data collection details passed during 3DS flows. |
+| `mpiData` | *object* | N/A | Merchant plug-in (MPI) data from 3-D Secure (3DS) authentication. |
 
 ---
-
 
 <!--
 type: tab
 -->
 
 
-JSON string format for `additionalDataCommon`:
+JSON string format for `additionalData3DS`:
 
 ```json
 {
-   "additionalDataCommon":{
-      "additionalData":{
-         "baiFlag": "PERSON_TO_PERSON",
-         "ecomURL":"https://www.somedomain.com",
-         "requestedTestResponseCode":"NO_CONNECTION_AVAILABLE",
-         "emvParameterDownloadIndicator":true
-      },
-      "amountComponents":{
-         "subTotal": 12.00,
-         "convenienceFee": 1.00,
-         "ITBISTaxAmount": 0.50,
-         "localTax": 1.00,
-         "shippingAmount": 5.00,
-         "surcharge": 1.20,
-         "vatAmount": 1.00 
-      },
-      "directedRouting":{
-         "network": "VISA",
-         "cardFunction": "CREDIT",
-         "processor": "fiserv"
-      },
-      "subMerchant":{ // Future Release
-         "id": "9999", // Future Release
-         "name": "Some Business", // Future Release
-         "street": "123 Main Street", // Future Release
-         "city": "Atlanta", // Future Release
-         "state": "GA", // Future Release
-         "postalCode": "30303-001", // Future Release
-         "country": "US", // Future Release
-         "taxId": "123456789" // Future Release
-      },
-      "billPaymentType": "RECURRING",
-      "installments":{
-         "installmentAmount": 20.00, // Future Release
-         "lastInstallmentAmount": 20.00, // Future Release
-         "interestRate": 10, // Future Release
-         "paymentFirstDay": 10.00, // Future Release
-         "invoiceId": "534242", // Future Release
-         "invoiceDate": "05-01-2020", // Future Release
-         "deliveryDate": "05-01-2020", // Future Release
-         "dueDate": "05-01-2030", // Future Release
-         "installmentCount": 12 
-      },
-      "deferredPayments":{ // Future Release
-         "numberOfPayments": "5", // Future Release
-         "paymentPlan": "PAY_LATER", // Future Release
-         "timePeriod": "12" // Future Release
-      },
-      "recurringPayments":{
-        "frequency": "MONTHLY",
-        "expiry": "05-05-2025"
-      },
-      "privateLabel":{ // Future Release
-         "paymentSource": "SHELL",
-         "paymentType": "REFUND",
-         "specialFinanceIndicator": "24/0",
-         "creditPlanNumber": "00100",
-         "minimumSpendExemptIndicator": "EXEMPT"
-      },
-      "customFields":{ 
-         "keyValuePair":{ 
-            "key": "customFieldExample", 
-            "value": "custom value example" 
-         }
-      }
-   }
+  "additionalDataCommon": {
+    "serviceProvider": "CARDINAL",
+    "serviceProviderReferenceId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
+    "serviceProviderTransactionId": "475a086f-ad30-4313-b90d-d6dc1929c98",
+    "acsTransactionId": "13a086f-ad30-6543-b90d-d6dc1929c98",
+    "acsReferenceNumber": "123jd-009ddk-876",
+    "dsTransactionId": "3543-b90d-d6dc1765c98",
+    "challengeStatus": "A",
+    "challengeIndicator": "true",
+    "authenticationStatus": "A",
+    "statusReason": "Approved",
+    "authenticationAttemptResult": "uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4",
+    "serverTransactionId": "8561c0ef-931a-474f-bfee-55eb98a331b1",
+    "challengeToken": "uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4",
+    "acsUrl": "https://www.example.com/3ds/redirect",
+    "stepUpUrl": "https://www.example.com/3ds/stepUp",
+    "channel": "BROWSER",
+    "messageCategory": "1",
+    "methodData": {
+      "dataCollectionUrl": "https://www.example.com/3ds/device/collect",
+      "encodedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "encodedData": "eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6IjNhYzdjYWE3LWFhNDItMjY2My03OTFiLTJhYzA1YTU0MmM0YSJ9",
+      "notificationUrl": "https://www.example.com/webhooks/v1/callback"
+    },
+    "mpiData": {
+      "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
+      "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
+      "eci": "05",
+      "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
+    }
+  }
 }
 ```
 
@@ -111,40 +85,22 @@ JSON string format for `additionalDataCommon`:
 
 ---
 
-#### Bill Payment Indicator
+## Method Data
 
-<!-- theme: warning -->
-> Bill Payment Indicator is required for Charges, Cancel and Capture transactions where a bill payment is being processed.
+Additional device data collection details passed during 3DS flows.
 
-The below table identifies the valid values of the `billPaymentIndicator`.
-
-| Value | Description |
-| ----- | ----- |
-| *SINGLE* | Single charge not for recurring services or installment plan. |
-| *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
-| *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
-| *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
-
----
-
-## Additional Data
-
-Additional Data identifies various elments based on the specific transaction type.
 <!--
 type: tab
-titles: additionalData, JSON Example
+titles: methodData, JSON Example
 -->
 
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
-
-<!---
-| `requestedTestResponseCode` | *string* | 28 | Value used to test/replicate a [transaction error](?path=docs/Resources/Guides/Response-Codes/Error-Code.md).|
-| `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
-| `emvParameterDownloadIndicator` | *boolean* |  N/A  | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
--->
+| `dataCollectionUrl` | *string* | 256 | The URL that will be used by the 3DS Method to collect card holder browser information. |
+| `encodedToken` | *string* | 4000 | Base64 encoded transactional JWT token for external data collection with service provider. |
+| `encodedData` | *string* | 4000 | Base64 encoded data for external data collection with service provider. |
+| `notificationUrl` | *string* | 256 | The notification URL to which the 3-D Secure (3DS) provider will send the result of the device data collection. |
 
 ---
 
@@ -153,16 +109,15 @@ type: tab
 -->
 
 
-JSON string format for `additionalData`:
+JSON string format for `methodData`:
 
 ```json
 {
-   "additionalData":{
-      "baiFlag": "PERSON_TO_PERSON", // Future Release
-      "billPayment": false, // Future Release
-      "ecomURL": "https://www.somedomain.com",
-      "requestedTestResponseCode": "705", // Future Release
-      "emvParameterDownloadIndicator": true // Future Release
+   "methodData":{
+      "dataCollectionUrl": "https://www.example.com/3ds/device/collect",
+      "encodedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "encodedData": "eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6IjNhYzdjYWE3LWFhNDItMjY2My03OTFiLTJhYzA1YTU0MmM0YSJ9",
+      "notificationUrl": "[ll](https://www.example.com/webhooks/v1/callback)"
    }
 }
 ```
@@ -171,24 +126,44 @@ JSON string format for `additionalData`:
 
 ---
 
-<!---
-#### Business Application Identifier
-The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
+## MPI Data
 
-| Value | Description |
-| ----- | ----- |
-| *PERSON_TO_PERSON* | Person to person initiated. |
-| *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
-| *BUSINESS_TO_BUSINESS* | Business to business initiated. |
-| *DIGITAL_WALLET* | Digital Wallet transfer. |
-| *ACCOUNT_TO_ACCOUNT* | Account to account transfer. |
-| *TOP_OFF* | Account top off or reload. |
-| *ACCOUNT_VERIFICATION* | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
-| *FUNDS_TRANSFER* | Funds Transfer. |
-| *DISBURSEMENT* | Funds disbursement or payout. |
-| *GAMBLING_PAYOUT* | Gambling payout non-online. |
-| *GAMBLING_PAYOUT_ONLINE* | Online gambling payout. |
+Merchant plug-in (MPI) data from 3-D Secure (3DS) authentication.
+
+<!--
+type: tab
+titles: mpiData, JSON Example
 -->
+
+
+| Variable | Type | Maximum Length | Description/Values |
+| ----- | ----- | ----- | ----- |
+| `cavv` | *string* | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
+| `xid` | *string* | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce. |
+| `eci` | *string* | 256 | Payment system-specific value provided by the Access Control Server (ACS) or Directory Server (DS) to indicate the results of the attempt to authenticate the cardholder. |
+| `tavv` | *string* | 512 | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction. |
+
+---
+
+<!--
+type: tab
+-->
+
+
+JSON string format for `mpiData`:
+
+```json
+{
+   "mpiData":{
+      "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
+      "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
+      "eci": "05",
+      "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
+   }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
@@ -201,5 +176,3 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [3-D Secure Request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md)
 
 --- 
-
-
