@@ -5,7 +5,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 # 3-D Secure Request
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to support the Private Label and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to support 3-D Secure (3DS) and the documents related to the features will be released soon.
 
 Commerce Hub allows a merchant to pass the 3-D Secure authentication results that were obtained through a Commerce Hub or a thrid-party 3-D Secure (3DS) provider when sending the authorization transaction. *PaymentCard* or *PaymentToken* is used by the merchant as the payment source when sending the transaction to the Commerce Hub, along with the 3DS response data.
 
