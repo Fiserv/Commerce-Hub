@@ -63,7 +63,105 @@ titles: Request, Success Response, Challenge Response
 
 ```json
 {
-
+    "amount": {
+        "total": "12.04",
+        "currency": "USD"
+    },
+    "source": {
+        "sourceType": "PaymentSession",
+        "sessionId": "df8c33d2-af27-4a3a-b7a0-61d4edf09cad"
+    },
+    "billingAddress": {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "address": {
+            "street": "Main Street",
+            "houseNumberOrName": "123",
+            "city": "Sandy Springs",
+            "recipientNameOrAddress": "ATTN: Accounting Dept",
+            "stateOrProvince": "GA",
+            "postalCode": "30303",
+            "country": "US"
+        },
+        "phone": {
+            "countryCode": "1",
+            "phoneNumber": "123-123-1234"
+        }
+    },
+    "storedCredentials": {
+        "initiator": "CARD_HOLDER",
+        "sequence": "SUBSEQUENT"
+    },
+    "additionalData3DS": {
+        "serviceProvider": "CARDINAL",
+        "channel": "BROWSER"
+    },
+    "customer": {
+        "email": "customer@somedomain.com",
+        "phone": [
+            {
+                "countryCode": "1",
+                "phoneNumber": "123-123-1234",
+                "type": "MOBILE"
+            },
+            {
+                "countryCode": "1",
+                "phoneNumber": "498-123-1234",
+                "type": "WORK"
+            }
+        ]
+    },
+    "transactionDetails": {
+        "merchantInvoiceNumber": "123456789012",
+        "merchantTransactionId": "65757575675765",
+        "merchantOrderId": "9458498544433",
+        "deviceFingerprint": [
+            {
+                "dataStatic": {
+                    "javaScriptEnabled": true,
+                    "javaEnabled": true,
+                    "accepts": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "locale": "en-US",
+                    "colorDepth": 32,
+                    "screenHeight": 1024,
+                    "screenWidth": 789,
+                    "timezoneOffset": -60,
+                    "userAgent": "Mozilla/5.0"
+                },
+                "dataDynamic": {
+                    "ipAddress": "172.27.37.221"
+                }
+            }
+        ]
+    },
+    "transactionInteraction": {
+        "dataEntrySource": "BROWSER_PC"
+    },
+    "shippingAddress": {
+        "shippingMethod": "SHIP_TO_CARDHOLDER",
+        "shippingTimeframe": "SAME_DAY",
+        "shipToEmail": "customer@domain.com",
+        "address": {
+            "street": "Main Street",
+            "houseNumberOrName": "123",
+            "city": "Sandy Springs",
+            "recipientNameOrAddress": "ATTN: Accounting Dept",
+            "stateOrProvince": "GA",
+            "postalCode": "30303",
+            "country": "US"
+        }
+    },
+    "orderData": {
+        "goodsSoldCode": "PHYSICAL_GOODS",
+        "reOrder": false,
+        "preOrder": true,
+        "preOrderDate": "2020-11-20",
+        "giftcardCount": 2,
+        "giftCardAmount": {
+            "total": 12.04,
+            "currency": "USD"
+        }
+    }
 }
 ```
 
@@ -80,7 +178,62 @@ type: tab
 ```json
 
 {
-
+    "gatewayResponse": {
+        "transactionType": "AUTHENTICATE",
+        "transactionState": "AUTHENTICATED",
+        "transactionProcessingDetails": {
+            "transactionTimestamp": "2021-06-20T23:42:48Z",
+            "orderId": "RKOrdID-525133851837",
+            "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+            "clientRequestId": "4345791",
+            "transactionId": "84356531338"
+        }
+    },
+    "source": {
+        "sourceType": "PaymentSession",
+        "card": {
+            "bin": "40055500",
+            "last4": "0019",
+            "scheme": "VISA",
+            "expirationMonth": "10",
+            "expirationYear": "2030"
+        }
+    },
+    "processorResponseDetails": {
+        "approvalStatus": "APPROVED",
+        "approvalCode": "OK5882",
+        "processor": "CARDINAL",
+        "responseCode": "000000",
+        "responseMessage": "APPROVAL",
+        "hostResponseCode": "00",
+        "hostResponseMessage": "APPROVAL",
+        "localTimestamp": "2021-06-20T23:42:48Z"
+    },
+    "transactionDetails": {
+        "merchantInvoiceNumber": "123456789012",
+        "merchantTransactionId": "65757575675765",
+        "merchantOrderId": "9458498544433"
+    },
+    "additionalData3DS": {
+        "serviceProvider": "CARDINAL",
+        "serviceProviderTransactionId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
+        "acsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a331b1",
+        "dsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a33132",
+        "acsReferenceNumber": "8561c0ef-931a-474f-bfee-55eb98a3jds7",
+        "authenticationStatus": "A",
+        "statusReason": "Approved",
+        "serverTransactionId": "8561c0ef-931a-474f-bfee-55ebds7s6s",
+        "challengeIndicator": false,
+        "mpiData": {
+            "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
+            "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
+            "eci": "05",
+            "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
+        },
+        "versionData": {
+            "recommendedVersion": "2.2.0"
+        }
+    }
 }
 ```
 
