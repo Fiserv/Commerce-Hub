@@ -135,5 +135,6 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/credentials)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---
