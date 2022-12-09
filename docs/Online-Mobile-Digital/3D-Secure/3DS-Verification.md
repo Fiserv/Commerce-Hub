@@ -4,18 +4,24 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Getting Started]
 
 # 3-D Secure Verification
 
-Once a customer completes a challenge form, a verification request must be submitted to verify the result of the challenge form.
+
+Secure Data Capture utilizes a sessionId that Commerce Hub enriches with the applicable data from the challenge.
 
 <!--
 type: tab
-titles: Request Variables
+titles: ReferenceTransactionDetails
 -->
 
-The below table identifies the parameters in the request.
+The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request. 
+
+| Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `?` | *string* | N/A | ? |
+|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
 
 <!-- type: tab-end -->
 
@@ -39,7 +45,13 @@ titles: Request, Response
 
 ```json
 {
-
+    "referenceTransactionDetails": {
+        "referenceTransactionId": "123456789012e98re9fsf8aa8sa88a998"
+    },
+    "merchantDetails": {
+        "terminalId": "123456",
+        "merchantId": "123456789012345"
+    }
 }
 ```
 
@@ -58,7 +70,62 @@ type: tab
 
 ```json
 {
-
+    "gatewayResponse": {
+        "transactionType": "AUTHENTICATE",
+        "transactionState": "AUTHENTICATED",
+        "transactionProcessingDetails": {
+            "transactionTimestamp": "2021-06-20T23:42:48Z",
+            "orderId": "RKOrdID-525133851837",
+            "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+            "clientRequestId": "4345791",
+            "transactionId": "84356531338"
+        }
+    },
+    "source": {
+        "sourceType": "PaymentCard",
+        "card": {
+            "bin": "40055500",
+            "last4": "0019",
+            "scheme": "VISA",
+            "expirationMonth": "10",
+            "expirationYear": "2030"
+        }
+    },
+    "processorResponseDetails": {
+        "approvalStatus": "APPROVED",
+        "approvalCode": "OK5882",
+        "processor": "CARDINAL",
+        "responseCode": "000000",
+        "responseMessage": "APPROVAL",
+        "hostResponseCode": "00",
+        "hostResponseMessage": "APPROVAL",
+        "localTimestamp": "2021-06-20T23:42:48Z"
+    },
+    "transactionDetails": {
+        "merchantInvoiceNumber": "123456789012",
+        "merchantTransactionId": "65757575675765",
+        "merchantOrderId": "9458498544433"
+    },
+    "additionalData3DS": {
+        "serviceProvider": "CARDINAL",
+        "serviceProviderTransactionId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
+        "acsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a331b1",
+        "dsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a33132",
+        "acsReferenceNumber": "8561c0ef-931a-474f-bfee-55eb98a3jds7",
+        "authenticationStatus": "A",
+        "statusReason": "Approved",
+        "serverTransactionId": "8561c0ef-931a-474f-bfee-55ebds7s6s",
+        "challengeIndicator": false,
+        "mpiData": {
+            "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
+            "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
+            "eci": "05",
+            "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
+        },
+        "versionData": {
+            "recommendedVersion": "2.2.0"
+        }
+    }
 }
 ```
 
