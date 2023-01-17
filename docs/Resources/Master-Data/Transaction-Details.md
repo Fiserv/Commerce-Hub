@@ -26,7 +26,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
 | `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
 | `splitShipment` | *object* | N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
-| `reversalReasonCode` | *string* | 22 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void).|
+| `reversalReasonCode` | *string* | 22 | [Reason](?path=docs/Resources/Master-Data/Transaction-Details.md#reversal-reason-code) the merchant/customer requests for cancel (void).|
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](?path=docs/Resources/Guides/Authorizations/Re-Auth.md#authorization-sequence) requested.|
 | `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
@@ -134,22 +134,6 @@ The below table identifies the valid values of `primaryTransactionType`.
 | *CHARGE_SALE* | Sale |
 | *CANCEL* | Cancel/Void |
 | *REFUND* | Refund |
-
-#### Reversal Reason Code
-
-The below table identifies the valid values of `reversalReasonCode` the reason merchant/customer requests for cancel (void).
-
-| Value | Description |
-| ----- | ----- |
-| *VOID* | Cancel/Void |
-| *TIMEOUT* | Transaction timeout |
-| *EDIT_ERROR* | 
-| *MAC_VERIFICATION_ERROR* | Mac Verification error |
-| *MAC_SYNCH_ERROR* | Mac sync error |
-| *ENCRYPTION_ERROR* | Encryption error |
-| *SYSTEM_ERROR* | System error |
-| *SUSPECTED_FRAUD* | Suspect fraud |
-| *CARD_OVERRIDE* | Chip card override |
 
 ---
 
