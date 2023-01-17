@@ -20,7 +20,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 ### Sandbox
 
-<!--theme: success -->
+<!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
 - Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
@@ -31,7 +31,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 ### End to End
 
-<!--theme: success -->
+<!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
 - Uses End to End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
@@ -41,7 +41,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 ### Production
 
-<!--theme: success -->
+<!--theme: info -->
 > https://prod.api.fiservapps.com/ch/{resource}
 
 - Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
