@@ -15,7 +15,7 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
-<!-- theme: info -->
+<!-- theme: warning -->
 > Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
 
 ### Sandbox
