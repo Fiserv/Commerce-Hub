@@ -15,12 +15,12 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
-<!-- theme: info -->
+<!-- theme: warning -->
 > Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
 
 ### Sandbox
 
-<!--theme: success -->
+<!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
 - Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
@@ -31,7 +31,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 ### End to End
 
-<!--theme: success -->
+<!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
 - Uses End to End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
@@ -41,7 +41,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 ### Production
 
-<!--theme: success -->
+<!--theme: info -->
 > https://prod.api.fiservapps.com/ch/{resource}
 
 - Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
