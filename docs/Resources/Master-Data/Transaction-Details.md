@@ -137,22 +137,6 @@ The below table identifies the valid values of `primaryTransactionType`.
 | *CANCEL* | Cancel/Void |
 | *REFUND* | Refund |
 
-#### Reversal Reason Code
-
-The below table identifies the valid values of `reversalReasonCode` the reason merchant/customer requests for cancel (void).
-
-| Value | Description |
-| ----- | ----- |
-| *VOID* | Cancel/Void |
-| *TIMEOUT* | Transaction timeout |
-| *EDIT_ERROR* | 
-| *MAC_VERIFICATION_ERROR* | Mac Verification error |
-| *MAC_SYNCH_ERROR* | Mac sync error |
-| *ENCRYPTION_ERROR* | Encryption error |
-| *SYSTEM_ERROR* | System error |
-| *SUSPECTED_FRAUD* | Suspect fraud |
-| *CARD_OVERRIDE* | Chip card override |
-
 ---
 
 ## See Also
