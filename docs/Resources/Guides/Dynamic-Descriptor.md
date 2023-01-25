@@ -32,7 +32,7 @@ type: tab
 titles: dynamicDescriptor, JSON Example
 -->
 
-Card issuer may limit how many characters will show up in each field, it is recommended to keep the `merchantName` field to fewer than 22 characters and the `city` field to fewer than 11 characters to appear properly on the cardholder’s statement.
+Card issuer may limit how many characters will show up in each field, it is recommended to keep the `merchantName` field to fewer than 22 characters and the `city` field in the `address` object to fewer than 11 characters to appear properly on the cardholder’s statement.
 
 - **MOTO:** utilize the `city` field for the phone number
 - **E-commerce:** utlize the `city` field for a URL, email address or phone number
@@ -45,7 +45,7 @@ The below table identifies the required parameters in the `dynamicDescriptor` ob
 | `merchantName` | *string* | 1024 | Daynamic Merchant Name or DBA |
 | `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
 | `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
-| `address` | *component* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
+| `address` | *object* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
 <!--
 type: tab
