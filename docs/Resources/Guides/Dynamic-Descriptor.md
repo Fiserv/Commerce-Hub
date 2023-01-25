@@ -48,7 +48,7 @@ The below table identifies the required parameters in the `dynamicDescriptor` ob
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
-| `merchantName` | *string* | 1024 | Daynamic Merchant Name or DBA |
+| `merchantName` | *string* | 1024 | Merchant Name or Doing Business As (DBA) |
 | `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
 | `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
 | `address` | *object* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
