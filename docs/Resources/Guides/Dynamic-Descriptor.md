@@ -25,7 +25,7 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 <!-- theme: danger -->
 >Any information entered in the dynamic descriptor fields will overwrite the master descriptor information on the merchant account, it is very important to use the fields correctly.
 
-A soft descriptor should be sent during the initial authorization and again during the Capture. The descriptor sent during the authorization appears on the online statement. The descriptor sent at capture is the final descriptor which appears for the settled transactions. 
+A soft descriptor should be sent during the initial [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) and again during the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md). The descriptor sent during the authorization appears on the online statement. The descriptor sent at capture is the final descriptor which appears for the settled transactions. 
 
 <!--
 type: tab
