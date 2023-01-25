@@ -37,6 +37,12 @@ Card issuer may limit how many characters will show up in each field, it is reco
 - **MOTO:** utilize the `city` field for the phone number
 - **E-commerce:** utlize the `city` field for a URL, email address or phone number
 
+<!---
+For Visa and MasterCard non Payment Facilitators the DBA Name may be optionally be followed by an asterisk, and then additional information following the asterisk, such as product description, order number, reference number or other information that will further assist with cardholder recognition. In this case, the asterisk may only appear in position 5, 9 or 14.
+For Discover, Visa, and MasterCard Single Merchant ID Payment Facilitators, the format is as follows: The first 3 characters of this field are the abbreviated Payment Facilitator name followed by an asterisk (*) followed by the sub merchant name, e.g. “XYZ*A SMALL CO”
+For Amex Single Merchant ID Payment Facilitators the format is as follows: This field must only contain the sub merchant name, e.g. “A SMALL CO”
+-->
+
 The below table identifies the required parameters in the `dynamicDescriptor` object.
 
 | Variable | Type | Maximum Length | Description |
