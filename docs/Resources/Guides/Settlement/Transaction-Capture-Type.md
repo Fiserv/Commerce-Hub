@@ -20,7 +20,7 @@ Capture type determines how the transaction is submitted to the settlement syste
 | ---- | -------- |
 | HCS | [Host capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture), Commerce Hub will settle the transaction. |
 | TCS | [Terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture), the merchant's terminal will settle the transaction. |
-| DIRECT | [Direct settelment](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), the merchant will settle directly to the backend processor. |
+| DIRECT | [Direct settlement](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), the merchant will settle directly to the backend processor. |
 
 ---
 
