@@ -13,7 +13,12 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallet
 
 |Payeezy Gateway Direct|Commerce Hub|
 |-------|-----|
-|`transaction_type` <br> `amount` <br> `cc_number` <br> `cardholder_name` <br> `wallet_provider_id` <br> `c_expiry`<br><br><br> | Endpoint:  /payments/v1/charges <br>   `amount` object containing `total` and `currency` <br> `sourceType` Value DecryptedWallet is used for Decrypted Wallet requests. Refer to Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. <br> `card` object containing `cardData`  `expirationMonth`  and  `expirationYear`   <br>  `cavv` Cardholder Authentication Verification Value provided by the Wallet Provider <br> `xid` The unique identifier for the transaction provided by the Wallet Provider <br> `walletType` Identifies the wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY |
+|`transaction_type` | Endpoint:  /payments/v1/charges <br> `sourceType`= DecryptedWallet <br> Refer to Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details.|
+|`wallet_provider_id`|`walletType` Identifies the wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY|
+|`amount`|  `amount` object containing `total` and `currency`|
+|`cc_number` <br> `cardholder_name`<br> `c_expiry`|`card` object containing `cardData`  `expirationMonth`  and  `expirationYear`|
+|| `cavv` Cardholder Authentication Verification Value provided by the Wallet Provider|
+||`xid` The unique identifier for the transaction provided by the Wallet Provider  |
 
 
 ### Sample JSON Request Payload
