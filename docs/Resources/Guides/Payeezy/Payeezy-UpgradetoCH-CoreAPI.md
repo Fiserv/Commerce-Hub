@@ -35,7 +35,7 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 |13 = Open Void   | 2023 Targeted Release  | 
 |32 = Tagged Pre-Authorization Completion   | /payments/v1/charges <br> `captureFlag` = "true" <br> `referenceTransactionDetails` object in request | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)| 
 |33 = Tagged Void   | /payments/v1/cancel <br> `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)| 
-|33 = Tagged Refund   | /payments/v1/refund <br> `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
+|34 = Tagged Refund   | /payments/v1/refund <br> `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
 *Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 

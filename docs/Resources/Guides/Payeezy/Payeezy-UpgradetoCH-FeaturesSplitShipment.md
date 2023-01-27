@@ -27,6 +27,11 @@ A split shipment is the ability to capture an authorization for the full order a
 |**Developer API** | `transaction_type` = <br> Authorize <br> Split | `Split_Shipment` = xx/yy <br> where: xx = number of the shipment <br> and yy = total shipments| If yy is not known, then yy = 99.<br>  <br> If 01/01 value sent, Compass would reject the transaction. 
 |**Commerce Hub** | Authorize:[/payments/v1/charges with captureFlag = "false” ](?path=docs/Resources/API-Documents/Payments/Charges.md) <br> Partial Capture: [/payments/v1/charges/{transactionId}/capture](?path=docs/Resources/API-Documents/Payments/Capture.md)   |   splitShipment { `totalCount`:5, `finalShipment`:true} within 'transactionDetails' object| `totalCount` can be set in pre-authorization transaction or first capture. <br> <br>    `totalCount` valid values are '02-99'. <br><br>  `totalCount` can be updated in subsequent captures, but count must include all captures sent in the series, regardless of voids or refunds of captures.  This means that the count cannot reduce below the number of transactions that have already been completed.|
 
+---
+
+### Re-Authorization Handling
+
+In Payeezy Gateway, re-authorizations for an expired initial authorization on a split shipment transaction is automatically processed for the merchant at time of settlement.  This functionality is available in Commerce Hub, but must be enabled in the merchant configuration in Client Line Enterprise (CLX).    
 
 ## See Also
 
