@@ -27,7 +27,7 @@ The below table identifies the required parameters in the `splitShipment` object
 
 | Variable |  Type| Maximum Length | Required | Description |
 | ------- | ---- | ----- | -------- | --------- |
-| `totalCount` | *integer* | 99 | &#10004; | Required in the capture transaction indicating how many shipments the transaction will be divided into. This count can be exceeded as long as the `finalShipment` *true* indicator has not be submitted. The total count can be sent in pre-authorization or the first capture. |
+| `totalCount` | *integer* | 99 | &#10004; | Required in each transaction indicating how many shipments the order will be divided into. The original count can be exceeded as long as the `finalShipment` *true* indicator has not be submitted. The total count can be sent in the initial pre-authorization or the first capture. |
 | `finalShipment` | *boolean* | N/A | &#10004; | Used to identify the final capture (*TRUE* or *FALSE*). |
 
 <!--

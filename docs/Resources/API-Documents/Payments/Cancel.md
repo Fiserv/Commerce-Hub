@@ -19,6 +19,9 @@ A cancels request is initiated by sending the `referenceTransactionDetails` in t
 
 ### Request Variables
 
+<!-- theme: warning -->
+> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) voids require the payment source including `encryptionData` and `pinBlock`.
+
 <!--
 type: tab
 titles: referenceTransactionDetails, transactionDetails, merchantDetails
