@@ -14,7 +14,7 @@ The merchant can initiate a subsequent transactions on behalf of customers (e.g.
 
 The following variables are used in the initial `PaymentToken` request and subsequent transactions.
 
-<!-- theme: danger -->
+<!-- theme: warning -->
 > The `bankNetDate` for Mastercard or `networkOriginalAmount` for Discover should be passed for the respective [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 <!--
