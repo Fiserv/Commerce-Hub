@@ -78,9 +78,6 @@ type: tab
 
 The below table identifies additional arrays that may be returned in the inquiry response.
 
-<!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
-
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
 | `linkedTransactions` | *array* | N/A | List of transactions linked to the inquiry, most common when requesting information about a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request. |
