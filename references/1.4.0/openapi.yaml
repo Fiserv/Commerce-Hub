@@ -993,49 +993,7 @@ components:
         referenceTransactionDetails:
           $ref: '#/components/schemas/ReferenceTransactionDetails'
         merchantDetails:
-          $ref: '#/components/schemas/TransactionInquiryMerchantDetails'
-    TransactionInquiryMerchantDetails:
-      x-model-version: 1.0
-      properties:
-        merchantId:
-          maxLength: 1024
-          type: string
-          description: 'A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction.'
-          example: '222222222222'
-        terminalId:
-          maxLength: 1024
-          type: string
-          description: 'Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway.'
-          example: '1413257'
-
-    InquiryRequestDetails:   
-      x-model-version: 1.0
-      properties:      
-        clientRequestId:
-          maxLength: 64
-          type: string
-          description: A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format.
-          example: '2b52a1c95ca446f5abf0e51f37a1d7c5'
-        primaryTransactionId:
-          maxLength: 40
-          type: string
-          description: 'Unique identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
-          example: '838916029301'
-        primaryOrderId:
-          maxLength: 40
-          type: string
-          description: 'Unique order identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
-          example: '1343678765'
-        merchantTransactionId:
-          maxLength: 32
-          type: string
-          description: 'Merchant transaction ID (aka transaction reference ID).'
-          example: '1343678765'
-        merchantOrderId:
-          maxLength: 32
-          type: string
-          description: 'Merchant order ID (aka customer reference number or purchase order number).'
-          example: '845366457890'
+          $ref: '#/components/schemas/MerchantDetails'
 
     TransactionInquiryResponse:
       x-model-version: 1.0
@@ -1076,6 +1034,15 @@ components:
           $ref: '#/components/schemas/StoredCredentials'
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
+        linkedTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedTransactionDetails'
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+
     AccountInformationRequest:
       x-model-version: 1.0
       properties:
@@ -3558,6 +3525,36 @@ components:
             * NOT_SUPPORTED - (Default) No / Not Supported
             * SUPPORTED - Yes / Supported
           example: 'SUPPORTED'
+    
+    LinkedTransactionDetails:
+      x-model-version: 1.0
+      description: 'Represents a gateway orchestrated child / linked transactions as part of the primary transaction process.'
+      properties:
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        source:
+          $ref: '#/components/schemas/Source'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        transactionBatch:
+          $ref: '#/components/schemas/TransactionBatch'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+
     ResponsePaymentToken:
       x-model-version: 1.0
       properties:
