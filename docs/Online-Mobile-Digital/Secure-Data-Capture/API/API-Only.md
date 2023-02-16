@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 # Secure Data Capture - API Only
 
-Commerce Hub allows E-commerce merchants to manage the design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment nonce `sessionId` _(one-time use token)_. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub allows E-commerce merchants to manage the design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 ### Benefits
 
@@ -19,13 +19,13 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 
 ---
 
-## Step 1: Security Credentials 
+## Step 1: Acquire Credentials 
 
-A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, 'keyId', and `publicKey`. These will be used to create the [encryption data](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, `keyId`, and `publicKey`. These will be used to create the [encryption data](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
 
 ---
 
-## Step 2: Encryption
+## Step 2: Encrypt Card Data
 
 The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
 
