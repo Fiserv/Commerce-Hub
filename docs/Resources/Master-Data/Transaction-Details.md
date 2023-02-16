@@ -33,7 +33,6 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
-| `authentication3DS` | *boolean* | N/A | Determines if 3-D Secure authentication should be performed.
 | `partialApproval` | *string* | 32 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
@@ -70,7 +69,6 @@ JSON string format for `transactionDetails`:
       "partiallyApprovedTransactionAmount": 10.55,
       "splitTenderId": "12423434",  
       "authorizationTypeIndicator": "REAUTH",
-      "accountVerification": false,
       "duplicateTransactionCheckingIndicator": true,
       "primaryTransactionType": "CHARGE_SALE",
       "vaultFundingSource": true,  /// Future Release
