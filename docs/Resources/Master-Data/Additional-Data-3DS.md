@@ -4,7 +4,7 @@ tags: [3-D Secure, API Reference, Master Data]
 
 # 3-D Secure Data
 
-Additional data 3DS contains fields used when submiting a 3D-Secure transaction and recieved by the 3DS provider.
+Additional data 3DS contains fields used when submiting a 3D-Secure transaction and recieved by the 3DS provider. 
 
 <!--
 type: tab
