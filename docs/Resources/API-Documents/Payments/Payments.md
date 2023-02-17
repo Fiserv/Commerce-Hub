@@ -21,7 +21,13 @@ link: ?path=docs/Getting-Started/Getting-Started-Online.md
 -->
 
 <!-- type: card
-title: Capture
+title: Captures
+description: In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
+link: ?path=docs/Getting-Started/Getting-Started-InPerson.md
+-->
+
+<!-- type: card
+title: Reauthorize
 description: In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
 link: ?path=docs/Getting-Started/Getting-Started-InPerson.md
 -->
