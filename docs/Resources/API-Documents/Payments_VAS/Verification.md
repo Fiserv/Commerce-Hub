@@ -14,9 +14,7 @@ The merchant can perform account verification transaction to confirm that the cu
 
 ---
 
-## PaymentCard Request
-
-### Minimum Requirements
+## Minimum Requirements
 
 <!--
 type: tab
@@ -47,14 +45,14 @@ The below table identifies the required parameters in the `card` object.
 
 ---
 
-### Endpoint
+## Endpoint
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/verification`
 
 ---
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab
