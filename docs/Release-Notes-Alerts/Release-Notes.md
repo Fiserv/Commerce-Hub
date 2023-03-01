@@ -16,18 +16,29 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## February 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** February 14th 2023
+- **Production:** February 24th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support of [private label credit cards](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) on Citi | Feature |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## January 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
-- **Certification:** 
-- **Production:** 
+- **Certification:** January 6th 2023
+- **Production:** January 1st 2023
 
 | Details | Type |
 | ----- | ----- |
-| Support added to Chase Salem for [partial approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)  | Update |
-| Merchant managed installment support added to [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) | Update |
-| [Transaction inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md) enhancements | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
