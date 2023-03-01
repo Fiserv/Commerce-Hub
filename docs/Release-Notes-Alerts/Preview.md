@@ -36,3 +36,9 @@ Commerce Hub will target to update our environments on the following dates; howe
 - [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md)
 
 ---
+
+## Archive
+
+- [2022](?path=docs/Release-Notes-Alerts/PRN-2022.md)
+
+---
