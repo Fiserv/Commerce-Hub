@@ -203,46 +203,69 @@ paths:
   /payments-vas/v1/accounts/verification:
     x-model-version: 1.0
     post:
-      tags: [Account  Verification Endpoint Definition]
-      x-group-name: Payments VAS
-      x-proxy-name: Verification
-      x-default-example: PaymentCard
+      tags:
+        - Account Verification Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Verification'
       summary: Verify a payment card or payment token.
-      description: Use this payload to perform an account verification for a payment
-        card or payment token. This will check the validity and respond if an account
-        is valid or not.
+      description: 'Use this payload to perform an account verification for a payment card or payment token. This will check the validity and respond if an account is valid or not.'
       requestBody:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/AccountVerificationRequest'}
+            schema:
+              $ref: '#/components/schemas/AccountVerificationRequest'
             examples:
-              PaymentCard: {summary: AccountVerificationRequest with PaymentCard,
-                $ref: '#/components/examples/PaymentCardVerifyRequest'}
-              PaymentEMV: {summary: AccountVerificationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVVerifyRequest'}
-              PaymentTrack: {summary: AccountVerificationRequest with PaymentTrack,
-                $ref: '#/components/examples/PaymentTrackVerifyRequest'}
-              ManualEntry: {summary: AccountVerificationRequest with manual entry
-                  PaymentCard, $ref: '#/components/examples/ManualEntryVerifyRequest'}
-              PaymentToken: {summary: AccountVerificationRequest with PaymentToken,
-                $ref: '#/components/examples/PaymentTokenVerifyRequest'}
+              PaymentCard:
+                summary: AccountVerificationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardVerifyRequest'
+              PaymentCard-Encrypted:
+                summary: AccountVerificationRequest with encrypted PaymentCard
+                $ref: '#/components/examples/PaymentCardEncryptedVerifyRequest'
+              PaymentSession:
+                summary: AccountVerificationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionVerifyRequest'
+              PaymentEMV:
+                summary: AccountVerificationRequest with PaymentEMV
+                $ref: '#/components/examples/PaymentEMVVerifyRequest'
+              PaymentTrack:
+                summary: AccountVerificationRequest with PaymentTrack
+                $ref: '#/components/examples/PaymentTrackVerifyRequest'
+              ManualEntry:
+                summary: AccountVerificationRequest with manual entry PaymentCard
+                $ref: '#/components/examples/ManualEntryVerifyRequest'
+              PaymentToken:
+                summary: AccountVerificationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenVerifyRequest'
       responses:
         201:
           description: Created
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/AccountVerificationResponse'}
+              schema:
+                $ref: '#/components/schemas/AccountVerificationResponse'
               examples:
-                PaymentCard: {summary: AccountVerificationResponse with PaymentCard,
-                  $ref: '#/components/examples/PaymentCardVerifyResponse'}
-                PaymentEMV: {summary: AccountVerificationResponse with PaymentEMV,
-                  $ref: '#/components/examples/PaymentEMVVerifyResponse'}
-                PaymentTrack: {summary: AccountVerificationResponse with PaymentTrack,
-                  $ref: '#/components/examples/PaymentTrackVerifyResponse'}
-                ManualEntry: {summary: AccountVerificationResponse with manual entry
-                    PaymentCard, $ref: '#/components/examples/ManualEntryVerifyResponse'}
-                PaymentToken: {summary: AccountVerificationResponse with PaymentToken,
-                  $ref: '#/components/examples/PaymentTokenVerifyResponse'}
+                PaymentCard:
+                  summary: AccountVerificationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardVerifyResponse'
+                PaymentCard-Encrypted:
+                  summary: AccountVerificationResponse with encrypted PaymentCard
+                  $ref: '#/components/examples/PaymentCardVerifyResponse'
+                PaymentSession:
+                  summary: AccountVerificationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentCardVerifyResponse'
+                PaymentEMV:
+                  summary: AccountVerificationResponse with PaymentEMV
+                  $ref: '#/components/examples/PaymentEMVVerifyResponse'
+                PaymentTrack:
+                  summary: AccountVerificationResponse with PaymentTrack
+                  $ref: '#/components/examples/PaymentTrackVerifyResponse'
+                ManualEntry:
+                  summary: AccountVerificationResponse with manual entry PaymentCard
+                  $ref: '#/components/examples/ManualEntryVerifyResponse'
+                PaymentToken:
+                  summary: AccountVerificationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenVerifyResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -4167,6 +4190,28 @@ components:
           lastName: Smith
           address: {street: Main Street, houseNumberOrName: '123', city: Sandy Springs,
             stateOrProvince: GA, postalCode: '30303', country: US}
+
+    PaymentCardEncryptedVerifyRequest:
+      value:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+        billingAddress:
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+
     PaymentCardEDSRequest:
       value:
         amount: {total: 12.04, currency: USD}
@@ -4819,23 +4864,29 @@ components:
             keyId: FFFF10970000000003FD0114
             deviceType: INGENICO
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+        
     PaymentEMVVerifyRequest:
       value:
         source:
-          sourceType: PaymentEMV
-          emvData: 9F03060000000000009F5301529F26082ED06DD1FFB3EB27820218009F360200029F34033F00019F02060000000006009F2701808407A00000015230109F10080105A000030000009F3303E098C89F1A0201249F1E084B553030303030339A032104129F350125950580008080005F2A0201245F24032312315F3401019F4104000000199F3901059C01009F370444A376B54F07A00000015230109F0607A0000001523010
+          sourceType: 'PaymentEMV'
+          emvData: '0249F3704833A12329F1002AB34'
           encryptionData:
-            encryptionType: ON_GUARD
-            encryptionTarget: TRACK_2
-            encryptionBlock: 6866928729586224=03272981102005210986
-            keyId: FFFF10970000000003FD0114
-            deviceType: INGENICO
+            encryptionType: 'RSA'
+            encryptionTarget: 'TRACK_2'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA=='
+            deviceType: 'INGENICO'
+            keyId: '88000000022'
         billingAddress:
-          firstName: Jane
-          lastName: Smith
-          address: {street: Main Street, houseNumberOrName: '123', city: Sandy Springs,
-            stateOrProvince: GA, postalCode: '30303', country: US}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+
     PaymentEMVChargesResponse:
       value:
         gatewayResponse:
@@ -5807,3 +5858,20 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+          
+    PaymentSessionVerifyRequest:
+      value:
+        source:
+          sourceType: 'PaymentSession'
+          sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
+        billingAddress:
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+
