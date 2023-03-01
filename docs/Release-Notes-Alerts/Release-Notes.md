@@ -26,6 +26,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support of [private label credit cards](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) on Citi | Feature |
+| Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
