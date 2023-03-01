@@ -22,6 +22,9 @@ titles: merchantDetails, JSON Example
 
 The below table identifies the availble parameters in the `merchantDetails` object.
 
+<!-- theme: warning -->
+> All boarded indentifiers (MID and/or TID) are required in API requests.
+
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
 | `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. |

@@ -25,6 +25,8 @@ Partner API capabilities are currently not supported.
 
 In Payeezy, the Administrative pages could be displayed in multiple languages (EN, ES) based on the terminal setting; at this time, CLX is available in English language only.
 
+In Payeezy, re-authorizations for an expired initial authorization is automatically processed for the merchant at time of settlement.  This functionality is available in Commerce Hub, but must be enabled in the merchant configuration in Client Line Enterprise (CLX). 
+
 ### Capability Comparison by Screen
  
 | RPM Screen/Function | CLX Screen/Function | Notes/Differences|

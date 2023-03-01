@@ -76,6 +76,13 @@ type: tab
 
 ##### Example of an inquiry (201: Success) response.
 
+The below table identifies additional arrays that may be returned in the inquiry response.
+
+| Variable | Type| Maximum Length | Description|
+|---------|-----------|----------------|---------|
+| `linkedTransactions` | *array* | N/A | List of transactions linked to the inquiry, most common when requesting information about a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request. |
+| `error` | *array* | N/A | If the referenced transaction was unsuccessful, the list of [errors](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) will be returned. |
+
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 

@@ -25,27 +25,33 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 <!-- theme: danger -->
 >Any information entered in the dynamic descriptor fields will overwrite the master descriptor information on the merchant account, it is very important to use the fields correctly.
 
-A soft descriptor should be sent during the initial authorization and again during the Capture. The descriptor sent during the authorization appears on the online statement. The descriptor sent at capture is the final descriptor which appears for the settled transactions. 
+A soft descriptor should be sent during the initial [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) and again during the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md). The descriptor sent during the authorization appears on the online statement. The descriptor sent at capture is the final descriptor which appears for the settled transactions. 
 
 <!--
 type: tab
 titles: dynamicDescriptor, JSON Example
 -->
 
-Card issuer may limit how many characters will show up in each field, it is recommended to keep the `merchantName` field to fewer than 22 characters and the `city` field to fewer than 11 characters to appear properly on the cardholder’s statement.
+Card issuer may limit how many characters will show up in each field, it is recommended to keep the `merchantName` field to fewer than 22 characters and the `city` field in the `address` object to fewer than 11 characters to appear properly on the cardholder’s statement.
 
 - **MOTO:** utilize the `city` field for the phone number
 - **E-commerce:** utlize the `city` field for a URL, email address or phone number
+
+<!---
+For Visa and MasterCard non Payment Facilitators the DBA Name may be optionally be followed by an asterisk, and then additional information following the asterisk, such as product description, order number, reference number or other information that will further assist with cardholder recognition. In this case, the asterisk may only appear in position 5, 9 or 14.
+For Discover, Visa, and MasterCard Single Merchant ID Payment Facilitators, the format is as follows: The first 3 characters of this field are the abbreviated Payment Facilitator name followed by an asterisk (*) followed by the sub merchant name, e.g. “XYZ*A SMALL CO”
+For Amex Single Merchant ID Payment Facilitators the format is as follows: This field must only contain the sub merchant name, e.g. “A SMALL CO”
+-->
 
 The below table identifies the required parameters in the `dynamicDescriptor` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
-| `merchantName` | *string* | 1024 | Daynamic Merchant Name or DBA |
+| `merchantName` | *string* | 1024 | Merchant Name or Doing Business As (DBA) |
 | `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer (it may appear on the cardholder’s statement) or if merchant wants to pass information that differs from the information stored on our master File. |
 | `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
-| `address` | *component* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
+| `address` | *object* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
 <!--
 type: tab
