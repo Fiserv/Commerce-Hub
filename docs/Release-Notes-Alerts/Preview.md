@@ -16,6 +16,8 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+<!---
+
 ## March 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -23,9 +25,13 @@ Commerce Hub will target to update our environments on the following dates; howe
 - **Certification:** March 1st 2023
 - **Production:** March 8th 2023
 
+| Details | Type |
+| ----- | ----- |
 | Support Apple Tap to Pay | Feature |
 
 ---
+
+--->
 
 ## February 2023
 
