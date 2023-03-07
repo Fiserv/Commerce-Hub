@@ -1086,6 +1086,8 @@ components:
         amount: {$ref: '#/components/schemas/Amount'}
         source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        orderData:
+          $ref: '#/components/schemas/OrderData'
         referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
