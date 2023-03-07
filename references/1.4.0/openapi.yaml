@@ -1086,6 +1086,8 @@ components:
         amount: {$ref: '#/components/schemas/Amount'}
         source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        orderData:
+          $ref: '#/components/schemas/OrderData'
         referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
@@ -2661,21 +2663,6 @@ components:
       x-model-version: 1.0
       description: 'Private label transaction information.'
       properties:
-        paymentSource:
-          type: string
-          maxLength: 256
-          description: 'Private label card source.'
-          example: 'SHELL'
-        paymentType:
-          type: string
-          maxLength: 16
-          description: 'Type of transaction.'
-          example: 'REFUND'
-        specialFinanceIndicator:
-          type: string
-          maxLength: 16
-          description: 'Indicates if special finance term and rate.'
-          example: '24/0'
         creditPlanNumber:
           type: string
           maxLength: 5
