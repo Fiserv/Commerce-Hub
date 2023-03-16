@@ -1535,8 +1535,11 @@ components:
           example: '30dd879c-ee2f-11db-8314-0800200c9a66'
         captureFlag: {type: boolean, description: Designates if the transaction should
             be captured. Auth (False) or Sale (True)., example: true}
-        transactionCaptureType: {type: string, description: Identifies if settlement
-            was Host capture or Terminal capture., maxLength: 64, example: TCS}
+        transactionCaptureType: 
+            type: string
+            description: 'Identifies if settlement was HOST, GATEWAY, or TERMINAL_DIRECT capture.'
+            maxLength: 64
+            example: HOST
         accountVerification: {type: boolean, description: Determines if verification
             should be performed on the payment type., example: 'false'}
         partialApproval:
