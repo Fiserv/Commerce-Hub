@@ -18,9 +18,9 @@ Capture type determines how the transaction is submitted to the settlement syste
 
 | Value | Description |
 | ---- | -------- |
-| HCS | [Host capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture), Commerce Hub will settle the transaction. |
-| TCS | [Terminal capture system](?path=docs/Resources/FAQs-Glossary/Glossary.md#terminal-capture), the merchant's terminal will settle the transaction. |
-| DIRECT | [Direct settlement](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), the merchant will settle directly to the backend processor. |
+| HOST | [Host capture](?path=docs/Resources/FAQs-Glossary/Glossary.md#host-capture), the host or processor (e.g. Buypass) will settle the transaction. |
+| GATEWAY | [Gateway capture](?path=docs/Resources/FAQs-Glossary/Glossary.md#gateway-capture), Commerce Hub will settle the transaction. |
+| TERMINAL_DIRECT | Terminal direct capture also known as [direct capture](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture), the merchant or the merchant's terminal will settle directly to the backend processor. |
 
 ---
 
@@ -52,7 +52,7 @@ titles: Request, Response
   },
   "transactionDetails": {
     "captureFlag": true,
-    "transactionCaptureType": "HCS"
+    "transactionCaptureType": "HOST"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
@@ -117,7 +117,7 @@ type: tab
   },
   "transactionDetails": {
     "captureFlag": true,
-    "transactionCaptureType": "HCS"
+    "transactionCaptureType": "HOST"
   },
   "merchantDetails": {
     "terminalId": "123456",
