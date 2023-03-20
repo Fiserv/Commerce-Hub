@@ -81,7 +81,7 @@ The below table identifies the parameters in the `encryptionData` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -----------|
 | `encryptionType` | *string* | 256 | Encryption type to be passed. |
-| `encryptionTarget` | *string* | 256 | Target could be *TRACK1*, *TRACK2*, Both or Manual. |
+| `encryptionTarget` | *string* | 256 | Target is *MAUNAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
 | `encryptionBlock` | *string* | 2000 | This field contains the track data or card number provided in encrypted form. |
 | `keyId` | *string* | 40 | Provided encryption key required for decryption of track data that is encrypted. This field must be submitted for encryption request messages sending manual PAN, Track 1, or Track 2 data that is encrypted. |
 | `encryptionBlockFields` | *string* | 256 | Encryption block field descriptors to facilitate decryption when using multi-use public key encryption. Each field should recorded the form field_name:byte_count e.g. card.expirationMonth:2 |
