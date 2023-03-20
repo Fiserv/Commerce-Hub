@@ -9,7 +9,7 @@ The merchant uses multi-use public key for the asymmeteric PaymentCard encryptio
 ## Step 1: Generate Unencrypted encryptionBlock
 
 
-The `encryptionBlock` field is passed through the `PaymentCard` request to encrypt the data. The `encryptionBlock` field is a concatenated string of the `card` object fields which includes: `cardData`, `nameOnCard`, `expirationMonth`, `expirationYear`, and `securityCode`.
+The `encryptionBlock` field is passed through the `PaymentCard` request to encrypt the data. The `encryptionBlock` field is a concatenated string of the `card` object fields which can include: `cardData`, `nameOnCard`, `expirationMonth`, `expirationYear`, and `securityCode`.
 
 ```javascript
 const cardData = {
