@@ -9,7 +9,7 @@ The merchant uses multi-use public key for the asymmeteric PaymentCard encryptio
 ## Step 1: Generate Unencrypted encryptionBlock
 
 
-The `encryptionBlock` field is passed through the `PaymentCard` request to encrypt the data. The `encryptionBlock` field is a concatenated string of the `card` object fields which includes: `cardData`, `nameOnCard`, `expirationMonth`, `expirationYear`, and `securityCode`.
+The `encryptionBlock` field is passed through the `PaymentCard` request to encrypt the data. The `encryptionBlock` field is a concatenated string of the `card` object fields which can include: `cardData`, `nameOnCard`, `expirationMonth`, `expirationYear`, and `securityCode`.
 
 ```javascript
 const cardData = {
@@ -81,7 +81,7 @@ The below table identifies the parameters in the `encryptionData` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -----------|
 | `encryptionType` | *string* | 256 | Encryption type to be passed. |
-| `encryptionTarget` | *string* | 256 | Target could be *TRACK1*, *TRACK2*, Both or Manual. |
+| `encryptionTarget` | *string* | 256 | Target is *MAUNAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
 | `encryptionBlock` | *string* | 2000 | This field contains the track data or card number provided in encrypted form. |
 | `keyId` | *string* | 40 | Provided encryption key required for decryption of track data that is encrypted. This field must be submitted for encryption request messages sending manual PAN, Track 1, or Track 2 data that is encrypted. |
 | `encryptionBlockFields` | *string* | 256 | Encryption block field descriptors to facilitate decryption when using multi-use public key encryption. Each field should recorded the form field_name:byte_count e.g. card.expirationMonth:2 |
@@ -191,7 +191,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
 
 - [Multi-Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Multi-Use Public Key Management](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
-- [Multi-Use Public Key Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md)
+- [Multi-Use Public Key Charges Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md)
 - [Secure Data Capture API Only](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md)
 
 ---
