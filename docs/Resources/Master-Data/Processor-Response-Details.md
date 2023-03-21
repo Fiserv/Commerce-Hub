@@ -26,7 +26,7 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `responseMessage` | *string* |   | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `hostResponseCode` | *string* |   | Endpoint or issuer host response code.| 
 | `hostResponseMessage` | *string* |   | Endpoint or issuer host response message.|
-| `localTimestamp` | *string* |   | Transaction timestamp in local time.| 
+| `localTimestamp` | *string* |   | Transaction timestamp in local time in ISO 8601 format YYYY-MM-DDThh:mm:ssZ.| 
 | `bankAssociationDetails` | *object* | N/A | [Bank association](#bank-association-details) response details.|
 | `authenticationResponseCode` | string |   | Response code from authentication. |
 | `feeProgramIndicator` | *string* |   | Contains the Fee Program Indicator (FPI) code that may be returned on Debit or Private Label transaction response. |
