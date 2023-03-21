@@ -26,6 +26,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
+| Support encrypted PaymentCard for [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---

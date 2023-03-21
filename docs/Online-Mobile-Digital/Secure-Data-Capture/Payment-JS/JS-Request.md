@@ -5,13 +5,13 @@ tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 
 # Secure Data Capture - JS Integration Guide
 
-## Step 1: Authentication
+## Step 1: Acquire Credentials
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request). 
 
 ---
 
-## Step 2: Configuration
+## Step 2: Configure SDK
 
 The following code snippets are required to create and initialize the SDK configuration for the JS.
 

@@ -117,9 +117,9 @@ type: tab
 
 ---
 
-## PaymentToken Charges Request
+## PaymentToken Request
 
-The merchant can use the saved tokenized data in order to initate a charge request. 
+The merchant can use the saved tokenized data in order to initate a subsequent transaction request. 
 
 ---
 
@@ -151,7 +151,7 @@ The below table identifies the required parameters in the `source` object.
 | `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
 | `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
 | `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
-| `card` | *object* | | &#10004; | Contains card specific information. |
+| `card` | *object* | | &#10004; | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
 
 <!--
 type: tab
