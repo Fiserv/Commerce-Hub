@@ -300,6 +300,9 @@ paths:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
+              PaymentCard-Encrypted:
+                summary: TokenizationRequest with encrypted PaymentCard,
+                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
@@ -318,6 +321,9 @@ paths:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
+                PaymentCard-Encrypted:
+                  summary: TokenizationResponse with encrypted PaymentCard
+                  $ref: '#/components/examples/PaymentCardTokenResponse'
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
@@ -1009,7 +1015,29 @@ components:
           $ref: '#/components/schemas/PaymentCard'
         merchantDetails:
           $ref: '#/components/schemas/MerchantDetails'
-    
+
+    CardCaptureResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        cardDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardDetails'
+        paymentToken:
+          $ref: '#/components/schemas/ResponsePaymentToken'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+
     TransactionInquiryRequest:
       x-model-version: 1.0
       properties:
@@ -1086,6 +1114,8 @@ components:
         amount: {$ref: '#/components/schemas/Amount'}
         source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        orderData:
+          $ref: '#/components/schemas/OrderData'
         referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
@@ -1533,8 +1563,11 @@ components:
           example: '30dd879c-ee2f-11db-8314-0800200c9a66'
         captureFlag: {type: boolean, description: Designates if the transaction should
             be captured. Auth (False) or Sale (True)., example: true}
-        transactionCaptureType: {type: string, description: Identifies if settlement
-            was Host capture or Terminal capture., maxLength: 64, example: TCS}
+        transactionCaptureType: 
+            type: string
+            description: 'Identifies if settlement was HOST, GATEWAY, or TERMINAL_DIRECT capture.'
+            maxLength: 64
+            example: HOST
         accountVerification: {type: boolean, description: Determines if verification
             should be performed on the payment type., example: 'false'}
         partialApproval:
@@ -2661,21 +2694,6 @@ components:
       x-model-version: 1.0
       description: 'Private label transaction information.'
       properties:
-        paymentSource:
-          type: string
-          maxLength: 256
-          description: 'Private label card source.'
-          example: 'SHELL'
-        paymentType:
-          type: string
-          maxLength: 16
-          description: 'Type of transaction.'
-          example: 'REFUND'
-        specialFinanceIndicator:
-          type: string
-          maxLength: 16
-          description: 'Indicates if special finance term and rate.'
-          example: '24/0'
         creditPlanNumber:
           type: string
           maxLength: 5
@@ -4127,20 +4145,22 @@ components:
     PaymentCardEncryptedRequest:
       value:
         amount:
-          total: 12.04
-          currency: USD
+          total: '12.04'
+          currency: 'USD'
         source:
-          sourceType: PaymentCard
+          sourceType: 'PaymentCard'
           encryptionData:
-            encryptionType: RSA
-            encryptionTarget: MANUAL
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
             encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
             keyId: '88000000022'
+        transactionDetails:
+          captureFlag: true
+          merchantInvoiceNumber: '123456789012'
         transactionInteraction:
           origin: 'ECOM'
           eciIndicator: 'CHANNEL_ENCRYPTED'
-          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails:
           merchantId: '123456789789567'
           terminalId: '123456'
@@ -4157,6 +4177,15 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+    
+    PaymentCardCaptureResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
     PaymentCardForcedRequest:
       value:
         amount: {total: 12.04, currency: USD}
@@ -4190,6 +4219,20 @@ components:
           lastName: Smith
           address: {street: Main Street, houseNumberOrName: '123', city: Sandy Springs,
             stateOrProvince: GA, postalCode: '30303', country: US}
+
+    PaymentCardEncryptedTokenRequest:
+      value:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+        merchantDetails:
+          merchantId: '123456789789567'
+          terminalId: '123456'
 
     PaymentCardEncryptedVerifyRequest:
       value:

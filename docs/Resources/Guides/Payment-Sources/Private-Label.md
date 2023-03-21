@@ -29,7 +29,6 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `specialFinanceIndicator` | *string* | 16 | Indicates if special finance term and rate in month/rate format. |
 | `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
 | `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
 
@@ -42,7 +41,6 @@ type: tab
 {
   "additionalDataCommon": {
     "privateLabel": {
-      "specialFinanceIndicator": "24/0",
       "creditPlanNumber": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
   }
@@ -88,7 +86,6 @@ titles: Request, Response
   },
   "additionalDataCommon": {
     "privateLabel": {
-      "specialFinanceIndicator": "24/0",
       "creditPlan": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
     }
@@ -161,7 +158,6 @@ type: tab
   },
   "additionalDataCommon": {
     "privateLabel": {
-      "specialFinanceIndicator": "24/0",
       "creditPlanNumber": "12345",
       "minimumSpendExemptIndicator": "EXEMPT"
     }
