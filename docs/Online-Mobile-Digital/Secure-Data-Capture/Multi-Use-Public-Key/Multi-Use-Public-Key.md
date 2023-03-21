@@ -40,5 +40,4 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/
 
 <!-- type: row-end -->
 
-
 ---

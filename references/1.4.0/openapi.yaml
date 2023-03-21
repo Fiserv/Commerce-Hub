@@ -4219,6 +4219,7 @@ components:
           lastName: Smith
           address: {street: Main Street, houseNumberOrName: '123', city: Sandy Springs,
             stateOrProvince: GA, postalCode: '30303', country: US}
+
     PaymentCardEncryptedTokenRequest:
       value:
         source:
@@ -4232,6 +4233,7 @@ components:
         merchantDetails:
           merchantId: '123456789789567'
           terminalId: '123456'
+
     PaymentCardEncryptedVerifyRequest:
       value:
         source:
