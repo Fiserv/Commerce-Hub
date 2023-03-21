@@ -106,20 +106,20 @@ titles: Request, Response
 
 ```json
 {
-    "source": {
-        "sourceType": "PaymentCard",
-        "encryptionData": {
-            "encryptionType": "RSA",
-            "encryptionTarget": "MANUAL",
-            "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-            "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-            "keyId": "88000000022"
-        }
-    },
-    "merchantDetails": {
-        "merchantId": "123456789012345",
-        "terminalId": "123456"
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+   }
 }
 ```
 
@@ -129,23 +129,10 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a card capture (201: Created) response.
+A successful card capture response will result in a HTTP 204 No Content, if a response is not received, best practice is to still submit the transaction.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-{
-  "gatewayResponse": {
-    "transactionProcessingDetails": {
-      "transactionTimestamp": "2021-06-20T23:42:48Z",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
-    }
-  }
-}
-```
 
 <!-- type: tab-end -->
 
@@ -171,7 +158,7 @@ Submit a charge or tokenization request after a successful response which identi
 
 <!--
 type: tab
-titles: Charges Request, Charges Response, Tokens Request, Tokens Response
+titles: Request, Charges Response, Tokens Response
 -->
 
 ##### Example of a charge payload request.
@@ -179,7 +166,7 @@ titles: Charges Request, Charges Response, Tokens Request, Tokens Response
 ```json
 {
   "amount": {
-    "total": 12.04,
+    "total": "12.04",
     "currency": "USD"
   },
   "source": {
@@ -188,13 +175,7 @@ titles: Charges Request, Charges Response, Tokens Request, Tokens Response
   },
   "transactionDetails": {
     "captureFlag": true,
-    "accountVerification": false,
-    "merchantInvoiceNumber": "123456789012"
-  },
-  "transactionInteraction": {
-    "origin": "ECOM",
-    "eciIndicator": "CHANNEL_ENCRYPTED",
-    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+    "merchantTransactionId": "RKTransID-768086381518"
   },
   "merchantDetails": {
     "merchantId": "123456789012345",
@@ -243,6 +224,13 @@ type: tab
          "total": 12.04,
          "currency": "USD"
       },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
@@ -263,28 +251,6 @@ type: tab
       "captureFlag": true,
       "merchantInvoiceNumber": "123456789012"
    }
-}
-```
-
-<!--
-type: tab
--->
-
-##### Example of a tokens payload request.
-
-```json
-{
-  "source": {
-    "sourceType": "PaymentSession",
-    "sessionId": "df8c33d2-af27-4a3a-b7a0-61d4edf09cad"
-  },
-  "transactionDetails": {
-    "merchantTransactionId": "RKTransID-768086381518"
-  },
-  "merchantDetails": {
-    "merchantId": "123456789012345",
-    "terminalId": "123456"
-  }
 }
 ```
 
@@ -340,6 +306,13 @@ type: tab
       "total": 12.04,
       "currency": "USD"
     },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
