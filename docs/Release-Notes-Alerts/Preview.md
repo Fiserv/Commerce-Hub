@@ -25,7 +25,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Encrypted PaymentCard support added to Tokenization | Update |
+| Multi-Use Public Key encrypted PaymentCard support added to [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | Update |
 
 ---
 
