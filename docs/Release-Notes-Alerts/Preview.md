@@ -16,19 +16,6 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
-## April 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** March 28th 2023
-- **Production:** April 4th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Multi-Use Public Key encrypted PaymentCard support added to [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | Update |
-
----
-
 ## March 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -39,6 +26,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
+| Support encrypted PaymentCard for [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | Update |
 
 ---
 
