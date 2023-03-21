@@ -17,7 +17,7 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | ----- | ----- | ----- | ----- |
 | `approvalStatus` | *string* |   | Final [status](#approval-status) of the transaction. | 
 | `approvalCode` |*string* |    | Approval code from the processor. |
-| `referenceNumber` | *string* |   | Transaction reference number. |
+| `referenceNumber` | *string* |   | Transaction reference number also known as an Account Reference Number (ARN). |
 | `schemeTransactionId` | *string* |   | Brand (card issuer) transaction ID. |
 | `processor` | *string* | 256 | Payment card processor. |
 | `host` | *string* | 256 | Processing endpoint or issuer. |
