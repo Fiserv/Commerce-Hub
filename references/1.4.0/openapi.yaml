@@ -673,7 +673,7 @@ paths:
             examples:
               PaymentCard:
                 summary: CardCapture Request with PaymentCard,
-                $ref: '#/components/examples/PaymentCardEncryptedRequest'
+                $ref: '#/components/examples/PaymentCardCaptureRequest'
       responses:
         200:
           description: Success.
