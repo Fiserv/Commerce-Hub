@@ -16,8 +16,6 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
-<!---
-
 ## March 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -27,22 +25,8 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Support Apple Tap to Pay | Feature |
-
----
-
---->
-
-## February 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** 
-- **Production:** 
-
-| Details | Type |
-| ----- | ----- |
 | Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
+| Support encrypted PaymentCard for [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | Update |
 
 ---
 
