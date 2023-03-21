@@ -16,6 +16,20 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## March 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** March 1st 2023
+- **Production:** March 8th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## February 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
