@@ -300,9 +300,6 @@ paths:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
-              PaymentCard-Encrypted:
-                summary: TokenizationRequest with encrypted PaymentCard,
-                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
@@ -321,9 +318,6 @@ paths:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
-                PaymentCard-Encrypted:
-                  summary: TokenizationResponse with encrypted PaymentCard
-                  $ref: '#/components/examples/PaymentCardTokenResponse'
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
@@ -661,9 +655,10 @@ paths:
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
-      summary: 'Submit <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">merchant managed</a> card details for use with Secure Card Capture'
+      summary: 'Submit a <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">merchant managed</a> card capture for use with Secure Card Capture'
       x-group-name: 'Payments VAS'
-      x-proxy-name: 'CardCapture'
+      x-proxy-name: 'Card Capture'
+      x-default-example: PaymentCard
       requestBody:
         required: true
         content:
@@ -671,20 +666,10 @@ paths:
             schema:
               $ref: '#/components/schemas/CardCaptureRequest'
             examples:
-              PaymentCard:
-                summary: CardCapture Request with PaymentCard,
-                $ref: '#/components/examples/PaymentCardCaptureRequest'
+              PaymentCard: {summary: CardCapture Request with PaymentCard, $ref: '#/components/examples/PaymentCardCaptureRequest'}
       responses:
-        200:
+        204:
           description: Success.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CardCaptureResponse'
-              examples:
-                PaymentCardCaptureResponse:
-                  summary: CardCaptureResponse for PaymentCard
-                  $ref: '#/components/examples/PaymentCardCaptureResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -1024,29 +1009,7 @@ components:
           $ref: '#/components/schemas/PaymentCard'
         merchantDetails:
           $ref: '#/components/schemas/MerchantDetails'
-
-    CardCaptureResponse:
-      x-model-version: 1.0
-      properties:
-        gatewayResponse:
-          $ref: '#/components/schemas/GatewayResponse'
-        transactionDetails:
-          $ref: '#/components/schemas/TransactionDetails'
-        cardDetails:
-          type: array
-          items:
-            $ref: '#/components/schemas/CardDetails'
-        paymentToken:
-          $ref: '#/components/schemas/ResponsePaymentToken'
-        paymentTokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResponsePaymentToken'
-        processorResponseDetails:
-          $ref: '#/components/schemas/ProcessorResponseDetails'
-        billingAddress:
-          $ref: '#/components/schemas/BillingAddress'
-
+    
     TransactionInquiryRequest:
       x-model-version: 1.0
       properties:
@@ -4154,22 +4117,20 @@ components:
     PaymentCardEncryptedRequest:
       value:
         amount:
-          total: '12.04'
-          currency: 'USD'
+          total: 12.04
+          currency: USD
         source:
-          sourceType: 'PaymentCard'
+          sourceType: PaymentCard
           encryptionData:
-            encryptionType: 'RSA'
-            encryptionTarget: 'MANUAL'
+            encryptionType: RSA
+            encryptionTarget: MANUAL
             encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            encryptionBlockFields: card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
-        transactionDetails:
-          captureFlag: true
-          merchantInvoiceNumber: '123456789012'
         transactionInteraction:
           origin: 'ECOM'
           eciIndicator: 'CHANNEL_ENCRYPTED'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
         merchantDetails:
           merchantId: '123456789789567'
           terminalId: '123456'
@@ -4186,15 +4147,6 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
-    
-    PaymentCardCaptureResponse:
-      value:
-        gatewayResponse:
-          transactionProcessingDetails:
-            transactionTimestamp: '2021-06-20T23:42:48Z'
-            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
-            clientRequestId: '4345791'
-            transactionId: '84356531338'
     PaymentCardForcedRequest:
       value:
         amount: {total: 12.04, currency: USD}
@@ -4228,19 +4180,7 @@ components:
           lastName: Smith
           address: {street: Main Street, houseNumberOrName: '123', city: Sandy Springs,
             stateOrProvince: GA, postalCode: '30303', country: US}
-    PaymentCardEncryptedTokenRequest:
-      value:
-        source:
-          sourceType: 'PaymentCard'
-          encryptionData:
-            encryptionType: 'RSA'
-            encryptionTarget: 'MANUAL'
-            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
-            keyId: '88000000022'
-        merchantDetails:
-          merchantId: '123456789789567'
-          terminalId: '123456'
+
     PaymentCardEncryptedVerifyRequest:
       value:
         source:
@@ -5924,4 +5864,3 @@ components:
             stateOrProvince: 'GA'
             postalCode: '30303'
             country: 'US'
-
