@@ -17,10 +17,11 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | ----- | ----- | ----- | ----- |
 | `approvalStatus` | *string* |   | Final [status](#approval-status) of the transaction. | 
 | `approvalCode` |*string* |    | Approval code from the processor. |
-| `referenceNumber` | *string* |   | Transaction reference number also known as an Account Reference Number (ARN). |
+| `referenceNumber` | *string* |   | Transaction reference number also known as an Acquirer Reference Number (ARN). |
 | `schemeTransactionId` | *string* |   | Brand (card issuer) transaction ID. |
 | `processor` | *string* | 256 | Payment card processor. |
 | `host` | *string* | 256 | Processing endpoint or issuer. |
+| `networkRouted` | *string* | 256 | Label that identifies the network where the transaction was routed for authorization _(e.g. NYCE, PULSE, STAR, Visa, Mastercard, etc.)_. |
 | `responseCode` | *string* |   | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `responseMessage` | *string* |   | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `hostResponseCode` | *string* |   | Endpoint or issuer host response code.| 
@@ -55,6 +56,7 @@ JSON string format for `processorResponseDetails`:
     "arqcResponseCode": "VALIDATION_PASSED",
     "processor": "FISERV",
     "host": "NASHVILLE",
+    "networkRouted": "Visa",
     "responseCode": "000",
     "responseMessage": "APPROVAL",
     "hostResponseCode": "00",
@@ -113,7 +115,7 @@ The below table identifies the parameters in the `bankAssociationDetails` object
 | `transactionTimestamp` | string | 64 | Timestamp in ISO 8601 fromat YYYY-MM-DDThh:mm:ssZ|
 | `avsSecurityCodeResponse` | object | | [Address and security code response](#address-and-security-code-response) details |
 |` associationResponseCode` | string | 32 | Bank response code |
-| `transactionReferenceInformation` | string | 256 | Transaction reference information|
+| `transactionReferenceInformation` | string | 256 | Transaction reference identifier from the  |
 
 <!--
 type: tab
