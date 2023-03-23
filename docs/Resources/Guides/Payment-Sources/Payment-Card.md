@@ -7,6 +7,9 @@ tags: [Paymentcard, Payment Sources]
 
 Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
 
+<!-- theme: danger -->
+> Commerce Hub requires all payment cards to be encrypted using [multi-use public key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+
 <!-- theme: info -->
 > PINless Debit transaction process via the credit network unless the merchant account is setup for debit processing. Please contact your account representitive for more information on [debit solutions](?path=docs/Resources/Guides/Debit/Debit.md).
 
@@ -172,9 +175,9 @@ type: tab
 ## See Also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md)
+- [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
+- [Multi-Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
 
 ---
