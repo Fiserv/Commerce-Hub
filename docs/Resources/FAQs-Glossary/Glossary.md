@@ -33,7 +33,7 @@ Notification to an issuer that a Prepaid card has been purchased and should be a
 The acquirer or acquiring bank is the bank or financial institution that processes credit or debit card transactions on behalf of a merchant. The acquirer sends the merchant's transactions to the customer's issuing bank through the card network.
 
 ## Acquirer Reference Number
-An Account Reference Number (ARN) also known as a Retrieval Reference Number, is a UUID retrurned in the processor response details for a credit card transaction. An ARN is also used to tag a credit card transaction for refunds process as it processes through the acquiring bank, network, issuer, and processor.
+An Account Reference Number (ARN) also known as a Retrieval Reference Number, is a UUID returned in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) for a credit card transaction. Similar to STAN, an ARN is also used for refunds to track the processes through the acquiring bank, network, issuer, and processor.
 
 ## Address Verification Service 
 The [Address Verification Service (AVS)](?path=docs/Resources/Guides/Fraud/Address-Verification.md) verifies customer-supplied billing address information against the billing address on the file at the issuer for Card Not Present transactions.
