@@ -4147,6 +4147,14 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+    PaymentCardCaptureResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
     PaymentCardForcedRequest:
       value:
         amount: {total: 12.04, currency: USD}
