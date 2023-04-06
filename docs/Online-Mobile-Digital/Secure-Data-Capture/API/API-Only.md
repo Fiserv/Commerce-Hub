@@ -2,7 +2,7 @@
 tags: [Online, Card Not Present, Secure Data Capture]
 ---
 
-# Secure Data Capture - API Only
+# Secure Data Capture - Card Capture API
 
 Commerce Hub allows E-commerce merchants to manage the design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
@@ -58,11 +58,11 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `encryptionType` | *string* | 256 |  &#10004; | Encryption type is *RSA* when using MUPK. |
+| `encryptionTarget` | *string* | 256 |  &#10004; | Target is *MANUAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the card details in encrypted form. |
 | `encryptionBlockFields` | *string* | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
-| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
+| `keyId` | *string* | 64 | &#10004; | Provided encryption key required for decryption of track data that is encrypted. |
 
 
 <!--
