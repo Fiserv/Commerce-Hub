@@ -53,7 +53,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS
 -->
 
 <!-- type: card
-title: API Only
+title: Card Capture API
 description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
 -->
