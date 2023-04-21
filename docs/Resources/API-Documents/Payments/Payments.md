@@ -16,20 +16,20 @@ Build a Commerce Hub integration to accept a payment.
 
 <!-- type: card
 title: Charges
-description: 
-link: 
+description: Submit a request to authorize funds from a customer.
+link: ?path=docs/Resources/API-Documents/Payments/Charges.md
 -->
 
 <!-- type: card
 title: Captures
-description: 
-link: 
+description: Submit a request to capture an existing pre-authorization from a charges request.
+link: ?path=docs/Resources/API-Documents/Payments/Capture.md
 -->
 
 <!-- type: card
 title: Reauthorize
-description: 
-link: 
+description: Submit a request to reauthorize a charge where the original authorization has been released by the bank.
+link: ?path=docs/Resources/Guides/Authorizations/Re-Auth.md
 -->
 
 <!-- type: row-end -->
