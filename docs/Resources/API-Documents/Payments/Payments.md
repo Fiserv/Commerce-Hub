@@ -16,20 +16,20 @@ Build a Commerce Hub integration to accept a payment.
 
 <!-- type: card
 title: Charges
-description: Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Transaction types include; online payments, in-app payments, and MOTO.
-link: ?path=docs/Getting-Started/Getting-Started-Online.md
+description: 
+link: 
 -->
 
 <!-- type: card
 title: Captures
-description: In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
-link: ?path=docs/Getting-Started/Getting-Started-InPerson.md
+description: 
+link: 
 -->
 
 <!-- type: card
 title: Reauthorize
-description: In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
-link: ?path=docs/Getting-Started/Getting-Started-InPerson.md
+description: 
+link: 
 -->
 
 <!-- type: row-end -->
@@ -44,25 +44,25 @@ Build a Commerce Hub integration to correct a payment.
 
 <!-- type: card
 title: Tagged Refunds
-description: Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Transaction types include; online payments, in-app payments, and MOTO.
-link: ?path=docs/Getting-Started/Getting-Started-Online.md
+description: 
+link: 
 -->
 
 <!-- type: card
 title: Open Refunds
-description: In-person or Card Present (CP) transactions are initiated when a customer physically presents their payment source at the time of the transaction. Transaction types include manual entry, track data, and EMV.
-link: ?path=docs/Getting-Started/Getting-Started-InPerson.md
+description: 
+link: 
 -->
 
 <!-- type: card
 title: Online Refunds
-description: Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce Hub's unified commerce solution that consolidates sales channels, and allows for a more consistent and personalized customer experience.
+description: 
 link:
 -->
 
 <!-- type: card
 title: Cancels
-description: Connected Commerce also known as Universal Commerce or Omnicommerce is Commerce Hub's unified commerce solution that consolidates sales channels, and allows for a more consistent and personalized customer experience.
+description: 
 link:
 -->
 
@@ -72,14 +72,14 @@ link:
 
 ## Reporting
 
-Build a Commerce Hub integration to correct a payment.
+Build a Commerce Hub integration to recieve details on a payment.
 
 <!-- type: row -->
 
 <!-- type: card
 title: Inquiry
-description: Online, mobile, and digital transactions are considered Card Not Present (CNP) where the customer does not physically present their payment source at the time of the transaction. Transaction types include; online payments, in-app payments, and MOTO.
-link: ?path=docs/Getting-Started/Getting-Started-Online.md
+description: 
+link: 
 -->
 
 <!-- type: row-end -->
