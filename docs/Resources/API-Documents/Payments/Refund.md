@@ -2,7 +2,7 @@
 tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 ---
 
-# Refund
+# Tagged Refund
 
 If the customer returns a product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request. The refund can be issued using the original `transactionId` in the URI or a reference transaction identifier in the payload.
 
