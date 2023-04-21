@@ -4,14 +4,14 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 # Refund
 
-If the customer returns a product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request. The refund can be issued using the original `transactionId` in the URI or a reference transaction identifier in the payload. 
+If the customer returns a product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request. The refund can be issued using the original `transactionId` in the URI or a reference transaction identifier in the payload.
+
+<!-- theme: warning -->
+> Based on the issuing bank timeframe, refunds may take 3-5 days to process and reflect on the customer's account.
 
 #### Authorized Refunds 
 
 Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions. These authorization messages will enable issuers to update the customer's account in real-time.
-
-<!-- theme: warning -->
-> Based on the issuing bank timeframe, refunds may take 3-5 days to process and reflect on the customer's account.
 
 #### Refund Types
 
