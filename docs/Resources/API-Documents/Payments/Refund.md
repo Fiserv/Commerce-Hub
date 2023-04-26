@@ -25,7 +25,7 @@ Refunds can be initiated for the full amount or a partial amount of the original
 
 ---
 
-## Integrations
+## Request Types
 
 Build a Commerce Hub integration to refund a payment.
 
@@ -33,26 +33,26 @@ Build a Commerce Hub integration to refund a payment.
 
 <!-- type: card
 title: Tagged Refunds
-description: 
-link: 
+description: Submit a request to refund back to the original payment source using a reference transaction identifier.
+link: ?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md
 -->
 
 <!-- type: card
 title: Open Refunds
-description: 
-link: 
+description: Submit a request to refund to a new payment source not previously processed in Commerce Hub.
+link: ?path=docs/Resources/API-Documents/Payments/Refund-Open.md
 -->
 
 <!-- type: card
-title: Online Refunds
-description: 
-link:
+title: Unmatched Refunds
+description: Submit a request to refund back to a new payment source using a reference transaction identifier.
+link: ?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md
 -->
 
 <!-- type: card
 title: Auth/Capture Refund
-description: 
-link:
+description: Submit a request to authorize a refund for future capture.
+link: ?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md
 -->
 
 <!-- type: row-end -->
