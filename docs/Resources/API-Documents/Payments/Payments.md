@@ -43,27 +43,15 @@ Build a Commerce Hub integration to correct a payment.
 <!-- type: row -->
 
 <!-- type: card
-title: Tagged Refunds
+title: Refunds
 description: 
-link: 
--->
-
-<!-- type: card
-title: Open Refunds
-description: 
-link: 
--->
-
-<!-- type: card
-title: Online Refunds
-description: 
-link:
+link: ?path=docs/Resources/API-Documents/Payments/Refund.md
 -->
 
 <!-- type: card
 title: Cancels
 description: 
-link:
+link: ?path=docs/Resources/API-Documents/Payments/Cancel.md
 -->
 
 <!-- type: row-end -->
