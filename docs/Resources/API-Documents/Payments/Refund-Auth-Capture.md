@@ -4,24 +4,12 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 # Auth/Capture Refund
 
-If the customer returns a product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request. The refund can be issued using the original `transactionId` in the URI or a reference transaction identifier in the payload.
+Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an authorization request and a subsequent capture at a later time.
 
-<!-- theme: warning -->
-> Based on the issuing bank timeframe, refunds may take 3-5 days to process and reflect on the customer's account.
+Similar to [charges]((?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-auth, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
 
-#### Authorized Refunds 
-
-Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions. These authorization messages will enable issuers to update the customer's account in real-time.
-
-#### Refund Types
-
-Refunds can be initiated for the full amount or a partial amount of the original authorization.
-
-- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
-- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
-
-<!-- theme: danger -->
->Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+- *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to return the funds.
+- *true:* A refund or subsequent capture transaction where the customer will be refunded the total amount, and funds returned.
 
 ---
 
@@ -330,7 +318,9 @@ type: tab
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
-- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
+- [Open Refund Request](?path=docs/Resources/API-Documents/Payments/Refund-Open.md)
+- [Tagged Refund Request](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md)
+- [Unmatched Refund Request](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 
