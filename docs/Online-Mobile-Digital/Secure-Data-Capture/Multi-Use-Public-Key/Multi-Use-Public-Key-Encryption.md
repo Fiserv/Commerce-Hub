@@ -25,7 +25,7 @@ const encryptionBlock =  Object.values(cardData).join(""));
 ```
 
 <!-- theme: example -->
-> encryptionBlock = 4111111111111111JoeBloggs123122034
+> encryptionBlock = 4111111111111111Joe Bloggs123122034
 
 --- 
 
