@@ -4,12 +4,14 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 # Tagged Refund
 
-A tagged refund allows a merchant to maintain the transaction history in Commerce Hub by associating the refund to the original [charge request](?path=docs/Resources/API-Documents/Payments/Charges.md). A tagged refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type.
+A tagged refund allows a merchant to maintain the transaction history in Commerce Hub by associating the refund to the original [charge request](?path=docs/Resources/API-Documents/Payments/Charges.md) by using the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 <!-- theme: danger -->
 > Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 ### Request Variables
+
+A tagged refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type.
 
 <!-- theme: warning -->
 > In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
