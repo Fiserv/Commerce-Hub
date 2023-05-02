@@ -5,7 +5,7 @@ tags: [Sunset, Full Refund, Payments, Partial Refund, Refund, API Reference]
 # Tagged Refund Using the URI
 
 <!-- theme: danger -->
-> Refunds using the URI is being sunset in favor of [refunds](?path=docs/Resources/API-Documents/Payments/Refunds.md) using a referenced transaction identifier. 
+> Refunds using the URI is being sunset in favor of [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) using a referenced transaction identifier. 
 
 A refund request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the refund type.
 
