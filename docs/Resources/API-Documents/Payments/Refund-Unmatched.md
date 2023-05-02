@@ -10,7 +10,7 @@ Unliked a normal [tagged refund](?path=docs/Resources/API-Documents/Payments/Ref
 > Before issuing an unmatched tagged refund, a normal tagged refund should be performed. Once declined due to being an invalid or closed account, a unmatched tagged refund can be attempted. If an unmatched tagged refund is not associated with a prior tagged refund attempt, Commerce Hub will refject the transaction.
 
 <!-- theme: danger -->
->Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+> Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 ---
 
