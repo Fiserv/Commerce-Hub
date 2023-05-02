@@ -107,7 +107,7 @@ type: tab
 ```json
 {
    "gatewayResponse":{
-      "transactionType": "CREDIT",
+      "transactionType": "REFUND",
       "transactionState": "AUTHORIZED",
       "transactionOrigin": "ECOM",
       "transactionProcessingDetails":{
@@ -133,13 +133,6 @@ type: tab
          "total": 12.04,
          "currency": "USD"
       },
-      "merchantName": "Merchant Name",
-      "merchantAddress": "123 Peach Ave",
-      "merchantCity": "Atlanta",
-      "merchantStateOrProvince": "GA",
-      "merchantPostalCode": "12345",
-      "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
@@ -156,10 +149,6 @@ type: tab
             "transactionTimestamp": "2021-06-20T23:42:48Z"
          }
       }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
    }
 }
 ```
