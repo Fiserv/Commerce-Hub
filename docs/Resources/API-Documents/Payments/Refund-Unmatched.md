@@ -2,23 +2,12 @@
 tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 ---
 
-# Tagged Refund Unmatched
+# Unmatched Tagged Refund
 
-If the customer returns a product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request. The refund can be issued using the original `transactionId` in the URI or a reference transaction identifier in the payload.
+Unliked a normal [tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md), an unmatched tagged refund allows a merchant to issue a refund to a payment source other than the one used in the original transaction. This type of refund is utilzed when the original payment source is unavailable and allows the merchant to maintain the linking of the transaction information in Commerece Hub when issuing a refund or store credit.
 
 <!-- theme: warning -->
-> Based on the issuing bank timeframe, refunds may take 3-5 days to process and reflect on the customer's account.
-
-#### Authorized Refunds 
-
-Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions. These authorization messages will enable issuers to update the customer's account in real-time.
-
-#### Refund Types
-
-Refunds can be initiated for the full amount or a partial amount of the original authorization.
-
-- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
-- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+> Before issuing an unmatched tagged refund, a normal tagged refund should be performed. Once declined due to being an invalid or closed account, a unmatched tagged refund can be attempted. If an unmatched tagged refund is not associated with a prior tagged refund attempt, Commerce Hub will refject the transaction.
 
 <!-- theme: danger -->
 >Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
