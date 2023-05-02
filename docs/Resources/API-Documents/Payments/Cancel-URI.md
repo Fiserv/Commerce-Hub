@@ -1,5 +1,5 @@
 ---
-tags: [Sunset, Cancel, Void, API Reference]
+tags: [Sunset, Cancel, Void, Payments, API Reference]
 ---
 
 # Cancel Using the URI
