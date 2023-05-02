@@ -1,21 +1,24 @@
 ---
-tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
+tags: [Full Refund, Payments, Partial Refund, Refund, Authorization, Capture, Online Refund, API Reference]
 ---
 
 # Auth/Capture Refund
 
-Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an authorization request and a subsequent capture at a later time using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
+Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an [authorization request](#pre-auth-payload-example) and a subsequent [capture request](#capture-payload-example) at a later time using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
-Similar to [charges]((?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-auth, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
+Similar to [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-auth, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
 
-- *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to return the funds.
+- *false:* A pre-auth transaction, where the customer's funds will be reserved and a capture will be required to return the funds.
 - *true:* A refund or subsequent capture transaction where the customer will be refunded the total amount, and funds returned.
+
+<!-- theme: info -->
+> If `captureflag` is not sent the default function is *true* unless changed in merchant boarding and configuration. Please see your account representative for more information.
 
 ---
 
 ## Refunds Using Referenced Identifier 
 
-A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type. 
+A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the refund type. 
 
 ### Request Variables
 
@@ -24,7 +27,7 @@ A refund request is initiated by sending the `referenceTransactionDetails` in th
 
 <!-- 
 type: tab
-titles: referenceTransactionDetails, amount, merchantDetails
+titles: referenceTransactionDetails, amount, transactionDetails, merchantDetails
 -->
 
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
@@ -34,8 +37,8 @@ The below table identifies the available parameters in the `referenceTransaction
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
 | `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
 
 <!--
@@ -49,6 +52,15 @@ The below table identifies the required parameters in the `amount` object.
 | `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 
 <!--
 type: tab
@@ -58,8 +70,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|-----|
-|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -71,7 +83,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-### Payload Example
+### Pre-Auth Payload Example
 
 <!--
 type: tab
@@ -86,16 +98,19 @@ titles: Request, Response
   "referenceTransactionDetails": {
     "referenceTransactionId": "84356531348"
   },
-{
   "amount": {
     "total": "10.00",
     "currency": "USD"
   },
-  "merchantDetails":{
+  "transactionDetails": {
+    "captureFlag": false
+  },
+  "merchantDetails": {
     "merchantId": "123456789789567",
     "terminalId": "123456"
   }
 }
+
 ```
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
@@ -172,85 +187,45 @@ type: tab
 
 ---
 
-## Refund Using URI 
-
-A refund request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the refund type.
-
-### Request Variables
-
-<!-- theme: warning -->
-> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
-
-<!--
-type: tab
-titles: amount, merchantDetails
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object. 
-
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!-- type: tab-end -->
-
----
-
-### Endpoint
-
-<!-- theme: success -->
->**POST** `/payments/v1/charges/{transactionId}/refund`
-
----
-
-### Payload Example
+### Capture Payload Example
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-##### Example of a Parital Refund Payload Request.
+##### Example of a refunds payload request.
 
 ```json
-{
-  "amount": {
-    "total": "1.50",
-    "currency": "USD"
-  },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
-}
-```
- 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/refund)
 
+{
+  "referenceTransactionDetails": {
+    "referenceTransactionId": "84356531348"
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
+}
+
+```
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--
 type: tab
 -->
 
-##### Example of a Partial Refund (201: Success) Response.
+##### Example of a refunds (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
+
   "gatewayResponse": {
     "transactionType": "REFUND",
     "transactionState": "AUTHORIZED",
@@ -318,10 +293,7 @@ type: tab
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
-- [Open Refund Request](?path=docs/Resources/API-Documents/Payments/Refund-Open.md)
-- [Tagged Refund Request](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md)
-- [Unmatched Refund Request](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md)
+- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-
 
 ---
