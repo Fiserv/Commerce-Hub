@@ -1,5 +1,5 @@
 ---
-tags: [Cancel, Void, API Reference]
+tags: [Cancel, Void, Payments, API Reference]
 ---
 
 # Cancels
