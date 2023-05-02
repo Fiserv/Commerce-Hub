@@ -4,16 +4,10 @@ tags: [Card Not Present, Card Present, Cancel, Void, API Reference]
 
 # Cancels
 
-When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` in the URI or a reference transaction identifier in the payload.
+When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original reference transaction identifier. A cancels request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the cancel type.
 
 <!-- theme: warning -->
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
-
----
-
-## Cancels Using Referenced Identifier
-
-A cancels request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the cancel type.
 
 ---
 
