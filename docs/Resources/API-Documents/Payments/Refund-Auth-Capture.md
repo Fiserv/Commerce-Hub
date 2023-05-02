@@ -4,7 +4,7 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 # Auth/Capture Refund
 
-Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an authorization request and a subsequent capture at a later time.
+Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an authorization request and a subsequent capture at a later time using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 Similar to [charges]((?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-auth, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
 
