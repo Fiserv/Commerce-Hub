@@ -448,7 +448,7 @@ This entry is used to indicate that market-specific authorization data was prese
 Information supplied in the authorization request to assist the issuer in making better authorization decisions.
 
 ## Manual Refund
-A [credit](?path=docs/Resources/API-Documents/Payments/Credit.md) that is not associated with a previous payment. Because it is an independent transaction, it can be for any amount; a manual refund is not limited to the total of a previous sale. Also referred to as an open refund.
+A manual refund is an [open refund](?path=docs/Resources/API-Documents/Payments/Refund-Open.md) (credit) that is not associated with a previous payment. Because it is an independent transaction, it can be for any amount; a manual refund is not limited to the total of a previous sale.
 
 ## Masterpass
 Masterpass is a digital wallet service that makes online shopping safe and easy by storing the customer's payment and shipping information securely.
