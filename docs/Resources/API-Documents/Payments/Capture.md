@@ -4,7 +4,7 @@ tags: [Capture, Settle, Payments, Post Auth, Completion, API Reference]
 
 # Capture
 
-Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to be completed with the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md). The capture also known as a post-authorization, and will settle (withdrawl) funds from the customer.
+Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to be completed with the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md). The capture also known as a post-authorization, and will settle (withdrawl) funds from the customer.
 
 <!-- theme: warning -->
 > Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md).
