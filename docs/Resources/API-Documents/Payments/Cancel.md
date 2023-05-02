@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Card Present, Cancel, Void, API Reference]
+tags: [Cancel, Void, API Reference]
 ---
 
 # Cancels
