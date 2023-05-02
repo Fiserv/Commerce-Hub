@@ -44,13 +44,13 @@ Build a Commerce Hub integration to correct a payment.
 
 <!-- type: card
 title: Refunds
-description: 
+description: Submit a request to refund funds to a customer.
 link: ?path=docs/Resources/API-Documents/Payments/Refund.md
 -->
 
 <!-- type: card
 title: Cancels
-description: 
+description: Submit a request to cancel (void) a charge or refund.
 link: ?path=docs/Resources/API-Documents/Payments/Cancel.md
 -->
 
@@ -66,8 +66,8 @@ Build a Commerce Hub integration to recieve details on a payment.
 
 <!-- type: card
 title: Inquiry
-description: 
-link: 
+description: Submit a request to retrieve the original transaction details.
+link: ?path=docs/Resources/API-Documents/Payments/Inquiry.md
 -->
 
 <!-- type: row-end -->
