@@ -9,6 +9,9 @@ tags: [Sunset, Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 A refund request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the refund type.
 
+<!-- theme: danger -->
+> Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+
 ### Request Variables
 
 <!-- theme: warning -->
