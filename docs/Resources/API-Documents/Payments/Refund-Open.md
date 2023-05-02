@@ -23,7 +23,7 @@ titles: amount, source, merchantDetails
 
 The below table identifies the required parameters in the `amount` object.
 
-|Variable |  Type| Maximum Length | Description |
+| Variable |  Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -36,7 +36,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+| `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
 <!-- type: tab-end -->
 
@@ -93,7 +93,7 @@ titles: Request, Response
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/credits)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--
 type: tab
