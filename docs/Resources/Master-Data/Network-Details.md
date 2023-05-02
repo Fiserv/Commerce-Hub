@@ -88,9 +88,9 @@ titles: network, Amex, Discover, Mastercard, Visa, Debit
 
 The below table identifies the parameters in the `network` object.
 
-|Variable |Type| Maximum Length | Description|
+| Variable |Type| Maximum Length | Description|
 |------|--------|-------|----------------|
-| `network` | *string* |  | Processing card network |
+| `network` | *string* | N/A | Processing [card network](#card-network) |
 
 <!--
 type: tab
