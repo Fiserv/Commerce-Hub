@@ -151,7 +151,7 @@ type: tab
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
-- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refunds.md)
+- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
