@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Card Present, Charges, Payments, API Reference, Authorization]
+tags: [Authorization, Charges, Payments, API Reference, Sale]
 ---
 
 # Charges
