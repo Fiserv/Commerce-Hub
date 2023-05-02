@@ -18,7 +18,7 @@ An open refund (credit) is a refund to a card without an original authorization 
 
 <!--
 type: tab
-titles: amount, source
+titles: amount, source, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -37,6 +37,19 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+
+<!-- type: tab-end -->
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|-----|
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
