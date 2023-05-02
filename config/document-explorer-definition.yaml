@@ -152,6 +152,7 @@
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
     - title: Payments
+      link: docs/Resources/API-Documents/Payments/Payments.md
       sections:
       - title: Charges
         link: docs/Resources/API-Documents/Payments/Charges.md
