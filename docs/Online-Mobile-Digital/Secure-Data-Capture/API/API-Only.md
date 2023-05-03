@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 # Secure Data Capture - Card Capture API
 
-Commerce Hub allows E-commerce merchants to manage the design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub's Card Capture API allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 ### Benefits
 
@@ -16,6 +16,10 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 - **card-capture:** responsible for capturing encrypted card details.
 - **charges:** responsible for decrypting captured card details and then charging based on a payment session.
 - **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
+
+### Mobile Integrations
+
+Developers can choose to provide access to the webapp via native mobile browser or a WebView embedded within a native mobile app. See [Apple's iOS](https://developer.apple.com/documentation/webkit/wkwebview) or [Google's Android](https://developer.android.com/reference/android/webkit/WebView) documentation for addtional details.
 
 ---
 
