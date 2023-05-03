@@ -300,9 +300,6 @@ paths:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
-              PaymentCard-Encrypted:
-                summary: TokenizationRequest with encrypted PaymentCard,
-                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
@@ -321,9 +318,6 @@ paths:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
-                PaymentCard-Encrypted:
-                  summary: TokenizationResponse with encrypted PaymentCard
-                  $ref: '#/components/examples/PaymentCardTokenResponse'
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
@@ -4365,7 +4359,7 @@ components:
             apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
             clientRequestId: '4345791'
             transactionId: '84356531338'
-            
+
     PaymentCardForcedRequest:
       value:
         amount: {total: 12.04, currency: USD}
