@@ -4359,6 +4359,7 @@ components:
             apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
             clientRequestId: '4345791'
             transactionId: '84356531338'
+
     PaymentCardForcedRequest:
       value:
         amount: {total: 12.04, currency: USD}
