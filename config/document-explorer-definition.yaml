@@ -178,7 +178,9 @@
     - title: Security
       sections:
       - title: Credentials
-        link: docs/Resources/API-Documents/Security/Credentials.md  
+        link: docs/Resources/API-Documents/Security/Credentials.md
+      - title: Key Management
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:
   - title: Updates and Alerts
     sections:

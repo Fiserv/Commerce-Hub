@@ -75,9 +75,9 @@ titles: Request, Response
 
 ```json
 {
-    "merchantDetails": {
-        "merchantId": "100004000000175"
-    }
+  "merchantDetails": {
+    "merchantId": "123456789012345"
+  }
 }
 ```
 
@@ -89,27 +89,27 @@ type: tab
 
 ```json
 {
-    "gatewayResponse": {
-        "transactionProcessingDetails": {
-            "transactionTimestamp": "2022-03-09T12:15:36.864999Z",
-            "apiTraceId": "7285fd4f2496418992e5b12fbb7f68e4",
-            "clientRequestId": "46e4aee3c4f41a1b7ac95a5c8a313c6d",
-            "transactionId": "7285fd4f2496418992e5b12fbb7f68e4"
-        }
-    },
-    "asymmetricKeyDetails": {
-        "keyId": "e294a246-078b-4ec0-82d6-5ab7fccd6491",
-        "encryptionType": "RSA",
-        "modulus": 2048,
-        "encodedPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtb18DQ0vV/1bz7q2kew+uckYIEON++ItNPcEaDj/vwBITAQTJtpZNY1EWQApZqx/b2aJl2gx4Ucv8pSbQWixbshy5eKLf0PblfeJmHwXuFZHXdwjCL243sKqx1yxifOymnujyp9l2GHls9F7OCAj6MGP8EjKc4nYmAlf9BMR6L22gxPG9Y+VoJBb0HhWwtSNYpn4pfv+wZOH+wlENusCcqOL3AbQbRASpaKgg3CzzTWfYJtYMf/nslnzjsvye1/Jx61VyYARn8yI0pj7U8K3W3R2A/zut9fYE2lSIaJEvcKW/PzAAyd+tqvjFqNTP7fUX46JABQAMfU6dETSQG2guwIDAQAB",
-        "validFrom": "2022-03-09T12:15:39.576795Z",
-        "validTo": "2022-06-07T12:15:39.576795Z",
-        "status": "ACTIVE"
-    },
-    "symmetricKeyDetails": {
-        "encryptionType": "AES-GCM",
-        "modulus": 256
+  "gatewayResponse": {
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
     }
+  },
+  "asymmetricKeyDetails": {
+    "keyId": "accb12d8-684e-4261-9786-1b54f98d48ee",
+    "encryptionType": "RSA",
+    "modulus": 2048,
+    "encodedPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWaW4VHWvn2dtzEmgJ32usf6F8AbzsyutP4j3EJEfq4qKg95wSHB3FRETcwksDkRRiRBiwnkWROxNwzuPf3MZNjqDY......",
+    "validFrom": "2023-03-29T13:55:20.102105Z",
+    "validTo": "2023-04-18T13:55:20.102105Z",
+    "status": "ACTIVE"
+  },
+  "symmetricKeyDetails": {
+    "encryptionType": "AES-GCM",
+    "modulus": 256
+  }
 }
 ```
 
@@ -168,9 +168,9 @@ titles: Request, Response
 
 ```json
 {
-    "merchantDetails": {
-        "merchantId": "100004000000175"
-    }
+  "merchantDetails": {
+    "merchantId": "123456789012345"
+  }
 }
 ```
 
@@ -182,27 +182,27 @@ type: tab
 
 ```json
 {
-    "gatewayResponse": {
-        "transactionProcessingDetails": {
-            "transactionTimestamp": "2022-03-09T12:15:36.864999Z",
-            "apiTraceId": "7285fd4f2496418992e5b12fbb7f68e4",
-            "clientRequestId": "46e4aee3c4f41a1b7ac95a5c8a313c6d",
-            "transactionId": "7285fd4f2496418992e5b12fbb7f68e4"
-        }
-    },
-    "asymmetricKeyDetails": {
-        "keyId": "e294a246-078b-4ec0-82d6-5ab7fccd6491",
-        "encryptionType": "RSA",
-        "modulus": 2048,
-        "encodedPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtb18DQ0vV/1bz7q2kew+uckYIEON++ItNPcEaDj/vwBITAQTJtpZNY1EWQApZqx/b2aJl2gx4Ucv8pSbQWixbshy5eKLf0PblfeJmHwXuFZHXdwjCL243sKqx1yxifOymnujyp9l2GHls9F7OCAj6MGP8EjKc4nYmAlf9BMR6L22gxPG9Y+VoJBb0HhWwtSNYpn4pfv+wZOH+wlENusCcqOL3AbQbRASpaKgg3CzzTWfYJtYMf/nslnzjsvye1/Jx61VyYARn8yI0pj7U8K3W3R2A/zut9fYE2lSIaJEvcKW/PzAAyd+tqvjFqNTP7fUX46JABQAMfU6dETSQG2guwIDAQAB",
-        "validFrom": "2022-03-09T12:15:39.576795Z",
-        "validTo": "2022-06-07T12:15:39.576795Z",
-        "status": "REVOKED"
-    },
-    "symmetricKeyDetails": {
-        "encryptionType": "AES-GCM",
-        "modulus": 256
+  "gatewayResponse": {
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
     }
+  },
+  "asymmetricKeyDetails": {
+    "keyId": "accb12d8-684e-4261-9786-1b54f98d48ee",
+    "encryptionType": "RSA",
+    "modulus": 2048,
+    "encodedPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWaW4VHWvn2dtzEmgJ32usf6F8AbzsyutP4j3EJEfq4qKg95wSHB3FRETcwksDkRRiRBiwnkWROxNwzuPf3MZNjqDY......",
+    "validFrom": "2023-03-29T13:55:20.102105Z",
+    "validTo": "2023-04-18T13:55:20.102105Z",
+    "status": "REVOKED"
+  },
+  "symmetricKeyDetails": {
+    "encryptionType": "AES-GCM",
+    "modulus": 256
+  }
 }
 ```
 
