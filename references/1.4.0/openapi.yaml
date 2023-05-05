@@ -682,7 +682,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/CardCaptureResponse'
               examples:
-                PaymentCardCaptureResponse:
+                PaymentCard:
                   summary: CardCaptureResponse for PaymentCard
                   $ref: '#/components/examples/PaymentCardCaptureResponse'
         400:
