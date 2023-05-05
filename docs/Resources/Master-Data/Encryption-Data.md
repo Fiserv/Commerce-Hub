@@ -4,7 +4,7 @@ tags: [API Reference, Card Present, Encrypted Data, Master Data, Pin Block]
 
 # Encryption Data
 
-Data encryption is a method of protecting data confidentiality by converting it to encoded information, that can only be decoded with a unique decryption key, generated either at the time of encryption or beforehand.
+Data encryption is a method of protecting data confidentiality by converting it to encoded information, that can only be decoded with a unique decryption key, generated either at the time of encryption or beforehand. Commerce Hub supports [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) and [multi-use public key encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md).
 
 <!--
 type: tab
