@@ -4,7 +4,7 @@ tags: [API Reference, Card Present, Encrypted Data, Master Data, Pin Block]
 
 # Encryption Data
 
-Data encryption is a method of protecting data confidentiality by converting it to encoded information, that can only be decoded with a unique decryption key, generated either at the time of encryption or beforehand.
+Data encryption is a method of protecting data confidentiality by converting it to encoded information, that can only be decoded with a unique decryption key, generated either at the time of encryption or beforehand. Commerce Hub supports [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) and [multi-use public key encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md).
 
 <!--
 type: tab
@@ -16,7 +16,7 @@ The below table identifies the parameters in the `encryptionData` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `encryptionType` | *string* | 256 | [Encryption type](#encryption-type) to be passed. |
-| `encryptionTarget` | *string* | 256 | Target could be *TRACK1*, *TRACK2*, *BOTH* or *MANUAL*. |
+| `encryptionTarget` | *string* | 256 | [Encryption target](#encryption-target) identifies the data based on how it is entered into the POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. |
 | `encryptionBlock` | *string* | 2000 | This field contains the track data or card number provided in encrypted form. |
 | `deviceType` | *string* | 256 | [Device type](#device-type) that needs to be sent for TDES and AES encrypted track data. |
 | `securitykeyUpdateIndicator` | *boolean* |  | Provided in response. POS is expected to download updated key, key cert. |
@@ -62,6 +62,19 @@ Encryption type is the method used to encrypt payment data before sending it to 
 | *ON_GUARD* | Ingenico OnGuard Encryption – Format preserving option that relies on symmetric encryption keys used to encrypt and decrypt the cardholder data using 3DES encryption standard. |
 | *FPE* | |
 | *AES_DUKPT* | Advanced Encryption Standard – Format preserving option that relies on symmetric encryption keys. AES algorithm uses cryptographic keys of 128/256 bits to encrypt and decrypt data. |
+
+---
+
+### Encryption Target
+
+| Valid Values | Details |
+| ----- | ----- | 
+| *MANUAL* | When card data is manually entered into a POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. | 
+| *TRACK1* | When track 1 card data is swiped into a POS device or terminal (Mag stripe) |
+| *TRACK2* | When track 2 card data is swiped, dipped, or tapped into a POS device/terminal (Mag stripe, EMV, NFC/Contactless) |
+| *BOTH* | When track 1 and 2 card data is swiped, dipped, or tapped into a POS device/terminal (Mag stripe, EMV, NFC/Contactless) |
+
+---
 
 ### Device Type
 
