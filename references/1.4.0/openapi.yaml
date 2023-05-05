@@ -300,6 +300,9 @@ paths:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
+              PaymentCard-Encrypted:
+                summary: TokenizationRequest with encrypted PaymentCard,
+                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
