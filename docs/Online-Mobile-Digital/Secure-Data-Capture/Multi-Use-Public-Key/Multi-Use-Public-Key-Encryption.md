@@ -25,7 +25,7 @@ const encryptionBlock =  Object.values(cardData).join(""));
 ```
 
 <!-- theme: example -->
-> encryptionBlock = 4111111111111111JoeBloggs123122034
+> encryptionBlock = 4111111111111111Joe Bloggs123122034
 
 --- 
 
@@ -80,11 +80,11 @@ The below table identifies the parameters in the `encryptionData` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -----------|
-| `encryptionType` | *string* | 256 | Encryption type to be passed. |
-| `encryptionTarget` | *string* | 256 | Target is *MAUNAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
-| `encryptionBlock` | *string* | 2000 | This field contains the track data or card number provided in encrypted form. |
-| `keyId` | *string* | 40 | Provided encryption key required for decryption of track data that is encrypted. This field must be submitted for encryption request messages sending manual PAN, Track 1, or Track 2 data that is encrypted. |
-| `encryptionBlockFields` | *string* | 256 | Encryption block field descriptors to facilitate decryption when using multi-use public key encryption. Each field should recorded the form field_name:byte_count e.g. card.expirationMonth:2 |
+| `encryptionType` | *string* | 256 | Encryption type is *RSA* when using MUPK. |
+| `encryptionTarget` | *string* | 256 | Target is *MANUAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
+| `encryptionBlock` | *string* | 2000 | This field contains the card details in encrypted form. |
+| `keyId` | *string* | 40 | Provided encryption key required for decryption of track data that is encrypted. |
+| `encryptionBlockFields` | *string* | 256 | ncryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
 
 
 ```javascript
@@ -92,8 +92,8 @@ The below table identifies the parameters in the `encryptionData` object.
 encryptionData: {
   keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
   encryptionType: "RSA",
-  encryptionBlock: encryptionBlock,
-  encryptionBlockFields: encryptionBlockFields,
+  encryptionBlock: "=s3ZmiL1SSZC8QyBpj/....",
+  encryptionBlockFields: "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
   encryptionTarget: "MANUAL",
 }
 
@@ -113,8 +113,8 @@ const payload = {
             encryptionData: {
                 keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
                 encryptionType: "RSA",
-                encryptionBlock: encryptionBlock,
-                encryptionBlockFields: encryptionBlockFields,
+                encryptionBlock: "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+                encryptionBlockFields: "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",,
                 encryptionTarget: "MANUAL",
             }
          }

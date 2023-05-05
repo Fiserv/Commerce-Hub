@@ -5,7 +5,7 @@ tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 
 # Seacure Data Capture - JS Solution
 
-Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends payment information directly to Commerce Hub and returns a payment nonce `sessionId` _(one-time use token)_. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and card entry form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends payment information directly to Commerce Hub and returns a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 ### Benefits
 
@@ -20,7 +20,25 @@ Allows a merchant an easy and secure way to embed a payment form into a website 
 5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
 6. Commerce Hub sends the transaction response to the merchant's website.
 
-**Begin integration with [Commerce Hub JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md).**
+---
+
+## Integration
+
+<!-- type: row -->
+
+<!-- type: card
+title: JS Integration Guide
+description: Begin integration with Commerce Hub's JavaScript SDK solution.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md
+-->
+
+<!-- type: card
+title: JS Customization
+description: Customize the language, theme, and font for Commerce Hub's JavaScript SDK solution.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
+-->
+
+<!-- type: row-end -->
 
 ---
 

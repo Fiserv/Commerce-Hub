@@ -2,9 +2,9 @@
 tags: [Online, Card Not Present, Secure Data Capture]
 ---
 
-# Secure Data Capture - API Only
+# Secure Data Capture - Card Capture API
 
-Commerce Hub allows E-commerce merchants to manage the design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment nonce `sessionId` _(one-time use token)_. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub's Card Capture API allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 ### Benefits
 
@@ -17,15 +17,20 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 - **charges:** responsible for decrypting captured card details and then charging based on a payment session.
 - **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
 
+### Mobile Integrations
+
+Developers can choose to provide access to the webapp via native mobile browser or a WebView embedded within a native mobile app. See [Apple's iOS](https://developer.apple.com/documentation/webkit/wkwebview) or [Google's Android](https://developer.android.com/reference/android/webkit/WebView) documentation for addtional details.
+
 ---
 
-## Step 1: Security Credentials 
+## Step 1: Acquire Credentials 
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, `keyId`, and `publicKey`. These will be used to create the [encryption data](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
 
+
 ---
 
-## Step 2: Encryption
+## Step 2: Encrypt Card Data
 
 The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
 
@@ -57,11 +62,11 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `encryptionType` | *string* | 256 |  &#10004; | Encryption type is *RSA* when using MUPK. |
+| `encryptionTarget` | *string* | 256 |  &#10004; | Target is *MANUAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the card details in encrypted form. |
 | `encryptionBlockFields` | *string* | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
-| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
+| `keyId` | *string* | 64 | &#10004; | Provided encryption key required for decryption of track data that is encrypted. |
 
 
 <!--
@@ -106,20 +111,20 @@ titles: Request, Response
 
 ```json
 {
-    "source": {
-        "sourceType": "PaymentCard",
-        "encryptionData": {
-            "encryptionType": "RSA",
-            "encryptionTarget": "MANUAL",
-            "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-            "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-            "keyId": "88000000022"
-        }
-    },
-    "merchantDetails": {
-        "merchantId": "123456789012345",
-        "terminalId": "123456"
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
+  },
+  "merchantDetails":{
+      "merchantId": "123456789789567",
+      "terminalId": "123456"
+   }
 }
 ```
 
@@ -129,23 +134,10 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a card capture (201: Created) response.
+A successful card capture response will result in a HTTP 204 No Content, if a response is not received, best practice is to still submit the transaction.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-{
-  "gatewayResponse": {
-    "transactionProcessingDetails": {
-      "transactionTimestamp": "2021-06-20T23:42:48Z",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
-    }
-  }
-}
-```
 
 <!-- type: tab-end -->
 
@@ -171,7 +163,7 @@ Submit a charge or tokenization request after a successful response which identi
 
 <!--
 type: tab
-titles: Charges Request, Charges Response, Tokens Request, Tokens Response
+titles: Request, Charges Response, Tokens Response
 -->
 
 ##### Example of a charge payload request.
@@ -179,7 +171,7 @@ titles: Charges Request, Charges Response, Tokens Request, Tokens Response
 ```json
 {
   "amount": {
-    "total": 12.04,
+    "total": "12.04",
     "currency": "USD"
   },
   "source": {
@@ -188,13 +180,7 @@ titles: Charges Request, Charges Response, Tokens Request, Tokens Response
   },
   "transactionDetails": {
     "captureFlag": true,
-    "accountVerification": false,
-    "merchantInvoiceNumber": "123456789012"
-  },
-  "transactionInteraction": {
-    "origin": "ECOM",
-    "eciIndicator": "CHANNEL_ENCRYPTED",
-    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+    "merchantTransactionId": "RKTransID-768086381518"
   },
   "merchantDetails": {
     "merchantId": "123456789012345",
@@ -243,6 +229,13 @@ type: tab
          "total": 12.04,
          "currency": "USD"
       },
+      "merchantName": "Merchant Name",
+      "merchantAddress": "123 Peach Ave",
+      "merchantCity": "Atlanta",
+      "merchantStateOrProvince": "GA",
+      "merchantPostalCode": "12345",
+      "merchantCountry": "US",
+      "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
          "approvalStatus": "APPROVED",
          "approvalCode": "OK5882",
@@ -263,28 +256,6 @@ type: tab
       "captureFlag": true,
       "merchantInvoiceNumber": "123456789012"
    }
-}
-```
-
-<!--
-type: tab
--->
-
-##### Example of a tokens payload request.
-
-```json
-{
-  "source": {
-    "sourceType": "PaymentSession",
-    "sessionId": "df8c33d2-af27-4a3a-b7a0-61d4edf09cad"
-  },
-  "transactionDetails": {
-    "merchantTransactionId": "RKTransID-768086381518"
-  },
-  "merchantDetails": {
-    "merchantId": "123456789012345",
-    "terminalId": "123456"
-  }
 }
 ```
 
@@ -340,6 +311,13 @@ type: tab
       "total": 12.04,
       "currency": "USD"
     },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",

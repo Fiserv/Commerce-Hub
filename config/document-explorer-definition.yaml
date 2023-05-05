@@ -76,7 +76,7 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
       - title: JavaScript
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-      - title: API Only
+      - title: Card Capture API
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
       - title: Multi-Use Public Key
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
@@ -178,7 +178,9 @@
     - title: Security
       sections:
       - title: Credentials
-        link: docs/Resources/API-Documents/Security/Credentials.md  
+        link: docs/Resources/API-Documents/Security/Credentials.md
+      - title: Key Management
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:
   - title: Updates and Alerts
     sections:
