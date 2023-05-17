@@ -766,7 +766,7 @@ paths:
       tags:
         - Payment Security Endpoint
       x-group-name: 'Security'
-      x-proxy-name: 'Generate Key'
+      x-proxy-name: 'Revoke Key'
       summary: Revokes an encryption key using the key ID specified in the URL path
       description: Revoke a multi-use encryption key.
       requestBody:
