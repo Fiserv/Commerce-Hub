@@ -11,7 +11,7 @@ If the customer returns a product or requests to cancel the transaction after th
 
 #### Authorized Refunds 
 
-Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions. These authorization messages will enable issuers to update the customer's account in real-time.
+Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions, also known as an online refund. These authorization messages will enable issuers to update the customer's account in real-time.
 
 <!-- theme: danger -->
 > Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
