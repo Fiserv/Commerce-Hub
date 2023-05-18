@@ -10,7 +10,7 @@ An open refund (credit) is a refund to a card without an original authorization 
 > Open refund should only be performed if a prior authorization was not performed in Commerce Hub (e.g. a different API, merchant account, or device), otherwise utilize [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md).
 
 <!-- theme: info -->
-> Open refunds can only be performed once approved by security risk and enabled in Merchant Boarding and Configuration. Please contacnt your account representative for more information.
+> Open refunds can only be performed once approved by security risk and enabled in Merchant Boarding and Configuration. Please contact your account representative for more information.
 
 ---
 
