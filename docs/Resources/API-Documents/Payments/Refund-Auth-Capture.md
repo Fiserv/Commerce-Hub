@@ -12,7 +12,7 @@ Similar to [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), on
 - *true:* A refund or subsequent capture transaction where the customer will be refunded the total amount, and funds returned.
 
 <!-- theme: info -->
-> If `captureflag` is not sent the default function is *true* unless changed in merchant boarding and configuration. Please see your account representative for more information.
+> If `captureflag` is not sent the default function is *true* when online authorization is disabled in merchant boarding and configuration. Please see your account representative for more information.
 
 ---
 
@@ -39,13 +39,13 @@ The below table identifies the available parameters in the `referenceTransaction
 |---------|----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 | `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
+| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES_ |
 
 <!--
 type: tab
 -->
 
-The below table identifies the required parameters in the `amount` object.
+The below table identifies the parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
@@ -60,7 +60,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
+| `captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Refund and *false* for Pre-Auth)|
 
 <!--
 type: tab
@@ -228,7 +228,7 @@ type: tab
 
   "gatewayResponse": {
     "transactionType": "REFUND",
-    "transactionState": "AUTHORIZED",
+    "transactionState": "CAPTURED",
     "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
       "transactionTimestamp": "2021-06-20T23:42:48Z",
