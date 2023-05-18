@@ -203,46 +203,69 @@ paths:
   /payments-vas/v1/accounts/verification:
     x-model-version: 1.0
     post:
-      tags: [Account  Verification Endpoint Definition]
-      x-group-name: Payments VAS
-      x-proxy-name: Verification
-      x-default-example: PaymentCard
+      tags:
+        - Account Verification Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Verification'
       summary: Verify a payment card or payment token.
-      description: Use this payload to perform an account verification for a payment
-        card or payment token. This will check the validity and respond if an account
-        is valid or not.
+      description: 'Use this payload to perform an account verification for a payment card or payment token. This will check the validity and respond if an account is valid or not.'
       requestBody:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/AccountVerificationRequest'}
+            schema:
+              $ref: '#/components/schemas/AccountVerificationRequest'
             examples:
-              PaymentCard: {summary: AccountVerificationRequest with PaymentCard,
-                $ref: '#/components/examples/PaymentCardVerifyRequest'}
-              PaymentEMV: {summary: AccountVerificationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVVerifyRequest'}
-              PaymentTrack: {summary: AccountVerificationRequest with PaymentTrack,
-                $ref: '#/components/examples/PaymentTrackVerifyRequest'}
-              ManualEntry: {summary: AccountVerificationRequest with manual entry
-                  PaymentCard, $ref: '#/components/examples/ManualEntryVerifyRequest'}
-              PaymentToken: {summary: AccountVerificationRequest with PaymentToken,
-                $ref: '#/components/examples/PaymentTokenVerifyRequest'}
+              PaymentCard:
+                summary: AccountVerificationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardVerifyRequest'
+              PaymentCard-Encrypted:
+                summary: AccountVerificationRequest with encrypted PaymentCard
+                $ref: '#/components/examples/PaymentCardEncryptedVerifyRequest'
+              PaymentSession:
+                summary: AccountVerificationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionVerifyRequest'
+              PaymentEMV:
+                summary: AccountVerificationRequest with PaymentEMV
+                $ref: '#/components/examples/PaymentEMVVerifyRequest'
+              PaymentTrack:
+                summary: AccountVerificationRequest with PaymentTrack
+                $ref: '#/components/examples/PaymentTrackVerifyRequest'
+              ManualEntry:
+                summary: AccountVerificationRequest with manual entry PaymentCard
+                $ref: '#/components/examples/ManualEntryVerifyRequest'
+              PaymentToken:
+                summary: AccountVerificationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenVerifyRequest'
       responses:
         201:
           description: Created
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/AccountVerificationResponse'}
+              schema:
+                $ref: '#/components/schemas/AccountVerificationResponse'
               examples:
-                PaymentCard: {summary: AccountVerificationResponse with PaymentCard,
-                  $ref: '#/components/examples/PaymentCardVerifyResponse'}
-                PaymentEMV: {summary: AccountVerificationResponse with PaymentEMV,
-                  $ref: '#/components/examples/PaymentEMVVerifyResponse'}
-                PaymentTrack: {summary: AccountVerificationResponse with PaymentTrack,
-                  $ref: '#/components/examples/PaymentTrackVerifyResponse'}
-                ManualEntry: {summary: AccountVerificationResponse with manual entry
-                    PaymentCard, $ref: '#/components/examples/ManualEntryVerifyResponse'}
-                PaymentToken: {summary: AccountVerificationResponse with PaymentToken,
-                  $ref: '#/components/examples/PaymentTokenVerifyResponse'}
+                PaymentCard:
+                  summary: AccountVerificationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardVerifyResponse'
+                PaymentCard-Encrypted:
+                  summary: AccountVerificationResponse with encrypted PaymentCard
+                  $ref: '#/components/examples/PaymentCardVerifyResponse'
+                PaymentSession:
+                  summary: AccountVerificationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentCardVerifyResponse'
+                PaymentEMV:
+                  summary: AccountVerificationResponse with PaymentEMV
+                  $ref: '#/components/examples/PaymentEMVVerifyResponse'
+                PaymentTrack:
+                  summary: AccountVerificationResponse with PaymentTrack
+                  $ref: '#/components/examples/PaymentTrackVerifyResponse'
+                ManualEntry:
+                  summary: AccountVerificationResponse with manual entry PaymentCard
+                  $ref: '#/components/examples/ManualEntryVerifyResponse'
+                PaymentToken:
+                  summary: AccountVerificationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenVerifyResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -277,6 +300,9 @@ paths:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
+              PaymentCard-Encrypted:
+                summary: TokenizationRequest with encrypted PaymentCard,
+                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
@@ -503,7 +529,7 @@ paths:
               $ref: '#/components/schemas/SecurityCredentialsRequest'
             examples:
               Credentials:
-                summary: Security credntials request
+                summary: Security credentials request
                 $ref: '#/components/examples/SecurityCredentialsRequest'
       responses:
         201:
@@ -676,6 +702,123 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
+  /security/v1/keys/generate:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Payment Security Endpoint
+      x-group-name: 'Security'
+      x-proxy-name: 'Generate Key'
+      summary: Receives an encryption key request and returns the generated encryption key response.
+      description: Generate a Multi-use encryption key.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EncryptionKeyRequest'
+            examples:
+              GenerateRequest:
+                summary: Generate Encryption Key Request
+                $ref: '#/components/examples/EncryptionKeyRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EncryptionKeyResponse'
+              examples:
+                GenerateRequest:
+                  summary: Generate Encryption Key Response
+                  $ref: '#/components/examples/EncryptionKeyGenerateResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+  /security/v1/keys/{keyId}/revoke:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Payment Security Endpoint
+      x-group-name: 'Security'
+      x-proxy-name: 'Revoke Key'
+      summary: Revokes an encryption key using the key ID specified in the URL path
+      description: Revoke a multi-use encryption key.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EncryptionKeyRequest'
+            examples:
+              RevokeRequest:
+                summary: Revoke Encryption Key Request
+                $ref: '#/components/examples/EncryptionKeyRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EncryptionKeyResponse'
+              examples:
+                RevokeResponse:
+                  summary: Revoke Encryption Key Response
+                  $ref: '#/components/examples/EncryptionKeyRevokedResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+
 components:
   parameters:
     OrderIdParam:
@@ -715,6 +858,14 @@ components:
         Valid Values:
         * ApplePay
         * SamsungPay
+    KeyIdParam:
+      x-model-version: 1.0
+      name: keyId
+      schema:
+        type: string
+      in: path
+      required: true
+      description: 'The identifier used to uniquely identify an encryption key'
     AuthorizationTokenTypeHeader:
       x-model-version: 1.0
       name: Auth-Token-Type
@@ -1063,6 +1214,8 @@ components:
         amount: {$ref: '#/components/schemas/Amount'}
         source: {$ref: '#/components/schemas/Source'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        orderData:
+          $ref: '#/components/schemas/OrderData'
         referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
         dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
@@ -1510,8 +1663,11 @@ components:
           example: '30dd879c-ee2f-11db-8314-0800200c9a66'
         captureFlag: {type: boolean, description: Designates if the transaction should
             be captured. Auth (False) or Sale (True)., example: true}
-        transactionCaptureType: {type: string, description: Identifies if settlement
-            was Host capture or Terminal capture., maxLength: 64, example: TCS}
+        transactionCaptureType: 
+            type: string
+            description: 'Identifies if settlement was HOST, GATEWAY, or TERMINAL_DIRECT capture.'
+            maxLength: 64
+            example: HOST
         accountVerification: {type: boolean, description: Determines if verification
             should be performed on the payment type., example: 'false'}
         partialApproval:
@@ -2638,21 +2794,6 @@ components:
       x-model-version: 1.0
       description: 'Private label transaction information.'
       properties:
-        paymentSource:
-          type: string
-          maxLength: 256
-          description: 'Private label card source.'
-          example: 'SHELL'
-        paymentType:
-          type: string
-          maxLength: 16
-          description: 'Type of transaction.'
-          example: 'REFUND'
-        specialFinanceIndicator:
-          type: string
-          maxLength: 16
-          description: 'Indicates if special finance term and rate.'
-          example: '24/0'
         creditPlanNumber:
           type: string
           maxLength: 5
@@ -3885,6 +4026,85 @@ components:
           maxLength: 2048
           description: 'URL associated with the HTTP domain'
           example: 'https://store.example.com'
+  
+    EncryptionKeyRequest:
+      x-model-version: 1.0
+      properties:
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+    EncryptionKeyResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        asymmetricKeyDetails:
+          $ref: '#/components/schemas/KeyPairDetails'
+        symmetricKeyDetails:
+          $ref: '#/components/schemas/KeyDetails'
+
+    KeyDetails:
+      x-model-version: 1.0
+      properties:
+        keyId:
+          type: string
+          maxLength: 64
+          description: 'Key ID is provided to get the corresponding RSA public key.'
+          example: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+        encryptionType:
+          type: string
+          maxLength: 32
+          description: 'Encryption type to be passed. Possible values: RSA, Verifone, TDES/DUKPT,On-Guard FPE, AES/Dukpt. Defaults to RSA'
+          example: 'RSA'
+        modulus:
+          type: integer
+          description: 'Modulus size of the key pair'
+          example: '2048'
+        encodedPublicKey:
+          type: string
+          description: 'Encoded public key.'
+          example: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu3Kb+9MaQc1GWSol0ZWJJhvBvk2p6BVj1vDaGrPBa2xGsoMMgef1YiA3wXv7Yd5JSKrg4ZH1GkhoGEFqX1nBKyBBzcutZYx0XU7RaWvZBAEPjQeBwOUSe2oXLxCnZ4IuR+s73ZuFGw1K5jQt3NkRJuzA0WWLJQryBIbTJ84Cx5u5qYW2LLchOKVPJMqawIcdXkHjDemJ8pHvwbrZmLDgc9FDTbyQeX1ckveIG1tqVM4AiqXrrscgb7QocOxJ4Ag8jBprOnnqm/TBaTrW8/Duo8g/RWIf5QnQc5oekaQa9Yt8kXk9Px0KWcdzJasyy1aHgvuW9eJVYcM/uu/bHAWqVwIDAQAB'
+    KeyPairDetails:
+      x-model-version: 1.0
+      properties:
+        keyId:
+          type: string
+          maxLength: 64
+          description: 'Unique identifier of the key pair.'
+          example: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+        encryptionType:
+          type: string
+          maxLength: 32
+          description: 'Encryption type of the key pair. Defaults to RSA'
+          example: 'RSA'
+        modulus:
+          type: integer
+          description: 'Modulus size of the key pair'
+          example: '2048'
+        encodedPublicKey:
+          type: string
+          description: 'Encoded public key. Possible encodings: Base64, Hex'
+          example: '30820122300D06092A864886F70D01010105000382010F003082010A0282010100BB729BFBD31A41CD46592A25D19589261BC1BE4DA9E81563D6F0DA1AB3C16B6C46B2830C81E7F5622037C17BFB61DE4948AAE0E191F51A486818416A5F59C12B2041CDCBAD658C745D4ED1696BD904010F8D0781C0E5127B6A172F10A767822E47EB3BDD9B851B0D4AE6342DDCD91126ECC0D1658B250AF20486D327CE02C79BB9A985B62CB72138A54F24CA9AC0871D5E41E30DE989F291EFC1BAD998B0E073D1434DBC90797D5C92F7881B5B6A54CE008AA5EBAEC7206FB42870EC49E0083C8C1A6B3A79EA9BF4C1693AD6F3F0EEA3C83F45621FE509D0739A1E91A41AF58B7C91793D3F1D0A59C77325AB32CB568782FB96F5E25561C33FBAEFDB1C05AA570203010001'
+        encodedPrivateKey:
+          type: string
+          description: 'Encoded private key. Possible encodings: Base64, Hex'
+          example: 'C7F6C53FDCD9B49F664EDB759548A373766B042F603D99A61BD74C99D9886E46D22A7CB0C9A5A965D7F85E2C54F26C75C02BEE9EE8AB66534453CEF60874EA5ADC0966125AADDC326D3858766A822AC9EB7C63F6E0F19C352178A806838E315BC1B4BA9CE98D31AF6845EAA2B27F54772501910C9C1619148F7219075D494115C722842F54968F6E3AB14BBD6F361BE6C9CA4A86C0B03F32BA08CCA9EDFDEEC20328F4228CBEFDD6A0F91CA9B2222B633198DB0447FB2EF137718B70EFEAE11D88C9B1D556685A758B7D3CD3547483A5F4BA7AFA8E0BDF68C82AA9F19A43763861B05F73BECBE676D6801D1AF1597936BC1B970535C8C9E77DB137A2D117BCEB97C2FA865C94195CAADE1960C367F947EA3541B8D57E36E0CF50A01FF5069514830D3B2C5FBBA05F27A43353566F4FDC5928572CFD0A56D4B37900913DF960B0D80D0395154998C476445AB68FA407F09FEB81966D1289ED1284B00C25D7FBEABBCB48BEA02A7547DDA69D057148B909294583798E218ACA3D0098F9CB1C4703528BDE7D375CC710E7E2F33BB3F00BBB3A60D717A64208F3A6F1BF9512F01E7CA099E11ECC5C594D8497E3EE433D55387A65F4CE4F1D2D17EA77310C063AAF485DD9BBCD8581989CB36154DC3F38B03A980CA4E54943439942A7A438D2CA75AC7F0916C798FBEB891AEACDFA4F8742AC0DC74D8766830802F3BF61F4BE4A15B5B7BEB43654CB2E8E5BAA45AEAE4BA8DD10A112D3C732C50C04BEA676A7B16A4F86E4BEAEEE7FE574B3495CF8DE0EA9D0B21D48A40EE35DFAA65EFC128753A3955ABA62ABEB006EF911E647895DC9E362DD7FFA89465545EDFD6997CAFAB81946D83DBC28CF3450EB5FDF04052EAFC8DB51F7245B7D798F71F25AB80EFA2E3285289A8DAF217D3598B055B9CC1D25CC0DE3F797B662534BEC00F831FFF9A62DE142EFAE8B3F99531CA0C9B91063569A88144CC9B9BCD5A7548692EADEFA335F1F599C8D80619E3A54FB14419384168618D5DCEDF9ABEEC795C58CB5ECDCA7031634AA4B6822B7D8F1D1BE7E21B7CDCCEF45D19E7B19B9CE630799213165ED979591E2C26D0F81AF9017F9CF8DDC6E5456ED10755638A03D6893341F85D11B60458DB6C53CB8CCAF64840C7499A95B0FB7267469FFECB69907056469AFC26246DB074A7C96AE02ADA2CC1D9383E8B6BD16CD1A6D4281E37BEE47D2A3621C1521B9ED30F7CF7AFE21EB054E6276BFEFAF58D2CBD99E57BDC7A747DD9B80A6CB8AE469A5E2FBE3EA78E4F54DF7A9E809FFD5AC584901114151D8EEAD5BEB7F14F2C52C9C10D998685A41E9649C90D0316037B886F61856349385C730B7968701288C4C69174F54C48F2DDD44DCD082F37D0066A8E6AACD4F7FAEAADB85624EC847EDE28D2FA90BDCE22CB68693F44AB960A83F32C59F9E7EE6303F25E9D49824031CD8E02707C04E16797C930F310C9B5233064FE611B54B7884EAF2A4B9E85B94005F4BADB24B5DC625AC6B6DDAF2F6CF0660A343B6F7133FA4295B305E53C526937FC2797C6F3951D28C8FF577EE267707EB108B97CE2AE084335211DD752339E84EF1A0C6BD01D517EF6FAE3424DA82F8D25809C1D87B8F622A4093165C3E69CB421FF4DD4946D185110958A2A1B000373A2957DBF92227576B4DB7150EF1392CA7C32BDA4B413044AD45D20C7D82DF9A4817142A49F790F45FC6D03FFBE658F2AC5FEE0F5EAF1C5D05FEA65649BCF2B8'
+        validFrom:
+          type: string
+          format: date-time
+          description: 'Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2021-04-30T04:00:00.000Z'
+        validTo:
+          type: string
+          format: date-time
+          description: 'Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2021-07-30T04:00:00.000Z'
+        status:
+          type: string
+          maxLength: 10
+          description: 'Status of the key pair. Valid values are ACTIVE, INACTIVE, REVOKED or LEGACY'
+          example: 'ACTIVE'
+
+  
   examples:
     ApplePayRequest:
       value:
@@ -4134,6 +4354,15 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+    PaymentCardCaptureResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+
     PaymentCardForcedRequest:
       value:
         amount: {total: 12.04, currency: USD}
@@ -4167,6 +4396,42 @@ components:
           lastName: Smith
           address: {street: Main Street, houseNumberOrName: '123', city: Sandy Springs,
             stateOrProvince: GA, postalCode: '30303', country: US}
+
+    PaymentCardEncryptedTokenRequest:
+      value:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+        merchantDetails:
+          merchantId: '123456789789567'
+          terminalId: '123456'
+
+    PaymentCardEncryptedVerifyRequest:
+      value:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+        billingAddress:
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+
     PaymentCardEDSRequest:
       value:
         amount: {total: 12.04, currency: USD}
@@ -4819,23 +5084,29 @@ components:
             keyId: FFFF10970000000003FD0114
             deviceType: INGENICO
         merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+        
     PaymentEMVVerifyRequest:
       value:
         source:
-          sourceType: PaymentEMV
-          emvData: 9F03060000000000009F5301529F26082ED06DD1FFB3EB27820218009F360200029F34033F00019F02060000000006009F2701808407A00000015230109F10080105A000030000009F3303E098C89F1A0201249F1E084B553030303030339A032104129F350125950580008080005F2A0201245F24032312315F3401019F4104000000199F3901059C01009F370444A376B54F07A00000015230109F0607A0000001523010
+          sourceType: 'PaymentEMV'
+          emvData: '0249F3704833A12329F1002AB34'
           encryptionData:
-            encryptionType: ON_GUARD
-            encryptionTarget: TRACK_2
-            encryptionBlock: 6866928729586224=03272981102005210986
-            keyId: FFFF10970000000003FD0114
-            deviceType: INGENICO
+            encryptionType: 'RSA'
+            encryptionTarget: 'TRACK_2'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA=='
+            deviceType: 'INGENICO'
+            keyId: '88000000022'
         billingAddress:
-          firstName: Jane
-          lastName: Smith
-          address: {street: Main Street, houseNumberOrName: '123', city: Sandy Springs,
-            stateOrProvince: GA, postalCode: '30303', country: US}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+
     PaymentEMVChargesResponse:
       value:
         gatewayResponse:
@@ -5677,8 +5948,8 @@ components:
             hostResponseCode: '00'
             hostResponseMessage: 'APPROVAL'
             localTimestamp: '2022-01-13T19:09:29Z'
-            processor: FISERV
-            host: NASHVILLE
+            processor: 'FISERV'
+            host: 'NASHVILLE'
             responseCode: '000'
             responseMessage: 'APPROVAL'
             schemeTransactionId: '0113MCC815463'
@@ -5761,7 +6032,7 @@ components:
           - url: "https://store.mystore.com"
           - url: "https://*.mystore.com"
         merchantDetails:
-          merchantId: "49e4a8e0-eac6-4db6-ab53-f0b3f18b304c"
+          merchantId: "123456789012345"
     SecurityCredentialsResponse:
       value:
         keyId: 'dc86c901145e47fb8e339bf11af1e0b1'
@@ -5784,8 +6055,8 @@ components:
           total: 12.04
           currency: USD
         source:
-          sourceType: PaymentSession
-          sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
+          sourceType: 'PaymentSession'
+          sessionId: 'df8c33d2-af27-4a3a-b7a0-61d4edf09cad'
         transactionDetails:
           captureFlag: true
           accountVerification: false
@@ -5800,10 +6071,71 @@ components:
     PaymentSessionTokenRequest:
       value:
         source:
-          sourceType: PaymentSession
-          sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
+          sourceType: 'PaymentSession'
+          sessionId: 'df8c33d2-af27-4a3a-b7a0-61d4edf09cad'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+          
+    PaymentSessionVerifyRequest:
+      value:
+        source:
+          sourceType: 'PaymentSession'
+          sessionId: 'df8c33d2-af27-4a3a-b7a0-61d4edf09cad'
+        billingAddress:
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+
+    EncryptionKeyRequest:
+      value:
+        merchantDetails:
+          merchantId: "123456789012345"
+
+    EncryptionKeyGenerateResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        asymmetricKeyDetails:
+          keyId: 'accb12d8-684e-4261-9786-1b54f98d48ee'
+          encryptionType: 'RSA'
+          modulus: 2048
+          encodedPublicKey: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWaW4VHWvn2dtzEmgJ32usf6F8AbzsyutP4j3EJEfq4qKg95wSHB3FRETcwksDkRRiRBiwnkWROxNwzuPf3MZNjqDYXlpHgPhQdzSl3M5YdkytrHM+nmIrIkEO7jUf9d3PTBPmR+F0bxMofApg7DSAG0uXglbh/XdKC74tGIfHvM5XrP2f1N9FBQmOk926Sfo5w+q9C3MtxME+9NyK81UjE9wik9F3MBKbsI1TxDsmexXbrHkWM6JGoxL3g09/Vr3VYEdSvPfryP6+weruW30WRtMjebEpBtWAAodt1c4JDO8Uur1U1+oxXGZDhFe3nCKyxJGTmQRAYvHmMUQIDAQAB'
+          validFrom: '2023-03-29T13:55:20.102105Z'
+          validTo: '2023-04-18T13:55:20.102105Z'
+          status: 'ACTIVE'
+        symmetricKeyDetails:
+          encryptionType: 'AES-GCM'
+          modulus: 256
+
+    EncryptionKeyRevokedResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        asymmetricKeyDetails:
+          keyId: 'accb12d8-684e-4261-9786-1b54f98d48ee'
+          encryptionType: 'RSA'
+          modulus: 2048
+          encodedPublicKey: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWaW4VHWvn2dtzEmgJ32usf6F8AbzsyutP4j3EJEfq4qKg95wSHB3FRETcwksDkRRiRBiwnkWROxNwzuPf3MZNjqDYXlpHgPhQdzSl3M5YdkytrHM+nmIrIkEO7jUf9d3PTBPmR+F0bxMofApg7DSAG0uXglbh/XdKC74tGIfHvM5XrP2f1N9FBQmOk926Sfo5w+q9C3MtxME+9NyK81UjE9wik9F3MBKbsI1TxDsmexXbrHkWM6JGoxL3g09/Vr3VYEdSvPfryP6+weruW30WRtMjebEpBtWAAodt1c4JDO8Uur1U1+oxXGZDhFe3nCKyxJGTmQRAYvHmMUQIDAQAB'
+          validFrom: '2023-03-29T13:55:20.102105Z'
+          validTo: '2023-04-18T13:55:20.102105Z'
+          status: 'REVOKED'
+        symmetricKeyDetails:
+          encryptionType: 'AES-GCM'
+          modulus: 256

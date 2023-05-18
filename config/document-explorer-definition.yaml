@@ -76,7 +76,7 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
       - title: JavaScript
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-      - title: API Only
+      - title: Card Capture API
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
       - title: Multi-Use Public Key
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
@@ -108,6 +108,8 @@
       link: docs/Resources/Guides/Directed-Routing.md
 #    - title: Least Cost Debit
 #      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
+    - title: Multi-Use Public Key
+      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Secure Data Capture
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Tokenization
@@ -177,7 +179,9 @@
     - title: Security
       sections:
       - title: Credentials
-        link: docs/Resources/API-Documents/Security/Credentials.md  
+        link: docs/Resources/API-Documents/Security/Credentials.md
+      - title: Key Management
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:
   - title: Updates and Alerts
     sections:
