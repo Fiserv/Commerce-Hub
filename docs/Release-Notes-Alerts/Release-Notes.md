@@ -21,7 +21,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
 - **Certification:** May 5th 2023
-- **Production:** May 8th 2023
+- **Production:** May 12th 2023
 
 | Details | Type |
 | ----- | ----- |
