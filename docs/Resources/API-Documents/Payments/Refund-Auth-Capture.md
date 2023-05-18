@@ -12,7 +12,7 @@ Similar to [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), on
 - *true:* A refund or subsequent capture transaction where the customer will be refunded the total amount, and funds returned.
 
 <!-- theme: info -->
-> If `captureflag` is not sent the default function is *true* when online authorization is disabled in merchant boarding and configuration. Please see your account representative for more information.
+> If `captureflag` is not sent the default function is *true* when online authorization is enabled in Merchant Boarding and Configuration. Please see your account representative for more information.
 
 ---
 
