@@ -1,9 +1,9 @@
 ---
-tags: [Enterprise Portal, Business Track, Virtual Terminal, Reporting, Settings]
+tags: [Archive, Enterprise Portal, Business Track, Virtual Terminal, Reporting, Settings]
 ---
 
 
-# Merchant Boarding
+# Merchant Boarding (ARCHIVED)
 
 ClientLine Enterprise Portal offers merchants the ability to manage the onboarding process for clients.
 
