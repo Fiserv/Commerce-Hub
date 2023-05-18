@@ -16,6 +16,21 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+---
+
+## May 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** May 5th 2023
+- **Production:** May 12th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support for the following [refund types](?path=docs/Resources/API-Documents/Payments/Refund.md); Open Refunds (Credits), Unmatched Refunds, and Auth/Capture Refunds. | Update |
+
+---
+
 ## March 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
