@@ -16,7 +16,14 @@ An unmatched tagged refund allows a merchant to issue a refund to a payment sour
 
 ### Request Variables
 
-A refund request is initiated by sending the `referenceTransactionDetails`, `source` in the payload and may contain the `amount` object based on the refund type. 
+A refund request is initiated by sending the `referenceTransactionDetails`, `source` in the payload and may contain the `amount` object based on the refund type.
+
+#### Refund Types
+
+Refunds can be initiated for the full amount or a partial amount of the original authorization.
+
+- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
+- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
 <!-- 
 type: tab
