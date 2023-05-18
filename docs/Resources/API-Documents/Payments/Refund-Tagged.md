@@ -13,6 +13,13 @@ A tagged refund allows a merchant to maintain the transaction history in Commerc
 
 A tagged refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type.
 
+#### Refund Types
+
+Refunds can be initiated for the full amount or a partial amount of the original authorization.
+
+- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
+- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+
 <!-- theme: warning -->
 > In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
 
