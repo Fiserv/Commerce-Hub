@@ -13,13 +13,6 @@ If the customer returns a product or requests to cancel the transaction after th
 
 Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions. These authorization messages will enable issuers to update the customer's account in real-time.
 
-#### Refund Types
-
-Refunds can be initiated for the full amount or a partial amount of the original authorization.
-
-- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
-- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
-
 <!-- theme: danger -->
 > Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
@@ -51,7 +44,7 @@ link: ?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md
 
 <!-- type: card
 title: Auth/Capture Refund
-description: Submit a request to authorize a refund for future capture.
+description: Submit a request to authorize a pending refund for a subsequent capture.
 link: ?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md
 -->
 
