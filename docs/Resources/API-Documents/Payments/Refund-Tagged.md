@@ -7,7 +7,7 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 A tagged refund allows a merchant to maintain the transaction history in Commerce Hub by associating the refund to the original [charge request](?path=docs/Resources/API-Documents/Payments/Charges.md) by using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 <!-- theme: danger -->
-> Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+> A refund request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 ### Request Variables
 
