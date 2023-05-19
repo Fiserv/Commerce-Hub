@@ -6,21 +6,21 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 
 ## Welcome to Commerce Hub through Emulation!   
 
-If you have been directed to reveiw this page, it means that your MIDs will soon be migrated over to Commerce Hub through emulation. The purpose of this document is to outline the steps of this journey, call out the anticipated response payload differences between Payeezy and the Commerce Hub emulator and guide you to the appropriate place for support.
+If you have been directed to reveiw this page, it means that your MIDs will soon be upgraded to Commerce Hub through emulation. The purpose of this document is to outline the steps of this journey, call out the anticipated response payload differences between Payeezy and the Commerce Hub emulator and guide you to the appropriate place for support.
 
 **Let's begin...**
 
 1. **PREPARE TO TEST:** *We encourage all of our clients to test this new environment!*  All merchants will receive a set of test credentials.  These generic test credentials are not merchant specific; testing will be done in a shared sandbox.  We recommend that you do not include any proprietray information in your test payloads.
 
-2. **TIME TO TEST:** Use the below test cards to facilitate the testing of transactions through Commerce Hub emulation.
+2. **TIME TO TEST:** Please refer to the test cards provided in your test package to facilitate the testing of transactions through Commerce Hub emulation.  A test card contains data to be transmitted during testing, such as dummy card numbers.  You will run your regression tests for the Payeezy integration. During testing, if you encounter any issues, please reach out to the Implementation Manager assigned.
 
-3. **CONFIRM:**  Once you feel confident that testing is producing acceptable or as expected results, we will confirm that it is time to move forward with the migration.
+3. **CONFIRM:**  If you are satisfied with testing results, we will confirm that it is time to move forward with the upgrade.
 
-4. **MIGRATION:** There is nothing expected of the merchant during this time; notification before and after will be communicated and once complete, we will begin to monitor.
+4. **UPGRADE:** There is nothing expected of the merchant during this time; notification before and after will be communicated and once complete, we will begin to monitor.  AT this point, reporting, Virtual Terminal and User Management will now reside in ClientLine Enterprise (CLX).  Please see reporting section below for more information.
 
-5. **UPGRADE TO COMMERCE HUB!:** Now that you have been migrated to Commerce Hub emulation, it is time to begin planning your upgrade to the full capablities that Commerce Hub has to offer!  Here is the place to start: [Getting Started with Commerce Hub](?path=docs/Getting-Started/Getting-Started-General.md)  There is also a [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md) that will help you to understand how to transition your code from one platform to the next and incorporate features. 
+5. **RECODE TO COMMERCE HUB:** Now that you have been migrated to Commerce Hub emulation, it is time to begin planning your upgrade to the full capablities that Commerce Hub has to offer!  Here is the place to start: [Getting Started with Commerce Hub](?path=docs/Getting-Started/Getting-Started-General.md)  There is also a [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md) that will help you to understand how to transition your code from one platform to the next and incorporate features. 
 
-Your billing code may change - please reach out to your AM/RM with any questions concerning the potential impact.
+Your billing code will change - please reach out to your AM/RM with any questions concerning the potential impact.
 
 ---
 
@@ -81,7 +81,8 @@ All AVS/CVV decline responses will appear as:
  "exact_resp_code": "72", <br>
  "exact_message": "Data within the transaction is incorrect", <br>
  "bank_resp_code": "100", <br>
- "bank_message": "Approved",
+ "bank_message": "Approved", <br>
+ AVS and CVV2 codes will also be returned in the response as expected.
 
 *NOTE: These are generic fraud response messages.  Commerce Hub emulation will not return messages specific to the reason for decline.*
 
@@ -92,35 +93,4 @@ All AVS/CVV decline responses will appear as:
 -  The language element, if included in a request payload, will no longer impact the language of a gateway error message or CTR element in the response.  The functionality of this element is not being replicated in Commerce Hub emulation.
 
 ---
-
-### Test Cards  
-
-> :memo: **Note:** It is important to know the platform you are currently transacting on in order to correctly test your migration to Emulator. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
-
-<br> 
-
-During testing, if you encounter any issues, please reach out to the Implementation Manager assigned.
-
-Refernce tabs below for Test Cards pertaining to the platform you are currently transacting on.
-
-<!--type: tab
-titles: Payeezy Gateway Direct, Developer API
--->
-
-PGW TEST CARD 1
-PGW TEST CARD 2
-PGW TEST CARD 3
-
-<!--
-type: tab
--->
-
-FAPI TEST CARD 1
-FAPI TEST CARD 2
-FAPI TEST CARD 3
-
-<!-- type: tab-end -->
-
----
-
 
