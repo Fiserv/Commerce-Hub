@@ -793,7 +793,7 @@ paths:
               examples:
                 Revoke:
                   summary: Revoke Encryption Key Response
-                  $ref: '#/components/examples/EncryptionKeyRevokeResponse'
+                  $ref: '#/components/examples/EncryptionKeyRevokedResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -6124,7 +6124,7 @@ components:
           encryptionType: 'AES-GCM'
           modulus: 256
 
-    EncryptionKeyRevokeResponse:
+    EncryptionKeyRevokedResponse:
       value:
         gatewayResponse:
           transactionProcessingDetails:
