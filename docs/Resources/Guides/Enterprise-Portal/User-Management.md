@@ -1,8 +1,8 @@
 ---
-tags: [Card Not Present, Digital, Online, User Management, Virtual POS, Virtual Terminal]
+tags: [Archive, Card Not Present, Digital, Online, User Management, Virtual POS, Virtual Terminal]
 ---
 
-# User-Management
+# User-Management (ARCHVIED)
 
 ClientLine enterprise portal offers merchants the ability to manage every aspect of the experience for users such as:
 
