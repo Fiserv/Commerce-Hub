@@ -321,6 +321,10 @@ paths:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
+              PaymentCard-Encrypted:
+                summary: TokenizationRequest with encrypted PaymentCard,
+                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
+              PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
@@ -719,7 +723,7 @@ paths:
             schema:
               $ref: '#/components/schemas/EncryptionKeyRequest'
             examples:
-              GenerateRequest:
+              Generate:
                 summary: Generate Encryption Key Request
                 $ref: '#/components/examples/EncryptionKeyRequest'
       responses:
@@ -730,7 +734,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/EncryptionKeyResponse'
               examples:
-                GenerateRequest:
+                Generate:
                   summary: Generate Encryption Key Response
                   $ref: '#/components/examples/EncryptionKeyGenerateResponse'
         400:
@@ -776,7 +780,7 @@ paths:
             schema:
               $ref: '#/components/schemas/EncryptionKeyRequest'
             examples:
-              RevokeRequest:
+              Revoke:
                 summary: Revoke Encryption Key Request
                 $ref: '#/components/examples/EncryptionKeyRequest'
       responses:
@@ -787,9 +791,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/EncryptionKeyResponse'
               examples:
-                RevokeResponse:
+                Revoke:
                   summary: Revoke Encryption Key Response
-                  $ref: '#/components/examples/EncryptionKeyRevokedResponse'
+                  $ref: '#/components/examples/EncryptionKeyRevokeResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -6120,7 +6124,7 @@ components:
           encryptionType: 'AES-GCM'
           modulus: 256
 
-    EncryptionKeyRevokedResponse:
+    EncryptionKeyRevokeResponse:
       value:
         gatewayResponse:
           transactionProcessingDetails:
