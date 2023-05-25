@@ -191,6 +191,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)

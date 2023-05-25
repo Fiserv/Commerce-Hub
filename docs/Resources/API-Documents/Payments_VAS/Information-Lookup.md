@@ -4,7 +4,7 @@ tags: [Account Information, Card Details, Card Meta Data, BIN]
 
 # Account Information Lookup
 
-Account information lookup (BIN lookup) is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Account information lookup _(BIN lookup)_ is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 The card details can be used to determine;
 
@@ -117,7 +117,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
-- [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Directed Routing](?oath=docs/Resources/Guides/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
