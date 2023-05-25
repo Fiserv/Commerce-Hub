@@ -4,7 +4,7 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 
 # Refunds
 
-If the customer returns a product or requests to cancel the transaction after the batch has been settled, the merchant will need to return the funds by issuing a refund request.
+If the customer returns a product or requests to cancel the transaction after the trnasaction has been captured, the merchant will need to return the funds by issuing a refund request.
 
 <!-- theme: warning -->
 > Based on the issuing bank timeframe, refunds may take 3-5 days to process and reflect on the customer's account unless enabled for authorization refunds.
