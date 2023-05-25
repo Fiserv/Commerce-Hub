@@ -16,8 +16,6 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
----
-
 ## May 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
