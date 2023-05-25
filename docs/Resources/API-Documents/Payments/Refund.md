@@ -1,5 +1,5 @@
 ---
-tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
+tags: [Full Refund, Payments, Partial Refund, Refund, Open Refund, API Reference]
 ---
 
 # Refunds
