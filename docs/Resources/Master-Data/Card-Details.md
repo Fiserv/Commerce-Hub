@@ -7,7 +7,7 @@ tags: [API Reference, Card Details, Debit, Master Data]
 Card meta data is returned in the `cardDetails` object and contains details from the card or token's BIN. The information can be obtained by performing an [account information lookup request](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md).
 
 <!-- theme: info -->
-> Card details can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request if enabled in Merchant Configuration and Boarding. Please contacnt your account representative for more information.
+> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request if enabled in Merchant Configuration and Boarding. Please contacnt your account representative for more information.
 
 <!--
 type: tab
