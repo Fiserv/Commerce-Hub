@@ -17,7 +17,7 @@ Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that requi
 > Authorized refunds are not supported on all settlement platforms. Please contact your account representative for more information.
 
 <!-- theme: danger -->
-> Refund Request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+> Refund requests can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md) and settled, otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
 ---
 
