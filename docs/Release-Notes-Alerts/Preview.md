@@ -27,6 +27,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
+| Support to enable or disable [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` in charges and tokens requests. | Update |
 | Support for the following [refund types](?path=docs/Resources/API-Documents/Payments/Refund.md); Open Refunds (Credits), Unmatched Refunds, and Auth/Capture Refunds. | Update |
 
 ---
