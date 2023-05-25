@@ -4,7 +4,7 @@ tags: [Stored Credentials, Token, Tokenization, API Reference]
 
 # Tokenization
 
-**[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md), or can tokenize the the payment source only by sending a request to the [tokens](#tokens-request) endpoint.
+**[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** is a process of replacing sensitive data with non-sensitive equivalent, referred to as a token. A merchant can either submit a request to tokenize a [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) as part of a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request, or can tokenize the the payment source only by sending a request to the [tokens](#tokens-request) endpoint.
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
   - Requires the use of [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
@@ -284,6 +284,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
