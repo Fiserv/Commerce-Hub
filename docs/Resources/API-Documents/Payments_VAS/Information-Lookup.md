@@ -12,7 +12,7 @@ The card details can be used to determine;
 - **[Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 
 <!-- theme: info -->
-> Card details can be returned as part of a tokens or charges request if enabled in Merchant Boarding and Configuration. Please contacnt your account representative for more information.
+> Card details can be returned as part of a tokens or charges request if enabled in Merchant Boarding and Configuration. Please contact your account representative for more information.
 
 ---
 
