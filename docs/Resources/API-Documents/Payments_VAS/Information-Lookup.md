@@ -117,7 +117,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
-- [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Directed Routing](?oath=docs/Resources/Guides/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
