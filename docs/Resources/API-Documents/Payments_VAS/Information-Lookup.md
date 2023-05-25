@@ -1,10 +1,10 @@
 ---
-tags: [Account Information, Card Details, BIN]
+tags: [Account Information, Card Details, Card Meta Data, BIN]
 ---
 
 # Account Information Lookup
 
-Account information lookup is used to obtain the [card details](?path=docs/Resources/Master-Data/Card-Details.md) (meta data) of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Account information lookup (BIN lookup) is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 The card details can be used to determine;
 
@@ -12,7 +12,7 @@ The card details can be used to determine;
 - **[Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 
 <!-- theme: info -->
-> Card details can be returned as part of a tokens or charges request if enabled in Merchant Boarding and Configuration. Please contacnt your account representative for more information.
+> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request if enabled in Merchant Configuration and Boarding. Please contacnt your account representative for more information.
 
 ---
 
