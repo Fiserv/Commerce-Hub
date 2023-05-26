@@ -71,7 +71,6 @@ JSON string format for `transactionDetails`:
       "authorizationTypeIndicator": "REAUTH",
       "duplicateTransactionCheckingIndicator": true,
       "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource": true,  /// Future Release
       "deviceFingerprint":[  
          {
             "provider": "InAuth",  
