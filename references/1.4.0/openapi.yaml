@@ -300,19 +300,14 @@ paths:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
-              PaymentCard-Encrypted:
-                summary: TokenizationRequest with encrypted PaymentCard,
-                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
+              PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
-              ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryTokenRequest'}
+              ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard, $ref: '#/components/examples/ManualEntryTokenRequest'}
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
               GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
               Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/Payment3DSTokenRequest'}
-              PaymentSession:
-                summary: TokenizationRequest with PaymentSession
-                $ref: '#/components/examples/PaymentSessionTokenRequest'
+              PaymentSession: {summary: TokenizationRequest with PaymentSession, $ref: '#/components/examples/PaymentSessionTokenRequest'}
       responses:
         200:
           description: Success.
@@ -321,20 +316,14 @@ paths:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
-              PaymentCard-Encrypted:
-                summary: TokenizationRequest with encrypted PaymentCard,
-                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
-              PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
+                PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
-                ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
-                  $ref: '#/components/examples/ManualEntryTokenResponse'}
+                ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,$ref: '#/components/examples/ManualEntryTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
                 GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
                 Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/Payment3DSTokenResponse'}
-                PaymentSession:
-                  summary: TokenizationResponse with PaymentSession
-                  $ref: '#/components/examples/PaymentCardTokenResponse'
+                PaymentSession: {summary: TokenizationResponse with PaymentSession, $ref: '#/components/examples/PaymentCardTokenResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -673,10 +662,20 @@ paths:
             schema:
               $ref: '#/components/schemas/CardCaptureRequest'
             examples:
-              PaymentCard: {summary: CardCapture Request with PaymentCard, $ref: '#/components/examples/PaymentCardCaptureRequest'}
+              PaymentCard-MUPK:
+                summary: CardCapture Request with PaymentCard,
+                $ref: '#/components/examples/PaymentCardCaptureRequest'
       responses:
-        204:
+        200:
           description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CardCaptureResponse'
+              examples:
+                PaymentCard-MUPK:
+                  summary: CardCaptureResponse for PaymentCard
+                  $ref: '#/components/examples/PaymentCardCaptureResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
