@@ -25,7 +25,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Amex support for [online refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). | Update |
+| Amex support for [authorized _(online)_ refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
