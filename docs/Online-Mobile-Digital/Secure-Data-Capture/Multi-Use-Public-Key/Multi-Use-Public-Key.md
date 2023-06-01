@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
 
 # Merchant Managed Encryption
 
-Merchant Managed Encryption is a [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) integration that includes the use of a static public key, where the merchant can capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
+Merchant Managed Encryption is a [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) integration that includes the use of a static multi-use public key _(MUPK)_, where the merchant can capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
 
 #### Use Cases
 - Can be used as the primary integration method which will fall under SAQ D compliance from PCI DSS.
