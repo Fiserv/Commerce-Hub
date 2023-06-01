@@ -88,9 +88,9 @@ titles: network, Amex, Discover, Mastercard, Visa, Debit
 
 The below table identifies the parameters in the `network` object.
 
-|Variable |Type| Maximum Length | Description|
+| Variable |Type| Maximum Length | Description|
 |------|--------|-------|----------------|
-| `network` | *string* |  | Processing card network |
+| `network` | *string* | N/A | Processing [card network](#card-network) |
 
 <!--
 type: tab
@@ -255,8 +255,6 @@ The below table identifies the parameters specific to Debit.
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
-- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
-- [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
+- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
  
 ---

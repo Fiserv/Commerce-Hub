@@ -16,6 +16,33 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## May 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** May 5th 2023
+- **Production:** May 12th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support for the following [refund types](?path=docs/Resources/API-Documents/Payments/Refund.md); Open Refunds (Credits), Unmatched Refunds, and Auth/Capture Refunds. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
+## April 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** March 29th 2023
+- **Production:** April 11th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## March 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.

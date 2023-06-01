@@ -1,10 +1,13 @@
 ---
-tags: [Capture, Settle, Payments, Post Auth, Completion, API Reference]
+tags: [Sunset, Capture, Settle, Payments, Post Auth, Completion, API Reference]
 ---
 
-# Capture
+# Capture Using the URI
 
-Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to be completed with the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md). The capture also known as a post-authorization, and will settle (withdrawl) funds from the customer.
+<!-- theme: danger -->
+> Capture using the URI is being sunset in favor of [captures](?path=docs/Resources/API-Documents/Payments/Cancel.md) using a referenced transaction identifier. 
+
+Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to be completed based on the original `transactionId`. The capture also known as a post-authorization, and will settle (withdrawl) funds from the customer.
 
 <!-- theme: warning -->
 > Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md).
@@ -20,43 +23,19 @@ Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Docum
 
 ### Request Variables
 
-A capture request is initiated by sending the `referenceTransactionDetails` in the payload along with the `captureFlag` *true* in `transactionDetails` and may contain the `amount` object based on the capture type.
+A capture request is initiated by sending the `transactionId` in the request and may contain the `amount` object based on the capture type.
 
 <!--
 type: tab
-titles: amount, referenceTransactionDetails, transactionDetails, merchantDetails
+titles: amount, merchantDetails
 -->
- 
-The below table identifies the parameters in the `amount` object.
+
+The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `total` | *number* | 18,3  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
-
- <!--
-type: tab
--->
- 
-The below table identifies the available parameters in the `referenceTransactionDetails` object.
-
-<!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
-
-| Variable | Data Type| Maximum Length |Description |
-|---------|----------|----------------|---------|
-|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Maximum Length |Required | Description |
-|---------|----------|----------------|---------|---|
-| `captureFlag` | *boolean* | 5 | &#10004; | Designates if the transaction should be captured. |
 
 <!--
 type: tab
@@ -64,7 +43,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required|  Description |
+| Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|---|
 |`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
 |`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
@@ -73,14 +52,14 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-### Endpoint
+## Endpoint
 
 <!-- theme: success -->
->**POST** `/payments/v1/charges`
+>**POST** `/payments/v1/charges/{transactionId}/capture`
 
 ---
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab
@@ -92,24 +71,20 @@ titles: Request, Response
 ```json
 {
   "amount": {
-    "total": 12.04,
+    "total": "12.04",
     "currency": "USD"
   },
-  "transactionDetails": {
-    "captureFlag": true,
-  },
-  "merchantDetails": {
-    "merchantId": "100009000000200",
-    "terminalId": "00000001"
-  },
-  "referenceTransactionDetails": {
-    "referenceTransactionId": "31a12bba68a44e31b98d27ad37b6b5f4"
+  "merchantDetails":{
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   }
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/capture&branch=preview&version=1.2.0)
 
+
+https://developer.fiserv.com/product/CommerceHub/
 <!--
 type: tab
 -->
