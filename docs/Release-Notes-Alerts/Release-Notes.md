@@ -16,6 +16,20 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## June 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** May 25th 2023
+- **Production:** June 1st 2023
+
+| Details | Type |
+| ----- | ----- |
+| Amex support for [authorized _(online)_ refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## May 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.

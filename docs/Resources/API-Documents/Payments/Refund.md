@@ -11,7 +11,7 @@ If the customer returns a product or requests to cancel the transaction after th
 
 #### Authorized Refunds 
 
-Commerce Hub supports Visa, Mastercard, and Discover acceptance rules that require a merchant to send an authorization message on refund transactions, also known as an online refund. These authorization messages will enable issuers to update the customer's account in real-time.
+Commerce Hub supports the card brands acceptance rules that require a merchant to send an authorization message on refund transactions, also known as an authrorized _(online)_ refund. These authorization messages will enable issuers to update the customer's account in real-time.
 
 <!-- theme: info -->
 > Authorized refunds are not supported on all settlement platforms. Please contact your account representative for more information.
