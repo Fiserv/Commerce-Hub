@@ -16,7 +16,7 @@ const cardData = {
     "cardData": "4141414141414141",
     "nameOnCard": "Joe Bloggs",
     "expirationMonth": "01",
-    "expirationYear": "2024",
+    "expirationYear": "2034",
     "securityCode": "123"
 }
   
@@ -39,7 +39,7 @@ const cardData = {
     "cardData": "4141414141414141",
     "nameOnCard": "Joe Bloggs",
     "expirationMonth": "01",
-    "expirationYear": "2024",
+    "expirationYear": "2034",
     "securityCode": "123"
 }
   
@@ -160,7 +160,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
         "cardData": "4141414141414141",
         "nameOnCard": "Joe Bloggs",
         "expirationMonth": "01",
-        "expirationYear": "2024",
+        "expirationYear": "2034",
         "securityCode": "123"
     }
       
