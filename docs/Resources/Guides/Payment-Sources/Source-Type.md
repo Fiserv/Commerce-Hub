@@ -13,10 +13,13 @@ The variable `sourceType` is used to determine the source of the transaction. De
 | [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) | **Payment Cards** are issued by financial institutions and banks to the customers. Customers use the card to pay in-person. *PaymentTrack* is used to submit a track data transaction to our application. |
 | [ApplePay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md) | **Apple Pay** is a mobile payment and digital wallet service by Apple Inc. that allows users to make payments in person, in iOS apps, and on the web using Safari. Supported on the iPhone, Apple Watch, iPad, and Mac. Used to submit Apple Pay transaction to our application. |
 | [GooglePay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md) | **Google Pay** is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. Used to submit Google Pay transaction to our application. |
-| SamsungPay | **Samsung Pay** is a digital wallet platform and online payment system developed by Samsung to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. Used to submit Samsung Pay transaction to our application. |
 | [DecryptedWallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) | **Decrypted Wallet** is used by the merchant when they are using their own certificate to encrypt the data received from Apple Pay, Google Pay or Samsung Pay while sending the transaction to the Commerce Hub. |
-| [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | **Processor Token** is a created by submitting a token request using a payment source. **Network Token** is a created by submitting a request to the processing networks (Visa, Mastercard, AMEX, Discover) using a payment card. Both can be used to submit a PaymentToken transaction to our application. |
+| [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | **Processor Token** is a created by submitting a token request using a payment source. **Network Token** is a created by submitting a request to the processing networks _(Visa, Mastercard, AMEX or Discover)_ using a payment card. Both can be used to submit a PaymentToken transaction to our application. |
 | [PaymentSession](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) | **Payment Session** is a nonce token obtained from a security credentials request. *PaymentSession* is used is used in iFrame and JavaScript Secure Data Capture integrations to submit a transaction to our application. |
+
+<!---
+| SamsungPay | **Samsung Pay** is a digital wallet platform and online payment system developed by Samsung to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches. Used to submit Samsung Pay transaction to our application. |
+-->
 
 ---
 
