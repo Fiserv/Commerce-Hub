@@ -8,7 +8,7 @@ tags: [Paymentcard, Payment Sources]
 Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
 
 <!-- theme: danger -->
-> Commerce Hub requires all payment cards to be encrypted using [multi-use public key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+> Commerce Hub requires all payment cards to be encrypted using [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
 
 <!-- theme: info -->
 > PINless Debit transaction process via the credit network unless the merchant account is setup for debit processing. Please contact your account representitive for more information on [debit solutions](?path=docs/Resources/Guides/Debit/Debit.md).
