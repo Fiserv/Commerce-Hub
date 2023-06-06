@@ -12,7 +12,38 @@ The card details can be used to determine;
 - **[Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 
 <!-- theme: info -->
-> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request if enabled in Merchant Configuration and Boarding. Please contacnt your account representative for more information.
+> Card details can be returned as part of a tokens or charges request if enabled in Merchant Boarding and Configuration. Please contact your account representative for more information.
+
+---
+
+## Information Lookup Using PaymentCard
+
+The merchant can initiate information lookup transaction by passing the card details of the customer using `PaymentCard` as a payment source.
+
+### Minimum Requirements
+
+<!--
+type: tab
+titles: source, card
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`sourceType` | *string* | 15 | Value *PaymentCard* is used for a verification request using `cardData`. Refer to [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) for more details. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `cardData` | *string* | 19 | Card number or encrypted data |
+
+<!-- type: tab-end -->
 
 ---
 

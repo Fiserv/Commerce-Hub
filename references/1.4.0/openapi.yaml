@@ -1,7 +1,5 @@
 openapi: 3.0.2
-info: {title: Payments, description: This API Specification is designed to provide
-    technical guidance required to consume and integrate with our APIs for payment
-    processing., version: v1.3.0}
+info: {title: Payments, description: This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing., version: v1.3.0}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
 - {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
@@ -316,6 +314,9 @@ paths:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
+                PaymentCard-Encrypted:
+                  summary: TokenizationResponse with encrypted PaymentCard
+                  $ref: '#/components/examples/PaymentCardTokenResponse'
                 PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
@@ -1388,9 +1389,11 @@ components:
             * ON_GUARD
             * FPE
           example: RSA
-        encryptionTarget: {type: string, maxLength: 256, description: 'Target can
-            be TRACK_1, TRACK_2 (including EMV), BOTH (Track 1 and 2) or MANUAL.',
-          example: TRACK_2}
+        encryptionTarget:
+            type: string
+            maxLength: 256
+            description: '<a href="../docs?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-target">Encryption target</a> identifies the data based on how it is entered into the POS device or terminal, website, virtual terminal (VPOS), or mobile app or device.'
+            example: 'MANUAL'
         encryptionBlock: {type: string, maxLength: 2000, description: This field contains
             the track data or card number provided in encrypted form., example: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==}
         deviceType:
