@@ -24,7 +24,7 @@ The below table identifies the parameters in the `regionalDebit` object.
 | -------- | ---- | ------- | -------------------------------|
 | `debitMacValue` | *string* | 256 | [Message authentication](#message-authentication) is used to confirm that the key data elements of the transaction have not been tampered. MAC protection is optional on Canadaian debit transactions. |
 | `macKeySerialNumber` | *string* | 256  | This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. **Format:** _"F" (1) + Base Derivation Key ID (9) + DeviceId (5) + TranCounter (5)_. |
-| `accountType` | *string* | 256 | CHECKING or SAVINGS |
+| `accountType` | *string* | 256 | Identifies where the funds should be withdrawn, CHECKING or SAVINGS |
 
 <!---
 | `pinBlock` | *object* | N/A | Contains the encrypted PIN Encryption Working key (TKPE). |
