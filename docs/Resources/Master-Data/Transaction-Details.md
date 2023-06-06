@@ -33,7 +33,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
-| `partialApproval` | *string* | 32 | Indicates if a partial approval is allowed. Partial approval should only be used in a card present or gift card transaction. Refer [Partial Approval](#partial-approval) for valid values.|
+| `partialApproval` | *boolean* | N/A | Indicates if a [partial approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) is allowed. Partial approval should only be used in a card present or gift card transaction. |
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
 | `cardVerificationAmount` | *number* | 18,3 | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
@@ -59,7 +59,7 @@ JSON string format for `transactionDetails`:
       "captureFlag": false,
       "transactionCaptureType": "TCS",
       "accountVerification": false,
-      "partialApproval": "NOT_SUPPORTED",
+      "partialApproval": "true",
       "merchantTransactionId": "1343678765",
       "merchantOrderId": "845366457890-TODO",
       "merchantInvoiceNumber": "123890",
@@ -71,7 +71,6 @@ JSON string format for `transactionDetails`:
       "authorizationTypeIndicator": "REAUTH",
       "duplicateTransactionCheckingIndicator": true,
       "primaryTransactionType": "CHARGE_SALE",
-      "vaultFundingSource": true,  /// Future Release
       "deviceFingerprint":[  
          {
             "provider": "InAuth",  
@@ -110,19 +109,6 @@ JSON string format for `transactionDetails`:
 
 ---
 
-#### Partial Approval
-
-The below table identifies the valid values of `partialApproval`.
-
-| Value | Description |
-| ----- | ----- |
-| NOT_SUPPORTED | Partial authorization approvals are not supported |
-| SUPPORTED_NO_CASH_BACK | Partial authorization approvals are supported, however partial authorization of cash disbursement amount is not supported. POS/Terminal should not prompt for cash back. |
-| MERCH_CASH_BACK_SUPPORTED | Merchandise can be partially authorized, and cash disbursement amount can be partially authorized. |
-| MERCH_SUPPORTED_ONLY | Merchandise can be partially authorized, but the cash disbursement amount cannot be partially authorized. |
-| CASH_BACK_SUPPORTED_ONLY | Merchandise cannot be partially authorized, but the cash disbursement amount can be partially authorized. |
-| MERCH_CASH_BACK_NOT_SUPPORTED | Merchandise cannot be partially authorized and the cash disbursement amount cannot be partially authorized. |
-
 #### Primary Transaction Type
 
 The below table identifies the valid values of `primaryTransactionType`.
@@ -143,6 +129,7 @@ The below table identifies the valid values of `primaryTransactionType`.
 - [Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Device Fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Partial Approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Transaction Capture Type](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md)
 
