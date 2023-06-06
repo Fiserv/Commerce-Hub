@@ -4,7 +4,7 @@ tags: [Card Present, In-Person, Debit, Regional]
 
 # Regional Debit
 
-Regional (International) Debit Solutions from Commerce Hub provide anywhere, anytime payment convenience to your customers through comprehensive transaction processing and settlement services, card management and personalization services, and extensive implementation and support services.
+Regional _(International)_ Debit Solutions from Commerce Hub provide anywhere, anytime payment convenience to your customers through comprehensive transaction processing and settlement services, card management and personalization services, and extensive implementation and support services.
 
 <!-- theme: info -->
 > Commerce Hub currently only supports regional debit for Canada on Nashville. Contact your account representative for more information on using regional (international) debit solutions.
