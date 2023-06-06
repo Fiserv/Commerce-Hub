@@ -58,8 +58,8 @@ featuredFeatures:
   - title: Digital Wallets
     description: >
       Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
-    tags: ["tag1", "tag2"]
-    bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
+#    tags: ["tag1", "tag2"]
+#    bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
 #    links: ["docs/Getting-Started/Getting-Started-Wallets.md"]
     relatedDocs:
       - relatedDoc: 
@@ -93,22 +93,22 @@ featuredFeatures:
   - title: Encrypted Payments
     description: >
       By leveraging the third-party EMV-enabled payments solution, the customer's payment transactions are encrypted via a multi-layered security approach.
-    tags: ["tag1", "tag2"]
-    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
+#    tags: ["tag1", "tag2"]
+#    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
 #    links: ["docs/In-Person/Integrations/Encrypted-PIN-Pad.md"]
     relatedDocs:
       - relatedDoc: 
         title: EMV Chip
         description: EMV chip enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards.
-        link: "docs/?path=docs/In-Person/Encrypted-Payments/EMV.md"
+        link: "docs/In-Person/Encrypted-Payments/EMV.md"
       - relatedDoc: 
         title: Track Data
         description: Payment Track can be used as EMV Fallback and involves manually swiping the payment source into a payment terminal using magnetic stripe.
-        link: "docs/?path=docs/In-Person/Encrypted-Payments/Track.md"
+        link: "docs/In-Person/Encrypted-Payments/Track.md"
       - relatedDoc: 
         title: Manual Entry
         description: Encrypted manual key entry can be used as EMV Fallback and involves manually entering the payment source details a payment terminal.
-        link: "docs/?path=docs/In-Person/Encrypted-Payments/Manual.md"
+        link: "docs/In-Person/Encrypted-Payments/Manual.md"
     relatedAPIs:
       - relatedAPI: 
         title: Charges 
@@ -129,8 +129,8 @@ featuredFeatures:
     description: >
       Leverage your existing infrastructure and UI to accept payments online, in-store or on mobile 
       devices.
-    tags: ["tag1", "tag2"]
-    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
+#    tags: ["tag1", "tag2"]
+#    bullets: ["Modern technology stack", "Automated backoffice", "Fast testing, certification and implementation"]
 #    links: ["docs/Resources/API-Documents/Use-Our-APIs.md"]
     relatedDocs:
       - relatedDoc: 

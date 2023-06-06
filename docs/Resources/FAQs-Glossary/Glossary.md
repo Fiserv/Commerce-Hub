@@ -454,7 +454,7 @@ This entry is used to indicate that market-specific authorization data was prese
 Information supplied in the authorization request to assist the issuer in making better authorization decisions.
 
 ## Manual Refund
-A [credit](?path=docs/Resources/API-Documents/Payments/Credit.md) that is not associated with a previous payment. Because it is an independent transaction, it can be for any amount; a manual refund is not limited to the total of a previous sale. Also referred to as an open refund.
+A manual refund is an [open refund](?path=docs/Resources/API-Documents/Payments/Refund-Open.md) (credit) that is not associated with a previous payment. Because it is an independent transaction, it can be for any amount; a manual refund is not limited to the total of a previous sale.
 
 ## Masterpass
 Masterpass is a digital wallet service that makes online shopping safe and easy by storing the customer's payment and shipping information securely.
@@ -557,7 +557,7 @@ A secondary transaction that [captures](?path=docs/Resources/API-Documents/Payme
 A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and places a hold on a project sale amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) transaction, the held amount is then settled with the merchant batch.
 
 ## Primary Transaction
-The main independent transactions between a customer and a merchant. Commerce Hub supports [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [Credit](?path=docs/Resources/API-Documents/Payments/Credit.md), and [Forced](?path=docs/Resources/API-Documents/Payments/Forced.md) transactions.
+The main independent transaction between a customer and a merchant.
 
 ## Prepaid Closed Loop
 Prepaid Closed Loop is a [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) product that is designed to only be used at the merchant's locations. Closed Loop payment schemes allow companies to reward loyalty and increase customer intimacy. 

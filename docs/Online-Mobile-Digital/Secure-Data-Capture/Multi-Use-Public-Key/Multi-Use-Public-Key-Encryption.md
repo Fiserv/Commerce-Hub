@@ -4,10 +4,11 @@ tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
 
 # Multi-Use Public Key Encryption
 
-The merchant uses multi-use public key for the asymmeteric PaymentCard encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.   
+The merchant uses a multi-use public key _(MUPK)_ for the asymmeteric PaymentCard encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.
+
+---
 
 ## Step 1: Generate Unencrypted encryptionBlock
-
 
 The `encryptionBlock` field is passed through the `PaymentCard` request to encrypt the data. The `encryptionBlock` field is a concatenated string of the `card` object fields which can include: `cardData`, `nameOnCard`, `expirationMonth`, `expirationYear`, and `securityCode`.
 
@@ -16,7 +17,7 @@ const cardData = {
     "cardData": "4141414141414141",
     "nameOnCard": "Joe Bloggs",
     "expirationMonth": "01",
-    "expirationYear": "2024",
+    "expirationYear": "2034",
     "securityCode": "123"
 }
   
@@ -25,11 +26,11 @@ const encryptionBlock =  Object.values(cardData).join(""));
 ```
 
 <!-- theme: example -->
-> encryptionBlock = 4111111111111111JoeBloggs123122034
+> encryptionBlock = 4111111111111111Joe Bloggs123122034
 
 --- 
 
-### Step 2:  Generate encryptionBlockFields
+## Step 2:  Generate encryptionBlockFields
 
 The `encryptionBlockFields` when generated contains a string of card data fields and its corresponding byte lengths. The string must match the order in which the `encryptionBlock` was generated in step 1. 
 
@@ -39,7 +40,7 @@ const cardData = {
     "cardData": "4141414141414141",
     "nameOnCard": "Joe Bloggs",
     "expirationMonth": "01",
-    "expirationYear": "2024",
+    "expirationYear": "2034",
     "securityCode": "123"
 }
   
@@ -52,7 +53,7 @@ const encryptionBlockFields = Object.keys(cardData).map(key => `card.${key}:${en
 
 ---
 
-### Step 3: Perfrom RSA Encryption
+## Step 3: Perfrom RSA Encryption
 
 A [generate key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md#generate-key) request is required  to receive a base64 encoded encryption key. This key is used to encrypt the `encryptionBlock` that was created in step 1.
 
@@ -71,8 +72,7 @@ const toBase64Encode = (arrayBuffer) => window.btoa(String.fromCharCode(...new U
 
 --- 
 
-
-### Step 4: Form encryptionData
+## Step 4: Form encryptionData
 
 Form the `encryptionData` object using the encrypted `encryptionBlock` and `encryptionBlockFields` from steps 2 and 3.
 
@@ -80,20 +80,19 @@ The below table identifies the parameters in the `encryptionData` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -----------|
-| `encryptionType` | *string* | 256 | Encryption type to be passed. |
-| `encryptionTarget` | *string* | 256 | Target is *MAUNAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
-| `encryptionBlock` | *string* | 2000 | This field contains the track data or card number provided in encrypted form. |
-| `keyId` | *string* | 40 | Provided encryption key required for decryption of track data that is encrypted. This field must be submitted for encryption request messages sending manual PAN, Track 1, or Track 2 data that is encrypted. |
-| `encryptionBlockFields` | *string* | 256 | Encryption block field descriptors to facilitate decryption when using multi-use public key encryption. Each field should recorded the form field_name:byte_count e.g. card.expirationMonth:2 |
-
+| `encryptionType` | *string* | 256 | Encryption type is *RSA* when using MUPK. |
+| `encryptionTarget` | *string* | 256 | Target is *MANUAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
+| `encryptionBlock` | *string* | 2000 | This field contains the card details in encrypted form. |
+| `keyId` | *string* | 40 | Provided encryption key required for decryption of track data that is encrypted. |
+| `encryptionBlockFields` | *string* | 256 | ncryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
 
 ```javascript
 
 encryptionData: {
   keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
   encryptionType: "RSA",
-  encryptionBlock: encryptionBlock,
-  encryptionBlockFields: encryptionBlockFields,
+  encryptionBlock: "=s3ZmiL1SSZC8QyBpj/....",
+  encryptionBlockFields: "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
   encryptionTarget: "MANUAL",
 }
 
@@ -101,7 +100,7 @@ encryptionData: {
 
 --- 
 
-### Step 5: Build Payment Source Object
+## Step 5: Build Payment Source Object
 
 Build the payment source object that will be sent within the payload.
 
@@ -113,8 +112,8 @@ const payload = {
             encryptionData: {
                 keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
                 encryptionType: "RSA",
-                encryptionBlock: encryptionBlock,
-                encryptionBlockFields: encryptionBlockFields,
+                encryptionBlock: "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+                encryptionBlockFields: "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",,
                 encryptionTarget: "MANUAL",
             }
          }
@@ -160,7 +159,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
         "cardData": "4141414141414141",
         "nameOnCard": "Joe Bloggs",
         "expirationMonth": "01",
-        "expirationYear": "2024",
+        "expirationYear": "2034",
         "securityCode": "123"
     }
       

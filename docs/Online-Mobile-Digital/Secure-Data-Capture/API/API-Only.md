@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 # Secure Data Capture - API Only
 
-Commerce Hub allows E-commerce merchants to manage the design and form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's card capture service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a charges or tokens transaction request with the `sourceType` *PaymentSession*.
 
 ### Benefits
 
@@ -16,6 +16,10 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 - **card-capture:** responsible for capturing encrypted card details.
 - **charges:** responsible for decrypting captured card details and then charging based on a payment session.
 - **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
+
+### Mobile Integrations
+
+Developers can choose to provide access to the webapp via native mobile browser or a WebView embedded within a native mobile app. See [Apple's iOS](https://developer.apple.com/documentation/webkit/wkwebview) or [Google's Android](https://developer.android.com/reference/android/webkit/WebView) documentation for addtional details.
 
 ---
 
@@ -58,11 +62,11 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `encryptionType` | *string* | 256 |  &#10004; | Encryption type is *RSA* when using MUPK. |
+| `encryptionTarget` | *string* | 256 |  &#10004; | Target is *MANUAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
+| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the card details in encrypted form. |
 | `encryptionBlockFields` | *string* | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
-| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
+| `keyId` | *string* | 64 | &#10004; | Provided encryption key required for decryption of track data that is encrypted. |
 
 
 <!--
@@ -130,10 +134,24 @@ titles: Request, Response
 type: tab
 -->
 
-A successful card capture response will result in a HTTP 204 No Content, if a response is not received, best practice is to still submit the transaction.
+##### Example of a card capture (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+
+{
+  "gatewayResponse": {
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  }
+}
+```
 
 <!-- type: tab-end -->
 

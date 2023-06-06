@@ -1,10 +1,10 @@
 ---
-tags: [Card Not Present, Card Present, Charges, Payments, API Reference, Authorization]
+tags: [Authorization, Charges, Payments, API Reference, Sale]
 ---
 
 # Charges
 
-Charges can be initiated as a Sale, Pre-Auth, or Capture which is defined in the request by sending `captureFlag` in `transactionDetails`.
+Charges can be initiated as a sale, pre-auth, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
 
 - *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdrawal the funds.
 - *true:* A sale or subsequent capture transaction where the customer will be charged the total amount, and funds withdrawn.
@@ -23,7 +23,7 @@ Charges can be initiated as a Sale, Pre-Auth, or Capture which is defined in the
 The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charge).
 
 <!--theme:info-->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behaviour, `createToken`: _false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 <!--
 type: tab
@@ -191,6 +191,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)

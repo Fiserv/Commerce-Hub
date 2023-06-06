@@ -1,23 +1,19 @@
 ---
-tags: [Card Not Present, Card Present, Cancel, Void, API Reference]
+tags: [Cancel, Void, Payments, API Reference]
 ---
 
 # Cancels
 
-When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original `transactionId` in the URI or a reference transaction identifier in the payload.
+When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 <!-- theme: warning -->
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
 
 ---
 
-## Cancels Using Referenced Identifier
+### Request Variables
 
 A cancels request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the cancel type.
-
----
-
-### Request Variables
 
 <!-- theme: warning -->
 > In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) voids require the payment source including `encryptionData` and `pinBlock`.
@@ -338,7 +334,7 @@ The below table identifies the valid values of the reason the merchant/customer 
 - [API Explorer](../api/?type=post&path=/payments/v1/cancels)
 - [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

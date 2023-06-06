@@ -99,10 +99,9 @@ JSON string format for `paymentReceipt`:
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 <!---
-- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 -->
 
