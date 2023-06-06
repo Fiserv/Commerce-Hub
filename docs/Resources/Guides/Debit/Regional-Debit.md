@@ -22,17 +22,17 @@ The below table identifies the parameters in the `regionalDebit` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -------------------------------|
-| `pinBlock` | *object* | N/A | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 | `debitMacValue` | *string* | 256 | [Message authentication](#message-authentication) is used to confirm that the key data elements of the transaction have not been tampered. MAC protection is optional on Canadaian debit transactions. |
-| `macKeySerialNumber` | *string* | 256  | This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions.  |
-| `macWorkingKey` | *string* | 16  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data. |
-| `macWorkingKeyCheckDigits` | *string* | 4  | A message authentication code for a working key that uses a session key to check digits. |
+| `macKeySerialNumber` | *string* | 256  | This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. **Format:** _"F" (1) + Base Derivation Key ID (9) + DeviceId (5) + TranCounter (5)_. |
 | `accountType` | *string* | 256 | CHECKING or SAVINGS |
 
 <!---
+| `pinBlock` | *object* | N/A | Contains the encrypted PIN Encryption Working key (TKPE). |
 | `messageAuthenticationWorkingKey` | *string* | 2048 | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data.  |
 | `messageAuthenticationWorkingKeyCheckDigits` | *string* | 2048 | A message authentication code for a working key that uses a session key to check digits. |
-| `messageEncryptionWorkingKey` | *string* | 2048 | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data.  |
+| `messageEncryptionWorkingKey` | *string* | 2048 | A message encryption working key is typically a random string of bits generated specicically to scramble and unscramble data. |
+| `macWorkingKey` | *string* | 16  | A message authentication code for a working key that uses a session key to detect both accidental and intentional modifications of the data. |
+| `macWorkingKeyCheckDigits` | *string* | 4  | A message authentication code for a working key that uses a session key to check digits. |
 -->
 
 <!--
@@ -44,15 +44,8 @@ JSON string format for `regionalDebit`:
 ```json
 {
    "regionalDebit":{
-     "pinBlock":{
-        "encryptedPin": "F5f36kA...",
-        "keySerialNumber": "TRACK_2",
-        "pinEncryptionWorkingKey": ""
-     }
      "debitMACValue": "7A773FA892CDAADC",  
      "macSerialNumber": "F876543210E000200019",
-     "macWorkingKey": "",
-     "macWorkingKeyCheckDigits": "FFFF",
      "accountType": "CHECKING"
    }
 }
@@ -89,7 +82,6 @@ titles: Request, Response
         "regionalDebit": {
             "debitMacValue": "7A773FA892CDAADC",  
             "macKeySerialNumber": "F876543210E000200019",
-            "macWorkingKeyCheckDigits": "FFFF",
             "accountType": "CHECKING"
         }
     },
