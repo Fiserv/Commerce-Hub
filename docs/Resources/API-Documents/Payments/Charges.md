@@ -89,25 +89,30 @@ titles: Request, Response
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
     }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 
