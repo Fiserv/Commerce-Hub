@@ -8,6 +8,53 @@ A merchant may need to send the customer's address in the transaction request fo
 
 ---
 
+## Address
+
+Common `address` object used in both the billing address and shipping address.
+<!--
+type: tab
+titles: address, JSON Example
+-->
+
+
+The below table identifies the parameters in the `address` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `street` | *string* | 256 | Street address |
+| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
+| `recipientNameOrAddress` | *string* | 256 | Tertiary address information e.g. recipeint name, company name or address |
+| `city` | *string* | 256 | City or locality |
+| `stateOrProvince` | *string* | 256 | State or province name |
+| `postalCode` | *string* | 10 | Postal code |
+| `country` | *string* | 256 | [ISO country or code or full country name](?path=docs/Resources/Master-Data/Country-Code.md).|
+| `county` | *string* | 256 | The [5-digit number or full county name](?path=docs/Resources/Master-Data/County-Codes.md) identifying the U.S. county as defined by FIPS, indicating where the transaction occurred. Commonly used with EBT transactions. |
+| `addressHistory` | *string* | 18 | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
+
+<!--
+type: tab
+-->
+
+JSON string format for `address`:
+
+```json
+{
+   "address":{
+      "street": "112 Main St.",
+      "houseNumberOrName": "Apt 213",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US"
+      "addressHistory": "FIRST"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
 ## Billing Address
 
 Is the address connected to the customer's [payment method](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) and can be used for [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md).
@@ -127,53 +174,6 @@ The below table identifies the valid values of `shippingMethod`.
 | *GROUND* | Shipping within 4 days |
 | *ELECTRONIC* | Email or digital goods |
 | *SHIP_TO_STORE* | Ship to store |
- 
----
-
-## Address
-
-Common `address` object used in both the billing address and shipping address.
-<!--
-type: tab
-titles: address, JSON Example
--->
-
-
-The below table identifies the parameters in the `address` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `street` | *string* | 256 | Street address |
-| `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
-| `recipientNameOrAddress` | *string* | 256 | Tertiary address information e.g. recipeint name, company name or address |
-| `city` | *string* | 256 | City or locality |
-| `stateOrProvince` | *string* | 256 | State or province name |
-| `postalCode` | *string* | 10 | Postal code |
-| `country` | *string* | 256 | [ISO country or code or full country name](?path=docs/Resources/Master-Data/Country-Code.md).|
-| `county` | *string* | 256 | The [5-digit number or full county name](?path=docs/Resources/Master-Data/County-Codes.md) identifying the U.S. county as defined by FIPS, indicating where the transaction occurred. Commonly used with EBT transactions. |
-| `addressHistory` | *string* | 18 | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
-
-<!--
-type: tab
--->
-
-JSON string format for `address`:
-
-```json
-{
-   "address":{
-      "street": "112 Main St.",
-      "houseNumberOrName": "Apt 213",
-      "city": "Atlanta",
-      "stateOrProvince": "GA",
-      "postalCode": "30301",
-      "country": "US"
-      "addressHistory": "FIRST"
-   }
-}
-```
-
-<!-- type: tab-end -->
 
 ---
 
