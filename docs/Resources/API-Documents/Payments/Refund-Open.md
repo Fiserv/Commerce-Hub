@@ -41,8 +41,6 @@ The below table identifies the required parameters in the `source` object.
 |---------|----------|----------------|---------|
 | `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
-<!-- type: tab-end -->
-
 <!--
 type: tab
 -->
