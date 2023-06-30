@@ -50,7 +50,6 @@ The below table identifies the required parameters in the `amount` object.
 | `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
-
 <!--
 type: tab
 -->
