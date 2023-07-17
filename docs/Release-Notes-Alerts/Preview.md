@@ -14,6 +14,20 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
 
+
+---
+
+## July 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** June 16th 2023
+- **Production:** July 1st 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support [MACless Canadian debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) transactions. | Update |
+
 ---
 
 ## May 2023
