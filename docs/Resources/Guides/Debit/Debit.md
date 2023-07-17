@@ -30,8 +30,8 @@ link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 -->
 
 <!-- type: card
-title: Regional Debit
-description: Process international debit cards through debit networks to accept in-person payments and cash withdraws. 
+title: Canada MAC
+description: Process Canadian debit cards using Message Authentication. 
 link: ?path=docs/Resources/Guides/Debit/Regional-Debit.md
 -->
 
