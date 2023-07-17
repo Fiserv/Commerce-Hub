@@ -54,7 +54,7 @@
         link: docs/Resources/Guides/Debit/PIN_Debit.md
       - title: Regional Debit
         link: docs/Resources/Guides/Debit/Regional-Debit.md
-    - title: Encrypted Payments
+    - title: Encrypted Payment
       sections:
 #      - title: Contactless (NFC)
 #        link: docs/In-Person/Encrypted-Payments/Contactless.md
