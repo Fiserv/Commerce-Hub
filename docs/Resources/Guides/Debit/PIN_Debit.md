@@ -79,7 +79,7 @@ link:
 <!-- type: card
 title: Debit Reversals
 description: A debit reversal is a cancel or refund where the customer's funds are placed back into their account.
-link: 
+link: ?path=docs/Resources/API-Documents/Payments/Refund.md
 -->
 
 
