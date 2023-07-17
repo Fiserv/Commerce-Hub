@@ -16,6 +16,20 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## July 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** June 22nd 2023
+- **Production:** July 6th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support [MACless Canadian debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) transactions. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## June 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
