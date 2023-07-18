@@ -1,40 +1,40 @@
 ---
-tags: [Card Not Present, Card Present, Forced Post, Payments, API Documents, API Reference, Authorization, Sale, Pre Auth]
+tags: [Forced Post, Payments, API Reference, Authorization, Sale]
 ---
 
 # Forced Post
 
 <!-- theme: danger -->
-> Due to higher instances of fraud, it is highly recommended that the forced post be limited to certain personnel. An administrator in the Virtual Terminal can manage forced Post.
+> Due to higher instances of fraud, it is highly recommended that the forced post be limited to certain personnel. An administrator in the Virtual Terminal can manage forced post.
 
-A forced post is used when an issuer (bank) provides a referral also known as call response or for off-line processing. The merchant will contact the voice authorization center to receive an `approvalCode` to submit manually via an API call or [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md).
+A forced post is used when an issuer (bank) provides a referral also known as call response for off-line processing. The merchant will contact the voice authorization center to receive an `approvalCode` to submit manually via an API call or [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md).
 
 - If the merchant website is down, make an attempt to process the transaction in the Virtual Terminal before calling the voice authorization center.
 - If the voice authorization center was not called and the merchant wants to process the transaction later, a [deferred authorization](?path=docs/Resources/Guides/Authorizations/Deferred-Auth.md) will need to be submitted.
 
 <!-- theme: warning -->
->It is recommended to only call the voice authorization center when the [issuer requests](?path=docs/Resources/Guides/Response-Codes/Response-Code.md) the merchant to do so. Using the voice authorization center to process an off-line transaction can lead to a false approval and a chargeback.
+> It is recommended to only call the voice authorization center when the [issuer requests](?path=docs/Resources/Guides/Response-Codes/Response-Code.md) the merchant to do so. Using the voice authorization center to process an off-line transaction can lead to a false approval and a chargeback.
 
 ---
 
 ## Minimum Requirements
 
-The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charge).
+The [example](#payload-example) below contains the mandatory fields required for a successful forced post request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charge).
 
 <!--theme:info-->
-> A charge request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
+> A forced post request can be utilized to request a [payment token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) by using `createToken` in the payload.
 
 <!--
 type: tab
-titles: amount, source, transactionDetails
+titles: amount, source, transactionDetails, merchantDetails
 -->
 
 The below table identifies the required parameters in the `amount` object.
 
-|Variable |  Type| Maximum Length | Description |
+|Variable |  Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md) |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -54,8 +54,19 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth) |
-|`approvalCode`|  *string* | 6 | Approval code obtained from calling the Voice Authorization Center |
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured, must be *true* for forced post |
+|`approvalCode` | *string* | 6 | The approval code recieved from the voice authorization center |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -178,7 +189,7 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/forcedpost)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
 
 ---
