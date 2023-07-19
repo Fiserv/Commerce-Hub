@@ -14,6 +14,18 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
 
+---
+
+## September 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** September ? 2023
+- **Production:** September ? 2023
+
+| Details | Type |
+| ----- | ----- |
+| [Error response](?path=docs/Resources/Guides/Response-Codes/Error-Response.md) enhanced to return `paymentTokens` and `processorResponseDetails`. | Update |
 
 ---
 
