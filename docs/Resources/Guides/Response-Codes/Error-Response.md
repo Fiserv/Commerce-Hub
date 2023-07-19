@@ -74,9 +74,12 @@ titles: Error Response
          }
       ]
       "paymentTokens":[
-         {
-
-         }
+          {
+            "tokenData": "1234123412340019",
+            "tokenSource": "TRANSARMOR",
+            "tokenResponseCode": "000",
+            "tokenResponseDescription": "SUCCESS"
+          }
       ]
       "processorResponseDetails":{
 
