@@ -138,16 +138,6 @@ type: tab
          "transactionId":"e243e65a21454fd0a67bb72a51ff2387"
       }
    },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "bin": "40055500",
-         "last4": "0019",
-         "scheme": "VISA",
-         "expirationMonth": "10",
-         "expirationYear": "2030"
-      }
-   },
    "paymentReceipt":{
       "approvedAmount":{
          "total":85,
