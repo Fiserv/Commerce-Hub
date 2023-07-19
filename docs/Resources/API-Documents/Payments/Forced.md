@@ -65,8 +65,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | 1024 |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -89,26 +89,27 @@ titles: Request, Response
 
 ```json
 {
-   "amount": {
-      "total":  12.04,
-      "currency": "USD"
-   },
-   "source": {
-      "sourceType": "PaymentCard",
-      "card": {
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      }
-   },
-   "transactionDetails": {
-      "captureFlag": true,
-      "approvalCode": "OK5882"
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    } 
+    "source": {
+        "sourceType": "PaymentCard",
+        "card": {
+            "cardData": "4012000033330026",
+            "expirationMonth": "12",
+            "expirationYear": "2025",
+            "securityCode": "977"
+        }
+    },
+    "amount": {
+        "total": 85,
+        "currency": "USD"
+    },
+    "transactionDetails": {
+        "captureFlag": true,
+        "approvalCode":"OK7244"  
+    },
+    "merchantDetails": {
+        "merchantId": "100004000100157",
+        "terminalId": "10000001"
+    }
 }
 ```
 
@@ -126,15 +127,15 @@ type: tab
 ```json
 {
    "gatewayResponse":{
-      "transactionType": "CHARGE",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "ECOM",
+      "transactionType":"CHARGE_FORCED_POST",
+      "transactionState":"CAPTURED",
+      "transactionOrigin":"ECOM",
       "transactionProcessingDetails":{
-         "transactionTimestamp": "2021-06-20T23:42:48Z",
-         "orderId": "RKOrdID-525133851837",
-         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-         "clientRequestId": "4345791",
-         "transactionId": "84356531338"
+         "orderId":"CHG01e525472efa08b7d32a3da77b3b7f3a61",
+         "transactionTimestamp":"2023-01-13T19:43:55.845836Z",
+         "apiTraceId":"e243e65a21454fd0a67bb72a51ff2387",
+         "clientRequestId":"5200213",
+         "transactionId":"e243e65a21454fd0a67bb72a51ff2387"
       }
    },
    "source":{
@@ -149,36 +150,24 @@ type: tab
    },
    "paymentReceipt":{
       "approvedAmount":{
-         "total": 12.04,
-         "currency": "USD"
+         "total":85,
+         "currency":"USD"
       },
-      "merchantName": "Merchant Name",
-      "merchantAddress": "123 Peach Ave",
-      "merchantCity": "Atlanta",
-      "merchantStateOrProvince": "GA",
-      "merchantPostalCode": "12345",
-      "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com",
       "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK5882",
-         "schemeTransactionId": "0225MCC625628",
-         "processor": "FISERV",
-         "host": "NASHVILLE",
-         "responseCode": "000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021-06-20T23:42:48Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2021-06-20T23:42:48Z"
-         }
+         "approvalStatus":"APPROVED",
+         "processor":"fiserv",
+         "responseCode":"000000",
+         "responseMessage":"APPROVAL",
+         "hostResponseCode":"00",
+         "hostResponseMessage":"Authorised",
+         "localTimestamp":"2023-01-13T19:43:57Z"
       }
    },
    "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
+      "primaryTransactionId":"a64109c752e14add80a597965bc1b72f",
+      "captureFlag":true,
+      "approvalCode":"OK7244"
+      "authentication3DS":false
    }
 }
 ```
