@@ -73,6 +73,14 @@ titles: Error Response
             "message":"Write to downstream failed"
          }
       ]
+      "paymentTokens":[
+         {
+
+         }
+      ]
+      "processorResponseDetails":{
+
+         }
    }
 }
 ```
