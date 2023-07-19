@@ -32,6 +32,11 @@ description: Submit a request to reauthorize a charge where the original authori
 link: ?path=docs/Resources/Guides/Authorizations/Re-Auth.md
 -->
 
+<!-- type: card
+title: Forced
+description: Submit a request to authorize funds from a customer.
+link: ?path=docs/Resources/API-Documents/Payments/Charges.md
+-->
 <!-- type: row-end -->
 
 ---
