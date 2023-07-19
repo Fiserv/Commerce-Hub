@@ -29,6 +29,39 @@ type: tab
 titles: amount, source, transactionDetails, merchantDetails
 -->
 
+## Authorizations
+
+Build a Commerce Hub integration to accept a payment.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Charges
+description: Submit a request to authorize funds from a customer.
+link: ?path=docs/Resources/API-Documents/Payments/Charges.md
+-->
+
+<!-- type: card
+title: Captures
+description: Submit a request to capture an existing pre-authorization from a charges request.
+link: ?path=docs/Resources/API-Documents/Payments/Capture.md
+-->
+
+<!-- type: card
+title: Reauthorize
+description: Submit a request to reauthorize a charge where the original authorization has been released by the bank.
+link: ?path=docs/Resources/Guides/Authorizations/Re-Auth.md
+-->
+
+<!-- type: card
+title: Forced
+description: Submit a request to authorize funds from a customer.
+link: ?path=docs/Resources/API-Documents/Payments/Charges.md
+-->
+<!-- type: row-end -->
+
+---
+
 The below table identifies the required parameters in the `amount` object.
 
 |Variable |  Type| Maximum Length | Description|
