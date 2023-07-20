@@ -171,6 +171,8 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---
