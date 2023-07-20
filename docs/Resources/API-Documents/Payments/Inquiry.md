@@ -4,7 +4,7 @@ tags: [Inquiry, Transaction Inquiry, Transaction Status, API Reference]
 
 # Transaction Inquiry
 
-To retrieve the current state of any previous transaction, an inquiry request can be submitted against the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
+To retrieve the current state of any previous transaction, an inquiry request can be submitted against the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 ---
 

@@ -16,6 +16,34 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## July 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** June 22nd 2023
+- **Production:** July 6th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support [MACless Canadian debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) transactions. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
+## June 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** May 25th 2023
+- **Production:** June 1st 2023
+
+| Details | Type |
+| ----- | ----- |
+| Amex support for [authorized _(online)_ refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## May 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -25,6 +53,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
+| Support for the following [refund types](?path=docs/Resources/API-Documents/Payments/Refund.md); Open Refunds (Credits), Unmatched Refunds, and Auth/Capture Refunds. | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---

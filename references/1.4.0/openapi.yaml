@@ -1,7 +1,5 @@
 openapi: 3.0.2
-info: {title: Payments, description: This API Specification is designed to provide
-    technical guidance required to consume and integrate with our APIs for payment
-    processing., version: v1.3.0}
+info: {title: Payments, description: This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing., version: v1.3.0}
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
 - {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
@@ -300,19 +298,14 @@ paths:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
               PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
-              PaymentCard-Encrypted:
-                summary: TokenizationRequest with encrypted PaymentCard,
-                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
+              PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
-              ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryTokenRequest'}
+              ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard, $ref: '#/components/examples/ManualEntryTokenRequest'}
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
               GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
               Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/Payment3DSTokenRequest'}
-              PaymentSession:
-                summary: TokenizationRequest with PaymentSession
-                $ref: '#/components/examples/PaymentSessionTokenRequest'
+              PaymentSession: {summary: TokenizationRequest with PaymentSession, $ref: '#/components/examples/PaymentSessionTokenRequest'}
       responses:
         200:
           description: Success.
@@ -321,16 +314,14 @@ paths:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
                 PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
+                PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
-                ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,
-                  $ref: '#/components/examples/ManualEntryTokenResponse'}
+                ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,$ref: '#/components/examples/ManualEntryTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
                 GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
                 Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/Payment3DSTokenResponse'}
-                PaymentSession:
-                  summary: TokenizationResponse with PaymentSession
-                  $ref: '#/components/examples/PaymentCardTokenResponse'
+                PaymentSession: {summary: TokenizationResponse with PaymentSession, $ref: '#/components/examples/PaymentCardTokenResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -669,10 +660,20 @@ paths:
             schema:
               $ref: '#/components/schemas/CardCaptureRequest'
             examples:
-              PaymentCard: {summary: CardCapture Request with PaymentCard, $ref: '#/components/examples/PaymentCardCaptureRequest'}
+              PaymentCard-MUPK:
+                summary: CardCapture Request with PaymentCard,
+                $ref: '#/components/examples/PaymentCardCaptureRequest'
       responses:
-        204:
+        200:
           description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CardCaptureResponse'
+              examples:
+                PaymentCard-MUPK:
+                  summary: CardCaptureResponse for PaymentCard
+                  $ref: '#/components/examples/PaymentCardCaptureResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -719,7 +720,7 @@ paths:
             schema:
               $ref: '#/components/schemas/EncryptionKeyRequest'
             examples:
-              GenerateRequest:
+              Generate:
                 summary: Generate Encryption Key Request
                 $ref: '#/components/examples/EncryptionKeyRequest'
       responses:
@@ -730,7 +731,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/EncryptionKeyResponse'
               examples:
-                GenerateRequest:
+                Generate:
                   summary: Generate Encryption Key Response
                   $ref: '#/components/examples/EncryptionKeyGenerateResponse'
         400:
@@ -776,7 +777,7 @@ paths:
             schema:
               $ref: '#/components/schemas/EncryptionKeyRequest'
             examples:
-              RevokeRequest:
+              Revoke:
                 summary: Revoke Encryption Key Request
                 $ref: '#/components/examples/EncryptionKeyRequest'
       responses:
@@ -787,7 +788,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/EncryptionKeyResponse'
               examples:
-                RevokeResponse:
+                Revoke:
                   summary: Revoke Encryption Key Response
                   $ref: '#/components/examples/EncryptionKeyRevokedResponse'
         400:
@@ -1137,6 +1138,28 @@ components:
           $ref: '#/components/schemas/PaymentCard'
         merchantDetails:
           $ref: '#/components/schemas/MerchantDetails'
+          
+    CardCaptureResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        cardDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardDetails'
+        paymentToken:
+          $ref: '#/components/schemas/ResponsePaymentToken'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
     
     TransactionInquiryRequest:
       x-model-version: 1.0
@@ -1385,9 +1408,11 @@ components:
             * ON_GUARD
             * FPE
           example: RSA
-        encryptionTarget: {type: string, maxLength: 256, description: 'Target can
-            be TRACK_1, TRACK_2 (including EMV), BOTH (Track 1 and 2) or MANUAL.',
-          example: TRACK_2}
+        encryptionTarget:
+            type: string
+            maxLength: 256
+            description: '<a href="../docs?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-target">Encryption target</a> identifies the data based on how it is entered into the POS device or terminal, website, virtual terminal (VPOS), or mobile app or device.'
+            example: 'MANUAL'
         encryptionBlock: {type: string, maxLength: 2000, description: This field contains
             the track data or card number provided in encrypted form., example: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==}
         deviceType:
