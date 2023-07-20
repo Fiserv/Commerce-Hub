@@ -332,9 +332,8 @@ The below table identifies the valid values of the reason the merchant/customer 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/cancels)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+  
 ---
