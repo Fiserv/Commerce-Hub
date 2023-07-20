@@ -33,9 +33,9 @@ link: ?path=docs/Resources/Guides/Authorizations/Re-Auth.md
 -->
 
 <!-- type: card
-title: Forced
-description: Submit a request to authorize funds from a customer.
-link: ?path=docs/Resources/API-Documents/Payments/Charges.md
+title: Forced Post
+description: Submit a request to force capture funds after contacting the voice authorization center.
+link: ?path=docs/Resources/API-Documents/Payments/Forced.md
 -->
 <!-- type: row-end -->
 
