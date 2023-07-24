@@ -199,7 +199,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)
