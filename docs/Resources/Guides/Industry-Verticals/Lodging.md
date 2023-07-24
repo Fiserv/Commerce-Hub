@@ -12,6 +12,6 @@ tags: [Lodging]
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
-
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+  
 ---
