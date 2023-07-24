@@ -47,7 +47,7 @@ Level III transactions require all Level II data in addition to the fields in th
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Commodity Codes](?path=docs/Resources/Guides/Level23/Commodity-Codes.md)
 - [Level II/III Data](?path=docs/Resources/Guides/Level23/Level23.md)
 - [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
