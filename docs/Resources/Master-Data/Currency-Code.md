@@ -166,6 +166,6 @@ The table below contains all valid values of currency name, code, number and dec
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Amount](?path=docs/Resources/Master-Data/Amount-Components.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---
