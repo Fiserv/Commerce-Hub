@@ -343,7 +343,7 @@ The below table identifies the valid values of `securityCodeResponse`.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
