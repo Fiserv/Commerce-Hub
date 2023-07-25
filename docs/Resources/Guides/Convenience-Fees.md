@@ -69,10 +69,8 @@ titles: Request, Response
    "transactionDetails":{
       "captureFlag":true
    },
-   "additionalDataCommon":{
-      "amountComponents":{
-         "convenienceFees":"1.00"
-      }
+   "amountComponents":{
+      "convenienceFees":"1.00"
    },
    "merchantDetails":{
       "merchantId": "123456789789567",
@@ -120,6 +118,9 @@ type: tab
          "total": "12.04",
          "currency": "USD"
       },
+      "amountComponents":{
+         "convenienceFees": 1.00
+      },
       "processorResponseDetails":{
          "approvalStatus": "APPROVED",
          "approvalCode": "OK3483",
@@ -140,11 +141,6 @@ type: tab
          }
       }
    },
-   "additionalDataCommon":{
-      "amountComponents":{
-         "convenienceFees": 1.00
-      }
-   }
 }
 ```
 

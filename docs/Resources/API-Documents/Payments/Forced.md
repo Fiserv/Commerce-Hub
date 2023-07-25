@@ -5,7 +5,7 @@ tags: [Forced Post, Payments, API Reference, Authorization, Sale]
 # Forced Post
 
 <!-- theme: danger -->
-> Due to higher instances of fraud, it is highly recommended that the forced post be limited to certain personnel. An administrator in the Virtual Terminal can manage forced post.
+> Due to higher instances of fraud, it is highly recommended that the forced post be limited to certain personnel. An administrator in the Virtual Terminal can manage forced Post.
 
 A forced post is used when an issuer (bank) provides a referral also known as call response for off-line processing. The merchant will contact the voice authorization center to receive an `approvalCode` to submit manually via an API call or [Virtual Terminal](?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md).
 

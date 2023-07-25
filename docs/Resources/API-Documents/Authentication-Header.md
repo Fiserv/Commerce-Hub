@@ -32,8 +32,8 @@ titles: Javascript
 > Authorization: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
 
 ```javascript
-var key = 'api'Key;
-var secret = 'secret';
+var key = ‘api key’;
+var secret = ‘secret’;
 
 var ClientRequestId = Math.floor((Math.random() * 10000000) + 1);
 
