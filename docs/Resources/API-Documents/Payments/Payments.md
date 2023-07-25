@@ -32,6 +32,11 @@ description: Submit a request to reauthorize a charge where the original authori
 link: ?path=docs/Resources/Guides/Authorizations/Re-Auth.md
 -->
 
+<!-- type: card
+title: Forced Post
+description: Submit a request to force capture funds after contacting the voice authorization center.
+link: ?path=docs/Resources/API-Documents/Payments/Forced.md
+-->
 <!-- type: row-end -->
 
 ---
