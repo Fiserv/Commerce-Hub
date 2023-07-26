@@ -10,7 +10,7 @@ Regional _(International)_ Debit Solutions from Commerce Hub provide anywhere, a
 
 # Message Authentication
 
-Canadaian debit allows message authentication to provides another layer of security using encryption so that the message is received by the intended recipient and has not been tampered with on the network. Message authentication is performed by using a MAC value computed by both the sender and receiver. MAC value is derived using an encryption algorithm on certain data elements in a message. Terminal computes and includes `debitMACValue` in the message sent to the host. The host calculates the MAC using the same data elements. If the host-calculated value matches that in the message, it confirms the message has not been tampered with or damaged during the transmission.
+Canadaian debit allows message authentication to provide another layer of security using encryption so that the message is received by the intended recipient and has not been tampered with on the network. Message authentication is performed by using a MAC value computed by both the sender and receiver. MAC value is derived using an encryption algorithm on certain data elements in a message. Terminal computes and includes `debitMACValue` in the message sent to the host. The host calculates the MAC using the same data elements. If the host-calculated value matches that in the message, it confirms the message has not been tampered with or damaged during the transmission.
 
 <!-- theme: Info -->
 > Commerce Hub supports MACpassthrough and MACless transactions based on the MAC attribute in Merchant Configuration and Boarding. Depending on the setup if `debitMacValue` is sent or absent from the request, Commerce Hub will reject the transaction. Please contact your account representative for more information.
@@ -45,8 +45,8 @@ The following values are supported Canadian debit [processing codes](?path=docs/
 
 - **Sale:** ‘001000’ (savings) ‘002000’ (checking)
 - **Refund:** ‘200010’ (savings) ‘200020’ (checking)
-- **Adjustment of Refund:** ‘021000’ (savings) ‘022000’ (checking)
-- **Adjustment of Sale:** ‘220010’ (savings) ‘220020’ (checking)
+- **Adjustment of Refund (Void):** ‘021000’ (savings) ‘022000’ (checking)
+- **Adjustment of Sale (Void):** ‘220010’ (savings) ‘220020’ (checking)
 
 ### Response Validation
 
