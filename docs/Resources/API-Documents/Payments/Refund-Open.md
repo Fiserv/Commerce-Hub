@@ -123,17 +123,17 @@ type: tab
          "clientRequestId": "4345791",
          "transactionId": "84356531338"
       }
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "bin": "40055500",
-         "last4": "0019",
-         "scheme": "VISA",
-         "expirationMonth": "10",
-         "expirationYear": "2030"
-      }
-   },
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
    "paymentReceipt":{
       "approvedAmount":{
          "total": 12.04,
