@@ -10,7 +10,7 @@ The Commerce Hub allows a merchant to create, inquire, and finalize payment tran
 
 ## Primary
 
-Request initiated to the Commerce Hub API without a referenced transaction identifier.
+Initial request initiated to Commerce Hub's API.
 
 <!-- type: row -->
 
@@ -44,7 +44,7 @@ link: ?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 
 ## Secondary
 
-Request initiated to the Commerce Hub API with a referenced transaction identifier from a primary request.
+Request initiated to Commerce Hub's API with a [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) from a primary request.
 
 <!-- type: row -->
 
