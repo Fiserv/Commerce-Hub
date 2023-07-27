@@ -1,5 +1,5 @@
 ---
-tags: [Card Not Present, Card Present, Hash, Primary Transactions, Secondary Transactions, Vault]
+tags: [Guide, Transactions]
 ---
 
 # Request Types
