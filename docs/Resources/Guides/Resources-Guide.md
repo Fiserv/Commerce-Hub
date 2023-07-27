@@ -1,5 +1,5 @@
 ---
-tags: [Fraud Controls, Industry Verticals, Master Data, Resources and Guides]
+tags: [Fraud Controls, Industry Verticals, Resources and Guides]
 ---
 
 # Resources and Guides
