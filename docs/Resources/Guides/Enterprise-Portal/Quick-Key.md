@@ -2,7 +2,7 @@
 tags: [Batch Upload, Card Not Present, CSV Format, Virtual Terminal, Online]
 ---
 
-# Quick Key
+# (ARCHIVE) Quick Key
 
 Quick key is a feature in the Virtual Termial that allows batch upload of transactions using a Comma Seperated Value (CSV) file.
 
