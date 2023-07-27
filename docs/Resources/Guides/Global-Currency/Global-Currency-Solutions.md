@@ -16,7 +16,7 @@ Commerce Hub's [Global Currency Solutions](https://www.carat.fiserv.com/en-us/so
 
 Commerce Hub provides the following types of Global Currency Solutions;
 
-<-- --> create 4 cards
+<!-- create cards -->
  - **Global Merchant Acquiring (GMA):** allows a merchant to....
  - **Global ePricing (GEP):** multi-currency pricing that allows a merchant to process international currencies through Commerce Hub by overriding the `currency` in the request.
  - **Dynamic Currency Conversion (DCC):** a rate request that allows a merchant to request the optimal currency and rate from our exchange rate provider, which will determine the currency and provide a price and exchange rate.
