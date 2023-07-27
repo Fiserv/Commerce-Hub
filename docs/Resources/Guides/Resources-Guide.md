@@ -111,9 +111,9 @@ link: ?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
 -->
 
 <!-- type: card
-title: Quick Key
-description: Quick key is a feature in the Virtual Termial that allows batch upload of transactions using a Comma Seperated Value (CSV) file.
-link: ?path=docs/Resources/Guides/Enterprise-Portal/Quick-Key.md
+title: Reporting
+description: Reporting is available in Business Track through ClientLine Reporting.
+link: ?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md
 -->
 
 <!-- type: row-end -->
