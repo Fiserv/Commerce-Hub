@@ -1,8 +1,8 @@
 ---
-tags: [Currency Conversion, Vault]
+tags: [Currency Conversion, Global Currency]
 ---
 
-# Currency Conversion
+# Dynamic Currency Conversion
 
 <!-- theme: danger -->
 > We are enhancing the Commerce Hub to include currency conversion support and the documents related to the features will be released soon.
