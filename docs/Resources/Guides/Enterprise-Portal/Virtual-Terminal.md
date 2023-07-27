@@ -34,5 +34,6 @@ Recurring Billing allows a merchant to setup recurring plans and manage customer
 ## See Also
 
 - [Enterprise Portal](?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md)
+- [Reporting](?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md)
 
 ---
