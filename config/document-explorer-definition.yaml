@@ -39,8 +39,8 @@
     sections:
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Encrypted Device
-      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
+#    - title: Encrypted Device
+#      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
 #    - title: Fully-Integrated
 #      link: docs/In-Person/Integrations/Fully-Integrated.md
 #    - title: Semi-Integrated
@@ -54,7 +54,8 @@
         link: docs/Resources/Guides/Debit/PIN_Debit.md
       - title: Regional Debit
         link: docs/Resources/Guides/Debit/Regional-Debit.md
-    - title: Encrypted Payments
+    - title: Encrypted Payment
+      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
       sections:
 #      - title: Contactless (NFC)
 #        link: docs/In-Person/Encrypted-Payments/Contactless.md
