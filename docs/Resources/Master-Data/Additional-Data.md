@@ -16,11 +16,11 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
+| `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-type). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
 | `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
 | `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
-| `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-indicator). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `deferredPayments` | *object* | N/A | Used in defferred bill payments |
 | `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md) transactions. |
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
@@ -111,12 +111,12 @@ JSON string format for `additionalDataCommon`:
 
 ---
 
-#### Bill Payment Indicator
+#### Bill Payment Type
 
 <!-- theme: warning -->
 > Bill Payment Indicator is required for Charges, Cancel and Capture transactions where a bill payment is being processed.
 
-The below table identifies the valid values of the `billPaymentIndicator`.
+The below table identifies the valid values of the `billPaymentType`.
 
 | Value | Description |
 | ----- | ----- |
