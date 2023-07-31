@@ -4,7 +4,7 @@ tags: [Enterprise Portal, Business Track, Virtual Terminal, Reporting, Settings]
 
 # ClientLine Enterprise Portal
 
-Merchants can access the Enterprise Portal through Business Track. Each merchant receives access to ClientLine, a real-time web-based back-office application that logs the transactions conducted through the Virtual POS, Batch Uploads (Quick Key), and Commerce Hub intergrations. 
+Merchants can access the Enterprise Portal through [Business Track](https://www.businesstrack.com). Each merchant receives access to ClientLine, a real-time web-based back-office application that logs the transactions conducted through the Virtual POS, Batch Uploads (Quick Key), and Commerce Hub intergrations. 
 
 The Enterprise Portal also provides access to Commerce Hub's Merchant Boarding and Configuration (Marketplace), that allows boarding and configuration of a merchant accounts. 
 

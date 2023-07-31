@@ -2,9 +2,9 @@
 tags: [Online, Card Not Present, Secure Data Capture]
 ---
 
-# Secure Data Capture - Card Capture API
+# Secure Data Capture - API Only
 
-Commerce Hub's Card Capture API allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from the form and makes a direct API call with the payment information directly to Commerce Hub to receive a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's card capture service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a charges or tokens transaction request with the `sourceType` *PaymentSession*.
 
 ### Benefits
 
@@ -134,10 +134,24 @@ titles: Request, Response
 type: tab
 -->
 
-A successful card capture response will result in a HTTP 204 No Content, if a response is not received, best practice is to still submit the transaction.
+##### Example of a card capture (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+
+{
+  "gatewayResponse": {
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  }
+}
+```
 
 <!-- type: tab-end -->
 

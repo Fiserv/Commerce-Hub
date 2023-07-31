@@ -1,8 +1,8 @@
 ---
-tags: [Enterprise Portal, Business Track, Profiles, Virtual Terminal, Reporting, Settings]
+tags: [Archive, Enterprise Portal, Business Track, Profiles, Virtual Terminal, Reporting, Settings]
 ---
 
-# Profiles
+# Profiles (ARCHIVED)
 
 ClientLine Enterprise portal offers merchants the ability to setup and manage profiles:
 

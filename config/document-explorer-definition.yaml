@@ -39,8 +39,8 @@
     sections:
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Encrypted Device
-      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
+#    - title: Encrypted Device
+#      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
 #    - title: Fully-Integrated
 #      link: docs/In-Person/Integrations/Fully-Integrated.md
 #    - title: Semi-Integrated
@@ -54,7 +54,8 @@
         link: docs/Resources/Guides/Debit/PIN_Debit.md
       - title: Regional Debit
         link: docs/Resources/Guides/Debit/Regional-Debit.md
-    - title: Encrypted Payments
+    - title: Encrypted Payment
+      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
       sections:
 #      - title: Contactless (NFC)
 #        link: docs/In-Person/Encrypted-Payments/Contactless.md
@@ -76,7 +77,7 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
       - title: JavaScript
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-      - title: Card Capture API
+      - title: API Only
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
       - title: Multi-Use Public Key
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
@@ -154,6 +155,7 @@
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
     - title: Payments
+      link: docs/Resources/API-Documents/Payments/Payments.md
       sections:
       - title: Charges
         link: docs/Resources/API-Documents/Payments/Charges.md
