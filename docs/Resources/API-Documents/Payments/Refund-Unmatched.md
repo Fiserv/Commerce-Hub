@@ -7,7 +7,7 @@ tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 An unmatched tagged refund allows a merchant to issue a refund to a payment source other than the one used in the original transaction. The refund is associated with the original [charge request](?path=docs/Resources/API-Documents/Payments/Charges.md) by using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md). This allows the merchant to maintain the linking of the transaction information in Commerce Hub when issuing a refund or store credit.
 
 <!-- theme: warning -->
-> Before issuing an unmatched tagged refund, a normal tagged refund should be performed. Once declined due to being an invalid or closed account, an unmatched tagged refund can be attempted. If an unmatched tagged refund is not associated with a prior tagged refund attempt, Commerce Hub will reject the transaction.
+> Before issuing an unmatched tagged refund, a normal [tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md) should be performed. Once declined due to being an invalid or closed account, an unmatched tagged refund can be attempted. If an unmatched tagged refund is not associated with a prior tagged refund attempt, Commerce Hub will reject the transaction.
 
 <!-- theme: danger -->
 > A refund request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
@@ -50,8 +50,6 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
-
-<!-- type: tab-end -->
 
 <!--
 type: tab

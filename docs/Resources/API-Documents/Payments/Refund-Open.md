@@ -16,6 +16,9 @@ An open refund (credit) is a refund to a card without a reference to the prior t
 
 ## Minimum Requirements
 
+<!-- theme: info -->
+> Open refunds can also be performed as an [auth/capture refund](?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md) by sending `captureFlag` *false* in the `transactionDetails` object.
+
 <!--
 type: tab
 titles: amount, source, merchantDetails
@@ -37,8 +40,6 @@ The below table identifies the required parameters in the `source` object.
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
-
-<!-- type: tab-end -->
 
 <!--
 type: tab
@@ -72,24 +73,29 @@ titles: Request, Response
 
 ```json
 {
-   "amount":{
-      "total":"12.04",
-      "currency":"USD"
-   },
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123",
-         "securityCodeIndicator":"PROVIDED"
-      }
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123",
+      "securityCodeIndicator": "PROVIDED"
     }
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 
