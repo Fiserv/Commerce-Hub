@@ -111,12 +111,12 @@ JSON string format for `additionalDataCommon`:
 
 ---
 
-#### Bill Payment Indicator
+#### Bill Payment Type
 
 <!-- theme: warning -->
 > Bill Payment Indicator is required for Charges, Cancel and Capture transactions where a bill payment is being processed.
 
-The below table identifies the valid values of the `billPaymentIndicator`.
+The below table identifies the valid values of the `billPaymentType`.
 
 | Value | Description |
 | ----- | ----- |
