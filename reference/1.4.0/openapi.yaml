@@ -1081,10 +1081,18 @@ components:
       x-model-version: 1.0
       description: Response containing an error object.
       properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
         error:
           type: array
-          items: {$ref: '#/components/schemas/Error'}
+          items:
+            $ref: '#/components/schemas/Error'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
     Error:
       x-model-version: 1.0
       description: Error information.
