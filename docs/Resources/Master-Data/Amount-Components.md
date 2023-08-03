@@ -87,6 +87,39 @@ JSON string format for `amountComponents`:
  
 <!-- type: tab-end -->
 
+## Price Adjustment 
+
+Used to present the transaction amount and transaction currency for particular transaction.
+
+<!--
+type: tab
+titles: priceAdjustment, JSON Example
+-->
+
+The below table identifies the parameters in the `amountAdjustment` object.
+
+|Variable |Type| Maximum Length | Description|
+|---------|----------|----------------|---------|
+| `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+<!--
+type: tab
+-->
+
+JSON string format for `amount`:
+
+```json
+{
+   "amount":{
+      "total": 21.70,
+      "currency": "USD"
+   }
+}
+```
+
+<!-- type: tab-end -->
+
 ---
 
 ## See Also
