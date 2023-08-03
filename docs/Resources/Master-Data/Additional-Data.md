@@ -20,7 +20,6 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
 | `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
-| `amountComponents` | *object* | N/A | Used in transactions where additional [amount](?path=docs/Resources/Master-Data/Amount-Components.md) fields such as tax, surcharge, fees are required as part of the request. |
 | `deferredPayments` | *object* | N/A | Used in defferred bill payments |
 | `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md) transactions. |
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
@@ -46,15 +45,6 @@ JSON string format for `additionalDataCommon`:
          "ecomURL":"https://www.somedomain.com",
          "requestedTestResponseCode":"NO_CONNECTION_AVAILABLE",
          "emvParameterDownloadIndicator":true
-      },
-      "amountComponents":{
-         "subTotal": 12.00,
-         "convenienceFee": 1.00,
-         "ITBISTaxAmount": 0.50,
-         "localTax": 1.00,
-         "shippingAmount": 5.00,
-         "surcharge": 1.20,
-         "vatAmount": 1.00 
       },
       "directedRouting":{
          "network": "VISA",
