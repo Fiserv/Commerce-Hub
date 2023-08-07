@@ -162,7 +162,7 @@ The below table identifies additional arrays that may be returned in the inquiry
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/inquiry)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Reference Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
