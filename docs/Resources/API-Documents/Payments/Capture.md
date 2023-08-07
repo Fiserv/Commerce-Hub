@@ -178,10 +178,9 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Reference Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)
-- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [Split Tender, Vault]
+tags: [Split Tender]
 ---
 
 # Split Tender
