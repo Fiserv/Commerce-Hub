@@ -29,6 +29,19 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 ---
 
+## August 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** July 26th 2023
+- **Production:** August 8th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md) with Secure Data Capture. | Update |
+
+---
+
 ## July 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
