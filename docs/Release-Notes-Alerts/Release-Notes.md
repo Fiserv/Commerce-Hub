@@ -26,6 +26,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md) with Secure Data Capture. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
