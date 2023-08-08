@@ -59,15 +59,19 @@ The below table identifies the parameters in the `amountComponents` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
-| `subTotal` | *number* | 12 | Subtotal amount |
-| `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
-| `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
-| `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
-| `cashback` | *number* | 12 | For Debit or Credit: The amount of cash requested by the cardholder at the time of purchase. Currently not supported on Visa, Mastercard, Amex, EBTCash or Signature Debit. |
-| `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
-| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+| `unitPrice` | *number* | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
+| `subTotal` | *number* | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
+| `shippingAmount` | *number* | 18,3 | Total amount of shipping, delivery or freight charges applied |
+| `shippingRate` | *number* | 100 | Shipping, delivery or freight rate percent. |
+| `cashback` | *number* | 18,3 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase. |
+| `tip` | *number* | 18,3 | The portion of the transaction amount that represents the tip |
+| `surcharge` | *number* | 12 | Identifies the transaction surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Note: Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative. |
 | `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
-| `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
+| `convenienceFee` | *number* | 18,3 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
+| `freightAmount` | *number* | 18,3 | Freight amount applied |
+| `freightRate` | *number* | 100 | Freight rate percent |
+
+
 
 <!--
 type: tab
