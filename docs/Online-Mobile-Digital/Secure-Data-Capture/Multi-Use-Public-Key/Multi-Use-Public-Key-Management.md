@@ -182,7 +182,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of (201: Created) response.
+##### Example of (200: Success) response.
 
 ```json
 {
