@@ -1,5 +1,5 @@
 ---
-tags: [Amount, Amount Components, API Reference, Transaction Amount]
+tags: [Amount, Amount Components, API Reference, Transaction Amount, Price Adjustment, Tax]
 --- 
 
 # Transaction Amount
@@ -8,6 +8,8 @@ Transaction amount information is contained in the `amount` and `amountComponent
 
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
+
+---
 
 ## Amount
 
@@ -41,6 +43,8 @@ JSON string format for `amount`:
 ```
 
 <!-- type: tab-end -->
+
+---
 
 ## Amount Components
 
@@ -87,6 +91,8 @@ JSON string format for `amountComponents`:
  
 <!-- type: tab-end -->
 
+---
+
 ### Price Adjustment 
 
 Used to present the transaction amount and transaction currency for particular transaction.
@@ -128,6 +134,8 @@ JSON string format for `amount`:
 
 <!-- type: tab-end -->
 
+---
+
 ### Tax Amounts
 
 Used to present the transaction amount and transaction currency for particular transaction.
@@ -148,10 +156,29 @@ The below table identifies the parameters in the `taxAmounts` object.
 
 #### Tax Type
 
+The below table contains the valid values for `taxType` parameter.
+
 | Value | Description |
 |---------|----------|
-| STATE | State tax |
-|
+| UNKNOWN | State sales tax |
+| ALTERNATE_TAX | Alternate tax |
+| CITY | City sales tax |
+| DUTY | Duty tax |
+| ENERGY | Energy Tax |
+| FEDERAL | Federal/National Sales Tax |
+| GST | Goods and Services Tax |
+| HST | Harmonized Sales Tax |
+| ITBIS | Industrialized Goods and Services Transfer Tax |
+| LOCAL | Local Sales Tax |
+| MUNICIPAL | Municipal Sales Tax |
+| NOT_SUPPORTED |
+| OCCUPANCY | Occupancy Tax |
+| OTHER | Other Tax |
+| PST | Provincial Sales Tax |
+| QST | Quebec Sales Tax |
+| ROOM | Room Tax |
+| STATE | State Sales Tax |
+| VAT | Value Added Tax |
 
 <!--
 type: tab
