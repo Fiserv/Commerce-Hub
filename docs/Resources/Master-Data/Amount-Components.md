@@ -8,6 +8,8 @@ Transaction amount information is contained in the `amount` and `amountComponent
 
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
+- [**priceAdjustment:**](#price-adjustment) Used to identifies the type of price adjustment being applied.
+- [**taxAmount:**](#tax-amount) Used to identifies the type of tax being applied
 
 ---
 
