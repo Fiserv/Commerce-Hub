@@ -106,28 +106,34 @@ The below table identifies the parameters in the `priceAdjustment` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
-| `subTotal` | *number* | 12 | Subtotal amount |
-| `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
-| `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
-| `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
-| `cashback` | *number* | 12 | For Debit or Credit: The amount of cash requested by the cardholder at the time of purchase. Currently not supported on Visa, Mastercard, Amex, EBTCash or Signature Debit. |
-| `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
-| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
-| `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
-| `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative.
-| `priceAdjustment` | *array* | N/A | Identifies the type of price adjustment being applied. |
+| `adjustmentDescription` | *string* | N/A | Identifies the adjustments 
+| `adjustmentRate` | *number* | 100 | Rate percent being applied |
+| `adjustmentAmount` | *number* | 18,3 | Amount being applied |
+
+#### Adjustment Type
+
+The below table contains the valid values for `adjustmentType` parameter.
+
+| Value |
+|---------|
+| COUPON |
+| CREDIT |
+| DISCOUNT |
+| FEES |
+| PROMOTION |
 
 <!--
 type: tab
 -->
 
-JSON string format for `amount`:
+JSON string format for `priceAdjustment`:
 
 ```json
 {
-   "amount":{
-      "total": 21.70,
-      "currency": "USD"
+   "priceAdjustment":{
+      "adjustmentDescription": "This is a discoun",
+      "adjustmentRate": 10,
+      "adjustmentAmount": 2
    }
 }
 ```
