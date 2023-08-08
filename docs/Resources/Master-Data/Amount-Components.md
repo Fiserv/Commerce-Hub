@@ -70,8 +70,10 @@ The below table identifies the parameters in the `amountComponents` object.
 | `convenienceFee` | *number* | 18,3 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 | `freightAmount` | *number* | 18,3 | Freight amount applied |
 | `freightRate` | *number* | 100 | Freight rate percent |
-
-
+| `priceAdjustments` | *type* | N/A | Identifies the type of price adjustment being applied. |
+| `netAmount` | *number* | 18,3 | The pre-tax cost of an item, minus any discounts or promotions. |
+| `taxAmounts` | *array* | N/A | Total amounts for taxes applied to the purchase |
+| `grossAmount`| *number* | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes. | 
 
 <!--
 type: tab
