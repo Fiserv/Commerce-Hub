@@ -162,7 +162,39 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
-
+  - title: Tokenization
+    groupName: Services
+    description: "Securely store customer card data as a token using Commerce Hub's tokenization service."
+    featured: false
+    relatedDocs:
+     - link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+       title: Tokenization
+    relatedAPIs:
+      - type: post
+        path: /payments-vas/v1/tokens
+        title: Tokens
+  - title: Gift Solutions
+    groupName: Services
+    description: Allow your customers the ability to buy and use gift cards to pay for purchases.
+    featured: false
+    relatedDocs:
+     - link: 
+       title: Gift Cards
+    relatedAPIs:
+      - type: post
+        path: 
+        title: Gift Cards
+  - title: Partner Modules
+    groupName: Services
+    description: "Use partner modules to integrate with third-party APIs."
+    featured: false
+    relatedDocs:
+     - link: 
+       title: Partner Integrations
+    relatedAPIs:
+      - type: post
+        path: 
+        title: Charges
 #featuredAPIs:
 #  - name: Charges
 #    description: Used to submit a charge transaction.
