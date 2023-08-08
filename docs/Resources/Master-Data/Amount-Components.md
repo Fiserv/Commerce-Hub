@@ -87,7 +87,7 @@ JSON string format for `amountComponents`:
  
 <!-- type: tab-end -->
 
-## Price Adjustment 
+### Price Adjustment 
 
 Used to present the transaction amount and transaction currency for particular transaction.
 
@@ -96,7 +96,7 @@ type: tab
 titles: priceAdjustment, JSON Example
 -->
 
-The below table identifies the parameters in the `amountAdjustment` object.
+The below table identifies the parameters in the `priceAdjustment` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
@@ -128,7 +128,7 @@ JSON string format for `amount`:
 
 <!-- type: tab-end -->
 
-## Tax Amounts
+### Tax Amounts
 
 Used to present the transaction amount and transaction currency for particular transaction.
 
@@ -141,21 +141,32 @@ The below table identifies the parameters in the `taxAmounts` object.
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `taxType` | *string* |  | Identifies the [type](#tax-type) of tax being applied |
+| `taxRate` | *number* | 100 | Tax rate percent being applied |
+| `taxAmount` | *number* | 18,3 | Tax amount being applied |
+| `taxExempt` | *boolean* | N/A | Designates if the specified tax type is tax exempt. Tax Exempt _(true)_ or Not Tax Exempt _(false)_ |
+
+#### Tax Type
+
+| Value | Description |
+|---------|----------|
+| STATE | State tax |
+|
 
 <!--
 type: tab
 -->
 
-JSON string format for `amount`:
+JSON string format for `taxAmounts`:
 
 ```json
 {
-   "amount":{
-      "total": 21.70,
-      "currency": "USD"
-   }
+  "taxAmounts": {
+    "taxType": "STATE",
+    "taxRate": 10,
+    "taxAmount": 2,
+    "taxExempt": true
+  }
 }
 ```
 
