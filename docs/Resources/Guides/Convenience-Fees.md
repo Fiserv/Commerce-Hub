@@ -5,7 +5,7 @@ tags: [Convenience Fees, Amount]
 # Convenience Fees
 
 <!-- theme: danger -->
-> We are enhancing the Commerce Hub to include convenience fee support and the documents related to the features will be released soon.
+
 
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
