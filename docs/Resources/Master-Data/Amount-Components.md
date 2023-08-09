@@ -8,8 +8,6 @@ Transaction amount information is contained in the `amount` and `amountComponent
 
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
-- [**priceAdjustment:**](#price-adjustment) Used to identifies the type of price adjustment being applied.
-- [**taxAmount:**](#tax-amount) Used to identifies the type of tax being applied
 
 ---
 
@@ -72,9 +70,9 @@ The below table identifies the parameters in the `amountComponents` object.
 | `convenienceFee` | *number* | 18,3 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
 | `freightAmount` | *number* | 18,3 | Freight amount applied |
 | `freightRate` | *number* | 100 | Freight rate percent |
-| `priceAdjustments` | *type* | N/A | Identifies the type of price adjustment being applied. |
+| `priceAdjustments` | *type* | N/A | Identifies the type of [price adjustment](#price-adjustments) being applied. |
 | `netAmount` | *number* | 18,3 | The pre-tax cost of an item, minus any discounts or promotions. |
-| `taxAmounts` | *array* | N/A | Total amounts for taxes applied to the purchase |
+| `taxAmounts` | *array* | N/A | [Total amounts](#tax-amounts) for taxes applied to the purchase |
 | `grossAmount`| *number* | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes. | 
 
 <!--
@@ -85,20 +83,35 @@ JSON string format for `amountComponents`:
 
 ```json
 {
-   "amountComponents":{
-      "unitPrice": 10.00,
-      "subTotal": 1.50,
-      "convenienceFee": 1.00,
-      "cashback": 1.50,
-      "tip": 1.50,
-      "shippingAmount": 5.00,
-      "shippingRate": 1,
-      "surcharge": 1.50,
-      "freightAmount": 5.00,
-      "freightRate": 1,
-      "netAmount": 40,
-      "grossAmount": 100.50
-   }
+  "amountComponents": {
+    "unitPrice": 10,
+    "subTotal": 1.5,
+    "convenienceFee": 1,
+    "cashback": 1.5,
+    "tip": 1.5,
+    "shippingAmount": 5,
+    "shippingRate": 1,
+    "surcharge": 1.5,
+    "freightAmount": 5,
+    "freightRate": 1,
+    "priceAdjustments": [
+      {
+        "adjustmentDescription": "This is a discount",
+        "adjustmentRate": 10,
+        "adjustmentAmount": 2
+      }
+    ],
+    "netAmount": 40,
+    "taxAmounts": [
+      {
+        "taxType": "STATE",
+        "taxRate": 10,
+        "taxAmount": 2,
+        "taxExempt": true
+      }
+    ],
+    "grossAmount": 100.5
+  }
 }
 ``` 
  
@@ -106,20 +119,20 @@ JSON string format for `amountComponents`:
 
 ---
 
-### Price Adjustment 
+### Price Adjustments
 
-Used to present the transaction amount and transaction currency for particular transaction.
+Contains the price adjustment details.
 
 <!--
 type: tab
-titles: priceAdjustment, JSON Example
+titles: priceAdjustments, JSON Example
 -->
 
 The below table identifies the parameters in the `priceAdjustment` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
-| `adjustmentDescription` | *string* | N/A | Identifies the adjustments 
+| `adjustmentDescription` | *string* | N/A | Identifies the adjustments |
 | `adjustmentRate` | *number* | 100 | Rate percent being applied |
 | `adjustmentAmount` | *number* | 18,3 | Amount being applied |
 
@@ -139,12 +152,12 @@ The below table contains the valid values for `adjustmentType` parameter.
 type: tab
 -->
 
-JSON string format for `priceAdjustment`:
+JSON string format for `priceAdjustments`:
 
 ```json
 {
-   "priceAdjustment":{
-      "adjustmentDescription": "This is a discoun",
+   "priceAdjustments":{
+      "adjustmentDescription": "This is a discount",
       "adjustmentRate": 10,
       "adjustmentAmount": 2
    }
@@ -157,7 +170,7 @@ JSON string format for `priceAdjustment`:
 
 ### Tax Amounts
 
-Used to present the transaction amount and transaction currency for particular transaction.
+Contains the tax details.
 
 <!--
 type: tab
@@ -179,7 +192,7 @@ The below table contains the valid values for `taxType` parameter.
 
 | Value | Description |
 |---------|----------|
-| UNKNOWN | State sales tax |
+| UNKNOWN | State sales tax _(default)_ |
 | ALTERNATE_TAX | Alternate tax |
 | CITY | City sales tax |
 | DUTY | Duty tax |
@@ -190,7 +203,7 @@ The below table contains the valid values for `taxType` parameter.
 | ITBIS | Industrialized Goods and Services Transfer Tax |
 | LOCAL | Local Sales Tax |
 | MUNICIPAL | Municipal Sales Tax |
-| NOT_SUPPORTED |
+| NOT_SUPPORTED | Tax not supported |
 | OCCUPANCY | Occupancy Tax |
 | OTHER | Other Tax |
 | PST | Provincial Sales Tax |
