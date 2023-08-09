@@ -132,6 +132,7 @@ The below table identifies the parameters in the `priceAdjustment` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
+| `adjustmentType` | *string* | N/A |  Identifies the type of price adjustment being applied. | 
 | `adjustmentDescription` | *string* | N/A | Identifies the adjustments |
 | `adjustmentRate` | *number* | 100 | Rate percent being applied |
 | `adjustmentAmount` | *number* | 18,3 | Amount being applied |
@@ -156,11 +157,12 @@ JSON string format for `priceAdjustments`:
 
 ```json
 {
-   "priceAdjustments":{
-      "adjustmentDescription": "This is a discount",
-      "adjustmentRate": 10,
-      "adjustmentAmount": 2
-   }
+  "priceAdjustments": {
+    "adjustmentType": "DISCOUNT",
+    "adjustmentDescription": "This is a discount",
+    "adjustmentRate": 10,
+    "adjustmentAmount": 2
+  }
 }
 ```
 
