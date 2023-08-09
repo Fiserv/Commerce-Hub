@@ -96,9 +96,12 @@ JSON string format for `amountComponents`:
     "freightRate": 1,
     "priceAdjustments": [
       {
-        "adjustmentDescription": "This is a discount",
-        "adjustmentRate": 10,
-        "adjustmentAmount": 2
+        "priceAdjustments": {
+          "adjustmentType": "DISCOUNT",
+          "adjustmentDescription": "This is a discount",
+          "adjustmentRate": 10,
+          "adjustmentAmount": 2
+        }
       }
     ],
     "netAmount": 40,
