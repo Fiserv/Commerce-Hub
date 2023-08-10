@@ -31,6 +31,19 @@ The following transactions may receive updated card details in the response; [Ch
 
 ---
 
+### Transaction Details
+
+<!--
+type: tab
+titles: transactionDetails, JSON Example
+-->
+
+The below table identifies the parameters in the `authOptimizationDetails` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| authOptimazation | *striing* | N/A | an identifier used to indicate what data is recirved in the response for merchants boarded for authorization optimization | 
+
 ### Auth Optimization Details
 
 <!--
