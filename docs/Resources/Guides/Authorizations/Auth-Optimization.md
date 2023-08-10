@@ -46,6 +46,20 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 | `accountUpdateErrorCode`  | *string* | N/A | Error code provided the account updater system |
 | `originalResponseCode`  | *string* | N/A | Original Response Code for re-authorized (Optimized) transaction | 
 
+<!--
+type: tab
+-->
+
+JSON string format:
+
+``` json
+{
+  "authOptimizationDetails": {
+    "accountUpdaterErrorCode": "VAU001",
+    "originalResponseCode": "006"
+  }
+}
+
 ### Auth Optimization Details
 
 <!--
@@ -75,6 +89,7 @@ JSON string format:
     "originalResponseCode": "006"
   }
 }
+
 ```
 
 <!-- type: tab-end -->
