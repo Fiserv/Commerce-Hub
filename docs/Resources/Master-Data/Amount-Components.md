@@ -144,13 +144,13 @@ The below table identifies the parameters in the `priceAdjustment` object.
 
 The below table contains the valid values for `adjustmentType` parameter.
 
-| Value |
-|---------|
-| COUPON |
-| CREDIT |
-| DISCOUNT |
-| FEES |
-| PROMOTION |
+| Value | Description |
+|---------|-------|
+| COUPON | a voucher entitling the holder to a discount |
+| CREDIT | an entry recording a sum received |
+| DISCOUNT | a deduction from the usual cost |
+| FEES | a payment of goods and services | 
+| PROMOTION | a raise in services |
 
 <!--
 type: tab
