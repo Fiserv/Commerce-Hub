@@ -42,7 +42,9 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| authOptimazation | *striing* | N/A | an identifier used to indicate what data is recirved in the response for merchants boarded for authorization optimization | 
+| `authOptimazationDetails` | *striing* | N/A | an identifier used to indicate what data is recirved in the response for merchants boarded for authorization optimization | 
+| `accountUpdateErrorCode`  | *string* | N/A | Error code provided the account updater system |
+| `originalResponseCode`  | *string* | N/A | Original Response Code for re-authorized (Optimized) transaction | 
 
 ### Auth Optimization Details
 
