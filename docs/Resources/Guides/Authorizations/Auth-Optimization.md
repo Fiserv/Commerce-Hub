@@ -106,6 +106,7 @@ JSON string format:
 <!--
 type: tab
 titles: proccsorResponseDetails, JSON Example
+
 -->
 
 The below table identifies the parameters in the `proccsorResponseDetails` object.
@@ -125,7 +126,7 @@ The below table identifies the parameters in the `proccsorResponseDetails` objec
 
 JSON string format:
 
-``` json
+```json
 
 {
   "processorResponseDetails": {
@@ -141,7 +142,7 @@ JSON string format:
     "localTimestamp": "2016-04-16T16:06:05Z"
   }
 }
-
+```
 ---
 
 ## Response Example
