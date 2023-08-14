@@ -113,16 +113,11 @@ The below table identifies the parameters in the `proccsorResponseDetails` objec
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| approveCode | *string* | N/A | approval code from the processor. | 
-| approveStatus | *string* | N/A | final status of the transaction. |
 | hostResponseCode | *string* | N/A | Endpoint or issuer response code. | 
-| hostResponseMessage | *string* | N/A | Endpoint or issuer response message. | 
-| localTimestamp | *string* | N/A | Timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ | 
+| hostResponseMessage | *string* | N/A | Endpoint or issuer response message. |  
 | originalResponseCode | *string* | 16 | original response code before Authorization Optimization |
-| processor | *string* | 256 | card proccesor | 
 | responseCode | *string* | N/A | Normalized transaction response code from the gateway (Commerce Hub Response). |
 | responseMessage | *string* | N/A | Normalized transaction message from the gateway (Commerce Hub Response). |
-| schemeTransactionId | *string* | N/A | Brand transaction ID. | 
 
 JSON string format:
 
@@ -131,15 +126,10 @@ JSON string format:
 {
   "processorResponseDetails": {
     "originalResponseCode": "DECLINED",
-    "approvalStatus": "APPROVED",
-    "approvalCode": "OK3483",
-    "schemeTransactionId": "019078743804756",
-    "processor": "FISERV",
     "responseCode": "0000",
     "responseMessage": "APPROVAL",
     "hostResponseCode": "00",
     "hostResponseMessage": "APPROVAL",
-    "localTimestamp": "2016-04-16T16:06:05Z"
   }
 }
 ```
