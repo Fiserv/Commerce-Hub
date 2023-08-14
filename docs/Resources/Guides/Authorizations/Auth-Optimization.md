@@ -60,9 +60,8 @@ JSON string format:
 
 ``` json
 {
-  "authOptimizationDetails": {
-    "accountUpdaterErrorCode": "VAU001",
-    "originalResponseCode": "006"
+  "transactionDetails": {
+    "authOptimazations": "VAU001",
   }
 }
 
