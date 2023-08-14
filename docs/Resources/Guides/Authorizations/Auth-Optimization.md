@@ -31,20 +31,25 @@ The following transactions may receive updated card details in the response; [Ch
 
 ---
 
-### Transaction Details
+## Request Variables 
 
 <!--
 type: tab
 titles: transactionDetails, JSON Example
 -->
 
-The below table identifies the parameters in the `authOptimizationDetails` object.
+The below table identifies the required parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `authOptimazationDetails` | *striing* | N/A | an identifier used to indicate what data is recirved in the response for merchants boarded for authorization optimization | 
-| `accountUpdateErrorCode`  | *string* | N/A | Error code provided the account updater system |
-| `originalResponseCode`  | *string* | N/A | Original Response Code for re-authorized (Optimized) transaction | 
+
+### Auth Optimization Type
+
+| Values | Description | 
+|---------|---------|
+
+
 
 <!--
 type: tab
@@ -60,7 +65,11 @@ JSON string format:
   }
 }
 
-### Auth Optimization Details
+'''
+
+<!-- type: tab-end -->
+
+## Response Variables 
 
 <!--
 type: tab
