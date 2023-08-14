@@ -42,14 +42,15 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `authOptimazationDetails` | *striing* | N/A | an identifier used to indicate what data is recirved in the response for merchants boarded for authorization optimization | 
+| `authOptimazations` | *striing* | 32 | an identifier used to indicate what data is recirved in the response for merchants boarded for Authorization Optimization | 
 
 ### Auth Optimization Type
 
 | Values | Description | 
-|---------|---------|
-
-
+|-------------|---------------|
+| CARD_DATA_AND_REASON | recieve updated card data and card update reasons | 
+| REASON_ONLY | receive card updates reason only |
+| OVERRIDE| disable the service for this request | 
 
 <!--
 type: tab
