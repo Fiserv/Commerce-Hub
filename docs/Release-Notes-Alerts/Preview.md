@@ -20,12 +20,13 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
-- **Certification:** September ? 2023
+- **Certification:** August ? 2023
 - **Production:** September ? 2023
 
 | Details | Type |
 | ----- | ----- |
 | Support [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md) transaction | Feature |
+| Support [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) transaction | Feature |
 
 ---
 
