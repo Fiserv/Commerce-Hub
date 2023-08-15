@@ -142,6 +142,22 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalCTR.md
 
 <!-- type: row-end -->
 
+<!-- type: row -->
+
+<!-- type: card
+title: Nashville to Commerce Hub Response Code Mapping
+description: Processor response codes mapped to gateway response codes for exception handling
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ResponseCodeMapping.md
+-->
+
+<!-- type: card
+title: Payeezy to Commerce Hub AVS and CVV2 Mapping
+description: How the codes in Payeezy align to those in Commerce Hub for each Card Brand
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md
+-->
+
+<!-- type: row-end -->
+
 ---
 
 ## Learning Center
