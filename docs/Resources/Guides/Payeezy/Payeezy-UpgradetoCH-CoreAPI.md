@@ -29,13 +29,13 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 | -------- | ------------- | :--------------: |
 |00 = Purchase | /payments/v1/charges <br> `captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |01 = Pre-Authorization  | /payments/v1/charges <br> `captureFlag` = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|03 = Forced Post   | Q2 2023 Targeted Release   | 
-|04 = Open Refund   | Q1 2023 Targeted Release | 
+|03 = Forced Post   | /payments/v1/charges <br> `captureFlag` = "true" <br> `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
+|04 = Open Refund   | /payments/v1/refund | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
 |05 = Pre-Authorization Only   | REPLACED by Account Verification* <br> /payments-vas/v1/accounts/verification| [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
-|13 = Open Void   | 2023 Targeted Release  | 
+|13 = Open Void   | Will Not be Supported in Commerce Hub | 
 |32 = Tagged Pre-Authorization Completion   | /payments/v1/charges <br> `captureFlag` = "true" <br> `referenceTransactionDetails` object in request | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)| 
 |33 = Tagged Void   | /payments/v1/cancel <br> `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)| 
-|34 = Tagged Refund   | /payments/v1/refund <br> `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
+|34 = Tagged Refund   | /payments/v1/refund <br> `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
 
 *Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
@@ -70,10 +70,10 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 |purchase | /payments/v1/charges <br> `captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |authorize (zero dollar) | REPLACED by Account Verification* <br> /payments-vas/v1/accounts/verification | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |authorize (non zero dollar) | /payments/v1/charges <br> `captureFlag` = "false”   | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|forced_post   | Q2 2023 Targeted Release  | 
+|forced_post   | /payments/v1/charges <br> `captureFlag` = "true" <br> `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
 |capture   | /payments/v1/charges <br> `captureFlag` = "true" <br> `referenceTransactionDetails` object in request  | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
 |void   | /payments/v1/cancel <br> `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)|
-|refund (open)  | Q1 2023 Targeted Release  | |
+|refund (open)  |  /payments/v1/refund | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
 |refund (tagged) | /payments/v1/refund <br> `referenceTransactionDetails` object in request  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
 *Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
