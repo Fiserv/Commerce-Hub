@@ -1081,18 +1081,18 @@ components:
       x-model-version: 1.0
       description: Response containing an error object.
       properties:
-        gatewayResponse:
-          $ref: '#/components/schemas/GatewayResponse'
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/Error'
-        paymentTokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResponsePaymentToken'
-        processorResponseDetails:
-          $ref: '#/components/schemas/ProcessorResponseDetails'
+          gatewayResponse:
+            $ref: '#/components/schemas/GatewayResponse'
+          error:
+            type: array
+            items:
+              $ref: '#/components/schemas/Error'
+          paymentTokens:
+            type: array
+            items:
+              $ref: '#/components/schemas/ResponsePaymentToken'
+          processorResponseDetails:
+            $ref: '#/components/schemas/ProcessorResponseDetails'
     Error:
       x-model-version: 1.0
       description: Error information.
@@ -3189,7 +3189,7 @@ components:
             within the current batch, ranges from 000001 through 000999.', example: '000001'}
     CardDetails:
       x-model-version: 1.0
-      description: 'Card details for Account Information Response.'
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Card-Details.md">Card meta data</a> details for a for a PaymentCard, PaymentEMV, PaymentTrack or PaymentToken.'
       properties:
         binSource:
           type: string

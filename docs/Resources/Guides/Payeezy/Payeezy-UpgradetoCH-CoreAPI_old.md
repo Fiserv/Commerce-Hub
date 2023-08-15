@@ -103,5 +103,6 @@ Additionally, the CTR was previously available in multiple languages (EN, FR, ES
 - [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---

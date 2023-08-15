@@ -262,6 +262,5 @@ The country codes can be represented either as a two-letter code *(alpha-2)* whi
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Object](?path=docs/Resources/Master-Data/Address.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 ---
