@@ -15,7 +15,7 @@ Document can be downloaded by clicking on the link below.
 
 ---
 
-[Nashville to Commerce Hub Response Code Mapping](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/docs/Resources/Guides/Payeezy/Payeezy_Gateway_Direct_Element_Mapping.xlsx)
+[Payeezy to Commerce Hub AVS and CVV2 Code Mapping](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/docs/Resources/Guides/Payeezy/Commerce_Hub_to_Payeezy_AVS_and_CVV2_Response_Code_Mapping.xlsx)
 
 _Last Updated: August 15, 2023_
 
