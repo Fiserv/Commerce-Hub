@@ -69,40 +69,6 @@ JSON string format:
 
 <!-- type: tab-end -->
 
-## Response Variables 
-
-<!--
-type: tab
-titles: authOptimizationDetails, JSON Example
--->
-
-The below table identifies the parameters in the `authOptimizationDetails` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `accountStatus` | *string* | N/A | Indicates the current status of the account. **Valid Values:** ACCOUNT_CHANGE, ACCOUNT_CLOSED, EXPIRATION_CHANGE, CONTACT_CARDHOLDER |
-| `accountUpdaterErrorCode` | *string* | N/A | Error code provided the account updater system.|
-| `originalResponseCode` | *string* | 27 | Original [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md) for re-authorized (Optimized) transaction. |
-
-<!--
-type: tab
--->
-
-JSON string format:
-
-``` json
-{
-  "authOptimizationDetails": {
-    "accountStatus": "ACCOUNT_CHANGE",
-    "accountUpdaterErrorCode": "VAU001",
-    "originalResponseCode": "006"
-  }
-}
-
-```
-
-<!-- type: tab-end -->
-
 <!--
 type: tab
 titles: proccsorResponseDetails, JSON Example
