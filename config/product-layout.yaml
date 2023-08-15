@@ -99,7 +99,7 @@ featuredFeatures:
   - title: Secure Data Capture
     groupName: Online/Digital/Mobile
     description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
-    # featured: false
+    featured: false
     relatedDocs:
      - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
        title: Secure Data Capture
