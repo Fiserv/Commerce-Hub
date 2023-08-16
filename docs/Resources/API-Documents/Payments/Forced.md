@@ -76,7 +76,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ## Endpoint
 <!-- theme: success -->
->**POST** `/payments/v1/forcedpost`
+>**POST** `/payments/v1/charges`
 
 ---
 
