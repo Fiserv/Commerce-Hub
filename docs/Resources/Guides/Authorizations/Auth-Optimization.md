@@ -42,11 +42,11 @@ type: tab
 titles: transactionDetails, JSON Example
 -->
 
-The below table identifies the required parameters in the `transactionDetails` object.
+The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `authOptimazation` | *string* | 32 | An identifier used to indicate what data is received in the response for merchants boarded for Authorization Optimization | 
+| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
 
 ### Auth Optimization Type
 
