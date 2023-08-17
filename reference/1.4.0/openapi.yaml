@@ -24,36 +24,60 @@ paths:
           application/json:
             schema: {$ref: '#/components/schemas/ChargesRequest'}
             examples:
-              PaymentCard: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
-              PaymentCard-Encrypted: {summary: ChargesRequest Request with Encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedRequest'}
-              PaymentEMV: {summary: ChargesRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVRequest'}
-              PaymentTrack: {summary: ChargesRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackRequest'}
-              ManualEntry: {summary: ChargesRequest with manual entry PaymentCard,
-                $ref: '#/components/examples/ManualEntryRequest'}
-              ApplePay: {summary: ChargesRequest with ApplePay, $ref: '#/components/examples/ApplePayRequest'}
-              GooglePay: {summary: ChargesRequest with GooglePay, $ref: '#/components/examples/GooglePayRequest'}
-              Payment3DS: {summary: ChargesRequest with Payment3DS, $ref: '#/components/examples/Payment3DSRequest'}
-              PaymentToken: {summary: ChargesRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenRequest'}
+              PaymentCard-Encrypted:
+                summary: ChargesRequest Request with Encrypted PaymentCard,
+                $ref: '#/components/examples/PaymentCardEncryptedRequest'
+              PaymentEMV:
+                summary: ChargesRequest with PaymentEMV
+                $ref: '#/components/examples/PaymentEMVRequest'
+              PaymentTrack:
+                summary: ChargesRequest with PaymentTrack
+                $ref: '#/components/examples/PaymentTrackRequest'
+              ApplePay:
+                summary: ChargesRequest with ApplePay
+                $ref: '#/components/examples/ApplePayRequest'
+              GooglePay:
+                summary: ChargesRequest with GooglePay
+                $ref: '#/components/examples/GooglePayRequest'
+              Payment3DS:
+                summary: ChargesRequest with Payment3DS
+                $ref: '#/components/examples/Payment3DSRequest'
+              PaymentToken:
+                summary: ChargesRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenRequest'
               PaymentSession:
                 summary: ChargesRequest with PaymentSession
                 $ref: '#/components/examples/PaymentSessionRequest'
+
       responses:
         201:
           description: Created
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/ChargesResponse'}
+              schema:
+                $ref: '#/components/schemas/ChargesResponse'
               examples:
-                PaymentCard: {summary: ChargesResponse with PaymentCard, $ref: '#/components/examples/PaymentCardChargesResponse'}
-                PaymentCard-Encrypted: {summary: ChargesRequest with PaymentCard, $ref: '#/components/examples/PaymentCardRequest'}
-                PaymentEMV: {summary: ChargesResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVChargesResponse'}
-                PaymentTrack: {summary: ChargesResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackChargesResponse'}
-                ManualEntry: {summary: ChargesResponse with manual entry PaymentCard,
-                  $ref: '#/components/examples/ManualEntryChargesResponse'}
-                ApplePay: {summary: ChargesResponse with ApplePay, $ref: '#/components/examples/ApplePayChargesResponse'}
-                GooglePay: {summary: ChargesResponse with GooglePay, $ref: '#/components/examples/GooglePayChargesResponse'}
-                Payment3DS: {summary: ChargesResponse with Payment3DS, $ref: '#/components/examples/Payment3DSChargesResponse'}
-                PaymentToken: {summary: ChargesResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenChargesResponse'}
+                PaymentCard-Encrypted:
+                  summary: ChargesRequest with encrypted PaymentCard,
+                  $ref: '#/components/examples/PaymentCardChargesResponse'
+                PaymentEMV:
+                  summary: ChargesResponse with PaymentEMV
+                  $ref: '#/components/examples/PaymentEMVChargesResponse'
+                PaymentTrack:
+                  summary: ChargesResponse with PaymentTrack
+                  $ref: '#/components/examples/PaymentTrackChargesResponse'
+                ApplePay:
+                  summary: ChargesResponse with ApplePay
+                  $ref: '#/components/examples/ApplePayChargesResponse'
+                GooglePay:
+                  summary: ChargesResponse with GooglePay
+                  $ref: '#/components/examples/GooglePayChargesResponse'
+                Payment3DS:
+                  summary: ChargesResponse with Payment3DS
+                  $ref: '#/components/examples/Payment3DSChargesResponse'
+                PaymentToken:
+                  summary: ChargesResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenChargesResponse'
                 PaymentSession:
                   summary: ChargesResponse with PaymentSession
                   $ref: '#/components/examples/PaymentCardChargesResponse'
@@ -214,9 +238,6 @@ paths:
             schema:
               $ref: '#/components/schemas/AccountVerificationRequest'
             examples:
-              PaymentCard:
-                summary: AccountVerificationRequest with PaymentCard
-                $ref: '#/components/examples/PaymentCardVerifyRequest'
               PaymentCard-Encrypted:
                 summary: AccountVerificationRequest with encrypted PaymentCard
                 $ref: '#/components/examples/PaymentCardEncryptedVerifyRequest'
@@ -229,9 +250,6 @@ paths:
               PaymentTrack:
                 summary: AccountVerificationRequest with PaymentTrack
                 $ref: '#/components/examples/PaymentTrackVerifyRequest'
-              ManualEntry:
-                summary: AccountVerificationRequest with manual entry PaymentCard
-                $ref: '#/components/examples/ManualEntryVerifyRequest'
               PaymentToken:
                 summary: AccountVerificationRequest with PaymentToken
                 $ref: '#/components/examples/PaymentTokenVerifyRequest'
@@ -243,9 +261,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/AccountVerificationResponse'
               examples:
-                PaymentCard:
-                  summary: AccountVerificationResponse with PaymentCard
-                  $ref: '#/components/examples/PaymentCardVerifyResponse'
                 PaymentCard-Encrypted:
                   summary: AccountVerificationResponse with encrypted PaymentCard
                   $ref: '#/components/examples/PaymentCardVerifyResponse'
@@ -258,9 +273,6 @@ paths:
                 PaymentTrack:
                   summary: AccountVerificationResponse with PaymentTrack
                   $ref: '#/components/examples/PaymentTrackVerifyResponse'
-                ManualEntry:
-                  summary: AccountVerificationResponse with manual entry PaymentCard
-                  $ref: '#/components/examples/ManualEntryVerifyResponse'
                 PaymentToken:
                   summary: AccountVerificationResponse with PaymentToken
                   $ref: '#/components/examples/PaymentTokenVerifyResponse'
@@ -297,31 +309,56 @@ paths:
           application/json:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
-              PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
-              PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
-              PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
-              PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
-              ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard, $ref: '#/components/examples/ManualEntryTokenRequest'}
-              ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
-              GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
-              Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/Payment3DSTokenRequest'}
-              PaymentSession: {summary: TokenizationRequest with PaymentSession, $ref: '#/components/examples/PaymentSessionTokenRequest'}
+              PaymentCard-Encrypted:
+                summary: TokenizationRequest with encrypted PaymentCard,
+                $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'
+              PaymentEMV:
+                summary: TokenizationRequest with PaymentEMV
+                $ref: '#/components/examples/PaymentEMVTokenRequest'
+              PaymentTrack:
+                summary: TokenizationRequest with PaymentTrack
+                $ref: '#/components/examples/PaymentTrackTokenRequest'
+              ApplePay:
+                summary: TokenizationRequest with ApplePay
+                $ref: '#/components/examples/ApplePayTokenRequest'
+              GooglePay:
+                summary: TokenizationRequest with GooglePay
+                $ref: '#/components/examples/GooglePayTokenRequest'
+              Payment3DS:
+                summary: TokenizationRequest with Payment3DS
+                $ref: '#/components/examples/Payment3DSTokenRequest'
+              PaymentSession:
+                summary: TokenizationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionTokenRequest'
       responses:
         200:
           description: Success.
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/TokenizationResponse'}
+              schema:
+                $ref: '#/components/schemas/TokenizationResponse'
               examples:
-                PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
-                PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
-                PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
-                PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
-                ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,$ref: '#/components/examples/ManualEntryTokenResponse'}
-                ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
-                GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
-                Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/Payment3DSTokenResponse'}
-                PaymentSession: {summary: TokenizationResponse with PaymentSession, $ref: '#/components/examples/PaymentCardTokenResponse'}
+                PaymentCard-Encrypted:
+                  summary: TokenizationResponse with encrypted PaymentCard
+                  $ref: '#/components/examples/PaymentCardTokenResponse'
+                PaymentEMV:
+                  summary: TokenizationResponse with PaymentEMV
+                  $ref: '#/components/examples/PaymentEMVTokenResponse'
+                PaymentTrack:
+                  summary: TokenizationResponse with PaymentTrack
+                  $ref: '#/components/examples/PaymentTrackTokenResponse'
+                ApplePay:
+                  summary: TokenizationResponse with ApplePay
+                  $ref: '#/components/examples/ApplePayTokenResponse'
+                GooglePay:
+                  summary: TokenizationResponse with GooglePay
+                  $ref: '#/components/examples/GooglePayTokenResponse'
+                Payment3DS:
+                  summary: TokenizationResponse with Payment3DS
+                  $ref: '#/components/examples/Payment3DSTokenResponse'
+                PaymentSession:
+                  summary: TokenizationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentCardTokenResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -356,19 +393,29 @@ paths:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/EnhancedDataServiceRequest'}
+            schema:
+              $ref: '#/components/schemas/EnhancedDataServiceRequest'
             examples:
-              PaymentCard: {summary: EDSRequest with PaymentCard, $ref: '#/components/examples/PaymentCardEDSRequest'}
-              PaymentToken: {summary: EDSRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSRequest'}
+              PaymentCard:
+                summary: EDSRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardEDSRequest'
+              PaymentToken:
+                summary: EDSRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenEDSRequest'
       responses:
         201:
           description: Created
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/EnhancedDataServiceResponse'}
+              schema:
+                $ref: '#/components/schemas/EnhancedDataServiceResponse'
               examples:
-                PaymentCard: {summary: EDSResponse with PaymentCard, $ref: '#/components/examples/PaymentCardEDSResponse'}
-                PaymentToken: {summary: EDSResponse with PaymentToken, $ref: '#/components/examples/PaymentTokenEDSResponse'}
+                PaymentCard:
+                  summary: EDSResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardEDSResponse'
+                PaymentToken:
+                  summary: EDSResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenEDSResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -403,18 +450,29 @@ paths:
         required: true
         content:
           application/json:
-            schema: {$ref: '#/components/schemas/ReturnOptimizerRequest'}
+            schema:
+              $ref: '#/components/schemas/ReturnOptimizerRequest'
             examples:
-              PaymentToken: {summary: ReturnOptimizerRequest with PaymentToken, $ref: '#/components/examples/PaymentTokenROSRequest'}
+              PaymentCard:
+                summary: ReturnOptimizerRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardEDSRequest'
+              PaymentToken:
+                summary: ReturnOptimizerRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenEDSRequest'
       responses:
         201:
           description: Created
           content:
             application/json:
-              schema: {$ref: '#/components/schemas/ReturnOptimizerResponse'}
+              schema:
+                $ref: '#/components/schemas/ReturnOptimizerResponse'
               examples:
-                PaymentToken: {summary: ReturnOptimizerResponse with PaymentToken,
-                  $ref: '#/components/examples/PaymentTokenROSResponse'}
+                PaymentCard:
+                  summary: ReturnOptimizerResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardEDSResponse'
+                PaymentToken:
+                  summary: ReturnOptimizerResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenEDSResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
