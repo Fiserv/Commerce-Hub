@@ -95,6 +95,9 @@ titles: Request, Response
 
 ```json
 {
+  "referenceTransactionDetails": {
+    "referenceTransactionId": "84356531348"
+  },
   "amount": {
     "total": 12.04,
     "currency": "USD"
@@ -133,7 +136,6 @@ type: tab
 
 ```json
 {
-
   "gatewayResponse": {
     "transactionType": "REFUND",
     "transactionState": "AUTHORIZED",
@@ -184,9 +186,6 @@ type: tab
         "transactionTimestamp": "2021-06-20T23:42:48Z"
       }
     }
-  },
-  "transactionDetails": {
-    "merchantInvoiceNumber": "123456789012"
   }
 }
 ```
