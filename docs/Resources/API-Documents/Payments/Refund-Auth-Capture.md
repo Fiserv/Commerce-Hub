@@ -95,32 +95,20 @@ titles: Request, Response
 ```json
 
 {
-    "amount": {
-        "total": 12.04,
-        "currency": "USD"
-    },
-    "source": {
-        "sourceType": "PaymentCard",
-        "encryptionData": {
-            "encryptionType": "RSA",
-            "encryptionTarget": "MANUAL",
-            "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-            "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-            "keyId": "88000000022"
-        }
-    },
-    "transactionDetails": {
-        "captureFlag": false
-    },
-    "transactionInteraction": {
-        "origin": "ECOM",
-        "eciIndicator": "CHANNEL_ENCRYPTED",
-        "posConditionCode": "CARD_NOT_PRESENT_ECOM"
-    },
-    "merchantDetails": {
-        "merchantId": "123456789789567",
-        "terminalId": "123456"
-    }
+  "referenceTransactionDetails": {
+    "referenceTransactionId": "84356531348"
+  },
+  "amount": {
+    "total": "10.00",
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "captureFlag": false
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 
 ```
@@ -302,8 +290,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
