@@ -34,9 +34,19 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ---
 
-## Request Variables
+## Request Variables 
 
-The `convenienceFee` is part of the `amountComponents` object in the `additionalDataCommon` object. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
+<!--
+type: tab
+titles: transactionDetails, JSON Example
+-->
+
+The below table identifies the parameters in the `transactionDetails` object. The `convenienceFee` is part of the `amountComponents` object in the `additionalDataCommon` object. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
+| `amountComponents` | *string* | N/A | Decription | 
 
 ---
 
