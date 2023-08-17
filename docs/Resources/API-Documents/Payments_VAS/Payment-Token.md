@@ -52,10 +52,6 @@ titles: Request, Response
 
 ```json
 {
-  "amount": {
-    "total": 12.04,
-    "currency": "USD"
-  },
   "source": {
     "sourceType": "PaymentCard",
     "encryptionData": {
@@ -65,11 +61,6 @@ titles: Request, Response
       "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
       "keyId": "88000000022"
     }
-  },
-  "transactionInteraction": {
-    "origin": "ECOM",
-    "eciIndicator": "CHANNEL_ENCRYPTED",
-    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
