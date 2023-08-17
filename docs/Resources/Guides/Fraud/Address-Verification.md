@@ -69,29 +69,31 @@ titles: Request, Response
 
 ```json
 {
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      }
-   },
-   "billingAddress":{
-      "firstName": "John",
-      "lastName": "Doe",
-      "address":{
-         "street": "112 Main St.",
-         "city": "Atlanta",
-         "stateOrProvince":"GA",
-         "postalCode": "30301",
-         "country": "US"
-      }
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
+  },
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "street": "112 Main St.",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US"
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 
 ```
@@ -164,9 +166,6 @@ type: tab
          }
       }
    },
-   "transactionDetails":{
-      "merchantInvoiceNumber": "123456789012"
-   }
 }
 ```
 <!-- type: tab-end -->
@@ -191,33 +190,34 @@ titles: Request, Response
 
 ```json
 {
-   "transactionDetails":{
-      "captureFlag": true
-   },
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035",
-         "securityCode": "123"
-      }
-   },
-   "billingAddress":{
-      "firstName": "John",
-      "lastName": "Doe",
-      "address":{
-         "street": "112 Main St.",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30301",
-         "country": "US"
-      }
-   }
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "street": "112 Main St.",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US"
+    }
+  }
 }
 ```
 
@@ -231,58 +231,67 @@ type: tab
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType": "VERIFICATION",
-      "transactionState": "CHECKED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
-      }
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "05",
-         "expirationYear": "2025",
-         "bin": "400555",
-         "last4": "0019"
-      }
-   },
-   "processorResponseDetails":{
+  "gatewayResponse": {
+    "transactionType": "CHARGES",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 12.04,
+      "currency": "USD"
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
       "approvalStatus": "APPROVED",
-      "approvalCode": "OK3483",
-      "authenticationResponseCode": "string",
-      "referenceNumber": "845366457890-TODO",
-      "schemeTransactionId": "019078743804756",
-      "feeProgramIndicator": "123",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
       "processor": "FISERV",
       "host": "NASHVILLE",
       "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021.02.25 14:14:38 (EST)",
-      "bankAssociationDetails":{
-         "associationResponseCode": "000",
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "transactionReferenceInformation": "string",
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCHED",
-            "postalCodeMatch": "MATCHED",
-            "association":{
-               "avsCode": "Y",
-               "cardholderNameResponse": "1"
-            }
-         }
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2016-04-16T16:06:05Z",
+        "transactionReferenceInformation": "string",
+        "avsSecurityCodeResponse": {
+          "streetMatch": "MATCHED",
+          "postalCodeMatch": "MATCHED",
+          "association": {
+            "avsCode": "Y",
+            "cardholderNameResponse": "1"
+          }
+        }
       }
-   }
+    }
+  }
 }
 ```
 <!-- type: tab-end -->
@@ -295,14 +304,14 @@ The result of checking the cardholder’s postal code and address information pr
 
 ```json
 {
-   "processorResponseDetails":{
-      "bankAssociationDetails":{
-         "avsSecurityCodeResponse":{
-            "streetMatch": "MATCHED",
-            "postalCodeMatch": "MATCHED"
-         }
+  "processorResponseDetails": {
+    "bankAssociationDetails": {
+      "avsSecurityCodeResponse": {
+        "streetMatch": "MATCHED",
+        "postalCodeMatch": "MATCHED"
       }
-   }
+    }
+  }
 }
 ```
 
@@ -327,16 +336,16 @@ The result of checking the cardholder’s postal code and address information pr
 
 ```json
 {
-   "processorResponseDetails":{
-      "bankAssociationDetails":{
-         "avsSecurityCodeResponse":{
-            "association":{
-               "avsCode": "Y",
-               "cardholderNameResponse": "1"
-            }
-         }
+  "processorResponseDetails": {
+    "bankAssociationDetails": {
+      "avsSecurityCodeResponse": {
+        "association": {
+          "avsCode": "Y",
+          "cardholderNameResponse": "1"
+        }
       }
-   }
+    }
+  }
 }
 ```
 
