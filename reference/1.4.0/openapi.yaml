@@ -718,7 +718,7 @@ paths:
             schema:
               $ref: '#/components/schemas/CardCaptureRequest'
             examples:
-              PaymentCard-MUPK:
+              PaymentCard-Encrypted:
                 summary: CardCapture Request with PaymentCard,
                 $ref: '#/components/examples/PaymentCardCaptureRequest'
       responses:
@@ -729,7 +729,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/CardCaptureResponse'
               examples:
-                PaymentCard-MUPK:
+                PaymentCard-Encrypted:
                   summary: CardCaptureResponse for PaymentCard
                   $ref: '#/components/examples/PaymentCardCaptureResponse'
         400:
