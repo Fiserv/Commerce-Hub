@@ -61,31 +61,30 @@ titles: Request, Response
 
 ```json
 {
-   "amount":{
-      "total":"12.04",
-      "currency":"USD"
-   },
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019",
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"02",
-         "expirationYear":"2035",
-         "securityCode":"123",
-         "securityCodeIndicator":"PROVIDED"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag":true
-   },
-   "amountComponents":{
-      "convenienceFees":"1.00"
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-   }
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "amountComponents": {
+    "convenienceFees": "1.00"
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 <!--
@@ -99,58 +98,57 @@ type: tab
 
 ```json
 {
-   "gatewayResponse":{
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "CHARGES",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "transactionDate": "2016-04-16",
-         "transactionTime": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "CHARGES",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "12.04",
+      "currency": "USD"
+    },
+    "amountComponents": {
+      "convenienceFees": 1
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "authenticationResponseCode": "string",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "123",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2016-04-16T16:06:05Z"
       }
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "02",
-         "expirationYear": "2035",
-         "bin": "400555",
-         "last4": "0019",
-         "scheme": "VISA"
-      }
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": "12.04",
-         "currency": "USD"
-      },
-      "amountComponents":{
-         "convenienceFees": 1.00
-      },
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK3483",
-         "authenticationResponseCode": "string",
-         "referenceNumber": "845366457890-TODO",
-         "schemeTransactionId": "019078743804756",
-         "feeProgramIndicator": "123",
-         "processor": "FISERV",
-         "host": "NASHVILLE",
-         "responseCode": "000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2016-04-16T16:06:05Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2016-04-16T16:06:05Z"
-         }
-      }
-   },
+    }
+  }
 }
 ```
 
