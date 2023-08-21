@@ -38,17 +38,29 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 <!--
 type: tab
-titles: transactionDetails, JSON Example
+titles: amount, JSON Example
 -->
 
-The below table identifies the parameters in the `transactionDetails` object. The `convenienceFee` is part of the `amountComponents` object in the `additionalDataCommon` object. See [amount components](?path=docs/Resources/Master-Data/Amount-Components.md) for more details.
+The below table identifies the required parameters in the amount object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
-| `amountComponents` | *string* | N/A | Decription | 
+| `total` | *string* | 32 | An ammount of conveniencefees combimbed | 
+| `currency` | *string* | N/A | is a medium of exchange for goods and services. | 
 
 ---
+
+<!--
+type: tab
+titles: amountComponents, JSON Example
+-->
+
+The below table identifies the required parameters in the amountComponents object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `subTotal` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
+| `convenienceFees` | *string* | N/A | Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant. | 
 
 ## Payload Example
 
@@ -79,6 +91,7 @@ titles: Request, Response
     "captureFlag": true
   },
   "amountComponents": {
+    "subTotal": "11.04",
     "convenienceFees": "1.00"
   },
   "merchantDetails": {
@@ -127,7 +140,8 @@ type: tab
       "currency": "USD"
     },
     "amountComponents": {
-      "convenienceFees": 1
+      "subTotal": "11.04",
+      "convenienceFees": "1.00"
     },
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
