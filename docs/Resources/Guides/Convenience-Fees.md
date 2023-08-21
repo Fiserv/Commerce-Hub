@@ -45,8 +45,8 @@ The below table identifies the required parameters in the amount object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *string* | 32 | An amount of conveniencefees combimbed for a product or service. | 
-| `currency` | *string* | N/A | is a medium of exchange for goods and services. | 
+| `total` | *number* | 12 | An amount of conveniencefees transaction combimbed for a product or service. | 
+| `currency` | *string* | 3 | is a medium of exchange for goods and services. | 
 
 ---
 
