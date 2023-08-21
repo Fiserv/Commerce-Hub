@@ -45,7 +45,7 @@ The below table identifies the required parameters in the amount object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *string* | 32 | An ammount of conveniencefees combimbed | 
+| `total` | *string* | 32 | An amount of conveniencefees combimbed for a product or service. | 
 | `currency` | *string* | N/A | is a medium of exchange for goods and services. | 
 
 ---
@@ -59,7 +59,7 @@ The below table identifies the required parameters in the amountComponents objec
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `subTotal` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
+| `subTotal` | *string* | 32 | An amount of paying for a product or services for a merchant | 
 | `convenienceFees` | *string* | N/A | Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant. | 
 
 ## Payload Example
