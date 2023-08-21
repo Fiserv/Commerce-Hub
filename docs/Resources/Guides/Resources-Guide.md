@@ -88,6 +88,27 @@ link: ?path=docs/Resources/Guides/BYOID.md
 
 <!-- type: row-end -->
 
+<!-- type: row -->
+
+<!-- type: card
+title: Convenience Fees
+description: ADD DESCRIPTION
+link: ?path=docs/Resources/Guides/Convenience-Fees.md
+-->
+
+<!-- type: card
+title: Global Currency Solutions
+description: ADD DESCRIPTION
+link:
+-->
+
+<!-- type: card
+title: Level II and III Data
+description: ADD DESCRIPTION
+link: 
+-->
+
+<!-- type: row-end -->
 ---
 
 ## Merchant Accounting
