@@ -54,16 +54,18 @@ titles: Request, Response
 {
   "source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035"
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
   },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 
@@ -283,7 +285,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)

@@ -241,7 +241,7 @@ The below table identifies the values for `debitNetworkId`.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 - [Accounts Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---

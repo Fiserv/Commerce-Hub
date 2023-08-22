@@ -206,7 +206,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Certificate Signing Request](?path=docs/Resources/Guides/Dev-Studio/Certificate-Management.md)
 - [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
 - [Apple Pay App Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-App.md)

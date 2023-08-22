@@ -14,6 +14,5 @@ tags: [PSD2 SCA, Vault]
 
 ## See Also
 
-
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)

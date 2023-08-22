@@ -95,10 +95,12 @@ titles: Request, Response
   },
   "source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035"
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
   },
   "transactionDetails": {
@@ -195,13 +197,9 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
 - [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Incremental Auth](?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 - [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 

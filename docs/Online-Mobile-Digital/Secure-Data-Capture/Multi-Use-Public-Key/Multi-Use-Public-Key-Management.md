@@ -51,7 +51,8 @@ The below table identifies the required parameter for the generate request paylo
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-------- | --------|
-| `merchantId` | *string* |  | &#10004; | A unique ID used to identify the Merchant. |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
+| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. Required when using [merchant defined](?path=docs/Resources/Guides/BYOID.md) MID/TID. |
 
 <!-- type: tab-end -->
 
@@ -76,7 +77,8 @@ titles: Request, Response
 ```json
 {
   "merchantDetails": {
-    "merchantId": "123456789012345"
+    "merchantId": "123456789012345",
+    "terminalId": "123456"
   }
 }
 ```
@@ -145,6 +147,7 @@ The below table identifies the required parameter for the revoke request payload
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-----|-------|
 | `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
+| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. Required when using [merchant defined](?path=docs/Resources/Guides/BYOID.md) MID/TID. |
 
 
 <!-- type: tab-end -->
@@ -169,7 +172,8 @@ titles: Request, Response
 ```json
 {
   "merchantDetails": {
-    "merchantId": "123456789012345"
+    "merchantId": "123456789012345",
+    "terminalId": "123456"
   }
 }
 ```
@@ -178,7 +182,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of (201: Created) response.
+##### Example of (200: Success) response.
 
 ```json
 {

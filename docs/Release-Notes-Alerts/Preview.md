@@ -30,6 +30,8 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Support the ability to send [Convenience Fees](?path=docs/docs/Resources/Guides/Convenience-Fees.md) for transactions | Feature |
 | Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the reponse | Update | 
 
+---
+
 ## August 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.

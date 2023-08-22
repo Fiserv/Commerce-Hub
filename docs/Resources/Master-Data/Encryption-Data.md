@@ -91,7 +91,7 @@ Encryption type is the method used to encrypt payment data before sending it to 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Pin Block](?path=docs/Resources/Master-Data/Pin-Block.md)

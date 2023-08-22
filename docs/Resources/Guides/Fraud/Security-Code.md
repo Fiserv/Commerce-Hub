@@ -4,14 +4,13 @@ tags: [CVV, Fraud, Security Code Verification]
 
 # Security Code Verification
 
-Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit (AMEX) security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
+Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit _(AMEX)_ security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
 
 ---
 
 ## Request Variables
 
-For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` and `securityCodeIndicator` as part of the card array.
-
+For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` as part of the `encryptionBlock` and `securityCodeIndicator` as part of the `card` object.
 
 <!--
 type: tab
@@ -22,7 +21,6 @@ The below table identifies the additional required parameters in the `card` obje
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`securityCode` | *string* | 3| The card security code |
 |`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
 
 #### Security Code Indicator
@@ -45,10 +43,6 @@ JSON string format for `card`:
 ```json
 {
    "card":{
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123",
       "securityCodeIndicator": "PROVIDED"
    }
 }
@@ -76,20 +70,23 @@ titles: Request, Response
 
 ```json
 {
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035",
-         "securityCode": "123",
-         "securityCodeIndicator": "PROVIDED"
-      }
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "securityCodeIndicator": "PROVIDED"
     },
-    "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 
 ```
@@ -186,23 +183,35 @@ titlea: Request, Response
 
 ```json
 {
-   "transactionDetails":{
-      "captureFlag":true
-   },
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035",
-         "securityCode": "123",
-         "securityCodeIndicator": "PROVIDED"
-      }
-   }
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "securityCodeIndicator": "PROVIDED"
+    },
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 
@@ -216,57 +225,67 @@ type: tab
 
 ```json
 {
-   "gatewayResponse":{
-      "orderId":"R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType":"token",
-      "transactionState":"authorized",
-      "transactionOrigin":"ecom",
-      "transactionProcessingDetails":{
-         "transactionDate":"2016-04-16",
-         "transactionTime":"2016-04-16T16:06:05Z",
-         "apiTraceId":"rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId":"30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId":"838916029301"
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "CHARGES",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionDate": "2016-04-16",
+      "transactionTime": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "currency": "USD",
+      "total": 12.04
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "authenticationResponseCode": "string",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "123",
+      "processor": "fiserv",
+      "responseCode": "00000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2016-04-16T16:06:05Z",
+        "transactionReferenceInformation": "string",
+        "avsSecurityCodeResponse": {
+          "securityCodeMatch": "MATCHED",
+          "association": {
+            "securityCodeResponse": "M"
+          }
+        }
       }
-   },
-   "source":{
-      "sourceType":"PaymentCard",
-      "tokenData":"1234123412340019",
-      "PARId":"string",
-      "declineDuplicates":"FALSE",
-      "tokenSource":"string",
-      "card":{
-         "nameOnCard":"Jane Smith",
-         "expirationMonth":"05",
-         "expirationYear":"2025",
-         "bin":"400555",
-         "last4":"0019"
-      }
-   },
-   "processorResponseDetails":{
-      "approvalStatus":"APPROVED",
-      "approvalCode":"OK3483",
-      "authenticationResponseCode":"string",
-      "referenceNumber":"845366457890-TODO",
-      "schemeTransactionId":"019078743804756",
-      "feeProgramIndicator":"123",
-      "processor":"fiserv",
-      "responseCode":"00000",
-      "responseMessage":"APPROVAL",
-      "hostResponseCode":"00",
-      "hostResponseMessage":"APPROVAL",
-      "localTimestamp":"2021.02.25 14:14:38 (EST)",
-      "bankAssociationDetails":{
-         "associationResponseCode":"000",
-         "transactionTimestamp":"2016-04-16T16:06:05Z",
-         "avsSecurityCodeResponse":{
-            "securityCodeMatch":"MATCHED",
-            "association":{
-               "securityCodeResponse":"M"
-            }
-         }
-      }
-   }
+    }
+  }
 }
 ```
  
@@ -276,17 +295,17 @@ type: tab
 
 ## Response Values
 
-The result of checking the cardholder’s entered security code with the issuer’s system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
+The result of checking the cardholder's entered security code with the issuer's system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
 ```json
 {
-      "processorResponseDetails":{
-         "bankAssociationDetails":{
-            "avsSecurityCodeResponse":{
-               "securityCodeMatch": "MATCHED"
-            }
-         }
+  "processorResponseDetails": {
+    "bankAssociationDetails": {
+      "avsSecurityCodeResponse": {
+        "securityCodeMatch": "MATCHED"
       }
+    }
+  }
 }
 ```
 
@@ -310,15 +329,15 @@ The result of checking the card’s security code provided with the issuer’s s
 
 ```json
 {
-      "processorResponseDetails":{
-         "bankAssociationDetails":{
-            "avsSecurityCodeResponse":{
-               "association":{
-                 "securityCodeResponse": "M"
-               }
-            }
-         }
+  "processorResponseDetails": {
+    "bankAssociationDetails": {
+      "avsSecurityCodeResponse": {
+        "association": {
+          "securityCodeResponse": "M"
+        }
       }
+    }
+  }
 }
 ```
 
@@ -343,7 +362,7 @@ The below table identifies the valid values of `securityCodeResponse`.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Card Details](?path=docs/Resources/Master-Data/Card.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
