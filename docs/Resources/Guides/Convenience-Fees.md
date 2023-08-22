@@ -2,7 +2,7 @@
 tags: [Convenience Fees, Amount]
 ---
 
-# Convenience Fees
+# Convenience Fees 
 
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
