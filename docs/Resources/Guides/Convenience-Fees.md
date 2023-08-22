@@ -147,7 +147,7 @@ type: tab
   "gatewayResponse": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
     "transactionType": "CHARGES",
-    "transactionState": "AUTHORIZED",
+    "transactionState": "CAPTURED",
     "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
       "transactionDate": "2016-04-16",
@@ -195,6 +195,15 @@ type: tab
         "transactionTimestamp": "2016-04-16T16:06:05Z"
       }
     }
+  },
+  "networkDetails": {
+    "network": {
+      "network": "Visa"
+    },
+    "networkResponseCode": "00",
+    "cardLevelResultCode": "C",
+    "validationCode": "IV  ",
+    "transactionIdentifier": "013234959794033"
   },
   "transactionDetails": {
     "captureFlag": true
