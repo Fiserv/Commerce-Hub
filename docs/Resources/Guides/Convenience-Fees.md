@@ -4,9 +4,6 @@ tags: [Convenience Fees, Amount]
 
 # Convenience Fees
 
-<!-- theme: danger -->
-
-
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 
 A merchant that charges a convenience fee must ensure that the fee is:
@@ -38,29 +35,60 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 <!--
 type: tab
-titles: amount, JSON Example
+titles: amount, JSON Example, amountComponents, JSON Example
 -->
 
-The below table identifies the required parameters in the amount object.
+The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | An amount of conveniencefees transaction combimbed for a product or service. | 
-| `currency` | *string* | 3 | is a medium of exchange for goods and services. | 
-
----
+| `total` | *number* | 18,3 | The total amount of a transction including `convenienceFees` and `subTotal`. | 
+| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md). | 
 
 <!--
 type: tab
-titles: amountComponents, JSON Example
 -->
 
-The below table identifies the required parameters in the amountComponents object.
+JSON string format:
+
+```json
+{
+  "amount": {
+    "total": 12.04,
+    "currency": "USD"
+  }
+}
+```
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `amountComponents` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `subTotal` | *string* | 32 | An amount of paying for a product or services for a merchant | 
-| `convenienceFees` | *string* | N/A | Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant. | 
+| `subTotal` | *string* | 32 | The total amount for the goods and services excluding `convenienceFees`| 
+| `convenienceFees` | *string* | N/A | Convenience fees being charged to the customer | 
+
+<!--
+type: tab
+-->
+
+JSON string format:
+
+```json
+{
+  "amountComponents": {
+    "subTotal": 11.04,
+    "convenienceFees": 1
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
 
 ## Payload Example
 
@@ -74,7 +102,7 @@ titles: Request, Response
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.02,
     "currency": "USD"
   },
   "source": {
@@ -91,8 +119,8 @@ titles: Request, Response
     "captureFlag": true
   },
   "amountComponents": {
-    "subTotal": "11.04",
-    "convenienceFees": "1.00"
+    "subTotal": 11.02,
+    "convenienceFees": 1.02
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
@@ -126,22 +154,22 @@ type: tab
   },
   "source": {
     "sourceType": "PaymentCard",
-    "encryptionData": {
-      "encryptionType": "RSA",
-      "encryptionTarget": "MANUAL",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-      "keyId": "88000000022"
+    "card": {
+      "bin": "40055500",
+      "expirationMonth": "10",
+      "expirationYear": "2030",
+      "last4": "0019",
+      "scheme": "VISA"
     }
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 12.02,
       "currency": "USD"
     },
     "amountComponents": {
-      "subTotal": "11.04",
-      "convenienceFees": "1.00"
+      "subTotal": 11.02,
+      "convenienceFees": 1.02
     },
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
