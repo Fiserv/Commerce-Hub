@@ -42,8 +42,8 @@ The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *number* | 18,3 | The total amount of a transction including `convenienceFees` and `subTotal`. | 
-| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md). | 
+| `total` | *number* | 18,3 | The total amount of a transaction including `convenienceFees` and `subTotal` | 
+| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md) | 
 
 <!--
 type: tab
@@ -102,7 +102,7 @@ titles: Request, Response
 ```json
 {
   "amount": {
-    "total": 12.02,
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -117,6 +117,11 @@ titles: Request, Response
   },
   "transactionDetails": {
     "captureFlag": true
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "amountComponents": {
     "subTotal": 11.02,
@@ -190,6 +195,14 @@ type: tab
         "transactionTimestamp": "2016-04-16T16:06:05Z"
       }
     }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   }
 }
 ```
