@@ -12,7 +12,7 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 #### Release Types
 
 - **Feature:** New feature release
-- **Update:** Existing feature update or enhancement
+- **Update:** Existing feature update or enhancement 
 
 ---
 
