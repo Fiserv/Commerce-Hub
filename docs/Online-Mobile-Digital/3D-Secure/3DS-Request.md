@@ -20,7 +20,6 @@ The below table identifies the required parameters in the `additionalData3DS` ob
 | `dsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction | 
 | `authenticationStatus` | *string* | 2 | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
 | `authenticationAttemptResult` | *string* | 1024 | Result of authentication attempt from Payer Authentication Response (PaRes). 3DS 1.x |
-| `messageCategory` | *string* | 2 | Indicates the message category of 3-D Secure authentication version 2.X. *01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only* |
 | `mpiData` | *object* | N/A | [Merchant plug-in (MPI)](#mpi-data) data from 3-D Secure (3DS) authentication. |
 | `versionData` | *object* | N/A | Additional [version data](#version-data) passed during 3-D Secure (3DS) flows. |
 
@@ -61,11 +60,10 @@ titles: Request, Response
       "expirationYear": "2025"
     }
   },
-  "additionalDataCommon": {
+  "additionalData3DS": {
     "dsTransactionId": "3543-b90d-d6dc1765c98",
     "authenticationStatus": "A",
     "authenticationAttemptResult": "uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4",
-    "messageCategory": "1",
     "mpiData": {
       "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
       "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
