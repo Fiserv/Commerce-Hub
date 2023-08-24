@@ -13,6 +13,14 @@ The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/
 - **SAQ A-EP:** applies to merchants who partially outsource payment processing to Commerce Hub. The merchant typically has a website that hosts a checkout process and sends the customer data to Commerce Hub at a point of payment.
 
 - **SAQ D:** applies to merchants who capture the payment source details and save the data in their database. The merchant typically has a website that hosts a checkout process and encrypts the customer data before sending to Commerce Hub for authroization.
+
+### Mobile Integrations
+
+Commerce Hub's Secure Data Capture solutions are supported with mobile integrations with the following conditions;
+
+- The merchant's API should provide access to the webapp via native mobile browser or a WebView embedded within a native mobile app. See [Apple's iOS](https://developer.apple.com/documentation/webkit/wkwebview) or [Google's Android](https://developer.android.com/reference/android/webkit/WebView) documentation for addtional details.
+- Commerce Hub's iFrame and JS solutions are responsive and should natively re-render to the customer's device screen size.
+- When integrating with native iOS or Android SDKs, Commerce Hub's API Only solution should be used.
  
 ---
 
@@ -22,7 +30,7 @@ The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/
 
 <!-- type: card
 title: iFrame
-description: Allows a merchant an easy and secure way to embed a payment form into a website.
+description: Allows a merchant an easy and secure way to embed a payment form into a website or customer's mobile device.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
 -->
 
@@ -48,13 +56,13 @@ link:
 
 <!-- type: card
 title: JavaScript
-description: Allows a merchant an easy and secure way to embed a payment form into a website.
+description: Allows a merchant an easy and secure way to embed a payment form into a website or customer's mobile device.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
 -->
 
 <!-- type: card
-title: Card Capture API
-description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website or customer's mobile device..
+title: API Only
+description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website or customer's mobile device using Commerce Hub's Card Capture API.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
 -->
 
