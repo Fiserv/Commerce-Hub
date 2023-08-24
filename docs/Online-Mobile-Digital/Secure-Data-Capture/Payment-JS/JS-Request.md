@@ -114,15 +114,11 @@ Errors in JS should be handled in the .catch() of the promise for loadPaymentFor
 
 Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [authorization](#step-1-authentication) request. 
 
-### Endpoint
+### Payload Example
+
+#### Endpoint
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
-
-<!-- theme: success -->
->**POST** `/payments/v1/tokens`
-
-
-### Payload Example
 
 <!--
 type: tab
