@@ -17,10 +17,6 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 - **charges:** responsible for decrypting captured card details and then charging based on a payment session.
 - **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
 
-### Mobile Integrations
-
-Developers can choose to provide access to the webapp via native mobile browser or a WebView embedded within a native mobile app. See [Apple's iOS](https://developer.apple.com/documentation/webkit/wkwebview) or [Google's Android](https://developer.android.com/reference/android/webkit/WebView) documentation for addtional details.
-
 ---
 
 ## Step 1: Acquire Credentials 
