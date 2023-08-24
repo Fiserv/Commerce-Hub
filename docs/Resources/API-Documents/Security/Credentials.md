@@ -5,6 +5,9 @@ A credentials request is used for authorizing or submitting subsequent financial
 - Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
 - Returns a `sessionId` used with Secure Data Capture [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) and [JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) requests.
 
+<!-- theme: danger -->
+> The `sessionId` returned in the response is considered private data that should be stored on the merchant’s backend server and never sent to the customer's browser.
+
 <!--
 type: tab
 titles: Request Variables, Response Variables
