@@ -17,10 +17,13 @@ The following code snippets are required to create and initialize the SDK config
 
 ### iFrame SDK
 
+- **Cert:** https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
+- **Prod:** https://Prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
+
 The iFrame JS script tag is required in the website by downloading or including the following code:
 
 ```php
-<script id="commercehub" src="https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
+<script id="commercehub" src="https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
 ```
 
 ---
@@ -86,7 +89,7 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 <html>
     <head>
         <meta charset="utf-8">
-        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/js/commercehub-client-sdk.js"></script>
+        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
     </head>
     <body>
         <div id="payment-saq-a-ep-form-div"></div>
