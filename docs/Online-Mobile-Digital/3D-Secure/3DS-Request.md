@@ -52,6 +52,10 @@ titles: Request, Response
 
 ```json
 {
+  "amount": {
+    "total": 6,
+    "currency": "USD"
+  },
   "source": {
     "sourceType": "PaymentCard",
     "card": {
@@ -73,10 +77,6 @@ titles: Request, Response
       "recommendedVersion": "2.2.0"
     }
   },
-  "amount": {
-    "total": 6,
-    "currency": "USD"
-  },
   "transactionDetails": {
     "captureFlag": false
   },
@@ -97,62 +97,64 @@ type: tab
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType":"CHARGE",
-      "transactionState":"AUTHORIZED",
-      "transactionOrigin":"ECOM",
-      "transactionProcessingDetails":{
-         "orderId":"CHG016bf4014790ae4542af01d2bfb82c2371",
-         "transactionTimestamp":"2022-07-01T17:42:28.651979Z",
-         "apiTraceId":"1bc2f7471fa746708667e4bff79f016e",
-         "clientRequestId":"ed50be7a2b3638e2f5e8270075c326cb",
-         "transactionId":"1bc2f7471fa746708667e4bff79f016e"
-      }
-   },
-   "source":{
-      "sourceType":"Payment3DS",
-      "card":{
-         "expirationMonth":"12",
-         "expirationYear":"2025",
-         "bin":"401200",
-         "last4":"0026",
-         "scheme":"VISA"
-      }
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total":6.00,
-         "currency":"USD"
-      },
-      "processorResponseDetails":{
-         "approvalStatus":"APPROVED",
-         "approvalCode":"OK973C",
-         "referenceNumber":"e4bff79f016e",
-         "processor":"FISERV",
-         "host":"NASHVILLE",
-         "networkRouted":"VISA",
-         "networkInternationalId":"0001",
-         "responseCode":"000",
-         "responseMessage":"Approved",
-         "hostResponseCode":"00",
-         "hostResponseMessage":"APPROVAL"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag":false
-   },
-   "transactionInteraction":{
-      "eciIndicator":"SECURE_ECOM"
-   },
-   "networkDetails":{
-      "network":{
-         "network":"Visa"
-      },
-      "networkResponseCode":"00",
-      "cardLevelResultCode":"C",
-      "validationCode":"G205",
-      "transactionIdentifier":"012182063695002"
-   },
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "orderId": "CHG016bf4014790ae4542af01d2bfb82c2371",
+      "transactionTimestamp": "2022-07-01T17:42:28.651979Z",
+      "apiTraceId": "1bc2f7471fa746708667e4bff79f016e",
+      "clientRequestId": "ed50be7a2b3638e2f5e8270075c326cb",
+      "transactionId": "1bc2f7471fa746708667e4bff79f016e"
+    }
+  },
+  "source": {
+    "sourceType": "Payment3DS",
+    "card": {
+      "expirationMonth": "12",
+      "expirationYear": "2025",
+      "bin": "401200",
+      "last4": "0026",
+      "scheme": "VISA"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 6,
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK973C",
+      "referenceNumber": "e4bff79f016e",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "networkRouted": "VISA",
+      "networkInternationalId": "0001",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": false
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+  },
+  "networkDetails": {
+    "network": {
+      "network": "Visa"
+    },
+    "networkResponseCode": "00",
+    "cardLevelResultCode": "C",
+    "validationCode": "G205",
+    "transactionIdentifier": "012182063695002"
+  }
 }
 
 ```
