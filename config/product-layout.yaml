@@ -90,7 +90,7 @@ featuredFeatures:
     description: "Leverage Commerce Hub's Apple Tap to Pay SDK to accept in-store payments on mobile devices."
     featured: true
     relatedDocs:
-     - link: 
+     - link: docs/In-Person/Integrations/Tap-to-Pay.md
        title: Encrypted Device Integration
     relatedAPIs:
       - type: post
