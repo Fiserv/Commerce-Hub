@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 # Secure Data Capture
 
-Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
+Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance. 
 
 The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self-validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. For more information visit [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
