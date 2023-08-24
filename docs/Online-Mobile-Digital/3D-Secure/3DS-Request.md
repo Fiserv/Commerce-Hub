@@ -58,10 +58,12 @@ titles: Request, Response
   },
   "source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4012000033330026",
-      "expirationMonth": "12",
-      "expirationYear": "2025"
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
   },
   "additionalData3DS": {
