@@ -18,7 +18,7 @@ The following code snippets are required to create and initialize the SDK config
 ### iFrame SDK
 
 - **Cert:** https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
-- **Prod:** https://Prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
+- **Prod:** https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
 
 The iFrame JS script tag is required in the website by downloading or including the following code:
 
