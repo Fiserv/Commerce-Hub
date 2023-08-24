@@ -61,7 +61,7 @@ let myConfig = FiservTTPConfig(
 ​
 ## Step 5: Configure Card Reader
 
-Create an instance of `FiservTTPCardReader`, which is the main class the app will interact with, to the view model.
+Create an instance of `FiservTTPCardReader` to the view model, this is the main class the app will interact with.
 ​
 ```Swift
 private let fiservTTPCardReader: FiservTTPCardReader = FiservTTPCardReader(configuration: myConfig)
