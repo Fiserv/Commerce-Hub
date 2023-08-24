@@ -13,48 +13,6 @@ Commerce Hub allows a merchant to pass the 3-D Secure (3DS) authentication resul
 
 ### Request Variables
 
-To authorize a 3-D Secure authenticated payment the following fields are available based on if the authentication was 3DS v1.x or 3DS v2.x.
-
-<!--
-type: tab
-titles: source, card, transactionInteraction, additionalData3DS
--->
-
-The below table identifies the parameters in the `source` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use value *PaymentCard* or *PaymentToken* for 3-D Secure transactions. |
-| `card` | *object* | N/A | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
-| `tokenData` | *string* | 2048 | Token created from the payment source if using *PaymentToken*. |
-| `tokenSource` | *string* | | Source for the Token Provider (TSP) if using *PaymentToken*. Valid Value: TRANSARMOR |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `card` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `cardData` | *object* | 15 |  Credit Card Number or Encrypted Data if using *PaymentCard* |
-| `expirationMonth` | *string* | 2 | Card expiration month. |
-| `expirationYear` | *string* | 4 | Card expiration year. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionInteraction` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `eciIndicator` | *string* | 4 | [Electronic Commerce Indicator (ECI)](?path=docs/Resources/Master-Data/Transaction-Interaction.md#electroniccommerceindicators). |
-
-<!--
-type: tab
--->
-
 The below table identifies the required parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
