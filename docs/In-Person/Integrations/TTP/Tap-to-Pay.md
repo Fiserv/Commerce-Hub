@@ -1,5 +1,5 @@
 ---
-tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, Wallet]
+tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, Wallet, Contactless]
 ---
 
 # Apple Tap to Pay
