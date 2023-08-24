@@ -132,7 +132,7 @@ Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [t
 
 <!--
 type: tab
-titles: Request, Charges Response, Tokens Response
+titles: Request, Response
 -->
 
 ##### Example of a charge payload request.
