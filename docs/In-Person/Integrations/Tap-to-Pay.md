@@ -19,7 +19,7 @@ tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, W
 
 ## Step 1: Configure Apple Tap to Pay
 
-[Request a special entitlement](https://developer.apple.com/contact/request/tap-to-pay-on-iphone) from Apple to enable Tap To Pay. Select Fiserv as the Payment Service Provider _(PSP)_.
+[Request an entitlement](https://developer.apple.com/contact/request/tap-to-pay-on-iphone) from Apple to enable Tap To Pay. Select Fiserv as the Payment Service Provider _(PSP)_.
 ​
 Follow the [instructions](https://developer.apple.com/documentation/proximityreader/setting-up-the-entitlement-for-tap-to-pay-on-iphone) to add the entitlement to your app's profile.
 
@@ -36,7 +36,7 @@ Obtain an [API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Ma
 
 ## Step 3: Load Tap to Pay Package
 
-Create a new project or open yoru existing app in XCode and [add](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) the Commerce Hub's Tap to Pay Packagepath using the URL: https://github.com/Fiserv/TTPPackage.
+Create a new project or open yoru existing app in XCode and [add](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) the Fiserv Tap to Pay Package using the URL: https://github.com/Fiserv/TTPPackage.
 
 ---
 
@@ -61,13 +61,13 @@ let myConfig = FiservTTPConfig(
 ​
 ## Step 5: Configure Card Reader
 
-Create an instance of `FiservTTPCardReader`, which is the main class the app will interact with. Typically this is added to the view model.
+Create an instance of `FiservTTPCardReader`, which is the main class the app will interact with, to the view model.
 ​
 ```Swift
 private let fiservTTPCardReader: FiservTTPCardReader = FiservTTPCardReader(configuration: myConfig)
 ```
 ​
-In the startup process of your app, call the following method to validate that the device supports Apple Tap To Pay.
+In the startup process of the app, call the following method to validate that the device supports Apple Tap To Pay.
 ​
 ```Swift
 if !fiservTTPCardReader.readerIsSupported() {
@@ -77,7 +77,7 @@ if !fiservTTPCardReader.readerIsSupported() {
 ​
 ---
 
-## Step 6: Obtain PSP Token
+## Step 6: Obtain Token
 
 Obtain a session token to utilize the SDK.
 
