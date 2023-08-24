@@ -213,6 +213,6 @@ Download [Commerce Hub's Tap to Pay SDK](https://github.com/Fiserv/TTPSampleApp)
 - ​[Apple's Merchant FAQs](https://register.apple.com/tap-to-pay-on-iphone/faq)​
 - ​[Tap to Pay on iPhone Security](https://support.apple.com/guide/security/tap-to-pay-on-iphone-sec72cb155f4/web)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
-- [In-Person Payments](?path=https://developer.fiserv.com/product/CommerceHub/docs/?path=docs/Getting-Started/Getting-Started-InPerson.md)
+- [In-Person Payments](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 
 ---
