@@ -85,9 +85,9 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
-  - title: Apple Tap to Pay
+  - title: Tap to Pay on iPhone
     groupName: In-Person
-    description: "Leverage Commerce Hub's Apple Tap to Pay SDK to accept in-store payments on mobile devices."
+    description: "Leverage Commerce Hub's Tap to Pay on iPhone SDK to accept in-store payments on Apple's iPhone devices."
     featured: true
     relatedDocs:
      - link: docs/In-Person/Integrations/Tap-to-Pay.md
