@@ -2,9 +2,9 @@
 tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, Wallet, Contactless]
 ---
 
-# Apple Tap to Pay
+# Tap to Pay on iPhone
 
-[Apple Pay Tap to Pay](?path=https://developer.apple.com/tap-to-pay/) allows merchant's to accept contactless payments using a [supported iPhone](https://register.apple.com/tap-to-pay-on-iphone/faq) or a partner-enabled iOS app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, Apple Pay, Apple Watch, and smartphones with other digital wallets. No additional hardware is required to accept contactless payments through Tap to Pay on iPhone, so merchant's can accept payments from anywhere. 
+[Tap to Pay on iPhone](?path=https://developer.apple.com/tap-to-pay/) allows merchant's to accept contactless payments using a [supported iPhone](https://register.apple.com/tap-to-pay-on-iphone/faq) or a partner-enabled iOS app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, Apple Pay, Apple Watch, and smartphones with other digital wallets. No additional hardware is required to accept contactless payments through Tap to Pay on iPhone, so merchant's can accept payments from anywhere. 
 
 ### How it Works ????
 
@@ -139,6 +139,9 @@ titles: Charges, Cancels, Refunds
 
 ##### Charges Request
 ​
+<!-- theme: info -->
+> Currently Apple Tap to Pay on iPhone only supports USD.
+
 ```Swift
 let amount = 10.99
 let merchantOrderId = "1234567890"
@@ -161,8 +164,11 @@ type: tab
 
 ##### Cancels Request
 
+<!-- theme: info -->
+> To support partial cancels it must be configured in Merchant Boarding and Configuration. Please contact your account representative for details.
+
 ```Swift
-let amount = 10.99 ????
+let amount = 10.99
 let referenceTransactionId = "1234567890"
 do {
   let voidResponse = try await voidTransaction(
@@ -197,7 +203,7 @@ do {
 
 ---
 
-## Step 10: Download Sample SDK ????
+## Step 10: Download Sample Test App
 
 Download [Commerce Hub's Tap to Pay SDK](https://github.com/Fiserv/TTPSampleApp).
 
