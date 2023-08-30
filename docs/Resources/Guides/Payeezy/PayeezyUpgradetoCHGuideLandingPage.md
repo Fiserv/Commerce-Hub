@@ -54,19 +54,19 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreVT.md
 
 <!-- type: card
 title: 3DS
-description: Using 3DS transaction in Commerce Hub
+description: Using 3DS transactions in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md
 -->
 
 <!-- type: card
 title: Fraud
-description: What's different for the fraud settings, velocity controls, AVS filters and CVV2 filters in Commerce Hub.
+description: What's different for the fraud settings, velocity controls, AVS filters and CVV2 filters in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesFraud.md
 -->
 
 <!-- type: card
-title: Gift Card
-description: What's different for the fraud settings, velocity controls, AVS filters and CVV2 filters in Commerce Hub.
+title: Gift Card/Prepaid
+description: Using the Gift Card/Prepaid feature in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesFraud.md
 -->
 
