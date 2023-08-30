@@ -27,6 +27,7 @@ As Commerce Hub continues to be improved with new features and value added servi
 | New Content | [Gift Card](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) New Document mapping Payeezy codes to Commerce Hub suuported codes by card brand |
 | New Content | [Response Code Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ResponseCodeMapping.md) New Document to support response code exception handling |
 | New Content | [AVS and CVV2 Code Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) New Document mapping Payeezy codes to Commerce Hub suuported codes by card brand |
+| Update | [Stored Credentials](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesStoredCred.md) Added endpoints for Forced Post and Open Refund, Open Void Not Supported |
 | Update | [API Structure](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreAPI.md) Added endpoints for Forced Post and Open Refund, Open Void Not Supported |
 | Update | [Virtual Terminal](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreVT.md) Forced Post now available, Clone Transaction capability now available |
 | Update | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Forced Post now available, Clone Transaction capability now available |
