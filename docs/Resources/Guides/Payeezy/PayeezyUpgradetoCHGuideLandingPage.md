@@ -53,9 +53,31 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreVT.md
 <!-- type: row -->
 
 <!-- type: card
+title: 3DS
+description: Apple Pay and Google Pay functional and element differences
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md
+-->
+
+<!-- type: card
 title: Fraud
 description: What's different for the fraud settings, velocity controls, AVS filters and CVV2 filters in Commerce Hub.
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesFraud.md
+-->
+
+<!-- type: card
+title: Gift Card
+description: What's different for the fraud settings, velocity controls, AVS filters and CVV2 filters in Commerce Hub.
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesFraud.md
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Level 2 and Level 3 Data
+description: Level 2 and Level 3 Data differences and element mapping
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesLevel23.md
 -->
 
 <!-- type: card
@@ -154,6 +176,12 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ResponseCodeMappin
 title: Payeezy to Commerce Hub AVS and CVV2 Mapping
 description: How the codes in Payeezy align to those in Commerce Hub for each Card Brand
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md
+-->
+
+<!-- type: card
+title: 
+description: 
+link: 
 -->
 
 <!-- type: row-end -->
