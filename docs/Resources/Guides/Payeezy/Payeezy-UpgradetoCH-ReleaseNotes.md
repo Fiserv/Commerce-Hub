@@ -23,8 +23,8 @@ As Commerce Hub continues to be improved with new features and value added servi
 | Type | Details |  
 | :-----: | ----- |
 | New Content | [Level 2 and Level 3 Data](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesLevel23.md) Differences in validation and element mapping |
-| New Content | [3DS](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) New Document mapping Payeezy codes to Commerce Hub suuported codes by card brand |
-| New Content | [Gift Card](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) New Document mapping Payeezy codes to Commerce Hub suuported codes by card brand |
+| New Content | [3DS](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) 3DS element mapping and API differences |
+| New Content | [Gift Card](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) Mapping transaction types and elements to Commerce Hub endpoints and elements |
 | New Content | [Response Code Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ResponseCodeMapping.md) New Document to support response code exception handling |
 | New Content | [AVS and CVV2 Code Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) New Document mapping Payeezy codes to Commerce Hub suuported codes by card brand |
 | Update | [Stored Credentials](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesStoredCredentials.md) Additional elements now supported |
