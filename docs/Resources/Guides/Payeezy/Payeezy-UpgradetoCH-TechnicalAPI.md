@@ -15,7 +15,7 @@ Documents can be downloaded by clicking on the links below.
 
 ---
 
-> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your migration to Commerce Hub. 
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub. 
 
 ### Payeezy Gateway Direct
 
@@ -23,7 +23,7 @@ If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are tr
 
 [Payeezy Gateway Direct API Element Level Mapping to Commerce Hub](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/docs/Resources/Guides/Payeezy/Payeezy_Gateway_Direct_Element_Mapping.xlsx)
 
-_Last Updated: October 15, 2022_
+_Last Updated: September 1, 2023_
 
 ### Developer API
 
@@ -31,7 +31,7 @@ If you are using the **/api.payeezy.com** URL, then you are transacting through 
 
 [Developer API Element Level Mapping to Commerce Hub](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/docs/Resources/Guides/Payeezy/Payeezy_Developer_API_Element_Mapping.xlsx)
 
-_Last Updated: October 15, 2022_
+_Last Updated: September 1, 2023_
 
 ---
 
