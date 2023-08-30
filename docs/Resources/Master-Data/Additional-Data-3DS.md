@@ -16,24 +16,9 @@ The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `serviceProvider` | *object* | 32 | The 3DS service provider responsible for managing the 3DS transaction. ***Valid Values:** CARDINAL* |
-| `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an [initialization](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Initialization.md). |
-| `serviceProviderTransactionId` | *string* | 60 | Unique transaction identifier assigned by the 3DS Server to identify a single transaction. |
-| `acsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Access Control Server (ACS) to identify a single transaction. |
-| `acsReferenceNumber` | *string* | 60 | Unique reference number assigned by the Access Control Server (ACS) to identify a single transaction. |
 | `dsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction | 
-| `challengeStatus` | *string* | 2 | The transaction status as returned by the 3D Secure authentication process. (CRes). |
-| `challengeIndicator` | *boolean* | N/A | Indicator that forces a customer to complete a transaction using 3-D Secure (3DS) if available. |
 | `authenticationStatus` | *string* | 2 | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
-| `statusReason` | *string* | 16 | Details about a given transaction status. |
 | `authenticationAttemptResult` | *string* | 1024 | Result of authentication attempt from Payer Authentication Response (PaRes). 3DS 1.x |
-| `serverTransactionId` | *string* | 16 | DUnique transaction identifier assigned by the 3DS Server to identify a single transaction. |
-| `challengeToken` | *string* | 1024 | Secure token for challenge request (CReq). |
-| `acsUrl` | *string* | 256 | The URL to redirect the Consumer to complete the Consumer Authentication transaction. |
-| `stepUpUrl` | *string* | 256 | The URL that the client uses to post the cardholder in order to complete the Consumer Authentication transaction. |
-| `channel` | *string* | 32 | Determines the channel that the transaction came through. ***Valid Values:** BROWSER, SDK, 3DS_REQUESTOR_INITIATED* |
-| `messageCategory` | *string* | 2 | Indicates the message category of 3-D Secure authentication version 2.X. *01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only* |
-| `methodData` | *object* | N/A | Additional [device data collection details](#method-data) passed during 3DS flows. |
 | `mpiData` | *object* | N/A | [Merchant plug-in (MPI)](#mpi-data) data from 3-D Secure (3DS) authentication. |
 | `versionData` | *object* | N/A | Additional [version data](#version-data) passed during 3-D Secure (3DS) flows. |
 
@@ -49,38 +34,18 @@ JSON string format for `additionalData3DS`:
 ```json
 {
   "additionalDataCommon": {
-    "serviceProvider": "CARDINAL",
-    "serviceProviderReferenceId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
-    "serviceProviderTransactionId": "475a086f-ad30-4313-b90d-d6dc1929c98",
-    "acsTransactionId": "13a086f-ad30-6543-b90d-d6dc1929c98",
-    "acsReferenceNumber": "123jd-009ddk-876",
     "dsTransactionId": "3543-b90d-d6dc1765c98",
-    "challengeStatus": "A",
-    "challengeIndicator": "true",
     "authenticationStatus": "A",
-    "statusReason": "Approved",
     "authenticationAttemptResult": "uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4",
-    "serverTransactionId": "8561c0ef-931a-474f-bfee-55eb98a331b1",
-    "challengeToken": "uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4",
-    "acsUrl": "https://www.example.com/3ds/redirect",
-    "stepUpUrl": "https://www.example.com/3ds/stepUp",
-    "channel": "BROWSER",
-    "messageCategory": "1",
-    "methodData": {
-      "dataCollectionUrl": "https://www.example.com/3ds/device/collect",
-      "encodedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-      "encodedData": "eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6IjNhYzdjYWE3LWFhNDItMjY2My03OTFiLTJhYzA1YTU0MmM0YSJ9",
-      "notificationUrl": "https://www.example.com/webhooks/v1/callback"
-    },
     "mpiData": {
       "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
       "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
       "eci": "05",
       "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
     },
-    "versionData":{
+    "versionData": {
       "recommendedVersion": "2.2.0"
-   }
+    }
   }
 }
 ```
