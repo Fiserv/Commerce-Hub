@@ -15,6 +15,19 @@ Commerce Hub is continually being improved with new features, security enhanceme
 - **Update:** Existing feature was updated or enhanced
 
 ---
+## August 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** June 22nd 2023
+- **Production:** July 6th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Updated [3DS_Request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) | Update |
+
+
+--- 
 
 ## July 2023
 
