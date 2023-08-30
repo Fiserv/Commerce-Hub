@@ -54,7 +54,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreVT.md
 
 <!-- type: card
 title: 3DS
-description: Apple Pay and Google Pay functional and element differences
+description: Using 3DS transaction in Commerce Hub
 link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md
 -->
 
