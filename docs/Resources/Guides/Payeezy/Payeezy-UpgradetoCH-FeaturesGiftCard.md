@@ -9,7 +9,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, gift-card, pr
 <!-- theme: danger -->
 >  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-
+A gift card is a prepaid stored-value money card, usually issued by a retailer or bank, to be used as an alternative to cash for purchases within a particular store or related businesses.
 
 ## Transaction Types
 
@@ -24,15 +24,20 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, gift-card, pr
 
 ## Element Mapping
 
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
+
 |Request/Response| Payeezy Gateway Direct XML Element | Payeezy Gateway Direct JSON Element | Payeezy Developer API Element |Commerce Hub Element |
 | -------- | ------------- | -------------- | -------------- | -------------- |
 |Request|`SCV`|`scv`|`scv`|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "SCV"|
 |Request|`EAN`|`ean`|`ean`|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "EAN"|
 |Request|`Reference_3`|`reference_3`|`reference_3`|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "FAC"|
 |Request|`ForeignAccessCode`|foreign_access_code|N/A|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "FAC"|
-|Response|`TransactionResult.CAVV`|`cavv_response`|N/A|`networkDetails.cavvResponseCode`|
+|Request|`VirtualCard`|`virtual_card`|N/A|No Commerce Hub equivalent|
+|Response|`CurrentBalance`|`current_balance`|`current_balance`|balances.endingBalance |
+|Response|`PreviousBalance`|`previous_balance`|`previous_balance`|balances.beginningBalance|
+|Response|`ValueLinkAuthCode`|`valuelink_auth_code`|`value_link_auth_code`|processorResponseDetails.approvalCode|
 
-Additional information on 3DS integration in Commerce Hub can be found [here](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md).
+For a comprehensive mapping of all elements from Payeezy to Commerce Hub, please reveiew the [API Element Mapping Document](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md).
 
 ---
 
