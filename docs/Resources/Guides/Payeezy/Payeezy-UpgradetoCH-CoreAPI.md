@@ -47,6 +47,12 @@ In Payeezy, three different formats were supported: SOAP XML, REST XML and REST 
 
 In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
 
+In Payeezy, Forced Post with digital wallet was allowed; in Commerce Hub, this scenario is not allowed.
+
+In Payeezy, there is no validation on the auth_number element in a Foreced Post transaction; in Commerce Hub, this validation does occur and the transaction will not be processed if auth_number is invalid.
+
+In Payeezy, Timeout Reversal is a merchant managed function; in Commerce Hub, this is a gateway managed feature.
+
 The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; `sourceType` and `currency` are now required elements – see [Commerce Hub Required Elements](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalRequired.md) documentation.
 
 The element names, types and enumerations have changed - see [Element Level Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) documentation.
@@ -85,6 +91,12 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
 
 The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; `sourceType` and `currency` are now required elements – see [Commerce Hub Required Elements](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalRequired.md) documentation.
+
+In Payeezy, Forced Post with digital wallet was allowed; in Commerce Hub, this scenario is not allowed.
+
+In Payeezy, there is no validation on the auth_number element in a Foreced Post transaction; in Commerce Hub, this validation does occur and the transaction will not be processed if auth_number is invalid.
+
+In Payeezy, Timeout Reversal is a merchant managed function; in Commerce Hub, this is a gateway managed feature.
 
 The element names, types and enumerations have changed - see [Element Level Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) documentation.
 
