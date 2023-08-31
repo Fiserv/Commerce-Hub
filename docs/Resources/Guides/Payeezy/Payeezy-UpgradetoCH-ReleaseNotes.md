@@ -18,6 +18,23 @@ As Commerce Hub continues to be improved with new features and value added servi
 
 ---
 
+## September 1, 2023
+
+| Type | Details |  
+| :-----: | ----- |
+| New Content | [Level 2 and Level 3 Data](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesLevel23.md) Differences in validation and element mapping |
+| New Content | [3DS](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-Features3DS.md) 3DS element mapping and API differences |
+| New Content | [Gift Card](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesGiftCard.md) Mapping transaction types and elements to Commerce Hub endpoints and elements |
+| New Content | [Response Code Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ResponseCodeMapping.md) New Document to support response code exception handling |
+| New Content | [AVS and CVV2 Code Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-AVSCVV2Mapping.md) New Document mapping Payeezy codes to Commerce Hub suuported codes by card brand |
+| Update | [Stored Credentials](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesStoredCredentials.md) Additional elements now supported |
+| Update | [API Structure](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreAPI.md) Added endpoints for Forced Post and Open Refund, Open Void Not Supported |
+| Update | [Virtual Terminal](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreVT.md) Forced Post now available, Clone Transaction capability now available |
+| Update | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Added Level 2 and 3, 3DS and Gift Card |
+| Update | Release Notes |
+
+---
+
 ## December 15, 2022
 
 | Type | Details |  
