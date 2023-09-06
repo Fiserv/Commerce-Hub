@@ -22,6 +22,17 @@ The below table identifies the available parameters in the `referenceTransaction
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
 | `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
 
+<!--
+type: tab
+-->
+
+The below table identifies the available parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length |Description |
+|---------|----------|----------------|---------|
+| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. | 
+
 <!-- type: tab-end -->
 
 ---
