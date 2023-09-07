@@ -6,9 +6,6 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 Submit a request after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment sourceType of PaymentSession/PaymentCard/PaymentToken and the sessionId from the credentials request. 
 
-<!-- theme: warning -->
-> If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
-
 ---
 
 ### Request Variables
@@ -157,9 +154,101 @@ The below table identifies the parameters in the `customer` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `phone` object.
+<!-- type: tab-end -->
 
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
+---
 
+### Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+```json
+
+{
+  "amount": {
+    "total": 256,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "{{cardNumberDevFrictionless}}",
+      "expirationMonth": "{{expiryMonthDevFrictionless}}",
+      "expirationYear": "{{expiryYearDevFrictionless}}",
+      "securityCode": "{{cvvDevFrictionless}}"
+    }
+  },
+  "billingAddress": {
+    "firstName": "Raghavendiran",
+    "lastName": "Kannan",
+    "address": {
+      "street": "100 Ashford Gables Dr",
+      "houseNumberOrName": "4201",
+      "city": "Atlanta",
+      "stateOrProvince": "Georgia",
+      "postalCode": "30338",
+      "country": "USA"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "createToken": false,
+    "merchantOrderId": "12345",
+    "deviceFingerprint": [
+      {
+        "dataStatic": {
+          "colorDepth": 32,
+          "screenHeight": 980,
+          "screenWidth": 1080,
+          "timezoneOffset": 200,
+          "javaEnabled": true,
+          "locale": "English",
+          "accepts": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "userAgent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0"
+        }
+      },
+      {
+        "dataDynamic": {
+          "ipAddress": "67.17.19.20"
+        }
+      }
+    ]
+  },
+  "merchantDetails": {
+    "terminalId": "10000001",
+    "merchantId": "100004000100116"
+  },
+  "additionalData3DS": {
+    "serviceProviderReferenceId": "{{lDfRefrenceId}}",
+    "channel": "BROWSER"
+  },
+  "customer": {
+    "email": "cardinal.test@fiserv.com",
+    "phone": [
+      {
+        "type": "MOBILE",
+        "phoneNumber": "5551112222"
+      }
+    ]
+  }
+}
+
+```
+
+<!-- type: tab-end -->
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
+- [Additional Data 3DS](?path=docs/Resources/Master-Data/Additional-Data-3DS.md)
+- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+---
 
