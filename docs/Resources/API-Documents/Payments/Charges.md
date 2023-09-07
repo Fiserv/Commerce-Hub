@@ -85,7 +85,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request.
+##### Example of a charge payload request using a Multi-Use Public Key encrypted `PaymentCard`. See the payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) article for examples of other payment instruments.
 
 ```json
 {
