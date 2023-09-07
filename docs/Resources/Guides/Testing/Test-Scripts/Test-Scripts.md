@@ -128,7 +128,7 @@ To receive a specific `cardholderNameResponse` response, pass the specific amoun
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Charge Request](path?=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
 - [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
