@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 # 3-D Secure Authentication Request
 
-Submit a request after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment sourceType of PaymentSession/PaymentCard/PaymentToken and the sessionId from the credentials request. 
+Secure Data Capture utilizes a sessionId that Commerce Hub enriches with the applicable data from the challenge. 3D Secure (3DS) requires customers to complete an additional verification step with the card issuer when paying
 
 ---
 
