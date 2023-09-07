@@ -55,7 +55,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-CoreVT.md
 <!-- type: card
 title: 3DS
 description: Using 3DS transactions in Commerce Hub
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesMobileWallets.md
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-Features3DS.md
 -->
 
 <!-- type: card
@@ -67,7 +67,7 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesFraud.md
 <!-- type: card
 title: Gift Card/Prepaid
 description: Using the Gift Card/Prepaid feature in Commerce Hub
-link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesFraud.md
+link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesGiftCard.md
 -->
 
 <!-- type: row-end -->
