@@ -76,7 +76,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ## Endpoint
 <!-- theme: success -->
->**POST** `/payments/v1/forcedpost`
+>**POST** `/payments/v1/charges`
 
 ---
 
@@ -91,27 +91,28 @@ titles: Request, Response
 
 ```json
 {
-    "source": {
-        "sourceType": "PaymentCard",
-        "card": {
-            "cardData": "4012000033330026",
-            "expirationMonth": "12",
-            "expirationYear": "2025",
-            "securityCode": "977"
-        }
-    },
-    "amount": {
-        "total": 85,
-        "currency": "USD"
-    },
-    "transactionDetails": {
-        "captureFlag": true,
-        "approvalCode":"OK7244"  
-    },
-    "merchantDetails": {
-        "merchantId": "100004000100157",
-        "terminalId": "10000001"
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "deviceType": "INGENICO",
+      "keyId": "88000000022"
     }
+  },
+  "amount": {
+    "total": 85,
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "approvalCode": "OK7244"
+  },
+  "merchantDetails": {
+    "merchantId": "100004000100157",
+    "terminalId": "10000001"
+  }
 }
 ```
 
