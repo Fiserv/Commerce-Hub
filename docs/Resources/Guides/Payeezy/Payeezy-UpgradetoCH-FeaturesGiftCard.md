@@ -31,11 +31,11 @@ A gift card is a prepaid stored-value money card, usually issued by a retailer o
 |Request|`SCV`|`scv`|`scv`|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "SCV"|
 |Request|`EAN`|`ean`|`ean`|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "EAN"|
 |Request|`Reference_3`|`reference_3`|`reference_3`|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "FAC"|
-|Request|`ForeignAccessCode`|foreign_access_code|N/A|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "FAC"|
+|Request|`ForeignAccessCode`|`foreign_access_code`|N/A|`target.card.securityCode` <br> `additionalDataCommon.additionalData.securityCodeType` where `securityCodeType` = "FAC"|
 |Request|`VirtualCard`|`virtual_card`|N/A|No Commerce Hub equivalent|
-|Response|`CurrentBalance`|`current_balance`|`current_balance`|balances.endingBalance |
-|Response|`PreviousBalance`|`previous_balance`|`previous_balance`|balances.beginningBalance|
-|Response|`ValueLinkAuthCode`|`valuelink_auth_code`|`value_link_auth_code`|processorResponseDetails.approvalCode|
+|Response|`CurrentBalance`|`current_balance`|`current_balance`|`balances.endingBalance` |
+|Response|`PreviousBalance`|`previous_balance`|`previous_balance`|`balances.beginningBalance`|
+|Response|`ValueLinkAuthCode`|`valuelink_auth_code`|`value_link_auth_code`|`processorResponseDetails.approvalCode`|
 
 For a comprehensive mapping of all elements from Payeezy to Commerce Hub, please reveiew the [API Element Mapping Document](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md).
 
