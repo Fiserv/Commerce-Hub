@@ -10,8 +10,9 @@ tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, W
 
 1. The merchant intiates a transaction from their iPhone app.
 2. The customer taps their contactless payment instrument on the iPhone.
-3. The merchant's app submits the payload to Commerce Hub.
-6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
+3. The merchant's app submits the payload to Commerce Hub's SDK.
+4. Commerce Hub's SDK sends the payment information to Commerce Hub.
+5. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
 
 ---
 
