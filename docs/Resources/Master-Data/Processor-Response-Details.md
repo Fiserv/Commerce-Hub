@@ -24,6 +24,8 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `networkRouted` | *string* | 256 | Label that identifies the network where the transaction was routed for authorization _(e.g. NYCE, PULSE, STAR, Visa, Mastercard, etc.)_. |
 | `par` | *string* | 29 | A Payment Account Reference (PAR) is a unique identifier associated with a specific cardholder PAN. This identification number can be used in place of sensitive consumer identification fields, and transmitted across the payments ecosystem to facilitate consumer identification. |
 | `networkInternationalId` | string | 16 | This field identifies the [international acquiring host network](#network-international-id). |
+| `originalResponseCode` | *string* | 16 | Original response code before [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) |
+| `originalResponseMessage` | *string* | N/A | Original response message before [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) |
 | `responseCode` | *string* |   | Normalized transaction [gateway response code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `responseMessage` | *string* |   | Normalized transaction [gateway response message](?path=docs/Resources/Guides/Response-Codes/Response-Code.md). | 
 | `hostResponseCode` | *string* |   | Endpoint or issuer host response code.| 

@@ -24,7 +24,7 @@ NFC contactless payment solution offers the following benefits to its customers:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Manual Entry](?path=docs/In-Person/Encrypted-Payments/Manual.md)
 - [Track Data](?path=docs/In-Person/Encrypted-Payments/Track.md)
 - [EMV Chip](?path=docs/In-Person/Encrypted-Payments/EMV.md)
