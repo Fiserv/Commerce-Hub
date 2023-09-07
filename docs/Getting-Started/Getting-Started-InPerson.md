@@ -10,7 +10,7 @@ Commerce Hub supports in-person or card present payment transactions where the c
 
 ## Integrations
 
-Commerce Hub allows a merchant to build their own UI and manage customer transactions within their own software or terminal using Commerce Hub's RESTful APIs.
+Commerce Hub allows a merchant to build their own UI and manage customer transactions within their own software or terminal using Commerce Hub's RESTful APIs or SDKs.
 
 <!-- type: row -->
 
