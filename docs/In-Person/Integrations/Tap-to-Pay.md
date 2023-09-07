@@ -6,20 +6,18 @@ tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, W
 
 [Tap to Pay on iPhone](?path=https://developer.apple.com/tap-to-pay/) allows merchant's to accept contactless payments using a [supported iPhone](https://register.apple.com/tap-to-pay-on-iphone/faq) or a partner-enabled iOS app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, Apple Pay, Apple Watch, and smartphones with other digital wallets. No additional hardware is required to accept contactless payments through Tap to Pay on iPhone, so merchant's can accept payments from anywhere. 
 
-### How it Works ????
+### How it Works
 
-1. The customer selects checkout from the merchant's website and the merchant’s payment form displays.
-2. The customer selects Apple Pay and the Apple Pay payment form displays.
-3. The customer completes the Apple Pay form and returns to the merchant's website.
-4. The customer completes the transaction.
-5. The merchant’s website submits the encrypted Apple Pay payload to Commerce Hub.
-6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s website.
+1. The merchant intiates a transaction from their iPhone app.
+2. The customer taps their contactless payment instrument on the iPhone.
+3. The merchant's app submits the payload to Commerce Hub.
+6. Commerce Hub attempts to process the transaction and sends the response to the merchant’s app.
 
 ---
 
-## Step 1: Configure Apple Tap to Pay
+## Step 1: Configure Tap to Pay on iPhone
 
-[Request an entitlement](https://developer.apple.com/contact/request/tap-to-pay-on-iphone) from Apple to enable Tap To Pay. Select Fiserv as the Payment Service Provider _(PSP)_.
+[Request an entitlement](https://developer.apple.com/contact/request/tap-to-pay-on-iphone) from Apple to enable Tap To Pay on iPhone. Select **Fiserv** as the Payment Service Provider _(PSP)_.
 ​
 Follow the [instructions](https://developer.apple.com/documentation/proximityreader/setting-up-the-entitlement-for-tap-to-pay-on-iphone) to add the entitlement to your app's profile.
 
@@ -34,9 +32,9 @@ Obtain an [API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Ma
 
 ---
 
-## Step 3: Load Tap to Pay Package
+## Step 3: Load Tap to Pay on iPhone Package
 
-Create a new project or open yoru existing app in XCode and [add](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) the Fiserv Tap to Pay Package using the URL: https://github.com/Fiserv/TTPPackage.
+Create a new project or open yoru existing app in XCode and [add](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) the Fiserv Tap to Pay on iPhone Package using the URL: _https://github.com/Fiserv/TTPPackage_.
 
 ---
 
@@ -67,7 +65,7 @@ Create an instance of `FiservTTPCardReader` to the view model, this is the main 
 private let fiservTTPCardReader: FiservTTPCardReader = FiservTTPCardReader(configuration: myConfig)
 ```
 ​
-In the startup process of the app, call the following method to validate that the device supports Apple Tap To Pay.
+In the startup process of the app, call the following method to validate that the device supports Tap To Pay on iPhone.
 ​
 ```Swift
 if !fiservTTPCardReader.readerIsSupported() {
@@ -140,7 +138,7 @@ titles: Charges, Cancels, Refunds
 ##### Charges Request
 ​
 <!-- theme: info -->
-> Currently Apple Tap to Pay on iPhone only supports USD.
+> Currently Tap to Pay on iPhone only supports USD.
 
 ```Swift
 let amount = 10.99
@@ -205,17 +203,17 @@ do {
 
 ## Step 10: Download Sample Test App
 
-Download [Commerce Hub's Tap to Pay SDK](https://github.com/Fiserv/TTPSampleApp).
+Download [Commerce Hub's Tap to Pay on iPhone Test App](https://github.com/Fiserv/TTPSampleApp).
 
 <-- theme: info -->
-> ​The XCode simulator supports testing Tap to Pay, but it generates an intentionally invalid payment payload, so calls to authorize will fail. ​To run on a physical iPhone against the test environment, you must be logged into the phone with an [Apple Sandbox ID](https://developer.apple.com/apple-pay/sandbox-testing/).
+> ​The XCode simulator supports testing Tap to Pay on iPhone, but it generates an intentionally invalid payment payload, so calls to authorize will fail. ​To run on a physical iPhone against the test environment, you must be logged into the phone with an [Apple Sandbox ID](https://developer.apple.com/apple-pay/sandbox-testing/).
 
 ---
 
 ## See Also
 
-- [Commerce Hub's Tap to Pay Package](https://github.com/Fiserv/TTPPackage)
-- [Commerce Hub's Tap to Pay Sample App](https://github.com/Fiserv/TTPSampleApp)
+- [Commerce Hub Package](https://github.com/Fiserv/TTPPackage)
+- [Commerce Hub Sample App](https://github.com/Fiserv/TTPSampleApp)
 - ​[Apple's Merchant FAQs](https://register.apple.com/tap-to-pay-on-iphone/faq)​
 - ​[Tap to Pay on iPhone Security](https://support.apple.com/guide/security/tap-to-pay-on-iphone-sec72cb155f4/web)
 - [In-Person Payments](?path=docs/Getting-Started/Getting-Started-InPerson.md)
