@@ -2,9 +2,9 @@
 tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 ---
 
-# 3-D Secure Authentication Request
+# 3-D Secure Authentication
 
-Secure Data Capture utilizes a sessionId that Commerce Hub enriches with the applicable data from the challenge. 3D Secure (3DS) requires customers to complete an additional verification step with the card issuer when paying
+3-D Secure (3DS) requires customers to complete an additional verification step with the card issuer when paying....
 
 ---
 
@@ -12,7 +12,7 @@ Secure Data Capture utilizes a sessionId that Commerce Hub enriches with the app
 
 <!--
 type: tab
-titles: source
+titles: source, amount, billingAddress, shippingAddress, address, transactionDetails, deviceFingerprint, merchantDetails, additionalData3DS, customer 
 -->
 
 The below table identifies the parameters in the `source` object.
@@ -87,11 +87,13 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `deviceFingerprint` | *array* | N/A | Array of DeviceFingerPrint subcomponet objects |
+| `deviceFingerprint` | *array* | N/A | Array of Device Fingerprint subcomponet objects |
 
 <!--
 type: tab
 -->
+
+The `deviceFingerprint` is obtained from the [Device capture}(?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md) request. 
 
 The below table identifies the parameters in the `dataStatic` object.
 
@@ -106,10 +108,6 @@ The below table identifies the parameters in the `dataStatic` object.
 | `locale` | *string* | 8 | Language/Region code of user in IETF BCP47 format. example: 'en-US' |
 | `accepts` | *string* | 256 | Default device HTTP accepts header. example: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' |
 | `userAgent` | *string* | 2048 | User agent data from the user device, truncated to 2048 bytes. example: 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0' |
-
-<!--
-type: tab
--->
 
 The below table identifies the parameters in the `dataDynamic` object.
 
@@ -150,10 +148,6 @@ The below table identifies the parameters in the `customer` object.
 | `email` | *string* | 256 | customer email address | 
 | `phone` | *array* | N/A | Array of phone subcomponet objects | 
 
-<!--
-type: tab
--->
-
 <!-- type: tab-end -->
 
 ---
@@ -162,7 +156,7 @@ type: tab
 
 <!--
 type: tab
-titles: Request, Response
+titles: Request, Frictionless Response, Challenge Response 
 -->
 
 ```json
@@ -172,13 +166,14 @@ titles: Request, Response
     "total": 256,
     "currency": "USD"
   },
-  "source": {
+"source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "{{cardNumberDevFrictionless}}",
-      "expirationMonth": "{{expiryMonthDevFrictionless}}",
-      "expirationYear": "{{expiryYearDevFrictionless}}",
-      "securityCode": "{{cvvDevFrictionless}}"
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000023"
     }
   },
   "billingAddress": {
