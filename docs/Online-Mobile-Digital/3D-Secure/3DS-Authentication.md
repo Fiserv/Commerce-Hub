@@ -19,11 +19,7 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Use value *PaymentSession*, *PaymentCard*, or *PaymentToken* |
-| `sessionID` | *string* | 64 | The session ID obtained during Step 1 (Secure Card Capture) above, if using *PaymentSession* |
-| `card` | *object* | N/A | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
-| `tokenData` | *string* | 2048 | Token created from the payment source if using *PaymentToken*. |
-| `tokenSource` | *string* | | Source for the Token Provider (TSP) if using *PaymentToken*. Valid Value: TRANSARMOR |
+| `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
 <!--
 type: tab
