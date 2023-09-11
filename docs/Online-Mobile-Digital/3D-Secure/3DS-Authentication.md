@@ -253,7 +253,7 @@ titles: Request, Frictionless Response, Challenge Response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/3ds/authenticate)
 - [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
 - [Additional Data 3DS](?path=docs/Resources/Master-Data/Additional-Data-3DS.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
