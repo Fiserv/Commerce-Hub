@@ -8,7 +8,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 ---
 
-### Request Variables
+## Request Variables
 
 <!--
 type: tab
@@ -152,7 +152,23 @@ The below table identifies the parameters in the `customer` object.
 
 ---
 
-### Payload Example
+## Response Variables
+
+The below table identifies the parameters in the `additionalData3DS` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+
+---
+
+## Endpoint
+
+<!-- theme: success -->
+> **POST** `/payments-vas/v1/3ds/authenticate`
+
+---
+
+## Payload Example
 
 <!--
 type: tab
@@ -232,6 +248,8 @@ titles: Request, Frictionless Response, Challenge Response
 }
 
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/3ds/authenticate)
 
 <!-- type: tab-end -->
 
