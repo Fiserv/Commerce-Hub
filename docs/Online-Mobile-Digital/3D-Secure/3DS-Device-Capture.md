@@ -4,16 +4,15 @@ tags: [3-D-Secure, Online, Web, Mobile, Initilization, Device Fingerprint]
 
 # 3-D Secure Device Capture 
 
+Description
 
+---
 
 ## Secure Initilazation
 
+Description 
 
-
-
-
-
-
+---
 
 ### Request Variables 
 
@@ -90,7 +89,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 ---
 
-## Device Fingerprint 
+## Device Fingerprint Capture
 
 Description 
 
