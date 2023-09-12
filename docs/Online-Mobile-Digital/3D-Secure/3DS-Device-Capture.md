@@ -95,7 +95,45 @@ The below table identifies the parameters in the `additionalData3DS` object.
 
 ```
 
----
+<!--
+type: tab
+-->
+
+#### Example of a response.
+
+```json
+
+{
+    "gatewayResponse": {
+        "transactionProcessingDetails": {
+            "apiTraceId": "03871b37f328409ea5971b6e3c1acd3f",
+            "clientRequestId": "dc94b4d570edfedb51ca32beba8e3355"
+        }
+    },
+    "source": {
+        "sourceType": "PaymentCard",
+        "card": {
+            "bin": "400555",
+            "last4": "0019",
+            "scheme": "VISA",
+            "expirationMonth": "10",
+            "expirationYear": "2030"
+        }
+    },
+    "transactionDetails": {
+        "authentication3DS": true
+    },
+    "additionalData3DS": {
+        "serviceProvider": "CARDINAL",
+        "channel": "BROSWER",
+        "methodData": {
+            "url": "https://www.example.com/api/collect",
+            "encodedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+        }
+    }
+}
+
+```
 
 ## Device Fingerprint Capture
 
