@@ -40,7 +40,7 @@ The below table identifies the available parameters in the `merchantDetails` obj
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/3ds/v1/verify`
+>**POST** `/payments-vas/v1/3ds/verify
 
 ---
 
