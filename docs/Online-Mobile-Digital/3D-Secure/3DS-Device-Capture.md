@@ -60,7 +60,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | -------- | :--: | :------------: | ------------------ |
 |`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
 | `channel` | *String* | 32 | Determine the channel that the transaction came through. | 
-| `methodData` *string* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
+| `methodData` | *string* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
 
 ---
 
@@ -143,7 +143,15 @@ Description
 
 ### Commerce Hub SDK 
 
-Description 
+### The following code snippets outline how to use the CommerceHub SDK to initialize 3DS device data capture
+
+#### SDK Import 
+
+The CommerceHub SDK can be imported into a merchants website by adding the following script tag to the parent page.
+
+```php
+<script id="commercehub" src="https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
+```
 
 ---
 
@@ -151,7 +159,7 @@ Description
 
 Cardinal mandate that integrating parties must collect the eleven 3DS 2.0 (EMV 3DS) browser fields to make a 3DS 2.0 request. Cardinal device data collection process using the additionalData3DS.methodData fields returned in the device data initialization response. Merchants can choose to use either Cardinal response handling methods as outlined in Device Data Collection Responses.
 
-Here is a link to Cardinal: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/1106870359/Option+1+-+JWT+-+Card+BIN+to+full+Card+Number+passed+in+JWT
+#### Here is a link to Cardinal: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/1106870359/Option+1+-+JWT+-+Card+BIN+to+full+Card+Number+passed+in+JWT
 ---
 
 ## See Also
