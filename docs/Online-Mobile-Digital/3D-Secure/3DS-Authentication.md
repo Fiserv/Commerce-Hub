@@ -154,8 +154,8 @@ The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `serviceProviderReferenceId` | *string* | N/A | Desription | 
-| `channel` | *string* | N/A | Description | 
+|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
+| `channel` | *String* | 32 | Determine the channel that the transaction came through. | 
 
 ---
 
