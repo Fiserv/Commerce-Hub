@@ -153,7 +153,45 @@ The CommerceHub SDK can be imported into a merchants website by adding the follo
 <script id="commercehub" src="https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
 ```
 
----
+### Hidden Iframe Data Collection 
+
+```javascript
+new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-container-div")   
+    .then((result) => { })   
+    .error(error) => { });
+```
+
+### Repsone Handling 
+
+<!--
+type: tab
+-->
+
+```json
+
+{
+    "transactionDetails": {
+        "authentication3DS": true
+    },
+    "additionalData3DS": {
+        "serviceProvider": "CARDINAL",
+        "serviceProviderReferenceId": "bfc44ca7-0373-423e-8f55-e57e6523a149",
+        "methodData": {
+            "providerCollectionStatus": {
+                "attempted": true,
+                "attemptedTimestamp": 1665144961,
+                "status": "SUCCESS",
+                "completedTimestamp": 1665145361
+            },
+            "commerceHubCollectionStatus": {
+                "attempted": false
+            }
+        }
+    },
+    "ok": true
+}
+
+```
 
 ### Cardinal Cruise API 
 
