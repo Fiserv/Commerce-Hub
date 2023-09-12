@@ -6,6 +6,8 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 3-D Secure (3DS) requires customers to complete an additional verification step with the card issuer when paying....
 
+3-D Secure  (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the "three domains" which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain. 3-D Secure (3DS) requires customers to complete an additional verification step with the card issuer when paying. 
+
 ---
 
 ## Request Variables
