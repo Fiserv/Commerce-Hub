@@ -54,6 +54,14 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 ### Response Variables 
 
+The below table identifies the parameters in the `additionalData3DS` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
+| `channel` | *String* | 32 | Determine the channel that the transaction came through. | 
+| `methodData` *string* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
+
 ---
 
 ### Endpoint
@@ -103,8 +111,9 @@ Description
 
 ### Cardinal Cruise API 
 
-Description 
+Cardinal mandate that integrating parties must collect the eleven 3DS 2.0 (EMV 3DS) browser fields to make a 3DS 2.0 request. Cardinal device data collection process using the additionalData3DS.methodData fields returned in the device data initialization response. Merchants can choose to use either Cardinal response handling methods as outlined in Device Data Collection Responses.
 
+Here is a link to Cardinal: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/1106870359/Option+1+-+JWT+-+Card+BIN+to+full+Card+Number+passed+in+JWT
 ---
 
 ## See Also
