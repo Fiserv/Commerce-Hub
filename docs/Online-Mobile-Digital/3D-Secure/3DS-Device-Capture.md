@@ -4,13 +4,13 @@ tags: [3-D-Secure, Online, Web, Mobile, Initilization, Device Fingerprint]
 
 # 3-D Secure Device Capture 
 
-Description
+3-D Secure *(3DS)* providers mandate that integrating parties collect the 3DS 2.0 *(EMV 3DS)* browser fields. The [device fingerprint capture](#device-fingerprint-capture) must be completed by using the Commerce Hub SDK or directly with the 3DS provider. 
 
 ---
 
-## Secure Initilazation
+## Device Data Initilazation
 
-Description 
+Initialize the 3DS session with Commerce Hub using the device data initiailization request. The response will return `encodedToken` and `dataCollectionUrl` in the the `methodData` object of `additionalData3DS`, which are required to collect the [device fingerprint](#device-fingerprint-capture) information. 
 
 ---
 
@@ -18,7 +18,7 @@ Description
 
 <!--
 type: tab
-titles: source, merchantDetails 
+titles: source, merchantDetails, transactionDetails
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -54,13 +54,20 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 ### Response Variables 
 
+<!--
+type: tab
+titles: additionalData3DS
+-->
+
 The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
-| `channel` | *String* | 32 | Determine the channel that the transaction came through. | 
-| `methodData` | *string* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
+| `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
+| `channel` | *String* | 32 | Determine the channel that the transaction came through | 
+| `methodData` | *object* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -71,8 +78,16 @@ The below table identifies the parameters in the `additionalData3DS` object.
 
 --- 
 
-```json
+### Payload Example 
 
+<!--
+type: tab
+titles: Request, Response
+-->
+
+#### Example of a device data initilzation payload request.
+
+```json
 {
   "source": {
     "sourceType": "PaymentCard",
@@ -92,17 +107,20 @@ The below table identifies the parameters in the `additionalData3DS` object.
     "authentication3DS": true
   }
 }
-
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/3ds/device-data-initialize)
 
 <!--
 type: tab
 -->
 
-#### Example of a response.
+##### Example of a device data intilzation (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
-
 {
     "gatewayResponse": {
         "transactionProcessingDetails": {
@@ -128,32 +146,55 @@ type: tab
         "channel": "BROSWER",
         "methodData": {
             "url": "https://www.example.com/api/collect",
-            "encodedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+            "encodedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9......"
         }
     }
 }
-
 ```
+
+<!-- type: tab-end -->
+
+---
 
 ## Device Fingerprint Capture
 
-Description 
+After a successful [device data initialization](#device-data-initilazation), merchants must use one of the following options to capture the cardholder's [device data fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md). 
+
+- **Commerce Hub SDK:** Hidden JavaScript iFrame collection
+- **Cardinal Cruise API:** Hidden iFrame using Java Web Token *(JWT)*
+
+<!-- theme; warning -->
+> Merchants are responsible for collecting the card holder device fingerprint directly when using Commerce Hub APIs. This fingerprint must be submitted in the authentication request.
+
+The following table outlines the required fields to be collected in the `deviceFingerprint` object. 
+
+Browser Accepts Header - Exact content of the HTTP accept headers as sent to the 3DS Requestor from the Cardholder’s browser
+Browser Color Depth - Value representing the bit depth of the colour palette for displaying images, in bits per pixel. Obtained from Cardholder browser using the screen.colorDepth property. In case the actual value does not exist in the allowed values, use the closest lower value
+Browser IP Address - IP address the browser is connecting from
+Browser Java Enabled - Boolean that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property
+Browser JavaScript Enabled - Boolean that represents the ability of the cardholder browser execute JavaScript
+Browser Language - Value representing the browser language as defined in IETF BCP47. Returned from navigator.language property
+Browser Screen Height - Total height of the Cardholder’s screen in pixels. Value is returned from the screen.height property
+Browser Screen Width - Total width of the cardholder’s screen in pixels. Value is returned from the screen.width property
+Browser Timezone - Time-zone offset in minutes between UTC and the Cardholder browser local time. Note that the offset is positive if the local time zone is behind UTC and negative if it is ahead
+Browser User Agent - Exact content of the HTTP user-agent header. Note: If the total length of the User-Agent sent by the browser exceeds 2048 characters, truncate the excess portion
+Device Channel - Indicates the type of channel interface being used to initiate the transaction
 
 ---
 
 ### Commerce Hub SDK 
 
-### The following code snippets outline how to use the CommerceHub SDK to initialize 3DS device data capture
+The following code snippets outline how to use the Commerce Hub SDK to initialize 3DS device data capture. 
 
 #### SDK Import 
 
-The CommerceHub SDK can be imported into a merchants website by adding the following script tag to the parent page.
+The Commerce Hub SDK can be imported into the merchant's website by adding the following script tag to the parent page.
 
 ```php
 <script id="commercehub" src="https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
 ```
 
-### Hidden Iframe Data Collection 
+#### Hidden iFrame Data Collection 
 
 ```javascript
 new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-container-div")   
@@ -161,43 +202,58 @@ new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-co
     .error(error) => { });
 ```
 
-### Repsone Handling 
+#### Repsone Handling 
+
+Descrription?? 
+
+<!--
+type: tab
+titles: Variables, Example 
+-->
+
+The below table identifies the parameters in the `providerCollectionStatus` object in the the `methodData` object of `additionalData3DS`.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `attempted` | *boolean* | N/A |  | 
+| `attemptedTimestamp` | *string* |  |  | 
+| `status` | *string* |  |  | 
+| `completedTimestamp` | *string* | |  | 
 
 <!--
 type: tab
 -->
 
-```json
+The following code snippet provides a sample response.
 
+```json
 {
-    "transactionDetails": {
-        "authentication3DS": true
-    },
-    "additionalData3DS": {
-        "serviceProvider": "CARDINAL",
-        "serviceProviderReferenceId": "bfc44ca7-0373-423e-8f55-e57e6523a149",
-        "methodData": {
-            "providerCollectionStatus": {
-                "attempted": true,
-                "attemptedTimestamp": 1665144961,
-                "status": "SUCCESS",
-                "completedTimestamp": 1665145361
-            },
-            "commerceHubCollectionStatus": {
-                "attempted": false
-            }
-        }
-    },
-    "ok": true
+  "transactionDetails": {
+    "authentication3DS": true
+  },
+  "additionalData3DS": {
+    "serviceProvider": "CARDINAL",
+    "serviceProviderReferenceId": "bfc44ca7-0373-423e-8f55-e57e6523a149",
+    "methodData": {
+      "providerCollectionStatus": {
+        "attempted": true,
+        "attemptedTimestamp": "1665144961",
+        "status": "SUCCESS",
+        "completedTimestamp": "1665145361"
+      }
+    }
+  },
+  "ok": true
 }
 
 ```
 
+---
+
 ### Cardinal Cruise API 
 
-Cardinal mandate that integrating parties must collect the eleven 3DS 2.0 (EMV 3DS) browser fields to make a 3DS 2.0 request. Cardinal device data collection process using the additionalData3DS.methodData fields returned in the device data initialization response. Merchants can choose to use either Cardinal response handling methods as outlined in Device Data Collection Responses.
+The Cardinal Cruise API device data collection process uses the `methodData` fields of the `additionalData3DS` object returned in the [device data initialization](#device-data-initilazation) response. Merchants can choose to use either Cardinal response handling method as outlined in the [Cardinal Cruise Device Data Collection documention](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/1106870359/Option+1+-+JWT+-+Card+BIN+to+full+Card+Number+passed+in+JWT).
 
-#### Here is a link to Cardinal: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/1106870359/Option+1+-+JWT+-+Card+BIN+to+full+Card+Number+passed+in+JWT
 ---
 
 ## See Also
