@@ -13,7 +13,7 @@ Commerce Hub's Secure Data Capture is designed to work seemlessly with our 3-D S
 3. The Commerce Hub builds and renders an a card form that allows the customer to initiate the payment session.
 4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
 5. Upon a successful card capture, Commerce Hub will initiate a device capture with the 3DS provider.
-6. Upon a scuccesful device capture, the merchant's website will attempt an authentication call via the merchant's backend server.
+6. Upon a succcesful device capture, the merchant's website will attempt an authentication call via the merchant's backend server.
 7. Upon a successful autnetication, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
 8. Commerce Hub sends the transaction response to the merchant's website.
 
