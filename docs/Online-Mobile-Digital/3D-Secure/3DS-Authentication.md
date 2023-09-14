@@ -95,15 +95,15 @@ The below table identifies the parameters in the `dataStatic` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `colorDepth` | *number* | N/A | Bit depth of the color palette for displaying images, in bits per pixel |
-| `screenWidth` | *number* | N/A | Width of the device screen in pixels |
-| `screenHeight` | *number* | N/A | Height of the device in pixels. | 
-| `timezoneOffset` | *number* | N/A | Difference between UTC time and the cardholder broswer local time, in minutes. | 
-| `javaEnabled` | *boolean* | N/A | Indicates if the device has Java enabled. | 
-| `javaScriptEnabled` | *boolean* | N/A | Indicates if the device has JavaScript enabled. |
-| `locale` | *string* | 8 | Language/Region code of user in IETF BCP47 format. example: 'en-US' |
-| `accepts` | *string* | 256 | Default device HTTP accepts header. example: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' |
-| `userAgent` | *string* | 2048 | User agent data from the user device, truncated to 2048 bytes. example: 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0' |
+| `colorDepth` | *number* | N/A | Value representing the depth of the color palette for displaying images, in bits per pixel. Obtained from the cardholder's browser using the `screen.colorDepth` JavaScript property. |
+| `screenWidth` | *number* | N/A | Total width of the cardholder’s screen in pixels. Value is returned from the `screen.width` JavaScript property |
+| `screenHeight` | *number* | N/A | Total height of the cardholder’s screen in pixels. Value is returned from the `screen.height` JavaScript property | 
+| `timezoneOffset` | *number* | N/A | Time zone offset in minutes between UTC and the local time of the cardholder's browser. **Note:** the offset is positive if the local time zone is behind UTC and negative if it is ahead | 
+| `javaEnabled` | *boolean* | N/A |  Represents the ability of the cardholder's browser to execute Java. Value is returned from the `navigator.javaEnabled` JavaScript property | 
+| `javaScriptEnabled` | *boolean* | N/A | Represents the ability of the cardholder's browser execute JavaScript |
+| `locale` | *string* | 8 | Value representing the browser's language as defined in IETF BCP47. Returned from `navigator.language` JavaScript property |
+| `accepts` | *string* | 256 | Exact content of the HTTP accept headers as sent to the 3DS requestor from the cardholder’s browser |
+| `userAgent` | *string* | 2048 | Exact content of the HTTP User-Agent header. **Note:** if the total length of the User-Agent sent by the browser exceeds 2048 characters, truncate the excess portion |
 
 The below table identifies the parameters in the `dataDynamic` object.
 
@@ -131,7 +131,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 |`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
-| `channel` | *String* | 32 | Determine the channel that the transaction came through. | 
+| `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction | 
 
 <!--
 type: tab
