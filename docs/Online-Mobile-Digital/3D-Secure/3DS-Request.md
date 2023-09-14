@@ -11,6 +11,10 @@ Commerce Hub allows a merchant to pass the 3-D Secure (3DS) authentication resul
 
 ---
 
+## Request with PaymentSource
+
+Description.....
+
 ### Request Variables
 
 The below table identifies the required parameters in the `additionalData3DS` object.
@@ -162,6 +166,12 @@ type: tab
 ```
 
 <!-- type: tab-end -->
+
+---
+
+## Request with Reference Identifier
+
+Description.....
 
 ---
 
