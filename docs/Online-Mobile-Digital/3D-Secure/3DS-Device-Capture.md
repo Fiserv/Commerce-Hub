@@ -8,7 +8,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Initilization, Device Fingerprint]
 
 ---
 
-## Device Data Initilazation
+## Device Data Initialization
 
 Initialize the 3DS session with Commerce Hub using the device data initiailization request. The response will return `encodedToken` and `dataCollectionUrl` in the the `methodData` object of `additionalData3DS`, which are required to collect the [device fingerprint](#device-fingerprint-capture) information. 
 
