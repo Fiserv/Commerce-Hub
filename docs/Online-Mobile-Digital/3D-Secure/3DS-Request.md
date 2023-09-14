@@ -4,10 +4,10 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 
 # 3-D Secure Request
 
-Commerce Hub allows a merchant to pass the 3-D Secure (3DS) authentication results that were obtained through a Commerce Hub or a thrid-party 3-D Secure provider when sending the authorization transaction. *PaymentCard* or *PaymentToken* is used by the merchant as the payment source when sending the transaction to Commerce Hub, along with the 3DS response data.
+Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication results that were obtained through a Commerce Hub or a thrid-party 3-D Secure provider when sending the authorization transaction. *PaymentCard* or *PaymentToken* is used by the merchant as the [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) when sending the transaction to Commerce Hub, along with the 3DS response data.
 
 <!-- theme: warning -->
-> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+> Merchants are required to have the relevant Payment Card Industry _(PCI)_ Compliance capabilities to process and store card data.
 
 ---
 
