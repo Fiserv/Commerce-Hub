@@ -64,7 +64,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
-| `channel` | *String* | 32 | Determine the channel that the transaction came through | 
+| `channel` | *string* | 32 | Determine the channel that the transaction came through | 
 | `methodData` | *object* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
 
 <!-- type: tab-end -->
@@ -85,7 +85,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of a device data initilzation payload request.
+#### Example of a device data initialization payload request.
 
 ```json
 {
@@ -115,7 +115,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a device data intilzation (201: Created) response.
+##### Example of a device data intialization (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -164,7 +164,7 @@ After a successful [device data initialization](#device-data-initilazation), mer
 - **Cardinal Cruise API:** Hidden iFrame using Java Web Token *(JWT)*
 
 <!-- theme; warning -->
-> Merchants are responsible for collecting the card holder device fingerprint directly when using Commerce Hub APIs. This fingerprint must be submitted in the authentication request.
+> Merchants are responsible for collecting the card holder device fingerprint directly when using Commerce Hub APIs. This fingerprint must be submitted in the [authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md).
 
 The following table outlines the required fields to be collected in the `deviceFingerprint` object. 
 
@@ -210,6 +210,8 @@ The Commerce Hub SDK can be imported into the merchant's website by adding the f
 
 #### Hidden iFrame Data Collection 
 
+Description......
+
 ```javascript
 new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-container-div")   
     .then((result) => { })   
@@ -218,7 +220,7 @@ new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-co
 
 #### Repsone Handling 
 
-Descrription?? 
+Description......
 
 <!--
 type: tab
@@ -279,4 +281,3 @@ The Cardinal Cruise API device data collection process uses the `methodData` fie
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
-
