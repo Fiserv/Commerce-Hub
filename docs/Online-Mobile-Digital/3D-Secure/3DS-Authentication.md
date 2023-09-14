@@ -89,7 +89,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 type: tab
 -->
 
-The `deviceFingerprint` is obtained from the [Device capture}(?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md) request. 
+The `deviceFingerprint` is obtained from the [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md) request. 
 
 The below table identifies the parameters in the `dataStatic` object.
 
@@ -130,7 +130,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
+|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md)e. |
 | `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction | 
 
 <!--
@@ -247,7 +247,15 @@ titles: Request, Frictionless Response, Challenge Response
 
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/3ds/authenticate)
+
+<!--
+type: tab
+-->
+
 ### Example of Frictionless Response
+
+Description.....
 
 ```json
 
@@ -307,7 +315,13 @@ titles: Request, Frictionless Response, Challenge Response
 
 ```
 
-### Example of Challenge Response 
+<!--
+type: tab
+-->
+
+### Example of Challenge Response
+
+Description.... and link to verification
 
 ```json
 
@@ -366,9 +380,6 @@ titles: Request, Frictionless Response, Challenge Response
 }
 
 ```
-
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/3ds/authenticate)
 
 <!-- type: tab-end -->
 
