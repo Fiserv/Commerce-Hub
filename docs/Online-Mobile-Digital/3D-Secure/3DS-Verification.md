@@ -4,11 +4,15 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
 
 # 3-D Secure Verification
  
-Secure Data Capture utilizes a sessionId that Commerce Hub enriches with the applicable data from the challenge.
+Description.....
+
+---
+
+## Request Variables
 
 <!--
 type: tab
-titles: ReferenceTransactionDetails
+titles: referenceTransactionDetails, merchantDetails
 -->
 
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
@@ -65,9 +69,7 @@ titles: Request, Response
 }
 ```
 
-<!---
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/3ds/v1/verify)
--->
 
 <!--
 type: tab
@@ -143,7 +145,6 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/3ds/v1/verify)
 - [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
-- [3-D Secure: Secure Data Capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md)
 - [3-D Secure Authentication Request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md)
 - [3-D Secure Request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md)
 
