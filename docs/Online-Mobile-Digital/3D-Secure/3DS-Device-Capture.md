@@ -168,17 +168,31 @@ After a successful [device data initialization](#device-data-initilazation), mer
 
 The following table outlines the required fields to be collected in the `deviceFingerprint` object. 
 
-Browser Accepts Header - Exact content of the HTTP accept headers as sent to the 3DS Requestor from the Cardholder’s browser
-Browser Color Depth - Value representing the bit depth of the colour palette for displaying images, in bits per pixel. Obtained from Cardholder browser using the screen.colorDepth property. In case the actual value does not exist in the allowed values, use the closest lower value
-Browser IP Address - IP address the browser is connecting from
-Browser Java Enabled - Boolean that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property
-Browser JavaScript Enabled - Boolean that represents the ability of the cardholder browser execute JavaScript
-Browser Language - Value representing the browser language as defined in IETF BCP47. Returned from navigator.language property
-Browser Screen Height - Total height of the Cardholder’s screen in pixels. Value is returned from the screen.height property
-Browser Screen Width - Total width of the cardholder’s screen in pixels. Value is returned from the screen.width property
-Browser Timezone - Time-zone offset in minutes between UTC and the Cardholder browser local time. Note that the offset is positive if the local time zone is behind UTC and negative if it is ahead
-Browser User Agent - Exact content of the HTTP user-agent header. Note: If the total length of the User-Agent sent by the browser exceeds 2048 characters, truncate the excess portion
-Device Channel - Indicates the type of channel interface being used to initiate the transaction
+The below table identifies the parameters in the `dataStatic` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `colorDepth` | *number* | N/A | Value representing the depth of the color palette for displaying images, in bits per pixel. Obtained from the cardholder's browser using the `screen.colorDepth` JavaScript property. |
+| `screenWidth` | *number* | N/A | Total width of the cardholder’s screen in pixels. Value is returned from the `screen.width` JavaScript property |
+| `screenHeight` | *number* | N/A | Total height of the cardholder’s screen in pixels. Value is returned from the `screen.height` JavaScript property | 
+| `timezoneOffset` | *number* | N/A | Time zone offset in minutes between UTC and the local time of the cardholder's browser. **Note:** the offset is positive if the local time zone is behind UTC and negative if it is ahead | 
+| `javaEnabled` | *boolean* | N/A |  Represents the ability of the cardholder's browser to execute Java. Value is returned from the `navigator.javaEnabled` JavaScript property | 
+| `javaScriptEnabled` | *boolean* | N/A | Represents the ability of the cardholder's browser execute JavaScript |
+| `locale` | *string* | 8 | Value representing the browser's language as defined in IETF BCP47. Returned from `navigator.language` JavaScript property |
+| `accepts` | *string* | 256 | Exact content of the HTTP accept headers as sent to the 3DS requestor from the cardholder’s browser |
+| `userAgent` | *string* | 2048 | Exact content of the HTTP User-Agent header. **Note:** if the total length of the User-Agent sent by the browser exceeds 2048 characters, truncate the excess portion |
+
+The below table identifies the parameters in the `dataDynamic` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `ipAddress` | *string* | 89 | IP address the browser is connecting from | 
+
+The following table outlines the required fields to be collected in the `additionalData3DS` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction | 
 
 ---
 
