@@ -18,7 +18,7 @@ Description......
 
 ## Step 3: Submit Authentication Request
 
-Submit a [Authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment sourceType of PaymentSession/PaymentCard/PaymentToken and the sessionId from the credentials request. 
+Submit a [Authentication request](Authentication-request) after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment sourceType of PaymentSession/PaymentCard/PaymentToken and the sessionId from the credentials request. 
 
 ---
 
