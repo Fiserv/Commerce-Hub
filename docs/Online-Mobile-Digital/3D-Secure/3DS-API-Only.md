@@ -22,6 +22,9 @@ Description......
 
 ## Step 4: Submit Transaction Request
 
+After authentication has been completed with the 3DS provider, submit a charges, tokenization, or verification request as mentioned in Submit 3DS Request, with the following difference:
+Pass the following in lieu of the source, amount, and additionalData3DS elements:
+
 ---
 
 ## See Also
