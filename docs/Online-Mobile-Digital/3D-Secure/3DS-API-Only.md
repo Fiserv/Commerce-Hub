@@ -12,7 +12,7 @@ As an opt-in feature, 3DS authentication can be enabled when creating the creden
 
 ## Step 1: Obtain PaymentSource
 
-The device data initialization request supports paymentCard, paymentToken, and paymentSession. 
+The device data initialization request supports [paymentCard](payment-Card), [paymentToken](payment-Token), and [paymentSession](payment-Session). 
 
 ---
 
