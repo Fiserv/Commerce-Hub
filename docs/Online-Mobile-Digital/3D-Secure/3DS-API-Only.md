@@ -18,6 +18,8 @@ Description......
 
 ## Step 3: Submit Authentication Request
 
+Submit a Authentication request after a successful response which identifies the card and device data was captured in Commerce Hub. The request will use the payment sourceType of PaymentSession/PaymentCard/PaymentToken and the sessionId from the credentials request. 
+
 ---
 
 ## Step 4: Submit Transaction Request
