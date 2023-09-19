@@ -170,7 +170,7 @@ type: tab
 
 ## Request with Reference Identifier
 
-The request for Refenerce Identifer is initiated by sending the referenceIdentifier in the payload and may contain the identifer is required based on this request. 
+If the 3DS [authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) was originally performed by using Commerce Hub's [Secure Data Capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) or [API](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-API-Only.md), the reference transaction identifier can be used to submit a charges or tokenization request.
 
 ---
 
