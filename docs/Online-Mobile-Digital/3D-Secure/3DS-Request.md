@@ -13,8 +13,7 @@ Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication res
 
 ## Request with PaymentSource
 
-Description.....
-
+The request for PaymentSource is initiated by sending the additionalData3DS in the payload and may contain the below objects in the table is required based on this request. 
 ### Request Variables
 
 The below table identifies the required parameters in the `additionalData3DS` object.
@@ -171,7 +170,7 @@ type: tab
 
 ## Request with Reference Identifier
 
-Description.....
+The request for Refenerce Identifer is initiated by sending the referenceIdentifier in the payload and may contain the identifer is required based on this request. 
 
 ---
 
