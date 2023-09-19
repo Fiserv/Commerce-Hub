@@ -246,13 +246,54 @@ titles: Request, Response
 
 ```json
 {
+    "amount": {
+        "total": 9.00,
+        "currency": "USD"
+    },
+    "source": {
+        "sourceType": "PaymentCard",
+        "card": {
+            "cardData": "4012000033330026",
+            "expirationMonth": "07",
+            "expirationYear": "2025",
+            "securityCode": "977"
+        }
+    },
+    "additionalData3DS": {
+        "serviceProviderTransactionId": "W1dkIvUNzLYgRGLBVNp1",
+        "acsTransactionId": "46d071e5-2447-4980-a9ba-c8c55a99107a",
+        "dsTransactionId": "3150f884-0a17-4669-8c50-5d9b8bdae022",
+        "challengeIndicator": false,
+        "authenticationStatus": "Y",
+        "serverTransactionId": "c58e7f2e-56dd-496a-acda-b39c37bdf14b",
+        "mpiData": {
+            "cavv": "MTIzNDU2Nzg5MDEyMzQ1Njc4OTA=",
+            "eci": "05"
+        },
+        "versionData": {
+            "recommendedVersion": "2.1.0"
+        }
+    },
+    "transactionDetails": {
+        "captureFlag": true,
+        "transactionCaptureType": "hcs",
+        "deviceFingerprint": [
+            { "dataDynamic": { "ipAddress": "192.168.0.12" } }
+        ]
+    },
+    "merchantDetails": {
+        "terminalId": "10000001",
+        "merchantId": "100004000100116"
     "referenceTransactionDetails": {
         "referenceTransactionId": "123456789012e98re9fsf8aa8sa88a998"
     },
-    "merchantDetails": {
-        "terminalId": "123456",
-        "merchantId": "123456789012345"
-    }
+    "customer": {
+        "firstName": "test",
+        "lastName": "name",
+        "email": "testvelocity@fiserv.com",
+        "ipAddress": "192.168.0.6"
+    },
+    "additionalDataCommon":{"directedRouting":{"processors":[{"platform":"NASHVILLE","priority":"FINAL"}]}}
 }
 ```
 
@@ -269,58 +310,162 @@ type: tab
 
 ```json
 {
-    "gatewayResponse": {
-        "transactionType": "AUTHENTICATE",
-        "transactionState": "AUTHENTICATED",
-        "transactionProcessingDetails": {
-            "transactionTimestamp": "2021-06-20T23:42:48Z",
-            "orderId": "RKOrdID-525133851837",
-            "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-            "clientRequestId": "4345791",
-            "transactionId": "84356531338"
-        }
-    },
-    "source": {
-        "sourceType": "PaymentCard",
-        "card": {
-            "bin": "40055500",
-            "last4": "0019",
-            "scheme": "VISA",
-            "expirationMonth": "10",
-            "expirationYear": "2030"
-        }
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "CAPTURED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01f7bcbe6eced099c48c745a18d845f3b8",
+      "transactionTimestamp": "2023-08-08T19:59:52.267578481Z",
+      "apiTraceId": "1efed3bb53a7474b9d1c719277c8f5e2",
+      "clientRequestId": "2282171",
+      "transactionId": "1efed3bb53a7474b9d1c719277c8f5e2"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "expirationMonth": "07",
+      "expirationYear": "2025",
+      "bin": "401200",
+      "last4": "0026",
+      "scheme": "VISA"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 9,
+      "currency": "USD"
     },
     "processorResponseDetails": {
-        "processor": "CARDINAL",
-        "responseCode": "000",
-        "responseMessage": "APPROVAL",
-        "hostResponseCode": "00",
-        "hostResponseMessage": "APPROVAL",
-        "localTimestamp": "2021-06-20T23:42:48Z"
-    },
-    "transactionDetails": {
-        "merchantTransactionId": "65757575675765",
-    },
-    "additionalData3DS": {
-        "serviceProvider": "CARDINAL",
-        "serviceProviderTransactionId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
-        "acsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a331b1",
-        "dsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a33132",
-        "acsReferenceNumber": "8561c0ef-931a-474f-bfee-55eb98a3jds7",
-        "authenticationStatus": "A",
-        "statusReason": "Approved",
-        "serverTransactionId": "8561c0ef-931a-474f-bfee-55ebds7s6s",
-        "challengeIndicator": false,
-        "mpiData": {
-            "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
-            "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
-            "eci": "05",
-            "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
-        },
-        "versionData": {
-            "recommendedVersion": "2.2.0"
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK962C",
+      "referenceNumber": "719277c8f5e2",
+      "networkRouted": "VISA",
+      "networkInternationalId": "0001",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "responseIndicators": {
+        "alternateRouteDebitIndicator": false,
+        "signatureLineIndicator": false,
+        "signatureDebitRouteIndicator": false
+      },
+      "bankAssociationDetails": {
+        "associationResponseCode": "V000",
+        "avsSecurityCodeResponse": {
+          "streetMatch": "NONE",
+          "postalCodeMatch": "NONE",
+          "securityCodeMatch": "NOT_CHECKED",
+          "association": {
+            "securityCodeResponse": "X"
+          }
         }
+      },
+      "additionalInfo": [
+        {
+          "name": "COUNTRY_CODE",
+          "value": "USA"
+        },
+        {
+          "name": "CARD_PRODUCT_ID",
+          "value": "H"
+        },
+        {
+          "name": "DETAILED_PRODUCT_ID",
+          "value": "C"
+        },
+        {
+          "name": "HOST_RAW_PROCESSOR_RESPONSE",
+          "value": "ARAyIAGADoAAAgAAAAAAAAAJAAgIGVlSAAB5AAFZNzE5Mjc3YzhmNWUyT0s5NjJDMDAwMTY1MDk3MQIZAEgxNFUwMTMyMjA3MTE0OTg2MjVHNzE1ICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlYAAM2NTEABlZJQ1JDIAAxU1AwNzAxNjg0MDg3Mjc4OTU4MDAwMjYxMDAwMzAwMgBGU0RSSTAxNTAwMDAwMDAwMDAwMDAwME5MMDA0VklTQVRZMDAxQ0FSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW"
+        }
+      ]
     }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "transactionCaptureType": "hcs",
+    "processingCode": "000000",
+    "transactionCutTimeStamp": "2023-08-09T01:45:00Z",
+    "deviceFingerprint": [
+      {
+        "dataDynamic": {
+          "ipAddress": "192.168.0.12"
+        }
+      }
+    ],
+    "createToken": true,
+    "retrievalReferenceNumber": "719277c8f5e2"
+  },
+  "transactionInteraction": {
+    "posEntryMode": "MANUAL",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM",
+    "additionalPosInformation": {
+      "stan": "000079",
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED",
+        "terminalEntryCapability": "UNSPECIFIED"
+      }
+    },
+    "authorizationCharacteristicsIndicator": "U",
+    "hostPosEntryMode": "010",
+    "hostPosConditionCode": "59"
+  },
+  "merchantDetails": {
+    "tokenType": "BBY0",
+    "terminalId": "10000001",
+    "merchantId": "100004000100116"
+  },
+  "networkDetails": {
+    "network": {
+      "network": "Visa"
+    },
+    "networkResponseCode": "00",
+    "cardLevelResultCode": "C",
+    "validationCode": "G715",
+    "transactionIdentifier": "013220711498625"
+  },
+  "cardDetails": {
+    "recordType": "DETAIL",
+    "lowBin": "4012000",
+    "highBin": "4012000",
+    "binLength": "07",
+    "binDetailPan": "16",
+    "countryCode": "USA",
+    "detailedCardProduct": "VISA",
+    "detailedCardIndicator": "CREDIT",
+    "pinSignatureCapability": "SIGNATURE",
+    "issuerUpdateYear": "21",
+    "issuerUpdateMonth": "12",
+    "issuerUpdateDay": "01",
+    "regulatorIndicator": "NON_REGULATED",
+    "cardClass": "CONSUMER",
+    "nonMoneyTransferOCTsDomestic": "NOT_SUPPORTED",
+    "nonMoneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
+    "onlineGamblingOCTsDomestic": "NOT_SUPPORTED",
+    "onlineGamblingOCTsCrossBorder": "NOT_SUPPORTED",
+    "moneyTransferOCTsDomestic": "NOT_SUPPORTED",
+    "moneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
+    "fastFundsDomesticMoneyTransfer": "NOT_SUPPORTED",
+    "fastFundsCrossBorderMoneyTransfer": "NOT_SUPPORTED",
+    "fastFundsDomesticNonMoneyTransfer": "NOT_SUPPORTED",
+    "fastFundsCrossBorderNonMoneyTransfer": "NOT_SUPPORTED",
+    "fastFundsDomesticGambling": "NOT_SUPPORTED",
+    "fastFundsCrossBorderGambling": "NOT_SUPPORTED",
+    "productId": "A",
+    "accountFundSource": "CREDIT",
+    "panLengthMin": "16",
+    "panLengthMax": "16"
+  },
+  "paymentTokens": [
+    {
+      "tokenData": "8408727895800026",
+      "tokenSource": "TRANSARMOR",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
+    }
+  ]
 }
 ```
 
