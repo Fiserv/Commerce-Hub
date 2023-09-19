@@ -19,7 +19,7 @@ tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, W
 ## Step 1: Configure Tap to Pay on iPhone
 
 [Request an entitlement](https://developer.apple.com/contact/request/tap-to-pay-on-iphone) from Apple to enable Tap To Pay on iPhone. Select **Fiserv** as the Payment Service Provider _(PSP)_.
-​
+
 Follow the [instructions](https://developer.apple.com/documentation/proximityreader/setting-up-the-entitlement-for-tap-to-pay-on-iphone) to add the entitlement to your app's profile.
 
 ---
@@ -57,23 +57,23 @@ let myConfig = FiservTTPConfig(
 ```
 
 ---
-​
+
 ## Step 5: Configure Card Reader
 
 Create an instance of `FiservTTPCardReader` to the view model, this is the main class the app will interact with.
-​
+
 ```Swift
 private let fiservTTPCardReader: FiservTTPCardReader = FiservTTPCardReader(configuration: myConfig)
 ```
-​
+
 In the startup process of the app, call the following method to validate that the device supports Tap To Pay on iPhone.
-​
+
 ```Swift
 if !fiservTTPCardReader.readerIsSupported() {
     ///TODO handle unsupported device
 }
 ```
-​
+
 ---
 
 ## Step 6: Obtain Token
@@ -82,7 +82,7 @@ Obtain a session token to utilize the SDK.
 
 <!-- theme: info -->
 > The session token will expire in 24 hours, the merchant is responsible for keeping track of when to obtain a new token.
-​
+
 ```Swift
 do {
     try await fiservTTPCardReader.requestSessionToken()
@@ -90,7 +90,7 @@ do {
     ///TODO handle exception
 }
 ```
-​
+
 ---
  
 ## Step 7: Link Apple Account
@@ -99,7 +99,7 @@ Link the device running the app to an Apple ID.
 
 <!-- theme: info -->
 > This only needs to occur once, the merchant is responsible for tracking whether the linking process has occurred or not. 
-​
+
 ```Swift
 do {
     try await fiservTTPCardReader.linkAcount()
@@ -107,7 +107,7 @@ do {
     ///TODO handle exception
 }
 ```
-​
+
 ---
 
 ## Step 8: Initialize Card Reader Session
@@ -116,7 +116,7 @@ Initialize the Apple Proximity Reader session.
 
 <!-- theme: info -->
 > The card reader must be re-initialized each time the app starts and/or returns to the foreground.
-​
+
 ```Swift
 do {
     try await fiservTTPCardReader.activateReader()
@@ -124,9 +124,9 @@ do {
     ///TODO handle exception
 }
 ```
-​
+
 ---
-​
+
 ## Step 9: Submit a Request
 
 Submit a payment request to Commerce Hub.
@@ -137,7 +137,7 @@ titles: Charges, Cancels, Refunds
 -->
 
 ##### Charges Request
-​
+
 <!-- theme: info -->
 > Currently Tap to Pay on iPhone only supports USD.
 
@@ -145,7 +145,7 @@ titles: Charges, Cancels, Refunds
 let amount = 10.99
 let merchantOrderId = "1234567890"
 let merchantTransactionId = "1234567890"
-​
+
 do {
     let chargeResponse = try await readCard(
         amount: amount, 
@@ -207,7 +207,7 @@ do {
 Download [Commerce Hub's Tap to Pay on iPhone Test App](https://github.com/Fiserv/TTPSampleApp).
 
 <-- theme: info -->
-> ​The XCode simulator supports testing Tap to Pay on iPhone, but it generates an intentionally invalid payment payload, so calls to authorize will fail. ​To run on a physical iPhone against the test environment, you must be logged into the phone with an [Apple Sandbox ID](https://developer.apple.com/apple-pay/sandbox-testing/).
+> The XCode simulator supports testing Tap to Pay on iPhone, but it generates an intentionally invalid payment payload, so calls to authorize will fail. To run on a physical iPhone against the test environment, you must be logged into the phone with an [Apple Sandbox ID](https://developer.apple.com/apple-pay/sandbox-testing/).
 
 ---
 
@@ -215,8 +215,8 @@ Download [Commerce Hub's Tap to Pay on iPhone Test App](https://github.com/Fiser
 
 - [Commerce Hub Package](https://github.com/Fiserv/TTPPackage)
 - [Commerce Hub Sample App](https://github.com/Fiserv/TTPSampleApp)
-- ​[Apple's Merchant FAQs](https://register.apple.com/tap-to-pay-on-iphone/faq)​
-- ​[Tap to Pay on iPhone Security](https://support.apple.com/guide/security/tap-to-pay-on-iphone-sec72cb155f4/web)
+- [Apple's Merchant FAQs](https://register.apple.com/tap-to-pay-on-iphone/faq)
+- [Tap to Pay on iPhone Security](https://support.apple.com/guide/security/tap-to-pay-on-iphone-sec72cb155f4/web)
 - [In-Person Payments](?path=docs/Getting-Started/Getting-Started-InPerson.md)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
 
