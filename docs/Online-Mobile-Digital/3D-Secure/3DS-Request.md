@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 
 # 3-D Secure Request
 
-Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication results that were obtained through a Commerce Hub or a thrid-party 3-D Secure provider when sending the authorization transaction. *PaymentCard* or *PaymentToken* is used by the merchant as the [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) when sending the transaction to Commerce Hub, along with the 3DS response data.
+Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication results that were obtained through a Commerce Hub or a thrid-party 3-D Secure provider when sending a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. *PaymentCard* or *PaymentToken* is used by the merchant as the [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) when sending the transaction to Commerce Hub, along with the 3DS response data.
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry _(PCI)_ Compliance capabilities to process and store card data.
@@ -13,7 +13,8 @@ Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication res
 
 ## Request with PaymentSource
 
-The request for PaymentSource is initiated by sending the additionalData3DS in the payload and may contain the below objects in the table is required based on this request. 
+A request using `PaymentSource` requires sending the `additionalData3DS` data that is acquired through Commerce Hub or a thrid-party 3-D Secure provider listed in the table below.
+
 ### Request Variables
 
 The below table identifies the required parameters in the `additionalData3DS` object.
@@ -46,12 +47,21 @@ The below table identifies the `versionData` parameters in the `additionalData3D
 
 ---
 
+### Endpoint
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
+
+---
+
 ### Payload Example
 
 <!--
 type: tab
 titles: Request, Response
 -->
+
+##### Example of charges payload request with 3DS autnetication data.
 
 ```json
 {
@@ -93,12 +103,19 @@ titles: Request, Response
     "terminalId": "00000001"
   }
 }
-
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
 
 <!--
 type: tab
 -->
+
+##### Example of a charges (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -171,6 +188,138 @@ type: tab
 ## Request with Reference Identifier
 
 If the 3DS [authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) was originally performed by using Commerce Hub's [Secure Data Capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) or [API](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-API-Only.md), the reference transaction identifier can be used to submit a charges or tokenization request.
+
+---
+
+### Request Variables
+
+<!--
+type: tab
+titles: referenceTransactionDetails, merchantDetails
+-->
+
+The below table identifies the available parameters in the `referenceTransactionDetails` object.
+
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request. 
+
+| Variable | Data Type| Maximum Length |Description |
+|---------|----------|----------------|---------|
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the available parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length |Description |
+|---------|----------|----------------|---------|
+| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. | 
+
+<!-- type: tab-end -->
+
+---
+
+### Endpoint
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
+
+---
+
+### Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+##### Example of charges payload request using a referece identifier.
+
+```json
+{
+    "referenceTransactionDetails": {
+        "referenceTransactionId": "123456789012e98re9fsf8aa8sa88a998"
+    },
+    "merchantDetails": {
+        "terminalId": "123456",
+        "merchantId": "123456789012345"
+    }
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+-->
+
+##### Example of a charges (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+{
+    "gatewayResponse": {
+        "transactionType": "AUTHENTICATE",
+        "transactionState": "AUTHENTICATED",
+        "transactionProcessingDetails": {
+            "transactionTimestamp": "2021-06-20T23:42:48Z",
+            "orderId": "RKOrdID-525133851837",
+            "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+            "clientRequestId": "4345791",
+            "transactionId": "84356531338"
+        }
+    },
+    "source": {
+        "sourceType": "PaymentCard",
+        "card": {
+            "bin": "40055500",
+            "last4": "0019",
+            "scheme": "VISA",
+            "expirationMonth": "10",
+            "expirationYear": "2030"
+        }
+    },
+    "processorResponseDetails": {
+        "processor": "CARDINAL",
+        "responseCode": "000",
+        "responseMessage": "APPROVAL",
+        "hostResponseCode": "00",
+        "hostResponseMessage": "APPROVAL",
+        "localTimestamp": "2021-06-20T23:42:48Z"
+    },
+    "transactionDetails": {
+        "merchantTransactionId": "65757575675765",
+    },
+    "additionalData3DS": {
+        "serviceProvider": "CARDINAL",
+        "serviceProviderTransactionId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
+        "acsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a331b1",
+        "dsTransactionId": "8561c0ef-931a-474f-bfee-55eb98a33132",
+        "acsReferenceNumber": "8561c0ef-931a-474f-bfee-55eb98a3jds7",
+        "authenticationStatus": "A",
+        "statusReason": "Approved",
+        "serverTransactionId": "8561c0ef-931a-474f-bfee-55ebds7s6s",
+        "challengeIndicator": false,
+        "mpiData": {
+            "cavv": "AAABCZIhcQAAAABZlyFxAAAAAAA",
+            "xid": "&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695",
+            "eci": "05",
+            "tavv": "AAABCZIhcQAAAABZlyFxAAAAAAA"
+        },
+        "versionData": {
+            "recommendedVersion": "2.2.0"
+        }
+    }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
