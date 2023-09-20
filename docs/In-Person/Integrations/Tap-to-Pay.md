@@ -4,11 +4,11 @@ tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Apple, Mobile, W
 
 # Tap to Pay on iPhone
 
-[Tap to Pay on iPhone](https://developer.apple.com/tap-to-pay/) allows merchant's to accept contactless payments using a [supported iPhone](https://register.apple.com/tap-to-pay-on-iphone/faq) or a partner-enabled iOS app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, Apple Pay, Apple Watch, and smartphones with other digital wallets. No additional hardware is required to accept contactless payments through Tap to Pay on iPhone, so merchant's can accept payments from anywhere. 
+[Tap to Pay on iPhone](https://developer.apple.com/tap-to-pay/) allows merchants to accept contactless payments using a [supported iPhone](https://register.apple.com/tap-to-pay-on-iphone/faq) or a partner-enabled iOS app. Tap to Pay on iPhone allows the merchant's app to accept payments from contactless credit or debit cards, Apple Pay, Apple Watch, and smartphones with other digital wallets. No additional hardware is required to accept contactless payments through Tap to Pay on iPhone, so merchants can accept payments from anywhere.
 
-### How it Works
+## How it Works
 
-1. The merchant intiates a transaction from their iPhone app.
+1. The merchant initiates a transaction from their iPhone app.
 2. The customer taps their contactless payment instrument on the iPhone.
 3. The merchant's app submits the payload to Commerce Hub's SDK.
 4. Commerce Hub's SDK sends the payment information to Commerce Hub.
@@ -26,7 +26,7 @@ Follow the [instructions](https://developer.apple.com/documentation/proximityrea
 
 ## Step 2: Obtain API Credentials
 
-Obtain an [API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md), access the developer dashboard to create a workspace by using the default MID or [creating a dedicated sandbox MID](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md).
+Obtain an [API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md), and access the developer dashboard to create a workspace by using the default MID or [creating a dedicated sandbox MID](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md).
 
 <!-- theme: info -->
 > These are required in the app.
@@ -35,7 +35,7 @@ Obtain an [API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Ma
 
 ## Step 3: Load Tap to Pay on iPhone Package
 
-Create a new project or open yoru existing app in XCode and [add](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) the Fiserv Tap to Pay on iPhone Package using the URL: _https://github.com/Fiserv/TTPPackage_.
+Create a new project or open your existing app in XCode and [add](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) the Fiserv Tap to Pay on iPhone Package using the following URL: _<https://github.com/Fiserv/TTPPackage>_.
 
 ---
 
@@ -92,17 +92,17 @@ do {
 ```
 
 ---
- 
+
 ## Step 7: Link Apple Account
 
 Link the device running the app to an Apple ID.
 
 <!-- theme: info -->
-> This only needs to occur once, the merchant is responsible for tracking whether the linking process has occurred or not. 
+> This only needs to occur once, the merchant is responsible for tracking whether the linking process has occurred or not.
 
 ```Swift
 do {
-    try await fiservTTPCardReader.linkAcount()
+    try await fiservTTPCardReader.linkAccount()
 } catch let error as FiservTTPCardReaderError {
     ///TODO handle exception
 }
@@ -136,7 +136,7 @@ type: tab
 titles: Charges, Cancels, Refunds
 -->
 
-##### Charges Request
+### Charges Request
 
 <!-- theme: info -->
 > Currently Tap to Pay on iPhone only supports USD.
@@ -161,7 +161,7 @@ do {
 type: tab
 -->
 
-##### Cancels Request
+### Cancels Request
 
 <!-- theme: info -->
 > To support partial cancels it must be configured in Merchant Boarding and Configuration. Please contact your account representative for details.
@@ -183,7 +183,7 @@ do {
 type: tab
 -->
 
-##### Refunds Request
+### Refunds Request
 
 ```Swift
 let amount = 10.99
@@ -206,7 +206,7 @@ do {
 
 Download [Commerce Hub's Tap to Pay on iPhone Test App](https://github.com/Fiserv/TTPSampleApp).
 
-<-- theme: info -->
+<!-- theme: info -->
 > The XCode simulator supports testing Tap to Pay on iPhone, but it generates an intentionally invalid payment payload, so calls to authorize will fail. To run on a physical iPhone against the test environment, you must be logged into the phone with an [Apple Sandbox ID](https://developer.apple.com/apple-pay/sandbox-testing/).
 
 ---
