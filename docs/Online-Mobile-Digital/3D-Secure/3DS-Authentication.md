@@ -29,8 +29,8 @@ The below table identifies the parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `total` | *number* | 12	| Total amount of the transaction. Subcomponent values must add up to total amount. |
-| `currency` | *string* |	3	| The requested currency in ISO 3 Currency Format. | 
+| `total` | *number* | 12 | Total amount of the transaction. Subcomponent values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in ISO 3 Currency Format. |
 
 <!--
 type: tab
@@ -40,25 +40,25 @@ The below table identifies the parameters in the `billingAddress` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | :------------: | ------------------ |
-| `firstName` | *string* | 256 | Billing first name | 
-| `lastName` | *string* | 256 | Billing last name | 
-| `address` | *object* | N/A | Address subcomponent objects | 
-| `phone` | *object* | N/A | Phone subcomponets objects | 
+| `firstName` | *string* | 256 | Billing first name |
+| `lastName` | *string* | 256 | Billing last name |
+| `address` | *object* | N/A | Address subcomponent objects |
+| `phone` | *object* | N/A | Phone subcomponent objects |
 
 <!--
 type: tab
 -->
 
-The below table identifies the parameters in the `shippinggAddress` object.
+The below table identifies the parameters in the `shippingAddress` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-|  `firstName` | *string* | 256 | Shipping first name | 
-| `lasttName` | *string* | 256 | Shipping last name | 
+|  `firstName` | *string* | 256 | Shipping first name |
+| `lastName` | *string* | 256 | Shipping last name |
 | `address` | *object* | N/A | Address subcomponent objects |
-| `shippingMethod` | *string* | 60 | Shipping or delivery method | 
-| `shippingTimeFrame` | *string* | 40 | Indicates shipping timeframe | 
-| `shipToEmail` | *string* | 256 | Email on a digital delivery transaction | 
+| `shippingMethod` | *string* | 60 | Shipping or delivery method |
+| `shippingTimeFrame` | *string* | 40 | Indicates shipping timeframe |
+| `shipToEmail` | *string* | 256 | Email on a digital delivery transaction |
 
 <!--
 type: tab
@@ -68,12 +68,12 @@ The below table identifies the parameters in the `Address` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `street` | *string* | 256 | Street address | 
+| `street` | *string* | 256 | Street address |
 | `houseNumberOrName` | *string* | 256 | Secondary address information, e.g. house number or name |
 | `city` | *string* | 256 | City or locality |
 | `StateOrProvince` | *string* | 256 | State or province |
-| `postalCode` | *string* | 10 | ZIP code or postal code | 
-| `country` | *string* | 256 | 	ISO-3166-1 alpha-2, alpha-3, numeric or full country name | 
+| `postalCode` | *string* | 10 | ZIP code or postal code |
+| `country` | *string* | 256 |  ISO-3166-1 alpha-2, alpha-3, numeric or full country name |
 
 <!--
 type: tab
@@ -83,13 +83,13 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `deviceFingerprint` | *array* | N/A | Array of Device Fingerprint subcomponet objects |
+| `deviceFingerprint` | *array* | N/A | Array of Device Fingerprint subcomponent objects |
 
 <!--
 type: tab
 -->
 
-The `deviceFingerprint` is obtained from the [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md) request. 
+The `deviceFingerprint` is obtained from the [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md) request.
 
 The below table identifies the parameters in the `dataStatic` object.
 
@@ -97,9 +97,9 @@ The below table identifies the parameters in the `dataStatic` object.
 | -------- | :--: | :------------: | ------------------ |
 | `colorDepth` | *number* | N/A | Value representing the depth of the color palette for displaying images, in bits per pixel. Obtained from the cardholder's browser using the `screen.colorDepth` JavaScript property. |
 | `screenWidth` | *number* | N/A | Total width of the cardholder’s screen in pixels. Value is returned from the `screen.width` JavaScript property |
-| `screenHeight` | *number* | N/A | Total height of the cardholder’s screen in pixels. Value is returned from the `screen.height` JavaScript property | 
-| `timezoneOffset` | *number* | N/A | Time zone offset in minutes between UTC and the local time of the cardholder's browser. **Note:** the offset is positive if the local time zone is behind UTC and negative if it is ahead | 
-| `javaEnabled` | *boolean* | N/A |  Represents the ability of the cardholder's browser to execute Java. Value is returned from the `navigator.javaEnabled` JavaScript property | 
+| `screenHeight` | *number* | N/A | Total height of the cardholder’s screen in pixels. Value is returned from the `screen.height` JavaScript property |
+| `timezoneOffset` | *number* | N/A | Time zone offset in minutes between UTC and the local time of the cardholder's browser. **Note:** the offset is positive if the local time zone is behind UTC and negative if it is ahead |
+| `javaEnabled` | *boolean* | N/A |  Represents the ability of the cardholder's browser to execute Java. Value is returned from the `navigator.javaEnabled` JavaScript property |
 | `javaScriptEnabled` | *boolean* | N/A | Represents the ability of the cardholder's browser execute JavaScript |
 | `locale` | *string* | 8 | Value representing the browser's language as defined in IETF BCP47. Returned from `navigator.language` JavaScript property |
 | `accepts` | *string* | 256 | Exact content of the HTTP accept headers as sent to the 3DS requestor from the cardholder’s browser |
@@ -109,7 +109,7 @@ The below table identifies the parameters in the `dataDynamic` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `ipAddress` | *string* | 89 | Device IP address | 
+| `ipAddress` | *string* | 89 | Device IP address |
 
 <!--
 type: tab
@@ -131,7 +131,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 |`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md)e. |
-| `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction | 
+| `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction |
 
 <!--
 type: tab
@@ -141,8 +141,8 @@ The below table identifies the parameters in the `customer` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `email` | *string* | 256 | customer email address | 
-| `phone` | *array* | N/A | Array of phone subcomponet objects | 
+| `email` | *string* | 256 | customer email address |
+| `phone` | *array* | N/A | Array of phone subcomponent objects |
 
 <!-- type: tab-end -->
 
@@ -155,7 +155,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 |`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
-| `channel` | *String* | 32 | Determine the channel that the transaction came through. | 
+| `channel` | *String* | 32 | Determine the channel that the transaction came through. |
 
 ---
 
@@ -231,7 +231,7 @@ titles: Request, Frictionless Response, Challenge Response
     "merchantId": "100004000100116"
   },
   "additionalData3DS": {
-    "serviceProviderReferenceId": "{{lDfRefrenceId}}",
+    "serviceProviderReferenceId": "{{lDfReferenceId}}",
     "channel": "BROWSER"
   },
   "customer": {
@@ -394,4 +394,3 @@ Description.... and link to verification
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
-
