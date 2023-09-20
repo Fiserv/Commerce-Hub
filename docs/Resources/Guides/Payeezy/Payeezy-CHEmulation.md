@@ -102,6 +102,9 @@ Below is a list of negative response codes and the dollar amounts required to ge
 | Card Brand | Card Data | Amount | Nashville Code | Nashville Message | Exact Code | Exact Message | Compass Code | Compass Message |
 | -------- | ------------- | -------------- |:---------:|--------|:-----:|-----|:-----:|-----|
 |Visa|4012000033330026|$215.00|10 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Visa|4012000033330026|$44.67|C2|CVV2 Declined|8|CVV2/CID/CVC2 Data not verified|503|Fraud / Security Violation|
+|Visa|4012000033330026|$14.21|14|INV ACCT NUM|22|Invalid Credit Card Number|763|Invalid Account Number|
+|Visa|4012000033330026|$81.00|91|PLEASE RETRY|7|Terminal Restriction: Try again later|902|Process Unavailable|
 
 ### Other Response Differences to Expect
 
