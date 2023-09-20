@@ -4,6 +4,16 @@
       "language": "markdown",
       "scheme": "file",
       "pattern": "docs/In-Person/Integrations/Tap-to-Pay.md"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "docs/In-Person/Integrations/Encrypted-PIN-Pad.md"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "docs/Getting-Started/Getting-Started-InPerson.md"
     }
   ]
 }
