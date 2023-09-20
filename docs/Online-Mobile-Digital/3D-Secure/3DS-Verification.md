@@ -3,7 +3,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
 ---
 
 # 3-D Secure Verification
- 
+
 Description.....
 
 ---
@@ -18,7 +18,7 @@ titles: referenceTransactionDetails, merchantDetails
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
@@ -34,7 +34,7 @@ The below table identifies the available parameters in the `merchantDetails` obj
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
 | `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. | 
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -54,7 +54,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a 3DS verification payload request.
+### Example of a 3DS verification payload request
 
 ```json
 {
@@ -74,7 +74,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a 3DS verification (201: Created) response.
+### Example of a 3DS verification (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
