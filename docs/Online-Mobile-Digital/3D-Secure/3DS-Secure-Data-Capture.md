@@ -25,7 +25,6 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 The credential request is also needed to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the Secure Data Capture request and `sessionId` required in the subsequent request.
 
-
 ---
 
 ## Step 2: Configure iFrame or JS
