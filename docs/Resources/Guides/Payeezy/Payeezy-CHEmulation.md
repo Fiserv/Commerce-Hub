@@ -21,7 +21,8 @@ If you have been directed to reveiw this page, it means that your MIDs will soon
 
 5. **RECODE TO COMMERCE HUB:** Now that you have been migrated to Commerce Hub emulation, it is time to begin planning your upgrade to the full capablities that Commerce Hub has to offer!  Here is the place to start: [Getting Started with Commerce Hub](?path=docs/Getting-Started/Getting-Started-General.md)  There is also a [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md) that will help you to understand how to transition your code from one platform to the next and incorporate features. 
 
-Your billing code will change - please reach out to your AM/RM with any questions concerning the potential impact.
+<!-- theme: warning -->
+>Your billing code will change - please reach out to your AM/RM with any questions concerning the potential impact.
 
 ---
 
@@ -94,7 +95,7 @@ All AVS/CVV decline responses will appear as:
 <!-- theme: info -->
 >These are generic fraud response messages. Commerce Hub emulation will not return messages specific to the reason for decline.
 
-### Declined Response
+### Declined Responses
 
 ### Other Response Differences to Expect
 
