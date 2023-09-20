@@ -97,6 +97,12 @@ All AVS/CVV decline responses will appear as:
 
 ### Declined Responses
 
+Below is a list of negative response codes and the dollar amounts required to generate the specific responses.
+
+| Card Brand | Card Data | Amount | Nashville Code | Nashville Message | Exact Code | Exact Message | Compass Code | Compass Message |
+| -------- | ------------- | -------------- |:---------:|--------|:-----:|-----|:-----:|-----|
+|Visa|4012000033330026|$215.00|10 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+
 ### Other Response Differences to Expect
 
 - Gateway validation of authorization_num and transaction_tag will no longer happen.  Declines due to these element values being invalid will come from the downstream system and the decline response will reflect that of a bank response message.
