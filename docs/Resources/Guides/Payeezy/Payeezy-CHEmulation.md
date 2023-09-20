@@ -108,7 +108,7 @@ Below is a list of negative response codes and the dollar amounts required to ge
 |MasterCard|5434842555555556|$123.27|M065|ADD AUTH REQUIRE|7|Terminal Restriction: Try again later|||
 |MasterCard|5434842555555556|$206.99|13|INV AMT|26|Invalid Amount|607|Invalid Amount|
 |MasterCard|5434842555555556|$204.99|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
-
+|Amex|373953192341004|$7.00|57|TRAN NOT ALLOWED|32|Invalid Transaction Code|253|Invalid Tran. Type|
 
 
 ### Other Response Differences to Expect
