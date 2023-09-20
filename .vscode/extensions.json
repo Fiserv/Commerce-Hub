@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "davidanson.vscode-markdownlint",
+    "oliversturm.fix-json",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

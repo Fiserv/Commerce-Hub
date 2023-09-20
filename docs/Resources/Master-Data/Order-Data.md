@@ -18,8 +18,8 @@ The below table identifies the parameters in the `orderData` object.
 | `orderDate` | *string* | 10 | Date that goods and services are ordered. YYYY-MM-DD format. |
 | `itemCount` | *integer* | 2 | Total number of items included in the purchase |
 | `itemDetails` | *array* | N/A | List of all [item details](#item-details) including categories along with amount and quantity |
-| `preOrder` | *boolean* | N/A | Identifies if the purchase is a preorder |
-| `preOrderDate` | *string* | 10 | Date that goods and services are preordered. YYYY-MM-DD format. |
+| `preOrder` | *boolean* | N/A | Identifies if the purchase is a pre-order |
+| `preOrderDate` | *string* | 10 | Date that goods and services are pre-ordered. YYYY-MM-DD format. |
 | `reOrder` | *boolean* | N/A | Identifies if the purchase is a reorder |
 | `goodsSoldCode` | *string* |  | Indicates a specific type of good is being purchased in an Amex, [EDS](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md) or 3D-Secure transaction. It is used to help identify potentially fraudulent sales. **Valid Value:** *GIFT_CARD* |
 | `giftcardCount`  | *integer* | 2 | Number of gift cards purchased during the transaction |
@@ -78,7 +78,7 @@ Item details is an array that identifies the category, item count, and value of 
 
 <!--
 type: tab
-titles: itemDetails, JSON Exaample
+titles: itemDetails, JSON Example
 -->
 
 The below table identifies the parameters in the `itemDetails` array.
