@@ -9,6 +9,9 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 
 If you have been directed to reveiw this page, it means that your MIDs will soon be upgraded to Commerce Hub through emulation. The purpose of this document is to outline the steps of this journey, call out the anticipated response payload differences between Payeezy and the Commerce Hub emulator and guide you to the appropriate place for support.
 
+<!-- theme: warning -->
+>Your billing code will change - please reach out to your AM/RM with any questions concerning the potential impact.
+
 **Let's begin...**
 
 1. **PREPARE TO TEST:** *We encourage all of our clients to test this new environment!*  All merchants will receive a set of test credentials.  These generic test credentials are not merchant specific; testing will be done in a shared sandbox.  We recommend that you do not include any proprietray information in your test payloads.
@@ -20,9 +23,6 @@ If you have been directed to reveiw this page, it means that your MIDs will soon
 4. **UPGRADE:** There is nothing expected of the merchant during this time; notification before and after will be communicated and once complete, we will begin to monitor.  AT this point, reporting, Virtual Terminal and User Management will now reside in ClientLine Enterprise (CLX).  Please see reporting section below for more information.
 
 5. **RECODE TO COMMERCE HUB:** Now that you have been migrated to Commerce Hub emulation, it is time to begin planning your upgrade to the full capablities that Commerce Hub has to offer!  Here is the place to start: [Getting Started with Commerce Hub](?path=docs/Getting-Started/Getting-Started-General.md)  There is also a [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md) that will help you to understand how to transition your code from one platform to the next and incorporate features. 
-
-<!-- theme: warning -->
->Your billing code will change - please reach out to your AM/RM with any questions concerning the potential impact.
 
 ---
 
@@ -70,6 +70,9 @@ This table respresents the shortened list of expected response codes:
 
 ### Fraud Response
 
+<!-- theme: info -->
+>These are generic fraud response messages. Commerce Hub emulation will not return messages specific to the reason for decline.
+
 All negative filter and velocity control decline responses will appear as:
 
 ```json
@@ -91,9 +94,6 @@ All AVS/CVV decline responses will appear as:
 ```
 
  AVS and CVV2 codes will also be returned in the response as expected.
- 
-<!-- theme: info -->
->These are generic fraud response messages. Commerce Hub emulation will not return messages specific to the reason for decline.
 
 ### Declined Responses
 
