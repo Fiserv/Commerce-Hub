@@ -66,12 +66,11 @@ JSON string format for `orderData`:
 }
 ```
 
-
 <!-- type: tab-end -->
 
-### Item Details
+## Item Details
 
-Item details is an array that identifies the category, item count, and value of the customer's purchase, where each group of values is defined by the category.
+Item details are an array that identifies the category, item count, and value of the customer's purchase, where each group of values is defined by the category.
 
 <!-- theme: example -->
 > If customer purchased a pair of tennis shoes, a tennis racket, and tennis balls, the array will contain groups, see JSON example.
@@ -115,8 +114,7 @@ JSON string format for `itemDetails`:
     },
     {
       "categoryName": "Sporting Goods",
-      "itemCount": 2,
-      "value": 59.98
+      "itemCount": "2\"value\": 59.98",
       "insuranceClaimNumber": "5438",
       "department": "1",
       "subDepartment": "3",

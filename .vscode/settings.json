@@ -1,5 +1,11 @@
 {
   "cSpell.words": [
     "giftcardCount"
+  ],
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file"
+    }
   ]
 }
