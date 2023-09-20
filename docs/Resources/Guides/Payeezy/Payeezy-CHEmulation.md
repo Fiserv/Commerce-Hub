@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 
 ---
 
-## Welcome to Commerce Hub through Emulation!   
+# Welcome to Commerce Hub through Payeezy Emulation!   
 
 If you have been directed to reveiw this page, it means that your MIDs will soon be upgraded to Commerce Hub through emulation. The purpose of this document is to outline the steps of this journey, call out the anticipated response payload differences between Payeezy and the Commerce Hub emulator and guide you to the appropriate place for support.
 
@@ -24,7 +24,7 @@ Your billing code will change - please reach out to your AM/RM with any question
 
 ---
 
-### Reporting
+## Reporting
 
 It's time to start moving away from Payeezy Real-time Payment Manager (RPM) as your source for transaction reporting and towards ClientLine Enterprise (CLX) reporting.   [ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) is available so that you can become familiar with the new reporting platform's features and functionality.
 
@@ -32,11 +32,12 @@ We also have a dedicated article in the [Payeezy Merchant Upgrade to Commerce Hu
 
 ---
 
-### Response Payload Differences
+## Response Payload Differences
 
-**Response Codes**
+### Response Codes
 
 Bank Response Codes, Bank Messages, Exact Response Codes and Exact Messages have been paired down to a normalized list.  This means that not all codes and related messages documented in Payeezy will continue to be returned in the response.  *Note: No new codes or messages have been introduced.*  
+
 This table respresents the shortened list of expected response codes:
 
 | Bank Response Code | Bank Message | Exact Response Code | Exact Message |
@@ -65,30 +66,35 @@ This table respresents the shortened list of expected response codes:
 |902|Process Unavailable|12|Message Timed-out at Host|
 |902|Process Unavailable|42|Unable to Send Trans|
 
-**Fraud Response**
+### Fraud Response
 
 All negative filter and velocity control decline responses will appear as:
 
-  "transaction_error": 1, <br>
-    "transaction_approved": 0, <br>
-    "exact_resp_code": "72", <br>
-    "exact_message": "Data within the transaction is incorrect" 
+```json
+  "transaction_error": 1,
+  "transaction_approved": 0,
+  "exact_resp_code": "72",
+  "exact_message": "Data within the transaction is incorrect"
+```
 
 All AVS/CVV decline responses will appear as:
 
- "transaction_error": 1, <br>
- "transaction_approved": 0, <br>
- "exact_resp_code": "72", <br>
- "exact_message": "Data within the transaction is incorrect", <br>
- "bank_resp_code": "100", <br>
- "bank_message": "Approved", <br>
+```json
+ "transaction_error": 1,
+ "transaction_approved": 0,
+ "exact_resp_code": "72",
+ "exact_message": "Data within the transaction is incorrect",
+ "bank_resp_code": "100",
+ "bank_message": "Approved", 
+```
+
  AVS and CVV2 codes will also be returned in the response as expected.
+ 
+<!-- theme: info -->
+>These are generic fraud response messages. Commerce Hub emulation will not return messages specific to the reason for decline.
 
-*NOTE: These are generic fraud response messages.  Commerce Hub emulation will not return messages specific to the reason for decline.*
+### Declined Response
 
-**Other Response Differences to Expect**
+### Other Response Differences to Expect
 
 - Gateway validation of authorization_num and transaction_tag will no longer happen.  Declines due to these element values being invalid will come from the downstream system and the decline response will reflect that of a bank response message.
-
----
-
