@@ -2,7 +2,7 @@
 tags: [Amount, Amount Components, API Reference, Transaction Amount]
 --- 
 
-# Transaction Amount
+# Transaction Amounts
 
 Transaction amount information is contained in the `amount` and `amountComponents` object.
 
@@ -56,14 +56,14 @@ The below table identifies the parameters in the `amountComponents` object.
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
 | `subTotal` | *number* | 12 | Subtotal amount |
-| `vatAmount` | *number* | 12 | This field represents the Level 2 VAT (Value Added Tax) or Alternate Tax amount applied at the order level. |
-| `localTax` | *number* | 12 | Local sales tax amount included in a transaction |
 | `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
 | `cashback` | *number* | 12 | For Debit or Credit: The amount of cash requested by the cardholder at the time of purchase. Currently not supported on Visa, Mastercard, Amex, EBTCash or Signature Debit. |
 | `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
 | `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
-| `ITBISTaxAmount` | *number* | 12 | Tax amount on the Transfer of Industrialised Goods and Services (ITBIS) |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
+| `taxAmounts` | *array* | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
+| `priceAdjustments` | *array* | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
+
 
 <!--
 type: tab
@@ -73,15 +73,40 @@ JSON string format for `amountComponents`:
 
 ```json
 {
-   "amountComponents":{
-      "subTotal": 12.00,
-      "convenienceFee": 1.00,
-      "ITBISTaxAmount": 0.50,
-      "localTax": 1.00,
-      "shippingAmount": 5.00,
-      "surcharge": 1.20,
-      "vatAmount": 1.00
-   }
+  "amountComponents": {
+    "subTotal": 12,
+    "convenienceFee": 1,
+    "shippingAmount": 5,
+    "surcharge": 1.2,
+    "priceAdjustments": [
+      {
+        "adjustmentType": "DISCOUNT",
+        "adjustmentDescription": "Discount for loyalty",
+        "adjustmentRate": 10,
+        "adjustmentAmount": 1.5
+      },
+      {
+        "adjustmentType": "COUPON",
+        "adjustmentDescription": "10% Off Coupon",
+        "adjustmentRate": 10,
+        "adjustmentAmount": 1.5
+      }
+    ],
+    "taxAmounts": [
+      {
+        "taxType": "STATE",
+        "taxRate": 7.5,
+        "taxAmount": 1.5,
+        "taxExempt": false
+      },
+      {
+        "taxType": "CITY",
+        "taxRate": 1.6,
+        "taxAmount": 0.25,
+        "taxExempt": false
+      }
+    ]
+  }
 }
 ``` 
  
