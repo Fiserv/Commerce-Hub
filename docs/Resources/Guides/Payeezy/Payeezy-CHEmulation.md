@@ -109,6 +109,10 @@ Below is a list of negative response codes and the dollar amounts required to ge
 |MasterCard|5434842555555556|$206.99|13|INV AMT|26|Invalid Amount|607|Invalid Amount|
 |MasterCard|5434842555555556|$204.99|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
 |Amex|373953192341004|$7.00|57|TRAN NOT ALLOWED|32|Invalid Transaction Code|253|Invalid Tran. Type|
+|Discover|6250941006528590|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Discover|6250941006528590|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|UNIONPAY|6250941006528599|$21.00|51|DECLINED|42|Unable to Send Trans|303|303|Processor Decline|
+|UNIONPAY|6250941006528599|$35.00|61|AMT EXCEEDS LMT|26|Invalid Amount|509|Over Limit|
 
 
 ### Other Response Differences to Expect
