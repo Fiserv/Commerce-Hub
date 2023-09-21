@@ -101,18 +101,22 @@ Below is a list of negative response codes and the dollar amounts required to ge
 
 | Card Brand | Card Data | Amount | Nashville Code | Nashville Message | Exact Code | Exact Message | Compass Code | Compass Message |
 | -------- | ------------- | -------------- |:---------:|--------|:-----:|-----|:-----:|-----|
-|Visa|4012000033330026|$215.00|10 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
-|Visa|4012000033330026|$44.67|C2|CVV2 Declined|8|CVV2/CID/CVC2 Data not verified|503|Fraud / Security Violation|
-|Visa|4012000033330026|$14.21|14|INV ACCT NUM|22|Invalid Credit Card Number|763|Invalid Account Number|
-|Visa|4012000033330026|$81.00|91|PLEASE RETRY|7|Terminal Restriction: Try again later|902|Process Unavailable|
-|MasterCard|5434842555555556|$123.27|M065|ADD AUTH REQUIRE|7|Terminal Restriction: Try again later|||
-|MasterCard|5434842555555556|$206.99|13|INV AMT|26|Invalid Amount|607|Invalid Amount|
-|MasterCard|5434842555555556|$204.99|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
-|Amex|373953192341004|$7.00|57|TRAN NOT ALLOWED|32|Invalid Transaction Code|253|Invalid Tran. Type|
-|Discover|6250941006528590|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
-|Discover|6250941006528590|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
-|UNIONPAY|6250941006528599|$21.00|51|DECLINED|42|Unable to Send Trans|303|303|Processor Decline|
-|UNIONPAY|6250941006528599|$35.00|61|AMT EXCEEDS LMT|26|Invalid Amount|509|Over Limit|
+|Visa|401200 003333 0026|$215.00|10 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Visa|401200 003333 0026|$44.67|C2|CVV2 Declined|8|CVV2/CID/CVC2 Data not verified|503|Fraud / Security Violation|
+|Visa|401200 003333 0026|$14.21|14|INV ACCT NUM|22|Invalid Credit Card Number|763|Invalid Account Number|
+|Visa|401200 003333 0026|$81.00|91|PLEASE RETRY|7|Terminal Restriction: Try again later|902|Process Unavailable|
+|MasterCard|543484 255555 5556|$123.27|M065|ADD AUTH REQUIRE|7|Terminal Restriction: Try again later|||
+|MasterCard|543484 255555 5556|$206.99|13|INV AMT|26|Invalid Amount|607|Invalid Amount|
+|MasterCard|543484 255555 5556|$204.99|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
+|Amex|373953 19235 1004|$7.00|57|TRAN NOT ALLOWED|32|Invalid Transaction Code|253|Invalid Tran. Type|
+|Amex|373953 19235 1004|$21.00|51|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|JCB|356600 777001 7510|$69.00| | | |Invalid signature received 'TXKL/K############| | |
+|JCB|356600 777001 7510|$20.50|51|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Discover|625094 100652 8590|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Discover|362596 000000 04|$88.00|1|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|UNIONPAY|625094 100652 8599|$21.00|51|DECLINED|42|Unable to Send Trans|303|303|Processor Decline|
+|UNIONPAY|625094 100652 8599|$35.00|61|AMT EXCEEDS LMT|26|Invalid Amount|509|Over Limit|
+|MAESTRO|541333 008909 9049|$14.21|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
 
 
 ### Other Response Differences to Expect
