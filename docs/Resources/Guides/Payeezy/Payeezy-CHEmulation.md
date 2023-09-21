@@ -95,7 +95,7 @@ All AVS/CVV decline responses will appear as:
 
  AVS and CVV2 codes will also be returned in the response as expected.
 
-### Declined Responses
+### Decline Responses
 
 Below is a list of negative response codes and the dollar amounts required to generate the specific responses.
 
