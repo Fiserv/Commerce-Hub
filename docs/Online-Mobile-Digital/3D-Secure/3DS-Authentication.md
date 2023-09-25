@@ -4,7 +4,10 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 # 3-D Secure Authentication
 
-Description....
+3D Secure is an authentication protocol that adds another degree of security to card-not-present (CNP) transactions. Commerce Hub supports two type of inetegration method which are Frictionless and Challenge. 
+
+- Frictionless: Through authentication using device fingerprint, the acquirer, issuer, and card scheme communicate all essential information in a frictionless flow method.
+- Challenge: The merchant had to go through verification method when mercahnt the demands additional information interaction in a challenge flow method
 
 ---
 
@@ -255,7 +258,7 @@ type: tab
 
 ### Example of Frictionless Response
 
-Description.....
+Frictionless Response: Through authentication using device fingerprint, the acquirer, issuer, and card scheme communicate all essential information in a frictionless flow method.
 
 ```json
 
@@ -321,7 +324,7 @@ type: tab
 
 ### Example of Challenge Response
 
-Description.... and link to verification
+Challenge Response: The merchant had to go through [verification](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) method when mercahnt the demands additional information interaction in a challenge flow method
 
 ```json
 
