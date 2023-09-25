@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
 
 # 3-D Secure Verification
 
-Description.....
+When using 3D Secure merchants must go through an additional verification process with the card issuer.
 
 ---
 
