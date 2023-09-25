@@ -1,11 +1,18 @@
 {
   "cSpell.words": [
     "cavv",
+    "checkout",
     "ECOM",
     "SECURE_ECOM",
     "Subcomponent",
     "tavv",
     "timeframe",
     "TRANSARMOR"
+  ],
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file"
+    }
   ]
 }
