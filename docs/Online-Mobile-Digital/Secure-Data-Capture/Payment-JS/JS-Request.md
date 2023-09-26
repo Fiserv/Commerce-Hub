@@ -42,8 +42,8 @@ const formConfig = {
     "merchantId": 'MERCHANT_ID',
     "publicKey": 'PUBLIC_KEY',
     "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM',
-    "asymmetricEncryptionAlgorithm": 'RSA',
-    "keyId": 'cc33a193-92b9-4663-ad66-3ddfd8984ded'
+    "asymmetricEncryptionAlgorithm": 'ASYMETRIC_ENCRYPTION_ALGORITHM',
+    "keyId": 'KEY_ID'
 };
 ```
 
