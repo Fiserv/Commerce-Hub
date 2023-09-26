@@ -4,10 +4,10 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 # 3-D Secure Authentication
 
-3D Secure is an authentication protocol that adds another degree of security to card-not-present (CNP) transactions. Commerce Hub supports two type of inetegration method which are Frictionless and Challenge. 
+3-D Secure _(3DS)_ is an authentication protocol that adds another layer of fraud protection to eCommerce transactions. Commerce Hub supports 3DS 2.0 for Frictionless and Challenge integrations. 
 
-- Frictionless: Through authentication using device fingerprint, the acquirer, issuer, and card scheme communicate all essential information in a frictionless flow method.
-- Challenge: The merchant had to go through verification method when mercahnt the demands additional information interaction in a challenge flow method
+- **Frictionless:** Authentication using the customer's [device fingerprint](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md), where the 3DS provider and issuer communicate all essential information.
+- **Challenge:** The issuer demands additional information from the customer, and the merchant will need to [verify](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) succesful authentication.
 
 ---
 
@@ -56,7 +56,7 @@ The below table identifies the parameters in the `shippingAddress` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-|  `firstName` | *string* | 256 | Shipping first name |
+| `firstName` | *string* | 256 | Shipping first name |
 | `lastName` | *string* | 256 | Shipping last name |
 | `address` | *object* | N/A | Address subcomponent objects |
 | `shippingMethod` | *string* | 60 | Shipping or delivery method |
@@ -67,7 +67,7 @@ The below table identifies the parameters in the `shippingAddress` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `Address` object.
+The below table identifies the parameters in the `address` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
@@ -133,7 +133,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md)e. |
+|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md). |
 | `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction |
 
 <!--
@@ -157,7 +157,7 @@ The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-|`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
+| `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md). |
 | `channel` | *String* | 32 | Determine the channel that the transaction came through. |
 
 ---
@@ -258,7 +258,10 @@ type: tab
 
 ### Example of Frictionless Response
 
-Frictionless Response: Through authentication using device fingerprint, the acquirer, issuer, and card scheme communicate all essential information in a frictionless flow method.
+##### Example of a frictionless 3DS authentication (201: Created) response. A successful 3DS authentication will return _________ in the ______ response. Upon successful authentication the merchant can send a a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
@@ -324,7 +327,13 @@ type: tab
 
 ### Example of Challenge Response
 
-Challenge Response: The merchant had to go through [verification](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) method when mercahnt the demands additional information interaction in a challenge flow method
+##### Example of a challence 3DS authentication (201: Created) response. A challenge 3DS authentication will return _________ in the ______ response.
+
+<!-- theme: warning -->
+> The merchant must complete a [verification](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) request before submitting a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 
