@@ -28,13 +28,6 @@ Submit the [authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3
 
 ## Step 4: Submit Transaction Request
 
-After authentication has been completed with the 3DS provider, submit a charges, tokenization, or verification request based on the requirements. 
-
----
-
-## See Also
-
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
+After authentication has been completed with the 3DS provider, submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request based on the requirements. 
 
 ---
