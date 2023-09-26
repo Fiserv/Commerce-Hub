@@ -9,7 +9,8 @@ tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request). 
 
-- Integrating with 3D secure send the indicator JavaScript, for more information see [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure) Integration article
+<!-- theme: info -->
+> Integrating with 3D secure send the indicator JavaScript, for more information see [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure) Integration article
 
 ---
 
