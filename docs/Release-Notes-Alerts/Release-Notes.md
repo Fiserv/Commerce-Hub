@@ -16,6 +16,21 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## September 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** August 29th 2023
+- **Production:** September 5th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md) transactions | Feature |
+| Support the ability to send [Convenience Fees](?path=docs/Resources/Guides/Convenience-Fees.md) for transactions | Feature |
+| Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the reponse | Update | 
+
+---
+
 ## August 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.

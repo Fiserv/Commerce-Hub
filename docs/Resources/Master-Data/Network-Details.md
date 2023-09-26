@@ -190,7 +190,7 @@ The below table identifies the parameters specific to Visa.
 | `VISABID` | *string* | 128 | The Business Identifier (BID) provided by Visa to Third Party Services (TPS) |
 | `VISAAUR` | *string* | 128 | Agent Unique Account Result (AUAR) provided by Visa to Third Party Services (TPS) in 12 hex digit format |
 | `cardAuthenticationResultCode` | *string* | 1 | Card Authentication Results Code returned by Visa for EMV chip transactions |
-| `spendQualificationIndicator` | *boolean* | N/A | A field used by Visa to establish annual point-of-sale spending requirements |
+| `spendQualificationIndicator` | *string* | 1 | A field used by Visa to establish annual point-of-sale spending requirements |
 | `decisionSource` | *string* | 128 | This field identifies the Visa decision for the transaction |
 | `agreementId` | *string* | 4 | This field will contain a value used to identify when a merchant is eligible for the preferred Commercial Choice interchange rates |
 
