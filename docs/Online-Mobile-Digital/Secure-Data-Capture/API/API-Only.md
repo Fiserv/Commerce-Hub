@@ -35,6 +35,9 @@ The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryptio
 
 The encrypted data is securely submitted to Commerce Hub using API-key validation, where it is persisted and linked to the `sessionId` generated in step 1. 
 
+<!--theme:info-->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behaviour, `createToken`: _false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+
 ### Minimum Requirements
 
 <!--
