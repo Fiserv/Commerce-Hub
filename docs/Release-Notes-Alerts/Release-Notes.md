@@ -16,6 +16,20 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## October 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** September 25th 2023
+- **Production:** October 3rd 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support Commerce Hub Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Feature |
+| Refactored Merchant Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Update |
+
+---
+
 ## August 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
