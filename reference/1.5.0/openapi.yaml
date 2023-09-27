@@ -1017,8 +1017,8 @@ paths:
             schema:
               $ref: '#/components/schemas/ThreeDSVerificationRequest'
             examples:
-              PaymentCard:
-                summary: ThreeDSVerificationRequest with PaymentCard
+              transactionId:
+                summary: ThreeDSVerificationRequest with transactionId
                 $ref: '#/components/examples/ThreeDSVerificationRequest'
       responses:
         201:
@@ -1028,8 +1028,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ThreeDSVerificationResponse'
               examples:
-                PaymentCard:
-                  summary: ThreeDSVerificationResponse with PaymentCard
+                transactionId:
+                  summary: ThreeDSVerificationResponse with transactionId
                   $ref: '#/components/examples/ThreeDSVerificationResponse'
         400:
           $ref: '#/components/responses/BadRequest'
