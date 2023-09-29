@@ -33,10 +33,10 @@ JSON string format for `amount`:
 
 ```json
 {
-   "amount":{
-      "total": 21.70,
-      "currency": "USD"
-   }
+  "amount": {
+    "total": 21.7,
+    "currency": "USD"
+  }
 }
 ```
 
@@ -44,7 +44,7 @@ JSON string format for `amount`:
 
 ## Amount Components
 
-Used in transactions where additional amount fields such as taxes, [surcharge fee](?path=docs/Resources/FAQs-Glossary/Glossary.md#surcharge-fees), or [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) are required as part of the request.
+Used in transactions where additional amount fields such as [taxes](?path=docs/Resources/Master-Data/Tax-Types.md), [convenience fees](?path=docs/Resources/Guides/Convenience-Fees.md), cashback, tips, or [price adjustments](?path=docs/Resources/Master-Data/Price-Adjustments.md) are required as part of the request.
 
 <!--
 type: tab
@@ -55,15 +55,20 @@ The below table identifies the parameters in the `amountComponents` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
-| `subTotal` | *number* | 12 | Subtotal amount |
-| `shippingAmount` | *number* | 12 | Shipping amount included in a transaction |
-| `cashback` | *number* | 12 | For Debit or Credit: The amount of cash requested by the cardholder at the time of purchase. Currently not supported on Visa, Mastercard, Amex, EBTCash or Signature Debit. |
-| `tip` | *number* | 12 | The portion of the transaction amount that represents the tip. |
-| `surcharge` | *number* | 12 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+| `unitPrice` | *number* | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
+| `subTotal` | *number* | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
+| `cashback` | *number* | 18,3 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase |
+| `tip` | *number* | 18,3 | The portion of the transaction amount that represents the tip |
 | `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
-| `taxAmounts` | *array* | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
+| `surcharge` | *number* | 18,3 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+| `shippingRate` | *number* | 3 | Shipping, delivery or freight rate percent |
+| `shippingAmount` | *number* | 18,3 | Total amount of shipping, delivery or freight charges applied. |
+| `freightRate` | *number* | 3 | Freight rate percent |
+| `freightAmount` | *number* | 18,3 | Freight amount applied |
 | `priceAdjustments` | *array* | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
-
+| `netAmount` | *number* | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
+| `taxAmounts` | *array* | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
+| `grossAmount` | *number* | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
 
 <!--
 type: tab
@@ -74,10 +79,16 @@ JSON string format for `amountComponents`:
 ```json
 {
   "amountComponents": {
-    "subTotal": 12,
-    "convenienceFee": 1,
+    "unitPrice": 10,
+    "subTotal": 10,
+    "cashback": 2,
+    "tip": 1.5,
+    "convenienceFee": 1.5,
+    "surcharge": 1.5,
+    "shippingRate": 1.7,
     "shippingAmount": 5,
-    "surcharge": 1.2,
+    "freightRate": 1.7,
+    "freightAmount": 5,
     "priceAdjustments": [
       {
         "adjustmentType": "DISCOUNT",
@@ -92,6 +103,7 @@ JSON string format for `amountComponents`:
         "adjustmentAmount": 1.5
       }
     ],
+    "netAmount": 20,
     "taxAmounts": [
       {
         "taxType": "STATE",
@@ -105,11 +117,12 @@ JSON string format for `amountComponents`:
         "taxAmount": 0.25,
         "taxExempt": false
       }
-    ]
+    ],
+    "grossAmount": 21.75
   }
 }
-``` 
- 
+```
+
 <!-- type: tab-end -->
 
 ---
@@ -117,9 +130,9 @@ JSON string format for `amountComponents`:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Currency Codes](?path=docs/Resources/Master-Data/Currency-Code.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Level II/III](?path=docs/Resources/Guides/Level23/Level23.md)
 - [Convenience Fee](?path=docs/Resources/Guides/Convenience-Fees.md)
- 
+
 ---
