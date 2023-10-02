@@ -146,6 +146,6 @@ titles: Request, Response
 
 ## See Also
 
-- API Explorer
-- Gift Solutions
-- Payment Requests
+- [API Explorer](../api/?type=post&path=/payments/v1/refunds)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Gift Solution](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
