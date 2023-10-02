@@ -1,5 +1,5 @@
 ---
-tags: [Gift, Activation, Cancel, Cash Out]
+tags: [Gift Card, Payment Card, Payment Source, Loyalty]
 ---
 
 # Gift Solutions 
