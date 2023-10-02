@@ -59,13 +59,13 @@ The below table identifies the required parameters in the `merchantDetails` obje
 type: tab
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `additionalDataCommon` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | 
-| `fundingProvider` | 
-| `transactionPosDate` | 
+| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card).
+| `fundingProvider` | *string* | 32 |  Identifies who provided the funds.|
+| `transactionPosDate` | *string* | 16 | 'Used to override a transaction post date in reporting.
 
 <!-- type: tab-end -->
 
