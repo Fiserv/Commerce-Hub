@@ -4,13 +4,10 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 # Secure Data Capture - API Only
 
-Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's card capture service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a charges or tokens transaction request with the `sourceType` *PaymentSession*.
+Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md) service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` _PaymentSession_.
 
-### Benefits
-
-Allows a merchant an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
-
-### Request Types
+<!-- theme:info -->
+> Secure Data Capture using card capture provides a merchant with an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their non-tokenized form, lowering the PCI compliance requirements.
 
 - **credentials:** responsible for creating a payment session.
 - **card-capture:** responsible for capturing encrypted card details.
@@ -19,7 +16,7 @@ Allows a merchant an easy and secure way to manage and encrypt the payment data 
 
 ---
 
-## Step 1: Acquire Credentials 
+## Step 1: Acquire Credentials
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, `keyId`, and `publicKey`. These will be used to create the [encryption data](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
 
@@ -27,152 +24,36 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 ## Step 2: Encrypt Card Data
 
-The card data is encypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encyptionBlockFields` are used in the card capture request. 
+The card data is encrypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encryptionBlockFields` are used in the card capture request.
+
+---
+
+## Step 3: Build Message Digest
+
+To ensure data integrity, prevent replay attacks, and eliminate stale requests, the message digest is required as part of the [header](?path=docs/Resources/API-Documents/Message-Digest.md).
 
 ---
 
 ## Step 3: Submit Card Capture Request
 
-The encrypted data is securely submitted to Commerce Hub using API-key validation, where it is persisted and linked to the `sessionId` generated in step 1. 
-
-<!--theme:info-->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behaviour, `createToken`: _false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
-
-### Minimum Requirements
-
-<!--
-type: tab
-titles: source, encryptionData, JSON Example
--->
-
-The below table identifies the required parameters in the `source` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | --------| ---------- |
-| `sourceType` | *string* | 15 |  &#10004; | Use *PaymentCard* for card transactions |
-| `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `encryptionData` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | *string* | 256 |  &#10004; | Encryption type is *RSA* when using MUPK. |
-| `encryptionTarget` | *string* | 256 |  &#10004; | Target is *MANUAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the card details in encrypted form. |
-| `encryptionBlockFields` | *string* | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
-| `keyId` | *string* | 64 | &#10004; | Provided encryption key required for decryption of track data that is encrypted. |
-
-<!--
-type: tab
--->
-
-JSON string format for PaymentCard:
-
-```json
-{
-  "source": {
-    "sourceType": "PaymentCard",
-    "encryptionData": {
-      "encryptionType": "RSA",
-      "encryptionTarget": "MANUAL",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
-      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-      "keyId": "88000000023"
-    }
-  }
-}
-```
-
-<!-- type: tab-end -->
+The encrypted data is securely submitted to Commerce Hub's in a [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md) request, where it is persisted and linked to the `sessionId` generated in step 1.
 
 ---
 
-### Endpoint
-<!-- theme: success -->
-> **POST** `/payments-vas/v1/card-capture`
+## Step 4: Submit a Request
 
----
+Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request after a successful response that identifies the card data is captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request.
 
-### Card Capture Payload Example
+### Charges Payload Example
+
+The example below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-##### Example of a card capture payload request using PaymentCard for Secure Data Capture.
-
-```json
-{
-  "source": {
-    "sourceType": "PaymentCard",
-    "encryptionData": {
-      "encryptionType": "RSA",
-      "encryptionTarget": "MANUAL",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-      "keyId": "88000000022"
-    }
-  },
-  "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
-  }
-}
-```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/card-capture)
-
-<!--
-type: tab
--->
-
-##### Example of a card capture (200: Success) response.
-
-<!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-{
-  "gatewayResponse": {
-    "transactionProcessingDetails": {
-      "transactionTimestamp": "2021-06-20T23:42:48Z",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
-    }
-  }
-}
-```
-
-<!-- type: tab-end -->
-
----
-
-## Step 4: Submit a Request 
-
-Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request after a successful response which identifies the card data is captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request. 
-
-### Payload Example
-
-#### Endpoint
-
-<!-- theme: success -->
-> **POST** `/payments/v1/charges`
-
-<!-- theme: info -->
-> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
-
-<!--
-type: tab
-titles: Request, Response
--->
-
-##### Example of a charge payload request.
+Example of a charges payload request.
 
 ```json
 {
@@ -203,7 +84,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charges (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -270,9 +151,9 @@ type: tab
 
 ## Additional Security Settings
 
-The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
+The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
-**Recommendations**
+### Recommendations
 
 - Enable Re-Captcha
 - Authentication/Login requirement to access the payment page
