@@ -4,7 +4,10 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
 
 # Gift Card Activation
 
-An Activation transaction allows a merchant to create and activate a new gift card and sends the necessary information to the account in Commerce Hub. The Card needs to be Activated first to perform other Gift related transactions.
+An activation request allows a merchant to create and activate a digital _(virtual)_ gift card or activate a new physical gift card by sending the necessary information to Commerce Hub. 
+
+<!-- theme: info -->
+> A gift card needs to be activated before performing other gift related transactions.
 
 ---
 
