@@ -382,7 +382,7 @@ The below table identifies the valid values of `cardHolderNameResponse`.
 - [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
 - [Address Object](?path=docs/Resources/Master-Data/Address.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)

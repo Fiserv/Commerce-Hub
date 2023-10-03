@@ -12,7 +12,7 @@ The card details can be used to determine;
 - **[Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 
 <!-- theme: info -->
-> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
+> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 

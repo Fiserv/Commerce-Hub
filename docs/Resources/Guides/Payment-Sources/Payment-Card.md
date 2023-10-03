@@ -175,7 +175,7 @@ type: tab
 ## See Also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
 - [Multi-Use Public Key _(MUPK)_](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)

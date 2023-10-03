@@ -24,7 +24,7 @@ Request and create a developer account in the Developer Studio.
 
 ## Step 2: Generate an API key
 
-To [obtain an API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md), access the developer dashboard to create an app by using the default MID or [creating a dedicated sandbox MID](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md).
+To [obtain an API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md), access the developer dashboard to create a workspace by using the default MID or [creating a dedicated sandbox MID](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md).
 
 <!-- theme: info -->
 > These are required in the [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md).

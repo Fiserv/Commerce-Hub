@@ -170,7 +170,7 @@ type: tab
 ### Endpoint
 
 <!-- theme: success -->
->**POST** `/payments/v1/charges`
+> **POST** `/payments/v1/charges`
 
 ### Payload Example
 
@@ -341,29 +341,13 @@ The result of checking the card’s security code provided with the issuer’s s
 }
 ```
 
-
-<!---
-The below table identifies the valid values of `securityCodeResponse`.
-
-| Value | Descrption |
-| ---- | ------------|
-| *M* | Card security code matched |
-| *N* | Card security code does not matched |
-| *P* | Not processed |
-| *S* | Merchant has indicated that the card security code is not present on the card. |
-| *U* | Issuer is not certified and/or not provides encryption keys. |
-| *X* | No response from the credit card association was received. |
-| | A blank response will indicate that no code was sent and that there was no indication that the code was present on the card. |
--->
-
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Card Details](?path=docs/Resources/Master-Data/Card.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
