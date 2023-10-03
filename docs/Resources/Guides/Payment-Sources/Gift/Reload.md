@@ -13,7 +13,7 @@ Description
 
 <!--
 type: tab
-titles: amount, cardObjects, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
+titles: amount, target, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
 -->
 
 The below table identifies the required parameters in the `amount` object.
