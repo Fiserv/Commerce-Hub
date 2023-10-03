@@ -301,4 +301,4 @@ Description:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
+- [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
