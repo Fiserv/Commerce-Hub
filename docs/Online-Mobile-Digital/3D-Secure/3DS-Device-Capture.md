@@ -158,7 +158,7 @@ type: tab
 
 ## Device Fingerprint Capture
 
-After a successful [device data initialization](#device-data-initilazation), merchants must use one of the following options to capture the cardholder's [device data fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md). 
+After a successful [device data initialization](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md), merchants must use one of the following options to capture the cardholder's [device data fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md). 
 
 - **Commerce Hub SDK:** Hidden JavaScript iFrame collection
 - **Cardinal Cruise API:** Hidden iFrame using Java Web Token *(JWT)*
