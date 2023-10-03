@@ -4,32 +4,27 @@ tags: [Commerce Hub, Card Not Present, Card Present, HMAC, Header, Authenticatio
 
 # Generate HMAC Authentication
 
-To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [Header](?path=docs/Resources/API-Documents/Use-Our-APIs.md).
+To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [header](?path=docs/Resources/API-Documents/Use-Our-APIs.md).
 
-#### Details
+## Details
 
 - **Signature Algorithm:** SHA256 HMAC
 - **Signature Encoding:** Base64
-- **Signed With:** Developer App Secret Key; provided to merchant when boarded
+- **Signed With:** Developer App Secret Key; provided to the merchant when boarded
 
 The message data for the signature is the following items concatenated: `Api-Key`, `Client-Request-Id`, `Timestamp`, `Request-Body`.
 
 <!-- theme: info -->
->The `Client-Request-Id` is a client generated number that is unique for each request. It is used as nonce and validated against all Client-Request-Ids received by Commerce Hub within a predetermined timeframe *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.
+> The `Client-Request-Id` is a client generated number that is unique for each request. It is used as nonce and validated against all Client-Request-Ids received by Commerce Hub within a predetermined time frame *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.
 
 ---
 
 ## Code Example
 
-<!--
-type: tab
-titles: Javascript
--->
-
-##### Generate the authentication required for use with our payments API.
+Generate the authentication required for use with our APIs.
 
 <!-- theme: example -->
-> Authorization: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
+> HMAC Authorization Example: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
 
 ```javascript
 var key = ‘api key’;
@@ -83,15 +78,31 @@ function b64encode (input) {
 }
 ```
 
-<!-- type: tab-end -->
+---
+
+### Sample Header
+
+```json
+{
+  "Content-Type": "application/json",
+  "Client-Request-Id": "CLIENT_REQUEST_ID",
+  "Api-Key": "API_KEY",
+  "Timestamp": "TIMESTAMP",
+  "Auth-Token-Type": "HMAC",
+  "Authorization": "ACCESS_TOKEN"
+}
+```
+
+---
 
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
-- [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
+- [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
+- [Message Digest](?path=docs/Resources/API-Documents/Message-Digest.md)
+- [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---

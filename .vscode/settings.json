@@ -1,0 +1,19 @@
+{
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file"
+    }
+  ],
+  "cSpell.words": [
+    "captureFlag",
+    "ECOM",
+    "HMAC",
+    "idempotency",
+    "MOTO",
+    "MUPK",
+    "Omnicommerce",
+    "sourceType",
+    "transactionDetails"
+  ]
+}

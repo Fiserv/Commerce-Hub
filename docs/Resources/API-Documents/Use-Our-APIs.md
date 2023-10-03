@@ -34,7 +34,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 <!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
-- Uses End to End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Uses End-to-End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
 - Certify before deploying to production
 - Run test scripts based on the API's requirements
 - Conduct a complete beta test of your application
@@ -46,7 +46,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 - Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
 - Send and cancel "live" transactions
-- Access Value Added Services
+- Access Value-Added Services
 - Run reports
 
 ---
@@ -62,21 +62,21 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 | `Api-Key` | *string* | N/A | API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal. |
 | `Timestamp` | *integer* | N/A | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
 | `Accept-Language` | *string* | N/A | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
-| `Auth-Token-Type`| *string* | N/A | Indicates Authorization type HMAC or AccessToken.|
 | `Authorization` | *string* | N/A | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
-| `Message-Digest` | *string* | N/A | Needed only from customer browser or app to the API in Hosted Payment Page requests. |
+| `Auth-Token-Type`| *string* | N/A | Indicates Authorization type HMAC or AccessToken.|
+| `Message-Digest` | *string* | N/A | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) or Hosted Payment Page request. |
 
-#### Sample Header
+### Sample Header
 
 ```json
-"header": {
-      "Content-Type": "application/json",
-      "Client-Request-Id": "CLIENT_REQUEST_ID",
-      "Api-Key": "API_KEY",
-      "Timestamp": "TIMESTAMP",
-      "Auth-Token-Type": "AUTH_TOKEN_TYPE" ,
-      "Authorization": "ACCESS_TOKEN"
-    },
+{
+  "Content-Type": "application/json",
+  "Client-Request-Id": "CLIENT_REQUEST_ID",
+  "Api-Key": "API_KEY",
+  "Timestamp": "TIMESTAMP",
+  "Auth-Token-Type": "AUTH_TOKEN_TYPE",
+  "Authorization": "AUTHORIZATION"
+}
 ```
 
 ---
@@ -85,7 +85,7 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 
 The body of the transaction request differs based on the transaction being initiated. Below is the sample body for a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) request.
 
-#### Request Body Example
+### Request Body Example
 
 ```json
 {
@@ -116,9 +116,9 @@ The body of the transaction request differs based on the transaction being initi
 
 ## API Call Example
 
-A standard API call to execute a charge transaction might look like this:
+A standard API call to execute a charges request.
 
-```json
+```javascript
 {
   method: "POST",
   url: "https://cert.api.fiservapps.com/ch/payments/v1/charges",
@@ -149,7 +149,6 @@ A standard API call to execute a charge transaction might look like this:
     }
   })
 }
-
 ```
 
 ---
