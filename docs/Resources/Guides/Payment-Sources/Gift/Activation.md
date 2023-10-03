@@ -20,7 +20,7 @@ type: tab
 titles: amount, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
 -->
 
-The below table identifies the required parameters in the `amount` object.
+The below table identifies the parameters in the `amount` object.
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
@@ -56,23 +56,23 @@ The below table identifies the required parameters in the `merchantDetails` obje
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!--
 type: tab
 -->
 
-The below table identifies the required parameters in the `additionalDataCommon` object.
+The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `additionalData` | *object* | N/A |  Idenitfies adtionatal data in the request. |
 
-The below table identifies the required parameters in the `additionalData` object.
+The below table identifies the conditional parameters in the `additionalData` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card). |
+| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a digital gift card |
 | `fundingProvider` | *string* | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
 | `transactionPostDate` | *string* | 16 | Used to override a transaction post date in reporting |
 
