@@ -4,7 +4,7 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
 
 # Gift Card Activation
 
-An activation request allows a merchant to create and activate a [digital _(virtual)_ gift card](#digital-gift-card) or activate a [new physical gift card](#physical-gift-card) by sending the necessary information to Commerce Hub. 
+An activation request allows a merchant to create and activate a [digital _(virtual)_ gift card](#digital-gift-card) or activate a [new physical gift card](#physical-gift-card) by sending the necessary information to Commerce Hub.
 
 <!-- theme: info -->
 > A gift card needs to be activated before performing other gift related transactions.
@@ -13,7 +13,7 @@ An activation request allows a merchant to create and activate a [digital _(virt
 
 ## Request Variables
 
-Description 
+Description
 
 <!--
 type: tab
@@ -80,16 +80,16 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 ---
 
-## Endpoint 
+## Endpoint
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/gift-cards`
 
 ---
 
-## Digital Gift Card 
+## Digital Gift Card
 
-Description 
+Description
 
 ### Payload Example
 
@@ -98,7 +98,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of a digital gift card activation payload request 
+#### Example of a digital gift card activation payload request
 
 ```json
 {
@@ -133,9 +133,9 @@ titles: Request, Response
 type: tab
 -->
 
-#### Example of payload response 
+#### Example of payload response
 
-Description: 
+Description:
 
 ```json
 {
@@ -191,9 +191,9 @@ Description:
 
 ---
 
-## Physical Gift Card 
+## Physical Gift Card
 
-Description 
+Description
 
 ### Payload Example
 
@@ -241,7 +241,7 @@ type: tab
 
 #### Example of payload response 
 
-Description: 
+Description:
 
 ```json
 {
