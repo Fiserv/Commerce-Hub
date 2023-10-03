@@ -6,6 +6,8 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
 
 An Activation transaction allows a merchant to create and activate a new gift card and sends the necessary information to the account in Commerce Hub. The Card needs to be Activated first to perform other Gift related transactions.
 
+---
+
 ## Request Variables
 
 Description 
@@ -89,7 +91,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of payload request 
+#### Example of a digital gift card activation payload request 
 
 ```json
 {
@@ -120,32 +122,178 @@ titles: Request, Response
 }
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&payments-vas/v1/accounts/gift-cards)
+
+<!--
+type: tab
+-->
+
 #### Example of payload response 
 
+Description: 
+
 ```json
+{
+  "gatewayResponse": {
+    "transactionType": "GIFT_CARDS",
+    "transactionState": "ACTIVATED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01367cb34bb35b472c953dec4e7d368727",
+      "transactionTimestamp": "2022-08-22T19:22:52.518232Z",
+      "apiTraceId": "b34bb35b472c953dec4e7d36872",
+      "clientRequestId": "367cb34bb35b472c953dec",
+      "transactionId": "b34bb35b472c953dec4e7d36872"
+    }
+  },
+  "target": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "9998955500000000190",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123",
+      "category": "GIFT",
+      "subCategory": "GIFT_SOLUTIONS",
+      "bin": "999895",
+      "last4": "0190"
+    }
+  },
+  "paymentReceipt": {
+    "processorResponseDetails": {
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5548",
+      "processor": "FISERV",
+      "host": "GIFT_SOLUTIONS",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "Completed OK"
+    },
+    "balance": [
+      {
+        "beginingBalance": "16.00",
+        "endingBalance": "16.00",
+        "currency": "USD"
+      }
+    ]
+  }
+}
+```
 
+<!-- type: tab-end -->
 
-Description 
-
-tab and json 
+---
 
 ## Physical Gift Card 
 
 Description 
 
-Description 
-
 ### Payload Example
-
-Description 
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
+#### Example of a digital gift card activation payload request 
+
+```json
+{
+  "amount": {
+    "total": 13.05,
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "merchantTransactionId": "1343678765",
+    "merchantOrderId": "845366457890",
+    "operationType": "ACTIVATION"
+  },
+  "transactionInteraction": {
+    "terminalTimestamp": "2016-04-16T16:06:05Z"
+  },
+  "merchantDetails": {
+    "terminalId": "123567",
+    "merchantId": "123456789012345",
+    "promotionCode": "12A34B7"
+  },
+  "additionalDataCommon": {
+    "additionalData": {
+      "securityCodeType": "EAN",
+      "fundingProvider": "CUSTOMER",
+      "transactionPostDate": "2016-04-16"
+    }
+  }
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&payments-vas/v1/accounts/gift-cards)
+
+<!--
+type: tab
+-->
+
+#### Example of payload response 
+
+Description: 
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "GIFT_CARDS",
+    "transactionState": "ACTIVATED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01367cb34bb35b472c953dec4e7d368727",
+      "transactionTimestamp": "2022-08-22T19:22:52.518232Z",
+      "apiTraceId": "b34bb35b472c953dec4e7d36872",
+      "clientRequestId": "367cb34bb35b472c953dec",
+      "transactionId": "b34bb35b472c953dec4e7d36872"
+    }
+  },
+  "target": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "9998955500000000190",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "123",
+      "category": "GIFT",
+      "subCategory": "GIFT_SOLUTIONS",
+      "bin": "999895",
+      "last4": "0190"
+    }
+  },
+  "paymentReceipt": {
+    "processorResponseDetails": {
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5548",
+      "processor": "FISERV",
+      "host": "GIFT_SOLUTIONS",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "Completed OK"
+    },
+    "balance": [
+      {
+        "beginingBalance": "16.00",
+        "endingBalance": "16.00",
+        "currency": "USD"
+      }
+    ]
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Gift Solution](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
+- [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
