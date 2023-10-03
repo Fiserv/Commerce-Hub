@@ -32,9 +32,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `merchantTransactionID` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
-| `merchantOrderID`| *string* | 128 | Merchant order ID (aka customer reference number or purchase order (PO) number).
-| `operationType` | *string* | 50 | Add descriptionXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+| `operationType` | *string* | 50 | Add descriptionXXXXXXXXXXXXXXXXXXXXXXXXXXXXX | 
 
 <!--
 type: tab
@@ -65,9 +63,15 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card).
-| `fundingProvider` | *string* | 32 |  Identifies who provided the funds.|
-| `transactionPosDate` | *string* | 16 | 'Used to override a transaction post date in reporting.
+| `additionalData` | *object* | N/A |  Idenitfies adtionatal data in the request. |
+
+The below table identifies the required parameters in the `additionalData` object.
+
+| Variable | Data Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card). |
+| `fundingProvider` | *string* | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
+| `transactionPostDate` | *string* | 16 | Used to override a transaction post date in reporting |
 
 <!-- type: tab-end -->
 
@@ -100,8 +104,6 @@ titles: Request, Response
     "currency": "USD"
   },
   "transactionDetails": {
-    "merchantTransactionId": "1343678765",
-    "merchantOrderId": "845366457890",
     "operationType": "ACTIVATION"
   },
   "transactionInteraction": {
