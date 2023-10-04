@@ -10,7 +10,7 @@ Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/G
 A device captures the customer's payment source unencrypted or encryptes the data and sends it to Commerce Hub.
 
 <!-- theme: warning -->
-> It is not recommended to send unencrypted track 1 and track 2 data for the payment transaction.
+> It is not recommended to send unencrypted Track 1 and Track 2 data for the payment transaction.
 
 ---
 
@@ -445,7 +445,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [EMV Chip](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)

@@ -10,7 +10,7 @@ Commerce Hub supports in-person or card present payment transactions where the c
 
 ## Integrations
 
-Commerce Hub allows a merchant to build their own UI and manage customer transactions within their own software or terminal using Commerce Hub's RESTful APIs.
+Commerce Hub allows a merchant to build their own UI and manage customer transactions within their own software or terminal using Commerce Hub's RESTful APIs or SDKs.
 
 <!-- type: row -->
 
@@ -30,6 +30,13 @@ link:
 title: Fully-Integrated
 description: Commerce Hub's fully-integrated payment system efficiently manages all the processes by a single integrated system. It has the payment application as a part of the core POS solution. The software handles every aspect of the transaction, from scanning and reading the bar code to processing the payments and managing inventory and replenishment.
 link:
+-->
+
+
+<!-- type: card
+title: Tap to Pay on iPhone
+description: Commerce Hub's SDK allows integration with Apple's Tap to Pay on iPhone to accept contactless payments from an iPhone or a partner-enabled iOS app.
+link: ?path=docs/In-Person/Integrations/Tap-to-Pay.md
 -->
 
 <!-- type: row-end -->

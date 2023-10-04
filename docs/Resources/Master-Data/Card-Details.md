@@ -7,7 +7,7 @@ tags: [API Reference, Card Details, Card Meta Data, Debit, Master Data]
 Card meta data is returned in the `cardDetails` object and contains details from the card or token's BIN. The information can be obtained by performing an [account information lookup request](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md).
 
 <!-- theme: info -->
-> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
+> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 <!--
 type: tab
@@ -241,7 +241,7 @@ The below table identifies the values for `debitNetworkId`.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 - [Accounts Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---

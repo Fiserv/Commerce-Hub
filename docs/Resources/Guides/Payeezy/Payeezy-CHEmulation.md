@@ -90,7 +90,5 @@ All AVS/CVV decline responses will appear as:
 
 - Gateway validation of authorization_num and transaction_tag will no longer happen.  Declines due to these element values being invalid will come from the downstream system and the decline response will reflect that of a bank response message.
 
--  The language element, if included in a request payload, will no longer impact the language of a gateway error message or CTR element in the response.  The functionality of this element is not being replicated in Commerce Hub emulation.
-
 ---
 

@@ -19,30 +19,34 @@ titles: Request, Response
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true
-   },
-   "additionalDataCommon":{
-      "additionalData":{
-         "requestedTestResponseCode":"103"
-      }
-    },
-    "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }   
+  "amount": {
+    "total": 12.04,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+  },
+  "additionalDataCommon": {
+    "additionalData": {
+      "requestedTestResponseCode": "103"
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 
@@ -90,7 +94,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Test Cards](?path=docs/Resources/Guides/Testing/Test-Cards.md)

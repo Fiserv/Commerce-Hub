@@ -65,16 +65,20 @@ Example of a form with the minimum number of fields:
 
 ```
 
+---
+
 ## Additional Security Settings
 
-The following recommendations are to limit potential for fraudulent activity on your hosted payment page.
+The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
-**Recommendations**
+### Recommendations
 
 - Enable Re-Captcha
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
+
+---
 
 ## See Also
 - Available Fields

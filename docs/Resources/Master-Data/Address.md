@@ -181,7 +181,6 @@ The below table identifies the valid values of `shippingMethod`.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---

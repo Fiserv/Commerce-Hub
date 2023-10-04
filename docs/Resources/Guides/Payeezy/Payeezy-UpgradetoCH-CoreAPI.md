@@ -11,7 +11,7 @@ tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-n
 
 <br>
 
-> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your migration to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
 
 <br> 
 
@@ -29,13 +29,13 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 | -------- | ------------- | :--------------: |
 |00 = Purchase | /payments/v1/charges <br> `captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |01 = Pre-Authorization  | /payments/v1/charges <br> `captureFlag` = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|03 = Forced Post   | Q2 2023 Targeted Release   | 
-|04 = Open Refund   | Q1 2023 Targeted Release | 
+|03 = Forced Post   | /payments/v1/charges <br> `captureFlag` = "true" <br> `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
+|04 = Open Refund   | /payments/v1/refund | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
 |05 = Pre-Authorization Only   | REPLACED by Account Verification* <br> /payments-vas/v1/accounts/verification| [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
-|13 = Open Void   | 2023 Targeted Release  | 
+|13 = Open Void   | Will Not be Supported in Commerce Hub | 
 |32 = Tagged Pre-Authorization Completion   | /payments/v1/charges <br> `captureFlag` = "true" <br> `referenceTransactionDetails` object in request | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)| 
 |33 = Tagged Void   | /payments/v1/cancel <br> `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)| 
-|34 = Tagged Refund   | /payments/v1/refund <br> `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
+|34 = Tagged Refund   | /payments/v1/refund <br> `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
 
 *Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
@@ -46,6 +46,12 @@ In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgateway
 In Payeezy, three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is available. 
 
 In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
+
+In Payeezy, Forced Post with digital wallet was allowed; in Commerce Hub, this scenario is not allowed.
+
+In Payeezy, there is no validation on the auth_number element in a Foreced Post transaction; in Commerce Hub, this validation does occur and the transaction will not be processed if auth_number is invalid.
+
+In Payeezy, Timeout Reversal is a merchant managed function; in Commerce Hub, this is a gateway managed feature.
 
 The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; `sourceType` and `currency` are now required elements – see [Commerce Hub Required Elements](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalRequired.md) documentation.
 
@@ -70,10 +76,10 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 |purchase | /payments/v1/charges <br> `captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
 |authorize (zero dollar) | REPLACED by Account Verification* <br> /payments-vas/v1/accounts/verification | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |authorize (non zero dollar) | /payments/v1/charges <br> `captureFlag` = "false”   | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|forced_post   | Q2 2023 Targeted Release  | 
+|forced_post   | /payments/v1/charges <br> `captureFlag` = "true" <br> `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
 |capture   | /payments/v1/charges <br> `captureFlag` = "true" <br> `referenceTransactionDetails` object in request  | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
 |void   | /payments/v1/cancel <br> `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)|
-|refund (open)  | Q1 2023 Targeted Release  | |
+|refund (open)  |  /payments/v1/refund | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
 |refund (tagged) | /payments/v1/refund <br> `referenceTransactionDetails` object in request  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
 *Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
@@ -85,6 +91,12 @@ In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions)
 In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
 
 The API messages for Commerce Hub require different elements than the Payeezy messages required.  For example; `sourceType` and `currency` are now required elements – see [Commerce Hub Required Elements](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalRequired.md) documentation.
+
+In Payeezy, Forced Post with digital wallet was allowed; in Commerce Hub, this scenario is not allowed.
+
+In Payeezy, there is no validation on the auth_number element in a Foreced Post transaction; in Commerce Hub, this validation does occur and the transaction will not be processed if auth_number is invalid.
+
+In Payeezy, Timeout Reversal is a merchant managed function; in Commerce Hub, this is a gateway managed feature.
 
 The element names, types and enumerations have changed - see [Element Level Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) documentation.
 

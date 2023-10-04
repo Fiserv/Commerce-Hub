@@ -27,24 +27,34 @@ Authorization Optimization from Commerce Hub helps businesses maximize their app
 
 ### Supported Transaction Types
 
-The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). All secondary transactions including; [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), offline Refund and [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) *(voids)* requests may need to send updated card details in the subsequent requests.
+The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). 
+
+<!---
+All secondary transactions including; [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), offline Refund and [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) *(voids)* requests may need to send updated card details in the subsequent requests.
+-->
 
 ---
 
-### Auth Optimization Details
+## Request Variables 
 
 <!--
 type: tab
-titles: authOptimizationDetails, JSON Example
+titles: transactionDetails, JSON Example
 -->
 
-The below table identifies the parameters in the `authOptimizationDetails` object.
+The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `accountStatus` | *string* | N/A | Indicates the current status of the account. **Valid Values:** ACCOUNT_CHANGE, ACCOUNT_CLOSED, EXPIRATION_CHANGE, CONTACT_CARDHOLDER |
-| `accountUpdaterErrorCode` | *string* | N/A | Error code provided the account updater system.|
-| `originalResponseCode` | *string* | 27 | Original [Response Code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md) for re-authorized (Optimized) transaction. |
+| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
+
+### Auth Optimization Type
+
+| Values | Description | 
+|-------------|---------------|
+| _CARD_DATA_AND_REASON_ | Recieve updated card data and card update reasons | 
+| _REASON_ONLY_ | Receive card updates reason only |
+| _OVERRIDE_ | Disable the service for this request | 
 
 <!--
 type: tab
@@ -54,10 +64,8 @@ JSON string format:
 
 ``` json
 {
-  "authOptimizationDetails": {
-    "accountStatus": "ACCOUNT_CHANGE",
-    "accountUpdaterErrorCode": "VAU001",
-    "originalResponseCode": "006"
+  "transactionDetails": {
+    "authOptimazation": "CARD_DATA_AND_REASON"
   }
 }
 ```
@@ -66,7 +74,120 @@ JSON string format:
 
 ---
 
-## Response Example
+## Response Variables 
+
+<!--
+type: tab
+titles: proccsorResponseDetails, JSON Example, authOptimizationDetails, JSON Example
+-->
+
+The below table identifies the parameters in the `proccesorResponseDetails` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| originalResponseCode | *string* | 16 | Original response code before Authorization Optimization |
+| originalResponseMessage | *string* | N/A | Original response message before Authorization Optimization |
+
+<!--
+type: tab
+-->
+
+JSON string format:
+
+```json
+
+{
+  "processorResponseDetails": {
+    "originalResponseCode": "006",
+    "originalResponseMessage": "DECLINED"
+  }
+}
+```
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `authOptimizationDetails` object.
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `accountStatus` | *string* | N/A | Indicates the current status of the account.|
+
+### Account Status Reason
+
+| Variable | Description |
+|---------|----------|
+| _ACCOUNT_CHANGE_ | Original account number has changed| 
+| _ACCOUNT_CLOSED_ | Original account number is closed |
+| _EXPIRATION_CHANGE_ | Original card expiration has changed | 
+| *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder | 
+
+<!--
+type: tab
+-->
+
+JSON string format:
+
+```json
+
+{
+  "authOptimizationDetails": {
+    "accountStatus": "ACCOUNT_CHANGE"
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+## Payload Example
+
+<!--
+type: tab
+titles: Request, Response 
+-->
+
+##### Example of a charge payload request.
+
+```json
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "authOptimazation": "CARD_DATA_AND_REASON"
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+-->
 
 ##### Example of an auth optimization (201: Created) response.
 
@@ -80,66 +201,72 @@ JSON string format:
     "transactionState": "AUTHORIZED",
     "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
-      "orderId": "CHG0198f37d492fff4680a1b442a364793854",
-      "transactionTimestamp": "2022-09-29T22:17:12.23343Z",
-      "apiTraceId": "c89af12ece4345b0a4c1de000efe2159",
-      "clientRequestId": "4392850",
-      "transactionId": "c89af12ece4345b0a4c1de000efe2159"
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
     }
   },
   "source": {
     "sourceType": "PaymentCard",
     "card": {
-      "expirationMonth": "11",
-      "expirationYear": "2022",
-      "bin": "411111",
-      "last4": "1111",
-      "scheme": "MASTERCARD"
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
     }
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 10.11,
+      "total": 12.04,
       "currency": "USD"
     },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
     "processorResponseDetails": {
-      "originalResponseCode": "DECLINED",
       "approvalStatus": "APPROVED",
-      "approvalCode": "OK0321",
-      "schemeTransactionId": "0122729757007",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
       "processor": "FISERV",
+      "host": "NASHVILLE",
+      "originalResponseCode": "006",
+      "originalResponseMessage": "DECLINED",
       "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2022-09-29T22:17:13Z"
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
+      }
     }
   },
   "transactionDetails": {
-    "captureFlag": false,
-    "merchantInvoiceNumber": "CHG0198f37d4"
+    "captureFlag": true,
+    "authOptimazation": "CARD_DATA_AND_REASON"
   },
-  "transactionInteraction": {
-    "origin": "ECOM"
-  },
-  "AuthOptimizationDetail": {
-    "accountStatus": "EXPIRATION_CHANGE",
-    "originalResponseCode": "006"
+  "authOptimizationDetails": {
+    "accountStatus": "ACCOUNT_CHANGE"
   }
 }
 ```
 
 <!-- type: tab-end -->
 
-
 ---
 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

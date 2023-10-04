@@ -252,9 +252,7 @@ The below table identifies the parameters specific to Debit.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
  
 ---

@@ -193,8 +193,7 @@ type: tab
 ## See Also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
