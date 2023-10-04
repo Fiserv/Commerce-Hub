@@ -1,9 +1,28 @@
 {
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file"
+    }
+  ],
   "cSpell.words": [
-    "giftcardCount",
-    "HVAC",
+    "cavv",
+    "checkout",
+    "captureFlag",
+    "ECOM",
+    "HMAC",
+    "idempotency",
+    "MOTO",
+    "MUPK",
+    "Omnicommerce",
+    "sourceType",
+    "transactionDetails"
+    "cavv",
+    "SECURE_ECOM",
     "Subcomponent",
-    "UNSPSC"
+    "tavv",
+    "timeframe",
+    "TRANSARMOR"
   ],
   "grammarly.selectors": [
     {

@@ -165,10 +165,10 @@ In Commerce Hub, `unitOfMeasurement` codes are used in manual and automated syst
 | Nautical mile (1852 m) | NMI |
 | Net (register) ton | NTT |
 | Newton* | NEW |
-| Number | NMB |
+| Number of units | NMB |
 | Number of articles | NAR |
 | Number of bobbins | NBB |
-| Number of cells* | NCL |
+| Number of cells | NCL |
 | Number of international units | NIU |
 | Number of packs| NMP |
 | Number of pairs | NMR |

@@ -4,7 +4,7 @@ tags: [API Reference, Customer Address, Billing Address, Master Data, Shipping A
 
 # Customer Address
 
-A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purpose. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request. 
+A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purposes. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
 
 ---
 
@@ -16,14 +16,13 @@ type: tab
 titles: address, JSON Example
 -->
 
-
 The below table identifies the parameters in the `address` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `street` | *string* | 256 | Street address |
 | `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
-| `recipientNameOrAddress` | *string* | 256 | Tertiary address information e.g. recipeint name, company name or address |
+| `recipientNameOrAddress` | *string* | 256 | Tertiary address information e.g. recipient name, company name or address |
 | `city` | *string* | 256 | City or locality |
 | `stateOrProvince` | *string* | 256 | State or province name |
 | `postalCode` | *string* | 10 | Postal code |
@@ -45,7 +44,7 @@ JSON string format for `address`:
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30301",
-      "country": "US"
+      "country": "US",
       "addressHistory": "FIRST"
    }
 }
@@ -57,8 +56,7 @@ JSON string format for `address`:
 
 ## Billing Address
 
-Is the address connected to the customer's [payment method](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) and can be used for [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md).
-
+The billing address is the address connected to the customer's [payment method](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) and can be used for [address verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md).
 
 <!--
 type: tab
@@ -72,7 +70,7 @@ The below table identifies the parameters in the `billingAddress` object.
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
 | `address` | *object* | N/A  | Billing [address](#address) details. |
-| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details. |
+| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) details. |
 
 <!--
 type: tab
@@ -82,41 +80,39 @@ JSON string format for `billingAddress`:
 
 ```json
 {
-   "billingAddress":{
-      "firstName": "John",
-      "lastName": "Doe",
-      "address":{
-         "street": "123 Main St.",
-         "houseNumberOrName": "Apt 1",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30301",
-         "country": "US"
-         "addressHistory": "FIRST"
-      },
-      "phone":{
-         "countryCode": "1",
-         "phoneNumber": "123-123-1234",
-         "type": "DAY"
-      }
-   }
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "street": "123 Main St.",
+      "houseNumberOrName": "Apt 1",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US",
+      "addressHistory": "FIRST"
+    },
+    "phone": {
+      "countryCode": "1",
+      "phoneNumber": "123-123-1234",
+      "type": "DAY"
+    }
+  }
 }
 ```
 
 <!-- type: tab-end -->
 
-
 ---
 
 ## Shipping Address
 
-Is the address or email where the merchant will deliver the goods or services.
+The shipping address contains the address or email where the merchant will deliver the goods or services.
 
 <!--
 type: tab
 titles: shippingAddress, JSON Example
 -->
-
 
 The below table identifies the parameters in the `shippingAddress` object.
 
@@ -124,47 +120,12 @@ The below table identifies the parameters in the `shippingAddress` object.
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* | 256  | Shipping contact first name |
 | `lastName` | *string* | 256 | Shipping contact last name |
-| `shippingMethod` | *string* | 256 | [Shipping and delivery method](#shipping-method) |
+| `shippingMethod` | *string* | 256 | Shipping and delivery method |
 | `shipToEmail` | *string* | 13 | Email on a digital delivery transaction |
 | `address` | *object* | N/A | Shipping [address](#address) details |
-| `phone` | *object* | N/A | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#subcomponentphone) details |
+| `phone` | *object* | N/A | Shipping contact [phone](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) details |
 
-<!--
-type: tab
--->
-
-JSON string format for `shippingAddress`:
-
-```json
-{
-   "shippingAddress":{
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "shippingMethod": "SAME_DAY",
-      "shipToEmail": "customer@domain.com",
-      "address":{
-         "street": "112 Main St.",
-         "houseNumberOrName": "Apt 112",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30301",
-         "country": "US"
-         "addressHistory": "FIRST"
-      },
-      "phone":{
-         "countryCode": "1",
-         "phoneNumber": "123-123-1234",
-         "type": "DAY"
-      }
-   }
-}
-```
-
-<!-- type: tab-end -->
-
-#### Shipping Method
-
-The below table identifies the valid values of `shippingMethod`.
+The below table identifies the valid values for `shippingMethod`.
 
 | Value | Description |
 | ----- | ----------- |
@@ -174,6 +135,39 @@ The below table identifies the valid values of `shippingMethod`.
 | *GROUND* | Shipping within 4 days |
 | *ELECTRONIC* | Email or digital goods |
 | *SHIP_TO_STORE* | Ship to store |
+
+<!--
+type: tab
+-->
+
+JSON string format for `shippingAddress`:
+
+```json
+{
+  "shippingAddress": {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "shippingMethod": "SAME_DAY",
+    "shipToEmail": "customer@domain.com",
+    "address": {
+      "street": "112 Main St.",
+      "houseNumberOrName": "Apt 112",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US",
+      "addressHistory": "FIRST"
+    },
+    "phone": {
+      "countryCode": "1",
+      "phoneNumber": "123-123-1234",
+      "type": "DAY"
+    }
+  }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
