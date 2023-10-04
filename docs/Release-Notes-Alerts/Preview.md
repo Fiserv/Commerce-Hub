@@ -12,7 +12,20 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 #### Release Types
 
 - **Feature:** New feature release
-- **Update:** Existing feature update or enhancement 
+- **Update:** Existing feature update or enhancement
+
+---
+
+## October 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** September 25th 2023
+- **Production:** October 3rd 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support Commerce Hub Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Feature |
 
 ---
 
@@ -28,7 +41,8 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Support [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md) transactions | Feature |
 | Support [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) with transactions | Feature |
 | Support the ability to send [Convenience Fees](?path=docs/Resources/Guides/Convenience-Fees.md) for transactions | Feature |
-| Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the reponse | Update | 
+| Version 1.5: Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the reponse | Update | 
+| Version 1.5: Refactored Merchant Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Update |
 
 ---
 
@@ -42,6 +56,35 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md) with Secure Data Capture. | Update |
+
+---
+
+## October 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** September 25th 2023
+- **Production:** October 3rd 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support Commerce Hub Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Feature |
+| Refactored Merchant Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Update |
+
+---
+
+## August 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** July 26th 2023
+- **Production:** August 8th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md) with Secure Data Capture. | Update |
+| Support to enable or disable [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` in charges and tokens requests. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
