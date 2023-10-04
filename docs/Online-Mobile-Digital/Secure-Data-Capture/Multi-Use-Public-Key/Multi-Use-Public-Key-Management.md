@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
 
 # Multi-Use Public Key Management
 
-The objective of a key management system is to achieve PCI DSS compliance for a banking institution. It involves implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys, which is typically known as the key life cycle for protecting customer's sensitive payment card data. The `asymmetricKeyDetails` and `symmetricKeyDetails` are returned in the response.
+The objective of a key management system is to achieve PCI DSS compliance for a banking institution. It involves implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys, which is typically known as the key life cycle for protecting customer's sensitive payment card data. The `asymmetricKeyDetails` are returned in the response.
 
 
 ## Best Practices for Key Management
