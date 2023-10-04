@@ -56,7 +56,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 <!--
 type: tab
-titles: additionalData3DS
+titles: additionalData3DS, methodData
 -->
 
 The below table identifies the parameters in the `additionalData3DS` object.
@@ -66,6 +66,13 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during Step 1 (3DS Device Data Collection) above. |
 | `channel` | *string* | 32 | Determine the channel that the transaction came through | 
 | `methodData` | *object* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
+
+The below table identifies the parameters in the `methodData` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `encodedToken` | *string* | 4000 | Base64 encoded transactional JWT token for external data collection with service provider |
+| `dataCollectionUrl` | *string* | 256 | The URL that will be used by the 3DS Method to collect card holder browser information |
 
 <!-- type: tab-end -->
 
