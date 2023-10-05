@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "oliversturm.fix-json",
+    "github.remotehub",
+    "znck.grammarly",
+    "valentjn.vscode-ltex",
+    "davidanson.vscode-markdownlint",
+    "42crunch.vscode-openapi",
+    "ban.spellright",
+    "redhat.vscode-yaml"
+  ]
+}
