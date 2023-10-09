@@ -857,210 +857,210 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
-#  /payments-vas/v1/3ds/authenticate:
-#    x-model-version: 1.0
-#    post:
-#      tags:
-#        - 3-D Secure Authentication Endpoint Definition
-#      x-group-name: '3-D Secure'
-#      x-proxy-name: 'Authentication'
-#      summary: Authenticate a given payment instrument.
-#      description: 'Use this payload to perform an account authentication for 3-D Secure.'
-#      requestBody:
-#        required: true
-#        content:
-#          application/json:
-#            schema:
-#              $ref: '#/components/schemas/ThreeDSAuthenticationRequest'
-#            examples:
-#              PaymentCard:
-#                summary: ThreeDSAuthenticationRequest with PaymentCard
-#                $ref: '#/components/examples/PaymentCardAuthenticationRequest'
-#              PaymentSession: 
-#                summary: ThreeDSAuthenticationRequest with PaymentSession
-#                $ref: '#/components/examples/PaymentSessionAuthenticationRequest'
-#              PaymentToken:
-#                summary: ThreeDSAuthenticationRequest with PaymentToken
-#                $ref: '#/components/examples/PaymentTokenAuthenticationRequest'
-#      responses:
-#        201:
-#          description: Created
-#          content:
-#            application/json:
-#              schema:
-#                $ref: '#/components/schemas/ThreeDSAuthenticationResponse'
-#              examples:
-#                PaymentCard:
-#                  summary: ThreeDSAuthenticationResponse with PaymentCard
-#                  $ref: '#/components/examples/PaymentCardAuthenticationResponse'
-#                PaymentSession: 
-#                  summary: ThreeDSAuthenticationResponse with PaymentSession
-#                  $ref: '#/components/examples/PaymentSessionAuthenticationResponse'
-#                PaymentToken:
-#                  summary: ThreeDSAuthenticationResponse with PaymentToken
-#                  $ref: '#/components/examples/PaymentTokenAuthenticationResponse'
-#        400:
-#          $ref: '#/components/responses/BadRequest'
-#        401:
-#          $ref: '#/components/responses/Unauthorized'
-#        404:
-#          $ref: '#/components/responses/NotFound'
-#        408:
-#          $ref: '#/components/responses/RequestTimeout'
-#        415:
-#          $ref: '#/components/responses/UnsupportedMediaType'
-#        425:
-#          $ref: '#/components/responses/TooEarly'
-#        429:
-#          $ref: '#/components/responses/TooManyRequest'
-#        500:
-#          $ref: '#/components/responses/ServerError'
-#        503:
-#          $ref: '#/components/responses/ServiceUnavailable'
-#        504:
-#          $ref: '#/components/responses/GatewayTimeout'
-#      parameters:
-#      - {$ref: '#/components/parameters/ContentTypeHeader'}
-#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-#      - {$ref: '#/components/parameters/ApiKeyHeader'}
-#      - {$ref: '#/components/parameters/TimestampHeader'}
-#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationHeader'}
-#      - {$ref: '#/components/parameters/MessageDigestHeader'}
-#      - {$ref: '#/components/parameters/KeyIdParam'}
-#  /payments-vas/v1/3ds/device-data-initialize:
-#    x-model-version: 1.0
-#    post:
-#      tags:
-#        - Device Data Initialization Endpoint Definition
-#      x-group-name: '3-D Secure'
-#      x-proxy-name: 'Device Data Initialization'
-#      summary: Device data initialization with a 3DS Provider.
-#      description: 'Use this payload to initialize the device data collection process with 3DS provider.'
-#      requestBody:
-#        required: true
-#        content:
-#          application/json:
-#            schema:
-#              $ref: '#/components/schemas/ThreeDSDeviceDataInitializationRequest'
-#            examples:
-#              PaymentCard:
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentCard
-#                $ref: '#/components/examples/PaymentCardDeviceDataInitializationRequest'
-#              PaymentSession: 
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentSession
-#                $ref: '#/components/examples/PaymentSessionDeviceDataInitializationRequest'
-#              PaymentToken:
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentToken
-#                $ref: '#/components/examples/PaymentTokenDeviceDataInitializationRequest'
-#      responses:
-#        201: 
-#          description: Created
-#          content:
-#            application/json:
-#              schema:
-#                $ref: '#/components/schemas/ThreeDSDeviceDataInitializationResponse'
-#              examples:
-#                PaymentCard:
-#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentCard
-#                  $ref: '#/components/examples/PaymentCardDeviceDataInitializationResponse'
-#                PaymentSession: 
-#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentSession
-#                  $ref: '#/components/examples/PaymentSessionDeviceDataInitializationResponse'
-#                PaymentToken:
-#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentToken
-#                  $ref: '#/components/examples/PaymentTokenDeviceDataInitializationResponse'
-#        400:
-#          $ref: '#/components/responses/BadRequest'
-#        401:
-#          $ref: '#/components/responses/Unauthorized'
-#        404:
-#          $ref: '#/components/responses/NotFound'
-#        408:
-#          $ref: '#/components/responses/RequestTimeout'
-#        415:
-#          $ref: '#/components/responses/UnsupportedMediaType'
-#        425:
-#          $ref: '#/components/responses/TooEarly'
-#        429:
-#          $ref: '#/components/responses/TooManyRequest'
-#        500:
-#          $ref: '#/components/responses/ServerError'
-#        503:
-#          $ref: '#/components/responses/ServiceUnavailable'
-#        504:
-#          $ref: '#/components/responses/GatewayTimeout'
-#      parameters:
-#      - {$ref: '#/components/parameters/ContentTypeHeader'}
-#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-#      - {$ref: '#/components/parameters/ApiKeyHeader'}
-#      - {$ref: '#/components/parameters/TimestampHeader'}
-#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationHeader'}
-#      - {$ref: '#/components/parameters/MessageDigestHeader'}
-#      - {$ref: '#/components/parameters/KeyIdParam'}
-#  /payments-vas/v1/3ds/verify:
-#    x-model-version: 1.0
-#    post:
-#      tags:
-#        - 3-D Secure Verification Endpoint Definition
-#      x-group-name: '3-D Secure'
-#      x-proxy-name: 'Verification'
-#      summary: Verify a challenge results with a 3DS Provider.
-#      description: 'Use this payload to verify a challenge results with 3DS provider.'
-#      requestBody:
-#        required: true
-#        content:
-#          application/json:
-#            schema:
-#              $ref: '#/components/schemas/ThreeDSVerificationRequest'
-#            examples:
-#              transactionId:
-#                summary: ThreeDSVerificationRequest with transactionId
-#                $ref: '#/components/examples/ThreeDSVerificationRequest'
-#      responses:
-#        201:
-#          description: Created
-#          content:
-#            application/json:
-#              schema:
-#                $ref: '#/components/schemas/ThreeDSVerificationResponse'
-#              examples:
-#                transactionId:
-#                  summary: ThreeDSVerificationResponse with transactionId
-#                  $ref: '#/components/examples/ThreeDSVerificationResponse'
-#        400:
-#          $ref: '#/components/responses/BadRequest'
-#        401:
-#          $ref: '#/components/responses/Unauthorized'
-#        404:
-#          $ref: '#/components/responses/NotFound'
-#        408:
-#          $ref: '#/components/responses/RequestTimeout'
-#        415:
-#          $ref: '#/components/responses/UnsupportedMediaType'
-#        425:
-#          $ref: '#/components/responses/TooEarly'
-#        429:
-#          $ref: '#/components/responses/TooManyRequest'
-#        500:
-#          $ref: '#/components/responses/ServerError'
-#        503:
-#          $ref: '#/components/responses/ServiceUnavailable'
-#        504:
-#          $ref: '#/components/responses/GatewayTimeout'
-#      parameters:
-#      - {$ref: '#/components/parameters/ContentTypeHeader'}
-#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-#      - {$ref: '#/components/parameters/ApiKeyHeader'}
-#      - {$ref: '#/components/parameters/TimestampHeader'}
-#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-#      - {$ref: '#/components/parameters/AuthorizationHeader'}
-#      - {$ref: '#/components/parameters/MessageDigestHeader'}
-#      - {$ref: '#/components/parameters/KeyIdParam'}
+  /payments-vas/v1/3ds/authenticate:
+    x-model-version: 1.0
+    post:
+      tags:
+        - 3-D Secure Authentication Endpoint Definition
+      x-group-name: '3-D Secure'
+      x-proxy-name: 'Authentication'
+      summary: Authenticate a given payment instrument.
+      description: 'Use this payload to perform an account authentication for 3-D Secure.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThreeDSAuthenticationRequest'
+            examples:
+              PaymentCard:
+                summary: ThreeDSAuthenticationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardAuthenticationRequest'
+              PaymentSession: 
+                summary: ThreeDSAuthenticationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionAuthenticationRequest'
+              PaymentToken:
+                summary: ThreeDSAuthenticationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenAuthenticationRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreeDSAuthenticationResponse'
+              examples:
+                PaymentCard:
+                  summary: ThreeDSAuthenticationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardAuthenticationResponse'
+                PaymentSession: 
+                  summary: ThreeDSAuthenticationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentSessionAuthenticationResponse'
+                PaymentToken:
+                  summary: ThreeDSAuthenticationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenAuthenticationResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+  /payments-vas/v1/3ds/device-data-initialize:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Device Data Initialization Endpoint Definition
+      x-group-name: '3-D Secure'
+      x-proxy-name: 'Device Data Initialization'
+      summary: Device data initialization with a 3DS Provider.
+      description: 'Use this payload to initialize the device data collection process with 3DS provider.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThreeDSDeviceDataInitializationRequest'
+            examples:
+              PaymentCard:
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardDeviceDataInitializationRequest'
+              PaymentSession: 
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionDeviceDataInitializationRequest'
+              PaymentToken:
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenDeviceDataInitializationRequest'
+      responses:
+        201: 
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreeDSDeviceDataInitializationResponse'
+              examples:
+                PaymentCard:
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardDeviceDataInitializationResponse'
+                PaymentSession: 
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentSessionDeviceDataInitializationResponse'
+                PaymentToken:
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenDeviceDataInitializationResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+  /payments-vas/v1/3ds/verify:
+    x-model-version: 1.0
+    post:
+      tags:
+        - 3-D Secure Verification Endpoint Definition
+      x-group-name: '3-D Secure'
+      x-proxy-name: 'Verification'
+      summary: Verify a challenge results with a 3DS Provider.
+      description: 'Use this payload to verify a challenge results with 3DS provider.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThreeDSVerificationRequest'
+            examples:
+              transactionId:
+                summary: ThreeDSVerificationRequest with transactionId
+                $ref: '#/components/examples/ThreeDSVerificationRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreeDSVerificationResponse'
+              examples:
+                transactionId:
+                  summary: ThreeDSVerificationResponse with transactionId
+                  $ref: '#/components/examples/ThreeDSVerificationResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
 
 components:
   parameters:
