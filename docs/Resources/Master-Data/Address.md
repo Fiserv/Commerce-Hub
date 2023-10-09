@@ -2,15 +2,16 @@
 tags: [API Reference, Customer Address, Billing Address, Master Data, Shipping Address, Shipping Method]
 ---
 
-# Customer Address
+# Addresses
 
-A merchant may need to send the customer's address in the transaction request for specific alternative payment methods or relevant for fraud prevention purposes. The merchant can include the `billingAddress` and/or `shippingAddress` objects in the request.
+A merchant may need to send the customer's or shipper's address in the transaction request for specific alternative payment methods, [level II/III purchase cards](?path=docs/Resources/Guides/Level23/Level23.md), or relevant for fraud prevention purposes. The merchant can include the `billingAddress`, `shippingAddress`, and/or `shipperAddress` objects in the request.
 
 ---
 
 ## Address
 
-Common `address` object used in both the billing address and shipping address.
+Common `address` object used in the [billing address](#billing-address), [shipping address](#shipping-address), and [shipper address](#shipper-address).
+
 <!--
 type: tab
 titles: address, JSON Example
@@ -70,7 +71,7 @@ The below table identifies the parameters in the `billingAddress` object.
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
 | `address` | *object* | N/A  | Billing [address](#address) details. |
-| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) details. |
+| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Phone.md) details. |
 
 <!--
 type: tab
@@ -171,11 +172,60 @@ JSON string format for `shippingAddress`:
 
 ---
 
+## Shipper Address
+
+The shipper address is the address where the merchant is shipping product from and is used in [level II/III transactions](?path=docs/Resources/Guides/Level23/Level23.md).
+
+<!--
+type: tab
+titles: shipperAddress, JSON Example
+-->
+
+The below table identifies the parameters in the `shipperAddress` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `firstName` | *string* | 256 | Customer first name. |
+| `lastName` | *string* | 256 | Customer last name. |
+| `address` | *object* | N/A  | Billing [address](#address) details. |
+| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) details. |
+
+<!--
+type: tab
+-->
+
+JSON string format for `shipperAddress`:
+
+```json
+{
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "street": "123 Main St.",
+      "houseNumberOrName": "Apt 1",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US",
+      "addressHistory": "FIRST"
+    },
+    "phone": {
+      "countryCode": "1",
+      "phoneNumber": "123-123-1234",
+      "type": "DAY"
+    }
+  }
+}
+```
+
+<!-- type: tab-end -->
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Level II/III Data](?path=docs/Resources/Guides/Level23/Level23.md)
 
 ---

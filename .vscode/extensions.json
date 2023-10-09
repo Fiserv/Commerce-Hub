@@ -3,6 +3,13 @@
     "davidanson.vscode-markdownlint",
     "oliversturm.fix-json",
     "streetsidesoftware.code-spell-checker",
-    "znck.grammarly"
+    "znck.grammarly",
+    "redhat.vscode-yaml",
+    "ban.spellright",
+    "ms-vscode.remote-repositories",
+    "42crunch.vscode-openapi",
+    "valentjn.vscode-ltex",
+    "github.remotehub",
+    "ms-vscode.azure-repos"
   ]
 }

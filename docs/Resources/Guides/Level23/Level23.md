@@ -82,6 +82,7 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 | Variable | Type| Maximum Length | Description |
 |---------|-------|----------|---------|
 | `merchantOrderId` | _string_ | 128 | Merchant order ID (aka customer reference number or purchase order number). |
+| `merchantInvoiceNumber` | _string_ | 12 | 
 
 <!--
 type: tab
@@ -98,11 +99,11 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 ---
 
-## Level II Payload Example
+## Payload Examples
 
 <!--
 type: tab
-titles: Request, Response
+titles: Level II Request, Level II Response, Level III Request, Level III Response
 -->
 
 Example of a charge payload request with Level II data. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
@@ -292,15 +293,8 @@ Example of a charge (201: Created) response.
 }
 ```
 
-<!-- type: tab-end -->
-
----
-
-## Level III Payload Example
-
 <!--
 type: tab
-titles: Request, Response
 -->
 
 Example of a charge payload request with Level III data. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
@@ -632,7 +626,7 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Card Brand Requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
 - [Commodity Codes](?path=docs/Resources/Guides/Level23/Commodity-Codes.md)
 - [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
