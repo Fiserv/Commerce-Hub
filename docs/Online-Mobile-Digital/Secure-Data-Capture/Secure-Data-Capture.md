@@ -4,24 +4,22 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 # Secure Data Capture
 
-Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance. 
+Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A,  SAQ A-EP, and SAQ D compliance.
 
-The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self-validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. For more information visit [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
+The PCI DSS [Self-Assessment Questionnaires](?path=docs/Resources/FAQs-Glossary/Glossary.md#self-assessment-questionnaire) (SAQs) are self-validation tools intended to assist merchants in evaluating their compliance with the PCI DSS. For more information visit the [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
 - **SAQ A:** applies to merchants that have fully outsourced all cardholder data functions to Commerce Hub, with no electronic storage, processing, or transmission of any customer data on their systems.
-
 - **SAQ A-EP:** applies to merchants who partially outsource payment processing to Commerce Hub. The merchant typically has a website that hosts a checkout process and sends the customer data to Commerce Hub at a point of payment.
+- **SAQ D:** applies to merchants who capture the payment source details and save the data in their database. The merchant typically has a website that hosts a checkout process and encrypts the customer data before sending it to Commerce Hub for authorization.
 
-- **SAQ D:** applies to merchants who capture the payment source details and save the data in their database. The merchant typically has a website that hosts a checkout process and encrypts the customer data before sending to Commerce Hub for authroization.
+## Mobile Integrations
 
-### Mobile Integrations
+Commerce Hub's Secure Data Capture SAQ A and SAQ A-EP solutions are supported with mobile integrations with the following conditions;
 
-Commerce Hub's Secure Data Capture solutions are supported with mobile integrations with the following conditions;
-
-- The merchant's API should provide access to the webapp via native mobile browser or a WebView embedded within a native mobile app. See [Apple's iOS](https://developer.apple.com/documentation/webkit/wkwebview) or [Google's Android](https://developer.android.com/reference/android/webkit/WebView) documentation for addtional details.
+- The merchant's API should provide access to the webapp via a native mobile browser or a WebView embedded within a native mobile app. See [Apple's iOS](https://developer.apple.com/documentation/webkit/wkwebview) or [Google's Android](https://developer.android.com/reference/android/webkit/WebView) documentation for additional details.
 - Commerce Hub's iFrame and JS solutions are responsive and should natively re-render to the customer's device screen size.
-- When integrating with native iOS or Android SDKs, Commerce Hub's API Only solution should be used.
- 
+- When integrating with native iOS or Android SDKs, Commerce Hub's API solutions should be used.
+
 ---
 
 ## SAQ A Integrations
@@ -81,9 +79,9 @@ link:
 <!-- type: row -->
 
 <!-- type: card
-title: Multi-Use Public Key
+title: API Direct
 description: Integration that includes the use of a static public key, where the merchant can capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Direct.md
 -->
 
 <!-- type: row-end -->
