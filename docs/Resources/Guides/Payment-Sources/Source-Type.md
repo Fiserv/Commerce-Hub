@@ -2,7 +2,7 @@
 tags: [Payment Source]
 ---
 
-# Payment Source Types
+# Payment Source Types 
 
 The variable `sourceType` is used to determine the payment instrument of the transaction in the `source` object. Depending on the payment source the `sourceType` and request variables change. 
 

@@ -35,13 +35,13 @@ link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md
 <!-- type: card
 title: Secure Data Capture
 description: Allows the integration directly with Commerce Hub's Secure Data Capture iFrame or JavaScript to capture the 3DS device data and payment details within the Commerce Hub iFrame or JavaScript SDK on the merchant's website.
-link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md
+link: 
 -->
 
 <!-- type: card
 title: RESTful API
 description: Allows the integration directly with Commerce Hub's API to obtain the 3DS authentication details and process the payment transaction within the merchant's website.
-link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-API-Only.md
+link: 
 -->
 
 <!-- type: row-end -->
