@@ -59,35 +59,6 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 ---
 
-## October 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** September 25th 2023
-- **Production:** October 3rd 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support Commerce Hub Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Feature |
-| Refactored Merchant Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Update |
-
----
-
-## August 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** July 26th 2023
-- **Production:** August 8th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md) with Secure Data Capture. | Update |
-| Support to enable or disable [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` in charges and tokens requests. | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
 ## July 2023
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
