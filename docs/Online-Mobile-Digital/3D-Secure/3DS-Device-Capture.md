@@ -67,6 +67,10 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | `channel` | *string* | 32 | Determine the channel that the transaction came through | 
 | `methodData` | *object* | N/A | Additional device data collection details passed during 3-D Secure (3DS) flows |
 
+<!--
+type: tab
+-->
+
 The below table identifies the parameters in the `methodData` object.
 
 | Variable | Type | Maximum Length | Description |
@@ -227,7 +231,10 @@ new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-co
 
 #### Repsone Handling 
 
+
 The following code snippet provides a sample response 
+
+Description......
 
 <!--
 type: tab
