@@ -1,7 +1,23 @@
 {
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file"
+    }
+  ],
   "cSpell.words": [
     "cavv",
+    "checkout",
+    "captureFlag",
     "ECOM",
+    "HMAC",
+    "idempotency",
+    "MOTO",
+    "MUPK",
+    "Omnicommerce",
+    "sourceType",
+    "transactionDetails"
+    "cavv",
     "SECURE_ECOM",
     "Subcomponent",
     "tavv",

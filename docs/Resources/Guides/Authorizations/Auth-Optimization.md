@@ -27,7 +27,11 @@ Authorization Optimization from Commerce Hub helps businesses maximize their app
 
 ### Supported Transaction Types
 
-The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). All secondary transactions including; [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), offline Refund and [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) *(voids)* requests may need to send updated card details in the subsequent requests.
+The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). 
+
+<!---
+All secondary transactions including; [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), offline Refund and [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) *(voids)* requests may need to send updated card details in the subsequent requests.
+-->
 
 ---
 
@@ -38,11 +42,11 @@ type: tab
 titles: transactionDetails, JSON Example
 -->
 
-The below table identifies the required parameters in the `transactionDetails` object.
+The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `authOptimazation` | *striing* | 32 | An identifier used to indicate what data is received in the response for merchants boarded for Authorization Optimization | 
+| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
 
 ### Auth Optimization Type
 
@@ -77,7 +81,7 @@ type: tab
 titles: proccsorResponseDetails, JSON Example, authOptimizationDetails, JSON Example
 -->
 
-The below table identifies the parameters in the `proccsorResponseDetails` object.
+The below table identifies the parameters in the `proccesorResponseDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -115,8 +119,8 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 | Variable | Description |
 |---------|----------|
 | _ACCOUNT_CHANGE_ | Original account number has changed| 
-| _ACCOUNT_CLOSED_ | Account number is closed |
-| _EXPIRATION_CHANGE_ | Expired card ?????? | 
+| _ACCOUNT_CLOSED_ | Original account number is closed |
+| _EXPIRATION_CHANGE_ | Original card expiration has changed | 
 | *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder | 
 
 <!--
