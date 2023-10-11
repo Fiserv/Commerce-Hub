@@ -3333,7 +3333,6 @@ components:
           example: 13.50
         currency:
           type: string
-          pattern: '^[A-Z]+$'
           maxLength: 3
           description: 'ISO 3 Currency Format.'
           example: 'USD'
@@ -3341,7 +3340,7 @@ components:
           type: string
           maxLength: 17
           description: 'Indicates <a href="../docs?path=docs/Resources/Master-Data/Balance-Components.md#balance-type">type</a> of account balance represents.'
-          example: 'EBT_SNAP'
+          example: 'GIFT_CARD'
     ProcessorResponseDetails:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Processor-Response-Details.md">processor
