@@ -1563,10 +1563,6 @@ components:
         last4: {type: string, maxLength: 4, description: Contains the last four digits
             of the Primary Account Number (PAN)., example: '0019'}
         scheme: {type: string, maxLength: 256, description: Card brand., example: VISA}
-        beginningBalance: {type: number, maximum: 1.0E18, description: Beginning card
-            balance., example: 1.00}
-        endingBalance: {type: number, maximum: 1.0E18, description: Ending card balance.,
-          example: 0.10}
     EncryptionData:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Encryption-Data.md">Encrypted
@@ -3302,6 +3298,10 @@ components:
         approvedAmount: {$ref: '#/components/schemas/Amount'}
         amountComponents:
           $ref: '#/components/schemas/AmountComponents'
+        balances:
+          type: array
+          items:
+            $ref: '#/components/schemas/Balance'
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
         merchantName: {type: string, maxLength: 1024, description: Name of the merchant
             returned from boarded account or dynamic descriptor.}
@@ -3317,6 +3317,31 @@ components:
             from boarded account.}
         merchantPostalCode: {type: string, maxLength: 10, description: Postal code
             of the merchant returned from boarded account or dynamic descriptor.}
+    Balance:
+      x-model-version: 1.0
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Balance-Components.md">Balance</a> object to support account balances.'
+      properties:
+        beginningBalance:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'Account beginning balance.'
+          example: 13.50
+        endingBalance:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'Account ending balance.'
+          example: 13.50
+        currency:
+          type: string
+          pattern: '^[A-Z]+$'
+          maxLength: 3
+          description: 'ISO 3 Currency Format.'
+          example: 'USD'
+        balanceType:
+          type: string
+          maxLength: 17
+          description: 'Indicates <a href="../docs?path=docs/Resources/Master-Data/Balance-Components.md#balance-type">type</a> of account balance represents.'
+          example: 'EBT_SNAP'
     ProcessorResponseDetails:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Processor-Response-Details.md">processor
