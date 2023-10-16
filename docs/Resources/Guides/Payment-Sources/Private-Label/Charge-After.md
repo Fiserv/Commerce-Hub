@@ -4,7 +4,7 @@ tags: [Private Label, Payment Sources]
 
 # Charge After
 
-Desription.....
+A private label credit card (PLCC) is a type of credit card that is intended for use at a specific retailer. Merchants partner with PLCC issuers like Citi, Charge After to qualify customers and extend them a credit card account.
 
 <!-- theme: warning -->
 > Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
@@ -31,13 +31,136 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 type: tab
 -->
 
+The below table identifies the conditional parameters in the `privateLabel` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `minimumSpendExemptIndicator`| *string* | N/A | description |
+| `creditPlan`| *string* | N/A | description | 
+
+<!--
+type: tab
+-->
+
+The below table identifies the conditional parameters in the `customFields` object.
+
+| Key | Value |
+| -------- | -------- |
+ v
+
+<!--
+type: tab
+-->
+
+The below table identifies the conditional parameters in the `directedRouting` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `processor` | *array* | N/A | Identifies the card processor |
+
 ```json
 
 {
+  "amount": {
+    "total": 1.45,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentTrack",
+    "encryptionData": {
+      "encryptionType": "ON_GUARD",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "4599891943100751=36193012513455685570",
+      "keyId": "FFFF999999039D4001080114",
+      "deviceType": "INGENICO"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": false,
+    "merchantOrderId": "7EWVTZRNAK7AJMXL",
+    "merchantTransactionId": "FT4WTBP9LW0FB0PD"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "MAG_STRIPE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2023-09-20T05:33:05Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL"
+      }
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100012000003424",
+    "terminalId": "10000001"
+  },
   "additionalDataCommon": {
     "privateLabel": {
-      "creditPlanNumber": "12345",
-      "minimumSpendExemptIndicator": "EXEMPT"
+      "minimumSpendExemptIndicator": "EXEMPT",
+      "creditPlan": "00100"
+    },
+    "customFields": [
+      {
+        "key": " Request_Date_Time_GMT",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": " Request_Date_Time_Local",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": "Requestor_Channel_Code",
+        "value": "STORE"
+      },
+      {
+        "key": " Requestor_Organization_Code",
+        "value": "HOME DEPOT"
+      },
+      {
+        "key": "Requestor_User_ID",
+        "value": "NCLCP"
+      },
+      {
+        "key": "Requestor_POS_Event_Code",
+        "value": "Sale"
+      },
+      {
+        "key": "Requestor_Location_State_Code",
+        "value": "TX"
+      },
+      {
+        "key": "Retailer_Channel",
+        "value": "STORE"
+      },
+      {
+        "key": "Consumer_Decision",
+        "value": "ACCEPT"
+      },
+      {
+        "key": " Terms_Verified",
+        "value": "Y"
+      },
+      {
+        "key": "Lookup_Strategy",
+        "value": "DETERMINISTIC"
+      },
+      {
+        "key": "Sales_Doc_ID",
+        "value": "12443-605"
+      }
+    ],
+    "directedRouting": {
+      "processors": [
+        {
+          "processorName": "CHARGE_AFTER",
+          "processingPlatform": "PRIVATE_LABEL",
+          "priority": "PRIMARY"
+        }
+      ]
+    }
   }
 }
 
