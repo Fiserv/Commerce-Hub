@@ -62,32 +62,80 @@ titles: Request, Response
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 1.56,
     "currency": "USD"
   },
   "source": {
     "sourceType": "PaymentCard",
     "card": {
-      "cardData": "4005550000000019",
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123",
-      "securityCodeIndicator": "PROVIDED"
+      "cardData": 6035322542813757,
+      "expirationMonth": 12,
+      "expirationYear": 2049,
+      "securityCode": 898
     }
   },
-  "transactionDetails": {
-    "captureFlag": true
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "street": "112 Main St.",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US"
+    }
   },
-  "additionalDataCommon": {
-    "privateLabel": {
-      "creditPlan": "12345",
-      "minimumSpendExemptIndicator": "EXEMPT"
+  "orderData": {
+    "itemDetails": [
+      {
+        "insuranceClaimNumber": "63732",
+        "department": "0",
+        "subDepartment": "0",
+        "departmentClass": "0",
+        "departmentSubClass": "0"
+      }
+    ]
+  },
+  "customer": {
+    "merchantCustomerId": "12345"
+  },
+  "transactionDetails": {
+    "captureFlag": false,
+    "merchantOrderId": "MS46LEG1027E5PX6",
+    "merchantTransactionId": "VQZBLFK10EWJN04Z"
+  },
+  "transactionInteraction": {
+    "origin": "MOTO",
+    "motoType": "MAIL",
+    "eciIndicator": "SECURE_ECOM",
+    "posEntryMode": "MANUAL",
+    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+    "terminalTimestamp": "2023-10-06T04:42:40Z",
+    "additionalPosInformation": {
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED",
+        "terminalEntryCapability": "UNSPECIFIED"
+      }
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100012000001424",
+    "terminalId": "10000001"
+  },
+  "additionalDataCommon": {
+    "directedRouting": {
+      "processors": [
+        {
+          "processorName": "CITI",
+          "processingPlatform": "PRIVATE_LABEL",
+          "priority": "PRIMARY"
+        }
+      ]
+    },
+    "privateLabel": {
+      "minimumSpendExemptIndicator": "EXEMPT",
+      "creditPlan": "00100"
+    }
   }
 }
 ```
@@ -105,58 +153,116 @@ type: tab
   "gatewayResponse": {
     "transactionType": "CHARGE",
     "transactionState": "AUTHORIZED",
-    "transactionOrigin": "POS",
+    "transactionOrigin": "MOTO",
     "transactionProcessingDetails": {
-      "orderId": "CHG01864c3cb65c824d99b7f297505f914605",
-      "transactionTimestamp": "2021-11-30T21:26:14.90396Z",
-      "apiTraceId": "635866b3fc244917aa864fbc5baaae18",
-      "clientRequestId": "4324974",
-      "transactionId": "635866b3fc244917aa864fbc5baaae18"
+      "orderId": "CHG01d988590da53ea43a159a3a1d3557c068",
+      "transactionTimestamp": "2023-10-06T20:45:34.928541403Z",
+      "apiTraceId": "7fdd290469c247799228a7741434d545",
+      "clientRequestId": "6158724",
+      "transactionId": "7fdd290469c247799228a7741434d545"
     }
   },
   "source": {
     "sourceType": "PaymentCard",
     "card": {
       "expirationMonth": "12",
-      "expirationYear": "2035",
-      "bin": "400555",
-      "last4": "0019",
-      "scheme": "Visa"
+      "expirationYear": "2049",
+      "bin": "603532",
+      "last4": "3757",
+      "scheme": "THD"
     }
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 12.04,
+      "total": 1.56,
       "currency": "USD"
     },
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
-      "approvalCode": "OK123C",
-      "referenceNumber": "4fbc5baaae18",
-      "processor": "FISERV",
-      "networkRouted": "VISA",
-      "networkInternationalId": "0001",
+      "approvalCode": "006322",
+      "processor": "CITI",
+      "host": "PRIVATE_LABEL",
       "responseCode": "000",
       "responseMessage": "Approved",
-      "host": "NASHVILLE",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL ",
+      "hostResponseCode": "0000",
+      "hostResponseMessage": "Approval",
+      "bankAssociationDetails": {
+        "transactionTimestamp": "2023-10-06T20:45:35.664Z",
+        "avsSecurityCodeResponse": {
+          "streetMatch": "NOT_MATCHED",
+          "postalCodeMatch": "NOT_MATCHED",
+          "securityCodeMatch": "CVC2 Match",
+          "association": {
+            "avsCode": "N",
+            "securityCodeResponse": "M"
+          }
+        }
+      },
+      "additionalInfo": [
+        {
+          "name": "customerServicePhoneNumber",
+          "value": "8005684571"
+        }
+      ],
       "purchaseOrderRequiredIndicator": "NOT_REQUIRED",
       "taxExemptIndicator": "NOT_EXEMPT",
-      "feeProgramIndicator": "123",
-      "purchaseAprType": "FIXED",
-      "arqcResponseCode": "VALIDATION_PASSED"
+      "arqcResponseCode": "UNAVAILABLE"
+    }
+  },
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "street": "112 Main St.",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30301",
+      "country": "US"
     }
   },
   "transactionDetails": {
-    "captureFlag": true
+    "captureFlag": false,
+    "transactionCaptureType": "terminal_direct",
+    "partialApproval": true,
+    "merchantTransactionId": "VQZBLFK10EWJN04Z",
+    "merchantOrderId": "MS46LEG1027E5PX6"
+  },
+  "transactionInteraction": {
+    "origin": "MOTO",
+    "posEntryMode": "MANUAL",
+    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+    "eciIndicator": "SECURE_ECOM",
+    "terminalTimestamp": "2023-10-06T04:42:40Z",
+    "additionalPosInformation": {
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED",
+        "terminalEntryCapability": "UNSPECIFIED"
+      }
+    },
+    "motoType": "MAIL"
+  },
+  "merchantDetails": {
+    "terminalId": "10000001",
+    "merchantId": "100012000001424"
   },
   "additionalDataCommon": {
     "privateLabel": {
-      "creditPlanNumber": "12345",
+      "creditPlan": "00100",
       "minimumSpendExemptIndicator": "EXEMPT"
     }
-  }
+  },
+  "paymentTokens": [
+    {
+      "tokenData": "0848594901193757",
+      "tokenSource": "TRANSARMOR",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
+    },
+    {
+      "tokenData": "7258080032423757",
+      "tokenSource": "CITI"
+    }
+  ]
 }
 ```
 
