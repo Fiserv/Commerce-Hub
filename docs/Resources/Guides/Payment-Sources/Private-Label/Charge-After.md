@@ -35,8 +35,8 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `minimumSpendExemptIndicator`| *string* | N/A | description |
-| `creditPlan`| *string* | N/A | description | 
+| `minimumSpendExemptIndicator`| *string* | 32 | The minimum spend amount the customer is exempt from |
+| `creditPlan`| *string* | 64 | Payment program assigned by the private label processor |
 
 <!--
 type: tab
@@ -46,7 +46,18 @@ The below table identifies the conditional parameters in the `customFields` obje
 
 | Key | Value |
 | -------- | -------- |
- v
+| Request_Date_Time_GMT | "2023-09-20T05:33:05Z" |
+| Request_Date_Time_Local | 2023-09-20T05:33:05Z |
+| Requestor_Channel_Code | STORE |
+| Requestor_Organization_Code | HOME DEPOT |
+| Requestor_User_ID | NCLCP |
+| Requestor_POS_Event_Code | Sale |
+| Requestor_Location_State_Code | TX |
+| Retailer_Channel | STORE |
+| Consumer_Decision | ACCEPT |
+| Terms_Verified | Y |
+| Lookup_Strategy | DETERMINISTIC |
+| Sales_Doc_ID | 12443-605 |
 
 <!--
 type: tab
@@ -177,10 +188,10 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using a PLCC.
+##### Example of a charge payload request using a PLCC
 
 <!-- info -->
-> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is _MOTO_ `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
+> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is *MOTO* `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 ```json
 {
@@ -218,7 +229,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+##### Example of a charge (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -295,4 +306,3 @@ type: tab
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 
 ---
-
