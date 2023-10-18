@@ -112,8 +112,8 @@ Below is a list of negative response codes and the dollar amounts required to ge
 |Amex|373953 19235 1004|$21.00|51|DECLINED|42|Unable to Send Trans|303|Processor Decline|
 |JCB|356600 777001 7510|$69.00| | | |Invalid signature received 'TXKL/K############| | |
 |JCB|356600 777001 7510|$20.50|51|DECLINED|42|Unable to Send Trans|303|Processor Decline|
-|Discover|625094 100652 8590|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
-|Discover|362596 000000 04|$88.00|1|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Discover|601100 099120 0035|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Diners|362596 000000 04|$88.00|1|DECLINED|42|Unable to Send Trans|303|Processor Decline|
 |UNIONPAY|625094 100652 8599|$21.00|51|DECLINED|42|Unable to Send Trans|303|303|Processor Decline|
 |UNIONPAY|625094 100652 8599|$35.00|61|AMT EXCEEDS LMT|26|Invalid Amount|509|Over Limit|
 |MAESTRO|541333 008909 9049|$14.21|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
