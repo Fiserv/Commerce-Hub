@@ -1,12 +1,16 @@
 ---
-
 tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
-
 ---
 
-## Welcome to Commerce Hub through Emulation!   
+<!-- theme: danger -->
+>  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+
+# Welcome to Commerce Hub through Payeezy Emulation!   
 
 If you have been directed to reveiw this page, it means that your MIDs will soon be upgraded to Commerce Hub through emulation. The purpose of this document is to outline the steps of this journey, call out the anticipated response payload differences between Payeezy and the Commerce Hub emulator and guide you to the appropriate place for support.
+
+<!-- theme: warning -->
+>Your billing code will change - please reach out to your AM/RM with any questions concerning the potential impact.
 
 **Let's begin...**
 
@@ -20,11 +24,9 @@ If you have been directed to reveiw this page, it means that your MIDs will soon
 
 5. **RECODE TO COMMERCE HUB:** Now that you have been migrated to Commerce Hub emulation, it is time to begin planning your upgrade to the full capablities that Commerce Hub has to offer!  Here is the place to start: [Getting Started with Commerce Hub](?path=docs/Getting-Started/Getting-Started-General.md)  There is also a [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md) that will help you to understand how to transition your code from one platform to the next and incorporate features. 
 
-Your billing code will change - please reach out to your AM/RM with any questions concerning the potential impact.
-
 ---
 
-### Reporting
+## Reporting
 
 It's time to start moving away from Payeezy Real-time Payment Manager (RPM) as your source for transaction reporting and towards ClientLine Enterprise (CLX) reporting.   [ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) is available so that you can become familiar with the new reporting platform's features and functionality.
 
@@ -32,11 +34,12 @@ We also have a dedicated article in the [Payeezy Merchant Upgrade to Commerce Hu
 
 ---
 
-### Response Payload Differences
+## Response Payload Differences
 
-**Response Codes**
+### Response Codes
 
 Bank Response Codes, Bank Messages, Exact Response Codes and Exact Messages have been paired down to a normalized list.  This means that not all codes and related messages documented in Payeezy will continue to be returned in the response.  *Note: No new codes or messages have been introduced.*  
+
 This table respresents the shortened list of expected response codes:
 
 | Bank Response Code | Bank Message | Exact Response Code | Exact Message |
@@ -65,30 +68,57 @@ This table respresents the shortened list of expected response codes:
 |902|Process Unavailable|12|Message Timed-out at Host|
 |902|Process Unavailable|42|Unable to Send Trans|
 
-**Fraud Response**
+### Fraud Response
+
+<!-- theme: info -->
+>These are generic fraud response messages. Commerce Hub emulation will not return messages specific to the reason for decline.
 
 All negative filter and velocity control decline responses will appear as:
 
-  "transaction_error": 1, <br>
-    "transaction_approved": 0, <br>
-    "exact_resp_code": "72", <br>
-    "exact_message": "Data within the transaction is incorrect" 
+```json
+  "transaction_error": 1,
+  "transaction_approved": 0,
+  "exact_resp_code": "72",
+  "exact_message": "Data within the transaction is incorrect"
+```
 
 All AVS/CVV decline responses will appear as:
 
- "transaction_error": 1, <br>
- "transaction_approved": 0, <br>
- "exact_resp_code": "72", <br>
- "exact_message": "Data within the transaction is incorrect", <br>
- "bank_resp_code": "100", <br>
- "bank_message": "Approved", <br>
+```json
+ "transaction_error": 1,
+ "transaction_approved": 0,
+ "exact_resp_code": "72",
+ "exact_message": "Data within the transaction is incorrect",
+ "bank_resp_code": "100",
+ "bank_message": "Approved", 
+```
+
  AVS and CVV2 codes will also be returned in the response as expected.
 
-*NOTE: These are generic fraud response messages.  Commerce Hub emulation will not return messages specific to the reason for decline.*
+### Decline Responses
 
-**Other Response Differences to Expect**
+Below is a list of negative response codes and the dollar amounts required to generate the specific responses.
+
+| Card Brand | Card Data | Amount | Nashville Code | Nashville Message | Exact Code | Exact Message | Compass Code | Compass Message |
+| -------- | ------------- | -------------- |:---------:|--------|:-----:|-----|:-----:|-----|
+|Visa|401200 003333 0026|$215.00|10 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Visa|401200 003333 0026|$44.67|C2|CVV2 Declined|8|CVV2/CID/CVC2 Data not verified|503|Fraud / Security Violation|
+|Visa|401200 003333 0026|$14.21|14|INV ACCT NUM|22|Invalid Credit Card Number|763|Invalid Account Number|
+|Visa|401200 003333 0026|$81.00|91|PLEASE RETRY|7|Terminal Restriction: Try again later|902|Process Unavailable|
+|MasterCard|543484 255555 5556|$123.27|M065|ADD AUTH REQUIRE|7|Terminal Restriction: Try again later|||
+|MasterCard|543484 255555 5556|$206.99|13|INV AMT|26|Invalid Amount|607|Invalid Amount|
+|MasterCard|543484 255555 5556|$204.99|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
+|Amex|373953 19235 1004|$7.00|57|TRAN NOT ALLOWED|32|Invalid Transaction Code|253|Invalid Tran. Type|
+|Amex|373953 19235 1004|$21.00|51|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|JCB|356600 777001 7510|$69.00| | | |Invalid signature received 'TXKL/K############| | |
+|JCB|356600 777001 7510|$20.50|51|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Discover|601100 099120 0035|$21.00|1 (51)|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|Diners|362596 000000 04|$88.00|1|DECLINED|42|Unable to Send Trans|303|Processor Decline|
+|UNIONPAY|625094 100652 8599|$21.00|51|DECLINED|42|Unable to Send Trans|303|303|Processor Decline|
+|UNIONPAY|625094 100652 8599|$35.00|61|AMT EXCEEDS LMT|26|Invalid Amount|509|Over Limit|
+|MAESTRO|541333 008909 9049|$14.21|54|EXPIRED CARD|25|Invalid Expiry Date|522|Card is expired|
+
+
+### Other Response Differences to Expect
 
 - Gateway validation of authorization_num and transaction_tag will no longer happen.  Declines due to these element values being invalid will come from the downstream system and the decline response will reflect that of a bank response message.
-
----
-
