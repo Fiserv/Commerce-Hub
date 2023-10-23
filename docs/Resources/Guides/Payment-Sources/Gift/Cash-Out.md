@@ -2,43 +2,27 @@
 tags: [Gift Card, Payment Card, Payment Source, Loyalty, Cash-Out]
 ---
 
-# Gift Card Cash-Out 
+# Gift Card Cash-Out
 
-A Cash Out transaction allows a merchant to remove the consumer fund from the card. A Reload is initiated by sending the `amount`, `target` and `additionalDataCommon` object in the Request with relevant transaction types.
-
+A cash-out request allows a merchant to remove the consumer funds from the gift card. A cash-out is initiated by sending the `target` and `additionalDataCommon` object in the Request with relevant transaction types.
 
 ## Request Variables
 
-Description 
+Description
 
 <!--
 type: tab
-titles: cardObjects, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
+titles: target, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
 -->
 
-The below table identifies the required parameters in the `amount` object.
+The below table identifies the available parameters in `target` object.
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
-<!--
-type: tab
--->
-
-The below table identifies the available parameters in `cardObject` object.
-
-|Variable | Type | Maximum Length | Description|
-|---------|----------|----------------|---------|
-| `expirationMonth` | *string* | N/A | 2-digit expiration month | 
-| `expirationYear` | *string* | N/A | 4-digit expiration year | 
-| `category`| *string* | 25 | Describes the card category | 
+| `expirationMonth` | *string* | N/A | 2-digit expiration month |
+| `expirationYear` | *string* | N/A | 4-digit expiration year |
+| `category`| *string* | 25 | Describes the card category |
 | `subCategory`| *string* | 25 | Provides the subcategory for the <code>category</code> field to identify the card type. |
-
-
-
-
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
@@ -46,7 +30,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 |---------|----------|----------------|---------|
 | `merchantTransactionID` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 | `merchantOrderID`| *string* | 128 | Merchant order ID (aka customer reference number or purchase order (PO) number).
-| `operationType` | *string* | 50 | Add descriptionXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+| `operationType` | *string* | 50 | Identifies the tranaction type as cash-out value |
 
 <!--
 type: tab
@@ -85,7 +69,7 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 ---
 
-## Endpoint 
+## Endpoint
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/gift-cards`
@@ -99,7 +83,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of payload request 
+#### Example of payload request
 
 ```json
 {

@@ -13,8 +13,6 @@ An activation request allows a merchant to create and activate a [digital _(virt
 
 ## Request Variables
 
-Description
-
 <!--
 type: tab
 titles: amount, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
@@ -24,8 +22,8 @@ The below table identifies the parameters in the `amount` object.
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `total` | _number_ | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -35,7 +33,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `operationType` | *string* | 50 | Add descriptionXXXXXXXXXXXXXXXXXXXXXXXXXXXXX | 
+| `operationType` | _string_ | 50 | Identifies the tranaction type as activiation value |
 
 <!--
 type: tab
@@ -45,7 +43,7 @@ The below table identifies the required parameters in the `transactionInteractio
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ'
+| `terminalTimestamp` | _string_ | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
 <!--
 type: tab
@@ -55,8 +53,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!--
 type: tab
@@ -66,15 +64,15 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `additionalData` | *object* | N/A |  Idenitfies adtionatal data in the request. |
+| `additionalData` | _object_ | N/A |  Idenitfies adtionatal data in the request. |
 
 The below table identifies the conditional parameters in the `additionalData` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a digital gift card |
-| `fundingProvider` | *string* | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
-| `transactionPostDate` | *string* | 16 | Used to override a transaction post date in reporting |
+| `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a digital gift card |
+| `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
+| `transactionPostDate` | _string_ | 16 | Used to override a transaction post date in reporting |
 
 <!-- type: tab-end -->
 
@@ -103,7 +101,7 @@ Example of a digital gift card activation payload request
 ```json
 {
   "amount": {
-    "total": 13.05,
+    "total": 16.00,
     "currency": "USD"
   },
   "transactionDetails": {
@@ -134,8 +132,6 @@ type: tab
 -->
 
 Example of payload response
-
-Description:
 
 ```json
 {
@@ -178,8 +174,8 @@ Description:
     },
     "balance": [
       {
-        "beginingBalance": "16.00",
-        "endingBalance": "16.00",
+        "beginingBalance": 16.00,
+        "endingBalance": 16.00,
         "currency": "USD"
       }
     ]
@@ -202,12 +198,12 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a physical gift card activation payload request 
+Example of a physical gift card activation payload request
 
 ```json
 {
   "amount": {
-    "total": 1,
+    "total": 25.00,
     "currency": "USD"
   },
   "target": {
@@ -221,14 +217,10 @@ Example of a physical gift card activation payload request
     }
   },
   "transactionDetails": {
-    "merchantOrderId": "84536645711234",
-    "merchantTransactionId": "1343678112344",
     "operationType": "ACTIVATION"
   },
   "transactionInteraction": {
-    "posConditionCode": "CARD_PRESENT",
     "terminalTimestamp": "2016-06-20T16:06:05Z",
-    "authorizationCharacteristicsIndicator": "CARD_NOT_PRESENT"
   },
   "merchantDetails": {
     "merchantId": "10000900POD2204",
@@ -250,7 +242,7 @@ Example of a physical gift card activation payload request
 type: tab
 -->
 
-Example of payload response 
+Example of payload response
 
 Description:
 
@@ -272,7 +264,7 @@ Description:
     "balances": [
       {
         "beginningBalance": 0,
-        "endingBalance": 1,
+        "endingBalance": 25.00,
         "currency": "USD",
         "balanceType": "GIFT_VALUELINK"
       }
@@ -312,3 +304,5 @@ Description:
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+
+---
