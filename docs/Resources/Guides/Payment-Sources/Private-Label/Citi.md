@@ -4,7 +4,7 @@ tags: [Private Label, Payment Sources]
 
 # Citi Private Label  
 
-A private label credit card (PLCC) is a type of credit card that is intended for use at a specific retailer. Merchants partner with PLCC issuers like Citi, Charge After to qualify customers and extend them a credit card account.
+Citibank offers multiple banking services which includes providing of private label and co branded credit cards for retailers.
 
 <!-- theme: warning -->
 > Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
@@ -54,10 +54,10 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using a PLCC.
+##### Example of a charge payload request using a PLCC
 
 <!-- info -->
-> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is _MOTO_ `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
+> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is *MOTO* `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 ```json
 {
@@ -143,7 +143,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+##### Example of a charge (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -278,5 +278,3 @@ type: tab
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 
 ---
-
-
