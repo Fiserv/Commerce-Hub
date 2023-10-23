@@ -2,14 +2,13 @@
 tags: [Gift Card, Payment Card, Payment Source, Loyalty, Reload]
 ---
 
-# Gift Card Reload 
+# Gift Card Reload
 
 A Reload transaction allows a merchant to add value to an already activated account in Commerce Hub. A Reload is initiated by sending the `amount`, `target` and `additionalDataCommon` object in the Request with relevant transaction types.
 
-
 ## Request Variables
 
-Description 
+Description
 
 <!--
 type: tab
@@ -27,18 +26,26 @@ The below table identifies the required parameters in the `amount` object.
 type: tab
 -->
 
-The below table identifies the available parameters in `cardObject` object.
+The below table identifies the parameters in the `source` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `sourceType` | _string_ | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are _PaymentSession_, _PaymentCard_, or _PaymentToken_ |
+
+<!--
+type: tab
+-->
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `expirationMonth` | *string* | N/A | 2-digit expiration month | 
-| `expirationYear` | *string* | N/A | 4-digit expiration year | 
-| `category`| *string* | 25 | Describes the card category | 
+| `expirationMonth` | *string* | N/A | 2-digit expiration month |
+| `expirationYear` | *string* | N/A | 4-digit expiration year |
+| `category`| *string* | 25 | Describes the card category |
 | `subCategory`| *string* | 25 | Provides the subcategory for the <code>category</code> field to identify the card type. |
 
-
-
-
+<!--
+type: tab
+-->
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
@@ -46,7 +53,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 |---------|----------|----------------|---------|
 | `merchantTransactionID` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 | `merchantOrderID`| *string* | 128 | Merchant order ID (aka customer reference number or purchase order (PO) number).
-| `operationType` | *string* | 50 | Add descriptionXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+| `operationType` | *string* | 50 | Identifies the tranaction type as reload value |
 
 <!--
 type: tab
@@ -85,7 +92,7 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 ---
 
-## Endpoint 
+## Endpoint
 
 <!-- theme: success -->
 >**POST** `/payments-vas/v1/accounts/gift-cards`
@@ -99,7 +106,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of payload request 
+#### Example of payload request
 
 ```json
 {
