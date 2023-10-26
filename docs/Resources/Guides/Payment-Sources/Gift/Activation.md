@@ -22,7 +22,7 @@ The below table identifies the parameters in the `amount` object.
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | _number_ | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `total` | _number_ | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Maste`r-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
@@ -33,7 +33,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `operationType` | _string_ | 50 | Identifies the tranaction type as activiation value |
+| `operationType` | _string_ | 50 | Defines the request type as ACTIVATION |
 
 <!--
 type: tab
@@ -87,7 +87,7 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 ## Digital Gift Card
 
-Description
+A digital gift card transaction creates and activates a new gift card and returns the necessary information to use the account. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
 
 ### Payload Example
 
@@ -189,7 +189,7 @@ Example of payload response
 
 ## Physical Gift Card
 
-Description
+A phyiscal gift card transaction activates a physical gift card. The card number must be provided in the request. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
 
 ### Payload Example
 
