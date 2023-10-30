@@ -119,7 +119,7 @@ Initialize the Apple Proximity Reader session.
 
 ```Swift
 do {
-    try await fiservTTPCardReader.activateReader()
+    try await fiservTTPCardReader.initializeSession()
 } catch let error as FiservTTPCardReaderError {
     ///TODO handle exception
 }
