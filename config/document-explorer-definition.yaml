@@ -83,8 +83,8 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
       - title: API Only
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
-      - title: Multi-Use Public Key
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+      - title: API Direct
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Direct.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
@@ -152,6 +152,15 @@
     sections:
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
+      sections:
+      - title: Authentication
+        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md
+      - title: Device Capture 
+        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md
+      - title: Verification
+        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md     
     - title: Data Solutions
       sections:
       - title: Enhanced Data Service
@@ -174,7 +183,7 @@
     - title: Payments VAS
       sections:
       - title: Card Capture
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md
       - title: Information Lookup
         link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
       - title: Tokenization
@@ -186,7 +195,7 @@
       - title: Credentials
         link: docs/Resources/API-Documents/Security/Credentials.md
       - title: Key Management
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md   
 - sections:
   - title: Release Notes
     sections:

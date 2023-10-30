@@ -10,7 +10,7 @@ The benefits of an encrypted device solution are:
 
 - Reduced coding effort for the developer because the encryption handling is already implemented by the third-party vendor
 - All forms of electronic payment are accepted
-- Faster payment improves the customer experience
+- Faster payments improve the customer experience
 - Business security by enabling acceptance of chip and signature, and chip and PIN
 
 ## Encrypted Payment Types

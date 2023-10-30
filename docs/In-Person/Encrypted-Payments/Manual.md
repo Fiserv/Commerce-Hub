@@ -224,7 +224,7 @@ The data will be an encrypted value coming from VeriFone terminal, the same leng
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [EMV Chip](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Merchant Details](?path=docs/Resources/Master-Data/Merchant-Details.md)

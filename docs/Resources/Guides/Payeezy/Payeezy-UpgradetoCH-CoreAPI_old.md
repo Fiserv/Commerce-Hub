@@ -11,7 +11,7 @@ tags: [carat, commerce-hub, enterprise, transaction-types, api-reference, card-n
 
 <br>
 
-> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your migration to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
 
 <br> 
 
@@ -103,5 +103,6 @@ Additionally, the CTR was previously available in multiple languages (EN, FR, ES
 - [Payeezy Merchant Upgrade to Commerce Hub Playbook](?path=docs/Resources/Guides/Payeezy/PayeezyUpgradetoCHGuideLandingPage.md)
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [CH Overview](?path=docs/Getting-Started/Getting-Started-General.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---

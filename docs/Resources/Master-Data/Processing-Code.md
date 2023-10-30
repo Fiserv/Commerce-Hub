@@ -74,7 +74,7 @@ Describes the cardholder account type affected for cardholder account credits an
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Disbursements](?path=docs/Resources/API-Documents/Value_Added_Services/Dispursement.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 

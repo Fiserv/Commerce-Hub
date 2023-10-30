@@ -9,6 +9,9 @@ tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request). 
 
+<!-- theme: info -->
+>  When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
+
 ---
 
 ## Step 2: Configure SDK
@@ -39,8 +42,8 @@ const formConfig = {
     "merchantId": 'MERCHANT_ID',
     "publicKey": 'PUBLIC_KEY',
     "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM',
-    "asymmetricEncryptionAlgorithm": 'RSA',
-    "keyId": 'cc33a193-92b9-4663-ad66-3ddfd8984ded'
+    "asymmetricEncryptionAlgorithm": 'ASYMETRIC_ENCRYPTION_ALGORITHM',
+    "keyId": 'KEY_ID'
 };
 ```
 

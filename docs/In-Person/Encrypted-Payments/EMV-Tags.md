@@ -91,7 +91,7 @@ Below is a sample of the EMV Data Field Identifier with 2 TLV data elements.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [EMV Chip and PIN](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 
 ---

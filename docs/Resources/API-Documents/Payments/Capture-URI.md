@@ -153,7 +153,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Reference Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)

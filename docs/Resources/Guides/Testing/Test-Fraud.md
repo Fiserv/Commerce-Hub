@@ -417,7 +417,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Test Address and Security Code](?path=docs/Resources/Guides/Testing/Test-Address-Security.md)
 - [Test Cards](?path=docs/Resources/Guides/Testing/Test-Cards.md)
 - [Test Declines](?path=docs/Resources/Guides/Testing/Test-Declines.md)

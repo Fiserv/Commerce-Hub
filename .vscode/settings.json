@@ -2,18 +2,32 @@
   "grammarly.selectors": [
     {
       "language": "markdown",
-      "scheme": "file",
-      "pattern": "docs/In-Person/Integrations/Tap-to-Pay.md"
-    },
+      "scheme": "file"
+    }
+  ],
+  "cSpell.words": [
+    "cavv",
+    "checkout",
+    "captureFlag",
+    "ECOM",
+    "HMAC",
+    "idempotency",
+    "MOTO",
+    "MUPK",
+    "Omnicommerce",
+    "sourceType",
+    "transactionDetails"
+    "cavv",
+    "SECURE_ECOM",
+    "Subcomponent",
+    "tavv",
+    "timeframe",
+    "TRANSARMOR"
+  ],
+  "grammarly.selectors": [
     {
       "language": "markdown",
-      "scheme": "file",
-      "pattern": "docs/In-Person/Integrations/Encrypted-PIN-Pad.md"
-    },
-    {
-      "language": "markdown",
-      "scheme": "file",
-      "pattern": "docs/Getting-Started/Getting-Started-InPerson.md"
+      "scheme": "file"
     }
   ]
 }

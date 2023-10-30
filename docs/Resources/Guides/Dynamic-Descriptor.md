@@ -212,8 +212,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges) 
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
 ---
