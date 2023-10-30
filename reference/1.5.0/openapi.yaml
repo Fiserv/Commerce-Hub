@@ -1128,9 +1128,7 @@ components:
       }
       in: header
       required: true
-      description: Authorization header used to ensure the request has not been tampered
-        with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For
-        more information, refer to the supporting documentation on the Developer Portal.
+      description: '<a href="../docs?path=docs/Resources/API-Documents/Authentication-Header.md">Authorization header</a> is used to ensure the request has not been tampered with during transmission. Valid encryptions; HMAC, JWT, or AccessToken.'
     MessageDigestHeader:
       x-model-version: 1.0
       name: Message-Digest
@@ -1140,8 +1138,7 @@ components:
       }
       in: header
       required: false
-      description: Needed only from customer browser or app to the API in Hosted Payment
-        Page requests.
+      description: '<a href="../docs/?path=docs/Resources/API-Documents/Message-Digest.md">Message digest</a> is used to ensure the request has not been tampered with during transmission. It is needed in the header for <a href="..docs/?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">Card Capture</a> and Hosted Payment Page integrations.'
     AcceptLanguageHeader:
       x-model-version: 1.0
       name: Accept-Language
