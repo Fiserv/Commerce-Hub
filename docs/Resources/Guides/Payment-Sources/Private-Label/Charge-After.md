@@ -2,9 +2,9 @@
 tags: [Private Label, Payment Sources]
 ---
 
-# Charge After
+# ChargeAfter
 
-A private label credit card (PLCC) is a type of credit card that is intended for use at a specific retailer. Merchants partner with PLCC issuers like Citi, Charge After to qualify customers and extend them a credit card account.
+ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
 
 <!-- theme: warning -->
 > Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
@@ -42,11 +42,11 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 type: tab
 -->
 
-The below table identifies the conditional parameters in the `customFields` object.
+The below table identifies the key value pairs to indentify the required `customFields` in the `additionalDataCommon` object.
 
 | Key | Value |
 | -------- | -------- |
-| Request_Date_Time_GMT | "2023-09-20T05:33:05Z" |
+| Request_Date_Time_GMT | 2023-09-20T05:33:05Z |
 | Request_Date_Time_Local | 2023-09-20T05:33:05Z |
 | Requestor_Channel_Code | STORE |
 | Requestor_Organization_Code | HOME DEPOT |

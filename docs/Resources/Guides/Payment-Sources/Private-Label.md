@@ -20,6 +20,26 @@ Processing PLCC transactions is similar to processing normal credit card transac
 
 Commerce hub supports the following PLCCs
 
-Fiserv card, Citi card, Chargeafter card 
+<!-- type: row -->
+
+<!-- type: card
+title: Fiserv
+description: Submit an Activation Request for a Stored Value Card. The request can be for a Virtual Gift Card or Physical gift card. Merchant funded.
+link:
+-->
+
+<!-- type: card
+title: Citi
+description: Citibank offers multiple banking services which includes providing of private label and co branded credit cards for retailers.
+link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label/Citi.md
+-->
+
+<!-- type: card
+title: ChargeAfter 
+description: ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
+link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md
+-->
+
+<!-- type: row-end -->
 
 ---
