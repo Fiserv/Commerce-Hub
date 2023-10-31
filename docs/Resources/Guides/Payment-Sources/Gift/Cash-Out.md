@@ -6,6 +6,8 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Cash-Out]
 
 A cash-out request allows a merchant to remove the consumer funds from the gift card. A cash-out is initiated by sending the `target` and `additionalDataCommon` object in the Request with relevant transaction types.
 
+---
+
 ## Request Variables
 
 Description
@@ -15,22 +17,28 @@ type: tab
 titles: target, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
 -->
 
-The below table identifies the available parameters in `target` object.
+The below table identifies the parameters in the `target` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `sourceType` | _string_ | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are _PaymentSession_, _PaymentCard_, or _PaymentToken_ |
+
+The below table identifies the conditional parameters in `card` object.
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `expirationMonth` | *string* | N/A | 2-digit expiration month |
-| `expirationYear` | *string* | N/A | 4-digit expiration year |
-| `category`| *string* | 25 | Describes the card category |
-| `subCategory`| *string* | 25 | Provides the subcategory for the <code>category</code> field to identify the card type. |
+| `category`| _string_ | 25 | Defines the card type as GIFT |
+| `subCategory`| _string_ | 25 | Identifies the gift card provider |
+
+<!--
+type: tab
+-->
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `merchantTransactionID` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
-| `merchantOrderID`| *string* | 128 | Merchant order ID (aka customer reference number or purchase order (PO) number).
-| `operationType` | *string* | 50 | Identifies the tranaction type as cash-out value |
+| `operationType` | _string_ | 50 | Defines the request type as CASH_OUT |
 
 <!--
 type: tab
@@ -40,7 +48,7 @@ The below table identifies the required parameters in the `transactionInteractio
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ'
+| `terminalTimestamp` | _string_ | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
 <!--
 type: tab
@@ -50,8 +58,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!--
 type: tab
@@ -61,11 +69,28 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card).
-| `fundingProvider` | *string* | 32 |  Identifies who provided the funds.|
-| `transactionPosDate` | *string* | 16 | 'Used to override a transaction post date in reporting.
+| `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card) |
+| `fundingProvider` | _string_ | 32 |  Identifies who provided the funds|
+| `transactionPosDate` | _string_ | 16 | Used to override a transaction post date in reporting |
 
 <!-- type: tab-end -->
+
+---
+
+## Response Variables
+
+<!--
+type: tab
+titles: paymentReceipt
+-->
+
+The below table identifies the `balances` parameters in the `paymentReceipt` object.
+
+| Variable | Data Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `beginningBalance` | _number_ | 16,3 | Account beginning balance |
+| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `currency` | _string_ | 17 | ISO 3 Currency Format |
 
 ---
 
@@ -90,10 +115,11 @@ titles: Request, Response
   "target": {
     "sourceType": "PaymentCard",
     "card": {
-      "cardData": "8900000005675979",
+      "cardData": "6161563015224583",
       "expirationMonth": "01",
       "expirationYear": "3025",
-      "securityCode": "64675611"
+      "category": "GIFT",
+      "subCategory": "VALUELINK"
     }
   },
   "transactionDetails": {
