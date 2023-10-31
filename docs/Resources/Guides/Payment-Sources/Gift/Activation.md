@@ -70,7 +70,7 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a digital gift card |
+| `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a [digital gift card](#digital-gift-card) |
 | `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
 | `transactionPostDate` | _string_ | 16 | Used to override a transaction post date in reporting |
 
@@ -84,6 +84,25 @@ The below table identifies the conditional parameters in the `additionalData` ob
 >**POST** `/payments-vas/v1/accounts/gift-cards`
 
 ---
+
+## Response Variables
+
+<!--
+type: tab
+titles: paymentReceipt, card
+-->
+
+The below table identifies the `balances` parameters in the `paymentReceipt` object.
+
+| Variable | Data Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `beginningBalance` | _number_ | 16,3 | Account beginning balance |
+| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `currency` | _string_ | 17 | ISO 3 Currency Format |
+
+
+
+
 
 ## Digital Gift Card
 
