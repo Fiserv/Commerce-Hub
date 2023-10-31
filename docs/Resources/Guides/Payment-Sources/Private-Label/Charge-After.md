@@ -69,6 +69,8 @@ The below table identifies the conditional parameters in the `directedRouting` o
 | -------- | :--: | :------------: | ------------------ |
 | `processor` | *array* | N/A | Identifies the card processor |
 
+---
+
 ```json
 
 {
