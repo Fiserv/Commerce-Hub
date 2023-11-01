@@ -6,18 +6,6 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
 
 Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location.
 
-Add extra values request variables
-
-values need tobe called out
-
-what are the optional feilds
-
-link to payments landing page
-
-payload examples
-
-see also
-
 ## Request Variables
 
 <!--
@@ -185,11 +173,6 @@ Example of payload response
         "endingBalance": "16.00",
         "currency": "USD"
       },
-      {
-        "beginingBalance": "16.00",
-        "endingBalance": "16.00",
-        "currency": "CAD"
-      }
     ]
   }
 }
