@@ -4,15 +4,15 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
 
 # Rdemption
 
-Description ; how gift card is redem using the same payment endpoints 
+Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location.
 
-Add extra values request variables 
+Add extra values request variables
 
 values need tobe called out
 
 what are the optional feilds
 
-link to payments landing page 
+link to payments landing page
 
 payload examples
 
@@ -97,11 +97,11 @@ The below table identifies the conditional parameters in the `additionalData` ob
     "sourceType": "PaymentCard",
     "card": {
       "cardData": "9998955500000000190",
-      "expirationMonth": "02",              // Optional data field
-      "expirationYear": "2035",              // Optional data field
-      "securityCode": "124",      
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "securityCode": "124",
       "category": "GIFT",
-      "subCategory": "GIFT_SOLUTIONS"    
+      "subCategory": "GIFT_SOLUTIONS"
     }
   },
   "transactionDetails": {
@@ -121,15 +121,80 @@ The below table identifies the conditional parameters in the `additionalData` ob
     "additionalData": {
       "securityCodeType": "EAN",
       "transactionPostDate": "2016-04-16"
-    }    
+    }
   }
 }
-
 ```
 <!-- 
 type: tab-end -->
 
 ---
+
+<!--
+type: tab
+-->
+
+Example of payload response
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "CHARGE_FINAL",
+    "transactionState": "CAPTURED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01367cb34bb35b472c953dec4e7d368727",
+      "transactionTimestamp": "2022-08-22T19:22:52.518232Z",
+      "apiTraceId": "b34bb35b472c953dec4e7d36872",
+      "clientRequestId": "367cb34bb35b472c953dec",
+      "transactionId": "b34bb35b472c953dec4e7d36872"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "9998955500000000190",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "bin": "999895",
+      "last4": "0190",
+      "category": "GIFT",
+      "subCategory": "GIFT_SOLUTIONS"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 13.5,
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5548",
+      "referenceNumber": "5548",
+      "processor": "FISERV",
+      "host": "GIFT_SOLUTIONS",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "Completed OK"
+    },
+    "balances": [
+      {
+        "beginingBalance": "16.00",
+        "endingBalance": "16.00",
+        "currency": "USD"
+      },
+      {
+        "beginingBalance": "16.00",
+        "endingBalance": "16.00",
+        "currency": "CAD"
+      }
+    ]
+  }
+}
+
+```
 
 ## See Also
 
