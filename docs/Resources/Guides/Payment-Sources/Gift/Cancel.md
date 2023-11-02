@@ -79,24 +79,24 @@ Example of a cancels payload request.
 
 ```json
 
-{  
+{
   "referenceTransactionDetails": {
     "referenceTransactionId": "732459239523050220556"
-  },      
+  },
   "transactionInteraction": {
     "terminalTimestamp": "2016-04-16T16:06:05Z"
   },
   "merchantDetails": {
     "terminalId": "123567",
-    "merchantId": "123456789012345"  
+    "merchantId": "123456789012345"
   },
   "transactionDetails": {
-     "operationType": "CANCEL"
-  }      
+    "operationType": "CANCEL"
+  },
   "additionalDataCommon": {
     "additionalData": {
       "transactionPostDate": "2016-04-16"
-    }   
+    }
   }
 }
 
