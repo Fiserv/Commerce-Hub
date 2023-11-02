@@ -4,31 +4,21 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
 
 # Rdemption
 
-Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location.
+Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location. When redeeming a gift card use the [payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) for charges, refunds and cancels along with the conditional request variables.
 
 ## Request Variables
 
 <!--
 type: tab
-titles: amount, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
+titles: card, transactionInteraction, merchantDetails, additionalDataCommon 
 -->
 
-The below table identifies the parameters in the `amount` object.
+The below table identifies the required parameters in the `card` object has part of the `source` object
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | _number_ | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Maste`r-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Data Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `operationType` | _string_ | 50 | Defines the request type as ACTIVATION |
+| `category`| _string_ | 25 | Defines the card type as GIFT |
+| `subCategory`| _string_ | 25 | Identifies the gift card provider. _**Valid Values:** GIFT_SOLUTIONS_ |
 
 <!--
 type: tab
@@ -44,12 +34,11 @@ The below table identifies the required parameters in the `transactionInteractio
 type: tab
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the conditional parameters in the `merchantDetails` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `promotionCode`| _string_ | 1024 | promotion code |
 
 <!--
 type: tab
