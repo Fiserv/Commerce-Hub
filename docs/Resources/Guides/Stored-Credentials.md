@@ -19,7 +19,7 @@ The following variables are used in the initial `PaymentToken` request and subse
 
 <!--
 type: tab
-titles: storedCredentials
+titles: storedCredentials, additionalDataCommon
 -->
 
 The below table identifies the parameters in the `storedCredentials` object.
@@ -43,6 +43,16 @@ The below table identifies the parameters in the `storedCredentials` object.
 | `retryAttempts` | *integer* | 2 | | Number of retry attempt if the initial transaction was unsuccessful |
 | `networkTransactionReference` | *string* | 64 |  | Allows linking of the transaction to the original or previous one in a subscription/card-on-file chain |
 
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `additionalDataCommon` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | ---- | ------------ | --------- |
+| `billPaymentType` | *string* | 11 | Indicates the <a href="../docs?path=docs/Resources/Master-Data/Additional-Data.md#bill-payment-type">type</a> of bill payment. |
+| `paymentAmountType` | *string* | 20 | An identifier used to indicate the transaction payment amount type |
 
 <!-- type: tab-end -->
 
@@ -65,7 +75,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using `storedCredentials`.
+Example of a charge payload request using `storedCredentials`.
 
 ```json
 {
@@ -95,7 +105,8 @@ titles: Request, Response
     "schemeReferenceTransactionId": "54231235467"
   },
   "additionalDataCommon": {
-    "billPaymentType": "RECURRING"
+    "billPaymentType": "RECURRING",
+    "paymentAmountType": "FIXED"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
@@ -111,7 +122,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -179,6 +190,10 @@ type: tab
     "initiator": "CARD_HOLDER",
     "sequence": "FIRST",
     "schemeReferenceTransactionId": "54231235467"
+  },
+  "additionalDataCommon": {
+    "billPaymentType": "RECURRING",
+    "paymentAmountType": "FIXED"
   },
   "transactionInteraction": {
     "posEntryMode": "CREDENTIAL_ON_FILE"
