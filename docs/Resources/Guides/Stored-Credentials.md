@@ -51,7 +51,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------------ | --------- |
-| `billPaymentType` | *string* | 11 | Indicates the <a href="../docs?path=docs/Resources/Master-Data/Additional-Data.md#bill-payment-type">type</a> of bill payment. |
+| `billPaymentType` | *string* | 11 | Indicates the [type](docs?path=docs/Resources/Master-Data/Additional-Data.md#bill-payment-type) of bill payment. |
 | `paymentAmountType` | *string* | 20 | An identifier used to indicate the transaction payment amount type |
 
 <!-- type: tab-end -->
