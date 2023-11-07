@@ -49,12 +49,13 @@ The below table identifies the required parameters in the `transactionInteractio
 type: tab
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the parameters in the `merchantDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Required | Description |
+|---------|----------|----------------|---------|-----|
+| `merchantId` | _string_ | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `promotionCode`| _string_ | 1024 |  | promotion code |
 
 <!--
 type: tab
@@ -206,7 +207,7 @@ Example of payload response
 
 A phyiscal gift card transaction activates a physical gift card. The card number must be provided in the request. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab

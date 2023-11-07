@@ -30,7 +30,7 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | _string_ | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are _PaymentSession_, _PaymentCard_, or _PaymentToken_ |
+| `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
 <!--
 type: tab
@@ -41,7 +41,7 @@ type: tab
 | `expirationMonth` | *string* | N/A | 2-digit expiration month |
 | `expirationYear` | *string* | N/A | 4-digit expiration year |
 | `category`| *string* | 25 | Describes the card category |
-| `subCategory`| *string* | 25 | Provides the subcategory for the <code>category</code> field to identify the card type. |
+| `subCategory`| *string* | 25 | Provides the subcategory for the `category` field to identify the card type. |
 
 <!--
 type: tab
