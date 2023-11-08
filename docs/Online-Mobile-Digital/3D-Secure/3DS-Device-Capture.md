@@ -71,10 +71,13 @@ The below table identifies the parameters in the `additionalData3DS` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `additionalData3DS` object.
+The below table identifies the parameters in the `methodData` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
+| `encodedToken` | *string* | 4000 | Base64 encoded transactional JWT token for external data collection with service provider |
+| `dataCollectionUrl` | *string* | 256 | The URL that will be used by the 3DS Method to collect card holder browser information |
+
 <!-- type: tab-end -->
 
 ---
@@ -228,7 +231,7 @@ new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-co
 
 #### Repsone Handling 
 
-Description......
+The following code snippet provides a sample response 
 
 <!--
 type: tab

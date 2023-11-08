@@ -22,6 +22,12 @@ A request using `PaymentSource` requires sending the `additionalData3DS` data th
 
 ### Request Variables
 
+The below table identifies the parameters in the `source` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
+
 The below table identifies the required parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
