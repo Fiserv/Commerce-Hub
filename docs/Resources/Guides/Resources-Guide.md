@@ -47,16 +47,71 @@ Commerce Hub offers multiple transaction-related guides to assist merchants with
 <!-- type: row -->
 
 <!-- type: card
+title: Convenience Fees
+description: ADD DESCRIPTION
+link: ?path=docs/Resources/Guides/Convenience-Fees.md
+-->
+
+<!-- type: card
+title: Custom Identifiers
+description: Commerce Hub supports the ability for mercant's to use thier own Merchant Identifiers and Order Identifiers. This allows a seemless integration into existing merchant APIs and databases.
+link: ?path=docs/Resources/Guides/BYOID.md
+-->
+
+<!-- type: card
+title: Directed Routing
+description: Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
+link: ?path=docs/Resources/Guides/Directed-Routing.md
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
 title: Dynamic Descriptor
 description: A descriptor contains identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on the customer's credit/debit card statement and identifies specific industry information based on the Merchant Category Code (MCC).
 link: ?path=docs/Resources/Guides/Dynamic-Descriptor.md
 -->
 
 <!-- type: card
-title: Response Handling
-description: Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and errors.
-link: ?path=docs/Resources/Guides/Response-Codes/Response-Handling.md
+title: Gift Card Services
+description: Commerce Hub supports purchases with stored value (prepaid) gift cards for card not present transactions. Gift card offers loyalty and rewards for both merchants and consumers.
+link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 -->
+
+<!-- type: card
+title: Global Currency Solutions
+description: ADD DESCRIPTION
+link:
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Level II and III Data
+description: ADD DESCRIPTION
+link: 
+-->
+
+<!-- type: card
+title: Private Label
+description: A private label credit card (PLCC) is a type of credit card that is intended for use at a specific retailer. Merchants partner with PLCC issuers like Citi, to qualify customers and extend them a credit card account.
+link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
+-->
+
+<!-- type: card
+title: Custom Identifiers
+description: Commerce Hub supports the ability for merchants to use their own Merchant Identifiers and Order Identifiers. This allows a seamless integration into existing merchant APIs and databases.
+link: ?path=docs/Resources/Guides/BYOID.md
+>>>>>>> debeba3e793c3565f213fc6d7285c54ecba808e0
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
 
 <!-- type: card
 title: Split Shipment
@@ -70,45 +125,14 @@ link: ?path=docs/Resources/Guides/Split-Shipment.md
 
 <!-- type: card
 title: Stored Credentials
-description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactions.
+description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas.
 link: ?path=docs/Resources/Guides/Stored-Credentials.md
 -->
 
-<!-- type: card
-title: Directed Routing
-description: Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
-link: ?path=docs/Resources/Guides/Directed-Routing.md
--->
-
-<!-- type: card
-title: Custom Identifiers
-description: Commerce Hub supports the ability for merchants to use their own Merchant Identifiers and Order Identifiers. This allows a seamless integration into existing merchant APIs and databases.
-link: ?path=docs/Resources/Guides/BYOID.md
 -->
 
 <!-- type: row-end -->
 
-<!-- type: row -->
-
-<!-- type: card
-title: Convenience Fees
-description: ADD DESCRIPTION
-link: ?path=docs/Resources/Guides/Convenience-Fees.md
--->
-
-<!-- type: card
-title: Global Currency Solutions
-description: ADD DESCRIPTION
-link:
--->
-
-<!-- type: card
-title: Level II and III Data
-description: ADD DESCRIPTION
-link: 
--->
-
-<!-- type: row-end -->
 ---
 
 ## Merchant Accounting
@@ -126,15 +150,15 @@ link: ?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md
 -->
 
 <!-- type: card
-title: Virtual Terminal
-description: Commerce Hub's Virtual Terminal (VPOS) allows a merchant to process an offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
-link: ?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
--->
-
-<!-- type: card
 title: Reporting
 description: Reporting is available in Business Track through ClientLine Reporting.
 link: ?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md
+-->
+
+<!-- type: card
+title: Virtual Terminal
+description: Commerce Hub's Vritual Terminal (VPOS) allows a merchant to process and offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
+link: ?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
 -->
 
 <!-- type: row-end -->
