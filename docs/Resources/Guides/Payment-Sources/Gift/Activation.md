@@ -101,6 +101,10 @@ The below table identifies the `balances` parameters in the `paymentReceipt` obj
 | `endingBalance` | _number_ | 16,3 | Account ending balance
 | `currency` | _string_ | 17 | ISO 3 Currency Format |
 
+<!-- type: tab-end -->
+
+---
+
 ## Digital Gift Card
 
 A digital gift card transaction creates and activates a new gift card and returns the necessary information to use the account. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
