@@ -198,32 +198,105 @@ Example of a charge payload request using a PLCC
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 1.45,
     "currency": "USD"
   },
   "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123",
-      "securityCodeIndicator": "PROVIDED"
+    "sourceType": "PaymentTrack",
+    "encryptionData": {
+      "encryptionType": "ON_GUARD",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "4599891943100751=36193012513455685570",
+      "keyId": "FFFF999999039D4001080114",
+      "deviceType": "INGENICO"
     }
   },
   "transactionDetails": {
-    "captureFlag": true
+    "captureFlag": false,
+    "merchantOrderId": "7EWVTZRNAK7AJMXL",
+    "merchantTransactionId": "FT4WTBP9LW0FB0PD"
   },
-  "additionalDataCommon": {
-    "privateLabel": {
-      "creditPlan": "12345",
-      "minimumSpendExemptIndicator": "EXEMPT"
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "MAG_STRIPE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2023-09-20T05:33:05Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL"
+      }
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100012000003424",
+    "terminalId": "10000001"
+  },
+  "additionalDataCommon": {
+    "privateLabel": {
+      "minimumSpendExemptIndicator": "EXEMPT",
+      "creditPlan": "00100"
+    },
+    "customFields": [
+      {
+        "key": " Request_Date_Time_GMT",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": " Request_Date_Time_Local",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": "Requestor_Channel_Code",
+        "value": "STORE"
+      },
+      {
+        "key": " Requestor_Organization_Code",
+        "value": "HOME DEPOT"
+      },
+      {
+        "key": "Requestor_User_ID",
+        "value": "NCLCP"
+      },
+      {
+        "key": "Requestor_POS_Event_Code",
+        "value": "Sale"
+      },
+      {
+        "key": "Requestor_Location_State_Code",
+        "value": "TX"
+      },
+      {
+        "key": "Retailer_Channel",
+        "value": "STORE"
+      },
+      {
+        "key": "Consumer_Decision",
+        "value": "ACCEPT"
+      },
+      {
+        "key": " Terms_Verified",
+        "value": "Y"
+      },
+      {
+        "key": "Lookup_Strategy",
+        "value": "DETERMINISTIC"
+      },
+      {
+        "key": "Sales_Doc_ID",
+        "value": "12443-605"
+      }
+    ],
+    "directedRouting": {
+      "processors": [
+        {
+          "processorName": "CHARGE_AFTER",
+          "processingPlatform": "PRIVATE_LABEL",
+          "priority": "PRIMARY"
+        }
+      ]
+    }
   }
 }
 ```
@@ -243,56 +316,153 @@ Example of a charge (201: Created) response
     "transactionState": "AUTHORIZED",
     "transactionOrigin": "POS",
     "transactionProcessingDetails": {
-      "orderId": "CHG01864c3cb65c824d99b7f297505f914605",
-      "transactionTimestamp": "2021-11-30T21:26:14.90396Z",
-      "apiTraceId": "635866b3fc244917aa864fbc5baaae18",
-      "clientRequestId": "4324974",
-      "transactionId": "635866b3fc244917aa864fbc5baaae18"
+      "orderId": "CHG012ed86c6922b3baa3daf6212a387a535e",
+      "transactionTimestamp": "2023-10-02T15:06:53.265622209Z",
+      "apiTraceId": "c62b549306424057a66dd862156c475b",
+      "clientRequestId": "4396400",
+      "transactionId": "c62b549306424057a66dd862156c475b"
     }
   },
   "source": {
-    "sourceType": "PaymentCard",
+    "sourceType": "PaymentTrack",
     "card": {
-      "expirationMonth": "12",
-      "expirationYear": "2035",
-      "bin": "400555",
-      "last4": "0019",
-      "scheme": "Visa"
+      "expirationMonth": "11",
+      "expirationYear": "2025",
+      "bin": "777676",
+      "last4": "0685",
+      "scheme": "THD"
     }
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 12.04,
+      "total": 1.45,
       "currency": "USD"
     },
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
-      "approvalCode": "OK123C",
-      "referenceNumber": "4fbc5baaae18",
-      "processor": "FISERV",
-      "networkRouted": "VISA",
-      "networkInternationalId": "0001",
-      "responseCode": "000",
-      "responseMessage": "Approved",
-      "host": "NASHVILLE",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL ",
-      "purchaseOrderRequiredIndicator": "NOT_REQUIRED",
-      "taxExemptIndicator": "NOT_EXEMPT",
-      "feeProgramIndicator": "123",
-      "purchaseAprType": "FIXED",
-      "arqcResponseCode": "VALIDATION_PASSED"
+      "approvalCode": "341003",
+      "processor": "CHARGE_AFTER",
+      "host": "PRIVATE_LABEL",
+      "localTimestamp": "2023-10-02T15:06:57.703554Z"
     }
   },
   "transactionDetails": {
-    "captureFlag": true
+    "captureFlag": false,
+    "transactionCaptureType": "terminal_direct",
+    "partialApproval": true,
+    "merchantTransactionId": "FT4WTBP9LW0FB0PD",
+    "merchantOrderId": "7EWVTZRNAK7AJMXL",
+    "retrievalReferenceNumber": "d862156c475b"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "MAG_STRIPE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2023-09-20T05:33:05Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL"
+      }
+    }
+  },
+  "merchantDetails": {
+    "terminalId": "10000001",
+    "merchantId": "100012000003424"
   },
   "additionalDataCommon": {
+    "customFields": [
+      {
+        "key": " Request_Date_Time_GMT",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": " Request_Date_Time_Local",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": "Requestor_Channel_Code",
+        "value": "STORE"
+      },
+      {
+        "key": " Requestor_Organization_Code",
+        "value": "HOME DEPOT"
+      },
+      {
+        "key": "Requestor_User_ID",
+        "value": "NCLCP"
+      },
+      {
+        "key": "Requestor_POS_Event_Code",
+        "value": "Sale"
+      },
+      {
+        "key": "Requestor_Location_State_Code",
+        "value": "TX"
+      },
+      {
+        "key": "Retailer_Channel",
+        "value": "STORE"
+      },
+      {
+        "key": "Consumer_Decision",
+        "value": "ACCEPT"
+      },
+      {
+        "key": " Terms_Verified",
+        "value": "Y"
+      },
+      {
+        "key": "Lookup_Strategy",
+        "value": "DETERMINISTIC"
+      },
+      {
+        "key": "Sales_Doc_ID",
+        "value": "12443-605"
+      },
+      {
+        "key": "Requestor_Organization_Code",
+        "value": "HOME DEPOT"
+      },
+      {
+        "key": "Terms_Verified",
+        "value": "Y"
+      },
+      {
+        "key": "Request_Date_Time_GMT",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": "Service_Version_ID",
+        "value": "02_00_00"
+      },
+      {
+        "key": "Request_Date_Time_Local",
+        "value": "2023-09-20T05:33:05Z"
+      },
+      {
+        "key": "Transaction_Request_Type",
+        "value": "PRE_AUTH"
+      }
+    ],
     "privateLabel": {
-      "creditPlanNumber": "12345",
+      "creditPlan": "00100",
       "minimumSpendExemptIndicator": "EXEMPT"
     }
-  }
+  },
+  "paymentTokens": [
+    {
+      "tokenData": "1100000000056349",
+      "tokenSource": "CHARGE AFTER"
+    },
+    {
+      "tokenData": "7809293712430685",
+      "tokenSource": "TRANSARMOR",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
+    }
+  ]
 }
 ```
 
