@@ -54,7 +54,7 @@ link: ?path=docs/Resources/Guides/Convenience-Fees.md
 
 <!-- type: card
 title: Custom Identifiers
-description: Commerce Hub supports the ability for mercant's to use thier own Merchant Identifiers and Order Identifiers. This allows a seemless integration into existing merchant APIs and databases.
+description: Commerce Hub supports the ability for merchants to use their own Merchant Identifiers and Order Identifiers. This allows a seamless integration into existing merchant APIs and databases.
 link: ?path=docs/Resources/Guides/BYOID.md
 -->
 
@@ -120,7 +120,7 @@ link: ?path=docs/Resources/Guides/Split-Shipment.md
 
 <!-- type: card
 title: Stored Credentials
-description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas.
+description: Stored Credentials also known as Credentials on File or Card on File, allows a customer to authorize the storage of their payment source details for future transactions.
 link: ?path=docs/Resources/Guides/Stored-Credentials.md
 -->
 
@@ -150,7 +150,7 @@ link: ?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md
 
 <!-- type: card
 title: Virtual Terminal
-description: Commerce Hub's Vritual Terminal (VPOS) allows a merchant to process and offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
+description: Commerce Hub's Virtual Terminal (VPOS) allows a merchant to process and offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
 link: ?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
 -->
 
@@ -168,7 +168,7 @@ Commerce Hub offers guides to assist with integrating different industries, trad
 
 ### Featured Guides
 
-- [Petro](?path=docs/Resources/Guides/Industry-Verticals/Petro.md)
+- [Petrol](?path=docs/Resources/Guides/Industry-Verticals/Petro.md)
 - [Quick Service Restaurants (QSR)](?path=docs/Resources/Guides/Industry-Verticals/QSR.md)
 - [Retail](?path=docs/Resources/Guides/Industry-Verticals/Retail.md)
 -->
