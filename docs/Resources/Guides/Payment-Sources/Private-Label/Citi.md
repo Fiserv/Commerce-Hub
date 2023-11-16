@@ -13,12 +13,12 @@ Citibank offers multiple banking services which includes providing of private la
 
 ## Request Variables
 
-The `privateLabel` object is part of the `additionalDataCommon` object.
-
 <!--
 type: tab
-titles: privateLabel, JSON Example
+titles: privateLabel, transactionInteraction
 -->
+
+The `privateLabel` object is part of the `additionalDataCommon` object.
 
 The below table identifies the conditional parameters in the `privateLabel` object.
 
@@ -31,17 +31,15 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 type: tab
 -->
 
-```json
+The below table identifies the required parameters in the `transactionInteraction` object.
 
-{
-  "additionalDataCommon": {
-    "privateLabel": {
-      "creditPlanNumber": "12345",
-      "minimumSpendExemptIndicator": "EXEMPT"
-  }
-}
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `origin` | *string* | 4 | The source of the transaction |
+| `posEntryMode` | *string* | 22 | An identifier used to indicate how the account number was entered on the transaction. |
+| `posConditionCode` | *string* | 26  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
+| `motoType` | *string* | N/A | Defines the type of MOTO transaction when `origin` is MOTO |
 
-```
 
 <!-- type: tab-end -->
 
