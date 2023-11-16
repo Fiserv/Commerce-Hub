@@ -1,5 +1,5 @@
 ---
-tags: [Amount, Amount Components, API Reference, Transaction Amount]
+tags: [Amount, Amount Components, API Reference, Transaction Amount, Price Adjustment, Tax]
 --- 
 
 # Transaction Amounts
@@ -8,6 +8,8 @@ Transaction amount information is contained in the `amount` and `amountComponent
 
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
+
+---
 
 ## Amount
 
@@ -41,6 +43,8 @@ JSON string format for `amount`:
 ```
 
 <!-- type: tab-end -->
+
+---
 
 ## Amount Components
 
@@ -119,6 +123,122 @@ JSON string format for `amountComponents`:
       }
     ],
     "grossAmount": 21.75
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+### Price Adjustments
+
+Contains the price adjustment details.
+
+<!--
+type: tab
+titles: priceAdjustments, JSON Example
+-->
+
+The below table identifies the parameters in the `priceAdjustment` object.
+
+| Variable | Type | Maximum Length | Description |
+| --------- | --- | ------ | -------------- |
+| `adjustmentType` | *string* | N/A |  Identifies the type of price adjustment being applied. | 
+| `adjustmentDescription` | *string* | N/A | Identifies the adjustments |
+| `adjustmentRate` | *number* | 100 | Rate percent being applied |
+| `adjustmentAmount` | *number* | 18,3 | Amount being applied |
+
+#### Adjustment Type
+
+The below table contains the valid values for `adjustmentType` parameter.
+
+| Value | Description |
+|---------|-------|
+| COUPON | a voucher entitling the holder to a discount |
+| CREDIT | an entry recording a sum received |
+| DISCOUNT | a deduction from the usual cost |
+| FEES | a payment of goods and services | 
+| PROMOTION | a raise in services |
+
+<!--
+type: tab
+-->
+
+JSON string format for `priceAdjustments`:
+
+```json
+{
+  "priceAdjustments": {
+    "adjustmentType": "DISCOUNT",
+    "adjustmentDescription": "This is a discount",
+    "adjustmentRate": 10,
+    "adjustmentAmount": 2
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+### Tax Amounts
+
+Contains the tax details.
+
+<!--
+type: tab
+titles: taxAmounts, JSON Example
+-->
+
+The below table identifies the parameters in the `taxAmounts` object.
+
+|Variable |Type| Maximum Length | Description|
+|---------|----------|----------------|---------|
+| `taxType` | *string* |  | Identifies the [type](#tax-type) of tax being applied |
+| `taxRate` | *number* | 100 | Tax rate percent being applied |
+| `taxAmount` | *number* | 18,3 | Tax amount being applied |
+| `taxExempt` | *boolean* | N/A | Designates if the specified tax type is tax exempt. Tax Exempt _(true)_ or Not Tax Exempt _(false)_ |
+
+#### Tax Type
+
+The below table contains the valid values for `taxType` parameter.
+
+| Value | Description |
+|---------|----------|
+| UNKNOWN | State sales tax _(default)_ |
+| ALTERNATE_TAX | Alternate tax |
+| CITY | City sales tax |
+| DUTY | Duty tax |
+| ENERGY | Energy Tax |
+| FEDERAL | Federal/National Sales Tax |
+| GST | Goods and Services Tax |
+| HST | Harmonized Sales Tax |
+| ITBIS | Industrialized Goods and Services Transfer Tax |
+| LOCAL | Local Sales Tax |
+| MUNICIPAL | Municipal Sales Tax |
+| NOT_SUPPORTED | Tax not supported |
+| OCCUPANCY | Occupancy Tax |
+| OTHER | Other Tax |
+| PST | Provincial Sales Tax |
+| QST | Quebec Sales Tax |
+| ROOM | Room Tax |
+| STATE | State Sales Tax |
+| VAT | Value Added Tax |
+
+<!--
+type: tab
+-->
+
+JSON string format for `taxAmounts`:
+
+```json
+{
+  "taxAmounts": {
+    "taxType": "STATE",
+    "taxRate": 10,
+    "taxAmount": 2,
+    "taxExempt": true
   }
 }
 ```

@@ -138,7 +138,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)

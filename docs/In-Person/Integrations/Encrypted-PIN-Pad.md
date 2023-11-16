@@ -4,12 +4,13 @@ tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, 
 
 # Encrypted Device Integration
 
-A third party device or PIN Pad is used to capture the payment source and is connected to the terminal or software which communicates with Commerce Hub. The divice encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device.
+A third-party device or PIN Pad is used to capture the payment source and is connected to the terminal or software that communicates with Commerce Hub. The device encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device.
 
-The benefits of a encyrpted device solution are:
-- Reduced coding effort for the developer because the encryption handling is already implemented by the third party vendor
+The benefits of an encrypted device solution are:
+
+- Reduced coding effort for the developer because the encryption handling is already implemented by the third-party vendor
 - All forms of electronic payment are accepted
-- Faster payment improving the customer experience
+- Faster payments improve the customer experience
 - Business security by enabling acceptance of chip and signature, and chip and PIN
 
 ## Encrypted Payment Types
@@ -26,19 +27,19 @@ link: ?path=docs/In-Person/Encrypted-Payments/EMV.md
 
 <!-- type: card
 title: Contactless
-description: Near Field Communication (NFC) or contactless payment are transactions made by tapping either a contactless chip card or payment-enabled device with a contactless-enabled terminal.
+description: Near Field Communication (NFC) or contactless payment are transactions made by tapping either a contactless chip card or a payment-enabled device with a contactless-enabled terminal.
 link: 
 -->
 
 <!-- type: card
 title: Track Data
-description: Payment Track can be used as EMV Fallback and involves manually swiping the payment source into a payment terminal using magnetic stripe.
+description: Payment Track can be used as EMV Fallback and involves manually swiping the payment source into a payment terminal using a magnetic stripe.
 link: ?path=docs/In-Person/Encrypted-Payments/Track.md
 -->
 
 <!-- type: card
 title: Manual Entry
-description: Encrypted manual key entry can be used as EMV Fallback and involves manually entering the payment source details a payment terminal. 
+description: Encrypted manual key entry can be used as EMV Fallback and involves manually entering the payment source details in a payment terminal. 
 link: ?path=docs/In-Person/Encrypted-Payments/Manual.md
 -->
 

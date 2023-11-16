@@ -24,7 +24,7 @@ Commerce Hub's Hosted Payment Page integration removes the PCI Complaince requir
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Google Pay Brand Guidelines](?path=https://developers.google.com/pay/api/web/guides/brand-guidelines)
 
 ---

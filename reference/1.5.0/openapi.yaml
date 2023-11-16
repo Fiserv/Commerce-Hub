@@ -853,6 +853,143 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
+  /payments-vas/v1/accounts/gift-cards:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Gift Card Operations Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Gift Cards'
+      summary: Submit a Gift card transaction.
+      description: 'Use this endpoint to perform the following gift card operations; activations, reloads, deactivations, balance merges. Utilize the balance inquiry endpoint to verify a gift card balance.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GiftCardRequest'
+            examples:
+              CreateDigitalCard: 
+                summary: Create Digital Gift Card Request
+                $ref: '#/components/examples/CreateDigitalGiftCardRequest'
+              Activate-Reactivate: 
+                summary: GiftCardRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardActivateCardRequest'
+              Reload: 
+                summary: GiftCardRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardReloadRequest'
+              Cashout: 
+                summary: GiftCardRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardCashoutRequest'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GiftCardResponse'
+              examples:
+                CreateDigitalCard: 
+                  summary: Create Active Gift Card Response
+                  $ref: '#/components/examples/CreateDigitalGiftCardResponse'
+                Activate-Reactivate: 
+                  summary: GiftCardResponse with PaymentCard 
+                  $ref: '#/components/examples/PaymentCardActivateCardResponse'
+                Reload: 
+                  summary: GiftCardResponse with PaymentCard 
+                  $ref: '#/components/examples/PaymentCardReloadResponse'
+                Cashout: 
+                  summary: GiftCardResponse with PaymentCard 
+                  $ref: '#/components/examples/PaymentCardCashoutResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+  /payments-vas/v1/accounts/balance-inquiry:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Balance Inquiry Endpoint Definition
+      summary: Receives balance inquiry request and returns balance inquiry response.
+      description: This payload provides the details about the supported options for payments.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceInquiryRequest'
+            examples:
+              GiftCard-Balance-Inquiry: 
+                summary: GiftCardRequest with PaymentCard
+                $ref: '#/components/examples/GiftCardBalanceInquiryRequest'
+      responses:
+        200:
+          description: Inquired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceInquiryResponse'
+              examples: 
+                GiftCard-Balance-Inquiry: 
+                  summary: GiftCardResponse with PaymentCard
+                  $ref: '#/components/examples/GiftCardBalanceInquiryResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+
 components:
   parameters:
     OrderIdParam:
@@ -1431,6 +1568,7 @@ components:
             balance., example: 1.00}
         endingBalance: {type: number, maximum: 1.0E18, description: Ending card balance.,
           example: 0.10}
+
     EncryptionData:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Encryption-Data.md">Encrypted
@@ -3303,6 +3441,10 @@ components:
         approvedAmount: {$ref: '#/components/schemas/Amount'}
         amountComponents:
           $ref: '#/components/schemas/AmountComponents'
+        balances:
+          type: array
+          items:
+            $ref: '#/components/schemas/Balance'
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
         merchantName: {type: string, maxLength: 1024, description: Name of the merchant
             returned from boarded account or dynamic descriptor.}
@@ -3318,6 +3460,32 @@ components:
             from boarded account.}
         merchantPostalCode: {type: string, maxLength: 10, description: Postal code
             of the merchant returned from boarded account or dynamic descriptor.}
+
+    Balance:
+      x-model-version: 1.0
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Balance-Components.md">Balance</a> object to support account balances.'
+      properties:
+        beginningBalance:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'Account beginning balance.'
+          example: 13.50
+        endingBalance:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'Account ending balance.'
+          example: 13.50
+        currency:
+          type: string
+          maxLength: 3
+          description: 'ISO 3 Currency Format.'
+          example: 'USD'
+        balanceType:
+          type: string
+          maxLength: 17
+          description: 'Indicates <a href="../docs?path=docs/Resources/Master-Data/Balance-Components.md#balance-type">type</a> of account balance represents.'
+          example: 'GIFT_CARD'
+
     ProcessorResponseDetails:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Processor-Response-Details.md">processor
@@ -4227,6 +4395,112 @@ components:
       properties:
         source: {$ref: '#/components/schemas/Source'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
+
+    GiftCardRequest:
+      x-model-version: 1.0
+      properties:
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        amount:
+          $ref: '#/components/schemas/Amount'
+        amountComponents:
+          $ref: '#/components/schemas/AmountComponents'
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        target:
+          $ref: '#/components/schemas/Source'
+    GiftCardResponse: 
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
+        paymentTokens:
+          type: array
+          items: 
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        authOptimizationDetails:
+          $ref: '#/components/schemas/AuthOptimizationDetails'
+        linkedTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedTransactionDetails'
+        target: 
+          $ref: '#/components/schemas/Source'
+    BalanceInquiryRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:  #TODO: Review with CHF-728, verification is required
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction: #TODO: Review with CHF-728, verification is required
+          $ref: '#/components/schemas/TransactionInteraction'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        additionalDataCommon: #TODO: Review with CHF-728, verification is required
+          $ref: '#/components/schemas/AdditionalDataCommon'
+    BalanceInquiryResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails: #TODO: Review with CHF-728, verification is required
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction: #TODO: Review with CHF-728, verification is required
+          $ref: '#/components/schemas/TransactionInteraction'
+        additionalDataCommon: #TODO: Review with CHF-728, verification is required
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+
     ReturnOptimizerResponse:
       x-model-version: 1.0
       properties:
@@ -6468,4 +6742,283 @@ components:
         symmetricKeyDetails:
           encryptionType: 'AES-GCM'
           modulus: 256
-          
+
+    CreateDigitalGiftCardRequest: 
+      value:
+        amount:
+          total: '12.04'
+          currency: 'USD'
+        transactionDetails:
+          merchantTransactionId: '123456789012'
+          merchantOrderId: '845366457890'
+          operationType: 'ACTIVATION'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+          promotionCode: '12A34B7'
+        additionalDataCommon:
+          additionalData:
+            fundingProvider: 'CUSTOMER'
+    
+    CreateDigitalGiftCardResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'GIFT_CARDS'
+          transactionState: 'ACTIVATED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        target: 
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            category: 'GIFT'
+            subCategory: 'VALUELINK'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentReceipt:
+          processorResponseDetails:
+            approvalStatus: 'APPROVED'
+            approvalCode: 'OK5882'
+            processor: 'fiserv'
+            responseCode: '000000'
+            responseMessage: 'APPROVAL'
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            localTimestamp: '2021-06-20T23:42:48Z'
+          balances:
+            - beginningBalance: '0.00'
+              endingBalance: '12.04'
+              currency: 'USD'
+
+    PaymentCardActivateCardRequest: 
+      value:
+        amount:
+          total: '12.04'
+          currency: 'USD'
+        target: 
+          sourceType: 'PaymentCard'
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+            category: 'GIFT'
+            subCategory: 'VALUELINK'
+        transactionDetails: 
+          merchantTransactionId: '123456789012'
+          merchantOrderId: '845366457890'
+          operationType: 'ACTIVATION'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+          promotionCode: '12A34B7'
+        additionalDataCommon:
+          additionalData:
+            fundingProvider: 'CUSTOMER'
+    
+    PaymentCardActivateCardResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'GIFT_CARDS'
+          transactionState: 'ACTIVATED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        target: 
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            category: 'GIFT'
+            subCategory: 'VALUELINK'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentReceipt:
+          processorResponseDetails:
+            approvalStatus: 'APPROVED'
+            approvalCode: 'OK5882'
+            processor: 'fiserv'
+            responseCode: '000000'
+            responseMessage: 'APPROVAL'
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            localTimestamp: '2021-06-20T23:42:48Z'
+          balances:
+            - beginningBalance: '0.00'
+              endingBalance: '12.04'
+              currency: 'USD'
+              
+    PaymentCardReloadRequest: 
+      value:
+        amount:
+          total: '10.00'
+          currency: 'USD'
+        target: 
+          sourceType: 'PaymentCard'
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+            category: 'GIFT'
+            subCategory: 'VALUELINK'
+        transactionDetails: 
+          merchantTransactionId: '123456789012'
+          merchantOrderId: '845366457890'
+          operationType: 'RELOAD'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+        additionalDataCommon:
+          additionalData:
+            fundingProvider: 'CUSTOMER'
+    
+    PaymentCardReloadResponse: 
+      value:
+        gatewayResponse: 
+          transactionType: 'GIFT_CARDS'
+          transactionState: 'ACTIVATED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        target: 
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            category: 'GIFT'
+            subCategory: 'VALUELINK'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentReceipt:
+          processorResponseDetails:
+            approvalStatus: 'APPROVED'
+            approvalCode: 'OK5882'
+            processor: 'fiserv'
+            responseCode: '000000'
+            responseMessage: 'APPROVAL'
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            localTimestamp: '2021-06-20T23:42:48Z'
+          balances:
+            - beginningBalance: '12.04'
+              endingBalance: '22.04'
+              currency: 'USD'
+              
+    PaymentCardCashoutRequest: 
+      value: 
+        target: 
+          sourceType: 'PaymentCard'
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+            category: 'GIFT'
+            subCategory: 'VALUELINK'
+        transactionDetails: 
+          merchantTransactionId: '123456789012'
+          merchantOrderId: '845366457890'
+          operationType: 'CASH_OUT'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+    
+    PaymentCardCashoutResponse: 
+      value:
+        gatewayResponse: 
+          transactionType: 'GIFT_CARDS'
+          transactionState: 'ACTIVATED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        target: 
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            category: 'GIFT'
+            subCategory: 'VALUELINK'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentReceipt:
+          processorResponseDetails:
+            approvalStatus: 'APPROVED'
+            approvalCode: 'OK5882'
+            processor: 'fiserv'
+            responseCode: '000000'
+            responseMessage: 'APPROVAL'
+            hostResponseCode: '00'
+            hostResponseMessage: 'APPROVAL'
+            localTimestamp: '2021-06-20T23:42:48Z'
+          balances:
+            - beginningBalance: '0'
+              endingBalance: '0'
+              currency: 'USD'
+    GiftCardBalanceInquiryRequest: 
+      value: 
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+        transactionDetails:
+          merchantTransactionId: '1343678765'
+          merchantOrderId: '845366457890'
+        transactionInteraction: 
+          terminalTimestamp: '2016-04-16T16:06:05Z'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    GiftCardBalanceInquiryResponse: 
+      value:
+        gatewayResponse: 
+          transactionType: 'BALANCE_INQUIRY'
+          transactionState: 'CHECKED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            category: 'GIFT'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentReceipt:
+          processorResponseDetails:
+              approvalStatus: 'APPROVED'
+              approvalCode: 'OK5882'
+              schemeTransactionId: '0225MCC625628'
+              processor: 'fiserv'
+              responseCode: '000000'
+              responseMessage: 'APPROVAL'
+              hostResponseCode: '00'
+              hostResponseMessage: 'APPROVAL'
+              localTimestamp: '2021-06-20T23:42:48Z'
+          balances:
+              - beginningBalance: '12.04'
+                endingBalance: '12.04'
+                currency: 'USD'

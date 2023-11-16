@@ -3,24 +3,38 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
 ---
 
 # 3-D Secure Verification
- 
-Secure Data Capture utilizes a sessionId that Commerce Hub enriches with the applicable data from the challenge.
+
+When using 3-D Secure _(3DS)_ merchants must go through an additional verification when the customer's [authentication](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) is challenged before submitting a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
+
+---
+
+## Request Variables
 
 <!--
 type: tab
-titles: ReferenceTransactionDetails
+titles: referenceTransactionDetails, merchantDetails
 -->
 
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the available parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length |Description |
+|---------|----------|----------------|---------|
+| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -29,7 +43,7 @@ The below table identifies the available parameters in the `referenceTransaction
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/3ds/v1/verify`
+>**POST** `/payments-vas/v1/3ds/verify`
 
 ---
 
@@ -40,7 +54,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a 3DS verification payload request.
+### Example of a 3DS verification payload request
 
 ```json
 {
@@ -54,15 +68,13 @@ titles: Request, Response
 }
 ```
 
-<!---
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/3ds/v1/verify)
--->
 
 <!--
 type: tab
 -->
 
-##### Example of a 3DS verification (201: Created) response.
+### Example of a 3DS verification (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -132,7 +144,6 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/3ds/v1/verify)
 - [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
-- [3-D Secure: Secure Data Capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md)
 - [3-D Secure Authentication Request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md)
 - [3-D Secure Request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md)
 

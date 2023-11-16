@@ -1,3 +1,7 @@
+---
+tags: [Security, Credentials, API Reference]
+---
+
 # Security Credentials
 
 A credentials request is used for authorizing or submitting subsequent financial transactions. 
@@ -5,9 +9,18 @@ A credentials request is used for authorizing or submitting subsequent financial
 - Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
 - Returns a `sessionId` used with Secure Data Capture [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) and [JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) requests.
 
+<!-- theme: danger -->
+> The `sessionId` returned in the response is considered private data that should be stored on the merchant’s backend server and never sent to the customer's browser.
+
+---
+
+## Request Variables
+
+The tables below contain the fields for a security credential request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
+
 <!--
 type: tab
-titles: Request Variables, Response Variables
+titles: domains, merchantDetails
 -->
 
 The below table identifies the parameters in the request.
@@ -33,7 +46,20 @@ The below table identifies the fields in the `domains` array.
 type: tab
 -->
 
-The below table identifies the response elements.
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variables | Type| Maximum Length | Required | Description |
+|---------|----------|----------------|-------- | --------|
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
+| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. Required when using [merchant defined](?path=docs/Resources/Guides/BYOID.md) MID/TID. |
+
+<!-- type: tab-end -->
+
+---
+
+## Response Variables
+
+The below table identifies the response elements. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
 
 | Variable | Type | Maximum Length | Description |
 |---------|----------|--------|--------|
@@ -46,19 +72,20 @@ The below table identifies the response elements.
 | `accessTokenIssuedTime` | *string* | 64 | Token issue time in YYYY-MM-DDThh:mm:ssZ format |
 | `accessTokenTimeToLive` | *string* | 7 | Access token expiry |
 | `asymmetricEncryptionAlgorithm` | *string* | 32 | Asymmetric encryption algorithm associated with the public key. RSA/ECB/PKCS1 with padding. |
+| `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT _(JSON Web Token)_ |
+| `expiresAt` | *string* | 64 | Date and time when the session expires |
+
 
 <!---
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
 -->
-
-<!-- type: tab-end -->
 
 ---
 
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/payments-vas/v1/security/credentials`
+> **POST** `/payments-vas/v1/security/credentials`
 
 ---
 
@@ -85,7 +112,8 @@ titles: Request, Response
     }
   ],
   "merchantDetails": {
-    "merchantId": "100004000000260"
+    "merchantId": "100004000000260",
+    "terminalId": "123456"
   }
 }
 ```
@@ -122,7 +150,8 @@ type: tab
   "accessTokenIssuedTime": "2016-04-16T16:06:05Z",
   "accessTokenTimeToLive": 1800,
   "asymmetricEncryptionAlgorithm": "RSA",
-  "accessTokenType": "string"
+  "accessTokenType": "JWT",
+  "expiresAt": "2020-04-16T16:06:05Z"
 }
 ```
 

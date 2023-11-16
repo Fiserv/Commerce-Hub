@@ -142,14 +142,17 @@ The last digit of an account number that is calculated according to a predetermi
 ## Chargeback
 A process by which a customer disputes the payment and often results in the money being refunded to the customer by the issuing bank unless the merchant can show the transaction is valid.
 
-## Customer Account
-Account connected to the financial institution that issued a payment card or checks.
+## Clearing
+The process where the merchant's processor withdraws or deposits funds from the customer's bank account.
 
 ## Closed Loop Prepaid Card
 Closed loop prepaid solutions are designed to be used only at the issuer’s locations. Examples of closed loop issuers include retail stores, casinos, oil companies, e-commerce businesses, telecommunications companies, and restaurants.
 
 ## "Code 10" Authorization
 A merchant's request for a "code 10" authorization is used to alert the authorization network (processor) that a suspicious transaction is occurring.
+
+## Component Object Model
+Component Object Model (COM) makes it easier to create components (pieces of code) or use preexisting components that can interact with other components and applications (using the object model). A big advantage is that these components can be written using a variety of computer languages.
 
 ## Conditioning
 The "tuning" or addition of equipment to improve the transmission characteristics or quality of a leased voice-grade line so that it meets specifications for data transmission.
@@ -159,17 +162,14 @@ Contactless payments use radio frequency (RF), also known as Near Field Communic
 
 When a customer taps or waves a payment instrument at a merchant terminal equipped with an RFID (Radio Frequency Identification) reader, the instrument wirelessly transmits payment details to the terminal.
 
+## Convenience Fee
+[Convenience fees](?path=docs/Resources/Guides/Convenience-Fees.md) are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
+
 ## Credit Card
 A plastic card used to purchase goods and services and to obtain cash advances on credit for which the cardholder is subsequently billed by the issuing member for repayment of credit extended.
 
-## Component Object Model
-Component Object Model (COM) makes it easier to create components (pieces of code) or use preexisting components that can interact with other components and applications (using the object model). A big advantage is that these components can be written using a variety of computer languages.
-
 ## Credit Line
 The monetary amount of credit extended to a customer.
-
-## Clearing
-The process where the merchant's processor withdraws or deposits funds from the customer's bank account.
 
 ## Cryptogram
 A limited or single-use key (cipher) that encrypts the payment data. It is required to de-encrypt the payment data by the processor to continue processing the payment.
@@ -179,6 +179,9 @@ The [three-digit code](?path=docs/Resources/Master-Data/Currency-Code.md) to des
 
 ## Customer
 A person or company that buys goods or services from a merchant.
+
+## Customer Account
+Account connected to the financial institution that issued a payment card or checks.
 
 ---
 
