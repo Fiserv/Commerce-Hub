@@ -13,7 +13,7 @@ Commerce Hub can pass Level II and III data _(also known as Enhanced Data)_ with
 
 Level II and III transactions require the `orderData` object, and level III requires line item details in the `itemDetails` object. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
 
-<!-- theme: info -->
+<!-- theme: warning -->
 > Sending `taxAmounts` and `merchantOrderId` is required to identify a Level II/III transaction.
 
 <!--
