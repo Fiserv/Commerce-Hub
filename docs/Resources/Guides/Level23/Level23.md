@@ -81,8 +81,8 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type| Maximum Length | Description |
 |---------|-------|----------|---------|
-| `merchantOrderId` | _string_ | 128 | Merchant order ID (aka customer reference number or purchase order number). |
-| `merchantInvoiceNumber` | _string_ | 12 | 
+| `merchantOrderId` | _string_ | 128 | Merchant order ID, customer reference number or purchase order number _(PO Number)_ |
+| `merchantInvoiceNumber` | _string_ | 12 | Merchant invoice number or reference number |
 
 <!--
 type: tab
