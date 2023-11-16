@@ -30,9 +30,9 @@ The below table identifies the available parameters in the `referenceTransaction
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** *CHARGES or REFUNDS* |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
 
 <!--
 type: tab
@@ -45,7 +45,7 @@ The below table identifies the recommended parameters in the `transactionDetails
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-|`reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
+| `reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
 
 <!--
 type: tab
@@ -56,7 +56,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|-----|
 |`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -94,7 +94,6 @@ Example of a cancels payload request.
   }
 }
 ```
-
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/cancel)
 
 <!--
@@ -170,7 +169,7 @@ Example of a cancels (201: Created) response.
 
 ---
 
-### Reversal Reason Code
+## Reversal Reason Code
 
 The below table identifies the valid values of the reason the merchant/customer requests for cancel(void).
 
@@ -179,7 +178,7 @@ The below table identifies the valid values of the reason the merchant/customer 
 | *VOID* | A transaction that is used to cancel or fully reverse a previous transaction. |
 | *SUSPECTED_FRAUD* | A transaction that is voided for suspected fraud. |
 | *TIMEOUT* | This transaction is used when the merchant does not receive a response to a transaction. At that point it is unknown whether the host received the transaction or not; therefore a timeout reversal request must be submitted. Upon the successful completion of the timeout reversal, the original transaction may be sent again. |
-| *CARD_OVERRIDE* | A transaction that is reversed by the terminal, normally due to a chip card override. |
+| *CARD_OVERRIDE* | A transaction that is reversed by the terminal, normally due to a chip card override. | 
 | **Canadian Debit Only** | |
 | *EDIT_ERROR* | Edit Error Parse error at the terminal |
 | *MAC_VERIFICATION_ERROR* | MAC Verification Error terminal MAC is invalid or data used to verify the MAC is incorrect. |
