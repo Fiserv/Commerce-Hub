@@ -26,7 +26,7 @@ A approval response can be triggered by entering any `total` in the `amount` obj
 
 ## Specific Response
 
-A specific response can be triggered by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5001.00 - 5999.00 can be used to trigger the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) or [error code](?path=docs/Resources/Guides/Response-Codes/Error.md).
+A specific response can be triggered by entering a specific `total` in the `amount` object using the test cards below. The dollar amounts between 5001.00 - 5999.00 can be used to trigger the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Code.md) or [error code](?path=docs/Resources/Guides/Response-Codes/Error-Code.md).
 
 <!-- theme: example -->
 >To receive a response of 006 Declined, submit 5006.00 as the total. 
