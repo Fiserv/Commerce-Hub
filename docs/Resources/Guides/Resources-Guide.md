@@ -82,7 +82,7 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 
 <!-- type: card
 title: Global Currency Solutions
-description: ADD DESCRIPTION
+description: Commerce Hub's Global Currency Solutions allows a merchant to combine any of our currency solutions with Global Merchant Acquiring (GMA) and local payment methods.
 link:
 -->
 
@@ -92,8 +92,8 @@ link:
 
 <!-- type: card
 title: Level II and III Data
-description: ADD DESCRIPTION
-link: 
+description: Commerce Hub can pass Level II and III data with business-to-business, corporate and purchase card transactions to meet card brand requirements, provide invoice-level transaction details and qualify for lower rates.
+link: ?path=docs/Resources/Guides/Level23/Level23.md
 -->
 
 <!-- type: card
@@ -106,7 +106,6 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
 title: Custom Identifiers
 description: Commerce Hub supports the ability for merchants to use their own Merchant Identifiers and Order Identifiers. This allows a seamless integration into existing merchant APIs and databases.
 link: ?path=docs/Resources/Guides/BYOID.md
->>>>>>> debeba3e793c3565f213fc6d7285c54ecba808e0
 -->
 
 <!-- type: row-end -->
@@ -119,16 +118,10 @@ description: A split shipment is an ability to capture an authorization for the 
 link: ?path=docs/Resources/Guides/Split-Shipment.md
 -->
 
-<!-- type: row-end -->
-
-<!-- type: row -->
-
 <!-- type: card
 title: Stored Credentials
 description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas.
 link: ?path=docs/Resources/Guides/Stored-Credentials.md
--->
-
 -->
 
 <!-- type: row-end -->
