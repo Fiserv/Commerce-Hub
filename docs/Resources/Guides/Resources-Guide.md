@@ -48,7 +48,7 @@ Commerce Hub offers multiple transaction-related guides to assist merchants with
 
 <!-- type: card
 title: Convenience Fees
-description: ADD DESCRIPTION
+description: Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
 link: ?path=docs/Resources/Guides/Convenience-Fees.md
 -->
 
