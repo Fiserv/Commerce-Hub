@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present]
 
 # 3-D Secure Verification
 
-When using 3-D Secure _(3DS)_ merchants must go through an additional verification when the customer's [authentication](?paht=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) is challenged before submitting a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
+When using 3-D Secure _(3DS)_ merchants must go through an additional verification when the customer's [authentication](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) is challenged before submitting a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
 
 ---
 
