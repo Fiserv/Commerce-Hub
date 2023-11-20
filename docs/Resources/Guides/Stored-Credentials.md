@@ -70,8 +70,8 @@ Example of a initial tokens payload request using `storedCredentials`.
   },
   "storedCredentials": {
     "scheduled": false,
-    "initiator": "CUSTOMER",
-    "sequence": "INITIAL"
+    "initiator": "CARD_HOLDER",
+    "sequence": "FIRST"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
@@ -127,8 +127,9 @@ Example of a charge (201: Created) response
   ],
   "storedCredentials": {
     "scheduled": false,
-    "initiator": "CUSTOMER",
-    "sequence": "INITIAL"
+    "initiator": "CARD_HOLDER",
+    "sequence": "FIRST",
+    "schemeReferenceTransactionId": "54231235467"
   }
 }
 ```
@@ -301,7 +302,7 @@ Example of an unscheduled charge payload request using `storedCredentials`.
   },
   "storedCredentials": {
     "scheduled": false,
-    "initiator": "CUSTOMER",
+    "initiator": "CARD_HOLDER",
     "sequence": "SUBSEQUENT",
     "schemeReferenceTransactionId": "54231235467"
   },
@@ -374,7 +375,7 @@ Example of a charge (201: Created) response
   },
   "storedCredentials": {
     "scheduled": false,
-    "initiator": "CUSTOMER",
+    "initiator": "CARD_HOLDER",
     "sequence": "SUBSEQUENT",
     "schemeReferenceTransactionId": "54231235467"
   },
@@ -394,6 +395,7 @@ Example of a charge (201: Created) response
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 <!---
