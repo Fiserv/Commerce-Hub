@@ -50,7 +50,7 @@ JSON string format for `subMerchant`:
 
 ## Payment Faciliator SIngle (CNP)
 
-Add Description 
+Add Description
 
 ## Payload Example
 

@@ -9,9 +9,6 @@ Add Description
 
 
 
-
-
-
 ## Payload Example
 
 <!--
@@ -323,5 +320,12 @@ Example of a charge (201: Created) response.
 ```
 
 <!-- type: tab-end -->
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---
