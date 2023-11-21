@@ -931,13 +931,16 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
+
   /payments-vas/v1/accounts/balance-inquiry:
     x-model-version: 1.0
     post:
       tags:
         - Balance Inquiry Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Balance Inquiry'
       summary: Receives balance inquiry request and returns balance inquiry response.
-      description: This payload provides the details about the supported options for payments.
+      description: Provides the available balance for a payment source.
       requestBody:
         required: true
         content:
@@ -945,7 +948,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BalanceInquiryRequest'
             examples:
-              GiftCard-Balance-Inquiry: 
+              Balance-Inquiry: 
                 summary: GiftCardRequest with PaymentCard
                 $ref: '#/components/examples/GiftCardBalanceInquiryRequest'
       responses:
@@ -956,7 +959,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BalanceInquiryResponse'
               examples: 
-                GiftCard-Balance-Inquiry: 
+                Balance-Inquiry: 
                   summary: GiftCardResponse with PaymentCard
                   $ref: '#/components/examples/GiftCardBalanceInquiryResponse'
         400:
@@ -6970,6 +6973,7 @@ components:
             - beginningBalance: '0'
               endingBalance: '0'
               currency: 'USD'
+
     GiftCardBalanceInquiryRequest: 
       value: 
         source:
