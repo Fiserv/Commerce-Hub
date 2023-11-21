@@ -231,7 +231,10 @@ new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-co
 
 #### Repsone Handling 
 
+
 The following code snippet provides a sample response 
+
+Description......
 
 <!--
 type: tab
