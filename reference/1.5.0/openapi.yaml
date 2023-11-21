@@ -852,6 +852,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
+
   /payments-vas/v1/accounts/gift-cards:
     x-model-version: 1.0
     post:
@@ -930,13 +931,16 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
+
   /payments-vas/v1/accounts/balance-inquiry:
     x-model-version: 1.0
     post:
       tags:
         - Balance Inquiry Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Balance Inquiry'
       summary: Receives balance inquiry request and returns balance inquiry response.
-      description: This payload provides the details about the supported options for payments.
+      description: Provides the available balance for a payment source.
       requestBody:
         required: true
         content:
@@ -944,7 +948,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BalanceInquiryRequest'
             examples:
-              GiftCard-Balance-Inquiry: 
+              Balance-Inquiry: 
                 summary: GiftCardRequest with PaymentCard
                 $ref: '#/components/examples/GiftCardBalanceInquiryRequest'
       responses:
@@ -955,7 +959,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BalanceInquiryResponse'
               examples: 
-                GiftCard-Balance-Inquiry: 
+                Balance-Inquiry: 
                   summary: GiftCardResponse with PaymentCard
                   $ref: '#/components/examples/GiftCardBalanceInquiryResponse'
         400:
@@ -1563,6 +1567,11 @@ components:
         last4: {type: string, maxLength: 4, description: Contains the last four digits
             of the Primary Account Number (PAN)., example: '0019'}
         scheme: {type: string, maxLength: 256, description: Card brand., example: VISA}
+        beginningBalance: {type: number, maximum: 1.0E18, description: Beginning card
+            balance., example: 1.00}
+        endingBalance: {type: number, maximum: 1.0E18, description: Ending card balance.,
+          example: 0.10}
+
     EncryptionData:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Encryption-Data.md">Encrypted
@@ -2048,68 +2057,205 @@ components:
           example: '2994454'
     OrderData:
       x-model-version: 1.0
-      description: <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md">Order
-        data</a> can be used for merchant database tracking, improve authorization
-        rates and reduce fraud.
       properties:
-        orderDate: {type: string, format: date, maxLength: 10, description: 'Date
-            that goods and services are ordered, in YYYY-MM-DD format.', example: '2020-11-20'}
-        itemCount: {type: integer, description: Total number of items included in
-            the purchase., example: 1}
+        orderDate:
+          type: string
+          format: date
+          maxLength: 10
+          description: 'Date that goods and services are ordered, in YYYY-MM-DD format.'
+          example: '2020-11-20'
+        itemCount:
+          type: integer
+          description: 'Total number of items included in the purchase.'
+          example: '1'
         itemDetails:
           type: array
-          items: {$ref: '#/components/schemas/ItemDetails'}
-        preOrder: {type: boolean, description: Identifies if the purchase is a preorder.,
-          example: 'true'}
-        preOrderDate: {type: string, format: date, maxLength: 10, description: 'Date
-            that goods and services are pre-ordered, in YYYY-MM-DD format.', example: '2020-11-20'}
-        reOrder: {type: boolean, description: Identifies if the purchase is a reorder.,
-          example: 'false'}
-        goodsSoldCode: {type: string, maxLength: 16, description: Indicates a specific
-            type of goods. It is used to help identify potentially fraudulent sales.,
-          example: GIFT_CARD}
-        giftcardCount: {type: integer, maximum: 99, description: Total number of gift
-            cards purchased., example: 1}
-        giftCardAmount: {$ref: '#/components/schemas/Amount'}
-        insuranceClaimNumber:
+          items:
+            $ref: '#/components/schemas/ItemDetails'
+        preOrder:
+          type: boolean
+          description: 'Identifies if the purchase is a preorder.'
+          example: 'true'
+        preOrderDate:
           type: string
-          maxLength: 5
-          example: '0123456789'
-          description: 'The Insurance Claim Number of the Customer.'
-        departmentCode:
+          format: date
+          maxLength: 10
+          description: 'Date that goods and services are pre-ordered, in YYYY-MM-DD format.'
+          example: '2020-11-20'
+        reOrder:
+          type: boolean
+          description: 'Identifies if the purchase is a reorder.'
+          example: 'false'
+        goodsSoldCode:
+          type: string
+          maxLength: 16
+          description: |+
+            Indicates a specific type of goods. It is used to help identify potentially fraudulent sales.
+
+             Valid Values:
+            * GIFT_CARD
+            * PHYSICAL_GOODS
+            * DIGITAL_GOODS
+            * CHECK_ACCEPTANCE
+            * ACCOUNT_FUNDING
+            * QUASI_CASH
+            * OTHER
+          example: 'GIFT_CARD'
+        giftcardCount:
           type: integer
-          maxLength: 4
-          description:
-            'Merchant defined code identifying the department the item was purchased.'
-          example: 33
-        departmentSubCode:
-          type: integer
-          maxLength: 4
-          description: 'Merchant defined sub code identifying the sub department the item was purchased.'
-          example: 22
-        departmentClass:
-          type: integer
-          maxLength: 5
-          description: 'Merchant defined code identifying the department class the item was purchased.'
-          example: 51
-        departmentSubClass:
-          type: integer
-          maxLength: 5
-          description: 'Merchant defined sub code identifying the department sub class the item was purchased.'
-          example: 67
+          maximum: 999
+          description: 'Total number of gift cards purchased.'
+          example: '1'
+        orderDescription:
+          type: string
+          maxLength: 255
+          description: 'Name or description of the order'
+          example: 'Description for an order'
+        supplierVatRegistrationNumber:
+          type: string
+          maxLength: 15
+          description: 'Supplier VAT registration number.'
+          example: 'U12345678'
     ItemDetails:
       x-model-version: 1.0
       description: ''
       properties:
-        categoryName: {type: string, maxLength: 8, description: 'Merchant defined category of the item(s) sold', example: 'Merchandise'}
-        itemCount: {type: integer, description: 'The item count in category.', example: 1}
-        value: {type: number, maxLength: 32, description: 'The monetary value of items.', example: 12.50}
+        groupingIndicator:
+          type: boolean
+          example: 'true'
+        groupingId:
+          type: integer
+          maximum: 100
+          description: 'Item group ID. The group this item belongs to. Provided by the merchant'
+          example: '1'
+        commodityCode:
+          type: string
+          maxLength: 256
+          description: |+
+            Identifies the commodity code of the products sold, using UNSPSC standard codes.
+
+            Valid Values:
+            * 40515 – Diesel
+            * 40509 – Petrol
+          example: '40515'
+        itemType:
+          type: string
+          maxLength: 256
+          description: |+
+            Identifies the type of the item.
+
+            Valid Values:
+            * PRODUCT
+            * TAX
+            * SHIPPING
+            * ADJUSTMENT
+          example: 'PRODUCT'
+        itemSubType:
+          type: string
+          maxLength: 256
+          description: |+
+            Identifies the sub type of item.
+
+            Valid Values:
+            * FUEL
+            * MERCHANDISE
+            * SERVICE
+            * FINANCIAL
+            * DISCOUNT
+            * PROMOTION
+            * CREDIT
+            * COUPON
+            * FEES
+            * OTHER
+          example: 'FUEL'
+        paymentSystemProductCode:
+          type: string
+          maxLength: 4
+          description: 'Payment system product code'
+          example: '001'
+        productUPC:
+          type: string
+          maxLength: 12
+          description: 'Universal Product Code identifier used for retail products worldwide'
+          example: '03600029145'
+        itemUrl:
+          type: string
+          maxLength: 512
+          description: 'Item url'
+          example: 'https://www.somedomain.com/product/detail/1234'
+        itemImageUrl:
+          type: string
+          maxLength: 512
+          description: 'Item image url'
+          example: 'https://www.somedomain.com/images/product-1234.jpg'
+        itemDescription:
+          type: string
+          maxLength: 1024
+          description: 'Name or description of item'
+          example: 'This is a description for item'
+        productSKU:
+          type: string
+          maxLength: 64
+          description: 'Stock keeping unit identifier consisting of letters and numbers that identify characteristics about each product.'
+          example: 'UGG-BB-PUR-06'
+        quantity:
+          type: number
+          maximum: 99999999
+          description: 'Identifies the number of units of the product sold.'
+          example: '25'
+        unitOfMeasurement:
+          type: string
+          description: |+
+            Identifies the type of measurement for the product sold.
+
+            Valid Values:
+            * CARTON
+            * GALLON
+            * KILOGRAM
+            * LITER
+            * POUND
+            * QUART
+            * UNIT
+            * OUNCE
+            * OTHER
+          example: 'GALLON'
+        amountComponents:
+          description: 'Used in transactions where additional fields such as tax, surcharge, or fees are required as part of the request.'
+          $ref: '#/components/schemas/AmountComponents'
+        insuranceClaimNumber:
+          type: string
+          maxLength: 64
+          example: '0123456789'
+          description: 'The Insurance Claim Number of the Customer.'
+        department:
+          type: string
+          maxLength: 256
+          description:
+            'Merchant defined code identifying the department the item was purchased.'
+          example: '33'
+        subDepartment:
+          type: string
+          maxLength: 256
+          description: 'Merchant defined sub code identifying the sub department the item was purchased.'
+          example: '22'
+        departmentClass:
+          type: string
+          maxLength: 256
+          description: 'Merchant defined code identifying the department class the item was purchased.'
+          example: '51'
+        departmentSubClass:
+          type: string
+          maxLength: 256
+          description: 'Merchant defined sub code identifying the department sub class the item was purchased.'
+          example: '67'
+        itemNumber:
+          type: number
+          maximum: 998
+          description: 'Line item number.'
+          example: '1'
     DynamicDescriptors:
       x-model-version: 1.0
-      description: '<a href="../docs?path=docs/Resources/Guides/Dynamic-Descriptor.md">Dynamic
-        descriptor</a> information about a merchant and appears on the customer statement.
-        Note: This has limited platform availability. For more information, please
-        contact your Account Representative.'
+      description: '<a href="../docs?path=docs/Resources/Guides/Dynamic-Descriptor.md">Dynamic descriptor</a> information about a merchant and appears on the customer statement. Note: This has limited platform availability. For more information, please contact your Account Representative.'
       properties:
         mcc: {type: string, maxLength: 4, description: Merchant Category Code (MCC).
             The MCC is an industry standard four-digit number used to classify a business
@@ -3317,6 +3463,7 @@ components:
             from boarded account.}
         merchantPostalCode: {type: string, maxLength: 10, description: Postal code
             of the merchant returned from boarded account or dynamic descriptor.}
+
     Balance:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Master-Data/Balance-Components.md">Balance</a> object to support account balances.'
@@ -3341,6 +3488,7 @@ components:
           maxLength: 17
           description: 'Indicates <a href="../docs?path=docs/Resources/Master-Data/Balance-Components.md#balance-type">type</a> of account balance represents.'
           example: 'GIFT_CARD'
+
     ProcessorResponseDetails:
       x-model-version: 1.0
       description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Processor-Response-Details.md">processor
@@ -4250,6 +4398,7 @@ components:
       properties:
         source: {$ref: '#/components/schemas/Source'}
         merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
+
     GiftCardRequest:
       x-model-version: 1.0
       properties:
@@ -4354,6 +4503,7 @@ components:
           $ref: '#/components/schemas/NetworkDetails'
         paymentReceipt:
           $ref: '#/components/schemas/PaymentReceipt'
+
     ReturnOptimizerResponse:
       x-model-version: 1.0
       properties:
@@ -6595,6 +6745,7 @@ components:
         symmetricKeyDetails:
           encryptionType: 'AES-GCM'
           modulus: 256
+
     CreateDigitalGiftCardRequest: 
       value:
         amount:
@@ -6822,6 +6973,7 @@ components:
             - beginningBalance: '0'
               endingBalance: '0'
               currency: 'USD'
+
     GiftCardBalanceInquiryRequest: 
       value: 
         source:
