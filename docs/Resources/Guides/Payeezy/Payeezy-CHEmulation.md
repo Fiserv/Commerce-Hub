@@ -122,3 +122,51 @@ Below is a list of negative response codes and the dollar amounts required to ge
 ### Other Response Differences to Expect
 
 - Gateway validation of authorization_num and transaction_tag will no longer happen.  Declines due to these element values being invalid will come from the downstream system and the decline response will reflect that of a bank response message.
+
+### Test Data Package
+
+- Merchant with V12 and above need HMAC and key ID where HMAC calculation was introduced (Gateway, Key ID,HMAC and clear Password)
+- Merchant with V11 and below just need Gateway and Password
+
+#### GGE4 Merchant Credentials
+
+URL: https://api-crt.gateway.payeezytest.com/transaction/v32
+
+---
+***With Token Enabeled***
+
+HMAC Key : 88m17TaPnTUBKwTVL8oBO206/WNMtWmB\
+KeyId - 3783\
+Token Type/ Token ID - BBY0\
+Exact ID/ Gateway_id: I36054-66\
+Password: A3XeKEdPZj8ml5CrqCM9etyCktQFypi2\
+Password HASH: $2a$12$B/RD.aMX30GNVhIuTKqQRu9r0n256Aki2rOljwWYKyfuzL8xDmb5q\
+
+---
+
+***Without Token Enabled***
+HMAC Key : ZHdnULwv+pPKVX+QE5QtbR+oZlPNaAB1\
+KeyId - 3783\
+Exact ID/ Gateway_id: H21028-12\
+Password: A3XeKEdPZj8ml5CrqCM9etyCktQFypi2\
+Password HASH: $2a$12$uqqhU96tPsHFYvXqNiHKd.oG/akQZtDD/Si6OreQ2QvGzTNYzZh4O\
+
+---
+
+#### FAPI Merchant Credentials
+
+URL: https://api-cert.payeezy.com/v1/transactions
+
+---
+***With Token Enabled***
+Token Type/ Token ID - BBY0\
+API Key: cKvZxIfQfsCAaoaf0lWBGSt7mKGfq0Gm\
+API Secret: u9X7d5ucpI9FMg5C9GOzWH6pN2GSEd5yYjmEgxBk9Tt\
+DevPortal Token: fdoa-ba045b91bf7fab29a779e60138e0e3a42c166d1985aeb037\
+
+---
+
+***Without Token Enabled***
+API Key: cwsVo8lwJvNuwlwZAb6lyT6kOcmajRNw\
+Secret: Nv0vyWeuHtS6uivrG5qC7fm44EGSsosjkRwcsLNfBVL\
+DevPortal Token: fdoa-f151e56e522acd3df42543548a64ad195b8629860ec87067\
