@@ -695,7 +695,7 @@ paths:
             examples:
               PaymentCard-Encrypted:
                 summary: CardCapture Request with PaymentCard,
-                $ref: '#/components/examples/PaymentCardEncryptedRequest'
+                $ref: '#/components/examples/CardCapturePaymentCardEncryptedRequest'
       responses:
         200:
           description: Success.
@@ -6746,10 +6746,23 @@ components:
           encryptionType: 'AES-GCM'
           modulus: 256
 
+    CardCapturePaymentCardEncryptedRequest:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+        merchantDetails:
+          merchantId: '123456789789567'
+          terminalId: '123456'
+
     CreateDigitalGiftCardRequest: 
       value:
         amount:
-          total: '12.04'
+          total: 12.04
           currency: 'USD'
         transactionDetails:
           merchantTransactionId: '123456789012'
@@ -6795,14 +6808,14 @@ components:
             hostResponseMessage: 'APPROVAL'
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '0.00'
-              endingBalance: '12.04'
+            - beginningBalance: 0.00
+              endingBalance: 12.04
               currency: 'USD'
 
     PaymentCardActivateCardRequest: 
       value:
         amount:
-          total: '12.04'
+          total: 12.04
           currency: 'USD'
         target: 
           sourceType: 'PaymentCard'
@@ -6856,14 +6869,14 @@ components:
             hostResponseMessage: 'APPROVAL'
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '0.00'
-              endingBalance: '12.04'
+            - beginningBalance: 0.00
+              endingBalance: 12.04
               currency: 'USD'
               
     PaymentCardReloadRequest: 
       value:
         amount:
-          total: '10.00'
+          total: 10.00
           currency: 'USD'
         target: 
           sourceType: 'PaymentCard'
@@ -6916,8 +6929,8 @@ components:
             hostResponseMessage: 'APPROVAL'
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '12.04'
-              endingBalance: '22.04'
+            - beginningBalance: 12.04
+              endingBalance: 22.04
               currency: 'USD'
               
     PaymentCardCashoutRequest: 
@@ -6970,8 +6983,8 @@ components:
             hostResponseMessage: 'APPROVAL'
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '0'
-              endingBalance: '0'
+            - beginningBalance: 15.00
+              endingBalance: 0.00
               currency: 'USD'
 
     GiftCardBalanceInquiryRequest: 
@@ -7023,6 +7036,6 @@ components:
               hostResponseMessage: 'APPROVAL'
               localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-              - beginningBalance: '12.04'
-                endingBalance: '12.04'
+              - beginningBalance: 12.04
+                endingBalance: 12.04
                 currency: 'USD'
