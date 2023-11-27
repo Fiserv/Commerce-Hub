@@ -27,7 +27,7 @@ Generate the authentication required for use with our APIs.
 > HMAC Authorization Example: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
 
 ```javascript
-function guid() { // create clientRequestId
+function guid() {	// create clientRequestId
 	function s4() {
 		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 	}
