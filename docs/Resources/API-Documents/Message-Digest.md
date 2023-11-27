@@ -23,7 +23,7 @@ Generate the message digest required for use with our APIs.
 > Encrypted Message Digest Example: 2e5a47d16aaafd6a13303d4e211bbce1a771d9cfa412ac45deb38a558037fd38
 
 ```javascript
-function guid() {
+function guid() {	// create clientRequestId
 	function s4() {
 		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 	}
