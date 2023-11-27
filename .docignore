@@ -1,9 +1,11 @@
-# File to hide/ignore any document file(s) or directory(s).
+# File to hide/ignore any document file(s) or directory(s)
 
-# Directory
+## Directory
+
 archive/
 
-# All Files and Subdirectories
+## All Files and Subdirectories
+
 archive/**
 docs/Online-Mobile-Digital/Wallets-AltPayments/PayPal/**
 docs/Resources/Guides/Payments-101/**
@@ -12,9 +14,9 @@ docs/Resources/Guides/Vault/**
 docs/Resources/API-Documents/Value_Added_Services/**
 docs/Resources/Guides/Industry-Verticals/**
 docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
-docs/Resources/Guides/Level23/**
 
-# Markdown Files
+## Markdown Files
+
 tag-list.md
 docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-HPP.md
 docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-HPP.md
@@ -24,7 +26,6 @@ docs/Resources/Guides/Bill-Payments/Bill-Payments.md
 docs/Resources/Guides/Bill-Payments/Deferred-Payment.md
 docs/Resources/Guides/Bill-Payments/Payment-Schedule.md
 docs/Resources/Guides/Fraud/Fraud-Detect.md
-docs/Resources/Guides/Payment-Sources/Gift-Card.md
 docs/Resources/Guides/Payment-Sources/Network-Token.md
 docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
 docs/Resources/Guides/PSD2-SCA.md
@@ -64,3 +65,4 @@ docs/Resources/Guides/Testing/Test-Declines.md
 docs/Resources/Guides/Testing/Test-Errors.md
 docs/Resources/Guides/Testing/Test-Fraud.md
 docs/Resources/Guides/Testing/Test-Integration.md
+docs/Resources/Master-Data/Commodity-Codes-Old.md

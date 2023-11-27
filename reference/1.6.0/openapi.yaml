@@ -695,7 +695,7 @@ paths:
             examples:
               PaymentCard-Encrypted:
                 summary: CardCapture Request with PaymentCard,
-                $ref: '#/components/examples/PaymentCardCaptureRequest'
+                $ref: '#/components/examples/PaymentCardEncryptedRequest'
       responses:
         200:
           description: Success.
@@ -6745,7 +6745,7 @@ components:
         symmetricKeyDetails:
           encryptionType: 'AES-GCM'
           modulus: 256
-   
+
     CreateDigitalGiftCardRequest: 
       value:
         amount:

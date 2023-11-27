@@ -25,8 +25,8 @@ The below table identifies the parameters in the `card` object.
 | `bin` | *String* | 8 |  Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
 | `last4` | *String* | 4 |  Last four digits of the Primary Account Number (PAN) |
 | `scheme` | *String* | 256 |  Card brand received in the transaction response |
-| `beginningBalance` | *number* | 18,3 | Beginning card balance received in the transaction response |
-| `endingBalance` | *number* | 18,3 | Ending card balance received in the transaction response |
+| `category`| _string_ | 25 | Describes the card category |
+| `subCategory`| _string_ | 25 | Provides the subcategory for the `category` field to identify the card type. |
 
 
 <!--
@@ -47,13 +47,23 @@ JSON string format for `card`:
       "bin": "400555",
       "last4": "0019",
       "scheme": "VISA",
-      "beginningBalance": "1.00",
-      "endingBalance": "0.10"
+      "category": "GIFT",
+      "subCategory": "GIFT_SOLUTIONS"
    } 
 }
 ```
 
 <!-- type: tab-end -->
+
+---
+
+## Category and Subcategory
+
+The below table identifies the valid values of `category` and `subCategory`.
+
+| Category | Subcategories |
+| -------- | ------- |
+| GIFT | GIFT_SOLUTIONS |
 
 ---
 
