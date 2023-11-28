@@ -63,17 +63,17 @@ The below table identifies the response elements. The full request schemas are a
 
 | Variable | Type | Maximum Length | Description |
 |---------|----------|--------|--------|
-| `keyId` | *string* | 64 | Unique identifier of the public encryption key |
-| `publicKey` | *string* | 4000 | Base64 encoded public key |
-| `keyLength` | *string* | 10 | Length of the Base64 encoded public encryption key |
 | `accessToken` | *string* | 2048 | Access token credential to be used in subsequent API calls. |
-| `sessionId` | *string* | 64  | Used as an identifier for a session after a successful call to security/credentials endpoint or after a successful authentication request |
-| `domains` | *array* | N/A  | A whitelist of domains that are applicable for this credentials request |
+| `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT _(JSON Web Token)_ |
 | `accessTokenIssuedTime` | *string* | 64 | Token issue time in YYYY-MM-DDThh:mm:ssZ format |
 | `accessTokenTimeToLive` | *string* | 7 | Access token expiry |
+| `keyId` | *string* | 64 | Unique identifier of the public encryption key |
+| `keyLength` | *string* | 10 | Length of the Base64 encoded public encryption key |
+| `publicKey` | *string* | 4000 | Base64 encoded public key |
 | `asymmetricEncryptionAlgorithm` | *string* | 32 | Asymmetric encryption algorithm associated with the public key. RSA/ECB/PKCS1 with padding. |
-| `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT _(JSON Web Token)_ |
 | `expiresAt` | *string* | 64 | Date and time when the session expires |
+| `sessionId` | *string* | 64  | Used as an identifier for a session after a successful call to security/credentials endpoint or after a successful authentication request |
+| `domains` | *array* | N/A  | A whitelist of domains that are applicable for this credentials request |
 
 
 <!---
