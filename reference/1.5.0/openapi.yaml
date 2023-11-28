@@ -5572,7 +5572,7 @@ components:
       value:
         amount:
           total: 9.00
-          currency: USD
+          currency: 'USD'
         source:
           sourceType: 'PaymentCard'
           encryptionData:
@@ -5583,22 +5583,22 @@ components:
             keyId: '88000000022'
             securityCodeIndicator: 'PROVIDED'
         additionalData3DS:
-          serviceProviderTransactionId: W1dkIvUNzLYgRGLBVNp1
-          acsTransactionId: 46d071e5-2447-4980-a9ba-c8c55a99107a
+          serviceProviderTransactionId: 'W1dkIvUNzLYgRGLBVNp1'
+          acsTransactionId: '46d071e5-2447-4980-a9ba-c8c55a99107a'
           challengeIndicator: false
-          dsTransactionId: 3150f884-0a17-4669-8c50-5d9b8bdae022
-          serverTransactionId: c58e7f2e-56dd-496a-acda-b39c37bdf14b
-          authenticationStatus: Y
+          dsTransactionId: '3150f884-0a17-4669-8c50-5d9b8bdae022'
+          serverTransactionId: 'c58e7f2e-56dd-496a-acda-b39c37bdf14b'
+          authenticationStatus: 'Y'
           mpiData:
-            cavv: MTIzNDU2Nzg5MDEyMzQ1Njc4OTA=
+            cavv: 'MTIzNDU2Nzg5MDEyMzQ1Njc4OTA='
             eci: '05'
           versionData:
-            recommendedVersion: 2.1.0
+            recommendedVersion: '2.1.0'
         transactionDetails:
           captureFlag: true
           deviceFingerprint:
             - dataDynamic:
-                ipAddress: 192.168.0.12
+                ipAddress: '192.168.0.12'
         merchantDetails:
           terminalId: '10000001'
           merchantId: '100004000100116'
@@ -5614,25 +5614,25 @@ components:
             keyId: '88000000022'
             securityCodeIndicator: 'PROVIDED'
         additionalData3DS:
-          serviceProviderTransactionId: W1dkIvUNzLYgRGLBVNp1
-          acsTransactionId: 46d071e5-2447-4980-a9ba-c8c55a99107a
-          dsTransactionId: 3150f884-0a17-4669-8c50-5d9b8bdae022
-          acsReferenceNumber: 8561c0ef-931a-474f-bfee-55eb98a3jds7
-          authenticationStatus: Y
-          statusReason: Approved
-          serverTransactionId: c58e7f2e-56dd-496a-acda-b39c37bdf14b
-          serviceProvider: CARDINAL
-          challengeStatus: Y
+          serviceProviderTransactionId: 'W1dkIvUNzLYgRGLBVNp1'
+          acsTransactionId: '46d071e5-2447-4980-a9ba-c8c55a99107a'
+          dsTransactionId: '3150f884-0a17-4669-8c50-5d9b8bdae022'
+          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
+          authenticationStatus: 'Y'
+          statusReason: 'Approved'
+          serverTransactionId: 'c58e7f2e-56dd-496a-acda-b39c37bdf14b'
+          serviceProvider: 'CARDINAL'
+          challengeStatus: 'Y'
           messageCategory: '1'
           mpiData:
-            cavv: 020360C31C002540AFAB9DFFA1F69D3000020000
-            xid: G2Q6OcsXq1k0pA0mMNHVH1P02Tw=
-            eci: SECURE_ECOM
+            cavv: '020360C31C002540AFAB9DFFA1F69D3000020000'
+            xid: 'G2Q6OcsXq1k0pA0mMNHVH1P02Tw='
+            eci: 'SECURE_ECOM'
           versionData:
-            recommendedVersion: 2.1.0
+            recommendedVersion: '2.1.0'
         transactionDetails:
           captureFlag: true
-          merchantOrderId: 87849105
+          merchantOrderId: '87849105'
           physicalGoodsIndicator: true
         merchantDetails:
           terminalId: '10000001'
@@ -5640,88 +5640,114 @@ components:
     Payment3DSChargesResponse:
       value:
         gatewayResponse:
-          transactionType: CHARGE
-          transactionState: AUTHORIZED
-          transactionOrigin: ECOM
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'CHARGE'
+          transactionState: 'CAPTURED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            orderId: 'CHG01b33018867132945ccfec11492a66a1a9'
+            transactionTimestamp: '2023-08-18T18:58:00.698883142Z'
+            apiTraceId: 'b5ebb33767bc42909cedab92541a60be'
+            clientRequestId: '5200768'
+            transactionId: 'b5ebb33767bc42909cedab92541a60be'
         source:
-          sourceType: Payment3DS
-          card: {bin: '40055500', last4: '0019', expirationMonth: '10',
-            expirationYear: '30', scheme: VISA}
+          sourceType: 'PaymentCard'
+          card:
+            expirationMonth: '07'
+            expirationYear: '2025'
+            bin: '401200'
+            last4: '0026'
+            scheme: 'VISA'
         paymentReceipt:
-          approvedAmount: {total: 12.04, currency: USD}
-          merchantName: Merchant Name
-          merchantAddress: 123 Peach Ave
-          merchantCity: Atlanta
-          merchantStateOrProvince: GA
-          merchantPostalCode: '12345'
-          merchantCountry: US
-          merchantURL: https://www.somedomain.com
+          approvedAmount:
+            total: 9.00
+            currency: 'USD'
           processorResponseDetails:
-            approvalStatus: APPROVED
-            approvalCode: OK5882
-            schemeTransactionId: 0225MCC625628
-            processor: FISERV
-            host: NASHVILLE
+            approvalStatus: 'APPROVED'
+            approvalCode: 'OK172C'
+            referenceNumber: 'ab92541a60be'
+            networkRouted: 'VISA'
+            networkInternationalId: '0001'
             responseCode: '000'
-            responseMessage: APPROVAL
+            responseMessage: 'Approved'
             hostResponseCode: '00'
-            hostResponseMessage: APPROVAL
-            localTimestamp: '2021-06-20T23:42:48Z'
-            bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+            hostResponseMessage: 'APPROVAL'
+        transactionDetails:
+          captureFlag: true
+          processingCode: '000000'
+          transactionCutTimeStamp: '2023-08-19T01:45:00Z'
+          deviceFingerprint:
+            - dataDynamic:
+                ipAddress: 192.168.0.12
+          createToken: true
+          retrievalReferenceNumber: 'ab92541a60be'
+        transactionInteraction:
+          posEntryMode: 'MANUAL'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
+          additionalPosInformation:
+            stan: '020100'
+            posFeatures:
+              pinAuthenticationCapability: 'UNSPECIFIED'
+              terminalEntryCapability: 'UNSPECIFIED'
+          authorizationCharacteristicsIndicator: 'U'
+          hostPosEntryMode: '010'
+          hostPosConditionCode: '59'
+        networkDetails:
+          network:
+            network: 'Visa'
+          networkResponseCode: '00'
+          cardLevelResultCode: 'C'
+          validationCode: 'G216'
+          transactionIdentifier: '013230529278074'
     PaymentCard3DSTokenizationResponse:
       value:
         gatewayResponse:
-          transactionType: TOKENIZE
-          transactionState: AUTHORIZED
+          transactionType: 'TOKENIZE'
+          transactionState: 'AUTHORIZED'
           transactionProcessingDetails:
-            orderId: CHG01133d6e8746b0449902fdd8f9f89ef840
+            orderId: 'CHG01133d6e8746b0449902fdd8f9f89ef840'
             transactionTimestamp: '2023-08-18T19:01:02.509947165Z'
-            apiTraceId: 13316200f664440fa9cc8ecc8c1b7457
+            apiTraceId: '13316200f664440fa9cc8ecc8c1b7457'
             clientRequestId: '1410076'
-            transactionId: 13316200f664440fa9cc8ecc8c1b7457
+            transactionId: '13316200f664440fa9cc8ecc8c1b7457'
         source:
-          sourceType: PaymentCard
+          sourceType: 'PaymentCard'
           card:
             expirationMonth: '12'
             expirationYear: '2025'
             bin: '401200'
             last4: '0026'
-            scheme: VISA
+            scheme: 'VISA'
         paymentTokens:
           - tokenData: '8408727895800026'
-            tokenSource: TRANSARMOR
+            tokenSource: 'TRANSARMOR'
             tokenResponseCode: '000'
-            tokenResponseDescription: SUCCESS
+            tokenResponseDescription: 'SUCCESS'
         processorResponseDetails:
-          approvalStatus: APPROVED
-          approvalCode: OK409C
-          referenceNumber: 8ecc8c1b7457
+          approvalStatus: 'APPROVED'
+          approvalCode: 'OK409C'
+          referenceNumber: '8ecc8c1b7457'
           networkInternationalId: '0001'
           responseCode: '000'
-          responseMessage: Approved
+          responseMessage: 'Approved'
           hostResponseCode: '00'
-          hostResponseMessage: APPROVAL
+          hostResponseMessage: 'APPROVAL'
           bankAssociationDetails:
-            associationResponseCode: V000
+            associationResponseCode: 'V000'
             avsSecurityCodeResponse:
-              streetMatch: NONE
-              postalCodeMatch: NONE
-              securityCodeMatch: NOT_CHECKED
+              streetMatch: 'NONE'
+              postalCodeMatch: 'NONE'
+              securityCodeMatch: 'NOT_CHECKED'
               association:
-                securityCodeResponse: X
+                securityCodeResponse: 'X'
           additionalInfo:
-            - name: COUNTRY_CODE
-              value: USA
-            - name: CARD_PRODUCT_ID
-              value: H
-            - name: DETAILED_PRODUCT_ID
-              value: C
-            - name: HOST_RAW_PROCESSOR_RESPONSE
-              value: ARAyIAGADoAAAgAAAAAAAAAAAAgYGQECABUoAAFROGVjYzhjMWI3NDU3T0s0MDlDMDAwMTY1MDk3MQIEAEgxNE4wMTMyMzA1MDc4NzEyMjhJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlYAAM2NTEABlZJQ1JDIAAxU1AwNzAxNjg0MDg3Mjc4OTU4MDAwMjYxMDAwMzAwMgAxU0RUQzAxNTYwMTEwMDAwMDAwMDAwMEFSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW
+            - name: 'COUNTRY_CODE'
+              value: 'USA'
+            - name: 'CARD_PRODUCT_ID'
+              value: 'H'
+            - name: 'DETAILED_PRODUCT_ID'
+              value: 'C'
+            - name: 'HOST_RAW_PROCESSOR_RESPONSE'
+              value: 'ARAyIAGADoAAAgAAAAAAAAAAAAgYGQECABUoAAFROGVjYzhjMWI3NDU3T0s0MDlDMDAwMTY1MDk3MQIEAEgxNE4wMTMyMzA1MDc4NzEyMjhJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlYAAM2NTEABlZJQ1JDIAAxU1AwNzAxNjg0MDg3Mjc4OTU4MDAwMjYxMDAwMzAwMgAxU0RUQzAxNTYwMTEwMDAwMDAwMDAwMEFSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW'
     PaymentEMVRequest:
       value:
         amount: {total: 12.04, currency: USD}
