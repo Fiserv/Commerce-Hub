@@ -695,7 +695,7 @@ paths:
             examples:
               PaymentCard-Encrypted:
                 summary: CardCapture Request with PaymentCard,
-                $ref: '#/components/examples/CardCapturePaymentCardEncryptedRequest'
+                $ref: '#/components/examples/PaymentCardCaptureRequest'
       responses:
         200:
           description: Success.
@@ -2379,7 +2379,7 @@ components:
             * FIRST
             * SUBSEQUENT
             * SINGLE
-          example: FIRST
+          example: FIRST          
         schemeReferenceTransactionId: {type: string, maxLength: 256, description: The
             transaction ID received from the issuer for the initial transaction. May
             be required if sequence is subsequent., example: '54231235467'}
@@ -2889,10 +2889,6 @@ components:
       allOf:
       - {$ref: '#/components/schemas/Network'}
       - type: object
-        properties:
-          networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
-              transaction amount, required for Discover card on file transactions.',
-            example: 9.66}
     NetworkDetails:
       x-model-version: 1.0
       description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
@@ -3033,13 +3029,18 @@ components:
           maxLength: 11
           description: |
             Indicates the type of bill payment.
-
+            
             Valid Values:
             * SINGLE - Single charge not for recurring services or installment plan.
             * RECURRING - Agreement where charges will occur on a periodic basis.
             * INSTALLMENT - Single purchase where the cardholder is billed (charged) in installments.
             * DEFERRED - A charge for an order with a delayed payment for a specified amount of time.
-          example: RECURRING
+          example: 'RECURRING'
+        paymentAmountType:
+          type: string
+          maxLength: 20
+          description: 'An identifier used to indicate the transaction payment amount type'
+          example: 'FIXED'
         recurring: {$ref: '#/components/schemas/Recurring'}
     AdditionalData:
       x-model-version: 1.0
@@ -3502,9 +3503,6 @@ components:
             authentication.}
         referenceNumber: {type: string, description: Transaction reference number.,
           example: 845366457890-TODO}
-        schemeTransactionId: {type: string, description: Brand transaction ID., example: '019078743804756'}
-        networkOriginalAmount: {type: number, maximum: 1.0E18, description: Network
-            original amount, example: 100.50}
         feeProgramIndicator: {type: string, description: Contains the Fee Program
             Indicator (FPI) code that may be returned on Debit or PLDebit transaction
             response., example: '123'}
@@ -4250,6 +4248,7 @@ components:
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
     RefundRequest:
       x-model-version: 1.0
@@ -4287,12 +4286,14 @@ components:
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     AccountVerificationResponse:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         responsePaymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     TokenizationRequest:
       x-model-version: 1.0
       properties:
@@ -4308,6 +4309,8 @@ components:
           $ref: '#/components/schemas/BillingAddress'
         transactionInteraction:
           $ref: '#/components/schemas/TransactionInteraction'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
     TokenizationResponse:
       x-model-version: 1.0
       properties:
@@ -4329,6 +4332,8 @@ components:
           $ref: '#/components/schemas/ProcessorResponseDetails'
         billingAddress:
           $ref: '#/components/schemas/BillingAddress'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
     EnhancedDataServiceRequest:
       x-model-version: 1.0
       properties:
@@ -6745,19 +6750,6 @@ components:
         symmetricKeyDetails:
           encryptionType: 'AES-GCM'
           modulus: 256
-
-    CardCapturePaymentCardEncryptedRequest:
-        source:
-          sourceType: 'PaymentCard'
-          encryptionData:
-            encryptionType: 'RSA'
-            encryptionTarget: 'MANUAL'
-            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
-            keyId: '88000000022'
-        merchantDetails:
-          merchantId: '123456789789567'
-          terminalId: '123456'
 
     CreateDigitalGiftCardRequest: 
       value:
