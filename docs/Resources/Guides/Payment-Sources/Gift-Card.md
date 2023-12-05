@@ -41,19 +41,19 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Gift/Cash-Out.md
 
 <!-- type: card
 title: Cancel
-description: Submit a reload request for a gift card to add balance to the already activated gift card.
+description: Submit a cancel request to void a previous gift card operation.
 link: ?path=docs/Resources/Guides/Payment-Sources/Gift/Cancel.md
 -->
 
 <!-- type: card
 title: Balance Inquiry
-description: Submit a cash out request for a gift card. This transaction is used to remove fund from the card. The card continues to remain active.
+description: Submit a balance inquiry request for a gift card. This provides the current beginning and ending balance on a gift card.
 link: ?path=docs/Resources/API-Documents/Payments_VAS/Balance-Inquiry.md
 -->
 
 <!-- type: card
 title: Redemption
-description: Submit an redemption request for a gift card. The request can be for a Virtual gift card or Physical gift card. 
+description: Submit an redemption request for a gift card. The request can be for a digital (virtual) gift card or physical gift card. 
 link: ?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md
 -->
 

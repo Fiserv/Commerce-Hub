@@ -15,7 +15,24 @@ An activation request allows a merchant to create and activate a [digital _(virt
 
 <!--
 type: tab
-titles: amount, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
+titles: target, amount, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
+-->
+
+The below table identifies the parameters in the `target` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `sourceType` | _string_ | 15 | The payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) of _PaymentCard_ is required in a [physical gift card](#physical-gift-card) activitation. |
+
+The below table identifies the conditional parameters in `card` object.
+
+|Variable | Type | Maximum Length | Description|
+|---------|----------|----------------|---------|
+| `category`| _string_ | 25 | Defines the card type as GIFT |
+| `subCategory`| _string_ | 25 | Identifies the gift card provider |
+
+<!--
+type: tab
 -->
 
 The below table identifies the parameters in the `amount` object.
@@ -90,7 +107,7 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 <!--
 type: tab
-titles: paymentReceipt, card
+titles: paymentReceipt, target
 -->
 
 The below table identifies the `balances` parameters in the `paymentReceipt` object.
@@ -100,6 +117,29 @@ The below table identifies the `balances` parameters in the `paymentReceipt` obj
 | `beginningBalance` | _number_ | 16,3 | Account beginning balance |
 | `endingBalance` | _number_ | 16,3 | Account ending balance
 | `currency` | _string_ | 17 | ISO 3 Currency Format |
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `target` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `sourceType` | _string_ | 15 | The payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) is _PaymentCard_ on a [digital gift card](#digital-gift-card) activitation. |
+
+The below table identifies the parameters in `card` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | -----|
+| `cardData` | _string_ | 256 | Credit card number |
+| `expirationMonth` | _string_ | 2 | 2-digit card expiration month |
+| `expirationyear` | _string_ | 4 |  4-digit card expiration year |
+| `securityCode` | _string_ | 4 | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
+| `bin` | _String_ | 8 |  Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
+| `last4` | _String_ | 4 |  Last four digits of the Primary Account Number (PAN) |
+| `category`| _string_ | 25 | Defines the card type as GIFT |
+| `subCategory`| _string_ | 25 | Identifies the gift card provider |
 
 <!-- type: tab-end -->
 
@@ -209,9 +249,9 @@ Example of payload response
 
 ## Physical Gift Card
 
-A phyiscal gift card transaction activates a physical gift card. The card number must be provided in the request. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
+A physical gift card transaction activates a physical gift card. The card number must be provided in the request. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
 
-## Payload Example
+### Payload Example
 
 <!--
 type: tab

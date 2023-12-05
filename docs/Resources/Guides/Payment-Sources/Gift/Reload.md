@@ -8,8 +8,6 @@ A Reload transaction allows a merchant to add value to an already activated acco
 
 ## Request Variables
 
-Description
-
 <!--
 type: tab
 titles: amount, target, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
@@ -26,15 +24,13 @@ The below table identifies the required parameters in the `amount` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `source` object.
+The below table identifies the parameters in the `target` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
-<!--
-type: tab
--->
+The below table identifies the conditional parameters in `card` object.
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
