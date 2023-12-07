@@ -27,9 +27,9 @@ The below table identifies the parameters in the `address` object.
 | `city` | *string* | 256 | City or locality |
 | `stateOrProvince` | *string* | 256 | State or province name |
 | `postalCode` | *string* | 10 | Postal code |
-| `country` | *string* | 256 | [ISO country or code or full country name](?path=docs/Resources/Master-Data/Country-Code.md).|
 | `county` | *string* | 256 | The [5-digit number or full county name](?path=docs/Resources/Master-Data/County-Codes.md) identifying the U.S. county as defined by FIPS, indicating where the transaction occurred. Commonly used with EBT transactions. |
-| `addressHistory` | *string* | 18 | Update history of the address on file. **Valid Values:** *FIRST*, *LESS_THAN_30_DAYS*, *30_60_DAYS*, *60_90_DAYS*, *OVER_90_DAYS* |
+| `country` | *string* | 256 | [ISO country or code or full country name](?path=docs/Resources/Master-Data/Country-Code.md).|
+
 
 <!--
 type: tab
@@ -42,11 +42,12 @@ JSON string format for `address`:
    "address":{
       "street": "112 Main St.",
       "houseNumberOrName": "Apt 213",
+      "recipientNameOrAddress": "c/o Jane Doe",
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30301",
-      "country": "US",
-      "addressHistory": "FIRST"
+      "county": "01003",
+      "country": "US"
    }
 }
 ```
@@ -87,11 +88,12 @@ JSON string format for `billingAddress`:
     "address": {
       "street": "123 Main St.",
       "houseNumberOrName": "Apt 1",
+      "recipientNameOrAddress": "c/o Jane Doe",
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30301",
-      "country": "US",
-      "addressHistory": "FIRST"
+      "county": "01003",
+      "country": "US"
     },
     "phone": {
       "countryCode": "1",
@@ -153,11 +155,12 @@ JSON string format for `shippingAddress`:
     "address": {
       "street": "112 Main St.",
       "houseNumberOrName": "Apt 112",
+      "recipientNameOrAddress": "c/o Jane Doe",
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30301",
-      "country": "US",
-      "addressHistory": "FIRST"
+      "county": "01003",
+      "country": "US"
     },
     "phone": {
       "countryCode": "1",
@@ -185,10 +188,10 @@ The below table identifies the parameters in the `shipperAddress` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* | 256 | Customer first name. |
-| `lastName` | *string* | 256 | Customer last name. |
-| `address` | *object* | N/A  | Billing [address](#address) details. |
-| `phone` | *object* | N/A | Customer [phone](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) details. |
+| `firstName` | *string* | 256 | Shipper contact first name. |
+| `lastName` | *string* | 256 | Shipper contact last name. |
+| `address` | *object* | N/A  | Shipper [address](#address) details. |
+| `phone` | *object* | N/A | Shipper [phone](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) details. |
 
 <!--
 type: tab
@@ -198,17 +201,17 @@ JSON string format for `shipperAddress`:
 
 ```json
 {
-  "billingAddress": {
+  "shipperAddress": {
     "firstName": "John",
     "lastName": "Doe",
     "address": {
       "street": "123 Main St.",
       "houseNumberOrName": "Apt 1",
+      "recipientNameOrAddress": "Business Industries",
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30301",
-      "country": "US",
-      "addressHistory": "FIRST"
+      "country": "US"
     },
     "phone": {
       "countryCode": "1",
