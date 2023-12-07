@@ -8,8 +8,6 @@ A Reload transaction allows a merchant to add value to an already activated acco
 
 ## Request Variables
 
-Description
-
 <!--
 type: tab
 titles: amount, target, transactionDetails, transactionInteraction, merchantDetails, additionalDataCommon 
@@ -26,15 +24,13 @@ The below table identifies the required parameters in the `amount` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `source` object.
+The below table identifies the parameters in the `target` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
-<!--
-type: tab
--->
+The below table identifies the conditional parameters in `card` object.
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
@@ -53,7 +49,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 |---------|----------|----------------|---------|
 | `merchantTransactionID` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
 | `merchantOrderID`| *string* | 128 | Merchant order ID (aka customer reference number or purchase order (PO) number).
-| `operationType` | *string* | 50 | Identifies the tranaction type as reload value |
+| `operationType` | *string* | 50 | Identifies the tranaction type as RELOAD value |
 
 <!--
 type: tab
@@ -63,7 +59,7 @@ The below table identifies the required parameters in the `transactionInteractio
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ'
+| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ' |
 
 <!--
 type: tab
@@ -84,9 +80,8 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | *string* | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card).
-| `fundingProvider` | *string* | 32 |  Identifies who provided the funds.|
-| `transactionPosDate` | *string* | 16 | 'Used to override a transaction post date in reporting.
+| `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
+| `transactionPosDate` | *string* | 16 | 'Used to override a transaction post date in reporting. |
 
 <!-- type: tab-end -->
 
@@ -111,7 +106,7 @@ titles: Request, Response
 ```json
 {
   "amount": {
-    "total": 1,
+    "total": 10,
     "currency": "USD"
   },
   "target": {
@@ -122,7 +117,7 @@ titles: Request, Response
       "expirationYear": "3025",
       "securityCode": "64675611",
       "category": "GIFT",
-      "subCategory": "VALUELINK"
+      "subCategory": "GIFT_SOLUTIONS"
     }
   },
   "transactionDetails": {
@@ -135,8 +130,7 @@ titles: Request, Response
   },
   "merchantDetails": {
     "terminalId": "10000001",
-    "merchantId": "10000900POD2205",
-    "promotionCode": "149474"
+    "merchantId": "10000900POD2205"
   },
   "additionalDataCommon": {
     "additionalData": {
@@ -153,6 +147,9 @@ type: tab
 -->
 
 #### Example of payload response
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -171,8 +168,8 @@ type: tab
   "paymentReceipt": {
     "balances": [
       {
-        "beginningBalance": 1,
-        "endingBalance": 2,
+        "beginningBalance": 10,
+        "endingBalance": 20,
         "currency": "USD"
       }
     ],
@@ -180,7 +177,7 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "771052",
       "processor": "FISERV",
-      "host": "VALUELINK",
+      "host": "GIFT_SOLUTIONS",
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "00",
@@ -195,7 +192,7 @@ type: tab
       "expirationMonth": "01",
       "expirationYear": "3025",
       "category": "GIFT",
-      "subCategory": "VALUELINK"
+      "subCategory": "GIFT_SOLUTIONS"
     }
   }
 }
@@ -209,4 +206,4 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Gift Solution](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
+- [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
