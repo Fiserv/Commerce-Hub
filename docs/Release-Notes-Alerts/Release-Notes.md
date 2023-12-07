@@ -1,32 +1,18 @@
 ---
-tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
+tags: [Getting Started, Release Notes, Update, Enhancement]
 ---
 
-# Preview Release Notes
+# Release Notes 
 
-Commerce Hub provides a preview of our upcoming feature releases in Developer Studio. When these features are released they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
+Commerce Hub is continually being improved with new features, security enhancements, and performance improvements. These release notes list the updates for each release with the most recent update shown first.
 
 <!-- theme: info -->
-> The upcoming features and updates can be viewed by changing the dropdown from **Active** to **Preview** when viewing an article.
+> See the [Preview Release Notes](?path=docs/Release-Notes-Alerts/Preview.md) for upcoming features and updates.
 
 #### Release Types
 
-- **Feature:** New feature release
-- **Update:** Existing feature update or enhancement
-
----
-
-## October 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** September 25th 2023
-- **Production:** October 3rd 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support Commerce Hub Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Feature |
-| Refactored Merchant Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Update |
+- **Feature:** New feature was released
+- **Update:** Existing feature was updated or enhanced
 
 ---
 
@@ -40,36 +26,8 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md) transactions | Feature |
-| Support [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) with transactions | Feature |
 | Support the ability to send [Convenience Fees](?path=docs/Resources/Guides/Convenience-Fees.md) for transactions | Feature |
-| Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the reponse | Update | 
-
----
-
-## August 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** July 26th 2023
-- **Production:** August 8th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md) with Secure Data Capture. | Update |
-
----
-
-## October 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** September 25th 2023
-- **Production:** October 3rd 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support Commerce Hub Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Feature |
-| Refactored Merchant Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Update |
+| Version 1.5: Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the reponse | Update | 
 
 ---
 
@@ -92,12 +50,27 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
-- **Certification:** June 16th 2023
-- **Production:** July 1st 2023
+- **Certification:** June 22nd 2023
+- **Production:** July 6th 2023
 
 | Details | Type |
 | ----- | ----- |
 | Support [MACless Canadian debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) transactions. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
+## June 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** May 25th 2023
+- **Production:** June 1st 2023
+
+| Details | Type |
+| ----- | ----- |
+| Amex support for [authorized _(online)_ refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
@@ -110,8 +83,21 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Support to enable or disable [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` in charges and tokens requests. | Update |
 | Support for the following [refund types](?path=docs/Resources/API-Documents/Payments/Refund.md); Open Refunds (Credits), Unmatched Refunds, and Auth/Capture Refunds. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
+## April 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** March 29th 2023
+- **Production:** April 11th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
@@ -126,17 +112,41 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
 | Support encrypted PaymentCard for [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
-## See Also
+## February 2023
 
-- [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md)
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** February 14th 2023
+- **Production:** February 24th 2023
+
+| Details | Type |
+| ----- | ----- |
+| Support of [private label credit cards](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) on Citi | Feature |
+| Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
+## January 2023
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** January 6th 2023
+- **Production:** January 1st 2023
+
+| Details | Type |
+| ----- | ----- |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
 
 ## Archive
 
-- [2022](?path=docs/Release-Notes-Alerts/PRN-2022.md)
+- [2022](?path=docs/Release-Notes-Alerts/RN-2022.md)
+- [2021](?path=docs/Release-Notes-Alerts/RN-2021.md)
 
 ---

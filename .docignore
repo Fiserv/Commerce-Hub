@@ -14,7 +14,6 @@ docs/Resources/Guides/Vault/**
 docs/Resources/API-Documents/Value_Added_Services/**
 docs/Resources/Guides/Industry-Verticals/**
 docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
-docs/Resources/Guides/Level23/**
 
 ## Markdown Files
 
@@ -27,7 +26,6 @@ docs/Resources/Guides/Bill-Payments/Bill-Payments.md
 docs/Resources/Guides/Bill-Payments/Deferred-Payment.md
 docs/Resources/Guides/Bill-Payments/Payment-Schedule.md
 docs/Resources/Guides/Fraud/Fraud-Detect.md
-docs/Resources/Guides/Payment-Sources/Gift-Card.md
 docs/Resources/Guides/Payment-Sources/Network-Token.md
 docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
 docs/Resources/Guides/PSD2-SCA.md
@@ -67,3 +65,4 @@ docs/Resources/Guides/Testing/Test-Declines.md
 docs/Resources/Guides/Testing/Test-Errors.md
 docs/Resources/Guides/Testing/Test-Fraud.md
 docs/Resources/Guides/Testing/Test-Integration.md
+docs/Resources/Master-Data/Commodity-Codes-Old.md
