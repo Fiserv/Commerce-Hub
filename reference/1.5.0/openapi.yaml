@@ -1070,6 +1070,8 @@ paths:
     post:
       tags:
         - Balance Inquiry Endpoint Definition
+      x-group-name: 'Payments VAS'
+      x-proxy-name: 'Balance Inquiry'
       summary: Receives balance inquiry request and returns balance inquiry response.
       description: Provides the available balance for a payment source.
       requestBody:
