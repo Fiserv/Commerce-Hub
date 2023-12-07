@@ -6,35 +6,22 @@ tags: [Level 2 Card, Level 3 Card, Purchase Card, Commercial Card, Business Card
 
 Commerce Hub can pass Level II and III data _(also known as Enhanced Data)_ with business-to-business, corporate and purchase card transactions. With a Level II and III data pass-through solution, merchants can meet card brand requirements, provide invoice-level transaction details and qualify for lower rates.
 
+- Level II data is used to identify purchase and tax details
+- Level III data is level II data along with the `orderData` and `itemDetails`
+
 <!-- theme: info -->
 > Level II/III transactions are not supported for Discover.
 
 ## Request Variables
 
-Level II and III transactions require the `orderData` object, and level III requires line item details in the `itemDetails` object. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
+Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
 
 <!-- theme: warning -->
-> Sending `taxAmounts` and `merchantOrderId` is required to identify a Level II/III transaction.
+> Sending `taxAmounts` and `merchantOrderId` is required to identify a Level II/III transaction with Commerce Hub.
 
 <!--
 type: tab
-titles: amountComponents, orderData, itemDetails, merchantDetails, transactionDetails, customer
--->
-
-The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `amountComponents` object.
-
-| Variable | Type | Maximum Length | Description |
-| --------- | --- | ------ | -------------- |
-| `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
-| `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
-| `freightAmount` | _number_ | 18,3 | Freight amount applied |
-| `priceAdjustments` | _array_ | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
-| `netAmount` | _number_ | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
-| `taxAmounts` | _array_ | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
-| `grossAmount` | _number_ | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
-
-<!--
-type: tab
+titles: orderData, itemDetails, amountComponents, merchantDetails, transactionDetails, customer
 -->
 
 The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `orderData` object.
@@ -60,7 +47,23 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 | `productUPC` | _string_ | 12 | Universal Product Code identifier used for retail products worldwide |
 | `quantity` | _number_ | 8 | Identifies the number of units of the product sold |
 | `unitOfMeasurement` | _string_ | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
-| `amountComponents` | _object_ | N/A | Used to define the required line item amounts as part of the request |
+| `amountComponents` | _object_ | N/A | Used to define the required [line item amounts](?path=docs/Resources/Master-Data/Amount-Components.md) as part of the request |
+
+<!--
+type: tab
+-->
+
+The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `amountComponents` object.
+
+| Variable | Type | Maximum Length | Description |
+| --------- | --- | ------ | -------------- |
+| `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
+| `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
+| `freightAmount` | _number_ | 18,3 | Freight amount applied |
+| `priceAdjustments` | _array_ | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
+| `netAmount` | _number_ | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
+| `taxAmounts` | _array_ | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
+| `grossAmount` | _number_ | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
 
 <!--
 type: tab
@@ -70,7 +73,7 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type| Maximum Length | Description |
 |---------|-------|------|---------|
-| `taxId` | _string_ | 15 | The tax ID in the US or Business Number (BNN) in Canada |
+| `taxId` | _string_ | 15 | The tax ID in the US or Business Number _(BNN)_ in Canada |
 | `vatRegistrationNumber` | _string_ | 64  | Merchant's VAT registration number |
 
 <!--
