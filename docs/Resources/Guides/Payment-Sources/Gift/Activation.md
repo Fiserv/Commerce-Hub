@@ -193,6 +193,9 @@ type: tab
 
 Example of payload response
 
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
   "gatewayResponse": {
@@ -285,12 +288,6 @@ Example of a physical gift card activation payload request
   "merchantDetails": {
     "merchantId": "10000900POD2204",
     "terminalId": "10000001",
-    "promotionCode": "149464"
-  },
-  "additionalDataCommon": {
-    "additionalData": {
-      "transactionPostDate": "2023-06-23"
-    }
   }
 }
 
@@ -304,7 +301,8 @@ type: tab
 
 Example of payload response
 
-Description:
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
