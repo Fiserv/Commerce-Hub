@@ -23,11 +23,5 @@
     "tavv",
     "timeframe",
     "TRANSARMOR"
-  ],
-  "grammarly.selectors": [
-    {
-      "language": "markdown",
-      "scheme": "file"
-    }
   ]
 }

@@ -16,16 +16,14 @@ The below table identifies the parameters in the `transactionDetails` object.
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a forced post transaction to a previously performed external authorization. |
-| `authOptimazation` | *striing* | 32 | An identifier used to indicate what data is received in the response for merchants boarded for [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) | 
+| `authOptimazation` | *string* | 32 | An identifier used to indicate what data is received in the response for merchants boarded for [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) | 
 | `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*false*) or Sale (*true*)|
 | `transactionCaptureType` | *string* | 64 | Identifies the [capture type for settlement](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md). |
-| `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
-| `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |
-| `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number (aka reference number). |
+| `merchantTransactionId` | *string* | 128 | Unique merchant reference transaction ID |
+| `merchantOrderId` | *string* | 128 | Merchant order ID, customer reference number or purchase order number *(PO Number)* |
+| `merchantInvoiceNumber` | *string* | 12 | Merchant invoice or reference number |
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
-| `primaryTransactionType` | *string* | 14 | Identifies the [primary transaction type](#primary-transaction-type).|
-| `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
 | `splitShipment` | *object* | N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-auth or the first post-auth.|
 | `reversalReasonCode` | *string* | 22 | [Reason](?path=docs/Resources/Master-Data/Transaction-Details.md#reversal-reason-code) the merchant/customer requests for cancel (void).|
 | `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
@@ -43,6 +41,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
 | `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
 | `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant’s choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks. |
+| `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
 
 <!--
 type: tab
@@ -71,7 +70,6 @@ JSON string format for `transactionDetails`:
       "splitTenderId": "12423434",  
       "authorizationTypeIndicator": "REAUTH",
       "duplicateTransactionCheckingIndicator": true,
-      "primaryTransactionType": "CHARGE_SALE",
       "deviceFingerprint":[  
          {
             "provider": "InAuth",  
@@ -110,20 +108,6 @@ JSON string format for `transactionDetails`:
 
 ---
 
-#### Primary Transaction Type
-
-The below table identifies the valid values of `primaryTransactionType`.
-
-| Value | Description |
-| ----- | ----- |
-| *AUTH_ONLY* | Authorization |
-| *CHARGE_PREAUTH* | Pre-authorization |
-| *CHARGE_SALE* | Sale |
-| *CANCEL* | Cancel/Void |
-| *REFUND* | Refund |
-
----
-
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
@@ -134,4 +118,4 @@ The below table identifies the valid values of `primaryTransactionType`.
 - [Split Shipment](?path=docs/Resources/Guides/Split-Shipment.md)
 - [Transaction Capture Type](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md)
 
---- 
+---
