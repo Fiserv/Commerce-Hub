@@ -152,15 +152,15 @@
     sections:
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: 3-D Secure
-      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
-      sections:
-      - title: Authentication
-        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md
-      - title: Device Capture 
-        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md
-      - title: Verification
-        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md     
+#    - title: 3-D Secure
+#      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
+#      sections:
+#      - title: Authentication
+#        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md
+#      - title: Device Capture 
+#        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md
+#      - title: Verification
+#        link: docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md     
     - title: Data Solutions
       sections:
       - title: Enhanced Data Service
