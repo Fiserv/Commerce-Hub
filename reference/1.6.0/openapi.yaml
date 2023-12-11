@@ -2626,9 +2626,11 @@ components:
             on this account in prior 24 hours., example: 1}
         retryAttempts: {type: integer, description: Number of retry attempt if the
             initial transaction was unsuccessful., example: 0}
-        networkTransactionReference: {type: string, maxLength: 64, description: Allows
-            linking of the transaction to the original or previous one in a subscription/card-on-file
-            chain., example: '123456788'}
+        schemeOriginalAmount:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'Original transaction amount, required for card on file transactions. Discover Only.'
+          example: '9.66'
     TransactionInteraction:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md">Transaction
@@ -3092,10 +3094,6 @@ components:
       allOf:
       - {$ref: '#/components/schemas/Network'}
       - type: object
-        properties:
-          networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
-              transaction amount, required for Discover card on file transactions.',
-            example: 9.66}
     NetworkDetails:
       x-model-version: 1.0
       description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
@@ -3270,6 +3268,11 @@ components:
             used to test/replicate a transaction error., example: '213'}
         emvParameterDownloadIndicator: {type: string, description: 'Indicator if EMV
             Parameter has to be downloaded, sent as part of Auth/Sale Response.'}
+        paymentAmountType:
+          type: string
+          maxLength: 20
+          description: 'An identifier used to indicate the transaction payment amount type'
+          example: 'FIXED'
     DirectedRouting:
       x-model-version: 1.0
       description: Used to directly route debit transactions to a specific processing
@@ -3708,9 +3711,6 @@ components:
             authentication.}
         referenceNumber: {type: string, description: Transaction reference number.,
           example: 845366457890-TODO}
-        schemeTransactionId: {type: string, description: Brand transaction ID., example: '019078743804756'}
-        networkOriginalAmount: {type: number, maximum: 1.0E18, description: Network
-            original amount, example: 100.50}
         feeProgramIndicator: {type: string, description: Contains the Fee Program
             Indicator (FPI) code that may be returned on Debit or PLDebit transaction
             response., example: '123'}
@@ -4456,6 +4456,7 @@ components:
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
     RefundRequest:
       x-model-version: 1.0
@@ -4493,12 +4494,14 @@ components:
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     AccountVerificationResponse:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         responsePaymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     TokenizationRequest:
       x-model-version: 1.0
       properties:
@@ -4516,6 +4519,8 @@ components:
           $ref: '#/components/schemas/TransactionInteraction'
         additionalData3DS:
           $ref: '#/components/schemas/AdditionalData3DS'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials' 
 
     TokenizationResponse:
       x-model-version: 1.0
@@ -4540,6 +4545,8 @@ components:
           $ref: '#/components/schemas/BillingAddress'
         additionalData3DS:
           $ref: '#/components/schemas/AdditionalData3DS'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
 
     ThreeDSAuthenticationRequest: 
       x-model-version: 1.0
