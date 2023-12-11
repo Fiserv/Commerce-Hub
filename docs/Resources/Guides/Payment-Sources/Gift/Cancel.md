@@ -26,20 +26,16 @@ The below table identifies the available parameters in the `referenceTransaction
 |---------|----------|----------------|---------|
 |`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** *CHARGES or REFUNDS* |
 
 <!--
 type: tab
 -->
 
-<!-- theme: info -->
-> Some card brands require the reason for a cancelled transaction, it is recommended to always pass the `reversalReasonCode` in the request.
+The below table identifies the required parameters in the `transactionDetails` object.
 
-The below table identifies the recommended parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
+| `operationType` | _string_ | 50 | Defines the request type as CANCEL |
 
 <!--
 type: tab
@@ -76,13 +72,21 @@ The below table identifies the parameters in the `target` object.
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
-The below table identifies the parameters in the `balances` object.
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `balances` array.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | *number* | 16,3 | Account beginning balance |
-| `endingBalance` | *number* | 16,3 | Account ending balance
-| `currency` | *string* | 17 | ISO 3 Currency Format |
+| `endingBalance` | *number* | 16,3 | Account ending balance |
+| `currency` | *string* | 3 | The base gift card and/or local currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+
+<!-- type: tab-end -->
+
+---
 
 ## Payload Example
 
@@ -166,9 +170,9 @@ Example of a gift card cancel (201: Created) response.
       "hostResponseCode": "00",
       "hostResponseMessage": "Completed OK"
     },
-    "balance": [
+    "balances": [
       {
-        "beginingBalance": "16.00",
+        "beginingBalance": "1.00",
         "endingBalance": "16.00",
         "currency": "USD"
       }
@@ -183,7 +187,7 @@ Example of a gift card cancel (201: Created) response.
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/cancels)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
