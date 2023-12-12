@@ -7,7 +7,23 @@ tags: [Payment Faciliator]
 Add Description
 
 
+## Request Variables
 
+The following variables are also required when submitting a capture request.
+
+<!--
+type: tab
+titles: merchantDetails, dynamicDescriptor
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Required|  Description |
+| --------- | ---------- | -------- | --------- | ----- |
+| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
+<!-- type: tab-end -->
 
 ## Payload Example
 
@@ -22,11 +38,12 @@ Example of a PFAC Multi payload charge request
 {
   "source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4012000033330026",
-      "expirationMonth": "12",
-      "expirationYear": "2025",
-      "securityCode": 977
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
   },
   "amount": {
@@ -47,7 +64,6 @@ Example of a PFAC Multi payload charge request
     "customerServiceNumber": "4448889999",
     "serviceEntitlement": "4040404040",
     "customerServiceEmail": "Nike.com",
-    "subMerchantId": "MANUAL_PFACM_3",
     "address": {
       "street": "2900 Parkway",
       "city": "Alpharetta",
@@ -78,29 +94,6 @@ Example of a PFAC Multi payload charge request
           }
         }
       ]
-    },
-    {
-      "merchantId": "1111111",
-      "subTotal": 30,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "RESERVE_ACCOUNT",
-          "amount": {
-            "total": 20,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "SERVICE_FEE_ACCOUNT",
-          "amount": {
-            "total": 10,
-            "currency": "USD"
-          }
-        }
-      ]
-    }
   ]
 }
 
@@ -116,8 +109,6 @@ Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
 
 ```json
 
@@ -248,28 +239,6 @@ Example of a charge (201: Created) response.
         }
       ]
     },
-    {
-      "merchantId": "1111111",
-      "subTotal": 30,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "RESERVE_ACCOUNT",
-          "amount": {
-            "total": 20,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "SERVICE_FEE_ACCOUNT",
-          "amount": {
-            "total": 10,
-            "currency": "USD"
-          }
-        }
-      ]
-    }
   ],
   "networkDetails": {
     "network": {

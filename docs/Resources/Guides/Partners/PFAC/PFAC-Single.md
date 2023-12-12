@@ -7,7 +7,43 @@ tags: [Payment Faciliator]
 Add Description
 
 
+## Request Variables
 
+The following variables are also required when submitting a capture request.
+
+<!--
+type: tab
+titles: merchantDetails, dynamicDescriptor
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Required|  Description |
+| --------- | ---------- | -------- | --------- | ----- |
+| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `dynamicDescriptor` object.
+
+- **Discover, Visa, and Mastercard Single Merchant ID Payment Facilitators:** the format for `merchantName` is the first 3 characters of the [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) name followed by an asterisk and the sub-merchant name, e.g. “XYZ*A SMALL CO”
+- **Amex Single Merchant ID Payment Facilitators:** the `merchantName` must only contain the sub-merchant name, e.g. “A SMALL CO”
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
+| `merchantName` | *string* | 1024 | Merchant Name or Doing Business As (DBA) |
+| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer *(it may appear on the cardholder’s statement)* or if merchant wants to pass information that differs from the information stored on our master File. |
+| `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
+| `address` | *object* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
+| `subMerchantId` | *string* | 1024 | Sub-merchant ID defined by a third party processor. |
+
+<!-- type: tab-end -->
+
+---
 
 ## Payload Example
 
@@ -22,11 +58,12 @@ Example of a PFAC Single payload charge request
 {
   "source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4012000033330026",
-      "expirationMonth": "12",
-      "expirationYear": "2025",
-      "securityCode": 977
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
   },
   "amount": {
