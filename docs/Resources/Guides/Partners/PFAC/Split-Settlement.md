@@ -2,10 +2,9 @@
 tags: [Payment Faciliator]
 ---
 
-# Split Settlement
+# Payment Faciliator Split Settlement
 
-Add Description
-
+Split settlement transaction defines how a transaction should be distributed between proccessing and non-processing MIDs to take Revenue, Fees, Reserves, and Hold amounts. 
 
 ## Request Variables
 
@@ -19,7 +18,7 @@ titles: amount, splitSettlement, transactionDetails, merchantDetails
 The below table identifies the parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ----- | ------------------ |
+| -------- | -- | ------------ | ----- |-------------- |
 | `total` | *number* | 18,3  | &#10004; | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | &#10004; | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
@@ -68,17 +67,18 @@ type: tab
 title: Request
 -->
 
-Example of a PFAC Single payload charge request
+Example of a split settlement charges payload request
 
 ```json
 {
   "source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4012000033330026",
-      "expirationMonth": "12",
-      "expirationYear": "2025",
-      "securityCode": 977
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
   },
   "amount": {
@@ -86,8 +86,7 @@ Example of a PFAC Single payload charge request
     "currency": "USD"
   },
   "transactionDetails": {
-    "captureFlag": true,
-    "createToken": true
+    "captureFlag": true
   },
   "merchantDetails": {
     "merchantId": "100004000PFACS1",
@@ -95,17 +94,18 @@ Example of a PFAC Single payload charge request
   },
   "dynamicDescriptors": {
     "mcc": "5204",
-    "merchantName": "Nike",
+    "merchantName": "Mywebsite.com",
     "customerServiceNumber": "4448889999",
     "serviceEntitlement": "4040404040",
-    "customerServiceEmail": "Nike.com",
-    "subMerchantId": "MANUAL_PFACM_3",
+    "customerServiceEmail": "contact@mywebsite.com",
+    "subMerchantId": "PFACMID3",
     "address": {
-      "street": "2900 Parkway",
-      "city": "Alpharetta",
-      "stateOrProvince": "GA",
-      "postalCode": "30004",
-      "country": "US"
+         "street":"Main Street",
+         "houseNumberOrName":"123",
+         "city":"Atlanta",
+         "stateOrProvince":"GA",
+         "postalCode":"30303",
+         "country":"US"
     }
   },
   "splitSettlement": [
@@ -120,6 +120,14 @@ Example of a PFAC Single payload charge request
             "total": 35,
             "currency": "USD"
           }
+        },
+        {
+          "name": "ABC Inc",
+          "type": "FEE_ACCOUNT",
+          "amount": {
+            "total": 15,
+            "currency": "USD"
+          }
         }
       ]
     },
@@ -131,7 +139,7 @@ Example of a PFAC Single payload charge request
           "name": "ABC Inc",
           "type": "RESERVE_ACCOUNT",
           "amount": {
-            "total": 20,
+            "total": 30,
             "currency": "USD"
           }
         }
@@ -194,11 +202,6 @@ Example of a gift card cancel (201: Created) response.
       "responseMessage": "Approved",
       "hostResponseCode": "00",
       "hostResponseMessage": "APPROVAL",
-      "responseIndicators": {
-        "alternateRouteDebitIndicator": false,
-        "signatureLineIndicator": false,
-        "signatureDebitRouteIndicator": false
-      },
       "bankAssociationDetails": {
         "associationResponseCode": "V000",
         "avsSecurityCodeResponse": {
@@ -209,34 +212,14 @@ Example of a gift card cancel (201: Created) response.
             "securityCodeResponse": "M"
           }
         }
-      },
-      "additionalInfo": [
-        {
-          "name": "COUNTRY_CODE",
-          "value": "USA"
-        },
-        {
-          "name": "CARD_PRODUCT_ID",
-          "value": "H"
-        },
-        {
-          "name": "DETAILED_PRODUCT_ID",
-          "value": "C"
-        },
-        {
-          "name": "HOST_RAW_PROCESSOR_RESPONSE",
-          "value": "ARAyIAGADoAAAgAAAAAAAACAABAmF1VRAUQ3AAFZYmEzYmFhNTVkYTY3T0syNjVDMDAwMTY1MDk3NQI0AEgxNE4wMTMyOTk1MTg4ODYzNDJJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlNAAZWSUNSQyAAMVNQMDcwMTY4NDA4NzI3ODk1ODAwMDI2MTAwMDMwMDIAZlNEVEMwMTU2MDExMDAwMDAwMDAwMDBSSTAxNTAwMDAwMDAwMDAwMDAwME5MMDA0VklTQVRZMDAxQ0FSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW"
-        }
-      ]
+      }
     }
   },
   "transactionDetails": {
     "captureFlag": true,
     "transactionCaptureType": "host",
-    "partialApproval": true,
     "processingCode": "000000",
     "transactionCutTimeStamp": "2023-10-27T12:00:00Z",
-    "createToken": true,
     "retrievalReferenceNumber": "ba3baa55da67"
   },
   "transactionInteraction": {
@@ -252,11 +235,6 @@ Example of a gift card cancel (201: Created) response.
     "authorizationCharacteristicsIndicator": "N",
     "hostPosEntryMode": "010",
     "hostPosConditionCode": "59"
-  },
-  "merchantDetails": {
-    "tokenType": "BBY0",
-    "terminalId": "10000001",
-    "merchantId": "100004000PFACS1"
   },
   "splitSettlement": [
     {
@@ -289,15 +267,7 @@ Example of a gift card cancel (201: Created) response.
           "name": "ABC Inc",
           "type": "RESERVE_ACCOUNT",
           "amount": {
-            "total": 20,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "SERVICE_FEE_ACCOUNT",
-          "amount": {
-            "total": 10,
+            "total": 30,
             "currency": "USD"
           }
         }
@@ -313,38 +283,6 @@ Example of a gift card cancel (201: Created) response.
     "validationCode": "IV  ",
     "transactionIdentifier": "013299518886342"
   },
-  "cardDetails": {
-    "recordType": "DETAIL",
-    "lowBin": "4012000",
-    "highBin": "4012000",
-    "binLength": "07",
-    "binDetailPan": "16",
-    "countryCode": "USA",
-    "detailedCardProduct": "VISA",
-    "detailedCardIndicator": "CREDIT",
-    "pinSignatureCapability": "SIGNATURE",
-    "issuerUpdateYear": "21",
-    "issuerUpdateMonth": "12",
-    "issuerUpdateDay": "01",
-    "regulatorIndicator": "NON_REGULATED",
-    "cardClass": "CONSUMER",
-    "nonMoneyTransferOCTsDomestic": "NOT_SUPPORTED",
-    "nonMoneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
-    "onlineGamblingOCTsDomestic": "NOT_SUPPORTED",
-    "onlineGamblingOCTsCrossBorder": "NOT_SUPPORTED",
-    "moneyTransferOCTsDomestic": "NOT_SUPPORTED",
-    "moneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
-    "fastFundsDomesticMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsCrossBorderMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsDomesticNonMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsCrossBorderNonMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsDomesticGambling": "NOT_SUPPORTED",
-    "fastFundsCrossBorderGambling": "NOT_SUPPORTED",
-    "productId": "A",
-    "accountFundSource": "CREDIT",
-    "panLengthMin": "16",
-    "panLengthMax": "16"
-  },
   "paymentTokens": [
     {
       "tokenData": "8408727895800026",
@@ -354,3 +292,17 @@ Example of a gift card cancel (201: Created) response.
     }
   ]
 }
+
+```
+
+<!-- type: tab-end -->
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Faciliator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md)
+
+---

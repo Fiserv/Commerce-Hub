@@ -66,7 +66,7 @@ JSON string format for `dynamicDescriptor`:
       "address":{
          "street":"Main Street",
          "houseNumberOrName":"123",
-         "city":"Main Street",
+         "city":"Atlanta",
          "stateOrProvince":"GA",
          "postalCode":"30303",
          "country":"US"

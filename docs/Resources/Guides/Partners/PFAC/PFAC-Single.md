@@ -6,7 +6,6 @@ tags: [Payment Faciliator]
 
 Add Description
 
-
 ## Request Variables
 
 The following variables are also required when submitting a capture request.
@@ -92,53 +91,7 @@ Example of a PFAC Single payload charge request
       "postalCode": "30004",
       "country": "US"
     }
-  },
-  "splitSettlement": [
-    {
-      "merchantId": "222222",
-      "subTotal": 50,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "REVENUE_ACCOUNT",
-          "amount": {
-            "total": 35,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "FEE_ACCOUNT",
-          "amount": {
-            "total": 15,
-            "currency": "USD"
-          }
-        }
-      ]
-    },
-    {
-      "merchantId": "1111111",
-      "subTotal": 30,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "RESERVE_ACCOUNT",
-          "amount": {
-            "total": 20,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "SERVICE_FEE_ACCOUNT",
-          "amount": {
-            "total": 10,
-            "currency": "USD"
-          }
-        }
-      ]
-    }
-  ]
+  }
 }
 ```
 <!--
