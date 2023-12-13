@@ -13,38 +13,20 @@ ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-
 
 ## Request Variables
 
-The `privateLabel` object is part of the `additionalDataCommon` object.
+<!--theme:info-->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: *false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 <!--
 type: tab
-titles: privateLabel, JSON Example
--->
-
-The below table identifies the conditional parameters in the `privateLabel` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
-| `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
-
-<!--
-type: tab
--->
-
-The below table identifies the conditional parameters in the `privateLabel` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `minimumSpendExemptIndicator`| *string* | 32 | The minimum spend amount the customer is exempt from |
-| `creditPlan`| *string* | 64 | Payment program assigned by the private label processor |
-
-<!--
-type: tab
+titles: customFields, JSON Example
 -->
 
 The below table identifies the key value pairs to indentify the required `customFields` in the `additionalDataCommon` object.
 
-| Key | Value |
+<!-- theme: info -->
+> Values are merchant specfic, please contact account representative for details.
+
+| Key | Description |
 | -------- | -------- |
 | Request_Date_Time_GMT | 2023-09-20T05:33:05Z |
 | Request_Date_Time_Local | 2023-09-20T05:33:05Z |
@@ -63,58 +45,10 @@ The below table identifies the key value pairs to indentify the required `custom
 type: tab
 -->
 
-The below table identifies the conditional parameters in the `directedRouting` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `processor` | *array* | N/A | Identifies the card processor |
-
----
-
 ```json
 
 {
-  "amount": {
-    "total": 1.45,
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "PaymentTrack",
-    "encryptionData": {
-      "encryptionType": "ON_GUARD",
-      "encryptionTarget": "TRACK_2",
-      "encryptionBlock": "4599891943100751=36193012513455685570",
-      "keyId": "FFFF999999039D4001080114",
-      "deviceType": "INGENICO"
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": false,
-    "merchantOrderId": "7EWVTZRNAK7AJMXL",
-    "merchantTransactionId": "FT4WTBP9LW0FB0PD"
-  },
-  "transactionInteraction": {
-    "origin": "POS",
-    "posEntryMode": "MAG_STRIPE",
-    "posConditionCode": "CARD_PRESENT",
-    "terminalTimestamp": "2023-09-20T05:33:05Z",
-    "additionalPosInformation": {
-      "dataEntrySource": "MOBILE_TERMINAL",
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "MAG_STRIPE_MANUAL"
-      }
-    }
-  },
-  "merchantDetails": {
-    "merchantId": "100012000003424",
-    "terminalId": "10000001"
-  },
   "additionalDataCommon": {
-    "privateLabel": {
-      "minimumSpendExemptIndicator": "EXEMPT",
-      "creditPlan": "00100"
-    },
     "customFields": [
       {
         "key": " Request_Date_Time_GMT",
@@ -130,11 +64,11 @@ The below table identifies the conditional parameters in the `directedRouting` o
       },
       {
         "key": " Requestor_Organization_Code",
-        "value": "HOME DEPOT"
+        "value": "ORGANIZATION_CODE"
       },
       {
         "key": "Requestor_User_ID",
-        "value": "NCLCP"
+        "value": "USER_ID"
       },
       {
         "key": "Requestor_POS_Event_Code",
@@ -162,18 +96,9 @@ The below table identifies the conditional parameters in the `directedRouting` o
       },
       {
         "key": "Sales_Doc_ID",
-        "value": "12443-605"
+        "value": "SALES_ID"
       }
-    ],
-    "directedRouting": {
-      "processors": [
-        {
-          "processorName": "CHARGE_AFTER",
-          "processingPlatform": "PRIVATE_LABEL",
-          "priority": "PRIMARY"
-        }
-      ]
-    }
+    ]
   }
 }
 
@@ -190,7 +115,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request using a PLCC
+Example of a charge payload request using a ChargeAfter PLCC
 
 ```json
 {
@@ -203,7 +128,7 @@ Example of a charge payload request using a PLCC
     "encryptionData": {
       "encryptionType": "ON_GUARD",
       "encryptionTarget": "TRACK_2",
-      "encryptionBlock": "4599891943100751=36193012513455685570",
+      "encryptionBlock": "4599892543100751=36193012513455685570",
       "keyId": "FFFF999999039D4001080114",
       "deviceType": "INGENICO"
     }
@@ -217,24 +142,13 @@ Example of a charge payload request using a PLCC
     "origin": "POS",
     "posEntryMode": "MAG_STRIPE",
     "posConditionCode": "CARD_PRESENT",
-    "terminalTimestamp": "2023-09-20T05:33:05Z",
-    "additionalPosInformation": {
-      "dataEntrySource": "MOBILE_TERMINAL",
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "MAG_STRIPE_MANUAL"
-      }
-    }
+    "terminalTimestamp": "2023-09-20T05:33:05Z"
   },
   "merchantDetails": {
     "merchantId": "100012000003424",
     "terminalId": "10000001"
   },
   "additionalDataCommon": {
-    "privateLabel": {
-      "minimumSpendExemptIndicator": "EXEMPT",
-      "creditPlan": "00100"
-    },
     "customFields": [
       {
         "key": " Request_Date_Time_GMT",
@@ -250,11 +164,11 @@ Example of a charge payload request using a PLCC
       },
       {
         "key": " Requestor_Organization_Code",
-        "value": "HOME DEPOT"
+        "value": "My Business"
       },
       {
         "key": "Requestor_User_ID",
-        "value": "NCLCP"
+        "value": "XXXX"
       },
       {
         "key": "Requestor_POS_Event_Code",
@@ -282,7 +196,7 @@ Example of a charge payload request using a PLCC
       },
       {
         "key": "Sales_Doc_ID",
-        "value": "12443-605"
+        "value": "11111-000"
       }
     ],
     "directedRouting": {
@@ -297,6 +211,7 @@ Example of a charge payload request using a PLCC
   }
 }
 ```
+
 <!--
 type: tab
 -->
@@ -346,7 +261,6 @@ Example of a charge (201: Created) response
   "transactionDetails": {
     "captureFlag": false,
     "transactionCaptureType": "terminal_direct",
-    "partialApproval": true,
     "merchantTransactionId": "FT4WTBP9LW0FB0PD",
     "merchantOrderId": "7EWVTZRNAK7AJMXL",
     "retrievalReferenceNumber": "d862156c475b"
@@ -355,18 +269,7 @@ Example of a charge (201: Created) response
     "origin": "POS",
     "posEntryMode": "MAG_STRIPE",
     "posConditionCode": "CARD_PRESENT",
-    "terminalTimestamp": "2023-09-20T05:33:05Z",
-    "additionalPosInformation": {
-      "dataEntrySource": "MOBILE_TERMINAL",
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "MAG_STRIPE_MANUAL"
-      }
-    }
-  },
-  "merchantDetails": {
-    "terminalId": "10000001",
-    "merchantId": "100012000003424"
+    "terminalTimestamp": "2023-09-20T05:33:05Z"
   },
   "additionalDataCommon": {
     "customFields": [
@@ -384,11 +287,11 @@ Example of a charge (201: Created) response
       },
       {
         "key": " Requestor_Organization_Code",
-        "value": "HOME DEPOT"
+        "value": "MY BUSINESS"
       },
       {
         "key": "Requestor_User_ID",
-        "value": "NCLCP"
+        "value": "XXXXX"
       },
       {
         "key": "Requestor_POS_Event_Code",
@@ -416,48 +319,28 @@ Example of a charge (201: Created) response
       },
       {
         "key": "Sales_Doc_ID",
-        "value": "12443-605"
-      },
-      {
-        "key": "Requestor_Organization_Code",
-        "value": "HOME DEPOT"
-      },
-      {
-        "key": "Terms_Verified",
-        "value": "Y"
-      },
-      {
-        "key": "Request_Date_Time_GMT",
-        "value": "2023-09-20T05:33:05Z"
+        "value": "11111-000"
       },
       {
         "key": "Service_Version_ID",
         "value": "02_00_00"
       },
       {
-        "key": "Request_Date_Time_Local",
-        "value": "2023-09-20T05:33:05Z"
-      },
-      {
         "key": "Transaction_Request_Type",
         "value": "PRE_AUTH"
       }
-    ],
-    "privateLabel": {
-      "creditPlan": "00100",
-      "minimumSpendExemptIndicator": "EXEMPT"
-    }
+    ]
   },
   "paymentTokens": [
-    {
-      "tokenData": "1100000000056349",
-      "tokenSource": "CHARGE AFTER"
-    },
     {
       "tokenData": "7809293712430685",
       "tokenSource": "TRANSARMOR",
       "tokenResponseCode": "000",
       "tokenResponseDescription": "SUCCESS"
+    },
+    {
+      "tokenData": "1100000000056349",
+      "tokenSource": "CHARGE AFTER"
     }
   ]
 }

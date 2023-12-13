@@ -13,6 +13,9 @@ Citibank offers multiple banking services which includes providing of private la
 
 ## Request Variables
 
+<!--theme:info-->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: _false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+
 <!--
 type: tab
 titles: privateLabel, transactionInteraction
@@ -24,8 +27,8 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
-| `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
+| `creditPlan` | _string_ | 64 | Payment program assigned by the private label processor. |
+| `minimumSpendExemptIndicator` | _string_ | 32  | Indicates if the customer is exempt from the mimimum spend amount. _**Valid Values:** EXEMPT, NOT_EXEMPT_ |
 
 <!--
 type: tab
@@ -35,11 +38,10 @@ The below table identifies the required parameters in the `transactionInteractio
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `origin` | *string* | 4 | The source of the transaction |
-| `posEntryMode` | *string* | 22 | An identifier used to indicate how the account number was entered on the transaction. |
-| `posConditionCode` | *string* | 26  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
-| `motoType` | *string* | N/A | Defines the type of MOTO transaction when `origin` is MOTO |
-
+| `origin` | _string_ | 4 | The source of the transaction |
+| `posEntryMode` | _string_ | 22 | An identifier used to indicate how the account number was entered on the transaction. |
+| `posConditionCode` | _string_ | 26  | Indicates if the customer is exempt from the mimimum spend amount. _**Valid Values:** EXEMPT, NOT_EXEMPT_ |
+| `motoType` | _string_ | N/A | Defines the type of MOTO transaction when `origin` is MOTO |
 
 <!-- type: tab-end -->
 
@@ -52,10 +54,10 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request using a PLCC
+Example of a charge payload request using a Citi PLCC
 
 <!-- info -->
-> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is *MOTO* `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
+> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is _MOTO_ `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 ```json
 {
@@ -63,25 +65,15 @@ Example of a charge payload request using a PLCC
     "total": 1.56,
     "currency": "USD"
   },
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": 6035322542813757,
-      "expirationMonth": 12,
-      "expirationYear": 2049,
-      "securityCode": 898
-    }
-  },
-  "billingAddress": {
-    "firstName": "John",
-    "lastName": "Doe",
-    "address": {
-      "street": "112 Main St.",
-      "city": "Atlanta",
-      "stateOrProvince": "GA",
-      "postalCode": "30301",
-      "country": "US"
-    }
+   "source":{
+      "sourceType": "PaymentCard",
+      "encryptionData":{
+         "encryptionType": "ON_GUARD",
+         "encryptionTarget": "MANUAL",
+         "encryptionBlock": "M5482652331427157=3402583",
+         "deviceType": "INGENICO",
+         "keyId": "88000000023"
+      }
   },
   "orderData": {
     "itemDetails": [
@@ -105,16 +97,9 @@ Example of a charge payload request using a PLCC
   "transactionInteraction": {
     "origin": "MOTO",
     "motoType": "MAIL",
-    "eciIndicator": "SECURE_ECOM",
     "posEntryMode": "MANUAL",
     "posConditionCode": "CARD_NOT_PRESENT_MOTO",
-    "terminalTimestamp": "2023-10-06T04:42:40Z",
-    "additionalPosInformation": {
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "UNSPECIFIED"
-      }
-    }
+    "terminalTimestamp": "2023-10-06T04:42:40Z"
   },
   "merchantDetails": {
     "merchantId": "100012000001424",
@@ -184,18 +169,6 @@ Example of a charge (201: Created) response
       "responseMessage": "Approved",
       "hostResponseCode": "0000",
       "hostResponseMessage": "Approval",
-      "bankAssociationDetails": {
-        "transactionTimestamp": "2023-10-06T20:45:35.664Z",
-        "avsSecurityCodeResponse": {
-          "streetMatch": "NOT_MATCHED",
-          "postalCodeMatch": "NOT_MATCHED",
-          "securityCodeMatch": "CVC2 Match",
-          "association": {
-            "avsCode": "N",
-            "securityCodeResponse": "M"
-          }
-        }
-      },
       "additionalInfo": [
         {
           "name": "customerServicePhoneNumber",
@@ -207,41 +180,18 @@ Example of a charge (201: Created) response
       "arqcResponseCode": "UNAVAILABLE"
     }
   },
-  "billingAddress": {
-    "firstName": "John",
-    "lastName": "Doe",
-    "address": {
-      "street": "112 Main St.",
-      "city": "Atlanta",
-      "stateOrProvince": "GA",
-      "postalCode": "30301",
-      "country": "US"
-    }
-  },
   "transactionDetails": {
     "captureFlag": false,
     "transactionCaptureType": "terminal_direct",
-    "partialApproval": true,
     "merchantTransactionId": "VQZBLFK10EWJN04Z",
     "merchantOrderId": "MS46LEG1027E5PX6"
   },
   "transactionInteraction": {
     "origin": "MOTO",
+    "motoType": "MAIL",
     "posEntryMode": "MANUAL",
     "posConditionCode": "CARD_NOT_PRESENT_MOTO",
-    "eciIndicator": "SECURE_ECOM",
-    "terminalTimestamp": "2023-10-06T04:42:40Z",
-    "additionalPosInformation": {
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "UNSPECIFIED"
-      }
-    },
-    "motoType": "MAIL"
-  },
-  "merchantDetails": {
-    "terminalId": "10000001",
-    "merchantId": "100012000001424"
+    "terminalTimestamp": "2023-10-06T04:42:40Z"
   },
   "additionalDataCommon": {
     "privateLabel": {
