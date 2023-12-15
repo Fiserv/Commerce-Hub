@@ -34,7 +34,7 @@ type: tab
 The below table identifies the required parameters in the `transactionInteraction` object.
 
 | Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
+| -------- | :--: | :------------: | ---------------- |
 | `origin` | *string* | 4 | The source of the transaction |
 | `posEntryMode` | *string* | 22 | An identifier used to indicate how the account number was entered on the transaction. |
 | `posConditionCode` | *string* | 26  | Indicates if the customer is exempt from the mimimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
