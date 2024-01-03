@@ -2,7 +2,7 @@
 tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
 ---
 
-# Rdemption
+# Redemption
 
 Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location. When redeeming a gift card use the [payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) for charges, refunds and cancels along with the conditional request variables.
 
@@ -34,11 +34,12 @@ The below table identifies the required parameters in the `transactionInteractio
 type: tab
 -->
 
-The below table identifies the conditional parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `merchantDetails` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `promotionCode`| _string_ | 1024 | promotion code |
+|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!--
 type: tab
@@ -54,8 +55,6 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a [digital gift card](#digital-gift-card) |
-| `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
 | `transactionPostDate` | _string_ | 16 | Used to override a transaction post date in reporting |
 
 <!-- type: tab-end -->
@@ -82,8 +81,6 @@ The below table identifies the conditional parameters in the `additionalData` ob
     }
   },
   "transactionDetails": {
-    "merchantTransactionId": "1343678765",
-    "merchantOrderId": "845366457890",
     "captureFlag": true,
     "partialApproval": true
   },
@@ -96,7 +93,6 @@ The below table identifies the conditional parameters in the `additionalData` ob
   },
   "additionalDataCommon": {
     "additionalData": {
-      "securityCodeType": "EAN",
       "transactionPostDate": "2016-04-16"
     }
   }
@@ -111,7 +107,10 @@ type: tab-end -->
 type: tab
 -->
 
-Example of payload response
+### Example of payload response
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -158,8 +157,8 @@ Example of payload response
     },
     "balances": [
       {
-        "beginingBalance": "16.00",
-        "endingBalance": "16.00",
+        "beginingBalance": 16.00,
+        "endingBalance": 2.50,
         "currency": "USD"
       },
     ]

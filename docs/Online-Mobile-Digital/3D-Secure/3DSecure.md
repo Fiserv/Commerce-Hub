@@ -8,7 +8,7 @@ Commerce Hub supports [3-D Secure (3DS)](?path=docs/Resources/FAQs-Glossary/Glos
 
 3-D Secure  (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the "three domains" which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain. 
 
-### How it Works
+## How it Works
 
 1. The customer selects checkout from the merchant's website and the merchant's payment form displays.
 2. The customer enters their payment information and is redirected to the 3DS provider.
@@ -35,13 +35,13 @@ link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md
 <!-- type: card
 title: Secure Data Capture
 description: Allows the integration directly with Commerce Hub's Secure Data Capture iFrame or JavaScript to capture the 3DS device data and payment details within the Commerce Hub iFrame or JavaScript SDK on the merchant's website.
-link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md
+link: docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md
 -->
 
 <!-- type: card
 title: RESTful API
 description: Allows the integration directly with Commerce Hub's API to obtain the 3DS authentication details and process the payment transaction within the merchant's website.
-link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-API-Only.md
+link: docs/Online-Mobile-Digital/3D-Secure/3DS-API-Only.md
 -->
 
 <!-- type: row-end -->

@@ -4,7 +4,7 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Cash-Out]
 
 # Gift Card Cash-Out
 
-A cash-out request allows a merchant to remove the consumer funds from the gift card. A cash-out is initiated by sending the `target` and `additionalDataCommon` object in the Request with relevant transaction types.
+A cash-out request allows a merchant to remove the consumer funds from the gift card. A cash-out is initiated by sending the `target` and `additionalDataCommon` object in the request with relevant transaction types.
 
 ---
 
@@ -69,8 +69,7 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a card (e.g. Digital Gift card) |
-| `fundingProvider` | _string_ | 32 |  Identifies who provided the funds|
+| `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
 | `transactionPosDate` | _string_ | 16 | Used to override a transaction post date in reporting |
 
 <!-- type: tab-end -->
@@ -119,7 +118,7 @@ titles: Request, Response
       "expirationMonth": "01",
       "expirationYear": "3025",
       "category": "GIFT",
-      "subCategory": "VALUELINK"
+      "subCategory": "GIFT_SOLUTIONS"
     }
   },
   "transactionDetails": {
@@ -132,8 +131,7 @@ titles: Request, Response
   },
   "merchantDetails": {
     "merchantId": "10000900POD2205",
-    "terminalId": "10000001",
-    "promotionCode": "149474"
+    "terminalId": "10000001"
   },
   "additionalDataCommon": {
     "additionalData": {
@@ -150,6 +148,9 @@ type: tab
 -->
 
 #### Example of payload response
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -204,5 +205,5 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Gift Solution](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
+- [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
   

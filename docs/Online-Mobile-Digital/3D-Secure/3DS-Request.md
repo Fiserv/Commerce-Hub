@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 
 # 3-D Secure Request
 
-Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication results that were obtained through a Commerce Hub or a third-party 3-D Secure provider when sending a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. _PaymentCard_ or _PaymentToken_ is used by the merchant as the [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) when sending the transaction to Commerce Hub, along with the 3DS response data.
+Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication results that were obtained through a Commerce Hub or a third-party 3-D Secure provider when sending a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. The [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) _PaymentCard_ and _PaymentToken_ or [reference transaction identifier](#request-with-reference-identifier) is used by the merchant as  when sending the transaction to Commerce Hub, along with the 3DS response data.
 
 Commerce Hub supports 3DS request from merchants using one of the two options below;
 
@@ -22,11 +22,20 @@ A request using `PaymentSource` requires sending the `additionalData3DS` data th
 
 ### Request Variables
 
+<!--
+type: tab
+titles: source, additionalData3DS
+-->
+
 The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
+| `sourceType` | _string_ | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are _PaymentSession_, _PaymentCard_, or _PaymentToken_ |
+
+<!--
+type: tab
+-->
 
 The below table identifies the required parameters in the `additionalData3DS` object.
 
@@ -71,7 +80,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of charges payload request with 3DS authentication data
+Example of charges payload request with 3DS authentication data
 
 ```json
 {
@@ -121,7 +130,7 @@ titles: Request, Response
 type: tab
 -->
 
-#### Example of a charges (201: Created) response
+Example of a charges (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -246,7 +255,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of charges payload request using a referece identifier
+Example of charges payload request using a reference identifier
 
 ```json
 {
@@ -271,7 +280,7 @@ titles: Request, Response
 type: tab
 -->
 
-#### Example of a charges (201: Created) response
+Example of a charges (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
