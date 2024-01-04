@@ -18,7 +18,10 @@ The merchant can initiate token request in order to generate a token for the pay
 
 ---
 
-### Requirements
+### Mimimum Requirements
+
+<!-- theme: warning -->
+> Account verification can be performed by submitting `accountVerification`_:true_ in `transactionDetails`.  If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must also be submitted in the request.
 
 <!--
 type: tab
@@ -29,7 +32,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+|`sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
 <!-- type: tab-end -->
 
@@ -48,7 +51,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a token only payload request.
+Example of a token only payload request.
 
 ```json
 {
@@ -75,7 +78,10 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a tokenization (201: Created) response.
+Example of a tokenization (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -105,7 +111,7 @@ type: tab
       "tokenSource": "TRANSARMOR",
       "tokenResponseCode": "000",
       "tokenResponseDescription": "SUCCESS"
-    }
+    },
     {
       "tokenData": "1234840515376672",
       "tokenSource": "CHASE",
@@ -121,7 +127,7 @@ type: tab
 
 ## PaymentToken Request
 
-The merchant can use the saved tokenized data in order to initate a subsequent transaction request. 
+The merchant can use the saved tokenized data in order to initate a subsequent transaction request.
 
 ---
 
@@ -136,8 +142,8 @@ The below table identifies the required parameters in the `amount` object.
 
 |Variable |  Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `total` | _number_ | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -145,15 +151,14 @@ type: tab
 
 The below table identifies the required parameters in the `source` object.
 
-
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|---|
-| `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
-| `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
-| `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
-| `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
-| `tokenSource` | *string* | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
-| `card` | *object* | | &#10004; | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
+| `sourceType` | _string_ | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
+| `tokenData` | _string_ | 2048 | &#10004; |Token created from the payment source. |
+| `PARId` | _string_ | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
+| `declineDuplicates` | _boolean_ | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
+| `tokenSource` | _string_ | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
+| `card` | _object_ | | &#10004; | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
 
 <!--
 type: tab
@@ -163,15 +168,16 @@ The below table identifies the required parameters in the `card` object.
 
 | Variable | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|---|
-| `card` | *object* | | &#10004; |Contains card specific information. |
-| `expirationMonth` | *string* | 2 | &#10004; |Card expiration month. |
-| `expirationYear` | *string* | 4 | &#10004; |Card expiration year. |
+| `card` | _object_ | | &#10004; |Contains card specific information. |
+| `expirationMonth` | _string_ | 2 | &#10004; |Card expiration month. |
+| `expirationYear` | _string_ | 4 | &#10004; |Card expiration year. |
 
 <!-- type: tab-end -->
 
 ---
 
 ### Endpoint
+
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
 
@@ -184,12 +190,12 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request with PaymentToken.
+Example of a charge payload request with PaymentToken.
 
 ```json
 {
   "amount": {
-    "total": "1.00",
+    "total": "12.04",
     "currency": "USD"
   },
   "source": {
@@ -215,7 +221,10 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (200: Success) response.
+Example of a charge (200: Success) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -289,6 +298,7 @@ type: tab
 - [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 - [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---
