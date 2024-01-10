@@ -361,7 +361,8 @@ Example of payload response
 ## See Also
 
 - [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
-- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
 
 ---
