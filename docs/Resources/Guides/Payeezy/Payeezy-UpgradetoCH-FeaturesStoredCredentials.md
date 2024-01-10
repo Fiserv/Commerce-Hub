@@ -19,12 +19,7 @@ In Commerce Hub, merchant managed scheduled transactions require the `billPaymen
 
 The `original_amount` element used for processing Discover cards in Payeezy is now `networkOriginalAmount` in Commerce Hub and contained in the Discover object. 
 
-**The following elements are currently not supported in Commerce Hub:**
-
-|Card Brand| Payeezy Element|
-|----------|---------------|
-|Discover| `protectbuy_indicator`|
-|Visa|`authorization_type_override`|
+The `protectbuy_indicator` element is not required in the Commerce Hub request payload.
 
 Additional information on mapping stored credential elements from Payeezy to Commerce Hub can be found in the [mapping documentation](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md).
 

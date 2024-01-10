@@ -51,10 +51,11 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customi
 
 ## Additional Security Settings
 
-The following steps are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
+The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
-**Recommendations**
+### Recommendations
 
+- Enable Re-Captcha
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow

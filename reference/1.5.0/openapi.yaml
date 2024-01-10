@@ -40,9 +40,9 @@ paths:
               GooglePay:
                 summary: ChargesRequest with GooglePay
                 $ref: '#/components/examples/GooglePayRequest'
-              Payment3DS:
+              PaymentCard-3DS:
                 summary: ChargesRequest with Payment3DS
-                $ref: '#/components/examples/Payment3DSRequest'
+                $ref: '#/components/examples/PaymentCard3DSChargesRequest'
               PaymentToken:
                 summary: ChargesRequest with PaymentToken
                 $ref: '#/components/examples/PaymentTokenRequest'
@@ -72,7 +72,7 @@ paths:
                 GooglePay:
                   summary: ChargesResponse with GooglePay
                   $ref: '#/components/examples/GooglePayChargesResponse'
-                Payment3DS:
+                PaymentCard-3DS:
                   summary: ChargesResponse with Payment3DS
                   $ref: '#/components/examples/Payment3DSChargesResponse'
                 PaymentToken:
@@ -253,6 +253,9 @@ paths:
               PaymentToken:
                 summary: AccountVerificationRequest with PaymentToken
                 $ref: '#/components/examples/PaymentTokenVerifyRequest'
+              PaymentCard-3DS:
+                summary: AccountVerificationRequest with PaymentCard and 3DS.'
+                $ref: '#/components/examples/PaymentCard3DSAccountVerificationRequest'
       responses:
         201:
           description: Created
@@ -276,6 +279,9 @@ paths:
                 PaymentToken:
                   summary: AccountVerificationResponse with PaymentToken
                   $ref: '#/components/examples/PaymentTokenVerifyResponse'
+                PaymentCard-3DS:
+                  summary: AccountVerificationResponse with PaymentCard and 3DS.'
+                  $ref: '#/components/examples/PaymentCard3DSAccountVerificationResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -309,14 +315,13 @@ paths:
           application/json:
             schema: {$ref: '#/components/schemas/TokenizationRequest'}
             examples:
-              PaymentCard: {summary: TokenizationRequest with PaymentCard, $ref: '#/components/examples/PaymentCardTokenRequest'}
               PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
               PaymentEMV: {summary: TokenizationRequest with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenRequest'}
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ManualEntry: {summary: TokenizationRequest with manual entry PaymentCard, $ref: '#/components/examples/ManualEntryTokenRequest'}
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
               GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
-              Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/Payment3DSTokenRequest'}
+              PaymentCard-3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/PaymentCard3DSTokenizationRequest'}
               PaymentSession: {summary: TokenizationRequest with PaymentSession, $ref: '#/components/examples/PaymentSessionTokenRequest'}
       responses:
         200:
@@ -325,14 +330,13 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
-                PaymentCard: {summary: TokenizationResponse with PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
                 PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ManualEntry: {summary: TokenizationResponse with manual entry PaymentCard,$ref: '#/components/examples/ManualEntryTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
                 GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
-                Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/Payment3DSTokenResponse'}
+                PaymentCard-3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/PaymentCard3DSTokenizationResponse'}
                 PaymentSession: {summary: TokenizationResponse with PaymentSession, $ref: '#/components/examples/PaymentCardTokenResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
@@ -853,6 +857,211 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
+#  /payments-vas/v1/3ds/authenticate:
+#    x-model-version: 1.0
+#    post:
+#      tags:
+#        - 3-D Secure Authentication Endpoint Definition
+#      x-group-name: '3-D Secure'
+#      x-proxy-name: 'Authentication'
+#      summary: Authenticate a given payment instrument.
+#      description: 'Use this payload to perform an account authentication for 3-D Secure.'
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/ThreeDSAuthenticationRequest'
+#            examples:
+#              PaymentCard:
+#                summary: ThreeDSAuthenticationRequest with PaymentCard
+#                $ref: '#/components/examples/PaymentCardAuthenticationRequest'
+#              PaymentSession: 
+#                summary: ThreeDSAuthenticationRequest with PaymentSession
+#                $ref: '#/components/examples/PaymentSessionAuthenticationRequest'
+#              PaymentToken:
+#                summary: ThreeDSAuthenticationRequest with PaymentToken
+#                $ref: '#/components/examples/PaymentTokenAuthenticationRequest'
+#      responses:
+#        201:
+#          description: Created
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/ThreeDSAuthenticationResponse'
+#              examples:
+#                PaymentCard:
+#                  summary: ThreeDSAuthenticationResponse with PaymentCard
+#                  $ref: '#/components/examples/PaymentCardAuthenticationResponse'
+#                PaymentSession: 
+#                  summary: ThreeDSAuthenticationResponse with PaymentSession
+#                  $ref: '#/components/examples/PaymentSessionAuthenticationResponse'
+#                PaymentToken:
+#                  summary: ThreeDSAuthenticationResponse with PaymentToken
+#                  $ref: '#/components/examples/PaymentTokenAuthenticationResponse'
+#        400:
+#          $ref: '#/components/responses/BadRequest'
+#        401:
+#          $ref: '#/components/responses/Unauthorized'
+#        404:
+#          $ref: '#/components/responses/NotFound'
+#        408:
+#          $ref: '#/components/responses/RequestTimeout'
+#        415:
+#          $ref: '#/components/responses/UnsupportedMediaType'
+#        425:
+#          $ref: '#/components/responses/TooEarly'
+#        429:
+#          $ref: '#/components/responses/TooManyRequest'
+#        500:
+#          $ref: '#/components/responses/ServerError'
+#        503:
+#          $ref: '#/components/responses/ServiceUnavailable'
+#        504:
+#          $ref: '#/components/responses/GatewayTimeout'
+#      parameters:
+#      - {$ref: '#/components/parameters/ContentTypeHeader'}
+#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+#      - {$ref: '#/components/parameters/ApiKeyHeader'}
+#      - {$ref: '#/components/parameters/TimestampHeader'}
+#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationHeader'}
+#      - {$ref: '#/components/parameters/MessageDigestHeader'}
+#      - {$ref: '#/components/parameters/KeyIdParam'}
+#  /payments-vas/v1/3ds/device-data-initialize:
+#    x-model-version: 1.0
+#    post:
+#      tags:
+#        - Device Data Initialization Endpoint Definition
+#      x-group-name: '3-D Secure'
+#      x-proxy-name: 'Device Data Initialization'
+#      summary: Device data initialization with a 3DS Provider.
+#      description: 'Use this payload to initialize the device data collection process with 3DS provider.'
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/ThreeDSDeviceDataInitializationRequest'
+#            examples:
+#              PaymentCard:
+#                summary: ThreeDSDeviceDataInitializationRequest with PaymentCard
+#                $ref: '#/components/examples/PaymentCardDeviceDataInitializationRequest'
+#              PaymentSession: 
+#                summary: ThreeDSDeviceDataInitializationRequest with PaymentSession
+#                $ref: '#/components/examples/PaymentSessionDeviceDataInitializationRequest'
+#              PaymentToken:
+#                summary: ThreeDSDeviceDataInitializationRequest with PaymentToken
+#                $ref: '#/components/examples/PaymentTokenDeviceDataInitializationRequest'
+#      responses:
+#        201: 
+#          description: Created
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/ThreeDSDeviceDataInitializationResponse'
+#              examples:
+#                PaymentCard:
+#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentCard
+#                  $ref: '#/components/examples/PaymentCardDeviceDataInitializationResponse'
+#                PaymentSession: 
+#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentSession
+#                  $ref: '#/components/examples/PaymentSessionDeviceDataInitializationResponse'
+#                PaymentToken:
+#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentToken
+#                  $ref: '#/components/examples/PaymentTokenDeviceDataInitializationResponse'
+#        400:
+#          $ref: '#/components/responses/BadRequest'
+#        401:
+#          $ref: '#/components/responses/Unauthorized'
+#        404:
+#          $ref: '#/components/responses/NotFound'
+#        408:
+#          $ref: '#/components/responses/RequestTimeout'
+#        415:
+#          $ref: '#/components/responses/UnsupportedMediaType'
+#        425:
+#          $ref: '#/components/responses/TooEarly'
+#        429:
+#          $ref: '#/components/responses/TooManyRequest'
+#        500:
+#          $ref: '#/components/responses/ServerError'
+#        503:
+#          $ref: '#/components/responses/ServiceUnavailable'
+#        504:
+#          $ref: '#/components/responses/GatewayTimeout'
+#      parameters:
+#      - {$ref: '#/components/parameters/ContentTypeHeader'}
+#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+#      - {$ref: '#/components/parameters/ApiKeyHeader'}
+#      - {$ref: '#/components/parameters/TimestampHeader'}
+#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationHeader'}
+#      - {$ref: '#/components/parameters/MessageDigestHeader'}
+#      - {$ref: '#/components/parameters/KeyIdParam'}
+#  /payments-vas/v1/3ds/verify:
+#    x-model-version: 1.0
+#    post:
+#      tags:
+#        - 3-D Secure Verification Endpoint Definition
+#      x-group-name: '3-D Secure'
+#      x-proxy-name: 'Verification'
+#      summary: Verify a challenge results with a 3DS Provider.
+#      description: 'Use this payload to verify a challenge results with 3DS provider.'
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/ThreeDSVerificationRequest'
+#            examples:
+#              transactionId:
+#                summary: ThreeDSVerificationRequest with transactionId
+#                $ref: '#/components/examples/ThreeDSVerificationRequest'
+#      responses:
+#        201:
+#          description: Created
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/ThreeDSVerificationResponse'
+#              examples:
+#                transactionId:
+#                  summary: ThreeDSVerificationResponse with transactionId
+#                  $ref: '#/components/examples/ThreeDSVerificationResponse'
+#        400:
+#          $ref: '#/components/responses/BadRequest'
+#        401:
+#          $ref: '#/components/responses/Unauthorized'
+#        404:
+#          $ref: '#/components/responses/NotFound'
+#        408:
+#          $ref: '#/components/responses/RequestTimeout'
+#        415:
+#          $ref: '#/components/responses/UnsupportedMediaType'
+#        425:
+#          $ref: '#/components/responses/TooEarly'
+#        429:
+#          $ref: '#/components/responses/TooManyRequest'
+#        500:
+#          $ref: '#/components/responses/ServerError'
+#        503:
+#          $ref: '#/components/responses/ServiceUnavailable'
+#        504:
+#          $ref: '#/components/responses/GatewayTimeout'
+#      parameters:
+#      - {$ref: '#/components/parameters/ContentTypeHeader'}
+#      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+#      - {$ref: '#/components/parameters/ApiKeyHeader'}
+#      - {$ref: '#/components/parameters/TimestampHeader'}
+#      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+#      - {$ref: '#/components/parameters/AuthorizationHeader'}
+#      - {$ref: '#/components/parameters/MessageDigestHeader'}
+#      - {$ref: '#/components/parameters/KeyIdParam'}
+
 components:
   parameters:
     OrderIdParam:
@@ -919,9 +1128,7 @@ components:
       }
       in: header
       required: true
-      description: Authorization header used to ensure the request has not been tampered
-        with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For
-        more information, refer to the supporting documentation on the Developer Portal.
+      description: '<a href="../docs?path=docs/Resources/API-Documents/Authentication-Header.md">Authorization header</a> is used to ensure the request has not been tampered with during transmission. Valid encryptions; HMAC, JWT, or AccessToken.'
     MessageDigestHeader:
       x-model-version: 1.0
       name: Message-Digest
@@ -931,8 +1138,7 @@ components:
       }
       in: header
       required: false
-      description: Needed only from customer browser or app to the API in Hosted Payment
-        Page requests.
+      description: '<a href="../docs/?path=docs/Resources/API-Documents/Message-Digest.md">Message digest</a> is used to ensure the request has not been tampered with during transmission. It is needed in the header for <a href="..docs/?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">Card Capture</a> and Hosted Payment Page integrations.'
     AcceptLanguageHeader:
       x-model-version: 1.0
       name: Accept-Language
@@ -1292,6 +1498,8 @@ components:
         transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
     Phone:
       x-model-version: 1.0
       description: Customer <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">phone</a>
@@ -3159,6 +3367,8 @@ components:
           items: {$ref: '#/components/schemas/ResponsePaymentToken'}
         storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
         authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
     PaymentReceipt:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Payment-Receipt.md">Payment receipt</a> response details.
@@ -3979,12 +4189,16 @@ components:
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
     AccountVerificationResponse:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         responsePaymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
     TokenizationRequest:
       x-model-version: 1.0
       properties:
@@ -4000,6 +4214,8 @@ components:
           $ref: '#/components/schemas/BillingAddress'
         transactionInteraction:
           $ref: '#/components/schemas/TransactionInteraction'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
     TokenizationResponse:
       x-model-version: 1.0
       properties:
@@ -4021,6 +4237,8 @@ components:
           $ref: '#/components/schemas/ProcessorResponseDetails'
         billingAddress:
           $ref: '#/components/schemas/BillingAddress'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
     EnhancedDataServiceRequest:
       x-model-version: 1.0
       properties:
@@ -4295,7 +4513,246 @@ components:
           maxLength: 10
           description: 'Status of the key pair. Valid values are ACTIVE, INACTIVE, REVOKED or LEGACY'
           example: 'ACTIVE'
-
+    ThreeDSAuthenticationRequest: 
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        referenceTransactionDetails: 
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        amount: 
+          $ref: '#/components/schemas/Amount'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
+    ThreeDSAuthenticationResponse: 
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+    ThreeDSDeviceDataInitializationRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        transactionDetails: 
+          $ref: '#/components/schemas/TransactionDetails'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
+        transactionProcessingDetails:
+          $ref: '#/components/schemas/TransactionProcessingDetails'
+    ThreeDSDeviceDataInitializationResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
+    ThreeDSVerificationRequest: 
+      x-model-version: 1.0
+      properties: 
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        referenceTransactionDetails: 
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+    ThreeDSVerificationResponse: 
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+    AdditionalData3DS:
+      x-model-version: 1.0
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Additional-Data-3DS.md">Additional data</a> passed during a 3-D Secure (3DS) authentication.'
+      properties: 
+        acsReferenceNumber:
+          type: string
+          maxLength: 60
+          description: 'Unique reference number assigned by the Access Control Server (ACS) to identify a single transaction.'
+          example: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+        acsTransactionId:
+          type: string
+          maxLength: 60
+          description: 'Unique transaction identifier assigned by the Access Control Server (ACS) to identify a single transaction.'
+          example: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+        acsUrl:
+          type: string
+          maxLength: 256
+          description: 'The URL to redirect the Consumer to complete the Consumer Authentication transaction.'
+          example: 'https://www.example.com/3ds/redirect'
+        authenticationStatus:
+          type: string
+          maxLength: 2
+          description: 'The result of authentication attempt returned by the 3D Secure authentication process (PaRes).'
+          example: 'A'
+        challengeIndicator:
+          type: boolean
+          description: 'Indicator that forces a customer to complete a transaction using 3-D Secure (3DS) if available.'
+          example: true
+        challengeStatus:
+          type: string
+          maxLength: 2
+          description: 'The transaction status as returned by the 3D Secure authentication process. (CRes)'
+          example: 'A'
+        challengeToken:
+          type: string
+          maxLength: 1024
+          description: 'Java web token for 3-D Secure.'
+          example: 'uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4'
+        channel:
+          type: string
+          maxLength: 32
+          description: 'Determines the <a href="../docs?path=docs/Resources/Master-Data/Additional-Data-3DS.md">channel</a> that the transaction came through.'
+          example: 'BROWSER'
+        dsTransactionId:
+          type: string
+          maxLength: 60
+          description: 'Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction'
+          example: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+        messageCategory:
+          type: string
+          maxLength: 2
+          description: 'Indicates the message category of 3-D Secure authentication version 2.X. 01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only'
+          example: '1'
+        serverTransactionId:
+          type: string
+          maxLength: 60
+          description: 'Unique transaction identifier assigned by the 3DS Server to identify a single transaction'
+          example: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+        serviceProvider:
+          type: string
+          description: 'The 3DS service provider responsible for managing the 3DS transaction'
+          maxLength: 32
+          example: 'CARDINAL'
+        serviceProviderReferenceId:
+          type: string
+          maxLength: 60
+          description: 'Unique reference identifier assigned by the 3DS Server during an initialization.'
+          example: '764a086f-ad30-4313-b90d-d6dc1929c0d6'
+        serviceProviderTransactionId:
+          type: string
+          maxLength: 60
+          description: 'Unique transaction identifier assigned by the 3DS Server to identify a single transaction.'
+          example: '764a086f-ad30-4313-b90d-d6dc1929c0d6'
+        statusReason:
+          type: string
+          maxLength: 16
+          description: 'Details about a given transaction status.'
+          example: 'Approved'
+        stepUpUrl:
+          type: string
+          maxLength: 256
+          description: 'The URL that the client uses to post the cardholder in order to complete the Consumer Authentication transaction.'
+          example: 'https://www.example.com/3ds/stepUp'
+        methodData:
+          $ref: '#/components/schemas/MethodData3DS'
+        mpiData:
+          $ref: '#/components/schemas/MpiData3DS'
+        versionData:
+          $ref: '#/components/schemas/VersionData3DS'
+    MethodData3DS:
+      x-model-version: 1.0
+      description: 'Additional device data collection details passed during 3-D Secure (3DS) flows.'
+      properties:
+        dataCollectionUrl:
+          type: string
+          maxLength: 256
+          description: 'The URL that will be used by the 3DS Method to collect card holder browser information'
+          example: 'https://www.example.com/3ds/device/collect'
+        encodedToken:
+          type: string
+          maxLength: 4000
+          description: 'Base64 encoded transactional JWT token for external data collection with service provider.'
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+        encodedData:
+          type: string
+          maxLength: 4000
+          description: 'Base64 encoded data for external data collection with service provider.'
+          example: "eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6IjNhYzdjYWE3LWFhNDItMjY2My03OTFiLTJhYzA1YTU0MmM0YSJ9"
+        notificationUrl:
+          type: string
+          maxLength: 256
+          description: 'The notification URL to which the 3-D Secure (3DS) provider will send the result of the device data collection'
+          example: "https://www.example.com/webhooks/v1/callback"
+    MpiData3DS:
+      x-model-version: 1.0
+      description: 'Merchant plug-in data from 3-D Secure (3DS) authentication.'
+      properties:
+        cavv:
+          type: string
+          maxLength: 256
+          description: 'The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase.'
+          example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+        xid:
+          type: string
+          maxLength: 512
+          description: '3-D Secure value returned by service provider e.g. Cardinal Commerce.'
+          example: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+        eci:
+          type: string
+          maxLength: 256
+          description: 'Payment system-specific value provided by the Access Control Server (ACS) or Directory Server (DS) to indicate the results of the attempt to authenticate the cardholder.'
+          example: '05'
+        tavv:
+          type: string
+          maxLength: 512
+          description: 'Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction.'
+          example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+    VersionData3DS:
+      x-model-version: 1.0
+      description: 'Additional version data passed during 3-D Secure (3DS) flows.'
+      properties:
+        recommendedVersion:
+          type: string
+          maxLength: 6
+          description: 'Recommended 3DS version as specified by the card issuer'
+          example: '2.2.0'
   
   examples:
     ApplePayRequest:
@@ -5108,47 +5565,75 @@ components:
             apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db, clientRequestId: '4345791',
             transactionId: '84356531338'}
         transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '93', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '30'} }
-    Payment3DSRequest:
+    PaymentCard3DSChargesRequest:
       value:
-        amount: {total: 12.04, currency: USD}
+        amount:
+          total: 9.00
+          currency: USD
         source:
-          sourceType: Payment3DS
-          card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035',
-            securityCode: '123'}
-          cavv: 020360C31C002540AFAB9DFFA1F69D3000020000
-          channel: BROWSER
-          merchantIdentifier: '1234567890123456'
-          version: '2.1.0'
-          xid: 'G2Q6OcsXq1k0pA0mMNHVH1P02Tw='
-          verificationResponse: 'Y'
-          authenticationAttemptResult: 'Y'
-          transactionStatus: 'A'
-          messageCategory: '1'
-          authenticationResponse: 'Y'
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction:
-          origin: 'ECOM'
-          eciIndicator: 'SECURE_ECOM'
-          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
-    Payment3DSTokenRequest:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+            securityCodeIndicator: 'PROVIDED'
+        additionalData3DS:
+          serviceProviderTransactionId: W1dkIvUNzLYgRGLBVNp1
+          acsTransactionId: 46d071e5-2447-4980-a9ba-c8c55a99107a
+          challengeIndicator: false
+          dsTransactionId: 3150f884-0a17-4669-8c50-5d9b8bdae022
+          serverTransactionId: c58e7f2e-56dd-496a-acda-b39c37bdf14b
+          authenticationStatus: Y
+          mpiData:
+            cavv: MTIzNDU2Nzg5MDEyMzQ1Njc4OTA=
+            eci: '05'
+          versionData:
+            recommendedVersion: 2.1.0
+        transactionDetails:
+          captureFlag: true
+          deviceFingerprint:
+            - dataDynamic:
+                ipAddress: 192.168.0.12
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100004000100116'
+    PaymentCard3DSTokenizationRequest:
       value:
         source:
-          sourceType: Payment3DS
-          card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035',
-            securityCode: '123'}
-          cavv: 020360C31C002540AFAB9DFFA1F69D3000020000
-          channel: BROWSER
-          merchantIdentifier: '1234567890123456'
-          version: '2.1.0'
-          xid: 'G2Q6OcsXq1k0pA0mMNHVH1P02Tw='
-          verificationResponse: 'Y'
-          authenticationAttemptResult: 'Y'
-          transactionStatus: 'A'
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+            securityCodeIndicator: 'PROVIDED'
+        additionalData3DS:
+          serviceProviderTransactionId: W1dkIvUNzLYgRGLBVNp1
+          acsTransactionId: 46d071e5-2447-4980-a9ba-c8c55a99107a
+          dsTransactionId: 3150f884-0a17-4669-8c50-5d9b8bdae022
+          acsReferenceNumber: 8561c0ef-931a-474f-bfee-55eb98a3jds7
+          authenticationStatus: Y
+          statusReason: Approved
+          serverTransactionId: c58e7f2e-56dd-496a-acda-b39c37bdf14b
+          serviceProvider: CARDINAL
+          challengeStatus: Y
           messageCategory: '1'
-          authenticationResponse: 'Y'
-        transactionDetails: {merchantInvoiceNumber: '123456789012'}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+          mpiData:
+            cavv: 020360C31C002540AFAB9DFFA1F69D3000020000
+            xid: G2Q6OcsXq1k0pA0mMNHVH1P02Tw=
+            eci: SECURE_ECOM
+          versionData:
+            recommendedVersion: 2.1.0
+        transactionDetails:
+          captureFlag: true
+          merchantOrderId: 87849105
+          physicalGoodsIndicator: true
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100004000100116'
     Payment3DSChargesResponse:
       value:
         gatewayResponse:
@@ -5184,36 +5669,56 @@ components:
             localTimestamp: '2021-06-20T23:42:48Z'
             bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
         transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-    Payment3DSTokenResponse:
+    PaymentCard3DSTokenizationResponse:
       value:
         gatewayResponse:
           transactionType: TOKENIZE
           transactionState: AUTHORIZED
-          transactionOrigin: ECOM
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionProcessingDetails:
+            orderId: CHG01133d6e8746b0449902fdd8f9f89ef840
+            transactionTimestamp: '2023-08-18T19:01:02.509947165Z'
+            apiTraceId: 13316200f664440fa9cc8ecc8c1b7457
+            clientRequestId: '1410076'
+            transactionId: 13316200f664440fa9cc8ecc8c1b7457
         source:
-          sourceType: Payment3DS
-          card: {bin: '40055500', last4: '0019', expirationMonth: '10',
-            expirationYear: '30', scheme: VISA}
+          sourceType: PaymentCard
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '401200'
+            last4: '0026'
+            scheme: VISA
         paymentTokens:
-          - tokenData: '8519371934460009'
+          - tokenData: '8408727895800026'
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
         processorResponseDetails:
           approvalStatus: APPROVED
-          approvalCode: OK5882
-          schemeTransactionId: 0225MCC625628
-          processor: FISERV
-          host: NASHVILLE
+          approvalCode: OK409C
+          referenceNumber: 8ecc8c1b7457
+          networkInternationalId: '0001'
           responseCode: '000'
-          responseMessage: APPROVAL
+          responseMessage: Approved
           hostResponseCode: '00'
           hostResponseMessage: APPROVAL
-          localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+          bankAssociationDetails:
+            associationResponseCode: V000
+            avsSecurityCodeResponse:
+              streetMatch: NONE
+              postalCodeMatch: NONE
+              securityCodeMatch: NOT_CHECKED
+              association:
+                securityCodeResponse: X
+          additionalInfo:
+            - name: COUNTRY_CODE
+              value: USA
+            - name: CARD_PRODUCT_ID
+              value: H
+            - name: DETAILED_PRODUCT_ID
+              value: C
+            - name: HOST_RAW_PROCESSOR_RESPONSE
+              value: ARAyIAGADoAAAgAAAAAAAAAAAAgYGQECABUoAAFROGVjYzhjMWI3NDU3T0s0MDlDMDAwMTY1MDk3MQIEAEgxNE4wMTMyMzA1MDc4NzEyMjhJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlYAAM2NTEABlZJQ1JDIAAxU1AwNzAxNjg0MDg3Mjc4OTU4MDAwMjYxMDAwMzAwMgAxU0RUQzAxNTYwMTEwMDAwMDAwMDAwMEFSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW
     PaymentEMVRequest:
       value:
         amount: {total: 12.04, currency: USD}
@@ -6331,3 +6836,800 @@ components:
         symmetricKeyDetails:
           encryptionType: 'AES-GCM'
           modulus: 256
+    PaymentCardEncDeviceDataInitializationRequest: 
+      value: 
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16'
+            keyId: '88000000022'
+        transactionDetails:
+          merchantTransactionId: '65757575675765'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'       
+ 
+    PaymentCardDeviceDataInitializationRequest: 
+      value: 
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+        transactionDetails:
+          merchantTransactionId: '65757575675765'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'   
+    
+    PaymentTokenDeviceDataInitializationRequest: 
+      value: 
+        source:
+          sourceType: 'PaymentToken'
+          tokenData: '1234560000000019'
+          tokenSource: 'TRANSARMOR'
+        transactionDetails:
+          merchantTransactionId: '65757575675765'
+        merchantDetails: 
+          terminalId: '123456'
+          merchantId: '123456789012345'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+    
+    PaymentCardDeviceDataInitializationResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'INITIALIZE'
+          transactionState: 'INITIALIZED'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        processorResponseDetails: 
+          host: 'CARDINAL'
+          responseCode: '000000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          merchantTransactionId: '65757575675765'
+        additionalData3DS: 
+          serviceProvider: 'CARDINAL'
+          methodData: 
+             encodedToken: 'uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4'
+             dataCollectionUrl: 'https://www.example.com/3ds/devicedata'
+          versionData:
+             recommendedVersion: '2.2.0'
+    
+    PaymentTokenDeviceDataInitializationResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'INITIALIZE'
+          transactionState: 'INITIALIZED'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentToken'
+          tokenSource: 'TRANSARMOR'
+          tokenData: '8519371934460009'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '30'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          processor: 'CARDINAL'
+          responseCode: '000000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          merchantTransactionId: '65757575675765'
+        additionalData3DS: 
+          serviceProvider: 'CARDINAL'
+          methodData: 
+             encodedToken: 'uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4'
+             dataCollectionUrl: 'https://www.example.com/3ds/devicedata'
+          versionData:
+             recommendedVersion: '2.2.0'
+          
+    PaymentCardEncAuthenticationRequest: 
+      value:
+        amount: 
+          total: '12.04'
+          currency: 'USD'
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+            securityCodeIndicator: 'PROVIDED'
+        billingAddress: 
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+          phone: 
+            countryCode: '1'
+            phoneNumber: '123-123-1234'
+        storedCredentials: 
+          initiator: 'CARD_HOLDER'
+          sequence: 'SUBSEQUENT'
+        additionalData3DS: 
+          serviceProvider: 'CARDINAL'
+          channel: 'BROWSER'
+        customer:
+          email: 'customer@somedomain.com'
+          phone:
+            - countryCode: '1'
+              phoneNumber: '123-123-1234'
+              type: 'MOBILE'
+            - countryCode: '1'
+              phoneNumber: '498-123-1234'
+              type: 'WORK'
+        transactionDetails: 
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+          deviceFingerprint: 
+            - dataStatic: 
+                javaScriptEnabled: true
+                javaEnabled: true
+                accepts: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+                locale: 'en-US'
+                colorDepth: 32
+                screenHeight: 1024
+                screenWidth: 789
+                timezoneOffset: -60
+                userAgent: 'Mozilla/5.0'                
+              dataDynamic: 
+                ipAddress: '172.27.37.221'
+        transactionInteraction:
+          dataEntrySource: 'BROWSER_PC'
+        shippingAddress: 
+          shippingMethod: 'SHIP_TO_CARDHOLDER'
+          shippingTimeframe: 'SAME_DAY'
+          shipToEmail: 'customer@domain.com'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+        orderData: 
+          goodsSoldCode: 'PHYSICAL_GOODS'
+          reOrder: false
+          preOrder: true
+          preOrderDate: '2020-11-20'
+          giftcardCount: 2
+          giftCardAmount: 
+            total: 12.04
+            currency: 'USD'
+   
+    PaymentCardAuthenticationRequest: 
+      value:
+        amount: 
+          total: '12.04'
+          currency: 'USD'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            cardData: '4005550000000019'
+            expirationMonth: '02'
+            expirationYear: '2035'
+        billingAddress: 
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+          phone: 
+            countryCode: '1'
+            phoneNumber: '123-123-1234'
+        storedCredentials: 
+          initiator: 'CARD_HOLDER'
+          sequence: 'SUBSEQUENT'
+        additionalData3DS: 
+          serviceProvider: 'CARDINAL'
+          channel: 'BROWSER'
+        customer:
+          email: 'customer@somedomain.com'
+          phone:
+            - countryCode: '1'
+              phoneNumber: '123-123-1234'
+              type: 'MOBILE'
+            - countryCode: '1'
+              phoneNumber: '498-123-1234'
+              type: 'WORK'
+        transactionDetails: 
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+          deviceFingerprint: 
+            - dataStatic: 
+                javaScriptEnabled: true
+                javaEnabled: true
+                accepts: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+                locale: 'en-US'
+                colorDepth: 32
+                screenHeight: 1024
+                screenWidth: 789
+                timezoneOffset: -60
+                userAgent: 'Mozilla/5.0'                
+              dataDynamic: 
+                ipAddress: '172.27.37.221'
+        transactionInteraction:
+          dataEntrySource: 'BROWSER_PC'
+        shippingAddress: 
+          shippingMethod: 'SHIP_TO_CARDHOLDER'
+          shippingTimeframe: 'SAME_DAY'
+          shipToEmail: 'customer@domain.com'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+        orderData: 
+          goodsSoldCode: 'PHYSICAL_GOODS'
+          reOrder: false
+          preOrder: true
+          preOrderDate: '2020-11-20'
+          giftcardCount: 2
+          giftCardAmount: 
+            total: 12.04
+            currency: 'USD'
+    
+    PaymentCardAuthenticationResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'AUTHENTICATE'
+          transactionState: 'AUTHENTICATED'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          approvalCode: 'OK5882'
+          processor: 'CARDINAL'
+          responseCode: '000000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          serviceProviderTransactionId: '764a086f-ad30-4313-b90d-d6dc1929c0d6'
+          acsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+          dsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a33132'
+          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
+          authenticationStatus: 'A'
+          statusReason: 'Approved'
+          serverTransactionId: '8561c0ef-931a-474f-bfee-55ebds7s6s'
+          challengeIndicator: false
+          mpiData:
+            cavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            xid: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+            eci: '05'
+            tavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+          versionData: 
+            recommendedVersion: '2.2.0'           
+    
+    PaymentCardAuthenticationChallengeResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'AUTHENTICATE'
+          transactionState: 'WAITING'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        processorResponseDetails:
+          approvalStatus: 'WAITING'
+          approvalCode: 'OK5882'
+          processor: 'CARDINAL'
+          responseCode: '364'
+          responseMessage: '3-D Secure: Challenged'
+          hostResponseCode: '01'
+          hostResponseMessage: 'Challenged'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          serviceProviderTransactionId: '764a086f-ad30-4313-b90d-d6dc1929c0d6'
+          acsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+          dsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a33132'
+          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
+          authenticationStatus: 'C'
+          statusReason: 'Challenged'
+          serverTransactionId: '8561c0ef-931a-474f-bfee-55ebds7s6s'
+          challengeIndicator: true
+          mpiData:
+            xid: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+            eci: '05'
+          versionData: 
+            recommendedVersion: '2.2.0'   
+            
+    PaymentSessionAuthenticationRequest: 
+      value:
+        amount: 
+          total: '12.04'
+          currency: 'USD'
+        source:
+          sourceType: 'PaymentSession'
+          sessionId: 'df8c33d2-af27-4a3a-b7a0-61d4edf09cad'
+        billingAddress: 
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+          phone: 
+            countryCode: '1'
+            phoneNumber: '123-123-1234'
+        storedCredentials: 
+          initiator: 'CARD_HOLDER'
+          sequence: 'SUBSEQUENT'
+        additionalData3DS: 
+          serviceProvider: 'CARDINAL'
+          channel: 'BROWSER'
+        customer:
+          email: 'customer@somedomain.com'
+          phone:
+            - countryCode: '1'
+              phoneNumber: '123-123-1234'
+              type: 'MOBILE'
+            - countryCode: '1'
+              phoneNumber: '498-123-1234'
+              type: 'WORK'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+          deviceFingerprint: 
+            - dataStatic: 
+                javaScriptEnabled: true
+                javaEnabled: true
+                accepts: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+                locale: 'en-US'
+                colorDepth: 32
+                screenHeight: 1024
+                screenWidth: 789
+                timezoneOffset: -60
+                userAgent: 'Mozilla/5.0'                
+              dataDynamic: 
+                ipAddress: '172.27.37.221'
+        transactionInteraction:
+          dataEntrySource: 'BROWSER_PC'
+        shippingAddress: 
+          shippingMethod: 'SHIP_TO_CARDHOLDER'
+          shippingTimeframe: 'SAME_DAY'
+          shipToEmail: 'customer@domain.com'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+        orderData: 
+          goodsSoldCode: 'PHYSICAL_GOODS'
+          reOrder: false
+          preOrder: true
+          preOrderDate: '2020-11-20'
+          giftcardCount: 2
+          giftCardAmount: 
+            total: 12.04
+            currency: 'USD'
+          
+    PaymentSessionAuthenticationResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'AUTHENTICATE'
+          transactionState: 'AUTHENTICATED'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentSession'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          approvalCode: 'OK5882'
+          processor: 'CARDINAL'
+          responseCode: '000000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          serviceProviderTransactionId: '764a086f-ad30-4313-b90d-d6dc1929c0d6'
+          acsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+          dsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a33132'
+          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
+          authenticationStatus: 'A'
+          statusReason: 'Approved'
+          serverTransactionId: '8561c0ef-931a-474f-bfee-55ebds7s6s'
+          challengeIndicator: false
+          mpiData:
+            cavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            xid: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+            eci: '05'
+            tavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+          versionData: 
+            recommendedVersion: '2.2.0'            
+            
+    PaymentTokenAuthenticationRequest: 
+      value:
+        amount: 
+          total: '12.04'
+          currency: 'USD'
+        source:
+          sourceType: 'PaymentToken'
+          tokenData: '1234560000000019'
+          tokenSource: 'TRANSARMOR'
+          card:
+            expirationMonth: '10'
+            expirationYear: '30'
+        billingAddress: 
+          firstName: 'Jane'
+          lastName: 'Smith'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+          phone: 
+            countryCode: '1'
+            phoneNumber: '123-123-1234'
+        storedCredentials: 
+          initiator: 'CARD_HOLDER'
+          sequence: 'SUBSEQUENT'
+        additionalData3DS: 
+          serviceProvider: 'CARDINAL'
+          channel: 'BROWSER'
+        customer:
+          email: 'customer@somedomain.com'
+          phone:
+            - countryCode: '1'
+              phoneNumber: '123-123-1234'
+              type: 'MOBILE'
+            - countryCode: '1'
+              phoneNumber: '498-123-1234'
+              type: 'WORK'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+          deviceFingerprint: 
+            - dataStatic: 
+                javaScriptEnabled: true
+                javaEnabled: true
+                accepts: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+                locale: 'en-US'
+                colorDepth: 32
+                screenHeight: 1024
+                screenWidth: 789
+                timezoneOffset: -60
+                userAgent: 'Mozilla/5.0'                
+              dataDynamic: 
+                ipAddress: '172.27.37.221'
+        transactionInteraction:
+          dataEntrySource: 'BROWSER_PC'
+        shippingAddress: 
+          shippingMethod: 'SHIP_TO_CARDHOLDER'
+          shippingTimeframe: 'SAME_DAY'
+          shipToEmail: 'customer@domain.com'
+          address:
+            street: 'Main Street'
+            houseNumberOrName: '123'
+            city: 'Sandy Springs'
+            recipientNameOrAddress: 'ATTN: Accounting Dept'
+            stateOrProvince: 'GA'
+            postalCode: '30303'
+            country: 'US'
+        orderData: 
+          goodsSoldCode: 'PHYSICAL_GOODS'
+          reOrder: false
+          preOrder: true
+          preOrderDate: '2020-11-20'
+          giftcardCount: 2
+          giftCardAmount: 
+            total: 12.04
+            currency: 'USD'
+          
+    PaymentTokenAuthenticationResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'AUTHENTICATE'
+          transactionState: 'AUTHENTICATED'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentToken'
+          tokenSource: 'TRANSARMOR'
+          tokenData: '8519371934460009'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          approvalCode: 'OK5882'
+          processor: 'CARDINAL'
+          responseCode: '000000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          serviceProviderTransactionId: '764a086f-ad30-4313-b90d-d6dc1929c0d6'
+          acsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+          dsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a33132'
+          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
+          authenticationStatus: 'A'
+          statusReason: 'Approved'
+          serverTransactionId: '8561c0ef-931a-474f-bfee-55ebds7s6s'
+          challengeIndicator: false
+          mpiData:
+            cavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            xid: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+            eci: '05'
+            tavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+          versionData: 
+            recommendedVersion: '2.2.0'            
+            
+    ThreeDSVerificationRequest: 
+      value: 
+        referenceTransactionDetails: 
+          referenceTransactionId: '123456789012e98re9fsf8aa8sa88a998'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    
+          
+    ThreeDSVerificationResponse: 
+      value:
+        gatewayResponse:
+          transactionType: 'AUTHENTICATE'
+          transactionState: 'AUTHENTICATED'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          approvalCode: 'OK5882'
+          processor: 'CARDINAL'
+          responseCode: '000000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        transactionDetails:
+          merchantInvoiceNumber: '123456789012'
+          merchantTransactionId: '65757575675765'
+          merchantOrderId: '9458498544433'
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          serviceProviderTransactionId: '764a086f-ad30-4313-b90d-d6dc1929c0d6'
+          acsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a331b1'
+          dsTransactionId: '8561c0ef-931a-474f-bfee-55eb98a33132'
+          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
+          authenticationStatus: 'A'
+          statusReason: 'Approved'
+          serverTransactionId: '8561c0ef-931a-474f-bfee-55ebds7s6s'
+          challengeIndicator: false
+          mpiData:
+            cavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            xid: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
+            eci: '05'
+            tavv: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+          versionData: 
+            recommendedVersion: '2.2.0'            
+    PaymentCard3DSAccountVerificationRequest:
+      value:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+            securityCodeIndicator: 'PROVIDED'
+        additionalData3DS:
+          serviceProviderTransactionId: W1dkIvUNzLYgRGLBVNp1
+          acsTransactionId: 46d071e5-2447-4980-a9ba-c8c55a99107a
+          dsTransactionId: 3150f884-0a17-4669-8c50-5d9b8bdae022
+          acsReferenceNumber: 8561c0ef-931a-474f-bfee-55eb98a3jds7
+          statusReason: Approved
+          serverTransactionId: f38e6948-5388-41a6-bca4-b49723c19440
+          verificationResponse: N
+          serviceProvider: CARDINAL
+          challengeStatus: Y
+          messageCategory: '1'
+          authenticationStatus: Y
+          mpiData:
+            cavv: 020360C31C002540AFAB9DFFA1F69D3000020000
+            xid: G2Q6OcsXq1k0pA0mMNHVH1P02Tw=
+            eci: '05'
+          versionData:
+            recommendedVersion: 2.1.0
+        transactionDetails:
+          captureFlag: true
+        transactionInteraction:
+          origin: ECOM
+          posEntryMode: MANUAL
+          posConditionCode: CARD_NOT_PRESENT_ECOM
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100004000100116'
+
+    PaymentCard3DSAccountVerificationResponse:
+      value:
+        gatewayResponse:
+          transactionType: VERIFICATION
+          transactionState: VERIFIED
+          transactionOrigin: ECOM
+          transactionProcessingDetails:
+            orderId: CHG01c7913934283fa81ee89fbc99bad258e1
+            transactionTimestamp: '2023-09-22T15:32:06.555245946Z'
+            apiTraceId: 57fe8b2962dd4ed98e2cbaebbd084f72
+            clientRequestId: '3780523'
+            transactionId: 57fe8b2962dd4ed98e2cbaebbd084f72
+        processorResponseDetails:
+          approvalStatus: APPROVED
+          approvalCode: OK419C
+          referenceNumber: baebbd084f72
+          networkInternationalId: '0001'
+          responseCode: '000'
+          responseMessage: Approved
+          hostResponseCode: '00'
+          hostResponseMessage: APPROVAL
+          bankAssociationDetails:
+            associationResponseCode: V000
+            avsSecurityCodeResponse:
+              streetMatch: NONE
+              postalCodeMatch: NONE
+              securityCodeMatch: NOT_CHECKED
+              association:
+                securityCodeResponse: X
+          additionalInfo:
+            - name: COUNTRY_CODE
+              value: USA
+            - name: CARD_PRODUCT_ID
+              value: H
+            - name: DETAILED_PRODUCT_ID
+              value: C
+            - name: HOST_RAW_PROCESSOR_RESPONSE
+              value: ARAyIAGADoAAAgAAAAAAAAAAAAkiFTIGAAA5AAFRYmFlYmJkMDg0ZjcyT0s0MTlDMDAwMTY1MDk3MQIEAEgxNE4wMTMyNjU3MDkzNzgxODNJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlYAAM2NTEABlZJQ1JDIAAxU1AwNzAxNjg0MDg3Mjc4OTU4MDAwMjYxMDAwMzAwMgAxU0RUQzAxNTYwMTEwMDAwMDAwMDAwMEFSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW
+        source:
+          sourceType: PaymentCard
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+            bin: '401200'
+            last4: '0026'
+            scheme: VISA
+        paymentTokens:
+          - tokenData: '8408727895800026'
+            tokenSource: TRANSARMOR
+            tokenResponseCode: '000'
+            tokenResponseDescription: SUCCESS
