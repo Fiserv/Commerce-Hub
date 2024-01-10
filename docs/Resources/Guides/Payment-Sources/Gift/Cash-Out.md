@@ -91,12 +91,14 @@ The below table identifies the `balances` parameters in the `paymentReceipt` obj
 | `endingBalance` | _number_ | 16,3 | Account ending balance
 | `currency` | _string_ | 17 | ISO 3 Currency Format |
 
+<!-- type: tab-end -->
+
 ---
 
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/gift-cards`
+> **POST** `/payments-vas/v1/accounts/gift-cards`
 
 ---
 
@@ -178,7 +180,7 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "677704",
       "processor": "FISERV",
-      "host": "VALUELINK",
+      "host": "GIFT_SOLUTIONS",
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "00",
@@ -206,4 +208,5 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
-  
+
+---
