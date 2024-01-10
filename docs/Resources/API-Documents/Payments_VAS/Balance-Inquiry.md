@@ -4,13 +4,13 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, EBT, Balance Inquiry]
 
 # Balance Inquiry
 
-Balance inquiry is used to retrieve the current balance of any [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) or Electronic Benefits Transfer _(EBT)_ card.
+Balance inquiry is used to retrieve the current balance of any [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md).
+
+<!--- or Electronic Benefits Transfer _(EBT)_ card. --->
 
 ---
 
 ## Request Variables
-
-Description
 
 <!--
 type: tab
@@ -22,6 +22,13 @@ The below table identifies the parameters in the `source` object.
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
 | `sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported is _PaymentCard_ |
+
+The below table identifies the conditional parameters in `card` object.
+
+|Variable | Type | Maximum Length | Description|
+|---------|----------|----------------|---------|
+| `category`| _string_ | 25 | Defines the card type as GIFT |
+| `subCategory`| _string_ | 25 | Identifies the card provider |
 
 <!--
 type: tab
