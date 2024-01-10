@@ -24,21 +24,21 @@ titles: customFields, JSON Example
 The below table identifies the key value pairs to indentify the required `customFields` in the `additionalDataCommon` object.
 
 <!-- theme: info -->
-> Values are merchant specfic, please contact account representative for details.
+> Values are merchant specfic, please contact your account representative for more details.
 
 | Key | Description |
 | -------- | -------- |
 | Request_Date_Time_GMT | GMT timestamp set when output message is created for send to vendor |
 | Request_Date_Time_Local | Local timestamp set when output message is created for send to vendor |
-| Requestor_Channel_Code | STORE |
-| Requestor_Organization_Code | MERCHANT |
+| Requestor_Channel_Code | Channel code the identifies the store |
+| Requestor_Organization_Code | Organization code that identifies the merchant |
 | Requestor_User_ID | Name of the comm server sending the message |
 | Requestor_POS_Event_Code | The type of transaction being requested |
 | Requestor_Location_State_Code | State Code from POS request  |
-| Retailer_Channel | STORE |
-| Consumer_Decision | ACCEPT |
-| Terms_Verified | Y |
-| Lookup_Strategy | DETERMINISTIC |
+| Retailer_Channel | Retail origination type i.e. STORE |
+| Consumer_Decision | Identifies if the customer ACCEPTS the terms |
+| Terms_Verified | Identifies if the terms were verified |
+| Lookup_Strategy | Defines the DETERMINISTIC lookup with ChargeAfter |
 | Sales_Doc_ID | Invoice or sales order document number |
 
 <!--
@@ -72,7 +72,7 @@ type: tab
       },
       {
         "key": "Requestor_POS_Event_Code",
-        "value": "Sale"
+        "value": "SALE"
       },
       {
         "key": "Requestor_Location_State_Code",
@@ -164,7 +164,7 @@ Example of a charge payload request using a ChargeAfter PLCC
       },
       {
         "key": " Requestor_Organization_Code",
-        "value": "My Business"
+        "value": "BUSINESS"
       },
       {
         "key": "Requestor_User_ID",
@@ -172,7 +172,7 @@ Example of a charge payload request using a ChargeAfter PLCC
       },
       {
         "key": "Requestor_POS_Event_Code",
-        "value": "Sale"
+        "value": "SALE"
       },
       {
         "key": "Requestor_Location_State_Code",
@@ -287,7 +287,7 @@ Example of a charge (201: Created) response
       },
       {
         "key": " Requestor_Organization_Code",
-        "value": "MY BUSINESS"
+        "value": "BUSINESS"
       },
       {
         "key": "Requestor_User_ID",

@@ -135,6 +135,8 @@
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
     - title: Level 2/3 Purchase Cards
       link: docs/Resources/Guides/Level23/Level23.md
+    - title: Payment Facilitator
+      link: docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
     - title: Response Handling
