@@ -45,8 +45,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|-----|
-|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -63,7 +63,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 <!--
 type: tab
-titles: target, balance
+titles: target, balances
 -->
 
 The below table identifies the parameters in the `target` object.
@@ -76,7 +76,7 @@ The below table identifies the parameters in the `target` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `balances` array.
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
