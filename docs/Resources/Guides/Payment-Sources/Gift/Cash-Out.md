@@ -80,10 +80,10 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 <!--
 type: tab
-titles: paymentReceipt
+titles: balances
 -->
 
-The below table identifies the `balances` parameters in the `paymentReceipt` object.
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
