@@ -25,7 +25,11 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.6: Refactored [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md) models to support `paymentAmountType` as part of the for Mastercard recurring bill payment mandate | Feature |
+| Support [Gift Solutions (Gift Card)](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) operations, balance inquiry and transactions | Feature |
+| Support [Payment Facilitators](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) | Feature |
+| Support [Level II/III](?path=docs/Resources/Guides/Level23/Level23.md) enhanced data | Feature |
+| Support [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md) Private Label Credit Cards |
+| Version 1.6: Refactored [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md) models to support `paymentAmountType` as part of the for Mastercard recurring bill payment mandate | Update |
 
 ---
 
