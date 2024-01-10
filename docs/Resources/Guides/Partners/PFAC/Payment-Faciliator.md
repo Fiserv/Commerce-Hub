@@ -16,19 +16,19 @@ Commerce hub supports the following PFAC models
 
 <!-- type: card
 title: Multi-MID
-description: Submit an Activation Request for a Stored Value Card. The request can be for a Virtual Gift Card or Physical gift card. Merchant funded.
+description: Payment Faciliator who processes using the merchant's processing MIDs for transactions and funding.
 link: ?path=docs/Resources/Guides/Partners/PFAC/PFAC-Multi.md
 -->
 
 <!-- type: card
 title: Single MID
-description: Citibank offers multiple banking services which includes providing of private label and co branded credit cards for retailers.
+description: Payment Facilitator who processes using their MID for transactions and handles funding to the merchant seperately.
 link: ?path=docs/Resources/Guides/Partners/PFAC/PFAC-Single.md
 -->
 
 <!-- type: card
 title: Split Settlement
-description: ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
+description: Split settlement transaction defines how a transaction should be distributed between proccessing and non-processing MIDs.
 link: ?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md
 -->
 
