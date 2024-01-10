@@ -167,9 +167,12 @@ type: tab
 
 ```
 
+<!-- type: tab-end -->
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Gift Solution](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
   
+---
