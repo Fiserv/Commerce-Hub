@@ -205,8 +205,9 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/refunds)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
+- [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
+- [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
 
 ---
