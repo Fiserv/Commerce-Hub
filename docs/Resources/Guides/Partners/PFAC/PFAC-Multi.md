@@ -60,20 +60,6 @@ Example of a PFAC Multi-MID charges payload request.
   "merchantDetails": {
     "merchantId": "100004SUBPFACM1",
     "terminalId": "10000001"
-  },
-  "dynamicDescriptors": {
-    "mcc": "5204",
-    "merchantName": "Nike",
-    "customerServiceNumber": "4448889999",
-    "serviceEntitlement": "4040404040",
-    "customerServiceEmail": "Nike.com",
-    "address": {
-      "street": "2900 Parkway",
-      "city": "Alpharetta",
-      "stateOrProvince": "GA",
-      "postalCode": "30004",
-      "country": "US"
-    }
   }
 }
 
@@ -147,28 +133,14 @@ Example of a PFAC Multi-MID charges (201: Created) response.
     "terminalId": "10000001",
     "merchantId": "100004SUBPFACM1"
   },
-  "dynamicDescriptors": {
-    "mcc": "5204",
-    "merchantName": "Nike",
-    "customerServiceNumber": "4448889999",
-    "serviceEntitlement": "4040404040",
-    "customerServiceEmail": "Nike.com",
-    "address": {
-      "street": "2900 Parkway",
-      "city": "Alpharetta",
-      "stateOrProvince": "GA",
-      "postalCode": "30004",
-      "country": "US"
+  "networkDetails": {
+    "network": {
+      "network": "Visa"
     },
-    "networkDetails": {
-      "network": {
-        "network": "Visa"
-      },
-      "networkResponseCode": "00",
-      "cardLevelResultCode": "C",
-      "validationCode": "IV  ",
-      "transactionIdentifier": "013299935218843"
-    }
+    "networkResponseCode": "00",
+    "cardLevelResultCode": "C",
+    "validationCode": "IV  ",
+    "transactionIdentifier": "013299935218843"
   }
 }
 
