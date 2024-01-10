@@ -37,7 +37,7 @@ type: tab
 
 The below table identifies the parameters in the `amount` object.
 
-<-- !theme: info -->
+<!-- theme: info -->
 > If the card is non-denominated the `amount` object is required.
 
 |Variable | Type | Maximum Length | Description|
