@@ -4,13 +4,11 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Cash-Out]
 
 # Gift Card Cash-Out
 
-A cash-out request allows a merchant to remove the consumer funds from the gift card. A cash-out is initiated by sending the `target` and `additionalDataCommon` object in the request with relevant transaction types.
+A cash-out request allows a merchant to remove the customer's funds from a gift card. A cash-out is initiated by sending the `target` and `operationType`: *CASH_OUT* in `transactionDetails` as part of the request.
 
 ---
 
 ## Request Variables
-
-Description
 
 <!--
 type: tab
@@ -58,8 +56,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction |
+| `terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
 
 <!--
 type: tab
@@ -80,10 +78,10 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 <!--
 type: tab
-titles: paymentReceipt
+titles: balances
 -->
 
-The below table identifies the `balances` parameters in the `paymentReceipt` object.
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -91,12 +89,14 @@ The below table identifies the `balances` parameters in the `paymentReceipt` obj
 | `endingBalance` | _number_ | 16,3 | Account ending balance
 | `currency` | _string_ | 17 | ISO 3 Currency Format |
 
+<!-- type: tab-end -->
+
 ---
 
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/gift-cards`
+> **POST** `/payments-vas/v1/accounts/gift-cards`
 
 ---
 
@@ -107,7 +107,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of payload request
+Example of a gift card cash-out payload request.
 
 ```json
 {
@@ -147,7 +147,7 @@ titles: Request, Response
 type: tab
 -->
 
-#### Example of payload response
+Example of a gift card cash-out (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -178,7 +178,7 @@ type: tab
       "approvalStatus": "APPROVED",
       "approvalCode": "677704",
       "processor": "FISERV",
-      "host": "VALUELINK",
+      "host": "GIFT_SOLUTIONS",
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "00",
@@ -203,7 +203,9 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/refunds)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
-  
+- [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
+- [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
+
+---

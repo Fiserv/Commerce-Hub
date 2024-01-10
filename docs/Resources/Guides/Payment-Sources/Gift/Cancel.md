@@ -1,16 +1,14 @@
 ---
-tags: [Cancel, Void, Payments, API Reference]
+tags: [Gift Card, Payment Card, Payment Source, Loyalty, Cancel, Void]
 ---
 
 # Gift Card Cancels
 
-When a merchant needs to reverse *(void)* a prior [gift card request](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) *(activation, cash out, reload)*, a cancel operation needs to be sent to the gift cards endpoint.
+When a merchant needs to reverse *(void)* a prior [gift card request](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) *(activation, cash out, reload)*, a cancel operation needs to be sent to the gift cards endpoint. A cancel is initiated by sending the `referenceTransactionDetails` and `operationType`: *CANCEL* in `transactionDetails` as part of the request.
 
 ---
 
 ## Request Variables
-
-A cancel request is initiated by sending the `referenceTransactionDetails` in the payload along with `operationType`
 
 <!--
 type: tab
@@ -43,10 +41,10 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|-----|
-|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction |
+| `terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
 
 <!-- type: tab-end -->
 
@@ -63,7 +61,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 <!--
 type: tab
-titles: target, balance
+titles: target, balances
 -->
 
 The below table identifies the parameters in the `target` object.
@@ -76,7 +74,7 @@ The below table identifies the parameters in the `target` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `balances` array.
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -187,9 +185,9 @@ Example of a gift card cancel (201: Created) response.
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
-- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
-- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
   
 ---

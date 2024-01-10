@@ -4,7 +4,9 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Reload]
 
 # Gift Card Reload
 
-A Reload transaction allows a merchant to add value to an already activated account in Commerce Hub. A Reload is initiated by sending the `amount`, `target` and `additionalDataCommon` object in the Request with relevant transaction types.
+A reload request allows a funds to be added to an activated gift card account. A reload is initiated by sending an `amount`, `target` and `operationType`: *RELAOD* in `transactionDetails` as part of the request.
+
+---
 
 ## Request Variables
 
@@ -47,8 +49,6 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `merchantTransactionID` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
-| `merchantOrderID`| *string* | 128 | Merchant order ID (aka customer reference number or purchase order (PO) number).
 | `operationType` | *string* | 50 | Identifies the tranaction type as RELOAD value |
 
 <!--
@@ -59,7 +59,7 @@ The below table identifies the required parameters in the `transactionInteractio
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ' |
+| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
 <!--
 type: tab
@@ -69,8 +69,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction |
+|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
 
 <!--
 type: tab
@@ -81,7 +81,26 @@ The below table identifies the required parameters in the `additionalDataCommon`
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
-| `transactionPosDate` | *string* | 16 | 'Used to override a transaction post date in reporting. |
+| `transactionPosDate` | *string* | 16 | Used to override a transaction post date in reporting |
+
+<!-- type: tab-end -->
+
+---
+
+## Response Variables
+
+<!--
+type: tab
+titles: balances
+-->
+
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
+
+| Variable | Data Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `beginningBalance` | _number_ | 16,3 | Account beginning balance |
+| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `currency` | _string_ | 17 | ISO 3 Currency Format |
 
 <!-- type: tab-end -->
 
@@ -90,7 +109,7 @@ The below table identifies the required parameters in the `additionalDataCommon`
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/gift-cards`
+> **POST** `/payments-vas/v1/accounts/gift-cards`
 
 ---
 
@@ -101,7 +120,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of payload request
+Example of a gift card reload payload request.
 
 ```json
 {
@@ -146,7 +165,7 @@ titles: Request, Response
 type: tab
 -->
 
-#### Example of payload response
+Example of a gift card reload (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -166,13 +185,6 @@ type: tab
     }
   },
   "paymentReceipt": {
-    "balances": [
-      {
-        "beginningBalance": 10,
-        "endingBalance": 20,
-        "currency": "USD"
-      }
-    ],
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
       "approvalCode": "771052",
@@ -183,12 +195,18 @@ type: tab
       "hostResponseCode": "00",
       "hostResponseMessage": "Completed OK",
       "localTimestamp": "2023-07-06T06:30:34Z"
-    }
+    },
+    "balances": [
+      {
+        "beginningBalance": 10,
+        "endingBalance": 20,
+        "currency": "USD"
+      }
+    ]
   },
   "target": {
     "sourceType": "PaymentCard",
     "card": {
-      "cardData": "8900000005675979",
       "expirationMonth": "01",
       "expirationYear": "3025",
       "category": "GIFT",
@@ -204,6 +222,9 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/refunds)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
+- [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
+- [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
+
+---
