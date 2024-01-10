@@ -22,7 +22,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 | --------- | ---------- | -------- | ----- |
-| `merchantId` | *string* | 40 | A unique ID used to identify the payment facilitator. The payment facilitator must use the value assigned by the acquirer or the gateway when submitting a transaction |
+| `merchantId` | *string* | 40 | A unique ID used to identify the PayFac. The PayFac must use the value assigned by the acquirer or the gateway when submitting a transaction |
 | `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
 
 <!--
