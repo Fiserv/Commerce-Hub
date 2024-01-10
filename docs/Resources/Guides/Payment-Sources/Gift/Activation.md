@@ -37,10 +37,13 @@ type: tab
 
 The below table identifies the parameters in the `amount` object.
 
+<!-- theme: info -->
+> If the card is non-denominated the `amount` object is required.
+
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | _number_ | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Maste`r-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `total` | _number_ | 12 | Total amount to load onto the gift card  |
+| `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 <!--
 type: tab
@@ -96,21 +99,14 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 ---
 
-## Endpoint
-
-<!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/gift-cards`
-
----
-
 ## Response Variables
 
 <!--
 type: tab
-titles: paymentReceipt, target
+titles: balances, target
 -->
 
-The below table identifies the `balances` parameters in the `paymentReceipt` object.
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -143,11 +139,21 @@ The below table identifies the parameters in `card` object.
 
 <!-- type: tab-end -->
 
+
+---
+
+## Endpoint
+
+<!-- theme: success -->
+> **POST** `/payments-vas/v1/accounts/gift-cards`
+
 ---
 
 ## Digital Gift Card
 
-A digital gift card transaction creates and activates a new gift card and returns the necessary information to use the account. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
+A digital gift card transaction creates and activates a new gift card and returns the necessary information in the `target` response to use the account.
+
+---
 
 ### Payload Example
 
@@ -156,7 +162,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a digital gift card activation payload request
+Example of a digital gift card activation payload request.
 
 ```json
 {
@@ -191,7 +197,7 @@ Example of a digital gift card activation payload request
 type: tab
 -->
 
-Example of payload response
+Example of a digital gift card activation (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -235,7 +241,7 @@ Example of payload response
       "hostResponseCode": "00",
       "hostResponseMessage": "Completed OK"
     },
-    "balance": [
+    "balances": [
       {
         "beginingBalance": 16.00,
         "endingBalance": 16.00,
@@ -252,7 +258,9 @@ Example of payload response
 
 ## Physical Gift Card
 
-A physical gift card transaction activates a physical gift card. The card number must be provided in the request. If the card is non-denominated, the amount is required. If the card is denominated the amount field is optional.
+A physical gift card transaction activates a physical gift card, the `target` [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) must be provided in the request.
+
+---
 
 ### Payload Example
 
@@ -261,7 +269,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a physical gift card activation payload request
+Example of a physical gift card activation payload request.
 
 ```json
 {
@@ -272,7 +280,6 @@ Example of a physical gift card activation payload request
   "target": {
     "sourceType": "PaymentCard",
     "card": {
-      "cardData": "6161563015224583",
       "expirationMonth": "01",
       "expirationYear": "3025",
       "category": "GIFT",
@@ -299,7 +306,7 @@ Example of a physical gift card activation payload request
 type: tab
 -->
 
-Example of payload response
+Example of a physical gift card activation (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -359,8 +366,9 @@ Example of payload response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/refunds)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
 
 ---
