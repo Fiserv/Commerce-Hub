@@ -2,7 +2,7 @@
 tags: [Payment Faciliator]
 ---
 
-# Payment Faciliator Multi MID
+# Payment Faciliator Multi-MID
 
 Add Description
 
