@@ -4,7 +4,9 @@ tags: [Gift Card, Loyalty, Redemption, Payments]
 
 # Redemption
 
-Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location. When redeeming a gift card use the [payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) for charges, refunds and cancels along with the conditional request variables.
+Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location. When redeeming a gift card use the [payment request APIs](?path=docs/Resources/API-Documents/Payments/Payments.md) for charges, refunds and cancels along with the conditional request variables below.
+
+---
 
 ## Request Variables
 
@@ -17,8 +19,8 @@ The below table identifies the required parameters in the `card` object has part
 
 |Variable | Type | Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `category`| _string_ | 25 | Defines the card type as GIFT |
-| `subCategory`| _string_ | 25 | Identifies the gift card provider. _**Valid Values:** GIFT_SOLUTIONS_ |
+| `category` | _string_ | 25 | Defines the card type as GIFT |
+| `subCategory` | _string_ | 25 | Identifies the gift card provider. _**Valid Values:** GIFT_SOLUTIONS_ |
 
 <!--
 type: tab
@@ -38,8 +40,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!--
 type: tab
