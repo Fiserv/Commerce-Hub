@@ -1,5 +1,5 @@
 ---
-tags: [Cancel, Void, Payments, API Reference]
+tags: [Gift Card, Payment Card, Payment Source, Loyalty, Cancel, Void]
 ---
 
 # Gift Card Cancels
@@ -187,9 +187,9 @@ Example of a gift card cancel (201: Created) response.
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
-- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
-- [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
   
 ---
