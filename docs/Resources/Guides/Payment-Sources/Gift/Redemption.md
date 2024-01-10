@@ -190,6 +190,8 @@ Example of a charge (201: Created) response.
 
 <!-- type: tab-end -->
 
+---
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
