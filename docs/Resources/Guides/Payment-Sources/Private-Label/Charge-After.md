@@ -28,18 +28,18 @@ The below table identifies the key value pairs to indentify the required `custom
 
 | Key | Description |
 | -------- | -------- |
-| Request_Date_Time_GMT | 2023-09-20T05:33:05Z |
-| Request_Date_Time_Local | 2023-09-20T05:33:05Z |
+| Request_Date_Time_GMT | GMT timestamp set when output message is created for send to vendor |
+| Request_Date_Time_Local | Local timestamp set when output message is created for send to vendor |
 | Requestor_Channel_Code | STORE |
-| Requestor_Organization_Code | HOME DEPOT |
-| Requestor_User_ID | NCLCP |
-| Requestor_POS_Event_Code | Sale |
-| Requestor_Location_State_Code | TX |
+| Requestor_Organization_Code | MERCHANT |
+| Requestor_User_ID | Name of the comm server sending the message |
+| Requestor_POS_Event_Code | The type of transaction being requested |
+| Requestor_Location_State_Code | State Code from POS request  |
 | Retailer_Channel | STORE |
 | Consumer_Decision | ACCEPT |
 | Terms_Verified | Y |
 | Lookup_Strategy | DETERMINISTIC |
-| Sales_Doc_ID | 12443-605 |
+| Sales_Doc_ID | Invoice or sales order document number |
 
 <!--
 type: tab
