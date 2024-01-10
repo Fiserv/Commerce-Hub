@@ -89,7 +89,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request.
+Example of a charges payload request.
 
 ```json
 {
@@ -131,7 +131,7 @@ Example of a charge payload request.
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+Example of a charges (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
