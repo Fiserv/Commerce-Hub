@@ -1,16 +1,17 @@
 ---
-tags: [Payment Faciliator]
+tags: [Payment Faciliator, Partners]
 ---
 
 # Payment Faciliator Multi-MID
 
-Add Description
+In a multi-MID payment facilitator (PFAC) modelm the PFAC and sum-merchant's are assigned their own `merchantId` by Commerce Hub. The PFAC will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PFAC to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
 
 ---
 
 ## Request Variables
 
-The following variables are also required when submitting a capture request.
+<!-- theme: info -->
+> The following variables are also required when submitting a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) request.
 
 <!--
 type: tab
@@ -19,10 +20,10 @@ titles: merchantDetails, dynamicDescriptor
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required|  Description |
-| --------- | ---------- | -------- | --------- | ----- |
-| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Description |
+| --------- | ---------- | -------- | ----- |
+| `merchantId` | *string* | 40 | A unique ID used to identify the merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -153,7 +154,9 @@ Example of a PFAC Multi-MID charges (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Payment Faciliator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Split-Settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md)
 
 ---
