@@ -1,5 +1,5 @@
 ---
-tags: [Gift Card, Payment Card, Payment Source, Loyalty, Activation]
+tags: [Gift Card, Loyalty, Redemption, Payments]
 ---
 
 # Redemption
@@ -61,7 +61,33 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 ---
 
+## Response Variables
+
+<!--
+type: tab
+titles: balances
+-->
+
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
+
+| Variable | Data Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `beginningBalance` | _number_ | 16,3 | Account beginning balance |
+| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `currency` | _string_ | 17 | ISO 3 Currency Format |
+
+<!-- type: tab-end -->
+
+---
+
 ## Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+Example of a charge payload request.
 
 ```json
 {
@@ -98,16 +124,12 @@ The below table identifies the conditional parameters in the `additionalData` ob
   }
 }
 ```
-<!-- 
-type: tab-end -->
-
----
 
 <!--
 type: tab
 -->
 
-### Example of payload response
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -129,7 +151,6 @@ type: tab
   "source": {
     "sourceType": "PaymentCard",
     "card": {
-      "cardData": "9998955500000000190",
       "expirationMonth": "02",
       "expirationYear": "2035",
       "bin": "999895",
