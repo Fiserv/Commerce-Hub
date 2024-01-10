@@ -140,7 +140,6 @@ Example of a gift card cash-out payload request.
     }
   }
 }
-
 ```
 
 <!--
