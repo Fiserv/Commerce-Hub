@@ -4,7 +4,7 @@ tags: [Payment Faciliator, Settlement]
 
 # Payment Faciliator Split Settlement
 
-Split settlement transaction defines how a transaction should be distributed between proccessing and non-processing MIDs to take Revenue, Fees, Reserves, and Hold amounts.
+Split settlement allows a payment facilitator *(PayFac)* to define how a transaction should be distributed between proccessing and non-processing MIDs to deposit revenue, fees, reserves, and hold amounts.
 
 ---
 
@@ -21,7 +21,7 @@ The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ |-------------- |
-| `total` | *number* | 18,3  | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `total` | *number* | 18,3  | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 <!--
@@ -32,9 +32,17 @@ The below table identifies the required parameters in the `splitSettlement` obje
 
 | Variable | Data Type| Maximum Length | Description |
 | -------- | -- | ------------ |-------------- |
-| `merchantID` | *string* | 1024 | The merchant ID for each merchant account involved in split settlement. |
-| `subTotal` | *number* | 16,3 | The subtotal for each merchant account involved in split settlement. |
-| `accountDetails` | *array* | N/A | Important detailes of an account in split settlement. |
+| `merchantID` | *string* | 1024 | The merchant ID for each merchant account involved in split settlement |
+| `subTotal` | *number* | 16,3 | The subtotal for each merchant account involved in split settlement |
+| `accountDetails` | *array* | N/A | Important details of an account in split settlement |
+
+The below table identifies the required parameters in the `accountDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+| -------- | -- | ------------ |-------------- |
+| `name` | *string* | 1024 | An account name for split settlement |
+| `type` | *string* | 1024 | Type of split settlement account; REVENUE, FEES, RESERVES, or HOLD |
+| `amount` | *object* | N/A | Total amount to be distributed to the specific account |
 
 <!--
 type: tab
@@ -44,8 +52,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 | -------- | -- | ------------ |-------------- |
-| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | *string* | 40 | A unique ID used to identify the merchant or PayFac based on setup. The PayFac must use the value assigned by the acquirer or the gateway when submitting a transaction |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
 
 <!-- type: tab-end -->
 
@@ -58,7 +66,7 @@ type: tab
 title: Request
 -->
 
-Example of a split settlement charges payload request
+Example of a split settlement charges payload request.
 
 ```json
 {
@@ -91,12 +99,11 @@ Example of a split settlement charges payload request
     "customerServiceEmail": "contact@mywebsite.com",
     "subMerchantId": "PFACMID3",
     "address": {
-         "street":"Main Street",
-         "houseNumberOrName":"123",
-         "city":"Atlanta",
-         "stateOrProvince":"GA",
-         "postalCode":"30303",
-         "country":"US"
+      "street": "123 Main Street",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30303",
+      "country": "US"
     }
   },
   "splitSettlement": [
@@ -138,7 +145,6 @@ Example of a split settlement charges payload request
     }
   ]
 }
-
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
@@ -192,98 +198,64 @@ Example of a split settlement charges (201: Created) response.
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "bankAssociationDetails": {
-        "associationResponseCode": "V000",
-        "avsSecurityCodeResponse": {
-          "streetMatch": "NONE",
-          "postalCodeMatch": "NONE",
-          "securityCodeMatch": "MATCHED",
-          "association": {
-            "securityCodeResponse": "M"
+      "hostResponseMessage": "APPROVAL"
+    },
+    "transactionDetails": {
+      "captureFlag": true,
+      "transactionCaptureType": "host",
+      "processingCode": "000000",
+      "transactionCutTimeStamp": "2023-10-27T12:00:00Z",
+      "retrievalReferenceNumber": "ba3baa55da67"
+    },
+    "splitSettlement": [
+      {
+        "merchantId": "222222",
+        "subTotal": 50,
+        "accountDetails": [
+          {
+            "name": "ABC Inc",
+            "type": "REVENUE_ACCOUNT",
+            "amount": {
+              "total": 35,
+              "currency": "USD"
+            }
+          },
+          {
+            "name": "ABC Inc",
+            "type": "FEE_ACCOUNT",
+            "amount": {
+              "total": 15,
+              "currency": "USD"
+            }
           }
-        }
+        ]
+      },
+      {
+        "merchantId": "1111111",
+        "subTotal": 30,
+        "accountDetails": [
+          {
+            "name": "ABC Inc",
+            "type": "RESERVE_ACCOUNT",
+            "amount": {
+              "total": 30,
+              "currency": "USD"
+            }
+          }
+        ]
       }
+    ],
+    "networkDetails": {
+      "network": {
+        "network": "Visa"
+      },
+      "networkResponseCode": "00",
+      "cardLevelResultCode": "C",
+      "validationCode": "IV  ",
+      "transactionIdentifier": "013299518886342"
     }
-  },
-  "transactionDetails": {
-    "captureFlag": true,
-    "transactionCaptureType": "host",
-    "processingCode": "000000",
-    "transactionCutTimeStamp": "2023-10-27T12:00:00Z",
-    "retrievalReferenceNumber": "ba3baa55da67"
-  },
-  "transactionInteraction": {
-    "posEntryMode": "MANUAL",
-    "posConditionCode": "CARD_NOT_PRESENT_ECOM",
-    "additionalPosInformation": {
-      "stan": "014437",
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "UNSPECIFIED"
-      }
-    },
-    "authorizationCharacteristicsIndicator": "N",
-    "hostPosEntryMode": "010",
-    "hostPosConditionCode": "59"
-  },
-  "splitSettlement": [
-    {
-      "merchantId": "222222",
-      "subTotal": 50,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "REVENUE_ACCOUNT",
-          "amount": {
-            "total": 35,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "FEE_ACCOUNT",
-          "amount": {
-            "total": 15,
-            "currency": "USD"
-          }
-        }
-      ]
-    },
-    {
-      "merchantId": "1111111",
-      "subTotal": 30,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "RESERVE_ACCOUNT",
-          "amount": {
-            "total": 30,
-            "currency": "USD"
-          }
-        }
-      ]
-    }
-  ],
-  "networkDetails": {
-    "network": {
-      "network": "Visa"
-    },
-    "networkResponseCode": "00",
-    "cardLevelResultCode": "C",
-    "validationCode": "IV  ",
-    "transactionIdentifier": "013299518886342"
-  },
-  "paymentTokens": [
-    {
-      "tokenData": "8408727895800026",
-      "tokenSource": "TRANSARMOR",
-      "tokenResponseCode": "000",
-      "tokenResponseDescription": "SUCCESS"
-    }
-  ]
+  }
 }
-
 ```
 
 <!-- type: tab-end -->
