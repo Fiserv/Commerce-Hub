@@ -107,10 +107,10 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 <!--
 type: tab
-titles: paymentReceipt, target
+titles: balances, target
 -->
 
-The below table identifies the `balances` parameters in the `paymentReceipt` object.
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -235,7 +235,7 @@ Example of payload response
       "hostResponseCode": "00",
       "hostResponseMessage": "Completed OK"
     },
-    "balance": [
+    "balances": [
       {
         "beginingBalance": 16.00,
         "endingBalance": 16.00,
