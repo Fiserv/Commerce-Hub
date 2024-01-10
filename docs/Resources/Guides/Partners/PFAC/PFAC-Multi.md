@@ -4,7 +4,7 @@ tags: [Payment Faciliator, Partners]
 
 # Payment Faciliator Multi-MID
 
-In a multi-MID payment facilitator (PFAC) modelm the PFAC and sum-merchant's are assigned their own `merchantId` by Commerce Hub. The PFAC will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PFAC to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
+In a multi-MID payment facilitator *(PayFac)* model the PayFac and sub-merchants are assigned their own `merchantId` by Commerce Hub. The PayFac will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PayFac to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
 
 ---
 
@@ -36,7 +36,7 @@ type: tab
 title: Request, Response
 -->
 
-Example of a PFAC Multi-MID charges payload request.
+Example of a PayFac Multi-MID charges payload request.
 
 ```json
 {
@@ -72,7 +72,7 @@ Example of a PFAC Multi-MID charges payload request.
 type: tab
 -->
 
-Example of a PFAC Multi-MID charges (201: Created) response.
+Example of a PayFac Multi-MID charges (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
