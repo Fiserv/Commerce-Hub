@@ -107,7 +107,7 @@ type: tab
 titles: Request, Response
 -->
 
-#### Example of payload request
+Example of a gift card cash-out payload request.
 
 ```json
 {
@@ -147,7 +147,7 @@ titles: Request, Response
 type: tab
 -->
 
-#### Example of payload response
+Example of a gift card cash-out (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
