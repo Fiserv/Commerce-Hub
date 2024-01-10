@@ -96,13 +96,6 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 ---
 
-## Endpoint
-
-<!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/gift-cards`
-
----
-
 ## Response Variables
 
 <!--
@@ -142,6 +135,14 @@ The below table identifies the parameters in `card` object.
 | `subCategory`| _string_ | 25 | Identifies the gift card provider |
 
 <!-- type: tab-end -->
+
+
+---
+
+## Endpoint
+
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/gift-cards`
 
 ---
 
@@ -359,8 +360,8 @@ Example of payload response
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/refunds)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [API Explorer](../api/?type=post&payments-vas/v1/accounts/gift-cards)
+- [Redemption Request](?path=docs/Resources/Guides/Payment-Sources/Gift/Redemption.md)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
 
 ---
