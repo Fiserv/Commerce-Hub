@@ -4,7 +4,7 @@ tags: [Payment Faciliator, Partners]
 
 # Payment Faciliator Single MID
 
-A single MID payment facilitator (PFAC) model uses a single `merchantId` assigned by Commerce Hub to aggregate all transactions on behalf of their sub-merchants. The PFAC uses the `dynamicDescriptor` object to pass the sub-merchant's details. This model allows the PFAC to [settle to their accounts](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) and funding is handled by the PFAC.
+A single MID payment facilitator *(PayFac)* model uses a single `merchantId` assigned by Commerce Hub to aggregate all transactions on behalf of their sub-merchants. The PayFac uses the `dynamicDescriptor` object to pass the sub-merchant's details. This model allows the PayFac to [settle to their accounts](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) and funding is handled by the PayFac.
 
 ---
 
@@ -54,7 +54,7 @@ type: tab
 title: Request
 -->
 
-Example of a PFAC Single payload charge request
+Example of a PayFac Single MID payload charge request.
 
 ```json
 {
@@ -101,7 +101,7 @@ type: tab
 title: Response
 -->
 
-Example of a charge (201: Created) response.
+Example of a PayFac Multi-MID charges (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
