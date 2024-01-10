@@ -187,7 +187,6 @@ Example of a charge (201: Created) response.
     ]
   }
 }
-
 ```
 
 <!-- type: tab-end -->
