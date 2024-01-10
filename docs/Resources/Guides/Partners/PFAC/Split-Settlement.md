@@ -1,10 +1,12 @@
 ---
-tags: [Payment Faciliator]
+tags: [Payment Faciliator, Settlement]
 ---
 
 # Payment Faciliator Split Settlement
 
-Split settlement transaction defines how a transaction should be distributed between proccessing and non-processing MIDs to take Revenue, Fees, Reserves, and Hold amounts. 
+Split settlement transaction defines how a transaction should be distributed between proccessing and non-processing MIDs to take Revenue, Fees, Reserves, and Hold amounts.
+
+---
 
 ## Request Variables
 
@@ -12,15 +14,15 @@ The following variables are also required when submitting a capture request.
 
 <!--
 type: tab
-titles: amount, splitSettlement, transactionDetails, merchantDetails
+titles: amount, splitSettlement, merchantDetails
 -->
 
-The below table identifies the parameters in the `amount` object.
+The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ----- |-------------- |
-| `total` | *number* | 18,3  | &#10004; | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | &#10004; | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ |-------------- |
+| `total` | *number* | 18,3  | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 <!--
 type: tab
@@ -28,22 +30,11 @@ type: tab
 
 The below table identifies the required parameters in the `splitSettlement` object.
 
-| Variable | Data Type| Maximum Length |Required | Description |
-|---------|----------|----------------|---------|---|
-| `merchantID` | *string* | 1024 | &#10004; | The merchant ID for each merchant account involved in split settlement. |
-| `subTotal` | *number* | 16,3 | &#10004; | The subtotal for each merchant account involved in split settlement. |
-| `accountDetails` | *array* | N/A | &#10004; | Important detailes of an account in split settlement. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Maximum Length |Required | Description |
-|---------|----------|----------------|---------|---|
-| `captureFlag` | *boolean* | 5 | &#10004; | Designates if the transaction should be captured. |
-| `splitShipment` | *object* | N/A | &#10004; | Object containing the split shipment details. |
+| Variable | Data Type| Maximum Length | Description |
+| -------- | -- | ------------ |-------------- |
+| `merchantID` | *string* | 1024 | The merchant ID for each merchant account involved in split settlement. |
+| `subTotal` | *number* | 16,3 | The subtotal for each merchant account involved in split settlement. |
+| `accountDetails` | *array* | N/A | Important detailes of an account in split settlement. |
 
 <!--
 type: tab
@@ -51,10 +42,10 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required|  Description |
-| --------- | ---------- | -------- | --------- | ----- |
-| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Description |
+| -------- | -- | ------------ |-------------- |
+| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -155,7 +146,7 @@ Example of a split settlement charges payload request
 <!--
 type: tab
 -->
-Example of a gift card cancel (201: Created) response.
+Example of a split settlement charges (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
