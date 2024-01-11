@@ -99,7 +99,7 @@ titles: Variables, JSON Example
 | ----- | ----------- |
 | `data` | The base64 encoded SHA256 of this value must match the `integrity` field. |
 | `family` | The `font-family` property value for use in configured [CSS](#css) styles  |
-| `format` | Font MIME type; _font/otf, font/ttf, font/woff, font/woff2_ |
+| `format` | Font MIME type. _**Valid Values:** font/otf, font/ttf, font/woff, font/woff2_ |
 | `integrity` | Compared against a dynamically computed value of the data provided in the `data` field; if there isn't a match the custom font is ignored |
 
 <!--
@@ -253,7 +253,7 @@ Example of payment form fields customization  in `createPaymentForm`.
 
 Supported [card brands](?path=docs/Resources/Master-Data/Card-Type.md) are defined in `supportedCardBrands` field of the configuration object passed in `createPaymentForm`. The merchant can restrict the allowed brands to a subset of the supported card brands assigned to the configuration field as a string array of brand identifiers.
 
-When the SDK has identified the card brand, or can no longer identify the card brand because of user input changes, the user-provided event hook "onCardBrandChange" is called with this information.
+When the SDK has identified the card brand, or can no longer identify the card brand because of user input changes, the user-provided [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md#event-hooks) `onCardBrandChange` is called with this information.
 
 ---
 
