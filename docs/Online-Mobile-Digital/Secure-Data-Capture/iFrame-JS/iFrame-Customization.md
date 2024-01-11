@@ -8,15 +8,14 @@ Commerce Hub supports customization of iFrame elements to match the merchant's w
 
 ### Major Features
 
-- Support for different variations on card fields (such as dropdown vs text input)
+- Support for different variations on card fields *(i.e. dropdown or text input)*
 - Support for CSS stylesheet injection into the iFrames
 - Support for applying custom fonts to the iFrame input fields
 - Support for custom placeholder or dropdown option text enabling easier internationalization
-- Support for brand identification as well as restricting the allowed brands for entry
+- Support for brand identification as well as restricting the allowed brands for payment
 - Support for automatic field validation
-- Support for masking of card number and security code with different flavors supported
+- Support for masking of card number and security code
 - Support for auto-formatting of card number and card expiry
-- Support for various event handlers so that integrators can respond to events in real time via "hooks"
 
 ---
 
@@ -33,6 +32,8 @@ The `id` and `name` attributes of each rendered input or select element inside t
 > Custom [font configuration](#font) must be submitted in a specific format for security reasons.
 
 ### Example
+
+Example of payment form CSS customization in `createPaymentForm`.
 
 ```json
 {
@@ -96,39 +97,25 @@ titles: Variables, JSON Example
 
 | Field | Description |
 | ----- | ----------- |
-| `placeholder` | Placeholder text for the field |
-| `dynamicPlaceholderCharacter` | Placeholder character for the field. Has no effect if `placeholder` isn't specified; must be one character in length  |
-| `enableFormatting` | Controls if the card number should be auto-formatted with additional spaces while user types |
-| `masking.character` | Controls card number masking and be one character in length |
-| `masking.mode` | Controls [masking mode](#masking-mode) |
-| `masking.shrunkLength` | Controls how many characters of the masking character will represent the masked portion of the input after shrinking is applied, must be a number |
-| `optionLabels` | The text to display for each option in order of month |
+| `data` | The base64 encoded SHA256 of this value must match the `integrity` field. |
+| `family` | The `font-family` property value for use in configured [CSS](#css) styles  |
+| `format` | Font MIME type; _font/otf, font/ttf, font/woff, font/woff2_ |
+| `integrity` | Compared against a dynamically computed value of the data provided in the `data` field; if there isn't a match the custom font is ignored |
 
 <!--
 type: tab
 -->
 
+Example of payment form font customization in `createPaymentForm`.
+
 ```json
 {
-    "font": {
-      // the base64 encoded SHA256 of this value must match the "integrity" field.
-      "data": "<BASE_64_OF_FONT_FILE_GOES_HERE_WITHOUT_BRACKETS>",
-   
-      // the font-family property value for use in configured "css" styles (See "CSS Customization")
-      "family": "testing-testing",
-   
-      // font MIME type
-      // supported values:
-      //   - font/otf
-      //   - font/ttf
-      //   - font/woff
-      //   - font/woff2
-      "format": "font/woff",
-   
-      // compared against a dynamically computed value of the data provided in the "data" field; if there isn't a match the custom font is ignored.
-      // helps ensure that the "data" field contains known to be safe data
-      "integrity": "<BASE_64_SHA256_OF_DATA_FIELD_VALUE_GOES_HERE_WITHOUT_BRACKETS>"
-    }
+  "font": {
+    "data": "<BASE_64_OF_FONT_FILE_GOES_HERE_WITHOUT_BRACKETS>",
+    "family": "testing-testing",
+    "format": "font/woff",
+    "integrity": "<BASE_64_SHA256_OF_DATA_FIELD_VALUE_GOES_HERE_WITHOUT_BRACKETS>"
+  }
 }
 ```
 
@@ -158,7 +145,7 @@ The following table identifies the supported CSS fields.
 
 ## Field Configuration
 
-Only a `parentElementId` is required, this is the id for the DOM element on the merchant's page where we will inject the iFrame for that field. If other field configuration properties fail validation the portion of configuration that failed validation is simply ignored.
+Only a `parentElementId` is required, this is the id for the DOM element on the merchant's page where Commerce Hub will inject the iFrame for that field. If other field configuration properties fail validation, the portion of configuration that failed validation is ignored.
 
 <!--
 type: tab
@@ -173,7 +160,7 @@ titles: Variables, JSON Example
 | `masking.character` | Controls card number masking and be one character in length |
 | `masking.mode` | Controls [masking mode](#masking-mode) |
 | `masking.shrunkLength` | Controls how many characters of the masking character will represent the masked portion of the input after shrinking is applied, must be a number |
-| `optionLabels` | The text to display for each option in order of month |
+| `optionLabels` | The text to display for each option in `expirationMonth` |
 
 #### Masking Mode
 
@@ -191,49 +178,45 @@ titles: Variables, JSON Example
 type: tab
 -->
 
-Example of payment form fields customization.
+Example of payment form fields customization  in `createPaymentForm`.
 
 ```json
 {
-    "fields": {
-      "cardNumber": {
-        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "placeholder text goes here",
-        "dynamicPlaceholderCharacter": "•",
-        "enableFormatting": true,
-        "masking": {
-          "character": "•", 
-          "mode": "NO_MASKING",
-          "shrunkLength": 4
-        }
-      },
-  
-      "nameOnCard": {
-        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "Name On Card",
-      },
-  
-      "firstName": {
-        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "First Name",
-      },
-  
-      "lastName": {
-        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "Last Name",
-      },
-  
-      "securityCode": {
-        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "placeholder text goes here",
-        "dynamicPlaceholderCharacter": "•",
-        "masking": {
-          "character": "•",
-          "mode": "NO_MASKING",
+  "fields": {
+    "cardNumber": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "placeholder text goes here",
+      "dynamicPlaceholderCharacter": "•",
+      "enableFormatting": true,
+      "masking": {
+        "character": "•",
+        "mode": "NO_MASKING",
+        "shrunkLength": 4
+      }
+    },
+    "nameOnCard": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "Name On Card"
+    },
+    "firstName": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "First Name"
+    },
+    "lastName": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "Last Name"
+    },
+    "securityCode": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "placeholder text goes here",
+      "dynamicPlaceholderCharacter": "•",
+      "masking": {
+        "character": "•",
+        "mode": "NO_MASKING"
       },
       "expiration": {
         "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "MM / YY",
+        "placeholder": "MM / YY"
       },
       "expirationMonth": {
         "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
@@ -255,7 +238,7 @@ Example of payment form fields customization.
       },
       "expirationYear": {
         "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "Card Expiration Year",
+        "placeholder": "Card Expiration Year"
       }
     }
   }
