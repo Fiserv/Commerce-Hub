@@ -2,14 +2,17 @@
 tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 ---
 
-# Secure Data Capture - iFrame v2 Integration Guide
+# Secure Data Capture - iFrame v1 Integration Guide
+
+<!-- theme: danger -->
+> Version 1 of Commerce Hub's Secure Data Capture iFrame solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md). We strongly recommend switching to the v2 solution.
 
 ## Step 1: Acquire Credentials
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
 
 <!-- theme: info -->
-> When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
+>  When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
 
 ---
 
@@ -19,59 +22,100 @@ The following code snippets are required to create and initialize the SDK config
 
 ### iFrame SDK
 
+- **Cert:** https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
+- **Prod:** https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
+
 The iFrame JS script tag is required in the website by downloading or including the following code:
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/v2/saq-a.js"></script>
+<script id="commercehub" src="https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
 ```
 
 ---
 
-Instantiate the payment form within your JavaScript.
+### Authentication Credentials
 
-<!--
-type: tab
-titles: Variables, JavaScript
--->
+Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md) in step 1.
 
-The below table identifies the parameters used in `createPaymentForm`.
+<!-- theme: warning -->
+> To mitigate the risk of [`clickjacking`](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking), accepted domains should be passed in the security credentials request. Commerce Hub will store this information and use it to generate the *Content-Security-Policy: frame-ancestors <http_source_list>* and *X-Frame-Options:<http_source> response headers*. 
 
-| Field | Required | Description |
-| ----- | -------- | ----------- |
-| `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
-| `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
-| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
-| `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
-| `validCssClass` | | CSS class will be assigned to a field's input element when they have passed validation |
-| `invalidCssClass` | | CSS class will be assigned to a field's input element when they have failed validation and are in an invalid state |
-| `font` | | Defines [custom fonts](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#fonts) for the payment form  |
-| `css` | | Customized [CSS styling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#css) for the payment form  |
-| `hooks` | | Defines [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md) handling |
-
-<!--
-type: tab
--->
-
-Example of JavaScript `createPaymentForm`.
 
 ```javascript
-const formPromise = window.fiserv.commercehub.createPaymentForm({
-    data: {
-        environment: "CERT",
-        supportedCardBrands: [],
-        fields: {},
-        contextualCssClassNames: {
-            valid: "validCssClass",
-            invalid: "invalidCssClass",
-        },
-        font: {},
-        css: {},
-    },
-    hooks: {},
-});
+const authorization = 'ACCESS_TOKEN';
+const apiKey = 'API_KEY';
+const formConfig = {
+    "merchantId": 'MERCHANT_ID',
+    "publicKey": 'PUBLIC_KEY',
+    "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM',
+    "asymmetricEncryptionAlgorithm": 'ASYMETRIC_ENCRYPTION_ALGORITHM',
+    "keyId": 'KEY_ID'
+};
 ```
 
-<!-- type: tab-end -->
+---
+
+### Payment Form
+
+Add the global `commercehub` object which includes the iFrame JS form. The `commercehub` object name should match with the script tag id that loads the SDK.
+
+```javascript
+const form = new commercehub.Fiserv(formConfig, authorization, apiKey);
+```
+
+Configure the `loadPaymentForm` and pass the merchant defined `div id` matching  the HTML container. Once the page is loaded the form will render in the container.
+
+```html
+<div id="payment-saq-a-form-div"></div>
+```
+ 
+```javascript
+form.loadPaymentForm("payment-saq-a-form-div");
+```
+
+A successful card capture in the iFrame JS will be handled by `.then()` in the `loadPaymentForm` and is responsible for contacting the merchant's backend/server.
+ 
+
+```javascript
+.then((next) => { });
+```
+
+Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm`. 
+
+```javascript
+.catch((error) => { });
+```
+
+---
+
+### Payment Form Example 
+
+```php
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
+    </head>
+    <body>
+        <div id="payment-saq-a-ep-form-div"></div>
+        <script>
+            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
+            const apiKey = '1951fe5b30e34cdaad758b8874140872';
+            const formConfig = {
+                "merchantId": '100008000003683',
+                "publicKey": 'MIIBIjANBgkqhkiG9w0BAQEFA....',
+                "symmetricEncryptionAlgorithm": 'AES_GCM',
+                "asymmetricEncryptionAlgorithm": 'RSA',
+                "keyId": 'cc33a193-92b9-4663-ad66-3ddfd8984ded'
+            };
+            const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
+            form.loadPaymentForm("payment-saq-a-ep-form-div")
+                .then((next) => {})
+                .catch((error) => {});
+        </script>
+    </body>
+</html>
+```
 
 ---
 
@@ -85,7 +129,6 @@ Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [t
 ### Payload Example
 
 #### Endpoint
-
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
 
@@ -97,7 +140,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a charges payload request.
+##### Example of a charge payload request.
 
 ```json
 {
@@ -128,7 +171,7 @@ Example of a charges payload request.
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+##### Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
