@@ -6,7 +6,7 @@ tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 
 Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [CSS](#css), [font](#font), [supported card brands](#card-brands), and [field configuration](#field-configuration).
 
-### Major Features
+#### Major Features
 
 - Support for different variations on card fields *(i.e. dropdown or text input)*
 - Support for CSS stylesheet injection into the iFrames
@@ -30,8 +30,6 @@ The `id` and `name` attributes of each rendered input or select element inside t
 
 <!-- theme: info -->
 > Custom [font configuration](#font) must be submitted in a specific format for security reasons.
-
-### Example
 
 Example of payment form CSS customization in `createPaymentForm`.
 
