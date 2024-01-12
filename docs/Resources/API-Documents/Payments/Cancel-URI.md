@@ -5,7 +5,7 @@ tags: [Sunset, Cancel, Void, Payments, API Reference]
 # Cancel Using the URI
 
 <!-- theme: danger -->
-> Cancels using the URI is being sunset in favor of [cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) using a referenced transaction identifier. 
+> Cancels using the URI is being sunset in favor of [cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) using a referenced transaction identifier.
 
 A cancel request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the cancel type.
 

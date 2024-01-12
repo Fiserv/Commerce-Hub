@@ -4,7 +4,7 @@ tags: [API Reference, Customer Details, Master Data]
 
 # Customer Details
 
-The transaction request may contain the `customerDetails` consisting of customer specific data like; customer id, name, date of birth, phone number, etc.  
+The transaction request may contain the `customerDetails` consisting of customer-specific data like; customer ID, name, date of birth, phone number, etc.  
 
 <!--
 type: tab
@@ -21,7 +21,7 @@ The below table identifies the parameters in the `customer` object.
 | `lastName` | *string* | 256 | Customer last name |
 | `dob` | *string* | 10 | Customer date of birth in YYYY-MM-DD format |
 | `email` | *string* | 256 | Customer email address |
-| `ipaddress` | *string* | 39 | This field should contain the IP Address of the customer. |
+| `ipAddress` | *string* | 39 | This field should contain the IP Address of the customer. |
 | `hostName` | *string* | 1024 | This field should contain the name of the server the customer is connected to.|
 | `locale` | *string* | 256 | The language of the receipt|
 | `driverLicenseNumber` | *string* | 256 | Customer Driver License Number |
@@ -33,7 +33,7 @@ The below table identifies the parameters in the `customer` object.
 type: tab
 -->
 
-JSON string format for `customer`:
+JSON string format for the `customer` object:
 
 ```json
 {
@@ -59,19 +59,19 @@ JSON string format for `customer`:
 ```
 
 <!-- type: tab-end -->
- 
+
 ---
 
 ## Phone Number
 
-Object contains the phone details of the customer.
+The `phone` object contains the phone details of the customer.
 
 <!--
 type: tab
 titles: phone, JSON Example
 -->
 
-The below table identifies the parameters in the `phoneNumber` object.
+The below table identifies the parameters in the `phone` object.
 
 | Variable | Type |Maximum Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
@@ -82,8 +82,8 @@ The below table identifies the parameters in the `phoneNumber` object.
 <!--
 type: tab
 -->
- 
-JSON string format for `phoneNumber`:
+
+JSON string format for the `phone` object:
 
 ```json
 {
@@ -102,6 +102,6 @@ JSON string format for `phoneNumber`:
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Customer Address](?path=docs/Resources/Master-Data/Address.md)
+- [Address Details](?path=docs/Resources/Master-Data/Address.md)
 
 ---

@@ -10,11 +10,14 @@ The merchant can perform account verification transaction to confirm that the cu
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request by sending the customer's `billingAddress` and `securityCode`.
 
 <!-- theme: warning -->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 ---
 
 ## Minimum Requirements
+
+<!-- theme: warning -->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`.
 
 <!--
 type: tab
@@ -25,8 +28,8 @@ The below table identifies the required parameters in the `source` object when u
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `sourceType` | *string* | 15 | Value *PaymentCard* is used for verification request. Refer to [payment sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more information on other supported source types. |
-| `card` | *object* | N/A | Card details object |
+| `sourceType` | _string_ | 15 | Value _PaymentCard_ is used for verification request. Refer to [payment sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more information on other supported source types. |
+| `card` | _object_ | N/A | Card details object |
 
 
 <!--
@@ -37,9 +40,9 @@ The below table identifies the required parameters in the `card` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `cardData` | *string* | 256 | Credit Card Number or Encrypted Data |
-| `expirationMonth` | *string* | 2 | 2-digit card expiration month |
-| `expirationyear` | *string* | 4 | 4-digit card expiration year |
+| `cardData` | _string_ | 256 | Credit Card Number or Encrypted Data |
+| `expirationMonth` | _string_ | 2 | 2-digit card expiration month |
+| `expirationyear` | _string_ | 4 | 4-digit card expiration year |
 
 <!-- type: tab-end -->
 
@@ -59,7 +62,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Account verification request using PaymentCard.
+Account verification request using PaymentCard.
 
 ```json
 {
@@ -84,7 +87,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an account verification (200: Success) response.
+Example of an account verification (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -144,6 +147,7 @@ type: tab
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 - [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 

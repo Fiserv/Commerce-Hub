@@ -279,7 +279,7 @@ type: tab
     }
   },
   "source": {
-    "sourceType": "PaymentSession",
+    "sourceType": "PaymentCard",
     "card": {
       "bin": "40055500",
       "last4": "0019",
@@ -351,7 +351,7 @@ type: tab
     }
   },
   "source": {
-    "sourceType": "PaymentSession",
+    "sourceType": "PaymentCard",
     "card": {
       "bin": "40055500",
       "last4": "0019",

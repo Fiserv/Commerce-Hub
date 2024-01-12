@@ -762,15 +762,15 @@ This environment is separate from the production environment. The sandbox will e
 
 ### Security Code Indicator
 
-The `securityCodeIndicator` used to indicate the presence of a [card security code](#card-security-code) during a [verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) request.
+## Security Code Indicator
+The `securityCodeIndicator` is used to indicate the presence of a [card security code](#card-security-code) during a [verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) request.
 
 ### Security Code Response
 
 The [value](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) returned as `securityCodeMatch` or `securityCodeResponse` from the issuing bank.
 
-### Sale
-
-A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided [(cancel)](?path=docs/Resources/API-Documents/Payments/Cancel.md) before batching, the merchant funding process begins for this charge. At this point, the merchant can still return funds [(refund)](?path=docs/Resources/API-Documents/Payments/Refund.md) the customer.
+## Sale
+A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided [(cancel)](?path=docs/Resources/API-Documents/Payments/Cancel.md) before batching, the merchant funding process begins for this charge. At this point, the merchant can still return funds [([refund)](?path=docs/Resources/API-Documents/Payments/Refund.md) to the customer.
 
 <!-- theme: warning -->
 > Settlement time is based on processing network, contact your account manager for more details.
@@ -779,9 +779,8 @@ A sale is a customer transaction where the purchase amount is authorized and set
 
 The subsequent transactions between a customer and a merchant. Commerce Hub supports [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), and [Refund](?path=docs/Resources/API-Documents/Payments/Refund.md) transactions.
 
-### Self Assessment Questionnaire
-
-The PCI DSS Self-Assessment Questionnaires (SAQs) are self validation tools intended to assist merchants and service providers in evaluating their compliance with the PCI DSS, ideal for merchants and service providers that are not required to submit a report on compliance, an SAQ is designed as a self-validation tool to assess security for cardholder data. For more information visit [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
+## Self Assessment Questionnaire
+The PCI DSS Self-Assessment Questionnaires (SAQs) are self-validation tools intended to assist merchants and service providers in evaluating their compliance with the PCI DSS, ideal for merchants and service providers that are not required to submit a report on compliance, an SAQ is designed as a self-validation tool to assess security for cardholder data. For more information visit the [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
 ### Settlement
 
@@ -793,7 +792,8 @@ An API software that allows a customer to purchase goods and services and connec
 
 ### Silent Post
 
-A Payment Pages process where Commerce Hub transmits results to the merchant server but does not receive a response back.
+## Silent Post
+A Payment Pages process where Commerce Hub transmits results to the merchant server but does not receive a response.
 
 ### Split Shipment
 
@@ -803,9 +803,8 @@ A [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) transaction ch
 
 The descriptor that shows up after a transaction has been authorized. If the charge is in a pending state, the soft descriptor will be displayed on the customer's statement.
 
-### Stand-In-Processing
-
-Stand-In-Processing (STIP) is a service offered by the Associations that provides transaction processing services on behalf of an unavailable or timed-out issuer.
+## Stand-In-Processing
+Stand-In-Processing _(STIP)_ is a service offered by the Associations that provides transaction processing services on behalf of an unavailable or timed-out issuer.
 
 ### Start Sentinel
 
@@ -815,9 +814,8 @@ The character that indicates the initial data position on the track of the card'
 
 Stock Keeping Unit (SKU) is a number used to uniquely identify a product.
 
-### Store and Forward
-
-Store and forward is a technique in which information is stored in an intermediate system where it is kept and sent at a later time to the final destination. The intermediate system, or node in a networking context, verifies the integrity of the message before forwarding it. In general, this technique is used when their is no connectivity or intermittent connectivity. It may also be preferable in situations when there are long delays in transmission and variable and high error rates, or if a direct, end-to-end connection is not available.
+## Store and Forward
+Store and forward is a technique in which information is stored in an intermediate system where it is kept and sent at a later time to the final destination. The intermediate system, or node in a networking context, verifies the integrity of the message before forwarding it. In general, this technique is used when there is no connectivity or intermittent connectivity. It may also be preferable in situations when there are long delays in transmission and variable and high error rates, or if a direct, end-to-end connection is not available.
 
 ### Sub-Merchant
 
@@ -834,9 +832,8 @@ A surcharge, also known as checkout fee, is an extra fee charged by a merchant w
 <!-- theme: warning -->
 > Surcharge is not supported by all processors or in all states, contact your account manager for more details.
 
-### Synchronous Communications
-
-High-speed transmission, synchronous communications is the transmission and recognition of long groups of characters at a time. Both the sending and receiving devices are set to the same synchronization of pulses (BITS).
+## Synchronous Communications
+High-speed transmission and synchronous communications are the transmission and recognition of long groups of characters at a time. Both the sending and receiving devices are set to the same synchronization of pulses (BITS).
 
 <!-- theme : warning -->
 > Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative.
