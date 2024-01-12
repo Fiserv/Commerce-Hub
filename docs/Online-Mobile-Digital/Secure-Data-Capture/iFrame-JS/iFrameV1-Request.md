@@ -40,7 +40,6 @@ Authentication credentials are acquired at boarding and from the [security crede
 <!-- theme: warning -->
 > To mitigate the risk of [`clickjacking`](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking), accepted domains should be passed in the security credentials request. Commerce Hub will store this information and use it to generate the *Content-Security-Policy: frame-ancestors <http_source_list>* and *X-Frame-Options:<http_source> response headers*. 
 
-
 ```javascript
 const authorization = 'ACCESS_TOKEN';
 const apiKey = 'API_KEY';
@@ -48,7 +47,6 @@ const formConfig = {
     "merchantId": 'MERCHANT_ID',
     "publicKey": 'PUBLIC_KEY',
     "symmetricEncryptionAlgorithm": 'SYMMETRIC_ENCRYPTION_ALGORTIHM',
-    "asymmetricEncryptionAlgorithm": 'ASYMETRIC_ENCRYPTION_ALGORITHM',
     "keyId": 'KEY_ID'
 };
 ```

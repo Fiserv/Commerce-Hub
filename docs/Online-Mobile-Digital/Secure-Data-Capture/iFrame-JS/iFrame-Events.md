@@ -68,7 +68,29 @@ Example of payment form event hooks customization in `createPaymentForm`.
 
 ---
 
-## Error Events
+## Error Handling
+
+The Secure Data Capture iFrame solution uses a promise to relay back errors to the code via a rejected promise so it can be caught via the `.catch` method of the returned Promise.
+
+The errors that can be caught via `promise.catch` and include a `toString()` method for debugging. The details of each case as well as the structure of the accompanying error object are below.
+
+#### Form Instantiation Errors
+
+| Scenario | name | message | errors | toString() |
+| ---- | ---- | ------- | ------ | ---------- |
+| Browser Not Supported | GeneralError | BROWSER_NOT_SUPPORTED | N/A | Returns a string representation of the error |
+| Configuration Failed Validation Unable to Render | ValidationError | BAD_FORM_CONFIG | An array containing a human-readable breakdown of each issue | Returns a string representation of the error |
+| Form Rendering Failed Due To Timeout (10+ seconds) | GeneralError | FORM_RENDER_TIMEOUT | N/A | Returns a string representation of the error |
+
+#### Form Submission Errors
+
+| Case | name | message | errors | response | toString() |
+| ---- | ---- | ------- | ------ | -------- | ---------- |
+| Validation Browser-side Failure | ValidationError | BAD_SUBMIT_CONFIG | A string array containing a human-readable breakdown of each issue | N/A | Returns a string representation of the error |
+| HTTP Error from the API | HttpError | The HTTP status code and text as a string | N/A |A JavaScript object containing the following fields `statusCode`: the HTTP status code and `statusText`: the HTTP status text `body`: a JavaScript object for the API error response body | Returns a string representation of the error |
+| Form Validation Fails | ValidationError | BAD_FORM_DATA | A string array containing the names of the fields that failed validation | N/A | Returns a string representation of the error |
+| No iFrame Fields are Enabled | GeneralError | NO_FIELDS_ENABLED | N/A | N/A | Returns a string representation of the error |
+| Other Errors | The name of the causing error or GeneralError by default | The message from the causing error | N/A | N/A | Returns a string representation of the error |
 
 ---
 
@@ -76,6 +98,7 @@ Example of payment form event hooks customization in `createPaymentForm`.
 
 - [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
 - [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [iFrame Methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Methods.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

@@ -50,7 +50,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customi
 <!-- type: card
 title: iFrame Methods
 description: Methods used to acquire an instance of the payment form.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Methods.md
 -->
 
 <!-- type: row-end -->

@@ -8,6 +8,8 @@ tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
 
+This request must be invoked as a server→API call for each form submission and should not be attempted directly from the browser.
+
 <!-- theme: info -->
 > When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
 
@@ -15,17 +17,15 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 ## Step 2: Configure iFrame
 
-The following code snippets are required to create and initialize the SDK configuration for the iFrame.
-
-### iFrame SDK
-
-The iFrame JS script tag is required in the website by downloading or including the following code:
+The iFrame JS script tag is required in the website by downloading or including the following code.
 
 ```php
 <script src="https://commercehub-secure-data-capture.fiservapps.com/v2/saq-a.js"></script>
 ```
 
 ---
+
+## Step 3: Create Payment Form
 
 Instantiate the payment form within your JavaScript.
 
@@ -75,19 +75,31 @@ const formPromise = window.fiserv.commercehub.createPaymentForm({
 
 ---
 
-## Step 3: Submit a Request
+## Step 4: Form Submission
 
-Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [authorization](#step-1-authentication) request. 
+When ready to submit the form data for card capture, such as when the form data is all valid and the user clicks a submit button, you can programmatically trigger submission for the iFrame payment form fields via the `submit` [method](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Methods.md).
+
+```javascript
+const submissionPromise = paymentForm.submit({
+    apiKey: "API_KEY";
+    accessToken: "ACCESS_TOKEN",
+    publicKey: "PUBLIC_KEY",
+    keyId: "KEY_ID",
+    merchantId: "MERCHANT_ID",
+    terminalId: "TERMINAL_ID",
+});
+```
+
+---
+
+## Step 5: Submit an API Request
+
+Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [credentials](#step-1-acquire-credentials) request.
 
 <!-- theme: info -->
-> If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
+> If a successful response is not received, best practice is to still submit the transaction. If an [error occurs](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md#error-handling), the iFrame will need to be re-displayed so the customer can re-submit their payment information.
 
-### Payload Example
-
-#### Endpoint
-
-<!-- theme: success -->
->**POST** `/payments/v1/charges`
+### Charges Example
 
 <!-- theme: info -->
 > Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
@@ -199,7 +211,8 @@ Example of a charge (201: Created) response.
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
-- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
+- [iFrame Event Handling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
+- [iFrame Methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Methods.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---
