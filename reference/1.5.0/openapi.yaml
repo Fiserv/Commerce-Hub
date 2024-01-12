@@ -540,7 +540,11 @@ paths:
       x-proxy-name: 'Credentials'
       x-default-example: Credentials
       summary: Request security credentials (access token).
-      description: 'This is the credential generation call for authorizing subsequent financial transactions. A valid <code>accessToken</code> is required for web client requests.'
+      description: |+
+        A credentials request is used for authorizing or submitting subsequent financial transactions.
+
+        * Returns an <code>accessToken</code> used in creating an <a href="../docs?path=docs/Resources/API-Documents/Authentication-Header.md">authentication header</a>.
+        * Returns a <code>sessionId</code> used with <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md">Secure Data Capture</a>.
       requestBody:
         required: true
         content:
@@ -2626,9 +2630,11 @@ components:
             on this account in prior 24 hours., example: 1}
         retryAttempts: {type: integer, description: Number of retry attempt if the
             initial transaction was unsuccessful., example: 0}
-        networkTransactionReference: {type: string, maxLength: 64, description: Allows
-            linking of the transaction to the original or previous one in a subscription/card-on-file
-            chain., example: '123456788'}
+        schemeOriginalAmount:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'Original transaction amount, required for card on file transactions. Discover Only.'
+          example: '9.66'
     TransactionInteraction:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md">Transaction
@@ -3092,10 +3098,6 @@ components:
       allOf:
       - {$ref: '#/components/schemas/Network'}
       - type: object
-        properties:
-          networkOriginalAmount: {type: number, maximum: 1.0E18, description: 'Original
-              transaction amount, required for Discover card on file transactions.',
-            example: 9.66}
     NetworkDetails:
       x-model-version: 1.0
       description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
@@ -3270,6 +3272,11 @@ components:
             used to test/replicate a transaction error., example: '213'}
         emvParameterDownloadIndicator: {type: string, description: 'Indicator if EMV
             Parameter has to be downloaded, sent as part of Auth/Sale Response.'}
+        paymentAmountType:
+          type: string
+          maxLength: 20
+          description: 'An identifier used to indicate the transaction payment amount type'
+          example: 'FIXED'
     DirectedRouting:
       x-model-version: 1.0
       description: Used to directly route debit transactions to a specific processing
@@ -3708,9 +3715,6 @@ components:
             authentication.}
         referenceNumber: {type: string, description: Transaction reference number.,
           example: 845366457890-TODO}
-        schemeTransactionId: {type: string, description: Brand transaction ID., example: '019078743804756'}
-        networkOriginalAmount: {type: number, maximum: 1.0E18, description: Network
-            original amount, example: 100.50}
         feeProgramIndicator: {type: string, description: Contains the Fee Program
             Indicator (FPI) code that may be returned on Debit or PLDebit transaction
             response., example: '123'}
@@ -4456,6 +4460,7 @@ components:
         paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
         transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
         networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
     RefundRequest:
       x-model-version: 1.0
@@ -4493,12 +4498,14 @@ components:
         billingAddress: {$ref: '#/components/schemas/BillingAddress'}
         transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
         transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     AccountVerificationResponse:
       x-model-version: 1.0
       properties:
         gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
         responsePaymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
         processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
     TokenizationRequest:
       x-model-version: 1.0
       properties:
@@ -4516,6 +4523,8 @@ components:
           $ref: '#/components/schemas/TransactionInteraction'
         additionalData3DS:
           $ref: '#/components/schemas/AdditionalData3DS'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials' 
 
     TokenizationResponse:
       x-model-version: 1.0
@@ -4540,6 +4549,8 @@ components:
           $ref: '#/components/schemas/BillingAddress'
         additionalData3DS:
           $ref: '#/components/schemas/AdditionalData3DS'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
 
     ThreeDSAuthenticationRequest: 
       x-model-version: 1.0
@@ -4850,6 +4861,40 @@ components:
         count: {type: integer, maximum: 99, description: Number of accounts presented
             of this type., example: 2}
         amount: {$ref: '#/components/schemas/Amount'}
+    SplitSettlement:
+      x-model-version: 1.0
+      description: 'Split settlement information that is used to split payouts of a transaction into multiple accounts.'
+      properties:
+        merchantId:         
+          type: string
+          maxLength: 1024
+          description: 'The merchant ID for each merchant account involved in split settlement.'
+          example: 123456789011
+        subTotal:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'The subtotal for each merchant account involved in split settlement.'
+          example: 13.50
+        accountDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountDetails'
+    AccountDetails:
+      x-model-version: 1.0
+      description: 'Account information.'
+      properties:
+        name:
+          type: string
+          maxLength: 1024
+          description: 'An account name for split settlement.'
+          example: 'ABC Inc'
+        type:
+          type: string
+          description: 'Type of split settlement account.'
+          example: 'FEE_ACCOUNT'
+        amount:
+          $ref: '#/components/schemas/Amount'
+
     EnhancedDataServiceResponse:
       x-model-version: 1.0
       properties:
@@ -7755,6 +7800,6 @@ components:
               hostResponseMessage: 'APPROVAL'
               localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-              - beginningBalance: '12.04'
-                endingBalance: '12.04'
+              - beginningBalance: 12.04
+                endingBalance: 12.04
                 currency: 'USD'
