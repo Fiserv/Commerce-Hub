@@ -44,7 +44,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Cust
 <!-- type: card
 title: iFrame Event Handling
 description: Support external interactions of the card form for Commerce Hub's iFrame solution.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md
 -->
 
 <!-- type: card
