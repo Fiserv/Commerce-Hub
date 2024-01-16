@@ -1,20 +1,20 @@
 ---
-tags: [API Reference, ISO Country Code, Master Data]
+tags: [API Reference, Foreign Currency, Master Data. Global Currency Solutions, International]
 ---
 
 
-# ISO Currency Codes
+# Supported Currencies
 
-The `currency` variable in the `amount` array determines what currency the transaction well be submitted in.
+The `currency` variable in the `amount` [object](?path=docs/Resources/Master-Data/Amount-Components.md) determines what currency the transaction well be submitted in.
 
 <!-- theme: warning -->
-> Commerce Hub uses a decimal for precision. When submitting the `total` ensure the correct precision usage; e.g. 10 GBP is submitted as 10.00, 10 JPY is submitted as 10, and 10 JOD is submitted as 10.000.
+> Commerce Hub uses a decimals for separating precisions. When submitting the `total` ensure the correct precision usage; e.g. 10 GBP is submitted as 10.00, 10 JPY is submitted as 10, and 10 JOD is submitted as 10.000.
 
 ---
 
-## Currency List
+## ISO Currency Codes
 
-The table below contains all valid values of currency name, code, number and decimal values. Commerce Hub uses the 3 character alpha code when submitting [transactions](?path=docs/Resources/API-Documents/Payments/Payments.md). Commerce Hub supports the use of foreign currencies with Global Merchant Acquiring (GMA) and Multi-Currency Pricing (MCP) transactions.
+The table below contains all valid values of currency name, code, number and precision values. Commerce Hub uses the 3 character alpha code when submitting [transactions](?path=docs/Resources/API-Documents/Payments/Payments.md). Commerce Hub supports the use of foreign currencies with Global Merchant Acquiring (GMA) and Multi-Currency Pricing (MCP) transactions.
 
 <!-- theme: warning -->
 > Commerce Hub does not support the following  currencies which are prohibited by the Office of Foreign Assets Control _(OFAC)_; BYN, MMK, CUP, CDF, IRR, IQD, LRD, KPW, SDG, SYP, and ZWL.
@@ -22,7 +22,7 @@ The table below contains all valid values of currency name, code, number and dec
 <!-- theme: warning -->
 > Fiserv has taken the stance as a company to cease and desist all dealings with Russia as a country, therefore Commerce Hub cannot support RUB as a currency for any services.
 
-| Currency Name | CH Alpha Code | ISO Number | Precision | GMA | MCP |
+| Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | ------------- | :-----------: | :---------:| :-----: | --- | --- |
 | Afghan Afghani | AFN | 971 | 2 | | |
 | Algerian Dinar | DZD | 012 | 2 | | |

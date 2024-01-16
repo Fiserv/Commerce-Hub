@@ -1,8 +1,8 @@
 ---
-tags: [Payment Faciliator, Partners]
+tags: [Payment Facilitator, Partners]
 ---
 
-# Payment Faciliator Single MID
+# Payment Facilitator Single MID
 
 A single MID payment facilitator *(PayFac)* model uses a single `merchantId` assigned by Commerce Hub to aggregate all transactions on behalf of their sub-merchants. The PayFac uses the `dynamicDescriptor` object to pass the sub-merchant's details. This model allows the PayFac to [settle to their accounts](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) and funding is handled by the PayFac.
 

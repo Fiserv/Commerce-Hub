@@ -28,7 +28,7 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Gift/Activation.md
 
 <!-- type: card
 title: Dynamic Currency Conversion
-description: aA rate request that allows a merchant to request the optimal currency and rate from our exchange rate provider, which will determine the currency and provide a price and exchange rate.
+description: A rate request that allows a merchant to request the optimal currency and rate from our exchange rate provider, which will determine the currency and provide a price and exchange rate.
 link: 
 -->
 

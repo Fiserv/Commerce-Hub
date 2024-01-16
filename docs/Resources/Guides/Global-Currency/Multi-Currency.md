@@ -6,7 +6,7 @@ tags: [Currency Conversion, Global Currency]
 
 Multi-Currency Pricing (MCP) _(previously known as Global ePricing)_ is available for [online, digital, and mobile integrations](?path=docs/Getting-Started/Getting-Started-Online.md) and allows merchants to set static pricing in multiple currencies. MCP provides the most control for specific international markets and offers customers an _in country_ shopping experience. The merchant is entirely responsible for setting and maintaining the prices in the currencies they support.
 
-[Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) are submitted to Commerce Hub in the same manner as domestic activity, but the merchant must send the correct amount format and corresponding [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) for these transactions. Merchant sets all pricing in foreign currency (for example, EUR for U.S. merchant) specific to geographical markets
+[Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) are submitted to Commerce Hub in the same manner as domestic activity, but the merchant must send the correct amount format and corresponding [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) for these transactions. Merchant sets all pricing in foreign currency (for example, EUR for U.S. merchant) specific to geographical markets.
 
 Merchant is funded in their local currency _(for US merchant, USD)_ based on a prevailing exchange rates. Commerce Hub supports Visa, Mastercard and American Express where available.
 
@@ -26,7 +26,7 @@ Merchant is funded in their local currency _(for US merchant, USD)_ based on a p
 - Shop and Pay in more than 140 global presentment currencies
 - Receipt in the same amount and currency that appears on their cardholder statement
 - Eliminates the foreign transaction fees charges by some issuers _(this depends on the cardholder agreement)_
-- Make purchases in a familiar currency without having to perform manual calculations thereby enjoying a superior cross-border experience similar to doing business with a local merchant
+- Make purchases in a familiar currency without having to perform manual calculations thereby enjoying a superior cross-border experience like doing business with a local merchant
 
 ---
 
@@ -37,7 +37,7 @@ Merchant is funded in their local currency _(for US merchant, USD)_ based on a p
 
 Commerce Hub currently supports authorizations for presentment in more than 134 card brand [supported currencies](?path=docs/Resources/Master-Data/Currency-Code.md) for MCP transactions. For MCP authorized transactions, Commerce Hub will settle the authorized transactions in USD currency only.
 
-Commerce Hub currently only supports MCP on the Nashville front-end processor. Nashville currently only support a max of 12 digits including precision _(decimal)_ based on the currency; 12 digits + 0 precision, 10 digits + 2 precision, or 9 + 3 precision.
+Commerce Hub currently only supports MCP on the Nashville front-end processor. Nashville currently only supports a max of 12 digits including precision _(decimal places)_ based on the currency; e.g 12 digits + 0 precision, 10 digits + 2 precisions, or 9 + 3 precisions.
 
 ---
 
@@ -45,10 +45,10 @@ Commerce Hub currently only supports MCP on the Nashville front-end processor. N
 
 <!--
 type: tab
-titles: Request, Response, OFAC Unsupported Response
+titles: Request, Response, OFAC Response
 -->
 
-Example of a charge payload request using KWD at 3 precision.
+Example of a charge payload request using KWD at 3 precisions.
 
 ```json
 {
@@ -185,6 +185,8 @@ Example of a charge (400: Bad Request) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Supported Currencies](?path=docs/Resources/Master-Data/Currency-Code.md)
 - [Global Merchant Acquiring](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---
