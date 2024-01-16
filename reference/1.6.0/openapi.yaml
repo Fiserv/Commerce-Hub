@@ -7796,6 +7796,6 @@ components:
               hostResponseMessage: 'APPROVAL'
               localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-              - beginningBalance: 12.04
-                endingBalance: 12.04
+              - beginningBalance: '12.04'
+                endingBalance: '12.04'
                 currency: 'USD'
