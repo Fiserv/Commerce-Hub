@@ -9,6 +9,9 @@ The merchant can perform account verification transaction to confirm that the cu
 <!-- theme: info -->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request by sending the customer's `billingAddress` and `securityCode`.
 
+<!-- theme: warning -->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+
 ---
 
 ## Minimum Requirements
@@ -59,7 +62,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Account verification request using PaymentCard.
+Account verification request using PaymentCard.
 
 ```json
 {
@@ -84,7 +87,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an account verification (200: Success) response.
+Example of an account verification (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

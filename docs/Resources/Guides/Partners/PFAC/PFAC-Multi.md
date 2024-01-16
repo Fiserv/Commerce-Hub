@@ -1,14 +1,17 @@
 ---
-tags: [Payment Faciliator]
+tags: [Payment Faciliator, Partners]
 ---
 
-# Payment Faciliator Multi MID
+# Payment Faciliator Multi-MID
 
-Add Description
+In a multi-MID payment facilitator *(PayFac)* model the PayFac and sub-merchants are assigned their own `merchantId` by Commerce Hub. The PayFac will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PayFac to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
+
+---
 
 ## Request Variables
 
-The following variables are also required when submitting a capture request.
+<!-- theme: info -->
+> The following variables are also required when submitting a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) request.
 
 <!--
 type: tab
@@ -17,21 +20,23 @@ titles: merchantDetails, dynamicDescriptor
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required|  Description |
-| --------- | ---------- | -------- | --------- | ----- |
-| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Description |
+| --------- | ---------- | -------- | ----- |
+| `merchantId` | *string* | 40 | A unique ID used to identify the merchant. The PayFac must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
+
+---
 
 ## Payload Example
 
 <!--
 type: tab
-title: Request
+title: Request, Response
 -->
 
-Example of a PFAC Multi payload charge request
+Example of a PayFac Multi-MID charges payload request.
 
 ```json
 {
@@ -56,20 +61,6 @@ Example of a PFAC Multi payload charge request
   "merchantDetails": {
     "merchantId": "100004SUBPFACM1",
     "terminalId": "10000001"
-  },
-  "dynamicDescriptors": {
-    "mcc": "5204",
-    "merchantName": "Nike",
-    "customerServiceNumber": "4448889999",
-    "serviceEntitlement": "4040404040",
-    "customerServiceEmail": "Nike.com",
-    "address": {
-      "street": "2900 Parkway",
-      "city": "Alpharetta",
-      "stateOrProvince": "GA",
-      "postalCode": "30004",
-      "country": "US"
-    }
   }
 }
 
@@ -81,13 +72,12 @@ Example of a PFAC Multi payload charge request
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+Example of a PayFac Multi-MID charges (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
-
 {
   "gatewayResponse": {
     "transactionType": "CHARGE",
@@ -127,41 +117,7 @@ Example of a charge (201: Created) response.
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "responseIndicators": {
-        "alternateRouteDebitIndicator": false,
-        "signatureLineIndicator": false,
-        "signatureDebitRouteIndicator": false
-      },
-      "bankAssociationDetails": {
-        "associationResponseCode": "V000",
-        "avsSecurityCodeResponse": {
-          "streetMatch": "NONE",
-          "postalCodeMatch": "NONE",
-          "securityCodeMatch": "MATCHED",
-          "association": {
-            "securityCodeResponse": "M"
-          }
-        }
-      },
-      "additionalInfo": [
-        {
-          "name": "COUNTRY_CODE",
-          "value": "USA"
-        },
-        {
-          "name": "CARD_PRODUCT_ID",
-          "value": "H"
-        },
-        {
-          "name": "DETAILED_PRODUCT_ID",
-          "value": "C"
-        },
-        {
-          "name": "HOST_RAW_PROCESSOR_RESPONSE",
-          "value": "ARAyIAGADoAAAgAAAAAAAACAABAmF1cyAUUCAAFZN2YyZjhmNzI1NjgxT0s0MTBDMDAwMTY1MDk3NQI0AEgxNE4wMTMyOTk5MzUyMTg4NDNJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlNAAZWSUNSQyAAMVNQMDcwMTY4NDA4NzI3ODk1ODAwMDI2MTAwMDMwMDIAZlNEVEMwMTU2MDExMDAwMDAwMDAwMDBSSTAxNTAwMDAwMDAwMDAwMDAwME5MMDA0VklTQVRZMDAxQ0FSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW"
-        }
-      ]
+      "hostResponseMessage": "APPROVAL"
     }
   },
   "transactionDetails": {
@@ -173,49 +129,11 @@ Example of a charge (201: Created) response.
     "createToken": true,
     "retrievalReferenceNumber": "7f2f8f725681"
   },
-  "transactionInteraction": {
-    "posEntryMode": "MANUAL",
-    "posConditionCode": "CARD_NOT_PRESENT_ECOM",
-    "additionalPosInformation": {
-      "stan": "014502",
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "UNSPECIFIED"
-      }
-    },
-    "authorizationCharacteristicsIndicator": "N",
-    "hostPosEntryMode": "010",
-    "hostPosConditionCode": "59"
-  },
   "merchantDetails": {
     "tokenType": "BBY0",
     "terminalId": "10000001",
     "merchantId": "100004SUBPFACM1"
   },
-  "splitSettlement": [
-    {
-      "merchantId": "222222",
-      "subTotal": 50,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "REVENUE_ACCOUNT",
-          "amount": {
-            "total": 35,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "FEE_ACCOUNT",
-          "amount": {
-            "total": 15,
-            "currency": "USD"
-          }
-        }
-      ]
-    },
-  ],
   "networkDetails": {
     "network": {
       "network": "Visa"
@@ -224,48 +142,9 @@ Example of a charge (201: Created) response.
     "cardLevelResultCode": "C",
     "validationCode": "IV  ",
     "transactionIdentifier": "013299935218843"
-  },
-  "cardDetails": {
-    "recordType": "DETAIL",
-    "lowBin": "4012000",
-    "highBin": "4012000",
-    "binLength": "07",
-    "binDetailPan": "16",
-    "countryCode": "USA",
-    "detailedCardProduct": "VISA",
-    "detailedCardIndicator": "CREDIT",
-    "pinSignatureCapability": "SIGNATURE",
-    "issuerUpdateYear": "21",
-    "issuerUpdateMonth": "12",
-    "issuerUpdateDay": "01",
-    "regulatorIndicator": "NON_REGULATED",
-    "cardClass": "CONSUMER",
-    "nonMoneyTransferOCTsDomestic": "NOT_SUPPORTED",
-    "nonMoneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
-    "onlineGamblingOCTsDomestic": "NOT_SUPPORTED",
-    "onlineGamblingOCTsCrossBorder": "NOT_SUPPORTED",
-    "moneyTransferOCTsDomestic": "NOT_SUPPORTED",
-    "moneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
-    "fastFundsDomesticMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsCrossBorderMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsDomesticNonMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsCrossBorderNonMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsDomesticGambling": "NOT_SUPPORTED",
-    "fastFundsCrossBorderGambling": "NOT_SUPPORTED",
-    "productId": "A",
-    "accountFundSource": "CREDIT",
-    "panLengthMin": "16",
-    "panLengthMax": "16"
-  },
-  "paymentTokens": [
-    {
-      "tokenData": "8408727895800026",
-      "tokenSource": "TRANSARMOR",
-      "tokenResponseCode": "000",
-      "tokenResponseDescription": "SUCCESS"
-    }
-  ]
+  }
 }
+
 ```
 
 <!-- type: tab-end -->
@@ -275,6 +154,9 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Payment Faciliator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Split-Settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md)
 
 ---

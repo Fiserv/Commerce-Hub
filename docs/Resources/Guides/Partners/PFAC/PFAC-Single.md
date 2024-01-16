@@ -1,14 +1,17 @@
 ---
-tags: [Payment Faciliator]
+tags: [Payment Faciliator, Partners]
 ---
 
 # Payment Faciliator Single MID
 
-Add Description
+A single MID payment facilitator *(PayFac)* model uses a single `merchantId` assigned by Commerce Hub to aggregate all transactions on behalf of their sub-merchants. The PayFac uses the `dynamicDescriptor` object to pass the sub-merchant's details. This model allows the PayFac to [settle to their accounts](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) and funding is handled by the PayFac.
+
+---
 
 ## Request Variables
 
-The following variables are also required when submitting a capture request.
+<!-- theme: info -->
+> The following variables are also required when submitting a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) request.
 
 <!--
 type: tab
@@ -17,10 +20,10 @@ titles: merchantDetails, dynamicDescriptor
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required|  Description |
-| --------- | ---------- | -------- | --------- | ----- |
-| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| Variable | Data Type| Maximum Length | Description |
+| --------- | ---------- | -------- | ----- |
+| `merchantId` | *string* | 40 | A unique ID used to identify the PayFac. The PayFac must use the value assigned by the acquirer or the gateway when submitting a transaction |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
 
 <!--
 type: tab
@@ -28,17 +31,17 @@ type: tab
 
 The below table identifies the required parameters in the `dynamicDescriptor` object.
 
-- **Discover, Visa, and Mastercard Single Merchant ID Payment Facilitators:** the format for `merchantName` is the first 3 characters of the [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) name followed by an asterisk and the sub-merchant name, e.g. “XYZ*A SMALL CO”
-- **Amex Single Merchant ID Payment Facilitators:** the `merchantName` must only contain the sub-merchant name, e.g. “A SMALL CO”
+- **Discover, Visa, and Mastercard Single Merchant ID Payment Facilitators:** the format for `merchantName` is the first 3 characters of the [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) name followed by an asterisk and the sub-merchant name, e.g. “XYZ*A SMALL CO”.
+- **Amex Single Merchant ID Payment Facilitators:** the `merchantName` must only contain the sub-merchant name, e.g. “A SMALL CO”.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
-| `merchantName` | *string* | 1024 | Merchant Name or Doing Business As (DBA) |
-| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer *(it may appear on the cardholder’s statement)* or if merchant wants to pass information that differs from the information stored on our master File. |
-| `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
+| `merchantName` | *string* | 1024 | Merchant name or Doing Business As (DBA) |
+| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer *(it may appear on the cardholder’s statement)* |
+| `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number *(also known as a processor MID)* |
 | `address` | *object* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
-| `subMerchantId` | *string* | 1024 | Sub-merchant ID defined by a third party processor. |
+| `subMerchantId` | *string* | 1024 | Sub-merchant ID defined by the payment facilitator |
 
 <!-- type: tab-end -->
 
@@ -51,7 +54,7 @@ type: tab
 title: Request
 -->
 
-Example of a PFAC Single payload charge request
+Example of a PayFac Single MID payload charge request.
 
 ```json
 {
@@ -70,11 +73,10 @@ Example of a PFAC Single payload charge request
     "currency": "USD"
   },
   "transactionDetails": {
-    "captureFlag": true,
-    "createToken": true
+    "captureFlag": true
   },
   "merchantDetails": {
-    "merchantId": "100004000PFACS1",
+    "merchantId": "1000000PFACS1",
     "terminalId": "10000001"
   },
   "dynamicDescriptors": {
@@ -83,7 +85,7 @@ Example of a PFAC Single payload charge request
     "customerServiceNumber": "4448889999",
     "serviceEntitlement": "4040404040",
     "customerServiceEmail": "Nike.com",
-    "subMerchantId": "MANUAL_PFACM_3",
+    "subMerchantId": "PFACM_3",
     "address": {
       "street": "2900 Parkway",
       "city": "Alpharetta",
@@ -99,13 +101,12 @@ type: tab
 title: Response
 -->
 
-Example of a charge (201: Created) response.
+Example of a PayFac Multi-MID charges (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
-
 {
   "gatewayResponse": {
     "transactionType": "CHARGE",
@@ -145,41 +146,7 @@ Example of a charge (201: Created) response.
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "responseIndicators": {
-        "alternateRouteDebitIndicator": false,
-        "signatureLineIndicator": false,
-        "signatureDebitRouteIndicator": false
-      },
-      "bankAssociationDetails": {
-        "associationResponseCode": "V000",
-        "avsSecurityCodeResponse": {
-          "streetMatch": "NONE",
-          "postalCodeMatch": "NONE",
-          "securityCodeMatch": "MATCHED",
-          "association": {
-            "securityCodeResponse": "M"
-          }
-        }
-      },
-      "additionalInfo": [
-        {
-          "name": "COUNTRY_CODE",
-          "value": "USA"
-        },
-        {
-          "name": "CARD_PRODUCT_ID",
-          "value": "H"
-        },
-        {
-          "name": "DETAILED_PRODUCT_ID",
-          "value": "C"
-        },
-        {
-          "name": "HOST_RAW_PROCESSOR_RESPONSE",
-          "value": "ARAyIAGADoAAAgAAAAAAAACAABAmF1VRAUQ3AAFZYmEzYmFhNTVkYTY3T0syNjVDMDAwMTY1MDk3NQI0AEgxNE4wMTMyOTk1MTg4ODYzNDJJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlNAAZWSUNSQyAAMVNQMDcwMTY4NDA4NzI3ODk1ODAwMDI2MTAwMDMwMDIAZlNEVEMwMTU2MDExMDAwMDAwMDAwMDBSSTAxNTAwMDAwMDAwMDAwMDAwME5MMDA0VklTQVRZMDAxQ0FSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW"
-        }
-      ]
+      "hostResponseMessage": "APPROVAL"
     }
   },
   "transactionDetails": {
@@ -191,71 +158,25 @@ Example of a charge (201: Created) response.
     "createToken": true,
     "retrievalReferenceNumber": "ba3baa55da67"
   },
-  "transactionInteraction": {
-    "posEntryMode": "MANUAL",
-    "posConditionCode": "CARD_NOT_PRESENT_ECOM",
-    "additionalPosInformation": {
-      "stan": "014437",
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "UNSPECIFIED"
-      }
-    },
-    "authorizationCharacteristicsIndicator": "N",
-    "hostPosEntryMode": "010",
-    "hostPosConditionCode": "59"
-  },
   "merchantDetails": {
-    "tokenType": "BBY0",
     "terminalId": "10000001",
-    "merchantId": "100004000PFACS1"
+    "merchantId": "1000000PFACS1"
   },
-  "splitSettlement": [
-    {
-      "merchantId": "222222",
-      "subTotal": 50,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "REVENUE_ACCOUNT",
-          "amount": {
-            "total": 35,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "FEE_ACCOUNT",
-          "amount": {
-            "total": 15,
-            "currency": "USD"
-          }
-        }
-      ]
-    },
-    {
-      "merchantId": "1111111",
-      "subTotal": 30,
-      "accountDetails": [
-        {
-          "name": "ABC Inc",
-          "type": "RESERVE_ACCOUNT",
-          "amount": {
-            "total": 20,
-            "currency": "USD"
-          }
-        },
-        {
-          "name": "ABC Inc",
-          "type": "SERVICE_FEE_ACCOUNT",
-          "amount": {
-            "total": 10,
-            "currency": "USD"
-          }
-        }
-      ]
+  "dynamicDescriptors": {
+    "mcc": "5204",
+    "merchantName": "Nike",
+    "customerServiceNumber": "1231231234",
+    "serviceEntitlement": "123456789012",
+    "customerServiceEmail": "mystore.com",
+    "subMerchantId": "PFACM_3",
+    "address": {
+      "street": "123 Parkway",
+      "city": "Alpharetta",
+      "stateOrProvince": "GA",
+      "postalCode": "30004",
+      "country": "US"
     }
-  ],
+  },
   "networkDetails": {
     "network": {
       "network": "Visa"
@@ -264,49 +185,8 @@ Example of a charge (201: Created) response.
     "cardLevelResultCode": "C",
     "validationCode": "IV  ",
     "transactionIdentifier": "013299518886342"
-  },
-  "cardDetails": {
-    "recordType": "DETAIL",
-    "lowBin": "4012000",
-    "highBin": "4012000",
-    "binLength": "07",
-    "binDetailPan": "16",
-    "countryCode": "USA",
-    "detailedCardProduct": "VISA",
-    "detailedCardIndicator": "CREDIT",
-    "pinSignatureCapability": "SIGNATURE",
-    "issuerUpdateYear": "21",
-    "issuerUpdateMonth": "12",
-    "issuerUpdateDay": "01",
-    "regulatorIndicator": "NON_REGULATED",
-    "cardClass": "CONSUMER",
-    "nonMoneyTransferOCTsDomestic": "NOT_SUPPORTED",
-    "nonMoneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
-    "onlineGamblingOCTsDomestic": "NOT_SUPPORTED",
-    "onlineGamblingOCTsCrossBorder": "NOT_SUPPORTED",
-    "moneyTransferOCTsDomestic": "NOT_SUPPORTED",
-    "moneyTransferOCTsCrossBorder": "NOT_SUPPORTED",
-    "fastFundsDomesticMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsCrossBorderMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsDomesticNonMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsCrossBorderNonMoneyTransfer": "NOT_SUPPORTED",
-    "fastFundsDomesticGambling": "NOT_SUPPORTED",
-    "fastFundsCrossBorderGambling": "NOT_SUPPORTED",
-    "productId": "A",
-    "accountFundSource": "CREDIT",
-    "panLengthMin": "16",
-    "panLengthMax": "16"
-  },
-  "paymentTokens": [
-    {
-      "tokenData": "8408727895800026",
-      "tokenSource": "TRANSARMOR",
-      "tokenResponseCode": "000",
-      "tokenResponseDescription": "SUCCESS"
-    }
-  ]
+  }
 }
-
 ```
 
 <!-- type: tab-end -->
@@ -316,6 +196,9 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
+- [Payment Faciliator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Split-Settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md)
 
 ---
