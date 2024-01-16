@@ -4,7 +4,7 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Reload]
 
 # Gift Card Reload
 
-A reload request allows a funds to be added to an activated gift card account. A reload is initiated by sending an `amount`, `target` and `operationType`: *RELAOD* in `transactionDetails` as part of the request.
+A reload request allows a funds to be added to an activated gift card account. A reload is initiated by sending an `amount`, `target` and `operationType`: *RELOAD* in `transactionDetails` as part of the request.
 
 ---
 
@@ -49,7 +49,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `operationType` | *string* | 50 | Identifies the tranaction type as RELOAD value |
+| `operationType` | *string* | 50 | Identifies the transaction type as RELOAD value |
 
 <!--
 type: tab
@@ -80,7 +80,7 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
+| `fundingProvider` | *string* | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
 | `transactionPosDate` | *string* | 16 | Used to override a transaction post date in reporting |
 
 <!-- type: tab-end -->
@@ -98,9 +98,9 @@ The below table identifies the parameters in the `balances` array in the `paymen
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `beginningBalance` | _number_ | 16,3 | Account beginning balance |
-| `endingBalance` | _number_ | 16,3 | Account ending balance
-| `currency` | _string_ | 17 | ISO 3 Currency Format |
+| `beginningBalance` | *number* | 16,3 | Account beginning balance |
+| `endingBalance` | *number* | 16,3 | Account ending balance
+| `currency` | *string* | 17 | ISO 3 Currency Format |
 
 <!-- type: tab-end -->
 

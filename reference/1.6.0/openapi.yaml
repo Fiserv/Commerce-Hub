@@ -540,7 +540,11 @@ paths:
       x-proxy-name: 'Credentials'
       x-default-example: Credentials
       summary: Request security credentials (access token).
-      description: 'This is the credential generation call for authorizing subsequent financial transactions. A valid <code>accessToken</code> is required for web client requests.'
+      description: |+
+        A credentials request is used for authorizing or submitting subsequent financial transactions.
+
+        * Returns an <code>accessToken</code> used in creating an <a href="../docs?path=docs/Resources/API-Documents/Authentication-Header.md">authentication header</a>.
+        * Returns a <code>sessionId</code> used with <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md">Secure Data Capture</a>.
       requestBody:
         required: true
         content:
@@ -7796,6 +7800,6 @@ components:
               hostResponseMessage: 'APPROVAL'
               localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-              - beginningBalance: 12.04
-                endingBalance: 12.04
+              - beginningBalance: '12.04'
+                endingBalance: '12.04'
                 currency: 'USD'
