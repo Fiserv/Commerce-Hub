@@ -4,7 +4,7 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, Reload]
 
 # Gift Card Reload
 
-A reload request allows a funds to be added to an activated gift card account. A reload is initiated by sending an `amount`, `target` and `operationType`: *RELAOD* in `transactionDetails` as part of the request.
+A reload request allows a funds to be added to an activated gift card account. A reload is initiated by sending an `amount`, `target` and `operationType`: *RELOAD* in `transactionDetails` as part of the request.
 
 ---
 
