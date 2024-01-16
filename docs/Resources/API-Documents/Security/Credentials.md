@@ -4,10 +4,10 @@ tags: [Security, Credentials, Access Token, API Reference]
 
 # Security Credentials
 
-A credentials request is used for authorizing or submitting subsequent financial transactions. 
+A security credentials request is used to obtain the credentials needed in an authentication request or submitting financial transactions. 
 
 - Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
-- Returns a `sessionId` used with Secure Data Capture [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) and [JS](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) requests.
+- Returns a `sessionId` used with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) requests.
 
 <!-- theme: danger -->
 > The `sessionId` returned in the response is considered private data that should be stored on the merchant’s backend server and never sent to the customer's browser.
@@ -27,7 +27,7 @@ The below table identifies the parameters in the request.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of [clickjacking](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking) when integrating with the Secure Data Capture iFrame solution. |
+| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of [clickjacking](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking) when integrating with the Secure Data Capture v1 iFrame solution. |
 
 <!---
 | `publicKeyRequired` | *boolean* | N/A | Used to request a public key. If the signedCert is expired or invalid then merchant would send a request, default is true (false currently not supported) |
@@ -63,17 +63,17 @@ The below table identifies the response elements. The full request schemas are a
 
 | Variable | Type | Maximum Length | Description |
 |---------|----------|--------|--------|
-| `keyId` | *string* | 64 | Unique identifier of the public encryption key |
-| `publicKey` | *string* | 4000 | Base64 encoded public key |
-| `keyLength` | *string* | 10 | Length of the Base64 encoded public encryption key |
 | `accessToken` | *string* | 2048 | Access token credential to be used in subsequent API calls. |
-| `sessionId` | *string* | 64  | Used as an identifier for a session after a successful call to security/credentials endpoint or after a successful authentication request |
-| `domains` | *array* | N/A  | A whitelist of domains that are applicable for this credentials request |
+| `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT _(JSON Web Token)_ |
 | `accessTokenIssuedTime` | *string* | 64 | Token issue time in YYYY-MM-DDThh:mm:ssZ format |
 | `accessTokenTimeToLive` | *string* | 7 | Access token expiry |
+| `keyId` | *string* | 64 | Unique identifier of the public encryption key |
+| `keyLength` | *string* | 10 | Length of the Base64 encoded public encryption key |
+| `publicKey` | *string* | 4000 | Base64 encoded public key |
 | `asymmetricEncryptionAlgorithm` | *string* | 32 | Asymmetric encryption algorithm associated with the public key. RSA/ECB/PKCS1 with padding. |
-| `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT _(JSON Web Token)_ |
 | `expiresAt` | *string* | 64 | Date and time when the session expires |
+| `sessionId` | *string* | 64  | Used as an identifier for a session after a successful call to security/credentials endpoint or after a successful authentication request |
+| `domains` | *array* | N/A  | A whitelist of domains that are applicable for this credentials request |
 
 
 <!---

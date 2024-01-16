@@ -2,206 +2,266 @@
 tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 ---
 
-# Secure Data Capture - iFrame Customization
+# Secure Data Capture - iFrame v2 Customization
 
-Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [language](#languages), and the [theme and font](#theme-and-font).
+Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [CSS](#css), [font](#font), [supported card brands](#card-brands), and [field configuration](#field-configuration).
 
----
+### Major Features
 
-## Languages
-
-iFrame is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load. You can also provide your own translations by including a languages attribute as part of your form configuration object creation.
-
-The following example shows all the text labels that can be overridden for a particular language/locale:
-
-```java
-
-"languages": [{
-  "language": "en-US",
-  "cardNumber": {
-    "label": "[MO] Card Number",
-    "errors": {
-      "required": "[MO] Enter a valid card number.",
-      "mask": "[MO] Your card number is incomplete.",
-      "invalid": "[MO] Enter a valid card number."
-    }
-  },
-  "cardHolder": {
-    "label": "[MO] Name on Card",
-    "errors": {
-      "required": "[MO] Enter a valid name."
-    }
-  },
-  "cardSecurityCode": {
-    "label": "[MO] CVC",
-    "errors": {
-      "required": "[MO] Enter a valid CVC.",
-      "mask": "[MO] Your CVC is incomplete."
-    }
-  },
-  "cardExpiryDate": {
-    "label": "[MO] Expiry Date",
-    "errors": {
-      "before": "[MO] Date must be in the future.",
-      "invalid": "[MO] Enter a valid date.",
-      "required": "[MO] Enter a valid date."
-    }
-  },
-  "payButton": {
-    "label": "[MO] PAY",
-    "loading": "[MO] PROCESSING"
-  }
-}]
-
-```
+- Support for different variations on card fields *(i.e. dropdown or text input)*
+- Support for CSS stylesheet injection into the iFrames
+- Support for applying custom fonts to the iFrame input fields
+- Support for custom placeholder or dropdown option text enabling easier internationalization
+- Support for brand identification as well as restricting the allowed brands for payment
+- Support for automatic field validation
+- Support for masking of card number and security code
+- Support for auto-formatting of card number and card expiry
 
 ---
 
-## CSS Styling
+## CSS
 
-The default iFrame styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
+The stylesheet can be configured to be dynamically setup for each field iFrame by passing the CSS in JSON format. The JSON-formatted stylesheet is validated for safety against a whitelist and only the portions that fail this validation are dropped without affecting the rest of the stylesheet or overall form rendering.
 
-<!-- theme: warning -->
-> Support for certain CSS properties/selectors have been restricted for security reasons.
+<!-- theme: info -->
+> Most standard CSS properties as well as some vendor-specific properties are included in the whitelist.
 
-The following table outlines the attributes of the `fiservConfig.css.styleConfig` object:
+The `id` and `name` attributes of each rendered input or select element inside the iFrames will be assigned to the [field identifier](#supported-fields).
 
-| Attributes | Description |
-|------|-------|
-| `base` | base styling for the iframe on all device sizes |
-| `media` | device specific styling rules that override the base styling rules when the current device matches the defined media query | 
+<!-- theme: info -->
+> Custom [font configuration](#font) must be submitted in a specific format for security reasons.
 
+### Example
 
-The following code snippet shows a sample styling configuration:
+Example of payment form CSS customization in `createPaymentForm`.
 
-```java
-
-const fiservConfig = {
-   "css": {
-      "styles": {
-         "base": {
-            "app-root": {
-               "font-style": "italic",
-               "app-card-number": {
-                  "background-color": "whitesmoke",
-                  "font-style": "normal",
-                  "font-family": "Courier New",
-                  "font-size": "12px",
-                  ":hover": {
-                     "background-color": "lightgray",
-                     "border": "darkgray dashed 2px"
-                  }
-               }
-            },
-            "app-card-form": {
-               "app-input-card": {
-                  "box-shadow": "3px 3px lightgray"
-               }
-            }
-         },
-         "media": {
-            "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)": {
-               "app-card-form": {
-                  "app-input-card": {
-                     "box-shadow": "3px 3px cyan"
-                  }
-               }
-            },
-            "@media only screen and (min-device-width: 320px) and (max-device-width: 480px)": {
-               "app-card-form": {
-                  "app-input-card": {
-                     "box-shadow": "3px 3px gold"
-                  }
-               }
-            }
-         }
+```json
+{
+  "css": {
+    "input, select": {
+      "font-size": "16px",
+      "color": "#00a9e0",
+      "font-family": "testing-testing"
+    },
+    ":focus": {
+      "color": "#00a9e0"
+    },
+    ".validCssClass": {
+      "color": "#43B02A"
+    },
+    ".invalidCssClass": {
+      "color": "#C01324"
+    },
+    "@media screen and (max-width: 700px)": {
+      "input": {
+        "font-size": "18px"
       }
-   }
-};
-
+    },
+    "input:-webkit-autofill": {
+      "-webkit-box-shadow": "0 0 0 50px white inset"
+    },
+    "input:focus:-webkit-autofill": {
+      "-webkit-text-fill-color": "#00a9e0"
+    },
+    "input.valid:-webkit-autofill": {
+      "-webkit-text-fill-color": "#43B02A"
+    },
+    "input.invalid:-webkit-autofill": {
+      "-webkit-text-fill-color": "#C01324"
+    },
+    "input::placeholder": {
+      "color": "#aaa"
+    },
+    "nameOnCard": {
+      "font-size": "15px"
+    }
+  }
+}
 ```
 
 ---
 
-### Standard Tags
+## Font
 
-In order to achieve the desired branding, merchants will need to target specific elements within the HTML DOM and apply custom styles to those elements. Commerce Hub will maintain the current HTML structure, however between our releases, custom CSS query selectors may not work if targeting HTML elements are not coded correctly. 
+Custom fonts can optionally be provide and used in the field iFrames. The `font` configuration object allows you to configure the custom font's details. This is particularly useful for maintaining brand consistency.
 
-- Use standard tags, ids or names when targeting HTML elements
-- Don't target classes if it can be avoided
-- With the exception of the standard tags, do not assume the HTML contents and structure will never change
-- Keep query selectors short and concise, example: use `input[type='submit']` instead of `body form div input[type='submit']`
+If the `font` configuration object is provided, all sub-fields must be provided and pass validations or the custom font is ignored. Fonts are not automatically applied and must be referenced from the configured [CSS](#css) via the `font-family` CSS property.
 
-```css
+<!-- theme: info -->
+> If the `font-family` of the configured font matches a font already on the user's device, the local font is given preference over the configured one to minimize potential risk to users.
 
--body
-|-app-root
-  |-app-card-form
-    |-app-card-number form
-    |-app-card-number
-      |-Input element: id = cardNumber, name = ccNumber
-    |-app-select-expiry
-      |-Mat-select element (Month): id = cardExpiryMonth, name = ccExpMonth
-      |-Mat-select element(Year): id = cardExpiryYear, name = ccExpYear
-    |-app-input-card
-      |-Input element: id = cardSecurityCode, name = ccSecurityCode    
-      |-Input element: id = cardHolder, name = ccName
-    |-app-submit-button
-      |-Button element: id = submitButton name = btnSubmit 
+<!--
+type: tab
+titles: Variables, JSON Example
+-->
 
+| Field | Description |
+| ----- | ----------- |
+| `data` | The base64 encoded SHA256 of this value must match the `integrity` field. |
+| `family` | The `font-family` property value for use in configured [CSS](#css) styles  |
+| `format` | Font MIME type. _**Valid Values:** font/otf, font/ttf, font/woff, font/woff2_ |
+| `integrity` | Compared against a dynamically computed value of the data provided in the `data` field; if there isn't a match the custom font is ignored |
+
+<!--
+type: tab
+-->
+
+Example of payment form font customization in `createPaymentForm`.
+
+```json
+{
+  "font": {
+    "data": "<BASE_64_OF_FONT_FILE_GOES_HERE_WITHOUT_BRACKETS>",
+    "family": "testing-testing",
+    "format": "font/woff",
+    "integrity": "<BASE_64_SHA256_OF_DATA_FIELD_VALUE_GOES_HERE_WITHOUT_BRACKETS>"
+  }
+}
 ```
 
----
-
-### Supported Properties
-
-The following block outlines the common element tags, identifiers, and names that Commerce Hub guarantees will not change between our minor releases.
-
-- -moz-appearance
-- -moz-osx-font-smoothing
-- -moz-tap-highlight-color
-- -moz-transition
-- -webkit-appearance
-- -webkit-font-smoothing
-- -webkit-tap-highlight
-- color
-- -webkit-transition
-- box-shadow
-- -webkit-box-shadow
-- -webkit-text-fill-color
-- background-color
-- appearance
-- color
-- margin
-- border
-- border-bottom
-- border-left
-- border-right
-- border-top
-- border-color
-- border-style
-- font-style
-- font-family
-- font-size
-- font-weight
-- padding
+<!-- type: tab-end -->
 
 ---
 
-### Security Restrictions
+## Supported Fields
 
-Commerce Hub implements security restrictions that prevent attackers from injecting or performing exfiltration attacks in the iFrame solution.
+The following table identifies the supported CSS fields.
 
-- `input[value='*']` query selector: Poses a security risk by allowing attackers to inject css that calls a remote URL when the input matches a certain value. If the injected remote URL is a unique URL per input value, the attacker can have full or partial access to the individual content.  
-- `[url\(.*\]` property: Mitigates the risk of a CSS exfiltration attack.
+<!-- theme: info -->
+> No fields are required but at least one field must be configured.
+
+| Field | Description |
+| ----- | ----------- |
+| `cardNumber` | The card number |
+| `nameOnCard` | The full name of the cardholder as listed on their card. **Cannot** be used with `firstName` and `lastName` |
+| `firstName` | The first name of the cardholder as listed on their card, requires `lastName` to be configured. **Cannot** be used with `nameOnCard` |
+| `lastName` | The last name of the cardholder as listed on their card., requires `firstName` to be configured. **Cannot** be used with `nameOnCard` |
+| `securityCode` | The card security code |
+| `expiration` | Field that is auto-formatted for both the month and year portions of the card expiry in _MM/YY_ or _MM/YYYY_ format. **Cannot** be used with `expirationMonth` or `expirationYear` |
+| `expirationMonth` | A dropdown field for the month portion of the card expiry. Requires `expirationYear`. **Cannot** be used with `expiration` |
+| `expirationYear` | A dropdown field for the year portion of the card expiry, requires `expirationMonth` to be configured. **Cannot** be used alongside `expiration` |
+
+---
+
+## Field Configuration
+
+Only a `parentElementId` is required, this is the id for the DOM element on the merchant's page where Commerce Hub will inject the iFrame for that field. If other field configuration properties fail validation, the portion of configuration that failed validation is ignored.
+
+<!--
+type: tab
+titles: Variables, JSON Example
+-->
+
+| Field | Description |
+| ----- | ----------- |
+| `placeholder` | Placeholder text for the field |
+| `dynamicPlaceholderCharacter` | Placeholder character for the field. Has no effect if `placeholder` isn't specified; must be one character in length  |
+| `enableFormatting` | Controls if the card number should be auto-formatted with additional spaces while user types |
+| `masking.character` | Controls card number masking and be one character in length |
+| `masking.mode` | Controls [masking mode](#masking-mode) |
+| `masking.shrunkLength` | Controls how many characters of the masking character will represent the masked portion of the input after shrinking is applied, must be a number |
+| `optionLabels` | The text to display for each option in `expirationMonth` |
+
+#### Masking Mode
+
+| Valid Values | Description | cardNumber | securityCode |
+| ------------ | ----------- | :--------: | :----------: |
+| _NO_MASKING_ | Masking is fully disabled | &#10004; | &#10004; |
+| _ALWAYS_MASK_EXCEPT_LAST_4_ | Each block of 4 digits entered will be masked in real time with final 4 left unmasked | &#10004; | |
+| _ALWAYS_MASK_ALL_ | Digits entered will be masked in real time with most recently entered digit left unmasked until input loses focus | &#10004; | &#10004; |
+| _BLUR_MASK_EXCEPT_LAST_4_ | Masking is applied when input loses focus; only last 4 digits left unmasked | &#10004; | |
+| _BLUR_MASK_ALL_ | Masking is applied when input loses focus; all digits masked | &#10004; | &#10004; |
+| _BLUR_MASK_EXCEPT_LAST_4_SHRINK_ | Masking is applied when input loses focus; only last 4 digits left unmasked; masked portion is shrunk down to `shrunkLength` with configured masking `character` | &#10004; | |
+| _BLUR_MASK_ALL_SHRINK_ | Masking is applied when input loses focus; all digits masked; masked portion is shrunk down to `shrunkLength` with configured masking `character` | &#10004; | |
+
+<!--
+type: tab
+-->
+
+Example of payment form fields customization  in `createPaymentForm`.
+
+```json
+{
+  "fields": {
+    "cardNumber": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "placeholder text goes here",
+      "dynamicPlaceholderCharacter": "•",
+      "enableFormatting": true,
+      "masking": {
+        "character": "•",
+        "mode": "NO_MASKING",
+        "shrunkLength": 4
+      }
+    },
+    "nameOnCard": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "Name On Card"
+    },
+    "firstName": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "First Name"
+    },
+    "lastName": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "Last Name"
+    },
+    "securityCode": {
+      "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+      "placeholder": "placeholder text goes here",
+      "dynamicPlaceholderCharacter": "•",
+      "masking": {
+        "character": "•",
+        "mode": "NO_MASKING"
+      },
+      "expiration": {
+        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+        "placeholder": "MM / YY"
+      },
+      "expirationMonth": {
+        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+        "placeholder": "Card Expiration Month",
+        "optionLabels": [
+          "01 - January",
+          "02 - February",
+          "03 - March",
+          "04 - April",
+          "05 - May",
+          "06 - June",
+          "07 - July",
+          "08 - August",
+          "09 - September",
+          "10 - October",
+          "11 - November",
+          "12 - December"
+        ]
+      },
+      "expirationYear": {
+        "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
+        "placeholder": "Card Expiration Year"
+      }
+    }
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+## Card Brands
+
+Supported [card brands](?path=docs/Resources/Master-Data/Card-Type.md) are defined in `supportedCardBrands` field of the configuration object passed in `createPaymentForm`. The merchant can restrict the allowed brands to a subset of the supported card brands assigned to the configuration field as a string array of brand identifiers.
+
+When the SDK has identified the card brand, or can no longer identify the card brand because of user input changes, the user-provided [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md#event-hooks) `onCardBrandChange` is called with this information.
 
 ---
 
 ## See Also
 
 - [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
-- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
-- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
+- [iFrame Event Handling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
+- [iFrame Methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Methods.md)
 
 ---

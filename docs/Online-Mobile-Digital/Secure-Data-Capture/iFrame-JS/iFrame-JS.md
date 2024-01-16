@@ -2,9 +2,11 @@
 tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 ---
 
-# Secure Data Capture - iFrame Solution
+# Secure Data Capture - iFrame v2 Solution
 
-Commerce Hub's iFrame allows E-commerce merchants to create payment data via a payment `sessionId`. Cardholder data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrame, thereby allowing merchants to offload payment processing of card data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub's iFrame allows E-commerce merchants to create payment data via a payment `sessionId`. Cardholder data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrames, thereby allowing merchants to offload payment processing of card data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+
+Secure Data Capture v2 iFrame SDK works by injecting individual iFrames for each payment field *(card number, security code, etc.)* allowing them to be composed with other elements to create richer and more customizable UI components. This allows full customization on the merchant's page and hosting as little as possible within the iFrame itself. The iFrames are injected into parent elements on the webpage which can be configured individually per field. The creation and manipulation of these iFrames is all handled via the SDK from your JavaScript code.
 
 ### Benefits
 
@@ -40,9 +42,15 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Cust
 -->
 
 <!-- type: card
-title: iFrame Event Listener
+title: iFrame Event Handling
 description: Support external interactions of the card form for Commerce Hub's iFrame solution.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md
+-->
+
+<!-- type: card
+title: iFrame Methods
+description: Methods used to acquire an instance of the payment form.
+link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Methods.md
 -->
 
 <!-- type: row-end -->
@@ -52,6 +60,10 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customi
 ## Additional Security Settings
 
 The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
+
+### Browser Support
+
+Only modern browsers are supported, legacy browsers pose additional security concerns as they do not receive security patches *(this includes IE11)*. Additionally, arrow functions, promise, and `window.crypto.subtle` *(SubtleCrypto API)* JavaScript functions must all be supported. Arrow functions are required in order to exclude less-secure browsers from being supported.
 
 ### Recommendations
 
