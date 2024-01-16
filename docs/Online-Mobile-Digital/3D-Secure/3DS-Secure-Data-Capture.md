@@ -2,7 +2,7 @@
 tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Secure Data Capture]
 ---
 
-# 3-D Secure - Secure Data Capture Integration
+# 3-D Secure - Commerce Hub Managed Secure Data Capture Integration
 
 Commerce Hub's Secure Data Capture is designed to work seamlessly with our 3-D Secure (3DS) authentication provider. This eliminates the need to manually integrate with the provider's API and increases PCI security. The [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) or [JavaScript SDK](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) handles the data collection and storage of the customer's data to send to the 3DS provider.
 
@@ -43,7 +43,7 @@ Submit the [authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3
 
 ## Step 4: Submit Transaction Request
 
-After authentication has been completed with the 3DS provider, submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request based on the requirements.
+After authentication has been completed with the 3DS provider, [submit a charges, tokenization, or verification request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) based on the requirements.
 
 ---
 
