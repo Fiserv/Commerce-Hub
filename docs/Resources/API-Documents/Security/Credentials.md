@@ -1,5 +1,5 @@
 ---
-tags: [Security, Credentials, API Reference]
+tags: [Security, Credentials, Access Token, API Reference]
 ---
 
 # Security Credentials
