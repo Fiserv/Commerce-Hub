@@ -1,12 +1,15 @@
 {
   "recommendations": [
-    "oliversturm.fix-json",
-    "github.remotehub",
-    "znck.grammarly",
-    "valentjn.vscode-ltex",
     "davidanson.vscode-markdownlint",
-    "42crunch.vscode-openapi",
+    "oliversturm.fix-json",
+    "streetsidesoftware.code-spell-checker",
+    "znck.grammarly",
+    "redhat.vscode-yaml",
     "ban.spellright",
-    "redhat.vscode-yaml"
+    "ms-vscode.remote-repositories",
+    "42crunch.vscode-openapi",
+    "valentjn.vscode-ltex",
+    "github.remotehub",
+    "ms-vscode.azure-repos"
   ]
 }

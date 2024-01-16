@@ -23,9 +23,19 @@ Generate the message digest required for use with our APIs.
 > Encrypted Message Digest Example: 2e5a47d16aaafd6a13303d4e211bbce1a771d9cfa412ac45deb38a558037fd38
 
 ```javascript
-const payload_2 = JSON.parse(interpolate(pm.request.body.toString()));
-    const rawSignature_2 = apiKey + clientRequestId + timestamp + JSON.stringify(payload_2);
-    postman.setEnvironmentVariable("messageDigest", CryptoJS.SHA256(rawSignature_2));
+function guid() {	// create clientRequestId
+	function s4() {
+		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+	}
+	return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
+}
+
+const clientRequestId = guid();
+const timestamp = new Date().getTime();
+const apiKey = "ytIrtghbjkuytewsdfgvxzcnzskliqopkjmd";
+const payload = JSON.parse(request.body.toString());
+const rawSignature = apiKey + clientRequestId + timestamp + JSON.stringify(payload);
+const messageDigest = CryptoJS.SHA256(rawSignature);
 ```
 
 ---
