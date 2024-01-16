@@ -21,18 +21,18 @@ The below table identifies the additional required parameters in the `card` obje
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+| `securityCodeIndicator` | _string_ | | Indicates how the security code is passed |
 
-#### Security Code Indicator
+### Security Code Indicator
 
 The below table identifies the valid values of `securityCodeIndicator`.
 
 | Value | Description |
 | ----- | --------- |
-| *NOT_SUPPORTED* | Not supported (Default) |
-| *PROVIDED* | Security code provided in the transaction request |
-| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
-| *NOT_AVAILABLE* | Security code not available. |
+| _NOT_SUPPORTED_ | Not supported (Default) |
+| _PROVIDED_ | Security code provided in the transaction request |
+| _VALUE_ILLEGIBLE_ | Security code value missing or illegible |
+| _NOT_AVAILABLE_ | Security code not available. |
 
 <!--
 type: tab
@@ -66,7 +66,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a security code verification request.
+Example of a security code verification request.
 
 ```json
 {
@@ -97,7 +97,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a security code verification response.
+Example of a security code verification response.
 
 ```json
 {
@@ -176,10 +176,10 @@ type: tab
 
 <!--
 type: tab
-titlea: Request, Response
+titles: Request, Response
 -->
 
-##### Example of a security code verification during a charges request.
+Example of a security code verification during a charges request.
 
 ```json
 {
@@ -221,7 +221,7 @@ titlea: Request, Response
 type: tab
 -->
 
-##### Charges response containing security code response details.
+Charges response containing security code response details.
 
 ```json
 {
@@ -311,21 +311,21 @@ The result of checking the cardholder's entered security code with the issuer's 
 
 The below table identifies the valid values of `securityCodeMatch`.
 
-| Value | Descrption |
+| Value | Description |
 | ---- | ------------|
-| *MATCHED* | Data matches with issuer system |
-| *NOT_MATCHED* | Data does not match with issuer system |
-| *NOT_PROCESSED* | Security code verification not done |
-| *NOT_PRESENT* | Security code not present in the input |
-| *NOT_CERTIFIED* | Issuer not certified to verify sercurity code |
-| *NOT_CHECKED* | Security code not checked |
-| *NONE* | No security code provided |
+| _MATCHED_ | Data matches with issuer system |
+| _NOT_MATCHED_ | Data does not match with issuer system |
+| _NOT_PROCESSED_ | Security code verification not done |
+| _NOT_PRESENT_ | Security code not present in the input |
+| _NOT_CERTIFIED_ | Issuer not certified to verify security code |
+| _NOT_CHECKED_ | Security code not checked |
+| _NONE_ | No security code provided |
 
 ---
 
 ## Association Response Code
 
-The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`. The valid response values are based on the host or processor, see the respective orocessor's spec doc for a list of response values.
+The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`. The valid response values are based on the host or processor, see the respective processor's spec doc for a list of response values.
 
 ```json
 {
