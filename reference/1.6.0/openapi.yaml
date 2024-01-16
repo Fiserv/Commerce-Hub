@@ -4857,6 +4857,40 @@ components:
         count: {type: integer, maximum: 99, description: Number of accounts presented
             of this type., example: 2}
         amount: {$ref: '#/components/schemas/Amount'}
+    SplitSettlement:
+      x-model-version: 1.0
+      description: 'Split settlement information that is used to split payouts of a transaction into multiple accounts.'
+      properties:
+        merchantId:         
+          type: string
+          maxLength: 1024
+          description: 'The merchant ID for each merchant account involved in split settlement.'
+          example: 123456789011
+        subTotal:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'The subtotal for each merchant account involved in split settlement.'
+          example: 13.50
+        accountDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountDetails'
+    AccountDetails:
+      x-model-version: 1.0
+      description: 'Account information.'
+      properties:
+        name:
+          type: string
+          maxLength: 1024
+          description: 'An account name for split settlement.'
+          example: 'ABC Inc'
+        type:
+          type: string
+          description: 'Type of split settlement account.'
+          example: 'FEE_ACCOUNT'
+        amount:
+          $ref: '#/components/schemas/Amount'
+
     EnhancedDataServiceResponse:
       x-model-version: 1.0
       properties:

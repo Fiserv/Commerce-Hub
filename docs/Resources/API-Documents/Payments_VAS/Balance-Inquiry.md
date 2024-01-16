@@ -4,13 +4,13 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty, EBT, Balance Inquiry]
 
 # Balance Inquiry
 
-Balance inquiry is used to retrieve the current balance of any [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) or Electronic Benefits Transfer _(EBT)_ card.
+Balance inquiry is used to retrieve the current balance of any [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md).
+
+<!--- or Electronic Benefits Transfer _(EBT)_ card. --->
 
 ---
 
 ## Request Variables
-
-Description
 
 <!--
 type: tab
@@ -23,6 +23,13 @@ The below table identifies the parameters in the `source` object.
 |---------|----------|----------------|---------|
 | `sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported is _PaymentCard_ |
 
+The below table identifies the conditional parameters in `card` object.
+
+|Variable | Type | Maximum Length | Description|
+|---------|----------|----------------|---------|
+| `category`| _string_ | 25 | Defines the card type as GIFT |
+| `subCategory`| _string_ | 25 | Identifies the card provider |
+
 <!--
 type: tab
 -->
@@ -31,8 +38,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!--
 type: tab
@@ -54,10 +61,29 @@ The below table identifies the conditional parameters in the `additionalData` ob
 
 ---
 
+## Response Variables
+
+<!--
+type: tab
+titles: balances
+-->
+
+The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
+
+| Variable | Data Type | Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `beginningBalance` | _number_ | 16,3 | Account beginning balance |
+| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `currency` | _string_ | 17 | ISO 3 Currency Format |
+
+<!-- type: tab-end -->
+
+---
+
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/balance-inquiry`
+> **POST** `/payments-vas/v1/accounts/balance-inquiry`
 
 ---
 
@@ -78,8 +104,8 @@ titles: Request, Response
       "cardData": "9998955500000000190",
       "expirationMonth": "02",
       "expirationYear": "2035",
-      "category": "GIFT",
       "securityCode": "1234",
+      "category": "GIFT",
       "subCategory": "GIFT_SOLUTIONS"
     }
   },
@@ -141,13 +167,15 @@ Example of a balance inquiry (200: Success) response.
       "subCategory": "GIFT_SOLUTIONS"
     }
   },
-  "balances": [
-    {
-      "beginningBalance": "16.00",
-      "endingBalance": "16.00",
-      "currency": "USD"
-    }
-  ]
+  "paymentReceipt": {
+    "balances": [
+      {
+        "beginningBalance": "16.00",
+        "endingBalance": "16.00",
+        "currency": "USD"
+      }
+    ]
+  }
 }
 ```
 
@@ -161,3 +189,5 @@ Example of a balance inquiry (200: Success) response.
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
+
+---

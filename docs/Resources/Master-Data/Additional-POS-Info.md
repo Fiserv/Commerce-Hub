@@ -281,6 +281,7 @@ The below table identifies the valid values of `terminalEntryCapability`.
 | *MAG_STRIPE_ONLY* | Track read only |
 | *MAG_STRIPE_MANUAL* | Track read or manual key |
 | *MAG_STRIPE_MANUAL_CHIP* | Track read, manual key or chip |
+| *MAG_MANUAL_CHIP_CONTACTLESS* | Track read, manual key, chip, or contactless |
 | *BARCODE* | Barcode scan |
 | *CONTACTLESS* | Contactless integrated circuit read |
 | *OCR* | Opitcal character reader |

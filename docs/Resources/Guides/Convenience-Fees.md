@@ -4,7 +4,7 @@ tags: [Convenience Fees, Amount]
 
 # Convenience Fees 
 
-Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
+Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant. Convenience Fees facilitate this, passing the cost from the Merchant to consumer.
 
 A merchant that charges a convenience fee must ensure that the fee is:
 
@@ -42,8 +42,8 @@ The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *number* | 18,3 | The total amount of a transction including `convenienceFees` and `subTotal`. | 
-| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md). | 
+| `total` | *number* | 18,3 | The total amount of a transaction including `convenienceFees` and `subTotal` | 
+| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md) | 
 
 <!--
 type: tab
@@ -102,7 +102,7 @@ titles: Request, Response
 ```json
 {
   "amount": {
-    "total": 12.02,
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -117,6 +117,11 @@ titles: Request, Response
   },
   "transactionDetails": {
     "captureFlag": true
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "amountComponents": {
     "subTotal": 11.02,
@@ -142,7 +147,7 @@ type: tab
   "gatewayResponse": {
     "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
     "transactionType": "CHARGES",
-    "transactionState": "AUTHORIZED",
+    "transactionState": "CAPTURED",
     "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
       "transactionDate": "2016-04-16",
@@ -190,6 +195,23 @@ type: tab
         "transactionTimestamp": "2016-04-16T16:06:05Z"
       }
     }
+  },
+  "networkDetails": {
+    "network": {
+      "network": "Visa"
+    },
+    "networkResponseCode": "00",
+    "cardLevelResultCode": "C",
+    "validationCode": "IV  ",
+    "transactionIdentifier": "013234959794033"
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   }
 }
 ```

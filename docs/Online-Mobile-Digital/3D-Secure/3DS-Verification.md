@@ -22,8 +22,8 @@ The below table identifies the available parameters in the `referenceTransaction
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceTransactionId` | _string_ | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | _string_ | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
 
 <!--
 type: tab
@@ -33,8 +33,8 @@ The below table identifies the available parameters in the `merchantDetails` obj
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
