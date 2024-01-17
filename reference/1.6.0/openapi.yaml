@@ -7528,7 +7528,7 @@ components:
         transactionDetails:
           merchantTransactionId: '123456789012'
           merchantOrderId: '845366457890'
-          operationType: 'ACTIVATION'
+          operationType: 'ACTIVATE'
         merchantDetails: 
           terminalId: '123456'
           merchantId: '123456789012345'
@@ -7589,7 +7589,7 @@ components:
         transactionDetails: 
           merchantTransactionId: '123456789012'
           merchantOrderId: '845366457890'
-          operationType: 'ACTIVATION'
+          operationType: 'ACTIVATE'
         merchantDetails: 
           terminalId: '123456'
           merchantId: '123456789012345'
