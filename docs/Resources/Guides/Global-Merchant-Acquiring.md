@@ -2,7 +2,7 @@
 tags: [Global Merchant Acquiring, International, Foreign Currency]
 ---
 
-# Multi-Currency Pricing
+# Global Merchant Acquiring
 
 Global Merchant Acquiring _(GMA)_ is a Commerce Hub multi-currency acquiring solution that offers one simplified and consolidated payment solution for large multi-national merchants for [Online, Digital and Mobile](?path=docs/Getting-Started/Getting-Started-Online.md) and [In-Person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions across key markets in North America, Europe, and Asia Pacific for 37 countries.
 
