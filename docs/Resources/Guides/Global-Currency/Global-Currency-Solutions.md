@@ -4,9 +4,6 @@ tags: [Currency Conversion, Global Currency]
 
 # Global Currency Solutions
 
-<!-- theme: danger -->
-> We are enhancing the Commerce Hub to include currency conversion support and the documents related to the features will be released soon
-
 Commerce Hub's [Global Currency Solutions](https://www.carat.fiserv.com/en-us/solutions/global-currency/) allows a merchant to combine any of our currency solutions with [Global Merchant Acquiring (GMA)](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md) and local payment methods.
 
 <!-- theme: info -->

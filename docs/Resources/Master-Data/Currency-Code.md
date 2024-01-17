@@ -7,7 +7,7 @@ tags: [API Reference, Foreign Currency, Master Data. Global Currency Solutions, 
 
 The `currency` variable in the `amount` [object](?path=docs/Resources/Master-Data/Amount-Components.md) determines what currency the transaction well be submitted in.
 
-<!-- theme: warning -->
+<!-- theme: info -->
 > Commerce Hub uses a decimals for separating precisions. When submitting the `total` ensure the correct precision usage; e.g. 10 GBP is submitted as 10.00, 10 JPY is submitted as 10, and 10 JOD is submitted as 10.000.
 
 ---
@@ -15,12 +15,6 @@ The `currency` variable in the `amount` [object](?path=docs/Resources/Master-Dat
 ## ISO Currency Codes
 
 The table below contains all valid values of currency name, code, number and precision values. Commerce Hub uses the 3 character alpha code when submitting [transactions](?path=docs/Resources/API-Documents/Payments/Payments.md). Commerce Hub supports the use of foreign currencies with Global Merchant Acquiring (GMA) and Multi-Currency Pricing (MCP) transactions.
-
-<!-- theme: warning -->
-> Commerce Hub does not support the following  currencies which are prohibited by the Office of Foreign Assets Control _(OFAC)_; BYN, MMK, CUP, CDF, IRR, IQD, LRD, KPW, SDG, SYP, and ZWL.
-
-<!-- theme: warning -->
-> Fiserv has taken the stance as a company to cease and desist all dealings with Russia as a country, therefore Commerce Hub cannot support RUB as a currency for any services.
 
 | Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | ------------- | :-----------: | :---------:| :-----: | --- | --- |
@@ -35,13 +29,12 @@ The table below contains all valid values of currency name, code, number and pre
 | Bahrain Dinar | BHD | 048 | 3 | | |
 | Bangladeshi Taka | BDT | 050 | 2 | | |
 | Barbados Dollar | BBD | 052 | 2 | | |
-| Belarusian Ruble | BYN | 933 | 2 | | |
 | Belizean Dollar | BZD | 084 | 2 | | |
 | Bermudian Dollar | BMD | 060 | 2 | | |
 | Venezuelan Bolívar | VEF | 862 | 2 | | |
 | Bolivian Boliviano | BOB | 068 | 2 | | |
 | Bolivian Soberano | VES | 928 | 2 | | |
-| Bosnian Convertible Marka | BAM | 977 | 2 | | |
+| Bosnian and Herzegovina Convertible Marka | BAM | 977 | 2 | | |
 | Botswana Pula | BWP | 072 | 2 | | |
 | Brazilian Real | BRL | 986 | 2 | | |
 | British Pound | GBP | 826 | 2 | | |
@@ -53,15 +46,11 @@ The table below contains all valid values of currency name, code, number and pre
 | Cape Verdean Escudo | CVE | 132 | 2 | | |
 | Caymanian Dollar | KYD | 136 | 2 | | |
 | Central African CFA Franc |  XAF | 950 | 2 | | |
-| CFA Franc BCEAO | XOF | 952 | 0 | | |
-| CFP Franc | XPF | 953 | 0 | | |
 | Chilean Peso | CLP | 152 | 0 | | |
 | China Yuan Renminbi | CNY | 156 | 2 | | |
 | Colombian Peso | COP | 170 | 2 | | |
-| Congolese Franc | CDF | 976 | 2 | | |
 | Costa Rican Colon | CRC | 188 | 2 | | |
 | Croatian Kuna | HRK | 191 | 2 | | |
-| Cuban Peso | CUP | 192 | 2 | | |
 | Czech Krona | CZK | 203 | 2 | | |
 | Danish Krone | DKK | 208 | 2 | | |
 | Djiboutian Franc | DJF | 262 | 0 | | |
@@ -72,6 +61,7 @@ The table below contains all valid values of currency name, code, number and pre
 | Ethiopian Birr | ETB | 230 | 2 | | |
 | European Euro | EUR | 978 | 2 | | |
 | Fijian Dollar | FJD | 242 | 2 | | |
+| French Pacific Franc | XPF | 953 | 0 | | |
 | Gambian Dalasi | GMD | 270 | 2 | | |
 | Georgian Lari | GEL | 981 | 2 | | |
 | Ghanaian Cedi | GHS | 288 | 2 | | |
@@ -84,8 +74,6 @@ The table below contains all valid values of currency name, code, number and pre
 | Iceland Krona | ISK | 352 | 0 | | |
 | India Rupee | INR | 356 | 2 | | |
 | Indonesian Rupiah | IDR | 360 | 2 | | |
-| Iranian Rial | IRR | 364 | 2 | | |
-| Iraqi Dinar | IQD | 368 | 3 | | |
 | Israel Shekel | ILS | 376 | 2 | | |
 | Jamaican Dollar | JMD | 388 | 2 | | |
 | Japanese Yen | JPY | 392 | 0 | | |
@@ -107,7 +95,6 @@ The table below contains all valid values of currency name, code, number and pre
 | Moldovan Leu | MDL | 498 | 2 | | |
 | Mongolian Tughrik | MNT | 496 | 2 | | |
 | Moroccan Dirham | MAD | 504 | 2 | | |
-| Myanmar Kyat | MMK | 104 | 2 | | |
 | Namibia Dollar | NAD | 516 | 2 | | |
 | Nepalese Rupee | NPR | 524 | 2 | | |
 | New Zealand Dollar | NZD | 554 | 2 | | |
@@ -125,7 +112,6 @@ The table below contains all valid values of currency name, code, number and pre
 | Polish Zloty  | PLN | 985 | 2 | | |
 | Qatari Riyal | QAR | 634 | 2 | | |
 | Romania Leu | RON | 946 | 2 | | |
-| Russia Ruble | RUB | 643 | 2 | | |
 | Rwandan Franc | RWF | 646 | 0 | | |
 | Saint Helenian Pound | SHP | 654 | 2 | | |
 | Salvadoran Colon | SVC | 222 | 2 | | |
@@ -135,7 +121,6 @@ The table below contains all valid values of currency name, code, number and pre
 | Serbian Dinar | RSD | 941 | 2 | | |
 | Seychellois Rupee | SCR | 690 | 2 | | |
 | Sierra Leonean Leone | SLL | 694 | 2 | | |
-| Singapore Dollar | SGD | 702 | 2 | | |
 | Solomon Islander Dollar | SBD | 090 | 2 | | |
 | Somali Shilling | SOS | 706 | 2 | | |
 | South African Rand | ZAR | 710 | 2 | | |
@@ -144,7 +129,6 @@ The table below contains all valid values of currency name, code, number and pre
 | Surinamese Dollar | SRD | 968 | 2 | | |
 | Swedish Krona | SEK | 752 | 2 | | |
 | Swiss Franc | CHF | 756 | 2 | | |
-| Syrian Pound | SYP | 760 | 2 | | |
 | Taiwan New Dollar | TWD | 901 | 2 | | |
 | Tajikistani Somoni | TJS | 972 | 2 | | |
 | Tanzanian Shilling | TZS | 834 | 2 | | |
@@ -160,8 +144,33 @@ The table below contains all valid values of currency name, code, number and pre
 | Uruguayan Peso | UYU | 858 | 2 | | |
 | Uzbekistani Som | UZS | 860 | 2 | | |
 | Vietnamese Dong | VND | 704 | 0 | | |
+| West African CFA Franc | XOF | 952 | 0 | | |
 | Yemeni Rial | YER | 886 | 2 | | |
 | Zambian Kwacha | ZMW | 894 | 2 | | |
+
+---
+
+### Unsupported Currencies
+
+Commerce Hub does not support the following  currencies which are prohibited by the Office of Foreign Assets Control _(OFAC)_.
+
+<!-- theme: danger -->
+> Fiserv has taken the stance as a company to cease and desist all dealings with Russia as a country, therefore Commerce Hub cannot support RUB as a currency for any services.
+
+| Currency Name | CH Alpha Code | ISO Number | Precisions |
+| ------------- | :-----------: | :---------:| :-----: |
+| Belarusian Ruble | BYN | 933 | 2 |
+| Cuban Peso | CUP | 192 | 2 |
+| Congolese Franc | CDF | 976 | 2 |
+| Iranian Rial | IRR | 364 | 2 |
+| Iraqi Dinar | IQD | 368 | 3 |
+| Liberian Dollar | LRD | 430 | 2 |
+| Myanmar Kyat | MMK | 104 | 2 |
+| North Korean Won | KPW | 408 | 2 |
+| Russia Ruble | RUB | 643 | 2 |
+| Sudanese Pound | SDG | 938 | 2 |
+| Syrian Pound | SYP | 760 | 2 |
+| Zimbabwean Dollar | ZWL | 932 | 2 |
 
 ---
 
