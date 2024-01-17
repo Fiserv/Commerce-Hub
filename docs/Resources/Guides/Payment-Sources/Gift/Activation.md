@@ -53,7 +53,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `operationType` | _string_ | 50 | Defines the request type as ACTIVATION |
+| `operationType` | _string_ | 50 | Defines the request type as ACTIVATE |
 
 <!--
 type: tab
@@ -171,7 +171,7 @@ Example of a digital gift card activation payload request.
     "currency": "USD"
   },
   "transactionDetails": {
-    "operationType": "ACTIVATION"
+    "operationType": "ACTIVATE"
   },
   "transactionInteraction": {
     "terminalTimestamp": "2016-04-16T16:06:05Z"
@@ -206,7 +206,7 @@ Example of a digital gift card activation (201: Created) response.
 {
   "gatewayResponse": {
     "transactionType": "GIFT_CARDS",
-    "transactionState": "ACTIVATED",
+    "transactionState": "ACTIVATE",
     "transactionOrigin": "ECOM",
     "transactionProcessingDetails": {
       "orderId": "CHG01367cb34bb35b472c953dec4e7d368727",
@@ -283,11 +283,11 @@ Example of a physical gift card activation payload request.
       "expirationMonth": "01",
       "expirationYear": "3025",
       "category": "GIFT",
-      "subCategory": "VALUELINK"
+      "subCategory": "GIFT_SOLUTIONS"
     }
   },
   "transactionDetails": {
-    "operationType": "ACTIVATION"
+    "operationType": "ACTIVATE"
   },
   "transactionInteraction": {
     "terminalTimestamp": "2016-06-20T16:06:05Z",
@@ -331,14 +331,13 @@ Example of a physical gift card activation (201: Created) response.
         "beginningBalance": 0,
         "endingBalance": 25.00,
         "currency": "USD",
-        "balanceType": "GIFT_VALUELINK"
       }
     ],
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
       "approvalCode": "593612",
       "processor": "FISERV",
-      "host": "VALUELINK",
+      "host": "GIFT_SOLUTIONS",
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "00",
@@ -354,7 +353,7 @@ Example of a physical gift card activation (201: Created) response.
       "expirationMonth": "01",
       "expirationYear": "3025",
       "category": "GIFT",
-      "subCategory": "VALUELINK"
+      "subCategory": "GIFT_SOLUTIONS"
     }
   }
 }
