@@ -20,7 +20,7 @@ This request must be invoked as a server→API call for each form submission and
 The iFrame JS script tag is required in the website by downloading or including the following code.
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/v2/saq-a.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/0.11.0/saq-a.js"></script>
 ```
 
 ---
