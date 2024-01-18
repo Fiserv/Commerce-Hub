@@ -51,7 +51,7 @@ The below table identifies the required parameters in the `dynamicDescriptor` ob
 
 <!--
 type: tab
-title: Request
+titles: Request, Response
 -->
 
 Example of a PayFac Single MID payload charge request.
@@ -98,7 +98,6 @@ Example of a PayFac Single MID payload charge request.
 ```
 <!--
 type: tab
-title: Response
 -->
 
 Example of a PayFac Multi-MID charges (201: Created) response.
