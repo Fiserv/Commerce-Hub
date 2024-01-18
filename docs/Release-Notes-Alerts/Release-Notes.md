@@ -30,7 +30,6 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Support [Level II/III](?path=docs/Resources/Guides/Level23/Level23.md) enhanced data | Feature |
 | Support [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md) Private Label Credit Cards | Feature |
 | Version 1.6: Refactored [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md) models to support `paymentAmountType` as part of the for Mastercard recurring bill payment mandate | Update |
-| Secure Data Capture [v2 iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) | Feature |
 
 ---
 
