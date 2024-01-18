@@ -111,6 +111,10 @@
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
       link: docs/Resources/Guides/Directed-Routing.md
+    - title: Global Currency Solutions
+      link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+    - title: Global Merchant Acquiring
+      link: docs/Resources/Guides/Global-Merchant-Acquiring.md
 #    - title: Least Cost Debit
 #      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Multi-Use Public Key
