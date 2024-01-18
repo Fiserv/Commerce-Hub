@@ -1,10 +1,10 @@
 ---
-tags: [Payment Faciliator, Settlement]
+tags: [Payment Facilitator, Settlement]
 ---
 
-# Payment Faciliator Split Settlement
+# Payment Facilitator Split Settlement
 
-Split settlement allows a payment facilitator *(PayFac)* to define how a transaction should be distributed between proccessing and non-processing MIDs to deposit revenue, fees, reserves, and hold amounts.
+Split settlement allows a payment facilitator *(PayFac)* to define how a transaction should be distributed between processing and non-processing MIDs to deposit revenue, fees, reserves, and hold amounts.
 
 ---
 

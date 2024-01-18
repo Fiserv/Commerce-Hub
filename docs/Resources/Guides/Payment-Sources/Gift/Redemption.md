@@ -51,7 +51,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `additionalData` | _object_ | N/A |  Idenitfies adtionatal data in the request. |
+| `additionalData` | _object_ | N/A |  Identifies additional data in the request. |
 
 The below table identifies the conditional parameters in the `additionalData` object.
 
