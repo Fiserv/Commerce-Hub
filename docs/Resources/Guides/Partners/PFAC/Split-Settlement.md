@@ -63,7 +63,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 <!--
 type: tab
-titles: Request
+titles: Request, Response
 -->
 
 Example of a split settlement charges payload request.
