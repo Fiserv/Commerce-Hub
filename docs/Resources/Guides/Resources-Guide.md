@@ -83,7 +83,7 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 <!-- type: card
 title: Global Currency Solutions
 description: Commerce Hub's Global Currency Solutions allows a merchant to combine any of our currency solutions with Global Merchant Acquiring (GMA) and local payment methods.
-link:
+link: ?path=docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
 -->
 
 <!-- type: row-end -->
@@ -100,12 +100,6 @@ link: ?path=docs/Resources/Guides/Level23/Level23.md
 title: Private Label
 description: A private label credit card (PLCC) is a type of credit card that is intended for use at a specific retailer. Merchants partner with PLCC issuers like Citi, to qualify customers and extend them a credit card account.
 link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
--->
-
-<!-- type: card
-title: Custom Identifiers
-description: Commerce Hub supports the ability for merchants to use their own Merchant Identifiers and Order Identifiers. This allows a seamless integration into existing merchant APIs and databases.
-link: ?path=docs/Resources/Guides/BYOID.md
 -->
 
 <!-- type: row-end -->
