@@ -15,7 +15,7 @@ In a multi-MID payment facilitator *(PayFac)* model the PayFac and sub-merchants
 
 <!--
 type: tab
-titles: merchantDetails, dynamicDescriptor
+titles: merchantDetails
 -->
 
 The below table identifies the required parameters in the `merchantDetails` object.
