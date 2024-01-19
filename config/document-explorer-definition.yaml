@@ -168,6 +168,10 @@
         link: docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+    - title: Health Check
+      sections:
+      - title: Status
+        link: docs/Resources/API-Documents/Health_Check/HC-Status.md
     - title: Payments
       link: docs/Resources/API-Documents/Payments/Payments.md
       sections:
