@@ -117,17 +117,17 @@
     "bug": {
       "label": "bug,CommerceHub",
       "template": "bug.md",
-      "assignees": "wwfiserv"
+      "assignees": "MAFiserv"
     },  
     "feedback": {
       "label": "feedback,CommerceHub",
       "template": "feedback.md",
-      "assignees": "wwfiserv"
+      "assignees": "MAFiserv"
     },
     "enhancement": {
       "label": "enhancement,CommerceHub",
       "template": "feature.md",
-      "assignees": "wwfiserv"
+      "assignees": "MAFiserv"
     }
   }]
 }
