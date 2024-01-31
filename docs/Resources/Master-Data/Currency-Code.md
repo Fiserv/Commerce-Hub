@@ -158,7 +158,7 @@ The table below contains all valid values of currency name, code, number and pre
 
 ### Unsupported Currencies
 
-Commerce Hub does not support the following  currencies which are prohibited by the Office of Foreign Assets Control _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists.))_.
+Commerce Hub does not support the following  currencies which are prohibited by the Office of Foreign Assets Control _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists))_.
 
 <!-- theme: danger -->
 > Fiserv has taken the stance as a company to cease and desist all dealings with Russia as a country, therefore Commerce Hub cannot support RUB as a currency for any services.
