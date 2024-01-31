@@ -25,7 +25,7 @@ The merchant can accept transactions from any card association's supported curre
 ## Supported Currencies
 
 <!-- theme: info -->
-> All [currencies](?path=docs/Resources/Master-Data/Currency-Code.md) which are prohibited by the Office of Foreign Assets Control _(OFAC)_ are not supported for GMA transactions.
+> All [currencies](?path=docs/Resources/Master-Data/Currency-Code.md) which are prohibited by the Office of Foreign Assets Control _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists.))_. are not supported for GMA transactions.
 
 Commerce Hub currently only supports GMA on the Nashville front-end processor. Nashville currently only supports a max of 12 digits including precision _(decimal places)_ based on the currency; e.g 12 digits + 0 precision, 10 digits + 2 precisions, or 9 + 3 precisions.
 
@@ -89,7 +89,7 @@ See the table below for more details on the supported payments and currencies by
 | Singapore | Visa, Mastercard, UPI, JCB, Diners, and Amex | SGD |
 | Australia | Visa, Mastercard, Amex, UPI, Diners, and PayPal | AUD, NZD, USD |
 
-#### European Countries
+### European Countries
 
 Commerce Hub supports GMA in the following European countries; Austria, Belgium, Cyprus, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxemburg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland.
 
