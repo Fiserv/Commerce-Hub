@@ -38,6 +38,7 @@ The table below contains all valid values of currency name, code, number and pre
 | Botswana Pula | BWP | 072 | 2 | | |
 | Brazilian Real | BRL | 986 | 2 | | |
 | British Pound | GBP | 826 | 2 | | |
+| Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | Bruneian Dollar | BND | 096 | 2 | | |
 | Bulgarian Lev | BGN | 975 | 2 | | |
 | Burundian Franc | BIF | 108 | 2 | | |
@@ -58,6 +59,7 @@ The table below contains all valid values of currency name, code, number and pre
 | Dutch Guilder | ANG | 532 | 2 | | |
 | East Caribbean Dollar | XCD | 951 | 2 | | |
 | Egyptian Pound | EGP | 818 | 2 | | |
+| Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | Ethiopian Birr | ETB | 230 | 2 | | |
 | European Euro | EUR | 978 | 2 | | |
 | Fijian Dollar | FJD | 242 | 2 | | |
@@ -77,6 +79,7 @@ The table below contains all valid values of currency name, code, number and pre
 | Israel Shekel | ILS | 376 | 2 | | |
 | Jamaican Dollar | JMD | 388 | 2 | | |
 | Japanese Yen | JPY | 392 | 0 | | |
+| Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | Jordanian Dinar | JOD | 400 | 3 | | |
 | Kazakhstani Tenge | KZT | 398 | 2 | | |
 | Kenyan Shilling | KES | 404 | 2 | | |
@@ -97,6 +100,7 @@ The table below contains all valid values of currency name, code, number and pre
 | Moroccan Dirham | MAD | 504 | 2 | | |
 | Namibia Dollar | NAD | 516 | 2 | | |
 | Nepalese Rupee | NPR | 524 | 2 | | |
+| Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | New Zealand Dollar | NZD | 554 | 2 | | |
 | Nicaraguan Cordoba | NIO | 558 | 2 | | |
 | Nigerian Naira | NGN | 566 | 2 | | |
@@ -118,6 +122,7 @@ The table below contains all valid values of currency name, code, number and pre
 | Samoan Tala | WST | 882 | 2 | | |
 | Sao Tomean Dobra | STD | 678 | 2 | | |
 | Saudi Arabia Rial | SAR | 682 | 2 | | |
+| Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | Serbian Dinar | RSD | 941 | 2 | | |
 | Seychellois Rupee | SCR | 690 | 2 | | |
 | Sierra Leonean Leone | SLL | 694 | 2 | | |
@@ -139,6 +144,7 @@ The table below contains all valid values of currency name, code, number and pre
 | Turkey Lira | TRY | 949 | 2 | | |
 | Ugandan Shilling | UGX | 800 | 0 | | |
 | Ukrainian Hryvnia | UAH | 980 | 2 | | |
+| Currency Name | CH Alpha Code | ISO Number | Precisions | GMA | MCP |
 | United Arab Emirates Dirham | AED | 784 | 2 | | |
 | United States Dollar | USD | 840 | 2 | | |
 | Uruguayan Peso | UYU | 858 | 2 | | |
@@ -152,7 +158,7 @@ The table below contains all valid values of currency name, code, number and pre
 
 ### Unsupported Currencies
 
-Commerce Hub does not support the following  currencies which are prohibited by the Office of Foreign Assets Control _(OFAC)_.
+Commerce Hub does not support the following  currencies which are prohibited by the Office of Foreign Assets Control _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists))_.
 
 <!-- theme: danger -->
 > Fiserv has taken the stance as a company to cease and desist all dealings with Russia as a country, therefore Commerce Hub cannot support RUB as a currency for any services.

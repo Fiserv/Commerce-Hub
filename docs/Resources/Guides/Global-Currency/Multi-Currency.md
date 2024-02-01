@@ -33,7 +33,7 @@ Merchant is funded in their local currency _(for US merchant, USD)_ based on a p
 ## Supported Currencies
 
 <!-- theme: info -->
-> All currencies which are prohibited by the Office of Foreign Assets Control _(OFAC)_ are not supported for MCP transactions.
+> All currencies which are prohibited by the Office of Foreign Assets Control _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists))_. are not supported for MCP transactions.
 
 Commerce Hub currently supports authorizations for presentment in more than 134 card brand [supported currencies](?path=docs/Resources/Master-Data/Currency-Code.md) for MCP transactions. For MCP authorized transactions, Commerce Hub will settle the authorized transactions in USD currency only.
 
