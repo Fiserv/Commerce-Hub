@@ -10,7 +10,7 @@ A payment facilitator _(PayFac)_ is a merchant service provider that simplifies 
 
 ## PayFac Models
 
-Commerce Hub supports the following PayFac models
+Commerce Hub supports the following PayFac models;
 
 <!-- type: row -->
 
