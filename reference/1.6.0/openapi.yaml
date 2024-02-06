@@ -3223,6 +3223,11 @@ components:
       description: <a href="../docs?path=docs/Resources/Master-Data/Additional-Data.md">Common
         data</a> passed during a transaction request based on business requirements.
       properties:
+        paymentAmountType:
+          type: string
+          maxLength: 20
+          description: 'An identifier used to indicate the transaction payment amount type'
+          example: 'FIXED or VARIABLE'
         additionalData: {$ref: '#/components/schemas/AdditionalData'}
         directedRouting: {$ref: '#/components/schemas/DirectedRouting'}
         subMerchant: {$ref: '#/components/schemas/SubMerchant'}
@@ -3233,11 +3238,6 @@ components:
           type: array
           items: {$ref: '#/components/schemas/KeyValuePair'}
         deferredPayments: {$ref: '#/components/schemas/DeferredPayments'}
-        paymentAmountType:
-          type: string
-          maxLength: 20
-          description: 'An identifier used to indicate the transaction payment amount type'
-          example: 'FIXED or VARIABLE'
         billPaymentType:
           type: string
           maxLength: 11
