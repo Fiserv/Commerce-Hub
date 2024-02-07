@@ -41,7 +41,7 @@ Example of a Download payload request
 
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/tms/v1/emv-capk-data)
 
 <!--
 type: tab
@@ -120,7 +120,7 @@ Example of a Status payload request
 
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/tms/v1/emv-capk-data)
 
 <!--
 type: tab
