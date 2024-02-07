@@ -41,9 +41,57 @@ Example of a Download payload request
 
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
+
+<!--
+type: tab
+-->
+
+Example of a Download (201: Created) response.
+
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "DOWNLOAD",
+    "transactionState": "COMPLETED",
+    "transactionProcessingDetails": {
+      "orderId": "CHG0195f97ffb035b92a8e2d0f8f49cced1a3",
+      "transactionTimestamp": "2023-10-10T17:55:17.976766118Z",
+      "apiTraceId": "8dcb739f45574e01b81f15734fd9f03c",
+      "clientRequestId": "7883676",
+      "transactionId": "8dcb739f45574e01b81f15734fd9f03c"
+    }
+  },
+  "emvDetails": {
+    "headerInfo": {
+      "fileName": "CA_KEYS",
+      "fileVersion": "0119"
+    },
+    "version": "0310202200000110578",
+    "currentFileCreationDate": "DDMMYYYYhhmmss",
+    "fileSize": "10979",
+    "fileCheckSum": "a9",
+    "keys": [
+      {
+        "expiryDate": "2024-12-31",
+        "certificateAuthorityHashAlgorithmIndicator": "01",
+        "certificateAuthorityPublicKeyAlgorithmIndicator": "01",
+        "applicationIdentifier": "B000000025",
+        "publicKeyIndex": "C9",
+        "publicKeyModulus": "C23ECBD7119F4....",
+        "publicKeyExponent": "03",
+        "publicKeyChecksum": "8E8DFF443D78CD91DE88821D70C98F0638E51E49"
+      }
+    ]
+  }
+}
+
+```
+
 ## Status Article
 
-Des
+Commerce Hub will provide the ability for a merchant to retrieve the current status of the EMV(Europay Mastercard Visa) CAPK (Certification Authority Public Key) data.
 
 ---
 
@@ -69,6 +117,45 @@ Example of a Status payload request
     "fileCheckSum": "��"
   }
 }
+
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/gift-cards)
+
+<!--
+type: tab
+-->
+
+Example of a Status (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "STATUS",
+    "transactionState": "COMPLETED",
+    "transactionProcessingDetails": {
+      "orderId": "CHG010db4f5595422fcf08fca763282158094",
+      "transactionTimestamp": "2023-11-03T20:23:00.808347516Z",
+      "apiTraceId": "a85d95a38e454f9db80085712f693aa6",
+      "clientRequestId": "8398655",
+      "transactionId": "a85d95a38e454f9db80085712f693aa6"
+    }
+  },
+  "emvDetails": {
+    "status": "UPDATE_AVAILABLE",
+    "currentFileCreationDate": "DDMMYYYYhhmmss",
+    "fileSize": "10979",
+    "fileCheckSum": "a8"
+  },
+  "merchantDetails": {
+    "merchantId": "100009000000035"
+  }
+}
+
+```
 
 ## See Also
 
