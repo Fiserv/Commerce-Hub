@@ -2127,9 +2127,9 @@ components:
           type: boolean
           description: ' Indicates if a partial approval is allowed.'
           example: true
-        merchantTransactionId: {type: string, maxLength: 32, description: Merchant
+        merchantTransactionId: {type: string, maxLength: 128, description: Merchant
             transaction ID (aka transaction reference ID)., example: '1343678765'}
-        merchantOrderId: {type: string, maxLength: 32, description: Merchant order
+        merchantOrderId: {type: string, maxLength: 128, description: Merchant order
             ID (aka customer reference number or purchase order number)., example: 845366457890-TODO}
         merchantInvoiceNumber: {type: string, maxLength: 12, description: Merchant
             invoice number (aka reference number)., example: '123890'}
