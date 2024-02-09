@@ -11,7 +11,7 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 This request must be invoked as a server→API call for each form submission and should not be attempted directly from the browser.
 
 <!-- theme: info -->
-> When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
+> When integrating with 3-D Secure `authentication3DS` _true_ is required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
 
 ---
 
@@ -20,7 +20,7 @@ This request must be invoked as a server→API call for each form submission and
 The iFrame JS script tag is required in the website by downloading or including the following code.
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/v2/saq-a.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/0.11.0/saq-a.js"></script>
 ```
 
 ---
@@ -34,11 +34,10 @@ type: tab
 titles: Variables, JavaScript
 -->
 
-The below table identifies the parameters used in `createPaymentForm`.
+The below table identifies the parameters used in `createPaymentForm` returns `fromPromise`
 
 | Field | Required | Description |
 | ----- | -------- | ----------- |
-| `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
 | `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
 | `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
 | `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
