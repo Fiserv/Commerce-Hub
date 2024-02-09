@@ -34,7 +34,7 @@ type: tab
 titles: Variables, JavaScript
 -->
 
-The below table identifies the parameters used in `createPaymentForm` returns `fromPromise`
+The below table identifies the parameters used in `createPaymentForm` returns `fromPromise``
 
 | Field | Required | Description |
 | ----- | -------- | ----------- |

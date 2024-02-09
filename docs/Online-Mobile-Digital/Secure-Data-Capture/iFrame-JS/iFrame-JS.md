@@ -12,7 +12,7 @@ Secure Data Capture v2 iFrame SDK works by injecting individual iFrames for each
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-#### Transaction Flow
+### Transaction Flow
 
 1. The customer navigates to checkout page of the merchant's website.
 2. The customer's browser loads the Commerce Hub iFrame SDK.
@@ -55,7 +55,7 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Meth
 
 ---
 
-## Additional Security Settings
+### Additional Security Settings
 
 The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
