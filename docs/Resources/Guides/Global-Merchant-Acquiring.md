@@ -2,7 +2,21 @@
 tags: [Global Merchant Acquiring, International, Foreign Currency]
 ---
 
-# Global Merchant Acquiring
+# Global Acquiring
+
+Global Acquiring via Commerce Hub offers global merchants the ability to accept payments and receive integrated settlement and reporting across Fiserv’s global footprint.  Key features include:
+
+- Global reach to 140+ currencies reaching consumers in more than 190 countries
+- Full service, local in 37 countries across North America, Europe, and Asia Pacific
+- Full-service acquiring for Visa, Mastercard, UPI, Diners, JCB, and various alternative payment methods
+- Choice of settlement in any of 17 different settlement currencies
+- Support for conveyance models for American Express, Discover, and Paypal
+Integrated billing, settlement, and reporting
+
+Commerce Hub will add support for additional Fiserv acquiring countries and alternative payment methods in the future.  
+
+
+
 
 Global Merchant Acquiring _(GMA)_ is a Commerce Hub multi-currency acquiring solution that offers one simplified and consolidated payment solution for large multi-national merchants for [Online, Digital and Mobile](?path=docs/Getting-Started/Getting-Started-Online.md) and [In-Person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions across key markets in North America, Europe, and Asia Pacific for 37 countries.
 
@@ -35,22 +49,48 @@ Commerce Hub currently only supports GMA on the Nashville front-end processor. N
 
 Commerce Hub currently supports authorizations for presentment in any of the 145 card brand [supported currencies](?path=docs/Resources/Master-Data/Currency-Code.md) for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) transactions across [37 countries](#coverage).
 
-For [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions Commerce Hub supports 6 currencies: USD, SGD, SEK, CHF, GBP and EUR across the US, Europe and Singapore.
-
-<!-- theme: danger -->
-> In-person transactions are not supported in Hong Kong, Australia and Canada.
-
 ---
 
 #### European In-Person Support
 
 In Europe, transactions are supported within 10 countries highlighted in the table below.
 
-| Country | Authorization | Settlement |
-| ------- | :-----------: | :--------: |
-| Austria | EUR | EUR |
-| Belgium | EUR | EUR |
-| France | EUR | EUR |
+| Region    | Country  | Supporte Payments | Supported Model |
+|----------|-----------|-------------------|-----------------|
+| **North America** |    |                 |                 |
+|           | United States   | Visa, Mastercard, PIN Debit Networks, ACH, Closed Loop | Full Service Acquiring - Auth & Settlement |
+|           |            | American Express, Discover, UPI, JCB (via Discover), Paypal | Authorization Only     |
+|           | Canada          | Visa, Mastercard, UPI                        | Full Service Acquiring - Auth & Settlement |
+|                                      |                 | American Express, Discover, JCB (via AMEX), PayPal | Authorization Only     |
+| **Europe**     |            |                   |             |
+|                | Austria     | Visa, Mastercard, UPI, JCB, Diners   | Full Service Acquiring - Auth & Settlement |
+|       | Belgium       | ...         | ...                                    |
+|       | Cyprus       | ...         | ...                                    |
+|                                     | Czeck Republic |       |              
+| **Great Britain & British Overseas Territory** |          |                                              |                                        |
+|                                      | United Kingdom  | Visa, Mastercard, UPI, JCB, Diners           | Full Service Acquiring - Auth & Settlement |
+|                                      |                 | American Express                             | Authorization Only                    |
+| **APAC**                             |                 |                                              |                                        |
+|                                      | Hong Kong       | Visa, Mastercard, UPI, JCB, Diners           | Full Service Acquiring - Auth & Settlement |
+|                                      |                 | American Express                             | Authorization Only                    |
+|                                      | Malaysia        | Visa, Mastercard                             | Full Service Acquiring - Auth & Settlement |
+|                                      | Singapore       | Visa, Mastercard, UPI, JCB, Diners           | Full Service Acquiring - Auth & Settlement |
+|                                      | Australia       | Visa, Mastercard, UPI, Diners                | Full Service Acquiring - Auth & Settlement |
+|                                      |                 | American Express, Paypal                     | Authorization Only                    |
+
+| Region | Country | Supported Patments | Supported Model |
+| ------- |-----------| -------| ------ |
+| Noth America |  Austria | EUR | EUR |
+|            |          |          |          |
+| Europe |  | EUR | EUR |
+|            |          |          |          |
+|            |          |          |          |
+|            |          |          |          |
+|            |          |          |          |
+
+| Great Britain & British Overseas Territory |
+| APAC |
+France | EUR | EUR |
 | Germany | EUR | EUR |
 | Ireland | EUR | EUR |
 | Italy | EUR | EUR |
@@ -69,6 +109,8 @@ Commerce Hub supports End-to-End, meaning authorization currency settles in the 
 
 <!-- theme: info -->
 > Settlement currencies reflect Visa and Mastercard settlement options. Please contact your account manager for alternate network funding options _(e.g,. UPI, JCB, Diners)_.
+
+
 
 ---
 
