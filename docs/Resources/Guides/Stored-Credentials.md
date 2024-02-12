@@ -182,7 +182,6 @@ Example of a scheduled Mastercard charge payload request using `storedCredential
   },
   "additionalDataCommon": {
     "billPaymentType": "RECURRING",
-    "paymentAmountType": "FIXED"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
