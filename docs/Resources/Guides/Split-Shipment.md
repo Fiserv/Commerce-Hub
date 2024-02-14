@@ -38,11 +38,13 @@ JSON string format for `splitShipment`:
 
 ```json
 {
-   "splitShipment":{
-      "totalCount":5,
-      "finalShipment":true
-   }
+    "splitShipment": {
+      "totalCount": 5,
+      "finalShipment": true
+    }
 }
+
+
 ```
 
 <!-- type: tab-end -->
@@ -57,7 +59,7 @@ The following variables are also required when submitting a capture request.
 type: tab
 titles: amount, referenceTransactionDetails, transactionDetails, merchantDetails
 -->
- 
+
 The below table identifies the parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Required | Description |
@@ -68,11 +70,11 @@ The below table identifies the parameters in the `amount` object.
  <!--
 type: tab
 -->
- 
+
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
