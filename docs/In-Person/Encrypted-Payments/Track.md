@@ -11,6 +11,7 @@ A device captures the customer's payment source unencrypted or encryptes the dat
 <!-- theme: warning -->
 > It is not recommended to send unencrypted Track 1 and Track 2 data for the
 payment transaction.
+
 <!-- theme: warning -->
 > For a USA credit card trn , PIN is not needed.
 ---
