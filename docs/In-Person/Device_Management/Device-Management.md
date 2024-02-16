@@ -19,7 +19,7 @@ link: ?path=docs/Resources/API-Documents/Device_Management/CAPK.md
 -->
 
 <!-- type: card
-title: Batch Totals
+title: Batch Download
 description: Retrieve end-of-day batch totals for transaction processed through Commerce Hub.
 link: 
 -->

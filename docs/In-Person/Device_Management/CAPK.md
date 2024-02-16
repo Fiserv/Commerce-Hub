@@ -22,7 +22,7 @@ type: tab
 titles: emvDetails, merchantDetails
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `emvDetails` object.
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|

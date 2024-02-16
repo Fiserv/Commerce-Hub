@@ -98,7 +98,6 @@ Example of a Download (201: Created) response.
       "fileName": "CA_KEYS",
       "fileVersion": "0119"
     },
-    "version": "0310202200000110578",
     "currentFileCreationDate": "DDMMYYYYhhmmss",
     "fileSize": "10979",
     "fileCheckSum": "a9",
@@ -141,7 +140,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 type: tab
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `emvDetails` object.
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -173,7 +172,7 @@ Example of a Status payload request
     "transactionType": "STATUS",
     "currentFileCreationDate": "11032023000001",
     "fileSize": 10979,
-    "fileCheckSum": "��"
+    "fileCheckSum": "A1"
   }
 }
 
@@ -204,13 +203,14 @@ Example of a Status (201: Created) response.
     }
   },
   "emvDetails": {
-    "status": "UPDATE_AVAILABLE",
     "currentFileCreationDate": "DDMMYYYYhhmmss",
-    "fileSize": "10979",
-    "fileCheckSum": "a8"
+    "fileSize": 10979,
+    "fileCheckSum": "a8",
+    "status": "UPDATE_AVAILABLE",
   },
   "merchantDetails": {
-    "merchantId": "100009000000035"
+    "merchantId": "100009000000035",
+    "terminalId": "100009000000035"
   }
 }
 
