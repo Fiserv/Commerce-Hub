@@ -4,12 +4,12 @@ tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 
 # EMV CAPK Data
 
-EMV CAPK data is crucial for secure payment transactions. It ensures card and cardholder authenticity through Certification Authority Public Keys. EMV cards have issuer certificates signed by EMV authorities for validation. Offline checks use cryptographic keys on terminals and cards. Commerce Hub offers a new CAPK data download endpoint. Refer to integration details in Download and Status articles.
+EMV (Europay Mastercard Visa) CAPK (Certification Authority Public Key) data is crucial for secure payment transactions. It ensures card and cardholder authenticity through Certification Authority Public Keys. EMV cards have issuer certificates signed by EMV authorities for validation. Offline checks use cryptographic keys on terminals and cards. Commerce Hub offers a new CAPK data download endpoint. Refer to integration details in Download and Status articles.
 
 <!-- theme: info -->
 > For more details on technical implementation of CAPK storage and withdrawal, please refer to latest version of EMV Book 2 - Security and Key Management.
 
-https://www.emvco.com/specifications/
+<https://www.emvco.com/specifications/>
 
 ---
 
@@ -22,7 +22,7 @@ type: tab
 titles: emvDetails, merchantDetails
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `emvDetails` object.
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -64,8 +64,8 @@ Example of a Download payload request
     "transactionType": "DOWNLOAD"
   },
   "merchantDetails": {
-    "terminalId": "{{api:terminalId}}",
-    "merchantId": "{{api:merchantId}}"
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   }
 }
 
@@ -78,7 +78,6 @@ type: tab
 -->
 
 Example of a Download (201: Created) response.
-
 
 ```json
 {
@@ -98,6 +97,7 @@ Example of a Download (201: Created) response.
       "fileName": "CA_KEYS",
       "fileVersion": "0119"
     },
+    "version": "0310202200000110578",
     "currentFileCreationDate": "DDMMYYYYhhmmss",
     "fileSize": "10979",
     "fileCheckSum": "a9",
@@ -165,14 +165,14 @@ Example of a Status payload request
 ```json
 {
   "merchantDetails": {
-    "terminalId": "{{api:terminalId}}",
-    "merchantId": "{{api:merchantId}}"
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   },
   "emvDetails": {
     "transactionType": "STATUS",
     "currentFileCreationDate": "11032023000001",
     "fileSize": 10979,
-    "fileCheckSum": "A1"
+    "fileCheckSum": "a8"
   }
 }
 
@@ -203,14 +203,14 @@ Example of a Status (201: Created) response.
     }
   },
   "emvDetails": {
-    "currentFileCreationDate": "DDMMYYYYhhmmss",
-    "fileSize": 10979,
-    "fileCheckSum": "a8",
     "status": "UPDATE_AVAILABLE",
+    "currentFileCreationDate": "DDMMYYYYhhmmss",
+    "fileSize": "10979",
+    "fileCheckSum": "a8"
   },
   "merchantDetails": {
-    "merchantId": "100009000000035",
-    "terminalId": "100009000000035"
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   }
 }
 
