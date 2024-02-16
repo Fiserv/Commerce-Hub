@@ -4,7 +4,7 @@ tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 
 # EMV CAPK Data
 
-EMV CAPK data is crucial for secure payment transactions. It ensures card and cardholder authenticity through Certification Authority Public Keys. EMV cards have issuer certificates signed by EMV authorities for validation. Offline checks use cryptographic keys on terminals and cards. Commerce Hub offers a new CAPK data download endpoint. Refer to integration details in Download and Status articles.
+EMV (Europay Mastercard Visa) CAPK (Certification Authority Public Key) data is crucial for secure payment transactions. It ensures card and cardholder authenticity through Certification Authority Public Keys. EMV cards have issuer certificates signed by EMV authorities for validation. Offline checks use cryptographic keys on terminals and cards. Commerce Hub offers a new CAPK data download endpoint. Refer to integration details in Download and Status articles.
 
 <!-- theme: info -->
 > For more details on technical implementation of CAPK storage and withdrawal, please refer to latest version of EMV Book 2 - Security and Key Management.
@@ -22,7 +22,7 @@ type: tab
 titles: emvDetails, merchantDetails
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `emvDetails` object.
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -140,7 +140,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 type: tab
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
+The below table identifies the required parameters in the `emvDetails` object.
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -172,7 +172,7 @@ Example of a Status payload request
     "transactionType": "STATUS",
     "currentFileCreationDate": "11032023000001",
     "fileSize": 10979,
-    "fileCheckSum": "��"
+    "fileCheckSum": "a8"
   }
 }
 
