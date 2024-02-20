@@ -64,8 +64,8 @@ Example of a Download payload request
     "transactionType": "DOWNLOAD"
   },
   "merchantDetails": {
-    "terminalId": "{{api:terminalId}}",
-    "merchantId": "{{api:merchantId}}"
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   }
 }
 
@@ -165,8 +165,8 @@ Example of a Status payload request
 ```json
 {
   "merchantDetails": {
-    "terminalId": "{{api:terminalId}}",
-    "merchantId": "{{api:merchantId}}"
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   },
   "emvDetails": {
     "transactionType": "STATUS",
@@ -209,7 +209,8 @@ Example of a Status (201: Created) response.
     "fileCheckSum": "a8"
   },
   "merchantDetails": {
-    "merchantId": "100009000000035"
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   }
 }
 
