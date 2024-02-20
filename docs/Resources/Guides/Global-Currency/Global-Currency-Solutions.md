@@ -20,7 +20,7 @@ Commerce Hub provides the following types of Global Currency Solutions;
 <!-- type: card
 title: Multi-Currency Pricing
 description: Allows a merchant to process international currencies through Commerce Hub by overriding the `currency` in the request and settles in the merchant's local currency.
-link: ?path=docs/Resources/Guides/Payment-Sources/Gift/Activation.md
+link: ?path=docs/Resources/Guides/Global-Currency/Multi-Currency.md
 -->
 
 <!-- type: card
