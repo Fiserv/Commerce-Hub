@@ -15,15 +15,6 @@ Integrated billing, settlement, and reporting
 
 Commerce Hub will add support for additional Fiserv acquiring countries and alternative payment methods in the future.  
 
-
-
-
-Global Merchant Acquiring _(GMA)_ is a Commerce Hub multi-currency acquiring solution that offers one simplified and consolidated payment solution for large multi-national merchants for [Online, Digital and Mobile](?path=docs/Getting-Started/Getting-Started-Online.md) and [In-Person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions across key markets in North America, Europe, and Asia Pacific for 37 countries.
-
-GMA is designed to offer multi-national _(including the United States)_ payment acceptance with a local market presence, through a single source for integration, pricing, funding and reporting for multi-national merchants. GMA allows multi-national merchants, based in the US, Canada, [Europe](#european-countries), United Kingdom, Hong Kong, Singapore, and Australia to accept multi-currency payments.
-
-The merchant can accept transactions from any card association's supported currency and receive funding in one of the 17 supported settlement currencies. Merchants can streamline the number of acquiring relationships necessary to serve their global footprint. By relying on one payment service provider for all electronic payments in all regions, merchants can bypass many of the costs, risks, and hassles of managing service providers in every country.
-
 ---
 
 ## Benefits
@@ -51,9 +42,7 @@ Commerce Hub currently supports authorizations for presentment in any of the 145
 
 ---
 
-#### European In-Person Support
-
-In Europe, transactions are supported within 10 countries highlighted in the table below.
+#### Global Acquiring Country Coverage - Card Networks
 
 | Region    | Country  | Supporte Payments | Supported Model |
 |----------|-----------|-------------------|-----------------|
@@ -66,7 +55,30 @@ In Europe, transactions are supported within 10 countries highlighted in the tab
 |                | Austria     | Visa, Mastercard, UPI, JCB, Diners   | Full Service Acquiring - Auth & Settlement |
 |       | Belgium       | ...         | ...                                    |
 |       | Cyprus       | ...         | ...                                    |
-|                                     | Czeck Republic |       |              
+|        | Czeck Republic |       |              |
+|        | Demark  |      |         |
+|        | Finland  |      |         |
+|        | France  |      |         |
+|        | Germany  |      |         |
+|        | Greece  |      |         |
+|        | Hungary  |      |         |
+|        | Iceland  |      |         |
+|        | Ireland  |      |         |
+|        | Italy  |      |         |
+|        | Latvua  |      |         |
+|        | Liechtenstein  |      |         |
+|        | Lithuania  |      |         |
+|        | Luxemburg  |      |         |
+|        | Malta  |    American Express, Paypal    |   Authorization Only       |
+|        | Netherlands  |      |         |
+|        | Poland  |      |         |
+|        | Portugal  |      |         |
+|        | Romania  |      |         |
+|        | Slovakia  |      |         |
+|        | Slovenia  |      |         |
+|        | Spain  |      |         |
+|        | Sweden  |      |         |
+|        | Switzerland  |      |         |
 | **Great Britain & British Overseas Territory** |          |                                              |                                        |
 |                                      | United Kingdom  | Visa, Mastercard, UPI, JCB, Diners           | Full Service Acquiring - Auth & Settlement |
 |                                      |                 | American Express                             | Authorization Only                    |
@@ -77,29 +89,35 @@ In Europe, transactions are supported within 10 countries highlighted in the tab
 |                                      | Singapore       | Visa, Mastercard, UPI, JCB, Diners           | Full Service Acquiring - Auth & Settlement |
 |                                      | Australia       | Visa, Mastercard, UPI, Diners                | Full Service Acquiring - Auth & Settlement |
 |                                      |                 | American Express, Paypal                     | Authorization Only                    |
-
-| Region | Country | Supported Patments | Supported Model |
-| ------- |-----------| -------| ------ |
-| Noth America |  Austria | EUR | EUR |
-|            |          |          |          |
-| Europe |  | EUR | EUR |
-|            |          |          |          |
-|            |          |          |          |
-|            |          |          |          |
-|            |          |          |          |
-
-| Great Britain & British Overseas Territory |
-| APAC |
-France | EUR | EUR |
-| Germany | EUR | EUR |
-| Ireland | EUR | EUR |
-| Italy | EUR | EUR |
-| Netherlands | EUR | EUR |
-| Spain | EUR | EUR |
-| Switzerland | CHF | CHF |
-| United Kingdom | GBP | GBP |
+| **Note: Digital wallets including ApplePay, GooglePay are supported post cryptogram as part the card scheme coverage.** |
 
 ---
+
+## Presentment & Funding Currencies Coverage
+
+| Country/Region | Supported Payments  | Presentment Currencies  | Funding Currencies    |
+|----------------|---------------------|-------------------------|-----------------------|
+| **North America (outside of US)** | Visa, Mastercard | Any scheme supported currency | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY
+| **Canada** | UPI | Any scheme supported currency | CAD |
+|                |                     |                         |                       |
+| **Europe** | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP, SGD, PLN, CZK, HUF |
+|  | UPI | Any scheme supported currency |   EUR, CHF |
+|  **EEA**  | JCB |  Any scheme supported currency  | CHF, NOK, SEK, DKK, EUR, USD and JPY |
+|     | Diners |Any scheme supported currency |  CHF, NOK, DKK, SEK, GBP, USD, JPY and EUR |
+|                |                     |                         |                       |
+| **Great Britain & British Overseas Territory** | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP |
+|  | UPI | Any scheme supported currency | GBP |
+|  **United Kingdom Gibraltar**  | JCB |  Any scheme supported currency  | GBP, USD, EUR and JPY |
+|     | Diners |Any scheme supported currency |  GBP and EUR |
+|                |                     |                         |                       |
+| **APAC** |           |          |           |
+| **Hong Kong** | Visa, Mastercard, UPI, JCB, Diners | Any scheme supported currency | HKD |
+| **Malaysia** | Visa, Mastercard | Any scheme supported currency | MYR |
+|  **Singapore** | Visa, Mastercard, UPI, JCB, Diners |  Any scheme supported currency  | SGD|
+|  **Australia**   | Visa, Mastercard |Any scheme supported currency |  AUD, NZD, USD|
+|    | UPI |Any scheme supported currency |  AUD |
+|    | Diners |Any scheme supported currency |  AUD |
+|                |                     |                         |                                           |
 
 ### Settlement
 
@@ -109,8 +127,6 @@ Commerce Hub supports End-to-End, meaning authorization currency settles in the 
 
 <!-- theme: info -->
 > Settlement currencies reflect Visa and Mastercard settlement options. Please contact your account manager for alternate network funding options _(e.g,. UPI, JCB, Diners)_.
-
-
 
 ---
 
