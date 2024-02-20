@@ -48,7 +48,7 @@
 #    - title: Semi-Integrated
 #      link: docs/In-Person/Integrations/Semi-Integrated.md
     - title: Device Management
-      link: docs/In-Person/Device_Management
+      link: docs/In-Person/Device_Management/Device-Management.md
     - title: CAPK
       link: docs/In-Person/Device_Management/CAPK.md
     - title: Debit
