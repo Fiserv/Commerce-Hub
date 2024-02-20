@@ -80,7 +80,7 @@ featuredFeatures:
     featured: true
     relatedDocs:
      - link: docs/In-Person/Device_Management
-       title: Device Management
+       title: CAPK
     relatedAPIs:
       - type: post
         path: /tms/v1/emv-capk-data
