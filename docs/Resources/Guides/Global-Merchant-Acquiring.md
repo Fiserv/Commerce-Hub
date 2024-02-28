@@ -11,38 +11,38 @@ Global Acquiring via Commerce Hub offers global merchants the ability to accept 
 - Full-service acquiring for Visa, Mastercard, UPI, Diners, JCB, and various alternative payment methods
 - Choice of settlement in any of 17 different settlement currencies
 - Support for conveyance models for American Express, Discover, and Paypal
-Integrated billing, settlement, and reporting
+- Integrated billing, settlement, and reporting
 
 Commerce Hub will add support for additional Fiserv acquiring countries and alternative payment methods in the future.  
 
 ---
 
-## Benefits
+## Benefits and Requirements
 
-- **Improved Customer Service:** Merchants can provide their customers a variety of payment choices worldwide and accept those payments through a single, convenient provider.
-- **Payment Choices:** Allows merchants to provide their customers with choices to pay the way that they want, without incurring cross-border transaction fees
-- **Single-source Global Partner:** Merchants are those that would like to streamline the number of acquiring relationships necessary to serve their global footprint. By relying on one payment service provider, for all electronic payments in all regions, merchants can also bypass many of the costs, risks and hassles of managing service providers in every country.
-- **Single Integration:** Makes expansion into new markets, with direct merchant interfaces or third-party providers. A merchant integrates directly with Commerce Hub to authorize and settle all transactions across the globe. GMA merchants can also take advantage of numerous Commerce Hub product offerings.
-- **Operational Efficiencies:** Streamline management of all global relationships through one single point-of-contact and reporting.
+Global merchants with domicility in these markets can benefit from Fiserv’s local, in-country licensing and global reach to achieve optimal approval rates as well as the lowest network interchange and assessments costs.
 
----
+Requirements for domicility typically include the following criteria for each country or region:
 
-## Supported Currencies
+- Having a permanent establishment  through which all transactions are completed
+- Holding a valid business license
+- Having a local address for correspondence and judicial process
+- Paying taxes relating to sales activity
 
-<!-- theme: info -->
-> All [currencies](?path=docs/Resources/Master-Data/Currency-Code.md) which are prohibited by the Office of Foreign Assets Control _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists))_. are not supported for GMA transactions.
-
-Commerce Hub currently only supports GMA on the Nashville front-end processor. Nashville currently only supports a max of 12 digits including precision _(decimal places)_ based on the currency; e.g 12 digits + 0 precision, 10 digits + 2 precisions, or 9 + 3 precisions.
+Merchants not meeting domicility requirements can still conduct cross-border currency using our FX solutions, although approval rates will be lower and network costs will be higher in this model.
 
 ---
 
-### Authorizations
+## Country and Currency Coverage
 
-Commerce Hub currently supports authorizations for presentment in any of the 145 card brand [supported currencies](?path=docs/Resources/Master-Data/Currency-Code.md) for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) transactions across [37 countries](#coverage).
+CommerceHub currently supports authorizations for presentment in any of the 140+ Scheme Supported [currencies](?path=docs/Resources/Master-Data/Currency-Code.md) for Card Not Present transactions across our global acquiring footprint.  Fiserv does not support certain  _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists))_-sanctioned currencies.  
+
+Commerce Hub currently supports the below [37 countries](#coverage) for local acquiring as a direct Fiserv service.  Additional Fiserv supported countries to be added to Commerce Hub in the near future.
+
+For certain currency conversions with respect to USD such as the Lebanese Pound (11 digits + 2 decimal points) or Somali Shilling (9 digits + 2 decimal points), there is a limit on amount value these are supported in downstream systems such as Nashville. Nashville specifications currently support a max of 12 digits. Most terminal or POS systems support 7 digits+3 decimals or 8 digits+2 decimals. Only merchants that have high ticket items will probably support 10 digits + 2 decimals.
 
 ---
 
-#### Global Acquiring Country Coverage - Card Networks
+### Global Acquiring Country Coverage - Card Networks
 
 | Region    | Country  | Supporte Payments | Supported Model |
 |----------|-----------|-------------------|-----------------|
@@ -95,61 +95,30 @@ Commerce Hub currently supports authorizations for presentment in any of the 145
 
 ## Presentment & Funding Currencies Coverage
 
-| Country/Region | Supported Payments  | Presentment Currencies  | Funding Currencies    |
-|----------------|---------------------|-------------------------|-----------------------|
-| **North America (outside of US)** | Visa, Mastercard | Any scheme supported currency | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY
-| **Canada** | UPI | Any scheme supported currency | CAD |
+| Region | Country  | Supported Payments  | Presentment Currencies  | Funding Currencies    |
+|-------- | -------|---------------------|-------------------------|-----------------------|
+| **North America (outside of US)** | **Candada** |Visa, Mastercard | Any scheme supported currency | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY
+|    |       | UPI | Any scheme supported currency | CAD |
 |                |                     |                         |                       |
-| **Europe** | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP, SGD, PLN, CZK, HUF |
-|  | UPI | Any scheme supported currency |   EUR, CHF |
-|  **EEA**  | JCB |  Any scheme supported currency  | CHF, NOK, SEK, DKK, EUR, USD and JPY |
-|     | Diners |Any scheme supported currency |  CHF, NOK, DKK, SEK, GBP, USD, JPY and EUR |
+| **Europe** |  **EEA**  | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP, SGD, PLN, CZK, HUF |
+|   |    | UPI | Any scheme supported currency |   EUR, CHF |
+|   |    | JCB |  Any scheme supported currency  | CHF, NOK, SEK, DKK, EUR, USD and JPY |
+|   |   | Diners |Any scheme supported currency |  CHF, NOK, DKK, SEK, GBP, USD, JPY and EUR |
 |                |                     |                         |                       |
-| **Great Britain & British Overseas Territory** | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP |
-|  | UPI | Any scheme supported currency | GBP |
-|  **United Kingdom Gibraltar**  | JCB |  Any scheme supported currency  | GBP, USD, EUR and JPY |
-|     | Diners |Any scheme supported currency |  GBP and EUR |
+| **Great Britain & British Overseas Territory** |  **United Kingdom Gibraltar**  | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP |
+|  |  | UPI | Any scheme supported currency | GBP |
+|  |  | JCB |  Any scheme supported currency  | GBP, USD, EUR and JPY |
+|  |  | Diners |Any scheme supported currency |  GBP and EUR |
 |                |                     |                         |                       |
-| **APAC** |           |          |           |
-| **Hong Kong** | Visa, Mastercard, UPI, JCB, Diners | Any scheme supported currency | HKD |
-| **Malaysia** | Visa, Mastercard | Any scheme supported currency | MYR |
-|  **Singapore** | Visa, Mastercard, UPI, JCB, Diners |  Any scheme supported currency  | SGD|
-|  **Australia**   | Visa, Mastercard |Any scheme supported currency |  AUD, NZD, USD|
-|    | UPI |Any scheme supported currency |  AUD |
-|    | Diners |Any scheme supported currency |  AUD |
+| **APAC** |         |          |           |
+|   |  **Hong Kong**    | Visa, Mastercard, UPI, JCB, Diners | Any scheme supported currency | HKD |
+|  | **Malaysia** | Visa, Mastercard | Any scheme supported currency | MYR |
+|  |  **Singapore** | Visa, Mastercard, UPI, JCB, Diners |  Any scheme supported currency  | SGD|
+|  | **Australia**   | Visa, Mastercard |Any scheme supported currency |  AUD, NZD, USD|
+|  |    | UPI |Any scheme supported currency |  AUD |
+|  |   | Diners |Any scheme supported currency |  AUD |
 |                |                     |                         |                                           |
-
-### Settlement
-
-For GMA authorized transactions, Commerce Hub will settle the authorized transactions in one of the 17 supported currencies; USD, EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, CAD, GBP, SGD, PLN, CZK, HUF.
-
-Commerce Hub supports End-to-End, meaning authorization currency settles in the same settlement currency if available. If a currency is not available _(e.g. Egypt Pounds EGP)_, that transaction currency settles in a default settlement currency _(EUR, USD, GBP)_ based on Merchant Configuration and Boarding.
-
-<!-- theme: info -->
-> Settlement currencies reflect Visa and Mastercard settlement options. Please contact your account manager for alternate network funding options _(e.g,. UPI, JCB, Diners)_.
-
----
-
-## Coverage
-
-See the table below for more details on the supported payments and currencies by foreign country or region for online, digital, and mobile transactions. All countries support authorizations in all card brand [supported currencies](?path=docs/Resources/Master-Data/Currency-Code.md).
-
-<!-- theme: info -->
-> American Express, Discover, Diners, JCB and PayPal are conveyance processing only brands and are processing/re-direct only.
-
-| Country/Region | Supported Payments | Settlement |
-| ------- | ------------------ | ---------- |
-| Canada | Visa, Mastercard, Amex, Union Pay International _(UPI)_, and PayPal | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY |
-| [Europe](#european-countries) | Visa, Mastercard,  Amex, UPI, JCB, Diners, and PayPal | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP, SGD, PLN, CZK, HUF |
-| U.K. and Gibraltar | Visa, Mastercard, UPI, JCB, Diners, Amex | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP |
-| Hong Kong | Visa, Mastercard, UPI, JCB, Diners, and Amex | HKD |
-| Malaysia | Visa, Mastercard | MYR |
-| Singapore | Visa, Mastercard, UPI, JCB, Diners, and Amex | SGD |
-| Australia | Visa, Mastercard, Amex, UPI, Diners, and PayPal | AUD, NZD, USD |
-
-### European Countries
-
-Commerce Hub supports GMA in the following European countries; Austria, Belgium, Cyprus, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxemburg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland.
+<!-- type: tab-end -->
 
 ---
 
