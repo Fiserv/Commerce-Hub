@@ -97,7 +97,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 
 | Region | Country  | Supported Payments  | Presentment Currencies  | Funding Currencies    |
 |-------- | -------|---------------------|-------------------------|-----------------------|
-| **North America (outside of US)** | **Candada** |Visa, Mastercard | Any scheme supported currency | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY
+| **North America (outside of US)** | **Candada** |Visa, Mastercard | Any scheme supported currency | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY |
 |    |       | UPI | Any scheme supported currency | CAD |
 |                |                     |                         |                       |
 | **Europe** |  **EEA**  | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP, SGD, PLN, CZK, HUF |
@@ -109,15 +109,15 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 |  |  | UPI | Any scheme supported currency | GBP |
 |  |  | JCB |  Any scheme supported currency  | GBP, USD, EUR and JPY |
 |  |  | Diners |Any scheme supported currency |  GBP and EUR |
-|                |                     |                         |                       |
-| **APAC** |         |          |           |
+|                |                     |                         |                  |
+| **APAC** |         |          |    |
 |   |  **Hong Kong**    | Visa, Mastercard, UPI, JCB, Diners | Any scheme supported currency | HKD |
 |  | **Malaysia** | Visa, Mastercard | Any scheme supported currency | MYR |
 |  |  **Singapore** | Visa, Mastercard, UPI, JCB, Diners |  Any scheme supported currency  | SGD|
 |  | **Australia**   | Visa, Mastercard |Any scheme supported currency |  AUD, NZD, USD|
 |  |    | UPI |Any scheme supported currency |  AUD |
 |  |   | Diners |Any scheme supported currency |  AUD |
-|                |                     |                         |                                           |
+|                |                     |                         |      |
 <!-- type: tab-end -->
 
 ---
