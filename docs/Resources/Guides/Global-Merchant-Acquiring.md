@@ -121,7 +121,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 |  | **Australia**   | Visa, Mastercard |Any scheme supported currency |  AUD, NZD, USD|
 |  |    | UPI |Any scheme supported currency |  AUD |
 |  |   | Diners |Any scheme supported currency |  AUD |
-|                |                     |                         |      |
+|                |                     |                         |    |
 <!-- type: tab-end -->
 
 ---
