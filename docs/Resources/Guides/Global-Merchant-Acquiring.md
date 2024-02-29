@@ -69,6 +69,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 |        | Liechtenstein  |      |         |
 |        | Lithuania  |      |         |
 |        | Luxemburg  |      |         |
+|  | **Country**  | **Supporte Payments** | **Supported Model** |
 |        | Malta  |    American Express, Paypal    |   Authorization Only       |
 |        | Netherlands  |      |         |
 |        | Poland  |      |         |
@@ -97,15 +98,18 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 
 | Region | Country  | Supported Payments  | Presentment Currencies  | Funding Currencies    |
 |-------- | -------|---------------------|-------------------------|-----------------------|
-| **North America (outside of US)** | **Candada** |Visa, Mastercard | Any scheme supported currency | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY |
+| **North America (outside of US)** |         |          |    |
+|  | **Candada** |Visa, Mastercard | Any scheme supported currency | USD, CAD, CHF, DKK, EUR, GBP, NOK, NZD, SEK, HKD, AUD, ZAR, JPY |
 |    |       | UPI | Any scheme supported currency | CAD |
 |                |                     |                         |                       |
-| **Europe** |  **EEA**  | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP, SGD, PLN, CZK, HUF |
+| **Europe** |         |          |    |
+|  |  **EEA**  | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP, SGD, PLN, CZK, HUF |
 |   |    | UPI | Any scheme supported currency |   EUR, CHF |
 |   |    | JCB |  Any scheme supported currency  | CHF, NOK, SEK, DKK, EUR, USD and JPY |
 |   |   | Diners |Any scheme supported currency |  CHF, NOK, DKK, SEK, GBP, USD, JPY and EUR |
 |                |                     |                         |                       |
-| **Great Britain & British Overseas Territory** |  **United Kingdom Gibraltar**  | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP |
+|  **Great Britain & British Overseas Territory** |         |          |    |
+| |  **United Kingdom Gibraltar**  | Visa, Mastercard | Any scheme supported currency | EUR, AUD, JPY, ZAR, CHF, NOK, DKK, SEK, NZD, HKD, USD, CAD, GBP |
 |  |  | UPI | Any scheme supported currency | GBP |
 |  |  | JCB |  Any scheme supported currency  | GBP, USD, EUR and JPY |
 |  |  | Diners |Any scheme supported currency |  GBP and EUR |
