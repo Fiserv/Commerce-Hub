@@ -269,6 +269,7 @@ The below table identifies the parameters specific to Debit.
 | B     | CAVV passed verification–attempted authentication, no liability shift |
 | C     | CAVV was not verified–attempted authentication (Visa use only) |
 | D     | CAVV was not verified; cardholder authentication (Visa use only) |
+
 ---
 
 ## See Also
