@@ -250,6 +250,10 @@ The below table identifies the parameters specific to Debit.
 | *CUSTOMER_PRESENCE* | `posConditionCode` invalid for customer presense |
 | *CARD_PRESENCE* | `posConditionCode` invalid for card presence |
 
+<!--
+type: tab
+-->
+
 ### CAVV Response Codes
 
 | Value | Description |
