@@ -265,11 +265,10 @@ The below table identifies the parameters specific to Debit.
 | 7     | CAVV failed verification–attempted authentication |
 | 8     | CAVV passed verification–attempted authentication |
 | 9     | CAVV failed verification–attempted authentication |
-| A     | CAVV passed verification–attempted authentication |
-| B     | CAVV passed verification–attempted authentication, no liability shift |
-| C     | CAVV was not verified–attempted authentication (Visa use only) |
-| D     | CAVV was not verified; cardholder authentication (Visa use only) |
-
+| A     | CAVV failed verification–attempted authentication |
+| B     | CAVV failed verification–attempted authentication |
+| C     | CAVV failed verification–attempted authentication |
+| D     | CAVV failed verification–attempted authentication |
 ---
 
 ## See Also
