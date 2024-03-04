@@ -255,17 +255,20 @@ The below table identifies the parameters specific to Debit.
 | Value | Description |
 |-------|-------------|
 | Blank | CAVV Not Present or CAVV not verified, Issuer has not selected CAVV verification option |
-| 0     | CAVV could not be verified or CAVV data was not provided when expected |
-| 1     | CAVV Failed Verification – Cardholder Authentication |
-| 2     | CAVV Passed Verification – Cardholder Authentication |
-| 3     | CAVV Passed Verification – Attempted Authentication. A 3-D Secure Authentication Result Code value of '07' from the Issuer Attempts Server indicates that authentication was attempted. |
-| 4     | Issuer attempts CAVV key was used to generate the CAVV. CAVV Failed Verification – Attempted Authentication. A 3-D Secure Authentication Result Code value of '07' from the Issuer Attempts Server indicates authentication was attempted. |
-| 5     | Reserved for future use – NOT USED |
-| 6     | CAVV Not Verified – Issuer not participating in CAVV verification (for Visa use only). VisaNet processes this value as a valid CAVV |
-| 7     | CAVV Failed Verification – Attempted Authentication. A 3-D Secure Authentication Result Code value of '07' from Visa Attempts Service indicates that an authentication attempt was performed. Visa attempts CAVV key was used to generate the CAVV. |
-| 8     | CAVV Passed verification - Attempted Authentication. A 3-D Secure Authentication Result Code value of '07' from Visa Attempts Service indicates that an authentication attempt was performed. Visa attempts CAVV key was used to generate the CAVV. |
-| 9 | CAVV Failed Verification - Attempted Authentication. A 3-D Secure Authentication result Code value of '08' from Visa Attemps Service indicates that an authentication attempt was performed when the issuer ACS was not available. Visa Attempts CAVV key was used to generate the CAVV. |
-
+| 0     | CAVV authentication results invalid|
+| 1     | CAVV failed verification–cardholder authentication |
+| 2     | CAVV passed verification–cardholder authentication |
+| 3     | CAVV passed verification–attempted authentication |
+| 4     | CAVV failed verification–attempted authentication |
+| 5     | (Not a valid value)|
+| 6     | CAVV not verified, issuer not participating in CAVV verification (for Visa use only, except as noted)|
+| 7     | CAVV failed verification–attempted authentication |
+| 8     | CAVV passed verification–attempted authentication |
+| 9     | CAVV failed verification–attempted authentication |
+| A     | CAVV passed verification–attempted authentication |
+| B     | CAVV passed verification–attempted authentication, no liability shift |
+| C     | CAVV was not verified–attempted authentication (Visa use only) |
+| D     | CAVV was not verified; cardholder authentication (Visa use only) |
 ---
 
 ## See Also
