@@ -52,34 +52,34 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 |           | Canada          | Visa, Mastercard, UPI                        | Full Service Acquiring - Auth & Settlement |
 |                                      |                 | American Express, Discover, JCB (via AMEX), PayPal | Authorization Only     |
 | **Europe**     |            |                   |             |
-|                | Austria     | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|       | Belgium       | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only  |
-|        | Croatia| Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Cyprus | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Czeck Republic | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Demark  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Finland  |Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | France  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Germany  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Greece  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Hungary  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Iceland  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Ireland  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Italy  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only 
-|        | Latvua  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only 
-|        | Liechtenstein  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Lithuania  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Luxemburg  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Malta  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Netherlands  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Poland  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Portugal  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Romania  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Slovakia  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Slovenia  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
-|        | Spain  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only  |
-|        | Sweden  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only  |
-|        | Switzerland  | Visa, Mastercard, UPI, JCB, Diners American Express, Paypal   | Full Service Acquiring - Auth & Settlement Authorization Only |
+|                | Austria     |1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|       | Belgium       | 1.Visa, Mastercard, UPI, JCB, Diners 2.American Express, Paypal   | 1.Full Service Acquiring - Auth & Settlement 2.Authorization Only  |
+|        | Croatia| 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Cyprus | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Czeck Republic | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Demark  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Finland  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | France  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Germany  |1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only|
+|        | Greece  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Hungary  |1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Iceland  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Ireland  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Italy  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Latvua  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Liechtenstein  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Lithuania  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Luxemburg  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Malta  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Netherlands  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Poland  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Portugal  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Romania  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Slovakia  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Slovenia  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Spain  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
+|        | Sweden  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only  |
+|        | Switzerland  | 1.  Visa, Mastercard, UPI, JCB, Diners  2.American Express, Paypal   | 1. Full Service Acquiring - Auth & Settlement 2.Authorization Only |
 | **Great Britain & British Overseas Territory** |          |                                              |                                        |
 |                                      | United Kingdom Gibraltar  | Visa, Mastercard, UPI, JCB, Diners           | Full Service Acquiring - Auth & Settlement |
 |                                      |                 | American Express                             | Authorization Only                    |
