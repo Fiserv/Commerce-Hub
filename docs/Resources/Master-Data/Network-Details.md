@@ -250,6 +250,10 @@ The below table identifies the parameters specific to Debit.
 | *CUSTOMER_PRESENCE* | `posConditionCode` invalid for customer presense |
 | *CARD_PRESENCE* | `posConditionCode` invalid for card presence |
 
+<!--
+type: tab
+-->
+
 ### CAVV Response Codes
 
 | Value | Description |
@@ -270,7 +274,7 @@ The below table identifies the parameters specific to Debit.
 | C     | CAVV was not verified–attempted authentication (Visa use only) |
 | D     | CAVV was not verified; cardholder authentication (Visa use only) |
 
-### Table Test
+<!-- type: tab-end -->
 
 ---
 
