@@ -120,6 +120,10 @@ Example of a Download (201: Created) response.
 
 ---
 
+<!--
+type: tab
+-->
+
 ## Status Article
 
 Commerce Hub will provide the ability for a merchant to retrieve the current status of the EMV(Europay Mastercard Visa) CAPK (Certification Authority Public Key) data.
@@ -213,6 +217,7 @@ Example of a Status (201: Created) response.
     "terminalId": "123456"
   }
 }
+
 ```
 <!-- type: tab-end -->
 
