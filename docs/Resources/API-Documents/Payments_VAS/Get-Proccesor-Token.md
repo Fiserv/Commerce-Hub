@@ -4,7 +4,7 @@ tags: [Get-Proccesor, Token, Tokenization, API Reference]
 
 # Get Proccesor Token
 
-There are use cases where merchant requires both gateway token and/or processor token using standalone **[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** calls.
+There are use cases where merchant requires processor token using standalone **[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** calls.
 
 - Merchant uses encryption at point of interaction (P2PE) and does not have access to PCI data. Merchant must accept an offline transaction and requires processor token.
 
@@ -28,7 +28,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-|`sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for proccessor token only|
+|`sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) is always payment token |
 | `tokenData` | _string_ | 2048 |Token created from the payment source. |
 | `tokenSource` | _string_ | N/A | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 
@@ -48,7 +48,6 @@ type: tab
 -->
 
 The below table identifies the required parameters of `directedRouting` in the `additionalDataCommon` object.
-
 
 The below table identifies the required parameters in the `processors` array.
 
@@ -128,7 +127,15 @@ Example of a tokenization (201: Created) response.
     }
   },
   "source": {
-    "sourceType": "PaymentToken"
+    "tokenData": "9187613613527237",
+    "sourceType": "PaymentToken",
+    "card": {
+      "expirationYear": "2028",
+      "last4": "7237",
+      "scheme": "THD",
+      "bin": "981106",
+      "expirationMonth": "10"
+    }
   },
   "cardDetails": {
     "detailedCardProduct": "VISA",
