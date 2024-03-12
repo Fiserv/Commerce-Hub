@@ -2,18 +2,16 @@
 tags: [Get-Proccesor, Token, Tokenization, API Reference]
 ---
 
-# TGet Proccesor Token
+# Get Proccesor Token
 
 There are use cases where merchant requires both gateway token and/or processor token using standalone **[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** calls.
 
-- Merchant uses encryption at point of interaction (P2PE) and does not have access to PCI data. Merchant must accept an offline transaction and requires both gateway token and processor token.
-- Merchant receives gateway token and/or processor token but fails to store the tokens in their vault.
-- Merchant performs direct settlement with the backend settlement systems and does not have the token to submit in the settlement file.
-Merchant will not have the Processor Token to settle with Processor in above cases. 
+- Merchant uses encryption at point of interaction (P2PE) and does not have access to PCI data. Merchant must accept an offline transaction and requires processor token.
+
+- Merchant performs direct settlement with the backend settlement systems and needs to submit the proccesor token in the settlement file.
 
 <!-- theme: info -->
->Merchant generates a TA token from CH using get token endpoint.
-Merchant uses endpoint /paymentsvas/v1/processor-tokens and this payload to request processor token.
+>Merchant should use endpoint /paymentsvas/v1/processor-tokens and this payload to request processor token.
 
 ---
 
@@ -30,7 +28,9 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-|`sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+|`sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for proccessor token only|
+| `tokenData` | _string_ | 2048 |Token created from the payment source. |
+| `tokenSource` | _string_ | N/A | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 
 <!--
 type: tab
@@ -47,12 +47,15 @@ The below table identifies the required parameters in the `merchantDetails` obje
 type: tab
 -->
 
-The below table identifies the required parameters in the `additionalDataCommon` object.
-
-| Variable | Type| Maximum Length | Description|
-|---------|----------|----------------|---------|
+The below table identifies the required parameters of `directedRouting` in the `additionalDataCommon` object.
 
 
+The below table identifies the required parameters in the `processors` array.
+
+| Variable | Type | Maximum Length | Description |
+| ------ | ----| -----------| ------------------ |
+| `processorName` | _string_ | 256 | Identifies the payment processor. |
+| `processingPlatform` | _string_ | 256 | Identifies the payment platform of the processor. |
 
 <!-- type: tab-end -->
 
