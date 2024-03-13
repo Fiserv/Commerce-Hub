@@ -4,7 +4,7 @@ tags: [Getting Started, Online, Mobile, Digital, Card Not Present, Secure Data C
 
 # Online, Digital and Mobile Payments
 
-Commerce Hub offers multiple methods of accepting online, mobile, digital payments, and MOTO payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, virtual terminal, or software.
+Commerce Hub offers multiple methods of accepting eCommerce online, mobile, digital payments, and mail-order/telephone order _(MOTO)_ payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, virtual terminal, or software.
 
 <!-- theme: warning -->
 > These transactions are at a higher risk for fraud, due to the inability to verify the account holder who is making the purchase. It is recommended to use [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) along with Commerce Hub's [Transaction Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.
