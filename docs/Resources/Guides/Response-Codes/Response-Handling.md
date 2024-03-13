@@ -4,7 +4,7 @@ tags: [Response Code, Error Code, HTTP Status Code]
 
 # Response Code and Message Handling
 
-Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and errors. 
+Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and errors.
 
 ---
 
@@ -68,6 +68,7 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Error Response](?path=docs/Resources/Guides/Response-Codes/Error-Response.md)
 - [Error Response Codes](?path=docs/Resources/Guides/Response-Codes/Error-Code.md)
+- [Health Check Status](?path=docs/Resources/API-Documents/Health_Check/HC-Status.md)
 - [Processor Response Details](?path=docs/Resources/Master-Data/Processor-Response-Details.md)
 - [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Code.md)
 

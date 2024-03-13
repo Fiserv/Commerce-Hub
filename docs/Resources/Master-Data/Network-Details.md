@@ -20,7 +20,7 @@ The below table identifies the parameters in the `networkDetails` object.
 | `transactionSequence`| *string* | 64 | This field contains transaction specific data that may be returned in response messages. |
 | `systemTrace`| *string* | 64 | This field contains the original trace number that was returned in an authorization response. |
 | `debitIssuerData` | *string* | | Debit issuer specific data that may be returned in the response messages. |
-| `networkResponseCode ` | *string* | 16 | Debit network response |
+| `networkResponseCode` | *string* | 16 | Debit network response |
 | `posEntryModeChange` | *boolean* | N/A  |  Issuer will reply if the entry mode has changed |
 | `cardLevelResultCode` | *string* | | Identifies purchase, corporate, and business card level e.g. Level II/Level III |
 | `validationCode` | *string* | | A code calculated by card brands to ensure that the fields present in the authorization are also present in the clearing record. |
@@ -36,11 +36,15 @@ The below table identifies the parameters in the `networkDetails` object.
 | `cardholderResponse` | *string* | 5 | Non-normalized response from for verifying cardholder data where each position represents the postal/zip code, address, name, telephone, and email respectively. ***Valid Values:** Y = Yes data matches, N = No data does not match, U - Data unchecked, R - Retry, S - Service not allowed, Blank - Data not sent* |
 | `authSource` | *string* | | Code indicating how the network performed the authorization |
 | `debitRouting` | *string* | 256 | Provides the Debit network routing for PINless and Signature Debit transactions. ***Valid Values:** CREDIT, DEBIT, DUAL* |
+| `cavvResponseCode` | *string* | 1 | CAVV Response Code |
+| `cavvResponseMessage` | *string* | N/A | CAVV Response Message |
+| `tavvResponseCode` | *string* | 1 | TAVV Response Code |
+| `tavvResponseMessage` | *string* | N/A | TAVV Response Message |
 
 <!--
 type: tab
 -->
- 
+
 JSON string format for `networkDetails`:
 
 ```json
@@ -77,7 +81,7 @@ JSON string format for `networkDetails`:
 
 ---
 
-## Card Network 
+## Card Network
 
 Each card network can return specific values.
 
@@ -246,6 +250,26 @@ The below table identifies the parameters specific to Debit.
 | *CUSTOMER_PRESENCE* | `posConditionCode` invalid for customer presense |
 | *CARD_PRESENCE* | `posConditionCode` invalid for card presence |
 
+### CAVV Response Codes
+
+| Value | Description |
+|-------|-------------|
+| Blank | CAVV Not Present or CAVV not verified, Issuer has not selected CAVV verification option |
+| 0     | CAVV authentication results invalid|
+| 1     | CAVV failed verification–cardholder authentication |
+| 2     | CAVV passed verification–cardholder authentication |
+| 3     | CAVV passed verification–attempted authentication |
+| 4     | CAVV failed verification–attempted authentication |
+| 5     | (Not a valid value)|
+| 6     | CAVV not verified, issuer not participating in CAVV verification (for Visa use only, except as noted)|
+| 7     | CAVV failed verification–attempted authentication |
+| 8     | CAVV passed verification–attempted authentication |
+| 9     | CAVV failed verification–attempted authentication |
+| A     | CAVV passed verification–attempted authentication|
+| B     | CAVV passed verification–attempted authentication, no liability shift |
+| C     | CAVV was not verified–attempted authentication (Visa use only) |
+| D     | CAVV was not verified; cardholder authentication (Visa use only) |
+
 
 ---
 
@@ -254,5 +278,5 @@ The below table identifies the parameters specific to Debit.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
- 
+
 ---

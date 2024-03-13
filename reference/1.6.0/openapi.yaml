@@ -1197,6 +1197,43 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
+  /status:
+    x-model-version: 1.0
+    get:
+      x-group-name: 'Health Check'
+      x-proxy-name: 'Status'
+      summary: Provides Commerce Hub Health Status.
+      description: Use this API for retrieving the status of CommerceHub application as well as the error counts by products.
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheckStatusResponse'
+              examples:
+                HealthCheckStatus:
+                  summary: Health Check Status Response.
+                  $ref: '#/components/examples/HealthCheckStatusResponse'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+
 components:
   parameters:
     OrderIdParam:
@@ -5217,6 +5254,66 @@ components:
           description: 'Status of the key pair. Valid values are ACTIVE, INACTIVE, REVOKED or LEGACY'
           example: 'ACTIVE'
 
+    HealthCheckStatusResponse:
+      x-model-version: 1.0
+      properties:
+        environment:
+          type: string
+          maxLength: 16
+          description: 'Tells about the environment in which the status is requested.'
+          example: 'prod'
+        apiKey:
+          type: string
+          description: 'Health check status on behalf of this Api-Key.'
+          example: 'Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4'
+        from:
+          type: string
+          format: date-time
+          description: 'Errors are counted from this timestamp (GMT).'
+          example: '2023-10-23T15:52:00.000000000Z'
+        to:
+          type: string
+          format: date-time
+          description: 'Errors are counted till this timestamp (GMT).'
+          example: '2023-10-23T16:06:00.000000000Z'
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Metric'
+
+    HttpError:
+      x-model-version: 1.0
+      description: 'An object that represents a HTTP Error'
+      properties:
+        code:
+          type: string
+          maxLength: 8
+          description: 'HTTP error code'
+          example: '400'
+        count:
+          type: string
+          maxLength: 8
+          description: 'Number of occurrence per HTTP error code.'
+          example: '2'
+        lastOccurred:
+          type: string
+          format: date-time
+          description: 'The timestamp (GMT) of the last occurrence of the error.'
+          example: '2023-10-23T15:58:00.000000000Z'
+
+    Metric:
+      x-model-version: 1.0
+      description: 'An object that represents a Health Check Status Metrics'
+      properties:
+        apiProduct:
+          type: string
+          maxLength: 50
+          description: 'The API product for which errors are counted.Products are payments, paymentsVAS, general.'
+          example: 'paymentsVAS'
+        httpErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/HttpError'
   
   examples:
     ApplePayRequest:
@@ -7803,3 +7900,53 @@ components:
               - beginningBalance: 12.04
                 endingBalance: 12.04
                 currency: 'USD'
+
+    HealthCheckStatusResponse:
+      value:
+        environment: prod
+        apiKey: Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4
+        from: '2023-10-23T15:52:00.000000000Z'
+        to: '2023-10-23T16:06:00.000000000Z'
+        metrics:
+          - apiProduct: general
+            httpErrors:
+              - code: '401'
+                count: '2'
+          - apiProduct: payments
+            httpErrors:
+              - code: '400'
+                count: '2'
+              - code: '500'
+                count: '1'
+                lastOccurred: '2023-10-23T15:57:19.000000000Z'
+              - code: '501'
+                count: '1'
+                lastOccurred: '2023-10-23T15:57:22.000000000Z'
+              - code: '502'
+                count: '2'
+                lastOccurred: '2023-10-23T15:57:28.000000000Z'
+              - code: '503'
+                count: '4'
+                lastOccurred: '2023-10-23T15:57:37.000000000Z'
+              - code: '504'
+                count: '4'
+                lastOccurred: '2023-10-23T15:57:45.000000000Z'
+          - apiProduct: paymentsVAS
+            httpErrors:
+              - code: '400'
+                count: '2'
+              - code: '500'
+                count: '1'
+                lastOccurred: '2023-10-23T15:58:15.000000000Z'
+              - code: '501'
+                count: '1'
+                lastOccurred: '2023-10-23T15:58:12.000000000Z'
+              - code: '502'
+                count: '1'
+                lastOccurred: '2023-10-23T15:58:09.000000000Z'
+              - code: '503'
+                count: '1'
+                lastOccurred: '2023-10-23T15:58:05.000000000Z'
+              - code: '504'
+                count: '1'
+                lastOccurred: '2023-10-23T15:58:00.000000000Z'
