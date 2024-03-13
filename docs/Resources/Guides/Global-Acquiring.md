@@ -44,7 +44,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 
 ### Global Acquiring Country Coverage - Card Networks
 
-| Region    | Country  | Supporte Payments | Supported Model |
+| Region    | Country  | Supported Payments | Supported Model |
 |----------|-----------|-------------------|-----------------|
 | **North America** |    |                 |                 |
 |           | United States   | Visa, Mastercard, PIN Debit Networks, ACH, Closed Loop | Full Service Acquiring - Auth & Settlement |
