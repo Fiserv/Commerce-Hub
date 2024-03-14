@@ -52,7 +52,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 | Boliviano  | BOB  | 068 | 2 | 068    | Bolivia | LATAM | V/M |
 | Botswana Pula  | BWP | 072 | 2  | 072 | Botswana | EMEA | V/M/A* |
 | Belize Dollar | BZD  | 084 | 2  | 084 | Belize | LATAM | V/M/A* |
-| Solomon Islands Dollar | SBD | 090 | 2 | 090 | Solomon Islands  | APAC    | V/M/A*      |
+| Solomon Islands Dollar | SBD | 090 | 2 | 090 | Solomon Islands  | APAC| V/M/A*|
 | Brunei Dollar | BND | 096  | 2  | 096  | Brunei | APAC | V/M/A*  |
 | Myanmar Kyat  | MMK | 104  | 2   | 104  | Myanmar | APAC | V/M |
 | Burundi Franc | BIF   | 108 | 0  | 108 | Burundi| EMEA | V/M/A* |
@@ -77,6 +77,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 | Djiboutian Franc | DJF | 262 | 0 | 262 | Djibouti | EMEA | V/M/A* |
 | Gambian Dalasi | GMD | 270 | 2 | 270 | Gambia | EMEA | V/M/A* |
 | Gibraltar Pound | GIP | 292 | 2 | 292 | Gibraltar | EMEA | V/M/A* |
+| **Currency** | **Alpha Code** | **Numeric Code** | **Minor Units** | **ISO Country Code** | **Country/Countries** | **Region** | **MCP** |
 | Guatemalan Quetzal | GTQ | 320 | 2 | 320 | Guatemala | LATAM | V/M/A* |
 | Guinean Franc | GNF | 324 | 0 | 324 | Guinea | EMEA   | V/M/A* |
 | Guyanese Dollar | GYD | 328 | 2 | 328 | Guyana | LATAM  | V/M/A* |
@@ -117,17 +118,18 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 | Vanuatu Vatu | VUV  | 548 | 0 | 548 | Vanuatu | APAC   | V/M/A* |
 | New Zealand Dollar | NZD  | 554 | 2 | 554<br>184<br>570<br>612<br>772 | New Zealand<br>Cook Islands<br>Niue<br>Pitcairn Islands<br>Tokelau | APAC | V/M/A* |
 | Nicaraguan Cordoba | NIO  | 558 | 2 | 558 | Nicaragua | LATAM  | V/M/A* |
+| **Currency** | **Alpha Code** | **Numeric Code** | **Minor Units** | **ISO Country Code** | **Country/Countries** | **Region** | **MCP** |
 | Nigerian Naira | NGN  | 566 | 2 | 566 | Nigeria | EMEA | V/M/A* |
 | Norwegian Krone | NOK  | 578 | 2 | 578<br>744<br>074 | Norway<br>Svalbard and Jan Mayen<br>Bouvet Island | EMEA | V/M/A* |
 | Pakistani Rupee | PKR  | 586 | 2 | 586 | Pakistan | APAC   | V/M/A* |
 | Panamanian Balboa | PAB  | 590 | 2 | 591 | Panama | LATAM  | V/M |
-| Papua New Guinean Kina | PGK  | 598 | 2 | 598 | Papua New Guinea    | APAC   | V/M/A*      |
+| Papua New Guinean Kina | PGK  | 598 | 2 | 598 | Papua New Guinea| APAC| V/M/A*|
 | Paraguayan Guarani | PYG  | 600 | 0 | 600 | Paraguay | LATAM  | V/M/A* |
 | Peruvian Sol | PEN  | 604 | 2 | 604 | Peru | LATAM  | V/M/A* |
 | Philippine Peso | PHP  | 608 | 2 | 608 | Philippines | APAC   | V/M/A* |
 | Qatari Rial | QAR  | 634 | 2 | 634 | Qatar | EMEA   | V/M/A* |
 | Rwanda Franc | RWF  | 646 | 0 | 646 | Rwanda | EMEA | V/M/A* |
-| St. Helena Pound | SHP  | 654 | 2 | 654 | St. Helena, Ascension Island | EMEA | V/M         |
+| St. Helena Pound | SHP| 654 | 2 | 654 | St. Helena, Ascension Island | EMEA | V/M|
 | Saudi Riyal | SAR  | 682 | 2 | 682 | Saudi Arabia | EMEA   | V/M/A* |
 | Seychelles Rupee | SCR  | 690 | 2 | 690 | Seychelles | EMEA   | V/M/A* |
 | Sierra Leonean Leone | SLL  | 694 | 2 | 694 | Sierra Leone | EMEA   | V/M/A* |
@@ -141,7 +143,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 | Swiss Franc | CHF  | 756 | 2 | 756 | Switzerland, Liechtenstein | EMEA | V/M/A* |
 | Thai Baht | THB  | 764 | 2 | 764 | Thailand | APAC | V/M/A* |
 | Tongan Pa'anga | TOP  | 776 | 2 | 776 | Tonga | APAC | V/M/A* |
-| Trinidad and Tobago Dollar| TTD  | 780 | 2 | 780 | Trinidad and Tobago | LATAM  | V/M/A*      |
+| Trinidad and Tobago Dollar| TTD  | 780 | 2 | 780 | Trinidad and Tobago | LATAM  | V/M/A*|
 | United Arab Emirates Dirham | AED | 784 | 2 | 784 | United Arab Emirates | EMEA  | V/M/A*      |
 | Tunisian Dinar | TND  | 788 | 3 | 788 | Tunisia | EMEA | V/M/A* |
 | Ugandan Shilling | UGX  | 800 | 0 | 800 | Uganda | EMEA   | V/M/A* |
@@ -156,6 +158,7 @@ For certain currency conversions with respect to USD such as the Lebanese Pound 
 | Yemeni Rial | YER  | 886 | 2 | 887 | Yemen | EMEA | V/M/A*  |
 | New Taiwan Dollar | TWD  | 901 | 2 | 158 | Taiwan | APAC | V/M/A*  |
 | Venezuela Bolivar Soberano | VES  | 928 | 2 | 862 | Venezuela | LATAM | V/M |
+| **Currency** | **Alpha Code** | **Numeric Code** | **Minor Units** | **ISO Country Code** | **Country/Countries** | **Region** | **MCP** |
 | Mauritanian Ouguiya | MRU  | 929 | 2 | 478 | Mauritania | EMEA | V/M |
 | São Tomé & Príncipe Dobra | STN  | 930 | 2 | 678 | São Tomé & Príncipe | EMEA | V/M/A*  |
 | Turkmenistani Manat | TMT  | 934 | 2 | 795 | Turkmenistan | EMEA                 | V/M/A*  |
