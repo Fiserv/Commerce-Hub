@@ -16,7 +16,7 @@ Developers can create and manage API Keys from the Dashboard in the Certificates
 
 Login to the Developer Studio and access the Developer Dashboard.
 
-#### Step 3: Create CSR
+#### Step 2: Create CSR
 
 Click the "Create CSR" button, complete the following information and click the "Create" button.
 
@@ -38,7 +38,7 @@ Click the "Create CSR" button, complete the following information and click the 
 
 - Description: Details of the CSR
 
-#### Step 4: Download the CSR
+#### Step 3: Download the CSR
 
 Click the download icon, review the steps and click the OK button to save the CSR (_common_name.pem_) to your computer.
 
