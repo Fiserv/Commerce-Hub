@@ -395,6 +395,8 @@ The below table identifies conditional feilds that can be passed for CNP respons
 | `merchantDetails.Promotional_Code` |
 | `BankAssociationDetails.financetype` |
 
+<!-- type: tab-end -->
+
 ---
 
 ## Payload Example
