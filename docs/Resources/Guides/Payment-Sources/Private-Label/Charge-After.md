@@ -383,9 +383,7 @@ The below table identifies conditional feilds that can be passed for CNP request
 | `merchantOrderId` |
 | `paymentReceipt.processorResponseDetails.approvalCode` |
 
-<!--
-type: tab
--->
+---
 
 The below table identifies conditional feilds that can be passed for CNP response.
 
