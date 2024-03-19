@@ -366,6 +366,7 @@ ChargeAfter Card Not Present (CNP) is a leading network for Buy Now Pay Later  *
 
 <!--
 type: tab
+titles: Conditional Fields
 -->
 
 The below table identifies conditional feilds that can be passed for CNP request.
