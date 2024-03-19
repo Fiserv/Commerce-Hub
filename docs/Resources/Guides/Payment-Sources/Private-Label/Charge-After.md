@@ -2,7 +2,7 @@
 tags: [Private Label, Payment Sources]
 ---
 
-# ChargeAfter
+# ChargeAfter Card Present (CP)
 
 ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
 
@@ -359,6 +359,42 @@ ChargeAfter Card Not Present (CNP) is a leading network for Buy Now Pay Later  *
 
 ---
 
+## Request Variables
+
+<!--theme:info-->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: *false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+
+<!--
+type: tab
+-->
+
+The below table identifies conditional feilds that can be passed for CNP request.
+
+| Fields |
+| -------- |
+| `Customer.firstName`|
+| `Customer.lastName` |
+| `address.street` |
+| `address.houseNumberOrName` |
+| `address.city` |
+| `address.stateOrProvince` |
+| `address.postalCode` |
+| `merchantOrderId` |
+| `paymentReceipt.processorResponseDetails.approvalCode` |
+
+<!--
+type: tab
+-->
+
+The below table identifies conditional feilds that can be passed for CNP response.
+
+| Fields |
+| -------- |
+| `Customer.firstName`|
+| `Customer.lastName` |
+| `merchantDetails.Promotional_Code` |
+| `BankAssociationDetails.financetype` |
+
 ## Payload Example
 
 <!--
@@ -426,10 +462,6 @@ Example of a charge payload request using a ChargeAfter CNP
         "value": "SALE"
       },
       {
-        "key": "Requestor_Location_State_Code",
-        "value": "TX"
-      },
-      {
         "key": "Retailer_Channel",
         "value": "STORE"
       },
@@ -445,10 +477,6 @@ Example of a charge payload request using a ChargeAfter CNP
         "key": "Lookup_Strategy",
         "value": "DETERMINISTIC"
       },
-      {
-        "key": "Sales_Doc_ID",
-        "value": "11111-000"
-      }
     ],
     "directedRouting": {
       "processors": [
@@ -549,10 +577,6 @@ Example of a charge (201: Created) response
         "value": "Sale"
       },
       {
-        "key": "Requestor_Location_State_Code",
-        "value": "TX"
-      },
-      {
         "key": "Retailer_Channel",
         "value": "STORE"
       },
@@ -567,10 +591,6 @@ Example of a charge (201: Created) response
       {
         "key": "Lookup_Strategy",
         "value": "DETERMINISTIC"
-      },
-      {
-        "key": "Sales_Doc_ID",
-        "value": "11111-000"
       },
       {
         "key": "Service_Version_ID",
