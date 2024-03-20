@@ -131,6 +131,8 @@
   - title: Resources and Guides
     link: docs/Resources/Guides/Resources-Guide.md
     sections:
+    - title: Annoucements
+      link: docs/Resources/Guides/Announcement.md 
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
@@ -156,9 +158,7 @@
     - title: Subsequent Authorizations
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
     - title: Glossary
-      link: docs/Resources/FAQs-Glossary/Glossary.md
-    - title: Annoucements
-      link: docs/Resources/Guides/Announcement.md     
+      link: docs/Resources/FAQs-Glossary/Glossary.md    
 - sections:
   - title: API Reference
     sections:
