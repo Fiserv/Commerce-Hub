@@ -153,6 +153,8 @@
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md
+    - title: Annoucements
+      link: docs/Resources/Guides/Announcement.md     
 - sections:
   - title: API Reference
     sections:
