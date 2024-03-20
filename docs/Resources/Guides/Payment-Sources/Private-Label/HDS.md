@@ -33,7 +33,7 @@ Origin : POS, ECom, MOTO
 
 <!--
 type: tab
-titles: amount, source, transactionDetails, merchantDetails
+titles: amount, source, transactionDetails, merchantDetails, transactionInteraction
 -->
 
 The below table identifies the required parameters in the `amount` object.
