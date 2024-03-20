@@ -4,11 +4,25 @@ tags: [Private Label, Payment Sources]
 
 # HD Supply (HDS)
 
-HD Supply is a fully owned subsidiary of THD. HD Pro card will be used by the customers, THD is the only merchant connecting to HD Pro.
+HD Supply is a fully owned subsidiary of THD. HD Pro card will be used by the customers, THD is the only merchant connecting to HD Pro. HDS supports CP and CNP.
 
 <!-- theme: warning -->
 > Merchant is expected to provide routing information as part of the transaction payload.
+<!-- theme: warning -->
 > Settlement will happen outside of CH - directly between THD and HDS using the processor token from HDS.
+
+Origin : POS, ECom, MOTO
+## Transaction types: CP/ CNP
+
+- AUTH - (request for credit authorization)
+- VOID - Tagged Auth reversal only (full and partial)
+- RETURN (refund of a previously authorized purchase) - Open Refund only
+
+## Payment Sources:
+
+- Payment Track - CP
+- Payment Card Encrypted - CP, CNP
+- Payment Token – CNP
 
 ---
 
@@ -48,6 +62,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
+| `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant's choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks.|
 
 <!--
 type: tab
@@ -59,6 +74,16 @@ The below table identifies the required parameters in the `merchantDetails` obje
 |---------|----------|----------------|---------|
 |`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
 |`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the key value pairs to indentify the required `additionalPosInformation` in the `transactionInteraction` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`posId` | *string* | N/A | Indicates the Point-of-Sale for multi-Controller Transactions.|
 
 <!-- type: tab-end -->
 
@@ -153,64 +178,136 @@ Example of a charge (201: Created) response
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
-ADD RESPONSE CH RESPONSE PAYLOAD
-
+{
+  "paymentToken": {
+    "tokenData": "1010105454117237",
+    "tokenSource": "HD_SUPPLY"
+  },
+  "transactionDetails": {
+    "captureFlag": false,
+    "transactionCaptureType": "terminal_direct",
+    "merchantTransactionId": "9SEX3NA6A22ZGJPV",
+    "merchantOrderId": "JVI2H6H2IU0C8319",
+    "partialApproval": true,
+    "retrievalReferenceNumber": "a27937d1975c"
+  },
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "POS",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01db8cb660ea2127354d056586daa2c534",
+      "clientRequestId": "8146153",
+      "transactionTimestamp": "2024-03-01T23:55:41.583718136Z",
+      "transactionId": "18b3e0bedd9a4e7cae06a27937d1975c",
+      "apiTraceId": "18b3e0bedd9a4e7cae06a27937d1975c"
+    }
+  },
+  "additionalDataCommon": {
+    "customFields": [
+      {
+        "value": "2GAP51",
+        "key": "authorizationIdentificationResponse"
+      }
+    ]
+  },
+  "paymentTokens": [
+    {
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS",
+      "tokenData": "9187613613527237",
+      "tokenSource": "TRANSARMOR"
+    },
+    {
+      "tokenData": "1010105454117237",
+      "tokenSource": "HD_SUPPLY"
+    }
+  ],
+  "paymentReceipt": {
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "00",
+      "hostResponseMessage": "APPROVED",
+      "hostResponseCode": "00",
+      "bankAssociationDetails": {
+        "avsSecurityCodeResponse": {
+          "streetMatch": "NONE",
+          "securityCodeMatch": "NOT_CHECKED",
+          "association": {
+            "securityCodeResponse": "P"
+          },
+          "postalCodeMatch": "NONE"
+        }
+      },
+      "purchaseOrderRequiredIndicator": "REQUIRED",
+      "host": "PRIVATE_LABEL",
+      "responseMessage": "Approved",
+      "processor": "HD_SUPPLY",
+      "responseCode": "000"
+    },
+    "approvedAmount": {
+      "total": 1.45,
+      "currency": "USD"
+    }
+  },
+  "source": {
+    "encryptionData": {
+      "deviceType": "INGENICO",
+      "encryptionBlock": "1560384173922145=16888359437361520549",
+      "encryptionTarget": "TRACK_2",
+      "encryptionType": "ON_GUARD",
+      "keyId": "FFFF999999039D4001210114"
+    },
+    "track2Data": "9811065525747237=28101015432112345678",
+    "sourceType": "PaymentTrack",
+    "card": {
+      "expirationYear": "2028",
+      "last4": "7237",
+      "scheme": "THD",
+      "bin": "981106",
+      "expirationMonth": "10"
+    }
+  },
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "country": "US",
+      "stateOrProvince": "OH",
+      "city": "Atlanta",
+      "street": "112 Main St.",
+      "postalCode": "43068"
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100012000100291",
+    "terminalId": "10000087"
+  },
+  "transactionInteraction": {
+    "terminalTimestamp": "2024-03-01T06:55:35Z",
+    "origin": "POS",
+    "additionalPosInformation": {
+      "posId": "0151",
+      "posFeatures": {
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL",
+        "pinAuthenticationCapability": "UNSPECIFIED"
+      }
+    },
+    "posConditionCode": "CARD_PRESENT",
+    "posEntryMode": "UNSPECIFIED"
+  }
+}
 ```
 
 <!-- type: tab-end -->
 
-Example of a HDS Request Payload(from Adapter To HDS)
+---
 
-```json
-{
-  "authorizationRequest": {
-    "source": {
-      "encryptedData": {
-        "keyId": "3F66147545CCC6EBC87C1DC74AF5FD337B646E2B0688137C935DE633428866F951CD256EA3FAA1BDD7033B130903BCD6FABEB58830D5AD06EC5BADB06DC770D1",
-        "encryptionBlock": "Be6hd+tOXQ3MIUSqBmN7M766X6CliXyhCoCKxgpZ/a2Ai0gd8xHwvSO7xjZ3xSDTrPSAj5zkMBkt569yaquRyCIu9dWw0bVQ/KRxnXI0gzDdWYX0gFv9cj2pqAHC1m89sDdvUQyHpxGtK2J+d4iruSE0giWmDPXleIb+dpv9wcqZGuyQVATKGr1Tm5lIqkz4aPKOD92xVqhoOW2ZJJ1NG6HFKhB2rG+vYnQtwv1o9ITY1rsH2KbgGgRKQCDZph1JYa1+9skYJsZQvrDoNQGGV/P3Y0Iaq1mbEF/PipgrSXMYMagepbImhrWVXlDCLGlJHDVLCrWCxr9k4hUBEHSfhkjhC7YCii3yzK/D/9IjyKdp6aKdkWZjN4oRwh9UeK/QH2hJYupbhgaLvTvV42N9x7ZZV1wOvi/x6t+bQTWFZzuOVqMt16h7w6HCCY6SZLYzns8r8qg882DpsVKnpQwa5qMMQr1/MOq3FGqI/VRR07cjxMauAl2Vnw3PxAKe9e2U",
-        "encryptionBlockFields": "CardPan:16,CardExpirationDate:4"
-      }
-    },
-    "merchantID": "9773",
-    "messageType": "SALE",
-    "transactionDateTime": "2024-03-01 06:55:35",
-    "terminalID": 2,
-    "posTransID": 151,
-    "retrievalReferenceNumber": "a27937d1975c",
-    "transactionAmount": 1.45,
-    "posEntryMode": "UNKNOWN",
-    "posCondition": "CUSTOMER_PRESENT",
-    "clientUUID": "9SEX3NA6A22ZGJPV",
-    "billingAddress": {
-      "addressLane1": "112 Main St.",
-      "city": "Atlanta",
-      "state": "OH",
-      "zipCode": "43068"
-    }
-  }
-}
-```
+## See Also
 
-<!--
-type: tab
--->
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 
-Example of a charge (201: Created) response
-
-<!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-{
-  "authorizationResponse": {
-    "VendorResponseCode": "00",
-    "VendorResponseText": "APPROVED",
-    "RetrievalReferenceNumber": "a27937d1975c",
-    "AuthorizationIdentificationResponse": "2GAP51",
-    "ProcessorToken": "1010105454117237",
-    "PurchaseOrderRequiredFlag": "Y",
-    "pinValidationRespCode": "P"
-  }
-}
-
-```
+---
