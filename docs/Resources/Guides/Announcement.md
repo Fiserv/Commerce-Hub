@@ -34,9 +34,9 @@ Some examples of readily available documentation for Apache (on Redhat) and IIS 
 
 These were found while performing a standard search on the web.
 
-o	https://access.redhat.com/solutions/43575
+- https://access.redhat.com/solutions/43575
 
-o	https://support.microsoft.com/en-us/help/954755/how-to-configure-intermediatecertificates-on-a-computer-that-is-runni
+- https://support.microsoft.com/en-us/help/954755/how-to-configure-intermediatecertificates-on-a-computer-that-is-runni
 
 - For those clients who are using leaf certificate, they need to install leaf certificate at their trust store before the Fiserv scheduled change.
 
