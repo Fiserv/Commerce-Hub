@@ -22,13 +22,13 @@ The merchant can perform account verification transaction to confirm that the cu
 ---
 
 <!-- theme: info -->
-CH will initiate a reversal use case when the provider requests account verification from Chargeafter as the Account Verification request is for 1$.
+>CH will initiate a reversal use case when the provider requests account verification from Chargeafter as the Account Verification request is for 1$.
 
 <!-- theme: info -->
-Encryption types supported - RSA, On-Guard
+>Encryption types supported - RSA, On-Guard
 
 <!-- theme: info -->
-For Account Verification, merchant is expected to pass request payload as they would for a ‘[Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)’ trn based on the front end.
+>For Account Verification, merchant is expected to pass request payload as they would for a ‘[Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)’ trn based on the front end.
 
 ## Minimum Requirements
 
