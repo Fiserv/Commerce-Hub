@@ -4,7 +4,7 @@ tags: [Account, Verification, Security Code, Address Verrification Service]
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification request using an unencrypted or encrypted payment card, payment session or payment token.
+The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification Payment Emv, Payment Track, or payment Token.
 
 <!-- theme: info -->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request by sending the customer's `billingAddress` and `securityCode`.
@@ -12,39 +12,28 @@ The merchant can perform account verification transaction to confirm that the cu
 <!-- theme: warning -->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
+## Supported Payment source type for transaction request
+
+- [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+- [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md)
+
 ---
+
+<!-- theme: info -->
+CH will initiate a reversal use case when the provider requests account verification from Chargeafter as the Account Verification request is for 1$.
+
+<!-- theme: info -->
+Encryption types supported - RSA, On-Guard
+
+<!-- theme: info -->
+For Account Verification, merchant is expected to pass request payload as they would for a ‘[Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)’ trn based on the front end.
 
 ## Minimum Requirements
 
 <!-- theme: warning -->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`.
-
-<!--
-type: tab
-titles: source, card
--->
-
-The below table identifies the required parameters in the `source` object when using a unencrypted payment card.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `sourceType` | _string_ | 15 | Value _PaymentCard_ is used for verification request. Refer to [payment sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more information on other supported source types. |
-| `card` | _object_ | N/A | Card details object |
-
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `card` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `cardData` | _string_ | 256 | Credit Card Number or Encrypted Data |
-| `expirationMonth` | _string_ | 2 | 2-digit card expiration month |
-| `expirationyear` | _string_ | 4 | 4-digit card expiration year |
-
-<!-- type: tab-end -->
 
 ---
 
