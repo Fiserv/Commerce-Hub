@@ -11,14 +11,13 @@ HD Supply is a fully owned subsidiary of THD. HD Pro card will be used by the cu
 <!-- theme: warning -->
 > Settlement will happen outside of CH - directly between THD and HDS using the processor token from HDS.
 
-Origin : POS, ECom, MOTO
 ## Transaction types: CP/ CNP
 
 - AUTH - (request for credit authorization)
-- VOID - Tagged Auth reversal only (full and partial)
-- RETURN (refund of a previously authorized purchase) - Open Refund only
+- VOID - Tagged Auth reversal only
+- RETURN - Open Refund only
 
-## Payment Sources:
+## Payment Sources
 
 - Payment Track - CP
 - Payment Card Encrypted - CP, CNP
@@ -79,11 +78,18 @@ The below table identifies the required parameters in the `merchantDetails` obje
 type: tab
 -->
 
-The below table identifies the key value pairs to indentify the required `additionalPosInformation` in the `transactionInteraction` object.
+The below table identifies the required parameters from `additionalPosInformation` in the `transactionInteraction` object.
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`posId` | *string* | N/A | Indicates the Point-of-Sale for multi-Controller Transactions.|
+| `origin` | *string* | N/A | The source of the transaction.|
+
+| Origin Values |
+| ------------- |
+| ECOM |
+| MOTO |
+| POS |
 
 <!-- type: tab-end -->
 
