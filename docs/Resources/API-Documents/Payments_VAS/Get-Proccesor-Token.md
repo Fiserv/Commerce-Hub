@@ -127,7 +127,7 @@ Example of a tokenization (201: Created) response.
     }
   },
   "source": {
-    "tokenData": "9187613613527237",
+    "tokenData": "1234123412340019",
     "sourceType": "PaymentToken",
     "card": {
       "expirationYear": "2028",
@@ -145,7 +145,7 @@ Example of a tokenization (201: Created) response.
   },
   "paymentTokens": [
     {
-      "tokenData": "1234123412340019",
+      "tokenData": "9187613613527237",
       "tokenSource": "HD_SUPPLY",
       "tokenResponseCode": "000",
       "tokenResponseDescription": "SUCCESS"
