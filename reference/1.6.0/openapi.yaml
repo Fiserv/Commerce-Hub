@@ -230,7 +230,7 @@ paths:
       x-group-name: 'Payments VAS'
       x-proxy-name: 'Verification'
       summary: Verify a payment card or payment token.
-      description: 'Use this payload to perform an account verification for a payment card or payment token. This will check the validity and respond if an account is valid or not.'
+      description: 'Use this payload to perform an account verification. This will check the validity and respond if an account is valid or not'
       requestBody:
         required: true
         content:

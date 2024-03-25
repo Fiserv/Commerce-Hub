@@ -4,10 +4,14 @@ tags: [Account, Verification, Security Code, Address Verrification Service]
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification Payment Emv, Payment Track, or payment Token.
+The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification request using an encrypted payment card, payment token, payment track and payment emv.
 
 <!-- theme: info -->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request by sending the customer's `billingAddress` and `securityCode`.
+
+<!-- theme: info -->
+> CH will initiate a reversal use case when the provider requests account verification from Chargeafter as the Account Verification request is for 1$.
+Encryption types supported - RSA, On-Guard
 
 <!-- theme: warning -->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
@@ -18,6 +22,18 @@ The merchant can perform account verification transaction to confirm that the cu
 - [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md)
 - [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md)
+
+## Front ends and transaction sources supported
+
+USA - POS, ECOM, MOTO
+- HD Supply
+- Chargeafter
+- Fiserv (Nashville)
+- Chase
+- Citi
+
+CANADA – POS, ECOM, MOTO
+- Citi
 
 ---
 
@@ -35,6 +51,8 @@ The merchant can perform account verification transaction to confirm that the cu
 <!-- theme: warning -->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`.
 
+For Account Verification, merchant is expected to pass request payload as they would for a ‘[Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)’ trn based on the front end.
+
 ---
 
 ## Endpoint
@@ -51,7 +69,7 @@ type: tab
 titles: Request, Response
 -->
 
-Account verification request using PaymentCard.
+Account verification request using PaymentTrack.
 
 ```json
 {
@@ -124,6 +142,16 @@ Example of an account verification (200: Success) response.
    }
 }
 ```
+
+## Account Verifcation Response
+
+| Processor | Payment Card | PaymentToken (Transarmor token only) | PaymentEMV | PaymentTrack |
+|---------|--------------|------------|-----------|------------|
+| HD Supply  | Y | Y | N | Y |
+| Chargeafter| Y | Y | N | Y |
+| Nashville  | Y | Y | Y | Y |
+| Chase | Y | Y | Y | Y |
+| Citi | Y | Y | Y | Y |
 
 <!-- type: tab-end -->
 
