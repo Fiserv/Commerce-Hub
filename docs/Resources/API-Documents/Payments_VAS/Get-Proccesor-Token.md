@@ -191,6 +191,8 @@ Example of a tokenization (201: Created) response.
 <!-- theme: info -->
 > All processors pass additional information (objects) in the declined response, the merchant can persist what is needed at their end.
 
+## Decline Responses
+
 <!--
 type: tab
 titles: Chase, Citi, HD Supply, ChargeAfter
