@@ -9,6 +9,10 @@ ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-
 <!-- theme: warning -->
 > Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
 
+<!-- theme: warning -->
+> Merchant must pass origin for CP/CNP Auth and Open refund transactions.
+Origin supported  - MOTO, ECOM, POS
+
 ---
 
 ## Request Variables
@@ -357,6 +361,10 @@ ChargeAfter Card Not Present (CNP) is a leading network for Buy Now Pay Later  *
 <!-- theme: warning -->
 > Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
 
+<!-- theme: warning -->
+> Merchant must pass origin for CP/CNP Auth and Open refund transactions.
+Origin supported  - MOTO, ECOM, POS
+
 ---
 
 ## Request Variables
@@ -410,43 +418,70 @@ Example of a charge payload request using a ChargeAfter CNP
 ```json
 {
   "amount": {
-    "total": 1.45,
+    "total": 1,
     "currency": "USD"
   },
+  "customer": {
+    "merchantCustomerId": "272",
+    "firstName": "THDApp",
+    "lastName": "Testing Two"
+  },
   "source": {
-    "sourceType": "PaymentTrack",
-    "encryptionData": {
-      "encryptionType": "ON_GUARD",
-      "encryptionTarget": "TRACK_2",
-      "encryptionBlock": "4599892543100751=36193012513455685570",
-      "keyId": "FFFF999999039D4001080114",
-      "deviceType": "INGENICO"
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "7776768052115754",
+      "expirationMonth": "11",
+      "expirationYear": "2025",
+      "securityCode": "170"
+    }
+  },
+  "billingAddress": {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "address": {
+      "street": "5 CONCOURSE PARKWAY STE 300",
+      "city": "ATLANTA",
+      "houseNumberOrName": "",
+      "stateOrProvince": "GA",
+      "postalCode": "30328",
+      "country": "USA"
     }
   },
   "transactionDetails": {
     "captureFlag": false,
-    "merchantOrderId": "7EWVTZRNAK7AJMXL",
-    "merchantTransactionId": "FT4WTBP9LW0FB0PD"
+    "merchantOrderId": "5698874392878089",
+    "merchantTransactionId": "JHARBTUTO0SN"
   },
   "transactionInteraction": {
-    "origin": "POS",
-    "posEntryMode": "MAG_STRIPE",
-    "posConditionCode": "CARD_PRESENT",
-    "terminalTimestamp": "2023-09-20T05:33:05Z"
+    "origin": "ECOM",
+    "posEntryMode": "MANUAL",
+    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+    "terminalTimestamp": "2024-03-26T03:41:58Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED",
+        "terminalEntryCapability": "UNSPECIFIED"
+      }
+    }
   },
   "merchantDetails": {
-    "merchantId": "100012000003424",
+    "merchantId": "100012000102008",
     "terminalId": "10000001"
   },
   "additionalDataCommon": {
+    "privateLabel": {
+      "minimumSpendExemptIndicator": "EXEMPT",
+      "creditPlan": "00100"
+    },
     "customFields": [
       {
         "key": " Request_Date_Time_GMT",
-        "value": "2023-09-20T05:33:05Z"
+        "value": "2024-01-16T05:32:54Z"
       },
       {
         "key": " Request_Date_Time_Local",
-        "value": "2023-09-20T05:33:05Z"
+        "value": "2024-01-16T05:32:54Z"
       },
       {
         "key": "Requestor_Channel_Code",
@@ -454,19 +489,11 @@ Example of a charge payload request using a ChargeAfter CNP
       },
       {
         "key": " Requestor_Organization_Code",
-        "value": "BUSINESS"
-      },
-      {
-        "key": "Requestor_User_ID",
-        "value": "XXXX"
-      },
-      {
-        "key": "Requestor_POS_Event_Code",
-        "value": "SALE"
+        "value": "HOME DEPOT"
       },
       {
         "key": "Retailer_Channel",
-        "value": "STORE"
+        "value": "E-commerce"
       },
       {
         "key": "Consumer_Decision",
@@ -479,7 +506,7 @@ Example of a charge payload request using a ChargeAfter CNP
       {
         "key": "Lookup_Strategy",
         "value": "DETERMINISTIC"
-      },
+      }
     ],
     "directedRouting": {
       "processors": [
@@ -505,118 +532,180 @@ Example of a charge (201: Created) response
 
 ```json
 {
-  "gatewayResponse": {
-    "transactionType": "CHARGE",
-    "transactionState": "AUTHORIZED",
-    "transactionOrigin": "POS",
-    "transactionProcessingDetails": {
-      "orderId": "CHG012ed86c6922b3baa3daf6212a387a535e",
-      "transactionTimestamp": "2023-10-02T15:06:53.265622209Z",
-      "apiTraceId": "c62b549306424057a66dd862156c475b",
-      "clientRequestId": "4396400",
-      "transactionId": "c62b549306424057a66dd862156c475b"
-    }
-  },
-  "source": {
-    "sourceType": "PaymentTrack",
-    "card": {
-      "expirationMonth": "11",
-      "expirationYear": "2025",
-      "bin": "777676",
-      "last4": "0685",
-      "scheme": "THD"
-    }
-  },
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": 1.45,
-      "currency": "USD"
+  "res": {
+    "transactionDetails": {
+      "captureFlag": false,
+      "transactionCaptureType": "terminal_direct",
+      "merchantTransactionId": "JHARBTUTO0SN",
+      "merchantOrderId": "5698874392878089",
+      "partialApproval": true,
+      "retrievalReferenceNumber": "5a92365bb7bb"
     },
-    "processorResponseDetails": {
-      "approvalStatus": "APPROVED",
-      "approvalCode": "341003",
-      "processor": "CHARGE_AFTER",
-      "host": "PRIVATE_LABEL",
-      "localTimestamp": "2023-10-02T15:06:57.703554Z"
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": false,
-    "transactionCaptureType": "terminal_direct",
-    "merchantTransactionId": "FT4WTBP9LW0FB0PD",
-    "merchantOrderId": "7EWVTZRNAK7AJMXL",
-    "retrievalReferenceNumber": "d862156c475b"
-  },
-  "transactionInteraction": {
-    "origin": "POS",
-    "posEntryMode": "MAG_STRIPE",
-    "posConditionCode": "CARD_PRESENT",
-    "terminalTimestamp": "2023-09-20T05:33:05Z"
-  },
-  "additionalDataCommon": {
-    "customFields": [
-      {
-        "key": " Request_Date_Time_GMT",
-        "value": "2023-09-20T05:33:05Z"
-      },
-      {
-        "key": " Request_Date_Time_Local",
-        "value": "2023-09-20T05:33:05Z"
-      },
-      {
-        "key": "Requestor_Channel_Code",
-        "value": "STORE"
-      },
-      {
-        "key": " Requestor_Organization_Code",
-        "value": "BUSINESS"
-      },
-      {
-        "key": "Requestor_User_ID",
-        "value": "XXXXX"
-      },
-      {
-        "key": "Requestor_POS_Event_Code",
-        "value": "Sale"
-      },
-      {
-        "key": "Retailer_Channel",
-        "value": "STORE"
-      },
-      {
-        "key": "Consumer_Decision",
-        "value": "ACCEPT"
-      },
-      {
-        "key": " Terms_Verified",
-        "value": "Y"
-      },
-      {
-        "key": "Lookup_Strategy",
-        "value": "DETERMINISTIC"
-      },
-      {
-        "key": "Service_Version_ID",
-        "value": "02_00_00"
-      },
-      {
-        "key": "Transaction_Request_Type",
-        "value": "PRE_AUTH"
+    "gatewayResponse": {
+      "transactionType": "CHARGE",
+      "transactionState": "AUTHORIZED",
+      "transactionOrigin": "ECOM",
+      "transactionProcessingDetails": {
+        "orderId": "CHG0142e7d21b1c3286d3bd1aa77da0c63f15",
+        "clientRequestId": "7201470",
+        "transactionTimestamp": "2024-03-26T19:42:01.305523898Z",
+        "transactionId": "d8961fd9362649019d8b5a92365bb7bb",
+        "apiTraceId": "d8961fd9362649019d8b5a92365bb7bb"
       }
-    ]
-  },
-  "paymentTokens": [
-    {
-      "tokenData": "7809293712430685",
-      "tokenSource": "TRANSARMOR",
-      "tokenResponseCode": "000",
-      "tokenResponseDescription": "SUCCESS"
     },
-    {
-      "tokenData": "1100000000056349",
-      "tokenSource": "CHARGE AFTER"
+    "additionalDataCommon": {
+      "privateLabel": {
+        "minimumSpendExemptIndicator": "EXEMPT",
+        "creditPlan": "00100"
+      },
+      "customFields": [
+        {
+          "value": "2024-01-16T05:32:54Z",
+          "key": "Request_Date_Time_GMT"
+        },
+        {
+          "value": "2024-01-16T05:32:54Z",
+          "key": "Request_Date_Time_Local"
+        },
+        {
+          "value": "STORE",
+          "key": "Requestor_Channel_Code"
+        },
+        {
+          "value": "HOME DEPOT",
+          "key": "Requestor_Organization_Code"
+        },
+        {
+          "value": "E-commerce",
+          "key": "Retailer_Channel"
+        },
+        {
+          "value": "ACCEPT",
+          "key": "Consumer_Decision"
+        },
+        {
+          "value": "Y",
+          "key": "Terms_Verified"
+        },
+        {
+          "value": "DETERMINISTIC",
+          "key": "Lookup_Strategy"
+        },
+        {
+          "value": "HOME DEPOT",
+          "key": "Requestor_Organization_Code"
+        },
+        {
+          "value": "Y",
+          "key": "Terms_Verified"
+        },
+        {
+          "value": "12443-605",
+          "key": "Sales_Doc_ID"
+        },
+        {
+          "value": "NCLCP",
+          "key": "Requestor_User_ID"
+        },
+        {
+          "value": "2024-03-26T03:41:58Z",
+          "key": "Request_Date_Time_GMT"
+        },
+        {
+          "value": "02_00_00",
+          "key": "Service_Version_ID"
+        },
+        {
+          "value": "2024-03-26T03:41:58Z",
+          "key": "Request_Date_Time_Local"
+        },
+        {
+          "value": "Sale",
+          "key": "Requestor_POS_Event_Code"
+        },
+        {
+          "value": "PRE_AUTH",
+          "key": "Transaction_Request_Type"
+        }
+      ]
+    },
+    "paymentTokens": [
+      {
+        "tokenData": "1100000000040685",
+        "tokenSource": "CHARGE AFTER"
+      },
+      {
+        "tokenResponseCode": "000",
+        "tokenResponseDescription": "SUCCESS",
+        "tokenData": "7308434633815754",
+        "tokenSource": "TRANSARMOR"
+      }
+    ],
+    "paymentReceipt": {
+      "processorResponseDetails": {
+        "approvalStatus": "APPROVED",
+        "approvalCode": "376909",
+        "hostResponseMessage": "Charge Approved",
+        "bankAssociationDetails": {
+          "bankId": "73"
+        },
+        "host": "PRIVATE_LABEL",
+        "localTimestamp": "2024-03-26T19:42:06.0769637Z",
+        "responseMessage": "Approved",
+        "processor": "CHARGE_AFTER",
+        "responseCode": "000"
+      },
+      "approvedAmount": {
+        "total": 1,
+        "currency": "USD"
+      }
+    },
+    "billingAddress": {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "address": {
+        "country": "USA",
+        "stateOrProvince": "GA",
+        "city": "ATLANTA",
+        "street": "5 CONCOURSE PARKWAY STE 300",
+        "houseNumberOrName": "",
+        "postalCode": "30328"
+      }
+    },
+    "source": {
+      "sourceType": "PaymentCard",
+      "card": {
+        "expirationYear": "2025",
+        "last4": "5754",
+        "scheme": "THD",
+        "bin": "777676",
+        "expirationMonth": "11"
+      }
+    },
+    "merchantDetails": {
+      "merchantId": "100012000102008",
+      "promotionCode": "7900",
+      "terminalId": "10000001"
+    },
+    "transactionInteraction": {
+      "terminalTimestamp": "2024-03-26T03:41:58Z",
+      "origin": "ECOM",
+      "additionalPosInformation": {
+        "posFeatures": {
+          "terminalEntryCapability": "UNSPECIFIED",
+          "pinAuthenticationCapability": "UNSPECIFIED"
+        },
+        "dataEntrySource": "MOBILE_TERMINAL"
+      },
+      "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+      "posEntryMode": "MANUAL",
+      "eciIndicator": "CHANNEL_ENCRYPTED"
+    },
+    "customer": {
+      "firstName": "THDApp",
+      "lastName": "Testing Two"
     }
-  ]
+  }
 }
 ```
 
