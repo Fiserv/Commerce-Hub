@@ -183,11 +183,6 @@ Example of a tokenization (201: Created) response.
 
 ### Get Processor Token Decline
 
-<!--
-type: tab
-titles: Chase, Citi, HD Supply, ChargeAfter
--->
-
 <!-- theme: info -->
 > All declines will be sent to the merchant as 201 responses.
 
@@ -196,10 +191,13 @@ titles: Chase, Citi, HD Supply, ChargeAfter
 <!-- theme: info -->
 > All processors pass additional information (objects) in the declined response, the merchant can persist what is needed at their end.
 
+<!--
+type: tab
+titles: Chase, Citi, HD Supply, ChargeAfter
+-->
+
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
----
 
 ```json
 {
