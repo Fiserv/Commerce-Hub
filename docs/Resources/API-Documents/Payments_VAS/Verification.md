@@ -61,7 +61,7 @@ type: tab
 titles: Request, Response
 -->
 
-Account verification request using PaymentTrack.
+Account verification request using PaymentCard.
 
 ```json
 {
