@@ -16,6 +16,9 @@ Encryption types supported - RSA, On-Guard
 <!-- theme: warning -->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
+<!-- theme: info -->
+>For Account Verification, merchant is expected to pass request payload as they would for a ‘[Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)’ trn based on the front end.
+
 ## Supported Payment source type for transaction request
 
 - [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
@@ -37,21 +40,10 @@ CANADA – POS, ECOM, MOTO
 
 ---
 
-<!-- theme: info -->
->CH will initiate a reversal use case when the provider requests account verification from Chargeafter as the Account Verification request is for 1$.
-
-<!-- theme: info -->
->Encryption types supported - RSA, On-Guard
-
-<!-- theme: info -->
->For Account Verification, merchant is expected to pass request payload as they would for a ‘[Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)’ trn based on the front end.
-
 ## Minimum Requirements
 
 <!-- theme: warning -->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`.
-
-For Account Verification, merchant is expected to pass request payload as they would for a ‘[Charges](?path=docs/Resources/API-Documents/Payments/Charges.md)’ trn based on the front end.
 
 ---
 
