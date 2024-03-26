@@ -4,12 +4,12 @@ tags: [Private Label, Payment Sources]
 
 # HD Supply (HDS)
 
-HD Supply is a fully owned subsidiary of THD. HD Pro card will be used by the customers, THD is the only merchant connecting to HD Pro. HDS supports CP and CNP.
+HD Supply is a fully owned subsidiary of THD. HD Pro card will be used by the customers, THD is the only merchant connecting to HD Supply. HDS supports CP and CNP.
 
 <!-- theme: warning -->
 > Merchant is expected to provide routing information as part of the transaction payload.
 <!-- theme: warning -->
-> Settlement will happen outside of CH - directly between THD and HDS using the processor token from HDS.
+> Settlement will happen outside of CH - directly between THD and HDS.
 
 ## Transaction types: CP/ CNP
 
