@@ -184,7 +184,7 @@ Example of a tokenization (201: Created) response.
 ### Get Processor Token Decline
 
 <!-- theme: info -->
-> All declines will be sent to the merchant as 201 responses.
+> All declines will be sent to the merchant as 200 responses.
 
 <!-- theme: info -->
 > Merchant should look for gatewayResponse.transactionState to determine whether 'TOKENISE' request was declined/approved.
