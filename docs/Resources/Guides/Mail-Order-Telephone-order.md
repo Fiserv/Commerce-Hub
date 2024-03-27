@@ -16,7 +16,7 @@ Mail Order Telephone Order (MOTO)- a remote transaction where the physical card 
 ### Mimimum Requirements
 
 <!-- theme: warning -->
-Add This
+Add This 
 
 ### Requirements
 
@@ -53,6 +53,8 @@ The below table identifies the required parameters in the `transactionInteractio
 |---------|----------|----------------|---------|---|
 | `origin` | *string* | 4 | The source of the transaction |
 | `mototype` | *string* | N/A | Defines the type of MOTO transaction when origin is MOTO. |
+
+<!-- type: tab-end -->
 
 ---
 
