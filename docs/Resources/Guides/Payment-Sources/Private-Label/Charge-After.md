@@ -354,7 +354,7 @@ Example of a charge (201: Created) response
 
 ---
 
-# ChargeAfter Card Not Present (CNP)
+## ChargeAfter Card Not Present (CNP)
 
 ChargeAfter Card Not Present (CNP) is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
 
