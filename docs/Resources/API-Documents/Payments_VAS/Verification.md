@@ -10,7 +10,7 @@ The merchant can perform account verification transaction to confirm that the cu
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request by sending the customer's `billingAddress` and `securityCode`.
 
 <!-- theme: info -->
-> CH will initiate a reversal use case when the provider requests account verification from Chargeafter as the Account Verification request is for 1$.
+> CH will initiate a reversal use case when the merchant requests account verification from Chargeafter as the Account Verification request is for 1$.
 Encryption types supported - RSA, On-Guard
 
 <!-- theme: warning -->
