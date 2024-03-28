@@ -455,7 +455,7 @@ Example of a charge payload request using a ChargeAfter CNP
   "transactionInteraction": {
     "origin": "ECOM",
     "posEntryMode": "MANUAL",
-    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM",
     "terminalTimestamp": "2024-03-26T03:41:58Z",
     "additionalPosInformation": {
       "dataEntrySource": "MOBILE_TERMINAL",
@@ -697,7 +697,7 @@ Example of a charge (201: Created) response
         },
         "dataEntrySource": "MOBILE_TERMINAL"
       },
-      "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
       "posEntryMode": "MANUAL",
       "eciIndicator": "CHANNEL_ENCRYPTED"
     },
