@@ -13,16 +13,11 @@ Mail Order Telephone Order (MOTO)- a remote transaction where the physical card 
 > Merchant initiates a payment request via some virtual point of sale and sends to Commerce Hub
 ---
 
-### Mimimum Requirements
-
-<!-- theme: warning -->
-Add This 
-
 ### Requirements
 
 <!--
 type: tab
-titles: amount, source, card
+titles: amount, source, card, transactionInteraction
 -->
 
 The below table identifies the required parameters in the `amount` object.
@@ -47,7 +42,7 @@ The below table identifies the required parameters in the `source` object.
 type: tab
 -->
 
-The below table identifies the required parameters in the `transactionInteraction` object.
+The below table identifies the parameters in the `transactionInteraction` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|---|
@@ -60,7 +55,7 @@ The below table identifies the required parameters in the `transactionInteractio
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/payments-vas/v1/tokens`
+>**POST** `/payments/v1/charges`
 
 ---
 
@@ -169,6 +164,36 @@ Example of a MOTO (201: Created) response.
   "transactionDetails": {
     "captureFlag": true,
     "merchantInvoiceNumber": "123456789012"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "expirationYear": "2099",
+      "last4": "0026",
+      "scheme": "VISA",
+      "bin": "401200",
+      "expirationMonth": "12"
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100004000100157",
+    "terminalId": "10000001",
+    "tokenType": "BBY0"
+  },
+  "transactionInteraction": {
+    "hostPosEntryMode": "010",
+    "origin": "MOTO",
+    "additionalPosInformation": {
+      "stan": "003973",
+      "posFeatures": {
+        "pinAuthenticationCapability": "UNSPECIFIED"
+      }
+    },
+    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+    "posEntryMode": "MANUAL",
+    "authorizationCharacteristicsIndicator": "V",
+    "hostPosConditionCode": "08",
+    "motoType": "PHONE"
   }
 }
 ```
