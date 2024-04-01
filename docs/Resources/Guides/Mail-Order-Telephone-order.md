@@ -197,7 +197,6 @@ Example of a MOTO (201: Created) response.
   }
 }
 ```
-<!-- type: tab-end -->
 
 ---
 
