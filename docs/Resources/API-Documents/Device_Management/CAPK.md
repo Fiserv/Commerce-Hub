@@ -68,7 +68,6 @@ Example of a Download payload request
     "terminalId": "123456"
   }
 }
-
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/tms/v1/emv-capk-data)
