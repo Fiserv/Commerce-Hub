@@ -69,7 +69,7 @@ The below table identifies the required parameters in the `processors` array.
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/paymentsvas/v1/processor-tokens`
+>**POST** `/payments-vas/v1/partner-tokens`
 
 ---
 
