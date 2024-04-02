@@ -11,7 +11,7 @@ There are use cases where merchant requires processor token using standalone **[
 - Merchant performs direct settlement with the backend settlement systems and needs to submit the proccesor token in the settlement file.
 
 <!-- theme: info -->
-> Merchant should use endpoint /paymentsvas/v1/processor-tokens and this payload to request processor token.
+> Merchant should use endpoint /payments-vas/v1/partner-tokens and this payload to request processor token.
 
 ## Front Ends Supported
 
