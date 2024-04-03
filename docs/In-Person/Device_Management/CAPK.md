@@ -124,6 +124,14 @@ Example of a Download (201: Created) response.
 
 Commerce Hub will provide the ability for a merchant to retrieve the current status of the EMV(Europay Mastercard Visa) CAPK (Certification Authority Public Key) data.
 
+<!-- theme: info -->
+> In the response, if the emvDetails.status = 'UPDATE_AVAILABLE', then the latest CAPK data version should be downloaded through the DOWNLOAD transactionType operation.
+
+<!-- theme: info -->
+> Once an update it available, merchants are expected to download the new version of CAPK data within six months.
+
+<!-- theme: info -->
+> In the response, if the emvDetails.status = 'NO_UPDATE_AVAILABLE', then the CAPK data version is up to date.
 ---
 
 <!--
