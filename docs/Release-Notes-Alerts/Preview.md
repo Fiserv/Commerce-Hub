@@ -16,6 +16,18 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+## February 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** 
+- **Production:** 
+
+| Details | Type |
+| ----- | ----- |
+| Support [Certification Authority Public Key (CAPK)](?path=docs/In-Person/Device_Management/CAPK.md) | Feature |
+
+
 ## January 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
