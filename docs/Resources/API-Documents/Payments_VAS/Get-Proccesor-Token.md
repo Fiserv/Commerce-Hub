@@ -4,21 +4,17 @@ tags: [Get-Proccesor, Token, Tokenization, API Reference]
 
 # Get Proccesor Token
 
-There are use cases where merchant requires processor token using standalone **[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** calls.
-
-- Merchant uses encryption at point of interaction (P2PE) and does not have access to PCI data. Merchant must accept an offline transaction and requires processor token.
-
-- Merchant performs direct settlement with the backend settlement systems and needs to submit the proccesor token in the settlement file.
+There are use cases where merchant requires processor token using standalone **[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** calls. Merchant uses encryption at point of interaction (P2PE) and does not have access to PCI data. Merchant must accept an offline transaction and requires processor token. Merchant performs direct settlement with the backend settlement systems and needs to submit the proccesor token in the settlement file.
 
 <!-- theme: info -->
-> Merchant should use endpoint /payments-vas/v1/partner-tokens and this payload to request processor token.
+> Merchant should use endpoint /payments-vas/v1/partner-tokensy and this payload to request processor token.
 
 ## Front Ends Supported
 
 - Chase
-- Citi
-- HD Supply
-- ChargeAfter
+- [Citi](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Citi.md)
+- [HD Supply](?path=docs/Resources/Guides/Payment-Sources/Private-Label/HDS.md)
+- [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md)
 
 ---
 
@@ -64,12 +60,6 @@ The below table identifies the required parameters in the `processors` array.
 | `processingPlatform` | _string_ | 256 | Identifies the payment platform of the processor. |
 
 <!-- type: tab-end -->
-
----
-
-### Endpoint
-<!-- theme: success -->
->**POST** `/payments-vas/v1/partner-tokens`
 
 ---
 
@@ -461,6 +451,10 @@ type: tab
   }
 }
 ```
+
+<!-- type: tab-end -->
+
+---
 
 ## See Also
 
