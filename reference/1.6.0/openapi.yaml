@@ -1675,7 +1675,10 @@ components:
         additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
         additionalData3DS:
           $ref: '#/components/schemas/AdditionalData3DS'
-
+        splitSettlement:
+          type: array
+          items:
+            $ref: '#/components/schemas/SplitSettlement'
     Phone:
       x-model-version: 1.0
       description: Customer <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">phone</a>
