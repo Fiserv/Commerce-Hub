@@ -4,24 +4,7 @@ tags: [Private Label, Payment Sources]
 
 # HD Supply (HDS)
 
-HD Supply is a fully owned subsidiary of THD. HD Pro card will be used by the customers, THD is the only merchant connecting to HD Supply. HDS supports CP and CNP.
-
-<!-- theme: warning -->
-> Merchant is expected to provide routing information as part of the transaction payload.
-<!-- theme: warning -->
-> Settlement will happen outside of CH - directly between THD and HDS.
-
-## Transaction types: CP/ CNP
-
-- AUTH - (request for credit authorization)
-- VOID - Tagged Auth reversal only
-- RETURN - Open Refund only
-
-## Payment Sources
-
-- Payment Track - CP
-- Payment Card Encrypted - CP, CNP
-- Payment Token – CNP
+HD Supply is a fully owned subsidiary of The Home Depot. HD Pro card will be used by the customers, The Home Depot is the only merchant connecting to HD Supply. HDS supports CP and CNP. Merchant is expected to provide routing information as part of the transaction payload. Settlement will happen outside of CH - directly between The Home Depot and HD Supply.
 
 ---
 
@@ -92,12 +75,6 @@ The below table identifies the required parameters from `additionalPosInformatio
 | POS |
 
 <!-- type: tab-end -->
-
----
-
-## Endpoint
-<!-- theme: success -->
->**POST** `/payments/v1/charges`
 
 ---
 
