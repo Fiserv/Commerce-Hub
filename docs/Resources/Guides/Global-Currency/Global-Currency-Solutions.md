@@ -26,7 +26,7 @@ link: ?path=docs/Resources/Guides/Global-Currency/Multi-Currency.md
 <!-- type: card
 title: Dynamic Currency Conversion
 description: A rate request that allows a merchant to request the optimal currency and rate from our exchange rate provider, which will determine the currency and provide a price and exchange rate.
-link: 
+link: ?path=docs/Resources/Guides/Global-Currency/Currency-Conversion.md
 -->
 
 <!-- type: card

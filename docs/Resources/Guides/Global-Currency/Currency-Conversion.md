@@ -1,5 +1,5 @@
 ---
-tags: [Currency Conversion, Global Currency]
+tags: [Currency Conversion, Dynamic Currency Conversion, Global Currency]
 ---
 
 # Dynamic Currency Conversion
@@ -11,8 +11,30 @@ Commerce Hub's Dynamic Currency Conversion _(DCC)_ service is a payment solution
 
 ---
 
-## See Also
+## Requests
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
+Build a Commerce Hub integration to manage currency conversion.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Rate Request by Issuer
+description: Submit a DCC request for a payment instrument to receive the currency and rate based on the issuer's BIN.
+link: ?path=docs/Resources/Guides/Global-Currency/DCC-BIN-Rate-Request.md
+-->
+
+<!-- type: card
+title: Rate Request by Currency
+description: Submit a DCC request for a specific currency rate based on the `currencyCode`.
+link: docs/Resources/Guides/Global-Currency/DCC-Currency-Rate-Request.md
+-->
+
+<!-- type: card
+title: Charges Request
+description: Submit a charges request using the requested rate information.
+link: docs/Resources/Guides/Global-Currency/DCC-Charge-Request.md
+-->
+
+<!-- type: row-end -->
 
 ---
