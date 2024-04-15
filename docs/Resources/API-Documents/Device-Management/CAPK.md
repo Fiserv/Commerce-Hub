@@ -115,8 +115,10 @@ Example of a Download (201: Created) response.
     ]
   }
 }
-
 ```
+<!-- type: tab-end -->
+
+---
 
 ## Status Article
 
@@ -129,17 +131,6 @@ type: tab
 titles: emvDetails, merchantDetails
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!--
-type: tab
--->
-
 The below table identifies the required parameters in the `emvDetails` object.
 
 | Variable | Data Type| Maximum Length | Description |
@@ -148,6 +139,17 @@ The below table identifies the required parameters in the `emvDetails` object.
 |`currentFileCreationDate`| *string* | 40 | This parameter is sent as part of the last record in the format MMDDYYYYhhmmss|
 | `fileSize` | *integer* | 10979 | This field contains the total size of the file, in bytes |
 | `fileCheckSum`| *string* | 40 | This field contains the CRC-16 checksum of the file. Hexadecimal representation of 2 bytes or 16 bits |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -175,7 +177,6 @@ Example of a Status payload request
     "fileCheckSum": "a8"
   }
 }
-
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/tms/v1/emv-capk-data)
@@ -213,8 +214,10 @@ Example of a Status (201: Created) response.
     "terminalId": "123456"
   }
 }
-
 ```
+<!-- type: tab-end -->
+
+---
 
 ## See Also
 
