@@ -2,9 +2,12 @@
 tags: [Private Label, Payment Sources]
 ---
 
-# HD Supply (HDS)
+# HD Supply
 
-HD Supply is a fully owned subsidiary of The Home Depot. HD Pro card will be used by the customers, The Home Depot is the only merchant connecting to HD Supply. HDS supports CP and CNP. Merchant is expected to provide routing information as part of the transaction payload. Settlement will happen outside of CH - directly between The Home Depot and HD Supply.
+HD Supply is a private label card that is a fully owned subsidiary of The Home Depot. Customers are issued an HD Pro card that only be used with The Home Depot.
+
+<!--theme:info-->
+> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
 
 ---
 
@@ -15,50 +18,7 @@ HD Supply is a fully owned subsidiary of The Home Depot. HD Pro card will be use
 
 <!--
 type: tab
-titles: amount, source, transactionDetails, merchantDetails, transactionInteraction
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-|Variable |  Type| Maximum Length | Description|
-|---------|----------|----------------|---------|
-| `total` | *number* | 12 | Total amount of the transaction. [Sub-component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `source` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
-| `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant's choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks.|
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!--
-type: tab
+titles: transactionInteraction
 -->
 
 The below table identifies the required parameters from `additionalPosInformation` in the `transactionInteraction` object.
@@ -66,13 +26,6 @@ The below table identifies the required parameters from `additionalPosInformatio
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
 |`posId` | *string* | N/A | Indicates the Point-of-Sale for multi-Controller Transactions.|
-| `origin` | *string* | N/A | The source of the transaction.|
-
-| Origin Values |
-| ------------- |
-| ECOM |
-| MOTO |
-| POS |
 
 <!-- type: tab-end -->
 
@@ -85,7 +38,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a CH Request Payload(To HDS Adapter)
+Example of a charge payload request using an HDS PLCC
 
 ```json
 {
