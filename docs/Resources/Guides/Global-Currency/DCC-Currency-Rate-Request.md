@@ -4,7 +4,7 @@ tags: [Currency Conversion, Currency Code, Dynamic Currency Conversion, Global C
 
 # Dynamic Currency Conversion - Rate Request by Currency
 
-Commerce Hub's DCC allows a merchant to request a specific rate by submitting the `currencyCode` in the request.
+Commerce Hub's DCC allows a merchant to request a specific currency's rate by submitting the `currencyCode` in the request.
 
 ---
 

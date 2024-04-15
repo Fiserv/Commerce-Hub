@@ -4,7 +4,7 @@ tags: [Currency Conversion, Dynamic Currency Conversion, BIN, Global Currency]
 
 # Dynamic Currency Conversion - Rate Request by Issuer
 
-Commerce Hub's DCC allows a merchant to obtain the specific rate by submitting the `bin` information in the request.
+Commerce Hub's DCC allows a merchant to obtain the issuing bank's rate by submitting the `bin` information in the request.
 
 ---
 
