@@ -2,7 +2,7 @@
 tags: [Getting Started, Release Notes, Update, Enhancement]
 ---
 
-# Release Notes 
+# Release Notes
 
 Commerce Hub is continually being improved with new features, security enhancements, and performance improvements. These release notes list the updates for each release with the most recent update shown first.
 
@@ -27,7 +27,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Support [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md) transactions | Feature |
 | Support the ability to send [Convenience Fees](?path=docs/Resources/Guides/Convenience-Fees.md) for transactions | Feature |
-| Version 1.5: Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the reponse | Update | 
+| Version 1.5: Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the response | Update |
 
 ---
 

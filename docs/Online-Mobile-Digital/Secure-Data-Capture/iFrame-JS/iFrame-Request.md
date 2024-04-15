@@ -21,7 +21,7 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 The iFrame JS script tag is required in the website by downloading or including the following code.
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/0.11.0/saq-a.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/saq-a.js"></script>
 ```
 
 ---
@@ -32,25 +32,7 @@ Instantiate the payment form within your JavaScript.
 
 <!--
 type: tab
-titles: Variables, JavaScript
--->
-
-The below table identifies the parameters used in `createPaymentForm`.
-
-| Field | Required | Description |
-| ----- | -------- | ----------- |
-| `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
-| `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
-| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
-| `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
-| `validCssClass` | | CSS class will be assigned to a field's input element when they have passed validation |
-| `invalidCssClass` | | CSS class will be assigned to a field's input element when they have failed validation and are in an invalid state |
-| `font` | | Defines [custom fonts](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#fonts) for the payment form  |
-| `css` | | Customized [CSS styling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#css) for the payment form  |
-| `hooks` | | Defines [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md) handling |
-
-<!--
-type: tab
+titles: JavaScript, Variables
 -->
 
 Example of JavaScript `createPaymentForm`.
@@ -71,6 +53,23 @@ const formPromise = window.fiserv.commercehub.createPaymentForm({
     hooks: {},
 });
 ```
+<!--
+type: tab
+-->
+
+The below table identifies the parameters used in `createPaymentForm`.
+
+| Field | Required | Description |
+| ----- | -------- | ----------- |
+| `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
+| `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
+| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
+| `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
+| `valid` | | CSS class will be assigned to a field's input element when they have passed validation |
+| `invalid` | | CSS class will be assigned to a field's input element when they have failed validation and are in an invalid state |
+| `font` | | Defines [custom fonts](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#fonts) for the payment form  |
+| `css` | | Customized [CSS styling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#css) for the payment form  |
+| `hooks` | | Defines [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md) handling |
 
 <!-- type: tab-end -->
 
