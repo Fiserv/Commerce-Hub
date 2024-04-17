@@ -9,6 +9,8 @@ Charges can be initiated as a sale, pre-auth, or capture which is defined in the
 - *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdraw the funds.
 - *true:* A sale or subsequent capture transaction where the customer will be charged the total amount, and funds withdrawn.
 
+---
+
 ## Charges Types
 
 - [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#authorization) A transaction where the merchant [verifies](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
@@ -22,8 +24,8 @@ Charges can be initiated as a sale, pre-auth, or capture which is defined in the
 
 The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
-<!--theme:info-->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: _false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+<!-- theme: warning -->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behaviour, `createToken`*:false* is required in `transactionDetails`.
 
 <!--
 type: tab
@@ -32,7 +34,7 @@ titles: amount, source, transactionDetails, merchantDetails
 
 The below table identifies the required parameters in the `amount` object.
 
-|Variable |  Type| Maximum Length | Description|
+| Variable | Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub-component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -73,6 +75,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 ---
 
 ## Endpoint
+
 <!-- theme: success -->
 >**POST** `/payments/v1/charges`
 
@@ -200,6 +203,7 @@ Example of a charge (201: Created) response.
 - [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 - [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 

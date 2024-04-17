@@ -47,37 +47,9 @@ Commerce Hub offers multiple transaction-related guides to assist merchants with
 <!-- type: row -->
 
 <!-- type: card
-title: Dynamic Descriptor
-description: A descriptor contains identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on the customer's credit/debit card statement and identifies specific industry information based on the Merchant Category Code (MCC).
-link: ?path=docs/Resources/Guides/Dynamic-Descriptor.md
--->
-
-<!-- type: card
-title: Response Handling
-description: Response codes identify the final status of the transaction from the Gateway, Host and/or Server (HTTP). The codes and messages are unique per transaction status which includes; approvals, declines and errors.
-link: ?path=docs/Resources/Guides/Response-Codes/Response-Handling.md
--->
-
-<!-- type: card
-title: Split Shipment
-description: A split shipment is an ability to capture an authorization for the full order amount by performing a capture for each item shipped.
-link: ?path=docs/Resources/Guides/Split-Shipment.md
--->
-
-<!-- type: row-end -->
-
-<!-- type: row -->
-
-<!-- type: card
-title: Stored Credentials
-description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactions.
-link: ?path=docs/Resources/Guides/Stored-Credentials.md
--->
-
-<!-- type: card
-title: Directed Routing
-description: Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
-link: ?path=docs/Resources/Guides/Directed-Routing.md
+title: Convenience Fees
+description: Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant.
+link: ?path=docs/Resources/Guides/Convenience-Fees.md
 -->
 
 <!-- type: card
@@ -86,29 +58,68 @@ description: Commerce Hub supports the ability for merchants to use their own Me
 link: ?path=docs/Resources/Guides/BYOID.md
 -->
 
+<!-- type: card
+title: Directed Routing
+description: Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
+link: ?path=docs/Resources/Guides/Directed-Routing.md
+-->
+
 <!-- type: row-end -->
 
 <!-- type: row -->
 
 <!-- type: card
-title: Convenience Fees
-description: ADD DESCRIPTION
-link: ?path=docs/Resources/Guides/Convenience-Fees.md
+title: Dynamic Descriptor
+description: A descriptor contains identifying information about a merchant, e.g. business name, phone number, city and/or state, which appears on the customer's credit/debit card statement and identifies specific industry information based on the Merchant Category Code (MCC).
+link: ?path=docs/Resources/Guides/Dynamic-Descriptor.md
+-->
+
+<!-- type: card
+title: Gift Card Services
+description: Commerce Hub supports purchases with stored value (prepaid) gift cards for card not present transactions. Gift card offers loyalty and rewards for both merchants and consumers.
+link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 -->
 
 <!-- type: card
 title: Global Currency Solutions
-description: ADD DESCRIPTION
-link:
--->
-
-<!-- type: card
-title: Level II and III Data
-description: ADD DESCRIPTION
-link: 
+description: Commerce Hub's Global Currency Solutions allows a merchant to combine any of our currency solutions with Global Merchant Acquiring (GMA) and local payment methods.
+link: ?path=docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
 -->
 
 <!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Level II and III Data
+description: Commerce Hub can pass Level II and III data with business-to-business, corporate and purchase card transactions to meet card brand requirements, provide invoice-level transaction details and qualify for lower rates.
+link: ?path=docs/Resources/Guides/Level23/Level23.md
+-->
+
+<!-- type: card
+title: Private Label
+description: A private label credit card (PLCC) is a type of credit card that is intended for use at a specific retailer. Merchants partner with PLCC issuers like Citi, to qualify customers and extend them a credit card account.
+link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Split Shipment
+description: A split shipment is an ability to capture an authorization for the full order amount by performing a capture for each item shipped.
+link: ?path=docs/Resources/Guides/Split-Shipment.md
+-->
+
+<!-- type: card
+title: Stored Credentials
+description: Stored Credentials also known as Credentials on File or Card on File, allows a customer to authorize the storage of their payment source details for future transactions.
+link: ?path=docs/Resources/Guides/Stored-Credentials.md
+-->
+
+<!-- type: row-end -->
+
 ---
 
 ## Merchant Accounting
@@ -126,15 +137,15 @@ link: ?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md
 -->
 
 <!-- type: card
-title: Virtual Terminal
-description: Commerce Hub's Virtual Terminal (VPOS) allows a merchant to process an offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
-link: ?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
--->
-
-<!-- type: card
 title: Reporting
 description: Reporting is available in Business Track through ClientLine Reporting.
 link: ?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md
+-->
+
+<!-- type: card
+title: Virtual Terminal
+description: Commerce Hub's Virtual Terminal (VPOS) allows a merchant to process and offline transaction or may need to manually process a secondary transaction, e.g. to take orders via phone or process a cancel, refund, capture, etc.
+link: ?path=docs/Resources/Guides/Enterprise-Portal/Virtual-Terminal.md
 -->
 
 <!-- type: row-end -->
@@ -151,7 +162,7 @@ Commerce Hub offers guides to assist with integrating different industries, trad
 
 ### Featured Guides
 
-- [Petro](?path=docs/Resources/Guides/Industry-Verticals/Petro.md)
+- [Petrol](?path=docs/Resources/Guides/Industry-Verticals/Petro.md)
 - [Quick Service Restaurants (QSR)](?path=docs/Resources/Guides/Industry-Verticals/QSR.md)
 - [Retail](?path=docs/Resources/Guides/Industry-Verticals/Retail.md)
 -->

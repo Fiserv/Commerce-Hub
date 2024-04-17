@@ -16,136 +16,26 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
-## September 2023
+## January 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
-- **Certification:** August 29th 2023
-- **Production:** September 5th 2023
+- **Certification:** January 1st 2024
+- **Production:** January 15th 2024
 
 | Details | Type |
 | ----- | ----- |
-| Support [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md) transactions | Feature |
-| Support the ability to send [Convenience Fees](?path=docs/Resources/Guides/Convenience-Fees.md) for transactions | Feature |
-| Version 1.5: Moved `amountComponents` from `transactionInteraction` to the root level in the request and `paymentReciept` in the response | Update |
-
----
-
-## August 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** July 26th 2023
-- **Production:** August 8th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md) with Secure Data Capture. | Update |
-| Support to enable or disable [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` in charges and tokens requests. | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
-## July 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** June 22nd 2023
-- **Production:** July 6th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support [MACless Canadian debit](?path=docs/Resources/Guides/Debit/Regional-Debit.md) transactions. | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
-## June 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** May 25th 2023
-- **Production:** June 1st 2023
-
-| Details | Type |
-| ----- | ----- |
-| Amex support for [authorized _(online)_ refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
-## May 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** May 5th 2023
-- **Production:** May 12th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support for the following [refund types](?path=docs/Resources/API-Documents/Payments/Refund.md); Open Refunds (Credits), Unmatched Refunds, and Auth/Capture Refunds. | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
-## April 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** March 29th 2023
-- **Production:** April 11th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
-## March 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** March 1st 2023
-- **Production:** March 8th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
-| Support encrypted PaymentCard for [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
-## February 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** February 14th 2023
-- **Production:** February 24th 2023
-
-| Details | Type |
-| ----- | ----- |
-| Support of [private label credit cards](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) on Citi | Feature |
-| Support PaymentSession and encrypted PaymentCard for [account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) | Update |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
-
----
-
-## January 2023
-
-Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
-
-- **Certification:** January 6th 2023
-- **Production:** January 1st 2023
-
-| Details | Type |
-| ----- | ----- |
-| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+| Support [Gift Solutions (Gift Card)](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) operations, balance inquiry and transactions | Feature |
+| Support [Payment Facilitators](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) | Feature |
+| Support [Level II/III](?path=docs/Resources/Guides/Level23/Level23.md) enhanced data | Feature |
+| Support [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md) Private Label Credit Cards | Feature |
+| Version 1.6: Refactored [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md) models to support `paymentAmountType` as part of the for Mastercard recurring bill payment mandate | Update |
 
 ---
 
 ## Archive
 
+- [2023](?path=docs/Release-Notes-Alerts/RN-2023.md)
 - [2022](?path=docs/Release-Notes-Alerts/RN-2022.md)
 - [2021](?path=docs/Release-Notes-Alerts/RN-2021.md)
 
