@@ -15,7 +15,7 @@ Commerce Hub iFrame solution supports the following event hooks.
 | Value | Description |
 | ----- | ----------- |
 | `onCardBrandChange` | Invoked when a card brand has been identified or the card brand is no longer identified. Will be called even when the brand identifier is not in the `supportedCardBrands` list |
-| `onLostFocus` | Invoked when a field loses focus
+| `onLostFocus` | Invoked when a field loses focus |
 | `onFocus` | Invoked when a field gains focus |
 | `onFieldValidityChange` | Invoked when the validation state of a field has changed |
 | `onFormValid` | Invoked when all configured required fields have passed validation and submission is possible |
@@ -45,7 +45,7 @@ type: tab
 
 Example of payment form event hooks customization in `createPaymentForm`.
 
-```json
+```javascript
 {
   "hooks": {
     "onCardBrandChange": (cardBrand, formState, form) => {
