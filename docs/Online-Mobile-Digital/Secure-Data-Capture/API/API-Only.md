@@ -9,9 +9,6 @@ Commerce Hub allows E-commerce merchants to manage the design and card entry for
 <!-- theme: warning -->
 > If the merchant account is enabled for a tokenization service, paymentTokens will be returned in the response. To override this behavior, createToken: false is required in transactionDetails. Contact your account representative for more information about enabling tokenization.
 
-<!-- theme:info -->
-> Secure Data Capture using card capture provides a merchant with an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their non-tokenized form, lowering the PCI compliance requirements.
-
 - **credentials:** responsible for creating a payment session.
 - **card-capture:** responsible for capturing encrypted card details.
 - **charges:** responsible for decrypting captured card details and then charging based on a payment session.
