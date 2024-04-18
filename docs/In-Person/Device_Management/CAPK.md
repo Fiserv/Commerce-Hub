@@ -124,20 +124,19 @@ Example of a Download (201: Created) response.
 
 Commerce Hub will provide the ability for a merchant to retrieve the current status of the EMV(Europay Mastercard Visa) CAPK (Certification Authority Public Key) data.
 
+<!-- theme: info -->
+> In the response, if the emvDetails.status = 'UPDATE_AVAILABLE', then the latest CAPK data version should be downloaded through the DOWNLOAD transactionType operation.
+
+<!-- theme: info -->
+> Once an update it available, merchants are expected to download the new version of CAPK data within six months.
+
+<!-- theme: info -->
+> In the response, if the emvDetails.status = 'NO_UPDATE_AVAILABLE', then the CAPK data version is up to date.
+---
+
 <!--
 type: tab
 titles: emvDetails, merchantDetails
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!--
-type: tab
 -->
 
 The below table identifies the required parameters in the `emvDetails` object.
@@ -148,6 +147,17 @@ The below table identifies the required parameters in the `emvDetails` object.
 |`currentFileCreationDate`| *string* | 40 | This parameter is sent as part of the last record in the format MMDDYYYYhhmmss|
 | `fileSize` | *integer* | 10979 | This field contains the total size of the file, in bytes |
 | `fileCheckSum`| *string* | 40 | This field contains the CRC-16 checksum of the file. Hexadecimal representation of 2 bytes or 16 bits |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -175,7 +185,6 @@ Example of a Status payload request
     "fileCheckSum": "a8"
   }
 }
-
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/tms/v1/emv-capk-data)
