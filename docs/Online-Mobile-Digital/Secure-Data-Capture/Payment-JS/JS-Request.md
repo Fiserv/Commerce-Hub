@@ -48,9 +48,7 @@ const formConfig = {
 
 ---
 
-
 ### Payment Form
-
 
 The following is the global `commercehub` object which includes the JS:
 
@@ -64,13 +62,12 @@ Configure the `loadPaymentForm` and pass the merchant defined `div id` matching 
 ```html
 <div id="payment-saq-a-ep-form-div"></div>
 ```
- 
+
 ```javascript
 form.loadPaymentForm("payment-saq-a-ep-form-div")
 ```
 
 A successful card capture in the JS will be handled by `.then()` in the `loadPaymentForm` and is responsible for contacting the merchant's backend/server.
- 
 
 ```javascript
 .then((next) => { });
