@@ -205,7 +205,7 @@ Example of a charge (201: Created) response
     }
   ],
   "paymentToken": {
-    "tokenData": "1010105454117237",
+    "tokenData": "1010105904117237",
     "tokenSource": "HD_SUPPLY"
   }
 }
