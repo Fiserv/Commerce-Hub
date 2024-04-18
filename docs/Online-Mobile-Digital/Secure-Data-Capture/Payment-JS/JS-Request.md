@@ -2,7 +2,6 @@
 tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-
 # Secure Data Capture - JS Integration Guide
 
 ## Step 1: Acquire Credentials
