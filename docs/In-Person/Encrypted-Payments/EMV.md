@@ -17,7 +17,6 @@ A device encrypts the customer's payment source and sends the encryption data to
 
 Accept PINless and signature based EMV payment cards.
 
-
 ### Request Variables
 
 <!-- theme: info -->
