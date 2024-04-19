@@ -1,15 +1,30 @@
 ---
-tags: [Pay By Bank]
+tags: [Payment Check, Payment Sources]
 ---
 
 
-# Pay By Bank or Check Acceptance
+# Payment Check
 
 ADD Description
 
 Add INFORMATION
 
 <!-- type: tab-end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -61,12 +76,6 @@ The below table identifies the required parameters in the `transactionInteractio
 | ADDDD
 
 <!-- type: tab-end -->
-
----
-
-## Endpoint
-<!-- theme: success -->
->**POST** `/payments/v1/charges`
 
 ---
 
@@ -125,7 +134,7 @@ Example of a pay by bank payload request
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -223,8 +232,7 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md)
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---
