@@ -1234,6 +1234,65 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
+  /payments-vas/v1/partner-tokens:
+    x-model-version: 1.0
+    post:
+      x-group-name: 'Accounts'
+      x-proxy-name: 'Partner Tokens'
+      summary: Create a partner payment token using a payment token
+      description: 'Use this payload to create a partner payment token from a TransArmor token.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartnerTokenizationRequest'
+            examples:
+              PaymentToken:
+                summary: PartnerTokenizationRequest with PaymentToken,
+                $ref: '#/components/examples/PartnerPaymentTokenRequest'
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerTokenizationResponse'
+              examples:
+                PaymentToken:
+                  summary: PartnerTokenizationResponse with Payment Token
+                  $ref: '#/components/examples/PartnerPaymentTokenResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+
 components:
   parameters:
     OrderIdParam:
@@ -5317,7 +5376,42 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/HttpError'
-  
+    PartnerTokenizationRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+    PartnerTokenizationResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+
+
   examples:
     ApplePayRequest:
       value:
@@ -7953,3 +8047,48 @@ components:
               - code: '504'
                 count: '1'
                 lastOccurred: '2023-10-23T15:58:00.000000000Z'
+
+    PartnerPaymentTokenRequest:
+      value:
+        source:
+          sourceType: 'PaymentToken'
+          tokenData: '1234560000000019'
+          tokenSource: 'TRANSARMOR'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              processorName: 'CHASE'
+              processorPlatform: 'TAMPA'
+    PartnerPaymentTokenResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'TOKENIZE'
+          transactionState: 'AUTHORIZED'
+          transactionOrigin: 'POS'
+        source:
+          sourceType: 'PaymentToken'
+          tokenSource: 'TRANSARMOR'
+          tokenData: '1234560000000019'
+        paymentTokens:
+          - tokenData: '23459371934460009'
+            tokenSource: 'CHASE'
+            tokenResponseCode: '000'
+            tokenResponseDescription: 'SUCCESS'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          schemeTransactionId: '0225MCC625628'
+          processor: 'CHASE'
+          responseCode: '000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              processorName: 'CHASE'
+              processorPlatform: 'TAMPA'
+
