@@ -15,7 +15,7 @@ Commerce Hub supports the following integrations for managing payment devices.
 <!-- type: card
 title: CAPK Data
 description:  EMV (Europay Mastercard Visa) CAPK (Certification Authority Public Key) data is a crucial component of the EMV standard for secure payment transactions, it is used to establish a chain of trust in the EMV process, ensuring that the keys used in the transaction, including those on the payment card, are legitimate and have been issued by trusted entities.
-link: ?path=docs/Resources/API-Documents/Device_Management/CAPK.md
+link: ?path=docs/In-Person/Device_Management/CAPK.md
 -->
 
 <!-- type: card
