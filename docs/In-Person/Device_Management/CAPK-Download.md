@@ -3,10 +3,6 @@ tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 ---
 
 
-
-
-
-
 ## Download Article
 
 Commerce Hub will provide the ability for a merchant to retrieve the latest EMV(Europay Mastercard Visa) CAPK (Certification Authority Public Key) data.
