@@ -1,5 +1,5 @@
 ---
-tags: [Currency Conversion, Global Currency]
+tags: [Currency Conversion, Global Currency, Multi-Currency]
 ---
 
 # Multi-Currency Pricing
