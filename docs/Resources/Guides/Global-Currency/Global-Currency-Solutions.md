@@ -13,7 +13,7 @@ Commerce Hub's [Global Currency Solutions](https://www.carat.fiserv.com/en-us/so
 
 ## Integrations
 
-Commerce Hub provides the following types of Global Currency Solutions;
+Commerce Hub provides the following Global Currency Solutions;
 
 <!-- type: row -->
 

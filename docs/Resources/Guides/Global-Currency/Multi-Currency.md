@@ -4,11 +4,11 @@ tags: [Currency Conversion, Global Currency, Multi-Currency]
 
 # Multi-Currency Pricing
 
-Multi-Currency Pricing (MCP) _(previously known as Global ePricing)_ is available for [online, digital, and mobile integrations](?path=docs/Getting-Started/Getting-Started-Online.md) and allows merchants to set static pricing in multiple currencies. MCP provides the most control for specific international markets and offers customers an _in country_ shopping experience. The merchant is entirely responsible for setting and maintaining the prices in the currencies they support.
+Multi-Currency Pricing (MCP) *(previously known as Global ePricing)* is available for [online, digital, and mobile integrations](?path=docs/Getting-Started/Getting-Started-Online.md) and allows merchants to set static pricing in multiple currencies. MCP provides the most control for specific international markets and offers customers an in country shopping experience. The merchant is entirely responsible for setting and maintaining the prices in the currencies they support.
 
-[Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) are submitted to Commerce Hub in the same manner as domestic activity, but the merchant must send the correct amount format and corresponding [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) for these transactions. Merchant sets all pricing in foreign currency (for example, EUR for U.S. merchant) specific to geographical markets.
+[Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) are submitted to Commerce Hub in the same manner as domestic activity, but the merchant must send the correct amount format and corresponding [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) for these transactions. Merchants set all pricing in foreign currency *(i.e. setting EUR as a US merchant)* specific to geographical markets.
 
-The merchant is funded in their local currency _(for US merchants, USD)_ based on a prevailing exchange rates. Commerce Hub supports Visa, Mastercard and American Express where available.
+The merchant is funded in their local currency *(i.e. US merchants fund in USD)* based on a prevailing exchange rates. Commerce Hub supports Visa, Mastercard and American Express where available.
 
 ---
 
@@ -43,6 +43,8 @@ Commerce Hub currently supports authorizations for presentment in 140+ card bran
 ---
 
 ## Payload Examples
+
+The example below contains the minimum parameters for a successful charges request using the multi-currency pricing. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
@@ -187,7 +189,7 @@ Example of a charge (400: Bad Request) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Supported Currencies](?path=docs/Resources/Master-Data/Currency-Code.md)
-- [Global Merchant Acquiring](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md)
+- [Global Acquiring](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---
