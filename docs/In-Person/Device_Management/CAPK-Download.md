@@ -2,10 +2,13 @@
 tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 ---
 
-
-## Download Article
+# EMV CAPK Data Download
 
 Commerce Hub will provide the ability for a merchant to retrieve the latest EMV(Europay Mastercard Visa) CAPK (Certification Authority Public Key) data.
+
+---
+
+## Request Variables
 
 <!--
 type: tab
@@ -33,6 +36,54 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
+## Response Variables
+
+<!--
+type: tab
+titles: emvDetails, headerInfo, keys
+-->
+
+The below table identifies the parameters in the `emvDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `transactionType`| *string* | 64 | Specifies the type of the CAPK transaction. |
+|`currentFileCreationDate`| *string* | 40 | This parameter is sent as part of the last record in the format MMDDYYYYhhmmss|
+| `fileSize` | *integer* | 10979 | This field contains the total size of the file, in bytes |
+| `fileCheckSum`| *string* | 40 | This field contains the CRC-16 checksum of the file. Hexadecimal representation of 2 bytes or 16 bits |
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `headerInfo` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `fileName` | *string* | 64 | Identifies the type of file. |
+| `fileVersion` | *string* | 4 | Specifies the header file version for tracking purposes. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `keys` array.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `expiryDate` | *string* | N/A | Specifies when the key expires in MMDDYYYY format. |
+| `certificateAuthorityHashAlgorithmIndicator` | *string* | 2 | Identifies the hash algorithm used to produce the Hash Result in the digital signature scheme. At the present time only a value of (SHA-1) is supported |
+| `certificateAuthorityPublicKeyAlgorithmIndicator`| *string* | 2 | Identifies the hash algorithm used to produce the Hash Result in the digital signature scheme. At the present time only a value of (SHA-1) is supported. |
+| `applicationIdentifier` | *string* | 10 | Registered application identifier. |
+| `publicKeyIndex`| *string* | 2 | Identifies the Certification Authority Public Key in conjunction with the applicationIdentifier. |
+| `publicKeyModulus` | *string* | 496 | Value of the modulus part of the Certification Authority Public Key.|
+| `publicKeyExponent` | *string* | 6 | Value of the exponent part of the Certification Authority Public Key, equal to 3 or 2^16+1 |
+| `publicKeyChecksum`| *string* | 40 | A check value calculated on the concatenation of all parts of the certification Authority Public Key (ApplicationIdentifier, Certification Authority Public Key Index, Certification Authority Public Key Modulus, Certification Authority Public Key Exponent) using SHA-1. |
+
+<!-- type: tab-end -->
+
+---
+
 ## Endpoint
 <!-- theme: success -->
 >**POST** `/tms/v1/emv-capk-data`
@@ -46,7 +97,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a Download payload request
+Example of a CAPK download payload request
 
 ```json
 {
@@ -67,7 +118,7 @@ Example of a Download payload request
 type: tab
 -->
 
-Example of a Download (201: Created) response.
+Example of a CAPK download (201: Created) response.
 
 ```json
 {

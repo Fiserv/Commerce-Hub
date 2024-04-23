@@ -2,19 +2,16 @@
 tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 ---
 
-## Status
+# EMV CAPK Data Status
 
 Commerce Hub will provide the ability for a merchant to retrieve the current status of the EMV CAPK data.
 
 <!-- theme: info -->
-> In the response, if the emvDetails.status = 'UPDATE_AVAILABLE', then the latest CAPK data version should be downloaded through the DOWNLOAD transactionType operation.
-
-<!-- theme: info -->
 > Once an update it available, merchants are expected to download the new version of CAPK data within six months.
 
-<!-- theme: info -->
-> In the response, if the emvDetails.status = 'NO_UPDATE_AVAILABLE', then the CAPK data version is up to date.
 ---
+
+## Request Variables
 
 <!--
 type: tab
@@ -45,6 +42,41 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
+## Response Variables
+
+<!--
+type: tab
+titles: emvDetails
+-->
+
+The below table identifies the required parameters in the `emvDetails` object.
+
+| Variable | Data Type| Maximum Length | Description |
+|---------|----------|----------------|---------|
+| `transactionType`| *string* | 64 | Specifies the type of the CAPK transaction. |
+|`currentFileCreationDate`| *string* | 40 | This parameter is sent as part of the last record in the format MMDDYYYYhhmmss|
+| `fileSize` | *integer* | 10979 | This field contains the total size of the file, in bytes |
+| `fileCheckSum`| *string* | 40 | This field contains the CRC-16 checksum of the file. Hexadecimal representation of 2 bytes or 16 bits |
+
+<!-- type: tab-end -->
+
+#### CAPK Status
+
+The below table identifies the valid values of `status`.
+
+| Value | Description |
+| -------- | ----------- |
+| UPDATE_AVAILABLE | A new CAPK data version is available, a [download request](?path=docs/In-Person/Device_Management/CAPK-Download.md) should be performed. |
+| NO_UPDATE_AVAILABLE | The CAPK data version is up to date |
+
+---
+
+## Endpoint
+<!-- theme: success -->
+>**POST** `/tms/v1/emv-capk-data`
+
+---
+
 ## Payload Examples
 
 <!--
@@ -52,7 +84,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a Status payload request
+Example of a CAPK status payload request
 
 ```json
 {
@@ -75,7 +107,7 @@ Example of a Status payload request
 type: tab
 -->
 
-Example of a Status (201: Created) response.
+Example of a CAPK Status (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
