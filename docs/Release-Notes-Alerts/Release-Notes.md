@@ -2,7 +2,7 @@
 tags: [Getting Started, Release Notes, Update, Enhancement]
 ---
 
-# Release Notes 
+# Release Notes
 
 Commerce Hub is continually being improved with new features, security enhancements, and performance improvements. These release notes list the updates for each release with the most recent update shown first.
 
