@@ -174,6 +174,11 @@
         link: docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+    - title: Global Currency Solutions
+      link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+      sections:
+      - title: Dynamic Currency Conversion
+        link: docs/Resources/Guides/Global-Currency/Currency-Conversion.md
     - title: Payments
       link: docs/Resources/API-Documents/Payments/Payments.md
       sections:
