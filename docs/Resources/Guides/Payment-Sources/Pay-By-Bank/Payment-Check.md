@@ -5,26 +5,7 @@ tags: [Payment Check, Payment Sources]
 
 # Payment Check
 
-ADD Description
-
-Add INFORMATION
-
-<!-- type: tab-end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Allows merchants to securely process payments directly from customers' bank accounts. Integrated with the Payeezy Gateway, First Data's TeleCheck® solution offers features like warranty and verification for enhanced security and convenience. With multiple integration methods available, merchants can accept one-time and recurring payments, providing additional flexibility and convenience for customers.
 
 ---
 
