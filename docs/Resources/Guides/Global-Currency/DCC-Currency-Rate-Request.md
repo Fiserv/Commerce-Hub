@@ -165,8 +165,7 @@ The below table identifies the required parameters in the `targetCurrency` objec
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `total` | *string* | 18,3 | Total amount of the offered DCC transaction in the cardholder's currency |
-| `currency` | *string* | 3 | [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the offered DCC transaction amount in cardholder currency |
+| `currency` | *string* | 3 | [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the requested DCC transaction in the cardholder's currency |
 
 <!--
 type: tab
@@ -183,7 +182,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-## Response Variables
+### Response Variables
 
 <!--
 type: tab

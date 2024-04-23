@@ -43,11 +43,9 @@ Example of a DCC charges payload request.
   },
   "transactionInteraction": {
     "dccApplied": "APRROVED_CONVERSION",
-    "terminalTimestamp": "2024-03-13T16:04:00.770200127Z"
   },
   "rate": {
     "referenceId": "f2e2df18ec1a4b0fb5213ecb0d52d920",
-    "timestamp": "2024-03-13T17:56:14.662359599Z"
   },
   "merchantDetails": {
     "merchantId": "10001POD0212780",
@@ -153,8 +151,14 @@ Example of a DCC charges (201: Created) response.
     }
   },
   "rate": {
-    "referenceId": "f2e2df18ec1a4b0fb5213ecb0d52d920",
-    "timestamp": "2024-03-13T17:56:14.662359599Z"
+    "referenceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+    "provider": "VISA",
+    "eligibility": "DCC_ELIGIBLE",
+    "exchangeRate": "19.45",
+    "margin": "3.45",
+    "timestamp": "2016-04-16T16:06:05Z",
+    "validFrom": "2016-04-16T16:06:05Z",
+    "validTo": "2016-04-16T16:06:05Z"
   }
 }
 ```
@@ -177,7 +181,6 @@ The below table identifies the required parameters in the `transactionInteractio
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
 | `dccApplied` | *string* | 26 | Indicates if the cardholder APPROVED_CONVERSION or DECLINED_CONVERSION for the DCC transaction |
-| `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
 <!--
 type: tab
@@ -188,7 +191,6 @@ The below table identifies the required parameters in the `rate` object.
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
 | `referenceId` | *string* | 64 | A unique identifier for a currencies transaction received from the rate request |
-| `timestamp` | *string* | N/A | Date and time the currency rate transaction occurred in YYYY-MM-DDThh:mm:ssZ format |
 
 <!-- type: tab-end -->
 

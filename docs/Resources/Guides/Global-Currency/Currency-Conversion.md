@@ -40,12 +40,12 @@ The disclosures required by the card schemes include:
 The card associations mandate rules for offering DCC to protect the cardholder and merchants. The fundamental principles of DCC are:
 
 - **Cardholder Choice:** The DCC merchant must offer the cardholder a choice to transact in the merchant's local currency or in their card billing currency
-- **Transparency & Disclosure:** For a cardholder to make an informed choice, merchants must disclose all charges associated with DCC. DCC disclosures must occur at the time the DCC offer is made and before the cardholder is asked to actively choose the transaction currency
+- **Transparency and Disclosure:** For a cardholder to make an informed choice, merchants must disclose all charges associated with DCC. DCC disclosures must occur at the time the DCC offer is made and before the cardholder is asked to actively choose the transaction currency
 - **Steering:** The merchant must not use any language or procedures that may cause the cardholder to choose DCC by default
 
 ---
 
-## Requests
+## DCC Request Integrations
 
 Build a Commerce Hub integration to manage currency conversion.
 
@@ -59,14 +59,14 @@ link: ?path=docs/Resources/Guides/Global-Currency/DCC-BIN-Rate-Request.md
 
 <!-- type: card
 title: Rate Request by Currency
-description: Submit a DCC request for a specific currency rate based on the `currencyCode`.
-link: docs/Resources/Guides/Global-Currency/DCC-Currency-Rate-Request.md
+description: Submit a DCC request for a specific currency rate based on the currency.
+link: ?path=docs/Resources/Guides/Global-Currency/DCC-Currency-Rate-Request.md
 -->
 
 <!-- type: card
 title: Charges Request
 description: Submit a charges request using the requested rate information.
-link: docs/Resources/Guides/Global-Currency/DCC-Charge-Request.md
+link: ?path=docs/Resources/Guides/Global-Currency/DCC-Charge-Request.md
 -->
 
 <!-- type: row-end -->
