@@ -26,7 +26,7 @@ titles: NA, EMEA, APAC
 
 | Country  | Supported Payments | Supported Model |
 | ----- | ----- | ----- |
-| **United States** | Visa, Mastercard, PIN Debit Networks, Pay by Bank *(ACH)*, Gift Cards *(Closed Loop*) | Full Service |
+| **United States** | Visa, Mastercard, PIN Debit Networks, Pay by Bank *(ACH)*, Gift Cards *(Closed Loop)* | Full Service |
 | | American Express *(AMEX)*, Discover, Union Pay International *(UPI)*, JCB *(via Discover)*, PayPal | Conveyance |
 | **Canada** | Visa, Mastercard, UPI | Full Service |
 | | AMEX, Discover, JCB *(via AMEX)*, PayPal | Conveyance |
@@ -38,7 +38,7 @@ type: tab
 | Country  | Supported Payments | Supported Model |
 | ----- | ----- | ----- |
 | **Austria** | Visa, Mastercard, Union Pay International *(UPI)*, JCB, Diners | Full Service |
-| | American Express *(AMEX), PayPal | Conveyance |
+| | American Express *(AMEX)*, PayPal | Conveyance |
 | **Belgium** | Visa, Mastercard, UPI, JCB, Diners | Full Service |
 | | AMEX, PayPal | Conveyance |
 | **Croatia** | Visa, Mastercard, UPI, JCB, Diners | Full Service |
