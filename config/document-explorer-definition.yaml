@@ -176,13 +176,19 @@
         link: docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+    - title: Device Management
+      sections:
+      - title: CAPK
+        link: docs/Resources/API-Documents/Device-Management/CAPK.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
       sections:
       - title: Dynamic Currency Conversion
         link: docs/Resources/Guides/Global-Currency/Currency-Conversion.md
-    - title: Device Management
+    - title: Health Check
       sections:
+      - title: Status
+        link: docs/Resources/API-Documents/Health_Check/HC-Status.md
       - title: CAPK
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
     - title: Health Check
