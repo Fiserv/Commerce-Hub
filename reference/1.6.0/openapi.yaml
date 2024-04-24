@@ -1234,6 +1234,132 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
+  /payments-vas/v1/accounts/currencies/dcc:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Currencies Endpoint Definition
+      x-group-name: 'Global Currency'
+      x-proxy-name: 'Dynamic Currency Conversion'
+      summary: Submit a currency conversion transaction.
+      description: 'Use this payload to get the exchange rate and target amount for a Dynamic Currency Conversion (DCC) request'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DccRequest'
+            examples:
+              BIN-Rate:
+                summary: DccRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardDccRequest'
+              Currency-Rate:
+                summary: DccRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardDccRequest'
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DccResponse'
+              examples:
+                PaymentCard-DCC:
+                  summary: DccResponse with PaymentCard
+                  $ref: '#/components/examples/DccResponse'
+                CurrencyCode-DCC:
+                  summary: DccResponse with PaymentCard
+                  $ref: '#/components/examples/DccResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+
+  /payments-vas/v1/partner-tokens:
+    x-model-version: 1.0
+    post:
+      x-group-name: 'Accounts'
+      x-proxy-name: 'Partner Tokens'
+      summary: Create a partner payment token using a payment token
+      description: 'Use this payload to create a partner payment token from a TransArmor token.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartnerTokenizationRequest'
+            examples:
+              PaymentToken:
+                summary: PartnerTokenizationRequest with PaymentToken,
+                $ref: '#/components/examples/PartnerPaymentTokenRequest'
+      responses:
+        200:
+          description: Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerTokenizationResponse'
+              examples:
+                PaymentToken:
+                  summary: PartnerTokenizationResponse with Payment Token
+                  $ref: '#/components/examples/PartnerPaymentTokenResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+
 components:
   parameters:
     OrderIdParam:
@@ -2677,153 +2803,100 @@ components:
           example: '9.66'
     TransactionInteraction:
       x-model-version: 1.0
-      description: <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md">Transaction
-        interaction</a> information based on where the transaction is acquired and
-        the capabilities of the terminal or software.
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md">Transaction interaction</a> information based on where the transaction is acquired and the capabilities of the terminal or software.'
       properties:
         origin:
           type: string
           maxLength: 4
-          description: |
-            The source of the transaction.
-
-            Valid Values:
-            * ECOM - Card not present (email, web, or mobile app)
-            * MOTO - Mail order or telephone order
-            * POS - Card present (retail face to face)
-          example: ECOM
+          description: 'The <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origin">source</a>of the transaction.'
+          example: 'ECOM'
+        eciIndicator:
+          type: string
+          maxLength: 36
+          description: '<a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md#electronic-commerce-indicator">Electronic Commerce Indicator (ECI)</a> is mandatory for all E-commerce transactions.'
+          example: 'SECURE_ECOM'
         posEntryMode:
           type: string
           maxLength: 22
-          description: |
-            An identifier used to indicate how the account number was entered on the transaction.
-
-            Valid Values:
-            * UNSPECIFIED - Default
-            * MANUAL - Key entered
-            * BARCODE - Barcode scan
-            * OCR - Optical Character Reader
-            * ICR_RELIABLE - Integrated Circuit Read (CVV data Reliable)
-            * ICR_UNRELIABLE - Integrated Circuit Read (CVV data unreliable)
-            * CONTACTLESS – Contactless Integrated Circuit Read (Reliable)
-            * CONTACTLESS_MOBILE – Contactless Mobile Commerce or Discover InApp
-            * CONTACTLESS_MAG_STRIPE – Contactless Magnetic Stripe Read
-            * AMEX_WALLET - Amex Digital Wallet
-            * MASTERCARD_REMOTE_CHIP – Mastercard remote chip entry
-            * CREDENTIAL_ON_FILE – Credential on File
-            * EMV_FALLBACK – EMV fallback to manual entry
-            * EMV_FALLBACK_MAG - EMV fallback to Magnetic Strip entry
-            * EMV_SWITCHED - EMV Transaction switched from Contactless to Contact entry
-            * MAG_STRIPE – Magnetic Stripe - Track Read
-          example: MANUAL
+          description: 'An identifier used to indicate how the account number was <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md#pos-entry-mode">entered</a>on the transaction.'
+          example: 'MANUAL'
         posConditionCode:
           type: string
           maxLength: 26
-          description: |
-            An identifier used to indicate the transaction condition at the Point-of-Sale (POS).
-
-            Valid Values:
-            * CARD_PRESENT - Cardholder Present, Card Present
-            * CARD_PRESENT_UNSPECIFIED – Cardholder Present, Unspecified
-            * CARD_PRESENT_UNATTENDED – Cardholder Present, Unattended Device
-            * CARD_PRESENT_FRAUD – Cardholder Present, Suspect Fraud
-            * CARD_PRESENT_MAG_NOT_READ – Cardholder Present, Magnetic Stripe Could Not Be Read
-            * CARD_PRESENT_IDENTIFIED - Cardholder Present, Identity Verified
-            * CARD_NOT_PRESENT_RECURRING – Cardholder Not Present – Recurring
-            * CARD_NOT_PRESENT_F2F - Cardholder Present, Card Not Present, Face 2 Face
-            * CARD_NOT_PRESENT_MOTO – Cardholder Not Present, Mail Order/Telephone Order
-            * CARD_NOT_PRESENT_ECOM – Cardholder Not Present, E-commerce
-          example: CARD_NOT_PRESENT_ECOM
-        responseCode: {type: string, description: Response code returned by network/issuer
-            used in subsequent transactions.}
-        posData: {type: string, description: POS data returned by network/issuer used
-            in subsequent transactions.}
+          description: 'An identifier used to indicate the transaction <a href="../docs?path=docs/Resources/Master-Data/Transaction-Interaction.md#pos-condition-code">condition</a> at the Point-of-Sale (POS).'
+          example: 'CARD_NOT_PRESENT_ECOM'
+        responseCode:
+          type: string
+          description: 'Response code returned by network/issuer used in subsequent transactions.'
+        posData:
+          type: string
+          description: 'POS data returned by network/issuer used in subsequent transactions.'
         mobileInteraction:
           type: string
           maxLength: 12
-          description: |
-            Mobile method of interaction.
-
-            Valid Values:
-            * PHONE_NUMBER - Invoice received by phone number
-            * QR_CODE - Invoice paid by scanning QR Code
-          example: PHONE_NUMBER
-        terminalEntryCapability:
-          type: string
-          description: |
-            Identifies how data can be entered in the terminal or software.
-
-            Valid Values:
-            * UNSPECIFIED - Default
-            * ECOMMERCE - E-commerce no terminal used
-            * IVR_VRU - Interactive Voice Response/Voice Response Unit
-            * MAG_STRIPE_ONLY - Track read only
-            * MAG_STRIPE_MANUAL - Track read or manual key
-            * MAG_STRIPE_MANUAL_CHIP - Track read, manual key or chip
-            * BARCODE - Barcode scan
-            * CONTACTLESS - Contactless integrated circuit read
-            * OCR - Opitcal character reader
-            * CHIP_ONLY - Chip only
-            * CHIP_MAG_STRIPE - Chip with track fallback
-            * MANUAL_ONLY - Manual key only
-            * CONTACTLESS_MAG_STRIPE - Contactless or track read
-            * EMV_CONTACTLESS - EMV contactless single tap capable
-            * HYBRID - Hybrid entry mode"
-            * NONE - Terminal does not read card data
-          example: CHIP_ONLY
+          description: 'Mobile method of interaction.'
+          example: 'PHONE'
         cardholderAuthenticationMethod:
           type: string
           maxLength: 32
-          description: |
-            Identifies how the cardholder was authenticated/verified.
-
-            Valid Values:
-            * UNSPECIFIED
-            * NOT_AUTHENTICATED
-            * PIN
-            * ELECTRONIC_SIGNATURE
-            * MANUAL_SIGNATURE
-            * OTHER_MANUAL_VERIFICATION
-            * OTHER_SYSTEMATIC_VERIFICATION
-          example: PIN
-        eciIndicator:
+          description: 'Identifies how the cardholder was authenticated/verified.'
+          example: 'PIN'
+        authorizationCharacteristicsIndicator:
           type: string
-          maxLength: 17
-          description: |
-            Electronic Commerce Indicator (ECI) is mandatory for all E-commerce transactions.
-
-            Valid Values:
-            * SECURE_ECOM - Secure Electronic Transaction
-            * NON_AUTH_ECOM - Non-Authenticated Electronic Commerce Transaction
-            * CHANNEL_ENCRYPTED - Channel Encrypted Transaction
-            * NON_SECURE_ECOM - Non-Secure Electronic Commerce Transaction
-          example: SECURE_ECOM
+          maxLength: 23
+          description: 'Response code used for qualification used in subsequent transactions.'
+          example: 'CARD_NOT_PRESENT'
         cardholderAuthenticationEntity:
           type: string
           maxLength: 32
-          description: |
-            Identifies what entity authenticated the cardholder.
-
-            Valid Values:
-            * UNSPECIFIED
-            * NOT_AUTHORIZED
-            * ICC_OFFLINE_PIN
-            * CARD_ACCEPTANCE_DEVICE
-            * AUTHORIZED_AGENT_ONLINE_PIN
-            * MERCHANT_VERIFIED_SIGNATURE
-            * OTHER
-          example: UNSPECIFIED
-        terminalTimestamp: {type: string, format: date-time, description: 'Terminal
-            timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ', example: '2016-04-16T16:06:05Z'}
-        serviceCode: {type: string, maxLength: 3, description: 'If this field is returned
-            in an authorization response, and if returned must be provided in subsequent
-            Capture transactions.', example: "000"}
-        applicationExpiryDate: {type: string, format: date, description: Captured
-            from the EMV chip data. YYYY-MM-DD format., example: '2021-09-03'}
-        additionalPosInformation: {$ref: '#/components/schemas/AdditionalPosInformation'}
-        network: {$ref: '#/components/schemas/Network'}
-        authorizationCharacteristicsIndicator: {type: string, maxLength: 23, description: Response
-            code used for qualification used in subsequent transactions., example: CARD_NOT_PRESENT}
+          description: 'Identifies what entity authenticated the cardholder.'
+          example: 'UNSPECIFIED'
+        cardHolderAuthenticationRisk:
+          type: string
+          maxLength: 25
+          description: 'Identifies the Security Risk from the Card Holder Authentication.'
+          example: 'NO_RISK'
+        terminalTimestamp:
+          type: string
+          format: date-time
+          description: 'Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ'
+          example: '2016-04-16T16:06:05Z'
+        serviceCode:
+          type: string
+          maxLength: 3
+          description: 'If this field is returned in an authorization response, and if returned must be provided in subsequent Capture transactions.'
+        applicationExpiryDate:
+          type: string
+          format: date
+          description: 'Captured from the EMV chip data. YYYY-MM-DD format.'
+          example: ' 2021-09-03'
+        hostPosEntryMode:
+          type: string
+          maxLength: 50
+          description: 'Pos Entry Mode from the response.'
+          example: 'UNSPECIFIED'
+        hostPosConditionCode:
+          type: string
+          maxLength: 50
+          description: 'Pos Condition Code from the response.'
+          example: 'UNSPECIFIED'
+        originType:
+          type: string
+          description: 'Defines the type of transaction Origin.'
+          example: 'PHONE'
+        additionalPosInformation:
+          $ref: '#/components/schemas/AdditionalPosInformation'
+        network:
+          $ref: '#/components/schemas/Network'
+        terminalEntryCapability:
+          type: string
+          description: 'Identifies how data can be entered in the terminal or software.'
+          example: 'CHIP_ONLY'
+        dccApplied:
+          type: string
+          maxLength: 26
+          description: 'Indicates the choice made by the customer for a Dynamic Currency Conversion (DCC) transaction.'
+          example: 'APPROVED_CONVERSION'
     AdditionalPosInformation:
       x-model-version: 1.0
       description: <a href="../docs?path=docs/Resources/Master-Data/Additional-POS-Info.md">Additional
@@ -5317,7 +5390,117 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/HttpError'
-  
+
+    PartnerTokenizationRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+    
+    PartnerTokenizationResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+
+    DccRequest:
+      x-model-version: 1.0
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+        sourceCurrency:
+          $ref: '#/components/schemas/Amount'
+        targetCurrency:
+          $ref: '#/components/schemas/Amount'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+
+    DccResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        source:
+          $ref: '#/components/schemas/Source'
+        rate:
+          $ref: '#/components/schemas/Rate'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'  
+
+    Rate:
+      x-model-version: 1.0
+      description: 'Rate object for <a href="../docs?path=docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md">Global Currency Solutions</a>.'
+      properties:
+        eligibility:
+          type: string
+          maxLength: 25
+          description: 'Indicates the DCC eligibility.'
+        exchangeRate:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'Derived exchange rate for the source and target currencies'
+          example: 19.45
+        margin:
+          type: number
+          maximum: 999999999999999999.999
+          description: 'International margin when making the DCC offer to the cardholder'
+          example: 3.45
+        provider:
+          type: string
+          maxLength: 30
+          description: 'Indicates the name for the rate provider.'
+          example: 'VISA'
+        referenceId:
+          type: string
+          maxLength: 64
+          description: 'A unique identifier for a currencies transaction that can map to the API TraceId. This can be passed for primary and secondary transactions'
+          example: '838916029301'
+        timestamp:
+          type: string
+          format: date-time
+          description: 'Date and time the currency rate transaction occurred in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2016-04-16T16:06:05Z'
+        validFrom:
+          type: string
+          format: date-time
+          description: 'Start date and time the currency rate transaction in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2016-04-16T16:06:05Z'
+        validTo:
+          type: string
+          format: date-time
+          description: 'End date and time the currency rate transaction in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2016-04-16T16:06:05Z'
+        sourceAmount:
+          $ref: '#/components/schemas/Amount'
+        targetAmount:
+          $ref: '#/components/schemas/Amount'
+
   examples:
     ApplePayRequest:
       value:
@@ -7953,3 +8136,118 @@ components:
               - code: '504'
                 count: '1'
                 lastOccurred: '2023-10-23T15:58:00.000000000Z'
+
+    PaymentCardDccRequest:
+      value:
+        amount:
+          total: '199.23'
+          currency: 'USD'
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+            keyId: '88000000022'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    CurrencyCodeDccRequest:
+      value:
+        sourceCurrency:
+          total: '199.23'
+          currency: 'USD'
+        targetCurrency:
+          currency: 'JPY'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+
+    DccResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'CURRENCY_DCC'
+          transactionState: 'RATE_SUPPLIED'
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: 'RKOrdID-525133851837'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: 'PaymentCard'
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: 'VISA'
+            expirationMonth: '10'
+            expirationYear: '2030'
+        rate:
+          referenceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+          provider: 'VISA'
+          eligibility: 'DCC_ELIGIBLE'
+          exchangeRate: 19.45
+          margin: 3.45
+          timestamp: '2021-06-20T23:42:48Z'
+          validFrom: '2021-06-20T23:42:48Z'
+          validTo: '2021-07-20T23:42:48Z'
+          sourceAmount:
+            total:'199.23'
+            currency:'USD'
+          targetAmount:
+            total:'3875.07'
+            currency:'TRY'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          processor: 'fiserv'
+          responseCode: '000'
+          responseMessage: 'APPROVAL'
+          hostResponseMessage: 'RATE_SUPPLIED'
+          localTimestamp: '2021-06-20T23:42:48Z'
+
+    PartnerPaymentTokenRequest:
+      value:
+        source:
+          sourceType: 'PaymentToken'
+          tokenData: '1234560000000019'
+          tokenSource: 'TRANSARMOR'
+        merchantDetails:
+          terminalId: '123456'
+          merchantId: '123456789012345'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              processorName: 'CHASE'
+              processorPlatform: 'TAMPA'
+    
+    PartnerPaymentTokenResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'TOKENIZE'
+          transactionState: 'AUTHORIZED'
+          transactionOrigin: 'POS'
+        source:
+          sourceType: 'PaymentToken'
+          tokenSource: 'TRANSARMOR'
+          tokenData: '1234560000000019'
+        paymentTokens:
+          - tokenData: '23459371934460009'
+            tokenSource: 'CHASE'
+            tokenResponseCode: '000'
+            tokenResponseDescription: 'SUCCESS'
+        processorResponseDetails:
+          approvalStatus: 'APPROVED'
+          schemeTransactionId: '0225MCC625628'
+          processor: 'CHASE'
+          responseCode: '000'
+          responseMessage: 'APPROVAL'
+          hostResponseCode: '00'
+          hostResponseMessage: 'APPROVAL'
+          localTimestamp: '2021-06-20T23:42:48Z'
+        additionalDataCommon:
+          directedRouting:
+            processors:
+              processorName: 'CHASE'
+              processorPlatform: 'TAMPA'
