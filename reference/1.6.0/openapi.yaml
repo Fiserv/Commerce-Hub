@@ -1359,6 +1359,73 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
+      
+  /internal/capk/v1/emv-keys:
+    x-model-version: 1.0
+    post:
+      tags:
+        - EMV CAPK Data Download Endpoint Definition
+      x-group-name: 'Device Management'
+      x-proxy-name: 'EMV CAPK Data'
+      summary: Receives EMV CAPK data request and returns response.
+      description: This payload provides the details about the EMV CAPK data.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmvDetailsRequest'
+            examples:
+              Download:
+                summary: EMV CAPK data request
+                $ref: '#/components/examples/EmvDetailsDownloadRequest'
+              Status:
+                summary: EMV CAPK data version status request
+                $ref: '#/components/examples/EmvDetailsStatusRequest'
+      responses:
+        200:
+          description: Downloaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmvDetailsResponse'
+              examples:
+                Download:
+                  summary: EMV CAPK data response
+                  $ref: '#/components/examples/EmvDetailsDownloadResponse'
+                Status:
+                  summary: EMV CAPK file version status response
+                  $ref: '#/components/examples/EmvDetailsStatusResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
 
 components:
   parameters:
@@ -5500,6 +5567,127 @@ components:
           $ref: '#/components/schemas/Amount'
         targetAmount:
           $ref: '#/components/schemas/Amount'
+      
+    EmvDetailsRequest:
+      x-model-version: 1.0
+      properties:
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+
+    EmvDetailsResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+          
+    EmvDetails:
+      x-model-version: 1.0
+      properties:       
+        headerInfo:
+          $ref: '#/components/schemas/EmvDataHeaderInfo' 
+        transactionType:
+          type: string
+          maxLength: 64
+          description: 'Specifies the type of the CAPK transaction.'
+          example: 'STATUS'
+        keys:
+          type: array
+          description: 'List of EMV CAPK data'
+          items:
+            $ref: '#/components/schemas/EmvDataKey'
+        currentFileCreationDate:
+          type: string
+          description: 'This parameter is sent as part of the last record in the format MMDDYYYYhhmmss'
+          maxLength: 40
+          example: '08282023000001' 
+        fileSize:
+          type: integer
+          description: 'This field contains the total size of the file, in bytes'
+          example: 10979 
+        fileCheckSum:
+          type: string
+          description: 'This field contains the CRC-16 checksum of the file. Hexadecimal representation of 2 bytes or 16 bits '
+          maxLength: 40
+          example: '8E8DFF443D78CD91DE88821D70C98F0638E51E49' 
+        status:
+          type: string
+          maxLength: 32
+          description: 'Specifies an updated version of emv capk data is available or not.'
+          example: 'UPDATE_AVAILABLE'
+
+    EmvDataHeaderInfo:
+      x-model-version: 1.0
+      properties:
+        fileName:
+          type: string
+          maxLength: 64
+          description: 'Identifies the type of file.'         
+          example: '0100'
+        fileVersion:
+          type: string
+          maxLength: 4
+          description: 'Specifies the header file version for tracking purposes.'         
+          example: '0100'
+
+    EmvDataKey:
+      x-model-version: 1.0      
+      properties:
+        expiryDate:
+          type: string
+          format: date
+          description: 'Specifies when the key expires in MMDDYYYY format.'
+          example: '12312024'
+        certificateAuthorityHashAlgorithmIndicator:
+          type: string
+          maxLength: 2
+          description: 'Identifies the hash algorithm used to produce the Hash Result in the digital signature scheme. At the present time only a value of (SHA-1) is supported.'
+          example: '01'
+        certificateAuthorityPublicKeyAlgorithmIndicator:
+          type: string
+          maxLength: 2
+          description: 'Identifies the hash algorithm used to produce the Hash Result in the digital signature scheme. At the present time only a value of (SHA-1) is supported.'
+          example: '01'
+        applicationIdentifier:
+          type: string
+          description: 'Registered application identifier.'
+          maxLength: 10
+          example: 'A000000003'
+        publicKeyIndex:
+          type: string
+          description: 'Identifies the Certification Authority Public Key in conjunction with the applicationIdentifier.'
+          maxLength: 2
+          example: 'C9'
+        publicKeyModulus:
+          type: string
+          description: 'Value of the modulus part of the Certification Authority Public Key.'
+          maxLength: 496
+          example: 'B362DB5733C15B8797B8ECEE55CB1A371F760E0BEDD3715BB270424FD4EA26062C38C3F4AAA3732A83D36EA8E9602F6683EECC6BAFF63DD2D49014BDE4D6D603CD744206B05B4BAD0C64C63AB3976B5C8CAAF8539549F5921C0B700D5B0F83C4E7E946068BAAAB5463544DB18C63801118F2182EFCC8A1E85E53C2A7AE839A5C6A3CABE73762B70D170AB64AFC6CA482944902611FB0061E09A67ACB77E493D998A0CCF93D81A4F6C0DC6B7DF22E62DB'
+        publicKeyExponent:
+          type: string
+          description: 'Value of the exponent part of the Certification Authority Public Key, equal to 3 or 2^16+1.'
+          maxLength: 6
+          example: '03'
+        publicKeyChecksum:
+          type: string
+          description: 'A check value calculated on the concatenation of all parts of the certification Authority Public Key (ApplicationIdentifier, Certification Authority Public Key Index, Certification Authority Public Key Modulus, Certification Authority Public Key Exponent) using SHA-1.'
+          maxLength: 40
+          example: '8E8DFF443D78CD91DE88821D70C98F0638E51E49'      
 
   examples:
     ApplePayRequest:
@@ -8251,3 +8439,248 @@ components:
             processors:
               processorName: 'CHASE'
               processorPlatform: 'TAMPA'
+    EmvDetailsDownloadRequest:
+      value:
+        merchantDetails:
+          merchantId: '100009000000035'
+          terminalId: '10000001'
+        emvDetails:
+          transactionType: 'DOWNLOAD'
+
+    EmvDetailsStatusRequest:
+      value:
+        merchantDetails:
+          merchantId: '100009000000035'
+          terminalId: '10000001'
+        emvDetails:
+          transactionType: 'STATUS'
+          currentFileCreationDate: '11032023000001'
+          fileSize: '10979'
+          fileCheckSum: '91b4'
+
+    EmvDetailsDownloadResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'DOWNLOAD'
+          transactionState: 'COMPLETED'
+          transactionProcessingDetails:
+            orderId: 'CHG014f32a850d75a78fb01890d494e08ca29'
+            transactionTimestamp: '2024-03-08T16:43:50.739450592Z'
+            apiTraceId: 'c9e92b2f719341d586a1c89e5dfce69e'
+            clientRequestId: '2952211'
+            transactionId: 'c9e92b2f719341d586a1c89e5dfce69e'
+        emvDetails:
+          headerInfo:
+            fileName: 'CA_KEYS'
+            fileVersion: '0120'
+          keys:
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000025'
+              publicKeyIndex: 'C9'
+              publicKeyModulus: 'B362DB5733C15B8797B8ECEE55CB1A371F760E0BEDD3715BB270424FD4EA26062C38C3F4AAA3732A83D36EA8E9602F6683EECC6BAFF63DD2D49014BDE4D6D603CD744206B05B4BAD0C64C63AB3976B5C8CAAF8539549F5921C0B700D5B0F83C4E7E946068BAAAB5463544DB18C63801118F2182EFCC8A1E85E53C2A7AE839A5C6A3CABE73762B70D170AB64AFC6CA482944902611FB0061E09A67ACB77E493D998A0CCF93D81A4F6C0DC6B7DF22E62DB'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '8E8DFF443D78CD91DE88821D70C98F0638E51E49'
+            - expiryDate: '2026-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000025'
+              publicKeyIndex: 'CA'
+              publicKeyModulus: 'C23ECBD7119F479C2EE546C123A585D697A7D10B55C2D28BEF0D299C01DC65420A03FE5227ECDECB8025FBC86EEBC1935298C1753AB849936749719591758C315FA150400789BB14FADD6EAE2AD617DA38163199D1BAD5D3F8F6A7A20AEF420ADFE2404D30B219359C6A4952565CCCA6F11EC5BE564B49B0EA5BF5B3DC8C5C6401208D0029C3957A8C5922CBDE39D3A564C6DEBB6BD2AEF91FC27BB3D3892BEB9646DCE2E1EF8581EFFA712158AAEC541C0BBB4B3E279D7DA54E45A0ACC3570E712C9F7CDF985CFAFD382AE13A3B214A9E8E1E71AB1EA707895112ABC3A97D0FCB0AE2EE5C85492B6CFD54885CDD6337E895CC70FB3255E3'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '6BDA32B1AA171444C7E8F88075A74FBFE845765F'
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000152'
+              publicKeyIndex: '5C'
+              publicKeyModulus: '833F275FCF5CA4CB6F1BF880E54DCFEB721A316692CAFEB28B698CAECAFA2B2D2AD8517B1EFB59DDEFC39F9C3B33DDEE40E7A63C03E90A4DD261BC0F28B42EA6E7A1F307178E2D63FA1649155C3A5F926B4C7D7C258BCA98EF90C7F4117C205E8E32C45D10E3D494059D2F2933891B979CE4A831B301B0550CDAE9B67064B31D8B481B85A5B046BE8FFA7BDB58DC0D7032525297F26FF619AF7F15BCEC0C92BCDCBC4FB207D115AA65CD04C1CF982191'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '60154098CBBA350F5F486CA31083D1FC474E31F8'
+            - expiryDate: '2025-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000152'
+              publicKeyIndex: '5D'
+              publicKeyModulus: 'AD938EA9888E5155F8CD272749172B3A8C504C17460EFA0BED7CBC5FD32C4A80FD810312281B5A35562800CDC325358A9639C501A537B7AE43DF263E6D232B811ACDB6DDE979D55D6C911173483993A423A0A5B1E1A70237885A241B8EEBB5571E2D32B41F9CC5514DF83F0D69270E109AF1422F985A52CCE04F3DF269B795155A68AD2D6B660DDCD759F0A5DA7B64104D22C2771ECE7A5FFD40C774E441379D1132FAF04CDF55B9504C6DCE9F61776D81C7C45F19B9EFB3749AC7D486A5AD2E781FA9D082FB2677665B99FA5F1553135A1FD2A2A9FBF625CA84A7D736521431178F13100A2516F9A43CE095B032B886C7A6AB126E203BE7'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'B51EC5F7DE9BB6D8BCE8FB5F69BA57A04221F39B'
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000277'
+              publicKeyIndex: '02'
+              publicKeyModulus: 'E0FFBEE77CEE02ADEE8B4B004D26FB46FAF3CE033E3B874D73D099A966A0657497CEE214E95DF2BF5C9D359A3B10C05CFC9929BEF3070036FD19AE661B173E486CBC9B04E4B2E2D0D8209CAF5C200929FA252A21BD69A9A47488844A1DE5BF8729CE5E5E92117047BDDE9FBE72397FD9FC3BE459D8ED06FD6CADF0AFF39C93CC07B312EE2ACB3D4A15E919F57481CFEF'
+              publicKeyExponent: '010001'
+              publicKeyChecksum: 'BAF3652A9F5D0FF45EECECA55B4597B1F53BE283'
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000277'
+              publicKeyIndex: '03'
+              publicKeyModulus: 'E51505CCECDD0799BAFE097200DF40FFC2154836B8D67F1E99D4D415F73C04A9FAD73825D32AE5BA77FCD02597393CE4D8104B6010D5A8F28F2B47BB8298DAFD63C9C0BEF62AF937265614E31AE2AB45B60B968DB9DEE55602C169F6C16D4579BAA24765560300A3056F894BA8FFA566D9CCD79453D804B97DA14F21F9C3528ED8B8A368A9FACF05C46C13A9BA020618425EF1ACF6CB4DD5DCD050273502114B59EE90EBD833F70C2F324741E79A19A1'
+              publicKeyExponent: '010001'
+              publicKeyChecksum: '0FB60A1BCA38095F3CC578D2DEC95F779840A343'
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000277'
+              publicKeyIndex: '07'
+              publicKeyModulus: 'B2CE89726B6B2D1690A0F8CA75CD0B6B1ACDFBE66D53BA00C500BE612FB421423684FF1868554A7722258012E588ED1CD206C67BB2F7598F3CE67F23A888B8ED7421C49A2EBA224DFBD866F62E59338E9F626D0DFD4C9ACC626E42EC0375EE424C93E5DB5773FC98E4AC9FCDEBD0521B15295C797DCABB4679C055AC374A81B245ABF1092A3D46E1CCE10A84F9FC2FC6ED91025121589C9AA68B56B7FBF0D86B4C8E3C9C08406DBB4609BBFC5308F325A8273CB6D36F3E0AF772507BF8A2A9F5A749B5AF98CCEAB2826C2D9C2AB9103B1BAB0DE92099C8072477EC564062AC38184C60DAD298EF352D92DFA041DDE3DB260CE5302B47A7E9'
+              publicKeyExponent: '010001'
+              publicKeyChecksum: '44F2C13373A5068B63C9334E914DDE6AB70CE0F1'
+            - expiryDate: '2025-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000277'
+              publicKeyIndex: '40'
+              publicKeyModulus: 'F802C308544873AD2225A81943732A4B7CFFA4E3157D17CD5A7723F858F0B11E636D2930FA933778F27C7C49127E0CCA317021CFE8E0F773785EB3FF07587E98CE8ED4FE9E1CA1859F41A9CF2572D8A093C5465F5A29612A45B1700F4DA13814C3D4DF075EAADE8DB4BE4D7B3AE0256F7A0C12E34BD416CAC4F9250C38B7E13B'
+              publicKeyExponent: '010001'
+              publicKeyChecksum: '2015497BE4B86F104BBF337691825EED64E101CA'
+            - expiryDate: '2032-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000277'
+              publicKeyIndex: '41'
+              publicKeyModulus: 'ADC39532AB26462DC02B25CB92748AAC679F07CF7AFD8F9B83C4B94D8C06A1F0D841F35A5F598DD3915FDA8929B8BF2BE0CD03CDC625BFA0FED60D6B8A6778B138C30D4ACA134F337E90F82E4D2FF6180ACA6664F562DF2A11120D10957DF4B2E75607FC960176CBBE6AE3E3F6D5556E47A5EABC850388175609C9AC7AFF6AF12A522EE1EAD1D94EC964E325C97CAC84A1D508769F65FEE99F25196403C98E721116B8084379277AB4D9A2F867B8FCBB280447646915702F20C8ABEE1A29A358D25CFF7EEA66813CB10996BC33E18FC15190CC3B1CDF14934652BA5C8C2E201988E098402556B3ED068862925B90BE2FD61E337FC5BAF7A9'
+              publicKeyExponent: '010001'
+              publicKeyChecksum: 'FD47C4AAB01B9B89314539BB32E0A29770A04387'
+            - expiryDate: '2032-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000277'
+              publicKeyIndex: '42'
+              publicKeyModulus: '99E0195F9B477160EE90F5FE9773D68DD684C7192528DB67DF0D93B0FDD60B1A9F999A726B7BD97586354575A787363290E7AB423E3D52D037BE38057BA5A9292A5652677E3F754BD642A1702E97279E67AA3411413A7AAB452DF6A1246CA9EF297CBD3BDC1B0A2CA863A48CF87E62400E7AAD29A4880E799187F50861C6C6E976142AD3F456DAEFCB3041557787B4981414D915AFF3EA8CAB738533BBACCA12F75BF107C10F6A029417A051BE0A3285'
+              publicKeyExponent: '010001'
+              publicKeyChecksum: '64876E40CD5DDE35CF107E8314C67BDE640A6BEE'
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000065'
+              publicKeyIndex: '11'
+              publicKeyModulus: 'A2583AA40746E3A63C22478F576D1EFC5FB046135A6FC739E82B55035F71B09BEB566EDB9968DD649B94B6DEDC033899884E908C27BE1CD291E5436F762553297763DAA3B890D778C0F01E3344CECDFB3BA70D7E055B8C760D0179A403D6B55F2B3B083912B183ADB7927441BED3395A199EEFE0DEBD1F5FC3264033DA856F4A8B93916885BD42F9C1F456AAB8CFA83AC574833EB5E87BB9D4C006A4B5346BD9E17E139AB6552D9C58BC041195336485'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'D9FD62C9DD4E6DE7741E9A17FB1FF2C5DB948BCB'
+            - expiryDate: '2025-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000065'
+              publicKeyIndex: '13'
+              publicKeyModulus: 'A3270868367E6E29349FC2743EE545AC53BD3029782488997650108524FD051E3B6EACA6A9A6C1441D28889A5F46413C8F62F3645AAEB30A1521EEF41FD4F3445BFA1AB29F9AC1A74D9A16B93293296CB09162B149BAC22F88AD8F322D684D6B49A12413FC1B6AC70EDEDB18EC1585519A89B50B3D03E14063C2CA58B7C2BA7FB22799A33BCDE6AFCBEB4A7D64911D08D18C47F9BD14A9FAD8805A15DE5A38945A97919B7AB88EFA11A88C0CD92C6EE7DC352AB0746ABF13585913C8A4E04464B77909C6BD94341A8976C4769EA6C0D30A60F4EE8FA19E767B170DF4FA80312DBA61DB645D5D1560873E2674E1F620083F30180BD96CA589'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '54CFAE617150DFA09D3F901C9123524523EBEDF3'
+            - expiryDate: '2029-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000004'
+              publicKeyIndex: 'EF'
+              publicKeyModulus: 'A191CB87473F29349B5D60A88B3EAEE0973AA6F1A082F358D849FDDFF9C091F899EDA9792CAF09EF28F5D22404B88A2293EEBBC1949C43BEA4D60CFD879A1539544E09E0F09F60F065B2BF2A13ECC705F3D468B9D33AE77AD9D3F19CA40F23DCF5EB7C04DC8F69EBA565B1EBCB4686CD274785530FF6F6E9EE43AA43FDB02CE00DAEC15C7B8FD6A9B394BABA419D3F6DC85E16569BE8E76989688EFEA2DF22FF7D35C043338DEAA982A02B866DE5328519EBBCD6F03CDD686673847F84DB651AB86C28CF1462562C577B853564A290C8556D818531268D25CC98A4CC6A0BDFFFDA2DCCA3A94C998559E307FDDF915006D9A987B07DDAEB3B'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '21766EBB0EE122AFB65D7845B73DB46BAB65427A'
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000004'
+              publicKeyIndex: 'F1'
+              publicKeyModulus: 'A0DCF4BDE19C3546B4B6F0414D174DDE294AABBB828C5A834D73AAE27C99B0B053A90278007239B6459FF0BBCD7B4B9C6C50AC02CE91368DA1BD21AAEADBC65347337D89B68F5C99A09D05BE02DD1F8C5BA20E2F13FB2A27C41D3F85CAD5CF6668E75851EC66EDBF98851FD4E42C44C1D59F5984703B27D5B9F21B8FA0D93279FBBF69E090642909C9EA27F898959541AA6757F5F624104F6E1D3A9532F2A6E51515AEAD1B43B3D7835088A2FAFA7BE7'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'D8E68DA167AB5A85D8C3D55ECB9B0517A1A5B4BB'
+            - expiryDate: '2024-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000003'
+              publicKeyIndex: '92'
+              publicKeyModulus: '996AF56F569187D09293C14810450ED8EE3357397B18A2458EFAA92DA3B6DF6514EC060195318FD43BE9B8F0CC669E3F844057CBDDF8BDA191BB64473BC8DC9A730DB8F6B4EDE3924186FFD9B8C7735789C23A36BA0B8AF65372EB57EA5D89E7D14E9C7B6B557460F10885DA16AC923F15AF3758F0F03EBD3C5C2C949CBA306DB44E6A2C076C5F67E281D7EF56785DC4D75945E491F01918800A9E2DC66F60080566CE0DAF8D17EAD46AD8E30A247C9F'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '429C954A3859CEF91295F663C963E582ED6EB253'
+            - expiryDate: '2026-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000003'
+              publicKeyIndex: '94'
+              publicKeyModulus: 'ACD2B12302EE644F3F835ABD1FC7A6F62CCE48FFEC622AA8EF062BEF6FB8BA8BC68BBF6AB5870EED579BC3973E121303D34841A796D6DCBC41DBF9E52C4609795C0CCF7EE86FA1D5CB041071ED2C51D2202F63F1156C58A92D38BC60BDF424E1776E2BC9648078A03B36FB554375FC53D57C73F5160EA59F3AFC5398EC7B67758D65C9BFF7828B6B82D4BE124A416AB7301914311EA462C19F771F31B3B57336000DFF732D3B83DE07052D730354D297BEC72871DCCF0E193F171ABA27EE464C6A97690943D59BDABB2A27EB71CEEBDAFA1176046478FD62FEC452D5CA393296530AA3F41927ADFE434A2DF2AE3054F8840657A26E0FC617'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'C4A3C43CCF87327D136B804160E47D43B60E6E0F'
+            - expiryDate: '2030-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000333'
+              publicKeyIndex: '08'
+              publicKeyModulus: 'B61645EDFD5498FB246444037A0FA18C0F101EBD8EFA54573CE6E6A7FBF63ED21D66340852B0211CF5EEF6A1CD989F66AF21A8EB19DBD8DBC3706D135363A0D683D046304F5A836BC1BC632821AFE7A2F75DA3C50AC74C545A754562204137169663CFCC0B06E67E2109EBA41BC67FF20CC8AC80D7B6EE1A95465B3B2657533EA56D92D539E5064360EA4850FED2D1BF'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'EE23B616C95C02652AD18860E48787C079E8E85A'
+            - expiryDate: '2030-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000333'
+              publicKeyIndex: '09'
+              publicKeyModulus: 'EB374DFC5A96B71D2863875EDA2EAFB96B1B439D3ECE0B1826A2672EEEFA7990286776F8BD989A15141A75C384DFC14FEF9243AAB32707659BE9E4797A247C2F0B6D99372F384AF62FE23BC54BCDC57A9ACD1D5585C303F201EF4E8B806AFB809DB1A3DB1CD112AC884F164A67B99C7D6E5A8A6DF1D3CAE6D7ED3D5BE725B2DE4ADE23FA679BF4EB15A93D8A6E29C7FFA1A70DE2E54F593D908A3BF9EBBD760BBFDC8DB8B54497E6C5BE0E4A4DAC29E5'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'A075306EAB0045BAF72CDD33B3B678779DE1F527'
+            - expiryDate: '2030-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000333'
+              publicKeyIndex: '0A'
+              publicKeyModulus: 'B2AB1B6E9AC55A75ADFD5BBC34490E53C4C3381F34E60E7FAC21CC2B26DD34462B64A6FAE2495ED1DD383B8138BEA100FF9B7A111817E7B9869A9742B19E5C9DAC56F8B8827F11B05A08ECCF9E8D5E85B0F7CFA644EFF3E9B796688F38E006DEB21E101C01028903A06023AC5AAB8635F8E307A53AC742BDCE6A283F585F48EF'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'C88BE6B2417C4F941C9371EA35A377158767E4E3'
+            - expiryDate: '2031-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000333'
+              publicKeyIndex: '0B'
+              publicKeyModulus: 'CF9FDF46B356378E9AF311B0F981B21A1F22F250FB11F55C958709E3C7241918293483289EAE688A094C02C344E2999F315A72841F489E24B1BA0056CFAB3B479D0E826452375DCDBB67E97EC2AA66F4601D774FEAEF775ACCC621BFEB65FB0053FC5F392AA5E1D4C41A4DE9FFDFDF1327C4BB874F1F63A599EE3902FE95E729FD78D4234DC7E6CF1ABABAA3F6DB29B7F05D1D901D2E76A606A8CBFFFFECBD918FA2D278BDB43B0434F5D45134BE1C2781D157D501FF43E5F1C470967CD57CE53B64D82974C8275937C5D8502A1252A8A5D6088A259B694F98648D9AF2CB0EFD9D943C69F896D49FA39702162ACB5AF29B90BADE005BC157'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'BD331F9996A490B33C13441066A09AD3FEB5F66C'
+            - expiryDate: '2030-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000780'
+              publicKeyIndex: 'A4'
+              publicKeyModulus: 'D22EF8F41F0685E371B53625692A7EB13B3E9462DD985E044A5915108D2DFCC0A4171C0C0DE4E6D9BD525CAC461A169DAC5101B975D105DEA2AA34B80D9131F47A278DA609B32B1379F98FB960328DE1E27E1EDAFD2DC8A3643AFEB605582C5F953E0DE029643DE058DA6813137EB9450C5C1AD36823BF4C548A5599F6C025274081F6BBF916D79CC00AB77C3AD8E35282FFC9A24CF5F31B0E5585618A75929FBAD4416EC853A76380C84DB3B208389EC2675C9CDEA4AC106EE6AEB242761EEFED6D744E3439588EB17B2CDD956658F59FBB2186B23B396B48E84A7702B91238059FB314CAFCF59B3F09787CCA396ABA35A144C0435DC99D'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '8438208C174CC1C3FB7793585BF1DE288349B31C'
+            - expiryDate: '2027-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000768'
+              publicKeyIndex: 'E1'
+              publicKeyModulus: 'AD767119B139295B9EF760B9A94811580E933A03E76C0A7022F1021278EB6FBBEF36599D5A95C2CB603364E1DA12DF88B76D19F225F14D2A689C580DC2B54457C8BEA50086A4BE897D3353AA003CAFAB5AE3993BE6D379D488689028EC852DFED90EA6FDD73ACF6583934E64601A0EE45AF652B52CC58A9EFFA5D846DD79EFC9A8638275EC264B3C40AA3C8F3DDF1F9D378598362DF48417BF039A04D70B4FFA14A2F6218299428C625EF949F08740ED36FE9265BB8E2CA94604EFC0AEB654F9FC455F22B1EC46871E46638CE190D3691313E41C7F9C8AD4AE3D1B574D4336AD6A2BA551F2DB3A8D44F375CB67D94AFBDFD34DEA92066149'
+              publicKeyExponent: '03'
+              publicKeyChecksum: 'AE03037B9B042B0F9690500DEE287CD706FF73C8'
+            - expiryDate: '2027-12-31'
+              certificateAuthorityHashAlgorithmIndicator: '01'
+              certificateAuthorityPublicKeyAlgorithmIndicator: '01'
+              applicationIdentifier: 'A000000768'
+              publicKeyIndex: 'EE'
+              publicKeyModulus: 'A8D150CEE34B16D294B46B99BD6B3284303BD1FFD316C210E876666AD991DFE68DC1BD0835A5E03F753DB0DCE112A928C0C604F5DF256E265E05B59B4DAA15E74B0E5E27E56F8D97C1233D416162DDEC7EFE731D30BBA16683557E4D8FA15269F51D40468D1B2C31CCD314804FC97341F68A1BB78F4985B99F0901557B52196950CF6A12D6FD4356002197B17A8035606DAAC2BFCDB3CD86B9FCDBC64908BFB039C268772D73E44C3867AFC002C12CB5'
+              publicKeyExponent: '03'
+              publicKeyChecksum: '6DFE06AB7FAD2D98EA18B7849D11DF704D08EFAE'
+          currentFileCreationDate: '11032023000001'
+          fileSize: 10979
+          fileCheckSum: '91b4'
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100009000000035'
+
+    EmvDetailsStatusResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'STATUS'
+          transactionState: 'COMPLETED'
+          transactionProcessingDetails:
+            orderId: 'CHG0175c64967b49afc2457781061294af02e'
+            transactionTimestamp: '2024-03-08T16:37:07.081168434Z'
+            apiTraceId: '8fd36de3d66d44f6ae505cd4633f3b52'
+            clientRequestId: '9363771'
+            transactionId: '8fd36de3d66d44f6ae505cd4633f3b52'
+        emvDetails:
+          currentFileCreationDate: '11032023000001'
+          fileSize: 10979
+          fileCheckSum: '91b4'
+          status: 'NO_UPDATE_AVAILABLE'
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100009000000035'              
