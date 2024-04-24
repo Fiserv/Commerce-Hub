@@ -19,12 +19,12 @@ Build an integration to manage CAPK management.
 
 <!-- type: card
 title: CAPK Download
-description: EMV chip enhances the security of payment card transactions for payment terminals and automated teller machines through the use of a chip embedded in credit, debit, and prepaid cards.
+description: The process of securely acquiring and installing *(CAPK)* data onto payment terminals. 
 link: ?path=docs/In-Person/Device_Management/CAPK-Download.md
 -->
 
 <!-- type: card
 title: CAPK Status
-description: Near Field Communication (NFC) or contactless payment are transactions made by tapping either a contactless chip card or a payment-enabled device with a contactless-enabled terminal.
+description: The process provides confirmation on whether they payment terminal has succesfully retrieved and updated the CAPK. 
 link: ?path=docs/In-Person/Device_Management/CAPK-Status.md
 -->

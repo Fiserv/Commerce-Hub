@@ -14,7 +14,7 @@ Commerce Hub supports the following integrations for managing payment devices.
 
 <!-- type: card
 title: CAPK Data
-description: Manager 
+description: Manage the authentication of EMV payment cards, ensuring their validation during transaction.
 link: ?path=docs/In-Person/Device_Management/CAPK.md
 -->
 
@@ -26,7 +26,7 @@ link:
 
 <!-- type: card
 title: Key Management
-description: Commerce Hub's key management system is needed to achieve PCI DSS compliance by implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys, to protect a customer's sensitive payment card data.
+description: To achieve PCI DSS compliance by implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys. 
 link: 
 -->
 
