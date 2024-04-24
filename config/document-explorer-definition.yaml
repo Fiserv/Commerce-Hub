@@ -179,7 +179,8 @@
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
     - title: Device Management
       link: docs/In-Person/Device_Management/Device-Management.md
-    - title: CAPK
+      sections:
+      - title: EMV CAPK Data
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
