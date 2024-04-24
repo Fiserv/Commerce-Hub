@@ -1879,23 +1879,20 @@ components:
         details.
       required: [sourceType]
       discriminator: {propertyName: sourceType}
+      oneOf:
+      - $ref: '#/components/schemas/PaymentCard'
+      - $ref: '#/components/schemas/PaymentEMV'
+      - $ref: '#/components/schemas/PaymentTrack'
+      - $ref: '#/components/schemas/ApplePay'
+      - $ref: '#/components/schemas/GooglePay'
+      - $ref: '#/components/schemas/PaymentToken'
+      - $ref: '#/components/schemas/PaymentSession'
       properties:
         sourceType:
           type: string
           maxLength: 256
-          description: |+
-            Payment source type for a transaction request.
-
-            Valid Values:
-            * <a href="../docs?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md">3-D Secure</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md">ApplePay</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md">GooglePay</a>
-            * <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md">PaymentCard</a>
-            * <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md">PaymentToken</a>
-            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/EMV.md">PaymentEMV</a>
-            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/Track.md">PaymentTrack</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md">PaymentSession</a>
-          example: PaymentCard
+          description: 'Payment <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Source-Type.md">source type</a> for a transaction request.'
+          example: 'PaymentCard'
     PaymentCard:
       x-model-version: 1.0
       allOf:
@@ -3113,6 +3110,12 @@ components:
       description: ''
       required: [network]
       discriminator: {propertyName: network}
+      oneOf:
+      - $ref: '#/components/schemas/AmericanExpress'
+      - $ref: '#/components/schemas/Discover'
+      - $ref: '#/components/schemas/Mastercard'
+      - $ref: '#/components/schemas/Visa'
+      - $ref: '#/components/schemas/Debit'
       properties:
         network: {type: string, description: Processing card network}
     Mastercard:
@@ -3211,6 +3214,58 @@ components:
       allOf:
       - {$ref: '#/components/schemas/Network'}
       - type: object
+        properties:
+          processingCode:
+            type: string
+            maxLength: 6
+            description: 'Identifies the type of Card Transaction sent to Card Acceptor'
+            example: '000000'
+          systemAuditTraceNo:
+            type: string
+            maxLength: 6
+            description: 'The System Trace Audit Number (STAN) is assigned by a transaction originator to assist in identifying a Card Transaction.'
+            example: '150065'
+          assocPOSEntryMode:
+            type: string
+            maxLength: 22
+            description: 'An identifier used to indicate how the account number was entered on the transaction.'
+            example: '154804'
+          localTransTime:
+            type: string
+            maxLength: 6
+            description: 'Local time at which the Card Transaction took place. Format HHMMSS.'
+            example: '150065'
+          localTransDate:
+            type: string
+            maxLength: 6
+            description: 'Local month and day on which the Card Transaction took place. Format MMDD'
+            example: '0706'
+          discoverResponseCode:
+            type: string
+            maxLength: 16
+            description: 'Discover (JCB (US Domestic only), and Diners) Response Code which indicates the status of the transaction'
+            example: '00'
+          discoverPOSData:
+            type: string
+            maxLength: 13
+            description: 'This field indicates the specific Card Information Capture Conditions present at the time a Card Transaction took place at POS.'
+            example: '0025100080S00'
+          discoverTranQualifier:
+            type: string
+            maxLength: 16
+            description: 'This field is used to indicate the magnetic stripe condition and the vulnerability to fraud in Discover (JCB (US Domestic only), and Diners) Network Card Transactions.'
+            example: '60'
+    Debit:
+      x-model-version: 1.0
+      allOf:
+        - $ref: '#/components/schemas/Network'
+        - type: object
+          properties:
+            networkName:
+              type: string
+              maxLength: 256
+              description: 'Network name in which the transaction is processed.'
+              example: 'STAR'
     NetworkDetails:
       x-model-version: 1.0
       description: Contains the authorization <a href="../docs?path=docs/Resources/Master-Data/Network-Details.md">network
