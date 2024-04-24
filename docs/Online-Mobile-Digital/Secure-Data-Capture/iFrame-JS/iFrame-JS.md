@@ -12,9 +12,7 @@ Secure Data Capture v2 iFrame SDK works by injecting individual iFrames for each
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
 
-Commerce Hub accomplishes this by injecting an iFrame into a parent form where customers can enter their data. The merchant can customize the form fields to match their site.
-
-#### Transaction Flow
+### Transaction Flow
 
 1. The customer navigates to checkout page of the merchant's website.
 2. The customer's browser loads the Commerce Hub iFrame SDK.
@@ -57,13 +55,9 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Meth
 
 ---
 
-## Additional Security Settings
+### Additional Security Settings
 
 The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
-
-### Browser Support
-
-Only modern browsers are supported, legacy browsers pose additional security concerns as they do not receive security patches *(this includes IE11)*. Additionally, arrow functions, promise, and `window.crypto.subtle` *(SubtleCrypto API)* JavaScript functions must all be supported. Arrow functions are required in order to exclude less-secure browsers from being supported.
 
 ### Recommendations
 
@@ -72,13 +66,8 @@ Only modern browsers are supported, legacy browsers pose additional security con
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
 
----
+### Browser Support
 
-## See Also
-
-- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
-- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
-- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+Only modern browsers are supported, legacy browsers pose additional security concerns as they do not receive security patches *(this includes IE11)*. Additionally, arrow functions, promise, and `window.crypto.subtle` *(SubtleCrypto API)* JavaScript functions must all be supported. Arrow functions are required in order to exclude less-secure browsers from being supported.
 
 ---

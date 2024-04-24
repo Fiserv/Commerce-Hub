@@ -9,6 +9,9 @@ Transaction amount information is contained in the `amount` and `amountComponent
 - [**amount:**](#amount) Used to support the request for payment.
 - [**amountComponents:**](#amount-components) Used in transactions where additional amount fields are required as part of the request.
 
+<!-- theme: info -->
+> Commerce Hub currently supports a maximum of 18 digits + 3 precisions _(decimal places)_, however different processing platforms may support more or less, see their spec doc for more details. Example the Nashville front-end processor currently only supports a max of 12 digits including precision based on the currency; e.g. 12 digits + 0 precision, 10 digits + 2 precisions, or 9 + 3 precisions.
+
 ---
 
 ## Amount
@@ -24,8 +27,8 @@ The below table identifies the parameters in the `amount` object.
 
 |Variable |Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `total` | *number* | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
-| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md).|
+| `total` | _number_ | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
+| `currency` | _string_ | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md).|
 
 <!--
 type: tab
@@ -59,20 +62,20 @@ The below table identifies the parameters in the `amountComponents` object.
 
 | Variable | Type | Maximum Length | Description |
 | --------- | --- | ------ | -------------- |
-| `unitPrice` | *number* | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
-| `subTotal` | *number* | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
-| `cashback` | *number* | 18,3 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase |
-| `tip` | *number* | 18,3 | The portion of the transaction amount that represents the tip |
-| `convenienceFee` | *number* | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
-| `surcharge` | *number* | 18,3 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
-| `shippingRate` | *number* | 3 | Shipping, delivery or freight rate percent |
-| `shippingAmount` | *number* | 18,3 | Total amount of shipping, delivery or freight charges applied. |
-| `freightRate` | *number* | 3 | Freight rate percent |
-| `freightAmount` | *number* | 18,3 | Freight amount applied |
-| `priceAdjustments` | *array* | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
-| `netAmount` | *number* | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
-| `taxAmounts` | *array* | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
-| `grossAmount` | *number* | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
+| `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
+| `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
+| `cashback` | _number_ | 18,3 | For Debit, EBTCash, or Credit: The amount of cash requested by the cardholder at the time of purchase |
+| `tip` | _number_ | 18,3 | The portion of the transaction amount that represents the tip |
+| `convenienceFee` | _number_ | 12 | Optional [convenience fee](?path=docs/Resources/Guides/Convenience-Fees.md) for payments made through an alternative channel, rather than by cash, check, or ACH. **Note:** Not all processors and acquirers allow convenience fees. For more information, please contact your Account Representative. |
+| `surcharge` | _number_ | 18,3 | Identifies the transaction’s surcharge amount as an extra fee, tax, or cost added to the already existent cost of a good or service. Not applicable to Debit or Prepaid transactions. **Note:** Not all processors and acquirers allow surcharge fees. For more information, please contact your Account Representative. |
+| `shippingRate` | _number_ | 3 | Shipping, delivery or freight rate percent |
+| `shippingAmount` | _number_ | 18,3 | Total amount of shipping, delivery or freight charges applied. |
+| `freightRate` | _number_ | 3 | Freight rate percent |
+| `freightAmount` | _number_ | 18,3 | Freight amount applied |
+| `priceAdjustments` | _array_ | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
+| `netAmount` | _number_ | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
+| `taxAmounts` | _array_ | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
+| `grossAmount` | _number_ | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
 
 <!--
 type: tab
