@@ -127,8 +127,6 @@
   - title: Resources and Guides
     link: docs/Resources/Guides/Resources-Guide.md
     sections:
-    - title: Annoucements
-      link: docs/Resources/Guides/Announcement.md 
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
