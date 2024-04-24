@@ -163,6 +163,7 @@
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
       sections:
       - title: Authentication
         link: docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md
@@ -177,22 +178,15 @@
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
     - title: Device Management
+      link: docs/In-Person/Device_Management/Device-Management.md
       sections:
-      - title: Device Management
-        link: docs/Resources/API-Documents/Device-Management/CAPK.md
-      - title: CAPK
+      - title: EMV CAPK Data
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
       sections:
       - title: Dynamic Currency Conversion
         link: docs/Resources/Guides/Global-Currency/Currency-Conversion.md
-    - title: Health Check
-      sections:
-      - title: Status
-        link: docs/Resources/API-Documents/Health_Check/HC-Status.md
-      - title: CAPK
-        link: docs/Resources/API-Documents/Device-Management/CAPK.md
     - title: Health Check
       sections:
       - title: Status
