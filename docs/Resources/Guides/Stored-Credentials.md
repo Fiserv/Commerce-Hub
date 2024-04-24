@@ -4,7 +4,7 @@ tags: [Stored Credentials, Tokenization, Card Not Present]
 
 # Stored Credentials
 
-Stored Credentials also known as Credentials on File or Card on File, allows the customer to authorize the storage of their payment source details for future transactionstas a Cardholder Initiated Transaction (CIT). Stored credentials is submitted in an initial charges with tokenization, verification with tokenization or tokenization with verification request.
+Stored Credentials, also known as Credentials on File or Card on File, allows the customer to authorize the storage of their payment source details for future transactions as a Cardholder Initiated Transaction (CIT). Stored credentials is submitted in an initial [charges with tokenization](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification with tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [tokenization with verification](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request.
 
 The merchant can initiate a subsequent transactions on behalf of customers (e.g. for subscription payments), using the [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) created from the customer's details as a Merchant Initiated Transaction (MIT).
 
@@ -15,7 +15,10 @@ The merchant can initiate a subsequent transactions on behalf of customers (e.g.
 The following variables are used in the initial `PaymentToken` request and subsequent transactions.
 
 <!-- theme: warning -->
-> The `bankNetDate` for Mastercard should be passed for the [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
+> The `bankNetDate` for Mastercard should be passed as part of the [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
+
+<!--theme:info-->
+> It is recommended that the merchant captures [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
 
 <!--
 type: tab
@@ -140,7 +143,7 @@ Example of a charge (201: Created) response
 
 ## Scheduled Transaction
 
-Stored credentials are used to submit merchant managed scheduled transactions by submitting the required parameters and the coresponding `billPaymentType` in the `additionalDataCommon` [object](?path=docs/Resources/Master-Data/Additional-Data.md).
+Stored credentials are used to submit merchant managed scheduled transactions by submitting the required parameters and the corresponding `billPaymentType` in the `additionalDataCommon` [object](?path=docs/Resources/Master-Data/Additional-Data.md).
 
 - **Recurring:** A transaction in a series of transaction that uses stored credentials and are processed at fixed, regular intervals *(not to exceed one year between transaction)*, representing a cardholder agreement for the merchant to initiate future transaction for the purchase of goods or services provided at regular intervals.
 - **Installment:** A transaction in a series of transactions that uses stored credentials and represents a cardholder agreement for the merchant to initiate one or more future transactions over a period for a single purchase of goods or services.
@@ -266,7 +269,7 @@ Example of a charge (201: Created) response
 
 ## Unscheduled Transaction
 
-Stored credentials can be used to submit a future unscheduled transactions by submitting the required parameters and the coresponding `billPaymentType` in the `additionalDataCommon` [object](?path=docs/Resources/Master-Data/Additional-Data.md).
+Stored credentials can be used to submit a future unscheduled transactions by submitting the required parameters and the corresponding `billPaymentType` in the `additionalDataCommon` [object](?path=docs/Resources/Master-Data/Additional-Data.md).
 
 - **Single:** A transaction using stored credentials for a fixed or variable amount that does not occur on a scheduled or regularly occurring transaction date, where the cardholder has provided consent for the merchant to initiate one or more future transactions.
 
