@@ -82,7 +82,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentEMV.
+Example of a charge payload request using PaymentEMV.
 
 ```json
 {
@@ -131,7 +131,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
