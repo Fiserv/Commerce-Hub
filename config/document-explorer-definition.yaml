@@ -172,6 +172,8 @@
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
     - title: Device Management
       sections:
+      - title: Device Management
+        link: docs/Resources/API-Documents/Device-Management/Device-Management.md
       - title: CAPK
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
       - title: Key Management
