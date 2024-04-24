@@ -14,7 +14,7 @@ Authorization Optimization from Commerce Hub helps businesses maximize their app
 <!-- theme: info -->
 > Authorization Optimization is valid for Visa and Mastercard card not present transactions.
 
-- Real time card account updater 
+- Real time card account updater
 - Dynamic retry
 <!---
 - Batch card account updater (Not in scope)
@@ -27,7 +27,7 @@ Authorization Optimization from Commerce Hub helps businesses maximize their app
 
 ### Supported Transaction Types
 
-The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md). 
+The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md).
 
 <!---
 All secondary transactions including; [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), offline Refund and [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) *(voids)* requests may need to send updated card details in the subsequent requests.
@@ -35,7 +35,7 @@ All secondary transactions including; [Capture](?path=docs/Resources/API-Documen
 
 ---
 
-## Request Variables 
+## Request Variables
 
 <!--
 type: tab
@@ -46,15 +46,15 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. | 
+| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. |
 
 ### Auth Optimization Type
 
-| Values | Description | 
+| Values | Description |
 |-------------|---------------|
-| _CARD_DATA_AND_REASON_ | Recieve updated card data and card update reasons | 
-| _REASON_ONLY_ | Receive card updates reason only |
-| _OVERRIDE_ | Disable the service for this request | 
+| *CARD_DATA_AND_REASON* | Recieve updated card data and card update reasons |
+| *REASON_ONLY* | Receive card updates reason only |
+| *OVERRIDE* | Disable the service for this request |
 
 <!--
 type: tab
@@ -74,14 +74,14 @@ JSON string format:
 
 ---
 
-## Response Variables 
+## Response Variables
 
 <!--
 type: tab
-titles: proccsorResponseDetails, JSON Example, authOptimizationDetails, JSON Example
+titles: processorResponseDetails, JSON Example, authOptimizationDetails, JSON Example
 -->
 
-The below table identifies the parameters in the `proccesorResponseDetails` object.
+The below table identifies the parameters in the `processorResponseDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
@@ -118,10 +118,10 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 
 | Variable | Description |
 |---------|----------|
-| _ACCOUNT_CHANGE_ | Original account number has changed| 
-| _ACCOUNT_CLOSED_ | Original account number is closed |
-| _EXPIRATION_CHANGE_ | Original card expiration has changed | 
-| *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder | 
+| *ACCOUNT_CHANGE* | Original account number has changed|
+| *ACCOUNT_CLOSED* | Original account number is closed |
+| *EXPIRATION_CHANGE* | Original card expiration has changed |
+| *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder |
 
 <!--
 type: tab
@@ -149,7 +149,7 @@ type: tab
 titles: Request, Response 
 -->
 
-##### Example of a charge payload request.
+Example of a charge payload request.
 
 ```json
 {
@@ -189,7 +189,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an auth optimization (201: Created) response.
+Example of an auth optimization (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

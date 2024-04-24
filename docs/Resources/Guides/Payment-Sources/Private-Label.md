@@ -40,6 +40,12 @@ description: ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* co
 link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md
 -->
 
+<!-- type: card
+title: HD Supply 
+description: HD Supply is a fully owned subsidiary of THD. 
+link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label/HDS.md
+-->
+
 <!-- type: row-end -->
 
 ---
