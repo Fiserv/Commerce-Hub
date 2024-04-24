@@ -2,7 +2,7 @@
 tags: [Gift Card, Loyalty, Redemption, Payments]
 ---
 
-# Redemption
+# Gift Card Redemption
 
 Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location. When redeeming a gift card use the [payment request APIs](?path=docs/Resources/API-Documents/Payments/Payments.md) for charges, refunds and cancels along with the conditional request variables below.
 
@@ -51,7 +51,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `additionalData` | _object_ | N/A |  Idenitfies adtionatal data in the request. |
+| `additionalData` | _object_ | N/A |  Identifies additional data in the request. |
 
 The below table identifies the conditional parameters in the `additionalData` object.
 

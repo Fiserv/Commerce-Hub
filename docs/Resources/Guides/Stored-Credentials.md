@@ -17,6 +17,9 @@ The following variables are used in the initial `PaymentToken` request and subse
 <!-- theme: warning -->
 > The `bankNetDate` for Mastercard should be passed for the [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
+<!--theme:info-->
+> It is recommended that the merchant captures [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
+
 <!--
 type: tab
 titles: storedCredentials, additionalDataCommon
@@ -182,7 +185,6 @@ Example of a scheduled Mastercard charge payload request using `storedCredential
   },
   "additionalDataCommon": {
     "billPaymentType": "RECURRING",
-    "paymentAmountType": "FIXED"
   },
   "merchantDetails": {
     "merchantId": "123456789789567",
