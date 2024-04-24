@@ -4,18 +4,16 @@ tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 
 # EMV CAPK Data
 
-EMV (Europay Mastercard Visa) CAPK (Certification Authority Public Key) data is crucial for secure payment transactions. It ensures card and cardholder authenticity through Certification Authority Public Keys. EMV cards have issuer certificates signed by EMV authorities for validation. Offline checks use cryptographic keys on terminals and cards. Commerce Hub offers a new CAPK data download endpoint. Refer to integration details in Download and Status articles.
+EMV CAPK data is crucial for secure payment transactions. It ensures card and cardholder authenticity through Certification Authority Public Keys *(CAPK)*. EMV cards have issuer certificates signed by EMV authorities for validation. The EMV CAPK data is used for offline checks verifying the cryptographic keys on the device and EMV card.
 
 <!-- theme: info -->
-> For more details on technical implementation of CAPK storage and withdrawal, please refer to latest version of EMV Book 2 - Security and Key Management.
-
-<https://www.emvco.com/specifications/>
+> For more details on technical implementation of CAPK storage and withdrawal, please refer to latest version of [EMV Book 2 - Security and Key Management](https://www.emvco.com/specifications).
 
 ---
 
-## CAPK Request Types
+## CAPK Data Management
 
-Use the following request type to manage CAPK
+Build an integration to manage CAPK management.
 
 <!-- type: row -->
 
