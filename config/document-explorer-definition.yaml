@@ -129,8 +129,6 @@
   - title: Resources and Guides
     link: docs/Resources/Guides/Resources-Guide.md
     sections:
-    - title: Annoucements
-      link: docs/Resources/Guides/Announcement.md 
     - title: Featured Guides
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
@@ -187,6 +185,10 @@
       sections:
       - title: CAPK
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
+    - title: Health Check
+      sections:
+      - title: Status
+        link: docs/Resources/API-Documents/Health_Check/HC-Status.md
     - title: Payments
       link: docs/Resources/API-Documents/Payments/Payments.md
       sections:
