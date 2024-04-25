@@ -9,7 +9,7 @@ A tagged refund allows a merchant to maintain the transaction history in Commerc
 <!-- theme: danger -->
 > A refund request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
-#### Refund Types
+##### Refund Types
 
 Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
@@ -37,8 +37,8 @@ The below table identifies the available parameters in the `referenceTransaction
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-|`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-|`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
 
 <!--
 type: tab
@@ -59,8 +59,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|-----|
-|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
@@ -73,7 +73,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab
@@ -179,7 +179,7 @@ Example of a refunds (201: Created) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
