@@ -9,7 +9,7 @@ Charges can be initiated as a sale, pre-authorization, or [capture](?path=docs/R
 - *false:* A pre-authorization transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdraw the funds.
 - *true:* A sale or subsequent capture transaction where the customer will be charged the total amount, and funds withdrawn.
 
-#### Charges Types
+##### Charges Types
 
 - [**Authorization Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#authorization) A transaction where the merchant [verifies](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
 - [**Pre-Authorization:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#preauth) A transaction where the customer is authorized to have funds withdrawn from their account on a future date.
@@ -18,7 +18,7 @@ Charges can be initiated as a sale, pre-authorization, or [capture](?path=docs/R
 
 ---
 
-## Minimum Requirements
+## Request Variables
 
 The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 

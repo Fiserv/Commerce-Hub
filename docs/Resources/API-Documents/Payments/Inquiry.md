@@ -59,6 +59,8 @@ type: tab
 titles: Request, Response
 -->
 
+Example of an inquiry payload request.
+
 ```json
 {
   "referenceTransactionDetails": {
@@ -74,7 +76,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an inquiry (201: Success) response.
+Example of an inquiry (201: Success) response.
 
 The below table identifies additional arrays that may be returned in the inquiry response.
 
@@ -162,6 +164,7 @@ The below table identifies additional arrays that may be returned in the inquiry
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/inquiry)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Reference Transaction Details](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
