@@ -9,16 +9,18 @@ A tagged refund allows a merchant to maintain the transaction history in Commerc
 <!-- theme: danger -->
 > A refund request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
 
-### Request Variables
-
-A tagged refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type.
-
 #### Refund Types
 
 Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
 - **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
 - **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+
+---
+
+## Request Variables
+
+A tagged refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type.
 
 <!-- theme: warning -->
 > In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
@@ -31,7 +33,7 @@ titles: referenceTransactionDetails, amount, merchantDetails
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
@@ -63,7 +65,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 <!-- type: tab-end -->
 
 ---
-### Endpoint
+
+## Endpoint
 
 <!-- theme: success -->
 > **POST** `/payments/v1/refunds`
@@ -77,7 +80,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a refunds payload request.
+Example of a refunds payload request.
 
 ```json
 
@@ -96,13 +99,14 @@ titles: Request, Response
   }
 }
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--
 type: tab
 -->
 
-##### Example of a refunds (201: Created) response.
+Example of a refunds (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -178,6 +182,5 @@ type: tab
 - [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-
 
 ---
