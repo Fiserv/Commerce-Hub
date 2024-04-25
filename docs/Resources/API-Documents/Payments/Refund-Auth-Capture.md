@@ -291,7 +291,7 @@ Example of a refund capture (201: Created) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
