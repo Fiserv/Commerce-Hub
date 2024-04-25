@@ -19,7 +19,7 @@ There are use cases where merchant requires processor token using standalone [to
 
 <!--
 type: tab
-titles: source, merchantDetails, additionalDataCommon
+titles: source, merchantDetails, directedRouting
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -51,8 +51,8 @@ The below table identifies the required parameters in the `processors` array.
 
 | Variable | Type | Maximum Length | Description |
 | ------ | ----| -----------| ------------------ |
-| `processorName` | _string_ | 256 | Identifies the payment processor. |
-| `processingPlatform` | _string_ | 256 | Identifies the payment platform of the processor. |
+| `processorName` | _string_ | 256 | Identifies the [payment processor](?path=docs/Resources/Guides/Directed-Routing.md). |
+| `processingPlatform` | _string_ | 256 | Identifies the [payment platform](?path=docs/Resources/Guides/Directed-Routing.md) of the processor. |
 
 <!-- type: tab-end -->
 
@@ -131,7 +131,7 @@ Example of a get partner token (201: Created) response.
     "card": {
       "expirationYear": "2028",
       "last4": "7237",
-      "scheme": "THD",
+      "scheme": "VISA",
       "bin": "981106",
       "expirationMonth": "10"
     }
