@@ -190,7 +190,7 @@ type: tab
 
 Example of a frictionless 3DS authentication (201: Created) response
 
-A successful 3DS authentication will return _________ in the ______ response. Upon successful authentication the merchant can send a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
+A successful 3DS authentication will return a `transactionState` of *AUTHENTICATED* or *DECLINED* in the response. Upon successful authentication the merchant can send a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -259,7 +259,7 @@ type: tab
 
 Example of a challenge 3DS authentication (201: Created) response.
 
-A challenge 3DS authentication will return _________ in the ______ response.
+A challenge 3DS authentication will return a `transactionState` of *WAITING* in the response.
 
 <!-- theme: warning -->
 > The merchant must complete a [verification](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) request before submitting a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
