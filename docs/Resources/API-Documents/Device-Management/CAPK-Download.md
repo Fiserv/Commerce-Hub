@@ -4,7 +4,7 @@ tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 
 # EMV CAPK Data Download
 
-Commerce Hub will provide the ability for a merchant to retrieve the latest EMV(Europay Mastercard Visa) CAPK (Certification Authority Public Key) data.
+Commerce Hub provides the ability for a merchant to retrieve the latest EMV Certification Authority Public Key *(CAPK)* data.
 
 ---
 
@@ -118,7 +118,7 @@ Example of a CAPK download payload request
 type: tab
 -->
 
-Example of a CAPK download (200: Created) response.
+Example of a CAPK download (200: Success) response.
 
 ```json
 {
