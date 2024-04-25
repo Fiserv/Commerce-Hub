@@ -4,6 +4,8 @@ tags: [Device Management, Batch Totals, Key Management, Download, CAPK, API Refe
 
 # Device Management
 
+Commerce Hub's device management APIs allows to manage your device security and download transactional data.
+
 ---
 
 ## Integrations

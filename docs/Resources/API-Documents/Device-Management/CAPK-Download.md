@@ -118,7 +118,7 @@ Example of a CAPK download payload request
 type: tab
 -->
 
-Example of a CAPK download (201: Created) response.
+Example of a CAPK download (200: Created) response.
 
 ```json
 {
@@ -164,7 +164,8 @@ Example of a CAPK download (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/tms/v1/capk-data)
-- [Device Management](?path=docs/Resources/API-Documents/Device_Management/Device-Management.md)
+- [Device Management](?path=docs/Resources/API-Documents/Device-Management)
 - [EMV Encryption](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [CAPK Status](?path=docs/Resources/API-Documents/Device-Management/CAPK-Status.md)
 
 ---
