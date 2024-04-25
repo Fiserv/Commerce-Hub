@@ -93,6 +93,7 @@ Example of a cancels payload request.
   }
 }
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/cancel)
 
 <!--
@@ -194,6 +195,7 @@ The below table identifies the valid values of the reason the merchant/customer 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/cancels)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)

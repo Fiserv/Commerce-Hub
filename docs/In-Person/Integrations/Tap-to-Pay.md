@@ -148,7 +148,7 @@ type: tab
 titles: Charges, Cancels, Refunds, Inquiry
 -->
 
-### Charges Request
+#### Charges Request
 
 <!-- theme: info -->
 > Currently Tap to Pay on iPhone only supports USD.
@@ -173,7 +173,7 @@ do {
 type: tab
 -->
 
-### Cancels Request
+#### Cancels Request
 
 At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md).
 
@@ -197,9 +197,9 @@ do {
 type: tab
 -->
 
-### Refunds Requests
+#### Refunds Requests
 
-#### Refund a Payment without Tap (Tagged Refund)
+##### Refund a Payment without Tap (Tagged Refund)
 
 <!-- theme: info -->
 > At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform a [Tagged Refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md).
@@ -217,7 +217,7 @@ do {
 }
 ```
 
-#### Refund a Payment with Tap (Unmatched Tagged Refund and Open Refund)
+##### Refund a Payment with Tap (Unmatched Tagged Refund and Open Refund)
 
 At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform an [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md). If no value is provided, an [open refunds](?path=docs/Resources/API-Documents/Payments/Refund-Open.md) be will performed. Amount is always required for both refund types.
 
