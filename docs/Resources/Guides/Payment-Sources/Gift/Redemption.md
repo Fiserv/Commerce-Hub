@@ -2,7 +2,7 @@
 tags: [Gift Card, Loyalty, Redemption, Payments]
 ---
 
-# Redemption
+# Gift Card Redemption
 
 Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location. When redeeming a gift card use the [payment request APIs](?path=docs/Resources/API-Documents/Payments/Payments.md) for charges, refunds and cancels along with the conditional request variables below.
 
