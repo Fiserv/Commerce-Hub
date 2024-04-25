@@ -1011,16 +1011,16 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ThreeDSDeviceDataInitializationRequest'
-#            examples:
-#              PaymentCard:
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentCard
-#                $ref: '#/components/examples/PaymentCardDeviceDataInitializationRequest'
-#              PaymentSession: 
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentSession
-#                $ref: '#/components/examples/PaymentSessionDeviceDataInitializationRequest'
-#              PaymentToken:
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentToken
-#                $ref: '#/components/examples/PaymentTokenDeviceDataInitializationRequest'
+            examples:
+              PaymentCard:
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardDeviceDataInitializationRequest'
+              PaymentSession: 
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionDeviceDataInitializationRequest'
+              PaymentToken:
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenDeviceDataInitializationRequest'
       responses:
         201: 
           description: Created
@@ -1028,16 +1028,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ThreeDSDeviceDataInitializationResponse'
-#              examples:
-#                PaymentCard:
-#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentCard
-#                  $ref: '#/components/examples/PaymentCardDeviceDataInitializationResponse'
-#               PaymentSession: 
-#                 summary: ThreeDSDeviceDataInitializationResponse with PaymentSession
-#                  $ref: '#/components/examples/PaymentSessionDeviceDataInitializationResponse'
-#                PaymentToken:
-#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentToken
-#                  $ref: '#/components/examples/PaymentTokenDeviceDataInitializationResponse'
+              examples:
+                PaymentCard:
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardDeviceDataInitializationResponse'
+                PaymentSession: 
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentSessionDeviceDataInitializationResponse'
+                PaymentToken:
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenDeviceDataInitializationResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -8325,6 +8325,93 @@ components:
                 count: '1'
                 lastOccurred: '2023-10-23T15:58:00.000000000Z'
 
+
+    PaymentCardDeviceDataInitializationRequest:
+      value:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            keyId: '5b92d78f6c8461095ba19dc96275fcd0'
+            encryptionBlock: 'JuHoI3TegNTzaPGEJO3BthocjWms+qQeA2xSLD1076hXNVO6T3IJNHulqC7eyfqg2EDqnUh/a7XoCvA4ChXW/6J8gSh0xolIobaXh0vKhEJTYOxk0Zhfp6gRyeqjgVvy1u7oNUqNvgE7Br4IKlu+Jfm4kh4w+NzGfFVoesN56I1pbj6SNURFYLoW5veoHh+RFHf/UeUsUbJhX7+9CA9iPAYlSSoJNSmNQ4acKSTWzrUb6SfmlyfMi4LSmh0Fq3xhJSacAscyv9KQBdnyBEfYrAakE9D7+ihQuB5JTCWY9h6SRaNeaZaK3Voq1hmnqzV2t3IUP0mHd6QlYz0yY1l4wg=='
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:4,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+        merchantDetails:
+          merchantId: '100012000001408'
+        transactionDetails:
+          authentication3DS: true
+
+    PaymentCardDeviceDataInitializationResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            apiTraceId: 'a5ec6f6e8050db7977e4d0ea00c6104a'
+            clientRequestId: 'ae6fd50372c68995220875284526ecc2'
+            transactionId: '838916029301'
+        transactionDetails:
+          authentication3DS: true
+          cavvInPrimary: false
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          methodData:
+            dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
+            encodedToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg'
+
+    PaymentTokenDeviceDataInitializationRequest:
+      value:
+        source:
+          sourceType: 'PaymentToken'
+          tokenData: '8378537502691015'
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+        merchantDetails:
+          merchantId: '100012000001408'
+        transactionDetails:
+          authentication3DS: true
+
+    PaymentTokenDeviceDataInitializationResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            apiTraceId: 'a5ec6f6e8050db7977e4d0ea00c6104a'
+            clientRequestId: 'ae6fd50372c68995220875284526ecc2'
+            transactionId: '838916029301'
+        transactionDetails:
+          authentication3DS: true
+          cavvInPrimary: false
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          methodData:
+            dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
+            encodedToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg'
+
+    PaymentSessionDeviceDataInitializationRequest:
+      value:
+        source:
+          sourceType: 'PaymentSession'
+          sessionId: 'df8c33d2-af27-4a3a-b7a0-61d4edf09cad'
+        merchantDetails:
+          merchantId: '100012000001408'
+        transactionDetails:
+          authentication3DS: true
+
+    PaymentSessionDeviceDataInitializationResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            apiTraceId: 'a5ec6f6e8050db7977e4d0ea00c6104a'
+            clientRequestId: 'ae6fd50372c68995220875284526ecc2'
+            transactionId: '838916029301'
+        transactionDetails:
+          authentication3DS: true
+          cavvInPrimary: false
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          methodData:
+            dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
+            encodedToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg'
+
     PaymentCardDccRequest:
       value:
         amount:
@@ -8684,3 +8771,4 @@ components:
         merchantDetails:
           terminalId: '10000001'
           merchantId: '100009000000035'              
+

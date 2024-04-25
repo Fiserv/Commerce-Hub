@@ -10,7 +10,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Initilization, Device Fingerprint]
 
 ## Device Data Initialization
 
-Initialize the 3DS session with Commerce Hub using the device data initiailization request. The response will return `encodedToken` and `dataCollectionUrl` in the the `methodData` object of `additionalData3DS`, which are required to collect the [device fingerprint](#device-fingerprint-capture) information.
+Initialize the 3DS session with Commerce Hub using the device data initialization request. The response will return `encodedToken` and `dataCollectionUrl` in the the `methodData` object of `additionalData3DS`, which are required to collect the [device fingerprint](#device-fingerprint-capture) information.
 
 ---
 
@@ -126,7 +126,7 @@ Example of a device data initialization payload request.
 type: tab
 -->
 
-Example of a device data intialization (201: Created) response.
+Example of a device data initialization (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -221,17 +221,67 @@ The Commerce Hub SDK can be imported into the merchant's website by adding the f
 
 #### Hidden iFrame Data Collection
 
+Description......
+
 ```javascript
 new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-container-div")   
     .then((result) => { })   
     .error(error) => { });
 ```
 
+#### Response Handling
+
+The following code snippet provides a sample response
+
+Description......
+
+<!--
+type: tab
+titles: Variables, Example 
+-->
+
+The below table identifies the parameters in the `providerCollectionStatus` object in the the `methodData` object of `additionalData3DS`.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `attempted` | *boolean* | N/A |  |
+| `attemptedTimestamp` | *string* |  |  |
+| `status` | *string* |  |  |
+| `completedTimestamp` | *string* | |  |
+
+<!--
+type: tab
+-->
+
+The following code snippet provides a sample response.
+
+```json
+{
+  "transactionDetails": {
+    "authentication3DS": true
+  },
+  "additionalData3DS": {
+    "serviceProvider": "CARDINAL",
+    "serviceProviderReferenceId": "bfc44ca7-0373-423e-8f55-e57e6523a149",
+    "methodData": {
+      "providerCollectionStatus": {
+        "attempted": true,
+        "attemptedTimestamp": "1665144961",
+        "status": "SUCCESS",
+        "completedTimestamp": "1665145361"
+      }
+    }
+  },
+  "ok": true
+}
+
+```
+
 ---
 
 ### Cardinal Cruise API
 
-The Cardinal Cruise API device data collection process uses the `methodData` fields of the `additionalData3DS` object returned in the [device data initialization](#device-data-initilazation) response. Merchants can choose to use either Cardinal response handling method as outlined in the [Cardinal Cruise Device Data Collection documention](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/1106870359/Option+1+-+JWT+-+Card+BIN+to+full+Card+Number+passed+in+JWT).
+The Cardinal Cruise API device data collection process uses the `methodData` fields of the `additionalData3DS` object returned in the [device data initialization](#device-data-initialization) response. Merchants can choose to use either Cardinal response handling method as outlined in the [Cardinal Cruise Device Data Collection documentation](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/1106870359/Option+1+-+JWT+-+Card+BIN+to+full+Card+Number+passed+in+JWT).
 
 ---
 
