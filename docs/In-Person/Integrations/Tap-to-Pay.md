@@ -35,7 +35,7 @@ Obtain an [API-Key and API-Secret](?path=docs/Resources/Guides/Dev-Studio/Key-Ma
 
 ## Step 3: Load Tap to Pay on iPhone Package
 
-Create a new project or open your existing app in XCode and [add](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) the Fiserv Tap to Pay on iPhone Package using the following URL: _<https://github.com/Fiserv/TTPPackage>_.
+Create a new project or open your existing app in XCode and [add the Fiserv Tap to Pay on iPhone Package](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app) using the following URL: _https://github.com/Fiserv/TTPPackage_.
 
 ---
 
@@ -76,12 +76,12 @@ if !fiservTTPCardReader.readerIsSupported() {
 
 ---
 
-## Step 6: Obtain Token
+## Step 6: Obtain Payment Service Provider Token
 
-Obtain a session token to utilize the SDK.
+Obtain a PSP session token to utilize the SDK.
 
 <!-- theme: info -->
-> The session token will expire in 24 hours, the merchant is responsible for keeping track of when to obtain a new token.
+> The session token has a time to live (TTL) of 48 hours. Included is an auto-refresh feature that will request a new token when the TTL value is 30 minutes or less. Moving the app from the background to the foreground, as well as unlocking _(a locked iPhone)_ will trigger this check and the refresh will occur based on the time remaining of the token.
 
 ```Swift
 do {
@@ -105,6 +105,18 @@ do {
     try await fiservTTPCardReader.linkAccount()
 } catch let error as FiservTTPCardReaderError {
     ///TODO handle exception
+}
+```
+
+#### Is Account Linked
+
+When targeting iOS 16.4 or greater, the option to check if the account is already linked is [available](https://developer.apple.com/documentation/proximityreader/paymentcardreader/isaccountlinked(using:)).
+
+```Swift
+do {
+    let isLinked = try await fiservTTPCardReader.isAccountLinked()
+} catch let error as FiservTTPCardReaderError {
+    // TODO handle exception
 }
 ```
 
@@ -133,7 +145,7 @@ Submit a payment request to Commerce Hub.
 
 <!--
 type: tab
-titles: Charges, Cancels, Refunds
+titles: Charges, Cancels, Refunds, Inquiry
 -->
 
 ### Charges Request
@@ -163,6 +175,8 @@ type: tab
 
 ### Cancels Request
 
+At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md).
+
 <!-- theme: info -->
 > To support partial cancels it must be configured in Merchant Boarding and Configuration. Please contact your account representative for details.
 
@@ -183,7 +197,12 @@ do {
 type: tab
 -->
 
-### Refunds Request
+### Refunds Requests
+
+#### Refund a Payment without Tap (Tagged Refund)
+
+<!-- theme: info -->
+> At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform a [Tagged Refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md).
 
 ```Swift
 let amount = 10.99
@@ -195,6 +214,38 @@ do {
     ///TODO inspect the refundResponse to see the result   
 } catch let error as FiservTTPCardReaderError {
     ///TODO handle exception
+}
+```
+
+#### Refund a Payment with Tap (Unmatched Tagged Refund and Open Refund)
+
+At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform an [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md). If no value is provided, an [open refunds](?path=docs/Resources/API-Documents/Payments/Refund-Open.md) be will performed. Amount is always required for both refund types.
+
+```Swift
+let amount = 10.99
+let referenceTransactionId = "1234567890"
+do {
+  let refundResponse = try await refundTransaction(
+      amount:amount,
+      referenceTransactionId = referenceTransactionId)
+    ///TODO inspect the refundResponse to see the result   
+} catch let error as FiservTTPCardReaderError {
+    ///TODO handle exception
+}
+```
+
+<!--
+type: tab
+-->
+
+At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform an [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md).
+
+```Swift
+do {
+    let inquireResponse = try await fiservTTPCardReader.inquiryTransaction(referenceTransactionId: referenceTransactionId, referenceMerchantTransactionId: referenceMerchantTransactionId, referenceMerchantOrderId: referenceMerchantOrderId, referenceOrderId: referenceOrderId)
+    // TODO inspect the Inquire Response to see the result
+} catch let error as FiservTTPCardReaderError {
+    // TODO handle exception
 }
 ```
 
