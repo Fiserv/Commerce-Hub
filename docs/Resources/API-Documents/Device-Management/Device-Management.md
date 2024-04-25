@@ -17,7 +17,7 @@ Commerce Hub supports the following integrations for managing payment devices.
 <!-- type: card
 title: CAPK Data
 description: Manage the authentication of EMV payment cards, ensuring their validation during transaction.
-link: ?path=docs/In-Person/Device_Management/CAPK.md
+link: ?path=docs/Resources/API-Documents/Device-Management/CAPK.md
 -->
 
 <!-- type: card

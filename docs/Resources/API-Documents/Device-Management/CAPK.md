@@ -22,11 +22,13 @@ Build an integration to manage CAPK management.
 <!-- type: card
 title: CAPK Download
 description: The process of securely acquiring and installing (CAPK) data onto payment terminals. 
-link: ?path=docs/In-Person/Device_Management/CAPK-Download.md
+link: ?path=docs/Resources/API-Documents/Device-Management/CAPK-Download.md
 -->
 
 <!-- type: card
 title: CAPK Status
 description: The process provides confirmation on whether they payment terminal has successfully retrieved and updated the (CAPK).
-link: ?path=docs/In-Person/Device_Management/CAPK-Status.md
+link: ?path=docs/Resources/API-Documents/Device-Management/CAPK-Status.md
 -->
+
+---

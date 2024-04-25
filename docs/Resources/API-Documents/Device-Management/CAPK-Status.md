@@ -4,7 +4,7 @@ tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
 
 # EMV CAPK Data Status
 
-Commerce Hub will provide the ability for a merchant to retrieve the current status of the EMV CAPK data.
+Commerce Hub provides the ability for a merchant to retrieve the current status of their EMV Certification Authority Public Key *(CAPK)* data.
 
 <!-- theme: info -->
 > Once an update it available, merchants are expected to download the new version of CAPK data within six months.
@@ -107,7 +107,7 @@ Example of a CAPK status payload request
 type: tab
 -->
 
-Example of a CAPK Status (200: Created) response.
+Example of a CAPK Status (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
