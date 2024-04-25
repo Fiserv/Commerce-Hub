@@ -1,21 +1,14 @@
 ---
-tags: [Proccesor Token, Partner Token, Tokenization, API Reference]
+tags: [Processor Token, Partner Token, Tokenization, API Reference]
 ---
 
-# Get Partner Token
+# Partner Tokens
 
-There are use cases where merchant requires processor token using standalone [tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization) calls. Merchant uses encryption at point of interaction (P2PE) and does not have access to PCI data. Merchant must accept an offline transaction and requires processor token. Merchant performs direct settlement with the backend settlement systems and needs to submit the proccesor token in the settlement file.
-
-##### Supported Proccessors
-
-- Chase
-- [Citi](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Citi.md)
-- [HD Supply](?path=docs/Resources/Guides/Payment-Sources/Private-Label/HDS.md)
-- [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md)
+The Partner-Tokens request allows a merchant to submit Commerce Hub's TransAmor [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and receive a third party partner-token. This token can be used to communicate directly with the third-party partner when the merchant performs direct settlement or must accept an offline transaction.
 
 ---
 
-## Mimimum Requirements
+## Request Variables
 
 <!--
 type: tab
@@ -106,7 +99,7 @@ Example of a token only payload request.
 type: tab
 -->
 
-Example of a get partner token (201: Created) response.
+Example of a get partner token (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -176,11 +169,8 @@ Example of a get partner token (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
-- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
-- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---
