@@ -4,10 +4,10 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Payment Source]
 
 # 3-D Secure Request
 
-Commerce Hub allows a merchant to pass the 3-D Secure _(3DS)_ authentication results that were obtained through a Commerce Hub or a third-party 3-D Secure provider when sending a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. The [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) _PaymentCard_ and _PaymentToken_ or [reference transaction identifier](#request-with-reference-identifier) is used by the merchant as  when sending the transaction to Commerce Hub, along with the 3DS response data.
+Commerce Hub allows a merchant to pass the 3-D Secure *(3DS)* authentication results that were obtained through a Commerce Hub or a third-party 3-D Secure provider when sending a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. The [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) *PaymentCard* and *PaymentToken* or [reference transaction identifier](#request-with-reference-identifier) is used by the merchant as  when sending the transaction to Commerce Hub, along with the 3DS response data.
 
 <!-- theme: warning -->
-> Merchants are required to have the relevant Payment Card Industry _(PCI)_ Compliance capabilities to process and store card data.
+> Merchants are required to have the relevant Payment Card Industry *(PCI)* Compliance capabilities to process and store card data.
 
 ---
 
@@ -26,7 +26,7 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `sourceType` | _string_ | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are _PaymentSession_, _PaymentCard_, or _PaymentToken_ |
+| `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
 <!--
 type: tab
@@ -36,26 +36,26 @@ The below table identifies the required parameters in the `additionalData3DS` ob
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `dsTransactionId` | _string_ | 60 | Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction |
-| `authenticationStatus` | _string_ | 2 | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
-| `authenticationAttemptResult` | _string_ | 1024 | Result of authentication attempt from Payer Authentication Response (PaRes). 3DS 1.x |
-| `mpiData` | _object_ | N/A | Merchant plug-in (MPI) data from 3-D Secure (3DS) authentication. |
-| `versionData` | _object_ | N/A | Additional version data passed during 3-D Secure (3DS) flows. |
+| `dsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction |
+| `authenticationStatus` | *string* | 2 | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
+| `authenticationAttemptResult` | *string* | 1024 | Result of authentication attempt from Payer Authentication Response (PaRes). 3DS 1.x |
+| `mpiData` | *object* | N/A | Merchant plug-in (MPI) data from 3-D Secure (3DS) authentication. |
+| `versionData` | *object* | N/A | Additional version data passed during 3-D Secure (3DS) flows. |
 
 The below table identifies the `mpiData` parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `cavv` | _string_ | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
-| `xid` | _string_ | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce. |
-| `eci` | _string_ | 256 | Payment system-specific value provided by the Access Control Server (ACS) or Directory Server (DS) to indicate the results of the attempt to authenticate the cardholder. |
-| `tavv` | _string_ | 512 | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction. |
+| `cavv` | *string* | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
+| `xid` | *string* | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce. |
+| `eci` | *string* | 256 | Payment system-specific value provided by the Access Control Server (ACS) or Directory Server (DS) to indicate the results of the attempt to authenticate the cardholder. |
+| `tavv` | *string* | 512 | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction. |
 
 The below table identifies the `versionData` parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `recommendedVersion` | _string_ | 6 | Recommended 3DS version as specified by the card issuer. |
+| `recommendedVersion` | *string* | 6 | Recommended 3DS version as specified by the card issuer. |
 
 <!-- type: tab-end -->
 
@@ -217,8 +217,8 @@ The below table identifies the available parameters in the `referenceTransaction
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `referenceTransactionId` | _string_ | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-| `referenceMerchantTransactionId` | _string_ | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
 
 <!--
 type: tab
@@ -228,17 +228,10 @@ The below table identifies the available parameters in the `merchantDetails` obj
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
-
----
-
-### Endpoint
-
-<!-- theme: success -->
-> **POST** `/payments/v1/charges`
 
 ---
 
@@ -351,6 +344,7 @@ Example of a charges (201: Created) response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
 - [Additional Data 3DS](?path=docs/Resources/Master-Data/Additional-Data-3DS.md)
+- [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 

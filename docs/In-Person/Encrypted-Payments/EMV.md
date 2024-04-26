@@ -17,7 +17,6 @@ A device encrypts the customer's payment source and sends the encryption data to
 
 Accept PINless and signature based EMV payment cards.
 
-
 ### Request Variables
 
 <!-- theme: info -->
@@ -83,7 +82,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentEMV.
+Example of a charge payload request using PaymentEMV.
 
 ```json
 {
@@ -132,7 +131,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -468,6 +467,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [CAPK Data](?path=docs/Resources/API-Documents/Device_Management/CAPK.md)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)

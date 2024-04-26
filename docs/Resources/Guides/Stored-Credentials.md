@@ -20,6 +20,9 @@ The following variables are used in the initial `PaymentToken` request and subse
 <!--theme:info-->
 > It is recommended that the merchant captures [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
 
+<!--theme:info-->
+> It is recommended that the merchant captures [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
+
 <!--
 type: tab
 titles: storedCredentials, additionalDataCommon
