@@ -2,16 +2,16 @@
 tags: [Private Label, Payment Sources]
 ---
 
-# HD Supply
+# HD Supply Private Label
 
 HD Supply is a private label card that is a fully owned subsidiary of The Home Depot. Customers are issued an HD Pro card that only be used with The Home Depot.
 
-<!--theme:info-->
-> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
+<!-- theme: warning -->
+> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) will need to be submitted as an [open refund](?pathdocs/Resources/API-Documents/Payments/Refund-Open.md). For more information, please contact your account representative.
 
 ---
 
-## Request Variables
+## Parameters
 
 <!--theme:info-->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: *false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
@@ -32,6 +32,8 @@ The below table identifies the required parameters from `additionalPosInformatio
 ---
 
 ## Payload Example
+
+The example below contains the minimum [parameters](#parameters) for a successful in-person [charges request](?path=docs/Resources/API-Documents/Payments/Charges.md) using an HD Supply PLCC. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
@@ -77,20 +79,11 @@ Example of a charge payload request using an HDS PLCC
   "merchantDetails": {
     "merchantId": "100012000100291",
     "terminalId": "10000087"
-  },
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "processorName": "HD_SUPPLY",
-          "processingPlatform": "PRIVATE_LABEL",
-          "priority": "PRIMARY"
-        }
-      ]
-    }
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
@@ -201,13 +194,11 @@ Example of a charge (201: Created) response
     },
     {
       "tokenData": "1010105454117237",
-      "tokenSource": "HD_SUPPLY"
+      "tokenSource": "HD_SUPPLY",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
     }
-  ],
-  "paymentToken": {
-    "tokenData": "1010105904117237",
-    "tokenSource": "HD_SUPPLY"
-  }
+  ]
 }
 ```
 
@@ -220,6 +211,7 @@ Example of a charge (201: Created) response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---
