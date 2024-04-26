@@ -108,7 +108,7 @@ do {
 }
 ```
 
-#### Is Account Linked
+##### Is Account Linked
 
 When targeting iOS 16.4 or greater, the option to check if the account is already linked is [available](https://developer.apple.com/documentation/proximityreader/paymentcardreader/isaccountlinked(using:)).
 

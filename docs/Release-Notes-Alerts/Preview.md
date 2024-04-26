@@ -9,7 +9,7 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 <!-- theme: info -->
 > The upcoming features and updates can be viewed by changing the dropdown from **Active** to **Preview** in the left navigation when viewing an article or API.
 
-#### Release Types
+##### Release Types
 
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
@@ -27,6 +27,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Support [Dynamic Currency Conversion *(DCC)*](?path=docs/Resources/Guides/Global-Currency/Currency-Conversion.md) rate requests for BIN lookup and currency lookup | Feature |
 | Support [EMV Certification Authority Public Key *(CAPK)*](?path=?path=docs/In-Person/Device_Management/CAPK.md) download and status verification | Feature |
+| [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support unmatched and open refunds, inquiry and account link verification | Update |
 
 ---
 
