@@ -143,6 +143,8 @@
       link: docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
+    - title: Pay By Bank
+      link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
     - title: Response Handling
       link: docs/Resources/Guides/Response-Codes/Response-Handling.md
     - title: Split Shipment

@@ -2,16 +2,15 @@
 tags: [Payment Check, Payment Sources]
 ---
 
+# PaymentCheck
 
-# Payment Check
-
-Allows merchants to securely process payments directly from customers' bank accounts. Integrated with the Payeezy Gateway, First Data's TeleCheck® solution offers features like warranty and verification for enhanced security and convenience. With multiple integration methods available, merchants can accept one-time and recurring payments, providing additional flexibility and convenience for customers.
+Commerce Hubs allows merchants to securely process payments directly from customers' bank accounts. Payment Check offers enhanced security and convenience. With multiple integration methods available, merchants can accept one-time and recurring payments, providing additional flexibility and convenience for customers.
 
 ---
 
 ## Request Variables
 
-The following variables are also required when submitting a pay by bank request.
+The following variables are required when submitting a *PaymentCheck* request.
 
 <!--
 type: tab
@@ -54,7 +53,7 @@ The below table identifies the required parameters in the `transactionInteractio
 
 | Variable | Data Type| Maximum Length | Required|  Description |
 | --------- | ---------- | -------- | --------- | ----- |
-| ADDDD
+| `origin` | *string* | 4 | The source of the transaction |
 
 <!-- type: tab-end -->
 
@@ -64,10 +63,46 @@ The below table identifies the required parameters in the `transactionInteractio
 
 <!--
 type: tab
-titles: Request, Response
+titles: source, check, customer
 -->
 
-Example of a pay by bank payload request
+The below table identifies the parameters in the `source` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ------ | --- |
+| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
+| `card` | *object* | N/A |  &#10004; | Contains the payment card details |
+| `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `check` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ----------- |---|
+| `routingNumber` | *string* | 45 | Routing number endorsed on the check. |
+| `accountNumber` | *string* | 45 | Account number endorsed on the check. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `customer` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ----------- |---|
+| `email` | *string* | 256 | Customer email address |
+
+<!-- theme: info -->
+> Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
+
+<!-- type: tab-end -->
+
+---
+
+Example of a paymentCheck payload request
 
 ```json
 {
@@ -83,20 +118,20 @@ Example of a pay by bank payload request
     "currency": "USD"
   },
   "billingAddress": {
-    "firstName": "",
-    "lastName": "",
+    "firstName": "Raghavendiran",
+    "lastName": "Kannan",
     "address": {
-      "street": "",
-      "city": "",
-      "stateOrProvince": "",
-      "postalCode": ""
+      "street": "100AshfordGablesDr",
+      "city": "Atlanta",
+      "stateOrProvince": "Georgia",
+      "postalCode": "30338"
     },
     "phone": {
-      "phoneNumber": ""
+      "phoneNumber": "123-123-1234"
     }
   },
   "customer": {
-    "email": ""
+    "email": "customer@domain.com"
   },
   "transactionInteraction": {
     "origin": "ECOM"
@@ -214,6 +249,10 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Refund Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
+- [Multi-Use Public Key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
+- [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
+- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 
 ---
