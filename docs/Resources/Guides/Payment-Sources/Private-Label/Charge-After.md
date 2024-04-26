@@ -2,33 +2,53 @@
 tags: [Private Label, Payment Sources]
 ---
 
-# ChargeAfter Card Present (CP)
+# ChargeAfter Private Label
 
-ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
-
-<!-- theme: warning -->
-> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
+ChargeAfter is a leading network for Buy Now Pay Later *(BNPL)* consumer point-of-sale financing and offers private label card services for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) and [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) merchants.
 
 <!-- theme: warning -->
-> Merchant must pass origin for CP/CNP Auth and Open refund transactions.
-Origin supported  - MOTO, ECOM, POS
+> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) will need to be submitted as an [open refund](?pathdocs/Resources/API-Documents/Payments/Refund-Open.md). For more information, please contact your account representative.
 
 ---
 
-## Request Variables
+## Parameters
 
 <!--theme:info-->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: *false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 <!--
 type: tab
-titles: customFields, JSON Example
+titles: origin, additionalDataCommon, customFields, privateLabel
 -->
 
-The below table identifies the key value pairs to indentify the required `customFields` in the `additionalDataCommon` object.
+<!-- theme: warning -->
+> The transaction `origin` is required for all transaction types.
+
+The below table identifies the required parameter in the `transactionInteraction` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `origin` | *string* | 4 | The [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origin) of the transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the conditional parameters in the `additionalDataCommon` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `customFields` | *object* | 64 | Identifies custom fields required to process a ChargeAfter request |
+| `privateLabel` | *object* | 32  | Object containing private label specific details |
+
+<!--
+type: tab
+-->
+
+The below table identifies the key value pairs to identify the merchant and required `customFields` object.
 
 <!-- theme: info -->
-> Values are merchant specfic, please contact your account representative for more details.
+> Values are merchant specific, please contact your account representative for more details.
 
 | Key | Description |
 | -------- | -------- |
@@ -45,12 +65,7 @@ The below table identifies the key value pairs to indentify the required `custom
 | Lookup_Strategy | Defines the DETERMINISTIC lookup with ChargeAfter |
 | Sales_Doc_ID | Invoice or sales order document number |
 
-<!--
-type: tab
--->
-
 ```json
-
 {
   "additionalDataCommon": {
     "customFields": [
@@ -105,14 +120,26 @@ type: tab
     ]
   }
 }
-
 ```
+
+<!--
+type: tab
+-->
+
+The below table identifies the conditional parameters in the `privateLabel` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
+| `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the minimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
 
 <!-- type: tab-end -->
 
 ---
 
 ## Payload Example
+
+The example below contains the minimum [parameters](#parameters) for a successful in-person [charges request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a ChargeAfter PLCC. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
@@ -203,18 +230,11 @@ Example of a charge payload request using a ChargeAfter PLCC
         "value": "12443-605"
       }
     ],
-    "directedRouting": {
-      "processors": [
-        {
-          "processorName": "CHARGE_AFTER",
-          "processingPlatform": "PRIVATE_LABEL",
-          "priority": "PRIMARY"
-        }
-      ]
-    }
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
@@ -344,368 +364,11 @@ Example of a charge (201: Created) response
     },
     {
       "tokenData": "1100000000056349",
-      "tokenSource": "CHARGE AFTER"
+      "tokenSource": "CHARGEAFTER",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
     }
   ]
-}
-```
-
-<!-- type: tab-end -->
-
----
-
-## ChargeAfter Card Not Present (CNP)
-
-ChargeAfter Card Not Present (CNP) is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
-
-<!-- theme: warning -->
-> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
-
-<!-- theme: warning -->
-> Merchant must pass origin for CP/CNP Auth and Open refund transactions.
-Origin supported  - MOTO, ECOM, POS
-
----
-
-## Request Variables
-
-<!--theme:info-->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: *false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
-
-<!--
-type: tab
-titles: Conditional Fields
--->
-
-The below table identifies conditional feilds that can be passed for CNP request.
-
-| Fields |
-| -------- |
-| `Customer.firstName`|
-| `Customer.lastName` |
-| `address.street` |
-| `address.houseNumberOrName` |
-| `address.city` |
-| `address.stateOrProvince` |
-| `address.postalCode` |
-| `merchantOrderId` |
-| `paymentReceipt.processorResponseDetails.approvalCode` |
-
----
-
-The below table identifies conditional feilds that can be passed for CNP response.
-
-| Fields |
-| -------- |
-| `Customer.firstName`|
-| `Customer.lastName` |
-| `merchantDetails.Promotional_Code` |
-| `BankAssociationDetails.financetype` |
-
-<!-- type: tab-end -->
-
----
-
-## Payload Example
-
-<!--
-type: tab
-titles: Request, Response
--->
-
-Example of a charge payload request using a ChargeAfter CNP
-
-```json
-{
-  "amount": {
-    "total": 1,
-    "currency": "USD"
-  },
-  "customer": {
-    "merchantCustomerId": "272",
-    "firstName": "THDApp",
-    "lastName": "Testing Two"
-  },
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "7776768052115754",
-      "expirationMonth": "11",
-      "expirationYear": "2025",
-      "securityCode": "170"
-    }
-  },
-  "billingAddress": {
-    "firstName": "Jane",
-    "lastName": "Smith",
-    "address": {
-      "street": "5 CONCOURSE PARKWAY STE 300",
-      "city": "ATLANTA",
-      "houseNumberOrName": "",
-      "stateOrProvince": "GA",
-      "postalCode": "30328",
-      "country": "USA"
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": false,
-    "merchantOrderId": "5698874392878089",
-    "merchantTransactionId": "JHARBTUTO0SN"
-  },
-  "transactionInteraction": {
-    "origin": "ECOM",
-    "posEntryMode": "MANUAL",
-    "posConditionCode": "CARD_NOT_PRESENT_ECOM",
-    "terminalTimestamp": "2024-03-26T03:41:58Z",
-    "additionalPosInformation": {
-      "dataEntrySource": "MOBILE_TERMINAL",
-      "posFeatures": {
-        "pinAuthenticationCapability": "UNSPECIFIED",
-        "terminalEntryCapability": "UNSPECIFIED"
-      }
-    }
-  },
-  "merchantDetails": {
-    "merchantId": "100012000102008",
-    "terminalId": "10000001"
-  },
-  "additionalDataCommon": {
-    "privateLabel": {
-      "minimumSpendExemptIndicator": "EXEMPT",
-      "creditPlan": "00100"
-    },
-    "customFields": [
-      {
-        "key": " Request_Date_Time_GMT",
-        "value": "2024-01-16T05:32:54Z"
-      },
-      {
-        "key": " Request_Date_Time_Local",
-        "value": "2024-01-16T05:32:54Z"
-      },
-      {
-        "key": "Requestor_Channel_Code",
-        "value": "STORE"
-      },
-      {
-        "key": " Requestor_Organization_Code",
-        "value": "HOME DEPOT"
-      },
-      {
-        "key": "Retailer_Channel",
-        "value": "E-commerce"
-      },
-      {
-        "key": "Consumer_Decision",
-        "value": "ACCEPT"
-      },
-      {
-        "key": " Terms_Verified",
-        "value": "Y"
-      },
-      {
-        "key": "Lookup_Strategy",
-        "value": "DETERMINISTIC"
-      }
-    ],
-    "directedRouting": {
-      "processors": [
-        {
-          "processorName": "CHARGE_AFTER",
-          "processingPlatform": "PRIVATE_LABEL",
-          "priority": "PRIMARY"
-        }
-      ]
-    }
-  }
-}
-```
-
-<!--
-type: tab
--->
-
-Example of a charge (201: Created) response
-
-<!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-{
-  "res": {
-    "transactionDetails": {
-      "captureFlag": false,
-      "transactionCaptureType": "terminal_direct",
-      "merchantTransactionId": "JHARBTUTO0SN",
-      "merchantOrderId": "5698874392878089",
-      "partialApproval": true,
-      "retrievalReferenceNumber": "5a92365bb7bb"
-    },
-    "gatewayResponse": {
-      "transactionType": "CHARGE",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails": {
-        "orderId": "CHG0142e7d21b1c3286d3bd1aa77da0c63f15",
-        "clientRequestId": "7201470",
-        "transactionTimestamp": "2024-03-26T19:42:01.305523898Z",
-        "transactionId": "d8961fd9362649019d8b5a92365bb7bb",
-        "apiTraceId": "d8961fd9362649019d8b5a92365bb7bb"
-      }
-    },
-    "additionalDataCommon": {
-      "privateLabel": {
-        "minimumSpendExemptIndicator": "EXEMPT",
-        "creditPlan": "00100"
-      },
-      "customFields": [
-        {
-          "value": "2024-01-16T05:32:54Z",
-          "key": "Request_Date_Time_GMT"
-        },
-        {
-          "value": "2024-01-16T05:32:54Z",
-          "key": "Request_Date_Time_Local"
-        },
-        {
-          "value": "STORE",
-          "key": "Requestor_Channel_Code"
-        },
-        {
-          "value": "HOME DEPOT",
-          "key": "Requestor_Organization_Code"
-        },
-        {
-          "value": "E-commerce",
-          "key": "Retailer_Channel"
-        },
-        {
-          "value": "ACCEPT",
-          "key": "Consumer_Decision"
-        },
-        {
-          "value": "Y",
-          "key": "Terms_Verified"
-        },
-        {
-          "value": "DETERMINISTIC",
-          "key": "Lookup_Strategy"
-        },
-        {
-          "value": "HOME DEPOT",
-          "key": "Requestor_Organization_Code"
-        },
-        {
-          "value": "Y",
-          "key": "Terms_Verified"
-        },
-        {
-          "value": "12443-605",
-          "key": "Sales_Doc_ID"
-        },
-        {
-          "value": "NCLCP",
-          "key": "Requestor_User_ID"
-        },
-        {
-          "value": "2024-03-26T03:41:58Z",
-          "key": "Request_Date_Time_GMT"
-        },
-        {
-          "value": "02_00_00",
-          "key": "Service_Version_ID"
-        },
-        {
-          "value": "2024-03-26T03:41:58Z",
-          "key": "Request_Date_Time_Local"
-        },
-        {
-          "value": "Sale",
-          "key": "Requestor_POS_Event_Code"
-        },
-        {
-          "value": "PRE_AUTH",
-          "key": "Transaction_Request_Type"
-        }
-      ]
-    },
-    "paymentTokens": [
-      {
-        "tokenData": "1100000000040685",
-        "tokenSource": "CHARGE AFTER"
-      },
-      {
-        "tokenResponseCode": "000",
-        "tokenResponseDescription": "SUCCESS",
-        "tokenData": "7308434633815754",
-        "tokenSource": "TRANSARMOR"
-      }
-    ],
-    "paymentReceipt": {
-      "processorResponseDetails": {
-        "approvalStatus": "APPROVED",
-        "approvalCode": "376909",
-        "hostResponseMessage": "Charge Approved",
-        "bankAssociationDetails": {
-          "bankId": "73"
-        },
-        "host": "PRIVATE_LABEL",
-        "localTimestamp": "2024-03-26T19:42:06.0769637Z",
-        "responseMessage": "Approved",
-        "processor": "CHARGE_AFTER",
-        "responseCode": "000"
-      },
-      "approvedAmount": {
-        "total": 1,
-        "currency": "USD"
-      }
-    },
-    "billingAddress": {
-      "firstName": "Jane",
-      "lastName": "Smith",
-      "address": {
-        "country": "USA",
-        "stateOrProvince": "GA",
-        "city": "ATLANTA",
-        "street": "5 CONCOURSE PARKWAY STE 300",
-        "houseNumberOrName": "",
-        "postalCode": "30328"
-      }
-    },
-    "source": {
-      "sourceType": "PaymentCard",
-      "card": {
-        "expirationYear": "2025",
-        "last4": "5754",
-        "scheme": "THD",
-        "bin": "777676",
-        "expirationMonth": "11"
-      }
-    },
-    "merchantDetails": {
-      "merchantId": "100012000102008",
-      "promotionCode": "7900",
-      "terminalId": "10000001"
-    },
-    "transactionInteraction": {
-      "terminalTimestamp": "2024-03-26T03:41:58Z",
-      "origin": "ECOM",
-      "additionalPosInformation": {
-        "posFeatures": {
-          "terminalEntryCapability": "UNSPECIFIED",
-          "pinAuthenticationCapability": "UNSPECIFIED"
-        },
-        "dataEntrySource": "MOBILE_TERMINAL"
-      },
-      "posConditionCode": "CARD_NOT_PRESENT_ECOM",
-      "posEntryMode": "MANUAL",
-      "eciIndicator": "CHANNEL_ENCRYPTED"
-    },
-    "customer": {
-      "firstName": "THDApp",
-      "lastName": "Testing Two"
-    }
-  }
 }
 ```
 
@@ -718,6 +381,9 @@ Example of a charge (201: Created) response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
+- [Billing Address](?path=docs/Resources/Master-Data/Address.md)
+- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---
