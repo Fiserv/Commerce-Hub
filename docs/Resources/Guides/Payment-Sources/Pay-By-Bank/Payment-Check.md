@@ -8,58 +8,11 @@ Commerce Hubs allows merchants to securely process payments directly from custom
 
 ---
 
-## Request Variables
+## Parameters
+
+### Request Variables
 
 The following variables are required when submitting a *PaymentCheck* request.
-
-<!--
-type: tab
-titles: amount, transactionDetails, merchantDetails, transactionInteraction
--->
-
-The below table identifies the parameters in the `amount` object.
-
-| Variable | Type | Maximum Length | Required | Description |
-| -------- | -- | ------------ | ----- | ------------------ |
-| `total` | *number* | 18,3  | &#10004; | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | &#10004; | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Maximum Length |Required | Description |
-|---------|----------|----------------|---------|---|
-| `captureFlag` | *boolean* | 5 | &#10004; | Designates if the transaction should be captured. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Maximum Length | Required|  Description |
-| --------- | ---------- | -------- | --------- | ----- |
-| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionInteraction` object.
-
-| Variable | Data Type| Maximum Length | Required|  Description |
-| --------- | ---------- | -------- | --------- | ----- |
-| `origin` | *string* | 4 | The source of the transaction |
-
-<!-- type: tab-end -->
-
----
-
-## Payload Example
 
 <!--
 type: tab
@@ -70,9 +23,8 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------ | --- |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `card` | *object* | N/A |  &#10004; | Contains the payment card details |
-| `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCheck* for ACH transactions |
+| `check` | *object* | N/A |  &#10004; | Contains the payment check details |
 
 <!--
 type: tab
@@ -82,8 +34,11 @@ The below table identifies the required parameters in the `check` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ----------- |---|
-| `routingNumber` | *string* | 45 | Routing number endorsed on the check. |
-| `accountNumber` | *string* | 45 | Account number endorsed on the check. |
+| `routingNumber` | *string* | 45 | &#10004; | Routing number endorsed on the check |
+| `accountNumber` | *string* | 45 | &#10004; | Account number endorsed on the check |
+| `checkType` | *string* | 256 | &#10004; | Describes check type |
+| `checkData` | *String* | 45 | &#10004; | Identifying data for the check presented (i.e check number). |
+| `accountType` | *string* | 45 | &#10004; | Account number endorsed on the check |
 
 <!--
 type: tab
@@ -93,55 +48,65 @@ The below table identifies the required parameters in the `customer` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ----------- |---|
-| `email` | *string* | 256 | Customer email address |
+| `email` | *string* | 256 | &#10004; | Customer email address |
+| `firstName` | *string* | 256 | &#10004; | Customer first name |
+| `lastName` | *string* | 256 | &#10004; | Customer last name |
+| `email` | *string* | 256 | &#10004; | Customer email address |
+| `dateOfBirth` | *string* | 10 | &#10004; | Customer date of birth in YYYY-MM-DD format.|
+| `driverLicenseNumber` | *string* | 256 | &#10004; | Customer driver license number |
+| `driverLicenseState` | *string* | 256 | &#10004; | Driver license state code |
+| `taxid` | *string* | N/A | &#10004; | Customer tax ID number. |
 
 <!-- theme: info -->
-> Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
+> Refer to the [customer](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
 
 <!-- type: tab-end -->
 
 ---
 
+## Payload Example
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
 Example of a paymentCheck payload request
 
 ```json
 {
-  "source": {
-    "sourceType": "PaymentCheck",
-    "check": {
-      "routingNumber": "123456789",
-      "accountNumber": "8456234852689"
-    }
-  },
   "amount": {
     "total": 100,
     "currency": "USD"
   },
-  "billingAddress": {
-    "firstName": "Raghavendiran",
-    "lastName": "Kannan",
-    "address": {
-      "street": "100AshfordGablesDr",
-      "city": "Atlanta",
-      "stateOrProvince": "Georgia",
-      "postalCode": "30338"
-    },
-    "phone": {
-      "phoneNumber": "123-123-1234"
+  "source": {
+    "sourceType": "PaymentCheck",
+    "check": {
+      "accountNumber": "144155167",
+      "routingNumber": "121000248",
+      "checkType": "Business",
+      "checkData": "3654803",
+      "accountType": "Savings"
     }
-  },
-  "customer": {
-    "email": "customer@domain.com"
-  },
-  "transactionInteraction": {
-    "origin": "ECOM"
   },
   "transactionDetails": {
     "captureFlag": true
   },
   "merchantDetails": {
-    "merchantId": "100009000000100",
-    "terminalId": "00000001"
+    "merchantId": "100184000000076",
+    "terminalId": "10000001"
+  },
+  "transactionInteraction": {
+    "origin": "MOTO"
+  },
+  "customer": {
+    "firstName": "ZEN",
+    "lastName": "R",
+    "email": null,
+    "dateOfBirth": "1992-10-04",
+    "driverLicenseNumber": "12345678",
+    "driverLicenseState": "Tx",
+    "taxid": "123456789"
   }
 }
 ```
@@ -158,86 +123,64 @@ Example of a charge (201: Created) response.
 ```json
 {
   "gatewayResponse": {
-    "transactionType": "CHARGE",
+    "transactionType": "CHARGE_SALE",
     "transactionState": "CAPTURED",
-    "transactionOrigin": "ECOM",
+    "transactionOrigin": "MOTO",
     "transactionProcessingDetails": {
-      "orderId": "CHG01f2a2c51ec11d3b3e68ee092f16cd1ed0",
-      "transactionTimestamp": "2023-06-29T10:29:07.694833Z",
-      "apiTraceId": "3db40a448407499bb84785f7d2e961fa",
-      "clientRequestId": "324907",
-      "transactionId": "3db40a448407499bb84785f7d2e961fa"
+      "orderId": "CHG01dec589299d309240fb51cb8957234868",
+      "transactionTimestamp": "2024-03-07T22:23:21.506426965Z",
+      "apiTraceId": "ae33c0c0dad948148aa4e00b14b15e0c",
+      "clientRequestId": "5389247",
+      "transactionId": "ae33c0c0dad948148aa4e00b14b15e0c"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 100,
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "3212",
+      "referenceNumber": "0021-becf314f-59cf-4a75-9133-f3f1495d862d",
+      "processor": "FISERV",
+      "host": "CONNECT_PAY",
+      "networkRouted": "TELECHECK",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "0",
+      "hostResponseMessage": "Approved",
+      "bankAssociationDetails": {
+        "transactionTimestamp": "2024-03-07T16:23:00Z"
+      }
     }
   },
   "source": {
     "sourceType": "PaymentCheck",
     "check": {
-      "routingNumber": "123456789",
-      "accountNumber": "23643672432764726"
+      "routingNumber": "121000248",
+      "accountNumber": "144155167"
     }
-  },
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": 12,
-      "currency": "USD"
-    },
-    "processorResponseDetails": {
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK9460",
-      "referenceNumber": "85f7d2e961fa",
-      "processor": "FISERV",
-      "host": "CONNECTPAY",
-      "localTimestamp": "123456789012",
-      "hostResponseCode": "00",
-      "additionalInfo": [
-        {
-          "name": "ERROR_LOCATION",
-          "value": "*******"
-        },
-        {
-          "name": "DENIAL_RECORD_NUMBER",
-          "value": "12345"
-        },
-        {
-          "name": "ECHO_DATA",
-          "value": "1234561234"
-        },
-        {
-          "name": "DELAY_SHIP_ID",
-          "value": "ksjdhfsjk"
-        },
-        {
-          "name": "SCORE",
-          "value": "36346"
-        },
-        {
-          "name": "REASON_CODE",
-          "value": "1234"
-        }
-      ]
-    }
-  },
-  "customer": {
-    "category": "PREFERRED"
-  },
-  "billingAddress": {
-    "firstName": "Raghavendiran",
-    "lastName": "Kannan",
-    "address": {
-      "street": "100AshfordGablesDr",
-      "houseNumberOrName": "4201",
-      "city": "Atlanta",
-      "stateOrProvince": "Georgia",
-      "postalCode": "30338",
-      "country": "USA"
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true
   },
   "merchantDetails": {
-    "terminalId": "00000001",
-    "merchantId": "100009000000200"
+    "terminalId": "10000001",
+    "merchantId": "100184000000076"
+  },
+  "networkDetails": {
+    "systemTrace": "1400310000032032697430",
+    "networkResponseStatus": "1",
+    "networkResponseCode": "07"
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "transactionCaptureType": "gateway",
+    "retrievalReferenceNumber": "e00b14b15e0c",
+    "transactionCutTimeStamp": "2024-03-08T05:00:00Z"
+  },
+  "transactionInteraction": {
+    "origin": "MOTO",
+    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
+    "motoType": "PHONE"
   }
 }
 ```
@@ -250,9 +193,8 @@ Example of a charge (201: Created) response.
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
-- [Multi-Use Public Key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
-- [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
-- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Pay By Bank](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md)
+- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
 
 ---

@@ -103,6 +103,12 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
 -->
 
 <!-- type: card
+title: Pay By Bank
+description: Pay by Bank is an ACH payment method that removes the needs to store sensitive bank data which provides enhanced security and convenience.
+link: ?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
+-->
+
+<!-- type: card
 title: Custom Identifiers
 description: Commerce Hub supports the ability for merchants to use their own Merchant Identifiers and Order Identifiers. This allows a seamless integration into existing merchant APIs and databases.
 link: ?path=docs/Resources/Guides/BYOID.md
