@@ -109,7 +109,7 @@ Example of a status (200: Success) response.
 
 ## See Also
 
-- [API Explorer](..api/?type=get&path=/status)
+- [API Explorer](../api/?type=get&path=/status)
 - [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
 
 ---
