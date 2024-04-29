@@ -2,29 +2,53 @@
 tags: [Private Label, Payment Sources]
 ---
 
-# ChargeAfter
+# ChargeAfter Private Label
 
-ChargeAfter is a leading network for Buy Now Pay Later  *(BNPL)* consumer point-of-sale financing.
+ChargeAfter is a leading network for Buy Now Pay Later *(BNPL)* consumer point-of-sale financing and offers private label card services for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) and [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) merchants.
 
 <!-- theme: warning -->
-> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
+> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) will need to be submitted as an [open refund](?pathdocs/Resources/API-Documents/Payments/Refund-Open.md). For more information, please contact your account representative.
 
 ---
 
-## Request Variables
+## Parameters
 
 <!--theme:info-->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: *false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 <!--
 type: tab
-titles: customFields, JSON Example
+titles: origin, additionalDataCommon, customFields, privateLabel
 -->
 
-The below table identifies the key value pairs to indentify the required `customFields` in the `additionalDataCommon` object.
+<!-- theme: warning -->
+> The transaction `origin` is required for all transaction types.
+
+The below table identifies the required parameter in the `transactionInteraction` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | -- | ------------ | ------------------ |
+| `origin` | *string* | 4 | The [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origin) of the transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the conditional parameters in the `additionalDataCommon` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `customFields` | *object* | 64 | Identifies custom fields required to process a ChargeAfter request |
+| `privateLabel` | *object* | 32  | Object containing private label specific details |
+
+<!--
+type: tab
+-->
+
+The below table identifies the key value pairs to identify the merchant and required `customFields` object.
 
 <!-- theme: info -->
-> Values are merchant specfic, please contact your account representative for more details.
+> Values are merchant specific, please contact your account representative for more details.
 
 | Key | Description |
 | -------- | -------- |
@@ -41,12 +65,7 @@ The below table identifies the key value pairs to indentify the required `custom
 | Lookup_Strategy | Defines the DETERMINISTIC lookup with ChargeAfter |
 | Sales_Doc_ID | Invoice or sales order document number |
 
-<!--
-type: tab
--->
-
 ```json
-
 {
   "additionalDataCommon": {
     "customFields": [
@@ -101,14 +120,26 @@ type: tab
     ]
   }
 }
-
 ```
+
+<!--
+type: tab
+-->
+
+The below table identifies the conditional parameters in the `privateLabel` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
+| `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the minimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
 
 <!-- type: tab-end -->
 
 ---
 
 ## Payload Example
+
+The example below contains the minimum [parameters](#parameters) for a successful in-person [charges request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a ChargeAfter PLCC. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
@@ -196,21 +227,14 @@ Example of a charge payload request using a ChargeAfter PLCC
       },
       {
         "key": "Sales_Doc_ID",
-        "value": "11111-000"
+        "value": "12443-605"
       }
     ],
-    "directedRouting": {
-      "processors": [
-        {
-          "processorName": "CHARGE_AFTER",
-          "processingPlatform": "PRIVATE_LABEL",
-          "priority": "PRIMARY"
-        }
-      ]
-    }
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
@@ -340,7 +364,9 @@ Example of a charge (201: Created) response
     },
     {
       "tokenData": "1100000000056349",
-      "tokenSource": "CHARGE AFTER"
+      "tokenSource": "CHARGEAFTER",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
     }
   ]
 }
@@ -355,6 +381,9 @@ Example of a charge (201: Created) response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
+- [Billing Address](?path=docs/Resources/Master-Data/Address.md)
+- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---

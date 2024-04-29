@@ -48,9 +48,7 @@
 #    - title: Semi-Integrated
 #      link: docs/In-Person/Integrations/Semi-Integrated.md
     - title: Device Management
-      link: docs/In-Person/Device_Management/Device-Management.md
-    - title: CAPK
-      link: docs/In-Person/Device_Management/CAPK.md
+      link: docs/Resources/API-Documents/Device-Management/Device-Management.md
     - title: Debit
       link: docs/Resources/Guides/Debit/Debit.md
       sections:
@@ -115,6 +113,10 @@
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
       link: docs/Resources/Guides/Directed-Routing.md
+    - title: Global Currency Solutions
+      link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+    - title: Global Acquiring
+      link: docs/Resources/Guides/Global-Acquiring.md
 #    - title: Least Cost Debit
 #      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Multi-Use Public Key
@@ -139,6 +141,8 @@
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
     - title: Level 2/3 Purchase Cards
       link: docs/Resources/Guides/Level23/Level23.md
+    - title: Mail Order Telephone Order
+      link: docs/Resources/Guides/Mail-Order-Telephone-order.md
     - title: Payment Facilitator
       link: docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md
     - title: Payment Sources
@@ -154,13 +158,14 @@
     - title: Subsequent Authorizations
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
     - title: Glossary
-      link: docs/Resources/FAQs-Glossary/Glossary.md
+      link: docs/Resources/FAQs-Glossary/Glossary.md    
 - sections:
   - title: API Reference
     sections:
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
       sections:
       - title: Authentication
         link: docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md
@@ -174,6 +179,20 @@
         link: docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+    - title: Device Management
+      link: docs/Resources/API-Documents/Device-Management/Device-Management.md
+      sections:
+      - title: EMV CAPK Data
+        link: docs/Resources/API-Documents/Device-Management/CAPK.md
+    - title: Global Currency Solutions
+      link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+      sections:
+      - title: Dynamic Currency Conversion
+        link: docs/Resources/Guides/Global-Currency/Currency-Conversion.md
+    - title: Health Check
+      sections:
+      - title: Status
+        link: docs/Resources/API-Documents/Health_Check/HC-Status.md
     - title: Payments
       link: docs/Resources/API-Documents/Payments/Payments.md
       sections:
@@ -193,6 +212,8 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md
       - title: Information Lookup
         link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+      - title: Get Proccesor Token
+        link: docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md
       - title: Tokenization
         link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
       - title: Verification
