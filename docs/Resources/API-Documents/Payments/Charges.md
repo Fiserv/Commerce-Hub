@@ -4,28 +4,26 @@ tags: [Authorization, Charges, Payments, API Reference, Sale]
 
 # Charges
 
-Charges can be initiated as a sale, pre-auth, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
+Charges can be initiated as a sale, pre-authorization, or [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) which is defined in the request by sending the `captureFlag` in `transactionDetails`.
 
-- *false:* A pre-auth transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdraw the funds.
+- *false:* A pre-authorization transaction, where the customer's funds will be reserved and a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) will be required to withdraw the funds.
 - *true:* A sale or subsequent capture transaction where the customer will be charged the total amount, and funds withdrawn.
 
----
+##### Charges Types
 
-## Charges Types
-
-- [**Auth-Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#authorization) A transaction where the merchant [verifies](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
-- [**Pre-Auth:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#preauth) A transaction where the customer is authorized to have funds withdrawn from their account on a future date.
+- [**Authorization Only:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#authorization) A transaction where the merchant [verifies](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) a customer's account, also known as a $0 auth.
+- [**Pre-Authorization:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#preauth) A transaction where the customer is authorized to have funds withdrawn from their account on a future date.
 - [**Sale:**](?path=docs/Resources/FAQs-Glossary/Glossary.md#sale) A transaction where the customer is authorized to have funds withdrawn from their account at the end of the day.
-- [**Capture:**](?path=docs/Resources/API-Documents/Payments/Capture.md) A transaction where the merchant requests to have the pending funds from a pre-auth withdrawn from the customer account at the end of the day.
+- [**Capture:**](?path=docs/Resources/API-Documents/Payments/Capture.md) A transaction where the merchant requests to have the pending funds from a pre-authorization withdrawn from the customer account at the end of the day.
 
 ---
 
-## Minimum Requirements
+## Request Variables
 
 The [example](#payload-example) below contains the mandatory fields required for a successful charge request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!-- theme: warning -->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behaviour, `createToken`*:false* is required in `transactionDetails`.
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behavior, `createToken`*:false* is required in `transactionDetails`.
 
 <!--
 type: tab
@@ -57,7 +55,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Auth)|
+|`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Authorization)|
 
 <!--
 type: tab

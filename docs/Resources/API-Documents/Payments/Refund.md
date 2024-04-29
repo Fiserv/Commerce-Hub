@@ -46,7 +46,7 @@ link: ?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md
 -->
 
 <!-- type: card
-title: Auth/Capture Refund
+title: Authorization and Capture Refund
 description: Submit a request to authorize a pending refund for a subsequent capture.
 link: ?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md
 -->

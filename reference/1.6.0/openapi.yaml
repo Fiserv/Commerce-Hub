@@ -94,6 +94,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments/v1/cancels:
     x-model-version: 1.1
     post:
@@ -117,15 +118,6 @@ paths:
               transactionId:
                 summary: Cancel a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
       responses:
         200:
           description: Success
@@ -160,6 +152,16 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments/v1/refunds:
     x-model-version: 1.0
     post:
@@ -216,6 +218,16 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/accounts/verification:
     x-model-version: 1.0
     post:
@@ -289,6 +301,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/tokens:
     x-model-version: 1.0
     post:
@@ -341,6 +354,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /daas/v1/enhanceddata:
     x-model-version: 1.0
     post:
@@ -398,6 +412,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /daas/v1/returnoptimizer:
     x-model-version: 1.0
     post:
@@ -455,6 +470,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments/v1/transaction-inquiry:
     x-model-version: 1.0
     post:
@@ -523,6 +539,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/security/credentials:
     x-model-version: 1.0
     post:
@@ -587,6 +604,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/accounts/information-lookup:
     x-model-version: 1.0
     post:
@@ -671,6 +689,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
@@ -786,6 +805,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /security/v1/keys/{keyId}/revoke:
     x-model-version: 1.0
     post:
@@ -7022,7 +7042,6 @@ components:
       value:
         referenceTransactionDetails:
           referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
@@ -7036,7 +7055,6 @@ components:
       value:
         referenceTransactionDetails:
           referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
