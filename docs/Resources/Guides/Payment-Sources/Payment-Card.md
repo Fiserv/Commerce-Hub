@@ -161,6 +161,6 @@ Example of a charge (201: Created) response.
 - [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
 - [Multi-Use Public Key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
-- [Payment Check](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

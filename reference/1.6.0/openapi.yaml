@@ -49,6 +49,9 @@ paths:
               PaymentSession:
                 summary: ChargesRequest with PaymentSession
                 $ref: '#/components/examples/PaymentSessionRequest'
+              PaymentCheck:
+                summary: ChargesRequest with PaymentCheck
+                $ref: '#/components/examples/PaymentCheckRequest'
       responses:
         201:
           description: Created
@@ -81,6 +84,9 @@ paths:
                 PaymentSession:
                   summary: ChargesResponse with PaymentSession
                   $ref: '#/components/examples/PaymentCardChargesResponse'
+                PaymentCheck:
+                  summary: ChargesResponse with PaymentCheck
+                  $ref: '#/components/examples/PaymentCheckChargesResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -1970,19 +1976,9 @@ components:
         sourceType:
           type: string
           maxLength: 256
-          description: |+
-            Payment source type for a transaction request.
+          description: 'Payment <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Source-Type.md">source type</a> for a transaction request.'
+          example: 'PaymentCard'
 
-            Valid Values:
-            * <a href="../docs?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md">3-D Secure</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md">ApplePay</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md">GooglePay</a>
-            * <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md">PaymentCard</a>
-            * <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md">PaymentToken</a>
-            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/EMV.md">PaymentEMV</a>
-            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/Track.md">PaymentTrack</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md">PaymentSession</a>
-          example: PaymentCard
     PaymentCard:
       x-model-version: 1.0
       allOf:
@@ -2784,34 +2780,76 @@ components:
             the acquirer or the gateway when submitting a transaction., example: '123456789012345'}
     Customer:
       x-model-version: 1.0
-      description: <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a>
-        specific data.
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a> specific data.'
       properties:
-        merchantCustomerId: {type: string, maxLength: 1024, description: Unique customer
-            identifier., example: '234567'}
-        processorCustomerId: {type: string, maxLength: 1024, description: Unique customer
-            identifier on processor network., example: '1122334'}
-        firstName: {type: string, maxLength: 256, description: Customer first name.,
-          example: Joe}
-        lastName: {type: string, maxLength: 256, description: Customer last name.,
-          example: Smith}
-        dob: {type: string, format: date, maxLength: 10, description: Customer date
-            of birth in YYYY-MM-DD format., example: '1990-01-01'}
-        email: {type: string, maxLength: 256, description: Customer email address.,
-          example: customer@domain.com}
-        ipAddress: {type: string, maxLength: 39, description: The IP address of the
-            customer., example: 170.165.02.26}
-        hostName: {type: string, maxLength: 1024, description: The name of the server
-            the customer is connected to., example: dreamwave.com}
-        locale: {type: string, maxLength: 256, description: Language/region code of
-            user in IETF BCP47 format., example: en-US}
-        driverLicenseNumber: {type: string, maxLength: 256, description: 'Customer
-            driver license number, including state.', example: GA456183789}
-        ssn: {type: string, maxLength: 9, description: Customer SSN or US federal
-            tax ID number (business checks only)., example: '123456789'}
+        merchantCustomerId:
+          type: string
+          maxLength: 1024
+          description: 'Unique customer identifier defined by the merchant.'
+          example: '234567'         
+        firstName:
+          type: string
+          maxLength: 256
+          description: 'Customer first name.'
+          example: 'Joe'
+        lastName:
+          type: string
+          maxLength: 256
+          description: 'Customer last name.'
+          example: 'Smith'
+        email:
+          type: string
+          maxLength: 256
+          description: 'Customer email address.'
+          example: 'customer@domain.com'
+        dateOfBirth:
+          type: string
+          maxLength: 10
+          description: 'Customer date of birth in YYYY-MM-DD format.'
+          example: '1990-01-01'        
+        driverLicenseNumber:
+          type: string
+          maxLength: 256
+          description: 'Customer driver license number.'
+          example: '456183789'
+        driverLicenseState:
+          type: string
+          maxLength: 256
+          description: 'Driver license state code.'
+          example: 'New Jersey'
+        idCardNumber:
+          type: string
+          maxLength: 256
+          description: 'Customer id card number.'
+          example: '12345678'
+        passportNumber:
+          type: string
+          maxLength: 256
+          description: 'Customer passport number.'
+          example: 'PA1234567'
+        ssn:
+          type: string
+          maxLength: 9
+          description: 'Customer SSN.'
+          example: '123456789'
+        taxId:
+          type: string
+          description: 'Customer tax ID number.'
+        hostName: 
+          type: string
+          maxLength: 1024
+          description: 'The name of the server the customer is connected to.'
+          example: 'dreamwave.com'
+        ipAddress:
+          type: string
+          maxLength: 39
+          description: 'The IP address of the customer.'
+          example: '170.165.02.26'
         phone:
           type: array
-          items: {$ref: '#/components/schemas/Phone'}
+          items:
+            $ref: '#/components/schemas/Phone'
+
     StoredCredentials:
       x-model-version: 1.0
       description: Used to initiate an initial or subsequent <a href="../docs?path=docs/Resources/Guides/Stored-Credentials.md">stored
@@ -5709,6 +5747,52 @@ components:
           maxLength: 40
           example: '8E8DFF443D78CD91DE88821D70C98F0638E51E49'      
 
+    PaymentCheck:
+      x-model-version: 1.0
+      allOf:
+        - $ref: '#/components/schemas/Source'
+        - type: object
+          properties:
+            check:
+              $ref: '#/components/schemas/Check'
+            encryptionData:
+              $ref: '#/components/schemas/EncryptionData'
+
+    Check:
+      x-model-version: 1.0
+      description: 'Common <a href="../docs?path=docs/Resources/Master-Data/Check.md">check</a> data for a transaction request and response.'
+      properties:
+        nameOnCheck:
+          type: string
+          maxLength: 50
+          description: 'Check holder name.'
+          example: 'Jane Smith'
+        checkData:
+          type: string
+          maxLength: 45
+          description: 'Identifying data for the check presented (i.e check number).'
+          example: '101'      
+        routingNumber:
+          type: string
+          maxLength: 9
+          description: 'Routing number endorsed on the check.'
+          example: '123456789'
+        accountNumber:
+          type: string
+          maxLength: 45
+          description: 'Account number endorsed on the check.'
+          example: '19471508'
+        checkType:
+          type: string
+          maxLength: 256
+          description: 'Describes check type.'
+          example: 'MONEY_CODE'
+        accountType:
+          type: string
+          maxLength: 256
+          description: 'Describes check type.'
+          example: 'PERSONAL'
+
   examples:
     ApplePayRequest:
       value:
@@ -8293,6 +8377,85 @@ components:
                 endingBalance: 12.04
                 currency: 'USD'
 
+    PaymentCheckRequest:
+      value:
+        amount:
+          total: 100
+          currency: 'USD'
+        source:
+          sourceType: 'PaymentCheck'
+          check:
+            accountNumber: '144155167'
+            routingNumber: '121000248'
+            checkType: 'Business'
+            checkData: '3654803'
+            accountType: 'Savings'
+        transactionDetails:
+          captureFlag: true
+        merchantDetails:
+          merchantId: '100184000000076'
+          terminalId: '10000001'
+        transactionInteraction:
+          origin: 'MOTO'
+        customer:
+          firstName: 'ZEN'
+          lastName: 'R'
+          email:
+          dob: '1992-10-04'
+          driverLicenseNumber: '12345678'
+          driverLicenseState: 'Tx'
+          taxid: '123456789'
+
+    PaymentCheckChargesResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'CHARGE_SALE'
+          transactionState: 'CAPTURED'
+          transactionOrigin: 'MOTO'
+          transactionProcessingDetails:
+            orderId: 'CHG01dec589299d309240fb51cb8957234868'
+            transactionTimestamp: '2024-03-07T22:23:21.506426965Z'
+            apiTraceId: 'ae33c0c0dad948148aa4e00b14b15e0c'
+            clientRequestId: '5389247'
+            transactionId: 'ae33c0c0dad948148aa4e00b14b15e0c'
+        paymentReceipt:
+          approvedAmount:
+            total: 100
+            currency: 'USD'
+          processorResponseDetails:
+            approvalStatus: 'APPROVED'
+            approvalCode: '3212'
+            referenceNumber: '0021-becf314f-59cf-4a75-9133-f3f1495d862d'
+            processor: 'FISERV'
+            host: 'CONNECT_PAY'
+            networkRouted: 'TELECHECK'
+            responseCode: '000'
+            responseMessage: 'Approved'
+            hostResponseCode: '0'
+            hostResponseMessage: 'Approved'
+            bankAssociationDetails:
+              transactionTimestamp: '2024-03-07T16:23:00Z'
+        source:
+          sourceType: 'PaymentCheck'
+          check:
+            routingNumber: '121000248'
+            accountNumber: '144155167'
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100184000000076'
+        networkDetails:
+          systemTrace: '1400310000032032697430'
+          networkResponseStatus: '1'
+          networkResponseCode: '07'
+        transactionDetails:
+          captureFlag: true
+          transactionCaptureType: 'gateway'
+          retrievalReferenceNumber: 'e00b14b15e0c'
+          transactionCutTimeStamp: '2024-03-08T05:00:00Z'
+        transactionInteraction:
+          origin: 'MOTO'
+          posConditionCode: 'CARD_NOT_PRESENT_MOTO'
+          motoType: 'PHONE'
     HealthCheckStatusResponse:
       value:
         environment: prod
