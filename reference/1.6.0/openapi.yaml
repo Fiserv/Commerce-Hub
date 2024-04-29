@@ -40,9 +40,6 @@ paths:
               GooglePay:
                 summary: ChargesRequest with GooglePay
                 $ref: '#/components/examples/GooglePayRequest'
-              Payment3DS:
-                summary: ChargesRequest with Payment3DS
-                $ref: '#/components/examples/Payment3DSRequest'
               PaymentToken:
                 summary: ChargesRequest with PaymentToken
                 $ref: '#/components/examples/PaymentTokenRequest'
@@ -75,9 +72,6 @@ paths:
                 GooglePay:
                   summary: ChargesResponse with GooglePay
                   $ref: '#/components/examples/GooglePayChargesResponse'
-                Payment3DS:
-                  summary: ChargesResponse with Payment3DS
-                  $ref: '#/components/examples/Payment3DSChargesResponse'
                 PaymentToken:
                   summary: ChargesResponse with PaymentToken
                   $ref: '#/components/examples/PaymentTokenChargesResponse'
@@ -333,7 +327,6 @@ paths:
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
               GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
-              Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/PaymentCard3DSTokenizationRequest'}
               PaymentSession: {summary: TokenizationRequest with PaymentSession, $ref: '#/components/examples/PaymentSessionTokenRequest'}
       responses:
         200:
@@ -347,7 +340,6 @@ paths:
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
                 GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
-                Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/PaymentCard3DSTokenizationRequest'}
                 PaymentSession: {summary: TokenizationResponse with PaymentSession, $ref: '#/components/examples/PaymentCardTokenResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
@@ -2222,77 +2214,7 @@ components:
               AppID registered in the Samsung portal., example: merchant.com.futurex}
           merchantPrivateKey: {type: string, maxLength: 256, description: Merchant
               private key in hex encoded format., example: 2B939D88050A48885DC2FDD8BC1780CC0AF4DA741424A82A60579DB3F08C7DCF81B03E7A0EC28D6705705488FDEFF6DEC8E37D3C20E9C11B36C9D710C42D029831}
-    Payment3DS:
-      x-model-version: 1.0
-      allOf:
-        - $ref: '#/components/schemas/Source'
-        - type: object
-          description: '3DSecure source.'
-          properties:
-            card:
-              $ref: '#/components/schemas/Card'
-            merchantIdentifier:
-              type: string
-              maxLength: 256
-              description: 'A unique ID used to identify the merchant. The merchant must use the value assigned by the acquirer.'
-              example: '1234567890123456'
-            version:
-              type: string
-              maxLength: 64
-              description: 'Specific protocol version supported by 3DS.'
-              example: '3DS2'
-            cavv:
-              type: string
-              maxLength: 256
-              description: 'The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase.'
-              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
-            xid:
-              type: string
-              maxLength: 256
-              description: '3DSecure/Verified by Visa value returned by Cardinal Commerce.'
-              example: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
-            verificationResponse:
-              type: string
-              maxLength: 256
-              description: 'Verification response message.'
-              example: 'PASSED_VALIDATION'
-            authenticationAttemptResult:
-              type: string
-              maxLength: 256
-              description: 'Result of authentication attempt from Payer Authentication Response (PaRes).'
-              example: 'uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4'
-            channel:
-              type: string
-              maxLength: 32
-              description: |+
-          
-                Valid Values: 
-                * MOBILE_APP
-                * MOBILE_WEB
-                * BROWSER_PC
-                * KIOSK
-                * CONSOLE
-                * 3DS_REQUESTOR_INITIATED
-            authenticationResponse:
-              type: string
-              description: 'The result of authentication attempt returned by the 3D Secure authentication process (PaRes).'
-              example: 'A'
-            directoryServerTransactionId:
-              type: string
-              description: 'The response transaction UUID from the DS (directory server)'
-              example: 'f38e6948-5388-41a6-bca4-b49723c19437'
-            messageCategory:
-              type: string
-              description: 'Indicates the message category of 3d secure authentication version 2.X. 01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only'
-              example: '1'
-            tavv:
-              type: string
-              description: 'Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction.'
-              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
-            challengeStatus:
-              type: string
-              description: 'The transaction status as returned by the 3D Secure authentication process. (CRes)'
-              example: 'A'
+
     DecryptedWallet:
       x-model-version: 1.0
       allOf:
@@ -6605,41 +6527,6 @@ components:
             transactionId: '84356531338'}
         transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '93', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '30'} }
 
-    Payment3DSRequest:
-      value:
-        amount:
-          total: 9.00
-          currency: 'USD'
-        source:
-          sourceType: 'PaymentCard'
-          encryptionData:
-            encryptionType: 'RSA'
-            encryptionTarget: 'MANUAL'
-            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
-            keyId: '88000000022'
-            securityCodeIndicator: 'PROVIDED'
-        additionalData3DS:
-          serviceProviderTransactionId: 'W1dkIvUNzLYgRGLBVNp1'
-          acsTransactionId: '46d071e5-2447-4980-a9ba-c8c55a99107a'
-          challengeIndicator: false
-          dsTransactionId: '3150f884-0a17-4669-8c50-5d9b8bdae022'
-          serverTransactionId: 'c58e7f2e-56dd-496a-acda-b39c37bdf14b'
-          authenticationStatus: 'Y'
-          mpiData:
-            cavv: 'MTIzNDU2Nzg5MDEyMzQ1Njc4OTA='
-            eci: '05'
-          versionData:
-            recommendedVersion: '2.1.0'
-        transactionDetails:
-          captureFlag: true
-          deviceFingerprint:
-            - dataDynamic:
-                ipAddress: '192.168.0.12'
-        merchantDetails:
-          terminalId: '10000001'
-          merchantId: '100004000100116'
-
     ThreeDSAuthenticationRequestPaymentCard:
       value:
         amount:
@@ -6654,16 +6541,6 @@ components:
             encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
             keyId: '88000000022'
             securityCodeIndicator: 'PROVIDED'
-        billingAddress:
-          firstName: Raghavendiran
-          lastName: Kannan
-          address:
-            street: 100 Ashford Gables Dr
-            houseNumberOrName: '4201'
-            city: Atlanta
-            stateOrProvince: Georgia
-            postalCode: '30338'
-            country: USA
         transactionDetails:
           captureFlag: true
           createToken: false
@@ -6832,151 +6709,6 @@ components:
           versionData:
             recommendedVersion: 2.1.0
 
-    PaymentCard3DSTokenizationRequest:
-      value:
-        source:
-          sourceType: 'PaymentCard'
-          encryptionData:
-            encryptionType: 'RSA'
-            encryptionTarget: 'MANUAL'
-            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
-            keyId: '88000000022'
-            securityCodeIndicator: 'PROVIDED'
-        additionalData3DS:
-          serviceProviderTransactionId: 'W1dkIvUNzLYgRGLBVNp1'
-          acsTransactionId: '46d071e5-2447-4980-a9ba-c8c55a99107a'
-          dsTransactionId: '3150f884-0a17-4669-8c50-5d9b8bdae022'
-          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
-          authenticationStatus: 'Y'
-          statusReason: 'Approved'
-          serverTransactionId: 'c58e7f2e-56dd-496a-acda-b39c37bdf14b'
-          serviceProvider: 'CARDINAL'
-          challengeStatus: 'Y'
-          messageCategory: '1'
-          mpiData:
-            cavv: '020360C31C002540AFAB9DFFA1F69D3000020000'
-            xid: 'G2Q6OcsXq1k0pA0mMNHVH1P02Tw='
-            eci: 'SECURE_ECOM'
-          versionData:
-            recommendedVersion: '2.1.0'
-        transactionDetails:
-          merchantOrderId: '87849105'
-        merchantDetails:
-          terminalId: '10000001'
-          merchantId: '100004000100116'
-
-    Payment3DSChargesResponse:
-      value:
-        gatewayResponse:
-          transactionType: 'CHARGE'
-          transactionState: 'CAPTURED'
-          transactionOrigin: 'ECOM'
-          transactionProcessingDetails:
-            orderId: 'CHG01b33018867132945ccfec11492a66a1a9'
-            transactionTimestamp: '2023-08-18T18:58:00.698883142Z'
-            apiTraceId: 'b5ebb33767bc42909cedab92541a60be'
-            clientRequestId: '5200768'
-            transactionId: 'b5ebb33767bc42909cedab92541a60be'
-        source:
-          sourceType: 'PaymentCard'
-          card:
-            expirationMonth: '07'
-            expirationYear: '2025'
-            bin: '401200'
-            last4: '0026'
-            scheme: 'VISA'
-        paymentReceipt:
-          approvedAmount:
-            total: 9.00
-            currency: 'USD'
-          processorResponseDetails:
-            approvalStatus: 'APPROVED'
-            approvalCode: 'OK172C'
-            referenceNumber: 'ab92541a60be'
-            networkRouted: 'VISA'
-            networkInternationalId: '0001'
-            responseCode: '000'
-            responseMessage: 'Approved'
-            hostResponseCode: '00'
-            hostResponseMessage: 'APPROVAL'
-        transactionDetails:
-          captureFlag: true
-          processingCode: '000000'
-          transactionCutTimeStamp: '2023-08-19T01:45:00Z'
-          deviceFingerprint:
-            - dataDynamic:
-                ipAddress: 192.168.0.12
-          createToken: true
-          retrievalReferenceNumber: 'ab92541a60be'
-        transactionInteraction:
-          posEntryMode: 'MANUAL'
-          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
-          additionalPosInformation:
-            stan: '020100'
-            posFeatures:
-              pinAuthenticationCapability: 'UNSPECIFIED'
-              terminalEntryCapability: 'UNSPECIFIED'
-          authorizationCharacteristicsIndicator: 'U'
-          hostPosEntryMode: '010'
-          hostPosConditionCode: '59'
-        networkDetails:
-          network:
-            network: 'Visa'
-          networkResponseCode: '00'
-          cardLevelResultCode: 'C'
-          validationCode: 'G216'
-          transactionIdentifier: '013230529278074'
-    PaymentCard3DSTokenizationResponse:
-      value:
-        gatewayResponse:
-          transactionType: 'TOKENIZE'
-          transactionState: 'AUTHORIZED'
-          transactionProcessingDetails:
-            orderId: 'CHG01133d6e8746b0449902fdd8f9f89ef840'
-            transactionTimestamp: '2023-08-18T19:01:02.509947165Z'
-            apiTraceId: '13316200f664440fa9cc8ecc8c1b7457'
-            clientRequestId: '1410076'
-            transactionId: '13316200f664440fa9cc8ecc8c1b7457'
-        source:
-          sourceType: 'PaymentCard'
-          card:
-            expirationMonth: '12'
-            expirationYear: '2025'
-            bin: '401200'
-            last4: '0026'
-            scheme: 'VISA'
-        paymentTokens:
-          - tokenData: '8408727895800026'
-            tokenSource: 'TRANSARMOR'
-            tokenResponseCode: '000'
-            tokenResponseDescription: 'SUCCESS'
-        processorResponseDetails:
-          approvalStatus: 'APPROVED'
-          approvalCode: 'OK409C'
-          referenceNumber: '8ecc8c1b7457'
-          networkInternationalId: '0001'
-          responseCode: '000'
-          responseMessage: 'Approved'
-          hostResponseCode: '00'
-          hostResponseMessage: 'APPROVAL'
-          bankAssociationDetails:
-            associationResponseCode: 'V000'
-            avsSecurityCodeResponse:
-              streetMatch: 'NONE'
-              postalCodeMatch: 'NONE'
-              securityCodeMatch: 'NOT_CHECKED'
-              association:
-                securityCodeResponse: 'X'
-          additionalInfo:
-            - name: 'COUNTRY_CODE'
-              value: 'USA'
-            - name: 'CARD_PRODUCT_ID'
-              value: 'H'
-            - name: 'DETAILED_PRODUCT_ID'
-              value: 'C'
-            - name: 'HOST_RAW_PROCESSOR_RESPONSE'
-              value: 'ARAyIAGADoAAAgAAAAAAAAAAAAgYGQECABUoAAFROGVjYzhjMWI3NDU3T0s0MDlDMDAwMTY1MDk3MQIEAEgxNE4wMTMyMzA1MDc4NzEyMjhJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlYAAM2NTEABlZJQ1JDIAAxU1AwNzAxNjg0MDg3Mjc4OTU4MDAwMjYxMDAwMzAwMgAxU0RUQzAxNTYwMTEwMDAwMDAwMDAwMEFSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW'
     PaymentEMVRequest:
       value:
         amount: {total: 12.04, currency: USD}
