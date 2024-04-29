@@ -33,7 +33,7 @@ titles: referenceTransactionDetails, amount, merchantDetails
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
