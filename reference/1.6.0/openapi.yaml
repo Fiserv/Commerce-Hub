@@ -1197,7 +1197,7 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
-  /internal/capk/v1/emv-keys:
+  /tms/v1/emv-capk-data:
     x-model-version: 1.0
     post:
       tags:
@@ -1253,6 +1253,7 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
+
       parameters:
       - {$ref: '#/components/parameters/ContentTypeHeader'}
       - {$ref: '#/components/parameters/ClientRequestIdHeader'}
