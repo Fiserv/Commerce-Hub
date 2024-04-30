@@ -2018,6 +2018,23 @@ components:
         transactionDetails:
           $ref: '#/components/schemas/TransactionDetails'
 
+    ErrorResponse:
+      x-model-version: 1.0
+      description: Response containing an error object.
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+
     RefundResponse:
       x-model-version: 1.0
       properties:
@@ -3681,23 +3698,6 @@ components:
         securitykeyUpdateIndicator: {type: boolean, description: 'Provided in response. POS is expected to download updated key, key cert.', example: 'false'}
         keyId: {type: string, maxLength: 40, description: Needs to be passed if track data is encrypted., example: '88000000022'}
         encryptedKey: {type: string, maxLength: 2000, description: Merchant or device defined encryption key required for decryption of encrypted <code>cardData</code>. Normally used in card not present integrations e.g. Mobile device., example: NdCmVw5}
-
-    ErrorResponse:
-      x-model-version: 1.0
-      description: Response containing an error object.
-      properties:
-        gatewayResponse:
-          $ref: '#/components/schemas/GatewayResponse'
-        error:
-          type: array
-          items:
-            $ref: '#/components/schemas/Error'
-        paymentTokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResponsePaymentToken'
-        processorResponseDetails:
-          $ref: '#/components/schemas/ProcessorResponseDetails'
 
     Error:
       x-model-version: 1.0
