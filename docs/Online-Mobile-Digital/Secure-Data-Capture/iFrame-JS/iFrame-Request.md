@@ -6,12 +6,13 @@ tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 
 ## Step 1: Acquire Credentials
 
-A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [form submission](#step-4-form-submission) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
 
-This request must be invoked as a server→API call for each form submission and should not be attempted directly from the browser.
+<!-- theme: danger -->
+> This request must be invoked as a server API call for each form submission and should not be attempted directly from the browser.
 
 <!-- theme: info -->
-> When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
+> When integrating with 3-D Secure `authentication3DS` _true_ is required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
 
 ---
 
@@ -20,7 +21,7 @@ This request must be invoked as a server→API call for each form submission and
 The iFrame JS script tag is required in the website by downloading or including the following code.
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/v2/saq-a.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/0.11.0/saq-a.js"></script>
 ```
 
 ---
@@ -31,25 +32,7 @@ Instantiate the payment form within your JavaScript.
 
 <!--
 type: tab
-titles: Variables, JavaScript
--->
-
-The below table identifies the parameters used in `createPaymentForm`.
-
-| Field | Required | Description |
-| ----- | -------- | ----------- |
-| `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
-| `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
-| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
-| `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
-| `validCssClass` | | CSS class will be assigned to a field's input element when they have passed validation |
-| `invalidCssClass` | | CSS class will be assigned to a field's input element when they have failed validation and are in an invalid state |
-| `font` | | Defines [custom fonts](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#fonts) for the payment form  |
-| `css` | | Customized [CSS styling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#css) for the payment form  |
-| `hooks` | | Defines [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md) handling |
-
-<!--
-type: tab
+titles: JavaScript, Variables
 -->
 
 Example of JavaScript `createPaymentForm`.
@@ -70,6 +53,23 @@ const formPromise = window.fiserv.commercehub.createPaymentForm({
     hooks: {},
 });
 ```
+<!--
+type: tab
+-->
+
+The below table identifies the parameters used in `createPaymentForm`.
+
+| Field | Required | Description |
+| ----- | -------- | ----------- |
+| `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
+| `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
+| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
+| `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
+| `valid` | | CSS class will be assigned to a field's input element when they have passed validation |
+| `invalid` | | CSS class will be assigned to a field's input element when they have failed validation and are in an invalid state |
+| `font` | | Defines [custom fonts](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#fonts) for the payment form  |
+| `css` | | Customized [CSS styling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#css) for the payment form  |
+| `hooks` | | Defines [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md) handling |
 
 <!-- type: tab-end -->
 
