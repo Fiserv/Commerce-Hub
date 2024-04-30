@@ -1703,6 +1703,22 @@ components:
               - {type: GATEWAY, message: The request timed out while waiting for the
                   response.}
   schemas:
+    IntermediateSigningKey:
+      x-model-version: 1.0
+      description: 'A JSON object that contains the intermediate signing key from Google. It contains the signedKey with keyValue, keyExpiration, and signatures. It is serialized object to simplify the intermediate signing key signature verification process.'
+      properties:
+        signedKey:
+          type: string
+          maxLength: 4000
+          description: 'The signedKey is a UTF-8 encoded, serialized JSON object that contains keyExpiration and keyValue, keyExpiration is date and time when the intermediate key expires as UTC milliseconds and keyValue is base64 version of key encoded in ASN.1 type.'
+          example: '{\"keyExpiration\":\"1542323393147\",\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\\u003d\\u003d\"}'
+        signatures:
+          type: array
+          description: 'Verifies that the intermediate signing key came from Google. It is base64-encoded, and created with ECDSA.'
+          items:
+            type: string
+          example: 'MEYCIQCO2EIi48s8VTH+ilMEpoXLFfkxAwHjfPSCVED/QDSHmQIhALLJmrUlNAY8hDQRV/y1iKZGsWpeNmIP+z+tCQHQxP0v'
+
     ErrorResponse:
       x-model-version: 1.0
       description: Response containing an error object.
@@ -2178,24 +2194,28 @@ components:
     GooglePay:
       x-model-version: 1.0
       allOf:
-      - {$ref: '#/components/schemas/Source'}
-      - type: object
-        description: Google Pay source.
-        properties:
-          data: {type: string, maxLength: 4000, description: 'Encrypted data. Payment
-              data dictionary, base64 encoded as a string.', example: '{"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"}'}
-          signature: {type: string, maxLength: 1500, description: 'Verifies that the
-              message came from Google, base64 encoded, and created with ECDSA by
-              the intermediate signing key.', example: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=}
-          version: {type: string, maxLength: 32, description: 'Specific protocol version
-              supported by Google. Identifies the encryption or signing scheme under
-              which the message is created. It allows the protocol to evolve over
-              time, if needed.', example: ECv2}
-          merchantId: {type: string, maxLength: 256, description: Single merchant
-              identifier common for all Google Pay merchants., example: 676174657761793A666972737464617461}
-          keyInfo:
-            type: array
-            items: {$ref: '#/components/schemas/KeyInfo'}
+        - $ref: '#/components/schemas/Source'
+        - type: object
+          description: 'Google Pay source.'
+          properties:
+            data: 
+              type: string
+              maxLength: 4000
+              description: 'Encrypted data. Payment data dictionary, base64 encoded as a string.'
+              example: '{"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"}'
+            signature: 
+              type: string
+              maxLength: 1500
+              description: 'Verifies that the message came from Google, base64 encoded, and created with ECDSA by the intermediate signing key.'
+              example: 'MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko='  
+            version: 
+              type: string
+              maxLength: 32
+              description: 'Specific protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed.'
+              example: 'ECv2'
+            intermediateSigningKey:
+              $ref: '#/components/schemas/IntermediateSigningKey'
+
     KeyInfo:
       x-model-version: 1.0
       properties:
@@ -5817,100 +5837,148 @@ components:
           hostResponseMessage: APPROVAL
           localTimestamp: '2021-06-20T23:42:48Z'
           bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+
     GooglePayRequest:
       value:
-        amount: {total: 12.04, currency: USD}
-        source: {sourceType: GooglePay, data: {"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"},
-          signature: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=,
-          version: ECv2, merchantId: 676174657761793A666972737464617461, merchantPrivateKey: DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A,
-          signingVerificationKey: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIsFro6K+IUxRr4yFTOTO+kFCCEvHo7B9IOMLxah6c977oFzX/beObH4a9OfosMHmft3JJZ6B3xpjIb8kduK4/A==}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
-        transactionInteraction:
-          origin: 'ECOM'
-          eciIndicator: 'SECURE_ECOM'
-          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+        amount:
+          total: 100
+          currency: 'USD'
+        source:
+          sourceType: 'GooglePay'
+          data: '{"encryptedMessage":"oUky1vNvzklWEPbg8oEFYrL9vc2KzyaI2gfxp1aZtC5etsK8JeCm7v/lo0ZnlQzQQciIOK54UFeB1ulbKmkGwBeDPgyBOrCI5fYDANUQNDUFOLHCeZeRsT8p54+EnMvtnkkm/0zsXSZc6T4eZmElZXxBWz8SR9h72fkCKsap6YUufXlqrmpZDVyKVnj9V+/wAgcJfd7puPt7w4hkoVgR4AI3sI3AXDMYW8zojEXXhbNPLSJn3KPLfzJQnXSn5HUi3+FeqCX0iPzvUczTmzPAepBOYz12rJ7gUkYtaYBWotgPcN5kP4AEGBBfmptOa1eOa+mG9RFrDfhtlQmx2zKLIi+igRFYHpfhZFdfuHipfXcAcE/CO8CuWhHv+ASaoNbCTitZnh+c/kEk4unztDbeGFLJuVdE0jC76rIVnISe2mxzV6vN9rj3KjkddZiYd2KhzMgs2AstE6wYpA==","ephemeralPublicKey":"BCSTuF0LjbGz6soOgrnnGvjEWXgPX0Mj02au0zMrDqdyH0G2LzlZRuVd+LNLvRAQFFGfvyBQu1YzQBneqk/CgWg=","tag":"0mDmbQQNY8bHaNejQTrLm/QTk1HTfNhj1pjNcXvIzBQ="}'
+          signature: 'MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb/DKMz2CGk'
+          version: 'ECv2'
+          intermediateSigningKey:
+            signedKey: '{"keyExpiration":"1542323393147","keyValue":"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\u003d\u003d"}'
+            signatures:
+              - items: 'MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb'
+        merchantDetails:
+          merchantId: '100004000100157'
+          terminalId: '10000001'
+        transactionDetails:
+          captureFlag: false
+
     GooglePayTokenRequest:
       value:
-        source: {sourceType: GooglePay, data: {"encryptedMessage":"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\u003d\u003d","ephemeralPublicKey":"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\u003d","tag":"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\u003d"},
-          signature: MEUCIFWTRWUZAOM5nfJC79FtJm56olnbwG4H5uWWxAUWAquiAiEA24j/BcOroeISsdJzYsyoVi8wzu4tnmKw+jdsGfuvPko=,
-          version: ECv2, merchantId: 676174657761793A666972737464617461, merchantPrivateKey: DCEDF9AF72707BFD9C5231ECB9EAD040F3B4BA2AB608579736E37FDBA8884175566BDA410997B2575EA7E76AC54BBDB99DD0F74DD0A648BC0F6A2F06909E79A0F15D779F1A80CFC1EC9612476204C43A,
-          signingVerificationKey: MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIsFro6K+IUxRr4yFTOTO+kFCCEvHo7B9IOMLxah6c977oFzX/beObH4a9OfosMHmft3JJZ6B3xpjIb8kduK4/A==}
-        transactionDetails: {merchantInvoiceNumber: '123456789012'}
-        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+        source:
+          sourceType: 'GooglePay'
+          data: '{"encryptedMessage":"oUky1vNvzklWEPbg8oEFYrL9vc2KzyaI2gfxp1aZtC5etsK8JeCm7v/lo0ZnlQzQQciIOK54UFeB1ulbKmkGwBeDPgyBOrCI5fYDANUQNDUFOLHCeZeRsT8p54+EnMvtnkkm/0zsXSZc6T4eZmElZXxBWz8SR9h72fkCKsap6YUufXlqrmpZDVyKVnj9V+/wAgcJfd7puPt7w4hkoVgR4AI3sI3AXDMYW8zojEXXhbNPLSJn3KPLfzJQnXSn5HUi3+FeqCX0iPzvUczTmzPAepBOYz12rJ7gUkYtaYBWotgPcN5kP4AEGBBfmptOa1eOa+mG9RFrDfhtlQmx2zKLIi+igRFYHpfhZFdfuHipfXcAcE/CO8CuWhHv+ASaoNbCTitZnh+c/kEk4unztDbeGFLJuVdE0jC76rIVnISe2mxzV6vN9rj3KjkddZiYd2KhzMgs2AstE6wYpA==","ephemeralPublicKey":"BCSTuF0LjbGz6soOgrnnGvjEWXgPX0Mj02au0zMrDqdyH0G2LzlZRuVd+LNLvRAQFFGfvyBQu1YzQBneqk/CgWg=","tag":"0mDmbQQNY8bHaNejQTrLm/QTk1HTfNhj1pjNcXvIzBQ="}'
+          signature: 'MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb/DKMz2CGk'
+          version: 'ECv2'
+          intermediateSigningKey:
+            signedKey: '{"keyExpiration":"1542323393147","keyValue":"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\u003d\u003d"}'
+            signatures:
+              - items: 'MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb'
+        merchantDetails:
+          merchantId: '100004000100157'
+          terminalId: '10000001'
+
     GooglePayChargesResponse:
       value:
         gatewayResponse:
-          transactionType: CHARGE
-          transactionState: AUTHORIZED
-          transactionOrigin: ECOM
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
-        source:
-          sourceType: DecryptedWallet
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '30'}
-          cavv: 01ade6ae340005c681c3a1890418b53000020000
-          wallet: GOOGLE_PAY
+          transactionType: 'CHARGE'
+          transactionState: 'AUTHORIZED'
+          transactionOrigin: 'ECOM'
+          transactionProcessingDetails:
+            orderId: 'CHG0116c6379721ff5d878b7958b31fb18e63'
+            transactionTimestamp: '2024-03-11T17:52:55.450210723Z'
+            apiTraceId: 'e0ffbcdf54854c3cbaf69b49f33671e3'
+            clientRequestId: '3971499'
+            transactionId: 'e0ffbcdf54854c3cbaf69b49f33671e3'
         paymentReceipt:
-          approvedAmount: {total: 12.04, currency: USD}
-          merchantName: Merchant Name
-          merchantAddress: 123 Peach Ave
-          merchantCity: Atlanta
-          merchantStateOrProvince: GA
-          merchantPostalCode: '12345'
-          merchantCountry: US
-          merchantURL: https://www.somedomain.com
+          approvedAmount:
+            total: 100
+            currency: 'USD'
           processorResponseDetails:
-            approvalStatus: APPROVED
-            approvalCode: OK5882
-            schemeTransactionId: 0225MCC625628
-            processor: FISERV
-            host: NASHVILLE
+            approvalStatus: 'APPROVED'
+            approvalCode: 'OK4731'
+            referenceNumber: '9b49f33671e3'
+            processor: 'FISERV'
+            host: 'NASHVILLE'
+            networkRouted: 'STAR SIGDB'
+            networkInternationalId: '0001'
             responseCode: '000'
-            responseMessage: APPROVAL
+            responseMessage: 'Approved'
             hostResponseCode: '00'
-            hostResponseMessage: APPROVAL
-            localTimestamp: '2021-06-20T23:42:48Z'
-            bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
-        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+            hostResponseMessage: 'APPROVAL'
+            bankAssociationDetails:
+              associationResponseCode: 'O   '
+              avsSecurityCodeResponse:
+                streetMatch: 'NONE'
+                postalCodeMatch: 'NONE'
+                securityCodeMatch: 'NOT_CHECKED'
+                association:
+                  securityCodeResponse: 'X'
+        source:
+          sourceType: 'GooglePay'
+          card:
+            nameOnCard: 'NOT_AVAILABLE'
+            expirationMonth: '12'
+            expirationYear: '2026'
+            last4: '4444'
+            scheme: 'MASTERCARD'
+        paymentTokens:
+          - tokenData: '8514826547484444'
+            tokenSource: 'TRANSARMOR'
+            tokenResponseCode: '000'
+            tokenResponseDescription: 'SUCCESS'
+        merchantDetails:
+          tokenType: 'BBY0'
+          terminalId: '10000001'
+          merchantId: '100004000100157'
+        networkDetails:
+          network:
+            network: 'Mastercard'
+            bankNetRefNumber: '713900346'
+            bankNetDate: '0140'
+            cvcErrorIndicator: ' '
+            scoreRequest: false
+          posEntryModeChange: false
+          transactionIdentifier: '713900346'
+        transactionDetails:
+          captureFlag: false
+          transactionCaptureType: 'host'
+          createToken: true
+          partialApproval: true
+          retrievalReferenceNumber: '9b49f33671e3'
+          processingCode: '000000'
+        transactionInteraction:
+          posEntryMode: 'MANUAL'
+          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
+          authorizationCharacteristicsIndicator: 'N'
+          hostPosEntryMode: '010'
+          hostPosConditionCode: '59'
+          additionalPosInformation:
+            stan: '000803'
+            posFeatures:
+              pinAuthenticationCapability: 'UNSPECIFIED'
+              terminalEntryCapability: 'UNSPECIFIED'
+
     GooglePayTokenResponse:
       value:
         gatewayResponse:
-          transactionType: TOKENIZE
-          transactionState: AUTHORIZED
-          transactionOrigin: ECOM
-          transactionProcessingDetails: {transactionTimestamp: '2021-06-20T23:42:48Z',
-            orderId: RKOrdID-525133851837, apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db,
-            clientRequestId: '4345791', transactionId: '84356531338'}
+          transactionType: 'TOKENIZE'
+          transactionState: 'AUTHORIZED'
+          transactionProcessingDetails:
+            orderId: 'CHG011e777daa008bd2eb8e2afafb330b6c46'
+            transactionTimestamp: '2024-03-14T19:25:44.951451762Z'
+            apiTraceId: 'ce3dd8ed34154b02a25194472fde4930'
+            clientRequestId: '3904934'
+            transactionId: 'ce3dd8ed34154b02a25194472fde4930'
         source:
-          sourceType: DecryptedWallet
-          card: {bin: '40055500', last4: '0019', scheme: VISA, expirationMonth: '10',
-            expirationYear: '30'}
-          cavv: 01ade6ae340005c681c3a1890418b53000020000
-          wallet: GOOGLE_PAY
+          sourceType: 'GooglePay'
+          card:
+            nameOnCard: 'NOT_AVAILABLE'
+            expirationMonth: '12'
+            expirationYear: '2026'
+            bin: '411111'
+            last4: '1111'
         paymentTokens:
-          - tokenData: '8519371934460009'
-            tokenSource: TRANSARMOR
+          - tokenData: '8405263549591111'
+            tokenSource: 'TRANSARMOR'
             tokenResponseCode: '000'
-            tokenResponseDescription: SUCCESS
-          - tokenData: '8519371934460010'
-            tokenSource: CHASE
-            tokenResponseCode: '000'
-            tokenResponseDescription: SUCCESS
-        processorResponseDetails:
-          approvalStatus: APPROVED
-          approvalCode: OK5882
-          schemeTransactionId: 0225MCC625628
-          processor: FISERV
-          host: NASHVILLE
-          responseCode: '000'
-          responseMessage: APPROVAL
-          hostResponseCode: '00'
-          hostResponseMessage: APPROVAL
-          localTimestamp: '2021-06-20T23:42:48Z'
-          bankAssociationDetails: {associationResponseCode: '000', transactionTimestamp: '2021-06-20T23:42:48Z'}
+            tokenResponseDescription: 'SUCCESS'
+
     PaymentCardRequest:
       value:
         amount:
@@ -8239,7 +8307,6 @@ components:
                 count: '1'
                 lastOccurred: '2023-10-23T15:58:00.000000000Z'
 
-
     PaymentCardDeviceDataInitializationRequest:
       value:
         source:
@@ -8685,4 +8752,3 @@ components:
         merchantDetails:
           terminalId: '10000001'
           merchantId: '100009000000035'              
-
