@@ -18,7 +18,7 @@ The merchant can initiate token request in order to generate a token for the pay
 
 ---
 
-### Mimimum Requirements
+### Minimum Requirements
 
 <!-- theme: warning -->
 > Account verification can be performed by submitting `accountVerification`_:true_ in `transactionDetails`.  If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must also be submitted in the request.
