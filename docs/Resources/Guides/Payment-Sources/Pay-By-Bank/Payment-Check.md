@@ -192,10 +192,10 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [Check Details](?path=docs/Resources/Master-Data/Check.md)
+- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Pay By Bank](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md)
-- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
-- [Check Details](?path=docs/Resources/Master-Data/Check.md)
 
 ---
