@@ -196,5 +196,6 @@ Example of a charge (201: Created) response.
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Pay By Bank](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md)
 - [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
+- [Check Details](?path=docs/Resources/Master-Data/Check.md)
 
 ---
