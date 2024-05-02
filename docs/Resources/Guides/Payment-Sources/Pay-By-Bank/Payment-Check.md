@@ -38,7 +38,7 @@ The below table identifies the required parameters in the `check` object.
 | `accountNumber` | *string* | 45 | &#10004; | Account number endorsed on the check |
 | `checkType` | *string* | 256 | &#10004; | Describes check type |
 | `checkData` | *String* | 45 | &#10004; | Identifying data for the check presented (i.e check number). |
-| `accountType` | *string* | 45 | &#10004; | Account number endorsed on the check |
+| `accountType` | *string* | 45 | &#10004; | Account type endorsed on the check |
 
 <!--
 type: tab

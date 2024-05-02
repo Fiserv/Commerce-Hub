@@ -12,15 +12,15 @@ type: tab
 titles: check, JSON Example
 -->
 
-The below table identifies the required parameters in the `check` object.
+The below table identifies the parameters in the `check` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ----------- |---|
 | `routingNumber` | *string* | 45 | &#10004; | Routing number endorsed on the check |
 | `accountNumber` | *string* | 45 | &#10004; | Account number endorsed on the check |
-| `checkType` | *string* | 256 | &#10004; | Describes check type |
-| `checkData` | *String* | 45 | &#10004; | Identifying data for the check presented (i.e check number). |
-| `accountType` | *string* | 45 | &#10004; | Account number endorsed on the check |
+| `checkType` | *string* | 256 | &#10004; | Describes [check type](#check-type) |
+| `checkData` | *string* | 45 | &#10004; | Identifying data for the check presented *(i.e check number)* |
+| `accountType` | *string* | 45 | &#10004; | Describes [account type](#account-type)|
 
 <!--
 type: tab
@@ -44,6 +44,28 @@ JSON string format for `check`:
 ```
 
 <!-- type: tab-end -->
+
+---
+
+### Check Type
+
+The below table identifies the valid values of `checkType`.
+
+| Value | Description |
+|-------|-------------|
+| *PERSONAL* | Used for individual financial transactions |
+| *BUSINESS* | Used for company-related financial transactions |
+
+---
+
+### Account Type
+
+The below table identifies the valid values of `accountType`.
+
+| Value | Description |
+|-------|-------------|
+| *CHECKING* | For everyday transactions |
+| *SAVINGS* | For long term savings and earning interest |
 
 ---
 
