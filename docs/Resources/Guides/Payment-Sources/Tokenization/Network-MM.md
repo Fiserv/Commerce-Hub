@@ -4,7 +4,7 @@ tags: [Network Token, Online, Web, Mobile, Card Not Present, Payment Source]
 
 # Network Token - Merchant Managed
 
-Commerce Hub allows a merchant to pass a merchant managed Network Token results that were obtained through a Commerce Hub or a third-party 3-D Secure provider when sending a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. The [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) _PaymentCard_ and _PaymentToken_ or [reference transaction identifier](#request-with-reference-identifier) is used by the merchant as  when sending the transaction to Commerce Hub, along with the 3DS response data.
+Commerce Hub enables merchants to transmit merchant-managed Network Token results obtained through Commerce Hub or third-party providers seamlessly when initiating [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. Merchants utilize the  _PaymentCard_, _PaymentToken_  or [reference transaction identifier](#request-with-reference-identifier)  as the [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) when forwarding transactions to Commerce Hub.
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry _(PCI)_ Compliance capabilities to process and store card data.
@@ -32,7 +32,6 @@ The below table identifies the parameters in the `source` object.
 | `tokenSource` | _string_ | 256 | Source for the Token Service Provider (TSP). |
 | `cryptogram` | _string_ | 256 | Cryptographic value that is sent by the merchant during payment authentication |
 | `tokenRequestid` | _string_ | 256 | Token Requestor ID, an identifier used by merchants to request network tokens from the card networks. |
-| `tokenAssuranceMethod` | _string_ | 256 | Token Assurance Method will be returned back to merchants in auth response. |
 
 <!--
 type: tab
@@ -61,6 +60,8 @@ The below table identifies the parameters in the `source` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `tokenAssuranceMethod` | _string_ | 256 | Token Assurance Method will be returned back to merchants in auth response. |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -192,6 +193,6 @@ Example of a charges (201: Created) response
 - [Additional Data 3DS](?path=docs/Resources/Master-Data/Additional-Data-3DS.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
-- [Stored Credentials](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 
 ---
