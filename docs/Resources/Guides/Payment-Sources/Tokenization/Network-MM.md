@@ -45,7 +45,22 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `merchantTransactionId` | _sting_ | 128 | Merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | _string_ | 128 | Merchant order ID (aka customer reference number or purchase order (PO) number).|
 | `primaryTransactionType` | _string_ | 32 | Identifies the primary transaction type |
-| `tokenProvider` | _string_ | 256 | Source for the Token Service Provider (TSP) |
+| `tokenprovider` | _string_ | 256 | Source for the Token Service Provider (TSP) |
+
+---
+
+### Response Variables
+
+<!--
+type: tab
+titles: source
+-->
+
+The below table identifies the parameters in the `source` object.
+
+| Variable | Type | Maximum Length | Description |
+| -------- | :--: | :------------: | ------------------ |
+| `tokenAssuranceMethod` | _string_ | 256 | Token Assurance Method will be returned back to merchants in auth response. |
 
 ---
 
