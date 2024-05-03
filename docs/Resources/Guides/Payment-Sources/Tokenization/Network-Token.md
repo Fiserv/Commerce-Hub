@@ -15,15 +15,15 @@ Commerce hub supports the following Tokenization request
 <!-- type: row -->
 
 <!-- type: card
-title: Commerce Hub Managed
-description:
-link:
--->
-
-<!-- type: card
 title: Merchant Managed
 description: Allows the Network Token details that were completed by a third-party provider to be passed in the payment authorization transaction to Commerce Hub.
 link: ?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-MM.md
+-->
+
+<!-- type: card
+title: Commerce Hub Managed
+description:
+link:
 -->
 
 <!-- type: row-end -->
