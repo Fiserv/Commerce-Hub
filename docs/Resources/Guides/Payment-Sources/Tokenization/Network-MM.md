@@ -15,9 +15,12 @@ Commerce Hub allows a merchant to pass a merchant managed Network Token results 
 
 ### Request Variables
 
+<!-- theme: warning -->
+> It is required that the merchant captures encrypted CVV if available customer for security and validation purposes.
+
 <!--
 type: tab
-titles: source, encryptionData
+titles: source, transactionDetails
 -->
 
 The below table identifies the parameters in the `source` object.
@@ -30,20 +33,6 @@ The below table identifies the parameters in the `source` object.
 | `cryptogram` | _string_ | 256 | Cryptographic value that is sent by the merchant during payment authentication |
 | `tokenRequestid` | _string_ | 256 | Token Requestor ID, an identifier used by merchants to request network tokens from the card networks. |
 | `tokenAssuranceMethod` | _string_ | 256 | Token Assurance Method will be returned back to merchants in auth response. |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `encryptionData` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | ---- | ------- | -------------------------------|
-| `encryptionType` | _string_ | 256 | [Encryption type](#encryption-type) to be passed. |
-| `encryptionTarget` | _string_ | 256 | [Encryption target](#encryption-target) identifies the data based on how it is entered into the POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. |
-| `encryptionBlock` | _string_ | 2000 | This field contains the track data or card number provided in encrypted form. |
-| `keyId` | _string_ | 40 | Provided encryption key required for decryption of data that is encrypted. This field must be submitted for encryption request messages sending manual PAN, Track 1, or Track 2 data that is encrypted. |
-| `encryptionBlockFields` | _string_ | 256 | Encryption block field descriptors to facilitate decryption when using [multi-use public key encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md). Each field should recorded the form field_name:byte_count e.g. card.expirationMonth:2 |
 
 <!--
 type: tab
@@ -64,6 +53,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 After authentication has been completed with the 3DS provider, submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request based on the requirements.
 
+<!-- type: tab-end -->
+
 ---
 
 ### Payload Example
@@ -76,7 +67,45 @@ titles: Request, Response
 Example of charges payload request with Network Token
 
 ```json
-
+{
+  "amount": {
+    "total": 13.5,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentToken",
+    "tokenData": "1234560000000019",
+    "tokenSource": "NETWORK_TOKEN",
+    "cryptogram": "AAABCZIhcQAAAABZlyFxAAAAAAA",
+    "tokenRequestorId": "AAAFGFDG",
+    "tokenAssuranceMethod": "10",
+    "card": {
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    },
+    "encryptionData": {
+      "keyId": "bf12e130ee1f37a22b5be1aa62b2a885f5e21f799a5d6f1356fdaef611f2d04a",
+      "encryptionType": "RSA",
+      "encryptionBlock": "IZywBkx9cxDY/KDxkG6zkZRxJdlEY7457hpMWOZunArcRuk34ZhpQ==",
+      "encryptionBlockFields": "card.securityCode:3",
+      "encryptionTarget": "MANUAL"
+    }
+  },
+  "transactionDetails": {
+    "merchantTransactionId": "1343678765",
+    "merchantOrderId": "845366457890-TODO",
+    "primaryTransactionType": "CHARGE_SALE",
+    "tokenProvider": "paze"
+  },
+  "billingAddress": {
+    "firstName": "Jane",
+    "lastName": "Smith"
+  },
+  "merchantDetails": {
+    "terminalId": "12",
+    "merchantId": "123456789012345"
+  }
+}
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
@@ -91,7 +120,49 @@ Example of a charges (201: Created) response
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
-
+{
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
+      "apiTraceId": "1234567a1234567b1234567c1234567d",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentToken"
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 13.5,
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "PAR": "string"
+    },
+    "merchantName": "string",
+    "merchantAddress": "string"
+  },
+  "billingAddress": {
+    "firstName": "Jane",
+    "lastName": "Smith"
+  },
+  "transactionDetails": {
+    "approvalCode": "string",
+    "primaryTransactionId": "838916029301",
+    "primaryTransactionType": "CHARGE_SALE"
+  },
+  "merchantDetails": {
+    "terminalId": "12",
+    "merchantId": "123456789012345"
+  }
+}
 
 ```
 
@@ -106,5 +177,6 @@ Example of a charges (201: Created) response
 - [Additional Data 3DS](?path=docs/Resources/Master-Data/Additional-Data-3DS.md)
 - [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Stored Credentials](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
