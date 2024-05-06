@@ -197,9 +197,11 @@ do {
 type: tab
 -->
 
-#### Refunds Requests
+#### Tap Refunds Requests
 
-##### Refund a Payment without Tap (Tagged Refund)
+##### Refund a Payment without Tap
+
+###### Tagged Refund
 
 <!-- theme: info -->
 > At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform a [Tagged Refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md).
@@ -217,26 +219,50 @@ do {
 }
 ```
 
-##### Refund a Payment with Tap (Unmatched Tagged Refund and Open Refund)
+##### Refund a Payment with Tap
 
-At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform an [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md). If no value is provided, an [open refunds](?path=docs/Resources/API-Documents/Payments/Refund-Open.md) be will performed. Amount is always required for both refund types.
+The `fiservTTPCardReader.refundCard` API supports both [unmatched tagged refunds](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md) and [open refunds](?path=docs/Resources/API-Documents/Payments/Refund-Open.md).
+
+###### Unmatched Tagged Refund
+
+At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform an [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md).
 
 ```Swift
 let amount = 10.99
 let referenceTransactionId = "1234567890"
 do {
-  let refundResponse = try await refundTransaction(
+  let refundResponse = try await refundCard(
       amount:amount,
-      referenceTransactionId = referenceTransactionId)
+      referenceTransactionId: referenceTransactionId,
+      referenceMerchantTransactionId: referenceMerchantTransactionId)
     ///TODO inspect the refundResponse to see the result   
 } catch let error as FiservTTPCardReaderError {
     ///TODO handle exception
 }
 ```
 
+###### Open Refund
+
+No [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) is required to perform an [open refund](?path=docs/Resources/API-Documents/Payments/Refund-Open.md).
+
+```Swift
+let amount = 10.99
+let referenceTransactionId = "this value was returned in the charge response"
+do {
+    let refundResponse = try await fiservTTPCardReader.refundCard(
+        amount: amount,
+        merchantTransactionId: transactionId)
+    // TODO inspect the refundResponse to see the result
+} catch let error as FiservTTPCardReaderError {
+    // TODO handle exception
+}         
+```
+
 <!--
 type: tab
 -->
+
+#### Inquiry Request
 
 At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform an [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md).
 
