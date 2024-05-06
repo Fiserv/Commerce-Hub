@@ -1447,44 +1447,82 @@ paths:
       - {$ref: '#/components/parameters/KeyIdParam'}
 
 components:
+  x-event:
+    - listen: "prerequest"
+      script: 
+        exec: 
+          - >
+            var key = 'xJhxixSk4Nq8BISScbAUuE5OflIu3Xyu'; // Retrived from your Developer Studio Credentials Tab
+            var secret = 'mq23RAutPOM3BunPwvFgvpl2iAKw2A36HUL6fjqXGHJ'; // Retrived from your Developer Studio Credentials Tab 
+            var ClientRequestId = Math.floor((Math.random() * 10000000) + 1);
+            var time = new Date().getTime();
+            var requestBody = request.data;
+            var rawSignature = key + ClientRequestId + time + requestBody;
+            var computedHash = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secret.toString());
+            computedHash.update(rawSignature);
+            computedHash = computedHash.finalize();
+            var computedHmac = CryptoJS.enc.Base64.stringify(computedHash);
+            postman.setEnvironmentVariable('key', key);
+            postman.setEnvironmentVariable('time', time);
+            postman.setEnvironmentVariable('signature', computedHmac);
+            postman.setEnvironmentVariable('ClientRequestId', ClientRequestId)
+            function b64encode(input) {
+              var swaps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+                "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+                "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "/"],
+                tb, ib = "",
+                output = "",
+                i, L;
+              for (i = 0, L = input.length; i < L; i++) {
+                tb = input.charCodeAt(i).toString(2);
+                while (tb.length < 8) {
+                  tb = "0" + tb;
+                }
+                ib = ib + tb;
+                while (ib.length >= 6) {
+                  output = output + swaps[parseInt(ib.substring(0, 6), 2)];
+                  ib = ib.substring(6);
+                }
+              }
+              if (ib.length == 4) {
+                tb = ib + "00";
+                output += swaps[parseInt(tb, 2)] + "=";
+              }
+              if (ib.length == 2) {
+                tb = ib + "0000";
+                output += swaps[parseInt(tb, 2)] + "==";
+              }
+              return output;
+            }
+        type: "text/javascript"
+
   parameters:
     OrderIdParam:
       x-model-version: 1.0
       name: orderId
-      schema: {
-        type: string,
-        default: "orderId"
-      }
+      schema:
+        type: string
       in: path
       required: true
-      description: Use this to perform secondary transaction, received from primary
-        auth or sale.
+      description: 'Use this to perform secondary transaction, received from primary auth or sale.'
     TransactionIdParam:
       x-model-version: 1.0
       name: transactionId
-      schema: {
-        type: string,
-        default: "transactionId"
-      }
+      schema:
+        type: string
       in: path
       required: true
-      description: Use this to perform secondary transaction, received from primary
-        auth or sale.
+      description: 'Use this to perform secondary transaction, received from primary auth or sale.'
     WalletTypeParam:
       x-model-version: 1.0
       name: walletType
-      schema: {
-        type: string,
-        default: "walletType"
-      }
+      schema:
+        type: string
       in: path
       required: true
-      description: |+
-        Wallet type for which the keypair is to be generated.
-
-        Valid Values:
-        * ApplePay
-        * SamsungPay
+      description: 'Wallet type for which the keypair is to be generated.'
     KeyIdParam:
       x-model-version: 1.0
       name: keyId
@@ -1496,89 +1534,76 @@ components:
     AuthorizationTokenTypeHeader:
       x-model-version: 1.0
       name: Auth-Token-Type
-      schema: {
-        type: string,
-        default: "Auth-Token-Type"
-      }
+      schema:
+        type: string
+        default: 'HMAC'
       in: header
       required: true
-      description: Indicates authorization type HMAC, JWT, or AccessToken.
+      description: 'Indicates authorization type HMAC, JWT, or AccessToken.'
     AuthorizationHeader:
       x-model-version: 1.0
       name: Authorization
-      schema: {
-        type: string,
-        default: "Authorization"
-      }
+      schema:
+        type: string
+        default: '{{signature}}'
       in: header
       required: true
-      description: Authorization header used to ensure the request has not been tampered
-        with during transmission. Valid encryption; HMAC, JWT, or AccessToken. For
-        more information, refer to the supporting documentation on the Developer Portal.
+      description: '<a href="../docs?path=docs/Resources/API-Documents/Authentication-Header.md">Authorization header</a> is used to ensure the request has not been tampered with during transmission. Valid encryptions; HMAC, JWT, or AccessToken.'
     MessageDigestHeader:
       x-model-version: 1.0
       name: Message-Digest
-      schema: {
-        type: string,
-        default: "Message-Digest"
-      }
+      schema:
+        type: string
+        default: '{{signature}}'
       in: header
       required: false
-      description: Needed only from customer browser or app to the API in Hosted Payment
-        Page requests.
+      description: '<a href="../docs/?path=docs/Resources/API-Documents/Message-Digest.md">Message digest</a> is used to ensure the request has not been tampered with during transmission. It is needed in the header for <a href="..docs/?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">Card Capture</a> and Hosted Payment Page integrations.'
     AcceptLanguageHeader:
       x-model-version: 1.0
       name: Accept-Language
-      schema: {
-        type: string,
-        default: "Accept-Language"
-      }
+      schema:
+        type: string
+        default: 'en-US'
       in: header
       required: false
-      description: The Accept Language header contains information about the language
-        preference of a user. This HTTP header is useful to multilingual sites for
-        deciding the best language to serve to the client. For example en-US or fr-CA.
+      description: 'The Accept Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. For example en-US or fr-CA.'
     ContentTypeHeader:
       x-model-version: 1.0
       name: Content-Type
       schema:
         type: string
-        enum: [application/json]
-        default: application/json
+        default: 'application/json'
       in: header
       required: true
-      description: The content type. Valid value (application/json).
+      description: 'The content type. Valid value (application/json).'
     ClientRequestIdHeader:
       x-model-version: 1.0
       name: Client-Request-Id
-      schema: {
-        type: string,
-        default: "Client-Request-Id"
-      }
+      schema:
+        type: string
+        default: '{{ClientRequestId}}'
       in: header
       required: true
-      description: A client-generated ID for request tracking and signature creation,
-        unique per request. This is also used for idempotency control. Recommended
-        128-bit UUID format.
+      description: 'A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format.'
     TimestampHeader:
       x-model-version: 1.0
       name: Timestamp
-      schema: {type: integer, format: int64}
+      schema:
+        type: integer
+        format: int64
+        default: '{{time}}'
       in: header
       required: true
-      description: Epoch timestamp in milliseconds in the request from a client system.
-        Used for authorization header generation and time limit (5 minutes).
+      description: 'Epoch timestamp in milliseconds in the request from a client system. Used for authorization header generation and time limit (5 minutes).'
     ApiKeyHeader:
       x-model-version: 1.0
       name: Api-Key
-      schema: {
-        type: string,
-        default: "Api-Key"
-      }
+      schema:
+        type: string
+        default: '{{key}}'
       in: header
       required: true
-      description: API key provided to the merchant associating the requests with
-        the appropriate app in the Developer Portal.
+      description: 'API key provided to the merchant associating the requests with the appropriate app in the Developer Portal.'
   responses:
     BadRequest:
       x-model-version: 1.0
