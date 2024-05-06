@@ -130,6 +130,7 @@ To receive a specific `cardholderNameResponse` response, pass the specific amoun
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [How to Use Postman for Testing](?path=docs/Resources/Guides/Testing/Postman-Testing.md)
 - [Error Codes](?path=docs/Resources/Guides/Response-Codes/Error.md)
 - [Response Codes](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)

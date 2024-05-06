@@ -29,7 +29,7 @@ Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Man
 
 #### Step 4: Create an API Name
 
-Create a API Key Name to identifiy the project
+Create a API Key Name to identify the project
 
 #### Step 5: Select Features
 
