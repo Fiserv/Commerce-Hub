@@ -1813,12 +1813,18 @@ components:
     AccountVerificationRequest:
       x-model-version: 1.0
       properties:
-        source: {$ref: '#/components/schemas/Source'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        transactionProcessingDetails: {$ref: '#/components/schemas/TransactionProcessingDetails'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        cardVerificationAmount:
+          $ref: '#/components/schemas/Amount'
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
 
     BalanceInquiryRequest:
       x-model-version: 1.0
@@ -1837,20 +1843,36 @@ components:
     CancelRequest:
       x-model-version: 1.0
       properties:
-        amount: {$ref: '#/components/schemas/Amount'}
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        amount:
+          $ref: '#/components/schemas/Amount'
         amountComponents:
           $ref: '#/components/schemas/AmountComponents'
-        source: {$ref: '#/components/schemas/Source'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        additionalData3DS:
+          $ref: '#/components/schemas/AdditionalData3DS'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        orderData:
+          $ref: '#/components/schemas/OrderData'       
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'      
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
 
     CardCaptureRequest:
       x-model-version: 1.0
@@ -1863,29 +1885,47 @@ components:
     ChargesRequest:
       x-model-version: 1.0
       properties:
-        amount: {$ref: '#/components/schemas/Amount'}
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        amount:
+          $ref: '#/components/schemas/Amount'
         amountComponents:
           $ref: '#/components/schemas/AmountComponents'
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        orderData:
-          $ref: '#/components/schemas/OrderData'
-        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        customer: {$ref: '#/components/schemas/Customer'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
         additionalData3DS:
           $ref: '#/components/schemas/AdditionalData3DS'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        rate:
+          $ref: '#/components/schemas/Rate'
+        shipperAddress:
+          $ref: '#/components/schemas/ShipperAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
         splitSettlement:
           type: array
           items:
             $ref: '#/components/schemas/SplitSettlement'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+
 
     DccRequest:
       x-model-version: 1.0
@@ -1920,20 +1960,37 @@ components:
     EnhancedDataServiceRequest:
       x-model-version: 1.0
       properties:
-        amount: {$ref: '#/components/schemas/Amount'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        customer: {$ref: '#/components/schemas/Customer'}
-        fraudAttributes: {$ref: '#/components/schemas/FraudAttributes'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        orderData: {$ref: '#/components/schemas/OrderData'}
-        splitTender: {$ref: '#/components/schemas/SplitTender'}
+        amount:
+          $ref: '#/components/schemas/Amount'
+        amountComponents:
+          $ref: '#/components/schemas/AmountComponents'
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        fraudAttributes:
+          $ref: '#/components/schemas/FraudAttributes'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        splitTender:
+          $ref: '#/components/schemas/SplitTender'
+
 
     GiftCardRequest:
       x-model-version: 1.0
@@ -1986,24 +2043,53 @@ components:
     RefundRequest:
       x-model-version: 1.0
       properties:
-        source: {$ref: '#/components/schemas/Source'}
-        amount: {$ref: '#/components/schemas/Amount'}
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
+        source:
+          $ref: '#/components/schemas/Source'
+        amount:
+          $ref: '#/components/schemas/Amount'
         amountComponents:
           $ref: '#/components/schemas/AmountComponents'
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        referenceTransactionDetails: {$ref: '#/components/schemas/ReferenceTransactionDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        rate:
+          $ref: '#/components/schemas/Rate'
+        splitSettlement:
+          type: array
+          items:
+            $ref: '#/components/schemas/SplitSettlement'
 
     ReturnOptimizerRequest:
       x-model-version: 1.0
+      description: Information about <a href="../docs?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md">Return Optimization Service Request</a>
       properties:
-        source: {$ref: '#/components/schemas/Source'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
+        source:
+          $ref: '#/components/schemas/Source'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
 
     SecurityCredentialsRequest:
       x-model-version: 1.0
@@ -2113,10 +2199,22 @@ components:
     AccountVerificationResponse:
       x-model-version: 1.0
       properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        responsePaymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        processorResponseDetails:
+          $ref: '#/components/schemas/ProcessorResponseDetails'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
 
     BalanceInquiryResponse:
       x-model-version: 1.0
@@ -2139,15 +2237,40 @@ components:
     CancelResponse:
       x-model-version: 1.0
       properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        source: {$ref: '#/components/schemas/Source'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        linkedTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedTransactionDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
 
     CardCaptureResponse:
       x-model-version: 1.0
@@ -2174,27 +2297,56 @@ components:
     ChargesResponse:
       x-model-version: 1.0
       properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        billingAddress: {$ref: '#/components/schemas/BillingAddress'}
-        shippingAddress: {$ref: '#/components/schemas/ShippingAddress'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        transactionInteraction: {$ref: '#/components/schemas/TransactionInteraction'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        dynamicDescriptors: {$ref: '#/components/schemas/DynamicDescriptors'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        cardDetails: {$ref: '#/components/schemas/CardDetails'}
-        paymentToken: {$ref: '#/components/schemas/ResponsePaymentToken'}
-        paymentTokens:
-          type: array
-          items: {$ref: '#/components/schemas/ResponsePaymentToken'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        billingAddress:
+          $ref: '#/components/schemas/BillingAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/ShippingAddress'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        dynamicDescriptors:
+          $ref: '#/components/schemas/DynamicDescriptors'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        transactionBatch:
+          $ref: '#/components/schemas/TransactionBatch'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
         additionalData3DS:
           $ref: '#/components/schemas/AdditionalData3DS'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
+        source:
+          $ref: '#/components/schemas/Source'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        authOptimizationDetails:
+          $ref: '#/components/schemas/AuthOptimizationDetails'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        rate:
+          $ref: '#/components/schemas/Rate'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        splitSettlement:
+          type: array
+          items:
+            $ref: '#/components/schemas/SplitSettlement'
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
 
     DccResponse:
       x-model-version: 1.0
@@ -2238,9 +2390,11 @@ components:
 
     EnhancedDataServiceResponse:
       x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        processorResponseDetails: {$ref: '#/components/schemas/ProcessorResponseDetails'}
+      properties: 
+            gatewayResponse:
+              $ref: '#/components/schemas/GatewayResponse'
+            processorResponseDetails:
+              $ref: '#/components/schemas/ProcessorResponseDetails'
 
     ErrorResponse:
       x-model-version: 1.0
@@ -2353,22 +2507,54 @@ components:
     RefundResponse:
       x-model-version: 1.0
       properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        source: {$ref: '#/components/schemas/Source'}
-        transactionDetails: {$ref: '#/components/schemas/TransactionDetails'}
-        merchantDetails: {$ref: '#/components/schemas/MerchantDetails'}
-        paymentReceipt: {$ref: '#/components/schemas/PaymentReceipt'}
-        transactionBatch: {$ref: '#/components/schemas/TransactionBatch'}
-        networkDetails: {$ref: '#/components/schemas/NetworkDetails'}
-        storedCredentials: {$ref: '#/components/schemas/StoredCredentials'}
-        authOptimizationDetails: {$ref: '#/components/schemas/AuthOptimizationDetails'}
-        additionalDataCommon: {$ref: '#/components/schemas/AdditionalDataCommon'}
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        source:
+          $ref: '#/components/schemas/Source'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        transactionInteraction:
+          $ref: '#/components/schemas/TransactionInteraction'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        paymentReceipt:
+          $ref: '#/components/schemas/PaymentReceipt'
+        transactionBatch:
+          $ref: '#/components/schemas/TransactionBatch'
+        networkDetails:
+          $ref: '#/components/schemas/NetworkDetails'
+        storedCredentials:
+          $ref: '#/components/schemas/StoredCredentials'
+        authOptimizationDetails:
+          $ref: '#/components/schemas/AuthOptimizationDetails'
+        additionalDataCommon:
+          $ref: '#/components/schemas/AdditionalDataCommon'
+        paymentTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsePaymentToken'
+        emvDetails:
+          $ref: '#/components/schemas/EmvDetails'
+        customer:
+          $ref: '#/components/schemas/Customer'
+        orderData:
+          $ref: '#/components/schemas/OrderData'
+        rate:
+          $ref: '#/components/schemas/Rate'
+        splitSettlement:
+          type: array
+          items:
+            $ref: '#/components/schemas/SplitSettlement'
+        referenceTransactionDetails:
+          $ref: '#/components/schemas/ReferenceTransactionDetails'
 
     ReturnOptimizerResponse:
       x-model-version: 1.0
-      properties:
-        gatewayResponse: {$ref: '#/components/schemas/GatewayResponse'}
-        transactionScoreResponse: {$ref: '#/components/schemas/TransactionScoreResponse'}
+      properties: 
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        transactionScoreResponse:
+          $ref: '#/components/schemas/TransactionScoreResponse'
 
     SecurityCredentialsResponse:
       x-model-version: 1.0
@@ -4480,12 +4666,12 @@ components:
           type: string
           maxLength: 1024
           description: 'Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a <a href="../docs?path=docs/Resources/Guides/BYOID.md">merchant custom identifier</a>.'
-          example: '12'
+          example: '10000001'
         merchantId:
           type: string
           maxLength: 1024
           description: 'A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a <a href="../docs?path=docs/Resources/Guides/BYOID.md">merchant custom identifier</a>.'
-          example: '123456789012345'
+          example: '100008000003683'
         dbaName:
           type: string
           maxLength: 1024
@@ -5478,6 +5664,25 @@ components:
           description: '% of sales returned (by Amount)'
           example: 0.3
 
+    ShipperAddress:
+      x-model-version: 1.0
+      description: 'Shipper <a href="../docs?path=docs/Resources/Master-Data/Address.md">address</a> information.'
+      properties:
+        firstName:
+          type: string
+          maxLength: 256
+          description: 'Shipper contact first name.'
+          example: 'Joe'
+        lastName:
+          type: string
+          maxLength: 256
+          description: 'Shipper contact last name.'
+          example: 'Smith'
+        address:
+          $ref: '#/components/schemas/Address'
+        phone:
+          $ref: '#/components/schemas/Phone'
+
     ShippingAddress:
       x-model-version: 1.0
       description: 'Shipping and/or delivery <a href="../docs?path=docs/Resources/Master-Data/Address.md">address</a> information.'
@@ -6057,44 +6262,64 @@ components:
 
     TransactionProcessingDetails:
       x-model-version: 1.0
-      description: Contains the <a href="../docs?path=docs/Resources/Master-Data/Gateway-Response.md#transaction-processing-details">transaction
-        response</a> details.
+      description: 'Contains the <a href="../docs?path=docs/Resources/Master-Data/Gateway-Response.md#transaction-processing-details">transaction response</a> details.'
       properties:
-        orderId: {type: string, maxLength: 40, description: Order identifier returned
-            in the parameter orderId from a Charge transaction., example: R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16}
-        transactionTimestamp: {type: string, format: date-time, description: 'Date
-            and time the transaction occurred in YYYY-MM-DDThh:mm:ssZ format.', example: '2016-04-16T16:06:05Z'}
-        apiTraceId: {pattern: '^[a-f0-9]{32}$', type: string, maxLength: 32, description: Request
-            identifier in API that can be used to request logs from the support team.,
-          example: 1234567a1234567b1234567c1234567d}
-        clientRequestId: {type: string, maxLength: 64, description: Echoes back the
-            value in the request header for tracking., example: 30dd879c-ee2f-11db-8314-0800200c9a66}
-        transactionId: {type: string, maxLength: 40, description: Unique identifier
-            for each transaction on the gateway. This value will be populated for
-            the secondary transaction from the path., example: '838916029301'}
+        orderId:
+          type: string
+          maxLength: 40
+          description: 'Order identifier returned in the parameter orderId from a Charge transaction.'
+          example: 'R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16'
+        transactionTimestamp:
+          type: string
+          format: date-time
+          description: 'Date and time the transaction occurred in YYYY-MM-DDThh:mm:ssZ format.'
+          example: '2016-04-16T16:06:05Z'
+        apiTraceId:
+          pattern: '^[a-f0-9]{32}$'
+          type: string
+          maxLength: 32
+          description: 'Request identifier in API that can be used to request logs from the support team.'
+          example: '1234567a1234567b1234567c1234567d'
+        clientRequestId:
+          type: string
+          maxLength: 1024
+          description: 'Echoes back the value in the request header for tracking.'
+          example: '30dd879c-ee2f-11db-8314-0800200c9a66'
+        transactionId:
+          type: string
+          maxLength: 40
+          description: 'Unique identifier for each transaction on the gateway. This value will be populated for the secondary transaction from the path.'
+          example: '838916029301'
+        apiKey:
+          type: string
+          maxLength: 64
+          description: 'APIKey from APIGEE as part of Authentication Credentials'
+          example: 'Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4' 
 
     TransactionScoreResponse:
       x-model-version: 1.0
-      description: Response containing return score details
+      description: ‘Response containing <a href="../docs?path=docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md#tab-transactionscoreresponse">return score</a> details.’
       properties:
-        invocationId: {type: string, description: Unique Identifier associated with
-            the invocation response, example: ad0760bf-2db5-4ba9-b294-0d2241ff58f8}
+        invocationId:
+          type: string
+          description: 'Unique Identifier associated with the invocation response'
+          example: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8'
         consumerType:
           type: string
-          description: |+
-            Indicator for new or returning customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for New Customers
-
-            Valid Values:
-            * New
-            * Existing
-          example: Existing
-        modelId: {type: string, description: Model Identifier, example: 1.0.0}
-        myReturnScoreDetails: {$ref: '#/components/schemas/MyReturnScoreDetails'}
-        peerReturnScoreDetails: {$ref: '#/components/schemas/ReturnScoreDetails'}
+          description: 'Indicator for new or returning customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for New Customers'
+          example: 'Existing'
+        modelId:
+          type: string
+          description: 'Model Identifier'
+          example: '1.0.0'
+        myReturnScoreDetails:
+            $ref: '#/components/schemas/MyReturnScoreDetails'
+        peerReturnScoreDetails:
+          $ref: '#/components/schemas/ReturnScoreDetails'
 
     VersionData3DS:
       x-model-version: 1.0
-      description: 'Additional version data passed during 3-D Secure (3DS) flows.'
+      description: 'Additional <a href="../docs?path=docs/Resources/Master-Data/Additional-Data-3DS.md#version-data">version data</a> passed during 3-D Secure (3DS) flows.'
       properties:
         recommendedVersion:
           type: string
@@ -6104,19 +6329,44 @@ components:
 
     Visa:
       x-model-version: 1.0
+      description: Visa Object Information.
       allOf:
-      - {$ref: '#/components/schemas/Network'}
-      - type: object
-        properties:
-          VISABID: {type: string, maxLength: 128, description: The Business Identifier
-              (BID) provided by Visa to Third Party Services (TPS)., example: '0123456789'}
-          VISAAUR: {type: string, maxLength: 128, description: Agent Unique Account
-              Result (AUAR) provided by Visa to Third Party Services (TPS) in 12 hex
-              digit format., example: 12345AD89012}
-          cardAuthenticationResultCode: {type: string, maxLength: 1, description: Card
-              Authentication Results Code returned by Visa for EMV chip transactions.}
-          spendQualificationIndicator: {type: boolean, example: false, description: A
-              field used by Visa to establish annual point-of-sale spending requirements.}
+        - $ref: '#/components/schemas/Network'
+        - type: object
+          properties:
+            VISABID:
+              type: string
+              maxLength: 128
+              description: 'The Business Identifier (BID) provided by Visa to Third Party Services (TPS).'
+              example: '0123456789'
+            VISAAUR:
+              type: string
+              maxLength: 128
+              description: 'Agent Unique Account Result (AUAR) provided by Visa to Third Party Services (TPS) in 12 hex digit format.'
+              example: '12345AD89012'
+            cardAuthenticationResultCode:
+              type: string
+              maxLength: 1
+              description: 'Card Authentication Results Code returned by Visa for EMV chip transactions.'
+            spendQualificationIndicator:
+              type: string
+              maxLength: 1
+              example: 'B'
+              description: 'A field used by Visa to establish annual point-of-sale spending requirements.'
+            decisionSource:
+              type: string
+              maxLength: 128
+              example: 'Timeout'
+              description: 'This field identifies the VISA decision for the transaction.'
+            tokenResponseInformation:
+              type: string
+              maxLength: 1
+              example: '1'
+              description: 'This field indicates whether the last transaction attempt was completed via PAN or Token.'
+            agreementId:
+              type: string
+              maxLength: 4
+              description: 'This field will contain a value used to identify when a merchant is eligible for the preferred Commercial Choice interchange rates.'
 
 #--------------------------------------------------------------------------------------
 # EXAMPLE MODELS
@@ -6155,6 +6405,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+
     ApplePayChargesResponse:
       value:
         gatewayResponse:
@@ -6205,6 +6456,7 @@ components:
         transactionDetails:
           captureFlag: true
           merchantInvoiceNumber: '123456789012'
+    
     ApplePayTokenRequest:
       value:
         source:
@@ -6229,6 +6481,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     ApplePayTokenResponse:
       value:
         gatewayResponse:
@@ -6270,6 +6523,7 @@ components:
           bankAssociationDetails:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
+    
     CancelResponse:
       value:
         gatewayResponse:
@@ -6317,6 +6571,7 @@ components:
               transactionTimestamp: '2021-06-20T23:42:48Z'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
+    
     CreateDigitalGiftCardRequest:
       value:
         amount:
@@ -6333,6 +6588,7 @@ components:
         additionalDataCommon:
           additionalData:
             fundingProvider: CUSTOMER
+    
     CreateDigitalGiftCardResponse:
       value:
         gatewayResponse:
@@ -6368,6 +6624,7 @@ components:
             - beginningBalance: '0.00'
               endingBalance: '12.04'
               currency: USD
+    
     CurrencyCodeDccRequest:
       value:
         sourceCurrency:
@@ -6378,6 +6635,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     EmvDetailsDownloadRequest:
       value:
         merchantDetails:
@@ -6385,6 +6643,7 @@ components:
           terminalId: '10000001'
         emvDetails:
           transactionType: DOWNLOAD
+    
     EmvDetailsStatusRequest:
       value:
         merchantDetails:
@@ -6395,6 +6654,7 @@ components:
           currentFileCreationDate: '11032023000001'
           fileSize: '10979'
           fileCheckSum: 91b4
+    
     EmvDetailsDownloadResponse:
       value:
         gatewayResponse:
@@ -6624,6 +6884,7 @@ components:
         merchantDetails:
           terminalId: '10000001'
           merchantId: '100009000000035'
+    
     EmvDetailsStatusResponse:
       value:
         gatewayResponse:
@@ -6643,10 +6904,12 @@ components:
         merchantDetails:
           terminalId: '10000001'
           merchantId: '100009000000035'
+    
     EncryptionKeyRequest:
       value:
         merchantDetails:
           merchantId: '123456789012345'
+    
     EncryptionKeyGenerateResponse:
       value:
         gatewayResponse:
@@ -6667,6 +6930,7 @@ components:
         symmetricKeyDetails:
           encryptionType: AES-GCM
           modulus: 256
+    
     EncryptionKeyRevokedResponse:
       value:
         gatewayResponse:
@@ -6687,6 +6951,7 @@ components:
         symmetricKeyDetails:
           encryptionType: AES-GCM
           modulus: 256
+    
     GooglePayRequest:
       value:
         amount:
@@ -6710,6 +6975,7 @@ components:
           terminalId: '10000001'
         transactionDetails:
           captureFlag: false
+    
     GooglePayChargesResponse:
       value:
         gatewayResponse:
@@ -6790,6 +7056,7 @@ components:
             posFeatures:
               pinAuthenticationCapability: UNSPECIFIED
               terminalEntryCapability: UNSPECIFIED
+    
     GooglePayTokenRequest:
       value:
         source:
@@ -6808,6 +7075,7 @@ components:
         merchantDetails:
           merchantId: '100004000100157'
           terminalId: '10000001'
+    
     GooglePayTokenResponse:
       value:
         gatewayResponse:
@@ -6832,6 +7100,7 @@ components:
             tokenSource: TRANSARMOR
             tokenResponseCode: '000'
             tokenResponseDescription: SUCCESS
+    
     HealthCheckStatusResponse:
       value:
         environment: prod
@@ -6881,6 +7150,7 @@ components:
               - code: '504'
                 count: '1'
                 lastOccurred: '2023-10-23T15:58:00.000000000Z'
+    
     ManualEntryInfoRequest:
       value:
         source:
@@ -6894,6 +7164,7 @@ components:
         merchantDetails:
           merchantId: '100015000300423'
           terminalId: '10000001'
+    
     ManualEntryInfoResponse:
       value:
         gatewayResponse:
@@ -6930,6 +7201,7 @@ components:
                 pinnedPOS: SUPPORTED
               - debitNetworkId: PAVD
                 pinnedPOS: SUPPORTED
+    
     PartnerPaymentTokenRequest:
       value:
         source:
@@ -6944,6 +7216,7 @@ components:
             processors:
               processorName: CHASE
               processorPlatform: TAMPA
+    
     PartnerPaymentTokenResponse:
       value:
         gatewayResponse:
@@ -6973,6 +7246,7 @@ components:
             processors:
               processorName: CHASE
               processorPlatform: TAMPA
+    
     PaymentCardActivateCardRequest:
       value:
         amount:
@@ -6997,6 +7271,7 @@ components:
         additionalDataCommon:
           additionalData:
             fundingProvider: CUSTOMER
+    
     PaymentCardActivateCardResponse:
       value:
         gatewayResponse:
@@ -7032,6 +7307,7 @@ components:
             - beginningBalance: '0.00'
               endingBalance: '12.04'
               currency: USD
+    
     PaymentCardBalanceInquiryRequest:
       value:
         source:
@@ -7050,6 +7326,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentCardBalanceInquiryResponse:
       value:
         gatewayResponse:
@@ -7086,6 +7363,7 @@ components:
             - beginningBalance: 12.04
               endingBalance: 12.04
               currency: USD
+    
     PaymentCardCaptureRequest:
       value:
         source:
@@ -7100,6 +7378,7 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+    
     PaymentCardCaptureResponse:
       value:
         gatewayResponse:
@@ -7108,6 +7387,7 @@ components:
             apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
             clientRequestId: '4345791'
             transactionId: '84356531338'
+    
     PaymentCardCashoutRequest:
       value:
         target:
@@ -7125,6 +7405,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentCardCashoutResponse:
       value:
         gatewayResponse:
@@ -7160,6 +7441,7 @@ components:
             - beginningBalance: '0'
               endingBalance: '0'
               currency: USD
+    
     PaymentCardDccRequest:
       value:
         amount:
@@ -7177,6 +7459,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     DccResponse:
       value:
         gatewayResponse:
@@ -7214,6 +7497,7 @@ components:
           responseMessage: APPROVAL
           hostResponseMessage: RATE_SUPPLIED
           localTimestamp: '2021-06-20T23:42:48Z'
+    
     PaymentCardDeviceDataInitializationRequest:
       value:
         source:
@@ -7230,6 +7514,7 @@ components:
           merchantId: '100012000001408'
         transactionDetails:
           authentication3DS: true
+    
     PaymentCardDeviceDataInitializationResponse:
       value:
         gatewayResponse:
@@ -7246,6 +7531,7 @@ components:
             dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
             encodedToken: >-
               eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg
+    
     PaymentCardEDSRequest:
       value:
         amount:
@@ -7295,6 +7581,7 @@ components:
         merchantDetails:
           merchantId: '1234567890123456'
           alternateMerchantId: '1234567890123456'
+    
     PaymentCardEDSResponse:
       value:
         gatewayResponse:
@@ -7305,6 +7592,7 @@ components:
             transactionId: '84356531338'
         processorResponseDetails:
           referenceNumber: 845366457890-TODO
+    
     PaymentCardEncryptedRequest:
       value:
         amount:
@@ -7326,6 +7614,7 @@ components:
         merchantDetails:
           merchantId: '123456789789567'
           terminalId: '123456'
+    
     PaymentCardChargesResponse:
       value:
         gatewayResponse:
@@ -7374,6 +7663,7 @@ components:
         transactionDetails:
           captureFlag: true
           merchantInvoiceNumber: '123456789012'
+    
     PaymentCardEncryptedTokenRequest:
       value:
         source:
@@ -7388,6 +7678,7 @@ components:
         merchantDetails:
           merchantId: '123456789789567'
           terminalId: '123456'
+    
     PaymentCardEncryptedVerifyRequest:
       value:
         source:
@@ -7409,12 +7700,14 @@ components:
             stateOrProvince: GA
             postalCode: '30303'
             country: US
+    
     PaymentCardInfoRequest:
       value:
         source:
           sourceType: PaymentCard
           card:
             cardData: '4005550000000019'
+    
     PaymentCardInfoResponse:
       value:
         gatewayResponse:
@@ -7465,6 +7758,7 @@ components:
             tokenIndicator: SUPPORTED
             cardholderBillingCurrency: USD
             b2bProgramId: B2B_PROGRAM_1
+    
     PaymentCardReloadRequest:
       value:
         amount:
@@ -7488,6 +7782,7 @@ components:
         additionalDataCommon:
           additionalData:
             fundingProvider: CUSTOMER
+    
     PaymentCardReloadResponse:
       value:
         gatewayResponse:
@@ -7523,6 +7818,7 @@ components:
             - beginningBalance: '12.04'
               endingBalance: '22.04'
               currency: USD
+    
     PaymentCardTokenRequest:
       value:
         source:
@@ -7536,6 +7832,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentCardTokenResponse:
       value:
         gatewayResponse:
@@ -7579,6 +7876,7 @@ components:
           bankAssociationDetails:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
+    
     PaymentCardVerifyRequest:
       value:
         source:
@@ -7599,6 +7897,7 @@ components:
             stateOrProvince: GA
             postalCode: '30303'
             country: US
+    
     PaymentCardVerifyResponse:
       value:
         gatewayResponse:
@@ -7641,6 +7940,7 @@ components:
                 securityCodeResponse: M
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
+    
     PaymentCheckRequest:
       value:
         amount:
@@ -7669,6 +7969,7 @@ components:
           driverLicenseNumber: '12345678'
           driverLicenseState: Tx
           taxid: '123456789'
+    
     PaymentCheckChargesResponse:
       value:
         gatewayResponse:
@@ -7719,6 +8020,7 @@ components:
           origin: MOTO
           posConditionCode: CARD_NOT_PRESENT_MOTO
           motoType: PHONE
+    
     PaymentEMVRequest:
       value:
         amount:
@@ -7750,6 +8052,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentEMVChargesResponse:
       value:
         gatewayResponse:
@@ -7809,6 +8112,7 @@ components:
             posFeatures:
               pinAuthenticationCapability: CAN_ACCEPT_PIN
               terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
+    
     PaymentEMVInfoRequest:
       value:
         source:
@@ -7824,6 +8128,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentEMVInfoResponse:
       value:
         gatewayResponse:
@@ -7874,6 +8179,7 @@ components:
             tokenIndicator: SUPPORTED
             cardholderBillingCurrency: USD
             b2bProgramId: B2B_PROGRAM_1
+    
     PaymentEMVTokenRequest:
       value:
         source:
@@ -7891,6 +8197,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentEMVTokenResponse:
       value:
         gatewayResponse:
@@ -7930,6 +8237,7 @@ components:
           bankAssociationDetails:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
+    
     PaymentEMVVerifyRequest:
       value:
         source:
@@ -7952,6 +8260,7 @@ components:
             stateOrProvince: GA
             postalCode: '30303'
             country: US
+    
     PaymentEMVVerifyResponse:
       value:
         gatewayResponse:
@@ -7994,6 +8303,7 @@ components:
                 securityCodeResponse: M
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
+    
     PaymentSessionDeviceDataInitializationRequest:
       value:
         source:
@@ -8003,6 +8313,7 @@ components:
           merchantId: '100012000001408'
         transactionDetails:
           authentication3DS: true
+    
     PaymentSessionDeviceDataInitializationResponse:
       value:
         gatewayResponse:
@@ -8019,6 +8330,7 @@ components:
             dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
             encodedToken: >-
               eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg
+    
     PaymentSessionRequest:
       value:
         amount:
@@ -8038,6 +8350,7 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+    
     PaymentSessionTokenRequest:
       value:
         source:
@@ -8048,6 +8361,7 @@ components:
         merchantDetails:
           merchantId: '123456789012345'
           terminalId: '123456'
+    
     PaymentSessionVerifyRequest:
       value:
         source:
@@ -8063,6 +8377,7 @@ components:
             stateOrProvince: GA
             postalCode: '30303'
             country: US
+    
     PaymentTokenChargesResponse:
       value:
         gatewayResponse:
@@ -8113,6 +8428,7 @@ components:
         transactionDetails:
           captureFlag: true
           merchantInvoiceNumber: '123456789012'
+    
     PaymentTokenDeviceDataInitializationRequest:
       value:
         source:
@@ -8125,6 +8441,7 @@ components:
           merchantId: '100012000001408'
         transactionDetails:
           authentication3DS: true
+    
     PaymentTokenDeviceDataInitializationResponse:
       value:
         gatewayResponse:
@@ -8141,6 +8458,7 @@ components:
             dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
             encodedToken: >-
               eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg
+    
     PaymentTokenEDSRequest:
       value:
         amount:
@@ -8188,6 +8506,7 @@ components:
         merchantDetails:
           merchantId: '1234567890123456'
           alternateMerchantId: '1234567890123456'
+    
     PaymentTokenEDSResponse:
       value:
         gatewayResponse:
@@ -8198,6 +8517,7 @@ components:
             transactionId: '84356531338'
         processorResponseDetails:
           referenceNumber: 845366457890-TODO
+    
     PaymentTokenInfoRequest:
       value:
         source:
@@ -8207,6 +8527,7 @@ components:
           card:
             expirationMonth: '10'
             expirationYear: '2030'
+    
     PaymentTokenInfoResponse:
       value:
         gatewayResponse:
@@ -8257,6 +8578,7 @@ components:
             tokenIndicator: SUPPORTED
             cardholderBillingCurrency: USD
             b2bProgramId: B2B_PROGRAM_1
+    
     PaymentTokenRequest:
       value:
         amount:
@@ -8280,6 +8602,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentTokenROSRequest:
       value:
         source:
@@ -8288,6 +8611,7 @@ components:
         merchantDetails:
           merchantId: '1234567890123456'
           tokenType: AB01
+    
     PaymentTokenROSResponse:
       value:
         gatewayResponse:
@@ -8307,6 +8631,7 @@ components:
             averageReturnValue: '45.53'
             averageOrderValue: '275.25'
             percentSalesReturned: '30'
+    
     PaymentTokenVerifyRequest:
       value:
         source:
@@ -8328,6 +8653,7 @@ components:
             stateOrProvince: GA
             postalCode: '30303'
             country: US
+    
     PaymentTokenVerifyResponse:
       value:
         gatewayResponse:
@@ -8371,6 +8697,7 @@ components:
                 avsCode: 'Y'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
+    
     PaymentTrackRequest:
       value:
         amount:
@@ -8400,6 +8727,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     PaymentTrackChargesResponse:
       value:
         gatewayResponse:
@@ -8460,6 +8788,7 @@ components:
               terminalEntryCapability: MAG_STRIPE_ONLY
           authorizationCharacteristicsIndicator: E
           hostPosConditionCode: '00'
+    
     PaymentTrackInfoRequest:
       value:
         source:
@@ -8473,6 +8802,7 @@ components:
         merchantDetails:
           merchantId: '100015000300423'
           terminalId: '10000001'
+    
     PaymentTrackInfoResponse:
       value:
         gatewayResponse:
@@ -8523,6 +8853,7 @@ components:
             tokenIndicator: SUPPORTED
             cardholderBillingCurrency: USD
             b2bProgramId: B2B_PROGRAM_1
+    
     PaymentTrackTokenRequest:
       value:
         source:
@@ -8536,6 +8867,7 @@ components:
         merchantDetails:
           merchantId: '100015000300423'
           terminalId: '10000001'
+    
     PaymentTrackTokenResponse:
       value:
         gatewayResponse:
@@ -8575,6 +8907,7 @@ components:
           bankAssociationDetails:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
+    
     PaymentTrackVerifyRequest:
       value:
         amount:
@@ -8614,6 +8947,7 @@ components:
                 processingPlatform: NASHVILLE
                 settlementPlatform: NORTH
                 priority: PRIMARY
+    
     PaymentTrackVerifyResponse:
       value:
         gatewayResponse:
@@ -8656,6 +8990,7 @@ components:
                 securityCodeResponse: M
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
+    
     RefundResponse:
       value:
         gatewayResponse:
@@ -8703,6 +9038,7 @@ components:
               transactionTimestamp: '2021-06-20T23:42:48Z'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
+    
     SecondaryRequest:
       value:
         amount:
@@ -8713,6 +9049,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     SecondaryRequestWithReferenceMerchantTransactionId:
       value:
         referenceTransactionDetails:
@@ -8725,6 +9062,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     SecondaryRequestWithReferenceTransactionId:
       value:
         referenceTransactionDetails:
@@ -8737,6 +9075,7 @@ components:
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
+    
     SecurityCredentialsRequest:
       value:
         domains:
@@ -8745,6 +9084,7 @@ components:
           - url: 'https://*.mystore.com'
         merchantDetails:
           merchantId: '123456789012345'
+    
     SecurityCredentialsResponse:
       value:
         keyId: dc86c901145e47fb8e339bf11af1e0b1
@@ -8762,6 +9102,7 @@ components:
         accessTokenIssuedTime: '2016-04-16T16:06:05Z'
         accessTokenTimeToLive: 1799
         accessTokenType: BEARER
+    
     ThreeDSAuthenticationRequestPaymentCard:
       value:
         amount:
@@ -8806,6 +9147,7 @@ components:
           phone:
             - type: MOBILE
               phoneNumber: '5551112222'
+    
     ThreeDSAuthenticationResponsePaymentCard:
       value:
         gatewayResponse:
@@ -8837,6 +9179,7 @@ components:
             eci: '05'
           versionData:
             recommendedVersion: 2.2.0
+    
     ThreeDSAuthenticationResponsePaymentCardChallenge:
       value:
         gatewayResponse:
@@ -8871,6 +9214,7 @@ components:
             eci: '07'
           versionData:
             recommendedVersion: 2.1.0
+    
     ThreeDSVerificationRequestMerchantTransactionId:
       value:
         merchantDetails:
@@ -8878,6 +9222,7 @@ components:
           merchantId: '100004000100116'
         referenceTransactionDetails:
           referenceMerchantTransactionId: ac81864d7c9d1ff8b5aa6e98db
+    
     ThreeDSVerificationResponse:
       value:
         gatewayResponse:
@@ -8906,6 +9251,7 @@ components:
             eci: '05'
           versionData:
             recommendedVersion: 2.1.0
+    
     ThreeDSVerificationRequestTransactionId:
       value:
         merchantDetails:
@@ -8913,6 +9259,7 @@ components:
           merchantId: '100004000100116'
         referenceTransactionDetails:
           referenceTransactionId: c229a53d92d348fb9c9ecea6f6a4aa4f
+    
     ThreeDSVerificationResponseTransactionId:
       value:
         gatewayResponse:
@@ -8941,12 +9288,14 @@ components:
             eci: '05'
           versionData:
             recommendedVersion: 2.1.0
+    
     TransactionInquiryRequest:
       value:
         referenceTransactionDetails:
           referenceTransactionId: 95f6b8c8ec024e1183a8e998406656ce
         merchantDetails:
           merchantId: '222222222222'
+    
     TransactionInquiryResponse:
       value:
         - gatewayResponse:
@@ -8985,12 +9334,14 @@ components:
           transactionDetails:
             captureFlag: 'true'
             merchantInvoiceNumber: CHG01586b641
+    
     TransactionInquiryByMerchantOrderIdRequest:
       value:
         referenceTransactionDetails:
           referenceMerchantOrderId: RKOrdID-822715036
         merchantDetails:
           merchantId: '222222222222'
+    
     TransactionInquiryByMerchantOrderIdResponse:
       value:
         - gatewayResponse:
