@@ -18,7 +18,7 @@ You can [download a YAML file](?path=(../api/?type=post&path=/payments/v1/charge
 
 The following Postman Collections can be used to [test](?path=docs/Resources/Guides/Testing/Postman-Testing.md) you Commerce Hub integration based on method or vertical.
 
-- [Full Commerce Hub Collection](https://raw.githubusercontent.com/Fiserv/tenants-data/develop/assets/ai-center_postman_hmac.zip)
+- [Full Commerce Hub Collection](?path=assets/postman/Test.postman_collection.json)
 - [Online, Digital, and Mobile Collection](https://raw.githubusercontent.com/Fiserv/tenants-data/develop/assets/ai-center_postman_hmac.zip)
 - [In-Person Collection](https://raw.githubusercontent.com/Fiserv/tenants-data/develop/assets/ai-center_postman_hmac.zip)
 
