@@ -22,6 +22,7 @@ A deferred authorization is a transaction that occurs when a merchant captures t
 ---
 
 ## See Also
+
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
 - [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
