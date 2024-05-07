@@ -51,7 +51,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `additionalData` | _object_ | N/A |  Idenitfies adtionatal data in the request. |
+| `additionalData` | _object_ | N/A |  Identifies additional data in the request. |
 
 The below table identifies the conditional parameters in the `additionalData` object.
 
@@ -75,7 +75,7 @@ The below table identifies the parameters in the `balances` array in the `paymen
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | _number_ | 16,3 | Account beginning balance |
-| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `endingBalance` | _number_ | 16,3 | Account ending balance |
 | `currency` | _string_ | 17 | ISO 3 Currency Format |
 
 <!-- type: tab-end -->
@@ -198,5 +198,6 @@ Example of a charges (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
-  
+- [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
+
 ---
