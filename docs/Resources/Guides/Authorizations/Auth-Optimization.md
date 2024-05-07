@@ -48,6 +48,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 |---------|----------|----------------|---------|
 | `authOptimazation` | *string* | 32 | An identifier used to override what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. |
 
+
 ### Auth Optimization Type
 
 | Values | Description |
@@ -81,7 +82,7 @@ type: tab
 titles: processorResponseDetails, JSON Example, authOptimizationDetails, JSON Example
 -->
 
-The below table identifies the parameters in the `proccesorResponseDetails` object.
+The below table identifies the parameters in the `processorResponseDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|

@@ -14,13 +14,13 @@ titles: check, JSON Example
 
 The below table identifies the parameters in the `check` object.
 
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
-| `routingNumber` | *string* | 45 | &#10004; | Routing number endorsed on the check |
-| `accountNumber` | *string* | 45 | &#10004; | Account number endorsed on the check |
-| `checkType` | *string* | 256 | &#10004; | Describes [check type](#check-type) |
-| `checkData` | *string* | 45 | &#10004; | Identifying data for the check presented *(i.e check number)* |
-| `accountType` | *string* | 45 | &#10004; | Describes [account type](#account-type)|
+| Variable | Type | Length | Description |
+| -------- | ------- | ----------- |------|
+| `routingNumber` | *string* | 45 | Routing number endorsed on the check |
+| `accountNumber` | *string* | 45 | Account number endorsed on the check |
+| `checkType` | *string* | 256 | Describes [check type](#check-type) |
+| `checkData` | *string* | 45 | Identifying data for the check presented *(i.e check number)* |
+| `accountType` | *string* | 45 | Describes [account type](#account-type)|
 
 <!--
 type: tab

@@ -2,13 +2,13 @@
 tags: [Full Refund, Payments, Partial Refund, Refund, Authorization, Capture, Online Refund, API Reference]
 ---
 
-# Auth/Capture Refund
+# Authorization and Capture Refund
 
-Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an [authorization request](#pre-auth-payload-example) and a subsequent [capture request](#capture-payload-example) at a later time using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
+Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an [authorization request](#pre-authorization-payload-example) and a subsequent [capture request](#capture-payload-example) at a later time using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
-Similar to [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-auth, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
+Similar to [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-authorization, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
 
-- *false:* A pre-auth transaction, where the customer's funds will be reserved and a capture will be required to return the funds.
+- *false:* A pre-authorization transaction, where the customer's funds will be reserved and a capture will be required to return the funds.
 - *true:* A refund or subsequent capture transaction where the customer will be refunded the total amount, and funds returned.
 
 <!-- theme: info -->
@@ -16,11 +16,9 @@ Similar to [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), on
 
 ---
 
-## Refunds Using Referenced Identifier 
+## Request Variables
 
-A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the refund type. 
-
-### Request Variables
+A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the refund type.
 
 <!-- theme: warning -->
 > In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
@@ -33,13 +31,12 @@ titles: referenceTransactionDetails, amount, transactionDetails, merchantDetails
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 | `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES_ |
 
 <!--
 type: tab
@@ -60,7 +57,7 @@ The below table identifies the required parameters in the `transactionDetails` o
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Refund and *false* for Pre-Auth)|
+| `captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Refund and *false* for Pre-Authorization)|
 
 <!--
 type: tab
@@ -76,21 +73,22 @@ The below table identifies the required parameters in the `merchantDetails` obje
 <!-- type: tab-end -->
 
 ---
-### Endpoint
+
+## Endpoint
 
 <!-- theme: success -->
 > **POST** `/payments/v1/refunds`
 
 ---
 
-### Pre-Auth Payload Example
+## Pre-Authorization Payload Example
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-##### Example of an authorization refund payload request.
+Example of an authorization refund payload request.
 
 ```json
 
@@ -112,13 +110,14 @@ titles: Request, Response
 }
 
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--
 type: tab
 -->
 
-##### Example of an authorization refund (201: Created) response.
+Example of an authorization refund (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -187,14 +186,14 @@ type: tab
 
 ---
 
-### Capture Payload Example
+## Capture Payload Example
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-##### Example of a refund capture payload request.
+Example of a refund capture payload request.
 
 ```json
 
@@ -212,13 +211,14 @@ titles: Request, Response
 }
 
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--
 type: tab
 -->
 
-##### Example of a refund capture (201: Created) response.
+Example of a refund capture (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -291,7 +291,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
