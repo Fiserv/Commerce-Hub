@@ -40,15 +40,15 @@ paths:
               GooglePay:
                 summary: ChargesRequest with GooglePay
                 $ref: '#/components/examples/GooglePayRequest'
-              Payment3DS:
-                summary: ChargesRequest with Payment3DS
-                $ref: '#/components/examples/Payment3DSRequest'
               PaymentToken:
                 summary: ChargesRequest with PaymentToken
                 $ref: '#/components/examples/PaymentTokenRequest'
               PaymentSession:
                 summary: ChargesRequest with PaymentSession
                 $ref: '#/components/examples/PaymentSessionRequest'
+              PaymentCheck:
+                summary: ChargesRequest with PaymentCheck
+                $ref: '#/components/examples/PaymentCheckRequest'
       responses:
         201:
           description: Created
@@ -72,15 +72,15 @@ paths:
                 GooglePay:
                   summary: ChargesResponse with GooglePay
                   $ref: '#/components/examples/GooglePayChargesResponse'
-                Payment3DS:
-                  summary: ChargesResponse with Payment3DS
-                  $ref: '#/components/examples/Payment3DSChargesResponse'
                 PaymentToken:
                   summary: ChargesResponse with PaymentToken
                   $ref: '#/components/examples/PaymentTokenChargesResponse'
                 PaymentSession:
                   summary: ChargesResponse with PaymentSession
                   $ref: '#/components/examples/PaymentCardChargesResponse'
+                PaymentCheck:
+                  summary: ChargesResponse with PaymentCheck
+                  $ref: '#/components/examples/PaymentCheckChargesResponse'
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
         404: {$ref: '#/components/responses/NotFound'}
@@ -100,6 +100,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments/v1/cancels:
     x-model-version: 1.1
     post:
@@ -123,15 +124,6 @@ paths:
               transactionId:
                 summary: Cancel a transaction using CommerceHub Transaction ID
                 $ref: '#/components/examples/SecondaryRequestWithReferenceTransactionId'
-      parameters:
-      - {$ref: '#/components/parameters/ContentTypeHeader'}
-      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
-      - {$ref: '#/components/parameters/ApiKeyHeader'}
-      - {$ref: '#/components/parameters/TimestampHeader'}
-      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
-      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
-      - {$ref: '#/components/parameters/AuthorizationHeader'}
-      - {$ref: '#/components/parameters/MessageDigestHeader'}
       responses:
         200:
           description: Success
@@ -166,6 +158,16 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments/v1/refunds:
     x-model-version: 1.0
     post:
@@ -222,6 +224,16 @@ paths:
           $ref: '#/components/responses/ServiceUnavailable'
         504:
           $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/accounts/verification:
     x-model-version: 1.0
     post:
@@ -295,6 +307,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/tokens:
     x-model-version: 1.0
     post:
@@ -314,7 +327,6 @@ paths:
               PaymentTrack: {summary: TokenizationRequest with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenRequest'}
               ApplePay: {summary: TokenizationRequest with ApplePay, $ref: '#/components/examples/ApplePayTokenRequest'}
               GooglePay: {summary: TokenizationRequest with GooglePay, $ref: '#/components/examples/GooglePayTokenRequest'}
-              Payment3DS: {summary: TokenizationRequest with Payment3DS, $ref: '#/components/examples/PaymentCard3DSTokenizationRequest'}
               PaymentSession: {summary: TokenizationRequest with PaymentSession, $ref: '#/components/examples/PaymentSessionTokenRequest'}
       responses:
         200:
@@ -328,7 +340,6 @@ paths:
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
                 GooglePay: {summary: TokenizationResponse with GooglePay, $ref: '#/components/examples/GooglePayTokenResponse'}
-                Payment3DS: {summary: TokenizationResponse with Payment3DS, $ref: '#/components/examples/PaymentCard3DSTokenizationRequest'}
                 PaymentSession: {summary: TokenizationResponse with PaymentSession, $ref: '#/components/examples/PaymentCardTokenResponse'}
         400: {$ref: '#/components/responses/BadRequest'}
         401: {$ref: '#/components/responses/Unauthorized'}
@@ -349,6 +360,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /daas/v1/enhanceddata:
     x-model-version: 1.0
     post:
@@ -406,6 +418,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /daas/v1/returnoptimizer:
     x-model-version: 1.0
     post:
@@ -463,6 +476,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments/v1/transaction-inquiry:
     x-model-version: 1.0
     post:
@@ -531,6 +545,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/security/credentials:
     x-model-version: 1.0
     post:
@@ -595,6 +610,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/accounts/information-lookup:
     x-model-version: 1.0
     post:
@@ -679,6 +695,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
@@ -794,6 +811,7 @@ paths:
       - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
       - {$ref: '#/components/parameters/AuthorizationHeader'}
       - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /security/v1/keys/{keyId}/revoke:
     x-model-version: 1.0
     post:
@@ -1011,16 +1029,16 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ThreeDSDeviceDataInitializationRequest'
-#            examples:
-#              PaymentCard:
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentCard
-#                $ref: '#/components/examples/PaymentCardDeviceDataInitializationRequest'
-#              PaymentSession: 
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentSession
-#                $ref: '#/components/examples/PaymentSessionDeviceDataInitializationRequest'
-#              PaymentToken:
-#                summary: ThreeDSDeviceDataInitializationRequest with PaymentToken
-#                $ref: '#/components/examples/PaymentTokenDeviceDataInitializationRequest'
+            examples:
+              PaymentCard:
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentCard
+                $ref: '#/components/examples/PaymentCardDeviceDataInitializationRequest'
+              PaymentSession: 
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentSession
+                $ref: '#/components/examples/PaymentSessionDeviceDataInitializationRequest'
+              PaymentToken:
+                summary: ThreeDSDeviceDataInitializationRequest with PaymentToken
+                $ref: '#/components/examples/PaymentTokenDeviceDataInitializationRequest'
       responses:
         201: 
           description: Created
@@ -1028,16 +1046,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ThreeDSDeviceDataInitializationResponse'
-#              examples:
-#                PaymentCard:
-#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentCard
-#                  $ref: '#/components/examples/PaymentCardDeviceDataInitializationResponse'
-#               PaymentSession: 
-#                 summary: ThreeDSDeviceDataInitializationResponse with PaymentSession
-#                  $ref: '#/components/examples/PaymentSessionDeviceDataInitializationResponse'
-#                PaymentToken:
-#                  summary: ThreeDSDeviceDataInitializationResponse with PaymentToken
-#                  $ref: '#/components/examples/PaymentTokenDeviceDataInitializationResponse'
+              examples:
+                PaymentCard:
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentCard
+                  $ref: '#/components/examples/PaymentCardDeviceDataInitializationResponse'
+                PaymentSession: 
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentSession
+                  $ref: '#/components/examples/PaymentSessionDeviceDataInitializationResponse'
+                PaymentToken:
+                  summary: ThreeDSDeviceDataInitializationResponse with PaymentToken
+                  $ref: '#/components/examples/PaymentTokenDeviceDataInitializationResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -1825,19 +1843,9 @@ components:
         sourceType:
           type: string
           maxLength: 256
-          description: |+
-            Payment source type for a transaction request.
+          description: 'Payment <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Source-Type.md">source type</a> for a transaction request.'
+          example: 'PaymentCard'
 
-            Valid Values:
-            * <a href="../docs?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md">3-D Secure</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md">ApplePay</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md">GooglePay</a>
-            * <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md">PaymentCard</a>
-            * <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md">PaymentToken</a>
-            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/EMV.md">PaymentEMV</a>
-            * <a href="../docs?path=docs/In-Person/Encrypted-Payments/Track.md">PaymentTrack</a>
-            * <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md">PaymentSession</a>
-          example: PaymentCard
     PaymentCard:
       x-model-version: 1.0
       allOf:
@@ -2081,77 +2089,7 @@ components:
               AppID registered in the Samsung portal., example: merchant.com.futurex}
           merchantPrivateKey: {type: string, maxLength: 256, description: Merchant
               private key in hex encoded format., example: 2B939D88050A48885DC2FDD8BC1780CC0AF4DA741424A82A60579DB3F08C7DCF81B03E7A0EC28D6705705488FDEFF6DEC8E37D3C20E9C11B36C9D710C42D029831}
-    Payment3DS:
-      x-model-version: 1.0
-      allOf:
-        - $ref: '#/components/schemas/Source'
-        - type: object
-          description: '3DSecure source.'
-          properties:
-            card:
-              $ref: '#/components/schemas/Card'
-            merchantIdentifier:
-              type: string
-              maxLength: 256
-              description: 'A unique ID used to identify the merchant. The merchant must use the value assigned by the acquirer.'
-              example: '1234567890123456'
-            version:
-              type: string
-              maxLength: 64
-              description: 'Specific protocol version supported by 3DS.'
-              example: '3DS2'
-            cavv:
-              type: string
-              maxLength: 256
-              description: 'The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase.'
-              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
-            xid:
-              type: string
-              maxLength: 256
-              description: '3DSecure/Verified by Visa value returned by Cardinal Commerce.'
-              example: '&x_MD5_Hash=abfaf1d1df004e3c27d5d2e05929b529&x_state=BC&x_reference_3=&x_auth_code=ET141870&x_fp_timestamp=1231877695'
-            verificationResponse:
-              type: string
-              maxLength: 256
-              description: 'Verification response message.'
-              example: 'PASSED_VALIDATION'
-            authenticationAttemptResult:
-              type: string
-              maxLength: 256
-              description: 'Result of authentication attempt from Payer Authentication Response (PaRes).'
-              example: 'uyt45t89cnwu3rhc98a4hterjklth4o8ctsrjzth4'
-            channel:
-              type: string
-              maxLength: 32
-              description: |+
-          
-                Valid Values: 
-                * MOBILE_APP
-                * MOBILE_WEB
-                * BROWSER_PC
-                * KIOSK
-                * CONSOLE
-                * 3DS_REQUESTOR_INITIATED
-            authenticationResponse:
-              type: string
-              description: 'The result of authentication attempt returned by the 3D Secure authentication process (PaRes).'
-              example: 'A'
-            directoryServerTransactionId:
-              type: string
-              description: 'The response transaction UUID from the DS (directory server)'
-              example: 'f38e6948-5388-41a6-bca4-b49723c19437'
-            messageCategory:
-              type: string
-              description: 'Indicates the message category of 3d secure authentication version 2.X. 01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only'
-              example: '1'
-            tavv:
-              type: string
-              description: 'Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction.'
-              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
-            challengeStatus:
-              type: string
-              description: 'The transaction status as returned by the 3D Secure authentication process. (CRes)'
-              example: 'A'
+
     DecryptedWallet:
       x-model-version: 1.0
       allOf:
@@ -2639,34 +2577,76 @@ components:
             the acquirer or the gateway when submitting a transaction., example: '123456789012345'}
     Customer:
       x-model-version: 1.0
-      description: <a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a>
-        specific data.
+      description: '<a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a> specific data.'
       properties:
-        merchantCustomerId: {type: string, maxLength: 1024, description: Unique customer
-            identifier., example: '234567'}
-        processorCustomerId: {type: string, maxLength: 1024, description: Unique customer
-            identifier on processor network., example: '1122334'}
-        firstName: {type: string, maxLength: 256, description: Customer first name.,
-          example: Joe}
-        lastName: {type: string, maxLength: 256, description: Customer last name.,
-          example: Smith}
-        dob: {type: string, format: date, maxLength: 10, description: Customer date
-            of birth in YYYY-MM-DD format., example: '1990-01-01'}
-        email: {type: string, maxLength: 256, description: Customer email address.,
-          example: customer@domain.com}
-        ipAddress: {type: string, maxLength: 39, description: The IP address of the
-            customer., example: 170.165.02.26}
-        hostName: {type: string, maxLength: 1024, description: The name of the server
-            the customer is connected to., example: dreamwave.com}
-        locale: {type: string, maxLength: 256, description: Language/region code of
-            user in IETF BCP47 format., example: en-US}
-        driverLicenseNumber: {type: string, maxLength: 256, description: 'Customer
-            driver license number, including state.', example: GA456183789}
-        ssn: {type: string, maxLength: 9, description: Customer SSN or US federal
-            tax ID number (business checks only)., example: '123456789'}
+        merchantCustomerId:
+          type: string
+          maxLength: 1024
+          description: 'Unique customer identifier defined by the merchant.'
+          example: '234567'         
+        firstName:
+          type: string
+          maxLength: 256
+          description: 'Customer first name.'
+          example: 'Joe'
+        lastName:
+          type: string
+          maxLength: 256
+          description: 'Customer last name.'
+          example: 'Smith'
+        email:
+          type: string
+          maxLength: 256
+          description: 'Customer email address.'
+          example: 'customer@domain.com'
+        dateOfBirth:
+          type: string
+          maxLength: 10
+          description: 'Customer date of birth in YYYY-MM-DD format.'
+          example: '1990-01-01'        
+        driverLicenseNumber:
+          type: string
+          maxLength: 256
+          description: 'Customer driver license number.'
+          example: '456183789'
+        driverLicenseState:
+          type: string
+          maxLength: 256
+          description: 'Driver license state code.'
+          example: 'New Jersey'
+        idCardNumber:
+          type: string
+          maxLength: 256
+          description: 'Customer id card number.'
+          example: '12345678'
+        passportNumber:
+          type: string
+          maxLength: 256
+          description: 'Customer passport number.'
+          example: 'PA1234567'
+        ssn:
+          type: string
+          maxLength: 9
+          description: 'Customer SSN.'
+          example: '123456789'
+        taxId:
+          type: string
+          description: 'Customer tax ID number.'
+        hostName: 
+          type: string
+          maxLength: 1024
+          description: 'The name of the server the customer is connected to.'
+          example: 'dreamwave.com'
+        ipAddress:
+          type: string
+          maxLength: 39
+          description: 'The IP address of the customer.'
+          example: '170.165.02.26'
         phone:
           type: array
-          items: {$ref: '#/components/schemas/Phone'}
+          items:
+            $ref: '#/components/schemas/Phone'
+
     StoredCredentials:
       x-model-version: 1.0
       description: Used to initiate an initial or subsequent <a href="../docs?path=docs/Resources/Guides/Stored-Credentials.md">stored
@@ -5272,6 +5252,52 @@ components:
           description: 'Status of the key pair. Valid values are ACTIVE, INACTIVE, REVOKED or LEGACY'
           example: 'ACTIVE'
 
+    PaymentCheck:
+      x-model-version: 1.0
+      allOf:
+        - $ref: '#/components/schemas/Source'
+        - type: object
+          properties:
+            check:
+              $ref: '#/components/schemas/Check'
+            encryptionData:
+              $ref: '#/components/schemas/EncryptionData'
+
+    Check:
+      x-model-version: 1.0
+      description: 'Common <a href="../docs?path=docs/Resources/Master-Data/Check.md">check</a> data for a transaction request and response.'
+      properties:
+        nameOnCheck:
+          type: string
+          maxLength: 50
+          description: 'Check holder name.'
+          example: 'Jane Smith'
+        checkData:
+          type: string
+          maxLength: 45
+          description: 'Identifying data for the check presented (i.e check number).'
+          example: '101'      
+        routingNumber:
+          type: string
+          maxLength: 9
+          description: 'Routing number endorsed on the check.'
+          example: '123456789'
+        accountNumber:
+          type: string
+          maxLength: 45
+          description: 'Account number endorsed on the check.'
+          example: '19471508'
+        checkType:
+          type: string
+          maxLength: 256
+          description: 'Describes check type.'
+          example: 'MONEY_CODE'
+        accountType:
+          type: string
+          maxLength: 256
+          description: 'Describes check type.'
+          example: 'PERSONAL'
+
     HealthCheckStatusResponse:
       x-model-version: 1.0
       properties:
@@ -6220,41 +6246,6 @@ components:
             transactionId: '84356531338'}
         transactionScoreResponse: {invocationId: 'ad0760bf-2db5-4ba9-b294-0d2241ff58f8', consumerType: 'EXISTING', modelId: '1.0.0', myReturnScoreDetails : {score: '93', returnProbablilityRate: 'HIGH'}, peerReturnScoreDetails: {averageReturnValue: '45.53', averageOrderValue: '275.25', percentSalesReturned: '30'} }
 
-    Payment3DSRequest:
-      value:
-        amount:
-          total: 9.00
-          currency: 'USD'
-        source:
-          sourceType: 'PaymentCard'
-          encryptionData:
-            encryptionType: 'RSA'
-            encryptionTarget: 'MANUAL'
-            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
-            keyId: '88000000022'
-            securityCodeIndicator: 'PROVIDED'
-        additionalData3DS:
-          serviceProviderTransactionId: 'W1dkIvUNzLYgRGLBVNp1'
-          acsTransactionId: '46d071e5-2447-4980-a9ba-c8c55a99107a'
-          challengeIndicator: false
-          dsTransactionId: '3150f884-0a17-4669-8c50-5d9b8bdae022'
-          serverTransactionId: 'c58e7f2e-56dd-496a-acda-b39c37bdf14b'
-          authenticationStatus: 'Y'
-          mpiData:
-            cavv: 'MTIzNDU2Nzg5MDEyMzQ1Njc4OTA='
-            eci: '05'
-          versionData:
-            recommendedVersion: '2.1.0'
-        transactionDetails:
-          captureFlag: true
-          deviceFingerprint:
-            - dataDynamic:
-                ipAddress: '192.168.0.12'
-        merchantDetails:
-          terminalId: '10000001'
-          merchantId: '100004000100116'
-
     ThreeDSAuthenticationRequestPaymentCard:
       value:
         amount:
@@ -6269,16 +6260,6 @@ components:
             encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
             keyId: '88000000022'
             securityCodeIndicator: 'PROVIDED'
-        billingAddress:
-          firstName: Raghavendiran
-          lastName: Kannan
-          address:
-            street: 100 Ashford Gables Dr
-            houseNumberOrName: '4201'
-            city: Atlanta
-            stateOrProvince: Georgia
-            postalCode: '30338'
-            country: USA
         transactionDetails:
           captureFlag: true
           createToken: false
@@ -6447,151 +6428,6 @@ components:
           versionData:
             recommendedVersion: 2.1.0
 
-    PaymentCard3DSTokenizationRequest:
-      value:
-        source:
-          sourceType: 'PaymentCard'
-          encryptionData:
-            encryptionType: 'RSA'
-            encryptionTarget: 'MANUAL'
-            encryptionBlock: '=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....'
-            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
-            keyId: '88000000022'
-            securityCodeIndicator: 'PROVIDED'
-        additionalData3DS:
-          serviceProviderTransactionId: 'W1dkIvUNzLYgRGLBVNp1'
-          acsTransactionId: '46d071e5-2447-4980-a9ba-c8c55a99107a'
-          dsTransactionId: '3150f884-0a17-4669-8c50-5d9b8bdae022'
-          acsReferenceNumber: '8561c0ef-931a-474f-bfee-55eb98a3jds7'
-          authenticationStatus: 'Y'
-          statusReason: 'Approved'
-          serverTransactionId: 'c58e7f2e-56dd-496a-acda-b39c37bdf14b'
-          serviceProvider: 'CARDINAL'
-          challengeStatus: 'Y'
-          messageCategory: '1'
-          mpiData:
-            cavv: '020360C31C002540AFAB9DFFA1F69D3000020000'
-            xid: 'G2Q6OcsXq1k0pA0mMNHVH1P02Tw='
-            eci: 'SECURE_ECOM'
-          versionData:
-            recommendedVersion: '2.1.0'
-        transactionDetails:
-          merchantOrderId: '87849105'
-        merchantDetails:
-          terminalId: '10000001'
-          merchantId: '100004000100116'
-
-    Payment3DSChargesResponse:
-      value:
-        gatewayResponse:
-          transactionType: 'CHARGE'
-          transactionState: 'CAPTURED'
-          transactionOrigin: 'ECOM'
-          transactionProcessingDetails:
-            orderId: 'CHG01b33018867132945ccfec11492a66a1a9'
-            transactionTimestamp: '2023-08-18T18:58:00.698883142Z'
-            apiTraceId: 'b5ebb33767bc42909cedab92541a60be'
-            clientRequestId: '5200768'
-            transactionId: 'b5ebb33767bc42909cedab92541a60be'
-        source:
-          sourceType: 'PaymentCard'
-          card:
-            expirationMonth: '07'
-            expirationYear: '2025'
-            bin: '401200'
-            last4: '0026'
-            scheme: 'VISA'
-        paymentReceipt:
-          approvedAmount:
-            total: 9.00
-            currency: 'USD'
-          processorResponseDetails:
-            approvalStatus: 'APPROVED'
-            approvalCode: 'OK172C'
-            referenceNumber: 'ab92541a60be'
-            networkRouted: 'VISA'
-            networkInternationalId: '0001'
-            responseCode: '000'
-            responseMessage: 'Approved'
-            hostResponseCode: '00'
-            hostResponseMessage: 'APPROVAL'
-        transactionDetails:
-          captureFlag: true
-          processingCode: '000000'
-          transactionCutTimeStamp: '2023-08-19T01:45:00Z'
-          deviceFingerprint:
-            - dataDynamic:
-                ipAddress: 192.168.0.12
-          createToken: true
-          retrievalReferenceNumber: 'ab92541a60be'
-        transactionInteraction:
-          posEntryMode: 'MANUAL'
-          posConditionCode: 'CARD_NOT_PRESENT_ECOM'
-          additionalPosInformation:
-            stan: '020100'
-            posFeatures:
-              pinAuthenticationCapability: 'UNSPECIFIED'
-              terminalEntryCapability: 'UNSPECIFIED'
-          authorizationCharacteristicsIndicator: 'U'
-          hostPosEntryMode: '010'
-          hostPosConditionCode: '59'
-        networkDetails:
-          network:
-            network: 'Visa'
-          networkResponseCode: '00'
-          cardLevelResultCode: 'C'
-          validationCode: 'G216'
-          transactionIdentifier: '013230529278074'
-    PaymentCard3DSTokenizationResponse:
-      value:
-        gatewayResponse:
-          transactionType: 'TOKENIZE'
-          transactionState: 'AUTHORIZED'
-          transactionProcessingDetails:
-            orderId: 'CHG01133d6e8746b0449902fdd8f9f89ef840'
-            transactionTimestamp: '2023-08-18T19:01:02.509947165Z'
-            apiTraceId: '13316200f664440fa9cc8ecc8c1b7457'
-            clientRequestId: '1410076'
-            transactionId: '13316200f664440fa9cc8ecc8c1b7457'
-        source:
-          sourceType: 'PaymentCard'
-          card:
-            expirationMonth: '12'
-            expirationYear: '2025'
-            bin: '401200'
-            last4: '0026'
-            scheme: 'VISA'
-        paymentTokens:
-          - tokenData: '8408727895800026'
-            tokenSource: 'TRANSARMOR'
-            tokenResponseCode: '000'
-            tokenResponseDescription: 'SUCCESS'
-        processorResponseDetails:
-          approvalStatus: 'APPROVED'
-          approvalCode: 'OK409C'
-          referenceNumber: '8ecc8c1b7457'
-          networkInternationalId: '0001'
-          responseCode: '000'
-          responseMessage: 'Approved'
-          hostResponseCode: '00'
-          hostResponseMessage: 'APPROVAL'
-          bankAssociationDetails:
-            associationResponseCode: 'V000'
-            avsSecurityCodeResponse:
-              streetMatch: 'NONE'
-              postalCodeMatch: 'NONE'
-              securityCodeMatch: 'NOT_CHECKED'
-              association:
-                securityCodeResponse: 'X'
-          additionalInfo:
-            - name: 'COUNTRY_CODE'
-              value: 'USA'
-            - name: 'CARD_PRODUCT_ID'
-              value: 'H'
-            - name: 'DETAILED_PRODUCT_ID'
-              value: 'C'
-            - name: 'HOST_RAW_PROCESSOR_RESPONSE'
-              value: 'ARAyIAGADoAAAgAAAAAAAAAAAAgYGQECABUoAAFROGVjYzhjMWI3NDU3T0s0MDlDMDAwMTY1MDk3MQIEAEgxNE4wMTMyMzA1MDc4NzEyMjhJViAgICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAAGDIyQVBQUk9WQUwgICAgICAgIAADNDlYAAM2NTEABlZJQ1JDIAAxU1AwNzAxNjg0MDg3Mjc4OTU4MDAwMjYxMDAwMzAwMgAxU0RUQzAxNTYwMTEwMDAwMDAwMDAwMEFSMDA0VjAwMABIQVJCTjAwOFVTQSBCYW5rQ0kwMDNVU0FDUDAwMUhEUDAwMUNSQzAwMjAwQ0IwMDFW'
     PaymentEMVRequest:
       value:
         amount: {total: 12.04, currency: USD}
@@ -7390,7 +7226,6 @@ components:
       value:
         referenceTransactionDetails:
           referenceMerchantTransactionId: 'ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
@@ -7404,7 +7239,6 @@ components:
       value:
         referenceTransactionDetails:
           referenceTransactionId: '362866ac81864d7c9d1ff8b5aa6e98db'
-          referenceTransactionType: 'CHARGES'
         amount:
           total: 12.04
           currency: 'USD'
@@ -7994,6 +7828,86 @@ components:
                 endingBalance: 12.04
                 currency: 'USD'
 
+    PaymentCheckRequest:
+      value:
+        amount:
+          total: 100
+          currency: 'USD'
+        source:
+          sourceType: 'PaymentCheck'
+          check:
+            accountNumber: '144155167'
+            routingNumber: '121000248'
+            checkType: 'Business'
+            checkData: '3654803'
+            accountType: 'Savings'
+        transactionDetails:
+          captureFlag: true
+        merchantDetails:
+          merchantId: '100184000000076'
+          terminalId: '10000001'
+        transactionInteraction:
+          origin: 'MOTO'
+        customer:
+          firstName: 'ZEN'
+          lastName: 'R'
+          email:
+          dob: '1992-10-04'
+          driverLicenseNumber: '12345678'
+          driverLicenseState: 'Tx'
+          taxid: '123456789'
+
+    PaymentCheckChargesResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'CHARGE_SALE'
+          transactionState: 'CAPTURED'
+          transactionOrigin: 'MOTO'
+          transactionProcessingDetails:
+            orderId: 'CHG01dec589299d309240fb51cb8957234868'
+            transactionTimestamp: '2024-03-07T22:23:21.506426965Z'
+            apiTraceId: 'ae33c0c0dad948148aa4e00b14b15e0c'
+            clientRequestId: '5389247'
+            transactionId: 'ae33c0c0dad948148aa4e00b14b15e0c'
+        paymentReceipt:
+          approvedAmount:
+            total: 100
+            currency: 'USD'
+          processorResponseDetails:
+            approvalStatus: 'APPROVED'
+            approvalCode: '3212'
+            referenceNumber: '0021-becf314f-59cf-4a75-9133-f3f1495d862d'
+            processor: 'FISERV'
+            host: 'CONNECT_PAY'
+            networkRouted: 'TELECHECK'
+            responseCode: '000'
+            responseMessage: 'Approved'
+            hostResponseCode: '0'
+            hostResponseMessage: 'Approved'
+            bankAssociationDetails:
+              transactionTimestamp: '2024-03-07T16:23:00Z'
+        source:
+          sourceType: 'PaymentCheck'
+          check:
+            routingNumber: '121000248'
+            accountNumber: '144155167'
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100184000000076'
+        networkDetails:
+          systemTrace: '1400310000032032697430'
+          networkResponseStatus: '1'
+          networkResponseCode: '07'
+        transactionDetails:
+          captureFlag: true
+          transactionCaptureType: 'gateway'
+          retrievalReferenceNumber: 'e00b14b15e0c'
+          transactionCutTimeStamp: '2024-03-08T05:00:00Z'
+        transactionInteraction:
+          origin: 'MOTO'
+          posConditionCode: 'CARD_NOT_PRESENT_MOTO'
+          motoType: 'PHONE'
+
     HealthCheckStatusResponse:
       value:
         environment: prod
@@ -8113,3 +8027,89 @@ components:
           responseMessage: 'APPROVAL'
           hostResponseMessage: 'RATE_SUPPLIED'
           localTimestamp: '2021-06-20T23:42:48Z'
+
+    PaymentCardDeviceDataInitializationRequest:
+      value:
+        source:
+          sourceType: 'PaymentCard'
+          encryptionData:
+            keyId: '5b92d78f6c8461095ba19dc96275fcd0'
+            encryptionBlock: 'JuHoI3TegNTzaPGEJO3BthocjWms+qQeA2xSLD1076hXNVO6T3IJNHulqC7eyfqg2EDqnUh/a7XoCvA4ChXW/6J8gSh0xolIobaXh0vKhEJTYOxk0Zhfp6gRyeqjgVvy1u7oNUqNvgE7Br4IKlu+Jfm4kh4w+NzGfFVoesN56I1pbj6SNURFYLoW5veoHh+RFHf/UeUsUbJhX7+9CA9iPAYlSSoJNSmNQ4acKSTWzrUb6SfmlyfMi4LSmh0Fq3xhJSacAscyv9KQBdnyBEfYrAakE9D7+ihQuB5JTCWY9h6SRaNeaZaK3Voq1hmnqzV2t3IUP0mHd6QlYz0yY1l4wg=='
+            encryptionType: 'RSA'
+            encryptionTarget: 'MANUAL'
+            encryptionBlockFields: 'card.cardData:16,card.nameOnCard:4,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3'
+        merchantDetails:
+          merchantId: '100012000001408'
+        transactionDetails:
+          authentication3DS: true
+
+    PaymentCardDeviceDataInitializationResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            apiTraceId: 'a5ec6f6e8050db7977e4d0ea00c6104a'
+            clientRequestId: 'ae6fd50372c68995220875284526ecc2'
+            transactionId: '838916029301'
+        transactionDetails:
+          authentication3DS: true
+          cavvInPrimary: false
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          methodData:
+            dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
+            encodedToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg'
+
+    PaymentTokenDeviceDataInitializationRequest:
+      value:
+        source:
+          sourceType: 'PaymentToken'
+          tokenData: '8378537502691015'
+          card:
+            expirationMonth: '12'
+            expirationYear: '2025'
+        merchantDetails:
+          merchantId: '100012000001408'
+        transactionDetails:
+          authentication3DS: true
+
+    PaymentTokenDeviceDataInitializationResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            apiTraceId: 'a5ec6f6e8050db7977e4d0ea00c6104a'
+            clientRequestId: 'ae6fd50372c68995220875284526ecc2'
+            transactionId: '838916029301'
+        transactionDetails:
+          authentication3DS: true
+          cavvInPrimary: false
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          methodData:
+            dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
+            encodedToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg'
+
+    PaymentSessionDeviceDataInitializationRequest:
+      value:
+        source:
+          sourceType: 'PaymentSession'
+          sessionId: 'df8c33d2-af27-4a3a-b7a0-61d4edf09cad'
+        merchantDetails:
+          merchantId: '100012000001408'
+        transactionDetails:
+          authentication3DS: true
+
+    PaymentSessionDeviceDataInitializationResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            apiTraceId: 'a5ec6f6e8050db7977e4d0ea00c6104a'
+            clientRequestId: 'ae6fd50372c68995220875284526ecc2'
+            transactionId: '838916029301'
+        transactionDetails:
+          authentication3DS: true
+          cavvInPrimary: false
+        additionalData3DS:
+          serviceProvider: 'CARDINAL'
+          methodData:
+            dataCollectionUrl: 'https://centinelapistag.cardinalcommerce.com/V2/Cruise/Collect'
+            encodedToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3MWY0YTRjNy1lMGQ4LTRhOTYtOTQwNi01YTA1ZjRkZDI1OTUiLCJpYXQiOjE2ODEzNzc4NjksImlzcyI6IjYyMmQwNzhkMzU5NTk5NjdiNTc5OTI3MSIsIk9yZ1VuaXRJZCI6IjYyM2E2MjE4ODNmNWY2NzY1M2RkYTNiYSIsIlJlZmVyZW5jZUlkIjoiODhjZTllMDEtNTgzMi00ZGI1LWJhYjEtNzU1N2RkZTJhNTkxIiwiUGF5bG9hZCI6eyJDb25zdW1lciI6eyJBY2NvdW50Ijp7IkFjY291bnROdW1iZXIiOiI0MTExMTEifX19LCJleHAiOjE2ODEzNzk2Njl9.DElWZkOyRUDLq_OJ7Wk-wIFxWanhkHJXhgfQ5HVWvjg'

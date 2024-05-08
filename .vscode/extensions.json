@@ -2,13 +2,15 @@
   "recommendations": [
     "davidanson.vscode-markdownlint",
     "oliversturm.fix-json",
-    "znck.grammarly",
     "redhat.vscode-yaml",
     "ban.spellright",
     "ms-vscode.remote-repositories",
     "42crunch.vscode-openapi",
-    "valentjn.vscode-ltex",
     "github.remotehub",
-    "ms-vscode.azure-repos"
+    "ms-vscode.azure-repos",
+    "acrolinx.vscode-sidebar",
+    "yzhang.markdown-all-in-one",
+    "fantasy.markdown-all-in-one-for-web",
+    "arjun.swagger-viewer"
   ]
 }

@@ -32,7 +32,6 @@ The below table identifies the available parameters in the `referenceTransaction
 |---------|----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 | `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES or REFUNDS_ |
 
 <!--
 type: tab
@@ -94,6 +93,7 @@ Example of a cancels payload request.
   }
 }
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/cancel)
 
 <!--
@@ -195,6 +195,7 @@ The below table identifies the valid values of the reason the merchant/customer 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/cancels)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
