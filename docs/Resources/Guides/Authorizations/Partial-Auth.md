@@ -153,6 +153,7 @@ Example of a charge (201: Created) response
 ```
 
 <!-- type: tab-end -->
+
 ---
 
 ## Parameters
@@ -164,7 +165,7 @@ type: tab
 titles: transactionDetails
 -->
 
-The below table identifies the parameters in the `transactionDetails` object.
+The below table identifies the require parameters in the `transactionDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | -------------| --------- |
