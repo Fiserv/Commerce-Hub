@@ -6,7 +6,7 @@ tags: [Partial Approval, Authorization]
 
 Commerce Hub supports partial authorizations *(approvals)* for [online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md), and [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) in order to improve debit and gift cad transactions. Partial authorization capability addresses decline rates and enhances the consumer and merchant experience at the point of sale.
 
-<!-- theme: danger -->
+<!-- theme: warning -->
 > Support for partial authorization is mandatory for all card brands for [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md).
 
 - **Partial Approvals:** allows merchants to process split-tender charges by allowing an authorization request where the transaction amount exceeds the funds available on the card. The merchant can then process an additional charge to obtain the remaining amount.
@@ -165,7 +165,7 @@ type: tab
 titles: transactionDetails
 -->
 
-The below table identifies the require parameters in the `transactionDetails` object.
+The below table identifies the required parameters in the `transactionDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | -------------| --------- |
