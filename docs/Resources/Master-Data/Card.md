@@ -5,7 +5,7 @@ tags: [API Reference, Card Details, Master Data]
 
 # Card Data
 
-Card is a required object in `source` for all card payment types including; debit, credit, prepaid (gift), HSA, and WIC/EBT. 
+Card is a required object in `source` for all card payment types including; debit, credit, prepaid (gift), HSA, and WIC/EBT.
 
 <!--
 type: tab
@@ -22,18 +22,17 @@ The below table identifies the parameters in the `card` object.
 | `expirationyear` | *string* | 4 |  4-digit card expiration year |
 | `securityCode` | *string* | 4 | A card security code (CSC), card verification data (CVD), card verification number, card verification value (CVV), card verification value code, card verification code (CVC), verification code (V-code or V code), or signature panel code (SPC). |
 | `securityCodeIndicator` | *string* | 15 | Indicates how the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#security-code-indicator) is passed |
-| `bin` | *String* | 8 |  Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
-| `last4` | *String* | 4 |  Last four digits of the Primary Account Number (PAN) |
-| `scheme` | *String* | 256 |  Card brand received in the transaction response |
-| `category`| _string_ | 25 | Describes the card category |
-| `subCategory`| _string_ | 25 | Provides the subcategory for the `category` field to identify the card type. |
-
+| `bin` | *string* | 8 |  Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
+| `last4` | *string* | 4 |  Last four digits of the Primary Account Number (PAN) |
+| `scheme` | *string* | 256 |  Card brand received in the transaction response |
+| `category`| *string* | 25 | Describes the card category |
+| `subCategory`| *string* | 25 | Provides the subcategory for the `category` field to identify the card type. |
 
 <!--
 type: tab
 -->
 
-JSON string format for `card`: 
+JSON string format for `card`:
 
 ```json
 {

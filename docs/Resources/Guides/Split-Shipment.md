@@ -43,6 +43,8 @@ JSON string format for `splitShipment`:
     "finalShipment": true
   }
 }
+
+
 ```
 
 <!-- type: tab-end -->
