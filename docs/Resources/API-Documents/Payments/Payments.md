@@ -4,7 +4,7 @@ tags: [Card Not Present, Card Present, Payments, API Reference]
 
 # Payments
 
-Commerce Hub provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. Commerce Hub offers a variety of payment options ranging from debit cards, credit cards and eChecks to digital payments like Apple Pay, PayPal, and Google Pay.
+Commerce Hub provides a simple way to integrate payment acceptance functionality and gives you access to a comprehensive suite of global commerce assets. Commerce Hub offers a variety of payment options including [debit cards and credit cards](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) to alternate payments like [eChecks](?path=docs/Resources/Guides/Payment-Sources/Payment-Check.md), [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md), PayPal, and [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md).
 
 ---
 
@@ -65,7 +65,7 @@ link: ?path=docs/Resources/API-Documents/Payments/Cancel.md
 
 ## Reporting
 
-Build a Commerce Hub integration to recieve details on a payment.
+Build a Commerce Hub integration to receive details on a payment.
 
 <!-- type: row -->
 

@@ -4,7 +4,7 @@ tags: [Merchant Identifier, Order Identifier, Merchant ID, Terminal ID, Transact
 
 # Custom Identifiers
 
-Commerce Hub supports the ability for mercant's to use thier own [Merchant Identifiers](#merchant-identifiers) and [Order Identifiers](#order-identifiers). This allows a seemless integration into existing merchant APIs and databases.
+Commerce Hub supports the ability for merchants to use their own [Merchant Identifiers](#merchant-identifiers) and [Order Identifiers](#order-identifiers). This allows a seamless integration into existing merchant APIs and databases.
 
 ---
 
@@ -20,10 +20,10 @@ type: tab
 titles: merchantDetails, JSON Example
 -->
 
-The below table identifies the availble parameters in the `merchantDetails` object.
+The below table identifies the available parameters in the `merchantDetails` object.
 
 <!-- theme: warning -->
-> All boarded indentifiers (MID and/or TID) are required in API requests.
+> All boarded identifiers (MID and/or TID) are required in API requests.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
@@ -61,7 +61,7 @@ type: tab
 titles: transactionDetails, JSON Example
 -->
 
-The below table identifies the avaiable parameters in the `transactionDetails` object.
+The below table identifies the available parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|

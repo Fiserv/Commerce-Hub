@@ -1,57 +1,27 @@
 ---
-tags: [Account, Verification, Security Code, Address Verrification Service]
+tags: [Account, Verification, Security Code, Address Verification Service]
 ---
 
 # Account Verification
 
-The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 auth this will not attempt an authorization on the account. The merchant can initiate the verification request using an unencrypted or encrypted payment card, payment session or payment token.
+The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 authorization this will not attempt an authorization on the account. The merchant can initiate the verification request using an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) and [PaymentSession](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
 
 <!-- theme: info -->
 > The merchant can also perform an [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and/or [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification with the request by sending the customer's `billingAddress` and `securityCode`.
-
-<!-- theme: warning -->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`_:false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 ---
 
 ## Minimum Requirements
 
 <!-- theme: warning -->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behaviour, `createToken`_:false_ is required in `transactionDetails`.
-
-<!--
-type: tab
-titles: source, card
--->
-
-The below table identifies the required parameters in the `source` object when using a unencrypted payment card.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `sourceType` | _string_ | 15 | Value _PaymentCard_ is used for verification request. Refer to [payment sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more information on other supported source types. |
-| `card` | _object_ | N/A | Card details object |
-
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `card` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `cardData` | _string_ | 256 | Credit Card Number or Encrypted Data |
-| `expirationMonth` | _string_ | 2 | 2-digit card expiration month |
-| `expirationyear` | _string_ | 4 | 4-digit card expiration year |
-
-<!-- type: tab-end -->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`:*false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 ---
 
 ## Endpoint
 
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/verification`
+> **POST** `/payments-vas/v1/accounts/verification`
 
 ---
 
@@ -62,22 +32,24 @@ type: tab
 titles: Request, Response
 -->
 
-Account verification request using PaymentCard.
+Example of an account verification payload request.
 
 ```json
 {
-   "source":{
-      "sourceType":"PaymentCard",
-      "card":{
-         "cardData":"4005550000000019",
-         "expirationMonth":"02",
-         "expirationYear":"2035"
-      }
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
     }
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
 ```
 
