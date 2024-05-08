@@ -4,7 +4,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, API]
 
 # 3-D Secure - Merchant Managed API Integration
 
-Commerce Hub's API is designed to work seemlessly with third-party 3-D Secure (3DS) authentication providers. This allows the 3DS authentication details that were completed by a third-party provider to be passed in the request. The merchant handles the data collection and storage of the customer's data to send to the 3DS provider.
+Commerce Hub's API is designed to work seamlessly with third-party 3-D Secure (3DS) authentication providers. This allows the 3DS authentication details that were completed by a third-party provider to be passed in the request. The merchant handles the data collection and storage of the customer's data to send to the 3DS provider.
 
 ---
 
@@ -16,7 +16,7 @@ Obtain the customer's [paymentCard](?path=docs/Resources/Guides/Payment-Sources/
 
 ## Step 2: Submit Authentication Request
 
-Submit the authentication request with your third-party 3DS Secure provider to obtain the required `additonalData3DS`paramaters.
+Submit the authentication request with your third-party 3DS Secure provider to obtain the required `additonalData3DS`parameters.
 
 ---
 
