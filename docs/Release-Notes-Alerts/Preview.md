@@ -28,6 +28,8 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Support [Dynamic Currency Conversion *(DCC)*](?path=docs/Resources/Guides/Global-Currency/Currency-Conversion.md) rate requests for BIN lookup and currency lookup | Feature |
 | Support [EMV Certification Authority Public Key *(CAPK)*](?path=?path=docs/In-Person/Device_Management/CAPK.md) download and status verification | Feature |
 | [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support unmatched and open refunds, inquiry and account link verification | Update |
+| Support [ACH PaymentCheck](?path=?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) as a payment source | Feature |
+| Enhanced support [ECv2 for GooglePay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md) and support for Fiserv Google Payment Token  | Update |
 
 ---
 
