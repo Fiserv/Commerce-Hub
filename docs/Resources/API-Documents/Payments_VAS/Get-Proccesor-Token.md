@@ -99,7 +99,7 @@ Example of a token only payload request.
 type: tab
 -->
 
-Example of a get partner token (201: Created) response.
+Example of a get partner token (200: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
