@@ -115,6 +115,10 @@
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
       link: docs/Resources/Guides/Directed-Routing.md
+    - title: Global Currency Solutions
+      link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+    - title: Global Acquiring
+      link: docs/Resources/Guides/Global-Acquiring.md
 #    - title: Least Cost Debit
 #      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Multi-Use Public Key
@@ -154,7 +158,7 @@
     - title: Subsequent Authorizations
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
     - title: Glossary
-      link: docs/Resources/FAQs-Glossary/Glossary.md
+      link: docs/Resources/FAQs-Glossary/Glossary.md    
 - sections:
   - title: API Reference
     sections:
@@ -174,6 +178,15 @@
         link: docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md
       - title: Returns Optimization
         link: docs/Resources/API-Documents/DaaS/Returns-Optimizer-Service.md
+    - title: Global Currency Solutions
+      link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+      sections:
+      - title: Dynamic Currency Conversion
+        link: docs/Resources/Guides/Global-Currency/Currency-Conversion.md
+    - title: Health Check
+      sections:
+      - title: Status
+        link: docs/Resources/API-Documents/Health_Check/HC-Status.md
     - title: Payments
       link: docs/Resources/API-Documents/Payments/Payments.md
       sections:
@@ -193,6 +206,8 @@
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md
       - title: Information Lookup
         link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+      - title: Get Proccesor Token
+        link: docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md
       - title: Tokenization
         link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
       - title: Verification

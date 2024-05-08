@@ -20,27 +20,15 @@ Login to the Developer Studio and access the Developer Dashboard.
 
 Click Add API Key
 
-#### Step 3: Select Product
-
-Select Commerce Hub from the dropdown
-
-#### Step 4: Select Merchant Account
+#### Step 3: Select Merchant Account
 
 Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) and associated Merchant ID required for integration from the dropdown
 
-#### Step 5: Create an API Name
+#### Step 4: Create an API Name
 
 Create a API Key Name to identifiy the project
 
-#### Step 6: Select Environment
-
-Select the API Key Type based on the enviroment;
-
-- **Sandbox:** Used to test you API application
-- **End-To-End:** Used to certify your API application
-- **Production:** Used to obtain production API credentials
-
-#### Step 7: Select Features
+#### Step 5: Select Features
 
 Select the features to be integrated from the following;
 
@@ -49,7 +37,7 @@ Select the features to be integrated from the following;
 - Data as a Service: Enhanced Data
 - Data as a Service: Return Optimizer
 
-#### Step 8: Create Keys
+#### Step 6: Create Keys
 
 Click Create to obtain the API Key/Secret
 

@@ -83,7 +83,7 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 <!-- type: card
 title: Global Currency Solutions
 description: Commerce Hub's Global Currency Solutions allows a merchant to combine any of our currency solutions with Global Merchant Acquiring (GMA) and local payment methods.
-link:
+link: ?path=docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
 -->
 
 <!-- type: row-end -->
@@ -106,12 +106,6 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
 title: Pay By Bank
 description: Pay by Bank is an ACH payment method that removes the needs to store sensitive bank data which provides enhanced security and convenience.
 link: ?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
--->
-
-<!-- type: card
-title: Custom Identifiers
-description: Commerce Hub supports the ability for merchants to use their own Merchant Identifiers and Order Identifiers. This allows a seamless integration into existing merchant APIs and databases.
-link: ?path=docs/Resources/Guides/BYOID.md
 -->
 
 <!-- type: row-end -->

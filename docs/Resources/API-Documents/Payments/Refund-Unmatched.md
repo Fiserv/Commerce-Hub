@@ -39,7 +39,6 @@ The below table identifies the available parameters in the `referenceTransaction
 |---------|----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 | `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceTransactionType` | *string* | 64 | Identifies the type of the referenced transaction. **Valid Values:** _CHARGES_ |
 
 <!--
 type: tab
@@ -91,7 +90,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of an unmatched refund payload request.
+Example of an unmatched refund payload request.
 
 ```json
 {
@@ -129,7 +128,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an unmatched refund (201: Created) response.
+Example of an unmatched refund (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -198,7 +197,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 

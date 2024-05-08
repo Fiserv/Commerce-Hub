@@ -4,44 +4,42 @@ tags: [3-D Secure, API Reference, Master Data]
 
 # 3-D Secure Data
 
-The `additionalData3DS` object contains fields used when submiting a 3D-Secure _(3DS)_ transaction and recieved by the 3DS provider. 
+The `additionalData3DS` object contains fields used when submiting a 3D-Secure _(3DS)_ transaction and recieved by the 3DS provider.
 
 <!--
 type: tab
 titles: additionalData3DS, JSON Example
 -->
 
-
 The below table identifies the parameters in the `additionalData3DS` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `acsReferenceNumber` | *string* | 60 | Unique reference number assigned by the Access Control Server _(ACS)_ to identify a single transaction. |
-| `acsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Access Control Server _(ACS)_ to identify a single transaction. |
-| `acsUrl` | *string* | 256 | The URL to redirect the consumer to complete the [authentication](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md). |
-| `authenticationStatus` | *string* | 2 | The result of authentication attempt returned by the 3D Secure authentication process _(PaRes)_. |
-| `challengeIndicator` | *boolean* | N/A | Indicator that forces a customer to complete a transaction using 3DS if available. |
-| `challengeStatus` | *string* | 2 | The transaction status as returned by the 3D Secure authentication process. _(CRes)_. |
-| `challengeToken` | *string* | 1024 | Secure token for challenge request _(CReq)_. |
-| `channel` | *string* | 32 | Determines the channel that the transaction came through. ***Valid Values:** BROWSER, SDK, 3DS_REQUESTOR_INITIATED* |
-| `dsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Directory Server _(DS)_ to identify a single transaction | 
-| `messageCategory` | *string* | 2 | Indicates the message category of 3-D Secure authentication version 2.X. *01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only* |
-| `serverTransactionId` | *string* | 16 | DUnique transaction identifier assigned by the 3DS Server to identify a single transaction. |
-| `serviceProvider` | *object* | 32 | The 3DS service provider responsible for managing the 3DS transaction. ***Valid Values:** CARDINAL* |
-| `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an [initialization](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Initialization.md). |
-| `serviceProviderTransactionId` | *string* | 60 | Unique transaction identifier assigned by the 3DS Server to identify a single transaction. |
-| `statusReason` | *string* | 16 | Details about a given transaction status. |
-| `stepUpUrl` | *string* | 256 | The URL that the client uses to post the cardholder in order to complete the Consumer Authentication transaction. |
-| `methodData` | *object* | N/A | Additional [device data collection details](#method-data) passed during 3DS flows. |
-| `mpiData` | *object* | N/A | [Merchant plug-in (MPI)](#mpi-data) data from 3-D Secure (3DS) authentication. |
-| `versionData` | *object* | N/A | Additional [version data](#version-data) passed during 3-D Secure (3DS) flows. |
+| `acsReferenceNumber` | _string_ | 60 | Unique reference number assigned by the Access Control Server _(ACS)_ to identify a single transaction. |
+| `acsTransactionId` | _string_ | 60 | Unique transaction identifier assigned by the Access Control Server _(ACS)_ to identify a single transaction. |
+| `acsUrl` | _string_ | 256 | The URL to redirect the consumer to complete the [authentication](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md). |
+| `authenticationStatus` | _string_ | 2 | The result of authentication attempt returned by the 3D Secure authentication process _(PaRes)_. |
+| `challengeIndicator` | _boolean_ | N/A | Indicates whether a regional mandate is in place requiring a challenge to complete authentication for all 3DS transactions initiated within the region. |
+| `challengeStatus` | _string_ | 2 | The transaction status as returned by the 3D Secure authentication process. _(CRes)_. |
+| `challengeToken` | _string_ | 1024 | Secure token for challenge request _(CReq)_. |
+| `channel` | _string_ | 32 | Determines the channel that the transaction came through. _**Valid Values:** BROWSER, SDK, 3DS_REQUESTOR_INITIATED_ |
+| `dsTransactionId` | _string_ | 60 | Unique transaction identifier assigned by the Directory Server _(DS)_ to identify a single transaction |
+| `messageCategory` | _string_ | 2 | Indicates the message category of 3-D Secure authentication version 2.X. _01 = Payment Authentication 02 = Non-Payment Authentication 80 = Mastercard Data Only_ |
+| `serverTransactionId` | _string_ | 16 | DUnique transaction identifier assigned by the 3DS Server to identify a single transaction. |
+| `serviceProvider` | _object_ | 32 | The 3DS service provider responsible for managing the 3DS transaction. _**Valid Values:** CARDINAL_ |
+| `serviceProviderReferenceId` | _string_ | 60 | Unique reference identifier assigned by the 3DS Server during an [initialization](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Initialization.md). |
+| `serviceProviderTransactionId` | _string_ | 60 | Unique transaction identifier assigned by the 3DS Server to identify a single transaction. |
+| `statusReason` | _string_ | 16 | Details about a given transaction status. |
+| `stepUpUrl` | _string_ | 256 | The URL that the client uses to post the cardholder in order to complete the Consumer Authentication transaction. |
+| `methodData` | _object_ | N/A | Additional [device data collection details](#method-data) passed during 3DS flows. |
+| `mpiData` | _object_ | N/A | [Merchant plug-in (MPI)](#mpi-data) data from 3-D Secure (3DS) authentication. |
+| `versionData` | _object_ | N/A | Additional [version data](#version-data) passed during 3-D Secure (3DS) flows. |
 
 ---
 
 <!--
 type: tab
 -->
-
 
 JSON string format for `additionalData3DS`:
 
@@ -96,20 +94,18 @@ type: tab
 titles: methodData, JSON Example
 -->
 
-
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `dataCollectionUrl` | *string* | 256 | The URL that will be used by the 3DS Method to collect card holder browser information. |
-| `encodedToken` | *string* | 4000 | Base64 encoded transactional JWT token for external data collection with service provider. |
-| `encodedData` | *string* | 4000 | Base64 encoded data for external data collection with service provider. |
-| `notificationUrl` | *string* | 256 | The notification URL to which the 3-D Secure (3DS) provider will send the result of the device data collection. |
+| `dataCollectionUrl` | _string_ | 256 | The URL that will be used by the 3DS Method to collect card holder browser information. |
+| `encodedToken` | _string_ | 4000 | Base64 encoded transactional JWT token for external data collection with service provider. |
+| `encodedData` | _string_ | 4000 | Base64 encoded data for external data collection with service provider. |
+| `notificationUrl` | _string_ | 256 | The notification URL to which the 3-D Secure (3DS) provider will send the result of the device data collection. |
 
 ---
 
 <!--
 type: tab
 -->
-
 
 JSON string format for `methodData`:
 
@@ -137,20 +133,18 @@ type: tab
 titles: mpiData, JSON Example
 -->
 
-
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `cavv` | *string* | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase |
-| `xid` | *string* | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce |
-| `eci` | *string* | 256 | Payment system-specific value provided by the Access Control Server (ACS) or Directory Server (DS) to indicate the results of the attempt to authenticate the cardholder |
-| `tavv` | *string* | 512 | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction |
+| `cavv` | _string_ | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase |
+| `xid` | _string_ | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce |
+| `eci` | _string_ | 256 | Payment system-specific value provided by the Access Control Server (ACS) or Directory Server (DS) to indicate the results of the attempt to authenticate the cardholder |
+| `tavv` | _string_ | 512 | Cryptographic value that is generated during the Visa transaction authentication process for a payment token transaction |
 
 ---
 
 <!--
 type: tab
 -->
-
 
 JSON string format for `mpiData`:
 
@@ -178,17 +172,15 @@ type: tab
 titles: versionData, JSON Example
 -->
 
-
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `recommendedVersion` | *string* | 6 | Recommended 3DS version as specified by the card issuer. |
+| `recommendedVersion` | _string_ | 6 | Recommended 3DS version as specified by the card issuer. |
 
 ---
 
 <!--
 type: tab
 -->
-
 
 JSON string format for `mpiData`:
 
@@ -209,4 +201,4 @@ JSON string format for `mpiData`:
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
 
---- 
+---

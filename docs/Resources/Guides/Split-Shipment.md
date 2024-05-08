@@ -5,7 +5,7 @@ tags: [Split Shipment, Card Not Present, Online]
 
 # Split Shipment
 
-A split shipment is an ability to capture a [pre-authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) multiple times for the full order amount by performing a seperate capture request for each item shipped.
+A split shipment is an ability to capture a [pre-authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) multiple times for the full order amount by performing a separate capture request for each item shipped.
 
 <!-- theme: warning -->
 > If the authorization timeframe has expired, a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md) is required.
@@ -38,10 +38,10 @@ JSON string format for `splitShipment`:
 
 ```json
 {
-    "splitShipment": {
-      "totalCount": 5,
-      "finalShipment": true
-    }
+  "splitShipment": {
+    "totalCount": 5,
+    "finalShipment": true
+  }
 }
 
 
@@ -120,7 +120,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using `splitShipment`.
+Example of a charge payload request using `splitShipment`.
 
 ```json
 {
@@ -149,7 +149,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
