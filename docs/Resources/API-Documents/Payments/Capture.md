@@ -9,12 +9,12 @@ Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Docum
 <!-- theme: warning -->
 > Issuers have different hold times for pre-authorizations. If the authorization has been released it is recommended to process a [reauthorization](?path=docs/Resources/Guides/Authorizations/Re-Auth.md).
 
-#### Capture Types
+##### Capture Types
 
 - **Automatic Capture:** A charge is automatically captured when a [Sale](?path=docs/Resources/FAQs-Glossary/Glossary.md#sale) request is made.
 - **Manual Capture:** A manual capture can be processed for the full amount or a partial amount.
   - **Full:** A full capture request will settle the full amount of the held funds. This amount can be for more than the amount for certain industries (e.g., tips).
-  - **Partial:** A partial capture request is used when the full pre-auth amount is not needed or when submitting a [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) (e.g., the price of a pre-order item decreases before shipping). When the full amount is not captured, then the remaining balance is released to the customer if not a split shipment.
+  - **Partial:** A partial capture request is used when the full pre-authorization amount is not needed or when submitting a [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) (e.g., the price of a pre-order item decreases before shipping). When the full amount is not captured, then the remaining balance is released to the customer if not a split shipment.
 
 ---
 
@@ -26,7 +26,7 @@ A capture request is initiated by sending the `referenceTransactionDetails` in t
 type: tab
 titles: amount, referenceTransactionDetails, transactionDetails, merchantDetails
 -->
- 
+
 The below table identifies the parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Description |
@@ -37,11 +37,11 @@ The below table identifies the parameters in the `amount` object.
  <!--
 type: tab
 -->
- 
+
 The below table identifies the available parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
@@ -76,7 +76,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 ### Endpoint
 
 <!-- theme: success -->
->**POST** `/payments/v1/charges`
+> *POST** `/payments/v1/charges`
 
 ---
 
@@ -87,7 +87,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a Capture Payload Request.
+Example of a capture payload request.
 
 ```json
 {
@@ -114,7 +114,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a capture (201: Success) response.
+Example of a capture (201: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

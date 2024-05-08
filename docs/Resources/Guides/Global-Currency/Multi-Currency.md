@@ -1,14 +1,14 @@
 ---
-tags: [Currency Conversion, Global Currency]
+tags: [Currency Conversion, Global Currency, Multi-Currency]
 ---
 
 # Multi-Currency Pricing
 
-Multi-Currency Pricing (MCP) _(previously known as Global ePricing)_ is available for [online, digital, and mobile integrations](?path=docs/Getting-Started/Getting-Started-Online.md) and allows merchants to set static pricing in multiple currencies. MCP provides the most control for specific international markets and offers customers an _in country_ shopping experience. The merchant is entirely responsible for setting and maintaining the prices in the currencies they support.
+Multi-Currency Pricing (MCP) *(previously known as Global ePricing)* is available for [online, digital, and mobile integrations](?path=docs/Getting-Started/Getting-Started-Online.md) and allows merchants to set static pricing in multiple currencies. MCP provides the most control for specific international markets and offers customers an in country shopping experience. The merchant is entirely responsible for setting and maintaining the prices in the currencies they support.
 
-[Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) are submitted to Commerce Hub in the same manner as domestic activity, but the merchant must send the correct amount format and corresponding [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) for these transactions. Merchant sets all pricing in foreign currency (for example, EUR for U.S. merchant) specific to geographical markets.
+[Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md) are submitted to Commerce Hub in the same manner as domestic activity, but the merchant must send the correct amount format and corresponding [currency code](?path=docs/Resources/Master-Data/Currency-Code.md) for these transactions. Merchants set all pricing in foreign currency *(i.e. setting EUR as a US merchant)* specific to geographical markets.
 
-Merchant is funded in their local currency _(for US merchant, USD)_ based on a prevailing exchange rates. Commerce Hub supports Visa, Mastercard and American Express where available.
+The merchant is funded in their local currency *(i.e. US merchants fund in USD)* based on a prevailing exchange rates. Commerce Hub supports Visa, Mastercard and American Express where available.
 
 ---
 
@@ -23,25 +23,28 @@ Merchant is funded in their local currency _(for US merchant, USD)_ based on a p
 
 #### Cardholder Benefits
 
-- Shop and Pay in more than 140 global presentment currencies
+- Shop and Pay in more than 145 global presentment currencies
 - Receipt in the same amount and currency that appears on their cardholder statement
 - Eliminates the foreign transaction fees charges by some issuers _(this depends on the cardholder agreement)_
-- Make purchases in a familiar currency without having to perform manual calculations thereby enjoying a superior cross-border experience like doing business with a local merchant
+- Make purchases in a familiar currency without having to perform manual calculations thereby enjoying a superior cross-border experience similar to doing business with a local merchant
 
 ---
 
 ## Supported Currencies
 
+<!-- theme: danger -->
+> All [currencies](?path=docs/Resources/Master-Data/Currency-Code.md) which are prohibited by the [Office of Foreign Assets Control _(OFAC)_](?path=https://ofac.treasury.gov/sanctions-programs-and-country-information) are not supported for MCP transactions.
+
+Commerce Hub currently supports authorizations for presentment in 140+ card brand [supported currencies](?path=docs/Resources/Master-Data/Currency-Code.md) for MCP transactions. For MCP authorized transactions, Commerce Hub supports settlement of authorized transactions in USD currency only for the US market. For non-US markets, foreign settlement currencies are available with [Global Acquiring](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md).
+
 <!-- theme: info -->
-> All currencies which are prohibited by the Office of Foreign Assets Control _([OFAC](https://ofac.treasury.gov/ofac-sanctions-lists))_. are not supported for MCP transactions.
-
-Commerce Hub currently supports authorizations for presentment in more than 134 card brand [supported currencies](?path=docs/Resources/Master-Data/Currency-Code.md) for MCP transactions. For MCP authorized transactions, Commerce Hub will settle the authorized transactions in USD currency only.
-
-Commerce Hub currently only supports MCP on the Nashville front-end processor. Nashville currently only supports a max of 12 digits including precision _(decimal places)_ based on the currency; e.g 12 digits + 0 precision, 10 digits + 2 precisions, or 9 + 3 precisions.
+> Commerce Hub currently only supports MCP on the Nashville front-end processor. Nashville currently only supports a max of 12 digits including precision _(decimal places)_ based on the currency; e.g 12 digits + 0 precision, 10 digits + 2 precisions, or 9 + 3 precisions.
 
 ---
 
 ## Payload Examples
+
+The example below contains the minimum parameters for a successful charges request using the multi-currency pricing. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
@@ -186,7 +189,7 @@ Example of a charge (400: Bad Request) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Supported Currencies](?path=docs/Resources/Master-Data/Currency-Code.md)
-- [Global Merchant Acquiring](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md)
+- [Global Acquiring](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---

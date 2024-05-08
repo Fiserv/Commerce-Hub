@@ -7,7 +7,7 @@ tags: [Credit, Open Refund, Payments, Refund, API Reference]
 An open refund (credit) is a refund to a card without a reference to the prior transaction.
 
 <!-- theme: danger -->
-> Open refund should only be performed without a reference to a prior transaction _(e.g. a different API, merchant account, or device)_, otherwise utilize [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md).
+> Open refund should only be performed without a reference to a prior transaction *(e.g. a different API, merchant account, or device)*, otherwise utilize [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md).
 
 <!-- theme: info -->
 > Open refunds can only be performed once approved by Fiserv security & risk assessment team and enabled in Merchant Boarding and Configuration. Please contact your account representative for more information.
@@ -17,7 +17,7 @@ An open refund (credit) is a refund to a card without a reference to the prior t
 ## Minimum Requirements
 
 <!-- theme: info -->
-> Open refunds can also be performed as an [auth/capture refund](?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md) by sending `captureFlag` *false* in the `transactionDetails` object.
+> Open refunds can also be performed as an [authorization and capture refund](?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md) by sending `captureFlag` *false* in the `transactionDetails` object.
 
 <!--
 type: tab
@@ -69,7 +69,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of an open refund payload request.
+Example of an open refund payload request.
 
 ```json
 {
@@ -105,7 +105,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of am open refund (201: Created) response.
+Example of am open refund (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -167,7 +167,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Custom Identifiers](?path=docsdocs/Resources/Guides/BYOID.md)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Refund Requests](?path=docs/Resources/API-Documents/Payments/Refund.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 

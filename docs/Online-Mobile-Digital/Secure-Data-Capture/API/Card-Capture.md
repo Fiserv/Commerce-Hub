@@ -6,6 +6,8 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 Commerce Hub allows a payment instrument to be securely submitted to Commerce Hub using API-key validation, where it is persisted and linked to the `sessionId` generated from the [credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md).
 
+Secure Data Capture using card capture provides a merchant with an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their non-tokenized form, lowering the PCI compliance requirements.
+
 <!--theme:info-->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: _false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 

@@ -4,10 +4,10 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 # 3-D Secure Authentication
 
-3-D Secure _(3DS)_ is an authentication protocol that adds another layer of fraud protection to eCommerce transactions. Commerce Hub supports 3DS 2.0 for Frictionless and Challenge integrations. 
+3-D Secure *(3DS)* is an authentication protocol that adds another layer of fraud protection to eCommerce transactions. Commerce Hub supports 3DS 2.0 for Frictionless and Challenge integrations.
 
 - **Frictionless:** Authentication using the customer's [device fingerprint](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md), where the 3DS provider and issuer communicate all essential information.
-- **Challenge:** The issuer demands additional information from the customer, and the merchant will need to [verify](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) succesful authentication.
+- **Challenge:** The issuer demands additional information from the customer, and the merchant will need to [verify](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) successful authentication.
 
 ---
 
@@ -15,7 +15,7 @@ tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Authentication]
 
 <!--
 type: tab
-titles: source, amount, billingAddress, shippingAddress, address, transactionDetails, deviceFingerprint, merchantDetails, additionalData3DS, customer 
+titles: source, amount, transactionDetails, deviceFingerprint, merchantDetails, additionalData3DS
 -->
 
 The below table identifies the parameters in the `source` object.
@@ -34,49 +34,6 @@ The below table identifies the parameters in the `amount` object.
 | -------- | :--: | :------------: | ------------------ |
 | `total` | *number* | 12 | Total amount of the transaction. Subcomponent values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in ISO 3 Currency Format. |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `billingAddress` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | :------------: | ------------------ |
-| `firstName` | *string* | 256 | Billing first name |
-| `lastName` | *string* | 256 | Billing last name |
-| `address` | *object* | N/A | Address subcomponent objects |
-| `phone` | *object* | N/A | Phone subcomponent objects |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `shippingAddress` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `firstName` | *string* | 256 | Shipping first name |
-| `lastName` | *string* | 256 | Shipping last name |
-| `address` | *object* | N/A | Address subcomponent objects |
-| `shippingMethod` | *string* | 60 | Shipping or delivery method |
-| `shippingTimeFrame` | *string* | 40 | Indicates shipping timeframe |
-| `shipToEmail` | *string* | 256 | Email on a digital delivery transaction |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `address` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `street` | *string* | 256 | Street address |
-| `houseNumberOrName` | *string* | 256 | Secondary address information, e.g. house number or name |
-| `city` | *string* | 256 | City or locality |
-| `StateOrProvince` | *string* | 256 | State or province |
-| `postalCode` | *string* | 10 | ZIP code or postal code |
-| `country` | *string* | 256 |  ISO-3166-1 alpha-2, alpha-3, numeric or full country name |
 
 <!--
 type: tab
@@ -136,22 +93,16 @@ The below table identifies the parameters in the `additionalData3DS` object.
 |`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md). |
 | `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction |
 
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `customer` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | :--: | :------------: | ------------------ |
-| `email` | *string* | 256 | customer email address |
-| `phone` | *array* | N/A | Array of phone subcomponent objects |
-
 <!-- type: tab-end -->
 
 ---
 
 ## Response Variables
+
+<!--
+type: tab
+titles: additionalData3DS
+-->
 
 The below table identifies the parameters in the `additionalData3DS` object.
 
@@ -159,6 +110,8 @@ The below table identifies the parameters in the `additionalData3DS` object.
 | -------- | :--: | :------------: | ------------------ |
 | `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md). |
 | `channel` | *String* | 32 | Determine the channel that the transaction came through. |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -193,18 +146,6 @@ titles: Request, Frictionless Response, Challenge Response
       "keyId": "88000000023"
     }
   },
-  "billingAddress": {
-    "firstName": "Raghavendiran",
-    "lastName": "Kannan",
-    "address": {
-      "street": "100 Ashford Gables Dr",
-      "houseNumberOrName": "4201",
-      "city": "Atlanta",
-      "stateOrProvince": "Georgia",
-      "postalCode": "30338",
-      "country": "USA"
-    }
-  },
   "transactionDetails": {
     "captureFlag": true,
     "createToken": false,
@@ -236,15 +177,6 @@ titles: Request, Frictionless Response, Challenge Response
   "additionalData3DS": {
     "serviceProviderReferenceId": "{{lDfReferenceId}}",
     "channel": "BROWSER"
-  },
-  "customer": {
-    "email": "cardinal.test@fiserv.com",
-    "phone": [
-      {
-        "type": "MOBILE",
-        "phoneNumber": "5551112222"
-      }
-    ]
   }
 }
 
@@ -256,9 +188,9 @@ titles: Request, Frictionless Response, Challenge Response
 type: tab
 -->
 
-### Example of Frictionless Response
+Example of a frictionless 3DS authentication (201: Created) response
 
-##### Example of a frictionless 3DS authentication (201: Created) response. A successful 3DS authentication will return _________ in the ______ response. Upon successful authentication the merchant can send a a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
+A successful 3DS authentication will return a `transactionState` of *AUTHENTICATED* or *DECLINED* in the response. Upon successful authentication the merchant can send a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -325,9 +257,9 @@ type: tab
 type: tab
 -->
 
-### Example of Challenge Response
+Example of a challenge 3DS authentication (201: Created) response.
 
-##### Example of a challence 3DS authentication (201: Created) response. A challenge 3DS authentication will return _________ in the ______ response.
+A challenge 3DS authentication will return a `transactionState` of *WAITING* in the response.
 
 <!-- theme: warning -->
 > The merchant must complete a [verification](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md) request before submitting a [transaction request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Request.md) to Commerce Hub.

@@ -7,14 +7,13 @@ tags: [Private Label, Payment Sources]
 Citibank offers multiple banking services which includes providing of private label and co branded credit cards for retailers.
 
 <!-- theme: warning -->
-> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore refunds will need to be submitted as an open refund. For more information, please contact your account representative.
-
+> Currently, only direct send settlement model is supported. Merchants must submit the settlement batch file directly to the processor. Commerce Hub will not have access to transaction completion, therefore [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) will need to be submitted as an [open refund](?pathdocs/Resources/API-Documents/Payments/Refund-Open.md). For more information, please contact your account representative.
 ---
 
-## Request Variables
+## Parameters
 
 <!--theme:info-->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: _false_ is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. To override this behavior, `createToken`: *false* is required in `transactionDetails`. Contact your account representative for more information about enabling tokenization.
 
 <!--
 type: tab
@@ -27,8 +26,8 @@ The below table identifies the conditional parameters in the `privateLabel` obje
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `creditPlan` | _string_ | 64 | Payment program assigned by the private label processor. |
-| `minimumSpendExemptIndicator` | _string_ | 32  | Indicates if the customer is exempt from the mimimum spend amount. _**Valid Values:** EXEMPT, NOT_EXEMPT_ |
+| `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
+| `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the minimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
 
 <!--
 type: tab
@@ -38,10 +37,10 @@ The below table identifies the required parameters in the `transactionInteractio
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `origin` | _string_ | 4 | The source of the transaction |
-| `posEntryMode` | _string_ | 22 | An identifier used to indicate how the account number was entered on the transaction. |
-| `posConditionCode` | _string_ | 26  | Indicates if the customer is exempt from the mimimum spend amount. _**Valid Values:** EXEMPT, NOT_EXEMPT_ |
-| `motoType` | _string_ | N/A | Defines the type of MOTO transaction when `origin` is MOTO |
+| `origin` | *string* | 4 | The source of the transaction |
+| `posEntryMode` | *string* | 22 | An identifier used to indicate how the account number was entered on the transaction. |
+| `posConditionCode` | *string* | 26  | An identifier used to indicate the transaction [condition](?path=docs/Resources/Master-Data/Transaction-Interaction.md#pos-condition-code) at the Point-of-Sale *(POS)*. |
+| `motoType` | *string* | N/A | Defines the type of MOTO transaction when `origin` is MOTO |
 
 <!-- type: tab-end -->
 
@@ -49,15 +48,17 @@ The below table identifies the required parameters in the `transactionInteractio
 
 ## Payload Example
 
+The example below contains the minimum [parameters](#parameters) for a successful MOTO [charges request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a Citi PLCC. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request using a Citi PLCC
+Example of a charge payload request using a Citi PLCC.
 
 <!-- info -->
-> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is _MOTO_ `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
+> PLCC transactions routed to Citi require the additional fields `posEntyMode`, `posConditionCode`, and when the `origin` is *MOTO* `motoType` in [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 ```json
 {
@@ -105,16 +106,6 @@ Example of a charge payload request using a Citi PLCC
     "merchantId": "100012000001424",
     "terminalId": "10000001"
   },
-  "additionalDataCommon": {
-    "directedRouting": {
-      "processors": [
-        {
-          "processorName": "CITI",
-          "processingPlatform": "PRIVATE_LABEL",
-          "priority": "PRIMARY"
-        }
-      ]
-    },
     "privateLabel": {
       "minimumSpendExemptIndicator": "EXEMPT",
       "creditPlan": "00100"
@@ -122,6 +113,9 @@ Example of a charge payload request using a Citi PLCC
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
 <!--
 type: tab
 -->
@@ -208,7 +202,9 @@ Example of a charge (201: Created) response
     },
     {
       "tokenData": "7258080032423757",
-      "tokenSource": "CITI"
+      "tokenSource": "CITI",
+      "tokenResponseCode": "000",
+      "tokenResponseDescription": "SUCCESS"
     }
   ]
 }
@@ -223,6 +219,9 @@ Example of a charge (201: Created) response
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
+- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
+- [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---
