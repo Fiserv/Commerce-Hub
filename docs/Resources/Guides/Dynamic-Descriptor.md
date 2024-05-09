@@ -25,7 +25,7 @@ A [dynamic descriptor](?path=docs/Resources/FAQs-Glossary/Glossary.md#dynamicdes
 <!-- theme: danger -->
 >Any information entered in the dynamic descriptor fields will overwrite the master descriptor information on the merchant account, it is very important to use the fields correctly.
 
-A soft descriptor should be sent during the initial [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) and again during the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md). The descriptor sent during the authorization appears on the online statement. The descriptor sent at capture is the final descriptor which appears for the settled transactions. 
+A soft descriptor should be sent during the initial [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) and again during the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md). The descriptor sent during the authorization appears on the online statement. The descriptor sent at capture is the final descriptor which appears for the settled transactions.
 
 <!--
 type: tab
@@ -35,7 +35,7 @@ titles: dynamicDescriptor, JSON Example
 Card issuer may limit how many characters will show up in each field, it is recommended to keep the `merchantName` field to fewer than 22 characters and the `city` field in the `address` object to fewer than 11 characters to appear properly on the cardholder’s statement.
 
 - **MOTO:** utilize the `city` field for the phone number
-- **E-commerce:** utlize the `city` field for a URL, email address or phone number
+- **E-commerce:** utilize the `city` field for a URL, email address or phone number
 - **Visa and Mastercard non-Payment Facilitators:** the `merchantName` may be optionally followed by an asterisk, and then additional information such as product description, order number, reference number or other information that will further assist with cardholder recognition.
 - **Discover, Visa, and Mastercard Single Merchant ID Payment Facilitators:** the format for `merchantName` is the first 3 characters of the [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) name followed by an asterisk and the sub-merchant name, e.g. “XYZ*A SMALL CO”
 - **Amex Single Merchant ID Payment Facilitators:** the `merchantName` must only contain the sub-merchant name, e.g. “A SMALL CO”
@@ -46,7 +46,7 @@ The below table identifies the required parameters in the `dynamicDescriptor` ob
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* | 1024 | Merchant Name or Doing Business As (DBA) |
-| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer _(it may appear on the cardholder’s statement)_ or if merchant wants to pass information that differs from the information stored on our master File. |
+| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer *(it may appear on the cardholder’s statement)* or if merchant wants to pass information that differs from the information stored on our master File. |
 | `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
 | `address` | *object* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
 
@@ -58,20 +58,20 @@ JSON string format for `dynamicDescriptor`:
 
 ```json
 {
- "dynamicDescriptors":{
-      "mcc":"4457",
-      "merchantName":"Mywebsite.com",
-      "customerServiceNumber":"1231231234",
-      "serviceEntitlement":"67893827513",
-      "address":{
-         "street":"Main Street",
-         "houseNumberOrName":"123",
-         "city":"Atlanta",
-         "stateOrProvince":"GA",
-         "postalCode":"30303",
-         "country":"US"
-      }
-   }
+  "dynamicDescriptors": {
+    "mcc": "4457",
+    "merchantName": "Mywebsite.com",
+    "customerServiceNumber": "1231231234",
+    "serviceEntitlement": "67893827513",
+    "address": {
+      "street": "Main Street",
+      "houseNumberOrName": "123",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30303",
+      "country": "US"
+    }
+  }
 }
 ```
 
@@ -86,7 +86,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using `dynamicDescriptors`.
+Example of a charge payload request using `dynamicDescriptors`.
 
 ```json
  {
@@ -130,7 +130,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -208,7 +208,7 @@ type: tab
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges) 
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
