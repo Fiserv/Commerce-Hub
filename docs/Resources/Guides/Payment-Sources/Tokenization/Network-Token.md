@@ -12,12 +12,11 @@ Network tokenization is a method used in payment systems to enhance security by 
 
 Commerce Hub supports the following network tokenization requests
 
-<!-- type: row -->
-
 <!-- type: card
-title: Commerce Hub Managed
-description: Allows the generation of network tokens and streamlines payment processes by allowing network tokenization details in Commerce Hub payment requests.
-link:
+
+title: Merchant Managed
+description: Allows the network token details that were completed by a third-party provider to be passed in the payment authorization transaction to Commerce Hub.
+link: ?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Request.md
 -->
 
 <!-- type: card
