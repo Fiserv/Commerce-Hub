@@ -7,10 +7,8 @@ tags: [Online, Card Not Present, Secure Data Capture]
 Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md) service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` _PaymentSession_.
 
 <!-- theme: warning -->
-> In this integration, Commerce Hub supports a specific use case: when a merchant submits a transaction for payment processing using a stored payment method (such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). In this scenario, the merchant only captures encrypted CVV from returning customers. This process enhances security and serves validation purposes, particularly for Card on File transactions.
 
-<!-- theme:info -->
-> Secure Data Capture using card capture provides a merchant with an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their non-tokenized form, lowering the PCI compliance requirements.
+> If the merchant account is enabled for a tokenization service, paymentTokens will be returned in the response. To override this behavior, createToken: false is required in transactionDetails. Contact your account representative for more information about enabling tokenization.
 
 - **credentials:** responsible for creating a payment session.
 - **card-capture:** responsible for capturing encrypted card details.
