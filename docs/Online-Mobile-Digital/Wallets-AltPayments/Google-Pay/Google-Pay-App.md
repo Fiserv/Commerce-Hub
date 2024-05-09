@@ -6,7 +6,7 @@ tags: [In-App, Online, Google Pay, Wallet, Mobile]
 
 Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Google Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
 
-### How it Works
+##### How it Works
 
 1. The customer selects checkout from the merchant's App and is presented with the merchant's payment form.
 2. The app calls the Google Pay framework to obtain the encrypted wallet data.
@@ -17,30 +17,40 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom Ap
 
 ## Step 1: Configure Google Pay
 
-Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a payment token, define payment card networks, describe allowed payment methods, create PaymentsClient object, determine readniness to pay and load the payment button, create a PaymentDataRequest object and, register the event handler.
+Configure the [App to integrate with Google Pay](https://developers.google.com/pay/api/android/guides/tutorial). This includes define Google Pay API version, request a Fiserv payment token, define payment card networks and payment methods, etc.
 
 ---
 
 ## Step 2: Submit a Charge Request
 
-- [**Encrypted Data:**](#request-variables) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
+- [**Encrypted Data:**](#parameters) The data is encrypted using Google's encryption and Commerce Hub will decrypt the information.
 - [**Decrypted Wallet:**](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) The data is encrypted and decrypted using a merchant's certificate and the card data is submitted to Commerce Hub.
 
-### Request Variables
+### Parameters
 
 <!--
 type: tab
-titles: source
+titles: source, intermediateSigningKey
 -->
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|--------|--------|---------|
-|`sourceType` | *string* | 15 | &#10004; | Value *GooglePay* is used for Google Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
-| `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
-| `signature` | *string* | 2000 | &#10004; | Verifies that the message came from Google, base64-encoded, and created with ECDSA by the intermediate signing key. |
-| `version` | *string* | 32 | &#10004; | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed. |
+| Variable | Type| Maximum Length | Description |
+|---------|----------|-------|---------|
+| `sourceType` | *string* | 15 | Value *GooglePay* is used for Google Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details |
+| `data` | *string* | 4000 | Encrypted Data. Payment data dictionary, Base64 encoded as a string |
+| `signature` | *string* | 2000 | Verifies that the message came from Google, base64-encoded, and created with ECDSA by the intermediate signing key |
+| `version` | *string* | 32 | Specific Protocol version supported by Google. Identifies the encryption or signing scheme under which the message is created. It allows the protocol to evolve over time, if needed |
+| `intermediateSigningKey` | *object* | N/A | An object that contains the intermediate signing key from Google. It is serialized object to simplify the intermediate signing key signature verification process |
+
+<!--
+type: tab
+-->
+
+| Variable | Type| Maximum Length | Description |
+|---------|----------|-------|---------|
+| `signedKey` | *string* | 4000 | A UTF-8 encoded, serialized object that contains `keyExpiration` and `keyValue`, `keyExpiration` is date and time when the intermediate key expires as UTC milliseconds and `keyValue` is base64 version of key encoded in ASN.1 type |
+| `signatures` | *array* | N/A | Verifies that the intermediate signing key came from Google. It is base64-encoded, and created with ECDSA |
 
 <!-- type: tab-end -->
 
@@ -49,46 +59,55 @@ The below table identifies the required parameters in the `source` object.
 ### Payload Example
 
 <!-- theme:info -->
->Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
+> Merchants managing their own encryptions will send a [Decrypted Wallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) payload request.
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-##### Example of a Charge Payload Request.
+Example of a Charge Payload Request.
+
 ```json
-
 {
-   "amount":{
-      "total": 12.04,
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "GooglePay",
-      "data": "{\"encryptedMessage\":\"NZF5Vs2YaI\/t25L\/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4\/RYMjs+lxYW\/nEtIIKVVOkdjAj4pI\/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8\/BPb1cmwHWvrDw\/dQRk\/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe\/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK\/EndgIG8xpFyNkKlRUyxAKM22\/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY\/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul\/EA\\u003d\\u003d\",\"ephemeralPublicKey\":\"BAhnPIWrCXWv\/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\\u003d\",\"tag\":\"liBzKfGcO+FclHg7XuqRJxR\/8EJShRp9\/APab0Sho08\\u003d\"}",
-      "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzAN...",
-      "version": "ECv2"
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "createToken": false
-   },
-   "merchantDetails":{
-      "terminalId": "123456"
-   }
+  "amount": {
+    "total": 12.04,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "GooglePay",
+    "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbkjMMXZSR7innTFJxNR5DNnf4GheWIso8n8MA1q1zqWCU8MaK9bnNcHxvROpvfsU3SCCjkfG2k2M4/RYMjs+lxYW/nEtIIKVVOkdjAj4pI/Wth8xQXphn7hDNiyp9tIydmlPZVnzkXI6mVbpHbbkaCCD4TNPhFBDtx0VafqRjbb2Wt3EDazTx3dHdd+qVX5Xj8/BPb1cmwHWvrDw/dQRk/E0TsP+erLjhLaZ8l2EycxeUEZYqSX5w77S8vd3sw8WXuOCMsU8sx0Bs5IY7hohq67qNDxckP1fcBD4OYdGP6bumJR0J6pJxD5iRh5lFSjN6zNLRI77ylxWL6DwHoe/pPdCc0n6cV0Nt0RJMLjerr12BLuhv4bPQ3QB6jxnbt8JK/EndgIG8xpFyNkKlRUyxAKM22/ZSy45d6qtZIKLXRqDTr9JMk8uJ53QRZtQx8k9KkRZGC+GM2sD+Z75fxc0Yye7l6H0D8p5z1iEzWnYHxd0pmY/cOYEJxnOOdD573QmE6ikFcyaAw3XnCyul/EA\\u003d\\u003d\",\"ephemeralPublicKey\":\"BAhnPIWrCXWv/45GFK0mNAvN9w+NFBs3tQji0wTUS2+hiFKsZujG5wRd4JXGmxhG+k3bglYk544ILBNdDpsAh+o\\u003d\",\"tag\":\"liBzKfGcO+FclHg7XuqRJxR/8EJShRp9/APab0Sho08\\u003d\"}",
+    "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzAN...",
+    "version": "ECv2",
+    "intermediateSigningKey": {
+      "signedKey": "{\"keyExpiration\":\"1542323393147\",\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\\u003d\\u003d\"}",
+      "signatures": [
+        {
+          "items": "MEYCIQCO2EIi48s8VTH+ilMEpoXLFfkxAwHjfPSCVED/QDSHmQIhALLJmrUlNAY8hDQRV/y1iKZGsWpeNmIP+z+tCQHQxP0v"
+        }
+      ]
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "createToken": false
+  },
+  "merchantDetails": {
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
+  }
 }
-
 ```
 
 <!--
 type: tab
 -->
 
-##### Example of a Charge (201: Created) Response.
+Example of a Charge (201: Created) Response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
    "gatewayResponse":{

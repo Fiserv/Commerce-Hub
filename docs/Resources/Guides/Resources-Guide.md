@@ -102,6 +102,12 @@ description: A private label credit card (PLCC) is a type of credit card that is
 link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
 -->
 
+<!-- type: card
+title: Pay By Bank
+description: Pay by Bank is an ACH payment method that removes the needs to store sensitive bank data which provides enhanced security and convenience.
+link: ?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
+-->
+
 <!-- type: row-end -->
 
 <!-- type: row -->
