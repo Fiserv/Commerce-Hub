@@ -4,7 +4,7 @@ tags: [Gift Card, Payment Card, Payment Source, Loyalty]
 
 # Gift Card Services
 
-Commerce Hub supports purchases with gift _(prepaid)_ gift cards for card not present transactions. gift card offers loyalty and rewards for both merchants and consumers. Commerce Hub integrates with Fiserv Gift Solutions
+Commerce Hub supports purchases with gift _(prepaid)_ cards for [online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md). Gift card offers loyalty and rewards for both merchants and consumers. Commerce Hub integrates with Fiserv Gift Solutions
  _(previously Valuelink)_.
 
 <!--- and third-party providers Blackhawk, SVS and ESI.--->

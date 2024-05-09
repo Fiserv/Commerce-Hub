@@ -2,7 +2,7 @@
 tags: [Gift Card, Loyalty, Redemption, Payments]
 ---
 
-# Redemption
+# Gift Card Redemption
 
 Redeeming a gift card involves using it to buy merchandise from a physical store, an online store, or a retail location. When redeeming a gift card use the [payment request APIs](?path=docs/Resources/API-Documents/Payments/Payments.md) for charges, refunds and cancels along with the conditional request variables below.
 
@@ -75,7 +75,7 @@ The below table identifies the parameters in the `balances` array in the `paymen
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | _number_ | 16,3 | Account beginning balance |
-| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `endingBalance` | _number_ | 16,3 | Account ending balance |
 | `currency` | _string_ | 17 | ISO 3 Currency Format |
 
 <!-- type: tab-end -->
@@ -198,5 +198,6 @@ Example of a charges (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
-  
+- [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
+
 ---

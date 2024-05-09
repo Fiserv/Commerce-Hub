@@ -38,6 +38,12 @@ description: Commerce Hub's SDK allows integration with Apple's Tap to Pay on iP
 link: ?path=docs/In-Person/Integrations/Tap-to-Pay.md
 -->
 
+<!-- type: card
+title: Device Management
+description: Commerce Hub's SDK allows integration with Apple's Tap to Pay on iPhone to accept contactless payments from an iPhone or a partner-enabled iOS app.
+link: ?path=docs/In-Person/Device_Management
+-->
+
 <!-- type: row-end -->
 
 ---
