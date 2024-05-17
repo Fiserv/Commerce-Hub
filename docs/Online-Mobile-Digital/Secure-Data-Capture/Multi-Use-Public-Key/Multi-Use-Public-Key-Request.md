@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key, Paym
 
 # Multi-Use Public Key Request
 
-After the merchants captures the payment source details, the multi-use public key *(MUPK)* issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization.  
+After the merchant captures the payment source details, the multi-use public key _(MUPK)_ issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization.  
 
 ---
 
@@ -19,8 +19,8 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | --------| ---------- |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentCard_ for card transactions |
+| `encryptionData` | _object_ | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
 
 <!--
 type: tab

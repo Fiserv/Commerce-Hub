@@ -9,7 +9,7 @@ Commerce Hub's RESTful API integration allows the merchant to create a custom UI
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
-### How it Works
+##### How it Works
 
 1. The customer selects checkout from the merchant's website and is presented with the merchant's payment form.
 2. The customer selects Google Pay and then redirected to the Google Pay payment form.
