@@ -119,9 +119,9 @@ Example of a charge payload request using `dynamicDescriptors`.
    "transactionDetails":{
       "captureFlag": true
    },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+    "merchantDetails": {
+        "merchantId": "100008000003683",
+        "terminalId": "10000001"
    }
 }
 ```
