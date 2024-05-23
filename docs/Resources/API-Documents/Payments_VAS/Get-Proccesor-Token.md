@@ -79,15 +79,17 @@ Example of a token only payload request.
     }
   },
   "merchantDetails": {
-    "merchantId": "100008000003683",
-    "terminalId": "10000001"
+    "merchantId": "123456789789567",
+    "terminalId": "123456"
   },
   "additionalDataCommon": {
     "directedRouting": {
-      "processors": {
-        "processorName": "CITI",
-        "processorPlatform": "PRIVATE_LABEL"
-      }
+      "processors": [
+        {
+          "processorName": "CITI",
+          "processorPlatform": "PRIVATE_LABEL"
+        }
+      ]
     }
   }
 }
