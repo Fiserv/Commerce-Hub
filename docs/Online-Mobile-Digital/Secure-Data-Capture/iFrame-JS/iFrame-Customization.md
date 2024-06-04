@@ -253,6 +253,21 @@ Supported [card brands](?path=docs/Resources/Master-Data/Card-Type.md) are defin
 
 When the SDK has identified the card brand, or can no longer identify the card brand because of user input changes, the user-provided [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md#event-hooks) `onCardBrandChange` is called with this information.
 
+## List of Card Brands
+
+- Visa
+- Mastercard
+- American-express
+- Diners-club
+- Discover
+- Jcb
+- Unionpay
+- Maestro
+- Elo
+- Mir
+- Hiper
+- Hipercard
+
 ---
 
 ## See Also

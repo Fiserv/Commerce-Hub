@@ -21,7 +21,7 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 The iFrame JS script tag is required in the website by downloading or including the following code.
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/0.11.0/saq-a.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/2.2.0/saq-a.js"></script>
 ```
 
 ---
@@ -63,6 +63,7 @@ The below table identifies the parameters used in `createPaymentForm`.
 | ----- | -------- | ----------- |
 | `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
 | `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
+| `domain` | | Defaults to the hostname of the page the SDK is loaded into and is useful for referencing hostnames in the whitelist that use a wildcard |
 | `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
 | `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
 | `valid` | | CSS class will be assigned to a field's input element when they have passed validation |
@@ -83,6 +84,7 @@ When ready to submit the form data for card capture, such as when the form data 
 const submissionPromise = paymentForm.submit({
     apiKey: "API_KEY";
     accessToken: "ACCESS_TOKEN",
+    createToken: "false",
     publicKey: "PUBLIC_KEY",
     keyId: "KEY_ID",
     merchantId: "MERCHANT_ID",
