@@ -36,5 +36,3 @@ The available instance methods are listed in the table below.
 - [iFrame Event Handling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 
 ---
-
-[def]: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#supported-fields

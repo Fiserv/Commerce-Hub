@@ -18,10 +18,10 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 ## Step 2: Configure iFrame
 
-The iFrame JS script tag is required in the website by downloading or including the following code.
+The iFrame JS script tag is required in the website by downloading or including the following code. It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/2.2.0/saq-a.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/saq-a.js"></script>
 ```
 
 ---
@@ -41,7 +41,10 @@ Example of JavaScript `createPaymentForm`.
 const formPromise = window.fiserv.commercehub.createPaymentForm({
     data: {
         environment: "CERT",
+        domain: "*.merchant.com",
+        additionalFrameAncestor: "ancestorpage.merchant.com",
         supportedCardBrands: [],
+        customCardBrands: [],
         fields: {},
         contextualCssClassNames: {
             valid: "validCssClass",
@@ -64,7 +67,9 @@ The below table identifies the parameters used in `createPaymentForm`.
 | `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
 | `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
 | `domain` | | Defaults to the hostname of the page the SDK is loaded into and is useful for referencing hostnames in the whitelist that use a wildcard |
-| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md), defaults to no restrictions |
+| `additionalFrameAncestor` | | Indicates that the page the SDK is loaded into is itself an iFrame and what the parent page hostnames are so that each can be checked against the CDN whitelist and included in the resulting iFrame Content-Security-Policy value _(this is for supporting deeply nested iframes scenario)_. **Note:** The entire path of the page hostnames, starting above the page that loaded the SDK, up to and including the root frame _(or page)_ that displays in the browser URL needs to be included in this field where applicable. The expected data type of the field is a list of strings where each entry is a hostname (ports/path/protocol are not part of the hostname) |
+| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#supported-card-brands), defaults to no restrictions |
+| `customCardBrands` | | Used to extend the built in card brand identification configuration with [custom card brands](?path=(?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#custom-card-brands)) and works together with `supportedCardBrands` |
 | `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#field-configuration) for the payment form |
 | `valid` | | CSS class will be assigned to a field's input element when they have passed validation |
 | `invalid` | | CSS class will be assigned to a field's input element when they have failed validation and are in an invalid state |
@@ -216,5 +221,6 @@ Example of a charge (201: Created) response.
 - [iFrame Event Handling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 - [iFrame Methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Methods.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Version Release Notes](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md)
 
 ---

@@ -62,7 +62,7 @@ The following example shows all the text labels that can be overridden for a par
 
 ## CSS Styling
 
-The default iFrame styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iframe DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
+The default iFrame styling is based on the ADA guidelines (link to ADA guidelines) and enhances the config object to include a structured CSS style object that is transformed into CSS text and integrated into the head element of the iFrame DOM as a style tag. Developers can override the default styling by providing a style definition as part of the `fiservConfig` object.
 
 <!-- theme: warning -->
 > Support for certain CSS properties/selectors have been restricted for security reasons.
@@ -71,7 +71,7 @@ The following table outlines the attributes of the `fiservConfig.css.styleConfig
 
 | Attributes | Description |
 |------|-------|
-| `base` | base styling for the iframe on all device sizes |
+| `base` | base styling for the iFrame on all device sizes |
 | `media` | device specific styling rules that override the base styling rules when the current device matches the defined media query | 
 
 
@@ -195,7 +195,7 @@ The following block outlines the common element tags, identifiers, and names tha
 
 Commerce Hub implements security restrictions that prevent attackers from injecting or performing exfiltration attacks in the iFrame solution.
 
-- `input[value='*']` query selector: Poses a security risk by allowing attackers to inject css that calls a remote URL when the input matches a certain value. If the injected remote URL is a unique URL per input value, the attacker can have full or partial access to the individual content.  
+- `input[value='*']` query selector: Poses a security risk by allowing attackers to inject CSS that calls a remote URL when the input matches a certain value. If the injected remote URL is a unique URL per input value, the attacker can have full or partial access to the individual content.  
 - `[url\(.*\]` property: Mitigates the risk of a CSS exfiltration attack.
 
 ---

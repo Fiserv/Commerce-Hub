@@ -14,14 +14,13 @@ Allows a merchant an easy and secure way to embed a payment form into a website.
 
 ### Transaction Flow
 
-1. The customer navigates to checkout page of the merchant's website.
-2. The customer's browser loads the Commerce Hub iFrame SDK.
-3. Merchant JavaScript on page initializes/configures the Commerce Hub SDK which creates an iFrame element on merchant's web page for each configured UI field
-4. The customer enters their card information into the form field iFrames and clicks a merchant hosted button to submit the form
-5. Merchant JavaScript sends a request to the merchant backend server to get credentials and start a user session via the Commerce Hub credentials API which returns credentials as well as the "sessionId" the collected payment details will be stored under
-6. Merchant frontend calls the SDK "submit" method providing the necessary information
-7. SDK initiates the card capture request sending encrypted card data authenticated using the provided "accessToken" which is linked to the "sessionId" the merchant received on step 5
-8. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server referencing the customer entered data via the "sessionId".
+1. The customer navigates to the checkout page of the merchant's website.
+2. The customer's browser loads the Commerce Hub iFrame SDK based on the merchant's configuration.
+3. The customer enters their card information into the form fields and clicks a merchant hosted button to submit the form.
+4. The merchant sends a credentials request to their backend server to start a user session via Commerce Hub. This will return the security credentials as well as the `sessionId` the payment details will be associated with.
+5. The merchant's website calls the SDK `submit` method to initiate the card capture request using the obtained security credentials.
+6. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server using the `sessionId`.
+7. Commerce Hub sends the transaction response to the merchant's website.
 
 ---
 
