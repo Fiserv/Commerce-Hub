@@ -19,10 +19,12 @@ Allows a merchant an easy and secure way to embed a payment form into a website.
 
 1. The customer navigates to checkout page of the merchant's website.
 2. The customer's browser loads the Commerce Hub iFrame SDK.
-3. The Commerce Hub SDK builds and renders an iFrame with a card form that allows the customer to initiate the payment session.
-4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
-5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
-6. Commerce Hub sends the transaction response to the merchant's website.
+3. Merchant JavaScript on page initializes/configures the Commerce Hub SDK which creates an iFrame element on merchant's web page for each configured UI field
+4. The customer enters their card information into the form field iFrames and clicks a merchant hosted button to submit the form
+5. Merchant JavaScript sends a request to the merchant backend server to get credentials and start a user session via the Commerce Hub credentials API which returns credentials as well as the "sessionId" the collected payment details will be stored under
+6. Merchant frontend calls the SDK "submit" method providing the necessary information
+7. SDK initiates the card capture request sending encrypted card data authenticated using the provided "accessToken" which is linked to the "sessionId" the merchant received on step 5
+8. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server referencing the customer entered data via the "sessionId".
 
 ---
 
