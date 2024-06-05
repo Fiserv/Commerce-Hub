@@ -23,7 +23,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 <!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
 
-- Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) 
+- Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
 - Test APIs before certifying for production
 - View the response format of a specific API
 - Experiment, develop code and fix bugs

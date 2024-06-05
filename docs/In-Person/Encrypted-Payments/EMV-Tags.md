@@ -6,14 +6,13 @@ tags: [EMV, Encrypted Payments, In-Person, Card Present]
 
 [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) transactions require `emvData` which contains a series of Tag/Length/Value combinations for chip card processing. The data elements are captured from the [Integrated Circuit Card (ICC)](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv), terminal, or issuer and is submitted in the request and returned in the response.
 
-
 <!-- theme: warning -->
 > The tag requirements may change at any time, EMV tags should be passed and not hard coded. If a tag is not recognized it can be ignored. If it does not exist, do not create one with a false or empty value. Issuers may provide other tags not listed here in a response.
 
 <!-- theme: warning -->
 > It is mandatory that all authorization request messages for any transcation type must contain the EMV tags. The tags are ignore by Commerce Hub when not required, and is set to zero when no data is passed.
 
-The below table contains the list of data elements, their consecutive EMV tags and their descriptions. For a full list of EMV tags, refer to [EMVCo Book 3](https://www.emvco.com/emv-technologies/contact/). 
+The below table contains the list of data elements, their consecutive EMV tags and their descriptions. For a full list of EMV tags, refer to [EMVCo Book 3](https://www.emvco.com/emv-technologies/contact/).
 
 | EMV Tag  | Request  | Response  | Element Name | Description | Source | Format  | Length |
 |----| --- | ----| ----| ----| ----| ----| ----|

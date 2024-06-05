@@ -2,7 +2,7 @@
 tags: [Convenience Fees, Amount]
 ---
 
-# Convenience Fees 
+# Convenience Fees
 
 Convenience fees are charges levied for the privilege of paying for a product or service using an alternative payment, or a payment method that is not standard for the merchant. Convenience Fees facilitate this, passing the cost from the Merchant to consumer.
 
@@ -31,7 +31,7 @@ Every credit card provider has different rules on convenience fees. Below are th
 
 ---
 
-## Request Variables 
+## Request Variables
 
 <!--
 type: tab
@@ -42,8 +42,8 @@ The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `total` | *number* | 18,3 | The total amount of a transaction including `convenienceFees` and `subTotal` | 
-| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md) | 
+| `total` | *number* | 18,3 | The total amount of a transaction including `convenienceFees` and `subTotal` |
+| `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 <!--
 type: tab
@@ -68,8 +68,8 @@ The below table identifies the required parameters in the `amountComponents` obj
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `subTotal` | *string* | 32 | The total amount for the goods and services excluding `convenienceFees`| 
-| `convenienceFees` | *string* | N/A | Convenience fees being charged to the customer | 
+| `subTotal` | *string* | 32 | The total amount for the goods and services excluding `convenienceFees`|
+| `convenienceFees` | *string* | N/A | Convenience fees being charged to the customer |
 
 <!--
 type: tab
@@ -97,7 +97,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using `convenienceFee`.
+Example of a charge payload request using `convenienceFee`.
 
 ```json
 {
@@ -128,8 +128,8 @@ titles: Request, Response
     "convenienceFees": 1.02
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -137,7 +137,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

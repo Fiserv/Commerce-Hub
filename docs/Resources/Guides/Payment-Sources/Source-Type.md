@@ -2,9 +2,9 @@
 tags: [Payment Source]
 ---
 
-# Payment Source Types 
+# Payment Source Types
 
-The variable `sourceType` is used to determine the payment instrument of the transaction in the `source` object. Depending on the payment source the `sourceType` and request variables change. 
+The variable `sourceType` is used to determine the payment instrument of the transaction in the `source` object. Depending on the payment source the `sourceType` and request variables change.
 
 ## Payment Cards
 
@@ -201,7 +201,7 @@ type: tab
 
 <!-- type: tab-end -->
 
-----
+---
 
 ## Secure Payments
 
@@ -241,6 +241,33 @@ type: tab
   "source": {
     "sourceType": "PaymentSession",
     "sessionId": "df8c33d2-af27-4a3a-b7a0-61d4edf09cad"
+  }
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+## Pay By Bank
+
+Pay by bank allows merchants to accept ACH processing using `paymentCheck`.
+
+<!--
+type: tab
+titles: PaymentCheck
+-->
+
+[PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) offers enhanced security and convenience when accepting ACH processing. With multiple integration methods available, merchants can accept one-time and recurring payments, providing additional flexibility and convenience for customers.
+
+```json
+{
+  "source": {
+    "sourceType": "PaymentCheck",
+    "check": {
+      "routingNumber": "123456789",
+      "accountNumber": "8456234852689"
+    }
   }
 }
 ```

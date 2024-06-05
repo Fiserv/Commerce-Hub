@@ -6,7 +6,6 @@ tags: [Directed Routing, Network, Processor]
 
 Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
 
-
 ## Request Variables
 
 The `directedRouting` object is part of the `additionalDataCommon` object.
@@ -38,13 +37,13 @@ The below table identifies the required parameters in the `processors` array.
 
 ##### Procssor and Platform Combinations
 
-The below talbe identifies the valid values and combinations for `processorName` and `processingPlatform`.
+The below table identifies the valid values and combinations for `processorName` and `processingPlatform`.
 
 | Processor | Platforms |
 | ----- | ----- |
-| _FISERV_ | _NASHVILLE_ |
-| _CHASE_ | _TAMPA_, _SALEM_ |
-| _CITI_ | _PRIVATE_LABEL_ |
+| *FISERV* | *NASHVILLE* |
+| *CHASE* | *TAMPA*, *SALEM* |
+| *CITI* | *PRIVATE_LABEL* |
 
 <!--
 type: tab
@@ -86,7 +85,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using `directedRouting`.
+Example of a charge payload request using `directedRouting`.
 
 ```json
 {
@@ -127,8 +126,8 @@ titles: Request, Response
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -136,7 +135,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -191,9 +190,9 @@ type: tab
     "captureFlag": false
   },
   "merchantDetails": {
-    "terminalId": "123456",
-    "merchantId": "123456789789567"
-  },
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 

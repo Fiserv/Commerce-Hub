@@ -8,7 +8,7 @@ Commerce Hub supports Idempotency operation that states that clients can make th
 
 ---
 
-## Senarios for Idempotency
+## Scenarios for Idempotency
 
 When the below scenarios occur, the merchant can initiate a idempotency on the transaction request;
 

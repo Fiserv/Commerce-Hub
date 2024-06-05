@@ -5,7 +5,7 @@ tags: [API Reference, Card Details, Master Data]
 
 # Card Data
 
-Card is a required object in `source` for all card payment types including; debit, credit, prepaid (gift), HSA, and WIC/EBT. 
+Card is a required object in `source` for all card payment types including; debit, credit, prepaid (gift), HSA, and WIC/EBT.
 
 <!--
 type: tab
@@ -28,12 +28,11 @@ The below table identifies the parameters in the `card` object.
 | `category`| _string_ | 25 | Describes the card category |
 | `subCategory`| _string_ | 25 | Provides the subcategory for the `category` field to identify the card type. |
 
-
 <!--
 type: tab
 -->
 
-JSON string format for `card`: 
+JSON string format for `card`:
 
 ```json
 {
