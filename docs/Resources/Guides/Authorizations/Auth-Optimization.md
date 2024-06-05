@@ -7,7 +7,7 @@ tags: [Authorization, Approval Rate, Decline Rate]
 Authorization Optimization from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for E-commerce transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks ensuring higher approval rates. This is achieved by locating updated card numbers and/or expiration dates and retying the transaction with this new data.
 
 <!-- theme: info -->
-> Authorization Optimization needs to be configured in Merchant Configuration and Boarding. Auth Optimization can be configured to recieve updated card data and reason, or the reason only, please contact your account representative for more information.
+> Authorization Optimization needs to be configured in Merchant Configuration and Boarding. Authorization Optimization can be configured to receive updated card data and reason, or the reason only, please contact your account representative for more information.
 
 ### Supported Features
 
@@ -46,13 +46,13 @@ The below table identifies the parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `authOptimazation` | *string* | 32 | An identifier used to overide what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. |
+| `authOptimazation` | *string* | 32 | An identifier used to override what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. |
 
-### Auth Optimization Type
+### Authorization Optimization Type
 
 | Values | Description |
 |-------------|---------------|
-| *CARD_DATA_AND_REASON* | Recieve updated card data and card update reasons |
+| *CARD_DATA_AND_REASON* | Receive updated card data and card update reasons |
 | *REASON_ONLY* | Receive card updates reason only |
 | *OVERRIDE* | Disable the service for this request |
 
@@ -189,7 +189,7 @@ Example of a charge payload request.
 type: tab
 -->
 
-Example of an auth optimization (201: Created) response
+Example of an authorization optimization (201: Created) response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
