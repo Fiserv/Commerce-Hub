@@ -16,6 +16,25 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## May 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** April 24th 2024
+- **Production:** May 8th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Support [Dynamic Currency Conversion *(DCC)*](?path=docs/Resources/Guides/Global-Currency/Currency-Conversion.md) rate requests for BIN lookup and currency lookup | Feature |
+| Support [EMV Certification Authority Public Key *(CAPK)*](?path=docs/Resources/API-Documents/Device-Management/CAPK.md) download and status verification | Feature |
+| [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support unmatched and open refunds, inquiry and account link verification | Update |
+| Support [ACH PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) as a payment source | Feature |
+| Support [Get Partner Token](?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md) to convert TransArmor token to 3rd party processor token | Feature |
+| Enhanced support [ECv2 for GooglePay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md) and support for Fiserv Google Payment Token  | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## April 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
