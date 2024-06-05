@@ -4,6 +4,9 @@ tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 
 # Secure Data Capture - iFrame v2 Integration Guide
 
+<!-- theme: info -->
+> Commerce Hub's iFrame solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
+
 ## Step 1: Acquire Credentials
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [form submission](#step-4-form-submission) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
@@ -11,18 +14,17 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 <!-- theme: danger -->
 > This request must be invoked as a server API call for each form submission and should not be attempted directly from the browser.
 
-<!-- theme: info -->
-> When integrating with 3-D Secure `authentication3DS` _true_ is required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
-
 ---
 
 ## Step 2: Configure iFrame
 
-The iFrame JS script tag is required in the website by downloading or including the following code. It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
+The iFrame JS script tag is required in the website by downloading or including the following code.
 
 ```php
 <script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/saq-a.js"></script>
 ```
+
+It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
 
 ---
 

@@ -2,15 +2,18 @@
 tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-# Secure Data Capture - JS Customization
+# Secure Data Capture - JS v1 Customization
 
-The JavaScript or JS elements are set by default based on the ADA guidelines. Commerece Hub allows the merchant to customize the styling by setting a flag and apply their own styling. The merchant can override the elements of the JS including [language](#languages), and the [theme and font](#theme-and-font).
+<!-- theme: danger -->
+> Version 1 of Commerce Hub's Secure Data Capture JS solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md). We strongly recommend switching to the v2 solution.
+
+The JavaScript or JS elements are set by default based on the ADA guidelines. Commerce Hub allows the merchant to customize the styling by setting a flag and apply their own styling. The merchant can override the elements of the JS including [language](#languages), and the [theme and font](#theme-and-font).
 
 ---
 
 ## Languages
 
-Component/Hosted Fields is available for the English (United States/US) language in Commercehub SDK JS v1. The locale is captured automatically from the browser by the solution on page load. You can also provide your own translations by including a languages attribute as part of your form configuration object creation.
+Component/Hosted fields are available for the English _(United States/US)_ language in Commerce Hub SDK JS v1. The locale is captured automatically from the browser by the solution on page load. You can also provide your own translations by including a languages attribute as part of your form configuration object creation.
 
 The following example shows all the text labels that can be overridden for a particular language/locale:
 
@@ -56,13 +59,12 @@ The following example shows all the text labels that can be overridden for a par
 
 ---
 
-
 ## Theme and Font
 
 For iFrame JS, the styling is set by default, based off of [ADA guidelines](?path=https://www.ada.gov/2010ADAstandards_index.htm).
 
-
 #### Overriding Elements
+
 The following elements can be overridden:
 
 - **form:** CSS class responsible for styling the "form" HTML element, where all the other elements are contained within.
@@ -97,6 +99,7 @@ The following elements can be overridden:
     };
 
 ```
+
 ---
 
 ## See Also

@@ -3,7 +3,10 @@ tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
 
-# Secure Data Capture - JS Integration Guide
+# Secure Data Capture - JS v1 Integration Guide
+
+<!-- theme: danger -->
+> Version 1 of Commerce Hub's Secure Data Capture JS solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md). We strongly recommend switching to the v2 solution.
 
 ## Step 1: Acquire Credentials
 
