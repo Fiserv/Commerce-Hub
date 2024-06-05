@@ -25,8 +25,8 @@ The below table identifies the parameters in the `card` object.
 | `bin` | *string* | 8 |  Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Number (PAN) and identifies the issuer. |
 | `last4` | *string* | 4 |  Last four digits of the Primary Account Number (PAN) |
 | `scheme` | *string* | 256 |  Card brand received in the transaction response |
-| `category`| *string* | 25 | Describes the card category |
-| `subCategory`| *string* | 25 | Provides the subcategory for the `category` field to identify the card type. |
+| `category`| _string_ | 25 | Describes the card category |
+| `subCategory`| _string_ | 25 | Provides the subcategory for the `category` field to identify the card type. |
 
 <!--
 type: tab

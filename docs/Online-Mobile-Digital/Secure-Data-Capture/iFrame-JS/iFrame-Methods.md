@@ -2,7 +2,7 @@
 tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 ---
 
-# Secure Data Capture - iFrame v2 Methods
+# Secure Data Capture - iFrame v2 Supported Methods
 
 The available instance methods are listed in the table below.
 
@@ -36,5 +36,3 @@ The available instance methods are listed in the table below.
 - [iFrame Event Handling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
 
 ---
-
-[def]: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md#supported-fields
