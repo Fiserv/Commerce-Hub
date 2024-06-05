@@ -33,8 +33,8 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request
 -->
 
 <!-- type: card
-title: JS Customization
-description: Customize the language, theme, and font for Commerce Hub's JavaScript SDK solution.
+title: JS Supported Methods and Fields
+description: Supported PCI field data and the submission configuration.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
 -->
 
