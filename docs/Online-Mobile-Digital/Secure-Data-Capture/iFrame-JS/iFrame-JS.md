@@ -8,7 +8,6 @@ Commerce Hub's iFrame solution allows E-commerce merchants to create payment dat
 
 Secure Data Capture v2 iFrame SDK works by injecting individual iFrames for each payment field *(card number, security code, etc.)* allowing them to be composed with other elements to create richer and more customizable UI components. This allows full customization on the merchant's page and hosting as little as possible within the iFrame itself. The iFrames are injected into parent elements on the webpage which can be configured individually per field. The creation and manipulation of these iFrames is all handled via the SDK from your JavaScript code.
 
-
 ### Benefits
 
 Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment information without collecting, processing, or being able to view the details in their untokenized form, lowering the PCI compliance requirements.

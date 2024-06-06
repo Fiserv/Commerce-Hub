@@ -4,7 +4,7 @@ tags: [Merchant Identifier, Order Identifier, Merchant ID, Terminal ID, Transact
 
 # Custom Identifiers
 
-Commerce Hub supports the ability for mercant's to use thier own [Merchant Identifiers](#merchant-identifiers) and [Order Identifiers](#order-identifiers). This allows a seemless integration into existing merchant APIs and databases.
+Commerce Hub supports the ability for merchants to use their own [Merchant Identifiers](#merchant-identifiers) and [Order Identifiers](#order-identifiers). This allows a seamless integration into existing merchant APIs and databases.
 
 ---
 
@@ -20,17 +20,16 @@ type: tab
 titles: merchantDetails, JSON Example
 -->
 
-The below table identifies the availble parameters in the `merchantDetails` object.
+The below table identifies the available parameters in the `merchantDetails` object.
 
 <!-- theme: warning -->
-> All boarded indentifiers (MID and/or TID) are required in API requests.
+> All boarded identifiers (MID and/or TID) are required in API requests.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. |
-| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the the gateway. |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
 
- 
 <!--
 type: tab
 -->
@@ -39,10 +38,10 @@ JSON string format for `merchantDetails`:
 
 ```json
 {
-   "merchantDetails":{
-      "terminalId": "12",
-      "merchantId": "1234567890123456",
-   }
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 <!--type: tab-end -->
@@ -54,14 +53,14 @@ JSON string format for `merchantDetails`:
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to support Order Identifiers and the documents related to the features will be released soon.
 
-Order Identifiers, known as Bring Your Own ID (BYOID), allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; [capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental auth, [re-auth](docs/?path=docs/Resources/Guides/Authorizations/Re-Auth.md), or [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md), instead of using the Commerce Hub generated `transactionID` or `orderID`.
+Order Identifiers, known as Bring Your Own ID (BYOID), allow a merchant to use their existing `merchantTransactionID` or `merchantOrderID` to submit secondary transactions; [capture](?path=docs/Resources/API-Documents/Payments/Capture.md), [refund](?path=docs/Resources/API-Documents/Payments/Refund.md), [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md), incremental authorization, [re-auth](docs/?path=docs/Resources/Guides/Authorizations/Re-Auth.md), or [inquiry](?path=docs/Resources/API-Documents/Payments/Inquiry.md), instead of using the Commerce Hub generated `transactionID` or `orderID`.
 
 <!-- 
 type: tab
 titles: transactionDetails, JSON Example
 -->
 
-The below table identifies the avaiable parameters in the `transactionDetails` object.
+The below table identifies the available parameters in the `transactionDetails` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|

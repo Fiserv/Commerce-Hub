@@ -4,7 +4,7 @@ tags: [Currency Conversion, Global Currency]
 
 # Global Currency Solutions
 
-Commerce Hub's [Global Currency Solutions](https://www.carat.fiserv.com/en-us/solutions/global-currency/) allows a merchant to combine any of our currency solutions with [Global Merchant Acquiring (GMA)](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md) and local payment methods.
+Commerce Hub's [Global Currency Solutions](https://www.carat.fiserv.com/en-us/solutions/global-currency/) allows a merchant to combine any of our currency solutions with [Global Acquiring](?path=docs/Resources/Guides/Global-Merchant-Acquiring.md) and local payment methods.
 
 <!-- theme: info -->
 > To utilize Global Currency Solutions the merchant account needs to be configured in Merchant Configuration and Boarding. For more information, please contact your account representative.
@@ -13,7 +13,7 @@ Commerce Hub's [Global Currency Solutions](https://www.carat.fiserv.com/en-us/so
 
 ## Integrations
 
-Commerce Hub provides the following types of Global Currency Solutions;
+Commerce Hub provides the following Global Currency Solutions;
 
 <!-- type: row -->
 
@@ -26,7 +26,7 @@ link: ?path=docs/Resources/Guides/Global-Currency/Multi-Currency.md
 <!-- type: card
 title: Dynamic Currency Conversion
 description: A rate request that allows a merchant to request the optimal currency and rate from our exchange rate provider, which will determine the currency and provide a price and exchange rate.
-link: 
+link: ?path=docs/Resources/Guides/Global-Currency/Currency-Conversion.md
 -->
 
 <!-- type: card

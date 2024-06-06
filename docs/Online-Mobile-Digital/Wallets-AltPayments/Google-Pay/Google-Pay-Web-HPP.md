@@ -7,9 +7,9 @@ tags: [Hosted Payment Page, Web, Online, Google Pay, Wallet]
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include Google Pay Hosted Payment Page support and the documents related to the features will be released soon.
 
-Commerce Hub's Hosted Payment Page integration removes the PCI Complaince requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
+Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
 
-### How it Works
+##### How it Works
 
 1. Customer selects checkout from the merchant's website.
 2. Customer then presented with the Commerce Hub's secure Hosted Payment Page.

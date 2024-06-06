@@ -2,7 +2,6 @@
 tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-
 # Secure Data Capture - JavaScript v2 Integration Guide
 
 <!-- theme: info -->
