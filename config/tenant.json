@@ -31,46 +31,11 @@
       ]
     }
   ],
+  "resourcesFilePath": "/docs/Resources/Resources.md",
   "getStartedFilePath": "/docs/Getting-Started/Getting-Started-General.md",
   "apiVersions": [
     {
-      "version": "1.0.0",
-      "versionType": "minor",
-      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
-      "apiSpecFileNames": ["openapi"]
-    },
-    {
-      "version": "1.1.0",
-      "versionType": "minor",
-      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
-      "apiSpecFileNames": ["openapi"]
-    },
-    {
-      "version": "1.2.0",
-      "versionType": "minor",
-      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
-      "apiSpecFileNames": ["openapi"]
-    },
-    {
-      "version": "1.3.0",
-      "versionType": "minor",
-      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
-      "apiSpecFileNames": ["openapi"]
-    },
-    {
-      "version": "1.4.0",
-      "versionType": "minor",
-      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
-      "apiSpecFileNames": ["openapi"]
-    },
-    {
-      "version": "1.5.0",
-      "versionType": "minor",
-      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
-      "apiSpecFileNames": ["openapi"]
-    },
-    {
-      "version": "1.6.0",
+      "version": "1.24.06",
       "versionType": "major",
       "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
       "apiSpecFileNames": ["openapi"]
@@ -109,25 +74,29 @@
       },
       {
         "name": "editParameterAPIExplorer",
-        "value": true
-      }      
-     ]
+        "value": false
+      },
+      {
+        "name": "downloadPostman",
+        "value": false
+      }
+    ]
   },
   "supportConfig": [{ 
     "bug": {
       "label": "bug,CommerceHub",
       "template": "bug.md",
-      "assignees": "MAFiserv"
+      "assignees": "WWFiserv"
     },  
     "feedback": {
       "label": "feedback,CommerceHub",
       "template": "feedback.md",
-      "assignees": "MAFiserv"
+      "assignees": "WWFiserv"
     },
     "enhancement": {
       "label": "enhancement,CommerceHub",
       "template": "feature.md",
-      "assignees": "MAFiserv"
+      "assignees": "WWFiserv"
     }
   }]
 }

@@ -41,19 +41,11 @@
     sections:
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-#    - title: Encrypted Device
-#      link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
-#    - title: Fully-Integrated
-#      link: docs/In-Person/Integrations/Fully-Integrated.md
-#    - title: Semi-Integrated
-#      link: docs/In-Person/Integrations/Semi-Integrated.md
     - title: Device Management
       link: docs/Resources/API-Documents/Device-Management/Device-Management.md
     - title: Debit
       link: docs/Resources/Guides/Debit/Debit.md
       sections:
-#      - title: Least Cost Debit
-#        link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
       - title: PIN Debit
         link: docs/Resources/Guides/Debit/PIN_Debit.md
       - title: Message Authentication
@@ -61,8 +53,6 @@
     - title: Encrypted Payment
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
       sections:
-#      - title: Contactless (NFC)
-#        link: docs/In-Person/Encrypted-Payments/Contactless.md
       - title: EMV Chip
         link: docs/In-Person/Encrypted-Payments/EMV.md
       - title: Manual Entry
@@ -96,10 +86,6 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
-#      - title: Samsung Pay
-#        link: docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md 
-#  - title: Connected Commerce
-#    link: docs/Getting-Started/Getting-Started-UCOM.md
 - sections:
   - title: Features
     sections:
@@ -117,8 +103,6 @@
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
     - title: Global Acquiring
       link: docs/Resources/Guides/Global-Acquiring.md
-#    - title: Least Cost Debit
-#      link: docs/Resources/Guides/Debit/Least-Cost-Debit.md
     - title: Multi-Use Public Key
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Secure Data Capture
@@ -141,8 +125,10 @@
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
     - title: Level 2/3 Purchase Cards
       link: docs/Resources/Guides/Level23/Level23.md
-    - title: payment facilitator
-      link: docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md
+    - title: Mail Order Telephone Order
+      link: docs/Resources/Guides/Mail-Order-Telephone-order.md
+    - title: Payment Facilitator
+      link: docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
     - title: Pay By Bank
@@ -163,6 +149,7 @@
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: 3-D Secure
+      link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
       sections:
       - title: Authentication
         link: docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md
@@ -170,6 +157,22 @@
         link: docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md
       - title: Verification
         link: docs/Online-Mobile-Digital/3D-Secure/3DS-Verification.md     
+    - title: Accounts
+      sections:
+      - title: Balance Inquiry
+        link: docs/Resources/API-Documents/Payments_VAS/Balance-Inquiry.md
+      - title: Card Capture
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md
+      - title: Gift Cards
+        link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
+      - title: Information Lookup
+        link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+      - title: Partner Tokens
+        link: docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md
+      - title: Tokenization
+        link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+      - title: Verification
+        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
     - title: Data Solutions
       sections:
       - title: Enhanced Data Service
@@ -203,18 +206,6 @@
         link: docs/Resources/API-Documents/Payments/Refund.md
       - title: Inquiry
         link: docs/Resources/API-Documents/Payments/Inquiry.md
-    - title: Payments VAS
-      sections:
-      - title: Card Capture
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md
-      - title: Information Lookup
-        link: docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
-      - title: Get Proccesor Token
-        link: docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md
-      - title: Tokenization
-        link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-      - title: Verification
-        link: docs/Resources/API-Documents/Payments_VAS/Verification.md
     - title: Security
       sections:
       - title: Credentials

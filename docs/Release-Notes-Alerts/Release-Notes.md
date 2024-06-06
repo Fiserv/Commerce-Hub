@@ -16,6 +16,22 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## June 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** May 30th 2024
+- **Production:** June 6th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.06: Reorganization of Payments-VAS groups for API Explorer and documentation | Update |
+| [Partner tokens](?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md) response updated to make `cardDetails` an array | Update |
+| Secure Data Capture [v2 JavaScript solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) | Feature |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## May 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
