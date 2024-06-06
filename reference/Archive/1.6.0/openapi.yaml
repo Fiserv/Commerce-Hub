@@ -8776,4 +8776,5 @@ components:
           status: 'NO_UPDATE_AVAILABLE'
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100009000000035'              
+          merchantId: '100009000000035'
+          
