@@ -26,6 +26,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Secure Data Capture [v2 JavaScript solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) | Feature |
+| Support for merchant managed 3rd-party [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token.md) | Feature |
 
 ---
 
