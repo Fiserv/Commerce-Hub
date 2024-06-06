@@ -171,7 +171,9 @@ Example of a device data initialization (201: Created) response.
 
 After a successful [device data initialization](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md), merchants must use one of the following options to capture the cardholder's [device data fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md).
 
+<!--- 
 - **Commerce Hub SDK:** Hidden JavaScript iFrame collection
+- --->
 - **Cardinal Cruise API:** Hidden iFrame using Java Web Token *(JWT)*
 
 <!-- theme; warning -->
@@ -207,6 +209,7 @@ The following table outlines the required fields to be collected in the `additio
 
 ---
 
+<!---
 ### Commerce Hub SDK
 
 The following code snippets outline how to use the Commerce Hub SDK to initialize 3DS device data capture.
@@ -233,13 +236,14 @@ new commercehub.FiservManaged3DS(config).captureDeviceData("fiserv-3ds-hidden-co
 
 The following code snippet provides a sample response
 
-Description......
+Description...... --->
 
 <!--
 type: tab
 titles: Variables, Example 
 -->
 
+<!---
 The below table identifies the parameters in the `providerCollectionStatus` object in the the `methodData` object of `additionalData3DS`.
 
 | Variable | Type | Maximum Length | Description |
@@ -248,11 +252,13 @@ The below table identifies the parameters in the `providerCollectionStatus` obje
 | `attemptedTimestamp` | *string* |  |  |
 | `status` | *string* |  |  |
 | `completedTimestamp` | *string* | |  |
+--->
 
 <!--
 type: tab
 -->
 
+<!---
 The following code snippet provides a sample response.
 
 ```json
@@ -278,6 +284,7 @@ The following code snippet provides a sample response.
 ```
 
 ---
+--->
 
 ### Cardinal Cruise API
 

@@ -22,8 +22,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 | --------- | ---------- | -------- | ----- |
-| `merchantId` | *string* | 40 | A unique ID used to identify the merchant. The PayFac must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
 
 <!-- type: tab-end -->
 
@@ -59,7 +59,7 @@ Example of a PayFac Multi-MID charges payload request.
     "createToken": true
   },
   "merchantDetails": {
-    "merchantId": "100004SUBPFACM1",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   }
 }
@@ -155,7 +155,7 @@ Example of a PayFac Multi-MID charges (201: Created) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Dynamic Descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
-- [Payment Faciliator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md)
+- [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Split-Settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md)
 

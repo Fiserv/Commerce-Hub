@@ -30,5 +30,3 @@ The following Postman Collections can be used to [test](?path=docs/Resources/Gui
 - [How to Use Postman for Testing](?path=docs/Resources/Guides/Testing/Postman-Testing.md)
 - [Online Digital and Mobile Integrations](?path=docs/Getting-Started/Getting-Started-Online.md)
 - [In-Person Integrations](?path=docs/Getting-Started/Getting-Started-InPerson.md)
-
----
