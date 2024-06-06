@@ -79,8 +79,8 @@ Example of a token only payload request.
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "additionalDataCommon": {
     "directedRouting": {

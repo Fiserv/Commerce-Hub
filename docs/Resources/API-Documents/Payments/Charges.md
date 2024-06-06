@@ -65,8 +65,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -113,8 +113,8 @@ Example of a charge payload request.
     "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
