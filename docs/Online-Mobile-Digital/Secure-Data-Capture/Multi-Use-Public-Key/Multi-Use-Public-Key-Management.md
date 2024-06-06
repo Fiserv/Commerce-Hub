@@ -6,7 +6,6 @@ tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
 
 The objective of a key management system is to achieve PCI DSS compliance for a banking institution. It involves implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys, which is typically known as the key life cycle for protecting customer's sensitive payment card data. The `asymmetricKeyDetails` are returned in the response.
 
-
 ## Best Practices for Key Management
 
 - The merchant should initiate the new key request 2 days prior to the expiry of the previous key. The merchant shall start using the new key once it is successfully exchanged.
@@ -24,13 +23,13 @@ The below table identifies the parameters for `asymmetricKeyDetails` object. The
 
 | Variables | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `keyId` | *string* | 64 | Unique identifier of the key pair |
-| `encryptionType` | *string* | 32 | Encryption type of the key pair. Defaults to RSA. |
-| `modulus` | *integer* |  | Modulus size of the key pair |
-| `encodedPublicKey` | *string* |  | Hex encoded public key |
-| `validFrom` | *string* |  | Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format |
-| `validTo` | *string* |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
-| `status` | *string* | 10 | Status of the key pair. Valid values are ACTIVE, REVOKED, INACTIVE or LEGACY | 
+| `keyId` | _string_ | 64 | Unique identifier of the key pair |
+| `encryptionType` | _string_ | 32 | Encryption type of the key pair. Defaults to RSA. |
+| `modulus` | _integer_ |  | Modulus size of the key pair |
+| `encodedPublicKey` | _string_ |  | Hex encoded public key |
+| `validFrom` | _string_ |  | Date and time the key pair is valid from in YYYY-MM-DDThh:mm:ssZ format |
+| `validTo` | _string_ |  | Date and time the key pair is valid to in YYYY-MM-DDThh:mm:ssZ format |
+| `status` | _string_ | 10 | Status of the key pair. Valid values are ACTIVE, REVOKED, INACTIVE or LEGACY |
 
 <!-- type: tab-end -->
 
@@ -51,8 +50,8 @@ The below table identifies the required parameter for the generate request paylo
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-------- | --------|
-| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
-| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. Required when using [merchant defined](?path=docs/Resources/Guides/BYOID.md) MID/TID. |
+| `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -72,13 +71,13 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of payload request.
+Example of payload request.
 
 ```json
 {
   "merchantDetails": {
-    "merchantId": "123456789012345",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -87,7 +86,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of (201: Created) response.
+Example of (201: Created) response.
 
 ```json
 {
@@ -136,7 +135,7 @@ The below table identifies the required parameter for the URI.
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|--------- | -------|
-| `keyId` | *string* | 64 | &#10004; | Used to pass the keyId of the encryption key pair to be revoked |
+| `keyId` | _string_ | 64 | &#10004; | Used to pass the keyId of the encryption key pair to be revoked |
 
 <!--
 type: tab
@@ -146,9 +145,8 @@ The below table identifies the required parameter for the revoke request payload
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-----|-------|
-| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
-| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. Required when using [merchant defined](?path=docs/Resources/Guides/BYOID.md) MID/TID. |
-
+| `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -167,13 +165,13 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of payload request.
+Example of payload request.
 
 ```json
 {
   "merchantDetails": {
-    "merchantId": "123456789012345",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -182,7 +180,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of (200: Success) response.
+Example of (200: Success) response.
 
 ```json
 {
@@ -216,27 +214,28 @@ type: tab
 
 ## Multi-Use Public Key Expiry
 
-Commerce Hub and a merchant can have multiple static public keys where the key identifiers in the transaction request determines which key is being used to encrypt the data. A transaction request received with an expired key is rejected and an expiry response will be sent. A merchant should follow key management best practices to prevent rejected transactions. 
+Commerce Hub and a merchant can have multiple static public keys where the key identifiers in the transaction request determines which key is being used to encrypt the data. A transaction request received with an expired key is rejected and an expiry response will be sent. A merchant should follow key management best practices to prevent rejected transactions.
 
 ### Key Expiry Example
 
-Below is an example of multiple pblic keys that are generated during a transaction request and expires after a set time interval. 
+Below is an example of multiple pblic keys that are generated during a transaction request and expires after a set time interval.
 
 | Public Key  | Generated/Activated | Expiry Date and Time |
 | ------------ | ----------- | ------- |
-| Key #1 | 1 Jan 00:00:00 AM |7 Jan 11:59:59 PM  | 
-| Key #2 | 6 Jan 00:00:00 AM | 12 Jan 11:59:59 PM | 
-| Key #3 | 11 Jan 08:00:01 AM | 18 Jan 08:00:00 PM | 
+| Key #1 | 1 Jan 00:00:00 AM |7 Jan 11:59:59 PM  |
+| Key #2 | 6 Jan 00:00:00 AM | 12 Jan 11:59:59 PM |
+| Key #3 | 11 Jan 08:00:01 AM | 18 Jan 08:00:00 PM |
 
 Below are some of the examples of offline transactions and the multi-use public keys that can be used at a given instance.
 
 - The transaction request is submitted on Jan 2nd at 2:30 PM, the merchant can process with the first key generated.  
-- The transaction request is submitted on Jan 6th at 8:30 AM, as per the best practices the merchant should use the second key generated. However, the merchant can use the first generated key.   
+- The transaction request is submitted on Jan 6th at 8:30 AM, as per the best practices the merchant should use the second key generated. However, the merchant can use the first generated key.
 - The transaction request is submitted on Jan 11th at 11:45 PM, as per the best practices the merchant should use the third key generated. However, the merchant can still use the second generated key. If the merchants submits the first key, Commerce Hub will rejects the transaction.
 
 ---
 
 ## See Also
+
 - [Multi Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
 - [Multi Use Public Key Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md)
 - [Multi Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)

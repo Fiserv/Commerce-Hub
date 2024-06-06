@@ -35,8 +35,8 @@ The below table identifies the parameters in the `merchantDetails` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | :--: | :------------: | ------------------ |
-| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | 12 | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
+| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | 12 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!--
 type: tab
@@ -111,8 +111,8 @@ Example of a device data initialization payload request.
     }
   },
   "merchantDetails": {
-    "terminalId": "10000001",
-    "merchantId": "100004000100116"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "transactionDetails": {
     "authentication3DS": true

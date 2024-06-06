@@ -75,7 +75,7 @@ Example of a charges payload request.
   },
   "merchantDetails": {
     "merchantId": "100008000003683",
-    "terminalId": "123456"
+    "terminalId": "10000001"
   }
 }
 ```

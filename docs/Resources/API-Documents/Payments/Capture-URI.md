@@ -45,8 +45,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|---|
-|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -74,9 +74,9 @@ Example of a Capture Payload Request.
     "total": "12.04",
     "currency": "USD"
   },
-  "merchantDetails":{
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```

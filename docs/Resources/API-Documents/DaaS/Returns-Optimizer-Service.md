@@ -35,7 +35,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -43,7 +43,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ## Response Variables
 
-The following response variables can be utilized to make an informed decision on the likelyhood of a customer return.
+The following response variables can be utilized to make an informed decision on the likelihood of a customer return.
 
 <!--
 type: tab
@@ -122,7 +122,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a Returns Optimizer payload request.
+Example of a Returns Optimizer payload request.
 
 ```json
 {
@@ -147,7 +147,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a Returns Optimizer response.
+Example of a Returns Optimizer response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

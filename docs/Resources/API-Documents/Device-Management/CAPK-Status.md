@@ -89,8 +89,8 @@ Example of a CAPK status payload request
 ```json
 {
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "emvDetails": {
     "transactionType": "STATUS",
