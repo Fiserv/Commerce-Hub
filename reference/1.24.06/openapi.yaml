@@ -2494,7 +2494,9 @@ components:
           items:
             $ref: '#/components/schemas/ResponsePaymentToken'
         cardDetails:
-          $ref: '#/components/schemas/CardDetails'
+          type: array
+          items:
+            $ref: '#/components/schemas/CardDetails'
         processorResponseDetails:
           $ref: '#/components/schemas/ProcessorResponseDetails'
         additionalDataCommon:
@@ -7205,47 +7207,74 @@ components:
     PartnerPaymentTokenRequest:
       value:
         source:
-          sourceType: PaymentToken
+          sourceType: 'PaymentToken'
           tokenData: '1234560000000019'
-          tokenSource: TRANSARMOR
+          tokenSource: 'TRANSARMOR'
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
         additionalDataCommon:
           directedRouting:
             processors:
-              processorName: CHASE
-              processorPlatform: TAMPA
-    
+              processorName: 'CHASE'
+              processorPlatform: 'TAMPA'
+
     PartnerPaymentTokenResponse:
       value:
         gatewayResponse:
-          transactionType: TOKENIZE
-          transactionState: AUTHORIZED
-          transactionOrigin: POS
+          transactionType: 'TOKENIZE'
+          transactionState: 'AUTHORIZED'
+          transactionOrigin: 'POS'
         source:
-          sourceType: PaymentToken
-          tokenSource: TRANSARMOR
+          sourceType: 'PaymentToken'
+          tokenSource: 'TRANSARMOR'
           tokenData: '1234560000000019'
         paymentTokens:
           - tokenData: '23459371934460009'
-            tokenSource: CHASE
+            tokenSource: 'CHASE'
             tokenResponseCode: '000'
-            tokenResponseDescription: SUCCESS
+            tokenResponseDescription: 'SUCCESS'
         processorResponseDetails:
-          approvalStatus: APPROVED
-          schemeTransactionId: 0225MCC625628
-          processor: CHASE
+          approvalStatus: 'APPROVED'
+          schemeTransactionId: '0225MCC625628'
+          processor: 'CHASE'
           responseCode: '000'
-          responseMessage: APPROVAL
+          responseMessage: 'APPROVAL'
           hostResponseCode: '00'
-          hostResponseMessage: APPROVAL
+          hostResponseMessage: 'APPROVAL'
           localTimestamp: '2021-06-20T23:42:48Z'
         additionalDataCommon:
           directedRouting:
             processors:
-              processorName: CHASE
-              processorPlatform: TAMPA
+              processorName: 'CHASE'
+              processorPlatform: 'TAMPA'
+        cardDetails:
+          - binSource: 'FISERV'
+            recordType: 'DETAIL'
+            lowBin: '476173'
+            highBin: '476173'
+            binLength: '06'
+            binDetailPan: '16'
+            countryCode: 'USA'
+            detailedCardProduct: 'VISA'
+            detailedCardIndicator: 'DEBIT'
+            pinSignatureCapability: 'PIN_OR_SIGNATURE'
+            issuerUpdateYear: '22'
+            issuerUpdateMonth: '04'
+            issuerUpdateDay: '22'
+            cardClass: 'CONSUMER'
+            productId: 'F'
+            accountFundSource: 'DEBIT'
+            panLengthMin: '16'
+            panLengthMax: '16'
+            debitPinlessIndicator:
+              - debitNetworkId: 'MAESTRO_DIRECT'
+                pinnedPOS: 'SUPPORTED'
+              - debitNetworkId: 'MAESTRO_STAR_WEST'
+                pinnedPOS: 'SUPPORTED'
+              - debitNetworkId: 'PAVD'
+                pinnedPOS: 'SUPPORTED'
+
     
     PaymentCardActivateCardRequest:
       value:
