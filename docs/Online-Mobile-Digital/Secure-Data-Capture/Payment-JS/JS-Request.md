@@ -2,131 +2,92 @@
 tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-# Secure Data Capture - JS Integration Guide
+# Secure Data Capture - JavaScript v2 Integration Guide
+
+<!-- theme: info -->
+> Commerce Hub's JavaScript solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ## Step 1: Acquire Credentials
 
-A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
-
-<!-- theme: info -->
-> When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [JS request](#step-3-call-the-sdk) and `sessionId` required in the [charges or tokens request](#step-4-submit-an-api-request).
 
 ---
 
 ## Step 2: Configure SDK
 
-The following code snippets are required to create and initialize the SDK configuration for the JS.
-
-### JS SDK
-
-- **Cert:** https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
-- **Prod:** https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
-
-The JS script tag is required in the website by downloading or including the following code:
+The JS script tag is required in the website by downloading or including the following code.
 
 ```php
-<script id="commercehub" src="https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/saq-a.js"></script>
 ```
+
+It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
 
 ---
 
-### Authentication Credentials
+## Step 3: Call the SDK
 
-Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md) in step 1.
+The following JavaScript example will authenticate and load the payment form with the [defined fields and methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md).
 
 ```javascript
-const authorization = 'ACCESS_TOKEN';
-const apiKey = 'API_KEY';
-const formConfig = {
-    "merchantId": 'MERCHANT_ID',
-    "publicKey": 'PUBLIC_KEY',
-    "asymmetricEncryptionAlgorithm": 'ASYMETRIC_ENCRYPTION_ALGORITHM',
-    "keyId": 'KEY_ID'
+const captureCard = async () => {
+  const tokens = {};
+  
+  try {
+    const response = await window.fiserv.commercehub.captureCard({
+      config: {
+        environment: "CERT",
+        apiKey: "API_KEY",
+        accessToken: "ACCESS_TOKEN",
+        publicKey: "BASE64_ENCODED_PUBLIC_ENCRYPTION_KEY",
+        keyId: "KEY_ID",
+        merchantId: "MERCHANT_ID",
+        terminalId: "TERMINAL_ID",
+        createToken: true,
+      },
+      fields: {
+        nameOnCard: "First Last",
+        cardNumber: "4111111111111111",
+        securityCode: "123",
+        expirationMonth: "01",
+        expirationYear: "2030",
+      },
+    });
+  
+    if ("paymentTokens" in response) {
+      for (const paymentToken of response.paymentTokens) {
+        if (paymentToken.tokenResponseDescription === "SUCCESS") {
+          tokens[paymentToken.tokenSource] = paymentToken.tokenData;
+        }
+      }
+    }
+  } catch (error) {
+    console.error(error.toString());
+  }
+  return tokens;
 };
 ```
 
 ---
 
-### Payment Form
+## Step 4: Submit an API Request
 
-The following is the global `commercehub` object which includes the JS:
+Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [credentials](#step-1-acquire-credentials) request.
 
-```javascript
-const form = new commercehub.FiservSaqAEp({/* configuration object */}, authorization, apiKey);
-form.loadPaymentForm("payment-saq-a-ep-form-div");
-```
+<!-- theme: info -->
+> If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
 
-Configure the `loadPaymentForm` and pass the merchant defined `div id` matching  the HTML container. Once the page is loaded the form will render in the container.
+### Charges Example
 
-```html
-<div id="payment-saq-a-ep-form-div"></div>
-```
-
-```javascript
-form.loadPaymentForm("payment-saq-a-ep-form-div")
-```
-
-A successful card capture in the JS will be handled by `.then()` in the `loadPaymentForm` and is responsible for contacting the merchant's backend/server.
-
-```javascript
-.then((next) => { });
-```
-
-Errors in JS should be handled in the .catch() of the promise for loadPaymentForm.
-
-```javascript
-.catch((error) => { });
-```
-
----
-
-### Payment Form Example
-
-```php
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script id="commercehub" src="https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js"></script>
-    </head>
-    <body>
-        <div id="payment-saq-a-ep-form-div"></div>
-        <script>
-            const authorization = '50e56404-4595-41b0-a5e7-44b9e4e6569b';
-            const apiKey = '1951fe5b30e34cdaad758b8874140872';
-            const formConfig = {
-                "merchantId": '100008000003683',
-                "publicKey": 'MIIBIjANBgkqhkiG9w0BAQEFA....',
-                "symmetricEncryptionAlgorithm": 'AES_GCM',
-                "asymmetricEncryptionAlgorithm": 'RSA',
-                "keyId": 'cc33a193-92b9-4663-ad66-3ddfd8984ded'
-            };
-            const form = new commercehub.FiservSaqAEp(formConfig, authorization, apiKey);
-            form.loadPaymentForm("payment-saq-a-ep-form-div")
-                .then((next) => {})
-                .catch((error) => {});
-        </script>
-    </body>
-</html>
-```
-
----
-
-## Step 3: Submit a Request
-
-Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [authorization](#step-1-authentication) request.
-
-### Payload Example
-
-#### Endpoint
-<!-- theme: success -->
->**POST** `/payments/v1/charges`
+<!-- theme: info -->
+> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request.
+Example of a charges payload request.
 
 ```json
 {
@@ -177,7 +138,7 @@ Example of a charge (201: Created) response.
     }
   },
   "source": {
-    "sourceType": "PaymentSession",
+    "sourceType": "PaymentCard",
     "card": {
       "bin": "40055500",
       "last4": "0019",
@@ -226,10 +187,9 @@ Example of a charge (201: Created) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
-- [Customize JS Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
+- [JavaScript Fields and Methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Version Release Notes](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md)
 
 ---
