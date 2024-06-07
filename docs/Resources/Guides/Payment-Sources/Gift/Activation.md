@@ -73,8 +73,8 @@ The below table identifies the parameters in the `merchantDetails` object.
 
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|-----|
-| `merchantId` | _string_ | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `promotionCode`| _string_ | 1024 |  | promotion code |
 
 <!--
@@ -138,7 +138,6 @@ The below table identifies the parameters in `card` object.
 | `subCategory`| _string_ | 25 | Identifies the gift card provider |
 
 <!-- type: tab-end -->
-
 
 ---
 
@@ -293,8 +292,8 @@ Example of a physical gift card activation payload request.
     "terminalTimestamp": "2016-06-20T16:06:05Z",
   },
   "merchantDetails": {
-    "merchantId": "10000900POD2204",
-    "terminalId": "10000001",
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 

@@ -120,8 +120,8 @@ Example of a charge (201: Created) response.
     "transactionCaptureType": "HOST"
   },
   "merchantDetails": {
-    "terminalId": "123456",
-    "merchantId": "123456789789567"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
 }
 ```

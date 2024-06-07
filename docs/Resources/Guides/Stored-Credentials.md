@@ -80,8 +80,8 @@ Example of a initial tokens payload request using `storedCredentials`.
     "sequence": "FIRST"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -190,8 +190,8 @@ Example of a scheduled Mastercard charge payload request using `storedCredential
     "billPaymentType": "RECURRING",
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -315,8 +315,8 @@ Example of an unscheduled charge payload request using `storedCredentials`.
     "billPaymentType": "SINGLE"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```

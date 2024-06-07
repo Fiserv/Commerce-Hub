@@ -57,16 +57,14 @@ Example of a partial authorization [charges](?path=docs/Resources/API-Documents/
         "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
         "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
       }
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true,
-    "partialApproval": true
-  },
+   },
+   "transactionDetails":{
+      "captureFlag":true,
+      "partialApproval":true
   "merchantDetails": {
-    "merchantId": "100239000000035",
-    "terminalId": "10055001"
-  }
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+   }
 }
 ```
 
@@ -76,7 +74,7 @@ Example of a partial authorization [charges](?path=docs/Resources/API-Documents/
 type: tab
 -->
 
-Example of a charge (201: Created) response
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

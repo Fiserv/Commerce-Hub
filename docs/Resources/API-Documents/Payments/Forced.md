@@ -110,7 +110,7 @@ titles: Request, Response
     "approvalCode": "OK7244"
   },
   "merchantDetails": {
-    "merchantId": "100004000100157",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   }
 }
