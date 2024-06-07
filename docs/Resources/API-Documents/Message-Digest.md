@@ -62,6 +62,7 @@ const messageDigest = CryptoJS.SHA256(rawSignature);
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
+- [Postman Testing](?path=docs/Resources/Guides/Testing/Postman-Testing.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---

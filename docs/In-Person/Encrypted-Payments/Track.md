@@ -9,8 +9,10 @@ Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/G
 A device captures the customer's payment source unencrypted or encryptes the data and sends it to Commerce Hub.
 
 <!-- theme: warning -->
-> It is not recommended to send unencrypted Track 1 and Track 2 data for the payment transaction.
-
+> It is not recommended to send unencrypted Track 1 and Track 2 data for the
+payment transaction.
+<!-- theme: warning -->
+> For a USA credit card trn , PIN is not needed.
 ---
 
 ## PINless Transactions
@@ -232,7 +234,7 @@ The below table identifies the parameters in the `source` object.
 | `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
 | `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-| `pinBlock` | *object* | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
+| `pinBlock` | *object* | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab

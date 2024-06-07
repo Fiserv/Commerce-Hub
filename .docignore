@@ -26,7 +26,6 @@ docs/Resources/Guides/Bill-Payments/Bill-Payments.md
 docs/Resources/Guides/Bill-Payments/Deferred-Payment.md
 docs/Resources/Guides/Bill-Payments/Payment-Schedule.md
 docs/Resources/Guides/Fraud/Fraud-Detect.md
-docs/Resources/Guides/Payment-Sources/Network-Token.md
 docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
 docs/Resources/Guides/PSD2-SCA.md
 docs/Resources/Guides/VAS.md
@@ -57,7 +56,6 @@ docs/In-Person/Integrations/Fully-Integrated.md
 docs/In-Person/Integrations/Semi-Integrated.md
 docs/In-Person/Encrypted-Payments/Contactless.md
 docs/Resources/Guides/Authorizations/Incremental-Auth.md
-docs/Resources/Guides/Authorizations/Deferred-Auth.md
 docs/Resources/Guides/Response-Codes/Host-Response-Code.md
 docs/Resources/Guides/Testing/Test-Address-Security.md
 docs/Resources/Guides/Testing/Test-Cards.md
@@ -66,3 +64,6 @@ docs/Resources/Guides/Testing/Test-Errors.md
 docs/Resources/Guides/Testing/Test-Fraud.md
 docs/Resources/Guides/Testing/Test-Integration.md
 docs/Resources/Master-Data/Commodity-Codes-Old.md
+docs/Resources/Guides/Payment-Sources/Tokenization/Secure-Vault.md
+docs/Resources/Guides/Payment-Sources/Tokenization/Network-CH-Managed.md
+docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-V1_V2_Comparison.md

@@ -5,7 +5,7 @@ tags: [Sunset, Capture, Settle, Payments, Post Auth, Completion, API Reference]
 # Capture Using the URI
 
 <!-- theme: danger -->
-> Capture using the URI is being sunset in favor of [captures](?path=docs/Resources/API-Documents/Payments/Cancel.md) using a referenced transaction identifier. 
+> Capture using the URI is being sunset in favor of [captures](?path=docs/Resources/API-Documents/Payments/Cancel.md) using a referenced transaction identifier.
 
 Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to be completed based on the original `transactionId`. The capture also known as a post-authorization, and will settle (withdrawl) funds from the customer.
 
@@ -17,7 +17,7 @@ Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Docum
 - **Automatic Capture:** A charge is automatically captured when a [Sale](?path=docs/Resources/FAQs-Glossary/Glossary.md#sale) request is made.
 - **Manual Capture:** A manual capture can be processed for the full amount or a partial amount.
   - **Full:** A full capture request will settle the full amount of the held funds. This amount can be for more than the amount for certain industries (e.g., tips).
-  - **Partial:** A partial capture request is used when the full pre-auth amount is not needed or when submitting a [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) (e.g., the price of a pre-order item decreases before shipping). When the full amount is not captured, then the remaining balance is released to the customer if not a split shipment.
+  - **Partial:** A partial capture request is used when the full pre-authorization amount is not needed or when submitting a [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) (e.g., the price of a pre-order item decreases before shipping). When the full amount is not captured, then the remaining balance is released to the customer if not a split shipment.
 
 ---
 
