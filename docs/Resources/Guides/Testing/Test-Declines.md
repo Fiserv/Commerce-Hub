@@ -7,7 +7,7 @@ tags: [Declines, Testing]
 A decline response can be triggered when testing a Commerce Hub integration in the sandbox environment by entering a specific `total` in the `amount` object. The dollar amounts between 5001.00 - 5999.00 can be used to trigger a decline, where the desired [response code](?path=docs/Resources/Guides/Response-Codes/Response-Codes.md) is the last 3 digits.
 
 <!-- theme: example -->
->To receive a response of 006 Declined, submit 5006.00 as the total. 
+>To receive a response of 006 Declined, submit 5006.00 as the total.
 
 ---
 
@@ -18,7 +18,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request.
+Example of a charge payload request.
 
 ```json
 {
@@ -42,8 +42,8 @@ titles: Request, Response
     "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -54,7 +54,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

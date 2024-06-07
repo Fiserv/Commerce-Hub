@@ -7,7 +7,7 @@ tags: [Card Not Present, Card Present, Authorization]
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to support incremental authorizations and the documents related to the feature will be released soon.
 
-An incremental authorization is typically found in hotel and rental environments, where the consumer has agreed to pay for any service incurred during the duration of the contract, typically a hotel stay or car rental. 
+An incremental authorization is typically found in hotel and rental environments, where the consumer has agreed to pay for any service incurred during the duration of the contract, typically a hotel stay or car rental.
 
 <!-- theme: warning -->
 > Not all MCCs support Incremental Authorization, please contact your account representative for more information.
@@ -62,22 +62,22 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request.
+Example of a charge payload request.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "transactionDetails":{
-      "primaryTransactionId": "84356532738",
-      "transactionIndicatorType": "INCREMENTAL"
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "primaryTransactionId": "84356532738",
+    "transactionIndicatorType": "INCREMENTAL"
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 
@@ -87,7 +87,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

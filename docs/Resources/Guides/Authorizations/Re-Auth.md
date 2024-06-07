@@ -116,15 +116,15 @@ titles: Request, Response
     "authorizationSequence": "AUTHORIZATION_ONLY"
   },
   "referenceTransactionDetails": {
-      "referenceTransactionId": "84356531348"
+    "referenceTransactionId": "84356531348"
   },
   "splitShipment": {
     "totalCount": 5,
     "finalShipment": false
   },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
