@@ -1,5 +1,5 @@
 ---
-tags: [3-D-Secure, Online, Web, Mobile, Initilization, Device Fingerprint]
+tags: [3-D-Secure, Online, Web, Mobile, Initialization, Device Fingerprint]
 ---
 
 # 3-D Secure Device Capture
