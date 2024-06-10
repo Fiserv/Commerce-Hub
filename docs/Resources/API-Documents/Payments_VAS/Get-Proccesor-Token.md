@@ -4,7 +4,7 @@ tags: [Processor Token, Partner Token, Tokenization, API Reference]
 
 # Partner Tokens
 
-The Partner-Tokens request allows a merchant to submit Commerce Hub's TransAmor [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and receive a third party partner-token. This token can be used to communicate directly with the third-party partner when the merchant performs direct settlement or must accept an offline transaction.
+A Partner Tokens request allows a merchant to submit Commerce Hub's TransAmor [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and receive a third party partner-token. This token can be used to communicate directly with the third-party partner when the merchant performs direct settlement or must accept an offline transaction.
 
 ---
 
@@ -19,7 +19,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-|`sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) is always payment token |
+| `sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) is always payment token |
 | `tokenData` | _string_ | 2048 |Token created from the payment source. |
 | `tokenSource` | _string_ | N/A | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 
@@ -38,9 +38,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 type: tab
 -->
 
-The below table identifies the required parameters of `directedRouting` in the `additionalDataCommon` object.
-
-The below table identifies the required parameters in the `processors` array.
+The below table identifies the required parameters in the `processors` array as part of `directedRouting` in the `additionalDataCommon` object.
 
 | Variable | Type | Maximum Length | Description |
 | ------ | ----| -----------| ------------------ |
@@ -170,7 +168,7 @@ Example of a get partner token (200: Success) response.
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/partner-tokens)
 - [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 - [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
