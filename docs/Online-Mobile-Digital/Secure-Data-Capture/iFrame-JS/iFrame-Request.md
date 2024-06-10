@@ -33,7 +33,7 @@ It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/S
 Instantiate the payment form within your JavaScript.
 
 <!-- theme: info -->
-> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md. This process enhances security and serves validation purposes.
+> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card).md. This process enhances security and serves validation purposes.
 
 <!--
 type: tab
