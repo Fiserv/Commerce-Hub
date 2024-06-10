@@ -12,7 +12,6 @@ tags: [Testing, Test Integration, Test Cards, Test Fraud]
 
 To verify [address and security code](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) fraud settings, submit a transaction using the corresponding [test values](?path=docs/Resources/Guides/Testing/Test-Address-Security.md) in the request.
 
-
 ### Payload Example
 
 <!--
@@ -20,9 +19,10 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of an address verification filter request where the transaction is set to decline if the address does not match.
+Example of an address verification filter request where the transaction is set to decline if the address does not match.
 
 ```json
+[
 {
   "amount": {
     "total": 12.04,
@@ -54,18 +54,11 @@ titles: Request, Response
     "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
-}
-```
-
-<!--
-type: tab
--->
-
-
-```json
+},
+"","\r\n\r\n<!--\r\ntype: tab\r\n-->\r\n\r\n","","json",
 {
   "gatewayResponse": {
     "transactionType": "CHARGE",
@@ -105,8 +98,8 @@ type: tab
       "schemeTransactionId": "0225MCC625628",
       "processor": "FISERV",
       "host": "NASHVILLE",
-      "originalResponseCode": '000',
-      "originalResponseMessage: 'APPROVED',
+      "originalResponseCode": "000",
+      "originalResponseMessage": "APPROVED",
       "responseCode": "###",
       "responseMessage": "Address Verification Failed",
       "hostResponseCode": "00",
@@ -130,6 +123,7 @@ type: tab
     }
   }
 }
+]
 ```
 
 <!-- type: tab-end -->
@@ -138,8 +132,7 @@ type: tab
 
 ## Velocity Controls
 
-To verify [velocity controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md), submit a transaction that violates the fraud setting for a velocity control. 
-
+To verify [velocity controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md), submit a transaction that violates the fraud setting for a velocity control.
 
 ### Payload Example
 
@@ -148,7 +141,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a velocity control transaction where the dollar amount exceeds the maximum dollar amount setting.
+Example of a velocity control transaction where the dollar amount exceeds the maximum dollar amount setting.
 
 <!-- theme: example -->
 > If the maximum dollar amount velocity control is set to $10.00, send the test transaction amount of $11.00.
@@ -170,8 +163,8 @@ titles: Request, Response
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -180,8 +173,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an address verification response.
-
+Example of an address verification response.
 
 ```json
 {
@@ -228,10 +220,9 @@ type: tab
 
 ---
 
-
 ## Transaction Restrictions
 
-To verify [transaction restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md), submit a transaction that violates the fraud setting for the transaction restriction. 
+To verify [transaction restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md), submit a transaction that violates the fraud setting for the transaction restriction.
 
 ### Payload Example
 
@@ -240,7 +231,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a transaction restriction where a duplicate transaction is submitted.
+Example of a transaction restriction where a duplicate transaction is submitted.
 
 <!-- theme: example -->
 > If the duplicate transaction threshold is set to 1, submit a second transaction of the same type with the same card number and amount.
@@ -262,8 +253,8 @@ titles: Request, Response
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -272,7 +263,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an address verification response.
+Example of an address verification response.
 
 
 ```json
@@ -325,7 +316,6 @@ type: tab
 
 To verify [positive and negative filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md), submit a transaction that meets the condition of the positive or negative filter.
 
-
 ### Payload Example
 
 <!--
@@ -333,7 +323,7 @@ type: tab
 titlea: Request, Response
 -->
 
-##### Example of a negative filter where the card number has been blocked. 
+Example of a negative filter where the card number has been blocked. 
 
 <!-- theme: example -->
 > To test a blocked card number, submit a transaction using the card number added to the list.
@@ -355,8 +345,8 @@ titlea: Request, Response
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -365,7 +355,7 @@ titlea: Request, Response
 type: tab
 -->
 
-##### Example of an address verification response.
+Example of an address verification response.
 
 
 ```json

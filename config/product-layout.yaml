@@ -200,7 +200,7 @@ featuredFeatures:
     description: "Allows Payment Facilitator to integrate with Commerce Hub."
     featured: false
     relatedDocs:
-     - link: docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md
+     - link: docs/Resources/Guides/Partners/PFAC/Payment-facilitator.md
        title: Partner Integrations
     relatedAPIs:
       - type: post

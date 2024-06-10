@@ -2,25 +2,26 @@
 tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 ---
 
-# Seacure Data Capture - JS Solution
+# Secure Data Capture - JavaScript v2 Solution
 
-Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and card entry form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends payment information directly to Commerce Hub and returns a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub JavaScript _(JS)_ solution provides E-commerce merchants an API client that handles the encryption of customer data within their application while still allowing merchants full control over design and payment form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends the customer's payment information directly from the end-user's browser, thereby allowing merchants to offload payment processing of secure data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 <!-- theme: warning -->
 > In this integration, Commerce Hub supports a specific use case: when a merchant submits a transaction for payment processing using a stored payment method, such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). In this scenario, the merchant only captures encrypted CVV from returning customers. This process enhances security and serves validation purposes, particularly for Card on File transactions.
 
 ### Benefits
 
-Allows a merchant an easy and secure way to embed a payment form into a website while maintaining their look and feel. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to integrate with Commerce Hub through an API client, while maintaining their look and feel. Commerce Hub JS makes it simple to submit the payment information without collecting, processing, or being able to view those details in their untokenized form, lowering the PCI compliance requirements.
 
 #### Transaction Flow
 
 1. The customer navigates to checkout page of the merchant's website.
 2. The merchant's website loads the Commerce Hub SDK.
-3. The Commerce Hub SDK builds and renders a card form that allows the customer to initiate the payment session.
-4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
-5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
-6. Commerce Hub sends the transaction response to the merchant's website.
+3. The merchant's website builds and renders a form that allows the customer to initiate the payment session.
+4. The merchant sends a credentials request to their backend server to start a user session via Commerce Hub. This will return the security credentials as well as the `sessionId` the payment details will be associated with.
+5. The SDK encrypts the customer data and initiates the capture request using the obtained security credentials.
+6. Upon a successful capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server using the `sessionId`.
+7. Commerce Hub sends the transaction response to the merchant's website.
 
 ---
 
@@ -35,8 +36,8 @@ link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request
 -->
 
 <!-- type: card
-title: JS Customization
-description: Customize the language, theme, and font for Commerce Hub's JavaScript SDK solution.
+title: JS Supported Methods and Fields
+description: Supported PCI field data and the submission configuration.
 link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
 -->
 

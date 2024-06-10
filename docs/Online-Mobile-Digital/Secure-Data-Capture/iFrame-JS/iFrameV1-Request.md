@@ -12,7 +12,7 @@ tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [iFrame request](#authentication) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
 
 <!-- theme: info -->
->  When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
+> When integrating with 3-D Secure `authentication3DS` _true_ in required in `transactionDetails`, for more information see the [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) integration article.
 
 ---
 
@@ -22,8 +22,8 @@ The following code snippets are required to create and initialize the SDK config
 
 ### iFrame SDK
 
-- **Cert:** https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
-- **Prod:** https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js
+- **Cert:** <https://cert.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js>
+- **Prod:** <https://prod.api.fiservapps.com/ch/sdk/v1/commercehub-client-sdk.js>
 
 The iFrame JS script tag is required in the website by downloading or including the following code:
 
@@ -38,7 +38,7 @@ The iFrame JS script tag is required in the website by downloading or including 
 Authentication credentials are acquired at boarding and from the [security credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md) in step 1.
 
 <!-- theme: warning -->
-> To mitigate the risk of [`clickjacking`](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking), accepted domains should be passed in the security credentials request. Commerce Hub will store this information and use it to generate the *Content-Security-Policy: frame-ancestors <http_source_list>* and *X-Frame-Options:<http_source> response headers*. 
+> To mitigate the risk of [`clickjacking`](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking), accepted domains should be passed in the security credentials request. Commerce Hub will store this information and use it to generate the _Content-Security-Policy: frame-ancestors <http_source_list>_ and _X-Frame-Options:<http_source> response headers_.
 
 ```javascript
 const authorization = 'ACCESS_TOKEN';
@@ -66,19 +66,18 @@ Configure the `loadPaymentForm` and pass the merchant defined `div id` matching 
 ```html
 <div id="payment-saq-a-form-div"></div>
 ```
- 
+
 ```javascript
 form.loadPaymentForm("payment-saq-a-form-div");
 ```
 
 A successful card capture in the iFrame JS will be handled by `.then()` in the `loadPaymentForm` and is responsible for contacting the merchant's backend/server.
- 
 
 ```javascript
 .then((next) => { });
 ```
 
-Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm`. 
+Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm`.
 
 ```javascript
 .catch((error) => { });
@@ -86,7 +85,7 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 
 ---
 
-### Payment Form Example 
+### Payment Form Example
 
 ```php
 <html>
@@ -119,7 +118,7 @@ Errors in iFrame JS should be handled in the `.catch()` of the  `loadPaymentForm
 
 ## Step 3: Submit a Request
 
-Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [authorization](#step-1-authentication) request. 
+Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [authorization](#step-1-authentication) request.
 
 <!-- theme: info -->
 > If a successful response is not received, best practice is to still submit the transaction. If an error occurs, the iFrame will need to be re-displayed so the customer can re-submit their payment information.
@@ -138,7 +137,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request.
+Example of a charge payload request.
 
 ```json
 {
@@ -160,7 +159,7 @@ titles: Request, Response
   },
   "merchantDetails": {
     "merchantId": "100008000003683",
-    "terminalId": "123456"
+    "terminalId": "10000001"
   }
 }
 ```
@@ -169,7 +168,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -239,8 +238,8 @@ type: tab
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
-- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Customization.md)
+- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Events.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

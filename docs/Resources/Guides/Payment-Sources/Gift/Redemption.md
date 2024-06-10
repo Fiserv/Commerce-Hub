@@ -40,8 +40,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | _string_ | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!--
 type: tab
@@ -75,7 +75,7 @@ The below table identifies the parameters in the `balances` array in the `paymen
 | Variable | Data Type | Maximum Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | _number_ | 16,3 | Account beginning balance |
-| `endingBalance` | _number_ | 16,3 | Account ending balance
+| `endingBalance` | _number_ | 16,3 | Account ending balance |
 | `currency` | _string_ | 17 | ISO 3 Currency Format |
 
 <!-- type: tab-end -->
@@ -116,8 +116,8 @@ Example of a charges payload request.
     "terminalTimestamp": "2016-04-16T16:06:05Z"
   },
   "merchantDetails": {
-    "terminalId": "123567",
-    "merchantId": "123456789012345"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "additionalDataCommon": {
     "additionalData": {
@@ -198,5 +198,6 @@ Example of a charges (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Gift Solutions](?path=docs/Resources/Guides/Payment-Sources/Gift/Gift-Solutions.md)
-  
+- [Partial Authorization](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
+
 ---

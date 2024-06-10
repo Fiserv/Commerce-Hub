@@ -69,8 +69,6 @@ The below table identifies the required parameters in the `source` object.
 | `applePayMerchantId` | *string* | 256 | &#10004; | Unique AppID registered in the Apple portal |
 | `merchantPrivateKey` | *string* | 256 | &#10004; | Merchant private key - Hex encoded |
 
-
-
 <!--
 type: tab
 -->
@@ -98,7 +96,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request.
+Example of a charge payload request.
 
 ```json
 {
@@ -118,9 +116,9 @@ titles: Request, Response
     "captureFlag": true,
     "createToken": false
   },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
     }
 }
 
@@ -130,7 +128,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 

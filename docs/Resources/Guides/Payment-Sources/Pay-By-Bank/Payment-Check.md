@@ -39,7 +39,7 @@ Example of a charges payload request using *PaymentCheck*.
     "captureFlag": true
   },
   "merchantDetails": {
-    "merchantId": "100184000000076",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   },
   "transactionInteraction": {
@@ -109,8 +109,8 @@ Example of a charge (201: Created) response.
     }
   },
   "merchantDetails": {
-    "terminalId": "10000001",
-    "merchantId": "100184000000076"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "networkDetails": {
     "systemTrace": "1400310000032032697430",

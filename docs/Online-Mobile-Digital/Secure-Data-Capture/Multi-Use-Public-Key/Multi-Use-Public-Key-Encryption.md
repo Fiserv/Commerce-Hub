@@ -6,6 +6,9 @@ tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
 
 The merchant uses a multi-use public key _(MUPK)_ for the asymmeteric PaymentCard encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.
 
+<!-- theme: info -->
+> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md. This process enhances security and serves validation purposes.
+
 ---
 
 ## Step 1: Generate Unencrypted encryptionBlock
@@ -28,12 +31,11 @@ const encryptionBlock =  Object.values(cardData).join(""));
 <!-- theme: example -->
 > encryptionBlock = 4111111111111111Joe Bloggs123122034
 
---- 
+---
 
 ## Step 2:  Generate encryptionBlockFields
 
-The `encryptionBlockFields` when generated contains a string of card data fields and its corresponding byte lengths. The string must match the order in which the `encryptionBlock` was generated in step 1. 
-
+The `encryptionBlockFields` when generated contains a string of card data fields and its corresponding byte lengths. The string must match the order in which the `encryptionBlock` was generated in step 1.
 
 ```javascript
 const cardData = {
@@ -57,7 +59,6 @@ const encryptionBlockFields = Object.keys(cardData).map(key => `card.${key}:${en
 
 A [generate key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md#generate-key) request is required  to receive a base64 encoded encryption key. This key is used to encrypt the `encryptionBlock` that was created in step 1.
 
-
 ```javascript
 
 const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {  const keyBuf = toArrayBuffer(window.atob(base64PubKey));
@@ -70,7 +71,7 @@ const toBase64Encode = (arrayBuffer) => window.btoa(String.fromCharCode(...new U
 
 ```
 
---- 
+---
 
 ## Step 4: Form encryptionData
 
@@ -80,11 +81,11 @@ The below table identifies the parameters in the `encryptionData` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | ---- | ------- | -----------|
-| `encryptionType` | *string* | 256 | Encryption type is *RSA* when using MUPK. |
-| `encryptionTarget` | *string* | 256 | Target is *MANUAL* when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
-| `encryptionBlock` | *string* | 2000 | This field contains the card details in encrypted form. |
-| `keyId` | *string* | 40 | Provided encryption key required for decryption of track data that is encrypted. |
-| `encryptionBlockFields` | *string* | 256 | ncryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
+| `encryptionType` | _string_ | 256 | Encryption type is _RSA_ when using MUPK. |
+| `encryptionTarget` | _string_ | 256 | Target is _MANUAL_ when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
+| `encryptionBlock` | _string_ | 2000 | This field contains the card details in encrypted form. |
+| `keyId` | _string_ | 40 | Provided encryption key required for decryption of track data that is encrypted. |
+| `encryptionBlockFields` | _string_ | 256 | ncryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
 
 ```javascript
 
@@ -98,7 +99,7 @@ encryptionData: {
 
 ```
 
---- 
+---
 
 ## Step 5: Build Payment Source Object
 
