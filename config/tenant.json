@@ -31,6 +31,7 @@
       ]
     }
   ],
+  "resourcesFilePath": "/docs/Resources/Resources.md",
   "getStartedFilePath": "/docs/Getting-Started/Getting-Started-General.md",
   "apiVersions": [
     {
@@ -73,25 +74,29 @@
       },
       {
         "name": "editParameterAPIExplorer",
-        "value": true
-      }      
-     ]
+        "value": false
+      },
+      {
+        "name": "downloadPostman",
+        "value": false
+      }
+    ]
   },
   "supportConfig": [{ 
     "bug": {
       "label": "bug,CommerceHub",
       "template": "bug.md",
-      "assignees": "MAFiserv"
+      "assignees": "WWFiserv"
     },  
     "feedback": {
       "label": "feedback,CommerceHub",
       "template": "feedback.md",
-      "assignees": "MAFiserv"
+      "assignees": "WWFiserv"
     },
     "enhancement": {
       "label": "enhancement,CommerceHub",
       "template": "feature.md",
-      "assignees": "MAFiserv"
+      "assignees": "WWFiserv"
     }
   }]
 }

@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "696f81d9-6c72-42c7-8762-b475c4019aef",
+		"name": "Generate MUPK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14165674"
+	},
+	"item": [
+		{
+			"name": "Multi-Use Public Key - Generate Key",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var key = '7N6B7zgATYj6gVDc3eKreVFpWiU6XqQ1'; // Retrived from your Developer Studio Credentials Tab\r",
+							"var secret = '2SBdGv8MCzIWY8JFfhMQAvA93tAsv4uZoHTIKItRke9'; // Retrived from your Developer Studio Credentials Tab\r",
+							"\r",
+							"var ClientRequestId = Math.floor((Math.random() * 10000000) + 1);\r",
+							"\r",
+							"var time = new Date().getTime();\r",
+							"\r",
+							"var requestBody = request.data;\r",
+							"var rawSignature = key + ClientRequestId + time + requestBody;\r",
+							"\r",
+							"var computedHash = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secret.toString());\r",
+							"computedHash.update(rawSignature);\r",
+							"computedHash = computedHash.finalize();\r",
+							"var computedHmac = CryptoJS.enc.Base64.stringify(computedHash);\r",
+							"\r",
+							"postman.setEnvironmentVariable('key', key);\r",
+							"postman.setEnvironmentVariable('time', time);\r",
+							"postman.setEnvironmentVariable('signature', computedHmac);\r",
+							"postman.setEnvironmentVariable('ClientRequestId', ClientRequestId)\r",
+							"\r",
+							"function b64encode(input) {\r",
+							"  var swaps = [\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\", \"I\", \"J\", \"K\", \"L\", \"M\",\r",
+							"    \"N\", \"O\", \"P\", \"Q\", \"R\", \"S\", \"T\", \"U\", \"V\", \"W\", \"X\", \"Y\", \"Z\",\r",
+							"    \"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\",\r",
+							"    \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\",\r",
+							"    \"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"+\", \"/\"],\r",
+							"\r",
+							"    tb, ib = \"\",\r",
+							"    output = \"\",\r",
+							"    i, L;\r",
+							"\r",
+							"  for (i = 0, L = input.length; i < L; i++) {\r",
+							"    tb = input.charCodeAt(i).toString(2);\r",
+							"    while (tb.length < 8) {\r",
+							"      tb = \"0\" + tb;\r",
+							"    }\r",
+							"    ib = ib + tb;\r",
+							"    while (ib.length >= 6) {\r",
+							"      output = output + swaps[parseInt(ib.substring(0, 6), 2)];\r",
+							"      ib = ib.substring(6);\r",
+							"    }\r",
+							"  }\r",
+							"  if (ib.length == 4) {\r",
+							"    tb = ib + \"00\";\r",
+							"    output += swaps[parseInt(tb, 2)] + \"=\";\r",
+							"  }\r",
+							"  if (ib.length == 2) {\r",
+							"    tb = ib + \"0000\";\r",
+							"    output += swaps[parseInt(tb, 2)] + \"==\";\r",
+							"  }\r",
+							"  return output;\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Api-Key",
+						"value": "{{key}}",
+						"type": "text"
+					},
+					{
+						"key": "Timestamp",
+						"value": "{{time}}",
+						"type": "text"
+					},
+					{
+						"key": "Client-Request-Id",
+						"value": "{{ClientRequestId}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{signature}}",
+						"type": "text"
+					},
+					{
+						"key": "Auth-Token-Type",
+						"value": "HMAC",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"merchantDetails\": {\n        \"merchantId\": \"100008000003683\",\n        \"terminalId\": \"10000001\"\n  }\n}\n\n\n"
+				},
+				"url": {
+					"raw": "https://cert.api.fiservapps.com/ch/security/v1/keys/generate",
+					"protocol": "https",
+					"host": [
+						"cert",
+						"api",
+						"fiservapps",
+						"com"
+					],
+					"path": [
+						"ch",
+						"security",
+						"v1",
+						"keys",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
