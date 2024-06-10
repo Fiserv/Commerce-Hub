@@ -128,9 +128,6 @@ The following table identifies the supported CSS fields.
 <!-- theme: info -->
 > No fields are required but at least one field must be configured.
 
-<!-- theme: example -->
-> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md. This process enhances security and serves validation purposes.
-
 | Field | Description |
 | ----- | ----------- |
 | `cardNumber` | The card number |
