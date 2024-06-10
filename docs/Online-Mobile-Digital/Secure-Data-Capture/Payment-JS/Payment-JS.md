@@ -6,6 +6,9 @@ tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
 
 Commerce Hub JS allows E-commerce merchants to embed a JavaScript control within their application while still allowing merchants full control over design and card entry form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends payment information directly to Commerce Hub and returns a payment `sessionId`. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
+<!-- theme: warning -->
+> In this integration, Commerce Hub supports a specific use case: when a merchant submits a transaction for payment processing using a stored payment method, such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). In this scenario, the merchant only captures encrypted CVV from returning customers. This process enhances security and serves validation purposes, particularly for Card on File transactions.
+
 ### Benefits
 
 Allows a merchant an easy and secure way to embed a payment form into a website while maintaining their look and feel. Commerce Hub JS makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.

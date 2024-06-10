@@ -9,6 +9,9 @@ Commerce Hub allows E-commerce merchants to manage the design and card entry for
 <!-- theme: warning -->
 > If the merchant account is enabled for a tokenization service, paymentTokens will be returned in the response. To override this behavior, createToken: false is required in transactionDetails. Contact your account representative for more information about enabling tokenization.
 
+<!-- theme: warning -->
+> In this integration, Commerce Hub supports a specific use case: when a merchant submits a transaction for payment processing using a stored payment method (such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). In this scenario, the merchant only captures encrypted CVV from returning customers. This process enhances security and serves validation purposes, particularly for Card on File transactions.
+
 ---
 
 ## Step 1: Encrypt Card Data
