@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key, Paym
 
 # Multi-Use Public Key Request
 
-After the merchants captures the payment source details, the multi-use public key *(MUPK)* issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization.  
+After the merchant captures the payment source details, the multi-use public key _(MUPK)_ issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization.  
 
 ---
 
@@ -19,8 +19,8 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | --------| ---------- |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentCard_ for card transactions |
+| `encryptionData` | _object_ | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
 
 <!--
 type: tab
@@ -30,11 +30,11 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | *string* | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. |
-| `encryptionTarget` | *string* | 256 |  &#10004; |Target should be MANUAL |
-| `encryptionBlock` | *string* | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `encryptionBlockFields` | *string* | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, example: *card.expirationMonth:2* |
-| `keyId` | *string* | 64 | &#10004; | Encryption Key ID |
+| `encryptionType` | _string_ | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. |
+| `encryptionTarget` | _string_ | 256 |  &#10004; |Target should be MANUAL |
+| `encryptionBlock` | _string_ | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
+| `encryptionBlockFields` | _string_ | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, example: _card.expirationMonth:2_ |
+| `keyId` | _string_ | 64 | &#10004; | Encryption Key ID |
 
 <!--
 type: tab
@@ -87,9 +87,9 @@ Example of a charge payload request using PaymentCard for Manual Entry.
       }
    }
   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
    }
 }
 ```

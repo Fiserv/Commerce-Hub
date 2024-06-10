@@ -6,7 +6,7 @@ tags: [Testing, Test Integration, Test Cards, Test Errors]
 
 An [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification response can be triggered when testing a Commerce Hub integration in the sandbox environment by using the corresponding values in the request.
 
---- 
+---
 
 ## Address Verification
 
@@ -14,7 +14,7 @@ An [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [sec
 
 To receive a specific `streetMatch` response, pass the specific `street` value from the table below.
 
-| Street | Value | Descrption | 
+| Street | Value | Description | 
 | ----- | ---- | ------------|
 | MATCHED | *MATCHED* | Data matches with issuer system with some mismatch |
 | NOT_MATCHED | *NOT_MATCHED* | Data does not match with issuer system |
@@ -28,7 +28,7 @@ To receive a specific `streetMatch` response, pass the specific `street` value f
 
 To receive a specific `postalCodeMatch` response, pass the specific `postalCode` value  from the table below.
 
-| Postal Code  | Value | Descrption | 
+| Postal Code  | Value | Description | 
 | ----- | ---- | ------------|
 | 11111 | *MATCHED* | Data matches with issuer system with some mismatch |
 | 22222 | *NOT_MATCHED* | Data does not match with issuer system |
@@ -68,18 +68,17 @@ Is our certification testing scripts using sandbox test scenarios or network E2E
 Will we support 3-D secure?
 Can we simulate payments in another country?
 Zip Code
- --> 
+ -->
 
 | 3-digit | 4-digit | Response | Description |
 | ---- | ----- | ----------|-----|
-| 111 | 1111 | *MATCHED* | Data matches with issuer system | 
+| 111 | 1111 | *MATCHED* | Data matches with issuer system |
 | 999 | 9999 | *NOT_MATCHED* | Data does not match with issuer system |
 | 888 | 8888 | *NOT_PROCESSED* | Security code verification not done |
 | 222 | 2222 | *NOT_PRESENT* | Security code not present in the input |
-| 333 | 3333 | *NOT_CERTIFIED*| Issuer not certified to verify sercurity code |
+| 333 | 3333 | *NOT_CERTIFIED*| Issuer not certified to verify security code |
 | 444 | 4444 | *NOT_CHECKED* | Security code not checked |
 |  |  | *NONE* | No security code provided |
-
 
 ---
 
@@ -90,7 +89,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of an address verification request.
+Example of an address verification request.
 
 ```json
 {
@@ -121,8 +120,8 @@ titles: Request, Response
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 
@@ -131,7 +130,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an address verification response.
+Example of an address verification response.
 
 ```json
 {

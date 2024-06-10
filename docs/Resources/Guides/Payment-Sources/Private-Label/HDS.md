@@ -77,8 +77,8 @@ Example of a charge payload request using an HDS PLCC
     }
   },
   "merchantDetails": {
-    "merchantId": "100012000100291",
-    "terminalId": "10000087"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -156,8 +156,8 @@ Example of a charge (201: Created) response
     }
   },
   "merchantDetails": {
-    "terminalId": "10000087",
-    "merchantId": "100012000100291"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "additionalDataCommon": {
     "customFields": [

@@ -6,9 +6,6 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md) service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` _PaymentSession_.
 
-<!-- theme:info -->
-> Secure Data Capture using card capture provides a merchant with an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their non-tokenized form, lowering the PCI compliance requirements.
-
 - **credentials:** responsible for creating a payment session.
 - **card-capture:** responsible for capturing encrypted card details.
 - **charges:** responsible for decrypting captured card details and then charging based on a payment session.
@@ -26,6 +23,9 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 The card data is encrypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encryptionBlockFields` are used in the card capture request.
 
+<!-- theme: info -->
+> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves validation purposes.
+
 ---
 
 ## Step 3: Build Message Digest
@@ -37,6 +37,9 @@ To ensure data integrity, prevent replay attacks, and eliminate stale requests, 
 ## Step 3: Submit Card Capture Request
 
 The encrypted data is securely submitted to Commerce Hub's in a [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md) request, where it is persisted and linked to the `sessionId` generated in step 1.
+
+<!-- theme: warning -->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behavior, `createToken`: _false_ is required in `transactionDetails`.
 
 ---
 
@@ -75,7 +78,7 @@ Example of a charges payload request.
   },
   "merchantDetails": {
     "merchantId": "100008000003683",
-    "terminalId": "123456"
+    "terminalId": "10000001"
   }
 }
 ```

@@ -4,20 +4,20 @@ tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source]
 
 # PaymentTrack
 
-
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment terminal using magnetic stripe. This can be used when the payment terminal fails to obtain the card details from the card's chip.
 
 A device captures the customer's payment source unencrypted or encryptes the data and sends it to Commerce Hub.
 
 <!-- theme: warning -->
-> It is not recommended to send unencrypted Track 1 and Track 2 data for the payment transaction.
-
+> It is not recommended to send unencrypted Track 1 and Track 2 data for the
+payment transaction.
+<!-- theme: warning -->
+> For a USA credit card trn , PIN is not needed.
 ---
 
 ## PINless Transactions
 
 Accept PINless and signature based track payments.
-
 
 ### Request Variables
 
@@ -37,7 +37,6 @@ The below table identifies the parameters in the `source` object.
 | `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
 | `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-
 
 <!--
 type: tab
@@ -85,14 +84,14 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentTrack.
+Example of a charge payload request using PaymentTrack.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
   "source": {
     "sourceType": "PaymentTrack",
     "encryptionData": {
@@ -103,10 +102,10 @@ titles: Request, Response
       "deviceType": "INGENICO"
     }
   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
   "transactionInteraction": {
     "origin": "POS",
     "posEntryMode": "MAG_STRIPE",
@@ -119,10 +118,10 @@ titles: Request, Response
       }
     }
   },
-    "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 
@@ -132,25 +131,25 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
-   "gatewayResponse":{
-      "transactionType": "CHARGE",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "POS",
-      "transactionProcessingDetails":{
-         "transactionTimestamp": "2021-06-20T23:42:48Z",
-         "orderId": "RKOrdID-525133851837",
-         "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-         "clientRequestId": "4345791",
-         "transactionId": "84356531338"
-      }
-   },
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "POS",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
   "source": {
     "sourceType": "PaymentTrack",
     "card": {
@@ -161,39 +160,39 @@ type: tab
       "scheme": "Visa"
     }
   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": "12.04",
-         "currency": "USD"
-      },
-      "merchantName": "Merchant Name",
-      "merchantAddress": "123 Peach Ave",
-      "merchantCity": "Atlanta",
-      "merchantStateOrProvince": "GA",
-      "merchantPostalCode": "12345",
-      "merchantCountry": "US",
-      "merchantURL": "https://www.somedomain.com",
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK5882",
-         "schemeTransactionId": "0225MCC625628",
-         "processor": "FISERV",
-	 "host": "NASHVILLE",
-         "responseCode": "000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2021-06-20T23:42:48Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2021-06-20T23:42:48Z"
-         }
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "12.04",
+      "currency": "USD"
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
       }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   },
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
   "transactionInteraction": {
     "posEntryMode": "MAG_STRIPE",
     "posConditionCode": "CARD_PRESENT",
@@ -235,7 +234,7 @@ The below table identifies the parameters in the `source` object.
 | `track1Data` | *string* | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
 | `track2Data` | *string* | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-| `pinBlock` | *object* | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
+| `pinBlock` | *object* | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
 
 <!--
 type: tab
@@ -263,11 +262,9 @@ The below table identifies the required parameters in the `pinBlock` object.
 | `keySerialNumber` | *string* | 256 |  &#10004; | This field is used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. |
 | `pinEncryptionWorkingKey` | *string* | 2000 |  &#10004; | Terminal PIN Encryption working key (TKPE). A PIN Encryption Key is a used to protect PINs as they are transmitted. |
 
-
 <!--
 type: tab
 -->
-
 
 JSON string format for PaymentTrack:
 
@@ -302,7 +299,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentTrack.
+Example of a charge payload request using PaymentTrack.
 
 ```json{
    "amount":{
@@ -340,9 +337,9 @@ titles: Request, Response
          }
       }
    },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
    }
 }
 ```
@@ -353,87 +350,87 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
-	"gatewayResponse": {
-		"transactionType": "CHARGE",
-		"transactionState": "AUTHORIZED",
-		"transactionOrigin": "POS",
-		"transactionProcessingDetails": {
-			"transactionTimestamp": "2021-06-20T23:42:48Z",
-			"orderId": "RKOrdID-525133851837",
-			"apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-			"clientRequestId": "4345791",
-			"transactionId": "84356531338"
-		}
-	},
-	"source": {
-		"sourceType": "PaymentTrack",
-		"card": {
-			"expirationMonth": "12",
-			"expirationYear": "2025",
-			"bin": "401777",
-			"last4": "5556",
-			"scheme": "Visa"
-		}
-	},
-	"paymentReceipt": {
-		"approvedAmount": {
-			"total": "12.04",
-			"currency": "USD"
-		},
-		"merchantName": "Merchant Name",
-		"merchantAddress": "123 Peach Ave",
-		"merchantCity": "Atlanta",
-		"merchantStateOrProvince": "GA",
-		"merchantPostalCode": "12345",
-		"merchantCountry": "US",
-		"merchantURL": "https://www.somedomain.com",
-		"processorResponseDetails": {
-			"approvalStatus": "APPROVED",
-			"approvalCode": "OK5882",
-			"schemeTransactionId": "0225MCC625628",
-			"processor": "fiserv",
-			"responseCode": "000",
-			"responseMessage": "APPROVAL",
-			"hostResponseCode": "00",
-			"hostResponseMessage": "APPROVAL",
-			"localTimestamp": "2021-06-20T23:42:48Z",
-			"bankAssociationDetails": {
-				"associationResponseCode": "000",
-				"transactionTimestamp": "2021-06-20T23:42:48Z"
-			}
-		}
-	},
-	"transactionDetails": {
-		"captureFlag": true,
-		"merchantInvoiceNumber": "123456789012"
-	},
-	"transactionInteraction": {
-		"posEntryMode": "MAG_STRIPE",
-		"posConditionCode": "CARD_PRESENT",
-		"terminalTimestamp": "2022-03-10T01:37:13Z",
-		"additionalPosInformation": {
-			"stan": "001709",
-			"dataEntrySource": "MOBILE_TERMINAL",
-			"posFeatures": {
-				"pinAuthenticationCapability": "CAN_ACCEPT_PIN",
-				"terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
-			}
-		}
-	},
-	"additionalDataCommon": {},
-	"networkDetails": {
-		"network": {
-			"network": "Visa"
-		},
-		"debitNetworkId": "060007"
-	}
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "POS",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentTrack",
+    "card": {
+      "expirationMonth": "12",
+      "expirationYear": "2025",
+      "bin": "401777",
+      "last4": "5556",
+      "scheme": "Visa"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": "12.04",
+      "currency": "USD"
+    },
+    "merchantName": "Merchant Name",
+    "merchantAddress": "123 Peach Ave",
+    "merchantCity": "Atlanta",
+    "merchantStateOrProvince": "GA",
+    "merchantPostalCode": "12345",
+    "merchantCountry": "US",
+    "merchantURL": "https://www.somedomain.com",
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "fiserv",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
+      }
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
+  "transactionInteraction": {
+    "posEntryMode": "MAG_STRIPE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2022-03-10T01:37:13Z",
+    "additionalPosInformation": {
+      "stan": "001709",
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
+      }
+    }
+  },
+  "additionalDataCommon": {},
+  "networkDetails": {
+    "network": {
+      "network": "Visa"
+    },
+    "debitNetworkId": "060007"
+  }
 }
 ```
 

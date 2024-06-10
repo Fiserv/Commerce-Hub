@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallet
 # Decrypted Wallets
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 ### Required Fields
 
@@ -20,34 +20,33 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallet
 || `cavv` Cardholder Authentication Verification Value provided by the Wallet Provider|
 ||`xid` The unique identifier for the transaction provided by the Wallet Provider  |
 
-
 ### Sample JSON Request Payload
 
 ```json
 {
-	"amount": {
-		"total": "12.04",
-		"currency": "USD"
-	},
-	"source": {
-		"sourceType": "DecryptedWallet",
-		"card": {
-			"cardData": "4005550000000019",
-			"expirationMonth": "02",
-			"expirationYear": "2035"
-		},
-		"cavv": "01ade6ae340005c681c3a1890418b53000020000",
-		"xid": "13456789",
-		"walletType": "APPLE_PAY"
-	},
-	"transactionDetails": {
-		"captureFlag": true,
-		"createToken": false
-	},
-	"merchantDetails": {
-		"merchantId": "123456789789567",
-		"terminalId": "123456"
-	}
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "DecryptedWallet",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    },
+    "cavv": "01ade6ae340005c681c3a1890418b53000020000",
+    "xid": "13456789",
+    "walletType": "APPLE_PAY"
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "createToken": false
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 
 ```

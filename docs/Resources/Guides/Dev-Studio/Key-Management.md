@@ -6,9 +6,6 @@ tags: [Account Management, Enterprise Portal, Key Management, API Key, API Secre
 
 A developer can manage their API application Keys and API Secrets from the Developer Studio Dashboard. API Key Management allows you to [create and delete an API Key](#create-an-api-key).
 
-<!-- theme: warning -->
-> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Developer Studio in the future.
-
 ---
 
 ## Create an API Key
@@ -29,7 +26,7 @@ Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Man
 
 #### Step 4: Create an API Name
 
-Create a API Key Name to identifiy the project
+Create a API Key Name to identify the project
 
 #### Step 5: Select Features
 
@@ -43,9 +40,6 @@ Select the features to be integrated from the following;
 #### Step 6: Create Keys
 
 Click Create to obtain the API Key/Secret
-
-<!-- theme: warning -->
-> Once your API Key has been successfully created, copy or save a pdf of your API Key/Secret, they will not be accessible from Developer Studio in the future.
 
 ---
 

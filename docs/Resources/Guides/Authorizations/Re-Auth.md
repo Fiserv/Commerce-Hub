@@ -3,28 +3,28 @@ tags: [Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
 ---
 
 # Reauthorize
- 
+
 A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
 A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
 
 - **Merchant Managed:** The merchant submits the transaction with the required fields and a reauthorization is processed by Commerce Hub.
-- **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthrorizes if required.
+- **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthorizes if required.
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon. 
+> We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon.
 
 ### Reauthorization Scenarios
 
 - Split or delayed shipments at eCommerce retailers.
 - Extended stay hotels, car rentals, and cruise lines.
 - Validity period of original authorization has expired.
-- Original auth is missing qualified data.
-- Different transaction amount in either authorization or settlement. 
+- Original authorization is missing qualified data.
+- Different transaction amount in either authorization or settlement.
 
-<!-- theme: info --> 
+<!-- theme: info -->
 > See an account representative for more information on issuer hold times.
- 
+
 ---
 
 ## Request Variables
@@ -60,7 +60,7 @@ type: tab
 The below table identifies the additional parameters in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Data Type | Maximum Length |Description |
 |---------|----------|----------------|---------|
@@ -72,7 +72,7 @@ type: tab
 -->
 
 JSON string format:
- 
+
 ```json
 {
    "transactionDetails":{
@@ -102,7 +102,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a reauthorization payload request.
+Example of a reauthorization payload request.
 
 ```json
 {
@@ -116,24 +116,24 @@ titles: Request, Response
     "authorizationSequence": "AUTHORIZATION_ONLY"
   },
   "referenceTransactionDetails": {
-      "referenceTransactionId": "84356531348"
+    "referenceTransactionId": "84356531348"
   },
   "splitShipment": {
     "totalCount": 5,
     "finalShipment": false
   },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
 
 <!--
 type: tab
---> 
+-->
 
-##### Example of a reauthorization (201: Created) response.
+Example of a reauthorization (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

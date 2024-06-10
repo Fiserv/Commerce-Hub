@@ -103,7 +103,7 @@ Example of a charge payload request using a Citi PLCC.
     "terminalTimestamp": "2023-10-06T04:42:40Z"
   },
   "merchantDetails": {
-    "merchantId": "100012000001424",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   },
     "privateLabel": {

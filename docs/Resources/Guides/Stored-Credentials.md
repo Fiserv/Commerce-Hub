@@ -17,7 +17,7 @@ The following variables are used in the initial `PaymentToken` request and subse
 <!-- theme: warning -->
 > The `bankNetDate` for Mastercard should be passed as part of the [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
-<!--theme:info-->
+<!--theme: info-->
 > It is recommended that the merchant captures [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
 
 <!--
@@ -77,8 +77,8 @@ Example of a initial tokens payload request using `storedCredentials`.
     "sequence": "FIRST"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -187,8 +187,8 @@ Example of a scheduled Mastercard charge payload request using `storedCredential
     "billPaymentType": "RECURRING",
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -312,8 +312,8 @@ Example of an unscheduled charge payload request using `storedCredentials`.
     "billPaymentType": "SINGLE"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```

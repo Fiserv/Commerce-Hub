@@ -5,7 +5,7 @@ tags: [Sunset, Capture, Settle, Payments, Post Auth, Completion, API Reference]
 # Capture Using the URI
 
 <!-- theme: danger -->
-> Capture using the URI is being sunset in favor of [captures](?path=docs/Resources/API-Documents/Payments/Cancel.md) using a referenced transaction identifier. 
+> Capture using the URI is being sunset in favor of [captures](?path=docs/Resources/API-Documents/Payments/Cancel.md) using a referenced transaction identifier.
 
 Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) to be completed based on the original `transactionId`. The capture also known as a post-authorization, and will settle (withdrawl) funds from the customer.
 
@@ -17,7 +17,7 @@ Capture allows a previous pre-authorized [charge](?path=docs/Resources/API-Docum
 - **Automatic Capture:** A charge is automatically captured when a [Sale](?path=docs/Resources/FAQs-Glossary/Glossary.md#sale) request is made.
 - **Manual Capture:** A manual capture can be processed for the full amount or a partial amount.
   - **Full:** A full capture request will settle the full amount of the held funds. This amount can be for more than the amount for certain industries (e.g., tips).
-  - **Partial:** A partial capture request is used when the full pre-auth amount is not needed or when submitting a [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) (e.g., the price of a pre-order item decreases before shipping). When the full amount is not captured, then the remaining balance is released to the customer if not a split shipment.
+  - **Partial:** A partial capture request is used when the full pre-authorization amount is not needed or when submitting a [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) (e.g., the price of a pre-order item decreases before shipping). When the full amount is not captured, then the remaining balance is released to the customer if not a split shipment.
 
 ---
 
@@ -45,8 +45,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|---|
-|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -66,7 +66,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a Capture Payload Request.
+Example of a Capture Payload Request.
 
 ```json
 {
@@ -74,22 +74,21 @@ titles: Request, Response
     "total": "12.04",
     "currency": "USD"
   },
-  "merchantDetails":{
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/capture&branch=preview&version=1.2.0)
 
-
 https://developer.fiserv.com/product/CommerceHub/
 <!--
 type: tab
 -->
 
-##### Example of a capture (201: Success) response.
+Example of a capture (201: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

@@ -229,8 +229,8 @@ Example of a charge payload request with Level II data. Required fields are base
     "merchantTransactionId": "232223325"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456",
+    "merchantId": "100008000003683",
+    "terminalId": "10000001",
     "taxId": "123121234",
     "vatRegistrationNumber": "123456789"
   }
@@ -555,8 +555,8 @@ Example of a charge payload request with Level III data. Required fields are bas
     "merchantTransactionId": "232223325"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456",
+    "merchantId": "100008000003683",
+    "terminalId": "10000001",
     "taxId": "123121234",
     "vatRegistrationNumber": "123456789"
   }

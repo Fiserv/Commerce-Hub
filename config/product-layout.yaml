@@ -74,6 +74,17 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
+  - title: Device Management
+    groupName: In-Person
+    description: By leveraging EMV(Europay Mastercard Visa) CAPK(Certification Authority Public Key) data is a crucial component of the EMV standard for secure payment transactions.
+    featured: true
+    relatedDocs:
+     - link: docs/In-Person/Device_Management/Device-Management.md
+       title: Device Management
+    relatedAPIs:
+      - type: post
+        path: /tms/v1/emv-capk-data
+        title: Charges
   - title: Encrypted Payments
     groupName: In-Person
     description: By leveraging the third-party EMV-enabled payment solutions, your customer payment transactions are encrypted via a multi-layered security approach.
@@ -189,7 +200,7 @@ featuredFeatures:
     description: "Allows Payment Facilitator to integrate with Commerce Hub."
     featured: false
     relatedDocs:
-     - link: docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md
+     - link: docs/Resources/Guides/Partners/PFAC/Payment-facilitator.md
        title: Partner Integrations
     relatedAPIs:
       - type: post

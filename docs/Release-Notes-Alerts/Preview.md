@@ -16,6 +16,22 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+## June 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** May 30th 2024
+- **Production:** June 6th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.06: Reorganization of Payments-VAS groups for API Explorer and documentation | Feature |
+| [Partner tokens](?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md) response updated to make `cardDetails` an array | Update |
+| Secure Data Capture [v2 JavaScript solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) | Feature |
+| Support for merchant managed 3rd-party [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token.md) | Feature |
+
+---
+
 ## May 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -26,8 +42,10 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support [Dynamic Currency Conversion *(DCC)*](?path=docs/Resources/Guides/Global-Currency/Currency-Conversion.md) rate requests for BIN lookup and currency lookup | Feature |
-| Support [EMV Certification Authority Public Key *(CAPK)*](?path=?path=docs/In-Person/Device_Management/CAPK.md) download and status verification | Feature |
+| Support [EMV Certification Authority Public Key *(CAPK)*](?path=docs/Resources/API-Documents/Device-Management/CAPK.md) download and status verification | Feature |
 | [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support unmatched and open refunds, inquiry and account link verification | Update |
+| Support [ACH PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) as a payment source | Feature |
+| Enhanced support [ECv2 for GooglePay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md) and support for Fiserv Google Payment Token  | Update |
 
 ---
 
@@ -90,7 +108,6 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Support [Level II/III](?path=docs/Resources/Guides/Level23/Level23.md) enhanced data | Feature |
 | Support [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md) Private Label Credit Cards | Feature |
 | Version 1.6: Refactored [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md) models to support `paymentAmountType` as part of the for Mastercard recurring bill payment mandate | Update |
-| Secure Data Capture [v2 iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) | Feature |
 
 ---
 

@@ -130,7 +130,7 @@ Example of a gift card cash-out payload request.
     "terminalTimestamp": "2023-06-16T10:11:24.186Z"
   },
   "merchantDetails": {
-    "merchantId": "10000900POD2205",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   },
   "additionalDataCommon": {

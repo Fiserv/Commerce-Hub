@@ -17,7 +17,6 @@ A device encrypts the customer's payment source and sends the encryption data to
 
 Accept PINless and signature based EMV payment cards.
 
-
 ### Request Variables
 
 <!-- theme: info -->
@@ -83,7 +82,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentEMV.
+Example of a charge payload request using PaymentEMV.
 
 ```json
 {
@@ -120,8 +119,8 @@ titles: Request, Response
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -132,7 +131,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -280,11 +279,9 @@ The below table identifies the required parameters in the `pinBlock` object.
 | `keySerialNumber` | *string* | 256 |  &#10004; | This field is used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. |
 | `pinEncryptionWorkingKey` | *string* | 2000 |  &#10004; | Terminal PIN Encryption working key (TKPE). A PIN Encryption Key is a used to protect PINs as they are transmitted. |
 
-
 <!--
 type: tab
 -->
-
 
 JSON string format for PaymentEMV:
 
@@ -320,51 +317,51 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentEMV.
+Example of a charge payload request using PaymentEMV.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentEMV",
-      "emvData": "0249F3704833A12329F1002AB34",
-      "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "4614507291879694=078443325742854",
-         "deviceType": "INGENICO",
-         "keyId": "FFFF109700000E4000340114"
-      },
-      "pinBlock":{
-         "encryptedPin": "53511F325B7C89E3",
-         "keySerialNumber": "FFFF3D3D3D00232002C9",
-         "pinEncryptionWorkingKey": "7586325254178549....."
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentEMV",
+    "emvData": "0249F3704833A12329F1002AB34",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "4614507291879694=078443325742854",
+      "deviceType": "INGENICO",
+      "keyId": "FFFF109700000E4000340114"
+    },
+    "pinBlock": {
+      "encryptedPin": "53511F325B7C89E3",
+      "keySerialNumber": "FFFF3D3D3D00232002C9",
+      "pinEncryptionWorkingKey": "7586325254178549....."
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "ICR_RELIABLE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2022-03-10T01:37:13Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
       }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   },
-   "transactionInteraction":{
-      "origin": "POS",
-      "posEntryMode": "ICR_RELIABLE",
-      "posConditionCode": "CARD_PRESENT",
-      "terminalTimestamp": "2022-03-10T01:37:13Z",
-      "additionalPosInformation":{
-         "dataEntrySource": "MOBILE_TERMINAL",
-         "posFeatures":{
-            "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
-            "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
-         }
-      }
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-   }
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 
@@ -468,6 +465,7 @@ type: tab
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [CAPK Data](?path=docs/Resources/API-Documents/Device_Management/CAPK.md)
 - [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md)
 - [EMV Tags](?path=docs/In-Person/Encrypted-Payments/EMV-Tags.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)

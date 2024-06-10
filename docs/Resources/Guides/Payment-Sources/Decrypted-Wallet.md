@@ -72,7 +72,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request.
+Example of a charge payload request.
 
 ```json
 {
@@ -92,8 +92,8 @@ titles: Request, Response
     "walletType": "APPLE_PAY"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -102,7 +102,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
