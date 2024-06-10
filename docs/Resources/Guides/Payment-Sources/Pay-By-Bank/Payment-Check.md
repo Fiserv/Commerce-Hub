@@ -1,5 +1,5 @@
 ---
-tags: [Payment Check, Payment Sources]
+tags: [Payment Check, ACH, Payment Sources]
 ---
 
 # PaymentCheck
