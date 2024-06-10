@@ -10,11 +10,10 @@ Regional _(International)_ Debit Solutions from Commerce Hub provide anywhere, a
 
 # Message Authentication
 
-Canadaian debit allows message authentication to provide another layer of security using encryption so that the message is received by the intended recipient and has not been tampered with on the network. Message authentication is performed by using a MAC value computed by both the sender and receiver. MAC value is derived using an encryption algorithm on certain data elements in a message. Terminal computes and includes `debitMACValue` in the message sent to the host. The host calculates the MAC using the same data elements. If the host-calculated value matches that in the message, it confirms the message has not been tampered with or damaged during the transmission.
+Canadian debit allows message authentication to provide another layer of security using encryption so that the message is received by the intended recipient and has not been tampered with on the network. Message authentication is performed by using a MAC value computed by both the sender and receiver. MAC value is derived using an encryption algorithm on certain data elements in a message. Terminal computes and includes `debitMACValue` in the message sent to the host. The host calculates the MAC using the same data elements. If the host-calculated value matches that in the message, it confirms the message has not been tampered with or damaged during the transmission.
 
 <!-- theme: Info -->
 > Commerce Hub supports MACpassthrough and MACless transactions based on the MAC attribute in Merchant Configuration and Boarding. Depending on the setup if `debitMacValue` is sent or absent from the request, Commerce Hub will reject the transaction. Please contact your account representative for more information.
-
 
 ### Request Requirements
 
@@ -33,13 +32,12 @@ A terminal uses a DUKPT key to generate the encrypted MAC block and is included 
 The terminal generates a MAC block for a transaction by using the following data elements:
 
 - Account number (PAN)
-- Processing code 
+- Processing code
 - Transaction amount
 - STAN
-- Retrieval Reference Number 
+- Retrieval Reference Number
 
 #### Processing Codes
- 
  
 The following values are supported Canadian debit [processing codes](?path=docs/Resources/Master-Data/Processing-Code.md)
 
@@ -62,7 +60,7 @@ The following are the mandated data elements that are used for the MAC verificat
 - STAN
 - Retrieval Reference Number
 - Response code
- 
+
 <!-- theme: info -->
 > Upon a MAC validation failure, the terminal must complete a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) with the host.
 
@@ -119,51 +117,51 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a Canadian regional debit payload with MAC request.
+Example of a Canadian regional debit payload with MAC request.
 
 ```json
 {
-    "amount": {
-        "total": 42.80,
-        "currency": "CAD"
+  "amount": {
+    "total": 42.8,
+    "currency": "CAD"
+  },
+  "source": {
+    "sourceType": "PaymentTrack",
+    "encryptionData": {
+      "encryptionType": "ON_GUARD",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "9986536786560=18292034288863948535615",
+      "keyId": "FFFF10970000000000F60114",
+      "deviceType": "INGENICO"
     },
-    "source": {
-        "sourceType": "PaymentTrack",
-        "encryptionData": {
-            "encryptionType": "ON_GUARD",
-            "encryptionTarget": "TRACK_2",
-            "encryptionBlock": "9986536786560=18292034288863948535615",
-            "keyId": "FFFF10970000000000F60114",
-            "deviceType": "INGENICO"
-        },
-        "regionalDebit": {
-            "debitMacValue": "7A773FA892CDAADC",  
-            "macKeySerialNumber": "F876543210E000200019",
-            "accountType": "CHECKING"
-        }
-    },
-    "transactionDetails": {
-        "captureFlag": true,
-        "processingCode": "002000",
-        "retrievalReferenceNumber": "000018486001"
-    },
-    "transactionInteraction": {
-        "origin": "POS",
-        "posEntryMode": "MAG_STRIPE",
-        "posConditionCode": "CARD_PRESENT",
-        "additionalPosInformation": {
-            "dataEntrySource": "MOBILE_TERMINAL",
-            "stan": "486001",
-            "posFeatures": {
-                "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
-                "terminalEntryCapability": "MAG_STRIPE_ONLY"
-            }
-        }
-    },
-    "merchantDetails": {
-        "merchantId": "123409000000442",
-        "terminalId": "10000001"
+    "regionalDebit": {
+      "debitMacValue": "7A773FA892CDAADC",
+      "macKeySerialNumber": "F876543210E000200019",
+      "accountType": "CHECKING"
     }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "processingCode": "002000",
+    "retrievalReferenceNumber": "000018486001"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "MAG_STRIPE",
+    "posConditionCode": "CARD_PRESENT",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "stan": "486001",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "MAG_STRIPE_ONLY"
+      }
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 
 ```
@@ -174,7 +172,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a refunds (201: Created) response.
+Example of a refunds (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

@@ -33,8 +33,8 @@ The below table identifies the available parameters in the `merchantDetails` obj
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | _string_ | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | _string_ | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
 
 <!-- type: tab-end -->
 
@@ -58,13 +58,13 @@ titles: Request, Response
 
 ```json
 {
-    "referenceTransactionDetails": {
-        "referenceTransactionId": "123456789012e98re9fsf8aa8sa88a998"
-    },
-    "merchantDetails": {
-        "terminalId": "123456",
-        "merchantId": "123456789012345"
-    }
+  "referenceTransactionDetails": {
+    "referenceTransactionId": "123456789012e98re9fsf8aa8sa88a998"
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 

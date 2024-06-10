@@ -176,7 +176,7 @@ Example of a charge payload request using a ChargeAfter PLCC
     "terminalTimestamp": "2023-09-20T05:33:05Z"
   },
   "merchantDetails": {
-    "merchantId": "100012000003424",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   },
   "additionalDataCommon": {

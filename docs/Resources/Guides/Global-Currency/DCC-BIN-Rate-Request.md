@@ -39,7 +39,7 @@ Example of a DCC rate payload request.
     "currency": "USD"
   },
   "merchantDetails": {
-    "merchantId": "10001POD0212780",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   }
 }

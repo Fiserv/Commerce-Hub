@@ -104,8 +104,8 @@ Example of an authorization refund payload request.
     "captureFlag": false
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 
@@ -205,8 +205,8 @@ Example of a refund capture payload request.
     "captureFlag": true
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 

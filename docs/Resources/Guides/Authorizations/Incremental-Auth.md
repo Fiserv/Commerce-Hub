@@ -66,18 +66,18 @@ Example of a charge payload request.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "transactionDetails":{
-      "primaryTransactionId": "84356532738",
-      "transactionIndicatorType": "INCREMENTAL"
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-    }
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "transactionDetails": {
+    "primaryTransactionId": "84356532738",
+    "transactionIndicatorType": "INCREMENTAL"
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 
