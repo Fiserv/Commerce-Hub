@@ -119,8 +119,8 @@ Example of a charge payload request using PaymentEMV.
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -279,11 +279,9 @@ The below table identifies the required parameters in the `pinBlock` object.
 | `keySerialNumber` | *string* | 256 |  &#10004; | This field is used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. |
 | `pinEncryptionWorkingKey` | *string* | 2000 |  &#10004; | Terminal PIN Encryption working key (TKPE). A PIN Encryption Key is a used to protect PINs as they are transmitted. |
 
-
 <!--
 type: tab
 -->
-
 
 JSON string format for PaymentEMV:
 
@@ -319,51 +317,51 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentEMV.
+Example of a charge payload request using PaymentEMV.
 
 ```json
 {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentEMV",
-      "emvData": "0249F3704833A12329F1002AB34",
-      "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "TRACK_2",
-         "encryptionBlock": "4614507291879694=078443325742854",
-         "deviceType": "INGENICO",
-         "keyId": "FFFF109700000E4000340114"
-      },
-      "pinBlock":{
-         "encryptedPin": "53511F325B7C89E3",
-         "keySerialNumber": "FFFF3D3D3D00232002C9",
-         "pinEncryptionWorkingKey": "7586325254178549....."
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentEMV",
+    "emvData": "0249F3704833A12329F1002AB34",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "4614507291879694=078443325742854",
+      "deviceType": "INGENICO",
+      "keyId": "FFFF109700000E4000340114"
+    },
+    "pinBlock": {
+      "encryptedPin": "53511F325B7C89E3",
+      "keySerialNumber": "FFFF3D3D3D00232002C9",
+      "pinEncryptionWorkingKey": "7586325254178549....."
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "merchantInvoiceNumber": "123456789012"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "ICR_RELIABLE",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2022-03-10T01:37:13Z",
+    "additionalPosInformation": {
+      "dataEntrySource": "MOBILE_TERMINAL",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
       }
-   },
-   "transactionDetails":{
-      "captureFlag": true,
-      "merchantInvoiceNumber": "123456789012"
-   },
-   "transactionInteraction":{
-      "origin": "POS",
-      "posEntryMode": "ICR_RELIABLE",
-      "posConditionCode": "CARD_PRESENT",
-      "terminalTimestamp": "2022-03-10T01:37:13Z",
-      "additionalPosInformation":{
-         "dataEntrySource": "MOBILE_TERMINAL",
-         "posFeatures":{
-            "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
-            "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
-         }
-      }
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-   }
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 

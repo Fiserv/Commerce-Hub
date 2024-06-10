@@ -36,7 +36,7 @@ Example of a DCC rate payload request.
     "currency": "JPY"
   },
   "merchantDetails": {
-    "merchantId": "10001POD0212780",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   }
 }

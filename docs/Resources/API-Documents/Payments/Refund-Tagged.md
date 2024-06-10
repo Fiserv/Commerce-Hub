@@ -93,9 +93,9 @@ Example of a refunds payload request.
     "total": "10.00",
     "currency": "USD"
   },
-  "merchantDetails":{
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```

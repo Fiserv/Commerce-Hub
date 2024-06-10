@@ -84,8 +84,8 @@ Example of a security code verification request.
     }
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 
@@ -209,8 +209,8 @@ Example of a security code verification during a charges request.
     "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```

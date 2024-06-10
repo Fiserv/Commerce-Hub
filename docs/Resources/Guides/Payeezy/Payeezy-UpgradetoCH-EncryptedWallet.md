@@ -69,9 +69,9 @@ The below table identifies the parameters in the `header` object.
     "captureFlag": true,
     "createToken": false
   },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
     }
 }
 
@@ -115,9 +115,9 @@ The below table identifies the parameters in the Commerce Hub `source` object.
       "captureFlag": true,
       "createToken": false
    },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
    }
 }
 

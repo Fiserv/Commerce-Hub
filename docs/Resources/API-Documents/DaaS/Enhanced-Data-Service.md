@@ -34,7 +34,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
 
 <!-- type: tab-end -->
@@ -191,7 +191,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of an Enhanced Data payload request.
+Example of an Enhanced Data payload request
 
 ```json
 {
@@ -277,7 +277,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an Enhanced Data response.
+Example of an Enhanced Data response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -337,7 +337,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of an Enhanced Data payload request.
+Example of an Enhanced Data payload request
 
 ```json
 {
@@ -419,7 +419,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of an Enhanced Data response.
+Example of an Enhanced Data response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for additional examples.
