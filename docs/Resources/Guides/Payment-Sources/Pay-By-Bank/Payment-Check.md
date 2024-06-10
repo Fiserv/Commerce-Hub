@@ -1,77 +1,23 @@
 ---
-tags: [Payment Check, Payment Sources]
+tags: [Payment Check, ACH, Payment Sources]
 ---
 
 # PaymentCheck
 
-Commerce Hubs allows merchants to securely process payments directly from customers' bank accounts. Payment Check offers enhanced security and convenience. With multiple integration methods available, merchants can accept one-time and recurring payments, providing additional flexibility and convenience for customers.
-
----
-
-## Parameters
-
-### Request Variables
-
-The following variables are required when submitting a *PaymentCheck* request.
-
-<!--
-type: tab
-titles: source, check, customer
--->
-
-The below table identifies the parameters in the `source` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------ | --- |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCheck* for ACH transactions |
-| `check` | *object* | N/A |  &#10004; | Contains the payment check details |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `check` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
-| `routingNumber` | *string* | 45 | &#10004; | Routing number endorsed on the check |
-| `accountNumber` | *string* | 45 | &#10004; | Account number endorsed on the check |
-| `checkType` | *string* | 256 | &#10004; | Describes check type |
-| `checkData` | *String* | 45 | &#10004; | Identifying data for the check presented (i.e check number). |
-| `accountType` | *string* | 45 | &#10004; | Account number endorsed on the check |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `customer` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
-| `email` | *string* | 256 | &#10004; | Customer email address |
-| `firstName` | *string* | 256 | &#10004; | Customer first name |
-| `lastName` | *string* | 256 | &#10004; | Customer last name |
-| `email` | *string* | 256 | &#10004; | Customer email address |
-| `dateOfBirth` | *string* | 10 | &#10004; | Customer date of birth in YYYY-MM-DD format.|
-| `driverLicenseNumber` | *string* | 256 | &#10004; | Customer driver license number |
-| `driverLicenseState` | *string* | 256 | &#10004; | Driver license state code |
-| `taxid` | *string* | N/A | &#10004; | Customer tax ID number. |
-
-<!-- theme: info -->
-> Refer to the [customer](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
-
-<!-- type: tab-end -->
+Commerce Hub allows merchants to securely process payments directly from customers' bank accounts. Checks offer enhanced security and convenience. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
 
 ---
 
 ## Payload Example
+
+The example below contains the minimum [parameters](#parameters) for a successful [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using *PaymentCheck*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a paymentCheck payload request
+Example of a charges payload request using *PaymentCheck*.
 
 ```json
 {
@@ -189,12 +135,69 @@ Example of a charge (201: Created) response.
 
 ---
 
+## Parameters
+
+### Request Variables
+
+The following variables are required when submitting a *PaymentCheck* request.
+
+<!--
+type: tab
+titles: source, check, customer
+-->
+
+The below table identifies the parameters in the `source` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ------ | --- |
+| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCheck* for ACH transactions |
+| `check` | *object* | N/A |  &#10004; | Contains the payment check details |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `check` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ----------- |---|
+| `routingNumber` | *string* | 45 | &#10004; | Routing number endorsed on the check |
+| `accountNumber` | *string* | 45 | &#10004; | Account number endorsed on the check |
+| `checkType` | *string* | 256 | &#10004; | Describes [check type](?path=docs/Resources/Master-Data/Check.md#check-type) |
+| `checkData` | *String* | 45 | &#10004; | Identifying data for the check presented (i.e check number). |
+| `accountType` | *string* | 45 | &#10004; | Describe [account type](?path=docs/Resources/Master-Data/Check.md#account-type) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `customer` object.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ----------- |---|
+| `email` | *string* | 256 | &#10004; | Customer email address |
+| `firstName` | *string* | 256 | &#10004; | Customer first name |
+| `lastName` | *string* | 256 | &#10004; | Customer last name |
+| `email` | *string* | 256 | &#10004; | Customer email address |
+| `dateOfBirth` | *string* | 10 | &#10004; | Customer date of birth in YYYY-MM-DD format.|
+| `driverLicenseNumber` | *string* | 256 | &#10004; | Customer driver license number |
+| `driverLicenseState` | *string* | 256 | &#10004; | Driver license state code |
+| `taxid` | *string* | N/A | &#10004; | Customer tax ID number. |
+
+<!-- theme: info -->
+> Refer to the [customer](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
+
+<!-- type: tab-end -->
+
+---
+
 ## See Also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [Check Details](?path=docs/Resources/Master-Data/Check.md)
+- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Pay By Bank](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md)
-- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
 
 ---

@@ -138,7 +138,6 @@ Example of a CAPK download (200: Success) response.
       "fileName": "CA_KEYS",
       "fileVersion": "0119"
     },
-    "version": "0310202200000110578",
     "currentFileCreationDate": "DDMMYYYYhhmmss",
     "fileSize": "10979",
     "fileCheckSum": "a9",
