@@ -5,7 +5,7 @@ tags: [Sunset, Full Refund, Payments, Partial Refund, Refund, API Reference]
 # Tagged Refund Using the URI
 
 <!-- theme: danger -->
-> Refunds using the URI is being sunset in favor of [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) using a referenced transaction identifier. 
+> Refunds using the URI is being sunset in favor of [refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) using a referenced transaction identifier.
 
 A refund request is initiated by sending the `transactionId` in the URI and may contain the `amount` object based on the refund type.
 
@@ -33,12 +33,12 @@ The below table identifies the required parameters in the `amount` object.
 type: tab
 -->
 
-The below table identifies the required parameters in the `merchantDetails` object. 
+The below table identifies the required parameters in the `merchantDetails` object.
 
 | Variable | Data Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-|`terminalId` | *string* | N/A |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -58,7 +58,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a Parital Refund Payload Request.
+Example of a Parital Refund Payload Request.
 
 ```json
 {
@@ -66,21 +66,20 @@ titles: Request, Response
     "total": "1.50",
     "currency": "USD"
   },
-  "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
     }
 }
 ```
- 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/refund)
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges/{transactionId}/refund)
 
 <!--
 type: tab
 -->
 
-##### Example of a Partial Refund (201: Success) Response.
+Example of a Partial Refund (201: Success) Response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

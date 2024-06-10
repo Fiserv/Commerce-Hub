@@ -48,7 +48,7 @@ Example of a DCC charges payload request.
     "referenceId": "f2e2df18ec1a4b0fb5213ecb0d52d920",
   },
   "merchantDetails": {
-    "merchantId": "10001POD0212780",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   }
 }
@@ -128,8 +128,8 @@ Example of a DCC charges (201: Created) response.
     "dccApplied": "APRROVED_CONVERSION"
   },
   "merchantDetails": {
-    "terminalId": "10000001",
-    "merchantId": "10001POD0212780"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "networkDetails": {
     "network": {

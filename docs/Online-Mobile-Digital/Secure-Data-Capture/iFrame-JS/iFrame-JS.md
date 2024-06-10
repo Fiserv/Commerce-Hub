@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Secure Data Capture, iFrame]
 
 # Secure Data Capture - iFrame v2 Solution
 
-Commerce Hub's iFrame allows E-commerce merchants to create payment data via a payment `sessionId`. Cardholder data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrames, thereby allowing merchants to offload payment processing of card data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub's iFrame solution allows E-commerce merchants to create payment data via a payment `sessionId`. Customer data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrames, thereby allowing merchants to offload payment processing of secure data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 Secure Data Capture v2 iFrame SDK works by injecting individual iFrames for each payment field *(card number, security code, etc.)* allowing them to be composed with other elements to create richer and more customizable UI components. This allows full customization on the merchant's page and hosting as little as possible within the iFrame itself. The iFrames are injected into parent elements on the webpage which can be configured individually per field. The creation and manipulation of these iFrames is all handled via the SDK from your JavaScript code.
 
@@ -13,16 +13,17 @@ Secure Data Capture v2 iFrame SDK works by injecting individual iFrames for each
 
 ### Benefits
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment credentials without collecting, processing, or being able to view those payment credentials in their untokenized form, lowering the PCI compliance requirements.
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment information without collecting, processing, or being able to view the details in their untokenized form, lowering the PCI compliance requirements.
 
 ### Transaction Flow
 
-1. The customer navigates to checkout page of the merchant's website.
-2. The customer's browser loads the Commerce Hub iFrame SDK.
-3. The Commerce Hub SDK builds and renders an iFrame with a card form that allows the customer to initiate the payment session.
-4. The customer's details are entered and stored against a sessionID within Commerce Hub on form submit.
-5. Upon a successful card capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server.
-6. Commerce Hub sends the transaction response to the merchant's website.
+1. The customer navigates to the checkout page of the merchant's website.
+2. The customer's browser loads the Commerce Hub iFrame SDK based on the merchant's configuration.
+3. The customer enters their information into the form fields and clicks a merchant hosted button to submit the form.
+4. The merchant sends a credentials request to their backend server to start a user session via Commerce Hub. This will return the security credentials as well as the `sessionId` the payment details will be associated with.
+5. The merchant's website calls the SDK `submit` method to initiate the capture request using the obtained security credentials.
+6. Upon a successful capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server using the `sessionId`.
+7. Commerce Hub sends the transaction response to the merchant's website.
 
 ---
 

@@ -4,7 +4,6 @@ tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments, 
 
 # Encrypted Manual Entry
 
-
 Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually entering the payment source details a payment terminal. This can be used when the payment terminal fails to obtain the card details from the card's chip or magnetic stripe.
 
 A device encrypts the customer's payment source and sends the encryption data to Commerce Hub.
@@ -74,7 +73,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a charge payload request using PaymentCard for Manual Entry.
+Example of a charge payload request using PaymentCard for Manual Entry.
 
 ```json
 {
@@ -96,16 +95,16 @@ titles: Request, Response
     "captureFlag": true,
     "merchantInvoiceNumber": "123456789012"
   },
-   "transactionInteraction":{
-      "origin": "POS",
-      "posEntryMode": "EMV_FALLBACK",
-      "posConditionCode": "CARD_PRESENT",
-      "terminalTimestamp": "2021-06-20T23:42:48Z"
-   },
-   "merchantDetails":{
-      "merchantId": "123456789789567",
-      "terminalId": "123456"
-   }
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "EMV_FALLBACK",
+    "posConditionCode": "CARD_PRESENT",
+    "terminalTimestamp": "2021-06-20T23:42:48Z"
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
 }
 ```
 
@@ -115,7 +114,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a charge (201: Created) response.
+Example of a charge (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -187,7 +186,7 @@ type: tab
 ## Encryption Format
 
 ### OnGuard
-Ingenico uses FPE _(Format Preserving Encryption)_ based of TDES/DUKPT encryption. The encrypted data looks exactly like the clear data, except the digits are scrambled. The terminal will create an encrypted string of concatenated mock Track 2 data composed of the PAN, expiration date and security code.
+Ingenico uses FPE *(Format Preserving Encryption)* based of TDES/DUKPT encryption. The encrypted data looks exactly like the clear data, except the digits are scrambled. The terminal will create an encrypted string of concatenated mock Track 2 data composed of the PAN, expiration date and security code.
 
 <!-- theme: example -->
 > M5482652331427157=3402583
@@ -195,11 +194,11 @@ Ingenico uses FPE _(Format Preserving Encryption)_ based of TDES/DUKPT encryptio
 > In the example, M indicates manual data, 5482652331427157 is the PAN, 3402 is the expiration date (YYMM), and 583 is the security code.
 
 ### RSA
-The RSA data block contains the terminal ID or merchant ID _(right justified, lead zero padding to 8)_; followed by data from Encryption Target including the PAN, and optionally the expiration date, security code, AVS billing postal vode, or the AVS billing address, Track 1 and Track 2. Each optional data element after the PAN is seperated by a field delimiter "|".
+The RSA data block contains the terminal ID or merchant ID *(right justified, lead zero padding to 8)*; followed by data from Encryption Target including the PAN, and optionally the expiration date, security code, AVS billing postal vode, or the AVS billing address, Track 1 and Track 2. Each optional data element after the PAN is seperated by a field delimiter "|".
 
 <!-- theme: example -->
 > 123456784502000011112222|1503|967|33073|5028 Heron Pl
-> 
+>
 > =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ7TY/0VGHEYpkbG3ORO+dGL6TzOSWuC1pCaJE3cZJ8sWONXp5pDuni1OP9v+eRyDSD25Bjzdfa3KJfmXLFXWa++wJ5CY+NdQKrjHWWKP+iAzIUEd5PmnrzVxMgXOz1wJ5YR245a2350oBbz74EZfaojPtX/DCgfEL6cCEyepttx94hIWDDiOLPuplp1KJhh7nJvUGIAhDhZwyKST68xsFswN53z/aduD128TXD4vkduK9QYgavE0y82lxwQILUGScwYnRYmb+Zu2el3ayNE8zdXCe4eWiN1vXxsKUI49WQA==
 
 ### TDES_DUKPT
@@ -215,7 +214,7 @@ The data will be an encrypted value coming from VeriFone terminal, the same leng
 
 <!-- theme: example -->
 > 57125076802752061355
-> 
+>
 > In the example, the encrypted expiration date is 5712
 
 ---
