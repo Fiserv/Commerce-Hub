@@ -8,7 +8,7 @@ Commerce Hub supports customization of iFrame elements to match the merchant's w
 
 #### Major Features
 
-- Support for different variations on card fields *(i.e. dropdown or text input)*
+- Support for different variations on card fields _(i.e. dropdown or text input)_
 - Support for CSS stylesheet injection into the iFrames
 - Support for applying custom fonts to the iFrame input fields
 - Support for custom placeholder or dropdown option text enabling easier internationalization
@@ -127,6 +127,9 @@ The following table identifies the supported CSS fields.
 
 <!-- theme: info -->
 > No fields are required but at least one field must be configured.
+
+<!-- theme: example -->
+> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md. This process enhances security and serves validation purposes.
 
 | Field | Description |
 | ----- | ----------- |
@@ -287,8 +290,8 @@ Custom card brands accepts a list of objects, each object entry support the foll
 | `id` | &#10004; | The brand identifier that can be referenced in `supportedCardBrands` as well as what would be sent to the `onCardBrandChange` merchant defined hook |
 | `enableLuhnCheck` | | Determines whether validations for card numbers identified under this config should include a Luhn check. Boolean field, defaults to false |
 | `patterns` | &#10004; | List containing elements that are either a number _(indicating a bin prefix)_ or a list containing two numbers _(indicating a bin range)_ used to identify the card numbers |
-| `gaps` | | List of numbers indicating the indices of user input for the card number where a space should be inserted if card formatting is enabled. _**Example:**_ _[4, 8, 12]_ |
-| `lengths` | &#10004; | List of numbers indicating card lengths that are valid. _**Example:**_ _[16]_ |
+| `gaps` | | List of numbers indicating the indices of user input for the card number where a space should be inserted if card formatting is enabled. _**Example:** [4, 8, 12]_ |
+| `lengths` | &#10004; | List of numbers indicating card lengths that are valid. _**Example:** [14, 16]_ |
 | `securityCodeLength` | | Number field indicating number of digits for `securityCode`, defaults to 0 |
 
 ---
