@@ -10,7 +10,7 @@ To ensure data integrity, prevent replay attacks, and eliminate stale requests, 
 
 - **Signature Algorithm:** SHA256 HMAC
 - **Signature Encoding:** Base64
-- **Signed With:** Developer App Secret Key; provided to the merchant when boarded
+- **Signed With:** Developer App [Secret Key](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
 
 The message data for the signature is the following items concatenated: `Api-Key`, `Client-Request-Id`, `Timestamp`, `Request-Body`.
 
@@ -27,14 +27,15 @@ Generate the authentication required for use with our APIs.
 > HMAC Authorization Example: OWRiMWNlZjRmMTEyY2M5NmMzNDFkMjhjZDU0NWIyZmYzM2Q2YWMyNDE5Nzg5YmVkYzEyZTJjNmUwNDA5OWMyMQ==
 
 ```javascript
-function guid() {	// create clientRequestId
-	function s4() {
-		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-	}
-	return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
+function guid() { // create clientRequestId
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  }
+  return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
 }
 
-var apiKey = "ytIrtghbjkuytewsdfgvjkcnzskliqopznmd";
+var apiKey = "API_KEY";
+var secret = "SECRET";
 var clientRequestId = guid();
 var timeStamp = new Date().getTime();
 var requestBody = request.data;
@@ -68,6 +69,7 @@ var computedHmac = CryptoJS.enc.Base64.stringify(computedHash);
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
 - [Message Digest](?path=docs/Resources/API-Documents/Message-Digest.md)
+- [Postman Testing](?path=docs/Resources/Guides/Testing/Postman-Testing.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---
