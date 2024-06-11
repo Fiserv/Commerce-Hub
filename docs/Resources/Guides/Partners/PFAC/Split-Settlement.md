@@ -4,7 +4,10 @@ tags: [Payment Facilitator, Settlement]
 
 # Payment Facilitator Split Settlement
 
-Split settlement allows a payment facilitator *(PayFac)* to define how a transaction should be distributed between processing and non-processing MIDs to deposit revenue, fees, reserves, and hold amounts.
+Split settlement allows a payment facilitator *(PayFac)* to define how a transaction should be distributed between processing and non-processing MIDs to deposit revenue, fees, reserves, and hold amounts. The PayFac can send the instructions to processing and non-processing merchant MIDs or a processing PayFac MID to split [authorization or sale](?path=docs/Resources/API-Documents/Payments/Charges.md), [capture](?path=docs/Resources/API-Documents/Payments/Capture.md), and [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) transactions.
+
+<!-- theme: info -->
+> Chargebacks will not be allowed to recoup through this method.
 
 ---
 
@@ -41,8 +44,23 @@ The below table identifies the required parameters in the `accountDetails` objec
 | Variable | Data Type| Maximum Length | Description |
 | -------- | -- | ------------ |-------------- |
 | `name` | *string* | 1024 | An account name for split settlement |
-| `type` | *string* | 1024 | Type of split settlement account; REVENUE, FEES, RESERVES, or HOLD |
+| `type` | *string* | 1024 | Split settlement [account type](#account-type). |
 | `amount` | *object* | N/A | Total amount to be distributed to the specific account |
+
+#### Account Type
+
+The PayFac will define the destination of each split amount based on the virtual accounts listed below:
+
+| Value | Description |
+| ----- | ----- |
+| *CHARGEBACK_ACCOUNT* | |
+| *REVENUE_ACCOUNT* | The funds will send to the revenue account to fund out to processing and non-processing merchants. This account can process both credits and debits. |
+| *FEE_ACCOUNT* | The fee account funds will roll up to the PayFac level and can be a PayFac of processing or non-processing merchants. It will fund to the processing and non-processing PayFac as their revenue. This account can process both credits and debits. |
+| *RESERVE_ACCOUNT* | The funds will send to the reserve account and a collateral DDA to collect deposits from the merchant. This account will only work with a processing or non-processing merchant MID. This account can process credit only. Commerce Hub will not process negative amounts. |
+| *SPLIT_ACCOUNT* | |
+| *SERVICE_FEE_ACCOUNT* | The funds for the service fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac DDA. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
+| *GROSS_FEE_ACCOUNT* | The funds for the gross fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac DDA. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
+| *HOLD_ACCOUNT* | The funds in the hold account are within the FBO DDA, under the processing and non-processing merchant. This account can process credits only. |
 
 <!--
 type: tab
@@ -52,8 +70,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 | -------- | -- | ------------ |-------------- |
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -88,7 +106,7 @@ Example of a split settlement charges payload request.
     "captureFlag": true
   },
   "merchantDetails": {
-    "merchantId": "100008000003683",
+    "merchantId": "100004000PFACS1",
     "terminalId": "10000001"
   },
   "dynamicDescriptors": {
