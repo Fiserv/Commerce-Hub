@@ -47,20 +47,20 @@ The below table identifies the required parameters in the `accountDetails` objec
 | `type` | *string* | 1024 | Split settlement [account type](#account-type). |
 | `amount` | *object* | N/A | Total amount to be distributed to the specific account |
 
+---
+
 #### Account Type
 
 The PayFac will define the destination of each split amount based on the virtual accounts listed below:
 
 | Value | Description |
 | ----- | ----- |
-| *CHARGEBACK_ACCOUNT* | |
-| *REVENUE_ACCOUNT* | The funds will send to the revenue account to fund out to processing and non-processing merchants. This account can process both credits and debits. |
-| *FEE_ACCOUNT* | The fee account funds will roll up to the PayFac level and can be a PayFac of processing or non-processing merchants. It will fund to the processing and non-processing PayFac as their revenue. This account can process both credits and debits. |
-| *RESERVE_ACCOUNT* | The funds will send to the reserve account and a collateral DDA to collect deposits from the merchant. This account will only work with a processing or non-processing merchant MID. This account can process credit only. Commerce Hub will not process negative amounts. |
-| *SPLIT_ACCOUNT* | |
-| *SERVICE_FEE_ACCOUNT* | The funds for the service fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac DDA. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
-| *GROSS_FEE_ACCOUNT* | The funds for the gross fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac DDA. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
-| *HOLD_ACCOUNT* | The funds in the hold account are within the FBO DDA, under the processing and non-processing merchant. This account can process credits only. |
+| *REVENUE_ACCOUNT* | The funds will send to the revenue account to fund out to processing and non-processing merchants as their revenue. This account can process both credits *(add funds)* and debits *(remove funds)*. |
+| *FEE_ACCOUNT* | The fee account funds will roll up to the PayFac level and can be a PayFac of processing or non-processing merchants. It will fund to the PayFac as their revenue. This account can process both credits and debits. |
+| *RESERVE_ACCOUNT* | The funds will send to the reserve account and a collateral account to collect deposits from the merchant. This account works with a processing or non-processing merchant MID. This account can process credit only. Negative amounts are not processed by Commerce Hub. |
+| *SERVICE_FEE_ACCOUNT* | The funds for the service fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac account. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
+| *GROSS_FEE_ACCOUNT* | The funds for the gross fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac account. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
+| *HOLD_ACCOUNT* | The funds in the hold account are held within the [FBO *(For Benefit Of)* account](?path=docs/Resources/FAQs-Glossary/Glossary.md#fbo-account), under the specified processing or non-processing merchant. This account can process credits only. |
 
 <!--
 type: tab
