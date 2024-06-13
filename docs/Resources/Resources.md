@@ -10,7 +10,7 @@ This page provides resources to help you successfully integrate with Commerce Hu
 
 ## OpenAPI Specifications
 
-You can [download a YAML file](?path=(../api/?type=post&path=/payments/v1/charges)) of Commerce Hub's full OpenAPI definition from the API Explorer in Developer Studio.
+You can [download a YAML file](/api/?type=post&path=/payments/v1/charges) of Commerce Hub's full OpenAPI definition from the API Explorer in Developer Studio.
 
 ---
 
@@ -19,8 +19,8 @@ You can [download a YAML file](?path=(../api/?type=post&path=/payments/v1/charge
 The following Postman Collections can be used to [test](?path=docs/Resources/Guides/Testing/Postman-Testing.md) you Commerce Hub integration based on method or vertical.
 
 - [Full Commerce Hub Collection](?path=assets/postman/Test.postman_collection.json)
-- [Online, Digital, and Mobile Collection](https://raw.githubusercontent.com/Fiserv/tenants-data/develop/assets/ai-center_postman_hmac.zip)
-- [In-Person Collection](https://raw.githubusercontent.com/Fiserv/tenants-data/develop/assets/ai-center_postman_hmac.zip)
+- [Online, Digital, and Mobile Collection]()
+- [In-Person Collection]()
 
 ---
 
