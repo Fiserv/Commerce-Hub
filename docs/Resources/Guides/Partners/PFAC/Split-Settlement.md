@@ -17,14 +17,14 @@ The following variables are also required when submitting a capture request.
 
 <!--
 type: tab
-titles: amount, splitSettlement, merchantDetails
+titles: amount, splitSettlement
 -->
 
 The below table identifies the required parameters in the `amount` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ |-------------- |
-| `total` | *number* | 18,3  | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount |
+| `total` | *number* | 18,3  | Amount of the transaction. The `splitSettlement` values must add up to total amount |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
 <!--
@@ -61,17 +61,6 @@ The PayFac will define the destination of each split amount based on the virtual
 | *SERVICE_FEE_ACCOUNT* | The funds for the service fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac account. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
 | *GROSS_FEE_ACCOUNT* | The funds for the gross fee account are from processing or non-processing merchants and funded to the processing or non-processing PayFac account. The amount defined in this account will not count the `total` or `subTotal` in the authorization payload. |
 | *HOLD_ACCOUNT* | The funds in the hold account are held within the [FBO *(For Benefit Of)* account](?path=docs/Resources/FAQs-Glossary/Glossary.md#fbo-account), under the specified processing or non-processing merchant. This account can process credits only. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Maximum Length | Description |
-| -------- | -- | ------------ |-------------- |
-| `merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -117,7 +106,8 @@ Example of a split settlement charges payload request.
     "customerServiceEmail": "contact@mywebsite.com",
     "subMerchantId": "PFACMID3",
     "address": {
-      "street": "123 Main Street",
+      "houseNumberOrName": "123",
+      "street": "Main Street",
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30303",

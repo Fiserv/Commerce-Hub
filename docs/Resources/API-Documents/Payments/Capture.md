@@ -66,7 +66,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Required|  Description |
 |---------|----------|----------------|---------|---|
-|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
