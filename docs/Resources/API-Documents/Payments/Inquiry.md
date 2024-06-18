@@ -18,7 +18,7 @@ titles: referenceTransactionDetails, merchantDetails
 The below table identifies the transaction identifiers in the `referenceTransactionDetails` object.
 
 <!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
+> Only a single transaction identifier should be passed within the request.
 
 | Variable | Type| Maximum Length | Description|
 |---------|-----------|----------------|---------|
@@ -36,7 +36,7 @@ The below table identifies the parameters in the `merchantDetails` object.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction. Can be used for merchants that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction. Can be used for merchants that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
 | `terminalId` | *string* | 1024 |  | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md). |
 
 <!-- type: tab-end -->
@@ -67,7 +67,7 @@ Example of an inquiry payload request.
     "referenceTransactionId": "aa829dcb83cd49f485141168e051b8d1"
   },
   "merchantDetails": {
-    "merchantId": "1234567890123456"
+    "merchantId": "100008000003683"
   }
 }
 ```

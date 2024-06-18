@@ -243,11 +243,6 @@ Example of a refunds (201: Created) response.
             }
         }
     },
-    "merchantDetails": {
-        "tokenType": "S013",
-        "terminalId": "10000001",
-        "merchantId": "100009000000442"
-    },
     "networkDetails": {
         "network": {
             "network": "Visa"

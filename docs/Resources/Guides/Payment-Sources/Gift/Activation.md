@@ -176,8 +176,8 @@ Example of a digital gift card activation payload request.
     "terminalTimestamp": "2016-04-16T16:06:05Z"
   },
   "merchantDetails": {
-    "terminalId": "123567",
-    "merchantId": "123456789012345",
+    "terminalId": "10000001",
+    "merchantId": "100008000003683",
     "promotionCode": "12A34B7"
   },
   "additionalDataCommon": {
