@@ -14,7 +14,7 @@ An [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [sec
 
 To receive a specific `streetMatch` response, pass the specific `street` value from the table below.
 
-| Street | Value | Descrption |
+| Street | Value | Description | 
 | ----- | ---- | ------------|
 | MATCHED | *MATCHED* | Data matches with issuer system with some mismatch |
 | NOT_MATCHED | *NOT_MATCHED* | Data does not match with issuer system |
@@ -28,7 +28,7 @@ To receive a specific `streetMatch` response, pass the specific `street` value f
 
 To receive a specific `postalCodeMatch` response, pass the specific `postalCode` value  from the table below.
 
-| Postal Code  | Value | Descrption |
+| Postal Code  | Value | Description | 
 | ----- | ---- | ------------|
 | 11111 | *MATCHED* | Data matches with issuer system with some mismatch |
 | 22222 | *NOT_MATCHED* | Data does not match with issuer system |
@@ -130,7 +130,7 @@ Example of an address verification request.
 type: tab
 -->
 
-Example of an address verification response
+Example of an address verification response.
 
 ```json
 {

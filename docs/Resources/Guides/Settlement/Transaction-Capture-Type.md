@@ -12,7 +12,7 @@ Commerce Hub allows a merchant to determine the settlement type by defining the 
 <!-- theme: warning -->
 > Commerce Hub currently only supports manual override of the processing network, Marketplace Boarding and Configuration will be enhanced to support Hybrid Card Routing in the future.
 
-#### Transaction Capture Type
+##### Transaction Capture Type
 
 Capture type determines how the transaction is submitted to the settlement system for processing and funding.
 

@@ -8,7 +8,7 @@ Commerce Hub supports customization of iFrame elements to match the merchant's w
 
 #### Major Features
 
-- Support for different variations on card fields *(i.e. dropdown or text input)*
+- Support for different variations on card fields _(i.e. dropdown or text input)_
 - Support for CSS stylesheet injection into the iFrames
 - Support for applying custom fonts to the iFrame input fields
 - Support for custom placeholder or dropdown option text enabling easier internationalization
@@ -247,11 +247,49 @@ Example of payment form fields customization  in `createPaymentForm`.
 
 ---
 
-## Card Brands
+## Supported Card Brands
 
 Supported [card brands](?path=docs/Resources/Master-Data/Card-Type.md) are defined in `supportedCardBrands` field of the configuration object passed in `createPaymentForm`. The merchant can restrict the allowed brands to a subset of the supported card brands assigned to the configuration field as a string array of brand identifiers.
 
 When the SDK has identified the card brand, or can no longer identify the card brand because of user input changes, the user-provided [event hook](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md#event-hooks) `onCardBrandChange` is called with this information.
+
+<!-- theme: info -->
+> `supportedCardBrands` is only for browser-side form validation and not all identifiable brands are supported by Commerce Hub _(CH)_ _(for example mir is not supported by Commerce Hub for processing but is supported by the SDK)_.
+
+| Card Brand | CH Value | SDK Value |
+| ----- | ----- | ----- |
+| Visa | VISA | visa |
+| Mastercard | MASTERCARD | mastercard |
+| American Express | AMEX | american-express |
+| Diners Club | DINERS | diners-club |
+| Discover | DISCOVER | discover |
+| JCB | JCB | jcb |
+| Union Pay | UNION_PAY | unionpay |
+| Maestro | MAESTRO | maeestro |
+| Elo | N/A | elo |
+| Mir  | N/A | mir |
+| Hipercard | N/A | hiper |
+| Hipercard | N/A | hipercard |
+
+---
+
+### Custom Card Brands
+
+Custom card brands like [private label credit cards](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) and [gift cards](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md), are defined in `customCardBrands`, which works alongside `supportedCardBrands` in the `createPaymentForm` configuration. It is used to extend the built-in brand configurations by providing additional configurations.
+
+<!-- theme: warning -->
+> The identifiers defined for these custom card brands need to be enabled via `supportedCardBrands` if that field is being used. If `supportedCardBrands` is not defined then all the built-in as well as custom brands will be permitted by form validations.
+
+Custom card brands accepts a list of objects, each object entry support the following fields.
+
+| Field | Required | Description |
+| ----- | ----- | ----- |
+| `id` | &#10004; | The brand identifier that can be referenced in `supportedCardBrands` as well as what would be sent to the `onCardBrandChange` merchant defined hook |
+| `enableLuhnCheck` | | Determines whether validations for card numbers identified under this config should include a Luhn check. Boolean field, defaults to false |
+| `patterns` | &#10004; | List containing elements that are either a number _(indicating a bin prefix)_ or a list containing two numbers _(indicating a bin range)_ used to identify the card numbers |
+| `gaps` | | List of numbers indicating the indices of user input for the card number where a space should be inserted if card formatting is enabled. _**Example:** [4, 8, 12]_ |
+| `lengths` | &#10004; | List of numbers indicating card lengths that are valid. _**Example:** [14, 16]_ |
+| `securityCodeLength` | | Number field indicating number of digits for `securityCode`, defaults to 0 |
 
 ---
 

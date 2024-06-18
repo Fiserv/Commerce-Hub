@@ -4,7 +4,7 @@ tags: [Card Not Present, Card Present, Request Header, Request Body, Header, Env
 
 # Constructing a RESTful API Request
 
-Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, app, or terminal. Each request consists of the [Header](#request-header) followed by the [Request Body](#request-body).
+Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, app, or terminal. Each request consists of the [header](#request-header) followed by the [Request Body](#request-body).
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
@@ -18,7 +18,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 <!-- theme: warning -->
 > Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
 
-### Sandbox
+#### Sandbox
 
 <!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
@@ -29,7 +29,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Experiment, develop code and fix bugs
 - Send and cancel "test" transactions
 
-### End to End
+#### End to End
 
 <!--theme: info -->
 > https://cert.api.fiservapps.com/ch/{resource}
@@ -39,7 +39,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Run test scripts based on the API's requirements
 - Conduct a complete beta test of your application
 
-### Production
+#### Production
 
 <!--theme: info -->
 > https://prod.api.fiservapps.com/ch/{resource}
@@ -157,12 +157,9 @@ A standard API call to execute a charges request.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [HMAC Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)
-- [Charge Request](?path=docs/Resources/API-Documents/Payments/Charges.md)
-- [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)
+- [Message Digest](?path=docs/Resources/API-Documents/Message-Digest.md)
+- [Payment Request](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Postman Testing](?path=docs/Resources/Guides/Testing/Postman-Testing.md)
 - [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
-- [Tokenization Request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
-- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 
 ---

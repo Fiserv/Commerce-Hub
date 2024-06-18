@@ -11,6 +11,7 @@
     "acrolinx.vscode-sidebar",
     "yzhang.markdown-all-in-one",
     "fantasy.markdown-all-in-one-for-web",
-    "arjun.swagger-viewer"
+    "arjun.swagger-viewer",
+    "ms-vscode.powershell"
   ]
 }
