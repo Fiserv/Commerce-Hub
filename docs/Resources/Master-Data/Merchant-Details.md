@@ -15,14 +15,14 @@ The below table identifies the parameters in the `merchantDetails` object.
 
 | Variable | Type | Maximum Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
-| `tokenType` | *string* | 64 | | Specific token type requested by the merchant. |
-| `storeId` | *string* |  | | An optional outlet ID for clients that support multiple stores in the same app. |
-| `siteId` | *string* |  | | The location ID or number used to identify the unique site and merchant. |
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction. Can be used for merchants that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
-| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md). |
-| `promotionCode` | *string* |  | | This field contains the Promotion Code. |
+| `tokenType` | *string* | 64 | | Specific token type requested by the merchant |
+| `storeId` | *string* |  | | An optional outlet ID for clients that support multiple stores in the same app |
+| `siteId` | *string* |  | | The location ID or number used to identify the unique site and merchant |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction |
+| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md) |
+| `promotionCode` | *string* |  | | This field contains the Promotion Code |
 | `terminalLaneNumber` | *string* | 16 |  | Terminal lane number |
-| `taxId` | *string* | 15 | | Tax ID in United States and Business Number *(BN)* in Canada. |
+| `taxId` | *string* | 15 | | Tax ID in United States and Business Number *(BN)* in Canada |
 
 <!--
 type: tab
@@ -32,16 +32,16 @@ JSON string format for `merchantDetails`:
 
 ```json
 {
-   "merchantDetails":{
-      "tokenType": "TRANSARMOR",
-      "storeId": "12345",
-      "siteId": "CA123456",
-      "terminalId": "12",
-      "merchantId": "1234567890123456",
-      "promotionCode": "ABCD1234",
-      "terminalLaneNumber": "001",
-      "taxId": "123456789"
-   }
+  "merchantDetails": {
+    "tokenType": "TRANSARMOR",
+    "storeId": "12345",
+    "siteId": "CA123456",
+    "terminalId": "10000001",
+    "merchantId": "100008000003683",
+    "promotionCode": "ABCD1234",
+    "terminalLaneNumber": "001",
+    "taxId": "123456789"
+  }
 }
 ```
 <!--type: tab-end -->

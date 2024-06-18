@@ -35,7 +35,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
 
@@ -135,7 +135,7 @@ Example of a Returns Optimizer payload request.
     "tokenData": "1234560000000019"
   },
   "merchantDetails": {
-    "merchantId": "1234567890123456"
+    "merchantId": "100008000003683"
   }
 }
 

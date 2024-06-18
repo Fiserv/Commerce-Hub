@@ -155,10 +155,6 @@ Example of a charge (201: Created) response
       }
     }
   },
-  "merchantDetails": {
-    "merchantId": "100008000003683",
-    "terminalId": "10000001"
-  },
   "additionalDataCommon": {
     "customFields": [
       {

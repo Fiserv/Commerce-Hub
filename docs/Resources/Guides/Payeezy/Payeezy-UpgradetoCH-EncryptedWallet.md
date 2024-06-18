@@ -30,7 +30,6 @@ The below table identifies the parameters in the `source` object.
 |&#10004; `merchantIdentifier`|&#10004; `applePayMerchantId` Unique AppID registered in the Apple portal|
 ||&#10004; `merchantPrivateKey` Merchant private key - Hex encoded|
 
-
 The below table identifies the parameters in the `header` object.
 
 &#10004; denotes required elements

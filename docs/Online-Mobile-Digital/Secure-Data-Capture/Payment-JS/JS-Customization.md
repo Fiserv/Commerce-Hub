@@ -19,7 +19,7 @@ The available configuration methods are listed in the table below.
 | `accessToken` | &#10004; | _string_ | Access token credential to be used in subsequent API calls |
 | `publicKey` | &#10004; | _string_ | Base64 public RSA encryption key from the credentials endpoint |
 | `keyId` | &#10004; | _string_ | Unique identifier of the public encryption key |
-| `merchantId` | &#10004; | _string_ | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction |
+| `merchantId` | &#10004; | _string_ | A unique ID used to identify the merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction |
 | `terminalId` | | _string_ | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md) |
 
 ---

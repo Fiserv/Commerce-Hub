@@ -4,7 +4,7 @@ tags: [Security, Credentials, Access Token, API Reference]
 
 # Security Credentials
 
-A security credentials request is used to obtain the credentials needed in an authentication request or submitting financial transactions. 
+A security credentials request is used to obtain the credentials needed in an authentication request or submitting financial transactions.
 
 - Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
 - Returns a `sessionId` used with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) requests.
@@ -64,7 +64,7 @@ The below table identifies the response elements. The full request schemas are a
 | Variable | Type | Maximum Length | Description |
 |---------|----------|--------|--------|
 | `accessToken` | *string* | 2048 | Access token credential to be used in subsequent API calls. |
-| `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT _(JSON Web Token)_ |
+| `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT *(JSON Web Token)* |
 | `accessTokenIssuedTime` | *string* | 64 | Token issue time in YYYY-MM-DDThh:mm:ssZ format |
 | `accessTokenTimeToLive` | *string* | 7 | Access token expiry |
 | `keyId` | *string* | 64 | Unique identifier of the public encryption key |
@@ -74,7 +74,6 @@ The below table identifies the response elements. The full request schemas are a
 | `expiresAt` | *string* | 64 | Date and time when the session expires |
 | `sessionId` | *string* | 64  | Used as an identifier for a session after a successful call to security/credentials endpoint or after a successful authentication request |
 | `domains` | *array* | N/A  | A whitelist of domains that are applicable for this credentials request |
-
 
 <!---
 | `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
@@ -96,7 +95,7 @@ type: tab
 titles: Request, Response
 -->
 
-##### Example of a credentials payload request.
+Example of a credentials payload request.
 
 ```json
 {
@@ -112,8 +111,8 @@ titles: Request, Response
     }
   ],
   "merchantDetails": {
-    "merchantId": "100004000000260",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
@@ -124,7 +123,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Example of a credentials (201: Created) response.
+Example of a credentials (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
