@@ -50,7 +50,7 @@ The below table identifies the required parameter for the generate request paylo
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-------- | --------|
-| `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->
@@ -145,7 +145,7 @@ The below table identifies the required parameter for the revoke request payload
 
 | Variables | Type| Maximum Length | Required | Description |
 |---------|----------|----------------|-----|-------|
-| `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!-- type: tab-end -->

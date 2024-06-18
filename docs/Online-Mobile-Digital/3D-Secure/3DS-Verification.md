@@ -33,7 +33,7 @@ The below table identifies the available parameters in the `merchantDetails` obj
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `merchantId` | _string_ | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantId` | _string_ | 1024 | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | _string_ | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
 
 <!-- type: tab-end -->

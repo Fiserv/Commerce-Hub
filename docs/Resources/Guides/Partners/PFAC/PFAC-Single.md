@@ -22,8 +22,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 | --------- | ---------- | -------- | ----- |
-|`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-|`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantId` | *string* | 1024 | A unique ID used to identify the PayFac. The PayFac must use the value assigned by the acquirer, gateway or a [custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+|`terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
 <!--
 type: tab
@@ -76,18 +76,19 @@ Example of a PayFac Single MID payload charge request.
     "captureFlag": true
   },
   "merchantDetails": {
-    "merchantId": "100008000003683",
+    "merchantId": "1000000PFACS1",
     "terminalId": "10000001"
   },
   "dynamicDescriptors": {
     "mcc": "5204",
-    "merchantName": "Nike",
-    "customerServiceNumber": "4448889999",
-    "serviceEntitlement": "4040404040",
-    "customerServiceEmail": "Nike.com",
+    "merchantName": "Merchant Name",
+    "customerServiceNumber": "8001231234",
+    "serviceEntitlement": "123456789123",
+    "customerServiceEmail": "merchant@domain.com",
     "subMerchantId": "PFACM_3",
     "address": {
-      "street": "2900 Parkway",
+      "houseNumberOrName": "123",
+      "street": "Parkway",
       "city": "Alpharetta",
       "stateOrProvince": "GA",
       "postalCode": "30004",
@@ -157,19 +158,16 @@ Example of a PayFac Multi-MID charges (201: Created) response.
     "createToken": true,
     "retrievalReferenceNumber": "ba3baa55da67"
   },
-  "merchantDetails": {
-    "merchantId": "100008000003683",
-    "terminalId": "10000001"
-  },
   "dynamicDescriptors": {
     "mcc": "5204",
-    "merchantName": "Nike",
+    "merchantName": "Merchant Name",
     "customerServiceNumber": "1231231234",
     "serviceEntitlement": "123456789012",
-    "customerServiceEmail": "mystore.com",
+    "customerServiceEmail": "customerservice@domain.com",
     "subMerchantId": "PFACM_3",
     "address": {
-      "street": "123 Parkway",
+      "houseNumberOrName": "123",
+      "street": "Parkway",
       "city": "Alpharetta",
       "stateOrProvince": "GA",
       "postalCode": "30004",

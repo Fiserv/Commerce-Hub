@@ -108,10 +108,6 @@ Example of a charge (201: Created) response.
       "accountNumber": "144155167"
     }
   },
-  "merchantDetails": {
-    "merchantId": "100008000003683",
-    "terminalId": "10000001"
-  },
   "networkDetails": {
     "systemTrace": "1400310000032032697430",
     "networkResponseStatus": "1",

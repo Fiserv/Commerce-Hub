@@ -22,7 +22,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Description |
 | --------- | ---------- | -------- | ----- |
-| `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. The PayFac must use the value assigned by the acquirer, gateway or a [custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
 
 <!-- type: tab-end -->
@@ -59,11 +59,10 @@ Example of a PayFac Multi-MID charges payload request.
     "createToken": true
   },
   "merchantDetails": {
-    "merchantId": "100008000003683",
+    "merchantId": "100004SUBPFACM1",
     "terminalId": "10000001"
   }
 }
-
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&payments-vas/v1/accounts/gift-cards)
@@ -144,7 +143,6 @@ Example of a PayFac Multi-MID charges (201: Created) response.
     "transactionIdentifier": "013299935218843"
   }
 }
-
 ```
 
 <!-- type: tab-end -->
