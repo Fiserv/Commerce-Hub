@@ -14,7 +14,7 @@ An unmatched tagged refund allows a merchant to issue a refund to a payment sour
 
 ---
 
-### Request Variables
+## Request Variables
 
 A refund request is initiated by sending the `referenceTransactionDetails`, `source` in the payload and may contain the `amount` object based on the refund type.
 
@@ -61,7 +61,6 @@ The below table identifies the required parameters in the `amount` object.
 | `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
 
-
 <!--
 type: tab
 -->
@@ -70,20 +69,21 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Data Type| Maximum Length | Required | Description |
 |---------|----------|----------------|---------|-----|
-| `merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
+| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
 
 <!-- type: tab-end -->
 
 ---
-### Endpoint
+
+## Endpoint
 
 <!-- theme: success -->
 > **POST** `/payments/v1/refunds`
 
 ---
 
-### Payload Example
+## Payload Example
 
 <!--
 type: tab
@@ -117,11 +117,12 @@ Example of an unmatched refund payload request.
     "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "merchantDetails": {
-    "merchantId": "123456789789567",
-    "terminalId": "123456"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 ```
+
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--

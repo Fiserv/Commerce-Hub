@@ -46,9 +46,11 @@ The below table identifies the required parameters in the `dynamicDescriptor` ob
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* | 1024 | Merchant Name or Doing Business As (DBA) |
-| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer *(it may appear on the cardholder’s statement)* or if merchant wants to pass information that differs from the information stored on our master File. |
+| `customerServiceNumber` | *string* | 15| Customer service phone number information that is passed to the issuer *(it may appear on the cardholder’s statement)* or if merchant wants to pass information that differs from the information stored on our master file. |
+| `customerServiceEmail` | *string* | 15| Customer service email information that is passed to the issuer *(it may appear on the cardholder’s statement)* or if merchant wants to pass information that differs from the information stored on our master file. |
 | `serviceEntitlement` | *string* | 16 | Merchant Service Entitlement number |
 | `address` | *object* | N/A  | Merchant [address](?path=docs/Resources/Master-Data/Address.md#address) details |
+| `subMerchantId` | *string* | 1024 | Sub-merchant ID defined by a third party processor |
 
 <!--
 type: tab
@@ -62,15 +64,17 @@ JSON string format for `dynamicDescriptor`:
     "mcc": "4457",
     "merchantName": "Mywebsite.com",
     "customerServiceNumber": "1231231234",
+    "customerServiceEmail": "merchantr@domain.com",
     "serviceEntitlement": "67893827513",
     "address": {
-      "street": "Main Street",
       "houseNumberOrName": "123",
+      "street": "Main Street",
       "city": "Atlanta",
       "stateOrProvince": "GA",
       "postalCode": "30303",
       "country": "US"
-    }
+    },
+    "subMerchantId": "12345678"
   }
 }
 ```
@@ -89,40 +93,40 @@ titles: Request, Response
 Example of a charge payload request using `dynamicDescriptors`.
 
 ```json
- {
-   "amount":{
-      "total": "12.04",
-      "currency": "USD"
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "expirationMonth": "02",
-         "expirationYear": "2035"
-      }
-   },
-   "dynamicDescriptors":{
-      "mcc": "4457",
-      "merchantName": "Mywebsite.com",
-      "customerServiceNumber": "1231231234",
-      "serviceEntitlement": "67893827513",
-      "address":{
-         "street": "123 Main Street",
-         "houseNumberOrName": "Unit B",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30303",
-         "country": "US"
-      }
-   },
-   "transactionDetails":{
-      "captureFlag": true
-   },
+{
+  "amount": {
+    "total": "12.04",
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    }
+  },
+  "dynamicDescriptors": {
+    "mcc": "4457",
+    "merchantName": "Mywebsite.com",
+    "customerServiceNumber": "1231231234",
+    "serviceEntitlement": "67893827513",
+    "address": {
+      "street": "123 Main Street",
+      "houseNumberOrName": "Unit B",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30303",
+      "country": "US"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
   "merchantDetails": {
     "merchantId": "100008000003683",
     "terminalId": "10000001"
-   }
+  }
 }
 ```
 
@@ -137,68 +141,68 @@ Example of a charge (201: Created) response.
 
 ```json
 {
-   "gatewayResponse":{
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionType": "CHARGE",
-      "transactionState": "AUTHORIZED",
-      "transactionOrigin": "ECOM",
-      "transactionProcessingDetails":{
-         "transactionTimestamp": "2016-04-16T16:06:05Z",
-         "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
-         "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-         "transactionId": "838916029301"
+  "gatewayResponse": {
+    "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
+      "apiTraceId": "rrt-0bd552c12342d3448-b-ea-1142-12938318-7",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "838916029301"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019",
+      "nameOnCard": "Jane Smith",
+      "expirationMonth": "02",
+      "expirationYear": "2035",
+      "bin": "400555",
+      "last4": "0019"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 12.04,
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK3483",
+      "authenticationResponseCode": "string",
+      "referenceNumber": "845366457890-TODO",
+      "schemeTransactionId": "019078743804756",
+      "feeProgramIndicator": "123",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2016-04-16T16:06:05Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2016-04-16T16:06:05Z"
       }
-   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "card":{
-         "cardData": "4005550000000019",
-         "nameOnCard": "Jane Smith",
-         "expirationMonth": "02",
-         "expirationYear": "2035",
-         "bin": "400555",
-         "last4": "0019"
-      }
-   },
-   "paymentReceipt":{
-      "approvedAmount":{
-         "total": 12.04,
-         "currency": "USD"
-      },
-      "processorResponseDetails":{
-         "approvalStatus": "APPROVED",
-         "approvalCode": "OK3483",
-         "authenticationResponseCode": "string",
-         "referenceNumber": "845366457890-TODO",
-         "schemeTransactionId": "019078743804756",
-         "feeProgramIndicator": "123",
-         "processor": "FISERV",
-         "host": "NASHVILLE",
-         "responseCode": "000",
-         "responseMessage": "APPROVAL",
-         "hostResponseCode": "00",
-         "hostResponseMessage": "APPROVAL",
-         "localTimestamp": "2016-04-16T16:06:05Z",
-         "bankAssociationDetails":{
-            "associationResponseCode": "000",
-            "transactionTimestamp": "2016-04-16T16:06:05Z"
-         }
-      }
-   },
-   "dynamicDescriptors":{
-      "mcc": "4457",
-      "merchantName": "Mywebsite.com",
-      "customerServiceNumber": "1231231234",
-      "serviceEntitlement": "67893827513",
-      "address":{
-         "street": "123 Main Street",
-         "houseNumberOrName": "Unit B",
-         "city": "Atlanta",
-         "stateOrProvince": "GA",
-         "postalCode": "30303",
-         "country": "US"
-      }
-   }
+    }
+  },
+  "dynamicDescriptors": {
+    "mcc": "4457",
+    "merchantName": "Mywebsite.com",
+    "customerServiceNumber": "1231231234",
+    "serviceEntitlement": "67893827513",
+    "address": {
+      "street": "123 Main Street",
+      "houseNumberOrName": "Unit B",
+      "city": "Atlanta",
+      "stateOrProvince": "GA",
+      "postalCode": "30303",
+      "country": "US"
+    }
+  }
 }
 ```
 
@@ -209,7 +213,8 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Address](?path=docs/Resources/Master-Data/Address.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
+- [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md)
 
 ---

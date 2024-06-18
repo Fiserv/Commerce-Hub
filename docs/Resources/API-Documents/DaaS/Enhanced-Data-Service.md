@@ -34,8 +34,8 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 | Variable | Type| Maximum Length | Required | Description |
 |-----|---|-----|-----|-----|
-| `merchantId` | *string* | 16 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `alternateMerchantId` | *string* | 16 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
+| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `alternateMerchantId` | *string* | 1024 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
 
 <!-- type: tab-end -->
 
@@ -263,9 +263,9 @@ Example of an Enhanced Data payload request
       }
    },
    "merchantDetails": {
-      "merchantId": "1234567890123456",
+      "merchantId": "100008000003683",
       "alternateMerchantId": "1234567890123456",
-      "terminalId": "123456"
+      "terminalId": "10000001"
    }
 }
 
@@ -406,7 +406,7 @@ Example of an Enhanced Data payload request
       }
    },
    "merchantDetails": {
-      "merchantId": "1234567890123456",
+      "merchantId": "100008000003683",
       "alternateMerchantId": "1234567890123456"
    }
 }
