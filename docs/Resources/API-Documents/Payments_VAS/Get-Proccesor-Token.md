@@ -69,19 +69,25 @@ Example of a token only payload request.
 {
   "source": {
     "sourceType": "PaymentToken",
-    "tokenData": "1234560000000019",
-    "tokenSource": "TRANSARMOR"
+    "tokenData": "1234123412340019",
+    "tokenSource": "TRANSARMOR",
+    "card": {
+      "expirationMonth": "05",
+      "expirationYear": "2044"
+    }
   },
   "merchantDetails": {
-    "terminalId": "123456",
-    "merchantId": "123456789012345"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   },
   "additionalDataCommon": {
     "directedRouting": {
-      "processors": {
-        "processorName": "CHASE",
-        "processorPlatform": "TAMPA"
-      }
+      "processors": [
+        {
+          "processorName": "CITI",
+          "processorPlatform": "PRIVATE_LABEL"
+        }
+      ]
     }
   }
 }
