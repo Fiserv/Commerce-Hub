@@ -4,7 +4,7 @@ tags: [Network Token, Online, Web, Mobile, Card Not Present, Payment Source]
 
 # Network Token - Merchant Managed
 
-Commerce Hub enables merchants to transmit merchant-managed Network Token results obtained through a third-party provider seamlessly when initiating [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. Merchants utilize *PaymentToken* as the [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) when forwarding transactions to Commerce Hub.
+Commerce Hub enables merchants to transmit merchant-managed network token results obtained through a third-party provider seamlessly when initiating [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request. Merchants utilize *PaymentToken* as the [payment source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) when forwarding transactions to Commerce Hub.
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry *(PCI)* Compliance capabilities to process and store card data.
