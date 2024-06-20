@@ -16,11 +16,16 @@ You can [download a YAML file](/api/?type=post&path=/payments/v1/charges) of Com
 
 ## Postman Collections
 
-The following Postman Collections can be used to [test](?path=docs/Resources/Guides/Testing/Postman-Testing.md) you Commerce Hub integration based on method or vertical.
+<!-- theme: danger -->
+> Commerce Hub will be releasing new Postman Collections soon.
 
-- [Full Commerce Hub Collection](?path=assets/postman/Test.postman_collection.json)
-- [Online, Digital, and Mobile Collection]()
-- [In-Person Collection]()
+The Postman Collections can be used to [test](?path=docs/Resources/Guides/Testing/Postman-Testing.md) your Commerce Hub integration based on the method, feature or vertical.
+
+<!---
+- [Full Commerce Hub Collection]
+- [Online, Digital, and Mobile Collection]
+- [In-Person Collection]
+--->
 
 ---
 
