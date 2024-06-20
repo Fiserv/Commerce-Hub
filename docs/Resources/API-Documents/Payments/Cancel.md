@@ -19,6 +19,9 @@ Cancels can be initiated for the full amount or a partial amount of the original
 <!-- theme: info -->
 > Commerce Hub currently only supports partial cancels for [terminal direct settlement](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture) on the Nashville front-end processor.
 
+<!-- theme: info -->
+> To support partial cancels it must be configured in Merchant Boarding and Configuration. Please contact your account representative for details.
+
 ---
 
 ## Request Variables
