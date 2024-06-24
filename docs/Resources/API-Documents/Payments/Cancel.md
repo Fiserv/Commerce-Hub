@@ -9,6 +9,19 @@ When a customer cancels the order or if fraud is suspected, the merchant will ne
 <!-- theme: warning -->
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
 
+##### Cancel Types
+
+Cancels can be initiated for the full amount or a partial amount of the original authorization.
+
+- **Partial Cancel:** A request submitted with the `amount` object for a partial `total`.
+- **Full Cancel:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+
+<!-- theme: info -->
+> Commerce Hub currently only supports partial cancels for [terminal direct settlement](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture) on the Nashville front-end processor.
+
+<!-- theme: info -->
+> To support partial cancels it must be configured in Merchant Boarding and Configuration. Please contact your account representative for details.
+
 ---
 
 ## Request Variables
@@ -44,7 +57,7 @@ The below table identifies the recommended parameters in the `transactionDetails
 
 | Variable | Data Type| Maximum Length |Description |
 |---------|----------|----------------|---------|
-| `reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
+| `reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel *(void)*. |
 
 <!--
 type: tab
@@ -94,7 +107,7 @@ Example of a cancels payload request.
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/cancel)
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/cancels)
 
 <!--
 type: tab
@@ -178,7 +191,7 @@ The below table identifies the valid values of the reason the merchant/customer 
 | *VOID* | A transaction that is used to cancel or fully reverse a previous transaction. |
 | *SUSPECTED_FRAUD* | A transaction that is voided for suspected fraud. |
 | *TIMEOUT* | This transaction is used when the merchant does not receive a response to a transaction. At that point it is unknown whether the host received the transaction or not; therefore a timeout reversal request must be submitted. Upon the successful completion of the timeout reversal, the original transaction may be sent again. |
-| *CARD_OVERRIDE* | A transaction that is reversed by the terminal, normally due to a chip card override. | 
+| *CARD_OVERRIDE* | A transaction that is reversed by the terminal, normally due to a chip card override. |
 | **Canadian Debit Only** | |
 | *EDIT_ERROR* | Edit Error Parse error at the terminal |
 | *MAC_VERIFICATION_ERROR* | MAC Verification Error terminal MAC is invalid or data used to verify the MAC is incorrect. |
