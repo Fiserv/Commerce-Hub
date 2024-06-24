@@ -4,7 +4,7 @@ tags: [Processor Token, Partner Token, Tokenization, API Reference]
 
 # Partner Tokens
 
-A Partner Tokens request allows a merchant to submit Commerce Hub's TransAmor [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and receive a third party partner-token. This token can be used to communicate directly with the third-party partner when the merchant performs direct settlement or must accept an offline transaction.
+A partner tokens request allows a merchant to submit Commerce Hub's TransAmor [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and receive a third-party partner token. This token can be used to communicate directly with the third-party partner when the merchant performs direct settlement or must accept an offline transaction.
 
 ---
 
@@ -19,7 +19,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-| `sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) is always payment token |
+| `sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) is always _**paymentToken**_ |
 | `tokenData` | _string_ | 2048 |Token created from the payment source. |
 | `tokenSource` | _string_ | N/A | Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
 
@@ -107,59 +107,77 @@ Example of a get partner token (200: Success) response.
 ```json
 {
   "gatewayResponse": {
-    "transactionType": "TOKENISE",
+    "transactionType": "TOKENIZE",
     "transactionState": "AUTHORIZED",
-    "transactionOrigin": "POS",
-    "transactionProcessingDetails": {
-      "orderId": "R-3b83fca8-2f9c-4364-86ae-12c91f1fcf16",
-      "transactionTimestamp": "2016-04-16T16:06:05Z",
-      "apiTraceId": "1234567a1234567b1234567c1234567d",
-      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
-      "transactionId": "838916029301"
-    }
+    "transactionOrigin": "POS"
   },
   "source": {
-    "tokenData": "1234123412340019",
     "sourceType": "PaymentToken",
-    "card": {
-      "expirationYear": "2028",
-      "last4": "7237",
-      "scheme": "VISA",
-      "bin": "981106",
-      "expirationMonth": "10"
-    }
-  },
-  "cardDetails": {
-    "detailedCardProduct": "VISA",
-    "productId": "N1",
-    "visaProductSubType": "HC",
-    "detailedCardIndicator": "DEBIT"
+    "tokenSource": "TRANSARMOR",
+    "tokenData": "1234560000000019"
   },
   "paymentTokens": [
     {
-      "tokenData": "9187613690527237",
-      "tokenSource": "CITI",
+      "tokenData": "23459371934460009",
+      "tokenSource": "CHASE",
       "tokenResponseCode": "000",
       "tokenResponseDescription": "SUCCESS"
     }
   ],
   "processorResponseDetails": {
     "approvalStatus": "APPROVED",
-    "approvalCode": "OK3483",
-    "authenticationResponseCode": "string",
-    "referenceNumber": "845366457890-TODO",
-    "schemeTransactionId": "019078743804756",
-    "feeProgramIndicator": "123",
-    "processor": "CITI",
-    "host": "PRIVATE_LABEL",
-    "networkRouted": "string",
-    "PAR": "string",
-    "responseCode": "00000",
+    "schemeTransactionId": "0225MCC625628",
+    "processor": "CHASE",
+    "responseCode": "000",
     "responseMessage": "APPROVAL",
     "hostResponseCode": "00",
     "hostResponseMessage": "APPROVAL",
-    "localTimestamp": "2016-04-16T16:06:05Z"
-  }
+    "localTimestamp": "2021-06-20T23:42:48Z"
+  },
+  "additionalDataCommon": {
+    "directedRouting": {
+      "processors": {
+        "processorName": "CHASE",
+        "processorPlatform": "TAMPA"
+      }
+    }
+  },
+  "cardDetails": [
+    {
+      "binSource": "FISERV",
+      "recordType": "DETAIL",
+      "lowBin": "476173",
+      "highBin": "476173",
+      "binLength": "06",
+      "binDetailPan": "16",
+      "countryCode": "USA",
+      "detailedCardProduct": "VISA",
+      "detailedCardIndicator": "DEBIT",
+      "pinSignatureCapability": "PIN_OR_SIGNATURE",
+      "issuerUpdateYear": "22",
+      "issuerUpdateMonth": "04",
+      "issuerUpdateDay": "22",
+      "cardClass": "CONSUMER",
+      "productId": "F",
+      "accountFundSource": "DEBIT",
+      "panLengthMin": "16",
+      "panLengthMax": "16",
+      "debitPinlessIndicator": [
+        {
+          "debitNetworkId": "MAESTRO_DIRECT",
+          "pinnedPOS": "SUPPORTED"
+        },
+        {
+          "debitNetworkId": "MAESTRO_STAR_WEST",
+          "pinnedPOS": "SUPPORTED"
+        },
+        {
+          "debitNetworkId": "PAVD",
+          "pinnedPOS": "SUPPORTED"
+        }
+      ]
+    }
+  ]
 }
 ```
 <!-- type: tab-end -->
@@ -169,8 +187,9 @@ Example of a get partner token (200: Success) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/partner-tokens)
-- [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
-- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---
