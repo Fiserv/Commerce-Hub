@@ -10,17 +10,22 @@ This page provides resources to help you successfully integrate with Commerce Hu
 
 ## OpenAPI Specifications
 
-You can [download a YAML file](/api/?type=post&path=/payments/v1/charges) of Commerce Hub's full OpenAPI definition from the API Explorer in Developer Studio.
+You can [view a YAML file](/api/?type=post&path=/payments/v1/charges) of Commerce Hub's full OpenAPI definition from the API Explorer in Developer Studio.
 
 ---
 
 ## Postman Collections
 
-The following Postman Collections can be used to [test](?path=docs/Resources/Guides/Testing/Postman-Testing.md) you Commerce Hub integration based on method or vertical.
+<!-- theme: danger -->
+> Commerce Hub will be releasing new Postman Collections soon.
 
-- [Full Commerce Hub Collection](?path=assets/postman/Test.postman_collection.json)
-- [Online, Digital, and Mobile Collection]()
-- [In-Person Collection]()
+The Postman Collections can be used to [test](?path=docs/Resources/Guides/Testing/Postman-Testing.md) your Commerce Hub integration based on the method, feature or vertical.
+
+<!---
+- [Full Commerce Hub Collection]
+- [Online, Digital, and Mobile Collection]
+- [In-Person Collection]
+--->
 
 ---
 
@@ -30,3 +35,5 @@ The following Postman Collections can be used to [test](?path=docs/Resources/Gui
 - [How to Use Postman for Testing](?path=docs/Resources/Guides/Testing/Postman-Testing.md)
 - [Online Digital and Mobile Integrations](?path=docs/Getting-Started/Getting-Started-Online.md)
 - [In-Person Integrations](?path=docs/Getting-Started/Getting-Started-InPerson.md)
+
+---
