@@ -19,13 +19,13 @@ Commerce Hub supports the following Tokenization requests.
 <!-- type: row -->
 
 <!-- type: card
-title: TransAmor 
+title: TransAmor Token
 description: Merchants can replace sensitive payment information, such as credit card numbers, with a non-sensitive TransArmor Token issued by Commerce Hub. 
 link: ?path=docs/Resources/Guides/Payment-Sources/Tokenization/TransAmor.md
 -->
 
 <!-- type: card
-title: Network
+title: Network Token
 description: Enhances payment security by substituting sensitive cardholder data with unique, context-specific tokens issued by the card networks, minimizing fraud risk and data exposure.
 link: ?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token.md
 -->
@@ -39,12 +39,6 @@ link:
 <!-- type: card
 title: Partner Token 
 description: The partner tokens request allows a merchant to submit Commerce Hub's TransAmor PaymentToken and receive a third-party partner token.
-link: ?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md
--->
-
-<!-- type: card
-title: Partner Token 
-description: The Partner Tokens request allows a merchant to submit Commerce Hub's TransAmor PaymentToken and receive a third party partner-token.
 link: ?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md
 -->
 
