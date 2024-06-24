@@ -4,7 +4,7 @@ tags: [Processor Token, Partner Token, Tokenization, API Reference]
 
 # Partner Tokens
 
-A Partner Tokens request allows a merchant to submit Commerce Hub's TransAmor [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and receive a third party partner-token. This token can be used to communicate directly with the third-party partner when the merchant performs direct settlement or must accept an offline transaction.
+A partner tokens request allows a merchant to submit Commerce Hub's TransAmor [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) and receive a third-party partner token. This token can be used to communicate directly with the third-party partner when the merchant performs direct settlement or must accept an offline transaction.
 
 ---
 
@@ -187,8 +187,9 @@ Example of a get partner token (200: Success) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/partner-tokens)
-- [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
+- [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
-- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 
 ---
