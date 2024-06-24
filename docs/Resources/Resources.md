@@ -10,7 +10,7 @@ This page provides resources to help you successfully integrate with Commerce Hu
 
 ## OpenAPI Specifications
 
-You can [view a YAML file](/api/?type=post&path=/payments/v1/charges) of Commerce Hub's full OpenAPI definition from the API Explorer in Developer Studio.
+You can [view a YAML file](../api/?type=post&path=/payments/v1/charges) of Commerce Hub's full OpenAPI definition from the API Explorer in Developer Studio.
 
 ---
 
