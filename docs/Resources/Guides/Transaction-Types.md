@@ -1,8 +1,8 @@
 ---
-tags: [Guide, Transactions]
+tags: [Request, Transactions, Payments]
 ---
 
-# Request Types
+# Transaction Request Types
 
 The Commerce Hub allows a merchant to create, inquire, and finalize payment transactions through our API. Commerce Hub seperates transactions into two transaction types; primary and secondary.
 
@@ -17,13 +17,13 @@ Initial request initiated to Commerce Hub's API.
 <!-- type: card
 title: Charges
 description: A charge request is used to peform a sale or pre-authorization on a customer's account.
-link: docs/Resources/API-Documents/Payments/Charges.md
+link: ?path=docs/Resources/API-Documents/Payments/Charges.md
 -->
 
 <!-- type: card
 title: Verification
 description: An account verification request is used to confirm that the customer's account is valid for a transaction, or perform an address and security code verification. Unlike a normal $0 auth this will not attempt an authorization on the account.
-link: ?path=docs/Getting-Started/Getting-Started-Online.md
+link: ?path=docs/Resources/API-Documents/Payments_VAS/Verification.md
 -->
 
 <!-- type: card
@@ -63,7 +63,7 @@ link: ?path=docs/Resources/Guides/Authorizations/Re-Auth.md
 <!-- type: card
 title: Incremental Authorization
 description: An incremental authorization request is typically found in hotel and rental environments, where the consumer has agreed to pay for any service incurred during the duration of the contract.
-link: ?path=docs/Resources/Guides/Authorizations/Incremental-Auth.md
+link: 
 -->
 
 <!-- type: row-end -->

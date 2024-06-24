@@ -61,7 +61,7 @@ link: ?path=docs/Resources/Guides/BYOID.md
 <!-- type: card
 title: Directed Routing
 description: Directed Routing allows merchants to send transactions to a specific processor or network based on cost, approval rates, liability shift and ticket size.
-link: ?path=docs/Resources/Guides/Directed-Routing.md
+link: ?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md
 -->
 
 <!-- type: row-end -->

@@ -135,6 +135,6 @@ Example of a charge (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
-- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 
 ---
