@@ -85,7 +85,7 @@ link: ?path=docs/Resources/API-Documents/Payments/Refund.md
 <!-- type: card
 title: Inquiry
 description: An inquiry request is used to retrieve the current state of any previous transaction.
-link: ?path=ocs/Resources/API-Documents/Payments/Inquiry.md
+link: ?path=docs/Resources/API-Documents/Payments/Inquiry.md
 -->
 
 <!-- type: row-end -->

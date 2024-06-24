@@ -193,7 +193,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Debit](?path=docs/In-Person/Debit/Smart-Routing.md)
+- [Debit](?path=docs/Resources/Guides/Debit/Debit.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Gift Card Services](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)

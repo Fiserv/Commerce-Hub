@@ -140,9 +140,9 @@
     - title: Subsequent Authorizations
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
     - title: Transaction Request Types
-      link: docs/Resources/Guides/Transaction-Routing/Routing.md
-    - title: Transaction Routing
       link: docs/Resources/Guides/Transaction-Types.md
+    - title: Transaction Routing
+      link: docs/Resources/Guides/Transaction-Routing/Routing.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md    
 - sections:

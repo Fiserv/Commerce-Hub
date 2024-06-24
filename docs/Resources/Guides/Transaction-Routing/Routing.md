@@ -23,7 +23,7 @@ link: ?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md
 <!-- type: card
 title: Intelligent Routing
 description: A multi-acquiring merchant can sign-up for Intelligent routing when processing with multiple processors.
-link: docs/Resources/API-Documents/Payments/Charges.md
+link: ?path=docs/Resources/Guides/Transaction-Routing/Intelligent-Routing.md#intelligent-routing
 -->
 
 <!-- type: card
