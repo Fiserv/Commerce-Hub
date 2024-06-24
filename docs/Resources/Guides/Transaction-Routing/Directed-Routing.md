@@ -177,9 +177,9 @@ The below table identifies the valid values and combinations for `processorName`
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Additional Data](?path=docs/Resources/Master-Data/Additional-Data.md)
+- [Basic Routing](?path=docs/Resources/Guides/Transaction-Routing/Intelligent-Routing.md)
 - [Hybrid Card Routing](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Partner Tokens](?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md)
-- [Transaction Routing](?path=docs/Resources/Guides/Transaction-Routing/Intelligent-Routing.md)
 
 ---
