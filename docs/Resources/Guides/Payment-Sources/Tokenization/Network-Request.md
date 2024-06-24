@@ -58,8 +58,8 @@ Example of charges payload request with Network Token
     "lastName": "Smith"
   },
   "merchantDetails": {
-    "terminalId": "12",
-    "merchantId": "123456789012345"
+    "terminalId": "10000001",
+    "merchantId": "100008000003683"
   }
 }
 ```
@@ -113,10 +113,6 @@ Example of a charges (201: Created) response
     "approvalCode": "string",
     "primaryTransactionId": "838916029301",
     "primaryTransactionType": "CHARGE_SALE"
-  },
-  "merchantDetails": {
-    "terminalId": "12",
-    "merchantId": "123456789012345"
   }
 }
 

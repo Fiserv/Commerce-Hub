@@ -75,7 +75,7 @@ Example of a charge payload request using KWD at 3 precisions.
     "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
   "merchantDetails": {
-    "merchantId": "100034000000032",
+    "merchantId": "100008000003683",
     "terminalId": "10000001"
   }
 }
