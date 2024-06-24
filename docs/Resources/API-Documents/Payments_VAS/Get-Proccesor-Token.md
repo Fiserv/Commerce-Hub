@@ -187,7 +187,7 @@ Example of a get partner token (200: Success) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/partner-tokens)
-- [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
