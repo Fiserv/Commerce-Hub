@@ -128,7 +128,7 @@ The below table identifies the required parameters in the `source` object.
 
 ## PaymentToken Request
 
-The merchant can use the saved tokenized data in order to imitate a [subsequent transaction request](#see-also) using *PaymentToken* as the `sourceType`.
+The merchant can use the saved tokenized data in order to initiate a [subsequent transaction request](#see-also) using *PaymentToken* as the `sourceType`.
 
 <!--
 type: tab

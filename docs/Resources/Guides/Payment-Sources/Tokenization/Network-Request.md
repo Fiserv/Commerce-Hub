@@ -13,7 +13,7 @@ Commerce Hub enables merchants to transmit merchant managed network token result
 
 ## PaymentToken Request
 
-The merchant can use the saved network token data in order to imitate a [subsequent transaction request](#see-also) using *PaymentToken* as the `sourceType`.
+The merchant can use the saved network token data in order to initiate a [subsequent transaction request](#see-also) using *PaymentToken* as the `sourceType`.
 
 <!--
 type: tab
