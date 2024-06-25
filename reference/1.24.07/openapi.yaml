@@ -2247,10 +2247,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ResponsePaymentToken'
-        linkedTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedTransactionDetails'
         additionalDataCommon:
           $ref: '#/components/schemas/AdditionalDataCommon'
         customer:
@@ -2448,10 +2444,6 @@ components:
           $ref: '#/components/schemas/StoredCredentials'
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
-        linkedTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedTransactionDetails'
         target: 
           $ref: '#/components/schemas/Source'
 
@@ -2731,10 +2723,6 @@ components:
           $ref: '#/components/schemas/StoredCredentials'
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
-        linkedTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedTransactionDetails'
         error:
           type: array
           items:
@@ -4556,35 +4544,6 @@ components:
           type: string
           maxLength: 256
           description: 'Value for the custom information.'
-
-    LinkedTransactionDetails:
-      x-model-version: 1.0
-      description: 'Represents a gateway orchestrated child / linked transactions as part of the primary transaction process.'
-      properties:
-        gatewayResponse:
-          $ref: '#/components/schemas/GatewayResponse'
-        transactionDetails:
-          $ref: '#/components/schemas/TransactionDetails'
-        transactionInteraction:
-          $ref: '#/components/schemas/TransactionInteraction'
-        source:
-          $ref: '#/components/schemas/Source'
-        merchantDetails:
-          $ref: '#/components/schemas/MerchantDetails'
-        paymentReceipt:
-          $ref: '#/components/schemas/PaymentReceipt'
-        transactionBatch:
-          $ref: '#/components/schemas/TransactionBatch'
-        networkDetails:
-          $ref: '#/components/schemas/NetworkDetails'
-        additionalDataCommon:
-          $ref: '#/components/schemas/AdditionalDataCommon'
-        paymentTokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResponsePaymentToken'
-        emvDetails:
-          $ref: '#/components/schemas/EmvDetails'
 
     Mastercard:
       x-model-version: 1.0
