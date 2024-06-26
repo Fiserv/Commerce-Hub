@@ -1,10 +1,10 @@
 ---
-tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, Track Data]
+tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, Track Data, Device, Terminal, Point of Sale]
 ---
 
-# Encrypted Device Integration
+# Encrypted Devices
 
-A third-party device or PIN Pad is used to capture the payment source and is connected to the terminal or software that communicates with Commerce Hub. The device encrypts the customer's payment source and sends the encryption data to the terminal or software. The terminal or software initiates the RESTful API transaction with the encrypted payment source from the 3rd party device.
+A third-party device or PIN Pad is used to capture the payment source and is connected to the merchant's hardware or software API that communicates with Commerce Hub. The device encrypts the customer's payment source and sends the encryption data to the API integration. The merchant's integration initiates the RESTful API transaction with the encrypted payment source from the third-party device.
 
 The benefits of an encrypted device solution are:
 
