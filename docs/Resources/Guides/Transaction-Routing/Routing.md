@@ -16,13 +16,13 @@ Commerce Hub offers the following transaction routing solutions.
 
 <!-- type: card
 title: Directed Routing
-description: Allows a merchant to override the routing decision.
+description: Allows a multi-acquiring merchant to override the routing decision.
 link: ?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md
 -->
 
 <!-- type: card
 title: Intelligent Routing
-description: A multi-acquiring merchant can sign-up for Intelligent routing when processing with multiple processors.
+description: A multi-acquiring merchant can sign-up for Intelligent Routing when processing with multiple processors.
 link: ?path=docs/Resources/Guides/Transaction-Routing/Intelligent-Routing.md#intelligent-routing
 -->
 
@@ -30,12 +30,6 @@ link: ?path=docs/Resources/Guides/Transaction-Routing/Intelligent-Routing.md#int
 title: Least Cost Debit Routing
 description: Merchants can subscribe to our Least Cost Debit Routing soulution to enable seemless processing of standard and hybrid debit cards.
 link: ?path=docs/Resources/Guides/Transaction-Routing/Intelligent-Routing.md#least-cost-debit-routing
--->
-
-<!-- type: card
-title: Smart Routing
-description: Smart Routing offers merchants the ability to override the default debit network for the debit card and allows the terminal to process the transaction via the lowest cost network.
-link: 
 -->
 
 <!-- type: row-end -->
