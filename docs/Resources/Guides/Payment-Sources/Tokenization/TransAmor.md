@@ -20,7 +20,7 @@ TransAmor is a secure [tokenization service](?path=docs/Resources/FAQs-Glossary/
 
 ## Tokenization Request
 
-The merchant can initiate a tokens request in order to generate a TransARmor token for the payment source without authorization.
+The merchant can initiate a tokens request in order to generate a TransArmor token for the payment source without authorization.
 
 <!--
 type: tab
@@ -109,7 +109,7 @@ Example of a tokenization (201: Created) response.
 #### Request Variables
 
 <!-- theme: warning -->
-> Account verification can be performed by submitting `accountVerification`*:true* in `transactionDetails`.  If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must also be submitted in the request.
+> Account verification can be performed by submitting `accountVerification`: *true* in `transactionDetails`. If a multi-use token is required the [stored credential details](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request.
 
 <!--
 type: tab
@@ -120,7 +120,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type| Maximum Length | Description|
 |---------|----------|----------------|---------|
-|`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+| `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
 <!-- type: tab-end -->
 
