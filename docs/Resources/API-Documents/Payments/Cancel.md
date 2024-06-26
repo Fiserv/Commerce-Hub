@@ -4,7 +4,7 @@ tags: [Cancel, Void, Payments, API Reference]
 
 # Cancels
 
-When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel (void) request to the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
+When a customer cancels the order or if fraud is suspected, the merchant will need to release the original authorization by issuing a cancel *(void)* request to the original Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 <!-- theme: warning -->
 > A cancel request can be initiated against an [authorization](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), or a [sale](?path=docs/Resources/API-Documents/Payments/Charges.md) that has not been settled (batched), otherwise submit a [refund](?path=docs/Resources/API-Documents/Payments/Refund.md) request.
@@ -14,13 +14,10 @@ When a customer cancels the order or if fraud is suspected, the merchant will ne
 Cancels can be initiated for the full amount or a partial amount of the original authorization.
 
 - **Partial Cancel:** A request submitted with the `amount` object for a partial `total`.
-- **Full Cancel:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+- **Full Cancel:** Can be submitted without the `amount` object to cancel the full `total`, or submitted with the `amount` object for the full `total`.
 
 <!-- theme: info -->
-> Commerce Hub currently only supports partial cancels for [terminal direct settlement](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture) on the Nashville front-end processor.
-
-<!-- theme: info -->
-> To support partial cancels it must be configured in Merchant Boarding and Configuration. Please contact your account representative for details.
+> Commerce Hub currently only supports partial cancels for [terminal direct](?path=docs/Resources/FAQs-Glossary/Glossary.md#direct-capture) and [gateway](?path=docs/Resources/FAQs-Glossary/Glossary.md#gateway-capture) settlement on the Nashville front-end processor.
 
 ---
 
