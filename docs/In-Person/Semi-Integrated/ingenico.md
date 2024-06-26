@@ -65,4 +65,3 @@ See the [Ingenico Developer Portal](https://developer.ingenico.us/) for informat
 ## See Also
 
 - [Semi-Integrated Devices](?path=docs/In-Person/Integrations/Semi-Integrated.md)
-- 
