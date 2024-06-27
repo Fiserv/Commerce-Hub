@@ -161,10 +161,10 @@ type: tab
 titles: authOptimizationDetails
 -->
 
-The below table identifies the parameters in the `transactionDetails` object.
+The below table identifies the parameters in the `authOptimizationDetails` object.
 
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
+| Variable | Type | Maximum Length | Description |
+| ----- | :-----: | :-----: | ----- |
 | `overrideFlag` | *boolean* | N/A | Indicator used to override the Authorization Optimization merchant configuration per transaction. |
 
 <!-- type: tab-end -->
@@ -180,8 +180,8 @@ titles: authOptimizationDetails
 
 The below table identifies the parameters in the `authOptimizationDetails` object.
 
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
+| Variable | Type | Maximum Length | Description |
+| ----- | :-----: | :-----: | ----- |
 | `accountStatus` | *string* |  | Indicates the current status of the account |
 | `accountUpdaterErrorCode` | *string* |  | Error code provided the account updater system |
 | `originalHostResponseCode` | *string* |  | Original `hostReponseCode` for re-authorized *(Optimized)* transaction |
@@ -190,7 +190,7 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 ##### Account Status Reason
 
 | Variable | Description |
-|---------|----------|
+| ----- | ----- |
 | *ACCOUNT_CHANGE* | Original account number has changed |
 | *ACCOUNT_CLOSED* | Original account number is closed |
 | *EXPIRATION_CHANGE* | Original card expiration has changed |
