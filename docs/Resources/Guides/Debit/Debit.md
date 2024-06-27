@@ -49,13 +49,13 @@ Commerce Hub allows the merchant to optimize the debit transaction by routing th
 <!-- type: card
 title: Directed Routing
 description: Directed Routing allows merchants to send transactions to a specific debit network based on cost, approval rates, liability shift and ticket size.
-link: docs/Resources/Guides/Directed-Routing.md
+link: docs/Resources/Guides/Transaction-Routing/Directed-Routing.md
 -->
 
 <!-- type: card
 title: Least Cost Debit
 description: Least Cost Debit Routing capabilities use a single API interface, for both standard processing and optimized debit routing. When enabled for this service, debit transactions are sent in a standard charges request with no additional coding.
-link: 
+link: docs/Resources/Guides/Transaction-Routing/Intelligent-Routing.md
 -->
 
 <!-- type: card

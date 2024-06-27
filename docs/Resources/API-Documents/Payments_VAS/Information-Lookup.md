@@ -9,7 +9,7 @@ Account information lookup _(BIN lookup)_ is used to obtain the [card meta data]
 The card details can be used to determine;
 
 - **Card Processing Requirements (CPS):** based on brand, function, type _(commercial, non-corporate)_
-- **[Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md):** sending the request to a network based on card brand, function or type
+- **[Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 
 <!-- theme: info -->
 > Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
@@ -118,7 +118,7 @@ type: tab
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 - [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
-- [Directed Routing](?oath=docs/Resources/Guides/Directed-Routing.md)
+- [Directed Routing](?oath=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

@@ -220,7 +220,7 @@ Example of a charge (201: Created) response
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
-- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 

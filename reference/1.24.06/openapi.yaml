@@ -5344,7 +5344,7 @@ components:
 
     Processor:
       x-model-version: 1.0
-      description: 'Identifies the <a href="../docs?path=docs/Resources/Guides/Directed-Routing.md&branch=main#tab-processors">card processor</a>.'
+      description: 'Identifies the <a href="../docs?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md&branch=main#tab-processors">card processor</a>.'
       properties:
         processorName:
           type: string
