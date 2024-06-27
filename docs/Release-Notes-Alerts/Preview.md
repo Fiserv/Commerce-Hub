@@ -27,7 +27,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Version 1.24.07: added new network token models | Feature |
 | Merchant managed [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Request.md) passthrough support | Feature |
-| [Partial cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) supported for terminal direct settlement on Nashville | Feature |
+| [Partial cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) supported for terminal direct and gateway settlement on Nashville | Feature |
 | [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support PIN debit processing | Update |
 
 ---
