@@ -51,7 +51,7 @@ docs/Resources/Guides/Payeezy/Payeezy-Migration-Features3DS.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesLevel23.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTimeoutReversal.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTerminalSettlement.md
-docs/Resources/Guides/Debit/Least-Cost-Debit.md
+docs/Resources/Guides/Debit/Smart-Routing.md
 docs/In-Person/Integrations/Fully-Integrated.md
 docs/In-Person/Integrations/Semi-Integrated.md
 docs/In-Person/Encrypted-Payments/Contactless.md
@@ -65,5 +65,5 @@ docs/Resources/Guides/Testing/Test-Fraud.md
 docs/Resources/Guides/Testing/Test-Integration.md
 docs/Resources/Master-Data/Commodity-Codes-Old.md
 docs/Resources/Guides/Payment-Sources/Tokenization/Secure-Vault.md
-docs/Resources/Guides/Payment-Sources/Tokenization/Network-CH-Managed.md
+docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token-Request.md
 docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-V1_V2_Comparison.md

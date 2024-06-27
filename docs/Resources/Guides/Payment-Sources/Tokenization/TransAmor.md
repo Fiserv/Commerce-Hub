@@ -2,54 +2,35 @@
 tags: [Stored Credentials, Token, Tokenization, API Reference]
 ---
 
-# TransAmor
+# TransAmor Tokenization
 
-TransAmor is a secure **[Tokenization](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization)** service that helps merchants protect sensitive payment data. Through TransAmor, merchants can replace sensitive payment information, such as credit card numbers, with non-sensitive equivalents known as tokens. Merchants can tokenize payment sources as part of various transactions, including [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request either by including a tokenization request in the transaction or by sending a separate request to the tokens endpoint
+TransAmor is a secure [tokenization service](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization) that helps merchants protect sensitive payment data. Through TransAmor, merchants can replace sensitive payment information, such as credit card numbers, with non-sensitive equivalents known as tokens. Merchants can tokenize payment sources as part of various transactions, including [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled for TransArmor or by sending a separate request to the [tokens endpoint](#tokenization-request).
+
+<!-- theme: info -->
+> If available Commerce Hub will also return any third-party processor tokens.
 
 - **Customer Authorized:** Customer authorizes storage of their payment data in a website, app or software as a payment token for subsequent or bill pay transactions.
   - Requires the use of [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) (Credentials on File) in the requests.
 - **Merchant Stored:** Merchant requires a token to be stored in their software or terminal for subsequent transaction and batching.
 
----
-
-## Parameters
-
-### Request Variables
-
-The merchant can initiate token request in order to generate a token for the payment source without authorization.
-
 <!-- theme: warning -->
-> Account verification can be performed by submitting `accountVerification`_:true_ in `transactionDetails`.  If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must also be submitted in the request.
-
-<!--
-type: tab
-titles: source
--->
-
-The below table identifies the required parameters in the `source` object.
-
-| Variable | Type| Maximum Length | Description|
-|---------|----------|----------------|---------|
-|`sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
-
-<!-- type: tab-end -->
+> Merchants are required to have the relevant Payment Card Industry *(PCI)* Compliance capabilities to process and store card data.
 
 ---
 
-### Endpoint
-<!-- theme: success -->
->**POST** `/payments-vas/v1/tokens`
+## Tokenization Request
 
----
-
-### Payload Example
+The merchant can initiate a tokens request in order to generate a TransArmor token for the payment source without authorization.
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a token only payload request.
+<!-- theme: success -->
+> **POST** `/payments-vas/v1/tokens`
+
+The example below contains the minimum [parameters](#parameters) for a successful TransArmor tokenization request using *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens).
 
 ```json
 {
@@ -123,84 +104,51 @@ Example of a tokenization (201: Created) response.
 
 ---
 
-## PaymentToken Request
+### Parameters
 
-The merchant can use the saved tokenized data in order to imitate a subsequent transaction request.
+#### Request Variables
 
----
-
-### Requirements
-
-<!--
-type: tab
-titles: amount, source, card
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-|Variable |  Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `total` | _number_ | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
+<!-- theme: warning -->
+> Account verification can be performed by submitting `accountVerification`: *true* in `transactionDetails`. If a multi-use token is required the [stored credential details](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request.
 
 <!--
 type: tab
+titles: source
 -->
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|---|
-| `sourceType` | _string_ | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). |
-| `tokenData` | _string_ | 2048 | &#10004; |Token created from the payment source. |
-| `PARId` | _string_ | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer.|
-| `declineDuplicates` | _boolean_ | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source. |
-| `tokenSource` | _string_ | | &#10004; |Source for the Token Provider (TSP). Valid Value: TRANSARMOR |
-| `card` | _object_ | | &#10004; | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `card` object.
-
-| Variable | Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|---|
-| `card` | _object_ | | &#10004; |Contains card specific information. |
-| `expirationMonth` | _string_ | 2 | &#10004; |Card expiration month. |
-| `expirationYear` | _string_ | 4 | &#10004; |Card expiration year. |
+| Variable | Type| Maximum Length | Description|
+|---------|----------|----------------|---------|
+| `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
 <!-- type: tab-end -->
 
 ---
 
-### Endpoint
+## PaymentToken Request
 
-<!-- theme: success -->
->**POST** `/payments/v1/charges`
-
----
-
-### Payload Example
+The merchant can use the saved tokenized data in order to initiate a [subsequent transaction request](#see-also) using *PaymentToken* as the `sourceType`.
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request with PaymentToken.
+The example below contains the minimum [parameters](#parameters-1) for a successful TransArmor token [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using *PaymentToken*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
-    "PARId": "1234",
-    "declineDuplicates": true,
     "tokenSource": "TRANSARMOR",
     "card": {
       "expirationMonth": "03",
@@ -241,15 +189,8 @@ Example of a charge (200: Success) response.
   "paymentReceipt": {
     "approvedAmount": {
       "currency": "USD",
-      "total": "12.04"
+      "total": 12.04
     },
-    "merchantAddress": "123 Peach Ave",
-    "merchantCity": "Atlanta",
-    "merchantCountry": "US",
-    "merchantName": "Merchant Name",
-    "merchantPostalCode": "12345",
-    "merchantStateOrProvince": "GA",
-    "merchantURL": "https://www.somedomain.com",
     "processorResponseDetails": {
       "approvalCode": "OK5882",
       "approvalStatus": "APPROVED",
@@ -280,11 +221,48 @@ Example of a charge (200: Success) response.
     "tokenSource": "TRANSARMOR"
   },
   "transactionDetails": {
-    "captureFlag": true,
-    "merchantInvoiceNumber": "123456789012"
+    "captureFlag": true
   }
 }
 ```
+<!-- type: tab-end -->
+
+---
+
+### Parameters
+
+#### Request Variables
+
+<!-- theme: info -->
+> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
+
+<!--
+type: tab
+titles: source, card
+-->
+
+The below table identifies the parameters in the `source` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+| ----- | :-----: | :-----: | :-----: | ----- |
+| `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+| `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
+| `tokenSource` | *string* | | &#10004; | The token source is *TRANSARMOR* |
+| `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer |
+| `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source |
+| `card` | *object* | | &#10004; | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `card` object.
+
+| Variable | Type| Maximum Length | Required | Description |
+| ----- | :-----: | :-----: | :-----: | ----- |
+| `expirationMonth` | *string* | 2 | &#10004; | 2-digit card expiration month |
+| `expirationYear` | *string* | 4 | &#10004; | 4-digit card expiration year |
+
 <!-- type: tab-end -->
 
 ---
