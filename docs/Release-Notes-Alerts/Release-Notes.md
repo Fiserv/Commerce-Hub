@@ -16,6 +16,23 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## July 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** June 20th 2024
+- **Production:** June 26th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.07: added new network token models | Feature |
+| Merchant managed [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Request.md) passthrough support | Feature |
+| [Partial cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) supported for terminal direct settlement on Nashville | Feature |
+| [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support PIN debit processing | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## June 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
