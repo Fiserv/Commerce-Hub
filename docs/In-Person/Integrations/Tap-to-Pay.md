@@ -108,7 +108,7 @@ do {
 }
 ```
 
-##### Is Account Linked
+#### Is Account Linked
 
 When targeting iOS 16.4 or greater, the option to check if the account is already linked is [available](https://developer.apple.com/documentation/proximityreader/paymentcardreader/isaccountlinked(using:)).
 
@@ -152,6 +152,9 @@ titles: Charges, Cancels, Refunds, Inquiry
 
 <!-- theme: info -->
 > Currently Tap to Pay on iPhone only supports USD.
+
+<!-- theme: warning -->
+> If the card used for the charges request is a PIN debit, the user will see a PIN entry screen after tapping the card.
 
 ```Swift
 let amount = 10.99
@@ -197,14 +200,16 @@ do {
 type: tab
 -->
 
-#### Tap Refunds Requests
+#### Refunds Requests
 
 ##### Refund a Payment without Tap
 
 ###### Tagged Refund
 
-<!-- theme: info -->
-> At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform a [Tagged Refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md).
+At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform a [Tagged Refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md).
+
+<!-- theme: warning -->
+> When processing a PIN debit refund request, submit a refund pyment with tap using an unmatched tagged refund.
 
 ```Swift
 let amount = 10.99
@@ -226,6 +231,9 @@ The `fiservTTPCardReader.refundCard` API supports both [unmatched tagged refunds
 ###### Unmatched Tagged Refund
 
 At least one [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md) must be provided to perform an [unmatched tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Unmatched.md).
+
+<!-- theme: warning -->
+> If the card used for the refund request is a PIN debit, the user will see a PIN entry screen after tapping the card.
 
 ```Swift
 let amount = 10.99
