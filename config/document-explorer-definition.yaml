@@ -91,7 +91,7 @@
     sections:
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
-    - title: Auth Optimization
+    - title: Authorization Optimization
       link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
     - title: Custom Identifiers
       link: docs/Resources/Guides/BYOID.md
