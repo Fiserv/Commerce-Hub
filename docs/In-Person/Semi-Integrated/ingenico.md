@@ -21,10 +21,6 @@ Commerce Hub and Ingenico have partnered together to offer out of the box, EMV L
 
 Ingenico's Axium devices are an out of the box on the device, however, customization of screens, Android layouts, data collection, branding etc. are still possible on the terminal. This will require merchant to engage with Ingenico directly to validate and create a signed package. Terminal profile setup, estate management, life cycle management, replacement and repair services are handled using Ingenico's Hosted Estate Management *(HEM)* framework.
 
-### Supported Devices
-
-?????
-
 ---
 
 ## Integration Methods
@@ -65,4 +61,5 @@ See the [Ingenico Developer Portal](https://developer.ingenico.us/) for informat
 ## See Also
 
 - [Semi-Integrated Devices](?path=docs/In-Person/Integrations/Semi-Integrated.md)
-- 
+
+---
