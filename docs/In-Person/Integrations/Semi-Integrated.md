@@ -13,7 +13,7 @@ Semi-integrated solutions run on a combination of Commerce Hub and third-party h
 3. The merchant's device submits the payload to Commerce Hub.
 4. Commerce Hub attempts to process the transaction and sends the response to the merchant's device.
 5. The merchant's device sends the final outcome to their hardware or software.
-6. Subsequent transactions, excluding PIN based payments, are submitted by the merchant's hardware or sofware. PIN based payments are resubmitted by the device.
+6. Subsequent transactions are handled based on the partner's semi-integrated implementation.
 
 ---
 
