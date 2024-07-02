@@ -73,7 +73,7 @@ Example of a charge payload request using PaymentCard for Manual Entry.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
    "source":{
@@ -131,7 +131,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
     },
     "merchantName": "Merchant Name",
