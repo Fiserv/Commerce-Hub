@@ -213,7 +213,7 @@
       - title: Credentials
         link: docs/Resources/API-Documents/Security/Credentials.md
       - title: Key Management
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md   
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:
   - title: Release Notes
     sections:
