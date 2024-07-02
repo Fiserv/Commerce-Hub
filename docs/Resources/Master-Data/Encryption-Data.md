@@ -17,7 +17,7 @@ The below table identifies the parameters in the `encryptionData` object.
 | -------- | ---- | ------- | -------------------------------|
 | `encryptionType` | *string* | 256 | [Encryption type](#encryption-type) to be passed. |
 | `encryptionTarget` | *string* | 256 | [Encryption target](#encryption-target) identifies the data based on how it is entered into the POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. |
-| `encryptionBlock` | *string* | 2000 | This field contains the track data or card number provided in encrypted form. |
+| `encryptionBlock` | *string* | 2000 | This field contains the track data or card data provided in encrypted form. |
 | `deviceType` | *string* | 256 | [Device type](#device-type) that needs to be sent for TDES and AES encrypted track data. |
 | `securitykeyUpdateIndicator` | *boolean* |  | Provided in response. POS is expected to download updated key, key cert. |
 | `keyId` | *string* | 40 | Provided encryption key required for decryption of data that is encrypted. This field must be submitted for encryption request messages sending manual PAN, Track 1, or Track 2 data that is encrypted. |
@@ -32,28 +32,29 @@ JSON string format for `encryptionData`:
 
 ```json
 {
-   "encryptionData":{
-      "encryptionType": "RSA",
-      "encryptionTarget": "TRACK_2",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
-      "deviceType": "INGENICO",
-      "securitykeyUpdateIndicator": false,
-      "keyId": "88000000023",
-      "encryptedKey": "NdCmVw5..."
-   }
-} 
+  "encryptionData": {
+    "encryptionType": "RSA",
+    "encryptionTarget": "TRACK_2",
+    "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
+    "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+    "deviceType": "INGENICO",
+    "securitykeyUpdateIndicator": false,
+    "keyId": "88000000023",
+    "encryptedKey": "NdCmVw5..."
+  }
+}
 ```
 
 <!-- type: tab-end -->
 
 ---
 
-### Encryption Type
+## Encryption Type
 
 Encryption type is the method used to encrypt payment data before sending it to Commerce Hub.
 
 | Valid Values | Details |
-| ----- | ----- | 
+| ----- | ----- |
 | *RSA* | RSA Software Encryption (public/private keys) |
 | *VERIFONE* | VeriFone Hardware Encryption – Currently not supported |
 | *VERIFONE_VDR* | |
@@ -64,28 +65,28 @@ Encryption type is the method used to encrypt payment data before sending it to 
 
 ---
 
-### Encryption Target
+## Encryption Target
 
 | Valid Values | Details |
-| ----- | ----- | 
-| *MANUAL* | When card data is manually entered into a POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. | 
+| ----- | ----- |
+| *MANUAL* | When card data is manually entered into a POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. |
 | *TRACK1* | When track 1 card data is swiped into a POS device or terminal (Mag stripe) |
 | *TRACK2* | When track 2 card data is swiped, dipped, or tapped into a POS device/terminal (Mag stripe, EMV, NFC/Contactless) |
 | *BOTH* | When track 1 and 2 card data is swiped, dipped, or tapped into a POS device/terminal (Mag stripe, EMV, NFC/Contactless) |
 
 ---
 
-### Device Type
+## Device Type
 
 | Valid Values | Details |
-| ----- | ----- | 
-| *INGENICO* | Default | 
+| ----- | ----- |
+| *INGENICO* | Default |
 | *RPXXX* | |
 | *CLOVER* | |
 | *NCR* | |
 | *NCRTLV* | |
 
---- 
+---
 
 ## See Also
 

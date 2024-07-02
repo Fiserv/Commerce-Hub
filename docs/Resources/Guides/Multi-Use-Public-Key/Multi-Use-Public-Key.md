@@ -1,5 +1,5 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
+tags: [Multi-Use Public Key, RSA, Payment Card, Payment EMV, Payment Track]
 ---
 
 # Multi-Use Public Key Encryption

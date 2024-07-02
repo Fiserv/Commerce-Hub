@@ -6,7 +6,7 @@ tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source, Devic
 
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment device using a magnetic stripe _(magstripe)_. This can be used when the payment device fails to obtain the card details from the [card's chip](?path=docs/In-Person/Encrypted-Payments/EMV.md).
 
-A device encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub.
+A device encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub. The `sourceType` _PaymentTrack_ is used to submit a transaction to our application.
 
 <!--
 type: tab
@@ -14,7 +14,7 @@ titles: source
 -->
 
 <!-- theme: danger -->
-> Commerce Hub requires all payment cards to be encrypted, it is not recommended to send unencrypted `track1Data` or `track2Data` for the payment transaction.
+> Commerce Hub requires all payment cards to be encrypted, it is not recommended to send unencrypted `track1Data` or `track2Data` for the payment transaction. Plain track data is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
 
 The below table identifies the parameters in the `source` object.
 
@@ -402,6 +402,7 @@ The below table identifies the required parameters in the `pinBlock` object.
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---
