@@ -238,6 +238,6 @@ Below are some of the examples of offline transactions and the multi-use public 
 
 - [Multi Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
 - [Multi Use Public Key Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md)
-- [Multi Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
+- [Multi Use Public Key](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 
 ---

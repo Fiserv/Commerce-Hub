@@ -1,12 +1,15 @@
 ---
-tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments, Payment Source]
+tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments, Payment Source, Device, Terminal]
 ---
 
-# Encrypted Manual Entry
+# Encrypted Manual Key Entry
 
-Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually entering the payment source details a payment terminal. This can be used when the payment terminal fails to obtain the card details from the card's chip or magnetic stripe.
+Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually entering the payment source details into a payment device. This can be used when the payment device fails to obtain the card details from the [card's chip](?path=docs/In-Person/Encrypted-Payments/EMV.md) or [magnetic stripe](?path=docs/In-Person/Encrypted-Payments/Track.md).
 
-A device encrypts the customer's payment source and sends the encryption data to Commerce Hub.
+A device encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub.
+
+<!-- theme: danger -->
+> Commerce Hub requires all payment cards to be encrypted, it is not recommended to send unencrypted `cardData` for the payment transaction.
 
 ---
 
