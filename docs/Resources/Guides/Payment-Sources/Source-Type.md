@@ -258,7 +258,7 @@ type: tab
 titles: PaymentToken, PaymentSession
 -->
 
-A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a created by submitting a token request using a payment source to Commerce Hub or is a created by submitting a request to the processing networks _(Visa, Mastercard, AMEX or Discover)_ using a payment card. Both can be used to submit a `PaymentToken` transaction to Commerce Hub.
+A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a created by submitting a token request using a payment source to Commerce Hub or is a created by submitting a request to the processing networks _(Visa, Mastercard, AMEX or Discover)_ using a payment card. Both can be used to submit a transaction to Commerce Hub.
 
 ```json
 {
