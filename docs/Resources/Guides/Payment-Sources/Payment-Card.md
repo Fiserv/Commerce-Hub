@@ -52,6 +52,9 @@ titles: Request, Response
 
 The example below contains the minimum [parameters](#parameters) for a successful [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using a _PaymentCard_ encrypted with [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
+
 ```json
 {
   "amount": {
