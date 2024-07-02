@@ -44,7 +44,7 @@ Example of a charge payload request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -163,7 +163,7 @@ The following security settings are recommended to limit the potential for fraud
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [RESTful API Guide](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)

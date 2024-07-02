@@ -6,10 +6,28 @@ tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source, Devic
 
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment device using a magnetic stripe _(magstripe)_. This can be used when the payment device fails to obtain the card details from the [card's chip](?path=docs/In-Person/Encrypted-Payments/EMV.md).
 
-A device encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub.
+A device encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub. The `sourceType` _PaymentTrack_ is used to submit a transaction to our application.
+
+<!--
+type: tab
+titles: source
+-->
 
 <!-- theme: danger -->
-> Commerce Hub requires all payment cards to be encrypted, it is not recommended to send unencrypted `track1Data` or `track2Data` for the payment transaction.
+> Commerce Hub requires all payment cards to be encrypted, it is not recommended to send unencrypted `track1Data` or `track2Data` for the payment transaction. Plain track data is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+
+The below table identifies the parameters in the `source` object.
+
+<!-- theme: info -->
+> When the device has the ability to read both track 1 and track 2 data, track 2 data should be provided in the authorization request, except for Amex.
+
+| Variable | Type | Length | Required | Description |
+| -------- | -- | ------------ | ---------| --------- |
+| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentTrack_ for magnetic stripe transactions |
+| `track1Data` | _string_ | N/A | | This field contains the information encoded from a valid track 1 magnetic stripe read, excluding the start sentinel, end sentinel, and Longitudinal Record Check _(LRC)_. It includes information such as the cardholder's name, primary account number _(PAN)_, expiration date and discretionary data. The entire track data must be forwarded intact |
+| `track2Data` | _string_ | N/A | |  This field contains the information encoded from a valid track 2 magnetic stripe read. It includes information such as the primary account number _(PAN)_, expiration date and discretionary data. Entire Track Data must be forwarded intact _(excludes Start Sentinel, End Sentinel and Longitudinal Redundancy Check)_ |
+
+<!-- type: tab-end -->
 
 ---
 
@@ -162,9 +180,7 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
-| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentTrack_ for Magnetic stripe transactions |
-| `track1Data` | _string_ | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
-| `track2Data` | _string_ | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
+| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentTrack_ for magnetic stripe transactions |
 | `encryptionData` | _object_ | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
 
 <!--
@@ -175,10 +191,10 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `encryptionType` | _string_ | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
+| `encryptionType` | _string_ | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed |
 | `encryptionTarget` | _string_ | 256 |  &#10004; | Target can be TRACK_1, TRACK_2, or BOTH |
-| `encryptionBlock` | _string_ | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `deviceType` | _string_ | 256 |  &#10004; | [Device type](?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `encryptionBlock` | _string_ | 2000 |  &#10004; | This field contains the track data provided in encrypted form |
+| `deviceType` | _string_ | 256 |  &#10004; | [Device type](?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data |
 | `keyId` | _string_ | 64 | | Required if track data is encrypted |
 
 <!-- type: tab-end -->
@@ -344,11 +360,9 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentTrack_ for Track transactions |
-| `track1Data` | _string_ | N/A | | Contains the unencrypted magnetic stripe track 1 data from a payment card |
-| `track2Data` | _string_ | N/A | |  Contains the unencrypted magnetic stripe track 2 data from a payment card |
+| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentTrack_ for magentic stripe transactions |
 | `encryptionData` | _object_ | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
-| `pinBlock` | _object_ | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
+| `pinBlock` | _object_ | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required |
 
 <!--
 type: tab
@@ -358,10 +372,10 @@ The below table identifies the parameters in the `encryptionData` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `encryptionType` | _string_ | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. Example (ON_GAURD) |
+| `encryptionType` | _string_ | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed |
 | `encryptionTarget` | _string_ | 256 |  &#10004; | Target can be TRACK_1, TRACK_2, or BOTH |
-| `encryptionBlock` | _string_ | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `deviceType` | _string_ | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data. Example (INGENICO) |
+| `encryptionBlock` | _string_ | 2000 |  &#10004; | This field contains the track data provided in encrypted form |
+| `deviceType` | _string_ | 256 |  &#10004; | [Device type](?path=?path=docs/Resources/Master-Data/Encryption-Data.md#device-type) need to be sent for TDES and AES encrypted track data |
 | `keyId` | _string_ | 64 | | Required if track data is encrypted |
 
 <!--
@@ -372,9 +386,9 @@ The below table identifies the required parameters in the `pinBlock` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `encryptedPin` | _string_ | 2000 |  &#10004; | This field contains the Encrypted PIN Block for Debit, EBT, Fleet or Credit transactions. |
-| `keySerialNumber` | _string_ | 256 |  &#10004; | This field is used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. |
-| `pinEncryptionWorkingKey` | _string_ | 2000 |  &#10004; | Terminal PIN Encryption working key (TKPE). A PIN Encryption Key is a used to protect PINs as they are transmitted. |
+| `encryptedPin` | _string_ | 2000 |  &#10004; | This field contains the Encrypted PIN Block for Debit, EBT, Fleet or Credit transactions |
+| `keySerialNumber` | _string_ | 256 |  &#10004; | This field is used to create the base PIN encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions |
+| `pinEncryptionWorkingKey` | _string_ | 2000 |  &#10004; | Terminal PIN Encryption working key _(TKPE)_. A PIN Encryption Key is a used to protect PINs as they are transmitted |
 
 <!-- type: tab-end -->
 
@@ -388,6 +402,7 @@ The below table identifies the required parameters in the `pinBlock` object.
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Encrypted PIN Data](?path=docs/Resources/Master-Data/Pin-Block.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---

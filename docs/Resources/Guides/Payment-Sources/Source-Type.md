@@ -84,9 +84,9 @@ type: tab
     "encryptionData": {
       "encryptionType": "RSA",
       "encryptionTarget": "TRACK_2",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS.....",
       "deviceType": "INGENICO",
-      "keyId": ""
+      "keyId": "88000000022"
     }
   }
 }
@@ -98,13 +98,13 @@ type: tab
 {
   "source": {
     "sourceType": "PaymentEMV",
-    "emvData": "0249F3704833A12329F1002AB34",
+    "emvData": "0369F3704834A12329F1002AB25",
     "encryptionData": {
       "encryptionType": "RSA",
-      "encryptionTarget": "TRACK_1",
-      "encryptionBlock": "fjzH9it7ukbeP6Fa4jdqAO/gCRvCMC2qVG5q9PbFTKmjQfxv35rqp3Bq5EkVwh5SOj/eSEeM.....",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "fjzH9it7ukbeP6Fa4jdqAO/gCRvCMC2qVG5q9PbFTKmj.....",
       "encryptionBlockFields": "track1Data:34",
-      "keyId": "88000000022",
+      "keyId": "78001000062",
       "deviceType": "INGENICO"
     }
   }
@@ -128,7 +128,7 @@ type: tab
       "encryptionTarget": "TRACK_2",
       "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
       "deviceType": "INGENICO",
-      "keyId": "88000000023"
+      "keyId": "88000000022"
     }
   }
 }
@@ -143,9 +143,9 @@ type: tab
     "encryptionData": {
       "encryptionType": "RSA",
       "encryptionTarget": "TRACK_2",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
-      "encryptionBlockFields": "track2Data:34",
-      "keyId": "88000000022",
+      "encryptionBlock": "=q4TmiL1SSZC8QyBpj/....",
+      "encryptionBlockFields": "track2Data:36",
+      "keyId": "78001000062",
       "deviceType": "INGENICO"
     }
   }
@@ -160,7 +160,7 @@ Unencrypted [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is 
 {
   "source": {
     "sourceType": "PaymentTrack",
-    "track1Data": "B4000340099900505^John/Doe ^22251110000123000"
+    "track2Data": "4445222299990007=14125025432198712345"    
   }
 }
 ```
@@ -258,15 +258,13 @@ type: tab
 titles: PaymentToken, PaymentSession
 -->
 
-A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a created by submitting a token request using a payment source to Commerce Hub or is a created by submitting a request to the processing networks _(Visa, Mastercard, AMEX or Discover)_ using a payment card. Both can be used to submit a `PaymentToken` transaction to Commerce Hub.
+A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a created by submitting a token request using a payment source to Commerce Hub or is a created by submitting a request to the processing networks _(Visa, Mastercard, AMEX or Discover)_ using a payment card. Both can be used to submit a transaction to Commerce Hub.
 
 ```json
 {
   "source": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
-    "PARId": "1234",
-    "declineDuplicates": true,
     "tokenSource": "TRANSARMOR",
     "card": {
       "expirationMonth": "03",

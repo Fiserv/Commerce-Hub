@@ -1,13 +1,13 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key]
+tags: [Multi-Use Public Key, RSA, Payment Card, Payment EMV, Payment Track]
 ---
 
 # Multi-Use Public Key Encryption
 
-The merchant uses a [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md) for the asymmeteric _PaymentCard_ encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.
+The merchant uses a [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md) for the asymmeteric encryption of _PaymentCard_, _PaymentEMV_ and _PaymentTrack_ card data, allowing the merchant the ability to securely store and send the data to Commerce Hub at a later time.
 
 <!-- theme: info -->
-> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves validation purposes.
+> Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) [online, digital or mobile payment](?path=docs/Getting-Started/Getting-Started-Online.md) request when using a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves cardholder validation purposes.
 
 ---
 
@@ -17,7 +17,7 @@ The `encryptionBlock` field is passed through the `PaymentCard` request to encry
 
 ```javascript
 const cardData = {
-    "cardData": "4141414141414141",
+    "cardData": "4005550000000019",
     "nameOnCard": "Joe Bloggs",
     "expirationMonth": "01",
     "expirationYear": "2034",
@@ -25,11 +25,10 @@ const cardData = {
 }
   
 const encryptionBlock =  Object.values(cardData).join(""));
-
 ```
 
 <!-- theme: example -->
-> encryptionBlock = 4111111111111111Joe Bloggs123122034
+> encryptionBlock = 4005550000000019Joe Bloggs123122034
 
 ---
 
@@ -39,7 +38,7 @@ The `encryptionBlockFields` when generated contains a string of card data fields
 
 ```javascript
 const cardData = {
-    "cardData": "4141414141414141",
+    "cardData": "4005550000000019",
     "nameOnCard": "Joe Bloggs",
     "expirationMonth": "01",
     "expirationYear": "2034",
@@ -47,7 +46,6 @@ const cardData = {
 }
   
 const encryptionBlockFields = Object.keys(cardData).map(key => `card.${key}:${encoder.encode(cardData[key]).length}`).join(',');
-
 ```
 
 <!-- theme: example -->
@@ -60,7 +58,6 @@ const encryptionBlockFields = Object.keys(cardData).map(key => `card.${key}:${en
 A [generate key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md#generate-key) request is required  to receive a base64 encoded encryption key. This key is used to encrypt the `encryptionBlock` that was created in step 1.
 
 ```javascript
-
 const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {  const keyBuf = toArrayBuffer(window.atob(base64PubKey));
   const pubKeyDer = await window.crypto.subtle.importKey("spki", keyBuf, { name: "RSA-OAEP", hash: "SHA-256", }, true, ["encrypt"]);
   const encryptedBlock = await window.crypto.subtle.encrypt({name: "RSA-OAEP",}, pubKeyDer, new TextEncoder().encode(sourceString));
@@ -68,7 +65,6 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {  const key
 };
 
 const toBase64Encode = (arrayBuffer) => window.btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
-
 ```
 
 ---
@@ -88,7 +84,6 @@ The below table identifies the parameters in the `encryptionData` object.
 | `encryptionBlockFields` | _string_ | 256 | ncryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
 
 ```javascript
-
 encryptionData: {
   keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
   encryptionType: "RSA",
@@ -96,7 +91,6 @@ encryptionData: {
   encryptionBlockFields: "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
   encryptionTarget: "MANUAL",
 }
-
 ```
 
 ---
@@ -157,7 +151,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
     "PuMviix8s3lg0pgCi39pYh9E/nQF5R14Wj1uGMBiXxlGQlmGg5JBv7xfxJ0+9V7Q1lIaSbeX7+jwIqyIpTuyPdQIDAQAB";
   
     const cardData = {
-        "cardData": "4141414141414141",
+        "cardData": "4005550000000019",
         "nameOnCard": "Joe Bloggs",
         "expirationMonth": "01",
         "expirationYear": "2034",
@@ -189,9 +183,10 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
 
 ## See Also
 
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Multi-Use Public Key](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
-- [Multi-Use Public Key Management](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
-- [Multi-Use Public Key Charges Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md)
-- [Secure Data Capture API Only](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md)
+- [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---
