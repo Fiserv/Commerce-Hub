@@ -86,7 +86,7 @@ type: tab
       "encryptionTarget": "TRACK_2",
       "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
       "deviceType": "INGENICO",
-      "keyId": ""
+      "keyId": "88000000022"
     }
   }
 }
@@ -101,7 +101,7 @@ type: tab
     "emvData": "0249F3704833A12329F1002AB34",
     "encryptionData": {
       "encryptionType": "RSA",
-      "encryptionTarget": "TRACK_1",
+      "encryptionTarget": "TRACK_2",
       "encryptionBlock": "fjzH9it7ukbeP6Fa4jdqAO/gCRvCMC2qVG5q9PbFTKmjQfxv35rqp3Bq5EkVwh5SOj/eSEeM.....",
       "encryptionBlockFields": "track1Data:34",
       "keyId": "88000000022",
@@ -265,8 +265,6 @@ A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.m
   "source": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
-    "PARId": "1234",
-    "declineDuplicates": true,
     "tokenSource": "TRANSARMOR",
     "card": {
       "expirationMonth": "03",
