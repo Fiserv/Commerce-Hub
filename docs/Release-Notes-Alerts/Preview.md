@@ -90,7 +90,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support [Global Acquiring](?path=docs/Resources/Guides/Global-Acquiring.md) for international merchant processing | Feature |
-| Support [CVV only encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for Multi-Use Public Key *(MUPK)*| Update |
+| Support [CVV only encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for Multi-Use Public Key *(MUPK)*| Update |
 | Support [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md) in-person transactions | Update |
 
 ---

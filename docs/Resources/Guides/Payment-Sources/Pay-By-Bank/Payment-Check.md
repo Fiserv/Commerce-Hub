@@ -4,7 +4,7 @@ tags: [Payment Check, ACH, Payment Sources]
 
 # PaymentCheck
 
-Commerce Hub allows merchants to securely process payments directly from customers' bank accounts. Checks offer enhanced security and convenience. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
+Commerce Hub allows merchants to securely process payments directly from a customer's bank account. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
 
 ---
 

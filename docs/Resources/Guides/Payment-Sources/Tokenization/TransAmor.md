@@ -234,7 +234,7 @@ Example of a charge (200: Success) response.
 #### Request Variables
 
 <!-- theme: info -->
-> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
+> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
 
 <!--
 type: tab
