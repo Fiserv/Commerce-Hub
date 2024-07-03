@@ -25,6 +25,9 @@ titles: Request, Response
 
 The example below contains the minimum [parameters](#parameters) for a successful manually keyed [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using _PaymentCard_. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
+
 ```json
 {
   "amount": {

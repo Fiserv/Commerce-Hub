@@ -1,5 +1,5 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key, Payment Source]
+tags: [Multi-Use Public Key, RSA, Encrypted Payments, API Reference]
 ---
 
 # Multi-Use Public Key Request
@@ -171,8 +171,8 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
-- [Multi-Use Public Key Management](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
+- [Multi-Use Public Key Encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Multi-Use Public Key Management](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 
