@@ -16,6 +16,21 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+## August 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** July 17th 2024
+- **Production:** July 23rd 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.08: refactored Authorization Optimization models | Feature |
+| [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
+| Support [Multi-Use Public Key RSA encyrption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
+
+---
+
 ## July 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
