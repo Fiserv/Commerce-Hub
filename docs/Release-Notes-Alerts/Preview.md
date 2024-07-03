@@ -27,6 +27,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Version 1.24.08: refactored Authorization Optimization models | Feature |
 | [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
+| Support [Multi-Use Public Key RSA encyrption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
 
 ---
 
