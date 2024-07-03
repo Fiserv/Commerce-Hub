@@ -98,13 +98,15 @@
     - title: Data Solutions
       link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
     - title: Directed Routing
-      link: docs/Resources/Guides/Directed-Routing.md
+      link: docs/Resources/Guides/Transaction-Routing/Directed-Routing.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
     - title: Global Acquiring
       link: docs/Resources/Guides/Global-Acquiring.md
     - title: Multi-Use Public Key
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+      link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+    - title: Pay By Bank
+      link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
     - title: Secure Data Capture
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Tokenization
@@ -129,8 +131,6 @@
       link: docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
-    - title: Pay By Bank
-      link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
     - title: Response Handling
       link: docs/Resources/Guides/Response-Codes/Response-Handling.md
     - title: Split Shipment
@@ -139,6 +139,10 @@
       link: docs/Resources/Guides/Stored-Credentials.md
     - title: Subsequent Authorizations
       link: docs/Resources/Guides/Authorizations/Authorization-Types.md
+    - title: Transaction Request Types
+      link: docs/Resources/Guides/Transaction-Types.md
+    - title: Transaction Routing
+      link: docs/Resources/Guides/Transaction-Routing/Routing.md
     - title: Glossary
       link: docs/Resources/FAQs-Glossary/Glossary.md    
 - sections:
@@ -209,7 +213,7 @@
       - title: Credentials
         link: docs/Resources/API-Documents/Security/Credentials.md
       - title: Key Management
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md   
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:
   - title: Release Notes
     sections:

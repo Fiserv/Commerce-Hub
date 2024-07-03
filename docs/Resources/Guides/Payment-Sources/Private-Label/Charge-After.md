@@ -383,7 +383,7 @@ Example of a charge (201: Created) response
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Billing Address](?path=docs/Resources/Master-Data/Address.md)
 - [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
-- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---

@@ -42,8 +42,8 @@ The below table identifies the required parameters in the `processors` array as 
 
 | Variable | Type | Maximum Length | Description |
 | ------ | ----| -----------| ------------------ |
-| `processorName` | _string_ | 256 | Identifies the [payment processor](?path=docs/Resources/Guides/Directed-Routing.md). |
-| `processingPlatform` | _string_ | 256 | Identifies the [payment platform](?path=docs/Resources/Guides/Directed-Routing.md) of the processor. |
+| `processorName` | _string_ | 256 | Identifies the [payment processor](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md). |
+| `processingPlatform` | _string_ | 256 | Identifies the [payment platform](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md) of the processor. |
 
 <!-- type: tab-end -->
 
@@ -187,8 +187,8 @@ Example of a get partner token (200: Success) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/partner-tokens)
-- [Card Details](?path=docs/Resources/Master-Data/Card-Details.md)
-- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
 

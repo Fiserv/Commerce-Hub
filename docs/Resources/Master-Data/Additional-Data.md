@@ -11,7 +11,6 @@ type: tab
 titles: additionalDataCommon, JSON Example
 -->
 
-
 The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Type | Maximum Length | Description |
@@ -21,19 +20,16 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
 | `deferredPayments` | *object* | N/A | Used in defferred bill payments |
-| `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md) transactions. |
+| `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md) transactions. |
 | `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
 | `privateLabel` | *object* | N/A | Additional attributes used to process [private label payment cards (PLCC)](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md). |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
-
 ---
-
 
 <!--
 type: tab
 -->
-
 
 JSON string format for `additionalDataCommon`:
 
@@ -125,7 +121,6 @@ type: tab
 titles: additionalData, JSON Example
 -->
 
-
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
@@ -141,7 +136,6 @@ titles: additionalData, JSON Example
 <!--
 type: tab
 -->
-
 
 JSON string format for `additionalData`:
 
@@ -188,4 +182,4 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)
 
---- 
+---
