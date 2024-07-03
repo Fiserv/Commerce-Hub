@@ -23,13 +23,13 @@ Build an integration using a Multi-Use Public Key.
 <!-- type: card
 title: Key Management
 description: Commerce Hub's key management system is needed to achieve PCI DSS compliance by implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys, to protect a customer's sensitive payment card data.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
+link: ?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 -->
 
 <!-- type: card
 title: Encrypt Payment Data
 description: The merchant uses multi-use public key for the asymmetric PaymentCard, PaymentEMV, or PaymentTrack encryption of the card data where the merchant can store and send the data to Commerce Hub at a later time.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md
+link: ?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md
 -->
 
 <!-- type: row-end -->

@@ -197,7 +197,7 @@ Below are some of the examples of offline transactions and the multi-use public 
 
 - [API Explorer](../api/?type=post&path=/security/v1/keys/generate)
 - [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
-- [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Multi-Use Public Key Encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
