@@ -1,5 +1,5 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Multi-Use Public Key, Payment Source]
+tags: [Multi-Use Public Key, RSA, Encrypted Payments, API Reference]
 ---
 
 # Multi-Use Public Key Request

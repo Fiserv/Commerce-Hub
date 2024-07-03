@@ -1,5 +1,5 @@
 ---
-tags: [Multi-Use Public Key, RSA, Payment Card, Payment EMV, Payment Track]
+tags: [Multi-Use Public Key, RSA, Encrypted Payments, Payment Card, EMV, Track]
 ---
 
 # Multi-Use Public Key Encryption
@@ -347,7 +347,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
-- [Multi-Use Public Key](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
+- [Multi-Use Public Key Management](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
 

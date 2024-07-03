@@ -1,10 +1,10 @@
 ---
-tags: [Multi-Use Public Key, RSA, Payment Card, Payment EMV, Payment Track]
+tags: [Multi-Use Public Key, RSA, Encrypted Payments, Payment Card, EMV, Track]
 ---
 
 # Multi-Use Public Key Encryption
 
-Multi-Use Public Key Encryption uses an RSA *(Rivest Shamir Adleman)* encryption method that allows secure integration and transmission of customer data, from the use of a static asymmetric multi-use public key *(MUPK)*. This provides a merchant the ability to capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
+Multi-Use Public Key *(MUPK)* Encryption uses an RSA *(Rivest Shamir Adleman)* encryption method that allows secure integration and transmission of customer data, from the use of a static asymmetric multi-use public key *(MUPK)*. This provides a merchant the ability to capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
 
 ##### Benefits
 
