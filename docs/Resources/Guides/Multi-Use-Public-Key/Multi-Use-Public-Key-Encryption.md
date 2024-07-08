@@ -4,7 +4,7 @@ tags: [Multi-Use Public Key, RSA, Encrypted Payments, Payment Card, EMV, Track]
 
 # Multi-Use Public Key Encryption
 
-The merchant uses a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md) for the asymmeteric encryption of _PaymentCard_, _PaymentEMV_ and _PaymentTrack_ card data, allowing the merchant the ability to securely store and send the data to Commerce Hub at a later time.
+The merchant uses a [generated multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md) for the asymmeteric encryption of _PaymentCard_, _PaymentEMV_ and _PaymentTrack_ card data, allowing the merchant the ability to securely store and send the data to Commerce Hub at a later time.
 
 <!-- theme: info -->
 > Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) [online, digital or mobile payment](?path=docs/Getting-Started/Getting-Started-Online.md) request when using a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves cardholder validation purposes.
@@ -351,6 +351,6 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 - [Multi-Use Public Key Management](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
