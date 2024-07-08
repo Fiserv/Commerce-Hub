@@ -25,7 +25,7 @@ The `encryptionBlock` for _PaymentCard_ includes the `card` object fields which 
 ```javascript
 const cardData = {
     "cardData": "4005550000000019",
-    "nameOnCard": "Joe Bloggs",
+    "nameOnCard": "John Doe",
     "expirationMonth": "01",
     "expirationYear": "2034",
     "securityCode": "123"
@@ -35,7 +35,7 @@ const encryptionBlock =  Object.values(cardData).join(""));
 ```
 
 <!-- theme: example -->
-> encryptionBlock = 4005550000000019Joe Bloggs123122034
+> encryptionBlock = 4005550000000019John Doe123122034
 
 <!--
 type: tab
@@ -45,31 +45,31 @@ The `encryptionBlock` for _PaymentEMV_ includes either the `track1Data` or `trac
 
 ```javascript
 const track2Data = {
-    "track2Data": "4000340099900505=2225111123400001230"
+    "track2Data": "4005550000000019=3401111123400001230"
 }
   
 const encryptionBlock =  Object.values(track2Data).join(""));
 ```
 
 <!-- theme: example -->
-> encryptionBlock = 4000340099900505=2225111123400001230
+> encryptionBlock = 4005550000000019=3401111123400001230
 
 <!--
 type: tab
 -->
 
-The `encryptionBlock` for _PaymentTrack_ includes either the `track1Data` or `track2Data`. The below snippet is for `track2Data`.
+The `encryptionBlock` for _PaymentTrack_ includes either the `track1Data` or `track2Data`. The below snippet is for `track1Data`.
 
 ```javascript
-const track2Data = {
-    "track2Data": "5400340099900505=2225111123400001230"
+const track1Data = {
+    "track1Data": "B4005550000000019^John/Doe ^34011110000123000"
 }
   
-const encryptionBlock =  Object.values(track2Data).join(""));
+const encryptionBlock =  Object.values(track1Data).join(""));
 ```
 
 <!-- theme: example -->
-> encryptionBlock = 5400340099900505=2225111123400001230
+> encryptionBlock = B4005550000000019^John/Doe ^34011110000123000
 
 <!-- type: tab-end -->
 
@@ -87,7 +87,7 @@ titles: PaymentCard, PaymentEMV, PaymentTrack
 ```javascript
 const cardData = {
     "cardData": "4005550000000019",
-    "nameOnCard": "Joe Bloggs",
+    "nameOnCard": "John Doe",
     "expirationMonth": "01",
     "expirationYear": "2034",
     "securityCode": "123"
@@ -97,7 +97,7 @@ const encryptionBlockFields = Object.keys(cardData).map(key => `card.${key}:${en
 ```
 
 <!-- theme: example -->
-> encryptionBlockFields = card.cardData:16,card.nameOnCard:10,card.securityCode:3,card.expirationMonth:2,card.expirationYear:4
+> encryptionBlockFields = card.cardData:16,card.nameOnCard:8,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
 
 <!--
 type: tab
@@ -105,10 +105,10 @@ type: tab
 
 ```javascript
 const track2Data = {
-    "track2Data": "4000340099900505=2225111123400001230"
+    "track2Data": "4005550000000019=3401111123400001230"
 }
   
-const encryptionBlockFields = Object.keys(track2Data).map(key => `card.${key}:${encoder.encode(track2Data[key]).length}`).join(',');
+const encryptionBlockFields = Object.keys(track2Data).map(key => `${key}:${encoder.encode(track2Data[key]).length}`).join(',');
 ```
 
 <!-- theme: example -->
@@ -119,15 +119,15 @@ type: tab
 -->
 
 ```javascript
-const track2Data = {
-    "track2Data": "5400340099900505=2225111123400001230"
+const track1Data = {
+    "track1Data": "B4005550000000019^John/Doe ^34011110000123000"
 }
 
-const encryptionBlockFields = Object.keys(track2Data).map(key => `card.${key}:${encoder.encode(track2Data[key]).length}`).join(',');
+const encryptionBlockFields = Object.keys(track1Data).map(key => `${key}:${encoder.encode(track1Data[key]).length}`).join(',');
 ```
 
 <!-- theme: example -->
-> encryptionBlockFields = track2Data:36
+> encryptionBlockFields = track1Data:45
 
 <!-- type: tab-end -->
 
@@ -173,7 +173,7 @@ titles: PaymentCard, PaymentEMV, PaymentTrack
 encryptionData: {
   keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
   encryptionType: "RSA",
-  encryptionBlock: "=s3ZmiL1SSZC8QyBpj/....",
+  encryptionBlock: "cyz8/XQHosFcIVfWcRs0KL....",
   encryptionBlockFields: "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
   encryptionTarget: "MANUAL",
 }
@@ -187,7 +187,7 @@ type: tab
 encryptionData: {
   keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
   encryptionType: "RSA",
-  encryptionBlock: "=f6QmiL1SSZC8QyBpj/....",
+  encryptionBlock: "Q3FJIiQUOPb2IetIsay4fLoHxXmvH+....",
   encryptionBlockFields: "track2Data:36",
   encryptionTarget: "TRACK_2"
   deviceType: "INGENICO",
@@ -203,8 +203,8 @@ encryptionData: {
   keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
   encryptionType: "RSA",
   encryptionBlock: "=h9PmiL1SSZC8QyBpj/....",
-  encryptionBlockFields: "track2Data:36",
-  encryptionTarget: "TRACK_2",
+  encryptionBlockFields: "track1Data:45",
+  encryptionTarget: "TRACK_1",
   deviceType: "INGENICO",
 }
 ```
@@ -229,8 +229,8 @@ const payload = {
         encryptionData: {
             keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
             encryptionType: "RSA",
-            encryptionBlock: "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-            encryptionBlockFields: "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+            encryptionBlock: encryptionBlock,
+            encryptionBlockFields: encryptionBlockFields,
             encryptionTarget: "MANUAL",
         }
     }
@@ -248,8 +248,8 @@ const payload = {
         encryptionData: {
             keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
             encryptionType: "RSA",
-            encryptionBlock: "=f6QmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-            encryptionBlockFields: "track2Data:36",
+            encryptionBlock: encryptionBlock,
+            encryptionBlockFields: encryptionBlockFields,
             encryptionTarget: "TRACK_2",
             deviceType: "INGENICO",
         }
@@ -268,8 +268,8 @@ const payload = {
         encryptionData: {
             keyId: "79cd0553-9db5-4676-989b-f29edfbb6a51",
             encryptionType: "RSA",
-            encryptionBlock: "=h9PmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
-            encryptionBlockFields: "track2Data:36",
+            encryptionBlock: encryptionBlock,
+            encryptionBlockFields: encryptionBlockFields,
             encryptionTarget: "TRACK_2",
             deviceType: "INGENICO",
         }
@@ -282,6 +282,8 @@ const payload = {
 ---
 
 ## Encryption Example
+
+The following JavaScript example will create the encrypted source information for a _PaymentCard_.
 
 ```javascript
 // Utils
@@ -314,7 +316,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
   
     const cardData = {
         "cardData": "4005550000000019",
-        "nameOnCard": "Joe Bloggs",
+        "nameOnCard": "John Doe",
         "expirationMonth": "01",
         "expirationYear": "2034",
         "securityCode": "123"
