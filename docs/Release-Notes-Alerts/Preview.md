@@ -4,10 +4,10 @@ tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
 
 # Preview Release Notes
 
-Commerce Hub provides a preview of our upcoming feature releases in Developer Studio. When these features are released they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
+Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview) of our upcoming feature releases in Developer Studio. These features may not be functional until the certification release date. When these features are released to production they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
 
 <!-- theme: info -->
-> The upcoming features and updates can be viewed by changing the dropdown from **Active** to **Preview** in the left navigation when viewing an article or API.
+> The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **[Preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview)** in the left navigation when viewing an article or API.
 
 ##### Release Types
 
