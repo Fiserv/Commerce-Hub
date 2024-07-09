@@ -9,7 +9,7 @@ titles: referenceTransactionDetails, JSON Example
 
 The below table identifies the parameters in the `referenceTransactionDetails` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|-----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction used for reference in a secondary transaction. |
 | `referenceOrderId` | *string* | 128 | Commerce Hub generated `orderId` from the original transaction used for reference in a secondary transaction. |

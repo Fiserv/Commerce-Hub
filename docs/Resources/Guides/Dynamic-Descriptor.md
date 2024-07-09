@@ -42,7 +42,7 @@ Card issuer may limit how many characters will show up in each field, it is reco
 
 The below table identifies the required parameters in the `dynamicDescriptor` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* | 1024 | Merchant Name or Doing Business As (DBA) |

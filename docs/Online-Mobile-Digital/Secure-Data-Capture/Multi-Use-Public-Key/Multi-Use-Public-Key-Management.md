@@ -21,7 +21,7 @@ titles: asymmetricKeyDetails
 
 The below table identifies the parameters for `asymmetricKeyDetails` object. The `asymmetricKeyDetails` object contains the public Key and its relevant details for asymmetric cryptography.
 
-| Variables | Type| Maximum Length | Description |
+| Variables | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `keyId` | _string_ | 64 | Unique identifier of the key pair |
 | `encryptionType` | _string_ | 32 | Encryption type of the key pair. Defaults to RSA. |
@@ -48,7 +48,7 @@ titles: merchantDetails
 
 The below table identifies the required parameter for the generate request payload.
 
-| Variables | Type| Maximum Length | Required | Description |
+| Variables | Type| Max Length | Required | Description |
 |---------|----------|----------------|-------- | --------|
 | `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -133,7 +133,7 @@ titles: URI Parameter, merchantDetails
 
 The below table identifies the required parameter for the URI.
 
-| Variables | Type| Maximum Length | Required | Description |
+| Variables | Type| Max Length | Required | Description |
 |---------|----------|----------------|--------- | -------|
 | `keyId` | _string_ | 64 | &#10004; | Used to pass the keyId of the encryption key pair to be revoked |
 
@@ -143,7 +143,7 @@ type: tab
 
 The below table identifies the required parameter for the revoke request payload.
 
-| Variables | Type| Maximum Length | Required | Description |
+| Variables | Type| Max Length | Required | Description |
 |---------|----------|----------------|-----|-------|
 | `merchantId` | _string_ | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | _string_ | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |

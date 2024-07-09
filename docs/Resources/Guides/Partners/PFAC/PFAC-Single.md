@@ -20,7 +20,7 @@ titles: merchantDetails, dynamicDescriptor
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 | --------- | ---------- | -------- | ----- |
 | `merchantId` | *string* | 1024 | A unique ID used to identify the PayFac. The PayFac must use the value assigned by the acquirer, gateway or a [custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -34,7 +34,7 @@ The below table identifies the required parameters in the `dynamicDescriptor` ob
 - **Discover, Visa, and Mastercard Single Merchant ID Payment Facilitators:** the format for `merchantName` is the first 3 characters of the [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) name followed by an asterisk and the sub-merchant name, e.g. “XYZ*A SMALL CO”.
 - **Amex Single Merchant ID Payment Facilitators:** the `merchantName` must only contain the sub-merchant name, e.g. “A SMALL CO”.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `mcc` | *string* | 4 | [Merchant Category Code](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) |
 | `merchantName` | *string* | 1024 | Merchant name or Doing Business As (DBA) |

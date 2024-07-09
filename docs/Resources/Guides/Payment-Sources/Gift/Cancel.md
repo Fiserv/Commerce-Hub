@@ -20,7 +20,7 @@ The below table identifies the available parameters in the `referenceTransaction
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 |`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
@@ -31,7 +31,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `operationType` | *string* | 50 | Defines the request type as CANCEL |
 
@@ -41,7 +41,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
@@ -65,7 +65,7 @@ titles: target, balances
 
 The below table identifies the parameters in the `target` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
@@ -75,7 +75,7 @@ type: tab
 
 The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | *number* | 16,3 | Account beginning balance |
 | `endingBalance` | *number* | 16,3 | Account ending balance |

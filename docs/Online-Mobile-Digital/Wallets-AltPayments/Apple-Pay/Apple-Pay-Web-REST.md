@@ -57,7 +57,7 @@ titles: source, header
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |---------|----------|-------|---------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *ApplePay* is used for Apple Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 | `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
@@ -73,7 +73,7 @@ type: tab
 
 The below table identifies the required parameters in the `header` object.
 
-| Variable | Type | Maximum Length | Required | Description |
+| Variable | Type | Max Length | Required | Description |
 | -------- | -- | ------------ | ---------|--------- |
 | `applicationDataHash` | *string* | 256 | | Encrypted app data |
 | `ephemeralPublicKey` | *string* | 256 | &#10004; | Used to derive the actual Public Key. Ephemeral public key bytes. EC_v1 only. X.509 encoded key bytes, Base64 encoded as a string. |

@@ -13,7 +13,7 @@ titles: merchantDetails, JSON Example
 
 The below table identifies the parameters in the `merchantDetails` object.
 
-| Variable | Type | Maximum Length | Required | Description |
+| Variable | Type | Max Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
 | `tokenType` | *string* | 64 | | Specific token type requested by the merchant |
 | `storeId` | *string* |  | | An optional outlet ID for clients that support multiple stores in the same app |

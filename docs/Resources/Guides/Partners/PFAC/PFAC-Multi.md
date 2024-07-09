@@ -20,7 +20,7 @@ titles: merchantDetails
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 | --------- | ---------- | -------- | ----- |
 | `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. The PayFac must use the value assigned by the acquirer, gateway or a [custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|

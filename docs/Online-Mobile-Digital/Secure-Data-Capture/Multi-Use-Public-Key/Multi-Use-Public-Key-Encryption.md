@@ -79,7 +79,7 @@ Form the `encryptionData` object using the encrypted `encryptionBlock` and `encr
 
 The below table identifies the parameters in the `encryptionData` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | ---- | ------- | -----------|
 | `encryptionType` | _string_ | 256 | Encryption type is _RSA_ when using MUPK. |
 | `encryptionTarget` | _string_ | 256 | Target is _MANUAL_ when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |

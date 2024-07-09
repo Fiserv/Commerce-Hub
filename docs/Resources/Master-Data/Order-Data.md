@@ -13,7 +13,7 @@ titles: orderData, JSON Example
 
 The below table identifies the parameters in the `orderData` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `orderDate` | *string* | 10 | Date that goods and services are ordered. YYYY-MM-DD format |
 | `itemCount` | *integer* | 3 | Total number of items included in the purchase |
@@ -93,7 +93,7 @@ titles: itemDetails, JSON Example
 
 The below table identifies the parameters in the `itemDetails` array.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `commodityCode` | *string* | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
 | `itemDescription` | *string* | 1024 | Name or description of item |

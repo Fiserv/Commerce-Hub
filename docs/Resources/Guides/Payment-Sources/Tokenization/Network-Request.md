@@ -148,7 +148,7 @@ type: tab
 
 The below table identifies the required parameters in the `card` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 | ----- | :-----: | :-----: | :-----: | ----- |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit card expiration month |
 | `expirationYear` | *string* | 4 | &#10004; | 4-digit card expiration year |
@@ -166,7 +166,7 @@ titles: paymentToken
 
 The below table identifies the parameters in the `paymentToken` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
 | `tokenAssuranceMethod` | *string* | 256 | The token assurance method is set when issuing a network token and may be updated if additional ID&V is performed. |
 

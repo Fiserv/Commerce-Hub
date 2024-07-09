@@ -13,7 +13,7 @@ titles: transactionInteraction, JSON Example
 
 The below table identifies the parameters in the `transactionInteraction` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `origin` | *string* | 4 | The [origin](#transaction-origin) of the transaction. |
 | `eciIndicator` | *string* | 36 | [Electronic Commerce Indicator (ECI)](#electronic-commerce-indicator). Required on all online, mobile, and digital E-Commerce transactions.|

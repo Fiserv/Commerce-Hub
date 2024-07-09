@@ -44,7 +44,7 @@ titles: transactionDetails, JSON Example
 
 The below table identifies the parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `authOptimazation` | *string* | 32 | An identifier used to override what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. |
 
@@ -83,7 +83,7 @@ titles: processorResponseDetails, JSON Example, authOptimizationDetails, JSON Ex
 
 The below table identifies the parameters in the `processorResponseDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `originalResponseCode` | *string* | 16 | Original response code before Authorization Optimization |
 | `originalResponseMessage` | *string* | N/A | Original response message before Authorization Optimization |
@@ -110,7 +110,7 @@ type: tab
 
 The below table identifies the parameters in the `authOptimizationDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `accountStatus` | *string* | N/A | Indicates the current status of the account.|
 

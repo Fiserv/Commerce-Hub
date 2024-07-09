@@ -13,7 +13,7 @@ titles: encryptionData, JSON Example
 
 The below table identifies the parameters in the `encryptionData` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `encryptionType` | *string* | 256 | [Encryption type](#encryption-type) to be passed. |
 | `encryptionTarget` | *string* | 256 | [Encryption target](#encryption-target) identifies the data based on how it is entered into the POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. |

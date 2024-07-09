@@ -25,7 +25,7 @@ titles: transactionDetails, JSON Example
 
 The below table identifies the additional required parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `primaryTransactionId` | *string* | 40 | The `transactionId` from the original transaction passed for a reauthorization.|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** INCREMENTAL.|
