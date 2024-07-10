@@ -19,15 +19,12 @@ The below table identifies the parameters in the `orderData` object.
 | `itemCount` | *integer* | 3 | Total number of items included in the purchase |
 | `supplierVatRegistrationNumber` | *string* | 15 | Supplier VAT registration number |
 | `itemDetails` | *array* | N/A | List of all [item details](#item-details) including categories along with amount and quantity |
-
-<!---
 | `preOrder` | *boolean* | N/A | Identifies if the purchase is a pre-order |
 | `preOrderDate` | *string* | 10 | Date that goods and services are pre-ordered. YYYY-MM-DD format. |
 | `reOrder` | *boolean* | N/A | Identifies if the purchase is a reorder |
 | `goodsSoldCode` | *string* |  | Indicates a specific type of good is being purchased in an Amex, [EDS](?path=docs/Resources/API-Documents/Payments_VAS/Enhanced-Data-Service.md) or 3D-Secure transaction. It is used to help identify potentially fraudulent sales. |
 | `giftCardCount`  | *integer* | 2 | Number of gift cards purchased during the transaction |
 | `giftCardAmount` | *object* |  | Used for the [total and currency](?path=docs/Resources/Master-Data/Amount-Components.md) |
---->
 
 <!--
 type: tab
@@ -96,20 +93,18 @@ The below table identifies the parameters in the `itemDetails` array.
 | Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `commodityCode` | *string* | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
+| `paymentSystemProductCode` | *string* | 4 | [Payment System Product Code](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md) as defined by Conexxus |
 | `itemDescription` | *string* | 1024 | Name or description of item |
 | `productUPC` | *string* | 12 | Universal Product Code identifier used for retail products worldwide |
 | `quantity` | *number* | 8 | Identifies the number of units of the product sold |
 | `unitOfMeasurement` | *string* | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
 | `itemNumber` | *number* | 3 | Identifies the line item number out of total items sold |
 | `amountComponents` | *object* | N/A | Identifies the [additional amounts](?path=docs/Resources/Master-Data/Amount-Components.md#amount-components) used in transactions where additional fields such as tax, shipping, discount or fees are required as part of the request |
-
-<!---
 | `insuranceClaimNumber` | *string* | 64 | The insurance claim number of the customer |
 | `department` | *string* | 256 | Merchant defined code or department description for the product or service sold based on business or processing requirements |
 | `subDepartment` | *string* | 256 | Merchant defined code or sub-department description for the product or service sold based on business or processing requirements |
 | `departmentClass` | *string* | 256 | Merchant defined code or department class description for the product or service sold based on business or processing requirements |
 | `departmentSubClass` | *string* | 256 | Merchant defined code or department sub-class description for the product or service sold based on business or processing requirements |
---->
 
 <!--
 type: tab

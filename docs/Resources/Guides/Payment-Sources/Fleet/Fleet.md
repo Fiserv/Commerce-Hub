@@ -8,12 +8,12 @@ Fleet cards and checks are a type of payment instrument that allows businesses t
 
 Depending on specific business needs and operational scope, businesses choose a fleet payment instrument for use by personnel operating company vehicles. The personnel can use the Fleet card or check to buy fuel, and non-fuel purchases such as auto parts, vehicle repairs, maintenance, etc or obtain cash.
 
-Commerce Hub supports both card and check based transactions for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor; Fuelman, Fleetwide, Comdata Fleet, Express and ComCheck)*, Wright Express *(WEX, OTR and Money Code, Fleet One)*, Voyager, and Private Label *(proprietary)* cards.
+Commerce Hub supports both card and check based transactions for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor; Fuelman, Fleetwide, Comdata Fleet, Express and ComCheck)*, Wright Express *(WEX, Over-The-Road (OTR) and Money Code, Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* cards.
 
 ##### Supported Verticals
 
 <!-- theme: info -->
-> Please contact your account representative for more information on Fleet Solutions.
+> Please contact your account representative for more information on Fleet payments.
 
 - Petroleum
 - Transportation

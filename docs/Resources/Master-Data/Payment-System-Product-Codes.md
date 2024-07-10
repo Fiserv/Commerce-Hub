@@ -36,10 +36,23 @@ The following are Commerce Hub proprietary codes used by specific merchants.
 
 <!-- theme: info -->
 > Please contact your account representative to see if you are required to pass any of these codes.
- 
+
 | Code | Description |
 | ----- | ----- |
-| 1000 | |
+| 1006 | Unleaded Methanol 5.7% Blend *(88 octane or less)* |
+| 1007 | Unleaded Plus Methanol 5.7% Blend *(89–91 octane)* |
+| 1008 | Super Unleaded Methanol 5.7% Blend *(92 octane or higher)* |
+| 1009 | Unleaded Methanol 7.7% Blend *(88 octane or less)* |
+| 1010 | Unleaded Plus Methanol 7.7% Blend *(89–91 octane)* |
+| 1055 | Ultra Low Sulfur Biodiesel Blend 2% |
+| 1056 | Ultra Low Sulfur Biodiesel Blend 5% |
+| 1057 | Ultra Low Sulfur Biodiesel Blend 10% |
+| 1058 | Ultra Low Sulfur Biodiesel Blend 11% |
+| 1059 | Ultra Low Sulfur Biodiesel Blend 15% |
+| 1071-1098 | Undefined Fuel |
+| 1303 | Bottled propane *(LPG)* |
+| 1325-1338 | Undefined other fuel *(use Conexxus 325-338 to define fuel)* |
+| 1915-1924 | Undefined negative *(discounts)* |
 
 ---
 

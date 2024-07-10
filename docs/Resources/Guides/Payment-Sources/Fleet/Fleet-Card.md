@@ -20,7 +20,7 @@ Required fields are based on the specific [card brand data requirements](?path=d
 
 <!--
 type: tab
-titles: source, card
+titles: card
 -->
 
 The below table identifies the parameters in the `card` object.
