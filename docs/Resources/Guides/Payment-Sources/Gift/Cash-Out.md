@@ -17,13 +17,13 @@ titles: target, transactionDetails, transactionInteraction, merchantDetails, add
 
 The below table identifies the parameters in the `target` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
 The below table identifies the conditional parameters in `card` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `category`| *string* | 25 | Defines the card type as GIFT |
 | `subCategory`| *string* | 25 | Identifies the gift card provider |
@@ -34,7 +34,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `operationType` | *string* | 50 | Defines the request type as CASH_OUT |
 
@@ -44,7 +44,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionInteraction` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
@@ -54,7 +54,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction |
 | `terminalId` | *string* | 1024 |Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway |
@@ -65,7 +65,7 @@ type: tab
 
 The below table identifies the required parameters in the `additionalDataCommon` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `fundingProvider` | *string* | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
 | `transactionPosDate` | *string* | 16 | Used to override a transaction post date in reporting |
@@ -83,7 +83,7 @@ titles: balances
 
 The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | *number* | 16,3 | Account beginning balance |
 | `endingBalance` | *number* | 16,3 | Account ending balance

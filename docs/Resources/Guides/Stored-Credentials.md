@@ -27,7 +27,7 @@ titles: storedCredentials, additionalDataCommon
 
 The below table identifies the parameters in the `storedCredentials` object.
 
-| Variable | Type | Maximum Length | Required | Description |
+| Variable | Type | Max Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
 | `initiator` | *string* | 11 | &#10004; | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* | N/A | &#10004; | Indicator if this is a [scheduled transaction](#scheduled-transaction). |
@@ -41,7 +41,7 @@ type: tab
 
 The below table identifies the parameters in the `additionalDataCommon` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | ---- | ------------ | --------- |
 | `billPaymentType` | *string* | 11 | Indicates the [type](docs?path=docs/Resources/Master-Data/Additional-Data.md#bill-payment-type) of bill payment. |
 | `paymentAmountType` | *string* | 20 | An identifier used to indicate if the *RECURRING* `billPaymentType` is *FIXED* or *VARIABLE*, required for Mastercard transactions. |

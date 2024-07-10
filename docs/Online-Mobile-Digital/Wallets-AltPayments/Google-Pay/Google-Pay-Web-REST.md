@@ -42,7 +42,7 @@ titles: source, intermediateSigningKey
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|-------|---------|
 | `sourceType` | *string* | 15 | Value *GooglePay* is used for Google Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details |
 | `data` | *string* | 4000 | Encrypted Data. Payment data dictionary, Base64 encoded as a string |
@@ -54,7 +54,7 @@ The below table identifies the required parameters in the `source` object.
 type: tab
 -->
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|-------|---------|
 | `signedKey` | *string* | 4000 | A UTF-8 encoded, serialized object that contains `keyExpiration` and `keyValue`, `keyExpiration` is date and time when the intermediate key expires as UTC milliseconds and `keyValue` is base64 version of key encoded in ASN.1 type |
 | `signatures` | *array* | N/A | Verifies that the intermediate signing key came from Google. It is base64-encoded, and created with ECDSA |

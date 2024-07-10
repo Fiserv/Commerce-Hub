@@ -20,7 +20,7 @@ titles: source, amount, transactionDetails, deviceFingerprint, merchantDetails, 
 
 The below table identifies the parameters in the `source` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
@@ -30,7 +30,7 @@ type: tab
 
 The below table identifies the parameters in the `amount` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `total` | *number* | 12 | Total amount of the transaction. Subcomponent values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in ISO 3 Currency Format. |
@@ -41,7 +41,7 @@ type: tab
 
 The below table identifies the parameters in the `transactionDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `deviceFingerprint` | *array* | N/A | Array of Device Fingerprint subcomponent objects |
 
@@ -53,7 +53,7 @@ The `deviceFingerprint` is obtained from the [device capture](?path=docs/Online-
 
 The below table identifies the parameters in the `dataStatic` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `colorDepth` | *number* | N/A | Value representing the depth of the color palette for displaying images, in bits per pixel. Obtained from the cardholder's browser using the `screen.colorDepth` JavaScript property. |
 | `screenWidth` | *number* | N/A | Total width of the cardholder’s screen in pixels. Value is returned from the `screen.width` JavaScript property |
@@ -67,7 +67,7 @@ The below table identifies the parameters in the `dataStatic` object.
 
 The below table identifies the parameters in the `dataDynamic` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `ipAddress` | *string* | 89 | Device IP address |
 
@@ -77,7 +77,7 @@ type: tab
 
 The below table identifies the parameters in the `merchantDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -88,7 +88,7 @@ type: tab
 
 The below table identifies the parameters in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 |`serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md). |
 | `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction |
@@ -106,7 +106,7 @@ titles: additionalData3DS
 
 The below table identifies the parameters in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization. Obtained during [device capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Device-Capture.md). |
 | `channel` | *String* | 32 | Determine the channel that the transaction came through. |

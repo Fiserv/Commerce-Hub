@@ -23,7 +23,7 @@ titles: source, merchantDetails
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 | `sourceType` | *string* |  | &#10004; | Supported source types: [PaymentToken](#ros-using-paymenttoken). |
 
@@ -33,7 +33,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 | `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 
@@ -52,7 +52,7 @@ titles: transactionScoreResponse, myReturnScoreDetails, peerReturnScoreDetails
 
 The below table identifies the response parameters in the `transactionScoreResponse` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `invocationId` | *string* | N/A | Unique Identifier associated with the invocation response |
 | `consumerType` | *string* | N/A | Indicator for NEW or EXISTING customer. myReturnScoreDetails and peerReturnScoreDetails will not be present for new customers. |
@@ -66,7 +66,7 @@ type: tab
 
 The below table identifies the response parameters in the `myReturnScoreDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `score` | *integer* | 3 | Normalized score of a return probability. 0 indicating a low returner and 100 indicating a high returner. |
 | `returnProbabilityProfile` | *string* | 16 | Bucketed return probability profile, HIGH or LOW. |
@@ -77,7 +77,7 @@ type: tab
 
 The below table identifies the response parameters in the `peerReturnScoreDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `averageReturnValue` | *number* | 19,3 | Average amount value returned (ARV) |
 | `averageOrderValue` | *number* | 19,3 | Average amount value spent (AOV) |
@@ -100,7 +100,7 @@ titles: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentToken* is used for a Enhanced Data Request request using a token. |
 |`tokenData` | *string* | 2048 | &#10004; | TransArmor token created from the payment source. |

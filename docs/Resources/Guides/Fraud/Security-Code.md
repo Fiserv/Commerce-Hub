@@ -19,7 +19,7 @@ titles: card, JSON Example
 
 The below table identifies the additional required parameters in the `card` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `securityCodeIndicator` | _string_ | | Indicates how the security code is passed |
 

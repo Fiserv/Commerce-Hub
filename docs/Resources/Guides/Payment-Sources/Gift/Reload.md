@@ -17,7 +17,7 @@ titles: amount, target, transactionDetails, transactionInteraction, merchantDeta
 
 The below table identifies the required parameters in the `amount` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -28,13 +28,13 @@ type: tab
 
 The below table identifies the parameters in the `target` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
 The below table identifies the conditional parameters in `card` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `expirationMonth` | *string* | N/A | 2-digit expiration month |
 | `expirationYear` | *string* | N/A | 4-digit expiration year |
@@ -47,7 +47,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `operationType` | *string* | 50 | Identifies the transaction type as RELOAD value |
 
@@ -57,7 +57,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionInteraction` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `terminalTimestamp` | *string* | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
@@ -67,7 +67,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 |`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -78,7 +78,7 @@ type: tab
 
 The below table identifies the required parameters in the `additionalDataCommon` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `fundingProvider` | *string* | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
 | `transactionPosDate` | *string* | 16 | Used to override a transaction post date in reporting |
@@ -96,7 +96,7 @@ titles: balances
 
 The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | *number* | 16,3 | Account beginning balance |
 | `endingBalance` | *number* | 16,3 | Account ending balance

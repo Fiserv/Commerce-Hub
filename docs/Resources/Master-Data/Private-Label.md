@@ -13,7 +13,7 @@ titles: privateLabel, JSON Example
 
 The below table identifies the parameters in the `privateLabel` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `specialFinanceIndicator` | *string* | 16 | Indicates if special finance term and rate |
 | `creditPlan`| *string* | 64 | Payment program assigned by the private label processor |

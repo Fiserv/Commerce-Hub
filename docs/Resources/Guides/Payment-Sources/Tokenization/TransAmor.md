@@ -118,7 +118,7 @@ titles: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|----------|----------------|---------|
 | `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
@@ -243,7 +243,7 @@ titles: source, card
 
 The below table identifies the parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 | ----- | :-----: | :-----: | :-----: | ----- |
 | `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 | `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
@@ -258,7 +258,7 @@ type: tab
 
 The below table identifies the required parameters in the `card` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 | ----- | :-----: | :-----: | :-----: | ----- |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit card expiration month |
 | `expirationYear` | *string* | 4 | &#10004; | 4-digit card expiration year |

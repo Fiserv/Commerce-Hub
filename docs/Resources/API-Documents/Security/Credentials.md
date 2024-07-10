@@ -25,7 +25,7 @@ titles: domains, merchantDetails
 
 The below table identifies the parameters in the request.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of [clickjacking](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking) when integrating with the Secure Data Capture v1 iFrame solution. |
 
@@ -38,7 +38,7 @@ The below table identifies the parameters in the request.
 
 The below table identifies the fields in the `domains` array.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 |---------|----------|--------|--------|
 | `url` | *string* | 2048 | URL associated with the HTTP domain |
 
@@ -48,7 +48,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variables | Type| Maximum Length | Required | Description |
+| Variables | Type| Max Length | Required | Description |
 |---------|----------|----------------|-------- | --------|
 | `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
 | `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. Required when using [merchant defined](?path=docs/Resources/Guides/BYOID.md) MID/TID. |
@@ -61,7 +61,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 The below table identifies the response elements. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 |---------|----------|--------|--------|
 | `accessToken` | *string* | 2048 | Access token credential to be used in subsequent API calls. |
 | `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT *(JSON Web Token)* |
