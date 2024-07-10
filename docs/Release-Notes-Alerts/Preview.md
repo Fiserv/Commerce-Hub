@@ -4,15 +4,31 @@ tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
 
 # Preview Release Notes
 
-Commerce Hub provides a preview of our upcoming feature releases in Developer Studio. When these features are released they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
+Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview) of our upcoming feature releases in Developer Studio. These features may not be functional until the certification release date. When these features are released to production they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
 
 <!-- theme: info -->
-> The upcoming features and updates can be viewed by changing the dropdown from **Active** to **Preview** in the left navigation when viewing an article or API.
+> The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **[Preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview)** in the left navigation when viewing an article or API.
 
 ##### Release Types
 
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
+
+---
+
+## August 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** July 17th 2024
+- **Production:** July 23rd 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.08: refactored Authorization Optimization models | Feature |
+| [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
+| Support [Multi-Use Public Key RSA encyrption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
+| Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
 
 ---
 
@@ -90,7 +106,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support [Global Acquiring](?path=docs/Resources/Guides/Global-Acquiring.md) for international merchant processing | Feature |
-| Support [CVV only encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for Multi-Use Public Key *(MUPK)*| Update |
+| Support [CVV only encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for Multi-Use Public Key *(MUPK)*| Update |
 | Support [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md) in-person transactions | Update |
 
 ---
