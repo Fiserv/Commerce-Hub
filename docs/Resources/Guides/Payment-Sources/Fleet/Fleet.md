@@ -13,7 +13,7 @@ Commerce Hub supports both card and check based transactions for Visa Fleet, Mas
 ##### Supported Verticals
 
 <!-- theme: info -->
-> Please contact your account representative for more information on Fleet payments.
+> Please contact your account representative for more information on accepting fleet payments.
 
 - Petroleum
 - Transportation
@@ -29,7 +29,7 @@ Select a payment method to begin accepting Fleet payments with Commerce Hub.
 
 <!-- type: card
 title: Fleet Card
-description: Accept Fleet card transactions using PaymentEMV, PaymentTrack and PaymentCard.
+description: Accept fleet card transactions using PaymentEMV, PaymentTrack and PaymentCard.
 link: ?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md
 -->
 

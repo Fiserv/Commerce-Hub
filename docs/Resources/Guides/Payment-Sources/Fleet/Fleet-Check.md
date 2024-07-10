@@ -4,18 +4,19 @@ tags: [Fleet, Petroleum, WEX, Comdata, Payment Check, ACH, Payment Sources ]
 
 # Fleet Checks
 
-Commerce Hub supports physical and virtual Fleet check payment methods including WEX Money Code *(previously EFS Check)*, Comdata Express Code *(virtual check)*, and Comdata ComCheck *(physical check)* using the *PaymentCheck* `sourceType`.
+Commerce Hub supports physical and virtual fleet check payment methods including WEX OTR Money Code, Comdata Express Code *(virtual check)*, and Comdata ComCheck *(physical check)* using the *PaymentCheck* `sourceType`.
 
-## Payload Example
-
-The example below contains the minimum [parameters](#parameters) for a successful Fleet [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using *PaymentCheck*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+## Transaction Example
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a charges payload request using *PaymentCheck*.
+The example below contains the minimum [parameters](#parameters) for a successful WEX Money Code [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using a *PaymentCheck*. Required fields are based on the specific [fleet brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
@@ -26,9 +27,9 @@ Example of a charges payload request using *PaymentCheck*.
   "source": {
     "sourceType": "PaymentCheck",
     "check": {
-      "checkData": "3654803",
-      "accountNumber": "144155167",
-      "routingNumber": "121000248",
+      "nameOnCheck": "Jane Smith",
+      "checkData": "123456",
+      "accountNumber": "25753254",
       "checkType": "MONEY_CODE"
     }
   },
@@ -37,19 +38,29 @@ Example of a charges payload request using *PaymentCheck*.
   },
   "merchantDetails": {
     "merchantId": "100008000003683",
-    "terminalId": "10000001"
+    "terminalId": "10000001",
+    "terminalLaneNumber": "01",
+    "siteTypeIndicator": "RETAIL"
   },
   "transactionInteraction": {
-    "origin": "MOTO"
+    "origin": "POS",
+    "posEntryMode": "MANUAL"
   },
-  "customer": {
-    "firstName": "ZEN",
-    "lastName": "R",
-    "email": null,
-    "dateOfBirth": "1992-10-04",
-    "driverLicenseNumber": "12345678",
-    "driverLicenseState": "Tx",
-    "taxid": "123456789"
+  "orderData": {
+    "itemDetails": [
+      {
+        "paymentSystemProductCode": "400",
+        "itemDescription": "General Merchandise",
+        "quantity": 1,
+        "unitOfMeasurement": "EACH",
+        "itemType": "PRODUCT",
+        "itemSubType": "MERCHANDISE",
+        "amountComponents": {
+          "unitPrice": 14.04,
+          "netAmount": 12.04
+        }
+      }
+    ]
   }
 }
 ```
@@ -68,7 +79,7 @@ Example of a charge (201: Created) response.
   "gatewayResponse": {
     "transactionType": "CHARGE_SALE",
     "transactionState": "CAPTURED",
-    "transactionOrigin": "MOTO",
+    "transactionOrigin": "RETAIL",
     "transactionProcessingDetails": {
       "orderId": "CHG01dec589299d309240fb51cb8957234868",
       "transactionTimestamp": "2024-03-07T22:23:21.506426965Z",
@@ -79,7 +90,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 12.94,
+      "total": 12.04,
       "currency": "USD"
     },
     "processorResponseDetails": {
@@ -87,8 +98,8 @@ Example of a charge (201: Created) response.
       "approvalCode": "3212",
       "referenceNumber": "0021-becf314f-59cf-4a75-9133-f3f1495d862d",
       "processor": "FISERV",
-      "host": "CONNECT_PAY",
-      "networkRouted": "TELECHECK",
+      "host": "BUYPASS",
+      "networkRouted": "GECC/Wright Exp",
       "responseCode": "000",
       "responseMessage": "Approved",
       "hostResponseCode": "0",
@@ -101,7 +112,6 @@ Example of a charge (201: Created) response.
   "source": {
     "sourceType": "PaymentCheck",
     "check": {
-      "routingNumber": "121000248",
       "accountNumber": "144155167"
     }
   },
@@ -112,14 +122,29 @@ Example of a charge (201: Created) response.
   },
   "transactionDetails": {
     "captureFlag": true,
-    "transactionCaptureType": "gateway",
+    "transactionCaptureType": "host",
     "retrievalReferenceNumber": "e00b14b15e0c",
     "transactionCutTimeStamp": "2024-03-08T05:00:00Z"
   },
   "transactionInteraction": {
-    "origin": "MOTO",
-    "posConditionCode": "CARD_NOT_PRESENT_MOTO",
-    "motoType": "PHONE"
+    "origin": "POS",
+    "posEntryMode": "MANUAL"
+  },
+  "orderData": {
+    "itemDetails": [
+      {
+        "paymentSystemProductCode": "400",
+        "itemDescription": "General Merchandise",
+        "quantity": 1,
+        "unitOfMeasurement": "EACH",
+        "itemType": "PRODUCT",
+        "itemSubType": "MERCHANDISE",
+        "amountComponents": {
+          "unitPrice": 14.04,
+          "netAmount": 12.04
+        }
+      }
+    ]
   }
 }
 ```
@@ -128,23 +153,23 @@ Example of a charge (201: Created) response.
 
 ---
 
-## Parameters
+## Paramters
 
-### Request Variables
+#### Request Variables
 
-The following variables are required when submitting a *PaymentCheck* request.
+Required fields are based on the specific [fleet brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
 
 <!--
 type: tab
-titles: source, check, customer
+titles: source, check, itemDetails
 -->
 
-The below table identifies the parameters in the `source` object.
+The below table identifies the required parameters in the `source` object.
 
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------ | --- |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCheck* for ACH transactions |
-| `check` | *object* | N/A |  &#10004; | Contains the payment check details |
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `sourceType` | *string* | 15 | Use Value *PaymentCheck* for Fleet check transactions |
+| `check` | *object* | N/A | Contains the payment check details |
 
 <!--
 type: tab
@@ -152,39 +177,42 @@ type: tab
 
 The below table identifies the required parameters in the `check` object.
 
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
-| `routingNumber` | *string* | 45 | &#10004; | Routing number endorsed on the check |
-| `accountNumber` | *string* | 45 | &#10004; | Account number endorsed on the check |
-| `checkType` | *string* | 256 | &#10004; | Describes [check type](?path=docs/Resources/Master-Data/Check.md#check-type) |
-| `checkData` | *String* | 45 | &#10004; | Identifying data for the check presented (i.e check number). |
-| `accountType` | *string* | 45 | &#10004; | Describe [account type](?path=docs/Resources/Master-Data/Check.md#account-type) |
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `nameOnCheck` | *string* | 45 | Check holder name |
+| `routingNumber` | *string* | 45 | Routing number endorsed on the check |
+| `checkData` | *String* | 45 | Identifying data for the check presented (i.e check number). |
+| `checkType` | *string* | 256 | Defines the check as *COMDATA_CHECK*, *COMDATA_EXPRESS* or *MONEY_CODE* |
+
+<!-- theme: info -->
+> Refer to the [check](?path=docs/Resources/Master-Data/Check.md) object for additional fields.
 
 <!--
 type: tab
 -->
 
-The below table identifies the required parameters in the `customer` object.
+<!-- theme: danger -->
+> - The `paymentSystemProductCode`, `itemType` and `itemSubType` must be sent in all fleet transactions to identify fuel and non-fuel purchases.
+> - Fuel products must always be the first item group.
+> - A maximum of ten products is allowed in `orderData`.
+> - The total amounts must equal the `amount.total`.
 
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
-| `email` | *string* | 256 | &#10004; | Customer email address |
-| `firstName` | *string* | 256 | &#10004; | Customer first name |
-| `lastName` | *string* | 256 | &#10004; | Customer last name |
-| `email` | *string* | 256 | &#10004; | Customer email address |
-| `dateOfBirth` | *string* | 10 | &#10004; | Customer date of birth in YYYY-MM-DD format.|
-| `driverLicenseNumber` | *string* | 256 | &#10004; | Customer driver license number |
-| `driverLicenseState` | *string* | 256 | &#10004; | Driver license state code |
-| `taxid` | *string* | N/A | &#10004; | Customer tax ID number. |
+The below table identifies the required parameters in the `itemDetails` array in `orderData`.
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `paymentSystemProductCode` | *string* | 4 | [Payment System Product Code](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md) as defined by Conexxus |
+| `itemDescription` | *string* | 1024 | Name or description of item |
+| `quantity` | *number* | 8 | Identifies the number of units of the product sold |
+| `unitOfMeasurement` | *string* | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
+| `itemType` | *string* | 256 | Identifies the [type of the item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
+| `itemSubType` | *string* | 256 | Identifies the [subtype of item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
+| `amountComponents` | *object* | N/A | Identifies the [additional amounts](?path=docs/Resources/Master-Data/Amount-Components.md#amount-components) used in transactions, fleet transactions require `unitPrice` and `netAmount` for each item purchased |
 
 <!-- theme: info -->
-> Refer to the [customer](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
+> Refer to the [order data](?path=docs/Resources/Master-Data/Order-Data.md) object for additional fields.
 
 <!-- type: tab-end -->
-
-| *COMDATA_CHECK* | Used for Fleet transactions processing a Comdata ComCheck [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
-| *COMDATA_EXPRESS* | Used for Fleet transactions processing a Comdata Express Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
-| *MONEY_CODE* | Used for Fleet transactions processing a WEX Money Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
 
 ---
 
@@ -193,6 +221,7 @@ The below table identifies the required parameters in the `customer` object.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
 - [Fleet Payments](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md)
+- [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment System Product Codes](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md)

@@ -4,7 +4,7 @@ tags: [Payment Facilitator, Partners]
 
 # Payment Facilitator Multi-MID
 
-In a multi-MID payment facilitator *(PayFac)* model the PayFac and sub-merchants are assigned their own `merchantId` by Commerce Hub. The PayFac will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PayFac to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
+In a multi-MID [payment facilitator *(PayFac)*](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) model the PayFac and sub-merchants are assigned their own `merchantId` by Commerce Hub. The PayFac will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PayFac to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
 
 ---
 

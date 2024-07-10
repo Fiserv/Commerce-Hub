@@ -57,9 +57,9 @@ The below table identifies the valid values of `checkType`.
 | ----- | ----- |
 | *PERSONAL* | Used for individual financial transactions |
 | *BUSINESS* | Used for company-related financial transactions |
-| *COMDATA_CHECK* | Used for Fleet transactions processing a Comdata ComCheck [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
-| *COMDATA_EXPRESS* | Used for Fleet transactions processing a Comdata Express Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
-| *MONEY_CODE* | Used for Fleet transactions processing a WEX Money Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
+| *COMDATA_CHECK* | Used for fleet transactions processing a Comdata ComCheck [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
+| *COMDATA_EXPRESS* | Used for fleet transactions processing a Comdata Express Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
+| *MONEY_CODE* | Used for fleet transactions processing a WEX Money Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
 
 ---
 

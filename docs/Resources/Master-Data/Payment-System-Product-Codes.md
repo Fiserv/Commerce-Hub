@@ -61,6 +61,6 @@ The following are Commerce Hub proprietary codes used by specific merchants.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Order Data](?path=docs/Resources/Master-Data/Order-Data.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Fleet](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md)
+- [Fleet Payments](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md)
 
 ---

@@ -4,7 +4,7 @@ tags: [Payment Facilitator, Partners]
 
 # Payment Facilitator Single MID
 
-A single MID payment facilitator *(PayFac)* model uses a single `merchantId` assigned by Commerce Hub to aggregate all transactions on behalf of their sub-merchants. The PayFac uses the `dynamicDescriptor` object to pass the sub-merchant's details. This model allows the PayFac to [settle to their accounts](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) and funding is handled by the PayFac.
+A single MID [payment facilitator *(PayFac)*](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) model uses a single `merchantId` assigned by Commerce Hub to aggregate all transactions on behalf of their sub-merchants. The PayFac uses the `dynamicDescriptor` object to pass the sub-merchant's details. This model allows the PayFac to [settle to their accounts](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) and funding is handled by the PayFac.
 
 ---
 
@@ -31,7 +31,7 @@ type: tab
 
 The below table identifies the required parameters in the `dynamicDescriptor` object.
 
-- **Discover, Visa, and Mastercard Single Merchant ID Payment Facilitators:** the format for `merchantName` is the first 3 characters of the [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) name followed by an asterisk and the sub-merchant name, e.g. “XYZ*A SMALL CO”.
+- **Discover, Visa, and Mastercard Single Merchant ID Payment Facilitators:** the format for `merchantName` is the first 3 characters of the Payment Facilitator name followed by an asterisk and the sub-merchant name, e.g. “XYZ*A SMALL CO”.
 - **Amex Single Merchant ID Payment Facilitators:** the `merchantName` must only contain the sub-merchant name, e.g. “A SMALL CO”.
 
 | Variable | Type | Max Length | Description |

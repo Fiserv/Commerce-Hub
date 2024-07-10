@@ -4,16 +4,16 @@ tags: [Fleet, Petroleum, WEX, Mastercard, Visa, Voyager, Comdata, Private Label,
 
 # Fleet Brand Requirements
 
-Card brands require specific data requirements when processing a [Fleet transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). The device or application must be able to read a Dynamic Card Table downloaded from the card brand or payment processor. In the case where an a table download is not supported, the device or application must provide a method to determine whether specific transactions are allowed.
+Fleet brands require specific data requirements when processing a [Fleet transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). The device or application must be able to read a Dynamic Card Table downloaded from the fleet brand or payment processor. In the case where an a table download is not supported, the device or application must provide a method to determine whether specific transactions are allowed.
 
 <!-- theme: info -->
-> The third-party vendor or merchant is required for managing the Table File Download. Please contact your account representative for more details.
+> The third-party vendor or merchant is required for managing the table file download. Please contact your account representative for more details.
 
 ---
 
 ## Purchase Restrictions
 
-When procssing a transaction to Commerce Hub the limits for each allowed product category for the payment instrument will be returned in the authorization response. Any product category not included in the authorization response is considered not allowed. In offline processing mode, the device must make the determination about what products are allowed for offline purchase based on settings in the Dynamic Card Table.
+When procssing a transaction to Commerce Hub the limits for each allowed product category for the payment instrument will be returned in the authorization response. Any product category not included in the authorization response is considered not allowed. In offline processing mode, the device must make the determination about what products are allowed for offline purchase based on settings in the Dynamic Table.
 
 ---
 
