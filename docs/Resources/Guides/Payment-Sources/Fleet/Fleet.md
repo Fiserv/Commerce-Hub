@@ -11,7 +11,7 @@ Depending on specific business needs and operational scope, businesses choose a 
 Commerce Hub supports both card and check based transactions for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor; Fuelman, Fleetwide, Comdata Fleet, Express and ComCheck)*, Wright Express *(WEX, Over-The-Road (OTR) and Money Code, Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* cards.
 
 <!-- theme: info -->
-> Please contact your account representative for more information on accepting fleet payments.
+> Commerce Hub currenlty only supports fleet transactions on the Buypass front-end processor. Please contact your account representative for more information on accepting fleet payments.
 
 ##### Supported Verticals
 

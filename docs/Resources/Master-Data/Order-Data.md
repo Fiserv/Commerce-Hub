@@ -72,10 +72,7 @@ JSON string format for `orderData`.
 
 ## Item Details
 
-Item details are an array that identifies the category, item count, and value of the customer's purchase, where each group of values is defined by the category.
-
-<!-- theme: example -->
-> If customer purchased a pair of tennis shoes, a tennis racket, and tennis balls, the array will contain groups, see JSON example.
+Item details are an array that identifies the group, item count, and value of the customer's purchase, where each group of values is defined by the category.
 
 <!--
 type: tab

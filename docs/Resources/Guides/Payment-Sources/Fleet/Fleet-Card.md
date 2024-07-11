@@ -216,12 +216,12 @@ The below table identifies the additional required parameters in the `card` obje
 > Not all Fleet BINs are part of the Commerce Hub BIN file, the merchant will need to provide [card category and sub-category](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) based on the Dynamic Fleet Table.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
+| ----- | :-----: | :-----: | ----- |
 | `category` | *string* | 25 |  &#10004; | Identifies the card category as *FLEET* |
 | `subCategory` | *string* | 25 |  &#10004; | Provides the [subcategory](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) for the `category` field to identify the card type |
 
 <!-- theme: info -->
-> Refer to the [check](?path=docs/Resources/Master-Data/Check.md) object for additional fields.
+> Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
 
 <!--
 type: tab
@@ -231,13 +231,13 @@ The below table identifies the conditional parameters in the `customer` object b
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `driverLicenseNumber` | *string* | 256 | Customer Driver License Number |
+| `driverLicenseNumber` | *string* | 256 | Customer driver license number |
 | `driverLicenseState` | *string* | 256 | Driver license state code |
 | `driverID` | *string* | 256 | This field represents the identification number of the driver |
 | `department` | *string* | 256 | Identifies the department the customer belongs to |
 | `jobId` | *string* | 256 | This field contains the customer job code |
 | `workOrderNumber` | *string* | 256 | This field contains the contract number or purchase order number |
-| `additionalData1` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
+| `additionalData1` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data. Example; Voyager Data, Enhanced Data, Driver Message, etc. |
 | `additionalData2` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
 | `vehicle` | *object* | N/A | Identifies vehicle specific details |
 

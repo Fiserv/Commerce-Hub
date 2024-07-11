@@ -4,7 +4,7 @@ tags: [Fleet, Petroleum, Product Codes, Master Data, API Reference]
 
 # Payment System Product Codes
 
-Payment System Product Codes are standard classification codes for products and services used to detail what type of purchase is being made and used to identify purchase restrictions. This information is submitted as part of the transactions [item details](?path=docs/Resources/Master-Data/Order-Data.md#item-details). Commerce Hub uses the [Conexxus Public Standards](https://www.conexxus.org/public-standards) for Payment System Product Codes.
+Payment System Product Codes are standard classification codes for products and services used to detail what type of purchase is being made and used to identify purchase restrictions. This information is submitted as part of the transactions [item details](?path=docs/Resources/Master-Data/Order-Data.md#item-details). Commerce Hub uses the [Conexxus Public Standards](https://www.conexxus.org/public-standards) when sending `paymentSystemProductCode` as part of the `itemDetails` in `orderData`.
 
 ## Codes Groups
 
