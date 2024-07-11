@@ -4,7 +4,7 @@ tags: [Fleet, Petroleum, WEX, Mastercard, Visa, Voyager, Comdata, Private Label,
 
 # Fleet Cards
 
-Commerce Hub supports card based payments for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor; Fuelman, Fleetwide, Comdata)*, WWright Express *(WEX and Over-The-Road (OTR), Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* using [*PaymentEMV*](?path=docs/In-Person/Encrypted-Payments/EMV.md), [*PaymentTrack*](?path=docs/In-Person/Encrypted-Payments/Track.md) or [*PaymentCard*](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) as the `sourceType`.
+Commerce Hub supports card based payments for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor)*; *(Fuelman, Fleetwide, Comdata)*, WWright Express *(WEX and Over-The-Road (OTR), Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* using [*PaymentEMV*](?path=docs/In-Person/Encrypted-Payments/EMV.md), [*PaymentTrack*](?path=docs/In-Person/Encrypted-Payments/Track.md) and [device encrypted](?path=docs/In-Person/Encrypted-Payments/Manual.md) or [MUPK encrypted](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) *PaymentCard* as the `sourceType`.
 
 ## Transaction Example
 
@@ -188,7 +188,7 @@ Example of a charge (201: Created) response.
 
 ---
 
-## Paramters
+## Parameters
 
 #### Request Variables
 
@@ -210,7 +210,7 @@ The below table identifies the required parameters in the `source` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `card` object.
+The below table identifies the additional required parameters in the `card` object.
 
 <!-- theme: warning -->
 > Not all Fleet BINs are part of the Commerce Hub BIN file, the merchant will need to provide [card category and sub-category](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) based on the Dynamic Fleet Table.
@@ -227,18 +227,37 @@ The below table identifies the parameters in the `card` object.
 type: tab
 -->
 
-The below table identifies the conditional parameters in the `customer` object.
+The below table identifies the conditional parameters in the `customer` object based on the [card brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `paymentSystemProductCode` | *string* | 4 | [Payment System Product Code](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md) as defined by Conexxus |
+| `driverLicenseNumber` | *string* | 256 | Customer Driver License Number |
+| `driverLicenseState` | *string* | 256 | Driver license state code |
+| `driverID` | *string* | 256 | This field represents the identification number of the driver |
+| `department` | *string* | 256 | Identifies the department the customer belongs to |
+| `jobId` | *string* | 256 | This field contains the customer job code |
+| `workOrderNumber` | *string* | 256 | This field contains the contract number or purchase order number |
+| `additionalData1` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
+| `additionalData2` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
 | `vehicle` | *object* | N/A | Identifies vehicle specific details |
 
 The below table identifies the conditional parameters in the `vehicle` objects.
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `paymentSystemProductCode` | *string* | 4 | [Payment System Product Code](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md) as defined by Conexxus |
+| `vehicleNumber` | *string* | 256 | This field identifies the vehicle number |
+| `odometerReading` | *string* | 256 | This field identifies the vehicle odometer reading keyed in by the customer or clerk |
+| `tripNumber` | *string* | 256 | This field contains the trip number |
+| `unitId` | *string* | 256 | This field contains the unit ID |
+| `reeferHours` | *string* | 256 | This field contains the reefer trailer's *(refrigerated trailer)* hours |
+| `maintenanceId` | *string* | 256 | This field contains the maintenance ID |
+| `trailerNumber` | *string* | 256 | This field contains the trailer ID number |
+| `hubometer` | *string* | 256 | This field contains the hubometer value |
+| `vehicleLicenseNumber` | *string* | 256 | This field contains Vehicle license number |
+| `vehicleLicenseState` | *string* | 256 | This field contains the vehicle license state code |
+| `trailerLicenseNumber` | *string* | 256 | This field contains trailer license number |
+| `trailerLicenseState` | *string* | 256 | This field contains the trailer license state code |
+| `trailerHub` | *string* | 256 | This field identifies the trailer hub serial number keyed in by the customer or clerk |
 
 <!--
 type: tab
@@ -266,21 +285,6 @@ The below table identifies the required parameters in the `itemDetails` array in
 > Refer to the [order data](?path=docs/Resources/Master-Data/Order-Data.md) object for additional fields.
 
 <!-- type: tab-end -->
-
-<!--
-type: tab
-titles: card
--->
-
-
-
-<!--
-type: tab
--->
-
-<!-- type: tab-end -->
-
-
 
 ---
 
