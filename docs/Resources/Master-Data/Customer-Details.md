@@ -16,12 +16,12 @@ The below table identifies the parameters in the `customer` object.
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
 | `merchantCustomerId` | *string* | 1024 | Merchant's unique customer identifier |
-| `firstName` | *string* | 256 | Customer first name |
-| `lastName` | *string* | 256 | Customer last name |
-| `email` | *string* | 256 | Customer email address |
-| `dateOfBirth` | *string* | 10 | Customer date of birth in YYYY-MM-DD format |
-| `driverLicenseNumber` | *string* | 256 | Customer Driver License Number |
-| `driverLicenseState` | *string* | 256 | Driver license state code |
+| `firstName` | *string* | 256 | First name of the customer |
+| `lastName` | *string* | 256 | Last name of the customer |
+| `email` | *string* | 256 | Email address for the customer |
+| `dateOfBirth` | *string* | 10 | Date of birth for the customer in YYYY-MM-DD format |
+| `driverLicenseNumber` | *string* | 256 | Driver license number of the customer |
+| `driverLicenseState` | *string* | 256 | Identifies the `driverLicenseNumber` state code |
 | `passportNumber` | *string* | 256 | Customer passport number |
 | `ssn` | *string* | 9 | Customer's Social Security Number *(SSN*) |
 | `taxId` | *string* | | Customer tax ID number |
@@ -30,8 +30,9 @@ The below table identifies the parameters in the `customer` object.
 | `accountCode` | *string* | 64 | This response field contains the account code of the customer or business |
 | `driverID` | *string* | 256 | This field represents the identification number of the driver |
 | `department` | *string* | 256 | Identifies the department the customer belongs to |
-| `jobId` | *string* | 256 | This field contains the customer job code |
-| `workOrderNumber` | *string* | 256 | This field contains the contract number or purchase order number |
+| `jobId` | *string* | 256 | Job code for the customer |
+| `workOrderNumber` | *string* | 256 | Used for the contract number or purchase order of the transaction |
+| `idCardNumber` | *string* | 256 | The customer's ID based on merchant's industry or veritical. ***Example:** User ID or Sub-fleet number.* |
 | `additionalData1` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
 | `additionalData2` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
 | `phone` | *array* | N/A | Customer [phone number](#phone-number) |
@@ -60,6 +61,7 @@ JSON string format for the `customer` object.
     "ipAddress": "170.165.02.26",
     "driverID": "45874",
     "workOrderNumber": "24561845",
+    "idCardNumber": "12345",
     "additionalData1": "string",
     "additionalData2": "string",
     "department": "DP005778",

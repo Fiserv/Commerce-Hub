@@ -191,7 +191,7 @@ The below table identifies the required parameters in the `check` object.
 type: tab
 -->
 
-<!-- theme: danger -->
+<!-- theme: warning -->
 > - The `paymentSystemProductCode`, `itemType` and `itemSubType` must be sent in all fleet transactions to identify fuel and non-fuel purchases.
 > - Fuel products must always be the first item group.
 > - A maximum of ten products is allowed in `orderData`.

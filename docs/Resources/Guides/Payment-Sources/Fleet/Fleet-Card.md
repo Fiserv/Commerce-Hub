@@ -227,43 +227,13 @@ The below table identifies the additional required parameters in the `card` obje
 type: tab
 -->
 
-The below table identifies the conditional parameters in the `customer` object based on the [card brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
-
-| Variable | Type | Max Length | Description |
-| ----- | :-----: | :-----: | ----- |
-| `driverLicenseNumber` | *string* | 256 | Customer driver license number |
-| `driverLicenseState` | *string* | 256 | Driver license state code |
-| `driverID` | *string* | 256 | This field represents the identification number of the driver |
-| `department` | *string* | 256 | Identifies the department the customer belongs to |
-| `jobId` | *string* | 256 | This field contains the customer job code |
-| `workOrderNumber` | *string* | 256 | This field contains the contract number or purchase order number |
-| `additionalData1` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data. Example; Voyager Data, Enhanced Data, Driver Message, etc. |
-| `additionalData2` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
-| `vehicle` | *object* | N/A | Identifies vehicle specific details |
-
-The below table identifies the conditional parameters in the `vehicle` objects.
-
-| Variable | Type | Max Length | Description |
-| ----- | :-----: | :-----: | ----- |
-| `vehicleNumber` | *string* | 256 | This field identifies the vehicle number |
-| `odometerReading` | *string* | 256 | This field identifies the vehicle odometer reading keyed in by the customer or clerk |
-| `tripNumber` | *string* | 256 | This field contains the trip number |
-| `unitId` | *string* | 256 | This field contains the unit ID |
-| `reeferHours` | *string* | 256 | This field contains the reefer trailer's *(refrigerated trailer)* hours |
-| `maintenanceId` | *string* | 256 | This field contains the maintenance ID |
-| `trailerNumber` | *string* | 256 | This field contains the trailer ID number |
-| `hubometer` | *string* | 256 | This field contains the hubometer value |
-| `vehicleLicenseNumber` | *string* | 256 | This field contains Vehicle license number |
-| `vehicleLicenseState` | *string* | 256 | This field contains the vehicle license state code |
-| `trailerLicenseNumber` | *string* | 256 | This field contains trailer license number |
-| `trailerLicenseState` | *string* | 256 | This field contains the trailer license state code |
-| `trailerHub` | *string* | 256 | This field identifies the trailer hub serial number keyed in by the customer or clerk |
+The conditional parameters in the `customer` and `vehicle` objects is based on the [card brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
 
 <!--
 type: tab
 -->
 
-<!-- theme: danger -->
+<!-- theme: warning -->
 > - The `paymentSystemProductCode`, `itemType` and `itemSubType` must be sent in all fleet transactions to identify fuel and non-fuel purchases.
 > - Fuel products must always be the first item group.
 > - A maximum of ten products is allowed in `orderData`.
