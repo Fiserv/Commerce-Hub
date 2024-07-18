@@ -6,6 +6,18 @@ tags: [Fleet, Petroleum, WEX, Comdata, Payment Check, ACH, Payment Sources ]
 
 Commerce Hub supports physical and virtual fleet check payment methods including WEX OTR Money Code, Comdata Express Code *(virtual check)*, and Comdata ComCheck *(physical check)* using the *PaymentCheck* `sourceType`.
 
+---
+
+## Supported Transactions
+
+| Brand | Auth Only | Sale (Capture) | Refunds | Cancels | Offline |
+| ----- | :-----: | :-----: | :-----: | :-----: | :-----: |
+| Comdata Express Code | | &#10004; | | | |
+| Comdata ComCheck | &#10004; | | | | |
+| WEX OTR Money Code | &#10004; | | | | &#10004; |
+
+---
+
 ## Transaction Example
 
 <!--
@@ -34,7 +46,7 @@ The example below contains the minimum [parameters](#parameters) for a successfu
     }
   },
   "transactionDetails": {
-    "captureFlag": true
+    "captureFlag": false
   },
   "merchantDetails": {
     "merchantId": "100008000003683",
@@ -78,7 +90,7 @@ Example of a charge (201: Created) response.
 {
   "gatewayResponse": {
     "transactionType": "CHARGE_SALE",
-    "transactionState": "CAPTURED",
+    "transactionState": "AUTHORIZED",
     "transactionOrigin": "RETAIL",
     "transactionProcessingDetails": {
       "orderId": "CHG01dec589299d309240fb51cb8957234868",
@@ -121,7 +133,7 @@ Example of a charge (201: Created) response.
     "networkResponseCode": "07"
   },
   "transactionDetails": {
-    "captureFlag": true,
+    "captureFlag": false,
     "transactionCaptureType": "host",
     "retrievalReferenceNumber": "e00b14b15e0c",
     "transactionCutTimeStamp": "2024-03-08T05:00:00Z"

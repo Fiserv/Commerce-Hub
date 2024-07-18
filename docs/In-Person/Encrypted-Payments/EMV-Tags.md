@@ -62,6 +62,7 @@ The below table contains the list of data elements, their consecutive EMV tags a
 The EMV Data contains the EMV Data Length Indicator and the EMV chip data in tag-length-value (TLV) format. Multiple TLV data elements maybe present in the EMV Data Field Identifier.
 
 TLV format is defined as:
+
 - **Tag:** The tag contains 1 or 2 byte binary value that identifies the content of the value field.
 - **Length:** The length defines the length of the value represented in binary format.
 - **Value:** The value is a variable length field that contains transaction-specific data.
@@ -71,19 +72,9 @@ Below is a sample of the EMV Data Field Identifier with 2 TLV data elements.
 <!-- theme: example -->
 > 024**9F37**04833A1232**9F10**02AB34 (binary hex nibbles)
 
-
-| EMV Data Length Indicator | Tag 1  | Length 1  | Value 1 | Tag 2 |  Length 2 | Value 2 |
+| Length Indicator | Tag 1  | Length 1  | Value 1 | Tag 2 | Length 2 | Value 2 |
 |----------|--------|--------|------| -----| -------|-----|
 | 024 | 9F37 | 04 | 833A1232 | 9F10 | 02 | AB34 |
-
-
-
-
-<!---
-| 9F67  | &#10004;  |  | EMV-9F67  |  |  | binary  | 11689 |
-| 9F6E  | &#10004;  |  | EMV-9F6E  |  |  | binary  | 11780 |
-| 9F7C  | &#10004;  |  | EMV-9F7C  |  |  | binary  | 11689 |
---->
 
 ---
 

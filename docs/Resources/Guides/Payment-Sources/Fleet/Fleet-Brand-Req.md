@@ -8,7 +8,7 @@ Fleet brands require specific data requirements when processing a [Fleet transac
 
 ---
 
-## Dynamice Card Table
+## Dynamic Card Table
 
 The device or application must be able to read a Dynamic Card Table downloaded from the fleet brand or payment processor. In the case where an a table download is not supported, the device or application must provide a method to determine whether specific transactions are allowed.
 
@@ -23,9 +23,11 @@ The device or application must be able to interpret the Commerce Hub authorizati
 
 | Response Code | Requirements |
 | ----- | ----- |
-| APPROVED | The device or application must verify the validity of the prompts based on the data returned in the authorization response before authorization the pump to active |
-| DECLINED (DX?) | The authorizer requires additional information to be submitted before the pump is authorized. The device must request the prompts indicated and perform another authorization request. |
-| DECLINED (D7) | The authorizer has indicated a value does not match. Invalid prompts will be indicated with a ?. These transactions can be retried after re-prompting for the incorrect values. |
+| *APPROVED* | The device or application must verify the validity of the prompts based on the data returned in the authorization response before authorization the pump to active |
+| *DECLINED (DX?)* | The authorizer requires additional information to be submitted before the pump is authorized. The device must request the prompts indicated and perform another authorization request. |
+| *DECLINED (D7)* | The authorizer has indicated a value does not match. Invalid prompts will be indicated with a ?. These transactions can be retried after re-prompting for the incorrect values. |
+
+EXAMPLE
 
 ---
 
@@ -33,12 +35,13 @@ The device or application must be able to interpret the Commerce Hub authorizati
 
 When procssing a transaction to Commerce Hub the limits for each allowed product category for the payment instrument will be returned in the `orderData` object in the authorization response. The `itemDails` will contain the `description` and `netAmount` limit for the product category. Any product category not included in the authorization response is considered not allowed by the brand. In offline processing mode, the device must make the determination about what products are allowed for offline purchase based on settings in the Dynamic Table.
 
+EXAMPLE
+
 ---
 
 ## Device Prompts
 
-The device or application must be able to prompt for specific customer or vehicle details for all fleet transactions. The device or application must prompt for the data appropriate to the transaction it will be performing, and provide the details in the respective fields. Prompts flagged as optional do not have to be offered.
-
+The device or application must be able to prompt for specific [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) or [vehicle details](?path=docs/Resources/Master-Data/Vehicle-Details.md) for all fleet transactions defined by the [Dynamic Card Table](#dynamic-card-table) or [authorization response](#authorization-prompt). The device or application must prompt for the data appropriate to the transaction it will be performing, and provide the details in the respective fields. Prompts flagged as optional do not have to be offered.
 
 <!--
 type: tab
@@ -46,6 +49,7 @@ titles: Comdata, Express Code, ComCheck, Corpay, Fleet One, Mastercard, Visa, Vo
 -->
 
 The below table outlines the fields that can prompt for Comdata.
+
 
 
 <!--
@@ -65,37 +69,123 @@ The below table outlines the fields that can prompt for Comdata ComCheck.
 type: tab
 -->
 
-The below table outlines the fields that can prompt for Corpay.
+Corpay *(Fleetwide and Fuelman)* have no product restrictions. The below table outlines the fields that can prompt for Corpay.
+
+| Object | Field | Swipe/Chip/Contactless | Manual Entry |
+| ----- | ----- | :-----: | :-----: |
+| `customer` | `driverId` | &#10004; | &#10004; |
+| `customer::vehicle` | `odometerReading` | &#10004; | &#10004; |
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for Fleet One.
+Fleet One has no product restrictions. The below table outlines the fields that can prompt for Fleet One.
+
+| Object | Field | Swipe/Chip/Contactless | Manual Entry |
+| ----- | ----- | :-----: | :-----: |
+| `customer::vehicle` | `odometerReading` | &#10004; | &#10004; |
+| `customer::vehicle` | `vehicleNumber` | &#10004; | &#10004; |
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for Mastercard Fleet.
+Mastercard Fleet is retricted to fuel only if the Product Restriction Code = 2, otheriwse all products are allowed. The below table outlines the fields that can prompt for Mastercard Fleet based on the Product Type Code or if always required.
+
+| Object | Field | Swipe/Chip/Contactless | Manual Entry |
+| ----- | ----- | :-----: | :-----: |
+| `customer` | `driverId` | 3 | |
+| `customer` | `idCardNumber` | 1 | &#10004; |
+| `customer::vehicle` | `odometerReading` | 1, 2, 3, or 4 | &#10004; |
+| `customer::vehicle` | `vehicleNumber` | 2 | |
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for Visa Fleet.
+Visa Fleet is retricted to fuel only if the Service Enhancement Indicator = 2 or fuel and maintenance if = 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Visa Fleet based on the Service Prompt or if always required.
+
+| Object | Field | Swipe/Chip/Contactless | Manual Entry |
+| ----- | ----- | :-----: | :-----: |
+| `customer` | `driverId` | 3 | |
+| `customer` | `idCardNumber` | 1, 6 | &#10004; |
+| `customer::vehicle` | `odometerReading` | 1, 2, 3, 4 | &#10004; |
+| `customer::vehicle` | `vehicleNumber` | 2 | |
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for Voyager.
+Voyager is retricted to fuel only if the second digit of the Product Restriction Code = 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Voyager based on the first digit of the Product Restriction Code or if always required.
+
+| Object | Field | Swipe/Chip/Contactless | Manual Entry |
+| ----- | ----- | :-----: | :-----: |
+| `customer` | `driverId` | 1, 3 | 1, 3 |
+| `customer::vehicle` | `odometerReading` | 2, 3 | 2, 3 |
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for WEX.
+Wright Express *(WEX)* is retricted to fuel only if in offline mode and the Purchase Restriction = 00, otheriwse all products are allowed.
+
+<!-- theme: info -->
+> If the device finds values not included in this table, it should prompt for `driverId` and `odometerReading`.
+
+#### Manual Entry
+
+For manual entry thransactions enter the Prompt Code on the card, otherwise always prompt for the `driverId`, `idCardNumber` and `odometerReading`. The `vehicleNumber` is always required.
+
+#### Swiped
+
+Swiped transactions uses fields 6 and 10 of the `track2Data`. The below table outlines the required fields to prompt for WEX.
+
+| Field 6 | Field 10 | `customer` | `customer::vehicle` |
+| ----- | ----- | ----- | ----- |
+| 0 | 0 | | |
+| 1 | 0 | `driverId` | `odometerReading`|
+| 1 | 1 | | `odometerReading`, `vehicleNumber` |
+| 1 | 2 | | `odometerReading` |
+| 1 | 3 | `driverId` | `vehicleNumber` |
+| 1 | 4 | `driverId` | |
+| 1 | 5 | | `vehicleNumber` |
+| 1 | 6 | `driverId`, `jobId` | |
+| 1 | 7 | `jobId` | `vehicleNumber` |
+| 1 | 8 | `driverId` | `odometerReading`, `vehicleNumber` |
+| 1 | 9 | `driverId`, `jobId` | `odometerReading` |
+| 3 | 3 | `idCardNumber` | `vehicleNumber` |
+| 3 | 4 | `driverId`, `idCardNumber` | |
+| 3 | 5 | `department`, `driverId` | |
+| 3 | 7 | `department` | `vehicleNumber` |
+| 3 | 8 | `department`, `driverId` | `odometerReading` |
+| 4 | 0 | `department` | `odometerReading`, `vehicleNumber` |
+| 4 | 3 | `additionalData1`, `department` | `vehicleNumber` |
+| 4 | 4 | `additionalData1`, `driverId`, `idCardNumber` | |
+| 4 | 5 | `additionalData1`, `driverId` | |
+| 4 | 9 | `additionalData1` | |
+| 5 | 1 | `additionalData1` | `vehicleNumber` |
+
+#### EMV
+
+EMV chip and contactless use EMV Tag DF30. The below table outlines the required fields to prompt for WEX.
+
+| Bits 8-4 | Hex | Object | Field |
+| ----- | ----- | ----- | ----- |
+| 00001 | 0D0040 | `customer` | `idCardNumber` |
+| 00010 | 110040 | `customer::vehicle` | `vehicleNumber` |
+| 00100 | 250040 | `customer` | `driverId` |
+| 00101 | 2900C0 | `customer::vehicle` | `odometerReading` |
+| 01001 | 4D0040 | `customer` | `workOrderNumber` |
+| 01011 | 5D0040 | `customer::vehicle` | `tripNumber` |
+| 01100 | 650040 | `customer::vehicle` | `unitId` |
+| 01101 | 690040 | `customer::vehicle` | `reeferHours` |
+| 10001 | 890040 | `customer` | `additionalData1` |
+| 10101 | AD0040 | `customer` | `jobId` |
+| 10110 | B50040 | `customer::vehicle` | `maintenanceId` |
+| 10111 | BD0040 | `customer` | `department` |
+| 11010 | D10040 | `customer::vehicle` | `hubometer` |
+| 11000 | C50040 | `customer::vehicle` | `trailerNumber` |
 
 <!--
 type: tab

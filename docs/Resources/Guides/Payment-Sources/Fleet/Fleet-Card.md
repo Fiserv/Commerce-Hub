@@ -4,7 +4,24 @@ tags: [Fleet, Petroleum, WEX, Mastercard, Visa, Voyager, Comdata, Private Label,
 
 # Fleet Cards
 
-Commerce Hub supports card based payments for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor)*; *(Fuelman, Fleetwide, Comdata)*, WWright Express *(WEX and Over-The-Road (OTR), Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* using [*PaymentEMV*](?path=docs/In-Person/Encrypted-Payments/EMV.md), [*PaymentTrack*](?path=docs/In-Person/Encrypted-Payments/Track.md) and [device encrypted](?path=docs/In-Person/Encrypted-Payments/Manual.md) or [MUPK encrypted](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) *PaymentCard* as the `sourceType`.
+Commerce Hub supports card based payments for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor)*; *(Fuelman, Fleetwide, Comdata)*, Wright Express *(WEX and Over-The-Road (OTR), Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* using [*PaymentEMV*](?path=docs/In-Person/Encrypted-Payments/EMV.md), [*PaymentTrack*](?path=docs/In-Person/Encrypted-Payments/Track.md) and [device encrypted](?path=docs/In-Person/Encrypted-Payments/Manual.md) or [MUPK encrypted](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) *PaymentCard* as the `sourceType`.
+
+---
+
+## Supported Transactions
+
+| Brand | Auth Only | Sale (Capture) | Refunds | Cancels | Offline |
+| ----- | :-----: | :-----: | :-----: | :-----: | :-----: |
+| Fleet One | &#10004; | &#10004; | | &#10004; | |
+| Comdata | &#10004; | &#10004; | | &#10004; | &#10004; |
+| Corpay, Fuelman, Fleetwide | &#10004; | &#10004; | | &#10004; | |
+| Mastercard | &#10004; | &#10004; | &#10004;| &#10004; | |
+| Visa | &#10004; | &#10004; | &#10004;| &#10004; | |
+| Voyager | &#10004; | &#10004; | &#10004;| &#10004; | |
+| Wright Express | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
+| WEX OTR, NGFC | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
+
+---
 
 ## Transaction Example
 
