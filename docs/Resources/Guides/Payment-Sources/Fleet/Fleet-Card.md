@@ -13,11 +13,11 @@ Commerce Hub supports card based payments for Visa Fleet, Mastercard Fleet, Corp
 | Brand | Auth Only | Sale (Capture) | Refunds | Cancels | Offline |
 | ----- | :-----: | :-----: | :-----: | :-----: | :-----: |
 | Fleet One | &#10004; | &#10004; | | &#10004; | |
-| Comdata | &#10004; | &#10004; | | &#10004; | &#10004; |
-| Corpay, Fuelman, Fleetwide | &#10004; | &#10004; | | &#10004; | |
+| Comdata | &#10004; | &#10004; | | &#10004; | |
+| Corpay, Fuelman, Fleetwide | &#10004; | &#10004; | | &#10004; | &#10004; |
 | Mastercard | &#10004; | &#10004; | &#10004;| &#10004; | |
 | Visa | &#10004; | &#10004; | &#10004;| &#10004; | |
-| Voyager | &#10004; | &#10004; | &#10004;| &#10004; | |
+| Voyager | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
 | Wright Express | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
 | WEX OTR, NGFC | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
 
@@ -50,6 +50,10 @@ The example below contains the minimum [parameters](#parameters) for a successfu
       "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
       "deviceType": "INGENICO",
       "keyId": "88000000022"
+    },
+    "card": {
+      "category": "FLEET",
+      "subCategory": "WEX"
     }
   },
   "transactionDetails": {
@@ -99,6 +103,8 @@ The example below contains the minimum [parameters](#parameters) for a successfu
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab

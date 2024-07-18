@@ -10,11 +10,11 @@ Commerce Hub supports physical and virtual fleet check payment methods including
 
 ## Supported Transactions
 
-| Brand | Auth Only | Sale (Capture) | Refunds | Cancels | Offline |
-| ----- | :-----: | :-----: | :-----: | :-----: | :-----: |
-| Comdata Express Code | | &#10004; | | | |
-| Comdata ComCheck | &#10004; | | | | |
-| WEX OTR Money Code | &#10004; | | | | &#10004; |
+| Brand | Auth Only | Sale (Capture) | Refunds | Cancels |
+| ----- | :-----: | :-----: | :-----: | :-----: |
+| Comdata Express Code | &#10004; | &#10004; | | |
+| Comdata ComCheck | &#10004; | | | |
+| WEX OTR Money Code | &#10004; | | | |
 
 ---
 
@@ -76,6 +76,8 @@ The example below contains the minimum [parameters](#parameters) for a successfu
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab

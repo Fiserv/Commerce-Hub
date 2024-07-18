@@ -27,15 +27,174 @@ The device or application must be able to interpret the Commerce Hub authorizati
 | *DECLINED (DX?)* | The authorizer requires additional information to be submitted before the pump is authorized. The device must request the prompts indicated and perform another authorization request. |
 | *DECLINED (D7)* | The authorizer has indicated a value does not match. Invalid prompts will be indicated with a ?. These transactions can be retried after re-prompting for the incorrect values. |
 
-EXAMPLE
-
----
-
-### Purchase Restrictions
+#### Purchase Restrictions
 
 When procssing a transaction to Commerce Hub the limits for each allowed product category for the payment instrument will be returned in the `orderData` object in the authorization response. The `itemDails` will contain the `description` and `netAmount` limit for the product category. Any product category not included in the authorization response is considered not allowed by the brand. In offline processing mode, the device must make the determination about what products are allowed for offline purchase based on settings in the Dynamic Table.
 
-EXAMPLE
+---
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+The example below contains the minimum [parameters](#parameters) for a successful WEX [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using a *PaymentEMV*. Required fields are based on the specific [card brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
+
+```json
+{
+  "amount": {
+    "total": 66.17,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentTrack",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
+      "deviceType": "INGENICO",
+      "keyId": "88000000022"
+    },
+    "card": {
+      "category": "FLEET",
+      "subCategory": "WEX_OST"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": false
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001",
+    "terminalLaneNumber": "01",
+    "siteTypeIndicator": "RETAIL"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "MAG_STRIPE",
+    "posConditionCode": "CARD_PRESENT",
+    "additionalPosInformation": {
+      "attendedTerminalData": "UNATTENDED",
+      "cardholderActivatedTerminalInformation": "CAT_LEVEL_2",
+      "dataEntrySource": "AUTOMATED_FUEL_DISPENSING_MACHINE",
+      "terminalLocation": "ON_PREMISE",
+      "terminalOperator": "CUSTOMER",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "CHIP_MAG_STRIPE"
+      }
+    }
+  }
+}
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
+
+<!--
+type: tab
+-->
+
+Example of a charge (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "CHARGE_SALE",
+    "transactionState": "CAPTURED",
+    "transactionOrigin": "RETAIL",
+    "transactionProcessingDetails": {
+      "orderId": "CHG01dec589299d309240fb51cb8957234868",
+      "transactionTimestamp": "2024-03-07T22:23:21.506426965Z",
+      "apiTraceId": "ae33c0c0dad948148aa4e00b14b15e0c",
+      "clientRequestId": "5389247",
+      "transactionId": "ae33c0c0dad948148aa4e00b14b15e0c"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 66.17,
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "3212",
+      "referenceNumber": "0021-becf314f-59cf-4a75-9133-f3f1495d862d",
+      "processor": "FISERV",
+      "host": "BUYPASS",
+      "networkRouted": "GECC/Wright Exp",
+      "responseCode": "000",
+      "responseMessage": "Approved",
+      "hostResponseCode": "0",
+      "hostResponseMessage": "Approved",
+      "bankAssociationDetails": {
+        "transactionTimestamp": "2024-03-07T16:23:00Z"
+      }
+    }
+  },
+  "source": {
+    "sourceType": "PaymentEMV",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    },
+    "emvData": "8a0230309f36020073910a1be55403be070aa53030"
+  },
+  "networkDetails": {
+    "systemTrace": "1400310000032032697430",
+    "networkResponseStatus": "1",
+    "networkResponseCode": "07"
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "transactionCaptureType": "host",
+    "retrievalReferenceNumber": "e00b14b15e0c",
+    "transactionCutTimeStamp": "2024-03-08T05:00:00Z"
+  },
+  "transactionInteraction": {
+    "origin": "POS",
+    "posEntryMode": "ICR_RELIABLE",
+    "posConditionCode": "CARD_PRESENT",
+    "additionalPosInformation": {
+      "attendedTerminalData": "UNATTENDED",
+      "cardholderActivatedTerminalInformation": "CAT_LEVEL_2",
+      "dataEntrySource": "AUTOMATED_FUEL_DISPENSING_MACHINE",
+      "terminalLocation": "ON_PREMISE",
+      "terminalOperator": "CUSTOMER",
+      "posFeatures": {
+        "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
+        "terminalEntryCapability": "EMV_CONTACTLESS"
+      }
+    }
+  },
+  "orderData": {
+    "itemDetails": [
+      {
+        "paymentSystemProductCode": "001",
+        "itemDescription": "Regular",
+        "quantity": 18.385,
+        "unitOfMeasurement": "GALLON",
+        "itemType": "PRODUCT",
+        "itemSubType": "FUEL",
+        "amountComponents": {
+          "unitPrice": 3.599,
+          "netAmount": 66.17
+        }
+      }
+    ]
+  }
+}
+```
+
+<!-- type: tab-end -->
 
 ---
 
@@ -106,12 +265,35 @@ type: tab
 
 Visa Fleet is retricted to fuel only if the Service Enhancement Indicator = 2 or fuel and maintenance if = 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Visa Fleet based on the Service Prompt or if always required.
 
-| Object | Field | Swipe/Chip/Contactless | Manual Entry |
+<!--theme: info -->
+> A Visa fleet card transaction must comply with fleet data requirements, in order to be eligible for reduced commercial interchange rates, such as [Commercial Level II or Level III](?path=docs/Resources/Guides/Level23/Level23.md).
+
+#### Swipe and Manual Entry
+
+| Object | Field | Swipe | Manual Entry |
 | ----- | ----- | :-----: | :-----: |
 | `customer` | `driverId` | 3 | |
 | `customer` | `idCardNumber` | 1, 6 | &#10004; |
 | `customer::vehicle` | `odometerReading` | 1, 2, 3, 4 | &#10004; |
 | `customer::vehicle` | `vehicleNumber` | 2 | |
+
+#### Visa 2.0 EMV
+
+Visa Fleet 2.0 is a new fleet EMV standard that harnesses the additional capabilities of EMV at the fuel pump. In addition to more driver prompt options, this functionality enables commercial clients to restrict card use at fuel merchants to certain fuel and non-fuel product categories.
+
+The below table outlines the required fields to prompt for Visa Fleet 2.0.
+
+| Prompt Tokens | Object | Field |
+| ----- | ----- | ----- |
+| AD1 | `customer` | `additionalData1` |
+| AD2 | `customer` | `additionalData1` |
+| DRI | `customer` | `driverId` |
+| EMP | `customer` | `jobId` |
+| GEN | `customer` | `idCardNumber` |
+| ODM | `customer::vehicle` | `odometerReading` |
+| TRL | `customer::vehicle` | `trailerNumber` |
+| VHI | `customer::vehicle` | `vehicleNumber` |
+| WON | `customer` | `workOrderNumber` |
 
 <!--
 type: tab
@@ -119,10 +301,39 @@ type: tab
 
 Voyager is retricted to fuel only if the second digit of the Product Restriction Code = 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Voyager based on the first digit of the Product Restriction Code or if always required.
 
-| Object | Field | Swipe/Chip/Contactless | Manual Entry |
+#### Swipe and Manual Entry
+
+| Object | Field | Swipe | Manual Entry |
 | ----- | ----- | :-----: | :-----: |
 | `customer` | `driverId` | 1, 3 | 1, 3 |
 | `customer::vehicle` | `odometerReading` | 2, 3 | 2, 3 |
+
+#### EMV
+
+EMV chip and contactless use EMV DF Tags and must use the Prompting Script File to determine appropriate prompts until *no record found* result. If the Prompting Script File is not to be used, then the Product Type Code should be used to determine which prompts to offer the
+cardholder.
+
+The below table outlines the required fields to prompt for Voyager.
+
+| EMV Tag | Object | Field |
+| ----- | ----- | ----- |
+| DF10 | `customer` | `jobId` |
+| DF11 | `customer::vehicle` | `vehicleNumber` |
+| DF12 | `customer` | `driverId` |
+| DF13 | `customer::vehicle` | `odometerReading` |
+| DF20 | `customer::vehicle` | `trailerNumber` |
+| DF21 | `customer::vehicle` | `reeferHours` |
+| DF22 | `customer::vehicle` | `tripNumber` |
+| DF23 | `customer` | `idCardNumber` |
+| DF24 | `customer::vehicle` | `unitId` |
+| DF25 | `customer` | `workOrderNumber` |
+| DF26 | `customer` | `driverLicenseNumber` |
+| DF27 | `customer` | `driverLicenseState` |
+| DF28 | `customer::vehicle` | `vehicleLicenseNumber` |
+| DF29 | `customer::vehicle` | `vehicleLicenseStater` |
+| DF30 | `customer::vehicle` | `trailerLicenseNumber` |
+| DF31 | `customer::vehicle` | `trailerLicenseStater` |
+| DF32-DF6F | `customer` | `additionalData1` |
 
 <!--
 type: tab
@@ -191,7 +402,10 @@ EMV chip and contactless use EMV Tag DF30. The below table outlines the required
 type: tab
 -->
 
-The below table outlines the fields that can prompt for WEX OST.
+WEX OTR requires an [authorization request](#authorization-prompt) to determine the required prompts and purchase restrictions.
+
+<!-- theme: info-->
+> Manual entry is not allowed for any WEX OTR card.
 
 <!--
 type: tab
