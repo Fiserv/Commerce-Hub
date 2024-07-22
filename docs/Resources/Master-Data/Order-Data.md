@@ -72,10 +72,7 @@ JSON string format for `orderData`.
 
 ## Item Details
 
-Item details are an array that identifies the category, item count, and value of the customer's purchase, where each group of values is defined by the category.
-
-<!-- theme: example -->
-> If customer purchased a pair of tennis shoes, a tennis racket, and tennis balls, the array will contain groups, see JSON example.
+Item details are an array that identifies the group, item count, and value of the customer's purchase, where each group of values is defined by the category.
 
 <!--
 type: tab
@@ -87,8 +84,6 @@ The below table identifies the parameters in the `itemDetails` array.
 | Variable | Type | Max Length | Description |
 | ----- | :------: | :-----: | ----- |
 | `itemNumber` | *number* | 3 | Line item number, *maximum 998* |
-| `groupingIndicator` | *boolean* | N/A | Identifies if the items are part of a group |
-| `groupingId` | *integer* | 3 | Merchant provided identifier for the group this item belongs to, *maximum 100* |
 | `commodityCode` | *string* | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
 | `paymentSystemProductCode` | *string* | 4 | [Payment System Product Code](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md) as defined by Conexxus |
 | `itemDescription` | *string* | 1024 | Name or description of item |
@@ -117,8 +112,6 @@ JSON string format for `itemDetails`:
   "itemDetails": [
     {
       "itemNumber": 1,
-      "groupingIndicator": true,
-      "groupingId": 1,
       "commodityCode": "40515",
       "paymentSystemProductCode": "001",
       "productUPC": "03600029145",

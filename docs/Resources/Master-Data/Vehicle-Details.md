@@ -15,19 +15,19 @@ The below table identifies the parameters in the `vehicle` object.
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `vehicleNumber` | *string* | 256 | This field identifies the vehicle number |
-| `odometerReading` | *string* | 256 | This field identifies the vehicle odometer reading keyed in by the customer or clerk |
-| `tripNumber` | *string* | 256 | This field contains the trip number |
-| `unitId` | *string* | 256 | This field contains the unit ID |
+| `vehicleNumber` | *string* | 256 | Identifies the vehicle number |
+| `odometerReading` | *string* | 256 | The vehicle odometer reading keyed in by the customer or clerk |
+| `tripNumber` | *string* | 256 | The trip number for the customer |
+| `unitId` | *string* | 256 | The unit ID or unit number of the vehicle or customer |
+| `maintenanceId` | *string* | 256 | Identifies the maintenance ID for the vehicle or customer |
+| `vehicleLicenseNumber` | *string* | 256 | License plate number of the vehicle |
+| `vehicleLicenseState` | *string* | 256 | Identifies the `vehicleLicenseNumber` state code |
+| `trailerNumber` | *string* | 256 | Trailer ID number for the customer |
+| `hubometer` | *string* | 256 | Hubometer value of the vehicle or trailer |
 | `reeferHours` | *string* | 256 | This field contains the reefer trailer's *(refrigerated trailer)* hours |
-| `maintenanceId` | *string* | 256 | This field contains the maintenance ID |
-| `trailerNumber` | *string* | 256 | This field contains the trailer ID number |
-| `hubometer` | *string* | 256 | This field contains the hubometer value |
-| `vehicleLicenseNumber` | *string* | 256 | This field contains Vehicle license number |
-| `vehicleLicenseState` | *string* | 256 | This field contains the vehicle license state code |
-| `trailerLicenseNumber` | *string* | 256 | This field contains trailer license number |
-| `trailerLicenseState` | *string* | 256 | This field contains the trailer license state code |
-| `trailerHub` | *string* | 256 | This field identifies the trailer hub serial number keyed in by the customer or clerk |
+| `trailerLicenseNumber` | *string* | 256 | License plate number of the trailer |
+| `trailerLicenseState` | *string* | 256 | Identifies the `trailerLicenseNumber` state code |
+| `trailerHub` | *string* | 256 | Identifies the trailer hub serial number keyed in by the customer or clerk |
 
 <!--
 type: tab
@@ -42,12 +42,12 @@ JSON string format for the `vehicle` object:
     "odometerReading": "78454",
     "tripNumber": "27112",
     "unitId": "578",
-    "reeferHours": "14",
     "maintenanceId": "12321988",
-    "trailerNumber": "78454",
-    "hubometer": "0012353",
     "vehicleLicenseNumber": "U548212",
     "vehicleLicenseState": "NJ",
+    "trailerNumber": "78454",
+    "hubometer": "0012353",
+    "reeferHours": "14",
     "trailerLicenseNumber": "FAU15874",
     "trailerLicenseState": "NJ",
     "trailerHub": "33543"

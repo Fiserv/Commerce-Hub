@@ -4,7 +4,24 @@ tags: [Fleet, Petroleum, WEX, Mastercard, Visa, Voyager, Comdata, Private Label,
 
 # Fleet Cards
 
-Commerce Hub supports card based payments for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor; Fuelman, Fleetwide, Comdata)*, WWright Express *(WEX and Over-The-Road (OTR), Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* using [*PaymentEMV*](?path=docs/In-Person/Encrypted-Payments/EMV.md), [*PaymentTrack*](?path=docs/In-Person/Encrypted-Payments/Track.md) or [*PaymentCard*](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) as the `sourceType`.
+Commerce Hub supports card based payments for Visa Fleet, Mastercard Fleet, Corpay *(formerly FleetCor)*; *(Fuelman, Fleetwide, Comdata)*, Wright Express *(WEX and Over-The-Road (OTR), Next Generation Fleet Card (NGFC), Fleet One)*, Voyager, and Private Label *(proprietary)* using [*PaymentEMV*](?path=docs/In-Person/Encrypted-Payments/EMV.md), [*PaymentTrack*](?path=docs/In-Person/Encrypted-Payments/Track.md) and [device encrypted](?path=docs/In-Person/Encrypted-Payments/Manual.md) or [MUPK encrypted](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) *PaymentCard* as the `sourceType`.
+
+---
+
+## Supported Transactions
+
+| Brand | Auth Only | Sale (Capture) | Refunds | Cancels | Offline |
+| ----- | :-----: | :-----: | :-----: | :-----: | :-----: |
+| Fleet One | &#10004; | &#10004; | | &#10004; | |
+| Comdata | &#10004; | &#10004; | | &#10004; | |
+| Corpay, Fuelman, Fleetwide | &#10004; | &#10004; | | &#10004; | &#10004; |
+| Mastercard | &#10004; | &#10004; | &#10004;| &#10004; | |
+| Visa | &#10004; | &#10004; | &#10004;| &#10004; | |
+| Voyager | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
+| Wright Express | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
+| WEX OTR, NGFC | &#10004; | &#10004; | &#10004;| &#10004; | &#10004; |
+
+---
 
 ## Transaction Example
 
@@ -33,6 +50,10 @@ The example below contains the minimum [parameters](#parameters) for a successfu
       "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
       "deviceType": "INGENICO",
       "keyId": "88000000022"
+    },
+    "card": {
+      "category": "FLEET",
+      "subCategory": "WEX"
     }
   },
   "transactionDetails": {
@@ -82,6 +103,8 @@ The example below contains the minimum [parameters](#parameters) for a successfu
   }
 }
 ```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
@@ -188,7 +211,7 @@ Example of a charge (201: Created) response.
 
 ---
 
-## Paramters
+## Parameters
 
 #### Request Variables
 
@@ -210,41 +233,30 @@ The below table identifies the required parameters in the `source` object.
 type: tab
 -->
 
-The below table identifies the parameters in the `card` object.
+The below table identifies the additional required parameters in the `card` object.
 
 <!-- theme: warning -->
 > Not all Fleet BINs are part of the Commerce Hub BIN file, the merchant will need to provide [card category and sub-category](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) based on the Dynamic Fleet Table.
 
 | Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
+| ----- | :-----: | :-----: | ----- |
 | `category` | *string* | 25 |  &#10004; | Identifies the card category as *FLEET* |
 | `subCategory` | *string* | 25 |  &#10004; | Provides the [subcategory](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) for the `category` field to identify the card type |
 
 <!-- theme: info -->
-> Refer to the [check](?path=docs/Resources/Master-Data/Check.md) object for additional fields.
+> Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
 
 <!--
 type: tab
 -->
 
-The below table identifies the conditional parameters in the `customer` object.
-
-| Variable | Type | Max Length | Description |
-| ----- | :-----: | :-----: | ----- |
-| `paymentSystemProductCode` | *string* | 4 | [Payment System Product Code](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md) as defined by Conexxus |
-| `vehicle` | *object* | N/A | Identifies vehicle specific details |
-
-The below table identifies the conditional parameters in the `vehicle` objects.
-
-| Variable | Type | Max Length | Description |
-| ----- | :-----: | :-----: | ----- |
-| `paymentSystemProductCode` | *string* | 4 | [Payment System Product Code](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md) as defined by Conexxus |
+The conditional parameters in the `customer` and `vehicle` objects is based on the [card brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
 
 <!--
 type: tab
 -->
 
-<!-- theme: danger -->
+<!-- theme: warning -->
 > - The `paymentSystemProductCode`, `itemType` and `itemSubType` must be sent in all fleet transactions to identify fuel and non-fuel purchases.
 > - Fuel products must always be the first item group.
 > - A maximum of ten products is allowed in `orderData`.
@@ -266,21 +278,6 @@ The below table identifies the required parameters in the `itemDetails` array in
 > Refer to the [order data](?path=docs/Resources/Master-Data/Order-Data.md) object for additional fields.
 
 <!-- type: tab-end -->
-
-<!--
-type: tab
-titles: card
--->
-
-
-
-<!--
-type: tab
--->
-
-<!-- type: tab-end -->
-
-
 
 ---
 
