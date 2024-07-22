@@ -8,18 +8,50 @@ Fleet brands require specific data requirements when processing a [Fleet transac
 
 ---
 
-## Dynamic Card Table
+## Dynamic Card Table Prompts
 
 The device or application must be able to read a Dynamic Card Table downloaded from the fleet brand or payment processor. In the case where an a table download is not supported, the device or application must provide a method to determine whether specific transactions are allowed.
 
 <!-- theme: info -->
 > The third-party vendor or merchant is required for managing the table file download. Please contact your account representative for more details.
 
+The below table outlines the fields that can prompt for a fleet transaction, for specific card brands see the [device prompt section](#device-prompts).
+
+| Object | Field | Description |
+| ----- | :-----: | ----- |
+| `customer` | `firstName` | First name of the customer |
+| `customer` | `lastName` | Last name of the customer |
+| `customer` | `dateOfBirth` | Date of birth for the customer in YYYY-MM-DD format |
+| `customer` | `driverLicenseNumber` | Driver license number of the customer |
+| `customer` | `driverLicenseState` | Identifies the `driverLicenseNumber` state code |
+| `customer` | `driverId` | Represents the identification number of the driver|
+| `customer` | `department` | Identifies the department the customer belongs to |
+| `customer` | `jobId` | Job code for the customer |
+| `customer` | `idCardNumber` | The customer's ID based on merchant's industry or veritical. ***Example:** User ID or Sub-fleet number.* |
+| `customer` | `workOrderNumber` | Used for the contract number or purchase order of the transaction |
+| `customer` | `additionalData1` | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
+| `customer` | `additionalData2` | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
+| `customer::vehicle` | `vehicleNumber` | Identifies the vehicle number |
+| `customer::vehicle` | `odometerReading` | The vehicle odometer reading keyed in by the customer or clerk |
+| `customer::vehicle` | `tripNumber` | The trip number for the customer |
+| `customer::vehicle` | `unitId` | The unit ID or unit number of the vehicle or customer |
+| `customer::vehicle` | `maintenanceId` | Identifies the maintenance ID for the vehicle or customer |
+| `customer::vehicle` | `vehicleLicenseNumber` | License plate number of the vehicle |
+| `customer::vehicle` | `vehicleLicenseState` | Identifies the `vehicleLicenseNumber` state code |
+| `customer::vehicle` | `trailerNumber` | Trailer ID number for the customer |
+| `customer::vehicle` | `hubometer` | Hubometer value of the vehicle or trailer |
+| `customer::vehicle` | `reeferHours` | The reefer trailer's *(refrigerated trailer)* hours |
+| `customer::vehicle` | `trailerLicenseNumber` | License plate number of the trailer |
+| `customer::vehicle` | `trailerLicenseState` | Identifies the `trailerLicenseNumber` state code |
+| `customer::vehicle` | `trailerHub` | Identifies the trailer hub serial number keyed in by the customer or clerk |
+
 ---
 
-## Authorization Prompt
+## Authorization/Verification Prompts
 
-The device or application must be able to interpret the Commerce Hub's `processorResponseDetails` and the authorization `responseCode` and `additionalInfo` to determine the required fields and validity before enabling the pump or POS. When the transaction is complete all values entered by the customer must be sent in the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) request.
+#### Customer and Vehicle
+
+The device or application must be able to interpret the Commerce Hub's `processorResponseDetails` and the `responseCode` and `additionalInfo` name-value pairs, to determine the required fields and validity before enabling the pump or POS. When the transaction is complete all values entered by the customer must be sent in the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) request.
 
 | `responseCode` | Requirements |
 | ----- | ----- |
@@ -29,7 +61,7 @@ The device or application must be able to interpret the Commerce Hub's `processo
 
 #### Purchase Restrictions
 
-When procssing a transaction to Commerce Hub the limits for each allowed product category for the payment instrument will be returned in the `orderData` object in the authorization response. The `itemDails` will contain the `description` and `netAmount` limit for the product category. Any product category not included in the authorization response is considered not allowed by the brand. In offline processing mode, the device must make the determination about what products are allowed for offline purchase based on settings in the Dynamic Table.
+When procssing a transaction to Commerce Hub the limits for each allowed product category for the payment instrument will be returned in the `orderData` object in the authorization response. The `itemDails` will contain the `quantity` and `netAmount` limit for the product category. General merchandise is identified by the `description`, and fuel is identified by the `paymentSystemProductCode`. Any product category not included in the authorization response is considered not allowed by the brand. In offline processing mode, the device must make the determination about what products are allowed for offline purchase based on settings in the Dynamic Table.
 
 ---
 
@@ -105,8 +137,8 @@ Example of a charge (201: Created) response.
 ```json
 {
   "gatewayResponse": {
-    "transactionType": "CHARGE_SALE",
-    "transactionState": "CAPTURED",
+    "transactionType": "CHARGE",
+    "transactionState": "DECLINED",
     "transactionOrigin": "RETAIL",
     "transactionProcessingDetails": {
       "orderId": "CHG01dec589299d309240fb51cb8957234868",
@@ -122,19 +154,27 @@ Example of a charge (201: Created) response.
       "currency": "USD"
     },
     "processorResponseDetails": {
-      "approvalStatus": "APPROVED",
+      "approvalStatus": "DECLINED",
       "approvalCode": "3212",
       "referenceNumber": "0021-becf314f-59cf-4a75-9133-f3f1495d862d",
       "processor": "FISERV",
       "host": "BUYPASS",
       "networkRouted": "GECC/Wright Exp",
-      "responseCode": "000",
-      "responseMessage": "Approved",
-      "hostResponseCode": "0",
-      "hostResponseMessage": "Approved",
-      "bankAssociationDetails": {
-        "transactionTimestamp": "2024-03-07T16:23:00Z"
-      }
+      "responseCode": "500",
+      "responseMessage": "Missing Required Data For Industry or MCC",
+      "hostResponseCode": "DX",
+      "hostResponseMessage": "Declined",
+      "settlementIndicator": "COST_PLUS",
+      "additionalInfo": [
+        {
+          "name": "DRID",
+          "value": ""
+        },
+        {
+          "name": "VEHN",
+          "value": ""
+        }
+      ]
     }
   },
   "source": {
@@ -178,16 +218,9 @@ Example of a charge (201: Created) response.
   "orderData": {
     "itemDetails": [
       {
-        "paymentSystemProductCode": "001",
-        "itemDescription": "Regular",
-        "quantity": 18.385,
-        "unitOfMeasurement": "GALLON",
-        "itemType": "PRODUCT",
-        "itemSubType": "FUEL",
-        "amountComponents": {
-          "unitPrice": 3.599,
-          "netAmount": 66.17
-        }
+        "itemDescription": "ADD",
+        "quantity": "10",
+        "netAmount": "100"
       }
     ]
   }
@@ -200,29 +233,72 @@ Example of a charge (201: Created) response.
 
 ## Device Prompts
 
-The device or application must be able to prompt for specific [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) or [vehicle details](?path=docs/Resources/Master-Data/Vehicle-Details.md) for all fleet transactions defined by the [Dynamic Card Table](#dynamic-card-table) or [authorization response](#authorization-prompt). The device or application must prompt for the data appropriate to the transaction it will be performing, and provide the details in the respective fields. Prompts flagged as optional do not have to be offered.
+The device or application must be able to prompt for specific [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) or [vehicle details](?path=docs/Resources/Master-Data/Vehicle-Details.md) for all fleet transactions defined by the [Dynamic Card Table](#dynamic-card-table) or [authorization response](#authorizationverification-prompts). The device or application must prompt for the data appropriate to the transaction it will be performing, and provide the details in the respective fields. Prompts flagged as optional do not have to be offered.
 
 <!--
 type: tab
 titles: Comdata, Express Code, ComCheck, Corpay, Fleet One, Mastercard, Visa, Voyager, WEX, WEX OTR, Money Code
 -->
 
-The below table outlines the fields that can prompt for Comdata.
+Comdata requires a [verification request](#authorizationverification-prompts) to determine the required prompts and purchase restrictions.
 
+#### Prompts
 
+The below table outlines the fields that can prompt for Comdata. A conditional prompt should be offered if the account verification response indicates that prompt is required. These prompts are returned in the `additionalInfo` array.
+
+| Name | Object | Field | Verification | Authorization | Capture |
+| ----- | ----- | ----- | :-----: | :-----: | :-----: |
+| UNIT | `customer::vehicle` | `unitId` | &#10004; | &#10004; | &#10004; |
+| DRID | `customer` | `driverId` | | | |
+| TRLR | `customer::vehicle` | `trailerNumber` | | | |
+| HBRD | `customer::vehicle` | `hubometer` | | | |
+| TRHB | `customer::vehicle` | `trailerHub` | | | |
+| HRRD | `customer::vehicle` | `reeferHours` | | | |
+| TRIP | `customer::vehicle` | `tripNumber` | | | |
+| DLIC | `customer` | `driverLicenseNumber` | | | |
+| DLST | `customer` | `driverLicenseState` | | | |
+| PONB | `customer` | `workOrderNumber` | | | |
+| INVC | `transactionDetails` | `merchantinvoiceNumber` | | | &#10004; |
+
+<!-- theme: info -->
+> Invoice number is communicated via the prompt code repsonse, but it is not a customer prompt. This value should be generated by the device, and each transaction should have a value that is unique for that location for the business day.
+
+#### Purchase Restrictions
+
+The device is expected to send a list of fuel products that are available to the cardholder in the authorization request. Comdata will send limits for each in the response. Fuel products not listed in the response will be considered ineligible.
+
+Comdata will return the cash available limit `paymentSystemProductCode` 955 and a non-fuel product limit 000. Any Non-fuel products data, including amount, will be sent as part of the Capture request.
+
+<!-- theme: info-->
+> Comdata may decline a transaction that includes a non-fuel product whose amount exceeds a limit for its category.
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for Comdata Express Code.
+<!-- theme: info-->
+> All Comdata Express Code transaction are manual entry.
 
+It is up to the device to allow or disallow any products for Express Code transactions. No product data is to be sent on these transactions. Express Code transaction will be approved for the full amount or declined, there is no partial approval. Any funds approved from the transaction may be used towards the purchase of any product or service, and any remaining funds will be dispersed as cash.
+
+The below table outlines the fields that the device can prompt for, the prompt should be offered but a response is not required.
+
+| Object | Field |
+| ----- | ----- |
+| `customer::vehicle` | `unitId` |
+| `customer` | `driverId` |
+| `customer::vehicle` | `tripNumber` |
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for Comdata ComCheck.
+<!-- theme: info-->
+> All Comdata ComCheck transaction are manual entry.
+
+It is up to the device to allow or disallow any products for ComCheck transactions. No product data is to be sent on these transactions. Express Code transaction will be approved for the full amount or declined, there is no partial approval. Any funds approved from the transaction may be used towards the purchase of any product or service, and any remaining funds will be dispersed as cash.
+
+ComCheck requires the `customer::vehicle` `unitId` in the authorization request.
 
 <!--
 type: tab
@@ -250,7 +326,7 @@ Fleet One has no product restrictions. The below table outlines the fields that 
 type: tab
 -->
 
-Mastercard Fleet is retricted to fuel only if the Product Restriction Code = 2, otheriwse all products are allowed. The below table outlines the fields that can prompt for Mastercard Fleet based on the Product Type Code or if always required.
+Mastercard Fleet is retricted to fuel only if the Product Restriction Code is 2, otheriwse all products are allowed. The below table outlines the fields that can prompt for Mastercard Fleet based on the Product Type Code or if always required.
 
 | Object | Field | Swipe/Chip/Contactless | Manual Entry |
 | ----- | ----- | :-----: | :-----: |
@@ -263,7 +339,7 @@ Mastercard Fleet is retricted to fuel only if the Product Restriction Code = 2, 
 type: tab
 -->
 
-Visa Fleet is retricted to fuel only if the Service Enhancement Indicator = 2 or fuel and maintenance if = 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Visa Fleet based on the Service Prompt or if always required.
+Visa Fleet is retricted to fuel only if the Service Enhancement Indicator is 2 or fuel and maintenance if 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Visa Fleet based on the Service Prompt or if always required.
 
 <!--theme: info -->
 > A Visa fleet card transaction must comply with fleet data requirements, in order to be eligible for reduced commercial interchange rates, such as [Commercial Level II or Level III](?path=docs/Resources/Guides/Level23/Level23.md).
@@ -283,7 +359,7 @@ Visa Fleet 2.0 is a new fleet EMV standard that harnesses the additional capabil
 
 The below table outlines the required fields to prompt for Visa Fleet 2.0.
 
-| Prompt Tokens | Object | Field |
+| Prompt | Object | Field |
 | ----- | ----- | ----- |
 | AD1 | `customer` | `additionalData1` |
 | AD2 | `customer` | `additionalData1` |
@@ -299,7 +375,7 @@ The below table outlines the required fields to prompt for Visa Fleet 2.0.
 type: tab
 -->
 
-Voyager is retricted to fuel only if the second digit of the Product Restriction Code = 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Voyager based on the first digit of the Product Restriction Code or if always required.
+Voyager is retricted to fuel only if the second digit of the Product Restriction Code is 1, otheriwse all products are allowed. The below table outlines the fields that can prompt for Voyager based on the first digit of the Product Restriction Code or if always required.
 
 #### Swipe and Manual Entry
 
@@ -310,8 +386,7 @@ Voyager is retricted to fuel only if the second digit of the Product Restriction
 
 #### EMV
 
-EMV chip and contactless use EMV DF Tags and must use the Prompting Script File to determine appropriate prompts until *no record found* result. If the Prompting Script File is not to be used, then the Product Type Code should be used to determine which prompts to offer the
-cardholder.
+EMV chip and contactless use EMV DF Tags and must use the Prompting Script File to determine appropriate prompts until *no record found* result. If the Prompting Script File is not to be used, then the Product Type Code should be used to determine which prompts to offer the cardholder.
 
 The below table outlines the required fields to prompt for Voyager.
 
@@ -402,46 +477,89 @@ EMV chip and contactless use EMV Tag DF30. The below table outlines the required
 type: tab
 -->
 
-WEX OTR requires an [authorization request](#authorization-prompt) to determine the required prompts and purchase restrictions.
-
 <!-- theme: info-->
 > Manual entry is not allowed for any WEX OTR card.
+
+WEX OTR requires an [authorization request](#authorizationverification-prompts) to determine the required prompts and purchase restrictions.
+
+#### Prompts
+
+The table below contains the repeatable fields that can occur up to 8 times in a single transaction and will be used in Wex OTR Fleet transactions containing prompt data. These prompts are returned in the `additionalInfo` array.
+
+| Name | Object | Field |
+| ----- | ----- | ----- |
+| BDAY | `customer` | `dateOfBirth` |
+| DLIC | `customer` | `driverLicenseNumber` |
+| DLST | `customer` | `driverLicenseState` |
+| DRID | `customer` | `driverId` |
+| HBRD | `customer::vehicle` | `hubometer` |
+| HRRD | `customer::vehicle` | `reeferHours` |
+| LCST | `customer::vehicle` | `vehicleLicenseState` |
+| LICN | `customer::vehicle` | `vehicleLicenseNumber` |
+| LSTN | `customer` | `lastName` |
+| NAME | `customer` | `firstName` |
+| ODRD | `customer::vehicle` | `odometerReading` |
+| PONB | `customer` | `workOrderNumber` |
+| SSUB | `customer` | `idCardNumber` |
+| TRIP | `customer::vehicle` | `tripNumber` |
+| TRLR | `customer::vehicle` | `trailerNumber` |
+| UNIT | `customer::vehicle` | `unitId` |
+| VEHN | `customer::vehicle` | `vehicleNumber` |
+
+#### Product Category
+
+The `orderData::itemDetails` response as an array and the `itemDescription` identifies the product categories that are allowed for the customer. The product category will correspond to the product category column in the Dynamic Card Table products table.
+
+| Value | Product Type |
+| ----- | ----- |
+| ADD | Additives |
+| ANFR | Anti-freeze |
+| BRAK | Brakes and wheels |
+| CADV | Company funds cash advance |
+| CLTH | Clothing |
+| DEF | DEFContainer |
+| DELI | Deli Items |
+| ELEC | Electronics |
+| ETAX | Exempt tax amount |
+| FAX | Fax |
+| FLAT | Flat Repair |
+| GROC | Groceries |
+| HARD | Hardware |
+| IDLE | Idleaire |
+| LMPR | Lumper Fee |
+| LUBE | Lube |
+| MERC | Default category for merchandise |
+| OIL | Oil |
+| OILC | Oil Change |
+| PADV | Personal funds |
+| PART | Parts |
+| PHON | Phone time |
+| PNT | Paint |
+| RECP | Tire Recap |
+| REPR | Repair Service |
+| REST | Restaurant Purchases |
+| SCAN | Imaging |
+| SCLE | Scale |
+| SHWR | Shower |
+| TCHN | Tire Chains |
+| TIRE | Tire |
+| TOLL | Toll Charges |
+| TRAL | Trailer |
+| TRPP | Trip permit |
+| UREA | UREA Container |
+| WASH | Car/Truck Wash |
+| WWFL | Windshield Washer Fluid |
 
 <!--
 type: tab
 -->
 
-The below table outlines the fields that can prompt for WEX Money Code.
+<!-- theme: info-->
+> All WEX OTR Money Code transaction are manual entry.
+
+WEX OTR Money Code is retricted at the device level, no validations are done by the host, but product data should be sent as ussual for WEX OTR transactions. Money Code transactions do not have any specific prompt codes.
 
 <!-- type: tab-end -->
-
-| Object | Field | Description |
-| ----- | :-----: | ----- |
-| `customer` | `firstName` | First name of the customer |
-| `customer` | `lastName` | Last name of the customer |
-| `customer` | `dateOfBirth` | Date of birth for the customer in YYYY-MM-DD format |
-| `customer` | `driverLicenseNumber` | Driver license number of the customer |
-| `customer` | `driverLicenseState` | Identifies the `driverLicenseNumber` state code |
-| `customer` | `driverId` | Represents the identification number of the driver|
-| `customer` | `department` | Identifies the department the customer belongs to |
-| `customer` | `jobId` | Job code for the customer |
-| `customer` | `idCardNumber` | The customer's ID based on merchant's industry or veritical. ***Example:** User ID or Sub-fleet number.* |
-| `customer` | `workOrderNumber` | Used for the contract number or purchase order of the transaction |
-| `customer` | `additionalData1` | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
-| `customer` | `additionalData2` | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
-| `customer::vehicle` | `vehicleNumber` | Identifies the vehicle number |
-| `customer::vehicle` | `odometerReading` | The vehicle odometer reading keyed in by the customer or clerk |
-| `customer::vehicle` | `tripNumber` | The trip number for the customer |
-| `customer::vehicle` | `unitId` | The unit ID or unit number of the vehicle or customer |
-| `customer::vehicle` | `maintenanceId` | Identifies the maintenance ID for the vehicle or customer |
-| `customer::vehicle` | `vehicleLicenseNumber` | License plate number of the vehicle |
-| `customer::vehicle` | `vehicleLicenseState` | Identifies the `vehicleLicenseNumber` state code |
-| `customer::vehicle` | `trailerNumber` | Trailer ID number for the customer |
-| `customer::vehicle` | `hubometer` | Hubometer value of the vehicle or trailer |
-| `customer::vehicle` | `reeferHours` | The reefer trailer's *(refrigerated trailer)* hours |
-| `customer::vehicle` | `trailerLicenseNumber` | License plate number of the trailer |
-| `customer::vehicle` | `trailerLicenseState` | Identifies the `trailerLicenseNumber` state code |
-| `customer::vehicle` | `trailerHub` | Identifies the trailer hub serial number keyed in by the customer or clerk |
 
 ---
 
