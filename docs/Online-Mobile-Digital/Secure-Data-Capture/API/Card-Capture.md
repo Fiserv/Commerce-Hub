@@ -33,7 +33,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | _string_ | 256 |  &#10004; | Encryption type is _RSA_ when using [Multi-Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md). |
+| `encryptionType` | _string_ | 256 |  &#10004; | Encryption type is _RSA_ when using [Multi-Use Public Key](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md). |
 | `encryptionTarget` | _string_ | 256 |  &#10004; | Target is _MANUAL_ when a customer card details are manually entered into a terminal or device, or when a customer manually enters their card details online or in an app. |
 | `encryptionBlock` | _string_ | 2000 |  &#10004; | This field contains the card details in encrypted form. |
 | `encryptionBlockFields` | _string_ | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, for example: card.expirationMonth:2. |
@@ -142,7 +142,7 @@ The following security settings are recommended to limit the potential for fraud
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Multi-Use Public Key Encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---
