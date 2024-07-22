@@ -19,13 +19,13 @@ The device or application must be able to read a Dynamic Card Table downloaded f
 
 ## Authorization Prompt
 
-The device or application must be able to interpret the Commerce Hub authorization response to determine the required fields. The response will contain the details in `processorResponseDetails.additionalInfo`. When the transaction is complete all values entered by the customer must be sent in the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) request.
+The device or application must be able to interpret the Commerce Hub's `processorResponseDetails` and the authorization `responseCode` and `additionalInfo` to determine the required fields and validity before enabling the pump or POS. When the transaction is complete all values entered by the customer must be sent in the [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) request.
 
-| Response Code | Requirements |
+| `responseCode` | Requirements |
 | ----- | ----- |
-| *APPROVED* | The device or application must verify the validity of the prompts based on the data returned in the authorization response before authorization the pump to active |
-| *DECLINED (DX?)* | The authorizer requires additional information to be submitted before the pump is authorized. The device must request the prompts indicated and perform another authorization request. |
-| *DECLINED (D7)* | The authorizer has indicated a value does not match. Invalid prompts will be indicated with a ?. These transactions can be retried after re-prompting for the incorrect values. |
+| *000* | The device or application must verify the validity of the prompts based on the data returned in the authorization response before enabling the pump or POS. |
+| *500* | The authorizer requires additional information to be submitted before the pump or POS is enabled. The device must request the prompts indicated and perform another authorization request. |
+| *667* | The authorizer has indicated a value does not match. Invalid prompts will be indicated with a ?. These transactions can be retried after re-prompting for the incorrect values. |
 
 #### Purchase Restrictions
 
