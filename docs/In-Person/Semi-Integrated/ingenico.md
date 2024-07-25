@@ -4,7 +4,7 @@ tags: [In-Person, Card Present, Semi-Integrated, Partner, Point of Sale, Termina
 
 # Semi-Integrated Ingenico Devices
 
-Commerce Hub and Ingenico have partnered together to offer out of the box, EMV L3 certified, semi-integrated payment solutions to enterprise merchants. The merchant's hardware or sofware API connects to the Ingenico API on the device to process payments.
+Commerce Hub and Ingenico have partnered together to offer out of the box, EMV L3 certified, semi-integrated payment solutions to enterprise merchants. The merchant's hardware or software API connects to the Ingenico API on the device to process payments.
 
 ##### Key Benefits
 
@@ -46,15 +46,17 @@ See the [Ingenico Developer Portal](https://developer.ingenico.us/) for informat
 | **Frontend** | Nashville | |
 | **Backend** | North | |
 | **Settlement** | Host Capture, Terminal Direct Capture | Merchant location must be setup in Merchant Configuration and Boarding. Please see you account representative for more details. |
-| **Payment Methods** | Credit, Debit, Gift Cards *(Prepaid open-loop)*, Digital Wallets | Apple Pay and Google Pay are supported through EMV Contactless |
-| **Entry Methods** | EMV *(contact, contactless)*, Track, Manual Entry | |
+| **Payment Methods** | Credit, Debit, Gift Cards *(Prepaid open-loop)*, Digital Wallets | Apple Pay and Google Pay are supported through EMV Contactless. Debit supports Amex Common debit AID. |
+| **Encryption** | Tokenization and RSA Public Key | |
+| **Entry Methods** | EMV *(contact, contactless)*, Track *(Swipe)*, Manual Entry *(Keyed)* | |
 | **Verification Methods** | PIN, Signature, No CVM | Contactless transactions above certain thresholds have constraints on acceptable card holder verification methods *(CVM)*. Please see your account representative if contactless and PIN are valid use cases for your business. |
 | **PIN Support** | Debit, Credit | |
 | **AVS Support** | ZIP code only, Full address | |
+| **Security Code Support** | CID, CVC2, CVV2 support for swiped transactions. | |
 | **Card Brands** | Visa, Mastercard, Amex, Discover, Diners, JCB, Union Pay | |
 | **Device Encryption** | Ingenico On-Guard *(TDES)* | |
 | **Tokenization** | TransArmor | |
-| **Transaction Types** | Charges *(Authorization, Partial Authorization, Sale)*, Refunds, Cancels *(Void)*, Debit Cashback, Timeout Reversals | |
+| **Transaction Types** | Charges *(Authorization, Partial Authorization, Sale)*, Refunds, Cancels *(Void)*, Cashback, Timeout Reversals, Tips, Deferred Authorization | Cashback support for Debit and Discover |
 
 ---
 
