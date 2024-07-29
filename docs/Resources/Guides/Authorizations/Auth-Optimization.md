@@ -48,7 +48,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 |---------|----------|----------------|---------|
 | `authOptimazation` | *string* | 32 | An identifier used to override what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. |
 
-### Authorization Optimization Type
+#### Authorization Optimization Type
 
 | Values | Description |
 |-------------|---------------|
@@ -114,7 +114,7 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 |---------|----------|----------------|---------|
 | `accountStatus` | *string* | N/A | Indicates the current status of the account.|
 
-### Account Status Reason
+#### Account Status Reason
 
 | Variable | Description |
 |---------|----------|
