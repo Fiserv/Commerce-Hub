@@ -4,7 +4,7 @@ tags: [Fleet, Petroleum, WEX, Mastercard, Visa, Voyager, Comdata, Private Label,
 
 # Fleet Brand Requirements
 
-Fleet brands require specific data requirements when processing a [Fleet transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). This information is obtained from a [Dynamic Card Table](#dynamice-card-table) or through the [initial authorization](#authorization-prompt) based on the brand.
+Fleet brands require specific data requirements when processing [fleet transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). This information is obtained from a [Dynamic Card Table](#dynamice-card-table) or through the [initial authorization or verification request](#authorization-prompt) based on the brand.
 
 ---
 
