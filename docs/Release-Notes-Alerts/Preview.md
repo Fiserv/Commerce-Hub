@@ -25,10 +25,11 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.24.08: refactored Authorization Optimization models | Feature |
+| Version 1.24.08: refactored Authorization Optimization models, added models to support fleet transactions | Update |
 | [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
-| Support [Multi-Use Public Key RSA encyrption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
+| Support [Multi-Use Public Key RSA encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
 | Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
+| Support [fleet card and check transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md) | Feature |
 
 ---
 
@@ -41,7 +42,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.24.07: added new network token models | Feature |
+| Version 1.24.07: added new network token models | Update |
 | Merchant managed [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Request.md) passthrough support | Feature |
 | [Partial cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) supported for terminal direct and gateway settlement on Nashville | Feature |
 | [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support PIN debit processing | Update |
@@ -57,7 +58,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.24.06: Reorganization of Payments-VAS groups for API Explorer and documentation | Feature |
+| Version 1.24.06: Reorganization of Payments-VAS groups for API Explorer and documentation | Update |
 | [Partner tokens](?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md) response updated to make `cardDetails` an array | Update |
 | Secure Data Capture [v2 JavaScript solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) | Feature |
 | Support for merchant managed 3rd-party [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token.md) | Feature |

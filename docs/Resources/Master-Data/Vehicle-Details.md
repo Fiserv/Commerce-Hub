@@ -21,12 +21,12 @@ The below table identifies the parameters in the `vehicle` object.
 | `unitId` | *string* | 256 | The unit ID or unit number of the vehicle or customer |
 | `maintenanceId` | *string* | 256 | Identifies the maintenance ID for the vehicle or customer |
 | `vehicleLicenseNumber` | *string* | 256 | License plate number of the vehicle |
-| `vehicleLicenseState` | *string* | 256 | Identifies the `vehicleLicenseNumber` state code |
+| `vehicleLicenseState` | *string* | 256 | Identifies the `vehicleLicenseNumber` [state or province code](?path=docs/Resources/Master-Data/State-Code.md) |
 | `trailerNumber` | *string* | 256 | Trailer ID number for the customer |
 | `hubometer` | *string* | 256 | Hubometer value of the vehicle or trailer |
 | `reeferHours` | *string* | 256 | This field contains the reefer trailer's *(refrigerated trailer)* hours |
 | `trailerLicenseNumber` | *string* | 256 | License plate number of the trailer |
-| `trailerLicenseState` | *string* | 256 | Identifies the `trailerLicenseNumber` state code |
+| `trailerLicenseState` | *string* | 256 | Identifies the `trailerLicenseNumber` [state or province code](?path=docs/Resources/Master-Data/State-Code.md) |
 | `trailerHub` | *string* | 256 | Identifies the trailer hub serial number keyed in by the customer or clerk |
 
 <!--
