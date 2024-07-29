@@ -182,10 +182,11 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 
 | Variable | Type | Maximum Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `accountStatus` | *string* |  | Indicates the current status of the account |
-| `accountUpdaterErrorCode` | *string* |  | Error code provided the account updater system |
-| `originalHostResponseCode` | *string* |  | Original `hostReponseCode` for re-authorized *(Optimized)* transaction |
-| `originalHostResponseMessage` | *string* | 16 | Original `hostResponseMessage` for re-authorized *(Optimized)* transaction |
+| `accountStatus` | *string* | 256 | Indicates the current status of the account |
+| `accountUpdaterErrorCode` | *string* | 256 | Error code provided the account updater system |
+| `accountUpdaterErrorDescription` | *string* | 256 | Error description provided by the account updater system |
+| `originalHostResponseCode` | *string* | 256 | Original `hostReponseCode` for re-authorized *(Optimized)* transaction |
+| `originalHostResponseMessage` | *string* | 256 | Original `hostResponseMessage` for re-authorized *(Optimized)* transaction |
 
 ##### Account Status Reason
 
