@@ -3276,10 +3276,24 @@ components:
       x-model-version: 1.0
       description: 'Updated account details provided by <a href="../docs?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md">Auth Optimization Service</a>.'
       properties:
+        overrideFlag:
+          type: boolean
+          description: 'Indicator used to override the merchant configuration of Authorization Optimization per transaction.'
+          example: 'false'
         accountStatus:
           type: string
           description: 'Indicates the current <a href="../docs?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md#account-status">status</a> of the account.'
           example: 'ACCOUNT_CHANGE'
+        accountUpdaterErrorCode:
+          type: string
+          maxLength: 256
+          description: 'Error code provided by the account updater system.'
+          example: 'VAU001'
+        accountUpdaterErrorDescription:
+          type: string
+          maxLength: 256
+          description: 'Error description provided by the account updater system.'
+          example: 'Transaction did not qualify for VISA Real Time Account Updater because the transaction contains a token.'
         originalHostResponseCode:
           type: string
           description: 'Original Host Response Code for re-authorized (Optimized) transaction.'
