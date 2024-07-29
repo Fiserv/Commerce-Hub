@@ -3,11 +3,11 @@ openapi: 3.0.2
 info: 
   title: Commerce Hub
   description: This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing.
-  version: v1.24.07
+  version: v1.24.08
 
 servers:
-- {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
-- {url: 'https://cert.api.fiservapps.com/ch/', description: Sandbox}
+- {url: 'https://connect.fiservapis.com/ch/', description: Production}
+- {url: 'https://connect-cert.fiservapis.com/ch/', description: Sandbox and Cert}
 
 #--------------------------------------------------------------------------------------
 # PATHS
