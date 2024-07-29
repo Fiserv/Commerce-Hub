@@ -16,6 +16,24 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## August 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** July 17th 2024
+- **Production:** August 2nd 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.08: refactored authorization optimization models, added models to support fleet transactions | Update |
+| [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
+| Support [Multi-Use Public Key RSA encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
+| Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
+| Support [fleet card and check transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md) | Feature |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## July 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -25,7 +43,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.24.07: added new network token models | Feature |
+| Version 1.24.07: added new network token models | Update |
 | Merchant managed [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Request.md) passthrough support | Feature |
 | [Partial cancels](?path=docs/Resources/API-Documents/Payments/Cancel.md) supported for terminal direct settlement on Nashville | Feature |
 | [Tap to Pay on iPhone](?path=docs/In-Person/Integrations/Tap-to-Pay.md) updated to support PIN debit processing | Update |
