@@ -4,7 +4,7 @@ tags: [Card Not Present, Card Present, Request Header, Request Body, Header, Env
 
 # Constructing a RESTful API Request
 
-Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, app, or terminal. Each request consists of the [header](#request-header) followed by the [Request Body](#request-body).
+Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, application, or device. Each request consists of the [header](#request-header) followed by the [request body](#request-body).
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
@@ -16,36 +16,36 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: warning -->
-> Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
+> Commerce Hub requires testing against our cert environment before using our production environment.
 
 #### Sandbox
 
 <!--theme: info -->
-> https://cert.api.fiservapps.com/ch/{resource}
+> https://connect-cert.fiservapis.com/ch/{resource}
 
-- Uses Sandbox [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
-- Test APIs before certifying for production
-- View the response format of a specific API
-- Experiment, develop code and fix bugs
-- Send and cancel "test" transactions
+- Uses [sandbox credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+- Preview Commerce Hub's APIs
+- View the request and response format of a specific API
+- Send and cancel [test](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md) transactions
 
 #### End to End
 
 <!--theme: info -->
-> https://cert.api.fiservapps.com/ch/{resource}
+> https://connect-cert.fiservapis.com/ch/{resource}
 
-- Uses End-to-End [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+- Uses [cert credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
 - Certify before deploying to production
 - Run test scripts based on the API's requirements
 - Conduct a complete beta test of your application
+- Test Value-Added Services
 
 #### Production
 
 <!--theme: info -->
-> https://prod.api.fiservapps.com/ch/{resource}
+> https://connect.fiservapis.com/ch/{resource}
 
-- Uses production [credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
-- Send and cancel "live" transactions
+- Uses [production credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+- Send and cancel live transactions
 - Access Value-Added Services
 - Run reports
 

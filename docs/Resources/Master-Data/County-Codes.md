@@ -19,7 +19,7 @@ The below table contains county codes for Alabama.
 | ------- | ------- |
 | Autauga | 01001 |
 | Baldwin | 01003 |
-| Barbour | 01005
+| Barbour | 01005 |
 | Bibb | 01007 |
 | Blount | 01009 |
 | Bullock | 01011 |
@@ -97,7 +97,7 @@ The below table contains county codes for Alaska.
 | Aleutians West | 02016 |
 | Anchorage | 02020 |
 | Bethel | 02050 |
-| Bristol Bay | 02060 |
+| Bristol Bay | 02060	|
 | Denali | 02068 |
 | Dillingham | 02070 |
 | Fairbanks North Star | 02090 |
@@ -131,20 +131,20 @@ The below table contains county codes for Arizona.
 | County | Code |
 | ------- | ------- |
 | Apache | 04001 |
-| Cochise | 04003 |
+|	Cochise	| 04003 |
 | Coconino | 04005 |
-| Gila | 04007 |
-| Graham | 04009 |
+|	Gila | 04007 |
+|	Graham | 04009 |
 | Greenlee | 04011 |
 | La Paz | 04012 |
-| Maricopa | 04013 |
+|	Maricopa | 04013 |
 | Mohave | 04015 |
-| Navajo | 04017 |
-| Pima | 04019 |
-| Pinal | 04021 |
-| Santa Cruz | 04023 |
-| Yavapai | 04025 |
-| Yuma | 04027 |
+|	Navajo | 04017 |
+|	Pima | 04019 |
+|	Pinal | 04021 |
+|	Santa Cruz | 04023 |
+| Yavapai | 04025	|
+|	Yuma | 04027 |
 
 <!--
 type: tab
