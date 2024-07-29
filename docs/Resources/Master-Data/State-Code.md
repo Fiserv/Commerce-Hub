@@ -8,7 +8,7 @@ State and province codes follow the ISO 3166-2 standard published by the Interna
 
 <!--
 type: tab
-title: United States, Canada
+titles: United States, Canada
 -->
 
 The below table lists the valid codes for states and territories in the United States.
