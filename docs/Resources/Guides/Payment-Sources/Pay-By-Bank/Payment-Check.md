@@ -4,7 +4,7 @@ tags: [Payment Check, ACH, Payment Sources, Pay By Bank]
 
 # PaymentCheck
 
-Commerce Hub allows merchants to securely process payments directly from customers' bank accounts. Checks offer enhanced security and convenience. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
+Commerce Hub allows merchants to securely process payments directly from a customer's bank account. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
 
 <!-- theme: info -->
 > The below requirements are used for personal and business checks. See [fleet checks](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) for processing fleet transactions.

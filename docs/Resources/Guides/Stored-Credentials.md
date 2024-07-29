@@ -18,7 +18,7 @@ The following variables are used in the initial `PaymentToken` request and subse
 > The `bankNetDate` for Mastercard should be passed as part of the [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 <!--theme: info-->
-> It is recommended that the merchant captures [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
+> It is recommended that the merchant captures [encrypted CVV](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
 
 <!--
 type: tab
