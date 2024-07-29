@@ -3452,6 +3452,17 @@ components:
           maxLength: 256
           description: 'Card brand.'
           example: 'VISA'
+        category:
+          type: string
+          maxLength: 25
+          description: 'Describes the <a href="../docs?path=docs/Resources/Master-Data/Card.md&branch=preview#category-and-subcategory">card category</a>.'
+          example: 'EBT'
+        subCategory:
+          type: string
+          maxLength: 25
+          description: 'Provides the subcategory for the <code>category</code> field to identify the card type.'
+          example: 'EBT_SNAP'
+
 
     CardDetails:
       x-model-version: 1.0
@@ -3760,7 +3771,7 @@ components:
         driverLicenseState:
           type: string
           maxLength: 256
-          description: 'Driver license state code.'
+          description:  'Driver license <a href="../docs?path=docs/Resources/Master-Data/State-Code.md">state or province code</a>.'
           example: 'New Jersey'
         idCardNumber:
           type: string
@@ -3790,10 +3801,47 @@ components:
           maxLength: 39
           description: 'The IP address of the customer.'
           example: '170.165.02.26'
+        driverID:
+          type: string
+          maxLength: 256
+          description: 'This field represents the identification number of driver.'
+          example: '45874'
+        workOrderNumber:
+          type: string
+          maxLength: 256
+          description: 'This field contains the contract number or purchase order number.'
+          example: '24561845'
+        additionalData1:
+          type: string
+          maxLength: 256
+          description: 'Additional information related to customer'
+          example: 'Additional data'
+        additionalData2:
+          type: string
+          maxLength: 256
+          description: 'Additional information related to customer'
+          example: 'Additional data'
+        department:
+          type: string
+          maxLength: 256
+          description: 'Identifies the department customer belongs to.'
+          example: 'DP005778'
+        jobId:
+          type: string
+          maxLength: 256
+          description: 'This field contains the customer job code.'
+          example: 'JB20230001'
+        accountCode:
+          type: string
+          maxLength: 64
+          description: 'This response field contains the account code of the customer or business.'
+          example: '890611'
         phone:
           type: array
           items:
             $ref: '#/components/schemas/Phone'
+        vehicle:
+          $ref: '#/components/schemas/Vehicle'
 
     DecryptedWallet:
       x-model-version: 1.0
@@ -4358,13 +4406,10 @@ components:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Master-Data/Order-Data.md#item-details">Item details</a>'
       properties:
-        groupingIndicator:
-          type: boolean
-          example: true
-        groupingId:
-          type: integer
-          maximum: 100
-          description: 'Item group ID. The group this item belongs to. Provided by the merchant'
+        itemNumber:
+          type: number
+          maximum: 998
+          description: 'Line item number.'
           example: 1
         commodityCode:
           type: string
@@ -4374,7 +4419,7 @@ components:
         paymentSystemProductCode:
           type: string
           maxLength: 4
-          description: 'Payment system product code'
+          description: '<a href="../docs?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md">Payment System Product Code</a> based on the Conexxus Public Standards'
           example: '001'
         productUPC:
           type: string
@@ -4439,40 +4484,15 @@ components:
           maxLength: 256
           description: 'Merchant defined sub code identifying the department sub class the item was purchased.'
           example: '67'
-        itemNumber:
-          type: number
-          maximum: 998
-          description: 'Line item number.'
-          example: 1
         itemType:
           type: string
           maxLength: 256
-          description: |+
-            Identifies the type of the item.
-
-            Valid Values:
-            * PRODUCT
-            * TAX
-            * SHIPPING
-            * ADJUSTMENT
+          description: 'Identifies the <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype">type</a> of the item.'
           example: 'PRODUCT'
         itemSubType:
           type: string
           maxLength: 256
-          description: |+
-            Identifies the sub type of item.
-
-            Valid Values:
-            * FUEL
-            * MERCHANDISE
-            * SERVICE
-            * FINANCIAL
-            * DISCOUNT
-            * PROMOTION
-            * CREDIT
-            * COUPON
-            * FEES
-            * OTHER
+          description: 'Identifies the <a href="../docs?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype">subtype</a> of item.'
           example: 'FUEL'
 
     KeyDetails:
@@ -4642,6 +4662,11 @@ components:
           maxLength: 1024
           description: 'A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a <a href="../docs?path=docs/Resources/Guides/BYOID.md">merchant custom identifier</a>.'
           example: '100008000003683'
+        siteTypeIndicator:
+          type: string
+          maxLength: 64
+          description: 'This field identifies whether the site is COMMERCIAL or RETAIL.'
+          example: 'COMMERCIAL'
         dbaName:
           type: string
           maxLength: 1024
@@ -5447,19 +5472,9 @@ components:
           description: 'An ARQC (Authorization Request Cryptogram) generated by the EMV card upon request from the pos terminal to obtain authorization for payment'
           example: 'VALIDATION_UNAVAILABLE'
         settlementIndicator:
-          #TODO: Review with CHSOL-236 for the valid values if they should remain in yaml.
           type: string
           maxLength: 256
-          description: |+
-            Returned on transactions to indicate the transaction is eligible for Cost Plus , Direct Bill or Funded settlement.
-
-            Valid Values:
-            * COST_PLUS
-            * DIRECT_BILL
-            * DIRECT_BILL_FUNDED_RESERVED
-            * RECOURSE_RESERVED
-            * RECOURSE_FUNDED_RESERVED
-            * FUNDED
+          description: 'Returned for some <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md">fleet transactions</a> to indicate the transaction is eligible for COST_PLUS, DIRECT_BILL, or FUNDED settlement'
           example: 'COST_PLUS'
         additionalInfo:
           type: array
@@ -6331,6 +6346,76 @@ components:
             $ref: '#/components/schemas/MyReturnScoreDetails'
         peerReturnScoreDetails:
           $ref: '#/components/schemas/ReturnScoreDetails'
+
+    Vehicle:
+      x-model-version: 1.0
+      description: 'Customer <a href="../docs?path=docs/Resources/Master-Data/Vehicle.md">vehicle</a> information.'
+      properties:
+        vehicleNumber:
+          type: string
+          maxLength: 256
+          description: 'This field identifies the vehicle number.'
+          example: '5676912'
+        odometerReading:
+          type: string
+          maxLength: 256
+          description: 'This field identifies the vehicle odometer reading keyed in by the customer or clerk.'
+          example: '78454'
+        tripNumber:
+          type: string
+          maxLength: 256
+          description: 'This field contains the trip number'
+          example: '27112'
+        unitId:
+          type: string
+          maxLength: 256
+          description: 'This field contains the unit ID.'
+          example: '578'
+        reeferHours:
+          type: string
+          maxLength: 256
+          description: 'This field contains the reefer hours.'
+          example: '14'
+        maintenanceId:
+          type: string
+          maxLength: 256
+          description: 'This field contains the maintenance ID.'
+          example: '12321988'
+        trailerNumber:
+          type: string
+          maxLength: 256
+          description: 'This field contains the trailer ID number.'
+          example: '78454'
+        hubometer:
+          type: string
+          maxLength: 256
+          description: 'This field contains the hubometer value.'
+          example: '0012353'
+        vehicleLicenseNumber:
+          type: string
+          maxLength: 256
+          description: 'This field contains Vehicle license number.'
+          example: 'U548212'
+        vehicleLicenseState:
+          type: string
+          maxLength: 256
+          description: 'This field contains the vehicle license<a href="../docs?path=docs/Resources/Master-Data/State-Code.md"> state or province code</a>.'
+          example: 'NJ'
+        trailerLicenseNumber:
+          type: string
+          maxLength: 256
+          description: 'This field contains trailer license number.'
+          example: 'FAU15874'
+        trailerLicenseState:
+          type: string
+          maxLength: 256
+          description: 'This field contains the trailer license<a href="../docs?path=docs/Resources/Master-Data/State-Code.md"> state or province code</a>.'
+          example: 'NJ'
+        trailerHub:
+          type: string
+          maxLength: 256
+          description: 'This field identifies the trailer hub serial number keyed in by the customer or clerk.'
+          example: '33543'
 
     VersionData3DS:
       x-model-version: 1.0
