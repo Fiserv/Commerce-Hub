@@ -38,7 +38,7 @@ titles: transactionDetails, referenceTransactionDetails, JSON Example
 
 The below table identifies the additional parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 | `authorizationSequence` | *string* | 27 | Type of authorization sequence requested.|
@@ -62,7 +62,7 @@ The below table identifies the additional parameters in the `referenceTransactio
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request.
 
-| Variable | Data Type | Maximum Length |Description |
+| Variable | Data Type | Max Length |Description |
 |---------|----------|----------------|---------|
 |`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |

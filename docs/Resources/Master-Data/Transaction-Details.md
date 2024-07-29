@@ -13,7 +13,7 @@ titles: transactionDetails, JSON Example
 
 The below table identifies the parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|-----------|----------------|---------|
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a forced post transaction to a previously performed external authorization. |
 | `authOptimazation` | *string* | 32 | An identifier used to indicate what data is received in the response for merchants boarded for [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) |

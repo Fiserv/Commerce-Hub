@@ -2,17 +2,15 @@
 tags: [API Reference, ISO Country Code]
 ---
 
-# FIPS County Codes
+# County Codes
 
-The county code is a 5-digit number identifying the U.S. `county` as defined in FIPS *(Federal Information Processing Standards Publication-Counties and County Equivalents of the States of the United States)*, indicating where the transaction occurred.
-
-<!--- https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/?cid=nrcs143_013697 -->
+The county code is a 5-digit number identifying the county, census area, borough, parish, municipality, city of, or district as defined in FIPS *(Federal Information Processing Standards)*, indicating where the transaction occurred.
 
 ---
 
 <!--
 type: tab
-title: Alabama
+titles: Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia
 -->
 
 The below table contains county codes for Alabama.
@@ -26,7 +24,7 @@ The below table contains county codes for Alabama.
 | Blount | 01009 |
 | Bullock | 01011 |
 | Butler |  01013 |
-| Choun | 01015 |
+| Calhoun | 01015 |
 | Chambers | 01017 |
 | Cherokee | 01019 |
 | Chilton | 01021 |
@@ -41,9 +39,9 @@ The below table contains county codes for Alabama.
 | Covington | 01039 |
 | Crenshaw | 01041 |
 | Cullman | 01043 |
-| De | 01045 |
-| Dlas | 01047 |
-| De Kb | 01049 |
+| Dale | 01045 |
+| Dallas | 01047 |
+| DeKalb | 01049 |
 | Elmore | 01051 |
 | Escambia | 01053 |
 | Etowah | 01055 |
@@ -51,13 +49,13 @@ The below table contains county codes for Alabama.
 | Franklin | 01059 |
 | Geneva | 01061 |
 | Greene | 01063 |
-| He | 01065 |
+| Hale | 01065 |
 | Henry | 01067 |
 | Houston | 01069 |
 | Jackson | 01071 |
 | Jefferson | 01073 |
 | Lamar | 01075 |
-| Lauderde | 01077 |
+| Lauderdale | 01077 |
 | Lawrence | 01079 |
 | Lee | 01081 |
 | Limestone | 01083 |
@@ -66,7 +64,7 @@ The below table contains county codes for Alabama.
 | Madison | 01089 |
 | Marengo | 01091 |
 | Marion | 01093 |
-| Marshl | 01095 |
+| Marshall | 01095 |
 | Mobile | 01097 |
 | Monroe | 01099 |
 | Montgomery | 01101 |
@@ -79,17 +77,16 @@ The below table contains county codes for Alabama.
 | St Clair | 01115 |
 | Shelby | 01117 |
 | Sumter | 01119 |
-| Tladega | 01121 |
-| Tlapoosa | 01123 |
-| Tuscoosa | 01125 |
-| Wker | 01127 |
+| Talladega | 01121 |
+| Tallapoosa | 01123 |
+| Tuscaloosa | 01125 |
+| Walker | 01127 |
 | Washington | 01129 |
 | Wilcox | 01131 |
 | Winston | 01133 |
 
 <!--
 type: tab
-title: Alaska
 -->
 
 The below table contains county codes for Alaska.
@@ -106,27 +103,27 @@ The below table contains county codes for Alaska.
 | Fairbanks North Star | 02090 |
 | Haines | 02100 |
 | Juneau | 02110 |
-| Kenai Peninsula | 02122	|
-| Ketchikan Gateway	| 02130 |
-| Kodiak Island	| 02150 |
+| Kenai Peninsula | 02122 |
+| Ketchikan Gateway | 02130 |
+| Kodiak Island | 02150 |
 | Lake and Peninsula | 02164 |
-| Matanuska-Susitna	| 02170	|
+| Matanuska-Susitna | 02170 |
 | Nome | 02180 |
-|	North Slope	| 02185 |
+| North Slope | 02185 |
 | Northwest Arctic | 02188 |
-| Prince of Wales-Outer Ketchikan	| 02201	|
-|	Sitka	| 02220 |
-|	Skagway-Hoonah-Angoon | 02232 |
-| Southeast Fairbanks	| 02240 |
-|	Valdez-Cordova | 02261 |
+| Prince of Wales-Outer Ketchikan | 02201 |
+| Sitka | 02220 |
+| Skagway-Yakutat-Angoon | 02231 |
+| Skagway-Hoonah-Angoon | 02232 |
+| Southeast Fairbanks | 02240 |
+| Valdez-Cordova | 02261 |
 | Wade Hampton | 02270 |
-| Wrangell-Petersburg	| 02280 |
-|	Yakutat	| 02282 |
-| Yukon-Koyukuk | 02290	|
+| Wrangell-Petersburg | 02280 |
+| Yakutat | 02282 |
+| Yukon-Koyukuk | 02290 |
 
 <!--
 type: tab
-title: Arizona
 -->
 
 The below table contains county codes for Arizona.
@@ -151,37 +148,36 @@ The below table contains county codes for Arizona.
 
 <!--
 type: tab
-title: Arkansas
 -->
 
 The below table contains county codes for Arkansas.
 
 | County | Code |
 | ------- | ------- |
-|	Arkansas | 05001 |
+| Arkansas | 05001 |
 | Ashley | 05003 |
-|	Baxter | 05005 |
-|	Benton | 05007 |
-| Boone	| 05009	|
-|	Bradley	| 05011 |
-| Calhoun | 05013	|
-|	Carroll	| 05015 |
-|	Chicot | 05017 |
-|	Clark	| 05019 |
-|	Clay| 05021 |
-|	Cleburne | 05023 |
-|	Cleveland | 05025 |
-|	Columbia | 05027 |
-|	Conway | 05029 |
-|	Craighead	| 05031 |
-|	Crawford | 05033 |
-|	Crittenden | 05035 |
-|	Cross	| 05037 |
-|	Dallas | 05039 |
-| Desha	| 05041	|
-|	Drew | 05043 |
-|	Faulkner | 05045 |
-|	Franklin | 05047 |
+| Baxter | 05005 |
+| Benton | 05007 |
+| Boone | 05009 |
+| Bradley | 05011 |
+| Calhoun | 05013 |
+| Carroll | 05015 |
+| Chicot | 05017 |
+| Clark | 05019 |
+| Clay| 05021 |
+| Cleburne | 05023 |
+| Cleveland | 05025 |
+| Columbia | 05027 |
+| Conway | 05029 |
+| Craighead | 05031 |
+| Crawford | 05033 |
+| Crittenden | 05035 |
+| Cross | 05037 |
+| Dallas | 05039 |
+| Desha | 05041 |
+| Drew | 05043 |
+| Faulkner | 05045 |
+| Franklin | 05047 |
 | Fulton | 05049 |
 | Garland | 05051 |
 | Grant | 05053 |
@@ -189,7 +185,7 @@ The below table contains county codes for Arkansas.
 | Hempstead | 05057 |
 | Hot Spring | 05059 |
 | Howard | 05061 |
-| Independenc | 05063 |
+| Independence | 05063 |
 | Izard | 05065 |
 | Jackson | 05067 |
 | Jefferson | 05069 |
@@ -236,7 +232,6 @@ The below table contains county codes for Arkansas.
 
 <!--
 type: tab
-title: California
 -->
 
 The below table contains county codes for California.
@@ -247,7 +242,7 @@ The below table contains county codes for California.
 | Alpine | 06003 |
 | Amador | 06005 |
 | Butte | 06007 |
-| laveras | 06009 |
+| Calaveras | 06009 |
 | Colusa | 06011 |
 | Contra Costa | 06013 |
 | Del Norte | 06015 |
@@ -302,10 +297,8 @@ The below table contains county codes for California.
 | Yolo | 06113 |
 | Yuba | 06115 |
 
-
 <!--
 type: tab
-title: Colorado
 -->
 
 The below table contains county codes for Colorado.
@@ -322,8 +315,8 @@ The below table contains county codes for Colorado.
 | Chaffee | 08015 |
 | Cheyenne | 08017 |
 | Clear Creek | 08019 |
-| nejos | 08021 |
-| stilla | 08023 |
+| Conejos | 08021 |
+| Costilla | 08023 |
 | Crowley | 08025 |
 | Custer | 08027 |
 | Delta | 08029 |
@@ -348,7 +341,7 @@ The below table contains county codes for Colorado.
 | La Plata | 08067 |
 | Larimer | 08069 |
 | Las Animas | 08071 |
-| Linln | 08073 |
+| Lincoln | 08073 |
 | Logan | 08075 |
 | Mesa | 08077 |
 | Mineral | 08079 |
@@ -363,7 +356,7 @@ The below table contains county codes for Colorado.
 | Pitkin | 08097 |
 | Prowers | 08099 |
 | Pueblo | 08101 |
-| Rio Blan | 08103 |
+| Rio Blanco | 08103 |
 | Rio Grande | 08105 |
 | Routt | 08107 |
 | Saguache | 08109 |
@@ -376,28 +369,25 @@ The below table contains county codes for Colorado.
 | Weld | 08123 |
 | Yuma | 08125 |
 
-
 <!--
 type: tab
-title: Connecticut
 -->
 
 The below table contains county codes for Connecticut.
 
 | County | Code |
 | ------- | ------- |
-| Fairfield	| 09001 |
+| Fairfield | 09001 |
 | Hartford | 09003 |
 | Litchfield | 09005 |
-| Middlesex	| 09007 |
-| New Haven	| 09009 |
+| Middlesex | 09007 |
+| New Haven | 09009 |
 | New London | 09011 |
-| Tolland	| 09013 |
-| Windham	| 09015 |
+| Tolland | 09013 |
+| Windham | 09015 |
 
 <!--
 type: tab
-title: Delaware
 -->
 
 The below table contains county codes for Delaware.
@@ -410,18 +400,6 @@ The below table contains county codes for Delaware.
 
 <!--
 type: tab
-title: Washington D. C. 
--->
-
-The below table contains county codes for Washington D. C.
-
-| County | Code |
-| ------- | ------- |
-| Washington	DC | 11001 |
-
-<!--
-type: tab
-title: Florida
 -->
 
 The below table contains county codes for Florida.
@@ -444,7 +422,7 @@ The below table contains county codes for Florida.
 | Dixie | 12029 |
 | Duval | 12031 |
 | Escambia | 12033 |
-| agler | 12035 |
+| Flagler | 12035 |
 | Franklin | 12037 |
 | Gadsden | 12039 |
 | Gilchrist | 12041 |
@@ -496,10 +474,8 @@ The below table contains county codes for Florida.
 | Walton | 12131 |
 | Washington | 12133 |
 
-
 <!--
 type: tab
-title: Georgia
 -->
 
 The below table contains county codes for Georgia.
@@ -531,8 +507,8 @@ The below table contains county codes for Georgia.
 | Catoosa | 13047 |
 | Charlton | 13049 |
 | Chatham | 13051 |
-| Chattahooch | 13053 |
-| Chattoo | 13055 |
+| Chattahoochee | 13053 |
+| Chattooga | 13055 |
 | Cherokee | 13057 |
 | Clarke | 13059 |
 | Clay | 13061 |
@@ -666,9 +642,13 @@ The below table contains county codes for Georgia.
 | Wilkinson | 13319 |
 | Worth | 13321 |
 
+<!-- type: tab-end -->
+
+---
+
 <!--
 type: tab
-title: Hawaii
+titles: Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland
 -->
 
 The below table contains county codes for Hawaii.
@@ -677,12 +657,11 @@ The below table contains county codes for Hawaii.
 | ------- | ------- |
 | Hawaii | 15001 |
 | Honolulu | 15003 |
-| Kauai	| 15007 |
+| Kauai | 15007 |
 | Maui | 15009 |
 
 <!--
 type: tab
-title: Idaho
 -->
 
 The below table contains county codes for Idaho.
@@ -713,7 +692,7 @@ The below table contains county codes for Idaho.
 | Fremont | 16043 |
 | Gem | 16045 |
 | Gooding | 16047 |
-| Aho | 16049 |
+| Idaho | 16049 |
 | Jefferson | 16051 |
 | Jerome | 16053 |
 | Kootenai | 16055 |
@@ -722,9 +701,9 @@ The below table contains county codes for Idaho.
 | Lewis | 16061 |
 | Lincoln | 16063 |
 | Madison | 16065 |
-| Minoka | 16067 |
+| Minidoka | 16067 |
 | Nez Perce | 16069 |
-| Onea | 16071 |
+| Oneida | 16071 |
 | Owyhee | 16073 |
 | Payette | 16075 |
 | Power | 16077 |
@@ -736,7 +715,6 @@ The below table contains county codes for Idaho.
 
 <!--
 type: tab
-title: Illinois
 -->
 
 The below table contains county codes for Illinois.
@@ -760,7 +738,7 @@ The below table contains county codes for Illinois.
 | Coles | 17029 |
 | Cook | 17031 |
 | Crawford | 17033 |
-| Cumberlan | 17035 |
+| Cumberland | 17035 |
 | De Kalb | 17037 |
 | De Witt | 17039 |
 | Douglas | 17041 |
@@ -775,7 +753,7 @@ The below table contains county codes for Illinois.
 | Gallatin | 17059 |
 | Greene | 17061 |
 | Grundy | 17063 |
-| Hamton | 17065 |
+| Hamilton | 17065 |
 | Hancock | 17067 |
 | Hardin | 17069 |
 | Henderson | 17071 |
@@ -810,7 +788,7 @@ The below table contains county codes for Illinois.
 | Menard | 17129 |
 | Mercer | 17131 |
 | Monroe | 17133 |
-| Montgomer | 17135 |
+| Montgomery | 17135 |
 | Morgan | 17137 |
 | Moultrie | 17139 |
 | Ogle | 17141 |
@@ -834,21 +812,20 @@ The below table contains county codes for Illinois.
 | Stephenson | 17177 |
 | Tazewell | 17179 |
 | Union | 17181 |
-| Vermion | 17183 |
+| Vermilion | 17183 |
 | Wabash | 17185 |
 | Warren | 17187 |
 | Washington | 17189 |
 | Wayne | 17191 |
 | White | 17193 |
 | Whiteside | 17195 |
-| Wl | 17197 |
-| Wliamson | 17199 |
+| Will | 17197 |
+| Williamson | 17199 |
 | Winnebago | 17201 |
 | Woodford | 17203 |
 
 <!--
 type: tab
-title: Indiana
 -->
 
 The below table contains county codes for Indiana.
@@ -866,7 +843,7 @@ The below table contains county codes for Indiana.
 | Cass | 18017 |
 | Clark | 18019 |
 | Clay | 18021 |
-| Clton | 18023 |
+| Clinton | 18023 |
 | Crawford | 18025 |
 | Daviess | 18027 |
 | Dearborn | 18029 |
@@ -877,7 +854,7 @@ The below table contains county codes for Indiana.
 | Elkhart | 18039 |
 | Fayette | 18041 |
 | Floyd | 18043 |
-| Founta | 18045 |
+| Fountain | 18045 |
 | Frankl | 18047 |
 | Fulton | 18049 |
 | Gibson | 18051 |
@@ -889,12 +866,12 @@ The below table contains county codes for Indiana.
 | Hendricks | 18063 |
 | Henry | 18065 |
 | Howard | 18067 |
-| Huntgton | 18069 |
+| Huntington | 18069 |
 | Jackson | 18071 |
 | Jasper | 18073 |
 | Jay | 18075 |
 | Jefferson | 18077 |
-| Jenngs | 18079 |
+| Jennings | 18079 |
 | Johnson | 18081 |
 | Knox | 18083 |
 | Kosciusko | 18085 |
@@ -942,7 +919,7 @@ The below table contains county codes for Indiana.
 | Wabash | 18169 |
 | Warren | 18171 |
 | Warrick | 18173 |
-| Washgton | 18175 |
+| Washington | 18175 |
 | Wayne | 18177 |
 | Wells | 18179 |
 | White | 18181 |
@@ -950,7 +927,6 @@ The below table contains county codes for Indiana.
 
 <!--
 type: tab
-title: Iowa
 -->
 
 The below table contains county codes for Iowa.
@@ -1059,7 +1035,6 @@ The below table contains county codes for Iowa.
 
 <!--
 type: tab
-title: Kansas
 -->
 
 The below table contains county codes for Kansas.
@@ -1108,7 +1083,7 @@ The below table contains county codes for Kansas.
 | Harvey | 20079 |
 | Haskell | 20081 |
 | Hodgeman | 20083 |
-| Jacon | 20085 |
+| Jackson | 20085 |
 | Jefferson | 20087 |
 | Jewell | 20089 |
 | Johnson | 20091 |
@@ -1147,7 +1122,7 @@ The below table contains county codes for Kansas.
 | Republic | 20157 |
 | Rice | 20159 |
 | Riley | 20161 |
-| Roo | 20163 |
+| Rooks | 20163 |
 | Rush | 20165 |
 | Russell | 20167 |
 | Saline | 20169 |
@@ -1172,10 +1147,8 @@ The below table contains county codes for Kansas.
 | Woodson | 20207 |
 | Wyandotte | 20209 |
 
-
 <!--
 type: tab
-title: Kentucky
 -->
 
 The below table contains county codes for Kentucky.
@@ -1195,7 +1168,7 @@ The below table contains county codes for Kentucky.
 | Boyle | 21021 |
 | Bracken | 21023 |
 | Breathitt | 21025 |
-| Breckinridg | 21027 |
+| Breckinridge | 21027 |
 | Bullitt | 21029 |
 | Butler | 21031 |
 | Caldwell | 21033 |
@@ -1305,7 +1278,6 @@ The below table contains county codes for Kentucky.
 
 <!--
 type: tab
-title: Louisiana
 -->
 
 The below table contains county codes for Louisiana.
@@ -1324,8 +1296,8 @@ The below table contains county codes for Louisiana.
 | Calcasieu | 22019 |
 | Caldwell | 22021 |
 | Cameron | 22023 |
-| Catahou | 22025 |
-| Ciborne | 22027 |
+| Catahoula | 22025 |
+| Claiborne | 22027 |
 | Concordia | 22029 |
 | De Soto | 22031 |
 | East Baton Rouge | 22033 |
@@ -1339,9 +1311,9 @@ The below table contains county codes for Louisiana.
 | Jackson | 22049 |
 | Jefferson | 22051 |
 | Jefferson Davis | 22053 |
-| fayette | 22055 |
-| fourche | 22057 |
-|  Salle | 22059 |
+| Lafayette | 22055 |
+| Lafourche | 22057 |
+| Salle | 22059 |
 | Lincoln | 22061 |
 | Livingston | 22063 |
 | Madison | 22065 |
@@ -1349,18 +1321,18 @@ The below table contains county codes for Louisiana.
 | Natchitoches | 22069 |
 | Orleans | 22071 |
 | Ouachita | 22073 |
-| Pquemines | 22075 |
+| Plaquemines | 22075 |
 | Pointe Coupee | 22077 |
 | Rapides | 22079 |
 | Red River | 22081 |
-| Richnd | 22083 |
+| Richland | 22083 |
 | Sabine | 22085 |
 | St Bernard | 22087 |
 | St Charles | 22089 |
 | St Helena | 22091 |
 | St James | 22093 |
 | St John the Baptist | 22095 |
-| St ndry | 22097 |
+| St Landry | 22097 |
 | St Martin | 22099 |
 | St Mary | 22101 |
 | St Tammany | 22103 |
@@ -1376,9 +1348,9 @@ The below table contains county codes for Louisiana.
 | West Carroll | 22123 |
 | West Feliciana | 22125 |
 | Winn | 22127 |
+
 <!--
 type: tab
-title: Maine
 -->
 
 The below table contains county codes for Maine.
@@ -1397,14 +1369,13 @@ The below table contains county codes for Maine.
 | Penobscot | 23019 |
 | Piscataquis | 23021 |
 | Sagadahoc | 23023 |
-| Sorset | 23025 |
+| Somerset  | 23025 |
 | Waldo | 23027 |
 | Washington | 23029 |
 | York | 23031 |
 
 <!--
 type: tab
-title: Maryland
 -->
 
 The below table contains county codes for Maryland.
@@ -1427,8 +1398,8 @@ The below table contains county codes for Maryland.
 | Kent | 24029 |
 | Montgomery | 24031 |
 | Prince Georges | 24033 |
-| Queen Annes | 24035 |
-| St Marys | 24037 |
+| Queen Anne | 24035 |
+| St Mary | 24037 |
 | Somerset | 24039 |
 | Talbot | 24041 |
 | Washington | 24043 |
@@ -1436,10 +1407,13 @@ The below table contains county codes for Maryland.
 | Worcester | 24047 |
 | Baltimore City | 24510 |
 
+<!-- type: tab-end -->
+
+---
 
 <!--
 type: tab
-title: Massachusetts
+titles: Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey
 -->
 
 The below table contains county codes for Massachusetts.
@@ -1463,7 +1437,6 @@ The below table contains county codes for Massachusetts.
 
 <!--
 type: tab
-title: Michigan
 -->
 
 The below table contains county codes for Michigan.
@@ -1497,7 +1470,7 @@ The below table contains county codes for Michigan.
 | Genesee | 26049 |
 | Gladwin | 26051 |
 | Gogebic | 26053 |
-| Grand Trav | 26055 |
+| Grand Traverse | 26055 |
 | Gratiot | 26057 |
 | Hillsdale | 26059 |
 | Houghton | 26061 |
@@ -1524,12 +1497,12 @@ The below table contains county codes for Michigan.
 | Marquette | 26103 |
 | Mason | 26105 |
 | Mecosta | 26107 |
-| Menonee | 26109 |
-| dland | 26111 |
-| ssaukee | 26113 |
+| Menominee | 26109 |
+| Midland | 26111 |
+| Missaukee  | 26113 |
 | Monroe | 26115 |
 | Montcalm | 26117 |
-| Montmoren | 26119 |
+| Montmorency | 26119 |
 | Muskegon | 26121 |
 | Newaygo | 26123 |
 | Oakland | 26125 |
@@ -1540,8 +1513,8 @@ The below table contains county codes for Michigan.
 | Oscoda | 26135 |
 | Otsego | 26137 |
 | Ottawa | 26139 |
-| Presque Isl | 26141 |
-| Roscommo | 26143 |
+| Presque Isle | 26141 |
+| Roscommon | 26143 |
 | Saginaw | 26145 |
 | St Clair | 26147 |
 | St Joseph | 26149 |
@@ -1556,7 +1529,6 @@ The below table contains county codes for Michigan.
 
 <!--
 type: tab
-title: Minnesota
 -->
 
 The below table contains county codes for Minnesota.
@@ -1653,7 +1625,6 @@ The below table contains county codes for Minnesota.
 
 <!--
 type: tab
-title: Mississippi
 -->
 
 The below table contains county codes for Mississippi.
@@ -1745,7 +1716,6 @@ The below table contains county codes for Mississippi.
 
 <!--
 type: tab
-title: Missouri
 -->
 
 The below table contains county codes for Missouri.
@@ -1819,10 +1789,10 @@ The below table contains county codes for Missouri.
 | Mercer | 29129 |
 | Miller | 29131 |
 | Mississippi | 29133 |
-| niteau | 29135 |
-| nroe | 29137 |
-| ntgomery | 29139 |
-| rgan | 29141 |
+| Moniteau | 29135 |
+| Monroe | 29137 |
+| Montgomery | 29139 |
+| Morgan | 29141 |
 | New Madrid | 29143 |
 | Newton | 29145 |
 | Nodaway | 29147 |
@@ -1870,7 +1840,6 @@ The below table contains county codes for Missouri.
 
 <!--
 type: tab
-title: Montana
 -->
 
 The below table contains county codes for Montana.
@@ -1937,7 +1906,6 @@ The below table contains county codes for Montana.
 
 <!--
 type: tab
-title: Nebraska
 -->
 
 The below table contains county codes for Nebraska.
@@ -1947,8 +1915,8 @@ The below table contains county codes for Nebraska.
 | Adams | 31001 |
 | Antelope | 31003 |
 | Arthur | 31005 |
-| Banr | 31007 |
-| Blai | 31009 |
+| Banner | 31007 |
+| Blaine | 31009 |
 | Boo | 31011 |
 | Box Butte | 31013 |
 | Boyd | 31015 |
@@ -1960,7 +1928,7 @@ The below table contains county codes for Nebraska.
 | Cedar | 31027 |
 | Chase | 31029 |
 | Cherry | 31031 |
-| Cheyen | 31033 |
+| Cheyenne | 31033 |
 | Clay | 31035 |
 | Colfax | 31037 |
 | Cuming | 31039 |
@@ -1993,7 +1961,7 @@ The below table contains county codes for Nebraska.
 | Howard | 31093 |
 | Jefferson | 31095 |
 | Johnson | 31097 |
-| Keary | 31099 |
+| Kearney | 31099 |
 | Keith | 31101 |
 | Keya Paha | 31103 |
 | Kimball | 31105 |
@@ -2007,10 +1975,10 @@ The below table contains county codes for Nebraska.
 | Merrick | 31121 |
 | Morrill | 31123 |
 | Nance | 31125 |
-| maha | 31127 |
+| Nemaha | 31127 |
 | Nuckolls | 31129 |
 | Otoe | 31131 |
-| Pawe | 31133 |
+| Pawnee  | 31133 |
 | Perkins | 31135 |
 | Phelps | 31137 |
 | Pierce | 31139 |
@@ -2019,7 +1987,7 @@ The below table contains county codes for Nebraska.
 | Red Willow | 31145 |
 | Richardson | 31147 |
 | Rock | 31149 |
-| Sali | 31151 |
+| Saline | 31151 |
 | Sarpy | 31153 |
 | Saunders | 31155 |
 | Scotts Bluff | 31157 |
@@ -2040,7 +2008,6 @@ The below table contains county codes for Nebraska.
 
 <!--
 type: tab
-title: Nevada
 -->
 
 The below table contains county codes for Nevada.
@@ -2065,10 +2032,8 @@ The below table contains county codes for Nevada.
 | White Pine | 32033 |
 | Carson City | 32510 |
 
-
 <!--
 type: tab
-title: New Hampshire
 -->
 
 The below table contains county codes for New Hampshire.
@@ -2088,7 +2053,6 @@ The below table contains county codes for New Hampshire.
 
 <!--
 type: tab
-title: New Jersey
 -->
 
 The below table contains county codes for New Jersey.
@@ -2100,7 +2064,7 @@ The below table contains county codes for New Jersey.
 | Burlington | 34005 |
 | Camden | 34007 |
 | Cape May | 34009 |
-| Cumberlan | 34011 |
+| Cumberland | 34011 |
 | Essex | 34013 |
 | Gloucester | 34015 |
 | Hudson | 34017 |
@@ -2116,9 +2080,14 @@ The below table contains county codes for New Jersey.
 | Sussex | 34037 |
 | Union | 34039 |
 | Warren | 34041 |
+
+<!-- type: tab-end -->
+
+---
+
 <!--
 type: tab
-title: New Mexico
+titles: New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina
 -->
 
 The below table contains county codes for New Mexico.
@@ -2161,7 +2130,6 @@ The below table contains county codes for New Mexico.
 
 <!--
 type: tab
-title: New York
 -->
 
 The below table contains county codes for New York.
@@ -2169,7 +2137,7 @@ The below table contains county codes for New York.
 | County | Code |
 | ------- | ------- |
 | Alba | 36001 |
-| Allega | 36003 |
+| Allegany | 36003 |
 | Bronx | 36005 |
 | Broome | 36007 |
 | Cattaraugus | 36009 |
@@ -2233,14 +2201,13 @@ The below table contains county codes for New York.
 
 <!--
 type: tab
-title: North Carolina
 -->
 
 The below table contains county codes for North Carolina.
 
 | County | Code |
 | ------- | ------- |
-| Alamae | 37001 |
+| Alamance | 37001 |
 | Alexander | 37003 |
 | Alleghany | 37005 |
 | Anson | 37007 |
@@ -2250,7 +2217,7 @@ The below table contains county codes for North Carolina.
 | Bertie | 37015 |
 | Bladen | 37017 |
 | Brunswick | 37019 |
-| Buombe | 37021 |
+| Buncombe | 37021 |
 | Burke | 37023 |
 | Cabarrus | 37025 |
 | Caldwell | 37027 |
@@ -2294,7 +2261,7 @@ The below table contains county codes for North Carolina.
 | Jones | 37103 |
 | Lee | 37105 |
 | Lenoir | 37107 |
-| Lioln | 37109 |
+| Lincoln | 37109 |
 | McDowell | 37111 |
 | Macon | 37113 |
 | Madison | 37115 |
@@ -2330,7 +2297,7 @@ The below table contains county codes for North Carolina.
 | Transylvania | 37175 |
 | Tyrrell | 37177 |
 | Union | 37179 |
-| Vae | 37181 |
+| Vance | 37181 |
 | Wake | 37183 |
 | Warren | 37185 |
 | Washington | 37187 |
@@ -2339,11 +2306,10 @@ The below table contains county codes for North Carolina.
 | Wilkes | 37193 |
 | Wilson | 37195 |
 | Yadkin | 37197 |
-| Yaey | 37199 |
+| Yancey | 37199 |
 
 <!--
 type: tab
-title: North Dakota
 -->
 
 The below table contains county codes for North Dakota.
@@ -2366,8 +2332,8 @@ The below table contains county codes for North Dakota.
 | Eddy | 38027 |
 | Emmons | 38029 |
 | Foster | 38031 |
-| Golden Vall | 38033 |
-| Gra Forks | 38035 |
+| Golden Valley | 38033 |
+| Grand Forks | 38035 |
 | Grant | 38037 |
 | Griggs | 38039 |
 | Hettinger | 38041 |
@@ -2388,7 +2354,7 @@ The below table contains county codes for North Dakota.
 | Ramsey | 38071 |
 | Ransom | 38073 |
 | Renville | 38075 |
-| Richla | 38077 |
+| Richland | 38077 |
 | Rolette | 38079 |
 | Sargent | 38081 |
 | Sheridan | 38083 |
@@ -2406,7 +2372,6 @@ The below table contains county codes for North Dakota.
 
 <!--
 type: tab
-title: Ohio
 -->
 
 The below table contains county codes for Ohio.
@@ -2469,7 +2434,7 @@ The below table contains county codes for Ohio.
 | Mercer | 39107 |
 | Miami | 39109 |
 | Monroe | 39111 |
-| Montgomer | 39113 |
+| Montgomery | 39113 |
 | Morgan | 39115 |
 | Morrow | 39117 |
 | Muskingum | 39119 |
@@ -2504,7 +2469,6 @@ The below table contains county codes for Ohio.
 
 <!--
 type: tab
-title: Oklahoma 
 -->
 
 The below table contains county codes for Oklahoma.
@@ -2564,9 +2528,9 @@ The below table contains county codes for Oklahoma.
 | Muskogee | 40101 |
 | Noble | 40103 |
 | Nowata | 40105 |
-| fuskee | 40107 |
-| lahoma | 40109 |
-| mulgee | 40111 |
+| Okfuskee | 40107 |
+| Oklahoma | 40109 |
+| Okmulgee | 40111 |
 | Osage | 40113 |
 | Ottawa | 40115 |
 | Pawnee | 40117 |
@@ -2591,7 +2555,6 @@ The below table contains county codes for Oklahoma.
 
 <!--
 type: tab
-title: Oregon
 -->
 
 The below table contains county codes for Oregon.
@@ -2622,7 +2585,7 @@ The below table contains county codes for Oregon.
 | Linn | 41043 |
 | Malheur | 41045 |
 | Marion | 41047 |
-| Mrow | 41049 |
+| Morrow | 41049 |
 | Multnomah | 41051 |
 | Polk | 41053 |
 | Sherman | 41055 |
@@ -2637,7 +2600,6 @@ The below table contains county codes for Oregon.
 
 <!--
 type: tab
-title: Pennsylvania
 -->
 
 The below table contains county codes for Pennsylvania.
@@ -2714,7 +2676,6 @@ The below table contains county codes for Pennsylvania.
 
 <!--
 type: tab
-title: Rhode Island
 -->
 
 The below table contains county codes for Rhode Island.
@@ -2723,13 +2684,12 @@ The below table contains county codes for Rhode Island.
 | ------- | ------- |
 | Bristol | 44001 |
 | Kent | 44003|
-|	Newport	| 44003 |
+| Newport | 44003 |
 | Providence | 44007 |
-|	Washington | 44009 |
+| Washington | 44009 |
 
 <!--
 type: tab
-title: South Carolina
 -->
 
 The below table contains county codes for South Carolina.
@@ -2783,9 +2743,13 @@ The below table contains county codes for South Carolina.
 | Williamsburg | 45089 |
 | York | 45091 |
 
+<!-- type: tab-end -->
+
+---
+
 <!--
 type: tab
-title: South Dakota
+titles: South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming
 -->
 
 The below table contains county codes for South Dakota.
@@ -2795,17 +2759,17 @@ The below table contains county codes for South Dakota.
 | Aurora | 46003 |
 | Beadle | 46005 |
 | Bennett | 46007 |
-| Bon Hom | 46009 |
+| Bon Homme | 46009 |
 | Brooking | 46011 |
 | Brown | 46013 |
 | Brule | 46015 |
 | Buffalo | 46017 |
 | Butte | 46019 |
-| Campbe | 46021 |
+| Campbell | 46021 |
 | Charles  | 46023 |
 | Clark | 46025 |
 | Clay | 46027 |
-| Codingto | 46029 |
+| Codington | 46029 |
 | Corson | 46031 |
 | Custer | 46033 |
 | Davison | 46035 |
@@ -2829,20 +2793,20 @@ The below table contains county codes for South Dakota.
 | Jackson | 46071 |
 | Jerauld | 46073 |
 | Jones | 46075 |
-| Kingsbur | 46077 |
+| Kingsbury | 46077 |
 | Lake | 46079 |
-| Lawrenc | 46081 |
+| Lawrence | 46081 |
 | Lincoln | 46083 |
 | Lyman | 46085 |
 | McCook | 46087 |
-| McPhers | 46089 |
+| McPherson | 46089 |
 | Marshall | 46091 |
 | Meade | 46093 |
 | Mellette | 46095 |
 | Miner | 46097 |
-| Minneha | 46099 |
+| Minnehaha | 46099 |
 | Moody | 46101 |
-| Penningt | 46103 |
+| Pennington | 46103 |
 | Perkins | 46105 |
 | Potter | 46107 |
 | Roberts | 46109 |
@@ -2855,13 +2819,12 @@ The below table contains county codes for South Dakota.
 | Tripp | 46123 |
 | Turner | 46125 |
 | Union | 46127 |
-| Walwort | 46129 |
+| Walworth | 46129 |
 | Yankton | 46135 |
 | Ziebach | 46137 |
 
 <!--
 type: tab
-title: Tennessee
 -->
 
 The below table contains county codes for Tennessee.
@@ -2938,7 +2901,7 @@ The below table contains county codes for Tennessee.
 | Perry | 47135 |
 | Pickett | 47137 |
 | Polk | 47139 |
-| Puam | 47141 |
+| Putnam | 47141 |
 | Rhea | 47143 |
 | Roane | 47145 |
 | Robertson | 47147 |
@@ -2966,7 +2929,6 @@ The below table contains county codes for Tennessee.
 
 <!--
 type: tab
-title: Texas
 -->
 
 The below table contains county codes for Texas.
@@ -3103,7 +3065,7 @@ The below table contains county codes for Texas.
 | Karnes | 48255 |
 | Kaufman | 48257 |
 | Kendall | 48259 |
-| Kenedy | 48261 |
+| Kennedy | 48261 |
 | Kent | 48263 |
 | Kerr | 48265 |
 | Kimble | 48267 |
@@ -3230,7 +3192,6 @@ The below table contains county codes for Texas.
 
 <!--
 type: tab
-title: Utah
 -->
 
 The below table contains county codes for Utah.
@@ -3269,31 +3230,29 @@ The below table contains county codes for Utah.
 
 <!--
 type: tab
-title: Vermont
 -->
 
 The below table contains county codes for Vermont.
 
 | County | Code |
 | ------- | ------- |
-| Addison	| 50001	|
-|	Bennington | 50003 |
-|	Caledonia	| 50005 |
-|	Chittenden | 50007 |
-|	Essex	| 50009 |
+| Addison | 50001 |
+| Bennington | 50003 |
+| Caledonia | 50005 |
+| Chittenden | 50007 |
+| Essex | 50009 |
 | Franklin | 50011 |
-|	Grand Isle | 50013 |
-|	Lamoille | 50015 |
-|	Orange | 50017 |
-|	Orleans	| 50019 |
-|	Rutland	| 50021 |
-|	Washington | 50023 |
-|	Windham	| 50025 |
-|	Windsor	| 50027 |
+| Grand Isle | 50013 |
+| Lamoille | 50015 |
+| Orange | 50017 |
+| Orleans | 50019 |
+| Rutland | 50021 |
+| Washington | 50023 |
+| Windham | 50025 |
+| Windsor | 50027 |
 
 <!--
 type: tab
-title: Virginia
 -->
 
 The below table contains county codes for Virginia.
@@ -3331,7 +3290,7 @@ The below table contains county codes for Virginia.
 | Fairfax | 51059 |
 | Fauquier | 51061 |
 | Floyd | 51063 |
-| Flunna | 51065 |
+| Fluvanna | 51065 |
 | Franklin | 51067 |
 | Frederick | 51069 |
 | Giles | 51071 |
@@ -3368,7 +3327,7 @@ The below table contains county codes for Virginia.
 | Orange | 51137 |
 | Page | 51139 |
 | Patrick | 51141 |
-| Pittsylnia | 51143 |
+| Pittsylvania | 51143 |
 | Powhatan | 51145 |
 | Prince Edward | 51147 |
 | Prince George | 51149 |
@@ -3384,7 +3343,7 @@ The below table contains county codes for Virginia.
 | Shenandoah | 51171 |
 | Smyth | 51173 |
 | Southampton | 51175 |
-| Spotsylnia | 51177 |
+| Spotsylvania | 51177 |
 | Stafford | 51179 |
 | Surry | 51181 |
 | Sussex | 51183 |
@@ -3402,7 +3361,7 @@ The below table contains county codes for Virginia.
 | Charlottesville City | 51540 |
 | Chesapeake City | 51550 |
 | Clifton Forge City | 51560 |
-| Colonial Heights Cit | 51570 |
+| Colonial Heights City | 51570 |
 | Covington City | 51580 |
 | Danville City | 51590 |
 | Emporia City | 51595 |
@@ -3439,7 +3398,6 @@ The below table contains county codes for Virginia.
 
 <!--
 type: tab
-title: Washington
 -->
 
 The below table contains county codes for Washington.
@@ -3459,7 +3417,7 @@ The below table contains county codes for Washington.
 | Franklin | 53021 |
 | Garfield | 53023 |
 | Grant | 53025 |
-| Grays Har | 53027 |
+| Grays Harbor | 53027 |
 | Island | 53029 |
 | Jefferson | 53031 |
 | King | 53033 |
@@ -3471,7 +3429,7 @@ The below table contains county codes for Washington.
 | Mason | 53045 |
 | Okanogan | 53047 |
 | Pacific | 53049 |
-| Pend Oreil | 53051 |
+| Pend Oreille | 53051 |
 | Pierce | 53053 |
 | San Juan | 53055 |
 | Skagit | 53057 |
@@ -3480,15 +3438,14 @@ The below table contains county codes for Washington.
 | Spokane | 53063 |
 | Stevens | 53065 |
 | Thurston | 53067 |
-| hkiakum | 53069 |
-| lla lla | 53071 |
+| Wahkiakum | 53069 |
+| Walla Walla | 53071 |
 | Whatcom | 53073 |
 | Whitman | 53075 |
 | Yakima | 53077 |
 
 <!--
 type: tab
-title: West Virginia
 -->
 
 The below table contains county codes for West Virginia.
@@ -3553,7 +3510,6 @@ The below table contains county codes for West Virginia.
 
 <!--
 type: tab
-title: Wisconsin
 -->
 
 The below table contains county codes for Wisconsin.
@@ -3630,18 +3586,17 @@ The below table contains county codes for Wisconsin.
 | Waukesha | 55133 |
 | Waupaca | 55135 |
 | Waushara | 55137 |
-| nnebago | 55139 |
+| Winnebago | 55139 |
 | Wood | 55141 |
 
 <!--
 type: tab
-title: Wyoming
 -->
 
 The below table contains county codes for Wyoming.
+
 | County | Code |
 | ------- | ------- |
-
 | Albany | 56001 |
 | Big Horn | 56003 |
 | Campbell | 56005 |
@@ -3650,7 +3605,7 @@ The below table contains county codes for Wyoming.
 | Crook | 56011 |
 | Fremont | 56013 |
 | Goshen | 56015 |
-| Hot Sprin | 56017 |
+| Hot Springs | 56017 |
 | Johnson | 56019 |
 | Laramie | 56021 |
 | Lincoln | 56023 |
@@ -3660,45 +3615,66 @@ The below table contains county codes for Wyoming.
 | Platte | 56031 |
 | Sheridan | 56033 |
 | Sublette | 56035 |
-| Sweetwat | 56037 |
+| Sweetwater | 56037 |
 | Teton | 56039 |
 | Uinta | 56041 |
 | Washakie | 56043 |
 | Weston | 56045 |
 
+<!-- type: tab-end -->
+
+---
+
 <!--
 type: tab
-title: American Samoa
+titles: American Samoa, District of Colombia, Guam, Northern Mariana Islands, Puerto Rico, US Minor Outlying Islands, Virgin Islands
 -->
 
 The below table contains county codes for American Samoa.
 
 | County | Code |
 | ------- | ------- |
-|	Unknown | 60010|
-| Manua | 60020	|
-| Ofu	| 60020 |
-|	Olosega |  60020 |
-| Tutuila |	60050 |
+| Eastern District | 60010|
+| Manu'a | 60020 |
+| Rose Atoll (Rose Island) | 60030 |
+| Swains Island | 60040 |
+| Western District | 60050 |
 
 <!--
 type: tab
-title: Arkansas
+-->
+
+The below table contains county codes for Washington D. C.
+
+| County | Code |
+| ------- | ------- |
+| District of Columbia | 11001 |
+
+<!--
+type: tab
 -->
 
 The below table contains county codes for Guam.
 
 | County | Code |
 | ------- | ------- |
-| Cocos Island | 66010 |
 | Guam | 66010 |
+
+<!--
+type: tab
+-->
+
+The below table contains county codes for Northern Mariana Islands.
+
+| County | Code |
+| ------- | ------- |
+| Northern Islands | 69085 |
+| Rota | 69100 |
 | Saipan | 69110 |
-| Aguijan | 69120 |
 | Tinian | 69120 |
 
 <!--
 type: tab
-title: Puerto Rico 
 -->
 
 The below table contains county codes for Puerto Rico.
@@ -3710,29 +3686,29 @@ The below table contains county codes for Puerto Rico.
 | Aguadilla | 72005 |
 | Aguas Buenas | 72007 |
 | Aibonito | 72009 |
-| Anasco | 72011 |
+| Añasco | 72011 |
 | Arecibo | 72013 |
 | Arroyo | 72015 |
 | Barceloneta | 72017 |
 | Barranquitas | 72019 |
-| Bayamon | 72021 |
+| Bayamón | 72021 |
 | Cabo Rojo | 72023 |
 | Caguas | 72025 |
 | Camuy | 72027 |
-| Canovanas | 72029 |
+| Canóvanas | 72029 |
 | Carolina | 72031 |
-| Catano | 72033 |
+| Cataño | 72033 |
 | Cayey | 72035 |
 | Ceiba | 72037 |
 | Cidra | 72041 |
 | Coamo | 72043 |
-| Comerio | 72045 |
+| Comerío | 72045 |
 | Corozal | 72047 |
 | Culebra | 72049 |
 | Dorado | 72051 |
 | Fajardo | 72053 |
 | Florida | 72054 |
-| Guanica | 72055 |
+| Guánica | 72055 |
 | Guayama | 72057 |
 | Guayanilla | 72059 |
 | Guaynabo | 72061 |
@@ -3745,31 +3721,31 @@ The below table contains county codes for Puerto Rico.
 | Juncos | 72077 |
 | Lajas | 72079 |
 | Lares | 72081 |
-| Las Marias | 72083 |
+| Las Marías | 72083 |
 | Las Piedras | 72085 |
-| Loiza | 72087 |
+| Loíza | 72087 |
 | Luquillo | 72089 |
-| Manati | 72091 |
+| Manatí | 72091 |
 | Maricao | 72093 |
 | Maunabo | 72095 |
-| Mayaguez | 72097 |
+| Mayagüez | 72097 |
 | Moca | 72099 |
 | Morovis | 72101 |
 | Nabuabo | 72103 |
 | Naranjito | 72105 |
 | Orocovis | 72107 |
 | Patillas | 72109 |
-| Penuelas | 72111 |
+| Peñuelas | 72111 |
 | Ponce | 72113 |
 | Quebradillas | 72115 |
-| Rincon | 72117 |
-| Rio Grande | 72119 |
+| Rincón | 72117 |
+| Río Grande | 72119 |
 | Sabana Grande | 72121 |
 | Salinas | 72123 |
-| San German | 72125 |
+| San Germán | 72125 |
 | San Juan | 72127 |
 | San Lorenzo | 72129 |
-| San Sabastian | 72131 |
+| San Sebastián | 72131 |
 | Santa Isabel | 72133 |
 | Toa Alta | 72135 |
 | Toa Baja | 72137 |
@@ -3784,16 +3760,33 @@ The below table contains county codes for Puerto Rico.
 
 <!--
 type: tab
-title: Virgin Islands
+-->
+
+The below table contains county codes for US Minor Outlying Islands.
+
+| County | Code |
+| ------- | ------- |
+| Baker Island | 74050 |
+| Howland Island | 74100 |
+| Jarvis Island | 74150 |
+| Johnston Atoll | 74200 |
+| Kingman Reef | 74250 |
+| Midway Islands | 74300 |
+| Navassa Island | 74350 |
+| Palmyra Atoll | 74400 |
+| Wake Island | 74450 |
+
+<!--
+type: tab
 -->
 
 The below table contains county codes for Virgin Islands.
 
 | County | Code |
 | ------- | ------- |
-| St. Croix | 78010	|
-| St. John | 78020 |
-| St. Thomas | 78030 |
+| Saint Croix | 78010 |
+| Saint John | 78020 |
+| Saint Thomas | 78030 |
 
 <!-- type: tab-end -->
 

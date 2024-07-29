@@ -118,7 +118,7 @@ titles: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|----------|----------------|---------|
 | `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
@@ -209,16 +209,16 @@ Example of a charge (200: Success) response.
     }
   },
   "source": {
+    "sourceType": "PaymentToken",
+    "tokenData": "8519371934460009",
+    "tokenSource": "TRANSARMOR",
     "card": {
       "bin": "40055500",
       "expirationMonth": "10",
       "expirationYear": "30",
       "last4": "0019",
       "scheme": "VISA"
-    },
-    "sourceType": "PaymentToken",
-    "tokenData": "8519371934460009",
-    "tokenSource": "TRANSARMOR"
+    }
   },
   "transactionDetails": {
     "captureFlag": true
@@ -234,7 +234,7 @@ Example of a charge (200: Success) response.
 #### Request Variables
 
 <!-- theme: info -->
-> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
+> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
 
 <!--
 type: tab
@@ -243,7 +243,7 @@ titles: source, card
 
 The below table identifies the parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 | ----- | :-----: | :-----: | :-----: | ----- |
 | `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 | `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
@@ -258,7 +258,7 @@ type: tab
 
 The below table identifies the required parameters in the `card` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 | ----- | :-----: | :-----: | :-----: | ----- |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit card expiration month |
 | `expirationYear` | *string* | 4 | &#10004; | 4-digit card expiration year |

@@ -146,7 +146,7 @@ The [status](#payment-url-status) of the Payment URL will be received in compone
 
 #### Component: paymentUrlDetail
 
-| Variable | Type| Maximum Length | Description/Values|
+| Variable | Type| Max Length | Description/Values|
 |---------|----------|----------------|---------|
 | `paymentUrl` | *string* |  | URL for embedded payment link. |
 | `merchantTransactionId` | *string* |  | The unique merchant transaction ID from the request, if supplied. |

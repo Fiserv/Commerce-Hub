@@ -104,7 +104,7 @@
     - title: Global Acquiring
       link: docs/Resources/Guides/Global-Acquiring.md
     - title: Multi-Use Public Key
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+      link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Pay By Bank
       link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
     - title: Secure Data Capture
@@ -213,7 +213,7 @@
       - title: Credentials
         link: docs/Resources/API-Documents/Security/Credentials.md
       - title: Key Management
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md   
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:
   - title: Release Notes
     sections:
