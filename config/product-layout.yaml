@@ -64,7 +64,7 @@ getStarted: /docs/Getting-Started/Getting-Started-General.md
 #      link:
 featuredFeatures:
   - title: Digital Wallets
-    groupName: Online/Digital/Mobile
+    groupName: Featured
     description: Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
     featured: true
     relatedDocs:
@@ -75,7 +75,7 @@ featuredFeatures:
         path: /payments/v1/charges
         title: Charges
   - title: Encrypted Payments
-    groupName: In-Person
+    groupName: Featured
     description: By leveraging the third-party EMV-enabled payment solutions, your customer payment transactions are encrypted via a multi-layered security approach.
     featured: true
     relatedDocs:
@@ -86,7 +86,7 @@ featuredFeatures:
         path: /payments/v1/charges
         title: Charges
   - title: Tap to Pay on iPhone
-    groupName: In-Person
+    groupName: Featured
     description: "Leverage Commerce Hub's Tap to Pay on iPhone SDK to accept in-store payments on Apple's iPhone devices."
     featured: true
     relatedDocs:
@@ -97,7 +97,7 @@ featuredFeatures:
         path: /payments/v1/charges
         title: Charges
   - title: Secure Data Capture
-    groupName: Online/Digital/Mobile
+    groupName: Featured
     description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
     featured: true
     relatedDocs:
@@ -108,12 +108,45 @@ featuredFeatures:
         path: /payments-vas/v1/card-capture
         title: Card Capture
   - title: 3D-Secure
-    groupName: Online/Digital/Mobile
+    groupName: Featured
     description: "Commerce Hub supports 3-D Secure (3DS) transactions from a either a merchant's third party authentication service or through Commerce Hub's authentication service."
     featured: true
     relatedDocs:
      - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
        title: Secure Data Capture
+    relatedAPIs:
+      - type: post
+        path: /payments/v1/charges
+        title: Charges
+  - title: Tokenization
+    groupName: Featured
+    description: "Securely store customer card data as a token using Commerce Hub's tokenization service."
+    featured: true
+    relatedDocs:
+     - link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+       title: Tokenization
+    relatedAPIs:
+      - type: post
+        path: /payments-vas/v1/tokens
+        title: Tokens
+  - title: Gift Solutions
+    groupName: Featured
+    description: Allow your customers the ability to buy and use gift cards to pay for purchases.
+    featured: true
+    relatedDocs:
+     - link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
+       title: Gift Cards
+    relatedAPIs:
+      - type: post
+        path: /payments-vas/v1/accounts/gift-cards
+        title: Gift Cards
+  - title: Payment Facilitator
+    groupName: Featured
+    description: "Allows Payment Facilitator to integrate with Commerce Hub."
+    featured: true
+    relatedDocs:
+     - link: docs/Resources/Guides/Partners/PFAC/Payment-facilitator.md
+       title: Partner Integrations
     relatedAPIs:
       - type: post
         path: /payments/v1/charges
@@ -162,39 +195,7 @@ featuredFeatures:
 #      - type: post
 #        path: /payments/v1/charges
 #        title: Charges
-  - title: Tokenization
-    groupName: Services
-    description: "Securely store customer card data as a token using Commerce Hub's tokenization service."
-    featured: true
-    relatedDocs:
-     - link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
-       title: Tokenization
-    relatedAPIs:
-      - type: post
-        path: /payments-vas/v1/tokens
-        title: Tokens
-  - title: Gift Solutions
-    groupName: Services
-    description: Allow your customers the ability to buy and use gift cards to pay for purchases.
-    featured: true
-    relatedDocs:
-     - link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
-       title: Gift Cards
-    relatedAPIs:
-      - type: post
-        path: /payments-vas/v1/accounts/gift-cards
-        title: Gift Cards
-  - title: Payment Facilitator
-    groupName: Services
-    description: "Allows Payment Facilitator to integrate with Commerce Hub."
-    featured: true
-    relatedDocs:
-     - link: docs/Resources/Guides/Partners/PFAC/Payment-facilitator.md
-       title: Partner Integrations
-    relatedAPIs:
-      - type: post
-        path: /payments/v1/charges
-        title: Charges
+
 #featuredAPIs:
 #  - name: Charges
 #    description: Used to submit a charge transaction.
