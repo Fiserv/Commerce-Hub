@@ -74,17 +74,6 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
-  - title: Device Management
-    groupName: In-Person
-    description: By leveraging EMV(Europay Mastercard Visa) CAPK(Certification Authority Public Key) data is a crucial component of the EMV standard for secure payment transactions.
-    featured: true
-    relatedDocs:
-     - link: docs/In-Person/Device_Management/Device-Management.md
-       title: Device Management
-    relatedAPIs:
-      - type: post
-        path: /tms/v1/emv-capk-data
-        title: Charges
   - title: Encrypted Payments
     groupName: In-Person
     description: By leveraging the third-party EMV-enabled payment solutions, your customer payment transactions are encrypted via a multi-layered security approach.
@@ -110,7 +99,7 @@ featuredFeatures:
   - title: Secure Data Capture
     groupName: Online/Digital/Mobile
     description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
        title: Secure Data Capture
@@ -121,7 +110,7 @@ featuredFeatures:
   - title: 3D-Secure
     groupName: Online/Digital/Mobile
     description: "Commerce Hub supports 3-D Secure (3DS) transactions from a either a merchant's third party authentication service or through Commerce Hub's authentication service."
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
        title: Secure Data Capture
@@ -176,7 +165,7 @@ featuredFeatures:
   - title: Tokenization
     groupName: Services
     description: "Securely store customer card data as a token using Commerce Hub's tokenization service."
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
        title: Tokenization
@@ -187,7 +176,7 @@ featuredFeatures:
   - title: Gift Solutions
     groupName: Services
     description: Allow your customers the ability to buy and use gift cards to pay for purchases.
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
        title: Gift Cards
@@ -198,7 +187,7 @@ featuredFeatures:
   - title: Payment Facilitator
     groupName: Services
     description: "Allows Payment Facilitator to integrate with Commerce Hub."
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Resources/Guides/Partners/PFAC/Payment-facilitator.md
        title: Partner Integrations
