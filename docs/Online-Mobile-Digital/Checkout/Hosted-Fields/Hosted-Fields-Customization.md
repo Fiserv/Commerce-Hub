@@ -253,9 +253,6 @@ Supported [card brands](?path=docs/Resources/Master-Data/Card-Type.md) are defin
 
 When the SDK has identified the card brand, or can no longer identify the card brand because of user input changes, the user-provided [event hook](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md#event-hooks) `onCardBrandChange` is called with this information.
 
-<!-- theme: info -->
-> `supportedCardBrands` is only for browser-side form validation and not all identifiable brands are supported by Commerce Hub _(CH)_ _(for example mir is not supported by Commerce Hub for processing but is supported by the SDK)_.
-
 | Card Brand | CH Value | SDK Value |
 | ----- | ----- | ----- |
 | Visa | VISA | visa |
@@ -285,7 +282,7 @@ Custom card brands accepts a list of objects, each object entry support the foll
 | `patterns` | &#10004; | List containing elements that are either a number _(indicating a bin prefix)_ or a list containing two numbers _(indicating a bin range)_ used to identify the card numbers. Can specify illegal card patterns for a custom brand |
 | `gaps` | | List of numbers indicating the indices of user input for the card number where a space should be inserted if card formatting is enabled. _**Example:** [4, 8, 12]_ |
 | `lengths` | &#10004; | List of numbers indicating card lengths that are valid. _**Example:** [14, 16]_ |
-| `securityCodeLength` | | Number field indicating number of digits for `securityCode`, defaults to 0. Can specify more than one valid security code length |
+| `securityCodeLength` | | List of numbers indicating number of digits for `securityCode`, defaults to 0. _**Example:** [3, 4]_ |
 
 ---
 
