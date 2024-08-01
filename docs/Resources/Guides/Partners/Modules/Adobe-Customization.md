@@ -98,6 +98,6 @@ CSS values passed into the corresponding Form CSS fields will style inputs embed
 ## See Also
 
 - [Adobe Commerce Installation Guide](?path=docs/Resources/Guides/Partners/Modules/Adobe-Installation.md)
-- [Checkout Hosted Forms Customization](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
+- [Checkout Hosted Fields Customization](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Customization.md)
 
 ---
