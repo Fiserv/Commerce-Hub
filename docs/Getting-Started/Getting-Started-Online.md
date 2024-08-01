@@ -1,5 +1,5 @@
 ---
-tags: [Getting Started, Online, Mobile, Digital, Card Not Present, Secure Data Capture]
+tags: [Getting Started, Online, Mobile, Digital, Card Not Present, Checkout]
 ---
 
 # Online, Digital and Mobile Payments
@@ -24,9 +24,9 @@ link: ?path=docs/Resources/API-Documents/Use-Our-APIs.md
 -->
 
 <!-- type: card
-title: Secure Data Capture
+title: Checkout
 description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+link: ?path=docs/Online-Mobile-Digital/Checkout/Checkout.md
 -->
 
 <!-- type: card

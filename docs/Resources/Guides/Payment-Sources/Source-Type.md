@@ -8,14 +8,14 @@ The variable `sourceType` is used to determine the payment instrument of the tra
 
 ## Payment Cards
 
-A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_ or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
+A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_ or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
 
 <!--
 type: tab
 titles: PaymentCard, PaymentEMV, PaymentTrack
 -->
 
-PaymentCard is used when submitting manual entry online or in-person transactions to Commerce Hub using a [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
+PaymentCard is used when submitting manual entry online or in-person transactions to Commerce Hub using a [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
 
 #### Multi-Use Public Key
 
@@ -234,7 +234,7 @@ A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.m
 type: tab
 -->
 
-[PaymentSession](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) is a nonce token obtained from a security credentials request. *PaymentSession* is used in [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) integrations to submit a transaction to our application.
+[PaymentSession](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) is a nonce token obtained from a security credentials request. *PaymentSession* is used in [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) integrations to submit a transaction to our application.
 
 ```json
 {

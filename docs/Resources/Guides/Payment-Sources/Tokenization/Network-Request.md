@@ -123,7 +123,7 @@ Example of a charges (201: Created) response
 #### Request Variables
 
 <!-- theme: info -->
-> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
+> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
 
 <!--
 type: tab
@@ -181,6 +181,6 @@ The below table identifies the parameters in the `paymentToken` object.
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
-- [Multi Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
+- [Multi Use Public Key](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 
 ---

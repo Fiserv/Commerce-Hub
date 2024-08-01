@@ -66,17 +66,15 @@
     sections:
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Secure Data Capture
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+    - title: Checkout
+      link: docs/Online-Mobile-Digital/Checkout/Checkout.md
       sections:
-      - title: iFrame
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
-      - title: JavaScript
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
+      - title: Hosted Fields
+        link: docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md
       - title: API Only
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+        link: docs/Online-Mobile-Digital/Checkout/API/API-Only.md
       - title: API Direct
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Direct.md
+        link: docs/Online-Mobile-Digital/Checkout/API/API-Direct.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Wallets and Alt Payments
@@ -104,11 +102,11 @@
     - title: Global Acquiring
       link: docs/Resources/Guides/Global-Acquiring.md
     - title: Multi-Use Public Key
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+      link: docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Pay By Bank
       link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
-    - title: Secure Data Capture
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+    - title: Checkout
+      link: docs/Online-Mobile-Digital/Checkout/Checkout.md
     - title: Tokenization
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:
@@ -164,7 +162,7 @@
       - title: Balance Inquiry
         link: docs/Resources/API-Documents/Payments_VAS/Balance-Inquiry.md
       - title: Card Capture
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md
+        link: docs/Online-Mobile-Digital/Checkout/API/Card-Capture.md
       - title: Gift Cards
         link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
       - title: Information Lookup
@@ -213,7 +211,7 @@
       - title: Credentials
         link: docs/Resources/API-Documents/Security/Credentials.md
       - title: Key Management
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md   
+        link: docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md   
 - sections:
   - title: Release Notes
     sections:

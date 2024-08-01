@@ -7,7 +7,7 @@ tags: [Security, Credentials, Access Token, API Reference]
 A security credentials request is used to obtain the credentials needed in an authentication request or submitting financial transactions.
 
 - Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
-- Returns a `sessionId` used with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) requests.
+- Returns a `sessionId` used with [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) requests.
 
 <!-- theme: danger -->
 > The `sessionId` returned in the response is considered private data that should be stored on the merchant’s backend server and never sent to the customer's browser.
@@ -27,7 +27,7 @@ The below table identifies the parameters in the request.
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of [clickjacking](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking) when integrating with the Secure Data Capture v1 iFrame solution. |
+| `domains` | *array* | N/A | A whitelist of domains that are applicable for this credentials request. This is used to prevent the risk of [clickjacking](?path=docs/Resources/FAQs-Glossary/Glossary.md#clickjacking) when integrating with the Checkout v1 iFrame solution. |
 
 <!---
 | `publicKeyRequired` | *boolean* | N/A | Used to request a public key. If the signedCert is expired or invalid then merchant would send a request, default is true (false currently not supported) |
@@ -162,7 +162,7 @@ Example of a credentials (201: Created) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/credentials)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

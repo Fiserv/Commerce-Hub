@@ -4,7 +4,7 @@ tags: [Commerce Hub, Card Not Present, Card Present, Message Digest, Authenticat
 
 # Generate Message Digest
 
-To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the header when integrating with Commerce Hub's [API Only card capture service](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) or Hosted Payment Pages.
+To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the header when integrating with Commerce Hub's [API Only card capture service](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) or Hosted Payment Pages.
 
 ## Details
 

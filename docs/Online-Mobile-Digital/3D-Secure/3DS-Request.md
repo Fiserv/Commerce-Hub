@@ -199,7 +199,7 @@ Example of a charges (201: Created) response
 
 ## Request with Reference Identifier
 
-If the 3DS [authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) was originally performed by using Commerce Hub's [Secure Data Capture](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) or [API](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-API-Only.md), the reference transaction identifier can be used to submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request.
+If the 3DS [authentication request](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Authentication.md) was originally performed by using Commerce Hub's [Checkout](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md) or [API](?path=docs/Online-Mobile-Digital/3D-Secure/3DS-API-Only.md), the reference transaction identifier can be used to submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request.
 
 ---
 
