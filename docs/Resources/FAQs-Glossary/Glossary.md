@@ -422,7 +422,7 @@ A gateway is a program or piece of hardware that passes data between networks.
 
 ### Gateway Capture
 
-Gateway capture also known as gateway settlement, is the process where Commerce Hub closes and settles batches on behalf of the merchant. Typically, credit transactions are setup for terminal capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
+Gateway capture also known as gateway settlement, is the process where Commerce Hub closes and settles batches on behalf of the merchant. Typically, credit transactions are setup for gateway capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
 
 ---
 
