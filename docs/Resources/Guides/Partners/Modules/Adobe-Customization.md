@@ -4,13 +4,13 @@ tags: [Online, Mobile, Digital, Card Not Present, Plugin, Extension, Adobe, Mage
 
 # Adobe Commerce Customization Guide
 
-Commerce Hub manages the capture and input of sensitive payment data at checkout and allows the customization of the consumer's experience with a merchant's brand and provides customizable fields in the card capture forms.
+Commerce Hub manages the capture and input of sensitive payment data at checkout and allows the customization of the consumer's experience with a merchant's brand and provides customizable fields in the capture forms.
 
 In the Adobe Commerce extension, there are three points of interaction for payments;
 
-- **Customer Checkout Payment Form:** used during consumer checkout
+- **Customer Checkout Payment Form:** used during customer checkout
 - **Admin Order Payment Form:** accessed from the merchant's admin interface
-- **Tokenization Form:** accessed within the consumer’s account profile
+- **Tokenization Form:** accessed within the customer's account profile
 
 Commerce Hub has provided three separate customization areas for each of these to provide management control.
 
