@@ -24,7 +24,7 @@ Our plugin supports Adobe Commerce version 2.4.0 or later for Adobe Commerce, Ad
 | **Settlement** | Gateway Capture | |
 | **Payment Methods** | Credit, PINless Debit, Gift Cards *(Prepaid open-loop)* | Gift cards coming soon |
 | **Encryption** | Tokenization, Payment Session | |
-| **Entry Methods** | Manual Entry *(Keyed)* | Data is captured through Secure Data Capture *PaymentSession* |
+| **Entry Methods** | Manual Entry *(Keyed)* | Data is captured through Checkout Hosted Fields using *PaymentSession* |
 | **Verification Methods** | 3-D Secure *(3DS)* | Coming soon |
 | **AVS Support** | ZIP code only, Full address | |
 | **Security Code Support** | CID, CVC2, CVV2 | |
