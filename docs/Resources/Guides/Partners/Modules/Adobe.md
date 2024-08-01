@@ -41,13 +41,13 @@ Our plugin supports Adobe Commerce version 2.4.0 or later for Adobe Commerce, Ad
 <!-- type: card
 title: Installation Guide
 description: Quick reference guide for installing and setting up Commerce Hub's Adobe Commerce plugin.
-link: docs/Resources/Guides/Partners/Modules/Adobe-Installation.md
+link: ?path=docs/Resources/Guides/Partners/Modules/Adobe-Installation.md
 -->
 
 <!-- type: card
 title: Customization Guide
 description: Customize the plugin to seamlessly blend with your existing website or application.
-link: docs/Resources/Guides/Partners/Modules/Adobe-Customization.md
+link: ?path=docs/Resources/Guides/Partners/Modules/Adobe-Customization.md
 -->
 
 <!-- type: row-end -->

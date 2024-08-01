@@ -17,7 +17,7 @@ The following plugins are built by Commerce Hub for our third-party partners and
 <!-- type: card
 title: Adobe Commerce
 description: Adobe Commerce is a flexible and scalable commerce platform that lets you create personalized B2B and B2C experiences.
-link: docs/Resources/Guides/Partners/Modules/Adobe.md
+link: ?path=docs/Resources/Guides/Partners/Modules/Adobe.md
 -->
 
 <!-- type: row-end -->
