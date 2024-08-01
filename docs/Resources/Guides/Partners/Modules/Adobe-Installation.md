@@ -86,16 +86,15 @@ Configure the plugin and run a test transaction. This will ensure that all initi
 
 Navigate to the Fiserv Payments configuration within the Adobe Commerce Administrative panel, *Stores > Configuration > Sales > Payment Methods > Other Payment Methods > Fiserv Payments*.
 
-Expand Fiserv Payments to expose Commerce Hub Gateway Settings.
+Expand Fiserv Payments to display Commerce Hub Gateway Settings.
 
 <!-- theme: info -->
-> Each time a configuration setting is saved, the cache must be flushed for the changes to take effect.
+> Each time a configuration setting is saved, the cache must be flushed for the changes to take effect, *System > Cache Management* and clicking Flush Magento Cache
 
-1. Enabled the Commerce Hub Gateway and Save Config
-2. Flush the cache, *System > Cache Management* and clicking Flush Magento Cache
-3. From the Commerce Hub Gateway settings, configure the following [certification credentials obtained from Developer Studio](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md), Merchant ID, Terminal ID, API Key, and API Secret, and set the API Environment to CERT
-4. Save Config and flush the cache
-5. Run a test transaction
+1. Enabled the Commerce Hub Gateway and Save Config and flush the cache
+2. From the Commerce Hub Gateway settings, configure the following [certification credentials obtained from Developer Studio](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md), Merchant ID, Terminal ID, API Key, and API Secret, and set the API Environment to CERT
+3. Save Config and flush the cache
+4. Run a test transaction
 
 <!-- theme: info -->
 > Commerce Hub has different credentials and identifiers associated with the different environments. Please ensure you have the correct information for both CERT and PROD, respectively.  

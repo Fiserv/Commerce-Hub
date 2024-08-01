@@ -1,5 +1,5 @@
 ---
-tags: [Account Management, Enterprise Portal, Key Management, API Key, API Secret]
+tags: [Account Management, Developer Portal, Key Management, API Key, API Secret]
 ---
 
 # API Key Management

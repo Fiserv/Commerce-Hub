@@ -1,5 +1,5 @@
 ---
-tags: [Account Management, Enterprise Portal, Key Management, Certification]
+tags: [Account Management, Developer Portal, Key Management, Certification]
 ---
 
 # Account Management
