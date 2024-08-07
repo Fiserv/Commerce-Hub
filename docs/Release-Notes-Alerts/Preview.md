@@ -16,6 +16,22 @@ Commerce Hub provides a preview of our upcoming feature releases in Developer St
 
 ---
 
+## August 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** July 17th 2024
+- **Production:** July 23rd 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.08: refactored Authorization Optimization models | Feature |
+| [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
+| Support [Multi-Use Public Key RSA encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
+| Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
+
+---
+
 ## July 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -90,7 +106,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Support [Global Acquiring](?path=docs/Resources/Guides/Global-Acquiring.md) for international merchant processing | Feature |
-| Support [CVV only encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for Multi-Use Public Key *(MUPK)*| Update |
+| Support [CVV only encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for Multi-Use Public Key *(MUPK)*| Update |
 | Support [ChargeAfter](?path=docs/Resources/Guides/Payment-Sources/Private-Label/Charge-After.md) in-person transactions | Update |
 
 ---
