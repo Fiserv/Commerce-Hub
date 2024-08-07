@@ -2,20 +2,23 @@
 tags: [Online, Card Not Present, Checkout]
 ---
 
-# Checkout - API Only Integration Guide
+# Checkout - API Integration Guide
 
-Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md) solutions)_. The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's [card capture](?path=docs/Online-Mobile-Digital/Checkout/API/Card-Capture.md) service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` _PaymentSession_.
+Commerce Hub allows merchants to manage the design and payment entry form of their website or mobile app for accepting [online, digital and mobile transactions](?oath=docs/Getting-Started/Getting-Started-Online.md). The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's [card capture](?path=docs/Online-Mobile-Digital/Checkout/API/Card-Capture.md) service to store the data. The merchant website can then pass the `sessionId` received as part of the security credentials request in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` _PaymentSession_.
 
 - **credentials:** responsible for creating a payment session.
 - **card-capture:** responsible for capturing encrypted card details.
 - **charges:** responsible for decrypting captured card details and then charging based on a payment session.
 - **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
 
+<!-- theme: info -->
+> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in Checkout API integrations to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
+
 ---
 
 ## Step 1: Acquire Credentials
 
-A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, `keyId`, and `publicKey`. These will be used to create the [encryption data](#step-2-encryption) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `asymmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, `keyId`, and `publicKey`. These will be used to create the [encryption data](#step-2-encrypt-card-data) required in the offline payment request and `sessionId` required in the [charges or tokens request](#step-4-submit-a-request).
 
 ---
 
@@ -45,7 +48,7 @@ The encrypted data is securely submitted to Commerce Hub's in a [card capture](?
 
 ## Step 4: Submit a Request
 
-Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request after a successful response that identifies the card data is captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-authentication) request.
+Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request after a successful response that identifies the card data is captured in Commerce Hub. The request will use the payment `sourceType` of `PaymentSession` and the `sessionId` from the [credentials](#step-1-acquire-credentials) request.
 
 ### Charges Payload Example
 
