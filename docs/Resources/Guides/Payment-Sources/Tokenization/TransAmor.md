@@ -209,16 +209,16 @@ Example of a charge (200: Success) response.
     }
   },
   "source": {
+    "sourceType": "PaymentToken",
+    "tokenData": "8519371934460009",
+    "tokenSource": "TRANSARMOR",
     "card": {
       "bin": "40055500",
       "expirationMonth": "10",
       "expirationYear": "30",
       "last4": "0019",
       "scheme": "VISA"
-    },
-    "sourceType": "PaymentToken",
-    "tokenData": "8519371934460009",
-    "tokenSource": "TRANSARMOR"
+    }
   },
   "transactionDetails": {
     "captureFlag": true
