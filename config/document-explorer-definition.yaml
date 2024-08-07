@@ -226,6 +226,6 @@
   - title: Release Notes
     sections:
       - title: Preview Releases
-        link: docs/Release-Notes-Alerts/Preview.md
+        link: docs/Release-Notes-Alerts/Preview.md&branch=preview
       - title: Production Releases
         link: docs/Release-Notes-Alerts/Release-Notes.md
