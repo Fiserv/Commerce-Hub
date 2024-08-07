@@ -12,7 +12,7 @@ Commerce Hub allows merchants to manage the design and payment entry form of the
 - **tokens:** responsible for decrypting captured card details and then generating a token based on a payment session.
 
 <!-- theme: info -->
-> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in Checkout API integrations to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
+> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
 
 ---
 

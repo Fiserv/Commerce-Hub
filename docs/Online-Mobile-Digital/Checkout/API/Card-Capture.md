@@ -7,7 +7,7 @@ tags: [Online, Card Not Present, Checkout]
 Commerce Hub allows a payment instrument to be securely submitted to Commerce Hub using API-key validation, where it is persisted and linked to the `sessionId` generated from the [credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md).
 
 <!-- theme: info -->
-> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in [Checkout API integrations](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
+> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
 
 Checkout using card capture provides a merchant with an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment information without collecting, processing, or being able to view those payment details in their non-tokenized form, lowering the PCI compliance requirements.
 

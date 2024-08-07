@@ -9,10 +9,13 @@ tags: [Online, Card Not Present, Checkout, iFrame]
 
 ## Step 1: Acquire Credentials
 
-A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [form submission](#step-4-form-submission) and `sessionId` required in the [charges or tokens request](#step-3-submit-request).
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [form submission](#step-4-form-submission) and `sessionId` required in the [charges or tokens request](#step-5-submit-an-api-request).
 
 <!-- theme: danger -->
 > This request must be invoked as a server API call for each form submission and should not be attempted directly from the browser.
+
+<!-- theme: info -->
+> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
 
 ---
 
@@ -72,7 +75,7 @@ The below table identifies the parameters used in `createPaymentForm`.
 | `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
 | `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
 | `domain` | | Defaults to the hostname of the page the SDK is loaded into and is useful for referencing hostnames in the whitelist that use a wildcard |
-| `additionalFrameAncestor` | | Indicates that the page the SDK is loaded into is itself an iFrame and what the parent page hostnames are so that each can be checked against the CDN whitelist and included in the resulting iFrame Content-Security-Policy value _(this is for supporting deeply nested iframes scenario)_. **Note:** The entire path of the page hostnames, starting above the page that loaded the SDK, up to and including the root frame _(or page)_ that displays in the browser URL needs to be included in this field where applicable. The expected data type of the field is a list of strings where each entry is a hostname (ports/path/protocol are not part of the hostname) |
+| `additionalFrameAncestor` | | Indicates that the page the SDK is loaded into is itself an iFrame and what the parent page hostnames are so that each can be checked against the CDN whitelist and included in the resulting iFrame Content-Security-Policy value _(this is for supporting deeply nested iFrames scenario)_. **Note:** The entire path of the page hostnames, starting above the page that loaded the SDK, up to and including the root frame _(or page)_ that displays in the browser URL needs to be included in this field where applicable. The expected data type of the field is a list of strings where each entry is a hostname (ports/path/protocol are not part of the hostname) |
 | `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#supported-card-brands), defaults to no restrictions |
 | `customCardBrands` | | Used to extend the built in card brand identification configuration with [custom card brands](?path=(?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#custom-card-brands)) and works together with `supportedCardBrands` |
 | `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#field-configuration) for the payment form |

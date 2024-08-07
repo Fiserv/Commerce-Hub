@@ -6,9 +6,6 @@ tags: [Online, Card Not Present, Checkout]
 
 Commerce Hub allows merchants to manage the full design of their website,  mobile app . The merchant handles encrypting and storing the data from their form and makes a direct API call with the payment information to Commerce Hub. The merchant website will pass the [encrypted payment source](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` *PaymentCard*.
 
-<!-- theme: info -->
-> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the *PaymentSession* in Checkout API integrations to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
-
 ---
 
 ## Step 1: Encrypt Card Data
