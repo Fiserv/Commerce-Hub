@@ -8,7 +8,7 @@ Semi-integrated solutions run on a combination of Commerce Hub and third-party h
 
 ##### How it Works
 
-1. The merchant initiates a transaction from their hardware or software to the semi-integrated device.
+1. The merchant initiates a transaction from their hardware or sofware to the semi-integrated device.
 2. The customer inputs their payment instrument on the device.
 3. The merchant's device submits the payload to Commerce Hub.
 4. Commerce Hub attempts to process the transaction and sends the response to the merchant's device.

@@ -59,6 +59,8 @@
         link: docs/In-Person/Encrypted-Payments/Manual.md
       - title: Track 1/2 Data
         link: docs/In-Person/Encrypted-Payments/Track.md
+      - title: Multi-Use Public Key
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Tap to Pay on iPhone
       link: docs/In-Person/Integrations/Tap-to-Pay.md
   - title: Online/Digital/Mobile
@@ -69,17 +71,19 @@
     - title: Secure Data Capture
       link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
       sections:
+      - title: Card Capture API
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
+      - title: Direct API
+        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Direct.md
       - title: iFrame
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
       - title: JavaScript
         link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-      - title: API Only
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
-      - title: API Direct
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Direct.md
+      - title: Multi-Use Public Key
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
-    - title: Wallets and Alt Payments
+    - title: Digital Wallets
       link: docs/Getting-Started/Getting-Started-Wallets.md
       sections:
       - title: Apple Pay
@@ -104,7 +108,7 @@
     - title: Global Acquiring
       link: docs/Resources/Guides/Global-Acquiring.md
     - title: Multi-Use Public Key
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+      link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Pay By Bank
       link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
     - title: Secure Data Capture
@@ -150,6 +154,10 @@
     sections:
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: HMAC Authentication
+      link: docs/Resources/API-Documents/Authentication-Header.md
+    - title: Message Digest
+      link: docs/Resources/API-Documents/Message-Digest.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
       sections:
@@ -213,7 +221,7 @@
       - title: Credentials
         link: docs/Resources/API-Documents/Security/Credentials.md
       - title: Key Management
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md   
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:
   - title: Release Notes
     sections:

@@ -4,10 +4,10 @@ tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
 
 # Preview Release Notes
 
-Commerce Hub provides a preview of our upcoming feature releases in Developer Studio. When these features are released they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
+Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview) of our upcoming feature releases in Developer Studio. These features may not be functional until the certification release date. When these features are released to production they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
 
 <!-- theme: info -->
-> The upcoming features and updates can be viewed by changing the dropdown from **Active** to **Preview** in the left navigation when viewing an article or API.
+> The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **[Preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview)** in the left navigation when viewing an article or API.
 
 ##### Release Types
 
@@ -27,7 +27,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Version 1.24.08: refactored Authorization Optimization models | Feature |
 | [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
-| Support [Multi-Use Public Key RSA encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
+| Support [Multi-Use Public Key RSA encyrption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
 | Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
 
 ---

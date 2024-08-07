@@ -4,7 +4,7 @@ tags: [In-Person, Card Present, Semi-Integrated, Partner, Point of Sale, Termina
 
 # Semi-Integrated Ingenico Devices
 
-Commerce Hub and Ingenico have partnered together to offer out of the box, EMV L3 certified, semi-integrated payment solutions to enterprise merchants. The merchant's hardware or software API connects to the Ingenico API on the device to process payments.
+Commerce Hub and Ingenico have partnered together to offer out of the box, EMV L3 certified, semi-integrated payment solutions to enterprise merchants. The merchant's hardware or sofware API connects to the Ingenico API on the device to process payments.
 
 ##### Key Benefits
 

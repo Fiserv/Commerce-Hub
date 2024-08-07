@@ -4,12 +4,12 @@ tags: [Web, Online, Apple Pay, Wallet]
 
 # Apple Pay on the Web: RESTful API Integration
 
-Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Apple Pay. The merchant will host the payment processing on their server and has full control over the look and feel. 
+Commerce Hub's RESTful API integration allows the merchant to create a custom UI integration with Apple Pay. The merchant will host the payment processing on their server and has full control over the look and feel.
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
 
-### How it Works
+##### How it Works
 
 1. The customer selects checkout from the merchant's website and the merchant’s payment form displays.
 2. The customer selects Apple Pay and the Apple Pay payment form displays.
@@ -113,7 +113,7 @@ Example of a charge payload request.
     "version": "EC_v1",
     "applicationData": "VEVTVA==",
     "applePayMerchantId": "merchant.com.organizationname.unitname.commonname"
-  }
+  },
   "transactionDetails": {
     "captureFlag": true,
     "createToken": false
@@ -121,9 +121,8 @@ Example of a charge payload request.
   "merchantDetails": {
     "merchantId": "100008000003683",
     "terminalId": "10000001"
-    }
+  }
 }
-
 ```
 
 <!--
