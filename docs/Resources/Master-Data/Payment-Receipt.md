@@ -19,7 +19,7 @@ titles: paymentReceipt, JSON Example
 
 The below table identifies the parameters in the `paymentReceipt` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `approvedAmount` | *object* | N/A | Contains the approved [amount](?path=docs/Resources/Master-Data/Amount-Components.md) and currency code |
 | `amountComponents` | *object* | N/A | Contains the additional amount fields such as [taxes](?path=docs/Resources/Master-Data/Tax-Types.md), [convenience fees](?path=docs/Resources/Guides/Convenience-Fees.md), cashback, tips, or [price adjustments](?path=docs/Resources/Master-Data/Price-Adjustments.md) were part of the request |

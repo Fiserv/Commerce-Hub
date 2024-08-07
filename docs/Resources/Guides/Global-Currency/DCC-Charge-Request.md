@@ -178,7 +178,7 @@ titles: transactionInteraction, rate
 
 The below table identifies the required parameters in the `transactionInteraction` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `dccApplied` | *string* | 26 | Indicates if the cardholder APPROVED_CONVERSION or DECLINED_CONVERSION for the DCC transaction |
 
@@ -188,7 +188,7 @@ type: tab
 
 The below table identifies the required parameters in the `rate` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `referenceId` | *string* | 64 | A unique identifier for a currencies transaction received from the rate request |
 

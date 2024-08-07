@@ -24,7 +24,7 @@ The `privateLabel` object is part of the `additionalDataCommon` object.
 
 The below table identifies the conditional parameters in the `privateLabel` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
 | `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the minimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |
@@ -35,7 +35,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionInteraction` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `origin` | *string* | 4 | The source of the transaction |
 | `posEntryMode` | *string* | 22 | An identifier used to indicate how the account number was entered on the transaction. |

@@ -64,7 +64,7 @@ getStarted: /docs/Getting-Started/Getting-Started-General.md
 #      link:
 featuredFeatures:
   - title: Digital Wallets
-    groupName: Online/Digital/Mobile
+    groupName: Featured
     description: Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
     featured: true
     relatedDocs:
@@ -74,19 +74,8 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
-  - title: Device Management
-    groupName: In-Person
-    description: By leveraging EMV(Europay Mastercard Visa) CAPK(Certification Authority Public Key) data is a crucial component of the EMV standard for secure payment transactions.
-    featured: true
-    relatedDocs:
-     - link: docs/In-Person/Device_Management/Device-Management.md
-       title: Device Management
-    relatedAPIs:
-      - type: post
-        path: /tms/v1/emv-capk-data
-        title: Charges
   - title: Encrypted Payments
-    groupName: In-Person
+    groupName: Featured
     description: By leveraging the third-party EMV-enabled payment solutions, your customer payment transactions are encrypted via a multi-layered security approach.
     featured: true
     relatedDocs:
@@ -96,8 +85,19 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
+  - title: Global Currency Solutions
+    groupName: Featured
+    description: "Commerce Hub's Global Currency Solutions allows a merchant to combine any of our currency solutions with Global Acquiring and local payment methods."
+    featured: true
+    relatedDocs:
+     - link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+       title: Global Currency Solutions
+    relatedAPIs:
+      - type: post
+        path: /payments-vas/v1/accounts/currencies/dcc
+        title: DCC
   - title: Tap to Pay on iPhone
-    groupName: In-Person
+    groupName: Featured
     description: "Leverage Commerce Hub's Tap to Pay on iPhone SDK to accept in-store payments on Apple's iPhone devices."
     featured: true
     relatedDocs:
@@ -108,9 +108,9 @@ featuredFeatures:
         path: /payments/v1/charges
         title: Charges
   - title: Secure Data Capture
-    groupName: Online/Digital/Mobile
+    groupName: Featured
     description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
        title: Secure Data Capture
@@ -119,64 +119,20 @@ featuredFeatures:
         path: /payments-vas/v1/card-capture
         title: Card Capture
   - title: 3D-Secure
-    groupName: Online/Digital/Mobile
+    groupName: Featured
     description: "Commerce Hub supports 3-D Secure (3DS) transactions from a either a merchant's third party authentication service or through Commerce Hub's authentication service."
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
        title: Secure Data Capture
     relatedAPIs:
       - type: post
-        path: /payments/v1/charges
-        title: Charges
-  - title: Digital Wallets
-    groupName: Online/Digital/Mobile
-    description: Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
-    featured: false
-    relatedDocs:
-     - link: docs/Getting-Started/Getting-Started-Wallets.md
-       title: Wallet Payments
-    relatedAPIs:
-      - type: post
-        path: /payments/v1/charges
-        title: Charges
-  - title: EMV Payments
-    groupName: In-Person
-    description: By leveraging the third-party EMV-enabled payment solutions, your customer payment transactions are encrypted via a multi-layered security approach.
-    featured: false
-    relatedDocs:
-     - link: docs/In-Person/Encrypted-Payments/EMV.md
-       title: PaymentEMV
-    relatedAPIs:
-      - type: post
-        path: /payments/v1/charges
-        title: Charges
-  - title: Debit Solutions
-    groupName: In-Person
-    description: By leveraging the third-party payment solutions, Commerce Hub supports encrypted PIN and PINless based Debit transactions.
-    featured: false
-    relatedDocs:
-     - link: docs/Resources/Guides/Debit/Debit.md
-       title: Debit Solutions
-    relatedAPIs:
-      - type: post
-        path: /payments/v1/charges
-        title: Charges
-  - title: Contactless Payments
-    groupName: In-Person
-    description: "By leveraging the third-party payment solutions and Commerce Hub SDKs, customer's can make contactless payments using their credit card or mobile device."
-    featured: false
-    relatedDocs:
-     - link: docs/In-Person/Encrypted-Payments/Contactless.md
-       title: Contactless Payments
-    relatedAPIs:
-      - type: post
-        path: /payments/v1/charges
-        title: Charges
+        path: /payments-vas/v1/3ds/authenticate
+        title: 3DS
   - title: Tokenization
-    groupName: Services
+    groupName: Featured
     description: "Securely store customer card data as a token using Commerce Hub's tokenization service."
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
        title: Tokenization
@@ -185,9 +141,9 @@ featuredFeatures:
         path: /payments-vas/v1/tokens
         title: Tokens
   - title: Gift Solutions
-    groupName: Services
+    groupName: Featured
     description: Allow your customers the ability to buy and use gift cards to pay for purchases.
-    featured: false
+    featured: true
     relatedDocs:
      - link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
        title: Gift Cards
@@ -196,16 +152,61 @@ featuredFeatures:
         path: /payments-vas/v1/accounts/gift-cards
         title: Gift Cards
   - title: Payment Facilitator
-    groupName: Services
+    groupName: Featured
     description: "Allows Payment Facilitator to integrate with Commerce Hub."
-    featured: false
+    featured: true
     relatedDocs:
-     - link: docs/Resources/Guides/Partners/PFAC/Payment-facilitator.md
+     - link: docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md
        title: Partner Integrations
     relatedAPIs:
       - type: post
         path: /payments/v1/charges
         title: Charges
+#  - title: Digital Wallets
+#    groupName: Online/Digital/Mobile
+#    description: Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
+#    featured: false
+#    relatedDocs:
+#     - link: docs/Getting-Started/Getting-Started-Wallets.md
+#       title: Wallet Payments
+#    relatedAPIs:
+#      - type: post
+#        path: /payments/v1/charges
+#        title: Charges
+#  - title: EMV Payments
+#    groupName: In-Person
+#    description: By leveraging the third-party EMV-enabled payment solutions, your customer payment transactions are encrypted via a multi-layered security approach.
+#    featured: false
+#    relatedDocs:
+#     - link: docs/In-Person/Encrypted-Payments/EMV.md
+#       title: PaymentEMV
+#    relatedAPIs:
+#      - type: post
+#        path: /payments/v1/charges
+#        title: Charges
+#  - title: Debit Solutions
+#    groupName: In-Person
+#    description: By leveraging the third-party payment solutions, Commerce Hub supports encrypted PIN and PINless based Debit transactions.
+#    featured: false
+#    relatedDocs:
+#     - link: docs/Resources/Guides/Debit/Debit.md
+#       title: Debit Solutions
+#    relatedAPIs:
+#      - type: post
+#        path: /payments/v1/charges
+#        title: Charges
+#  - title: Contactless Payments
+#    groupName: In-Person
+#    description: "By leveraging the third-party payment solutions and Commerce Hub SDKs, customer's can make contactless payments using their credit card or mobile device."
+#    featured: false
+#    relatedDocs:
+#     - link: docs/In-Person/Encrypted-Payments/Contactless.md
+#       title: Contactless Payments
+#    relatedAPIs:
+#      - type: post
+#        path: /payments/v1/charges
+#        title: Charges
+
 #featuredAPIs:
 #  - name: Charges
 #    description: Used to submit a charge transaction.

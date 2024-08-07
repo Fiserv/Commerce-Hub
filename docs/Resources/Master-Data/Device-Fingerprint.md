@@ -13,7 +13,7 @@ titles: deviceFingerprintData, JSON Example
 
 The below table identifies the parameters in the `deviceFingerprintData` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|----------|----------------|---------|
 |`provider` | *string* | N/A | Device provider e.g. InAuth. |
 |`dataStatic`| *object* | N/A | [Data static](#data-static) details.|
@@ -78,7 +78,7 @@ titles: dataCapture, JSON Example
 
 The below table identifies the parameters in the `dataCapture` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `rawData` | *string* | 256 | Raw data from the data capture |
 | `dataEventId` | *string* | 256 | Unique ID for the data capture |
@@ -113,7 +113,7 @@ titles: dataStatic, JSON Example
 
 The below table identifies the parameters in the `dataStatic` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `deviceId` | *string* | 48 | MAC of the device originating the transaction |
 | `javaScriptEnabled` | *boolean* | N/A | Identifies if JavaScript is enabled on the device |
@@ -160,7 +160,7 @@ titles: dataDynamic, JSON Example
 
 The below table identifies the parameters in the `dataDynamic` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `latitude` | *string* | 256 | Cardholder current latitude GPS position |
 | `longitude` | *string* | 256 | Cardholder current longitude GPS position |

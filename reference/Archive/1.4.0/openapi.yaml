@@ -2714,7 +2714,7 @@ components:
             * EXPIRATION_NOT_EQUAL - Expiration date not equal in track data
             * CARD_TYPE_INVALID - Card type invalid in track data
             * FIELD_SEPARATORS - Field separator(s) invalid in track data
-            * EXCEEDS_LENGTH -  A field within the track data exceeds maximum length
+            * EXCEEDS_LENGTH -  A field within the track data exceeds Max Length
             * CATEGORY_CODE - The transaction category code is "T".
             * CUSTOMER_PRESENCE - POS customer presence indicator is false.
             * CARD_PRESENCE - POS card presence indicator is false.

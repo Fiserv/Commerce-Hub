@@ -20,7 +20,7 @@ titles: splitTender, splitTenderMethod, JSON Example
 
 The below table identifies the parameters in the `splitTender` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|-----------|----------------|---------|
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
 | `splitTenderMethod` | *array* | N/A | Identifies the additional forms of payment used as part of this order |
@@ -31,7 +31,7 @@ type: tab
 
 The below table identifies the required parameters in the `splitTenderMethod` array.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|-----------|----------------|---------|
 | `type` | *string* | 1024 | **Valid Values:** *CREDIT_CARD*, *COUPON*, *GIFT_CARD*, *STORE_CREDIT*, *DEBIT_CARD, EBT_SNAP* |
 

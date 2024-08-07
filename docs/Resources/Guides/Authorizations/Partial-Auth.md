@@ -165,7 +165,7 @@ titles: transactionDetails
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | -------------| --------- |
 | `partialApproval` | *boolean* | N/A | Indicates if a partial approval is allowed.|
 
@@ -182,7 +182,7 @@ titles: transactionDetails
 
 The below table identifies the parameters in the `transactionDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | -------------| --------- |
 | `partiallyApprovedTransactionAmount` | *string* | 18,3 | The partially approved transaction amount from the original request. |
 

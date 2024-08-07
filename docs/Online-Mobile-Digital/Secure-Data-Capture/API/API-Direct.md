@@ -4,13 +4,13 @@ tags: [Online, Card Not Present, Secure Data Capture]
 
 # Secure Data Capture - API Direct Integration Guide
 
-Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting and storing the data from their form and makes a direct API call with the payment information to Commerce Hub. The merchant website will pass the [encrypted payment source](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` _PaymentSession_.
+Commerce Hub allows E-commerce merchants to manage the design and card entry form of their website or mobile app _(unlike Hosted Payment Page and [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The merchant handles encrypting and storing the data from their form and makes a direct API call with the payment information to Commerce Hub. The merchant website will pass the [encrypted payment source](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` _PaymentSession_.
 
 ---
 
 ## Step 1: Encrypt Card Data
 
-The card data is encrypted using either a [Multi-Use Public Key _(MUPK)_](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) or is encrypted by the [point of sale device](?pathdocs/In-Person/Integrations/Encrypted-PIN-Pad.md).
+The card data is encrypted using either a [Multi-Use Public Key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) or is encrypted by the [point of sale device](?pathdocs/In-Person/Integrations/Encrypted-PIN-Pad.md).
 
 <!-- theme: info -->
 > Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves validation purposes.
@@ -44,7 +44,7 @@ Example of a charge payload request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -163,11 +163,11 @@ The following security settings are recommended to limit the potential for fraud
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture)
+- [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [RESTful API Guide](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Multi-Use Public Key Encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 
 ---

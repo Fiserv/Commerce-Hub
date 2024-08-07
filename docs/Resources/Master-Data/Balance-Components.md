@@ -14,7 +14,7 @@ titles: balance, JSON Example
 
 The below table identifies the parameters in the `balance` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | -----|
 | `beginngingBalance` | *number* | 18,3 | Credit card number |
 | `endingBalance` | *number* | 18,3 | Account ending balance |
