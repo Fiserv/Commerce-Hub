@@ -21,7 +21,7 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 ## Step 2: Encrypt Card Data
 
-The card data is encrypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encryptionBlockFields` are used in the card capture request.
+The card data is encrypted using Base64 RSA Multi-Use Public Key. Once [encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) is performed, the `encryptionBlock` and `encryptionBlockFields` are used in the card capture request.
 
 <!-- theme: info -->
 > Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves validation purposes.
@@ -171,7 +171,7 @@ The following security settings are recommended to limit the potential for fraud
 - [RESTful API Guide](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Multi-Use Public Key Encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
 - [Message Digest](?path=docs/Resources/API-Documents/Message-Digest.md)
 - [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
 

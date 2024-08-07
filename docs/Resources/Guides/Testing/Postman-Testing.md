@@ -19,7 +19,7 @@ Commerce Hub has different [environments](?path=(?path=docs/Resources/API-Docume
 
 ## Import Collection
 
-After you have [downloaded the Postman app](https://www.postman.com/downloads/), you will need to [import the collection](?path=https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-and-exporting-overview/).
+After you have [downloaded the Postman app](https://www.postman.com/downloads/), you will need to [import the collection](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-and-exporting-overview/).
 
 <!-- theme: info -->
 > The app is available in a browser-based version or standalone desktop version.

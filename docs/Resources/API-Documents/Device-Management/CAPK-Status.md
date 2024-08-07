@@ -1,5 +1,5 @@
 ---
-tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference]
+tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference, Device, Terminal, Point of Sale]
 ---
 
 # EMV CAPK Data Status
@@ -20,7 +20,7 @@ titles: emvDetails, merchantDetails
 
 The below table identifies the required parameters in the `emvDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `transactionType`| *string* | 64 | Specifies the type of the CAPK transaction. |
 |`currentFileCreationDate`| *string* | 40 | This parameter is sent as part of the last record in the format MMDDYYYYhhmmss|
@@ -33,7 +33,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
@@ -51,7 +51,7 @@ titles: emvDetails
 
 The below table identifies the required parameters in the `emvDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `transactionType`| *string* | 64 | Specifies the type of the CAPK transaction. |
 |`currentFileCreationDate`| *string* | 40 | This parameter is sent as part of the last record in the format MMDDYYYYhhmmss|

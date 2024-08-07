@@ -25,7 +25,7 @@ titles: amount, JSON Example
 
 The below table identifies the parameters in the `amount` object.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |---------|----------|----------------|---------|
 | `total` | _number_ | 18,3 | Total amount of the transaction. [Subcomponent](#amount-components) values must add up to total amount. |
 | `currency` | _string_ | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -60,7 +60,7 @@ titles: amountComponents, JSON Example
 
 The below table identifies the parameters in the `amountComponents` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | --------- | --- | ------ | -------------- |
 | `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
 | `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |

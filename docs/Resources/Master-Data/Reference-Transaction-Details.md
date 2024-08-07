@@ -9,7 +9,7 @@ titles: referenceTransactionDetails, JSON Example
 
 The below table identifies the parameters in the `referenceTransactionDetails` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|-----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction used for reference in a secondary transaction. |
 | `referenceOrderId` | *string* | 128 | Commerce Hub generated `orderId` from the original transaction used for reference in a secondary transaction. |
@@ -25,12 +25,13 @@ JSON string format for `referenceTransactionDetails`:
 
 ```json
 {
-   "referenceTransactionDetails":{
-      "referenceTransactionId": "838916029301",
-      "referenceMerchantTransactionId": "1343678765",
-      "referenceMerchantOrderId": "953729024",
-      "referenceOrderId": "CHG014994a6b0729e4517858f74c6a41c8d61",
-      "referenceClientRequestId": "2994454"
+  "referenceTransactionDetails": {
+    "referenceTransactionId": "838916029301",
+    "referenceMerchantTransactionId": "1343678765",
+    "referenceMerchantOrderId": "953729024",
+    "referenceOrderId": "CHG014994a6b0729e4517858f74c6a41c8d61",
+    "referenceClientRequestId": "2994454"
+  }
 }
 ```
 
