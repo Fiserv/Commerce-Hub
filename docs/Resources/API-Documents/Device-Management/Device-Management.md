@@ -1,5 +1,5 @@
 ---
-tags: [Device Management, Batch Totals, Key Management, Download, CAPK, API Reference]
+tags: [Device Management, Batch Totals, Key Management, Download, CAPK, API Reference, Device, Terminal, Point of Sale]
 ---
 
 # Device Management
