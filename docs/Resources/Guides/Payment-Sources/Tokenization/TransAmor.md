@@ -209,16 +209,16 @@ Example of a charge (200: Success) response.
     }
   },
   "source": {
+    "sourceType": "PaymentToken",
+    "tokenData": "8519371934460009",
+    "tokenSource": "TRANSARMOR",
     "card": {
       "bin": "40055500",
       "expirationMonth": "10",
       "expirationYear": "30",
       "last4": "0019",
       "scheme": "VISA"
-    },
-    "sourceType": "PaymentToken",
-    "tokenData": "8519371934460009",
-    "tokenSource": "TRANSARMOR"
+    }
   },
   "transactionDetails": {
     "captureFlag": true
@@ -234,7 +234,7 @@ Example of a charge (200: Success) response.
 #### Request Variables
 
 <!-- theme: info -->
-> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
+> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
 
 <!--
 type: tab
