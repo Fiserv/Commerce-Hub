@@ -1,5 +1,5 @@
 ---
-tags: [Online, Card Not Present, Checkout, iFrame]
+tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 ---
 
 # Checkout - Hosted Fields Solution

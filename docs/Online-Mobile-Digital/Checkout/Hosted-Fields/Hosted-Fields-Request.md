@@ -1,11 +1,11 @@
 ---
-tags: [Online, Card Not Present, Checkout, iFrame]
+tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 ---
 
 # Checkout - Hosted Fields Integration Guide
 
-<!-- theme: info -->
-> Commerce Hub's iFrame solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
+<!-- theme: danger -->
+> Commerce Hub's Hosted Fields Checkout solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ## Step 1: Acquire Credentials
 
@@ -19,12 +19,12 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 ---
 
-## Step 2: Configure iFrame
+## Step 2: Configure Checkout SDK
 
-The iFrame JS script tag is required in the website by downloading or including the following code.
+The Checkout script tag is required in the website by downloading or including the following code.
 
 ```php
-<script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/saq-a.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/checkout.js"></script>
 ```
 
 It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
@@ -46,9 +46,10 @@ titles: JavaScript, Variables
 Example of JavaScript `createPaymentForm`.
 
 ```javascript
-const formPromise = window.fiserv.commercehub.createPaymentForm({
+const formPromise = window.fiserv.components.paymentFields({
     data: {
         environment: "CERT",
+        paymentMethod: "CREDIT_CARD",
         domain: "*.merchant.com",
         additionalFrameAncestor: "ancestorpage.merchant.com",
         supportedCardBrands: [],
@@ -74,6 +75,7 @@ The below table identifies the parameters used in `createPaymentForm`.
 | ----- | -------- | ----------- |
 | `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
 | `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
+| `paymentMethod` | | Identifies if the payment method is a *CREDIT_CARD* (credit and PINless debit) or *GIFT* card |
 | `domain` | | Defaults to the hostname of the page the SDK is loaded into and is useful for referencing hostnames in the whitelist that use a wildcard |
 | `additionalFrameAncestor` | | Indicates that the page the SDK is loaded into is itself an iFrame and what the parent page hostnames are so that each can be checked against the CDN whitelist and included in the resulting iFrame Content-Security-Policy value _(this is for supporting deeply nested iFrames scenario)_. **Note:** The entire path of the page hostnames, starting above the page that loaded the SDK, up to and including the root frame _(or page)_ that displays in the browser URL needs to be included in this field where applicable. The expected data type of the field is a list of strings where each entry is a hostname (ports/path/protocol are not part of the hostname) |
 | `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#supported-card-brands), defaults to no restrictions |
@@ -91,7 +93,7 @@ The below table identifies the parameters used in `createPaymentForm`.
 
 ## Step 4: Form Submission
 
-When ready to submit the form data for card capture, such as when the form data is all valid and the user clicks a submit button, you can programmatically trigger submission for the iFrame payment form fields via the `submit` [method](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md).
+When ready to submit the form data for card capture, such as when the form data is all valid and the user clicks a submit button, you can programmatically trigger submission for the Checkout payment form fields via the `submit` [method](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md).
 
 ```javascript
 const submissionPromise = paymentForm.submit({
@@ -112,7 +114,7 @@ const submissionPromise = paymentForm.submit({
 Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [credentials](#step-1-acquire-credentials) request.
 
 <!-- theme: info -->
-> If a successful response is not received, best practice is to still submit the transaction. If an [error occurs](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md#error-handling), the iFrame will need to be re-displayed so the customer can re-submit their payment information.
+> If a successful response is not received, best practice is to still submit the transaction. If an [error occurs](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md#error-handling), the Checkout will need to be re-displayed so the customer can re-submit their payment information.
 
 ### Charges Example
 
@@ -224,11 +226,11 @@ Example of a charge (201: Created) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
-- [iFrame Event Handling](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
-- [iFrame Methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
 - [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
+- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
+- [Customize Hosted Fields Payment Form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
+- [Hosted Fields Event Handling](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
+- [Hosted Fields Methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
 - [Version Release Notes](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md)
 
 ---

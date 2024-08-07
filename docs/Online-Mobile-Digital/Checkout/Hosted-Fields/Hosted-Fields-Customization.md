@@ -1,10 +1,10 @@
 ---
-tags: [Online, Card Not Present, Checkout, iFrame]
+tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 ---
 
 # Checkout - Hosted Fields Customization
 
-Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [CSS](#css), [font](#font), [supported card brands](#card-brands), and [field configuration](#field-configuration).
+Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [CSS](#css), [font](#font), [supported card brands](#supported-card-brands), and [field configuration](#field-configuration).
 
 #### Major Features
 
@@ -90,18 +90,7 @@ If the `font` configuration object is provided, all sub-fields must be provided 
 
 <!--
 type: tab
-titles: Variables, JSON Example
--->
-
-| Field | Description |
-| ----- | ----------- |
-| `data` | The base64 encoded SHA256 of this value must match the `integrity` field. |
-| `family` | The `font-family` property value for use in configured [CSS](#css) styles  |
-| `format` | Font MIME type. _**Valid Values:** font/otf, font/ttf, font/woff, font/woff2_ |
-| `integrity` | Compared against a dynamically computed value of the data provided in the `data` field; if there isn't a match the custom font is ignored |
-
-<!--
-type: tab
+titles: JSON Example, Variables
 -->
 
 Example of payment form font customization in `createPaymentForm`.
@@ -116,6 +105,17 @@ Example of payment form font customization in `createPaymentForm`.
   }
 }
 ```
+
+<!--
+type: tab
+-->
+
+| Field | Description |
+| ----- | ----------- |
+| `data` | The base64 encoded SHA256 of this value must match the `integrity` field. |
+| `family` | The `font-family` property value for use in configured [CSS](#css) styles  |
+| `format` | Font MIME type. _**Valid Values:** font/otf, font/ttf, font/woff, font/woff2_ |
+| `integrity` | Compared against a dynamically computed value of the data provided in the `data` field; if there isn't a match the custom font is ignored |
 
 <!-- type: tab-end -->
 
@@ -147,33 +147,7 @@ Only a `parentElementId` is required, this is the id for the DOM element on the 
 
 <!--
 type: tab
-titles: Variables, JSON Example
--->
-
-| Field | Description |
-| ----- | ----------- |
-| `placeholder` | Placeholder text for the field |
-| `dynamicPlaceholderCharacter` | Placeholder character for the field. Has no effect if `placeholder` isn't specified; must be one character in length  |
-| `enableFormatting` | Controls if the card number should be auto-formatted with additional spaces while user types |
-| `masking.character` | Controls card number masking and be one character in length |
-| `masking.mode` | Controls [masking mode](#masking-mode) |
-| `masking.shrunkLength` | Controls how many characters of the masking character will represent the masked portion of the input after shrinking is applied, must be a number |
-| `optionLabels` | The text to display for each option in `expirationMonth` |
-
-#### Masking Mode
-
-| Valid Values | Description | cardNumber | securityCode |
-| ------------ | ----------- | :--------: | :----------: |
-| _NO_MASKING_ | Masking is fully disabled | &#10004; | &#10004; |
-| _ALWAYS_MASK_EXCEPT_LAST_4_ | Each block of 4 digits entered will be masked in real time with final 4 left unmasked | &#10004; | |
-| _ALWAYS_MASK_ALL_ | Digits entered will be masked in real time with most recently entered digit left unmasked until input loses focus | &#10004; | &#10004; |
-| _BLUR_MASK_EXCEPT_LAST_4_ | Masking is applied when input loses focus; only last 4 digits left unmasked | &#10004; | |
-| _BLUR_MASK_ALL_ | Masking is applied when input loses focus; all digits masked | &#10004; | &#10004; |
-| _BLUR_MASK_EXCEPT_LAST_4_SHRINK_ | Masking is applied when input loses focus; only last 4 digits left unmasked; masked portion is shrunk down to `shrunkLength` with configured masking `character` | &#10004; | |
-| _BLUR_MASK_ALL_SHRINK_ | Masking is applied when input loses focus; all digits masked; masked portion is shrunk down to `shrunkLength` with configured masking `character` | &#10004; | |
-
-<!--
-type: tab
+titles: JSON Example, Variables
 -->
 
 Example of payment form fields customization  in `createPaymentForm`.
@@ -214,7 +188,9 @@ Example of payment form fields customization  in `createPaymentForm`.
       },
       "expiration": {
         "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
-        "placeholder": "MM / YY"
+        "placeholder": "MM / YY",
+        "format": "FLEXIBLE",
+        "delimiter": " / "
       },
       "expirationMonth": {
         "parentElementId": "element-id-to-inject-iframe-inside-of-goes-here",
@@ -242,6 +218,37 @@ Example of payment form fields customization  in `createPaymentForm`.
   }
 }
 ```
+
+<!--
+type: tab
+-->
+
+| Field | Description |
+| ----- | ----------- |
+| `placeholder` | Placeholder text for the field |
+| `dynamicPlaceholderCharacter` | Placeholder character for the field. Has no effect if `placeholder` isn't specified; must be one character in length  |
+| `enableFormatting` | Controls if the card number should be auto-formatted with additional spaces while user types |
+| `masking.character` | Controls card number masking and be one character in length |
+| `masking.mode` | Controls [masking mode](#masking-mode) |
+| `masking.shrunkLength` | Controls how many characters of the masking character will represent the masked portion of the input after shrinking is applied, must be a number |
+| `optionLabels` | The text to display for each option in `expirationMonth` |
+| `format` | The format of the `expiration` month and year as MM_YY, MM_YYY or FLEXIBLE|
+| `delimiter` | Delimiter for the `expiration` month and year. Up to one non-space character and any number of spaces before and after the non-space character |
+
+#### Masking Mode
+
+| Valid Values | Description | cardNumber | securityCode |
+| ------------ | ----------- | :--------: | :----------: |
+| _NO_MASKING_ | Masking is fully disabled | &#10004; | &#10004; |
+| _ALWAYS_MASK_EXCEPT_LAST_4_ | Each block of 4 digits entered will be masked in real time with final 4 left unmasked | &#10004; | |
+| _ALWAYS_MASK_ALL_ | Digits entered will be masked in real time with most recently entered digit left unmasked until input loses focus | &#10004; | &#10004; |
+| _ALWAYS_MASK_EXCEPT_TRAILING_ | Real-time masking of input with trailing digits left unmasked. Number of trailing unmasked digits is determined by the identified brand configuration and defaults to 4 digits. | &#10004; | |
+| _BLUR_MASK_EXCEPT_LAST_4_ | Masking is applied when input loses focus; only last 4 digits left unmasked | &#10004; | |
+| _BLUR_MASK_ALL_ | Masking is applied when input loses focus; all digits masked | &#10004; | &#10004; |
+| _BLUR_MASK_EXCEPT_LAST_4_SHRINK_ | Masking is applied when input loses focus; only last 4 digits left unmasked; masked portion is shrunk down to `shrunkLength` with configured masking `character` | &#10004; | |
+| _BLUR_MASK_ALL_SHRINK_ | Masking is applied when input loses focus; all digits masked; masked portion is shrunk down to `shrunkLength` with configured masking `character` | &#10004; | |
+| _BLUR_MASK_EXCEPT_TRAILING_ | Masks the input data when focus leaves that field _(AKA "blur" event)_ with trailing digits left unmasked. Number of trailing unmasked digits is determined by the identified brand configuration and defaults to 4 digits. | &#10004; | |
+| _BLUR_MASK_EXCEPT_TRAILING_SHRINK_ | Masks the input data when focus leaves that field (AKA "blur" event) with trailing digits left unmasked and the masked portion shrunk down to a configured number of characters. Number of trailing unmasked digits is determined by the identified brand configuration and defaults to 4 digits. | &#10004; | |
 
 <!-- type: tab-end -->
 
@@ -282,7 +289,9 @@ Custom card brands accepts a list of objects, each object entry support the foll
 | `patterns` | &#10004; | List containing elements that are either a number _(indicating a bin prefix)_ or a list containing two numbers _(indicating a bin range)_ used to identify the card numbers. Can specify illegal card patterns for a custom brand |
 | `gaps` | | List of numbers indicating the indices of user input for the card number where a space should be inserted if card formatting is enabled. _**Example:** [4, 8, 12]_ |
 | `lengths` | &#10004; | List of numbers indicating card lengths that are valid. _**Example:** [14, 16]_ |
-| `securityCodeLength` | | List of numbers indicating number of digits for `securityCode`, defaults to 0. _**Example:** [3, 4]_ |
+| `securityCodeLengths` | | List of numbers indicating `securityCode` lengths, defaults to 0. _**Example:** [3, 4]_, defaults to [0] |
+| `illegalCardPatterns` | | List of strings of card patterns that are illegal for the brand, they should be full card numbers and can use the "X" _(capital "X")_ character as a placeholder indicating any digit |
+| `trailingUnmaskedDigits` | | Defines the _TRAILING_ masking modes for card numbers, defaults to 4 |
 
 ---
 
