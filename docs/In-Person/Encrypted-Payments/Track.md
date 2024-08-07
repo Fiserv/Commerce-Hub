@@ -344,7 +344,7 @@ Example of a charge (201: Created) response.
 
 ---
 
-### Paramters
+### Parameters
 
 #### Request Variables
 
@@ -360,7 +360,7 @@ The below table identifies the parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ------------------ |---|
-| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentTrack_ for magentic stripe transactions |
+| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentTrack_ for magnetic stripe transactions |
 | `encryptionData` | _object_ | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md)|
 | `pinBlock` | _object_ | N/A | &#10004; | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in [debit](?path=docs/Resources/Guides/Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required |
 

@@ -178,7 +178,7 @@ Ingenico uses FPE _(Format Preserving Encryption)_ based of TDES/DUKPT encryptio
 
 ### RSA
 
-The RSA data block contains the terminal ID or merchant ID _(right justified, lead zero padding to 8)_; followed by data from Encryption Target including the PAN, and optionally the expiration date, security code, AVS billing postal code, or the AVS billing address, Track 1 and Track 2. Each optional data element after the PAN is seperated by a field delimiter "|".
+The RSA data block contains the terminal ID or merchant ID _(right justified, lead zero padding to 8)_; followed by data from Encryption Target including the PAN, and optionally the expiration date, security code, AVS billing postal code, or the AVS billing address, Track 1 and Track 2. Each optional data element after the PAN is separated by a field delimiter "|".
 
 <!-- theme: example -->
 > 123456784502000011112222|1503|967|33073|5028 Heron Pl

@@ -85,6 +85,17 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
+  - title: Global Currency Solutions
+    groupName: Featured
+    description: "Commerce Hub's Global Currency Solutions allows a merchant to combine any of our currency solutions with Global Acquiring and local payment methods."
+    featured: true
+    relatedDocs:
+     - link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
+       title: Global Currency Solutions
+    relatedAPIs:
+      - type: post
+        path: /payments-vas/v1/accounts/currencies/dcc
+        title: DCC
   - title: Tap to Pay on iPhone
     groupName: Featured
     description: "Leverage Commerce Hub's Tap to Pay on iPhone SDK to accept in-store payments on Apple's iPhone devices."
@@ -116,8 +127,8 @@ featuredFeatures:
        title: Secure Data Capture
     relatedAPIs:
       - type: post
-        path: /payments/v1/charges
-        title: Charges
+        path: /payments-vas/v1/3ds/authenticate
+        title: 3DS
   - title: Tokenization
     groupName: Featured
     description: "Securely store customer card data as a token using Commerce Hub's tokenization service."
@@ -145,7 +156,7 @@ featuredFeatures:
     description: "Allows Payment Facilitator to integrate with Commerce Hub."
     featured: true
     relatedDocs:
-     - link: docs/Resources/Guides/Partners/PFAC/Payment-facilitator.md
+     - link: docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md
        title: Partner Integrations
     relatedAPIs:
       - type: post
