@@ -24,7 +24,7 @@ titles: transactionDetails, merchantDetails
 
 The below table identifies the recommended parameters in the `transactionDetails` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 |`reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel (void). |
 
@@ -34,7 +34,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required | Description |
+| Variable | Data Type| Max Length | Required | Description |
 |---------|----------|----------------|---------|-----|
 |`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |

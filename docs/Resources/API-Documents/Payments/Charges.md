@@ -32,7 +32,7 @@ titles: amount, source, transactionDetails, merchantDetails
 
 The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `total` | *number* | 12 | Total amount of the transaction. [Sub-component](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md).|
@@ -43,7 +43,7 @@ type: tab
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 |`sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 
@@ -53,7 +53,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 |`captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Sale and *false* for Pre-Authorization)|
 
@@ -63,7 +63,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 |`merchantId` | *string* | 40 | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |

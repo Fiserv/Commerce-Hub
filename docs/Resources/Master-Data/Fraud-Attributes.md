@@ -13,7 +13,7 @@ titles: fraudAttributes, JSON Example
 
 The below table identifies the parameters in the `fraudAttributes` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `riskScore` | *string* | 3 | Merchant’s defined fraud risk score for this transaction 0-100; 100 being highest risk |
 | `suspicious` | *boolean* | N/A | Has the merchant detected suspicious activity on card, account or device used for this transaction in prior 60 days |

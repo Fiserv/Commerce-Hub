@@ -23,7 +23,7 @@ titles: transactionInteraction
 
 The below table identifies the required parameters from `additionalPosInformation` in the `transactionInteraction` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 |`posId` | *string* | N/A | Indicates the Point-of-Sale for multi-Controller Transactions.|
 

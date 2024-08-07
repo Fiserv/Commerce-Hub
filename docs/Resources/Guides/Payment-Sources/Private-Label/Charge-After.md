@@ -26,7 +26,7 @@ titles: origin, additionalDataCommon, customFields, privateLabel
 
 The below table identifies the required parameter in the `transactionInteraction` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `origin` | *string* | 4 | The [origin](?path=docs/Resources/Master-Data/Transaction-Interaction.md#transaction-origin) of the transaction. |
 
@@ -36,7 +36,7 @@ type: tab
 
 The below table identifies the conditional parameters in the `additionalDataCommon` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `customFields` | *object* | 64 | Identifies custom fields required to process a ChargeAfter request |
 | `privateLabel` | *object* | 32  | Object containing private label specific details |
@@ -128,7 +128,7 @@ type: tab
 
 The below table identifies the conditional parameters in the `privateLabel` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `creditPlan` | *string* | 64 | Payment program assigned by the private label processor. |
 | `minimumSpendExemptIndicator` | *string* | 32  | Indicates if the customer is exempt from the minimum spend amount. ***Valid Values:** EXEMPT, NOT_EXEMPT* |

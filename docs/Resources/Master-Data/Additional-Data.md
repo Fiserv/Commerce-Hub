@@ -13,7 +13,7 @@ titles: additionalDataCommon, JSON Example
 
 The below table identifies the parameters in the `additionalDataCommon` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-type). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
@@ -121,7 +121,7 @@ type: tab
 titles: additionalData, JSON Example
 -->
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Max Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
 

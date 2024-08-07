@@ -40,7 +40,7 @@ titles: amount, JSON Example, amountComponents, JSON Example
 
 The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `total` | *number* | 18,3 | The total amount of a transaction including `convenienceFees` and `subTotal` |
 | `currency` | *string* | 3 | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md) |
@@ -66,7 +66,7 @@ type: tab
 
 The below table identifies the required parameters in the `amountComponents` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `subTotal` | *string* | 32 | The total amount for the goods and services excluding `convenienceFees`|
 | `convenienceFees` | *string* | N/A | Convenience fees being charged to the customer |

@@ -25,7 +25,7 @@ titles: splitShipment, JSON Example
 
 The below table identifies the required parameters in the `splitShipment` object.
 
-| Variable |  Type| Maximum Length | Required | Description |
+| Variable |  Type| Max Length | Required | Description |
 | ------- | ---- | ----- | -------- | --------- |
 | `totalCount` | *integer* | 99 | &#10004; | Required in each transaction indicating how many shipments the order will be divided into. The original count can be exceeded as long as the `finalShipment` *true* indicator has not be submitted. The total count can be sent in the initial pre-authorization or the first capture. |
 | `finalShipment` | *boolean* | N/A | &#10004; | Used to identify the final capture (*TRUE* or *FALSE*). |
@@ -62,7 +62,7 @@ titles: amount, referenceTransactionDetails, transactionDetails, merchantDetails
 
 The below table identifies the parameters in the `amount` object.
 
-| Variable | Type | Maximum Length | Required | Description |
+| Variable | Type | Max Length | Required | Description |
 | -------- | -- | ------------ | ----- | ------------------ |
 | `total` | *number* | 18,3  | &#10004; | Amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | &#10004; | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
@@ -76,7 +76,7 @@ The below table identifies the available parameters in the `referenceTransaction
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 |`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
@@ -87,7 +87,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type| Maximum Length |Required | Description |
+| Variable | Data Type| Max Length |Required | Description |
 |---------|----------|----------------|---------|---|
 | `captureFlag` | *boolean* | 5 | &#10004; | Designates if the transaction should be captured. |
 | `splitShipment` | *object* | N/A | &#10004; | Object containing the split shipment details. |
@@ -98,7 +98,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required|  Description |
+| Variable | Data Type| Max Length | Required|  Description |
 | --------- | ---------- | -------- | --------- | ----- |
 |`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |

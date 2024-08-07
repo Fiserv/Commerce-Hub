@@ -17,7 +17,7 @@ titles: emvDetails, merchantDetails
 
 The below table identifies the required parameters in the `emvDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `transactionType`| *string* | 64 | Specifies the type of the CAPK transaction. |
 
@@ -27,7 +27,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
@@ -45,7 +45,7 @@ titles: emvDetails, headerInfo, keys
 
 The below table identifies the parameters in the `emvDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `transactionType`| *string* | 64 | Specifies the type of the CAPK transaction. |
 |`currentFileCreationDate`| *string* | 40 | This parameter is sent as part of the last record in the format MMDDYYYYhhmmss|
@@ -58,7 +58,7 @@ type: tab
 
 The below table identifies the parameters in the `headerInfo` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `fileName` | *string* | 64 | Identifies the type of file. |
 | `fileVersion` | *string* | 4 | Specifies the header file version for tracking purposes. |
@@ -69,7 +69,7 @@ type: tab
 
 The below table identifies the parameters in the `keys` array.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `expiryDate` | *string* | N/A | Specifies when the key expires in MMDDYYYY format. |
 | `certificateAuthorityHashAlgorithmIndicator` | *string* | 2 | Identifies the hash algorithm used to produce the Hash Result in the digital signature scheme. At the present time only a value of (SHA-1) is supported |

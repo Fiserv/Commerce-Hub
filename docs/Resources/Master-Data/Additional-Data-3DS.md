@@ -13,7 +13,7 @@ titles: additionalData3DS, JSON Example
 
 The below table identifies the parameters in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `acsReferenceNumber` | _string_ | 60 | Unique reference number assigned by the Access Control Server _(ACS)_ to identify a single transaction. |
 | `acsTransactionId` | _string_ | 60 | Unique transaction identifier assigned by the Access Control Server _(ACS)_ to identify a single transaction. |
@@ -94,7 +94,7 @@ type: tab
 titles: methodData, JSON Example
 -->
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Max Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `dataCollectionUrl` | _string_ | 256 | The URL that will be used by the 3DS Method to collect card holder browser information. |
 | `encodedToken` | _string_ | 4000 | Base64 encoded transactional JWT token for external data collection with service provider. |
@@ -133,7 +133,7 @@ type: tab
 titles: mpiData, JSON Example
 -->
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Max Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `cavv` | _string_ | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase |
 | `xid` | _string_ | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce |
@@ -172,7 +172,7 @@ type: tab
 titles: versionData, JSON Example
 -->
 
-| Variable | Type | Maximum Length | Description/Values |
+| Variable | Type | Max Length | Description/Values |
 | ----- | ----- | ----- | ----- |
 | `recommendedVersion` | _string_ | 6 | Recommended 3DS version as specified by the card issuer. |
 

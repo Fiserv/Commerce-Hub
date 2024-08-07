@@ -24,7 +24,7 @@ titles: source, additionalData3DS
 
 The below table identifies the parameters in the `source` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken* |
 
@@ -34,7 +34,7 @@ type: tab
 
 The below table identifies the required parameters in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `dsTransactionId` | *string* | 60 | Unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction |
 | `authenticationStatus` | *string* | 2 | The result of authentication attempt returned by the 3D Secure authentication process (PaRes). |
@@ -44,7 +44,7 @@ The below table identifies the required parameters in the `additionalData3DS` ob
 
 The below table identifies the `mpiData` parameters in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `cavv` | *string* | 256 | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |
 | `xid` | *string* | 512 | 3-D Secure value returned by service provider e.g. Cardinal Commerce. |
@@ -53,7 +53,7 @@ The below table identifies the `mpiData` parameters in the `additionalData3DS` o
 
 The below table identifies the `versionData` parameters in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `recommendedVersion` | *string* | 6 | Recommended 3DS version as specified by the card issuer. |
 
@@ -215,7 +215,7 @@ The below table identifies the available parameters in the `referenceTransaction
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 | `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
@@ -226,7 +226,7 @@ type: tab
 
 The below table identifies the available parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
