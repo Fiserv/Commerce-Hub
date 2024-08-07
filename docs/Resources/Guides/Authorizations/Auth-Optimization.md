@@ -85,8 +85,8 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 
 | Variable | Type| Maximum Length | Description |
 |---------|----------|----------------|---------|
-| originalResponseCode | *string* | 16 | Original response code before Authorization Optimization |
-| originalResponseMessage | *string* | N/A | Original response message before Authorization Optimization |
+| `originalResponseCode` | *string* | 16 | Original response code before Authorization Optimization |
+| `originalResponseMessage` | *string* | N/A | Original response message before Authorization Optimization |
 
 <!--
 type: tab
@@ -118,7 +118,7 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 
 | Variable | Description |
 |---------|----------|
-| *ACCOUNT_CHANGE* | Original account number has changed|
+| *ACCOUNT_CHANGE* | Original account number has changed |
 | *ACCOUNT_CLOSED* | Original account number is closed |
 | *EXPIRATION_CHANGE* | Original card expiration has changed |
 | *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder |

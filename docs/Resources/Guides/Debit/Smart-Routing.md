@@ -14,7 +14,7 @@ Smart Debit Routing consists of working with multiple payment service providers 
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Least Cost Debit Routing](?path=docs/In-Person/Debit/Least-Cost-Debit.md)
 - [Transaction Capture Type](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md)
 

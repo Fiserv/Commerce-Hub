@@ -31,7 +31,7 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request using `transactionCaptureType`.
+Example of a charge payload request using `transactionCaptureType`. 
 
 ```json
 {
@@ -40,14 +40,14 @@ Example of a charge payload request using `transactionCaptureType`.
     "currency": "USD"
   },
   "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "nameOnCard": "Jane Smith",
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "securityCode": "123",
-      "securityCodeIndicator": "PROVIDED"
+    "sourceType": "PaymentEMV",
+    "emvData": "0249F3704833A12329F1002AB34",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
+      "deviceType": "INGENICO",
+      "keyId": ""
     }
   },
   "transactionDetails": {
@@ -84,14 +84,15 @@ Example of a charge (201: Created) response.
     }
   },
   "source": {
-    "sourceType": "PaymentTrack",
+    "sourceType": "PaymentEMV",
     "card": {
-      "expirationMonth": "12",
-      "expirationYear": "2024",
-      "bin": "400555",
+      "bin": "40055500",
       "last4": "0019",
-      "scheme": "Visa"
-    }
+      "scheme": "VISA",
+      "expirationMonth": "02",
+      "expirationYear": "2035"
+    },
+    "emvData": "8a0230309f36020073910a1be55403be070aa53030"
   },
   "paymentReceipt": {
     "approvedAmount": {
@@ -122,7 +123,7 @@ Example of a charge (201: Created) response.
   "merchantDetails": {
     "merchantId": "100008000003683",
     "terminalId": "10000001"
-  },
+  }
 }
 ```
 
@@ -135,6 +136,6 @@ Example of a charge (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
-- [Directed Routing](?path=docs/Resources/Guides/Directed-Routing.md)
+- [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 
 ---

@@ -3,7 +3,7 @@ openapi: 3.0.2
 info: 
   title: Commerce Hub
   description: This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing.
-  version: v1.24.05
+  version: v1.24.07
 
 servers:
 - {url: 'https://prod.api.fiservapps.com/ch/', description: Production}
@@ -2247,10 +2247,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ResponsePaymentToken'
-        linkedTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedTransactionDetails'
         additionalDataCommon:
           $ref: '#/components/schemas/AdditionalDataCommon'
         customer:
@@ -2448,10 +2444,6 @@ components:
           $ref: '#/components/schemas/StoredCredentials'
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
-        linkedTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedTransactionDetails'
         target: 
           $ref: '#/components/schemas/Source'
 
@@ -2731,10 +2723,6 @@ components:
           $ref: '#/components/schemas/StoredCredentials'
         authOptimizationDetails:
           $ref: '#/components/schemas/AuthOptimizationDetails'
-        linkedTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedTransactionDetails'
         error:
           type: array
           items:
@@ -4557,35 +4545,6 @@ components:
           maxLength: 256
           description: 'Value for the custom information.'
 
-    LinkedTransactionDetails:
-      x-model-version: 1.0
-      description: 'Represents a gateway orchestrated child / linked transactions as part of the primary transaction process.'
-      properties:
-        gatewayResponse:
-          $ref: '#/components/schemas/GatewayResponse'
-        transactionDetails:
-          $ref: '#/components/schemas/TransactionDetails'
-        transactionInteraction:
-          $ref: '#/components/schemas/TransactionInteraction'
-        source:
-          $ref: '#/components/schemas/Source'
-        merchantDetails:
-          $ref: '#/components/schemas/MerchantDetails'
-        paymentReceipt:
-          $ref: '#/components/schemas/PaymentReceipt'
-        transactionBatch:
-          $ref: '#/components/schemas/TransactionBatch'
-        networkDetails:
-          $ref: '#/components/schemas/NetworkDetails'
-        additionalDataCommon:
-          $ref: '#/components/schemas/AdditionalDataCommon'
-        paymentTokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResponsePaymentToken'
-        emvDetails:
-          $ref: '#/components/schemas/EmvDetails'
-
     Mastercard:
       x-model-version: 1.0
       description: 'Master Card Object Information.'
@@ -5118,6 +5077,36 @@ components:
               maxLength: 256
               description: 'Source for the Token Service Provider (TSP).'
               example: 'TRANSARMOR'
+            cryptogram:
+              type: string
+              maxLength: 256
+              description: 'cryptographic value that is sent by the merchant during payment authentication.'
+              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            expirationMonth:
+              pattern: '^(0[1-9]|1[012])$'
+              type: string
+              description: '2-digit token expiration month.'
+              example: '05'
+            expirationYear:
+              pattern: '^[0-9]{4}$'
+              type: string
+              description: '4-digit token expiration year.'
+              example: '2035'
+            sessionId:
+              type: string
+              maxLength: 64
+              description: 'Session ID for the card captured.'
+              example: '123e4567-e89b-12d3-a456-556642440000'
+            tokenRequestorId:
+              type: string
+              maxLength: 256
+              description: 'Token Requestor ID, an identifier used by merchants to request network tokens from the card networks.'
+              example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+            tokenAssuranceMethod:
+              type: string
+              maxLength: 256
+              description: 'Token Assurance Method will be returned back to merchants in auth response.'
+              example: '10'
             card: 
               $ref: '#/components/schemas/Card'
             encryptionData:
@@ -5344,7 +5333,7 @@ components:
 
     Processor:
       x-model-version: 1.0
-      description: 'Identifies the <a href="../docs?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md&branch=main#tab-processors">card processor</a>.'
+      description: 'Identifies the <a href="../docs?path=docs/Resources/Guides/Directed-Routing.md&branch=main#tab-processors">card processor</a>.'
       properties:
         processorName:
           type: string
@@ -5646,6 +5635,21 @@ components:
           maxLength: 256
           description: 'Response description for token generation request.'
           example: 'SUCCESS'
+        cryptogram:
+          type: string
+          maxLength: 256
+          description: 'cryptographic value that is sent by the merchant during payment authentication.'
+          example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+        tokenRequestorId:
+          type: string
+          maxLength: 256
+          description: 'Token Requestor ID, an identifier used by merchants to request network tokens from the card networks.'
+          example: 'AAABCZIhcQAAAABZlyFxAAAAAAA'
+        tokenAssuranceMethod:
+          type: string
+          maxLength: 256
+          description: 'Token Assurance Method will be returned back to merchants in auth response.'
+          example: '10'
 
     ReturnScoreDetails:
       x-model-version: 1.0
