@@ -102,7 +102,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) succesfully revoke a [generated key](#generate-key) request using the `keyId`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/security/v1/keys/{keyId}/revoke).
+The example below contains the minimum [parameters](#parameters) successfully revoke a [generated key](#generate-key) request using the `keyId`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/security/v1/keys/{keyId}/revoke).
 
 <!-- theme: success -->
 > **POST** `/security/v1/keys/{keyId}/revoke`
@@ -152,7 +152,7 @@ Example of (200: Success) response.
 
 ---
 
-### Paramters
+### Parameters
 
 #### Request Parameters
 
@@ -177,7 +177,7 @@ Commerce Hub and a merchant can have multiple static public keys where the key i
 
 ##### Key Expiry Example
 
-Below is an example of multiple pblic keys that are generated during a transaction request and expires after a set time interval.
+Below is an example of multiple public keys that are generated during a transaction request and expires after a set time interval.
 
 | Public Key  | Generated/Activated | Expiry Date and Time |
 | ------------ | ----------- | ------- |

@@ -133,7 +133,7 @@ const encryptionBlockFields = Object.keys(track1Data).map(key => `${key}:${encod
 
 ---
 
-## Step 3: Perfrom RSA Encryption
+## Step 3: Perform RSA Encryption
 
 A [generate key](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md#generate-key) request is required  to receive a base64 encoded encryption key. This key is used to encrypt the `encryptionBlock` that was created in step 1.
 
