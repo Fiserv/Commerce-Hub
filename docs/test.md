@@ -1,3 +1,7 @@
+# This is a test
+
+## Callouts
+
 <!-- theme: info -->
 > This is a blue info callout.
 
@@ -15,6 +19,8 @@
 
 ---
 
+## Tabs
+
 <!--
 type: tab
 titles: Tab 1, Tab 2
@@ -31,6 +37,8 @@ Tab 2 content goes here.
 <!-- type: tab-end -->
 
 ---
+
+## Cards
 
 <!-- type: row -->
 
