@@ -1,4 +1,10 @@
+---
+tags: [Test, Style Guide, Template]
+---
+
 # This is a test
+
+Test page for style guides and templates.
 
 ## Callouts
 
