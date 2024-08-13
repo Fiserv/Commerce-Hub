@@ -4,32 +4,30 @@ tags: [Account Information, Card Details, Card Meta Data, BIN]
 
 # Account Information Lookup
 
-Account information lookup _(BIN lookup)_ is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Account information lookup _(BIN lookup)_ is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) or `cardDetails` of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
-The card details can be used to determine;
+The card details can be used for:
 
-- **Card Processing Requirements (CPS):** based on brand, function, type _(commercial, non-corporate)_
+- **Card Processing Requirements (CPS):** based on brand, function, type _([commercial](?path=docs/Resources/Guides/Level23/Level23.md), non-corporate)_
 - **[Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
+- **[Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md):** take preemptive actions on accounts being presented for transactions
 
 <!-- theme: info -->
 > Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
-### Endpoint
-<!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information-lookup`
-
----
-
-### Payload Example
+## Global BIN request
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-##### Account information lookup request using PaymentCard.
+<!-- theme: success -->
+> **POST** `/payments-vas/v1/accounts/information-lookup`
+
+Account information lookup request using PaymentCard.
 
 ```json
 
@@ -50,7 +48,7 @@ titles: Request, Response
 type: tab
 -->
 
-##### Account information lookup response.
+Account information lookup response.
 
 ```json
 {
@@ -114,10 +112,74 @@ type: tab
 
 ---
 
+## Cloud BIN request
+
+<!--
+type: tab
+titles: Request, BIN Response, Decision Table Response
+-->
+
+<!-- theme: success -->
+> **POST** `/payments-vas/v1/accounts/information-lookup`
+
+Account information lookup request using PaymentCard.
+
+```json
+
+{
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019"
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683"
+  }
+}
+
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
+
+<!--
+type: tab
+-->
+
+Account information lookup response for a card not in the BIN file and setup for [Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md).
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "INFORMATION",
+    "transactionState": "SUCCESS",
+    "transactionProcessingDetails": {
+      "orderId": "CHG3b83fca82f9c436486ae12c91f1fcf16",
+      "transactionTimestamp": "2016-04-16T16:06:05Z",
+      "apiTraceId": "1234567a1234567b1234567c1234567d",
+      "clientRequestId": "30dd879c-ee2f-11db-8314-0800200c9a66",
+      "transactionId": "1234567a1234567b1234567c1234567d"
+    }
+  },
+  "cardDetails": [
+    {
+      "primaryCardData": "6543210098765432",
+      "additionalCardData": "7"
+    }
+  ]
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
 - [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Commercial Card Processing](?path=docs/Resources/Guides/Level23/Level23.md)
+- [Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md)
 - [Directed Routing](?oath=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
