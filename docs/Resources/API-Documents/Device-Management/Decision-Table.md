@@ -10,7 +10,7 @@ Commerce Hub's POS Decision Table adds the ability for POS devices to take preem
 
 ## Table APIs
 
-The Cloud BIN Service can be used to take advantage of Commerce Hub's [tokenization service](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service for non-branded cards.
+The Cloud BIN Service can be used to take advantage of Commerce Hub's encryption and decryption service for non-branded cards.
 
 - Used to obtain card data in the clear *(unencrypted)* for non-branded cards like [gift](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md), loyalty and [private label *(PLCC)*](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md).
 
