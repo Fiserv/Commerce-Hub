@@ -6,7 +6,7 @@ tags: [Account Information, Card Details, Card Meta Data, BIN]
 
 Account information lookup *(BIN lookup)* is used to obtain the `cardDetails` *([card meta data](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
-The card details can be used for:
+Information lookup card details can be used for:
 
 - **Card processing requirements:** based on brand, function, type *([commercial](?path=docs/Resources/Guides/Level23/Level23.md), non-corporate)*
 - **[Directed routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type

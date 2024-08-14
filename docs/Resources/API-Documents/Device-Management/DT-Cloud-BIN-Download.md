@@ -43,7 +43,7 @@ The device will request additional information for the following:
 
 <!--
 type: tab
-titles: Request, Response, Parameters
+titles: Request, Response
 -->
 
 The example below contains the minimum [parameters](#parameters) for an subsequent POS Decision Table download request using `updatedOn`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/tms/v1/pos-decision-table).
