@@ -13,12 +13,12 @@ Commerce Hub's Cloud BIN Service will return the configured 6-digit BIN ranges o
 
 ## Response data
 
-The response will include an array with the `accountRangeLow` and `accountRangeHigh`. Cards within the configured ranges should be sent to [Commerce Hub's Cloud BIN Service](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) for additional information.
+The response will include an array with the `accountRangeLow` and `accountRangeHigh`. Cards within the configured ranges should be sent to [Commerce Hub's Cloud BIN Service](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md#cloud-bin-request) for additional information.
 
  Commerce Hub's Cloud BIN Service will decrypt the [encrypted card data](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) and provide a response back to the device including the `additionalCardData` *(positions)* and the `primaryCardData`.
 
-- **For PCI data:** Commerce Hub will return the first 8-digits of the BIN
-- **For non-PCI data:** Commerce Hub will return the full card data
+- **PCI data:** Commerce Hub will return the first 8-digits of the BIN
+- **Non-PCI data:** Commerce Hub will return the full card data
 
 ---
 
