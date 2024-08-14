@@ -35,7 +35,7 @@ link:
 <!-- type: card
 title: POS Decision Tables
 description: Commerce Hub's Decision Tables adds the ability for devices to take preemptive actions on accounts being presented for transactions. 
-link: docs/Resources/API-Documents/Device-Management/Decision-Table.md
+link: ?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md
 -->
 
 <!-- type: row-end -->
