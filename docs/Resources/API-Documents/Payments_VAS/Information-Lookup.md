@@ -1,19 +1,19 @@
 ---
-tags: [Account Information, Card Details, Card Meta Data, BIN]
+tags: [Account Information, Card Details, Card Metadata, BIN]
 ---
 
 # Account Information Lookup
 
-Account information lookup *(BIN lookup)* is used to obtain the `cardDetails` *([card meta data](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Account Information Lookup *(BIN lookup)* is used to obtain the `cardDetails` *([card metadata](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
-Information lookup card details can be used for:
+The `cardDetails` can be used for:
 
 - **Card processing requirements:** based on brand, function, type *([commercial](?path=docs/Resources/Guides/Level23/Level23.md), non-corporate)*
 - **[Directed routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 - **[POS Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md):** allows a device to take preemptive actions on accounts being presented for transactions
 
 <!-- theme: info -->
-> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
+> Card metadata can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
@@ -114,6 +114,9 @@ Account information lookup response.
 
 ## Cloud BIN request
 
+<!-- theme: info-->
+> The Cloud BIN Service needs to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
+
 <!--
 type: tab
 titles: Request, Response
@@ -142,7 +145,8 @@ Account information lookup request for a Cloud BIN using PaymentEMV.
     }
   },
   "merchantDetails": {
-    "merchantId": "100008000003683"
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
 
@@ -185,9 +189,9 @@ Account information lookup response for a card not in the [Global BIN file](#glo
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
-- [Card Meta Data *(Card Details)*](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Card Metadata *(Card Details)*](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Commercial Card Processing](?path=docs/Resources/Guides/Level23/Level23.md)
-- [Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md)
+- [POS Decision Tables](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md)
 - [Directed Routing](?oath=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 

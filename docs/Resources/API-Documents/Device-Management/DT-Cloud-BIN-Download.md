@@ -2,37 +2,18 @@
 tags: [Device Management, Decision Table, API Reference, Device, Terminal, Point of Sale]
 ---
 
-# POS Decision Table: Cloud BIN Service
+# POS Decision Table: Cloud BIN Download
 
 Commerce Hub's Cloud BIN Service will return the configured 6-digit BIN ranges on the merchant account as a POS Decision Table. The device may use this table to determine when it should require certain positions of the card data to be in the clear *(unencrypted)*. The POS Decision Table is an array of 6-digit BIN ranges defining what cards should request more information from Commerce Hub's Cloud BIN Service.
 
 <!-- theme: info-->
-> The Cloud BIN Table needs to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
+> The Cloud BIN Service needs to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
-## Response data
+## Table data
 
 The response will include an array with the `accountRangeLow` and `accountRangeHigh`. Cards within the configured ranges should be sent to [Commerce Hub's Cloud BIN Service](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md#cloud-bin-request) for additional information.
-
- Commerce Hub's Cloud BIN Service will decrypt the [encrypted card data](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) and provide a response back to the device including the `additionalCardData` *(positions)* and the `primaryCardData`.
-
-- **PCI data:** Commerce Hub will return the first 8-digits of the BIN
-- **Non-PCI data:** Commerce Hub will return the full card data
-
----
-
-## Device configuration
-
-The device will need to integrate with Commerce Hub's APIs and be configured to route cards and store the BIN information. The device should know if it can support 8-digit BINs locally and be configured with the merchant's known card ranges.
-
-<!-- danger -->
-> The device should not route BINs included in the Exclusion File, Special Handling or standard branded cards that do not require an 8-digit BIN.
-
-The device will request additional information for the following:
-
-- Transactions where the first 6-digits of the card are found in the POS Decision Table.
-- Transactions where the device identifies a card not found in the POS Decision Table or the device routing table.
 
 ---
 
@@ -174,9 +155,10 @@ The below table identifies the response parameters in the `posDecisionData` obje
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](../api/?type=post&path=/tms/v1/pos-decision-table)
+- [Cloud BIN Integration Guide](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md)
 - [Device Management](?path=docs/Resources/API-Documents/Device-Management/Device-Management.md)
 - [Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
