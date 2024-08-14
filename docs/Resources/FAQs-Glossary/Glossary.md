@@ -10,11 +10,11 @@ tags: [Definition, Commerce Hub, Glossary, FAQ]
 
 ### 3-D Secure
 
-[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the _"three domains"_ which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
+[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the *"three domains"* which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
 
 This is a technical standard that adds security to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
 
-3-D Secure technologies include Visa Secure _(previously Verified by Visa)_, Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
+3-D Secure technologies include Visa Secure *(previously Verified by Visa)*, Mastercard SecureCode, Discover ProtectBuy, JCB International J/Secure, and American Express SafeKey.
 
 ---
 
@@ -26,7 +26,7 @@ A cryptographically secure credential that allows merchants to access the API.
 
 ### Access Control Server
 
-An Access Control Server _(ACS)_ is a card issuer component in the 3-D Secure process.
+An Access Control Server *(ACS)* is a card issuer component in the 3-D Secure process.
 
 ### Activation
 
@@ -38,7 +38,7 @@ The acquirer or acquiring bank is the bank or financial institution that process
 
 ### Acquirer Reference Number
 
-An Account Reference Number _(ARN)_ also known as a Retrieval Reference Number, is a UUID returned in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) for a credit card transaction. Similar to STAN, an ARN is also used for refunds to track the processes through the acquiring bank, network, issuer, and processor.
+An Account Reference Number *(ARN)* also known as a Retrieval Reference Number, is a UUID returned in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) for a credit card transaction. Similar to STAN, an ARN is also used for refunds to track the processes through the acquiring bank, network, issuer, and processor.
 
 ### Address Verification Service
 
@@ -52,9 +52,13 @@ Agile software development refers to a group of software development methodologi
 
 Aggregators are defined as third-party billers that bill for services/goods rendered by another entity. The terms Payment Facilitator, Payment Service Provider, and Aggregator are interchangeable terms for the same functionality.
 
+### Apple Cash
+
+Apple Cash is a digital card that exists in the [Apple Pay digital wallet](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md). Similar to other peer-to-peer *(P2P)* payment platforms like Venmo and Zelle, Apple Cash allows you to send and receive money to friends and family and make contactless payments with merchants.
+
 ### Approval Code
 
-The approval code _(authorization ID or authorization code)_ is an alphanumeric value, assigned by the issuing bank, to an authorization request that has received approval. The `approvalCode` is returned in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
+The approval code *(authorization ID or authorization code)* is an alphanumeric value, assigned by the issuing bank, to an authorization request that has received approval. The `approvalCode` is returned in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
 
 ### Authorizing Network ID
 
@@ -66,7 +70,7 @@ The available balance are the funds in a checking or on-demand account that are 
 
 ### Authentication Value
 
-The authentication value is returned as a cryptogram in digital payments e.g. [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) and [wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md). Also known as Cardholder Authentication Verification Value _(CAVV)_ or Accountholder Authentication Value _(AAV)_.
+The authentication value is returned as a cryptogram in digital payments e.g. [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) and [wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md). Also known as Cardholder Authentication Verification Value *(CAVV)* or Accountholder Authentication Value *(AAV)*.
 
 ### Authorization
 
@@ -74,7 +78,7 @@ Authorization is necessary to verify whether a customer's payment source has suf
 
 ### Auto-Substantiation
 
-The process of verifying that purchase transactions are for expenses permitted and eligible under Internal Revenue Service regulations for Flexible Spending Accounts (FSAs) and Healthcare Reimbursement Arrangements _(HRAs)_.
+The process of verifying that purchase transactions are for expenses permitted and eligible under Internal Revenue Service regulations for Flexible Spending Accounts (FSAs) and Healthcare Reimbursement Arrangements *(HRAs)*.
 
 ### Authorization Type Indicator
 
@@ -84,9 +88,13 @@ Identifies if the authorization requested is an initial, reauthorization, deferr
 
 ## B
 
+### B2B Invoice Payment
+
+B2B invoice payments are payments made between two merchants for goods or services. Digital B2B invoice payments solutions make it faster to issue, receive, and process payments.
+
 ### Bank Identification Number
 
-The Bank Identification Number _(BIN)_ is the first 8 digits of the unique card number [Primary Account Number](#card-number) (PAN). Identifies the card network and the issuer. Sometimes referred to as the Issuer Identification Number _(IIN)_.
+The Bank Identification Number *(BIN)* is the first 8 digits of the unique card number [Primary Account Number](#card-number) (PAN). Identifies the card network and the issuer. Sometimes referred to as the Issuer Identification Number *(IIN)*.
 
 ### Bank Card Association
 
@@ -104,17 +112,17 @@ Unique data element, assigned by Mastercard, which identifies an authorization t
 
 The Base URL is used to reach the installed shopping cart, e.g. <https://mydomain.com/cart/> or <https://shop.mydomain.com/>.
 
-### B2B Invoice Payment
-
-B2B invoice payments are payments made between two merchants for goods or services. Digital B2B invoice payments solutions make it faster to issue, receive, and process payments.
-
-### Binary Synchronous
-
-Binary Synchronous _(BISYNC)_ is a category of synchronous communications protocols.
-
 ### Bill Payment Indicator
 
 Identifies if the bill payment requested is a recurring, installment, or deferred.
+
+### Binary Synchronous
+
+Binary Synchronous *(BISYNC)* is a category of synchronous communications protocols.
+
+### BIN Exclusions
+
+BIN Exclusions are essential for merchant processing as they dictate which card BIN ranges should be left in the clear/unencrypted. Typically, these cards are not considered PCI data as they are non-branded *(e.g., gift cards, private label and loyalty)*. The BIN ranges that are excluded from encryption are stored in a BIN Exclusion File and injected in encrypting devices as part of the configuration package. The BIN Exclusion File can handle 100-line items. This total includes [Special Handling Rules](#special-handling-rule).
 
 ---
 
@@ -130,19 +138,19 @@ Payment networks that determine where a card can be used and facilitate cashless
 
 ### Card Not Present
 
-A Card Not Present _(CNP)_ transaction is done when the card cannot be physically used, e.g. in an [online, digital or mobile](?path=docs/Getting-Started/Getting-Started-Online.md) environment.
+A Card Not Present *(CNP)* transaction is done when the card cannot be physically used, e.g. in an [online, digital or mobile](?path=docs/Getting-Started/Getting-Started-Online.md) environment.
 
 ### Card Number
 
-The unique number associated with a payment card. The entire number is known as the Primary Account Number (PAN). The first 8 digits are the [Bank Identification Number](#bank-identification-number) _(BIN)_.
+The unique number associated with a payment card. The entire number is known as the Primary Account Number (PAN). The first 8 digits are the [Bank Identification Number](#bank-identification-number) *(BIN)*.
 
 ### Card Present
 
-A Card Present _(CP)_ transaction is done when the card can be physically used, e.g. in an [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) environment.
+A Card Present *(CP)* transaction is done when the card can be physically used, e.g. in an [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) environment.
 
 ### Card Security Code
 
-A Card Security Code _(CSC)_, Card Verification Data _(CVD)_, Card Verification Number _(CVN)_, Card Verification Value _(CVV)_, Card Verification Code _(CVC)_, Verification Code _(V-code or V code)_, or Signature Panel Code _(SPC)_ is a security feature for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) _([card not present](#card-not-present))_ payment card transactions instituted to reduce credit card fraud.
+A Card Security Code *(CSC)*, Card Verification Data *(CVD)*, Card Verification Number *(CVN)*, Card Verification Value *(CVV)*, Card Verification Code *(CVC)*, Verification Code *(V-code or V code)*, or Signature Panel Code *(SPC)* is a security feature for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) *([card not present](#card-not-present))* payment card transactions instituted to reduce credit card fraud.
 
 ### Cardholder
 
@@ -182,11 +190,11 @@ Closed loop prepaid solutions are designed to be used only at the issuer’s loc
 
 ### "Code 10" Authorization
 
-A merchant's request for a _"code 10"_ authorization is used to alert the authorization network (processor) that a suspicious transaction is occurring.
+A merchant's request for a *"code 10"* authorization is used to alert the authorization network (processor) that a suspicious transaction is occurring.
 
 ### Component Object Model
 
-Component Object Model _(COM)_ makes it easier to create components _(pieces of code)_ or use preexisting components that can interact with other components and applications _(using the object model)_. A big advantage is that these components can be written using a variety of computer languages.
+Component Object Model *(COM)* makes it easier to create components *(pieces of code)* or use preexisting components that can interact with other components and applications *(using the object model)*. A big advantage is that these components can be written using a variety of computer languages.
 
 ### Conditioning
 
@@ -194,9 +202,9 @@ The "tuning" or addition of equipment to improve the transmission characteristic
 
 ### Contactless Payments
 
-Contactless payments use radio frequency _(RF)_, also known as Near Field Communication _(NFC)_. The technology is used in payment cards and mobile devices. Contactless Payment Cards are like traditional cards except that they have a contactless chip.
+Contactless payments use radio frequency *(RF)*, also known as Near Field Communication *(NFC)*. The technology is used in payment cards and mobile devices. Contactless Payment Cards are like traditional cards except that they have a contactless chip.
 
-When a customer taps or waves a payment instrument at a merchant terminal equipped with an RFID _(Radio Frequency Identification)_ reader, the instrument wirelessly transmits payment details to the terminal.
+When a customer taps or waves a payment instrument at a merchant terminal equipped with an RFID *(Radio Frequency Identification)* reader, the instrument wirelessly transmits payment details to the terminal.
 
 ### Convenience Fee
 
@@ -212,7 +220,7 @@ The monetary amount of credit extended to a customer.
 
 ### Cryptogram
 
-A limited or single-use key _(cipher)_ that encrypts the payment data. It is required to decrypt the payment data by the processor to continue processing the payment.
+A limited or single-use key *(cipher)* that encrypts the payment data. It is required to decrypt the payment data by the processor to continue processing the payment.
 
 ### Currency Code
 
@@ -252,7 +260,7 @@ Identifies a bill pay transaction where a recurring or incremental payment is de
 
 ### Derived Unique Key Per Transaction
 
-Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction. DUKPT system of derived keys is used in a point-of-sale (POS) environment where the merchant can accept transactions from a large number of unique [PIN entry](?path=docs/Resources/Master-Data/Pin-Block.md) devices. This technique involves the use of a non-secret key serial number and a secret base derivation key. On each transaction, the PIN pad derives a unique key based on a previous key and the key serial number. Terminal encrypts the PIN with this derived key, and sends both the encrypted PIN and the key serial number to the Host. See also [Key Management](#key-management).
+Derived Unique Key Per Transaction *(DUKPT)* allows the encryption of a PIN via the use of a unique key for each transaction. DUKPT system of derived keys is used in a point-of-sale *(POS)* environment where the merchant can accept transactions from a large number of unique [PIN entry](?path=docs/Resources/Master-Data/Pin-Block.md) devices. This technique involves the use of a non-secret key serial number and a secret base derivation key. On each transaction, the PIN pad derives a unique key based on a previous key and the key serial number. Terminal encrypts the PIN with this derived key, and sends both the encrypted PIN and the key serial number to the Host. See also [Key Management](#key-management).
 
 ### Direct Capture
 
@@ -260,7 +268,7 @@ Direct capture also known as terminal direct capture or direct settlement, is th
 
 ### Doing Business As
 
-Doing business as _(DBA)_ refers to the specific name and location of the merchant's store where a transaction is made.
+Doing business as *(DBA)* refers to the specific name and location of the merchant's store where a transaction is made.
 
 ### Debit
 
@@ -284,11 +292,11 @@ A web portal for managing your developer account, apps, and API credentials.
 
 ### Device-Specific Primary Account Number
 
-Device-Specific Primary Account Number _(DPAN)_ is an encrypted, tokenized value of payment account information tied to a mobile device. Used by Apple Pay.
+Device-Specific Primary Account Number *(DPAN)* is an encrypted, tokenized value of payment account information tied to a mobile device. Used by Apple Pay.
 
 ### Digital Certificate
 
-Digital certificates are password protected files issued from a Certificate Authority _(CA)_. The CA validates information on a company or person then issues a certificate that identifies and provides information so that people can be more certain that the information provided on a website is genuine.
+Digital certificates are password protected files issued from a Certificate Authority *(CA)*. The CA validates information on a company or person then issues a certificate that identifies and provides information so that people can be more certain that the information provided on a website is genuine.
 
 ### Discover PayButton
 
@@ -296,11 +304,11 @@ The Discover PayButton is a digital wallet that stores cardholder payment inform
 
 ### Discretionary Data
 
-Any valid information that the issuer uses for _'on-us'_ transactions and wishes to have transmitted through the authorization process for inquiries on interchange transactions.
+Any valid information that the issuer uses for *'on-us'* transactions and wishes to have transmitted through the authorization process for inquiries on interchange transactions.
 
 ### Dynamic Currency Conversion
 
-Dynamic Currency Conversion _(DCC)_ gives foreign customers the choice to pay for goods and services purchased in their home currency.
+Dynamic Currency Conversion *(DCC)* gives foreign customers the choice to pay for goods and services purchased in their home currency.
 
 ### Driver's License Number
 
@@ -328,7 +336,7 @@ Conducting business activities like buying, selling, or other transactions via t
 
 ### Electronic Commerce Indicator
 
-Electronic Commerce Indicator _(ECI)_. Use of this field is mandated by the banks and used to determine the source of the original transaction request.
+Electronic Commerce Indicator *(ECI)*. Use of this field is mandated by the banks and used to determine the source of the original transaction request.
 
 ### EMV
 
@@ -354,11 +362,11 @@ An estimated authorization occurs when the merchant does not have the total amou
 
 ### Electronic Benefits Transfer
 
-Electronic Benefits Transfer _(EBT)_ is a payment card used at the point of sale to access a government account for Food Stamps or Cash Benefits.
+Electronic Benefits Transfer *(EBT)* is a payment card used at the point of sale to access a government account for Food Stamps or Cash Benefits.
 
 ### Electronic Funds Transfer
 
-Electronic Funds Transfer _(EFT)_ is the electronic transfer of money from one bank account to another, using an ATM, direct deposit, debit or credit card, paper check, wire transfers or bill payments.
+Electronic Funds Transfer *(EFT)* is the electronic transfer of money from one bank account to another, using an ATM, direct deposit, debit or credit card, paper check, wire transfers or bill payments.
 
 ### Expiration Date
 
@@ -374,7 +382,7 @@ Identifies the transaction as payment of an existing debt obligation, such as a 
 
 ### FBO Account
 
-A FBO _(For Benefit Of)_ account allows a company to manage funds on behalf of one or more users without assuming legal ownership of the account. Each merchant has their own virtual account under the FBO. This is most commonly used by a [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md) _(PayFac)_ as a hold account.
+A FBO *(For Benefit Of)* account allows a company to manage funds on behalf of one or more users without assuming legal ownership of the account. Each merchant has their own virtual account under the FBO. This is most commonly used by a [Payment Facilitator](?path=docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md) *(PayFac)* as a hold account.
 
 ### Firewall
 
@@ -382,7 +390,7 @@ A system between networks that filters data passing through it and removes unaut
 
 ### Financial Institution
 
-Any commercial bank, federal or state savings and loan association; federal or state savings bank; or any federal or state-chartered credit union. Also known as issuing bank _(card issuer)_.
+Any commercial bank, federal or state savings and loan association; federal or state savings bank; or any federal or state-chartered credit union. Also known as issuing bank *(card issuer)*.
 
 ### Floor Limit
 
@@ -398,11 +406,11 @@ A [transaction](?path=docs/Resources/API-Documents/Payments/Forced.md) that imme
 
 ### Foreign Currency Amount Format
 
-The local currency _(non-U.S. dollars)_ transaction amount. The [decimal position](?path=docs/Resources/Master-Data/Currency-Code.md) is assumed, based upon the type of currencies.
+The local currency *(non-U.S. dollars)* transaction amount. The [decimal position](?path=docs/Resources/Master-Data/Currency-Code.md) is assumed, based upon the type of currencies.
 
 ### Front End Processor
 
-The front-end processor _(FEP)_ is a computer that connects to the communications channels on one end and the main computer on the other. Software in the FEP directs the transmitting and receiving of messages according to the rules of the communications protocol used in the network. The communications software, executing in the FEP, detects and corrects transmission errors, assembles and disassembles messages, etc., so that only "pure" data is transferred to and from the main computer (stripped of all codes that are attached for transmission through the network). A FEP is also called a communications control unit.
+The front-end processor *(FEP)* is a computer that connects to the communications channels on one end and the main computer on the other. Software in the FEP directs the transmitting and receiving of messages according to the rules of the communications protocol used in the network. The communications software, executing in the FEP, detects and corrects transmission errors, assembles and disassembles messages, etc., so that only "pure" data is transferred to and from the main computer (stripped of all codes that are attached for transmission through the network). A FEP is also called a communications control unit.
 
 ### Full-Duplex
 
@@ -410,7 +418,7 @@ A communications channel that transmits in both directions at the same time.
 
 ### Funding Primary Account Number
 
-Funding Primary Account Number _(FPAN)_ is the actual account number appearing on the physical card (or similar device) issued by issuing bank. See also [DPAN](#device-specific-primary-account-number).
+Funding Primary Account Number *(FPAN)* is the actual account number appearing on the physical card (or similar device) issued by issuing bank. See also [DPAN](#device-specific-primary-account-number).
 
 ---
 
@@ -446,11 +454,11 @@ The host is generally the central or controlling computer in a distributed syste
 
 ### Host Capture
 
-Host capture also known as host capture system _(HCS)_, is the process where the host _(e.g. Buypass)_ closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [gateway capture](#gateway-capture).
+Host capture also known as host capture system *(HCS)*, is the process where the host *(e.g. Buypass)* closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [gateway capture](#gateway-capture).
 
 ### Host Security Module
 
-A Host Security Module _(HSM)_ is a hardware device that safeguards and manages digital keys for strong authentication and provides crypto-processing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
+A Host Security Module *(HSM)* is a hardware device that safeguards and manages digital keys for strong authentication and provides crypto-processing. HSM’s are typically supported for merchants supporting an encrypted online PIN in transactions sent to Commerce Hub.
 
 ### Hybrid Card
 
@@ -486,19 +494,19 @@ Response displayed when the `transactionID` sent does not match the transaction 
 
 ### Internet Protocol
 
-Internet Protocol _(IP)_ defines how information gets passed between systems across the Internet.
+Internet Protocol *(IP)* defines how information gets passed between systems across the Internet.
 
 ### Internet Service Provider
 
-Internet Service Provider _(ISP)_ is a company that provides individuals and businesses with access to the Internet. Many ISPs also provide website hosting services.
+Internet Service Provider *(ISP)* is a company that provides individuals and businesses with access to the Internet. Many ISPs also provide website hosting services.
 
 ### Independent Software Vendor
 
-Independent Software Vendor _(ISV)_ term may also refer to the vendor’s software developer.
+Independent Software Vendor *(ISV)* term may also refer to the vendor’s software developer.
 
 ### Integrated Voice Response
 
-Integrated Voice Response _(IVR)_ technology creates automatic message selections through phone systems.
+Integrated Voice Response *(IVR)* technology creates automatic message selections through phone systems.
 
 ### Issuing Bank
 
@@ -510,11 +518,11 @@ The issuing bank also known as the customer's bank, issues a payment card or che
 
 ### JavaScript
 
-JavaScript _(JS)_ is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
+JavaScript *(JS)* is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
 
 ### JSON
 
-JSON _(JavaScript Object Notation)_ is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. Commerce Hub requests and responses are written in JSON format.
+JSON *(JavaScript Object Notation)* is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. Commerce Hub requests and responses are written in JSON format.
 
 ---
 
@@ -522,7 +530,7 @@ JSON _(JavaScript Object Notation)_ is a lightweight data-interchange format. It
 
 ### Key Management
 
-Key management refers to management of cryptographic keys in a cryptosystem. This includes dealing with the generation, exchange, storage, use, crypto-shredding _(destruction)_ and replacement of keys. It includes cryptographic protocol design, key servers, user procedures, and other relevant protocols. See also [Derived Unique Key Per Transaction (DUKPT)](#derived-unique-key-per-transaction).
+Key management refers to management of cryptographic keys in a cryptosystem. This includes dealing with the generation, exchange, storage, use, crypto-shredding *(destruction)* and replacement of keys. It includes cryptographic protocol design, key servers, user procedures, and other relevant protocols. See also [Derived Unique Key Per Transaction (DUKPT)](#derived-unique-key-per-transaction).
 
 ### Key Rotation
 
@@ -534,7 +542,7 @@ Key rotation in card processing is when an encryption key is expired after a tim
 
 ### Leased Line
 
-Dedicated communications channel leased from a common carrier; leased lines usually can handle greater transmission speeds than the dial-up telephone system. Leased lines from the telephone company can be _"conditioned"_ _(electronically fine-tuned)_, which can reduce transmission error rates.
+Dedicated communications channel leased from a common carrier; leased lines usually can handle greater transmission speeds than the dial-up telephone system. Leased lines from the telephone company can be *"conditioned"* *(electronically fine-tuned)*, which can reduce transmission error rates.
 
 ### Load
 
@@ -550,7 +558,7 @@ Summary Data accumulated at the merchant’s device.
 
 ### Longitudinal Redundancy Check
 
-A Longitudinal Redundancy Check _(LRC)_ is a verification value that ensures that no data have been lost in the stripe reading process. The LRC is equivalent to a check digit of the entire track, including the control characters.
+A Longitudinal Redundancy Check *(LRC)* is a verification value that ensures that no data have been lost in the stripe reading process. The LRC is equivalent to a check digit of the entire track, including the control characters.
 
 ### Lost Card
 
@@ -558,7 +566,7 @@ A bank card that has been reported to the credit issuer as lost or misplaced by 
 
 ### Luhn Check
 
-The Luhn algorithm or Luhn formula, also known as the _"modulus 10"_ or _"mod 10"_ algorithm, is a simple checksum formula used to validate credit card numbers.
+The Luhn algorithm or Luhn formula, also known as the *"modulus 10"* or *"mod 10"* algorithm, is a simple checksum formula used to validate credit card numbers.
 
 ---
 
@@ -574,11 +582,11 @@ A payment made with a traditional card that has a magnetic stripe on the back. A
 
 ### Mastercard Assigned ID
 
-Mastercard Assigned ID _(MAID)_ is an identifier assigned by Mastercard to identify a specific merchant who is registered with Mastercard for specific fees, special interchange treatment, or participation in select acceptance programs.
+Mastercard Assigned ID *(MAID)* is an identifier assigned by Mastercard to identify a specific merchant who is registered with Mastercard for specific fees, special interchange treatment, or participation in select acceptance programs.
 
 ### Mail/Telephone Order Transaction
 
-The Mail/Telephone Order Transaction _(MOTO)_ is a purchase of goods or services where the cardholder is not present at the point of sale.
+The Mail/Telephone Order Transaction *(MOTO)* is a purchase of goods or services where the cardholder is not present at the point of sale.
 
 ### Market Specific Authorization
 
@@ -606,7 +614,7 @@ A code associated with the reason a recurring payment transaction has been decli
 
 ### Merchant Category Code
 
-The Merchant Category Code _(MCC)_ is an industry standard [four-digit number](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides. Also known as Standard Industrial Classification (SIC).
+The Merchant Category Code *(MCC)* is an industry standard [four-digit number](?path=docs/Resources/Master-Data/Merchant-Category-Code.md) used to classify a business by the type of goods or services it provides. Also known as Standard Industrial Classification (SIC).
 
 ### Merchant Group
 
@@ -638,7 +646,7 @@ A modulation/demodulation device that provides compatibility between input/outpu
 
 ### mPOS
 
-A mobile acceptance solution _(mPOS)_ uses a mobile telecommunications device that is not solely dedicated to POS functions and can wirelessly communicate across open networks to accept a card payment. The solution will typically include a hardware attachment for the purpose of card reading and/or PIN entry.
+A mobile acceptance solution *(mPOS)* uses a mobile telecommunications device that is not solely dedicated to POS functions and can wirelessly communicate across open networks to accept a card payment. The solution will typically include a hardware attachment for the purpose of card reading and/or PIN entry.
 
 ### Multiple Authorizations
 
@@ -650,7 +658,7 @@ A communication line system having more than one terminal connected to the same 
 
 ### Merchant Verification Value
 
-Merchant Verification Value _(MVV)_ is an identifier assigned by Visa to identify a merchant who is registered with Visa for specific fees, special interchange treatment, or participation in select acceptance programs.
+Merchant Verification Value *(MVV)* is an identifier assigned by Visa to identify a merchant who is registered with Visa for specific fees, special interchange treatment, or participation in select acceptance programs.
 
 ---
 
@@ -698,7 +706,7 @@ A cryptographically secure representation of payment instrument details for use 
 
 ### Payment Card Industry Data Security Standard
 
-Payment Card Industry Data Security Standard _(PCI DSS)_ is the published security standards for the handling of payment card data. For more information visit the [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
+Payment Card Industry Data Security Standard *(PCI DSS)* is the published security standards for the handling of payment card data. For more information visit the [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
 ### PIN
 
@@ -706,11 +714,11 @@ A PIN also known as a Personal Identification Number, is a unique 4 to 12 digit 
 
 ### Practical Extraction and Report Language
 
-Practical Extraction and Report Language _(Perl)_ is a popular programming language used for web server applications. It can be used for creating interactive forms and CGI programs.
+Practical Extraction and Report Language *(Perl)* is a popular programming language used for web server applications. It can be used for creating interactive forms and CGI programs.
 
 ### Point-of-Sale
 
-Point-of-Sale _(POS)_ is the point at which a product is paid for. [In-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions are conducted by a terminal or software. [Online](?path=docs/Getting-Started/Getting-Started-Online.md) transactions are conducted by a software on their online store or mobile app.
+Point-of-Sale *(POS)* is the point at which a product is paid for. [In-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions are conducted by a terminal or software. [Online](?path=docs/Getting-Started/Getting-Started-Online.md) transactions are conducted by a software on their online store or mobile app.
 
 ### Post-Auth
 
@@ -734,7 +742,7 @@ Prepaid Closed Loop is a [gift card](?path=docs/Resources/Guides/Payment-Sources
 
 ### Recurring Transaction
 
-A transaction where the merchant charges for goods or services at a defined frequency _(Example: a monthly subscription)_.
+A transaction where the merchant charges for goods or services at a defined frequency *(Example: a monthly subscription)*.
 
 ### Real-time
 
@@ -758,7 +766,7 @@ A dynamic, reflective, general purpose object-oriented programming language. Rub
 
 ### Ruby on Rails
 
-An open-source web application framework for the Ruby programming language. It is often referred to as _'Rails'_ or _'RoR'_. It is intended to be used with an Agile development methodology, which is often utilized by web developers for its suitability for short, client-driven projects.
+An open-source web application framework for the Ruby programming language. It is often referred to as *'Rails'* or *'RoR'*. It is intended to be used with an Agile development methodology, which is often utilized by web developers for its suitability for short, client-driven projects.
 
 ---
 
@@ -778,7 +786,7 @@ The [value](?path=docs/Resources/Guides/Fraud/Security-Code.md#response-values) 
 
 ## Sale
 
-A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided _([cancelled](?path=docs/Resources/API-Documents/Payments/Cancel.md))_ before batching, the merchant funding process begins for this charge. At this point, the merchant can still [return funds](?path=docs/Resources/API-Documents/Payments/Refund.md) to the customer.
+A sale is a customer transaction where the purchase amount is authorized and settled at the same time. If a sale is not voided *([cancelled](?path=docs/Resources/API-Documents/Payments/Cancel.md))* before batching, the merchant funding process begins for this charge. At this point, the merchant can still [return funds](?path=docs/Resources/API-Documents/Payments/Refund.md) to the customer.
 
 <!-- theme: warning -->
 > Settlement time is based on processing network, contact your account manager for more details.
@@ -789,7 +797,7 @@ The subsequent transactions between a customer and a merchant. Commerce Hub supp
 
 ### Self Assessment Questionnaire
 
-The PCI DSS Self-Assessment Questionnaires _(SAQs)_ are self-validation tools intended to assist merchants and service providers in evaluating their compliance with the PCI DSS, ideal for merchants and service providers that are not required to submit a report on compliance, an SAQ is designed as a self-validation tool to assess security for cardholder data. For more information visit the [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
+The PCI DSS Self-Assessment Questionnaires *(SAQs)* are self-validation tools intended to assist merchants and service providers in evaluating their compliance with the PCI DSS, ideal for merchants and service providers that are not required to submit a report on compliance, an SAQ is designed as a self-validation tool to assess security for cardholder data. For more information visit the [PCI Security Standard](https://www.pcisecuritystandards.org/) website.
 
 ### Settlement
 
@@ -811,9 +819,14 @@ A [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) transaction ch
 
 The descriptor that shows up after a transaction has been authorized. If the charge is in a pending state, the soft descriptor will be displayed on the customer's statement.
 
+### Special Handling Rule
+
+A Special Handling Rule is used for [Global Fleet/Petrol BINs](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). These rules leave specific digits in in the track data unencrypted for the POS to prompt for additional information *(e.g., Vehicle Number, Odometer Reading, Driver’s License, etc.)*. More than one Special Handling Rule can be assigned in a BIN Exclusion table, but the Special Handling Rules cannot share a BIN. 
+
+
 ### Stand-In-Processing
 
-Stand-In-Processing _(STIP)_ is a service offered by the Associations that provides transaction processing services on behalf of an unavailable or timed-out issuer.
+Stand-In-Processing *(STIP)* is a service offered by the Associations that provides transaction processing services on behalf of an unavailable or timed-out issuer.
 
 ### Start Sentinel
 
@@ -833,7 +846,7 @@ A merchant that contracts with a [payment facilitator](?path=docs/Resources/Guid
 
 ### Supplemental Nutrition Assistance Program
 
-Supplemental Nutrition Assistance Program _(SNAP)_, formerly known as Food Benefit, it is a program to provide nutrition assistance to eligible individuals and families.
+Supplemental Nutrition Assistance Program *(SNAP)*, formerly known as Food Benefit, it is a program to provide nutrition assistance to eligible individuals and families.
 
 ### Surcharge Fees
 
@@ -844,7 +857,7 @@ A surcharge, also known as checkout fee, is an extra fee charged by a merchant w
 
 ### Synchronous Communications
 
-High-speed transmission and synchronous communications are the transmission and recognition of long groups of characters at a time. Both the sending and receiving devices are set to the same synchronization of pulses _(BITS)_.
+High-speed transmission and synchronous communications are the transmission and recognition of long groups of characters at a time. Both the sending and receiving devices are set to the same synchronization of pulses *(BITS)*.
 
 <!-- theme : warning -->
 > Not all processors and acquirers allow surcharge fees. For more information, please contact your account representative.
@@ -855,11 +868,11 @@ High-speed transmission and synchronous communications are the transmission and 
 
 ### TeleCheck ECA
 
-The TeleCheck Electronic Check Acceptance® _(ECA®)_ is a service that converts a paper check into an electronic item at the point of sale.
+The TeleCheck Electronic Check Acceptance® *(ECA®)* is a service that converts a paper check into an electronic item at the point of sale.
 
 ### Transport Layer Security
 
-Transport Layer Security _(TLS)_, previously known as Secure Sockets Layer _(SSL)_ is a cryptographic protocol designed to provide communications security over a computer network. Commerce Hub requires that integrations using our RESTful API have TLS to meet PCI compliance requirements.
+Transport Layer Security *(TLS)*, previously known as Secure Sockets Layer *(SSL)* is a cryptographic protocol designed to provide communications security over a computer network. Commerce Hub requires that integrations using our RESTful API have TLS to meet PCI compliance requirements.
 
 ### Transponder
 
@@ -867,7 +880,7 @@ A transponder is a wireless communications device that picks up and automaticall
 
 ### Triple DES
 
-Triple DES _(3DES or TDES)_ is the Triple Data Encryption Algorithm _(TDEA or Triple DEA)_ block cipher, which applies the Data Encryption Standard _(DES)_ cipher algorithm three times to each data block.
+Triple DES *(3DES or TDES)* is the Triple Data Encryption Algorithm *(TDEA or Triple DEA)* block cipher, which applies the Data Encryption Standard *(DES)* cipher algorithm three times to each data block.
 
 ### Token Cryptogram
 
@@ -887,7 +900,7 @@ A general-purpose operating system that can implement a Perl Module or Ruby Clie
 
 ### Universal Product Code
 
-Universal Product Code _(UPC)_ is the barcode used for scanning of trade items at the point of sale.
+Universal Product Code *(UPC)* is the barcode used for scanning of trade items at the point of sale.
 
 ---
 
@@ -903,6 +916,6 @@ A void or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) is a t
 
 ### Virtual Point of Sale
 
-Virtual Point of Sale _(VPOS)_ or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
+Virtual Point of Sale *(VPOS)* or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
 
 ---
