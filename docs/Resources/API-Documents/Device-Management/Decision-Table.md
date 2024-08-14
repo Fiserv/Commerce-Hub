@@ -26,7 +26,7 @@ The Dynamic Decision Table is used to process [fleet](?path=docs/Resources/Guide
 <!-- type: card
 title: Cloud BIN Service
 description: Configure non-branded cards to take preemptive actions before processing.
-link: ?path=docs/Resources/API-Documents/Device-Management/CAPK.md
+link: ?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Download.md
 -->
 
 <!-- type: card

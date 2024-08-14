@@ -27,7 +27,7 @@ titles: Request, Response
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/accounts/information-lookup`
 
-Account information lookup request using PaymentCard.
+Account information lookup request for a Global BIN using PaymentCard.
 
 ```json
 
@@ -116,13 +116,13 @@ Account information lookup response.
 
 <!--
 type: tab
-titles: Request, BIN Response, Decision Table Response
+titles: Request, Response
 -->
 
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/accounts/information-lookup`
 
-Account information lookup request using PaymentCard.
+Account information lookup request for a Cloud BIN using PaymentEMV.
 
 ```json
 
@@ -154,7 +154,7 @@ Account information lookup request using PaymentCard.
 type: tab
 -->
 
-Account information lookup response for a card not in the Global BIN file and setup for [POS Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md).
+Account information lookup response for a card not in the [Global BIN file](#global-bin-request) and setup for [Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Download.md).
 
 ```json
 {
