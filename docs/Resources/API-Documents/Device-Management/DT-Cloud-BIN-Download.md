@@ -4,23 +4,35 @@ tags: [Device Management, Decision Table, API Reference, Device, Terminal, Point
 
 # POS Decision Table: Cloud BIN Service
 
-Commerce Hub's Cloud BIN Service will return the configured 6 digit BIN ranges on the merchant account as a POS Decision Table. The device may use this table to determine when it should require certain positions of the card data to be in the clear *(unencrypted)*. An array of 6 digit BIN ranges defines what details of the card data is to be returned in the clear for each of the ranges.
-
-The response will include an array with the `accountRangeLow` and `accountRangeHigh` value for any configured ranges that should be sent to Commerce Hub's Cloud BIN Service for additional information. The device will make an [Information Lookup request](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) that will return the required positions as `additionalCardData` for the `primaryCardData`.
+Commerce Hub's Cloud BIN Service will return the configured 6-digit BIN ranges on the merchant account as a POS Decision Table. The device may use this table to determine when it should require certain positions of the card data to be in the clear *(unencrypted)*. The POS Decision Table is an array of 6-digit BIN ranges defining what cards should request more information from Commerce Hub's Cloud BIN Service.
 
 <!-- theme: info-->
 > The Cloud BIN Table needs to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
-## Device configuration requirements
+## Response data
 
-The device needs to be configured to route cards and store the BIN information.
+The response will include an array with the `accountRangeLow` and `accountRangeHigh`. Cards within the configured ranges should be sent to [Commerce Hub's Cloud BIN Service](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md) for additional information.
 
-- The device should know if it can support 8-digit BINs locally and be configured with the merchant's known card ranges.
-- For transactions where the first 6-digits of the card are found in the POS Decision Table, the device will request additional information.
-  - This will exclude local 8-digit BIN range support on devices.
-- For transactions where the device identifies a card not found in the POS Decision Table or the device routing table, it should validate the data is encrypted and send to the Cloud BIN Service, which will return the information lookup details.
+ Commerce Hub's Cloud BIN Service will decrypt the [encrypted card data](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) and provide a response back to the device including the `additionalCardData` *(positions)* and the `primaryCardData`.
+
+- **For PCI data:** Commerce Hub will return the first 8-digits of the BIN
+- **For non-PCI data:** Commerce Hub will return the full card data
+
+---
+
+## Device configuration
+
+The device will need to integrate with Commerce Hub's APIs and be configured to route cards and store the BIN information. The device should know if it can support 8-digit BINs locally and be configured with the merchant's known card ranges.
+
+<!-- danger -->
+> The device should not route BINs included in the Exclusion File, Special Handling or standard branded cards that do not require an 8-digit BIN.
+
+The device will request additional information for the following:
+
+- Transactions where the first 6-digits of the card are found in the POS Decision Table.
+- Transactions where the device identifies a card not found in the POS Decision Table or the device routing table.
 
 ---
 

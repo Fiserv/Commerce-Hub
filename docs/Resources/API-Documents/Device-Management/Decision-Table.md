@@ -8,11 +8,11 @@ Commerce Hub's POS Decision Table adds the ability for POS devices to take preem
 
 ---
 
-## Table types
+## Table APIs
 
-The Cloud BIN Table can be used to take advantage of [tokenization service](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for non-branded cards.
+The Cloud BIN Service can be used to take advantage of Commerce Hub features like [tokenization service](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) for non-branded cards.
 
-- The `cardData` in the clear *(unencrypted)* for non-branded cards like [gift](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md), loyalty and [private label *(PLCC)*](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) that aren't processed through Commerce Hub.
+- Used to obtain card data in the clear *(unencrypted)* for non-branded cards like [gift](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md), loyalty and [private label *(PLCC)*](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md) that aren't processed through Commerce Hub.
 
 <!---
 The Dynamic Decision Table is used to process [fleet](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md) and EBT transactions.
@@ -24,7 +24,7 @@ The Dynamic Decision Table is used to process [fleet](?path=docs/Resources/Guide
 <!-- type: row -->
 
 <!-- type: card
-title: Cloud BIN Table
+title: Cloud BIN Service
 description: Configure non-branded cards to take preemptive actions before processing.
 link: ?path=docs/Resources/API-Documents/Device-Management/CAPK.md
 -->

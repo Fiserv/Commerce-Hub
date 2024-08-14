@@ -4,13 +4,13 @@ tags: [Account Information, Card Details, Card Meta Data, BIN]
 
 # Account Information Lookup
 
-Account information lookup _(BIN lookup)_ is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) or `cardDetails` of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Account information lookup *(BIN lookup)* is used to obtain the `cardDetails` *([card meta data](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 The card details can be used for:
 
-- **Card Processing Requirements (CPS):** based on brand, function, type _([commercial](?path=docs/Resources/Guides/Level23/Level23.md), non-corporate)_
-- **[Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
-- **[Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md):** take preemptive actions on accounts being presented for transactions
+- **Card processing requirements:** based on brand, function, type *([commercial](?path=docs/Resources/Guides/Level23/Level23.md), non-corporate)*
+- **[Directed routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
+- **[POS Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md):** allows a device to take preemptive actions on accounts being presented for transactions
 
 <!-- theme: info -->
 > Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
@@ -128,9 +128,17 @@ Account information lookup request using PaymentCard.
 
 {
   "source": {
-    "sourceType": "PaymentCard",
+    "sourceType": "PaymentEMV",
+    "emvData": "0249F3704833A12329F1002AB34",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
+      "deviceType": "INGENICO",
+      "keyId": "88000000022"
+    },
     "card": {
-      "cardData": "4005550000000019"
+      "category": "GIFT"
     }
   },
   "merchantDetails": {
@@ -146,7 +154,7 @@ Account information lookup request using PaymentCard.
 type: tab
 -->
 
-Account information lookup response for a card not in the BIN file and setup for [Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md).
+Account information lookup response for a card not in the Global BIN file and setup for [POS Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md).
 
 ```json
 {
@@ -177,7 +185,7 @@ Account information lookup response for a card not in the BIN file and setup for
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
-- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Card Meta Data *(Card Details)*](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Commercial Card Processing](?path=docs/Resources/Guides/Level23/Level23.md)
 - [Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md)
 - [Directed Routing](?oath=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
