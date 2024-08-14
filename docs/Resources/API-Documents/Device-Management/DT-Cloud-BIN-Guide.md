@@ -42,9 +42,9 @@ The device will [request additional information](?path=docs/Resources/API-Docume
 
 ---
 
-## Step 5: Request a TransArmor token
+## Step 5: Prompt for additional data
 
-Based on the `cardDetails` submit a [TransArmor tokenization request](?path=docs/Resources/Guides/Payment-Sources/Tokenization/TransAmor.md).
+Based on the `cardDetails` the device should prompt for the required data.
 
 ---
 
