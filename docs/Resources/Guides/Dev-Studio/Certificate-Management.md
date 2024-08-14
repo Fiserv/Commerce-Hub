@@ -4,7 +4,7 @@ tags: [Account Management, Enterprise Portal, Key Management, Certificate, CSR, 
 
 # Certificate Signing Requests
 
-A developer can create Certificate Signing Requests (CSR) from the Developer Studio Dashboard. A CSR allows integration with [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md) and other integrations that require a PEM cerfificate.
+A developer can create Certificate Signing Requests (CSR) from the Developer Studio Dashboard. A CSR allows integration with [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md) and other integrations that require a PEM certificate.
 
 ---
 
@@ -51,6 +51,7 @@ Click the download icon, review the steps and click the OK button to save the CS
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---

@@ -4,7 +4,7 @@ tags: [Account Management, Enterprise Portal, Key Management, API Key, API Secre
 
 # API Key Management
 
-A developer can manage their API application Keys and API Secrets from the Developer Studio Dashboard. API Key Management allows you to [create and delete an API Key](#create-an-api-key).
+A developer can manage their API application Keys and API Secrets from the [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md). API Key Management allows you to [create and delete an API Key](#create-an-api-key).
 
 ---
 
@@ -12,23 +12,31 @@ A developer can manage their API application Keys and API Secrets from the Devel
 
 Developers can create and manage API Keys from the Dashboard in the Credentials section.
 
-#### Step 1: Access Developer Studio
+### Step 1: Access Developer Studio
 
 Login to the Developer Studio and access the Developer Dashboard.
 
-#### Step 2: Add a New API Key
+---
 
-Click Add API Key
+### Step 2: Add a New API Key
 
-#### Step 3: Select Merchant Account
+Click Add API Key.
 
-Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) and associated Merchant ID required for integration from the dropdown
+---
 
-#### Step 4: Create an API Name
+### Step 3: Select Merchant Account
 
-Create a API Key Name to identify the project
+Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) and associated Merchant ID required for integration from the dropdown.
 
-#### Step 5: Select Features
+---
+
+### Step 4: Create an API Name
+
+Create a API Key Name to identify the project.
+
+---
+
+### Step 5: Select Features
 
 Select the features to be integrated from the following;
 
@@ -37,9 +45,11 @@ Select the features to be integrated from the following;
 - Data as a Service: Enhanced Data
 - Data as a Service: Return Optimizer
 
-#### Step 6: Create Keys
+---
 
-Click Create to obtain the API Key/Secret
+### Step 6: Create Keys
+
+Click Create to obtain the API Key/Secret.
 
 ---
 
@@ -47,6 +57,7 @@ Click Create to obtain the API Key/Secret
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Account Management](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md)
+- [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 <!---
