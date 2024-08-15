@@ -20,7 +20,7 @@ Commerce Hub supports the following major card brands *(schemes)*.
 
 ## Fleet Card Types
 
-Commerce Hub supports the following fleet card brands *(schemes)*.
+Commerce Hub supports the following Fleet card brands *(schemes)*.
 
 | Payment Method | BIN Format | Length | CH Value| Region |
 | ----- | ----- | :-----: | :-----: | ----- |

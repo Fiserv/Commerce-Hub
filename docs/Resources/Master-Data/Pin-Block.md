@@ -30,7 +30,7 @@ The below table identifies the parameters in the `pinBlock` object.
 
 | Variable | Type | Max Length | Description |
 | -------- | ---- | ------- | -------------------------------|
-| `encryptedPin` | *string* | 2000 | This field contains the Encrypted PIN Block for [debit](?path=docs/Resources/Guides/Debit/Debit.md), EBT, [fleet card](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md) or credit transactions |
+| `encryptedPin` | *string* | 2000 | This field contains the Encrypted PIN Block for [debit](?path=docs/Resources/Guides/Debit/Debit.md), EBT, [Fleet Card](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md) or credit transactions |
 | `keySerialNumber` | *string* | 256 | This field is used to create the base PIN encryption key for DUKPT PIN transactions |
 | `pinEncryptionWorkingKey` | *string* | 2000 | Device PIN Encryption working key *(TKPE)*. A PIN Encryption Key is a used to protect PINs as they are transmitted |
 
