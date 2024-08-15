@@ -184,7 +184,7 @@ Example of a security code verification during a charges request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

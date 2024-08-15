@@ -29,7 +29,7 @@ Example of a DCC rate payload request.
 ```json
 {
   "sourceCurrency": {
-    "total": "20.50",
+    "total": 20.50,
     "currency": "USD"
   },
   "targetCurrency": {

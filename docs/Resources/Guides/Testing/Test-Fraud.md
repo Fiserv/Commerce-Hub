@@ -149,7 +149,7 @@ Example of a velocity control transaction where the dollar amount exceeds the ma
 ```json
 {
   "amount": {
-    "total": "11.00",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -239,7 +239,7 @@ Example of a transaction restriction where a duplicate transaction is submitted.
 ```json
 {
   "amount": {
-    "total": "11.00",
+    "total": 12.40,
     "currency": "USD"
   },
   "source": {
@@ -320,7 +320,7 @@ To verify [positive and negative filters](?path=docs/Resources/Guides/Fraud/Frau
 
 <!--
 type: tab
-titlea: Request, Response
+titles: Request, Response
 -->
 
 Example of a negative filter where the card number has been blocked. 
@@ -331,7 +331,7 @@ Example of a negative filter where the card number has been blocked.
 ```json
 {
   "amount": {
-    "total": "11.00",
+    "total": 12.,
     "currency": "USD"
   },
   "source": {
