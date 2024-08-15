@@ -2,9 +2,9 @@
 tags: [Account Information, Card Details, Card Metadata, BIN]
 ---
 
-# Account Information Lookup
+# Perform an account Information Lookup
 
-Account Information Lookup *(BIN lookup)* is used to obtain the `cardDetails` *([card metadata](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Account Information Lookup *(BIN lookup)* API is used to obtain the `cardDetails` *([card metadata](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 The `cardDetails` can be used for:
 
@@ -12,12 +12,12 @@ The `cardDetails` can be used for:
 - **[Directed routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
 - **[POS Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md):** allows a device to take preemptive actions on accounts being presented for transactions
 
-<!-- theme: info -->
-> Card metadata can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
-
 ---
 
 ## Global BIN request
+
+<!-- theme: info -->
+> Card metadata can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 <!--
 type: tab
@@ -27,19 +27,25 @@ titles: Request, Response
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/accounts/information-lookup`
 
-Account information lookup request for a Global BIN using PaymentCard.
+Account information lookup request for a Global BIN using *PaymentCard*.
 
 ```json
-
 {
   "source": {
     "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019"
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "OpzYI4RDhNVbHM3Fc6sVBASBXX4HHneBwyQTVnkMriCvaHb4MBhNVxljwjMFGaBdJPo4h7GmElBu3xEem....",
+      "encryptionBlockFields": "card.cardData:16",
+      "keyId": "88000000022"
     }
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
   }
 }
-
 ```
 
 [![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
@@ -48,7 +54,10 @@ Account information lookup request for a Global BIN using PaymentCard.
 type: tab
 -->
 
-Account information lookup response.
+Example of a information lookup (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -125,7 +134,7 @@ titles: Request, Response
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/accounts/information-lookup`
 
-Account information lookup request for a Cloud BIN using PaymentEMV.
+Account information lookup request for a Cloud BIN using *PaymentEMV*.
 
 ```json
 
@@ -134,10 +143,10 @@ Account information lookup request for a Cloud BIN using PaymentEMV.
     "sourceType": "PaymentEMV",
     "emvData": "0249F3704833A12329F1002AB34",
     "encryptionData": {
-      "encryptionType": "RSA",
+      "encryptionType": "VERIFONE",
       "encryptionTarget": "TRACK_2",
       "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
-      "deviceType": "INGENICO",
+      "deviceType": "VERIFONE",
       "keyId": "88000000022"
     },
     "card": {
@@ -158,7 +167,12 @@ Account information lookup request for a Cloud BIN using PaymentEMV.
 type: tab
 -->
 
+Example of a information lookup (201: Created) response.
+
 Account information lookup response for a card not in the [Global BIN file](#global-bin-request) and setup for [Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Download.md).
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
