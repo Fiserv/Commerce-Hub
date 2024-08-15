@@ -251,7 +251,7 @@ Example of charges payload request using a reference identifier
   },
 {
   "amount": {
-    "total": "10.00",
+    "total": 12.04,
     "currency": "USD"
   },
   "merchantDetails": {
@@ -298,7 +298,7 @@ Example of a charges (201: Created) response
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 6,
+      "total": 12.04,
       "currency": "USD"
     },
     "processorResponseDetails": {

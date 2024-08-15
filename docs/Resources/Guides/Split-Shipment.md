@@ -120,12 +120,12 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request using `splitShipment`.
+Example of a capture request using `splitShipment`.
 
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "transactionDetails": {

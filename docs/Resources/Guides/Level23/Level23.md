@@ -271,7 +271,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 98.44,
       "currency": "USD"
     }
   },
@@ -597,7 +597,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
     }
   },
