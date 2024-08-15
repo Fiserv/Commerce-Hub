@@ -162,7 +162,7 @@ Example of a scheduled Mastercard charge payload request using `storedCredential
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -287,7 +287,7 @@ Example of an unscheduled charge payload request using `storedCredentials`.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

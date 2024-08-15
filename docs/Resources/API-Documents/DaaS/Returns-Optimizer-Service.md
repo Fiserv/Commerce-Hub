@@ -127,7 +127,7 @@ Example of a Returns Optimizer payload request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

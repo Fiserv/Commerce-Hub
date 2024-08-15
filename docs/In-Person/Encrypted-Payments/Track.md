@@ -218,7 +218,7 @@ The example below contains the minimum [parameters](#parameters-1) for a success
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

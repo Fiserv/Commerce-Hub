@@ -44,7 +44,7 @@ Example of Payment URL Request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "customer": {
@@ -74,7 +74,7 @@ type: tab
 title: Response
 -->
 
-Example of Payment Url (200: Success) Response.
+Example of Payment URL (200: Success) Response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

@@ -110,7 +110,7 @@ The below table identifies additional arrays that may be returned in the inquiry
     "paymentReceipt": {
       "approvedAmount": {
         "currency": "USD",
-        "total": "690"
+        "total": 12.04
       },
       "processorResponseDetails": {
         "approvalCode": "OK6982",
