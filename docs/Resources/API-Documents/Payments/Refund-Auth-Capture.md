@@ -97,7 +97,7 @@ Example of an authorization refund payload request.
     "referenceTransactionId": "84356531348"
   },
   "amount": {
-    "total": "10.00",
+    "total": 12.04,
     "currency": "USD"
   },
   "transactionDetails": {

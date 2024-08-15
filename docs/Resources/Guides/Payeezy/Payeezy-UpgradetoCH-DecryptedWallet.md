@@ -25,7 +25,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallet
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

@@ -58,12 +58,12 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a Parital Refund Payload Request.
+Example of a partial refund request.
 
 ```json
 {
   "amount": {
-    "total": "1.50",
+    "total": 12.04,
     "currency": "USD"
   },
   "merchantDetails": {
@@ -79,7 +79,7 @@ Example of a Parital Refund Payload Request.
 type: tab
 -->
 
-Example of a Partial Refund (201: Success) Response.
+Example of a partial refund (201: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

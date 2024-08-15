@@ -196,7 +196,7 @@ Example of an Enhanced Data payload request
 ```json
 {
    "amount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
    },
    "source":{
@@ -237,14 +237,14 @@ Example of an Enhanced Data payload request
             "type": "CREDIT_CARD",
             "count": "1",
             "amount":{
-               "total": "7.04"
+               "total": 7.04
             }
          },
          {
             "type": "GIFT_CARD",
             "count": "1",
             "amount": {
-               "total": "5.00"
+               "total": 5.00
             }
          }
       ]
@@ -342,7 +342,7 @@ Example of an Enhanced Data payload request
 ```json
 {
    "amount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
    },
    "source":{
@@ -380,14 +380,14 @@ Example of an Enhanced Data payload request
             "type": "CREDIT_CARD",
             "count": "1",
             "amount":{
-               "total": "7.04"
+               "total": 7.04
             }
          },
          {
             "type": "GIFT_CARD",
             "count": "1",
             "amount": {
-               "total": "5.00"
+               "total": 5.00"
             }
          }
       ]

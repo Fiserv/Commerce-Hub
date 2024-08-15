@@ -90,7 +90,7 @@ The body of the transaction request differs based on the transaction being initi
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "paymentSource": {
@@ -116,12 +116,12 @@ The body of the transaction request differs based on the transaction being initi
 
 ## API Call Example
 
-A standard API call to execute a charges request.
+A standard API call to execute a Charges API request.
 
 ```javascript
 {
   method: "POST",
-  url: "https://cert.api.fiservapps.com/ch/payments/v1/charges",
+  url: "https://connect-cert.fiservapis.com/ch/payments/v1/charges",
   headers: {
       "Content-Type": "application/json",
       "Client-Request-Id": "1000000012",
@@ -132,7 +132,7 @@ A standard API call to execute a charges request.
   },
   body: JSON.stringify({
     amount: {
-      total: "12.04",
+      total: 12.04,
       currency: "USD"
     },
     paymentSource: {
