@@ -20,7 +20,7 @@ The POS Decision Table is setup with a range of 6-digit BINs in Merchant Configu
 
 ## Step 2: Configure the device
 
-The device will need to integrate with Commerce Hub's APIs and be configured to route cards and store the BIN information. The device should know if it can support 8-digit BINs locally and be configured with the merchant's known card ranges.
+The device will need to integrate with Commerce Hub's APIs and be configured to route cards and store the BIN information. The device should know if it can support 8-digit BINs locally and be configured with the merchant's known card ranges. This data is stored in a BIN Exclusion File along with Special Handling Rules.
 
 ---
 
@@ -31,6 +31,8 @@ The device will [download the POS Decision Table](?path=docs/Resources/API-Docum
 ---
 
 ## Step 4: Request additional information
+
+The device will utilize the initial 6-digits of the BIN for routing decisions to the Cloud BIN Service.
 
 <!-- danger -->
 > The device should not route BINs included in the Exclusion File, Special Handling or standard branded cards that do not require an 8-digit BIN.

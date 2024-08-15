@@ -13,7 +13,7 @@ Commerce Hub's Cloud BIN Service will return the configured 6-digit BIN ranges o
 
 ## Table data
 
-The response will include an array with the `accountRangeLow` and `accountRangeHigh`. Cards within the configured ranges should be sent to [Commerce Hub's Cloud BIN Service](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md#cloud-bin-request) for additional information.
+The response will include an array with the `accountRangeLow` and `accountRangeHigh`. Cards within the configured ranges should be sent to [Commerce Hub's Information Lookup API](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md#cloud-bin-request) for additional information.
 
 ---
 
@@ -47,9 +47,16 @@ The example below contains the minimum [parameters](#parameters) for an subseque
 }
 ```
 
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/tms/v1/pos-decision-table)
+
 <!--
 type: tab
 -->
+
+Example of a Cloud BIN download (201: Created) response.
+
+<!-- theme: info -->
+> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
