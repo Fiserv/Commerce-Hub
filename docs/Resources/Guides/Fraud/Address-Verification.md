@@ -191,7 +191,7 @@ titles: Request, Response
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

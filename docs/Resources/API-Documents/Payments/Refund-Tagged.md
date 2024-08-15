@@ -90,7 +90,7 @@ Example of a refunds payload request.
   },
 {
   "amount": {
-    "total": "10.00",
+    "total": 12.04,
     "currency": "USD"
   },
   "merchantDetails": {
