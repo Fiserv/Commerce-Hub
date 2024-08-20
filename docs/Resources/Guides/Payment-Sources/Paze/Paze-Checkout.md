@@ -26,7 +26,7 @@ Send a [Credentials API request](?path=docs/Resources/API-Documents/Security/Cre
 The following code snippet is an example HTML script tag for loading the SDK:
 
 ```html
-<script src="https://commercehub-secure-data-capture.fiservapps.com/3.1.7/checkout.js"></script>
+<script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/checkout.js"></script>
 ```
 
 ---
@@ -48,8 +48,6 @@ const pazePromise = window.fiserv.components.paze({
 ---
 
 ## Step 4: Launch Paze UI
-
-to prompt user to select payment method
 
 On invoking `selectPaymentMethod` the Checkout SDK sets up and hands over control to the third-party Paze SDK.
 
@@ -142,20 +140,10 @@ The `selectPaymentMethod` returns a Promise that on success resolves to a JavaSc
 
 ## Step 5: Submit Paze payment method
 
-The parameters object is expected to have the same fields as `selectPaymentMethod`, if nothing has changed since it was previously called then parameter is optional.
+The parameters object is expected to have the same fields as `selectPaymentMethod`, if nothing has changed since it was previously called then parameter is optional. The `submitPromise` in the example code will resolve to the card capture API.
 
 ```javascript
 const submitPromise = paze.submit(params);
-```
-
-The `submitPromise` in the example code above will resolve to the card capture API response body:
-
-```javascript
-{
-  "gatewayResponse": {
-    // ...gateway response details here...
-  },
-}
 ```
 
 ---
@@ -163,6 +151,9 @@ The `submitPromise` in the example code above will resolve to the card capture A
 ## Step 6: Submit an API request
 
 Submit a [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) or [Tokens API request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) with the `sourceType` of *PaymentSession* and the `sessionID` from the [credentials](#step-1-acquire-credentials) request.
+
+<!-- theme: info -->
+> If a successful response is not received, best practice is to still submit the transaction. If an [error occurs](?path=docs/Resources/Guides/Payment-Sources/Paze/Paze-Error-Handling.md), the iFrame will need to be re-displayed so the customer can re-submit their payment information.
 
 <!--
 type: tab
