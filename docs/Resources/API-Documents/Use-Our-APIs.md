@@ -63,13 +63,13 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 
 | Variable | Type | Description |
 | ----- | :-----: | ----- |
-| `Content-Type` | *string* | The content type. Valid Value (application/json) |
-| `Client-Request-Id` | *string* | A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUIDv4 format. |
+| `Content-Type` | *string* | Defines the content type as *application/json* |
+| `Client-Request-Id` | *string* | A client-generated ID for request tracking and signature creation, unique per request. This is also used for [idempotency control](?path=docs/Resources/Guides/Idempotency.md). Recommended 128-bit UUIDv4 format. |
 | `Api-Key` | *string* | [API Key](?path=(?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)) associating the requests with the appropriate account in the Developer Portal |
 | `Timestamp` | *integer* | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
-| `Accept-Language` | *string* | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
+| `Accept-Language` | *string* | Contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client, example: *en-US* or *fr-CA*. |
 | `Authorization` | *string* | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
-| `Auth-Token-Type`| *string* | Indicates Authorization type HMAC or AccessToken.|
+| `Auth-Token-Type`| *string* | Indicates Authorization type *HMAC* or *AccessToken*.|
 | `Message-Digest` | *string* | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) or Hosted Payment Page request. |
 
 ---
