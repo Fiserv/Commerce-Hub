@@ -15,17 +15,11 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
-| `billPaymentType` | *string* | 12 | Indicates the type of [bill payment](#bill-payment-type). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. | 
+| `billPaymentType` | *string* | 12 | Indicates the [type of bill payment](#bill-payment-type). Required for Charges, Cancel and Capture transactions where a bill payment is being processed. |
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
-| `installments` | *object* | N/A | Used in [installment bill payments](?path=docs/Resources/Guides/Bill-Payments/Installment-Payment.md) |
-| `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
-| `deferredPayments` | *object* | N/A | Used in defferred bill payments |
 | `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md) transactions. |
-| `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
 | `privateLabel` | *object* | N/A | Additional attributes used to process [private label payment cards (PLCC)](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md). |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
-
----
 
 <!--
 type: tab
@@ -35,61 +29,33 @@ JSON string format for `additionalDataCommon`:
 
 ```json
 {
-   "additionalDataCommon":{
-      "additionalData":{
-         "baiFlag": "PERSON_TO_PERSON",
-         "ecomURL":"https://www.somedomain.com",
-         "requestedTestResponseCode":"NO_CONNECTION_AVAILABLE",
-         "emvParameterDownloadIndicator":true
-      },
-      "directedRouting":{
-         "network": "VISA",
-         "cardFunction": "CREDIT",
-         "processor": "fiserv"
-      },
-      "subMerchant":{ // Future Release
-         "id": "9999", // Future Release
-         "name": "Some Business", // Future Release
-         "street": "123 Main Street", // Future Release
-         "city": "Atlanta", // Future Release
-         "state": "GA", // Future Release
-         "postalCode": "30303-001", // Future Release
-         "country": "US", // Future Release
-         "taxId": "123456789" // Future Release
-      },
-      "billPaymentType": "RECURRING",
-      "installments":{
-         "installmentAmount": 20.00, // Future Release
-         "lastInstallmentAmount": 20.00, // Future Release
-         "interestRate": 10, // Future Release
-         "paymentFirstDay": 10.00, // Future Release
-         "invoiceId": "534242", // Future Release
-         "invoiceDate": "05-01-2020", // Future Release
-         "deliveryDate": "05-01-2020", // Future Release
-         "dueDate": "05-01-2030", // Future Release
-         "installmentCount": 12 
-      },
-      "deferredPayments":{ // Future Release
-         "numberOfPayments": "5", // Future Release
-         "paymentPlan": "PAY_LATER", // Future Release
-         "timePeriod": "12" // Future Release
-      },
-      "recurringPayments":{
-        "frequency": "MONTHLY",
-        "expiry": "05-05-2025"
-      },
-      "privateLabel":{
-         "specialFinanceIndicator": "24/0",
-         "creditPlanNumber": "00100",
-         "minimumSpendExemptIndicator": "EXEMPT"
-      },
-      "customFields":{ 
-         "keyValuePair":{ 
-            "key": "customFieldExample", 
-            "value": "custom value example" 
-         }
-      }
-   }
+  "additionalDataCommon": {
+    "additionalData": {
+      "baiFlag": "PERSON_TO_PERSON",
+      "ecomURL": "https://www.somedomain.com",
+      "requestedTestResponseCode": "NO_CONNECTION_AVAILABLE",
+      "emvParameterDownloadIndicator": true
+    },
+    "directedRouting": {
+      "network": "VISA",
+      "cardFunction": "CREDIT",
+      "processor": "fiserv"
+    },
+    "billPaymentType": "RECURRING",
+    "privateLabel": {
+      "specialFinanceIndicator": "24/0",
+      "creditPlanNumber": "00100",
+      "minimumSpendExemptIndicator": "EXEMPT"
+    },
+    "customFields": {
+      "keyValuePair": [
+        {
+          "key": "customFieldExample",
+          "value": "custom value example"
+        }
+      ]
+    }
+  }
 }
 ```
 
@@ -115,7 +81,8 @@ The below table identifies the valid values of the `billPaymentType`.
 
 ## Additional Data
 
-Additional Data identifies various elments based on the specific transaction type.
+Additional Data identifies various elements based on the specific transaction type.
+
 <!--
 type: tab
 titles: additionalData, JSON Example
@@ -141,13 +108,9 @@ JSON string format for `additionalData`:
 
 ```json
 {
-   "additionalData":{
-      "baiFlag": "PERSON_TO_PERSON", // Future Release
-      "billPayment": false, // Future Release
-      "ecomURL": "https://www.somedomain.com",
-      "requestedTestResponseCode": "705", // Future Release
-      "emvParameterDownloadIndicator": true // Future Release
-   }
+  "additionalData": {
+    "ecomURL": "https://www.somedomain.com"
+  }
 }
 ```
 
