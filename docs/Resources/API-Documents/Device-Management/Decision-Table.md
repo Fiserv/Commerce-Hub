@@ -4,7 +4,7 @@ tags: [Device Management, Decision Table, API Reference, Device, Terminal, Point
 
 # POS Decision Tables
 
-Commerce Hub's POS Decision Table add the ability for POS devices to take preemptive actions on accounts being presented for transactions.
+Commerce Hub's POS Decision Tables add the ability for POS devices to take preemptive actions on accounts being presented for transactions.
 
 ---
 
