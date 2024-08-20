@@ -291,8 +291,8 @@ Example of a charge (201: Created) response.
 
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
 - [Domains Whitelist](?path=docs/Resources/API-Documents/Security/Whitelist.md)
-- [Paze Error Handling](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Events.md)
-- [Checkout Solutions](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
-- [Checkout Version Release Notes](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md)
+- [Paze Error Handling](?path=docs/Resources/Guides/Payment-Sources/Paze/Paze-Error-Handling.md)
+- [Checkout Solutions](?path=docs/Online-Mobile-Digital/Checkout/CHeckout.md)
+- [Checkout Version Release Notes](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md)
 
 ---
