@@ -1,8 +1,8 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, Message Digest, Authentication]
+tags: [Card Not Present, Card Present, Message Digest, Authentication. API Reference]
 ---
 
-# Generate Message Digest
+# Generate a Message Digest
 
 To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the header when integrating with Commerce Hub's [API Only card capture service](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) or Hosted Payment Pages.
 
@@ -23,11 +23,11 @@ Generate the message digest required for use with our APIs.
 > Encrypted Message Digest Example: 2e5a47d16aaafd6a13303d4e211bbce1a771d9cfa412ac45deb38a558037fd38
 
 ```javascript
-function guid() {	// create clientRequestId
-	function s4() {
-		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-	}
-	return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
+function guid() { // create clientRequestId
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    }
+    return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
 }
 
 const clientRequestId = guid();
@@ -40,7 +40,7 @@ const messageDigest = CryptoJS.SHA256(rawSignature);
 
 ---
 
-## Sample Header
+## Sample message digest
 
 ```json
 {

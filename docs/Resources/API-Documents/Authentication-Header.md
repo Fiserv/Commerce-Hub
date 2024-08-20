@@ -1,8 +1,8 @@
 ---
-tags: [Commerce Hub, Card Not Present, Card Present, HMAC, Header, Authentication]
+tags: [Card Not Present, Card Present, HMAC, Header, Authentication, API Reference]
 ---
 
-# Generate HMAC Authentication
+# Generate an HMAC authentication
 
 To ensure data integrity, prevent replay attacks, and eliminate stale requests, Authentication is required as part of the [header](?path=docs/Resources/API-Documents/Use-Our-APIs.md).
 
@@ -10,9 +10,19 @@ To ensure data integrity, prevent replay attacks, and eliminate stale requests, 
 
 - **Signature Algorithm:** SHA256 HMAC
 - **Signature Encoding:** Base64
-- **Signed With:** Developer App [Secret Key](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+- **Signed With:** API Secret Key
 
-The message data for the signature is the following items concatenated: `Api-Key`, `Client-Request-Id`, `Timestamp`, `Request-Body`.
+The message data for the signature is the following items concatenated:
+
+| Header | Description |
+| ----- | ----- |
+| `Auth-Token-Type` | HMAC used to ensure the request has not been tampered with during transmission |
+| `Api-Key` | [API Key](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md) associating the requests with the appropriate account and [environment](?path=docs/Resources/API-Documents/Use-Our-APIs.md) in the Developer Portal |
+| `Timestamp` | Epoch timestamp in milliseconds in the request from a client system
+| `Client-Request-Id` | A client-generated unique ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUIDv4 format. |
+
+
+`Api-Key`, `Client-Request-Id`, `Timestamp`, `Request-Body`.
 
 <!-- theme: info -->
 > The `Client-Request-Id` is a client generated number that is unique for each request. It is used as nonce and validated against all Client-Request-Ids received by Commerce Hub within a predetermined time frame *(five minutes is the default)* to prevent replay attacks. Commerce Hub uses the timestamp of the request to validate against stale requests. Any request older than the specified duration is rejected.

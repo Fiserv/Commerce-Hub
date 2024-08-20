@@ -2,7 +2,7 @@
 tags: [Security, Credentials, Access Token, API Reference]
 ---
 
-# Security Credentials
+# Request security credentials
 
 A security credentials request is used to obtain the credentials needed in an authentication request or submitting financial transactions.
 
