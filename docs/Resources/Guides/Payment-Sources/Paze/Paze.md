@@ -4,9 +4,9 @@ tags: [Payment Sources, Network Token, Paze, Alternate Payments, Wallet, Online]
 
 # Paze digital wallet
 
-Paze makes it easy for customers to make purchases by allowing them the ability to pay online without having to share their actual card numbers.
+Paze makes it easy for customers to make purchases by allowing them the ability to pay online without having to share their card details.
 
-Commerce Hub offers merchants a simple, and convenient way for their consumers to easily provide the required checkout information. A customer's Paze digital wallet contains their card information and as address information that can be used for shipping.
+Commerce Hub offers merchants a simple, and secure way for their customers to easily provide the required checkout information. A customer's Paze digital wallet contains their card information and address information that can be used for shipping.
 
 **How it works:**
 
