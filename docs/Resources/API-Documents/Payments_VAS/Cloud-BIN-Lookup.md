@@ -4,18 +4,14 @@ tags: [Account Information, Card Details, Card Metadata, BIN]
 
 # Perform an Cloud BIN Information Lookup
 
-Commerce Hub's [Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) performs a lookup against the [Global BIN](?path=docs/Resources/API-Documents/Payments_VAS/Global-BIN-Lookup.md) and Cloud BIN files, and provides a response including the `cardDetails` *(also known as [card metadata](?path=docs/Resources/Master-Data/Card-Details.md))*. The data is returned as `primaryCardData` and may also include `additionalCardData` in the clear *(unencrypted)* based on the merchant configuration.
-
----
-
-## Cloud BIN Information Lookup request
+Commerce Hub's [Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) performs a lookup against the [Global BIN](?path=docs/Resources/API-Documents/Payments_VAS/Global-BIN-Lookup.md) and Cloud BIN files, and provides a response including the `cardDetails` *(also known as [card metadata](?path=docs/Resources/Master-Data/Card-Details.md))*. The Cloud BIN data is returned as `primaryCardData` and may also include `additionalCardData` in the clear *(unencrypted)* based on the merchant configuration.
 
 <!-- theme: info-->
 > The Cloud BIN Service needs to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
-### Cloud BIN only
+## Account found in the Cloud BIN only
 
 <!--
 type: tab
@@ -91,7 +87,7 @@ Account information lookup response for a card not in the Global BIN file .
 
 ---
 
-### Cloud BIN and Global BIN
+## Account found in the Cloud BIN and Global BIN
 
 <!--
 type: tab
