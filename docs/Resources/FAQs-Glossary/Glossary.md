@@ -340,7 +340,7 @@ Electronic Commerce Indicator *(ECI)*. Use of this field is mandated by the bank
 
 ### EMV
 
-[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards (ICC or chip cards) and IC card capable point of sale (POS) terminals. This standard is used for authenticating credit and debit card transactions.
+[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards (ICC or chip cards) and IC card capable point-of-sale *(POS)* devices. This standard is used for authenticating credit and debit card transactions.
 
 ### EMV Fallback
 
@@ -362,7 +362,7 @@ An estimated authorization occurs when the merchant does not have the total amou
 
 ### Electronic Benefits Transfer
 
-Electronic Benefits Transfer *(EBT)* is a payment card used at the point of sale to access a government account for Food Stamps or Cash Benefits.
+Electronic Benefits Transfer *(EBT)* is a payment card used at the point-of-sale to access a government account for Food Stamps or Cash Benefits.
 
 ### Electronic Funds Transfer
 
@@ -586,7 +586,7 @@ Mastercard Assigned ID *(MAID)* is an identifier assigned by Mastercard to ident
 
 ### Mail/Telephone Order Transaction
 
-The Mail/Telephone Order Transaction *(MOTO)* is a purchase of goods or services where the cardholder is not present at the point of sale.
+The Mail/Telephone Order Transaction *(MOTO)* is a purchase of goods or services where the cardholder is not present at the point-of-sale.
 
 ### Market Specific Authorization
 
@@ -868,7 +868,7 @@ High-speed transmission and synchronous communications are the transmission and 
 
 ### TeleCheck ECA
 
-The TeleCheck Electronic Check Acceptance® *(ECA®)* is a service that converts a paper check into an electronic item at the point of sale.
+The TeleCheck Electronic Check Acceptance® *(ECA®)* is a service that converts a paper check into an electronic item at the point-of-sale.
 
 ### Transport Layer Security
 
@@ -900,7 +900,7 @@ A general-purpose operating system that can implement a Perl Module or Ruby Clie
 
 ### Universal Product Code
 
-Universal Product Code *(UPC)* is the barcode used for scanning of trade items at the point of sale.
+Universal Product Code *(UPC)* is the barcode used for scanning of trade items at the point-of-sale.
 
 ---
 
@@ -914,8 +914,8 @@ The authorization procedure in which a merchant uses a standard telephone to req
 
 A void or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) is a type of transaction used to correct an error or to accommodate a customer’s change of mind after the approval of the original transaction.
 
-### Virtual Point of Sale
+### Virtual Point-of-Sale
 
-Virtual Point of Sale *(VPOS)* or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
+Virtual Point-of-Sale *(VPOS)* or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
 
 ---

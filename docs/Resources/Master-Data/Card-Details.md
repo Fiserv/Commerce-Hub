@@ -24,8 +24,8 @@ The below table identifies the parameters in the `cardDetails` object.
 | `highBin` | *string* | 21 | This field contains the high BIN value of the BIN range. |
 | `binLength` | *string* | 2 | Length of the BIN. |
 | `binDetailPan` | *string* | 2 | Displays the primary PAN length. |
-| `primaryCardData` | *string* | 79 | Displays the primary PAN available from the [POS Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md) |
-| `additionalCardData` | *string* | 79 | Indicates additional card digits returned |
+| `primaryCardData` | *string* | 79 | PAN/Track digits returned in clear based on the [Cloud BIN](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) set up in Merchant Configuration and Boarding. |
+| `additionalCardData` | *string* | 79 | Additional PAN/Track digits returned based on the [Cloud BIN](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) set up in Merchant Configuration and Boarding. |
 | `issuerBankName` | *string* | 3 |Issuer bank name for the BIN. |
 | `countryCode` | *string* | 3 | Card Issuer Country Two-letter [Country Code](?path=docs/Resources/Master-Data/Country-Code.md). |
 | `detailedCardIndicator` | *string* | 16 | Determines the card type (credit, debit). **Valid Values:** *CREDIT, DEBIT, COMMERCIAL_DEBIT*, CONSUMBER_DEBIT |
