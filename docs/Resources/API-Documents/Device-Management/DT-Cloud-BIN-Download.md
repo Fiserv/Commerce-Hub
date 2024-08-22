@@ -4,16 +4,16 @@ tags: [Device Management, Decision Table, API Reference, Device, Terminal, Point
 
 # POS Decision Table: Cloud BIN download
 
-Commerce Hub's [Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) will return the configured 6-digit BIN ranges on the merchant account as a POS Decision Table. The device may use this table to determine when it should require certain positions of the card data to be in the clear *(unencrypted)*. The POS Decision Table is an array of 6-digit BIN ranges defining what cards should request more information from Commerce Hub's Cloud BIN Service.
+Commerce Hub's [Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) will return the configured 6-digit BIN ranges on the merchant account as a POS Decision Table. The device may use this table to determine when it should require certain positions of the card data to be in the clear *(unencrypted)*. The `posDecisionData` is an array of 6-digit BIN ranges defining what cards the point-of-sale *(POS)* application should request more information from Commerce Hub's Cloud BIN Service.
 
 <!-- theme: info-->
 > The Cloud BIN Service needs to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
-## Table data
+## Table data details
 
-The response will include an array with the `accountRangeLow` and `accountRangeHigh`. Cards within the configured ranges should be sent to [Commerce Hub's Information Lookup API](?path=docs/Resources/API-Documents/Payments_VAS/Cloud-BIN-Lookup.md) for additional information.
+The response will include an array with the `accountRangeLow` and `accountRangeHigh` for each range defined on the account. Cards within the configured ranges should be sent to [Commerce Hub's Information Lookup API](?path=docs/Resources/API-Documents/Payments_VAS/Cloud-BIN-Lookup.md) for additional information.
 
 ---
 

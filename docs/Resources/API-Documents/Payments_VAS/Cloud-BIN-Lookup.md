@@ -203,18 +203,18 @@ Example of a information lookup (201: Created) response.
 
 ## Primary and additional card data
 
-Based on the set up in Merchant Configuration and Boarding the `cardDetails` may include the `primaryCardData` and `additionalCardData`. This data may include the decrypted PAN, leading digits, and/or required digits returned in clear based on the business requirements.
+Based on the set up in Merchant Configuration and Boarding the `cardDetails` may include the `primaryCardData` and `additionalCardData`. This data may include the decrypted PAN, leading digits, and/or required positions returned in clear based on the business requirements.
 
 <!--
 type: tab
-titles: Decrypted PAN, PAN and digit, Leading digits
+titles: Decrypted PAN, Leading digits, Positions
 -->
 
-Settings config description
+The below snippet shows the response elements expected for non-PCI data when configured to receive the decrypted `cardData` or `trackData`.
 
 ```json
 {
-  "primaryCardData": "6543210098765432",
+  "primaryCardData": "8543299999995432=9876510098765432",
 }
 ```
 
@@ -222,12 +222,12 @@ Settings config description
 type: tab
 -->
 
-Settings config description
+The below snippet shows the response elements expected for non-PCI data when configured to return first 8-digits of the PAN and the required positions 30-31.
 
 ```json
 {
-  "primaryCardData": "6543210098765432",
-  "additionalCardData": "5"
+  "primaryCardData": "765432123",
+  "additionalCardData": "12"
 }
 ```
 
@@ -235,12 +235,11 @@ Settings config description
 type: tab
 -->
 
-Settings config description
+The below snippet shows the response elements expected for PCI data when configured to return first 8-digits of the PAN.
 
 ```json
 {
-  "primaryCardData": "400055",
-  "additionalCardData": "7"
+  "primaryCardData": "40055500",
 }
 ```
 
