@@ -18,7 +18,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum parameters for a GLobal BIN Information Lookup request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup).
+The example below contains the minimum parameters for a Global BIN Information Lookup request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup).
 
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/accounts/information-lookup`

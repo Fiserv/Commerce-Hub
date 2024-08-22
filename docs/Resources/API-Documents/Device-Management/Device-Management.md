@@ -15,26 +15,26 @@ Commerce Hub supports the following integrations for managing payment devices.
 <!-- type: row -->
 
 <!-- type: card
-title: CAPK Data
-description: Manage the authentication of EMV payment cards, ensuring their validation during transaction.
-link: ?path=docs/Resources/API-Documents/Device-Management/CAPK.md
--->
-
-<!-- type: card
 title: Batch Download
 description: Retrieve end-of-day batch totals for transaction processed through Commerce Hub.
 link: 
 -->
 
 <!-- type: card
+title: CAPK Data
+description: Manage the authentication of EMV payment cards, ensuring their validation during transaction.
+link: ?path=docs/Resources/API-Documents/Device-Management/CAPK.md
+-->
+
+<!-- type: card
 title: Key Management
-description: To achieve PCI DSS compliance by implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys. 
+description: To achieve PCI DSS compliance by implementing a crypto system that manages the secure creation, exchange, distribution, storage and use of cryptographic keys.
 link: 
 -->
 
 <!-- type: card
 title: POS Decision Tables
-description: Commerce Hub's Decision Tables adds the ability for devices to take preemptive actions on accounts being presented for transactions. 
+description: Commerce Hub’s POS Decision Tables enable point-of-sale *(POS)* applications to take preemptive actions on accounts presented for transactions.
 link: ?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md
 -->
 

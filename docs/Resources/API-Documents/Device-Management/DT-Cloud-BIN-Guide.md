@@ -10,13 +10,13 @@ The Cloud BIN Service can be setup to receive the following information:
 
 - **PCI data:** Commerce Hub will return the leading digits of the card in the clear
 - **Non-PCI data:** Commerce Hub will return the full decrypted card data, for example [gift cards](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) and loyalty cards.
-- **Fleet Cards:** Commerce Hub will return the required digits in the clear for device prompting
+- **Specialty cards:** Commerce Hub will return the required digits and positions in the clear for device prompting, for example [Fleet](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
 
 ---
 
 ## Step 1: Set up the Cloud BIN Service
 
-The POS Decision Table is setup with a range of 6-digit BINs in Merchant Configuration and Boarding.
+The POS Decision Table is setup for the Cloud BIN Service with a range of 6-digit BINs in Merchant Configuration and Boarding.
 
 ---
 
