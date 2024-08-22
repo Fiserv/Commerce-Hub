@@ -138,17 +138,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 <!--
 type: tab
-titles: metadata, transactionDetails
--->
-
-The below table identifies the response parameters in the `metadata` object.
-
-| Variable | Type | Max Length | Description |
-| ----- | :-----: | :-----: | ----- |
-| `updatedOn` | *string* | N/A | Updated timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
-
-<!--
-type: tab
+titles: posDecisionData, metaData
 -->
 
 The below table identifies the response parameters in the `posDecisionData` object.
@@ -157,6 +147,16 @@ The below table identifies the response parameters in the `posDecisionData` obje
 | ----- | :-----: | :-----: | ----- |
 | `accountRangeLow` | *string* | 21 | Identifies the low range of the account |
 | `accountRangeHigh` | *string* | 21 | Identifies the high range of the account |
+
+<!--
+type: tab
+-->
+
+The below table identifies the response parameters in the `metadata` object.
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `updatedOn` | *string* | N/A | Updated timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
 <!-- type: tab-end -->
 
