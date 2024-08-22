@@ -100,11 +100,11 @@ The Bank Identification Number *(BIN)* is the first 8 digits of the unique card 
 
 A group of institutions formed for the purpose of sponsoring a bank card program and/or using a common processing and administrative center.
 
-### Banknet Data
+### BankNet Data
 
-A 13-digit field that identifies the date in which the authorization record was captured by Mastercard’s telecommunications network, followed by a unique data element which identifies the authorization transaction.
+A 13-digit field that identifies the date in which the authorization record was captured by Mastercard's telecommunications network, followed by a unique data element which identifies the authorization transaction.
 
-### Banknet Reference Number
+### BankNet Reference Number
 
 Unique data element, assigned by Mastercard, which identifies an authorization transaction.
 
@@ -454,7 +454,7 @@ The host is generally the central or controlling computer in a distributed syste
 
 ### Host Capture
 
-Host capture also known as host capture system *(HCS)*, is the process where the host *(e.g. Buypass)* closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [gateway capture](#gateway-capture).
+Host capture also known as host capture system *(HCS)*, is the process where the host *(example; Buypass)* closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [gateway capture](#gateway-capture).
 
 ### Host Security Module
 
@@ -566,7 +566,7 @@ A bank card that has been reported to the credit issuer as lost or misplaced by 
 
 ### Luhn Check
 
-The Luhn algorithm or Luhn formula, also known as the *"modulus 10"* or *"mod 10"* algorithm, is a simple checksum formula used to validate credit card numbers.
+The Luhn algorithm or Luhn formula, also known as the *modulus 10* or *mod 10* algorithm, is a simple checksum formula used to validate credit card numbers.
 
 ---
 
@@ -718,15 +718,15 @@ Practical Extraction and Report Language *(Perl)* is a popular programming langu
 
 ### Point-of-Sale
 
-Point-of-Sale *(POS)* is the point at which a product is paid for. [In-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions are conducted by a terminal or software. [Online](?path=docs/Getting-Started/Getting-Started-Online.md) transactions are conducted by a software on their online store or mobile app.
+Point-of-Sale *(POS)* is the point at which a product is paid for. [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) are initiated by a device, software application, or a combination. [Online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md) are initiated by software on an online store or mobile app.
 
-### Post-Auth
+### Post-Authorization
 
-A secondary transaction that [captures](?path=docs/Resources/API-Documents/Payments/Capture.md) a pre-auth transaction and charges the customer's account.
+A secondary transaction that [captures](?path=docs/Resources/API-Documents/Payments/Capture.md) a pre-authorization transaction and charges the customer's account.
 
-### Pre-Auth
+### Pre-Authorization
 
-A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and places a hold on a project sale amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) transaction, the held amount is then settled with the merchant batch.
+A pre-authorization is a customer transaction where the merchant can validate a given amount is available on the customer payment method *(physical card, digital wallet, etc.)* and places a hold on a project sale amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) transaction, the held amount is then settled with the merchant batch.
 
 ### Primary Transaction
 
