@@ -1,5 +1,5 @@
 ---
-tags: [Device Management, Decision Table, API Reference, Device, Terminal, Point of Sale]
+tags: [Device Management, Decision Table, API Reference, Device, Terminal, Point-of-Sale]
 ---
 
 # POS Decision Table: Cloud BIN Download
