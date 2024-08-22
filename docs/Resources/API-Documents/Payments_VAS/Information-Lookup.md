@@ -16,7 +16,7 @@ The `cardDetails` can be used for:
 
 ## Lookup types
 
-Commerce Hub allows account information lookup to be performed based on the Global BIN, Cloud BIN or both based on the business requirements.
+Commerce Hub allows an account information lookup to be performed based on the Global BIN, Cloud BIN or both based on the business requirements.
 
 <!-- type: row -->
 
