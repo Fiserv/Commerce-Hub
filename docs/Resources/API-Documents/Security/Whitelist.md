@@ -6,9 +6,6 @@ tags: [Security, Whitelist, Domains, API Reference, Checkout]
 
 Commerce Hub's Domain Whitelisting API allows for whitelisting domains in bulk for our [Checkout Solutions]. *CERT* and *PROD* utilize the same whitelist so once a domain is submitted to either environment it can be used as a whitelist both endpoints.
 
-<!-- theme: danger -->
-> This request must be invoked as a server API call and should not be attempted directly from the browser.
-
 ---
 
 ## Submit a list of domains
