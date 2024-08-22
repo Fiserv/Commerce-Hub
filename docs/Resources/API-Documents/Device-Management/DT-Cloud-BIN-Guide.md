@@ -16,7 +16,7 @@ The Cloud BIN Service can be setup to receive the following information:
 
 ## Step 1: Set up the Cloud BIN Service
 
-The POS Decision Table is setup with a range of 6-digit BINs in Merchant Configuration and Boarding.
+The POS Decision Table is setup for the Cloud BIN Service with a range of 6-digit BINs in Merchant Configuration and Boarding.
 
 ---
 

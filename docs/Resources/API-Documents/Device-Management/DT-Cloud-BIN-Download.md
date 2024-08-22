@@ -17,7 +17,7 @@ The response will include an array with the `accountRangeLow` and `accountRangeH
 
 ---
 
-## Download Cloud BIN Table
+## Download the POS Decision Table
 
 <!-- theme: caution --->
 > The device should validate if a new table exists daily.
@@ -27,7 +27,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) for an subsequent POS Decision Table download request using `updatedOn`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/tms/v1/pos-decision-table).
+The example below contains the minimum [parameters](#parameters) for an subsequent POS Decision Table download request using `updatedOn` for Cloud BIN. The full request schemas are available in our [API Explorer](../api/?type=post&path=/tms/v1/pos-decision-table).
 
 <!-- theme: success -->
 > **POST** `/tms/v1/pos-decision-table`
@@ -53,7 +53,7 @@ The example below contains the minimum [parameters](#parameters) for an subseque
 type: tab
 -->
 
-Example of a Cloud BIN download (201: Created) response.
+Example of a Cloud BIN POS Decision Table download (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -93,7 +93,7 @@ Example of a Cloud BIN download (201: Created) response.
 
 ## Parameters
 
-### Request Variables
+### Request variables
 
 <!--
 type: tab
@@ -134,7 +134,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-### Response Variables
+### Response variables
 
 <!--
 type: tab
