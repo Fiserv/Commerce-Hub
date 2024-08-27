@@ -11,8 +11,8 @@ Test page for style guides and templates.
 <!-- theme: info -->
 > This is a blue info callout.
 
-<!-- theme: caution -->
-> This is an orange caution callout.
+<!-- theme: warning -->
+> This is an orange warning callout.
 
 <!-- theme: danger -->
 > This is a red danger callout.
