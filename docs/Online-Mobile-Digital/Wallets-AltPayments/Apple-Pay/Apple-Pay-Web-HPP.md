@@ -9,7 +9,7 @@ tags: [Hosted Payment Page, Web, Online, Apple Pay, Wallet]
 
 Commerce Hub's Hosted Payment Page integration removes the PCI Compliance requirement on the merchant server by handling the payment processing form on Commerce Hub's secure server. The merchant can customize the look and feel of the payment form.
 
-##### How it Works
+**How it works:**
 
 1. The customer selects checkout from the merchant's website and Commerce Hub's secure Hosted Payment Page displays.
 2. The customer selects Apple Pay and the Apple Pay payment form displays.
@@ -28,7 +28,7 @@ The Apple developer account will need to be configured with the merchant informa
 
 ## Step 2: Support Apple Pay on the Web
 
-The merchant can start supporting Apple Pay on their [Hosted Payment Page](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md) by configuring the settings in the [Enterprise Portal](https://www.businesstrack.com). For more information, reiview the help section in the Enterprise Portal.
+The merchant can start supporting Apple Pay on their [Hosted Payment Page](?path=docs/Online-Mobile-Digital/Hosted-Payment-Page/Hosted-Payment-Page.md) by configuring the settings in the [Commerce Control Center](https://www.commercecontrol.com). For more information, review the help section in the Commerce Control Center.
 
 ---
 
