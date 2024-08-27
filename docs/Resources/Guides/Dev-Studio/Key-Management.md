@@ -4,7 +4,7 @@ tags: [Account Management, Developer Studio, Key Management, API Key, API Secret
 
 # Developer Studio: Create an API key
 
-A developer can manage their API application keys and API secrets from the Developer Studio Dashboard. API key management allows you to create and delete API keys for [sandbox, certification and production accounts](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md).
+A developer can manage their API application keys and API secrets from the [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md). API key management allows you to create and delete API keys for [sandbox, certification and production accounts](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md).
 
 ---
 
@@ -53,6 +53,7 @@ Click *Create* to obtain the API Key/Secret.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Account Management](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md)
+- [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 <!---
