@@ -10,7 +10,7 @@ Commerce Hub provides a number of resources for testing your integration includi
 
 ## Commerce Hub environments
 
-Commerce Hub has different [environments](?path=?path=docs/Resources/API-Documents/Use-Our-APIs.md), that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
+Commerce Hub has different [environments](?path=docs/Resources/API-Documents/Use-Our-APIs.md), that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: warning -->
 > Commerce Hub highly recommends testing against our certification *(end-to-end)* environment before using our production environment.
