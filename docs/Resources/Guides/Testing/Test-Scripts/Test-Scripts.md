@@ -1,5 +1,5 @@
 ---
-tags: [Testing, Simulator, Sandbox, Test Cards] 
+tags: [Testing, Certification, Test Cards] 
 ---
 
 # Scripts to test and certify your integration
