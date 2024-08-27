@@ -28,7 +28,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Uses [sandbox credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
 - Preview Commerce Hub's APIs
 - View the request and response format of a specific API
-- Send and cancel [test](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md) transactions
+- Send and cancel [simulated](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md) transactions
 
 ---
 

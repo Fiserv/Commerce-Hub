@@ -7,7 +7,7 @@ tags: [API Reference, Card Details, Master Data]
 Card is a required object in `source` for all card payment types including; debit, credit, [prepaid *(gift cards)*](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md), [Fleet](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md), HSA, WIC/EBT, and [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 <!-- theme: danger -->
-> Commerce Hub requires all payment cards to be encrypted using [multi-use public key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+> Commerce Hub requires all payment cards to be encrypted using [multi-use public key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [simulation purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
 
 <!--
 type: tab
