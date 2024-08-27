@@ -53,7 +53,7 @@ titles: PaymentCard, PaymentEMV, PaymentTrack
 
 #### Unencrypted
 
-Unencrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+Unencrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) is only supported in our sandbox environment for [simulation purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
 
 ```json
 {
@@ -154,7 +154,7 @@ type: tab
 
 #### Unencrypted
 
-Unencrypted [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+Unencrypted [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
 
 ```json
 {
