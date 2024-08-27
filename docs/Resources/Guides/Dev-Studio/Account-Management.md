@@ -12,6 +12,9 @@ A developer can manage their sandbox, certification (end-to-end), and production
 
 A sandbox MID is a dedicated Commerce Hub simulation account for a respective developer.
 
+<!-- theme: info -->
+> The shared default MID is used if a dedicated MID is not created.
+
 ---
 
 ### Step 1: Select a the sandbox method
@@ -65,7 +68,7 @@ Access Merchant ID allows a developer to access the end-to-end test *(cert)* and
 
 Click *Add Merchant ID* button. From the *Select Method* dropdown, choose *Add an Cert/Production Merchant ID* and click *Next*.
 
---
+---
 
 ### Step 2: Select an environment
 
@@ -133,6 +136,7 @@ Click the *Go to Developer Studio* button to return and click *Dashboard* to vie
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [API Key Management](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+- [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md)
 
 <!---
 - [Certification](?path=docs/Resources/Guides/Dev-Studio/Certification.md)
