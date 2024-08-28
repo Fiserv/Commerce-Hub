@@ -29,6 +29,9 @@ The following code snippet is an example HTML script tag for loading the SDK:
 <script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/checkout.js"></script>
 ```
 
+<!-- theme: warning -->
+> It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md) of Commerce Hub's Checkout SDK to ensure PCI and security compliance.
+
 ---
 
 ## Step 3: Initialize the SDK
