@@ -59,6 +59,8 @@
         link: docs/In-Person/Encrypted-Payments/Manual.md
       - title: Track 1/2 Data
         link: docs/In-Person/Encrypted-Payments/Track.md
+      - title: Multi-Use Public Key
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Tap to Pay on iPhone
       link: docs/In-Person/Integrations/Tap-to-Pay.md
   - title: Online/Digital/Mobile
@@ -82,12 +84,14 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+    - title: Plugins
+      link: docs/Resources/Guides/Partners/Modules/Plugins.md
 - sections:
   - title: Features
     sections:
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
-    - title: Auth Optimization
+    - title: Authorization Optimization
       link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
     - title: Custom Identifiers
       link: docs/Resources/Guides/BYOID.md
@@ -146,6 +150,10 @@
     sections:
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
+    - title: HMAC Authentication
+      link: docs/Resources/API-Documents/Authentication-Header.md
+    - title: Message Digest
+      link: docs/Resources/API-Documents/Message-Digest.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
       sections:
@@ -182,6 +190,8 @@
       sections:
       - title: EMV CAPK Data
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
+      - title: POS Decision Tables
+        link: docs/Resources/API-Documents/Device-Management/Decision-Table.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
       sections:
