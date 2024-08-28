@@ -2,33 +2,36 @@
 tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 ---
 
-# Checkout - Hosted Fields Solution
+# Checkout: Hosted Fields
 
-Commerce Hub's Checkout Hosted Fields solution allows E-commerce merchants to create payment data via a payment `sessionId`. Customer data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrames, thereby allowing merchants to offload payment processing of secure data to Commerce Hub. The merchant website can then pass the `sessionId` in a [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) or [Tokens API request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) using *PaymentSession* as the payment source.
+Commerce Hub's Hosted Fields solution provides an easy and secure way for E-commerce merchants to submit payment data via a payment `sessionId`. Customer data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrames, thereby allowing merchants to offload secure data processing, such as PCI and PII data, to Commerce Hub.
+
+The merchant website can then pass the `sessionId` in a [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) or [Tokens API request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) using *PaymentSession* as the payment source.
+
+**Key features:**
+
+- **Integration:** Hosted fields can be placed anywhere on the checkout page.
+- **Customization:** Full customization of design and user experience.
+- **Secure data collection:** Collection of payment data and personally identifiable information *(PCI and PII data)*.
+- **SDK integration:** Managed via the [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) from JavaScript code.
 
 ---
 
 ## How it works
 
-Checkout Hosted Fields works by injecting individual iFrames for each payment field *(card number, security code, etc.)* allowing them to be composed with other elements to create richer and more customizable UI components. This allows full customization on the merchant's page and hosting as little as possible within the iFrame itself. The iFrames are injected into parent elements on the webpage which can be configured individually per field. The creation and manipulation of these iFrames is all handled via the [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) from your JavaScript code.
-
----
-
-## Key benefit
-
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub's Checkout Hosted Fields integration makes it simple to submit the payment information without collecting, processing, or being able to view the details in their untokenized form, lowering the PCI compliance requirements.
+Hosted Fields work by injecting individual iFrames for each payment field *(account number, security code, etc.)*. This allows them to be composed with other elements to create richer and more customizable UI components. The iFrames are injected into parent elements on the webpage, which can be configured individually per field. The creation and manipulation of these iFrames are all handled via the Checkout SDK from your JavaScript code.
 
 ---
 
 ## Interaction flow
 
-1. The customer navigates to the checkout page of the merchant's website.
-2. The customer's browser loads the Commerce Hub iFrame SDK based on the merchant's configuration.
+1. The customer navigates to the checkout page of the merchant's website or mobile app.
+2. The customer's browser loads the Commerce Hub Hosted Fields components based on the merchant's configuration.
 3. The customer enters their information into the form fields and clicks a merchant hosted button to submit the form.
 4. The merchant sends a credentials request to their backend server to start a user session via Commerce Hub. This will return the security credentials as well as the `sessionId` the payment details will be associated with.
-5. The merchant's website calls the SDK `submit` method to initiate the capture request using the obtained security credentials.
-6. Upon a successful capture, the merchant's website will attempt to process the charges/tokens transaction via the merchant's backend server using the `sessionId`.
-7. Commerce Hub sends the transaction response to the merchant's website.
+5. The merchant's integration calls the SDK `submit` method to initiate the capture request using the obtained security credentials.
+6. Upon a successful capture, the merchant's integration will attempt to process the API transaction via the merchant's backend server using the `sessionId`.
+7. Commerce Hub sends the transaction response to the merchant's integration.
 
 ---
 
@@ -98,11 +101,7 @@ link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-HTML
 
 The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
 
----
-
-### Recommendations
-
-- Enable Re-Captcha
+- Enable Captcha as an available component
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow

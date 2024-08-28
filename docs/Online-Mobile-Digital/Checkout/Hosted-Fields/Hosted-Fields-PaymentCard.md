@@ -2,7 +2,7 @@
 tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame, PaymentCard]
 ---
 
-# Checkout: Accept a card payment with Hosted Fields
+# Hosted Fields: Form configuration for credit card payments
 
 In order to accept a card payment with Hosted Fields, the [supported fields](#supported-card-fields), [field configuration and placement](#field-configuration-schema-and-placement), and [supported card brands](#additional-configuration-options) are required in the [form configuration](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md#step-3-create-payment-form).
 
@@ -42,48 +42,48 @@ Example of payment card fields configuration in `createPaymentForm`.
 ```javascript
 window.fiserv.components.paymentFields({
   data: {
-    "fields": {
-      "cardNumber": {
-        "parentElementId": "element-id",
-        "placeholder": "placeholder text goes here",
-        "dynamicPlaceholderCharacter": "•",
-        "enableFormatting": true,
-        "masking": {
-          "character": "•",
-          "mode": "NO_MASKING",
-          "shrunkLength": 4
+    fields: {
+      cardNumber: {
+        parentElementId: "element-id",
+        placeholder: "placeholder text goes here",
+        dynamicPlaceholderCharacter: "•",
+        enableFormatting: true,
+        masking: {
+          character: "•",
+          mode: "NO_MASKING",
+          shrunkLength: 4
         }
       },
-      "nameOnCard": {
-        "parentElementId": "element-id",
-        "placeholder": "Name On Card"
+      nameOnCard: {
+        parentElementId: "element-id",
+        placeholder: "Name On Card"
       },
-      "firstName": {
-        "parentElementId": "element-id",
-        "placeholder": "First Name"
+      firstName: {
+        parentElementId: "element-id",
+        placeholder: "First Name"
       },
-      "lastName": {
-        "parentElementId": "element-id",
-        "placeholder": "Last Name"
+      lastName: {
+        parentElementId: "element-id",
+        placeholder: "Last Name"
       },
-      "securityCode": {
-        "parentElementId": "element-id",
-        "placeholder": "placeholder text goes here",
-        "dynamicPlaceholderCharacter": "•",
-        "masking": {
-          "character": "•",
-          "mode": "NO_MASKING"
+      securityCode: {
+        parentElementId: "element-id",
+        placeholder: "placeholder text goes here",
+        dynamicPlaceholderCharacter: "•",
+        masking: {
+          character: "•",
+          mode: "NO_MASKING"
         },
-        "expiration": {
-          "parentElementId": "element-id",
-          "placeholder": "MM / YY",
-          "format": "FLEXIBLE",
-          "delimiter": " / "
+        expiration: {
+          parentElementId: "element-id",
+          placeholder: "MM / YY",
+          format: "FLEXIBLE",
+          delimiter: " / "
         },
-        "expirationMonth": {
-          "parentElementId": "element-id",
-          "placeholder": "Card Expiration Month",
-          "optionLabels": [
+        expirationMonth: {
+          parentElementId: "element-id",
+          placeholder: "Card Expiration Month",
+          optionLabels: [
             "01 - January",
             "02 - February",
             "03 - March",
@@ -98,9 +98,9 @@ window.fiserv.components.paymentFields({
             "12 - December"
           ]
         },
-        "expirationYear": {
-          "parentElementId": "element-id",
-          "placeholder": "Card Expiration Year"
+        expirationYear: {
+          parentElementId: "element-id",
+          placeholder: "Card Expiration Year"
         }
       }
     }
@@ -127,7 +127,7 @@ type: tab
 
 **Masking Mode:**
 
-| Valid Values | Description | cardNumber | securityCode |
+| Valid Values | Description | `cardNumber` | `securityCode` |
 | ------------ | ----------- | :--------: | :----------: |
 | *NO_MASKING* | Masking is fully disabled | &#10004; | &#10004; |
 | *ALWAYS_MASK_EXCEPT_LAST_4* | Each block of 4 digits entered will be masked in real time with final 4 left unmasked | &#10004; | |
@@ -260,8 +260,10 @@ For a card transaction when using the `submit` method, the `last4`, `expirationM
 
 ## See also
 
+
 - [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 - [Create a Hosted Fields integrations](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md)
+- [Customize the Hosted Fields form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
 - [Handle Hosted Fields events](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
 - [Supported Hosted Fields methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
 - [Hosted Fields HTML examples](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-HTML-Examples.md)

@@ -42,11 +42,9 @@ link: ?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Customization.md
 
 ---
 
-## Additional Security Settings
+## Additional security settings
 
 The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
-
-### Recommendations
 
 - Enable Re-Captcha
 - Authentication/Login requirement to access the payment page

@@ -2,7 +2,7 @@
 tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame, PaymentCard, PaymentCheck]
 ---
 
-# Checkout: Hosted Fields HTML rendering examples
+# Hosted Fields: HTML rendering examples
 
 The below examples provide a simple demonstration of how Checkout Hosted Fields can be rendered using HTML.
 

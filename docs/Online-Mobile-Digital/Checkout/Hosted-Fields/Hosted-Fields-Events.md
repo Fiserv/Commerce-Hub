@@ -2,13 +2,13 @@
 tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 ---
 
-# Checkout - Hosted Fields Event Handling
+# Hosted Fields: Event handling
 
-Commerce Hub supports external interaction with the iFrame solution which allows the payment form to listen hooks for card form state change events and react accordingly in real-time, and explicitly submit the payment form from an external stimulus such as a button click on the merchants site.
+Commerce Hub supports external interaction with the Hosted Fields solution, enabling the payment form to listen for hooks during state change events and react in real-time. It also allows the payment form to be explicitly submitted from an external stimulus, such as a button click on the merchant's site.
 
 ---
 
-## Event Hooks
+## Event hooks
 
 Commerce Hub Hosted Fields solution supports the following event hooks.
 
@@ -68,23 +68,23 @@ Example of payment form event hooks customization in `createPaymentForm`.
 
 ---
 
-## Error Handling
+## Error handling
 
 The Checkout iFrame solution uses a promise to relay back errors to the code via a rejected promise so it can be caught via the `.catch` method of the returned Promise.
 
 The errors that can be caught via `promise.catch` and include a `toString()` method for debugging. The details of each case as well as the structure of the accompanying error object are below.
 
-#### Form Instantiation Errors
+### Form instantiation errors
 
-| Scenario | name | message | errors | toString() |
+| Scenario | `name` | `message` | `errors` | `toString()` |
 | ---- | ---- | ------- | ------ | ---------- |
 | Browser Not Supported | GeneralError | BROWSER_NOT_SUPPORTED | N/A | Returns a string representation of the error |
 | Configuration Failed Validation Unable to Render | ValidationError | BAD_FORM_CONFIG | An array containing a human-readable breakdown of each issue | Returns a string representation of the error |
 | Form Rendering Failed Due To Timeout (10+ seconds) | GeneralError | FORM_RENDER_TIMEOUT | N/A | Returns a string representation of the error |
 
-#### Form Submission Errors
+### Form submission errors
 
-| Case | name | message | errors | response | toString() |
+| Case | `name` | `message` | `errors` | `response` | `toString()` |
 | ---- | ---- | ------- | ------ | -------- | ---------- |
 | Validation Browser-side Failure | ValidationError | BAD_SUBMIT_CONFIG | A string array containing a human-readable breakdown of each issue | N/A | Returns a string representation of the error |
 | HTTP Error from the API | HttpError | The HTTP status code and text as a string | N/A |A JavaScript object containing the following fields `statusCode`: the HTTP status code and `statusText`: the HTTP status text `body`: a JavaScript object for the API error response body | Returns a string representation of the error |
@@ -96,9 +96,11 @@ The errors that can be caught via `promise.catch` and include a `toString()` met
 
 ## See Also
 
-- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md)
-- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
-- [iFrame Methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
-- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
+- [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
+- [Create a Hosted Fields integrations](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md)
+- [Customize the Hosted Fields form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
+- [Handle Hosted Fields events](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
+- [Supported Hosted Fields methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
+- [Hosted Fields HTML examples](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-HTML-Examples.md)
 
 ---

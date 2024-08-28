@@ -2,7 +2,7 @@
 tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame, PaymentCheck]
 ---
 
-# Checkout: Accept a check payment with Hosted Fields
+# Hosted Fields: Form configuration for check payments
 
 In order to accept a check *(ACH)* bank account payment with Hosted Fields, the [supported fields](#supported-check-fields) and [field configuration and placement](#field-configuration-schema-and-placement) are required in the [form configuration](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md#step-3-create-payment-form).
 
@@ -89,7 +89,7 @@ type: tab
 
 **Masking Mode:**
 
-| Valid Values | Description | accountNumber | routingNumber |
+| Valid Values | Description | `accountNumber` | `routingNumber` |
 | ------------ | ----------- | :--------: | :----------: |
 | *NO_MASKING* | Masking is fully disabled | &#10004; | &#10004; |
 | *ALWAYS_MASK_ALL* | Digits entered will be masked in real time with most recently entered digit left unmasked until input loses focus | &#10004; | &#10004; |
@@ -107,6 +107,7 @@ type: tab
 
 - [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 - [Create a Hosted Fields integrations](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md)
+- [Customize the Hosted Fields form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
 - [Handle Hosted Fields events](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
 - [Supported Hosted Fields methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
 - [Hosted Fields HTML examples](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-HTML-Examples.md)

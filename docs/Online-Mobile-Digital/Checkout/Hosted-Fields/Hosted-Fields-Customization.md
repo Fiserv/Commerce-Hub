@@ -2,11 +2,11 @@
 tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 ---
 
-# Checkout: Hosted Fields customization
+# Hosted Fields: From customization
 
-Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [CSS](#custom-css-styling), [font](#custom-fonts), and field configuration for [supported card brands](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCard.md), [gift cards](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Gift.md) and [checks *(ACH)*](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCheck.md).
+Commerce Hub supports customization of Hosted Field elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements including; [CSS](#custom-css-styling), [font](#custom-fonts), and the field configurations for [supported card brands](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCard.md), [gift cards](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Gift.md) and [checks *(ACH)*](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCheck.md).
 
-**Major features:**
+**Customization features:**
 
 - Support for different variations on card fields *(i.e. dropdown or text input)*
 - Support for CSS stylesheet injection into the iFrames
@@ -21,7 +21,7 @@ Commerce Hub supports customization of iFrame elements to match the merchant's w
 
 ## Custom CSS styling
 
-The stylesheet can be configured to be dynamically setup for each field iFrame by passing the CSS in JSON format. The JSON-formatted stylesheet is validated for safety against a whitelist and only the portions that fail this validation are dropped without affecting the rest of the stylesheet or overall form rendering.
+The stylesheet can be configured to be dynamically setup for each field by passing the CSS in JSON format. The JSON-formatted stylesheet is validated for safety against a whitelist and only the portions that fail this validation are dropped without affecting the rest of the stylesheet or overall form rendering.
 
 <!-- theme: info -->
 > Most standard CSS properties as well as some vendor-specific properties are included in the whitelist.
@@ -123,9 +123,10 @@ type: tab
 
 ## See Also
 
-- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md)
-- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
-- [iFrame Event Handling](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
-- [iFrame Methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
+- [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
+- [Create a Hosted Fields integrations](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md)
+- [Handle Hosted Fields events](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
+- [Supported Hosted Fields methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
+- [Hosted Fields HTML examples](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-HTML-Examples.md)
 
 ---

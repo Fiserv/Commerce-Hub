@@ -1,10 +1,10 @@
 ---
-tags: [Online, Card Not Present, Checkout]
+tags: [Online, Card Not Present]
 ---
 
 # API Direct Integration Guide
 
-Commerce Hub allows merchants to manage the full design of their website,  mobile app . The merchant handles encrypting and storing the data from their form and makes a direct API call with the payment information to Commerce Hub. The merchant website will pass the [encrypted payment source](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` *PaymentCard*.
+Commerce Hub allows merchants to manage the full design of their website, mobile app. The merchant handles encrypting and storing the data from their form and makes a direct API call with the payment information to Commerce Hub. The merchant website will pass the [encrypted payment source](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) in a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) request with the `sourceType` *PaymentCard*.
 
 ---
 
@@ -154,7 +154,7 @@ The following security settings are recommended to limit the potential for fraud
 
 ### Recommendations
 
-- Enable Re-Captcha
+- Enable Captcha as an available component
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow

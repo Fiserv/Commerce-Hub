@@ -2,12 +2,12 @@
 tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 ---
 
-# Checkout - Hosted Fields Integration Guide
+# Hosted Fields: Integration guide
 
 <!-- theme: danger -->
-> Commerce Hub's Hosted Fields Checkout solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
+> Commerce Hub's Checkout Hosted Fields solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
-## Step 1: Acquire Credentials
+## Step 1: Acquire credentials
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [form submission](#step-4-form-submission) and `sessionId` required in the [charges or tokens request](#step-5-submit-an-api-request).
 
@@ -19,9 +19,9 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 ---
 
-## Step 2: Configure Checkout SDK
+## Step 2: Load SDK in browser
 
-The Checkout script tag is required in the website by downloading or including the following code.
+The following code snippet is an example HTML script tag for loading the SDK:
 
 ```html
 <script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/checkout.js"></script>
@@ -32,7 +32,7 @@ The Checkout script tag is required in the website by downloading or including t
 
 ---
 
-## Step 3: Create Payment Form
+## Step 3: Create the payment form
 
 Instantiate the payment form within your JavaScript.
 
@@ -90,7 +90,7 @@ The below table identifies the parameters used in `createPaymentForm`.
 
 ---
 
-## Step 4: Form Submission
+## Step 4: Submit the form
 
 When ready to submit the form data for card capture, such as when the form data is all valid and the user clicks a submit button, you can programmatically trigger submission for the Checkout payment form fields via the `submit` [method](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md).
 
@@ -108,29 +108,27 @@ const submissionPromise = paymentForm.submit({
 
 ---
 
-## Step 5: Submit an API Request
+## Step 5: Submit an API request
 
-Submit a [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) or [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [credentials](#step-1-acquire-credentials) request.
+Submit a [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) or [Tokens API request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request with the `sourceType` of `PaymentSession` and the `sessionID` from the [credentials request](#step-1-acquire-credentials).
 
 <!-- theme: info -->
 > If a successful response is not received, best practice is to still submit the transaction. If an [error occurs](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md#error-handling), the Checkout will need to be re-displayed so the customer can re-submit their payment information.
-
-### Charges Example
-
-<!-- theme: info -->
-> Additional fields can be submitted as part of the request call. Additional fields can be found in the [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a charges payload request.
+The example below contains the minimum parameters for a successful Charges API request using a *PaymentSession*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -156,10 +154,10 @@ Example of a charges payload request.
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+Example of a Charges API (201: Created) response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -225,11 +223,11 @@ Example of a charge (201: Created) response.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
-- [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Customize Hosted Fields Payment Form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
-- [Hosted Fields Event Handling](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
-- [Hosted Fields Methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
+- [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
+- [Customize the Hosted Fields form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md)
+- [Handle Hosted Fields events](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md)
+- [Supported Hosted Fields methods](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md)
+- [Hosted Fields HTML examples](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-HTML-Examples.md)
 - [Version Release Notes](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md)
 
 ---
