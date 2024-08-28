@@ -50,7 +50,7 @@ const pazePromise = window.fiserv.components.paze({
 
 ---
 
-## Step 4: Launch Paze UI
+## Step 4: Launch the Paze UI
 
 On invoking `selectPaymentMethod` the Checkout SDK sets up and hands over control to the third-party Paze SDK.
 
