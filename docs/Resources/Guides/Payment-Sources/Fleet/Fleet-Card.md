@@ -238,10 +238,10 @@ The below table identifies the additional required parameters in the `card` obje
 <!-- theme: warning -->
 > Not all Fleet BINs are part of the Commerce Hub BIN file, the merchant will need to provide [card category and sub-category](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) based on the Dynamic Fleet Table.
 
-| Variable | Type | Length | Required | Description |
+| Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `category` | *string* | 25 |  &#10004; | Identifies the card category as *FLEET* |
-| `subCategory` | *string* | 25 |  &#10004; | Provides the [subcategory](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) for the `category` field to identify the card type |
+| `category` | *string* | 25 |  Identifies the card category as *FLEET* |
+| `subCategory` | *string* | 25 | Provides the [subcategory](?path=docs/Resources/Master-Data/Card.md#category-and-sub-category) for the `category` field to identify the card type |
 
 <!-- theme: info -->
 > Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
@@ -283,11 +283,11 @@ The below table identifies the required parameters in the `itemDetails` array in
 
 ## See Also
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
-- [Fleet Payments](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [API explorer](../api/?type=post&path=/payments/v1/charges)
+- [Customer details](?path=docs/Resources/Master-Data/Customer-Details.md)
+- [Fleet payments](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md)
+- [Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment System Product Codes](?path=docs/Resources/Master-Data/Payment-System-Product-Codes.md)
 
 ---
