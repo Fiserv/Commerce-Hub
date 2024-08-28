@@ -4,15 +4,23 @@ tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 
 # Checkout - Hosted Fields Solution
 
-Commerce Hub's Hosted Fields Checkout solution allows E-commerce merchants to create payment data via a payment `sessionId`. Customer data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrames, thereby allowing merchants to offload payment processing of secure data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub's Checkout Hosted Fields solution allows E-commerce merchants to create payment data via a payment `sessionId`. Customer data is submitted during the iFrame request and is only saved in Commerce Hub. The process is completed solely via iFrames, thereby allowing merchants to offload payment processing of secure data to Commerce Hub. The merchant website can then pass the `sessionId` in a [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) or [Tokens API request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) using *PaymentSession* as the payment source.
 
-Checkout v2 iFrame SDK works by injecting individual iFrames for each payment field *(card number, security code, etc.)* allowing them to be composed with other elements to create richer and more customizable UI components. This allows full customization on the merchant's page and hosting as little as possible within the iFrame itself. The iFrames are injected into parent elements on the webpage which can be configured individually per field. The creation and manipulation of these iFrames is all handled via the SDK from your JavaScript code.
+---
 
-### Benefits
+## How it works
 
-Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub iFrame integration makes it simple to submit the payment information without collecting, processing, or being able to view the details in their untokenized form, lowering the PCI compliance requirements.
+Checkout Hosted Fields works by injecting individual iFrames for each payment field *(card number, security code, etc.)* allowing them to be composed with other elements to create richer and more customizable UI components. This allows full customization on the merchant's page and hosting as little as possible within the iFrame itself. The iFrames are injected into parent elements on the webpage which can be configured individually per field. The creation and manipulation of these iFrames is all handled via the [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) from your JavaScript code.
 
-### Transaction Flow
+---
+
+## Key benefit
+
+Allows a merchant an easy and secure way to embed a payment form into a website. Commerce Hub's Checkout Hosted Fields integration makes it simple to submit the payment information without collecting, processing, or being able to view the details in their untokenized form, lowering the PCI compliance requirements.
+
+---
+
+## Interaction flow
 
 1. The customer navigates to the checkout page of the merchant's website.
 2. The customer's browser loads the Commerce Hub iFrame SDK based on the merchant's configuration.
@@ -24,25 +32,27 @@ Allows a merchant an easy and secure way to embed a payment form into a website.
 
 ---
 
-## Integration
+## Integrate with Hosted Fields
+
+Begin an integration with Checkout Hosted Fields.
 
 <!-- type: row -->
 
 <!-- type: card
-title: Integration Guide
+title: Integration guide
 description: Begin integration with Commerce Hub's Hosted Forms Checkout solution.
 link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md
 -->
 
 <!-- type: card
 title: Customization
-description: Customize the CSS, fonts, and fields.
+description: Customize the CSS and fonts of the payment form.
 link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md
 -->
 
 <!-- type: card
-title: Event Handling
-description: Support external interactions of the card form.
+title: Event handling
+description: Support external interactions of the payment form.
 link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md
 -->
 
@@ -54,11 +64,41 @@ link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Meth
 
 <!-- type: row-end -->
 
+<!-- type: row -->
+
+<!-- type: card
+title: Accept card payments
+description: Configure the form fields to accept credit and PINless debit cards.
+link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCard.md
+-->
+
+<!-- type: card
+title: Accept check payments
+description: Configure the form fields to accept check (ACH) bank account payments.
+link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCheck.md
+-->
+
+<!-- type: card
+title: Accept gift card payments
+description: Configure the form fields to accept gift cards.
+link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Gift.md
+-->
+
+<!-- type: card
+title: HTML rendering examples
+description: HTML examples of a payment form.
+link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-HTML-Examples.md
+-->
+
+<!-- type: row-end -->
+
 ---
 
 ### Additional Security Settings
 
 The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
+
+---
 
 ### Recommendations
 
@@ -66,6 +106,8 @@ The following security settings are recommended to limit the potential for fraud
 - Authentication/Login requirement to access the payment page
 - Limit response back to the browser/customer
 - Follow [fraud best practices](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) for the business type or payment flow
+
+---
 
 ### Browser Support
 

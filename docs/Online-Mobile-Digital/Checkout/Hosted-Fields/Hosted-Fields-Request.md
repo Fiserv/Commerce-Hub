@@ -15,7 +15,7 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 > This request must be invoked as a server API call for each form submission and should not be attempted directly from the browser.
 
 <!-- theme: info -->
-> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
+> A `sessionId` is a nonce token obtained from a security credentials request. It is used as the *PaymentSession* in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
 
 ---
 
@@ -23,11 +23,12 @@ A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) requ
 
 The Checkout script tag is required in the website by downloading or including the following code.
 
-```php
+```html
 <script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/checkout.js"></script>
 ```
 
-It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
+<!-- theme: warning -->
+> It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md) of Commerce Hub's Checkout SDK to ensure PCI and security compliance.
 
 ---
 
@@ -47,22 +48,22 @@ Example of JavaScript `createPaymentForm`.
 
 ```javascript
 const formPromise = window.fiserv.components.paymentFields({
-    data: {
-        environment: "CERT",
-        paymentMethod: "CREDIT_CARD",
-        domain: "*.merchant.com",
-        additionalFrameAncestor: "ancestorpage.merchant.com",
-        supportedCardBrands: [],
-        customCardBrands: [],
-        fields: {},
-        contextualCssClassNames: {
-            valid: "validCssClass",
-            invalid: "invalidCssClass",
-        },
-        font: {},
-        css: {},
+  data: {
+    environment: "CERT",
+    paymentMethod: "CREDIT_CARD",
+    domain: "*.merchant.com",
+    additionalFrameAncestor: "ancestorpage.merchant.com",
+    supportedCardBrands: [],
+    customCardBrands: [],
+    fields: {},
+    contextualCssClassNames: {
+      valid: "validCssClass",
+      invalid: "invalidCssClass",
     },
-    hooks: {},
+    font: {},
+    css: {},
+  },
+  hooks: {},
 });
 ```
 <!--
@@ -74,17 +75,15 @@ The below table identifies the parameters used in `createPaymentForm`.
 | Field | Required | Description |
 | ----- | -------- | ----------- |
 | `formPromise` | &#10004; | Promise will resolve to an instance of the payment form on success, or an error on failure |
-| `environment` | &#10004; | Defines the Commerce Hub environment; **_PROD_** or **_CERT_** |
-| `paymentMethod` | | Identifies if the payment method is a *CREDIT_CARD* (credit and PINless debit) or *GIFT* card |
+| `environment` | &#10004; | Defines the Commerce Hub environment; ***PROD*** or ***CERT*** |
+| `paymentMethod` | | Identifies if the payment method is a *CREDIT_CARD* *(credit and PINless debit)*, *GIFT* card, or *BANK_ACCOUNT* |
 | `domain` | | Defaults to the hostname of the page the SDK is loaded into and is useful for referencing hostnames in the whitelist that use a wildcard |
-| `additionalFrameAncestor` | | Indicates that the page the SDK is loaded into is itself an iFrame and what the parent page hostnames are so that each can be checked against the CDN whitelist and included in the resulting iFrame Content-Security-Policy value _(this is for supporting deeply nested iFrames scenario)_. **Note:** The entire path of the page hostnames, starting above the page that loaded the SDK, up to and including the root frame _(or page)_ that displays in the browser URL needs to be included in this field where applicable. The expected data type of the field is a list of strings where each entry is a hostname (ports/path/protocol are not part of the hostname) |
-| `supportedCardBrands` | | Defines [supported card brands](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#supported-card-brands), defaults to no restrictions |
-| `customCardBrands` | | Used to extend the built in card brand identification configuration with [custom card brands](?path=(?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#custom-card-brands)) and works together with `supportedCardBrands` |
-| `fields` | &#10004; | Defines the [field configuration](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#field-configuration) for the payment form |
+| `additionalFrameAncestor` | | Indicates that the page the SDK is loaded into is itself an iFrame and what the parent page hostnames are so that each can be checked against the CDN whitelist and included in the resulting iFrame Content-Security-Policy value *(this is for supporting deeply nested iFrames scenario)*. **Note:** The entire path of the page hostnames, starting above the page that loaded the SDK, up to and including the root frame *(or page)* that displays in the browser URL needs to be included in this field where applicable. The expected data type of the field is a list of strings where each entry is a hostname (ports/path/protocol are not part of the hostname) |
+| `fields` | &#10004; | Defines the field configuration for the payment form based on a [*CREDIT_CARD*](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCard.md), [*BANK_ACCOUNT*](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-PaymentCheck.md) or [*GIFT*](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Gift.md) `paymentMethod` |
 | `valid` | | CSS class will be assigned to a field's input element when they have passed validation |
 | `invalid` | | CSS class will be assigned to a field's input element when they have failed validation and are in an invalid state |
-| `font` | | Defines [custom fonts](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#fonts) for the payment form  |
-| `css` | | Customized [CSS styling](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#css) for the payment form  |
+| `font` | | Defines [custom fonts](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#custom-fonts) for the payment form  |
+| `css` | | Customized [CSS styling](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Customization.md#custom-css-styling) for the payment form  |
 | `hooks` | | Defines [event hook](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Events.md) handling |
 
 <!-- type: tab-end -->
@@ -97,13 +96,13 @@ When ready to submit the form data for card capture, such as when the form data 
 
 ```javascript
 const submissionPromise = paymentForm.submit({
-    apiKey: "API_KEY";
-    accessToken: "ACCESS_TOKEN",
-    createToken: "false",
-    publicKey: "PUBLIC_KEY",
-    keyId: "KEY_ID",
-    merchantId: "MERCHANT_ID",
-    terminalId: "TERMINAL_ID",
+  apiKey: "API_KEY";
+  accessToken: "ACCESS_TOKEN",
+  createToken: "false",
+  publicKey: "PUBLIC_KEY",
+  keyId: "KEY_ID",
+  merchantId: "MERCHANT_ID",
+  terminalId: "TERMINAL_ID",
 });
 ```
 
