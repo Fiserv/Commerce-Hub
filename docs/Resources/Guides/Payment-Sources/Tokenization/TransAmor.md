@@ -4,7 +4,7 @@ tags: [Stored Credentials, Token, Tokenization, API Reference]
 
 # TransAmor Tokenization
 
-TransAmor is a secure [tokenization service](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization) that helps merchants protect sensitive payment data. Through TransAmor, merchants can replace sensitive payment information, such as credit card numbers, with non-sensitive equivalents known as tokens. Merchants can tokenize payment sources as part of various transactions, including [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled for TransArmor or by sending a separate request to the [tokens endpoint](#tokenization-request).
+TransAmor is a secure [tokenization service](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization) that helps merchants protect sensitive payment data. Through TransAmor, merchants can replace sensitive payment information, such as credit card numbers, with non-sensitive equivalents known as tokens. Merchants can tokenize payment sources as part of various transactions, including a[Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md), a [Verification API request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or a [Card Capture API request](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) request if enabled for TransArmor or by sending a separate request to the [tokens endpoint](#tokenization-request).
 
 <!-- theme: info -->
 > If available Commerce Hub will also return any third-party processor tokens.

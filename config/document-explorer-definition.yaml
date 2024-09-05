@@ -172,7 +172,7 @@
       - title: Balance Inquiry
         link: docs/Resources/API-Documents/Payments_VAS/Balance-Inquiry.md
       - title: Card Capture
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/Card-Capture.md
+        link: docs/Online-Mobile-Digital/Checkout/API/Card-Capture.md
       - title: Gift Cards
         link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
       - title: Information Lookup
