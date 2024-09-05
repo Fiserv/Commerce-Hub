@@ -59,6 +59,8 @@
         link: docs/In-Person/Encrypted-Payments/Manual.md
       - title: Track 1/2 Data
         link: docs/In-Person/Encrypted-Payments/Track.md
+      - title: Multi-Use Public Key
+        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Tap to Pay on iPhone
       link: docs/In-Person/Integrations/Tap-to-Pay.md
   - title: Online/Digital/Mobile
@@ -75,7 +77,7 @@
         link: docs/Online-Mobile-Digital/Checkout/API/API-Only.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
-    - title: Wallets and Alt Payments
+    - title: Digital Wallets
       link: docs/Getting-Started/Getting-Started-Wallets.md
       sections:
       - title: Apple Pay
