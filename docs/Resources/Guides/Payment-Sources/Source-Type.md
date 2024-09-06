@@ -8,14 +8,14 @@ The variable `sourceType` is used to determine the payment instrument of the tra
 
 ## Payment Cards
 
-A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_ or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
+A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_, [fleet card](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md) or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
 
 <!--
 type: tab
 titles: PaymentCard, PaymentEMV, PaymentTrack
 -->
 
-PaymentCard is used when submitting manual entry online or in-person transactions to Commerce Hub using a [multi-use public key _(MUPK)_](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
+[PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) is used when submitting manual entry online or in-person transactions to Commerce Hub using a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
 
 #### Multi-Use Public Key
 
@@ -53,7 +53,7 @@ PaymentCard is used when submitting manual entry online or in-person transaction
 
 #### Unencrypted
 
-Unencrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+Unencrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) is only supported in our sandbox environment for [simulation purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
 
 ```json
 {
@@ -72,7 +72,9 @@ Unencrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Ca
 type: tab
 -->
 
-[PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) is used to submit a EMV chip and PIN transaction to Commerce Hub.
+[PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) is used to submit a EMV chip and PIN transaction to Commerce Hub using [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) or a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md).
+
+#### Terminal Encryption
 
 ```json
 {
@@ -82,9 +84,28 @@ type: tab
     "encryptionData": {
       "encryptionType": "RSA",
       "encryptionTarget": "TRACK_2",
-      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS....",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS.....",
       "deviceType": "INGENICO",
-      "keyId": ""
+      "keyId": "88000000022"
+    }
+  }
+}
+```
+
+#### Multi-Use Public Key
+
+```json
+{
+  "source": {
+    "sourceType": "PaymentEMV",
+    "emvData": "0369F3704834A12329F1002AB25",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "fjzH9it7ukbeP6Fa4jdqAO/gCRvCMC2qVG5q9PbFTKmj.....",
+      "encryptionBlockFields": "track1Data:34",
+      "keyId": "78001000062",
+      "deviceType": "INGENICO"
     }
   }
 }
@@ -94,7 +115,7 @@ type: tab
 type: tab
 -->
 
-[PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is used to submit a Track 1 or Track 2 and PIN transactions to Commerce Hub.
+[PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is used to submit a Track 1 or Track 2 and PIN transactions to Commerce Hub using [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) or a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md).
 
 #### Terminal Encryption
 
@@ -107,7 +128,25 @@ type: tab
       "encryptionTarget": "TRACK_2",
       "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
       "deviceType": "INGENICO",
-      "keyId": "88000000023"
+      "keyId": "88000000022"
+    }
+  }
+}
+```
+
+#### Multi-Use Public Key
+
+```json
+{
+  "source": {
+    "sourceType": "PaymentTrack",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "TRACK_2",
+      "encryptionBlock": "=q4TmiL1SSZC8QyBpj/....",
+      "encryptionBlockFields": "track2Data:36",
+      "keyId": "78001000062",
+      "deviceType": "INGENICO"
     }
   }
 }
@@ -115,13 +154,13 @@ type: tab
 
 #### Unencrypted
 
-Unencrypted [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
+Unencrypted [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
 
 ```json
 {
   "source": {
     "sourceType": "PaymentTrack",
-    "track1Data": "B4000340099900505^John/Doe ^22251110000123000"
+    "track2Data": "4445222299990007=14125025432198712345"    
   }
 }
 ```
@@ -154,8 +193,7 @@ titles: ApplePay, GooglePay, DecryptedWallet
     "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhki.....",
     "version": "EC_v1",
     "applicationData": "VEVTVA==",
-    "applePayMerchantId": "merchant.com.organizationname.unitname.commonname",
-    "merchantPrivateKey": "MHcCAQEE234234234opsmasdsalsamdsad/asdsad/asdasd/....."
+    "applePayMerchantId": "merchant.com.organizationname.unitname.commonname"
   }
 }
 ```
@@ -170,9 +208,17 @@ type: tab
 {
   "source": {
     "sourceType": "GooglePay",
-    "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/1+dp6tuUOvra9pszs2antqcbHJbk...",\"ephemeralPublicKey\":\"BAhnPIWrCXWv/45GFK0mNAvN9'''",\"tag\":\"liBzKfGcO+FclH..."}",
+    "data": "{\"encryptedMessage\":\"NZF5Vs2YaI/t25L/1+dp6tuUOvra9.....\",\"ephemeralPublicKey\":\"BAhnPIWrCXWv/45GFK0mNAtQj.....\\u003d\",\"tag\":\"liBzKfGcO+FclHg7XuqRJxR.....\"}",
     "signature": "MIAGCSqGSIb3DQEHAqCAMIACAQExDzAN...",
-    "version": "ECv2"
+    "version": "ECv2",
+    "intermediateSigningKey": {
+      "signedKey": "{\"keyExpiration\":\"1542323393147\",\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRy.....\\u003d\\u003d\"}",
+      "signatures": [
+        {
+          "items": "MEYCIQCO2EIi48s8VTH+ilMEpoXLFfkxAwHjfPSCVED/QDSHmQIhALLJmrUlNAY8hDQRV/y1iKZGsWpeNmIP+z+tCQHQxP0v"
+        }
+      ]
+    }
   }
 }
 ```
@@ -212,15 +258,13 @@ type: tab
 titles: PaymentToken, PaymentSession
 -->
 
-A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a created by submitting a token request using a payment source to Commerce Hub or is a created by submitting a request to the processing networks _(Visa, Mastercard, AMEX or Discover)_ using a payment card. Both can be used to submit a `PaymentToken` transaction to Commerce Hub.
+A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is a created by submitting a token request using a payment source to Commerce Hub or is a created by submitting a request to the processing networks _(Visa, Mastercard, AMEX or Discover)_ using a payment card. Both can be used to submit a transaction to Commerce Hub.
 
 ```json
 {
   "source": {
     "sourceType": "PaymentToken",
     "tokenData": "1234567890120019",
-    "PARId": "1234",
-    "declineDuplicates": true,
     "tokenSource": "TRANSARMOR",
     "card": {
       "expirationMonth": "03",
@@ -234,7 +278,7 @@ A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.m
 type: tab
 -->
 
-[PaymentSession](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) is a nonce token obtained from a security credentials request. *PaymentSession* is used in [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) integrations to submit a transaction to our application.
+PaymentSession is a nonce token obtained from a [Security Credentials API request](?path=docs/Resources/API-Documents/Security/Credentials.md). _PaymentSession_ is used in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application.
 
 ```json
 {
@@ -249,16 +293,16 @@ type: tab
 
 ---
 
-## Pay By Bank
+## Pay by Bank
 
-Pay by bank allows merchants to accept ACH processing using `paymentCheck`.
+Commerce Hub allows merchants to securely process payments directly from a customer's bank account. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
 
 <!--
 type: tab
 titles: PaymentCheck
 -->
 
-[PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) offers enhanced security and convenience when accepting ACH processing. With multiple integration methods available, merchants can accept one-time and recurring payments, providing additional flexibility and convenience for customers.
+[PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) is used to submit a Pay by Bank _(ACH)_ and [fleet check](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) transactions to Commerce Hub.
 
 ```json
 {
@@ -279,6 +323,8 @@ titles: PaymentCheck
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
+- [Multi-Use Public Key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 
 ---
