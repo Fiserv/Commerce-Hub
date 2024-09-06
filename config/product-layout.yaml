@@ -112,7 +112,7 @@ featuredFeatures:
     description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
     featured: true
     relatedDocs:
-     - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+     - link: docs/Online-Mobile-Digital/Checkout/Checkout.md
        title: Checkout
     relatedAPIs:
       - type: post
@@ -123,8 +123,8 @@ featuredFeatures:
     description: "Commerce Hub supports 3-D Secure (3DS) transactions from a either a merchant's third party authentication service or through Commerce Hub's authentication service."
     featured: true
     relatedDocs:
-     - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
-       title: Checkout
+     - link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
+       title: Secure Data Capture
     relatedAPIs:
       - type: post
         path: /payments-vas/v1/3ds/authenticate
@@ -285,7 +285,7 @@ featuredFeatures:
 #    codeSample: '[json
 #                  {
 #                    "amount": {
-#                      "total": "12.04",
+#                      "total": 12.04,
 #                      "currency": "USD"
 #                    },
 #                    "transactionDetails": {
