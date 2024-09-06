@@ -4,7 +4,7 @@ tags: [Level 2 Card, Level 3 Card, Purchase Card, Commodity Codes, API Reference
 
 # Commodity Codes
 
-Commodity codes are standard classification codes for products and services used to detail where money is spent within a company or organization. This information is submitted as part of [Level III](?path=docs/Resources/Guides/Level23/Level23.md) line item data and allows the following:
+Commodity codes are standard classification codes for products and services used to detail where money is spent within a company or organization. This information is submitted as part of [Level III line item data](?path=docs/Resources/Guides/Level23/Level23.md) and allows the following:
 
 - Customer visibility of spend analysis
 - Cost-effective procurement optimization
@@ -27,7 +27,7 @@ There are multiple standard classification systems for merchandise trade: the Ha
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Card Brand Requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
 - [Level II/III Enhanced Data](?path=docs/Resources/Guides/Level23/Level23.md)
-- [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
-- [Unit of Measurement](?path=docs/Resources/Guides/Level23/Unit-Measurement.md)
+- [Tax Types](?path=docs/Resources/Master-Data/Tax-Types.md)
+- [Unit of Measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md)
 
 ---

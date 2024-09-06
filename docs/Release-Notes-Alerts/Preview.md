@@ -123,7 +123,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Details | Type |
 | ----- | ----- |
 | Version 1.6: Refactored Merchant Managed [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transactions | Update |
-| Secure Data Capture [v2 iFrame solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) | Feature |
+| Checkout [v2 iFrame solution](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md) | Feature |
 | Support [Multi-Currency Pricing](?path=docs/Resources/Guides/Global-Currency/Multi-Currency.md) for international transactions | Feature |
 
 ---
