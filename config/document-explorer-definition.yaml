@@ -68,19 +68,13 @@
     sections:
     - title: RESTful API
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Secure Data Capture
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+    - title: Checkout
+      link: docs/Online-Mobile-Digital/Checkout/Checkout.md
       sections:
-      - title: Card Capture API
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
-      - title: Direct API
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Direct.md
-      - title: iFrame
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
-      - title: JavaScript
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-      - title: Multi-Use Public Key
-        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+      - title: API
+        link: docs/Online-Mobile-Digital/Checkout/API/API-Only.md
+      - title: Hosted Fields
+        link: docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
     - title: Digital Wallets
