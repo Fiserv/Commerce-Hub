@@ -2,7 +2,7 @@
 tags: [Stored Credentials, Tokenization, Card Not Present]
 ---
 
-# How to use Stored Credentials
+# Using Stored Credentials
 
 Stored Credentials, also known as Credentials on File or Card on File, allows the customer to authorize the storage of their payment source details for future transactions as a Cardholder Initiated Transaction *(CIT)*. Stored credentials is submitted in an initial [Charges API request with tokenization](?path=docs/Resources/API-Documents/Payments/Charges.md), [Verification API request with tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [Tokens API request with verification](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request.
 
