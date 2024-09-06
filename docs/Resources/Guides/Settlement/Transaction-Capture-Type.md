@@ -36,7 +36,7 @@ Example of a charge payload request using `transactionCaptureType`.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -96,7 +96,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 10.56,
+      "total": 12.04,
       "currency": "USD"
     },
     "processorResponseDetails": {

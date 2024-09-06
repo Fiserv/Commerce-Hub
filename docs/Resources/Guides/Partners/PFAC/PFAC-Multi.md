@@ -4,7 +4,7 @@ tags: [Payment Facilitator, Partners]
 
 # Payment Facilitator Multi-MID
 
-In a multi-MID payment facilitator *(PayFac)* model the PayFac and sub-merchants are assigned their own `merchantId` by Commerce Hub. The PayFac will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PayFac to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
+In a multi-MID [payment facilitator *(PayFac)*](?path=docs/Resources/Guides/Partners/PFAC/Payment-Faciliator.md) model the PayFac and sub-merchants are assigned their own `merchantId` by Commerce Hub. The PayFac will aggregate the transactions on behalf of the sub-merchant using the merchant's MID. This model allows the PayFac to have flexible funding and [settlement](?path=docs/Resources/Guides/Partners/PFAC/Split-Settlement.md) options and offer a suite of services to their sub-merchant portfolio.
 
 ---
 
@@ -20,7 +20,7 @@ titles: merchantDetails
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 | --------- | ---------- | -------- | ----- |
 | `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. The PayFac must use the value assigned by the acquirer, gateway or a [custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|

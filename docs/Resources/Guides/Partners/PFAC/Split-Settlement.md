@@ -22,7 +22,7 @@ titles: amount, splitSettlement
 
 The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ |-------------- |
 | `total` | *number* | 18,3  | Amount of the transaction. The `splitSettlement` values must add up to total amount |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
@@ -33,7 +33,7 @@ type: tab
 
 The below table identifies the required parameters in the `splitSettlement` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 | -------- | -- | ------------ |-------------- |
 | `merchantID` | *string* | 1024 | The merchant ID for each merchant account involved in split settlement |
 | `subTotal` | *number* | 16,3 | The subtotal for each merchant account involved in split settlement |
@@ -41,7 +41,7 @@ The below table identifies the required parameters in the `splitSettlement` obje
 
 The below table identifies the required parameters in the `accountDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 | -------- | -- | ------------ |-------------- |
 | `name` | *string* | 1024 | An account name for split settlement |
 | `type` | *string* | 1024 | Split settlement [account type](#account-type). |

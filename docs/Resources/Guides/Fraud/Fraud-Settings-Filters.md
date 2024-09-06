@@ -9,11 +9,11 @@ Fraud filters enable the merchants to configure filters to control the fraudulen
 
 Fraud filters allow the merchant to [accept](#positive-filters) or [reject](#negative-filters) transactions based on card number, customer reference, IP address, billing information and more. The fraud filters configuration is flexible and completely customizable by the merchant and can be setup based on industry, product, promotions, channel, customer details and store abilities.
 
-Positive and negative filters are setup inside of Merchant Configuration and Boarding _(Marketplace in the [ClientLine Enterprise Portal](https://www.businestrack.com))_. Filters are applied by attributes and their respective value.
+Positive and negative filters are setup inside of Merchant Configuration and Boarding _(Marketplace in the [Commerce Control Center](https://www.commercecontrol.com))_. Filters are applied by attributes and their respective value.
 
 ---
 
-### Positive Filters
+## Positive Filters
 
 Positive filters are used to configure a whitelist and allow the transaction to process based on specific criteria.
 
@@ -27,12 +27,11 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 
 ---
 
-### Negative Filters
+## Negative Filters
 
 Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
 
-
-| Filter | Variable | Attribute Criteria | 
+| Filter | Variable | Attribute Criteria |
 | ----- | ------ | ----- |
 | Add/change card numbers to block | `source.card.cardData` | No dashes or spaces  |
 | BIN Block | `source.card.bin` | 6-11 digit BIN, acquired automatically by Commerce Hub from 'cardData`. Will override the negative and positive card number lists. |
@@ -47,7 +46,7 @@ Negative filters are used to configure a blacklist and block the transaction bas
 
 ## Response Example
 
-##### Example of a charge (400: Bad Request) response.
+Example of a charge (400: Bad Request) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

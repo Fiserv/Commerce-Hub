@@ -54,7 +54,7 @@ When terminal receives the transaction response from the host, the MAC value is 
 
 The following are the mandated data elements that are used for the MAC verification by the terminal:
 
-- Account number (PAN). This is a variable length field and the maximum length is 19 bytes
+- Account number (PAN). This is a variable length field and the Max Length is 19 bytes
 - Processing code
 - Transaction amount
 - STAN
@@ -75,7 +75,7 @@ titles: regionalDebit, JSON Example
 
 The below table identifies the parameters in the `regionalDebit` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | ---- | ------- | -------------------------------|
 | `debitMacValue` | *string* | 256 | [Message authentication](#message-authentication) is used to confirm that the key data elements of the transaction have not been tampered. MAC protection is optional on Canadaian debit transactions. |
 | `macKeySerialNumber` | *string* | 256  | This field is used to create the base MAC encryption key for DUKPT PIN Debit, EBT, Fleet and Credit Transactions. **Format:** _"F" (1) + Base Derivation Key ID (9) + DeviceId (5) + TranCounter (5)_. |

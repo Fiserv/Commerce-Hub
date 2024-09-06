@@ -2,17 +2,15 @@
 tags: [Fraud Controls, Industry Verticals, Resources and Guides]
 ---
 
-# Resources and Guides
+# Resources and guides
 
 Explore and learn about features offered by Commerce Hub and start accepting transactions.
 
 ---
 
-## Fraud Controls
+## Fraud controls
 
 Commerce Hub implements various transaction and fraud controls that allow merchants to monitor potentially fraudulent transactions including positive and negative filters, velocity controls, transaction restrictions, and address/security code verification that will automatically accept or reject transactions.
-
-### Featured Guides
 
 <!-- type: row -->
 
@@ -38,11 +36,9 @@ link: ?path=docs/Resources/Guides/Fraud/Security-Code.md
 
 ---
 
-## Transaction Processing
+## Transaction processing
 
 Commerce Hub offers multiple transaction-related guides to assist merchants with accepting and managing payments.
-
-### Featured Guides
 
 <!-- type: row -->
 
@@ -128,23 +124,21 @@ link: ?path=docs/Resources/Guides/Stored-Credentials.md
 
 ---
 
-## Merchant Accounting
+## Merchant accounting
 
 Commerce Hub offers multiple transaction-related guides to assist with managing merchant accounts, customer accounts and business finances.
-
-### Featured Guides
 
 <!-- type: row -->
 
 <!-- type: card
-title: Enterprise Portal
-description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactions.
+title: Commerce Control Center
+description: The Commerce Control Center is a control room for day-to-day operations and omni-channel commerce.
 link: ?path=docs/Resources/Guides/Enterprise-Portal/Enterprise-Portal.md
 -->
 
 <!-- type: card
 title: Reporting
-description: Reporting is available in Business Track through ClientLine Reporting.
+description: Reporting is available in Commerce Control Center.
 link: ?path=docs/Resources/Guides/Enterprise-Portal/Reporting.md
 -->
 

@@ -42,6 +42,12 @@
     },
     {
       "version": "1.24.07",
+      "versionType": "minor",
+      "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
+      "apiSpecFileNames": ["openapi"]
+    },
+    {
+      "version": "1.24.08",
       "versionType": "major",
       "releaseNotesPath": "docs/Release-Notes-Alerts/Release-Notes.md",
       "apiSpecFileNames": ["openapi"]

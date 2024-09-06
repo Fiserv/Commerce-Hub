@@ -13,7 +13,7 @@ titles: phone, JSON Example
 
 The below table identifies the parameters in the `phone` object.
 
-| Variable | Type |Maximum Length | Description/Values |
+| Variable | Type |Max Length | Description/Values |
 | -------- | -- | ------------ | ------------------ |
 | `countryCode` | *string* | 4 | Country's area code |
 | `phoneNumber` | *string* | 15 | Customer phone number |

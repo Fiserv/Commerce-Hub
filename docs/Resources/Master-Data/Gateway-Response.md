@@ -18,7 +18,7 @@ titles: gatewayResponse, JSON Example
 
 The below table identifies the parameters in the `gatewayResponse` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | ----- | ----- | ----- | ----- |
 | `transactionType` | *string* | 256 | Type of transaction submitted |
 | `transactionState` | *string* | 256 | Final [state](#transaction-state) of the transaction |
@@ -80,7 +80,7 @@ titles: transactionProcessingDetails, JSON Example
 
 The below table identifies the parameters in the `transactionProcessingDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | ----- | ----- | ----- | ----- |
 | `orderId` | *string* | 64 | Order identifier returned in the parameter orderId from a Charge trasaction. |
 | `transactionDate` | *string* | 64 | Date the transaction occured |

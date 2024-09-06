@@ -13,7 +13,7 @@ titles: priceAdjustments, JSON Example
 
 The below table identifies the parameters in the `priceAdjustments` array.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `adjustmentType` | *string* |  | Identifies the [type of adjustment](#adjustment-type) being applied |
 | `adjustmentDescription` | *string* | 3 | Description of the adjustment being applied |

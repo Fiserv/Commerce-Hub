@@ -1,10 +1,10 @@
 ---
-tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Transaction Interaction, Terminal]
+tags: [Master Data, API Reference, POS Features, POS Information, Point of Sale, Transaction Interaction, Terminal, Device]
 ---
 
 # Additional POS Information
 
-Additional information about the POS functions and features can be submitted in the `additionalPosInformation` object as part of `transactionInteraction`.
+Additional information about the POS functions and features can be submitted in the `additionalPosInformation` object as part of [transaction interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 <!--
 type: tab
@@ -13,12 +13,12 @@ titles: additionalPosInformation, JSON Example
 
 The below table identifies the parameters in the `additionalPosInformation` object.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |---------|----------|----------------|---------|
 | `dataEntrySource` | _string_ | 50 | [Source](#data-entry-source) used to initiated transaction. |
 | `posId` | _string_ | | Identifies the specific device or point of entry where the transaction originated. For example, pump number, lane number, terminal number, etc. |
 | `cashierId` | _string_ | | Used to uniquely identify the merchant’s store cashier or employee accepting the transaction. |
-| `stan` | _string_ | 6 | Contains the System Trace Audit Numbers (STAN) used to to uniquely reference the transaction. The STAN must increment from 000001 to 999999 and not reset until it reaches 999999. Note: This field has limited platform availability. For more information, please contact your account representative.  |
+| `stan` | _string_ | 6 | Contains the System Trace Audit Numbers _(STAN)_ used to to uniquely reference the transaction. The STAN must increment from 000001 to 999999 and not reset until it reaches 999999. Note: This field has limited platform availability. For more information, please contact your account representative.  |
 | `posFormFactorIndicator` | _string_ | | This field is used to identify the form factor used at the POS for MasterCard PayPass transactions. Note: Some values from 00–19 may indicate not only the physical form factor but also other attributes such as device technology and payment app specifications. Values from 20–99 exclusively indicate the form factor only without also indicating the storage technology.|
 | `alternateRoutingIndicator` | _boolean_ | N/A | 'Identifies if the terminal support the Alternate Routing feature used for PINless POS, Signature Debit, and EMV Common AID features (excluding Online PIN CVM) allows merchants to process PIN Debit Network transactions without a PIN.' |
 | `transactionQualifier` | _string_ | | Used for Discover - Discover TransactionQualifier. |
@@ -37,7 +37,7 @@ The below table identifies the parameters in the `additionalPosInformation` obje
 type: tab
 -->
 
-JSON string format for `additionalPosInformation`:
+JSON string format for `additionalPosInformation`.
 
 ```json
 {
@@ -52,7 +52,7 @@ JSON string format for `additionalPosInformation`:
     "transactionQualifier": "string",
     "attendedTerminalData": "ATTENDED",
     "cardholderActivatedTerminalInformation": "2",
-    "cashbackLimit" : "1.50",
+    "cashbackLimit" : 1.50,
     "supervisorId": "1234567",
     "terminalLocation": "MERCHANT",
     "terminalOperator": "MERCHANT",
@@ -102,7 +102,7 @@ titles: posHardwareAndSoftware, JSON Example
 
 The below table identifies the parameters in the `posHardwareAndSoftware` object.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |---------|----------|----------------|---------|
 | `hardwareVendorIdentifier` | _string_ |  | Hardware vendor identifier assigned by Chase merchant services at time of certification, represented in ASCII HEX. |
 | `softwareIdentifier` | _string_ | | Software Identifier assigned by Chase merchant services at time of certification, represented in ASCII HEX. |
@@ -114,6 +114,8 @@ The below table identifies the parameters in the `posHardwareAndSoftware` object
 <!--
 type: tab
 -->
+
+JSON string format for `posHardwareAndSoftware`.
 
 ```json
 {
@@ -143,7 +145,7 @@ titles: posFeatures, JSON Example
 
 The below table identifies the parameters in the `posFeatures` object.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |---------|----------|----------------|---------|
 | `hostProcessingPlatform` | _string_ |  | Indicates which system is being used by the payment application and to what extent it is being used. |
 | `messageFormatSupport` | _string_ |  | Indicates which message format the application uses to communicate with the Chase merchant services PNS Host. |
@@ -167,6 +169,8 @@ The below table identifies the parameters in the `posFeatures` object.
 <!--
 type: tab
 -->
+
+JSON string format for `posFeatures`.
 
 ```json
 {
@@ -199,7 +203,7 @@ type: tab
 
 #### Data Entry Source
 
-The below table contains the valid values for `dataEntrySource` parameter.
+The below table contains the valid values of `dataEntrySource`.
 
 | Valid Value | Description |
 |--------|--------|
@@ -217,12 +221,13 @@ The below table contains the valid values for `dataEntrySource` parameter.
 | _MOBILE_TERMINAL_ | The payment source was entered into a wireless point of sale terminal on a cellular network. |
 | _MOBILE_POS_ | Point of sales terminal that works on wifi. |
 | _ELECTRONIC_CASH_REGISTER_ | Point of sales terminal that allows cash transaction.  |
-| _IVR_VRU_ | Interactive Voice Response(IVR), Voice Response Unit (VRU) |
+| _IVR_VRU_ | Interactive Voice Response _(IVR)_, Voice Response Unit _(VRU)_ |
 | _TICKET_MACHINE_ | A machine to buy the tickets. |
 | _CALL_CENTER_OPERATOR_ | The payment source entered by a call center operator when taking an order from a customer. |
 
 ---
 
+<!---
 #### Enhanced Authorization Request Indicator
 
 The below table identifies the valid values of `enhancedAuthorizationRequestIndicator`.
@@ -233,6 +238,7 @@ The below table identifies the valid values of `enhancedAuthorizationRequestIndi
 | _BALANCE_ONLY_ | Partial authorizations NOT requested; Balance information requested |
 | _PARTIAL_AUTH_ONLY_ | Partial authorizations requested; Balance information NOT requested |
 | _BOTH_SUPPORTED_ | Partial authorizations requested; Balance information requested |
+-->
 
 ---
 
@@ -242,9 +248,9 @@ The below table identifies the valid values of `attendedTerminalData`.
 
 | Value | Description |
 | ----- | ----------- |
-| _ATTENDED_ | Attended terminal (Not a valid option if `cardholderActivatedTerminalInformation` is CAT_LEVEL_6) |
+| _ATTENDED_ | Attended terminal _(Not a valid option if `cardholderActivatedTerminalInformation` is CAT_LEVEL_6)_ |
 | _UNATTENDED_ | Unattended terminal or software |
-| _NONE_ | No terminal or software used (VRU, etc.) |
+| _NONE_ | No terminal or software used _(VRU, etc.)_ |
 
 ---
 
@@ -255,10 +261,10 @@ The below table identifies the valid values of `cardholderActivatedTerminalInfor
 | Value | Description |
 | ----- | ----------- |
 | _0_ | Not a CAT device |
-| _CAT_LEVEL_1_ | Automated dispensing machine with online/offline PIN (MC Only) |
+| _CAT_LEVEL_1_ | Automated dispensing machine with online/offline PIN _(Mastercard Only)_ |
 | _CAT_LEVEL_2_ | Self-service terminal, used for automated fueling transactions and unattended terminals. |
 | _CAT_LEVEL_3_ | Limited amount terminal |
-| _CAT_LEVEL_6_ | Electronic commerce transaction (attendedTerminalData must not be ATTENDED) |
+| _CAT_LEVEL_6_ | Electronic commerce transaction _(attendedTerminalData must not be ATTENDED)_ |
 
 ---
 
@@ -269,7 +275,7 @@ The below table identifies the valid values of `terminalLocation`.
 | Value | Description |
 | ----- | ----------- |
 | _MERCHANT_ | On the premises of the card acceptor |
-| _CARDHOLDER_ | On the premises of the cardholder (e.g. Home PC, Mobile Device, etc.) |
+| _CARDHOLDER_ | On the premises of the cardholder _(e.g. Home PC, Mobile Device, etc.)_ |
 | _NONE_ | No terminal used |
 
 ---
@@ -313,6 +319,8 @@ The below table identifies the valid values of `terminalEntryCapability`.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Enhanced Data Service](?path=docs/Resources/API-Documents/DaaS/Enhanced-Data-Service.md)
+- [In-Person Payments](?pathdocs/Getting-Started/Getting-Started-InPerson.md)
+- [Online, Digital and Mobile Payments](?path=docs/Getting-Started/Getting-Started-Online.md)
 - [Transaction Interaction](?path=docs/Resources/Master-Data/Transaction-Interaction.md)
 
 ---

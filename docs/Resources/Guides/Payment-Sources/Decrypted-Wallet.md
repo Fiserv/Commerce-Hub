@@ -18,7 +18,7 @@ titles: source, card, JSON Example
 
 The below table identifies the parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |---------|----------|-------|---------|---------|
 | `sourceType` | *string* | 15 | &#10004; | Value *DecryptedWallet* is used for Decrypted Wallet requests. |
 | `card` | *object* | N/A | &#10004; | Decrypted card details |
@@ -32,7 +32,7 @@ type: tab
 
 The below table identifies the required parameters in the `card` object.
 
-| Variable | Type | Maximum Length | Required | Description |
+| Variable | Type | Max Length | Required | Description |
 | -------- | -- | ------------ | ---------|--------- |
 | `cardData` | *string* | 256 | &#10004; | Card number or encrypted data |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit expiration month |
@@ -77,7 +77,7 @@ Example of a charge payload request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

@@ -16,7 +16,7 @@ titles: cardDetails, JSON Example
  
 The below table identifies the parameters in the `cardDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `binSource` | *string* | 30 | Categorizes the source of the BIN record. **Valid Values:** _FIERV, CHASE, PRIVATE_LABEL_ |
 | `recordType` | *string* | 10 | Record Type |
@@ -147,7 +147,7 @@ titles: debitPinlessIndicator, JSON Example
 
 The below table identifies the parameters in the `debitPinlessIndicator` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `debitNetworkId` | *string* | 20 | Identifies the [debit network](#debit-network-id). |
 | `eCommerce` | *string* | 13 | e-Commerce indicator. |
