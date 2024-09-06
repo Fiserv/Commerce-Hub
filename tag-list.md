@@ -50,7 +50,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Payment Token (X46)
 - Pin Less Debit (Change to PIN-Less Debit) (X2)
 - Pin Pad (Change to PIN Pad) (X2)
-- Point of Sale (X19)
+- Point-of-Sale (X19)
 - POS Features (X7)
 - POS Information (X18)
 - Protectbuy (X2)

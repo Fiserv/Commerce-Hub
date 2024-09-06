@@ -1,5 +1,5 @@
 ---
-tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point of Sale, Terminal]
+tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point-of-Sale, Terminal]
 ---
 
 # In-Person Payments
