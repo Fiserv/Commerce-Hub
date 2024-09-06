@@ -76,6 +76,14 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 
 ### Authentication header example
 
+| `Authorization` | *string* | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
+| `Auth-Token-Type`| *string* | Indicates Authorization type *HMAC* or *AccessToken*.|
+| `Message-Digest` | *string* | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) or Hosted Payment Page request. |
+
+---
+
+### Authentication header example
+
 ```json
 {
   "Content-Type": "application/json",

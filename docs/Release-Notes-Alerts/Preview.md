@@ -9,10 +9,27 @@ Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&bra
 <!-- theme: info -->
 > The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **[Preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview)** in the left navigation when viewing an article or API.
 
-##### Release Types
+**Release Types:**
 
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
+---
+
+## August 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** July 17th 2024
+- **Production:** July 23rd 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.08: refactored Authorization Optimization models, added models to support Fleet transactions | Update |
+| Update [API endpoint URLs](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to support new authentication credentials | Update |
+| [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
+| Support [Multi-Use Public Key RSA encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
+| Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
+| Support [Fleet Card and Check transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md) | Feature |
 
 ---
 
@@ -61,7 +78,6 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Version 1.24.06: Reorganization of Payments-VAS groups for API Explorer and documentation | Update |
 | [Partner tokens](?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md) response updated to make `cardDetails` an array | Update |
-| Secure Data Capture [v2 JavaScript solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) | Feature |
 | Support for merchant managed 3rd-party [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token.md) | Feature |
 
 ---

@@ -170,7 +170,7 @@ A transaction in which a customer receives cash in-person which is posted agains
 
 ### Clickjacking
 
-A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).
+A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md).
 
 ### Check Digit
 
@@ -518,7 +518,7 @@ The issuing bank also known as the customer's bank, issues a payment card or che
 
 ### JavaScript
 
-JavaScript *(JS)* is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
+JavaScript _(JS)_ is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md).
 
 ### JSON
 

@@ -61,7 +61,7 @@ List of tags used in Commerce Hub. Articles should be limited to no more than 7 
 - Safekey (X2)
 - Sandbox (X18)
 - Securecode (X2)
-- Secure Data Capture (X24)
+- Checkout (X24)
 - Secure Payment Form (X20)
 - Settings (X36)
 - Shipping Address (X6)

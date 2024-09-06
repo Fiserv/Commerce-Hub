@@ -9,7 +9,7 @@ Commerce Hub is continually being improved with new features, security enhanceme
 <!-- theme: info -->
 > See the [Preview Release Notes](?path=docs/Release-Notes-Alerts/Preview.md) for upcoming features and updates.
 
-##### Release Types
+**Release Types:**
 
 - **Feature:** New feature was released
 - **Update:** Existing feature was updated or enhanced
