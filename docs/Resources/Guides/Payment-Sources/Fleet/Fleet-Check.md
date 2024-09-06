@@ -4,7 +4,7 @@ tags: [Fleet, Petroleum, WEX, Comdata, Payment Check, ACH, Payment Sources ]
 
 # Fleet Checks
 
-Commerce Hub supports physical and virtual fleet check payment methods including WEX OTR Money Code, Comdata Express Code *(virtual check)*, and Comdata ComCheck *(physical check)* using the *PaymentCheck* `sourceType`.
+Commerce Hub supports physical and virtual Fleet Check payment methods including WEX OTR Money Code, Comdata Express Code *(virtual check)*, and Comdata ComCheck *(physical check)* using the *PaymentCheck* `sourceType`.
 
 ---
 
@@ -25,7 +25,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) for a successful WEX Money Code [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using a *PaymentCheck*. Required fields are based on the specific [fleet brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+The example below contains the minimum [parameters](#parameters) for a successful WEX Money Code [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using a *PaymentCheck*. Required fields are based on the specific [Fleet brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!-- theme: success -->
 > **POST** `/payments/v1/charges`
@@ -171,7 +171,7 @@ Example of a charge (201: Created) response.
 
 #### Request Variables
 
-Required fields are based on the specific [fleet brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
+Required fields are based on the specific [Fleet brand prompt requirements](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Brand-Req.md).
 
 <!--
 type: tab
@@ -206,7 +206,7 @@ type: tab
 -->
 
 <!-- theme: warning -->
-> - The `paymentSystemProductCode`, `itemType` and `itemSubType` must be sent in all fleet transactions to identify fuel and non-fuel purchases.
+> - The `paymentSystemProductCode`, `itemType` and `itemSubType` must be sent in all Fleet transactions to identify fuel and non-fuel purchases.
 > - Fuel products must always be the first item group.
 > - A maximum of ten products is allowed in `orderData`.
 > - The total amounts must equal the `amount.total`.
@@ -221,7 +221,7 @@ The below table identifies the required parameters in the `itemDetails` array in
 | `unitOfMeasurement` | *string* | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
 | `itemType` | *string* | 256 | Identifies the [type of the item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
 | `itemSubType` | *string* | 256 | Identifies the [subtype of item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
-| `amountComponents` | *object* | N/A | Identifies the [additional amounts](?path=docs/Resources/Master-Data/Amount-Components.md#amount-components) used in transactions, fleet transactions require `unitPrice` and `netAmount` for each item purchased |
+| `amountComponents` | *object* | N/A | Identifies the [additional amounts](?path=docs/Resources/Master-Data/Amount-Components.md#amount-components) used in transactions, Fleet transactions require `unitPrice` and `netAmount` for each item purchased |
 
 <!-- theme: info -->
 > Refer to the [order data](?path=docs/Resources/Master-Data/Order-Data.md) object for additional fields.

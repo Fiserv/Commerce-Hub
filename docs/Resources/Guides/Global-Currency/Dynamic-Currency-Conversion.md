@@ -21,7 +21,7 @@ Commerce Hub's Dynamic Currency Conversion _(DCC)_ service is a payment solution
 
 ## Key Takeaways
 
-- Dynamic currency conversion (DCC) is a merchant-provided service that allows the cardholder to see his/her foreign credit card transactions in his/her home currency at the point of sale.
+- Dynamic currency conversion *(DCC)* is a merchant-provided service that allows the cardholder to see his/her foreign credit card transactions in his/her home currency at the point-of-sale.
 - DCC is optional, and you have the right to decline.
 - With DCC you are still subject to any foreign transaction fees levied by your credit card.
 - Support for more than 70 global Visa and Mastercard-supported currencies
