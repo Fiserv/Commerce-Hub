@@ -4,7 +4,7 @@ tags: [Card Not Present, Card Present, Authentication, Environments, API Referen
 
 # Getting started with Commerce Hub APIs
 
-Commerce Hub's APIs allows a merchant to build their own UI and manage customer transactions within their own website, software, application, or device. Each request consists of the [authentication](#authentication) followed by the [request body](#request-body).
+Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, application, or device. Each request consists of the [header](#request-header) followed by the [request body](#request-body).
 
 <!-- theme: warning -->
 > Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
@@ -30,8 +30,6 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - View the request and response format of a specific API
 - Send and cancel [simulated](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md) transactions
 
----
-
 ### End to End
 
 <!--theme: info -->
@@ -42,8 +40,6 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Run test scripts based on the API's requirements
 - Conduct a complete beta test of your application
 - Test Value-Added Services
-
----
 
 ### Production
 

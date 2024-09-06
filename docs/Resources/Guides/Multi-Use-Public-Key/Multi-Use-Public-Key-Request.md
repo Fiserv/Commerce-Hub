@@ -1,5 +1,5 @@
 ---
-tags: [Online, Card Not Present, Checkout, Multi-Use Public Key, Payment Source]
+tags: [Multi-Use Public Key, RSA, Encrypted Payments, API Reference]
 ---
 
 # Multi-Use Public Key Request
@@ -73,7 +73,7 @@ Example of a charge payload request using PaymentCard for Manual Entry.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
    "source":{
@@ -131,7 +131,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
     },
     "merchantName": "Merchant Name",
@@ -171,8 +171,8 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Multi-Use Public Key Encryption](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
-- [Multi-Use Public Key Management](?path=docs/Online-Mobile-Digital/Checkout/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
+- [Multi-Use Public Key Encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
+- [Multi-Use Public Key Management](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
 

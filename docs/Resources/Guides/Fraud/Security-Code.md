@@ -19,7 +19,7 @@ titles: card, JSON Example
 
 The below table identifies the additional required parameters in the `card` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `securityCodeIndicator` | _string_ | | Indicates how the security code is passed |
 
@@ -184,7 +184,7 @@ Example of a security code verification during a charges request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

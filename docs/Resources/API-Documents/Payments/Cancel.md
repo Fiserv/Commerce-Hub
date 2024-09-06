@@ -38,7 +38,7 @@ The below table identifies the available parameters in the `referenceTransaction
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 | `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
@@ -52,7 +52,7 @@ type: tab
 
 The below table identifies the recommended parameters in the `transactionDetails` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `reversalReasonCode` | *string* | 40 | [Reason](#reversal-reason-code) the merchant/customer requests for cancel *(void)*. |
 
@@ -62,7 +62,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required | Description |
+| Variable | Data Type| Max Length | Required | Description |
 |---------|----------|----------------|---------|-----|
 |`merchantId` | *string* | 40 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |

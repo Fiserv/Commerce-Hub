@@ -26,7 +26,7 @@ titles: orderData, itemDetails, amountComponents, merchantDetails, transactionDe
 
 The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `orderData` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|-------|----------|---------|
 | `orderDate` | _string_ | 10 | Date that goods and services are ordered. YYYY-MM-DD format |
 | `itemCount` | _integer_ | 3 | Total number of items included in the purchase |
@@ -39,7 +39,7 @@ type: tab
 
 The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `itemDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|-------|------------|---------|
 | `itemNumber` | _number_ | 3 | Identifies the line item number out of total items sold |
 | `commodityCode` | _string_ | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
@@ -55,7 +55,7 @@ type: tab
 
 The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `amountComponents` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | --------- | --- | ------ | -------------- |
 | `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
 | `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
@@ -71,7 +71,7 @@ type: tab
 
 The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `merchantDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|-------|------|---------|
 | `taxId` | _string_ | 15 | The tax ID in the US or Business Number _(BNN)_ in Canada |
 | `vatRegistrationNumber` | _string_ | 64  | Merchant's VAT registration number |
@@ -82,7 +82,7 @@ type: tab
 
 The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|-------|----------|---------|
 | `merchantOrderId` | _string_ | 128 | Merchant order ID, customer reference number or purchase order number _(PO Number)_ |
 | `merchantInvoiceNumber` | _string_ | 12 | Merchant invoice number or reference number |
@@ -93,7 +93,7 @@ type: tab
 
 The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `customer` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|------|---------|---------|
 | `merchantCustomerId` | _string_ | 1024 | Merchant's unique customer identifier |
 | `taxId` | _string_ |  | Customer tax ID number |
@@ -271,7 +271,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 98.44,
       "currency": "USD"
     }
   },
@@ -597,7 +597,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
     }
   },
@@ -632,7 +632,7 @@ Example of a charge (201: Created) response.
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Card Brand Requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
 - [Commodity Codes](?path=docs/Resources/Guides/Level23/Commodity-Codes.md)
-- [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
-- [Unit of Measurement](?path=docs/Resources/Guides/Level23/Unit-Measurement.md)
+- [Tax Types](?path=docs/Resources/Master-Data/Tax-Types.md)
+- [Unit of Measurement](?path=docs/Resources/Master-Data/Commodity-Codes.md)
 
 ---

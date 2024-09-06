@@ -1,8 +1,8 @@
 ---
-tags: [Security, Credentials, Access Token, API Reference]
+tags: [Security, Credentials, Access Token, API Reference, Session ID]
 ---
 
-# Security Credentials
+# Obtain Security Credentials
 
 A security credentials request is used to obtain the credentials needed in an authentication request or submitting financial transactions.
 
@@ -14,17 +14,17 @@ A security credentials request is used to obtain the credentials needed in an au
 
 ---
 
-## Payload Example
+## Request credentials
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
+Example of a credentials payload request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
+
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/security/credentials`
-
-Example of a credentials payload request.
 
 ```json
 {
@@ -67,9 +67,9 @@ Example of a credentials (201: Created) response.
 
 ## Parameters
 
-### Request Variables
+### Request variables
 
-The tables below contain the fields for a security credential request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
+The tables below contain the fields for a security credential request.
 
 <!--
 type: tab
@@ -87,9 +87,9 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-### Response Variables
+### Response variables
 
-The below table identifies the response elements. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
+The below table identifies the response elements.
 
 | Variable | Type | Maximum Length | Description |
 |---------|----------|--------|--------|
@@ -103,15 +103,10 @@ The below table identifies the response elements. The full request schemas are a
 | `asymmetricEncryptionAlgorithm` | *string* | 32 | Asymmetric encryption algorithm associated with the public key. RSA/ECB/PKCS1 with padding. |
 | `expiresAt` | *string* | 64 | Date and time when the session expires |
 | `sessionId` | *string* | 64  | A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first. |
-| `domains` | *array* | N/A  | A whitelist of domains that are applicable for this credentials request |
-
-<!---
-| `symmetricEncryptionAlgorithm` | *string* |  | AES 256/PKCS with padding |
--->
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/credentials)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)

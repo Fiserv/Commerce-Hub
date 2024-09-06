@@ -23,7 +23,7 @@ titles: source, merchantDetails, transactionDetails
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|----------|----------------|---------|
 | `sourceType` | *string* | 15 | Payment [source types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported are *PaymentSession*, *PaymentCard*, or *PaymentToken*  |
 
@@ -33,7 +33,7 @@ type: tab
 
 The below table identifies the parameters in the `merchantDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `merchantId` | *string* | 1024 | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -44,7 +44,7 @@ type: tab
 
 The below table identifies the parameters in the `transactionDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `authentication3ds` | *boolean* | N/A | Determines if authentication should be performed on the payment type with 3DS provider |
 
@@ -61,7 +61,7 @@ titles: additionalData3DS, methodData
 
 The below table identifies the parameters in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `serviceProviderReferenceId` | *string* | 60 | Unique reference identifier assigned by the 3DS Server during an initialization |
 | `channel` | *string* | 32 | Determine the channel that the transaction came through |
@@ -73,7 +73,7 @@ type: tab
 
 The below table identifies the parameters in the `methodData` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `encodedToken` | *string* | 4000 | Base64 encoded transactional JWT token for external data collection with service provider |
 | `dataCollectionUrl` | *string* | 256 | The URL that will be used by the 3DS Method to collect card holder browser information |
@@ -183,7 +183,7 @@ The following table outlines the required fields to be collected in the `deviceF
 
 The below table identifies the parameters in the `dataStatic` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `colorDepth` | *number* | N/A | Value representing the depth of the color palette for displaying images, in bits per pixel. Obtained from the cardholder's browser using the `screen.colorDepth` JavaScript property. |
 | `screenWidth` | *number* | N/A | Total width of the cardholder’s screen in pixels. Value is returned from the `screen.width` JavaScript property |
@@ -197,13 +197,13 @@ The below table identifies the parameters in the `dataStatic` object.
 
 The below table identifies the parameters in the `dataDynamic` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `ipAddress` | *string* | 89 | IP address the browser is connecting from |
 
 The following table outlines the required fields to be collected in the `additionalData3DS` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `channel` | *String* | 32 | Indicates the type of channel interface being used to initiate the transaction |
 
@@ -246,7 +246,7 @@ titles: Variables, Example
 <!---
 The below table identifies the parameters in the `providerCollectionStatus` object in the the `methodData` object of `additionalData3DS`.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `attempted` | *boolean* | N/A |  |
 | `attemptedTimestamp` | *string* |  |  |

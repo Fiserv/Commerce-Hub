@@ -25,7 +25,7 @@ The below table identifies the available parameters in the `merchantDetails` obj
 <!-- theme: warning -->
 > All boarded identifiers (MID and/or TID) are required in API requests.
 
-| Variable | Type | Maximum Length | Required | Description |
+| Variable | Type | Max Length | Required | Description |
 | -------- | -- |------------| ------- | ---- |
 | `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
@@ -62,7 +62,7 @@ titles: transactionDetails, JSON Example
 
 The below table identifies the available parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description|
+| Variable | Type| Max Length | Description|
 |---------|-----------|----------------|---------|
 | `merchantTransactionId` | *string* | 128 | Unique merchant transaction ID (aka transaction reference ID). |
 | `merchantOrderId` | *string* | 128 | Merchant order ID (aka customer reference number or purchase order number). |

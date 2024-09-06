@@ -23,7 +23,7 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -98,7 +98,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 10.56,
+      "total": 12.04,
       "currency": "USD"
     },
     "processorResponseDetails": {
@@ -141,7 +141,7 @@ titles: directedRouting, processors
 
 The below table identifies the required parameters in the `directedRouting` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `network` | *string* | 16 | Identifies the debit card processing network. **Valid Values:** NYCE, PULSE, VISA |
 | `cardFunction` | *string* | 6 | Identifies if the processing method is CREDIT or DEBIT |
@@ -153,7 +153,7 @@ type: tab
 
 The below table identifies the required parameters in the `processors` array.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `processorName` | *string* | 256 | Identifies the payment processor. |
 | `processingPlatform` | *string* | 256 | Identifies the payment platform of the processor. |

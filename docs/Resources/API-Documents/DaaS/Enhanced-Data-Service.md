@@ -21,7 +21,7 @@ titles: amount, merchantDetails
 
 The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 | `total` | *number* | 18,3 | &#10004; | Total amount of the transaction. |
 | `currency` | *string* | 3 | &#10004; | The requested currency in [ISO 3 currency format](?path=docs/Resources/Master-Data/Currency-Code.md). |
@@ -32,7 +32,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 | `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `alternateMerchantId` | *string* | 1024 | &#10004; | An Alternate ID assigned to a merchant based on a Value Added Service. |
@@ -52,7 +52,7 @@ titles: transactionDetails, deviceFingerPrint, customer, splitTender, shippingAd
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `deviceFingerPrint` | *array* | N/A | An array containing the device fingerprint details |
 
@@ -62,13 +62,13 @@ type: tab
 
 The below table identifies the required `dataStatic` parameters in the `deviceFingerprint` array.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `deviceId` | *string* | 48 | MAC of the device originating the transaction |
 
 The below table identifies the required `dataDynamic` parameters in the `deviceFingerprint` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `latitude` | *string* | 256 | &#10004; | Cardholder current latitude GPS position |
 | `longitude` | *string* | 256 | &#10004; | Cardholder current longitude GPS position |
@@ -83,7 +83,7 @@ type: tab
 
 The below table identifies the required parameters in the `customer` object.
 
-| Variable | Type| Maximum Length |Description |
+| Variable | Type| Max Length |Description |
 |-----|---|-----|-----|
 | `email` | *string* | 256 | Customer email address |
 | `phone` | *array* | N/A | Customer [phone number](?path=docs/Resources/Master-Data/Customer-Details.md#phone-number) |
@@ -97,13 +97,13 @@ type: tab
 
 The below table identifies the required parameters in the `splitTender` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `splitTenderMethod` | *array* | N/A | Identifies the additional forms of payment used as part of this order |
 
 The below table identifies the required parameters in the `splitTenderMethod` array.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `type` | *string* | 1024 |**Valid Values:** *CREDIT_CARD*, *COUPON*, *GIFT_CARD*, *STORE_CREDIT*, *DEBIT_CARD*, *EBT_SNAP* |
 
@@ -116,7 +116,7 @@ type: tab
 
 The below table identifies the required parameters in the `shippingAddress` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |-----|---|-----|-----|
 | `firstName` | *string* | 256  | Shipping contact first name |
 | `lastName` | *string* | 256 | Shipping contact last name |
@@ -158,7 +158,7 @@ titles: source, card
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentCard* is used for a Enhanced Data Request request using `card`. |
 |`card` | *object* | N/A | &#10004; | Card data object |
@@ -169,7 +169,7 @@ type: tab
 
 The below table identifies the required parameters in the `card` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 | `bin` | *string* | 8 | &#10004; | Bank Identification Number (BIN), the initial set of four to six numbers of the Primary Account Numbe (PAN). |
 | `last4` | *string* | 4 | &#10004; | Contains the last four digits of the Primary Account Number (PAN). |
@@ -196,7 +196,7 @@ Example of an Enhanced Data payload request
 ```json
 {
    "amount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
    },
    "source":{
@@ -237,14 +237,14 @@ Example of an Enhanced Data payload request
             "type": "CREDIT_CARD",
             "count": "1",
             "amount":{
-               "total": "7.04"
+               "total": 7.04
             }
          },
          {
             "type": "GIFT_CARD",
             "count": "1",
             "amount": {
-               "total": "5.00"
+               "total": 5.00
             }
          }
       ]
@@ -315,7 +315,7 @@ titles: source
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |-----|---|-----|-----|-----|
 |`sourceType` | *string* | 15 | &#10004; | Value *PaymentToken* is used for a Enhanced Data Request request using a token. |
 |`tokenData` | *string* | 2048 | &#10004; | TransArmor token created from the payment source. |
@@ -342,7 +342,7 @@ Example of an Enhanced Data payload request
 ```json
 {
    "amount": {
-      "total": "12.04",
+      "total": 12.04,
       "currency": "USD"
    },
    "source":{
@@ -380,14 +380,14 @@ Example of an Enhanced Data payload request
             "type": "CREDIT_CARD",
             "count": "1",
             "amount":{
-               "total": "7.04"
+               "total": 7.04
             }
          },
          {
             "type": "GIFT_CARD",
             "count": "1",
             "amount": {
-               "total": "5.00"
+               "total": 5.00"
             }
          }
       ]
