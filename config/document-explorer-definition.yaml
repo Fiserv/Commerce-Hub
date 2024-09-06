@@ -61,7 +61,7 @@
         link: docs/In-Person/Encrypted-Payments/Track.md
       - title: Multi-Use Public Key
         link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
-    - title: Tap to Pay on iPhone
+    - title: Tap to Pay
       link: docs/In-Person/Integrations/Tap-to-Pay.md
   - title: Online/Digital/Mobile
     link: docs/Getting-Started/Getting-Started-Online.md
