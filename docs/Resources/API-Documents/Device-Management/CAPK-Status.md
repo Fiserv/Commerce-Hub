@@ -1,5 +1,5 @@
 ---
-tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference, Device, Terminal, Point of Sale]
+tags: [Device Management, EMV, Encrypted Payments, CAPK, API Reference, Device, Terminal, Point-of-Sale]
 ---
 
 # EMV CAPK Data Status

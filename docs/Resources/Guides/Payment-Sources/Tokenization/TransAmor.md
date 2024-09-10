@@ -271,7 +271,7 @@ The below table identifies the required parameters in the `card` object.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Card Metadata](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Account Information Lookup](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
