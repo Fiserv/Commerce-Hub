@@ -16,6 +16,21 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## September 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** August 22nd 2024
+- **Production:** September 6th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Secure Data Capture rebranded to [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md), iFrame v2 rebranded to Hosted Fields | Update |
+| [Checkout v3.1.7 release](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md), enhancements and support for ACH *PaymentCheck* transactions | Feature |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## August 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.

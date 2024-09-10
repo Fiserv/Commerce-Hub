@@ -8,6 +8,27 @@ The following version fixes have been implemented for Commerce Hub's Checkout SD
 
 ---
 
+## 3.1.7
+
+| Change | Additional Details |
+| ----- | ----- |
+| Payment field iFrame rendering now works even when parent page is not hosted by a server | such as in opening an html file in browser for testing or certain mobile app integrations using WebViews |
+| Card `last4`, `expirationMonth` and `expirationYear` echoed back by the SDK on submission for card capture | The `submit` method for payment fields instance, now includes card last four digits and expiration date in the response payload *(returned as a Promise)* |
+| ACH *PaymentCheck* support | The `window.fiserv.components.paymentFields` now supports capturing ACH details with specific fields and configuration |
+
+---
+
+## 3.1.3
+
+| Change | Additional Details |
+| ----- | ----- |
+| Increased iFrame render timeout | Helps in situations of poor or unreliable network quality  |
+| iOS support updates | Updates to iOS 15 compatibility. General update for iOS for the ALWAYS_MASK_ALL masking type. |
+| No longer auto-inserting a "0" at start of expiration text field when first digit entered is a "2" or greater | Update with code formatting |
+| Improved performance of formatting operations | Particularly when real-time masking is enabled |
+
+---
+
 ## 3.0.0
 
 | Change | Additional Details |
