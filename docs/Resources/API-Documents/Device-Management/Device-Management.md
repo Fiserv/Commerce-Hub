@@ -17,7 +17,7 @@ Commerce Hub supports the following integrations for managing point-of-sale *(PO
 <!-- type: card
 title: Certificate Management
 description: Upload a client certificate to Commerce Hub to enable secure, encrypted data in response messages.
-link: docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md
+link: ?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md
 -->
 
 <!-- type: card
