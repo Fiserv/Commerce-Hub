@@ -2,19 +2,19 @@
 tags: [Authorization, Approval Rate, Decline Rate, Payment Optimization]
 ---
 
-# Authorization Optimization
+# Increase approval rates with Authorization Optimization
 
 [Authorization Optimization](https://www.carat.fiserv.com/en-us/solutions/optimization/) from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks, Authorization Optimization ensures higher approval rates. This is achieved by locating updated card numbers and expiration dates and retying the transaction with the new data.
 
 <!-- theme: info -->
 > Authorization Optimization needs to be configured in Merchant Configuration and Boarding. Authorization Optimization can be configured to receive updated card and token data and reason, or the reason only. Please contact your account representative for more information.
 
-##### Supported Features
+**Supported features:**
 
 <!-- theme: info -->
 > Authorization Optimization is valid for Visa, Mastercard and Discover transactions on Nashville.
 
-- Real time card account updater
+- Real-time account updater *(RTAU)*
 - Dynamic retry
 
 <!---
@@ -24,7 +24,7 @@ tags: [Authorization, Approval Rate, Decline Rate, Payment Optimization]
 -->
 
 <!-- theme: warning -->
-> Card account updater and dynamic retry are not supported by all platforms and processors, please contact your account representative for more information.
+> RTAU and dynamic retry are not supported by all platforms and processors, please contact your account representative for more information.
 
 <!---
 All secondary transactions including; [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), offline Refund and [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) *(voids)* requests may need to send updated card details in the subsequent requests.
@@ -32,16 +32,16 @@ All secondary transactions including; [Capture](?path=docs/Resources/API-Documen
 
 ---
 
-## Transaction Example
+## Supported Authorization Optimization transactions
 
-The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md) using a *PaymentCard* or *PaymentToken*.
+The following transactions may receive updated card data, token data and reason, or the reason only in the response: [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds API request](?path=docs/Resources/API-Documents/Payments/Refund.md) using a *PaymentCard* or *PaymentToken*.
 
 <!--
 type: tab
 titles: Request, Response 
 -->
 
-The example below contains the minimum [parameters](#parameters) for a successful Authorization Optimization charges request using *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+The example below contains the minimum [parameters](#parameters) for a successful Authorization Optimization Charges API request using *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!-- theme: success -->
 > **POST** `/payments/v1/charges`
@@ -83,6 +83,9 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 type: tab
 -->
 
+<!-- theme: warning -->
+> If the merchant account is configured to receive updated card data, it will be returned encrypted in the response along with the `authOptimizationDetails`. A [client certificate](?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md) must be uploaded to Commerce Hub before the card data can be returned.
+
 Example of an Authorization Optimization (201: Created) response.
 
 <!-- theme: info -->
@@ -104,12 +107,14 @@ Example of an Authorization Optimization (201: Created) response.
   },
   "source": {
     "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "JWE",
+      "encryptionBlock": "\"Wn+VwpLDgp41IwstEHQS8u4EQJ\n=s3ZmiL1SSZC8QyBpj/....\"",
+      "encryptionBlockFields": "card.cardData:16"
+    },
     "card": {
-      "bin": "40055500",
-      "last4": "0019",
-      "scheme": "VISA",
-      "expirationMonth": "10",
-      "expirationYear": "2030"
+      "expirationMonth": "12",
+      "expirationYear": "2034"
     }
   },
   "paymentReceipt": {
@@ -140,7 +145,8 @@ Example of an Authorization Optimization (201: Created) response.
   "authOptimizationDetails": {
     "accountStatus": "ACCOUNT_CHANGE",
     "originalHostResponseCode": "51",
-    "originalHostResponseMessage": "DECLINED"
+    "originalHostResponseMessage": "DECLINED",
+    "panEncryptionStatus": "SUCCESS"
   }
 }
 ```
@@ -149,12 +155,12 @@ Example of an Authorization Optimization (201: Created) response.
 
 ---
 
-### Parameters
+## Parameters
 
-#### Request Variables
+### Request variables
 
 <!-- theme: warning -->
-> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response with the updated *PaymentToken*. To override this behavior, `createToken`*:false* is required in `transactionDetails`.
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service and to receive updated token data, `paymentTokens` will be returned in the response with the updated *PaymentToken*. To override this behavior, `createToken`*:false* is required in `transactionDetails`.
 
 <!--
 type: tab
@@ -171,7 +177,7 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 
 ---
 
-#### Response Variables
+### Response variables
 
 <!--
 type: tab
@@ -187,8 +193,9 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 | `accountUpdaterErrorDescription` | *string* | 256 | Error description provided by the account updater system |
 | `originalHostResponseCode` | *string* | 256 | Original `hostReponseCode` for re-authorized *(Optimized)* transaction |
 | `originalHostResponseMessage` | *string* | 256 | Original `hostResponseMessage` for re-authorized *(Optimized)* transaction |
+| `panEncryptionStatus` | *string* | 5 | Indicates the **SUCCESS** of **FAILED** status of encrypted PAN |
 
-##### Account Status Reason
+#### Account Status Reason
 
 | Variable | Description |
 | ----- | ----- |
@@ -201,10 +208,11 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+- [Upload Public Key]
 
 ---
