@@ -188,9 +188,11 @@
     - title: Device Management
       link: docs/Resources/API-Documents/Device-Management/Device-Management.md
       sections:
+      - title: Client Certificate
+        link: docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md
       - title: EMV CAPK Data
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
-      - title: POS Decision Tables
+      - title: POS Decision Table
         link: docs/Resources/API-Documents/Device-Management/Decision-Table.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
