@@ -1,8 +1,8 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
+tags: [Online, Card Not Present, Checkout, Payment JS]
 ---
 
-# Secure Data Capture - JavaScript v2 Supported Fields and Methods
+# Checkout - JavaScript v2 Supported Fields and Methods
 
 The JavaScript SDK defines a function in the window object `window.fiserv.commercehub.captureCard`. This function accepts a JavaScript object containing the [PCI field data](#field-data) as well as the [submission configuration](#configuration).
 
@@ -40,7 +40,7 @@ The available PCI fields are listed in the table below.
 
 ## See Also
 
-- [Create a JavaScript Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Create a JavaScript Request](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Request.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---

@@ -1,8 +1,8 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
+tags: [Online, Card Not Present, Checkout, Payment JS]
 ---
 
-# Secure Data Capture - JavaScript v2 Integration Guide
+# Checkout - JavaScript v2 Integration Guide
 
 <!-- theme: info -->
 > Commerce Hub's JavaScript solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
@@ -21,13 +21,13 @@ The JS script tag is required in the website by downloading or including the fol
 <script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/saq-a.js"></script>
 ```
 
-It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
+It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md) of Commerce Hub's SDK to ensure PCI and security compliance.
 
 ---
 
 ## Step 3: Call the SDK
 
-The following JavaScript example will authenticate and load the payment form with the [defined fields and methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md).
+The following JavaScript example will authenticate and load the payment form with the [defined fields and methods](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Customization.md).
 
 <!-- theme: info -->
 > Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) payment instrument such as a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves validation purposes.
@@ -95,7 +95,7 @@ Example of a charges payload request.
 ```json
 {
   "amount": {
-    "total": 12.04,
+    "total": "12.04",
     "currency": "USD"
   },
   "source": {
@@ -191,8 +191,8 @@ Example of a charge (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [JavaScript Fields and Methods](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
-- [Version Release Notes](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/SDC-Version-Release.md)
+- [JavaScript Fields and Methods](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Customization.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
+- [Version Release Notes](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md)
 
 ---

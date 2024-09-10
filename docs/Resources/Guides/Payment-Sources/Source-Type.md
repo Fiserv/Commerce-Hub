@@ -278,7 +278,7 @@ A [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.m
 type: tab
 -->
 
-[PaymentSession](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) is a nonce token obtained from a security credentials request. _PaymentSession_ is used in [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md) integrations to submit a transaction to our application.
+PaymentSession is a nonce token obtained from a [Security Credentials API request](?path=docs/Resources/API-Documents/Security/Credentials.md). _PaymentSession_ is used in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application.
 
 ```json
 {

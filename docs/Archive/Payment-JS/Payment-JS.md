@@ -1,10 +1,10 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
+tags: [Online, Card Not Present, Checkout, Payment JS]
 ---
 
-# Secure Data Capture - JavaScript v2 Solution
+# Checkout - JavaScript v2 Solution
 
-Commerce Hub JavaScript _(JS)_ solution provides E-commerce merchants an API client that handles the encryption of customer data within their application while still allowing merchants full control over design and payment form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) solutions)_. The JavaScript call sends the customer's payment information directly from the end-user's browser, thereby allowing merchants to offload payment processing of secure data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
+Commerce Hub JavaScript _(JS)_ solution provides E-commerce merchants an API client that handles the encryption of customer data within their application while still allowing merchants full control over design and payment form of their website _(unlike Hosted Payment Page and [iFrame](docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md) solutions)_. The JavaScript call sends the customer's payment information directly from the end-user's browser, thereby allowing merchants to offload payment processing of secure data to Commerce Hub. The merchant website can then pass the `sessionId` in a charges/tokens request as the payment source.
 
 ### Benefits
 
@@ -29,24 +29,22 @@ Allows a merchant an easy and secure way to integrate with Commerce Hub through 
 <!-- type: card
 title: JS Integration Guide
 description: Begin integration with Commerce Hub's JavaScript SDK solution.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md
+link: ?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Request.md
 -->
 
 <!-- type: card
 title: JS Supported Methods and Fields
 description: Supported PCI field data and the submission configuration.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md
+link: ?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Customization.md
 -->
 
 <!-- type: row-end -->
 
 ---
 
-## Additional Security Settings
+## Additional security settings
 
 The following security settings are recommended to limit the potential for fraudulent activity on your Commerce Hub integration.
-
-### Recommendations
 
 - Enable Re-Captcha
 - Authentication/Login requirement to access the payment page

@@ -1,11 +1,11 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, iFrame]
+tags: [Online, Card Not Present, Checkout, iFrame]
 ---
 
-# Secure Data Capture - iFrame v1 Customization
+# Checkout - iFrame v1 Customization
 
 <!-- theme: danger -->
-> Version 1 of Commerce Hub's Secure Data Capture iFrame solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md). We strongly recommend switching to the v2 solution.
+> Version 1 of Commerce Hub's Checkout iFrame solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md). We strongly recommend switching to the v2 solution.
 
 Commerce Hub supports customization of iFrame elements to match the merchant's website for a seamless payment and checkout experience. The merchant can override the elements of the iFrame including [language](#languages), and the [theme and font](#theme-and-font).
 
@@ -202,8 +202,8 @@ Commerce Hub implements security restrictions that prevent attackers from inject
 
 ## See Also
 
-- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Request.md)
-- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Events.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/iFrameV1-Request.md)
+- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/iFrameV1-Events.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---

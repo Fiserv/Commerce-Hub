@@ -1,11 +1,11 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, iFrame]
+tags: [Online, Card Not Present, Checkout, iFrame]
 ---
 
-# Secure Data Capture - iFrame v1 Integration Guide
+# Checkout - iFrame v1 Integration Guide
 
 <!-- theme: danger -->
-> Version 1 of Commerce Hub's Secure Data Capture iFrame solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md). We strongly recommend switching to the v2 solution.
+> Version 1 of Commerce Hub's Checkout iFrame solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md). We strongly recommend switching to the v2 solution.
 
 ## Step 1: Acquire Credentials
 
@@ -142,7 +142,7 @@ Example of a charge payload request.
 ```json
 {
   "amount": {
-    "total": 12.04,
+    "total": "12.04",
     "currency": "USD"
   },
   "source": {
@@ -238,8 +238,8 @@ Example of a charge (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Customization.md)
-- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Events.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/iFrameV1-Customization.md)
+- [iFrame Event Listener](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/iFrameV1-Events.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---
