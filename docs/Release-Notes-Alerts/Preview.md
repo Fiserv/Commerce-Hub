@@ -13,23 +13,20 @@ Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&bra
 
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
+
 ---
 
-## August 2024
+## September 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
 
-- **Certification:** July 17th 2024
-- **Production:** July 23rd 2024
+- **Certification:** August 22nd 2024
+- **Production:** September 6th 2024
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.24.08: refactored Authorization Optimization models, added models to support Fleet transactions | Update |
-| Update [API endpoint URLs](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to support new authentication credentials | Update |
-| [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
-| Support [Multi-Use Public Key RSA encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
-| Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
-| Support [Fleet Card and Check transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md) | Feature |
+| Secure Data Capture rebranded to [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md), iFrame v2 rebranded to Hosted Fields | Update |
+| [Checkout v3.1.7 release](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md), enhancements and support for ACH *PaymentCheck* transactions | Feature |
 
 ---
 
