@@ -2,26 +2,26 @@
 tags: [Security, Credentials, Access Token, API Reference, Session ID]
 ---
 
-# Obtain Security Credentials
+# Generate API credentials
 
-A security credentials request is used to obtain the credentials needed in an authentication request or submitting financial transactions.
+Commerce Hub's Security Credentials API is used to obtain the credentials needed in an authentication request or submitting financial transactions.
 
-- Returns an `accessToken` used in creating an [authentication header](?path=docs/Resources/API-Documents/Authentication-Header.md).
-- Returns a `sessionId` used with [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) requests.
+- Returns an `accessToken` used in creating a [message digest header](?path=docs/Resources/API-Documents/Message-Digest.md).
+- Returns a `sessionId` used with [Checkout integrations](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
 
 <!-- theme: danger -->
 > The `sessionId` returned in the response is considered private data that should be stored on the merchant's backend server and never sent to the customer's browser.
 
 ---
 
-## Request credentials
+## Request security credentials
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a credentials payload request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
+The example below contains the minimum [parameters](#parameters) for a successful Security Credentials API request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/security/credentials).
 
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/security/credentials`
@@ -69,7 +69,7 @@ Example of a credentials (201: Created) response.
 
 ### Request variables
 
-The tables below contain the fields for a security credential request.
+The tables below contain the fields for a security credential request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
 
 <!--
 type: tab
@@ -78,7 +78,7 @@ titles: merchantDetails
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variables | Type| Maximum Length | Required | Description |
+| Variables | Type| Max Length | Required | Description |
 |---------|----------|----------------|-------- | --------|
 | `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. |
 | `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. Required when using [merchant defined](?path=docs/Resources/Guides/BYOID.md) MID/TID. |
@@ -89,9 +89,9 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ### Response variables
 
-The below table identifies the response elements.
+The below table identifies the response elements. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/credentials).
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 |---------|----------|--------|--------|
 | `accessToken` | *string* | 2048 | Access token credential to be used in subsequent API calls. |
 | `accessTokenType` | *string* | 50 | Identifies if the token is a BEARER or JWT *(JSON Web Token)* |
