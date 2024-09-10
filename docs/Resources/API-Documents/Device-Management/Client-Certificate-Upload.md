@@ -8,16 +8,14 @@ Commerce Hub provides an API for clients to upload a client certificate. This ce
 
 **Supported features:**
 
-<!-- theme: info -->
-> The supported feature needs to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
-
-Commerce Hub supports returning encrypted data for the following features:
-
 - [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md): Commerce Hub's real-time account updater *(RTAU)*
+
+<!-- theme: info -->
+> The supported feature may need to be configured in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
-## Upload a new client certificate
+## Upload a client certificate
 
 <!--
 type: tab
@@ -31,7 +29,7 @@ The example below contains the minimum [parameters](#parameters) to upload a new
 
 ```json
 {
-  "cryptographicDetails": {
+  "clientCryptographicDetails": {
     "clientKeyID": "924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b.....",
     "cryptographicResource": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......",
     "cryptographicAlgorithm": "JWE",
@@ -68,7 +66,7 @@ Example of a client certificate upload (201: Created) response.
       "apiKey": "Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4"
     }
   },
-  "cryptographicDetails": {
+  "clientCryptographicDetails": {
     "clientKeyID": "924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d",
     "cryptographicResource": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......",
     "cryptographicAlgorithm": "JWE",
@@ -89,10 +87,10 @@ Example of a client certificate upload (201: Created) response.
 
 <!--
 type: tab
-titles: cryptographicDetails
+titles: clientCryptographicDetails
 -->
 
-The below table identifies the request and response parameters in the `cryptographicDetails` object.
+The below table identifies the request and response parameters in the `clientCryptographicDetails` object.
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |

@@ -32,7 +32,7 @@ All secondary transactions including; [Capture](?path=docs/Resources/API-Documen
 
 ---
 
-## Supported Authorization Optimization transactions
+## Supported transactions
 
 The following transactions may receive updated card data, token data and reason, or the reason only in the response: [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds API request](?path=docs/Resources/API-Documents/Payments/Refund.md) using a *PaymentCard* or *PaymentToken*.
 
