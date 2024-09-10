@@ -1,8 +1,8 @@
 ---
-tags: [Card Not Present, Card Present, Request Header, Request Body, Header, Environments]
+tags: [Card Not Present, Card Present, Authentication, Environments, API Reference]
 ---
 
-# Constructing a RESTful API Request
+# Getting started with Commerce Hub APIs
 
 Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, application, or device. Each request consists of the [header](#request-header) followed by the [request body](#request-body).
 
@@ -18,7 +18,9 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 <!-- theme: warning -->
 > Commerce Hub requires testing against our cert environment before using our production environment.
 
-#### Sandbox
+---
+
+### Sandbox
 
 <!--theme: info -->
 > https://connect-cert.fiservapis.com/ch/{resource}
@@ -28,7 +30,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - View the request and response format of a specific API
 - Send and cancel [simulated](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md) transactions
 
-#### End to End
+### End to End
 
 <!--theme: info -->
 > https://connect-cert.fiservapis.com/ch/{resource}
@@ -39,7 +41,7 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - Conduct a complete beta test of your application
 - Test Value-Added Services
 
-#### Production
+### Production
 
 <!--theme: info -->
 > https://connect.fiservapis.com/ch/{resource}
@@ -51,22 +53,24 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 ---
 
-## Request Header
+## Authentication
 
-Commerce Hub RESTful API has a consistent header structure based on a set of parameters. To create the header, provide the following values:
+Commerce Hub RESTful API has a consistent header structure based on a set of parameters. The below information is used to [create the header](?path=docs/Resources/API-Documents/Authentication-Header.md) or [message digest](?path=docs/Resources/API-Documents/Message-Digest.md).
 
-| Variable | Type | Length | Description/Values |
-| -------- | :--: | :------------: | ------------------ |
-| `Content-Type` | *string* | N/A | The content type. Valid Value (application/json) |
-| `Client-Request-Id` | *string* | N/A | A client-generated ID for request tracking and signature creation, unique per request. This is also used for idempotency control. Recommended 128-bit UUID format. |
-| `Api-Key` | *string* | N/A | API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal. |
-| `Timestamp` | *integer* | N/A | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
 | `Accept-Language` | *string* | N/A | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
 | `Authorization` | *string* | N/A | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
 | `Auth-Token-Type`| *string* | N/A | Indicates Authorization type HMAC or AccessToken.|
-| `Message-Digest` | *string* | N/A | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) or Hosted Payment Page request. |
+| `Message-Digest` | *string* | N/A | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) or Hosted Payment Page request. |
 
 ### Sample Header
+
+| `Authorization` | *string* | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
+| `Auth-Token-Type`| *string* | Indicates Authorization type *HMAC* or *AccessToken*.|
+| `Message-Digest` | *string* | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) or Hosted Payment Page request. |
+
+---
+
+### Authentication header example
 
 ```json
 {
@@ -81,11 +85,25 @@ Commerce Hub RESTful API has a consistent header structure based on a set of par
 
 ---
 
-## Request Body
+### Message digest example
+
+```json
+{
+  "Content-Type": "application/json",
+  "Client-Request-Id": "CLIENT_REQUEST_ID",
+  "Api-Key": "API_KEY",
+  "Timestamp": "TIMESTAMP",
+  "Auth-Token-Type": "AccessToken",
+  "Authorization": "BEARER_ACCESS_TOKEN",
+  "Message-Digest": "MESSAGE_DIGEST"
+}
+```
+
+---
+
+## Request body
 
 The body of the transaction request differs based on the transaction being initiated. Below is the sample body for a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) request.
-
-### Request Body Example
 
 ```json
 {
@@ -114,7 +132,7 @@ The body of the transaction request differs based on the transaction being initi
 
 ---
 
-## API Call Example
+## API request example
 
 A standard API call to execute a Charges API request.
 

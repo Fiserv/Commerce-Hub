@@ -10,7 +10,7 @@ Commerce Hub's API is designed to work seamlessly with our 3-D Secure (3DS) auth
 
 ## Step 1: Obtain PaymentSource
 
-Obtain the customer's [paymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [paymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), or [paymentSession](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) based on the integration method.
+Obtain the customer's [paymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [paymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), or [paymentSession](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) based on the integration method.
 
 ---
 

@@ -9,10 +9,24 @@ Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&bra
 <!-- theme: info -->
 > The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **[Preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview)** in the left navigation when viewing an article or API.
 
-##### Release Types
+**Release Types:**
 
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
+
+---
+
+## September 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** August 22nd 2024
+- **Production:** September 6th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Secure Data Capture rebranded to [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md), iFrame v2 rebranded to Hosted Fields | Update |
+| [Checkout v3.1.7 release](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md), enhancements and support for ACH *PaymentCheck* transactions | Feature |
 
 ---
 
@@ -61,7 +75,6 @@ Commerce Hub will target to update our environments on the following dates; howe
 | ----- | ----- |
 | Version 1.24.06: Reorganization of Payments-VAS groups for API Explorer and documentation | Update |
 | [Partner tokens](?path=docs/Resources/API-Documents/Payments_VAS/Get-Proccesor-Token.md) response updated to make `cardDetails` an array | Update |
-| Secure Data Capture [v2 JavaScript solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) | Feature |
 | Support for merchant managed 3rd-party [network tokens](?path=docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token.md) | Feature |
 
 ---
