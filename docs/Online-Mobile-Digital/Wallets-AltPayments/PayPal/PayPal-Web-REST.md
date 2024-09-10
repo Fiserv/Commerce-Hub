@@ -61,7 +61,6 @@ title: Response
    "source":"PayPal",
    "paymentToken":{
       "tokenData":"1234123412340019",
-      "PARId":"string",
       "declineDuplicates":false,
       "tokenSource":"RSA"
    },
