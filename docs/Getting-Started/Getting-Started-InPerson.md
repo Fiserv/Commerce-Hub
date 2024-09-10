@@ -1,5 +1,5 @@
 ---
-tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point of Sale, Terminal]
+tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point-of-Sale, Terminal]
 ---
 
 # In-Person Payments
@@ -49,8 +49,8 @@ link: ?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md
 -->
 
 <!-- type: card
-title: Tap to Pay on iPhone
-description: Commerce Hub's SDK allows integration with Apple's Tap to Pay on iPhone to accept contactless payments from an iPhone or a partner-enabled iOS app.
+title: Tap to Pay
+description: Commerce Hub's Terminal API SDKs allows integration with iOS and Android to accept contactless payments from a supported device or a partner-enabled app.
 link: ?path=docs/In-Person/Integrations/Tap-to-Pay.md
 -->
 

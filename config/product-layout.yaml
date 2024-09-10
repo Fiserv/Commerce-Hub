@@ -96,9 +96,9 @@ featuredFeatures:
       - type: post
         path: /payments-vas/v1/accounts/currencies/dcc
         title: DCC
-  - title: Tap to Pay on iPhone
+  - title: Tap to Pay
     groupName: Featured
-    description: "Leverage Commerce Hub's Tap to Pay on iPhone SDK to accept in-store payments on Apple's iPhone devices."
+    description: "Leverage Commerce Hub's Tap to Pay SDKs to accept in-store payments on iOS and Android devices."
     featured: true
     relatedDocs:
      - link: docs/In-Person/Integrations/Tap-to-Pay.md
