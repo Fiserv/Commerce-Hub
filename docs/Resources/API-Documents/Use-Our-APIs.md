@@ -4,10 +4,10 @@ tags: [Card Not Present, Card Present, Authentication, Environments, API Referen
 
 # Getting started with Commerce Hub APIs
 
-Commerce Hub's RESTful API allows a merchant to build their own UI and manage customer transactions within their own website, software, application, or device. Each request consists of the [header](#request-header) followed by the [request body](#request-body).
+Commerce Hub's APIs allows a merchant to build their own UI and manage customer transactions within their own website, software, application, or device. Each request consists of the authentication followed by the request body.
 
 <!-- theme: warning -->
-> Merchants are required to have the relevant Payment Card Industry (PCI) Compliance capabilities to process and store card data.
+> Merchants are required to have the relevant Payment Card Industry *(PCI)* Compliance capabilities to process and store card data.
 
 ---
 
@@ -16,7 +16,7 @@ Commerce Hub's RESTful API allows a merchant to build their own UI and manage cu
 Commerce Hub has different environments, that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: warning -->
-> Commerce Hub requires testing against our cert environment before using our production environment.
+> Commerce Hub requires testing against our end-to-end *(certification)* environment before using our production environment.
 
 ---
 
@@ -30,16 +30,20 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 - View the request and response format of a specific API
 - Send and cancel [simulated](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md) transactions
 
-### End to End
+---
+
+### End-to-end
 
 <!--theme: info -->
 > https://connect-cert.fiservapis.com/ch/{resource}
 
-- Uses [cert credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
+- Uses [certification credentials](?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)
 - Certify before deploying to production
 - Run test scripts based on the API's requirements
 - Conduct a complete beta test of your application
 - Test Value-Added Services
+
+---
 
 ### Production
 
@@ -53,20 +57,20 @@ Commerce Hub has different environments, that allow the consumption of our RESTf
 
 ---
 
-## Authentication
+## Authentication parameters
 
 Commerce Hub RESTful API has a consistent header structure based on a set of parameters. The below information is used to [create the header](?path=docs/Resources/API-Documents/Authentication-Header.md) or [message digest](?path=docs/Resources/API-Documents/Message-Digest.md).
 
-| `Accept-Language` | *string* | N/A | The Accept-Language header contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client. example: en-US or fr-CA. |
-| `Authorization` | *string* | N/A | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
-| `Auth-Token-Type`| *string* | N/A | Indicates Authorization type HMAC or AccessToken.|
-| `Message-Digest` | *string* | N/A | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) or Hosted Payment Page request. |
-
-### Sample Header
-
-| `Authorization` | *string* | Used to ensure the request has not been tampered with during transmission. Valid encryption; [HMAC](?path=docs/Resources/API-Documents/Authentication-Header.md) or [AccessToken](?path=docs/Resources/API-Documents/Security/Credentials.md). |
-| `Auth-Token-Type`| *string* | Indicates Authorization type *HMAC* or *AccessToken*.|
-| `Message-Digest` | *string* | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) or Hosted Payment Page request. |
+| Variable | Type | Description |
+| ----- | :-----: | ----- |
+| `Content-Type` | *string* | Defines the content type as *application/json* |
+| `Client-Request-Id` | *string* | A client-generated ID for request tracking and signature creation, unique per request. This is also used for [idempotency control](?path=docs/Resources/Guides/Idempotency.md). Recommended 128-bit UUIDv4 format. |
+| `Api-Key` | *string* | [API Key](?path=(?path=docs/Resources/Guides/Dev-Studio/Key-Management.md)) associating the requests with the appropriate account in the Developer Portal |
+| `Timestamp` | *integer* | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
+| `Accept-Language` | *string* | Contains information about the language preference of a user. This HTTP header is useful to multilingual sites for deciding the best language to serve to the client, example: *en-US* or *fr-CA*. |
+| `Authorization` | *string* | Used to ensure the request has not been tampered with during transmission. Valid encryption; *HMAC* or *AccessToken* |
+| `Auth-Token-Type`| *string* | Indicates Authorization type *HMAC* or *AccessToken*|
+| `Message-Digest` | *string* | Needed only from customer browser or app to the API in a [API Only card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) or Hosted Payment Page request. |
 
 ---
 
