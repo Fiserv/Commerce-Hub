@@ -1,11 +1,11 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, iFrame]
+tags: [Online, Card Not Present, Checkout, iFrame]
 ---
 
-# Secure Data Capture - iFrame v1 Event Listener
+# Checkout - iFrame v1 Event Listener
 
 <!-- theme: danger -->
-> Version 1 of Commerce Hub's Secure Data Capture iFrame solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md). We strongly recommend switching to the v2 solution.
+> Version 1 of Commerce Hub's Checkout iFrame solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md). We strongly recommend switching to the v2 solution.
 
 Commerce Hub supports external interaction with the iFrame solution which allows merchants to listen for card form state change events and react accordingly, and explicitly submit the card form from an external stimulus such as a button click on the merchants site.
 
@@ -128,8 +128,8 @@ document.getElementById('external-submit-button').addEventListener('click', () =
 
 ## See Also
 
-- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Request.md)
-- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrameV1-Customization.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Create an iFrame Request](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/iFrameV1-Request.md)
+- [Customize iFrame Payment Form](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/iFrameV1-Customization.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---

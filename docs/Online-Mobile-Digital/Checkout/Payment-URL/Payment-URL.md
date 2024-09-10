@@ -44,7 +44,7 @@ Example of Payment URL Request.
 ```json
 {
   "amount": {
-    "total": 12.04,
+    "total": "12.04",
     "currency": "USD"
   },
   "customer": {
@@ -74,7 +74,7 @@ type: tab
 title: Response
 -->
 
-Example of Payment URL (200: Success) Response.
+Example of Payment Url (200: Success) Response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -146,7 +146,7 @@ The [status](#payment-url-status) of the Payment URL will be received in compone
 
 #### Component: paymentUrlDetail
 
-| Variable | Type| Max Length | Description/Values|
+| Variable | Type| Maximum Length | Description/Values|
 |---------|----------|----------------|---------|
 | `paymentUrl` | *string* |  | URL for embedded payment link. |
 | `merchantTransactionId` | *string* |  | The unique merchant transaction ID from the request, if supplied. |
@@ -220,4 +220,4 @@ Example of Payment URL Delete (200: Success) Response.
 
 ## See Also
 
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)

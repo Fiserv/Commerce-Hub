@@ -1,11 +1,11 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
+tags: [Online, Card Not Present, Checkout, Payment JS]
 ---
 
-# Secure Data Capture - JS v1 Customization
+# Checkout - JS v1 Customization
 
 <!-- theme: danger -->
-> Version 1 of Commerce Hub's Secure Data Capture JS solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md). We strongly recommend switching to the v2 solution.
+> Version 1 of Commerce Hub's Checkout JS solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Request.md). We strongly recommend switching to the v2 solution.
 
 The JavaScript or JS elements are set by default based on the ADA guidelines. Commerce Hub allows the merchant to customize the styling by setting a flag and apply their own styling. The merchant can override the elements of the JS including [language](#languages), and the [theme and font](#theme-and-font).
 
@@ -104,8 +104,8 @@ The following elements can be overridden:
 
 ## See Also
 
-- [JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
-- [JS Request Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [JS Integration](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/Payment-JS.md)
+- [JS Request Form](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Request.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---

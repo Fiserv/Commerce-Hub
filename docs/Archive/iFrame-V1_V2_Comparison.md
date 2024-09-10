@@ -1,10 +1,10 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, iFrame]
+tags: [Online, Card Not Present, Checkout, iFrame]
 ---
 
-# Secure Data Capture - iFrame v1 and v2 Comparison
+# Checkout - iFrame v1 and v2 Comparison
 
-High-level differences between v1 and v2 for iFrame Secure Data Capture.
+High-level differences between v1 and v2 for iFrame Checkout.
 
 | | V1 | V2 |
 | -- | -- | -- |
@@ -21,7 +21,7 @@ High-level differences between v1 and v2 for iFrame Secure Data Capture.
 
 ## See Also
 
-- [iFrame v2 Integration Guide](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [iFrame v2 Integration Guide](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---

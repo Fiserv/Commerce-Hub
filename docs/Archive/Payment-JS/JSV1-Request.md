@@ -1,12 +1,12 @@
 ---
-tags: [Online, Card Not Present, Secure Data Capture, Payment JS]
+tags: [Online, Card Not Present, Checkout, Payment JS]
 ---
 
 
-# Secure Data Capture - JS v1 Integration Guide
+# Checkout - JS v1 Integration Guide
 
 <!-- theme: danger -->
-> Version 1 of Commerce Hub's Secure Data Capture JS solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md). We strongly recommend switching to the v2 solution.
+> Version 1 of Commerce Hub's Checkout JS solution is being sunset in favor of [Version 2](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Request.md). We strongly recommend switching to the v2 solution.
 
 ## Step 1: Acquire Credentials
 
@@ -138,7 +138,7 @@ Example of a charge payload request.
 ```json
 {
   "amount": {
-    "total": 12.04,
+    "total": "12.04",
     "currency": "USD"
   },
   "source": {
@@ -234,9 +234,9 @@ Example of a charge (201: Created) response.
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Payments_VAS/Credentials.md)
-- [Customize JS Payment Form](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Customization.md)
+- [Customize JS Payment Form](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Customization.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Payment JS Integration](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/Payment-JS.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---

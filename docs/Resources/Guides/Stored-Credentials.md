@@ -2,15 +2,15 @@
 tags: [Stored Credentials, Tokenization, Card Not Present]
 ---
 
-# Stored Credentials
+# Using Stored Credentials
 
-Stored Credentials, also known as Credentials on File or Card on File, allows the customer to authorize the storage of their payment source details for future transactions as a Cardholder Initiated Transaction (CIT). Stored credentials is submitted in an initial [charges with tokenization](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification with tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [tokenization with verification](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request.
+Stored Credentials, also known as Credentials on File or Card on File, allows the customer to authorize the storage of their payment source details for future transactions as a Cardholder Initiated Transaction *(CIT)*. Stored credentials is submitted in an initial [Charges API request with tokenization](?path=docs/Resources/API-Documents/Payments/Charges.md), [Verification API request with tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [Tokens API request with verification](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) request.
 
-The merchant can initiate a subsequent transactions on behalf of customers (e.g. for subscription payments), using the [Payment Token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) created from the customer's details as a Merchant Initiated Transaction (MIT).
+The merchant can initiate a subsequent transactions on behalf of customers *(e.g. for subscription payments)*, using the Payment Token created from the customer's details as a Merchant Initiated Transaction *(MIT)*.
 
 ---
 
-## Request Variables
+## Request variables
 
 The following variables are used in the initial `PaymentToken` request and subsequent transactions.
 
@@ -18,7 +18,7 @@ The following variables are used in the initial `PaymentToken` request and subse
 > The `bankNetDate` for Mastercard should be passed as part of the [card network](?path=docs/Resources/Master-Data/Network-Details.md#card-network) in the `transactionInteraction` [object](?path=docs/Resources/Master-Data/Transaction-Interaction.md).
 
 <!--theme: info-->
-> It is recommended that the merchant captures [encrypted CVV](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
+> It is recommended that the merchant captures and [encrypts the security code](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) from a returning customer for security and validation purposes.
 
 <!--
 type: tab
@@ -28,7 +28,7 @@ titles: storedCredentials, additionalDataCommon
 The below table identifies the parameters in the `storedCredentials` object.
 
 | Variable | Type | Max Length | Required | Description |
-| -------- | -- | ------------ | ---------| --------- |
+| ----- | :-----: | :-----: | ----- | ----- |
 | `initiator` | *string* | 11 | &#10004; | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. **Valid Values:** *MERCHANT*, *CARD_HOLDER* |
 | `scheduled` | *boolean* | N/A | &#10004; | Indicator if this is a [scheduled transaction](#scheduled-transaction). |
 | `schemeReferencedTransactionId` | *string* | 256 | &#10004;  | The transaction ID received from the initial transaction. May be required if sequence is subsequent. |
@@ -42,7 +42,7 @@ type: tab
 The below table identifies the parameters in the `additionalDataCommon` object.
 
 | Variable | Type | Max Length | Description |
-| -------- | ---- | ------------ | --------- |
+| ----- | :-----: | :-----: | ----- | ----- |
 | `billPaymentType` | *string* | 11 | Indicates the [type](docs?path=docs/Resources/Master-Data/Additional-Data.md#bill-payment-type) of bill payment. |
 | `paymentAmountType` | *string* | 20 | An identifier used to indicate if the *RECURRING* `billPaymentType` is *FIXED* or *VARIABLE*, required for Mastercard transactions. |
 
@@ -50,7 +50,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 ---
 
-### Payload Example
+### Initial Tokenization request
 
 <!--
 type: tab
@@ -141,7 +141,7 @@ Example of a charge (201: Created) response
 
 ---
 
-## Scheduled Transaction
+## Scheduled transaction
 
 Stored credentials are used to submit merchant managed scheduled transactions by submitting the required parameters and the corresponding `billPaymentType` in the `additionalDataCommon` [object](?path=docs/Resources/Master-Data/Additional-Data.md).
 
@@ -150,7 +150,7 @@ Stored credentials are used to submit merchant managed scheduled transactions by
 
 ---
 
-### Payload Example
+### Scheduled Charges API request
 
 <!--
 type: tab
@@ -267,7 +267,7 @@ Example of a charge (201: Created) response
 
 ---
 
-## Unscheduled Transaction
+## Unscheduled transaction
 
 Stored credentials can be used to submit a future unscheduled transactions by submitting the required parameters and the corresponding `billPaymentType` in the `additionalDataCommon` [object](?path=docs/Resources/Master-Data/Additional-Data.md).
 
@@ -275,7 +275,7 @@ Stored credentials can be used to submit a future unscheduled transactions by su
 
 ---
 
-### Payload Example
+### Unscheduled Charges API request
 
 <!--
 type: tab
