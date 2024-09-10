@@ -32,7 +32,7 @@ The below table identifies the parameters in the `customer` object.
 | `department` | *string* | 256 | Identifies the department the customer belongs to |
 | `jobId` | *string* | 256 | Job code for the customer |
 | `workOrderNumber` | *string* | 256 | Used for the contract number or purchase order of the transaction |
-| `idCardNumber` | *string* | 256 | The customer's ID based on merchant's industry or vertical. ***Example:** User ID or Sub-fleet number.* |
+| `idCardNumber` | *string* | 256 | The customer's ID based on merchant's industry or vertical. ***Example:** User ID or Sub-Fleet number.* |
 | `additionalData1` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
 | `additionalData2` | *string* | 256 | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
 | `phone` | *array* | N/A | Customer [phone number](#phone-number) |
