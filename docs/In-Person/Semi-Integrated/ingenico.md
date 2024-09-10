@@ -1,12 +1,12 @@
 ---
-tags: [In-Person, Card Present, Semi-Integrated, Partner, Point of Sale, Terminal, Device]
+tags: [In-Person, Card Present, Semi-Integrated, Partner, Point-of-Sale, Terminal, Device]
 ---
 
 # Semi-Integrated Ingenico Devices
 
-Commerce Hub and Ingenico have partnered together to offer out of the box, EMV L3 certified, semi-integrated payment solutions to enterprise merchants. The merchant's hardware or sofware API connects to the Ingenico API on the device to process payments.
+Commerce Hub and Ingenico have partnered together to offer out of the box, EMV L3 certified, semi-integrated payment solutions to enterprise merchants. The merchant's hardware or software API connects to the Ingenico API on the device to process payments.
 
-##### Key Benefits
+**Key Benefits**
 
 - Eliminates the need to handle PCI data reducing PCI compliance burden.
 - Ingenico solutions offers secure point to point encryption and tokenization using Commerce Hub's TransArmor tokenization.
@@ -29,7 +29,7 @@ Traditional integration to an Axium device supports the ability for the merchant
 
 For Axium devices such as the EX or DX lines, ARC offers the ability for the merchant's API to have shared or complete control over the device's screen, pre and post transaction. ARC can give control of the device during a transactions when specific events occur. For example, ARC allows the API to take control of the transaction result display. This means that ARC will provide the API the transaction result, but the update of the device's screen is dependent on the API requesting to display a screen.
 
-- The application on the device can transition between the merchant's API *(i.e. tip prompt)* to the ARC application then switch back to the point of sale *(POS)* screen using a simple command after transaction is complete.
+- The application on the device can transition between the merchant's API *(i.e. tip prompt)* to the ARC application then switch back to the point-of-sale *(POS)* screen using a simple command after transaction is complete.
 - The application on the device can use ARC as a headless solution. This appears to the end user as a single app, without the observation of the merchant's API and ARC switching in the foreground.
 
 See the [Ingenico Developer Portal](https://developer.ingenico.us/) for information on integrating the Ingenico Axium with your hardware or software integration.
