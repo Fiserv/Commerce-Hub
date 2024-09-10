@@ -213,6 +213,6 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
-- [Upload Public Key]
+- [Client Certificate Upload](?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md)
 
 ---
