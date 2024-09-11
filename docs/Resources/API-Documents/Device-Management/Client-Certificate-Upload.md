@@ -69,7 +69,7 @@ Example of a client certificate upload (201: Created) response.
   "clientCryptographicDetails": {
     "clientKeyID": "924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d",
     "cryptographicResource": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......",
-    "cryptographicAlgorithm": "JWE",
+    "cryptographicAlgorithm": "JWT",
     "cryptographicResourceEncoding": ".pemEncoded",
     "cryptographicResourceType": "CERTIFICATE",
     "cryptographicResourceLength": 2048,
