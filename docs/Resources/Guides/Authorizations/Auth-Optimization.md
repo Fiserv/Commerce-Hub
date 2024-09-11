@@ -140,13 +140,13 @@ Example of an Authorization Optimization (201: Created) response.
     }
   },
   "transactionDetails": {
-    "captureFlag": true
-  },
-  "authOptimizationDetails": {
-    "accountStatus": "ACCOUNT_CHANGE",
-    "originalHostResponseCode": "51",
-    "originalHostResponseMessage": "DECLINED",
-    "panEncryptionStatus": "SUCCESS"
+    "captureFlag": true,
+    "authOptimizationDetails": {
+      "accountStatus": "ACCOUNT_CHANGE",
+      "originalHostResponseCode": "51",
+      "originalHostResponseMessage": "DECLINED",
+      "panEncryptionStatus": "Success"
+    }
   }
 }
 ```
@@ -167,7 +167,7 @@ type: tab
 titles: authOptimizationDetails
 -->
 
-The below table identifies the parameters in the `authOptimizationDetails` object.
+The below table identifies the parameters in the `authOptimizationDetails` object in `transactionDetails`.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | :-----: | :-----: | ----- |
@@ -184,7 +184,7 @@ type: tab
 titles: authOptimizationDetails
 -->
 
-The below table identifies the parameters in the `authOptimizationDetails` object.
+The below table identifies the parameters in the `authOptimizationDetails` object in `transactionDetails`.
 
 | Variable | Type | Maximum Length | Description |
 | ----- | :-----: | :-----: | ----- |
@@ -193,9 +193,9 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 | `accountUpdaterErrorDescription` | *string* | 256 | Error description provided by the account updater system |
 | `originalHostResponseCode` | *string* | 256 | Original `hostReponseCode` for re-authorized *(Optimized)* transaction |
 | `originalHostResponseMessage` | *string* | 256 | Original `hostResponseMessage` for re-authorized *(Optimized)* transaction |
-| `panEncryptionStatus` | *string* | 5 | Indicates the **SUCCESS** of **FAILED** status of encrypted PAN |
+| `panEncryptionStatus` | *string* | N/A | Provides the status message of the encrypted PAN in the response |
 
-#### Account Status Reason
+**Account status reason:**
 
 | Variable | Description |
 | ----- | ----- |
@@ -203,6 +203,16 @@ The below table identifies the parameters in the `authOptimizationDetails` objec
 | *ACCOUNT_CLOSED* | Original account number is closed |
 | *EXPIRATION_CHANGE* | Original card expiration has changed |
 | *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder |
+
+**Pan encryption status:**
+
+| Message | Description |
+| ----- | ----- |
+| *Success* | The PAN was successfully encrypted |
+| *Encryption unavailable* |  |
+| *Encryption key ID not found* |  |
+| *Encryption error* |  |
+| *Unsupported source* |  |
 
 <!-- type: tab-end -->
 
