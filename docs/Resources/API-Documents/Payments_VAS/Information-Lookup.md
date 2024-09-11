@@ -1,37 +1,124 @@
 ---
-tags: [Account Information, Card Details, Card Metadata, BIN]
+tags: [Account Information, Card Details, Card Meta Data, BIN]
 ---
 
-# Information Lookup API
+# Account Information Lookup
 
-Account Information Lookup *(BIN lookup)* API is used to obtain the `cardDetails` *(also known as [card metadata](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Account information lookup _(BIN lookup)_ is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
-The `cardDetails` can be used for:
+The card details can be used to determine;
 
-- **Card processing requirements:** based on brand, function, type *([commercial](?path=docs/Resources/Guides/Level23/Level23.md), non-corporate)*.
-- **[Directed routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type.
-- **[POS processing requirements](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md):** allows a point-of-sale *(POS)* application to take preemptive actions on accounts being presented for transactions.
+- **Card Processing Requirements (CPS):** based on brand, function, type _(commercial, non-corporate)_
+- **[Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md):** sending the request to a network based on card brand, function or type
+
+<!-- theme: info -->
+> Card meta data can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 ---
 
-## Lookup types
+### Endpoint
+<!-- theme: success -->
+>**POST** `/payments-vas/v1/accounts/information-lookup`
 
-Commerce Hub allows an account information lookup to be performed based on the Global BIN, Cloud BIN or both based on the business requirements.
+---
 
-<!-- type: row -->
+### Payload Example
 
-<!-- type: card
-title: Global BIN Lookup
-description: Obtain metadata of cards found in the Global BIN file.
-link: ?path=docs/Resources/API-Documents/Payments_VAS/Global-BIN-Lookup.md
+<!--
+type: tab
+titles: Request, Response
 -->
 
-<!-- type: card
-title: Cloud BIN Lookup
-description: Obtain metadata in the clear or leading digits of a card.
-link: ?path=docs/Resources/API-Documents/Payments_VAS/Cloud-BIN-Lookup.md
+##### Account information lookup request using PaymentCard.
+
+```json
+
+{
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "cardData": "4005550000000019"
+    }
+  }
+}
+
+```
+
+[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
+
+<!--
+type: tab
 -->
 
-<!-- type: row-end -->
+##### Account information lookup response.
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "INFORMATION",
+    "transactionState": "SUCCESS",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "cardDetails": [
+    {
+      "detailedCardProduct": "VISA",
+      "productId": "N1",
+      "visaProductSubType": "HC",
+      "detailedCardIndicator": "DEBIT",
+      "pinSignatureCapability": "PIN_OR_SIGNATURE",
+      "cardClass": "CORPORATE",
+      "countryCode": "USA",
+      "issuerBankName": "Example Bank",
+      "recordType": "DETAIL",
+      "lowBin": "400337",
+      "highBin": "400338",
+      "binLength": "6",
+      "binDetailPan": "16",
+      "issuerUpdateYear": "20",
+      "issuerUpdateMonth": "09",
+      "issuerUpdateDay": "22",
+      "regulatorIndicator": "NON_REGULATED",
+      "fsaIndicator": "SUPPORTED",
+      "nonMoneyTransferOCTsDomestic": "SUPPORTED",
+      "nonMoneyTransferOCTsCrossBorder": "SUPPORTED",
+      "onlineGamblingOCTsDomestic": "SUPPORTED",
+      "onlineGamblingOCTsCrossBorder": "SUPPORTED",
+      "moneyTransferOCTsDomestic": "SUPPORTED",
+      "moneyTransferOCTsCrossBorder": "SUPPORTED",
+      "fastFundsDomesticMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticNonMoneyTransfer": "SUPPORTED",
+      "fastFundsCrossBorderNonMoneyTransfer": "SUPPORTED",
+      "fastFundsDomesticGambling": "SUPPORTED",
+      "fastFundsCrossBorderGambling": "SUPPORTED",
+      "prepaidIndicator": "PREPAID",
+      "visaLargeTicketIndicator": "SUPPORTED",
+      "accountFundSource": "DEBIT",
+      "panLengthMin": "16",
+      "panLengthMax": "16",
+      "tokenIndicator": "SUPPORTED",
+      "cardholderBillingCurrency": "USD",
+      "b2bProgramId": "B2B_PROGRAM_1"
+    }
+  ]
+}
+```
+
+<!-- type: tab-end -->
+
+---
+
+## See Also
+
+- [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
+- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Directed Routing](?oath=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md)
+- [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---
