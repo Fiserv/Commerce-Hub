@@ -77,8 +77,6 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
-
 <!--
 type: tab
 -->
