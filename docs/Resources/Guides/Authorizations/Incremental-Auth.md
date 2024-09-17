@@ -67,7 +67,7 @@ Example of a charge payload request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "transactionDetails": {

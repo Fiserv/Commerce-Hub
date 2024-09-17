@@ -49,7 +49,7 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

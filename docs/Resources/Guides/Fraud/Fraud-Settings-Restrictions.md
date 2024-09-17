@@ -6,13 +6,13 @@ tags: [Fraud, Transaction Restrictions, Duplicate]
 
 The Transaction Restriction settings can be enabled to detect and reject duplicate transactions. Duplicate transaction can be blocked based on timeframe, number of transactions, and transaction type. Enabling Transaction Restrictions in Commerce Hub will reject duplicate transactions once the specified configuration has been met.
 
-Transaction Restrictions are setup inside of Merchant Configuration and Boarding _(Marketplace in the [ClientLine Enterprise Portal](https://www.businestrack.com))_. Filters are applied by attributes and their respective value.
+Transaction Restrictions are setup inside of Merchant Configuration and Boarding _(Marketplace in the [Commerce Control Center](https://www.commercecontrol.com))_. Filters are applied by attributes and their respective value.
 
 ---
 
 ## Response Example
 
-##### Example of a charge (400: Bad Request) response.
+Example of a charge (400: Bad Request) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
