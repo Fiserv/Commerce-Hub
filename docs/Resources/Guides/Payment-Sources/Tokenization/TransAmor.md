@@ -248,7 +248,6 @@ The below table identifies the parameters in the `source` object.
 | `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 | `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
 | `tokenSource` | *string* | | &#10004; | The token source is *TRANSARMOR* |
-| `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer |
 | `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source |
 | `card` | *object* | | &#10004; | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects |
 

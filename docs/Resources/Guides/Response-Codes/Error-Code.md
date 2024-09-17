@@ -126,7 +126,7 @@ Codes starting with 2xx identifies an error in the configuration setup. This inc
 | 260 | Invalid MCC for Digital Wallet Operator |
 | 261 | Invalid MCC For Airline |
 | 262 | Invalid MCC For Hotel/Lodging |
-| 268 | Received Merchant TransactionId Does Not Match The TransactionId |
+| 268 | Duplicate Credentials |
 
 <!--
 type: tab

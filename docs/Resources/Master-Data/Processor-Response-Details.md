@@ -22,7 +22,7 @@ The below table identifies the parameters in the `processorResponseDetails` obje
 | `processor` | *string* | 256 | Payment card processor |
 | `host` | *string* | 256 | Processing endpoint or issuer |
 | `networkRouted` | *string* | 256 | Label that identifies the network where the transaction was routed for authorization *(e.g. NYCE, PULSE, STAR, Visa, Mastercard, etc.)* |
-| `par` | *string* | 29 | A Payment Account Reference *(PAR)* is a unique identifier associated with a specific cardholder PAN. This identification number can be used in place of sensitive consumer identification fields, and transmitted across the payments ecosystem to facilitate consumer identification |
+| `paymentAccountReference` | *string* | 29 | A Payment Account Reference *(PAR)* is a unique identifier associated with a specific cardholder PAN. This identification number can be used in place of sensitive consumer identification fields, and transmitted across the payments ecosystem to facilitate consumer identification |
 | `networkInternationalId` | string | 16 | This field identifies the [international acquiring host network](#network-international-id) |
 | `originalResponseCode` | *string* | 16 | Original response code before [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) |
 | `originalResponseMessage` | *string* | N/A | Original response message before [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) |
@@ -64,7 +64,7 @@ JSON string format for `processorResponseDetails`:
     "processor": "FISERV",
     "host": "NASHVILLE",
     "networkRouted": "Visa",
-    "par": "01f078743a047s6",
+    "paymentAccountReference": "01f078743a047s6",
     "networkInternationalId": "FISERV",
     "responseCode": "000",
     "responseMessage": "APPROVAL",

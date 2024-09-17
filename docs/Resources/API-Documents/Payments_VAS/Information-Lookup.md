@@ -4,7 +4,7 @@ tags: [Account Information, Card Details, Card Meta Data, BIN]
 
 # Account Information Lookup
 
-Account information lookup _(BIN lookup)_ is used to obtain the [card meta data](?path=docs/Resources/Master-Data/Card-Details.md) `cardDetails` of the cardholder such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+The Account Information Lookup (BIN Lookup) API is used to obtain `cardDetails` *(also known as [card metadata](?path=docs/Resources/Master-Data/Card-Details.md))* of the cardholder. This includes information such as issuer country, card function, card brand, and supported features for a [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md), or [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 The card details can be used to determine;
 
@@ -18,7 +18,7 @@ The card details can be used to determine;
 
 ### Endpoint
 <!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/information-lookup`
+> **POST** `/payments-vas/v1/accounts/information-lookup`
 
 ---
 
