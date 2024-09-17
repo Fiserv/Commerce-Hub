@@ -4,7 +4,7 @@ tags: [API Reference, Master Data, Transaction Details]
 
 # Transactional Details
 
-The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` object.
+The transaction request initiated by the merchant contains various transaction related data which is captured in `transactionDetails` object.
 
 <!-- 
 type: tab
@@ -20,8 +20,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*false*) or Sale (*true*)|
 | `transactionCaptureType` | *string* | 64 | Identifies the [capture type for settlement](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md). |
-| `merchantTransactionId` | *string* | 128 | Unique merchant reference transaction ID |
-| `merchantOrderId` | *string* | 128 | Merchant order ID, customer reference number or purchase order number *(PO Number)* |
+| `merchantTransactionId` | *string* | 128 | [Unique merchant reference transaction ID](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantOrderId` | *string* | 128 | [Merchant order ID, customer reference number or purchase order number *(PO Number)*](?path=docs/Resources/Guides/BYOID.md) |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice or reference number |
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
 | `splitShipment` | *object* | N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-authorization or the first post-authorization.|
@@ -51,56 +51,56 @@ JSON string format for `transactionDetails`:
 
 ```json
 {
-   "transactionDetails":{
-      "approvalCode": "123456",
-      "primaryTransactionId": "838916029301",
-      "primaryOrderId": "123456789",
-      "clientRequestId": "13267786514316843133216746",
-      "captureFlag": false,
-      "transactionCaptureType": "HOST",
-      "accountVerification": false,
-      "partialApproval": true,
-      "merchantTransactionId": "1343678765",
-      "merchantOrderId": "845366457890-TODO",
-      "merchantInvoiceNumber": "123890",
-      "receiptEmail": "abc@gmail.com",
-      "paymentDescription": "Merchandise",
-      "cardVerificationAmount": 0.02,
-      "partiallyApprovedTransactionAmount": 10.55,
-      "splitTenderId": "12423434",  
-      "authorizationTypeIndicator": "REAUTH",
-      "duplicateTransactionCheckingIndicator": true,
-      "deviceFingerprint":[  
-         {
-            "provider": "InAuth",  
-            "dataCapture":{
-               "rawData": "aaaaaXREUVZGRlFY...aMV",
-               "dataEventId": "BB8E4E92...Fz1E063113",  
-               "captureTime": "2016-04-16T16:06:05Z"  
-            },
-            "dataStatic":{  
-               "operatingSystem": "ANDROID",
-               "operatingSystemVersion": "5.1.1 Lollipop",  
-               "model": "XYX-1",  
-               "type": "Moto G"  
-            },
-            "dataDynamic":{
-               "latitude": "13.0827 N",
-               "longitude": "80.2707 E",
-               "ipAddress": "172.27.37.221",
-               "captureTime": "2016-04-16T16:06:05Z"
-            }
-         }
-      ],
-      "splitShipment":{
-         "totalCount": 5,
-         "finalShipment": true
-      },
-      "reversalReasonCode": "VOID",
-      "physicalGoodsIndicator": true,
-      "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
-      "createToken": false,
-   }
+  "transactionDetails": {
+    "approvalCode": "123456",
+    "primaryTransactionId": "838916029301",
+    "primaryOrderId": "123456789",
+    "clientRequestId": "13267786514316843133216746",
+    "captureFlag": false,
+    "transactionCaptureType": "HOST",
+    "accountVerification": false,
+    "partialApproval": true,
+    "merchantTransactionId": "1343678765",
+    "merchantOrderId": "845366457890-TODO",
+    "merchantInvoiceNumber": "123890",
+    "receiptEmail": "abc@gmail.com",
+    "paymentDescription": "Merchandise",
+    "cardVerificationAmount": 0.02,
+    "partiallyApprovedTransactionAmount": 10.55,
+    "splitTenderId": "12423434",
+    "authorizationTypeIndicator": "REAUTH",
+    "duplicateTransactionCheckingIndicator": true,
+    "deviceFingerprint": [
+      {
+        "provider": "InAuth",
+        "dataCapture": {
+          "rawData": "aaaaaXREUVZGRlFY...aMV",
+          "dataEventId": "BB8E4E92...Fz1E063113",
+          "captureTime": "2016-04-16T16:06:05Z"
+        },
+        "dataStatic": {
+          "operatingSystem": "ANDROID",
+          "operatingSystemVersion": "5.1.1 Lollipop",
+          "model": "XYX-1",
+          "type": "Moto G"
+        },
+        "dataDynamic": {
+          "latitude": "13.0827 N",
+          "longitude": "80.2707 E",
+          "ipAddress": "172.27.37.221",
+          "captureTime": "2016-04-16T16:06:05Z"
+        }
+      }
+    ],
+    "splitShipment": {
+      "totalCount": 5,
+      "finalShipment": true
+    },
+    "reversalReasonCode": "VOID",
+    "physicalGoodsIndicator": true,
+    "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
+    "createToken": false
+  }
 }
 ```
 
@@ -112,6 +112,7 @@ JSON string format for `transactionDetails`:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Device Fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Partial Approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)

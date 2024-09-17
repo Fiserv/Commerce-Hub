@@ -2,7 +2,7 @@
 tags: [Payment Card, Payment Sources, Online, Digital, Mobile, Card Not Present]
 ---
 
-# PaymentCard
+# Using PaymentCard as a payment source
 
 A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_ or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. The `sourceType` _PaymentCard_ is used to submit a transaction to our application.
 
@@ -43,14 +43,14 @@ The below table identifies the required parameters in the `card` object.
 
 ---
 
-## Encrypted PaymentCard Request
+## Submit an encrypted PaymentCard request
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) for a successful [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using a _PaymentCard_ encrypted with [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+The example below contains the minimum [parameters](#parameters) for a successful [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a _PaymentCard_ encrypted with [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!-- theme: success -->
 > **POST** `/payments/v1/charges`
@@ -78,13 +78,11 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
-
 <!--
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+Example of a Charges API *(201: Created)* response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -145,7 +143,7 @@ Example of a charge (201: Created) response.
 
 ### Parameters
 
-#### Request Variables
+#### Request variables
 
 <!--
 type: tab
@@ -177,7 +175,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
@@ -185,5 +183,6 @@ The below table identifies the required parameters in the `encryptionData` objec
 - [Multi-Use Public Key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Supported Card Types](?path=docs/Resources/Master-Data/Card-Type.md)
 
 ---
