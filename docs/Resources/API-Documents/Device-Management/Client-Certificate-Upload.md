@@ -22,7 +22,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) to upload a new client certificate to Commerce Hub. The full request schemas are available in our [API Explorer](../api/?type=post&path=/tms/v1/pos-decision-table).
+The example below contains the minimum [parameters](#parameters) to upload a new client certificate to Commerce Hub. The full request schemas are available in our [API Explorer](../api/?type=post&path=/tms/v1/client-certificate).
 
 <!-- theme: success -->
 > **POST** `/tms/v1/client-certificate`
@@ -40,8 +40,6 @@ The example below contains the minimum [parameters](#parameters) to upload a new
   }
 }
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/tms/v1/pos-decision-table)
 
 <!--
 type: tab
@@ -99,7 +97,7 @@ The below table identifies the request and response parameters in the `clientCry
 | `cryptographicResourceLength` | *integer* | N/A | Size of the key pair |
 | `cryptographicResource` | *string* | 256 | Encoded public key/certificate |
 | `cryptographicResourceType` | *string* | N/A | Describes cryptographic resource type as a *KEY* or *CERTIFICATE* |
-| `cryptographicResourceEncoding` | *string* | N/A | Describes cryptographic resource encoding. ***Valid values:** .pemEncoded, .cerEncoded, .derEncoded* |
+| `cryptographicResourceEncoding` | *string* | N/A | Describes cryptographic resource encoding. ***Valid values:** .pem, .cer, .der* |
 | `publicKeyHash` | *string* | N/A | Commerce hub generated public key hash |
 | `usedFor` | *string* | N/A | Indicates the purpose of cryptographic information. ***Valid values:** RTAU* |
 
@@ -109,7 +107,7 @@ The below table identifies the request and response parameters in the `clientCry
 
 ## See also
 
-- [API Explorer](../api/?type=post&path=/tms/v1/pos-decision-table)
+- [API Explorer](../api/?type=post&path=/tms/v1/client-certificate)
 - [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md)
 - [Device Management](?path=docs/Resources/API-Documents/Device-Management/Device-Management.md)
 
