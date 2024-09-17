@@ -14,10 +14,6 @@ The `cardDetails` can be used for:
 
 ---
 
-Does this version work for you, or would you like any further adjustments?
-
----
-
 ## Choose your integration method
 
 Commerce Hub enables account information lookup using either the Global BIN, Cloud BIN, or both, depending on business requirements.
