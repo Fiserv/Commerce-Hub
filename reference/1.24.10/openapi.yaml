@@ -590,7 +590,7 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
-                PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
+                PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
@@ -2528,6 +2528,8 @@ components:
           $ref: '#/components/schemas/Customer'
         orderData:
           $ref: '#/components/schemas/OrderData'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
         rate:
           $ref: '#/components/schemas/Rate'
         splitSettlement:
@@ -5106,10 +5108,6 @@ components:
               maxLength: 64
               description: 'Identifies the token status.'
               example: 'ACTIVE'
-            PARId:
-              type: string
-              maxLength: 256
-              description: 'Payment Account Reference ID (PARID) for tokens. Ties transactions with multiple payment sources or tokens to a customer.'
             declineDuplicates:
               type: boolean
               description: 'Identifies if a duplicate create token should be rejected when one has already been created for the payment source.'
@@ -5430,10 +5428,10 @@ components:
           type: string
           maxLength: 256
           description: 'Network label that shows the network where the transaction was routed for authorization (e.g. NYCE, PULSE, STAR, Visa, Mastercard, etc.).'
-        PAR:
+        paymentAccountReference:
           type: string
           maxLength: 29
-          description: 'A Payment Account Reference (PAR) is a unique identifier associated with a specific cardholder PAN. This identification number can be used in place of sensitive consumer identification fields, and transmitted across the payments ecosystem to facilitate consumer identification.'
+          description: 'A Payment Account Reference (PAR) is a unique identifier associated with a specific cardholder PAN.'
         networkInternationalId:
           type: string
           maxLength: 16
@@ -6071,7 +6069,7 @@ components:
           description: 'Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization.'
         captureFlag:
           type: boolean
-          description: 'Designates if the transaction should be captured. Auth (False) or Sale (True).'
+          description: 'Designates if the transaction should be captured. Set to false for authorization or true for capture. If not provided in a charges or refunds request, it defaults to true.'
           example: true
         transactionCaptureType:
           type: string
@@ -6530,7 +6528,7 @@ components:
           sourceType: DecryptedWallet
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '30'
@@ -6606,7 +6604,7 @@ components:
           sourceType: DecryptedWallet
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '30'
@@ -6648,7 +6646,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -6713,7 +6711,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -7423,7 +7421,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -7478,7 +7476,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SERVICES
             expirationMonth: '10'
@@ -7557,7 +7555,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -7610,7 +7608,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -7676,7 +7674,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '400555'
-            last4: 0019
+            last4: '0019'
         transactionDetails:
           merchantOrderId: '123456789012'
           deviceFingerPrint:
@@ -7766,7 +7764,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -7934,7 +7932,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -7984,7 +7982,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8048,7 +8046,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8204,7 +8202,7 @@ components:
           sourceType: PaymentEMV
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VIsa
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8349,7 +8347,7 @@ components:
           sourceType: PaymentEMV
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: Visa
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8411,7 +8409,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: Visa
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8531,7 +8529,7 @@ components:
           tokenData: '8519371934460009'
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8806,7 +8804,7 @@ components:
           tokenData: '8519371934460009'
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8879,7 +8877,7 @@ components:
           sourceType: PaymentTrack
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: Visa
             expirationMonth: '10'
             expirationYear: '2030'
@@ -9019,7 +9017,7 @@ components:
           sourceType: PaymentTrack
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -9098,7 +9096,7 @@ components:
           sourceType: PaymentTrack
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -9142,7 +9140,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'

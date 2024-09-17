@@ -18,7 +18,7 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization (e.g. by phone). The gateway requires this number for a forced post transaction to a previously performed external authorization. |
 | `authOptimazation` | *string* | 32 | An identifier used to indicate what data is received in the response for merchants boarded for [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) |
 | `primaryTransactionId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
-| `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Auth (*false*) or Sale (*true*)|
+| `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Set to *false* for an authorization or *true* for a capture. If not provided in a [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) or [Refunds API request](?path=docs/Resources/API-Documents/Payments/Refund.md), it defaults to *true*. |
 | `transactionCaptureType` | *string* | 64 | Identifies the [capture type for settlement](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md). |
 | `merchantTransactionId` | *string* | 128 | Unique merchant reference transaction ID |
 | `merchantOrderId` | *string* | 128 | Merchant order ID, customer reference number or purchase order number *(PO Number)* |
