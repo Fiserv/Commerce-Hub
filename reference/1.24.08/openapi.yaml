@@ -6349,7 +6349,7 @@ components:
 
     Vehicle:
       x-model-version: 1.0
-      description: 'Customer <a href="../docs?path=docs/Resources/Master-Data/Vehicle.md">vehicle</a> information.'
+      description: 'Customer <a href="../docs?path=docs/Resources/Master-Data/Vehicle-Details.md">vehicle</a> information.'
       properties:
         vehicleNumber:
           type: string
