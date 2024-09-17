@@ -4,7 +4,7 @@ tags: [API Reference, Master Data, Transaction Details]
 
 # Transactional Details
 
-The transaction request initiated by merchant contains various transaction related data which is captured in `transactionDetails` object.
+The transaction request initiated by the merchant contains various transaction related data which is captured in `transactionDetails` object.
 
 <!-- 
 type: tab
@@ -18,8 +18,8 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `approvalCode` | *string* | N/A | Reference number received as the result of a successful external authorization *(e.g. by phone)*. The gateway requires this number for a forced post transaction to a previously performed external authorization. |
 | `captureFlag` | *boolean* | N/A | Designates if the transaction should be captured. Pre-authorization *false* or Sale *true*. |
 | `transactionCaptureType` | *string* | 64 | Identifies the [capture type for settlement](?path=docs/Resources/Guides/Settlement/Transaction-Capture-Type.md). |
-| `merchantTransactionId` | *string* | 128 | Unique merchant reference transaction ID |
-| `merchantOrderId` | *string* | 128 | Merchant order ID, customer reference number or purchase order number *(PO Number)* |
+| `merchantTransactionId` | *string* | 128 | [Unique merchant reference transaction ID](?path=docs/Resources/Guides/BYOID.md) |
+| `merchantOrderId` | *string* | 128 | [Merchant order ID, customer reference number or purchase order number *(PO Number)*](?path=docs/Resources/Guides/BYOID.md) |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice or reference number |
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
 | `reversalReasonCode` | *string* | 22 | Identifies the [reason](?path=docs/Resources/API-Documents/Payments/Cancel.mdreversal-reason-code) the merchant or customer requests a cancel *(void)* |
@@ -128,6 +128,7 @@ JSON string format for `transactionDetails`:
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
 - [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md)
+- [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Device Fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
 - [Partial Approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md)
