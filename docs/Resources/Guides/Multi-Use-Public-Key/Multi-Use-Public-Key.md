@@ -6,7 +6,7 @@ tags: [Multi-Use Public Key, RSA, Encrypted Payments, Payment Card, EMV, Track]
 
 Multi-Use Public Key *(MUPK)* Encryption uses an RSA *(Rivest Shamir Adleman)* encryption method that allows secure integration and transmission of customer data, from the use of a static asymmetric multi-use public key *(MUPK)*. This provides a merchant the ability to capture the payment source details and encrypt the details before sending it to Commerce Hub for authorization.
 
-##### Benefits
+**Benefits:**
 
 - **Security:** RSA cryptography has a secure algorithm that safeguards data transmission.
 - **Public Key Cryptography:** Commerce Hub uses a public key cryptography algorithm for security and uses two different keys to encrypt and decrypt data.

@@ -2,7 +2,7 @@
 tags: [EMV, In-Person, Card Present, Encrypted Payments, Payment Source, Device, Terminal]
 ---
 
-# PaymentEMV
+# Using PaymentEMV as a payment source
 
 [EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) chip with signature or PIN enhances the security of payment card transactions for payment devices and automated teller machines through the use of a chip embedded in credit, debit, and [prepaid cards](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md). EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
@@ -174,6 +174,9 @@ Example of a charge (201: Created) response.
 type: tab
 titles: source,  encryptionData
 -->
+
+<!-- theme: danger -->
+> Commerce Hub does not accept PCI data Tag 5a `cardData` and Tag 57 `track2Data`* in the `emvData`.
 
 The below table identifies the parameters in the `source` object.
 

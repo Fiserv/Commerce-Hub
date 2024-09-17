@@ -2,14 +2,14 @@
 tags: [Full Refund, Payments, Partial Refund, Refund, Open Refund, API Reference]
 ---
 
-# Refunds
+# Process a reversal using the Refunds API
 
 If the customer returns a product or requests to cancel the transaction after the transaction has been captured, the merchant will need to return the funds by issuing a refund request.
 
 <!-- theme: warning -->
 > Based on the issuing bank timeframe, refunds may take 3-5 days to process and reflect on the customer's account unless enabled for authorization refunds.
 
-## Authorized Refunds
+## Authorized refunds
 
 Commerce Hub supports the card brands acceptance rules that require a merchant to send an authorization message on refund transactions, also known as an authorized _(online)_ refund. These authorization messages will enable issuers to update the customer's account in real-time.
 
@@ -17,7 +17,7 @@ Commerce Hub supports the card brands acceptance rules that require a merchant t
 > Authorized refunds are not supported on all settlement platforms. Please contact your account representative for more information.
 
 <!-- theme: danger -->
-> Refund requests can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+> Refund API requests can be initiated against a [transaction](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [void request](?path=docs/Resources/API-Documents/Payments/Cancel.md).
 
 ---
 

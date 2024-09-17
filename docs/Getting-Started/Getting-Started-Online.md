@@ -1,10 +1,10 @@
 ---
-tags: [Getting Started, Online, Mobile, Digital, Card Not Present, Secure Data Capture]
+tags: [Getting Started, Online, Mobile, Digital, Card Not Present, Checkout]
 ---
 
 # Online, Digital and Mobile Payments
 
-Commerce Hub offers multiple methods of accepting eCommerce online, mobile, digital payments, and mail-order/telephone order _(MOTO)_ payments. A merchant can accept payments with cards, wallets, and other local payment methods from a website, mobile app, virtual terminal, or software.
+Commerce Hub offers multiple methods of accepting eCommerce online, mobile, digital payments, and mail-order/telephone order *(MOTO)* card-not-present *(CNP)* payment transactions. A merchant can accept payments with [cards](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [wallets](?path=docs/Getting-Started/Getting-Started-Wallets.md), and other alternative payment methods from a website, mobile app, virtual terminal, or software.
 
 <!-- theme: warning -->
 > These transactions are at a higher risk for fraud, due to the inability to verify the account holder who is making the purchase. It is recommended to use [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) along with Commerce Hub's [Transaction Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md) to help reduce potential fraudulent transactions.
@@ -24,9 +24,9 @@ link: ?path=docs/Resources/API-Documents/Use-Our-APIs.md
 -->
 
 <!-- type: card
-title: Secure Data Capture
+title: Checkout
 description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
-link: ?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+link: ?path=docs/Online-Mobile-Digital/Checkout/Checkout.md
 -->
 
 <!-- type: card
@@ -46,7 +46,7 @@ Once your integration can accept payments, enhance your integration by adding mo
 <!-- type: row -->
 
 <!-- type: card
-title: Acount Verification
+title: Account Verification
 description: Account Verification can be used to confirm that the customer account is valid for a transaction.
 link: ?path=docs/Resources/API-Documents/Payments_VAS/Verification.md
 -->
@@ -87,7 +87,7 @@ link: ?path=docs/Resources/Guides/Split-Shipment.md
 
 <!-- type: card
 title: Stored Credentials
-description: Stored Credentials also known as Credentials on File or Card on File, allows customer to authorize the storage of their payment source details for future transactionstas a Cardholder Initiated Transaction (CIT).
+description: Stored Credentials also known as Credentials on File or Card on File, allows a customer to authorize the storage of their payment source details for future transactions as a Cardholder Initiated Transaction (CIT) or Merchant Initiated Transaction (MIT).
 link: ?path=docs/Resources/Guides/Stored-Credentials.md
 -->
 
