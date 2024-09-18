@@ -2,95 +2,36 @@
 tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 ---
 
-# Unmatched Tagged Refund
+# Process an unmatched tagged reversal using the Refunds API
 
-An unmatched tagged refund allows a merchant to issue a refund to a payment source other than the one used in the original transaction. The refund is associated with the original [charge request](?path=docs/Resources/API-Documents/Payments/Charges.md) by using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md). This allows the merchant to maintain the linking of the transaction information in Commerce Hub when issuing a refund or store credit.
+An unmatched tagged refund allows a merchant to issue a refund to a payment source other than the one used in the original transaction. The refund is associated with the original [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) by using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md). This allows the merchant to maintain the linking of the transaction information in Commerce Hub when issuing a refund or store credit.
 
 <!-- theme: warning -->
 > Before issuing an unmatched tagged refund, a normal [tagged refund](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md) should be performed. Once declined due to being an invalid or closed account, an unmatched tagged refund can be attempted. If an unmatched tagged refund is not associated with a prior tagged refund attempt, Commerce Hub will reject the transaction.
 
 <!-- theme: danger -->
-> A refund request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+> Refund API requests can be initiated against a [transaction](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [void request](?path=docs/Resources/API-Documents/Payments/Cancel.md).
 
----
-
-## Request Variables
-
-A refund request is initiated by sending the `referenceTransactionDetails`, `source` in the payload and may contain the `amount` object based on the refund type.
-
-#### Refund Types
+**Refund types:**
 
 Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
-- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
-- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
-
-<!-- 
-type: tab
-titles: referenceTransactionDetails, source, amount, merchantDetails
--->
-
-The below table identifies the available parameters in the `referenceTransactionDetails` object.
-
-<!-- theme: info -->
-> Only a single transaction identifier should be passed within the request. 
-
-| Variable | Data Type| Max Length |Description |
-|---------|----------|----------------|---------|
-| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `source` object.
-
-| Variable | Type| Max Length | Description |
-|---------|----------|----------------|---------|
-| `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-| Variable | Type | Max Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Max Length | Required | Description |
-|---------|----------|----------------|---------|-----|
-| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!-- type: tab-end -->
+- **Partial:** A request submitted with the `amount` object for a partial `total`.
+- **Full:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
 ---
 
-## Endpoint
-
-<!-- theme: success -->
-> **POST** `/payments/v1/refunds`
-
----
-
-## Payload Example
+## Submit an unmatched Refunds API request
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of an unmatched refund payload request.
+The example below contains the minimum [parameters](#parameters) for a successful unmatched Refunds API request using `referenceTransactionId`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/refunds).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/refunds`
 
 ```json
 {
@@ -123,16 +64,14 @@ Example of an unmatched refund payload request.
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
-
 <!--
 type: tab
 -->
 
-Example of an unmatched refund (201: Created) response.
+Example of an unmatched Refunds API *(201: Created)* response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -194,7 +133,67 @@ Example of an unmatched refund (201: Created) response.
 
 ---
 
-## See Also
+## Parameters
+
+### Request Variables
+
+A refund request is initiated by sending the `referenceTransactionDetails`, `source` in the payload and may contain the `amount` object based on the refund type.
+
+<!-- theme: danger -->
+> All [online refunds](?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md) not submitted with `captureFlag` *true* require a subsequent Refunds API capture request to complete the settlement of the authorized refund.
+
+<!-- 
+type: tab
+titles: referenceTransactionDetails, source, amount, merchantDetails
+-->
+
+The below table identifies the available parameters in the `referenceTransactionDetails` object.
+
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request. 
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `sourceType` | *string* | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `amount` object.
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
+
+<!-- type: tab-end -->
+
+---
+
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)

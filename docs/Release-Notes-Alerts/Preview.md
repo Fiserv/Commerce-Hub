@@ -2,17 +2,34 @@
 tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
 ---
 
-# Preview Release Notes
+# Preview release notes
 
 Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview) of our upcoming feature releases in Developer Studio. These features may not be functional until the certification release date. When these features are released to production they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
 
 <!-- theme: info -->
 > The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **[Preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview)** in the left navigation when viewing an article or API.
 
-**Release Types:**
+**Release types:**
 
 - **Feature:** New feature release
 - **Update:** Existing feature update or enhancement
+
+---
+
+## October 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** September 10th 2024
+- **Production:** September 18th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.10: refactored for renaming `PAR` to `paymentAccountReference` in `processorResponseDetails` to meet OpenAPI specification requirements. New objects added/updated to support new features. | Update |
+| Support for card metadata to be returned in [Refunds API response](?path=docs/Resources/API-Documents/Payments/Refund.md) if enabled | Update |
+| [Client Certificate API](?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md) to support encrypted PAN when configured for [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) | Feature |
+| Support for [Paze digital wallet transaction](?path=docs/Resources/Guides/Payment-Sources/Paze/Paze.md) through Commerce Hub Checkout SDK. | Feature |
+| New [Whitelist API](?path=docs/Resources/API-Documents/Security/Whitelist.md) to add domains for Commerce Hub Checkout SDK. | Feature |
 
 ---
 
@@ -159,7 +176,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 ---
 
-## See Also
+## See also
 
 - [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md)
 
