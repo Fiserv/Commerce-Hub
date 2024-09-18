@@ -2,12 +2,12 @@
 tags: [API Reference, Card Details, Card Metadata, Debit, Master Data]
 ---
 
-# Card Metadata
+# Card metadata
 
-Card metadata is returned in the `cardDetails` object and contains details from Commerce Hub's Global BIN table or [Cloud BIN table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md). The information can be obtained by performing an [account information lookup request](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md).
+Card metadata is returned in the `cardDetails` object and contains details from Commerce Hub's Global BIN table and [Cloud BIN table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md). The information can be obtained by performing an [account information lookup request](?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md).
 
 <!-- theme: info -->
-> Card metadata can be returned as part of a [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
+> Card metadata can be returned as part of a [Tokens API request](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md), [Refunds API request](?path=docs/Resources/API-Documents/Payments/Refund.md) or [Card Capture API request](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) if enabled in Merchant Configuration and Boarding. Please contact your account representative for more information.
 
 <!--
 type: tab
