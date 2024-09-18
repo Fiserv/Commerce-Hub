@@ -2,7 +2,7 @@
 tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Mobile, Wallet, Contactless]
 ---
 
-# Tap to Pay Solutions
+# Tap to Pay SDK integrations
 
 Tap to Pay allows merchants to accept contactless payments using a supported device or a partner-enabled app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, digital wallets, smartwatches, and smartphones. No additional hardware is required to accept contactless payments through Tap to Pay, so merchants can accept payments from anywhere. Tap to Pay is offered using Commerce Hub's Terminal API SDKs for both Android and iOS.
 
