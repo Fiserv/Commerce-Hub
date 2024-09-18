@@ -810,6 +810,66 @@ paths:
 # DEVICE MANAGEMENT
 #--------------------------------------------------------------------------------------
 
+  /tms/v1/client-certificate:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Client Certificate Definition
+      x-group-name: 'Device Management'
+      x-proxy-name: 'Upload Certificate'
+      summary: Upload certificate.
+      description: This payload provides the details to be sent to upload certificate.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientCertificateRequest'
+            examples:
+              Upload:
+                summary: Upload certificate request
+                $ref: '#/components/examples/ClientCertificateRequest'
+      responses:
+        200:
+          description: UPLOADED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientCertificateResponse'
+              examples:
+                Upload:
+                  summary: Upload certificate response
+                  $ref: '#/components/examples/ClientCertificateResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /tms/v1/emv-capk-data:
     x-model-version: 1.0
     post:
@@ -1921,6 +1981,27 @@ components:
         transactionInteraction:
           $ref: '#/components/schemas/TransactionInteraction'
 
+    ClientCertificateRequest:
+      x-model-version: 1.0
+      properties:
+        clientCryptographicDetails:
+          $ref: '#/components/schemas/CryptographicDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+
+    ClientCertificateResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        clientCryptographicDetails:
+          $ref: '#/components/schemas/CryptographicDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
 
     DccRequest:
       x-model-version: 1.0
@@ -3305,6 +3386,10 @@ components:
           maxLength: 16
           description: 'Original Host Response Message for re-authorized (Optimized) transaction.'
           example: 'DECLINED'
+        panEncryptionStatus:
+          type: string
+          description: 'Provides the status message of the encrypted PAN in the response'
+          example: 'Success'
 
     AvsSecurityCodeResponse:
       x-model-version: 1.0
@@ -3735,6 +3820,45 @@ components:
           maxLength: 256
           description: 'Describes check type.'
           example: 'PERSONAL'
+
+    CryptographicDetails:
+      x-model-version: 1.0
+      description: 'Client provided <a href="../docs?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md">cryptographic details</a>.'
+      properties:
+        clientKeyId:
+          type: string
+          maxLength: 64
+          description: 'Unique identifier of the key pair.'
+          example: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+        cryptographicAlgorithm:
+          type: string
+          maxLength: 256
+          description: 'Encryption type of the key pair.'
+          example: 'JWE'
+        cryptographicResourceLength:
+          type: integer
+          description: 'Size of the key pair.'
+          example: 2048
+        cryptographicResource:
+          type: string
+          description: 'Encoded public key/certificate.'
+          example: '30820122300D06092A864886F70D01010105000382010F003082010A0282010100BB729BFBD31A41CD46592A25D19589261BC1BE4DA9E81563D6F0DA1AB3C16B6C46B2830C81E7F5622037C17BFB61DE4948AAE0E191F51A486818416A5F59C12B2041CDCBAD658C745D4ED1696BD904010F8D0781C0E5127B6A172F10A767822E47EB3BDD9B851B0D4AE6342DDCD91126ECC0D1658B250AF20486D327CE02C79BB9A985B62CB72138A54F24CA9AC0871D5E41E30DE989F291EFC1BAD998B0E073D1434DBC90797D5C92F7881B5B6A54CE008AA5EBAEC7206FB42870EC49E0083C8C1A6B3A79EA9BF4C1693AD6F3F0EEA3C83F45621FE509D0739A1E91A41AF58B7C91793D3F1D0A59C77325AB32CB568782FB96F5E25561C33FBAEFDB1C05AA570203010001'
+        cryptographicResourceType:
+          type: string
+          description: 'Describes cryptographic resource type'
+          example: 'CERTIFICATE'
+        cryptographicResourceEncoding:
+          type: string
+          description: 'Describes cryptographic resource encoding'
+          example: '.pem'
+        publicKeyHash:
+          type: string
+          description: 'Commerce hub generated publicKey Hash'
+          example: '3A100B15B9430B1711f2E38F05939A9A'
+        usedFor:
+          type: string
+          description: 'Indicates the purpose of cryptographic information.'
+          example: 'RTAU'
 
     Customer:
       x-model-version: 1.0
@@ -6629,7 +6753,40 @@ components:
           bankAssociationDetails:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
-    
+
+    ClientCertificateRequest:
+      value:
+        cryptographicDetails:
+          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
+          cryptographicAlgorithm: 'JWE'
+          cryptographicResourceEncoding: '.pem'
+          cryptographicResourceType: 'CERTIFICATE'
+          cryptographicResourceLength: 2048
+          usedFor: 'RTAU'
+
+    ClientCertificateResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'UPLOAD'
+          transactionState: 'UPLOADED'
+          transactionOrigin: 'POS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2022-03-15T20:28:09.977157Z'
+            apiTraceId: '96b35a89b00a492c87dda321b7deee02'
+            clientRequestId: '9716198'
+            transactionId: '96b35a89b00a492c87dda321b7deee02'
+            apiKey: 'Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4'
+        cryptographicDetails:
+          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
+          cryptographicAlgorithm: 'JWE'
+          cryptographicResourceEncoding: '.pem'
+          cryptographicResourceType: 'CERTIFICATE'
+          cryptographicResourceLength: 2048
+          usedFor: 'RTAU'
+          publicKeyHash: '3A100B15B9430B1711f2E38F05939A9A'
+
     CancelResponse:
       value:
         gatewayResponse:
