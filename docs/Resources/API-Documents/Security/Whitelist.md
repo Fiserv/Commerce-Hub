@@ -2,9 +2,11 @@
 tags: [Security, Whitelist, Domains, API Reference, Checkout]
 ---
 
-# Whitelist domains for use with Checkout
+# Whitelist domains for use with Commerce Hub
 
-Commerce Hub's Domain Whitelisting API allows for whitelisting domains in bulk for our [Checkout Solutions]. *CERT* and *PROD* utilize the same whitelist so once a domain is submitted to either environment it can be used as a whitelist both endpoints.
+Commerce Hub's Domain Whitelisting API allows for whitelisting domains in bulk for our  *CERT* and *PROD* utilize the same whitelist so once a domain is submitted to either environment it can be used as a whitelist both endpoints. Local host testing without whitelisting is permitted.
+
+Commerce Hub’s Domain Whitelisting API enables bulk whitelisting of domains for our [Checkout Solutions](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md). Both CERT *(certification)* and PROD *(production)* environments share the same whitelist. Once a domain is submitted to either environment, it is whitelisted for both [endpoints](?path=docs/Resources/API-Documents/Use-Our-APIs.md). Additionally, local host testing is allowed without the need for whitelisting.
 
 ---
 
@@ -94,6 +96,6 @@ The tables below contain the response fields for a Domain Whitelist API request.
 ## See also
 
 - [API Explorer](../api/?type=post&path=/security/v1/saq/whitelist/domains)
-- [Checkout Solutions]
+- [Checkout Solutions](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---
