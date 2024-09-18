@@ -6897,15 +6897,15 @@ components:
           balances:
             - beginningBalance: '0.00'
               endingBalance: '12.04'
-              currency: USD
+              currency: 'USD'
     
     CurrencyCodeDccRequest:
       value:
         sourceCurrency:
-          total: '199.23'
-          currency: USD
+          total: 199.23
+          currency: 'USD'
         targetCurrency:
-          currency: JPY
+          currency: 'JPY'
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
@@ -7746,8 +7746,8 @@ components:
     PaymentCardDccRequest:
       value:
         amount:
-          total: '199.23'
-          currency: USD
+          total: 199.23
+          currency: 'USD'
         source:
           sourceType: PaymentCard
           encryptionData:
