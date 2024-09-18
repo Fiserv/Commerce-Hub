@@ -1,5 +1,5 @@
 ---
-tags: [Security, Credentials, Access Token, API Reference]
+tags: [Security, Credentials, Access Token, API Reference, Session ID]
 ---
 
 # Generate API credentials
@@ -102,16 +102,15 @@ The below table identifies the response elements. The full request schemas are a
 | `publicKey` | *string* | 4000 | Base64 encoded public key |
 | `asymmetricEncryptionAlgorithm` | *string* | 32 | Asymmetric encryption algorithm associated with the public key. RSA/ECB/PKCS1 with padding. |
 | `expiresAt` | *string* | 64 | Date and time when the session expires |
-| `sessionId` | *string* | 64  | Used as an identifier for a session after a successful call to security/credentials endpoint or after a successful authentication request |
-| `domains` | *array* | N/A  | A whitelist of domains that are applicable for this credentials request |
+| `sessionId` | *string* | 64  | A `sessionId` is a nonce token obtained from a security credentials request. It is used as the _PaymentSession_ in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first. |
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/credentials)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
 
 ---

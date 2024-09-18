@@ -2,22 +2,22 @@
 tags: [Postman, Request Header, Request Body, Header, Testing, Environments]
 ---
 
-# How to Use Postman for Testing
+# How to use Postman for testing
 
 Commerce Hub provides a number of resources for testing your integration including [Postman Collections](?path=docs/Resources/Resources.md). Postman is a widely-used API platform that allows you to run API requests against our environments. To assist with integration, we provide several Postman Collections with payload examples needed to test the server-side component of your integration.
 
 ---
 
-## Environments
+## Commerce Hub environments
 
-Commerce Hub has different [environments](?path=(?path=docs/Resources/API-Documents/Use-Our-APIs.md)), that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
+Commerce Hub has different [environments](?path=docs/Resources/API-Documents/Use-Our-APIs.md), that allow the consumption of our RESTful APIs for client development, customer acceptance testing, and production.
 
 <!-- theme: warning -->
-> Commerce Hub highly recommends testing against our sandbox and end to end environments before using our production environment.
+> Commerce Hub highly recommends testing against our certification *(end-to-end)* environment before using our production environment.
 
 ---
 
-## Import Collection
+## Import Postman Collection
 
 After you have [downloaded the Postman app](https://www.postman.com/downloads/), you will need to [import the collection](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-and-exporting-overview/).
 
@@ -26,7 +26,7 @@ After you have [downloaded the Postman app](https://www.postman.com/downloads/),
 
 ---
 
-## Pre-request Script
+## Pre-request script
 
 Commerce Hub uses an [HMAC authentication](?path=docs/Resources/API-Documents/Authentication-Header.md) which requires a pre-request script to be run to generate the authentication signature. See [writing pre-request scripts](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/) for more details.
 
@@ -96,9 +96,9 @@ function b64encode(input) {
 
 ---
 
-## Headers
+## Authentication headers
 
-Commerce Hub requires specific [headers](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to be submitted in the request. When using the above Pre-request Script you will need to set the following as the header values.
+Commerce Hub requires specific [headers](?path=docs/Resources/API-Documents/Authentication-Header.md) to be submitted in the request. When using the above [pre-request script](#pre-request-script) you will need to set the following as the header values.
 
 | Key | Value |
 | --- | ----- |
@@ -115,7 +115,7 @@ Commerce Hub requires specific [headers](?path=docs/Resources/API-Documents/Use-
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Idempotency](?path=docs/Resources/Guides/Idempotency.md)
 - [Postman Collections](?path=docs/Resources/Resources.md)
-- [Test Scripts](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md)
+- [Simulation Scripts](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---

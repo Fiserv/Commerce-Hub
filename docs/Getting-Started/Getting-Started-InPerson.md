@@ -1,10 +1,10 @@
 ---
-tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point of Sale, Terminal]
+tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point-of-Sale, Terminal]
 ---
 
 # In-Person Payments
 
-Commerce Hub supports in-person or card-present payment transactions where the customer physically presents the payment source while making a transaction at any merchant terminal. This type of transaction can include swiping a card with a magnetic strip, inserting or tapping a card with an [EMV chip](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv), or tapping a mobile device with the card loaded into a digital wallet.
+Commerce Hub supports in-person or card-present *(CP)* payment transactions where the customer physically presents the payment source while making a transaction at any merchant terminal. This type of transaction can include [swiping a card with a magnetic strip](?path=docs/In-Person/Encrypted-Payments/Track.md), [inserting or tapping a card with an EMV chip](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv), or tapping a mobile device with the card loaded into a digital wallet.
 
 ---
 
@@ -49,8 +49,8 @@ link: ?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md
 -->
 
 <!-- type: card
-title: Tap to Pay on iPhone
-description: Commerce Hub's SDK allows integration with Apple's Tap to Pay on iPhone to accept contactless payments from an iPhone or a partner-enabled iOS app.
+title: Tap to Pay
+description: Commerce Hub's Terminal API SDKs allows integration with iOS and Android to accept contactless payments from a supported device or a partner-enabled app.
 link: ?path=docs/In-Person/Integrations/Tap-to-Pay.md
 -->
 

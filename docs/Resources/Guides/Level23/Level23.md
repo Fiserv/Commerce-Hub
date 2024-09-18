@@ -632,7 +632,7 @@ Example of a charge (201: Created) response.
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Card Brand Requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
 - [Commodity Codes](?path=docs/Resources/Guides/Level23/Commodity-Codes.md)
-- [Tax Types](?path=docs/Resources/Guides/Level23/Tax-Types.md)
-- [Unit of Measurement](?path=docs/Resources/Guides/Level23/Unit-Measurement.md)
+- [Tax Types](?path=docs/Resources/Master-Data/Tax-Types.md)
+- [Unit of Measurement](?path=docs/Resources/Master-Data/Commodity-Codes.md)
 
 ---
