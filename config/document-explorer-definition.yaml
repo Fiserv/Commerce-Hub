@@ -107,8 +107,8 @@
       link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Pay By Bank
       link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
-    - title: Secure Data Capture
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+    - title: Checkout
+      link: docs/Online-Mobile-Digital/Checkout/Checkout.md
     - title: Tokenization
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:

@@ -5,11 +5,11 @@ tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 # Hosted Fields: Integration guide
 
 <!-- theme: danger -->
-> Commerce Hub's Checkout Hosted Fields solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Please contact your account representative for more information.
+> Commerce Hub's Checkout Hosted Fields solution requires the integrated domains to be whitelisted for the Content-Security-Policy in Merchant Configuration and Boarding. Local host testing without whitelisting is permitted.
 
 ## Step 1: Acquire credentials
 
-A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [form submission](#step-4-form-submission) and `sessionId` required in the [charges or tokens request](#step-5-submit-an-api-request).
+A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request is required to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the [form submission](#step-4-submit-the-form) and `sessionId` required in the [charges or tokens request](#step-5-submit-an-api-request).
 
 <!-- theme: danger -->
 > This request must be invoked as a server API call for each form submission and should not be attempted directly from the browser.
