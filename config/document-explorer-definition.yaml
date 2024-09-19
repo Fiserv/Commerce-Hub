@@ -119,8 +119,13 @@
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Developer Studio
-      link: docs/Getting-Started/Getting-Started-Dev-Portal.md
+      sections:
+      - title: HMAC Authentication
+        link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Message Digest
+        link: docs/Resources/API-Documents/Message-Digest.md
+      - title: Using Developer Studio
+        link: docs/Getting-Started/Getting-Started-Dev-Portal.md
     - title: Dynamic Descriptors
       link: docs/Resources/Guides/Dynamic-Descriptor.md
     - title: Fraud Controls
