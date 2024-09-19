@@ -1548,10 +1548,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DomainRequest'
-            examples:
-              Whitelist-Domains:
-                summary: Whitlist domains request
-                $ref: '#/components/examples/DomainWhitelistRequest'
       responses:
         200:
           description: Response with valid and invalid domains
@@ -1559,10 +1555,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DomainResponse'
-              examples:
-                Whitelist-Domains:
-                  summary: Whitlist domains response
-                  $ref: '#/components/examples/DomainWhitelistResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:

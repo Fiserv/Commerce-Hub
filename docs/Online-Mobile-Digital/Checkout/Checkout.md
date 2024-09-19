@@ -17,15 +17,21 @@ Begin a custom integration with Commerce Hub’s Checkout using our SDK componen
 <!-- type: row -->
 
 <!-- type: card
+title: APIs
+description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website or customer's mobile device and send it to Commerce Hub's Capture API.
+link: ?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md
+-->
+
+<!-- type: card
 title: Hosted Fields
 description: Allows a merchant an easy and secure way to embed a payment form into a website or customer's mobile device.
 link: ?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md
 -->
 
 <!-- type: card
-title: APIs
-description: Allows a merchant an easy and secure way to manage and encrypt the payment data on their website or customer's mobile device and send it to Commerce Hub's Capture API.
-link: ?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md
+title: Paze
+description: Add Paze to your payment options for secure and efficient transactions.
+link: ?path=docs/Resources/Guides/Payment-Sources/Paze/Paze.md
 -->
 
 <!-- type: row-end -->

@@ -24,24 +24,30 @@ The below table identifies the parameters in the `transactionDetails` object.
 | `merchantOrderId` | *string* | 128 | [Merchant order ID, customer reference number or purchase order number *(PO Number)*](?path=docs/Resources/Guides/BYOID.md) |
 | `merchantInvoiceNumber` | *string* | 12 | Merchant invoice or reference number |
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the [authorization types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md#authorization-type-indicator) of subsequent authorizations. |
-| `splitShipment` | *object* | N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-authorization or the first post-authorization.|
-| `reversalReasonCode` | *string* | 22 | [Reason](?path=docs/Resources/Master-Data/Transaction-Details.md#reversal-reason-code) the merchant/customer requests for cancel (void).|
-| `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold.|
+| `reversalReasonCode` | *string* | 22 | Identifies the [reason](?path=docs/Resources/API-Documents/Payments/Cancel.mdreversal-reason-code) the merchant or customer requests a cancel *(void)* |
+| `physicalGoodsIndicator` | *boolean* | N/A | Identifies if physical goods were sold |
 | `authorizationSequence` | *string* | 27 | Type of [authorization sequence](?path=docs/Resources/Guides/Authorizations/Re-Auth.md#authorization-sequence) requested.|
 | `createToken` | *boolean* | N/A | Used to create a token on a charge transaction. |
-| `primaryOrderId` | *string* | 40 | The unique identifier from the original transaction passed for a reauthorization and incremental authorization. |
 | `clientRequestId` | *string* |64 | Echoes back the value in the request header for tracking. |
 | `accountVerification` | *boolean* | N/A | Determines if verification should be performed on the Payment Type.|
 | `partialApproval` | *boolean* | N/A | Indicates if a [partial approval](?path=docs/Resources/Guides/Authorizations/Partial-Auth.md) is allowed. Partial approval should only be used in a card present or gift card transaction. |
 | `receiptEmail` | *string* | 256 | Email address to send the digital receipt.|
 | `paymentDescription` | *string* | 1024 | Payment Description |
-| `cardVerificationAmount` | *number* | 18,3 | Amount to charge the card to attempt verification. Note: some card brands do not allow zero $ auth.|
 | `partiallyApprovedTransactionAmount` | *number* | 18,3 |  The partially approved transaction amount from the original request. |
 | `splitTenderId` | *string* | 1024 | A partially-authorized transaction will generate a Split Tender ID. Subsequent transactions to complete the authorization should include the Split Tender ID so that all the transactions comprising that authorization can be linked. |
 | `duplicateTransactionCheckingIndicator` | *boolean* | N/A | Determines if duplicate transactions should be checked.|
-| `vaultFundingSource` | *boolean* | N/A | Identifies if the customer information was from the Vault. |
 | `retrievalReferenceNumber` | *string* | 12 | Retrieval reference number can be any value based on the merchant’s choosing (e.g. sequential tracking of transactions, fixed value etc.) used for transaction retrieval from the networks. |
+| `authentication3DS` | *boolean* | N/A | Determines if authentication should be performed on the payment type with 3DS provider |
+| `processingCode` | *string* | 6 | A required code is used in conjunction with the message type to [define the type of transaction](?path=docs/Resources/Master-Data/Processing-Code.md) that is by the terminal to the host |
+| `transactionCutTimeStamp` | *string* | N/A | This defines the date and time beyond which a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) cannot be preformed for the transaction in YYYY-MM-DDThh:mm:ssZ format |
+| `operationType` | *string* | 50 | Identifies the operation type based on the request |
+| `settlementDate` | *string* | N/A | Date that goods and services are preordered. YYYY-MM-DD format |
+| `balanceInquiry` | *boolean* | N/A | Indicates if a balance inquiry is allowed |
+| `fleetType` | *string* | 20 | Fleet Type to identify if its *RegularFleet* or *EnhancedFleet* |
+| `registrationType` | *string* | 16 | Type of device registration |
 | `deviceFingerprint` | *array* | N/A | An array containing the [device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md) details.|
+| `splitShipment` | *object* | N/A| Identifies the number of shipments if the transaction will contain [multiple shipments](?path=docs/Resources/Guides/Split-Shipment.md). Can be set during pre-authorization or the first post-authorization.|
+| `authOptimizationDetails` | *object* | N/A | Contains the details for an [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) request and response |
 
 <!--
 type: tab
@@ -53,23 +59,32 @@ JSON string format for `transactionDetails`:
 {
   "transactionDetails": {
     "approvalCode": "123456",
-    "primaryTransactionId": "838916029301",
-    "primaryOrderId": "123456789",
     "clientRequestId": "13267786514316843133216746",
     "captureFlag": false,
+    "createToken": false,
     "transactionCaptureType": "HOST",
     "accountVerification": false,
     "partialApproval": true,
     "merchantTransactionId": "1343678765",
     "merchantOrderId": "845366457890-TODO",
     "merchantInvoiceNumber": "123890",
-    "receiptEmail": "abc@gmail.com",
+    "receiptEmail": "customer@domain.com",
     "paymentDescription": "Merchandise",
-    "cardVerificationAmount": 0.02,
     "partiallyApprovedTransactionAmount": 10.55,
     "splitTenderId": "12423434",
     "authorizationTypeIndicator": "REAUTH",
     "duplicateTransactionCheckingIndicator": true,
+    "reversalReasonCode": "VOID",
+    "physicalGoodsIndicator": true,
+    "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
+    "authentication3DS": true,
+    "processingCode": "000000",
+    "transactionCutTimeStamp": "2016-04-16T16:06:05Z",
+    "operationType": "ACTIVATE",
+    "settlementDate": "2020-11-20",
+    "balanceInquiry": true,
+    "fleetType": "EnhancedFleet",
+    "registrationType": "TAVE_1",
     "deviceFingerprint": [
       {
         "provider": "InAuth",
@@ -96,10 +111,12 @@ JSON string format for `transactionDetails`:
       "totalCount": 5,
       "finalShipment": true
     },
-    "reversalReasonCode": "VOID",
-    "physicalGoodsIndicator": true,
-    "authorizationSequence": "CANCEL_BEFORE_AUTHORIZATION",
-    "createToken": false
+    "authOptimizationDetails": {
+      "accountStatus": "ACCOUNT_CHANGE",
+      "originalHostResponseCode": "51",
+      "originalHostResponseMessage": "DECLINED",
+      "panEncryptionStatus": "Success"
+    }
   }
 }
 ```
@@ -112,6 +129,7 @@ JSON string format for `transactionDetails`:
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Authorization Types](?path=docs/Resources/Guides/Authorizations/Authorization-Types.md)
+- [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md)
 - [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)
 - [Device Fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
 - [Dynamic Descriptors](?path=docs/Resources/Guides/Dynamic-Descriptor.md)
