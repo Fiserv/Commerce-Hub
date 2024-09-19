@@ -9,7 +9,7 @@ Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FA
 A device encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub. The `sourceType` _PaymentCard_ is used to submit a transaction to our application.
 
 <!-- theme: info -->
-> The below requirements are used for manual entry [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) requests from an encrypted device. See [encrypted payment card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md) for [online, digital and mobile requests](?path=docs/Getting-Started/Getting-Started-Online.md).
+> The below requirements are used for manual entry [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) requests from an encrypted device. See [encrypted payment card](?path=docs/In-Person/Encrypted-Payments/Manual.md) for [online, digital and mobile requests](?path=docs/Getting-Started/Getting-Started-Online.md).
 
 <!-- theme: danger -->
 > Commerce Hub requires all payment cards to be encrypted, it is not recommended to send unencrypted `cardData` for the payment transaction.
