@@ -29,7 +29,7 @@ Select the appropriate Terminal API SDK to quickly begin integration with Commer
 <!-- type: card
 title: Tap to Pay on Android
 description: Integrate your POS app with the Commerce Hub's Terminal API SDK for Android to make Tap to Pay on Android transactions.
-link: ?path=docs/In-Person/Integrations/Terminal-API/Android-TTP.md
+link:
 -->
 
 <!-- type: card
