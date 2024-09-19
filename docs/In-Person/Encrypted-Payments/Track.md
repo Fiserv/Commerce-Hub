@@ -2,7 +2,7 @@
 tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source, Device, Terminal]
 ---
 
-# PaymentTrack
+# # Using PaymentTrack as a payment source
 
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment device using a magnetic stripe *(magstripe)*. This can be used when the payment device fails to obtain the card details from the [card's chip](?path=docs/In-Person/Encrypted-Payments/EMV.md).
 

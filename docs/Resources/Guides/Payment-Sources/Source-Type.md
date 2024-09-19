@@ -8,7 +8,7 @@ The variable `sourceType` is used to determine the payment instrument of the tra
 
 ## Payment Cards
 
-A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_, [fleet card](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md) or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
+A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_, [Fleet Card](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md) or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
 
 <!--
 type: tab
@@ -302,7 +302,7 @@ type: tab
 titles: PaymentCheck
 -->
 
-[PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) is used to submit a Pay by Bank _(ACH)_ and [fleet check](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) transactions to Commerce Hub.
+[PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md) is used to submit a Pay by Bank _(ACH)_ and [Fleet Check](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) transactions to Commerce Hub.
 
 ```json
 {
@@ -326,5 +326,6 @@ titles: PaymentCheck
 - [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
 - [Multi-Use Public Key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Supported Card Types](?path=docs/Resources/Master-Data/Card-Type.md)
 
 ---

@@ -159,7 +159,7 @@ The below table identifies the parameters specific to Mastercard.
 | `bankNetDate` | *string* | | A Mastercard generated date for this transaction. MMDD format |
 | `cvcErrorIndicator` | *string* | | Indicates the CVC Error response data. |
 | `transactionEditErrorCode` | *string* | | Indicates the track data & POS validation Error in response data. ***Valid Values:** MISSING_TRACK_DATA, PRESENT_TRACK_DATA, PAN_DOES_NOT_MATCH_WITH_TRACK_DATA, EXPIRY_DATE_DOES_NOT_MATCH_WITH_TRACK_DATA, CARD_TYPE_INVALID, FIELD_SEPARATOR_INVALID, EXCEEDS_MAX_LENGTH, TRANSACTION_CODE_T, POS_CUST_PRESENT_1, POS_CARD_PRESENT_1* |
-| `transactionIntegrityClass` | *string* | | Contains the MasterCard provided Transaction Integrity Classification for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
+| `transactionIntegrityClass` | *string* | | Contains the Mastercard provided Transaction Integrity Classification for point-of-sale *(POS)* Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
 | `xCodeResponse` | *string* | 6 | Conditional for Mastercard EMV chip transactions. This value is used to notify the chip that the transaction was unable to go online and is required for batch uploads. |
 | `chipCryptoValue` | *string* | 3 | Additional EMV chip info returned by Mastercard. |
 | `cardDataOutputCapability` | *string* | 25 | Identifies the card's capability to output data. ***Valid Values:** UNSPECIFIED, NONE, MAG_STRIPE, ICC, OTHER* |

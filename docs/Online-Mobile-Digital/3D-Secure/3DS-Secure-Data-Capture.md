@@ -1,10 +1,10 @@
 ---
-tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Secure Data Capture]
+tags: [3-D-Secure, Online, Web, Mobile, Card Not Present, Checkout]
 ---
 
-# 3-D Secure - Commerce Hub Managed Secure Data Capture Integration
+# 3-D Secure - Commerce Hub Managed Checkout Integration
 
-Commerce Hub's Secure Data Capture is designed to work seamlessly with our 3-D Secure (3DS) authentication provider. This eliminates the need to manually integrate with the provider's API and increases PCI security. The [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md) or [JavaScript SDK](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md) handles the data collection and storage of the customer's data to send to the 3DS provider.
+Commerce Hub's Checkout is designed to work seamlessly with our 3-D Secure (3DS) authentication provider. This eliminates the need to manually integrate with the provider's API and increases PCI security. The [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) handles the data collection and storage of the customer's data to send to the 3DS provider.
 
 ## Transaction Flow
 
@@ -23,13 +23,13 @@ Commerce Hub's Secure Data Capture is designed to work seamlessly with our 3-D S
 
 A [credentials](?path=docs/Resources/API-Documents/Security/Credentials.md) request with `authentication3DS` *true* in the `transactionDetails` object is required to inform Commerce Hub the transaction will require 3DS authentication.
 
-The credential request is also needed to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the Secure Data Capture request and `sessionId` required in the subsequent request.
+The credential request is also needed to obtain the client `symmetricEncryptionAlgorithm`, `accessToken`, `sessionId`, and `publicKey`. These will be used to create the [`authorization`](?path=docs/Resources/API-Documents/Authentication-Header.md) constant required in the Checkout request and `sessionId` required in the subsequent request.
 
 ---
 
 ## Step 2: Configure iFrame or JS
 
-Follow the configuration requirements depending on the Secure Data Capture integration type; [iFrame](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md#step-2-configuration) or [JavaScript](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/JS-Request.md#step-2-configuration).
+Follow the configuration requirements depending on the Checkout integration type; [iFrame](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md#step-2-configuration) or [JavaScript](?path=docs/Online-Mobile-Digital/Checkout/Payment-JS/JS-Request.md#step-2-configuration).
 
 The iFrame or JS form will capture the customer card and device information to be used in the 3DS authentication and used for the subsequent charges or tokenization transaction.
 
@@ -53,6 +53,6 @@ After authentication has been completed with the 3DS provider, [submit a charges
 - [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md)
+- [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 
 ---

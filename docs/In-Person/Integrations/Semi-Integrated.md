@@ -1,10 +1,10 @@
 ---
-tags: [In-Person, Card Present, Semi Integrated, Device, Terminal, Point of Sale]
+tags: [In-Person, Card Present, Semi Integrated, Device, Terminal, Point-of-Sale]
 ---
 
 # Semi-Integrated Device
 
-Semi-integrated solutions run on a combination of Commerce Hub and third-party hardware. Commerce Hub's semi-integration solution allows your existing point-of-sale software to accept EMV based, PCI-compliant transactions. A semi-integration integrates your hardware and software with Commerce Hub's certified hardware and software, making your point-of-sale EMV compliant quickly and easily.
+Semi-integrated solutions run on a combination of Commerce Hub and third-party hardware. Commerce Hub's semi-integration solution allows your existing point-of-sale *(POS)* application to accept EMV based, PCI-compliant transactions. A semi-integration integrates your hardware and software with Commerce Hub's certified hardware and software, making your POS EMV compliant quickly and easily.
 
 **How it Works:**
 

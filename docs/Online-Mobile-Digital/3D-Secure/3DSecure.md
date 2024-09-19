@@ -38,8 +38,8 @@ link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Merchant-Managed.md
 -->
 
 <!-- type: card
-title: Commerce Hub Managed Secure Data Capture
-description: Allows the integration directly with Commerce Hub's Secure Data Capture iFrame or JavaScript to capture the 3DS device data and payment details within the Commerce Hub iFrame or JavaScript SDK on the merchant's website.
+title: Commerce Hub Managed Checkout
+description: Allows the integration directly with Commerce Hub's Checkout iFrame or JavaScript to capture the 3DS device data and payment details within the Commerce Hub iFrame or JavaScript SDK on the merchant's website.
 link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DS-Secure-Data-Capture.md
 -->
 
