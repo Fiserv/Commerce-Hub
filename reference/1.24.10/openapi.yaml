@@ -6828,7 +6828,7 @@ components:
             expirationYear: '2030'
         paymentReceipt:
           approvedAmount:
-            total: '12.04'
+            total: 12.04
             currency: USD
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
@@ -6857,7 +6857,7 @@ components:
     CreateDigitalGiftCardRequest:
       value:
         amount:
-          total: '12.04'
+          total: 12.04
           currency: USD
         transactionDetails:
           merchantTransactionId: '123456789012'
@@ -6903,17 +6903,17 @@ components:
             hostResponseMessage: APPROVAL
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '0.00'
-              endingBalance: '12.04'
+            - beginningBalance: 0.00
+              endingBalance: 12.04
               currency: 'USD'
     
     CurrencyCodeDccRequest:
       value:
         sourceCurrency:
           total: 199.23
-          currency: 'USD'
+          currency: USD
         targetCurrency:
-          currency: 'JPY'
+          currency: JPY
         merchantDetails:
           terminalId: '123456'
           merchantId: '123456789012345'
@@ -7559,7 +7559,7 @@ components:
     PaymentCardActivateCardRequest:
       value:
         amount:
-          total: '12.04'
+          total: 12.04
           currency: USD
         target:
           sourceType: PaymentCard
@@ -7613,8 +7613,8 @@ components:
             hostResponseMessage: APPROVAL
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '0.00'
-              endingBalance: '12.04'
+            - beginningBalance: 0.00
+              endingBalance: 12.04
               currency: USD
     
     PaymentCardBalanceInquiryRequest:
@@ -7769,28 +7769,6 @@ components:
           terminalId: '123456'
           merchantId: '123456789012345'
 
-    DomainWhitelistRequest:
-      value:
-        domains:
-          - www.example1.com
-          - www.example2.com
-          - ww.example3.co
-
-    DomainWhitelistResponse:
-      value:
-        gatewayResponse:
-          transactionProcessingDetails:
-            transactionTimestamp: '2024-09-19T14:11:10.168675929Z'
-            apiTraceId: eab8bcdae0764ab1a78439a154e6f6fb
-            clientRequestId: '283766'
-            transactionId: eab8bcdae0764ab1a78439a154e6f6fb
-            apiKey: ytIVhAgrMeylMVPhBQkTLKlkSQS8GrwQ
-        validDomains:
-          - www.example1.com
-          - www.example2.com
-        invalidDomains:
-          - ww.example3.co
-
     DccResponse:
       value:
         gatewayResponse:
@@ -7819,8 +7797,12 @@ components:
           timestamp: '2021-06-20T23:42:48Z'
           validFrom: '2021-06-20T23:42:48Z'
           validTo: '2021-07-20T23:42:48Z'
-          sourceAmount: 'total:''199.23'' currency:''USD'''
-          targetAmount: 'total:''3875.07'' currency:''TRY'''
+          sourceAmount:
+            total: 199.23
+            currency: USD
+          targetAmount:
+            total: 3875.07
+            currency: JPY
         processorResponseDetails:
           approvalStatus: APPROVED
           processor: fiserv
@@ -7828,7 +7810,29 @@ components:
           responseMessage: APPROVAL
           hostResponseMessage: RATE_SUPPLIED
           localTimestamp: '2021-06-20T23:42:48Z'
-    
+
+    DomainWhitelistRequest:
+      value:
+        domains:
+          - www.example1.com
+          - www.example2.com
+          - ww.example3.co
+
+    DomainWhitelistResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2024-09-19T14:11:10.168675929Z'
+            apiTraceId: eab8bcdae0764ab1a78439a154e6f6fb
+            clientRequestId: '283766'
+            transactionId: eab8bcdae0764ab1a78439a154e6f6fb
+            apiKey: ytIVhAgrMeylMVPhBQkTLKlkSQS8GrwQ
+        validDomains:
+          - www.example1.com
+          - www.example2.com
+        invalidDomains:
+          - ww.example3.co
+
     PaymentCardDeviceDataInitializationRequest:
       value:
         source:
@@ -8036,8 +8040,13 @@ components:
       value:
         source:
           sourceType: PaymentCard
-          card:
-            cardData: '4005550000000019'
+          encryptionData:
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....
+            encryptionBlockFields: >-
+              card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            keyId: '88000000022'
     
     PaymentCardInfoResponse:
       value:
@@ -8093,7 +8102,7 @@ components:
     PaymentCardReloadRequest:
       value:
         amount:
-          total: '10.00'
+          total: 10.00
           currency: USD
         target:
           sourceType: PaymentCard
@@ -8146,18 +8155,21 @@ components:
             hostResponseMessage: APPROVAL
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '12.04'
-              endingBalance: '22.04'
+            - beginningBalance: 12.04
+              endingBalance: 22.04
               currency: USD
     
     PaymentCardTokenRequest:
       value:
         source:
           sourceType: PaymentCard
-          card:
-            cardData: '4005550000000019'
-            expirationMonth: '02'
-            expirationYear: '2035'
+          encryptionData:
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....
+            encryptionBlockFields: >-
+              card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            keyId: '88000000022'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
@@ -8407,7 +8419,7 @@ components:
           emvData: 8a0230309f36020073910a1be55403be070aa53030
         paymentReceipt:
           approvedAmount:
-            total: '12.04'
+            total: 12.04
             currency: USD
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
@@ -9241,9 +9253,6 @@ components:
     
     PaymentTrackVerifyRequest:
       value:
-        amount:
-          total: 0
-          currency: USD
         source:
           sourceType: PaymentTrack
           encryptionData:
@@ -9679,7 +9688,7 @@ components:
           paymentReceipt:
             approvedAmount:
               currency: USD
-              total: '16.93'
+              total: 16.93
             processorResponseDetails:
               approvalCode: OK7742
               approvalStatus: APPROVED
