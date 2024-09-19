@@ -5,7 +5,7 @@ tags: [Online, Card Not Present, Checkout, Hosted Fields, iFrame]
 # Hosted Fields: Integration guide
 
 <!-- theme: danger -->
-> Commerce Hub's Paze solution requires the integrated domains to be [whitelisted](?path=docs/Resources/API-Documents/Security/Whitelist.md) for the Content-Security-Policy. Local host testing without whitelisting is permitted.
+> Commerce Hub's Checkout Hosted Fields requires the integrated domains to be [whitelisted](?path=docs/Resources/API-Documents/Security/Whitelist.md) for the Content-Security-Policy. Local host testing without whitelisting is permitted.
 
 ## Step 1: Acquire credentials
 
