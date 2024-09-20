@@ -287,9 +287,9 @@ paths:
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
-      summary: 'Submit a <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">merchant managed</a> card capture for use with Secure Card Capture'
+      summary: 'Used to <a href="../docs?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md">securely submit PCI and PII data</a> to Commerce Hub.'
       x-group-name: 'Accounts'
-      x-proxy-name: 'Card Capture'
+      x-proxy-name: 'Data Capture'
       x-default-example: PaymentCard
       requestBody:
         required: true
@@ -300,7 +300,10 @@ paths:
             examples:
               PaymentCard-Encrypted:
                 summary: CardCapture Request with PaymentCard,
-                $ref: '#/components/examples/PaymentCardCaptureRequest'
+                $ref: '#/components/examples/PaymentCardCaptureRequest'      
+              PaymentCheck-Encrypted:
+                summary: CardCapture Request with PaymentCheck (ACH)
+                $ref: '#/components/examples/PaymentCheckDriverLicenseCaptureRequest'
       responses:
         200:
           description: Success.
@@ -310,8 +313,11 @@ paths:
                 $ref: '#/components/schemas/CardCaptureResponse'
               examples:
                 PaymentCard-Encrypted:
-                  summary: CardCaptureResponse for PaymentCard
+                  summary: CardCapture Response for PaymentCard
                   $ref: '#/components/examples/PaymentCardCaptureResponse'
+                PaymentCheck-Encrypted:
+                  summary: CardCapture Response for PaymentCheck (ACH)
+                  $ref: '#/components/examples/PaymentCheckDriverLicenseCaptureResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -3841,6 +3847,9 @@ components:
           maxLength: 256
           description: 'Describes check type.'
           example: 'PERSONAL'
+        encryptionData:
+          $ref: '#/components/schemas/EncryptionData'
+
 
     CryptographicDetails:
       x-model-version: 1.0
@@ -3989,6 +3998,9 @@ components:
             $ref: '#/components/schemas/Phone'
         vehicle:
           $ref: '#/components/schemas/Vehicle'
+        encryptionData:
+          $ref: '#/components/schemas/EncryptionData'
+
 
     DecryptedWallet:
       x-model-version: 1.0
@@ -8275,7 +8287,41 @@ components:
                 securityCodeResponse: M
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
-    
+
+    PaymentCheckDriverLicenseCaptureRequest:
+      value:
+        source:
+          sourceType: PaymentCheck
+          encryptionData:
+            keyId: 010e6fd8-a1a7-4512-b0e8-b42ac00ae4e3
+            encryptionBlock: MYMEYuN29tDxyUTnd5xsm/MxdsnuGSMXchzXizdqmgUR7awWgJ7aVCC8NGVihXbt1UJ4mPj/ogifB8dSk1e8HAlXwIzuU9KgnqsoIBtIPdAQ4SUYrhfTZOvBTpPL5apLJb6lAcCD8Dq0bQhSPO06YLvnL6UVTUVcHMhAywqx9iwCUBIsdJzeGxtdYn1lRM+okdwbqFTepUbMH03/sAq6C6Jijh4tE7UU2Zi7F9At4CXM34WgZfnqtRtnq85KMIPe+VAa3GD12FGZxFjPVRMlGjcgWqkzYw+UH6q3TgehC2QifCP302u6pAie9r8r+9md9uCaoV93G9jV1jcZL31dMQ==
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlockFields: check.accountNumber:9,check.routingNumber:9
+        customer:
+          driverLicenseState: AL
+          encryptionData:
+            keyId: 010e6fd8-a1a7-4512-b0e8-b42ac00ae4e3
+            encryptionBlock: nsaEPVZ9UAqm0RBE3HV1+gloNwn1Bq47CSLW5YDlVpAFO4z9ja4FugBHmuy2bEKybJ53WcIPRU4icTnYHEO5Qb8bRZPRPNgG/MdLrr9b4fd5B/F9UkUxiYIjDeisu06h/sf4uKQbzCinLm+dLrHDVTPo6ARH8p1E30GPYyo6OeqOJekAGVP2kIDMatLJPgzIoVs4+P2/TBwX7VNSN/Yj0XGag/9nKT8j1rnqzP/RkEEO6Jh9XEZbFaYoHdv7TXerIfj/vYjrfd95A0IsTbvFfIyqNBTR+pZ/Y3QrOGDkEo23xx/IstiUsUcZsJ6le/X77TQJOpg4TQqutj5nXrNNng==
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlockFields: customer.driverLicenseNumber:8
+        merchantDetails:
+          merchantId: '100184000000076'
+          terminalId: '10000001'
+        transactionDetails:
+          createToken: false
+
+    PaymentCheckDriverLicenseCaptureResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: 2024-09-19T20:25:29.429391981Z
+            apiTraceId: b547c305f88445d89b21aab540e4f252
+            clientRequestId: 5ae652bf-07ec-40dd-8fe5-bbfac25c754e
+            transactionId: b547c305f88445d89b21aab540e4f252
+            apiKey: abcdabcdabcd
+
     PaymentCheckRequest:
       value:
         amount:
