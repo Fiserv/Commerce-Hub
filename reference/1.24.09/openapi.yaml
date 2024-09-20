@@ -287,9 +287,9 @@ paths:
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
-      summary: 'Submit a <a href="../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md">merchant managed</a> card capture for use with Secure Card Capture'
+      summary: 'Submit a <a href="../docs?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md">merchant managed</a> card capture for use with Secure Card Capture'
       x-group-name: 'Accounts'
-      x-proxy-name: 'Card Capture'
+      x-proxy-name: 'Data Capture'
       x-default-example: PaymentCard
       requestBody:
         required: true

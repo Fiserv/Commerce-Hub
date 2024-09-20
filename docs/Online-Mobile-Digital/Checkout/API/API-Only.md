@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Checkout]
 
 # Checkout - API integration guide
 
-Commerce Hub allows merchants to manage the design and payment entry form of their website or mobile app for accepting [online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md). The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's [Checkout Capture API](#step-3-submit-a-capture-api-request) service to store the data. The merchant website can then pass the `sessionId` received as part of the [security credentials request](#step-1-acquire-credentials) in a [Charges, Tokens, or Verification API request](#step-4-submit-an-api-request) with the `sourceType` as *PaymentSession*.
+Commerce Hub allows merchants to manage the design and payment entry form of their website or mobile app for accepting [online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md). The merchant handles encrypting the data from their form and makes a direct API call with the payment information to Commerce Hub's [Data Capture API](#step-3-submit-a-capture-api-request) service to store the data. The merchant website can then pass the `sessionId` received as part of the [security credentials request](#step-1-acquire-credentials) in a [Charges, Tokens, or Verification API request](#step-4-submit-an-api-request) with the `sourceType` as *PaymentSession*.
 
 **API interactions:**
 
@@ -40,9 +40,9 @@ To ensure data integrity, prevent replay attacks, and eliminate stale requests, 
 
 ---
 
-## Step 3: Submit a Capture API request
+## Step 3: Submit a Data Capture API request
 
-The encrypted data is securely submitted to Commerce Hub in a [Capture API request](?path=docs/Online-Mobile-Digital/Checkout/API/Card-Capture.md), where it is persisted and linked to the `sessionId` generated in the [credentials request](#step-1-acquire-credentials).
+The encrypted data is securely submitted to Commerce Hub in a [Data Capture API request](?path=docs/Online-Mobile-Digital/Checkout/API/Card-Capture.md), where it is persisted and linked to the `sessionId` generated in the [credentials request](#step-1-acquire-credentials).
 
 <!-- theme: warning -->
 > If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service, `paymentTokens` will be returned in the response. If a multi-use token is required the [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request. To override this behavior, `createToken`: *false* is required in `transactionDetails`.
