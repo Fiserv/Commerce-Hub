@@ -25,11 +25,12 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.24.10: refactored for renaming `PAR` to `paymentAccountReference` in `processorResponseDetails` to meet OpenAPI specification requirements. New objects added/updated to support new features. | Update |
+| Version 1.24.10: refactored for renaming `PAR` to `paymentAccountReference` in `processorResponseDetails` to meet OpenAPI specification requirements. New objects added/updated to support new and updated features. | Update |
 | Support for card metadata to be returned in [Refunds API response](?path=docs/Resources/API-Documents/Payments/Refund.md) if enabled | Update |
 | [Client Certificate API](?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md) to support encrypted PAN when configured for [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) | Feature |
 | Support for [Paze digital wallet transaction](?path=docs/Resources/Guides/Payment-Sources/Paze/Paze.md) through Commerce Hub Checkout SDK. | Feature |
 | New [Whitelist API](?path=docs/Resources/API-Documents/Security/Whitelist.md) to add domains for Commerce Hub Checkout SDK. | Feature |
+| Support for *PaymentCheck* with [Data Capture API](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md). | Update |
 
 ---
 
