@@ -2,18 +2,20 @@
 tags: [Online, Card Not Present, Checkout]
 ---
 
-# Checkout - Capture API
+# Collect secure payment data with the Data Capture API
 
-Commerce Hub allows a payment instrument to be securely submitted to Commerce Hub using API-key validation, where it is persisted and linked to a `sessionId` generated from a [credentials request](?path=docs/Resources/API-Documents/Security/Credentials.md).
+Commerce Hub allows a [payment instrument](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) *(PaymentCard and PaymentCheck)* to be securely submitted to Commerce Hub using API-key validation, where it is persisted and linked to a `sessionId` generated from a [Credentials API request](?path=docs/Resources/API-Documents/Security/Credentials.md).
 
 <!-- theme: info -->
 > A `sessionId` is a nonce token obtained from a security credentials request. It is used as the *PaymentSession* in [Checkout integrations](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md) to submit a transaction to our application. The `sessionId` expires once it goes out to the processor or after 30 minutes of it's generation, whichever comes first.
 
 ---
 
-## Key benefits
+**Key benefits:**
 
-Checkout using our Capture API provides a merchant with an easy and secure way to manage and encrypt the payment data on their website. Commerce Hub makes it simple to submit the payment information without collecting, processing, or being able to view those payment details in their non-tokenized form, lowering the PCI compliance requirements.
+- **Easy and secure management:** Processing using our Data Capture API provides merchants with a straightforward and secure method to manage and encrypt card and check payment data on their website.
+- **Simplified submission:** Commerce Hub simplifies the submission of payment information without the need to collect, process, or view payment details in their non-tokenized form.
+- **Reduced PCI Compliance requirements:** By not handling non-tokenized payment data, merchants can lower their PCI compliance requirements.
 
 ---
 
@@ -24,7 +26,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum parameters for a successful Capture API request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture).
+The example below contains the minimum parameters for a successful Data Capture API request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture).
 
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/card-capture`
@@ -48,13 +50,11 @@ The example below contains the minimum parameters for a successful Capture API r
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/card-capture)
-
 <!--
 type: tab
 -->
 
-Example of a card capture (200: Success) response.
+Example of a Data Capture API *(200: Success)* response.
 
 <!-- theme: info -->
 > See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -103,7 +103,7 @@ The below table identifies the required parameters in the `source` object.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | --------| ---------- |
-| `sourceType` | *string* | 15 |  &#10004; | Use *PaymentCard* for card transactions |
+| `sourceType` | *string* | 15 |  &#10004; | Use *[PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)* for card transactions or *[PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md)* for check transactions. |
 | `encryptionData` | *object* | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
 
 <!--

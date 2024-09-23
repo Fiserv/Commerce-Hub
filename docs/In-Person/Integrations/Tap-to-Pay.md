@@ -41,5 +41,3 @@ link: ?path=docs/In-Person/Integrations/Terminal-API/iPhone-TTP.md
 <!-- type: row-end -->
 
 ---
-
-
