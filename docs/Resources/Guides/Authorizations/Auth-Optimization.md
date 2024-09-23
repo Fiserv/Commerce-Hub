@@ -4,15 +4,15 @@ tags: [Authorization, Approval Rate, Decline Rate, Payment Optimization]
 
 # Increase approval rates with Authorization Optimization
 
-[Authorization Optimization](https://www.carat.fiserv.com/en-us/solutions/optimization/) from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks, Authorization Optimization ensures higher approval rates. This is achieved by locating updated card numbers and expiration dates and retying the transaction with the new data.
+[Authorization Optimization](https://www.carat.fiserv.com/en-us/solutions/optimization/) from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks, Authorization Optimization ensures higher approval rates. This is achieved by locating updated card numbers and expiration dates and retrying the transaction with the new data.
 
 <!-- theme: info -->
-> Authorization Optimization needs to be configured in Merchant Configuration and Boarding. Authorization Optimization can be configured to receive updated card and token data and reason, or the reason only. Please contact your account representative for more information.
+> Authorization Optimization needs to be configured in Merchant Configuration and Boarding. Authorization Optimization can be configured to receive updated card data and reason, token data and reason, or the reason only. Please contact your account representative for more information.
 
 **Supported features:**
 
 <!-- theme: info -->
-> Authorization Optimization is valid for Visa, Mastercard and Discover transactions on Nashville.
+> Authorization Optimization is valid for Visa and Mastercard transactions on Nashville.
 
 - Real-time account updater *(RTAU)*
 - Dynamic retry
