@@ -102,8 +102,11 @@ titles: metadata, transactionDetails, merchantDetails
 
 The below table identifies the conditional parameters in the `metadata` object.
 
-<!-- theme: info -->
-> For the first download or a full download, the `updatedOn` variable of `metaData` object should **not** be sent. For subsequent downloads, the `updatedOn` value from the last response should be sent.
+For the first download the `updatedOn` variable of `metaData` object should **not** be sent. For subsequent downloads the following `updatedOn` logic is used:
+
+- If not sent, the full table is returned.
+- If sent but there are no updates to the table, no table records will be returned.
+- If sent but there is an update to the table after the timestamp, the full table is returned.
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |

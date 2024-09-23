@@ -326,5 +326,6 @@ titles: PaymentCheck
 - [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
 - [Multi-Use Public Key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Supported Card Types](?path=docs/Resources/Master-Data/Card-Type.md)
 
 ---
