@@ -92,13 +92,13 @@ The below table identifies the parameters used in `createPaymentForm`.
 
 ## Step 4: Submit the form
 
-When ready to submit the form data for card capture, such as when the form data is all valid and the user clicks a submit button, you can programmatically trigger submission for the Checkout payment form fields via the `submit` [method](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md).
+When ready to submit the form for data capture, such as when the form data is all valid and the user clicks a submit button, you can programmatically trigger submission for the Checkout Hosted Fields via the `submit` [method](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Methods.md).
 
 ```javascript
 const submissionPromise = paymentForm.submit({
   apiKey: "API_KEY";
   accessToken: "ACCESS_TOKEN",
-  createToken: "false",
+  createToken: false,
   publicKey: "PUBLIC_KEY",
   keyId: "KEY_ID",
   merchantId: "MERCHANT_ID",
