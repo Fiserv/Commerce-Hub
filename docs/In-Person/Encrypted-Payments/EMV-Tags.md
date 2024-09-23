@@ -85,6 +85,7 @@ Below is a sample of the EMV Data Field Identifier with 2 TLV data elements.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [EMV payments](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [EMV chip and contactless payments](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [Fiserv EMV Implementation Guide](https://developer.fiserv.com/product/DirectPlatformSpecifications/docs/?path=docs/EMV/EMVImplementationGuide.md&branch=main)
 
 ---
