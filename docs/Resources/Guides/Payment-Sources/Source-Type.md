@@ -75,7 +75,7 @@ titles: PaymentCard, PaymentEMV, PaymentTrack
 type: tab
 -->
 
-[PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) is used to submit a EMV chip *(PIN and PINless)* and contactless transaction to Commerce Hub using [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) or a [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md).
+[PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) is used to submit an EMV chip *(PIN and PINless)* and contactless transaction to Commerce Hub using [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) or a [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md).
 
 **PaymentEMV using terminal encryption:**
 
