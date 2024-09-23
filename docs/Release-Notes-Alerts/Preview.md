@@ -16,6 +16,19 @@ Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&bra
 
 ---
 
+## November 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** October 7th 2024
+- **Production:** October 16th 2024
+
+| Details | Type |
+| ----- | ----- |
+| [Checkout v3.1.9 release](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md), enhancements and support for Firefox | Update |
+
+---
+
 ## October 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
