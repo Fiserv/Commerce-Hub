@@ -17,6 +17,9 @@ Commerce Hub offers merchants a simple, and secure way for their customers to ea
 5. The merchant submits the encrypted payload to Commerce Hub.
 6. Commerce Hub attempts to process the transaction and sends the response to the merchant website.
 
+<!-- theme: info -->
+> Please contact your account representative if you're interested in learning more about enabling Paze as a payment method for Commerce Hub.
+
 ---
 
 ## Paze integrations
