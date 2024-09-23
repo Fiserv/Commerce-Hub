@@ -33,7 +33,7 @@ Contactless is a payment method that allows the customer simply to tap their con
 
 ---
 
-## Submit a PINless transactions
+## Submit a PINless transaction
 
 <!-- theme: info -->
 > For a credit card transactions in the United States, PIN is not normally required, however some banks may have PIN enabled and will decline the transaction if not included.
@@ -192,7 +192,7 @@ titles: source,  encryptionData
 -->
 
 <!-- theme: danger -->
-> Commerce Hub does not accept PCI data Tag 5a `cardData` and Tag 57 `track2Data`* in the `emvData`.
+> Commerce Hub does not accept PCI data Tag 5a `cardData` and Tag 57 `track2Data` in the `emvData`.
 
 The below table identifies the parameters in the `source` object.
 
@@ -220,7 +220,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 ---
 
-## Submit a PIN based transactions
+## Submit a PIN based transaction
 
 <!--
 type: tab
@@ -369,6 +369,9 @@ Example of a Charges API *(201: Created)* response.
 type: tab
 titles: source, encryptionData, pinBlock
 -->
+
+<!-- theme: danger -->
+> Commerce Hub does not accept PCI data Tag 5a `cardData` and Tag 57 `track2Data` in the `emvData`.
 
 The below table identifies the required parameters in the `source` object.
 
