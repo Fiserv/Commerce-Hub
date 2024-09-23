@@ -4,8 +4,8 @@ tags: [Payment Sources, Network Token, Paze, Alternate Payments, Wallet, Online]
 
 # Paze Checkout: Integration guide
 
-<!-- theme: info -->
-> Commerce Hub's Paze solution requires the integrated domains to be [whitelisted](?path=docs/Resources/API-Documents/Security/Whitelist.md) for the Content-Security-Policy. Please contact your account representative for more information.
+<!-- theme: danger -->
+> Commerce Hub's Paze solution requires the integrated domains to be [whitelisted](?path=docs/Resources/API-Documents/Security/Whitelist.md) for the Content-Security-Policy. Local host testing without whitelisting is permitted.
 
 ---
 
@@ -29,6 +29,9 @@ The following code snippet is an example HTML script tag for loading the SDK:
 <script src="https://commercehub-secure-data-capture.fiservapps.com/{version}/checkout.js"></script>
 ```
 
+<!-- theme: warning -->
+> It is recommended to use the latest [version](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md) of Commerce Hub's Checkout SDK to ensure PCI and security compliance.
+
 ---
 
 ## Step 3: Initialize the SDK
@@ -47,7 +50,7 @@ const pazePromise = window.fiserv.components.paze({
 
 ---
 
-## Step 4: Launch Paze UI
+## Step 4: Launch the Paze UI
 
 On invoking `selectPaymentMethod` the Checkout SDK sets up and hands over control to the third-party Paze SDK.
 
@@ -290,9 +293,9 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [Credentials Request](?path=docs/Resources/API-Documents/Security/Credentials.md)
-- [Domains Whitelist](?path=docs/Resources/API-Documents/Security/Whitelist.md)
 - [Paze Error Handling](?path=docs/Resources/Guides/Payment-Sources/Paze/Paze-Error-Handling.md)
 - [Checkout Solutions](?path=docs/Online-Mobile-Digital/Checkout/CHeckout.md)
 - [Checkout Version Release Notes](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md)
+- [Whitelist domains](?path=docs/Resources/API-Documents/Security/Whitelist.md)
 
 ---

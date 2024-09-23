@@ -107,8 +107,8 @@
       link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: Pay By Bank
       link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
-    - title: Secure Data Capture
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
+    - title: Checkout
+      link: docs/Online-Mobile-Digital/Checkout/Checkout.md
     - title: Tokenization
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:
@@ -119,8 +119,13 @@
       link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Developer Studio
-      link: docs/Getting-Started/Getting-Started-Dev-Portal.md
+      sections:
+      - title: HMAC Authentication
+        link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Message Digest
+        link: docs/Resources/API-Documents/Message-Digest.md
+      - title: Using Developer Studio
+        link: docs/Getting-Started/Getting-Started-Dev-Portal.md
     - title: Dynamic Descriptors
       link: docs/Resources/Guides/Dynamic-Descriptor.md
     - title: Fraud Controls
@@ -188,9 +193,11 @@
     - title: Device Management
       link: docs/Resources/API-Documents/Device-Management/Device-Management.md
       sections:
+      - title: Client Certificate
+        link: docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md
       - title: EMV CAPK Data
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
-      - title: POS Decision Tables
+      - title: POS Decision Table
         link: docs/Resources/API-Documents/Device-Management/Decision-Table.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
