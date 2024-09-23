@@ -3847,9 +3847,6 @@ components:
           maxLength: 256
           description: 'Describes check type.'
           example: 'PERSONAL'
-        encryptionData:
-          $ref: '#/components/schemas/EncryptionData'
-
 
     CryptographicDetails:
       x-model-version: 1.0
@@ -5164,6 +5161,8 @@ components:
           properties:
             check:
               $ref: '#/components/schemas/Check'
+            encryptionData:
+              $ref: '#/components/schemas/EncryptionData'
 
     PaymentEMV:
       x-model-version: 1.0
