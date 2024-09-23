@@ -8,6 +8,14 @@ The following version fixes have been implemented for Commerce Hub's Checkout SD
 
 ---
 
+## 3.1.9
+
+| Change | Additional Details |
+| ----- | ----- |
+| Firefox compatibility and supported browsers that receive testing | iFrame rendering in Firefox has been restored. Due to unreliability of `blur` JavaScript event in Firefox when iFrames are involved, the `shouldShowError` property on messages to integrator defined event hook `onFieldValidityChange` will not take into account whether the field currently has user keyboard focus if the browser in use is Firefox |
+
+---
+
 ## 3.1.7
 
 | Change | Additional Details |
