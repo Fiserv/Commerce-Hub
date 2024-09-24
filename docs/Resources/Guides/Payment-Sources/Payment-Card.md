@@ -2,12 +2,12 @@
 tags: [Payment Card, Payment Sources, Online, Digital, Mobile, Card Not Present]
 ---
 
-# Using PaymentCard as a payment source
+# Submitting Multi-Use Public Key transactions with PaymentCard
 
-A payment card is used to submit a credit or debit card, [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_ or [3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) transaction to our application. The `sourceType` _PaymentCard_ is used to submit a transaction to our application.
+A payment card is used to submit a credit card, [debit card](?path=docs/Resources/Guides/Debit/Debit.md), [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), or [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) _(Prepaid or Stored Value)_ transaction to our application. The `sourceType` _PaymentCard_ is used to submit a transaction to our application.
 
 <!-- theme: info -->
-> The below requirements are used for manual entry [online, digital and mobile requests](?path=docs/Getting-Started/Getting-Started-Online.md) from a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) requests from a device or terminal.
+> The below requirements are used for [online, digital and mobile requests](?path=docs/Getting-Started/Getting-Started-Online.md) manual entry transactions from a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) requests from a device or terminal.
 
 <!--
 type: tab

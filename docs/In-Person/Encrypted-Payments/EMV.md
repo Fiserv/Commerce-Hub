@@ -2,7 +2,7 @@
 tags: [EMV, In-Person, Card Present, Encrypted Payments, Payment Source, Device, Terminal]
 ---
 
-# Using PaymentEMV as a payment source
+# Submitting in-person EMV chip and contactless transactions with PaymentEMV
 
 Transactions using [EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) can accept either [chip](#accepting-chip-payments) or [contactless](#accepting-contactless-payments) payment methods using an EMV enabled device that encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub. The `sourceType` *PaymentEMV* is used to submit a transaction to our application.
 
