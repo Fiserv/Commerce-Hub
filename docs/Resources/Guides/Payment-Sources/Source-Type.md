@@ -10,7 +10,7 @@ The variable `sourceType` is used to determine the payment instrument of the tra
 
 ## Payment cards
 
-A payment card is used to submit a credit card, [debit card](?path=docs/Resources/Guides/Debit/Debit.md), [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) *(Prepaid or Stored Value)*, or [Fleet Card](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
+A payment card is used to submit a credit card, [debit card](?path=docs/Resources/Guides/Debit/Debit.md), [private label card](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md), [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) *(prepaid or stored value)*, or [Fleet Card](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md) transaction to our application. Commerce Hub requires all payment cards to be encrypted using [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md).
 
 <!--
 type: tab
@@ -157,7 +157,8 @@ type: tab
 
 **Unencrypted PaymentTrack:**
 
-Unencrypted [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
+<!-- theme: caution -->
+> Unencrypted [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md) is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
 
 ```json
 {

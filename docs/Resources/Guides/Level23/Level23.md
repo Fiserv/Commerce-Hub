@@ -2,9 +2,9 @@
 tags: [Level 2 Card, Level 3 Card, Purchase Card, Commercial Card, Business Card]
 ---
 
-# Level II and III Data
+# Submitting Level II and III purchase card transactions
 
-Commerce Hub can pass Level II and III data _(also known as Enhanced Data)_ with business-to-business, corporate and purchase card transactions. With a Level II and III data pass-through solution, merchants can meet card brand requirements, provide invoice-level transaction details and qualify for lower rates.
+Commerce Hub can pass Level II and Level III data *(also known as enhanced data)* for business-to-business and corporate purchase card *(P-Card)* transactions. With a Level II and Level III data pass-through solution, merchants can meet card brand requirements, provide invoice-level transaction details, and qualify for lower rates.
 
 - Level II data is used to identify purchase and tax details
 - Level III data is level II data along with the `orderData` and `itemDetails`
@@ -12,104 +12,19 @@ Commerce Hub can pass Level II and III data _(also known as Enhanced Data)_ with
 <!-- theme: info -->
 > Level II/III transactions are not supported for Discover.
 
-## Request Variables
-
-Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
-
-<!-- theme: warning -->
-> Sending `taxAmounts` and `merchantOrderId` is required to identify a Level II/III transaction with Commerce Hub.
-
-<!--
-type: tab
-titles: orderData, itemDetails, amountComponents, merchantDetails, transactionDetails, customer
--->
-
-The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `orderData` object.
-
-| Variable | Type| Max Length | Description |
-|---------|-------|----------|---------|
-| `orderDate` | _string_ | 10 | Date that goods and services are ordered. YYYY-MM-DD format |
-| `itemCount` | _integer_ | 3 | Total number of items included in the purchase |
-| `supplierVatRegistrationNumber` | _string_ | 15 | Supplier VAT registration number |
-| `itemDetails` | _array_ | N/A | List of all item details including categories along with amount and quantity |
-
-<!--
-type: tab
--->
-
-The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `itemDetails` object.
-
-| Variable | Type| Max Length | Description |
-|---------|-------|------------|---------|
-| `itemNumber` | _number_ | 3 | Identifies the line item number out of total items sold |
-| `commodityCode` | _string_ | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
-| `itemDescription` | _string_ | 1024 | Name or description of item |
-| `productUPC` | _string_ | 12 | Universal Product Code identifier used for retail products worldwide |
-| `quantity` | _number_ | 8 | Identifies the number of units of the product sold |
-| `unitOfMeasurement` | _string_ | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
-| `amountComponents` | _object_ | N/A | Used to define the required [line item amounts](?path=docs/Resources/Master-Data/Amount-Components.md) as part of the request |
-
-<!--
-type: tab
--->
-
-The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `amountComponents` object.
-
-| Variable | Type | Max Length | Description |
-| --------- | --- | ------ | -------------- |
-| `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
-| `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
-| `freightAmount` | _number_ | 18,3 | Freight amount applied |
-| `priceAdjustments` | _array_ | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
-| `netAmount` | _number_ | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
-| `taxAmounts` | _array_ | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
-| `grossAmount` | _number_ | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
-
-<!--
-type: tab
--->
-
-The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `merchantDetails` object.
-
-| Variable | Type| Max Length | Description |
-|---------|-------|------|---------|
-| `taxId` | _string_ | 15 | The tax ID in the US or Business Number _(BNN)_ in Canada |
-| `vatRegistrationNumber` | _string_ | 64  | Merchant's VAT registration number |
-
-<!--
-type: tab
--->
-
-The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `transactionDetails` object.
-
-| Variable | Type| Max Length | Description |
-|---------|-------|----------|---------|
-| `merchantOrderId` | _string_ | 128 | Merchant order ID, customer reference number or purchase order number _(PO Number)_ |
-| `merchantInvoiceNumber` | _string_ | 12 | Merchant invoice number or reference number |
-
-<!--
-type: tab
--->
-
-The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `customer` object.
-
-| Variable | Type| Max Length | Description |
-|---------|------|---------|---------|
-| `merchantCustomerId` | _string_ | 1024 | Merchant's unique customer identifier |
-| `taxId` | _string_ |  | Customer tax ID number |
-
-<!-- type: tab-end -->
-
 ---
 
-## Payload Examples
+## Submit a Level II transaction request
 
 <!--
 type: tab
-titles: Level II Request, Level II Response, Level III Request, Level III Response
+titles: Request, Response
 -->
 
-Example of a charge payload request with Level II data. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
+The example below contains the conditional [parameters](#parameters) for a successful Level II [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a P-Card. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
@@ -237,13 +152,12 @@ Example of a charge payload request with Level II data. Required fields are base
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
-
 <!--
 type: tab
+titles: Request, Response
 -->
 
-Example of a charge (201: Created) response.
+Example of a Charges API *(201: Created)* response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -296,11 +210,20 @@ Example of a charge (201: Created) response.
 }
 ```
 
+<!-- type: tab-end -->
+
+---
+
+## Submit a Level III transaction request
+
 <!--
 type: tab
 -->
 
-Example of a charge payload request with Level III data. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md)
+The example below contains the conditional [parameters](#parameters) for a successful Level III [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a P-Card. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
@@ -563,16 +486,14 @@ Example of a charge payload request with Level III data. Required fields are bas
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
-
 <!--
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+Example of a Charges API *(201: Created)* response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -626,7 +547,99 @@ Example of a charge (201: Created) response.
 
 ---
 
-## See Also
+## Parameters
+
+### Request variables
+
+Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md).
+
+<!-- theme: warning -->
+> Sending `taxAmounts` and `merchantOrderId` is required to identify a Level II/III transaction with Commerce Hub.
+
+<!--
+type: tab
+titles: orderData, itemDetails, amountComponents, merchantDetails, transactionDetails, customer
+-->
+
+The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `orderData` object.
+
+| Variable | Type| Max Length | Description |
+|---------|-------|----------|---------|
+| `orderDate` | _string_ | 10 | Date that goods and services are ordered. YYYY-MM-DD format |
+| `itemCount` | _integer_ | 3 | Total number of items included in the purchase |
+| `supplierVatRegistrationNumber` | _string_ | 15 | Supplier VAT registration number |
+| `itemDetails` | _array_ | N/A | List of all item details including categories along with amount and quantity |
+
+<!--
+type: tab
+-->
+
+The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `itemDetails` object.
+
+| Variable | Type| Max Length | Description |
+|---------|-------|------------|---------|
+| `itemNumber` | _number_ | 3 | Identifies the line item number out of total items sold |
+| `commodityCode` | _string_ | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
+| `itemDescription` | _string_ | 1024 | Name or description of item |
+| `productUPC` | _string_ | 12 | Universal Product Code identifier used for retail products worldwide |
+| `quantity` | _number_ | 8 | Identifies the number of units of the product sold |
+| `unitOfMeasurement` | _string_ | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
+| `amountComponents` | _object_ | N/A | Used to define the required [line item amounts](?path=docs/Resources/Master-Data/Amount-Components.md) as part of the request |
+
+<!--
+type: tab
+-->
+
+The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `amountComponents` object.
+
+| Variable | Type | Max Length | Description |
+| --------- | --- | ------ | -------------- |
+| `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
+| `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
+| `freightAmount` | _number_ | 18,3 | Freight amount applied |
+| `priceAdjustments` | _array_ | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
+| `netAmount` | _number_ | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
+| `taxAmounts` | _array_ | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
+| `grossAmount` | _number_ | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
+
+<!--
+type: tab
+-->
+
+The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `merchantDetails` object.
+
+| Variable | Type| Max Length | Description |
+|---------|-------|------|---------|
+| `taxId` | _string_ | 15 | The tax ID in the US or Business Number _(BNN)_ in Canada |
+| `vatRegistrationNumber` | _string_ | 64  | Merchant's VAT registration number |
+
+<!--
+type: tab
+-->
+
+The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `transactionDetails` object.
+
+| Variable | Type| Max Length | Description |
+|---------|-------|----------|---------|
+| `merchantOrderId` | _string_ | 128 | Merchant order ID, customer reference number or purchase order number _(PO Number)_ |
+| `merchantInvoiceNumber` | _string_ | 12 | Merchant invoice number or reference number |
+
+<!--
+type: tab
+-->
+
+The below table identifies the [conditional](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md) parameters in the `customer` object.
+
+| Variable | Type| Max Length | Description |
+|---------|------|---------|---------|
+| `merchantCustomerId` | _string_ | 1024 | Merchant's unique customer identifier |
+| `taxId` | _string_ |  | Customer tax ID number |
+
+<!-- type: tab-end -->
+
+---
+
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
