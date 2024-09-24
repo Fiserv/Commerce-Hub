@@ -4,32 +4,36 @@ tags: [EMV, In-Person, Card Present, Encrypted Payments, Payment Source, Device,
 
 # Submitting in-person EMV chip and contactless transactions with PaymentEMV
 
-Transactions using [EMV](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) can accept either [chip](#accepting-chip-payments) or [contactless](#accepting-contactless-payments) payment methods using an EMV enabled device that encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub. The `sourceType` *PaymentEMV* is used to submit a transaction to our application.
+Transactions using [EMV cards](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv) can accept either [chip](#accepting-chip-payments) or [contactless](#accepting-contactless-payments) payment methods using an EMV enabled device that encrypts the customer's payment source and sends the encryption data to Commerce Hub. A merchant can also choose to decrypt the `cardData` and re-encrypt the data it using a [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) before sending it to Commerce Hub. The `sourceType` *PaymentEMV* is used to submit a transaction to our application.
+
+**Key benefit:**
 
 EMV payments improve the customer's checkout experience and increases customer satisfaction while retaining the customer base. The merchant engages directly with their customers at the point-of-sale and provides a chip or contactless payment experience.
 
-## Transaction initiation
+---
 
-EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
+## Accepting chip transactions
 
-- **Insert *(dip)* or tap:** An insert or tap must be attempted first for all EMV chip cards.
-- **Swipe** – If a card is swiped, the Service Code must be interrogated to determine if the card contains a chip.
-  - If the Service Code indicates a chip card, the swipe read data must be discarded and a prompt to insert or tap must be displayed. A card swipe is only allowed for EMV cards when in fallback.
+EMV chip is a payment method where a customer inserts *(dips)* their card into an EMV-enabled reader. EMV transactions with signature or PIN enhances the security of payment card transactions for payment devices and automated teller machines through the use of a chip embedded in credit, debit, and [prepaid cards](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md). EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
 
 ---
 
-## Accepting chip payments
-
-EMV chip is a payment method where a customer inserts (dips) their card into an EMV-enabled reader. EMV transactions with signature or PIN enhances the security of payment card transactions for payment devices and automated teller machines through the use of a chip embedded in credit, debit, and [prepaid cards](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md). EMV-enabled chip payment cards are paired with additional layers of security such as encryption, tokenization and other authentication techniques making it difficult to replicate and reducing card payment fraud.
-
----
-
-## Accepting contactless payments
+## Accepting contactless transactions
 
 Contactless is a payment method that allows the customer simply to tap their contactless-enabled payment device onto a contactless enabled reader. The chip and antenna in the payment device securely transmit payment details wirelessly to a contactless reader, either integrated within or connected to a merchant’s point-of-sale *(POS)* system. Similar chip and Near Field Communication *(NFC)* technology powers contactless payments made by mobile phones and other form factors.
 
 <!-- theme: info -->
 > To accept contactless payments, merchants must register with the appropriate brands when applicable. Please contact your account representative for more information.
+
+---
+
+## Transaction initiation requirements
+
+EMV Fallback should be used when the device fails to read the EMV data, and can be submitted using the [track data](?path=docs/In-Person/Encrypted-Payments/Track.md) or [manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md).
+
+- **Insert or tap:** An insert or tap must be attempted first for all EMV cards.
+- **Swipe** – If a card is swiped, the Service Code must be interrogated to determine if the card contains a chip.
+  - If the Service Code indicates an EMV card, the swipe read data must be discarded and a prompt to insert or tap must be displayed. A card swipe is only allowed for EMV cards when in fallback.
 
 ---
 
@@ -220,14 +224,14 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 ---
 
-## Submit a PIN based transaction
+## Submit a PIN-based transaction
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#pin-based-parameters) for a successful PIN based [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using *PaymentEMV*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+The example below contains the minimum [parameters](#pin-based-parameters) for a successful PIN-based [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using *PaymentEMV*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!-- theme: success -->
 > **POST** `/payments/v1/charges`
@@ -358,9 +362,9 @@ Example of a Charges API *(201: Created)* response.
 
 ---
 
-### PIN based parameters
+### PIN-based parameters
 
-#### PIN based request variables
+#### PIN-based request variables
 
 <!-- theme: info -->
 > Refer to [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.

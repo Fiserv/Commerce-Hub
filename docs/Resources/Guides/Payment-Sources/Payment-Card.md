@@ -81,7 +81,7 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md
 <!-- type: card
 title: Gift Cards
 description: Accept prepaid or stored value gift card transactions.
-link: ?path=?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
+link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 -->
 
 <!-- type: card
