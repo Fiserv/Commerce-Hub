@@ -37,12 +37,13 @@ Select an integration option to begin accepting `PaymentCard` transactions with 
 <!-- type: card
 title: Multi-use public key
 description: Submit an online, digital or mobile MUPK transaction.
-link: ?path=
+link: ?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md
 -->
 
 <!-- type: card
 title: In-person manual entry
 description: Submit an in-person manual key transaction.
+link: ?path=docs/In-Person/Encrypted-Payments/Manual.md
 -->
 
 <!-- type: row-end -->
@@ -64,7 +65,7 @@ link: ?path=docs/Resources/Guides/Debit/Debit.md
 <!-- type: card
 title: EBT/WIC
 description: Accept EBT/WIC transactions.
-link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
+link:
 -->
 
 <!-- type: card
