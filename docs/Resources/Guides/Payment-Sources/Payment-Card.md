@@ -2,7 +2,7 @@
 tags: [Payment Card, Payment Sources, Online, Digital, Mobile, Card Not Present]
 ---
 
-# Using PaymentCard as a payment instrument
+# Using PaymentCard as a payment source
 
 A payment card issued to a customer and is used to submit credit, debit, private label, gift *(prepaid or stored value)*, and Fleet card-based transactions to Commerce Hub. The `sourceType` *PaymentCard* is used to submit manual entry card data, while *PaymentEMV* or *PaymentTrack* is used to submit encrypted track data.
 
@@ -35,8 +35,8 @@ Select an integration option to begin accepting `PaymentCard` transactions with 
 <!-- type: row -->
 
 <!-- type: card
-title: Multi-Use Public Key
-description: Submit a Multi-Use Public Key transaction.
+title: Multi-use public key
+description: Submit an online, digital or mobile MUPK transaction.
 link: ?path=
 -->
 
@@ -62,8 +62,8 @@ link: ?path=docs/Resources/Guides/Debit/Debit.md
 -->
 
 <!-- type: card
-title: EBT Card
-description: Accept EBT transactions.
+title: EBT/WIC
+description: Accept EBT/WIC transactions.
 link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 -->
 
@@ -79,7 +79,7 @@ link: ?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md
 
 <!-- type: card
 title: Gift Cards
-description: Accept Gift Card transactions.
+description: Accept prepaid or stored value gift card transactions.
 link: ?path=?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
 -->
 
@@ -101,13 +101,13 @@ Select an integration option to begin accepting the encrypted payment cards with
 
 <!-- type: card
 title: EMV chip and contactless
-description: Submit an in-person EMV chip or contactless transaction.
+description: Submit an in-person EMV chip or contactless transaction using PaymentEMV.
 link: ?path=docs/In-Person/Encrypted-Payments/EMV.md
 -->
 
 <!-- type: card
 title: Swiped cards
-description: Submit an in-person swipe transaction.
+description: Submit an in-person swipe transaction using PaymentTrack.
 link: ?path=docs/In-Person/Encrypted-Payments/Track.md
 -->
 
