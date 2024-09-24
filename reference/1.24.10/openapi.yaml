@@ -1554,6 +1554,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DomainRequest'
+            examples:
+              Whitelist-Domains:
+                summary: Whitlist domains request
+                $ref: '#/components/examples/DomainWhitelistRequest'
       responses:
         200:
           description: Response with valid and invalid domains
@@ -1561,6 +1565,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DomainResponse'
+              examples:
+                Whitelist-Domains:
+                  summary: Whitlist domains response
+                  $ref: '#/components/examples/DomainWhitelistResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -6967,23 +6975,28 @@ components:
       value:
         domains:
           - www.example1.com
-          - www.example2.com
-          - ww.example3.co
+          - checkout.example2.com
+          - example3.com
+          - https://checkout.example4.com
+          - "*.example5.com"
 
     DomainWhitelistResponse:
       value:
         gatewayResponse:
           transactionProcessingDetails:
             transactionTimestamp: '2024-09-19T14:11:10.168675929Z'
-            apiTraceId: eab8bcdae0764ab1a78439a154e6f6fb
-            clientRequestId: '283766'
-            transactionId: eab8bcdae0764ab1a78439a154e6f6fb
-            apiKey: ytIVhAgrMeylMVPhBQkTLKlkSQS8GrwQ
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+            apiKey: abcdabcdabcdabcd
         validDomains:
           - www.example1.com
-          - www.example2.com
+          - checkout.example2.com
+          - example3.com
         invalidDomains:
-          - ww.example3.co
+          - https://checkout.example4.com
+          - "*.example5.com"
+
 
     EmvDetailsDownloadRequest:
       value:

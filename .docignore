@@ -42,7 +42,6 @@ docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTimeoutReversal.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTerminalSettlement.md
 docs/Resources/Guides/Debit/Smart-Routing.md
 docs/In-Person/Integrations/Fully-Integrated.md
-docs/In-Person/Encrypted-Payments/Contactless.md
 docs/Resources/Guides/Authorizations/Incremental-Auth.md
 docs/Resources/Guides/Response-Codes/Host-Response-Code.md
 docs/Resources/Guides/Testing/Test-Address-Security.md
@@ -55,5 +54,4 @@ docs/Resources/Master-Data/Commodity-Codes-Old.md
 docs/Resources/Guides/Payment-Sources/Tokenization/Secure-Vault.md
 docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token-Request.md
 docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-V1_V2_Comparison.md
-docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md
 docs/Resources/Guides/Global-Currency/Dynamic-Currency-Conversion.md

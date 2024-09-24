@@ -2,9 +2,9 @@
 tags: [Card Present, In-Person, Debit, Pin Debit, EMV Debit, Track Debit, Pin]
 ---
 
-# PIN Debit
+# Accept PIN debit transactions
 
-A PIN [Debit](?path=docs/Resources/FAQs-Glossary/Glossary.md#debit) transaction is an electronic funds transfer from a customer's bank to a merchant's bank when the customer presents a bank-issued debit card and enters the [PIN](?path=docs/Resources/FAQs-Glossary/Glossary.md#pin) at the point-of-sale. Commerce Hub supports PIN debit transactions for charges, refunds and cancels.
+A PIN [debit](?path=docs/Resources/FAQs-Glossary/Glossary.md#debit) transaction is an electronic funds transfer from a customer's bank to a merchant's bank when the customer presents a bank-issued debit card and enters the [PIN](?path=docs/Resources/FAQs-Glossary/Glossary.md#pin) at the point-of-sale. Commerce Hub supports PIN debit transactions for charges, refunds and cancels.
 
 <!-- theme: caution -->
 > Merchants must be set up by their processor to accept PIN debit transactions and refunds. The merchant will also need a PIN capable PIN-pad or terminal.
@@ -39,9 +39,9 @@ link:
 
 ---
 
-## Features 
+## Features
 
-Once your integration can accept payments, enhance your integration by adding more PIN Debit features and functionality.
+Once your integration can accept payments, enhance your integration by adding more PIN debit features and functionality.
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include additional PIN debit support and the documents related to the features will be released soon.
@@ -63,7 +63,7 @@ link:
 <!-- type: card
 title: Partial Approval
 description: When an acquirer supports partial authorizations, a check is made to verify if the transaction amount depletes the available balance and requires another payment method to complete the transaction.
-link:
+link: ?path=docs/Resources/Guides/Authorizations/Partial-Auth.md
 -->
 
 <!-- type: row-end -->
@@ -81,7 +81,6 @@ title: Debit Reversals
 description: A debit reversal is a cancel or refund where the customer's funds are placed back into their account.
 link: ?path=docs/Resources/API-Documents/Payments/Refund.md
 -->
-
 
 <!-- type: card
 title: Quasi-Cash
