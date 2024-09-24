@@ -137,7 +137,7 @@
       link: docs/Resources/Guides/Dynamic-Descriptor.md
     - title: Fraud Controls
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
-    - title: Level 2/3 Purchase Cards
+    - title: Level 2/3 Enhanced Data
       link: docs/Resources/Guides/Level23/Level23.md
     - title: Payment Facilitator
       link: docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md
@@ -154,15 +154,15 @@
       - title: PaymentCard
         link: docs/Resources/Guides/Payment-Sources/Payment-Card.md
         sections:
-        - title: Debit Card
+        - title: Debit
           link: docs/Resources/Guides/Debit/Debit.md
-        - title: Fleet Card
+        - title: Fleet
           link: docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md
-        - title: Gift Card
+        - title: Gift
           link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
         - title: Private Label
           link: docs/Resources/Guides/Payment-Sources/Private-Label.md
-        - title: Purchase Card
+        - title: P-Card
           link: docs/Resources/Guides/Level23/Level23.md
       - title: PaymentCheck
         link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md

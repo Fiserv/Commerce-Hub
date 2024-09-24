@@ -2,7 +2,7 @@
 tags: [Payment Card, Manual Entry, In-Person, Card Present, Encrypted Payments, Payment Source, Device, Terminal]
 ---
 
-# Using PaymentCard as a payment source for in-person manual key
+# Submitting in-person manual key transactions with PaymentCard
 
 Encrypted manual key entry can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually entering the payment source details into a payment device. This can be used when the payment device fails to obtain the card details from the [card's chip](?path=docs/In-Person/Encrypted-Payments/EMV.md) or [magnetic stripe](?path=docs/In-Person/Encrypted-Payments/Track.md).
 

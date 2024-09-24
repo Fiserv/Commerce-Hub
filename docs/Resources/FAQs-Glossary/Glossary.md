@@ -202,7 +202,7 @@ The "tuning" or addition of equipment to improve the transmission characteristic
 
 ### Contactless Payments
 
-Contactless payments use radio frequency *(RF)*, also known as Near Field Communication *(NFC)*. The technology is used in payment cards and mobile devices. Contactless Payment Cards are like traditional cards except that they have a contactless chip.
+Contactless payments use radio frequency *(RF)*, also known as Near Field Communication *(NFC)*. The technology is used in payment cards and mobile devices. [Contactless payment cards](?path=docs/In-Person/Encrypted-Payments/EMV.md) are like traditional cards except that they have a contactless EMV chip.
 
 When a customer taps or waves a payment instrument at a merchant terminal equipped with an RFID *(Radio Frequency Identification)* reader, the instrument wirelessly transmits payment details to the terminal.
 
@@ -340,13 +340,13 @@ Electronic Commerce Indicator *(ECI)*. Use of this field is mandated by the bank
 
 ### EMV
 
-[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards (ICC or chip cards) and IC card capable point-of-sale *(POS)* devices. This standard is used for authenticating credit and debit card transactions.
+[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards *(ICC or chip cards)* and IC card capable point-of-sale *(POS)* devices. This standard is used for authenticating credit and debit card transactions.
 
 ### EMV Fallback
 
-An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by manually entering the card details or swiping the magnetic stripe.
+An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by [manually entering the card details](?path=docs/In-Person/Encrypted-Payments/Manual.md) or [swiping the magnetic stripe](?path=docs/In-Person/Encrypted-Payments/Track.md).
 
-EMV fallback transactions only apply to card-present transactions where physical cards are presented by cardholders at payment terminals.
+EMV fallback transactions only apply to [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) where physical cards are presented by cardholders at payment terminals.
 
 ### End Sentinel
 
