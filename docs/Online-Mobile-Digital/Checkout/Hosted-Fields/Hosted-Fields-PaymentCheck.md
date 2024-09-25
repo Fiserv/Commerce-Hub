@@ -31,7 +31,7 @@ type: tab
 titles: JavaScript Example, Variables
 -->
 
-Example of gift card fields configuration in `createPaymentForm`.
+Example of payment check fields configuration in `createPaymentForm`.
 
 ```javascript
 window.fiserv.components.paymentFields({
