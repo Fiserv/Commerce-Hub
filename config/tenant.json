@@ -3,7 +3,6 @@
   "name": "CommerceHub",
   "brand": "Carat",
   "brandLogoURL": "https://raw.githubusercontent.com/tomeck/transactionenrichmentstoplight/main/docs/carat_logo.png",
-  "coastURL": "https://fiserv.coastdemo.com/share/66e3267a71bfdfa72887d995?mode=link&zoom=90&layoutType=web",
   "solution": [
     "merchants",
     "carat"
