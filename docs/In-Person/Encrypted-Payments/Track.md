@@ -2,7 +2,7 @@
 tags: [Track, In-Person, Card Present, Encrypted Payments, Payment Source, Device, Terminal]
 ---
 
-# # Using PaymentTrack as a payment source
+# Submitting in-person swipe transactions with PaymentTrack
 
 Payment Track can be used as [EMV Fallback](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv-fallback) and involves manually swiping the payment source into a payment device using a magnetic stripe *(magstripe)*. This can be used when the payment device fails to obtain the card details from the [card's chip](?path=docs/In-Person/Encrypted-Payments/EMV.md).
 
@@ -19,19 +19,19 @@ titles: source
 The below table identifies the parameters in the `source` object.
 
 <!-- theme: info -->
-> When the device has the ability to read both track 1 and track 2 data, track 2 data should be provided in the authorization request, except for Amex.
+> When the device has the ability to read both Track 1 and Track 2 data, Track 2 data should be provided in the authorization request, except for Amex.
 
 | Variable | Type | Length | Required | Description |
 | -------- | -- | ------------ | ---------| --------- |
 | `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentTrack* for magnetic stripe transactions |
-| `track1Data` | *string* | N/A | | This field contains the information encoded from a valid track 1 magnetic stripe read, excluding the start sentinel, end sentinel, and Longitudinal Record Check *(LRC)*. It includes information such as the cardholder's name, primary account number *(PAN)*, expiration date and discretionary data. The entire track data must be forwarded intact |
-| `track2Data` | *string* | N/A | |  This field contains the information encoded from a valid track 2 magnetic stripe read. It includes information such as the primary account number *(PAN)*, expiration date and discretionary data. Entire Track Data must be forwarded intact *(excludes Start Sentinel, End Sentinel and Longitudinal Redundancy Check)* |
+| `track1Data` | *string* | N/A | | This field contains the information encoded from a valid Track 1 magnetic stripe read, excluding the start sentinel, end sentinel, and Longitudinal Record Check *(LRC)*. It includes information such as the cardholder's name, primary account number *(PAN)*, expiration date and discretionary data. The entire track data must be forwarded intact |
+| `track2Data` | *string* | N/A | |  This field contains the information encoded from a valid Track 2 magnetic stripe read. It includes information such as the primary account number *(PAN)*, expiration date and discretionary data. Entire Track Data must be forwarded intact *(excludes Start Sentinel, End Sentinel and Longitudinal Redundancy Check)* |
 
 <!-- type: tab-end -->
 
 ---
 
-## PINless Transactions
+## Submit a PINless transaction
 
 Accept PINless and signature based *PaymentTrack* payments.
 
@@ -43,7 +43,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) for a successful PINless [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using *PaymentTrack*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+The example below contains the minimum [parameters](#pinless-parameters) for a successful PINless [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using *PaymentTrack*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!-- theme: success -->
 > **POST** `/payments/v1/charges`
@@ -85,8 +85,6 @@ The example below contains the minimum [parameters](#parameters) for a successfu
   }
 }
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
@@ -164,9 +162,10 @@ Example of a charge (201: Created) response.
 <!-- type: tab-end -->
 
 ---
-### Parameters
 
-#### Request Variables
+### PINless parameters
+
+#### PINless request variables
 
 <!-- theme: info -->
 > Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
@@ -201,7 +200,7 @@ The below table identifies the required parameters in the `encryptionData` objec
 
 ---
 
-## PIN Based Transactions
+## Submit a PIN-based transaction
 
 Accept PIN based *PaymentTrack* payments.
 
@@ -210,7 +209,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters-1) for a successful PIN based [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using *PaymentTrack*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+The example below contains the minimum [parameters](#pin-based-parameters) for a successful PIN-based [charges](?path=docs/Resources/API-Documents/Payments/Charges.md) request using *PaymentTrack*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 <!-- theme: success -->
 > **POST** `/payments/v1/charges`
@@ -257,8 +256,6 @@ The example below contains the minimum [parameters](#parameters-1) for a success
   }
 }
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
@@ -344,9 +341,9 @@ Example of a charge (201: Created) response.
 
 ---
 
-### Parameters
+### PIN-based parameters
 
-#### Request Variables
+#### PIN-based request variables
 
 <!-- theme: info -->
 > Refer to the [Additional POS Information](?path=docs/Resources/Master-Data/Additional-POS-Info.md) for additional fields that may be required based on business needs and industry vertical.
