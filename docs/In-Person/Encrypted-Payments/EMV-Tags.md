@@ -13,7 +13,7 @@ tags: [EMV, Encrypted Payments, In-Person, Card Present]
 > It is mandatory that all authorization request messages for any transaction type must contain the EMV tags. The tags are ignore by Commerce Hub when not required, and is set to zero when no data is passed.
 
 <!-- theme: danger -->
-> Commerce Hub does not accept PCI data Tag 5a `cardData` and Tag 57 `track2Data`* in the `emvData`.
+> Commerce Hub does not accept PCI data Tag 5a `cardData` and Tag 57 `track2Data` in the `emvData`.
 
 The below table contains the list of data elements, their consecutive EMV tags and their descriptions. For a full list of EMV tags, refer to [EMVCo Book 3](https://www.emvco.com/emv-technologies/contact/).
 
@@ -85,6 +85,7 @@ Below is a sample of the EMV Data Field Identifier with 2 TLV data elements.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [EMV payments](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [EMV chip and contactless payments](?path=docs/In-Person/Encrypted-Payments/EMV.md)
+- [Fiserv EMV Implementation Guide](https://developer.fiserv.com/product/DirectPlatformSpecifications/docs/?path=docs/EMV/EMVImplementationGuide.md&branch=main)
 
 ---
