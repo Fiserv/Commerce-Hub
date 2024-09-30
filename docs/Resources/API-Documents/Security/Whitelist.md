@@ -19,7 +19,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) for a successful Security Credentials API request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/security/v1/saq/whitelist/domains).
+The example below contains the minimum [parameters](#parameters) for a successful Domains Whitelist API request. The full request schemas are available in our [API Explorer](../api/?type=post&path=/security/v1/saq/whitelist/domains).
 
 <!-- theme: success -->
 > **POST** `/security/v1/saq/whitelist/domains`
@@ -28,19 +28,19 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 {
   "domains": [
     "www.example1.com",
-    "www.example2.com",
-    "www.example1.co"
+    "checkout.example2.com",
+    "example3.com",
+    "https://checkout.example4.com",
+    "*.example5.com"
   ]
 }
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/security/v1/saq/whitelist/domains)
 
 <!--
 type: tab
 -->
 
-Example of a Domain Whitelist API (201: Created) response.
+Example of a Domain Whitelist API *(201: Created)* response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -49,19 +49,21 @@ Example of a Domain Whitelist API (201: Created) response.
 {
   "gatewayResponse": {
     "transactionProcessingDetails": {
-      "transactionTimestamp": "2024-08-19T18:50:45.111118458Z",
-      "apiTraceId": "56f5270189cc44a4966350ea236a14cd",
-      "clientRequestId": "5204452",
-      "transactionId": "56f5270189cc44a4966350ea236a14cd",
-      "apiKey": "ytIVhAgrMeylMVPhBQkTLKlkSQS8GrwQ"
+      "transactionTimestamp": "2024-09-19T14:11:10.168675929Z",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338",
+      "apiKey": "abcdabcdabcdabcd"
     }
   },
   "validDomains": [
     "www.example1.com",
-    "www.example2.com"
+    "checkout.example2.com",
+    "example3.com"
   ],
   "invalidDomains": [
-    "www.example1.co"
+    "https://checkout.example4.com",
+    "*.example5.com"
   ]
 }
 ```
