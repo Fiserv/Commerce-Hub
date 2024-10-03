@@ -33,6 +33,7 @@ Example of gift card fields configuration in `createPaymentForm`.
 ```javascript
 window.fiserv.components.paymentFields({
   data: {
+    paymentMethod: "GIFT",
     fields: {
       cardNumber: {
         parentElementId: "element-id",
