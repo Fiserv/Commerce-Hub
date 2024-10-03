@@ -31,6 +31,7 @@ Commerce Hub will target to update our environments on the following dates; howe
 | Support for [Paze digital wallet transaction](?path=docs/Resources/Guides/Payment-Sources/Paze/Paze.md) through Commerce Hub Checkout SDK. | Feature |
 | New [Whitelist API](?path=docs/Resources/API-Documents/Security/Whitelist.md) to add domains for Commerce Hub Checkout SDK. | Feature |
 | Support for *PaymentCheck* with [Data Capture API](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md). | Update |
+| [Checkout v3.1.9 release](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md), enhancements and support for Firefox | Update |
 | Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
 
 ---
