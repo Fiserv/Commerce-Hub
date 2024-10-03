@@ -42,6 +42,7 @@ Example of payment card fields configuration in `createPaymentForm`.
 ```javascript
 window.fiserv.components.paymentFields({
   data: {
+    paymentMethod: "CREDIT_CARD",
     fields: {
       cardNumber: {
         parentElementId: "element-id",
@@ -259,7 +260,6 @@ For a card transaction when using the `submit` method, the `last4`, `expirationM
 ---
 
 ## See also
-
 
 - [Checkout SDK](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md)
 - [Create a Hosted Fields integrations](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md)
