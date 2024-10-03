@@ -4,7 +4,15 @@ tags: [Online, Card Not Present, Checkout, Release Notes]
 
 # Checkout - SDK Release Notes
 
-The following version fixes have been implemented for Commerce Hub's Checkout SDK. To ensure PCI and security compliance it is recommended to always use the latest version of Commerce Hub's SDK.
+The following version fixes have been implemented for Commerce Hub's Checkout SDK. To ensure PCI and security compliance, it is recommended to always use the latest version of Commerce Hub's SDK.
+
+---
+
+## 3.1.9
+
+| Change | Additional Details |
+| ----- | ----- |
+| Firefox compatibility and supported browsers that receive testing | iFrame rendering in Firefox has been restored. Due to unreliability of `blur` JavaScript event in Firefox when iFrames are involved, the `shouldShowError` property on messages to integrator defined event hook `onFieldValidityChange` will not take into account whether the field currently has user keyboard focus if the browser in use is Firefox |
 
 ---
 

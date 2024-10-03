@@ -24,7 +24,7 @@ The below HTML example can be used to render a payment form to accept [credit an
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Merchant App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://commercehub-secure-data-capture.fiservapps.com/3.1.7/checkout.js"></script>
+    <script src="https://commercehub-secure-data-capture.fiservapps.com/3.1.9/checkout.js"></script>
     <style>
       .field {
         height: 34px;
@@ -138,7 +138,7 @@ The below HTML example can be used to render a payment form to accept [check *(A
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Merchant App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://commercehub-secure-data-capture.fiservapps.com/3.1.7/checkout.js"></script>
+    <script src="https://commercehub-secure-data-capture.fiservapps.com/3.1.9/checkout.js"></script>
     <style>
       .field {
         height: 34px;
@@ -253,7 +253,7 @@ The below HTML example can be used to render a payment form to accept [gift card
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Merchant App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://commercehub-secure-data-capture.fiservapps.com/3.1.7/checkout.js"></script>
+    <script src="https://commercehub-secure-data-capture.fiservapps.com/3.1.9/checkout.js"></script>
     <style>
       .field {
         height: 34px;
