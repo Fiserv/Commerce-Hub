@@ -4,7 +4,7 @@ tags: [API Reference, Customer Details, Vehicle Details, Fleet, Master Data]
 
 # Vehicle Details
 
-The transaction request may contain the `vehicle` details as part of the [customer details](?path=docs/Resources/Master-Data/Customer-Details.md), consisting of vehicle-specific data like; vehicle number, odometer reading, license number, trailer details, etc. These fields are used when processing a [fleet transaction](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md).
+The transaction request may contain the `vehicle` details as part of the [customer details](?path=docs/Resources/Master-Data/Customer-Details.md), consisting of vehicle-specific data like; vehicle number, odometer reading, license number, trailer details, etc. These fields are used when processing a [Fleet transaction](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md).
 
 <!--
 type: tab

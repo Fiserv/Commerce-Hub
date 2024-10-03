@@ -195,17 +195,6 @@ featuredFeatures:
 #      - type: post
 #        path: /payments/v1/charges
 #        title: Charges
-#  - title: Contactless Payments
-#    groupName: In-Person
-#    description: "By leveraging the third-party payment solutions and Commerce Hub SDKs, customer's can make contactless payments using their credit card or mobile device."
-#    featured: false
-#    relatedDocs:
-#     - link: docs/In-Person/Encrypted-Payments/Contactless.md
-#       title: Contactless Payments
-#    relatedAPIs:
-#      - type: post
-#        path: /payments/v1/charges
-#        title: Charges
 
 #featuredAPIs:
 #  - name: Charges
