@@ -43,6 +43,7 @@ Click the *download icon*, review the steps and click the *OK* button to save th
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
+- [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md)
 - [Use Commerce Hub APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md)
 
 ---

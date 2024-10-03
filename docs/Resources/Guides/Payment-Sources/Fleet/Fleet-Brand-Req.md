@@ -4,18 +4,18 @@ tags: [Fleet, Petroleum, WEX, Mastercard, Visa, Voyager, Comdata, Private Label,
 
 # Fleet Brand Requirements
 
-Fleet brands require specific data requirements when processing [fleet transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). This information is obtained from a [Dynamic Card Table](#dynamice-card-table) or through the [initial authorization or verification request](#authorization-prompt) based on the brand.
+Fleet brands require specific data requirements when processing [Fleet transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). This information is obtained from a [Dynamic Card Table](#dynamic-card-table-prompts) or through the [initial authorization or verification request](#authorizationverification-prompts) based on the brand.
 
 ---
 
 ## Dynamic Card Table Prompts
 
-The device or application must be able to read a Dynamic Card Table downloaded from the fleet brand or payment processor. In the case where an a table download is not supported, the device or application must provide a method to determine whether specific transactions are allowed.
+The device or application must be able to read a Dynamic Card Table downloaded from the Fleet brand or payment processor. In the case where an a table download is not supported, the device or application must provide a method to determine whether specific transactions are allowed.
 
 <!-- theme: info -->
 > The third-party vendor or merchant is required for managing the table file download. Please contact your account representative for more details.
 
-The below table outlines the fields that can prompt for a fleet transaction, for specific card brands see the [device prompt section](#device-prompts).
+The below table outlines the fields that can prompt for a Fleet transaction, for specific card brands see the [device prompt section](#device-prompts).
 
 | Object | Field | Description |
 | ----- | :-----: | ----- |
@@ -27,7 +27,7 @@ The below table outlines the fields that can prompt for a fleet transaction, for
 | `customer` | `driverId` | Represents the identification number of the driver|
 | `customer` | `department` | Identifies the department the customer belongs to |
 | `customer` | `jobId` | Job code for the customer |
-| `customer` | `idCardNumber` | The customer's ID based on merchant's industry or vertical. ***Example:** User ID or Sub-fleet number.* |
+| `customer` | `idCardNumber` | The customer's ID based on merchant's industry or vertical. ***Example:** User ID or Sub-Fleet number.* |
 | `customer` | `workOrderNumber` | Used for the contract number or purchase order of the transaction |
 | `customer` | `additionalData1` | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
 | `customer` | `additionalData2` | Additional information related to customer based on industry or vertical. The data can be enhanced data, prompted data, or message data |
@@ -233,7 +233,7 @@ Example of a charge (201: Created) response.
 
 ## Device Prompts
 
-The device or application must be able to prompt for specific [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) or [vehicle details](?path=docs/Resources/Master-Data/Vehicle-Details.md) for all fleet transactions defined by the [Dynamic Card Table](#dynamic-card-table) or [authorization response](#authorizationverification-prompts). The device or application must prompt for the data appropriate to the transaction it will be performing, and provide the details in the respective fields. Prompts flagged as optional do not have to be offered.
+The device or application must be able to prompt for specific [customer details](?path=docs/Resources/Master-Data/Customer-Details.md) or [vehicle details](?path=docs/Resources/Master-Data/Vehicle-Details.md) for all Fleet transactions defined by the [Dynamic Card Table](#dynamic-card-table) or [authorization response](#authorizationverification-prompts). The device or application must prompt for the data appropriate to the transaction it will be performing, and provide the details in the respective fields. Prompts flagged as optional do not have to be offered.
 
 <!--
 type: tab
@@ -342,7 +342,7 @@ type: tab
 Visa Fleet is restricted to fuel only if the Service Enhancement Indicator is 2 or fuel and maintenance if 1, otherwise all products are allowed. The below table outlines the fields that can prompt for Visa Fleet based on the Service Prompt or if always required.
 
 <!--theme: info -->
-> A Visa fleet card transaction must comply with fleet data requirements, in order to be eligible for reduced commercial interchange rates, such as [Commercial Level II or Level III](?path=docs/Resources/Guides/Level23/Level23.md).
+> A Visa Fleet Card transaction must comply with Fleet data requirements, in order to be eligible for reduced commercial interchange rates, such as [Commercial Level II or Level III](?path=docs/Resources/Guides/Level23/Level23.md).
 
 ##### Swipe and Manual Entry
 
@@ -355,7 +355,7 @@ Visa Fleet is restricted to fuel only if the Service Enhancement Indicator is 2 
 
 ##### Visa 2.0 EMV
 
-Visa Fleet 2.0 is a new fleet EMV standard that harnesses the additional capabilities of EMV at the fuel pump. In addition to more driver prompt options, this functionality enables commercial clients to restrict card use at fuel merchants to certain fuel and non-fuel product categories.
+Visa Fleet 2.0 is a new Fleet EMV standard that harnesses the additional capabilities of EMV at the fuel pump. In addition to more driver prompt options, this functionality enables commercial clients to restrict card use at fuel merchants to certain fuel and non-fuel product categories.
 
 The below table outlines the required fields to prompt for Visa Fleet 2.0.
 

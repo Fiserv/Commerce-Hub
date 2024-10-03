@@ -35,7 +35,11 @@ Integrations with our Mobile SDK has some limitations compared to a direct API w
 
 Tap to Pay Services are offered using Commerce Hub's Terminal API SDKs for both Android and iOS. Tap to Pay allows merchants to accept contactless payments using a supported device or a partner-enabled app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, digital wallets, smartwatches, and smartphones. No additional hardware is required to accept contactless payments through Tap to Pay, so merchants can accept payments from anywhere. Tap to Pay is offered using Commerce Hub's Terminal API SDKs for both Android and iOS.
 
-**How it works:**
+**Key benefits:**
+
+Tap to Pay allows merchants to accept contactless payments using a supported device or a partner-enabled app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, digital wallets, smartwatches, and smartphones. No additional hardware is required to accept contactless payments through Tap to Pay, so merchants can accept payments from anywhere.
+
+**How it Works:**
 
 1. The merchant initiates a transaction from their devices app.
 2. The customer taps their contactless payment instrument on the device.
@@ -53,13 +57,13 @@ Select the appropriate Terminal API SDK to quickly begin integration with Commer
 
 <!-- type: card
 title: Tap to Pay on Android
-description: Integrate your POS app with the Commerce Hub's Terminal SDK for Android to make Tap to Pay on Android transactions.
-link: ?path=docs/In-Person/Integrations/Terminal-API/Android-TTP.md
+description: Integrate your POS app with the Commerce Hub's Terminal API SDK for Android to make Tap to Pay on Android transactions.
+link:
 -->
 
 <!-- type: card
 title: Tap to Pay on iPhone
-description: Integrate your POS app with the Commerce Hub's Terminal SDK for iOS to make Tap to Pay on iPhone transactions.
+description: Integrate your POS app with the Commerce Hub's Terminal API SDK for iOS to make Tap to Pay on iPhone transactions.
 link: ?path=docs/In-Person/Integrations/Terminal-API/iPhone-TTP.md
 -->
 

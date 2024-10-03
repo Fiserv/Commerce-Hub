@@ -1,74 +1,27 @@
 ---
-tags: [Multi-Use Public Key, RSA, Encrypted Payments, API Reference]
+tags: [Multi-Use Public Key, Encrypted Payments, Payment Card, Payment Sources, Online, Digital, Mobile, Card Not Present]
 ---
 
-# Multi-Use Public Key Request
+# Submitting multi-use public key transactions with PaymentCard
 
-After the merchant captures the payment source details, the multi-use public key _(MUPK)_ issued by the Commerce Hub can be used to encrypt the details and send it to Commerce Hub for authorization.  
+After the merchant captures the payment source details, the [multi-use public key *(MUPK)* issued](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md) by the Commerce Hub can be used to [encrypt the details](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md) and send it to Commerce Hub for authorization.
 
----
-
-## Minimum Requirements
-
-<!--
-type: tab
-titles: source, encryptionData, JSON Example
--->
-
-The below table identifies the required parameters in the `source` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | --------| ---------- |
-| `sourceType` | _string_ | 15 |  &#10004; | Use Value _PaymentCard_ for card transactions |
-| `encryptionData` | _object_ | N/A | &#10004; | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `encryptionData` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ---------| --------- |
-| `encryptionType` | _string_ | 256 |  &#10004; | [Encryption type](?path=docs/Resources/Master-Data/Encryption-Data.md#encryption-type) to be passed. |
-| `encryptionTarget` | _string_ | 256 |  &#10004; |Target should be MANUAL |
-| `encryptionBlock` | _string_ | 2000 |  &#10004; | This field contains the track data or card number provided in encrypted form. |
-| `encryptionBlockFields` | _string_ | 256 |  &#10004; | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, example: _card.expirationMonth:2_ |
-| `keyId` | _string_ | 64 | &#10004; | Encryption Key ID |
-
-<!--
-type: tab
--->
-
-JSON string format for PaymentCard:
-
-```json
-{
-   "source":{
-      "sourceType": "PaymentCard",
-      "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "MANUAL",
-         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
-         "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-         "keyId": "88000000023"
-      }
-   }
-}
-```
-
-<!-- type: tab-end -->
+<!-- theme: info -->
+> The below requirements are used for manual entry [online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md) from a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for [in-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) requests from a device or terminal.
 
 ---
 
-## Charges Payload Example
+## Submit an encrypted PaymentCard request
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request using PaymentCard for Manual Entry.
+The example below contains the minimum [parameters](#parameters) for a successful [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a *PaymentCard* encrypted with [*(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
@@ -76,31 +29,28 @@ Example of a charge payload request using PaymentCard for Manual Entry.
     "total": 12.04,
     "currency": "USD"
   },
-   "source":{
-      "sourceType": "PaymentCard",
-      "encryptionData":{
-         "encryptionType": "RSA",
-         "encryptionTarget": "MANUAL",
-         "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
-         "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
-         "keyId": "88000000023"
-      }
-   }
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000023"
+    }
   },
   "merchantDetails": {
     "merchantId": "100008000003683",
     "terminalId": "10000001"
-   }
+  }
 }
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+Example of a Charges API *(201: Created)* response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -134,17 +84,9 @@ Example of a charge (201: Created) response.
       "total": 12.04,
       "currency": "USD"
     },
-    "merchantName": "Merchant Name",
-    "merchantAddress": "123 Peach Ave",
-    "merchantCity": "Atlanta",
-    "merchantStateOrProvince": "GA",
-    "merchantPostalCode": "12345",
-    "merchantCountry": "US",
-    "merchantURL": "https://www.somedomain.com",
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
-      "schemeTransactionId": "0225MCC625628",
       "processor": "fiserv",
       "responseCode": "000",
       "responseMessage": "APPROVAL",
@@ -158,8 +100,7 @@ Example of a charge (201: Created) response.
     }
   },
   "transactionDetails": {
-    "captureFlag": true,
-    "merchantInvoiceNumber": "123456789012"
+    "captureFlag": true
   }
 }
 ```
@@ -168,12 +109,48 @@ Example of a charge (201: Created) response.
 
 ---
 
-## See Also
+### Parameters
 
-- [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Multi-Use Public Key Encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Encryption.md)
-- [Multi-Use Public Key Management](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md)
-- [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
+#### Request variables
+
+<!--
+type: tab
+titles: source, encryptionData
+-->
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type | Length | Description |
+| ----- | :------: | :-----: | ----- |
+| `sourceType` | *string* | 15 |  Use *PaymentCard* for card transactions |
+| `encryptionData` | *object* | N/A | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `encryptionData` object.
+
+| Variable | Type | Length | Description |
+| ----- | :------: | :-----: | ----- |
+| `encryptionType` | *string* | 256 |  Encryption type should be *RSA* |
+| `encryptionTarget` | *string* | 256 | Target should be *MANUAL* |
+| `encryptionBlock` | *string* | 2000 | This field contains the card data provided in encrypted form. |
+| `encryptionBlockFields` | *string* | 256 | Encryption block field descriptors to facilitate decryption when using public keys. Each field should be recorded in the form of the object.field_name:byte_count, example: *card.expirationMonth:2* |
+| `keyId` | *string* | 64 | Provided encryption key required for decryption of data that is encrypted |
+
+<!-- type: tab-end -->
+
+---
+
+## See also
+
+- [API Explorer](./api/?type=post&path=/payments/v1/charges)
+- [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
 - [Encryption Data](?path=docs/Resources/Master-Data/Encryption-Data.md)
+- [Multi-Use Public Key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Sources](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Supported Card Types](?path=docs/Resources/Master-Data/Card-Type.md)
 
 ---

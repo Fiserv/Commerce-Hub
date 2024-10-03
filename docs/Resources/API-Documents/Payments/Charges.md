@@ -198,7 +198,7 @@ Example of a charge (201: Created) response.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Card Meta Data](?path=docs/Resources/Master-Data/Card-Details.md)
+- [Card Metadata](?path=docs/Resources/Master-Data/Card-Details.md)
 - [Payment Source](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
