@@ -1,18 +1,18 @@
 ---
-tags: [Card Not Present, Fraud, Velocity Controls]
+tags: [Card Not Present, Fraud Mitigation, Velocity Controls]
 ---
 
-# Velocity Controls
+# Block fraudulent transaction by enabling Velocity Controls
 
 Velocity control settings determine which transactions Commerce Hub allows to proceed to authorization. A single transaction can be controlled by a minimum or maximum sale amount or number of transactions. Groups of transactions are evaluated by time period for the quantity or total dollar amount thresholds that, when exceeded  Commerce Hub will prevent all future transactions from processing. These controls allow a merchant to monitor and restrict transactions by IP address, account number, or amount.
 
-Transaction Restrictions are setup inside of Merchant Configuration and Boarding _(Marketplace in the [Commerce Control Center](https://www.commercecontrol.com))_. Filters are applied by attributes and their respective value.
+Transaction Restrictions are setup inside of Merchant Configuration and Boarding *(Marketplace in the [Commerce Control Center](https://www.commercecontrol.com))*. Filters are applied by attributes and their respective value.
 
 ---
 
-## Response Example
+## Blocked transaction response
 
-Example of a charge (400: Bad Request) response.
+Example of a [Charges API](?path=docs/Resources/API-Documents/Payments/Charges.md) *(400: Bad Request)* response due to the sale count per card being exceeded.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -45,7 +45,7 @@ Example of a charge (400: Bad Request) response.
 
 ## See Also
 
-- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Fraud Mitigation](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Positive/Negative Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)

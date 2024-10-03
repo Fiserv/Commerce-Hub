@@ -19,13 +19,13 @@ Access the developer dashboard to create a workspace by using a [certification M
 
 ## Step 2: Load Tap to Pay on Android SDK
 
-[Apache Maven](https://maven.apache.org/) uses repositories to store artifacts. The library is distributed via maven repository and is downloaded from NEED_URL.
+[Apache Maven](https://maven.apache.org/) uses repositories to store artifacts. The library is distributed via maven repository and is downloaded from TODO:NEED_URL.
 
 **Adding SDK to your project:**
 
 Add the Fiserv Module to your app by following these instructions:
 
-1. Open the app `build.gradle` file and add following item to the dependency, ?????
+1. Open the app `build.gradle` file and add following item to the dependency, TODO:?????
 2. Sync the project
 
 ---

@@ -1,19 +1,19 @@
 ---
-tags: [Fraud, Fraud Filters]
+tags: [Fraud Mitigation, Fraud Filters]
 ---
 
 
-# Fraud Filters
+# Block fraudulent transactions by enabling filters
 
 Fraud filters enable the merchants to configure filters to control the fraudulent transactions from different channels and across multiple payment methods. Each request request will ran through the configured positive and negative filters to determine whether the payment should be accepted or rejected.
 
 Fraud filters allow the merchant to [accept](#positive-filters) or [reject](#negative-filters) transactions based on card number, customer reference, IP address, billing information and more. The fraud filters configuration is flexible and completely customizable by the merchant and can be setup based on industry, product, promotions, channel, customer details and store abilities.
 
-Positive and negative filters are setup inside of Merchant Configuration and Boarding _(Marketplace in the [Commerce Control Center](https://www.commercecontrol.com))_. Filters are applied by attributes and their respective value.
+Positive and negative filters are setup inside of Merchant Configuration and Boarding *(Marketplace in the [Commerce Control Center](https://www.commercecontrol.com))*. Filters are applied by attributes and their respective value.
 
 ---
 
-## Positive Filters
+## Positive filters
 
 Positive filters are used to configure a whitelist and allow the transaction to process based on specific criteria.
 
@@ -27,7 +27,7 @@ Positive filters are used to configure a whitelist and allow the transaction to 
 
 ---
 
-## Negative Filters
+## Negative filters
 
 Negative filters are used to configure a blacklist and block the transaction based on specific criteria.
 
@@ -44,9 +44,9 @@ Negative filters are used to configure a blacklist and block the transaction bas
 
 ---
 
-## Response Example
+## Blocked transaction response
 
-Example of a charge (400: Bad Request) response.
+Example of a [Charges API](?path=docs/Resources/API-Documents/Payments/Charges.md) *(400: Bad Request)* response due to a blocked IP address filter.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -77,9 +77,9 @@ Example of a charge (400: Bad Request) response.
 
 ---
 
-## See Also
+## See also
 
-- [Fraud Settings](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Fraud Mitigation](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
