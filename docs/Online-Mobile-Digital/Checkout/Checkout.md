@@ -8,6 +8,9 @@ Commerce Hub offers [online, digital and mobile integration](?path=docs/Getting-
 
 For more information about the Checkout Solutions and PCI DSS compliance, see the [Checkout: How it works](?path=docs/Online-Mobile-Digital/Checkout/Checkout-How-It-Works.md) article.
 
+<!-- theme: caution -->
+> To ensure PCI and security compliance, it is recommended to always use the latest version of Commerce Hub's SDK. Review the [Checkout version release notes](?path=docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md) for additional details on version updates.
+
 ---
 
 ## Custom integrations

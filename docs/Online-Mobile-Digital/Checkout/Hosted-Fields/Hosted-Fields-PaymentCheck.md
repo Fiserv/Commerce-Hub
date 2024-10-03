@@ -36,6 +36,7 @@ Example of payment check fields configuration in `createPaymentForm`.
 ```javascript
 window.fiserv.components.paymentFields({
   data: {
+    paymentMethod: "BANK_ACCOUNT",
     fields: {
       accountNumber: {
         parentElementId: "element-id",

@@ -4,7 +4,7 @@ tags: [Online, Card Not Present, Checkout, Release Notes]
 
 # Checkout - SDK Release Notes
 
-The following version fixes have been implemented for Commerce Hub's Checkout SDK. To ensure PCI and security compliance it is recommended to always use the latest version of Commerce Hub's SDK.
+The following version fixes have been implemented for Commerce Hub's Checkout SDK. To ensure PCI and security compliance, it is recommended to always use the latest version of Commerce Hub's SDK.
 
 ---
 
