@@ -21,9 +21,10 @@ Integrations with our Mobile SDK has some limitations compared to a direct API w
 
 | Function | Android | iOS |
 | ----- | :-----: | :-----: |
-| Payments | &#10004; | &#10004; |
+| Charges *(payments)* | &#10004; | &#10004; |
 | Offline payments | &#10060; | &#10060; |
-| Refunds | &#10004; | &#10004; |
+| Tagged refunds | &#10004; | &#10004; |
+| Unmatched refunds | &#10004; | &#10004; |
 | Transaction inquiry | &#10004; | &#10004; |
 | Contactless | &#10004; | &#10004; |
 | PIN | &#10060; | &#10004; |
