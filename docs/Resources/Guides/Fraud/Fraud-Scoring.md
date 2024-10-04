@@ -21,7 +21,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum [parameters](#parameters) for a successful Fraud Scoring request using the Risk Assessment API. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/risk-assessment).
+The example below contains the minimum [parameters](#parameters) for a successful Fraud Scoring request using the [Risk Assessment API](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/risk-assessment).
 
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/risk-assessment`
@@ -249,7 +249,7 @@ The below table identifies the required parameters in the `merchantDetails` obje
 
 ---
 
-### Optional Request Variables
+### Optional request variables
 
 The following data elements can be included with a fraud scoring request to enhance the accuracy of the risk assessment results.
 
@@ -285,5 +285,12 @@ The below table identifies the response parameters in the `xyz` object.
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/risk-assessment)
 - [Fraud Mitigation](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
+- [Payment Source Types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+
+<!--
+- [Chargeback Guarantee](?path=)
+- [Account Takeover *(ATO)*](?path=)
+-->
 
 ---
