@@ -6,10 +6,11 @@ tags: [API Reference, Risk Assessment, Fraud Mitigation, Fraud Scoring]
 
 Commerce Hub offers a standalone Fraud Scoring service through our Risk Assessment API. This service helps merchants assess the fraud risk associated with each transaction by providing a fraud score. With this information, merchants can make informed decisions on whether to proceed with the payment. The API is a crucial tool for enhancing security and reducing fraudulent activities in online transactions.
 
-**Key Benefits**
--**Customized Models:** Machine Learning models are tailored to your business, accurately detecting core fraud and reducing declines and fraud.
--**Customer-Centric:** Approach: We use extensive data elements to score fraud on consumers and their transactions.
--**Link Analysis:** Our proprietary link analysis maps connections between customers precisely and instantaneously.
+**Key features:**
+
+- **Customized models:** Machine Learning models are tailored to your business, accurately detecting core fraud and reducing declines and fraud.
+- **Customer-centric:** Approach: We use extensive data elements to score fraud on consumers and their transactions.
+- **Link analysis:** Our proprietary link analysis maps connections between customers precisely and instantaneously.
 
 ---
 
