@@ -85,7 +85,7 @@ link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
 <!-- type: card
 title: Account Verification
 description: Request account verification to confirm the validity of a customer’s account and verify AVS and CVV information with the card issuer.
-link: ?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md
+link: ?path=docs/Resources/API-Documents/Payments_VAS/Verification.md
 -->
 
 <!-- type: card
