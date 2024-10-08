@@ -4,7 +4,7 @@ tags: [In-Person, Card Present, Encrypted Payments, Tap to Pay, Mobile, Wallet, 
 
 # Mobile SDK integrations
 
-Commerce Hub offers a robust Mobile SDK to seamlessly integrate payment processing into your Android or iOS application. Get started quickly and enhance your app's functionality with Commerce Hub's Mobile SDK.
+Commerce Hub offers a robust Mobile SDK to seamlessly integrate payment processing into your <!-- Android or --> iOS application. Get started quickly and enhance your app's functionality with Commerce Hub's Mobile SDK.
 
 **Our SDK provides:**
 
@@ -14,6 +14,7 @@ Commerce Hub offers a robust Mobile SDK to seamlessly integrate payment processi
 - **Support for multiple payment methods:** Accept various payment options effortlessly.
 
 ---
+<!--
 
 ## Supported features and payment methods
 
@@ -32,9 +33,11 @@ Integrations with our Mobile SDK has some limitations compared to a direct API w
 
 ---
 
+--->
+
 ## Tap to Pay overview
 
-Tap to Pay Services are offered using Commerce Hub's Mobile SDKs for both Android and iOS. Tap to Pay allows merchants to accept contactless payments using a supported device or a partner-enabled app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, digital wallets, smartwatches, and smartphones. No additional hardware is required to accept contactless payments through Tap to Pay, so merchants can accept payments from anywhere.
+Tap to Pay Services are offered using Commerce Hub's Mobile SDKs for <!-- both Android and --> iOS. Tap to Pay allows merchants to accept contactless payments using a supported device or a partner-enabled app. Tap to Pay allows the merchant's app to accept payments from contactless credit or debit cards, digital wallets, smartwatches, and smartphones. No additional hardware is required to accept contactless payments through Tap to Pay, so merchants can accept payments from anywhere.
 
 **How it works:**
 
@@ -55,7 +58,7 @@ Select the appropriate Mobile SDK to quickly begin integration with Commerce Hub
 <!-- type: card
 title: Tap to Pay on Android
 description: Integrate your POS app with the Commerce Hub's Terminal SDK for Android to make Tap to Pay on Android transactions.
-link: ?path=docs/In-Person/Integrations/Terminal-API/Android-TTP.md
+link:
 -->
 
 <!-- type: card
