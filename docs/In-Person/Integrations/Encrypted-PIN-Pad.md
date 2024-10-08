@@ -1,5 +1,5 @@
 ---
-tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, Track Data, Device, Terminal, Point of Sale]
+tags: [EMV, In-Person, Card Present, Encrypted Payments, Pin Pad, Manual Entry, Track Data, Device, Terminal, Point-of-Sale]
 ---
 
 # Encrypted Devices

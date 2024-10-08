@@ -39,10 +39,15 @@
   - title: In-Person
     link: docs/Getting-Started/Getting-Started-InPerson.md
     sections:
-    - title: RESTful API
+    - title: API Getting Started
       link: docs/Resources/API-Documents/Use-Our-APIs.md
     - title: Device Management
       link: docs/Resources/API-Documents/Device-Management/Device-Management.md
+      sections:
+      - title: EMV CAPK Data
+        link: docs/Resources/API-Documents/Device-Management/CAPK.md
+#      - title: POS Decision Tables
+#        link: docs/Resources/API-Documents/Device-Management/Decision-Table.md
     - title: Debit
       link: docs/Resources/Guides/Debit/Debit.md
       sections:
@@ -50,39 +55,37 @@
         link: docs/Resources/Guides/Debit/PIN_Debit.md
       - title: Message Authentication
         link: docs/Resources/Guides/Debit/Regional-Debit.md
-    - title: Encrypted Payment
+    - title: Encrypted Payments
       link: docs/In-Person/Integrations/Encrypted-PIN-Pad.md
       sections:
-      - title: EMV Chip
+      - title: EMV Chip and Contactless
         link: docs/In-Person/Encrypted-Payments/EMV.md
       - title: Manual Entry
         link: docs/In-Person/Encrypted-Payments/Manual.md
-      - title: Track 1/2 Data
-        link: docs/In-Person/Encrypted-Payments/Track.md
       - title: Multi-Use Public Key
         link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+      - title: Track 1/2 Data
+        link: docs/In-Person/Encrypted-Payments/Track.md
+    - title: Semi-Integrated Solutions
+      link: docs/In-Person/Integrations/Semi-Integrated.md
     - title: Tap to Pay
       link: docs/In-Person/Integrations/Tap-to-Pay.md
   - title: Online/Digital/Mobile
     link: docs/Getting-Started/Getting-Started-Online.md
     sections:
-    - title: RESTful API
+    - title: API Getting Started
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Secure Data Capture
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
-      sections:
-      - title: Card Capture API
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md
-      - title: Direct API
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Direct.md
-      - title: iFrame
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md
-      - title: JavaScript
-        link: docs/Online-Mobile-Digital/Secure-Data-Capture/Payment-JS/Payment-JS.md
-      - title: Multi-Use Public Key
-        link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
     - title: 3-D Secure
       link: docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
+    - title: Checkout Solutions
+      link: docs/Online-Mobile-Digital/Checkout/Checkout.md
+      sections:
+      - title: API
+        link: docs/Online-Mobile-Digital/Checkout/API/API-Only.md
+      - title: Hosted Fields
+        link: docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields.md
+      - title: Version Release Notes
+        link: docs/Online-Mobile-Digital/Checkout/Checkout-Version-Release.md
     - title: Digital Wallets
       link: docs/Getting-Started/Getting-Started-Wallets.md
       sections:
@@ -90,6 +93,12 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+      - title: Paze
+        link: docs/Resources/Guides/Payment-Sources/Paze/Paze.md
+    - title: Multi-Use Public Key
+      link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
+#    - title: Plugins
+#      link: docs/Resources/Guides/Partners/Modules/Plugins.md
 - sections:
   - title: Features
     sections:
@@ -99,44 +108,102 @@
       link: docs/Resources/Guides/Authorizations/Auth-Optimization.md
     - title: Custom Identifiers
       link: docs/Resources/Guides/BYOID.md
-    - title: Data Solutions
-      link: docs/Resources/API-Documents/DaaS/Data-Solutions.md
+    - title: Checkout Solutions
+      link: docs/Online-Mobile-Digital/Checkout/Checkout.md
     - title: Directed Routing
       link: docs/Resources/Guides/Transaction-Routing/Directed-Routing.md
+    - title: Fraud Mitigation
+      link: docs/Resources/Guides/Fraud/Fraud-Settings.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
     - title: Global Acquiring
       link: docs/Resources/Guides/Global-Acquiring.md
     - title: Multi-Use Public Key
       link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
-    - title: Pay By Bank
-      link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
-    - title: Secure Data Capture
-      link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
     - title: Tokenization
       link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
 - sections:
   - title: Resources and Guides
     link: docs/Resources/Guides/Resources-Guide.md
     sections:
-    - title: Featured Guides
-      link: docs/Resources/Guides/Resources-Guide.md
     - title: Use Our APIs
       link: docs/Resources/API-Documents/Use-Our-APIs.md
-    - title: Developer Studio
-      link: docs/Getting-Started/Getting-Started-Dev-Portal.md
+      sections:
+      - title: HMAC Authentication
+        link: docs/Resources/API-Documents/Authentication-Header.md
+      - title: Message Digest
+        link: docs/Resources/API-Documents/Message-Digest.md
+      - title: Using Developer Studio
+        link: docs/Getting-Started/Getting-Started-Dev-Portal.md
     - title: Dynamic Descriptors
       link: docs/Resources/Guides/Dynamic-Descriptor.md
-    - title: Fraud Controls
+    - title: Fraud Mitigation
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
-    - title: Level 2/3 Purchase Cards
+    - title: Level 2/3 Enhanced Data
       link: docs/Resources/Guides/Level23/Level23.md
     - title: Payment Facilitator
       link: docs/Resources/Guides/Partners/PFAC/Payment-Facilitator.md
+      sections:
+      - title: Multi-MID
+        link: docs/Resources/Guides/Partners/PFAC/PFAC-Multi.md
+      - title: Single MID
+        link: docs/Resources/Guides/Partners/PFAC/PFAC-Single.md
+      - title: Split Settlement
+        link: docs/Resources/Guides/Partners/PFAC/Split-Settlement.md
     - title: Payment Sources
       link: docs/Resources/Guides/Payment-Sources/Source-Type.md
+      sections:
+      - title: PaymentCard
+        link: docs/Resources/Guides/Payment-Sources/Payment-Card.md
+        sections:
+        - title: Debit
+          link: docs/Resources/Guides/Debit/Debit.md
+        - title: Fleet
+          link: docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md
+        - title: Gift
+          link: docs/Resources/Guides/Payment-Sources/Gift-Card.md
+        - title: Private Label
+          link: docs/Resources/Guides/Payment-Sources/Private-Label.md
+        - title: P-Card
+          link: docs/Resources/Guides/Level23/Level23.md
+      - title: PaymentCheck
+        link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md
+        sections:
+        - title: ACH Check
+          link: docs/Resources/Guides/Payment-Sources/Pay-By-Bank/Payment-Check.md
+        - title: Fleet Check
+          link: docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md
+      - title: PaymentEMV
+        link: docs/In-Person/Encrypted-Payments/EMV.md
+      - title: PaymentTrack
+        link: docs/In-Person/Encrypted-Payments/Track.md
+      - title: PaymentToken
+        link: docs/Resources/API-Documents/Payments_VAS/Payment-Token.md
+        sections:
+        - title: TransArmor Token
+          link: docs/Resources/Guides/Payment-Sources/Tokenization/TransAmor.md
+        - title: Network Token
+          link: docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token.md
+      - title: Wallets
+        link: docs/Getting-Started/Getting-Started-Wallets.md
+        sections:
+        - title: Apple Pay
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
+        - title: Google Pay
+          link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
+        - title: DecryptedWallet
+          link: docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md
+        - title: Paze
+          link: docs/Resources/Guides/Payment-Sources/Paze/Paze.md
     - title: Response Handling
       link: docs/Resources/Guides/Response-Codes/Response-Handling.md
+      sections:
+      - title: Error Response
+        link: docs/Resources/Guides/Response-Codes/Error-Response.md
+      - title: Error Response Codes
+        link: docs/Resources/Guides/Response-Codes/Error-Code.md
+      - title: Gateway Response Codes
+        link: docs/Resources/Guides/Response-Codes/Response-Code.md
     - title: Split Shipment
       link: docs/Resources/Guides/Split-Shipment.md
     - title: Stored Credentials
@@ -192,8 +259,17 @@
     - title: Device Management
       link: docs/Resources/API-Documents/Device-Management/Device-Management.md
       sections:
+      - title: Client Certificate Upload
+        link: docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md
       - title: EMV CAPK Data
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
+    - title: Risk Assessment
+      link: docs/Resources/Guides/Fraud/Fraud-Settings.md
+      sections:
+      - title: Fraud Scoring
+        link: docs/Resources/Guides/Fraud/Fraud-Scoring.md
+#      - title: POS Decision Tables
+#        link: docs/Resources/API-Documents/Device-Management/Decision-Table.md
     - title: Global Currency Solutions
       link: docs/Resources/Guides/Global-Currency/Global-Currency-Solutions.md
       sections:
@@ -220,6 +296,8 @@
       sections:
       - title: Credentials
         link: docs/Resources/API-Documents/Security/Credentials.md
+      - title: Whitelist Domains
+        link: docs/Resources/API-Documents/Security/Whitelist.md
       - title: Key Management
         link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md
 - sections:

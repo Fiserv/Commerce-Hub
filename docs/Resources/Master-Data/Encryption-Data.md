@@ -70,8 +70,8 @@ Encryption type is the method used to encrypt payment data before sending it to 
 | Valid Values | Details |
 | ----- | ----- |
 | *MANUAL* | When card data is manually entered into a POS device or terminal, website, virtual terminal (VPOS), or mobile app or device. |
-| *TRACK1* | When track 1 card data is swiped into a POS device or terminal (Mag stripe) |
-| *TRACK2* | When track 2 card data is swiped, dipped, or tapped into a POS device/terminal (Mag stripe, EMV, NFC/Contactless) |
+| *TRACK_1* | When track 1 card data is swiped into a POS device or terminal (Mag stripe) |
+| *TRACK_2* | When track 2 card data is swiped, dipped, or tapped into a POS device/terminal (Mag stripe, EMV, NFC/Contactless) |
 | *BOTH* | When track 1 and 2 card data is swiped, dipped, or tapped into a POS device/terminal (Mag stripe, EMV, NFC/Contactless) |
 
 ---
