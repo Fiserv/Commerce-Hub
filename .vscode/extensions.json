@@ -12,6 +12,7 @@
     "yzhang.markdown-all-in-one",
     "fantasy.markdown-all-in-one-for-web",
     "arjun.swagger-viewer",
-    "ms-vscode.powershell"
+    "github.vscode-pull-request-github",
+    "postman.postman-for-vscode"
   ]
 }

@@ -2,7 +2,7 @@
 tags: [Account, Verification, Security Code, Address Verification Service]
 ---
 
-# Account Verification
+# Check the validity of a cardholder using the Account Verification API
 
 The merchant can perform account verification transaction to confirm that the customer's account is valid for a transaction. Unlike a normal $0 authorization this will not attempt an authorization on the account. The merchant can initiate the verification request using an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md), [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md), [PaymentTrack](?path=docs/In-Person/Encrypted-Payments/Track.md), [PaymentEMV](?path=docs/In-Person/Encrypted-Payments/EMV.md) and [PaymentSession](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
 

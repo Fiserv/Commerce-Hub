@@ -4,7 +4,7 @@ tags: [Address Verification, AVS, Security Code Verification, CVV, Fraud Mitigat
 
 # Prevent fraud with address and security code filters
 
-The address and security code filters provide a merchant the ability to enable various transaction filters using the [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) verification requests. Commerce Hub will reject and automatically reverse the submitted transaction if the conditions for any of these filters are met.
+The address and security code filters provide a merchant the ability to enable various transaction filters using the [address](?path=docs/Resources/Guides/Fraud/Address-Verification.md) and [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md) results in an [Account Verification API request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md). Commerce Hub will reject and automatically reverse the submitted transaction if the conditions for any of these filters are met.
 
 Filters are applied by inside of Merchant Configuration and Boarding *(Marketplace in the [Commerce Control Center](https://www.commercecontrol.com))*. Filters are applied by attributes and the respective response values.
 
@@ -18,7 +18,7 @@ Filters are applied by inside of Merchant Configuration and Boarding *(Marketpla
 Example of a declined [Charges API](?path=docs/Resources/API-Documents/Payments/Charges.md) *(201: Created)* response due to AVS settings.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [Response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -96,16 +96,13 @@ Example of a declined [Charges API](?path=docs/Resources/API-Documents/Payments/
 
 ## See also
 
-- [Fraud Mitigation](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
+- [API Explorer](../api/?type=post&path=/payments/v1/accounts/verification)
+- [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
 - [Address Verification](?path=docs/Resources/Guides/Fraud/Address-Verification.md)
+- [Fraud Mitigation](?path=docs/Resources/Guides/Fraud/Fraud-Settings.md)
 - [Positive/Negative Fraud Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Filters.md)
 - [Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md)
 - [Transaction Restrictions](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md)
 - [Velocity Controls](?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md)
-- [Verification Request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md)
-
-<!---
-- [Fraud Detect](?path=docs/Resources/Guides/Fraud/Fraud-Detect.md)
--->
 
 ---
