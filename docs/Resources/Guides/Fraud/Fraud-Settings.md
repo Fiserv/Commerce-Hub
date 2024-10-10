@@ -4,13 +4,13 @@ tags: [Risk Assessment, Fraud Mitigation, Fraud Controls, 3-D Secure, Verificati
  
 # Fraud Mitigation Solutions
 
-Commerce Hub's Fraud Mitigation Solutions, address common fraud attacks and immediate chargeback concerns. Define your own risk controls and create rules that best fit your business's risk profile.
+Commerce Hub's Fraud Mitigation Solutions help mitigate common fraud attacks and addresses immediate chargeback issues. Merchants' can customize their risk controls and establish rules tailored to meet the specific business needs. Enhance your security with services like Fraud Scoring, Chargeback Guarantee, Fraud Controls, and Account Takeover *(ATO)* Protection, available as per your subscription.
 
 ---
 
 ## Fraud Controls
 
-Commerce Hub provides transaction and fraud controls based on fraud settings, including filters, velocity controls, transaction restrictions, and address/security code verification, to automatically accept or reject transactions.
+Commerce Hub provides transaction and fraud controls based on fraud settings, including positive and negative filters, velocity controls, address and security code verification, and transaction restrictions, to automatically accept or reject transactions.
 
 <!-- type: row -->
 
@@ -44,7 +44,7 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
 
 ## Risk Assessment APIs
 
-The Risk Assessment API is a fraud mitigation service provided by Commerce Hub. It helps merchants reduce fraudulent activity by allowing them to submit requests for various checks, including Fraud Scoring, Chargeback Guarantee, and Account Takeover detection.
+The Risk Assessment API is a fraud mitigation service provided by Commerce Hub. It helps merchants reduce fraudulent activity by allowing them to submit requests for various checks, including Fraud Scoring, Chargeback Guarantee, and Account Takeover *(ATO)* detection.
 
 <!-- type: row -->
 
@@ -70,9 +70,9 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Scoring.md
 
 ---
 
-## Additional APIs
+## Security features
 
-Commerce Hub offers additional APIs to help reduce the risk of fraud. These APIs provide extra layers of security and verification to ensure safe transactions.
+Commerce Hub offers security features to help reduce the risk of fraud. These APIs provide extra layers of security and verification to ensure safe transactions.
 
 <!-- type: row -->
 
