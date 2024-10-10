@@ -22,7 +22,7 @@ The POS Decision Table is setup for the Cloud BIN Service with a range of 6-digi
 
 ## Step 2: Configure the POS application
 
-The POS application will need to [integrate with Commerce Hub's APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md) and be configured to follow the required logic to access the Cloud BIN Service when needed.
+The POS application will need to [integrate with Commerce Hub's APIs](?path=docs/Resources/API-Documents/Use-Our-APIs.md) and be configured to follow the required logic to access the Cloud BIN Service when needed. The developer should work with their device manufacturers to understand what local 8-digit BIN *(or any other BIN handling logic)* capabilities are available. Cloud BIN Service is a supplemental feature and does not replace local BIN handling in the devices and POS Application.
 
 ---
 
@@ -32,17 +32,21 @@ The POS will [download the POS Decision Table](?path=docs/Resources/API-Document
 
 ---
 
-## Step 4: Request additional information
+## Step 4: Request for additional information
 
-The POS will utilize the initial 6-digits of the card and downloaded [POS Decision Tables](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md) for routing decisions to the Cloud BIN Service.
+The POS will utilize the initial 6-digits and the local BIN options *(local BIN exclusions, [POS Decision Table](?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md), etc.)* first to verify proper routing before calling the Cloud BIN Service.
 
 <!-- info -->
-> The POS application should use local business logic if applicable to understand when to access the Cloud BIN Service.
+> The POS application should use local business logic, if applicable, to determine when to access the Cloud BIN Service.
 
-The POS will [request additional information](?path=docs/Resources/API-Documents/Payments_VAS/Cloud-BIN-Lookup.md) from the Cloud BIN Service for the following:
+If all local BIN handling options have been exhausted, then the POS will [request additional information](?path=docs/Resources/API-Documents/Payments_VAS/Cloud-BIN-Lookup.md) from the Cloud BIN Service for the following:
 
 - Transactions where the first 6-digits of the card are found in the POS Decision Table.
-- Transactions where the device identifies a card not found in the POS Decision Table or the local device routing table.
+- Transactions where the device identifies a BIN not found in the local device routing table or POS Decision Table.
+
+**BIN not found:**
+
+When a transaction with a BIN is not found in local BIN handling rules and not found in the POS Decision Table rules *(the POS should not block API call to the Cloud BIN Service)*, The POS should notify the business to add the unhandled BIN to the CBS POSDT for proper future handling. The Cloud BIN Service will return appropriate data based on defined rules for the unhandled card BIN. For example: *"Unhandled card sent to CBS. Please contact your account representative to add the unhandled BIN to the Cloud BIN Service POS Decision Table rules."*
 
 ---
 
