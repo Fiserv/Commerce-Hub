@@ -18,7 +18,7 @@ The below table identifies the parameters in the `cardDetails` object.
 
 | Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
-| `binSource` | *string* | 30 | Categorizes the source of the BIN record. **Valid Values:** *FIERV, CHASE, PRIVATE_LABEL* |
+| `binSource` | *string* | 30 | Categorizes the source of the BIN record. **Valid Values:** *FISERV, CHASE, PRIVATE_LABEL* |
 | `recordType` | *string* | 10 | Record Type |
 | `lowBin` | *string* | 21 | This field contains the low BIN value of the BIN range. |
 | `highBin` | *string* | 21 | This field contains the high BIN value of the BIN range. |
