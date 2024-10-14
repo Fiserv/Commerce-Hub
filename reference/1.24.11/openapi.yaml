@@ -4109,12 +4109,7 @@ components:
               type: string
               maxLength: 40
               description: 'Cryptogram.'
-            walletType:
-              type: string
-              maxLength: 256
-              description: 'Identifies the wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY.'
-              example: 'APPLE_PAY'
-
+            
     DataCapture:
       x-model-version: 1.0
       description: 'Data capture details.'
@@ -6064,6 +6059,11 @@ components:
           maxLength: 256
           description: 'Payment <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Source-Type.md">source type</a> for a transaction request.'
           example: 'PaymentCard'
+        walletType:
+          type: string
+          maxLength: 256
+          description: 'Identifies the wallet type used for transaction.'
+          example: 'APPLE_PAY'
 
     SplitSettlement:
       x-model-version: 1.0
