@@ -6073,7 +6073,7 @@ components:
           type: string
           maxLength: 1024
           description: 'The merchant ID for each merchant account involved in split settlement.'
-          example: '123456789011'
+          example: '100008000003683'
         subTotal:
           type: number
           maximum: 999999999999999999.999
@@ -6812,8 +6812,8 @@ components:
           eciIndicator: SECURE_ECOM
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
 
     ApplePayChargesResponse:
       value:
@@ -6888,8 +6888,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     ApplePayTokenResponse:
       value:
@@ -7024,8 +7024,8 @@ components:
           merchantOrderId: '845366457890'
           operationType: ACTIVATION
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
           promotionCode: 12A34B7
         additionalDataCommon:
           additionalData:
@@ -7075,8 +7075,8 @@ components:
         targetCurrency:
           currency: JPY
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
 
     DccResponse:
       value:
@@ -7150,7 +7150,7 @@ components:
     EmvDetailsDownloadRequest:
       value:
         merchantDetails:
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         emvDetails:
           transactionType: DOWNLOAD
@@ -7158,7 +7158,7 @@ components:
     EmvDetailsStatusRequest:
       value:
         merchantDetails:
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         emvDetails:
           transactionType: STATUS
@@ -7394,7 +7394,7 @@ components:
           fileCheckSum: 91b4
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
     
     EmvDetailsStatusResponse:
       value:
@@ -7414,12 +7414,12 @@ components:
           status: NO_UPDATE_AVAILABLE
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
     
     EncryptionKeyRequest:
       value:
         merchantDetails:
-          merchantId: '123456789012345'
+          merchantId: '100008000003683'
     
     EncryptionKeyGenerateResponse:
       value:
@@ -7482,7 +7482,7 @@ components:
               - items: >-
                   MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb
         merchantDetails:
-          merchantId: '100004000100157'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         transactionDetails:
           captureFlag: false
@@ -7539,7 +7539,7 @@ components:
         merchantDetails:
           tokenType: BBY0
           terminalId: '10000001'
-          merchantId: '100004000100157'
+          merchantId: '100008000003683'
         networkDetails:
           network:
             network: Mastercard
@@ -7584,7 +7584,7 @@ components:
               - items: >-
                   MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb
         merchantDetails:
-          merchantId: '100004000100157'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     GooglePayTokenResponse:
@@ -7673,7 +7673,7 @@ components:
             keyId: FFFF9999990217A000370114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100015000300423'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     ManualEntryInfoResponse:
@@ -7720,8 +7720,8 @@ components:
           tokenData: '1234560000000019'
           tokenSource: 'TRANSARMOR'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
         additionalDataCommon:
           directedRouting:
             processors:
@@ -7803,8 +7803,8 @@ components:
           merchantOrderId: '845366457890'
           operationType: ACTIVATION
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
           promotionCode: 12A34B7
         additionalDataCommon:
           additionalData:
@@ -7862,8 +7862,8 @@ components:
         transactionInteraction:
           terminalTimestamp: '2016-04-16T16:06:05Z'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentCardBalanceInquiryResponse:
       value:
@@ -7914,8 +7914,8 @@ components:
               card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
         merchantDetails:
-          merchantId: '123456789012345'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentCardCaptureResponse:
       value:
@@ -7941,8 +7941,8 @@ components:
           merchantOrderId: '845366457890'
           operationType: CASH_OUT
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentCardCashoutResponse:
       value:
@@ -7995,8 +7995,8 @@ components:
               card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
 
     PaymentCardDeviceDataInitializationRequest:
       value:
@@ -8011,7 +8011,7 @@ components:
             encryptionBlockFields: >-
               card.cardData:16,card.nameOnCard:4,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
         merchantDetails:
-          merchantId: '100012000001408'
+          merchantId: '100008000003683'
         transactionDetails:
           authentication3DS: true
     
@@ -8079,8 +8079,8 @@ components:
             postalCode: '30303'
             country: US
         merchantDetails:
-          merchantId: '1234567890123456'
-          alternateMerchantId: '1234567890123456'
+          merchantId: '100008000003683'
+          alternateMerchantId: '100008000003683'
     
     PaymentCardEDSResponse:
       value:
@@ -8112,8 +8112,8 @@ components:
           eciIndicator: CHANNEL_ENCRYPTED
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          merchantId: '123456789789567'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentCardChargesResponse:
       value:
@@ -8176,8 +8176,8 @@ components:
               card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
         merchantDetails:
-          merchantId: '123456789789567'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentCardEncryptedVerifyRequest:
       value:
@@ -8282,8 +8282,8 @@ components:
           merchantOrderId: '845366457890'
           operationType: RELOAD
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
         additionalDataCommon:
           additionalData:
             fundingProvider: CUSTOMER
@@ -8338,8 +8338,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentCardTokenResponse:
       value:
@@ -8468,7 +8468,7 @@ components:
             encryptionTarget: MANUAL
             encryptionBlockFields: customer.driverLicenseNumber:8
         merchantDetails:
-          merchantId: '100184000000076'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         transactionDetails:
           createToken: false
@@ -8499,7 +8499,7 @@ components:
         transactionDetails:
           captureFlag: true
         merchantDetails:
-          merchantId: '100184000000076'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         transactionInteraction:
           origin: MOTO
@@ -8548,7 +8548,7 @@ components:
             accountNumber: '144155167'
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100184000000076'
+          merchantId: '100008000003683'
         networkDetails:
           systemTrace: '1400310000032032697430'
           networkResponseStatus: '1'
@@ -8592,8 +8592,8 @@ components:
               pinAuthenticationCapability: CAN_ACCEPT_PIN
               terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentEMVChargesResponse:
       value:
@@ -8668,8 +8668,8 @@ components:
             keyId: FFFF10970000000003FD0114
             deviceType: INGENICO
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentEMVInfoResponse:
       value:
@@ -8737,8 +8737,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentEMVTokenResponse:
       value:
@@ -8852,7 +8852,7 @@ components:
           sourceType: PaymentSession
           sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
         merchantDetails:
-          merchantId: '100012000001408'
+          merchantId: '100008000003683'
         transactionDetails:
           authentication3DS: true
     
@@ -8890,8 +8890,8 @@ components:
           eciIndicator: CHANNEL_ENCRYPTED
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          merchantId: '123456789012345'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentSessionTokenRequest:
       value:
@@ -8901,8 +8901,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          merchantId: '123456789012345'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentSessionVerifyRequest:
       value:
@@ -8980,7 +8980,7 @@ components:
             expirationMonth: '12'
             expirationYear: '2025'
         merchantDetails:
-          merchantId: '100012000001408'
+          merchantId: '100008000003683'
         transactionDetails:
           authentication3DS: true
     
@@ -9046,8 +9046,8 @@ components:
             postalCode: '30303'
             country: US
         merchantDetails:
-          merchantId: '1234567890123456'
-          alternateMerchantId: '1234567890123456'
+          merchantId: '100008000003683'
+          alternateMerchantId: '100008000003683'
     
     PaymentTokenEDSResponse:
       value:
@@ -9142,8 +9142,8 @@ components:
           eciIndicator: CHANNEL_ENCRYPTED
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentTokenROSRequest:
       value:
@@ -9151,7 +9151,7 @@ components:
           sourceType: PaymentToken
           tokenData: '1234560000019'
         merchantDetails:
-          merchantId: '1234567890123456'
+          merchantId: '100008000003683'
           tokenType: AB01
     
     PaymentTokenROSResponse:
@@ -9267,8 +9267,8 @@ components:
               pinAuthenticationCapability: CAN_ACCEPT_PIN
               terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentTrackChargesResponse:
       value:
@@ -9342,7 +9342,7 @@ components:
             keyId: FFFF109700000520001B0114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100015000300423'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     PaymentTrackInfoResponse:
@@ -9407,7 +9407,7 @@ components:
             keyId: FFFF10970000052000170114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100015000300423'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     PaymentTrackTokenResponse:
@@ -9477,7 +9477,7 @@ components:
               pinAuthenticationCapability: UNSPECIFIED
               terminalEntryCapability: MAG_STRIPE_ONLY
         merchantDetails:
-          merchantId: '100012000101901'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         additionalDataCommon:
           directedRouting:
@@ -9617,8 +9617,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     SecondaryRequestWithReferenceMerchantTransactionId:
       value:
@@ -9630,8 +9630,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     SecondaryRequestWithReferenceTransactionId:
       value:
@@ -9643,13 +9643,13 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     SecurityCredentialsRequest:
       value:
         merchantDetails:
-          merchantId: '123456789012345'
+          merchantId: '100008000003683'
     
     SecurityCredentialsResponse:
       value:
@@ -9700,7 +9700,7 @@ components:
                 ipAddress: 67.17.19.20
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100004000100116'
+          merchantId: '100008000003683'
         additionalData3DS:
           serviceProviderReferenceId: 123lkd8alcd99aa9
           channel: BROWSER
@@ -9781,7 +9781,7 @@ components:
       value:
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100004000100116'
+          merchantId: '100008000003683'
         referenceTransactionDetails:
           referenceMerchantTransactionId: ac81864d7c9d1ff8b5aa6e98db
     
@@ -9818,7 +9818,7 @@ components:
       value:
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100004000100116'
+          merchantId: '100008000003683'
         referenceTransactionDetails:
           referenceTransactionId: c229a53d92d348fb9c9ecea6f6a4aa4f
     
@@ -9856,7 +9856,7 @@ components:
         referenceTransactionDetails:
           referenceTransactionId: 95f6b8c8ec024e1183a8e998406656ce
         merchantDetails:
-          merchantId: '222222222222'
+          merchantId: '100008000003683'
     
     TransactionInquiryResponse:
       value:
@@ -9902,7 +9902,7 @@ components:
         referenceTransactionDetails:
           referenceMerchantOrderId: RKOrdID-822715036
         merchantDetails:
-          merchantId: '222222222222'
+          merchantId: '100008000003683'
     
     TransactionInquiryByMerchantOrderIdResponse:
       value:
