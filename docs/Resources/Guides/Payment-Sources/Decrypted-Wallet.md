@@ -18,7 +18,7 @@ tags: [Decrypted Wallet, Apple Pay, Google Pay, Payment Sources, Online, Digital
 
 <!--
 type: tab
-titles: source, card
+titles: source
 -->
 
 The below table identifies the parameters in the `source` object.
