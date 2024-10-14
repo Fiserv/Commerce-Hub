@@ -4,7 +4,7 @@ tags: [Device Management, Decision Table, Getting Started, Device, Terminal, Poi
 
 # POS Decision Table: Cloud BIN Integration Guide
 
-Commerce Hub's Cloud BIN Service will decrypt the [encrypted card data](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) and provide a response back to the point-of-sale *(POS)* application including the card data in the clear *(unencrypted)*. This data may be returned in the `cardDetails` object as `additionalCardData` and the `primaryCardData`. This information can be used by a POS device to take preemptive actions on accounts being presented for transactions.
+Commerce Hub's Cloud BIN Service will decrypt the [encrypted card data](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md) and provide a response back to the point-of-sale *(POS)* application including the card data in the clear *(unencrypted)*. This data may be returned in the `cardDetails` object as `primaryCardData` and the `additionalCardData`. This information can be used by a POS device to take preemptive actions on accounts being presented for transactions.
 
 The Cloud BIN Service can be setup to receive the following information:
 
