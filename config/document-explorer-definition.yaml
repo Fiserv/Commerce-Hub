@@ -196,7 +196,7 @@
       sections:
       - title: EMV CAPK Data
         link: docs/Resources/API-Documents/Device-Management/CAPK.md
-    - title: Risk Assessment
+    - title: Fraud Mitigation
       link: docs/Resources/Guides/Fraud/Fraud-Settings.md
       sections:
       - title: Fraud Scoring

@@ -49,18 +49,6 @@ The Risk Assessment API is a fraud mitigation service provided by Commerce Hub. 
 <!-- type: row -->
 
 <!-- type: card
-title: Account Takeover (ATO)
-description: Account Takeover Protection detects and prevents unauthorized access to customer accounts, safeguarding against stolen credentials, phishing, and security exploits.
-link:
--->
-
-<!-- type: card
-title: Chargeback Guarantee
-description: Mitigate financial risk and increase order approvals with our chargeback guarantee service. Ensure secure transactions and protect your business from fraudulent activities.
-link: 
--->
-
-<!-- type: card
 title: Fraud Scoring
 description: Enhance decision-making, detect fraudulent networks, and verify legitimate customers by evaluating transactions in real-time with machine learning-based scoring tailored to your business needs.
 link: ?path=docs/Resources/Guides/Fraud/Fraud-Scoring.md
