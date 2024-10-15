@@ -4,15 +4,45 @@ tags: [Getting Started, Release Notes, Update, Patch, Enhancement, Preview]
 
 # Preview release notes
 
-Commerce Hub provides a [preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview) of our upcoming feature releases in Developer Studio. These features may not be functional until the certification release date. When these features are released to production they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
+Commerce Hub provides a preview of our upcoming feature releases in Developer Studio. These features may not be functional until the certification release date. When these features are released to production they will be announced in our [Release Notes](?path=docs/Release-Notes-Alerts/Release-Notes.md).
 
 <!-- theme: info -->
-> The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **[Preview](?path=docs/Release-Notes-Alerts/Preview.md&branch=preview)** in the left navigation when viewing an article or API.
+> The upcoming features and updates can be viewed in the documentation by changing the dropdown from **Active** to **Preview** in the left navigation when viewing an article or API.
 
 **Release types:**
 
-- **Feature:** New feature release
-- **Update:** Existing feature update or enhancement
+- **Feature:** New feature release.
+- **Update:** Existing feature update or enhancement.
+
+---
+
+## December 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** October 22nd 2024
+- **Production:** November 6th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.12: New objects added/updated to support new and updated features. | Update |
+| Support for [Fraud Scoring](?path=docs/Resources/Guides/Fraud/Fraud-Scoring.md) using the Risk Assessment API | Feature |
+
+---
+
+## November 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** October 7th 2024
+- **Production:** October 16th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.11: New objects added/updated to support new and updated features. | Update |
+| [POS Decision Table for Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) implemented. Information Lookup API enhanced to support Cloud BIN information | Feature |
+| Added `walletType` to the `source` object to support [*DecryptedWallet*](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) and future use cases. | Update |
+| PaymentEMV documentation updated to support Contactless payments. No API model changes. | Update |
 
 ---
 

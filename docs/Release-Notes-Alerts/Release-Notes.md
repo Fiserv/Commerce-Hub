@@ -16,6 +16,23 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## November 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** October 7th 2024
+- **Production:** October 16th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.11: New objects added/updated to support new and updated features. | Update |
+| [POS Decision Table for Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) implemented. Information Lookup API enhanced to support Cloud BIN information | Feature |
+| Added `walletType` to the `source` object to support [*DecryptedWallet*](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) and future use cases. | Update |
+| PaymentEMV documentation updated to support Contactless payments. No API model changes. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## October 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
