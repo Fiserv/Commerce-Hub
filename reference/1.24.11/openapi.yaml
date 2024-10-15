@@ -435,7 +435,7 @@ paths:
       x-proxy-name: 'Information Lookup'
       x-default-example: PaymentCard
       summary: Lookup a payment card or payment token.
-      description: 'Use this to look up card related information such as issuer country, card function and card brand associated with a card or token.'
+      description: 'Retrieve detailed information about a card or token, including issuer country, card function, card brand, and other relevant attributes using Global BIN or Cloud BIN data. See the <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md">Information Lookup API documentation</a> for additional integration information.'
       requestBody:
         required: true
         content:
@@ -948,9 +948,9 @@ paths:
       tags:
         - Pos Decision Table Endpoint Definition
       x-group-name: 'Device Management'
-      x-proxy-name: 'PosDecisionTable'
-      summary: Submit Pos decision table Request.
-      description: Pos decision Data for a terminal.
+      x-proxy-name: 'POS Decision Table'
+      summary: Submit a POS Decision Table download request.
+      description: Download a POS Decision Table for a device. See the <a href="../docs?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md">POS Decision Table documentation</a> for additional integration information.
       requestBody:
         required: true
         content:
@@ -958,9 +958,9 @@ paths:
             schema:
               $ref: '#/components/schemas/PosDecisionTableRequest'
             examples:
-              Posdecisiontable-Download:
-                summary: Request for PosDecisionTable
-                $ref: '#/components/examples/PosDecisionTableDownloadRequest'
+              CloudBIN-Download:
+                summary: Request for a Cloud BIN download.
+                $ref: '#/components/examples/CloudBinDownloadRequest'
       responses:
         200:
           description: Downloaded
@@ -969,9 +969,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/PosDecisionTableResponse'
               examples:
-                Posdecisiontable-Download:
-                  summary: Response for PosDecisionTable
-                  $ref: '#/components/examples/PosDecisionTableDownloadResponse'
+                CloudBIN-Download:
+                  summary: Response for Cloud BIN download.
+                  $ref: '#/components/examples/CloudBinDownloadResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -6933,39 +6933,6 @@ components:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
 
-    ClientCertificateRequest:
-      value:
-        cryptographicDetails:
-          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
-          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
-          cryptographicAlgorithm: 'JWE'
-          cryptographicResourceEncoding: '.pem'
-          cryptographicResourceType: 'CERTIFICATE'
-          cryptographicResourceLength: 2048
-          usedFor: 'RTAU'
-
-    ClientCertificateResponse:
-      value:
-        gatewayResponse:
-          transactionType: 'UPLOAD'
-          transactionState: 'UPLOADED'
-          transactionOrigin: 'POS'
-          transactionProcessingDetails:
-            transactionTimestamp: '2022-03-15T20:28:09.977157Z'
-            apiTraceId: '96b35a89b00a492c87dda321b7deee02'
-            clientRequestId: '9716198'
-            transactionId: '96b35a89b00a492c87dda321b7deee02'
-            apiKey: 'Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4'
-        cryptographicDetails:
-          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
-          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
-          cryptographicAlgorithm: 'JWE'
-          cryptographicResourceEncoding: '.pem'
-          cryptographicResourceType: 'CERTIFICATE'
-          cryptographicResourceLength: 2048
-          usedFor: 'RTAU'
-          publicKeyHash: '3A100B15B9430B1711f2E38F05939A9A'
-
     CancelResponse:
       value:
         gatewayResponse:
@@ -7014,6 +6981,70 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
     
+    ClientCertificateRequest:
+      value:
+        cryptographicDetails:
+          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
+          cryptographicAlgorithm: 'JWE'
+          cryptographicResourceEncoding: '.pem'
+          cryptographicResourceType: 'CERTIFICATE'
+          cryptographicResourceLength: 2048
+          usedFor: 'RTAU'
+
+    ClientCertificateResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'UPLOAD'
+          transactionState: 'UPLOADED'
+          transactionOrigin: 'POS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2022-03-15T20:28:09.977157Z'
+            apiTraceId: '96b35a89b00a492c87dda321b7deee02'
+            clientRequestId: '9716198'
+            transactionId: '96b35a89b00a492c87dda321b7deee02'
+            apiKey: 'Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4'
+        cryptographicDetails:
+          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
+          cryptographicAlgorithm: 'JWE'
+          cryptographicResourceEncoding: '.pem'
+          cryptographicResourceType: 'CERTIFICATE'
+          cryptographicResourceLength: 2048
+          usedFor: 'RTAU'
+          publicKeyHash: '3A100B15B9430B1711f2E38F05939A9A'
+
+    CloudBinDownloadRequest:
+      value:
+        transactionDetails:
+          operationType: 'DOWNLOAD'
+        metadata:
+          updatedOn: '2022-03-15T20:28:09.977157Z'
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100008000003683'
+    
+    CloudBinDownloadResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'POS_DECISION_TABLE'
+          transactionState: 'DOWNLOADED'
+          transactionOrigin: 'POS'
+          transactionProcessingDetails:
+            orderId: 'CHG01d9b27843995f46d08715908f4372c2ea'
+            transactionTimestamp: '2022-03-15T20:28:09.977157Z'
+            apiTraceId: '96b35a89b00a492c87dda321b7deee02'
+            clientRequestId: '9716198'
+            transactionId: '96b35a89b00a492c87dda321b7deee02'
+        transactionDetails:
+          operationType: 'DOWNLOAD'
+        metadata:
+          updatedOn: '2022-03-15T20:28:09.977157Z'
+          feedCount: '2'
+        posDecisionData:
+          - accountRangeLow: '654321'
+            accountRangeHigh: '654329'   
+
     CreateDigitalGiftCardRequest:
       value:
         amount:
@@ -7784,7 +7815,6 @@ components:
               - debitNetworkId: 'PAVD'
                 pinnedPOS: 'SUPPORTED'
 
-    
     PaymentCardActivateCardRequest:
       value:
         amount:
@@ -9529,37 +9559,6 @@ components:
                 securityCodeResponse: M
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
-    
-    PosDecisionTableDownloadRequest:
-      value:
-        transactionDetails:
-          operationType: 'DOWNLOAD'
-        metadata:
-          updatedOn: '2022-03-15T20:28:09.977157Z'
-        merchantDetails:
-          terminalId: '10000001'
-          merchantId: '100008000003683'
-
-    PosDecisionTableDownloadResponse:
-      value:
-        gatewayResponse:
-          transactionType: 'POS_DECISION_TABLE'
-          transactionState: 'DOWNLOADED'
-          transactionOrigin: 'POS'
-          transactionProcessingDetails:
-            orderId: 'CHG01d9b27843995f46d08715908f4372c2ea'
-            transactionTimestamp: '2022-03-15T20:28:09.977157Z'
-            apiTraceId: '96b35a89b00a492c87dda321b7deee02'
-            clientRequestId: '9716198'
-            transactionId: '96b35a89b00a492c87dda321b7deee02'
-        transactionDetails:
-          operationType: 'DOWNLOAD'
-        metadata:
-          updatedOn: '2022-03-15T20:28:09.977157Z'
-          feedCount: '2'
-        posDecisionData:
-          - accountRangeLow: '654321'
-            accountRangeHigh: '654329'
     
     RefundResponse:
       value:
