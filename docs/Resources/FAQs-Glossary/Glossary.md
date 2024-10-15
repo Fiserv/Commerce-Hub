@@ -10,7 +10,7 @@ tags: [Definition, Commerce Hub, Glossary, FAQ]
 
 ### 3-D Secure
 
-[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the *"three domains"* which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
+[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) *(3DS and EMV 3-D Secure)* is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the *"three domains"* which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
 
 This is a technical standard that adds security to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
 
@@ -27,6 +27,10 @@ A cryptographically secure credential that allows merchants to access the API.
 ### Access Control Server
 
 An Access Control Server *(ACS)* is a card issuer component in the 3-D Secure process.
+
+### Account Takeover
+
+Account takeover *(ATO)* refers to the unauthorized access of an account using stolen credentials. It is a form of fraud where cybercriminals gain control of online accounts, such as email, bank, or social media accounts, without the owner's permission. This allows the fraudster to gain access to credit card and other sensitive data.
 
 ### Activation
 
