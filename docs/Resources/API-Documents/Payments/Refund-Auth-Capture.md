@@ -2,96 +2,39 @@
 tags: [Full Refund, Payments, Partial Refund, Refund, Authorization, Capture, Online Refund, API Reference]
 ---
 
-# Authorization and Capture Refund
+# Process an authorization and capture reversal using the Refunds API
 
-Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an [authorization request](#pre-authorization-payload-example) and a subsequent [capture request](#capture-payload-example) at a later time using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
+Commerce Hub supports authorization messages for online refund transactions. This allows a merchant to process an [authorization request](#submit-a-refunds-api-pre-authorization-request) and a subsequent [capture request](#submit-a-refunds-api-capture-request) at a later time using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
-Similar to [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-authorization, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
+<!-- theme: info -->
+> If you do not want to process a pre-authorization and capture refund request it is recommended to submit a [tagged reversal](?path=docs/Resources/API-Documents/Payments/Refund-Tagged.md).
+
+Similar to the [Charges API](?path=docs/Resources/API-Documents/Payments/Charges.md), online refunds can be initiated as a refund, pre-authorization, or capture which is defined in the request by sending the `captureFlag` in `transactionDetails`.
 
 - *false:* A pre-authorization transaction, where the customer's funds will be reserved and a capture will be required to return the funds.
 - *true:* A refund or subsequent capture transaction where the customer will be refunded the total amount, and funds returned.
 
-<!-- theme: info -->
-> If `captureflag` is not sent the default function is *true* when online authorization is enabled in Merchant Boarding and Configuration. Please see your account representative for more information.
+<!-- theme: danger -->
+> Refund API requests can be initiated against a [transaction](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [void request](?path=docs/Resources/API-Documents/Payments/Cancel.md).
 
 ---
 
-## Request Variables
+## Submit a Refunds API pre-authorization request
 
-A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the refund type.
-
-<!-- theme: warning -->
-> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
-
-<!-- 
-type: tab
-titles: referenceTransactionDetails, amount, transactionDetails, merchantDetails
--->
-
-The below table identifies the available parameters in the `referenceTransactionDetails` object.
-
-<!-- theme: info -->
-> Only a single transaction identifier should be passed within the request.
-
-| Variable | Data Type| Max Length |Description |
-|---------|----------|----------------|---------|
-| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `amount` object.
-
-| Variable | Type | Max Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `transactionDetails` object.
-
-| Variable | Data Type| Max Length | Description |
-|---------|----------|----------------|---------|
-| `captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Refund and *false* for Pre-Authorization)|
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Type | Max Length | Required | Description |
-| -------- | -- |------------| ------- | ---- |
-| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction. Can be used for merchants that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
-| `terminalId` | *string* | 1024 |  | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md). |
-
-<!-- type: tab-end -->
-
----
-
-## Endpoint
-
-<!-- theme: success -->
-> **POST** `/payments/v1/refunds`
-
----
-
-## Pre-Authorization Payload Example
+<!-- theme: danger -->
+> All online refunds not submitted with `captureFlag` *true* require a subsequent [Refunds API capture request](#submit-a-refunds-api-capture-request) to complete the settlement of the authorized refund.
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of an authorization refund payload request.
+The example below contains the minimum [parameters](#parameters) for a successful Refunds API authorization request using `captureFlag`: *false*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/refunds).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/refunds`
 
 ```json
-
 {
   "referenceTransactionDetails": {
     "referenceTransactionId": "84356531348"
@@ -108,23 +51,19 @@ Example of an authorization refund payload request.
     "terminalId": "10000001"
   }
 }
-
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--
 type: tab
 -->
 
-Example of an authorization refund (201: Created) response.
+Example of a pre-authorization Refunds API *(201: Created)* response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
-
   "gatewayResponse": {
     "transactionType": "REFUND",
     "transactionState": "AUTHORIZED",
@@ -186,17 +125,19 @@ Example of an authorization refund (201: Created) response.
 
 ---
 
-## Capture Payload Example
+## Submit a Refunds API capture request
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a refund capture payload request.
+The example below contains the minimum [parameters](#parameters) for a successful Refunds API capture request using a `referenceTransactionId` and `captureFlag`: *true*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/refunds).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/refunds`
 
 ```json
-
 {
   "referenceTransactionDetails": {
     "referenceTransactionId": "84356531348"
@@ -209,23 +150,19 @@ Example of a refund capture payload request.
     "terminalId": "10000001"
   }
 }
-
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
 
 <!--
 type: tab
 -->
 
-Example of a refund capture (201: Created) response.
+Example of a Refunds API capture (201: Created) response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
-
   "gatewayResponse": {
     "transactionType": "REFUND",
     "transactionState": "CAPTURED",
@@ -287,7 +224,70 @@ Example of a refund capture (201: Created) response.
 
 ---
 
-## See Also
+## Parameters
+
+### Request variables
+
+A refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the `amount` object based on the refund type.
+
+<!-- theme: warning -->
+> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
+
+<!-- 
+type: tab
+titles: referenceTransactionDetails, amount, transactionDetails, merchantDetails
+-->
+
+The below table identifies the available parameters in the `referenceTransactionDetails` object.
+
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `amount` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `captureFlag` | *string* | 5 | Designates if the transaction should be captured (*true* for Refund and *false* for Pre-Authorization)|
+
+<!-- theme: info -->
+> If `captureflag` is not sent the default function is *true* when online authorization is enabled in Merchant Boarding and Configuration. Please see your account representative for more information.
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
+
+<!-- type: tab-end -->
+
+---
+
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)

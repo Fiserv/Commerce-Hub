@@ -56,6 +56,10 @@ Agile software development refers to a group of software development methodologi
 
 Aggregators are defined as third-party billers that bill for services/goods rendered by another entity. The terms Payment Facilitator, Payment Service Provider, and Aggregator are interchangeable terms for the same functionality.
 
+### Apple Cash
+
+Apple Cash is a digital card that exists in the [Apple Pay digital wallet](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md). Similar to other peer-to-peer *(P2P)* payment platforms like Venmo and Zelle, Apple Cash allows you to send and receive money to friends and family and make contactless payments with merchants.
+
 ### Approval Code
 
 The approval code *(authorization ID or authorization code)* is an alphanumeric value, assigned by the issuing bank, to an authorization request that has received approval. The `approvalCode` is returned in the [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md).
@@ -88,6 +92,10 @@ Identifies if the authorization requested is an initial, reauthorization, deferr
 
 ## B
 
+### B2B Invoice Payment
+
+B2B invoice payments are payments made between two merchants for goods or services. Digital B2B invoice payments solutions make it faster to issue, receive, and process payments.
+
 ### Bank Identification Number
 
 The Bank Identification Number *(BIN)* is the first 8 digits of the unique card number [Primary Account Number](#card-number) (PAN). Identifies the card network and the issuer. Sometimes referred to as the Issuer Identification Number *(IIN)*.
@@ -96,11 +104,11 @@ The Bank Identification Number *(BIN)* is the first 8 digits of the unique card 
 
 A group of institutions formed for the purpose of sponsoring a bank card program and/or using a common processing and administrative center.
 
-### Banknet Data
+### BankNet Data
 
-A 13-digit field that identifies the date in which the authorization record was captured by Mastercard’s telecommunications network, followed by a unique data element which identifies the authorization transaction.
+A 13-digit field that identifies the date in which the authorization record was captured by Mastercard's telecommunications network, followed by a unique data element which identifies the authorization transaction.
 
-### Banknet Reference Number
+### BankNet Reference Number
 
 Unique data element, assigned by Mastercard, which identifies an authorization transaction.
 
@@ -108,17 +116,17 @@ Unique data element, assigned by Mastercard, which identifies an authorization t
 
 The Base URL is used to reach the installed shopping cart, e.g. <https://mydomain.com/cart/> or <https://shop.mydomain.com/>.
 
-### B2B Invoice Payment
+### Bill Payment Indicator
 
-B2B invoice payments are payments made between two merchants for goods or services. Digital B2B invoice payments solutions make it faster to issue, receive, and process payments.
+Identifies if the bill payment requested is a recurring, installment, or deferred.
 
 ### Binary Synchronous
 
 Binary Synchronous *(BISYNC)* is a category of synchronous communications protocols.
 
-### Bill Payment Indicator
+### BIN Exclusions
 
-Identifies if the bill payment requested is a recurring, installment, or deferred.
+BIN Exclusions are essential for merchant processing as they dictate which card BIN ranges should be left in the clear/unencrypted. Typically, these cards are not considered PCI data as they are non-branded *(e.g., gift cards, private label and loyalty)*. The BIN ranges that are excluded from encryption are stored in a BIN Exclusion File and injected in encrypting devices as part of the configuration package. The BIN Exclusion File can handle 100-line items. This total includes [Special Handling Rules](#special-handling-rule).
 
 ---
 
@@ -166,7 +174,7 @@ A transaction in which a customer receives cash in-person which is posted agains
 
 ### Clickjacking
 
-A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).
+A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md).
 
 ### Check Digit
 
@@ -198,7 +206,7 @@ The "tuning" or addition of equipment to improve the transmission characteristic
 
 ### Contactless Payments
 
-Contactless payments use radio frequency *(RF)*, also known as Near Field Communication *(NFC)*. The technology is used in payment cards and mobile devices. Contactless Payment Cards are like traditional cards except that they have a contactless chip.
+Contactless payments use radio frequency *(RF)*, also known as Near Field Communication *(NFC)*. The technology is used in payment cards and mobile devices. [Contactless payment cards](?path=docs/In-Person/Encrypted-Payments/EMV.md) are like traditional cards except that they have a contactless EMV chip.
 
 When a customer taps or waves a payment instrument at a merchant terminal equipped with an RFID *(Radio Frequency Identification)* reader, the instrument wirelessly transmits payment details to the terminal.
 
@@ -256,7 +264,7 @@ Identifies a bill pay transaction where a recurring or incremental payment is de
 
 ### Derived Unique Key Per Transaction
 
-Derived Unique Key Per Transaction (DUKPT) allows the encryption of a PIN via the use of a unique key for each transaction. DUKPT system of derived keys is used in a point-of-sale (POS) environment where the merchant can accept transactions from a large number of unique [PIN entry](?path=docs/Resources/Master-Data/Pin-Block.md) devices. This technique involves the use of a non-secret key serial number and a secret base derivation key. On each transaction, the PIN pad derives a unique key based on a previous key and the key serial number. Terminal encrypts the PIN with this derived key, and sends both the encrypted PIN and the key serial number to the Host. See also [Key Management](#key-management).
+Derived Unique Key Per Transaction *(DUKPT)* allows the encryption of a PIN via the use of a unique key for each transaction. DUKPT system of derived keys is used in a point-of-sale *(POS)* environment where the merchant can accept transactions from a large number of unique [PIN entry](?path=docs/Resources/Master-Data/Pin-Block.md) devices. This technique involves the use of a non-secret key serial number and a secret base derivation key. On each transaction, the PIN pad derives a unique key based on a previous key and the key serial number. Terminal encrypts the PIN with this derived key, and sends both the encrypted PIN and the key serial number to the Host. See also [Key Management](#key-management).
 
 ### Direct Capture
 
@@ -336,13 +344,13 @@ Electronic Commerce Indicator *(ECI)*. Use of this field is mandated by the bank
 
 ### EMV
 
-[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards (ICC or chip cards) and IC card capable point of sale (POS) terminals. This standard is used for authenticating credit and debit card transactions.
+[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards *(ICC or chip cards)* and IC card capable point-of-sale *(POS)* devices. This standard is used for authenticating credit and debit card transactions.
 
 ### EMV Fallback
 
-An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by manually entering the card details or swiping the magnetic stripe.
+An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by [manually entering the card details](?path=docs/In-Person/Encrypted-Payments/Manual.md) or [swiping the magnetic stripe](?path=docs/In-Person/Encrypted-Payments/Track.md).
 
-EMV fallback transactions only apply to card-present transactions where physical cards are presented by cardholders at payment terminals.
+EMV fallback transactions only apply to [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) where physical cards are presented by cardholders at payment terminals.
 
 ### End Sentinel
 
@@ -358,7 +366,7 @@ An estimated authorization occurs when the merchant does not have the total amou
 
 ### Electronic Benefits Transfer
 
-Electronic Benefits Transfer *(EBT)* is a payment card used at the point of sale to access a government account for Food Stamps or Cash Benefits.
+Electronic Benefits Transfer *(EBT)* is a payment card used at the point-of-sale to access a government account for Food Stamps or Cash Benefits.
 
 ### Electronic Funds Transfer
 
@@ -426,7 +434,7 @@ A gateway is a program or piece of hardware that passes data between networks.
 
 ### Gateway Capture
 
-Gateway capture also known as gateway settlement, is the process where Commerce Hub closes and settles batches on behalf of the merchant. Typically, credit transactions are setup for terminal capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
+Gateway capture also known as gateway settlement, is the process where Commerce Hub closes and settles batches on behalf of the merchant. Typically, credit transactions are setup for gateway capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
 
 ---
 
@@ -450,7 +458,7 @@ The host is generally the central or controlling computer in a distributed syste
 
 ### Host Capture
 
-Host capture also known as host capture system *(HCS)*, is the process where the host *(e.g. Buypass)* closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [gateway capture](#gateway-capture).
+Host capture also known as host capture system *(HCS)*, is the process where the host *(example; Buypass)* closes and settles batches on behalf of the merchant. Typically, debit transactions are single message transactions and setup for host capture. See also [direct capture](#direct-capture) and [gateway capture](#gateway-capture).
 
 ### Host Security Module
 
@@ -514,7 +522,7 @@ The issuing bank also known as the customer's bank, issues a payment card or che
 
 ### JavaScript
 
-JavaScript *(JS)* is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
+JavaScript _(JS)_ is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md).
 
 ### JSON
 
@@ -562,7 +570,7 @@ A bank card that has been reported to the credit issuer as lost or misplaced by 
 
 ### Luhn Check
 
-The Luhn algorithm or Luhn formula, also known as the *"modulus 10"* or *"mod 10"* algorithm, is a simple checksum formula used to validate credit card numbers.
+The Luhn algorithm or Luhn formula, also known as the *modulus 10* or *mod 10* algorithm, is a simple checksum formula used to validate credit card numbers.
 
 ---
 
@@ -582,7 +590,7 @@ Mastercard Assigned ID *(MAID)* is an identifier assigned by Mastercard to ident
 
 ### Mail/Telephone Order Transaction
 
-The Mail/Telephone Order Transaction *(MOTO)* is a purchase of goods or services where the cardholder is not present at the point of sale.
+The Mail/Telephone Order Transaction *(MOTO)* is a purchase of goods or services where the cardholder is not present at the point-of-sale.
 
 ### Market Specific Authorization
 
@@ -714,15 +722,15 @@ Practical Extraction and Report Language *(Perl)* is a popular programming langu
 
 ### Point-of-Sale
 
-Point-of-Sale *(POS)* is the point at which a product is paid for. [In-person](?path=docs/Getting-Started/Getting-Started-InPerson.md) transactions are conducted by a terminal or software. [Online](?path=docs/Getting-Started/Getting-Started-Online.md) transactions are conducted by a software on their online store or mobile app.
+Point-of-Sale *(POS)* is the point at which a product is paid for. [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) are initiated by a device, software application, or a combination. [Online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md) are initiated by software on an online store or mobile app.
 
-### Post-Auth
+### Post-Authorization
 
-A secondary transaction that [captures](?path=docs/Resources/API-Documents/Payments/Capture.md) a pre-auth transaction and charges the customer's account.
+A secondary transaction that [captures](?path=docs/Resources/API-Documents/Payments/Capture.md) a pre-authorization transaction and charges the customer's account.
 
-### Pre-Auth
+### Pre-Authorization
 
-A pre-auth is a customer transaction where the merchant can validate a given amount is available on the customer payment method (physical card, digital wallet, etc.) and places a hold on a project sale amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) transaction, the held amount is then settled with the merchant batch.
+A pre-authorization is a customer transaction where the merchant can validate a given amount is available on the customer payment method *(physical card, digital wallet, etc.)* and places a hold on a project sale amount. This amount is held on the customer account (credit limit or bank balance), but not yet transferred to the merchant. Once the merchant initiates a [capture](?path=docs/Resources/API-Documents/Payments/Capture.md) transaction, the held amount is then settled with the merchant batch.
 
 ### Primary Transaction
 
@@ -815,6 +823,11 @@ A [split shipment](?path=docs/Resources/Guides/Split-Shipment.md) transaction ch
 
 The descriptor that shows up after a transaction has been authorized. If the charge is in a pending state, the soft descriptor will be displayed on the customer's statement.
 
+### Special Handling Rule
+
+A Special Handling Rule is used for [Global Fleet/Petrol BINs](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md). These rules leave specific digits in in the track data unencrypted for the POS to prompt for additional information *(e.g., Vehicle Number, Odometer Reading, Driver’s License, etc.)*. More than one Special Handling Rule can be assigned in a BIN Exclusion table, but the Special Handling Rules cannot share a BIN. 
+
+
 ### Stand-In-Processing
 
 Stand-In-Processing *(STIP)* is a service offered by the Associations that provides transaction processing services on behalf of an unavailable or timed-out issuer.
@@ -859,7 +872,7 @@ High-speed transmission and synchronous communications are the transmission and 
 
 ### TeleCheck ECA
 
-The TeleCheck Electronic Check Acceptance® *(ECA®)* is a service that converts a paper check into an electronic item at the point of sale.
+The TeleCheck Electronic Check Acceptance® *(ECA®)* is a service that converts a paper check into an electronic item at the point-of-sale.
 
 ### Transport Layer Security
 
@@ -891,7 +904,7 @@ A general-purpose operating system that can implement a Perl Module or Ruby Clie
 
 ### Universal Product Code
 
-Universal Product Code *(UPC)* is the barcode used for scanning of trade items at the point of sale.
+Universal Product Code *(UPC)* is the barcode used for scanning of trade items at the point-of-sale.
 
 ---
 
@@ -905,8 +918,8 @@ The authorization procedure in which a merchant uses a standard telephone to req
 
 A void or [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) is a type of transaction used to correct an error or to accommodate a customer’s change of mind after the approval of the original transaction.
 
-### Virtual Point of Sale
+### Virtual Point-of-Sale
 
-Virtual Point of Sale *(VPOS)* or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
+Virtual Point-of-Sale *(VPOS)* or [Virtual Terminal](?path=docs/Online-Mobile-Digital/Virtual-Terminal/Virtual-Terminal.md) is a web based application that allows the merchant to process transactions when their API is down.
 
 ---

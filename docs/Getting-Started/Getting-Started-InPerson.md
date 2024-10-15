@@ -1,10 +1,10 @@
 ---
-tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point of Sale, Terminal]
+tags: [Getting Started, In-Person, Card Present, EMV, Debit, Point-of-Sale, Terminal]
 ---
 
 # In-Person Payments
 
-Commerce Hub supports in-person or card-present payment transactions where the customer physically presents the payment source while making a transaction at any merchant terminal. This type of transaction can include swiping a card with a magnetic strip, inserting or tapping a card with an [EMV chip](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv), or tapping a mobile device with the card loaded into a digital wallet.
+Commerce Hub supports in-person or card-present *(CP)* payment transactions where the customer physically presents the payment source while making a transaction at any merchant terminal. This type of transaction can include [swiping a card with a magnetic strip](?path=docs/In-Person/Encrypted-Payments/Track.md), [inserting or tapping a card with an EMV chip](?path=docs/Resources/FAQs-Glossary/Glossary.md#emv), or tapping a mobile device with the card loaded into a digital wallet.
 
 ---
 

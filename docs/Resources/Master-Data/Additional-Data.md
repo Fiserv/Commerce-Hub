@@ -24,10 +24,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | `recurring` | *object* | N/A | Used in [recurring bill payments](?path=docs/Resources/Guides/Bill-Payments/Recurring-Payment.md) |
 | `deferredPayments` | *object* | N/A | Used in deferred bill payments |
 | `directedRouting` | *object* | N/A | Required in [Directed Routing](?path=docs/Resources/Guides/Transaction-Routing/Directed-Routing.md) transactions. |
-| `subMerchant` | *object* | N/A | Required in transaction initiated by a Payment Facilitator to identify the sub-merchant information. |
 | `privateLabel` | *object* | N/A | Additional attributes used to process [private label payment cards (PLCC)](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md). |
-
----
 
 <!--
 type: tab
@@ -78,6 +75,14 @@ JSON string format for `additionalDataCommon`:
       "specialFinanceIndicator": "24/0",
       "creditPlanNumber": "00100",
       "minimumSpendExemptIndicator": "EXEMPT"
+    },
+    "customFields": {
+      "keyValuePair": [
+        {
+          "key": "customFieldExample",
+          "value": "custom value example"
+        }
+      ]
     }
   }
 }

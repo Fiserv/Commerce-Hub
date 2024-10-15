@@ -12487,7 +12487,7 @@
 								"credentials"
 							]
 						},
-						"description": "A credentials request is used for authorizing or submitting subsequent financial transactions.\n\n* Returns an <code>accessToken</code> used in creating an <a href=\"../docs?path=docs/Resources/API-Documents/Authentication-Header.md\">authentication header</a>.\n* Returns a <code>sessionId</code> used with <a href=\"../docs?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md\">Secure Data Capture</a>.\n"
+						"description": "A credentials request is used for authorizing or submitting subsequent financial transactions.\n\n* Returns an <code>accessToken</code> used in creating an <a href=\"../docs?path=docs/Resources/API-Documents/Authentication-Header.md\">authentication header</a>.\n* Returns a <code>sessionId</code> used with <a href=\"../docs?path=docs/Online-Mobile-Digital/Checkout/Checkout.md\">Checkout</a>.\n"
 					},
 					"response": [
 						{

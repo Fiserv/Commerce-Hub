@@ -4,7 +4,7 @@ tags: [API Reference, Card Details, Master Data]
 
 # Card Data
 
-Card is a required object in `source` for all card payment types including; debit, credit, [prepaid *(gift cards)*](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md), [fleet](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md), HSA, WIC/EBT, and [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
+Card is a required object in `source` for all card payment types including; debit, credit, [prepaid *(gift cards)*](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md), [Fleet](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md), HSA, WIC/EBT, and [tokens](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md).
 
 <!-- theme: danger -->
 > Commerce Hub requires all payment cards to be encrypted using [multi-use public key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [simulation purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
@@ -26,7 +26,7 @@ The below table identifies the parameters in the `card` object.
 | `securityCodeIndicator` | *string* | 15 | Indicates how the [security code](?path=docs/Resources/Guides/Fraud/Security-Code.md#security-code-indicator) is passed |
 | `bin` | *string* | 8 |  Bank Identification Number *(BIN)*, the initial set of four to six numbers of the Primary Account Number *(PAN)* and identifies the issuer |
 | `last4` | *string* | 4 |  Last four digits of the Primary Account Number *(PAN)* |
-| `scheme` | *string* | 256 |  Card brand received in the transaction response |
+| `scheme` | *string* | 256 |  [Card brand](?path=docs/Resources/Master-Data/Card-Type.md) received in the transaction response |
 | `category` | *string* | 25 | Describes the card [category](#category-and-subcategory) |
 | `subCategory` | *string* | 25 | Provides the [subcategory](#category-and-subcategory) for the `category` field to identify the card type |
 
@@ -58,7 +58,7 @@ JSON string format for `card`:
 
 ---
 
-### Category and Subcategory
+## Category and subcategory
 
 The below table identifies the valid values of `category` and `subCategory`.
 
@@ -73,5 +73,6 @@ The below table identifies the valid values of `category` and `subCategory`.
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Source Types](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+- [Supported Card Types](?path=docs/Resources/Master-Data/Card-Type.md)
 
 ---
