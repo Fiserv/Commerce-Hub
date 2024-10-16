@@ -4,7 +4,10 @@ tags: [Risk Assessment, Fraud Mitigation, Fraud Controls, 3-D Secure, Verificati
  
 # Fraud Mitigation Solutions
 
-Commerce Hub's Fraud Mitigation Solutions help mitigate common fraud attacks and addresses immediate chargeback issues. Merchants' can customize their risk controls and establish rules tailored to meet the specific business needs. Enhance your security with services like Fraud Scoring, Chargeback Guarantee, Fraud Controls, and Account Takeover *(ATO)* Protection, available as per your subscription.
+Fraud Mitigation Solution provides merchants with the essential tools to make authorization decisions by analyzing transaction attributes and user behavior in real time. Merchants can customize their risk controls and establish rules tailored to meet the specific business needs. Enhance your security with services with Fraud Scoring and Fraud Controls.
+
+<!-- theme: info -->
+> Contact your account representative for more information on using Fraud Mitigation Solutions.
 
 ---
 
@@ -44,7 +47,7 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
 
 ## Risk Assessment APIs
 
-The Risk Assessment API is a fraud mitigation service provided by Commerce Hub. It helps merchants reduce fraudulent activity by allowing them to submit requests for various checks, including Fraud Scoring, Chargeback Guarantee, and Account Takeover *(ATO)* detection.
+The Risk Assessment API, offered by Commerce Hub, is a customizable fraud mitigation service. It enables merchants to reduce fraudulent activity by configuring and submitting requests for Fraud Scoring.
 
 <!-- type: row -->
 
@@ -58,9 +61,9 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Scoring.md
 
 ---
 
-## Security features
+## Additional fraud features
 
-Commerce Hub offers security features to help reduce the risk of fraud. These APIs provide extra layers of security and verification to ensure safe transactions.
+Commerce Hub offers additional fraud features to help reduce the risk of fraud. These features provide extra layers of security and verification to ensure safe transactions.
 
 <!-- type: row -->
 
@@ -68,18 +71,6 @@ Commerce Hub offers security features to help reduce the risk of fraud. These AP
 title: 3-D Secure
 description: Commerce Hub supports 3-D Secure (3DS) transactions through a merchant’s 3DS service or Commerce Hub’s 3DS authentication service.
 link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
--->
-
-<!-- type: card
-title: Account Verification
-description: Request account verification to confirm the validity of a customer’s account and verify AVS and CVV information with the card issuer.
-link: ?path=docs/Resources/API-Documents/Payments_VAS/Verification.md
--->
-
-<!-- type: card
-title: hCaptcha
-description: Enable Commerce Hub's hCaptcha solution to protect your online services from bots, abuse and spam.
-link:
 -->
 
 <!-- type: row-end -->

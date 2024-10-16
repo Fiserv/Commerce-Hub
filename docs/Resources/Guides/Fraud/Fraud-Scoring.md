@@ -6,6 +6,8 @@ tags: [API Reference, Risk Assessment, Fraud Mitigation, Fraud Scoring]
 
 Commerce Hub offers a standalone Fraud Scoring service through our Risk Assessment API. This service helps merchants assess the fraud risk associated with each transaction by providing a fraud score. With this information, merchants can make informed decisions on whether to proceed with the payment. The API is a crucial tool for enhancing security and reducing fraudulent activities in online transactions.
 
+- **Pre-evaluation:** This call is made to the Risk Assessment API to obtain a fraud score before the transaction is processed. It helps in deciding whether to proceed with the next step of the transaction.
+
 <!-- theme: info -->
 > To get additional details about risk assessment results use the reporting tools provided by the scoring provider, see your account representative for more information.
 
@@ -91,14 +93,10 @@ Example of a Fraud scoring Risk Assessment API *(200: Success)* response.
     "ruleDescription": "Accept External Decision",
     "assessmentDetails": [
       {
-        "provider": "FISERV",
+        "provider": "RAVELIN",
+        "providerTransactionId": "764a086f-ad30-4313-b90d-d6dc1929c0d6",
         "approvalStatus": "APPROVED",
-        "score": 30
-      },
-      {
-        "provider": "KOUNT",
-        "approvalStatus": "APPROVED",
-        "score": 30
+        "score": 70
       }
     ]
   }
@@ -152,6 +150,8 @@ The below table identifies the required parameters in the `additionalDataCommon`
 | Event type | Description | Requirements |
 | ----- | ----- | ----- |
 | *AUTHORIZATION* | | |
+| *SALE* | | |
+| *ACCOUNT_REGISTRATION* | This Event type is used to capture and process the event when a merchant wants to register a new account on their platform. | Ensure that all required account data fields are included in the payload. |
 
 <!-- type: tab-end -->
 
@@ -162,11 +162,11 @@ The below table identifies the required parameters in the `additionalDataCommon`
 The following data elements can be included with a fraud scoring request to enhance the accuracy of the risk assessment results.
 
 - [Amount](?path=docs/Resources/Master-Data/Amount-Components.md)
+- [Billing address](?path=docs/Resources/Master-Data/Address.md#billing-address)
 - [Customer details](?path=docs/Resources/Master-Data/Customer-Details.md)
 - [Device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
-- [Billing address](?path=docs/Resources/Master-Data/Address.md#billing-address)
-- [Shipping address](?path=docs/Resources/Master-Data/Address.md#shipping-address)
 - [Order data](?path=docs/Resources/Master-Data/Order-Data.md)
+- [Shipping address](?path=docs/Resources/Master-Data/Address.md#shipping-address)
 
 ---
 
@@ -183,9 +183,9 @@ The below table identifies the response parameters in the `riskAssessmentResult`
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `approvalStatus` | *string* | | A field that carries the transaction score status from a third-party provider, assigned by either the Fraud Mitigation system or Kount |
-| `ruleDescription` | *string* | | A field that provides a brief description of the rule executed by the scoring provider to determine the transaction fraud score for a merchant |
-| `assessmentDetails` | *array* | N/A | |
+| `approvalStatus` | *string* | | This field provides the transaction score status from a third-party provider, assigned by either the Ravelin or Kount |
+| `ruleDescription` | *string* | | Contains a brief description of the rule executed by the scoring provider to determine the transaction fraud score for a merchant |
+| `assessmentDetails` | *array* | N/A | An array that contains the scoring provider name, scoring provider transaction ID, fraud score and the transaction status from the scoring provider. |
 
 **Risk assessment results:**
 
@@ -203,9 +203,10 @@ The below table identifies the response parameters in the `assessmentDetails` ob
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `provider` | *string* | 100 | A scoring provider |
+| `provider` | *string* | 100 | This field that specifies the name of the scoring provider. |
+| `providerTransactionId` | string | 128 | Unique transaction identifier assigned by the service provider to identify a single transaction. |
 | `approvalStatus` | *string* | 128 | A field that indicates the approval status of a transaction as determined by the fraud scoring provider |
-| `score` | *number* | 3 | A field that holds the fraud score assigned by the scoring provider |
+| `score` | *number* | 3 | Contains the fraud score assigned by the scoring provider, ranging from 0 to 99. A lower fraud score indicates a safer transaction. For example, a score closer to 0 suggests a safer transaction. |
 
 <!-- type: tab-end -->
 
