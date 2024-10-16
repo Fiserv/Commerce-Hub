@@ -1,4 +1,4 @@
-Commerce Hub offers a robust library of reporting APIs that includes Search (itemized data) and Summary level results.  For more details, please see [Commerce Hub Reporting](https://dev-developerstudio.fiserv.com/product/Reporting).
+Commerce Hub offers a robust library of reporting APIs that includes Search (itemized data) and Summary level results. For more details, please see [Commerce Hub Reporting](https://dev-developerstudio.fiserv.com/product/Reporting).
 
 In the Payeezy Reporting API, parameters are sent in the url and results are sent back in XML format with a limit of 10k rows.  Commerce Hub has no limit on records returned.
 
@@ -42,12 +42,11 @@ titles: Request Element Detailed Comparison, Response Element Detailed Compariso
 | |filters.first6 | |
 | |filters.last4 | |
 
-
 <!--
 type: tab
 -->
 
-*Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM.*
+_Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM._
 
 |Payeezy Reporting API Response Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
 |:------------------------------------------|:---------------------------------:|:---------------------|
@@ -86,7 +85,7 @@ In Payeezy, parameters are sent in the url and the results are sent back in the 
 
 Payeezy utilizes authentication per user. Commerce Hub authentication is by merchant.
 
-The Payeezy search allows filtering based on criteria related to cardholder name, reference numbers, transaction tags and full card numbers; Commerce Hub does not currently allow searching on those elements.  Commerce Hub allows filtering on payment method, networks, type, siteIDs and auth code in addition to first 6 and last 4 of the card number.   
+The Payeezy search allows filtering based on criteria related to cardholder name, reference numbers, transaction tags and full card numbers; Commerce Hub does not currently allow searching on those elements.  Commerce Hub allows filtering on payment method, networks, type, siteIDs and auth code in addition to first 6 and last 4 of the card number.
 
 Commerce Hub does provide a [summary search function](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary).
 

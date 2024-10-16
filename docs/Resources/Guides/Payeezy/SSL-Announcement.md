@@ -4,7 +4,7 @@ SSL Certificate Update
 Time Sensitive Client Action Required!
 
 <!--theme:info-->
-## ANNOUNCEMENT!
+## ANNOUNCEMENT :information:
 
 To: All Payeezy Gateway Clients
 Platform: E-commerce gateway
@@ -25,7 +25,7 @@ URLs: https://api.globalgatewaye4.firstdata.com
 
 - Clients may download the certificate from Digi Link here: https://www.digicert.com/kb/digicert-root-certificates.htm
 
-#### Instructions to the client on how to install certificate.
+**Instructions to the client on how to install certificate:**
 
 How do I install the new Root Chain?
 

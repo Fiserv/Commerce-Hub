@@ -7,19 +7,19 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, split-shipmen
 # Split Shipment
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
-
-<br>
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 A split shipment is the ability to capture an authorization for the full order amount by performing a capture for each item shipped. Additional information on Commerce Hub split shipment functionality can be found [here](?path=docs/Resources/Guides/Split-Shipment.md).
 
-<br>
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub.
 
-> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
+If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. 
+
+If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
 
 ---
 
-### Platform Comparison for Split Shipment Transactions
+## Platform Comparison for Split Shipment Transactions
 
 | Transacting Platform | Endpoint | Required Elements | Notes|
 | -------- | ------------- | :--------------: |----------|
@@ -29,9 +29,9 @@ A split shipment is the ability to capture an authorization for the full order a
 
 ---
 
-### Re-Authorization Handling
+## Re-Authorization Handling
 
-In Payeezy Gateway, re-authorizations for an expired initial authorization on a split shipment transaction is automatically processed for the merchant at time of settlement.  This functionality is available in Commerce Hub, but must be enabled in the merchant configuration in Client Line Enterprise (CLX).    
+In Payeezy Gateway, re-authorizations for an expired initial authorization on a split shipment transaction is automatically processed for the merchant at time of settlement.  This functionality is available in Commerce Hub, but must be enabled in the merchant configuration in Client Line Enterprise (CLX).
 
 ## See Also
 

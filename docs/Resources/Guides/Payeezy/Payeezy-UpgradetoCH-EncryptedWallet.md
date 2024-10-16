@@ -7,13 +7,13 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallet
 # Encrypted Wallets
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 <!--type: tab
 titles: Apple Pay, Google Pay
 -->
 
-### Encryption Elements
+## Encryption Elements
 
 The below table identifies the parameters in the `source` object.
 

@@ -17,10 +17,9 @@ In RPM, the Virtual Terminal functionality allows for Forced Post and Open Voids
 
 Features currently unavailable in CLX Virtual Terminal:
 
-<ul>
-  <li>The ability to add Soft Descriptors on an initiated transaction.</li>
-  <li>Initiating an ACH transaction. At this time, card only is supported.  ACH release is targeted for Q4 2023.</li>
-</ul>
+- The ability to add Soft Descriptors on an initiated transaction.
+
+- Initiating an ACH transaction. At this time, card only is supported.  ACH release is targeted for Q4 2023.
 
 RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time, CLX Virtual Terminal is available in English language only.
 

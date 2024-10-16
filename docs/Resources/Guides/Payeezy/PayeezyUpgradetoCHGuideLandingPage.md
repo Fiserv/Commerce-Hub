@@ -7,12 +7,11 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 # Payeezy Upgrade to Commerce Hub
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Welcome to the Payeezy Merchant Upgrade to Commerce Hub Playbook.  The playbook is a site containing information to help you move to the new Commerce Hub gateway. These articles provide guidance on the functional and technical differences between the platform. 
+Welcome to the Payeezy Merchant Upgrade to Commerce Hub Playbook.  The playbook is a site containing information to help you move to the new Commerce Hub gateway. These articles provide guidance on the functional and technical differences between the platform.
 
-
-As Commerce Hub continues to grow and new features are added, the playbook will continue to expand and include the changes.   
+As Commerce Hub continues to grow and new features are added, the playbook will continue to expand and include the changes.
 
 ---
 
@@ -218,6 +217,5 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-ReleaseNotes.md
 
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
-
 
 ---

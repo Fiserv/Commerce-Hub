@@ -13,7 +13,7 @@ tags: [carat, commerce-hub, enterprise, reporting, card-not-present, payeezy, se
 
 Reporting was previously accessed via the Payeezy Real-time Payment Manager (RPM) and will now be available through ClientLine Enterprise (CLX).  For more details, please see [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv) .
 
-In RPM, there were five pre-defined reports (Activity, Declined, Fraudulent, Deposits - Closed Batches, Deposits - Pending Batches) available with the ability to adjust the date ranges; the new solution, CLX, is a highly flexible reporting engine that allows you to create many customizable reports. 
+In RPM, there were five pre-defined reports (Activity, Declined, Fraudulent, Deposits - Closed Batches, Deposits - Pending Batches) available with the ability to adjust the date ranges; the new solution, CLX, is a highly flexible reporting engine that allows you to create many customizable reports.
 
 In General, many more data elements are available for reporting in the new CLX solution than were previously available in RPM.  
 
@@ -44,7 +44,7 @@ To generate the comparable **RPM Fraudulent** report in CLX, use the Data Soluti
 
 ### Comparison of RPM Reporting Result Elements to CLX Reports
 
-*Note: many additional elements are available in the CLX reporting UI, the below is a comparison with what was available in RPM.*
+_Note: many additional elements are available in the CLX reporting UI, the below is a comparison with what was available in RPM._
 
 |RPM Result Element             |CLX Element  |
 |:------------------------------------------|:---------------------------------|

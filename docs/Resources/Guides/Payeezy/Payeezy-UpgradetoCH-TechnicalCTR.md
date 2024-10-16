@@ -7,8 +7,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, customer-tran
 # Customer Transaction Record (CTR) Response Element Creation
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
-
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Commerce Hub will not be providing a single CTR element in the API response.  The purpose of this page is to provide developers with the element equivalent list in Commerce Hub in order to recreate the CTR if neccessary.
 
@@ -23,9 +22,9 @@ Commerce Hub will not be providing a single CTR element in the API response.  Th
 ```
 
 ### CTR Creation from Commerce Hub Elements
-Click [here](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/docs/Resources/Guides/Payeezy/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: June 15, 2022_
+Click [here](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Customer_Transaction_Record_Creation.xlsx) to download the table in Excel. _Last Updated: October 16, 2024_
 
-| Payeezy Customer Transaction Record (CTR)| Commerce Hub Elements | 
+| Payeezy Customer Transaction Record (CTR)| Commerce Hub Elements |
 | :-------------------------------------- | :------------- |
 |========== TRANSACTION RECORD ========== | CTR+10 equal Symbols + TRANSACTION RECORD + 10 equal symbols |
 | SEI stereo shop Terminal| paymentReceipt.merchantName |

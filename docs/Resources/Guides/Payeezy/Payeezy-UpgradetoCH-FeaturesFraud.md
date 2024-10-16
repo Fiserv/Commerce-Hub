@@ -7,9 +7,9 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, address-verif
 # Fraud
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed by Fiserv personnel.  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv). 
+Fraud Configuration settings were previously accessed and managed via the Payeezy Real-time Payment Manager (RPM) and will now be managed by Fiserv personnel.  These settings will also be available in a read-only view and for reporting purposes in [ClientLine Enterprise (CLX)](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv).
 
 System level fraud controls are regulated and managed by the Fiserv Fraud Team.
 
@@ -19,7 +19,7 @@ titles: Fraud Filters, Velocity Controls, Address Verification Services (AVS) Fi
 
 ## Configuration
 
-In Payeezy, fraud filters were set at the merchant level; in Commerce Hub, fraud filters are set at the MID (SiteId) level. 
+In Payeezy, fraud filters were set at the merchant level; in Commerce Hub, fraud filters are set at the MID (SiteId) level.
 
 In Payeezy RPM, a csv file containing positive and negative fraud filters could be uploaded to configure the merchant settings.  This functionality is not available in CLX.
 
@@ -27,7 +27,7 @@ In Payeezy RPM, fraud filters could be printed from the screen or downloaded int
 
 In Payeezy RPM, you could search a transaction, click on the detail, and create a new fraud filter based on that transaction. This functionality is not available in CLX.
 
-There is currently an unlimited number of values that can be set for each filter; however, a threshold will be determined and implemented at a future date. _Playbook will be updated with the specific number once it has been set._ 
+There is currently an unlimited number of values that can be set for each filter; however, a threshold will be determined and implemented at a future date. _Playbook will be updated with the specific number once it has been set.
 
 **Negative Filters available for configuration in CLX:**
 
@@ -48,7 +48,7 @@ type: tab
 
 ## API Structure
 
-In Payeezy, Velocity Controls are applied to a completion or capture of a Pre-Auth; in Commerce Hub, they are not. 
+In Payeezy, Velocity Controls are applied to a completion or capture of a Pre-Auth; in Commerce Hub, they are not.
 
 The Cumulative Amount Velocity Controls are checked against the totals of previously _**approved**_ transactions only (default).
 
@@ -58,7 +58,7 @@ The Cumulative Amount Velocity Controls are checked against the totals of previo
 
 Configuration in CLX will allow for the application of controls at a more granular level than Payeezy.  Controls can be assigned by transaction type (Purchase, Refund, etc.) or status (All vs. Approved).
 
-In Payeezy, the currency was set at the terminal/outlet MID versus each control. In CLX, currency is required to be selected for each control. 
+In Payeezy, the currency was set at the terminal/outlet MID versus each control. In CLX, currency is required to be selected for each control.
 
 ---
 
