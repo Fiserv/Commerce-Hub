@@ -82,7 +82,7 @@ Additional information on [Apple Pay Integration](?path=docs/Online-Mobile-Digit
 type: tab
 -->
 
-### Encryption Elements
+## Encryption Elements
 
 The below table identifies the parameters in the Commerce Hub `source` object.
 

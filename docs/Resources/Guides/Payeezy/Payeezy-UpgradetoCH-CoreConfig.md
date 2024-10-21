@@ -15,10 +15,10 @@ Configuration was previously accessed and managed via the Payeezy Real-time Paym
 titles: Terminal Configuration, User Management
 -->
 
-### General
+## General
 
 Batch Settlement cutoff times configuration will not be available in the interface.
- 
+
 The API integration settings were originally controlled solely in RPM; in Commerce Hub, it will be controlled jointly in CLX and Dev Studio.
 
 Partner API capabilities are currently not supported.
@@ -42,7 +42,7 @@ type: tab
 
 ---
 
-### General
+## General
 
 The ability to create and edit users was available in Payeezy RPM Administration and will now be done in CLX.
 
