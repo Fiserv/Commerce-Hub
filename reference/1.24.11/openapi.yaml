@@ -3662,7 +3662,6 @@ components:
           description: 'Provides the subcategory for the <code>category</code> field to identify the card type.'
           example: 'EBT_SNAP'
 
-
     CardDetails:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Master-Data/Card-Details.md">Card meta data</a> details for a for a PaymentCard, PaymentEMV, PaymentTrack or PaymentToken.'
@@ -3790,32 +3789,32 @@ components:
         fastFundsDomesticMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for domestic money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for domestic money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsCrossBorderMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for cross-border money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for cross-border money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsDomesticNonMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for domestic non-money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for domestic non-money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsCrossBorderNonMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for cross-border non-money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for cross-border non-money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsDomesticGambling:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for domestic gambling OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for domestic gambling OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsCrossBorderGambling:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for cross-border gambling OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for cross-border gambling OCTs. Visa Only.'
           example: 'SUPPORTED'
         prepaidIndicator:
           type: string
@@ -3971,6 +3970,11 @@ components:
           type: string
           description: 'Indicates the purpose of cryptographic information.'
           example: 'RTAU'
+        email:
+          type: string
+          maxLength: 256
+          description: 'Business/Client email address.'
+          example: 'business@domain.com'
 
     Customer:
       x-model-version: 1.0
@@ -4082,7 +4086,6 @@ components:
           $ref: '#/components/schemas/Vehicle'
         encryptionData:
           $ref: '#/components/schemas/EncryptionData'
-
 
     DecryptedWallet:
       x-model-version: 1.0
@@ -6985,6 +6988,8 @@ components:
           cryptographicResourceType: 'CERTIFICATE'
           cryptographicResourceLength: 2048
           usedFor: 'RTAU'
+          publicKeyHash: '3A100B15B9430B1711f2E38F05939A9A'
+          email: 'business@domain.com'
 
     ClientCertificateResponse:
       value:
