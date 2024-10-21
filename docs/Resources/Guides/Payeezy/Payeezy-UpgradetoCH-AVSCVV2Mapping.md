@@ -16,7 +16,7 @@ Document can be downloaded by clicking on the link below.
 ---
 
 [Payeezy to Commerce Hub AVS and CVV2 Code Mapping](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Commerce_Hub_to_Payeezy_AVS_and_CVV2_Response_Code_Mapping.xlsx)
-_Last Updated: October 16, 2024_
+_Last Updated: August 15, 2023_
 
 ---
 

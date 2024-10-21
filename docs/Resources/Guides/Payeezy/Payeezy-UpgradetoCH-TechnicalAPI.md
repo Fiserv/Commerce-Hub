@@ -21,17 +21,15 @@ Documents can be downloaded by clicking on the links below.
 
 If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform.
 
-[Payeezy Gateway Direct API Element Level Mapping to Commerce Hub](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Payeezy_Gateway_Direct_Element_Mapping.xlsx)
-
-_Last Updated: October 16, 2024_
+[Payeezy Gateway Direct API Element Level Mapping to Commerce Hub](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Payeezy_Gateway_Direct_Element_Mapping.xlsx)\
+_Last Updated: September 1, 2023_
 
 ### Developer API
 
 If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
 
-[Developer API Element Level Mapping to Commerce Hub](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Payeezy_Developer_API_Element_Mapping.xlsx)
-
-_Last Updated: October 16, 2024_
+[Developer API Element Level Mapping to Commerce Hub](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Payeezy_Developer_API_Element_Mapping.xlsx)\
+_Last Updated: September 1, 2023_
 
 ---
 

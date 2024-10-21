@@ -1,3 +1,7 @@
+# Reporting APIs and Search APIs
+
+{:: comment} Heading newly added. Please validate. {:/ comment}
+
 Commerce Hub offers a robust library of reporting APIs that includes Search (itemized data) and Summary level results. For more details, please see [Commerce Hub Reporting](https://dev-developerstudio.fiserv.com/product/Reporting).
 
 In the Payeezy Reporting API, parameters are sent in the url and results are sent back in XML format with a limit of 10k rows.  Commerce Hub has no limit on records returned.
@@ -13,7 +17,7 @@ In Payeezy, the reporting API was one endpoint and used a report_type parameter 
 |Activity| /v1/chub/search <br> /v1/chub/summary |[Search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/search) <br> [Summary](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary)|
 |Closed Batches | Not Available* | |
 |Pending Batches| Not Available* | |
-|Declined |/v1/chub/search <br> /v1/chub/summary <br> filter approvalCodes = "Declined"|[Search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/search) <br> [Summary](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary) <br> <br>|
+|Declined |/v1/chub/search <br> /v1/chub/summary <br> filter approvalCodes = "Declined"|[Search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/search) <br> [Summary](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary) |
 
 _*Closed Batches and Pending Batches reporting is generated based off systemic Payeezy batch processing functionality and cannot be replicated in Commerce Hub.  Robust settlement reporting will be available._
 
@@ -93,15 +97,15 @@ Commerce Hub does provide a [summary search function](https://dev-developerstudi
 titles: Request Element Detailed Comparison, Response Element Detailed Comparison
 -->
 
-**Request Elements Detailed Comparison**
+**Request Elements Detailed Comparison:**
 
 | Payeezy Gateway Direct Element| Commerce Hub Element | Notes|
 | :-------- | :------------- | :---------- |
 |account |Not Available | |
 |merchant |Not Available | |
 |terminal |Not Available | |
-|start_date  |fromDate | | 
-|end_date  |toDate | | 
+|start_date  |fromDate | |
+|end_date  |toDate | |
 |search_field: <ul><li>cardholder</li><li> refno</li><li> custref</li><li> tag</li><li> cardno </li></ul>   |Not Available  | |
 |search  |Not Available  | |
 |status  |filters.approvalCodes | |
@@ -122,9 +126,9 @@ titles: Request Element Detailed Comparison, Response Element Detailed Compariso
 type: tab
 -->
 
-**Response Elements Detailed Comparison**
+**Response Elements Detailed Comparison:**
 
-*Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM.*
+_Note: many additional elements are available in the Reporting API, the below is a comparison with what was available in RPM._
 
 |Payeezy Search API Response Element     | In Commerce Hub Response? (Y/N)        |Commerce Hub Element  |
 |:------------------------------------------|:---------------------------------:|:---------------------|
@@ -150,7 +154,6 @@ type: tab
 |UserId| N| |
 |Bank Response Code  | Y| assocRespCode _(comparable)_|
 |ETG Response Code| N| |
-
 
 <!-- type: tab-end -->
 

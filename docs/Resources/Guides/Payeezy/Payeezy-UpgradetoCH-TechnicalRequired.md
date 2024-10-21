@@ -11,7 +11,8 @@ tags: [carat, commerce-hub, enterprise, api-required-elements, card-not-present,
 
 The purpose of this page is to give developers a list of required API elements in Commerce Hub by transaction type.  _As new transation types and features are released in Commerce Hub, this table and downloadable document will be updated._  
 
-Click [here](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Commerce_Hub_Required_API_Elements.xlsx) to download the table in Excel. _Last Updated: October 16, 2024_
+Click [here](https://github.com/Fiserv/Commerce-Hub/raw/Payeezy-Prod/assets/doc-files/Commerce_Hub_Required_API_Elements.xlsx) to download the table in Excel.\
+_Last Updated: June 15, 2022_
 
 | Transaction Type | without Transarmor Token | with Transarmor Token|
 | :-------------------------------------- | :------------- |:----------------|

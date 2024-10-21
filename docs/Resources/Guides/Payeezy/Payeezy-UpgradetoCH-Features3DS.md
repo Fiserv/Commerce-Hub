@@ -13,7 +13,11 @@ Commerce Hub allows a merchant to pass the 3-D Secure (3DS) authentication resul
 
 Payeezy supported 3DS v1 and v2; Commerce Hub only supports 3DS v2.
 
-> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub.
+
+If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform.
+
+If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
 
 ## Element Mapping
 

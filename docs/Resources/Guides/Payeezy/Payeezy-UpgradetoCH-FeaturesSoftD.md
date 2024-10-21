@@ -4,7 +4,9 @@ tags: [carat, commerce-hub,  card-not-present, dynamic-descriptor, Statement-Des
 
 ---
 
-# Soft Descriptors
+# Dynamic Descriptors
+
+~~Soft Descriptors~~
 
 <!-- theme: danger -->
 > The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
