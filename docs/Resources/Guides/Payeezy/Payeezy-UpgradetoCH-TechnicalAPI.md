@@ -4,7 +4,7 @@ tags: [carat, commerce-hub, enterprise, api-elements, card-not-present, payeezy]
 
 ---
 
-# API Element Mapping
+# API Element Mapping for Payeezy to Commerce Hub Migration  
 
 <!-- theme: danger -->
 > The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
