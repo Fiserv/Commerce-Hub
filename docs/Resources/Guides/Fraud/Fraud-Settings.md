@@ -4,7 +4,7 @@ tags: [Risk Assessment, Fraud Mitigation, Fraud Controls, 3-D Secure, Verificati
  
 # Fraud Mitigation Solutions
 
-Fraud Mitigation Solution provides merchants with the essential tools to make authorization decisions by analyzing transaction attributes and user behavior in real time. Merchants can customize their risk controls and establish rules tailored to meet the specific business needs. Enhance your security with services with Fraud Scoring and Fraud Controls.
+Fraud Mitigation Solutions provides merchants with the essential tools to make authorization decisions by analyzing transaction attributes and user behavior in real time. Merchants can customize their risk controls and establish rules tailored to meet their specific business needs. Mitigate your fraud risk with our comprehensive services, including Fraud Scoring and Fraud Controls.
 
 <!-- theme: info -->
 > Contact your account representative for more information on using Fraud Mitigation Solutions.
@@ -53,24 +53,8 @@ The Risk Assessment API, offered by Commerce Hub, is a customizable fraud mitiga
 
 <!-- type: card
 title: Fraud Scoring
-description: Enhance decision-making, detect fraudulent networks, and verify legitimate customers by evaluating transactions in real-time with machine learning-based scoring tailored to your business needs.
+description: Drive decision-making, identify fraudulent networks and authenticate valid customers by evaluating transactions in real-time with machine learning-based scoring tailored to your business needs.
 link: ?path=docs/Resources/Guides/Fraud/Fraud-Scoring.md
--->
-
-<!-- type: row-end -->
-
----
-
-## Additional fraud features
-
-Commerce Hub offers additional fraud features to help reduce the risk of fraud. These features provide extra layers of security and verification to ensure safe transactions.
-
-<!-- type: row -->
-
-<!-- type: card
-title: 3-D Secure
-description: Commerce Hub supports 3-D Secure (3DS) transactions through a merchant’s 3DS service or Commerce Hub’s 3DS authentication service.
-link: ?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md
 -->
 
 <!-- type: row-end -->

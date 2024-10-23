@@ -115,7 +115,7 @@ The following variables are required when submitting a Fraud Scoring request.
 
 <!--
 type: tab
-titles: source, customer, merchantDetails, additionalDataCommon
+titles: source, merchantDetails, additionalDataCommon
 -->
 
 The below table identifies the required parameters in the `source` object.
@@ -159,7 +159,7 @@ The below table identifies the required parameters in the `additionalDataCommon`
 
 ### Optional request variables
 
-The following data elements can be included with a fraud scoring request to enhance the accuracy of the risk assessment results.
+The following data elements should be included with a fraud scoring request to enhance the accuracy of the risk assessment results.
 
 - [Amount](?path=docs/Resources/Master-Data/Amount-Components.md)
 - [Billing address](?path=docs/Resources/Master-Data/Address.md#billing-address)
