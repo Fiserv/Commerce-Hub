@@ -1,16 +1,19 @@
 ---
-tags: [Card Not Present, Fraud, Address Verification, Security Code Verification, Velocity Controls, Fraud Filters, Transaction Restrictions]
+tags: [Risk Assessment, Fraud Mitigation, Fraud Controls, 3-D Secure, Verification]
 ---
  
-# Fraud Settings
+# Fraud Mitigation Solutions
 
-Commerce Hub implements various transaction and fraud controls that allows merchants to monitor potentially fraudulent transactions including positive and negative filters, velocity controls, transaction restrictions, and address/security code verification that will automatically accept or reject transactions. These filters will reject the transaction and either block it before any authorization attempt is made, or reverse it it based on the address and security code response.
+Fraud Mitigation Solutions provides merchants with the essential tools to make authorization decisions by analyzing transaction attributes and user behavior in real time. Merchants can customize their risk controls and establish rules tailored to meet their specific business needs. Mitigate your fraud risk with our comprehensive services, including Fraud Scoring and Fraud Controls.
+
+<!-- theme: info -->
+> Contact your account representative for more information on using Fraud Mitigation Solutions.
 
 ---
 
 ## Fraud Controls
 
-Enable Commerce Hub's fraud controls to help reduce fraudulent transactions.
+Commerce Hub provides transaction and fraud controls based on fraud settings, including positive and negative filters, velocity controls, address and security code verification, and transaction restrictions, to automatically accept or reject transactions.
 
 <!-- type: row -->
 
@@ -36,6 +39,22 @@ link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Restrictions.md
 title: Velocity Settings
 description: Velocity Settings determine which transactions Commerce Hub allows to proceed to authorization. 
 link: ?path=docs/Resources/Guides/Fraud/Fraud-Settings-Velocity.md
+-->
+
+<!-- type: row-end -->
+
+---
+
+## Risk Assessment APIs
+
+The Risk Assessment API, offered by Commerce Hub, is a customizable fraud mitigation service. It enables merchants to reduce fraudulent activity by configuring and submitting requests for Fraud Scoring.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Fraud Scoring
+description: Drive decision-making, identify fraudulent networks and authenticate valid customers by evaluating transactions in real-time with machine learning-based scoring tailored to your business needs.
+link: ?path=docs/Resources/Guides/Fraud/Fraud-Scoring.md
 -->
 
 <!-- type: row-end -->

@@ -10,7 +10,7 @@ tags: [Definition, Commerce Hub, Glossary, FAQ]
 
 ### 3-D Secure
 
-[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) (3DS and EMV 3-D Secure) is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the *"three domains"* which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
+[3-D Secure](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) *(3DS and EMV 3-D Secure)* is a protocol designed to be an additional security layer for online credit and debit card transactions. The name refers to the *"three domains"* which interact using the protocol: the merchant/acquirer domain, the issuer domain, and the interoperability domain.
 
 This is a technical standard that adds security to online Card Not Present transactions by authenticating the customer as the owner of the payment card account.
 
@@ -27,6 +27,10 @@ A cryptographically secure credential that allows merchants to access the API.
 ### Access Control Server
 
 An Access Control Server *(ACS)* is a card issuer component in the 3-D Secure process.
+
+### Account Takeover
+
+Account takeover *(ATO)* refers to the unauthorized access of an account using stolen credentials. It is a form of fraud where cybercriminals gain control of online accounts, such as email, bank, or social media accounts, without the owner's permission. This allows the fraudster to gain access to credit card and other sensitive data.
 
 ### Activation
 
@@ -170,7 +174,7 @@ A transaction in which a customer receives cash in-person which is posted agains
 
 ### Clickjacking
 
-A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-Request.md).
+A malicious technique of tricking a customer into clicking on something that can potentially reveal confidential information or allow unauthorized people to take control of their computer while clicking on seemingly something harmless links, including web pages. Commerce Hub handles the risk of clickjacking by its [`iFrame solution`](?path=docs/Online-Mobile-Digital/Checkout/Hosted-Fields/Hosted-Fields-Request.md).
 
 ### Check Digit
 
@@ -202,7 +206,7 @@ The "tuning" or addition of equipment to improve the transmission characteristic
 
 ### Contactless Payments
 
-Contactless payments use radio frequency *(RF)*, also known as Near Field Communication *(NFC)*. The technology is used in payment cards and mobile devices. Contactless Payment Cards are like traditional cards except that they have a contactless chip.
+Contactless payments use radio frequency *(RF)*, also known as Near Field Communication *(NFC)*. The technology is used in payment cards and mobile devices. [Contactless payment cards](?path=docs/In-Person/Encrypted-Payments/EMV.md) are like traditional cards except that they have a contactless EMV chip.
 
 When a customer taps or waves a payment instrument at a merchant terminal equipped with an RFID *(Radio Frequency Identification)* reader, the instrument wirelessly transmits payment details to the terminal.
 
@@ -340,13 +344,13 @@ Electronic Commerce Indicator *(ECI)*. Use of this field is mandated by the bank
 
 ### EMV
 
-[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards (ICC or chip cards) and IC card capable point-of-sale *(POS)* devices. This standard is used for authenticating credit and debit card transactions.
+[EMV](?pathdocs/In-Person/Encrypted-Payments/EMV.md) is a global standard for inter-operation of Integrated Circuit Cards *(ICC or chip cards)* and IC card capable point-of-sale *(POS)* devices. This standard is used for authenticating credit and debit card transactions.
 
 ### EMV Fallback
 
-An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by manually entering the card details or swiping the magnetic stripe.
+An EMV fallback transaction occur when an EMV-enabled payment card fails to complete the payment using EMV technology. In these instances, the merchant might “fall back” to processing the payment by [manually entering the card details](?path=docs/In-Person/Encrypted-Payments/Manual.md) or [swiping the magnetic stripe](?path=docs/In-Person/Encrypted-Payments/Track.md).
 
-EMV fallback transactions only apply to card-present transactions where physical cards are presented by cardholders at payment terminals.
+EMV fallback transactions only apply to [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) where physical cards are presented by cardholders at payment terminals.
 
 ### End Sentinel
 
@@ -430,7 +434,7 @@ A gateway is a program or piece of hardware that passes data between networks.
 
 ### Gateway Capture
 
-Gateway capture also known as gateway settlement, is the process where Commerce Hub closes and settles batches on behalf of the merchant. Typically, credit transactions are setup for terminal capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
+Gateway capture also known as gateway settlement, is the process where Commerce Hub closes and settles batches on behalf of the merchant. Typically, credit transactions are setup for gateway capture. See also [host capture](#host-capture) and [direct capture](#direct-capture).
 
 ---
 
@@ -518,7 +522,7 @@ The issuing bank also known as the customer's bank, issues a payment card or che
 
 ### JavaScript
 
-JavaScript *(JS)* is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Secure Data Capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md).
+JavaScript _(JS)_ is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. Commerce Hub supports JavaScript integrations with [Checkout](?path=docs/Online-Mobile-Digital/Checkout/Checkout.md).
 
 ### JSON
 

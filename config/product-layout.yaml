@@ -96,9 +96,9 @@ featuredFeatures:
       - type: post
         path: /payments-vas/v1/accounts/currencies/dcc
         title: DCC
-  - title: Tap to Pay on iPhone
+  - title: Tap to Pay
     groupName: Featured
-    description: "Leverage Commerce Hub's Tap to Pay on iPhone SDK to accept in-store payments on Apple's iPhone devices."
+    description: "Leverage Commerce Hub's Tap to Pay SDKs to accept in-store payments on iOS and Android devices."
     featured: true
     relatedDocs:
      - link: docs/In-Person/Integrations/Tap-to-Pay.md
@@ -107,28 +107,28 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: Charges
-  - title: Secure Data Capture
+  - title: Checkout
     groupName: Featured
     description: Commerce Hub offers online integration methods for E-commerce merchants that require SAQ A and SAQ A-EP compliance.
     featured: true
     relatedDocs:
-     - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
-       title: Secure Data Capture
+     - link: docs/Online-Mobile-Digital/Checkout/Checkout.md
+       title: Checkout
     relatedAPIs:
       - type: post
         path: /payments-vas/v1/card-capture
         title: Card Capture
-  - title: 3D-Secure
+  - title: Fraud Mitigation
     groupName: Featured
-    description: "Commerce Hub supports 3-D Secure (3DS) transactions from a either a merchant's third party authentication service or through Commerce Hub's authentication service."
+    description: "Fraud Mitigation Solutions provides merchants with the essential tools to make authorization decisions by analyzing transaction attributes and user behavior in real time."
     featured: true
     relatedDocs:
-     - link: docs/Online-Mobile-Digital/Secure-Data-Capture/Secure-Data-Capture.md
-       title: Secure Data Capture
+     - link: docs/Resources/Guides/Fraud/Fraud-Settings.md
+       title: Fraud Mitigation
     relatedAPIs:
       - type: post
-        path: /payments-vas/v1/3ds/authenticate
-        title: 3DS
+        path: /payments-vas/v1/risk-assessment
+        title: Risk Assessment
   - title: Tokenization
     groupName: Featured
     description: "Securely store customer card data as a token using Commerce Hub's tokenization service."
@@ -191,17 +191,6 @@ featuredFeatures:
 #    relatedDocs:
 #     - link: docs/Resources/Guides/Debit/Debit.md
 #       title: Debit Solutions
-#    relatedAPIs:
-#      - type: post
-#        path: /payments/v1/charges
-#        title: Charges
-#  - title: Contactless Payments
-#    groupName: In-Person
-#    description: "By leveraging the third-party payment solutions and Commerce Hub SDKs, customer's can make contactless payments using their credit card or mobile device."
-#    featured: false
-#    relatedDocs:
-#     - link: docs/In-Person/Encrypted-Payments/Contactless.md
-#       title: Contactless Payments
 #    relatedAPIs:
 #      - type: post
 #        path: /payments/v1/charges
@@ -285,7 +274,7 @@ featuredFeatures:
 #    codeSample: '[json
 #                  {
 #                    "amount": {
-#                      "total": "12.04",
+#                      "total": 12.04,
 #                      "currency": "USD"
 #                    },
 #                    "transactionDetails": {

@@ -28,7 +28,7 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 ```json
 {
   "amount": {
-    "total": 13.5,
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -78,7 +78,7 @@ Example of a charges (201: Created) response
   "paymentReceipt": {
     "approvedAmount": {
       "currency": "USD",
-      "total": "12.04"
+      "total": 12.04
     },
     "processorResponseDetails": {
       "approvalCode": "OK5882",

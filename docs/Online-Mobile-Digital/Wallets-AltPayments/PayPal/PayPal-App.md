@@ -46,6 +46,7 @@ title: Response
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+
 ```json
 {
    "gatewayResponse":{
@@ -64,7 +65,6 @@ title: Response
    "source":"GooglePay",
    "paymentToken":{
       "tokenData":"1234123412340019",
-      "PARId":"string",
       "declineDuplicates":false,
       "tokenSource":"RSA"
    },

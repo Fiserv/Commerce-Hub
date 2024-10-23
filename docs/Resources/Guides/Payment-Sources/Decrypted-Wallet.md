@@ -1,19 +1,24 @@
 ---
-tags: [Decrypted Wallet, Apple Pay, Google Pay, Payment Sources]
+tags: [Decrypted Wallet, Apple Pay, Google Pay, Payment Sources, Online, Digital, Mobile, Card Not Present]
 ---
 
-# Decrypted Wallet
+# Using DecryptedWallet as a payment source
+
+*DecryptedWallet* is utilized by merchants to securely transmit transaction data to Commerce Hub. By decrypting the digital wallet, a merchant has the ability to view the card data before submitting the transaction, giving them full control over the customer’s payment journey.
+
+ When merchants receive encrypted payment data from [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md) and [Google Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md), they use their own certificates to decrypt this data before sending it to Commerce Hub. It is recommended that a merchant uses their own certificate to encrypt the data before sending it to Commerce Hub.
 
 <!-- theme: danger -->
-> We are enhancing Commerce Hub and the documents related to the features will be released soon.
+> We are enhancing Commerce Hub to support [MUPK encrypted *DecryptedWallet*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md). Documentation related to this feature will be released soon.
 
-*DecryptedWallet* is used by the merchant while sending the transaction to the Commerce Hub when they are using their own certificate to encrypt the data received from Apple Pay and Google Pay.
+**Digital wallet account types:**
 
-### Request Variables
+- **Funding Primary Account Number *(FPAN)*:** The physical account number on the front of a credit or debit card.
+- **Device Primary Account Number *(DPAN)*:** A device-specific token from the wallet provider that is associated with the FPAN.
 
 <!--
 type: tab
-titles: source, card, JSON Example
+titles: source, card
 -->
 
 The below table identifies the parameters in the `source` object.
@@ -21,63 +26,28 @@ The below table identifies the parameters in the `source` object.
 | Variable | Type| Max Length | Required | Description |
 |---------|----------|-------|---------|---------|
 | `sourceType` | *string* | 15 | &#10004; | Value *DecryptedWallet* is used for Decrypted Wallet requests. |
-| `card` | *object* | N/A | &#10004; | Decrypted card details |
 | `cavv` | *string* | 40 | &#10004; | Cardholder Authentication Verification Value provided by the Wallet Provider |
 | `xid` | *string* | 40 | | The unique identifier for the transaction provided by the Wallet Provider |
-| `walletType` | *string* | 256 | &#10004; | Identifies the wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `card` object.
-
-| Variable | Type | Max Length | Required | Description |
-| -------- | -- | ------------ | ---------|--------- |
-| `cardData` | *string* | 256 | &#10004; | Card number or encrypted data |
-| `expirationMonth` | *string* | 2 | &#10004; | 2-digit expiration month |
-| `expirationYear` | *string* | 5 | &#10004; | 4-digit expiration year |
-
-<!-- theme: info -->
-> Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
-
-<!--
-type: tab
--->
-
-JSON string format for DecryptedWallet:
-
-```json
-{
-  "source": {
-    "sourceType": "DecryptedWallet",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035"
-    },
-    "cavv": "01ade6ae340005c681c3a1890418b53000020000",
-    "xid": "13456789",
-    "walletType": "ApplePay"
-  }
-}
-```
+| `walletType` | *string* | 256 | &#10004; | Identifies the wallet as APPLE_PAY or GOOGLE_PAY |
+| `card` | *object* | N/A | &#10004; | Contains the payment [card details](?path=docs/Resources/Master-Data/Card.md) |
 
 <!-- type: tab-end -->
 
-### Payload Example
+---
+
+## Submit an DecryptedWallet request
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a charge payload request.
+The example below contains the parameters for a successful [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a *DecryptedWallet*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
 
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -102,10 +72,10 @@ Example of a charge payload request.
 type: tab
 -->
 
-Example of a charge (201: Created) response.
+Example of a Charges API *(201: Created)* response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
@@ -169,7 +139,7 @@ Example of a charge (201: Created) response.
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Apple Pay](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md)
