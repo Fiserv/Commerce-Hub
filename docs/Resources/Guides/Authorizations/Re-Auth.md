@@ -6,7 +6,10 @@ tags: [Card Not Present, Reauthorization, Reauth, Reauthorize, Authorization]
 
 A merchant initiates a new reauthorization when the completion or fulfillment of the original order or service extends beyond the authorization validity limit set by networks.
 
-A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times. The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
+<!-- theme: info -->
+> See an account representative for more information on issuer hold times.
+
+The most common reason for reauthorization is due to a pre-order or [split shipment](?path=docs/Resources/Guides/Split-Shipment.md). These authorizations are handled by one of the following methods:
 
 - **Merchant Managed:** The merchant submits the transaction with the required fields and a reauthorization is processed by Commerce Hub.
 - **Commerce Hub Managed:** The merchant submits a subsequent transaction and Commerce Hub verifies the validity and reauthorizes if required.
@@ -14,7 +17,7 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to support Commerce Hub managed reauthorizations and the documents related to the feature will be released soon.
 
-### Reauthorization Scenarios
+#### Reauthorization Scenarios
 
 - Split or delayed shipments at eCommerce retailers.
 - Extended stay hotels, car rentals, and cruise lines.
@@ -23,22 +26,22 @@ A reauthorization with a [token](?path=docs/Resources/API-Documents/Payments_VAS
 - Different transaction amount in either authorization or settlement.
 
 <!-- theme: info -->
-> See an account representative for more information on issuer hold times.
+> A new authorization using a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) is required when a pending authorization has been released based on the card issuer's hold times.
 
 ---
 
 ## Request Variables
 
-The `transactionIndicatorType` and `authorizationSequence` in `transactionDetails` along with the `referenceTransactionId` or `referenceMerchantTransactionId` in `referenceTransactionDetails` from the original transaction must be sent in the subsequent reauthorization performed.
+The `authorizationTypeIndicator` and `authorizationSequence` in `transactionDetails` along with the `referenceTransactionId` or `referenceMerchantTransactionId` in `referenceTransactionDetails` from the original transaction must be sent in the subsequent reauthorization performed.
 
 <!--
 type: tab
-titles: transactionDetails, referenceTransactionDetails, JSON Example
+titles: transactionDetails, referenceTransactionDetails
 -->
 
 The below table identifies the additional parameters in the `transactionDetails` object.
 
-| Variable | Type| Maximum Length | Description |
+| Variable | Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `authorizationTypeIndicator` | *string* | N/A | Identifies the authorization type of subsequent transactions. **Value:** REAUTH.|
 | `authorizationSequence` | *string* | 27 | Type of authorization sequence requested.|
@@ -49,7 +52,7 @@ The below table identifies the valid values of type of `authorizationSequence`.
 
 | Value | Description |
 | ----- | ----- |
-| *AUTHORIZATION_ONLY* | Only authorize the transaction |
+| *AUTHORIZATION_ONLY* | Only authorize the transaction to extend the validity date |
 | *AUTHORIZATION_BEFORE_CANCEL* | Authorize the transaction before canceling the original |
 | *CANCEL_BEFORE_AUTHORIZATION* | Cancel the original transaction before submitting a new authorization |
 
@@ -62,28 +65,10 @@ The below table identifies the additional parameters in the `referenceTransactio
 <!-- theme: info -->
 > Only a single transaction identifier should be passed within the request.
 
-| Variable | Data Type | Maximum Length |Description |
+| Variable | Data Type | Max Length |Description |
 |---------|----------|----------------|---------|
 |`referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
 |`referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-
-<!--
-type: tab
--->
-
-JSON string format:
-
-```json
-{
-   "transactionDetails":{
-      "transactionIndicatorType": "REAUTH",
-      "authorizationSequence": "AUTHORIZATION_ONLY"
-   },
-   "referenceTransactionDetails":{
-      "referenceTransactionId": "84356531348"
-   }
-}
-```
 
 <!-- type: tab-end -->
 
@@ -107,7 +92,7 @@ Example of a reauthorization payload request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "transactionDetails": {

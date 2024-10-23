@@ -28,7 +28,7 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 ```json
 {
   "amount": {
-    "total": 13.5,
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -38,7 +38,8 @@ The example below contains the minimum [parameters](#parameters) for a successfu
     "card": {
       "expirationMonth": "10",
       "expirationYear": "2030"
-    },
+    }
+  },
   "transactionDetails": {
     "captureFlag": true
   },
@@ -77,7 +78,7 @@ Example of a charges (201: Created) response
   "paymentReceipt": {
     "approvedAmount": {
       "currency": "USD",
-      "total": "12.04"
+      "total": 12.04
     },
     "processorResponseDetails": {
       "approvalCode": "OK5882",
@@ -123,7 +124,7 @@ Example of a charges (201: Created) response
 #### Request Variables
 
 <!-- theme: info -->
-> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
+> It is recommended that the merchant captures the [encrypted CVV](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
 
 <!--
 type: tab
@@ -148,7 +149,7 @@ type: tab
 
 The below table identifies the required parameters in the `card` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 | ----- | :-----: | :-----: | :-----: | ----- |
 | `expirationMonth` | *string* | 2 | &#10004; | 2-digit card expiration month |
 | `expirationYear` | *string* | 4 | &#10004; | 4-digit card expiration year |
@@ -166,7 +167,7 @@ titles: paymentToken
 
 The below table identifies the parameters in the `paymentToken` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
 | `tokenAssuranceMethod` | *string* | 256 | The token assurance method is set when issuing a network token and may be updated if additional ID&V is performed. |
 
@@ -181,6 +182,6 @@ The below table identifies the parameters in the `paymentToken` object.
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Stored Credentials](?path=docs/Resources/Guides/Stored-Credentials.md)
 - [Tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md)
-- [Multi Use Public Key](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
+- [Multi Use Public Key](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
 
 ---

@@ -5,7 +5,7 @@ tags: [API Reference, ACH, Check Details, Master Data]
 
 # Check Data
 
-Check is a required object in `source` for all card payment types including; debit, credit, prepaid (gift), HSA, and WIC/EBT.
+Check is a required object in `source` for all check payment types.
 
 <!--
 type: tab
@@ -15,11 +15,12 @@ titles: check, JSON Example
 The below table identifies the parameters in the `check` object.
 
 | Variable | Type | Length | Description |
-| -------- | ------- | ----------- |------|
+| ----- | :-----: | :-----: | ----- |
+| `nameOnCheck` | *string* | 50 | Check holder name |
+| `checkData` | *string* | 45 | Identifying data for the check presented *(i.e check number)* |
 | `routingNumber` | *string* | 45 | Routing number endorsed on the check |
 | `accountNumber` | *string* | 45 | Account number endorsed on the check |
 | `checkType` | *string* | 256 | Describes [check type](#check-type) |
-| `checkData` | *string* | 45 | Identifying data for the check presented *(i.e check number)* |
 | `accountType` | *string* | 45 | Describes [account type](#account-type)|
 
 <!--
@@ -33,11 +34,12 @@ JSON string format for `check`:
   "source": {
     "sourceType": "PaymentCheck",
     "check": {
+      "nameOnCheck": "Jane Smith",
+      "checkData": "3654803",
       "accountNumber": "144155167",
       "routingNumber": "121000248",
-      "checkType": "Business",
-      "checkData": "3654803",
-      "accountType": "Savings"
+      "checkType": "PERSONAL",
+      "accountType": "CHECKING"
     }
   }
 }
@@ -52,9 +54,12 @@ JSON string format for `check`:
 The below table identifies the valid values of `checkType`.
 
 | Value | Description |
-|-------|-------------|
+| ----- | ----- |
 | *PERSONAL* | Used for individual financial transactions |
 | *BUSINESS* | Used for company-related financial transactions |
+| *COMDATA_CHECK* | Used for Fleet transactions processing a Comdata ComCheck [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
+| *COMDATA_EXPRESS* | Used for Fleet transactions processing a Comdata Express Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
+| *MONEY_CODE* | Used for Fleet transactions processing a WEX Money Code [PaymentCheck](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) |
 
 ---
 
@@ -63,7 +68,7 @@ The below table identifies the valid values of `checkType`.
 The below table identifies the valid values of `accountType`.
 
 | Value | Description |
-|-------|-------------|
+| ----- | ----- |
 | *CHECKING* | For everyday transactions |
 | *SAVINGS* | For long term savings and earning interest |
 
@@ -72,7 +77,8 @@ The below table identifies the valid values of `accountType`.
 ## See Also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
-- [Payment Card](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md)
+- [Fleet Payments](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md)
+- [Pay By Bank](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md)
 - [Source Type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 
 ---

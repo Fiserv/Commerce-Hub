@@ -1,42 +1,38 @@
 ---
-tags: [Account Management, Developer Portal, Key Management, API Key, API Secret]
+tags: [Account Management, Developer Studio, Key Management, API Key, API Secret]
 ---
 
-# API Key Management
+# Developer Studio: Create an API key
 
-A developer can manage their API application Keys and API Secrets from the [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md). API Key Management allows you to [create and delete an API Key](#create-an-api-key).
+A developer can manage their API application keys and API secrets from the [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md). API key management allows you to create and delete API keys for [sandbox, certification and production accounts](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md).
 
 ---
 
-## Create an API Key
-
-Developers can create and manage API Keys from the Dashboard in the Credentials section.
-
-### Step 1: Access Developer Studio
+## Step 1: Access Developer Studio
 
 Login to the Developer Studio and access the Developer Dashboard.
 
 ---
 
-### Step 2: Add a New API Key
+## Step 2: Add a new API Key
 
-Click Add API Key.
-
----
-
-### Step 3: Select Merchant Account
-
-Select the [Merchant Account](?path=docs/Resources/Guides/Dev-Studio/Account-Management.md) and associated Merchant ID required for integration from the dropdown.
+Click *Add API Key*.
 
 ---
 
-### Step 4: Create an API Name
+## Step 3: Select the merchant account
 
-Create a API Key Name to identify the project.
+Select the merchant account and associated merchant ID *(MID)* required for integration from the dropdown.
 
 ---
 
-### Step 5: Select Features
+### Step 4: Create an API name
+
+Create an API Key name to identify the project.
+
+---
+
+## Step 5: Select Commerce Hub features
 
 Select the features to be integrated from the following;
 
@@ -47,9 +43,9 @@ Select the features to be integrated from the following;
 
 ---
 
-### Step 6: Create Keys
+## Step 6: Create the API Key
 
-Click Create to obtain the API Key/Secret.
+Click *Create* to obtain the API Key/Secret.
 
 ---
 

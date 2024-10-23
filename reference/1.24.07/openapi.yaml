@@ -7415,11 +7415,25 @@ components:
     PaymentCardCaptureResponse:
       value:
         gatewayResponse:
+          transactionType: 'TOKENIZE'
+          transactionState: 'AUTHORIZED'
           transactionProcessingDetails:
-            transactionTimestamp: '2021-06-20T23:42:48Z'
-            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
-            clientRequestId: '4345791'
-            transactionId: '84356531338'
+            transactionTimestamp: '2024-03-12T18:15:39.710423262Z'
+            apiTraceId: '755f19915f284309bd28250124620ef5'
+            clientRequestId: '681a5623eceb7b521e6a3bd520b70915'
+            transactionId: '755f19915f284309bd28250124620ef5'
+        source:
+          sourceType: PaymentCard
+          card:
+            last4: 0019
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        paymentTokens:
+          - tokenData: '0904868098381732'
+            tokenSource: 'TRANSARMOR'
+            tokenResponseCode: '000'
+            tokenResponseDescription: 'SUCCESS'
     
     PaymentCardCashoutRequest:
       value:

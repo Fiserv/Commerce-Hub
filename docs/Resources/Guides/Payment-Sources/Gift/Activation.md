@@ -20,13 +20,13 @@ titles: target, amount, transactionDetails, transactionInteraction, merchantDeta
 
 The below table identifies the parameters in the `target` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | _string_ | 15 | The payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) of _PaymentCard_ is required in a [physical gift card](#physical-gift-card) activitation. |
 
 The below table identifies the conditional parameters in `card` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `category`| _string_ | 25 | Defines the card type as GIFT |
 | `subCategory`| _string_ | 25 | Identifies the gift card provider |
@@ -40,7 +40,7 @@ The below table identifies the parameters in the `amount` object.
 <!-- theme: info -->
 > If the card is non-denominated the `amount` object is required.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `total` | _number_ | 12 | Total amount to load onto the gift card  |
 | `currency` | _string_ | 3 | The requested currency in [ISO 3 Currency Format](?path=docs/Resources/Master-Data/Currency-Code.md) |
@@ -51,7 +51,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `operationType` | _string_ | 50 | Defines the request type as ACTIVATE |
 
@@ -61,7 +61,7 @@ type: tab
 
 The below table identifies the required parameters in the `transactionInteraction` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `terminalTimestamp` | _string_ | N/A | Terminal timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ |
 
@@ -71,7 +71,7 @@ type: tab
 
 The below table identifies the parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Required | Description |
+| Variable | Data Type| Max Length | Required | Description |
 |---------|----------|----------------|---------|-----|
 |`merchantId` | _string_ | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | _string_ | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -83,13 +83,13 @@ type: tab
 
 The below table identifies the parameters in the `additionalDataCommon` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `additionalData` | _object_ | N/A |  Idenitfies adtionatal data in the request. |
 
 The below table identifies the conditional parameters in the `additionalData` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a [digital gift card](#digital-gift-card) |
 | `fundingProvider` | _string_ | 32 |  Identifies who provided the funds, CUSTOMER, MERCHANT or UNSPECIFIED |
@@ -108,7 +108,7 @@ titles: balances, target
 
 The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | _number_ | 16,3 | Account beginning balance |
 | `endingBalance` | _number_ | 16,3 | Account ending balance
@@ -120,13 +120,13 @@ type: tab
 
 The below table identifies the parameters in the `target` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `sourceType` | _string_ | 15 | The payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) is _PaymentCard_ on a [digital gift card](#digital-gift-card) activitation. |
 
 The below table identifies the parameters in `card` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | -----|
 | `cardData` | _string_ | 256 | Credit card number |
 | `expirationMonth` | _string_ | 2 | 2-digit card expiration month |

@@ -14,6 +14,8 @@ docs/Resources/Guides/Vault/**
 docs/Resources/API-Documents/Value_Added_Services/**
 docs/Resources/Guides/Industry-Verticals/**
 docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
+docs/Online-Mobile-Digital/Checkout/Payment-JS/**
+docs/Resources/Guides/Partners/Modules/**
 
 ## Markdown Files
 
@@ -26,22 +28,9 @@ docs/Resources/Guides/Bill-Payments/Bill-Payments.md
 docs/Resources/Guides/Bill-Payments/Deferred-Payment.md
 docs/Resources/Guides/Bill-Payments/Payment-Schedule.md
 docs/Resources/Guides/Fraud/Fraud-Detect.md
-docs/Resources/Guides/Payment-Sources/TeleCheck-ACH.md
 docs/Resources/Guides/PSD2-SCA.md
 docs/Resources/Guides/VAS.md
-docs/Resources/Guides/Enterprise-Portal/Access-Token.md
-docs/Resources/Guides/Enterprise-Portal/Account-Management.md
-docs/Resources/Guides/Enterprise-Portal/Merchant-Boarding.md
-docs/Resources/Guides/Enterprise-Portal/Profiles.md
-docs/Resources/Guides/Enterprise-Portal/User-Management.md
-docs/Resources/Guides/Enterprise-Portal/Quick-Key.md
 docs/Resources/Guides/Dev-Studio/Certification.md
-docs/Online-Mobile-Digital/3D-Secure/Native-3DS.md
-docs/Online-Mobile-Digital/3D-Secure/Native-Web.md
-docs/Online-Mobile-Digital/3D-Secure/Native-Mobile.md
-docs/Online-Mobile-Digital/3D-Secure/Redirect-3DS.md
-docs/Online-Mobile-Digital/3D-Secure/Redirect-Web.md
-docs/Online-Mobile-Digital/3D-Secure/Redirect-Mobile.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesWallet.md
 docs/Resources/Guides/Payeezy/ReportingandSearchAPI.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesPartialVoid.md
@@ -53,8 +42,6 @@ docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTimeoutReversal.md
 docs/Resources/Guides/Payeezy/Payeezy-Migration-FeaturesTerminalSettlement.md
 docs/Resources/Guides/Debit/Smart-Routing.md
 docs/In-Person/Integrations/Fully-Integrated.md
-docs/In-Person/Integrations/Semi-Integrated.md
-docs/In-Person/Encrypted-Payments/Contactless.md
 docs/Resources/Guides/Authorizations/Incremental-Auth.md
 docs/Resources/Guides/Response-Codes/Host-Response-Code.md
 docs/Resources/Guides/Testing/Test-Address-Security.md
@@ -65,5 +52,4 @@ docs/Resources/Guides/Testing/Test-Fraud.md
 docs/Resources/Guides/Testing/Test-Integration.md
 docs/Resources/Master-Data/Commodity-Codes-Old.md
 docs/Resources/Guides/Payment-Sources/Tokenization/Secure-Vault.md
-docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token-Request.md
-docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-V1_V2_Comparison.md
+docs/In-Person/Integrations/Terminal-API/Android-TTP.md

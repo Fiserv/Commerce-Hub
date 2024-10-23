@@ -9,7 +9,7 @@ tags: [Bill Payments, Installment Bill Payments]
 
 Installment transaction information is submitted in the `installments` object as part of `additionalDataCommon`.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `installmentCount` | *integer* | 3 | Number of installment payments in the plan |
 

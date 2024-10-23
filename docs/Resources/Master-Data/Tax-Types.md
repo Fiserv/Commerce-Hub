@@ -13,7 +13,7 @@ titles: taxAmounts, JSON Example
 
 The below table identifies the parameters in the `taxAmounts` array.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `taxType` | *string* |  | Identifies the [type of tax](#tax-type) being applied |
 | `taxRate` | *number* | 3 | Tax rate percent being applied |

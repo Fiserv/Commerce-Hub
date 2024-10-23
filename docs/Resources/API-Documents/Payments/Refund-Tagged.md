@@ -2,95 +2,40 @@
 tags: [Full Refund, Payments, Partial Refund, Refund, API Reference]
 ---
 
-# Tagged Refund
+# Process a tagged reversal using the Refunds API
 
 A tagged refund allows a merchant to maintain the transaction history in Commerce Hub by associating the refund to the original [charge request](?path=docs/Resources/API-Documents/Payments/Charges.md) by using the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 <!-- theme: danger -->
-> A refund request can be initiated against a [charge](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request.
+> Refund API requests can be initiated against a [transaction](?path=docs/Resources/API-Documents/Payments/Charges.md) only if it is already been [captured](?path=docs/Resources/API-Documents/Payments/Capture.md), otherwise submit a [void request](?path=docs/Resources/API-Documents/Payments/Cancel.md).
 
-##### Refund Types
+**Refund types:**
 
 Refunds can be initiated for the full amount or a partial amount of the original authorization.
 
-- **Partial Refund:** A request submitted with the `amount` object for a partial `total`.
-- **Full Refund:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
+- **Partial:** A request submitted with the `amount` object for a partial `total`.
+- **Full:** Can be submitted without the `amount` object to refund the full `total`, or submitted with the `amount` object for the full `total`.
 
 ---
 
-## Request Variables
-
-A tagged refund request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type.
-
-<!-- theme: warning -->
-> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
-
-<!-- 
-type: tab
-titles: referenceTransactionDetails, amount, merchantDetails
--->
-
-The below table identifies the available parameters in the `referenceTransactionDetails` object.
-
-<!-- theme: info -->
-> Only a single transaction identifier should be passed within the request.
-
-| Variable | Data Type| Maximum Length |Description |
-|---------|----------|----------------|---------|
-| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
-| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `amount` object.
-
-| Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
-| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
-| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `merchantDetails` object.
-
-| Variable | Data Type| Maximum Length | Required | Description |
-|---------|----------|----------------|---------|-----|
-| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. The merchant must use the value assigned by the acquirer or the gateway when submitting a transaction. |
-| `terminalId` | *string* | 1024 | &#10004; | Identifies the specific device or point of entry where the transaction originated assigned by the acquirer or the gateway. |
-
-<!-- type: tab-end -->
-
----
-
-## Endpoint
-
-<!-- theme: success -->
-> **POST** `/payments/v1/refunds`
-
----
-
-## Payload Example
-
+## Submit a tagged Refunds API request
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a refunds payload request.
+The example below contains the minimum [parameters](#parameters) for a successful tagged Refunds API request using `referenceTransactionId`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/refunds).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/refunds`
 
 ```json
-
 {
   "referenceTransactionDetails": {
     "referenceTransactionId": "84356531348"
   },
-{
   "amount": {
-    "total": "10.00",
+    "total": 12.04,
     "currency": "USD"
   },
   "merchantDetails": {
@@ -100,20 +45,17 @@ Example of a refunds payload request.
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/refunds)
-
 <!--
 type: tab
 -->
 
-Example of a refunds (201: Created) response.
+Example of a tagged Refunds API *(201: Created)* response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
-
   "gatewayResponse": {
     "transactionType": "REFUND",
     "transactionState": "AUTHORIZED",
@@ -175,7 +117,60 @@ Example of a refunds (201: Created) response.
 
 ---
 
-## See Also
+## Parameters
+
+### Request variables
+
+A tagged Refund API request is initiated by sending the `referenceTransactionDetails` in the payload and may contain the 'amount' object based on the refund type.
+
+<!-- theme: warning -->
+> In-person PIN based [EMV](?path=docs/In-Person/Encrypted-Payments/EMV.md#pin-based-transactions) and [Track](?path=docs/In-Person/Encrypted-Payments/Track.md#pin-based-transactions) refunds require the payment source including `encryptionData` and `pinBlock`.
+
+<!-- theme: danger -->
+> All [online refunds](?path=docs/Resources/API-Documents/Payments/Refund-Auth-Capture.md) not submitted with `captureFlag` *true* require a subsequent Refunds API capture request to complete the settlement of the authorized refund.
+
+<!-- 
+type: tab
+titles: referenceTransactionDetails, amount, merchantDetails
+-->
+
+The below table identifies the available parameters in the `referenceTransactionDetails` object.
+
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction. |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `amount` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
+| `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+
+<!--
+type: tab
+-->
+
+The below table identifies the required parameters in the `merchantDetails` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
+
+<!-- type: tab-end -->
+
+---
+
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/refunds)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)

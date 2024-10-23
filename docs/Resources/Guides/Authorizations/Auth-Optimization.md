@@ -1,21 +1,22 @@
 ---
-tags: [Authorization, Approval Rate, Decline Rate]
+tags: [Authorization, Approval Rate, Decline Rate, Payment Optimization]
 ---
 
-# Authorization Optimization
+# Increase approval rates with Authorization Optimization
 
-Authorization Optimization from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for E-commerce transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks ensuring higher approval rates. This is achieved by locating updated card numbers and/or expiration dates and retying the transaction with this new data.
-
-<!-- theme: info -->
-> Authorization Optimization needs to be configured in Merchant Configuration and Boarding. Authorization Optimization can be configured to receive updated card data and reason, or the reason only, please contact your account representative for more information.
-
-### Supported Features
+[Authorization Optimization](https://www.carat.fiserv.com/en-us/solutions/optimization/) from Commerce Hub helps businesses maximize their approval rates by preventing and recovering declines for [online, digital and mobile](?path=docs/Getting-Started/Getting-Started-Online.md) transactions. By combining adaptive rules based logic, using network account updater and leveraging partnerships with issuing banks, Authorization Optimization ensures higher approval rates. This is achieved by locating updated card numbers and expiration dates and retrying the transaction with the new data.
 
 <!-- theme: info -->
-> Authorization Optimization is valid for Visa and Mastercard card not present transactions.
+> Authorization Optimization needs to be configured in Merchant Configuration and Boarding. Authorization Optimization can be configured to receive updated card data and reason, token data and reason, or the reason only. Please contact your account representative for more information.
 
-- Real time card account updater
+**Supported features:**
+
+<!-- theme: info -->
+> Authorization Optimization is valid for Visa and Mastercard transactions on Nashville.
+
+- Real-time account updater *(RTAU)*
 - Dynamic retry
+
 <!---
 - Batch card account updater (Not in scope)
 - Deferred retry (Not in scope)
@@ -23,11 +24,7 @@ Authorization Optimization from Commerce Hub helps businesses maximize their app
 -->
 
 <!-- theme: warning -->
-> Card account updater and dynamic retry are not supported by all platforms and processors, please contact your account representative for more information.
-
-### Supported Transaction Types
-
-The following transactions may receive updated card details in the response; [Charges](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds](?path=docs/Resources/API-Documents/Payments/Refund.md).
+> RTAU and dynamic retry are not supported by all platforms and processors, please contact your account representative for more information.
 
 <!---
 All secondary transactions including; [Capture](?path=docs/Resources/API-Documents/Payments/Capture.md), offline Refund and [Cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) *(voids)* requests may need to send updated card details in the subsequent requests.
@@ -35,126 +32,24 @@ All secondary transactions including; [Capture](?path=docs/Resources/API-Documen
 
 ---
 
-## Request Variables
+## Supported transactions
 
-<!--
-type: tab
-titles: transactionDetails, JSON Example
--->
-
-The below table identifies the parameters in the `transactionDetails` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `authOptimazation` | *string* | 32 | An identifier used to override what data is received in the response for merchants boarded for Authorization Optimization. If not sent Commerce Hub will use the settings in Merchant Configuration and Boarding. |
-
-### Authorization Optimization Type
-
-| Values | Description |
-|-------------|---------------|
-| *CARD_DATA_AND_REASON* | Receive updated card data and card update reasons |
-| *REASON_ONLY* | Receive card updates reason only |
-| *OVERRIDE* | Disable the service for this request |
-
-<!--
-type: tab
--->
-
-JSON string format:
-
-``` json
-{
-  "transactionDetails": {
-    "authOptimazation": "CARD_DATA_AND_REASON"
-  }
-}
-```
-
-<!-- type: tab-end -->
-
----
-
-## Response Variables
-
-<!--
-type: tab
-titles: processorResponseDetails, JSON Example, authOptimizationDetails, JSON Example
--->
-
-The below table identifies the parameters in the `processorResponseDetails` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `originalResponseCode` | *string* | 16 | Original response code before Authorization Optimization |
-| `originalResponseMessage` | *string* | N/A | Original response message before Authorization Optimization |
-
-<!--
-type: tab
--->
-
-JSON string format:
-
-```json
-
-{
-  "processorResponseDetails": {
-    "originalResponseCode": "006",
-    "originalResponseMessage": "DECLINED"
-  }
-}
-```
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `authOptimizationDetails` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `accountStatus` | *string* | N/A | Indicates the current status of the account.|
-
-### Account Status Reason
-
-| Variable | Description |
-|---------|----------|
-| *ACCOUNT_CHANGE* | Original account number has changed |
-| *ACCOUNT_CLOSED* | Original account number is closed |
-| *EXPIRATION_CHANGE* | Original card expiration has changed |
-| *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder |
-
-<!--
-type: tab
--->
-
-JSON string format:
-
-```json
-
-{
-  "authOptimizationDetails": {
-    "accountStatus": "ACCOUNT_CHANGE"
-  }
-}
-```
-
-<!-- type: tab-end -->
-
----
-
-## Payload Example
+The following transactions may receive updated card data, token data and reason, or the reason only in the response: [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) *(pre-authorization and sale)* and online [Refunds API request](?path=docs/Resources/API-Documents/Payments/Refund.md) using a *PaymentCard* or *PaymentToken*.
 
 <!--
 type: tab
 titles: Request, Response 
 -->
 
-Example of a charge payload request.
+The example below contains the minimum [parameters](#parameters) for a successful Authorization Optimization Charges API request using *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -169,7 +64,6 @@ Example of a charge payload request.
   },
   "transactionDetails": {
     "captureFlag": true,
-    "authOptimazation": "CARD_DATA_AND_REASON"
   },
   "transactionInteraction": {
     "origin": "ECOM",
@@ -183,13 +77,14 @@ Example of a charge payload request.
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
-
 <!--
 type: tab
 -->
 
-Example of an authorization optimization (201: Created) response
+<!-- theme: warning -->
+> If the merchant account is configured to receive updated card data, it will be returned encrypted in the response along with the `authOptimizationDetails`. A [client certificate](?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md) must be uploaded to Commerce Hub before the card data can be returned.
+
+Example of an Authorization Optimization (201: Created) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -210,12 +105,14 @@ Example of an authorization optimization (201: Created) response
   },
   "source": {
     "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "JWE",
+      "encryptionBlock": "\"Wn+VwpLDgp41IwstEHQS8u4EQJ\n=s3ZmiL1SSZC8QyBpj/....\"",
+      "encryptionBlockFields": "card.cardData:16"
+    },
     "card": {
-      "bin": "40055500",
-      "last4": "0019",
-      "scheme": "VISA",
-      "expirationMonth": "10",
-      "expirationYear": "2030"
+      "expirationMonth": "12",
+      "expirationYear": "2034"
     }
   },
   "paymentReceipt": {
@@ -223,21 +120,12 @@ Example of an authorization optimization (201: Created) response
       "total": 12.04,
       "currency": "USD"
     },
-    "merchantName": "Merchant Name",
-    "merchantAddress": "123 Peach Ave",
-    "merchantCity": "Atlanta",
-    "merchantStateOrProvince": "GA",
-    "merchantPostalCode": "12345",
-    "merchantCountry": "US",
-    "merchantURL": "https://www.somedomain.com",
     "processorResponseDetails": {
       "approvalStatus": "APPROVED",
       "approvalCode": "OK5882",
       "schemeTransactionId": "0225MCC625628",
       "processor": "FISERV",
       "host": "NASHVILLE",
-      "originalResponseCode": "006",
-      "originalResponseMessage": "DECLINED",
       "responseCode": "000",
       "responseMessage": "APPROVAL",
       "hostResponseCode": "00",
@@ -251,10 +139,12 @@ Example of an authorization optimization (201: Created) response
   },
   "transactionDetails": {
     "captureFlag": true,
-    "authOptimazation": "CARD_DATA_AND_REASON"
-  },
-  "authOptimizationDetails": {
-    "accountStatus": "ACCOUNT_CHANGE"
+    "authOptimizationDetails": {
+      "accountStatus": "ACCOUNT_CHANGE",
+      "originalHostResponseCode": "51",
+      "originalHostResponseMessage": "DECLINED",
+      "panEncryptionStatus": "Success"
+    }
   }
 }
 ```
@@ -263,10 +153,74 @@ Example of an authorization optimization (201: Created) response
 
 ---
 
-## See Also
+## Parameters
+
+### Request variables
+
+<!-- theme: warning -->
+> If the merchant account is enabled for a [tokenization](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) service and to receive updated token data, `paymentTokens` will be returned in the response with the updated *PaymentToken*. To override this behavior, `createToken`*:false* is required in `transactionDetails`.
+
+<!--
+type: tab
+titles: authOptimizationDetails
+-->
+
+The below table identifies the parameters in the `authOptimizationDetails` object in `transactionDetails`.
+
+| Variable | Type | Maximum Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `overrideFlag` | *boolean* | N/A | Indicator used to override the Authorization Optimization merchant configuration per transaction. |
+
+<!-- type: tab-end -->
+
+---
+
+### Response variables
+
+<!--
+type: tab
+titles: authOptimizationDetails
+-->
+
+The below table identifies the parameters in the `authOptimizationDetails` object in `transactionDetails`.
+
+| Variable | Type | Maximum Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `accountStatus` | *string* | 256 | Indicates the current status of the account |
+| `accountUpdaterErrorCode` | *string* | 256 | Error code provided the account updater system |
+| `accountUpdaterErrorDescription` | *string* | 256 | Error description provided by the account updater system |
+| `originalHostResponseCode` | *string* | 256 | Original `hostReponseCode` for re-authorized *(Optimized)* transaction |
+| `originalHostResponseMessage` | *string* | 256 | Original `hostResponseMessage` for re-authorized *(Optimized)* transaction |
+| `panEncryptionStatus` | *string* | N/A | Provides the status message of the encrypted PAN in the response |
+
+**Account status reason:**
+
+| Variable | Description |
+| ----- | ----- |
+| *ACCOUNT_CHANGE* | Original account number has changed |
+| *ACCOUNT_CLOSED* | Original account number is closed |
+| *EXPIRATION_CHANGE* | Original card expiration has changed |
+| *CONTACT_CARDHOLDER* | Bank is requesting contact with card holder |
+
+**Pan encryption status:**
+
+| Message | Description |
+| ----- | ----- |
+| *Success* | The PAN was successfully encrypted |
+| *Encryption unavailable* |  |
+| *Encryption key ID not found* |  |
+| *Encryption error* |  |
+| *Unsupported source* |  |
+
+<!-- type: tab-end -->
+
+---
+
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Transaction Details](?path=docs/Resources/Master-Data/Transaction-Details.md)
+- [Client Certificate Upload](?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md)
 
 ---

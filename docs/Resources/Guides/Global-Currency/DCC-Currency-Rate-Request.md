@@ -29,7 +29,7 @@ Example of a DCC rate payload request.
 ```json
 {
   "sourceCurrency": {
-    "total": "20.50",
+    "total": 20.50,
     "currency": "USD"
   },
   "targetCurrency": {
@@ -152,7 +152,7 @@ titles: sourceCurrency, targetCurrency, merchantDetails
 
 The below table identifies the required parameters in the `sourceCurrency` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `total` | *string* | 18,3 | Total amount of the goods or services *(including taxes)* shown in the merchant's local currency |
 | `currency` | *string* | 3 | [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the merchant's local currency |
@@ -163,7 +163,7 @@ type: tab
 
 The below table identifies the required parameters in the `targetCurrency` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `currency` | *string* | 3 | [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the requested DCC transaction in the cardholder's currency |
 
@@ -173,7 +173,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 | `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -191,7 +191,7 @@ titles: rate, sourceAmount, targetAmount
 
 The below table identifies the parameters in the `rate` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `eligibility` | *string* | 25 | Indicates if the BIN is DCC_ELIGIBLE or DCC_NOT_ELIGIBLE |
 | `exchangeRate` | *number* | 18,3 | Derived exchange rate for the source and target currencies |
@@ -210,7 +210,7 @@ type: tab
 
 The below table identifies the required parameters in the `sourceAmount` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `total` | *string* | 18,3 | Total amount of the goods or services *(including taxes)* shown in the merchant's local currency |
 | `currency` | *string* | 3 | [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the merchant's local currency |
@@ -221,7 +221,7 @@ type: tab
 
 The below table identifies the required parameters in the `targetAmount` object.
 
-| Variable | Data Type| Maximum Length |Description |
+| Variable | Data Type| Max Length |Description |
 |---------|----------|----------------|---------|
 | `total` | *string* | 18,3 | Total amount of the offered DCC transaction in the cardholder's currency |
 | `currency` | *string* | 3 | [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) of the offered DCC transaction amount in cardholder currency |

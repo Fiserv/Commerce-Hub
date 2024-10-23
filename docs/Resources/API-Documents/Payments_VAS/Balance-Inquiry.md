@@ -19,13 +19,13 @@ titles: source, merchantDetails, additionalDataCommon
 
 The below table identifies the parameters in the `source` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `sourceType` | _string_ | 15 | Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) supported is _PaymentCard_ |
 
 The below table identifies the conditional parameters in `card` object.
 
-|Variable | Type | Maximum Length | Description|
+|Variable | Type | Max Length | Description|
 |---------|----------|----------------|---------|
 | `category`| _string_ | 25 | Defines the card type as GIFT |
 | `subCategory`| _string_ | 25 | Identifies the card provider |
@@ -36,7 +36,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `merchantId` | _string_ | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `terminalId` | _string_ | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
@@ -47,13 +47,13 @@ type: tab
 
 The below table identifies the parameters in the `additionalDataCommon` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `additionalData` | _object_ | N/A |  Identifies additional data in the request. |
 
 The below table identifies the conditional parameters in the `additionalData` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `securityCodeType` | _string_ | 32 |  Type of security code requested when activating a digital gift card |
 
@@ -70,7 +70,7 @@ titles: balances
 
 The below table identifies the parameters in the `balances` array in the `paymentReceipt` object.
 
-| Variable | Data Type | Maximum Length | Description |
+| Variable | Data Type | Max Length | Description |
 |---------|----------|----------------|---------|
 | `beginningBalance` | _number_ | 16,3 | Account beginning balance |
 | `endingBalance` | _number_ | 16,3 | Account ending balance |

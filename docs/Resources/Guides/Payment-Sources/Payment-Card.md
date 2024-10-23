@@ -1,166 +1,117 @@
 ---
-tags: [Payment Card, Payment Sources]
+tags: [Payment Card, Payment Sources, Online, Digital, Mobile, Card Not Present]
 ---
 
-# PaymentCard
+# Using PaymentCard as a payment source
 
-Financial Institutions such as banks issue the **Payment Card** to the customers. Customers use the card to pay online (card-not-present) or in-person (card-present). The `sourceType` *PaymentCard* is used to submit a [card](?path=docs/Resources/Master-Data/Card-Type.md) transaction to our application.
+A payment card issued to a customer and is used to submit credit, debit, private label, gift *(prepaid or stored value)*, and Fleet card-based transactions to Commerce Hub. The `sourceType` *PaymentCard* is used to submit manual entry card data, while *PaymentEMV* or *PaymentTrack* is used to submit encrypted track data.
+
+## PaymentCard API model
 
 <!-- theme: danger -->
-> Commerce Hub requires all payment cards to be encrypted using [multi-use public key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [testing purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Test-Scripts.md).
-
-<!-- theme: info -->
-> PINless Debit transaction process via the credit network unless the merchant account is setup for debit processing. Please contact your account representative for more information on [debit solutions](?path=docs/Resources/Guides/Debit/Debit.md).
-
----
-
-## Request Variables
-
-The following variables are required when submitting a *PaymentCard* request.
-
-<!-- theme: info -->
-> The below requirements are used for unencrypted manual entry card-not-present requests on a website or application. See [encrypted manual entry](?path=docs/In-Person/Encrypted-Payments/Manual.md) for card-present requests from a device or terminal.
+> Commerce Hub requires all payment cards to be encrypted using [multi-use public key *(MUPK)*](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) or [device encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md). Plain card data is only supported in our sandbox environment for [simulation purposes](?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md).
 
 <!--
 type: tab
-titles: source, card
+titles: source
 -->
 
-The below table identifies the parameters in the `source` object.
+The below table identifies the required parameters in the `source` object.
 
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ------ | --- |
-| `sourceType` | *string* | 15 |  &#10004; | Use Value *PaymentCard* for card transactions |
-| `card` | *object* | N/A |  &#10004; | Contains the payment card details |
-| `encryptionData` | *object* | N/A | | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
-| `pinBlock` | *object* | N/A | | Contains the [encrypted PIN details](?path=docs/Resources/Master-Data/Pin-Block.md). Used in credit, [debit](?path=docs/Resources/Guides/Debit/PIN_Debit/PIN_Debit.md), gift card or EBT/WIC where a PIN is required. |
-
-<!--
-type: tab
--->
-
-The below table identifies the required parameters in the `card` object.
-
-| Variable | Type | Length | Required | Description |
-| -------- | -- | ------------ | ----------- |---|
-| `cardData` | *string* | 15 |  &#10004; | Credit Card Number or Encrypted Data |
-| `expirationMonth` | *string* | 2 |  &#10004; | 2-digit card expiration month |
-| `expirationYear` | *string* | 4 |  &#10004; | 4-digit card expiration year |
-
-<!-- theme: info -->
-> Refer to the [card](?path=docs/Resources/Master-Data/Card.md) object for additional fields.
+| Variable | Type | Length | Description |
+| ----- | :------: | :-----: | ----- |
+| `sourceType` | *string* | 15 | Use *PaymentCard* for card transactions |
+| `card` | *object* | N/A | Contains the payment [card details](?path=docs/Resources/Master-Data/Card.md) |
+| `encryptionData` | *object* | N/A | Contains the [encrypted payment details](?path=docs/Resources/Master-Data/Encryption-Data.md) |
 
 <!-- type: tab-end -->
 
 ---
 
-### Charges Payload Example
+## Encrypted PaymentCard integrations
 
-<!--
-type: tab
-titles: Request, Response
+Select an integration option to begin accepting `PaymentCard` transactions with Commerce Hub.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Multi-use public key
+description: Submit an online, digital or mobile MUPK transaction.
+link: ?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md
 -->
 
-Example of a charge payload request using PaymentCard.
-
-```json
-{
-  "amount": {
-    "total": "12.04",
-    "currency": "USD"
-  },
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "cardData": "4005550000000019",
-      "expirationMonth": "02",
-      "expirationYear": "2035"
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true
-  },
-  "merchantDetails": {
-    "merchantId": "100008000003683",
-    "terminalId": "10000001"
-  }
-}
-```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
-
-<!--
-type: tab
+<!-- type: card
+title: In-person manual entry
+description: Submit an in-person manual key transaction.
+link: ?path=docs/In-Person/Encrypted-Payments/Manual.md
 -->
 
-Example of a charge (201: Created) response.
-
-<!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
-
-```json
-{
-  "gatewayResponse": {
-    "transactionType": "CHARGE",
-    "transactionState": "AUTHORIZED",
-    "transactionOrigin": "ECOM",
-    "transactionProcessingDetails": {
-      "transactionTimestamp": "2021-04-16T16:06:05Z",
-      "orderId": "RKOrdID-525133851837",
-      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
-      "clientRequestId": "4345791",
-      "transactionId": "84356531338"
-    }
-  },
-  "source": {
-    "sourceType": "PaymentCard",
-    "card": {
-      "expirationMonth": "02",
-      "expirationYear": "2035",
-      "bin": "400555",
-      "last4": "0019",
-      "scheme": "VISA"
-    }
-  },
-  "paymentReceipt": {
-    "approvedAmount": {
-      "total": "12.04",
-      "currency": "USD"
-    },
-    "processorResponseDetails": {
-      "approvalStatus": "APPROVED",
-      "approvalCode": "OK5882",
-      "schemeTransactionId": "0225MCC625628",
-      "processor": "FISERV",
-      "host": "NASHVILLE",
-      "responseCode": "000",
-      "responseMessage": "APPROVAL",
-      "hostResponseCode": "00",
-      "hostResponseMessage": "APPROVAL",
-      "localTimestamp": "2021-04-16T16:06:05Z",
-      "bankAssociationDetails": {
-        "transactionTimestamp": "2021-04-16T16:06:05Z"
-      }
-    }
-  },
-  "transactionDetails": {
-    "captureFlag": true,
-    "merchantInvoiceNumber": "123456789012"
-  }
-}
-```
-
-<!-- type: tab-end -->
+<!-- type: row-end -->
 
 ---
 
-## See Also
+## PaymentCard types
 
-- [API Explorer](./api/?type=post&path=/payments/v1/charges)
-- [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
-- [Device Encryption](?path=docs/In-Person/Integrations/Encrypted-PIN-Pad.md)
-- [Multi-Use Public Key *(MUPK)*](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/Multi-Use-Public-Key/Multi-Use-Public-Key.md)
-- [Private Label](?path=docs/Resources/Guides/Payment-Sources/Private-Label.md)
-- [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
+Select an integration option to begin accepting the payment card type with Commerce Hub.
+
+<!-- type: row -->
+
+<!-- type: card
+title: Debit Solutions
+description: Accept PIN and PINless (signature) debit transactions.
+link: ?path=docs/Resources/Guides/Debit/Debit.md
+-->
+
+<!-- type: card
+title: EBT/WIC
+description: Accept EBT/WIC transactions.
+link:
+-->
+
+<!-- type: card
+title: Fleet Card
+description: Accept Fleet Card transactions.
+link: ?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Card.md
+-->
+
+<!-- type: row-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Gift Cards
+description: Accept prepaid or stored value gift card transactions.
+link: ?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md
+-->
+
+<!-- type: card
+title: Private Label Credit Card 
+description: Accept PLCC transactions.
+link: ?path=docs/Resources/Guides/Payment-Sources/Private-Label.md
+-->
+
+<!-- type: row-end -->
+
+---
+
+## Alternate in-person integrations
+
+Select an integration option to begin accepting the encrypted payment cards with Commerce Hub.
+
+<!-- type: row -->
+
+<!-- type: card
+title: EMV chip and contactless
+description: Submit an in-person EMV chip or contactless transaction using PaymentEMV.
+link: ?path=docs/In-Person/Encrypted-Payments/EMV.md
+-->
+
+<!-- type: card
+title: Swiped cards
+description: Submit an in-person swipe transaction using PaymentTrack.
+link: ?path=docs/In-Person/Encrypted-Payments/Track.md
+-->
+
+<!-- type: row-end -->
 
 ---

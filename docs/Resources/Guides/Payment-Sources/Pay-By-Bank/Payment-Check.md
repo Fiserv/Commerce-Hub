@@ -1,10 +1,13 @@
 ---
-tags: [Payment Check, ACH, Payment Sources]
+tags: [Payment Check, ACH, Payment Sources, Pay By Bank]
 ---
 
 # PaymentCheck
 
-Commerce Hub allows merchants to securely process payments directly from customers' bank accounts. Checks offer enhanced security and convenience. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
+Commerce Hub allows merchants to securely process payments directly from a customer's bank account. Commerce Hub supports multiple integration methods allowing merchants can accept one-time and recurring payments while providing additional flexibility and convenience for customers.
+
+<!-- theme: info -->
+> The below requirements are used for personal and business checks. See [Fleet Checks](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md) for processing Fleet transactions.
 
 ---
 
@@ -22,17 +25,17 @@ Example of a charges payload request using *PaymentCheck*.
 ```json
 {
   "amount": {
-    "total": 100,
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
     "sourceType": "PaymentCheck",
     "check": {
+      "checkData": "3654803",
       "accountNumber": "144155167",
       "routingNumber": "121000248",
-      "checkType": "Business",
-      "checkData": "3654803",
-      "accountType": "Savings"
+      "checkType": "PERSONAL",
+      "accountType": "CHECKING"
     }
   },
   "transactionDetails": {
@@ -46,12 +49,12 @@ Example of a charges payload request using *PaymentCheck*.
     "origin": "MOTO"
   },
   "customer": {
-    "firstName": "ZEN",
-    "lastName": "R",
-    "email": null,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "customer@domain.com",
     "dateOfBirth": "1992-10-04",
     "driverLicenseNumber": "12345678",
-    "driverLicenseState": "Tx",
+    "driverLicenseState": "TX",
     "taxid": "123456789"
   }
 }
@@ -82,7 +85,7 @@ Example of a charge (201: Created) response.
   },
   "paymentReceipt": {
     "approvedAmount": {
-      "total": 100,
+      "total": 12.04,
       "currency": "USD"
     },
     "processorResponseDetails": {
@@ -163,6 +166,9 @@ The below table identifies the required parameters in the `check` object.
 | `checkData` | *String* | 45 | &#10004; | Identifying data for the check presented (i.e check number). |
 | `accountType` | *string* | 45 | &#10004; | Describe [account type](?path=docs/Resources/Master-Data/Check.md#account-type) |
 
+<!-- theme: info -->
+> Refer to the [check](?path=docs/Resources/Master-Data/Customer-Details.md) object for additional fields.
+
 <!--
 type: tab
 -->
@@ -192,6 +198,7 @@ The below table identifies the required parameters in the `customer` object.
 - [API Explorer](./api/?type=post&path=/payments/v1/charges)
 - [Check Details](?path=docs/Resources/Master-Data/Check.md)
 - [Customer Details](?path=docs/Resources/Master-Data/Customer-Details.md)
+- [Fleet Checks](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet-Check.md)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Payment Sources](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md)
 - [Pay By Bank](?path=docs/Resources/Guides/Payment-Sources/Pay-By-Bank.md)

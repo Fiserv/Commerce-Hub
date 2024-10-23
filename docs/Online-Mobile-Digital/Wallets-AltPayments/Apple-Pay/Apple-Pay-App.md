@@ -6,7 +6,7 @@ tags: [In-App, Online, Apple Pay, Wallet, Mobile]
 
 Commerce Hub's RESTful API integration allows the merchant to create a custom App integration with Apple Pay. The merchant will present the payment processing form on their App and submit the transaction to Commerce Hub.
 
-### How it Works
+##### How it Works
 
 1. The customer selects checkout from the merchant's app and the merchant’s payment form displays.
 2. The app calls the Apple Pay framework to obtain the encrypted wallet data.
@@ -52,7 +52,7 @@ titles: source, header
 
 The below table identifies the required parameters in the `source` object.
 
-| Variable | Type| Maximum Length | Required | Description |
+| Variable | Type| Max Length | Required | Description |
 |---------|----------|-------|---------|---------|
 |`sourceType` | *string* | 15 | &#10004; | Value *ApplePay* is used for Apple Pay request. Refer Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details. |
 | `data` | *string* | 4000 | &#10004; | Encrypted Data. Payment data dictionary, Base64 encoded as a string. |
@@ -68,7 +68,7 @@ type: tab
 
 The below table identifies the required parameters in the `header` object.
 
-| Variable | Type | Maximum Length | Required | Description |
+| Variable | Type | Max Length | Required | Description |
 | -------- | -- | ------------ | ---------|--------- |
 | `applicationDataHash` | *string* | 256 | | Encrypted app data |
 | `ephemeralPublicKey` | *string* | 256 | &#10004; | Used to derive the actual Public Key. Ephemeral public key bytes. EC_v1 only. X.509 encoded key bytes, Base64 encoded as a string. |
@@ -92,7 +92,7 @@ Example of a charge payload request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -108,7 +108,7 @@ Example of a charge payload request.
     "version": "EC_v1",
     "applicationData": "VEVTVA==",
     "applePayMerchantId": "merchant.com.organizationname.unitname.commonname"
-  }
+  },
   "transactionDetails": {
     "captureFlag": true,
     "createToken": false
@@ -116,9 +116,8 @@ Example of a charge payload request.
   "merchantDetails": {
     "merchantId": "100008000003683",
     "terminalId": "10000001"
-    }
+  }
 }
-
 ```
 
 <!--

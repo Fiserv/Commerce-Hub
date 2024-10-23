@@ -13,7 +13,7 @@ titles: networkDetails, JSON Example
 
 The below table identifies the parameters in the `networkDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `network` | *object* | N/A | Processing [card network](#card-network) |
 | `debitNetworkId` | *string* | 64 | Network ID for the debit component |
@@ -92,7 +92,7 @@ titles: network, Amex, Discover, Mastercard, Visa, Debit
 
 The below table identifies the parameters in the `network` object.
 
-| Variable |Type| Maximum Length | Description|
+| Variable |Type| Max Length | Description|
 |------|--------|-------|----------------|
 | `network` | *string* | N/A | Processing [card network](#card-network) |
 
@@ -102,7 +102,7 @@ type: tab
 
 The below table identifies the parameters specific to American Express.
 
-| Variable |Type| Maximum Length | Description|
+| Variable |Type| Max Length | Description|
 |------|--------|-------|----------------|
 | `safeKeyResponse` | *string* | 50 | Response that corresponds to the American Express SafeKey response value. |
 
@@ -133,7 +133,7 @@ type: tab
 
 The below table identifies the parameters specific to Discover.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |------|--------|-------|----------------|
 | `networkOriginalAmount` | *number* | 18,3 | Original transaction amount, required for Discover card on file transactions. |
 
@@ -152,14 +152,14 @@ type: tab
 
 The below table identifies the parameters specific to Mastercard.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |------|--------|-------|----------------|
 | `interchangeComplianceIndicator` | *string* | | A code to indicate that Mastercard interchange compliance data was provided for this transaction, and if any other special Mastercard authorization requirements were met. |
 | `bankNetRefNumber` | *string* | | A Mastercard generated identifier for each original authorization request. Reference number assigned by Mastercard to each authorization message. |
 | `bankNetDate` | *string* | | A Mastercard generated date for this transaction. MMDD format |
 | `cvcErrorIndicator` | *string* | | Indicates the CVC Error response data. |
 | `transactionEditErrorCode` | *string* | | Indicates the track data & POS validation Error in response data. ***Valid Values:** MISSING_TRACK_DATA, PRESENT_TRACK_DATA, PAN_DOES_NOT_MATCH_WITH_TRACK_DATA, EXPIRY_DATE_DOES_NOT_MATCH_WITH_TRACK_DATA, CARD_TYPE_INVALID, FIELD_SEPARATOR_INVALID, EXCEEDS_MAX_LENGTH, TRANSACTION_CODE_T, POS_CUST_PRESENT_1, POS_CARD_PRESENT_1* |
-| `transactionIntegrityClass` | *string* | | Contains the MasterCard provided Transaction Integrity Classification for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
+| `transactionIntegrityClass` | *string* | | Contains the Mastercard provided Transaction Integrity Classification for point-of-sale *(POS)* Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |
 | `xCodeResponse` | *string* | 6 | Conditional for Mastercard EMV chip transactions. This value is used to notify the chip that the transaction was unable to go online and is required for batch uploads. |
 | `chipCryptoValue` | *string* | 3 | Additional EMV chip info returned by Mastercard. |
 | `cardDataOutputCapability` | *string* | 25 | Identifies the card's capability to output data. ***Valid Values:** UNSPECIFIED, NONE, MAG_STRIPE, ICC, OTHER* |
@@ -189,7 +189,7 @@ type: tab
 
 The below table identifies the parameters specific to Visa.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |------|--------|-------|----------------|
 | `VISABID` | *string* | 128 | The Business Identifier (BID) provided by Visa to Third Party Services (TPS) |
 | `VISAAUR` | *string* | 128 | Agent Unique Account Result (AUAR) provided by Visa to Third Party Services (TPS) in 12 hex digit format |
@@ -218,7 +218,7 @@ type: tab
 
 The below table identifies the parameters specific to Debit.
 
-|Variable |Type| Maximum Length | Description|
+|Variable |Type| Max Length | Description|
 |------|--------|-------|----------------|
 | `networkName` | *string* | 256 | Network name in which the transaction is processed |
 
@@ -245,7 +245,7 @@ The below table identifies the parameters specific to Debit.
 | *EXPIRATION_NOT_EQUAL* | Expiration date not equal in track data |
 | *CARD_TYPE_INVALID* | Card type invalid in track data |
 | *FIELD_SEPARATORS* | Field separator(s) invalid in track data |
-| *EXCEEDS_LENGTH* | A field within the track data exceeds maximum length |
+| *EXCEEDS_LENGTH* | A field within the track data exceeds Max Length |
 | *CATEGORY_CODE* | The transaction category code is "T" |
 | *CUSTOMER_PRESENCE* | `posConditionCode` invalid for customer presense |
 | *CARD_PRESENCE* | `posConditionCode` invalid for card presence |

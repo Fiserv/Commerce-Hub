@@ -2,48 +2,45 @@
 tags: [Card Not Present, Mobile, Wallets, Amazon Pay, Apple Pay, Google Pay, PayPal, Samsung Pay]
 ---
 
-# Wallet Payments
+# Accept wallet payments
 
-Commerce Hub allows integration with most popular mobile and digital wallet providers including; Apple Pay, Google Pay, Samsung Pay and PayPal.
+Commerce Hub integrates with popular mobile and digital wallet providers, including Apple Pay, Google Pay, and Paze.
 
----
+Wallet transactions can originate from a digital wallet on a website or a device (e.g., Apple/iOS, Google/Android, and Samsung). Merchants can submit this data as either an encrypted or decrypted request.
 
-## Mobile Wallets
+- **Encrypted wallet:** The merchant sends the encrypted data along with their private key. Commerce Hub decrypts the information for processing.
+- **Decrypted wallet:** The merchant [decrypts the wallet data](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) before submitting it to Commerce Hub for processing.
 
-Wallet transactions originate from a digital wallet either from a website or on a device *(e.g. Apple/iOS, Google/Android, and Samsung)*. Merchants can submit this data as either an encrypted or a decrypted request. 
+<!-- theme: danger -->
+> We are enhancing Commerce Hub to include support for additional wallets including Samsung Pay, PayPal and Amazon Pay. The documents related to the features will be released soon.
 
-- **Encrypted Wallet:** The merchant will send the encrypted data along with their private key and Commerce Hub will decrypt the information for processing.
-- **Decrypted Wallet:** The merchant will decrypt the wallet data before submitting to Commerce Hub for processing.
-
-### Integrations
+## Mobile wallet integrations
 
 <!-- type: row -->
 
 <!-- type: card
 title: Apple Pay
-description: Commerce Hub allows developers to quickly enable secure and convenient Apple Pay payments in their app or website.
+description: Integrate Apple Pay with Commerce Hub to offer secure, seamless payments on iOS devices.
 link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
 -->
 
 <!-- type: card
 title: Google Pay
-description: Commerce Hub allows developers to quickly enable secure and convenient Google Pay payments in their app or website.
+description: Enable Google Pay in your app or website through Commerce Hub for fast, secure transactions on Android devices.
 link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
 -->
 
 <!-- type: card
 title: Samsung Pay
-description: Commerce Hub allows developers to quickly enable secure and convenient Samsung Pay payments in their app or website.
-link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md
+description: Add Samsung Pay to your payment options with Commerce Hub to support both NFC and MST transactions.
+link:
 -->
 
 <!-- type: row-end -->
 
 ---
 
-## Digital Wallets (eWallets)
-<!-- theme: danger -->
-> We are enhancing Commerce Hub to include support for digital wallets (eWallets) including PayPal and AmazonPay. The documents related to the features will be released soon. 
+## Digital wallet (eWallets) integrations
 
 ### Integrations
 
@@ -51,14 +48,20 @@ link: ?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-P
 
 <!-- type: card
 title: Amazon Pay
-description: Commerce Hub allows developers to quickly enable secure and convenient Amazon Pay payments in their app or website.
+description: Integrate Amazon Pay with Commerce Hub to offer a seamless checkout experience using customers' Amazon accounts.
 link:
 -->
 
 <!-- type: card
 title: PayPal
-description: Commerce Hub allows developers to quickly enable secure and convenient PayPal payments in their app or website.
+description: Enable PayPal payments through Commerce Hub to provide a trusted and widely-used payment option.
 link:
+-->
+
+<!-- type: card
+title: Paze
+description: Add Paze to your payment options with Commerce Hub's Checkout SDK for secure and efficient transactions.
+link: ?path=docs/Resources/Guides/Payment-Sources/Paze/Paze.md
 -->
 
 <!-- type: row-end -->

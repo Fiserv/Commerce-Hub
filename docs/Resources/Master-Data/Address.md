@@ -19,7 +19,7 @@ titles: address, JSON Example
 
 The below table identifies the parameters in the `address` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `street` | *string* | 256 | Street address |
 | `houseNumberOrName` | *string* | 256 | Secondary address information e.g. house number or name |
@@ -67,7 +67,7 @@ titles: billingAddress, JSON Example
 
 The below table identifies the parameters in the `billingAddress` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Customer first name. |
 | `lastName` | *string* | 256 | Customer last name. |
@@ -119,7 +119,7 @@ titles: shippingAddress, JSON Example
 
 The below table identifies the parameters in the `shippingAddress` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `firstName` | *string* | 256  | Shipping contact first name |
 | `lastName` | *string* | 256 | Shipping contact last name |
@@ -186,7 +186,7 @@ titles: shipperAddress, JSON Example
 
 The below table identifies the parameters in the `shipperAddress` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | :--: | :------------: | ------------------ |
 | `firstName` | *string* | 256 | Shipper contact first name. |
 | `lastName` | *string* | 256 | Shipper contact last name. |

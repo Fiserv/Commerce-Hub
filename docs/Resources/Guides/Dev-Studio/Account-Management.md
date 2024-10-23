@@ -1,41 +1,40 @@
 ---
-tags: [Account Management, Developer Portal, Key Management, Certification]
+tags: [Account Management, Developer Studio, Key Management, Certification]
 ---
 
-# Account Management
+# Developer Studio: Account management
 
-A developer can manage their sandbox *(mock)*, certification *(cert)*, and production *(prod)* Merchant IDs *(MIDs)* from a [Developer Studio Workspace](https://developer.fiserv.com/support/docs/?path=docs/guides/workspaces.md). Account management allows you to [create a sandbox account](#create-a-new-sandbox-merchant-id), [access a certification or production account](#access-a-merchant-id) or [clone a production account](#clone-a-merchant-id).
+A developer can manage their sandbox, certification (end-to-end), and production merchant IDs *(MIDs)* from the Developer Studio Dashboard. Account management allows you to [create a sandbox account](#create-a-new-sandbox-merchant-id), [access a production account](#access-a-certification-or-production-merchant-id) or [clone a production account](#clone-a-merchant-id).
 
 ---
 
-## Create a new Sandbox Merchant ID
+## Create a new sandbox merchant ID
 
-A Sandbox MID is a dedicated Commerce Hub simulator account for a respective developer.
+A sandbox MID is a dedicated Commerce Hub simulation account for a respective developer.
 
 <!-- theme: info -->
 > The shared default MID is used if a dedicated MID is not created.
 
-### Step 1: Access Developer Studio
+---
 
-Login to the Developer Studio and access the Developer Dashboard.
+### Step 1: Select a the sandbox method
+
+Click *Add Merchant ID* button. From the *Select Method* dropdown, choose *Create a new Sandbox Merchant ID* and click *Next*.
 
 ---
 
-### Step 2: Select a Method
+### Step 2: Create a sandbox MID name
 
-Click Add Merchant ID button. From the Select Method dropdown, choose Create a new Sandbox Merchant ID and click Next.
+Enter a *Sandbox Merchant ID Name* and click *Continue*.
 
----
-
-### Step 3: Create a Sandbox MID Name
-
-Enter a Sandbox Merchant ID Name and click Continue.
+<!-- theme: info -->
+> The name that displays in Developer Dashboard may not match the name that displays in Merchant Configuration and Boarding *(Marketplace)* in Step 4.
 
 ---
 
-### Step 4: Configure Sandbox Account
+### Step 3: Configure the sandbox account
 
-You will be re-directed to the Marketplace. Edit the following settings as needed and click Board Account.
+You will be re-directed to Merchant Configuration and Boarding, edit the following settings as needed and click *Board Account*.
 
 - Entitlements
 - Payment Types
@@ -43,93 +42,82 @@ You will be re-directed to the Marketplace. Edit the following settings as neede
 - Summary
 
 <!-- theme: info -->
-> Once your Sandbox Merchant ID has been successfully added to your workspace in Developer Studio, it may be pending and will not be updated in real time once approved.
+> Once your sandbox MID has been successfully added to your workspace in Developer Studio, it may be pending and will not be updated in real time once approved.
 
 ---
 
-### Step 5: View your Sandbox Merchant ID
+#### Step 4: View the sandbox MID
 
-Click the Go to Developer Studio button to return and click Dashboard to view the Merchant ID.
+Click the *Go to Developer Studio* button to return and click *Dashboard* to view the new MID.
 
 <!-- theme: info -->
-> Newly created Merchant IDs may not immediately display in the list of Merchant IDs. Click Refresh to update the list of Merchant IDs.
+> Newly created MIDs may not immediately display in the list of, click *Refresh* to update the list of MIDs.
 
 ---
 
-## Access a Merchant ID
+## Access a certification or production merchant ID
 
-Access Merchant ID allows a developer to access a certification MID for end-to-end test or a production MID (acquiring MID) created by a corporate merchant, provided developer has received Access code from a corporate merchant.
+Access Merchant ID allows a developer to access the end-to-end test *(cert)* and production *(prod)* MIDs created for a corporate merchant, provided the developer has received an access code.
 
 <!-- theme: warning -->
-> An access code is required from the merchant administrator after it is created in Merchant Configuration and Boarding. Please contact your account representative for more information.
-
-### Step 1: Access Developer Studio
-
-Login to the Developer Studio and access the Developer Dashboard.
+> An access code is required from the merchant administrator or account representative after it is created in Merchant Configuration and Boarding.
 
 ---
 
-### Step 2: Select a Method
+### Step 1: Select the add cert/prod method
 
-Click Add Merchant ID button. From the Select Method dropdown, choose Add a Cert/Production Merchant ID and click Next.
+Click *Add Merchant ID* button. From the *Select Method* dropdown, choose *Add an Cert/Production Merchant ID* and click *Next*.
 
 ---
 
-### Step 3: Select an Environment
+### Step 2: Select an environment
 
 <!-- theme: info -->
-> Access codes are generated by the Admin user only. The admin is required to login to the Marketplace, select the MID and add the developer's email address. Click on generate the access code button and the user will receive a notification email containing the access code.
+> Access codes are generated by an account representative only. The account representative is required to login to the Merchant Configuration and Boarding, select the applicable MIDs and add the developer's email address. Click on generate the access code button and the developer will receive a notification email containing the access code.
 
-Enter the access code provided by the merchant administrator. Select the required environment and click the Access button.
+Enter the access code provided in the email, select the required environment and click the *Access* button.
 
 - **End-To-End:** Used to certify your API application
 - **Production:** Used to obtain production API credentials
 
 ---
 
-#### Step 4: Add a Merchant ID
+#### Step 3: Add a merchant ID
 
-Select the required Merchant ID's and click Add MID's to Workspace.
-
-<!-- theme: info -->
->The selected MID's will be added based on the [profile](?docs/Resources/Guides/Enterprise-Portal/Profiles.md) configuration in Marketplace. If features or settings need to be modified, please contact your merchant administrator.
-
----
-
-### Step 5: View your Merchant ID
-
-Click the Go to Developer Studio button to return and click Dashboard to view the Merchant ID.
+Select the required MIDs and click *Add MIDs to Workspace*.
 
 <!-- theme: info -->
-> Newly created Merchant IDs may not immediately display in the list of Merchant IDs. Click Refresh to update the list of Merchant IDs. The name that displays in Developer Dashboard may not match the name that displays in Merchant Configuration and Boarding.
+> The selected MIDs will be added based on the profile configuration in Merchant Configuration and Boarding. If features or settings need to be modified, please contact your account representative.
 
 ---
 
-## Clone a Merchant ID
+### Step 4: View the merchant ID
 
-A developer can create a dedicated Sandbox Merchant ID(s) by cloning all the features of End-To-End, Test, or Prod Acquiring Merchant ID created by a corporate merchant, provided developer has received Access code from a corporate merchant. Further, developer can edit the features of cloned Sandbox Merchant ID(s).
-
-### Step 1: Access Developer Studio
-
-Login to the Developer Studio and access the Developer Dashboard.
+Click the *Go to Developer Studio* button to return and click *Dashboard* to view the new MIDs.
 
 ---
 
-### Step 2: Select a Method
+## Clone a merchant ID
 
-Click Add Merchant ID button. From the Select Method dropdown, choose Clone a Merchant ID and click Next.
-
----
-
-### Step 3: Select a Merchant ID to Clone
-
-Enter a Merchant ID name that you want to clone or select from the Merchant ID list. Click Next.
+A developer can create a dedicated sandbox MID by cloning all the features of a cert or prod MID created previously.
 
 ---
 
-### Step 4: Review the Cloned Account
+### Step 1: Select the clone method
 
-You will be re-directed to the Marketplace. Edit the following settings as needed and click Board Account.
+Click *Add Merchant ID* button. From the Select Method dropdown, choose *Clone a Merchant ID* and click *Next*.
+
+---
+
+### Step 2: Select a merchant ID to clone
+
+Enter a *Merchant ID name* that you want to clone or select from the MID list and click *Next*.
+
+---
+
+### Step 3: Review the cloned account
+
+You will be re-directed to the Merchant Configuration and Boarding. Edit the following settings as needed and click *Board Account*.
 
 - Entitlements
 - Payment Types
@@ -138,9 +126,9 @@ You will be re-directed to the Marketplace. Edit the following settings as neede
 
 ---
 
-### Step 5: View your Cloned Merchant ID
+### Step 4: View the cloned merchant ID
 
-Click the Go to Developer Studio button to return and click Dashboard to view the Merchant ID.
+Click the *Go to Developer Studio* button to return and click *Dashboard* to view the new MID.
 
 ---
 

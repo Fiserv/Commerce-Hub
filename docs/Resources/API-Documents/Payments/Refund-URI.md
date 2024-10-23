@@ -24,7 +24,7 @@ titles: amount, merchantDetails
 
 The below table identifies the required parameters in the `amount` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `total` | *number* |  | Total amount of the transaction. [Subcomponent](?path=docs/Resources/Master-Data/Amount-Components.md) values must add up to total amount. |
 | `currency` | *string* | 3 | ISO 3 digit [Currency code](?path=docs/Resources/Master-Data/Currency-Code.md) |
@@ -35,7 +35,7 @@ type: tab
 
 The below table identifies the required parameters in the `merchantDetails` object.
 
-| Variable | Data Type| Maximum Length | Description |
+| Variable | Data Type| Max Length | Description |
 |---------|----------|----------------|---------|
 |`merchantId` | *string* | 40 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 |`terminalId` | *string* | N/A | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
@@ -58,12 +58,12 @@ type: tab
 titles: Request, Response
 -->
 
-Example of a Parital Refund Payload Request.
+Example of a partial refund request.
 
 ```json
 {
   "amount": {
-    "total": "1.50",
+    "total": 12.04,
     "currency": "USD"
   },
   "merchantDetails": {
@@ -79,7 +79,7 @@ Example of a Parital Refund Payload Request.
 type: tab
 -->
 
-Example of a Partial Refund (201: Success) Response.
+Example of a partial refund (201: Success) response.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.

@@ -4,7 +4,7 @@ tags: [Partial Approval, Authorization]
 
 # Partial Authorization
 
-Commerce Hub supports partial authorizations *(approvals)* for [online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md), and [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) in order to improve debit and gift cad transactions. Partial authorization capability addresses decline rates and enhances the consumer and merchant experience at the point of sale.
+Commerce Hub supports partial authorizations *(approvals)* for [online, digital and mobile transactions](?path=docs/Getting-Started/Getting-Started-Online.md), and [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md) in order to improve debit and gift cad transactions. Partial authorization capability addresses decline rates and enhances the consumer and merchant experience at the point-of-sale *(POS)*.
 
 <!-- theme: warning -->
 > Support for partial authorization is mandatory for all card brands for [in-person transactions](?path=docs/Getting-Started/Getting-Started-InPerson.md).
@@ -57,14 +57,16 @@ Example of a partial authorization [charges](?path=docs/Resources/API-Documents/
         "pinAuthenticationCapability": "CAN_ACCEPT_PIN",
         "terminalEntryCapability": "MAG_STRIPE_MANUAL_CHIP"
       }
-   },
-   "transactionDetails":{
-      "captureFlag":true,
-      "partialApproval":true
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true,
+    "partialApproval": true
+  },
   "merchantDetails": {
     "merchantId": "100008000003683",
     "terminalId": "10000001"
-   }
+  }
 }
 ```
 
@@ -165,7 +167,7 @@ titles: transactionDetails
 
 The below table identifies the required parameters in the `transactionDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | -------------| --------- |
 | `partialApproval` | *boolean* | N/A | Indicates if a partial approval is allowed.|
 
@@ -182,7 +184,7 @@ titles: transactionDetails
 
 The below table identifies the parameters in the `transactionDetails` object.
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type | Max Length | Description |
 | -------- | -- | -------------| --------- |
 | `partiallyApprovedTransactionAmount` | *string* | 18,3 | The partially approved transaction amount from the original request. |
 

@@ -1,72 +1,24 @@
 ---
-tags: [CVV, Fraud, Security Code Verification]
+tags: [CVV, Fraud Mitigation, Security Code Verification]
 ---
 
-# Security Code Verification
+# Prevent fraudulent transactions with Security Code verification
 
-Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit _(AMEX)_ security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in card not present transaction.
-
----
-
-## Request Variables
-
-For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` as part of the `encryptionBlock` and `securityCodeIndicator` as part of the `card` object.
-
-<!--
-type: tab
-titles: card, JSON Example
--->
-
-The below table identifies the additional required parameters in the `card` object.
-
-| Variable | Type| Maximum Length | Description |
-|---------|----------|----------------|---------|
-| `securityCodeIndicator` | _string_ | | Indicates how the security code is passed |
-
-### Security Code Indicator
-
-The below table identifies the valid values of `securityCodeIndicator`.
-
-| Value | Description |
-| ----- | --------- |
-| _NOT_SUPPORTED_ | Not supported (Default) |
-| _PROVIDED_ | Security code provided in the transaction request |
-| _VALUE_ILLEGIBLE_ | Security code value missing or illegible |
-| _NOT_AVAILABLE_ | Security code not available. |
-
-<!--
-type: tab
--->
-
-JSON string format for `card`:
-
-```json
-{
-   "card":{
-      "securityCodeIndicator": "PROVIDED"
-   }
-}
-```
-
-<!-- type: tab-end -->
+Commerce Hub supports [security code](?path=docs/Resources/FAQs-Glossary/Glossary.md#security-code) verification, a service where cardholder is prompted to enter the 3 or 4-digit *(AMEX)* security code to have it verified by the association bank. Security code verification can be used as a [fraud prevention](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md) measure in [online, digital and mobile transaction](?path=docs/Getting-Started/Getting-Started-Online.md)..
 
 ---
 
-## Verification Request
-
-### Endpoint
-
-<!-- theme: success -->
->**POST** `/payments-vas/v1/accounts/verification`
-
-### Payload Example
+## Security Code verification with Account Verification API
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a security code verification request.
+The example below contains the minimum [parameters](#parameters) for a successful security code verification request using the [Account Verification API](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification).
+
+<!-- theme: success -->
+> **POST** `/payments-vas/v1/accounts/verification`
 
 ```json
 {
@@ -90,8 +42,6 @@ Example of a security code verification request.
 }
 
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/accounts/verification)
 
 <!--
 type: tab
@@ -165,26 +115,22 @@ Example of a security code verification response.
 
 ---
 
-## Verification with Charges Request
-
-### Endpoint
-
-<!-- theme: success -->
-> **POST** `/payments/v1/charges`
-
-### Payload Example
+## Security Code verification with Charges API
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of a security code verification during a charges request.
+The example below contains the minimum [parameters](#parameters) for a successful security code verification request using the [Charges API](?path=docs/Resources/API-Documents/Payments/Charges.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/charges`
 
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {
@@ -214,8 +160,6 @@ Example of a security code verification during a charges request.
   }
 }
 ```
-
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments/v1/charges)
 
 <!--
 type: tab
@@ -293,7 +237,39 @@ Charges response containing security code response details.
 
 ---
 
-## Response Values
+## Parameters
+
+### Request variables
+
+For the transactions where security code verification is required, the merchant's API is required to pass `securityCode` as part of the `encryptionBlock` and `securityCodeIndicator` as part of the `card` object.
+
+<!--
+type: tab
+titles: card
+-->
+
+The below table identifies the additional required parameters in the `card` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `securityCodeIndicator` | *string* | | Indicates how the security code is passed |
+
+**Security code indicator:**
+
+The below table identifies the valid values of `securityCodeIndicator`.
+
+| Value | Description |
+| ----- | ----- |
+| *NOT_SUPPORTED* | Not supported *(Default)* |
+| *PROVIDED* | Security code provided in the transaction request |
+| *VALUE_ILLEGIBLE* | Security code value missing or illegible |
+| *NOT_AVAILABLE* | Security code not available. |
+
+<!-- type: tab-end -->
+
+---
+
+### Bank response values
 
 The result of checking the cardholder's entered security code with the issuer's system returns an security code result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains the `avsSecurityCodeResponse` object with `securityCodeMatch` value.
 
@@ -312,18 +288,18 @@ The result of checking the cardholder's entered security code with the issuer's 
 The below table identifies the valid values of `securityCodeMatch`.
 
 | Value | Description |
-| ---- | ------------|
-| _MATCHED_ | Data matches with issuer system |
-| _NOT_MATCHED_ | Data does not match with issuer system |
-| _NOT_PROCESSED_ | Security code verification not done |
-| _NOT_PRESENT_ | Security code not present in the input |
-| _NOT_CERTIFIED_ | Issuer not certified to verify security code |
-| _NOT_CHECKED_ | Security code not checked |
-| _NONE_ | No security code provided |
+| ---- | ----- |
+| *MATCHED* | Data matches with issuer system |
+| *NOT_MATCHED* | Data does not match with issuer system |
+| *NOT_PROCESSED* | Security code verification not done |
+| *NOT_PRESENT* | Security code not present in the input |
+| *NOT_CERTIFIED* | Issuer not certified to verify security code |
+| *NOT_CHECKED* | Security code not checked |
+| *NONE* | No security code provided |
 
 ---
 
-## Association Response Code
+### Association securityCodeResponse
 
 The result of checking the card’s security code provided with the issuer’s system returns a verification result. The [processor response details](?path=docs/Resources/Master-Data/Processor-Response-Details.md) contains `association` object with `securityCodeResponse`. The valid response values are based on the host or processor, see the respective processor's spec doc for a list of response values.
 
@@ -343,7 +319,7 @@ The result of checking the card’s security code provided with the issuer’s s
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/verification)
 - [Address/Security Code Filters](?path=docs/Resources/Guides/Fraud/Fraud-Settings-AVS-CVV.md)
