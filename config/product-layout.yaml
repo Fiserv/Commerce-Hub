@@ -120,7 +120,7 @@ featuredFeatures:
         title: Card Capture
   - title: Fraud Mitigation
     groupName: Featured
-    description: "Commerce Hub supports 3-D Secure (3DS) transactions from a either a merchant's third party authentication service or through Commerce Hub's authentication service."
+    description: "Fraud Mitigation Solutions provides merchants with the essential tools to make authorization decisions by analyzing transaction attributes and user behavior in real time."
     featured: true
     relatedDocs:
      - link: docs/Resources/Guides/Fraud/Fraud-Settings.md
