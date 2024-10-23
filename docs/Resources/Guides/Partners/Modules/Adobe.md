@@ -6,13 +6,13 @@ tags: [Online, Mobile, Digital, Card Not Present, Plugin, Extension, Adobe, Mage
 
 Adobe Commerce *(previously Magento 2)* is a flexible and scalable commerce platform that allows merchants the ability to personalize business and customer experiences.The Commerce Hub extension is built ready-to-go. The installation has been constructed to have pre-configured settings that allow a merchant to run a transaction within minutes of configuring their cert account and credential information.
 
-##### Supported Platforms
+**Supported platforms:**
 
 Our plugin supports Adobe Commerce version 2.4.0 or later for Adobe Commerce, Adobe Commerce Cloud, and Magento 2.
 
 ---
 
-## Supported Features
+## Supported features
 
 | Feature | Details | Additional Information |
 | ----- | ----- | ----- |
@@ -34,7 +34,7 @@ Our plugin supports Adobe Commerce version 2.4.0 or later for Adobe Commerce, Ad
 
 ---
 
-## Reference Guides
+## Reference guides
 
 <!-- type: row -->
 

@@ -2,7 +2,7 @@
 tags: [Online, Mobile, Digital, Card Not Present, Plugin, Extension, Adobe, Magento]
 ---
 
-# Adobe Commerce Customization Guide
+# Adobe Commerce customization guide
 
 Commerce Hub manages the capture and input of sensitive payment data at checkout and allows the customization of the consumer's experience with a merchant's brand and provides customizable fields in the capture forms.
 
@@ -19,11 +19,11 @@ Commerce Hub has provided three separate customization areas for each of these t
 
 ---
 
-## Field Customization
+## Field customization
 
 Field level customization uses [Commerce Hub's Checkout Hosted Fields solution](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-JS.md). For the Adobe extension, the complexity and nuances of field customization has been reduced by creating an easy-to-use interface.
 
-### Supported Fields
+### Supported fields
 
 Each supported field's customization will differ. Each field has been configured with the options fit for it's purpose.
 
@@ -83,7 +83,7 @@ type: tab
 
 ---
 
-### CSS Customization
+### CSS customization
 
 The extension has a default CSS customization as an example of what can be configured, and merchants can implement custom CSS according to their brand requirements.
 

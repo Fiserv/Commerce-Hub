@@ -2,7 +2,7 @@
 tags: [Online, Mobile, Digital, Card Not Present, Plugin, Extension, Adobe, Magento]
 ---
 
-# Adobe Commerce Installation Guide
+# Adobe Commerce installation guide
 
 A developer will need to install and configure the Commerce Hub plugin to be able to run your first transaction in our test certification environment. The extension is built ready-to-go and the installation has been constructed to have pre-configured settings to run a transaction within minutes upon configuring your test account and credential information.
 
@@ -11,7 +11,7 @@ A developer will need to install and configure the Commerce Hub plugin to be abl
 
 ---
 
-## Step 1: Download Extension
+## Step 1: Download extension
 
 There are two options to access and download the Adobe extension, via Composer or the compressed library.
 
@@ -20,7 +20,7 @@ type: tab
 titles: Composer, Library
 -->
 
-##### Install via Composer (recommended)
+**Install via Composer (recommended):**
 
 Add Commerce Hub's repository using the following command line:
 
@@ -38,7 +38,7 @@ composer require fiserv/payments:dev-master#v1.0.0
 type: tab
 -->
 
-##### Install compressed library (e.g. .tar / .zip file)
+**Install compressed library (e.g. .tar / .zip file):**
 
 Extract [compressed plugin](needLink) to the following directory:
 
@@ -49,7 +49,7 @@ Extract [compressed plugin](needLink) to the following directory:
 
 ---
 
-## Step 2: Enable Extension
+## Step 2: Enable extension
 
 After downloading, follow the below steps to enable the extension.
 
@@ -80,7 +80,7 @@ bin/magento c:f
 
 ---
 
-## Step 3: Configure Credentials
+## Step 3: Configure credentials
 
 Configure the plugin and run a test transaction. This will ensure that all initial environmental and configuration settings are in place.
 
@@ -101,7 +101,7 @@ Expand Fiserv Payments to display Commerce Hub Gateway Settings.
 
 ---
 
-## Step 4 : Configure Business Requirements
+## Step 4 : Configure business requirements
 
 Configure the plugin based on the business requirements and run a test transaction. This includes setting the supported transactions, tokenization, currency and allowed countries.
 
@@ -119,7 +119,7 @@ Once business payment requirements are set, Save Config and flush the cache. It 
 
 ---
 
-## Step 7: Field Customization
+## Step 7: Field customization
 
 Commerce Hub manages the capture and input of sensitive payment data at checkout and allows the customization of the consumer's experience with a merchant's brand and provides [customizable fields](?path=docs/Resources/Guides/Partners/Modules/Adobe-Customization.md) in the Customer Checkout Payment Form, Admin Order Payment Form and Tokenization Form.
 
@@ -131,7 +131,7 @@ After certification testing has been completed, the extension will need to be [c
 
 ---
 
-## See Also
+## See also
 
 - [Adobe Commerce Customization Guide](?path=docs/Resources/Guides/Partners/Modules/Adobe-Customization.md)
 - [Developer Studio Getting Started](?path=docs/Getting-Started/Getting-Started-Dev-Portal.md)

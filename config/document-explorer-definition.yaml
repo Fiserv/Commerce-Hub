@@ -86,7 +86,7 @@
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay.md
       - title: Google Pay
         link: docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay.md
-    - title: Plugins
+    - title: Plugin Extensions
       link: docs/Resources/Guides/Partners/Modules/Plugins.md
 - sections:
   - title: Features
