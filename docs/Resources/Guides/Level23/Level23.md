@@ -14,7 +14,7 @@ Commerce Hub can pass Level II and Level III data *(also known as enhanced data)
 
 ---
 
-## Submit a Level II transaction request
+## Submit a Level II transaction
 
 <!--
 type: tab
@@ -154,7 +154,6 @@ The example below contains the conditional [parameters](#parameters) for a succe
 
 <!--
 type: tab
-titles: Request, Response
 -->
 
 Example of a Charges API *(201: Created)* response.
@@ -214,10 +213,11 @@ Example of a Charges API *(201: Created)* response.
 
 ---
 
-## Submit a Level III transaction request
+## Submit a Level III transaction
 
 <!--
 type: tab
+titles: Request, Response
 -->
 
 The example below contains the conditional [parameters](#parameters) for a successful Level III [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md) using a P-Card. Required fields are based on the specific [card brand data requirements](?path=docs/Resources/Guides/Level23/Level23-Brand-Req.md). The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments/v1/charges).
@@ -565,10 +565,10 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type| Max Length | Description |
 |---------|-------|----------|---------|
-| `orderDate` | _string_ | 10 | Date that goods and services are ordered. YYYY-MM-DD format |
-| `itemCount` | _integer_ | 3 | Total number of items included in the purchase |
-| `supplierVatRegistrationNumber` | _string_ | 15 | Supplier VAT registration number |
-| `itemDetails` | _array_ | N/A | List of all item details including categories along with amount and quantity |
+| `orderDate` | *string* | 10 | Date that goods and services are ordered. YYYY-MM-DD format |
+| `itemCount` | *integer* | 3 | Total number of items included in the purchase |
+| `supplierVatRegistrationNumber` | *string* | 15 | Supplier VAT registration number |
+| `itemDetails` | *array* | N/A | List of all item details including categories along with amount and quantity |
 
 <!--
 type: tab
@@ -578,13 +578,13 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type| Max Length | Description |
 |---------|-------|------------|---------|
-| `itemNumber` | _number_ | 3 | Identifies the line item number out of total items sold |
-| `commodityCode` | _string_ | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
-| `itemDescription` | _string_ | 1024 | Name or description of item |
-| `productUPC` | _string_ | 12 | Universal Product Code identifier used for retail products worldwide |
-| `quantity` | _number_ | 8 | Identifies the number of units of the product sold |
-| `unitOfMeasurement` | _string_ | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
-| `amountComponents` | _object_ | N/A | Used to define the required [line item amounts](?path=docs/Resources/Master-Data/Amount-Components.md) as part of the request |
+| `itemNumber` | *number* | 3 | Identifies the line item number out of total items sold |
+| `commodityCode` | *string* | 256 | Identifies the [commodity code](?path=docs/Resources/Master-Data/Commodity-Codes.md) of the products sold |
+| `itemDescription` | *string* | 1024 | Name or description of item |
+| `productUPC` | *string* | 12 | Universal Product Code identifier used for retail products worldwide |
+| `quantity` | *number* | 8 | Identifies the number of units of the product sold |
+| `unitOfMeasurement` | *string* | | Identifies the [type of measurement](?path=docs/Resources/Master-Data/Unit-Measurement.md) for the product sold |
+| `amountComponents` | *object* | N/A | Used to define the required [line item amounts](?path=docs/Resources/Master-Data/Amount-Components.md) as part of the request |
 
 <!--
 type: tab
@@ -594,13 +594,13 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type | Max Length | Description |
 | --------- | --- | ------ | -------------- |
-| `unitPrice` | _number_ | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
-| `subTotal` | _number_ | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
-| `freightAmount` | _number_ | 18,3 | Freight amount applied |
-| `priceAdjustments` | _array_ | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
-| `netAmount` | _number_ | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
-| `taxAmounts` | _array_ | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
-| `grossAmount` | _number_ | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
+| `unitPrice` | *number* | 18,3 | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
+| `subTotal` | *number* | 18,3 | The total amount before any other costs, discounts, fees, or taxes |
+| `freightAmount` | *number* | 18,3 | Freight amount applied |
+| `priceAdjustments` | *array* | N/A | Total [adjustment](?path=docs/Resources/Master-Data/Price-Adjustments.md) amounts and details applied to the purchase |
+| `netAmount` | *number* | 18,3 | The pre-tax cost of an item, minus any discounts or promotions |
+| `taxAmounts` | *array* | N/A | Total [tax](?path=docs/Resources/Master-Data/Tax-Types.md) amounts and details applied to the purchase |
+| `grossAmount` | *number* | 18,3 | The total cost of an item, including the unit price and any other costs, discounts, fees, or taxes |
 
 <!--
 type: tab
@@ -610,8 +610,8 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type| Max Length | Description |
 |---------|-------|------|---------|
-| `taxId` | _string_ | 15 | The tax ID in the US or Business Number _(BNN)_ in Canada |
-| `vatRegistrationNumber` | _string_ | 64  | Merchant's VAT registration number |
+| `taxId` | *string* | 15 | The tax ID in the US or Business Number *(BNN)* in Canada |
+| `vatRegistrationNumber` | *string* | 64  | Merchant's VAT registration number |
 
 <!--
 type: tab
@@ -621,8 +621,8 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type| Max Length | Description |
 |---------|-------|----------|---------|
-| `merchantOrderId` | _string_ | 128 | Merchant order ID, customer reference number or purchase order number _(PO Number)_ |
-| `merchantInvoiceNumber` | _string_ | 12 | Merchant invoice number or reference number |
+| `merchantOrderId` | *string* | 128 | Merchant order ID, customer reference number or purchase order number *(PO Number)* |
+| `merchantInvoiceNumber` | *string* | 12 | Merchant invoice number or reference number |
 
 <!--
 type: tab
@@ -632,8 +632,8 @@ The below table identifies the [conditional](?path=docs/Resources/Guides/Level23
 
 | Variable | Type| Max Length | Description |
 |---------|------|---------|---------|
-| `merchantCustomerId` | _string_ | 1024 | Merchant's unique customer identifier |
-| `taxId` | _string_ |  | Customer tax ID number |
+| `merchantCustomerId` | *string* | 1024 | Merchant's unique customer identifier |
+| `taxId` | *string* |  | Customer tax ID number |
 
 <!-- type: tab-end -->
 
