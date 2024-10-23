@@ -4,7 +4,7 @@ tags: [Stored Credentials, Token, Tokenization, API Reference]
 
 # TransAmor Tokenization
 
-TransAmor is a secure [tokenization service](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization) that helps merchants protect sensitive payment data. Through TransAmor, merchants can replace sensitive payment information, such as credit card numbers, with non-sensitive equivalents known as tokens. Merchants can tokenize payment sources as part of various transactions, including [charges](?path=docs/Resources/API-Documents/Payments/Charges.md), [verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or [card capture](?path=docs/Online-Mobile-Digital/Secure-Data-Capture/API/API-Only.md) request if enabled for TransArmor or by sending a separate request to the [tokens endpoint](#tokenization-request).
+TransAmor is a secure [tokenization service](?path=docs/Resources/FAQs-Glossary/Glossary.md#tokenization) that helps merchants protect sensitive payment data. Through TransAmor, merchants can replace sensitive payment information, such as credit card numbers, with non-sensitive equivalents known as tokens. Merchants can tokenize payment sources by sending a [Tokens API request](#tokenization-request). A token can also be returned in a [Charges API request](?path=docs/Resources/API-Documents/Payments/Charges.md), a [Verification API request](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or a [Card Capture API request](?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md) request if enabled for TransArmor.
 
 <!-- theme: info -->
 > If available Commerce Hub will also return any third-party processor tokens.
@@ -18,7 +18,7 @@ TransAmor is a secure [tokenization service](?path=docs/Resources/FAQs-Glossary/
 
 ---
 
-## Tokenization Request
+## Request a TransArmor token
 
 The merchant can initiate a tokens request in order to generate a TransArmor token for the payment source without authorization.
 
@@ -106,7 +106,7 @@ Example of a tokenization (201: Created) response.
 
 ### Parameters
 
-#### Request Variables
+#### Request variables
 
 <!-- theme: warning -->
 > Account verification can be performed by submitting `accountVerification`: *true* in `transactionDetails`. If a multi-use token is required the [stored credential details](?path=docs/Resources/Guides/Stored-Credentials.md) must be submitted in the request.
@@ -126,7 +126,7 @@ The below table identifies the required parameters in the `source` object.
 
 ---
 
-## PaymentToken Request
+## Accept a payment using a PaymentToken
 
 The merchant can use the saved tokenized data in order to initiate a [subsequent transaction request](#see-also) using *PaymentToken* as the `sourceType`.
 
@@ -231,7 +231,7 @@ Example of a charge (200: Success) response.
 
 ### Parameters
 
-#### Request Variables
+#### Request variables
 
 <!-- theme: info -->
 > It is recommended that the merchant captures the [encrypted CVV](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) if available from the customer for security and validation purposes.
@@ -248,7 +248,6 @@ The below table identifies the parameters in the `source` object.
 | `sourceType` | *string* | 15 | &#10004; |Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) |
 | `tokenData` | *string* | 2048 | &#10004; |Token created from the payment source. |
 | `tokenSource` | *string* | | &#10004; | The token source is *TRANSARMOR* |
-| `PARId` | *string* | 256 | | Payment Account Reference ID for tokens. Ties transactions with multiple payment sources or tokens to a customer |
 | `declineDuplicates` | *boolean* | |  | Identifies if a duplicate create token should be rejected when one has already been created for the payment source |
 | `card` | *object* | | &#10004; | [Card](?path=docs/Resources/Master-Data/Card.md) subcomponent objects |
 
@@ -267,7 +266,7 @@ The below table identifies the required parameters in the `card` object.
 
 ---
 
-## See Also
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/tokens)
 - [Payment Requests](?path=docs/Resources/API-Documents/Payments/Payments.md)

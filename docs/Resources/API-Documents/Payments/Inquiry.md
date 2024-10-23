@@ -2,64 +2,23 @@
 tags: [Inquiry, Transaction Inquiry, Transaction Status, API Reference]
 ---
 
-# Transaction Inquiry
+# Perform a transaction lookup using the Transaction Inquiry API
 
-To retrieve the current state of any previous transaction, an inquiry request can be submitted against the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
-
----
-
-## Request Variables
-
-<!--
-type: tab
-titles: referenceTransactionDetails, merchantDetails
--->
-
-The below table identifies the transaction identifiers in the `referenceTransactionDetails` object.
-
-<!-- theme: info -->
-> Only a single transaction identifier should be passed within the request.
-
-| Variable | Type| Max Length | Description|
-|---------|-----------|----------------|---------|
-| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction used for reference in a secondary transaction. |
-| `referenceOrderId` | *string* | 128 | Commerce Hub generated `orderId` from the original transaction used for reference in a secondary transaction. |
-| `referenceClientRequestId` | *string* | 128 | Merchant/client generated `clientRequestId` from the original transaction. Can only be used in a transaction inquiry request.' |
-| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
-| `referenceMerchantOrderId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantOrderId` from the original transaction. |
-
-<!--
-type: tab
--->
-
-The below table identifies the parameters in the `merchantDetails` object.
-
-| Variable | Type | Max Length | Required | Description |
-| -------- | -- |------------| ------- | ---- |
-| `merchantId` | *string* | 1024 | &#10004; | A unique ID used to identify the Merchant. The merchant may use the value assigned by the acquirer, gateway, or their [own unique identifier](?path=docs/Resources/Guides/BYOID.md) when submitting a transaction. Can be used for merchants that support [dynamic descriptor](?path=docs/Resources/Guides/Dynamic-Descriptor.md), or support multiple stores in the same app. |
-| `terminalId` | *string* | 1024 |  | Identifies the specific device or point of entry where the transaction originated, can be assigned by the the gateway or [merchant specified](?path=docs/Resources/Guides/BYOID.md). |
-
-<!-- type: tab-end -->
+The Transaction Inquiry API is used to retrieve the current state of any [previous transaction](?path=docs/Resources/API-Documents/Payments/Payments.md), an inquiry request can be submitted against the Commerce Hub transaction identifier or [merchant transaction identifier](?path=docs/Resources/Guides/BYOID.md).
 
 ---
 
-## Endpoints
-
-Use the below endpoints based on the [transaction type](?path=docs/Resources/Guides/Transaction-Types.md).
-
-<!-- theme: success -->
->**POST** `/payments/v1/transaction-inquiry`
-
----
-
-## Payload Example
+## Submit a Transaction Inquiry API request
 
 <!--
 type: tab
 titles: Request, Response
 -->
 
-Example of an inquiry payload request.
+The example below contains the minimum [parameters](#parameters) for a successful Transaction Inquiry API request using a `referenceTransactionId`. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/inquiry).
+
+<!-- theme: success -->
+> **POST** `/payments/v1/transaction-inquiry`
 
 ```json
 {
@@ -67,7 +26,8 @@ Example of an inquiry payload request.
     "referenceTransactionId": "aa829dcb83cd49f485141168e051b8d1"
   },
   "merchantDetails": {
-    "merchantId": "100008000003683"
+    "merchantId": "100008000003683",
+    "merchantId": "10000001",
   }
 }
 ```
@@ -76,20 +36,15 @@ Example of an inquiry payload request.
 type: tab
 -->
 
-Example of an inquiry (201: Success) response.
+Example of a Transaction Inquiry API *(201: Success)* response.
 
-The below table identifies additional arrays that may be returned in the inquiry response.
-
-| Variable | Type| Max Length | Description|
-|---------|-----------|----------------|---------|
-| `linkedTransactions` | *array* | N/A | List of transactions linked to the inquiry, most common when requesting information about a [cancel](?path=docs/Resources/API-Documents/Payments/Cancel.md) request. |
-| `error` | *array* | N/A | If the referenced transaction was unsuccessful, the list of [errors](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) will be returned. |
+<!-- theme: -->
+> When using `referenceOrderId` or `referenceMerchantOrderId` Commerce Hub will return an array of transaction results related to the original `orderId` or `merchantOrderId`.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> See [response handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
-
 [
   {
     "gatewayResponse": {
@@ -110,7 +65,7 @@ The below table identifies additional arrays that may be returned in the inquiry
     "paymentReceipt": {
       "approvedAmount": {
         "currency": "USD",
-        "total": "690"
+        "total": 12.04
       },
       "processorResponseDetails": {
         "approvalCode": "OK6982",
@@ -161,7 +116,44 @@ The below table identifies additional arrays that may be returned in the inquiry
 
 ---
 
-## See Also
+## Parameters
+
+### Request variables
+
+<!--
+type: tab
+titles: referenceTransactionDetails, merchantDetails
+-->
+
+The below table identifies the transaction identifiers in the `referenceTransactionDetails` object.
+
+<!-- theme: info -->
+> Only a single transaction identifier should be passed within the request.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `referenceTransactionId` | *string* | 40 | Commerce Hub generated `transactionId` from the original transaction used for reference in a secondary transaction. |
+| `referenceOrderId` | *string* | 128 | Commerce Hub generated `orderId` from the original transaction used for reference in a secondary transaction. |
+| `referenceClientRequestId` | *string* | 128 | Merchant/client generated `clientRequestId` from the original transaction. Can only be used in a transaction inquiry request.' |
+| `referenceMerchantTransactionId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantTransactionId` from the original transaction. |
+| `referenceMerchantOrderId` | *string* | 128 | [Merchant/client generated](?path=docs/Resources/Guides/BYOID.md) `merchantOrderId` from the original transaction. |
+
+<!--
+type: tab
+-->
+
+The below table identifies the parameters in the `merchantDetails` object.
+
+| Variable | Type| Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `merchantId` | *string* | 1024 | A unique ID used to identify the Merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
+| `terminalId` | *string* | 1024 | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md)|
+
+<!-- type: tab-end -->
+
+---
+
+## See also
 
 - [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/inquiry)
 - [Custom Identifiers](?path=docs/Resources/Guides/BYOID.md)

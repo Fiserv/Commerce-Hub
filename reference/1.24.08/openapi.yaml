@@ -2320,8 +2320,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ResponsePaymentToken'
-        authOptimizationDetails:
-          $ref: '#/components/schemas/AuthOptimizationDetails'
         customer:
           $ref: '#/components/schemas/Customer'
         emvDetails:
@@ -2437,8 +2435,6 @@ components:
             $ref: '#/components/schemas/ResponsePaymentToken'
         storedCredentials:
           $ref: '#/components/schemas/StoredCredentials'
-        authOptimizationDetails:
-          $ref: '#/components/schemas/AuthOptimizationDetails'
         target: 
           $ref: '#/components/schemas/Source'
 
@@ -2514,8 +2510,6 @@ components:
           $ref: '#/components/schemas/NetworkDetails'
         storedCredentials:
           $ref: '#/components/schemas/StoredCredentials'
-        authOptimizationDetails:
-          $ref: '#/components/schemas/AuthOptimizationDetails'
         additionalDataCommon:
           $ref: '#/components/schemas/AdditionalDataCommon'
         paymentTokens:
@@ -2716,8 +2710,6 @@ components:
             $ref: '#/components/schemas/ResponsePaymentToken'
         storedCredentials:
           $ref: '#/components/schemas/StoredCredentials'
-        authOptimizationDetails:
-          $ref: '#/components/schemas/AuthOptimizationDetails'
         error:
           type: array
           items:
@@ -6095,6 +6087,8 @@ components:
             $ref: '#/components/schemas/DeviceFingerPrint'
         splitShipment:
           $ref: '#/components/schemas/SplitShipment'
+        authOptimizationDetails:
+          $ref: '#/components/schemas/AuthOptimizationDetails'
         reversalReasonCode:
           type: string
           maxLength: 22
@@ -6349,7 +6343,7 @@ components:
 
     Vehicle:
       x-model-version: 1.0
-      description: 'Customer <a href="../docs?path=docs/Resources/Master-Data/Vehicle.md">vehicle</a> information.'
+      description: 'Customer <a href="../docs?path=docs/Resources/Master-Data/Vehicle-Details.md">vehicle</a> information.'
       properties:
         vehicleNumber:
           type: string

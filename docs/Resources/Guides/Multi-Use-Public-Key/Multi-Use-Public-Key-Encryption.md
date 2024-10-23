@@ -4,7 +4,7 @@ tags: [Multi-Use Public Key, RSA, Encrypted Payments, Payment Card, EMV, Track]
 
 # Multi-Use Public Key Encryption
 
-The merchant uses a [generated multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md) for the asymmeteric encryption of _PaymentCard_, _PaymentEMV_ and _PaymentTrack_ card data, allowing the merchant the ability to securely store and send the data to Commerce Hub at a later time.
+The merchant uses a [generated multi-use public key _(MUPK)_](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Management.md) for the asymmetric encryption of _PaymentCard_, _PaymentEMV_ and _PaymentTrack_ card data, allowing the merchant the ability to securely store and send the data to Commerce Hub at a later time.
 
 <!-- theme: info -->
 > Commerce Hub supports encrypting `securityCode` data only when processing a [stored credentials](?path=docs/Resources/Guides/Stored-Credentials.md) [online, digital or mobile payment](?path=docs/Getting-Started/Getting-Started-Online.md) request when using a [PaymentToken](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) or an encrypted [PaymentCard](?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md). This process enhances security and serves cardholder validation purposes.
@@ -295,25 +295,30 @@ const toArrayBuffer = (str) => {
     }
     return buf;
 };
-  
+
 const toBase64Encode = (arrayBuffer) => window.btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
-  
+
 // RSA Algorithm
 const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
-  const keyBuf = toArrayBuffer(window.atob(base64PubKey));
-  const pubKeyDer = await window.crypto.subtle.importKey("spki", keyBuf, { name: "RSA-OAEP", hash: "SHA-256", }, true, ["encrypt"]);
-  const encryptedBlock = await window.crypto.subtle.encrypt({name: "RSA-OAEP",}, pubKeyDer, new TextEncoder().encode(sourceString));
-  return toBase64Encode(encryptedBlock);
+    const keyBuf = toArrayBuffer(window.atob(base64PubKey));
+    const pubKeyDer = await window.crypto.subtle.importKey("spki", keyBuf, {
+        name: "RSA-OAEP",
+        hash: "SHA-256",
+    }, true, ["encrypt"]);
+    const encryptedBlock = await window.crypto.subtle.encrypt({
+        name: "RSA-OAEP",
+    }, pubKeyDer, new TextEncoder().encode(sourceString));
+    return toBase64Encode(encryptedBlock);
 };
-  
+
 // Example usage of the library
-(async () => {  
-  const rsaAsymmerticPublicKey =
-    "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3bOOfW6F6rMSmSy2/" +
-    "DQboSnp5KtCNVa5ygbmecdnXf9pHTvd4S5OFMon8HX/f274cMZXISXh5e4swJ/IIelCszxMjOmH1UzbihgoMPen+9sh+Nc9qNJ0MJ+ZSTGiY4EvtUdiamYa" +
-    "kKHYheSi+Wo2r+njEnsisGSybpoPqIhPLYnhyRw5IsmjKOJseibba1V9Z3R+9FktxHamYjCaOYTq58zPg4z2Txt9iuu9sOL1EXsRuNFvw6YadPHrBaDYIK/" +
-    "PuMviix8s3lg0pgCi39pYh9E/nQF5R14Wj1uGMBiXxlGQlmGg5JBv7xfxJ0+9V7Q1lIaSbeX7+jwIqyIpTuyPdQIDAQAB";
-  
+(async () => {
+    const rsaAsymmerticPublicKey =
+        "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3bOOfW6F6rMSmSy2/" +
+        "DQboSnp5KtCNVa5ygbmecdnXf9pHTvd4S5OFMon8HX/f274cMZXISXh5e4swJ/IIelCszxMjOmH1UzbihgoMPen+9sh+Nc9qNJ0MJ+ZSTGiY4EvtUdiamYa" +
+        "kKHYheSi+Wo2r+njEnsisGSybpoPqIhPLYnhyRw5IsmjKOJseibba1V9Z3R+9FktxHamYjCaOYTq58zPg4z2Txt9iuu9sOL1EXsRuNFvw6YadPHrBaDYIK/" +
+        "PuMviix8s3lg0pgCi39pYh9E/nQF5R14Wj1uGMBiXxlGQlmGg5JBv7xfxJ0+9V7Q1lIaSbeX7+jwIqyIpTuyPdQIDAQAB";
+
     const cardData = {
         "cardData": "4005550000000019",
         "nameOnCard": "John Doe",
@@ -321,7 +326,7 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
         "expirationYear": "2034",
         "securityCode": "123"
     }
-      
+
     const encryptionBlock = await asymmerticallyEncrypt(rsaAsymmerticPublicKey, Object.values(cardData).join(""));
     const encoder = new TextEncoder();
     const encryptionBlockFields = Object.keys(cardData).map(key => `card.${key}:${encoder.encode(cardData[key]).length}`).join(',');
@@ -337,8 +342,8 @@ const asymmerticallyEncrypt = async (base64PubKey, sourceString) => {
             }
         }
     };
-  
-  console.log(JSON.stringify(payload, null, 4));
+
+    console.log(JSON.stringify(payload, null, 4));
 })();
 ```
 

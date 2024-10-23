@@ -95,7 +95,7 @@ Example of a charge payload request using `dynamicDescriptors`.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

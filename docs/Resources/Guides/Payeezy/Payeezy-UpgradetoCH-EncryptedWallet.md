@@ -46,7 +46,7 @@ The below table identifies the parameters in the `header` object.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "source": {

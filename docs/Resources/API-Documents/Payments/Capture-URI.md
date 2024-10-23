@@ -71,7 +71,7 @@ Example of a Capture Payload Request.
 ```json
 {
   "amount": {
-    "total": "12.04",
+    "total": 12.04,
     "currency": "USD"
   },
   "merchantDetails": {

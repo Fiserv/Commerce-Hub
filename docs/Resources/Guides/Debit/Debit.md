@@ -7,25 +7,25 @@ tags: [Definition, Debit, Pin Less Debit, Pin Debit, Debit Routing]
 Debit Solutions from Commerce Hub provide anywhere, anytime payment convenience to your customers through comprehensive transaction processing and settlement services, card management and personalization services, and extensive implementation and support services.
 
 <!-- theme: info -->
-> Contact your account representative for more information on using debit solutions.
+> Contact your account representative for more information on using Commerce Hub's Debit Solutions.
 
 ---
 
-## Debit Transaction
+## Accept Debit transactions
 
-Begin integration with Commerce Hub to start accepting debit card payments.
+Begin an integration with Commerce Hub to start accepting debit card payments.
 
 <!-- type: row -->
 
 <!-- type: card
 title: PINless Debit
 description: Process debit cards through debit and credit networks for online, in-app, MOTO and in-person payments.
-link: ?path=docs/Resources/Guides/Payment-Sources/Payment-Card.md
+link: ?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key-Request.md
 -->
 
 <!-- type: card
 title: PIN Debit
-description: Process debit cards through debit newtworks to accept in-person payments and cash withdraws. 
+description: Process debit cards through debit networks to accept in-person payments and cash withdraws. 
 link: ?path=docs/Resources/Guides/Debit/PIN_Debit.md
 -->
 
@@ -35,12 +35,11 @@ description: Process Canadian debit cards using Message Authentication.
 link: ?path=docs/Resources/Guides/Debit/Regional-Debit.md
 -->
 
-
 <!-- type: row-end -->
 
 ---
 
-## Debit Routing
+## Optimized debit routing
 
 Commerce Hub allows the merchant to optimize the debit transaction by routing the processing to the best network based account setup and business requirements.
 
