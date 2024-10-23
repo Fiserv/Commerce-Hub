@@ -9,7 +9,7 @@ Commerce Hub integrates with popular mobile and digital wallet providers, includ
 Wallet transactions can originate from a digital wallet on a website or a device (e.g., Apple/iOS, Google/Android, and Samsung). Merchants can submit this data as either an encrypted or decrypted request.
 
 - **Encrypted wallet:** The merchant sends the encrypted data along with their private key. Commerce Hub decrypts the information for processing.
-- **Decrypted wallet:** The merchant decrypts the wallet data before submitting it to Commerce Hub for processing.
+- **Decrypted wallet:** The merchant [decrypts the wallet data](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) before submitting it to Commerce Hub for processing.
 
 <!-- theme: danger -->
 > We are enhancing Commerce Hub to include support for additional wallets including Samsung Pay, PayPal and Amazon Pay. The documents related to the features will be released soon.
