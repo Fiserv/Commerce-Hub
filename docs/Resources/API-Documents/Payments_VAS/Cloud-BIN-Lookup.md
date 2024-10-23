@@ -18,7 +18,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum parameters for a Cloud BIN Information Lookup request using a *PaymentEMV* [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) not in the Global BIN file and setup for Cloud BIN Service. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup).
+The example below contains the minimum parameters for a Cloud BIN Information Lookup API request using a *PaymentEMV* [gift card](?path=docs/Resources/Guides/Payment-Sources/Gift-Card.md) not in the Global BIN file and setup for Cloud BIN Service. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup).
 
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/accounts/information-lookup`
@@ -48,13 +48,11 @@ The example below contains the minimum parameters for a Cloud BIN Information Lo
 
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
-
 <!--
 type: tab
 -->
 
-Example of a information lookup (201: Created) response.
+Example of a Information Lookup API *(201: Created)* response for an account found in the Cloud BIN only.
 
 Account information lookup response for a card not in the Global BIN file .
 
@@ -121,13 +119,11 @@ The example below contains the minimum parameters for a Cloud BIN Information Lo
 
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
-
 <!--
 type: tab
 -->
 
-Example of a information lookup (201: Created) response.
+Example of a Information Lookup API *(201: Created)* response for an account found in the Cloud BIN and Global BIN.
 
 <!-- theme: info -->
 > See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
@@ -197,9 +193,12 @@ Example of a information lookup (201: Created) response.
 
 ---
 
-## Primary and additional card data
+## Primary and additional card response data
 
 Based on the set up in Merchant Configuration and Boarding the `cardDetails` may include the `primaryCardData` and `additionalCardData`. This data may include the decrypted PAN, leading digits, and/or required positions returned in clear based on the business requirements.
+
+<!-- theme: info -->
+> When configured for Cloud Bin Service, if the customer's card is not found in the Global BIN or Cloud BIN files, the card data will be returned based on *Return Complete Card Data* being enabled; otherwise, the gateway error code 104 *Unable to assign card to brand: Invalid* will be returned.
 
 <!--
 type: tab

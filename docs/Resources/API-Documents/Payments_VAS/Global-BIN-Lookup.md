@@ -18,7 +18,7 @@ type: tab
 titles: Request, Response
 -->
 
-The example below contains the minimum parameters for a Global BIN Information Lookup request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup).
+The example below contains the minimum parameters for a Global BIN Information Lookup API request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup).
 
 <!-- theme: success -->
 > **POST** `/payments-vas/v1/accounts/information-lookup`
@@ -42,16 +42,14 @@ The example below contains the minimum parameters for a Global BIN Information L
 }
 ```
 
-[![Try it out](../../../../assets/images/button.png)](../api/?type=post&path=/payments-vas/v1/accounts/information-lookup)
-
 <!--
 type: tab
 -->
 
-Example of a information lookup (201: Created) response.
+Example of a Information Lookup API *(201: Created)* response.
 
 <!-- theme: info -->
-> See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
+> If the merchant account is not setup for [Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) and the customer's card is not found in the Global BIN, the gateway error code 104 - *Unable to assign card to brand: Invalid* will be returned. See [Response Handling](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md) for more information.
 
 ```json
 {
