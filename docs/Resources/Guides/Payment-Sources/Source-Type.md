@@ -231,7 +231,7 @@ type: tab
 type: tab
 -->
 
-[DecryptedWallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) is used by the merchant when they are using their own certificate to encrypt the data received from Apple Pay, Google Pay or Samsung Pay while sending the transaction to Commerce Hub.
+[DecryptedWallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) is used by the merchant when they are using their own certificate to encrypt the data received from Apple Pay or Google Pay when sending the transaction to Commerce Hub.
 
 ```json
 {
