@@ -15,7 +15,7 @@ Commerce Hub offers a standalone Fraud Scoring service through our Risk Assessme
 
 ## Risk assessment event types
 
-The below table identifies the different `riskAssessmentEventType` allowed.
+The below table identifies the different values allowed for `riskAssessmentEventType`.
 
 | Event type | Description | Requirements |
 | ----- | ----- | ----- |
