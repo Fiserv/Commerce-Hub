@@ -13,6 +13,21 @@ Commerce Hub offers a standalone Fraud Scoring service through our Risk Assessme
 
 ---
 
+## Risk assessment event types
+
+The below table identifies the different `riskAssessmentEventType` allowed.
+
+| Event type | Description | Requirements |
+| ----- | ----- | ----- |
+| *CUSTOMER_REGISTRATION* | This event type is used when a merchant is trying to register a new customer on their platform | Ensure that all required customer data fields are included in the payload based on your scoring provider. |
+| *ACCOUNT_REGISTRATION* | This event type is used to when a merchant wants to register a new account by [creating a token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) on their platform. | Ensure that all required account data fields are included in the payload based on your scoring provider. |
+| *AUTHORIZATION* | This event type is used when a [transaction is authorized](/path=docs/Resources/API-Documents/Payments/Charges.md) by the payment gateway. | Merchant must send authorization details, merchant details, including  amount, and timestamp. |
+| *SALE* | This event type is used when a [sale transaction](?path=docs/Resources/API-Documents/Payments/Charges.md) is processed. | Merchant needs to provide sale details such as amount, merchant details, and sale timestamp. |
+| *CAPTURE* | This event type is used when [funds are captured](?path=docs/Resources/API-Documents/Payments/Capture.md) for an authorized transaction. | Merchant needs to provide capture details such as [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md), amount, merchant details, and capture timestamp |
+| *BALANCE_INQUIRY* | This event type is used when a [balance inquiry](?path=docs/Resources/API-Documents/Payments_VAS/Balance-Inquiry.md) is made by the customer. | Merchant must send inquiry details including merchant details and inquiry timestamp. |
+
+---
+
 ## Submit a Fraud Scoring request
 
 <!--
@@ -122,10 +137,10 @@ The below table identifies the required parameters for a successful Ravelin scor
 
 | Variable | Description |
 | ----- | ----- |
-| `additionalDataCommon:riskAssessmentEventType` | Identifies the [risk assessment event type](#risk-assessment-event-type) for fraud systems |
-| `merchantDetails::merchantId` | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `merchantDetails::terminalId` | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `source::sourceType` | [Payment source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md), not required for customer registration `riskAssessmentEventType` |
+| `additionalDataCommon:riskAssessmentEventType` | Identifies the type of [risk assessment event](#risk-assessment-event-types) for fraud detection systems. |
+| `merchantDetails::merchantId` | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md). |
+| `merchantDetails::terminalId` | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md). |
+| `source::sourceType` | [Payment source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). Not required for customer registration `riskAssessmentEventType`. |
 
 <!--
 type: tab
@@ -135,21 +150,21 @@ The below table identifies the required parameters for a successful Kount scorin
 
 | Variable | Description |
 | ----- | ----- |
-| `additionalDataCommon::riskAssessmentEventType` | Identifies the [risk assessment event type](#risk-assessment-event-type) for fraud systems |
-| `additionalDataCommon::additionalData.ecomURL` | Contains the URL of the site performing the Ecommerce transaction |
-| `amount::total` | Total amount of the transaction, if a non-financial `riskAssessmentEvent` type, then submit $0 |
+| `additionalDataCommon::riskAssessmentEventType` | Identifies the type of [risk assessment event](#risk-assessment-event-types) for fraud detection systems. |
+| `additionalDataCommon::additionalData.ecomURL` | Contains the URL of the site performing the eCommerce transaction. |
+| `amount::total` | Total amount of the transaction, if a non-financial `riskAssessmentEvent` type, then submit $0. |
 | `amount::currency` | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md) |
-| `customer::email` | Email address for the customer, if the customer does not have an email address use `noemail@kount.com` |
-| `deviceFingerPrint::dataCapture.dataEventId` | Unique Session ID. Must be unique over a 30-day span |
-| `deviceFingerPrint::dataDynamic.ipAddress` | Device IP address, if not available send 10.0.0.1 |
-| `source::sourceType` | [Payment source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md), not required for customer registration `riskAssessmentEventType` |
-| `merchantDetails::merchantId` | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `merchantDetails::terminalId` | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `orderData::itemDetails::quantity` | Identifies the number of units of the product sold, if there is no `orderData` set this to 0, and the additional `itemDetails` are not required |
-| `orderData::itemDetails::itemDescription` | Name or description of item |
-| `orderData::itemDetails::itemType` | Identifies the [type of the item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
-| `orderData::itemDetails::itemSubType` | Identifies the [subtype of item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
-| `orderData::itemDetails::amountComponents::unitPrice` | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
+| `customer::email` | Customer's email address. If the customer does not have an email address, use `noemail@kount.com`. |
+| `deviceFingerPrint::dataCapture.dataEventId` | Unique session ID. Must remain unique for a 30-day period. |
+| `deviceFingerPrint::dataDynamic.ipAddress` | Device IP address. If not available send 10.0.0.1. |
+| `source::sourceType` | [Payment source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md). Not required for customer registration `riskAssessmentEventType`. |
+| `merchantDetails::merchantId` | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md). |
+| `merchantDetails::terminalId` | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md). |
+| `orderData::itemDetails::quantity` | Identifies the number of units of the product sold. If there is no `orderData`, set this to 0, and additional `itemDetails` are not required. |
+| `orderData::itemDetails::itemDescription` | Name or description of the item. |
+| `orderData::itemDetails::itemType` | Identifies the [type of the item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype). |
+| `orderData::itemDetails::itemSubType` | Identifies the [subtype of the item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype). |
+| `orderData::itemDetails::amountComponents::unitPrice` | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges. |
 
 <!-- type: tab-end -->
 
@@ -157,14 +172,14 @@ The below table identifies the required parameters for a successful Kount scorin
 
 ### Recommended request variables
 
-The following data elements should be included when available with a fraud scoring request to enhance the accuracy of the risk assessment results.
+The following data elements should be included, when available, with a fraud scoring request to enhance the accuracy of the risk assessment results.
 
-- [Amount](?path=docs/Resources/Master-Data/Amount-Components.md)
-- [Billing address](?path=docs/Resources/Master-Data/Address.md#billing-address)
-- [Customer details](?path=docs/Resources/Master-Data/Customer-Details.md)
-- [Device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md)
-- [Order data](?path=docs/Resources/Master-Data/Order-Data.md)
-- [Shipping address](?path=docs/Resources/Master-Data/Address.md#shipping-address)
+- **[Amount](?path=docs/Resources/Master-Data/Amount-Components.md):** Represents the transaction amount. Higher amounts may indicate higher risk.
+- **[Billing address](?path=docs/Resources/Master-Data/Address.md#billing-address):** The address where the customer receives their billing statements. Mismatches with the shipping address can be a red flag.
+- **[Customer details](?path=docs/Resources/Master-Data/Customer-Details.md):** Includes personal information such as name, email, and phone number. Inconsistencies or suspicious patterns can indicate potential fraud.
+- **[Device fingerprint](?path=docs/Resources/Master-Data/Device-Fingerprint.md):**: A unique identifier generated from the device’s attributes. Helps detect repeated use of the same device for fraudulent activities.
+- **[Order data](?path=docs/Resources/Master-Data/Order-Data.md):** Information about the order, including items purchased and quantities. Unusual patterns or high-value items can be indicative of fraud.
+- **[Shipping address](?path=docs/Resources/Master-Data/Address.md#shipping-address):** The address where the order is to be delivered. Mismatches with the billing address or use of high-risk addresses can signal potential fraud.
 
 ---
 
@@ -181,17 +196,17 @@ The below table identifies the response parameters in the `riskAssessmentResult`
 
 | Variable | Type | Max Length | Description |
 | ----- | :-----: | :-----: | ----- |
-| `approvalStatus` | *string* | | This field provides the transaction score status from the third-party providers based on the merchant configuration |
-| `ruleDescription` | *string* | | Contains a brief description of the rule executed by the scoring provider to determine the transaction fraud score for a merchant |
-| `assessmentDetails` | *array* | N/A | An array that contains each scoring provider's name, transaction ID, fraud score and the transaction status |
+| `approvalStatus` | *string* | | This field provides the transaction score status from the third-party providers based on the merchant configuration. |
+| `ruleDescription` | *string* | | Contains a brief description of the rule executed by the scoring provider to determine the transaction fraud score for a merchant. |
+| `assessmentDetails` | *array* | N/A | An array that contains each scoring provider's name, transaction ID, fraud score and the transaction status. |
 
 **Risk assessment results:**
 
 | `approvalStatus` | `ruleDescription` | Recommended actions |
 | ----- | ----- | ----- |
-| *APPROVED* | Accept External Decision | The merchant can proceed with next processing step |
-| *DECLINED* | Decline External Decision | The merchant should try scoring request with more customer details, if another decline, ask for another form of payment |
-| *REVIEW* | Review External Decision | The merchant should access reporting tool to review scoring decisions |
+| *APPROVED* | Accept External Decision | The merchant can proceed with next processing step. |
+| *DECLINED* | Decline External Decision | The merchant should try scoring request with more customer details, if another decline, ask for another form of payment. |
+| *REVIEW* | Review External Decision | The merchant should access reporting tool to review scoring decisions. |
 
 <!--
 type: tab
@@ -203,23 +218,10 @@ The below table identifies the response parameters in the `assessmentDetails` ob
 | ----- | :-----: | :-----: | ----- |
 | `provider` | *string* | 100 | This field that specifies the name of the scoring provider. |
 | `providerTransactionId` | string | 128 | Unique transaction identifier assigned by the service provider to identify a single transaction. |
-| `approvalStatus` | *string* | 128 | A field that indicates the approval status of a transaction as determined by the fraud scoring provider |
+| `approvalStatus` | *string* | 128 | A field that indicates the approval status of a transaction as determined by the fraud scoring provider. |
 | `score` | *number* | 3 | Contains the fraud score assigned by the scoring provider, ranging from 0 to 99. A lower fraud score indicates a safer transaction. For example, a score closer to 0 suggests a safer transaction. |
 
 <!-- type: tab-end -->
-
----
-
-## Risk assessment event type
-
-| Event type | Description | Requirements |
-| ----- | ----- | ----- |
-| *CUSTOMER_REGISTRATION* | This event type is used when a merchant is trying to register a new customer on their platform | Ensure that all required customer data fields are included in the payload based on your scoring provider. |
-| *ACCOUNT_REGISTRATION* | This event type is used to when a merchant wants to register a new account by [creating a token](?path=docs/Resources/API-Documents/Payments_VAS/Payment-Token.md) on their platform. | Ensure that all required account data fields are included in the payload based on your scoring provider. |
-| *AUTHORIZATION* | This event type is used when a [transaction is authorized](/path=docs/Resources/API-Documents/Payments/Charges.md) by the payment gateway. | Merchant must send authorization details, merchant details, including  amount, and timestamp. |
-| *SALE* | This event type is used when a [sale transaction](?path=docs/Resources/API-Documents/Payments/Charges.md) is processed. | Merchant needs to provide sale details such as amount, merchant details, and sale timestamp. |
-| *CAPTURE* | This event type is used when [funds are captured](?path=docs/Resources/API-Documents/Payments/Capture.md) for an authorized transaction. | Merchant needs to provide capture details such as [reference transaction identifier](?path=docs/Resources/Master-Data/Reference-Transaction-Details.md), amount, merchant details, and capture timestamp |
-| *BALANCE_INQUIRY* | This event type is used when a [balance inquiry](?path=docs/Resources/API-Documents/Payments_VAS/Balance-Inquiry.md) is made by the customer. | Merchant must send inquiry details including merchant details and inquiry timestamp. |
 
 ---
 
