@@ -16,6 +16,23 @@ Commerce Hub is continually being improved with new features, security enhanceme
 
 ---
 
+## November 2024
+
+Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
+
+- **Certification:** October 7th 2024
+- **Production:** October 16th 2024
+
+| Details | Type |
+| ----- | ----- |
+| Version 1.24.11: New objects added/updated to support new and updated features. | Update |
+| [POS Decision Table for Cloud BIN Service](?path=docs/Resources/API-Documents/Device-Management/DT-Cloud-BIN-Guide.md) implemented. Information Lookup API enhanced to support Cloud BIN information | Feature |
+| Added `walletType` to the `source` object to support [*DecryptedWallet*](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) and future use cases. | Update |
+| PaymentEMV documentation updated to support Contactless payments. No API model changes. | Update |
+| Miscellaneous updates and enhancements to Commerce Hub core functions | Update |
+
+---
+
 ## October 2024
 
 Commerce Hub will target to update our environments on the following dates; however the dates and content is subject to change based on testing results.
@@ -60,9 +77,9 @@ Commerce Hub will target to update our environments on the following dates; howe
 
 | Details | Type |
 | ----- | ----- |
-| Version 1.24.08: refactored authorization optimization models, added models to support Fleet transactions | Update |
+| Version 1.24.08: refactored [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) models, added models to support Fleet transactions | Update |
 | Update [API endpoint URLs](?path=docs/Resources/API-Documents/Use-Our-APIs.md) to support new authentication credentials | Update |
-| [Authorization Optimization](?path=docs/Resources/Guides/Authorizations/Auth-Optimization.md) response updated to support tokens | Update |
+| Authorization Optimization responses updated to support returning *PaymentToken* | Update |
 | Support [Multi-Use Public Key RSA encryption](?path=docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md) for PaymentEMV and PaymentTrack | Update |
 | Certification for [Ingenico Axium](?path=docs/In-Person/Semi-Integrated/ingenico.md) semi-integrated devices | Feature |
 | Support [Fleet Card and Check transactions](?path=docs/Resources/Guides/Payment-Sources/Fleet/Fleet.md) | Feature |
