@@ -23,7 +23,7 @@ Features currently unavailable in CLX Virtual Terminal:
 
 RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based on the terminal setting; at this time, CLX Virtual Terminal is available in English language only.
 
-**Available Transaction Type Functionality Comparison**
+**Available Transaction Type Functionality Comparison:**
 
 | Payeezy Transaction Type | In RPM | In CLX |
 | -------- | :-------------: | :----------: |

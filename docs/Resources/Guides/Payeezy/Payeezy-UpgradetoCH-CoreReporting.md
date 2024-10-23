@@ -26,8 +26,6 @@ In General, many more data elements are available for reporting in the new CLX s
 |Delivery|  Download CSV <br> Email report <br> <br> Print <br>| Download as CSV, Excel or JSON <br> Email one-time <br> Schedule a report to email <br> _No print functionality from UI_|
 |Actions| Sale transactions allow for Refund and New Transaction|Sale transactions allow for Refund and Void. New Transaction creation will be available in the future.|
 
-<br>
-
 ### RPM Comparable Report Creation in CLX
 
 To generate the comparable **RPM Activity** report in CLX, use the Reports --> Commerce Hub --> Generic Analysis menu item for a summarized report.  See Generic Analysis parameters in table below for information on inputs.  Drill-down capabilities to the transaction level are enabled on this report (via Reports --> Commerce Hub --> Search).  See Search parameters in table below.

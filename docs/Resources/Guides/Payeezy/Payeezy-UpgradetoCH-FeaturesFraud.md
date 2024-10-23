@@ -27,7 +27,7 @@ In Payeezy RPM, fraud filters could be printed from the screen or downloaded int
 
 In Payeezy RPM, you could search a transaction, click on the detail, and create a new fraud filter based on that transaction. This functionality is not available in CLX.
 
-There is currently an unlimited number of values that can be set for each filter; however, a threshold will be determined and implemented at a future date. _Playbook will be updated with the specific number once it has been set.
+There is currently an unlimited number of values that can be set for each filter; however, a threshold will be determined and implemented at a future date. _Playbook will be updated with the specific number once it has been set._
 
 **Negative Filters available for configuration in CLX:**
 
