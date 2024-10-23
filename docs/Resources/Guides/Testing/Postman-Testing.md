@@ -1,5 +1,5 @@
 ---
-tags: [Postman, Request Header, Request Body, Header, Testing, Environments]
+tags: [Postman, Testing, Environments]
 ---
 
 # How to use Postman for testing
