@@ -118,27 +118,38 @@ type: tab
 titles: Ravelin, Kount
 -->
 
-The below table identifies the required parameters for a successful Ravelin scoring request.
+The below table identifies the required parameters for a successful Ravelin scoring request. Additional [recommended fields](#recommended-request-variables) can be submitted to enhance the accuracy of the risk assessment results.
 
 | Variable | Description |
 | ----- | ----- |
-| `source::sourceType` | [Payment source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md), not required for customer registration `riskAssessmentEventType` |
+| `additionalDataCommon:riskAssessmentEventType` | Identifies the [risk assessment event type](#risk-assessment-event-type) for fraud systems |
 | `merchantDetails::merchantId` | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `merchantDetails::terminalId` | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `additionalDataCommon:riskAssessmentEventType` | Identifies the [risk assessment event type](#risk-assessment-event-type) for fraud systems |
+| `source::sourceType` | [Payment source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md), not required for customer registration `riskAssessmentEventType` |
 
 <!--
 type: tab
 -->
 
-The below table identifies the required parameters for a successful Kount scoring request.
+The below table identifies the required parameters for a successful Kount scoring request. Additional [recommended fields](#recommended-request-variables) can be submitted to enhance the accuracy of the risk assessment results.
 
 | Variable | Description |
 | ----- | ----- |
+| `additionalDataCommon::riskAssessmentEventType` | Identifies the [risk assessment event type](#risk-assessment-event-type) for fraud systems |
+| `additionalDataCommon::additionalData.ecomURL` | Contains the URL of the site performing the Ecommerce transaction |
+| `amount::total` | Total amount of the transaction, if a non-financial `riskAssessmentEvent` type, then submit $0 |
+| `amount::currency` | The requested currency in [ISO-4217 3-character Alpha Code](?path=docs/Resources/Master-Data/Currency-Code.md) |
+| `customer::email` | Email address for the customer, if the customer does not have an email address use `noemail@kount.com` |
+| `deviceFingerPrint::dataCapture.dataEventId` | Unique Session ID. Must be unique over a 30-day span |
+| `deviceFingerPrint::dataDynamic.ipAddress` | Device IP address, if not available send 10.0.0.1 |
 | `source::sourceType` | [Payment source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md), not required for customer registration `riskAssessmentEventType` |
 | `merchantDetails::merchantId` | A unique ID used to identify the merchant. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
 | `merchantDetails::terminalId` | Identifies the specific device or point of entry where the transaction originated. Value assigned by the acquirer, gateway or a [merchant custom identifier](?path=docs/Resources/Guides/BYOID.md) |
-| `additionalDataCommon:riskAssessmentEventType` | Identifies the [risk assessment event type](#risk-assessment-event-type) for fraud systems |
+| `orderData::itemDetails::quantity` | Identifies the number of units of the product sold, if there is no `orderData` set this to 0, and the additional `itemDetails` are not required |
+| `orderData::itemDetails::itemDescription` | Name or description of item |
+| `orderData::itemDetails::itemType` | Identifies the [type of the item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
+| `orderData::itemDetails::itemSubType` | Identifies the [subtype of item](?path=docs/Resources/Master-Data/Order-Data.md#item-type-and-subtype) |
+| `orderData::itemDetails::amountComponents::unitPrice` | Identifies the price per unit of measure for the product sold. This should exclude any taxes or charges |
 
 <!-- type: tab-end -->
 
