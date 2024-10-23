@@ -97,8 +97,8 @@
         link: docs/Resources/Guides/Payment-Sources/Paze/Paze.md
     - title: Multi-Use Public Key
       link: docs/Resources/Guides/Multi-Use-Public-Key/Multi-Use-Public-Key.md
-#    - title: Plugins
-#      link: docs/Resources/Guides/Partners/Modules/Plugins.md
+    - title: Plugins
+      link: docs/Resources/Guides/Partners/Modules/Plugins.md
 - sections:
   - title: Features
     sections:
