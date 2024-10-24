@@ -1941,6 +1941,8 @@ components:
       properties:
         source:
           $ref: '#/components/schemas/Source'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
 
     AccountVerificationRequest:
       x-model-version: 1.0
