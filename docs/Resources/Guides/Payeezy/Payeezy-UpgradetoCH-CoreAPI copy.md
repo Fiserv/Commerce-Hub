@@ -20,27 +20,27 @@ See tabs below for information pertaining to the platform you are transacting on
 titles: Payeezy Gateway Direct, Developer API
 -->
 
-## Transaction Types and Endpoints
+**Transaction Types and Endpoints:**
 
 In Payeezy Gateway Direct (PGW), there was a single endpoint (/api.globalgatewaye4.firstdata.com/transaction/v32 or all previous versions) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being executed:
 
-| PGW Transaction Type | Commerce Hub Endpoint | Commerce Hub <br> Additional Info |
+| PGW Transaction Type | Commerce Hub Endpoint | Commerce Hub Additional Info |
 | -------- | ------------- | :--------------: |
-|00 = Purchase | /payments/v1/charges <br> `captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|01 = Pre-Authorization  | /payments/v1/charges <br> `captureFlag` = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|03 = Forced Post   | /payments/v1/charges <br> `captureFlag` = "true" <br> `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
+|00 = Purchase | /payments/v1/charges `captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|01 = Pre-Authorization  | /payments/v1/charges `captureFlag` = "false”  | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|03 = Forced Post   | /payments/v1/charges `captureFlag` = "true" `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
 |04 = Open Refund   | /payments/v1/refund | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
-|05 = Pre-Authorization Only   | REPLACED by Account Verification* <br> /payments-vas/v1/accounts/verification| [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
+|05 = Pre-Authorization Only   | REPLACED by Account Verification* /payments-vas/v1/accounts/verification| [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
 |13 = Open Void   | Will Not be Supported in Commerce Hub | |
-|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges <br> `captureFlag` = "true" <br> `referenceTransactionDetails` object in request | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
-|33 = Tagged Void   | /payments/v1/cancel <br> `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)|
-|34 = Tagged Refund   | /payments/v1/refund <br> `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
+|32 = Tagged Pre-Authorization Completion   | /payments/v1/charges `captureFlag` = "true" `referenceTransactionDetails` object in request | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
+|33 = Tagged Void   | /payments/v1/cancel `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)|
+|34 = Tagged Refund   | /payments/v1/refund `referenceTransactionDetails` object in request | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
 
-*Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
+**Note:** Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ---
 
-## Request and Response - Formats and Elements
+**Request and Response - Formats and Elements:**
 
 In Payeezy, three different formats were supported: SOAP XML, REST XML and REST JSON; in Commerce Hub only REST JSON format is available.
 
@@ -66,26 +66,43 @@ Additionally, the `CTR` was previously available in multiple languages (EN, FR, 
 type: tab
 -->
 
-## Transaction Types and Endpoints
+**Transaction Types and Endpoints:**
 
 In Developer API, there was a single endpoint (/api.payeezy.com/v1/transactions) for all transactions; in Commerce Hub there are multiple endpoints based on the type of transaction being done:
 
-| Transaction Type | Commerce Hub Endpoint | Commerce Hub <br> Additional Info |
+| Transaction Type | Commerce Hub Endpoint | Commerce Hub
+
+Additional Info |
 | -------- | ------------- | :----------: |
-|purchase | /payments/v1/charges <br> `captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|authorize (zero dollar) | REPLACED by Account Verification* <br> /payments-vas/v1/accounts/verification | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
-|authorize (non zero dollar) | /payments/v1/charges <br> `captureFlag` = "false”   | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
-|forced_post   | /payments/v1/charges <br> `captureFlag` = "true" <br> `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
-|capture   | /payments/v1/charges <br> `captureFlag` = "true" <br> `referenceTransactionDetails` object in request  | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
-|void   | /payments/v1/cancel <br> `referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)|
+|purchase | /payments/v1/charges
+
+`captureFlag` = "true" | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|authorize (zero dollar) | REPLACED by Account Verification*
+
+/payments-vas/v1/accounts/verification | [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) |
+|authorize (non zero dollar) | /payments/v1/charges
+
+`captureFlag` = "false”   | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md)|
+|forced_post   | /payments/v1/charges
+
+ `captureFlag` = "true"
+ `transactionDetails.approvalCode` = value from authorization_num | [Charges Request](?path=docs/Resources/API-Documents/Payments/Charges.md) |
+|capture   | /payments/v1/charges
+
+`captureFlag` = "true" `referenceTransactionDetails` object in request  | [Capture Request](?path=docs/Resources/API-Documents/Payments/Capture.md)|
+|void   | /payments/v1/cancel
+
+`referenceTransactionDetails` object in request | [Cancel Request](?path=docs/Resources/API-Documents/Payments/Cancel.md)|
 |refund (open)  |  /payments/v1/refund | [Refund Request](?path=docs/Resources/API-Documents/Payments/refund.md) |
-|refund (tagged) | /payments/v1/refund <br> `referenceTransactionDetails` object in request  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
+|refund (tagged) | /payments/v1/refund
+
+`referenceTransactionDetails` object in request  | [Refund Request](?path=docs/Resources/API-Documents/Payments/Refund.md)|
 
 *Use the new [Account Verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) functionality in Commerce Hub to perform the same action as a pre-authorization only in Payeezy.
 
 ---
 
-## Request and Response - Formats and Elements
+**Request and Response - Formats and Elements:**
 
 In Payeezy, many elements from the request are mirrored on the response, however, in Commerce Hub the request elements will only be sent back on the response if they were changed during processing.
 

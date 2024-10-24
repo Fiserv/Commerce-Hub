@@ -1,7 +1,5 @@
 # Reporting APIs and Search APIs
 
-{:: comment} Heading newly added. Please validate. {:/ comment}
-
 Commerce Hub offers a robust library of reporting APIs that includes Search (itemized data) and Summary level results. For more details, please see [Commerce Hub Reporting](https://dev-developerstudio.fiserv.com/product/Reporting).
 
 In the Payeezy Reporting API, parameters are sent in the url and results are sent back in XML format with a limit of 10k rows.  Commerce Hub has no limit on records returned.
@@ -14,10 +12,10 @@ In Payeezy, the reporting API was one endpoint and used a report_type parameter 
 
 | Payeezy Reporting API Report Type| Commerce Hub Endpoint | Commerce Hub Additional Information|
 | :-------- | :------------- | :---------- |
-|Activity| /v1/chub/search <br> /v1/chub/summary |[Search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/search) <br> [Summary](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary)|
+|Activity| /v1/chub/search /v1/chub/summary |[Search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/search) [Summary](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary)|
 |Closed Batches | Not Available* | |
 |Pending Batches| Not Available* | |
-|Declined |/v1/chub/search <br> /v1/chub/summary <br> filter approvalCodes = "Declined"|[Search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/search) <br> [Summary](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary) |
+|Declined |/v1/chub/search /v1/chub/summary filter approvalCodes = "Declined"|[Search](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/search)  [Summary](https://dev-developerstudio.fiserv.com/product/Reporting/api/?type=post&path=/v1/chub/summary) |
 
 _*Closed Batches and Pending Batches reporting is generated based off systemic Payeezy batch processing functionality and cannot be replicated in Commerce Hub.  Robust settlement reporting will be available._
 
@@ -31,10 +29,10 @@ titles: Request Element Detailed Comparison, Response Element Detailed Compariso
 | :-------- | :------------- | :---------- |
 |account |Not Available | |
 |merchant |Not Available | |
-|start_date  |fromDate | | 
-|end_date  |toDate | | 
+|start_date  |fromDate | |
+|end_date  |toDate | |
 |report_type  |Not Available  | |
-|group: <ul><li> terminal </li><li>user_name  </li></ul>   |summaryBy: <ul><li> Network </li><li> TxnType </li><li>  PaymentMethod</li><li>  TxnState </li><li> SourceType </li><li>  ApiKey </li><li>  TxnDay </li><li>  TxnWeek </li><li>  TxnMonth </li><li>  TxnQuarter </li><li>  TxnYear </li></ul> | Available in Summary |
+|group: terminal, user_name |summaryBy: Network, TxnType, PaymentMethod, TxnState, SourceType, ApiKey, TxnDay, TxnWeek,  TxnMonth, TxnQuarter, TxnYear | Available in Summary |
 |inactive_merchants |Not Available | |
 | |limit |The maximum number of records that will be returned |
 |  |fields | When using Search (transaction level), there is the capability to list specific fields to be returned instead of the entire set (default behavior) |
@@ -106,7 +104,7 @@ titles: Request Element Detailed Comparison, Response Element Detailed Compariso
 |terminal |Not Available | |
 |start_date  |fromDate | |
 |end_date  |toDate | |
-|search_field: <ul><li>cardholder</li><li> refno</li><li> custref</li><li> tag</li><li> cardno </li></ul>   |Not Available  | |
+|search_field: cardholder, refno, custref, tag, cardno   |Not Available  | |
 |search  |Not Available  | |
 |status  |filters.approvalCodes | |
 |amount_from, amount_to  |Not Available |  |

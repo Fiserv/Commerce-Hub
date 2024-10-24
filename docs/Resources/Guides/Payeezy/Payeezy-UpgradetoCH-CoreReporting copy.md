@@ -21,9 +21,9 @@ In General, many more data elements are available for reporting in the new CLX s
 
 |Function| RPM | CLX|
 | :--------: | :------------- | :---------- |
-|Scope| Information organized by terminal/outlet/MID <br><br> Shows summary with drill down to each transaction level detail <br>  <br>| Site ID is the equivalent element to MID in Commerce Hub <br> <br>  Use the Reporting --> Generic Analysis to create summarized reporting. Results displayed have drill-down capabilities into the underlying transactions (via Reporting --> Search).|
+|Scope| Information organized by terminal/outlet/MID: Shows summary with drill down to each transaction level detail | Site ID is the equivalent element to MID in Commerce Hub.  Use the Reporting > Generic Analysis to create summarized reporting. Results displayed have drill-down capabilities into the underlying transactions (via Reporting > Search).|
 |Filters| Limited to date range, up to six months at a time | All RPM filters plus the extended ability to filter on all additional Commerce Hub elements and a date range of up to 25 months or predefined ranges |
-|Delivery|  Download CSV <br> Email report <br> <br> Print <br>| Download as CSV, Excel or JSON <br> Email one-time <br> Schedule a report to email <br> _No print functionality from UI_|
+|Delivery|  Download CSV, Email report, Print | Download as CSV, Excel or JSON, Email one-time, Schedule a report to email _No print functionality from UI_|
 |Actions| Sale transactions allow for Refund and New Transaction|Sale transactions allow for Refund and Void. New Transaction creation will be available in the future.|
 
 ### RPM Comparable Report Creation in CLX
@@ -37,8 +37,6 @@ To generate the comparable **RPM Declined** report in CLX, use the Reports --> C
 To generate the comparable **RPM Fraudulent** report in CLX, use the Data Solutions --> Fraud --> Manage menu item.  Select Reviews & Details in the Viewing drop-down list to show all transactions declined due to fraud configurations (settings, velocity controls and filters).
 
 **RPM Deposits - Pending Batches** and **RPM Deposits - Closed Batches** reports are created based on systemic Payeezy batch processes, thus not able to be replicated in an exact manner in CLX.  In CLX, there is a robust Settlement report available for configuration and will provide authorization date, transaction date, batch date and funding date for all transactions.  Reports --> Settlement --> Search menu item.
-
-<br>
 
 ### Comparison of RPM Reporting Result Elements to CLX Reports
 

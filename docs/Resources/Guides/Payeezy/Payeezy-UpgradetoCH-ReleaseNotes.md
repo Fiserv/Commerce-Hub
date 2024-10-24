@@ -7,11 +7,11 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, release-notes
 # Release Notes
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 As Commerce Hub continues to be improved with new features and value added services, the Payeezy Merchant Migration Playbook will be updated to include new content or revise previous content if needed.  These release notes list the updates made to the playbook with the most recent update shown first.
 
-#### Release Types
+## Release Types
 
 - **New Content:** A new feature was released and content added to the playbook.
 - **Update:** Existing content was updated or enhanced.
@@ -68,13 +68,12 @@ As Commerce Hub continues to be improved with new features and value added servi
 | New Content | [Soft Descriptors](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesSoftD.md) Understanding the differences in capabilities and functionality of Soft Descriptors in Commerce Hub|
 | New Content | [Stored Credentials](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesStoredCredentials.md) Understanding the differences in capabilities and functionality of Stored Credentials in Commerce Hub |
 | New Content | [Tokenization](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FeaturesTokens.md) How the configuration and functionality of tokens has changed with Commerce Hub|
-| New Content | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Use this document to help convert your current API request and response elements into <br> Commerce Hub nomenclature and formatting. |
+| New Content | [API Element Mapping](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalAPI.md) Use this document to help convert your current API request and response elements into Commerce Hub nomenclature and formatting. |
 | New Content | [Required Fields](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalRequired.md) Fields Required in a request by Commerce Hub for each transaction type|
 | New Content | [Customer Transaction Record (CTR)](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-TechnicalCTR.md) How to create the CTR response element from Commerce Hub elements |
 | New Content | [FAQs](?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-FAQs.md) Our most common questions and answers for Payeezy merchants migrating to Commerce Hub|
 | New Content | Glossary - Link to a list of programming and API-related terms, acronyms, and phrases to help you think like a developer.|
 | New Content | Release Notes |
-
 
 ---
 

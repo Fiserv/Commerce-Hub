@@ -7,7 +7,7 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallet
 # Mobile Wallets
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Wallet transactions originate from a digital wallet either from a website or on a device (e.g. Apple/iOS, Google/Android, and Samsung). Merchants can submit this data as either an encrypted or a decrypted request.
 
@@ -41,7 +41,5 @@ link: ?path=docs/Resources/Guides/Payeezy/Payeezy-UpgradetoCH-DecryptedWallet.md
 - [Apple Pay Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Apple-Pay/Apple-Pay-Web-REST.md)
 - [Google Pay Integration](?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Google-Pay/Google-Pay-Web-REST.md)
 - [Decrypted Wallets](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md)
-
-
 
 ---

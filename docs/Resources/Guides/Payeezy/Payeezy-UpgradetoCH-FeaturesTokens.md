@@ -7,14 +7,13 @@ tags: [carat, commerce-hub, enterprise, tokens-request, payment-token, tokenizat
 # Tokenization
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
-
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 <!--type: tab
 titles: API, Configuration, Virtual Terminal, Reporting
 -->
 
-**Happy Path Token Usage**
+**Happy path token usage:**
 
 If the Tokenization Payment Type is enabled for the transacting MID in ClientLine Enterprise (CLX), Commerce Hub will tokenize the card and return the paymentTokens object in the response:
 
@@ -34,7 +33,7 @@ In Payeezy, tokenization of a card, without payment, would be completed via the 
 
 ---
 
-**Non-happy Path Token Usage**
+**Non-happy path token usage:**
 
 The merchant can prevent the token from being created and override the automated behavior by including the `createToken` element in the request with a value of false.
 
@@ -83,7 +82,5 @@ Token number can be viewed in the transaction detail of the Search report in CLX
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
 - [Commerce Hub Overview](?path=docs/Getting-Started/Getting-Started-General.md)
 - [Commerce Hub Administration / ClientLine Enterprise Training](https://fiserv.cloudguides.com/en-us/guides/ClientLine%20Enterprise%20from%20Fiserv)
-
-
 
 ---

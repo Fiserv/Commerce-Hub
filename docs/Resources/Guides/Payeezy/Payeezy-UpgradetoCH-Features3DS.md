@@ -7,13 +7,17 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, 3DS]
 # 3DS
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
 Commerce Hub allows a merchant to pass the 3-D Secure (3DS) authentication results that were obtained through a Commerce Hub or a thrid-party 3-D Secure provider when sending the authorization transaction. PaymentCard or PaymentToken is used by the merchant as the payment source when sending the transaction to Commerce Hub, along with the 3DS response data.
 
 Payeezy supported 3DS v1 and v2; Commerce Hub only supports 3DS v2.
 
-> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub. <br> <br> If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform. <br> <br> If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
+> :memo: **Note:** It is important to know the platform you are transacting on in order to review the most pertinent information for your upgrade to Commerce Hub.
+
+If you are using the **/api.globalgatewaye4.firstdata.com** URL, then you are transacting through the **Payeezy Gateway Direct (PGW)** platform.
+
+If you are using the **/api.payeezy.com** URL, then you are transacting through the **Developer API** platform.
 
 ## Element Mapping
 

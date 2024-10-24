@@ -4,16 +4,18 @@ tags: [carat, commerce-hub,  card-not-present, dynamic-descriptor, Statement-Des
 
 ---
 
-# Soft Descriptors
+# Dynamic Descriptors
+
+{::comment} Soft Descriptor {:/comment}
 
 <!-- theme: danger -->
->  The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
+> The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
 
-Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub. 
+Soft Descriptors in Payeezy are now referred to as [Dynamic Descriptors (additional information)](?path=docs/Resources/Guides/Dynamic-Descriptor.md) in Commerce Hub.
 
-### API Structure
+## API Structure
 
-In Payeezy, the 'dba_name' or 'mcc' element was required on the capture request for settlement; in Commerce Hub, 'mcc', 'merchantName', 'customerServiceNumber', 'serviceEntitlement' and 'address' are all required. 
+In Payeezy, the 'dba_name' or 'mcc' element was required on the capture request for settlement; in Commerce Hub, 'mcc', 'merchantName', 'customerServiceNumber', 'serviceEntitlement' and 'address' are all required.
 
 The mvv_maid element is not available in Commerce Hub.
 

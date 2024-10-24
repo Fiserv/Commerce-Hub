@@ -13,12 +13,12 @@ tags: [carat, commerce-hub, enterprise, card-not-present, payeezy, mobile-wallet
 
 |Payeezy Gateway Direct|Commerce Hub|
 |-------|-----|
-|`transaction_type` | Endpoint:  /payments/v1/charges <br> `sourceType`= DecryptedWallet <br> Refer to Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details.|
+|`transaction_type` | Endpoint:  /payments/v1/charges  `sourceType`= DecryptedWallet Refer to Payment [source type](?path=docs/Resources/Guides/Payment-Sources/Source-Type.md) for more details.|
 |`wallet_provider_id`|`walletType` Identifies the wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY|
 |`amount`|  `amount` object containing `total` and `currency`|
-|`cc_number` <br> `cardholder_name`<br> `c_expiry`|`card` object containing `cardData`  `expirationMonth`  and  `expirationYear`|
-|| `cavv` Cardholder Authentication Verification Value provided by the Wallet Provider|
-||`xid` The unique identifier for the transaction provided by the Wallet Provider  |
+|`cc_number` `cardholder_name` `c_expiry`|`card` object containing `cardData` , `expirationMonth` , and  `expirationYear`|
+| `cavv`| `cavv` Cardholder Authentication Verification Value provided by the Wallet Provider|
+| `xid`|`xid` The unique identifier for the transaction provided by the Wallet Provider  |
 
 ### Sample JSON Request Payload
 

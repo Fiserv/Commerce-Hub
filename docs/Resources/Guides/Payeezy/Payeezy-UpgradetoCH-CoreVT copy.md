@@ -31,10 +31,10 @@ RPM Virtual Terminal could be displayed in multiple languages (EN, FR, ES) based
 |Pre-Authorization |POS Screen | Virtual Terminal -> Initiate Card Transaction|
 |Forced Post |POS Screen | Virtual Terminal -> Initiate Card Transaction|
 |Open Void  |POS Screen | Not Supported|
-|Tagged Pre-Authorization Completion  |POS Screen |Reports -> Commerce Hub -> Search <br> Filter Transaction Type = Pre-Authorization Request <br> Action button to complete Capture|
-|Tagged Void   |Action in search or reports  | Reports -> Commerce Hub -> Search <br> Filter Transaction Type = Pre-Authorization Request, Pre-Authorization Complete or Purchase<br> Action button to complete Void |
-|Tagged Refund  |Action in search or reports  |Reports -> Commerce Hub -> Search <br> Filter Transaction Type = Pre-Authorization Complete or Purchase <br> Action button to complete Refund|
-|New Transaction (Tagged Pre-Authorization or Tagged Purchase)  |Action in search or reports <br>  _Transaction Type only available in Virtual Terminal, not API_ | Not Supported |
+|Tagged Pre-Authorization Completion  |POS Screen |Reports -> Commerce Hub -> Search; Filter Transaction Type = Pre-Authorization Request; Action button to complete Capture|
+|Tagged Void   |Action in search or reports  | Reports -> Commerce Hub -> Search; Filter Transaction Type = Pre-Authorization Request, Pre-Authorization Complete or Purchase; Action button to complete Void |
+|Tagged Refund  |Action in search or reports  |Reports -> Commerce Hub -> Search; Filter Transaction Type = Pre-Authorization Complete or Purchase; Action button to complete Refund|
+|New Transaction (Tagged Pre-Authorization or Tagged Purchase)  |Action in search or reports. _Transaction Type only available in Virtual Terminal, not API_ | Not Supported |
 
 ---
 
