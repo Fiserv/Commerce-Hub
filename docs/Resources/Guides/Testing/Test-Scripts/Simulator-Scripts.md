@@ -91,7 +91,7 @@ A specific [address verification *(AVS)*](?path=docs/Resources/Guides/Fraud/Addr
 > Address verification and [security code](#simulate-a-security-code-response) responses cannot be simulated at the same time. The default response of *MATCHED* or *NOT_CHECKED* will return for the `securityCode` field, even if not sent.
 
 | Card Type | Card Number | Expiration Date | Security Code |
-| ----- | ----- | ----- | ----- | ----- |
+| ----- | ----- | ----- | ----- |
 | *Visa* | 4012008565774776 | 12/2030 | 777 |
 | *Mastercard* | 5500002389250960 | 12/2030 | 777 |
 | *Amex* | 341111565369561 | 12/2030 | 7777 |
