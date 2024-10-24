@@ -1,48 +1,35 @@
 ---
-tags: [Sandbox, Testing, Test Integration, Test Cards, Test Declines, Test Errors, Test Fraud]
+tags: [Testing, Simulator, Sandbox, Certification, Test Cards] 
 ---
 
 # Test Response Messages
 
-Commerce Hub allows developers who integrate with our API the ability to trigger responses and to ensure that they are handled accordingly. 
-
-<!-- theme: warning -->
-> Test documentation provided is intended to be used in the Commerce Hub sandbox environment, for end-to-end certification testing utilize the test scripts located in the developer dashboard.
+Commerce Hub allows developers who integrate with our APIs the ability to trigger responses and to ensure that they are handled accordingly.
 
 <!-- type: row -->
 
 <!-- type: card
-title: Test Cards
-description: Commerce Hub supports test cards in the sandbox environment. No funds will be charged, refunded or processed while utilizing a test account.
-link: ?path=docs/Resources/Guides/Testing/Test-Cards.md
+title: Go Live Checklist
+description: Quick reference guide to implement and go live with Commerce Hub's APIs.
+link: 
 -->
 
 <!-- type: card
-title: Error Response
-description: A transaction error can be triggered by entering the desired error code in the request payload.
-link: ?path=docs/Resources/Guides/Testing/Test-Errors.md
+title: Postman Testing
+description: How to use Postman Collections to test your integration.
+link: ?path=docs/Resources/Guides/Testing/Postman-Testing.md
 -->
 
 <!-- type: card
-title: Decline Response
-description: A transaction decline can be triggered by entering a specific amount for the transaction.
+title: Simulator Scripts
+description: Scripts to prompt a simulated preview response for Commerce Hub's APIs.
+link: ?path=docs/Resources/Guides/Testing/Test-Scripts/Simulator-Scripts.md
+-->
+
+<!-- type: card
+title: Certification Scripts
+description: Scripts to test and certify your application before going live.
 link: ?path=docs/Resources/Guides/Testing/Test-Declines.md
--->
-
-<!-- type: row-end -->
-
-<!-- type: row -->
-
-<!-- type: card
-title: Address and Security Code
-description: Address and security code verification responses can be triggered by submitting a specific address or security code in the request payload.
-link: ?path=docs/Resources/Guides/Testing/Test-Address-Security.md
--->
-
-<!-- type: card
-title: Fraud Settings
-description: A fraud setting can be triggered by defining the error in the request or submitting specific information to simulate a fraud response.
-link: ?path=docs/Resources/Guides/Testing/Test-Fraud.md
 -->
 
 <!-- type: row-end -->

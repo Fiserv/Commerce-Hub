@@ -3,7 +3,7 @@ openapi: 3.0.2
 info: 
   title: Commerce Hub
   description: This API Specification is designed to provide technical guidance required to consume and integrate with our APIs for payment processing.
-  version: v1.24.09
+  version: v1.24.11
 
 servers:
 - {url: 'https://connect.fiservapis.com/ch/', description: Production}
@@ -287,7 +287,7 @@ paths:
   /payments-vas/v1/card-capture:
     x-model-version: 1.0
     post:
-      summary: 'Submit a <a href="../docs?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md">merchant managed</a> card capture for use with Secure Card Capture'
+      summary: 'Used to <a href="../docs?path=docs/Online-Mobile-Digital/Checkout/API/API-Only.md">securely submit PCI and PII data</a> to Commerce Hub.'
       x-group-name: 'Accounts'
       x-proxy-name: 'Data Capture'
       x-default-example: PaymentCard
@@ -300,7 +300,10 @@ paths:
             examples:
               PaymentCard-Encrypted:
                 summary: CardCapture Request with PaymentCard,
-                $ref: '#/components/examples/PaymentCardCaptureRequest'
+                $ref: '#/components/examples/PaymentCardCaptureRequest'      
+              PaymentCheck-Encrypted:
+                summary: CardCapture Request with PaymentCheck (ACH)
+                $ref: '#/components/examples/PaymentCheckDriverLicenseCaptureRequest'
       responses:
         200:
           description: Success.
@@ -310,8 +313,11 @@ paths:
                 $ref: '#/components/schemas/CardCaptureResponse'
               examples:
                 PaymentCard-Encrypted:
-                  summary: CardCaptureResponse for PaymentCard
+                  summary: CardCapture Response for PaymentCard
                   $ref: '#/components/examples/PaymentCardCaptureResponse'
+                PaymentCheck-Encrypted:
+                  summary: CardCapture Response for PaymentCheck (ACH)
+                  $ref: '#/components/examples/PaymentCheckDriverLicenseCaptureResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -429,7 +435,7 @@ paths:
       x-proxy-name: 'Information Lookup'
       x-default-example: PaymentCard
       summary: Lookup a payment card or payment token.
-      description: 'Use this to look up card related information such as issuer country, card function and card brand associated with a card or token.'
+      description: 'Retrieve detailed information about a card or token, including issuer country, card function, card brand, and other relevant attributes using Global BIN or Cloud BIN data. See the <a href="../docs?path=docs/Resources/API-Documents/Payments_VAS/Information-Lookup.md">Information Lookup API documentation</a> for additional integration information.'
       requestBody:
         required: true
         content:
@@ -590,7 +596,7 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/TokenizationResponse'}
               examples:
-                PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardEncryptedTokenRequest'}
+                PaymentCard-Encrypted: {summary: TokenizationRequest with encrypted PaymentCard, $ref: '#/components/examples/PaymentCardTokenResponse'}
                 PaymentEMV: {summary: TokenizationResponse with PaymentEMV, $ref: '#/components/examples/PaymentEMVTokenResponse'}
                 PaymentTrack: {summary: TokenizationResponse with PaymentTrack, $ref: '#/components/examples/PaymentTrackTokenResponse'}
                 ApplePay: {summary: TokenizationResponse with ApplePay, $ref: '#/components/examples/ApplePayTokenResponse'}
@@ -810,6 +816,66 @@ paths:
 # DEVICE MANAGEMENT
 #--------------------------------------------------------------------------------------
 
+  /tms/v1/client-certificate:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Client Certificate Definition
+      x-group-name: 'Device Management'
+      x-proxy-name: 'Upload Certificate'
+      summary: Upload certificate.
+      description: This payload provides the details to be sent to upload certificate.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientCertificateRequest'
+            examples:
+              Upload:
+                summary: Upload certificate request
+                $ref: '#/components/examples/ClientCertificateRequest'
+      responses:
+        200:
+          description: UPLOADED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientCertificateResponse'
+              examples:
+                Upload:
+                  summary: Upload certificate response
+                  $ref: '#/components/examples/ClientCertificateResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
   /tms/v1/emv-capk-data:
     x-model-version: 1.0
     post:
@@ -846,6 +912,66 @@ paths:
                 Status:
                   summary: EMV CAPK file version status response
                   $ref: '#/components/examples/EmvDetailsStatusResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+
+  /tms/v1/pos-decision-table:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Pos Decision Table Endpoint Definition
+      x-group-name: 'Device Management'
+      x-proxy-name: 'POS Decision Table'
+      summary: Submit a POS Decision Table download request.
+      description: Download a POS Decision Table for a device. See the <a href="../docs?path=docs/Resources/API-Documents/Device-Management/Decision-Table.md">POS Decision Table documentation</a> for additional integration information.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PosDecisionTableRequest'
+            examples:
+              CloudBIN-Download:
+                summary: Request for a Cloud BIN download.
+                $ref: '#/components/examples/CloudBinDownloadRequest'
+      responses:
+        200:
+          description: Downloaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PosDecisionTableResponse'
+              examples:
+                CloudBIN-Download:
+                  summary: Response for Cloud BIN download.
+                  $ref: '#/components/examples/CloudBinDownloadResponse'
         400:
           $ref: '#/components/responses/BadRequest'
         401:
@@ -1473,57 +1599,69 @@ paths:
       - {$ref: '#/components/parameters/MessageDigestHeader'}
       - {$ref: '#/components/parameters/KeyIdParam'}
 
+  /security/v1/saq/whitelist/domains:
+    x-model-version: 1.0
+    post:
+      tags:
+        - Domains Security Endpoint
+      x-group-name: 'Security'
+      x-proxy-name: 'Whitelist Domains'
+      summary: Whitelists the given list of domains
+      description: Whitelists the given list of domains and sends back the response with valid and invalid domains.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DomainRequest'
+            examples:
+              Whitelist-Domains:
+                summary: Whitlist domains request
+                $ref: '#/components/examples/DomainWhitelistRequest'
+      responses:
+        200:
+          description: Response with valid and invalid domains
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DomainResponse'
+              examples:
+                Whitelist-Domains:
+                  summary: Whitlist domains response
+                  $ref: '#/components/examples/DomainWhitelistResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        408:
+          $ref: '#/components/responses/RequestTimeout'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        425:
+          $ref: '#/components/responses/TooEarly'
+        429:
+          $ref: '#/components/responses/TooManyRequest'
+        500:
+          $ref: '#/components/responses/ServerError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailable'
+        504:
+          $ref: '#/components/responses/GatewayTimeout'
+      parameters:
+      - {$ref: '#/components/parameters/ContentTypeHeader'}
+      - {$ref: '#/components/parameters/ClientRequestIdHeader'}
+      - {$ref: '#/components/parameters/ApiKeyHeader'}
+      - {$ref: '#/components/parameters/TimestampHeader'}
+      - {$ref: '#/components/parameters/AcceptLanguageHeader'}
+      - {$ref: '#/components/parameters/AuthorizationTokenTypeHeader'}
+      - {$ref: '#/components/parameters/AuthorizationHeader'}
+      - {$ref: '#/components/parameters/MessageDigestHeader'}
+      - {$ref: '#/components/parameters/KeyIdParam'}
+
 components:
-  x-event:
-    - listen: "prerequest"
-      script: 
-        exec: 
-          - >
-            var key = 'xJhxixSk4Nq8BISScbAUuE5OflIu3Xyu'; // Retrived from your Developer Studio Credentials Tab
-            var secret = 'mq23RAutPOM3BunPwvFgvpl2iAKw2A36HUL6fjqXGHJ'; // Retrived from your Developer Studio Credentials Tab 
-            var ClientRequestId = Math.floor((Math.random() * 10000000) + 1);
-            var time = new Date().getTime();
-            var requestBody = request.data;
-            var rawSignature = key + ClientRequestId + time + requestBody;
-            var computedHash = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secret.toString());
-            computedHash.update(rawSignature);
-            computedHash = computedHash.finalize();
-            var computedHmac = CryptoJS.enc.Base64.stringify(computedHash);
-            postman.setEnvironmentVariable('key', key);
-            postman.setEnvironmentVariable('time', time);
-            postman.setEnvironmentVariable('signature', computedHmac);
-            postman.setEnvironmentVariable('ClientRequestId', ClientRequestId)
-            function b64encode(input) {
-              var swaps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-                "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-                "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "/"],
-                tb, ib = "",
-                output = "",
-                i, L;
-              for (i = 0, L = input.length; i < L; i++) {
-                tb = input.charCodeAt(i).toString(2);
-                while (tb.length < 8) {
-                  tb = "0" + tb;
-                }
-                ib = ib + tb;
-                while (ib.length >= 6) {
-                  output = output + swaps[parseInt(ib.substring(0, 6), 2)];
-                  ib = ib.substring(6);
-                }
-              }
-              if (ib.length == 4) {
-                tb = ib + "00";
-                output += swaps[parseInt(tb, 2)] + "=";
-              }
-              if (ib.length == 2) {
-                tb = ib + "0000";
-                output += swaps[parseInt(tb, 2)] + "==";
-              }
-              return output;
-            }
-        type: "text/javascript"
+
 #--------------------------------------------------------------------------------------
 # PARAMETER MODELS
 #--------------------------------------------------------------------------------------
@@ -1629,7 +1767,6 @@ components:
       in: header
       required: true
       description: 'API key provided to the merchant associating the requests with the appropriate app in the Developer Portal.'
-
 
 #--------------------------------------------------------------------------------------
 # RESPONSE MODELS
@@ -1921,6 +2058,27 @@ components:
         transactionInteraction:
           $ref: '#/components/schemas/TransactionInteraction'
 
+    ClientCertificateRequest:
+      x-model-version: 1.0
+      properties:
+        clientCryptographicDetails:
+          $ref: '#/components/schemas/CryptographicDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+
+    ClientCertificateResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        clientCryptographicDetails:
+          $ref: '#/components/schemas/CryptographicDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
 
     DccRequest:
       x-model-version: 1.0
@@ -1933,6 +2091,34 @@ components:
           $ref: '#/components/schemas/Amount'
         merchantDetails:
           $ref: '#/components/schemas/MerchantDetails' 
+
+    DomainRequest:
+      x-model-version: 1.0
+      properties:
+        domains:
+          type: array
+          description: 'A list of domains that needs to be <a href="../docs?path=docs/Resources/API-Documents/Security/Whitelist.md">whitelisted</a>.'
+          items:
+            type: string
+          example: ["www.example1.com", "www.example2.com"]
+
+    DomainResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        validDomains:
+          type: array
+          description: 'A list of domains that are valid.'
+          items:
+            type: string
+          example: ["www.example1.com", "www.example2.com"]
+        invalidDomains:
+          type: array
+          description: 'A list of domains that are invalid.'
+          items:
+            type: string
+          example: ["www.example1.co"]
 
     EmvDetailsRequest:
       x-model-version: 1.0
@@ -2035,6 +2221,17 @@ components:
         transactionInteraction:
           $ref: '#/components/schemas/TransactionInteraction'
 
+    PosDecisionTableRequest:
+      x-model-version: 1.0
+      properties:
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+
+
     RefundRequest:
       x-model-version: 1.0
       properties:
@@ -2089,11 +2286,6 @@ components:
     SecurityCredentialsRequest:
       x-model-version: 1.0
       properties:
-        domains:
-          type: array
-          description: 'A whitelist of domains that are applicable for this credentials request.'
-          items:
-            $ref: '#/components/schemas/Domain'
         merchantDetails:
           $ref: '#/components/schemas/MerchantDetails'
 
@@ -2489,6 +2681,22 @@ components:
         transactionDetails:
           $ref: '#/components/schemas/TransactionDetails'
 
+    PosDecisionTableResponse:
+      x-model-version: 1.0
+      properties:
+        gatewayResponse:
+          $ref: '#/components/schemas/GatewayResponse'
+        transactionDetails:
+          $ref: '#/components/schemas/TransactionDetails'
+        merchantDetails:
+          $ref: '#/components/schemas/MerchantDetails'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        posDecisionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/PosDecisionData'
+    
     RefundResponse:
       x-model-version: 1.0
       properties:
@@ -2522,6 +2730,8 @@ components:
           $ref: '#/components/schemas/Customer'
         orderData:
           $ref: '#/components/schemas/OrderData'
+        cardDetails:
+          $ref: '#/components/schemas/CardDetails'
         rate:
           $ref: '#/components/schemas/Rate'
         splitSettlement:
@@ -2569,11 +2779,6 @@ components:
           description: 'Unique identifier for this session'
           maxLength: 64
           example: '1a47b28f-b15d-45d2-9394-07f79ee5e954'
-        domains:
-          type: array
-          description: 'A whitelist of domains that are applicable for this credentials request.'
-          items:
-            $ref: '#/components/schemas/Domain'
         accessTokenIssuedTime:
           type: string
           format: date-time
@@ -2596,8 +2801,6 @@ components:
             Valid Values: 
             * BEARER
             * JWT (JSON Web Token)
-
-
 
     ThreeDSAuthenticationResponse: 
       x-model-version: 1.0
@@ -3295,6 +3498,10 @@ components:
           maxLength: 16
           description: 'Original Host Response Message for re-authorized (Optimized) transaction.'
           example: 'DECLINED'
+        panEncryptionStatus:
+          type: string
+          description: 'Provides the status message of the encrypted PAN in the response'
+          example: 'Success'
 
     AvsSecurityCodeResponse:
       x-model-version: 1.0
@@ -3455,7 +3662,6 @@ components:
           description: 'Provides the subcategory for the <code>category</code> field to identify the card type.'
           example: 'EBT_SNAP'
 
-
     CardDetails:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Master-Data/Card-Details.md">Card meta data</a> details for a for a PaymentCard, PaymentEMV, PaymentTrack or PaymentToken.'
@@ -3583,32 +3789,32 @@ components:
         fastFundsDomesticMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for domestic money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for domestic money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsCrossBorderMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for cross-border money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for cross-border money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsDomesticNonMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for domestic non-money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for domestic non-money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsCrossBorderNonMoneyTransfer:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for cross-border non-money transfer OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for cross-border non-money transfer OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsDomesticGambling:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for domestic gambling OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for domestic gambling OCTs. Visa Only.'
           example: 'SUPPORTED'
         fastFundsCrossBorderGambling:
           type: string
           maxLength: 13
-          description: 'Indicates if fast funds is supported for cross-border gambling OCTs. Visa Only.'
+          description: 'Indicates if Fast Funds is supported for cross-border gambling OCTs. Visa Only.'
           example: 'SUPPORTED'
         prepaidIndicator:
           type: string
@@ -3726,6 +3932,50 @@ components:
           description: 'Describes check type.'
           example: 'PERSONAL'
 
+    CryptographicDetails:
+      x-model-version: 1.0
+      description: 'Client provided <a href="../docs?path=docs/Resources/API-Documents/Device-Management/Client-Certificate-Upload.md">cryptographic details</a>.'
+      properties:
+        clientKeyId:
+          type: string
+          maxLength: 64
+          description: 'Unique identifier of the key pair.'
+          example: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+        cryptographicAlgorithm:
+          type: string
+          maxLength: 256
+          description: 'Encryption type of the key pair.'
+          example: 'JWE'
+        cryptographicResourceLength:
+          type: integer
+          description: 'Size of the key pair.'
+          example: 2048
+        cryptographicResource:
+          type: string
+          description: 'Encoded public key/certificate.'
+          example: '30820122300D06092A864886F70D01010105000382010F003082010A0282010100BB729BFBD31A41CD46592A25D19589261BC1BE4DA9E81563D6F0DA1AB3C16B6C46B2830C81E7F5622037C17BFB61DE4948AAE0E191F51A486818416A5F59C12B2041CDCBAD658C745D4ED1696BD904010F8D0781C0E5127B6A172F10A767822E47EB3BDD9B851B0D4AE6342DDCD91126ECC0D1658B250AF20486D327CE02C79BB9A985B62CB72138A54F24CA9AC0871D5E41E30DE989F291EFC1BAD998B0E073D1434DBC90797D5C92F7881B5B6A54CE008AA5EBAEC7206FB42870EC49E0083C8C1A6B3A79EA9BF4C1693AD6F3F0EEA3C83F45621FE509D0739A1E91A41AF58B7C91793D3F1D0A59C77325AB32CB568782FB96F5E25561C33FBAEFDB1C05AA570203010001'
+        cryptographicResourceType:
+          type: string
+          description: 'Describes cryptographic resource type'
+          example: 'CERTIFICATE'
+        cryptographicResourceEncoding:
+          type: string
+          description: 'Describes cryptographic resource encoding'
+          example: '.pem'
+        publicKeyHash:
+          type: string
+          description: 'Commerce hub generated publicKey Hash'
+          example: '3A100B15B9430B1711f2E38F05939A9A'
+        usedFor:
+          type: string
+          description: 'Indicates the purpose of cryptographic information.'
+          example: 'RTAU'
+        email:
+          type: string
+          maxLength: 256
+          description: 'Business/Client email address.'
+          example: 'business@domain.com'
+
     Customer:
       x-model-version: 1.0
       description: '<a href="../docs?path=docs/Resources/Master-Data/Customer-Details.md">Customer</a> specific data.'
@@ -3834,6 +4084,8 @@ components:
             $ref: '#/components/schemas/Phone'
         vehicle:
           $ref: '#/components/schemas/Vehicle'
+        encryptionData:
+          $ref: '#/components/schemas/EncryptionData'
 
     DecryptedWallet:
       x-model-version: 1.0
@@ -3852,12 +4104,7 @@ components:
               type: string
               maxLength: 40
               description: 'Cryptogram.'
-            walletType:
-              type: string
-              maxLength: 256
-              description: 'Identifies the wallet as APPLE_PAY, GOOGLE_PAY, or SAMSUNG_PAY.'
-              example: 'APPLE_PAY'
-
+            
     DataCapture:
       x-model-version: 1.0
       description: 'Data capture details.'
@@ -4041,16 +4288,6 @@ components:
       allOf:
       - {$ref: '#/components/schemas/Network'}
       - type: object
-
-    Domain:
-      x-model-version: 1.0
-      description: 'An object that represents a HTTP domain'
-      properties:
-        url:
-          type: string
-          maxLength: 2048
-          description: 'HTTP domain to be passed for whitelisting'
-          example: 'https://store.example.com'
 
     DynamicDescriptors:
       x-model-version: 1.0
@@ -4665,7 +4902,7 @@ components:
         siteTypeIndicator:
           type: string
           maxLength: 64
-          description: 'This field identifies whether the site is COMMERCIAL or RETAIL.'
+          description: 'This field identifies the site type based on the industry or business requirements.'
           example: 'COMMERCIAL'
         dbaName:
           type: string
@@ -4682,6 +4919,36 @@ components:
           maxLength: 16
           description: 'Terminal lane number, register number, or pump number.'
           example: '001'
+
+    Metadata:
+      x-model-version: 1.0
+      description: 'POS Decision Meta Data.'
+      properties:
+        updatedOn:
+          type: string
+          format: date-time
+          description: 'Updated timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ'
+          example: '2016-04-16T16:06:05Z'
+        updatedBy:
+          type: string
+          description: 'User identifier.'
+          maxLength: 256
+          example: 'John'
+        createdOn:
+          type: string
+          format: date-time
+          description: 'Created timestamp in ISO 8601 format YYYY-MM-DDThh:mm:ssZ'
+          example: '2016-04-16T16:06:05Z'
+        createdBy:
+          type: string
+          description: 'User identifier.'
+          maxLength: 256
+          example: 'John'
+        feedCount:
+          type: string
+          description: 'Identifies the feed count.'
+          maxLength: 256
+          example: '2'
 
     MethodData3DS:
       x-model-version: 1.0
@@ -5007,6 +5274,8 @@ components:
           properties:
             check:
               $ref: '#/components/schemas/Check'
+            encryptionData:
+              $ref: '#/components/schemas/EncryptionData'
 
     PaymentEMV:
       x-model-version: 1.0
@@ -5098,10 +5367,6 @@ components:
               maxLength: 64
               description: 'Identifies the token status.'
               example: 'ACTIVE'
-            PARId:
-              type: string
-              maxLength: 256
-              description: 'Payment Account Reference ID (PARID) for tokens. Ties transactions with multiple payment sources or tokens to a customer.'
             declineDuplicates:
               type: boolean
               description: 'Identifies if a duplicate create token should be rejected when one has already been created for the payment source.'
@@ -5206,6 +5471,40 @@ components:
           description: 'Terminal PIN Encryption working key (TKPE). A PIN Encryption Key is a used to protect PINs as they are transmitted.'
           example: 'A23f36kA...'
 
+    PosDecisionData:
+      x-model-version: 1.0
+      description: 'Pos decision data'
+      properties:
+        accountRangeLow:
+          type: string
+          maxLength: 21
+          example: '654321'
+          description: 'Identifies the low range of the account.'
+        accountRangeHigh:
+          type: string
+          maxLength: 21
+          example: '654329'
+          description: 'Identifies the high range of the account.'
+        accountPositionBegin:
+          type: string
+          description: 'Indicates the beginning position.'
+          example: '1'
+        accountLength:
+          type: string
+          description: 'Indicates the account length.'
+          example: '16'
+        additionalAccountPositionBegin:
+          type: string
+          description: 'Indicates the beginning position of the additional account.'
+          example: '21'
+        additionalAccountLength:
+          type: string
+          description: 'Indicates the account length of the additional account.'
+          example: '1'
+        completeTrackOrAccount:
+          type: boolean
+          example: 'true'
+        
     PosFeatures:
       x-model-version: 1.0
       description: ‘<a href="../docs?path=docs/Resources/Master-Data/Additional-POS-Info.md#pos-features> Terminal or software feature information</a>.’
@@ -5422,10 +5721,10 @@ components:
           type: string
           maxLength: 256
           description: 'Network label that shows the network where the transaction was routed for authorization (e.g. NYCE, PULSE, STAR, Visa, Mastercard, etc.).'
-        PAR:
+        paymentAccountReference:
           type: string
           maxLength: 29
-          description: 'A Payment Account Reference (PAR) is a unique identifier associated with a specific cardholder PAN. This identification number can be used in place of sensitive consumer identification fields, and transmitted across the payments ecosystem to facilitate consumer identification.'
+          description: 'A Payment Account Reference (PAR) is a unique identifier associated with a specific cardholder PAN.'
         networkInternationalId:
           type: string
           maxLength: 16
@@ -5755,6 +6054,11 @@ components:
           maxLength: 256
           description: 'Payment <a href="../docs?path=docs/Resources/Guides/Payment-Sources/Source-Type.md">source type</a> for a transaction request.'
           example: 'PaymentCard'
+        walletType:
+          type: string
+          maxLength: 256
+          description: 'Identifies the wallet type used for transaction.'
+          example: 'APPLE_PAY'
 
     SplitSettlement:
       x-model-version: 1.0
@@ -5764,7 +6068,7 @@ components:
           type: string
           maxLength: 1024
           description: 'The merchant ID for each merchant account involved in split settlement.'
-          example: '123456789011'
+          example: '100008000003683'
         subTotal:
           type: number
           maximum: 999999999999999999.999
@@ -6063,7 +6367,7 @@ components:
           description: 'Reference number received as the result of a successful external authorization (e.g. by phone). The gateway needs this number for uniquely mapping a ForcedTicket transaction to a previously performed external authorization.'
         captureFlag:
           type: boolean
-          description: 'Designates if the transaction should be captured. Auth (False) or Sale (True).'
+          description: 'Designates if the transaction should be captured. Set to false for authorization or true for capture. If not provided in a charges or refunds request, it defaults to true.'
           example: true
         transactionCaptureType:
           type: string
@@ -6505,8 +6809,8 @@ components:
           eciIndicator: SECURE_ECOM
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
 
     ApplePayChargesResponse:
       value:
@@ -6524,7 +6828,7 @@ components:
           sourceType: DecryptedWallet
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '30'
@@ -6581,8 +6885,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     ApplePayTokenResponse:
       value:
@@ -6600,7 +6904,7 @@ components:
           sourceType: DecryptedWallet
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '30'
@@ -6625,7 +6929,7 @@ components:
           bankAssociationDetails:
             associationResponseCode: '000'
             transactionTimestamp: '2021-06-20T23:42:48Z'
-    
+
     CancelResponse:
       value:
         gatewayResponse:
@@ -6642,13 +6946,13 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
         paymentReceipt:
           approvedAmount:
-            total: '12.04'
+            total: 12.04
             currency: USD
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
@@ -6674,18 +6978,84 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
     
+    ClientCertificateRequest:
+      value:
+        cryptographicDetails:
+          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
+          cryptographicAlgorithm: 'JWE'
+          cryptographicResourceEncoding: '.pem'
+          cryptographicResourceType: 'CERTIFICATE'
+          cryptographicResourceLength: 2048
+          usedFor: 'RTAU'
+          publicKeyHash: '3A100B15B9430B1711f2E38F05939A9A'
+          email: 'business@domain.com'
+
+    ClientCertificateResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'UPLOAD'
+          transactionState: 'UPLOADED'
+          transactionOrigin: 'POS'
+          transactionProcessingDetails:
+            transactionTimestamp: '2022-03-15T20:28:09.977157Z'
+            apiTraceId: '96b35a89b00a492c87dda321b7deee02'
+            clientRequestId: '9716198'
+            transactionId: '96b35a89b00a492c87dda321b7deee02'
+            apiKey: 'Pv3bTlh4Gdz6**********Kbccz6sqTAFXMea4'
+        cryptographicDetails:
+          clientKeyID: '924ee01b95ff1bfb45514cbe28f913725d82f8fe0ffc450c3582b00bc4b8414d'
+          cryptographicResource: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDjOPaWa......'
+          cryptographicAlgorithm: 'JWE'
+          cryptographicResourceEncoding: '.pem'
+          cryptographicResourceType: 'CERTIFICATE'
+          cryptographicResourceLength: 2048
+          usedFor: 'RTAU'
+          publicKeyHash: '3A100B15B9430B1711f2E38F05939A9A'
+
+    CloudBinDownloadRequest:
+      value:
+        transactionDetails:
+          operationType: 'DOWNLOAD'
+        metadata:
+          updatedOn: '2022-03-15T20:28:09.977157Z'
+        merchantDetails:
+          terminalId: '10000001'
+          merchantId: '100008000003683'
+    
+    CloudBinDownloadResponse:
+      value:
+        gatewayResponse:
+          transactionType: 'POS_DECISION_TABLE'
+          transactionState: 'DOWNLOADED'
+          transactionOrigin: 'POS'
+          transactionProcessingDetails:
+            orderId: 'CHG01d9b27843995f46d08715908f4372c2ea'
+            transactionTimestamp: '2022-03-15T20:28:09.977157Z'
+            apiTraceId: '96b35a89b00a492c87dda321b7deee02'
+            clientRequestId: '9716198'
+            transactionId: '96b35a89b00a492c87dda321b7deee02'
+        transactionDetails:
+          operationType: 'DOWNLOAD'
+        metadata:
+          updatedOn: '2022-03-15T20:28:09.977157Z'
+          feedCount: '2'
+        posDecisionData:
+          - accountRangeLow: '654321'
+            accountRangeHigh: '654329'   
+
     CreateDigitalGiftCardRequest:
       value:
         amount:
-          total: '12.04'
+          total: 12.04
           currency: USD
         transactionDetails:
           merchantTransactionId: '123456789012'
           merchantOrderId: '845366457890'
           operationType: ACTIVATION
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
           promotionCode: 12A34B7
         additionalDataCommon:
           additionalData:
@@ -6707,7 +7077,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -6723,25 +7093,94 @@ components:
             hostResponseMessage: APPROVAL
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '0.00'
-              endingBalance: '12.04'
-              currency: USD
+            - beginningBalance: 0.00
+              endingBalance: 12.04
+              currency: 'USD'
     
     CurrencyCodeDccRequest:
       value:
         sourceCurrency:
-          total: '199.23'
+          total: 199.23
           currency: USD
         targetCurrency:
           currency: JPY
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
-    
+          terminalId: '10000001'
+          merchantId: '100008000003683'
+
+    DccResponse:
+      value:
+        gatewayResponse:
+          transactionType: CURRENCY_DCC
+          transactionState: RATE_SUPPLIED
+          transactionProcessingDetails:
+            transactionTimestamp: '2021-06-20T23:42:48Z'
+            orderId: RKOrdID-525133851837
+            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+        source:
+          sourceType: PaymentCard
+          card:
+            bin: '40055500'
+            last4: '0019'
+            scheme: VISA
+            expirationMonth: '10'
+            expirationYear: '2030'
+        rate:
+          referenceId: 362866ac81864d7c9d1ff8b5aa6e98db
+          provider: VISA
+          eligibility: DCC_ELIGIBLE
+          exchangeRate: 19.45
+          margin: 3.45
+          timestamp: '2021-06-20T23:42:48Z'
+          validFrom: '2021-06-20T23:42:48Z'
+          validTo: '2021-07-20T23:42:48Z'
+          sourceAmount:
+            total: 199.23
+            currency: USD
+          targetAmount:
+            total: 28465.98
+            currency: JPY
+        processorResponseDetails:
+          approvalStatus: APPROVED
+          processor: fiserv
+          responseCode: '000'
+          responseMessage: APPROVAL
+          hostResponseMessage: RATE_SUPPLIED
+          localTimestamp: '2021-06-20T23:42:48Z'
+
+    DomainWhitelistRequest:
+      value:
+        domains:
+          - www.example1.com
+          - checkout.example2.com
+          - example3.com
+          - https://checkout.example4.com
+          - "*.example5.com"
+
+    DomainWhitelistResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: '2024-09-19T14:11:10.168675929Z'
+            apiTraceId: '362866ac81864d7c9d1ff8b5aa6e98db'
+            clientRequestId: '4345791'
+            transactionId: '84356531338'
+            apiKey: abcdabcdabcdabcd
+        validDomains:
+          - www.example1.com
+          - checkout.example2.com
+          - example3.com
+        invalidDomains:
+          - https://checkout.example4.com
+          - "*.example5.com"
+
+
     EmvDetailsDownloadRequest:
       value:
         merchantDetails:
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         emvDetails:
           transactionType: DOWNLOAD
@@ -6749,7 +7188,7 @@ components:
     EmvDetailsStatusRequest:
       value:
         merchantDetails:
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         emvDetails:
           transactionType: STATUS
@@ -6985,7 +7424,7 @@ components:
           fileCheckSum: 91b4
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
     
     EmvDetailsStatusResponse:
       value:
@@ -7005,12 +7444,12 @@ components:
           status: NO_UPDATE_AVAILABLE
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100009000000035'
+          merchantId: '100008000003683'
     
     EncryptionKeyRequest:
       value:
         merchantDetails:
-          merchantId: '123456789012345'
+          merchantId: '100008000003683'
     
     EncryptionKeyGenerateResponse:
       value:
@@ -7073,7 +7512,7 @@ components:
               - items: >-
                   MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb
         merchantDetails:
-          merchantId: '100004000100157'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         transactionDetails:
           captureFlag: false
@@ -7107,7 +7546,7 @@ components:
             hostResponseCode: '00'
             hostResponseMessage: APPROVAL
             bankAssociationDetails:
-              associationResponseCode: 'O   '
+              associationResponseCode: 'O'
               avsSecurityCodeResponse:
                 streetMatch: NONE
                 postalCodeMatch: NONE
@@ -7130,7 +7569,7 @@ components:
         merchantDetails:
           tokenType: BBY0
           terminalId: '10000001'
-          merchantId: '100004000100157'
+          merchantId: '100008000003683'
         networkDetails:
           network:
             network: Mastercard
@@ -7175,7 +7614,7 @@ components:
               - items: >-
                   MEYCIQDedzDRAzcBHFHQ3nbiG6ZcXx6KTMJjhG87UKNiu0YfmAIhANuncBbPQDVFrwyeWEIVXcXO6LpOuFI9jQb
         merchantDetails:
-          merchantId: '100004000100157'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     GooglePayTokenResponse:
@@ -7264,7 +7703,7 @@ components:
             keyId: FFFF9999990217A000370114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100015000300423'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     ManualEntryInfoResponse:
@@ -7311,8 +7750,8 @@ components:
           tokenData: '1234560000000019'
           tokenSource: 'TRANSARMOR'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
         additionalDataCommon:
           directedRouting:
             processors:
@@ -7375,11 +7814,10 @@ components:
               - debitNetworkId: 'PAVD'
                 pinnedPOS: 'SUPPORTED'
 
-    
     PaymentCardActivateCardRequest:
       value:
         amount:
-          total: '12.04'
+          total: 12.04
           currency: USD
         target:
           sourceType: PaymentCard
@@ -7394,8 +7832,8 @@ components:
           merchantOrderId: '845366457890'
           operationType: ACTIVATION
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
           promotionCode: 12A34B7
         additionalDataCommon:
           additionalData:
@@ -7417,7 +7855,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -7433,8 +7871,8 @@ components:
             hostResponseMessage: APPROVAL
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '0.00'
-              endingBalance: '12.04'
+            - beginningBalance: 0.00
+              endingBalance: 12.04
               currency: USD
     
     PaymentCardBalanceInquiryRequest:
@@ -7453,8 +7891,8 @@ components:
         transactionInteraction:
           terminalTimestamp: '2016-04-16T16:06:05Z'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentCardBalanceInquiryResponse:
       value:
@@ -7472,7 +7910,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SERVICES
             expirationMonth: '10'
@@ -7505,8 +7943,8 @@ components:
               card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
         merchantDetails:
-          merchantId: '123456789012345'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentCardCaptureResponse:
       value:
@@ -7532,8 +7970,8 @@ components:
           merchantOrderId: '845366457890'
           operationType: CASH_OUT
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentCardCashoutResponse:
       value:
@@ -7551,7 +7989,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -7573,9 +8011,9 @@ components:
     
     PaymentCardDccRequest:
       value:
-        amount:
-          total: '199.23'
-          currency: USD
+        sourceCurrency:
+          total: 199.23
+          currency: 'USD'
         source:
           sourceType: PaymentCard
           encryptionData:
@@ -7586,47 +8024,9 @@ components:
               card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
-    
-    DccResponse:
-      value:
-        gatewayResponse:
-          transactionType: CURRENCY_DCC
-          transactionState: RATE_SUPPLIED
-          transactionProcessingDetails:
-            transactionTimestamp: '2021-06-20T23:42:48Z'
-            orderId: RKOrdID-525133851837
-            apiTraceId: 362866ac81864d7c9d1ff8b5aa6e98db
-            clientRequestId: '4345791'
-            transactionId: '84356531338'
-        source:
-          sourceType: PaymentCard
-          card:
-            bin: '40055500'
-            last4: 0019
-            scheme: VISA
-            expirationMonth: '10'
-            expirationYear: '2030'
-        rate:
-          referenceId: 362866ac81864d7c9d1ff8b5aa6e98db
-          provider: VISA
-          eligibility: DCC_ELIGIBLE
-          exchangeRate: 19.45
-          margin: 3.45
-          timestamp: '2021-06-20T23:42:48Z'
-          validFrom: '2021-06-20T23:42:48Z'
-          validTo: '2021-07-20T23:42:48Z'
-          sourceAmount: 'total:''199.23'' currency:''USD'''
-          targetAmount: 'total:''3875.07'' currency:''TRY'''
-        processorResponseDetails:
-          approvalStatus: APPROVED
-          processor: fiserv
-          responseCode: '000'
-          responseMessage: APPROVAL
-          hostResponseMessage: RATE_SUPPLIED
-          localTimestamp: '2021-06-20T23:42:48Z'
-    
+          terminalId: '10000001'
+          merchantId: '100008000003683'
+
     PaymentCardDeviceDataInitializationRequest:
       value:
         source:
@@ -7640,7 +8040,7 @@ components:
             encryptionBlockFields: >-
               card.cardData:16,card.nameOnCard:4,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
         merchantDetails:
-          merchantId: '100012000001408'
+          merchantId: '100008000003683'
         transactionDetails:
           authentication3DS: true
     
@@ -7670,7 +8070,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '400555'
-            last4: 0019
+            last4: '0019'
         transactionDetails:
           merchantOrderId: '123456789012'
           deviceFingerPrint:
@@ -7708,8 +8108,8 @@ components:
             postalCode: '30303'
             country: US
         merchantDetails:
-          merchantId: '1234567890123456'
-          alternateMerchantId: '1234567890123456'
+          merchantId: '100008000003683'
+          alternateMerchantId: '100008000003683'
     
     PaymentCardEDSResponse:
       value:
@@ -7741,8 +8141,8 @@ components:
           eciIndicator: CHANNEL_ENCRYPTED
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          merchantId: '123456789789567'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentCardChargesResponse:
       value:
@@ -7760,7 +8160,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -7805,8 +8205,8 @@ components:
               card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
             keyId: '88000000022'
         merchantDetails:
-          merchantId: '123456789789567'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentCardEncryptedVerifyRequest:
       value:
@@ -7834,8 +8234,13 @@ components:
       value:
         source:
           sourceType: PaymentCard
-          card:
-            cardData: '4005550000000019'
+          encryptionData:
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....
+            encryptionBlockFields: >-
+              card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            keyId: '88000000022'
     
     PaymentCardInfoResponse:
       value:
@@ -7891,7 +8296,7 @@ components:
     PaymentCardReloadRequest:
       value:
         amount:
-          total: '10.00'
+          total: 10.00
           currency: USD
         target:
           sourceType: PaymentCard
@@ -7906,8 +8311,8 @@ components:
           merchantOrderId: '845366457890'
           operationType: RELOAD
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
         additionalDataCommon:
           additionalData:
             fundingProvider: CUSTOMER
@@ -7928,7 +8333,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             category: GIFT
             subCategory: GIFT_SOLUTIONS
             expirationMonth: '10'
@@ -7944,23 +8349,26 @@ components:
             hostResponseMessage: APPROVAL
             localTimestamp: '2021-06-20T23:42:48Z'
           balances:
-            - beginningBalance: '12.04'
-              endingBalance: '22.04'
+            - beginningBalance: 12.04
+              endingBalance: 22.04
               currency: USD
     
     PaymentCardTokenRequest:
       value:
         source:
           sourceType: PaymentCard
-          card:
-            cardData: '4005550000000019'
-            expirationMonth: '02'
-            expirationYear: '2035'
+          encryptionData:
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlock: =s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....
+            encryptionBlockFields: >-
+              card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3
+            keyId: '88000000022'
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentCardTokenResponse:
       value:
@@ -7978,7 +8386,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8042,7 +8450,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8069,7 +8477,41 @@ components:
                 securityCodeResponse: M
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
-    
+
+    PaymentCheckDriverLicenseCaptureRequest:
+      value:
+        source:
+          sourceType: PaymentCheck
+          encryptionData:
+            keyId: 010e6fd8-a1a7-4512-b0e8-b42ac00ae4e3
+            encryptionBlock: MYMEYuN29tDxyUTnd5xsm/MxdsnuGSMXchzXizdqmgUR7awWgJ7aVCC8NGVihXbt1UJ4mPj/ogifB8dSk1e8HAlXwIzuU9KgnqsoIBtIPdAQ4SUYrhfTZOvBTpPL5apLJb6lAcCD8Dq0bQhSPO06YLvnL6UVTUVcHMhAywqx9iwCUBIsdJzeGxtdYn1lRM+okdwbqFTepUbMH03/sAq6C6Jijh4tE7UU2Zi7F9At4CXM34WgZfnqtRtnq85KMIPe+VAa3GD12FGZxFjPVRMlGjcgWqkzYw+UH6q3TgehC2QifCP302u6pAie9r8r+9md9uCaoV93G9jV1jcZL31dMQ==
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlockFields: check.accountNumber:9,check.routingNumber:9
+        customer:
+          driverLicenseState: AL
+          encryptionData:
+            keyId: 010e6fd8-a1a7-4512-b0e8-b42ac00ae4e3
+            encryptionBlock: nsaEPVZ9UAqm0RBE3HV1+gloNwn1Bq47CSLW5YDlVpAFO4z9ja4FugBHmuy2bEKybJ53WcIPRU4icTnYHEO5Qb8bRZPRPNgG/MdLrr9b4fd5B/F9UkUxiYIjDeisu06h/sf4uKQbzCinLm+dLrHDVTPo6ARH8p1E30GPYyo6OeqOJekAGVP2kIDMatLJPgzIoVs4+P2/TBwX7VNSN/Yj0XGag/9nKT8j1rnqzP/RkEEO6Jh9XEZbFaYoHdv7TXerIfj/vYjrfd95A0IsTbvFfIyqNBTR+pZ/Y3QrOGDkEo23xx/IstiUsUcZsJ6le/X77TQJOpg4TQqutj5nXrNNng==
+            encryptionType: RSA
+            encryptionTarget: MANUAL
+            encryptionBlockFields: customer.driverLicenseNumber:8
+        merchantDetails:
+          merchantId: '100008000003683'
+          terminalId: '10000001'
+        transactionDetails:
+          createToken: false
+
+    PaymentCheckDriverLicenseCaptureResponse:
+      value:
+        gatewayResponse:
+          transactionProcessingDetails:
+            transactionTimestamp: 2024-09-19T20:25:29.429391981Z
+            apiTraceId: b547c305f88445d89b21aab540e4f252
+            clientRequestId: 5ae652bf-07ec-40dd-8fe5-bbfac25c754e
+            transactionId: b547c305f88445d89b21aab540e4f252
+            apiKey: abcdabcdabcd
+
     PaymentCheckRequest:
       value:
         amount:
@@ -8086,7 +8528,7 @@ components:
         transactionDetails:
           captureFlag: true
         merchantDetails:
-          merchantId: '100184000000076'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         transactionInteraction:
           origin: MOTO
@@ -8135,7 +8577,7 @@ components:
             accountNumber: '144155167'
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100184000000076'
+          merchantId: '100008000003683'
         networkDetails:
           systemTrace: '1400310000032032697430'
           networkResponseStatus: '1'
@@ -8179,8 +8621,8 @@ components:
               pinAuthenticationCapability: CAN_ACCEPT_PIN
               terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentEMVChargesResponse:
       value:
@@ -8198,14 +8640,14 @@ components:
           sourceType: PaymentEMV
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VIsa
             expirationMonth: '10'
             expirationYear: '2030'
           emvData: 8a0230309f36020073910a1be55403be070aa53030
         paymentReceipt:
           approvedAmount:
-            total: '12.04'
+            total: 12.04
             currency: USD
           merchantName: Merchant Name
           merchantAddress: 123 Peach Ave
@@ -8255,8 +8697,8 @@ components:
             keyId: FFFF10970000000003FD0114
             deviceType: INGENICO
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentEMVInfoResponse:
       value:
@@ -8324,8 +8766,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentEMVTokenResponse:
       value:
@@ -8343,7 +8785,7 @@ components:
           sourceType: PaymentEMV
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: Visa
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8405,7 +8847,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: Visa
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8439,7 +8881,7 @@ components:
           sourceType: PaymentSession
           sessionId: df8c33d2-af27-4a3a-b7a0-61d4edf09cad
         merchantDetails:
-          merchantId: '100012000001408'
+          merchantId: '100008000003683'
         transactionDetails:
           authentication3DS: true
     
@@ -8477,8 +8919,8 @@ components:
           eciIndicator: CHANNEL_ENCRYPTED
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          merchantId: '123456789012345'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentSessionTokenRequest:
       value:
@@ -8488,8 +8930,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          merchantId: '123456789012345'
-          terminalId: '123456'
+          merchantId: '100008000003683'
+          terminalId: '10000001'
     
     PaymentSessionVerifyRequest:
       value:
@@ -8525,7 +8967,7 @@ components:
           tokenData: '8519371934460009'
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8567,7 +9009,7 @@ components:
             expirationMonth: '12'
             expirationYear: '2025'
         merchantDetails:
-          merchantId: '100012000001408'
+          merchantId: '100008000003683'
         transactionDetails:
           authentication3DS: true
     
@@ -8633,8 +9075,8 @@ components:
             postalCode: '30303'
             country: US
         merchantDetails:
-          merchantId: '1234567890123456'
-          alternateMerchantId: '1234567890123456'
+          merchantId: '100008000003683'
+          alternateMerchantId: '100008000003683'
     
     PaymentTokenEDSResponse:
       value:
@@ -8729,8 +9171,8 @@ components:
           eciIndicator: CHANNEL_ENCRYPTED
           posConditionCode: CARD_NOT_PRESENT_ECOM
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentTokenROSRequest:
       value:
@@ -8738,7 +9180,7 @@ components:
           sourceType: PaymentToken
           tokenData: '1234560000019'
         merchantDetails:
-          merchantId: '1234567890123456'
+          merchantId: '100008000003683'
           tokenType: AB01
     
     PaymentTokenROSResponse:
@@ -8800,7 +9242,7 @@ components:
           tokenData: '8519371934460009'
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8854,8 +9296,8 @@ components:
               pinAuthenticationCapability: CAN_ACCEPT_PIN
               terminalEntryCapability: MAG_STRIPE_MANUAL_CHIP
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     PaymentTrackChargesResponse:
       value:
@@ -8873,7 +9315,7 @@ components:
           sourceType: PaymentTrack
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: Visa
             expirationMonth: '10'
             expirationYear: '2030'
@@ -8929,7 +9371,7 @@ components:
             keyId: FFFF109700000520001B0114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100015000300423'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     PaymentTrackInfoResponse:
@@ -8994,7 +9436,7 @@ components:
             keyId: FFFF10970000052000170114
             deviceType: INGENICO
         merchantDetails:
-          merchantId: '100015000300423'
+          merchantId: '100008000003683'
           terminalId: '10000001'
     
     PaymentTrackTokenResponse:
@@ -9013,7 +9455,7 @@ components:
           sourceType: PaymentTrack
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -9039,9 +9481,6 @@ components:
     
     PaymentTrackVerifyRequest:
       value:
-        amount:
-          total: 0
-          currency: USD
         source:
           sourceType: PaymentTrack
           encryptionData:
@@ -9067,7 +9506,7 @@ components:
               pinAuthenticationCapability: UNSPECIFIED
               terminalEntryCapability: MAG_STRIPE_ONLY
         merchantDetails:
-          merchantId: '100012000101901'
+          merchantId: '100008000003683'
           terminalId: '10000001'
         additionalDataCommon:
           directedRouting:
@@ -9092,7 +9531,7 @@ components:
           sourceType: PaymentTrack
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -9136,7 +9575,7 @@ components:
           sourceType: PaymentCard
           card:
             bin: '40055500'
-            last4: 0019
+            last4: '0019'
             scheme: VISA
             expirationMonth: '10'
             expirationYear: '2030'
@@ -9176,8 +9615,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     SecondaryRequestWithReferenceMerchantTransactionId:
       value:
@@ -9189,8 +9628,8 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     SecondaryRequestWithReferenceTransactionId:
       value:
@@ -9202,17 +9641,13 @@ components:
         transactionDetails:
           merchantInvoiceNumber: '123456789012'
         merchantDetails:
-          terminalId: '123456'
-          merchantId: '123456789012345'
+          terminalId: '10000001'
+          merchantId: '100008000003683'
     
     SecurityCredentialsRequest:
       value:
-        domains:
-          - url: 'https://checkout.mystore.com'
-          - url: 'https://store.mystore.com'
-          - url: 'https://*.mystore.com'
         merchantDetails:
-          merchantId: '123456789012345'
+          merchantId: '100008000003683'
     
     SecurityCredentialsResponse:
       value:
@@ -9222,10 +9657,6 @@ components:
         keyLength: 792
         accessToken: vsmsrKcNFWzq79Yd8aaxHetHBdxm
         sessionId: b28ba2ca-6368-4d72-b5f0-c185b4d0de4c
-        domains:
-          - url: 'https://checkout.mystore.com'
-          - url: 'https://store.mystore.com'
-          - url: 'https://*.mystore.com'
         symmetricEncryptionAlgorithm: AES-GCM
         asymmetricEncryptionAlgorithm: RSA
         accessTokenIssuedTime: '2016-04-16T16:06:05Z'
@@ -9267,7 +9698,7 @@ components:
                 ipAddress: 67.17.19.20
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100004000100116'
+          merchantId: '100008000003683'
         additionalData3DS:
           serviceProviderReferenceId: 123lkd8alcd99aa9
           channel: BROWSER
@@ -9348,7 +9779,7 @@ components:
       value:
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100004000100116'
+          merchantId: '100008000003683'
         referenceTransactionDetails:
           referenceMerchantTransactionId: ac81864d7c9d1ff8b5aa6e98db
     
@@ -9385,7 +9816,7 @@ components:
       value:
         merchantDetails:
           terminalId: '10000001'
-          merchantId: '100004000100116'
+          merchantId: '100008000003683'
         referenceTransactionDetails:
           referenceTransactionId: c229a53d92d348fb9c9ecea6f6a4aa4f
     
@@ -9423,7 +9854,7 @@ components:
         referenceTransactionDetails:
           referenceTransactionId: 95f6b8c8ec024e1183a8e998406656ce
         merchantDetails:
-          merchantId: '222222222222'
+          merchantId: '100008000003683'
     
     TransactionInquiryResponse:
       value:
@@ -9469,7 +9900,7 @@ components:
         referenceTransactionDetails:
           referenceMerchantOrderId: RKOrdID-822715036
         merchantDetails:
-          merchantId: '222222222222'
+          merchantId: '100008000003683'
     
     TransactionInquiryByMerchantOrderIdResponse:
       value:
@@ -9485,7 +9916,7 @@ components:
           paymentReceipt:
             approvedAmount:
               currency: USD
-              total: '16.93'
+              total: 16.93
             processorResponseDetails:
               approvalCode: OK7742
               approvalStatus: APPROVED
