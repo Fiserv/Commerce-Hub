@@ -2,11 +2,10 @@
 
 ## Directory
 
-docs/archive/
+docs/Archive/
 
 ## All Files and Subdirectories
 
-docs/archive/**
 docs/Online-Mobile-Digital/Wallets-AltPayments/PayPal/**
 docs/Resources/Guides/Payments-101/**
 docs/Resources/Guides/Reporting/**
@@ -16,6 +15,7 @@ docs/Resources/Guides/Industry-Verticals/**
 docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/**
 docs/Online-Mobile-Digital/Checkout/Payment-JS/**
 docs/Resources/Guides/Partners/Modules/**
+docs/Archive/**
 
 ## Markdown Files
 
@@ -50,3 +50,4 @@ docs/Resources/Guides/Payment-Sources/Tokenization/Network-Token-Request.md
 docs/Online-Mobile-Digital/Secure-Data-Capture/iFrame-JS/iFrame-V1_V2_Comparison.md
 docs/Resources/Guides/Global-Currency/Dynamic-Currency-Conversion.md
 docs/In-Person/Integrations/Terminal-API/Android-TTP.md
+docs/Archive/Test-Cards.md
