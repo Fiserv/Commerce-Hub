@@ -15,9 +15,7 @@ Fiserv Owned Payeezy Gateway certificate with Common Name “globalgatewaye4.fir
 
 ### WHEN IS IT HAPPENING?
 
-On 20th March 2024, from 11:00 PM EST to 11:59 PM EST, Fiserv will renew the certificate affecting the following Prod Environment
-
-URLs: <https://api.globalgatewaye4.firstdata.com>
+On 20th March 2024, from 11:00 PM EST to 11:59 PM EST, Fiserv will renew the certificate affecting the Prod Environment.
 
 ### WHAT AM I SUPPOSED TO DO?
 
