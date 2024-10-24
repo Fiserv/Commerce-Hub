@@ -15,15 +15,13 @@ Fiserv Owned Payeezy Gateway certificate with Common Name “globalgatewaye4.fir
 
 ### WHEN IS IT HAPPENING?
 
-On 20th March 2024, from 11:00 PM EST to 11:59 PM EST, Fiserv will renew the certificate affecting the following Prod Environment
-
-URLs: https://api.globalgatewaye4.firstdata.com
+On 20th March 2024, from 11:00 PM EST to 11:59 PM EST, Fiserv will renew the certificate affecting the Prod Environment.
 
 ### WHAT AM I SUPPOSED TO DO?
 
 - Clients need to install Digi Root(DigiCert Global Root G2) and Intermediate(DigiCert Global G2 TLS RSA SHA256 2020 CA1) certificate if not available at their trust store.
 
-- Clients may download the certificate from Digi Link here: https://www.digicert.com/kb/digicert-root-certificates.htm
+- Clients may download the certificate from Digi Link here: <https://www.digicert.com/kb/digicert-root-certificates.htm>
 
 **Instructions to the client on how to install certificate:**
 
@@ -34,9 +32,9 @@ Some examples of readily available documentation for Apache (on Redhat) and IIS 
 
 These were found while performing a standard search on the web.
 
-- https://access.redhat.com/solutions/43575
+- <https://access.redhat.com/solutions/43575>
 
-- https://support.microsoft.com/en-us/help/954755/how-to-configure-intermediatecertificates-on-a-computer-that-is-runni
+- <https://support.microsoft.com/en-us/help/954755/how-to-configure-intermediatecertificates-on-a-computer-that-is-runni>
 
 - For those clients who are using leaf certificate, they need to install leaf certificate at their trust store before the Fiserv scheduled change.
 

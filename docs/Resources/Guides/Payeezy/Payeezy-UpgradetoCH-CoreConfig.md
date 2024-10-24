@@ -18,7 +18,7 @@ titles: Terminal Configuration, User Management
 ### General
 
 Batch Settlement cutoff times configuration will not be available in the interface.
- 
+
 The API integration settings were originally controlled solely in RPM; in Commerce Hub, it will be controlled jointly in CLX and Dev Studio.
 
 Partner API capabilities are currently not supported.

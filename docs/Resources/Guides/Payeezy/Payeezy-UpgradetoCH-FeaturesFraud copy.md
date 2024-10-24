@@ -17,7 +17,7 @@ System level fraud controls are regulated and managed by the Fiserv Fraud Team.
 titles: Fraud Filters, Velocity Controls, Address Verification Services (AVS) Filter, Security Code Verification (CVV2) Filter
 -->
 
-## Configuration
+**Configuration:**
 
 In Payeezy, fraud filters were set at the merchant level; in Commerce Hub, fraud filters are set at the MID (SiteId) level.
 
@@ -37,7 +37,7 @@ There is currently an unlimited number of values that can be set for each filter
 |Country|Country Profiles|
 |Credit Card Number|Add/change card numbers to block|
 |Customer Reference|Customer Reference to block|
-|Email Address/Domain|Domain Name to block <br> Email address/domain|
+|Email Address/Domain|Domain Name to block, Email address/domain|
 |IP Address| IP Addresses to block|
 ||Cardholder Name to block|
 ||BIN Block|
@@ -54,7 +54,7 @@ The Cumulative Amount Velocity Controls are checked against the totals of previo
 
 ---
 
-## Configuration
+**Configuration:**
 
 Configuration in CLX will allow for the application of controls at a more granular level than Payeezy.  Controls can be assigned by transaction type (Purchase, Refund, etc.) or status (All vs. Approved).
 
@@ -62,7 +62,7 @@ In Payeezy, the currency was set at the terminal/outlet MID versus each control.
 
 ---
 
-## Reporting
+**Reporting:**
 
 A canned report for all transactions declined by any type of Fraud Control (including velocity controls) is available in Payeezy Real-time Payment Manager (RPM).  In ClientLine Enterprise (CLX), use the Data Solutions --> Fraud --> Manage menu item to generate a similar report. Select Reviews & Details in the Viewing drop-down list at the top to show all transactions declined due to fraud configurations (settings, velocity controls and filters).
 
@@ -70,7 +70,7 @@ A canned report for all transactions declined by any type of Fraud Control (incl
 type: tab
 -->
 
-## API Structure
+## AVS API Structure
 
 In Payeezy,  Account Verification Services (AVS) Filters were applied to Pre-Auth and Purchase transactions; in Commerce Hub, they are applied to Pre-Auth, Purchase and Tagged Refund transactions.  
 
@@ -78,7 +78,7 @@ In Commerce Hub, the AVS Response Codes have changed, but the application of fil
 
 ---
 
-## Configuration
+**Configuration:**
 
 AVS must be enabled in CLX in order to receive a response code.
 
@@ -122,7 +122,7 @@ A canned report for all transactions declined by any type of Fraud Control (incl
 type: tab
 -->
 
-## API Structure
+## CVV API Structure
 
 In Commerce Hub, the CVV Response Codes have changed, but the application of filters remains the same. See [Commerce Hub Security Code Verification](?path=docs/Resources/Guides/Fraud/Security-Code.md) documentation for more information.
 
@@ -130,7 +130,7 @@ If CVV is enabled, but the element is not included in the request API, a respons
 
 ---
 
-## Configuration
+**Configuration:**
 
 In Payeezy, CVV configuration was at the terminal level and enabled by selecting terminal type of Mail Order/Telephone Order (CVV2) or E-Commerce Transaction (CVV2); in CLX, CVV must be enabled and is set at the MID level.
 
@@ -148,7 +148,7 @@ In CLX, if no codes are configured, they will all be considered acceptable.
 
 ---
 
-## Reporting
+**Reporting:**
 
 A canned report for all transactions declined by any type of Fraud Control (including CVV2 Filters) is available in Payeezy Real-time Payment Manager (RPM).  In ClientLine Enterprise (CLX), use the Data Solutions --> Fraud --> Manage menu item to generate a similar report. Select Reviews & Details in the Viewing drop-down list at the top to show all transactions declined due to fraud configurations (settings, velocity controls and filters).
 

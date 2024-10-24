@@ -2,10 +2,10 @@
 tags: [carat, commerce-hub, enterprise, card-not-present, payeezy]
 ---
 
+# Welcome to Commerce Hub through Payeezy Emulation
+
 <!-- theme: danger -->
 > The following documentation is only for **Payeezy** merchants that are upgrading to Commerce Hub. See [Getting Started](?path=docs/Getting-Started/Getting-Started-General.md) for Commerce Hub integration options.
-
-# Welcome to Commerce Hub through Payeezy Emulation
 
 If you have been directed to reveiw this page, it means that your MIDs will soon be upgraded to Commerce Hub through emulation. The purpose of this document is to outline the steps of this journey, call out the anticipated response payload differences between Payeezy and the Commerce Hub emulator and guide you to the appropriate place for support.
 
